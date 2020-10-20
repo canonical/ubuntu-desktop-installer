@@ -1,0 +1,36 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+    - main
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v1
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'dev'
+    
+    # Enable Linus desktop support.
+    - working-directory: ./ubuntu_desktop_installer
+      run: flutter config --enable-linux-desktop
+    
+    # Get flutter dependencies.
+    - working-directory: ./ubuntu_desktop_installer
+      run: flutter pub get
+    
+    # Check for any formatting issues in the code.
+    - working-directory: ./ubuntu_desktop_installer
+      run: flutter format --set-exit-if-changed .
+    
+    # Statically analyze the Dart code for any errors.
+    - working-directory: ./ubuntu_desktop_installer
+      run: flutter analyze .
+    
+    # Run widget tests for our flutter project.
+    - working-directory: ./ubuntu_desktop_installer
+      run: flutter test
