@@ -43,13 +43,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0-nullsafety.3"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -163,6 +156,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.3"
+  yaru:
+    dependency: "direct main"
+    description:
+      name: yaru
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.0-dev.4"
 sdks:
-  dart: ">=2.10.0-110 <=2.11.0-218.0.dev"
+  dart: ">=2.10.0-110 <=2.11.0-222.0.dev"
   flutter: ">=1.17.0 <2.0.0"
