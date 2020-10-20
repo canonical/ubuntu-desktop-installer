@@ -16,21 +16,28 @@ jobs:
         channel: 'dev'
     
     # Enable Linus desktop support.
-    - working-directory: ./ubuntu_desktop_installer
-      run: flutter config --enable-linux-desktop
+    - run: flutter config --enable-linux-desktop
     
     # Get flutter dependencies.
+    - working-directory: ./subiquity_client
+      run: flutter pub get
     - working-directory: ./ubuntu_desktop_installer
       run: flutter pub get
     
     # Check for any formatting issues in the code.
+    - working-directory: ./subiquity_client
+      run: flutter format --set-exit-if-changed .
     - working-directory: ./ubuntu_desktop_installer
       run: flutter format --set-exit-if-changed .
     
     # Statically analyze the Dart code for any errors.
+    - working-directory: ./subiquity_client
+      run: flutter analyze .
     - working-directory: ./ubuntu_desktop_installer
       run: flutter analyze .
     
     # Run widget tests for our flutter project.
+    - working-directory: ./subiquity_client
+      run: flutter test
     - working-directory: ./ubuntu_desktop_installer
       run: flutter test
