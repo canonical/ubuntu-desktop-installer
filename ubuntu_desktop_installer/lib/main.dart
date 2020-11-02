@@ -7,16 +7,16 @@ import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(UbuntuDesktopInstallerApp());
 }
 
-class MyApp extends StatelessWidget {
+class UbuntuDesktopInstallerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ubuntu Desktop Installer',
       theme: yaruLightTheme,
-      home: MyHomePage(title: 'Welcome'),
+      home: WelcomePage(title: 'Welcome'),
     );
   }
 }
@@ -69,16 +69,16 @@ class _WelcomePageButtonState extends State<WelcomePageButton> {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class WelcomePage extends StatefulWidget {
+  WelcomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _WelcomePageState extends State<WelcomePage> {
   final SubiquityClient _client = SubiquityClient();
   int _selectedLanguageIndex = 0;
   TapGestureRecognizer _releaseNotesTapHandler;
