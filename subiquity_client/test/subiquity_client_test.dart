@@ -3,11 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 void main() {
-  test('adds one to input value', () {
+  test('checks for expected languages', () {
     final client = SubiquityClient();
-    expect(client.test(2), 3);
-    expect(client.test(-7), -6);
-    expect(client.test(0), 1);
-    expect(() => client.test(null), throwsNoSuchMethodError);
+    expect(client.languagelist.contains('English'), true);
+    expect(client.languagelist.contains('English (UK)'), true);
+    expect(client.languagelist.contains('中文(简体)'), true);
+    expect(client.languagelist.contains('Русский'), true);
   });
 }
