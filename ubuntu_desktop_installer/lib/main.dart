@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
@@ -8,28 +11,66 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ubuntu Desktop Installer',
-      theme: yaruTheme,
-      home: MyHomePage(title: 'Ubuntu Desktop Installer'),
+      theme: yaruLightTheme,
+      home: MyHomePage(title: 'Welcome'),
+    );
+  }
+}
+
+class WelcomePageButton extends StatefulWidget {
+  const WelcomePageButton({
+    Key key,
+    this.imageAsset,
+    this.bodyText,
+    this.actionText,
+    this.onPressed,
+  }) : super(key: key);
+
+  final String imageAsset;
+  final String bodyText;
+  final String actionText;
+  final VoidCallback onPressed;
+
+  @override
+  _WelcomePageButtonState createState() => _WelcomePageButtonState();
+}
+
+class _WelcomePageButtonState extends State<WelcomePageButton> {
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(children: <Widget>[
+          SizedBox(height: 20),
+          Expanded(child: Image.asset(widget.imageAsset)),
+          SizedBox(height: 40),
+          Expanded(
+              child: Text(
+            widget.bodyText,
+            style: yaruBodyText1Style.copyWith(
+                color: yaruLightColorScheme.primaryVariant),
+          )),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Text(
+              widget.actionText,
+              style: yaruBodyText1Style.copyWith(color: Colors.green[800]),
+            ),
+          ),
+        ]),
+      ),
+      onPressed: () => widget.onPressed(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -38,69 +79,121 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final SubiquityClient _client = SubiquityClient();
+  int _selectedLanguageIndex = 0;
+  TapGestureRecognizer _releaseNotesTapHandler;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter = _client.test(_counter);
-    });
+  @override
+  void initState() {
+    super.initState();
+    _releaseNotesTapHandler = TapGestureRecognizer()
+      ..onTap = () {
+        launch(_client.releaseNotesURL);
+      };
+  }
+
+  @override
+  void dispose() {
+    _releaseNotesTapHandler.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(children: <Widget>[
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: yaruLightTheme.dividerColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: ListView.builder(
+                          itemCount: _client.languagelist.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return ListTile(
+                              title: Text(_client.languagelist[index]),
+                              selected: index == _selectedLanguageIndex,
+                              onTap: () {
+                                setState(() {
+                                  _selectedLanguageIndex = index;
+                                });
+                              },
+                            );
+                          }),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      children: <Widget>[
+                        Expanded(
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: WelcomePageButton(
+                                  imageAsset: 'assets/steering-wheel.png',
+                                  bodyText:
+                                      'You can try Ubuntu without making any changes to your computer.',
+                                  actionText: 'Try Ubuntu',
+                                  onPressed: () {
+                                    print('TODO: try Ubuntu');
+                                  },
+                                ),
+                              ),
+                              SizedBox(width: 20),
+                              Expanded(
+                                child: WelcomePageButton(
+                                  imageAsset: 'assets/hard-drive.png',
+                                  bodyText:
+                                      "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+                                  actionText: 'Install Ubuntu',
+                                  onPressed: () {
+                                    print('TODO: install Ubuntu');
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 200),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: RichText(
+                            text: TextSpan(
+                              style: yaruBodyText1Style.copyWith(
+                                  color: yaruLightColorScheme.primaryVariant),
+                              text: 'You may wish to read the ',
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: 'release notes',
+                                  style: TextStyle(color: Colors.blue),
+                                  recognizer: _releaseNotesTapHandler,
+                                ),
+                                TextSpan(text: '.'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          ])),
     );
   }
 }

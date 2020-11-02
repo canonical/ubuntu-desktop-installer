@@ -16,10 +16,11 @@ static void my_application_activate(GApplication* application) {
       GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
   GtkHeaderBar *header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
   gtk_widget_show(GTK_WIDGET(header_bar));
-  gtk_header_bar_set_title(header_bar, "Ubuntu Desktop Installer");
+  gtk_header_bar_set_title(header_bar, "Install Ubuntu");
   gtk_header_bar_set_show_close_button(header_bar, TRUE);
+  gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
-  gtk_window_set_default_size(window, 1280, 720);
+  gtk_window_set_default_size(window, 800, 600);
   gtk_widget_show(GTK_WIDGET(window));
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
