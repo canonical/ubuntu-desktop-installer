@@ -17,6 +17,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       title: 'Ubuntu Desktop Installer',
       theme: yaruLightTheme,
       home: WelcomePage(title: 'Welcome'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
