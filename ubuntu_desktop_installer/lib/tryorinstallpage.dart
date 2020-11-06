@@ -150,15 +150,14 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
                     ],
                   ),
                 ),
-                Row(
-                  children: <Widget>[
+                ButtonBar(
+                  children: <OutlinedButton>[
                     OutlinedButton(
                       child: Text('Go Back'),
                       onPressed: () {
                         Navigator.pop(context);
                       },
                     ),
-                    SizedBox(width: 10),
                     OutlinedButton(
                       child: Text('Continue'),
                       onPressed: null, // TODO

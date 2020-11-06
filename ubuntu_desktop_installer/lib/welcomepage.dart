@@ -60,14 +60,12 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
             ),
             SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
+            ButtonBar(
+              children: <OutlinedButton>[
                 OutlinedButton(
                   child: Text('Go Back'),
                   onPressed: null,
                 ),
-                SizedBox(width: 10),
                 OutlinedButton(
                   child: Text('Continue'),
                   onPressed: () {
