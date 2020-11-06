@@ -6,45 +6,57 @@ import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
 
-class TryOrInstallPageButton extends StatefulWidget {
-  const TryOrInstallPageButton({
+class TryOrInstallPageCard extends StatefulWidget {
+  TryOrInstallPageCard({
     Key key,
     this.imageAsset,
     this.titleText,
     this.bodyText,
-    this.onPressed,
+    this.onSelected,
   }) : super(key: key);
 
   final String imageAsset;
   final String titleText;
   final String bodyText;
-  final VoidCallback onPressed;
+  final VoidCallback onSelected;
 
   @override
-  _TryOrInstallPageButtonState createState() => _TryOrInstallPageButtonState();
+  _TryOrInstallPageCardState createState() => _TryOrInstallPageCardState();
 }
 
-class _TryOrInstallPageButtonState extends State<TryOrInstallPageButton> {
+class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
+  bool selected = false;
+  bool hovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(children: <Widget>[
-          SizedBox(height: 20),
-          Expanded(child: Image.asset(widget.imageAsset)),
-          SizedBox(height: 40),
-          Expanded(child: Text(widget.titleText)),
-          SizedBox(height: 20),
-          Expanded(
-              child: Text(
-            widget.bodyText,
-            style: yaruBodyText1Style.copyWith(
-                color: yaruLightColorScheme.primaryVariant),
-          )),
-        ]),
+    return Card(
+      elevation: (hovered || selected) ? 2.0 : 1.0,
+      child: InkWell(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(children: <Widget>[
+            SizedBox(height: 20),
+            Expanded(child: Image.asset(widget.imageAsset)),
+            SizedBox(height: 40),
+            Expanded(child: Text(widget.titleText)),
+            SizedBox(height: 20),
+            Expanded(
+                child: Text(
+              widget.bodyText,
+              style: yaruBodyText1Style.copyWith(
+                  color: yaruLightColorScheme.primaryVariant),
+            )),
+          ]),
+        ),
+        onTap: () {
+          selected = true;
+          widget.onSelected();
+        },
+        onHover: (bool value) {
+          hovered = value;
+        },
       ),
-      onPressed: () => widget.onPressed(),
     );
   }
 }
@@ -61,8 +73,12 @@ class TryOrInstallPage extends StatefulWidget {
   _TryOrInstallPageState createState() => _TryOrInstallPageState();
 }
 
+enum SelectedOption { none, repairUbuntu, tryUbuntu, installUbuntu }
+
 class _TryOrInstallPageState extends State<TryOrInstallPage> {
   TapGestureRecognizer _releaseNotesTapHandler;
+
+  SelectedOption selectedOption = SelectedOption.none;
 
   @override
   void initState() {
@@ -77,6 +93,18 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
   void dispose() {
     _releaseNotesTapHandler.dispose();
     super.dispose();
+  }
+
+  void continueWithSelectedOption() {
+    if (selectedOption == SelectedOption.repairUbuntu) {
+      Navigator.pushNamed(context, '/repairubuntu');
+    } else if (selectedOption == SelectedOption.tryUbuntu) {
+      Navigator.pushNamed(context, '/tryubuntu');
+    } else if (selectedOption == SelectedOption.installUbuntu) {
+      Navigator.pushNamed(context, '/installubuntu');
+    } else {
+      assert(false);
+    }
   }
 
   @override
@@ -94,37 +122,43 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: TryOrInstallPageButton(
+                    child: TryOrInstallPageCard(
                       imageAsset: 'assets/repair-wrench.png',
                       titleText: 'Repair installation',
                       bodyText:
                           'Repairing will reinstall all installed software without touching documents or settings.',
-                      onPressed: () {
-                        print('TODO: repair Ubuntu');
+                      onSelected: () {
+                        setState(() {
+                          selectedOption = SelectedOption.repairUbuntu;
+                        });
                       },
                     ),
                   ),
                   SizedBox(width: 20),
                   Expanded(
-                    child: TryOrInstallPageButton(
+                    child: TryOrInstallPageCard(
                       imageAsset: 'assets/steering-wheel.png',
                       titleText: 'Try Ubuntu',
                       bodyText:
                           'You can try Ubuntu without making any changes to your computer.',
-                      onPressed: () {
-                        print('TODO: try Ubuntu');
+                      onSelected: () {
+                        setState(() {
+                          selectedOption = SelectedOption.tryUbuntu;
+                        });
                       },
                     ),
                   ),
                   SizedBox(width: 20),
                   Expanded(
-                    child: TryOrInstallPageButton(
+                    child: TryOrInstallPageCard(
                       imageAsset: 'assets/hard-drive.png',
                       titleText: 'Install Ubuntu',
                       bodyText:
                           "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
-                      onPressed: () {
-                        print('TODO: install Ubuntu');
+                      onSelected: () {
+                        setState(() {
+                          selectedOption = SelectedOption.installUbuntu;
+                        });
                       },
                     ),
                   ),
@@ -160,7 +194,9 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
                     ),
                     OutlinedButton(
                       child: Text('Continue'),
-                      onPressed: null, // TODO
+                      onPressed: (selectedOption != SelectedOption.none)
+                          ? continueWithSelectedOption
+                          : null,
                     ),
                   ],
                 ),
