@@ -8,6 +8,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ubuntu_desktop_installer/main.dart';
+import 'package:ubuntu_desktop_installer/welcomepage.dart';
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests',
