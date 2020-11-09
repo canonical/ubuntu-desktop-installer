@@ -9,16 +9,16 @@ import 'package:subiquity_client/subiquity_client.dart';
 class TryOrInstallPageCard extends StatefulWidget {
   TryOrInstallPageCard({
     Key key,
+    this.option,
     this.imageAsset,
     this.titleText,
     this.bodyText,
-    this.onSelected,
   }) : super(key: key);
 
+  final SelectedOption option;
   final String imageAsset;
   final String titleText;
   final String bodyText;
-  final VoidCallback onSelected;
 
   @override
   _TryOrInstallPageCardState createState() => _TryOrInstallPageCardState();
@@ -31,16 +31,21 @@ class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: (hovered || selected) ? 2.0 : 1.0,
+      elevation: (hovered || selected) ? 4.0 : 1.0,
       child: InkWell(
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(children: <Widget>[
             SizedBox(height: 20),
-            Expanded(child: Image.asset(widget.imageAsset)),
+            Expanded(flex: 2, child: Image.asset(widget.imageAsset)),
             SizedBox(height: 40),
-            Expanded(child: Text(widget.titleText)),
-            SizedBox(height: 20),
+            Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  widget.titleText,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                )),
+            SizedBox(height: 10),
             Expanded(
                 child: Text(
               widget.bodyText,
@@ -50,11 +55,19 @@ class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
           ]),
         ),
         onTap: () {
-          selected = true;
-          widget.onSelected();
+          setState(() {
+            selected = true;
+          });
+          var parentState =
+              context.findAncestorStateOfType<_TryOrInstallPageState>();
+          parentState.setState(() {
+            parentState.selectedOption = widget.option;
+          });
         },
         onHover: (bool value) {
-          hovered = value;
+          setState(() {
+            hovered = value;
+          });
         },
       ),
     );
@@ -118,54 +131,43 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            SizedBox(height: 50),
             Expanded(
               child: Row(
                 children: <Widget>[
                   Expanded(
                     child: TryOrInstallPageCard(
+                      option: SelectedOption.repairUbuntu,
                       imageAsset: 'assets/repair-wrench.png',
                       titleText: 'Repair installation',
                       bodyText:
                           'Repairing will reinstall all installed software without touching documents or settings.',
-                      onSelected: () {
-                        setState(() {
-                          selectedOption = SelectedOption.repairUbuntu;
-                        });
-                      },
                     ),
                   ),
                   SizedBox(width: 20),
                   Expanded(
                     child: TryOrInstallPageCard(
+                      option: SelectedOption.tryUbuntu,
                       imageAsset: 'assets/steering-wheel.png',
                       titleText: 'Try Ubuntu',
                       bodyText:
                           'You can try Ubuntu without making any changes to your computer.',
-                      onSelected: () {
-                        setState(() {
-                          selectedOption = SelectedOption.tryUbuntu;
-                        });
-                      },
                     ),
                   ),
                   SizedBox(width: 20),
                   Expanded(
                     child: TryOrInstallPageCard(
+                      option: SelectedOption.installUbuntu,
                       imageAsset: 'assets/hard-drive.png',
                       titleText: 'Install Ubuntu',
                       bodyText:
                           "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
-                      onSelected: () {
-                        setState(() {
-                          selectedOption = SelectedOption.installUbuntu;
-                        });
-                      },
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 200),
+            SizedBox(height: 150),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
