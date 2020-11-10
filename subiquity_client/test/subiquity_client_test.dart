@@ -5,22 +5,23 @@ import 'package:subiquity_client/test/test_server.dart';
 
 void main() {
   final _test_server = TestServer();
+  final _client = SubiquityClient();
   var _socket_path;
 
   setUp(() async {
     _socket_path = await _test_server.start('examples/simple.json');
+    _client.open(_socket_path);
   });
 
   tearDown(() async {
     _test_server.stop();
+    _client.close();
   });
 
   test('simple server requests', () async {
-    final client = SubiquityClient(_socket_path);
-    expect(await client.status(), contains('"state": "INTERACTIVE"'));
-    expect(await client.keyboard(),
+    expect(await _client.status(), contains('"state": "INTERACTIVE"'));
+    expect(await _client.keyboard(),
         '{"layout": "us", "variant": "", "toggle": null}');
     // expect(await client.locale(), '"en_US"');
-    client.close();
   });
 }

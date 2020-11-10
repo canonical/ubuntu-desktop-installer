@@ -6,7 +6,7 @@ import 'package:subiquity_client/src/http_unix_client.dart';
 class SubiquityClient {
   HttpUnixClient _client;
 
-  SubiquityClient(String socket_path) {
+  void open(String socket_path) {
     _client = HttpUnixClient(socket_path);
   }
 
