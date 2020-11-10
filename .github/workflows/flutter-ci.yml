@@ -21,19 +21,17 @@ jobs:
     - name: Enable Linux desktop support
       run: flutter config --enable-linux-desktop
 
+    - name: Check for any formatting issues
+      run: flutter format --set-exit-if-changed .
+    
+    - name: Check for any analyzer issues
+      run: flutter analyze .
+    
     # subiquity_client
     
     - name: Get subiquity_client dependencies
       working-directory: ./subiquity_client
       run: flutter pub get
-    
-    - name: Check for any formatting issues in subiquity_client
-      working-directory: ./subiquity_client
-      run: flutter format --set-exit-if-changed .
-    
-    - name: Statically analyze subiquity_client for any errors
-      working-directory: ./subiquity_client
-      run: flutter analyze .
     
     - name: Run tests on subiquity_client
       working-directory: ./subiquity_client
@@ -44,14 +42,6 @@ jobs:
     - name: Get ubuntu_desktop_installer dependencies
       working-directory: ./ubuntu_desktop_installer
       run: flutter pub get
-    
-    - name: Check for any formatting issues in ubuntu_desktop_installer
-      working-directory: ./ubuntu_desktop_installer
-      run: flutter format --set-exit-if-changed .
-    
-    - name: Statically analyze ubuntu_desktop_installer for any errors
-      working-directory: ./ubuntu_desktop_installer
-      run: flutter analyze .
     
     - name: Run tests on ubuntu_desktop_installer
       working-directory: ./ubuntu_desktop_installer
