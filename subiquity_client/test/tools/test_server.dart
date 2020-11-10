@@ -6,9 +6,11 @@ import 'package:subiquity_client/src/http_unix_client.dart';
 class TestServer {
   Process _server_process;
 
-  Future<String> startTestServer(String config) async {
-    var currentPath = Directory.current.path.substring(0,
-            Directory.current.path.indexOf('ubuntu-desktop-installer') + 24) +
+  Future<String> start(String config) async {
+    var currentPath = Directory.current.path.substring(
+            0,
+            Directory.current.path.lastIndexOf('ubuntu-desktop-installer') +
+                24) +
         '/subiquity_client';
 
     final subiquity_path = currentPath + '/subiquity';
@@ -23,7 +25,11 @@ class TestServer {
           'SNAP_NAME': 'subiquity',
           'SNAP_REVISION': '',
           'SNAP_VERSION': ''
-        });
+        }).then((process) {
+      stdout.addStream(process.stdout);
+      stderr.addStream(process.stderr);
+      return process;
+    });
 
     var client = HttpUnixClient(socket_path);
     var request = Request('GET', Uri.http('localhost', 'meta/status'));
@@ -41,7 +47,7 @@ class TestServer {
     return socket_path;
   }
 
-  void stopTestServer() {
+  void stop() {
     _server_process.kill();
   }
 }
