@@ -6,8 +6,10 @@ import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
 
-class TryOrInstallPageCard extends StatefulWidget {
-  TryOrInstallPageCard({
+enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
+
+class OptionCard extends StatefulWidget {
+  OptionCard({
     Key key,
     this.option,
     this.imageAsset,
@@ -15,18 +17,26 @@ class TryOrInstallPageCard extends StatefulWidget {
     this.bodyText,
   }) : super(key: key);
 
-  final SelectedOption option;
+  final Option option;
   final String imageAsset;
   final String titleText;
   final String bodyText;
 
   @override
-  _TryOrInstallPageCardState createState() => _TryOrInstallPageCardState();
+  _OptionCardState createState() => _OptionCardState();
 }
 
-class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
+class _OptionCardState extends State<OptionCard> {
   bool selected = false;
   bool hovered = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setState(() {
+      selected = (TryOrInstallPage.of(context).option == widget.option);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,14 +65,7 @@ class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
           ]),
         ),
         onTap: () {
-          setState(() {
-            selected = true;
-          });
-          var parentState =
-              context.findAncestorStateOfType<_TryOrInstallPageState>();
-          parentState.setState(() {
-            parentState.selectedOption = widget.option;
-          });
+          TryOrInstallPage.of(context).selectOption(widget.option);
         },
         onHover: (bool value) {
           setState(() {
@@ -74,24 +77,64 @@ class _TryOrInstallPageCardState extends State<TryOrInstallPageCard> {
   }
 }
 
+class TryOrInstallPageInheritedContainer extends InheritedWidget {
+  final TryOrInstallPageState data;
+
+  TryOrInstallPageInheritedContainer({
+    Key key,
+    Widget child,
+    this.data,
+  }) : super(key: key, child: child);
+
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) => true;
+}
+
 class TryOrInstallPage extends StatefulWidget {
+  final Widget child;
+  final SubiquityClient client;
+
   const TryOrInstallPage({
     Key key,
+    this.child,
     this.client,
   }) : super(key: key);
 
-  final SubiquityClient client;
+  static TryOrInstallPageState of(BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<
+            TryOrInstallPageInheritedContainer>()
+        .data;
+  }
 
   @override
-  _TryOrInstallPageState createState() => _TryOrInstallPageState();
+  State<StatefulWidget> createState() => TryOrInstallPageState();
 }
 
-enum SelectedOption { none, repairUbuntu, tryUbuntu, installUbuntu }
-
-class _TryOrInstallPageState extends State<TryOrInstallPage> {
+class TryOrInstallPageState extends State<TryOrInstallPage> {
   TapGestureRecognizer _releaseNotesTapHandler;
+  Option option = Option.none;
 
-  SelectedOption selectedOption = SelectedOption.none;
+  void selectOption(Option option) {
+    assert(option != Option.none);
+    if (option != this.option) {
+      setState(() {
+        this.option = option;
+      });
+    }
+  }
+
+  void continueWithSelectedOption() {
+    if (option == Option.repairUbuntu) {
+      Navigator.pushNamed(context, '/repairubuntu');
+    } else if (option == Option.tryUbuntu) {
+      Navigator.pushNamed(context, '/tryubuntu');
+    } else if (option == Option.installUbuntu) {
+      Navigator.pushNamed(context, '/installubuntu');
+    } else {
+      assert(false);
+    }
+  }
 
   @override
   void initState() {
@@ -108,18 +151,6 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
     super.dispose();
   }
 
-  void continueWithSelectedOption() {
-    if (selectedOption == SelectedOption.repairUbuntu) {
-      Navigator.pushNamed(context, '/repairubuntu');
-    } else if (selectedOption == SelectedOption.tryUbuntu) {
-      Navigator.pushNamed(context, '/tryubuntu');
-    } else if (selectedOption == SelectedOption.installUbuntu) {
-      Navigator.pushNamed(context, '/installubuntu');
-    } else {
-      assert(false);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,84 +158,87 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
         title: Text('Try or install'),
         automaticallyImplyLeading: false,
       ),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 50),
-            Expanded(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TryOrInstallPageCard(
-                      option: SelectedOption.repairUbuntu,
-                      imageAsset: 'assets/repair-wrench.png',
-                      titleText: 'Repair installation',
-                      bodyText:
-                          'Repairing will reinstall all installed software without touching documents or settings.',
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: TryOrInstallPageCard(
-                      option: SelectedOption.tryUbuntu,
-                      imageAsset: 'assets/steering-wheel.png',
-                      titleText: 'Try Ubuntu',
-                      bodyText:
-                          'You can try Ubuntu without making any changes to your computer.',
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: TryOrInstallPageCard(
-                      option: SelectedOption.installUbuntu,
-                      imageAsset: 'assets/hard-drive.png',
-                      titleText: 'Install Ubuntu',
-                      bodyText:
-                          "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 150),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                RichText(
-                  text: TextSpan(
-                    style: yaruBodyText1Style.copyWith(
-                        color: yaruLightColorScheme.primaryVariant),
-                    text: 'You may wish to read the ',
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'release notes',
-                        style: TextStyle(color: Colors.blue),
-                        recognizer: _releaseNotesTapHandler,
+      body: TryOrInstallPageInheritedContainer(
+        data: this,
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 50),
+              Expanded(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.repairUbuntu,
+                        imageAsset: 'assets/repair-wrench.png',
+                        titleText: 'Repair installation',
+                        bodyText:
+                            'Repairing will reinstall all installed software without touching documents or settings.',
                       ),
-                      TextSpan(text: '.'),
-                    ],
-                  ),
-                ),
-                ButtonBar(
-                  children: <OutlinedButton>[
-                    OutlinedButton(
-                      child: Text('Go Back'),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
                     ),
-                    OutlinedButton(
-                      child: Text('Continue'),
-                      onPressed: (selectedOption != SelectedOption.none)
-                          ? continueWithSelectedOption
-                          : null,
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.tryUbuntu,
+                        imageAsset: 'assets/steering-wheel.png',
+                        titleText: 'Try Ubuntu',
+                        bodyText:
+                            'You can try Ubuntu without making any changes to your computer.',
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.installUbuntu,
+                        imageAsset: 'assets/hard-drive.png',
+                        titleText: 'Install Ubuntu',
+                        bodyText:
+                            "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(height: 150),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  RichText(
+                    text: TextSpan(
+                      style: yaruBodyText1Style.copyWith(
+                          color: yaruLightColorScheme.primaryVariant),
+                      text: 'You may wish to read the ',
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'release notes',
+                          style: TextStyle(color: Colors.blue),
+                          recognizer: _releaseNotesTapHandler,
+                        ),
+                        TextSpan(text: '.'),
+                      ],
+                    ),
+                  ),
+                  ButtonBar(
+                    children: <OutlinedButton>[
+                      OutlinedButton(
+                        child: Text('Go Back'),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      OutlinedButton(
+                        child: Text('Continue'),
+                        onPressed: (option != Option.none)
+                            ? continueWithSelectedOption
+                            : null,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
