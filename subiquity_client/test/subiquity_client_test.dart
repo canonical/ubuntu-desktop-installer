@@ -21,5 +21,6 @@ void main() {
     expect(await client.keyboard(),
         '{"layout": "us", "variant": "", "toggle": null}');
     // expect(await client.locale(), '"en_US"');
+    client.close();
   });
 }

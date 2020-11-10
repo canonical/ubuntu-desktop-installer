@@ -10,6 +10,10 @@ class SubiquityClient {
     _client = HttpUnixClient(socket_path);
   }
 
+  void close() {
+    _client.close();
+  }
+
   Future<String> status() async {
     var request = Request('GET', Uri.http('localhost', 'meta/status'));
     var response = await _client.send(request);
