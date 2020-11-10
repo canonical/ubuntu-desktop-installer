@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import 'tools/test_server.dart';
+import 'package:subiquity_client/test/test_server.dart';
 
 void main() {
   final _test_server = TestServer();

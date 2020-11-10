@@ -1,7 +1,7 @@
 library subiquity_client;
 
 import 'package:http/http.dart';
-import 'src/http_unix_client.dart';
+import 'package:subiquity_client/src/http_unix_client.dart';
 
 class SubiquityClient {
   HttpUnixClient _client;
