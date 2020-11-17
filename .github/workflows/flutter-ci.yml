@@ -10,7 +10,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     
     - uses: actions/checkout@v1
@@ -21,19 +21,20 @@ jobs:
     - name: Enable Linux desktop support
       run: flutter config --enable-linux-desktop
 
-    # subiquity_client
+    # subiquity
+
+    - name: Checkout subiquity
+      run: git submodule update --init --recursive --remote
     
+    - name: Get subiquity dependencies
+      working-directory: ./subiquity_client/subiquity
+      run: make install_deps
+
+    # subiquity_client
+
     - name: Get subiquity_client dependencies
       working-directory: ./subiquity_client
       run: flutter pub get
-    
-    - name: Check for any formatting issues in subiquity_client
-      working-directory: ./subiquity_client
-      run: flutter format --set-exit-if-changed .
-    
-    - name: Statically analyze subiquity_client for any errors
-      working-directory: ./subiquity_client
-      run: flutter analyze .
     
     - name: Run tests on subiquity_client
       working-directory: ./subiquity_client
@@ -45,14 +46,14 @@ jobs:
       working-directory: ./ubuntu_desktop_installer
       run: flutter pub get
     
-    - name: Check for any formatting issues in ubuntu_desktop_installer
-      working-directory: ./ubuntu_desktop_installer
-      run: flutter format --set-exit-if-changed .
-    
-    - name: Statically analyze ubuntu_desktop_installer for any errors
-      working-directory: ./ubuntu_desktop_installer
-      run: flutter analyze .
-    
     - name: Run tests on ubuntu_desktop_installer
       working-directory: ./ubuntu_desktop_installer
       run: flutter test
+
+    # general
+
+    - name: Check for any formatting issues
+      run: flutter format --set-exit-if-changed .
+    
+    - name: Check for any analyzer issues
+      run: flutter analyze .

@@ -1,9 +1,39 @@
 library subiquity_client;
 
 import 'dart:ui';
+import 'package:http/http.dart';
+import 'package:subiquity_client/src/http_unix_client.dart';
 import 'package:tuple/tuple.dart';
 
 class SubiquityClient {
+  HttpUnixClient _client;
+
+  void open(String socket_path) {
+    _client = HttpUnixClient(socket_path);
+  }
+
+  void close() {
+    _client.close();
+  }
+
+  Future<String> status() async {
+    var request = Request('GET', Uri.http('localhost', 'meta/status'));
+    var response = await _client.send(request);
+    return response.stream.bytesToString();
+  }
+
+  Future<String> keyboard() async {
+    var request = Request('GET', Uri.http('localhost', 'keyboard'));
+    var response = await _client.send(request);
+    return response.stream.bytesToString();
+  }
+
+  Future<String> locale() async {
+    var request = Request('GET', Uri.http('localhost', 'locale'));
+    var response = await _client.send(request);
+    return response.stream.bytesToString();
+  }
+
   // TODO: parse languagelist instead of a hardcoded list
   final languagelist = [
     Tuple2<Locale, String>(Locale('en', 'US'), 'English'),

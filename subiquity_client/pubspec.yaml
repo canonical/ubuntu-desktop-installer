@@ -1,17 +1,16 @@
 name: subiquity_client
 description: Subiquity Client
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/canonical/ubuntu-desktop-installer
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   tuple:
+  http: ^0.12.2
 
 dev_dependencies:
   pedantic: ^1.9.0
