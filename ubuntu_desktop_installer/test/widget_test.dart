@@ -15,7 +15,7 @@ void main() {
       (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(UbuntuDesktopInstallerApp());
-
+    await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });
 }
