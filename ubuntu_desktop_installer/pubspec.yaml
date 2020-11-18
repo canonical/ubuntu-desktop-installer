@@ -28,7 +28,7 @@ dependencies:
   intl:
   intl_translation:
   url_launcher:
-  yaru: ">=0.0.0-dev.4"
+  yaru: ">=0.0.0-dev.5"
   subiquity_client:
     path: ../subiquity_client
 
