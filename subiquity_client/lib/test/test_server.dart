@@ -35,12 +35,12 @@ class TestServer {
     var request = Request('GET', Uri.http('localhost', 'meta/status'));
 
     // allow 10s maximum for the server to start responding
-    for (var i = 0; i < 20; ++i) {
+    for (var i = 0; i < 10; ++i) {
       try {
         await client.send(request);
         break;
       } catch (e) {
-        sleep(Duration(milliseconds: 500));
+        sleep(Duration(seconds: 1));
       }
     }
 
