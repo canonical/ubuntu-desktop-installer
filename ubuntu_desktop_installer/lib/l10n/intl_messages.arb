@@ -1,7 +1,7 @@
 {
-  "@@last_modified": "2020-11-18T19:16:18.069988",
-  "Welcome": "Welcome",
-  "@Welcome": {
+  "@@last_modified": "2020-11-18T19:32:24.034588",
+  "Ubuntu Desktop Installer": "Ubuntu Desktop Installer",
+  "@Ubuntu Desktop Installer": {
     "type": "text",
     "placeholders": {}
   },
@@ -12,6 +12,11 @@
   },
   "Continue": "Continue",
   "@Continue": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Welcome": "Welcome",
+  "@Welcome": {
     "type": "text",
     "placeholders": {}
   }

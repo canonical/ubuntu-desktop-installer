@@ -26,6 +26,8 @@ class UbuntuLocalizations {
   static const LocalizationsDelegate<UbuntuLocalizations> delegate =
       _UbuntuLocalizationsDelegate();
 
+  String get appTitle => Intl.message('Ubuntu Desktop Installer');
+
   String get goBackButtonText => Intl.message('Go Back');
   String get continueButtonText => Intl.message('Continue');
 }

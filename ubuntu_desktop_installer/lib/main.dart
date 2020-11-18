@@ -16,7 +16,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ubuntu Desktop Installer',
+      onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
       theme: yaruLightTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [

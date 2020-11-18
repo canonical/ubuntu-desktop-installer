@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "Continue" : MessageLookupByLibrary.simpleMessage("Continue"),
     "Go Back" : MessageLookupByLibrary.simpleMessage("Go Back"),
+    "Ubuntu Desktop Installer" : MessageLookupByLibrary.simpleMessage("Ubuntu Desktop Installer"),
     "Welcome" : MessageLookupByLibrary.simpleMessage("Welcome")
   };
 }
