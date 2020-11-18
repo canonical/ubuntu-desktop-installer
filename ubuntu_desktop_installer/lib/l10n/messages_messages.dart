@@ -20,10 +20,11 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'messages';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function> {
-    "Continue" : MessageLookupByLibrary.simpleMessage("Continue"),
-    "Go Back" : MessageLookupByLibrary.simpleMessage("Go Back"),
-    "Ubuntu Desktop Installer" : MessageLookupByLibrary.simpleMessage("Ubuntu Desktop Installer"),
-    "Welcome" : MessageLookupByLibrary.simpleMessage("Welcome")
-  };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+        "Go Back": MessageLookupByLibrary.simpleMessage("Go Back"),
+        "Ubuntu Desktop Installer":
+            MessageLookupByLibrary.simpleMessage("Ubuntu Desktop Installer"),
+        "Welcome": MessageLookupByLibrary.simpleMessage("Welcome")
+      };
 }
