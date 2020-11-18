@@ -27,7 +27,7 @@ void main() {
     expect(kb.toggle, null);
 
     expect(await _client.proxy(), '');
-    expect(await _client.mirror(), endsWith('.archive.ubuntu.com/ubuntu'));
+    expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
 
     var id = await _client.identity();
     expect(id.realname, '');
