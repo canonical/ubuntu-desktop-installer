@@ -6,6 +6,8 @@ import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
 
+import 'i18n.dart';
+
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
 class OptionCard extends StatefulWidget {
@@ -222,13 +224,15 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                   ButtonBar(
                     children: <OutlinedButton>[
                       OutlinedButton(
-                        child: Text('Go Back'),
+                        child: Text(
+                            UbuntuLocalizations.of(context).goBackButtonText),
                         onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
                       OutlinedButton(
-                        child: Text('Continue'),
+                        child: Text(
+                            UbuntuLocalizations.of(context).continueButtonText),
                         onPressed: (option != Option.none)
                             ? continueWithSelectedOption
                             : null,

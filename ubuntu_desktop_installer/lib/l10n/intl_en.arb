@@ -1,0 +1,18 @@
+{
+  "@@last_modified": "2020-11-18T19:16:18.069988",
+  "Welcome": "Welcome",
+  "@Welcome": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Go Back": "Go Back",
+  "@Go Back": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Continue": "Continue",
+  "@Continue": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

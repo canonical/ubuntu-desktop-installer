@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:intl/intl.dart';
+import 'package:ubuntu_desktop_installer/i18n.dart';
 import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
@@ -14,6 +16,8 @@ class WelcomePage extends StatefulWidget {
 
   @override
   _WelcomePageState createState() => _WelcomePageState();
+
+  String get title => Intl.message('Welcome');
 }
 
 class _WelcomePageState extends State<WelcomePage> {
@@ -23,7 +27,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome'),
+        title: Text(widget.title),
       ),
       body: Container(
         padding: const EdgeInsets.all(20),
@@ -50,6 +54,8 @@ class _WelcomePageState extends State<WelcomePage> {
                           onTap: () {
                             setState(() {
                               _selectedLanguageIndex = index;
+                              UbuntuLocalizations.load(
+                                  widget.client.languagelist[index].item1);
                             });
                           },
                         );
@@ -63,11 +69,12 @@ class _WelcomePageState extends State<WelcomePage> {
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
-                  child: Text('Go Back'),
+                  child: Text(UbuntuLocalizations.of(context).goBackButtonText),
                   onPressed: null,
                 ),
                 OutlinedButton(
-                  child: Text('Continue'),
+                  child:
+                      Text(UbuntuLocalizations.of(context).continueButtonText),
                   onPressed: () {
                     Navigator.pushNamed(context, '/tryorinstall');
                   },
