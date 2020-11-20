@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-11-20T16:59:24.315866",
+  "@@last_modified": "2020-11-20T17:25:14.036182",
   "Ubuntu Desktop Installer": "Ubuntu Desktop Installer",
   "@Ubuntu Desktop Installer": {
     "type": "text",
@@ -12,6 +12,41 @@
   },
   "Continue": "Continue",
   "@Continue": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Try or install": "Try or install",
+  "@Try or install": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Repair installation": "Repair installation",
+  "@Repair installation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Repairing will reinstall all installed software without touching documents or settings.": "Repairing will reinstall all installed software without touching documents or settings.",
+  "@Repairing will reinstall all installed software without touching documents or settings.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Try Ubuntu": "Try Ubuntu",
+  "@Try Ubuntu": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "You can try Ubuntu without making any changes to your computer.": "You can try Ubuntu without making any changes to your computer.",
+  "@You can try Ubuntu without making any changes to your computer.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Install Ubuntu": "Install Ubuntu",
+  "@Install Ubuntu": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.": "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+  "@Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.": {
     "type": "text",
     "placeholders": {}
   },

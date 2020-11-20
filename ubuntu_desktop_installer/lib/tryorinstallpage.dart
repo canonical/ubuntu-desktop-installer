@@ -113,6 +113,20 @@ class TryOrInstallPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => TryOrInstallPageState();
 
+  String get title => Intl.message('Try or install');
+
+  String get repairTitle => Intl.message('Repair installation');
+  String get repairDescription => Intl.message(
+      'Repairing will reinstall all installed software without touching documents or settings.');
+
+  String get tryTitle => Intl.message('Try Ubuntu');
+  String get tryDescription => Intl.message(
+      'You can try Ubuntu without making any changes to your computer.');
+
+  String get installTitle => Intl.message('Install Ubuntu');
+  String get installDescription => Intl.message(
+      "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.");
+
   String releaseNotesLabel(url) => Intl.message(
         'You may wish to read the <a href="$url">release notes</a>.',
         name: 'releaseNotesLabel',
@@ -148,7 +162,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Try or install'),
+        title: Text(widget.title),
         automaticallyImplyLeading: false,
       ),
       body: TryOrInstallPageInheritedContainer(
@@ -165,9 +179,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                       child: OptionCard(
                         option: Option.repairUbuntu,
                         imageAsset: 'assets/repair-wrench.png',
-                        titleText: 'Repair installation',
-                        bodyText:
-                            'Repairing will reinstall all installed software without touching documents or settings.',
+                        titleText: widget.repairTitle,
+                        bodyText: widget.repairDescription,
                       ),
                     ),
                     SizedBox(width: 20),
@@ -175,9 +188,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                       child: OptionCard(
                         option: Option.tryUbuntu,
                         imageAsset: 'assets/steering-wheel.png',
-                        titleText: 'Try Ubuntu',
-                        bodyText:
-                            'You can try Ubuntu without making any changes to your computer.',
+                        titleText: widget.tryTitle,
+                        bodyText: widget.tryDescription,
                       ),
                     ),
                     SizedBox(width: 20),
@@ -185,9 +197,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                       child: OptionCard(
                         option: Option.installUbuntu,
                         imageAsset: 'assets/hard-drive.png',
-                        titleText: 'Install Ubuntu',
-                        bodyText:
-                            "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+                        titleText: widget.installTitle,
+                        bodyText: widget.installDescription,
                       ),
                     ),
                   ],

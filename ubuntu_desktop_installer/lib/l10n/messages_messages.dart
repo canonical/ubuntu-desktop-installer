@@ -26,9 +26,25 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
         "Go Back": MessageLookupByLibrary.simpleMessage("Go Back"),
+        "Install Ubuntu":
+            MessageLookupByLibrary.simpleMessage("Install Ubuntu"),
+        "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.":
+            MessageLookupByLibrary.simpleMessage(
+                "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long."),
+        "Repair installation":
+            MessageLookupByLibrary.simpleMessage("Repair installation"),
+        "Repairing will reinstall all installed software without touching documents or settings.":
+            MessageLookupByLibrary.simpleMessage(
+                "Repairing will reinstall all installed software without touching documents or settings."),
+        "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Try Ubuntu"),
+        "Try or install":
+            MessageLookupByLibrary.simpleMessage("Try or install"),
         "Ubuntu Desktop Installer":
             MessageLookupByLibrary.simpleMessage("Ubuntu Desktop Installer"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "You can try Ubuntu without making any changes to your computer.":
+            MessageLookupByLibrary.simpleMessage(
+                "You can try Ubuntu without making any changes to your computer."),
         "releaseNotesLabel": m0
       };
 }
