@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
@@ -111,6 +112,12 @@ class TryOrInstallPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => TryOrInstallPageState();
+
+  String releaseNotesLabel(url) => Intl.message(
+        'You may wish to read the <a href="$url">release notes</a>.',
+        name: 'releaseNotesLabel',
+        args: [url],
+      );
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
@@ -193,8 +200,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                   Flexible(
                     fit: FlexFit.tight,
                     child: Html(
-                      data:
-                          'You may wish to read the <a href="${widget.client.releaseNotesURL}">release notes</a>.',
+                      data: widget
+                          .releaseNotesLabel(widget.client.releaseNotesURL),
                       onLinkTap: (url) => launch(url),
                     ),
                   ),
