@@ -27,7 +27,8 @@ dependencies:
     sdk: flutter
   intl:
   intl_translation:
-  url_launcher:
+  flutter_html: ^1.0.0
+  url_launcher: ^5.5.0
   yaru: ">=0.0.0-dev.5"
   subiquity_client:
     path: ../subiquity_client

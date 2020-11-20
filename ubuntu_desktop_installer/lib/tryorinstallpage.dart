@@ -1,6 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
@@ -114,7 +114,6 @@ class TryOrInstallPage extends StatefulWidget {
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
-  TapGestureRecognizer _releaseNotesTapHandler;
   Option option = Option.none;
 
   void selectOption(Option option) {
@@ -136,21 +135,6 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     } else {
       assert(false);
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _releaseNotesTapHandler = TapGestureRecognizer()
-      ..onTap = () {
-        launch(widget.client.releaseNotesURL);
-      };
-  }
-
-  @override
-  void dispose() {
-    _releaseNotesTapHandler.dispose();
-    super.dispose();
   }
 
   @override
@@ -206,19 +190,12 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RichText(
-                    text: TextSpan(
-                      style: yaruBodyText1Style.copyWith(
-                          color: yaruLightColorScheme.primaryVariant),
-                      text: 'You may wish to read the ',
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'release notes',
-                          style: TextStyle(color: Colors.blue),
-                          recognizer: _releaseNotesTapHandler,
-                        ),
-                        TextSpan(text: '.'),
-                      ],
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Html(
+                      data:
+                          'You may wish to read the <a href="${widget.client.releaseNotesURL}">release notes</a>.',
+                      onLinkTap: (url) => launch(url),
                     ),
                   ),
                   ButtonBar(
