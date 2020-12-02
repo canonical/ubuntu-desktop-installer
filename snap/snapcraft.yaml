@@ -1,0 +1,141 @@
+name: ubuntu-desktop-installer
+version: git
+summary: Ubuntu Desktop Installer
+description: |
+  Ubuntu Desktop Installer
+grade: stable
+confinement: classic
+base: core20
+
+architectures:
+  - build-on: amd64
+
+apps:
+  ubuntu-desktop-installer:
+    command: bin/ubuntu_desktop_installer
+    command-chain: [bin/desktop-launch]
+    environment:
+      PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
+      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/:$SNAP/lib
+
+parts:
+  desktop-gtk3:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-type: git
+    source-subdir: gtk
+    plugin: make
+    make-parameters: ["FLAVOR=gtk3"]
+    build-packages:
+      - libgtk-3-dev
+    stage-packages:
+      - libxkbcommon0  # XKB_CONFIG_ROOT
+      - ttf-ubuntu-font-family
+      - dmz-cursor-theme
+      - light-themes
+      - adwaita-icon-theme
+      - gnome-themes-standard
+      - shared-mime-info
+      - libgtk-3-0
+      - libgdk-pixbuf2.0-0
+      - libglib2.0-bin
+      - libgtk-3-bin
+      - unity-gtk3-module
+      - libappindicator3-1
+      - locales-all
+      - xdg-user-dirs
+      - ibus-gtk3
+      - libibus-1.0-5
+      - coreutils
+      - bash
+      - sed
+    override-build: |
+      snapcraftctl build
+      sed -i.bak -e 's|\/bin\/bash|\/snap\/ubuntu-desktop-installer\/current\/bin\/bash|g' $SNAPCRAFT_PART_INSTALL/bin/desktop-launch
+
+  ubuntu-desktop-installer:
+    after: [ desktop-gtk3 ]
+    source: .
+    plugin: nil
+    build-environment:
+      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
+      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
+      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
+    override-build: |
+      set -eux
+      cd ubuntu_desktop_installer
+      flutter channel master
+      flutter upgrade
+      flutter config --enable-linux-desktop
+      flutter doctor
+      flutter pub get
+      flutter build linux --release -v
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp -r build/linux/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+    build-snaps:
+      - flutter/latest/stable
+
+  libraries:
+    plugin: nil
+    stage-packages:
+      - libatk1.0-0
+      - libcairo-gobject2
+      - libcairo2
+      - libegl-mesa0
+      - libegl1
+      - libgtk-3-0
+      - libgdk-pixbuf2.0-0
+      - libpango-1.0-0
+      - libpangocairo-1.0-0
+      - libpng16-16
+      - libwayland-egl1
+      - libx11-6
+      - libdatrie1
+      - libdrm2
+      - libgbm1
+      - libglapi-mesa
+      - libgraphite2-3
+      - libxshmfence1
+      - libgl1-mesa-dri
+      - libllvm10
+      - libpciaccess0
+      - libvulkan1
+      - shared-mime-info 
+      - libgdk-pixbuf2.0-bin 
+    prime:
+      - usr/lib/*/libEGL*.so.*
+      - usr/lib/*/libGL*.so.*
+      - usr/lib/*/libX*.so.*
+      - usr/lib/*/liba*.so.*
+      - usr/lib/*/libcairo*.so.*
+      - usr/lib/*/libe*.so.*
+      - usr/lib/*/libf*.so.*
+      - usr/lib/*/libgdk*.so.*
+      - usr/lib/*/libgtk*.so.*
+      - usr/lib/*/libharfbuzz*.so.*
+      - usr/lib/*/libpango*.so.*
+      - usr/lib/*/libpixman*.so.*
+      - usr/lib/*/libpng*.so.*
+      - usr/lib/*/libthai*.so.*
+      - usr/lib/*/libwayland*.so.*
+      - usr/lib/*/libxcb*.so.*
+      - usr/lib/*/libxkb*.so.*
+      - usr/lib/*/libdatrie*.so.*
+      - usr/lib/*/libdrm*.so.*
+      - usr/lib/*/libgbm*.so.*
+      - usr/lib/*/libglapi*.so.*
+      - usr/lib/*/libgraphite2*.so.*
+      - usr/lib/*/libxshmfence*.so.*
+      - usr/lib/*/libLLVM-10.so.*
+      - usr/lib/*/libpciaccess*.so.*
+      - usr/lib/*/libsensors*.so.*
+      - usr/lib/*/libvulkan*.so.*
+      - usr/lib/*/dri
+      - usr/share/glvnd/egl_vendor.d
+      - usr/share/drirc.d
+      - usr/lib/*/gdk-pixbuf-2.0
+      - usr/lib/*/
+      - usr/bin/update-mime-database
+      - usr/bin/gdk*
+      - usr/share/mime
