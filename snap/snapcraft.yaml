@@ -18,6 +18,7 @@ apps:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
       LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/:$SNAP/lib
+      LIBGL_ALWAYS_SOFTWARE: 1 # force software rendering for now
 
 parts:
   desktop-gtk3:
