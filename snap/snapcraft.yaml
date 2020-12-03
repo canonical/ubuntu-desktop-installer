@@ -13,7 +13,6 @@ architectures:
 apps:
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
-    command-chain: [bin/desktop-launch]
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
@@ -21,41 +20,7 @@ apps:
       LIBGL_ALWAYS_SOFTWARE: 1 # force software rendering for now
 
 parts:
-  desktop-gtk3:
-    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
-    source-type: git
-    source-subdir: gtk
-    plugin: make
-    make-parameters: ["FLAVOR=gtk3"]
-    build-packages:
-      - libgtk-3-dev
-    stage-packages:
-      - libxkbcommon0  # XKB_CONFIG_ROOT
-      - ttf-ubuntu-font-family
-      - dmz-cursor-theme
-      - light-themes
-      - adwaita-icon-theme
-      - gnome-themes-standard
-      - shared-mime-info
-      - libgtk-3-0
-      - libgdk-pixbuf2.0-0
-      - libglib2.0-bin
-      - libgtk-3-bin
-      - unity-gtk3-module
-      - libappindicator3-1
-      - locales-all
-      - xdg-user-dirs
-      - ibus-gtk3
-      - libibus-1.0-5
-      - coreutils
-      - bash
-      - sed
-    override-build: |
-      snapcraftctl build
-      sed -i.bak -e 's|\/bin\/bash|\/snap\/ubuntu-desktop-installer\/current\/bin\/bash|g' $SNAPCRAFT_PART_INSTALL/bin/desktop-launch
-
   ubuntu-desktop-installer:
-    after: [ desktop-gtk3 ]
     source: .
     plugin: nil
     build-environment:
@@ -86,7 +51,6 @@ parts:
       - libegl-mesa0
       - libegl1
       - libgtk-3-0
-      - libgdk-pixbuf2.0-0
       - libpango-1.0-0
       - libpangocairo-1.0-0
       - libpng16-16
@@ -103,7 +67,6 @@ parts:
       - libpciaccess0
       - libvulkan1
       - shared-mime-info 
-      - libgdk-pixbuf2.0-bin 
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
