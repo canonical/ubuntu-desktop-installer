@@ -2,6 +2,35 @@
 
 # ubuntu-desktop-installer
 
+## Checkout
+
+Grab the source:
+```
+git clone https://github.com/canonical/ubuntu-desktop-installer.git
+cd ubuntu-desktop-installer
+git submodule update --init --recursive --remote
+git submodule foreach git checkout main
+git submodule foreach git pull
+```
+
+Install and configure Flutter:
+```
+snap install flutter --classic
+flutter channel dev
+flutter upgrade 
+flutter config --enable-linux-desktop
+```
+
+Install dependencies:
+```
+cd ubuntu_desktop_installer
+flutter pub get
+cd ../subiquity_client
+flutter pub get
+cd subiquity
+make install_deps
+```
+
 ## Translations
 
 Translations for the Ubuntu desktop installer are managed with [the Dart `intl` tools](https://flutter.dev/docs/development/accessibility-and-localization/internationalization#dart-tools).
