@@ -88,24 +88,54 @@ class SubiquityClient {
     var status = ApplicationStatus();
 
     switch (status_json['state']) {
-      case 'STARTING':
+      case 'STARTING_UP':
         {
-          status.state = ApplicationState.STARTING;
+          status.state = ApplicationState.STARTING_UP;
         }
         break;
-      case 'EARLY_COMMANDS':
+      case 'WAITING':
         {
-          status.state = ApplicationState.EARLY_COMMANDS;
+          status.state = ApplicationState.WAITING;
         }
         break;
-      case 'INTERACTIVE':
+      case 'NEEDS_CONFIRMATION':
         {
-          status.state = ApplicationState.INTERACTIVE;
+          status.state = ApplicationState.NEEDS_CONFIRMATION;
         }
         break;
-      case 'NON_INTERACTIVE':
+      case 'RUNNING':
         {
-          status.state = ApplicationState.NON_INTERACTIVE;
+          status.state = ApplicationState.RUNNING;
+        }
+        break;
+      case 'POST_WAIT':
+        {
+          status.state = ApplicationState.POST_WAIT;
+        }
+        break;
+      case 'POST_RUNNING':
+        {
+          status.state = ApplicationState.POST_RUNNING;
+        }
+        break;
+      case 'UU_RUNNING':
+        {
+          status.state = ApplicationState.UU_RUNNING;
+        }
+        break;
+      case 'UU_CANCELLING':
+        {
+          status.state = ApplicationState.UU_CANCELLING;
+        }
+        break;
+      case 'DONE':
+        {
+          status.state = ApplicationState.DONE;
+        }
+        break;
+      case 'ERROR':
+        {
+          status.state = ApplicationState.ERROR;
         }
         break;
       default:
@@ -115,9 +145,14 @@ class SubiquityClient {
         break;
     }
 
-    status.early_commands_syslog_id = status_json['early_commands_syslog_id'];
+    status.confirming_tty = status_json['confirming_tty'];
+    status.cloud_init_ok = status_json['cloud_init_ok'];
+    status.interactive = status_json['interactive'];
+    status.echo_syslog_id = status_json['echo_syslog_id'];
     status.log_syslog_id = status_json['log_syslog_id'];
     status.event_syslog_id = status_json['event_syslog_id'];
+
+    ///! status.error =
 
     return status;
   }

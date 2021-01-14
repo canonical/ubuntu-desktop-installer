@@ -41,8 +41,11 @@ void main() {
     expect(ssh.authorized_keys, []);
 
     var status = await _client.status();
-    expect(status.state, ApplicationState.INTERACTIVE);
-    expect(status.early_commands_syslog_id, startsWith('subiquity_commands.'));
+    expect(status.state, ApplicationState.WAITING);
+    expect(status.confirming_tty, '');
+    expect(status.cloud_init_ok, true);
+    expect(status.interactive, true);
+    expect(status.echo_syslog_id, startsWith('subiquity_echo.'));
     expect(status.log_syslog_id, startsWith('subiquity_log.'));
     expect(status.event_syslog_id, startsWith('subiquity_event.'));
 
