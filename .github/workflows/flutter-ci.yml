@@ -28,7 +28,7 @@ jobs:
     
     - name: Get subiquity dependencies
       working-directory: ./subiquity_client/subiquity
-      run: make install_deps
+      run: sudo apt update && make install_deps
 
     # subiquity_client
 
