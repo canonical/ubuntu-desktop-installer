@@ -15,6 +15,11 @@
     "type": "text",
     "placeholders": {}
   },
+  "Restart": "Redémarrer",
+  "@Restart": {
+    "type": "text",
+    "placeholders": {}
+  },
   "Try or install": "Essayer ou installer",
   "@Try or install": {
     "type": "text",
@@ -52,6 +57,23 @@
   },
   "releaseNotesLabel": "Vous pouvez éventuellement lire les <a href=\"{url}\">notes de publication</a>.",
   "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "Turn off RST": "Désactiver RST",
+  "@Turn off RST": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
+  "@This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "instructions": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
+  "@instructions": {
     "type": "text",
     "placeholders": {
       "url": {}

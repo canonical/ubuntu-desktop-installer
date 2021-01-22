@@ -6,6 +6,7 @@ import 'package:yaru/yaru.dart';
 import 'i18n.dart';
 import 'welcomepage.dart';
 import 'tryorinstallpage.dart';
+import 'turnoffrstpage.dart';
 
 void main() {
   runApp(UbuntuDesktopInstallerApp());
@@ -30,6 +31,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/tryorinstall': (BuildContext context) =>
             TryOrInstallPage(client: _client),
+        '/turnoffrst': (BuildContext context) => TurnOffRSTPage(),
       },
     );
   }

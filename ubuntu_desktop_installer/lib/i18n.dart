@@ -30,6 +30,7 @@ class UbuntuLocalizations {
 
   String get goBackButtonText => Intl.message('Go Back');
   String get continueButtonText => Intl.message('Continue');
+  String get restartButtonText => Intl.message('Restart');
 }
 
 class _UbuntuLocalizationsDelegate

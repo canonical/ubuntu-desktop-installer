@@ -20,6 +20,9 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
   static String m0(url) =>
+      "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://${url}\">${url}</a>";
+
+  static String m1(url) =>
       "Vous pouvez éventuellement lire les <a href=\"${url}\">notes de publication</a>.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -36,15 +39,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "Repairing will reinstall all installed software without touching documents or settings.":
             MessageLookupByLibrary.simpleMessage(
                 "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres."),
+        "Restart": MessageLookupByLibrary.simpleMessage("Redémarrer"),
+        "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.":
+            MessageLookupByLibrary.simpleMessage(
+                "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu."),
         "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Essayer Ubuntu"),
         "Try or install":
             MessageLookupByLibrary.simpleMessage("Essayer ou installer"),
+        "Turn off RST": MessageLookupByLibrary.simpleMessage("Désactiver RST"),
         "Ubuntu Desktop Installer": MessageLookupByLibrary.simpleMessage(
             "Programme d’installation du bureau Ubuntu"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Bienvenue"),
         "You can try Ubuntu without making any changes to your computer.":
             MessageLookupByLibrary.simpleMessage(
                 "Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur."),
-        "releaseNotesLabel": m0
+        "instructions": m0,
+        "releaseNotesLabel": m1
       };
 }

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-11-20T17:25:14.036182",
+  "@@last_modified": "2021-01-22T21:23:53.258261",
   "Ubuntu Desktop Installer": "Ubuntu Desktop Installer",
   "@Ubuntu Desktop Installer": {
     "type": "text",
@@ -12,6 +12,11 @@
   },
   "Continue": "Continue",
   "@Continue": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Restart": "Restart",
+  "@Restart": {
     "type": "text",
     "placeholders": {}
   },
@@ -52,6 +57,23 @@
   },
   "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
   "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "Turn off RST": "Turn off RST",
+  "@Turn off RST": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
+  "@This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "instructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructions": {
     "type": "text",
     "placeholders": {
       "url": {}
