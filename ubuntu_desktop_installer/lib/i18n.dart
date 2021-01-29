@@ -21,6 +21,9 @@ class UbuntuLocalizations {
     return Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
   }
 
+  // XXX: update this list when adding new translations
+  static final supportedLocales = ['en', 'fr'];
+
   final String localeName;
 
   static const LocalizationsDelegate<UbuntuLocalizations> delegate =
@@ -37,9 +40,9 @@ class _UbuntuLocalizationsDelegate
     extends LocalizationsDelegate<UbuntuLocalizations> {
   const _UbuntuLocalizationsDelegate();
 
-  // FIXME: use supportedLocales list
   @override
-  bool isSupported(Locale locale) => ['en', 'fr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      UbuntuLocalizations.supportedLocales.contains(locale.languageCode);
 
   @override
   Future<UbuntuLocalizations> load(Locale locale) =>

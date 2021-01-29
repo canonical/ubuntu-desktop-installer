@@ -154,7 +154,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     } else if (option == Option.installUbuntu) {
       // XXX: detect we need to show the "Turn off RST" page,
       // or if we can proceed directly to installation
-      Navigator.pushNamed(context, '/turnoffrst');
+      //Navigator.pushNamed(context, '/turnoffrst');
+      Navigator.pushNamed(context, '/keyboardlayout');
     } else {
       assert(false);
     }

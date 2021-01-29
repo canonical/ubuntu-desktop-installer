@@ -2,6 +2,7 @@ library subiquity_client;
 
 import 'dart:convert';
 import 'dart:ui';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart';
 import 'package:subiquity_client/src/http_unix_client.dart';
 import 'package:subiquity_client/src/types.dart';
@@ -175,40 +176,78 @@ class SubiquityClient {
     return response.stream.bytesToString();
   }
 
-  // TODO: parse languagelist instead of a hardcoded list
-  final languagelist = [
-    Tuple2<Locale, String>(const Locale('en', 'US'), 'English'),
-    Tuple2<Locale, String>(const Locale('en', 'GB'), 'English (UK)'),
-    Tuple2<Locale, String>(const Locale('kab'), 'Tamaziɣt Taqbaylit'),
-    Tuple2<Locale, String>(const Locale('ca'), 'Català'),
-    Tuple2<Locale, String>(
-        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'),
-        '中文(简体)'),
-    Tuple2<Locale, String>(const Locale('hr'), 'Hrvatski'),
-    Tuple2<Locale, String>(const Locale('cs'), 'Čeština'),
-    Tuple2<Locale, String>(const Locale('ast'), 'Asturianu'),
-    Tuple2<Locale, String>(const Locale('be'), 'Беларуская'),
-    Tuple2<Locale, String>(const Locale('nl'), 'Nederlands'),
-    Tuple2<Locale, String>(const Locale('fi'), 'Suomi'),
-    Tuple2<Locale, String>(const Locale('fr'), 'Français'),
-    Tuple2<Locale, String>(const Locale('de'), 'Deutsch'),
-    Tuple2<Locale, String>(const Locale('el'), 'Ελληνικά'),
-    Tuple2<Locale, String>(const Locale('he'), 'עברית'),
-    Tuple2<Locale, String>(const Locale('hu'), 'Magyar'),
-    Tuple2<Locale, String>(const Locale('id'), 'Bahasa Indonesia'),
-    Tuple2<Locale, String>(const Locale('lv'), 'Latviski'),
-    Tuple2<Locale, String>(const Locale('lt'), 'Lietuviškai'),
-    Tuple2<Locale, String>(const Locale('pl'), 'Polski'),
-    Tuple2<Locale, String>(const Locale('ru'), 'Русский'),
-    Tuple2<Locale, String>(const Locale('sr'), 'Српски'),
-    Tuple2<Locale, String>(const Locale('es'), 'Español'),
-    Tuple2<Locale, String>(const Locale('sv'), 'Svenska'),
-    Tuple2<Locale, String>(const Locale('bo'), 'བོད་ཡིག'),
-    Tuple2<Locale, String>(const Locale('uk'), 'Українська'),
-    Tuple2<Locale, String>(const Locale('nb'), 'Norsk bokmål'),
-    Tuple2<Locale, String>(const Locale('oc'), 'Galés'),
-  ];
+  List<Tuple2<Locale, String>> languagelist = [];
+
+  Future<void> fetchLanguageList(String assetName) async {
+    languagelist.clear();
+    return rootBundle.loadStructuredData(assetName, (String data) async {
+      return data;
+    }).then((String data) {
+      LineSplitter.split(data).forEach((line) {
+        final tokens = line.split(':');
+        final codes = tokens[1].split('_');
+        languagelist.add(Tuple2(
+            codes.length == 1 ? Locale(codes[0]) : Locale(codes[0], codes[1]),
+            tokens[2]));
+      });
+      languagelist.sort((a, b) => a.item2.compareTo(b.item2));
+    });
+  }
 
   // TODO: un-hardcode
   final releaseNotesURL = 'https://wiki.ubuntu.com/GroovyGorilla/ReleaseNotes';
+
+  Set<String> keyboardlangs = {};
+  var keyboardlayoutlist = [];
+  Map<String, List<Tuple2<String, String>>> keyboardvariantlist = {};
+
+  Future<void> fetchKeyboardLayouts(String assetName, Locale locale) async {
+    final langtag = locale.toLanguageTag().replaceAll('-', '_');
+    print('fetching keyboard layouts for ' + langtag);
+    final firstpass = keyboardlangs.isEmpty;
+    var matchinglang = 'C';
+    keyboardlayoutlist.clear();
+    keyboardvariantlist.clear();
+    // Copied from subiquity's KeyboardList class
+    return rootBundle.loadStructuredData(assetName, (String data) async {
+      return LineSplitter.split(data);
+    }).then((Iterable<String> lines) {
+      if (firstpass) {
+        lines.forEach((line) {
+          keyboardlangs.add(line.split('*')[0]);
+        });
+      }
+      if (keyboardlangs.contains(langtag)) {
+        matchinglang = langtag;
+      } else {
+        final langonlytag = langtag.split('_')[0];
+        if (keyboardlangs.contains(langonlytag)) {
+          matchinglang = langonlytag;
+        }
+      }
+      return lines;
+    }).then((Iterable<String> lines) {
+      lines.forEach((line) {
+        final tokens = line.split('*');
+        if (tokens[0] == matchinglang) {
+          var element = tokens[1];
+          var name = tokens[2];
+          if (element == 'layout') {
+            keyboardlayoutlist.add(Tuple2(name, tokens[3]));
+          } else if (element == 'variant') {
+            final value = Tuple2<String, String>(tokens[3], tokens[4]);
+            if (keyboardvariantlist.containsKey(name)) {
+              keyboardvariantlist[name].add(value);
+            } else {
+              keyboardvariantlist[name] = [value];
+            }
+          }
+        }
+      });
+      keyboardlayoutlist.sort((a, b) => a.item2.compareTo(b.item2));
+      keyboardvariantlist.forEach((key, value) {
+        value.sort((a, b) => a.item2.compareTo(b.item2));
+      });
+    });
+  }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_desktop_installer/i18n.dart';
 import 'package:yaru/yaru.dart';
 
@@ -22,6 +24,29 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   int _selectedLanguageIndex = 0;
+
+  final AutoScrollController _languageListScrollController =
+      AutoScrollController();
+
+  final kbdAssetName = 'assets/kbdnames.txt';
+
+  @override
+  void initState() {
+    super.initState();
+    widget.client
+        .fetchKeyboardLayouts(kbdAssetName, Locale(Intl.defaultLocale));
+    final locale = Intl.defaultLocale;
+    for (var i = 0; i < widget.client.languagelist.length; ++i) {
+      if (widget.client.languagelist[i].item1.languageCode == locale) {
+        _selectedLanguageIndex = i;
+        break;
+      }
+    }
+    SchedulerBinding.instance.addPostFrameCallback((_) =>
+        _languageListScrollController.scrollToIndex(_selectedLanguageIndex,
+            preferPosition: AutoScrollPosition.middle,
+            duration: Duration(milliseconds: 1)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +71,28 @@ class _WelcomePageState extends State<WelcomePage> {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: ListView.builder(
+                      controller: _languageListScrollController,
                       itemCount: widget.client.languagelist.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return ListTile(
-                          title: Text(widget.client.languagelist[index].item2),
-                          selected: index == _selectedLanguageIndex,
-                          onTap: () {
-                            setState(() {
-                              _selectedLanguageIndex = index;
-                              UbuntuLocalizations.load(
-                                  widget.client.languagelist[index].item1);
-                            });
-                          },
-                        );
+                        return AutoScrollTag(
+                            index: index,
+                            key: ValueKey(index),
+                            controller: _languageListScrollController,
+                            child: ListTile(
+                              title:
+                                  Text(widget.client.languagelist[index].item2),
+                              selected: index == _selectedLanguageIndex,
+                              onTap: () {
+                                setState(() {
+                                  _selectedLanguageIndex = index;
+                                  final locale =
+                                      widget.client.languagelist[index].item1;
+                                  UbuntuLocalizations.load(locale);
+                                  widget.client.fetchKeyboardLayouts(
+                                      kbdAssetName, locale);
+                                });
+                              },
+                            ));
                       },
                     ),
                   ),

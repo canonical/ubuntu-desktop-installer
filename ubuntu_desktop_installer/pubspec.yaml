@@ -28,6 +28,7 @@ dependencies:
   intl:
   intl_translation:
   flutter_html: ^1.0.0
+  scroll_to_index: any
   url_launcher: ^5.5.0
   yaru: ">=0.0.0-dev.5"
   subiquity_client:
