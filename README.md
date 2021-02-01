@@ -2,7 +2,7 @@
 
 # ubuntu-desktop-installer
 
-## Checkout
+## Checkout & Run
 
 Grab the source:
 ```
@@ -23,12 +23,17 @@ flutter config --enable-linux-desktop
 
 Install dependencies:
 ```
-cd ubuntu_desktop_installer
-flutter pub get
-cd ../subiquity_client
+cd subiquity_client
 flutter pub get
 cd subiquity
 make install_deps
+cd ../../ubuntu_desktop_installer
+flutter pub get
+```
+
+Run:
+```
+flutter run
 ```
 
 ## Translations
