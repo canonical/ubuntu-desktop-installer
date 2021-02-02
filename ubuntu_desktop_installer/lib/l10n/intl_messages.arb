@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2021-01-22T21:23:53.258261",
+  "@@last_modified": "2021-02-02T20:40:20.553903",
   "Ubuntu Desktop Installer": "Ubuntu Desktop Installer",
   "@Ubuntu Desktop Installer": {
     "type": "text",
@@ -17,6 +17,26 @@
   },
   "Restart": "Restart",
   "@Restart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Keyboard layout": "Keyboard layout",
+  "@Keyboard layout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Choose your keyboard layout:": "Choose your keyboard layout:",
+  "@Choose your keyboard layout:": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Type here to test your keyboard": "Type here to test your keyboard",
+  "@Type here to test your keyboard": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Detect Keyboard Layout": "Detect Keyboard Layout",
+  "@Detect Keyboard Layout": {
     "type": "text",
     "placeholders": {}
   },

@@ -22,7 +22,7 @@ class UbuntuLocalizations {
   }
 
   // XXX: update this list when adding new translations
-  static final supportedLocales = ['en', 'fr'];
+  static final supportedLocales = ['en', 'fr', 'pt'];
 
   final String localeName;
 
