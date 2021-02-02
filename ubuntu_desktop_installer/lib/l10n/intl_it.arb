@@ -1,6 +1,6 @@
 {
   "@@last_modified": "2021-01-22T21:23:53.258261",
-  "Ubuntu Desktop Installer": "Ubuntu Desktop Installer",
+  "Ubuntu Desktop Installer": "Installer di Ubuntu Desktop",
   "@Ubuntu Desktop Installer": {
     "type": "text",
     "placeholders": {}
@@ -30,7 +30,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "Repairing will reinstall all installed software without touching documents or settings.": "La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione",
+  "Repairing will reinstall all installed software without touching documents or settings.": "La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione.",
   "@Repairing will reinstall all installed software without touching documents or settings.": {
     "type": "text",
     "placeholders": {}
@@ -40,7 +40,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "You can try Ubuntu without making any changes to your computer.": "Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer",
+  "You can try Ubuntu without making any changes to your computer.": "Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.",
   "@You can try Ubuntu without making any changes to your computer.": {
     "type": "text",
     "placeholders": {}
@@ -67,7 +67,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": "Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu",
+  "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": "Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu.",
   "@This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.": {
     "type": "text",
     "placeholders": {}
