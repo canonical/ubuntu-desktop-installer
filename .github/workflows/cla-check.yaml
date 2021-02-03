@@ -18,4 +18,4 @@ jobs:
       - name: Fetching base ref ${{ github.base_ref }}
         run: git fetch origin ${{ github.base_ref }}:${{ github.base_ref }}
       - name: Perform CLA check
-        run: ./tools/cla_check.py "${{ github.base_ref }}..HEAD"
+        run: ./.github/workflows/tools/cla_check.py "${{ github.base_ref }}..HEAD"
