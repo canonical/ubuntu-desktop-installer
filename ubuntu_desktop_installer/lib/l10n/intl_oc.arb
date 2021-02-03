@@ -20,7 +20,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "Try or install": "Tornar ensajar o installar",
+  "Try or install": "Ensajar o installar",
   "@Try or install": {
     "type": "text",
     "placeholders": {}
@@ -50,7 +50,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.": "Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.",
+  "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
   "@Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.": {
     "type": "text",
     "placeholders": {}
