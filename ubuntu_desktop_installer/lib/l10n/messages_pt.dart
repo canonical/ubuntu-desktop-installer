@@ -28,7 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Continue" : MessageLookupByLibrary.simpleMessage("Continuar"),
     "Go Back" : MessageLookupByLibrary.simpleMessage("Voltar"),
     "Install Ubuntu" : MessageLookupByLibrary.simpleMessage("Instalar o Ubuntu"),
-    "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long." : MessageLookupByLibrary.simpleMessage("Instalar o Ubuntu junto com (ou em vez de) o seu sistema operacional atual. Isto não deve demorar muito."),
+    "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long." : MessageLookupByLibrary.simpleMessage("Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito."),
     "Repair installation" : MessageLookupByLibrary.simpleMessage("Reparar instalação"),
     "Repairing will reinstall all installed software without touching documents or settings." : MessageLookupByLibrary.simpleMessage("A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações."),
     "Restart" : MessageLookupByLibrary.simpleMessage("Reiniciar"),
