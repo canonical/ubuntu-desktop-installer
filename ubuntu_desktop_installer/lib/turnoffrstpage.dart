@@ -15,11 +15,13 @@ class TurnOffRSTPage extends StatelessWidget {
 
   String get title => Intl.message('Turn off RST');
 
-  String get description => Intl.message(
-      'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.');
+  String get description =>
+      Intl.message('This computer uses Intel RST (Rapid Storage Technology). '
+          'You need to turn off RST in Windows before installing Ubuntu.');
 
-  String instructions(url) => Intl.message(
-        'For instructions, open this page on a phone or other device: <a href="https://$url">$url</a>',
+  String instructions(Object url) => Intl.message(
+        'For instructions, open this page on a phone '
+        'or other device: <a href="https://$url">$url</a>',
         name: 'instructions',
         args: [url],
       );
@@ -51,7 +53,7 @@ class TurnOffRSTPage extends StatelessWidget {
                       margin: EdgeInsets.all(0),
                     ),
                   },
-                  onLinkTap: (url) => launch(url),
+                  onLinkTap: launch,
                 ),
               ),
               const SizedBox(height: 40),

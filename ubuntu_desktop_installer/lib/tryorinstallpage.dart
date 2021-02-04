@@ -34,20 +34,20 @@ class OptionCard extends StatefulWidget {
 }
 
 class _OptionCardState extends State<OptionCard> {
-  var selected = false;
-  var hovered = false;
+  var _selected = false;
+  var _hovered = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     setState(
-      () => selected = TryOrInstallPage.of(context).option == widget.option,
+      () => _selected = TryOrInstallPage.of(context).option == widget.option,
     );
   }
 
   @override
   Widget build(BuildContext context) => Card(
-        elevation: (hovered || selected) ? 4.0 : 1.0,
+        elevation: (_hovered || _selected) ? 4.0 : 1.0,
         child: InkWell(
           child: Container(
             padding: const EdgeInsets.all(20),
@@ -76,7 +76,7 @@ class _OptionCardState extends State<OptionCard> {
             ]),
           ),
           onTap: () => TryOrInstallPage.of(context).selectOption(widget.option),
-          onHover: (bool value) => setState(() => hovered = value),
+          onHover: (value) => setState(() => _hovered = value),
         ),
       );
 }
@@ -118,17 +118,22 @@ class TryOrInstallPage extends StatefulWidget {
 
   String get repairTitle => Intl.message('Repair installation');
   String get repairDescription => Intl.message(
-      'Repairing will reinstall all installed software without touching documents or settings.');
+        'Repairing will reinstall all installed software '
+        'without touching documents or settings.',
+      );
 
   String get tryTitle => Intl.message('Try Ubuntu');
   String get tryDescription => Intl.message(
-      'You can try Ubuntu without making any changes to your computer.');
+        'You can try Ubuntu ' 'without making any changes to your computer.',
+      );
 
   String get installTitle => Intl.message('Install Ubuntu');
   String get installDescription => Intl.message(
-      "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.");
+        "Install Ubuntu alongside (or instead of) "
+        "your current operating system. This shouldn't take too long.",
+      );
 
-  String releaseNotesLabel(url) => Intl.message(
+  String releaseNotesLabel(Object url) => Intl.message(
         'You may wish to read the <a href="$url">release notes</a>.',
         name: 'releaseNotesLabel',
         args: [url],
@@ -147,7 +152,7 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
     }
   }
 
-  void continueWithSelectedOption() {
+  void continueWith_selectedOption() {
     if (option == Option.repairUbuntu) {
       Navigator.pushNamed(context, '/repairubuntu');
     } else if (option == Option.tryUbuntu) {
@@ -222,7 +227,7 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
                       child: Html(
                         data: widget
                             .releaseNotesLabel(widget.client.releaseNotesURL),
-                        onLinkTap: (url) => launch(url),
+                        onLinkTap: launch,
                       ),
                     ),
                     ButtonBar(
@@ -237,7 +242,7 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
                             UbuntuLocalizations.of(context).continueButtonText,
                           ),
                           onPressed: (option != Option.none)
-                              ? continueWithSelectedOption
+                              ? continueWith_selectedOption
                               : null,
                         ),
                       ],

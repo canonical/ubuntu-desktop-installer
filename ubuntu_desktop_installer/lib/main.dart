@@ -4,10 +4,10 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart';
 
 import 'i18n.dart';
-import 'welcomepage.dart';
+import 'keyboardlayoutpage.dart';
 import 'tryorinstallpage.dart';
 import 'turnoffrstpage.dart';
-import 'keyboardlayoutpage.dart';
+import 'welcomepage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,11 +45,9 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         supportedLocales: _supportedLocale,
         home: WelcomePage(client: client),
         routes: <String, WidgetBuilder>{
-          '/tryorinstall': (BuildContext context) =>
-              TryOrInstallPage(client: client),
-          '/turnoffrst': (BuildContext context) => const TurnOffRSTPage(),
-          '/keyboardlayout': (BuildContext context) =>
-              KeyboardLayoutPage(client: client),
+          '/tryorinstall': (context) => TryOrInstallPage(client: client),
+          '/turnoffrst': (context) => const TurnOffRSTPage(),
+          '/keyboardlayout': (context) => KeyboardLayoutPage(client: client),
         },
       );
 }

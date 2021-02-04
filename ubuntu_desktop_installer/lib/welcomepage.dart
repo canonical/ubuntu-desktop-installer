@@ -3,10 +3,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:ubuntu_desktop_installer/i18n.dart';
 import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
+
+import 'i18n.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -79,8 +80,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       child: ListView.builder(
                         controller: _languageListScrollController,
                         itemCount: widget.client.languagelist.length,
-                        itemBuilder: (BuildContext context, int index) =>
-                            AutoScrollTag(
+                        itemBuilder: (context, index) => AutoScrollTag(
                           index: index,
                           key: ValueKey(index),
                           controller: _languageListScrollController,

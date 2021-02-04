@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:ubuntu_desktop_installer/i18n.dart';
+import 'i18n.dart';
 import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
@@ -90,9 +90,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                 controller: _layoutListScrollController,
                                 itemCount:
                                     widget.client.keyboardlayoutlist.length,
-                                itemBuilder:
-                                    (BuildContext context, int index) =>
-                                        AutoScrollTag(
+                                itemBuilder: (context, index) => AutoScrollTag(
                                   index: index,
                                   key: ValueKey(index),
                                   controller: _layoutListScrollController,
@@ -131,7 +129,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                             _selectedLayoutName]
                                         .length
                                     : 0,
-                                itemBuilder: (BuildContext context, int index) {
+                                itemBuilder: (context, index) {
                                   return ListTile(
                                     title: Text(widget
                                         .client
