@@ -1,3 +1,5 @@
+// ignore_for_file:  non_constant_identifier_names
+
 class KeyboardSetting {
   String layout;
   String variant;
@@ -18,57 +20,34 @@ class SSHData {
 }
 
 enum ApplicationState {
-  // ignore: non_constant_identifier_names
   UNKNOWN,
-  // ignore: non_constant_identifier_names
   STARTING_UP,
-  // ignore: non_constant_identifier_names
   WAITING,
-  // ignore: non_constant_identifier_names
   NEEDS_CONFIRMATION,
-  // ignore: non_constant_identifier_names
   RUNNING,
-  // ignore: non_constant_identifier_names
   POST_WAIT,
-  // ignore: non_constant_identifier_names
   POST_RUNNING,
-  // ignore: non_constant_identifier_names
   UU_RUNNING,
-  // ignore: non_constant_identifier_names
   UU_CANCELLING,
-  // ignore: non_constant_identifier_names
   DONE,
-  // ignore: non_constant_identifier_names
   ERROR
 }
 
 enum ErrorReportState {
-  // ignore: non_constant_identifier_names
   INCOMPLETE,
-  // ignore: non_constant_identifier_names
   LOADING,
-  // ignore: non_constant_identifier_names
   DONE,
-  // ignore: non_constant_identifier_names
   ERROR_GENERATING,
-  // ignore: non_constant_identifier_names
   ERROR_LOADING
 }
 
 enum ErrorReportKind {
-  // ignore: non_constant_identifier_names
   BLOCK_PROBE_FAIL,
-  // ignore: non_constant_identifier_names
   DISK_PROBE_FAIL,
-  // ignore: non_constant_identifier_names
   INSTALL_FAIL,
-  // ignore: non_constant_identifier_names
   UI,
-  // ignore: non_constant_identifier_names
   NETWORK_FAIL,
-  // ignore: non_constant_identifier_names
   SERVER_REQUEST_FAIL,
-  // ignore: non_constant_identifier_names
   UNKNOWN
 }
 

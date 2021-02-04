@@ -159,10 +159,10 @@ class SubiquityClient {
   }
 
   /// Mark the controllers for endpoint_names as configured.
-  Future<String> mark_configured(List<String> endpointNames) async {
+  Future<String> markConfigured(List<String> endpointNames) async {
     final request = Request(
         'POST',
-        Uri.http('localhost', 'meta/mark_configured',
+        Uri.http('localhost', 'meta/markConfigured',
             {'endpoint_names': '$endpointNames'}));
     final response = await _client.send(request);
     return response.stream.bytesToString();
