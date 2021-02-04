@@ -18,7 +18,7 @@ class _HttpRequest {
   String httpVersion = '';
   int statusCode = 0;
   String reasonPhrase = '';
-  Map<String, String> headers = const {};
+  Map<String, String> headers = {};
 
   BaseRequest request;
   Completer<StreamedResponse> completer = Completer<StreamedResponse>();
