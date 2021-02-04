@@ -49,16 +49,16 @@ class _OptionCardState extends State<OptionCard> {
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(children: <Widget>[
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(flex: 2, child: Image.asset(widget.imageAsset)),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   widget.titleText,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
                 )),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
                 child: Text(
               widget.bodyText,
@@ -174,7 +174,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Expanded(
                 child: Row(
                   children: <Widget>[
@@ -186,7 +186,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                         bodyText: widget.repairDescription,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: OptionCard(
                         option: Option.tryUbuntu,
@@ -195,7 +195,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                         bodyText: widget.tryDescription,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: OptionCard(
                         option: Option.installUbuntu,
@@ -207,7 +207,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

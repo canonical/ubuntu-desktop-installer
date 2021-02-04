@@ -71,7 +71,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     alignment: Alignment.centerLeft,
                     child: Text(widget.header),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Expanded(
                     child: Row(
                       children: <Widget>[
@@ -110,7 +110,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
@@ -148,14 +148,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: widget.hint,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: OutlinedButton(
@@ -168,7 +168,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
