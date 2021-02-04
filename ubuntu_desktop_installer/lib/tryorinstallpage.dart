@@ -41,44 +41,45 @@ class _OptionCardState extends State<OptionCard> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     setState(
-      () => _selected = TryOrInstallPage.of(context).option == widget.option,
-    );
+        () => _selected = TryOrInstallPage.of(context).option == widget.option);
   }
 
   @override
-  Widget build(BuildContext context) => Card(
-        elevation: (_hovered || _selected) ? 4.0 : 1.0,
-        child: InkWell(
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(children: <Widget>[
-              const SizedBox(height: 20),
-              Expanded(
-                flex: 2,
-                child: widget.image,
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: (_hovered || _selected) ? 4.0 : 1.0,
+      child: InkWell(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(children: <Widget>[
+            const SizedBox(height: 20),
+            Expanded(
+              flex: 2,
+              child: widget.image,
+            ),
+            const SizedBox(height: 40),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                widget.titleText,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
               ),
-              const SizedBox(height: 40),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.titleText,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-                ),
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: Text(
+                widget.bodyText,
+                style: yaruBodyText1Style.copyWith(
+                    color: yaruLightColorScheme.primaryVariant),
               ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: Text(
-                  widget.bodyText,
-                  style: yaruBodyText1Style.copyWith(
-                      color: yaruLightColorScheme.primaryVariant),
-                ),
-              ),
-            ]),
-          ),
-          onTap: () => TryOrInstallPage.of(context).selectOption(widget.option),
-          onHover: (value) => setState(() => _hovered = value),
+            ),
+          ]),
         ),
-      );
+        onTap: () => TryOrInstallPage.of(context).selectOption(widget.option),
+        onHover: (value) => setState(() => _hovered = value),
+      ),
+    );
+  }
 }
 
 class TryOrInstallPageInheritedContainer extends InheritedWidget {
@@ -107,9 +108,12 @@ class TryOrInstallPage extends StatefulWidget {
   })  : assert(client != null, '`SubiquityClient` must not be `null`'),
         super(key: key);
 
-  static _TryOrInstallPageState of(BuildContext context) => context
-      .dependOnInheritedWidgetOfExactType<TryOrInstallPageInheritedContainer>()
-      .data;
+  static _TryOrInstallPageState of(BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<
+            TryOrInstallPageInheritedContainer>()
+        .data;
+  }
 
   @override
   _TryOrInstallPageState createState() => _TryOrInstallPageState();
@@ -146,9 +150,7 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
   void selectOption(Option option) {
     assert(option != Option.none);
     if (option != this.option) {
-      setState(() {
-        this.option = option;
-      });
+      setState(() => this.option = option);
     }
   }
 
@@ -168,90 +170,92 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          automaticallyImplyLeading: false,
-        ),
-        body: TryOrInstallPageInheritedContainer(
-          data: this,
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: <Widget>[
-                const SizedBox(height: 50),
-                Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.repairUbuntu,
-                          image: const Image(
-                            image: AssetImage('assets/repair-wrench.png'),
-                          ),
-                          titleText: widget.repairTitle,
-                          bodyText: widget.repairDescription,
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.tryUbuntu,
-                          image: const Image(
-                            image: AssetImage('assets/steering-wheel.png'),
-                          ),
-                          titleText: widget.tryTitle,
-                          bodyText: widget.tryDescription,
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.installUbuntu,
-                          image: const Image(
-                            image: AssetImage('assets/hard-drive.png'),
-                          ),
-                          titleText: widget.installTitle,
-                          bodyText: widget.installDescription,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 150),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        automaticallyImplyLeading: false,
+      ),
+      body: TryOrInstallPageInheritedContainer(
+        data: this,
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              const SizedBox(height: 50),
+              Expanded(
+                child: Row(
                   children: <Widget>[
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Html(
-                        data: widget
-                            .releaseNotesLabel(widget.client.releaseNotesURL),
-                        onLinkTap: launch,
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.repairUbuntu,
+                        image: const Image(
+                          image: AssetImage('assets/repair-wrench.png'),
+                        ),
+                        titleText: widget.repairTitle,
+                        bodyText: widget.repairDescription,
                       ),
                     ),
-                    ButtonBar(
-                      children: <OutlinedButton>[
-                        OutlinedButton(
-                          child: Text(
-                              UbuntuLocalizations.of(context).goBackButtonText),
-                          onPressed: () => Navigator.pop(context),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.tryUbuntu,
+                        image: const Image(
+                          image: AssetImage('assets/steering-wheel.png'),
                         ),
-                        OutlinedButton(
-                          child: Text(
-                            UbuntuLocalizations.of(context).continueButtonText,
-                          ),
-                          onPressed: (option != Option.none)
-                              ? continueWith_selectedOption
-                              : null,
+                        titleText: widget.tryTitle,
+                        bodyText: widget.tryDescription,
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        option: Option.installUbuntu,
+                        image: const Image(
+                          image: AssetImage('assets/hard-drive.png'),
                         ),
-                      ],
+                        titleText: widget.installTitle,
+                        bodyText: widget.installDescription,
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 150),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Html(
+                      data: widget
+                          .releaseNotesLabel(widget.client.releaseNotesURL),
+                      onLinkTap: launch,
+                    ),
+                  ),
+                  ButtonBar(
+                    children: <OutlinedButton>[
+                      OutlinedButton(
+                        child: Text(
+                            UbuntuLocalizations.of(context).goBackButtonText),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      OutlinedButton(
+                        child: Text(
+                          UbuntuLocalizations.of(context).continueButtonText,
+                        ),
+                        onPressed: (option != Option.none)
+                            ? continueWith_selectedOption
+                            : null,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-      );
+      ),
+    );
+  }
 }

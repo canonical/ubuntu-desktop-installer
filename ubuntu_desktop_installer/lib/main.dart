@@ -33,21 +33,23 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       ];
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
-        onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
-        theme: yaruLightTheme,
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: [
-          UbuntuLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: _supportedLocale,
-        home: WelcomePage(client: client),
-        routes: <String, WidgetBuilder>{
-          '/tryorinstall': (context) => TryOrInstallPage(client: client),
-          '/turnoffrst': (context) => const TurnOffRSTPage(),
-          '/keyboardlayout': (context) => KeyboardLayoutPage(client: client),
-        },
-      );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
+      theme: yaruLightTheme,
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        UbuntuLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: _supportedLocale,
+      home: WelcomePage(client: client),
+      routes: <String, WidgetBuilder>{
+        '/tryorinstall': (context) => TryOrInstallPage(client: client),
+        '/turnoffrst': (context) => const TurnOffRSTPage(),
+        '/keyboardlayout': (context) => KeyboardLayoutPage(client: client),
+      },
+    );
+  }
 }

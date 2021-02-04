@@ -44,10 +44,13 @@ class _WelcomePageState extends State<WelcomePage> {
         break;
       }
     }
-    SchedulerBinding.instance.addPostFrameCallback((_) =>
-        _languageListScrollController.scrollToIndex(_selectedLanguageIndex,
-            preferPosition: AutoScrollPosition.middle,
-            duration: Duration(milliseconds: 1)));
+    SchedulerBinding.instance.addPostFrameCallback(
+      (_) => _languageListScrollController.scrollToIndex(
+        _selectedLanguageIndex,
+        preferPosition: AutoScrollPosition.middle,
+        duration: Duration(milliseconds: 1),
+      ),
+    );
   }
 
   @override
@@ -57,71 +60,71 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Center(
-                  child: FractionallySizedBox(
-                    widthFactor: 0.5,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: yaruLightTheme.dividerColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(5.0),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Center(
+                child: FractionallySizedBox(
+                  widthFactor: 0.5,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: yaruLightTheme.dividerColor,
+                        width: 1,
                       ),
-                      child: ListView.builder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: ListView.builder(
+                      controller: _languageListScrollController,
+                      itemCount: widget.client.languagelist.length,
+                      itemBuilder: (context, index) => AutoScrollTag(
+                        index: index,
+                        key: ValueKey(index),
                         controller: _languageListScrollController,
-                        itemCount: widget.client.languagelist.length,
-                        itemBuilder: (context, index) => AutoScrollTag(
-                          index: index,
-                          key: ValueKey(index),
-                          controller: _languageListScrollController,
-                          child: ListTile(
-                            title:
-                                Text(widget.client.languagelist[index].item2),
-                            selected: index == _selectedLanguageIndex,
-                            onTap: () => setState(() {
-                              _selectedLanguageIndex = index;
-                              final locale =
-                                  widget.client.languagelist[index].item1;
-                              UbuntuLocalizations.load(locale);
-                              widget.client
-                                  .fetchKeyboardLayouts(kbdAssetName, locale);
-                            }),
-                          ),
+                        child: ListTile(
+                          title: Text(widget.client.languagelist[index].item2),
+                          selected: index == _selectedLanguageIndex,
+                          onTap: () => setState(() {
+                            _selectedLanguageIndex = index;
+                            final locale =
+                                widget.client.languagelist[index].item1;
+                            UbuntuLocalizations.load(locale);
+                            widget.client
+                                .fetchKeyboardLayouts(kbdAssetName, locale);
+                          }),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              ButtonBar(
-                children: <OutlinedButton>[
-                  OutlinedButton(
-                    child:
-                        Text(UbuntuLocalizations.of(context).goBackButtonText),
-                    onPressed: () {},
-                  ),
-                  OutlinedButton(
-                    child: Text(
-                        UbuntuLocalizations.of(context).continueButtonText),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/tryorinstall');
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+            ButtonBar(
+              children: <OutlinedButton>[
+                OutlinedButton(
+                  child: Text(UbuntuLocalizations.of(context).goBackButtonText),
+                  onPressed: () {},
+                ),
+                OutlinedButton(
+                  child:
+                      Text(UbuntuLocalizations.of(context).continueButtonText),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/tryorinstall');
+                  },
+                ),
+              ],
+            ),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

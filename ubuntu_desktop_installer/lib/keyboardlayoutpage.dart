@@ -57,136 +57,137 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Column(
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(widget.header),
-                    ),
-                    const SizedBox(height: 10),
-                    Expanded(
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: yaruLightTheme.dividerColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5.0),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        automaticallyImplyLeading: false,
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(widget.header),
+                  ),
+                  const SizedBox(height: 10),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: yaruLightTheme.dividerColor,
+                                width: 1,
                               ),
-                              child: ListView.builder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: ListView.builder(
+                              controller: _layoutListScrollController,
+                              itemCount:
+                                  widget.client.keyboardlayoutlist.length,
+                              itemBuilder: (context, index) => AutoScrollTag(
+                                index: index,
+                                key: ValueKey(index),
                                 controller: _layoutListScrollController,
-                                itemCount:
-                                    widget.client.keyboardlayoutlist.length,
-                                itemBuilder: (context, index) => AutoScrollTag(
-                                  index: index,
-                                  key: ValueKey(index),
-                                  controller: _layoutListScrollController,
-                                  child: ListTile(
-                                    title: Text(
-                                      widget.client.keyboardlayoutlist[index]
-                                          .item2,
-                                    ),
-                                    selected: index == _selectedLayoutIndex,
-                                    onTap: () => setState(() {
-                                      _selectedLayoutIndex = index;
-                                      _selectedLayoutName = widget.client
-                                          .keyboardlayoutlist[index].item1;
-                                      _selectedVariantIndex = 0;
-                                    }),
+                                child: ListTile(
+                                  title: Text(
+                                    widget
+                                        .client.keyboardlayoutlist[index].item2,
                                   ),
+                                  selected: index == _selectedLayoutIndex,
+                                  onTap: () => setState(() {
+                                    _selectedLayoutIndex = index;
+                                    _selectedLayoutName = widget
+                                        .client.keyboardlayoutlist[index].item1;
+                                    _selectedVariantIndex = 0;
+                                  }),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: yaruLightTheme.dividerColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              child: ListView.builder(
-                                itemCount: _selectedLayoutName.isNotEmpty
-                                    ? widget
-                                        .client
-                                        .keyboardvariantlist[
-                                            _selectedLayoutName]
-                                        .length
-                                    : 0,
-                                itemBuilder: (context, index) {
-                                  return ListTile(
-                                    title: Text(widget
-                                        .client
-                                        .keyboardvariantlist[
-                                            _selectedLayoutName][index]
-                                        .item2),
-                                    selected: index == _selectedVariantIndex,
-                                    onTap: () {
-                                      setState(() {
-                                        _selectedVariantIndex = index;
-                                      });
-                                    },
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                      decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: widget.hint,
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: OutlinedButton(
-                        child: Text(widget.detect),
-                        onPressed: () => print(
-                          'TODO: show dialog to detect keyboard layout',
                         ),
+                        const SizedBox(width: 20),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: yaruLightTheme.dividerColor,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: ListView.builder(
+                              itemCount: _selectedLayoutName.isNotEmpty
+                                  ? widget
+                                      .client
+                                      .keyboardvariantlist[_selectedLayoutName]
+                                      .length
+                                  : 0,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  title: Text(widget
+                                      .client
+                                      .keyboardvariantlist[_selectedLayoutName]
+                                          [index]
+                                      .item2),
+                                  selected: index == _selectedVariantIndex,
+                                  onTap: () {
+                                    setState(() {
+                                      _selectedVariantIndex = index;
+                                    });
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      hintText: widget.hint,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: OutlinedButton(
+                      child: Text(widget.detect),
+                      onPressed: () => print(
+                        'TODO: show dialog to detect keyboard layout',
                       ),
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              ButtonBar(
-                children: <OutlinedButton>[
-                  OutlinedButton(
-                      child: Text(
-                        UbuntuLocalizations.of(context).goBackButtonText,
-                      ),
-                      onPressed: () => Navigator.pop(context)),
-                  OutlinedButton(
-                    child: Text(
-                        UbuntuLocalizations.of(context).continueButtonText),
-                    onPressed: () {},
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+            ButtonBar(
+              children: <OutlinedButton>[
+                OutlinedButton(
+                    child: Text(
+                      UbuntuLocalizations.of(context).goBackButtonText,
+                    ),
+                    onPressed: () => Navigator.pop(context)),
+                OutlinedButton(
+                  child:
+                      Text(UbuntuLocalizations.of(context).continueButtonText),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

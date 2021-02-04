@@ -18,8 +18,9 @@ class UbuntuLocalizations {
     });
   }
 
-  static UbuntuLocalizations of(BuildContext context) =>
-      Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
+  static UbuntuLocalizations of(BuildContext context) {
+    return Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
+  }
 
   // XXX: update this list when adding new translations
   static const supportedLocales = ['en', 'fr'];
