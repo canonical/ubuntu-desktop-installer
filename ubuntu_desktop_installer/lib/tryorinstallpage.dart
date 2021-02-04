@@ -14,14 +14,18 @@ enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 class OptionCard extends StatefulWidget {
   OptionCard({
     Key key,
-    this.option,
-    this.imageAsset,
-    this.titleText,
-    this.bodyText,
-  }) : super(key: key);
+    @required this.option,
+    @required this.image,
+    @required this.titleText,
+    @required this.bodyText,
+  })  : assert(option != null, '`Option` must not be `null`'),
+        assert(image != null, '`imageAsset` must not be `null`'),
+        assert(titleText != null, '`titleText` must not be `null`'),
+        assert(bodyText != null, '`bodyText` must not be `null`'),
+        super(key: key);
 
   final Option option;
-  final String imageAsset;
+  final Image image;
   final String titleText;
   final String bodyText;
 
@@ -30,88 +34,85 @@ class OptionCard extends StatefulWidget {
 }
 
 class _OptionCardState extends State<OptionCard> {
-  bool selected = false;
-  bool hovered = false;
+  var selected = false;
+  var hovered = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setState(() {
-      selected = (TryOrInstallPage.of(context).option == widget.option);
-    });
+    setState(
+      () => selected = TryOrInstallPage.of(context).option == widget.option,
+    );
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: (hovered || selected) ? 4.0 : 1.0,
-      child: InkWell(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(children: <Widget>[
-            SizedBox(height: 20),
-            Expanded(flex: 2, child: Image.asset(widget.imageAsset)),
-            SizedBox(height: 40),
-            Align(
+  Widget build(BuildContext context) => Card(
+        elevation: (hovered || selected) ? 4.0 : 1.0,
+        child: InkWell(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(children: <Widget>[
+              const SizedBox(height: 20),
+              Expanded(
+                flex: 2,
+                child: widget.image,
+              ),
+              const SizedBox(height: 40),
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   widget.titleText,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-                )),
-            SizedBox(height: 10),
-            Expanded(
+                ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
                 child: Text(
-              widget.bodyText,
-              style: yaruBodyText1Style.copyWith(
-                  color: yaruLightColorScheme.primaryVariant),
-            )),
-          ]),
+                  widget.bodyText,
+                  style: yaruBodyText1Style.copyWith(
+                      color: yaruLightColorScheme.primaryVariant),
+                ),
+              ),
+            ]),
+          ),
+          onTap: () => TryOrInstallPage.of(context).selectOption(widget.option),
+          onHover: (bool value) => setState(() => hovered = value),
         ),
-        onTap: () {
-          TryOrInstallPage.of(context).selectOption(widget.option);
-        },
-        onHover: (bool value) {
-          setState(() {
-            hovered = value;
-          });
-        },
-      ),
-    );
-  }
+      );
 }
 
 class TryOrInstallPageInheritedContainer extends InheritedWidget {
-  final TryOrInstallPageState data;
+  final _TryOrInstallPageState data;
 
   TryOrInstallPageInheritedContainer({
     Key key,
     Widget child,
-    this.data,
-  }) : super(key: key, child: child);
+    @required this.data,
+  })  : assert(data != null, '`TryOrInstallPageState` must not be `null`'),
+        super(
+          key: key,
+          child: child,
+        );
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => true;
 }
 
 class TryOrInstallPage extends StatefulWidget {
-  final Widget child;
   final SubiquityClient client;
 
   const TryOrInstallPage({
     Key key,
-    this.child,
-    this.client,
-  }) : super(key: key);
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
 
-  static TryOrInstallPageState of(BuildContext context) {
-    return context
-        .dependOnInheritedWidgetOfExactType<
-            TryOrInstallPageInheritedContainer>()
-        .data;
-  }
+  static _TryOrInstallPageState of(BuildContext context) => context
+      .dependOnInheritedWidgetOfExactType<TryOrInstallPageInheritedContainer>()
+      .data;
 
   @override
-  State<StatefulWidget> createState() => TryOrInstallPageState();
+  _TryOrInstallPageState createState() => _TryOrInstallPageState();
 
   String get title => Intl.message('Try or install');
 
@@ -134,8 +135,8 @@ class TryOrInstallPage extends StatefulWidget {
       );
 }
 
-class TryOrInstallPageState extends State<TryOrInstallPage> {
-  Option option = Option.none;
+class _TryOrInstallPageState extends State<TryOrInstallPage> {
+  var option = Option.none;
 
   void selectOption(Option option) {
     assert(option != Option.none);
@@ -162,87 +163,90 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        automaticallyImplyLeading: false,
-      ),
-      body: TryOrInstallPageInheritedContainer(
-        data: this,
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 50),
-              Expanded(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.repairUbuntu,
-                        imageAsset: 'assets/repair-wrench.png',
-                        titleText: widget.repairTitle,
-                        bodyText: widget.repairDescription,
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          automaticallyImplyLeading: false,
+        ),
+        body: TryOrInstallPageInheritedContainer(
+          data: this,
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                const SizedBox(height: 50),
+                Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.repairUbuntu,
+                          image: const Image(
+                            image: AssetImage('assets/repair-wrench.png'),
+                          ),
+                          titleText: widget.repairTitle,
+                          bodyText: widget.repairDescription,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.tryUbuntu,
-                        imageAsset: 'assets/steering-wheel.png',
-                        titleText: widget.tryTitle,
-                        bodyText: widget.tryDescription,
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.tryUbuntu,
+                          image: const Image(
+                            image: AssetImage('assets/steering-wheel.png'),
+                          ),
+                          titleText: widget.tryTitle,
+                          bodyText: widget.tryDescription,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.installUbuntu,
-                        imageAsset: 'assets/hard-drive.png',
-                        titleText: widget.installTitle,
-                        bodyText: widget.installDescription,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 150),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: Html(
-                      data: widget
-                          .releaseNotesLabel(widget.client.releaseNotesURL),
-                      onLinkTap: (url) => launch(url),
-                    ),
-                  ),
-                  ButtonBar(
-                    children: <OutlinedButton>[
-                      OutlinedButton(
-                        child: Text(
-                            UbuntuLocalizations.of(context).goBackButtonText),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      OutlinedButton(
-                        child: Text(
-                            UbuntuLocalizations.of(context).continueButtonText),
-                        onPressed: (option != Option.none)
-                            ? continueWithSelectedOption
-                            : null,
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.installUbuntu,
+                          image: const Image(
+                            image: AssetImage('assets/hard-drive.png'),
+                          ),
+                          titleText: widget.installTitle,
+                          bodyText: widget.installDescription,
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 150),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Html(
+                        data: widget
+                            .releaseNotesLabel(widget.client.releaseNotesURL),
+                        onLinkTap: (url) => launch(url),
+                      ),
+                    ),
+                    ButtonBar(
+                      children: <OutlinedButton>[
+                        OutlinedButton(
+                          child: Text(
+                              UbuntuLocalizations.of(context).goBackButtonText),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                        OutlinedButton(
+                          child: Text(
+                            UbuntuLocalizations.of(context).continueButtonText,
+                          ),
+                          onPressed: (option != Option.none)
+                              ? continueWithSelectedOption
+                              : null,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

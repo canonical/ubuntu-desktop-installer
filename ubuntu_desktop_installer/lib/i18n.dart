@@ -5,6 +5,7 @@ import 'l10n/messages_all.dart';
 
 class UbuntuLocalizations {
   UbuntuLocalizations(this.localeName);
+  final String localeName;
 
   static Future<UbuntuLocalizations> load(Locale locale) {
     final name = (locale.countryCode != null && locale.countryCode.isEmpty)
@@ -17,14 +18,11 @@ class UbuntuLocalizations {
     });
   }
 
-  static UbuntuLocalizations of(BuildContext context) {
-    return Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
-  }
+  static UbuntuLocalizations of(BuildContext context) =>
+      Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
 
   // XXX: update this list when adding new translations
-  static final supportedLocales = ['en', 'fr'];
-
-  final String localeName;
+  static const supportedLocales = ['en', 'fr'];
 
   static const LocalizationsDelegate<UbuntuLocalizations> delegate =
       _UbuntuLocalizationsDelegate();

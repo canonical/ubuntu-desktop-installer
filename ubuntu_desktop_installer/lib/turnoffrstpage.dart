@@ -54,8 +54,10 @@ class TurnOffRSTPage extends StatelessWidget {
                   onLinkTap: (url) => launch(url),
                 ),
               ),
-              SizedBox(height: 40),
-              Image.asset('assets/rst.png'),
+              const SizedBox(height: 40),
+              const Image(
+                image: AssetImage('assets/rst.png'),
+              ),
             ])),
             SizedBox(height: 20),
             ButtonBar(

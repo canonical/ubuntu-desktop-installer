@@ -11,8 +11,9 @@ import 'package:subiquity_client/subiquity_client.dart';
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
     Key key,
-    this.client,
-  }) : super(key: key);
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
 
   final SubiquityClient client;
 
@@ -23,16 +24,16 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  int _selectedLanguageIndex = 0;
+  var _selectedLanguageIndex = 0;
 
-  final AutoScrollController _languageListScrollController =
-      AutoScrollController();
-
-  final kbdAssetName = 'assets/kbdnames.txt';
+  var _languageListScrollController;
+  static const kbdAssetName = 'assets/kbdnames.txt';
 
   @override
   void initState() {
     super.initState();
+    _languageListScrollController = AutoScrollController();
+
     widget.client
         .fetchKeyboardLayouts(kbdAssetName, Locale(Intl.defaultLocale));
     final locale = Intl.defaultLocale;
@@ -49,75 +50,78 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: yaruLightTheme.dividerColor,
-                        width: 1,
+  void dispose() {
+    _languageListScrollController?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Center(
+                  child: FractionallySizedBox(
+                    widthFactor: 0.5,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: yaruLightTheme.dividerColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: ListView.builder(
-                      controller: _languageListScrollController,
-                      itemCount: widget.client.languagelist.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return AutoScrollTag(
-                            index: index,
-                            key: ValueKey(index),
-                            controller: _languageListScrollController,
-                            child: ListTile(
-                              title:
-                                  Text(widget.client.languagelist[index].item2),
-                              selected: index == _selectedLanguageIndex,
-                              onTap: () {
-                                setState(() {
-                                  _selectedLanguageIndex = index;
-                                  final locale =
-                                      widget.client.languagelist[index].item1;
-                                  UbuntuLocalizations.load(locale);
-                                  widget.client.fetchKeyboardLayouts(
-                                      kbdAssetName, locale);
-                                });
-                              },
-                            ));
-                      },
+                      child: ListView.builder(
+                        controller: _languageListScrollController,
+                        itemCount: widget.client.languagelist.length,
+                        itemBuilder: (BuildContext context, int index) =>
+                            AutoScrollTag(
+                          index: index,
+                          key: ValueKey(index),
+                          controller: _languageListScrollController,
+                          child: ListTile(
+                            title:
+                                Text(widget.client.languagelist[index].item2),
+                            selected: index == _selectedLanguageIndex,
+                            onTap: () => setState(() {
+                              _selectedLanguageIndex = index;
+                              final locale =
+                                  widget.client.languagelist[index].item1;
+                              UbuntuLocalizations.load(locale);
+                              widget.client
+                                  .fetchKeyboardLayouts(kbdAssetName, locale);
+                            }),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            ButtonBar(
-              children: <OutlinedButton>[
-                OutlinedButton(
-                  child: Text(UbuntuLocalizations.of(context).goBackButtonText),
-                  onPressed: null,
-                ),
-                OutlinedButton(
-                  child:
-                      Text(UbuntuLocalizations.of(context).continueButtonText),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/tryorinstall');
-                  },
-                ),
-              ],
-            ),
-          ],
+              const SizedBox(height: 20),
+              ButtonBar(
+                children: <OutlinedButton>[
+                  OutlinedButton(
+                    child:
+                        Text(UbuntuLocalizations.of(context).goBackButtonText),
+                    onPressed: () {},
+                  ),
+                  OutlinedButton(
+                    child: Text(
+                        UbuntuLocalizations.of(context).continueButtonText),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/tryorinstall');
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

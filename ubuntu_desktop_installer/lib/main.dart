@@ -19,32 +19,34 @@ Future<void> main() async {
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   final SubiquityClient client;
 
-  const UbuntuDesktopInstallerApp({Key key, this.client}) : super(key: key);
+  const UbuntuDesktopInstallerApp({
+    Key key,
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
+
+  List<Locale> get _supportedLocale =>
+      [for (final l in client.languagelist) l.item1].where((locale) =>
+          UbuntuLocalizations.supportedLocales.contains(locale.languageCode));
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
-      theme: yaruLightTheme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        UbuntuLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: client.languagelist
-          .map((t) => t.item1)
-          .where((locale) => UbuntuLocalizations.supportedLocales
-              .contains(locale.languageCode))
-          .toList(),
-      home: WelcomePage(client: client),
-      routes: <String, WidgetBuilder>{
-        '/tryorinstall': (BuildContext context) =>
-            TryOrInstallPage(client: client),
-        '/turnoffrst': (BuildContext context) => TurnOffRSTPage(),
-        '/keyboardlayout': (BuildContext context) =>
-            KeyboardLayoutPage(client: client),
-      },
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
+        theme: yaruLightTheme,
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: [
+          UbuntuLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: _supportedLocale,
+        home: WelcomePage(client: client),
+        routes: <String, WidgetBuilder>{
+          '/tryorinstall': (BuildContext context) =>
+              TryOrInstallPage(client: client),
+          '/turnoffrst': (BuildContext context) => const TurnOffRSTPage(),
+          '/keyboardlayout': (BuildContext context) =>
+              KeyboardLayoutPage(client: client),
+        },
+      );
 }
