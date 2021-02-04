@@ -40,8 +40,8 @@ class _OptionCardState extends State<OptionCard> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setState(
-        () => _selected = TryOrInstallPage.of(context).option == widget.option);
+    setState(() =>
+        _selected = TryOrInstallPage.of(context)._option == widget.option);
   }
 
   @override
@@ -145,21 +145,21 @@ class TryOrInstallPage extends StatefulWidget {
 }
 
 class _TryOrInstallPageState extends State<TryOrInstallPage> {
-  var option = Option.none;
+  var _option = Option.none;
 
   void selectOption(Option option) {
     assert(option != Option.none);
-    if (option != this.option) {
-      setState(() => this.option = option);
+    if (option != _option) {
+      setState(() => _option = option);
     }
   }
 
-  void continueWith_selectedOption() {
-    if (option == Option.repairUbuntu) {
+  void continueWithSelectedOption() {
+    if (_option == Option.repairUbuntu) {
       Navigator.pushNamed(context, '/repairubuntu');
-    } else if (option == Option.tryUbuntu) {
+    } else if (_option == Option.tryUbuntu) {
       Navigator.pushNamed(context, '/tryubuntu');
-    } else if (option == Option.installUbuntu) {
+    } else if (_option == Option.installUbuntu) {
       // XXX: detect we need to show the "Turn off RST" page,
       // or if we can proceed directly to installation
       //Navigator.pushNamed(context, '/turnoffrst');
@@ -244,9 +244,9 @@ class _TryOrInstallPageState extends State<TryOrInstallPage> {
                         child: Text(
                           UbuntuLocalizations.of(context).continueButtonText,
                         ),
-                        onPressed: (option != Option.none)
-                            ? continueWith_selectedOption
-                            : null,
+                        onPressed: (_option != Option.none)
+                            ? continueWithSelectedOption
+                            : () {},
                       ),
                     ],
                   ),

@@ -85,10 +85,10 @@ class SubiquityClient {
     final request = Request('GET', Uri.http('localhost', 'meta/status'));
     final response = await _client.send(request);
 
-    final status_json = jsonDecode(await response.stream.bytesToString());
+    final statusJson = jsonDecode(await response.stream.bytesToString());
     final status = ApplicationStatus();
 
-    switch (status_json['state']) {
+    switch (statusJson['state']) {
       case 'STARTING_UP':
         {
           status.state = ApplicationState.STARTING_UP;
@@ -146,12 +146,12 @@ class SubiquityClient {
         break;
     }
 
-    status.confirming_tty = status_json['confirming_tty'];
-    status.cloudInitOk = status_json['cloud_init_ok'];
-    status.interactive = status_json['interactive'];
-    status.echoSyslogId = status_json['echo_syslog_id'];
-    status.logSyslogId = status_json['log_syslog_id'];
-    status.eventSyslogId = status_json['event_syslog_id'];
+    status.confirmingTty = statusJson['confirming_tty'];
+    status.cloudInitOk = statusJson['cloud_init_ok'];
+    status.interactive = statusJson['interactive'];
+    status.echoSyslogId = statusJson['echo_syslog_id'];
+    status.logSyslogId = statusJson['log_syslog_id'];
+    status.eventSyslogId = statusJson['event_syslog_id'];
 
     ///! status.error =
 
@@ -203,7 +203,7 @@ class SubiquityClient {
 
   Future<void> fetchKeyboardLayouts(String assetName, Locale locale) async {
     final langtag = locale.toLanguageTag().replaceAll('-', '_');
-    print('fetching keyboard layouts for ' + langtag);
+    print('fetching keyboard layouts for ' '$langtag');
     final firstpass = keyboardlangs.isEmpty;
     var matchinglang = 'C';
     keyboardlayoutlist.clear();

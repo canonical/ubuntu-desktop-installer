@@ -42,7 +42,7 @@ void main() {
 
     var status = await _client.status();
     expect(status.state, ApplicationState.WAITING);
-    expect(status.confirming_tty, '');
+    expect(status.confirmingTty, '');
     expect(status.cloudInitOk, true);
     expect(status.interactive, true);
     expect(status.echoSyslogId, startsWith('subiquity_echo.'));

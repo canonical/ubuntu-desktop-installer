@@ -19,11 +19,12 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
-  static String m0(url) =>
-      "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://${url}\">${url}</a>";
+  static String m0(Object url) =>
+      "Pour des instructions détaillées, veuillez ouvrir ce lien sur un "
+      "téléphone ou un autre appareil : <a href=\"https://$url\">$url</a>";
 
-  static String m1(url) =>
-      "Vous pouvez éventuellement lire les <a href=\"${url}\">notes de publication</a>.";
+  static String m1(Object url) => "Vous pouvez éventuellement lire les "
+      "<a href=\"$url\">notes de publication</a>.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -31,18 +32,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "Go Back": MessageLookupByLibrary.simpleMessage("Retour"),
         "Install Ubuntu":
             MessageLookupByLibrary.simpleMessage("Installer Ubuntu"),
-        "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.":
+        "Install Ubuntu alongside (or instead of) your current operating "
+                "system. This shouldn\'t take too long.":
             MessageLookupByLibrary.simpleMessage(
-                "Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps."),
+                "Installer Ubuntu à côté (ou en remplacement) de votre "
+                "système d’exploitation actuel. Ceci ne devrait pas "
+                "prendre trop longtemps."),
         "Repair installation":
             MessageLookupByLibrary.simpleMessage("Réparer l’installation"),
-        "Repairing will reinstall all installed software without touching documents or settings.":
+        "Repairing will reinstall all installed software without "
+                "touching documents or settings.":
             MessageLookupByLibrary.simpleMessage(
-                "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres."),
+                "La réparation réinstallera tous les logiciels installés "
+                "en conservant les documents et les paramètres."),
         "Restart": MessageLookupByLibrary.simpleMessage("Redémarrer"),
-        "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.":
+        "This computer uses Intel RST (Rapid Storage Technology). You need "
+                "to turn off RST in Windows before installing Ubuntu.":
             MessageLookupByLibrary.simpleMessage(
-                "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu."),
+                "Cet ordinateur utilise la technologie RST "
+                "(Rapid Storage Technology) d’Intel. Il est nécessaire de "
+                "désactiver RST sous Windows avant d’installer Ubuntu."),
         "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Essayer Ubuntu"),
         "Try or install":
             MessageLookupByLibrary.simpleMessage("Essayer ou installer"),
@@ -52,7 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Welcome": MessageLookupByLibrary.simpleMessage("Bienvenue"),
         "You can try Ubuntu without making any changes to your computer.":
             MessageLookupByLibrary.simpleMessage(
-                "Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur."),
+                "Vous pouvez essayer Ubuntu sans appliquer aucun "
+                "changement à votre ordinateur."),
         "instructions": m0,
         "releaseNotesLabel": m1
       };

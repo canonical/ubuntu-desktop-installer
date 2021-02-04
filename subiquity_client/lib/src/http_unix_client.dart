@@ -46,7 +46,8 @@ class HttpUnixClient extends BaseClient {
   var _chunkLength = -1;
   var _chunkRead = -1;
 
-  /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
+  /// Creates a new HTTP client that
+  /// communicates on a Unix domain socket on [path].
   HttpUnixClient(this.path);
 
   @override
@@ -64,7 +65,7 @@ class HttpUnixClient extends BaseClient {
       message += 'Content-Length: ${request.contentLength}\r\n';
     }
     request.headers.forEach((name, value) {
-      message += '${name}: ${value}\r\n';
+      message += '$name: $value\r\n';
     });
     message += '\r\n';
     _socket.write(message);
