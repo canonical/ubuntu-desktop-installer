@@ -25,9 +25,12 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   })  : assert(client != null, '`SubiquityClient` must not be `null`'),
         super(key: key);
 
-  List<Locale> get _supportedLocale =>
-      [for (final l in client.languagelist) l.item1].where((locale) =>
-          UbuntuLocalizations.supportedLocales.contains(locale.languageCode));
+  Iterable<Locale> get _supportedLocale => [
+        for (final l in client.languagelist.where((t) => UbuntuLocalizations
+            .supportedLocales
+            .contains(t.item1.languageCode)))
+          l.item1
+      ];
 
   @override
   Widget build(BuildContext context) => MaterialApp(
