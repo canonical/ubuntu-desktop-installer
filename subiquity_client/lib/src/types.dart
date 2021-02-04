@@ -17,6 +17,7 @@ class SSHData {
   List<dynamic> authorizedKeys;
 }
 
+// ignore: non_constant_identifier_names
 enum ApplicationState {
   UNKNOWN,
   STARTING_UP,
@@ -31,6 +32,7 @@ enum ApplicationState {
   ERROR
 }
 
+// ignore: non_constant_identifier_names
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
@@ -39,6 +41,7 @@ enum ErrorReportState {
   ERROR_LOADING
 }
 
+// ignore: non_constant_identifier_names
 enum ErrorReportKind {
   BLOCK_PROBE_FAIL,
   DISK_PROBE_FAIL,
