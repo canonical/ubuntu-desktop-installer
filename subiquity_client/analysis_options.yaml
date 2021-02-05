@@ -1,1 +1,6 @@
-include: package:pedantic/analysis_options.yaml
+include: package:effective_dart/analysis_options.yaml
+
+linter:
+  rules:
+    constant_identifier_names: false
+    lines_longer_than_80_chars: false
