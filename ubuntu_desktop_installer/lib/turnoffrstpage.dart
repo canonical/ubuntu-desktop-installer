@@ -41,7 +41,7 @@ class TurnOffRSTPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(description),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Html(
@@ -57,7 +57,7 @@ class TurnOffRSTPage extends StatelessWidget {
               const SizedBox(height: 40),
               Image.asset('assets/rst.png'),
             ])),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
