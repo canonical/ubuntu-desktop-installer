@@ -3,16 +3,16 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:ubuntu_desktop_installer/i18n.dart';
 import 'package:yaru/yaru.dart';
-
 import 'package:subiquity_client/subiquity_client.dart';
+import 'i18n.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
     Key key,
-    this.client,
-  }) : super(key: key);
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
 
   final SubiquityClient client;
 
@@ -25,14 +25,15 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   int _selectedLanguageIndex = 0;
 
-  final AutoScrollController _languageListScrollController =
-      AutoScrollController();
+  AutoScrollController _languageListScrollController;
 
-  final kbdAssetName = 'assets/kbdnames.txt';
+  static const kbdAssetName = 'assets/kbdnames.txt';
 
   @override
   void initState() {
     super.initState();
+    _languageListScrollController = AutoScrollController();
+
     widget.client
         .fetchKeyboardLayouts(kbdAssetName, Locale(Intl.defaultLocale));
     final locale = Intl.defaultLocale;
@@ -45,7 +46,13 @@ class _WelcomePageState extends State<WelcomePage> {
     SchedulerBinding.instance.addPostFrameCallback((_) =>
         _languageListScrollController.scrollToIndex(_selectedLanguageIndex,
             preferPosition: AutoScrollPosition.middle,
-            duration: Duration(milliseconds: 1)));
+            duration: const Duration(milliseconds: 1)));
+  }
+
+  @override
+  void dispose() {
+    _languageListScrollController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -73,7 +80,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     child: ListView.builder(
                       controller: _languageListScrollController,
                       itemCount: widget.client.languagelist.length,
-                      itemBuilder: (BuildContext context, int index) {
+                      itemBuilder: (context, index) {
                         return AutoScrollTag(
                             index: index,
                             key: ValueKey(index),
@@ -99,12 +106,12 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
                   child: Text(UbuntuLocalizations.of(context).goBackButtonText),
-                  onPressed: null,
+                  onPressed: () {},
                 ),
                 OutlinedButton(
                   child:

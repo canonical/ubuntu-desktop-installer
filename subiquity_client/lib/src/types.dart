@@ -7,14 +7,14 @@ class KeyboardSetting {
 class IdentityData {
   String realname;
   String username;
-  String crypted_password;
+  String cryptedPassword;
   String hostname;
 }
 
 class SSHData {
-  bool install_server;
-  bool allow_pw;
-  List<dynamic> authorized_keys;
+  bool installServer;
+  bool allowPw;
+  List<dynamic> authorizedKeys;
 }
 
 enum ApplicationState {
@@ -54,16 +54,16 @@ class ErrorReportRef {
   String base;
   ErrorReportKind kind;
   bool seen;
-  String oops_id;
+  String oopsId;
 }
 
 class ApplicationStatus {
   ApplicationState state;
-  String confirming_tty;
+  String confirmingTty;
   ErrorReportRef error;
-  bool cloud_init_ok;
+  bool cloudInitOk;
   bool interactive;
-  String echo_syslog_id;
-  String log_syslog_id;
-  String event_syslog_id;
+  String echoSyslogId;
+  String logSyslogId;
+  String eventSyslogId;
 }

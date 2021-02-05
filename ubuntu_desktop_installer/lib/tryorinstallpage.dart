@@ -14,11 +14,15 @@ enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 class OptionCard extends StatefulWidget {
   OptionCard({
     Key key,
-    this.option,
-    this.imageAsset,
-    this.titleText,
-    this.bodyText,
-  }) : super(key: key);
+    @required this.option,
+    @required this.imageAsset,
+    @required this.titleText,
+    @required this.bodyText,
+  })  : assert(option != null, '`option` must not be `null`'),
+        assert(imageAsset != null, '`imageAsset` must not be `null`'),
+        assert(titleText != null, '`titleText` must not be `null`'),
+        assert(bodyText != null, '`bodyText` must not be `null`'),
+        super(key: key);
 
   final Option option;
   final String imageAsset;
@@ -30,35 +34,35 @@ class OptionCard extends StatefulWidget {
 }
 
 class _OptionCardState extends State<OptionCard> {
-  bool selected = false;
-  bool hovered = false;
+  bool _selected = false;
+  bool _hovered = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     setState(() {
-      selected = (TryOrInstallPage.of(context).option == widget.option);
+      _selected = (TryOrInstallPage.of(context)._option == widget.option);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: (hovered || selected) ? 4.0 : 1.0,
+      elevation: (_hovered || _selected) ? 4.0 : 1.0,
       child: InkWell(
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(children: <Widget>[
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(flex: 2, child: Image.asset(widget.imageAsset)),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   widget.titleText,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
                 )),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
                 child: Text(
               widget.bodyText,
@@ -70,9 +74,9 @@ class _OptionCardState extends State<OptionCard> {
         onTap: () {
           TryOrInstallPage.of(context).selectOption(widget.option);
         },
-        onHover: (bool value) {
+        onHover: (value) {
           setState(() {
-            hovered = value;
+            _hovered = value;
           });
         },
       ),
@@ -86,22 +90,25 @@ class TryOrInstallPageInheritedContainer extends InheritedWidget {
   TryOrInstallPageInheritedContainer({
     Key key,
     Widget child,
-    this.data,
-  }) : super(key: key, child: child);
+    @required this.data,
+  })  : assert(data != null, '`TryOrInstallPageState` must not be `null`'),
+        super(
+          key: key,
+          child: child,
+        );
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => true;
 }
 
 class TryOrInstallPage extends StatefulWidget {
-  final Widget child;
   final SubiquityClient client;
 
   const TryOrInstallPage({
     Key key,
-    this.child,
-    this.client,
-  }) : super(key: key);
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
 
   static TryOrInstallPageState of(BuildContext context) {
     return context
@@ -111,7 +118,7 @@ class TryOrInstallPage extends StatefulWidget {
   }
 
   @override
-  State<StatefulWidget> createState() => TryOrInstallPageState();
+  TryOrInstallPageState createState() => TryOrInstallPageState();
 
   String get title => Intl.message('Try or install');
 
@@ -127,7 +134,7 @@ class TryOrInstallPage extends StatefulWidget {
   String get installDescription => Intl.message(
       "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.");
 
-  String releaseNotesLabel(url) => Intl.message(
+  String releaseNotesLabel(Object url) => Intl.message(
         'You may wish to read the <a href="$url">release notes</a>.',
         name: 'releaseNotesLabel',
         args: [url],
@@ -135,23 +142,23 @@ class TryOrInstallPage extends StatefulWidget {
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
-  Option option = Option.none;
+  Option _option = Option.none;
 
   void selectOption(Option option) {
     assert(option != Option.none);
-    if (option != this.option) {
+    if (option != _option) {
       setState(() {
-        this.option = option;
+        _option = option;
       });
     }
   }
 
   void continueWithSelectedOption() {
-    if (option == Option.repairUbuntu) {
+    if (_option == Option.repairUbuntu) {
       Navigator.pushNamed(context, '/repairubuntu');
-    } else if (option == Option.tryUbuntu) {
+    } else if (_option == Option.tryUbuntu) {
       Navigator.pushNamed(context, '/tryubuntu');
-    } else if (option == Option.installUbuntu) {
+    } else if (_option == Option.installUbuntu) {
       // XXX: detect we need to show the "Turn off RST" page,
       // or if we can proceed directly to installation
       //Navigator.pushNamed(context, '/turnoffrst');
@@ -174,7 +181,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Expanded(
                 child: Row(
                   children: <Widget>[
@@ -186,7 +193,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                         bodyText: widget.repairDescription,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: OptionCard(
                         option: Option.tryUbuntu,
@@ -195,7 +202,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                         bodyText: widget.tryDescription,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: OptionCard(
                         option: Option.installUbuntu,
@@ -207,7 +214,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -216,7 +223,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                     child: Html(
                       data: widget
                           .releaseNotesLabel(widget.client.releaseNotesURL),
-                      onLinkTap: (url) => launch(url),
+                      onLinkTap: launch,
                     ),
                   ),
                   ButtonBar(
@@ -231,9 +238,9 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                       OutlinedButton(
                         child: Text(
                             UbuntuLocalizations.of(context).continueButtonText),
-                        onPressed: (option != Option.none)
+                        onPressed: (_option != Option.none)
                             ? continueWithSelectedOption
-                            : null,
+                            : () {},
                       ),
                     ],
                   ),

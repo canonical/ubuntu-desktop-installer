@@ -4,18 +4,18 @@ import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/test/test_server.dart';
 
 void main() {
-  final _test_server = TestServer();
+  final _testServer = TestServer();
   final _client = SubiquityClient();
-  var _socket_path;
+  var _socketPath;
 
   setUp(() async {
-    _socket_path = await _test_server.start('examples/simple.json');
-    _client.open(_socket_path);
+    _socketPath = await _testServer.start('examples/simple.json');
+    _client.open(_socketPath);
   });
 
   tearDown(() async {
     _client.close();
-    _test_server.stop();
+    _testServer.stop();
   });
 
   test('simple server requests', () async {
@@ -32,24 +32,24 @@ void main() {
     var id = await _client.identity();
     expect(id.realname, '');
     expect(id.username, '');
-    expect(id.crypted_password, '');
+    expect(id.cryptedPassword, '');
     expect(id.hostname, '');
 
     var ssh = await _client.ssh();
-    expect(ssh.install_server, false);
-    expect(ssh.allow_pw, true);
-    expect(ssh.authorized_keys, []);
+    expect(ssh.installServer, false);
+    expect(ssh.allowPw, true);
+    expect(ssh.authorizedKeys, []);
 
     var status = await _client.status();
     expect(status.state, ApplicationState.WAITING);
-    expect(status.confirming_tty, '');
-    expect(status.cloud_init_ok, true);
+    expect(status.confirmingTty, '');
+    expect(status.cloudInitOk, true);
     expect(status.interactive, true);
-    expect(status.echo_syslog_id, startsWith('subiquity_echo.'));
-    expect(status.log_syslog_id, startsWith('subiquity_log.'));
-    expect(status.event_syslog_id, startsWith('subiquity_event.'));
+    expect(status.echoSyslogId, startsWith('subiquity_echo.'));
+    expect(status.logSyslogId, startsWith('subiquity_log.'));
+    expect(status.eventSyslogId, startsWith('subiquity_event.'));
 
-    print(await _client.mark_configured(['1']));
+    print(await _client.markConfigured(['1']));
     print(await _client.confirm('a'));
   });
 }
