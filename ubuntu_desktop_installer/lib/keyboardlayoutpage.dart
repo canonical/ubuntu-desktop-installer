@@ -12,9 +12,14 @@ class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
     Key key,
     this.client,
+    this.keyboardLayoutExceptions = const {
+      'ua': 'uk',
+      'gr': 'el',
+    },
   }) : super(key: key);
 
   final SubiquityClient client;
+  final Map<String, String> keyboardLayoutExceptions;
 
   @override
   _KeyboardLayoutPageState createState() => _KeyboardLayoutPageState();
@@ -26,26 +31,37 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
-  int _selectedLayoutIndex = 0;
-  String _selectedLayoutName = '';
-  int _selectedVariantIndex = 0;
+  var _selectedLayoutIndex = 0;
+  var _selectedLayoutName = '';
+  var _selectedVariantIndex = 0;
 
   final AutoScrollController _layoutListScrollController =
       AutoScrollController();
+
+  List<String> get _adjustedKeyboardLayoutList {
+    final keyboardLayoutList = [
+      for (final t in widget.client.keyboardlayoutlist) t.item1
+    ];
+    for (final i in widget.keyboardLayoutExceptions.values) {
+      if (keyboardLayoutList.contains(i)) {
+        keyboardLayoutList[keyboardLayoutList.indexOf(i)] =
+            widget.keyboardLayoutExceptions[i];
+      }
+    }
+    return keyboardLayoutList;
+  }
 
   @override
   void initState() {
     super.initState();
     final locale = Intl.defaultLocale.toString().split('_').last.toLowerCase();
-    // FIXME: incorrect heuristic:
-    //    Ukrainian is uk, but the default keyboard layout is ua
-    //    Greek is el, but the default keyboard layout is gr
-    for (var i = 0; i < widget.client.keyboardlayoutlist.length; ++i) {
-      if (widget.client.keyboardlayoutlist[i].item1 == locale) {
-        _selectedLayoutIndex = i;
-        _selectedLayoutName = locale;
-        break;
-      }
+    final adjustedKeyboardLayoutList = _adjustedKeyboardLayoutList;
+    final keyboardLayout = adjustedKeyboardLayoutList.firstWhere(
+      (k) => k == locale,
+    );
+    if (keyboardLayout != null) {
+      _selectedLayoutIndex = adjustedKeyboardLayoutList.indexOf(keyboardLayout);
+      _selectedLayoutName = keyboardLayout;
     }
     SchedulerBinding.instance.addPostFrameCallback((_) =>
         _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,

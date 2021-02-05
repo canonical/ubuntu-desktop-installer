@@ -197,9 +197,9 @@ class SubiquityClient {
   // TODO: un-hardcode
   final releaseNotesURL = 'https://wiki.ubuntu.com/GroovyGorilla/ReleaseNotes';
 
-  Set<String> keyboardlangs = {};
-  var keyboardlayoutlist = [];
-  Map<String, List<Tuple2<String, String>>> keyboardvariantlist = {};
+  final Set<String> keyboardlangs = {};
+  final List<Tuple2<String, String>> keyboardlayoutlist = [];
+  final Map<String, List<Tuple2<String, String>>> keyboardvariantlist = {};
 
   Future<void> fetchKeyboardLayouts(String assetName, Locale locale) async {
     final langtag = locale.toLanguageTag().replaceAll('-', '_');
