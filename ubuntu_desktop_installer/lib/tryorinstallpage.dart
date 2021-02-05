@@ -18,7 +18,7 @@ class OptionCard extends StatefulWidget {
     @required this.imageAsset,
     @required this.titleText,
     @required this.bodyText,
-  })  : assert(option != null, '`Option` must not be `null`'),
+  })  : assert(option != null, '`option` must not be `null`'),
         assert(imageAsset != null, '`imageAsset` must not be `null`'),
         assert(titleText != null, '`titleText` must not be `null`'),
         assert(bodyText != null, '`bodyText` must not be `null`'),
@@ -85,7 +85,7 @@ class _OptionCardState extends State<OptionCard> {
 }
 
 class TryOrInstallPageInheritedContainer extends InheritedWidget {
-  final _TryOrInstallPageState data;
+  final TryOrInstallPageState data;
 
   TryOrInstallPageInheritedContainer({
     Key key,
@@ -110,7 +110,7 @@ class TryOrInstallPage extends StatefulWidget {
   })  : assert(client != null, '`SubiquityClient` must not be `null`'),
         super(key: key);
 
-  static _TryOrInstallPageState of(BuildContext context) {
+  static TryOrInstallPageState of(BuildContext context) {
     return context
         .dependOnInheritedWidgetOfExactType<
             TryOrInstallPageInheritedContainer>()
@@ -118,7 +118,7 @@ class TryOrInstallPage extends StatefulWidget {
   }
 
   @override
-  _TryOrInstallPageState createState() => _TryOrInstallPageState();
+  TryOrInstallPageState createState() => TryOrInstallPageState();
 
   String get title => Intl.message('Try or install');
 
@@ -141,7 +141,7 @@ class TryOrInstallPage extends StatefulWidget {
       );
 }
 
-class _TryOrInstallPageState extends State<TryOrInstallPage> {
+class TryOrInstallPageState extends State<TryOrInstallPage> {
   Option _option = Option.none;
 
   void selectOption(Option option) {
