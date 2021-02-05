@@ -12,8 +12,7 @@ import 'package:ubuntu_desktop_installer/main.dart';
 import 'package:ubuntu_desktop_installer/welcomepage.dart';
 
 void main() {
-  testWidgets('Ubuntu Desktop installer smoke tests',
-      (WidgetTester tester) async {
+  testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
     // Build our app and trigger a frame.
     TestWidgetsFlutterBinding.ensureInitialized();
     final client = SubiquityClient();

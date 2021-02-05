@@ -15,24 +15,18 @@ enum _HttpParserState {
 }
 
 class _HttpRequest {
-  var httpVersion = '';
-  var statusCode = 0;
-  var reasonPhrase = '';
-  var headers = <String, String>{};
+  String httpVersion = '';
+  int statusCode = 0;
+  String reasonPhrase = '';
+  Map<String, String> headers = {};
 
   BaseRequest request;
-  var completer = Completer<StreamedResponse>();
-  var stream = StreamController<List<int>>();
+  Completer<StreamedResponse> completer = Completer<StreamedResponse>();
+  StreamController<List<int>> stream = StreamController<List<int>>();
 
   _HttpRequest(this.request);
 
-  int get contentLength {
-    var contentLength = headers['Content-Length'];
-    if (contentLength == null) {
-      return null;
-    }
-    return int.parse(contentLength);
-  }
+  int get contentLength => int.tryParse(headers['Content-Length']);
 }
 
 class HttpUnixClient extends BaseClient {
@@ -57,7 +51,7 @@ class HttpUnixClient extends BaseClient {
 
   @override
   Future<StreamedResponse> send(BaseRequest request) async {
-    var address = InternetAddress(path, type: InternetAddressType.unix);
+    final address = InternetAddress(path, type: InternetAddressType.unix);
     _socket = await Socket.connect(address, 0);
     _socket.listen(_processData);
 
@@ -70,7 +64,7 @@ class HttpUnixClient extends BaseClient {
       message += 'Content-Length: ${request.contentLength}\r\n';
     }
     request.headers.forEach((name, value) {
-      message += '${name}: ${value}\r\n';
+      message += '$name: $value\r\n';
     });
     message += '\r\n';
     _socket.write(message);
@@ -78,10 +72,10 @@ class HttpUnixClient extends BaseClient {
     if (request is Request) {
       _socket.write(request.body);
     } else if (request is MultipartRequest) {
-      // FIXME(robert-ancell): Needs to be implemented.
+      // TODO FIXME(robert-ancell): Needs to be implemented.
       assert(false);
     } else if (request is StreamedRequest) {
-      // FIXME(robert-ancell): Needs to be implemented.
+      // TODO FIXME(robert-ancell): Needs to be implemented.
       assert(false);
     }
 
