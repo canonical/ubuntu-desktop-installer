@@ -20,7 +20,7 @@ import 'messages_fr.dart' deferred as messages_fr;
 import 'messages_messages.dart' deferred as messages_messages;
 
 typedef Future<dynamic> LibraryLoader();
-final _deferredLibraries = <String, LibraryLoader>{
+final Map<String, LibraryLoader> _deferredLibraries = {
   'en': messages_en.loadLibrary,
   'fr': messages_fr.loadLibrary,
   'messages': messages_messages.loadLibrary,

@@ -26,9 +26,9 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
-  var _selectedLayoutIndex = 0;
-  var _selectedLayoutName = '';
-  var _selectedVariantIndex = 0;
+  int _selectedLayoutIndex = 0;
+  String _selectedLayoutName = '';
+  int _selectedVariantIndex = 0;
 
   final _layoutListScrollController = AutoScrollController();
 
@@ -46,13 +46,10 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         break;
       }
     }
-    SchedulerBinding.instance.addPostFrameCallback(
-      (_) => _layoutListScrollController.scrollToIndex(
-        _selectedLayoutIndex,
-        preferPosition: AutoScrollPosition.middle,
-        duration: const Duration(milliseconds: 1),
-      ),
-    );
+    SchedulerBinding.instance.addPostFrameCallback((_) =>
+        _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
+            preferPosition: AutoScrollPosition.middle,
+            duration: const Duration(milliseconds: 1)));
   }
 
   @override
@@ -90,24 +87,25 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                               controller: _layoutListScrollController,
                               itemCount:
                                   widget.client.keyboardlayoutlist.length,
-                              itemBuilder: (context, index) => AutoScrollTag(
-                                index: index,
-                                key: ValueKey(index),
-                                controller: _layoutListScrollController,
-                                child: ListTile(
-                                  title: Text(
-                                    widget
-                                        .client.keyboardlayoutlist[index].item2,
-                                  ),
-                                  selected: index == _selectedLayoutIndex,
-                                  onTap: () => setState(() {
-                                    _selectedLayoutIndex = index;
-                                    _selectedLayoutName = widget
-                                        .client.keyboardlayoutlist[index].item1;
-                                    _selectedVariantIndex = 0;
-                                  }),
-                                ),
-                              ),
+                              itemBuilder: (context, index) {
+                                return AutoScrollTag(
+                                    index: index,
+                                    key: ValueKey(index),
+                                    controller: _layoutListScrollController,
+                                    child: ListTile(
+                                      title: Text(widget.client
+                                          .keyboardlayoutlist[index].item2),
+                                      selected: index == _selectedLayoutIndex,
+                                      onTap: () {
+                                        setState(() {
+                                          _selectedLayoutIndex = index;
+                                          _selectedLayoutName = widget.client
+                                              .keyboardlayoutlist[index].item1;
+                                          _selectedVariantIndex = 0;
+                                        });
+                                      },
+                                    ));
+                              },
                             ),
                           ),
                         ),
@@ -161,9 +159,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     alignment: Alignment.centerLeft,
                     child: OutlinedButton(
                       child: Text(widget.detect),
-                      onPressed: () => print(
-                        'TODO: show dialog to detect keyboard layout',
-                      ),
+                      onPressed: () {
+                        print('TODO: show dialog to detect keyboard layout');
+                      },
                     ),
                   ),
                 ],
@@ -173,10 +171,11 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
-                    child: Text(
-                      UbuntuLocalizations.of(context).goBackButtonText,
-                    ),
-                    onPressed: () => Navigator.pop(context)),
+                    child:
+                        Text(UbuntuLocalizations.of(context).goBackButtonText),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
                 OutlinedButton(
                   child:
                       Text(UbuntuLocalizations.of(context).continueButtonText),

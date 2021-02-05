@@ -46,8 +46,7 @@ class HttpUnixClient extends BaseClient {
   var _chunkLength = -1;
   var _chunkRead = -1;
 
-  /// Creates a new HTTP client that
-  /// communicates on a Unix domain socket on [path].
+  /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
   HttpUnixClient(this.path);
 
   @override
@@ -58,8 +57,8 @@ class HttpUnixClient extends BaseClient {
 
     var message = '';
     var url = request.url;
-    message += '${request.method} '
-        '${url.path}${url.hasQuery ? '?' : ''}${url.query} HTTP/1.1\r\n';
+    message +=
+        '${request.method} ${url.path}${url.hasQuery ? '?' : ''}${url.query} HTTP/1.1\r\n';
     message += 'Host:\r\n';
     if (request.contentLength != null) {
       message += 'Content-Length: ${request.contentLength}\r\n';

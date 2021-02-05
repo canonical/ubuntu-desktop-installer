@@ -20,8 +20,7 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'messages';
 
   static String m0(Object url) =>
-      "For instructions, open this page on a phone or other device: >"
-      "<a href=\"https://$url\">$url</a>";
+      "For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>";
 
   static String m1(Object url) =>
       "You may wish to read the <a href=\"$url\">release notes</a>.";
@@ -32,25 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "Go Back": MessageLookupByLibrary.simpleMessage("Go Back"),
         "Install Ubuntu":
             MessageLookupByLibrary.simpleMessage("Install Ubuntu"),
-        "Install Ubuntu alongside (or instead of) your current operating "
-                "system. This shouldn\'t take too long.":
+        "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.":
             MessageLookupByLibrary.simpleMessage(
-                "Install Ubuntu alongside (or instead of) your current "
-                "operating system. This shouldn\'t take too long."),
+                "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long."),
         "Repair installation":
             MessageLookupByLibrary.simpleMessage("Repair installation"),
-        "Repairing will reinstall all installed software without touching "
-                "documents or settings.":
+        "Repairing will reinstall all installed software without touching documents or settings.":
             MessageLookupByLibrary.simpleMessage(
-                "Repairing will reinstall all installed software without "
-                "touching documents or settings."),
+                "Repairing will reinstall all installed software without touching documents or settings."),
         "Restart": MessageLookupByLibrary.simpleMessage("Restart"),
-        "This computer uses Intel RST (Rapid Storage Technology). You need to "
-                "turn off RST in Windows before installing Ubuntu.":
+        "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.":
             MessageLookupByLibrary.simpleMessage(
-                "This computer uses Intel RST (Rapid Storage Technology). "
-                "You need to turn off RST in Windows "
-                "before installing Ubuntu."),
+                "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu."),
         "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Try Ubuntu"),
         "Try or install":
             MessageLookupByLibrary.simpleMessage("Try or install"),
@@ -60,8 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "You can try Ubuntu without making any changes to your computer.":
             MessageLookupByLibrary.simpleMessage(
-                "You can try Ubuntu without making any "
-                "changes to your computer."),
+                "You can try Ubuntu without making any changes to your computer."),
         "instructions": m0,
         "releaseNotesLabel": m1
       };
