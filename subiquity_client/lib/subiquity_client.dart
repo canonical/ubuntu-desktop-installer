@@ -161,17 +161,27 @@ class SubiquityClient {
   /// Mark the controllers for endpoint_names as configured.
   Future<String> markConfigured(List<String> endpointNames) async {
     final request = Request(
-        'POST',
-        Uri.http('localhost', 'meta/markConfigured',
-            {'endpoint_names': '$endpointNames'}));
+      'POST',
+      Uri.http(
+        'localhost',
+        'meta/mark_configured',
+        {'endpoint_names': '$endpointNames'},
+      ),
+    );
     final response = await _client.send(request);
     return response.stream.bytesToString();
   }
 
   /// Confirm that the installation should proceed.
   Future<String> confirm(String tty) async {
-    final request =
-        Request('POST', Uri.http('localhost', 'meta/confirm', {'tty': tty}));
+    final request = Request(
+      'POST',
+      Uri.http(
+        'localhost',
+        'meta/confirm',
+        {'tty': tty},
+      ),
+    );
     final response = await _client.send(request);
     return response.stream.bytesToString();
   }
@@ -186,9 +196,12 @@ class SubiquityClient {
       for (final line in LineSplitter.split(data)) {
         final tokens = line.split(':');
         final codes = tokens[1].split('_');
-        languagelist.add(Tuple2(
+        languagelist.add(
+          Tuple2(
             codes.length == 1 ? Locale(codes[0]) : Locale(codes[0], codes[1]),
-            tokens[2]));
+            tokens[2],
+          ),
+        );
       }
       languagelist.sort((a, b) => a.item2.compareTo(b.item2));
     });
