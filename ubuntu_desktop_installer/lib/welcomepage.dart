@@ -111,7 +111,9 @@ class _WelcomePageState extends State<WelcomePage> {
               children: <OutlinedButton>[
                 OutlinedButton(
                   child: Text(UbuntuLocalizations.of(context).goBackButtonText),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 OutlinedButton(
                   child:
