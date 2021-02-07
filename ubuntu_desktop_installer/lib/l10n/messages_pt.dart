@@ -19,12 +19,14 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt';
 
-  static String m0(url) => "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://${url}\">${url}</a>";
+  static String m0(Object url) =>
+      "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://${url}\">${url}</a>";
 
-  static String m1(url) => "Talvez você queira ler as <a href=\"${url}\">notas de lançamento</a>.";
+  static String m1(Object url) =>
+      "Talvez você queira ler as <a href=\"${url}\">notas de lançamento</a>.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function> {
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Continue" : MessageLookupByLibrary.simpleMessage("Continuar"),
     "Go Back" : MessageLookupByLibrary.simpleMessage("Voltar"),
     "Install Ubuntu" : MessageLookupByLibrary.simpleMessage("Instalar o Ubuntu"),
