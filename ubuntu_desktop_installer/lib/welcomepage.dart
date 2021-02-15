@@ -6,6 +6,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'i18n.dart';
+import 'localized_view.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -18,8 +19,6 @@ class WelcomePage extends StatefulWidget {
 
   @override
   _WelcomePageState createState() => _WelcomePageState();
-
-  String get title => Intl.message('Welcome');
 }
 
 class _WelcomePageState extends State<WelcomePage> {
@@ -57,72 +56,72 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: yaruLightTheme.dividerColor,
-                        width: 1,
+    return LocalizedView(
+      builder: (context, lang) => Scaffold(
+        appBar: AppBar(title: Text(lang.welcome)),
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Center(
+                  child: FractionallySizedBox(
+                    widthFactor: 0.5,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: yaruLightTheme.dividerColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: ListView.builder(
-                      controller: _languageListScrollController,
-                      itemCount: widget.client.languagelist.length,
-                      itemBuilder: (context, index) {
-                        return AutoScrollTag(
-                            index: index,
-                            key: ValueKey(index),
-                            controller: _languageListScrollController,
-                            child: ListTile(
-                              title:
-                                  Text(widget.client.languagelist[index].item2),
-                              selected: index == _selectedLanguageIndex,
-                              onTap: () {
-                                setState(() {
-                                  _selectedLanguageIndex = index;
-                                  final locale =
-                                      widget.client.languagelist[index].item1;
-                                  UbuntuLocalizations.load(locale);
-                                  widget.client.fetchKeyboardLayouts(
-                                      kbdAssetName, locale);
-                                });
-                              },
-                            ));
-                      },
+                      child: ListView.builder(
+                        controller: _languageListScrollController,
+                        itemCount: widget.client.languagelist.length,
+                        itemBuilder: (context, index) {
+                          return AutoScrollTag(
+                              index: index,
+                              key: ValueKey(index),
+                              controller: _languageListScrollController,
+                              child: ListTile(
+                                title:
+                                    Text(widget.client.languagelist[index].item2),
+                                selected: index == _selectedLanguageIndex,
+                                onTap: () {
+                                  setState(() {
+                                    _selectedLanguageIndex = index;
+                                    final locale =
+                                        widget.client.languagelist[index].item1;
+                                    UbuntuLocalizations.load(locale);
+                                    widget.client.fetchKeyboardLayouts(
+                                        kbdAssetName, locale);
+                                  });
+                                },
+                              ));
+                        },
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            ButtonBar(
-              children: <OutlinedButton>[
-                OutlinedButton(
-                  child: Text(UbuntuLocalizations.of(context).goBackButtonText),
-                  onPressed: null,
-                ),
-                OutlinedButton(
-                  child:
-                      Text(UbuntuLocalizations.of(context).continueButtonText),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/tryorinstall');
-                  },
-                ),
-              ],
-            ),
-          ],
+              const SizedBox(height: 20),
+              ButtonBar(
+                children: <OutlinedButton>[
+                  OutlinedButton(
+                    child: Text(UbuntuLocalizations.of(context).goBackButtonText),
+                    onPressed: null,
+                  ),
+                  OutlinedButton(
+                    child:
+                        Text(UbuntuLocalizations.of(context).continueButtonText),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/tryorinstall');
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
