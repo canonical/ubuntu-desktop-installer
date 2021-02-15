@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
-import 'i18n.dart';
+import 'localized_view.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
   const TurnOffRSTPage({
@@ -26,61 +26,62 @@ class TurnOffRSTPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        automaticallyImplyLeading: false,
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-                child: Column(children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(description),
-              ),
+    return LocalizedView(
+      builder: (context, lang) => Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+          automaticallyImplyLeading: false,
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                  child: Column(children: <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(description),
+                ),
+                const SizedBox(height: 20),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Html(
+                    data: instructions('help.ubuntu.com/rst'),
+                    style: {
+                      'body': Style(
+                        margin: EdgeInsets.all(0),
+                      ),
+                    },
+                    onLinkTap: launch,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                Image.asset('assets/rst.png'),
+              ])),
               const SizedBox(height: 20),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Html(
-                  data: instructions('help.ubuntu.com/rst'),
-                  style: {
-                    'body': Style(
-                      margin: EdgeInsets.all(0),
-                    ),
-                  },
-                  onLinkTap: launch,
-                ),
-              ),
-              const SizedBox(height: 40),
-              Image.asset('assets/rst.png'),
-            ])),
-            const SizedBox(height: 20),
-            ButtonBar(
-              children: <OutlinedButton>[
-                OutlinedButton(
-                    child:
-                        Text(UbuntuLocalizations.of(context).goBackButtonText),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-                OutlinedButton(
-                  style: yaruOutlinedButtonThemeData.style.copyWith(
+              ButtonBar(
+                children: <OutlinedButton>[
+                  OutlinedButton(
+                    child: Text(lang.backButtonText),
+                    onPressed: Navigator.of(context).pop,
+                  ),
+                  OutlinedButton(
+                    style: yaruOutlinedButtonThemeData.style.copyWith(
                       backgroundColor: MaterialStateColor.resolveWith(
-                          (states) => Color(0xFF0e8420)),
-                      foregroundColor: MaterialStateColor.resolveWith(
-                          (states) => yaruWhite)),
-                  child:
-                      Text(UbuntuLocalizations.of(context).restartButtonText),
-                  onPressed: () {
-                    print('TODO: restart computer');
-                  },
-                ),
-              ],
-            ),
-          ],
+                        (states) => Color(0xFF0e8420),
+                      ),
+                      foregroundColor:
+                          MaterialStateColor.resolveWith((states) => yaruWhite),
+                    ),
+                    child: Text(lang.restartButtonText),
+                    onPressed: () {
+                      print('TODO: restart computer');
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

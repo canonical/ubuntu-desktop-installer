@@ -5,8 +5,9 @@ import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'i18n.dart';
+
 import 'localized_view.dart';
+import 'main.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -34,7 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
     _languageListScrollController = AutoScrollController();
 
     widget.client
-        .fetchKeyboardLayouts(kbdAssetName, Locale(Intl.defaultLocale));
+        .fetchKeyboardLayouts(kbdAssetName, UbuntuDesktopInstallerApp.locale);
     final locale = Intl.defaultLocale;
     for (var i = 0; i < widget.client.languagelist.length; ++i) {
       if (widget.client.languagelist[i].item1.languageCode == locale) {
@@ -84,15 +85,15 @@ class _WelcomePageState extends State<WelcomePage> {
                               key: ValueKey(index),
                               controller: _languageListScrollController,
                               child: ListTile(
-                                title:
-                                    Text(widget.client.languagelist[index].item2),
+                                title: Text(
+                                    widget.client.languagelist[index].item2),
                                 selected: index == _selectedLanguageIndex,
                                 onTap: () {
                                   setState(() {
                                     _selectedLanguageIndex = index;
                                     final locale =
                                         widget.client.languagelist[index].item1;
-                                    UbuntuLocalizations.load(locale);
+                                    UbuntuDesktopInstallerApp.locale = locale;
                                     widget.client.fetchKeyboardLayouts(
                                         kbdAssetName, locale);
                                   });
@@ -108,12 +109,11 @@ class _WelcomePageState extends State<WelcomePage> {
               ButtonBar(
                 children: <OutlinedButton>[
                   OutlinedButton(
-                    child: Text(UbuntuLocalizations.of(context).goBackButtonText),
+                    child: Text(lang.backButtonText),
                     onPressed: null,
                   ),
                   OutlinedButton(
-                    child:
-                        Text(UbuntuLocalizations.of(context).continueButtonText),
+                    child: Text(lang.continueButtonText),
                     onPressed: () {
                       Navigator.pushNamed(context, '/tryorinstall');
                     },
