@@ -240,7 +240,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                             UbuntuLocalizations.of(context).continueButtonText),
                         onPressed: (_option != Option.none)
                             ? continueWithSelectedOption
-                            : () {},
+                            : null,
                       ),
                     ],
                   ),
