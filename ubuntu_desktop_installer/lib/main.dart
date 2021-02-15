@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart';
 
@@ -25,24 +25,22 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   })  : assert(client != null, '`SubiquityClient` must not be `null`'),
         super(key: key);
 
-  Iterable<Locale> get _supportedLocale => [
-        for (final l in client.languagelist.where((t) => UbuntuLocalizations
-            .supportedLocales
-            .contains(t.item1.languageCode)))
-          l.item1
-      ];
+  Iterable<Locale> get _supportedLocale {
+    final locales =
+        AppLocalizations.supportedLocales.map((e) => e.languageCode);
+
+    return client.languagelist
+        .where((e) => locales.contains(e.item1.languageCode))
+        .map((e) => e.item1);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => UbuntuLocalizations.of(context).appTitle,
+      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       theme: yaruLightTheme,
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        UbuntuLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: _supportedLocale,
       home: WelcomePage(client: client),
       routes: <String, WidgetBuilder>{
