@@ -27,30 +27,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Continue": MessageLookupByLibrary.simpleMessage("Continuer"),
-        "Go Back": MessageLookupByLibrary.simpleMessage("Retour"),
-        "Install Ubuntu":
+        "continueButtonText": MessageLookupByLibrary.simpleMessage("Continuer"),
+        "backButtonText": MessageLookupByLibrary.simpleMessage("Retour"),
+        "installUbuntu":
             MessageLookupByLibrary.simpleMessage("Installer Ubuntu"),
         "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.":
             MessageLookupByLibrary.simpleMessage(
                 "Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps."),
-        "Repair installation":
+        "repairInstallation":
             MessageLookupByLibrary.simpleMessage("Réparer l’installation"),
-        "Repairing will reinstall all installed software without touching documents or settings.":
+        "repairInstallationDescription":
             MessageLookupByLibrary.simpleMessage(
                 "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres."),
-        "Restart": MessageLookupByLibrary.simpleMessage("Redémarrer"),
-        "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.":
+        "restartButtonText": MessageLookupByLibrary.simpleMessage("Redémarrer"),
+        "turnOffRSTDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu."),
-        "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Essayer Ubuntu"),
-        "Try or install":
+        "tryUbuntu": MessageLookupByLibrary.simpleMessage("Essayer Ubuntu"),
+        "tryOrInstallPageTitle":
             MessageLookupByLibrary.simpleMessage("Essayer ou installer"),
-        "Turn off RST": MessageLookupByLibrary.simpleMessage("Désactiver RST"),
-        "Ubuntu Desktop Installer": MessageLookupByLibrary.simpleMessage(
+        "turnOffRST": MessageLookupByLibrary.simpleMessage("Désactiver RST"),
+        "appTitle": MessageLookupByLibrary.simpleMessage(
             "Programme d’installation du bureau Ubuntu"),
-        "Welcome": MessageLookupByLibrary.simpleMessage("Bienvenue"),
-        "You can try Ubuntu without making any changes to your computer.":
+        "welcome": MessageLookupByLibrary.simpleMessage("Bienvenue"),
+        "tryUbuntuDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur."),
         "instructions": m0,
