@@ -36,8 +36,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 
   static final _locale = ValueNotifier(Locale(Intl.systemLocale));
 
+  static Locale get locale => _locale.value;
   static set locale(Locale locale) {
-    print('here');
     _locale.value = locale;
   }
 
@@ -46,6 +46,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: _locale,
       builder: (context, val, _) => MaterialApp(
+        locale: val,
         onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
         theme: yaruLightTheme,
         debugShowCheckedModeBanner: false,
