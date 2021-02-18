@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
@@ -5,12 +7,14 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart';
 
 import 'keyboardlayoutpage.dart';
+import 'l10n/app_localizations.dart';
 import 'tryorinstallpage.dart';
 import 'turnoffrstpage.dart';
 import 'welcomepage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await setupAppLocalizations();
   final client = SubiquityClient();
   await client.fetchLanguageList('assets/languagelist');
   runApp(UbuntuDesktopInstallerApp(client: client));
