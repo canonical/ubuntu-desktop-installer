@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart';
@@ -54,7 +55,10 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
         theme: yaruLightTheme,
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: [
+          ...AppLocalizations.localizationsDelegates,
+          GlobalUbuntuLocalizations.delegate,
+        ],
         supportedLocales: _supportedLocale,
         home: WelcomePage(client: client),
         routes: <String, WidgetBuilder>{
