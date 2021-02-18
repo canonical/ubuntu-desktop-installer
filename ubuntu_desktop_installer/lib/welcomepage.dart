@@ -38,7 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
         .fetchKeyboardLayouts(kbdAssetName, UbuntuDesktopInstallerApp.locale);
     final locale = Intl.defaultLocale;
     for (var i = 0; i < widget.client.languagelist.length; ++i) {
-      if (widget.client.languagelist[i].item1.languageCode == locale) {
+      if (locale.contains(widget.client.languagelist[i].item1.languageCode)) {
         _selectedLanguageIndex = i;
         break;
       }
