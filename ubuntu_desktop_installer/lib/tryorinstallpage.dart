@@ -225,7 +225,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                     Flexible(
                       fit: FlexFit.tight,
                       child: Html(
-                        data: widget.releaseNotesLabel(lang.releaseNotesLabel),
+                        data: lang.releaseNotesLabel(widget.client.releaseNotesURL),
                         onLinkTap: launch,
                       ),
                     ),
