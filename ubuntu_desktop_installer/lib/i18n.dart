@@ -21,8 +21,8 @@ class UbuntuLocalizations {
     return Localizations.of<UbuntuLocalizations>(context, UbuntuLocalizations);
   }
 
-  // XXX: update this list when adding new translations
-  static final supportedLocales = ['en', 'fr', 'pt'];
+  // TODO: update this list when adding new translations
+  static const supportedLocales = ['en', 'fr', 'it', 'oc', 'pt'];
 
   final String localeName;
 

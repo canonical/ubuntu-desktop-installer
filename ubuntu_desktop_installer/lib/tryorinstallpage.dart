@@ -159,7 +159,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     } else if (_option == Option.tryUbuntu) {
       Navigator.pushNamed(context, '/tryubuntu');
     } else if (_option == Option.installUbuntu) {
-      // XXX: detect we need to show the "Turn off RST" page,
+      // TODO: detect if we need to show the "Turn off RST" page,
       // or if we can proceed directly to installation
       //Navigator.pushNamed(context, '/turnoffrst');
       Navigator.pushNamed(context, '/keyboardlayout');
@@ -240,7 +240,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                             UbuntuLocalizations.of(context).continueButtonText),
                         onPressed: (_option != Option.none)
                             ? continueWithSelectedOption
-                            : () {},
+                            : null,
                       ),
                     ],
                   ),
