@@ -7,6 +7,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 
 import 'package:ubuntu_desktop_installer/main.dart';
 import 'package:ubuntu_desktop_installer/welcomepage.dart';
@@ -15,6 +16,8 @@ void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
     // Build our app and trigger a frame.
     TestWidgetsFlutterBinding.ensureInitialized();
+    await setupAppLocalizations();
+
     final client = SubiquityClient();
     await client.fetchLanguageList('assets/languagelist');
     await tester.pumpWidget(UbuntuDesktopInstallerApp(client: client));
