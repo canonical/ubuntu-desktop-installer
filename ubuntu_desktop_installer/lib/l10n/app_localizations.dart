@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl_standalone.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_localizations/src/utils/date_localizations.dart';
 
 /// Finds the Locale of Operating System i.e. Platform. and assigns it to
 /// [Intl.systemLocale] and [Intl.defaultLocale].
