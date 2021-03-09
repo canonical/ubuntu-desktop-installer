@@ -36,9 +36,10 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   void initState() {
     super.initState();
     final locale = Intl.defaultLocale.toString().split('_').last.toLowerCase();
-    // TODO FIXME: incorrect heuristic:
-    //    Ukrainian is uk, but the default keyboard layout is ua
-    //    Greek is el, but the default keyboard layout is gr
+    // FIXME: incorrect heuristic:
+    //    Ukrainian is uk, but the default keyboard layout should be ua
+    //    Greek is el, but the default keyboard layout should be gr
+    //    Catalan is ca, but the default keyboard layout should be es-cat
     for (var i = 0; i < widget.client.keyboardlayoutlist.length; ++i) {
       if (widget.client.keyboardlayoutlist[i].item1 == locale) {
         _selectedLayoutIndex = i;
