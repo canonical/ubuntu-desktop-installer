@@ -12,6 +12,8 @@ import 'welcomepage.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final client = SubiquityClient();
+  // FIXME: assets/languagelist comes from subiquity, but once we have a more
+  // comprehensive set of translations we should replace that list by our own.
   await client.fetchLanguageList('assets/languagelist');
   runApp(UbuntuDesktopInstallerApp(client: client));
 }
