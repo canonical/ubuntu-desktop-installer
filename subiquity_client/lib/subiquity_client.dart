@@ -2,6 +2,7 @@ library subiquity_client;
 
 import 'dart:convert';
 import 'dart:ui';
+import 'package:diacritic/diacritic.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart';
 import 'package:tuple/tuple.dart';
@@ -190,7 +191,8 @@ class SubiquityClient {
             codes.length == 1 ? Locale(codes[0]) : Locale(codes[0], codes[1]),
             tokens[2]));
       }
-      languagelist.sort((a, b) => a.item2.compareTo(b.item2));
+      languagelist.sort((a, b) =>
+          removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
     });
   }
 
@@ -244,9 +246,11 @@ class SubiquityClient {
           }
         }
       }
-      keyboardlayoutlist.sort((a, b) => a.item2.compareTo(b.item2));
+      keyboardlayoutlist.sort((a, b) =>
+          removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
       for (final entry in keyboardvariantlist.entries) {
-        entry.value.sort((a, b) => a.item2.compareTo(b.item2));
+        entry.value.sort((a, b) =>
+            removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
       }
     });
   }
