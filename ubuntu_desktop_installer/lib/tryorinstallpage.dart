@@ -240,7 +240,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                           child: Text(lang.continueButtonText),
                           onPressed: (_option != Option.none)
                               ? continueWithSelectedOption
-                              : () {},
+                              : null,
                         ),
                       ],
                     ),
