@@ -38,7 +38,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         .map((e) => e.item1);
   }
 
-  static final _locale = ValueNotifier(Locale(Intl.systemLocale));
+  static final _locale =
+      ValueNotifier(Locale(Intl.shortLocale(Intl.systemLocale)));
 
   static Locale get locale => _locale.value;
   static set locale(Locale locale) {
@@ -49,8 +50,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: _locale,
-      builder: (context, val, _) => MaterialApp(
-        locale: val,
+      builder: (context, value, _) => MaterialApp(
+        locale: value,
         onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
         theme: yaruLightTheme,
         debugShowCheckedModeBanner: false,
