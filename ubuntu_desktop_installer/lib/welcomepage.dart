@@ -93,8 +93,8 @@ class _WelcomePageState extends State<WelcomePage> {
                                   onTap: () {
                                     setState(() {
                                       _selectedLanguageIndex = index;
-                                      final locale =
-                                          widget.client.languagelist[index].item1;
+                                      final locale = widget
+                                          .client.languagelist[index].item1;
                                       UbuntuDesktopInstallerApp.locale = locale;
                                       widget.client.fetchKeyboardLayouts(
                                           kbdAssetName, locale);

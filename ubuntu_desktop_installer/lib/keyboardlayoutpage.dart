@@ -113,7 +113,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                         child: ListTile(
                                           title: Text(widget.client
                                               .keyboardlayoutlist[index].item2),
-                                          selected: index == _selectedLayoutIndex,
+                                          selected:
+                                              index == _selectedLayoutIndex,
                                           onTap: () {
                                             setState(() {
                                               _selectedLayoutIndex = index;
@@ -141,7 +142,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               child: Scrollbar(
-                                controller: _keyboardVariantListScrollController,
+                                controller:
+                                    _keyboardVariantListScrollController,
                                 child: ListView.builder(
                                   controller:
                                       _keyboardVariantListScrollController,
