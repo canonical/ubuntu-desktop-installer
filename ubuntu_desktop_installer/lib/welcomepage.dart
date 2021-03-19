@@ -6,11 +6,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
-import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import 'localized_view.dart';
 import 'main.dart';
+import 'rounded_list_view.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -89,40 +89,28 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Center(
                   child: FractionallySizedBox(
                     widthFactor: 0.5,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: yaruLightTheme.dividerColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Scrollbar(
-                        controller: _languageListScrollController,
-                        child: ListView.builder(
-                          controller: _languageListScrollController,
-                          itemCount: _languageList.length,
-                          itemBuilder: (context, index) {
-                            return AutoScrollTag(
-                                index: index,
-                                key: ValueKey(index),
-                                controller: _languageListScrollController,
-                                child: ListTile(
-                                  title: Text(_languageList[index].item2),
-                                  selected: index == _selectedLanguageIndex,
-                                  onTap: () {
-                                    setState(() {
-                                      _selectedLanguageIndex = index;
-                                      final locale = _languageList[index].item1;
-                                      UbuntuDesktopInstallerApp.locale = locale;
-                                      widget.client.fetchKeyboardLayouts(
-                                          kbdAssetName, locale);
-                                    });
-                                  },
-                                ));
-                          },
-                        ),
-                      ),
+                    child: RoundedListView.builder(
+                      controller: _languageListScrollController,
+                      itemCount: _languageList.length,
+                      itemBuilder: (context, index) {
+                        return AutoScrollTag(
+                            index: index,
+                            key: ValueKey(index),
+                            controller: _languageListScrollController,
+                            child: ListTile(
+                              title: Text(_languageList[index].item2),
+                              selected: index == _selectedLanguageIndex,
+                              onTap: () {
+                                setState(() {
+                                  _selectedLanguageIndex = index;
+                                  final locale = _languageList[index].item1;
+                                  UbuntuDesktopInstallerApp.locale = locale;
+                                  widget.client.fetchKeyboardLayouts(
+                                      kbdAssetName, locale);
+                                });
+                              },
+                            ));
+                      },
                     ),
                   ),
                 ),
