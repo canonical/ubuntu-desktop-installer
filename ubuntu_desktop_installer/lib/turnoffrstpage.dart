@@ -3,7 +3,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:yaru/yaru.dart';
 
 import 'localized_view.dart';
 
@@ -44,7 +43,10 @@ class TurnOffRSTPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                Image.asset('assets/rst.png'),
+                Image.asset(
+                  'assets/rst.png',
+                  color: Theme.of(context).textTheme.bodyText1.color,
+                ),
               ])),
               const SizedBox(height: 20),
               ButtonBar(
@@ -54,13 +56,14 @@ class TurnOffRSTPage extends StatelessWidget {
                     onPressed: Navigator.of(context).pop,
                   ),
                   OutlinedButton(
-                    style: yaruOutlinedButtonThemeData.style.copyWith(
-                      backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Color(0xFF0e8420),
-                      ),
-                      foregroundColor:
-                          MaterialStateColor.resolveWith((states) => yaruWhite),
-                    ),
+                    style: OutlinedButtonTheme.of(context).style.copyWith(
+                          backgroundColor: MaterialStateColor.resolveWith(
+                            (states) => Color(0xFF0e8420),
+                          ),
+                          foregroundColor: MaterialStateColor.resolveWith(
+                            (states) => Colors.white,
+                          ),
+                        ),
                     child: Text(lang.restartButtonText),
                     onPressed: () {
                       print('TODO: restart computer');
