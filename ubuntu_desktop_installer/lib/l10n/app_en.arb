@@ -1,0 +1,67 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Ubuntu Desktop Installer",
+  "@appTitle": {},
+
+  "backButtonText": "Go Back",
+  "@backButtonText": {},
+  "continueButtonText": "Continue",
+  "@continueButtonText": {},
+  "restartButtonText": "Restart",
+  "@restartButtonText": {},
+
+  "tryOrInstallPageTitle": "Try or install",
+  "@tryOrInstallPageTitle": {},
+
+  "repairInstallation": "Repair installation",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
+  "@repairInstallationDescription": {},
+
+  "tryUbuntu": "Try Ubuntu",
+  "@tryUbuntu": {},
+  "tryUbuntuDescription": "You can try Ubuntu without making any changes to your computer.",
+  "@tryUbuntuDescription": {},
+
+  "installUbuntu": "Install Ubuntu",
+  "@installUbuntu": {},
+  "installUbuntuDescription": "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+  "@installUbuntuDescription": {},
+
+  "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "turnOffRST": "Turn off RST",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
+  "@turnOffRSTDescription": {},
+
+  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "welcome": "Welcome",
+  "@welcome": {},
+
+  "keyboardLayoutPageTitle": "Keyboard layout",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Choose your keyboard layout:",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Type here to test your keyboard",
+  "@typeToTest": {},
+
+  "detectLayout": "Detect Keyboard Layout",
+  "@detectLayout": {}
+}
