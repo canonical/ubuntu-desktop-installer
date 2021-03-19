@@ -57,7 +57,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [
           ...AppLocalizations.localizationsDelegates,
-          GlobalUbuntuLocalizations.delegate,
+          const LocalizationsDelegateOc(),
         ],
         supportedLocales: _supportedLocale,
         home: WelcomePage(client: client),
