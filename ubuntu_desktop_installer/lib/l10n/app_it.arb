@@ -1,0 +1,55 @@
+{
+  "@@locale": "it",
+
+  "appTitle": "Installer di Ubuntu Desktop",
+  "@appTitle": {},
+
+  "backButtonText": "Torna indietro",
+  "@backButtonText": {},
+  "continueButtonText": "Continua",
+  "@continueButtonText": {},
+  "restartButtonText": "Riavvia",
+  "@restartButtonText": {},
+
+  "tryOrInstallPageTitle": "Prova o installa",
+  "@tryOrInstallPageTitle": {},
+
+  "repairInstallation": "Ripara installazione",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione.",
+  "@repairInstallationDescription": {},
+
+  "tryUbuntu": "Prova Ubuntu",
+  "@tryUbuntu": {},
+  "tryUbuntuDescription": "Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.",
+  "@tryUbuntuDescription": {},
+
+  "installUbuntu": "Installa Ubuntu",
+  "@installUbuntu": {},
+  "installUbuntuDescription": "Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.",
+  "@installUbuntuDescription": {},
+
+  "releaseNotesLabel": "Forse vorresti leggere le <a href=\"{url}\">informazioni di rilascio</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "turnOffRST": "Disattiva RST",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu.",
+  "@turnOffRSTDescription": {},
+
+  "instructions": "Per istruzioni, apri questa pagina da un telefono o un altro dispositivo: <a href=\"https://{url}\">{url}</a>",
+  "@instructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "welcome": "Benvenuto",
+  "@welcome": {}
+}
