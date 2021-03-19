@@ -51,5 +51,18 @@
   },
 
   "welcome": "Добро пожаловать",
-  "@welcome": {}
+  "@welcome": {},
+  
+  "keyboardLayoutPageTitle": "Раскладка клавиатуры",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Выберите раскладку клавиатуры:",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Введите здесь, чтобы проверить свою клавиатуру",
+  "@typeToTest": {},
+
+  "detectLayout": "Определить раскладку клавиатуры",
+  "@detectLayout": {}
 }
+
