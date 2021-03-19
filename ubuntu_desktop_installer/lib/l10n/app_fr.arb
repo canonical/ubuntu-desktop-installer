@@ -51,5 +51,17 @@
   },
 
   "welcome": "Bienvenue",
-  "@welcome": {}
+  "@welcome": {},
+
+  "keyboardLayoutPageTitle": "Disposition du clavier",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Indiquez la disposition de votre clavier :",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Saisissez du texte ici pour tester votre clavier",
+  "@typeToTest": {},
+
+  "detectLayout": "Détecter la disposition du clavier",
+  "@detectLayout": {}
 }

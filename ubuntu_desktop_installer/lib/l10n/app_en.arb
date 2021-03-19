@@ -51,5 +51,17 @@
   },
 
   "welcome": "Welcome",
-  "@welcome": {}
+  "@welcome": {},
+
+  "keyboardLayoutPageTitle": "Keyboard layout",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Choose your keyboard layout:",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Type here to test your keyboard",
+  "@typeToTest": {},
+
+  "detectLayout": "Detect Keyboard Layout",
+  "@detectLayout": {}
 }

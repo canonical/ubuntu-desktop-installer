@@ -72,7 +72,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     return LocalizedView(
       builder: (context, lang) => Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(lang.keyboardLayoutPageTitle),
           automaticallyImplyLeading: false,
         ),
         body: Container(
@@ -84,7 +84,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                   children: <Widget>[
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(widget.header),
+                      child: Text(lang.chooseYourKeyboardLayout),
                     ),
                     const SizedBox(height: 10),
                     Expanded(
@@ -180,14 +180,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     TextField(
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        hintText: widget.hint,
+                        hintText: lang.typeToTest,
                       ),
                     ),
                     const SizedBox(height: 15),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: OutlinedButton(
-                        child: Text(widget.detect),
+                        child: Text(lang.detectLayout),
                         onPressed: () {
                           print('TODO: show dialog to detect keyboard layout');
                         },
