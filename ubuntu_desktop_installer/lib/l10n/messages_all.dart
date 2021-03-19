@@ -17,13 +17,17 @@ import 'package:intl/src/intl_helpers.dart';
 
 import 'messages_en.dart' deferred as messages_en;
 import 'messages_fr.dart' deferred as messages_fr;
+import 'messages_it.dart' deferred as messages_it;
 import 'messages_messages.dart' deferred as messages_messages;
+import 'messages_oc.dart' deferred as messages_oc;
 
 typedef Future<dynamic> LibraryLoader();
-Map<String, LibraryLoader> _deferredLibraries = {
+final Map<String, LibraryLoader> _deferredLibraries = {
   'en': messages_en.loadLibrary,
   'fr': messages_fr.loadLibrary,
+  'it': messages_it.loadLibrary,
   'messages': messages_messages.loadLibrary,
+  'oc': messages_oc.loadLibrary,
 };
 
 MessageLookupByLibrary _findExact(String localeName) {
@@ -32,8 +36,12 @@ MessageLookupByLibrary _findExact(String localeName) {
       return messages_en.messages;
     case 'fr':
       return messages_fr.messages;
+    case 'it':
+      return messages_it.messages;
     case 'messages':
       return messages_messages.messages;
+    case 'oc':
+      return messages_oc.messages;
     default:
       return null;
   }
@@ -41,13 +49,13 @@ MessageLookupByLibrary _findExact(String localeName) {
 
 /// User programs should call this before using [localeName] for messages.
 Future<bool> initializeMessages(String localeName) async {
-  var availableLocale = Intl.verifiedLocale(
+  final availableLocale = Intl.verifiedLocale(
       localeName, (locale) => _deferredLibraries[locale] != null,
       onFailure: (_) => null);
   if (availableLocale == null) {
-    return new Future.value(false);
+    return Future.value(false);
   }
-  var lib = _deferredLibraries[availableLocale];
+  final lib = _deferredLibraries[availableLocale];
   await (lib == null ? new Future.value(false) : lib());
   initializeInternalMessageLookup(() => new CompositeMessageLookup());
   messageLookup.addLocale(availableLocale, _findGeneratedMessagesFor);
@@ -57,7 +65,7 @@ Future<bool> initializeMessages(String localeName) async {
 bool _messagesExistFor(String locale) {
   try {
     return _findExact(locale) != null;
-  } catch (e) {
+  } on Exception catch (_) {
     return false;
   }
 }

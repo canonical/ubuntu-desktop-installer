@@ -24,7 +24,7 @@ jobs:
     # subiquity
 
     - name: Checkout subiquity
-      run: git submodule update --init --recursive --remote
+      run: git submodule update --init --recursive
     
     - name: Get subiquity dependencies
       working-directory: ./subiquity_client/subiquity

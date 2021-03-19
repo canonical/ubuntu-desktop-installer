@@ -3,16 +3,16 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:ubuntu_desktop_installer/i18n.dart';
 import 'package:yaru/yaru.dart';
-
 import 'package:subiquity_client/subiquity_client.dart';
+import 'i18n.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
     Key key,
-    this.client,
-  }) : super(key: key);
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
 
   final SubiquityClient client;
 
@@ -30,16 +30,18 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   String _selectedLayoutName = '';
   int _selectedVariantIndex = 0;
 
-  final AutoScrollController _layoutListScrollController =
-      AutoScrollController();
+  final _layoutListScrollController = AutoScrollController();
 
   @override
   void initState() {
     super.initState();
     final locale = Intl.defaultLocale.toString().split('_').last.toLowerCase();
     // FIXME: incorrect heuristic:
-    //    Ukrainian is uk, but the default keyboard layout is ua
-    //    Greek is el, but the default keyboard layout is gr
+    //    Ukrainian is uk, but the default keyboard layout should be ua
+    //    Greek is el, but the default keyboard layout should be gr
+    //    Catalan is ca, but the default keyboard layout should be es-cat
+    //    The kbdnames.txt asset doesn't include a mapping between locales and
+    //    default keyboard layouts, we'll need to add one.
     for (var i = 0; i < widget.client.keyboardlayoutlist.length; ++i) {
       if (widget.client.keyboardlayoutlist[i].item1 == locale) {
         _selectedLayoutIndex = i;
@@ -50,7 +52,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     SchedulerBinding.instance.addPostFrameCallback((_) =>
         _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
             preferPosition: AutoScrollPosition.middle,
-            duration: Duration(milliseconds: 1)));
+            duration: const Duration(milliseconds: 1)));
   }
 
   @override
@@ -71,7 +73,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     alignment: Alignment.centerLeft,
                     child: Text(widget.header),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Expanded(
                     child: Row(
                       children: <Widget>[
@@ -88,7 +90,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                               controller: _layoutListScrollController,
                               itemCount:
                                   widget.client.keyboardlayoutlist.length,
-                              itemBuilder: (BuildContext context, int index) {
+                              itemBuilder: (context, index) {
                                 return AutoScrollTag(
                                     index: index,
                                     key: ValueKey(index),
@@ -110,7 +112,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
@@ -127,7 +129,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                       .keyboardvariantlist[_selectedLayoutName]
                                       .length
                                   : 0,
-                              itemBuilder: (BuildContext context, int index) {
+                              itemBuilder: (context, index) {
                                 return ListTile(
                                   title: Text(widget
                                       .client
@@ -148,14 +150,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                       hintText: widget.hint,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: OutlinedButton(
@@ -168,7 +170,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ButtonBar(
               children: <OutlinedButton>[
                 OutlinedButton(
@@ -180,7 +182,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 OutlinedButton(
                   child:
                       Text(UbuntuLocalizations.of(context).continueButtonText),
-                  onPressed: null,
+                  onPressed: () {},
                 ),
               ],
             ),

@@ -8,9 +8,7 @@ Grab the source:
 ```
 git clone https://github.com/canonical/ubuntu-desktop-installer.git
 cd ubuntu-desktop-installer
-git submodule update --init --recursive --remote
-git submodule foreach git checkout main
-git submodule foreach git pull
+git submodule update --init --recursive
 ```
 
 Install and configure Flutter:

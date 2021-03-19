@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a it locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,42 +17,42 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'it';
 
   static String m0(Object url) =>
-      "For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>";
+      "Per istruzioni, apri questa pagina da un telefono o un altro dispositivo: <a href=\"https://${url}\">${url}</a>";
 
   static String m1(Object url) =>
-      "You may wish to read the <a href=\"$url\">release notes</a>.";
+      "Forse vorresti leggere le <a href=\"${url}\">informazioni di rilascio</a>.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
-        "Go Back": MessageLookupByLibrary.simpleMessage("Go Back"),
+        "Continue": MessageLookupByLibrary.simpleMessage("Continua"),
+        "Go Back": MessageLookupByLibrary.simpleMessage("Torna indietro"),
         "Install Ubuntu":
-            MessageLookupByLibrary.simpleMessage("Install Ubuntu"),
+            MessageLookupByLibrary.simpleMessage("Installa Ubuntu"),
         "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.":
             MessageLookupByLibrary.simpleMessage(
-                "Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long."),
+                "Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto."),
         "Repair installation":
-            MessageLookupByLibrary.simpleMessage("Repair installation"),
+            MessageLookupByLibrary.simpleMessage("Ripara installazione"),
         "Repairing will reinstall all installed software without touching documents or settings.":
             MessageLookupByLibrary.simpleMessage(
-                "Repairing will reinstall all installed software without touching documents or settings."),
-        "Restart": MessageLookupByLibrary.simpleMessage("Restart"),
+                "La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione."),
+        "Restart": MessageLookupByLibrary.simpleMessage("Riavvia"),
         "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.":
             MessageLookupByLibrary.simpleMessage(
-                "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu."),
-        "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Try Ubuntu"),
+                "Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu."),
+        "Try Ubuntu": MessageLookupByLibrary.simpleMessage("Prova Ubuntu"),
         "Try or install":
-            MessageLookupByLibrary.simpleMessage("Try or install"),
-        "Turn off RST": MessageLookupByLibrary.simpleMessage("Turn off RST"),
+            MessageLookupByLibrary.simpleMessage("Prova o installa"),
+        "Turn off RST": MessageLookupByLibrary.simpleMessage("Disattiva RST"),
         "Ubuntu Desktop Installer":
-            MessageLookupByLibrary.simpleMessage("Ubuntu Desktop Installer"),
-        "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+            MessageLookupByLibrary.simpleMessage("Installer di Ubuntu Desktop"),
+        "Welcome": MessageLookupByLibrary.simpleMessage("Benvenuto"),
         "You can try Ubuntu without making any changes to your computer.":
             MessageLookupByLibrary.simpleMessage(
-                "You can try Ubuntu without making any changes to your computer."),
+                "Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer."),
         "instructions": m0,
         "releaseNotesLabel": m1
       };

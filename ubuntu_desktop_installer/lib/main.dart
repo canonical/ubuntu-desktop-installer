@@ -4,14 +4,16 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart';
 
 import 'i18n.dart';
-import 'welcomepage.dart';
+import 'keyboardlayoutpage.dart';
 import 'tryorinstallpage.dart';
 import 'turnoffrstpage.dart';
-import 'keyboardlayoutpage.dart';
+import 'welcomepage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final client = SubiquityClient();
+  // FIXME: assets/languagelist comes from subiquity, but once we have a more
+  // comprehensive set of translations we should replace that list by our own.
   await client.fetchLanguageList('assets/languagelist');
   runApp(UbuntuDesktopInstallerApp(client: client));
 }
@@ -19,7 +21,18 @@ Future<void> main() async {
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   final SubiquityClient client;
 
-  const UbuntuDesktopInstallerApp({Key key, this.client}) : super(key: key);
+  const UbuntuDesktopInstallerApp({
+    Key key,
+    @required this.client,
+  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
+        super(key: key);
+
+  Iterable<Locale> get _supportedLocale => [
+        for (final l in client.languagelist.where((t) => UbuntuLocalizations
+            .supportedLocales
+            .contains(t.item1.languageCode)))
+          l.item1
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +45,12 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: client.languagelist
-          .map((t) => t.item1)
-          .where((locale) => UbuntuLocalizations.supportedLocales
-              .contains(locale.languageCode))
-          .toList(),
+      supportedLocales: _supportedLocale,
       home: WelcomePage(client: client),
       routes: <String, WidgetBuilder>{
-        '/tryorinstall': (BuildContext context) =>
-            TryOrInstallPage(client: client),
-        '/turnoffrst': (BuildContext context) => TurnOffRSTPage(),
-        '/keyboardlayout': (BuildContext context) =>
-            KeyboardLayoutPage(client: client),
+        '/tryorinstall': (context) => TryOrInstallPage(client: client),
+        '/turnoffrst': (context) => const TurnOffRSTPage(),
+        '/keyboardlayout': (context) => KeyboardLayoutPage(client: client),
       },
     );
   }
