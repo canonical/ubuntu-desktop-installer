@@ -42,8 +42,8 @@
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
   "@turnOffRSTDescription": {},
 
-  "instructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
-  "@instructions": {
+  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -51,5 +51,17 @@
   },
 
   "welcome": "Welcome",
-  "@welcome": {}
+  "@welcome": {},
+
+  "keyboardLayoutPageTitle": "Keyboard layout",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Choose your keyboard layout:",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Type here to test your keyboard",
+  "@typeToTest": {},
+
+  "detectLayout": "Detect Keyboard Layout",
+  "@detectLayout": {}
 }

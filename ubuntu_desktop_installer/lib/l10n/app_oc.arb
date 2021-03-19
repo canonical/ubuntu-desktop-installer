@@ -42,8 +42,8 @@
   "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
   "@turnOffRSTDescription": {},
 
-  "instructions": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
-  "@instructions": {
+  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
     "type": "text",
     "placeholders": {
       "url": {}
