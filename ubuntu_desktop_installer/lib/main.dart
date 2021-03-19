@@ -42,6 +42,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         locale: value,
         onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
         theme: yaruLightTheme,
+        darkTheme: yaruDarkTheme,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [
           ...AppLocalizations.localizationsDelegates,
