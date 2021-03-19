@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
@@ -119,29 +118,6 @@ class TryOrInstallPage extends StatefulWidget {
 
   @override
   TryOrInstallPageState createState() => TryOrInstallPageState();
-
-  String get title => Intl.message('Try or install');
-
-  String get repairTitle => Intl.message('Repair installation');
-
-  String get repairDescription => Intl.message(
-      'Repairing will reinstall all installed software without touching documents or settings.');
-
-  String get tryTitle => Intl.message('Try Ubuntu');
-
-  String get tryDescription => Intl.message(
-      'You can try Ubuntu without making any changes to your computer.');
-
-  String get installTitle => Intl.message('Install Ubuntu');
-
-  String get installDescription => Intl.message(
-      "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.");
-
-  String releaseNotesLabel(Object url) => Intl.message(
-        'You may wish to read the <a href="$url">release notes</a>.',
-        name: 'releaseNotesLabel',
-        args: [url],
-      );
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {

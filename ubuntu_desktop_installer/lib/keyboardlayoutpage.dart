@@ -19,14 +19,6 @@ class KeyboardLayoutPage extends StatefulWidget {
 
   @override
   _KeyboardLayoutPageState createState() => _KeyboardLayoutPageState();
-
-  String get title => Intl.message('Keyboard layout');
-
-  String get header => Intl.message('Choose your keyboard layout:');
-
-  String get hint => Intl.message('Type here to test your keyboard');
-
-  String get detect => Intl.message('Detect Keyboard Layout');
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
