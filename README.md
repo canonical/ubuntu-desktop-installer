@@ -52,3 +52,4 @@ After updating one or more message catalogs, the corresponding dart files need t
     flutter pub run intl_translation:generate_from_arb --output-dir=lib/l10n lib/*.dart lib/l10n/intl_*.arb
 
 Note that at the time of writing, [a known issue in Dart `intl` tools](https://github.com/dart-lang/intl_translation/issues/99) results in generated code not passing the code analysis with the pedantic option. As a workaround, `messages_*.dart` files need to be hand-edited to add a `Map<String, Function>` return type to the `_notInlinedMessages()` function.
+
