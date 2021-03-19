@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
 
-import 'i18n.dart';
+import 'localized_view.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
@@ -119,26 +118,6 @@ class TryOrInstallPage extends StatefulWidget {
 
   @override
   TryOrInstallPageState createState() => TryOrInstallPageState();
-
-  String get title => Intl.message('Try or install');
-
-  String get repairTitle => Intl.message('Repair installation');
-  String get repairDescription => Intl.message(
-      'Repairing will reinstall all installed software without touching documents or settings.');
-
-  String get tryTitle => Intl.message('Try Ubuntu');
-  String get tryDescription => Intl.message(
-      'You can try Ubuntu without making any changes to your computer.');
-
-  String get installTitle => Intl.message('Install Ubuntu');
-  String get installDescription => Intl.message(
-      "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.");
-
-  String releaseNotesLabel(Object url) => Intl.message(
-        'You may wish to read the <a href="$url">release notes</a>.',
-        name: 'releaseNotesLabel',
-        args: [url],
-      );
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
@@ -170,83 +149,81 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        automaticallyImplyLeading: false,
-      ),
-      body: TryOrInstallPageInheritedContainer(
-        data: this,
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 50),
-              Expanded(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.repairUbuntu,
-                        imageAsset: 'assets/repair-wrench.png',
-                        titleText: widget.repairTitle,
-                        bodyText: widget.repairDescription,
+    return LocalizedView(
+      builder: (context, lang) => Scaffold(
+        appBar: AppBar(
+          title: Text(lang.tryOrInstallPageTitle),
+          automaticallyImplyLeading: false,
+        ),
+        body: TryOrInstallPageInheritedContainer(
+          data: this,
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                const SizedBox(height: 50),
+                Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.repairUbuntu,
+                          imageAsset: 'assets/repair-wrench.png',
+                          titleText: lang.repairInstallation,
+                          bodyText: lang.repairInstallationDescription,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.tryUbuntu,
-                        imageAsset: 'assets/steering-wheel.png',
-                        titleText: widget.tryTitle,
-                        bodyText: widget.tryDescription,
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.tryUbuntu,
+                          imageAsset: 'assets/steering-wheel.png',
+                          titleText: lang.tryUbuntu,
+                          bodyText: lang.tryUbuntuDescription,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        option: Option.installUbuntu,
-                        imageAsset: 'assets/hard-drive.png',
-                        titleText: widget.installTitle,
-                        bodyText: widget.installDescription,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 150),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: Html(
-                      data: widget
-                          .releaseNotesLabel(widget.client.releaseNotesURL),
-                      onLinkTap: launch,
-                    ),
-                  ),
-                  ButtonBar(
-                    children: <OutlinedButton>[
-                      OutlinedButton(
-                        child: Text(
-                            UbuntuLocalizations.of(context).goBackButtonText),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      OutlinedButton(
-                        child: Text(
-                            UbuntuLocalizations.of(context).continueButtonText),
-                        onPressed: (_option != Option.none)
-                            ? continueWithSelectedOption
-                            : null,
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: OptionCard(
+                          option: Option.installUbuntu,
+                          imageAsset: 'assets/hard-drive.png',
+                          titleText: lang.installUbuntu,
+                          bodyText: lang.installUbuntuDescription,
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 150),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Html(
+                        data: lang
+                            .releaseNotesLabel(widget.client.releaseNotesURL),
+                        onLinkTap: launch,
+                      ),
+                    ),
+                    ButtonBar(
+                      children: <OutlinedButton>[
+                        OutlinedButton(
+                          child: Text(lang.backButtonText),
+                          onPressed: Navigator.of(context).pop,
+                        ),
+                        OutlinedButton(
+                          child: Text(lang.continueButtonText),
+                          onPressed: (_option != Option.none)
+                              ? continueWithSelectedOption
+                              : null,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
