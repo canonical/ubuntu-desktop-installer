@@ -76,30 +76,33 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                         borderRadius: BorderRadius.circular(5.0),
                       ),
-                      child: ListView.builder(
+                      child: Scrollbar(
                         controller: _languageListScrollController,
-                        itemCount: widget.client.languagelist.length,
-                        itemBuilder: (context, index) {
-                          return AutoScrollTag(
-                              index: index,
-                              key: ValueKey(index),
-                              controller: _languageListScrollController,
-                              child: ListTile(
-                                title: Text(
-                                    widget.client.languagelist[index].item2),
-                                selected: index == _selectedLanguageIndex,
-                                onTap: () {
-                                  setState(() {
-                                    _selectedLanguageIndex = index;
-                                    final locale =
-                                        widget.client.languagelist[index].item1;
-                                    UbuntuDesktopInstallerApp.locale = locale;
-                                    widget.client.fetchKeyboardLayouts(
-                                        kbdAssetName, locale);
-                                  });
-                                },
-                              ));
-                        },
+                        child: ListView.builder(
+                          controller: _languageListScrollController,
+                          itemCount: widget.client.languagelist.length,
+                          itemBuilder: (context, index) {
+                            return AutoScrollTag(
+                                index: index,
+                                key: ValueKey(index),
+                                controller: _languageListScrollController,
+                                child: ListTile(
+                                  title: Text(
+                                      widget.client.languagelist[index].item2),
+                                  selected: index == _selectedLanguageIndex,
+                                  onTap: () {
+                                    setState(() {
+                                      _selectedLanguageIndex = index;
+                                      final locale =
+                                          widget.client.languagelist[index].item1;
+                                      UbuntuDesktopInstallerApp.locale = locale;
+                                      widget.client.fetchKeyboardLayouts(
+                                          kbdAssetName, locale);
+                                    });
+                                  },
+                                ));
+                          },
+                        ),
                       ),
                     ),
                   ),

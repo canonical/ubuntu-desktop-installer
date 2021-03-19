@@ -6,11 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if CLA signed
-        id: has_signed_cla
-        uses: canonical/has-signed-canonical-cla@1.0.2
-        with:
-          username: ${{ github.event.pull_request.user.login }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Verify result
-        if: steps.has_signed_cla.outputs.has_signed == 'false'
-        run: exit 1
+        uses: canonical/has-signed-canonical-cla@v1

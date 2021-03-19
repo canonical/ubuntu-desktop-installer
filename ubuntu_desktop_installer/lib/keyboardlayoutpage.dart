@@ -35,6 +35,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   int _selectedVariantIndex = 0;
 
   final _layoutListScrollController = AutoScrollController();
+  final _keyboardVariantListScrollController = ScrollController();
 
   @override
   void initState() {
@@ -57,6 +58,13 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
             preferPosition: AutoScrollPosition.middle,
             duration: const Duration(milliseconds: 1)));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _layoutListScrollController.dispose();
+    _keyboardVariantListScrollController.dispose();
   }
 
   @override
@@ -91,31 +99,34 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                 ),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
-                              child: ListView.builder(
+                              child: Scrollbar(
                                 controller: _layoutListScrollController,
-                                itemCount:
-                                    widget.client.keyboardlayoutlist.length,
-                                itemBuilder: (context, index) {
-                                  return AutoScrollTag(
-                                      index: index,
-                                      key: ValueKey(index),
-                                      controller: _layoutListScrollController,
-                                      child: ListTile(
-                                        title: Text(widget.client
-                                            .keyboardlayoutlist[index].item2),
-                                        selected: index == _selectedLayoutIndex,
-                                        onTap: () {
-                                          setState(() {
-                                            _selectedLayoutIndex = index;
-                                            _selectedLayoutName = widget
-                                                .client
-                                                .keyboardlayoutlist[index]
-                                                .item1;
-                                            _selectedVariantIndex = 0;
-                                          });
-                                        },
-                                      ));
-                                },
+                                child: ListView.builder(
+                                  controller: _layoutListScrollController,
+                                  itemCount:
+                                      widget.client.keyboardlayoutlist.length,
+                                  itemBuilder: (context, index) {
+                                    return AutoScrollTag(
+                                        index: index,
+                                        key: ValueKey(index),
+                                        controller: _layoutListScrollController,
+                                        child: ListTile(
+                                          title: Text(widget.client
+                                              .keyboardlayoutlist[index].item2),
+                                          selected: index == _selectedLayoutIndex,
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedLayoutIndex = index;
+                                              _selectedLayoutName = widget
+                                                  .client
+                                                  .keyboardlayoutlist[index]
+                                                  .item1;
+                                              _selectedVariantIndex = 0;
+                                            });
+                                          },
+                                        ));
+                                  },
+                                ),
                               ),
                             ),
                           ),
@@ -129,29 +140,34 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                 ),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
-                              child: ListView.builder(
-                                itemCount: _selectedLayoutName.isNotEmpty
-                                    ? widget
-                                        .client
-                                        .keyboardvariantlist[
-                                            _selectedLayoutName]
-                                        .length
-                                    : 0,
-                                itemBuilder: (context, index) {
-                                  return ListTile(
-                                    title: Text(widget
-                                        .client
-                                        .keyboardvariantlist[
-                                            _selectedLayoutName][index]
-                                        .item2),
-                                    selected: index == _selectedVariantIndex,
-                                    onTap: () {
-                                      setState(() {
-                                        _selectedVariantIndex = index;
-                                      });
-                                    },
-                                  );
-                                },
+                              child: Scrollbar(
+                                controller: _keyboardVariantListScrollController,
+                                child: ListView.builder(
+                                  controller:
+                                      _keyboardVariantListScrollController,
+                                  itemCount: _selectedLayoutName.isNotEmpty
+                                      ? widget
+                                          .client
+                                          .keyboardvariantlist[
+                                              _selectedLayoutName]
+                                          .length
+                                      : 0,
+                                  itemBuilder: (context, index) {
+                                    return ListTile(
+                                      title: Text(widget
+                                          .client
+                                          .keyboardvariantlist[
+                                              _selectedLayoutName][index]
+                                          .item2),
+                                      selected: index == _selectedVariantIndex,
+                                      onTap: () {
+                                        setState(() {
+                                          _selectedVariantIndex = index;
+                                        });
+                                      },
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
