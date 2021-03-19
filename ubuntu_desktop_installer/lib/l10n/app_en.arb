@@ -42,8 +42,8 @@
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
   "@turnOffRSTDescription": {},
 
-  "instructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
-  "@instructions": {
+  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
     "type": "text",
     "placeholders": {
       "url": {}

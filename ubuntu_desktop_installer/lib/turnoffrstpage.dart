@@ -34,7 +34,7 @@ class TurnOffRSTPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Html(
-                    data: lang.instructions('help.ubuntu.com/rst'),
+                    data: lang.instructionsForRST('help.ubuntu.com/rst'),
                     style: {
                       'body': Style(
                         margin: EdgeInsets.all(0),
