@@ -1,6 +1,8 @@
 {
   "@@locale": "it",
 
+  "languageName": "Italiano",
+
   "appTitle": "Installer di Ubuntu Desktop",
   "@appTitle": {},
 

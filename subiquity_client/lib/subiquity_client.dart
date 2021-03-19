@@ -177,25 +177,6 @@ class SubiquityClient {
     return response.stream.bytesToString();
   }
 
-  List<Tuple2<Locale, String>> languagelist = [];
-
-  Future<void> fetchLanguageList(String assetName) async {
-    languagelist.clear();
-    return rootBundle.loadStructuredData(assetName, (data) async {
-      return data;
-    }).then((data) {
-      for (final line in LineSplitter.split(data)) {
-        final tokens = line.split(':');
-        final codes = tokens[1].split('_');
-        languagelist.add(Tuple2(
-            codes.length == 1 ? Locale(codes[0]) : Locale(codes[0], codes[1]),
-            tokens[2]));
-      }
-      languagelist.sort((a, b) =>
-          removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
-    });
-  }
-
   // TODO: un-hardcode
   final releaseNotesURL = 'https://wiki.ubuntu.com/GroovyGorilla/ReleaseNotes';
 

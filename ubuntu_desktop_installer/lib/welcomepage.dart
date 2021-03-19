@@ -1,8 +1,11 @@
+import 'package:diacritic/diacritic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:tuple/tuple.dart';
 import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
@@ -23,22 +26,40 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final List<Tuple2<Locale, String>> _languageList = [];
+
   int _selectedLanguageIndex = 0;
 
   AutoScrollController _languageListScrollController;
 
   static const kbdAssetName = 'assets/kbdnames.txt';
 
+  void _asyncLoadLanguageList() async {
+    assert(_languageList.isEmpty);
+
+    for (final locale in AppLocalizations.supportedLocales) {
+      final localization = await AppLocalizations.delegate.load(locale);
+      if (localization.languageName.isNotEmpty) {
+        _languageList.add(Tuple2(locale, localization.languageName));
+      }
+    }
+
+    _languageList.sort((a, b) =>
+        removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
+  }
+
   @override
   void initState() {
     super.initState();
     _languageListScrollController = AutoScrollController();
 
+    _asyncLoadLanguageList();
+
     widget.client
         .fetchKeyboardLayouts(kbdAssetName, UbuntuDesktopInstallerApp.locale);
     final locale = Intl.defaultLocale;
-    for (var i = 0; i < widget.client.languagelist.length; ++i) {
-      if (locale.contains(widget.client.languagelist[i].item1.languageCode)) {
+    for (var i = 0; i < _languageList.length; ++i) {
+      if (locale.contains(_languageList[i].item1.languageCode)) {
         _selectedLanguageIndex = i;
         break;
       }
@@ -80,21 +101,19 @@ class _WelcomePageState extends State<WelcomePage> {
                         controller: _languageListScrollController,
                         child: ListView.builder(
                           controller: _languageListScrollController,
-                          itemCount: widget.client.languagelist.length,
+                          itemCount: _languageList.length,
                           itemBuilder: (context, index) {
                             return AutoScrollTag(
                                 index: index,
                                 key: ValueKey(index),
                                 controller: _languageListScrollController,
                                 child: ListTile(
-                                  title: Text(
-                                      widget.client.languagelist[index].item2),
+                                  title: Text(_languageList[index].item2),
                                   selected: index == _selectedLanguageIndex,
                                   onTap: () {
                                     setState(() {
                                       _selectedLanguageIndex = index;
-                                      final locale = widget
-                                          .client.languagelist[index].item1;
+                                      final locale = _languageList[index].item1;
                                       UbuntuDesktopInstallerApp.locale = locale;
                                       widget.client.fetchKeyboardLayouts(
                                           kbdAssetName, locale);

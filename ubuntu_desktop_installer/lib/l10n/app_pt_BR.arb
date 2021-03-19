@@ -1,6 +1,8 @@
 {
   "@@locale": "pt_BR",
 
+  "languageName": "Português do Brasil",
+
   "appTitle": "Instalador do Ubuntu Desktop",
   "@appTitle": {},
 

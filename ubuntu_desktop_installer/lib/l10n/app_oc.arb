@@ -1,6 +1,8 @@
 {
   "@@locale": "oc",
 
+  "languageName": "Occitan",
+
   "appTitle": "Programa d’installacion del burèu Ubuntu",
   "@appTitle": {},
 

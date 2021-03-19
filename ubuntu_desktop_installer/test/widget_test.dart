@@ -19,7 +19,6 @@ void main() {
     await setupAppLocalizations();
 
     final client = SubiquityClient();
-    await client.fetchLanguageList('assets/languagelist');
     await tester.pumpWidget(UbuntuDesktopInstallerApp(client: client));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);

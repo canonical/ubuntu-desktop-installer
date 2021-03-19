@@ -14,9 +14,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
   final client = SubiquityClient();
-  // FIXME: assets/languagelist comes from subiquity, but once we have a more
-  // comprehensive set of translations we should replace that list by our own.
-  await client.fetchLanguageList('assets/languagelist');
   runApp(UbuntuDesktopInstallerApp(client: client));
 }
 
@@ -28,15 +25,6 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
     @required this.client,
   })  : assert(client != null, '`SubiquityClient` must not be `null`'),
         super(key: key);
-
-  Iterable<Locale> get _supportedLocale {
-    final locales =
-        AppLocalizations.supportedLocales.map((e) => e.languageCode);
-
-    return client.languagelist
-        .where((e) => locales.contains(e.item1.languageCode))
-        .map((e) => e.item1);
-  }
 
   static final _locale =
       ValueNotifier(Locale(Intl.shortLocale(Intl.systemLocale)));
@@ -59,7 +47,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           ...AppLocalizations.localizationsDelegates,
           const LocalizationsDelegateOc(),
         ],
-        supportedLocales: _supportedLocale,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: WelcomePage(client: client),
         routes: <String, WidgetBuilder>{
           '/tryorinstall': (context) => TryOrInstallPage(client: client),
