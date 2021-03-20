@@ -1,6 +1,8 @@
 {
   "@@locale": "ru",
 
+  "languageName": "Русский",
+
   "appTitle": "Установка Ubuntu",
   "@appTitle": {},
 
