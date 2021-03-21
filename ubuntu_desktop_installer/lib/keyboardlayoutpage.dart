@@ -3,10 +3,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:yaru/yaru.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import 'localized_view.dart';
+import 'rounded_list_view.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
@@ -83,86 +83,56 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                       child: Row(
                         children: <Widget>[
                           Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: yaruLightTheme.dividerColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              child: Scrollbar(
-                                controller: _layoutListScrollController,
-                                child: ListView.builder(
-                                  controller: _layoutListScrollController,
-                                  itemCount:
-                                      widget.client.keyboardlayoutlist.length,
-                                  itemBuilder: (context, index) {
-                                    return AutoScrollTag(
-                                        index: index,
-                                        key: ValueKey(index),
-                                        controller: _layoutListScrollController,
-                                        child: ListTile(
-                                          title: Text(widget.client
-                                              .keyboardlayoutlist[index].item2),
-                                          selected:
-                                              index == _selectedLayoutIndex,
-                                          onTap: () {
-                                            setState(() {
-                                              _selectedLayoutIndex = index;
-                                              _selectedLayoutName = widget
-                                                  .client
-                                                  .keyboardlayoutlist[index]
-                                                  .item1;
-                                              _selectedVariantIndex = 0;
-                                            });
-                                          },
-                                        ));
-                                  },
-                                ),
-                              ),
+                            child: RoundedListView.builder(
+                              controller: _layoutListScrollController,
+                              itemCount:
+                                  widget.client.keyboardlayoutlist.length,
+                              itemBuilder: (context, index) {
+                                return AutoScrollTag(
+                                    index: index,
+                                    key: ValueKey(index),
+                                    controller: _layoutListScrollController,
+                                    child: ListTile(
+                                      title: Text(widget.client
+                                          .keyboardlayoutlist[index].item2),
+                                      selected: index == _selectedLayoutIndex,
+                                      onTap: () {
+                                        setState(() {
+                                          _selectedLayoutIndex = index;
+                                          _selectedLayoutName = widget.client
+                                              .keyboardlayoutlist[index].item1;
+                                          _selectedVariantIndex = 0;
+                                        });
+                                      },
+                                    ));
+                              },
                             ),
                           ),
                           const SizedBox(width: 20),
                           Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: yaruLightTheme.dividerColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              child: Scrollbar(
-                                controller:
-                                    _keyboardVariantListScrollController,
-                                child: ListView.builder(
-                                  controller:
-                                      _keyboardVariantListScrollController,
-                                  itemCount: _selectedLayoutName.isNotEmpty
-                                      ? widget
-                                          .client
-                                          .keyboardvariantlist[
-                                              _selectedLayoutName]
-                                          .length
-                                      : 0,
-                                  itemBuilder: (context, index) {
-                                    return ListTile(
-                                      title: Text(widget
-                                          .client
-                                          .keyboardvariantlist[
-                                              _selectedLayoutName][index]
-                                          .item2),
-                                      selected: index == _selectedVariantIndex,
-                                      onTap: () {
-                                        setState(() {
-                                          _selectedVariantIndex = index;
-                                        });
-                                      },
-                                    );
+                            child: RoundedListView.builder(
+                              controller: _keyboardVariantListScrollController,
+                              itemCount: _selectedLayoutName.isNotEmpty
+                                  ? widget
+                                      .client
+                                      .keyboardvariantlist[_selectedLayoutName]
+                                      .length
+                                  : 0,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  title: Text(widget
+                                      .client
+                                      .keyboardvariantlist[_selectedLayoutName]
+                                          [index]
+                                      .item2),
+                                  selected: index == _selectedVariantIndex,
+                                  onTap: () {
+                                    setState(() {
+                                      _selectedVariantIndex = index;
+                                    });
                                   },
-                                ),
-                              ),
+                                );
+                              },
                             ),
                           ),
                         ],
