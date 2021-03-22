@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:yaru/yaru.dart';
 
 import 'package:subiquity_client/subiquity_client.dart';
 
@@ -63,11 +62,11 @@ class _OptionCardState extends State<OptionCard> {
                 )),
             const SizedBox(height: 10),
             Expanded(
-                child: Text(
-              widget.bodyText,
-              style: yaruBodyText1Style.copyWith(
-                  color: yaruLightColorScheme.primaryVariant),
-            )),
+              child: Opacity(
+                opacity: 0.9,
+                child: Text(widget.bodyText),
+              ),
+            ),
           ]),
         ),
         onTap: () {
