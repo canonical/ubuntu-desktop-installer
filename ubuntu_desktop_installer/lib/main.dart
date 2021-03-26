@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:yaru/yaru.dart';
+import 'package:yaru/yaru.dart' as yaru;
 
 import 'keyboardlayoutpage.dart';
 import 'l10n/app_localizations.dart';
@@ -41,8 +41,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       builder: (context, value, _) => MaterialApp(
         locale: value,
         onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
-        theme: yaruLightTheme,
-        darkTheme: yaruDarkTheme,
+        theme: yaru.lightTheme,
+        darkTheme: yaru.darkTheme,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [
           ...AppLocalizations.localizationsDelegates,
