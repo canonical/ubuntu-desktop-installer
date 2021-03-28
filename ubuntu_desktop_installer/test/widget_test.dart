@@ -10,7 +10,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 
 import 'package:ubuntu_desktop_installer/main.dart';
-import 'package:ubuntu_desktop_installer/welcomepage.dart';
+import 'package:ubuntu_desktop_installer/welcome_page.dart';
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
