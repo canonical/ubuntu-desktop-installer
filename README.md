@@ -11,7 +11,6 @@ Grab the source:
 git clone https://github.com/canonical/ubuntu-desktop-installer.git
 cd ubuntu-desktop-installer
 git submodule update --init --recursive
-cd -
 ```
 
 Install and configure Flutter:
@@ -30,12 +29,10 @@ cd subiquity
 make install_deps
 cd ../../ubuntu_desktop_installer
 flutter pub get
-cd -
 ```
 
 Run:
 ```sh
-cd ubuntu_desktop_installer
 flutter run
 ```
 
