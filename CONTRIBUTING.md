@@ -2,7 +2,7 @@
 
 ## Pull requests
 
-Changes to this project should be proposed as pull requests on Github at: <https://github.com/canonical/ubuntu-desktop-installer>.
+Changes to this project should be proposed as pull requests on GitHub at: <https://github.com/canonical/ubuntu-desktop-installer>.
 
 ## Contributor License Agreement
 
@@ -10,12 +10,12 @@ This project is subject to the [Canonical contributor license agreement](https:/
 
 ## Specifications
 
-UI and UX specifications are published as [Github issues](https://github.com/canonical/ubuntu-desktop-installer/issues?q=is%3Aissue+label%3Aspecification+sort%3Acreated-asc).
+UI and UX specifications are published as [GitHub issues](https://github.com/canonical/ubuntu-desktop-installer/issues?q=is%3Aissue+label%3Aspecification+sort%3Acreated-asc).
 Any specification issue without an assignee is up for grabs, if you start work on one of them please make sure to comment on the issue to say so, a project administrator will assign it to you.
 
 ## Bugs
 
-Bugs are also tracked as [Github issues](https://github.com/canonical/ubuntu-desktop-installer/issues?q=is%3Aissue+label%3Abug).
+Bugs are also tracked as [GitHub issues](https://github.com/canonical/ubuntu-desktop-installer/issues?q=is%3Aissue+label%3Abug).
 
 ## Translations
 
