@@ -24,3 +24,5 @@ Translations for the Ubuntu desktop installer are managed with [Flutter's tools 
 The template containing all the messages to be translated lives in `lib/l10n/app_en.arb`. When starting translations for a new language, that file needs to be copied to `lib/l10n/app_LANGCODE.arb` (e.g. `lib/l10n/app_fr.arb`), and messages should be translated in this new file.
 
 When new messages are added in the source code, they also need to be added to the translation template.
+
+The translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
