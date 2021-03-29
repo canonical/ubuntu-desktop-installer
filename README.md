@@ -1,26 +1,28 @@
-![Flutter CI](https://github.com/canonical/ubuntu-desktop-installer/workflows/Flutter%20CI/badge.svg)
+# Ubuntu Desktop Installer
 
-# ubuntu-desktop-installer
+[![Flutter CI](https://github.com/canonical/ubuntu-desktop-installer/workflows/Flutter%20CI/badge.svg)](https://github.com/canonical/ubuntu-desktop-installer/actions)
+
+This project is a modern implementation of the Ubuntu Desktop installer, using [subiquity](https://github.com/canonical/subiquity) as a backend and [Flutter](https://flutter.dev/) for the UI.
 
 ## Checkout & Run
 
 Grab the source:
-```
+```sh
 git clone https://github.com/canonical/ubuntu-desktop-installer.git
 cd ubuntu-desktop-installer
 git submodule update --init --recursive
 ```
 
 Install and configure Flutter:
-```
+```sh
 snap install flutter --classic
 flutter channel dev
-flutter upgrade 
+flutter upgrade
 flutter config --enable-linux-desktop
 ```
 
 Install dependencies:
-```
+```sh
 cd subiquity_client
 flutter pub get
 cd subiquity
@@ -30,14 +32,14 @@ flutter pub get
 ```
 
 Run:
-```
+```sh
 flutter run
 ```
 
-## Translations
+## Contributing
 
-Translations for the Ubuntu desktop installer are managed with [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
+See our [contributor guidelines](CONTRIBUTING.md).
 
-The template containing all the messages to be translated lives in `lib/l10n/app_en.arb`. When starting translations for a new language, that file needs to be copied to `lib/l10n/app_LANGCODE.arb` (e.g. `lib/l10n/app_fr.arb`), and messages should be translated in this new file.
+## License
 
-When new messages are added in the source code, they also need to be added to the translation template.
+The Ubuntu Desktop Installer is licensed under the [GNU General Public License version 3](LICENSE).
