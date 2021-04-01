@@ -4,10 +4,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
+import 'keyboard_model.dart';
 import 'localized_view.dart';
 import 'main.dart';
 import 'rounded_list_view.dart';
@@ -32,8 +34,6 @@ class _WelcomePageState extends State<WelcomePage> {
 
   AutoScrollController _languageListScrollController;
 
-  static const kbdAssetName = 'assets/kbdnames.txt';
-
   void _asyncLoadLanguageList() async {
     assert(_languageList.isEmpty);
 
@@ -55,8 +55,9 @@ class _WelcomePageState extends State<WelcomePage> {
 
     _asyncLoadLanguageList();
 
-    widget.client
-        .fetchKeyboardLayouts(kbdAssetName, UbuntuDesktopInstallerApp.locale);
+    Provider.of<KeyboardModel>(context, listen: false)
+        .load(UbuntuDesktopInstallerApp.locale);
+
     final locale = Intl.defaultLocale;
     for (var i = 0; i < _languageList.length; ++i) {
       if (locale.contains(_languageList[i].item1.languageCode)) {
@@ -105,8 +106,9 @@ class _WelcomePageState extends State<WelcomePage> {
                                   _selectedLanguageIndex = index;
                                   final locale = _languageList[index].item1;
                                   UbuntuDesktopInstallerApp.locale = locale;
-                                  widget.client.fetchKeyboardLayouts(
-                                      kbdAssetName, locale);
+                                  Provider.of<KeyboardModel>(context,
+                                          listen: false)
+                                      .load(locale);
                                 });
                               },
                             ));

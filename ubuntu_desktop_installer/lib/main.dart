@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'keyboard_layout_page.dart';
+import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
 import 'try_or_install_page.dart';
 import 'turn_off_rst_page.dart';
@@ -14,7 +16,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
   final client = SubiquityClient();
-  runApp(UbuntuDesktopInstallerApp(client: client));
+  runApp(ChangeNotifierProvider(
+      create: (context) => KeyboardModel(),
+      child: UbuntuDesktopInstallerApp(client: client)));
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
