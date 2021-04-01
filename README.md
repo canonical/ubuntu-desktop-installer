@@ -36,14 +36,6 @@ Run:
 flutter run
 ```
 
-## Contributing
-
-See our [contributor guidelines](CONTRIBUTING.md).
-
-## License
-
-The Ubuntu Desktop Installer is licensed under the [GNU General Public License version 3](LICENSE).
-
 ## Code Generation
 
 The Subiquity client uses [freezed](https://pub.dev/packages/freezed) and
@@ -53,5 +45,13 @@ to `subiquity_client/lib/src/types.dart` requires the code to be re-generated:
 
 ```
 cd subiquity_client
-./script/codegen.sh
+./tools/codegen.sh
 ```
+
+## Contributing
+
+See our [contributor guidelines](CONTRIBUTING.md).
+
+## License
+
+The Ubuntu Desktop Installer is licensed under the [GNU General Public License version 3](LICENSE).
