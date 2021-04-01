@@ -26,3 +26,15 @@ The template containing all the messages to be translated lives in `lib/l10n/app
 When new messages are added in the source code, they also need to be added to the translation template.
 
 The translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
+
+## Code Generation
+
+The Subiquity client uses [freezed](https://pub.dev/packages/freezed) and
+[json_serializable](https://pub.dev/packages/json_serializable) to generate
+immutable classes with JSON serialization support. Adding new types or members
+to `subiquity_client/lib/src/types.dart` requires the code to be re-generated:
+
+```
+cd subiquity_client
+./tools/codegen.sh
+```

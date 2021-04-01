@@ -4,3 +4,8 @@ linter:
   rules:
     constant_identifier_names: false
     lines_longer_than_80_chars: false
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"

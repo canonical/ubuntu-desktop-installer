@@ -32,12 +32,7 @@ class SubiquityClient {
     final response = await _client.send(request);
 
     final keyboardJson = jsonDecode(await response.stream.bytesToString());
-    final keyboard = KeyboardSetting();
-    keyboard.layout = keyboardJson['layout'];
-    keyboard.variant = keyboardJson['variant'];
-    keyboard.toggle = keyboardJson['toggle'];
-
-    return keyboard;
+    return KeyboardSetting.fromJson(keyboardJson);
   }
 
   Future<String> proxy() async {
@@ -59,13 +54,7 @@ class SubiquityClient {
     final response = await _client.send(request);
 
     final identityJson = jsonDecode(await response.stream.bytesToString());
-    final identity = IdentityData();
-    identity.realname = identityJson['realname'];
-    identity.username = identityJson['username'];
-    identity.cryptedPassword = identityJson['crypted_password'];
-    identity.hostname = identityJson['hostname'];
-
-    return identity;
+    return IdentityData.fromJson(identityJson);
   }
 
   Future<SSHData> ssh() async {
@@ -73,12 +62,7 @@ class SubiquityClient {
     final response = await _client.send(request);
 
     final sshJson = jsonDecode(await response.stream.bytesToString());
-    final ssh = SSHData();
-    ssh.installServer = sshJson['install_server'];
-    ssh.allowPw = sshJson['allow_pw'];
-    ssh.authorizedKeys = sshJson['authorized_keys'];
-
-    return ssh;
+    return SSHData.fromJson(sshJson);
   }
 
   /// Get the installer state.
@@ -87,76 +71,7 @@ class SubiquityClient {
     final response = await _client.send(request);
 
     final statusJson = jsonDecode(await response.stream.bytesToString());
-    final status = ApplicationStatus();
-
-    switch (statusJson['state']) {
-      case 'STARTING_UP':
-        {
-          status.state = ApplicationState.STARTING_UP;
-        }
-        break;
-      case 'WAITING':
-        {
-          status.state = ApplicationState.WAITING;
-        }
-        break;
-      case 'NEEDS_CONFIRMATION':
-        {
-          status.state = ApplicationState.NEEDS_CONFIRMATION;
-        }
-        break;
-      case 'RUNNING':
-        {
-          status.state = ApplicationState.RUNNING;
-        }
-        break;
-      case 'POST_WAIT':
-        {
-          status.state = ApplicationState.POST_WAIT;
-        }
-        break;
-      case 'POST_RUNNING':
-        {
-          status.state = ApplicationState.POST_RUNNING;
-        }
-        break;
-      case 'UU_RUNNING':
-        {
-          status.state = ApplicationState.UU_RUNNING;
-        }
-        break;
-      case 'UU_CANCELLING':
-        {
-          status.state = ApplicationState.UU_CANCELLING;
-        }
-        break;
-      case 'DONE':
-        {
-          status.state = ApplicationState.DONE;
-        }
-        break;
-      case 'ERROR':
-        {
-          status.state = ApplicationState.ERROR;
-        }
-        break;
-      default:
-        {
-          status.state = ApplicationState.UNKNOWN;
-        }
-        break;
-    }
-
-    status.confirmingTty = statusJson['confirming_tty'];
-    status.cloudInitOk = statusJson['cloud_init_ok'];
-    status.interactive = statusJson['interactive'];
-    status.echoSyslogId = statusJson['echo_syslog_id'];
-    status.logSyslogId = statusJson['log_syslog_id'];
-    status.eventSyslogId = statusJson['event_syslog_id'];
-
-    ///! status.error =
-
-    return status;
+    return ApplicationStatus.fromJson(statusJson);
   }
 
   /// Mark the controllers for endpoint_names as configured.
