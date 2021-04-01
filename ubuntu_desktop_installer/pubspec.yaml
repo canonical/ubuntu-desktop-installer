@@ -32,7 +32,7 @@ dependencies:
     git: https://github.com/MarcusTomlinson/flutter_html.git
   scroll_to_index: any
   url_launcher: ^5.5.0
-  yaru: ">=0.0.0-dev.5"
+  yaru: ">=0.0.0-dev.10"
   subiquity_client:
     path: ../subiquity_client
 
