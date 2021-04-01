@@ -36,18 +36,6 @@ Run:
 flutter run
 ```
 
-## Code Generation
-
-The Subiquity client uses [freezed](https://pub.dev/packages/freezed) and
-[json_serializable](https://pub.dev/packages/json_serializable) to generate
-immutable classes with JSON serialization support. Adding new types or members
-to `subiquity_client/lib/src/types.dart` requires the code to be re-generated:
-
-```
-cd subiquity_client
-./tools/codegen.sh
-```
-
 ## Contributing
 
 See our [contributor guidelines](CONTRIBUTING.md).
