@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
+import 'debconf_wrapper.dart';
 import 'keyboard_model.dart';
 import 'localized_view.dart';
 import 'rounded_list_view.dart';
@@ -29,30 +29,39 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   int _selectedVariantIndex = 0;
 
   final _layoutListScrollController = AutoScrollController();
-  final _keyboardVariantListScrollController = ScrollController();
+  final _keyboardVariantListScrollController = AutoScrollController();
 
   @override
   void initState() {
     super.initState();
-    final locale = Intl.defaultLocale.toString().split('_').last.toLowerCase();
-    // FIXME: incorrect heuristic:
-    //    Ukrainian is uk, but the default keyboard layout should be ua
-    //    Greek is el, but the default keyboard layout should be gr
-    //    Catalan is ca, but the default keyboard layout should be es-cat
-    //    The kbdnames.txt asset doesn't include a mapping between locales and
-    //    default keyboard layouts, we'll need to add one.
-    var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
-    for (var i = 0; i < keyboardModel.layouts.length; ++i) {
-      if (locale.contains(keyboardModel.layouts[i].item1)) {
-        _selectedLayoutIndex = i;
-        _selectedLayoutName = locale;
-        break;
-      }
-    }
-    SchedulerBinding.instance.addPostFrameCallback((_) =>
-        _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
-            preferPosition: AutoScrollPosition.middle,
-            duration: const Duration(milliseconds: 1)));
+
+    DebconfWrapper.queryKeyboardLayoutCode().then((layoutCode) {
+      var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
+      setState(() {
+        _selectedLayoutIndex = keyboardModel.layouts
+            .indexWhere((layout) => layout.item1 == layoutCode);
+        if (_selectedLayoutIndex > -1) {
+          _selectedLayoutName =
+              keyboardModel.layouts[_selectedLayoutIndex].item1;
+          DebconfWrapper.queryKeyboardVariantCode().then((variantCode) {
+            setState(() {
+              _selectedVariantIndex = keyboardModel
+                  .variants[_selectedLayoutName]
+                  .indexWhere((variant) => variant.item1 == variantCode);
+              SchedulerBinding.instance.addPostFrameCallback((_) =>
+                  _keyboardVariantListScrollController.scrollToIndex(
+                      _selectedVariantIndex,
+                      preferPosition: AutoScrollPosition.middle,
+                      duration: const Duration(milliseconds: 1)));
+            });
+          });
+        }
+        SchedulerBinding.instance.addPostFrameCallback((_) =>
+            _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
+                preferPosition: AutoScrollPosition.middle,
+                duration: const Duration(milliseconds: 1)));
+      });
+    });
   }
 
   @override
@@ -121,17 +130,24 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                         .variants[_selectedLayoutName].length
                                     : 0,
                                 itemBuilder: (context, index) {
-                                  return ListTile(
-                                    title: Text(keyboardModel
-                                        .variants[_selectedLayoutName][index]
-                                        .item2),
-                                    selected: index == _selectedVariantIndex,
-                                    onTap: () {
-                                      setState(() {
-                                        _selectedVariantIndex = index;
-                                      });
-                                    },
-                                  );
+                                  return AutoScrollTag(
+                                      index: index,
+                                      key: ValueKey(index),
+                                      controller:
+                                          _keyboardVariantListScrollController,
+                                      child: ListTile(
+                                        title: Text(keyboardModel
+                                            .variants[_selectedLayoutName]
+                                                [index]
+                                            .item2),
+                                        selected:
+                                            index == _selectedVariantIndex,
+                                        onTap: () {
+                                          setState(() {
+                                            _selectedVariantIndex = index;
+                                          });
+                                        },
+                                      ));
                                 },
                               ),
                             ),

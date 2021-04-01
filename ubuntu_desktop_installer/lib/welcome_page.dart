@@ -127,6 +127,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   OutlinedButton(
                     child: Text(lang.continueButtonText),
                     onPressed: () {
+                      // TODO: implement ubiquity's apply_keyboard() function and run it here
                       Navigator.pushNamed(context, '/tryorinstall');
                     },
                   ),
