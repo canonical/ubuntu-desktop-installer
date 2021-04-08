@@ -92,9 +92,6 @@ class SubiquityClient {
     return response.stream.bytesToString();
   }
 
-  // TODO: un-hardcode
-  final releaseNotesURL = 'https://wiki.ubuntu.com/GroovyGorilla/ReleaseNotes';
-
   final Set<String> keyboardlangs = {};
   final List<Tuple2<String, String>> keyboardlayoutlist = [];
   final Map<String, List<Tuple2<String, String>>> keyboardvariantlist = {};
