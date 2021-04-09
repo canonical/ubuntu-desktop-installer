@@ -6,9 +6,11 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 
+import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/main.dart';
 import 'package:ubuntu_desktop_installer/welcome_page.dart';
 
@@ -19,7 +21,9 @@ void main() {
     await setupAppLocalizations();
 
     final client = SubiquityClient();
-    await tester.pumpWidget(UbuntuDesktopInstallerApp(client: client));
+    await tester.pumpWidget(ChangeNotifierProvider(
+        create: (context) => KeyboardModel(),
+        child: UbuntuDesktopInstallerApp(client: client)));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });

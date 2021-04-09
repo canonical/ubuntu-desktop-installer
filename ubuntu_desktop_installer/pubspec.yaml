@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  provider: ^4.3.3
   intl:
   intl_translation:
     git: https://github.com/MarcusTomlinson/intl_translation.git
