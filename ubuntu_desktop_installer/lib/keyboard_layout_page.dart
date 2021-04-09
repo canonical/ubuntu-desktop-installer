@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
+import 'debconf_wrapper.dart';
+import 'keyboard_model.dart';
 import 'localized_view.dart';
 import 'rounded_list_view.dart';
 
@@ -27,29 +29,39 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   int _selectedVariantIndex = 0;
 
   final _layoutListScrollController = AutoScrollController();
-  final _keyboardVariantListScrollController = ScrollController();
+  final _keyboardVariantListScrollController = AutoScrollController();
 
   @override
   void initState() {
     super.initState();
-    final locale = Intl.defaultLocale.toString().split('_').last.toLowerCase();
-    // FIXME: incorrect heuristic:
-    //    Ukrainian is uk, but the default keyboard layout should be ua
-    //    Greek is el, but the default keyboard layout should be gr
-    //    Catalan is ca, but the default keyboard layout should be es-cat
-    //    The kbdnames.txt asset doesn't include a mapping between locales and
-    //    default keyboard layouts, we'll need to add one.
-    for (var i = 0; i < widget.client.keyboardlayoutlist.length; ++i) {
-      if (locale.contains(widget.client.keyboardlayoutlist[i].item1)) {
-        _selectedLayoutIndex = i;
-        _selectedLayoutName = locale;
-        break;
-      }
-    }
-    SchedulerBinding.instance.addPostFrameCallback((_) =>
-        _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
-            preferPosition: AutoScrollPosition.middle,
-            duration: const Duration(milliseconds: 1)));
+
+    DebconfWrapper.queryKeyboardLayoutCode().then((layoutCode) {
+      var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
+      setState(() {
+        _selectedLayoutIndex = keyboardModel.layouts
+            .indexWhere((layout) => layout.item1 == layoutCode);
+        if (_selectedLayoutIndex > -1) {
+          _selectedLayoutName =
+              keyboardModel.layouts[_selectedLayoutIndex].item1;
+          DebconfWrapper.queryKeyboardVariantCode().then((variantCode) {
+            setState(() {
+              _selectedVariantIndex = keyboardModel
+                  .variants[_selectedLayoutName]
+                  .indexWhere((variant) => variant.item1 == variantCode);
+              SchedulerBinding.instance.addPostFrameCallback((_) =>
+                  _keyboardVariantListScrollController.scrollToIndex(
+                      _selectedVariantIndex,
+                      preferPosition: AutoScrollPosition.middle,
+                      duration: const Duration(milliseconds: 1)));
+            });
+          });
+        }
+        SchedulerBinding.instance.addPostFrameCallback((_) =>
+            _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
+                preferPosition: AutoScrollPosition.middle,
+                duration: const Duration(milliseconds: 1)));
+      });
+    });
   }
 
   @override
@@ -61,120 +73,126 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(
-          title: Text(lang.keyboardLayoutPageTitle),
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Column(
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(lang.chooseYourKeyboardLayout),
-                    ),
-                    const SizedBox(height: 10),
-                    Expanded(
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: RoundedListView.builder(
-                              controller: _layoutListScrollController,
-                              itemCount:
-                                  widget.client.keyboardlayoutlist.length,
-                              itemBuilder: (context, index) {
-                                return AutoScrollTag(
-                                    index: index,
-                                    key: ValueKey(index),
-                                    controller: _layoutListScrollController,
-                                    child: ListTile(
-                                      title: Text(widget.client
-                                          .keyboardlayoutlist[index].item2),
-                                      selected: index == _selectedLayoutIndex,
-                                      onTap: () {
-                                        setState(() {
-                                          _selectedLayoutIndex = index;
-                                          _selectedLayoutName = widget.client
-                                              .keyboardlayoutlist[index].item1;
-                                          _selectedVariantIndex = 0;
-                                        });
-                                      },
-                                    ));
-                              },
+    return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
+      return LocalizedView(
+        builder: (context, lang) => Scaffold(
+          appBar: AppBar(
+            title: Text(lang.keyboardLayoutPageTitle),
+            automaticallyImplyLeading: false,
+          ),
+          body: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(lang.chooseYourKeyboardLayout),
+                      ),
+                      const SizedBox(height: 10),
+                      Expanded(
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: RoundedListView.builder(
+                                controller: _layoutListScrollController,
+                                itemCount: keyboardModel.layouts.length,
+                                itemBuilder: (context, index) {
+                                  return AutoScrollTag(
+                                      index: index,
+                                      key: ValueKey(index),
+                                      controller: _layoutListScrollController,
+                                      child: ListTile(
+                                        title: Text(
+                                            keyboardModel.layouts[index].item2),
+                                        selected: index == _selectedLayoutIndex,
+                                        onTap: () {
+                                          setState(() {
+                                            _selectedLayoutIndex = index;
+                                            _selectedLayoutName = keyboardModel
+                                                .layouts[index].item1;
+                                            _selectedVariantIndex = 0;
+                                          });
+                                        },
+                                      ));
+                                },
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: RoundedListView.builder(
-                              controller: _keyboardVariantListScrollController,
-                              itemCount: _selectedLayoutName.isNotEmpty
-                                  ? widget
-                                      .client
-                                      .keyboardvariantlist[_selectedLayoutName]
-                                      .length
-                                  : 0,
-                              itemBuilder: (context, index) {
-                                return ListTile(
-                                  title: Text(widget
-                                      .client
-                                      .keyboardvariantlist[_selectedLayoutName]
-                                          [index]
-                                      .item2),
-                                  selected: index == _selectedVariantIndex,
-                                  onTap: () {
-                                    setState(() {
-                                      _selectedVariantIndex = index;
-                                    });
-                                  },
-                                );
-                              },
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: RoundedListView.builder(
+                                controller:
+                                    _keyboardVariantListScrollController,
+                                itemCount: _selectedLayoutName.isNotEmpty
+                                    ? keyboardModel
+                                        .variants[_selectedLayoutName].length
+                                    : 0,
+                                itemBuilder: (context, index) {
+                                  return AutoScrollTag(
+                                      index: index,
+                                      key: ValueKey(index),
+                                      controller:
+                                          _keyboardVariantListScrollController,
+                                      child: ListTile(
+                                        title: Text(keyboardModel
+                                            .variants[_selectedLayoutName]
+                                                [index]
+                                            .item2),
+                                        selected:
+                                            index == _selectedVariantIndex,
+                                        onTap: () {
+                                          setState(() {
+                                            _selectedVariantIndex = index;
+                                          });
+                                        },
+                                      ));
+                                },
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
+                      const SizedBox(height: 15),
+                      TextField(
+                        decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          hintText: lang.typeToTest,
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: OutlinedButton(
+                          child: Text(lang.detectLayout),
+                          onPressed: () {
+                            print(
+                                'TODO: show dialog to detect keyboard layout');
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ButtonBar(
+                  children: <OutlinedButton>[
+                    OutlinedButton(
+                      child: Text(lang.backButtonText),
+                      onPressed: Navigator.of(context).pop,
                     ),
-                    const SizedBox(height: 15),
-                    TextField(
-                      decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: lang.typeToTest,
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: OutlinedButton(
-                        child: Text(lang.detectLayout),
-                        onPressed: () {
-                          print('TODO: show dialog to detect keyboard layout');
-                        },
-                      ),
+                    OutlinedButton(
+                      child: Text(lang.continueButtonText),
+                      onPressed: () {},
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 20),
-              ButtonBar(
-                children: <OutlinedButton>[
-                  OutlinedButton(
-                    child: Text(lang.backButtonText),
-                    onPressed: Navigator.of(context).pop,
-                  ),
-                  OutlinedButton(
-                    child: Text(lang.continueButtonText),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
