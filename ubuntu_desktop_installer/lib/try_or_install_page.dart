@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -146,6 +148,27 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     }
   }
 
+  String get _releaseNotesURL {
+    // Note: this doesn't use the contents of the /cdrom/.disk/release_notes_url
+    // file because redirection for these URLs is currently broken on ubuntu.com
+    // (see https://bugs.launchpad.net/ubuntu/+source/ubiquity/+bug/1910871).
+    // Note: the returned URL doesn't include a language code for localized
+    // release notes. In practice, it seems no one bothered to translate the
+    // release notes since Ubuntu 10.04 (Lucid Lynx).
+    try {
+      final lines = File('/usr/share/distro-info/ubuntu.csv').readAsLinesSync();
+      final last = lines.lastWhere((line) => line.trim().isNotEmpty);
+      final codeName = last.split(',')[1].replaceAll(RegExp('\\s+'), '');
+      assert(codeName.isNotEmpty);
+      return 'https://wiki.ubuntu.com/$codeName/ReleaseNotes';
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      // Those are not actual release notes,
+      // but it's a better fallback than a non-existent wiki page.
+      return 'https://ubuntu.com/download/desktop';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return LocalizedView(
@@ -200,8 +223,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                     Flexible(
                       fit: FlexFit.tight,
                       child: Html(
-                        data: lang
-                            .releaseNotesLabel(widget.client.releaseNotesURL),
+                        data: lang.releaseNotesLabel(_releaseNotesURL),
                         onLinkTap: launch,
                       ),
                     ),

@@ -87,7 +87,4 @@ class SubiquityClient {
     final response = await _client.send(request);
     return response.stream.bytesToString();
   }
-
-  // TODO: un-hardcode
-  final releaseNotesURL = 'https://wiki.ubuntu.com/GroovyGorilla/ReleaseNotes';
 }
