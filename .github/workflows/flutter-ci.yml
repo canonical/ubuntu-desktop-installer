@@ -34,11 +34,11 @@ jobs:
 
     - name: Get subiquity_client dependencies
       working-directory: ./subiquity_client
-      run: flutter pub get
+      run: dart pub get
     
     - name: Run tests on subiquity_client
       working-directory: ./subiquity_client
-      run: flutter test
+      run: dart test
 
     # ubuntu_desktop_installer
 
