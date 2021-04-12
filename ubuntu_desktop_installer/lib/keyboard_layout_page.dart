@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:keyboard_info/keyboard_info.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import 'debconf_wrapper.dart';
 import 'keyboard_model.dart';
 import 'localized_view.dart';
 import 'rounded_list_view.dart';
@@ -35,26 +35,25 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   void initState() {
     super.initState();
 
-    DebconfWrapper.queryKeyboardLayoutCode().then((layoutCode) {
+    getKeyboardInfo().then((info) {
       var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
       setState(() {
-        _selectedLayoutIndex = keyboardModel.layouts
-            .indexWhere((layout) => layout.item1 == layoutCode);
+        _selectedLayoutIndex = keyboardModel.layouts.indexWhere((layout) {
+          return layout.item1 == info.layout;
+        });
         if (_selectedLayoutIndex > -1) {
           _selectedLayoutName =
               keyboardModel.layouts[_selectedLayoutIndex].item1;
-          DebconfWrapper.queryKeyboardVariantCode().then((variantCode) {
-            setState(() {
-              _selectedVariantIndex = keyboardModel
-                  .variants[_selectedLayoutName]
-                  .indexWhere((variant) => variant.item1 == variantCode);
-              SchedulerBinding.instance.addPostFrameCallback((_) =>
-                  _keyboardVariantListScrollController.scrollToIndex(
-                      _selectedVariantIndex,
-                      preferPosition: AutoScrollPosition.middle,
-                      duration: const Duration(milliseconds: 1)));
-            });
-          });
+          _selectedVariantIndex = keyboardModel.variants[_selectedLayoutName]
+              .indexWhere((variant) => variant.item1 == info.variant);
+          if (_selectedVariantIndex == -1) {
+            _selectedVariantIndex = 0;
+          }
+          SchedulerBinding.instance.addPostFrameCallback((_) =>
+              _keyboardVariantListScrollController.scrollToIndex(
+                  _selectedVariantIndex,
+                  preferPosition: AutoScrollPosition.middle,
+                  duration: const Duration(milliseconds: 1)));
         }
         SchedulerBinding.instance.addPostFrameCallback((_) =>
             _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
