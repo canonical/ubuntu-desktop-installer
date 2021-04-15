@@ -5,8 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:subiquity_client/subiquity_client.dart';
-
 import 'localized_view.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
@@ -102,13 +100,9 @@ class TryOrInstallPageInheritedContainer extends InheritedWidget {
 }
 
 class TryOrInstallPage extends StatefulWidget {
-  final SubiquityClient client;
-
   const TryOrInstallPage({
     Key key,
-    @required this.client,
-  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
-        super(key: key);
+  }) : super(key: key);
 
   static TryOrInstallPageState of(BuildContext context) {
     return context

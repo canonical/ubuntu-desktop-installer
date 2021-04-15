@@ -7,7 +7,6 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
@@ -20,10 +19,9 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await setupAppLocalizations();
 
-    final client = SubiquityClient();
     await tester.pumpWidget(ChangeNotifierProvider(
         create: (context) => KeyboardModel(),
-        child: UbuntuDesktopInstallerApp(client: client)));
+        child: UbuntuDesktopInstallerApp()));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });

@@ -15,20 +15,19 @@ import 'welcome_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
-  final client = SubiquityClient();
-  runApp(ChangeNotifierProvider(
-      create: (context) => KeyboardModel(),
-      child: UbuntuDesktopInstallerApp(client: client)));
+  runApp(MultiProvider(
+    providers: [
+      Provider(create: (_) => SubiquityClient()),
+      ChangeNotifierProvider(create: (_) => KeyboardModel()),
+    ],
+    child: UbuntuDesktopInstallerApp(),
+  ));
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
-  final SubiquityClient client;
-
   const UbuntuDesktopInstallerApp({
     Key key,
-    @required this.client,
-  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
-        super(key: key);
+  }) : super(key: key);
 
   static final _locale =
       ValueNotifier(Locale(Intl.shortLocale(Intl.systemLocale)));
@@ -53,11 +52,11 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           const LocalizationsDelegateOc(),
         ],
         supportedLocales: AppLocalizations.supportedLocales,
-        home: WelcomePage(client: client),
+        home: WelcomePage(),
         routes: <String, WidgetBuilder>{
-          '/tryorinstall': (context) => TryOrInstallPage(client: client),
+          '/tryorinstall': (context) => TryOrInstallPage(),
           '/turnoffrst': (context) => const TurnOffRSTPage(),
-          '/keyboardlayout': (context) => KeyboardLayoutPage(client: client),
+          '/keyboardlayout': (context) => KeyboardLayoutPage(),
         },
       ),
     );
