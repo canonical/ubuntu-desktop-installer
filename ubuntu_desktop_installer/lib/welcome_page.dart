@@ -7,7 +7,6 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 
 import 'keyboard_model.dart';
 import 'localized_view.dart';
@@ -17,11 +16,7 @@ import 'rounded_list_view.dart';
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
     Key key,
-    @required this.client,
-  })  : assert(client != null, '`SubiquityClient` must not be `null`'),
-        super(key: key);
-
-  final SubiquityClient client;
+  }) : super(key: key);
 
   @override
   _WelcomePageState createState() => _WelcomePageState();
