@@ -6,6 +6,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'localized_view.dart';
+import 'main.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
@@ -143,12 +144,17 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   }
 
   String get _releaseNotesURL {
-    // Note: this doesn't use the contents of the /cdrom/.disk/release_notes_url
-    // file because redirection for these URLs is currently broken on ubuntu.com
-    // (see https://bugs.launchpad.net/ubuntu/+source/ubiquity/+bug/1910871).
-    // Note: the returned URL doesn't include a language code for localized
-    // release notes. In practice, it seems no one bothered to translate the
-    // release notes since Ubuntu 10.04 (Lucid Lynx).
+    final fileOnCdrom = File('/cdrom/.disk/release_notes_url');
+    if (fileOnCdrom.existsSync()) {
+      try {
+        final url = fileOnCdrom
+            .readAsLinesSync()
+            .firstWhere((line) => line.trim().isNotEmpty);
+        return url.replaceAll(
+            r'${LANG}', UbuntuDesktopInstallerApp.locale.languageCode);
+        // ignore: avoid_catches_without_on_clauses
+      } catch (e) {}
+    }
     try {
       final lines = File('/usr/share/distro-info/ubuntu.csv').readAsLinesSync();
       final last = lines.lastWhere((line) => line.trim().isNotEmpty);
