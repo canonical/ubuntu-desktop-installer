@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
 
+import '../app.dart';
 import '../keyboard_model.dart';
-import '../main.dart';
 import '../routes.dart';
 import '../widgets.dart';
 
