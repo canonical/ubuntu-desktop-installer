@@ -8,6 +8,7 @@ import 'package:yaru/yaru.dart' as yaru;
 import 'keyboard_layout_page.dart';
 import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
+import 'routes.dart';
 import 'try_or_install_page.dart';
 import 'turn_off_rst_page.dart';
 import 'welcome_page.dart';
@@ -54,9 +55,9 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         supportedLocales: AppLocalizations.supportedLocales,
         home: WelcomePage(),
         routes: <String, WidgetBuilder>{
-          '/tryorinstall': (context) => TryOrInstallPage(),
-          '/turnoffrst': (context) => const TurnOffRSTPage(),
-          '/keyboardlayout': (context) => KeyboardLayoutPage(),
+          Routes.tryOrInstall: (context) => TryOrInstallPage(),
+          Routes.turnOffRST: (context) => const TurnOffRSTPage(),
+          Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
         },
       ),
     );

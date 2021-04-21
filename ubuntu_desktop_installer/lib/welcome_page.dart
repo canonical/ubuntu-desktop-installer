@@ -12,6 +12,7 @@ import 'keyboard_model.dart';
 import 'localized_view.dart';
 import 'main.dart';
 import 'rounded_list_view.dart';
+import 'routes.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -123,7 +124,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     child: Text(lang.continueButtonText),
                     onPressed: () {
                       // TODO: implement ubiquity's apply_keyboard() function and run it here
-                      Navigator.pushNamed(context, '/tryorinstall');
+                      Navigator.pushNamed(context, Routes.tryOrInstall);
                     },
                   ),
                 ],
