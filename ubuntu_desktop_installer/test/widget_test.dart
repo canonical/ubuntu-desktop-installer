@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/main.dart';
-import 'package:ubuntu_desktop_installer/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {

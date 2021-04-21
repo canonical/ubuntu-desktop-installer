@@ -5,13 +5,13 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
-import 'keyboard_layout_page.dart';
+import 'pages/keyboard_layout_page.dart';
 import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
 import 'routes.dart';
-import 'try_or_install_page.dart';
-import 'turn_off_rst_page.dart';
-import 'welcome_page.dart';
+import 'pages/try_or_install_page.dart';
+import 'pages/turn_off_rst_page.dart';
+import 'pages/welcome_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
