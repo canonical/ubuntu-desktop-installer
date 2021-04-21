@@ -9,10 +9,9 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
 
 import 'keyboard_model.dart';
-import 'localized_view.dart';
 import 'main.dart';
-import 'rounded_list_view.dart';
 import 'routes.dart';
+import 'widgets.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({

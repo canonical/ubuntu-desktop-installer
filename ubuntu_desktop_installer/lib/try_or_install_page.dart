@@ -5,9 +5,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'localized_view.dart';
 import 'main.dart';
 import 'routes.dart';
+import 'widgets.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
