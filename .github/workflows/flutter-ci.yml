@@ -45,7 +45,6 @@ jobs:
       with:
         files: coverage/lcov.info
         token: ${{secrets.CODECOV_TOKEN}}
-      working-directory: ./packages/subiquity_client
 
     # ubuntu_desktop_installer
 
@@ -62,7 +61,6 @@ jobs:
       with:
         files: coverage/lcov.info
         token: ${{secrets.CODECOV_TOKEN}}
-      working-directory: ./packages/ubuntu_desktop_installer
 
     # general
 
