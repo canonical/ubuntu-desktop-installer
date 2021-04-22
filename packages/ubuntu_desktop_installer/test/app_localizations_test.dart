@@ -16,6 +16,7 @@ void main() {
     tearDown(() {
       delegate = null;
     });
+
     test('supported locales', () {
       expect(delegate.isSupported(Locale('en')), false);
       expect(delegate.isSupported(Locale('fr')), false);
