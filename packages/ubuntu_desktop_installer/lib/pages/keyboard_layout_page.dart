@@ -5,9 +5,8 @@ import 'package:keyboard_info/keyboard_info.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import 'keyboard_model.dart';
-import 'localized_view.dart';
-import 'rounded_list_view.dart';
+import '../keyboard_model.dart';
+import '../widgets.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({

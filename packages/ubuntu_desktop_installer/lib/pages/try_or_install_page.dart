@@ -5,8 +5,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'localized_view.dart';
-import 'main.dart';
+import '../app.dart';
+import '../routes.dart';
+import '../widgets.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
@@ -130,14 +131,14 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
 
   void continueWithSelectedOption() {
     if (_option == Option.repairUbuntu) {
-      Navigator.pushNamed(context, '/repairubuntu');
+      Navigator.pushNamed(context, Routes.repairUbuntu);
     } else if (_option == Option.tryUbuntu) {
-      Navigator.pushNamed(context, '/tryubuntu');
+      Navigator.pushNamed(context, Routes.tryUbuntu);
     } else if (_option == Option.installUbuntu) {
       // TODO: detect if we need to show the "Turn off RST" page,
       // or if we can proceed directly to installation
-      //Navigator.pushNamed(context, '/turnoffrst');
-      Navigator.pushNamed(context, '/keyboardlayout');
+      //Navigator.pushNamed(context, Routes.turnOffRST);
+      Navigator.pushNamed(context, Routes.keyboardLayout);
     } else {
       assert(false);
     }

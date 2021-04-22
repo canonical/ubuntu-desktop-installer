@@ -1,28 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
-import 'keyboard_layout_page.dart';
-import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
-import 'try_or_install_page.dart';
-import 'turn_off_rst_page.dart';
-import 'welcome_page.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await setupAppLocalizations();
-  runApp(MultiProvider(
-    providers: [
-      Provider(create: (_) => SubiquityClient()),
-      ChangeNotifierProvider(create: (_) => KeyboardModel()),
-    ],
-    child: UbuntuDesktopInstallerApp(),
-  ));
-}
+import 'pages/keyboard_layout_page.dart';
+import 'pages/try_or_install_page.dart';
+import 'pages/turn_off_rst_page.dart';
+import 'pages/welcome_page.dart';
+import 'routes.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
@@ -54,9 +40,9 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         supportedLocales: AppLocalizations.supportedLocales,
         home: WelcomePage(),
         routes: <String, WidgetBuilder>{
-          '/tryorinstall': (context) => TryOrInstallPage(),
-          '/turnoffrst': (context) => const TurnOffRSTPage(),
-          '/keyboardlayout': (context) => KeyboardLayoutPage(),
+          Routes.tryOrInstall: (context) => TryOrInstallPage(),
+          Routes.turnOffRST: (context) => const TurnOffRSTPage(),
+          Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
         },
       ),
     );

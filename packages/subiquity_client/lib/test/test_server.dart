@@ -1,18 +1,15 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
+import 'package:path/path.dart' as p;
 import '../src/http_unix_client.dart';
 
 class TestServer {
   Process _serverProcess;
 
   Future<String> start(String config) async {
-    final projectPath = Directory.current.path.substring(
-        0, Directory.current.path.lastIndexOf('ubuntu-desktop-installer') + 24);
-    final currentPath = '$projectPath/subiquity_client';
-
-    final subiquityPath = '$currentPath/subiquity';
-    final socketPath = '$currentPath/test/socket';
+    final subiquityPath = p.join(Directory.current.path, 'subiquity');
+    final socketPath = p.join(Directory.current.path, 'test/socket');
 
     _serverProcess = await Process.start('/usr/bin/python3',
         ['-m', 'subiquity.cmd.server', '--dry-run', '--machine-config', config],

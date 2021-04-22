@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:tuple/tuple.dart';
 
-import 'keyboard_model.dart';
-import 'localized_view.dart';
-import 'main.dart';
-import 'rounded_list_view.dart';
+import '../app.dart';
+import '../keyboard_model.dart';
+import '../routes.dart';
+import '../widgets.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -123,7 +123,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     child: Text(lang.continueButtonText),
                     onPressed: () {
                       // TODO: implement ubiquity's apply_keyboard() function and run it here
-                      Navigator.pushNamed(context, '/tryorinstall');
+                      Navigator.pushNamed(context, Routes.tryOrInstall);
                     },
                   ),
                 ],
