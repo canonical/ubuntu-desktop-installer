@@ -43,7 +43,7 @@ jobs:
     - name: Upload coverage results
       uses: codecov/codecov-action@v1
       with:
-        files: coverage/lcov.info
+        files: packages/subiquity_client/coverage/lcov.info
         token: ${{secrets.CODECOV_TOKEN}}
 
     # ubuntu_desktop_installer
@@ -59,7 +59,7 @@ jobs:
     - name: Upload coverage results
       uses: codecov/codecov-action@v1
       with:
-        files: coverage/lcov.info
+        files: packages/ubuntu_desktop_installer/coverage/lcov.info
         token: ${{secrets.CODECOV_TOKEN}}
 
     # general
