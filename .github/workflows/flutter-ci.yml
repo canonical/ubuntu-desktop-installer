@@ -27,27 +27,27 @@ jobs:
       run: git submodule update --init --recursive
     
     - name: Get subiquity dependencies
-      working-directory: ./subiquity_client/subiquity
+      working-directory: ./packages/subiquity_client/subiquity
       run: sudo apt update && make install_deps
 
     # subiquity_client
 
     - name: Get subiquity_client dependencies
-      working-directory: ./subiquity_client
+      working-directory: ./packages/subiquity_client
       run: dart pub get
     
     - name: Run tests on subiquity_client
-      working-directory: ./subiquity_client
+      working-directory: ./packages/subiquity_client
       run: dart test
 
     # ubuntu_desktop_installer
 
     - name: Get ubuntu_desktop_installer dependencies
-      working-directory: ./ubuntu_desktop_installer
+      working-directory: ./packages/ubuntu_desktop_installer
       run: flutter pub get
     
     - name: Run tests on ubuntu_desktop_installer
-      working-directory: ./ubuntu_desktop_installer
+      working-directory: ./packages/ubuntu_desktop_installer
       run: flutter test
 
     # general
