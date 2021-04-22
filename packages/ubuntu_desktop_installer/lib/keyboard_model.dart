@@ -33,7 +33,6 @@ class KeyboardModel extends ChangeNotifier {
   /// Reload the list of layouts and the map of variants for a given locale.
   Future<void> load(Locale locale) async {
     final langtag = locale.toLanguageTag().replaceAll('-', '_');
-    print('fetching keyboard layouts for $langtag');
     final firstpass = _langs.isEmpty;
     var matchinglang = 'C';
     layouts.clear();
