@@ -38,7 +38,13 @@ jobs:
     
     - name: Run tests on subiquity_client
       working-directory: ./packages/subiquity_client
-      run: dart test
+      run: flutter test --coverage
+
+    - name: Upload coverage results
+      uses: codecov/codecov-action@v1
+      with:
+        files: packages/subiquity_client/coverage/lcov.info
+        token: ${{secrets.CODECOV_TOKEN}}
 
     # ubuntu_desktop_installer
 
@@ -48,7 +54,13 @@ jobs:
     
     - name: Run tests on ubuntu_desktop_installer
       working-directory: ./packages/ubuntu_desktop_installer
-      run: flutter test
+      run: flutter test --coverage
+
+    - name: Upload coverage results
+      uses: codecov/codecov-action@v1
+      with:
+        files: packages/ubuntu_desktop_installer/coverage/lcov.info
+        token: ${{secrets.CODECOV_TOKEN}}
 
     # general
 
