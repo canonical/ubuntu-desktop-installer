@@ -32,9 +32,9 @@ The translation template has one special string (`languageName`) that is used to
 The Subiquity client uses [freezed](https://pub.dev/packages/freezed) and
 [json_serializable](https://pub.dev/packages/json_serializable) to generate
 immutable classes with JSON serialization support. Adding new types or members
-to `subiquity_client/lib/src/types.dart` requires the code to be re-generated:
+to `packages/subiquity_client/lib/src/types.dart` requires the code to be re-generated:
 
 ```
-cd subiquity_client
+cd packages/subiquity_client
 ./tools/codegen.sh
 ```
