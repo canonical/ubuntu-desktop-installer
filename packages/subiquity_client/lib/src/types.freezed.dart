@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'types.dart';
 
@@ -8,6 +8,10 @@ part of 'types.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _KeyboardSetting.fromJson(json);
 }
@@ -16,8 +20,7 @@ KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
 class _$KeyboardSettingTearOff {
   const _$KeyboardSettingTearOff();
 
-// ignore: unused_element
-  _KeyboardSetting call({String layout, String variant, String toggle}) {
+  _KeyboardSetting call({String? layout, String? variant, String? toggle}) {
     return _KeyboardSetting(
       layout: layout,
       variant: variant,
@@ -25,25 +28,24 @@ class _$KeyboardSettingTearOff {
     );
   }
 
-// ignore: unused_element
   KeyboardSetting fromJson(Map<String, Object> json) {
     return KeyboardSetting.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $KeyboardSetting = _$KeyboardSettingTearOff();
 
 /// @nodoc
 mixin _$KeyboardSetting {
-  String get layout;
-  String get variant;
-  String get toggle;
+  String? get layout => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  String? get toggle => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $KeyboardSettingCopyWith<KeyboardSetting> get copyWith;
+  $KeyboardSettingCopyWith<KeyboardSetting> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -51,7 +53,7 @@ abstract class $KeyboardSettingCopyWith<$Res> {
   factory $KeyboardSettingCopyWith(
           KeyboardSetting value, $Res Function(KeyboardSetting) then) =
       _$KeyboardSettingCopyWithImpl<$Res>;
-  $Res call({String layout, String variant, String toggle});
+  $Res call({String? layout, String? variant, String? toggle});
 }
 
 /// @nodoc
@@ -65,14 +67,23 @@ class _$KeyboardSettingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object layout = freezed,
-    Object variant = freezed,
-    Object toggle = freezed,
+    Object? layout = freezed,
+    Object? variant = freezed,
+    Object? toggle = freezed,
   }) {
     return _then(_value.copyWith(
-      layout: layout == freezed ? _value.layout : layout as String,
-      variant: variant == freezed ? _value.variant : variant as String,
-      toggle: toggle == freezed ? _value.toggle : toggle as String,
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toggle: toggle == freezed
+          ? _value.toggle
+          : toggle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -84,7 +95,7 @@ abstract class _$KeyboardSettingCopyWith<$Res>
           _KeyboardSetting value, $Res Function(_KeyboardSetting) then) =
       __$KeyboardSettingCopyWithImpl<$Res>;
   @override
-  $Res call({String layout, String variant, String toggle});
+  $Res call({String? layout, String? variant, String? toggle});
 }
 
 /// @nodoc
@@ -100,21 +111,29 @@ class __$KeyboardSettingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object layout = freezed,
-    Object variant = freezed,
-    Object toggle = freezed,
+    Object? layout = freezed,
+    Object? variant = freezed,
+    Object? toggle = freezed,
   }) {
     return _then(_KeyboardSetting(
-      layout: layout == freezed ? _value.layout : layout as String,
-      variant: variant == freezed ? _value.variant : variant as String,
-      toggle: toggle == freezed ? _value.toggle : toggle as String,
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toggle: toggle == freezed
+          ? _value.toggle
+          : toggle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_KeyboardSetting implements _KeyboardSetting {
   const _$_KeyboardSetting({this.layout, this.variant, this.toggle});
 
@@ -122,11 +141,11 @@ class _$_KeyboardSetting implements _KeyboardSetting {
       _$_$_KeyboardSettingFromJson(json);
 
   @override
-  final String layout;
+  final String? layout;
   @override
-  final String variant;
+  final String? variant;
   @override
-  final String toggle;
+  final String? toggle;
 
   @override
   String toString() {
@@ -166,20 +185,21 @@ class _$_KeyboardSetting implements _KeyboardSetting {
 
 abstract class _KeyboardSetting implements KeyboardSetting {
   const factory _KeyboardSetting(
-      {String layout, String variant, String toggle}) = _$_KeyboardSetting;
+      {String? layout, String? variant, String? toggle}) = _$_KeyboardSetting;
 
   factory _KeyboardSetting.fromJson(Map<String, dynamic> json) =
       _$_KeyboardSetting.fromJson;
 
   @override
-  String get layout;
+  String? get layout => throw _privateConstructorUsedError;
   @override
-  String get variant;
+  String? get variant => throw _privateConstructorUsedError;
   @override
-  String get toggle;
+  String? get toggle => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith;
+  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
@@ -190,12 +210,11 @@ IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
 class _$IdentityDataTearOff {
   const _$IdentityDataTearOff();
 
-// ignore: unused_element
   _IdentityData call(
-      {String realname,
-      String username,
-      @JsonKey(name: 'crypted_password') String cryptedPassword,
-      String hostname}) {
+      {String? realname,
+      String? username,
+      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? hostname}) {
     return _IdentityData(
       realname: realname,
       username: username,
@@ -204,27 +223,26 @@ class _$IdentityDataTearOff {
     );
   }
 
-// ignore: unused_element
   IdentityData fromJson(Map<String, Object> json) {
     return IdentityData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $IdentityData = _$IdentityDataTearOff();
 
 /// @nodoc
 mixin _$IdentityData {
-  String get realname;
-  String get username;
+  String? get realname => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
   @JsonKey(name: 'crypted_password')
-  String get cryptedPassword;
-  String get hostname;
+  String? get cryptedPassword => throw _privateConstructorUsedError;
+  String? get hostname => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $IdentityDataCopyWith<IdentityData> get copyWith;
+  $IdentityDataCopyWith<IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -233,10 +251,10 @@ abstract class $IdentityDataCopyWith<$Res> {
           IdentityData value, $Res Function(IdentityData) then) =
       _$IdentityDataCopyWithImpl<$Res>;
   $Res call(
-      {String realname,
-      String username,
-      @JsonKey(name: 'crypted_password') String cryptedPassword,
-      String hostname});
+      {String? realname,
+      String? username,
+      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? hostname});
 }
 
 /// @nodoc
@@ -249,18 +267,28 @@ class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object realname = freezed,
-    Object username = freezed,
-    Object cryptedPassword = freezed,
-    Object hostname = freezed,
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
   }) {
     return _then(_value.copyWith(
-      realname: realname == freezed ? _value.realname : realname as String,
-      username: username == freezed ? _value.username : username as String,
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
       cryptedPassword: cryptedPassword == freezed
           ? _value.cryptedPassword
-          : cryptedPassword as String,
-      hostname: hostname == freezed ? _value.hostname : hostname as String,
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -273,10 +301,10 @@ abstract class _$IdentityDataCopyWith<$Res>
       __$IdentityDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String realname,
-      String username,
-      @JsonKey(name: 'crypted_password') String cryptedPassword,
-      String hostname});
+      {String? realname,
+      String? username,
+      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? hostname});
 }
 
 /// @nodoc
@@ -291,25 +319,34 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object realname = freezed,
-    Object username = freezed,
-    Object cryptedPassword = freezed,
-    Object hostname = freezed,
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
   }) {
     return _then(_IdentityData(
-      realname: realname == freezed ? _value.realname : realname as String,
-      username: username == freezed ? _value.username : username as String,
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
       cryptedPassword: cryptedPassword == freezed
           ? _value.cryptedPassword
-          : cryptedPassword as String,
-      hostname: hostname == freezed ? _value.hostname : hostname as String,
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_IdentityData implements _IdentityData {
   const _$_IdentityData(
       {this.realname,
@@ -321,14 +358,14 @@ class _$_IdentityData implements _IdentityData {
       _$_$_IdentityDataFromJson(json);
 
   @override
-  final String realname;
+  final String? realname;
   @override
-  final String username;
+  final String? username;
   @override
   @JsonKey(name: 'crypted_password')
-  final String cryptedPassword;
+  final String? cryptedPassword;
   @override
-  final String hostname;
+  final String? hostname;
 
   @override
   String toString() {
@@ -374,26 +411,27 @@ class _$_IdentityData implements _IdentityData {
 
 abstract class _IdentityData implements IdentityData {
   const factory _IdentityData(
-      {String realname,
-      String username,
-      @JsonKey(name: 'crypted_password') String cryptedPassword,
-      String hostname}) = _$_IdentityData;
+      {String? realname,
+      String? username,
+      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? hostname}) = _$_IdentityData;
 
   factory _IdentityData.fromJson(Map<String, dynamic> json) =
       _$_IdentityData.fromJson;
 
   @override
-  String get realname;
+  String? get realname => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String? get username => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'crypted_password')
-  String get cryptedPassword;
+  String? get cryptedPassword => throw _privateConstructorUsedError;
   @override
-  String get hostname;
+  String? get hostname => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$IdentityDataCopyWith<_IdentityData> get copyWith;
+  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
@@ -404,11 +442,10 @@ SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
 class _$SSHDataTearOff {
   const _$SSHDataTearOff();
 
-// ignore: unused_element
   _SSHData call(
-      {@JsonKey(name: 'install_server') bool installServer,
-      @JsonKey(name: 'allow_pw') bool allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic> authorizedKeys}) {
+      {@JsonKey(name: 'install_server') bool? installServer,
+      @JsonKey(name: 'allow_pw') bool? allowPw,
+      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys}) {
     return _SSHData(
       installServer: installServer,
       allowPw: allowPw,
@@ -416,28 +453,26 @@ class _$SSHDataTearOff {
     );
   }
 
-// ignore: unused_element
   SSHData fromJson(Map<String, Object> json) {
     return SSHData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SSHData = _$SSHDataTearOff();
 
 /// @nodoc
 mixin _$SSHData {
   @JsonKey(name: 'install_server')
-  bool get installServer;
+  bool? get installServer => throw _privateConstructorUsedError;
   @JsonKey(name: 'allow_pw')
-  bool get allowPw;
+  bool? get allowPw => throw _privateConstructorUsedError;
   @JsonKey(name: 'authorized_keys')
-  List<dynamic> get authorizedKeys;
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SSHDataCopyWith<SSHData> get copyWith;
+  $SSHDataCopyWith<SSHData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -445,9 +480,9 @@ abstract class $SSHDataCopyWith<$Res> {
   factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
       _$SSHDataCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'install_server') bool installServer,
-      @JsonKey(name: 'allow_pw') bool allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic> authorizedKeys});
+      {@JsonKey(name: 'install_server') bool? installServer,
+      @JsonKey(name: 'allow_pw') bool? allowPw,
+      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys});
 }
 
 /// @nodoc
@@ -460,18 +495,23 @@ class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object installServer = freezed,
-    Object allowPw = freezed,
-    Object authorizedKeys = freezed,
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
   }) {
     return _then(_value.copyWith(
       installServer: installServer == freezed
           ? _value.installServer
-          : installServer as bool,
-      allowPw: allowPw == freezed ? _value.allowPw : allowPw as bool,
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
       authorizedKeys: authorizedKeys == freezed
           ? _value.authorizedKeys
-          : authorizedKeys as List<dynamic>,
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ));
   }
 }
@@ -482,9 +522,9 @@ abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
       __$SSHDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'install_server') bool installServer,
-      @JsonKey(name: 'allow_pw') bool allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic> authorizedKeys});
+      {@JsonKey(name: 'install_server') bool? installServer,
+      @JsonKey(name: 'allow_pw') bool? allowPw,
+      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys});
 }
 
 /// @nodoc
@@ -498,25 +538,29 @@ class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object installServer = freezed,
-    Object allowPw = freezed,
-    Object authorizedKeys = freezed,
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
   }) {
     return _then(_SSHData(
       installServer: installServer == freezed
           ? _value.installServer
-          : installServer as bool,
-      allowPw: allowPw == freezed ? _value.allowPw : allowPw as bool,
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
       authorizedKeys: authorizedKeys == freezed
           ? _value.authorizedKeys
-          : authorizedKeys as List<dynamic>,
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SSHData implements _SSHData {
   const _$_SSHData(
       {@JsonKey(name: 'install_server') this.installServer,
@@ -528,13 +572,13 @@ class _$_SSHData implements _SSHData {
 
   @override
   @JsonKey(name: 'install_server')
-  final bool installServer;
+  final bool? installServer;
   @override
   @JsonKey(name: 'allow_pw')
-  final bool allowPw;
+  final bool? allowPw;
   @override
   @JsonKey(name: 'authorized_keys')
-  final List<dynamic> authorizedKeys;
+  final List<dynamic>? authorizedKeys;
 
   @override
   String toString() {
@@ -576,25 +620,26 @@ class _$_SSHData implements _SSHData {
 
 abstract class _SSHData implements SSHData {
   const factory _SSHData(
-          {@JsonKey(name: 'install_server') bool installServer,
-          @JsonKey(name: 'allow_pw') bool allowPw,
-          @JsonKey(name: 'authorized_keys') List<dynamic> authorizedKeys}) =
+          {@JsonKey(name: 'install_server') bool? installServer,
+          @JsonKey(name: 'allow_pw') bool? allowPw,
+          @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys}) =
       _$_SSHData;
 
   factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
 
   @override
   @JsonKey(name: 'install_server')
-  bool get installServer;
+  bool? get installServer => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'allow_pw')
-  bool get allowPw;
+  bool? get allowPw => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'authorized_keys')
-  List<dynamic> get authorizedKeys;
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SSHDataCopyWith<_SSHData> get copyWith;
+  _$SSHDataCopyWith<_SSHData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
@@ -605,13 +650,12 @@ ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
 class _$ErrorReportRefTearOff {
   const _$ErrorReportRefTearOff();
 
-// ignore: unused_element
   _ErrorReportRef call(
-      {ErrorReportState state,
-      String base,
-      ErrorReportKind kind,
-      bool seen,
-      @JsonKey(name: 'oops_id') String oopsId}) {
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      @JsonKey(name: 'oops_id') String? oopsId}) {
     return _ErrorReportRef(
       state: state,
       base: base,
@@ -621,28 +665,27 @@ class _$ErrorReportRefTearOff {
     );
   }
 
-// ignore: unused_element
   ErrorReportRef fromJson(Map<String, Object> json) {
     return ErrorReportRef.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ErrorReportRef = _$ErrorReportRefTearOff();
 
 /// @nodoc
 mixin _$ErrorReportRef {
-  ErrorReportState get state;
-  String get base;
-  ErrorReportKind get kind;
-  bool get seen;
+  ErrorReportState? get state => throw _privateConstructorUsedError;
+  String? get base => throw _privateConstructorUsedError;
+  ErrorReportKind? get kind => throw _privateConstructorUsedError;
+  bool? get seen => throw _privateConstructorUsedError;
   @JsonKey(name: 'oops_id')
-  String get oopsId;
+  String? get oopsId => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorReportRefCopyWith<ErrorReportRef> get copyWith;
+  $ErrorReportRefCopyWith<ErrorReportRef> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -651,11 +694,11 @@ abstract class $ErrorReportRefCopyWith<$Res> {
           ErrorReportRef value, $Res Function(ErrorReportRef) then) =
       _$ErrorReportRefCopyWithImpl<$Res>;
   $Res call(
-      {ErrorReportState state,
-      String base,
-      ErrorReportKind kind,
-      bool seen,
-      @JsonKey(name: 'oops_id') String oopsId});
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      @JsonKey(name: 'oops_id') String? oopsId});
 }
 
 /// @nodoc
@@ -669,18 +712,33 @@ class _$ErrorReportRefCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object state = freezed,
-    Object base = freezed,
-    Object kind = freezed,
-    Object seen = freezed,
-    Object oopsId = freezed,
+    Object? state = freezed,
+    Object? base = freezed,
+    Object? kind = freezed,
+    Object? seen = freezed,
+    Object? oopsId = freezed,
   }) {
     return _then(_value.copyWith(
-      state: state == freezed ? _value.state : state as ErrorReportState,
-      base: base == freezed ? _value.base : base as String,
-      kind: kind == freezed ? _value.kind : kind as ErrorReportKind,
-      seen: seen == freezed ? _value.seen : seen as bool,
-      oopsId: oopsId == freezed ? _value.oopsId : oopsId as String,
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ErrorReportState?,
+      base: base == freezed
+          ? _value.base
+          : base // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: kind == freezed
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ErrorReportKind?,
+      seen: seen == freezed
+          ? _value.seen
+          : seen // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      oopsId: oopsId == freezed
+          ? _value.oopsId
+          : oopsId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -693,11 +751,11 @@ abstract class _$ErrorReportRefCopyWith<$Res>
       __$ErrorReportRefCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ErrorReportState state,
-      String base,
-      ErrorReportKind kind,
-      bool seen,
-      @JsonKey(name: 'oops_id') String oopsId});
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      @JsonKey(name: 'oops_id') String? oopsId});
 }
 
 /// @nodoc
@@ -713,25 +771,39 @@ class __$ErrorReportRefCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object state = freezed,
-    Object base = freezed,
-    Object kind = freezed,
-    Object seen = freezed,
-    Object oopsId = freezed,
+    Object? state = freezed,
+    Object? base = freezed,
+    Object? kind = freezed,
+    Object? seen = freezed,
+    Object? oopsId = freezed,
   }) {
     return _then(_ErrorReportRef(
-      state: state == freezed ? _value.state : state as ErrorReportState,
-      base: base == freezed ? _value.base : base as String,
-      kind: kind == freezed ? _value.kind : kind as ErrorReportKind,
-      seen: seen == freezed ? _value.seen : seen as bool,
-      oopsId: oopsId == freezed ? _value.oopsId : oopsId as String,
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ErrorReportState?,
+      base: base == freezed
+          ? _value.base
+          : base // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: kind == freezed
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ErrorReportKind?,
+      seen: seen == freezed
+          ? _value.seen
+          : seen // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      oopsId: oopsId == freezed
+          ? _value.oopsId
+          : oopsId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ErrorReportRef implements _ErrorReportRef {
   const _$_ErrorReportRef(
       {this.state,
@@ -744,16 +816,16 @@ class _$_ErrorReportRef implements _ErrorReportRef {
       _$_$_ErrorReportRefFromJson(json);
 
   @override
-  final ErrorReportState state;
+  final ErrorReportState? state;
   @override
-  final String base;
+  final String? base;
   @override
-  final ErrorReportKind kind;
+  final ErrorReportKind? kind;
   @override
-  final bool seen;
+  final bool? seen;
   @override
   @JsonKey(name: 'oops_id')
-  final String oopsId;
+  final String? oopsId;
 
   @override
   String toString() {
@@ -798,29 +870,30 @@ class _$_ErrorReportRef implements _ErrorReportRef {
 
 abstract class _ErrorReportRef implements ErrorReportRef {
   const factory _ErrorReportRef(
-      {ErrorReportState state,
-      String base,
-      ErrorReportKind kind,
-      bool seen,
-      @JsonKey(name: 'oops_id') String oopsId}) = _$_ErrorReportRef;
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      @JsonKey(name: 'oops_id') String? oopsId}) = _$_ErrorReportRef;
 
   factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
       _$_ErrorReportRef.fromJson;
 
   @override
-  ErrorReportState get state;
+  ErrorReportState? get state => throw _privateConstructorUsedError;
   @override
-  String get base;
+  String? get base => throw _privateConstructorUsedError;
   @override
-  ErrorReportKind get kind;
+  ErrorReportKind? get kind => throw _privateConstructorUsedError;
   @override
-  bool get seen;
+  bool? get seen => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'oops_id')
-  String get oopsId;
+  String? get oopsId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith;
+  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ApplicationStatus _$ApplicationStatusFromJson(Map<String, dynamic> json) {
@@ -831,16 +904,15 @@ ApplicationStatus _$ApplicationStatusFromJson(Map<String, dynamic> json) {
 class _$ApplicationStatusTearOff {
   const _$ApplicationStatusTearOff();
 
-// ignore: unused_element
   _ApplicationStatus call(
-      {ApplicationState state,
-      @JsonKey(name: 'confirming_tty') String confirmingTty,
-      ErrorReportRef error,
-      @JsonKey(name: 'cloud_init_ok') bool cloudInitOk,
-      bool interactive,
-      @JsonKey(name: 'echo_syslog_id') String echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String eventSyslogId}) {
+      {ApplicationState? state,
+      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      ErrorReportRef? error,
+      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? interactive,
+      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
+      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
+      @JsonKey(name: 'event_syslog_id') String? eventSyslogId}) {
     return _ApplicationStatus(
       state: state,
       confirmingTty: confirmingTty,
@@ -853,35 +925,34 @@ class _$ApplicationStatusTearOff {
     );
   }
 
-// ignore: unused_element
   ApplicationStatus fromJson(Map<String, Object> json) {
     return ApplicationStatus.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ApplicationStatus = _$ApplicationStatusTearOff();
 
 /// @nodoc
 mixin _$ApplicationStatus {
-  ApplicationState get state;
+  ApplicationState? get state => throw _privateConstructorUsedError;
   @JsonKey(name: 'confirming_tty')
-  String get confirmingTty;
-  ErrorReportRef get error;
+  String? get confirmingTty => throw _privateConstructorUsedError;
+  ErrorReportRef? get error => throw _privateConstructorUsedError;
   @JsonKey(name: 'cloud_init_ok')
-  bool get cloudInitOk;
-  bool get interactive;
+  bool? get cloudInitOk => throw _privateConstructorUsedError;
+  bool? get interactive => throw _privateConstructorUsedError;
   @JsonKey(name: 'echo_syslog_id')
-  String get echoSyslogId;
+  String? get echoSyslogId => throw _privateConstructorUsedError;
   @JsonKey(name: 'log_syslog_id')
-  String get logSyslogId;
+  String? get logSyslogId => throw _privateConstructorUsedError;
   @JsonKey(name: 'event_syslog_id')
-  String get eventSyslogId;
+  String? get eventSyslogId => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApplicationStatusCopyWith<ApplicationStatus> get copyWith;
+  $ApplicationStatusCopyWith<ApplicationStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -890,16 +961,16 @@ abstract class $ApplicationStatusCopyWith<$Res> {
           ApplicationStatus value, $Res Function(ApplicationStatus) then) =
       _$ApplicationStatusCopyWithImpl<$Res>;
   $Res call(
-      {ApplicationState state,
-      @JsonKey(name: 'confirming_tty') String confirmingTty,
-      ErrorReportRef error,
-      @JsonKey(name: 'cloud_init_ok') bool cloudInitOk,
-      bool interactive,
-      @JsonKey(name: 'echo_syslog_id') String echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String eventSyslogId});
+      {ApplicationState? state,
+      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      ErrorReportRef? error,
+      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? interactive,
+      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
+      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
+      @JsonKey(name: 'event_syslog_id') String? eventSyslogId});
 
-  $ErrorReportRefCopyWith<$Res> get error;
+  $ErrorReportRefCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -913,42 +984,58 @@ class _$ApplicationStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object state = freezed,
-    Object confirmingTty = freezed,
-    Object error = freezed,
-    Object cloudInitOk = freezed,
-    Object interactive = freezed,
-    Object echoSyslogId = freezed,
-    Object logSyslogId = freezed,
-    Object eventSyslogId = freezed,
+    Object? state = freezed,
+    Object? confirmingTty = freezed,
+    Object? error = freezed,
+    Object? cloudInitOk = freezed,
+    Object? interactive = freezed,
+    Object? echoSyslogId = freezed,
+    Object? logSyslogId = freezed,
+    Object? eventSyslogId = freezed,
   }) {
     return _then(_value.copyWith(
-      state: state == freezed ? _value.state : state as ApplicationState,
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApplicationState?,
       confirmingTty: confirmingTty == freezed
           ? _value.confirmingTty
-          : confirmingTty as String,
-      error: error == freezed ? _value.error : error as ErrorReportRef,
-      cloudInitOk:
-          cloudInitOk == freezed ? _value.cloudInitOk : cloudInitOk as bool,
-      interactive:
-          interactive == freezed ? _value.interactive : interactive as bool,
+          : confirmingTty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      cloudInitOk: cloudInitOk == freezed
+          ? _value.cloudInitOk
+          : cloudInitOk // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interactive: interactive == freezed
+          ? _value.interactive
+          : interactive // ignore: cast_nullable_to_non_nullable
+              as bool?,
       echoSyslogId: echoSyslogId == freezed
           ? _value.echoSyslogId
-          : echoSyslogId as String,
-      logSyslogId:
-          logSyslogId == freezed ? _value.logSyslogId : logSyslogId as String,
+          : echoSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logSyslogId: logSyslogId == freezed
+          ? _value.logSyslogId
+          : logSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
       eventSyslogId: eventSyslogId == freezed
           ? _value.eventSyslogId
-          : eventSyslogId as String,
+          : eventSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
   @override
-  $ErrorReportRefCopyWith<$Res> get error {
+  $ErrorReportRefCopyWith<$Res>? get error {
     if (_value.error == null) {
       return null;
     }
-    return $ErrorReportRefCopyWith<$Res>(_value.error, (value) {
+
+    return $ErrorReportRefCopyWith<$Res>(_value.error!, (value) {
       return _then(_value.copyWith(error: value));
     });
   }
@@ -962,17 +1049,17 @@ abstract class _$ApplicationStatusCopyWith<$Res>
       __$ApplicationStatusCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ApplicationState state,
-      @JsonKey(name: 'confirming_tty') String confirmingTty,
-      ErrorReportRef error,
-      @JsonKey(name: 'cloud_init_ok') bool cloudInitOk,
-      bool interactive,
-      @JsonKey(name: 'echo_syslog_id') String echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String eventSyslogId});
+      {ApplicationState? state,
+      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      ErrorReportRef? error,
+      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? interactive,
+      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
+      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
+      @JsonKey(name: 'event_syslog_id') String? eventSyslogId});
 
   @override
-  $ErrorReportRefCopyWith<$Res> get error;
+  $ErrorReportRefCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -988,40 +1075,55 @@ class __$ApplicationStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object state = freezed,
-    Object confirmingTty = freezed,
-    Object error = freezed,
-    Object cloudInitOk = freezed,
-    Object interactive = freezed,
-    Object echoSyslogId = freezed,
-    Object logSyslogId = freezed,
-    Object eventSyslogId = freezed,
+    Object? state = freezed,
+    Object? confirmingTty = freezed,
+    Object? error = freezed,
+    Object? cloudInitOk = freezed,
+    Object? interactive = freezed,
+    Object? echoSyslogId = freezed,
+    Object? logSyslogId = freezed,
+    Object? eventSyslogId = freezed,
   }) {
     return _then(_ApplicationStatus(
-      state: state == freezed ? _value.state : state as ApplicationState,
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApplicationState?,
       confirmingTty: confirmingTty == freezed
           ? _value.confirmingTty
-          : confirmingTty as String,
-      error: error == freezed ? _value.error : error as ErrorReportRef,
-      cloudInitOk:
-          cloudInitOk == freezed ? _value.cloudInitOk : cloudInitOk as bool,
-      interactive:
-          interactive == freezed ? _value.interactive : interactive as bool,
+          : confirmingTty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      cloudInitOk: cloudInitOk == freezed
+          ? _value.cloudInitOk
+          : cloudInitOk // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interactive: interactive == freezed
+          ? _value.interactive
+          : interactive // ignore: cast_nullable_to_non_nullable
+              as bool?,
       echoSyslogId: echoSyslogId == freezed
           ? _value.echoSyslogId
-          : echoSyslogId as String,
-      logSyslogId:
-          logSyslogId == freezed ? _value.logSyslogId : logSyslogId as String,
+          : echoSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logSyslogId: logSyslogId == freezed
+          ? _value.logSyslogId
+          : logSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
       eventSyslogId: eventSyslogId == freezed
           ? _value.eventSyslogId
-          : eventSyslogId as String,
+          : eventSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable(explicitToJson: true)
-
 /// @nodoc
+
+@JsonSerializable(explicitToJson: true)
 class _$_ApplicationStatus implements _ApplicationStatus {
   const _$_ApplicationStatus(
       {this.state,
@@ -1037,26 +1139,26 @@ class _$_ApplicationStatus implements _ApplicationStatus {
       _$_$_ApplicationStatusFromJson(json);
 
   @override
-  final ApplicationState state;
+  final ApplicationState? state;
   @override
   @JsonKey(name: 'confirming_tty')
-  final String confirmingTty;
+  final String? confirmingTty;
   @override
-  final ErrorReportRef error;
+  final ErrorReportRef? error;
   @override
   @JsonKey(name: 'cloud_init_ok')
-  final bool cloudInitOk;
+  final bool? cloudInitOk;
   @override
-  final bool interactive;
+  final bool? interactive;
   @override
   @JsonKey(name: 'echo_syslog_id')
-  final String echoSyslogId;
+  final String? echoSyslogId;
   @override
   @JsonKey(name: 'log_syslog_id')
-  final String logSyslogId;
+  final String? logSyslogId;
   @override
   @JsonKey(name: 'event_syslog_id')
-  final String eventSyslogId;
+  final String? eventSyslogId;
 
   @override
   String toString() {
@@ -1116,41 +1218,42 @@ class _$_ApplicationStatus implements _ApplicationStatus {
 
 abstract class _ApplicationStatus implements ApplicationStatus {
   const factory _ApplicationStatus(
-          {ApplicationState state,
-          @JsonKey(name: 'confirming_tty') String confirmingTty,
-          ErrorReportRef error,
-          @JsonKey(name: 'cloud_init_ok') bool cloudInitOk,
-          bool interactive,
-          @JsonKey(name: 'echo_syslog_id') String echoSyslogId,
-          @JsonKey(name: 'log_syslog_id') String logSyslogId,
-          @JsonKey(name: 'event_syslog_id') String eventSyslogId}) =
+          {ApplicationState? state,
+          @JsonKey(name: 'confirming_tty') String? confirmingTty,
+          ErrorReportRef? error,
+          @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+          bool? interactive,
+          @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
+          @JsonKey(name: 'log_syslog_id') String? logSyslogId,
+          @JsonKey(name: 'event_syslog_id') String? eventSyslogId}) =
       _$_ApplicationStatus;
 
   factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
       _$_ApplicationStatus.fromJson;
 
   @override
-  ApplicationState get state;
+  ApplicationState? get state => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'confirming_tty')
-  String get confirmingTty;
+  String? get confirmingTty => throw _privateConstructorUsedError;
   @override
-  ErrorReportRef get error;
+  ErrorReportRef? get error => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'cloud_init_ok')
-  bool get cloudInitOk;
+  bool? get cloudInitOk => throw _privateConstructorUsedError;
   @override
-  bool get interactive;
+  bool? get interactive => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'echo_syslog_id')
-  String get echoSyslogId;
+  String? get echoSyslogId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'log_syslog_id')
-  String get logSyslogId;
+  String? get logSyslogId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'event_syslog_id')
-  String get eventSyslogId;
+  String? get eventSyslogId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith;
+  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -26,7 +26,7 @@ class _HttpRequest {
 
   _HttpRequest(this.request);
 
-  int get contentLength => int.tryParse(headers['Content-Length']);
+  int? get contentLength => int.tryParse(headers['Content-Length']!);
 }
 
 class HttpUnixClient extends BaseClient {
@@ -34,7 +34,7 @@ class HttpUnixClient extends BaseClient {
   final String path;
 
   // Unix socket connected to.
-  Socket _socket;
+  late Socket _socket;
 
   // Requests in process.
   final _requests = <_HttpRequest>[];
@@ -43,7 +43,7 @@ class HttpUnixClient extends BaseClient {
   final _buffer = <int>[];
 
   var _parserState = _HttpParserState.status;
-  var _chunkLength = -1;
+  int? _chunkLength = -1;
   var _chunkRead = -1;
 
   /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
@@ -170,7 +170,7 @@ class HttpUnixClient extends BaseClient {
     if (_chunkLength == null) {
       length = _buffer.length;
     } else {
-      length = min(_chunkLength - _chunkRead, _buffer.length);
+      length = min(_chunkLength! - _chunkRead, _buffer.length);
       _chunkRead += length;
     }
 
@@ -203,7 +203,7 @@ class HttpUnixClient extends BaseClient {
   }
 
   bool _processChunk(_HttpRequest request) {
-    var length = min(_chunkLength - _chunkRead, _buffer.length);
+    var length = min(_chunkLength! - _chunkRead, _buffer.length);
     var chunk = _buffer.sublist(0, length);
     request.stream.add(chunk);
     _buffer.removeRange(0, length);
@@ -235,7 +235,7 @@ class HttpUnixClient extends BaseClient {
     return false;
   }
 
-  String _readLine() {
+  String? _readLine() {
     for (var i = 0; i < _buffer.length - 1; i++) {
       if (_buffer[i] == 13 && _buffer[i + 1] == 10) {
         var line = utf8.decode(_buffer.sublist(0, i));
