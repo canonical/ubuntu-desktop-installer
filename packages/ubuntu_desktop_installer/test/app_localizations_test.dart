@@ -8,9 +8,12 @@ void main() {
   group('Occitan', () {
     LocalizationsDelegateOc delegate;
 
+    setUpAll(() {
+      initializeDateFormatting('oc');
+    });
+
     setUp(() {
       delegate = LocalizationsDelegateOc();
-      initializeDateFormatting('oc');
     });
 
     tearDown(() {
