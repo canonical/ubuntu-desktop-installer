@@ -5,7 +5,7 @@ import 'package:path/path.dart' as p;
 import '../src/http_unix_client.dart';
 
 class TestServer {
-  Process _serverProcess;
+  late Process _serverProcess;
 
   Future<String> start(String config) async {
     final subiquityPath = p.join(Directory.current.path, 'subiquity');

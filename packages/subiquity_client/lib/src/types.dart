@@ -5,11 +5,11 @@ part 'types.freezed.dart';
 part 'types.g.dart';
 
 @freezed
-abstract class KeyboardSetting with _$KeyboardSetting {
+class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({
-    String layout,
-    String variant,
-    String toggle,
+    String? layout,
+    String? variant,
+    String? toggle,
   }) = _KeyboardSetting;
 
   factory KeyboardSetting.fromJson(Map<String, dynamic> json) =>
@@ -17,12 +17,12 @@ abstract class KeyboardSetting with _$KeyboardSetting {
 }
 
 @freezed
-abstract class IdentityData with _$IdentityData {
+class IdentityData with _$IdentityData {
   const factory IdentityData({
-    String realname,
-    String username,
-    @JsonKey(name: 'crypted_password') String cryptedPassword,
-    String hostname,
+    String? realname,
+    String? username,
+    @JsonKey(name: 'crypted_password') String? cryptedPassword,
+    String? hostname,
   }) = _IdentityData;
 
   factory IdentityData.fromJson(Map<String, dynamic> json) =>
@@ -30,11 +30,11 @@ abstract class IdentityData with _$IdentityData {
 }
 
 @freezed
-abstract class SSHData with _$SSHData {
+class SSHData with _$SSHData {
   const factory SSHData({
-    @JsonKey(name: 'install_server') bool installServer,
-    @JsonKey(name: 'allow_pw') bool allowPw,
-    @JsonKey(name: 'authorized_keys') List<dynamic> authorizedKeys,
+    @JsonKey(name: 'install_server') bool? installServer,
+    @JsonKey(name: 'allow_pw') bool? allowPw,
+    @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys,
   }) = _SSHData;
 
   factory SSHData.fromJson(Map<String, dynamic> json) =>
@@ -74,13 +74,13 @@ enum ErrorReportKind {
 }
 
 @freezed
-abstract class ErrorReportRef with _$ErrorReportRef {
+class ErrorReportRef with _$ErrorReportRef {
   const factory ErrorReportRef({
-    ErrorReportState state,
-    String base,
-    ErrorReportKind kind,
-    bool seen,
-    @JsonKey(name: 'oops_id') String oopsId,
+    ErrorReportState? state,
+    String? base,
+    ErrorReportKind? kind,
+    bool? seen,
+    @JsonKey(name: 'oops_id') String? oopsId,
   }) = _ErrorReportRef;
 
   factory ErrorReportRef.fromJson(Map<String, dynamic> json) =>
@@ -88,17 +88,17 @@ abstract class ErrorReportRef with _$ErrorReportRef {
 }
 
 @freezed
-abstract class ApplicationStatus with _$ApplicationStatus {
+class ApplicationStatus with _$ApplicationStatus {
   @JsonSerializable(explicitToJson: true)
   const factory ApplicationStatus({
-    ApplicationState state,
-    @JsonKey(name: 'confirming_tty') String confirmingTty,
-    ErrorReportRef error,
-    @JsonKey(name: 'cloud_init_ok') bool cloudInitOk,
-    bool interactive,
-    @JsonKey(name: 'echo_syslog_id') String echoSyslogId,
-    @JsonKey(name: 'log_syslog_id') String logSyslogId,
-    @JsonKey(name: 'event_syslog_id') String eventSyslogId,
+    ApplicationState? state,
+    @JsonKey(name: 'confirming_tty') String? confirmingTty,
+    ErrorReportRef? error,
+    @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+    bool? interactive,
+    @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
+    @JsonKey(name: 'log_syslog_id') String? logSyslogId,
+    @JsonKey(name: 'event_syslog_id') String? eventSyslogId,
   }) = _ApplicationStatus;
 
   factory ApplicationStatus.fromJson(Map<String, dynamic> json) =>

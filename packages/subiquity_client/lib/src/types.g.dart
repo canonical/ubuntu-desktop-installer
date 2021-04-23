@@ -8,9 +8,9 @@ part of 'types.dart';
 
 _$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _$_KeyboardSetting(
-    layout: json['layout'] as String,
-    variant: json['variant'] as String,
-    toggle: json['toggle'] as String,
+    layout: json['layout'] as String?,
+    variant: json['variant'] as String?,
+    toggle: json['toggle'] as String?,
   );
 }
 
@@ -23,10 +23,10 @@ Map<String, dynamic> _$_$_KeyboardSettingToJson(_$_KeyboardSetting instance) =>
 
 _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
   return _$_IdentityData(
-    realname: json['realname'] as String,
-    username: json['username'] as String,
-    cryptedPassword: json['crypted_password'] as String,
-    hostname: json['hostname'] as String,
+    realname: json['realname'] as String?,
+    username: json['username'] as String?,
+    cryptedPassword: json['crypted_password'] as String?,
+    hostname: json['hostname'] as String?,
   );
 }
 
@@ -40,9 +40,9 @@ Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
 
 _$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
   return _$_SSHData(
-    installServer: json['install_server'] as bool,
-    allowPw: json['allow_pw'] as bool,
-    authorizedKeys: json['authorized_keys'] as List,
+    installServer: json['install_server'] as bool?,
+    allowPw: json['allow_pw'] as bool?,
+    authorizedKeys: json['authorized_keys'] as List<dynamic>?,
   );
 }
 
@@ -56,10 +56,10 @@ Map<String, dynamic> _$_$_SSHDataToJson(_$_SSHData instance) =>
 _$_ErrorReportRef _$_$_ErrorReportRefFromJson(Map<String, dynamic> json) {
   return _$_ErrorReportRef(
     state: _$enumDecodeNullable(_$ErrorReportStateEnumMap, json['state']),
-    base: json['base'] as String,
+    base: json['base'] as String?,
     kind: _$enumDecodeNullable(_$ErrorReportKindEnumMap, json['kind']),
-    seen: json['seen'] as bool,
-    oopsId: json['oops_id'] as String,
+    seen: json['seen'] as bool?,
+    oopsId: json['oops_id'] as String?,
   );
 }
 
@@ -72,36 +72,41 @@ Map<String, dynamic> _$_$_ErrorReportRefToJson(_$_ErrorReportRef instance) =>
       'oops_id': instance.oopsId,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$ErrorReportStateEnumMap = {
@@ -125,15 +130,15 @@ const _$ErrorReportKindEnumMap = {
 _$_ApplicationStatus _$_$_ApplicationStatusFromJson(Map<String, dynamic> json) {
   return _$_ApplicationStatus(
     state: _$enumDecodeNullable(_$ApplicationStateEnumMap, json['state']),
-    confirmingTty: json['confirming_tty'] as String,
+    confirmingTty: json['confirming_tty'] as String?,
     error: json['error'] == null
         ? null
         : ErrorReportRef.fromJson(json['error'] as Map<String, dynamic>),
-    cloudInitOk: json['cloud_init_ok'] as bool,
-    interactive: json['interactive'] as bool,
-    echoSyslogId: json['echo_syslog_id'] as String,
-    logSyslogId: json['log_syslog_id'] as String,
-    eventSyslogId: json['event_syslog_id'] as String,
+    cloudInitOk: json['cloud_init_ok'] as bool?,
+    interactive: json['interactive'] as bool?,
+    echoSyslogId: json['echo_syslog_id'] as String?,
+    logSyslogId: json['log_syslog_id'] as String?,
+    eventSyslogId: json['event_syslog_id'] as String?,
   );
 }
 
