@@ -39,7 +39,7 @@ class TurnOffRSTPage extends StatelessWidget {
                         margin: EdgeInsets.all(0),
                       ),
                     },
-                    onLinkTap: launch,
+                    onLinkTap: (url, _, __, ___) => launch(url),
                   ),
                 ),
                 const SizedBox(height: 40),
