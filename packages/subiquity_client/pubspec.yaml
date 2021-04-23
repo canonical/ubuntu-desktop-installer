@@ -7,8 +7,6 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  diacritic:
-  tuple:
   http: ^0.12.2
   freezed_annotation: ^0.12.0
   json_annotation: ^3.1.1
