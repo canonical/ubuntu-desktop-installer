@@ -7,9 +7,9 @@ typedef LocalizedViewBuilder = Widget Function(
 class LocalizedView extends StatelessWidget {
   final LocalizedViewBuilder builder;
 
-  LocalizedView({@required this.builder});
+  LocalizedView({required this.builder});
 
   @override
   Widget build(BuildContext context) =>
-      builder(context, AppLocalizations.of(context));
+      builder(context, AppLocalizations.of(context)!);
 }

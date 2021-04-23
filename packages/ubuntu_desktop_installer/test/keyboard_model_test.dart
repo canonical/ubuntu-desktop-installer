@@ -6,13 +6,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 
 void main() {
-  KeyboardModel model;
+  late KeyboardModel model;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    ServicesBinding.instance.defaultBinaryMessenger
+    ServicesBinding.instance!.defaultBinaryMessenger
         .setMockMessageHandler('flutter/assets', (message) {
-      var key = utf8.decode(message.buffer.asUint8List());
+      var key = utf8.decode(message!.buffer.asUint8List());
       expect(key, 'assets/kbdnames.txt');
       var data = '''C*layout*fr*French
 C*variant*fr**French
@@ -43,10 +43,6 @@ es*variant*es*cat*Español - Catalán (España, con L con punto medio)''';
     model = KeyboardModel();
   });
 
-  tearDown(() {
-    model = null;
-  });
-
   test('model should be initially empty', () {
     expect(model.layouts.isEmpty, true);
     expect(model.variants.isEmpty, true);
@@ -63,16 +59,16 @@ es*variant*es*cat*Español - Catalán (España, con L con punto medio)''';
     }
     expect(model.variants.keys.contains('C'), false);
     expect(model.variants.keys.contains('fr'), true);
-    expect(model.variants['fr'].length, 3);
+    expect(model.variants['fr']!.length, 3);
     expect(
-        model.variants['fr']
+        model.variants['fr']!
             .singleWhere((variant) => variant.item1 == 'bepo')
             .item2,
         'Français - Français (Bépo, ergonomique, façon Dvorak)');
     expect(model.variants.keys.contains('es'), true);
-    expect(model.variants['es'].length, 2);
+    expect(model.variants['es']!.length, 2);
     expect(
-        model.variants['es']
+        model.variants['es']!
             .singleWhere((variant) => variant.item1 == 'cat')
             .item2,
         'Espagnol - Catalan (Espagne, avec L point médian)');
@@ -91,7 +87,7 @@ es*variant*es*cat*Español - Catalán (España, con L con punto medio)''';
     expect(model.layouts.length, 2);
     expect(model.variants.length, 2);
     expect(
-        model.variants['fr']
+        model.variants['fr']!
             .singleWhere((variant) => variant.item1 == 'bepo')
             .item2,
         'French - French (Bepo, ergonomic, Dvorak way)');

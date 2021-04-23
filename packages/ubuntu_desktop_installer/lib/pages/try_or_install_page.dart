@@ -13,11 +13,11 @@ enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
 class OptionCard extends StatefulWidget {
   OptionCard({
-    Key key,
-    @required this.option,
-    @required this.imageAsset,
-    @required this.titleText,
-    @required this.bodyText,
+    Key? key,
+    required this.option,
+    required this.imageAsset,
+    required this.titleText,
+    required this.bodyText,
   })  : assert(option != null, '`option` must not be `null`'),
         assert(imageAsset != null, '`imageAsset` must not be `null`'),
         assert(titleText != null, '`titleText` must not be `null`'),
@@ -88,9 +88,9 @@ class TryOrInstallPageInheritedContainer extends InheritedWidget {
   final TryOrInstallPageState data;
 
   TryOrInstallPageInheritedContainer({
-    Key key,
-    Widget child,
-    @required this.data,
+    Key? key,
+    required Widget child,
+    required this.data,
   })  : assert(data != null, '`TryOrInstallPageState` must not be `null`'),
         super(
           key: key,
@@ -103,13 +103,13 @@ class TryOrInstallPageInheritedContainer extends InheritedWidget {
 
 class TryOrInstallPage extends StatefulWidget {
   const TryOrInstallPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   static TryOrInstallPageState of(BuildContext context) {
     return context
         .dependOnInheritedWidgetOfExactType<
-            TryOrInstallPageInheritedContainer>()
+            TryOrInstallPageInheritedContainer>()!
         .data;
   }
 
@@ -225,7 +225,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
                       fit: FlexFit.tight,
                       child: Html(
                         data: lang.releaseNotesLabel(_releaseNotesURL),
-                        onLinkTap: (url, _, __, ___) => launch(url),
+                        onLinkTap: (url, _, __, ___) => launch(url!),
                       ),
                     ),
                     ButtonBar(

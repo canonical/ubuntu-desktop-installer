@@ -10,7 +10,7 @@ import '../widgets.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -38,18 +38,18 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         if (_selectedLayoutIndex > -1) {
           _selectedLayoutName =
               keyboardModel.layouts[_selectedLayoutIndex].item1;
-          _selectedVariantIndex = keyboardModel.variants[_selectedLayoutName]
+          _selectedVariantIndex = keyboardModel.variants[_selectedLayoutName]!
               .indexWhere((variant) => variant.item1 == info.variant);
           if (_selectedVariantIndex == -1) {
             _selectedVariantIndex = 0;
           }
-          SchedulerBinding.instance.addPostFrameCallback((_) =>
+          SchedulerBinding.instance!.addPostFrameCallback((_) =>
               _keyboardVariantListScrollController.scrollToIndex(
                   _selectedVariantIndex,
                   preferPosition: AutoScrollPosition.middle,
                   duration: const Duration(milliseconds: 1)));
         }
-        SchedulerBinding.instance.addPostFrameCallback((_) =>
+        SchedulerBinding.instance!.addPostFrameCallback((_) =>
             _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
                 preferPosition: AutoScrollPosition.middle,
                 duration: const Duration(milliseconds: 1)));
@@ -120,7 +120,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                     _keyboardVariantListScrollController,
                                 itemCount: _selectedLayoutName.isNotEmpty
                                     ? keyboardModel
-                                        .variants[_selectedLayoutName].length
+                                        .variants[_selectedLayoutName]!.length
                                     : 0,
                                 itemBuilder: (context, index) {
                                   return AutoScrollTag(
@@ -130,8 +130,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                           _keyboardVariantListScrollController,
                                       child: ListTile(
                                         title: Text(keyboardModel
-                                            .variants[_selectedLayoutName]
-                                                [index]
+                                            .variants[_selectedLayoutName]![
+                                                index]
                                             .item2),
                                         selected:
                                             index == _selectedVariantIndex,
