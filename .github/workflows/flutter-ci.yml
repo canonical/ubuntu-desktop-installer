@@ -40,6 +40,12 @@ jobs:
       working-directory: ./packages/subiquity_client
       run: flutter test --coverage
 
+    - name: Cleanup coverage results
+      working-directory: ./packages/subiquity_client
+      run: |
+        dart pub global activate remove_from_coverage
+        dart pub global run remove_from_coverage -f coverage/lcov.info -r '\.g\.dart$' -r '\.freezed\.dart$'
+
     - name: Upload coverage results
       uses: codecov/codecov-action@v1
       with:
