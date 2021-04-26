@@ -18,11 +18,7 @@ class OptionCard extends StatefulWidget {
     required this.imageAsset,
     required this.titleText,
     required this.bodyText,
-  })  : assert(option != null, '`option` must not be `null`'),
-        assert(imageAsset != null, '`imageAsset` must not be `null`'),
-        assert(titleText != null, '`titleText` must not be `null`'),
-        assert(bodyText != null, '`bodyText` must not be `null`'),
-        super(key: key);
+  }) : super(key: key);
 
   final Option option;
   final String imageAsset;
@@ -91,8 +87,7 @@ class TryOrInstallPageInheritedContainer extends InheritedWidget {
     Key? key,
     required Widget child,
     required this.data,
-  })  : assert(data != null, '`TryOrInstallPageState` must not be `null`'),
-        super(
+  }) : super(
           key: key,
           child: child,
         );
