@@ -11,7 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 /// Must See,
 /// * [Intl.defaultLocale]
 /// * [Intl.systemLocale]
-void setupAppLocalizations() async {
+Future<void> setupAppLocalizations() async {
   await findSystemLocale();
   Intl.defaultLocale = Intl.systemLocale;
 }
@@ -21,15 +21,15 @@ class MaterialLocalizationOc extends MaterialLocalizationCa {
   /// Create an instance of the translation bundle for Occitan.
   const MaterialLocalizationOc({
     String localeName = 'oc',
-    @required DateFormat fullYearFormat,
-    @required DateFormat compactDateFormat,
-    @required DateFormat shortDateFormat,
-    @required DateFormat mediumDateFormat,
-    @required DateFormat longDateFormat,
-    @required DateFormat yearMonthFormat,
-    @required DateFormat shortMonthDayFormat,
-    @required NumberFormat decimalFormat,
-    @required NumberFormat twoDigitZeroPaddedFormat,
+    required DateFormat fullYearFormat,
+    required DateFormat compactDateFormat,
+    required DateFormat shortDateFormat,
+    required DateFormat mediumDateFormat,
+    required DateFormat longDateFormat,
+    required DateFormat yearMonthFormat,
+    required DateFormat shortMonthDayFormat,
+    required NumberFormat decimalFormat,
+    required NumberFormat twoDigitZeroPaddedFormat,
   }) : super(
           localeName: localeName,
           fullYearFormat: fullYearFormat,

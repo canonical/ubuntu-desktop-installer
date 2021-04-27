@@ -15,7 +15,7 @@ import '../widgets.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
   int _selectedLanguageIndex = 0;
 
-  AutoScrollController _languageListScrollController;
+  final _languageListScrollController = AutoScrollController();
 
   void _asyncLoadLanguageList() async {
     assert(_languageList.isEmpty);
@@ -46,7 +46,6 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   void initState() {
     super.initState();
-    _languageListScrollController = AutoScrollController();
 
     _asyncLoadLanguageList();
 
@@ -55,12 +54,12 @@ class _WelcomePageState extends State<WelcomePage> {
 
     final locale = Intl.defaultLocale;
     for (var i = 0; i < _languageList.length; ++i) {
-      if (locale.contains(_languageList[i].item1.languageCode)) {
+      if (locale!.contains(_languageList[i].item1.languageCode)) {
         _selectedLanguageIndex = i;
         break;
       }
     }
-    SchedulerBinding.instance.addPostFrameCallback((_) =>
+    SchedulerBinding.instance!.addPostFrameCallback((_) =>
         _languageListScrollController.scrollToIndex(_selectedLanguageIndex,
             preferPosition: AutoScrollPosition.middle,
             duration: const Duration(milliseconds: 1)));
@@ -68,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   void dispose() {
-    _languageListScrollController?.dispose();
+    _languageListScrollController.dispose();
     super.dispose();
   }
 

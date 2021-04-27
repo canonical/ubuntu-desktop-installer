@@ -7,17 +7,14 @@ const double _kDefaultBorderRadius = 5.0;
 class RoundedListView extends StatelessWidget {
   /// Creates a scrollable list of widgets that are created on demand.
   const RoundedListView.builder({
-    Key key,
-    @required ScrollController controller,
-    @required int itemCount,
-    @required IndexedWidgetBuilder itemBuilder,
-    Color borderColor,
-    double borderWidth,
-    double borderRadius,
-  })  : assert(controller != null),
-        assert(itemCount != null),
-        assert(itemBuilder != null),
-        _controller = controller,
+    Key? key,
+    required ScrollController controller,
+    required int itemCount,
+    required IndexedWidgetBuilder itemBuilder,
+    Color? borderColor,
+    double? borderWidth,
+    double? borderRadius,
+  })  : _controller = controller,
         _itemCount = itemCount,
         _itemBuilder = itemBuilder,
         _borderColor = borderColor,
@@ -28,9 +25,9 @@ class RoundedListView extends StatelessWidget {
   final ScrollController _controller;
   final int _itemCount;
   final IndexedWidgetBuilder _itemBuilder;
-  final Color _borderColor;
-  final double _borderWidth;
-  final double _borderRadius;
+  final Color? _borderColor;
+  final double? _borderWidth;
+  final double? _borderRadius;
 
   @override
   Widget build(BuildContext context) {

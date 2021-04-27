@@ -8,7 +8,7 @@ import '../widgets.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
   const TurnOffRSTPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -39,13 +39,13 @@ class TurnOffRSTPage extends StatelessWidget {
                         margin: EdgeInsets.all(0),
                       ),
                     },
-                    onLinkTap: launch,
+                    onLinkTap: (url, _, __, ___) => launch(url!),
                   ),
                 ),
                 const SizedBox(height: 40),
                 Image.asset(
                   'assets/rst.png',
-                  color: Theme.of(context).textTheme.bodyText1.color,
+                  color: Theme.of(context).textTheme.bodyText1!.color,
                 ),
               ])),
               const SizedBox(height: 20),
@@ -56,7 +56,7 @@ class TurnOffRSTPage extends StatelessWidget {
                     onPressed: Navigator.of(context).pop,
                   ),
                   OutlinedButton(
-                    style: OutlinedButtonTheme.of(context).style.copyWith(
+                    style: OutlinedButtonTheme.of(context).style!.copyWith(
                           backgroundColor: MaterialStateColor.resolveWith(
                             (states) => Color(0xFF0e8420),
                           ),

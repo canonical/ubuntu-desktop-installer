@@ -66,7 +66,7 @@ class KeyboardModel extends ChangeNotifier {
           } else if (element == 'variant') {
             final value = Tuple2<String, String>(tokens[3], tokens[4]);
             if (variants.containsKey(name)) {
-              variants[name].add(value);
+              variants[name]!.add(value);
             } else {
               variants[name] = [value];
             }

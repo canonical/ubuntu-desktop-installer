@@ -12,7 +12,7 @@ import 'routes.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   static final _locale =
@@ -25,11 +25,11 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
+    return ValueListenableBuilder<Locale>(
       valueListenable: _locale,
       builder: (context, value, _) => MaterialApp(
         locale: value,
-        onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
+        onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
         theme: yaru.lightTheme,
         darkTheme: yaru.darkTheme,
         debugShowCheckedModeBanner: false,
