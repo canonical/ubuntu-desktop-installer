@@ -80,18 +80,38 @@ void main() {
     expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
         false);
 
-    final installOption = find.widgetWithText(OptionCard, 'Install Ubuntu');
-    expect(installOption, findsOneWidget);
+    final options = find.byType(OptionCard);
+    expect(options, findsWidgets);
 
-    await tester.tap(installOption);
+    await tester.tap(options.first);
     await tester.pump();
 
     expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
         true);
+  });
 
-    await tester.tap(continueButton);
+  final options = {
+    Routes.repairUbuntu: 'Repair installation',
+    Routes.tryUbuntu: 'Try Ubuntu',
+    Routes.keyboardLayout: 'Install Ubuntu'
+  };
+  options.forEach((key, value) {
+    testWidgets('selecting option "$value"', (tester) async {
+      await setUpApp(tester);
 
-    expect(observer.pushed.length, 2);
-    expect(observer.pushed.last.settings.name, Routes.keyboardLayout);
+      final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+      expect(continueButton, findsOneWidget);
+
+      final option = find.widgetWithText(OptionCard, value);
+      expect(option, findsOneWidget);
+
+      await tester.tap(option);
+      await tester.pump();
+
+      await tester.tap(continueButton);
+
+      expect(observer.pushed.length, 2);
+      expect(observer.pushed.last.settings.name, key);
+    });
   });
 }
