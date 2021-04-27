@@ -71,4 +71,27 @@ void main() {
         matches('https://wiki.ubuntu.com/[A-Za-z]+/ReleaseNotes'));
     channel.setMockMethodCallHandler(null);
   });
+
+  testWidgets('selecting an option should enable continuing', (tester) async {
+    await setUpApp(tester);
+
+    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    expect(continueButton, findsOneWidget);
+    expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
+        false);
+
+    final installOption = find.widgetWithText(OptionCard, 'Install Ubuntu');
+    expect(installOption, findsOneWidget);
+
+    await tester.tap(installOption);
+    await tester.pump();
+
+    expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
+        true);
+
+    await tester.tap(continueButton);
+
+    expect(observer.pushed.length, 2);
+    expect(observer.pushed.last.settings.name, Routes.keyboardLayout);
+  });
 }
