@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 
 void main() {
   group('Occitan', () {
-    LocalizationsDelegateOc delegate;
+    late LocalizationsDelegateOc delegate;
 
     setUpAll(() {
       initializeDateFormatting('oc');
@@ -14,10 +14,6 @@ void main() {
 
     setUp(() {
       delegate = LocalizationsDelegateOc();
-    });
-
-    tearDown(() {
-      delegate = null;
     });
 
     test('supported locales', () {
@@ -34,7 +30,6 @@ void main() {
 
     test('should not reload', () {
       expect(delegate.shouldReload(delegate), false);
-      expect(delegate.shouldReload(null), false);
     });
   });
 }
