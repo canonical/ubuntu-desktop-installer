@@ -13,18 +13,18 @@ class MockNavigatorObserver extends NavigatorObserver {
   List<Route> pushed = [];
 
   @override
-  void didPush(Route route, Route previousRoute) => pushed.add(route);
+  void didPush(Route route, Route? previousRoute) => pushed.add(route);
 }
 
 void main() {
-  MockNavigatorObserver observer;
-  MaterialApp app;
+  late MockNavigatorObserver observer;
+  late MaterialApp app;
 
   setUpAll(() async {
     await setupAppLocalizations();
   });
 
-  void setUpApp(WidgetTester tester) async {
+  Future<void> setUpApp(WidgetTester tester) async {
     observer = MockNavigatorObserver();
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
@@ -33,7 +33,7 @@ void main() {
       home: WelcomePage(),
       navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
-        Routes.tryOrInstall: (context) => null,
+        Routes.tryOrInstall: (context) => Container(),
       },
     );
     await tester.pumpWidget(ChangeNotifierProvider(
@@ -41,11 +41,6 @@ void main() {
     expect(observer.pushed.length, 1);
     expect(observer.pushed.first.settings.name, '/');
   }
-
-  tearDown(() {
-    app = null;
-    observer = null;
-  });
 
   testWidgets('should display a list of languages', (tester) async {
     await setUpApp(tester);
