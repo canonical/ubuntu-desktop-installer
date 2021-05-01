@@ -11,102 +11,10 @@ import '../widgets.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
-class OptionCard extends StatefulWidget {
-  OptionCard({
-    Key? key,
-    required this.option,
-    required this.imageAsset,
-    required this.titleText,
-    required this.bodyText,
-  }) : super(key: key);
-
-  final Option option;
-  final String imageAsset;
-  final String titleText;
-  final String bodyText;
-
-  @override
-  _OptionCardState createState() => _OptionCardState();
-}
-
-class _OptionCardState extends State<OptionCard> {
-  bool _selected = false;
-  bool _hovered = false;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    setState(() {
-      _selected = (TryOrInstallPage.of(context)._option == widget.option);
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: (_hovered || _selected) ? 4.0 : 1.0,
-      child: InkWell(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(children: <Widget>[
-            const SizedBox(height: 20),
-            Expanded(flex: 2, child: Image.asset(widget.imageAsset)),
-            const SizedBox(height: 40),
-            Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.titleText,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-                )),
-            const SizedBox(height: 10),
-            Expanded(
-              child: Opacity(
-                opacity: 0.9,
-                child: Text(widget.bodyText),
-              ),
-            ),
-          ]),
-        ),
-        onTap: () {
-          TryOrInstallPage.of(context).selectOption(widget.option);
-        },
-        onHover: (value) {
-          setState(() {
-            _hovered = value;
-          });
-        },
-      ),
-    );
-  }
-}
-
-class TryOrInstallPageInheritedContainer extends InheritedWidget {
-  final TryOrInstallPageState data;
-
-  TryOrInstallPageInheritedContainer({
-    Key? key,
-    required Widget child,
-    required this.data,
-  }) : super(
-          key: key,
-          child: child,
-        );
-
-  @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => true;
-}
-
 class TryOrInstallPage extends StatefulWidget {
   const TryOrInstallPage({
     Key? key,
   }) : super(key: key);
-
-  static TryOrInstallPageState of(BuildContext context) {
-    return context
-        .dependOnInheritedWidgetOfExactType<
-            TryOrInstallPageInheritedContainer>()!
-        .data;
-  }
 
   @override
   TryOrInstallPageState createState() => TryOrInstallPageState();
@@ -173,74 +81,74 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           title: Text(lang.tryOrInstallPageTitle),
           automaticallyImplyLeading: false,
         ),
-        body: TryOrInstallPageInheritedContainer(
-          data: this,
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: <Widget>[
-                const SizedBox(height: 50),
-                Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.repairUbuntu,
-                          imageAsset: 'assets/repair-wrench.png',
-                          titleText: lang.repairInstallation,
-                          bodyText: lang.repairInstallationDescription,
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.tryUbuntu,
-                          imageAsset: 'assets/steering-wheel.png',
-                          titleText: lang.tryUbuntu,
-                          bodyText: lang.tryUbuntuDescription,
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: OptionCard(
-                          option: Option.installUbuntu,
-                          imageAsset: 'assets/hard-drive.png',
-                          titleText: lang.installUbuntu,
-                          bodyText: lang.installUbuntuDescription,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 150),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              const SizedBox(height: 50),
+              Expanded(
+                child: Row(
                   children: <Widget>[
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Html(
-                        data: lang.releaseNotesLabel(_releaseNotesURL),
-                        onLinkTap: (url, _, __, ___) => launch(url!),
+                    Expanded(
+                      child: OptionCard(
+                        selected: _option == Option.repairUbuntu,
+                        imageAsset: 'assets/repair-wrench.png',
+                        titleText: lang.repairInstallation,
+                        bodyText: lang.repairInstallationDescription,
+                        onSelected: () => selectOption(Option.repairUbuntu),
                       ),
                     ),
-                    ButtonBar(
-                      children: <OutlinedButton>[
-                        OutlinedButton(
-                          child: Text(lang.backButtonText),
-                          onPressed: Navigator.of(context).pop,
-                        ),
-                        OutlinedButton(
-                          child: Text(lang.continueButtonText),
-                          onPressed: (_option != Option.none)
-                              ? continueWithSelectedOption
-                              : null,
-                        ),
-                      ],
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        selected: _option == Option.tryUbuntu,
+                        imageAsset: 'assets/steering-wheel.png',
+                        titleText: lang.tryUbuntu,
+                        bodyText: lang.tryUbuntuDescription,
+                        onSelected: () => selectOption(Option.tryUbuntu),
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: OptionCard(
+                        selected: _option == Option.installUbuntu,
+                        imageAsset: 'assets/hard-drive.png',
+                        titleText: lang.installUbuntu,
+                        bodyText: lang.installUbuntuDescription,
+                        onSelected: () => selectOption(Option.installUbuntu),
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 150),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Html(
+                      data: lang.releaseNotesLabel(_releaseNotesURL),
+                      onLinkTap: (url, _, __, ___) => launch(url!),
+                    ),
+                  ),
+                  ButtonBar(
+                    children: <OutlinedButton>[
+                      OutlinedButton(
+                        child: Text(lang.backButtonText),
+                        onPressed: Navigator.of(context).pop,
+                      ),
+                      OutlinedButton(
+                        child: Text(lang.continueButtonText),
+                        onPressed: (_option != Option.none)
+                            ? continueWithSelectedOption
+                            : null,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
