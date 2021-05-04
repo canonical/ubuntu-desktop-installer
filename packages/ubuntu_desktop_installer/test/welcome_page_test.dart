@@ -9,15 +9,10 @@ import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
-class MockNavigatorObserver extends NavigatorObserver {
-  List<Route> pushed = [];
-
-  @override
-  void didPush(Route route, Route? previousRoute) => pushed.add(route);
-}
+import 'simple_navigator_observer.dart';
 
 void main() {
-  late MockNavigatorObserver observer;
+  late SimpleNavigatorObserver observer;
   late MaterialApp app;
 
   setUpAll(() async {
@@ -25,7 +20,7 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
-    observer = MockNavigatorObserver();
+    observer = SimpleNavigatorObserver();
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
