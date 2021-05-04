@@ -172,7 +172,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                         .variants![_selectedVariantIndex].code!);
                 await client.setKeyboard(keyboard);
 
-                Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+                Navigator.pushNamed(context, Routes.connectToInternet);
               },
             ),
           ],
