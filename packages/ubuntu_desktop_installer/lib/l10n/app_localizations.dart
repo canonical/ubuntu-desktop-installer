@@ -2,7 +2,8 @@ import 'package:intl/intl.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:intl/intl_standalone.dart';
+import 'package:intl/intl_standalone.dart'
+    if (dart.library.js) 'package:intl/intl_browser.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// Finds the Locale of Operating System i.e. Platform. and assigns it to

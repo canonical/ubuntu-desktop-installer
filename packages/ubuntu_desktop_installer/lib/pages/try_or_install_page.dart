@@ -48,18 +48,16 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   }
 
   String get _releaseNotesURL {
-    final fileOnCdrom = File('/cdrom/.disk/release_notes_url');
-    if (fileOnCdrom.existsSync()) {
-      try {
+    try {
+      final fileOnCdrom = File('/cdrom/.disk/release_notes_url');
+      if (fileOnCdrom.existsSync()) {
         final url = fileOnCdrom
             .readAsLinesSync()
             .firstWhere((line) => line.trim().isNotEmpty);
         return url.replaceAll(
             r'${LANG}', UbuntuDesktopInstallerApp.locale.languageCode);
-        // ignore: avoid_catches_without_on_clauses
-      } catch (e) {}
-    }
-    try {
+      }
+
       final lines = File('/usr/share/distro-info/ubuntu.csv').readAsLinesSync();
       final last = lines.lastWhere((line) => line.trim().isNotEmpty);
       final codeName = last.split(',')[1].replaceAll(RegExp('\\s+'), '');
