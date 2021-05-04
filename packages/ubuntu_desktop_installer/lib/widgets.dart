@@ -1,3 +1,4 @@
+export 'widgets/affinity_expansion_tile.dart';
 export 'widgets/animated_expanded.dart';
 export 'widgets/dropdown_builder.dart';
 export 'widgets/localized_view.dart';
