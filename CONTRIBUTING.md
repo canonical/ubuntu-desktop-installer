@@ -29,12 +29,37 @@ The translation template has one special string (`languageName`) that is used to
 
 ## Code Generation
 
-The Subiquity client uses [freezed](https://pub.dev/packages/freezed) and
+This project uses [freezed](https://pub.dev/packages/freezed) and
 [json_serializable](https://pub.dev/packages/json_serializable) to generate
-immutable classes with JSON serialization support. Adding new types or members
-to `packages/subiquity_client/lib/src/types.dart` requires the code to be re-generated:
+immutable data classes with JSON serialization support. Adding new types or
+members to classes annotated with `@freezed` or `@JsonSerializable` requires
+the code to be re-generated (see also the Melos section below):
 
 ```
-cd packages/subiquity_client
-./tools/codegen.sh
+melos run generate
+```
+
+## Melos
+
+The project provides a [Melos](https://docs.page/invertase/melos) configuration
+to make it straightforward to execute certain tasks across the project tree.
+
+Install Melos:
+```
+dart pub global activate melos
+```
+
+Bootstrap the workspace:
+```
+melos bootstrap
+```
+
+Select a task interactively:
+```
+melos run
+```
+
+Run a specific task directly:
+```
+melos run coverage
 ```
