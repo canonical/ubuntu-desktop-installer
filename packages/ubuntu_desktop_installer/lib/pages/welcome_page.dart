@@ -39,8 +39,10 @@ class _WelcomePageState extends State<WelcomePage> {
       }
     }
 
-    _languageList.sort((a, b) =>
-        removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
+    setState(() {
+      _languageList.sort((a, b) =>
+          removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
+    });
   }
 
   @override
