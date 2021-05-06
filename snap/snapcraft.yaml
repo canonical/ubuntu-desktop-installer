@@ -2,7 +2,8 @@ name: ubuntu-desktop-installer
 version: git
 summary: Ubuntu Desktop Installer
 description: |
-  Ubuntu Desktop Installer
+  This project is a modern implementation of the Ubuntu Desktop installer,
+  using subiquity as a backend and Flutter for the UI.
 grade: stable
 confinement: classic
 base: core20
@@ -30,15 +31,15 @@ parts:
       - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
-      cd ubuntu_desktop_installer
-      flutter channel master
+      cd packages/ubuntu_desktop_installer
+      flutter channel dev
       flutter upgrade
       flutter config --enable-linux-desktop
       flutter doctor
       flutter pub get
       flutter build linux --release -v
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
-      cp -r build/linux/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
     build-snaps:
       - flutter/latest/stable
 
