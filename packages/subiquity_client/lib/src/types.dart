@@ -139,18 +139,9 @@ class ApplicationStatus with _$ApplicationStatus {
       _$ApplicationStatusFromJson(json);
 }
 
-enum ProbeStatus {
-    PROBING,
-    FAILED,
-    DONE
-}
+enum ProbeStatus { PROBING, FAILED, DONE }
 
-enum Bootloader {
-    NONE,
-    BIOS,
-    UEFI,
-    PREP
-}
+enum Bootloader { NONE, BIOS, UEFI, PREP }
 
 @freezed
 class Partition with _$Partition {
@@ -176,8 +167,7 @@ class Disk with _$Disk {
     @JsonKey(name: 'ok_for_guided') bool? okForGuided,
   }) = _Disk;
 
-  factory Disk.fromJson(Map<String, dynamic> json) =>
-      _$DiskFromJson(json);
+  factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
 }
 
 @freezed
