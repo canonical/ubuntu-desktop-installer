@@ -101,7 +101,7 @@ class SubiquityClient {
   /// Set guided disk option.
   Future<StorageResponse> setGuidedStorage(GuidedChoice choice) async {
     final request =
-        Request('POST', Uri.http('localhost', 'storage/guided', {'min_size': minSize, 'wait': wait}));
+        Request('POST', Uri.http('localhost', 'storage/guided', {'choice': choice}));
     final response = await _client.send(request);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
