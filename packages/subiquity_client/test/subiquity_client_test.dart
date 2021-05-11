@@ -22,9 +22,10 @@ void main() {
     // expect(await _client.locale(), 'en_US');
 
     var kb = await _client.keyboard();
-    expect(kb.layout, null);
-    expect(kb.variant, null);
-    expect(kb.toggle, null);
+    expect(kb.setting?.layout, 'us');
+    expect(kb.setting?.variant, '');
+    expect(kb.setting?.toggle, null);
+    expect(kb.layouts, isNotEmpty);
 
     expect(await _client.proxy(), '');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));

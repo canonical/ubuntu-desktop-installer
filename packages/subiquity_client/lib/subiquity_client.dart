@@ -23,12 +23,12 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
-  Future<KeyboardSetting> keyboard() async {
+  Future<KeyboardSetup> keyboard() async {
     final request = Request('GET', Uri.http('localhost', 'keyboard'));
     final response = await _client.send(request);
 
     final keyboardJson = jsonDecode(await response.stream.bytesToString());
-    return KeyboardSetting.fromJson(keyboardJson);
+    return KeyboardSetup.fromJson(keyboardJson);
   }
 
   Future<String> proxy() async {

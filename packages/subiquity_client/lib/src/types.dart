@@ -17,6 +17,40 @@ class KeyboardSetting with _$KeyboardSetting {
 }
 
 @freezed
+class KeyboardVariant with _$KeyboardVariant {
+  const factory KeyboardVariant({
+    String? code,
+    String? name,
+  }) = _KeyboardVariant;
+
+  factory KeyboardVariant.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardVariantFromJson(json);
+}
+
+@freezed
+class KeyboardLayout with _$KeyboardLayout {
+  const factory KeyboardLayout({
+    String? code,
+    String? name,
+    List<KeyboardVariant>? variants,
+  }) = _KeyboardLayout;
+
+  factory KeyboardLayout.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardLayoutFromJson(json);
+}
+
+@freezed
+class KeyboardSetup with _$KeyboardSetup {
+  const factory KeyboardSetup({
+    KeyboardSetting? setting,
+    List<KeyboardLayout>? layouts,
+  }) = _KeyboardSetup;
+
+  factory KeyboardSetup.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardSetupFromJson(json);
+}
+
+@freezed
 class IdentityData with _$IdentityData {
   const factory IdentityData({
     String? realname,
