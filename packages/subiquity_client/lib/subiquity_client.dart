@@ -93,7 +93,7 @@ class SubiquityClient {
     final request = Request(
         'GET',
         Uri.http('localhost', 'storage/guided',
-            {'min_size': minSize, 'wait': wait}));
+            {'min_size': '$minSize', 'wait': '$wait'}));
     final response = await _client.send(request);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());

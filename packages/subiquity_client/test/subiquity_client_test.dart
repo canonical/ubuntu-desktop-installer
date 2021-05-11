@@ -27,6 +27,9 @@ void main() {
     expect(kb.setting?.toggle, null);
     expect(kb.layouts, isNotEmpty);
 
+    var gs = await _client.getGuidedStorage(0, true);
+    expect(gs.disks, isNotEmpty);
+
     expect(await _client.proxy(), '');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
 
