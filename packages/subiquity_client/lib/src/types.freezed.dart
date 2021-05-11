@@ -1257,3 +1257,1037 @@ abstract class _ApplicationStatus implements ApplicationStatus {
   _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+Partition _$PartitionFromJson(Map<String, dynamic> json) {
+  return _Partition.fromJson(json);
+}
+
+/// @nodoc
+class _$PartitionTearOff {
+  const _$PartitionTearOff();
+
+  _Partition call({int? size, int? number, List<String>? annotations}) {
+    return _Partition(
+      size: size,
+      number: number,
+      annotations: annotations,
+    );
+  }
+
+  Partition fromJson(Map<String, Object> json) {
+    return Partition.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Partition = _$PartitionTearOff();
+
+/// @nodoc
+mixin _$Partition {
+  int? get size => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  List<String>? get annotations => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PartitionCopyWith<Partition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PartitionCopyWith<$Res> {
+  factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
+      _$PartitionCopyWithImpl<$Res>;
+  $Res call({int? size, int? number, List<String>? annotations});
+}
+
+/// @nodoc
+class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
+  _$PartitionCopyWithImpl(this._value, this._then);
+
+  final Partition _value;
+  // ignore: unused_field
+  final $Res Function(Partition) _then;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? number = freezed,
+    Object? annotations = freezed,
+  }) {
+    return _then(_value.copyWith(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int?,
+      annotations: annotations == freezed
+          ? _value.annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
+  factory _$PartitionCopyWith(
+          _Partition value, $Res Function(_Partition) then) =
+      __$PartitionCopyWithImpl<$Res>;
+  @override
+  $Res call({int? size, int? number, List<String>? annotations});
+}
+
+/// @nodoc
+class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
+    implements _$PartitionCopyWith<$Res> {
+  __$PartitionCopyWithImpl(_Partition _value, $Res Function(_Partition) _then)
+      : super(_value, (v) => _then(v as _Partition));
+
+  @override
+  _Partition get _value => super._value as _Partition;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? number = freezed,
+    Object? annotations = freezed,
+  }) {
+    return _then(_Partition(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int?,
+      annotations: annotations == freezed
+          ? _value.annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Partition implements _Partition {
+  const _$_Partition({this.size, this.number, this.annotations});
+
+  factory _$_Partition.fromJson(Map<String, dynamic> json) =>
+      _$_$_PartitionFromJson(json);
+
+  @override
+  final int? size;
+  @override
+  final int? number;
+  @override
+  final List<String>? annotations;
+
+  @override
+  String toString() {
+    return 'Partition(size: $size, number: $number, annotations: $annotations)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Partition &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.number, number) ||
+                const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.annotations, annotations) ||
+                const DeepCollectionEquality()
+                    .equals(other.annotations, annotations)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(number) ^
+      const DeepCollectionEquality().hash(annotations);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PartitionCopyWith<_Partition> get copyWith =>
+      __$PartitionCopyWithImpl<_Partition>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PartitionToJson(this);
+  }
+}
+
+abstract class _Partition implements Partition {
+  const factory _Partition(
+      {int? size, int? number, List<String>? annotations}) = _$_Partition;
+
+  factory _Partition.fromJson(Map<String, dynamic> json) =
+      _$_Partition.fromJson;
+
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  int? get number => throw _privateConstructorUsedError;
+  @override
+  List<String>? get annotations => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$PartitionCopyWith<_Partition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Disk _$DiskFromJson(Map<String, dynamic> json) {
+  return _Disk.fromJson(json);
+}
+
+/// @nodoc
+class _$DiskTearOff {
+  const _$DiskTearOff();
+
+  _Disk call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) {
+    return _Disk(
+      id: id,
+      label: label,
+      type: type,
+      size: size,
+      usageLabels: usageLabels,
+      partitions: partitions,
+      okForGuided: okForGuided,
+    );
+  }
+
+  Disk fromJson(Map<String, Object> json) {
+    return Disk.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Disk = _$DiskTearOff();
+
+/// @nodoc
+mixin _$Disk {
+  String? get id => throw _privateConstructorUsedError;
+  String? get label => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
+  @JsonKey(name: 'usage_labels')
+  List<String>? get usageLabels => throw _privateConstructorUsedError;
+  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ok_for_guided')
+  bool? get okForGuided => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DiskCopyWith<Disk> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DiskCopyWith<$Res> {
+  factory $DiskCopyWith(Disk value, $Res Function(Disk) then) =
+      _$DiskCopyWithImpl<$Res>;
+  $Res call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+}
+
+/// @nodoc
+class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
+  _$DiskCopyWithImpl(this._value, this._then);
+
+  final Disk _value;
+  // ignore: unused_field
+  final $Res Function(Disk) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? size = freezed,
+    Object? usageLabels = freezed,
+    Object? partitions = freezed,
+    Object? okForGuided = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      usageLabels: usageLabels == freezed
+          ? _value.usageLabels
+          : usageLabels // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
+              as List<Partition>?,
+      okForGuided: okForGuided == freezed
+          ? _value.okForGuided
+          : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
+  factory _$DiskCopyWith(_Disk value, $Res Function(_Disk) then) =
+      __$DiskCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+}
+
+/// @nodoc
+class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
+    implements _$DiskCopyWith<$Res> {
+  __$DiskCopyWithImpl(_Disk _value, $Res Function(_Disk) _then)
+      : super(_value, (v) => _then(v as _Disk));
+
+  @override
+  _Disk get _value => super._value as _Disk;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? size = freezed,
+    Object? usageLabels = freezed,
+    Object? partitions = freezed,
+    Object? okForGuided = freezed,
+  }) {
+    return _then(_Disk(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      usageLabels: usageLabels == freezed
+          ? _value.usageLabels
+          : usageLabels // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
+              as List<Partition>?,
+      okForGuided: okForGuided == freezed
+          ? _value.okForGuided
+          : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Disk implements _Disk {
+  const _$_Disk(
+      {this.id,
+      this.label,
+      this.type,
+      this.size,
+      @JsonKey(name: 'usage_labels') this.usageLabels,
+      this.partitions,
+      @JsonKey(name: 'ok_for_guided') this.okForGuided});
+
+  factory _$_Disk.fromJson(Map<String, dynamic> json) =>
+      _$_$_DiskFromJson(json);
+
+  @override
+  final String? id;
+  @override
+  final String? label;
+  @override
+  final String? type;
+  @override
+  final int? size;
+  @override
+  @JsonKey(name: 'usage_labels')
+  final List<String>? usageLabels;
+  @override
+  final List<Partition>? partitions;
+  @override
+  @JsonKey(name: 'ok_for_guided')
+  final bool? okForGuided;
+
+  @override
+  String toString() {
+    return 'Disk(id: $id, label: $label, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Disk &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.usageLabels, usageLabels) ||
+                const DeepCollectionEquality()
+                    .equals(other.usageLabels, usageLabels)) &&
+            (identical(other.partitions, partitions) ||
+                const DeepCollectionEquality()
+                    .equals(other.partitions, partitions)) &&
+            (identical(other.okForGuided, okForGuided) ||
+                const DeepCollectionEquality()
+                    .equals(other.okForGuided, okForGuided)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(usageLabels) ^
+      const DeepCollectionEquality().hash(partitions) ^
+      const DeepCollectionEquality().hash(okForGuided);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DiskCopyWith<_Disk> get copyWith =>
+      __$DiskCopyWithImpl<_Disk>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DiskToJson(this);
+  }
+}
+
+abstract class _Disk implements Disk {
+  const factory _Disk(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) = _$_Disk;
+
+  factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
+
+  @override
+  String? get id => throw _privateConstructorUsedError;
+  @override
+  String? get label => throw _privateConstructorUsedError;
+  @override
+  String? get type => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'usage_labels')
+  List<String>? get usageLabels => throw _privateConstructorUsedError;
+  @override
+  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'ok_for_guided')
+  bool? get okForGuided => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
+}
+
+GuidedStorageResponse _$GuidedStorageResponseFromJson(
+    Map<String, dynamic> json) {
+  return _GuidedStorageResponse.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedStorageResponseTearOff {
+  const _$GuidedStorageResponseTearOff();
+
+  _GuidedStorageResponse call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks}) {
+    return _GuidedStorageResponse(
+      status: status,
+      errorReport: errorReport,
+      disks: disks,
+    );
+  }
+
+  GuidedStorageResponse fromJson(Map<String, Object> json) {
+    return GuidedStorageResponse.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedStorageResponse = _$GuidedStorageResponseTearOff();
+
+/// @nodoc
+mixin _$GuidedStorageResponse {
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedStorageResponseCopyWith<GuidedStorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageResponseCopyWith<$Res> {
+  factory $GuidedStorageResponseCopyWith(GuidedStorageResponse value,
+          $Res Function(GuidedStorageResponse) then) =
+      _$GuidedStorageResponseCopyWithImpl<$Res>;
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$GuidedStorageResponseCopyWithImpl<$Res>
+    implements $GuidedStorageResponseCopyWith<$Res> {
+  _$GuidedStorageResponseCopyWithImpl(this._value, this._then);
+
+  final GuidedStorageResponse _value;
+  // ignore: unused_field
+  final $Res Function(GuidedStorageResponse) _then;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? disks = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedStorageResponseCopyWith<$Res>
+    implements $GuidedStorageResponseCopyWith<$Res> {
+  factory _$GuidedStorageResponseCopyWith(_GuidedStorageResponse value,
+          $Res Function(_GuidedStorageResponse) then) =
+      __$GuidedStorageResponseCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$GuidedStorageResponseCopyWithImpl<$Res>
+    extends _$GuidedStorageResponseCopyWithImpl<$Res>
+    implements _$GuidedStorageResponseCopyWith<$Res> {
+  __$GuidedStorageResponseCopyWithImpl(_GuidedStorageResponse _value,
+      $Res Function(_GuidedStorageResponse) _then)
+      : super(_value, (v) => _then(v as _GuidedStorageResponse));
+
+  @override
+  _GuidedStorageResponse get _value => super._value as _GuidedStorageResponse;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? disks = freezed,
+  }) {
+    return _then(_GuidedStorageResponse(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedStorageResponse implements _GuidedStorageResponse {
+  const _$_GuidedStorageResponse(
+      {this.status,
+      @JsonKey(name: 'error_report') this.errorReport,
+      this.disks});
+
+  factory _$_GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedStorageResponseFromJson(json);
+
+  @override
+  final ProbeStatus? status;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+  @override
+  final List<Disk>? disks;
+
+  @override
+  String toString() {
+    return 'GuidedStorageResponse(status: $status, errorReport: $errorReport, disks: $disks)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedStorageResponse &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)) &&
+            (identical(other.disks, disks) ||
+                const DeepCollectionEquality().equals(other.disks, disks)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(errorReport) ^
+      const DeepCollectionEquality().hash(disks);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
+      __$GuidedStorageResponseCopyWithImpl<_GuidedStorageResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedStorageResponseToJson(this);
+  }
+}
+
+abstract class _GuidedStorageResponse implements GuidedStorageResponse {
+  const factory _GuidedStorageResponse(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks}) = _$_GuidedStorageResponse;
+
+  factory _GuidedStorageResponse.fromJson(Map<String, dynamic> json) =
+      _$_GuidedStorageResponse.fromJson;
+
+  @override
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StorageResponse _$StorageResponseFromJson(Map<String, dynamic> json) {
+  return _StorageResponse.fromJson(json);
+}
+
+/// @nodoc
+class _$StorageResponseTearOff {
+  const _$StorageResponseTearOff();
+
+  _StorageResponse call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd}) {
+    return _StorageResponse(
+      status: status,
+      errorReport: errorReport,
+      bootloader: bootloader,
+      origConfig: origConfig,
+      config: config,
+      blockdev: blockdev,
+      dasd: dasd,
+    );
+  }
+
+  StorageResponse fromJson(Map<String, Object> json) {
+    return StorageResponse.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $StorageResponse = _$StorageResponseTearOff();
+
+/// @nodoc
+mixin _$StorageResponse {
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  Bootloader? get bootloader => throw _privateConstructorUsedError;
+  @JsonKey(name: 'orig_config')
+  List<dynamic>? get origConfig => throw _privateConstructorUsedError;
+  List<dynamic>? get config => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StorageResponseCopyWith<StorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StorageResponseCopyWith<$Res> {
+  factory $StorageResponseCopyWith(
+          StorageResponse value, $Res Function(StorageResponse) then) =
+      _$StorageResponseCopyWithImpl<$Res>;
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$StorageResponseCopyWithImpl<$Res>
+    implements $StorageResponseCopyWith<$Res> {
+  _$StorageResponseCopyWithImpl(this._value, this._then);
+
+  final StorageResponse _value;
+  // ignore: unused_field
+  final $Res Function(StorageResponse) _then;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? bootloader = freezed,
+    Object? origConfig = freezed,
+    Object? config = freezed,
+    Object? blockdev = freezed,
+    Object? dasd = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      bootloader: bootloader == freezed
+          ? _value.bootloader
+          : bootloader // ignore: cast_nullable_to_non_nullable
+              as Bootloader?,
+      origConfig: origConfig == freezed
+          ? _value.origConfig
+          : origConfig // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      blockdev: blockdev == freezed
+          ? _value.blockdev
+          : blockdev // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      dasd: dasd == freezed
+          ? _value.dasd
+          : dasd // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$StorageResponseCopyWith<$Res>
+    implements $StorageResponseCopyWith<$Res> {
+  factory _$StorageResponseCopyWith(
+          _StorageResponse value, $Res Function(_StorageResponse) then) =
+      __$StorageResponseCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$StorageResponseCopyWithImpl<$Res>
+    extends _$StorageResponseCopyWithImpl<$Res>
+    implements _$StorageResponseCopyWith<$Res> {
+  __$StorageResponseCopyWithImpl(
+      _StorageResponse _value, $Res Function(_StorageResponse) _then)
+      : super(_value, (v) => _then(v as _StorageResponse));
+
+  @override
+  _StorageResponse get _value => super._value as _StorageResponse;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? bootloader = freezed,
+    Object? origConfig = freezed,
+    Object? config = freezed,
+    Object? blockdev = freezed,
+    Object? dasd = freezed,
+  }) {
+    return _then(_StorageResponse(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      bootloader: bootloader == freezed
+          ? _value.bootloader
+          : bootloader // ignore: cast_nullable_to_non_nullable
+              as Bootloader?,
+      origConfig: origConfig == freezed
+          ? _value.origConfig
+          : origConfig // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      blockdev: blockdev == freezed
+          ? _value.blockdev
+          : blockdev // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      dasd: dasd == freezed
+          ? _value.dasd
+          : dasd // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StorageResponse implements _StorageResponse {
+  const _$_StorageResponse(
+      {this.status,
+      @JsonKey(name: 'error_report') this.errorReport,
+      this.bootloader,
+      @JsonKey(name: 'orig_config') this.origConfig,
+      this.config,
+      this.blockdev,
+      this.dasd});
+
+  factory _$_StorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$_$_StorageResponseFromJson(json);
+
+  @override
+  final ProbeStatus? status;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+  @override
+  final Bootloader? bootloader;
+  @override
+  @JsonKey(name: 'orig_config')
+  final List<dynamic>? origConfig;
+  @override
+  final List<dynamic>? config;
+  @override
+  final Map<String, dynamic>? blockdev;
+  @override
+  final Map<String, dynamic>? dasd;
+
+  @override
+  String toString() {
+    return 'StorageResponse(status: $status, errorReport: $errorReport, bootloader: $bootloader, origConfig: $origConfig, config: $config, blockdev: $blockdev, dasd: $dasd)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StorageResponse &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)) &&
+            (identical(other.bootloader, bootloader) ||
+                const DeepCollectionEquality()
+                    .equals(other.bootloader, bootloader)) &&
+            (identical(other.origConfig, origConfig) ||
+                const DeepCollectionEquality()
+                    .equals(other.origConfig, origConfig)) &&
+            (identical(other.config, config) ||
+                const DeepCollectionEquality().equals(other.config, config)) &&
+            (identical(other.blockdev, blockdev) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockdev, blockdev)) &&
+            (identical(other.dasd, dasd) ||
+                const DeepCollectionEquality().equals(other.dasd, dasd)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(errorReport) ^
+      const DeepCollectionEquality().hash(bootloader) ^
+      const DeepCollectionEquality().hash(origConfig) ^
+      const DeepCollectionEquality().hash(config) ^
+      const DeepCollectionEquality().hash(blockdev) ^
+      const DeepCollectionEquality().hash(dasd);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
+      __$StorageResponseCopyWithImpl<_StorageResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_StorageResponseToJson(this);
+  }
+}
+
+abstract class _StorageResponse implements StorageResponse {
+  const factory _StorageResponse(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd}) = _$_StorageResponse;
+
+  factory _StorageResponse.fromJson(Map<String, dynamic> json) =
+      _$_StorageResponse.fromJson;
+
+  @override
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  Bootloader? get bootloader => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'orig_config')
+  List<dynamic>? get origConfig => throw _privateConstructorUsedError;
+  @override
+  List<dynamic>? get config => throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}

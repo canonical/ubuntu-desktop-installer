@@ -168,3 +168,105 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.DONE: 'DONE',
   ApplicationState.ERROR: 'ERROR',
 };
+
+_$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
+  return _$_Partition(
+    size: json['size'] as int?,
+    number: json['number'] as int?,
+    annotations: (json['annotations'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
+    <String, dynamic>{
+      'size': instance.size,
+      'number': instance.number,
+      'annotations': instance.annotations,
+    };
+
+_$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
+  return _$_Disk(
+    id: json['id'] as String?,
+    label: json['label'] as String?,
+    type: json['type'] as String?,
+    size: json['size'] as int?,
+    usageLabels: (json['usage_labels'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
+    partitions: (json['partitions'] as List<dynamic>?)
+        ?.map((e) => Partition.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    okForGuided: json['ok_for_guided'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
+      'id': instance.id,
+      'label': instance.label,
+      'type': instance.type,
+      'size': instance.size,
+      'usage_labels': instance.usageLabels,
+      'partitions': instance.partitions,
+      'ok_for_guided': instance.okForGuided,
+    };
+
+_$_GuidedStorageResponse _$_$_GuidedStorageResponseFromJson(
+    Map<String, dynamic> json) {
+  return _$_GuidedStorageResponse(
+    status: _$enumDecodeNullable(_$ProbeStatusEnumMap, json['status']),
+    errorReport: json['error_report'] == null
+        ? null
+        : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
+    disks: (json['disks'] as List<dynamic>?)
+        ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_GuidedStorageResponseToJson(
+        _$_GuidedStorageResponse instance) =>
+    <String, dynamic>{
+      'status': _$ProbeStatusEnumMap[instance.status],
+      'error_report': instance.errorReport,
+      'disks': instance.disks,
+    };
+
+const _$ProbeStatusEnumMap = {
+  ProbeStatus.PROBING: 'PROBING',
+  ProbeStatus.FAILED: 'FAILED',
+  ProbeStatus.DONE: 'DONE',
+};
+
+_$_StorageResponse _$_$_StorageResponseFromJson(Map<String, dynamic> json) {
+  return _$_StorageResponse(
+    status: _$enumDecodeNullable(_$ProbeStatusEnumMap, json['status']),
+    errorReport: json['error_report'] == null
+        ? null
+        : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
+    bootloader: _$enumDecodeNullable(_$BootloaderEnumMap, json['bootloader']),
+    origConfig: json['orig_config'] as List<dynamic>?,
+    config: json['config'] as List<dynamic>?,
+    blockdev: json['blockdev'] as Map<String, dynamic>?,
+    dasd: json['dasd'] as Map<String, dynamic>?,
+  );
+}
+
+Map<String, dynamic> _$_$_StorageResponseToJson(_$_StorageResponse instance) =>
+    <String, dynamic>{
+      'status': _$ProbeStatusEnumMap[instance.status],
+      'error_report': instance.errorReport,
+      'bootloader': _$BootloaderEnumMap[instance.bootloader],
+      'orig_config': instance.origConfig,
+      'config': instance.config,
+      'blockdev': instance.blockdev,
+      'dasd': instance.dasd,
+    };
+
+const _$BootloaderEnumMap = {
+  Bootloader.NONE: 'NONE',
+  Bootloader.BIOS: 'BIOS',
+  Bootloader.UEFI: 'UEFI',
+  Bootloader.PREP: 'PREP',
+};
