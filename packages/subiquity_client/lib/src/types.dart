@@ -147,6 +147,18 @@ class Disk with _$Disk {
 }
 
 @freezed
+class GuidedChoice with _$GuidedChoice {
+  const factory GuidedChoice({
+    @JsonKey(name: 'disk_id') String? diskId,
+    @JsonKey(name: 'use_lvm') bool? useLvm,
+    String? password,
+  }) = _GuidedChoice;
+
+  factory GuidedChoice.fromJson(Map<String, dynamic> json) =>
+      _$GuidedChoiceFromJson(json);
+}
+
+@freezed
 class GuidedStorageResponse with _$GuidedStorageResponse {
   const factory GuidedStorageResponse({
     ProbeStatus? status,

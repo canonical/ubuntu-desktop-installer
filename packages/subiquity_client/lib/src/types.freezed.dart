@@ -1742,6 +1742,214 @@ abstract class _Disk implements Disk {
   _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
 }
 
+GuidedChoice _$GuidedChoiceFromJson(Map<String, dynamic> json) {
+  return _GuidedChoice.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedChoiceTearOff {
+  const _$GuidedChoiceTearOff();
+
+  _GuidedChoice call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password}) {
+    return _GuidedChoice(
+      diskId: diskId,
+      useLvm: useLvm,
+      password: password,
+    );
+  }
+
+  GuidedChoice fromJson(Map<String, Object> json) {
+    return GuidedChoice.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedChoice = _$GuidedChoiceTearOff();
+
+/// @nodoc
+mixin _$GuidedChoice {
+  @JsonKey(name: 'disk_id')
+  String? get diskId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'use_lvm')
+  bool? get useLvm => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedChoiceCopyWith<GuidedChoice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedChoiceCopyWith<$Res> {
+  factory $GuidedChoiceCopyWith(
+          GuidedChoice value, $Res Function(GuidedChoice) then) =
+      _$GuidedChoiceCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password});
+}
+
+/// @nodoc
+class _$GuidedChoiceCopyWithImpl<$Res> implements $GuidedChoiceCopyWith<$Res> {
+  _$GuidedChoiceCopyWithImpl(this._value, this._then);
+
+  final GuidedChoice _value;
+  // ignore: unused_field
+  final $Res Function(GuidedChoice) _then;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedChoiceCopyWith<$Res>
+    implements $GuidedChoiceCopyWith<$Res> {
+  factory _$GuidedChoiceCopyWith(
+          _GuidedChoice value, $Res Function(_GuidedChoice) then) =
+      __$GuidedChoiceCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password});
+}
+
+/// @nodoc
+class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
+    implements _$GuidedChoiceCopyWith<$Res> {
+  __$GuidedChoiceCopyWithImpl(
+      _GuidedChoice _value, $Res Function(_GuidedChoice) _then)
+      : super(_value, (v) => _then(v as _GuidedChoice));
+
+  @override
+  _GuidedChoice get _value => super._value as _GuidedChoice;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_GuidedChoice(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedChoice implements _GuidedChoice {
+  const _$_GuidedChoice(
+      {@JsonKey(name: 'disk_id') this.diskId,
+      @JsonKey(name: 'use_lvm') this.useLvm,
+      this.password});
+
+  factory _$_GuidedChoice.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedChoiceFromJson(json);
+
+  @override
+  @JsonKey(name: 'disk_id')
+  final String? diskId;
+  @override
+  @JsonKey(name: 'use_lvm')
+  final bool? useLvm;
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'GuidedChoice(diskId: $diskId, useLvm: $useLvm, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedChoice &&
+            (identical(other.diskId, diskId) ||
+                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
+            (identical(other.useLvm, useLvm) ||
+                const DeepCollectionEquality().equals(other.useLvm, useLvm)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(diskId) ^
+      const DeepCollectionEquality().hash(useLvm) ^
+      const DeepCollectionEquality().hash(password);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
+      __$GuidedChoiceCopyWithImpl<_GuidedChoice>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedChoiceToJson(this);
+  }
+}
+
+abstract class _GuidedChoice implements GuidedChoice {
+  const factory _GuidedChoice(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password}) = _$_GuidedChoice;
+
+  factory _GuidedChoice.fromJson(Map<String, dynamic> json) =
+      _$_GuidedChoice.fromJson;
+
+  @override
+  @JsonKey(name: 'disk_id')
+  String? get diskId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'use_lvm')
+  bool? get useLvm => throw _privateConstructorUsedError;
+  @override
+  String? get password => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 GuidedStorageResponse _$GuidedStorageResponseFromJson(
     Map<String, dynamic> json) {
   return _GuidedStorageResponse.fromJson(json);

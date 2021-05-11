@@ -212,6 +212,21 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'ok_for_guided': instance.okForGuided,
     };
 
+_$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {
+  return _$_GuidedChoice(
+    diskId: json['disk_id'] as String?,
+    useLvm: json['use_lvm'] as bool?,
+    password: json['password'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_GuidedChoiceToJson(_$_GuidedChoice instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'use_lvm': instance.useLvm,
+      'password': instance.password,
+    };
+
 _$_GuidedStorageResponse _$_$_GuidedStorageResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GuidedStorageResponse(
