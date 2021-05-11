@@ -22,8 +22,8 @@ void main() {
     // expect(await _client.locale(), 'en_US');
 
     var kb = await _client.keyboard();
-    expect(kb.layout, 'us');
-    expect(kb.variant, '');
+    expect(kb.layout, null);
+    expect(kb.variant, null);
     expect(kb.toggle, null);
 
     expect(await _client.proxy(), '');
