@@ -100,21 +100,19 @@ class SubiquityClient {
     final request = Request(
         'POST',
         Uri.http('localhost', 'meta/mark_configured',
-            {'endpoint_names': '$endpointNames'}));
+            {'endpoint_names': jsonEncode(endpointNames)}));
     final response = await _client.send(request);
-    checkStatus("markConfigured($endpointNames)", response);
+    checkStatus("markConfigured(${jsonEncode(endpointNames)})", response);
 
     return response.stream.bytesToString();
   }
 
   /// Confirm that the installation should proceed.
-  Future<String> confirm(String tty) async {
-    final request =
-        Request('POST', Uri.http('localhost', 'meta/confirm', {'tty': '$tty'}));
+  Future<void> confirm(String tty) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'meta/confirm', {'tty': '"$tty"'}));
     final response = await _client.send(request);
-    checkStatus("confirm($tty)", response);
-
-    return response.stream.bytesToString();
+    checkStatus("confirm('\"$tty\"')", response);
   }
 
   /// Get guided disk options.
@@ -124,7 +122,7 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'min_size': '$minSize', 'wait': '$wait'}));
     final response = await _client.send(request);
-    checkStatus("getGuidedStorage($minSize, $wait)", response);
+    checkStatus("getGuidedStorage('$minSize', '$wait')", response);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return GuidedStorageResponse.fromJson(responseJson);
@@ -137,7 +135,7 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'choice': jsonEncode(choice.toJson())}));
     final response = await _client.send(request);
-    checkStatus("setGuidedStorage($choice)", response);
+    checkStatus("setGuidedStorage(${jsonEncode(choice.toJson())})", response);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return StorageResponse.fromJson(responseJson);
