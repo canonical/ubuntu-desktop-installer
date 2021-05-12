@@ -32,17 +32,20 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           automaticallyImplyLeading: false,
         ),
         body: Container(
-          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(lang.updatesOtherSoftwarePageDescription),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 20, bottom: 8),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(lang.updatesOtherSoftwarePageDescription),
+                ),
               ),
               RadioListTile<InstallationMode>(
                 title: Text(lang.normalInstallationTitle),
                 subtitle: Text(lang.normalInstallationSubtitle),
+                contentPadding: const EdgeInsets.only(left: 20),
                 value: InstallationMode.normal,
                 groupValue: model.installationMode,
                 onChanged: model.setInstallationMode,
@@ -51,20 +54,26 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
                 title: Text(lang.minimalInstallationTitle),
                 subtitle: Text(lang.minimalInstallationSubtitle),
                 value: InstallationMode.minimal,
+                contentPadding: const EdgeInsets.only(left: 20),
                 groupValue: model.installationMode,
                 onChanged: model.setInstallationMode,
               ),
-              SizedBox(height: 24),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(lang.otherOptions),
+              const SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(lang.otherOptions),
+                ),
               ),
               CheckboxListTile(
-                  title: Text(lang.installThirdPartyTitle),
-                  subtitle: Text(lang.installThirdPartySubtitle),
-                  controlAffinity: ListTileControlAffinity.leading,
-                  value: model.installThirdParty,
-                  onChanged: model.setInstallThirdParty)
+                title: Text(lang.installThirdPartyTitle),
+                subtitle: Text(lang.installThirdPartySubtitle),
+                controlAffinity: ListTileControlAffinity.leading,
+                contentPadding: const EdgeInsets.only(left: 20),
+                value: model.installThirdParty,
+                onChanged: model.setInstallThirdParty,
+              )
             ],
           ),
         ),
