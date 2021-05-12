@@ -18,23 +18,32 @@ class SubiquityClient {
     _client.close();
   }
 
+  void checkStatus(String method, StreamedResponse response) {
+    if (response.statusCode != 200) {
+      throw ("$method returned error ${response.statusCode}");
+    }
+  }
+
   Future<String> locale() async {
     final request = Request('GET', Uri.http('localhost', 'locale'));
     final response = await _client.send(request);
+    checkStatus("locale()", response);
+
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
   }
 
-  Future<String> switchLanguage(String code) async {
+  Future<void> switchLanguage(String code) async {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$code"';
     final response = await _client.send(request);
-    return response.stream.bytesToString();
+    checkStatus("switchLanguage('$code')", response);
   }
 
   Future<KeyboardSetup> keyboard() async {
     final request = Request('GET', Uri.http('localhost', 'keyboard'));
     final response = await _client.send(request);
+    checkStatus("keyboard()", response);
 
     final keyboardJson = jsonDecode(await response.stream.bytesToString());
     return KeyboardSetup.fromJson(keyboardJson);
@@ -43,6 +52,8 @@ class SubiquityClient {
   Future<String> proxy() async {
     final request = Request('GET', Uri.http('localhost', 'proxy'));
     final response = await _client.send(request);
+    checkStatus("proxy()", response);
+
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
   }
@@ -50,6 +61,8 @@ class SubiquityClient {
   Future<String> mirror() async {
     final request = Request('GET', Uri.http('localhost', 'mirror'));
     final response = await _client.send(request);
+    checkStatus("mirror()", response);
+
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
   }
@@ -57,6 +70,7 @@ class SubiquityClient {
   Future<IdentityData> identity() async {
     final request = Request('GET', Uri.http('localhost', 'identity'));
     final response = await _client.send(request);
+    checkStatus("identity()", response);
 
     final identityJson = jsonDecode(await response.stream.bytesToString());
     return IdentityData.fromJson(identityJson);
@@ -65,6 +79,7 @@ class SubiquityClient {
   Future<SSHData> ssh() async {
     final request = Request('GET', Uri.http('localhost', 'ssh'));
     final response = await _client.send(request);
+    checkStatus("ssh()", response);
 
     final sshJson = jsonDecode(await response.stream.bytesToString());
     return SSHData.fromJson(sshJson);
@@ -74,6 +89,7 @@ class SubiquityClient {
   Future<ApplicationStatus> status() async {
     final request = Request('GET', Uri.http('localhost', 'meta/status'));
     final response = await _client.send(request);
+    checkStatus("status()", response);
 
     final statusJson = jsonDecode(await response.stream.bytesToString());
     return ApplicationStatus.fromJson(statusJson);
@@ -86,6 +102,8 @@ class SubiquityClient {
         Uri.http('localhost', 'meta/mark_configured',
             {'endpoint_names': '$endpointNames'}));
     final response = await _client.send(request);
+    checkStatus("markConfigured($endpointNames)", response);
+
     return response.stream.bytesToString();
   }
 
@@ -94,6 +112,8 @@ class SubiquityClient {
     final request =
         Request('POST', Uri.http('localhost', 'meta/confirm', {'tty': '$tty'}));
     final response = await _client.send(request);
+    checkStatus("confirm($tty)", response);
+
     return response.stream.bytesToString();
   }
 
@@ -104,6 +124,7 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'min_size': '$minSize', 'wait': '$wait'}));
     final response = await _client.send(request);
+    checkStatus("getGuidedStorage($minSize, $wait)", response);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return GuidedStorageResponse.fromJson(responseJson);
@@ -116,6 +137,7 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'choice': jsonEncode(choice.toJson())}));
     final response = await _client.send(request);
+    checkStatus("setGuidedStorage($choice)", response);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return StorageResponse.fromJson(responseJson);

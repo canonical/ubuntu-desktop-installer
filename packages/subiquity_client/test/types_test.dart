@@ -109,12 +109,12 @@ void main() {
     const keyboard = Partition(
       size: 1,
       number: 2,
-      annotations: ['3','4','5'],
+      annotations: ['3', '4', '5'],
     );
     const json = <String, dynamic>{
       'size': 1,
       'number': 2,
-      'annotations': ['3','4','5'],
+      'annotations': ['3', '4', '5'],
     };
     expect(keyboard.toJson(), equals(json));
     expect(Partition.fromJson(json), keyboard);

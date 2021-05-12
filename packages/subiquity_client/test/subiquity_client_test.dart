@@ -63,7 +63,7 @@ void main() {
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
 
-    print(await _client.markConfigured(['1']));
-    print(await _client.confirm('a'));
+    // print(await _client.markConfigured(['1']));
+    // print(await _client.confirm('a'));
   });
 }
