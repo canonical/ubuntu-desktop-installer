@@ -21,6 +21,54 @@ apps:
       LIBGL_ALWAYS_SOFTWARE: 1 # force software rendering for now
 
 parts:
+  curtin:
+    override-pull: |
+      snapcraftctl pull
+      PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
+      sed -e "s,@@PACKAGED_VERSION@@,$PACKAGED_VERSION,g" -i curtin/version.py
+    plugin: python
+    source-type: git
+    source: https://git.launchpad.net/curtin
+    source-tag: "21.2"
+    build-packages:
+      - shared-mime-info
+      - zlib1g-dev
+    python-packages:
+      - pyyaml==5.3.1
+      - oauthlib
+      - jsonschema
+      - pyrsistent
+      - wheel
+      - setuptools
+      - pip
+      - bson
+      - urwid
+      - requests
+      - requests-unixsocket
+
+  probert:
+    after: [curtin]
+    plugin: python
+    build-packages: [build-essential, pkg-config, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
+    source: https://github.com/CanonicalLtd/probert.git
+    source-type: git
+    source-commit: 844c957b7f61f78bbd814cceef87f0d8eb218675
+    requirements: [requirements.txt]
+    python-packages:
+      - jsonschema
+      - pyudev
+      - setuptools
+      - pip
+
+  subiquitydeps:
+    plugin: nil
+    stage-packages:
+      - cloud-init
+      - libsystemd0
+      - iso-codes
+      - lsb-release
+      - ssh-import-id
+
   ubuntu-desktop-installer:
     source: .
     plugin: nil
