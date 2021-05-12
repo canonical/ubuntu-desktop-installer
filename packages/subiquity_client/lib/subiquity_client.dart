@@ -96,15 +96,13 @@ class SubiquityClient {
   }
 
   /// Mark the controllers for endpoint_names as configured.
-  Future<String> markConfigured(List<String> endpointNames) async {
+  Future<void> markConfigured(List<String> endpointNames) async {
     final request = Request(
         'POST',
         Uri.http('localhost', 'meta/mark_configured',
             {'endpoint_names': jsonEncode(endpointNames)}));
     final response = await _client.send(request);
     checkStatus("markConfigured(${jsonEncode(endpointNames)})", response);
-
-    return response.stream.bytesToString();
   }
 
   /// Confirm that the installation should proceed.
