@@ -92,7 +92,7 @@ class SubiquityClient {
   /// Confirm that the installation should proceed.
   Future<String> confirm(String tty) async {
     final request =
-        Request('POST', Uri.http('localhost', 'meta/confirm', {'tty': tty}));
+        Request('POST', Uri.http('localhost', 'meta/confirm', {'tty': '$tty'}));
     final response = await _client.send(request);
     return response.stream.bytesToString();
   }
@@ -112,7 +112,9 @@ class SubiquityClient {
   /// Set guided disk option.
   Future<StorageResponse> setGuidedStorage(GuidedChoice choice) async {
     final request = Request(
-        'POST', Uri.http('localhost', 'storage/guided', {'choice': choice}));
+        'POST',
+        Uri.http('localhost', 'storage/guided',
+            {'choice': jsonEncode(choice.toJson())}));
     final response = await _client.send(request);
 
     final responseJson = jsonDecode(await response.stream.bytesToString());

@@ -29,6 +29,15 @@ void main() {
 
     var gs = await _client.getGuidedStorage(0, true);
     expect(gs.disks, isNotEmpty);
+    expect(gs.disks?[0].size, isNot(0));
+
+    var gc = GuidedChoice(
+      diskId: gs.disks?[0].id,
+      useLvm: false,
+      password: '',
+    );
+
+    var sr = await _client.setGuidedStorage(gc);
 
     expect(await _client.proxy(), '');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
