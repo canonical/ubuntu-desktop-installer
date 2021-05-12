@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:tuple/tuple.dart';
 
 import '../app.dart';
@@ -52,7 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
     _asyncLoadLanguageList();
 
     Provider.of<KeyboardModel>(context, listen: false)
-        .load(UbuntuDesktopInstallerApp.locale);
+        .load(Provider.of<SubiquityClient>(context, listen: false));
 
     final locale = Intl.defaultLocale;
     for (var i = 0; i < _languageList.length; ++i) {
@@ -97,14 +98,19 @@ class _WelcomePageState extends State<WelcomePage> {
                             child: ListTile(
                               title: Text(_languageList[index].item2),
                               selected: index == _selectedLanguageIndex,
-                              onTap: () {
+                              onTap: () async {
+                                final locale = _languageList[index].item1;
+                                final subiquityClient =
+                                    Provider.of<SubiquityClient>(context,
+                                        listen: false);
+                                await subiquityClient
+                                    .switchLanguage(locale.languageCode);
                                 setState(() {
                                   _selectedLanguageIndex = index;
-                                  final locale = _languageList[index].item1;
                                   UbuntuDesktopInstallerApp.locale = locale;
                                   Provider.of<KeyboardModel>(context,
                                           listen: false)
-                                      .load(locale);
+                                      .load(subiquityClient);
                                 });
                               },
                             ));
