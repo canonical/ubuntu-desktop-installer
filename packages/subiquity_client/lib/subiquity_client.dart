@@ -5,6 +5,8 @@ import 'package:http/http.dart';
 import 'src/http_unix_client.dart';
 import 'src/types.dart';
 
+export 'src/types.dart';
+
 class SubiquityClient {
   late HttpUnixClient _client;
 
@@ -21,6 +23,13 @@ class SubiquityClient {
     final response = await _client.send(request);
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
+  }
+
+  Future<String> switchLanguage(String code) async {
+    final request = Request('POST', Uri.http('localhost', 'locale'));
+    request.body = '"$code"';
+    final response = await _client.send(request);
+    return response.stream.bytesToString();
   }
 
   Future<KeyboardSetup> keyboard() async {
