@@ -46,20 +46,6 @@ parts:
       - requests
       - requests-unixsocket
 
-  probert:
-    after: [curtin]
-    plugin: python
-    build-packages: [build-essential, pkg-config, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
-    source: https://github.com/CanonicalLtd/probert.git
-    source-type: git
-    source-commit: 844c957b7f61f78bbd814cceef87f0d8eb218675
-    requirements: [requirements.txt]
-    python-packages:
-      - jsonschema
-      - pyudev
-      - setuptools
-      - pip
-
   subiquitydeps:
     plugin: nil
     stage-packages:
@@ -68,6 +54,7 @@ parts:
       - iso-codes
       - lsb-release
       - ssh-import-id
+      - probert
 
   ubuntu-desktop-installer:
     source: .
