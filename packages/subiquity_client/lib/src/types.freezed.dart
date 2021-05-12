@@ -202,6 +202,558 @@ abstract class _KeyboardSetting implements KeyboardSetting {
       throw _privateConstructorUsedError;
 }
 
+KeyboardVariant _$KeyboardVariantFromJson(Map<String, dynamic> json) {
+  return _KeyboardVariant.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardVariantTearOff {
+  const _$KeyboardVariantTearOff();
+
+  _KeyboardVariant call({String? code, String? name}) {
+    return _KeyboardVariant(
+      code: code,
+      name: name,
+    );
+  }
+
+  KeyboardVariant fromJson(Map<String, Object> json) {
+    return KeyboardVariant.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardVariant = _$KeyboardVariantTearOff();
+
+/// @nodoc
+mixin _$KeyboardVariant {
+  String? get code => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardVariantCopyWith<KeyboardVariant> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardVariantCopyWith<$Res> {
+  factory $KeyboardVariantCopyWith(
+          KeyboardVariant value, $Res Function(KeyboardVariant) then) =
+      _$KeyboardVariantCopyWithImpl<$Res>;
+  $Res call({String? code, String? name});
+}
+
+/// @nodoc
+class _$KeyboardVariantCopyWithImpl<$Res>
+    implements $KeyboardVariantCopyWith<$Res> {
+  _$KeyboardVariantCopyWithImpl(this._value, this._then);
+
+  final KeyboardVariant _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardVariant) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardVariantCopyWith<$Res>
+    implements $KeyboardVariantCopyWith<$Res> {
+  factory _$KeyboardVariantCopyWith(
+          _KeyboardVariant value, $Res Function(_KeyboardVariant) then) =
+      __$KeyboardVariantCopyWithImpl<$Res>;
+  @override
+  $Res call({String? code, String? name});
+}
+
+/// @nodoc
+class __$KeyboardVariantCopyWithImpl<$Res>
+    extends _$KeyboardVariantCopyWithImpl<$Res>
+    implements _$KeyboardVariantCopyWith<$Res> {
+  __$KeyboardVariantCopyWithImpl(
+      _KeyboardVariant _value, $Res Function(_KeyboardVariant) _then)
+      : super(_value, (v) => _then(v as _KeyboardVariant));
+
+  @override
+  _KeyboardVariant get _value => super._value as _KeyboardVariant;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_KeyboardVariant(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_KeyboardVariant implements _KeyboardVariant {
+  const _$_KeyboardVariant({this.code, this.name});
+
+  factory _$_KeyboardVariant.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardVariantFromJson(json);
+
+  @override
+  final String? code;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'KeyboardVariant(code: $code, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardVariant &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
+      __$KeyboardVariantCopyWithImpl<_KeyboardVariant>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardVariantToJson(this);
+  }
+}
+
+abstract class _KeyboardVariant implements KeyboardVariant {
+  const factory _KeyboardVariant({String? code, String? name}) =
+      _$_KeyboardVariant;
+
+  factory _KeyboardVariant.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardVariant.fromJson;
+
+  @override
+  String? get code => throw _privateConstructorUsedError;
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardLayout _$KeyboardLayoutFromJson(Map<String, dynamic> json) {
+  return _KeyboardLayout.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardLayoutTearOff {
+  const _$KeyboardLayoutTearOff();
+
+  _KeyboardLayout call(
+      {String? code, String? name, List<KeyboardVariant>? variants}) {
+    return _KeyboardLayout(
+      code: code,
+      name: name,
+      variants: variants,
+    );
+  }
+
+  KeyboardLayout fromJson(Map<String, Object> json) {
+    return KeyboardLayout.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardLayout = _$KeyboardLayoutTearOff();
+
+/// @nodoc
+mixin _$KeyboardLayout {
+  String? get code => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardLayoutCopyWith<KeyboardLayout> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardLayoutCopyWith<$Res> {
+  factory $KeyboardLayoutCopyWith(
+          KeyboardLayout value, $Res Function(KeyboardLayout) then) =
+      _$KeyboardLayoutCopyWithImpl<$Res>;
+  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+}
+
+/// @nodoc
+class _$KeyboardLayoutCopyWithImpl<$Res>
+    implements $KeyboardLayoutCopyWith<$Res> {
+  _$KeyboardLayoutCopyWithImpl(this._value, this._then);
+
+  final KeyboardLayout _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardLayout) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+    Object? variants = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variants: variants == freezed
+          ? _value.variants
+          : variants // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardVariant>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardLayoutCopyWith<$Res>
+    implements $KeyboardLayoutCopyWith<$Res> {
+  factory _$KeyboardLayoutCopyWith(
+          _KeyboardLayout value, $Res Function(_KeyboardLayout) then) =
+      __$KeyboardLayoutCopyWithImpl<$Res>;
+  @override
+  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+}
+
+/// @nodoc
+class __$KeyboardLayoutCopyWithImpl<$Res>
+    extends _$KeyboardLayoutCopyWithImpl<$Res>
+    implements _$KeyboardLayoutCopyWith<$Res> {
+  __$KeyboardLayoutCopyWithImpl(
+      _KeyboardLayout _value, $Res Function(_KeyboardLayout) _then)
+      : super(_value, (v) => _then(v as _KeyboardLayout));
+
+  @override
+  _KeyboardLayout get _value => super._value as _KeyboardLayout;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+    Object? variants = freezed,
+  }) {
+    return _then(_KeyboardLayout(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variants: variants == freezed
+          ? _value.variants
+          : variants // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardVariant>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_KeyboardLayout implements _KeyboardLayout {
+  const _$_KeyboardLayout({this.code, this.name, this.variants});
+
+  factory _$_KeyboardLayout.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardLayoutFromJson(json);
+
+  @override
+  final String? code;
+  @override
+  final String? name;
+  @override
+  final List<KeyboardVariant>? variants;
+
+  @override
+  String toString() {
+    return 'KeyboardLayout(code: $code, name: $name, variants: $variants)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardLayout &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.variants, variants) ||
+                const DeepCollectionEquality()
+                    .equals(other.variants, variants)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(variants);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
+      __$KeyboardLayoutCopyWithImpl<_KeyboardLayout>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardLayoutToJson(this);
+  }
+}
+
+abstract class _KeyboardLayout implements KeyboardLayout {
+  const factory _KeyboardLayout(
+      {String? code,
+      String? name,
+      List<KeyboardVariant>? variants}) = _$_KeyboardLayout;
+
+  factory _KeyboardLayout.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardLayout.fromJson;
+
+  @override
+  String? get code => throw _privateConstructorUsedError;
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardSetup _$KeyboardSetupFromJson(Map<String, dynamic> json) {
+  return _KeyboardSetup.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardSetupTearOff {
+  const _$KeyboardSetupTearOff();
+
+  _KeyboardSetup call(
+      {KeyboardSetting? setting, List<KeyboardLayout>? layouts}) {
+    return _KeyboardSetup(
+      setting: setting,
+      layouts: layouts,
+    );
+  }
+
+  KeyboardSetup fromJson(Map<String, Object> json) {
+    return KeyboardSetup.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardSetup = _$KeyboardSetupTearOff();
+
+/// @nodoc
+mixin _$KeyboardSetup {
+  KeyboardSetting? get setting => throw _privateConstructorUsedError;
+  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardSetupCopyWith<KeyboardSetup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardSetupCopyWith<$Res> {
+  factory $KeyboardSetupCopyWith(
+          KeyboardSetup value, $Res Function(KeyboardSetup) then) =
+      _$KeyboardSetupCopyWithImpl<$Res>;
+  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+
+  $KeyboardSettingCopyWith<$Res>? get setting;
+}
+
+/// @nodoc
+class _$KeyboardSetupCopyWithImpl<$Res>
+    implements $KeyboardSetupCopyWith<$Res> {
+  _$KeyboardSetupCopyWithImpl(this._value, this._then);
+
+  final KeyboardSetup _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardSetup) _then;
+
+  @override
+  $Res call({
+    Object? setting = freezed,
+    Object? layouts = freezed,
+  }) {
+    return _then(_value.copyWith(
+      setting: setting == freezed
+          ? _value.setting
+          : setting // ignore: cast_nullable_to_non_nullable
+              as KeyboardSetting?,
+      layouts: layouts == freezed
+          ? _value.layouts
+          : layouts // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardLayout>?,
+    ));
+  }
+
+  @override
+  $KeyboardSettingCopyWith<$Res>? get setting {
+    if (_value.setting == null) {
+      return null;
+    }
+
+    return $KeyboardSettingCopyWith<$Res>(_value.setting!, (value) {
+      return _then(_value.copyWith(setting: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardSetupCopyWith<$Res>
+    implements $KeyboardSetupCopyWith<$Res> {
+  factory _$KeyboardSetupCopyWith(
+          _KeyboardSetup value, $Res Function(_KeyboardSetup) then) =
+      __$KeyboardSetupCopyWithImpl<$Res>;
+  @override
+  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+
+  @override
+  $KeyboardSettingCopyWith<$Res>? get setting;
+}
+
+/// @nodoc
+class __$KeyboardSetupCopyWithImpl<$Res>
+    extends _$KeyboardSetupCopyWithImpl<$Res>
+    implements _$KeyboardSetupCopyWith<$Res> {
+  __$KeyboardSetupCopyWithImpl(
+      _KeyboardSetup _value, $Res Function(_KeyboardSetup) _then)
+      : super(_value, (v) => _then(v as _KeyboardSetup));
+
+  @override
+  _KeyboardSetup get _value => super._value as _KeyboardSetup;
+
+  @override
+  $Res call({
+    Object? setting = freezed,
+    Object? layouts = freezed,
+  }) {
+    return _then(_KeyboardSetup(
+      setting: setting == freezed
+          ? _value.setting
+          : setting // ignore: cast_nullable_to_non_nullable
+              as KeyboardSetting?,
+      layouts: layouts == freezed
+          ? _value.layouts
+          : layouts // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardLayout>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_KeyboardSetup implements _KeyboardSetup {
+  const _$_KeyboardSetup({this.setting, this.layouts});
+
+  factory _$_KeyboardSetup.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardSetupFromJson(json);
+
+  @override
+  final KeyboardSetting? setting;
+  @override
+  final List<KeyboardLayout>? layouts;
+
+  @override
+  String toString() {
+    return 'KeyboardSetup(setting: $setting, layouts: $layouts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardSetup &&
+            (identical(other.setting, setting) ||
+                const DeepCollectionEquality()
+                    .equals(other.setting, setting)) &&
+            (identical(other.layouts, layouts) ||
+                const DeepCollectionEquality().equals(other.layouts, layouts)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(setting) ^
+      const DeepCollectionEquality().hash(layouts);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
+      __$KeyboardSetupCopyWithImpl<_KeyboardSetup>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardSetupToJson(this);
+  }
+}
+
+abstract class _KeyboardSetup implements KeyboardSetup {
+  const factory _KeyboardSetup(
+      {KeyboardSetting? setting,
+      List<KeyboardLayout>? layouts}) = _$_KeyboardSetup;
+
+  factory _KeyboardSetup.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardSetup.fromJson;
+
+  @override
+  KeyboardSetting? get setting => throw _privateConstructorUsedError;
+  @override
+  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
   return _IdentityData.fromJson(json);
 }
@@ -1255,5 +1807,1247 @@ abstract class _ApplicationStatus implements ApplicationStatus {
   @override
   @JsonKey(ignore: true)
   _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Partition _$PartitionFromJson(Map<String, dynamic> json) {
+  return _Partition.fromJson(json);
+}
+
+/// @nodoc
+class _$PartitionTearOff {
+  const _$PartitionTearOff();
+
+  _Partition call({int? size, int? number, List<String>? annotations}) {
+    return _Partition(
+      size: size,
+      number: number,
+      annotations: annotations,
+    );
+  }
+
+  Partition fromJson(Map<String, Object> json) {
+    return Partition.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Partition = _$PartitionTearOff();
+
+/// @nodoc
+mixin _$Partition {
+  int? get size => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  List<String>? get annotations => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PartitionCopyWith<Partition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PartitionCopyWith<$Res> {
+  factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
+      _$PartitionCopyWithImpl<$Res>;
+  $Res call({int? size, int? number, List<String>? annotations});
+}
+
+/// @nodoc
+class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
+  _$PartitionCopyWithImpl(this._value, this._then);
+
+  final Partition _value;
+  // ignore: unused_field
+  final $Res Function(Partition) _then;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? number = freezed,
+    Object? annotations = freezed,
+  }) {
+    return _then(_value.copyWith(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int?,
+      annotations: annotations == freezed
+          ? _value.annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
+  factory _$PartitionCopyWith(
+          _Partition value, $Res Function(_Partition) then) =
+      __$PartitionCopyWithImpl<$Res>;
+  @override
+  $Res call({int? size, int? number, List<String>? annotations});
+}
+
+/// @nodoc
+class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
+    implements _$PartitionCopyWith<$Res> {
+  __$PartitionCopyWithImpl(_Partition _value, $Res Function(_Partition) _then)
+      : super(_value, (v) => _then(v as _Partition));
+
+  @override
+  _Partition get _value => super._value as _Partition;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? number = freezed,
+    Object? annotations = freezed,
+  }) {
+    return _then(_Partition(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int?,
+      annotations: annotations == freezed
+          ? _value.annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Partition implements _Partition {
+  const _$_Partition({this.size, this.number, this.annotations});
+
+  factory _$_Partition.fromJson(Map<String, dynamic> json) =>
+      _$_$_PartitionFromJson(json);
+
+  @override
+  final int? size;
+  @override
+  final int? number;
+  @override
+  final List<String>? annotations;
+
+  @override
+  String toString() {
+    return 'Partition(size: $size, number: $number, annotations: $annotations)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Partition &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.number, number) ||
+                const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.annotations, annotations) ||
+                const DeepCollectionEquality()
+                    .equals(other.annotations, annotations)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(number) ^
+      const DeepCollectionEquality().hash(annotations);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PartitionCopyWith<_Partition> get copyWith =>
+      __$PartitionCopyWithImpl<_Partition>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PartitionToJson(this);
+  }
+}
+
+abstract class _Partition implements Partition {
+  const factory _Partition(
+      {int? size, int? number, List<String>? annotations}) = _$_Partition;
+
+  factory _Partition.fromJson(Map<String, dynamic> json) =
+      _$_Partition.fromJson;
+
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  int? get number => throw _privateConstructorUsedError;
+  @override
+  List<String>? get annotations => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$PartitionCopyWith<_Partition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Disk _$DiskFromJson(Map<String, dynamic> json) {
+  return _Disk.fromJson(json);
+}
+
+/// @nodoc
+class _$DiskTearOff {
+  const _$DiskTearOff();
+
+  _Disk call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) {
+    return _Disk(
+      id: id,
+      label: label,
+      type: type,
+      size: size,
+      usageLabels: usageLabels,
+      partitions: partitions,
+      okForGuided: okForGuided,
+    );
+  }
+
+  Disk fromJson(Map<String, Object> json) {
+    return Disk.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Disk = _$DiskTearOff();
+
+/// @nodoc
+mixin _$Disk {
+  String? get id => throw _privateConstructorUsedError;
+  String? get label => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
+  @JsonKey(name: 'usage_labels')
+  List<String>? get usageLabels => throw _privateConstructorUsedError;
+  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ok_for_guided')
+  bool? get okForGuided => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DiskCopyWith<Disk> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DiskCopyWith<$Res> {
+  factory $DiskCopyWith(Disk value, $Res Function(Disk) then) =
+      _$DiskCopyWithImpl<$Res>;
+  $Res call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+}
+
+/// @nodoc
+class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
+  _$DiskCopyWithImpl(this._value, this._then);
+
+  final Disk _value;
+  // ignore: unused_field
+  final $Res Function(Disk) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? size = freezed,
+    Object? usageLabels = freezed,
+    Object? partitions = freezed,
+    Object? okForGuided = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      usageLabels: usageLabels == freezed
+          ? _value.usageLabels
+          : usageLabels // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
+              as List<Partition>?,
+      okForGuided: okForGuided == freezed
+          ? _value.okForGuided
+          : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
+  factory _$DiskCopyWith(_Disk value, $Res Function(_Disk) then) =
+      __$DiskCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+}
+
+/// @nodoc
+class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
+    implements _$DiskCopyWith<$Res> {
+  __$DiskCopyWithImpl(_Disk _value, $Res Function(_Disk) _then)
+      : super(_value, (v) => _then(v as _Disk));
+
+  @override
+  _Disk get _value => super._value as _Disk;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? size = freezed,
+    Object? usageLabels = freezed,
+    Object? partitions = freezed,
+    Object? okForGuided = freezed,
+  }) {
+    return _then(_Disk(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      usageLabels: usageLabels == freezed
+          ? _value.usageLabels
+          : usageLabels // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
+              as List<Partition>?,
+      okForGuided: okForGuided == freezed
+          ? _value.okForGuided
+          : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Disk implements _Disk {
+  const _$_Disk(
+      {this.id,
+      this.label,
+      this.type,
+      this.size,
+      @JsonKey(name: 'usage_labels') this.usageLabels,
+      this.partitions,
+      @JsonKey(name: 'ok_for_guided') this.okForGuided});
+
+  factory _$_Disk.fromJson(Map<String, dynamic> json) =>
+      _$_$_DiskFromJson(json);
+
+  @override
+  final String? id;
+  @override
+  final String? label;
+  @override
+  final String? type;
+  @override
+  final int? size;
+  @override
+  @JsonKey(name: 'usage_labels')
+  final List<String>? usageLabels;
+  @override
+  final List<Partition>? partitions;
+  @override
+  @JsonKey(name: 'ok_for_guided')
+  final bool? okForGuided;
+
+  @override
+  String toString() {
+    return 'Disk(id: $id, label: $label, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Disk &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.usageLabels, usageLabels) ||
+                const DeepCollectionEquality()
+                    .equals(other.usageLabels, usageLabels)) &&
+            (identical(other.partitions, partitions) ||
+                const DeepCollectionEquality()
+                    .equals(other.partitions, partitions)) &&
+            (identical(other.okForGuided, okForGuided) ||
+                const DeepCollectionEquality()
+                    .equals(other.okForGuided, okForGuided)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(usageLabels) ^
+      const DeepCollectionEquality().hash(partitions) ^
+      const DeepCollectionEquality().hash(okForGuided);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DiskCopyWith<_Disk> get copyWith =>
+      __$DiskCopyWithImpl<_Disk>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DiskToJson(this);
+  }
+}
+
+abstract class _Disk implements Disk {
+  const factory _Disk(
+      {String? id,
+      String? label,
+      String? type,
+      int? size,
+      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<Partition>? partitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) = _$_Disk;
+
+  factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
+
+  @override
+  String? get id => throw _privateConstructorUsedError;
+  @override
+  String? get label => throw _privateConstructorUsedError;
+  @override
+  String? get type => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'usage_labels')
+  List<String>? get usageLabels => throw _privateConstructorUsedError;
+  @override
+  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'ok_for_guided')
+  bool? get okForGuided => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
+}
+
+GuidedChoice _$GuidedChoiceFromJson(Map<String, dynamic> json) {
+  return _GuidedChoice.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedChoiceTearOff {
+  const _$GuidedChoiceTearOff();
+
+  _GuidedChoice call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password}) {
+    return _GuidedChoice(
+      diskId: diskId,
+      useLvm: useLvm,
+      password: password,
+    );
+  }
+
+  GuidedChoice fromJson(Map<String, Object> json) {
+    return GuidedChoice.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedChoice = _$GuidedChoiceTearOff();
+
+/// @nodoc
+mixin _$GuidedChoice {
+  @JsonKey(name: 'disk_id')
+  String? get diskId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'use_lvm')
+  bool? get useLvm => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedChoiceCopyWith<GuidedChoice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedChoiceCopyWith<$Res> {
+  factory $GuidedChoiceCopyWith(
+          GuidedChoice value, $Res Function(GuidedChoice) then) =
+      _$GuidedChoiceCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password});
+}
+
+/// @nodoc
+class _$GuidedChoiceCopyWithImpl<$Res> implements $GuidedChoiceCopyWith<$Res> {
+  _$GuidedChoiceCopyWithImpl(this._value, this._then);
+
+  final GuidedChoice _value;
+  // ignore: unused_field
+  final $Res Function(GuidedChoice) _then;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedChoiceCopyWith<$Res>
+    implements $GuidedChoiceCopyWith<$Res> {
+  factory _$GuidedChoiceCopyWith(
+          _GuidedChoice value, $Res Function(_GuidedChoice) then) =
+      __$GuidedChoiceCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password});
+}
+
+/// @nodoc
+class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
+    implements _$GuidedChoiceCopyWith<$Res> {
+  __$GuidedChoiceCopyWithImpl(
+      _GuidedChoice _value, $Res Function(_GuidedChoice) _then)
+      : super(_value, (v) => _then(v as _GuidedChoice));
+
+  @override
+  _GuidedChoice get _value => super._value as _GuidedChoice;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_GuidedChoice(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedChoice implements _GuidedChoice {
+  const _$_GuidedChoice(
+      {@JsonKey(name: 'disk_id') this.diskId,
+      @JsonKey(name: 'use_lvm') this.useLvm,
+      this.password});
+
+  factory _$_GuidedChoice.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedChoiceFromJson(json);
+
+  @override
+  @JsonKey(name: 'disk_id')
+  final String? diskId;
+  @override
+  @JsonKey(name: 'use_lvm')
+  final bool? useLvm;
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'GuidedChoice(diskId: $diskId, useLvm: $useLvm, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedChoice &&
+            (identical(other.diskId, diskId) ||
+                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
+            (identical(other.useLvm, useLvm) ||
+                const DeepCollectionEquality().equals(other.useLvm, useLvm)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(diskId) ^
+      const DeepCollectionEquality().hash(useLvm) ^
+      const DeepCollectionEquality().hash(password);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
+      __$GuidedChoiceCopyWithImpl<_GuidedChoice>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedChoiceToJson(this);
+  }
+}
+
+abstract class _GuidedChoice implements GuidedChoice {
+  const factory _GuidedChoice(
+      {@JsonKey(name: 'disk_id') String? diskId,
+      @JsonKey(name: 'use_lvm') bool? useLvm,
+      String? password}) = _$_GuidedChoice;
+
+  factory _GuidedChoice.fromJson(Map<String, dynamic> json) =
+      _$_GuidedChoice.fromJson;
+
+  @override
+  @JsonKey(name: 'disk_id')
+  String? get diskId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'use_lvm')
+  bool? get useLvm => throw _privateConstructorUsedError;
+  @override
+  String? get password => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GuidedStorageResponse _$GuidedStorageResponseFromJson(
+    Map<String, dynamic> json) {
+  return _GuidedStorageResponse.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedStorageResponseTearOff {
+  const _$GuidedStorageResponseTearOff();
+
+  _GuidedStorageResponse call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks}) {
+    return _GuidedStorageResponse(
+      status: status,
+      errorReport: errorReport,
+      disks: disks,
+    );
+  }
+
+  GuidedStorageResponse fromJson(Map<String, Object> json) {
+    return GuidedStorageResponse.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedStorageResponse = _$GuidedStorageResponseTearOff();
+
+/// @nodoc
+mixin _$GuidedStorageResponse {
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedStorageResponseCopyWith<GuidedStorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageResponseCopyWith<$Res> {
+  factory $GuidedStorageResponseCopyWith(GuidedStorageResponse value,
+          $Res Function(GuidedStorageResponse) then) =
+      _$GuidedStorageResponseCopyWithImpl<$Res>;
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$GuidedStorageResponseCopyWithImpl<$Res>
+    implements $GuidedStorageResponseCopyWith<$Res> {
+  _$GuidedStorageResponseCopyWithImpl(this._value, this._then);
+
+  final GuidedStorageResponse _value;
+  // ignore: unused_field
+  final $Res Function(GuidedStorageResponse) _then;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? disks = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedStorageResponseCopyWith<$Res>
+    implements $GuidedStorageResponseCopyWith<$Res> {
+  factory _$GuidedStorageResponseCopyWith(_GuidedStorageResponse value,
+          $Res Function(_GuidedStorageResponse) then) =
+      __$GuidedStorageResponseCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$GuidedStorageResponseCopyWithImpl<$Res>
+    extends _$GuidedStorageResponseCopyWithImpl<$Res>
+    implements _$GuidedStorageResponseCopyWith<$Res> {
+  __$GuidedStorageResponseCopyWithImpl(_GuidedStorageResponse _value,
+      $Res Function(_GuidedStorageResponse) _then)
+      : super(_value, (v) => _then(v as _GuidedStorageResponse));
+
+  @override
+  _GuidedStorageResponse get _value => super._value as _GuidedStorageResponse;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? disks = freezed,
+  }) {
+    return _then(_GuidedStorageResponse(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedStorageResponse implements _GuidedStorageResponse {
+  const _$_GuidedStorageResponse(
+      {this.status,
+      @JsonKey(name: 'error_report') this.errorReport,
+      this.disks});
+
+  factory _$_GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedStorageResponseFromJson(json);
+
+  @override
+  final ProbeStatus? status;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+  @override
+  final List<Disk>? disks;
+
+  @override
+  String toString() {
+    return 'GuidedStorageResponse(status: $status, errorReport: $errorReport, disks: $disks)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedStorageResponse &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)) &&
+            (identical(other.disks, disks) ||
+                const DeepCollectionEquality().equals(other.disks, disks)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(errorReport) ^
+      const DeepCollectionEquality().hash(disks);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
+      __$GuidedStorageResponseCopyWithImpl<_GuidedStorageResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedStorageResponseToJson(this);
+  }
+}
+
+abstract class _GuidedStorageResponse implements GuidedStorageResponse {
+  const factory _GuidedStorageResponse(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      List<Disk>? disks}) = _$_GuidedStorageResponse;
+
+  factory _GuidedStorageResponse.fromJson(Map<String, dynamic> json) =
+      _$_GuidedStorageResponse.fromJson;
+
+  @override
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StorageResponse _$StorageResponseFromJson(Map<String, dynamic> json) {
+  return _StorageResponse.fromJson(json);
+}
+
+/// @nodoc
+class _$StorageResponseTearOff {
+  const _$StorageResponseTearOff();
+
+  _StorageResponse call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd}) {
+    return _StorageResponse(
+      status: status,
+      errorReport: errorReport,
+      bootloader: bootloader,
+      origConfig: origConfig,
+      config: config,
+      blockdev: blockdev,
+      dasd: dasd,
+    );
+  }
+
+  StorageResponse fromJson(Map<String, Object> json) {
+    return StorageResponse.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $StorageResponse = _$StorageResponseTearOff();
+
+/// @nodoc
+mixin _$StorageResponse {
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  Bootloader? get bootloader => throw _privateConstructorUsedError;
+  @JsonKey(name: 'orig_config')
+  List<dynamic>? get origConfig => throw _privateConstructorUsedError;
+  List<dynamic>? get config => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StorageResponseCopyWith<StorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StorageResponseCopyWith<$Res> {
+  factory $StorageResponseCopyWith(
+          StorageResponse value, $Res Function(StorageResponse) then) =
+      _$StorageResponseCopyWithImpl<$Res>;
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$StorageResponseCopyWithImpl<$Res>
+    implements $StorageResponseCopyWith<$Res> {
+  _$StorageResponseCopyWithImpl(this._value, this._then);
+
+  final StorageResponse _value;
+  // ignore: unused_field
+  final $Res Function(StorageResponse) _then;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? bootloader = freezed,
+    Object? origConfig = freezed,
+    Object? config = freezed,
+    Object? blockdev = freezed,
+    Object? dasd = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      bootloader: bootloader == freezed
+          ? _value.bootloader
+          : bootloader // ignore: cast_nullable_to_non_nullable
+              as Bootloader?,
+      origConfig: origConfig == freezed
+          ? _value.origConfig
+          : origConfig // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      blockdev: blockdev == freezed
+          ? _value.blockdev
+          : blockdev // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      dasd: dasd == freezed
+          ? _value.dasd
+          : dasd // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$StorageResponseCopyWith<$Res>
+    implements $StorageResponseCopyWith<$Res> {
+  factory _$StorageResponseCopyWith(
+          _StorageResponse value, $Res Function(_StorageResponse) then) =
+      __$StorageResponseCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$StorageResponseCopyWithImpl<$Res>
+    extends _$StorageResponseCopyWithImpl<$Res>
+    implements _$StorageResponseCopyWith<$Res> {
+  __$StorageResponseCopyWithImpl(
+      _StorageResponse _value, $Res Function(_StorageResponse) _then)
+      : super(_value, (v) => _then(v as _StorageResponse));
+
+  @override
+  _StorageResponse get _value => super._value as _StorageResponse;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
+    Object? bootloader = freezed,
+    Object? origConfig = freezed,
+    Object? config = freezed,
+    Object? blockdev = freezed,
+    Object? dasd = freezed,
+  }) {
+    return _then(_StorageResponse(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      bootloader: bootloader == freezed
+          ? _value.bootloader
+          : bootloader // ignore: cast_nullable_to_non_nullable
+              as Bootloader?,
+      origConfig: origConfig == freezed
+          ? _value.origConfig
+          : origConfig // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+      blockdev: blockdev == freezed
+          ? _value.blockdev
+          : blockdev // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      dasd: dasd == freezed
+          ? _value.dasd
+          : dasd // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StorageResponse implements _StorageResponse {
+  const _$_StorageResponse(
+      {this.status,
+      @JsonKey(name: 'error_report') this.errorReport,
+      this.bootloader,
+      @JsonKey(name: 'orig_config') this.origConfig,
+      this.config,
+      this.blockdev,
+      this.dasd});
+
+  factory _$_StorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$_$_StorageResponseFromJson(json);
+
+  @override
+  final ProbeStatus? status;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+  @override
+  final Bootloader? bootloader;
+  @override
+  @JsonKey(name: 'orig_config')
+  final List<dynamic>? origConfig;
+  @override
+  final List<dynamic>? config;
+  @override
+  final Map<String, dynamic>? blockdev;
+  @override
+  final Map<String, dynamic>? dasd;
+
+  @override
+  String toString() {
+    return 'StorageResponse(status: $status, errorReport: $errorReport, bootloader: $bootloader, origConfig: $origConfig, config: $config, blockdev: $blockdev, dasd: $dasd)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StorageResponse &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)) &&
+            (identical(other.bootloader, bootloader) ||
+                const DeepCollectionEquality()
+                    .equals(other.bootloader, bootloader)) &&
+            (identical(other.origConfig, origConfig) ||
+                const DeepCollectionEquality()
+                    .equals(other.origConfig, origConfig)) &&
+            (identical(other.config, config) ||
+                const DeepCollectionEquality().equals(other.config, config)) &&
+            (identical(other.blockdev, blockdev) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockdev, blockdev)) &&
+            (identical(other.dasd, dasd) ||
+                const DeepCollectionEquality().equals(other.dasd, dasd)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(errorReport) ^
+      const DeepCollectionEquality().hash(bootloader) ^
+      const DeepCollectionEquality().hash(origConfig) ^
+      const DeepCollectionEquality().hash(config) ^
+      const DeepCollectionEquality().hash(blockdev) ^
+      const DeepCollectionEquality().hash(dasd);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
+      __$StorageResponseCopyWithImpl<_StorageResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_StorageResponseToJson(this);
+  }
+}
+
+abstract class _StorageResponse implements StorageResponse {
+  const factory _StorageResponse(
+      {ProbeStatus? status,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      Bootloader? bootloader,
+      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? config,
+      Map<String, dynamic>? blockdev,
+      Map<String, dynamic>? dasd}) = _$_StorageResponse;
+
+  factory _StorageResponse.fromJson(Map<String, dynamic> json) =
+      _$_StorageResponse.fromJson;
+
+  @override
+  ProbeStatus? get status => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  Bootloader? get bootloader => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'orig_config')
+  List<dynamic>? get origConfig => throw _privateConstructorUsedError;
+  @override
+  List<dynamic>? get config => throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
+  @override
+  Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

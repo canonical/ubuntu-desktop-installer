@@ -33,13 +33,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
       var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
       setState(() {
         _selectedLayoutIndex = keyboardModel.layouts.indexWhere((layout) {
-          return layout.item1 == info.layout;
+          return layout.code == info.layout;
         });
         if (_selectedLayoutIndex > -1) {
           _selectedLayoutName =
-              keyboardModel.layouts[_selectedLayoutIndex].item1;
-          _selectedVariantIndex = keyboardModel.variants[_selectedLayoutName]!
-              .indexWhere((variant) => variant.item1 == info.variant);
+              keyboardModel.layouts[_selectedLayoutIndex].code!;
+          _selectedVariantIndex = keyboardModel
+              .layouts[_selectedLayoutIndex].variants!
+              .indexWhere((variant) => variant.code == info.variant);
           if (_selectedVariantIndex == -1) {
             _selectedVariantIndex = 0;
           }
@@ -99,13 +100,13 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                       controller: _layoutListScrollController,
                                       child: ListTile(
                                         title: Text(
-                                            keyboardModel.layouts[index].item2),
+                                            keyboardModel.layouts[index].name!),
                                         selected: index == _selectedLayoutIndex,
                                         onTap: () {
                                           setState(() {
                                             _selectedLayoutIndex = index;
                                             _selectedLayoutName = keyboardModel
-                                                .layouts[index].item1;
+                                                .layouts[index].code!;
                                             _selectedVariantIndex = 0;
                                           });
                                         },
@@ -120,7 +121,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                     _keyboardVariantListScrollController,
                                 itemCount: _selectedLayoutName.isNotEmpty
                                     ? keyboardModel
-                                        .variants[_selectedLayoutName]!.length
+                                        .layouts[_selectedLayoutIndex]
+                                        .variants!
+                                        .length
                                     : 0,
                                 itemBuilder: (context, index) {
                                   return AutoScrollTag(
@@ -130,9 +133,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                           _keyboardVariantListScrollController,
                                       child: ListTile(
                                         title: Text(keyboardModel
-                                            .variants[_selectedLayoutName]![
-                                                index]
-                                            .item2),
+                                            .layouts[_selectedLayoutIndex]
+                                            .variants![index]
+                                            .name!),
                                         selected:
                                             index == _selectedVariantIndex,
                                         onTap: () {

@@ -17,6 +17,40 @@ class KeyboardSetting with _$KeyboardSetting {
 }
 
 @freezed
+class KeyboardVariant with _$KeyboardVariant {
+  const factory KeyboardVariant({
+    String? code,
+    String? name,
+  }) = _KeyboardVariant;
+
+  factory KeyboardVariant.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardVariantFromJson(json);
+}
+
+@freezed
+class KeyboardLayout with _$KeyboardLayout {
+  const factory KeyboardLayout({
+    String? code,
+    String? name,
+    List<KeyboardVariant>? variants,
+  }) = _KeyboardLayout;
+
+  factory KeyboardLayout.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardLayoutFromJson(json);
+}
+
+@freezed
+class KeyboardSetup with _$KeyboardSetup {
+  const factory KeyboardSetup({
+    KeyboardSetting? setting,
+    List<KeyboardLayout>? layouts,
+  }) = _KeyboardSetup;
+
+  factory KeyboardSetup.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardSetupFromJson(json);
+}
+
+@freezed
 class IdentityData with _$IdentityData {
   const factory IdentityData({
     String? realname,
@@ -103,4 +137,75 @@ class ApplicationStatus with _$ApplicationStatus {
 
   factory ApplicationStatus.fromJson(Map<String, dynamic> json) =>
       _$ApplicationStatusFromJson(json);
+}
+
+enum ProbeStatus { PROBING, FAILED, DONE }
+
+enum Bootloader { NONE, BIOS, UEFI, PREP }
+
+@freezed
+class Partition with _$Partition {
+  const factory Partition({
+    int? size,
+    int? number,
+    List<String>? annotations,
+  }) = _Partition;
+
+  factory Partition.fromJson(Map<String, dynamic> json) =>
+      _$PartitionFromJson(json);
+}
+
+@freezed
+class Disk with _$Disk {
+  const factory Disk({
+    String? id,
+    String? label,
+    String? type,
+    int? size,
+    @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+    List<Partition>? partitions,
+    @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+  }) = _Disk;
+
+  factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
+}
+
+@freezed
+class GuidedChoice with _$GuidedChoice {
+  const factory GuidedChoice({
+    @JsonKey(name: 'disk_id') String? diskId,
+    @JsonKey(name: 'use_lvm') bool? useLvm,
+    String? password,
+  }) = _GuidedChoice;
+
+  factory GuidedChoice.fromJson(Map<String, dynamic> json) =>
+      _$GuidedChoiceFromJson(json);
+}
+
+@freezed
+class GuidedStorageResponse with _$GuidedStorageResponse {
+  const factory GuidedStorageResponse({
+    ProbeStatus? status,
+    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+    List<Disk>? disks,
+  }) = _GuidedStorageResponse;
+
+  factory GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$GuidedStorageResponseFromJson(json);
+}
+
+@freezed
+class StorageResponse with _$StorageResponse {
+  const factory StorageResponse({
+    ProbeStatus? status,
+    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+    Bootloader? bootloader,
+    @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+    List<dynamic>? config,
+    Map<String, dynamic>? blockdev,
+    Map<String, dynamic>? dasd,
+  }) = _StorageResponse;
+
+  factory StorageResponse.fromJson(Map<String, dynamic> json) =>
+      _$StorageResponseFromJson(json);
 }

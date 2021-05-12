@@ -19,12 +19,26 @@ void main() {
   });
 
   test('simple server requests', () async {
-    // expect(await _client.locale(), 'en_US');
+    await _client.switchLanguage('en_US');
+    expect(await _client.locale(), 'en_US');
 
     var kb = await _client.keyboard();
-    expect(kb.layout, 'us');
-    expect(kb.variant, '');
-    expect(kb.toggle, null);
+    expect(kb.setting?.layout, 'us');
+    expect(kb.setting?.variant, '');
+    expect(kb.setting?.toggle, null);
+    expect(kb.layouts, isNotEmpty);
+
+    var gs = await _client.getGuidedStorage(0, true);
+    expect(gs.disks, isNotEmpty);
+    expect(gs.disks?[0].size, isNot(0));
+
+    var gc = GuidedChoice(
+      diskId: gs.disks?[0].id,
+      useLvm: false,
+      password: '',
+    );
+
+    var sr = await _client.setGuidedStorage(gc);
 
     expect(await _client.proxy(), '');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
@@ -49,7 +63,7 @@ void main() {
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
 
-    print(await _client.markConfigured(['1']));
-    print(await _client.confirm('a'));
+    await _client.markConfigured(['keyboard']);
+    await _client.confirm('1');
   });
 }
