@@ -19,7 +19,8 @@ void main() {
   });
 
   test('simple server requests', () async {
-    // expect(await _client.locale(), 'en_US');
+    await _client.switchLanguage('en_US');
+    expect(await _client.locale(), 'en_US');
 
     var kb = await _client.keyboard();
     expect(kb.setting?.layout, 'us');
