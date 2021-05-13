@@ -33,12 +33,29 @@ void main() {
     expect(gs.disks?[0].size, isNot(0));
 
     var gc = GuidedChoice(
+      diskId: 'invalid',
+      useLvm: false,
+      password: '',
+    );
+
+    try {
+      await _client.setGuidedStorage(gc); // should throw
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      expect(
+          e,
+          startsWith(
+              'setGuidedStorage({"disk_id":"invalid","use_lvm":false,"password":""}) returned error 500'));
+    }
+
+    gc = GuidedChoice(
       diskId: gs.disks?[0].id,
       useLvm: false,
       password: '',
     );
 
     var sr = await _client.setGuidedStorage(gc);
+    expect(sr.status, ProbeStatus.DONE);
 
     expect(await _client.proxy(), '');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
