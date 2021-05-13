@@ -42,7 +42,8 @@ class TestServer {
     return socketPath;
   }
 
-  void stop() {
+  Future<void> stop() async {
     _serverProcess.kill();
+    await _serverProcess.exitCode;
   }
 }
