@@ -18,9 +18,10 @@ class SubiquityClient {
     _client.close();
   }
 
-  void checkStatus(String method, StreamedResponse response) {
+  Future<void> checkStatus(String method, StreamedResponse response) async {
     if (response.statusCode != 200) {
-      throw ("$method returned error ${response.statusCode}");
+      final responseStr = await response.stream.bytesToString();
+      throw ("$method returned error ${response.statusCode}\n$responseStr");
     }
   }
 
