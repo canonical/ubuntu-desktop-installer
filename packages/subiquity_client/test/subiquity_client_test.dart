@@ -18,16 +18,20 @@ void main() {
     _testServer.stop();
   });
 
-  test('simple server requests', () async {
+  test('locale', () async {
     await _client.switchLanguage('en_US');
     expect(await _client.locale(), 'en_US');
+  });
 
+  test('keyboard', () async {
     var kb = await _client.keyboard();
     expect(kb.setting?.layout, 'us');
     expect(kb.setting?.variant, '');
     expect(kb.setting?.toggle, null);
     expect(kb.layouts, isNotEmpty);
+  });
 
+  test('guided storage', () async {
     var gs = await _client.getGuidedStorage(0, true);
     expect(gs.disks, isNotEmpty);
     expect(gs.disks?[0].size, isNot(0));
@@ -56,21 +60,32 @@ void main() {
 
     var sr = await _client.setGuidedStorage(gc);
     expect(sr.status, ProbeStatus.DONE);
+  });
 
+  test('proxy', () async {
     expect(await _client.proxy(), '');
-    expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
+  });
 
+  test('mirror', () async {
+    expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
+  });
+
+  test('identity', () async {
     var id = await _client.identity();
     expect(id.realname, '');
     expect(id.username, '');
     expect(id.cryptedPassword, '');
     expect(id.hostname, '');
+  });
 
+  test('ssh', () async {
     var ssh = await _client.ssh();
     expect(ssh.installServer, false);
     expect(ssh.allowPw, true);
     expect(ssh.authorizedKeys, []);
+  });
 
+  test('status', () async {
     var status = await _client.status();
     expect(status.state, ApplicationState.WAITING);
     expect(status.confirmingTty, '');
@@ -79,8 +94,13 @@ void main() {
     expect(status.echoSyslogId, startsWith('subiquity_echo.'));
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
+  });
 
+  test('markConfigured', () async {
     await _client.markConfigured(['keyboard']);
+  });
+
+  test('confirm', () async {
     await _client.confirm('1');
   });
 }
