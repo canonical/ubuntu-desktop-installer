@@ -54,6 +54,8 @@ parts:
       - lsb-release
       - ssh-import-id
       - probert
+    prime:
+      - -lib/systemd/system/*
 
   ubuntu-desktop-installer:
     source: .
