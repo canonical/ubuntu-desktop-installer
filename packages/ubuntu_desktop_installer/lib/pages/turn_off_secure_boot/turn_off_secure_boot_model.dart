@@ -41,7 +41,6 @@ class TurnOffSecureBootModel extends ChangeNotifier {
       return;
     }
 
-    print('settings key');
     _securityKey = key;
 
     _validateForm();
