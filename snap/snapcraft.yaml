@@ -66,7 +66,7 @@ parts:
     override-build: |
       set -eux
       cd packages/ubuntu_desktop_installer
-      flutter channel master
+      flutter channel dev
       flutter upgrade
       flutter config --enable-linux-desktop
       flutter doctor
