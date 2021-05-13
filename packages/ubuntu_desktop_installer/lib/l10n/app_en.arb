@@ -65,5 +65,17 @@
   "@typeToTest": {},
 
   "detectLayout": "Detect Keyboard Layout",
-  "@detectLayout": {}
+  "@detectLayout": {},
+
+  "turnOffBitlockerTitle": "Turn off BitLocker",
+  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
+  "turnOffBitlockerLinkInstructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Restart Into Windows"
+
 }
