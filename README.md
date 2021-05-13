@@ -25,7 +25,7 @@ flutter config --enable-linux-desktop
 Install dependencies:
 ```sh
 cd packages/subiquity_client
-flutter pub get
+dart pub get
 cd subiquity
 make install_deps
 cd ../../ubuntu_desktop_installer
