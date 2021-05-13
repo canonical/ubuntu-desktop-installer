@@ -44,7 +44,7 @@ void main() {
   });
 
   test('model should be initially empty', () {
-    expect(model.layouts.isEmpty, true);
+    expect(model.layouts, isEmpty);
   });
 
   test('model should load mock data', () async {
@@ -53,19 +53,19 @@ void main() {
     final langcodes = ['fr', 'es'];
     expect(model.layouts.length, langcodes.length);
     for (final langcode in langcodes) {
-      expect(model.layouts.indexWhere((layout) => layout.code == langcode) > -1,
-          true);
+      expect(model.layouts.indexWhere((layout) => layout.code == langcode),
+          greaterThan(-1));
     }
   });
 
   test('model should be empty', () async {
     clientMock.lang = 'fr';
     await model.load(clientMock);
-    expect(model.layouts.isNotEmpty, true);
+    expect(model.layouts, isNotEmpty);
 
     clientMock.lang = 'invalid';
     await model.load(clientMock);
-    expect(model.layouts.isEmpty, true);
+    expect(model.layouts, isEmpty);
   });
 
   test('loading again should work', () async {

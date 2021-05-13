@@ -66,7 +66,7 @@ void main() {
     final listItems =
         find.descendant(of: languageList, matching: find.byType(ListTile));
     expect(listItems, findsWidgets);
-    expect(listItems.evaluate().length <= app.supportedLocales.length, true);
+    expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Italiano']) {
       expect(find.descendant(of: languageList, matching: find.text(language)),
           findsOneWidget);
