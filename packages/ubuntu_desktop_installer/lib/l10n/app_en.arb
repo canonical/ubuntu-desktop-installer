@@ -74,6 +74,7 @@
   "chooseSecurityKey": "Choose a security key",
   "confirmSecurityKey": "Confirm security key",
   "dontInstallDriverSoftwareNow": "Don't install the driver software for now",
-  "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates Settings."
+  "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates Settings.",
+  "secureBootPasswordsDontMatch": "Passwords do not match"
 
 }

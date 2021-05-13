@@ -20,6 +20,8 @@ class TurnOffSecureBootPage extends StatefulWidget {
 }
 
 class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     final model = context.watch<TurnOffSecureBootModel>();
@@ -31,46 +33,65 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
         ),
         body: Container(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(lang.turnOffSecureBootDescription),
-              ),
-              RadioListTile<SecureBootMode>(
-                title: Text(lang.turnOffSecureBootOption),
-                value: SecureBootMode.turnoff,
-                groupValue: model.secureBootMode,
-                onChanged: model.setSecureBootMode,
-              ),
-              const SizedBox(height: _kFormElementPadding),
-              _PasswordSizedBox(
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    hintText: lang.chooseSecurityKey,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(lang.turnOffSecureBootDescription),
+                ),
+                RadioListTile<SecureBootMode>(
+                  title: Text(lang.turnOffSecureBootOption),
+                  value: SecureBootMode.turnoff,
+                  groupValue: model.secureBootMode,
+                  onChanged: model.setSecureBootMode,
+                ),
+                const SizedBox(height: _kFormElementPadding),
+                _PasswordSizedBox(
+                  child: TextField(
+                    obscureText: true,
+                    onChanged: (value) {
+                      model.setSecurityKey(value);
+                      _formKey.currentState?.validate();
+                    },
+                    decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        hintText: lang.chooseSecurityKey,
+                        enabled: model.areTextFieldEnabled),
                   ),
                 ),
-              ),
-              const SizedBox(height: _kFormElementPadding),
-              _PasswordSizedBox(
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    hintText: lang.confirmSecurityKey,
+                const SizedBox(height: _kFormElementPadding),
+                _PasswordSizedBox(
+                  child: TextFormField(
+                    obscureText: true,
+                    validator: (value) {
+                      if (!model.isConfrmationKeyValid) {
+                        return lang.secureBootPasswordsDontMatch;
+                      }
+                      return '';
+                    },
+                    onChanged: (value) {
+                      model.setConfirmKey(value);
+                      _formKey.currentState?.validate();
+                    },
+                    decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        hintText: lang.confirmSecurityKey,
+                        enabled: model.areTextFieldEnabled),
                   ),
                 ),
-              ),
-              const SizedBox(height: _kFormElementPadding),
-              RadioListTile<SecureBootMode>(
-                title: Text(lang.dontInstallDriverSoftwareNow),
-                subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
-                value: SecureBootMode.dontinstall,
-                groupValue: model.secureBootMode,
-                onChanged: model.setSecureBootMode,
-              ),
-            ],
+                const SizedBox(height: _kFormElementPadding),
+                RadioListTile<SecureBootMode>(
+                  title: Text(lang.dontInstallDriverSoftwareNow),
+                  subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
+                  value: SecureBootMode.dontinstall,
+                  groupValue: model.secureBootMode,
+                  onChanged: model.setSecureBootMode,
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: Padding(
@@ -83,9 +104,11 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
               ),
               OutlinedButton(
                 child: Text(lang.continueButtonText),
-                onPressed: () {
-                  // TODO: add next step here
-                },
+                onPressed: model.isFormValid
+                    ? () {
+                        // TODO: add next step here
+                      }
+                    : null,
               ),
             ],
           ),
