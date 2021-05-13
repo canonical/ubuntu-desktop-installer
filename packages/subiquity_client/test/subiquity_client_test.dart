@@ -15,7 +15,7 @@ void main() {
 
   tearDown(() async {
     _client.close();
-    _testServer.stop();
+    await _testServer.stop();
   });
 
   test('locale', () async {
