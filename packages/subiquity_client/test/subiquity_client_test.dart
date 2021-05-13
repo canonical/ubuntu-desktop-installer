@@ -8,12 +8,12 @@ void main() {
   final _client = SubiquityClient();
   var _socketPath;
 
-  setUp(() async {
+  setUpAll(() async {
     _socketPath = await _testServer.start('examples/simple.json');
     _client.open(_socketPath);
   });
 
-  tearDown(() async {
+  tearDownAll(() async {
     _client.close();
     await _testServer.stop();
   });
