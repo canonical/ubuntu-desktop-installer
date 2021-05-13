@@ -39,8 +39,6 @@ jobs:
     - name: Run tests on subiquity_client
       working-directory: ./packages/subiquity_client
       run: flutter test --coverage
-      env:
-        FORCE_TEST_EXIT: true
 
     - name: Cleanup coverage results
       working-directory: ./packages/subiquity_client
