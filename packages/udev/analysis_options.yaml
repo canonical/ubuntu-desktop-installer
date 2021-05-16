@@ -1,0 +1,10 @@
+include: package:effective_dart/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+
+linter:
+  rules:
+    constant_identifier_names: false
+    lines_longer_than_80_chars: false
