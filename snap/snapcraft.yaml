@@ -14,6 +14,7 @@ architectures:
 apps:
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
