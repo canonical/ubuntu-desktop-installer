@@ -4,24 +4,15 @@ import 'package:http/http.dart';
 import 'package:path/path.dart' as p;
 import '../src/http_unix_client.dart';
 
-enum ServerMode {
-  LIVE,
-  DRY_RUN
-}
+enum ServerMode { LIVE, DRY_RUN }
 
 class SubiquityServer {
   late Process _serverProcess;
 
-  Future<String> start(ServerMode serverMode, [String machineConfig = ""]) async {
+  Future<String> start(ServerMode serverMode,
+      [String machineConfig = ""]) async {
     var socketPath;
     var subiquityCmd;
-    final subiquityPath = p.join(Directory.current.path, 'subiquity');
-    final subiquityEnv = {
-      'SNAP': '.',
-      'SNAP_NAME': 'subiquity',
-      'SNAP_REVISION': '',
-      'SNAP_VERSION': ''
-    };
     if (serverMode == ServerMode.DRY_RUN) {
       socketPath = p.join(Directory.current.path, 'test/socket');
       subiquityCmd = [
@@ -35,6 +26,13 @@ class SubiquityServer {
       socketPath = '/run/subiquity/socket';
       subiquityCmd = ['-m', 'subiquity.cmd.server'];
     }
+    final subiquityPath = p.join(Directory.current.path, 'subiquity');
+    final subiquityEnv = {
+      'SNAP': '.',
+      'SNAP_NAME': 'subiquity',
+      'SNAP_REVISION': '',
+      'SNAP_VERSION': ''
+    };
 
     _serverProcess = await Process.start('/usr/bin/python3', subiquityCmd,
             workingDirectory: subiquityPath,
