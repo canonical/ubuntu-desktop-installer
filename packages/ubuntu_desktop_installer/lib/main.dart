@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_client/test/test_server.dart';
+import 'package:subiquity_client/subiquity_server.dart';
 
 import 'app.dart';
 import 'keyboard_model.dart';
@@ -10,8 +10,8 @@ import 'l10n/app_localizations.dart';
 Future<void> main() async {
   final subiquityClient = SubiquityClient();
 
-  final testServer = TestServer();
-  await testServer.start('examples/simple.json').then(subiquityClient.open);
+  final subiquityServer = SubiquityServer();
+  await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
@@ -22,7 +22,7 @@ Future<void> main() async {
           lazy: false,
           dispose: (_, __) {
             subiquityClient.close();
-            testServer.stop();
+            subiquityServer.stop();
           }),
       ChangeNotifierProvider(create: (_) => KeyboardModel()),
     ],
