@@ -11,8 +11,16 @@ class SubiquityServer {
 
   Future<String> start(ServerMode serverMode,
       [String machineConfig = ""]) async {
-    var socketPath;
+    var subiquityPath;
     var subiquityCmd;
+    var socketPath;
+
+    if (Platform.environment['SNAP_NAME'] == 'ubuntu-desktop-installer') {
+      subiquityPath = p.join(Platform.environment['SNAP']!, 'bin', 'subiquity');
+    } else {
+      subiquityPath = p.join(Directory.current.path, 'subiquity');
+    }
+
     if (serverMode == ServerMode.DRY_RUN) {
       socketPath = p.join(Directory.current.path, 'test/socket');
       subiquityCmd = [
@@ -26,19 +34,16 @@ class SubiquityServer {
       socketPath = '/run/subiquity/socket';
       subiquityCmd = ['-m', 'subiquity.cmd.server'];
     }
-    final subiquityPath = p.join(Directory.current.path, 'subiquity');
-    final subiquityEnv = {
-      'SNAP': '.',
-      'SNAP_NAME': 'subiquity',
-      'SNAP_REVISION': '',
-      'SNAP_VERSION': ''
-    };
 
     _serverProcess = await Process.start('/usr/bin/python3', subiquityCmd,
-            workingDirectory: subiquityPath,
-            // so subiquity doesn't think it's the flutter snap...
-            environment: subiquityEnv)
-        .then((process) {
+        workingDirectory: subiquityPath,
+        // so subiquity doesn't think it's the installer or flutter snap...
+        environment: {
+          'SNAP': '.',
+          'SNAP_NAME': 'subiquity',
+          'SNAP_REVISION': '',
+          'SNAP_VERSION': ''
+        }).then((process) {
       stdout.addStream(process.stdout);
       stderr.addStream(process.stderr);
       return process;
