@@ -1,15 +1,16 @@
 import 'package:test/test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
 import 'package:subiquity_client/src/types.dart';
-import 'package:subiquity_client/test/test_server.dart';
 
 void main() {
-  final _testServer = TestServer();
+  final _testServer = SubiquityServer();
   final _client = SubiquityClient();
   var _socketPath;
 
   setUpAll(() async {
-    _socketPath = await _testServer.start('examples/simple.json');
+    _socketPath =
+        await _testServer.start(ServerMode.DRY_RUN, 'examples/simple.json');
     _client.open(_socketPath);
   });
 
