@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -9,9 +10,13 @@ import 'l10n/app_localizations.dart';
 
 Future<void> main() async {
   final subiquityClient = SubiquityClient();
-
   final subiquityServer = SubiquityServer();
-  await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
+
+  if (kDebugMode) {
+    await subiquityServer.start(ServerMode.DRY_RUN).then(subiquityClient.open);
+  } else {
+    await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
+  }
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
