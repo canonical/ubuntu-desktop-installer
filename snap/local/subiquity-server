@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SCRIPT_DIR=`dirname $0`
+
+export PYTHONIOENCODING=utf-8
+export SNAP=$SNAP/bin/subiquity
+
+cd $SCRIPT_DIR/subiquity
+/bin/python3 -m subiquity.cmd.server
