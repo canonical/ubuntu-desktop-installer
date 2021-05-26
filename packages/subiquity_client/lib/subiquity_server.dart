@@ -11,18 +11,12 @@ class SubiquityServer {
 
   Future<String> start(ServerMode serverMode,
       [String machineConfig = ""]) async {
-    var subiquityPath;
-    var subiquityCmd;
-    var socketPath;
-
-    if (Platform.environment['SNAP_NAME'] == 'ubuntu-desktop-installer') {
-      subiquityPath = p.join(Platform.environment['SNAP']!, 'bin', 'subiquity');
-    } else {
-      subiquityPath = p.join(Directory.current.path, 'subiquity');
+    if (serverMode == ServerMode.LIVE) {
+      return '/run/subiquity/socket';
     }
 
-    if (serverMode == ServerMode.DRY_RUN) {
-      socketPath = p.join(Directory.current.path, 'test/socket');
+    var subiquityCmd;
+    if (machineConfig != "") {
       subiquityCmd = [
         '-m',
         'subiquity.cmd.server',
@@ -31,9 +25,11 @@ class SubiquityServer {
         machineConfig
       ];
     } else {
-      socketPath = '/run/subiquity/socket';
-      subiquityCmd = ['-m', 'subiquity.cmd.server'];
+      subiquityCmd = ['-m', 'subiquity.cmd.server', '--dry-run'];
     }
+
+    var subiquityPath = p.join(Directory.current.path, 'subiquity');
+    var socketPath = p.join(Directory.current.path, 'test/socket');
 
     _serverProcess = await Process.start('/usr/bin/python3', subiquityCmd,
         workingDirectory: subiquityPath,

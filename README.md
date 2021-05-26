@@ -5,7 +5,7 @@
 
 This project is a modern implementation of the Ubuntu Desktop installer, using [subiquity](https://github.com/canonical/subiquity) as a backend and [Flutter](https://flutter.dev/) for the UI.
 
-## Checkout
+## Checkout & Run
 
 Grab the source:
 ```sh
@@ -32,7 +32,12 @@ cd ../../ubuntu_desktop_installer
 flutter pub get
 ```
 
-## Run
+Run:
+```sh
+DRY_RUN=1 flutter run
+```
+
+## Run Live Installer
 
 In one terminal run:
 ```sh
