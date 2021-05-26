@@ -5,7 +5,7 @@
 
 This project is a modern implementation of the Ubuntu Desktop installer, using [subiquity](https://github.com/canonical/subiquity) as a backend and [Flutter](https://flutter.dev/) for the UI.
 
-## Checkout & Run
+## Checkout
 
 Grab the source:
 ```sh
@@ -32,8 +32,17 @@ cd ../../ubuntu_desktop_installer
 flutter pub get
 ```
 
-Run:
+## Run
+
+In one terminal run:
 ```sh
+cd /path/to/ubuntu-desktop-installer/packages/subiquity_client/subiquity
+sudo python3 -m subiquity.cmd.server
+```
+
+In another terminal run:
+```sh
+cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
 flutter run
 ```
 

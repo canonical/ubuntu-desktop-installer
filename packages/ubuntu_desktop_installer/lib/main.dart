@@ -1,8 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_client/subiquity_server.dart';
 
 import 'app.dart';
 import 'keyboard_model.dart';
@@ -10,13 +8,7 @@ import 'l10n/app_localizations.dart';
 
 Future<void> main() async {
   final subiquityClient = SubiquityClient();
-  final subiquityServer = SubiquityServer();
-
-  if (kDebugMode) {
-    await subiquityServer.start(ServerMode.DRY_RUN).then(subiquityClient.open);
-  } else {
-    await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
-  }
+  subiquityClient.open('/run/subiquity/socket');
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
@@ -27,7 +19,6 @@ Future<void> main() async {
           lazy: false,
           dispose: (_, __) {
             subiquityClient.close();
-            subiquityServer.stop();
           }),
       ChangeNotifierProvider(create: (_) => KeyboardModel()),
     ],
