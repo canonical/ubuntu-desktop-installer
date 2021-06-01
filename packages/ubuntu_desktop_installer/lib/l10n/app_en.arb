@@ -75,6 +75,6 @@
   "minimalInstallationTitle": "Minimal installation",
   "minimalInstallationSubtitle": "Web browser and basic utilities.",
   "otherOptions": "Other options",
-  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi and additional media formats",
+  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware and additional media formats",
   "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary."
 }
