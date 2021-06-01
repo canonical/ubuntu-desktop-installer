@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../app.dart';
 import '../routes.dart';
 import '../widgets.dart';
+import 'wizard_page.dart';
 
 enum Option { none, repairUbuntu, tryUbuntu, installUbuntu }
 
@@ -76,81 +77,57 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   @override
   Widget build(BuildContext context) {
     return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(
-          title: Text(lang.tryOrInstallPageTitle),
-          automaticallyImplyLeading: false,
+      builder: (context, lang) => WizardPage(
+        title: Text(lang.tryOrInstallPageTitle),
+        contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
+        content: Row(
+          children: [
+            Expanded(
+              child: OptionCard(
+                selected: _option == Option.repairUbuntu,
+                imageAsset: 'assets/repair-wrench.png',
+                titleText: lang.repairInstallation,
+                bodyText: lang.repairInstallationDescription,
+                onSelected: () => selectOption(Option.repairUbuntu),
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: OptionCard(
+                selected: _option == Option.tryUbuntu,
+                imageAsset: 'assets/steering-wheel.png',
+                titleText: lang.tryUbuntu,
+                bodyText: lang.tryUbuntuDescription,
+                onSelected: () => selectOption(Option.tryUbuntu),
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: OptionCard(
+                selected: _option == Option.installUbuntu,
+                imageAsset: 'assets/hard-drive.png',
+                titleText: lang.installUbuntu,
+                bodyText: lang.installUbuntuDescription,
+                onSelected: () => selectOption(Option.installUbuntu),
+              ),
+            ),
+          ],
         ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 50),
-              Expanded(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: OptionCard(
-                        selected: _option == Option.repairUbuntu,
-                        imageAsset: 'assets/repair-wrench.png',
-                        titleText: lang.repairInstallation,
-                        bodyText: lang.repairInstallationDescription,
-                        onSelected: () => selectOption(Option.repairUbuntu),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        selected: _option == Option.tryUbuntu,
-                        imageAsset: 'assets/steering-wheel.png',
-                        titleText: lang.tryUbuntu,
-                        bodyText: lang.tryUbuntuDescription,
-                        onSelected: () => selectOption(Option.tryUbuntu),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: OptionCard(
-                        selected: _option == Option.installUbuntu,
-                        imageAsset: 'assets/hard-drive.png',
-                        titleText: lang.installUbuntu,
-                        bodyText: lang.installUbuntuDescription,
-                        onSelected: () => selectOption(Option.installUbuntu),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 150),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: Html(
-                      data: lang.releaseNotesLabel(_releaseNotesURL),
-                      onLinkTap: (url, _, __, ___) => launch(url!),
-                    ),
-                  ),
-                  ButtonBar(
-                    children: <OutlinedButton>[
-                      OutlinedButton(
-                        child: Text(lang.backButtonText),
-                        onPressed: Navigator.of(context).pop,
-                      ),
-                      OutlinedButton(
-                        child: Text(lang.continueButtonText),
-                        onPressed: (_option != Option.none)
-                            ? continueWithSelectedOption
-                            : null,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+        footer: Html(
+          data: lang.releaseNotesLabel(_releaseNotesURL),
+          onLinkTap: (url, _, __, ___) => launch(url!),
+        ),
+        actions: <WizardAction>[
+          WizardAction(
+            label: lang.backButtonText,
+            onActivated: Navigator.of(context).pop,
           ),
-        ),
+          WizardAction(
+            label: lang.continueButtonText,
+            enabled: _option != Option.none,
+            onActivated: continueWithSelectedOption,
+          ),
+        ],
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:flutter_html/style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets.dart';
+import 'wizard_page.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
   const TurnOffRSTPage({
@@ -15,64 +16,49 @@ class TurnOffRSTPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LocalizedView(
       builder: (context, lang) => Scaffold(
-        appBar: AppBar(
+        body: WizardPage(
           title: Text(lang.turnOffRST),
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
+          header: Text(lang.turnOffRSTDescription),
+          content: Column(
             children: <Widget>[
               Expanded(
-                  child: Column(children: <Widget>[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(lang.turnOffRSTDescription),
-                ),
-                const SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Html(
-                    data: lang.instructionsForRST('help.ubuntu.com/rst'),
-                    style: {
-                      'body': Style(
-                        margin: EdgeInsets.all(0),
+                child: Column(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Html(
+                        data: lang.instructionsForRST('help.ubuntu.com/rst'),
+                        style: {
+                          'body': Style(
+                            margin: EdgeInsets.all(0),
+                          ),
+                        },
+                        onLinkTap: (url, _, __, ___) => launch(url!),
                       ),
-                    },
-                    onLinkTap: (url, _, __, ___) => launch(url!),
-                  ),
+                    ),
+                    const SizedBox(height: 40),
+                    Image.asset(
+                      'assets/rst.png',
+                      color: Theme.of(context).textTheme.bodyText1!.color,
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 40),
-                Image.asset(
-                  'assets/rst.png',
-                  color: Theme.of(context).textTheme.bodyText1!.color,
-                ),
-              ])),
-              const SizedBox(height: 20),
-              ButtonBar(
-                children: <OutlinedButton>[
-                  OutlinedButton(
-                    child: Text(lang.backButtonText),
-                    onPressed: Navigator.of(context).pop,
-                  ),
-                  OutlinedButton(
-                    style: OutlinedButtonTheme.of(context).style!.copyWith(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => Color(0xFF0e8420),
-                          ),
-                          foregroundColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.white,
-                          ),
-                        ),
-                    child: Text(lang.restartButtonText),
-                    onPressed: () {
-                      print('TODO: restart computer');
-                    },
-                  ),
-                ],
               ),
             ],
           ),
+          actions: <WizardAction>[
+            WizardAction(
+              label: lang.backButtonText,
+              onActivated: Navigator.of(context).pop,
+            ),
+            WizardAction(
+              label: lang.restartButtonText,
+              highlighted: true,
+              onActivated: () {
+                print('TODO: restart computer');
+              },
+            ),
+          ],
         ),
       ),
     );

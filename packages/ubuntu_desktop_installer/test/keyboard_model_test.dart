@@ -1,95 +1,89 @@
-import 'dart:convert';
-import 'dart:ui';
-
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 
+class SubiquityClientMock extends SubiquityClient {
+  // ignore: type_annotate_public_apis
+  var lang = '';
+
+  @override
+  Future<KeyboardSetup> keyboard() async {
+    // ignore: omit_local_variable_types
+    List<KeyboardLayout> layouts = [];
+    switch (lang) {
+      case 'fr':
+        layouts.add(KeyboardLayout(code: 'fr', name: 'Français', variants: [
+          KeyboardVariant(code: '', name: 'Français'),
+          KeyboardVariant(
+              code: 'bepo',
+              name: 'Français - Français (Bépo, ergonomique, façon Dvorak)'),
+          KeyboardVariant(code: 'bre', name: 'Français - Français (breton)')
+        ]));
+        layouts.add(KeyboardLayout(code: 'es', name: 'Espagnol', variants: [
+          KeyboardVariant(code: '', name: 'Espagnol'),
+          KeyboardVariant(
+              code: 'cat',
+              name: 'Espagnol - Catalan (Espagne, avec L point médian)'),
+        ]));
+        break;
+      default:
+    }
+    return KeyboardSetup(layouts: layouts, setting: null);
+  }
+}
+
 void main() {
+  late SubiquityClientMock clientMock;
   late KeyboardModel model;
 
-  setUpAll(() {
-    TestWidgetsFlutterBinding.ensureInitialized();
-    ServicesBinding.instance!.defaultBinaryMessenger
-        .setMockMessageHandler('flutter/assets', (message) {
-      var key = utf8.decode(message!.buffer.asUint8List());
-      expect(key, 'assets/kbdnames.txt');
-      var data = '''C*layout*fr*French
-C*variant*fr**French
-C*variant*fr*bepo*French - French (Bepo, ergonomic, Dvorak way)
-C*variant*fr*bre*French - French (Breton)
-C*layout*es*Spanish
-C*variant*es**Spanish
-C*variant*es*cat*Spanish - Catalan (Spain, with middle-dot L)
-fr*layout*fr*Français
-fr*variant*fr**Français
-fr*variant*fr*bepo*Français - Français (Bépo, ergonomique, façon Dvorak)
-fr*variant*fr*bre*Français - Français (breton)
-fr*layout*es*Espagnol
-fr*variant*es**Espagnol
-fr*variant*es*cat*Espagnol - Catalan (Espagne, avec L point médian)
-es*layout*fr*Francés
-es*variant*fr**Francés
-es*variant*fr*bepo*Francés - Francés (bepo, ergonómico, forma Dvorak)
-es*variant*fr*bre*Francés - Francés (bretón)
-es*layout*es*Español
-es*variant*es**Español
-es*variant*es*cat*Español - Catalán (España, con L con punto medio)''';
-      return Future.value(utf8.encoder.convert(data).buffer.asByteData());
-    });
-  });
+  setUpAll(TestWidgetsFlutterBinding.ensureInitialized);
 
   setUp(() {
+    clientMock = SubiquityClientMock();
     model = KeyboardModel();
   });
 
   test('model should be initially empty', () {
-    expect(model.layouts.isEmpty, true);
-    expect(model.variants.isEmpty, true);
+    expect(model.layouts, isEmpty);
   });
 
   test('model should load mock data', () async {
-    await model.load(Locale('fr'));
+    clientMock.lang = 'fr';
+    await model.load(clientMock);
     final langcodes = ['fr', 'es'];
     expect(model.layouts.length, langcodes.length);
     for (final langcode in langcodes) {
-      expect(
-          model.layouts.indexWhere((layout) => layout.item1 == langcode) > -1,
-          true);
+      expect(model.layouts.indexWhere((layout) => layout.code == langcode),
+          greaterThan(-1));
     }
-    expect(model.variants.keys.contains('C'), false);
-    expect(model.variants.keys.contains('fr'), true);
-    expect(model.variants['fr']!.length, 3);
-    expect(
-        model.variants['fr']!
-            .singleWhere((variant) => variant.item1 == 'bepo')
-            .item2,
-        'Français - Français (Bépo, ergonomique, façon Dvorak)');
-    expect(model.variants.keys.contains('es'), true);
-    expect(model.variants['es']!.length, 2);
-    expect(
-        model.variants['es']!
-            .singleWhere((variant) => variant.item1 == 'cat')
-            .item2,
-        'Espagnol - Catalan (Espagne, avec L point médian)');
+  });
+
+  test('model should be empty', () async {
+    clientMock.lang = 'fr';
+    await model.load(clientMock);
+    expect(model.layouts, isNotEmpty);
+
+    clientMock.lang = 'invalid';
+    await model.load(clientMock);
+    expect(model.layouts, isEmpty);
   });
 
   test('loading again should work', () async {
-    for (final langcode in ['fr', 'fr', 'es', 'fr']) {
-      await model.load(Locale(langcode));
+    clientMock.lang = 'fr';
+    for (var i = 0; i < 3; ++i) {
+      await model.load(clientMock);
       expect(model.layouts.length, 2);
-      expect(model.variants.length, 2);
     }
   });
 
-  test('invalid language code should fall back to C', () async {
-    await model.load(Locale('foo'));
-    expect(model.layouts.length, 2);
-    expect(model.variants.length, 2);
-    expect(
-        model.variants['fr']!
-            .singleWhere((variant) => variant.item1 == 'bepo')
-            .item2,
-        'French - French (Bepo, ergonomic, Dvorak way)');
+  test('model should notify listeners', () async {
+    var notified = 0;
+    model.addListener(() {
+      ++notified;
+    });
+    for (var i = 1; i <= 3; ++i) {
+      await model.load(clientMock);
+      expect(notified, i);
+    }
   });
 }

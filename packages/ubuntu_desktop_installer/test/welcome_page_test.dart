@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
@@ -10,6 +11,18 @@ import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
 import 'simple_navigator_observer.dart';
+
+class SubiquityClientMock extends SubiquityClient {
+  @override
+  Future<String> switchLanguage(String code) async {
+    return '';
+  }
+
+  @override
+  Future<KeyboardSetup> keyboard() async {
+    return KeyboardSetup(layouts: []);
+  }
+}
 
 void main() {
   late SimpleNavigatorObserver observer;
@@ -31,8 +44,15 @@ void main() {
         Routes.tryOrInstall: (context) => Container(),
       },
     );
-    await tester.pumpWidget(ChangeNotifierProvider(
-        create: (context) => KeyboardModel(), child: app));
+    await tester.pumpWidget(
+      MultiProvider(providers: [
+        Provider(
+          // ignore: unnecessary_cast
+          create: (_) => SubiquityClientMock() as SubiquityClient,
+        ),
+        ChangeNotifierProvider(create: (context) => KeyboardModel()),
+      ], child: app),
+    );
     expect(observer.pushed.length, 1);
     expect(observer.pushed.first.settings.name, '/');
   }
@@ -46,7 +66,7 @@ void main() {
     final listItems =
         find.descendant(of: languageList, matching: find.byType(ListTile));
     expect(listItems, findsWidgets);
-    expect(listItems.evaluate().length <= app.supportedLocales.length, true);
+    expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Italiano']) {
       expect(find.descendant(of: languageList, matching: find.text(language)),
           findsOneWidget);

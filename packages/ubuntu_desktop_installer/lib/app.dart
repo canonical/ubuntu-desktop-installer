@@ -8,6 +8,7 @@ import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
 import 'pages/turn_off_secure_boot/turn_off_secure_boot_page.dart';
+import 'pages/updates_other_software/updates_other_software_page.dart';
 import 'pages/welcome_page.dart';
 import 'routes.dart';
 
@@ -45,6 +46,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.turnOffRST: (context) => const TurnOffRSTPage(),
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.turnOffSecureBoot: TurnOffSecureBootPage.create,
+          Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
         },
       ),
     );

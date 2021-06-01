@@ -6,12 +6,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:tuple/tuple.dart';
 
 import '../app.dart';
 import '../keyboard_model.dart';
 import '../routes.dart';
 import '../widgets.dart';
+import 'wizard_page.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -52,7 +54,7 @@ class _WelcomePageState extends State<WelcomePage> {
     _asyncLoadLanguageList();
 
     Provider.of<KeyboardModel>(context, listen: false)
-        .load(UbuntuDesktopInstallerApp.locale);
+        .load(Provider.of<SubiquityClient>(context, listen: false));
 
     final locale = Intl.defaultLocale;
     for (var i = 0; i < _languageList.length; ++i) {
@@ -76,62 +78,48 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(title: Text(lang.welcome)),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Center(
-                  child: FractionallySizedBox(
-                    widthFactor: 0.5,
-                    child: RoundedListView.builder(
-                      controller: _languageListScrollController,
-                      itemCount: _languageList.length,
-                      itemBuilder: (context, index) {
-                        return AutoScrollTag(
-                            index: index,
-                            key: ValueKey(index),
-                            controller: _languageListScrollController,
-                            child: ListTile(
-                              title: Text(_languageList[index].item2),
-                              selected: index == _selectedLanguageIndex,
-                              onTap: () {
-                                setState(() {
-                                  _selectedLanguageIndex = index;
-                                  final locale = _languageList[index].item1;
-                                  UbuntuDesktopInstallerApp.locale = locale;
-                                  Provider.of<KeyboardModel>(context,
-                                          listen: false)
-                                      .load(locale);
-                                });
-                              },
-                            ));
-                      },
-                    ),
-                  ),
+      builder: (context, lang) => WizardPage(
+        title: Text(lang.welcome),
+        content: FractionallySizedBox(
+          widthFactor: 0.5,
+          child: RoundedListView.builder(
+            controller: _languageListScrollController,
+            itemCount: _languageList.length,
+            itemBuilder: (context, index) {
+              return AutoScrollTag(
+                index: index,
+                key: ValueKey(index),
+                controller: _languageListScrollController,
+                child: ListTile(
+                  title: Text(_languageList[index].item2),
+                  selected: index == _selectedLanguageIndex,
+                  onTap: () async {
+                    final locale = _languageList[index].item1;
+                    final subiquityClient =
+                        Provider.of<SubiquityClient>(context, listen: false);
+                    await subiquityClient.switchLanguage(locale.languageCode);
+                    setState(() {
+                      _selectedLanguageIndex = index;
+                      UbuntuDesktopInstallerApp.locale = locale;
+                      Provider.of<KeyboardModel>(context, listen: false)
+                          .load(subiquityClient);
+                    });
+                  },
                 ),
-              ),
-              const SizedBox(height: 20),
-              ButtonBar(
-                children: <OutlinedButton>[
-                  OutlinedButton(
-                    child: Text(lang.backButtonText),
-                    onPressed: null,
-                  ),
-                  OutlinedButton(
-                    child: Text(lang.continueButtonText),
-                    onPressed: () {
-                      // TODO: implement ubiquity's apply_keyboard() function and run it here
-                      Navigator.pushNamed(context, Routes.tryOrInstall);
-                    },
-                  ),
-                ],
-              ),
-            ],
+              );
+            },
           ),
         ),
+        actions: <WizardAction>[
+          WizardAction(label: lang.backButtonText),
+          WizardAction(
+            label: lang.continueButtonText,
+            onActivated: () {
+              // TODO: implement ubiquity's apply_keyboard() function and run it here
+              Navigator.pushNamed(context, Routes.tryOrInstall);
+            },
+          ),
+        ],
       ),
     );
   }

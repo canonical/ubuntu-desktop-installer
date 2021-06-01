@@ -67,7 +67,6 @@
   "detectLayout": "Detect Keyboard Layout",
   "@detectLayout": {},
 
-
   "turnOffSecureBootTitle": "Turn off secure boot",
   "turnOffSecureBootDescription": "You've chosen to install third-party driver software. This requires turning off  Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.",
   "turnOffSecureBootOption": "Turn off secure boot",
@@ -75,6 +74,15 @@
   "confirmSecurityKey": "Confirm security key",
   "dontInstallDriverSoftwareNow": "Don't install the driver software for now",
   "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates Settings.",
-  "secureBootPasswordsDontMatch": "Passwords do not match"
+  "secureBootPasswordsDontMatch": "Passwords do not match",
 
+  "updatesOtherSoftwarePageTitle": "Updates and other software",
+  "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
+  "normalInstallationTitle": "Normal installation",
+  "normalInstallationSubtitle": "Web browser, utilities, office software, games and media players.",
+  "minimalInstallationTitle": "Minimal installation",
+  "minimalInstallationSubtitle": "Web browser and basic utilities.",
+  "otherOptions": "Other options",
+  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware and additional media formats",
+  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary."
 }

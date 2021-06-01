@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+# Do not translate the word "RELEASE".  It is used as a marker by casper.
+Name=Install RELEASE
+Comment=Install this system permanently to your hard disk
+Keywords=ubiquity;
+#use sh because pkexec is broken under xfce/lxce http://pad.lv/1193526
+Exec=ubuntu-desktop-installer
+Icon=ubiquity
+Terminal=false
+Categories=GTK;System;Settings;

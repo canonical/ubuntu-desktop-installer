@@ -4,17 +4,36 @@ import 'package:http/http.dart';
 import 'package:path/path.dart' as p;
 import '../src/http_unix_client.dart';
 
-class TestServer {
+enum ServerMode { LIVE, DRY_RUN }
+
+class SubiquityServer {
   late Process _serverProcess;
 
-  Future<String> start(String config) async {
-    final subiquityPath = p.join(Directory.current.path, 'subiquity');
-    final socketPath = p.join(Directory.current.path, 'test/socket');
+  Future<String> start(ServerMode serverMode,
+      [String machineConfig = ""]) async {
+    if (serverMode == ServerMode.LIVE) {
+      return '/run/subiquity/socket';
+    }
 
-    _serverProcess = await Process.start('/usr/bin/python3',
-        ['-m', 'subiquity.cmd.server', '--dry-run', '--machine-config', config],
+    var subiquityCmd;
+    if (machineConfig != "") {
+      subiquityCmd = [
+        '-m',
+        'subiquity.cmd.server',
+        '--dry-run',
+        '--machine-config',
+        machineConfig
+      ];
+    } else {
+      subiquityCmd = ['-m', 'subiquity.cmd.server', '--dry-run'];
+    }
+
+    var subiquityPath = p.join(Directory.current.path, 'subiquity');
+    var socketPath = p.join(Directory.current.path, 'test/socket');
+
+    _serverProcess = await Process.start('/usr/bin/python3', subiquityCmd,
         workingDirectory: subiquityPath,
-        // so subiquity doesn't think it's the flutter snap...
+        // so subiquity doesn't think it's the installer or flutter snap...
         environment: {
           'SNAP': '.',
           'SNAP_NAME': 'subiquity',
@@ -42,7 +61,8 @@ class TestServer {
     return socketPath;
   }
 
-  void stop() {
+  Future<void> stop() async {
     _serverProcess.kill();
+    await _serverProcess.exitCode;
   }
 }

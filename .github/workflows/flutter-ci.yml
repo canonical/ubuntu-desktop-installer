@@ -13,7 +13,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
     - uses: subosito/flutter-action@v1
       with:
         channel: 'dev'
@@ -21,57 +24,35 @@ jobs:
     - name: Enable Linux desktop support
       run: flutter config --enable-linux-desktop
 
-    # subiquity
+    - name: Install Melos
+      run: flutter pub global activate melos
 
-    - name: Checkout subiquity
-      run: git submodule update --init --recursive
+    - name: Install lcov
+      run: sudo apt update && sudo apt install lcov
+
+    # subiquity
     
     - name: Get subiquity dependencies
       working-directory: ./packages/subiquity_client/subiquity
       run: sudo apt update && make install_deps
 
-    # subiquity_client
+    # test all packages
 
-    - name: Get subiquity_client dependencies
-      working-directory: ./packages/subiquity_client
-      run: dart pub get
+    - name: Bootstrap workspace
+      run: melos bootstrap
     
-    - name: Run tests on subiquity_client
-      working-directory: ./packages/subiquity_client
-      run: flutter test --coverage
-
-    - name: Cleanup coverage results
-      working-directory: ./packages/subiquity_client
-      run: |
-        dart pub global activate remove_from_coverage
-        dart pub global run remove_from_coverage -f coverage/lcov.info -r '\.g\.dart$' -r '\.freezed\.dart$'
+    - name: Run tests
+      run: melos run coverage
 
     - name: Upload coverage results
       uses: codecov/codecov-action@v1
       with:
-        files: packages/subiquity_client/coverage/lcov.info
-        token: ${{secrets.CODECOV_TOKEN}}
-
-    # ubuntu_desktop_installer
-
-    - name: Get ubuntu_desktop_installer dependencies
-      working-directory: ./packages/ubuntu_desktop_installer
-      run: flutter pub get
-    
-    - name: Run tests on ubuntu_desktop_installer
-      working-directory: ./packages/ubuntu_desktop_installer
-      run: flutter test --coverage
-
-    - name: Upload coverage results
-      uses: codecov/codecov-action@v1
-      with:
-        files: packages/ubuntu_desktop_installer/coverage/lcov.info
         token: ${{secrets.CODECOV_TOKEN}}
 
     # general
 
     - name: Check for any formatting issues
-      run: flutter format --set-exit-if-changed .
+      run: melos run format
     
     - name: Check for any analyzer issues
-      run: flutter analyze --no-fatal-infos .
+      run: melos run analyze

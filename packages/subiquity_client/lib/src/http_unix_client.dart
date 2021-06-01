@@ -15,18 +15,24 @@ enum _HttpParserState {
 }
 
 class _HttpRequest {
-  String httpVersion = '';
-  int statusCode = 0;
-  String reasonPhrase = '';
-  Map<String, String> headers = {};
+  var httpVersion = '';
+  var statusCode = 0;
+  var reasonPhrase = '';
+  var headers = <String, String>{};
 
   BaseRequest request;
-  Completer<StreamedResponse> completer = Completer<StreamedResponse>();
-  StreamController<List<int>> stream = StreamController<List<int>>();
+  var completer = Completer<StreamedResponse>();
+  var stream = StreamController<List<int>>();
 
   _HttpRequest(this.request);
 
-  int? get contentLength => int.tryParse(headers['Content-Length']!);
+  int? get contentLength {
+    var contentLength = headers['content-length'];
+    if (contentLength == null) {
+      return null;
+    }
+    return int.parse(contentLength);
+  }
 }
 
 class HttpUnixClient extends BaseClient {
@@ -34,7 +40,7 @@ class HttpUnixClient extends BaseClient {
   final String path;
 
   // Unix socket connected to.
-  late Socket _socket;
+  Socket? _socket;
 
   // Requests in process.
   final _requests = <_HttpRequest>[];
@@ -43,17 +49,19 @@ class HttpUnixClient extends BaseClient {
   final _buffer = <int>[];
 
   var _parserState = _HttpParserState.status;
-  int? _chunkLength = -1;
-  var _chunkRead = -1;
+  int? _chunkLength;
+  int _chunkRead = 0;
 
   /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
   HttpUnixClient(this.path);
 
   @override
   Future<StreamedResponse> send(BaseRequest request) async {
-    final address = InternetAddress(path, type: InternetAddressType.unix);
-    _socket = await Socket.connect(address, 0);
-    _socket.listen(_processData);
+    if (_socket == null) {
+      var address = InternetAddress(path, type: InternetAddressType.unix);
+      _socket = await Socket.connect(address, 0);
+      _socket?.listen(_processData);
+    }
 
     var message = '';
     var url = request.url;
@@ -67,15 +75,15 @@ class HttpUnixClient extends BaseClient {
       message += '$name: $value\r\n';
     });
     message += '\r\n';
-    _socket.write(message);
+    _socket?.write(message);
 
     if (request is Request) {
-      _socket.write(request.body);
+      _socket?.write(request.body);
     } else if (request is MultipartRequest) {
-      // TODO FIXME(robert-ancell): Needs to be implemented.
+      // FIXME(robert-ancell): Needs to be implemented.
       assert(false);
     } else if (request is StreamedRequest) {
-      // TODO FIXME(robert-ancell): Needs to be implemented.
+      // FIXME(robert-ancell): Needs to be implemented.
       assert(false);
     }
 
@@ -86,7 +94,10 @@ class HttpUnixClient extends BaseClient {
 
   @override
   void close() {
-    _socket.close();
+    if (_socket != null) {
+      _socket?.close();
+      _socket = null;
+    }
   }
 
   void _processData(Uint8List data) {
@@ -146,7 +157,7 @@ class HttpUnixClient extends BaseClient {
           headers: request.headers,
           reasonPhrase: request.reasonPhrase);
       request.completer.complete(response);
-      var transferEncoding = request.headers['Transfer-Encoding'];
+      var transferEncoding = request.headers['transfer-encoding'];
       if (transferEncoding == 'chunked') {
         _parserState = _HttpParserState.chunkHeader;
       } else {
@@ -159,7 +170,7 @@ class HttpUnixClient extends BaseClient {
       var index = line.indexOf(':');
       var name = line.substring(0, index);
       var value = line.substring(index + 1).trim();
-      request.headers[name] = value;
+      request.headers[name.toLowerCase()] = value;
     }
 
     return false;

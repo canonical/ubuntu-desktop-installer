@@ -7,11 +7,19 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
+
+class SubiquityClientMock extends SubiquityClient {
+  @override
+  Future<KeyboardSetup> keyboard() async {
+    return KeyboardSetup(layouts: []);
+  }
+}
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
@@ -19,9 +27,15 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await setupAppLocalizations();
 
-    await tester.pumpWidget(ChangeNotifierProvider(
+    await tester.pumpWidget(MultiProvider(providers: [
+      Provider(
+        // ignore: unnecessary_cast
+        create: (_) => SubiquityClientMock() as SubiquityClient,
+      ),
+      ChangeNotifierProvider(
         create: (context) => KeyboardModel(),
-        child: UbuntuDesktopInstallerApp()));
+      ),
+    ], child: UbuntuDesktopInstallerApp()));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });
