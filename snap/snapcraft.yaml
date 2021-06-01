@@ -65,6 +65,7 @@ parts:
 
   ubuntu-desktop-installer:
     source: .
+    source-type: git
     plugin: nil
     build-environment:
       - C_INCLUDE_PATH: /snap/flutter/current/usr/include
