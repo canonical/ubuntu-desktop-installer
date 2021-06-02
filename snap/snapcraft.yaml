@@ -15,8 +15,6 @@ apps:
   subiquity-server:
     command: bin/subiquity-server
     daemon: simple
-    environment:
-      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
     restart-condition: always
 
   ubuntu-desktop-installer:
