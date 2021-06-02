@@ -59,7 +59,14 @@ parts:
       - iso-codes
       - lsb-release
       - ssh-import-id
-      - probert
+      - probert-common
+      - probert-network
+      - probert-storage
+      - python3-aiohttp
+      - python3-bson
+      - python3-curtin
+      - python3-pyudev
+      - python3-urwid
     prime:
       - -lib/systemd/system/*
 
@@ -97,6 +104,8 @@ parts:
       - libegl-mesa0
       - libegl1
       - libgl1
+      - libglib2.0-0
+      - libglib2.0-dev
       - libgtk-3-0
       - libpango-1.0-0
       - libpangocairo-1.0-0
@@ -121,8 +130,7 @@ parts:
       - usr/lib/*/libcairo*.so.*
       - usr/lib/*/libe*.so.*
       - usr/lib/*/libf*.so.*
-      - usr/lib/*/libgdk*.so.*
-      - usr/lib/*/libgtk*.so.*
+      - usr/lib/*/libg*.so.*
       - usr/lib/*/libharfbuzz*.so.*
       - usr/lib/*/libpango*.so.*
       - usr/lib/*/libpixman*.so.*
