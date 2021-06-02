@@ -61,7 +61,14 @@ parts:
       - iso-codes
       - lsb-release
       - ssh-import-id
-      - probert
+      - probert-common
+      - probert-network
+      - probert-storage
+      - python3-aiohttp
+      - python3-bson
+      - python3-curtin
+      - python3-pyudev
+      - python3-urwid
     prime:
       - -lib/systemd/system/*
 
