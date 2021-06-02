@@ -106,6 +106,8 @@ parts:
       - libegl-mesa0
       - libegl1
       - libgl1
+      - libglib2.0-0
+      - libglib2.0-dev
       - libgtk-3-0
       - libpango-1.0-0
       - libpangocairo-1.0-0
@@ -130,8 +132,7 @@ parts:
       - usr/lib/*/libcairo*.so.*
       - usr/lib/*/libe*.so.*
       - usr/lib/*/libf*.so.*
-      - usr/lib/*/libgdk*.so.*
-      - usr/lib/*/libgtk*.so.*
+      - usr/lib/*/libg*.so.*
       - usr/lib/*/libharfbuzz*.so.*
       - usr/lib/*/libpango*.so.*
       - usr/lib/*/libpixman*.so.*
