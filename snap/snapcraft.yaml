@@ -65,6 +65,7 @@ parts:
       - python3-aiohttp
       - python3-bson
       - python3-curtin
+      - python3-requests-unixsocket
       - python3-pyudev
       - python3-urwid
     prime:
