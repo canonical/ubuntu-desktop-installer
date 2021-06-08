@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../keyboard_model.dart';
+import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -161,7 +162,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ),
             WizardAction(
               label: lang.continueButtonText,
-              onActivated: () {},
+              onActivated: () {
+                Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+              },
             ),
           ],
         ),
