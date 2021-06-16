@@ -30,6 +30,7 @@ cd subiquity
 make install_deps
 cd ../../ubuntu_desktop_installer
 flutter pub get
+sudo apt install liblzma-dev
 ```
 
 Run:
