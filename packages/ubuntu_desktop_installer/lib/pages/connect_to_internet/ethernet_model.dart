@@ -48,8 +48,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   List<EthernetDeviceModel> get devices => _devices ??= _getDevices();
 
   List<EthernetDeviceModel> _getDevices() {
-    return _service.devices
-        .where((device) => device.wired != null)
+    return _service.wiredDevices
         .map((device) => EthernetDeviceModel(device))
         .toList();
   }
@@ -60,6 +59,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   }
 
   EthernetDeviceModel? _selected;
+  EthernetDeviceModel? get selectedDevice => _selected;
   bool isSelectedDevice(EthernetDeviceModel device) => device == _selected;
   void selectDevice(EthernetDeviceModel? device) {
     _selected = device;
