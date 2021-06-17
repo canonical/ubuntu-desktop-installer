@@ -14,7 +14,9 @@ Future<void> main() async {
   final subiquityServer = SubiquityServer();
 
   if (Platform.environment['DRY_RUN'] == '1') {
-    await subiquityServer.start(ServerMode.DRY_RUN, 'examples/simple.json').then(subiquityClient.open);
+    await subiquityServer
+        .start(ServerMode.DRY_RUN, 'examples/simple.json')
+        .then(subiquityClient.open);
   } else {
     await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
   }
