@@ -76,5 +76,15 @@
   "minimalInstallationSubtitle": "Navigateur internet et utilitaires de base.",
   "otherOptions": "Autres options",
   "installThirdPartyTitle": "Installer des logiciels tiers pour le support du matériel graphique et Wi-Fi, ainsi que des formats multimédia supplémentaires",
-  "installThirdPartySubtitle": "Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires."
+  "installThirdPartySubtitle": "Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires.",
+
+  "allocateDiskSpace": "Allouer de l’espace disque",
+  "startInstallingButtonText": "Commencer l’installation",
+  "diskHeadersDevice": "Disque",
+  "diskHeadersType": "Type",
+  "diskHeadersMountPoint": "Point de montage",
+  "diskHeadersSize": "Taille",
+  "diskHeadersUsed": "Utilisé",
+  "diskHeadersSystem": "Système",
+  "diskHeadersFormat": "Formatter"
 }
