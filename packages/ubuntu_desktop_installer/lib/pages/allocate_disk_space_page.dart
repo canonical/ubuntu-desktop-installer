@@ -30,7 +30,7 @@ class AllocateDiskSpacePage extends StatefulWidget {
 
 class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
   GuidedStorageResponse? _response;
-  List<_DiskOrPartition> _disksAndPartitions = [];
+  final List<_DiskOrPartition> _disksAndPartitions = [];
 
   @override
   void initState() {
@@ -41,13 +41,13 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
         print('Guided storage response: ${r.toJson()}');
         _response = r;
         _disksAndPartitions.clear();
-        r.disks!.forEach((disk) {
+        for (var disk in r.disks!) {
           _disksAndPartitions.add(_DiskOrPartition(disk: disk));
-          disk.partitions!.forEach((partition) {
+          for (var partition in disk.partitions!) {
             _disksAndPartitions
                 .add(_DiskOrPartition(disk: disk, partition: partition));
-          });
-        });
+          }
+        }
       });
     });
   }
