@@ -2,3 +2,5 @@ coverage/
 .idea/
 *.iml
 .vscode/
+
+/*.snap
