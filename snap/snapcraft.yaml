@@ -25,6 +25,9 @@ apps:
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
       GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
 
+  probert:
+    command: bin/probert
+
 parts:
   curtin:
     override-pull: |
@@ -34,7 +37,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-tag: "21.2"
+    source-commit: d49d35bc6643b063f085d870ea94a53677ae141c
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -50,6 +53,30 @@ parts:
       - urwid
       - requests
       - requests-unixsocket
+    organize:
+      'lib/python*/site-packages/usr/lib/curtin': 'usr/lib/'
+    stage:
+     - "*"
+     - "-lib/python*/site-packages/_yaml.*.so"
+     - "-lib/python*/site-packages/setuptools"
+     - "-lib/python*/site-packages/pip"
+     - "-lib/python*/site-packages/pkg_resources"
+     - "-lib/python*/site-packages/jsonschema"
+     - "-lib/python*/site-packages/wheel*"
+     - "-lib/python*/site-packages/probert"
+     - "-bin/activate*"
+     - "-lib/python3.8/site-packages/__pycache__/six.cpython*"
+     - "-lib/python3.8/site-packages/pip-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/wheel-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/_distutils_hack"
+
+  probert:
+    plugin: python
+    build-packages: [python-setuptools, build-essential, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
+    source: https://github.com/canonical/probert.git
+    source-type: git
+    source-commit: 51e7f1915b44ab792f46706026119a1fde39e49d
+    requirements: [requirements.txt]
 
   subiquitydeps:
     plugin: nil
@@ -59,12 +86,8 @@ parts:
       - iso-codes
       - lsb-release
       - ssh-import-id
-      - probert-common
-      - probert-network
-      - probert-storage
       - python3-aiohttp
       - python3-bson
-      - python3-curtin
       - python3-requests-unixsocket
       - python3-pyudev
       - python3-urwid
