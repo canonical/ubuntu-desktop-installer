@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/turn_off_secure_boot/turn_off_secure_boot_model.dart';
-import 'package:ubuntu_desktop_installer/widgets/localized_view.dart';
 
-const _kButtonPadding = EdgeInsets.only(right: 20, bottom: 20);
+import '../../widgets/localized_view.dart';
+import '../wizard_page.dart';
+import 'turn_off_secure_boot_model.dart';
+
 const _kFormElementPadding = 8.0;
 
 class TurnOffSecureBootPage extends StatefulWidget {
@@ -26,13 +27,10 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
   Widget build(BuildContext context) {
     final model = context.watch<TurnOffSecureBootModel>();
     return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(
-          title: Text(lang.turnOffSecureBootTitle),
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(20),
+      builder: (context, lang) => WizardPage(
+        title: Text(lang.turnOffSecureBootTitle),
+        content: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             key: _formKey,
             child: Column(
@@ -94,25 +92,20 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
             ),
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: _kButtonPadding,
-          child: ButtonBar(
-            children: <Widget>[
-              OutlinedButton(
-                child: Text(lang.backButtonText),
-                onPressed: Navigator.of(context).pop,
-              ),
-              OutlinedButton(
-                child: Text(lang.continueButtonText),
-                onPressed: model.isFormValid
-                    ? () {
-                        // TODO: add next step here
-                      }
-                    : null,
-              ),
-            ],
+        actions: <WizardAction>[
+          WizardAction(
+            label: lang.backButtonText,
+            onActivated: Navigator.of(context).pop,
           ),
-        ),
+          WizardAction(
+            label: lang.continueButtonText,
+            onActivated: model.isFormValid
+                ? () {
+                    // TODO: add next step here
+                  }
+                : null,
+          ),
+        ],
       ),
     );
   }

@@ -86,7 +86,7 @@
   "diskHeadersSize": "Taille",
   "diskHeadersUsed": "Utilisé",
   "diskHeadersSystem": "Système",
-  "diskHeadersFormat": "Formatter"
+  "diskHeadersFormat": "Formatter",
 
   "updatesOtherSoftwarePageTitle": "Mises à jour et logiciels supplémentaires",
   "updatesOtherSoftwarePageDescription": "Quelles applications souhaitez-vous installer pour commencer?",
