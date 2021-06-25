@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../routes.dart';
 import '../../widgets.dart';
 import '../../widgets/localized_view.dart';
 import '../wizard_page.dart';
@@ -72,7 +73,9 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           ),
           WizardAction(
             label: lang.continueButtonText,
-            onActivated: () {},
+            onActivated: () {
+              Navigator.pushNamed(context, Routes.allocateDiskSpace);
+            },
           ),
         ],
       ),

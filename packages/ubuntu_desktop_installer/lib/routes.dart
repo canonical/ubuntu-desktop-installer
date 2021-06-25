@@ -4,6 +4,7 @@ abstract class Routes {
   static const keyboardLayout = '/keyboardlayout';
   static const repairUbuntu = '/repairubuntu';
   static const tryUbuntu = '/tryubuntu';
+  static const allocateDiskSpace = '/allocatediskspace';
   static const turnOffSecureBoot = '/turnoffsecureboot';
   static const updatesOtherSoftware = '/updateothersoftware';
 }

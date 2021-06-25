@@ -83,6 +83,16 @@
   "minimalInstallationTitle": "Minimal installation",
   "minimalInstallationSubtitle": "Web browser and basic utilities.",
   "otherOptions": "Other options",
-  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware and additional media formats",
-  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary."
+  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
+  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary.",
+
+  "allocateDiskSpace": "Allocate disk space",
+  "startInstallingButtonText": "Start Installing",
+  "diskHeadersDevice": "Device",
+  "diskHeadersType": "Type",
+  "diskHeadersMountPoint": "Mount point",
+  "diskHeadersSize": "Size",
+  "diskHeadersUsed": "Used",
+  "diskHeadersSystem": "System",
+  "diskHeadersFormat": "Format"
 }
