@@ -1,21 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:nm/nm.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/device_model.dart';
 import 'package:udev/udev.dart';
 
-import 'device_model_test.mocks.dart';
+import 'connect_to_internet_test.mocks.dart';
 
-@GenerateMocks([
-  NetworkManagerActiveConnection,
-  NetworkManagerDevice,
-  NetworkManagerSettingsConnection,
-  Udev,
-  UdevDevice,
-])
 void main() {
   late DeviceModel model;
   late MockUdevDevice udev;
