@@ -32,6 +32,7 @@ void main() {
 
   tearDown(() {
     model.dispose();
+    deviceChanged.close();
     serviceChanged.close();
   });
 
