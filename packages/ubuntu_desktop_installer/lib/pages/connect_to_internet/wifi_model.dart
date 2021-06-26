@@ -72,8 +72,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   List<WifiDeviceModel> get devices => _devices ??= _getDevices();
 
   List<WifiDeviceModel> _getDevices() {
-    return _service.devices
-        .where((device) => device.wireless != null)
+    return _service.wirelessDevices
         .map((device) => WifiDeviceModel(device))
         .toList();
   }
@@ -93,10 +92,12 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     notifyListeners();
   }
 
-  void requestScan({String? ssid}) {
+  Future requestScan({String? ssid}) async {
+    final scans = <Future<void>>[];
     for (final device in devices) {
-      device.requestScan(ssid: ssid);
+      scans.add(device.requestScan(ssid: ssid));
     }
+    return Future.wait(scans);
   }
 }
 
@@ -221,7 +222,7 @@ class WifiDeviceModel extends DeviceModel {
     _completer!.future.timeout(_kWifiScanTimeout, onTimeout: () {
       _setLastScan(-1);
       _setScanning(false);
-      _completer?.completeError(this);
+      _completer?.complete(null);
     });
     _wireless.requestScan(ssids: ssids);
     return _completer!.future;

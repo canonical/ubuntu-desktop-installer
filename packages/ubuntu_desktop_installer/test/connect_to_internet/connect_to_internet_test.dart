@@ -6,8 +6,11 @@ import 'package:udev/udev.dart';
 import 'connect_to_internet_test.mocks.dart';
 
 @GenerateMocks([
+  NetworkManagerAccessPoint,
   NetworkManagerActiveConnection,
   NetworkManagerDevice,
+  NetworkManagerDeviceWired,
+  NetworkManagerDeviceWireless,
   NetworkManagerSettingsConnection,
   NetworkService,
   Udev,

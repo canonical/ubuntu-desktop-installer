@@ -43,6 +43,65 @@ class _FakeNetworkManagerActiveConnection extends _i1.Fake
   String toString() => super.toString();
 }
 
+/// A class which mocks [NetworkManagerAccessPoint].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNetworkManagerAccessPoint extends _i1.Mock
+    implements _i2.NetworkManagerAccessPoint {
+  MockNetworkManagerAccessPoint() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+      Invocation.getter(#propertiesChanged),
+      returnValue: Stream<List<String>>.empty()) as _i3.Stream<List<String>>);
+  @override
+  List<_i2.NetworkManagerWifiAccessPointFlag> get flags =>
+      (super.noSuchMethod(Invocation.getter(#flags),
+              returnValue: <_i2.NetworkManagerWifiAccessPointFlag>[])
+          as List<_i2.NetworkManagerWifiAccessPointFlag>);
+  @override
+  List<_i2.NetworkManagerWifiAccessPointSecurityFlag> get wpaFlags =>
+      (super.noSuchMethod(Invocation.getter(#wpaFlags),
+              returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[])
+          as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
+  @override
+  List<_i2.NetworkManagerWifiAccessPointSecurityFlag> get rsnFlags =>
+      (super.noSuchMethod(Invocation.getter(#rsnFlags),
+              returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[])
+          as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
+  @override
+  List<int> get ssid =>
+      (super.noSuchMethod(Invocation.getter(#ssid), returnValue: <int>[])
+          as List<int>);
+  @override
+  int get frequency =>
+      (super.noSuchMethod(Invocation.getter(#frequency), returnValue: 0)
+          as int);
+  @override
+  String get hwAddress =>
+      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
+          as String);
+  @override
+  _i2.NetworkManagerWifiMode get mode =>
+      (super.noSuchMethod(Invocation.getter(#mode),
+              returnValue: _i2.NetworkManagerWifiMode.unknown)
+          as _i2.NetworkManagerWifiMode);
+  @override
+  int get maxBitrate =>
+      (super.noSuchMethod(Invocation.getter(#maxBitrate), returnValue: 0)
+          as int);
+  @override
+  int get strength =>
+      (super.noSuchMethod(Invocation.getter(#strength), returnValue: 0) as int);
+  @override
+  int get lastSeen =>
+      (super.noSuchMethod(Invocation.getter(#lastSeen), returnValue: 0) as int);
+  @override
+  String toString() => super.toString();
+}
+
 /// A class which mocks [NetworkManagerActiveConnection].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -230,6 +289,76 @@ class MockNetworkManagerDevice extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#setAutoconnect, [value]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i3.Future<void>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [NetworkManagerDeviceWired].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNetworkManagerDeviceWired extends _i1.Mock
+    implements _i2.NetworkManagerDeviceWired {
+  MockNetworkManagerDeviceWired() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get permHwAddress =>
+      (super.noSuchMethod(Invocation.getter(#permHwAddress), returnValue: '')
+          as String);
+  @override
+  int get speed =>
+      (super.noSuchMethod(Invocation.getter(#speed), returnValue: 0) as int);
+  @override
+  List<String> get s390Subchannels =>
+      (super.noSuchMethod(Invocation.getter(#s390Subchannels),
+          returnValue: <String>[]) as List<String>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [NetworkManagerDeviceWireless].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNetworkManagerDeviceWireless extends _i1.Mock
+    implements _i2.NetworkManagerDeviceWireless {
+  MockNetworkManagerDeviceWireless() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+      Invocation.getter(#propertiesChanged),
+      returnValue: Stream<List<String>>.empty()) as _i3.Stream<List<String>>);
+  @override
+  String get permHwAddress =>
+      (super.noSuchMethod(Invocation.getter(#permHwAddress), returnValue: '')
+          as String);
+  @override
+  _i2.NetworkManagerWifiMode get mode =>
+      (super.noSuchMethod(Invocation.getter(#mode),
+              returnValue: _i2.NetworkManagerWifiMode.unknown)
+          as _i2.NetworkManagerWifiMode);
+  @override
+  int get bitrate =>
+      (super.noSuchMethod(Invocation.getter(#bitrate), returnValue: 0) as int);
+  @override
+  List<_i2.NetworkManagerAccessPoint> get accessPoints =>
+      (super.noSuchMethod(Invocation.getter(#accessPoints),
+              returnValue: <_i2.NetworkManagerAccessPoint>[])
+          as List<_i2.NetworkManagerAccessPoint>);
+  @override
+  List<_i2.NetworkManagerDeviceWifiCapability> get wirelessCapabilities =>
+      (super.noSuchMethod(Invocation.getter(#wirelessCapabilities),
+              returnValue: <_i2.NetworkManagerDeviceWifiCapability>[])
+          as List<_i2.NetworkManagerDeviceWifiCapability>);
+  @override
+  int get lastScan =>
+      (super.noSuchMethod(Invocation.getter(#lastScan), returnValue: 0) as int);
+  @override
+  _i3.Future<dynamic> requestScan({List<List<int>>? ssids}) =>
+      (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssids: ssids}),
+          returnValue: Future<dynamic>.value()) as _i3.Future<dynamic>);
   @override
   String toString() => super.toString();
 }
