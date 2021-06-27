@@ -31,7 +31,10 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(lang.updatesOtherSoftwarePageDescription),
+            Text(
+              lang.updatesOtherSoftwarePageDescription,
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
             const SizedBox(height: 8.0),
             RadioListTile<InstallationMode>(
               title: Text(lang.normalInstallationTitle),
@@ -50,7 +53,10 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               onChanged: model.setInstallationMode,
             ),
             const SizedBox(height: 24),
-            Text(lang.otherOptions),
+            Text(
+              lang.otherOptions,
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
             const SizedBox(height: 8.0),
             CheckboxListTile(
               title: Text(lang.installThirdPartyTitle),
