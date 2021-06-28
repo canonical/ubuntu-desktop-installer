@@ -86,5 +86,22 @@
   "diskHeadersSize": "Size",
   "diskHeadersUsed": "Used",
   "diskHeadersSystem": "System",
-  "diskHeadersFormat": "Format"
+  "diskHeadersFormat": "Format",
+
+  "installationCompleteTitle": "Installation complete",
+  "readyToUse": "**{system}** is installed and ready to use.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Restart into {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+        "system": {}
+    }
+  },
+  "shutdown": "Shut Down"
 }

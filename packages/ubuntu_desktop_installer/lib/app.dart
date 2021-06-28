@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:ubuntu_desktop_installer/pages/installation_complete.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n/app_localizations.dart';
@@ -47,6 +48,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+          Routes.installationComplete: InstallationCompletePage.create,
         },
       ),
     );
