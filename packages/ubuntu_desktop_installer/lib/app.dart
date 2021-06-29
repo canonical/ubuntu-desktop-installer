@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_complete.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n/app_localizations.dart';
 import 'pages/allocate_disk_space_page.dart';
+import 'pages/installation_complete/installation_complete.dart';
 import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
