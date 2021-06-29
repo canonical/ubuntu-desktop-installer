@@ -50,6 +50,13 @@ class SubiquityClient {
     return KeyboardSetup.fromJson(keyboardJson);
   }
 
+  Future<void> setKeyboard(KeyboardSetting setting) async {
+    final request = Request('POST', Uri.http('localhost', 'keyboard'));
+    request.body = jsonEncode(setting.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setKeyboard(${jsonEncode(setting.toJson())})", response);
+  }
+
   Future<String> proxy() async {
     final request = Request('GET', Uri.http('localhost', 'proxy'));
     final response = await _client.send(request);

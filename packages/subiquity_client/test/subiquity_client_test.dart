@@ -25,6 +25,14 @@ void main() {
   });
 
   test('keyboard', () async {
+    var ks = KeyboardSetting(
+      layout: 'us',
+      variant: '',
+      toggle: null,
+    );
+
+    await _client.setKeyboard(ks);
+
     var kb = await _client.keyboard();
     expect(kb.setting?.layout, 'us');
     expect(kb.setting?.variant, '');
