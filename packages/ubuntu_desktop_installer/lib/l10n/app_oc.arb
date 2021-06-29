@@ -53,7 +53,7 @@
   },
 
   "welcome": "La benvenguda",
-  "@welcome": {}
+  "@welcome": {},
   
   "keyboardLayoutPageTitle": "Agençament del clavièr",
   "@keyboardLayoutPageTitle": {},
