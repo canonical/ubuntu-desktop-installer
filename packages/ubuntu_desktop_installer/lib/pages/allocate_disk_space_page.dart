@@ -131,14 +131,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
 
                     // Use the default values for a number of endpoints
                     // for which a UI page isn't implemented yet.
-                    await client.markConfigured([
-                      'keyboard',
-                      'mirror',
-                      'proxy',
-                      'network',
-                      'ssh',
-                      'snaplist'
-                    ]);
+                    await client.markConfigured(
+                        ['mirror', 'proxy', 'network', 'ssh', 'snaplist']);
 
                     // Define a default identity until a UI page is implemented
                     // for it.
