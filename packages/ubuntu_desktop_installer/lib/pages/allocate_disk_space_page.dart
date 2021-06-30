@@ -150,6 +150,9 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                         .then((r) => print('Storage response: ${r.toJson()}'));
 
                     await client.confirm('/dev/tty1');
+
+                    Navigator.of(context)
+                        .pushNamed(Routes.installationComplete);
                   },
                 ),
               ],
