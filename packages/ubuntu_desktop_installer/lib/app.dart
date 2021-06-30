@@ -5,6 +5,7 @@ import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n/app_localizations.dart';
 import 'pages/allocate_disk_space_page.dart';
+import 'pages/installation_slides/installation_slides.dart';
 import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
@@ -47,6 +48,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+          Routes.installationSlides: InstallationSlides.create,
         },
       ),
     );
