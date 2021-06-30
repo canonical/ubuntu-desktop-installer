@@ -34,6 +34,8 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
+  // Note: subiquity's locale endpoint actually takes a language code, not a
+  // full locale (see https://bugs.launchpad.net/subiquity/+bug/1934114).
   Future<void> setLocale(String code) async {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$code"';
