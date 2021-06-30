@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 
 import '../../services.dart';
-import '../../utils.dart';
 import 'connect_model.dart';
 import 'device_model.dart';
+import 'property_stream_notifier.dart';
 
 class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   EthernetModel(this._service) {

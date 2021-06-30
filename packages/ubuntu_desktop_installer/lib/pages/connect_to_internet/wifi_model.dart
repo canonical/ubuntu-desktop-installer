@@ -4,9 +4,9 @@ import 'package:collection/collection.dart';
 import 'package:dbus/dbus.dart';
 
 import '../../services.dart';
-import '../../utils.dart';
 import 'connect_model.dart';
 import 'device_model.dart';
+import 'property_stream_notifier.dart';
 
 // TODO: appropriate timeout?
 const _kWifiScanTimeout = Duration(milliseconds: 7500);

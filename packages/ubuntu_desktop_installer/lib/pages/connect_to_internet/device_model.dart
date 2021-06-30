@@ -1,7 +1,7 @@
 import 'package:nm/nm.dart';
 import 'package:udev/udev.dart';
 
-import '../../utils.dart';
+import 'property_stream_notifier.dart';
 
 class DeviceModel extends PropertyStreamNotifier {
   DeviceModel(this._device) {
