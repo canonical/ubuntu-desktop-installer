@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 import '../../widgets.dart';
+import '../../widgets/highlighted_button.dart';
 import '../wizard_page.dart';
-import 'installation_complete_model.dart';
+import 'version_extractor.dart';
 
-const _kHighlightBackground = Color(0xFF0e8420);
-const _kHighlightForeground = Colors.white;
+const _kAvatarBorder = Color(0xFFe5e5e5);
 
 class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({Key? key}) : super(key: key);
@@ -25,59 +26,52 @@ class InstallationCompletePage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 64, bottom: 32),
-              child: Image.asset(
-                'assets/version.png',
-                width: 160,
-                height: 160,
-              ),
-            ),
-            RichText(
-              text: TextSpan(
-                  style: Theme.of(context).textTheme.bodyText1,
-                  children: TextUtils.parseText(lang.readyToUse('Ubuntu 20.04'))
-                      .map((t) => TextSpan(
-                          text: t.text, style: t.isBold ? boldStyle : null))
-                      .toList()),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 24),
-              child: SizedBox(
-                width: 207,
-                child: OutlinedButton(
-                  style: _buttonStyle(context, highlighted: true),
-                  onPressed: () {
-                    //TODO: restart pc
-                  },
-                  child: Text(
-                    lang.restartInto('Ubuntu 20.04'),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: _kAvatarBorder,
+                    width: 8,
+                  ),
+                ),
+                child: CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage(
+                    'assets/version.jpg',
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              width: 207,
-              child: OutlinedButton(
-                onPressed: () {
-                  //TODO: shutdown
-                },
-                child: Text(lang.shutdown),
+            MarkdownBody(
+              data: lang.readyToUse(VersionExtractor().getVersion()),
+            ),
+            IntrinsicWidth(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 24),
+                    child: HighlightedButton(
+                      onPressed: () {
+                        //TODO: restart pc
+                      },
+                      child: Text(
+                        lang.restartInto(VersionExtractor().getVersion()),
+                      ),
+                    ),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      //TODO: shutdown
+                    },
+                    child: Text(lang.shutdown),
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
     );
-  }
-
-  ButtonStyle? _buttonStyle(BuildContext context, {bool? highlighted}) {
-    if (highlighted != true) return null;
-    return OutlinedButtonTheme.of(context).style!.copyWith(
-          backgroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightBackground,
-          ),
-          foregroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightForeground,
-          ),
-        );
   }
 }

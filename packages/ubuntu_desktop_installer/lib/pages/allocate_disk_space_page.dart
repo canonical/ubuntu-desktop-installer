@@ -125,14 +125,16 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                   label: lang.startInstallingButtonText,
                   highlighted: true,
                   onActivated: () {
-                    final client =
-                        Provider.of<SubiquityClient>(context, listen: false);
-                    final choice = GuidedChoice(
-                        diskId: _response!.disks![0].id, useLvm: false);
-                    client
-                        .setGuidedStorage(choice)
-                        .then((r) => print('Storage response: ${r.toJson()}'));
-                    Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+                    // final client =
+                    //     Provider.of<SubiquityClient>(context, listen: false);
+                    // final choice = GuidedChoice(
+                    //     diskId: _response!.disks![0].id, useLvm: false);
+                    // client
+                    //     .setGuidedStorage(choice)
+                    //     .then((r) => print('Storage response: ${r.toJson()}'));
+                    // Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+                    Navigator.of(context)
+                        .pushNamed(Routes.installationComplete);
                   },
                 ),
               ],

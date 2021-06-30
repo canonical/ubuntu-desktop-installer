@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/highlighted_button.dart';
 
 const _kButtonSpacing = 8.0;
 const _kContentSpacing = 20.0;
@@ -113,20 +114,27 @@ class WizardPage extends StatelessWidget {
             ButtonBar(
               buttonPadding: EdgeInsets.zero,
               children: <Widget>[
-                for (final action in actions)
-                  if (action.visible ?? true)
-                    Padding(
+                ...actions.map((action) {
+                  if (action.visible ?? true) {
+                    final onPress =
+                        action.enabled ?? true ? action.onActivated : null;
+
+                    final textChild = Text(action.label!);
+                    return Padding(
                       padding: const EdgeInsets.only(left: _kButtonSpacing),
-                      child: OutlinedButton(
-                        onPressed:
-                            action.enabled ?? true ? action.onActivated : null,
-                        style: _buttonStyle(
-                          context,
-                          highlighted: action.highlighted ?? false,
-                        ),
-                        child: Text(action.label!),
-                      ),
-                    ),
+                      child: action.highlighted ?? false
+                          ? HighlightedButton(
+                              onPressed: onPress,
+                              child: textChild,
+                            )
+                          : OutlinedButton(
+                              onPressed: onPress,
+                              child: textChild,
+                            ),
+                    );
+                  }
+                  return SizedBox();
+                }).toList(),
                 const SizedBox(width: _kButtonSpacing),
               ],
             ),
@@ -134,17 +142,5 @@ class WizardPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  ButtonStyle? _buttonStyle(BuildContext context, {bool? highlighted}) {
-    if (highlighted != true) return null;
-    return OutlinedButtonTheme.of(context).style!.copyWith(
-          backgroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightBackground,
-          ),
-          foregroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightForeground,
-          ),
-        );
   }
 }
