@@ -73,15 +73,47 @@ void main() {
   });
 
   test('proxy', () async {
+    // TODO: Re-enable once we figure out why _client.setProxy() sometimes hangs
+    // await _client.setProxy('test');
+    // expect(await _client.proxy(), 'test');
+    // await _client.setProxy('');
     expect(await _client.proxy(), '');
   });
 
   test('mirror', () async {
+    await _client.setMirror('test');
+    expect(await _client.mirror(), endsWith('test'));
+    await _client.setMirror('archive.ubuntu.com/ubuntu');
     expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
   });
 
   test('identity', () async {
+    var newId = IdentityData(
+      realname: 'ubuntu',
+      username: 'ubuntu',
+      cryptedPassword:
+          r'$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0',
+      hostname: 'ubuntu-desktop',
+    );
+
+    await _client.setIdentity(newId);
+
     var id = await _client.identity();
+    expect(id.realname, 'ubuntu');
+    expect(id.username, 'ubuntu');
+    expect(id.cryptedPassword, '');
+    expect(id.hostname, 'ubuntu-desktop');
+
+    newId = IdentityData(
+      realname: '',
+      username: '',
+      cryptedPassword: '',
+      hostname: '',
+    );
+
+    await _client.setIdentity(newId);
+
+    id = await _client.identity();
     expect(id.realname, '');
     expect(id.username, '');
     expect(id.cryptedPassword, '');
@@ -89,7 +121,28 @@ void main() {
   });
 
   test('ssh', () async {
+    var newSsh = SSHData(
+      installServer: true,
+      allowPw: false,
+      authorizedKeys: [],
+    );
+
+    await _client.setSsh(newSsh);
+
     var ssh = await _client.ssh();
+    expect(ssh.installServer, true);
+    expect(ssh.allowPw, false);
+    expect(ssh.authorizedKeys, []);
+
+    newSsh = SSHData(
+      installServer: false,
+      allowPw: true,
+      authorizedKeys: [],
+    );
+
+    await _client.setSsh(newSsh);
+
+    ssh = await _client.ssh();
     expect(ssh.installServer, false);
     expect(ssh.allowPw, true);
     expect(ssh.authorizedKeys, []);

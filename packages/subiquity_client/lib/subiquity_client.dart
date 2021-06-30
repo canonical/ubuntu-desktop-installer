@@ -66,6 +66,13 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
+  Future<void> setProxy(String proxy) async {
+    final request = Request('POST', Uri.http('localhost', 'proxy'));
+    request.body = '"$proxy"';
+    final response = await _client.send(request);
+    await checkStatus("setProxy('$proxy')", response);
+  }
+
   Future<String> mirror() async {
     final request = Request('GET', Uri.http('localhost', 'mirror'));
     final response = await _client.send(request);
@@ -73,6 +80,13 @@ class SubiquityClient {
 
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
+  }
+
+  Future<void> setMirror(String mirror) async {
+    final request = Request('POST', Uri.http('localhost', 'mirror'));
+    request.body = '"$mirror"';
+    final response = await _client.send(request);
+    await checkStatus("setMirror('$mirror')", response);
   }
 
   Future<IdentityData> identity() async {
@@ -84,6 +98,14 @@ class SubiquityClient {
     return IdentityData.fromJson(identityJson);
   }
 
+  Future<void> setIdentity(IdentityData identity) async {
+    final request = Request('POST', Uri.http('localhost', 'identity'));
+    request.body = jsonEncode(identity.toJson());
+    final response = await _client.send(request);
+    await checkStatus(
+        "setIdentity(${jsonEncode(identity.toJson())})", response);
+  }
+
   Future<SSHData> ssh() async {
     final request = Request('GET', Uri.http('localhost', 'ssh'));
     final response = await _client.send(request);
@@ -91,6 +113,13 @@ class SubiquityClient {
 
     final sshJson = jsonDecode(await response.stream.bytesToString());
     return SSHData.fromJson(sshJson);
+  }
+
+  Future<void> setSsh(SSHData ssh) async {
+    final request = Request('POST', Uri.http('localhost', 'ssh'));
+    request.body = jsonEncode(ssh.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setSsh(${jsonEncode(ssh.toJson())})", response);
   }
 
   /// Get the installer state.
