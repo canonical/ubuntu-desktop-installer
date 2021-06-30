@@ -53,5 +53,38 @@
   },
 
   "welcome": "La benvenguda",
-  "@welcome": {}
+  "@welcome": {},
+  
+  "keyboardLayoutPageTitle": "Agençament del clavièr",
+  "@keyboardLayoutPageTitle": {},
+
+  "chooseYourKeyboardLayout": "Indicatz l’agençament del clavièr :",
+  "@chooseYourKeyboardLayout": {},
+
+  "typeToTest": "Picatz de tèxt aquí per ensajar lo clavièr",
+  "@typeToTest": {},
+
+  "detectLayout": "Detectar l’agençament del clavièr",
+  "@detectLayout": {},
+
+  "updatesOtherSoftwarePageTitle": "Mesas a jorn e logicials suplementaris",
+  "updatesOtherSoftwarePageDescription": "Quinas aplicacions volètz installar per començar ?",
+
+  "normalInstallationTitle": "Installacion normala",
+  "normalInstallationSubtitle": "Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.",
+  "minimalInstallationTitle": "Installacion minimala",
+  "minimalInstallationSubtitle": "Navegador internet e utilitari de basa.",
+  "otherOptions": "Autras opcions",
+  "installThirdPartyTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi e dels formats de mèdia suplementaris",
+  "installThirdPartySubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
+
+  "allocateDiskSpace": "Atribuir l’espaci disc",
+  "startInstallingButtonText": "Començar l’installacion",
+  "diskHeadersDevice": "Disc",
+  "diskHeadersType": "Tipe",
+  "diskHeadersMountPoint": "Punt de montatge",
+  "diskHeadersSize": "Talha",
+  "diskHeadersUsed": "Utilizat",
+  "diskHeadersSystem": "Sistèma",
+  "diskHeadersFormat": "Formatar"  
 }

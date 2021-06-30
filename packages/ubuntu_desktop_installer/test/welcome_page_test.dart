@@ -14,7 +14,7 @@ import 'simple_navigator_observer.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
-  Future<String> switchLanguage(String code) async {
+  Future<String> setLocale(String code) async {
     return '';
   }
 

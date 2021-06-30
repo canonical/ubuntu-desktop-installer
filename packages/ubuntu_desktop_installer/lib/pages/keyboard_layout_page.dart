@@ -4,6 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:keyboard_info/keyboard_info.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 
 import '../keyboard_model.dart';
 import '../routes.dart';
@@ -162,7 +163,15 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ),
             WizardAction(
               label: lang.continueButtonText,
-              onActivated: () {
+              onActivated: () async {
+                final client =
+                    Provider.of<SubiquityClient>(context, listen: false);
+                final keyboard = KeyboardSetting(
+                    layout: _selectedLayoutName,
+                    variant: keyboardModel.layouts[_selectedLayoutIndex]
+                        .variants![_selectedVariantIndex].code!);
+                await client.setKeyboard(keyboard);
+
                 Navigator.pushNamed(context, Routes.updatesOtherSoftware);
               },
             ),

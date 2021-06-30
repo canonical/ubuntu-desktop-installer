@@ -10,7 +10,7 @@ class KeyboardModel extends ChangeNotifier {
 
   /// Reload the list of layouts for the current locale.
   /// Call this when the locale has changed
-  /// (typically after calling SubiquityClient.switchLanguage(…)).
+  /// (typically after calling SubiquityClient.setLocale(…)).
   Future<void> load(SubiquityClient client) async {
     layouts.clear();
     await client.keyboard().then((keyboardSetup) {
