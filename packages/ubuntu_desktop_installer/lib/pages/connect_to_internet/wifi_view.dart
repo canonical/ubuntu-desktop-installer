@@ -45,7 +45,7 @@ class _WifiViewState extends State<WifiView> {
         child: RadioIconTile(
           contentPadding: widget.contentPadding,
           title: WifiListView(
-            onSelected: (device, accessPoint) {},
+            onSelected: widget.onSelected,
           ),
         ),
       ),
