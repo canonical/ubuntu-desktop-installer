@@ -34,11 +34,11 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
-  Future<void> switchLanguage(String code) async {
+  Future<void> setLocale(String code) async {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$code"';
     final response = await _client.send(request);
-    await checkStatus("switchLanguage('$code')", response);
+    await checkStatus("setLocale('$code')", response);
   }
 
   Future<KeyboardSetup> keyboard() async {
