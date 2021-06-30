@@ -97,7 +97,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     final locale = _languageList[index].item1;
                     final subiquityClient =
                         Provider.of<SubiquityClient>(context, listen: false);
-                    await subiquityClient.switchLanguage(locale.languageCode);
+                    await subiquityClient.setLocale(locale.languageCode);
                     setState(() {
                       _selectedLanguageIndex = index;
                       UbuntuDesktopInstallerApp.locale = locale;
