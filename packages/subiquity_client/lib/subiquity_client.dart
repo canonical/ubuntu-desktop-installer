@@ -40,7 +40,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$code"';
     final response = await _client.send(request);
-    await checkStatus("setLocale('$code')", response);
+    await checkStatus('setLocale("$code")', response);
   }
 
   Future<KeyboardSetup> keyboard() async {
@@ -72,7 +72,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'proxy'));
     request.body = '"$proxy"';
     final response = await _client.send(request);
-    await checkStatus("setProxy('$proxy')", response);
+    await checkStatus('setProxy("$proxy")', response);
   }
 
   Future<String> mirror() async {
@@ -88,7 +88,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'mirror'));
     request.body = '"$mirror"';
     final response = await _client.send(request);
-    await checkStatus("setMirror('$mirror')", response);
+    await checkStatus('setMirror("$mirror")', response);
   }
 
   Future<IdentityData> identity() async {
@@ -125,10 +125,20 @@ class SubiquityClient {
   }
 
   /// Get the installer state.
-  Future<ApplicationStatus> status() async {
-    final request = Request('GET', Uri.http('localhost', 'meta/status'));
-    final response = await _client.send(request);
-    await checkStatus("status()", response);
+  Future<ApplicationStatus> status({ApplicationState? current}) async {
+    var response;
+
+    if (current != null) {
+      final currentState = current.toString().split('.').last;
+      final request = Request('GET',
+          Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
+      response = await _client.send(request);
+      await checkStatus('status("$currentState")', response);
+    } else {
+      final request = Request('GET', Uri.http('localhost', 'meta/status'));
+      response = await _client.send(request);
+      await checkStatus("status()", response);
+    }
 
     final statusJson = jsonDecode(await response.stream.bytesToString());
     return ApplicationStatus.fromJson(statusJson);
@@ -149,7 +159,7 @@ class SubiquityClient {
     final request = Request(
         'POST', Uri.http('localhost', 'meta/confirm', {'tty': '"$tty"'}));
     final response = await _client.send(request);
-    await checkStatus("confirm('\"$tty\"')", response);
+    await checkStatus('confirm("$tty")', response);
   }
 
   /// Get guided disk options.

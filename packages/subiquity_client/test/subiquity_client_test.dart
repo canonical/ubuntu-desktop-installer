@@ -159,6 +159,9 @@ void main() {
     expect(status.echoSyslogId, startsWith('subiquity_echo.'));
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
+
+    // Should not block as the status is currently WAITING
+    status = await _client.status(current: ApplicationState.RUNNING);
   });
 
   test('markConfigured', () async {
