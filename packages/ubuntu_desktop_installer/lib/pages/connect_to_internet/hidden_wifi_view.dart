@@ -31,10 +31,10 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
     super.initState();
     final model = Provider.of<HiddenWifiModel>(context, listen: false);
     _editingController.text = model.ssid;
-    _editingController.addListener(_updatePassword);
+    _editingController.addListener(_updateSsid);
   }
 
-  void _updatePassword() {
+  void _updateSsid() {
     final model = Provider.of<HiddenWifiModel>(context, listen: false);
     model.setSsid(_editingController.text);
   }
@@ -43,7 +43,7 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
   void dispose() {
     super.dispose();
     _focusNode.dispose();
-    _editingController.removeListener(_updatePassword);
+    _editingController.removeListener(_updateSsid);
     _editingController.dispose();
   }
 
