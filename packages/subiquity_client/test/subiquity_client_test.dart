@@ -70,6 +70,8 @@ void main() {
 
     var sr = await _client.setGuidedStorage(gc);
     expect(sr.status, ProbeStatus.DONE);
+
+    await _client.setStorage(sr.config!);
   });
 
   test('proxy', () async {

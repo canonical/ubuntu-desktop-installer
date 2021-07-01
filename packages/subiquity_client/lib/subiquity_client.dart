@@ -178,4 +178,11 @@ class SubiquityClient {
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return StorageResponse.fromJson(responseJson);
   }
+
+  Future<void> setStorage(List<dynamic> config) async {
+    final request = Request('POST', Uri.http('localhost', 'storage'));
+    request.body = jsonEncode(config);
+    final response = await _client.send(request);
+    await checkStatus("setStorage(${jsonEncode(config)})", response);
+  }
 }
