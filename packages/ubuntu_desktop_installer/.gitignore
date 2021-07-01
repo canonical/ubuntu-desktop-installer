@@ -34,6 +34,10 @@
 /android/
 /ios/
 
+# Linux related
+generated_plugins.cmake
+generated_plugin_registrant.*
+
 # Web related
 lib/generated_plugin_registrant.dart
 
