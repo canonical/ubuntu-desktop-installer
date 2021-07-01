@@ -1,7 +1,7 @@
-import 'package:test/test.dart';
+import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   final _testServer = SubiquityServer();
