@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n/app_localizations.dart';
+import 'main.dart';
 import 'pages/allocate_disk_space_page.dart';
+import 'pages/chose_your_look_page.dart';
 import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
@@ -34,6 +37,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
         theme: yaru.lightTheme,
         darkTheme: yaru.darkTheme,
+        themeMode: context.watch<AppTheme>().value,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [
           ...AppLocalizations.localizationsDelegates,
@@ -47,6 +51,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+          Routes.choseYourLook: (context) => ChoseYourLookPage(),
         },
       ),
     );
