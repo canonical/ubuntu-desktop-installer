@@ -16,6 +16,9 @@
   "tryOrInstallPageTitle": "Try or install",
   "@tryOrInstallPageTitle": {},
 
+  "choseYourLookPageTitle": "Chose your look",
+  "@choseYourLookPageTitle": {},
+
   "repairInstallation": "Repair installation",
   "@repairInstallation": {},
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
