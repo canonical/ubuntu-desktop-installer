@@ -37,21 +37,27 @@ class ChooseYourLookPage extends StatelessWidget {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                OptionCard(
-                  imageAsset: 'assets/Theme_thumbnails-Light.png',
-                  titleText: lang.chooseYourLookPageLightSetting,
-                  bodyText: lang.chooseYourLookPageLightBodyText,
-                  selected: Theme.of(context).brightness == Brightness.light,
-                  onSelected: () {
-                    theme.apply(Brightness.light);
-                  },
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OptionCard(
+                    imageAsset: 'assets/Theme_thumbnails-Light.png',
+                    titleText: lang.chooseYourLookPageLightSetting,
+                    bodyText: lang.chooseYourLookPageLightBodyText,
+                    selected: Theme.of(context).brightness == Brightness.light,
+                    onSelected: () {
+                      theme.apply(Brightness.light);
+                    },
+                  ),
                 ),
-                OptionCard(
-                  imageAsset: 'assets/Theme_thumbnails-Dark.png',
-                  titleText: lang.chooseYourLookPageDarkSetting,
-                  bodyText: lang.chooseYourLookPageDarkBodyText,
-                  selected: Theme.of(context).brightness == Brightness.dark,
-                  onSelected: () => theme.apply(Brightness.dark),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OptionCard(
+                    imageAsset: 'assets/Theme_thumbnails-Dark.png',
+                    titleText: lang.chooseYourLookPageDarkSetting,
+                    bodyText: lang.chooseYourLookPageDarkBodyText,
+                    selected: Theme.of(context).brightness == Brightness.dark,
+                    onSelected: () => theme.apply(Brightness.dark),
+                  ),
                 )
               ]),
         ),

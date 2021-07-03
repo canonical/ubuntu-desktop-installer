@@ -15,7 +15,6 @@ void main() {
 
   late SimpleNavigatorObserver observer;
   late MaterialApp app;
-  late AppTheme appTheme;
 
   Future<void> setUpApp(WidgetTester tester) async {
     observer = SimpleNavigatorObserver();
@@ -24,10 +23,7 @@ void main() {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
       home: ChangeNotifierProvider(
-        create: (_) {
-          appTheme = AppTheme(themeSettings);
-          return appTheme;
-        },
+        create: (_) => AppTheme(themeSettings),
         child: ChooseYourLookPage(),
       ),
       navigatorObservers: [observer],
@@ -44,9 +40,5 @@ void main() {
     expect(find.byType(Text), findsNWidgets(8));
     expect(find.byType(OptionCard), findsNWidgets(2));
     expect(find.byType(OutlinedButton), findsNWidgets(2));
-    appTheme.apply(Brightness.light);
-    expect(themeSettings.stringValue('gtk-theme'), 'Yaru');
-    appTheme.apply(Brightness.dark);
-    expect(themeSettings.stringValue('gtk-theme'), 'Yaru-dark');
   });
 }
