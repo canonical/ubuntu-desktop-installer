@@ -1,44 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gsettings/gsettings.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/app_theme.dart';
-
 import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
 import 'package:ubuntu_desktop_installer/widgets/option_card.dart';
 
-import 'simple_navigator_observer.dart';
+import 'choose_your_look_page_test.mocks.dart';
 
+@GenerateMocks([AppTheme])
 void main() {
-  final themeSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
-
-  late SimpleNavigatorObserver observer;
-  late MaterialApp app;
-
-  Future<void> setUpApp(WidgetTester tester) async {
-    observer = SimpleNavigatorObserver();
-    app = MaterialApp(
-      supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      locale: Locale('en'),
-      home: ChangeNotifierProvider(
-        create: (_) => AppTheme(themeSettings),
-        child: ChooseYourLookPage(),
-      ),
-      navigatorObservers: [observer],
-    );
-    await tester.pumpWidget(app);
-    expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, '/');
+  AppLocalizations lang(WidgetTester tester) {
+    final page = tester.element(find.byType(ChooseYourLookPage));
+    return AppLocalizations.of(page)!;
   }
 
-  testWidgets('should toggle the theme', (tester) async {
-    await setUpApp(tester);
+  testWidgets('ChooseYourLookPage applies theme', (tester) async {
+    final AppTheme theme = MockAppTheme();
+    when(theme.apply(Brightness.light)).thenAnswer((_) {});
+    when(theme.apply(Brightness.dark)).thenAnswer((_) {});
 
-    expect(find.byType(AppBar), findsNWidgets(1));
-    expect(find.byType(Text), findsNWidgets(8));
-    expect(find.byType(OptionCard), findsNWidgets(2));
-    expect(find.byType(OutlinedButton), findsNWidgets(2));
+    await tester.pumpWidget(
+      ChangeNotifierProvider.value(
+        value: theme,
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: ChooseYourLookPage(),
+        ),
+      ),
+    );
+
+    final lightOptionCard = find.widgetWithText(
+      OptionCard,
+      lang(tester).chooseYourLookPageLightSetting,
+    );
+    expect(lightOptionCard, findsOneWidget);
+    await tester.tap(lightOptionCard);
+    verify(theme.apply(Brightness.light));
+
+    final darkOptionCard = find.widgetWithText(
+      OptionCard,
+      lang(tester).chooseYourLookPageDarkSetting,
+    );
+    expect(darkOptionCard, findsOneWidget);
+    await tester.tap(darkOptionCard);
+    verify(theme.apply(Brightness.dark));
   });
 }
