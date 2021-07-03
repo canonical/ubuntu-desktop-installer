@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
-import '../main.dart';
+import '../app_theme.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 

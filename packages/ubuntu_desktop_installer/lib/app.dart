@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
+import 'app_theme.dart';
 import 'l10n/app_localizations.dart';
-import 'main.dart';
 import 'pages/allocate_disk_space_page.dart';
 import 'pages/chose_your_look_page.dart';
 import 'pages/keyboard_layout_page.dart';
@@ -44,7 +44,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           const LocalizationsDelegateOc(),
         ],
         supportedLocales: AppLocalizations.supportedLocales,
-        home: WelcomePage(),
+        home: ChoseYourLookPage(),
         routes: <String, WidgetBuilder>{
           Routes.tryOrInstall: (context) => TryOrInstallPage(),
           Routes.turnOffRST: (context) => const TurnOffRSTPage(),
