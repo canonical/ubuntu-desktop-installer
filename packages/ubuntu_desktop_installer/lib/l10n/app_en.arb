@@ -16,8 +16,23 @@
   "tryOrInstallPageTitle": "Try or install",
   "@tryOrInstallPageTitle": {},
 
-  "choseYourLookPageTitle": "Chose your look",
-  "@choseYourLookPageTitle": {},
+  "chooseYourLookPageTitle": "Choose your look",
+  "@chooseYourLookPageTitle": {},
+
+  "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
+  "@chooseYourLookPageHeader": {},
+
+  "chooseYourLookPageDarkSetting": "Dark",
+  "@chooseYourLookPageDarkSetting": {},
+
+  "chooseYourLookPageLightSetting": "Light",
+  "@chooseYourLookPageLightSetting": {},
+
+  "chooseYourLookPageLightBodyText": "Everything is light and bright",
+  "@chooseYourLookPageLightBodyText": {},
+
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+  "@chooseYourLookPageDarkBodyText": {},
 
   "repairInstallation": "Repair installation",
   "@repairInstallation": {},
