@@ -18,7 +18,7 @@ class ChooseYourLookPage extends StatelessWidget {
     final theme = context.watch<AppTheme>();
     return LocalizedView(
       builder: (context, lang) => WizardPage(
-        header: Text(lang.chooseYourLookPageTitle),
+        header: Text(lang.chooseYourLookPageHeader),
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
