@@ -6,7 +6,6 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
@@ -14,6 +13,8 @@ import 'package:ubuntu_desktop_installer/app_theme.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
+
+import 'gsettings.mocks.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
@@ -23,7 +24,6 @@ class SubiquityClientMock extends SubiquityClient {
 }
 
 void main() {
-  final themeSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
     // Build our app and trigger a frame.
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,7 @@ void main() {
       ChangeNotifierProvider(
         create: (context) => KeyboardModel(),
       ),
-      ChangeNotifierProvider(create: (_) => AppTheme(themeSettings)),
+      ChangeNotifierProvider(create: (_) => AppTheme(MockGSettings())),
     ], child: UbuntuDesktopInstallerApp()));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
