@@ -17,6 +17,9 @@ apps:
     daemon: simple
     restart-condition: always
 
+  subiquity-loadkeys:
+    command: bin/subiquity/bin/subiquity-loadkeys
+
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop

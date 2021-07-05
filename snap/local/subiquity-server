@@ -3,7 +3,10 @@
 SCRIPT_DIR=`dirname $0`
 
 export PYTHONIOENCODING=utf-8
-export PYTHONPATH=$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
+PYTHONPATH=$SNAP/usr/lib/python3/site-packages:$PYTHONPATH
+PYTHONPATH=$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
+PYTHONPATH=$SNAP/lib/python3.8/site-packages:$PYTHONPATH
+export PYTHONPATH
 export SNAP=$SNAP/bin/subiquity
 
 cd $SCRIPT_DIR/subiquity
