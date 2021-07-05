@@ -14,6 +14,10 @@ class AffinityExpansionTile extends StatefulWidget {
     this.initiallyExpanded = false,
     this.onExpansionChanged,
     this.controlAffinity = ListTileControlAffinity.platform,
+    this.textColor,
+    this.collapsedTextColor,
+    this.iconColor,
+    this.collapsedIconColor,
   }) : super(key: key);
 
   final Widget title;
@@ -23,6 +27,10 @@ class AffinityExpansionTile extends StatefulWidget {
   final bool initiallyExpanded;
   final ValueChanged<bool>? onExpansionChanged;
   final ListTileControlAffinity controlAffinity;
+  final Color? iconColor;
+  final Color? collapsedIconColor;
+  final Color? textColor;
+  final Color? collapsedTextColor;
 
   @override
   _AffinityExpansionTileState createState() => _AffinityExpansionTileState();
@@ -98,6 +106,10 @@ class _AffinityExpansionTileState extends State<AffinityExpansionTile>
       leading: widget.leading ?? _buildIcon(ListTileControlAffinity.leading),
       trailing: widget.trailing ?? _buildIcon(ListTileControlAffinity.trailing),
       children: widget.children,
+      textColor: widget.textColor,
+      collapsedTextColor: widget.collapsedTextColor,
+      iconColor: widget.iconColor,
+      collapsedIconColor: widget.collapsedIconColor,
     );
   }
 }

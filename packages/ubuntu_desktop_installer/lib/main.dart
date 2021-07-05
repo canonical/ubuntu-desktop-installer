@@ -8,6 +8,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'app.dart';
 import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
+import 'services.dart';
 
 Future<void> main() async {
   final subiquityClient = SubiquityClient();
@@ -21,6 +22,9 @@ Future<void> main() async {
         .then(subiquityClient.open);
   }
 
+  final networkService = NetworkService();
+  await networkService.connect();
+
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
   runApp(MultiProvider(
@@ -33,6 +37,7 @@ Future<void> main() async {
             subiquityServer.stop();
           }),
       ChangeNotifierProvider(create: (_) => KeyboardModel()),
+      Provider.value(value: networkService),
     ],
     child: UbuntuDesktopInstallerApp(),
   ));
