@@ -21,7 +21,7 @@ import 'connect_to_internet_page_test.mocks.dart';
   EthernetDeviceModel,
   HiddenWifiModel,
   WifiAuthModel,
-  WifiModel
+  WifiModel,
 ])
 void main() {
   setUpAll(() async {

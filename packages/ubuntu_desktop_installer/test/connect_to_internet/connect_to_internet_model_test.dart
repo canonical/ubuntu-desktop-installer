@@ -1,10 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_internet_model.dart';
 
-import 'connect_to_internet_test.mocks.dart';
+import 'connect_to_internet_model_test.mocks.dart';
 
+@GenerateMocks([
+  ConnectModel,
+])
 void main() {
   test('no model selected', () {
     final model = ConnectToInternetModel();

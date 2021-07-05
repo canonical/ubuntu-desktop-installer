@@ -2,16 +2,25 @@ import 'dart:async';
 
 import 'package:dbus/dbus.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:nm/nm.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
 
-import 'connect_to_internet_test.mocks.dart';
+import 'wifi_model_test.mocks.dart';
 
 const kTestSsid = [0x55, 0x62, 0x75, 0x6e, 0x74, 0x75];
 
+@GenerateMocks([
+  NetworkManagerAccessPoint,
+  NetworkManagerActiveConnection,
+  NetworkManagerDevice,
+  NetworkManagerDeviceWireless,
+  NetworkManagerSettingsConnection,
+  NetworkService,
+])
 void main() {
   late WifiModel model;
   late WifiDeviceModel wifi;
