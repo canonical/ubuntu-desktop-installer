@@ -131,7 +131,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                         diskId: _response!.disks![0].id, useLvm: false);
                     await client.setGuidedStorage(choice);
 
-                    Navigator.pushNamed(context, Routes.writeChangesToDisk);
+                    Navigator.pushNamed(context, Routes.chooseYourLook);
                   },
                 ),
               ],
