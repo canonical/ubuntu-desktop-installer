@@ -7,7 +7,8 @@ PYTHONPATH=$SNAP/usr/lib/python3/site-packages:$PYTHONPATH
 PYTHONPATH=$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
 PYTHONPATH=$SNAP/lib/python3.8/site-packages:$PYTHONPATH
 export PYTHONPATH
+SNAPDIR=$SNAP
 export SNAP=$SNAP/bin/subiquity
 
 cd $SCRIPT_DIR/subiquity
-/bin/python3 -m subiquity.cmd.server
+$SNAPDIR/usr/bin/python3.8 -m subiquity.cmd.server
