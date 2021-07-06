@@ -1,9 +1,9 @@
-import 'package:crypt/crypt.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
+import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -39,7 +39,6 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     client.getGuidedStorage(0, true).then((r) {
       setState(() {
-        print('Guided storage response: ${r.toJson()}');
         _response = r;
         _disksAndPartitions.clear();
         for (var disk in r.disks!) {
@@ -128,27 +127,11 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                     final client =
                         Provider.of<SubiquityClient>(context, listen: false);
 
-                    // Use the default values for a number of endpoints
-                    // for which a UI page isn't implemented yet.
-                    await client.markConfigured(
-                        ['mirror', 'proxy', 'network', 'ssh', 'snaplist']);
-
-                    // Define a default identity until a UI page is implemented
-                    // for it.
-                    final identity = IdentityData(
-                        realname: 'Ubuntu',
-                        username: 'ubuntu',
-                        cryptedPassword: Crypt.sha512('ubuntu').toString(),
-                        hostname: 'ubuntu-desktop');
-                    await client.setIdentity(identity);
-
                     final choice = GuidedChoice(
                         diskId: _response!.disks![0].id, useLvm: false);
-                    await client
-                        .setGuidedStorage(choice)
-                        .then((r) => print('Storage response: ${r.toJson()}'));
+                    await client.setGuidedStorage(choice);
 
-                    await client.confirm('/dev/tty1');
+                    Navigator.pushNamed(context, Routes.writeChangesToDisk);
                   },
                 ),
               ],
