@@ -17,35 +17,146 @@ class WriteChangesToDiskPage extends StatefulWidget {
   _WriteChangesToDiskPageState createState() => _WriteChangesToDiskPageState();
 }
 
+class _DiskObject {
+  final String id;
+  final String serial;
+  final String path;
+  final String name;
+  final String wipe;
+  final bool preserve;
+  final bool grubDevice;
+
+  _DiskObject(this.id, this.serial, this.path, this.name, this.wipe,
+      this.preserve, this.grubDevice);
+
+  _DiskObject.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        serial = json['serial'],
+        path = json['path'],
+        name = json['name'],
+        wipe = json['wipe'],
+        preserve = json['preserve'],
+        grubDevice = json['grub_device'];
+
+  final List<_PartitionObject> partitions = [];
+}
+
+class _PartitionObject {
+  final String id;
+  final String device;
+  final int number;
+  final int size;
+  final String wipe;
+  final String flag;
+  final bool preserve;
+  final bool grubDevice;
+
+  _PartitionObject(this.id, this.device, this.number, this.size, this.wipe,
+      this.flag, this.preserve, this.grubDevice);
+
+  _PartitionObject.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        device = json['device'],
+        number = json['number'],
+        size = json['size'],
+        wipe = json['wipe'],
+        flag = json['flag'],
+        preserve = json['preserve'],
+        grubDevice =
+            json.containsKey('grub_device') ? json['grub_device'] : false;
+}
+
+class _FormatObject {
+  final String id;
+  final String volume;
+  final String fstype;
+  final bool preserve;
+
+  _FormatObject(this.id, this.volume, this.fstype, this.preserve);
+
+  _FormatObject.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        volume = json['volume'],
+        fstype = json['fstype'],
+        preserve = json['preserve'];
+}
+
+class _MountObject {
+  final String id;
+  final String device;
+  final String path;
+
+  _MountObject(this.id, this.device, this.path);
+
+  _MountObject.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        device = json['device'],
+        path = json['path'];
+}
+
 class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
-  GuidedStorageResponse? _response;
+  List<dynamic>? _storageConfig;
+
+  final List<_DiskObject> _disks = [];
+  final List<_PartitionObject> _partitions = [];
+  final List<_FormatObject> _formats = [];
+  final List<_MountObject> _mounts = [];
+
   final List<String> _partitionTableChanges = [];
   final List<String> _partitionChanges = [];
 
   @override
-  void initState() {
-    super.initState();
-    final client = Provider.of<SubiquityClient>(context, listen: false);
-    client.getGuidedStorage(0, true).then((r) {
-      setState(() {
-        _response = r;
-        _partitionTableChanges.clear();
-        // FIXME: assumes only one disk
-        final disk = r.disks![0];
-        final diskid = disk.id!.split('-').last;
-        _partitionTableChanges.add('${disk.label} ($diskid)');
-        _partitionChanges.clear();
-        for (var partition in disk.partitions!) {
-          // FIXME: needs localizing
-          _partitionChanges.add(
-              'partition #$diskid${partition.number} (${partition.annotations!.join(', ')})');
-        }
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    _storageConfig = ModalRoute.of(context)!.settings.arguments as List?;
+    print(
+        'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
+    for (var entry in _storageConfig!) {
+      entry = entry as Map<String, dynamic>;
+      switch (entry['type']) {
+        case 'disk':
+          _disks.add(_DiskObject.fromJson(entry));
+          break;
+        case 'partition':
+          _partitions.add(_PartitionObject.fromJson(entry));
+          break;
+        case 'format':
+          _formats.add(_FormatObject.fromJson(entry));
+          break;
+        case 'mount':
+          _mounts.add(_MountObject.fromJson(entry));
+          break;
+        default:
+          assert(false, 'Unexpected storage config type');
+      }
+    }
+    for (var partition in _partitions) {
+      for (var disk in _disks) {
+        if (partition.device == disk.id) {
+          disk.partitions.add(partition);
+        }
+      }
+    }
+    for (var disk in _disks) {
+      // FIXME: localize string
+      _partitionTableChanges.add('${disk.serial} (${disk.path})');
+      disk.partitions.sort((a, b) => a.number.compareTo(b.number));
+      for (var partition in disk.partitions) {
+        // FIXME: localize string
+        _partitionChanges.add(
+            'partition #${partition.number} of ${disk.serial} (${disk.path}) as');
+        for (var mount in _mounts) {
+          for (var format in _formats) {
+            if ((format.id == mount.device) &&
+                (format.volume == partition.id)) {
+              // FIXME: localize string
+              _partitionChanges.add(
+                  '        partition # as ${format.fstype} used for ${mount.path}');
+            }
+          }
+        }
+      }
+    }
+
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.writeChangesToDisk),
@@ -57,24 +168,32 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(lang.writeChangesPartitionTablesHeader)),
-                const SizedBox(height: 5),
+                const SizedBox(height: 10),
                 ...List.generate(
                     _partitionTableChanges.length,
-                    (index) => Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(_partitionTableChanges[index],
-                            style: TextStyle(fontWeight: FontWeight.bold)))),
-                const SizedBox(height: 20),
+                    (index) => Column(children: [
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(_partitionTableChanges[index],
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                          const SizedBox(height: 10),
+                        ])),
+                const SizedBox(height: 10),
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(lang.writeChangesPartitionsHeader)),
-                const SizedBox(height: 5),
+                const SizedBox(height: 10),
                 ...List.generate(
                     _partitionChanges.length,
-                    (index) => Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(_partitionChanges[index],
-                            style: TextStyle(fontWeight: FontWeight.bold)))),
+                    (index) => Column(children: [
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(_partitionChanges[index],
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                          const SizedBox(height: 10),
+                        ])),
               ]),
               actions: <WizardAction>[
                 WizardAction(
@@ -101,13 +220,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                         hostname: 'ubuntu-desktop');
                     await client.setIdentity(identity);
 
-                    final choice = GuidedChoice(
-                        diskId: _response!.disks![0].id, useLvm: false);
-                    final storageResponse =
-                        await client.setGuidedStorage(choice);
-                    print(
-                        'Storage config: ${JsonEncoder.withIndent('  ').convert(storageResponse.config)}');
-                    await client.setStorage(storageResponse.config!);
+                    await client.setStorage(_storageConfig!);
 
                     await client.confirm('/dev/tty1');
                   },

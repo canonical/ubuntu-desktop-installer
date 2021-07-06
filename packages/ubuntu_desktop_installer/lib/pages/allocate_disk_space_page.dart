@@ -129,9 +129,11 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
 
                     final choice = GuidedChoice(
                         diskId: _response!.disks![0].id, useLvm: false);
-                    await client.setGuidedStorage(choice);
+                    final storageResponse =
+                        await client.setGuidedStorage(choice);
 
-                    Navigator.pushNamed(context, Routes.writeChangesToDisk);
+                    Navigator.pushNamed(context, Routes.writeChangesToDisk,
+                        arguments: storageResponse.config);
                   },
                 ),
               ],
