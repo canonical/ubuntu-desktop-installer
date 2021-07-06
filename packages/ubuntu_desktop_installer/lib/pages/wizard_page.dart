@@ -81,7 +81,11 @@ class WizardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: title, automaticallyImplyLeading: false),
+      appBar: AppBar(
+        title: title,
+        automaticallyImplyLeading: false,
+        elevation: 1.0,
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
