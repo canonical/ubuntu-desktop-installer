@@ -64,6 +64,8 @@ class _PartitionObject {
         preserve = json['preserve'],
         grubDevice =
             json.containsKey('grub_device') ? json['grub_device'] : false;
+
+  final List<_FormatObject> formats = [];
 }
 
 class _FormatObject {
@@ -79,6 +81,8 @@ class _FormatObject {
         volume = json['volume'],
         fstype = json['fstype'],
         preserve = json['preserve'];
+
+  _MountObject? mount;
 }
 
 class _MountObject {
@@ -94,6 +98,18 @@ class _MountObject {
         path = json['path'];
 }
 
+class _PartitionChangeComposite {
+  final bool primary;
+  final String diskSerial;
+  final String diskPath;
+  final int partitionNumber;
+  final String fstype;
+  final String mountPath;
+
+  _PartitionChangeComposite(this.primary, this.diskSerial, this.diskPath,
+      this.partitionNumber, this.fstype, this.mountPath);
+}
+
 class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   List<dynamic>? _storageConfig;
 
@@ -102,8 +118,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   final List<_FormatObject> _formats = [];
   final List<_MountObject> _mounts = [];
 
-  final List<String> _partitionTableChanges = [];
-  final List<String> _partitionChanges = [];
+  final List<_PartitionChangeComposite> _partitionChanges = [];
 
   @override
   Widget build(BuildContext context) {
@@ -137,21 +152,33 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       }
     }
     for (var disk in _disks) {
-      // FIXME: localize string
-      _partitionTableChanges.add('${disk.serial} (${disk.path})');
       disk.partitions.sort((a, b) => a.number.compareTo(b.number));
       for (var partition in disk.partitions) {
-        // FIXME: localize string
-        _partitionChanges.add(
-            'partition #${partition.number} of ${disk.serial} (${disk.path}) as');
-        for (var mount in _mounts) {
-          for (var format in _formats) {
-            if ((format.id == mount.device) &&
-                (format.volume == partition.id)) {
-              // FIXME: localize string
-              _partitionChanges.add(
-                  '        partition # as ${format.fstype} used for ${mount.path}');
+        for (var format in _formats) {
+          for (var mount in _mounts) {
+            if (format.id == mount.device) {
+              format.mount = mount;
             }
+          }
+          if (format.volume == partition.id) {
+            partition.formats.add(format);
+          }
+        }
+        if (partition.formats.length == 1) {
+          final format = partition.formats.first;
+          _partitionChanges.add(_PartitionChangeComposite(true, disk.serial,
+              disk.path, partition.number, format.fstype, format.mount!.path));
+        } else {
+          _partitionChanges.add(_PartitionChangeComposite(
+              true, disk.serial, disk.path, partition.number, '', ''));
+          for (var format in partition.formats) {
+            _partitionChanges.add(_PartitionChangeComposite(
+                false,
+                disk.serial,
+                disk.path,
+                partition.number,
+                format.fstype,
+                format.mount!.path));
           }
         }
       }
@@ -170,11 +197,13 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     child: Text(lang.writeChangesPartitionTablesHeader)),
                 const SizedBox(height: 10),
                 ...List.generate(
-                    _partitionTableChanges.length,
+                    _disks.length,
                     (index) => Column(children: [
                           Align(
                               alignment: Alignment.centerLeft,
-                              child: Text(_partitionTableChanges[index],
+                              child: Text(
+                                  lang.writeChangesPartitionTablesEntry(
+                                      _disks[index].serial, _disks[index].path),
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold))),
                           const SizedBox(height: 10),
@@ -184,16 +213,35 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     alignment: Alignment.centerLeft,
                     child: Text(lang.writeChangesPartitionsHeader)),
                 const SizedBox(height: 10),
-                ...List.generate(
-                    _partitionChanges.length,
-                    (index) => Column(children: [
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(_partitionChanges[index],
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          const SizedBox(height: 10),
-                        ])),
+                ...List.generate(_partitionChanges.length, (index) {
+                  final change = _partitionChanges[index];
+                  var text = '';
+                  if (change.primary) {
+                    if (change.fstype.isNotEmpty) {
+                      text = lang.writeChangesPartitionEntryPrimaryFull(
+                          change.partitionNumber,
+                          change.diskSerial,
+                          change.diskPath,
+                          change.fstype,
+                          change.mountPath);
+                    } else {
+                      text = lang.writeChangesPartitionEntryPrimary(
+                          change.partitionNumber,
+                          change.diskSerial,
+                          change.diskPath);
+                    }
+                  } else {
+                    text = lang.writeChangesPartitionEntrySecondary(
+                        change.fstype, change.mountPath);
+                  }
+                  return Column(children: [
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(text,
+                            style: TextStyle(fontWeight: FontWeight.bold))),
+                    const SizedBox(height: 10),
+                  ]);
+                }),
               ]),
               actions: <WizardAction>[
                 WizardAction(
