@@ -4,7 +4,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../widgets.dart';
 import '../../widgets/highlighted_button.dart';
 import '../wizard_page.dart';
-import 'version_extractor.dart';
+import '../../utils/version_extractor.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
 
@@ -37,13 +37,13 @@ class InstallationCompletePage extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 80,
                   backgroundImage: AssetImage(
-                    'assets/version.jpg',
+                    'assets/version.png',
                   ),
                 ),
               ),
             ),
             MarkdownBody(
-              data: lang.readyToUse(VersionExtractor().getVersion()),
+              data: lang.readyToUse(VersionExtractor.instance.getVersion()),
             ),
             IntrinsicWidth(
               child: Column(
@@ -56,7 +56,8 @@ class InstallationCompletePage extends StatelessWidget {
                         //TODO: restart pc
                       },
                       child: Text(
-                        lang.restartInto(VersionExtractor().getVersion()),
+                        lang.restartInto(
+                            VersionExtractor.instance.getVersion()),
                       ),
                     ),
                   ),
