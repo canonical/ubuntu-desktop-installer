@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
+import 'package:ubuntu_desktop_installer/routes.dart';
 
 class HomePage extends StatelessWidget {
   static const targetRouteName = 'writeChangesToDisk';
@@ -117,6 +118,7 @@ void main() {
       home: HomePage(storageConfig: storageConfig),
       routes: {
         HomePage.targetRouteName: (context) => WriteChangesToDiskPage(),
+        Routes.chooseYourLook: (context) => Container(),
       },
     );
     clientMock = SubiquityClientMock();
