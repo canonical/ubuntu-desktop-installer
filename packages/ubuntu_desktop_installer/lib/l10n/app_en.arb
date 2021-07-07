@@ -99,6 +99,7 @@
       "path": {}
     }
   },
+  "writeChangesPartitionsHeader": "The following partitions are going to be formatted:",
   "writeChangesPartitionEntryPrimaryFull": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}",
   "@writeChangesPartitionEntryPrimaryFull": {
     "description": "An entry for a primary partition without secondary partitions",
@@ -126,6 +127,5 @@
       "fstype": {},
       "mountPath": {}
     }
-  },
-  "writeChangesPartitionsHeader": "The following partitions are going to be formatted:"
+  }
 }

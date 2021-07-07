@@ -86,5 +86,14 @@
   "diskHeadersSize": "Taille",
   "diskHeadersUsed": "Utilisé",
   "diskHeadersSystem": "Système",
-  "diskHeadersFormat": "Formatter"
+  "diskHeadersFormat": "Formatter",
+
+  "writeChangesToDisk": "Appliquer les changements sur les disques",
+  "writeChangesDescription": "Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.",
+  "writeChangesPartitionTablesHeader": "Les tables de partitions des périphériques suivants seront modifiées :",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "writeChangesPartitionsHeader": "Les partitions suivantes seront formattées :",
+  "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
+  "writeChangesPartitionEntryPrimary": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) en tant que",
+  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}"
 }
