@@ -1,7 +1,7 @@
-import 'package:test/test.dart';
+import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   final _testServer = SubiquityServer();
@@ -70,6 +70,8 @@ void main() {
 
     var sr = await _client.setGuidedStorage(gc);
     expect(sr.status, ProbeStatus.DONE);
+
+    await _client.setStorage(sr.config!);
   });
 
   test('proxy', () async {
@@ -157,6 +159,9 @@ void main() {
     expect(status.echoSyslogId, startsWith('subiquity_echo.'));
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
+
+    // Should not block as the status is currently WAITING
+    status = await _client.status(current: ApplicationState.RUNNING);
   });
 
   test('markConfigured', () async {

@@ -7,4 +7,6 @@ abstract class Routes {
   static const allocateDiskSpace = '/allocatediskspace';
   static const updatesOtherSoftware = '/updateothersoftware';
   static const installationComplete = '/installationcomplete';
+  static const writeChangesToDisk = '/writechangestodisk';
+  static const chooseYourLook = '/chooseyourlook';
 }

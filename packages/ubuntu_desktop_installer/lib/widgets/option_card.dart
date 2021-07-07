@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OptionCard extends StatefulWidget {
-  OptionCard({
+  const OptionCard({
     Key? key,
     this.imageAsset,
     this.titleText,
@@ -32,7 +32,14 @@ class OptionCardState extends State<OptionCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: (hovered || widget.selected) ? 4.0 : 1.0,
+      shape: RoundedRectangleBorder(
+          side: BorderSide(
+              color: widget.selected
+                  ? Theme.of(context).primaryColor.withOpacity(0.4)
+                  : Theme.of(context).colorScheme.onSurface.withAlpha(20),
+              width: 1),
+          borderRadius: BorderRadius.circular(4.0)),
+      elevation: widget.selected ? 0 : 1,
       child: InkWell(
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -42,21 +49,35 @@ class OptionCardState extends State<OptionCard> {
               flex: 2,
               child: widget.imageAsset != null
                   ? Image.asset(widget.imageAsset!)
-                  : SizedBox.shrink(),
+                  : const SizedBox.shrink(),
             ),
             const SizedBox(height: 40),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.titleText ?? '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                  color: widget.selected
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).colorScheme.onSurface.withAlpha(190),
+                ),
               ),
             ),
             const SizedBox(height: 10),
             Expanded(
               child: Opacity(
                 opacity: 0.9,
-                child: Text(widget.bodyText ?? ''),
+                child: Text(widget.bodyText ?? '',
+                    style: TextStyle(
+                      color: widget.selected
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withAlpha(190),
+                    )),
               ),
             ),
           ]),

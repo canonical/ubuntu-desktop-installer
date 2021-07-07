@@ -47,14 +47,18 @@ class _WelcomePageState extends State<WelcomePage> {
     });
   }
 
+  void _loadKeyboardModel() async {
+    await Provider.of<KeyboardModel>(context, listen: false)
+        .load(Provider.of<SubiquityClient>(context, listen: false));
+  }
+
   @override
   void initState() {
     super.initState();
 
     _asyncLoadLanguageList();
 
-    Provider.of<KeyboardModel>(context, listen: false)
-        .load(Provider.of<SubiquityClient>(context, listen: false));
+    _loadKeyboardModel();
 
     final locale = Intl.defaultLocale;
     for (var i = 0; i < _languageList.length; ++i) {
@@ -93,17 +97,13 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: ListTile(
                   title: Text(_languageList[index].item2),
                   selected: index == _selectedLanguageIndex,
-                  onTap: () async {
+                  onTap: () {
                     final locale = _languageList[index].item1;
-                    final subiquityClient =
-                        Provider.of<SubiquityClient>(context, listen: false);
-                    await subiquityClient.setLocale(locale.languageCode);
                     setState(() {
                       _selectedLanguageIndex = index;
                       UbuntuDesktopInstallerApp.locale = locale;
-                      Provider.of<KeyboardModel>(context, listen: false)
-                          .load(subiquityClient);
                     });
+                    _loadKeyboardModel();
                   },
                 ),
               );
@@ -114,8 +114,11 @@ class _WelcomePageState extends State<WelcomePage> {
           WizardAction(label: lang.backButtonText),
           WizardAction(
             label: lang.continueButtonText,
-            onActivated: () {
-              // TODO: implement ubiquity's apply_keyboard() function and run it here
+            onActivated: () async {
+              final client =
+                  Provider.of<SubiquityClient>(context, listen: false);
+              final locale = _languageList[_selectedLanguageIndex].item1;
+              await client.setLocale(locale.languageCode);
               Navigator.pushNamed(context, Routes.tryOrInstall);
             },
           ),
