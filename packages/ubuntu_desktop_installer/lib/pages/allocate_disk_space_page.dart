@@ -62,14 +62,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                     child: Column(children: <Widget>[
                   RoundedContainer(
                     child: DataTable(
-                      headingTextStyle: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .apply(fontWeightDelta: 3, color: Colors.black),
-                      dataTextStyle: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .apply(color: Colors.black),
+                      headingTextStyle: Theme.of(context).textTheme.subtitle2,
+                      dataTextStyle: Theme.of(context).textTheme.bodyText2,
                       columns: <DataColumn>[
                         DataColumn(
                           label: Text(lang.diskHeadersDevice),
