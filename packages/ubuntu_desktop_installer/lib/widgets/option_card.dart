@@ -60,7 +60,7 @@ class OptionCardState extends State<OptionCard> {
                   fontWeight: FontWeight.bold,
                   fontSize: 19,
                   color: widget.selected
-                      ? Theme.of(context).primaryColor.withOpacity(0.8)
+                      ? Theme.of(context).primaryColor
                       : Theme.of(context).colorScheme.onSurface.withAlpha(190),
                 ),
               ),
@@ -72,7 +72,7 @@ class OptionCardState extends State<OptionCard> {
                 child: Text(widget.bodyText ?? '',
                     style: TextStyle(
                       color: widget.selected
-                          ? Theme.of(context).primaryColor.withOpacity(0.8)
+                          ? Theme.of(context).primaryColor
                           : Theme.of(context)
                               .colorScheme
                               .onSurface
