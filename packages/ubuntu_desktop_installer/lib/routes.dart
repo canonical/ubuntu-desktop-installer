@@ -7,5 +7,5 @@ abstract class Routes {
   static const allocateDiskSpace = '/allocatediskspace';
   static const updatesOtherSoftware = '/updateothersoftware';
   static const writeChangesToDisk = '/writechangestodisk';
-  static const chooseYourLook = 'chooseyourlook';
+  static const chooseYourLook = '/chooseyourlook';
 }
