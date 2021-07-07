@@ -16,6 +16,24 @@
   "tryOrInstallPageTitle": "Try or install",
   "@tryOrInstallPageTitle": {},
 
+  "chooseYourLookPageTitle": "Choose your look",
+  "@chooseYourLookPageTitle": {},
+
+  "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
+  "@chooseYourLookPageHeader": {},
+
+  "chooseYourLookPageDarkSetting": "Dark",
+  "@chooseYourLookPageDarkSetting": {},
+
+  "chooseYourLookPageLightSetting": "Light",
+  "@chooseYourLookPageLightSetting": {},
+
+  "chooseYourLookPageLightBodyText": "Everything is light and bright",
+  "@chooseYourLookPageLightBodyText": {},
+
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+  "@chooseYourLookPageDarkBodyText": {},
+
   "repairInstallation": "Repair installation",
   "@repairInstallation": {},
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",

@@ -4,6 +4,7 @@ import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import '../routes.dart';
 
 import '../widgets.dart';
 import 'wizard_page.dart';
@@ -271,6 +272,8 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     await client.setStorage(_storageConfig!);
 
                     await client.confirm('/dev/tty1');
+
+                    Navigator.pushNamed(context, Routes.chooseYourLook);
                   },
                 ),
               ],
