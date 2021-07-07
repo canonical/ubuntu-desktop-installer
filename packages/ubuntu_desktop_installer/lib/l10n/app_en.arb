@@ -109,5 +109,41 @@
   "writeChangesToDisk": "Write changes to disk",
   "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
   "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimaryFull": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntryPrimaryFull": {
+    "description": "An entry for a primary partition without secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {},
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimary": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as",
+  "@writeChangesPartitionEntryPrimary": {
+    "description": "An entry for a primary partition with secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {}
+    }
+  },
+  "writeChangesPartitionEntrySecondary": "        partition # as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntrySecondary": {
+    "description": "An entry for a secondary partition",
+    "placeholders": {
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
   "writeChangesPartitionsHeader": "The following partitions are going to be formatted:"
 }
