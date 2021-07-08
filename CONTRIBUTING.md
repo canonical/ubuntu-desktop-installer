@@ -2,8 +2,8 @@
 
 ## Code of Conduct
 
-This project is subject to the [Ubuntu Code of Conduct](https://ubuntu.com/community/code-of-conduct) to foster a respectful and healthy place to contribute.
-By participating in the project (in the form of code contributions, issues, comments, conversations, …), you agree to abide by its terms.
+This project is subject to the [Ubuntu Code of Conduct](https://ubuntu.com/community/code-of-conduct) to foster an open and welcoming place to contribute.
+By participating in the project (in the form of code contributions, issues, comments, and other activities), you agree to abide by its terms.
 
 ## Pull requests
 
