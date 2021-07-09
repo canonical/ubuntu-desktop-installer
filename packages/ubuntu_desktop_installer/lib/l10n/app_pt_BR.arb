@@ -4,54 +4,23 @@
   "languageName": "Português do Brasil",
 
   "appTitle": "Instalador do Ubuntu Desktop",
-  "@appTitle": {},
 
   "backButtonText": "Voltar",
-  "@backButtonText": {},
   "continueButtonText": "Continuar",
-  "@continueButtonText": {},
   "restartButtonText": "Reiniciar",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Experimentar ou instalar",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Reparar instalação",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Experimentar o Ubuntu",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Você pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Instalar o Ubuntu",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "Talvez você queira ler as <a href=\"{url}\">notas de lançamento</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "Desligue a RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "Bem-vindo",
-  "@welcome": {}
+
+  "tryOrInstallPageTitle": "Experimentar ou instalar",
+  "repairInstallation": "Reparar instalação",
+  "repairInstallationDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.",
+  "tryUbuntu": "Experimentar o Ubuntu",
+  "tryUbuntuDescription": "Você pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.",
+  "installUbuntu": "Instalar o Ubuntu",
+  "installUbuntuDescription": "Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.",
+  "releaseNotesLabel": "Talvez você queira ler as <a href=\"{url}\">notas de lançamento</a>.",
+
+  "turnOffRST": "Desligue a RST",
+  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
+  "instructionsForRST": "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://{url}\">{url}</a>"
 }
