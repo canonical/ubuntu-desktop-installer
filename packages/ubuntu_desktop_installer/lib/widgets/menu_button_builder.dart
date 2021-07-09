@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 ///   iconBuilder: (context, value, _) => _toIcon(value),
 ///   itemBuilder: (context, value, _) => Text(value.toString()),
 /// )
+/// ```
 ///
 /// See also:
 ///  * [DropdownBuilder] - A similar builder widget but for dropdowns.

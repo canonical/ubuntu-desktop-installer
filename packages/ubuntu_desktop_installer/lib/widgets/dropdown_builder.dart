@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 ///   onSelected: (value) => model.enumValue = value,
 ///   itemBuilder: (context, value, _) => Text(value.toString()),
 /// )
+/// ```
 ///
 /// See also:
 ///  * [MenuButtonBuilder] - A similar builder widget but for menu buttons.
