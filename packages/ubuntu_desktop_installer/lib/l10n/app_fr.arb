@@ -56,5 +56,12 @@
   "writeChangesPartitionsHeader": "Les partitions suivantes seront formattées :",
   "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
   "writeChangesPartitionEntryPrimary": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) en tant que",
-  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}"
+  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}",
+
+  "chooseYourLookPageTitle": "Choisissez l’apparence",
+  "chooseYourLookPageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
+  "chooseYourLookPageDarkSetting": "Sombre",
+  "chooseYourLookPageLightSetting": "Clair",
+  "chooseYourLookPageLightBodyText": "Clair et brillant",
+  "chooseYourLookPageDarkBodyText": "Sombre et foncé"
 }
