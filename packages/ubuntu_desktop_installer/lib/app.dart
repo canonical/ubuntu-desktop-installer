@@ -49,7 +49,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           Routes.welcome: WelcomePage.create,
           Routes.tryOrInstall: TryOrInstallPage.create,
-          Routes.turnOffRST: (context) => const TurnOffRSTPage(),
+          Routes.turnOffRST: TurnOffRSTPage.create,
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
