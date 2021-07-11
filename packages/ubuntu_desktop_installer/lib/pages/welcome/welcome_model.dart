@@ -8,7 +8,9 @@ import 'package:tuple/tuple.dart';
 
 import '../../keyboard_model.dart';
 
+/// Implements the business logic of the welcome page.
 class WelcomeModel extends ChangeNotifier {
+  /// Creates a model with the specified [client] and [keyboardModel].
   WelcomeModel({
     required SubiquityClient client,
     required KeyboardModel keyboardModel,
@@ -18,8 +20,9 @@ class WelcomeModel extends ChangeNotifier {
   final SubiquityClient _client;
   final KeyboardModel _keyboardModel;
 
-  int _selectedLanguageIndex = 0;
+  /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
+  int _selectedLanguageIndex = 0;
   set selectedLanguageIndex(int index) {
     if (_selectedLanguageIndex == index) return;
     _selectedLanguageIndex = index;
@@ -28,6 +31,7 @@ class WelcomeModel extends ChangeNotifier {
 
   final _languageList = <Tuple2<Locale, String>>[];
 
+  /// Loads available languages.
   Future<void> loadLanguages() async {
     assert(_languageList.isEmpty);
 
@@ -42,16 +46,24 @@ class WelcomeModel extends ChangeNotifier {
         removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
   }
 
+  /// Loads keyboard model for the currently selected locale.
   Future<void> loadKeyboardModel() => _keyboardModel.load(_client);
 
+  /// Returns the locale for the given language [index].
   Locale locale(int index) => _languageList[index].item1;
-  Future<void> setLocale(Locale locale) {
+
+  /// Applies the given [locale].
+  Future<void> applyLocale(Locale locale) {
     return _client.setLocale(locale.languageCode);
   }
 
+  /// Returns the number of languages.
   int get languageCount => _languageList.length;
+
+  /// Returns the name of the language at the given [index].
   String language(int index) => _languageList[index].item2;
 
+  /// Selects the given [locale].
   void selectLocale(String locale) {
     for (var i = 0; i < _languageList.length; ++i) {
       if (locale.contains(this.locale(i).languageCode)) {

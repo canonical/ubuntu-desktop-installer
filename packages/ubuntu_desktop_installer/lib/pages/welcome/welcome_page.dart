@@ -89,7 +89,7 @@ class _WelcomePageState extends State<WelcomePage> {
           WizardAction(
             label: lang.continueButtonText,
             onActivated: () {
-              model.setLocale(model.locale(model.selectedLanguageIndex));
+              model.applyLocale(model.locale(model.selectedLanguageIndex));
               Navigator.pushNamed(context, Routes.tryOrInstall);
             },
           ),

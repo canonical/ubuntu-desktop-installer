@@ -74,7 +74,7 @@ void main() {
       client: client,
       keyboardModel: MockKeyboardModel(),
     );
-    model.setLocale(Locale('fr', 'CA'));
+    model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr')).called(1);
   });
 
