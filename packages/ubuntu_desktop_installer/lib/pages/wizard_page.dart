@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/highlighted_button.dart';
 
-const _kButtonSpacing = 8.0;
-const _kContentSpacing = 20.0;
-const _kContentPadding = EdgeInsets.symmetric(horizontal: 24);
-const _kHeaderPadding = EdgeInsets.fromLTRB(24, 24, 24, 0);
-const _kFooterPadding = EdgeInsets.fromLTRB(24, 0, 24, 24);
-const _kHighlightBackground = Color(0xFF0e8420);
-const _kHighlightForeground = Colors.white;
+import '../app_theme.dart';
+import '../constants.dart';
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
 class WizardAction {
@@ -56,7 +51,7 @@ class WizardPage extends StatelessWidget {
     this.title,
     this.header,
     this.content,
-    this.contentPadding = _kContentPadding,
+    this.contentPadding = kContentPadding,
     this.footer,
     this.actions = const <WizardAction>[],
   }) : super(key: key);
@@ -87,7 +82,7 @@ class WizardPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
-            padding: _kHeaderPadding,
+            padding: kHeaderPadding,
             child: header != null
                 ? Align(
                     alignment: Alignment.centerLeft,
@@ -95,22 +90,22 @@ class WizardPage extends StatelessWidget {
                   )
                 : null,
           ),
-          if (header != null) const SizedBox(height: _kContentSpacing),
+          if (header != null) const SizedBox(height: kContentSpacing),
           Expanded(
             child: Padding(padding: contentPadding, child: content),
           ),
-          const SizedBox(height: _kContentSpacing),
+          const SizedBox(height: kContentSpacing),
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: _kFooterPadding,
+        padding: kFooterPadding,
         child: Row(
           mainAxisAlignment: footer != null
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.end,
           children: <Widget>[
             if (footer != null) Expanded(child: footer!),
-            const SizedBox(width: _kContentSpacing),
+            const SizedBox(width: kContentSpacing),
             ButtonBar(
               buttonPadding: EdgeInsets.zero,
               children: <Widget>[
@@ -121,7 +116,7 @@ class WizardPage extends StatelessWidget {
 
                     final textChild = Text(action.label!);
                     return Padding(
-                      padding: const EdgeInsets.only(left: _kButtonSpacing),
+                      padding: const EdgeInsets.only(left: kButtonBarSpacing),
                       child: action.highlighted ?? false
                           ? HighlightedButton(
                               onPressed: onPress,
@@ -135,7 +130,7 @@ class WizardPage extends StatelessWidget {
                   }
                   return SizedBox();
                 }).toList(),
-                const SizedBox(width: _kButtonSpacing),
+                const SizedBox(width: kButtonBarSpacing),
               ],
             ),
           ],

@@ -4,72 +4,33 @@
   "languageName": "Occitan",
 
   "appTitle": "Programa d’installacion del burèu Ubuntu",
-  "@appTitle": {},
 
   "backButtonText": "Tornar",
-  "@backButtonText": {},
   "continueButtonText": "Contunhar",
-  "@continueButtonText": {},
   "restartButtonText": "Reaviar",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Ensajar o installar",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Reparar l’installacion",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Ensajar Ubuntu",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Installar Ubuntu",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "Desactivar RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "La benvenguda",
-  "@welcome": {},
+
+  "tryOrInstallPageTitle": "Ensajar o installar",
+  "repairInstallation": "Reparar l’installacion",
+  "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
+  "tryUbuntu": "Ensajar Ubuntu",
+  "tryUbuntuDescription": "Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.",
+  "installUbuntu": "Installar Ubuntu",
+  "installUbuntuDescription": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
+  "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
+
+  "turnOffRST": "Desactivar RST",
+  "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
+  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
   
   "keyboardLayoutPageTitle": "Agençament del clavièr",
-  "@keyboardLayoutPageTitle": {},
-
   "chooseYourKeyboardLayout": "Indicatz l’agençament del clavièr :",
-  "@chooseYourKeyboardLayout": {},
-
   "typeToTest": "Picatz de tèxt aquí per ensajar lo clavièr",
-  "@typeToTest": {},
-
   "detectLayout": "Detectar l’agençament del clavièr",
-  "@detectLayout": {},
 
   "updatesOtherSoftwarePageTitle": "Mesas a jorn e logicials suplementaris",
   "updatesOtherSoftwarePageDescription": "Quinas aplicacions volètz installar per començar ?",
-
   "normalInstallationTitle": "Installacion normala",
   "normalInstallationSubtitle": "Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.",
   "minimalInstallationTitle": "Installacion minimala",

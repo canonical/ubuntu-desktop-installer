@@ -4,72 +4,33 @@
   "languageName": "Français",
 
   "appTitle": "Programme d’installation du bureau Ubuntu",
-  "@appTitle": {},
 
   "backButtonText": "Retour",
-  "@backButtonText": {},
   "continueButtonText": "Continuer",
-  "@continueButtonText": {},
   "restartButtonText": "Redémarrer",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Essayer ou installer",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Réparer l’installation",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Essayer Ubuntu",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Installer Ubuntu",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "Vous pouvez éventuellement lire les <a href=\"{url}\">notes de publication</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "Désactiver RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "Bienvenue",
-  "@welcome": {},
+
+  "tryOrInstallPageTitle": "Essayer ou installer",
+  "repairInstallation": "Réparer l’installation",
+  "repairInstallationDescription": "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres.",
+  "tryUbuntu": "Essayer Ubuntu",
+  "tryUbuntuDescription": "Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur.",
+  "installUbuntu": "Installer Ubuntu",
+  "installUbuntuDescription": "Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.",
+  "releaseNotesLabel": "Vous pouvez éventuellement lire les <a href=\"{url}\">notes de publication</a>.",
+
+  "turnOffRST": "Désactiver RST",
+  "turnOffRSTDescription": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
+  "instructionsForRST": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
 
   "keyboardLayoutPageTitle": "Disposition du clavier",
-  "@keyboardLayoutPageTitle": {},
-
   "chooseYourKeyboardLayout": "Indiquez la disposition de votre clavier :",
-  "@chooseYourKeyboardLayout": {},
-
   "typeToTest": "Saisissez du texte ici pour tester votre clavier",
-  "@typeToTest": {},
-
   "detectLayout": "Détecter la disposition du clavier",
-  "@detectLayout": {},
 
   "updatesOtherSoftwarePageTitle": "Mises à jour et logiciels supplémentaires",
   "updatesOtherSoftwarePageDescription": "Quelles applications souhaitez-vous installer pour commencer?",
-
   "normalInstallationTitle": "Installation normale",
   "normalInstallationSubtitle": "Navigateur internet, utilitaires, bureautique, jeux et lecteurs multimédia.",
   "minimalInstallationTitle": "Installation minimale",
@@ -95,5 +56,12 @@
   "writeChangesPartitionsHeader": "Les partitions suivantes seront formattées :",
   "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
   "writeChangesPartitionEntryPrimary": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) en tant que",
-  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}"
+  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}",
+
+  "chooseYourLookPageTitle": "Choisissez l’apparence",
+  "chooseYourLookPageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
+  "chooseYourLookPageDarkSetting": "Sombre",
+  "chooseYourLookPageLightSetting": "Clair",
+  "chooseYourLookPageLightBodyText": "Clair et brillant",
+  "chooseYourLookPageDarkBodyText": "Sombre et foncé"
 }
