@@ -77,13 +77,15 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
-      Future<ProcessResult> _setXkbMap() async {
+      Future<void> _setXkbMap() async {
         return Process.run('setxkbmap', [
           '-layout',
           _selectedLayout!.code!,
           '-variant',
           _selectedVariant!.code!
-        ]);
+        ]).then((result) {}).catchError((e) {
+          print(e as ProcessException);
+        });
       }
 
       return LocalizedView(
