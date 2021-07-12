@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
@@ -71,6 +73,13 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
+      Future<ProcessResult> _setXkbMap() async {
+        final variant = keyboardModel.layouts[_selectedLayoutIndex]
+            .variants![_selectedVariantIndex].code!;
+        return Process.run(
+            'setxkbmap', ['-layout', _selectedLayoutName, '-variant', variant]);
+      }
+
       return LocalizedView(
         builder: (context, lang) => WizardPage(
           title: Text(lang.keyboardLayoutPageTitle),
@@ -99,6 +108,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                       keyboardModel.layouts[index].code!;
                                   _selectedVariantIndex = 0;
                                 });
+                                _setXkbMap();
                               },
                             ),
                           );
@@ -128,6 +138,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                 setState(() {
                                   _selectedVariantIndex = index;
                                 });
+                                _setXkbMap();
                               },
                             ),
                           );
