@@ -38,7 +38,7 @@ dependencies:
   scroll_to_index: ^2.0.0
   tuple: ^2.0.0
   url_launcher: ^6.0.3
-  yaru: ^0.0.9
+  yaru: ^0.1.0
 
 dev_dependencies:
   flutter_test:
