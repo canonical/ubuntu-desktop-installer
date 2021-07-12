@@ -24,8 +24,12 @@ class KeyboardLayoutPage extends StatefulWidget {
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   int _selectedLayoutIndex = 0;
-  String _selectedLayoutName = '';
+  KeyboardLayout? get _selectedLayout =>
+      Provider.of<KeyboardModel>(context, listen: false)
+          .layouts[_selectedLayoutIndex];
   int _selectedVariantIndex = 0;
+  KeyboardVariant? get _selectedVariant =>
+      _selectedLayout!.variants![_selectedVariantIndex];
 
   final _layoutListScrollController = AutoScrollController();
   final _keyboardVariantListScrollController = AutoScrollController();
@@ -41,10 +45,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
           return layout.code == info.layout;
         });
         if (_selectedLayoutIndex > -1) {
-          _selectedLayoutName =
-              keyboardModel.layouts[_selectedLayoutIndex].code!;
-          _selectedVariantIndex = keyboardModel
-              .layouts[_selectedLayoutIndex].variants!
+          _selectedVariantIndex = _selectedLayout!.variants!
               .indexWhere((variant) => variant.code == info.variant);
           if (_selectedVariantIndex == -1) {
             _selectedVariantIndex = 0;
@@ -74,10 +75,12 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   Widget build(BuildContext context) {
     return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
       Future<ProcessResult> _setXkbMap() async {
-        final variant = keyboardModel.layouts[_selectedLayoutIndex]
-            .variants![_selectedVariantIndex].code!;
-        return Process.run(
-            'setxkbmap', ['-layout', _selectedLayoutName, '-variant', variant]);
+        return Process.run('setxkbmap', [
+          '-layout',
+          _selectedLayout!.code!,
+          '-variant',
+          _selectedVariant!.code!
+        ]);
       }
 
       return LocalizedView(
@@ -104,8 +107,6 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                               onTap: () {
                                 setState(() {
                                   _selectedLayoutIndex = index;
-                                  _selectedLayoutName =
-                                      keyboardModel.layouts[index].code!;
                                   _selectedVariantIndex = 0;
                                 });
                                 _setXkbMap();
@@ -119,9 +120,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     Expanded(
                       child: RoundedListView.builder(
                         controller: _keyboardVariantListScrollController,
-                        itemCount: _selectedLayoutName.isNotEmpty
-                            ? keyboardModel
-                                .layouts[_selectedLayoutIndex].variants!.length
+                        itemCount: _selectedLayout != null
+                            ? _selectedLayout!.variants!.length
                             : 0,
                         itemBuilder: (context, index) {
                           return AutoScrollTag(
@@ -129,10 +129,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             key: ValueKey(index),
                             controller: _keyboardVariantListScrollController,
                             child: ListTile(
-                              title: Text(keyboardModel
-                                  .layouts[_selectedLayoutIndex]
-                                  .variants![index]
-                                  .name!),
+                              title:
+                                  Text(_selectedLayout!.variants![index].name!),
                               selected: index == _selectedVariantIndex,
                               onTap: () {
                                 setState(() {
@@ -178,9 +176,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 final client =
                     Provider.of<SubiquityClient>(context, listen: false);
                 final keyboard = KeyboardSetting(
-                    layout: _selectedLayoutName,
-                    variant: keyboardModel.layouts[_selectedLayoutIndex]
-                        .variants![_selectedVariantIndex].code!);
+                    layout: _selectedLayout!.code!,
+                    variant: _selectedVariant!.code!);
                 await client.setKeyboard(keyboard);
 
                 Navigator.pushNamed(context, Routes.updatesOtherSoftware);
