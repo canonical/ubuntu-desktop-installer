@@ -7,7 +7,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
 import 'simple_navigator_observer.dart';
@@ -38,9 +38,10 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      home: WelcomePage(),
+      initialRoute: Routes.welcome,
       navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
+        Routes.welcome: WelcomePage.create,
         Routes.tryOrInstall: (context) => Container(),
       },
     );
@@ -54,7 +55,7 @@ void main() {
       ], child: app),
     );
     expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, '/');
+    expect(observer.pushed.first.settings.name, Routes.welcome);
   }
 
   testWidgets('should display a list of languages', (tester) async {
