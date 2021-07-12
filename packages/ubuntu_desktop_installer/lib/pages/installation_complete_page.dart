@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-import '../../widgets.dart';
-import '../../widgets/highlighted_button.dart';
-import '../wizard_page.dart';
-import '../../utils/version_extractor.dart';
+import '../widgets.dart';
+import '../widgets/highlighted_button.dart';
+import 'wizard_page.dart';
+import '../utils/product_info_extractor.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
 
@@ -43,7 +43,7 @@ class InstallationCompletePage extends StatelessWidget {
               ),
             ),
             MarkdownBody(
-              data: lang.readyToUse(VersionExtractor.instance.getVersion()),
+              data: lang.readyToUse(ProductInfoExtractor().getProductInfo()),
             ),
             IntrinsicWidth(
               child: Column(
@@ -57,7 +57,7 @@ class InstallationCompletePage extends StatelessWidget {
                       },
                       child: Text(
                         lang.restartInto(
-                            VersionExtractor.instance.getVersion()),
+                            ProductInfoExtractor().getProductInfo()),
                       ),
                     ),
                   ),

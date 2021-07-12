@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
 import '../app_theme.dart';
+import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -11,8 +12,7 @@ class ChooseYourLookPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void nextPage() {
-      // TODO: what's the next page to navigate to?
-      //Navigator.pushNamed(context, Routes.?????);
+      Navigator.of(context).pushNamed(Routes.installationComplete);
     }
 
     final theme = context.watch<AppTheme>();

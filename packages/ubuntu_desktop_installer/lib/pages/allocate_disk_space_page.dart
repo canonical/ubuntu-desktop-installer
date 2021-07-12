@@ -128,10 +128,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
 
                     await client.confirm('/dev/tty1');
 
-                    // Navigator.pushNamed(context, Routes.writeChangesToDisk,
-                    //     arguments: storageResponse.config);
-                    Navigator.of(context)
-                        .pushNamed(Routes.installationComplete);
+                    Navigator.pushNamed(context, Routes.writeChangesToDisk,
+                        arguments: storageResponse.config);
                   },
                 ),
               ],

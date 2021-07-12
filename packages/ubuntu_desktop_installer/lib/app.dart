@@ -8,7 +8,7 @@ import 'app_theme.dart';
 import 'l10n/app_localizations.dart';
 import 'pages/allocate_disk_space_page.dart';
 import 'pages/choose_your_look_page.dart';
-import 'pages/installation_complete/installation_complete.dart';
+import 'pages/installation_complete_page.dart';
 import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
