@@ -23,13 +23,15 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
-  int _selectedLayoutIndex = 0;
-  KeyboardLayout? get _selectedLayout =>
-      Provider.of<KeyboardModel>(context, listen: false)
-          .layouts[_selectedLayoutIndex];
-  int _selectedVariantIndex = 0;
-  KeyboardVariant? get _selectedVariant =>
-      _selectedLayout!.variants![_selectedVariantIndex];
+  int _selectedLayoutIndex = -1;
+  KeyboardLayout? get _selectedLayout => (_selectedLayoutIndex > -1)
+      ? Provider.of<KeyboardModel>(context, listen: false)
+          .layouts[_selectedLayoutIndex]
+      : null;
+  int _selectedVariantIndex = -1;
+  KeyboardVariant? get _selectedVariant => (_selectedVariantIndex > -1)
+      ? _selectedLayout?.variants?.elementAt(_selectedVariantIndex)
+      : null;
 
   final _layoutListScrollController = AutoScrollController();
   final _keyboardVariantListScrollController = AutoScrollController();
@@ -47,19 +49,20 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         if (_selectedLayoutIndex > -1) {
           _selectedVariantIndex = _selectedLayout!.variants!
               .indexWhere((variant) => variant.code == info.variant);
-          if (_selectedVariantIndex == -1) {
-            _selectedVariantIndex = 0;
+          if (_selectedVariantIndex > -1) {
+            SchedulerBinding.instance!.addPostFrameCallback((_) =>
+                _keyboardVariantListScrollController.scrollToIndex(
+                    _selectedVariantIndex,
+                    preferPosition: AutoScrollPosition.middle,
+                    duration: const Duration(milliseconds: 1)));
           }
+        }
+        if (_selectedLayoutIndex > -1) {
           SchedulerBinding.instance!.addPostFrameCallback((_) =>
-              _keyboardVariantListScrollController.scrollToIndex(
-                  _selectedVariantIndex,
+              _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
                   preferPosition: AutoScrollPosition.middle,
                   duration: const Duration(milliseconds: 1)));
         }
-        SchedulerBinding.instance!.addPostFrameCallback((_) =>
-            _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
-                preferPosition: AutoScrollPosition.middle,
-                duration: const Duration(milliseconds: 1)));
       });
     });
   }
