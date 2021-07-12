@@ -8,6 +8,8 @@ import 'wizard_page.dart';
 class ChooseYourLookPage extends StatelessWidget {
   const ChooseYourLookPage({Key? key}) : super(key: key);
 
+  static Widget create(BuildContext context) => ChooseYourLookPage();
+
   @override
   Widget build(BuildContext context) {
     void nextPage() {
