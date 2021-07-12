@@ -32,7 +32,7 @@ class _DiskObject {
 
   _DiskObject.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        serial = json['serial'],
+        serial = json['serial'] ?? '',
         path = json['path'],
         name = json['name'],
         wipe = json['wipe'],
@@ -60,11 +60,10 @@ class _PartitionObject {
         device = json['device'],
         number = json['number'],
         size = json['size'],
-        wipe = json['wipe'],
+        wipe = json['wipe'] ?? '',
         flag = json['flag'],
         preserve = json['preserve'],
-        grubDevice =
-            json.containsKey('grub_device') ? json['grub_device'] : false;
+        grubDevice = json['grub_device'] ?? false;
 
   final List<_FormatObject> formats = [];
 }
@@ -204,7 +203,10 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                               alignment: Alignment.centerLeft,
                               child: Text(
                                   lang.writeChangesPartitionTablesEntry(
-                                      _disks[index].serial, _disks[index].path),
+                                      _disks[index].serial.isNotEmpty
+                                          ? _disks[index].serial
+                                          : lang.writeChangesFallbackSerial,
+                                      _disks[index].path),
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold))),
                           const SizedBox(height: 10),
@@ -221,14 +223,18 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     if (change.fstype.isNotEmpty) {
                       text = lang.writeChangesPartitionEntryPrimaryFull(
                           change.partitionNumber,
-                          change.diskSerial,
+                          change.diskSerial.isNotEmpty
+                              ? change.diskSerial
+                              : lang.writeChangesFallbackSerial,
                           change.diskPath,
                           change.fstype,
                           change.mountPath);
                     } else {
                       text = lang.writeChangesPartitionEntryPrimary(
                           change.partitionNumber,
-                          change.diskSerial,
+                          change.diskSerial.isNotEmpty
+                              ? change.diskSerial
+                              : lang.writeChangesFallbackSerial,
                           change.diskPath);
                     }
                   } else {
