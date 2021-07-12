@@ -28,11 +28,11 @@ void main() {
     final file = fs.file('/cdrom/.disk/release_notes_url');
     file.createSync(recursive: true);
     file.writeAsStringSync('''
-https://wiki.ubuntu.com/WartyWarthog
+https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
     ''');
 
-    final url = model.releaseNotesURL(Locale('en'), fs: fs);
-    expect(url, equals('https://wiki.ubuntu.com/WartyWarthog'));
+    final url = model.releaseNotesURL(Locale('fr'), fs: fs);
+    expect(url, equals('https://wiki.ubuntu.com/IntrepidReleaseNotes/fr'));
   });
 
   test('release notes URL from distro-info', () {
