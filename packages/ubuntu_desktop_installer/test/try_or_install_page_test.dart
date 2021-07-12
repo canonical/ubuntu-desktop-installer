@@ -20,9 +20,10 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      home: TryOrInstallPage(),
+      initialRoute: Routes.tryOrInstall,
       navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
+        Routes.tryOrInstall: TryOrInstallPage.create,
         Routes.repairUbuntu: (context) => Container(),
         Routes.tryUbuntu: (context) => Container(),
         Routes.keyboardLayout: (context) => Container(),
@@ -30,7 +31,7 @@ void main() {
     );
     await tester.pumpWidget(app);
     expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, '/');
+    expect(observer.pushed.first.settings.name, Routes.tryOrInstall);
   }
 
   testWidgets('should open release notes', (tester) async {
