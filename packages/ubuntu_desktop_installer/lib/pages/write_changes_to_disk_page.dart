@@ -203,7 +203,10 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                               alignment: Alignment.centerLeft,
                               child: Text(
                                   lang.writeChangesPartitionTablesEntry(
-                                      _disks[index].serial, _disks[index].path),
+                                      _disks[index].serial.isNotEmpty
+                                          ? _disks[index].serial
+                                          : lang.writeChangesFallbackSerial,
+                                      _disks[index].path),
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold))),
                           const SizedBox(height: 10),
@@ -220,14 +223,18 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     if (change.fstype.isNotEmpty) {
                       text = lang.writeChangesPartitionEntryPrimaryFull(
                           change.partitionNumber,
-                          change.diskSerial,
+                          change.diskSerial.isNotEmpty
+                              ? change.diskSerial
+                              : lang.writeChangesFallbackSerial,
                           change.diskPath,
                           change.fstype,
                           change.mountPath);
                     } else {
                       text = lang.writeChangesPartitionEntryPrimary(
                           change.partitionNumber,
-                          change.diskSerial,
+                          change.diskSerial.isNotEmpty
+                              ? change.diskSerial
+                              : lang.writeChangesFallbackSerial,
                           change.diskPath);
                     }
                   } else {

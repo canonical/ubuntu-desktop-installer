@@ -50,6 +50,7 @@
   "diskHeadersFormat": "Formatter",
 
   "writeChangesToDisk": "Appliquer les changements sur les disques",
+  "writeChangesFallbackSerial": "disque",
   "writeChangesDescription": "Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.",
   "writeChangesPartitionTablesHeader": "Les tables de partitions des périphériques suivants seront modifiées :",
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
