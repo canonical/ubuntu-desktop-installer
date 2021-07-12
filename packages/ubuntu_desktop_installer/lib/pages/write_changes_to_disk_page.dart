@@ -32,7 +32,7 @@ class _DiskObject {
 
   _DiskObject.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        serial = json['serial'],
+        serial = json['serial'] ?? '',
         path = json['path'],
         name = json['name'],
         wipe = json['wipe'],
@@ -60,11 +60,10 @@ class _PartitionObject {
         device = json['device'],
         number = json['number'],
         size = json['size'],
-        wipe = json['wipe'],
+        wipe = json['wipe'] ?? '',
         flag = json['flag'],
         preserve = json['preserve'],
-        grubDevice =
-            json.containsKey('grub_device') ? json['grub_device'] : false;
+        grubDevice = json['grub_device'] ?? false;
 
   final List<_FormatObject> formats = [];
 }
