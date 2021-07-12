@@ -54,7 +54,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
           Routes.writeChangesToDisk: (context) => WriteChangesToDiskPage(),
-          Routes.chooseYourLook: (context) => ChooseYourLookPage(),
+          Routes.chooseYourLook: ChooseYourLookPage.create,
         },
       ),
     );
