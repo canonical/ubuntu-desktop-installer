@@ -100,26 +100,12 @@ class OptionCardState extends State<OptionCard> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 19,
-                  color: widget.selected
-                      ? Theme.of(context).colorScheme.onSurface
-                      : Theme.of(context)
-                          .colorScheme
-                          .onSurface
-                          .withOpacity(0.5),
                 ),
               ),
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: Text(widget.bodyText ?? '',
-                  style: TextStyle(
-                    color: widget.selected
-                        ? Theme.of(context).colorScheme.onSurface
-                        : Theme.of(context)
-                            .colorScheme
-                            .onSurface
-                            .withOpacity(0.5),
-                  )),
+              child: Text(widget.bodyText ?? ''),
             ),
           ]),
         ),
