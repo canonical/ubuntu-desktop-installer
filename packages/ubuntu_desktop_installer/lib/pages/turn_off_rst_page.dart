@@ -12,6 +12,8 @@ class TurnOffRSTPage extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  static Widget create(BuildContext context) => TurnOffRSTPage();
+
   @override
   Widget build(BuildContext context) {
     return LocalizedView(
