@@ -178,6 +178,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ),
             WizardAction(
               label: lang.continueButtonText,
+              enabled:
+                  (_selectedLayoutIndex > -1) && (_selectedVariantIndex > -1),
               onActivated: () async {
                 final client =
                     Provider.of<SubiquityClient>(context, listen: false);
