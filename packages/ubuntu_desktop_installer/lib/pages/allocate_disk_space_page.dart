@@ -2,6 +2,7 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../routes.dart';
 import '../widgets.dart';
@@ -92,8 +93,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                         final element = _disksAndPartitions[index];
                         return DataRow(cells: <DataCell>[
                           DataCell(Row(children: [
-                            ImageIcon(
-                                AssetImage('assets/icon-hard-drive-solid.png')),
+                            Icon(YaruIcons.drive_harddisk),
                             const SizedBox(width: 16),
                             Text(element.name),
                           ])),
