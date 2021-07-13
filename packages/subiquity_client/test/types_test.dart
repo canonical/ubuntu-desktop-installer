@@ -1,5 +1,5 @@
-import 'package:test/test.dart';
 import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('keyboard setting', () {

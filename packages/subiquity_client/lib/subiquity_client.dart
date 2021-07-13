@@ -34,11 +34,13 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
-  Future<void> switchLanguage(String code) async {
+  // Note: subiquity's locale endpoint actually takes a language code, not a
+  // full locale (see https://bugs.launchpad.net/subiquity/+bug/1934114).
+  Future<void> setLocale(String code) async {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$code"';
     final response = await _client.send(request);
-    await checkStatus("switchLanguage('$code')", response);
+    await checkStatus('setLocale("$code")', response);
   }
 
   Future<KeyboardSetup> keyboard() async {
@@ -50,6 +52,13 @@ class SubiquityClient {
     return KeyboardSetup.fromJson(keyboardJson);
   }
 
+  Future<void> setKeyboard(KeyboardSetting setting) async {
+    final request = Request('POST', Uri.http('localhost', 'keyboard'));
+    request.body = jsonEncode(setting.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setKeyboard(${jsonEncode(setting.toJson())})", response);
+  }
+
   Future<String> proxy() async {
     final request = Request('GET', Uri.http('localhost', 'proxy'));
     final response = await _client.send(request);
@@ -57,6 +66,13 @@ class SubiquityClient {
 
     final responseStr = await response.stream.bytesToString();
     return responseStr.replaceAll('"', '');
+  }
+
+  Future<void> setProxy(String proxy) async {
+    final request = Request('POST', Uri.http('localhost', 'proxy'));
+    request.body = '"$proxy"';
+    final response = await _client.send(request);
+    await checkStatus('setProxy("$proxy")', response);
   }
 
   Future<String> mirror() async {
@@ -68,6 +84,13 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
+  Future<void> setMirror(String mirror) async {
+    final request = Request('POST', Uri.http('localhost', 'mirror'));
+    request.body = '"$mirror"';
+    final response = await _client.send(request);
+    await checkStatus('setMirror("$mirror")', response);
+  }
+
   Future<IdentityData> identity() async {
     final request = Request('GET', Uri.http('localhost', 'identity'));
     final response = await _client.send(request);
@@ -75,6 +98,14 @@ class SubiquityClient {
 
     final identityJson = jsonDecode(await response.stream.bytesToString());
     return IdentityData.fromJson(identityJson);
+  }
+
+  Future<void> setIdentity(IdentityData identity) async {
+    final request = Request('POST', Uri.http('localhost', 'identity'));
+    request.body = jsonEncode(identity.toJson());
+    final response = await _client.send(request);
+    await checkStatus(
+        "setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
   Future<SSHData> ssh() async {
@@ -86,11 +117,28 @@ class SubiquityClient {
     return SSHData.fromJson(sshJson);
   }
 
-  /// Get the installer state.
-  Future<ApplicationStatus> status() async {
-    final request = Request('GET', Uri.http('localhost', 'meta/status'));
+  Future<void> setSsh(SSHData ssh) async {
+    final request = Request('POST', Uri.http('localhost', 'ssh'));
+    request.body = jsonEncode(ssh.toJson());
     final response = await _client.send(request);
-    await checkStatus("status()", response);
+    await checkStatus("setSsh(${jsonEncode(ssh.toJson())})", response);
+  }
+
+  /// Get the installer state.
+  Future<ApplicationStatus> status({ApplicationState? current}) async {
+    var response;
+
+    if (current != null) {
+      final currentState = current.toString().split('.').last;
+      final request = Request('GET',
+          Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
+      response = await _client.send(request);
+      await checkStatus('status("$currentState")', response);
+    } else {
+      final request = Request('GET', Uri.http('localhost', 'meta/status'));
+      response = await _client.send(request);
+      await checkStatus("status()", response);
+    }
 
     final statusJson = jsonDecode(await response.stream.bytesToString());
     return ApplicationStatus.fromJson(statusJson);
@@ -111,7 +159,7 @@ class SubiquityClient {
     final request = Request(
         'POST', Uri.http('localhost', 'meta/confirm', {'tty': '"$tty"'}));
     final response = await _client.send(request);
-    await checkStatus("confirm('\"$tty\"')", response);
+    await checkStatus('confirm("$tty")', response);
   }
 
   /// Get guided disk options.
@@ -139,5 +187,12 @@ class SubiquityClient {
 
     final responseJson = jsonDecode(await response.stream.bytesToString());
     return StorageResponse.fromJson(responseJson);
+  }
+
+  Future<void> setStorage(List<dynamic> config) async {
+    final request = Request('POST', Uri.http('localhost', 'storage'));
+    request.body = jsonEncode(config);
+    final response = await _client.send(request);
+    await checkStatus("setStorage(${jsonEncode(config)})", response);
   }
 }

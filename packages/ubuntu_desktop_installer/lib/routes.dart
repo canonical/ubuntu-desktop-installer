@@ -1,4 +1,5 @@
 abstract class Routes {
+  static const welcome = '/welcome';
   static const tryOrInstall = '/tryorinstall';
   static const turnOffRST = '/turnoffrst';
   static const keyboardLayout = '/keyboardlayout';
@@ -7,4 +8,6 @@ abstract class Routes {
   static const allocateDiskSpace = '/allocatediskspace';
   static const turnOffSecureBoot = '/turnoffsecureboot';
   static const updatesOtherSoftware = '/updateothersoftware';
+  static const writeChangesToDisk = '/writechangestodisk';
+  static const chooseYourLook = '/chooseyourlook';
 }

@@ -28,13 +28,14 @@ cd packages/subiquity_client
 dart pub get
 cd subiquity
 make install_deps
+sudo apt install python3-curtin
 cd ../../ubuntu_desktop_installer
 flutter pub get
 ```
 
 Run:
 ```sh
-DRY_RUN=1 flutter run
+flutter run
 ```
 
 ## Run Live Installer
@@ -48,7 +49,7 @@ sudo python3 -m subiquity.cmd.server
 In another terminal run:
 ```sh
 cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
-flutter run
+LIVE_RUN=1 flutter run
 ```
 
 ## Contributing

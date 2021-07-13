@@ -4,54 +4,48 @@
   "languageName": "Occitan",
 
   "appTitle": "Programa d’installacion del burèu Ubuntu",
-  "@appTitle": {},
 
   "backButtonText": "Tornar",
-  "@backButtonText": {},
   "continueButtonText": "Contunhar",
-  "@continueButtonText": {},
   "restartButtonText": "Reaviar",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Ensajar o installar",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Reparar l’installacion",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Ensajar Ubuntu",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Installar Ubuntu",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "Desactivar RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "La benvenguda",
-  "@welcome": {}
+
+  "tryOrInstallPageTitle": "Ensajar o installar",
+  "repairInstallation": "Reparar l’installacion",
+  "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
+  "tryUbuntu": "Ensajar Ubuntu",
+  "tryUbuntuDescription": "Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.",
+  "installUbuntu": "Installar Ubuntu",
+  "installUbuntuDescription": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
+  "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
+
+  "turnOffRST": "Desactivar RST",
+  "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
+  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
+  
+  "keyboardLayoutPageTitle": "Agençament del clavièr",
+  "chooseYourKeyboardLayout": "Indicatz l’agençament del clavièr :",
+  "typeToTest": "Picatz de tèxt aquí per ensajar lo clavièr",
+  "detectLayout": "Detectar l’agençament del clavièr",
+
+  "updatesOtherSoftwarePageTitle": "Mesas a jorn e logicials suplementaris",
+  "updatesOtherSoftwarePageDescription": "Quinas aplicacions volètz installar per començar ?",
+  "normalInstallationTitle": "Installacion normala",
+  "normalInstallationSubtitle": "Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.",
+  "minimalInstallationTitle": "Installacion minimala",
+  "minimalInstallationSubtitle": "Navegador internet e utilitari de basa.",
+  "otherOptions": "Autras opcions",
+  "installThirdPartyTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi e dels formats de mèdia suplementaris",
+  "installThirdPartySubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
+
+  "allocateDiskSpace": "Atribuir l’espaci disc",
+  "startInstallingButtonText": "Començar l’installacion",
+  "diskHeadersDevice": "Disc",
+  "diskHeadersType": "Tipe",
+  "diskHeadersMountPoint": "Punt de montatge",
+  "diskHeadersSize": "Talha",
+  "diskHeadersUsed": "Utilizat",
+  "diskHeadersSystem": "Sistèma",
+  "diskHeadersFormat": "Formatar"  
 }

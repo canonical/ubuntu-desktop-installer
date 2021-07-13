@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
 
+/// A card widget that presents a toggleable option.
+///
+/// For example:
+/// ```dart
+/// Row(
+///   children: [
+///     OptionCard(
+///       imageAsset: 'assets/foo.png',
+///       titleText: 'Foo',
+///       bodyText: 'Description...',
+///       selected: model.option == MyOption.foo,
+///       onSelected: () => model.option = Option.foo,
+///     ),
+///     OptionCard(
+///       imageAsset: 'assets/bar.png',
+///       titleText: 'Bar',
+///       bodyText: 'Description...',
+///       selected: model.option == MyOption.bar,
+///       onSelected: () => model.option = MyOption.bar,
+///     ),
+///   ],
+/// )
+/// ```
 class OptionCard extends StatefulWidget {
-  OptionCard({
+  /// Creates an option card with the given properties.
+  const OptionCard({
     Key? key,
     this.imageAsset,
     this.titleText,
@@ -10,19 +34,30 @@ class OptionCard extends StatefulWidget {
     required this.onSelected,
   }) : super(key: key);
 
+  /// An image asset that illustrates the option.
   final String? imageAsset;
+
+  /// A short title below the image.
   final String? titleText;
+
+  /// A longer descriptive body text below the title.
   final String? bodyText;
+
+  /// Whether the option is currently selected.
   final bool selected;
+
+  /// Called when the option is selected.
   final VoidCallback onSelected;
 
   @override
   OptionCardState createState() => OptionCardState();
 }
 
+@visibleForTesting
+// ignore: public_member_api_docs
 class OptionCardState extends State<OptionCard> {
   bool _hovered = false;
-  bool get hovered => _hovered;
+  bool get hovered => _hovered; // ignore: public_member_api_docs
 
   void _setHovered(bool hovered) {
     if (_hovered == hovered) return;
@@ -32,7 +67,14 @@ class OptionCardState extends State<OptionCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: (hovered || widget.selected) ? 4.0 : 1.0,
+      shape: RoundedRectangleBorder(
+          side: BorderSide(
+              color: widget.selected
+                  ? Theme.of(context).primaryColor.withOpacity(0.4)
+                  : Theme.of(context).colorScheme.onSurface.withAlpha(20),
+              width: 1),
+          borderRadius: BorderRadius.circular(4.0)),
+      elevation: widget.selected ? 0 : 1,
       child: InkWell(
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -42,21 +84,35 @@ class OptionCardState extends State<OptionCard> {
               flex: 2,
               child: widget.imageAsset != null
                   ? Image.asset(widget.imageAsset!)
-                  : SizedBox.shrink(),
+                  : const SizedBox.shrink(),
             ),
             const SizedBox(height: 40),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.titleText ?? '',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                  color: widget.selected
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).colorScheme.onSurface.withAlpha(190),
+                ),
               ),
             ),
             const SizedBox(height: 10),
             Expanded(
               child: Opacity(
                 opacity: 0.9,
-                child: Text(widget.bodyText ?? ''),
+                child: Text(widget.bodyText ?? '',
+                    style: TextStyle(
+                      color: widget.selected
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withAlpha(190),
+                    )),
               ),
             ),
           ]),

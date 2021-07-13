@@ -17,6 +17,9 @@ apps:
     daemon: simple
     restart-condition: always
 
+  subiquity-loadkeys:
+    command: bin/subiquity/bin/subiquity-loadkeys
+
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
@@ -24,6 +27,7 @@ apps:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
       GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
+      LIVE_RUN: 1
 
   probert:
     command: bin/probert
@@ -88,8 +92,15 @@ parts:
       - ssh-import-id
       - python3-aiohttp
       - python3-bson
+      - python3-minimal
+      - python3.8-minimal
+      - libpython3-stdlib
+      - libpython3.8-stdlib
+      - libpython3.8-minimal
+      - python3-apport
       - python3-requests-unixsocket
       - python3-pyudev
+      - python3-systemd
       - python3-urwid
     prime:
       - -lib/systemd/system/*

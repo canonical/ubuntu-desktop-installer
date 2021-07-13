@@ -4,33 +4,20 @@
   "languageName": "English",
 
   "appTitle": "Ubuntu Desktop Installer",
-  "@appTitle": {},
 
   "backButtonText": "Go Back",
-  "@backButtonText": {},
   "continueButtonText": "Continue",
-  "@continueButtonText": {},
   "restartButtonText": "Restart",
-  "@restartButtonText": {},
+
+  "welcome": "Welcome",
 
   "tryOrInstallPageTitle": "Try or install",
-  "@tryOrInstallPageTitle": {},
-
   "repairInstallation": "Repair installation",
-  "@repairInstallation": {},
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
-  "@repairInstallationDescription": {},
-
   "tryUbuntu": "Try Ubuntu",
-  "@tryUbuntu": {},
   "tryUbuntuDescription": "You can try Ubuntu without making any changes to your computer.",
-  "@tryUbuntuDescription": {},
-
   "installUbuntu": "Install Ubuntu",
-  "@installUbuntu": {},
   "installUbuntuDescription": "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
-  "@installUbuntuDescription": {},
-
   "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
   "@releaseNotesLabel": {
     "type": "text",
@@ -40,10 +27,7 @@
   },
 
   "turnOffRST": "Turn off RST",
-  "@turnOffRST": {},
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
-  "@turnOffRSTDescription": {},
-
   "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
@@ -52,20 +36,10 @@
     }
   },
 
-  "welcome": "Welcome",
-  "@welcome": {},
-
   "keyboardLayoutPageTitle": "Keyboard layout",
-  "@keyboardLayoutPageTitle": {},
-
   "chooseYourKeyboardLayout": "Choose your keyboard layout:",
-  "@chooseYourKeyboardLayout": {},
-
   "typeToTest": "Type here to test your keyboard",
-  "@typeToTest": {},
-
   "detectLayout": "Detect Keyboard Layout",
-  "@detectLayout": {},
 
   "turnOffSecureBootTitle": "Turn off secure boot",
   "turnOffSecureBootDescription": "You've chosen to install third-party driver software. This requires turning off  Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.",
@@ -94,5 +68,55 @@
   "diskHeadersSize": "Size",
   "diskHeadersUsed": "Used",
   "diskHeadersSystem": "System",
-  "diskHeadersFormat": "Format"
+  "diskHeadersFormat": "Format",
+
+  "writeChangesToDisk": "Write changes to disk",
+  "writeChangesFallbackSerial": "disk",
+  "@writeChangesFallbackSerial": { "description": "Default display name for a disk without a serial (unlikely)" },
+  "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
+  "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "The following partitions are going to be formatted:",
+  "writeChangesPartitionEntryPrimaryFull": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntryPrimaryFull": {
+    "description": "An entry for a primary partition without secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {},
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimary": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as",
+  "@writeChangesPartitionEntryPrimary": {
+    "description": "An entry for a primary partition with secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {}
+    }
+  },
+  "writeChangesPartitionEntrySecondary": "        partition # as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntrySecondary": {
+    "description": "An entry for a secondary partition",
+    "placeholders": {
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+
+  "chooseYourLookPageTitle": "Choose your look",
+  "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
+  "chooseYourLookPageDarkSetting": "Dark",
+  "chooseYourLookPageLightSetting": "Light",
+  "chooseYourLookPageLightBodyText": "Everything is light and bright",
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend"
 }

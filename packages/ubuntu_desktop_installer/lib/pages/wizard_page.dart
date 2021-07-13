@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
-const _kButtonSpacing = 8.0;
-const _kContentSpacing = 20.0;
-const _kContentPadding = EdgeInsets.symmetric(horizontal: 24);
-const _kHeaderPadding = EdgeInsets.fromLTRB(24, 24, 24, 0);
-const _kFooterPadding = EdgeInsets.fromLTRB(24, 0, 24, 24);
-const _kHighlightBackground = Color(0xFF0e8420);
-const _kHighlightForeground = Colors.white;
+import '../app_theme.dart';
+import '../constants.dart';
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
 class WizardAction {
@@ -55,7 +50,7 @@ class WizardPage extends StatelessWidget {
     this.title,
     this.header,
     this.content,
-    this.contentPadding = _kContentPadding,
+    this.contentPadding = kContentPadding,
     this.footer,
     this.actions = const <WizardAction>[],
   }) : super(key: key);
@@ -86,7 +81,7 @@ class WizardPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
-            padding: _kHeaderPadding,
+            padding: kHeaderPadding,
             child: header != null
                 ? Align(
                     alignment: Alignment.centerLeft,
@@ -94,40 +89,32 @@ class WizardPage extends StatelessWidget {
                   )
                 : null,
           ),
-          if (header != null) const SizedBox(height: _kContentSpacing),
+          if (header != null) const SizedBox(height: kContentSpacing),
           Expanded(
             child: Padding(padding: contentPadding, child: content),
           ),
-          const SizedBox(height: _kContentSpacing),
+          const SizedBox(height: kContentSpacing),
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: _kFooterPadding,
+        padding: kFooterPadding,
         child: Row(
           mainAxisAlignment: footer != null
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.end,
           children: <Widget>[
             if (footer != null) Expanded(child: footer!),
-            const SizedBox(width: _kContentSpacing),
+            const SizedBox(width: kContentSpacing),
             ButtonBar(
               buttonPadding: EdgeInsets.zero,
               children: <Widget>[
                 for (final action in actions)
                   if (action.visible ?? true)
                     Padding(
-                      padding: const EdgeInsets.only(left: _kButtonSpacing),
-                      child: OutlinedButton(
-                        onPressed:
-                            action.enabled ?? true ? action.onActivated : null,
-                        style: _buttonStyle(
-                          context,
-                          highlighted: action.highlighted ?? false,
-                        ),
-                        child: Text(action.label!),
-                      ),
+                      padding: const EdgeInsets.only(left: kButtonBarSpacing),
+                      child: _createButton(action),
                     ),
-                const SizedBox(width: _kButtonSpacing),
+                const SizedBox(width: kButtonBarSpacing),
               ],
             ),
           ],
@@ -136,15 +123,10 @@ class WizardPage extends StatelessWidget {
     );
   }
 
-  ButtonStyle? _buttonStyle(BuildContext context, {bool? highlighted}) {
-    if (highlighted != true) return null;
-    return OutlinedButtonTheme.of(context).style!.copyWith(
-          backgroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightBackground,
-          ),
-          foregroundColor: MaterialStateColor.resolveWith(
-            (_) => _kHighlightForeground,
-          ),
-        );
+  Widget _createButton(WizardAction action) {
+    final maybeActivate = action.enabled ?? true ? action.onActivated : null;
+    return action.highlighted == true
+        ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
+        : OutlinedButton(onPressed: maybeActivate, child: Text(action.label!));
   }
 }

@@ -2,6 +2,7 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../routes.dart';
 import '../widgets.dart';
@@ -39,7 +40,6 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     client.getGuidedStorage(0, true).then((r) {
       setState(() {
-        print('Guided storage response: ${r.toJson()}');
         _response = r;
         _disksAndPartitions.clear();
         for (var disk in r.disks!) {
@@ -63,14 +63,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                     child: Column(children: <Widget>[
                   RoundedContainer(
                     child: DataTable(
-                      headingTextStyle: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .apply(fontWeightDelta: 3, color: Colors.black),
-                      dataTextStyle: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .apply(color: Colors.black),
+                      headingTextStyle: Theme.of(context).textTheme.subtitle2,
+                      dataTextStyle: Theme.of(context).textTheme.bodyText2,
                       columns: <DataColumn>[
                         DataColumn(
                           label: Text(lang.diskHeadersDevice),
@@ -99,8 +93,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                         final element = _disksAndPartitions[index];
                         return DataRow(cells: <DataCell>[
                           DataCell(Row(children: [
-                            ImageIcon(
-                                AssetImage('assets/icon-hard-drive-solid.png')),
+                            Icon(YaruIcons.drive_harddisk),
                             const SizedBox(width: 16),
                             Text(element.name),
                           ])),
@@ -124,15 +117,17 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                 WizardAction(
                   label: lang.startInstallingButtonText,
                   highlighted: true,
-                  onActivated: () {
+                  onActivated: () async {
                     final client =
                         Provider.of<SubiquityClient>(context, listen: false);
+
                     final choice = GuidedChoice(
                         diskId: _response!.disks![0].id, useLvm: false);
-                    client
-                        .setGuidedStorage(choice)
-                        .then((r) => print('Storage response: ${r.toJson()}'));
-                    Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+                    final storageResponse =
+                        await client.setGuidedStorage(choice);
+
+                    Navigator.pushNamed(context, Routes.writeChangesToDisk,
+                        arguments: storageResponse.config);
                   },
                 ),
               ],
