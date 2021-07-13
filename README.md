@@ -28,6 +28,7 @@ cd packages/subiquity_client
 dart pub get
 cd subiquity
 make install_deps
+sudo apt install python3-curtin
 cd ../../ubuntu_desktop_installer
 flutter pub get
 ```
