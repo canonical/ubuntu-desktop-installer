@@ -11,6 +11,7 @@ import 'pages/choose_your_look_page.dart';
 import 'pages/keyboard_layout_page.dart';
 import 'pages/try_or_install/try_or_install_page.dart';
 import 'pages/turn_off_rst_page.dart';
+import 'pages/turn_off_secure_boot/turn_off_secure_boot_page.dart';
 import 'pages/updates_other_software/updates_other_software_page.dart';
 import 'pages/welcome/welcome_page.dart';
 import 'pages/write_changes_to_disk_page.dart';
@@ -50,6 +51,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.welcome: WelcomePage.create,
           Routes.tryOrInstall: TryOrInstallPage.create,
           Routes.turnOffRST: TurnOffRSTPage.create,
+          Routes.turnOffSecureBoot: TurnOffSecureBootPage.create,
           Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
           Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
           Routes.allocateDiskSpace: (context) => AllocateDiskSpacePage(),
