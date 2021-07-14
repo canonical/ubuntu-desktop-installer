@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import '../keyboard_model.dart';
-import '../routes.dart';
-import '../widgets.dart';
-import 'wizard_page.dart';
+import '../../keyboard_model.dart';
+import '../../routes.dart';
+import '../../widgets.dart';
+import '../wizard_page.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
