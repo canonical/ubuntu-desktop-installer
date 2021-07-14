@@ -141,9 +141,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                                   model.selectedLayout!.variants![index].name!),
                               selected: index == model.selectedVariantIndex,
                               onTap: () {
-                                setState(() {
-                                  model.selectedVariantIndex = index;
-                                });
+                                model.selectVariant(index);
                                 _setXkbMap();
                               },
                             ),

@@ -38,4 +38,11 @@ class KeyboardLayoutModel extends ChangeNotifier {
   KeyboardVariant? get selectedVariant => (selectedVariantIndex > -1)
       ? selectedLayout?.variants?.elementAt(selectedVariantIndex)
       : null;
+
+  /// Selects the keyboard layout variant at [index].
+  void selectVariant(int index) {
+    if (selectedVariantIndex == index) return;
+    selectedVariantIndex = index;
+    notifyListeners();
+  }
 }
