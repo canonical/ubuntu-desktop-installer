@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:keyboard_info/keyboard_info.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -40,33 +39,21 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     super.initState();
 
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
-    getKeyboardInfo().then((info) {
-      var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
-      setState(() {
-        model.selectedLayoutIndex = keyboardModel.layouts.indexWhere((layout) {
-          return layout.code == info.layout;
-        });
-        if (model.selectedLayoutIndex > -1) {
-          model.selectedVariantIndex = model.selectedLayout!.variants
-                  ?.indexWhere(
-                      (variant) => variant.code == (info.variant ?? '')) ??
-              -1;
-          if (model.selectedVariantIndex > -1) {
-            SchedulerBinding.instance!.addPostFrameCallback((_) =>
-                _keyboardVariantListScrollController.scrollToIndex(
-                    model.selectedVariantIndex,
-                    preferPosition: AutoScrollPosition.middle,
-                    duration: const Duration(milliseconds: 1)));
-          }
-        }
-        if (model.selectedLayoutIndex > -1) {
-          SchedulerBinding.instance!.addPostFrameCallback((_) =>
-              _layoutListScrollController.scrollToIndex(
-                  model.selectedLayoutIndex,
-                  preferPosition: AutoScrollPosition.middle,
-                  duration: const Duration(milliseconds: 1)));
-        }
-      });
+    model.init().then((_) {
+      if (model.selectedLayoutIndex > -1) {
+        _layoutListScrollController.scrollToIndex(
+          model.selectedLayoutIndex,
+          preferPosition: AutoScrollPosition.middle,
+          duration: const Duration(milliseconds: 1),
+        );
+      }
+      if (model.selectedVariantIndex > -1) {
+        _keyboardVariantListScrollController.scrollToIndex(
+          model.selectedVariantIndex,
+          preferPosition: AutoScrollPosition.middle,
+          duration: const Duration(milliseconds: 1),
+        );
+      }
     });
   }
 

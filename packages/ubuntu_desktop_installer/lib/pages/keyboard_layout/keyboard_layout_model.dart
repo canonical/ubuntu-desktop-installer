@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../keyboard_model.dart';
@@ -75,6 +76,23 @@ class KeyboardLayoutModel extends ChangeNotifier {
 
   /// Whether the layout and variant selections are valid.
   bool get isValid => selectedLayoutIndex > -1 && selectedVariantIndex > -1;
+
+  /// Initializes the model and detects the current system keyboard layout and
+  /// variant.
+  Future<void> init() async {
+    await getKeyboardInfo().then((info) {
+      selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
+        return layout.code == info.layout;
+      });
+      if (selectedLayoutIndex > -1) {
+        selectedVariantIndex = selectedLayout!.variants?.indexWhere((variant) {
+              return variant.code == (info.variant ?? '');
+            }) ??
+            -1;
+      }
+    });
+    notifyListeners();
+  }
 
   /// Applies the selected keyboard layout and variant to the system.
   Future<void> applyKeyboardSettings() {
