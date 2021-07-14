@@ -93,14 +93,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     Expanded(
                       child: RoundedListView.builder(
                         controller: _layoutListScrollController,
-                        itemCount: keyboardModel.layouts.length,
+                        itemCount: model.layoutCount,
                         itemBuilder: (context, index) {
                           return AutoScrollTag(
                             index: index,
                             key: ValueKey(index),
                             controller: _layoutListScrollController,
                             child: ListTile(
-                              title: Text(keyboardModel.layouts[index].name!),
+                              title: Text(model.layoutName(index)),
                               selected: index == model.selectedLayoutIndex,
                               onTap: () => model.selectLayout(index),
                             ),
@@ -112,17 +112,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     Expanded(
                       child: RoundedListView.builder(
                         controller: _keyboardVariantListScrollController,
-                        itemCount: model.selectedLayout != null
-                            ? model.selectedLayout!.variants!.length
-                            : 0,
+                        itemCount: model.variantCount,
                         itemBuilder: (context, index) {
                           return AutoScrollTag(
                             index: index,
                             key: ValueKey(index),
                             controller: _keyboardVariantListScrollController,
                             child: ListTile(
-                              title: Text(
-                                  model.selectedLayout!.variants![index].name!),
+                              title: Text(model.variantName(index)),
                               selected: index == model.selectedVariantIndex,
                               onTap: () => model.selectVariant(index),
                             ),

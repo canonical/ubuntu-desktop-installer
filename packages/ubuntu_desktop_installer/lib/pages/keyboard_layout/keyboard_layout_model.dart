@@ -17,6 +17,12 @@ class KeyboardLayoutModel extends ChangeNotifier {
   final SubiquityClient _client;
   final KeyboardModel _keyboardModel;
 
+  /// The number of available keyboard layouts.
+  int get layoutCount => _keyboardModel.layouts.length;
+
+  /// Returns the name of the keyboard layout at [index].
+  String layoutName(int index) => _keyboardModel.layouts[index].name!;
+
   /// The index of the currently selected layout.
   //int get selectedLayoutIndex => _selectedLayoutIndex;
   int selectedLayoutIndex = -1;
@@ -33,6 +39,12 @@ class KeyboardLayoutModel extends ChangeNotifier {
     _setXkbMap();
     notifyListeners();
   }
+
+  /// The number of available layout variants.
+  int get variantCount => selectedLayout?.variants?.length ?? 0;
+
+  /// Returns the name of the layout variant at [index].
+  String variantName(int index) => selectedLayout!.variants![index].name!;
 
   /// The index of the currently selected layout variant.
   //int get selectedVariantIndex => _selectedVariantIndex;
