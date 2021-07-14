@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import '../widgets.dart';
-import '../widgets/highlighted_button.dart';
 import 'wizard_page.dart';
 import '../utils/product_info_extractor.dart';
 
@@ -51,7 +50,7 @@ class InstallationCompletePage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 24),
-                    child: HighlightedButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         //TODO: restart pc
                       },

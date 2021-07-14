@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/highlighted_button.dart';
 
 import '../app_theme.dart';
 import '../constants.dart';
@@ -118,7 +117,7 @@ class WizardPage extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(left: kButtonBarSpacing),
                       child: action.highlighted ?? false
-                          ? HighlightedButton(
+                          ? ElevatedButton(
                               onPressed: onPress,
                               child: textChild,
                             )
