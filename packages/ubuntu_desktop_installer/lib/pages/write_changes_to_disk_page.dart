@@ -275,6 +275,10 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                         hostname: 'ubuntu-desktop');
                     await client.setIdentity(identity);
 
+                    // Set a default timezone until a UI page is implemented
+                    // for it.
+                    await client.setTimezone('UTC');
+
                     await client.setStorage(_storageConfig!);
 
                     await client.confirm('/dev/tty1');
