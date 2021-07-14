@@ -108,6 +108,22 @@ class SubiquityClient {
         "setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
+  Future<TimezoneData> timezone() async {
+    final request = Request('GET', Uri.http('localhost', 'timezone'));
+    final response = await _client.send(request);
+    await checkStatus("timezone()", response);
+
+    final timezoneJson = jsonDecode(await response.stream.bytesToString());
+    return TimezoneData.fromJson(timezoneJson);
+  }
+
+  Future<void> setTimezone(String timezone) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'timezone', {'tz': '"$timezone"'}));
+    final response = await _client.send(request);
+    await checkStatus('setTimezone("$timezone")', response);
+  }
+
   Future<SSHData> ssh() async {
     final request = Request('GET', Uri.http('localhost', 'ssh'));
     final response = await _client.send(request);
