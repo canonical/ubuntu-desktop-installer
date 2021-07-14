@@ -67,15 +67,21 @@ class OptionCardState extends State<OptionCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       shape: RoundedRectangleBorder(
           side: BorderSide(
               color: widget.selected
-                  ? Theme.of(context).primaryColor.withOpacity(0.4)
-                  : Theme.of(context).colorScheme.onSurface.withAlpha(20),
-              width: 1),
-          borderRadius: BorderRadius.circular(4.0)),
-      elevation: widget.selected ? 0 : 1,
+                  ? Theme.of(context).primaryColor.withOpacity(0.5)
+                  : Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withAlpha(hovered ? 60 : 20),
+              width: 2),
+          borderRadius: BorderRadius.circular(6)),
+      elevation: 0,
       child: InkWell(
+        hoverColor: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(6),
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(children: <Widget>[
@@ -94,26 +100,12 @@ class OptionCardState extends State<OptionCard> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 19,
-                  color: widget.selected
-                      ? Theme.of(context).primaryColor
-                      : Theme.of(context).colorScheme.onSurface.withAlpha(190),
                 ),
               ),
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: Opacity(
-                opacity: 0.9,
-                child: Text(widget.bodyText ?? '',
-                    style: TextStyle(
-                      color: widget.selected
-                          ? Theme.of(context).primaryColor
-                          : Theme.of(context)
-                              .colorScheme
-                              .onSurface
-                              .withAlpha(190),
-                    )),
-              ),
+              child: Text(widget.bodyText ?? ''),
             ),
           ]),
         ),
