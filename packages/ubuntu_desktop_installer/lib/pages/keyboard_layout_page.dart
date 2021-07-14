@@ -47,8 +47,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
           return layout.code == info.layout;
         });
         if (_selectedLayoutIndex > -1) {
-          _selectedVariantIndex = _selectedLayout!.variants
-                  ?.indexWhere((variant) => variant.code == info.variant) ??
+          _selectedVariantIndex = _selectedLayout!.variants?.indexWhere(
+                  (variant) => variant.code == (info.variant ?? '')) ??
               -1;
           if (_selectedVariantIndex > -1) {
             SchedulerBinding.instance!.addPostFrameCallback((_) =>
