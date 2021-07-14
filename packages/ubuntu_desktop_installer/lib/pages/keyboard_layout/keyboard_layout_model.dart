@@ -80,19 +80,34 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    await getKeyboardInfo().then((info) {
-      _selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
-        return layout.code == info.layout;
-      });
-      if (_selectedLayoutIndex > -1) {
-        _selectedVariantIndex =
-            _selectedLayout!.variants?.indexWhere((variant) {
-                  return variant.code == (info.variant ?? '');
-                }) ??
-                -1;
-      }
+    final detectedLayout = await detectKeyboardLayout();
+    _selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
+      return layout.code == detectedLayout;
     });
+    if (_selectedLayoutIndex > -1) {
+      final detectedVariant = await detectLayoutVariant() ?? '';
+      _selectedVariantIndex = _selectedLayout!.variants
+              ?.indexWhere((variant) => variant.code == detectedVariant) ??
+          -1;
+    }
     notifyListeners();
+  }
+
+  KeyboardInfo? __info;
+  Future<KeyboardInfo> _getKeyboardInfo() async {
+    return __info ??= await getKeyboardInfo();
+  }
+
+  /// Detects the current system keyboard layout.
+  @visibleForTesting
+  Future<String?> detectKeyboardLayout() async {
+    return _getKeyboardInfo().then((info) => info.layout);
+  }
+
+  /// Detects the current system keyboard layout variant.
+  @visibleForTesting
+  Future<String?> detectLayoutVariant() {
+    return _getKeyboardInfo().then((info) => info.variant);
   }
 
   /// Applies the selected keyboard layout and variant to the system.
