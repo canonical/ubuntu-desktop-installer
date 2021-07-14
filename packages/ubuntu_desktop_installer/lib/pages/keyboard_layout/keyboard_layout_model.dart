@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
@@ -28,6 +30,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
     if (selectedLayoutIndex == index) return;
     selectedLayoutIndex = index;
     selectedVariantIndex = 0;
+    _setXkbMap();
     notifyListeners();
   }
 
@@ -43,6 +46,18 @@ class KeyboardLayoutModel extends ChangeNotifier {
   void selectVariant(int index) {
     if (selectedVariantIndex == index) return;
     selectedVariantIndex = index;
+    _setXkbMap();
     notifyListeners();
+  }
+
+  Future<void> _setXkbMap() async {
+    return Process.run('setxkbmap', [
+      '-layout',
+      selectedLayout!.code!,
+      '-variant',
+      selectedVariant!.code!
+    ]).then((result) {}).catchError((e) {
+      print(e as ProcessException);
+    });
   }
 }

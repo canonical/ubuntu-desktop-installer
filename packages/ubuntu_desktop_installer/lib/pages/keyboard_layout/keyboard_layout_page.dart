@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
@@ -83,17 +81,6 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   Widget build(BuildContext context) {
     final model = Provider.of<KeyboardLayoutModel>(context);
     return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
-      Future<void> _setXkbMap() async {
-        return Process.run('setxkbmap', [
-          '-layout',
-          model.selectedLayout!.code!,
-          '-variant',
-          model.selectedVariant!.code!
-        ]).then((result) {}).catchError((e) {
-          print(e as ProcessException);
-        });
-      }
-
       return LocalizedView(
         builder: (context, lang) => WizardPage(
           title: Text(lang.keyboardLayoutPageTitle),
@@ -115,10 +102,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             child: ListTile(
                               title: Text(keyboardModel.layouts[index].name!),
                               selected: index == model.selectedLayoutIndex,
-                              onTap: () {
-                                model.selectLayout(index);
-                                _setXkbMap();
-                              },
+                              onTap: () => model.selectLayout(index),
                             ),
                           );
                         },
@@ -140,10 +124,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                               title: Text(
                                   model.selectedLayout!.variants![index].name!),
                               selected: index == model.selectedVariantIndex,
-                              onTap: () {
-                                model.selectVariant(index);
-                                _setXkbMap();
-                              },
+                              onTap: () => model.selectVariant(index),
                             ),
                           );
                         },
