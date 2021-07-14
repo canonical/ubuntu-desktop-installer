@@ -35,6 +35,9 @@ class SubiquityClientMock extends SubiquityClient {
   Future<void> setIdentity(IdentityData identity) async {}
 
   @override
+  Future<void> setTimezone(String timezone) async {}
+
+  @override
   Future<void> setStorage(List<dynamic> config) async {
     storageConfig = config;
   }
