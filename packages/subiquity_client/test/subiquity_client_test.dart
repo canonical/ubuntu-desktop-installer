@@ -142,7 +142,9 @@ void main() {
       // Restore initial timezone to leave the test system in a clean state
       await _client.setTimezone(systemTimezone);
     }
-  });
+  },
+      skip:
+          'fails on headless test systems (CI) because subiquity calls `timedatectl set-timezone`, which requires sudo');
 
   test('ssh', () async {
     var newSsh = SSHData(
