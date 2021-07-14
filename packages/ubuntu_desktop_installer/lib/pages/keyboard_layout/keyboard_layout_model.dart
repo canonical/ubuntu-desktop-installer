@@ -61,6 +61,9 @@ class KeyboardLayoutModel extends ChangeNotifier {
     });
   }
 
+  /// Whether the layout and variant selections are valid.
+  bool get isValid => selectedLayoutIndex > -1 && selectedVariantIndex > -1;
+
   /// Applies the selected keyboard layout and variant to the system.
   Future<void> applyKeyboardSettings() {
     final keyboard = KeyboardSetting(

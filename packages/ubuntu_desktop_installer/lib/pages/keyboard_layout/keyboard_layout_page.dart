@@ -159,8 +159,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ),
             WizardAction(
               label: lang.continueButtonText,
-              enabled: (model.selectedLayoutIndex > -1) &&
-                  (model.selectedVariantIndex > -1),
+              enabled: model.isValid,
               onActivated: () async {
                 await model.applyKeyboardSettings();
                 Navigator.pushNamed(context, Routes.updatesOtherSoftware);
