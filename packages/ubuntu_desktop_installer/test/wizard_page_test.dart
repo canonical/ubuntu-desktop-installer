@@ -60,18 +60,8 @@ void main() {
   });
 
   testWidgets('highlighted action', (tester) async {
-    final buttonTheme = OutlinedButtonThemeData(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateColor.resolveWith((_) => Colors.red),
-        foregroundColor: MaterialStateColor.resolveWith((_) => Colors.blue),
-      ),
-    );
-
-    final button = find.widgetWithText(OutlinedButton, 'action');
-
     await tester.pumpWidget(
       MaterialApp(
-        theme: ThemeData(outlinedButtonTheme: buttonTheme),
         home: WizardPage(
           actions: <WizardAction>[
             const WizardAction(label: 'action', highlighted: false),
@@ -79,11 +69,11 @@ void main() {
         ),
       ),
     );
-    expect(tester.widget<OutlinedButton>(button).style, isNull);
+    expect(find.widgetWithText(OutlinedButton, 'action'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, 'action'), findsNothing);
 
     await tester.pumpWidget(
       MaterialApp(
-        theme: ThemeData(outlinedButtonTheme: buttonTheme),
         home: WizardPage(
           actions: <WizardAction>[
             const WizardAction(label: 'action', highlighted: true),
@@ -91,7 +81,8 @@ void main() {
         ),
       ),
     );
-    expect(tester.widget<OutlinedButton>(button).style, isNotNull);
+    expect(find.widgetWithText(OutlinedButton, 'action'), findsNothing);
+    expect(find.widgetWithText(ElevatedButton, 'action'), findsOneWidget);
   });
 
   testWidgets('disabled action', (tester) async {

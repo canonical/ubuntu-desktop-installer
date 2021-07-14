@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# store current script and snap directories
+# store current script directories
 SCRIPT_DIR=`dirname $0`
-SNAP_DIR=$SNAP
 
 # configure python environment
 export PYTHONIOENCODING=utf-8
@@ -10,10 +9,17 @@ PYTHONPATH=$SNAP/usr/lib/python3/site-packages:$PYTHONPATH
 PYTHONPATH=$SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
 PYTHONPATH=$SNAP/lib/python3.8/site-packages:$PYTHONPATH
 export PYTHONPATH
+export PYTHON=$SNAP/usr/bin/python3.8
 
-# subiquity is unhappy if $SNAP doesn't point to itself
-export SNAP=$SNAP/bin/subiquity
+# ensure curtin points at PYTHON
+export PY3OR2_PYTHON=$PYTHON
+
+# set the PATH so subiquity finds curtin
+export PATH=$PATH:$SNAP/bin
+
+# base directory for subiquity to locate resources
+export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
-$SNAP_DIR/usr/bin/python3.8 -m subiquity.cmd.server
+$PYTHON -m subiquity.cmd.server

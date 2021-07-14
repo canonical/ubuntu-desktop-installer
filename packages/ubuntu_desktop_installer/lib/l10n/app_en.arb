@@ -80,6 +80,8 @@
 
   
   "writeChangesToDisk": "Write changes to disk",
+  "writeChangesFallbackSerial": "disk",
+  "@writeChangesFallbackSerial": { "description": "Default display name for a disk without a serial (unlikely)" },
   "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
   "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
   "writeChangesPartitionTablesEntry": "{serial} ({path})",

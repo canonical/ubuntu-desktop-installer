@@ -108,27 +108,12 @@ class WizardPage extends StatelessWidget {
             ButtonBar(
               buttonPadding: EdgeInsets.zero,
               children: <Widget>[
-                ...actions.map((action) {
-                  if (action.visible ?? true) {
-                    final onPress =
-                        action.enabled ?? true ? action.onActivated : null;
-
-                    final textChild = Text(action.label!);
-                    return Padding(
+                for (final action in actions)
+                  if (action.visible ?? true)
+                    Padding(
                       padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                      child: action.highlighted ?? false
-                          ? ElevatedButton(
-                              onPressed: onPress,
-                              child: textChild,
-                            )
-                          : OutlinedButton(
-                              onPressed: onPress,
-                              child: textChild,
-                            ),
-                    );
-                  }
-                  return SizedBox();
-                }).toList(),
+                      child: _createButton(action),
+                    ),
                 const SizedBox(width: kButtonBarSpacing),
               ],
             ),
@@ -136,5 +121,12 @@ class WizardPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _createButton(WizardAction action) {
+    final maybeActivate = action.enabled ?? true ? action.onActivated : null;
+    return action.highlighted == true
+        ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
+        : OutlinedButton(onPressed: maybeActivate, child: Text(action.label!));
   }
 }

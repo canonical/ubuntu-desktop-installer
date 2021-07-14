@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/try_or_install_page.dart';
+import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 
@@ -20,9 +20,10 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      home: TryOrInstallPage(),
+      initialRoute: Routes.tryOrInstall,
       navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
+        Routes.tryOrInstall: TryOrInstallPage.create,
         Routes.repairUbuntu: (context) => Container(),
         Routes.tryUbuntu: (context) => Container(),
         Routes.keyboardLayout: (context) => Container(),
@@ -30,7 +31,7 @@ void main() {
     );
     await tester.pumpWidget(app);
     expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, '/');
+    expect(observer.pushed.first.settings.name, Routes.tryOrInstall);
   }
 
   testWidgets('should open release notes', (tester) async {

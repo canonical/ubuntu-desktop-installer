@@ -34,7 +34,7 @@ jobs:
     
     - name: Get subiquity dependencies
       working-directory: ./packages/subiquity_client/subiquity
-      run: sudo apt update && make install_deps
+      run: sudo apt update && make install_deps && sudo apt install python3-curtin
 
     # test all packages
 

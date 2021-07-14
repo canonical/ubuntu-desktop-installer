@@ -12,7 +12,7 @@ import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/app_theme.dart';
 import 'package:ubuntu_desktop_installer/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 
 import 'gsettings.mocks.dart';
 

@@ -986,6 +986,182 @@ abstract class _IdentityData implements IdentityData {
       throw _privateConstructorUsedError;
 }
 
+TimezoneData _$TimezoneDataFromJson(Map<String, dynamic> json) {
+  return _TimezoneData.fromJson(json);
+}
+
+/// @nodoc
+class _$TimezoneDataTearOff {
+  const _$TimezoneDataTearOff();
+
+  _TimezoneData call(
+      {String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP}) {
+    return _TimezoneData(
+      timezone: timezone,
+      fromGeoIP: fromGeoIP,
+    );
+  }
+
+  TimezoneData fromJson(Map<String, Object> json) {
+    return TimezoneData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $TimezoneData = _$TimezoneDataTearOff();
+
+/// @nodoc
+mixin _$TimezoneData {
+  String? get timezone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'from_geoip')
+  bool? get fromGeoIP => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TimezoneDataCopyWith<TimezoneData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimezoneDataCopyWith<$Res> {
+  factory $TimezoneDataCopyWith(
+          TimezoneData value, $Res Function(TimezoneData) then) =
+      _$TimezoneDataCopyWithImpl<$Res>;
+  $Res call({String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP});
+}
+
+/// @nodoc
+class _$TimezoneDataCopyWithImpl<$Res> implements $TimezoneDataCopyWith<$Res> {
+  _$TimezoneDataCopyWithImpl(this._value, this._then);
+
+  final TimezoneData _value;
+  // ignore: unused_field
+  final $Res Function(TimezoneData) _then;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoIP = freezed,
+  }) {
+    return _then(_value.copyWith(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoIP: fromGeoIP == freezed
+          ? _value.fromGeoIP
+          : fromGeoIP // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TimezoneDataCopyWith<$Res>
+    implements $TimezoneDataCopyWith<$Res> {
+  factory _$TimezoneDataCopyWith(
+          _TimezoneData value, $Res Function(_TimezoneData) then) =
+      __$TimezoneDataCopyWithImpl<$Res>;
+  @override
+  $Res call({String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP});
+}
+
+/// @nodoc
+class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
+    implements _$TimezoneDataCopyWith<$Res> {
+  __$TimezoneDataCopyWithImpl(
+      _TimezoneData _value, $Res Function(_TimezoneData) _then)
+      : super(_value, (v) => _then(v as _TimezoneData));
+
+  @override
+  _TimezoneData get _value => super._value as _TimezoneData;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoIP = freezed,
+  }) {
+    return _then(_TimezoneData(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoIP: fromGeoIP == freezed
+          ? _value.fromGeoIP
+          : fromGeoIP // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TimezoneData implements _TimezoneData {
+  const _$_TimezoneData(
+      {this.timezone, @JsonKey(name: 'from_geoip') this.fromGeoIP});
+
+  factory _$_TimezoneData.fromJson(Map<String, dynamic> json) =>
+      _$_$_TimezoneDataFromJson(json);
+
+  @override
+  final String? timezone;
+  @override
+  @JsonKey(name: 'from_geoip')
+  final bool? fromGeoIP;
+
+  @override
+  String toString() {
+    return 'TimezoneData(timezone: $timezone, fromGeoIP: $fromGeoIP)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TimezoneData &&
+            (identical(other.timezone, timezone) ||
+                const DeepCollectionEquality()
+                    .equals(other.timezone, timezone)) &&
+            (identical(other.fromGeoIP, fromGeoIP) ||
+                const DeepCollectionEquality()
+                    .equals(other.fromGeoIP, fromGeoIP)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(timezone) ^
+      const DeepCollectionEquality().hash(fromGeoIP);
+
+  @JsonKey(ignore: true)
+  @override
+  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
+      __$TimezoneDataCopyWithImpl<_TimezoneData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TimezoneDataToJson(this);
+  }
+}
+
+abstract class _TimezoneData implements TimezoneData {
+  const factory _TimezoneData(
+      {String? timezone,
+      @JsonKey(name: 'from_geoip') bool? fromGeoIP}) = _$_TimezoneData;
+
+  factory _TimezoneData.fromJson(Map<String, dynamic> json) =
+      _$_TimezoneData.fromJson;
+
+  @override
+  String? get timezone => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'from_geoip')
+  bool? get fromGeoIP => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
   return _SSHData.fromJson(json);
 }

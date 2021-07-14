@@ -64,6 +64,17 @@ class IdentityData with _$IdentityData {
 }
 
 @freezed
+class TimezoneData with _$TimezoneData {
+  const factory TimezoneData({
+    String? timezone,
+    @JsonKey(name: 'from_geoip') bool? fromGeoIP,
+  }) = _TimezoneData;
+
+  factory TimezoneData.fromJson(Map<String, dynamic> json) =>
+      _$TimezoneDataFromJson(json);
+}
+
+@freezed
 class SSHData with _$SSHData {
   const factory SSHData({
     @JsonKey(name: 'install_server') bool? installServer,
