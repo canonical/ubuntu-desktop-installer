@@ -14,4 +14,20 @@ class KeyboardLayoutModel extends ChangeNotifier {
 
   final SubiquityClient _client;
   final KeyboardModel _keyboardModel;
+
+  /// The index of the currently selected layout.
+  //int get selectedLayoutIndex => _selectedLayoutIndex;
+  int selectedLayoutIndex = -1;
+
+  KeyboardLayout? get selectedLayout => (selectedLayoutIndex > -1)
+      ? _keyboardModel.layouts[selectedLayoutIndex]
+      : null;
+
+  /// The index of the currently selected layout variant.
+  //int get selectedVariantIndex => _selectedVariantIndex;
+  int selectedVariantIndex = -1;
+
+  KeyboardVariant? get selectedVariant => (selectedVariantIndex > -1)
+      ? selectedLayout?.variants?.elementAt(selectedVariantIndex)
+      : null;
 }

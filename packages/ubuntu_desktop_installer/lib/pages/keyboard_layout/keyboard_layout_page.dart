@@ -34,16 +34,6 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
-  int _selectedLayoutIndex = -1;
-  KeyboardLayout? get _selectedLayout => (_selectedLayoutIndex > -1)
-      ? Provider.of<KeyboardModel>(context, listen: false)
-          .layouts[_selectedLayoutIndex]
-      : null;
-  int _selectedVariantIndex = -1;
-  KeyboardVariant? get _selectedVariant => (_selectedVariantIndex > -1)
-      ? _selectedLayout?.variants?.elementAt(_selectedVariantIndex)
-      : null;
-
   final _layoutListScrollController = AutoScrollController();
   final _keyboardVariantListScrollController = AutoScrollController();
 
@@ -51,27 +41,30 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   void initState() {
     super.initState();
 
+    final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
     getKeyboardInfo().then((info) {
       var keyboardModel = Provider.of<KeyboardModel>(context, listen: false);
       setState(() {
-        _selectedLayoutIndex = keyboardModel.layouts.indexWhere((layout) {
+        model.selectedLayoutIndex = keyboardModel.layouts.indexWhere((layout) {
           return layout.code == info.layout;
         });
-        if (_selectedLayoutIndex > -1) {
-          _selectedVariantIndex = _selectedLayout!.variants?.indexWhere(
-                  (variant) => variant.code == (info.variant ?? '')) ??
+        if (model.selectedLayoutIndex > -1) {
+          model.selectedVariantIndex = model.selectedLayout!.variants
+                  ?.indexWhere(
+                      (variant) => variant.code == (info.variant ?? '')) ??
               -1;
-          if (_selectedVariantIndex > -1) {
+          if (model.selectedVariantIndex > -1) {
             SchedulerBinding.instance!.addPostFrameCallback((_) =>
                 _keyboardVariantListScrollController.scrollToIndex(
-                    _selectedVariantIndex,
+                    model.selectedVariantIndex,
                     preferPosition: AutoScrollPosition.middle,
                     duration: const Duration(milliseconds: 1)));
           }
         }
-        if (_selectedLayoutIndex > -1) {
+        if (model.selectedLayoutIndex > -1) {
           SchedulerBinding.instance!.addPostFrameCallback((_) =>
-              _layoutListScrollController.scrollToIndex(_selectedLayoutIndex,
+              _layoutListScrollController.scrollToIndex(
+                  model.selectedLayoutIndex,
                   preferPosition: AutoScrollPosition.middle,
                   duration: const Duration(milliseconds: 1)));
         }
@@ -88,13 +81,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<KeyboardLayoutModel>(context);
     return Consumer<KeyboardModel>(builder: (context, keyboardModel, child) {
       Future<void> _setXkbMap() async {
         return Process.run('setxkbmap', [
           '-layout',
-          _selectedLayout!.code!,
+          model.selectedLayout!.code!,
           '-variant',
-          _selectedVariant!.code!
+          model.selectedVariant!.code!
         ]).then((result) {}).catchError((e) {
           print(e as ProcessException);
         });
@@ -120,11 +114,11 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             controller: _layoutListScrollController,
                             child: ListTile(
                               title: Text(keyboardModel.layouts[index].name!),
-                              selected: index == _selectedLayoutIndex,
+                              selected: index == model.selectedLayoutIndex,
                               onTap: () {
                                 setState(() {
-                                  _selectedLayoutIndex = index;
-                                  _selectedVariantIndex = 0;
+                                  model.selectedLayoutIndex = index;
+                                  model.selectedVariantIndex = 0;
                                 });
                                 _setXkbMap();
                               },
@@ -137,8 +131,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                     Expanded(
                       child: RoundedListView.builder(
                         controller: _keyboardVariantListScrollController,
-                        itemCount: _selectedLayout != null
-                            ? _selectedLayout!.variants!.length
+                        itemCount: model.selectedLayout != null
+                            ? model.selectedLayout!.variants!.length
                             : 0,
                         itemBuilder: (context, index) {
                           return AutoScrollTag(
@@ -146,12 +140,12 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                             key: ValueKey(index),
                             controller: _keyboardVariantListScrollController,
                             child: ListTile(
-                              title:
-                                  Text(_selectedLayout!.variants![index].name!),
-                              selected: index == _selectedVariantIndex,
+                              title: Text(
+                                  model.selectedLayout!.variants![index].name!),
+                              selected: index == model.selectedVariantIndex,
                               onTap: () {
                                 setState(() {
-                                  _selectedVariantIndex = index;
+                                  model.selectedVariantIndex = index;
                                 });
                                 _setXkbMap();
                               },
@@ -189,14 +183,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             ),
             WizardAction(
               label: lang.continueButtonText,
-              enabled:
-                  (_selectedLayoutIndex > -1) && (_selectedVariantIndex > -1),
+              enabled: (model.selectedLayoutIndex > -1) &&
+                  (model.selectedVariantIndex > -1),
               onActivated: () async {
                 final client =
                     Provider.of<SubiquityClient>(context, listen: false);
                 final keyboard = KeyboardSetting(
-                    layout: _selectedLayout!.code!,
-                    variant: _selectedVariant!.code!);
+                    layout: model.selectedLayout!.code!,
+                    variant: model.selectedVariant!.code!);
                 await client.setKeyboard(keyboard);
 
                 Navigator.pushNamed(context, Routes.updatesOtherSoftware);
