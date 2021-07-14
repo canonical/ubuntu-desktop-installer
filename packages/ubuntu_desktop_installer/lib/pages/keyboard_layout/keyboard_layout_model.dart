@@ -60,4 +60,13 @@ class KeyboardLayoutModel extends ChangeNotifier {
       print(e as ProcessException);
     });
   }
+
+  /// Applies the selected keyboard layout and variant to the system.
+  Future<void> applyKeyboardSettings() {
+    final keyboard = KeyboardSetting(
+      layout: selectedLayout!.code!,
+      variant: selectedVariant!.code!,
+    );
+    return _client.setKeyboard(keyboard);
+  }
 }

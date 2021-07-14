@@ -162,13 +162,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               enabled: (model.selectedLayoutIndex > -1) &&
                   (model.selectedVariantIndex > -1),
               onActivated: () async {
-                final client =
-                    Provider.of<SubiquityClient>(context, listen: false);
-                final keyboard = KeyboardSetting(
-                    layout: model.selectedLayout!.code!,
-                    variant: model.selectedVariant!.code!);
-                await client.setKeyboard(keyboard);
-
+                await model.applyKeyboardSettings();
                 Navigator.pushNamed(context, Routes.updatesOtherSoftware);
               },
             ),
