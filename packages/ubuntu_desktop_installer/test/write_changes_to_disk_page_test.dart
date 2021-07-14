@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+
+import 'write_changes_to_disk_page_test.mocks.dart';
 
 class HomePage extends StatelessWidget {
   static const targetRouteName = 'writeChangesToDisk';
@@ -24,30 +28,10 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class SubiquityClientMock extends SubiquityClient {
-  List<dynamic> storageConfig = [];
-  String confirmationTty = '';
-
-  @override
-  Future<void> markConfigured(List<String> endpointNames) async {}
-
-  @override
-  Future<void> setIdentity(IdentityData identity) async {}
-
-  @override
-  Future<void> setStorage(List<dynamic> config) async {
-    storageConfig = config;
-  }
-
-  @override
-  Future<void> confirm(String tty) async {
-    confirmationTty = tty;
-  }
-}
-
+@GenerateMocks([SubiquityClient])
 void main() {
   late MaterialApp app;
-  late SubiquityClientMock clientMock;
+  late MockSubiquityClient client;
 
   final storageConfig1 = [
     {
@@ -121,18 +105,16 @@ void main() {
         Routes.chooseYourLook: (context) => Container(),
       },
     );
-    clientMock = SubiquityClientMock();
+    client = MockSubiquityClient();
     await tester.pumpWidget(
       Provider(
           // ignore: unnecessary_cast
-          create: (_) => clientMock as SubiquityClient,
+          create: (_) => client as SubiquityClient,
           child: app),
     );
     await tester.tap(find.widgetWithText(TextButton, HomePage.targetRouteName));
     await tester.pumpAndSettle();
     expect(find.byType(WriteChangesToDiskPage), findsOneWidget);
-    expect(clientMock.storageConfig, isEmpty);
-    expect(clientMock.confirmationTty, isEmpty);
   }
 
   testWidgets('load page with storage config', (tester) async {
@@ -151,7 +133,7 @@ void main() {
   testWidgets('continue sets storage and confirms', (tester) async {
     await setUpApp(tester, storageConfig1);
     await tester.tap(find.widgetWithText(OutlinedButton, 'Continue'));
-    expect(clientMock.storageConfig, storageConfig1);
-    expect(clientMock.confirmationTty, '/dev/tty1');
+    verify(client.setStorage(storageConfig1));
+    verify(client.confirm('/dev/tty1'));
   });
 }

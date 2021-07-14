@@ -85,6 +85,19 @@ Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
       'hostname': instance.hostname,
     };
 
+_$_TimezoneData _$_$_TimezoneDataFromJson(Map<String, dynamic> json) {
+  return _$_TimezoneData(
+    timezone: json['timezone'] as String?,
+    fromGeoIP: json['from_geoip'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_TimezoneDataToJson(_$_TimezoneData instance) =>
+    <String, dynamic>{
+      'timezone': instance.timezone,
+      'from_geoip': instance.fromGeoIP,
+    };
+
 _$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
   return _$_SSHData(
     installServer: json['install_server'] as bool?,
