@@ -23,6 +23,14 @@ class KeyboardLayoutModel extends ChangeNotifier {
       ? _keyboardModel.layouts[selectedLayoutIndex]
       : null;
 
+  /// Selects the keyboard layout at [index].
+  void selectLayout(int index) {
+    if (selectedLayoutIndex == index) return;
+    selectedLayoutIndex = index;
+    selectedVariantIndex = 0;
+    notifyListeners();
+  }
+
   /// The index of the currently selected layout variant.
   //int get selectedVariantIndex => _selectedVariantIndex;
   int selectedVariantIndex = -1;

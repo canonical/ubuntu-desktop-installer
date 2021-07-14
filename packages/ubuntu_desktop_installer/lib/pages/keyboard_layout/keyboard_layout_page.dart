@@ -116,10 +116,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                               title: Text(keyboardModel.layouts[index].name!),
                               selected: index == model.selectedLayoutIndex,
                               onTap: () {
-                                setState(() {
-                                  model.selectedLayoutIndex = index;
-                                  model.selectedVariantIndex = 0;
-                                });
+                                model.selectLayout(index);
                                 _setXkbMap();
                               },
                             ),
