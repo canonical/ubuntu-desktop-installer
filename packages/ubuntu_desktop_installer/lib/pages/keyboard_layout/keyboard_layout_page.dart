@@ -12,13 +12,22 @@ import '../../keyboard_model.dart';
 import '../../routes.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
+import 'keyboard_layout_model.dart';
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
     Key? key,
   }) : super(key: key);
 
-  static Widget create(BuildContext context) => KeyboardLayoutPage();
+  static Widget create(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => KeyboardLayoutModel(
+        client: Provider.of<SubiquityClient>(context, listen: false),
+        keyboardModel: Provider.of<KeyboardModel>(context, listen: false),
+      ),
+      child: KeyboardLayoutPage(),
+    );
+  }
 
   @override
   _KeyboardLayoutPageState createState() => _KeyboardLayoutPageState();
