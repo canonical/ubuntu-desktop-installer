@@ -18,6 +18,8 @@ class KeyboardLayoutPage extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
+  static Widget create(BuildContext context) => KeyboardLayoutPage();
+
   @override
   _KeyboardLayoutPageState createState() => _KeyboardLayoutPageState();
 }
