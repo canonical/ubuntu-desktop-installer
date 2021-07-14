@@ -25,40 +25,40 @@ class KeyboardLayoutModel extends ChangeNotifier {
   String layoutName(int index) => _keyboardModel.layouts[index].name!;
 
   /// The index of the currently selected layout.
-  //int get selectedLayoutIndex => _selectedLayoutIndex;
-  int selectedLayoutIndex = -1;
+  int get selectedLayoutIndex => _selectedLayoutIndex;
+  int _selectedLayoutIndex = -1;
 
-  KeyboardLayout? get selectedLayout => (selectedLayoutIndex > -1)
-      ? _keyboardModel.layouts[selectedLayoutIndex]
+  KeyboardLayout? get _selectedLayout => (_selectedLayoutIndex > -1)
+      ? _keyboardModel.layouts[_selectedLayoutIndex]
       : null;
 
   /// Selects the keyboard layout at [index].
   void selectLayout(int index) {
-    if (selectedLayoutIndex == index) return;
-    selectedLayoutIndex = index;
-    selectedVariantIndex = 0;
+    if (_selectedLayoutIndex == index) return;
+    _selectedLayoutIndex = index;
+    _selectedVariantIndex = 0;
     _setXkbMap();
     notifyListeners();
   }
 
   /// The number of available layout variants.
-  int get variantCount => selectedLayout?.variants?.length ?? 0;
+  int get variantCount => _selectedLayout?.variants?.length ?? 0;
 
   /// Returns the name of the layout variant at [index].
-  String variantName(int index) => selectedLayout!.variants![index].name!;
+  String variantName(int index) => _selectedLayout!.variants![index].name!;
 
   /// The index of the currently selected layout variant.
-  //int get selectedVariantIndex => _selectedVariantIndex;
-  int selectedVariantIndex = -1;
+  int get selectedVariantIndex => _selectedVariantIndex;
+  int _selectedVariantIndex = -1;
 
-  KeyboardVariant? get selectedVariant => (selectedVariantIndex > -1)
-      ? selectedLayout?.variants?.elementAt(selectedVariantIndex)
+  KeyboardVariant? get _selectedVariant => (_selectedVariantIndex > -1)
+      ? _selectedLayout?.variants?.elementAt(_selectedVariantIndex)
       : null;
 
   /// Selects the keyboard layout variant at [index].
   void selectVariant(int index) {
-    if (selectedVariantIndex == index) return;
-    selectedVariantIndex = index;
+    if (_selectedVariantIndex == index) return;
+    _selectedVariantIndex = index;
     _setXkbMap();
     notifyListeners();
   }
@@ -66,29 +66,30 @@ class KeyboardLayoutModel extends ChangeNotifier {
   Future<void> _setXkbMap() async {
     return Process.run('setxkbmap', [
       '-layout',
-      selectedLayout!.code!,
+      _selectedLayout!.code!,
       '-variant',
-      selectedVariant!.code!
+      _selectedVariant!.code!
     ]).then((result) {}).catchError((e) {
       print(e as ProcessException);
     });
   }
 
   /// Whether the layout and variant selections are valid.
-  bool get isValid => selectedLayoutIndex > -1 && selectedVariantIndex > -1;
+  bool get isValid => _selectedLayoutIndex > -1 && _selectedVariantIndex > -1;
 
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
     await getKeyboardInfo().then((info) {
-      selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
+      _selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
         return layout.code == info.layout;
       });
-      if (selectedLayoutIndex > -1) {
-        selectedVariantIndex = selectedLayout!.variants?.indexWhere((variant) {
-              return variant.code == (info.variant ?? '');
-            }) ??
-            -1;
+      if (_selectedLayoutIndex > -1) {
+        _selectedVariantIndex =
+            _selectedLayout!.variants?.indexWhere((variant) {
+                  return variant.code == (info.variant ?? '');
+                }) ??
+                -1;
       }
     });
     notifyListeners();
@@ -97,8 +98,8 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// Applies the selected keyboard layout and variant to the system.
   Future<void> applyKeyboardSettings() {
     final keyboard = KeyboardSetting(
-      layout: selectedLayout!.code!,
-      variant: selectedVariant!.code!,
+      layout: _selectedLayout!.code!,
+      variant: _selectedVariant!.code!,
     );
     return _client.setKeyboard(keyboard);
   }
