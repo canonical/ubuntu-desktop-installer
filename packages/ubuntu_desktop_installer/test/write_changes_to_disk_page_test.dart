@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
+import 'package:ubuntu_desktop_installer/partition_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
@@ -22,16 +23,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       child: Text(targetRouteName),
-      onPressed: () => Navigator.pushNamed(context, targetRouteName,
-          arguments: storageConfig),
+      onPressed: () => Navigator.pushNamed(context, targetRouteName),
     );
   }
 }
 
-@GenerateMocks([SubiquityClient])
+@GenerateMocks([PartitionModel, SubiquityClient])
 void main() {
   late MaterialApp app;
   late MockSubiquityClient client;
+  late MockPartitionModel model;
 
   final storageConfig1 = [
     {
@@ -99,18 +100,23 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      home: HomePage(storageConfig: storageConfig),
+      home: HomePage(),
       routes: {
         HomePage.targetRouteName: (context) => WriteChangesToDiskPage(),
         Routes.chooseYourLook: (context) => Container(),
       },
     );
     client = MockSubiquityClient();
+    model = MockPartitionModel();
+    when(model.storageConfig).thenReturn(storageConfig1);
     await tester.pumpWidget(
-      Provider(
-          // ignore: unnecessary_cast
-          create: (_) => client as SubiquityClient,
-          child: app),
+      MultiProvider(
+        providers: [
+          Provider<SubiquityClient>.value(value: client),
+          ChangeNotifierProvider<PartitionModel>.value(value: model),
+        ],
+        child: app,
+      ),
     );
     await tester.tap(find.widgetWithText(TextButton, HomePage.targetRouteName));
     await tester.pumpAndSettle();

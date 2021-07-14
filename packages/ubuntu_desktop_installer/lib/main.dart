@@ -10,6 +10,7 @@ import 'app.dart';
 import 'app_theme.dart';
 import 'keyboard_model.dart';
 import 'l10n/app_localizations.dart';
+import 'partition_model.dart';
 
 Future<void> main() async {
   final themeSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
@@ -39,6 +40,7 @@ Future<void> main() async {
         create: (_) => AppTheme(themeSettings),
       ),
       ChangeNotifierProvider(create: (_) => KeyboardModel()),
+      ChangeNotifierProvider(create: (_) => PartitionModel(subiquityClient)),
     ],
     child: UbuntuDesktopInstallerApp(),
   ));
