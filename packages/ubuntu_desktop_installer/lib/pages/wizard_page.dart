@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../app_theme.dart';
 import '../constants.dart';
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
