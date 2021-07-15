@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
-import '../partition_model.dart';
+import '../disk_storage_model.dart';
 import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
@@ -24,13 +24,13 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
   void initState() {
     super.initState();
 
-    final model = Provider.of<PartitionModel>(context, listen: false);
+    final model = Provider.of<DiskStorageModel>(context, listen: false);
     model.initGuidedStorage();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<PartitionModel>(context);
+    final model = Provider.of<DiskStorageModel>(context);
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.allocateDiskSpace),

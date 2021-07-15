@@ -14,8 +14,8 @@ class DiskOrPartition {
   }
 }
 
-class PartitionModel extends ChangeNotifier {
-  PartitionModel(this._client);
+class DiskStorageModel extends ChangeNotifier {
+  DiskStorageModel(this._client);
 
   final SubiquityClient _client;
 

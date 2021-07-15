@@ -5,9 +5,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/disk_storage_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
-import 'package:ubuntu_desktop_installer/partition_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
@@ -28,11 +28,11 @@ class HomePage extends StatelessWidget {
   }
 }
 
-@GenerateMocks([PartitionModel, SubiquityClient])
+@GenerateMocks([DiskStorageModel, SubiquityClient])
 void main() {
   late MaterialApp app;
   late MockSubiquityClient client;
-  late MockPartitionModel model;
+  late MockDiskStorageModel model;
 
   final storageConfig1 = [
     {
@@ -107,13 +107,13 @@ void main() {
       },
     );
     client = MockSubiquityClient();
-    model = MockPartitionModel();
+    model = MockDiskStorageModel();
     when(model.storageConfig).thenReturn(storageConfig1);
     await tester.pumpWidget(
       MultiProvider(
         providers: [
           Provider<SubiquityClient>.value(value: client),
-          ChangeNotifierProvider<PartitionModel>.value(value: model),
+          ChangeNotifierProvider<DiskStorageModel>.value(value: model),
         ],
         child: app,
       ),

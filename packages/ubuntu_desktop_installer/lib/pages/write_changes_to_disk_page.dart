@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import '../partition_model.dart';
+import '../disk_storage_model.dart';
 import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
@@ -126,7 +126,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<PartitionModel>(context, listen: false);
+    final model = Provider.of<DiskStorageModel>(context, listen: false);
     _storageConfig = model.storageConfig;
   }
 

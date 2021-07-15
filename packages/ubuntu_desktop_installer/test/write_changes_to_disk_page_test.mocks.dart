@@ -9,7 +9,7 @@ import 'package:http/src/streamed_response.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/src/types.dart' as _i3;
 import 'package:subiquity_client/subiquity_client.dart' as _i6;
-import 'package:ubuntu_desktop_installer/partition_model.dart' as _i2;
+import 'package:ubuntu_desktop_installer/disk_storage_model.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: comment_references
@@ -35,11 +35,11 @@ class _FakeGuidedStorageResponse extends _i1.Fake
 
 class _FakeStorageResponse extends _i1.Fake implements _i3.StorageResponse {}
 
-/// A class which mocks [PartitionModel].
+/// A class which mocks [DiskStorageModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockPartitionModel extends _i1.Mock implements _i2.PartitionModel {
-  MockPartitionModel() {
+class MockDiskStorageModel extends _i1.Mock implements _i2.DiskStorageModel {
+  MockDiskStorageModel() {
     _i1.throwOnMissingStub(this);
   }
 
