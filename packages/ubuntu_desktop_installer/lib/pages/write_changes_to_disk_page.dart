@@ -4,8 +4,9 @@ import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import '../routes.dart';
 
+import '../disk_storage_model.dart';
+import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -13,6 +14,8 @@ class WriteChangesToDiskPage extends StatefulWidget {
   const WriteChangesToDiskPage({
     Key? key,
   }) : super(key: key);
+
+  static Widget create(BuildContext context) => WriteChangesToDiskPage();
 
   @override
   _WriteChangesToDiskPageState createState() => _WriteChangesToDiskPageState();
@@ -121,8 +124,14 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   final List<_PartitionChangeComposite> _partitionChanges = [];
 
   @override
+  void initState() {
+    super.initState();
+    final model = Provider.of<DiskStorageModel>(context, listen: false);
+    _storageConfig = model.storageConfig;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    _storageConfig = ModalRoute.of(context)!.settings.arguments as List?;
     print(
         'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
     for (var entry in _storageConfig!) {

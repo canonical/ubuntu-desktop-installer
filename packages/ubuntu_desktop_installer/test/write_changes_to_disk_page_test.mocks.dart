@@ -3,11 +3,13 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i4;
+import 'dart:ui' as _i5;
 
-import 'package:http/src/streamed_response.dart' as _i5;
+import 'package:http/src/streamed_response.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/src/types.dart' as _i2;
-import 'package:subiquity_client/subiquity_client.dart' as _i3;
+import 'package:subiquity_client/src/types.dart' as _i3;
+import 'package:subiquity_client/subiquity_client.dart' as _i6;
+import 'package:ubuntu_desktop_installer/disk_storage_model.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: comment_references
@@ -15,26 +17,75 @@ import 'package:subiquity_client/subiquity_client.dart' as _i3;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-class _FakeKeyboardSetup extends _i1.Fake implements _i2.KeyboardSetup {}
+class _FakeDiskOrPartition extends _i1.Fake implements _i2.DiskOrPartition {}
 
-class _FakeIdentityData extends _i1.Fake implements _i2.IdentityData {}
+class _FakeKeyboardSetup extends _i1.Fake implements _i3.KeyboardSetup {}
 
-class _FakeTimezoneData extends _i1.Fake implements _i2.TimezoneData {}
+class _FakeIdentityData extends _i1.Fake implements _i3.IdentityData {}
 
-class _FakeSSHData extends _i1.Fake implements _i2.SSHData {}
+class _FakeTimezoneData extends _i1.Fake implements _i3.TimezoneData {}
 
-class _FakeApplicationStatus extends _i1.Fake implements _i2.ApplicationStatus {
+class _FakeSSHData extends _i1.Fake implements _i3.SSHData {}
+
+class _FakeApplicationStatus extends _i1.Fake implements _i3.ApplicationStatus {
 }
 
 class _FakeGuidedStorageResponse extends _i1.Fake
-    implements _i2.GuidedStorageResponse {}
+    implements _i3.GuidedStorageResponse {}
 
-class _FakeStorageResponse extends _i1.Fake implements _i2.StorageResponse {}
+class _FakeStorageResponse extends _i1.Fake implements _i3.StorageResponse {}
+
+/// A class which mocks [DiskStorageModel].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDiskStorageModel extends _i1.Mock implements _i2.DiskStorageModel {
+  MockDiskStorageModel() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  int get diskAndPartitionCount =>
+      (super.noSuchMethod(Invocation.getter(#diskAndPartitionCount),
+          returnValue: 0) as int);
+  @override
+  bool get hasListeners =>
+      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
+          as bool);
+  @override
+  _i2.DiskOrPartition diskAndPartition(int? index) =>
+      (super.noSuchMethod(Invocation.method(#diskAndPartition, [index]),
+          returnValue: _FakeDiskOrPartition()) as _i2.DiskOrPartition);
+  @override
+  _i4.Future<void> initGuidedStorage() =>
+      (super.noSuchMethod(Invocation.method(#initGuidedStorage, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> setGuidedStorage() =>
+      (super.noSuchMethod(Invocation.method(#setGuidedStorage, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future.value()) as _i4.Future<void>);
+  @override
+  void addListener(_i5.VoidCallback? listener) =>
+      super.noSuchMethod(Invocation.method(#addListener, [listener]),
+          returnValueForMissingStub: null);
+  @override
+  void removeListener(_i5.VoidCallback? listener) =>
+      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
+          returnValueForMissingStub: null);
+  @override
+  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
+      returnValueForMissingStub: null);
+  @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+}
 
 /// A class which mocks [SubiquityClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
+class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
   MockSubiquityClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -48,7 +99,7 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
       returnValueForMissingStub: null);
   @override
   _i4.Future<void> checkStatus(
-          String? method, _i5.StreamedResponse? response) =>
+          String? method, _i7.StreamedResponse? response) =>
       (super.noSuchMethod(Invocation.method(#checkStatus, [method, response]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
@@ -62,12 +113,12 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.KeyboardSetup> keyboard() => (super.noSuchMethod(
+  _i4.Future<_i3.KeyboardSetup> keyboard() => (super.noSuchMethod(
           Invocation.method(#keyboard, []),
-          returnValue: Future<_i2.KeyboardSetup>.value(_FakeKeyboardSetup()))
-      as _i4.Future<_i2.KeyboardSetup>);
+          returnValue: Future<_i3.KeyboardSetup>.value(_FakeKeyboardSetup()))
+      as _i4.Future<_i3.KeyboardSetup>);
   @override
-  _i4.Future<void> setKeyboard(_i2.KeyboardSetting? setting) =>
+  _i4.Future<void> setKeyboard(_i3.KeyboardSetting? setting) =>
       (super.noSuchMethod(Invocation.method(#setKeyboard, [setting]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
@@ -90,41 +141,41 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.IdentityData> identity() =>
+  _i4.Future<_i3.IdentityData> identity() =>
       (super.noSuchMethod(Invocation.method(#identity, []),
-              returnValue: Future<_i2.IdentityData>.value(_FakeIdentityData()))
-          as _i4.Future<_i2.IdentityData>);
+              returnValue: Future<_i3.IdentityData>.value(_FakeIdentityData()))
+          as _i4.Future<_i3.IdentityData>);
   @override
-  _i4.Future<void> setIdentity(_i2.IdentityData? identity) =>
+  _i4.Future<void> setIdentity(_i3.IdentityData? identity) =>
       (super.noSuchMethod(Invocation.method(#setIdentity, [identity]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.TimezoneData> timezone() =>
+  _i4.Future<_i3.TimezoneData> timezone() =>
       (super.noSuchMethod(Invocation.method(#timezone, []),
-              returnValue: Future<_i2.TimezoneData>.value(_FakeTimezoneData()))
-          as _i4.Future<_i2.TimezoneData>);
+              returnValue: Future<_i3.TimezoneData>.value(_FakeTimezoneData()))
+          as _i4.Future<_i3.TimezoneData>);
   @override
   _i4.Future<void> setTimezone(String? timezone) =>
       (super.noSuchMethod(Invocation.method(#setTimezone, [timezone]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.SSHData> ssh() =>
+  _i4.Future<_i3.SSHData> ssh() =>
       (super.noSuchMethod(Invocation.method(#ssh, []),
-              returnValue: Future<_i2.SSHData>.value(_FakeSSHData()))
-          as _i4.Future<_i2.SSHData>);
+              returnValue: Future<_i3.SSHData>.value(_FakeSSHData()))
+          as _i4.Future<_i3.SSHData>);
   @override
-  _i4.Future<void> setSsh(_i2.SSHData? ssh) =>
+  _i4.Future<void> setSsh(_i3.SSHData? ssh) =>
       (super.noSuchMethod(Invocation.method(#setSsh, [ssh]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.ApplicationStatus> status({_i2.ApplicationState? current}) =>
+  _i4.Future<_i3.ApplicationStatus> status({_i3.ApplicationState? current}) =>
       (super.noSuchMethod(Invocation.method(#status, [], {#current: current}),
               returnValue:
-                  Future<_i2.ApplicationStatus>.value(_FakeApplicationStatus()))
-          as _i4.Future<_i2.ApplicationStatus>);
+                  Future<_i3.ApplicationStatus>.value(_FakeApplicationStatus()))
+          as _i4.Future<_i3.ApplicationStatus>);
   @override
   _i4.Future<void> markConfigured(List<String>? endpointNames) =>
       (super.noSuchMethod(Invocation.method(#markConfigured, [endpointNames]),
@@ -136,18 +187,18 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i4.Future<void>);
   @override
-  _i4.Future<_i2.GuidedStorageResponse> getGuidedStorage(
+  _i4.Future<_i3.GuidedStorageResponse> getGuidedStorage(
           int? minSize, bool? wait) =>
       (super.noSuchMethod(Invocation.method(#getGuidedStorage, [minSize, wait]),
-              returnValue: Future<_i2.GuidedStorageResponse>.value(
+              returnValue: Future<_i3.GuidedStorageResponse>.value(
                   _FakeGuidedStorageResponse()))
-          as _i4.Future<_i2.GuidedStorageResponse>);
+          as _i4.Future<_i3.GuidedStorageResponse>);
   @override
-  _i4.Future<_i2.StorageResponse> setGuidedStorage(_i2.GuidedChoice? choice) =>
+  _i4.Future<_i3.StorageResponse> setGuidedStorage(_i3.GuidedChoice? choice) =>
       (super.noSuchMethod(Invocation.method(#setGuidedStorage, [choice]),
               returnValue:
-                  Future<_i2.StorageResponse>.value(_FakeStorageResponse()))
-          as _i4.Future<_i2.StorageResponse>);
+                  Future<_i3.StorageResponse>.value(_FakeStorageResponse()))
+          as _i4.Future<_i3.StorageResponse>);
   @override
   _i4.Future<void> setStorage(List<dynamic>? config) =>
       (super.noSuchMethod(Invocation.method(#setStorage, [config]),

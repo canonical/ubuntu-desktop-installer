@@ -26,6 +26,8 @@ class _FakeKeyboardSetup extends _i1.Fake implements _i3.KeyboardSetup {}
 
 class _FakeIdentityData extends _i1.Fake implements _i3.IdentityData {}
 
+class _FakeTimezoneData extends _i1.Fake implements _i3.TimezoneData {}
+
 class _FakeSSHData extends _i1.Fake implements _i3.SSHData {}
 
 class _FakeApplicationStatus extends _i1.Fake implements _i3.ApplicationStatus {
@@ -161,6 +163,16 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
   @override
   _i5.Future<void> setIdentity(_i3.IdentityData? identity) =>
       (super.noSuchMethod(Invocation.method(#setIdentity, [identity]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future.value()) as _i5.Future<void>);
+  @override
+  _i5.Future<_i3.TimezoneData> timezone() =>
+      (super.noSuchMethod(Invocation.method(#timezone, []),
+              returnValue: Future<_i3.TimezoneData>.value(_FakeTimezoneData()))
+          as _i5.Future<_i3.TimezoneData>);
+  @override
+  _i5.Future<void> setTimezone(String? timezone) =>
+      (super.noSuchMethod(Invocation.method(#setTimezone, [timezone]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i5.Future<void>);
   @override
