@@ -263,8 +263,14 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
 
                     // Use the default values for a number of endpoints
                     // for which a UI page isn't implemented yet.
-                    await client.markConfigured(
-                        ['mirror', 'proxy', 'network', 'ssh', 'snaplist']);
+                    await client.markConfigured([
+                      'mirror',
+                      'proxy',
+                      'network',
+                      'ssh',
+                      'snaplist',
+                      'timezone',
+                    ]);
 
                     // Define a default identity until a UI page is implemented
                     // for it.
@@ -274,10 +280,6 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                         cryptedPassword: Crypt.sha512('ubuntu').toString(),
                         hostname: 'ubuntu-desktop');
                     await client.setIdentity(identity);
-
-                    // Set a default timezone until a UI page is implemented
-                    // for it.
-                    await client.setTimezone('UTC');
 
                     await client.setStorage(_storageConfig!);
 
