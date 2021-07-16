@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,26 @@ Future<void> main() async {
         .start(ServerMode.DRY_RUN, 'examples/simple.json')
         .then(subiquityClient.open);
   }
+
+  // Use the default values for a number of endpoints
+  // for which a UI page isn't implemented yet.
+  subiquityClient.markConfigured([
+    'mirror',
+    'proxy',
+    'network',
+    'ssh',
+    'snaplist',
+    'timezone',
+  ]);
+
+  // Define a default identity until a UI page is implemented
+  // for it.
+  final identity = IdentityData(
+      realname: 'Ubuntu',
+      username: 'ubuntu',
+      cryptedPassword: Crypt.sha512('ubuntu').toString(),
+      hostname: 'ubuntu-desktop');
+  subiquityClient.setIdentity(identity);
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
