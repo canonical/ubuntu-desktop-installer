@@ -1,60 +1,36 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
+import '../disk_storage_model.dart';
 import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
-
-class _DiskOrPartition {
-  final Disk disk;
-  final Partition? partition;
-  late String name;
-
-  _DiskOrPartition({required this.disk, this.partition}) {
-    name = disk.id!;
-    if (partition != null) {
-      name += partition!.number.toString();
-    }
-  }
-}
 
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
     Key? key,
   }) : super(key: key);
 
+  static Widget create(BuildContext context) => AllocateDiskSpacePage();
+
   @override
   _AllocateDiskSpacePageState createState() => _AllocateDiskSpacePageState();
 }
 
 class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
-  GuidedStorageResponse? _response;
-  final List<_DiskOrPartition> _disksAndPartitions = [];
-
   @override
   void initState() {
     super.initState();
-    final client = Provider.of<SubiquityClient>(context, listen: false);
-    client.getGuidedStorage(0, true).then((r) {
-      setState(() {
-        _response = r;
-        _disksAndPartitions.clear();
-        for (var disk in r.disks!) {
-          _disksAndPartitions.add(_DiskOrPartition(disk: disk));
-          for (var partition in disk.partitions!) {
-            _disksAndPartitions
-                .add(_DiskOrPartition(disk: disk, partition: partition));
-          }
-        }
-      });
-    });
+
+    final model = Provider.of<DiskStorageModel>(context, listen: false);
+    model.initGuidedStorage();
   }
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<DiskStorageModel>(context);
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.allocateDiskSpace),
@@ -88,9 +64,9 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                           label: Text(lang.diskHeadersFormat),
                         ),
                       ],
-                      rows: List<DataRow>.generate(_disksAndPartitions.length,
+                      rows: List<DataRow>.generate(model.diskAndPartitionCount,
                           (index) {
-                        final element = _disksAndPartitions[index];
+                        final element = model.diskAndPartition(index);
                         return DataRow(cells: <DataCell>[
                           DataCell(Row(children: [
                             Icon(YaruIcons.drive_harddisk),
@@ -118,18 +94,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                   label: lang.startInstallingButtonText,
                   highlighted: true,
                   onActivated: () async {
-                    final client =
-                        Provider.of<SubiquityClient>(context, listen: false);
-
-                    final choice = GuidedChoice(
-                        diskId: _response!.disks![0].id, useLvm: false);
-                    final storageResponse =
-                        await client.setGuidedStorage(choice);
-
-                    await client.confirm('/dev/tty1');
-
-                    Navigator.pushNamed(context, Routes.writeChangesToDisk,
-                        arguments: storageResponse.config);
+                    await model.setGuidedStorage();
+                    Navigator.pushNamed(context, Routes.writeChangesToDisk);
                   },
                 ),
               ],
