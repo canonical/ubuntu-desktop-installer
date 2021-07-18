@@ -1,7 +1,9 @@
-import 'package:test/test.dart';
+import 'dart:io';
+
+import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   final _testServer = SubiquityServer();
@@ -70,6 +72,8 @@ void main() {
 
     var sr = await _client.setGuidedStorage(gc);
     expect(sr.status, ProbeStatus.DONE);
+
+    await _client.setStorage(sr.config!);
   });
 
   test('proxy', () async {
@@ -120,6 +124,28 @@ void main() {
     expect(id.hostname, '');
   });
 
+  test('timezone', () async {
+    final systemTimezone =
+        Process.runSync('timedatectl', ['show', '-p', 'Timezone', '--value'])
+            .stdout
+            .toString()
+            .trim();
+    var tzdata = await _client.timezone();
+    expect(tzdata.timezone, systemTimezone);
+
+    try {
+      await _client.setTimezone('Pacific/Guam');
+      tzdata = await _client.timezone();
+      expect(tzdata.timezone, 'Pacific/Guam');
+      expect(tzdata.fromGeoIP, isFalse);
+    } finally {
+      // Restore initial timezone to leave the test system in a clean state
+      await _client.setTimezone(systemTimezone);
+    }
+  },
+      skip:
+          'fails on headless test systems (CI) because subiquity calls `timedatectl set-timezone`, which requires sudo');
+
   test('ssh', () async {
     var newSsh = SSHData(
       installServer: true,
@@ -157,6 +183,9 @@ void main() {
     expect(status.echoSyslogId, startsWith('subiquity_echo.'));
     expect(status.logSyslogId, startsWith('subiquity_log.'));
     expect(status.eventSyslogId, startsWith('subiquity_event.'));
+
+    // Should not block as the status is currently WAITING
+    status = await _client.status(current: ApplicationState.RUNNING);
   });
 
   test('markConfigured', () async {

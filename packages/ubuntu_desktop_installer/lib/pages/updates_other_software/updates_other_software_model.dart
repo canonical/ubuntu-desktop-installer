@@ -25,6 +25,7 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  // ignore: avoid_positional_boolean_parameters
   void setInstallThirdParty(bool? installThirdParty) {
     if (installThirdParty == null || _installThirdParty == installThirdParty) {
       return;

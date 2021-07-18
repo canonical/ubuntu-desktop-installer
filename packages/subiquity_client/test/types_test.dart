@@ -1,5 +1,5 @@
-import 'package:test/test.dart';
 import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('keyboard setting', () {
@@ -32,6 +32,16 @@ void main() {
     };
     expect(identity.toJson(), equals(json));
     expect(IdentityData.fromJson(json), identity);
+  });
+
+  test('timezone data', () {
+    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoIP: false);
+    const json = <String, dynamic>{
+      'timezone': 'Europe/Paris',
+      'from_geoip': false,
+    };
+    expect(tzdata.toJson(), equals(json));
+    expect(TimezoneData.fromJson(json), tzdata);
   });
 
   test('ssh data', () {

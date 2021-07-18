@@ -196,7 +196,7 @@ class HttpUnixClient extends BaseClient {
       _parserState = _HttpParserState.status;
     }
 
-    return false;
+    return _chunkLength != null && _chunkRead < _chunkLength!;
   }
 
   bool _processChunkHeader(_HttpRequest request) {

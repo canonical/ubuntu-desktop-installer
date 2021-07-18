@@ -4,67 +4,29 @@
   "languageName": "Русский",
 
   "appTitle": "Установка Ubuntu",
-  "@appTitle": {},
 
   "backButtonText": "Назад",
-  "@backButtonText": {},
   "continueButtonText": "Продолжить",
-  "@continueButtonText": {},
   "restartButtonText": "Перезагрузить",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Попробовать или установить",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Исправить установку",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Попробовать Ubuntu",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Установить Ubuntu",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "Вы также можете прочитать <a href=\"{url}\">заметки о выпуске</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "Выключить RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "Добро пожаловать",
-  "@welcome": {},
+
+  "tryOrInstallPageTitle": "Попробовать или установить",
+  "repairInstallation": "Исправить установку",
+  "repairInstallationDescription": "Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.",
+  "tryUbuntu": "Попробовать Ubuntu",
+  "tryUbuntuDescription": "Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.",
+  "installUbuntu": "Установить Ubuntu",
+  "installUbuntuDescription": "Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.",
+  "releaseNotesLabel": "Вы также можете прочитать <a href=\"{url}\">заметки о выпуске</a>.",
+
+  "turnOffRST": "Выключить RST",
+  "turnOffRSTDescription": "Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
+  "instructionsForRST": "Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://{url}\">{url}</a>",
   
   "keyboardLayoutPageTitle": "Раскладка клавиатуры",
-  "@keyboardLayoutPageTitle": {},
-
   "chooseYourKeyboardLayout": "Выберите раскладку клавиатуры:",
-  "@chooseYourKeyboardLayout": {},
-
   "typeToTest": "Введите здесь, чтобы проверить свою клавиатуру",
-  "@typeToTest": {},
-
-  "detectLayout": "Определить раскладку клавиатуры",
-  "@detectLayout": {}
+  "detectLayout": "Определить раскладку клавиатуры"
 }
 

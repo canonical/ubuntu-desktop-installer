@@ -4,66 +4,28 @@
   "languageName": "Nederlands",
 
   "appTitle": "Ubuntu Desktop instalatie programma",
-  "@appTitle": {},
 
   "backButtonText": "Terug",
-  "@backButtonText": {},
   "continueButtonText": "Volgende",
-  "@continueButtonText": {},
   "restartButtonText": "Opnieuw opstarten",
-  "@restartButtonText": {},
-
-  "tryOrInstallPageTitle": "Uitproberen of installeren",
-  "@tryOrInstallPageTitle": {},
-
-  "repairInstallation": "Repareer de installatie",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.",
-  "@repairInstallationDescription": {},
-
-  "tryUbuntu": "Ubuntu uitproberen",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "U kunt Ubuntu uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.",
-  "@tryUbuntuDescription": {},
-
-  "installUbuntu": "Ubuntu installeren",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installeer Ubuntu naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.",
-  "@installUbuntuDescription": {},
-
-  "releaseNotesLabel": "De wijzigingen in deze uitgave kunt U <a href=\"{url}\">hier, in het Engels, lezen</a>.",
-  "@releaseNotesLabel": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
-
-  "turnOffRST": "RST uitschakelen",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Deze computer maakt gebruik van Intel RST (Rapid Storage Technology). Om Ubuntu te installeren, is het noodzakelijk om dit uit te schakelen.",
-  "@turnOffRSTDescription": {},
-
-  "instructionsForRST": "Voor instructies, open de volgende website op uw telefoon of op een ander apparaat: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
-    "type": "text",
-    "placeholders": {
-      "url": {}
-    }
-  },
 
   "welcome": "Welkom",
-  "@welcome": {},
+
+  "tryOrInstallPageTitle": "Uitproberen of installeren",
+  "repairInstallation": "Repareer de installatie",
+  "repairInstallationDescription": "Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.",
+  "tryUbuntu": "Ubuntu uitproberen",
+  "tryUbuntuDescription": "U kunt Ubuntu uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.",
+  "installUbuntu": "Ubuntu installeren",
+  "installUbuntuDescription": "Installeer Ubuntu naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.",
+  "releaseNotesLabel": "De wijzigingen in deze uitgave kunt U <a href=\"{url}\">hier, in het Engels, lezen</a>.",
+
+  "turnOffRST": "RST uitschakelen",
+  "turnOffRSTDescription": "Deze computer maakt gebruik van Intel RST (Rapid Storage Technology). Om Ubuntu te installeren, is het noodzakelijk om dit uit te schakelen.",
+  "instructionsForRST": "Voor instructies, open de volgende website op uw telefoon of op een ander apparaat: <a href=\"https://{url}\">{url}</a>",
 
   "keyboardLayoutPageTitle": "Toetsenbordindeling",
-  "@keyboardLayoutPageTitle": {},
-
   "chooseYourKeyboardLayout": "Kies uw toetsenbordindeling:",
-  "@chooseYourKeyboardLayout": {},
-
   "typeToTest": "Type hieronder om het toetsenbord te testen",
-  "@typeToTest": {},
-
-  "detectLayout": "Toetsenbordindeling bepalen",
-  "@detectLayout": {}
+  "detectLayout": "Toetsenbordindeling bepalen"
 }
