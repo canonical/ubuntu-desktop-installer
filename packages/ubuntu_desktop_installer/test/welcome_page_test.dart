@@ -7,8 +7,10 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
@@ -34,20 +36,21 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      initialRoute: Routes.welcome,
-      routes: <String, WidgetBuilder>{
-        Routes.welcome: WelcomePage.create,
-        Routes.tryOrInstall: (context) => Text(Routes.tryOrInstall),
-      },
+      home: Wizard(
+        routes: <String, WidgetBuilder>{
+          Routes.welcome: (_) => WelcomePage(),
+          Routes.tryOrInstall: (context) => Text(Routes.tryOrInstall),
+        },
+      ),
     );
     await tester.pumpWidget(
-      MultiProvider(providers: [
-        Provider(
-          // ignore: unnecessary_cast
-          create: (_) => SubiquityClientMock() as SubiquityClient,
+      ChangeNotifierProvider(
+        create: (_) => WelcomeModel(
+          client: SubiquityClientMock(),
+          keyboardService: KeyboardService(),
         ),
-        Provider(create: (context) => KeyboardService()),
-      ], child: app),
+        child: app,
+      ),
     );
     expect(find.byType(WelcomePage), findsOneWidget);
   }
