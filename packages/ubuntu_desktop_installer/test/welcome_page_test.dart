@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
-import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -51,7 +51,7 @@ void main() {
           // ignore: unnecessary_cast
           create: (_) => SubiquityClientMock() as SubiquityClient,
         ),
-        ChangeNotifierProvider(create: (context) => KeyboardModel()),
+        Provider(create: (context) => KeyboardService()),
       ], child: app),
     );
     expect(observer.pushed.length, 1);
