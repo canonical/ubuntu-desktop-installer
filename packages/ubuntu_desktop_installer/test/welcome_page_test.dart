@@ -10,8 +10,6 @@ import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 
-import 'simple_navigator_observer.dart';
-
 class SubiquityClientMock extends SubiquityClient {
   @override
   Future<String> setLocale(String code) async {
@@ -25,7 +23,6 @@ class SubiquityClientMock extends SubiquityClient {
 }
 
 void main() {
-  late SimpleNavigatorObserver observer;
   late MaterialApp app;
 
   setUpAll(() async {
@@ -33,16 +30,14 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
-    observer = SimpleNavigatorObserver();
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
       initialRoute: Routes.welcome,
-      navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
         Routes.welcome: WelcomePage.create,
-        Routes.tryOrInstall: (context) => Container(),
+        Routes.tryOrInstall: (context) => Text(Routes.tryOrInstall),
       },
     );
     await tester.pumpWidget(
@@ -54,8 +49,7 @@ void main() {
         ChangeNotifierProvider(create: (context) => KeyboardModel()),
       ], child: app),
     );
-    expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, Routes.welcome);
+    expect(find.byType(WelcomePage), findsOneWidget);
   }
 
   testWidgets('should display a list of languages', (tester) async {
@@ -98,8 +92,9 @@ void main() {
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
+    await tester.pumpAndSettle();
 
-    expect(observer.pushed.length, 2);
-    expect(observer.pushed.last.settings.name, Routes.tryOrInstall);
+    expect(find.byType(WelcomePage), findsNothing);
+    expect(find.text(Routes.tryOrInstall), findsOneWidget);
   });
 }
