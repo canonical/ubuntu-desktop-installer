@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import '../disk_storage_model.dart';
-import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -261,7 +261,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
               actions: <WizardAction>[
                 WizardAction(
                   label: lang.backButtonText,
-                  onActivated: Navigator.of(context).pop,
+                  onActivated: Wizard.of(context).back,
                 ),
                 WizardAction(
                   label: lang.continueButtonText,
@@ -271,7 +271,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     await client.setStorage(_storageConfig!);
                     await client.confirm('/dev/tty1');
 
-                    Navigator.pushNamed(context, Routes.chooseYourLook);
+                    Wizard.of(context).next();
                   },
                 ),
               ],
