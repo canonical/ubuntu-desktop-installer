@@ -88,6 +88,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
         helperText: widget.helperText,
       ),
     );
+
     return Row(
       children: [
         widget.fieldWidth == null
@@ -98,18 +99,25 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
           builder: (context, value, child) {
             return Padding(
               padding: EdgeInsets.only(left: widget.spacing ?? 0.0),
-              child: Baseline(
-                baseline: 0,
-                baselineType: TextBaseline.alphabetic,
-                child: widget.successWidget == null ||
-                        !widget.validator.isValid(value.text)
-                    ? SizedBox.shrink()
-                    : widget.successWidget,
-              ),
+              child: widget.successWidget == null ||
+                      !widget.validator.isValid(value.text)
+                  ? SizedBox.shrink()
+                  : _alignBaseline(widget.successWidget),
             );
           },
         ),
       ],
+    );
+  }
+
+  Widget? _alignBaseline(Widget? child) {
+    if (widget.helperText?.isNotEmpty != true) {
+      return child;
+    }
+    return Baseline(
+      baseline: 0,
+      baselineType: TextBaseline.alphabetic,
+      child: child,
     );
   }
 }
