@@ -24,6 +24,9 @@ class ValidatedFormField extends StatefulWidget {
   /// The label above the [TextField]
   final String? labelText;
 
+  /// The label below the [TextField]
+  final String? helperText;
+
   /// This boolean is forwarded to the [TextField] to decide
   /// if the digits should be obscured.
   final bool obscureText;
@@ -49,6 +52,7 @@ class ValidatedFormField extends StatefulWidget {
     required this.validator,
     this.autofocus = false,
     this.labelText,
+    this.helperText,
     this.obscureText = false,
     this.successWidget,
     this.spacing,
@@ -81,6 +85,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         labelText: widget.labelText,
+        helperText: widget.helperText,
       ),
     );
     return Row(
