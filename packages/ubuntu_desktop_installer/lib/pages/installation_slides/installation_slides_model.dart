@@ -1,24 +1,33 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
+/// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends ChangeNotifier {
-  InstallationSlidesModel(this._client) {}
+  /// Creates an instance with the given client.
+  InstallationSlidesModel(this._client);
 
   final SubiquityClient _client;
-
-  Timer? _timer;
   var _status = ApplicationStatus();
 
+  /// Whether the installation is complete.
   bool get isDone => _state == ApplicationState.DONE;
+
+  /// Whether the installation state is unknown.
+  bool get isUnknown => _state == ApplicationState.UNKNOWN;
+
+  /// Whether an error has occurred.
   bool get hasError => _state == ApplicationState.ERROR;
+
+  /// Whether the installation process is active.
   bool get isInstalling => !isDone && !hasError;
 
+  /// The current installation step.
   int get currentStep => _state.index;
-  int get totalSteps => ApplicationState.values.length - 2; // unknown & error
+
+  /// The total number of installation steps (excludes unknown & error states).
+  int get totalSteps => ApplicationState.values.length - 2;
 
   ApplicationState get _state => _status.state ?? ApplicationState.UNKNOWN;
 
@@ -28,37 +37,20 @@ class InstallationSlidesModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> init() async {
-    await _client.status().then((status) {
+  /// Initializes and starts monitoring the status of the installation.
+  Future<void> init() {
+    return _client.status().then((status) {
       _updateStatus(status);
-      _watchStatus();
+      _monitorStatus();
     });
   }
 
-  void _watchStatus() {
-    // Note: The status check blocks until the status changes.
-    // (This is not polling the status at 100ms interval.)
-    _timer = Timer.periodic(const Duration(milliseconds: 100), (_) async {
+  Future<void> _monitorStatus() async {
+    while (!isUnknown && !isDone && !hasError) {
       await _client.status(current: _state).then(_updateStatus);
-      if (isDone || hasError) {
-        _unwatchStatus();
-      }
-    });
+    }
   }
 
-  void _unwatchStatus() {
-    _timer?.cancel();
-    _timer = null;
-  }
-
-  Future<void> reboot() {
-    _unwatchStatus();
-    return _client.reboot();
-  }
-
-  @override
-  void dispose() {
-    _unwatchStatus();
-    super.dispose();
-  }
+  /// Requests system reboot.
+  Future<void> reboot() => _client.reboot();
 }
