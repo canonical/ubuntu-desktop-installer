@@ -211,4 +211,10 @@ class SubiquityClient {
     final response = await _client.send(request);
     await checkStatus("setStorage(${jsonEncode(config)})", response);
   }
+
+  Future<void> reboot() async {
+    final request = Request('POST', Uri.http('localhost', 'reboot'));
+    final response = await _client.send(request);
+    await checkStatus("reboot()", response);
+  }
 }
