@@ -98,9 +98,14 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
           builder: (context, value, child) {
             return Padding(
               padding: EdgeInsets.only(left: widget.spacing ?? 0.0),
-              child: !widget.validator.isValid(value.text)
-                  ? SizedBox.shrink()
-                  : widget.successWidget,
+              child: Baseline(
+                baseline: 0,
+                baselineType: TextBaseline.alphabetic,
+                child: widget.successWidget == null ||
+                        !widget.validator.isValid(value.text)
+                    ? SizedBox.shrink()
+                    : widget.successWidget,
+              ),
             );
           },
         ),
