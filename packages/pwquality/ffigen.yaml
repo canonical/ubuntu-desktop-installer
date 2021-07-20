@@ -1,0 +1,20 @@
+name: LibPwQuality
+description: Provides common functions for password quality checking.
+output: 'lib/src/bindings.g.dart'
+preamble: // coverage:ignore-file
+headers:
+  entry-points:
+    - '/usr/include/pwquality.h'
+llvm-path:
+  # add 12 for ubuntu 21.04 (ffigen has paths for llvm 9-11)
+  - '/usr/lib/llvm-12'
+structs:
+  dependency-only: opaque
+  include:
+    - 'pwquality.*'
+functions:
+  include:
+    - 'pwquality.*'
+macros:
+  include:
+    - 'PWQ.*'
