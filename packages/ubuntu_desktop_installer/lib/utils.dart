@@ -1,1 +1,1 @@
-export 'utils/password_strength.dart';
+export 'utils/password.dart';

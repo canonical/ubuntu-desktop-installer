@@ -1,4 +1,5 @@
 import 'package:password_strength/password_strength.dart' as pws;
+import 'package:crypt/crypt.dart';
 
 /// The strength of a password.
 enum PasswordStrength {
@@ -21,5 +22,29 @@ PasswordStrength estimatePasswordStrength(String password) {
     return PasswordStrength.moderate;
   } else {
     return PasswordStrength.strong;
+  }
+}
+
+/// Supported hash algorithms.
+enum Hash {
+  /// SHA-256
+  sha256,
+
+  /// SHA-512
+  sha512,
+}
+
+/// Encrypts a password.
+String encryptPassword(
+  String password, {
+  Hash algorithm = Hash.sha512,
+  String? salt,
+}) {
+  assert(password.isNotEmpty);
+  switch (algorithm) {
+    case Hash.sha256:
+      return Crypt.sha256(password, salt: salt).toString();
+    case Hash.sha512:
+      return Crypt.sha512(password, salt: salt).toString();
   }
 }
