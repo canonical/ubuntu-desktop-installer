@@ -10,7 +10,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'app.dart';
 import 'app_theme.dart';
 import 'disk_storage_model.dart';
-import 'keyboard_model.dart';
+import 'keyboard_service.dart';
 import 'l10n/app_localizations.dart';
 
 Future<void> main() async {
@@ -61,7 +61,7 @@ Future<void> main() async {
         create: (_) => AppTheme(themeSettings),
       ),
       ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient)),
-      ChangeNotifierProvider(create: (_) => KeyboardModel()),
+      Provider(create: (_) => KeyboardService()),
     ],
     child: UbuntuDesktopInstallerApp(),
   ));
