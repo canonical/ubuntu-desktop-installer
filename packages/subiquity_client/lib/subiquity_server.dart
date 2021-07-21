@@ -32,6 +32,13 @@ class SubiquityServer {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     var socketPath = p.join(Directory.current.path, 'test/socket');
 
+    // kill the existing test server if it's already running, so they don't pile
+    // up on hot restarts
+    final pid = await _readPidFile();
+    if (pid != null) {
+      Process.killPid(pid);
+    }
+
     _serverProcess = await Process.start('/usr/bin/python3', subiquityCmd,
         workingDirectory: subiquityPath,
         // so subiquity doesn't think it's the installer or flutter snap...
@@ -46,12 +53,6 @@ class SubiquityServer {
       return process;
     });
 
-    // kill the existing test server if it's already running, so they don't pile
-    // up on hot restarts
-    final pid = await _readPidFile();
-    if (pid != null) {
-      Process.killPid(pid);
-    }
     await _writePidFile(_serverProcess.pid);
 
     final client = HttpUnixClient(socketPath);
