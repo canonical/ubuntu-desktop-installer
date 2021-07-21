@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'app_theme.dart';
@@ -55,6 +56,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
           Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
           Routes.chooseYourLook: ChooseYourLookPage.create,
+          Routes.installationSlides: InstallationSlides.create,
         },
       ),
     );
