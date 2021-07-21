@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -58,7 +60,9 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
         WizardAction(
           label: 'Restart',
           enabled: model.isDone || model.hasError,
-          onActivated: model.reboot,
+          onActivated: () {
+            model.reboot().then((_) => exit(0));
+          },
         ),
       ],
     );
