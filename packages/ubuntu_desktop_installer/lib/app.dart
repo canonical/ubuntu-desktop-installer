@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:yaru/yaru.dart' as yaru;
 import 'package:wizard_router/wizard_router.dart';
+import 'package:yaru/yaru.dart' as yaru;
 
 import 'app_theme.dart';
 import 'l10n/app_localizations.dart';
