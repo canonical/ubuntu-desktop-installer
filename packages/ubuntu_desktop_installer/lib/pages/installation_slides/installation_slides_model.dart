@@ -42,6 +42,7 @@ class InstallationSlidesModel extends ChangeNotifier {
 
   void _updateStatus(ApplicationStatus status) {
     if (_status == status) return;
+    print('Subiquity state changed from ${_status.state} to ${status.state}');
     _status = status;
     notifyListeners();
   }
