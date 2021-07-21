@@ -21,24 +21,27 @@ void main() async {
 
     final model = InstallationSlidesModel(client);
 
-    expect(model.isDone, isFalse);
     expect(model.isUnknown, isTrue);
-    expect(model.isInstalling, isTrue);
+    expect(model.isPreparing, isFalse);
+    expect(model.isInstalling, isFalse);
+    expect(model.isDone, isFalse);
 
     await model.init();
 
-    expect(model.isDone, isFalse);
     expect(model.isUnknown, isFalse);
+    expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isTrue);
+    expect(model.isDone, isFalse);
     verify(client.status(current: null)).called(1);
 
     final wasNotified = Completer<bool>();
     model.addListener(() => wasNotified.complete(true));
     await expectLater(wasNotified.future, completes);
 
-    expect(model.isDone, isTrue);
     expect(model.isUnknown, isFalse);
+    expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
+    expect(model.isDone, isTrue);
   });
 
   test('error', () async {
@@ -77,7 +80,7 @@ void main() async {
     final model = InstallationSlidesModel(client);
     await model.init();
 
-    expect(model.currentStep, equals(4));
-    expect(model.totalSteps, equals(9));
+    expect(model.currentStep, equals(0));
+    expect(model.totalSteps, equals(5));
   });
 }

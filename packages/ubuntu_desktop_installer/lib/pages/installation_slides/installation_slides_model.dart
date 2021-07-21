@@ -20,14 +20,23 @@ class InstallationSlidesModel extends ChangeNotifier {
   /// Whether an error has occurred.
   bool get hasError => _state == ApplicationState.ERROR;
 
+  /// Whether the installation process is being prepared.
+  bool get isPreparing =>
+      _state.index < ApplicationState.RUNNING.index && !isUnknown;
+
   /// Whether the installation process is active.
-  bool get isInstalling => !isDone && !hasError;
+  bool get isInstalling =>
+      _state.index >= ApplicationState.RUNNING.index &&
+      _state.index < ApplicationState.DONE.index;
 
-  /// The current installation step.
-  int get currentStep => _state.index;
+  /// The current installation step between "running" and "done", or -1 if the
+  /// installation process is not active.
+  int get currentStep =>
+      isInstalling ? _state.index - ApplicationState.RUNNING.index : -1;
 
-  /// The total number of installation steps (excludes unknown & error states).
-  int get totalSteps => ApplicationState.values.length - 2;
+  /// The total number of installation steps from "running" to "done"-
+  int get totalSteps =>
+      ApplicationState.DONE.index - ApplicationState.RUNNING.index;
 
   ApplicationState get _state => _status.state ?? ApplicationState.UNKNOWN;
 
