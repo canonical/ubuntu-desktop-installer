@@ -73,14 +73,12 @@ void main() {
           findsOneWidget);
     }
 
-    final itemEnglish = find.descendant(
-        of: languageList, matching: find.widgetWithText(ListTile, 'English'));
+    final itemEnglish = find.widgetWithText(ListTile, 'English');
     expect(itemEnglish, findsOneWidget);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
     expect(UbuntuDesktopInstallerApp.locale.languageCode, 'en');
 
-    final itemFrench = find.descendant(
-        of: languageList, matching: find.widgetWithText(ListTile, 'Français'));
+    final itemFrench = find.widgetWithText(ListTile, 'Français');
     expect(itemFrench, findsOneWidget);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, false);
 
