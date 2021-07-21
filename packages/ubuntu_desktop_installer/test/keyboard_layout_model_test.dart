@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
 
 import 'keyboard_layout_model_test.mocks.dart';
@@ -27,7 +27,7 @@ const testLayouts = <KeyboardLayout>[
   ),
 ];
 
-@GenerateMocks([KeyboardModel, ProcessRunner, SubiquityClient])
+@GenerateMocks([KeyboardService, ProcessRunner, SubiquityClient])
 void main() {
   late MockProcessRunner processRunner;
   setUp(() {
@@ -38,14 +38,14 @@ void main() {
   });
 
   group('detect layout and variant when', () {
-    late MockKeyboardModel keyboard;
+    late MockKeyboardService keyboard;
     late TestKeyboardLayoutModel model;
 
     setUp(() {
-      keyboard = MockKeyboardModel();
+      keyboard = MockKeyboardService();
       model = TestKeyboardLayoutModel(
         client: MockSubiquityClient(),
-        keyboardModel: keyboard,
+        keyboardService: keyboard,
         processRunner: MockProcessRunner(),
       );
     });
@@ -170,11 +170,11 @@ void main() {
   });
 
   group('layout and variant', () {
-    late MockKeyboardModel keyboard;
+    late MockKeyboardService keyboard;
     late TestKeyboardLayoutModel model;
 
     setUp(() {
-      keyboard = MockKeyboardModel();
+      keyboard = MockKeyboardService();
       when(keyboard.layouts).thenReturn([
         KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
         KeyboardLayout(code: 'bar', name: 'Bar', variants: [
@@ -185,7 +185,7 @@ void main() {
 
       model = TestKeyboardLayoutModel(
         client: MockSubiquityClient(),
-        keyboardModel: keyboard,
+        keyboardService: keyboard,
         processRunner: processRunner,
       );
     });
@@ -279,7 +279,7 @@ void main() {
   test('apply the system settings', () async {
     final client = MockSubiquityClient();
 
-    final keyboard = MockKeyboardModel();
+    final keyboard = MockKeyboardService();
     when(keyboard.layouts).thenReturn([
       KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
       KeyboardLayout(code: 'bar', name: 'Bar', variants: [
@@ -290,7 +290,7 @@ void main() {
 
     final model = TestKeyboardLayoutModel(
       client: client,
-      keyboardModel: keyboard,
+      keyboardService: keyboard,
       processRunner: processRunner,
     );
 
@@ -308,11 +308,11 @@ void main() {
 class TestKeyboardLayoutModel extends KeyboardLayoutModel {
   TestKeyboardLayoutModel({
     required SubiquityClient client,
-    required KeyboardModel keyboardModel,
+    required KeyboardService keyboardService,
     required ProcessRunner processRunner,
   }) : super(
             client: client,
-            keyboardModel: keyboardModel,
+            keyboardService: keyboardService,
             processRunner: processRunner);
 
   String? layout;
