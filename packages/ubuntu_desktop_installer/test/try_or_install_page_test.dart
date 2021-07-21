@@ -8,30 +8,24 @@ import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_pag
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 
-import 'simple_navigator_observer.dart';
-
 void main() {
-  late SimpleNavigatorObserver observer;
   late MaterialApp app;
 
   Future<void> setUpApp(WidgetTester tester) async {
-    observer = SimpleNavigatorObserver();
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
       initialRoute: Routes.tryOrInstall,
-      navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
         Routes.tryOrInstall: TryOrInstallPage.create,
-        Routes.repairUbuntu: (context) => Container(),
-        Routes.tryUbuntu: (context) => Container(),
-        Routes.keyboardLayout: (context) => Container(),
+        Routes.repairUbuntu: (context) => Text(Routes.repairUbuntu),
+        Routes.tryUbuntu: (context) => Text(Routes.tryUbuntu),
+        Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
       },
     );
     await tester.pumpWidget(app);
-    expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, Routes.tryOrInstall);
+    expect(find.byType(TryOrInstallPage), findsOneWidget);
   }
 
   testWidgets('should open release notes', (tester) async {
@@ -111,9 +105,10 @@ void main() {
       await tester.pump();
 
       await tester.tap(continueButton);
+      await tester.pumpAndSettle();
 
-      expect(observer.pushed.length, 2);
-      expect(observer.pushed.last.settings.name, key);
+      expect(find.byType(TryOrInstallPage), findsNothing);
+      expect(find.text(key), findsOneWidget);
     });
   });
 }
