@@ -14,6 +14,17 @@
   "selectLanguageTitle": "Select your language",
 
   "profileSetupTitle": "Profile setup",
+  "profileSetupHeader": "Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "profileSetupUsernameHint": "Pick a username",
+  "profileSetupUsernameHelper": "The username does not need to match your windows username.",
+  "profileSetupPasswordHint": "Choose a password",
+  "profileSetupConfirmPasswordHint": "Confirm your password",
+  "profileSetupShowAdvancedOptions": "Show advanced options next page",
+  "profileSetupPasswordMismatch": "The passwords do not match",
+  "profileSetupUsernameRequired": "A username is required",
+  "profileSetupUsernameInvalid": "The username is invalid",
+  "profileSetupPasswordRequired": "A password is required",
+  "profileSetupPasswordMismatch": "The passwords do not match",
 
   "advancedSetupTitle": "Advanced setup",
 

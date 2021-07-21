@@ -153,6 +153,66 @@ abstract class AppLocalizations {
   /// **'Profile setup'**
   String get profileSetupTitle;
 
+  /// No description provided for @profileSetupHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>'**
+  String get profileSetupHeader;
+
+  /// No description provided for @profileSetupUsernameHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Pick a username'**
+  String get profileSetupUsernameHint;
+
+  /// No description provided for @profileSetupUsernameHelper.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The username does not need to match your windows username.'**
+  String get profileSetupUsernameHelper;
+
+  /// No description provided for @profileSetupPasswordHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Choose a password'**
+  String get profileSetupPasswordHint;
+
+  /// No description provided for @profileSetupConfirmPasswordHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Confirm your password'**
+  String get profileSetupConfirmPasswordHint;
+
+  /// No description provided for @profileSetupShowAdvancedOptions.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Show advanced options next page'**
+  String get profileSetupShowAdvancedOptions;
+
+  /// No description provided for @profileSetupPasswordMismatch.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The passwords do not match'**
+  String get profileSetupPasswordMismatch;
+
+  /// No description provided for @profileSetupUsernameRequired.
+  ///
+  /// In en_US, this message translates to:
+  /// **'A username is required'**
+  String get profileSetupUsernameRequired;
+
+  /// No description provided for @profileSetupUsernameInvalid.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The username is invalid'**
+  String get profileSetupUsernameInvalid;
+
+  /// No description provided for @profileSetupPasswordRequired.
+  ///
+  /// In en_US, this message translates to:
+  /// **'A password is required'**
+  String get profileSetupPasswordRequired;
+
   /// No description provided for @advancedSetupTitle.
   ///
   /// In en_US, this message translates to:
