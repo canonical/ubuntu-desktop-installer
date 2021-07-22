@@ -52,7 +52,7 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
                       ? 'Something went wrong.\n\nPlease restart the machine.'
                       : model.isPreparing
                           ? 'Preparing...'
-                          : 'Installing... (${model.currentStep + 1}/${model.totalSteps})',
+                          : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
               textAlign: TextAlign.center,
             ),
           ],

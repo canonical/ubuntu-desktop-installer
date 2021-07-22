@@ -10,41 +10,79 @@ import 'installation_slides_model_test.mocks.dart';
 
 @GenerateMocks([SubiquityClient])
 void main() async {
-  test('status', () async {
+  test('client status query loop', () async {
     final client = MockSubiquityClient();
-    when(client.status()).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
-    );
-    when(client.status(current: ApplicationState.RUNNING)).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.DONE),
-    );
+    final model = InstallationSlidesModel(client);
+
+    ApplicationState? currentState;
+    for (final nextState in ApplicationState.values) {
+      when(client.status(current: currentState)).thenAnswer(
+        (_) async => ApplicationStatus(state: nextState),
+      );
+      currentState = nextState;
+    }
+
+    final stateChanges = StreamController<ApplicationState>();
+    model.addListener(() => stateChanges.add(model.state));
+
+    // initializing the model queries the initial client status, and then runs
+    // the client status query loop until it reaches DONE
+    await model.init();
+    verify(client.status(current: null)).called(1);
+
+    final expectedStateChanges = ApplicationState.values.where((state) {
+      return state != ApplicationState.UNKNOWN &&
+          state != ApplicationState.ERROR;
+    });
+    await expectLater(stateChanges.stream, emitsInOrder(expectedStateChanges));
+  });
+
+  test('state values', () async {
+    final client = MockSubiquityClient();
+    ApplicationState? currentState;
+    for (final nextState in ApplicationState.values) {
+      when(client.status(current: currentState)).thenAnswer(
+        (_) async => ApplicationStatus(state: nextState),
+      );
+      currentState = nextState;
+    }
 
     final model = InstallationSlidesModel(client);
 
-    expect(model.isUnknown, isTrue);
+    expect(model.state, equals(ApplicationState.UNKNOWN));
     expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);
 
+    Future<void> waitForState(ApplicationState state) async {
+      final completer = Completer();
+      model.addListener(() {
+        if (model.state == state) {
+          completer.complete();
+        }
+      });
+      await expectLater(completer.future, completes);
+    }
+
     await model.init();
 
-    expect(model.isUnknown, isFalse);
+    await waitForState(ApplicationState.STARTING_UP);
+    expect(model.isPreparing, isTrue);
+    expect(model.isInstalling, isFalse);
+    expect(model.isDone, isFalse);
+
+    await waitForState(ApplicationState.RUNNING);
     expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isTrue);
     expect(model.isDone, isFalse);
-    verify(client.status(current: null)).called(1);
 
-    final wasNotified = Completer<bool>();
-    model.addListener(() => wasNotified.complete(true));
-    await expectLater(wasNotified.future, completes);
-
-    expect(model.isUnknown, isFalse);
+    await waitForState(ApplicationState.DONE);
     expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isTrue);
   });
 
-  test('error', () async {
+  test('error state', () async {
     final client = MockSubiquityClient();
     when(client.status()).thenAnswer(
       (_) async => ApplicationStatus(state: ApplicationState.ERROR),
@@ -71,16 +109,24 @@ void main() async {
     verify(client.reboot()).called(1);
   });
 
-  test('steps', () async {
+  test('installation steps', () async {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current'))).thenAnswer(
       (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
     );
 
     final model = InstallationSlidesModel(client);
-    await model.init();
+    expect(model.installationStep, equals(-1));
+    expect(model.installationStepCount, equals(5));
 
-    expect(model.currentStep, equals(0));
-    expect(model.totalSteps, equals(5));
+    await model.init();
+    expect(model.installationStep, equals(0));
+
+    when(client.status(current: anyNamed('current'))).thenAnswer(
+      (_) async => ApplicationStatus(state: ApplicationState.POST_RUNNING),
+    );
+
+    await model.init();
+    expect(model.installationStep, equals(2));
   });
 }

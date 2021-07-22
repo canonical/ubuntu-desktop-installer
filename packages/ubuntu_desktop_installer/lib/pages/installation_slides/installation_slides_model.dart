@@ -9,40 +9,43 @@ class InstallationSlidesModel extends ChangeNotifier {
   InstallationSlidesModel(this._client);
 
   final SubiquityClient _client;
-  var _status = ApplicationStatus();
+  ApplicationStatus? _status;
 
-  /// Whether the installation is complete.
-  bool get isDone => _state == ApplicationState.DONE;
+  /// The current installation state.
+  ApplicationState get state => _status?.state ?? ApplicationState.UNKNOWN;
 
-  /// Whether the installation state is unknown.
-  bool get isUnknown => _state == ApplicationState.UNKNOWN;
+  /// Whether the installation state is DONE.
+  bool get isDone => state == ApplicationState.DONE;
 
-  /// Whether an error has occurred.
-  bool get hasError => _state == ApplicationState.ERROR;
+  /// Whether the installation state is ERROR.
+  bool get hasError => state == ApplicationState.ERROR;
 
-  /// Whether the installation process is being prepared.
+  /// Whether the installation process is being prepared [STARTING_UP,RUNNING).
   bool get isPreparing =>
-      _state.index < ApplicationState.RUNNING.index && !isUnknown;
+      state.index >= ApplicationState.STARTING_UP.index &&
+      state.index < ApplicationState.RUNNING.index;
 
-  /// Whether the installation process is active.
+  /// Whether the installation process is active [RUNNING,DONE).
   bool get isInstalling =>
-      _state.index >= ApplicationState.RUNNING.index &&
-      _state.index < ApplicationState.DONE.index;
+      state.index >= ApplicationState.RUNNING.index &&
+      state.index < ApplicationState.DONE.index;
 
-  /// The current installation step between "running" and "done", or -1 if the
+  /// The current installation step between [RUNNING,DONE], or -1 if the
   /// installation process is not active.
-  int get currentStep =>
-      isInstalling ? _state.index - ApplicationState.RUNNING.index : -1;
+  int get installationStep =>
+      isInstalling ? state.index - ApplicationState.RUNNING.index : -1;
 
-  /// The total number of installation steps from "running" to "done"-
-  int get totalSteps =>
+  /// The total number of installation steps between [RUNNING,DONE].
+  int get installationStepCount =>
       ApplicationState.DONE.index - ApplicationState.RUNNING.index;
 
-  ApplicationState get _state => _status.state ?? ApplicationState.UNKNOWN;
+  String _formatState(ApplicationState? state) =>
+      state?.toString().split('.').last ?? 'null';
 
-  void _updateStatus(ApplicationStatus status) {
-    if (_status == status) return;
-    print('Subiquity state changed from ${_status.state} to ${status.state}');
+  void _updateStatus(ApplicationStatus? status) {
+    if (state == status?.state) return;
+    print(
+        'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();
   }
@@ -56,8 +59,8 @@ class InstallationSlidesModel extends ChangeNotifier {
   }
 
   Future<void> _monitorStatus() async {
-    while (!isUnknown && !isDone && !hasError) {
-      await _client.status(current: _state).then(_updateStatus);
+    while (!isDone && !hasError) {
+      await _client.status(current: state).then(_updateStatus);
     }
   }
 
