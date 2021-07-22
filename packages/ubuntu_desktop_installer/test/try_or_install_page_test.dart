@@ -4,14 +4,24 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 
+import 'try_or_install_page_test.mocks.dart';
+
+@GenerateMocks([Settings])
 void main() {
   late MaterialApp app;
 
   Future<void> setUpApp(WidgetTester tester) async {
+    final settings = MockSettings();
+    when(settings.locale).thenReturn(Locale('en'));
+
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -24,7 +34,11 @@ void main() {
         Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
       },
     );
-    await tester.pumpWidget(app);
+    await tester.pumpWidget(ChangeNotifierProvider<Settings>.value(
+      value: settings,
+      child: app,
+    ));
+
     expect(find.byType(TryOrInstallPage), findsOneWidget);
   }
 

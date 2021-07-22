@@ -9,13 +9,13 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 
 import 'app.dart';
-import 'app_theme.dart';
 import 'disk_storage_model.dart';
 import 'keyboard_service.dart';
 import 'l10n/app_localizations.dart';
+import 'settings.dart';
 
 Future<void> main() async {
-  final themeSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+  final gsettings = GSettings(schemaId: 'org.gnome.desktop.interface');
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
@@ -65,9 +65,7 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: [
       Provider.value(value: subiquityClient),
-      ChangeNotifierProvider(
-        create: (_) => AppTheme(themeSettings),
-      ),
+      ChangeNotifierProvider(create: (_) => Settings(gsettings)),
       ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient)),
       Provider(create: (_) => KeyboardService()),
     ],

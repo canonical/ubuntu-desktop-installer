@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../app_theme.dart';
 import '../routes.dart';
+import '../settings.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -17,7 +16,6 @@ class ChooseYourLookPage extends StatelessWidget {
       Navigator.pushNamed(context, Routes.installationSlides);
     }
 
-    final theme = context.watch<AppTheme>();
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         header: Text(lang.chooseYourLookPageHeader),
@@ -47,7 +45,8 @@ class ChooseYourLookPage extends StatelessWidget {
                     bodyText: lang.chooseYourLookPageLightBodyText,
                     selected: Theme.of(context).brightness == Brightness.light,
                     onSelected: () {
-                      theme.apply(Brightness.light);
+                      final settings = Settings.of(context, listen: false);
+                      settings.applyTheme(Brightness.light);
                     },
                   ),
                 ),
@@ -58,7 +57,10 @@ class ChooseYourLookPage extends StatelessWidget {
                     titleText: lang.chooseYourLookPageDarkSetting,
                     bodyText: lang.chooseYourLookPageDarkBodyText,
                     selected: Theme.of(context).brightness == Brightness.dark,
-                    onSelected: () => theme.apply(Brightness.dark),
+                    onSelected: () {
+                      final settings = Settings.of(context, listen: false);
+                      settings.applyTheme(Brightness.dark);
+                    },
                   ),
                 )
               ]),

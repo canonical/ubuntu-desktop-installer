@@ -4,11 +4,13 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/app.dart';
 import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
+
+import 'gsettings.mocks.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
@@ -47,6 +49,9 @@ void main() {
           create: (_) => SubiquityClientMock() as SubiquityClient,
         ),
         Provider(create: (context) => KeyboardService()),
+        ChangeNotifierProvider<Settings>(
+          create: (_) => Settings(MockGSettings()),
+        ),
       ], child: app),
     );
     expect(find.byType(WelcomePage), findsOneWidget);
@@ -57,6 +62,8 @@ void main() {
 
     final languageList = find.byType(ListView);
     expect(languageList, findsOneWidget);
+
+    final settings = Settings.of(tester.element(languageList), listen: false);
 
     final listItems =
         find.descendant(of: languageList, matching: find.byType(ListTile));
@@ -70,7 +77,7 @@ void main() {
     final itemEnglish = find.widgetWithText(ListTile, 'English');
     expect(itemEnglish, findsOneWidget);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
-    expect(UbuntuDesktopInstallerApp.locale.languageCode, 'en');
+    expect(settings.locale.languageCode, 'en');
 
     final itemFrench = find.widgetWithText(ListTile, 'Français');
     expect(itemFrench, findsOneWidget);
@@ -80,7 +87,7 @@ void main() {
     await tester.pump();
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
-    expect(UbuntuDesktopInstallerApp.locale.languageCode, 'fr');
+    expect(settings.locale.languageCode, 'fr');
   });
 
   testWidgets('should continue to next page', (tester) async {
