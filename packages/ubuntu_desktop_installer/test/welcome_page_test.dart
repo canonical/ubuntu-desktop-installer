@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/app.dart';
+import 'package:ubuntu_desktop_installer/app_settings.dart';
 import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+
+import 'gsettings.mocks.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
@@ -30,6 +33,9 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
+    final settings = MockGSettings();
+    when(settings.setValue(any, any)).thenReturn(true);
+
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -47,6 +53,9 @@ void main() {
           create: (_) => SubiquityClientMock() as SubiquityClient,
         ),
         Provider(create: (context) => KeyboardService()),
+        ChangeNotifierProvider<AppSettings>(
+          create: (_) => AppSettings(settings),
+        ),
       ], child: app),
     );
     expect(find.byType(WelcomePage), findsOneWidget);
@@ -57,6 +66,9 @@ void main() {
 
     final languageList = find.byType(ListView);
     expect(languageList, findsOneWidget);
+
+    final settings =
+        AppSettings.of(tester.element(languageList), listen: false);
 
     final listItems =
         find.descendant(of: languageList, matching: find.byType(ListTile));
@@ -70,7 +82,7 @@ void main() {
     final itemEnglish = find.widgetWithText(ListTile, 'English');
     expect(itemEnglish, findsOneWidget);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
-    expect(UbuntuDesktopInstallerApp.locale.languageCode, 'en');
+    expect(settings.locale.languageCode, 'en');
 
     final itemFrench = find.widgetWithText(ListTile, 'Français');
     expect(itemFrench, findsOneWidget);
@@ -80,7 +92,7 @@ void main() {
     await tester.pump();
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
-    expect(UbuntuDesktopInstallerApp.locale.languageCode, 'fr');
+    expect(settings.locale.languageCode, 'fr');
   });
 
   testWidgets('should continue to next page', (tester) async {

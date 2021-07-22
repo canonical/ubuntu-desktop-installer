@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
-import 'package:ubuntu_desktop_installer/app_theme.dart';
+import 'package:ubuntu_desktop_installer/app_settings.dart';
 import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
@@ -35,7 +35,7 @@ void main() {
         create: (_) => SubiquityClientMock() as SubiquityClient,
       ),
       Provider(create: (context) => KeyboardService()),
-      ChangeNotifierProvider(create: (_) => AppTheme(MockGSettings())),
+      ChangeNotifierProvider(create: (_) => AppSettings(MockGSettings())),
     ], child: UbuntuDesktopInstallerApp()));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
