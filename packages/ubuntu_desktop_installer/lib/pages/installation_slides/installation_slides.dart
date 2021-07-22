@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_desktop_installer/pages/wizard_page.dart';
 import 'package:ubuntu_desktop_installer/widgets/localized_view.dart';
 import 'package:yaru/yaru.dart' as yaru;
-
-const images = [
-  'assets/slides/welcome.png',
-  'assets/slides/browse.png',
-  'assets/slides/customize.png',
-  'assets/slides/gs.png',
-  'assets/slides/music.png',
-  'assets/slides/office.png',
-  'assets/slides/photos.png',
-];
 
 const _kButtonColor = Colors.white70;
 const _iconSize = 42.0;
@@ -27,6 +16,69 @@ const _descriptionStyle = TextStyle(
 );
 
 final imageSlides = <_ImageSlideData>[
+  _ImageSlideData(
+      description:
+          'Say goodbye to searching the web for new software. With access to the Snap Store and the Ubuntu software archive, you can find and install new apps with ease. Just type in what you’re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.',
+      imageAsset: 'assets/slides/gs.png',
+      sections: <_Section>[]),
+  _ImageSlideData(
+    description:
+        "Ubuntu comes with the amazing Rhythmbox music player. With advanced playback options, it's simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.",
+    imageAsset: 'assets/slides/music.png',
+    sections: <_Section>[
+      _Section(
+        title: 'Included software',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'Rhythmbox Music Player',
+            imageAsset: 'assets/slides/icons/rhythmbox.png',
+          ),
+        ],
+      ),
+      _Section(
+        title: 'Available software',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'Spotify',
+            imageAsset: 'assets/slides/icons/spotify.png',
+          ),
+          _SectionSoftware(
+            title: 'VLC',
+            imageAsset: 'assets/slides/icons/vlc.png',
+          ),
+        ],
+      )
+    ],
+  ),
+  _ImageSlideData(
+    description:
+        'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it’s easy to share them and keep them safe. And if you’re feeling creative, you can find many other photo apps in Ubuntu Software.',
+    imageAsset: 'assets/slides/photos.png',
+    sections: <_Section>[
+      _Section(
+        title: 'Included software',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'Shotwell Photo Manager',
+            imageAsset: 'assets/slides/icons/shotwell.png',
+          ),
+        ],
+      ),
+      _Section(
+        title: 'Supported software',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'GIMP Image Editor',
+            imageAsset: 'assets/slides/icons/gimp.png',
+          ),
+          _SectionSoftware(
+            title: 'Shotcut Video Editor',
+            imageAsset: 'assets/slides/icons/shotcut.png',
+          ),
+        ],
+      )
+    ],
+  ),
   _ImageSlideData(
     description:
         'Ubuntu includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.',
@@ -45,7 +97,6 @@ final imageSlides = <_ImageSlideData>[
           )
         ],
       ),
-
       _Section(
         title: 'Supported software',
         sectionItems: <_SectionSoftware>[
@@ -55,6 +106,54 @@ final imageSlides = <_ImageSlideData>[
           ),
         ],
       )
+    ],
+  ),
+  _ImageSlideData(
+    description:
+        'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.',
+    imageAsset: 'assets/slides/office.png',
+    sections: <_Section>[
+      _Section(
+        title: 'Included software',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'LibreOffice Writer',
+            imageAsset: 'assets/slides/icons/libreoffice-writer.png',
+          ),
+          _SectionSoftware(
+            title: 'LibreOfficw Calc',
+            imageAsset: 'assets/slides/icons/libreoffice-calc.png',
+          ),
+          _SectionSoftware(
+            title: 'LibreOffice Impress',
+            imageAsset: 'assets/slides/icons/libreoffice-impress.png',
+          ),
+        ],
+      ),
+    ],
+  ),
+  _ImageSlideData(
+    description:
+        'At the heart of the Ubuntu philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colour scheme and text size, Ubuntu makes computing easy – whoever and wherever you are.',
+    imageAsset: 'assets/slides/customize.png',
+    sections: <_Section>[
+      _Section(
+        title: 'Customization options',
+        sectionItems: <_SectionSoftware>[
+          _SectionSoftware(
+            title: 'Appearance',
+            imageAsset: 'assets/slides/icons/themes.png',
+          ),
+          _SectionSoftware(
+            title: 'Assistive technologies',
+            imageAsset: 'assets/slides/icons/access.png',
+          ),
+          _SectionSoftware(
+            title: 'Language support',
+            imageAsset: 'assets/slides/icons/languages.png',
+          ),
+        ],
+      ),
     ],
   ),
 ];
@@ -84,18 +183,27 @@ class _InstallationSlidesState extends State<InstallationSlides> {
               height: 442,
               child: Stack(
                 children: [
-                  // Positioned.fill(
-                  //   child: Image.asset(
-                  //     'assets/slides/background.png',
-                  //     fit: BoxFit.fill,
-                  //   ),
-                  // ),
                   PageView(
                     controller: pageController,
                     children: [
-                      IntroSlide(),
+                      TextSlide(
+                        backgroundAsset: 'assets/slides/welcome.png',
+                        text:
+                            'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...',
+                      ),
                       ...imageSlides
                           .map((isd) => ImageSlide(imageSlideData: isd)),
+                      TextSlide(
+                        backgroundAsset: 'assets/slides/welcome.png',
+                        text:
+                        '''
+                        The official documentation covers many of the most common areas about Ubuntu. It's available both *online* and via the Help icon in the Dock.
+                        
+                        At *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.
+                        
+                        For pointers to other useful resources, please visit *Community support* or *Commercial support*.
+                        ''',
+                      ),
                     ],
                   ),
                   Padding(
@@ -208,8 +316,15 @@ class Slide extends StatelessWidget {
   }
 }
 
-class IntroSlide extends StatelessWidget {
-  const IntroSlide({Key? key}) : super(key: key);
+class TextSlide extends StatelessWidget {
+  const TextSlide({
+    Key? key,
+    required this.backgroundAsset,
+    required this.text,
+  }) : super(key: key);
+
+  final String backgroundAsset;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -217,7 +332,7 @@ class IntroSlide extends StatelessWidget {
       children: [
         Positioned.fill(
           child: Image.asset(
-            'assets/slides/welcome.png',
+            backgroundAsset,
             fit: BoxFit.fill,
           ),
         ),
@@ -225,7 +340,7 @@ class IntroSlide extends StatelessWidget {
           left: 40,
           top: 32,
           child: Text(
-            'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...',
+            text,
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,
@@ -315,25 +430,9 @@ class ImageSlide extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(flex: 6, child: Image.asset('assets/slides/photos.png'))
+            Expanded(flex: 6, child: Image.asset(imageSlideData.imageAsset))
           ],
         ),
-        // Positioned(
-        //   left: 40,
-        //   top: 32,
-        //   child: widget(
-        //     child: Text(
-        //       'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...',
-        //       style: TextStyle(
-        //         color: Colors.white,
-        //         fontSize: 16,
-        //         letterSpacing: 0.25,
-        //         height: 1.8,
-        //         fontWeight: FontWeight.w200,
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }
