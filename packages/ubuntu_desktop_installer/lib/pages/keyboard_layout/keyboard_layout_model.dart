@@ -4,32 +4,32 @@ import 'package:flutter/foundation.dart';
 import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import '../../keyboard_model.dart';
+import '../../keyboard_service.dart';
 
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends ChangeNotifier {
-  /// Creates a model with the specified [client] and [keyboardModel].
+  /// Creates a model with the specified [client] and [keyboardService].
   KeyboardLayoutModel({
     required SubiquityClient client,
-    required KeyboardModel keyboardModel,
+    required KeyboardService keyboardService,
     @visibleForTesting ProcessRunner processRunner = const ProcessRunner(),
   })  : _client = client,
-        _keyboardModel = keyboardModel,
+        _keyboardService = keyboardService,
         _processRunner = processRunner;
 
   final SubiquityClient _client;
-  final KeyboardModel _keyboardModel;
+  final KeyboardService _keyboardService;
   final ProcessRunner _processRunner;
 
   /// The number of available keyboard layouts.
-  int get layoutCount => _keyboardModel.layouts.length;
+  int get layoutCount => _keyboardService.layouts.length;
 
   /// Returns the name of the keyboard layout at [index].
   ///
   /// Note: the index must be valid.
   String layoutName(int index) {
     assert(index >= 0 && index < layoutCount);
-    return _keyboardModel.layouts[index].name!;
+    return _keyboardService.layouts[index].name!;
   }
 
   /// The index of the currently selected layout.
@@ -37,7 +37,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   int _selectedLayoutIndex = -1;
 
   KeyboardLayout? get _selectedLayout => (_selectedLayoutIndex > -1)
-      ? _keyboardModel.layouts[_selectedLayoutIndex]
+      ? _keyboardService.layouts[_selectedLayoutIndex]
       : null;
 
   /// Selects the keyboard layout at [index].
@@ -100,7 +100,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// variant.
   Future<void> init() async {
     final detectedLayout = await detectKeyboardLayout();
-    _selectedLayoutIndex = _keyboardModel.layouts.indexWhere((layout) {
+    _selectedLayoutIndex = _keyboardService.layouts.indexWhere((layout) {
       return layout.code == detectedLayout;
     });
     if (_selectedLayoutIndex > -1) {

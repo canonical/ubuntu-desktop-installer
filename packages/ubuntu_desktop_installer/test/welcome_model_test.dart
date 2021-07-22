@@ -5,37 +5,37 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 
 import 'welcome_model_test.mocks.dart';
 
-@GenerateMocks([KeyboardModel, SubiquityClient])
+@GenerateMocks([KeyboardService, SubiquityClient])
 void main() {
   test('load keyboard model', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardModel();
+    final keyboard = MockKeyboardService();
     when(keyboard.load(client)).thenAnswer((_) async => null);
 
-    final model = WelcomeModel(client: client, keyboardModel: keyboard);
-    await model.loadKeyboardModel();
+    final model = WelcomeModel(client: client, keyboardService: keyboard);
+    await model.loadKeyboards();
     verify(keyboard.load(client)).called(1);
   });
 
   test('load languages', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardModel();
+    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardModel: keyboard);
+    final model = WelcomeModel(client: client, keyboardService: keyboard);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardModel();
+    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardModel: keyboard);
+    final model = WelcomeModel(client: client, keyboardService: keyboard);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -48,9 +48,9 @@ void main() {
 
   test('select locale', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardModel();
+    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardModel: keyboard);
+    final model = WelcomeModel(client: client, keyboardService: keyboard);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -72,7 +72,7 @@ void main() {
 
     final model = WelcomeModel(
       client: client,
-      keyboardModel: MockKeyboardModel(),
+      keyboardService: MockKeyboardService(),
     );
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr')).called(1);
@@ -81,7 +81,7 @@ void main() {
   test('selected language', () {
     final model = WelcomeModel(
       client: MockSubiquityClient(),
-      keyboardModel: MockKeyboardModel(),
+      keyboardService: MockKeyboardService(),
     );
 
     var wasNotified = false;

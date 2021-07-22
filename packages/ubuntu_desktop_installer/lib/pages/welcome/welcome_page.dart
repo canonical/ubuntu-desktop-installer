@@ -5,7 +5,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../app.dart';
-import '../../keyboard_model.dart';
+import '../../keyboard_service.dart';
 import '../../routes.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
@@ -20,7 +20,7 @@ class WelcomePage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (_) => WelcomeModel(
         client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardModel: Provider.of<KeyboardModel>(context, listen: false),
+        keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
       child: WelcomePage(),
     );
@@ -38,7 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     final model = Provider.of<WelcomeModel>(context, listen: false);
-    model.loadKeyboardModel();
+    model.loadKeyboards();
 
     model.loadLanguages().then((_) {
       model.selectLocale(Intl.defaultLocale!);
@@ -77,7 +77,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   onTap: () {
                     model.selectedLanguageIndex = index;
                     UbuntuDesktopInstallerApp.locale = model.locale(index);
-                    model.loadKeyboardModel();
+                    model.loadKeyboards();
                   },
                 ),
               );

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   // ignore: type_annotate_public_apis
@@ -34,13 +34,13 @@ class SubiquityClientMock extends SubiquityClient {
 
 void main() {
   late SubiquityClientMock clientMock;
-  late KeyboardModel model;
+  late KeyboardService model;
 
   setUpAll(TestWidgetsFlutterBinding.ensureInitialized);
 
   setUp(() {
     clientMock = SubiquityClientMock();
-    model = KeyboardModel();
+    model = KeyboardService();
   });
 
   test('model should be initially empty', () {
@@ -73,17 +73,6 @@ void main() {
     for (var i = 0; i < 3; ++i) {
       await model.load(clientMock);
       expect(model.layouts.length, 2);
-    }
-  });
-
-  test('model should notify listeners', () async {
-    var notified = 0;
-    model.addListener(() {
-      ++notified;
-    });
-    for (var i = 1; i <= 3; ++i) {
-      await model.load(clientMock);
-      expect(notified, i);
     }
   });
 }
