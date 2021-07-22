@@ -18,6 +18,7 @@ dependencies:
   file: ^6.1.2
   filesize: ^2.0.0
   flutter_html: ^2.0.0-nullsafety
+  form_field_validator: ^1.1.0
   gsettings: ^0.1.2+1
   intl: ^0.17.0
   keyboard_info: ^0.1.0
