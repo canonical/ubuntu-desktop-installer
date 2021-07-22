@@ -47,5 +47,22 @@
   "diskHeadersSize": "Talha",
   "diskHeadersUsed": "Utilizat",
   "diskHeadersSystem": "Sistèma",
-  "diskHeadersFormat": "Formatar"  
-}
+  "diskHeadersFormat": "Formatar"
+  
+  "writeChangesToDisk": "Aplicar las modificacions suls disques",
+  "writeChangesFallbackSerial": "disc",
+  "writeChangesDescription": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
+  "writeChangesPartitionTablesHeader": "Las taulas de particions dels periferics seguents seràn modificadas :",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "writeChangesPartitionsHeader": "Las particions seguentas seràn formatadas :",
+  "writeChangesPartitionEntryPrimaryFull": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) de tipe {fstype} coma {mountPath}",
+  "writeChangesPartitionEntryPrimary": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) coma",
+  "writeChangesPartitionEntrySecondary": "        particion n° de tipe {fstype} coma {mountPath}",
+
+  "chooseYourLookPageTitle": Causissètz l’aparéncia",
+  "chooseYourLookPageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
+  "chooseYourLookPageDarkSetting": "Fosc",
+  "chooseYourLookPageLightSetting": "Clar",
+  "chooseYourLookPageLightBodyText": "Clar e lusent",
+  "chooseYourLookPageDarkBodyText": "Fosc e escur"
+}  
