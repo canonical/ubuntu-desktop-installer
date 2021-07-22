@@ -62,9 +62,7 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
         WizardAction(
           label: 'Restart',
           enabled: model.isDone || model.hasError,
-          onActivated: () {
-            model.reboot().then((_) => exit(0));
-          },
+          onActivated: model.reboot,
         ),
       ],
     );

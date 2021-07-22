@@ -105,8 +105,11 @@ void main() async {
     when(client.reboot()).thenAnswer((_) async => null);
 
     final model = InstallationSlidesModel(client);
-    await model.reboot();
+
+    var didExit = -1;
+    await model.reboot(exit: (exitCode) => didExit = exitCode);
     verify(client.reboot()).called(1);
+    expect(didExit, equals(0));
   });
 
   test('installation steps', () async {
