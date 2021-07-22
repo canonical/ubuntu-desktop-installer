@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import '../../app.dart';
+import '../../app_settings.dart';
 import '../../keyboard_service.dart';
 import '../../routes.dart';
 import '../../widgets.dart';
@@ -76,7 +76,8 @@ class _WelcomePageState extends State<WelcomePage> {
                   selected: index == model.selectedLanguageIndex,
                   onTap: () {
                     model.selectedLanguageIndex = index;
-                    UbuntuDesktopInstallerApp.locale = model.locale(index);
+                    final settings = AppSettings.of(context, listen: false);
+                    settings.applyLocale(model.locale(index));
                     model.loadKeyboards();
                   },
                 ),
