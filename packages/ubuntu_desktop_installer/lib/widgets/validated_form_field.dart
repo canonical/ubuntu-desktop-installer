@@ -83,7 +83,6 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       validator: widget.validator,
       obscureText: widget.obscureText,
       decoration: InputDecoration(
-        border: OutlineInputBorder(),
         labelText: widget.labelText,
         helperText: widget.helperText,
       ),
@@ -114,8 +113,10 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
     if (widget.helperText?.isNotEmpty != true) {
       return child;
     }
+
+    final border = Theme.of(context).inputDecorationTheme.border;
     return Baseline(
-      baseline: 0,
+      baseline: border?.borderSide.width ?? 0,
       baselineType: TextBaseline.alphabetic,
       child: child,
     );

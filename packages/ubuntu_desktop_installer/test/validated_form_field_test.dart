@@ -114,6 +114,38 @@ void main() {
     final field = find.byType(TextFormField);
     expect(tester.getRect(field).width, equals(123));
   });
+
+  testWidgets('icon baseline alignment', (tester) async {
+    Widget buildWithHelperText(String? helperText) {
+      return MaterialApp(
+        home: Material(
+          child: Center(
+            child: ValidatedFormField(
+              validator: FakeValidator(),
+              successWidget: Icon(Icons.check),
+              helperText: helperText,
+            ),
+          ),
+        ),
+      );
+    }
+
+    await tester.pumpWidget(buildWithHelperText(null));
+
+    expect(
+      tester.getRect(find.byIcon(Icons.check)).center.dy,
+      moreOrLessEquals(tester.getRect(find.byType(EditableText)).center.dy,
+          epsilon: 1),
+    );
+
+    await tester.pumpWidget(buildWithHelperText('helper'));
+
+    expect(
+      tester.getRect(find.byIcon(Icons.check)).center.dy,
+      moreOrLessEquals(tester.getRect(find.byType(EditableText)).center.dy,
+          epsilon: 1),
+    );
+  });
 }
 
 class FakeValidator extends TextFieldValidator {
