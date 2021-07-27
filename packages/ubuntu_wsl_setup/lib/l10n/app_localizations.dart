@@ -297,6 +297,96 @@ abstract class AppLocalizations {
   /// **'Ubuntu WSL configuration UI (experimental)'**
   String get configurationUITitle;
 
+  /// No description provided for @configurationUIInteroperabilityHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Interoperability'**
+  String get configurationUIInteroperabilityHeader;
+
+  /// No description provided for @configurationUILegacyGUIIntegrationTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Legacy GUI Integration'**
+  String get configurationUILegacyGUIIntegrationTitle;
+
+  /// No description provided for @configurationUILegacyGUIIntegrationSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.'**
+  String get configurationUILegacyGUIIntegrationSubtitle;
+
+  /// No description provided for @configurationUILegacyAudioIntegrationTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Legacy Audio Integration'**
+  String get configurationUILegacyAudioIntegrationTitle;
+
+  /// No description provided for @configurationUILegacyAudioIntegrationSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.'**
+  String get configurationUILegacyAudioIntegrationSubtitle;
+
+  /// No description provided for @configurationUIAdvancedIPDetectionTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Advanced IP Detection'**
+  String get configurationUIAdvancedIPDetectionTitle;
+
+  /// No description provided for @configurationUIAdvancedIPDetectionSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.'**
+  String get configurationUIAdvancedIPDetectionSubtitle;
+
+  /// No description provided for @configurationUIMessageOfTheDayHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Message Of The Day (MOTD)'**
+  String get configurationUIMessageOfTheDayHeader;
+
+  /// No description provided for @configurationUIWSLNewsTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'WSL News'**
+  String get configurationUIWSLNewsTitle;
+
+  /// No description provided for @configurationUIWSLNewsSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.'**
+  String get configurationUIWSLNewsSubtitle;
+
+  /// No description provided for @configurationUIAutoMountHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Auto-Mount'**
+  String get configurationUIAutoMountHeader;
+
+  /// No description provided for @configurationUIAutoMountTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Enabled'**
+  String get configurationUIAutoMountTitle;
+
+  /// No description provided for @configurationUIAutoMountSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.'**
+  String get configurationUIAutoMountSubtitle;
+
+  /// No description provided for @configurationUIMountFstabTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Mount /etc/fstab'**
+  String get configurationUIMountFstabTitle;
+
+  /// No description provided for @configurationUIMountFstabSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???'**
+  String get configurationUIMountFstabSubtitle;
+
   /// No description provided for @setupCompleteTitle.
   ///
   /// In en_US, this message translates to:
