@@ -14,8 +14,8 @@ class SubiquityClient {
     _client = HttpUnixClient(socketPath);
   }
 
-  void close() {
-    _client.close();
+  Future<void> close() {
+    return _client.close();
   }
 
   Future<void> checkStatus(String method, StreamedResponse response) async {
