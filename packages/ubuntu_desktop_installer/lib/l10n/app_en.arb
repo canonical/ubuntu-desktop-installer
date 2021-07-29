@@ -109,5 +109,9 @@
   "chooseYourLookPageDarkSetting": "Dark",
   "chooseYourLookPageLightSetting": "Light",
   "chooseYourLookPageLightBodyText": "Everything is light and bright",
-  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend"
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+
+  "strongPassword": "Strong password",
+  "moderatePassword": "Moderate password",
+  "weakPassword": "Weak password"
 }

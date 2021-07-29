@@ -5,12 +5,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/app.dart';
-import 'package:ubuntu_desktop_installer/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
-
-import 'simple_navigator_observer.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   @override
@@ -25,7 +23,6 @@ class SubiquityClientMock extends SubiquityClient {
 }
 
 void main() {
-  late SimpleNavigatorObserver observer;
   late MaterialApp app;
 
   setUpAll(() async {
@@ -33,16 +30,14 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
-    observer = SimpleNavigatorObserver();
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
       initialRoute: Routes.welcome,
-      navigatorObservers: [observer],
       routes: <String, WidgetBuilder>{
         Routes.welcome: WelcomePage.create,
-        Routes.tryOrInstall: (context) => Container(),
+        Routes.tryOrInstall: (context) => Text(Routes.tryOrInstall),
       },
     );
     await tester.pumpWidget(
@@ -51,11 +46,10 @@ void main() {
           // ignore: unnecessary_cast
           create: (_) => SubiquityClientMock() as SubiquityClient,
         ),
-        ChangeNotifierProvider(create: (context) => KeyboardModel()),
+        Provider(create: (context) => KeyboardService()),
       ], child: app),
     );
-    expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, Routes.welcome);
+    expect(find.byType(WelcomePage), findsOneWidget);
   }
 
   testWidgets('should display a list of languages', (tester) async {
@@ -73,14 +67,12 @@ void main() {
           findsOneWidget);
     }
 
-    final itemEnglish = find.descendant(
-        of: languageList, matching: find.widgetWithText(ListTile, 'English'));
+    final itemEnglish = find.widgetWithText(ListTile, 'English');
     expect(itemEnglish, findsOneWidget);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
     expect(UbuntuDesktopInstallerApp.locale.languageCode, 'en');
 
-    final itemFrench = find.descendant(
-        of: languageList, matching: find.widgetWithText(ListTile, 'Français'));
+    final itemFrench = find.widgetWithText(ListTile, 'Français');
     expect(itemFrench, findsOneWidget);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, false);
 
@@ -98,8 +90,9 @@ void main() {
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
+    await tester.pumpAndSettle();
 
-    expect(observer.pushed.length, 2);
-    expect(observer.pushed.last.settings.name, Routes.tryOrInstall);
+    expect(find.byType(WelcomePage), findsNothing);
+    expect(find.text(Routes.tryOrInstall), findsOneWidget);
   });
 }

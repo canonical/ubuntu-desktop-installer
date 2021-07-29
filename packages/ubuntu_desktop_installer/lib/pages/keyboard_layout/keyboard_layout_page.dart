@@ -3,8 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../../keyboard_model.dart';
+import '../../keyboard_service.dart';
 import '../../routes.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
@@ -19,7 +18,7 @@ class KeyboardLayoutPage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (_) => KeyboardLayoutModel(
         client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardModel: Provider.of<KeyboardModel>(context, listen: false),
+        keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
       child: KeyboardLayoutPage(),
     );
