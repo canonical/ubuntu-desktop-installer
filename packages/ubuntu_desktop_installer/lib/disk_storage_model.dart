@@ -22,7 +22,7 @@ class DiskStorageModel extends ChangeNotifier {
   GuidedStorageResponse? _response;
   final List<DiskOrPartition> _disksAndPartitions = [];
   StorageResponse? _storageResponse;
-  int _selectedIndex = -1;
+  int _selectedIndex = 0;
 
   List<dynamic>? get storageConfig => _storageResponse?.config;
 
@@ -44,18 +44,30 @@ class DiskStorageModel extends ChangeNotifier {
     return _disksAndPartitions[_selectedIndex];
   }
 
+  bool _isValidIndex(int index) {
+    return index >= 0 && index < _disksAndPartitions.length;
+  }
+
   bool _isDisk(int index) {
-    return index >= 0 &&
-        index < _disksAndPartitions.length &&
-        _disksAndPartitions[index].partition != null;
+    return _isValidIndex(index) && _disksAndPartitions[index].partition == null;
   }
 
   int _findDisk(int index) {
     var diskIndex = index;
-    while (diskIndex >= 0 && !_isDisk(diskIndex)) {
+    while (_isValidIndex(diskIndex) && !_isDisk(diskIndex)) {
       --diskIndex;
     }
     return diskIndex;
+  }
+
+  List<DiskOrPartition> findPartitions(int index) {
+    var partitions = <DiskOrPartition>[];
+    var partitionIndex = _findDisk(index) + 1;
+    while (_isValidIndex(partitionIndex) && !_isDisk(partitionIndex)) {
+      partitions.add(_disksAndPartitions[partitionIndex]);
+      ++partitionIndex;
+    }
+    return partitions;
   }
 
   Future<void> initGuidedStorage() async {
