@@ -1,8 +1,8 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yaru_icons/widgets/yaru_icons.dart';
 import 'package:wizard_router/wizard_router.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../disk_storage_model.dart';
 import '../widgets.dart';
