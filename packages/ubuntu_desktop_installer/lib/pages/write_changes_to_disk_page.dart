@@ -271,7 +271,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     await client.setStorage(_storageConfig!);
                     await client.confirm('/dev/tty1');
 
-                    Navigator.pushNamed(context, Routes.chooseYourLook);
+                    Navigator.pushNamed(context, Routes.whoAreYou);
                   },
                 ),
               ],

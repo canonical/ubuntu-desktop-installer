@@ -103,7 +103,7 @@ void main() {
       home: HomePage(),
       routes: {
         HomePage.targetRouteName: (context) => WriteChangesToDiskPage(),
-        Routes.chooseYourLook: (context) => Container(),
+        Routes.whoAreYou: (context) => Container(),
       },
     );
     client = MockSubiquityClient();
