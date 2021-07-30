@@ -36,8 +36,8 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
               title: Text(lang.allocateDiskSpace),
               content: Column(children: <Widget>[
                 Expanded(
-                    child: Column(children: <Widget>[
-                  RoundedContainer(
+                    child: RoundedContainer(
+                  child: SingleChildScrollView(
                     child: DataTable(
                       headingTextStyle: Theme.of(context).textTheme.subtitle2,
                       dataTextStyle: Theme.of(context).textTheme.bodyText2,
@@ -83,7 +83,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                       }),
                     ),
                   ),
-                ])),
+                )),
               ]),
               actions: <WizardAction>[
                 WizardAction(
