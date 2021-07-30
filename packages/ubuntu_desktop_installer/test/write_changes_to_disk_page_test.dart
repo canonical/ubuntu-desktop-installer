@@ -88,7 +88,7 @@ void main() {
       home: Wizard(
         routes: {
           Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
-          Routes.chooseYourLook: (context) => Container(),
+          Routes.whoAreYou: (context) => Container(),
         },
       ),
     );

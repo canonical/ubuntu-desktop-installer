@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -48,15 +49,22 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
+
+  final eventChannel = EventChannel('ubuntu-desktop-installer');
+  eventChannel.receiveBroadcastStream().listen((event) async {
+    switch (event) {
+      case 'deleteEvent':
+        await subiquityClient.close();
+        await subiquityServer.stop();
+        break;
+      default:
+        print('Warning: event $event ignored');
+    }
+  });
+
   runApp(MultiProvider(
     providers: [
-      Provider(
-          create: (_) => subiquityClient,
-          lazy: false,
-          dispose: (_, __) {
-            subiquityClient.close();
-            subiquityServer.stop();
-          }),
+      Provider.value(value: subiquityClient),
       ChangeNotifierProvider(
         create: (_) => AppTheme(themeSettings),
       ),
