@@ -66,7 +66,7 @@
   "whoAreYouPageRequirePassword": "Require my password to log in",
   "whoAreYouPageRealNameLabel": "Your name",
   "whoAreYouPageRealNameRequired": "A name is required",
-  "whoAreYouPageComputerNameLabel": "Your computers name",
+  "whoAreYouPageComputerNameLabel": "Your computer's name",
   "whoAreYouPageComputerNameInfo": "The name it uses when it talks to other computers.",
   "whoAreYouPageComputerNameRequired": "A computer name is required",
   "whoAreYouPageInvalidComputerName": "The computer name is invalid",
