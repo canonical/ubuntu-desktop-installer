@@ -23,7 +23,7 @@ class Settings extends ChangeNotifier {
   ThemeMode get theme => _theme;
   ThemeMode _theme = ThemeMode.system;
 
-  /// Applies a theme matching the given [brigtness].
+  /// Applies a theme matching the given [brightness].
   void applyTheme(Brightness brightness) {
     switch (brightness) {
       case Brightness.dark:

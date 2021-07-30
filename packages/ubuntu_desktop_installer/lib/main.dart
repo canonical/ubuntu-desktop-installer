@@ -15,7 +15,7 @@ import 'l10n/app_localizations.dart';
 import 'settings.dart';
 
 Future<void> main() async {
-  final gsettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+  final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
@@ -65,7 +65,7 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: [
       Provider.value(value: subiquityClient),
-      ChangeNotifierProvider(create: (_) => Settings(gsettings)),
+      ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
       ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient)),
       Provider(create: (_) => KeyboardService()),
     ],
