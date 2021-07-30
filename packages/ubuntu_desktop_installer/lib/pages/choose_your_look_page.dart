@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../routes.dart';
 import '../settings.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
@@ -12,22 +12,18 @@ class ChooseYourLookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void nextPage() {
-      Navigator.pushNamed(context, Routes.installationSlides);
-    }
-
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         header: Text(lang.chooseYourLookPageHeader),
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
             enabled: true,
-            onActivated: nextPage,
+            onActivated: Wizard.of(context).next,
           ),
         ],
         title: Text(lang.chooseYourLookPageTitle),

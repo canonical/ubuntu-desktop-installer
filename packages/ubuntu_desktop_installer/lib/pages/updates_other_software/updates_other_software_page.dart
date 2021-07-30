@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../../routes.dart';
 import '../../widgets.dart';
-import '../../widgets/localized_view.dart';
 import '../wizard_page.dart';
 import 'updates_other_software_model.dart';
 
@@ -71,13 +70,11 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
-            onActivated: () {
-              Navigator.pushNamed(context, Routes.allocateDiskSpace);
-            },
+            onActivated: Wizard.of(context).next,
           ),
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import '../widgets.dart';
 import 'wizard_page.dart';
@@ -51,7 +52,7 @@ class TurnOffRSTPage extends StatelessWidget {
           actions: <WizardAction>[
             WizardAction(
               label: lang.backButtonText,
-              onActivated: Navigator.of(context).pop,
+              onActivated: Wizard.of(context).back,
             ),
             WizardAction(
               label: lang.restartButtonText,

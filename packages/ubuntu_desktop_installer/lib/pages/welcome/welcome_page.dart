@@ -3,9 +3,9 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import '../../keyboard_service.dart';
-import '../../routes.dart';
 import '../../settings.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
@@ -91,7 +91,7 @@ class _WelcomePageState extends State<WelcomePage> {
             label: lang.continueButtonText,
             onActivated: () {
               model.applyLocale(model.locale(model.selectedLanguageIndex));
-              Navigator.pushNamed(context, Routes.tryOrInstall);
+              Wizard.of(context).next();
             },
           ),
         ],
