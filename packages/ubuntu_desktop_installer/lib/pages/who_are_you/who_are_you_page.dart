@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import '../../constants.dart';
-import '../../routes.dart';
 import '../../utils.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
@@ -103,7 +103,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
@@ -113,7 +113,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               final model = Provider.of<WhoAreYouModel>(context, listen: false);
               await model.saveIdentity();
 
-              Navigator.pushNamed(context, Routes.chooseYourLook);
+              Wizard.of(context).next();
             },
           ),
         ],

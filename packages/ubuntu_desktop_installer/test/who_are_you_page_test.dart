@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import 'who_are_you_page_test.mocks.dart';
 
@@ -54,8 +55,10 @@ void main() {
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      home: buildPage(model),
-      routes: {'/chooseyourlook': (_) => Container()},
+      home: Wizard(
+        routes: {'/': (_) => buildPage(model)},
+        onNext: (settings) => '/',
+      ),
     );
   }
 

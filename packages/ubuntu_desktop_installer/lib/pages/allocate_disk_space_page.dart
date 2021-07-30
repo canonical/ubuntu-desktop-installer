@@ -2,9 +2,9 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import '../disk_storage_model.dart';
-import '../routes.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -88,14 +88,14 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
               actions: <WizardAction>[
                 WizardAction(
                   label: lang.backButtonText,
-                  onActivated: Navigator.of(context).pop,
+                  onActivated: Wizard.of(context).back,
                 ),
                 WizardAction(
                   label: lang.startInstallingButtonText,
                   highlighted: true,
                   onActivated: () async {
                     await model.setGuidedStorage();
-                    Navigator.pushNamed(context, Routes.writeChangesToDisk);
+                    Wizard.of(context).next();
                   },
                 ),
               ],
