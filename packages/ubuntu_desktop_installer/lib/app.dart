@@ -1,74 +1,83 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:wizard_router/wizard_router.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'dart:io';
+
+import 'package:crypt/crypt.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:gsettings/gsettings.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'disk_storage_model.dart';
+import 'keyboard_service.dart';
 
 import 'l10n/app_localizations.dart';
-import 'pages/allocate_disk_space_page.dart';
-import 'pages/choose_your_look_page.dart';
-import 'pages/installation_slides/installation_slides_page.dart';
-import 'pages/keyboard_layout/keyboard_layout_page.dart';
-import 'pages/try_or_install/try_or_install_page.dart';
-import 'pages/turn_off_rst_page.dart';
-import 'pages/updates_other_software/updates_other_software_page.dart';
-import 'pages/welcome/welcome_page.dart';
-import 'pages/who_are_you/who_are_you_page.dart';
-import 'pages/write_changes_to_disk_page.dart';
-import 'routes.dart';
 import 'settings.dart';
 
-class UbuntuDesktopInstallerApp extends StatelessWidget {
-  const UbuntuDesktopInstallerApp({
-    Key? key,
-  }) : super(key: key);
+/// Initializes and runs the given [app].
+///
+/// Optionally, the Subiquity client] and server may be overridden for building
+/// wizard variants and for testing purposes.
+Future<void> runWizardApp(
+  Widget app, {
+  SubiquityClient? subiquityClient,
+  SubiquityServer? subiquityServer,
+  String? machineConfig,
+}) async {
+  subiquityClient ??= SubiquityClient();
+  subiquityServer ??= SubiquityServer();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Settings.of(context).locale,
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
-      theme: yaru.lightTheme,
-      darkTheme: yaru.darkTheme,
-      themeMode: Settings.of(context).theme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        const LocalizationsDelegateOc(),
-      ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Wizard(
-        initialRoute: Routes.welcome,
-        routes: <String, WidgetBuilder>{
-          Routes.welcome: WelcomePage.create,
-          Routes.tryOrInstall: TryOrInstallPage.create,
-          Routes.turnOffRST: TurnOffRSTPage.create,
-          Routes.keyboardLayout: KeyboardLayoutPage.create,
-          Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
-          Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
-          Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
-          Routes.whoAreYou: WhoAreYouPage.create,
-          Routes.chooseYourLook: ChooseYourLookPage.create,
-          Routes.installationSlides: InstallationSlidesPage.create,
-        },
-        onNext: (settings) {
-          switch (settings.name) {
-            case Routes.tryOrInstall:
-              switch (settings.arguments as Option?) {
-                case Option.repairUbuntu:
-                  return Routes.repairUbuntu;
-                case Option.tryUbuntu:
-                  return Routes.tryUbuntu;
-                default:
-                  // TODO: detect if we need to show the "Turn off RST" page,
-                  // or if we can proceed directly to installation
-                  //return Routes.turnOffRST;
-                  return Routes.keyboardLayout;
-              }
-            default:
-              return null;
-          }
-        },
-      ),
-    );
+  final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+
+  if (Platform.environment['LIVE_RUN'] == '1') {
+    await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
+  } else {
+    await subiquityServer
+        .start(ServerMode.DRY_RUN, machineConfig ?? 'examples/simple.json')
+        .then(subiquityClient.open);
   }
+
+  // Use the default values for a number of endpoints
+  // for which a UI page isn't implemented yet.
+  subiquityClient.markConfigured([
+    'mirror',
+    'proxy',
+    'network',
+    'ssh',
+    'snaplist',
+    'timezone',
+  ]);
+
+  // Define a default identity until a UI page is implemented
+  // for it.
+  final identity = IdentityData(
+      realname: 'Ubuntu',
+      username: 'ubuntu',
+      cryptedPassword: Crypt.sha512('ubuntu').toString(),
+      hostname: 'ubuntu-desktop');
+  subiquityClient.setIdentity(identity);
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupAppLocalizations();
+
+  final eventChannel = EventChannel('ubuntu-desktop-installer');
+  eventChannel.receiveBroadcastStream().listen((event) async {
+    switch (event) {
+      case 'deleteEvent':
+        await subiquityClient!.close();
+        await subiquityServer!.stop();
+        break;
+      default:
+        print('Warning: event $event ignored');
+    }
+  });
+
+  runApp(MultiProvider(
+    providers: [
+      Provider.value(value: subiquityClient),
+      ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
+      ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient!)),
+      Provider(create: (_) => KeyboardService()),
+    ],
+    child: app,
+  ));
 }
