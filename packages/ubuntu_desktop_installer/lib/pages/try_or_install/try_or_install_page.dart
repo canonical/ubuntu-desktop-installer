@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wizard_router/wizard_router.dart';
 
-import '../../app.dart';
+import '../../settings.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'try_or_install_model.dart';
@@ -70,7 +70,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
         ),
         footer: Html(
           data: lang.releaseNotesLabel(
-              model.releaseNotesURL(UbuntuDesktopInstallerApp.locale)),
+              model.releaseNotesURL(Settings.of(context).locale)),
           onLinkTap: (url, _, __, ___) => launch(url!),
         ),
         actions: <WizardAction>[
