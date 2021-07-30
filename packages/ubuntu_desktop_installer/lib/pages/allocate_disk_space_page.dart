@@ -39,6 +39,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                     child: RoundedContainer(
                   child: SingleChildScrollView(
                     child: DataTable(
+                      showCheckboxColumn: false,
                       headingTextStyle: Theme.of(context).textTheme.subtitle2,
                       dataTextStyle: Theme.of(context).textTheme.bodyText2,
                       columns: <DataColumn>[
@@ -68,25 +69,34 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                           (index) {
                         final element = model.diskAndPartition(index);
                         final isDisk = element.partition == null;
-                        return DataRow(cells: <DataCell>[
-                          DataCell(Padding(
-                            padding: EdgeInsets.only(left: isDisk ? 0 : 40),
-                            child: Row(children: [
-                              Icon(isDisk
-                                  ? YaruIcons.drive_harddisk_filled
-                                  : YaruIcons.drive_harddisk),
-                              const SizedBox(width: 16),
-                              Text(element.name),
-                            ]),
-                          )),
-                          DataCell(Text(element.disk.type!)),
-                          DataCell(Text('')),
-                          DataCell(Text(filesize(
-                              element.partition?.size ?? element.disk.size))),
-                          DataCell(Text('')),
-                          DataCell(Text('')),
-                          DataCell(Checkbox(value: true, onChanged: null)),
-                        ]);
+                        return DataRow.byIndex(
+                          index: index,
+                          selected: index == model.selectedIndex,
+                          onSelectChanged: (selected) {
+                            if (selected == true) {
+                              model.selectIndex(index);
+                            }
+                          },
+                          cells: <DataCell>[
+                            DataCell(Padding(
+                              padding: EdgeInsets.only(left: isDisk ? 0 : 40),
+                              child: Row(children: [
+                                Icon(isDisk
+                                    ? YaruIcons.drive_harddisk_filled
+                                    : YaruIcons.drive_harddisk),
+                                const SizedBox(width: 16),
+                                Text(element.name),
+                              ]),
+                            )),
+                            DataCell(Text(element.disk.type!)),
+                            DataCell(Text('')),
+                            DataCell(Text(filesize(
+                                element.partition?.size ?? element.disk.size))),
+                            DataCell(Text('')),
+                            DataCell(Text('')),
+                            DataCell(Checkbox(value: true, onChanged: null)),
+                          ],
+                        );
                       }),
                     ),
                   ),
