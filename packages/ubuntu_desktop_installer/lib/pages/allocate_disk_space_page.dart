@@ -67,15 +67,22 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                       rows: List<DataRow>.generate(model.diskAndPartitionCount,
                           (index) {
                         final element = model.diskAndPartition(index);
+                        final isDisk = element.partition == null;
                         return DataRow(cells: <DataCell>[
-                          DataCell(Row(children: [
-                            Icon(YaruIcons.drive_harddisk),
-                            const SizedBox(width: 16),
-                            Text(element.name),
-                          ])),
+                          DataCell(Padding(
+                            padding: EdgeInsets.only(left: isDisk ? 0 : 40),
+                            child: Row(children: [
+                              Icon(isDisk
+                                  ? YaruIcons.drive_harddisk_filled
+                                  : YaruIcons.drive_harddisk),
+                              const SizedBox(width: 16),
+                              Text(element.name),
+                            ]),
+                          )),
                           DataCell(Text(element.disk.type!)),
                           DataCell(Text('')),
-                          DataCell(Text(filesize(element.disk.size))),
+                          DataCell(Text(filesize(
+                              element.partition?.size ?? element.disk.size))),
                           DataCell(Text('')),
                           DataCell(Text('')),
                           DataCell(Checkbox(value: true, onChanged: null)),
