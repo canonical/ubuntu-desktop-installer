@@ -47,7 +47,7 @@
   "diskHeadersSize": "Talha",
   "diskHeadersUsed": "Utilizat",
   "diskHeadersSystem": "Sistèma",
-  "diskHeadersFormat": "Formatar"
+  "diskHeadersFormat": "Formatar",
   
   "writeChangesToDisk": "Aplicar las modificacions suls disques",
   "writeChangesFallbackSerial": "disc",
