@@ -59,7 +59,7 @@
   "writeChangesPartitionEntryPrimary": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) coma",
   "writeChangesPartitionEntrySecondary": "        particion n° de tipe {fstype} coma {mountPath}",
 
-  "chooseYourLookPageTitle": Causissètz l'aparéncia",
+  "chooseYourLookPageTitle": "Causissètz l'aparéncia",
   "chooseYourLookPageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d'aparéncia.",
   "chooseYourLookPageDarkSetting": "Fosc",
   "chooseYourLookPageLightSetting": "Clar",
