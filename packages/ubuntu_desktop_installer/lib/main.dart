@@ -5,16 +5,7 @@ import 'package:yaru/yaru.dart' as yaru;
 
 import 'app.dart';
 import 'l10n/app_localizations.dart';
-import 'pages/allocate_disk_space_page.dart';
-import 'pages/choose_your_look_page.dart';
-import 'pages/installation_slides/installation_slides_page.dart';
-import 'pages/keyboard_layout/keyboard_layout_page.dart';
-import 'pages/try_or_install/try_or_install_page.dart';
-import 'pages/turn_off_rst_page.dart';
-import 'pages/updates_other_software/updates_other_software_page.dart';
-import 'pages/welcome/welcome_page.dart';
-import 'pages/who_are_you/who_are_you_page.dart';
-import 'pages/write_changes_to_disk_page.dart';
+import 'pages.dart';
 import 'routes.dart';
 import 'settings.dart';
 
