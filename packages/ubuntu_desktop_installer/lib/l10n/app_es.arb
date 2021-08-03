@@ -26,8 +26,8 @@
     }
   },
 
-  "turnOffRST": "Apagar RST",
-  "turnOffRSTDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario apagar RST en Windows antes de instalar Ubuntu.",
+  "turnOffRST": "Desactivar RST",
+  "turnOffRSTDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.",
   "instructionsForRST": "Para seguir las instrucciones, abra esta página en un dispositivo móvil u otro dispositivo: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
@@ -63,7 +63,7 @@
 
   "writeChangesToDisk": "Escribir cambios en el disco",
   "writeChangesFallbackSerial": "disco",
-  "@writeChangesFallbackSerial": { "description": "Nombre predeterminado que mostrar para un disco sin uno de serie (poco probable)" },
+  "@writeChangesFallbackSerial": { "description": "Nombre predeterminado que mostrar para un disco sin un número de serie (poco probable)" },
   "writeChangesDescription": "Si continúa, los cambios listados más abajo se escribirán en los discos. Podrá hacer más cambios manualmente.",
   "writeChangesPartitionTablesHeader": "Las tablas de partición de los siguientes dispositivos se modifican:",
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
@@ -108,6 +108,6 @@
   "chooseYourLookPageHeader": "Puede cambiarlo después en la configuración de apariencia.",
   "chooseYourLookPageDarkSetting": "Oscuro",
   "chooseYourLookPageLightSetting": "Luminoso",
-  "chooseYourLookPageLightBodyText": "Todo es luminoso y brillante",
-  "chooseYourLookPageDarkBodyText": "La oscuridad es mi vieja amiga"
+  "chooseYourLookPageLightBodyText": "Luminoso y brillante",
+  "chooseYourLookPageDarkBodyText": "Oscuro"
 }
