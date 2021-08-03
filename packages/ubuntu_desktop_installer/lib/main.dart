@@ -38,15 +38,6 @@ Future<void> main() async {
     'timezone',
   ]);
 
-  // Define a default identity until a UI page is implemented
-  // for it.
-  final identity = IdentityData(
-      realname: 'Ubuntu',
-      username: 'ubuntu',
-      cryptedPassword: Crypt.sha512('ubuntu').toString(),
-      hostname: 'ubuntu-desktop');
-  subiquityClient.setIdentity(identity);
-
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
 
