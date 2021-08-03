@@ -17,7 +17,7 @@ void main() {
     test('should return product info when iso file exists', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
@@ -31,7 +31,7 @@ void main() {
         () async {
       final localPath = '/etc/os-release';
 
-      await fileSystem.file(localPath).create(recursive: true).then((File f) {
+      await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
 NAME="Ubuntu"
 VERSION="21.04 (Hirsute Hippo)"
@@ -55,8 +55,6 @@ UBUNTU_CODENAME=hirsute
     });
 
     test('should return Ubuntu as fallback value', () {
-      final extractor = ProductInfoExtractor();
-
       final version =
           productInfoExtractor?.getProductInfo(shouldResetCache: true);
 
@@ -66,7 +64,7 @@ UBUNTU_CODENAME=hirsute
     test('should return product info with LTS when iso file exists', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)');
       });
@@ -80,7 +78,7 @@ UBUNTU_CODENAME=hirsute
         () async {
       final localPath = '/etc/os-release';
 
-      await fileSystem.file(localPath).create(recursive: true).then((File f) {
+      await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
 NAME="Ubuntu"
 VERSION="20.04.2 LTS (Focal Fossa)"
@@ -106,7 +104,7 @@ UBUNTU_CODENAME=focal
     test('should return product info for kubuntu', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Kubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
@@ -119,7 +117,7 @@ UBUNTU_CODENAME=focal
     test('should return product info for kubuntu', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Kubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
@@ -132,7 +130,7 @@ UBUNTU_CODENAME=focal
     test('should return product info for ubuntu mate', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
@@ -145,14 +143,14 @@ UBUNTU_CODENAME=focal
     test('should cache product info', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
       var version =
           productInfoExtractor?.getProductInfo(shouldResetCache: true);
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
@@ -165,14 +163,14 @@ UBUNTU_CODENAME=focal
     test('should reset cache when paramter is passed', () async {
       final isoPath = '/cdrom/.disk/info';
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
       var version =
           productInfoExtractor?.getProductInfo(shouldResetCache: true);
 
-      await fileSystem.file(isoPath).create(recursive: true).then((File f) {
+      await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });

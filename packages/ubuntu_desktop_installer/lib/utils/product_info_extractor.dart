@@ -38,7 +38,7 @@ class ProductInfoExtractor {
         // versions on ISO are stored in format - Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)
         // we want to read system name and version without code name, so we extract it before second quote
         _cachedProductInfo = content.substring(0, content.indexOf('"') - 1);
-      } on Exception catch (e) {
+      } on Exception {
         _extractLocalVersion(localPath);
       }
     } else {
@@ -58,7 +58,7 @@ class ProductInfoExtractor {
 
         _cachedProductInfo = content.substring(
             content.indexOf("\"") + 1, content.lastIndexOf("\""));
-      } on Exception catch (e) {
+      } on Exception {
         _cachedProductInfo = 'Ubuntu';
       }
     } else {

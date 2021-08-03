@@ -18,10 +18,6 @@ class InstallationCompletePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? boldStyle = Theme.of(context)
-        .textTheme
-        .bodyText1!
-        .copyWith(fontWeight: FontWeight.bold);
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         title: Text(lang.installationCompleteTitle),
