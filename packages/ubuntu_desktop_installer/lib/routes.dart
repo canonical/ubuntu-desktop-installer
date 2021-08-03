@@ -10,4 +10,6 @@ abstract class Routes {
   static const installationComplete = '/installationcomplete';
   static const writeChangesToDisk = '/writechangestodisk';
   static const chooseYourLook = '/chooseyourlook';
+  static const whoAreYou = '/whoareyou';
+  static const installationSlides = '/installationslides';
 }

@@ -14,8 +14,8 @@ class SubiquityClient {
     _client = HttpUnixClient(socketPath);
   }
 
-  void close() {
-    _client.close();
+  Future<void> close() {
+    return _client.close();
   }
 
   Future<void> checkStatus(String method, StreamedResponse response) async {
@@ -210,5 +210,11 @@ class SubiquityClient {
     request.body = jsonEncode(config);
     final response = await _client.send(request);
     await checkStatus("setStorage(${jsonEncode(config)})", response);
+  }
+
+  Future<void> reboot() async {
+    final request = Request('POST', Uri.http('localhost', 'reboot'));
+    final response = await _client.send(request);
+    await checkStatus("reboot()", response);
   }
 }

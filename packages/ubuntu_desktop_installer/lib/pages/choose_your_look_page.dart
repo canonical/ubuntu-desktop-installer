@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../app_theme.dart';
-import '../routes.dart';
+import '../settings.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -13,23 +12,18 @@ class ChooseYourLookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void nextPage() {
-      Navigator.of(context).pushNamed(Routes.installationComplete);
-    }
-
-    final theme = context.watch<AppTheme>();
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         header: Text(lang.chooseYourLookPageHeader),
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
             enabled: true,
-            onActivated: nextPage,
+            onActivated: Wizard.of(context).next,
           ),
         ],
         title: Text(lang.chooseYourLookPageTitle),
@@ -47,7 +41,8 @@ class ChooseYourLookPage extends StatelessWidget {
                     bodyText: lang.chooseYourLookPageLightBodyText,
                     selected: Theme.of(context).brightness == Brightness.light,
                     onSelected: () {
-                      theme.apply(Brightness.light);
+                      final settings = Settings.of(context, listen: false);
+                      settings.applyTheme(Brightness.light);
                     },
                   ),
                 ),
@@ -58,7 +53,10 @@ class ChooseYourLookPage extends StatelessWidget {
                     titleText: lang.chooseYourLookPageDarkSetting,
                     bodyText: lang.chooseYourLookPageDarkBodyText,
                     selected: Theme.of(context).brightness == Brightness.dark,
-                    onSelected: () => theme.apply(Brightness.dark),
+                    onSelected: () {
+                      final settings = Settings.of(context, listen: false);
+                      settings.applyTheme(Brightness.dark);
+                    },
                   ),
                 )
               ]),

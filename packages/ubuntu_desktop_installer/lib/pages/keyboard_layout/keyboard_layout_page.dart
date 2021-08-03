@@ -3,9 +3,9 @@ import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../../keyboard_model.dart';
-import '../../routes.dart';
+import '../../keyboard_service.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'keyboard_layout_model.dart';
@@ -19,7 +19,7 @@ class KeyboardLayoutPage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (_) => KeyboardLayoutModel(
         client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardModel: Provider.of<KeyboardModel>(context, listen: false),
+        keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
       child: KeyboardLayoutPage(),
     );
@@ -137,14 +137,14 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
             enabled: model.isValid,
             onActivated: () async {
               await model.applyKeyboardSettings();
-              Navigator.pushNamed(context, Routes.updatesOtherSoftware);
+              Wizard.of(context).next();
             },
           ),
         ],

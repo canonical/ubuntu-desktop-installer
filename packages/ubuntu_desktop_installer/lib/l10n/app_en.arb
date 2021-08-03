@@ -61,24 +61,23 @@
   "diskHeadersSystem": "System",
   "diskHeadersFormat": "Format",
 
-  "installationCompleteTitle": "Installation complete",
-  "readyToUse": "**{system}** is installed and ready to use.",
-  "@readyToUse": {
-    "type": "text",
-    "placeholders": {
-      "system": {}
-    }
-  },
-  "restartInto": "Restart into {system}",
-  "@restartInto": {
-    "type": "text",
-    "placeholders": {
-        "system": {}
-    }
-  },
-  "shutdown": "Shut Down",
+  "whoAreYouPageTitle": "Who are you?",
+  "whoAreYouPageAutoLogin": "Log in automatically",
+  "whoAreYouPageRequirePassword": "Require my password to log in",
+  "whoAreYouPageRealNameLabel": "Your name",
+  "whoAreYouPageRealNameRequired": "A name is required",
+  "whoAreYouPageComputerNameLabel": "Your computer's name",
+  "whoAreYouPageComputerNameInfo": "The name it uses when it talks to other computers.",
+  "whoAreYouPageComputerNameRequired": "A computer name is required",
+  "whoAreYouPageInvalidComputerName": "The computer name is invalid",
+  "whoAreYouPageUsernameLabel": "Pick a username",
+  "whoAreYouPageUsernameRequired": "A username is required",
+  "whoAreYouPageInvalidUsername": "The username is invalid",
+  "whoAreYouPagePasswordLabel": "Choose a password",
+  "whoAreYouPagePasswordRequired": "A password is required",
+  "whoAreYouPageConfirmPasswordLabel": "Confirm your password",
+  "whoAreYouPagePasswordMismatch": "The passwords do not match",
 
-  
   "writeChangesToDisk": "Write changes to disk",
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": { "description": "Default display name for a disk without a serial (unlikely)" },
@@ -127,5 +126,26 @@
   "chooseYourLookPageDarkSetting": "Dark",
   "chooseYourLookPageLightSetting": "Light",
   "chooseYourLookPageLightBodyText": "Everything is light and bright",
-  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend"
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+
+  "strongPassword": "Strong password",
+  "moderatePassword": "Moderate password",
+  "weakPassword": "Weak password",
+
+  "installationCompleteTitle": "Installation complete",
+  "readyToUse": "**{system}** is installed and ready to use.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Restart into {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+        "system": {}
+    }
+  },
+  "shutdown": "Shut Down"
 }

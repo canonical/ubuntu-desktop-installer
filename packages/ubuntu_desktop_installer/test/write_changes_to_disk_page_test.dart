@@ -9,24 +9,9 @@ import 'package:ubuntu_desktop_installer/disk_storage_model.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:wizard_router/wizard_router.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
-
-class HomePage extends StatelessWidget {
-  static const targetRouteName = 'writeChangesToDisk';
-
-  final List<Map<String, dynamic>> storageConfig;
-
-  const HomePage({Key? key, this.storageConfig = const []}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      child: Text(targetRouteName),
-      onPressed: () => Navigator.pushNamed(context, targetRouteName),
-    );
-  }
-}
 
 @GenerateMocks([DiskStorageModel, SubiquityClient])
 void main() {
@@ -100,11 +85,12 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      home: HomePage(),
-      routes: {
-        HomePage.targetRouteName: (context) => WriteChangesToDiskPage(),
-        Routes.chooseYourLook: (context) => Container(),
-      },
+      home: Wizard(
+        routes: {
+          Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
+          Routes.whoAreYou: (context) => Container(),
+        },
+      ),
     );
     client = MockSubiquityClient();
     model = MockDiskStorageModel();
@@ -118,8 +104,6 @@ void main() {
         child: app,
       ),
     );
-    await tester.tap(find.widgetWithText(TextButton, HomePage.targetRouteName));
-    await tester.pumpAndSettle();
     expect(find.byType(WriteChangesToDiskPage), findsOneWidget);
   }
 

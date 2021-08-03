@@ -3,10 +3,10 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../../app.dart';
-import '../../keyboard_model.dart';
-import '../../routes.dart';
+import '../../keyboard_service.dart';
+import '../../settings.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'welcome_model.dart';
@@ -20,7 +20,7 @@ class WelcomePage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (_) => WelcomeModel(
         client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardModel: Provider.of<KeyboardModel>(context, listen: false),
+        keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
       child: WelcomePage(),
     );
@@ -38,7 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     final model = Provider.of<WelcomeModel>(context, listen: false);
-    model.loadKeyboardModel();
+    model.loadKeyboards();
 
     model.loadLanguages().then((_) {
       model.selectLocale(Intl.defaultLocale!);
@@ -76,8 +76,9 @@ class _WelcomePageState extends State<WelcomePage> {
                   selected: index == model.selectedLanguageIndex,
                   onTap: () {
                     model.selectedLanguageIndex = index;
-                    UbuntuDesktopInstallerApp.locale = model.locale(index);
-                    model.loadKeyboardModel();
+                    final settings = Settings.of(context, listen: false);
+                    settings.applyLocale(model.locale(index));
+                    model.loadKeyboards();
                   },
                 ),
               );
@@ -90,7 +91,7 @@ class _WelcomePageState extends State<WelcomePage> {
             label: lang.continueButtonText,
             onActivated: () {
               model.applyLocale(model.locale(model.selectedLanguageIndex));
-              Navigator.pushNamed(context, Routes.tryOrInstall);
+              Wizard.of(context).next();
             },
           ),
         ],

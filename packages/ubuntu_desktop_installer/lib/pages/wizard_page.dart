@@ -48,9 +48,11 @@ class WizardPage extends StatelessWidget {
     Key? key,
     this.title,
     this.header,
+    this.headerPadding = kHeaderPadding,
     this.content,
     this.contentPadding = kContentPadding,
     this.footer,
+    this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
   }) : super(key: key);
 
@@ -60,14 +62,26 @@ class WizardPage extends StatelessWidget {
   /// A header widget below the title.
   final Widget? header;
 
+  /// Padding around the header widget.
+  ///
+  /// The default value is `kHeaderPadding`.
+  final EdgeInsetsGeometry headerPadding;
+
   /// A content widget laid out below the header.
   final Widget? content;
 
   /// Padding around the content widget.
+  ///
+  /// The default value is `kContentPadding`.
   final EdgeInsetsGeometry contentPadding;
 
   /// A footer widget on the side of the buttons.
   final Widget? footer;
+
+  /// Padding around the footer widget.
+  ///
+  /// The default value is `kFooterPadding`.
+  final EdgeInsetsGeometry footerPadding;
 
   /// A list of actions in the button bar.
   final List<WizardAction> actions;
@@ -80,7 +94,7 @@ class WizardPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
-            padding: kHeaderPadding,
+            padding: headerPadding,
             child: header != null
                 ? Align(
                     alignment: Alignment.centerLeft,
@@ -96,7 +110,7 @@ class WizardPage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: kFooterPadding,
+        padding: footerPadding,
         child: Row(
           mainAxisAlignment: footer != null
               ? MainAxisAlignment.spaceBetween

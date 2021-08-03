@@ -1,0 +1,10 @@
+export 'pages/allocate_disk_space_page.dart';
+export 'pages/choose_your_look_page.dart';
+export 'pages/installation_slides/installation_slides_page.dart';
+export 'pages/keyboard_layout/keyboard_layout_page.dart';
+export 'pages/try_or_install/try_or_install_page.dart';
+export 'pages/turn_off_rst_page.dart';
+export 'pages/updates_other_software/updates_other_software_page.dart';
+export 'pages/welcome/welcome_page.dart';
+export 'pages/who_are_you/who_are_you_page.dart';
+export 'pages/write_changes_to_disk_page.dart';

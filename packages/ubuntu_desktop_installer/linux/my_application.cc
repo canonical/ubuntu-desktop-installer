@@ -10,6 +10,17 @@ struct _MyApplication {
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 
+static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
+                                gpointer user_data) {
+  g_autoptr(GError) error = nullptr;
+  FlValue* event = fl_value_new_string("deleteEvent");
+  FlEventChannel* event_channel = FL_EVENT_CHANNEL(user_data);
+  if (!fl_event_channel_send(event_channel, event, nullptr, &error)) {
+    g_warning("delete-event: %s", error->message);
+  }
+  return FALSE;
+}
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   GtkWindow* window =
@@ -30,6 +41,14 @@ static void my_application_activate(GApplication* application) {
   gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
+
+  FlEngine* engine = fl_view_get_engine(view);
+  FlBinaryMessenger* messenger = fl_engine_get_binary_messenger(engine);
+  g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
+  g_autoptr(FlEventChannel) event_channel = fl_event_channel_new(
+      messenger, "ubuntu-desktop-installer", FL_METHOD_CODEC(codec));
+  g_signal_connect(G_OBJECT(window), "delete-event",
+                   G_CALLBACK(on_delete_event), event_channel);
 
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
