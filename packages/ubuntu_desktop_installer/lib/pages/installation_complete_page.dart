@@ -1,9 +1,13 @@
+import 'dart:io' as io;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 
+import '../utils/product_info_extractor.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
-import '../utils/product_info_extractor.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
 
@@ -52,7 +56,10 @@ class InstallationCompletePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 24),
                     child: ElevatedButton(
                       onPressed: () {
-                        //TODO: restart pc
+                        // TODO: await for reboot result
+                        Provider.of<SubiquityClient>(context, listen: false)
+                            .reboot();
+                        io.exit(0);
                       },
                       child: Text(
                         lang.restartInto(
@@ -62,7 +69,8 @@ class InstallationCompletePage extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      //TODO: shutdown
+                      // TODO: request shutdown
+                      io.exit(0);
                     },
                     child: Text(lang.shutdown),
                   ),
