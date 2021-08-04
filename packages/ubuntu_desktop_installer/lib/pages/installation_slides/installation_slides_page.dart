@@ -420,21 +420,22 @@ class ImageSlide extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24.0),
-                    child: Container(
-                      color: Colors.black12,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 12),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: sections,
+                  if (sections.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24.0),
+                      child: Container(
+                        color: Colors.black12,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 12),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: sections,
+                          ),
                         ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
