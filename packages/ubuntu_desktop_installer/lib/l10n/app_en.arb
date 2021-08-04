@@ -60,6 +60,7 @@
   "diskHeadersUsed": "Used",
   "diskHeadersSystem": "System",
   "diskHeadersFormat": "Format",
+  "freeDiskSpace": "free space",
 
   "whoAreYouPageTitle": "Who are you?",
   "whoAreYouPageAutoLogin": "Log in automatically",

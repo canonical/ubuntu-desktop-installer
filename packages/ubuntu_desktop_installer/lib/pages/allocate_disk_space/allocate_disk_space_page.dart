@@ -10,6 +10,8 @@ import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'allocate_disk_space_model.dart';
 
+part 'allocate_disk_space_widgets.dart';
+
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
     Key? key,
@@ -46,7 +48,9 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     _PartitionBar(),
-                    const SizedBox(height: kContentSpacing),
+                    const SizedBox(height: kContentSpacing / 2),
+                    _PartitionLegend(),
+                    const SizedBox(height: kContentSpacing / 2),
                     Expanded(
                         child: RoundedContainer(
                       child: SingleChildScrollView(
@@ -133,58 +137,5 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
                 ),
               ],
             ));
-  }
-}
-
-class _PartitionBar extends StatelessWidget {
-  _PartitionBar({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
-    return RoundedContainer(
-      child: CustomPaint(
-        size: Size(double.infinity, 48),
-        painter: _PartitionPainter(model, model.selectedIndex),
-      ),
-    );
-  }
-}
-
-class _PartitionPainter extends CustomPainter {
-  const _PartitionPainter(this._model, this._selectedIndex);
-
-  final AllocateDiskSpaceModel _model;
-  final int _selectedIndex;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final diskSize = _model.selectedDisk?.disk.size ?? 0;
-    if (diskSize <= 0) return;
-
-    final rect = Offset.zero & size;
-    canvas.clipRRect(RRect.fromRectAndRadius(rect, Radius.circular(5.0)));
-
-    final baseColor = HSLColor.fromColor(Colors.blue.shade900);
-
-    final partitions = _model.findPartitions(_model.selectedIndex);
-    for (var index = 0; index < partitions.length; ++index) {
-      final partitionSize = partitions[index].partition?.size ?? 0;
-      if (partitionSize <= 0) continue;
-
-      final paint = Paint();
-      final hue = (baseColor.hue + 360 / partitions.length * index) % 360;
-      paint.color = baseColor.withHue(hue).toColor();
-      paint.style = PaintingStyle.fill;
-
-      final width = rect.width * partitionSize / diskSize;
-      canvas.drawRect(Rect.fromLTWH(0, 0, width, rect.height), paint);
-      canvas.translate(width, 0);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant _PartitionPainter old) {
-    return old._selectedIndex != _selectedIndex;
   }
 }

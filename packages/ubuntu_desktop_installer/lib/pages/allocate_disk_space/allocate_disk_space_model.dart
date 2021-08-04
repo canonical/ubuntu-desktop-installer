@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:ubuntu_desktop_installer/disk_storage_service.dart';
+
+import '../../disk_storage_service.dart';
 
 class AllocateDiskSpaceModel extends ChangeNotifier {
   AllocateDiskSpaceModel(this._service);
@@ -56,6 +57,18 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
       ++partitionIndex;
     }
     return partitions;
+  }
+
+  static int calculateFreeSpace({
+    required DiskOrPartition? disk,
+    required List<DiskOrPartition> partitions,
+  }) {
+    return partitions.fold<int>(
+      disk?.disk.size ?? 0,
+      (remainingSize, partition) {
+        return remainingSize - (partition.partition?.size ?? 0);
+      },
+    );
   }
 
   Future<void> setGuidedStorage() => _service.setGuidedStorage();
