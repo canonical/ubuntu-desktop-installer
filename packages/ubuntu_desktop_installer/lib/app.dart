@@ -6,7 +6,7 @@ import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'disk_storage_model.dart';
+import 'disk_storage_service.dart';
 import 'keyboard_service.dart';
 
 import 'l10n/app_localizations.dart';
@@ -65,7 +65,7 @@ Future<void> runWizardApp(
     providers: [
       Provider.value(value: subiquityClient),
       ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
-      ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient!)),
+      Provider(create: (_) => DiskStorageService(subiquityClient!)),
       Provider(create: (_) => KeyboardService()),
     ],
     child: app,
