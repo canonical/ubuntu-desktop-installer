@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:wizard_router/wizard_router.dart';
 
-import '../disk_storage_model.dart';
+import '../disk_storage_service.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -125,7 +125,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<DiskStorageModel>(context, listen: false);
+    final model = Provider.of<DiskStorageService>(context, listen: false);
     _storageConfig = model.storageConfig;
   }
 

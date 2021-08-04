@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:ubuntu_desktop_installer/disk_storage_model.dart';
+import 'package:ubuntu_desktop_installer/disk_storage_service.dart';
 
 class AllocateDiskSpaceModel extends ChangeNotifier {
   AllocateDiskSpaceModel(this._service);
 
-  final DiskStorageModel _service;
+  final DiskStorageService _service;
   var _disksAndPartitions = <DiskOrPartition>[];
   int _selectedIndex = 0;
 

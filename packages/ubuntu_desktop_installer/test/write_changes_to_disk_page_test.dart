@@ -5,7 +5,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/disk_storage_model.dart';
+import 'package:ubuntu_desktop_installer/disk_storage_service.dart';
 import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -13,11 +13,11 @@ import 'package:wizard_router/wizard_router.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
 
-@GenerateMocks([DiskStorageModel, SubiquityClient])
+@GenerateMocks([DiskStorageService, SubiquityClient])
 void main() {
   late MaterialApp app;
   late MockSubiquityClient client;
-  late MockDiskStorageModel model;
+  late MockDiskStorageService service;
 
   final storageConfig1 = [
     {
@@ -93,13 +93,13 @@ void main() {
       ),
     );
     client = MockSubiquityClient();
-    model = MockDiskStorageModel();
-    when(model.storageConfig).thenReturn(storageConfig1);
+    service = MockDiskStorageService();
+    when(service.storageConfig).thenReturn(storageConfig1);
     await tester.pumpWidget(
       MultiProvider(
         providers: [
           Provider<SubiquityClient>.value(value: client),
-          Provider<DiskStorageModel>.value(value: model),
+          Provider<DiskStorageService>.value(value: service),
         ],
         child: app,
       ),

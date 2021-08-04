@@ -13,8 +13,8 @@ class DiskOrPartition {
   }
 }
 
-class DiskStorageModel {
-  DiskStorageModel(this._client);
+class DiskStorageService {
+  DiskStorageService(this._client);
 
   final SubiquityClient _client;
 

@@ -5,7 +5,7 @@ import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../../constants.dart';
-import '../../disk_storage_model.dart';
+import '../../disk_storage_service.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'allocate_disk_space_model.dart';
@@ -16,7 +16,7 @@ class AllocateDiskSpacePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final service = Provider.of<DiskStorageModel>(context, listen: false);
+    final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => AllocateDiskSpaceModel(service),
       child: AllocateDiskSpacePage(),
