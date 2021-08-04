@@ -4,17 +4,24 @@ import 'package:provider/provider.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
-import '../../constants.dart';
-import '../disk_storage_model.dart';
-import '../widgets.dart';
-import 'wizard_page.dart';
+import '../../../constants.dart';
+import '../../disk_storage_model.dart';
+import '../../widgets.dart';
+import '../wizard_page.dart';
+import 'allocate_disk_space_model.dart';
 
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
     Key? key,
   }) : super(key: key);
 
-  static Widget create(BuildContext context) => AllocateDiskSpacePage();
+  static Widget create(BuildContext context) {
+    final service = Provider.of<DiskStorageModel>(context, listen: false);
+    return ChangeNotifierProvider(
+      create: (_) => AllocateDiskSpaceModel(service),
+      child: AllocateDiskSpacePage(),
+    );
+  }
 
   @override
   _AllocateDiskSpacePageState createState() => _AllocateDiskSpacePageState();
@@ -25,13 +32,13 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
   void initState() {
     super.initState();
 
-    final model = Provider.of<DiskStorageModel>(context, listen: false);
-    model.initGuidedStorage();
+    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+    model.getGuidedStorage();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<DiskStorageModel>(context);
+    final model = Provider.of<AllocateDiskSpaceModel>(context);
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.allocateDiskSpace),
@@ -134,7 +141,7 @@ class _PartitionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<DiskStorageModel>(context);
+    final model = Provider.of<AllocateDiskSpaceModel>(context);
     return RoundedContainer(
       child: CustomPaint(
         size: Size(double.infinity, 48),
@@ -147,7 +154,7 @@ class _PartitionBar extends StatelessWidget {
 class _PartitionPainter extends CustomPainter {
   const _PartitionPainter(this._model, this._selectedIndex);
 
-  final DiskStorageModel _model;
+  final AllocateDiskSpaceModel _model;
   final int _selectedIndex;
 
   @override

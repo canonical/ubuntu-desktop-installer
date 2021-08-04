@@ -99,7 +99,7 @@ void main() {
       MultiProvider(
         providers: [
           Provider<SubiquityClient>.value(value: client),
-          ChangeNotifierProvider<DiskStorageModel>.value(value: model),
+          Provider<DiskStorageModel>.value(value: model),
         ],
         child: app,
       ),

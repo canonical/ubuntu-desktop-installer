@@ -1,4 +1,4 @@
-export 'pages/allocate_disk_space_page.dart';
+export 'pages/allocate_disk_space/allocate_disk_space_page.dart';
 export 'pages/choose_your_look_page.dart';
 export 'pages/installation_slides/installation_slides_page.dart';
 export 'pages/keyboard_layout/keyboard_layout_page.dart';

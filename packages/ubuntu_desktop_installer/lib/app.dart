@@ -65,7 +65,7 @@ Future<void> runWizardApp(
     providers: [
       Provider.value(value: subiquityClient),
       ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
-      ChangeNotifierProvider(create: (_) => DiskStorageModel(subiquityClient!)),
+      Provider(create: (_) => DiskStorageModel(subiquityClient!)),
       Provider(create: (_) => KeyboardService()),
     ],
     child: app,

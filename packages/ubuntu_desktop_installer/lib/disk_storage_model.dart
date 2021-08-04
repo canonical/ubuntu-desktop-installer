@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 class DiskOrPartition {
@@ -14,75 +13,30 @@ class DiskOrPartition {
   }
 }
 
-class DiskStorageModel extends ChangeNotifier {
+class DiskStorageModel {
   DiskStorageModel(this._client);
 
   final SubiquityClient _client;
 
   GuidedStorageResponse? _response;
-  final List<DiskOrPartition> _disksAndPartitions = [];
   StorageResponse? _storageResponse;
-  int _selectedIndex = 0;
 
   List<dynamic>? get storageConfig => _storageResponse?.config;
 
-  int get diskAndPartitionCount => _disksAndPartitions.length;
-
-  DiskOrPartition diskAndPartition(int index) => _disksAndPartitions[index];
-
-  int get selectedIndex => _selectedIndex;
-
-  void selectIndex(int index) {
-    if (_selectedIndex == index) return;
-    _selectedIndex = index;
-    notifyListeners();
-  }
-
-  DiskOrPartition? get selectedDisk {
-    final diskIndex = _findDisk(_selectedIndex);
-    if (!_isDisk(diskIndex)) return null;
-    return _disksAndPartitions[_selectedIndex];
-  }
-
-  bool _isValidIndex(int index) {
-    return index >= 0 && index < _disksAndPartitions.length;
-  }
-
-  bool _isDisk(int index) {
-    return _isValidIndex(index) && _disksAndPartitions[index].partition == null;
-  }
-
-  int _findDisk(int index) {
-    var diskIndex = index;
-    while (_isValidIndex(diskIndex) && !_isDisk(diskIndex)) {
-      --diskIndex;
-    }
-    return diskIndex;
-  }
-
-  List<DiskOrPartition> findPartitions(int index) {
-    var partitions = <DiskOrPartition>[];
-    var partitionIndex = _findDisk(index) + 1;
-    while (_isValidIndex(partitionIndex) && !_isDisk(partitionIndex)) {
-      partitions.add(_disksAndPartitions[partitionIndex]);
-      ++partitionIndex;
-    }
-    return partitions;
-  }
-
-  Future<void> initGuidedStorage() async {
-    await _client.getGuidedStorage(0, true).then((r) {
+  Future<List<DiskOrPartition>> getGuidedStorage() {
+    return _client.getGuidedStorage(0, true).then((r) {
       _response = r;
-      _disksAndPartitions.clear();
+
+      final disksAndPartitions = <DiskOrPartition>[];
       for (var disk in r.disks!) {
-        _disksAndPartitions.add(DiskOrPartition(disk: disk));
+        disksAndPartitions.add(DiskOrPartition(disk: disk));
         for (var partition in disk.partitions!) {
-          _disksAndPartitions
+          disksAndPartitions
               .add(DiskOrPartition(disk: disk, partition: partition));
         }
       }
+      return disksAndPartitions;
     });
-    notifyListeners();
   }
 
   Future<void> setGuidedStorage() async {
