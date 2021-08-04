@@ -96,7 +96,7 @@ class _PartitionLegend extends StatelessWidget {
                 // TODO:
                 // - localize?
                 // - partition type?
-                title: '${partition.name} (unknown)',
+                title: partition.name,
                 size: partitionSize,
                 color: _partitionColor(index, partitions.length),
               );
