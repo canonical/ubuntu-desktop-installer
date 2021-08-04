@@ -37,7 +37,7 @@ class _DiskObject {
         serial = json['serial'] ?? '',
         path = json['path'],
         name = json['name'],
-        wipe = json['wipe'],
+        wipe = json['wipe'] ?? '',
         preserve = json['preserve'],
         grubDevice = json['grub_device'];
 
@@ -149,7 +149,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           _mounts.add(_MountObject.fromJson(entry));
           break;
         default:
-          assert(false, 'Unexpected storage config type');
+          print('Unexpected storage config type: ${entry['type']}');
       }
     }
     for (var partition in _partitions) {
