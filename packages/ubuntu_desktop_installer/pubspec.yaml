@@ -24,6 +24,7 @@ dependencies:
   keyboard_info: ^0.1.0
   password_strength: ^0.2.0
   provider: ^5.0.0
+  flutter_markdown: ^0.6.2
   scroll_to_index: ^2.0.0
   tuple: ^2.0.0
   url_launcher: ^6.0.3

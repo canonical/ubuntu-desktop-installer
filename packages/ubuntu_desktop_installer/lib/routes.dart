@@ -7,6 +7,7 @@ abstract class Routes {
   static const tryUbuntu = '/tryubuntu';
   static const allocateDiskSpace = '/allocatediskspace';
   static const updatesOtherSoftware = '/updateothersoftware';
+  static const installationComplete = '/installationcomplete';
   static const writeChangesToDisk = '/writechangestodisk';
   static const chooseYourLook = '/chooseyourlook';
   static const whoAreYou = '/whoareyou';

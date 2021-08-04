@@ -45,6 +45,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
           Routes.whoAreYou: WhoAreYouPage.create,
           Routes.chooseYourLook: ChooseYourLookPage.create,
           Routes.installationSlides: InstallationSlidesPage.create,
+          Routes.installationComplete: InstallationCompletePage.create,
         },
         onNext: (settings) {
           switch (settings.name) {
