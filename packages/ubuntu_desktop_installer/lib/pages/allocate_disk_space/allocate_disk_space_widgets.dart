@@ -8,7 +8,7 @@ class _PartitionBar extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     return RoundedContainer(
       child: CustomPaint(
-        size: Size(double.infinity, 48),
+        size: Size(double.infinity, 24),
         painter: _PartitionPainter(model),
       ),
     );
@@ -34,8 +34,6 @@ class _PartitionPainter extends CustomPainter {
     if (diskSize <= 0) return;
 
     final rect = Offset.zero & size;
-    canvas.clipRRect(RRect.fromRectAndRadius(rect, Radius.circular(5.0)));
-
     final partitions = _model.findPartitions(_model.selectedIndex);
     for (var index = 0; index < partitions.length; ++index) {
       final partitionSize = partitions[index].partition?.size ?? 0;
@@ -150,5 +148,169 @@ class _PartitionLabel extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class _PartitionTable extends StatelessWidget {
+  const _PartitionTable({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final model = Provider.of<AllocateDiskSpaceModel>(context);
+    return LocalizedView(builder: (context, lang) {
+      return RoundedContainer(
+        child: SingleChildScrollView(
+          child: DataTable(
+            showCheckboxColumn: false,
+            headingTextStyle: Theme.of(context).textTheme.subtitle2,
+            dataTextStyle: Theme.of(context).textTheme.bodyText2,
+            columns: <DataColumn>[
+              DataColumn(
+                label: Text(lang.diskHeadersDevice),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersType),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersMountPoint),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersSize),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersUsed),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersSystem),
+              ),
+              DataColumn(
+                label: Text(lang.diskHeadersFormat),
+              ),
+            ],
+            rows: List<DataRow>.generate(model.diskAndPartitionCount, (index) {
+              final element = model.diskAndPartition(index);
+              final isDisk = element.partition == null;
+              return DataRow.byIndex(
+                index: index,
+                selected: index == model.selectedIndex,
+                onSelectChanged: (selected) {
+                  if (selected == true) {
+                    model.selectIndex(index);
+                  }
+                },
+                cells: <DataCell>[
+                  DataCell(Padding(
+                    padding: EdgeInsets.only(left: isDisk ? 0 : 40),
+                    child: Row(children: [
+                      Icon(isDisk
+                          ? YaruIcons.drive_harddisk_filled
+                          : YaruIcons.drive_harddisk),
+                      const SizedBox(width: 16),
+                      Text(element.name),
+                    ]),
+                  )),
+                  DataCell(Text(element.disk.type!)),
+                  DataCell(Text('')),
+                  DataCell(Text(
+                      filesize(element.partition?.size ?? element.disk.size))),
+                  DataCell(Text('')),
+                  DataCell(Text('')),
+                  DataCell(Checkbox(value: true, onChanged: null)),
+                ],
+              );
+            }),
+          ),
+        ),
+      );
+    });
+  }
+}
+
+class _PartitionButtonRow extends StatelessWidget {
+  const _PartitionButtonRow({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LocalizedView(builder: (context, lang) {
+      return Row(
+        children: [
+          RoundedContainer(
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  OutlinedButton(
+                    child: const Icon(Icons.add),
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide.none,
+                      shape: RoundedRectangleBorder(),
+                    ),
+                    onPressed: () {},
+                  ),
+                  VerticalDivider(width: 1),
+                  OutlinedButton(
+                    child: const Icon(Icons.remove),
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide.none,
+                      shape: RoundedRectangleBorder(),
+                    ),
+                    onPressed: null,
+                  ),
+                  VerticalDivider(width: 1),
+                  OutlinedButton(
+                    child: Text(lang.changeButtonText),
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide.none,
+                      shape: RoundedRectangleBorder(),
+                    ),
+                    onPressed: null,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const Spacer(),
+          ButtonBar(
+            children: [
+              OutlinedButton(
+                child: Text(lang.newPartitionTable),
+                onPressed: null,
+              ),
+            ],
+          ),
+          OutlinedButton(
+            child: Text(lang.revertButtonText),
+            onPressed: () {},
+          ),
+        ],
+      );
+    });
+  }
+}
+
+class _BootDiskSelector extends StatelessWidget {
+  const _BootDiskSelector({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final model = Provider.of<AllocateDiskSpaceModel>(context);
+    return LocalizedView(builder: (context, lang) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(lang.bootLoaderDevice),
+          FractionallySizedBox(
+            widthFactor: 0.5,
+            child: DropdownBuilder<DiskOrPartition>(
+              values: model.disks,
+              selected: model.bootDisk,
+              onSelected: model.selectBootDisk,
+              itemBuilder: (context, value, child) => Text(value.name),
+            ),
+          )
+        ],
+      );
+    });
   }
 }

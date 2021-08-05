@@ -16,10 +16,22 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<DiskOrPartition> get disks =>
+      _disksAndPartitions.where((item) => item.partition == null).toList();
+
   DiskOrPartition? get selectedDisk {
     final diskIndex = _findDisk(_selectedIndex);
     if (!_isDisk(diskIndex)) return null;
     return _disksAndPartitions[_selectedIndex];
+  }
+
+  DiskOrPartition? _bootDisk;
+
+  DiskOrPartition? get bootDisk => _bootDisk;
+  void selectBootDisk(DiskOrPartition disk) {
+    if (_bootDisk == disk) return;
+    _bootDisk = disk;
+    notifyListeners();
   }
 
   Future<void> getGuidedStorage() {
