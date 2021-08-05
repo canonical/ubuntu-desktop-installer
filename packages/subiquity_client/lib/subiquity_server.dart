@@ -32,6 +32,13 @@ class SubiquityServer {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     var socketPath = p.join(Directory.current.path, 'test/socket');
 
+    // prefer local curtin and probert python modules that are pinned to the
+    // correct versions
+    final pythonPath = (Platform.environment['PYTHONPATH'] ?? '').split(':');
+    pythonPath.add(subiquityPath);
+    pythonPath.add(p.join(subiquityPath, 'curtin'));
+    pythonPath.add(p.join(subiquityPath, 'probert'));
+
     // kill the existing test server if it's already running, so they don't pile
     // up on hot restarts
     final pid = await _readPidFile();
@@ -43,6 +50,7 @@ class SubiquityServer {
         workingDirectory: subiquityPath,
         // so subiquity doesn't think it's the installer or flutter snap...
         environment: {
+          'PYTHONPATH': pythonPath.join(':'),
           'SNAP': '.',
           'SNAP_NAME': 'subiquity',
           'SNAP_REVISION': '',
