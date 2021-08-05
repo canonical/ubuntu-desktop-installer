@@ -1,0 +1,152 @@
+{
+  "@@locale": "de",
+
+  "languageName": "Deutsch",
+
+  "appTitle": "Ubuntu Desktop Installer",
+
+  "backButtonText": "Zurück",
+  "continueButtonText": "Weiter",
+  "restartButtonText": "Neu starten",
+
+  "welcome": "Willkommen",
+
+  "tryOrInstallPageTitle": "Veruschen oder Installieren",
+  "repairInstallation": "Repariere die Installation",
+  "repairInstallationDescription": "Das Reparieren wird jede installierte Software neu installieren, jedoch ohne die Dokumente oder Einstellungen zu löschen.",
+  "tryUbuntu": "Versuche Ubuntu",
+  "tryUbuntuDescription": "Du kannst Ubuntu ausprobieren ohne Veränderungen an deinem System zu machen.",
+  "installUbuntu": "Installierer Ubuntu",
+  "installUbuntuDescription": "Installiere Ubuntu neben (oder anstatt) deines aktuellen Betriebssystems. Dies sollte nicht zu lange dauern.",
+  "releaseNotesLabel": "Du willst vielleicht die <a href=\"{url}\">Versionshinweise</a> lesen.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "turnOffRST": "Deaktiviere RST",
+  "turnOffRSTDescription": "Dieser Computer nutzt Intel RST (Rapid Storage Technology). Du musst RST in Windows abschalten bevor du Ubuntu installieren kannst.",
+  "instructionsForRST": "Öffne diese Seite auf deinem Smartphone oder einem anderen Gerät für Instruktionen: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "keyboardLayoutPageTitle": "Tastaturbelegung",
+  "chooseYourKeyboardLayout": "Suche deine Tastaturbelegung aus:",
+  "typeToTest": "Gebe etwas ein um deine Tastaturbelegung zu testen",
+  "detectLayout": "Erkenne die Tastaturbelegung",
+
+  "updatesOtherSoftwarePageTitle": "Aktualisierungen und andere Software",
+  "updatesOtherSoftwarePageDescription": "Welche Apps wollen Sie zum Start installieren?",
+  "normalInstallationTitle": "Normale Installation",
+  "normalInstallationSubtitle": "Web browser, Dienstprogramme, Office-Software, Spiele und Mediaplayer.",
+  "minimalInstallationTitle": "Minimale Installation",
+  "minimalInstallationSubtitle": "Web browser und standard Dienstprogramme.",
+  "otherOptions": "Erweiterte Optionen",
+  "installThirdPartyTitle": "Installiere Drittanbietersoftware für Grafiken und Wi-Fi Hardware, sowie weitere Medienformate",
+  "installThirdPartySubtitle": "Diese Software unterliegt den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Einige sind proprietär.",
+
+  "allocateDiskSpace": "Weise Speicherplatz zu",
+  "startInstallingButtonText": "Starte Installation",
+  "diskHeadersDevice": "Gerät",
+  "diskHeadersType": "Typ",
+  "diskHeadersMountPoint": "Einstiegspunkt",
+  "diskHeadersSize": "Größe",
+  "diskHeadersUsed": "Benutzt",
+  "diskHeadersSystem": "System",
+  "diskHeadersFormat": "Format",
+  "freeDiskSpace": "freiere Speicher",
+
+  "whoAreYouPageTitle": "Wer bist du?",
+  "whoAreYouPageAutoLogin": "Automatisch einloggen",
+  "whoAreYouPageRequirePassword": "Erfordere mein Passwort zum einloggen?",
+  "whoAreYouPageRealNameLabel": "Dein Name",
+  "whoAreYouPageRealNameRequired": "Eine Name wird erfordert",
+  "whoAreYouPageComputerNameLabel": "Der Name des Computers",
+  "whoAreYouPageComputerNameInfo": "Der Name, den es verwendet, wenn es mit anderen Computern kommuniziert.",
+  "whoAreYouPageComputerNameRequired": "Eine Computername wird erfordert",
+  "whoAreYouPageInvalidComputerName": "Der Computername ist ungültig",
+  "whoAreYouPageUsernameLabel": "Suche einen Nutzernamen aus",
+  "whoAreYouPageUsernameRequired": "Ein Nutzername wird benötigt",
+  "whoAreYouPageInvalidUsername": "Der Nutzername ist ungültig",
+  "whoAreYouPagePasswordLabel": "Suche ein Passwort aus",
+  "whoAreYouPagePasswordRequired": "Ein Passwort wird benötigt",
+  "whoAreYouPageConfirmPasswordLabel": "Bestätige dein Passwort",
+  "whoAreYouPagePasswordMismatch": "Die Passwörter stimmen nicht überein ",
+
+  "writeChangesToDisk": "Schreibe die Änderungen auf die Festplatte",
+  "writeChangesFallbackSerial": "Festplatte",
+  "@writeChangesFallbackSerial": { "description": "Standardanzeigename für eine Festplatte ohne Seriennummer (unwahrscheinlich) " },
+  "writeChangesDescription": "Die Änderungen, die Sie unten sehen, werden, wenn sie weitermachen, auf die Festplatte geschrieben. Sie können weitere Änderungen manuell vornehmen.",
+  "writeChangesPartitionTablesHeader": "Die Partitionstabellen der folgenden Geräte werden geändert:",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "Ein Eintrag für eine Festplatte, deren Partitionstabelle geändert wird",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "Die folgenden Partitionen werden verändert:",
+  "writeChangesPartitionEntryPrimaryFull": "Partition #{partitionNumber} von {diskSerial} ({diskPath}) als {fstype} wird für {mountPath} genutzt",
+  "@writeChangesPartitionEntryPrimaryFull": {
+    "description": "Ein Eintrag für eine primäre Partition ohne sekundäre Partitionen",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {},
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimary": "Partition #{partitionNumber} von {diskSerial} ({diskPath}) als",
+  "@writeChangesPartitionEntryPrimary": {
+    "description": Ein Eintrag für eine primäre Partition mit sekundären Partitionen",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {}
+    }
+  },
+  "writeChangesPartitionEntrySecondary": "        Partition # als {fstype} wird für {mountPath} genutzt",
+  "@writeChangesPartitionEntrySecondary": {
+    "description": "Ein Eintrag für eine sekundäre Parition",
+    "placeholders": {
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+
+  "chooseYourLookPageTitle": "Wählen Sie ihr Aussehen",
+  "chooseYourLookPageHeader": "Sie können dieses später in den Appearance-Einstellungen ändern.",
+  "chooseYourLookPageDarkSetting": "Dunkel",
+  "chooseYourLookPageLightSetting": "Hell",
+  "chooseYourLookPageLightBodyText": "Alles ist hell und strahlend",
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+
+  "strongPassword": "Starkes Passwort",
+  "moderatePassword": "Mäßiges Passwort",
+  "weakPassword": "Schwaches Passwort",
+
+  "installationCompleteTitle": "Die Installation ist fertig",
+  "readyToUse": "**{system}** ist installiert und kann nun genutzt werden.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Restart in {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+        "system": {}
+    }
+  },
+  "shutdown": "Heruterfahren"
+}
