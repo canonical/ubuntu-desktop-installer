@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 class DiskOrPartition {
@@ -14,34 +13,30 @@ class DiskOrPartition {
   }
 }
 
-class DiskStorageModel extends ChangeNotifier {
-  DiskStorageModel(this._client);
+class DiskStorageService {
+  DiskStorageService(this._client);
 
   final SubiquityClient _client;
 
   GuidedStorageResponse? _response;
-  final List<DiskOrPartition> _disksAndPartitions = [];
   StorageResponse? _storageResponse;
 
   List<dynamic>? get storageConfig => _storageResponse?.config;
 
-  int get diskAndPartitionCount => _disksAndPartitions.length;
-
-  DiskOrPartition diskAndPartition(int index) => _disksAndPartitions[index];
-
-  Future<void> initGuidedStorage() async {
-    await _client.getGuidedStorage(0, true).then((r) {
+  Future<List<DiskOrPartition>> getGuidedStorage() {
+    return _client.getGuidedStorage(0, true).then((r) {
       _response = r;
-      _disksAndPartitions.clear();
+
+      final disksAndPartitions = <DiskOrPartition>[];
       for (var disk in r.disks!) {
-        _disksAndPartitions.add(DiskOrPartition(disk: disk));
+        disksAndPartitions.add(DiskOrPartition(disk: disk));
         for (var partition in disk.partitions!) {
-          _disksAndPartitions
+          disksAndPartitions
               .add(DiskOrPartition(disk: disk, partition: partition));
         }
       }
+      return disksAndPartitions;
     });
-    notifyListeners();
   }
 
   Future<void> setGuidedStorage() async {

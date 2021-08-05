@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-import '../disk_storage_model.dart';
-import '../routes.dart';
+import '../disk_storage_service.dart';
 import '../widgets.dart';
 import 'wizard_page.dart';
 
@@ -37,7 +37,7 @@ class _DiskObject {
         serial = json['serial'] ?? '',
         path = json['path'],
         name = json['name'],
-        wipe = json['wipe'],
+        wipe = json['wipe'] ?? '',
         preserve = json['preserve'],
         grubDevice = json['grub_device'];
 
@@ -125,7 +125,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<DiskStorageModel>(context, listen: false);
+    final model = Provider.of<DiskStorageService>(context, listen: false);
     _storageConfig = model.storageConfig;
   }
 
@@ -149,7 +149,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           _mounts.add(_MountObject.fromJson(entry));
           break;
         default:
-          assert(false, 'Unexpected storage config type');
+          print('Unexpected storage config type: ${entry['type']}');
       }
     }
     for (var partition in _partitions) {
@@ -261,7 +261,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
               actions: <WizardAction>[
                 WizardAction(
                   label: lang.backButtonText,
-                  onActivated: Navigator.of(context).pop,
+                  onActivated: Wizard.of(context).back,
                 ),
                 WizardAction(
                   label: lang.continueButtonText,
@@ -271,7 +271,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                     await client.setStorage(_storageConfig!);
                     await client.confirm('/dev/tty1');
 
-                    Navigator.pushNamed(context, Routes.chooseYourLook);
+                    Wizard.of(context).next();
                   },
                 ),
               ],

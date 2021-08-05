@@ -4,27 +4,65 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:wizard_router/wizard_router.dart';
 
+import 'try_or_install_page_test.mocks.dart';
+
+@GenerateMocks([Settings])
 void main() {
   late MaterialApp app;
+  late TryOrInstallModel model;
 
   Future<void> setUpApp(WidgetTester tester) async {
+    model = TryOrInstallModel();
+    final settings = MockSettings();
+    when(settings.locale).thenReturn(Locale('en'));
+
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      initialRoute: Routes.tryOrInstall,
-      routes: <String, WidgetBuilder>{
-        Routes.tryOrInstall: TryOrInstallPage.create,
-        Routes.repairUbuntu: (context) => Text(Routes.repairUbuntu),
-        Routes.tryUbuntu: (context) => Text(Routes.tryUbuntu),
-        Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
-      },
+      home: Wizard(
+        routes: {
+          Routes.tryOrInstall: (_) => TryOrInstallPage(),
+          Routes.repairUbuntu: (context) => Text(Routes.repairUbuntu),
+          Routes.tryUbuntu: (context) => Text(Routes.tryUbuntu),
+          Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
+        },
+        onNext: (settings) {
+          switch (settings.name) {
+            case Routes.tryOrInstall:
+              switch (model.option) {
+                case Option.repairUbuntu:
+                  return Routes.repairUbuntu;
+                case Option.tryUbuntu:
+                  return Routes.tryUbuntu;
+                case Option.installUbuntu:
+                  return Routes.keyboardLayout;
+                default:
+                  break;
+              }
+          }
+        },
+      ),
     );
-    await tester.pumpWidget(app);
+
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: model, child: app),
+        ChangeNotifierProvider<Settings>.value(value: settings),
+      ],
+      child: app,
+    ));
+
     expect(find.byType(TryOrInstallPage), findsOneWidget);
   }
 
