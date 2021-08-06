@@ -1,15 +1,19 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
-import 'package:ubuntu_desktop_installer/widgets/localized_view.dart';
 import 'package:yaru/yaru.dart' as yaru;
+
+import '../../widgets/localized_view.dart';
+import 'installation_slides_model.dart';
+import 'intallation_slides_view_models.dart';
 
 const _kButtonColor = Colors.white70;
 const _iconSize = 42.0;
 const _iconBorderSize = 60.0;
 const _iconPadding = 24.0;
-const _progressColor = const Color(0xff772953);
+const _progressColor = Color(0xff772953);
 
 const _descriptionStyle = TextStyle(
   color: Colors.white,
@@ -17,149 +21,6 @@ const _descriptionStyle = TextStyle(
   height: 1.2,
   fontWeight: FontWeight.w300,
 );
-
-final imageSlides = <_ImageSlideData>[
-  _ImageSlideData(
-      description:
-          'Say goodbye to searching the web for new software. With access to the Snap Store and the Ubuntu software archive, you can find and install new apps with ease. Just type in what you’re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.',
-      imageAsset: 'assets/slides/gs.png',
-      sections: <_Section>[]),
-  _ImageSlideData(
-    description:
-        "Ubuntu comes with the amazing Rhythmbox music player. With advanced playback options, it's simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.",
-    imageAsset: 'assets/slides/music.png',
-    sections: <_Section>[
-      _Section(
-        title: 'Included software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Rhythmbox Music Player',
-            imageAsset: 'assets/slides/icons/rhythmbox.png',
-          ),
-        ],
-      ),
-      _Section(
-        title: 'Available software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Spotify',
-            imageAsset: 'assets/slides/icons/spotify.png',
-          ),
-          _SectionSoftware(
-            title: 'VLC',
-            imageAsset: 'assets/slides/icons/vlc.png',
-          ),
-        ],
-      )
-    ],
-  ),
-  _ImageSlideData(
-    description:
-        'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it’s easy to share them and keep them safe. And if you’re feeling creative, you can find many other photo apps in Ubuntu Software.',
-    imageAsset: 'assets/slides/photos.png',
-    sections: <_Section>[
-      _Section(
-        title: 'Included software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Shotwell Photo Manager',
-            imageAsset: 'assets/slides/icons/shotwell.png',
-          ),
-        ],
-      ),
-      _Section(
-        title: 'Supported software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'GIMP Image Editor',
-            imageAsset: 'assets/slides/icons/gimp.png',
-          ),
-          _SectionSoftware(
-            title: 'Shotcut Video Editor',
-            imageAsset: 'assets/slides/icons/shotcut.png',
-          ),
-        ],
-      )
-    ],
-  ),
-  _ImageSlideData(
-    description:
-        'Ubuntu includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.',
-    imageAsset: 'assets/slides/browse.png',
-    sections: <_Section>[
-      _Section(
-        title: 'Included software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Firefox web browser',
-            imageAsset: 'assets/slides/icons/firefox.png',
-          ),
-          _SectionSoftware(
-            title: 'Thunderbird',
-            imageAsset: 'assets/slides/icons/thunderbird.png',
-          )
-        ],
-      ),
-      _Section(
-        title: 'Supported software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Chromium',
-            imageAsset: 'assets/slides/icons/chromium.png',
-          ),
-        ],
-      )
-    ],
-  ),
-  _ImageSlideData(
-    description:
-        'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.',
-    imageAsset: 'assets/slides/office.png',
-    sections: <_Section>[
-      _Section(
-        title: 'Included software',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'LibreOffice Writer',
-            imageAsset: 'assets/slides/icons/libreoffice-writer.png',
-          ),
-          _SectionSoftware(
-            title: 'LibreOfficw Calc',
-            imageAsset: 'assets/slides/icons/libreoffice-calc.png',
-          ),
-          _SectionSoftware(
-            title: 'LibreOffice Impress',
-            imageAsset: 'assets/slides/icons/libreoffice-impress.png',
-          ),
-        ],
-      ),
-    ],
-  ),
-  _ImageSlideData(
-    description:
-        'At the heart of the Ubuntu philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colour scheme and text size, Ubuntu makes computing easy – whoever and wherever you are.',
-    imageAsset: 'assets/slides/customize.png',
-    sections: <_Section>[
-      _Section(
-        title: 'Customization options',
-        sectionItems: <_SectionSoftware>[
-          _SectionSoftware(
-            title: 'Appearance',
-            imageAsset: 'assets/slides/icons/themes.png',
-          ),
-          _SectionSoftware(
-            title: 'Assistive technologies',
-            imageAsset: 'assets/slides/icons/access.png',
-          ),
-          _SectionSoftware(
-            title: 'Language support',
-            imageAsset: 'assets/slides/icons/languages.png',
-          ),
-        ],
-      ),
-    ],
-  ),
-];
 
 class InstallationSlidesPage extends StatefulWidget {
   const InstallationSlidesPage({Key? key}) : super(key: key);
@@ -176,8 +37,54 @@ class InstallationSlidesPage extends StatefulWidget {
   }
 }
 
-class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
+class _InstallationSlidesPageState extends State<InstallationSlidesPage>
+    with TickerProviderStateMixin {
   final pageController = PageController(initialPage: 0);
+  late AnimationController animationController;
+  late Animation<double> animation;
+  late ScrollController scrollController;
+
+  bool isBottomCollapsed = true;
+   int slideCount = 8;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 300),
+    );
+
+    animation =
+        Tween<double>(begin: 0, end: pi / 2).animate(animationController);
+
+    scrollController = ScrollController();
+
+    _animateSlides();
+  }
+
+  void _animateSlides() {
+    Future.delayed(Duration(seconds: 2)).then((value) {
+      var currentPage = pageController.page!.toInt();
+      var nextPage = currentPage + 1;
+
+      //TODO: get this number dynamically
+      if (nextPage == 8) {
+        nextPage = 0;
+      }
+
+      pageController
+          .animateToPage(nextPage,
+              duration: Duration(seconds: 1), curve: Curves.easeInOut)
+          .then((value) => _animateSlides());
+    });
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,8 +95,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 442,
+            Flexible(
               child: Stack(
                 children: [
                   PageView(
@@ -197,20 +103,13 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     children: [
                       TextSlide(
                         backgroundAsset: 'assets/slides/welcome.png',
-                        text:
-                            'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...',
+                        text: lang.installSlide1Text,
                       ),
-                      ...imageSlides
+                      ...createImageSlides(lang)
                           .map((isd) => ImageSlide(imageSlideData: isd)),
                       TextSlide(
                         backgroundAsset: 'assets/slides/welcome.png',
-                        text: '''
-                        The official documentation covers many of the most common areas about Ubuntu. It's available both *online* and via the Help icon in the Dock.
-                        
-                        At *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.
-                        
-                        For pointers to other useful resources, please visit *Community support* or *Commercial support*.
-                        ''',
+                        text: lang.installationSlide8Description,
                       ),
                     ],
                   ),
@@ -247,26 +146,65 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.arrow_right),
-                      SizedBox(width: 8),
-                      Text('Copying files...'),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  LinearProgressIndicator(
-                    minHeight: 4,
-                    value: 0.2,
-                    color: _progressColor,
-                    backgroundColor: _progressColor.withAlpha(61),
-                  ),
-                ],
+            AnimatedContainer(
+              height: isBottomCollapsed ? 120 : 230,
+              duration: Duration(milliseconds: 300),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      children: [
+                        AnimatedBuilder(
+                          animation: animationController,
+                          builder: (context, child) => Transform.rotate(
+                            angle: animation.value,
+                            child: IconButton(
+                              icon: Icon(Icons.arrow_right),
+                              onPressed: () {
+                                if (isBottomCollapsed) {
+                                  animationController.forward();
+                                } else {
+                                  animationController.reverse();
+                                }
+                                isBottomCollapsed = !isBottomCollapsed;
+                                setState(() {});
+
+                                // scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                              },
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 8),
+                        Text('Copying files...'),
+                      ],
+                    ),
+                    AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      height: isBottomCollapsed ? 0 : 120,
+                      width: double.infinity,
+                      color: yaru.Colors.coolGrey,
+                      child: SingleChildScrollView(
+                        controller: scrollController,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            mockTerminalOutput,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    LinearProgressIndicator(
+                      minHeight: 4,
+                      value: 0.2,
+                      color: _progressColor,
+                      backgroundColor: _progressColor.withAlpha(61),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -346,15 +284,20 @@ class TextSlide extends StatelessWidget {
         ),
         Positioned(
           left: 40,
+          right: 0,
           top: 32,
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              letterSpacing: 0.25,
-              height: 1.8,
-              fontWeight: FontWeight.w200,
+          child: FractionallySizedBox(
+            widthFactor: 0.5,
+            alignment: Alignment.topLeft,
+            child: Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                letterSpacing: 0.25,
+                height: 1.8,
+                fontWeight: FontWeight.w200,
+              ),
             ),
           ),
         ),
@@ -369,7 +312,7 @@ class ImageSlide extends StatelessWidget {
     required this.imageSlideData,
   }) : super(key: key);
 
-  final _ImageSlideData imageSlideData;
+  final ImageSlideData imageSlideData;
 
   @override
   Widget build(BuildContext context) {
@@ -510,34 +453,17 @@ class _ImageSlideItem extends StatelessWidget {
   }
 }
 
-class _ImageSlideData {
-  final String description;
-  final List<_Section>? sections;
-  final String imageAsset;
+///TODO: remove this and load from subiquity status
+const String mockTerminalOutput = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sollicitudin sodales massa eu congue. Curabitur ut ex nisi. Pellentesque convallis nunc non mauris imperdiet rutrum lacinia vel purus. Donec nec laoreet enim, vel ultricies urna. Nam scelerisque, velit ac laoreet gravida, neque neque lobortis purus, non auctor nibh elit nec sem. Aliquam vel nibh non eros elementum tincidunt. Nullam fringilla id ligula sed dapibus. In blandit lacus in ipsum faucibus, sit amet consequat sapien convallis. Praesent quis nisi porttitor, bibendum justo at, sollicitudin orci. Maecenas bibendum viverra quam, sit amet tempus lacus condimentum quis. Proin malesuada, turpis sit amet efficitur vehicula, ex purus elementum nunc, quis laoreet massa tellus et lectus. Duis varius sem vel ultricies consectetur. Sed ultricies ante metus, eget sagittis augue suscipit ut. 
 
-  _ImageSlideData({
-    required this.description,
-    required this.imageAsset,
-    this.sections,
-  });
-}
+Integer id diam mattis, auctor ipsum sed, venenatis est. Phasellus non ullamcorper velit, ac ornare tellus. Nam porta elementum justo quis volutpat. Quisque fermentum a felis eget ultricies. Phasellus at nibh lacinia, tempor arcu at, auctor ipsum. Curabitur a elit nec arcu porttitor bibendum. Morbi consequat volutpat sollicitudin. Aenean sollicitudin mi massa, vel blandit mi porttitor eget.
 
-class _Section {
-  final String title;
-  final List<_SectionSoftware> sectionItems;
+Mauris elementum porta sem, eu lacinia metus tincidunt dapibus. Sed at blandit neque. Morbi maximus felis ultrices purus tempor pellentesque. Donec id ligula nisl. Mauris in sapien eget urna porta semper eu nec nisl. Ut id posuere nibh, vel consectetur tellus. Vestibulum dui turpis, aliquet sit amet vestibulum id, consectetur eget ligula. Ut tellus nisi, pulvinar sit amet vestibulum ut, egestas faucibus leo. Aenean vitae vehicula elit. Morbi egestas orci id felis cursus, a interdum erat tempor. Nam in blandit risus, quis venenatis nulla. In eleifend purus id pretium elementum. Suspendisse ut mi imperdiet, dictum leo efficitur, sodales quam. Nullam elementum diam eget ante pellentesque convallis.
 
-  _Section({
-    required this.title,
-    required this.sectionItems,
-  });
-}
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean id faucibus erat. Aenean arcu lectus, rutrum in lacus a, dapibus sagittis ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sit amet sapien auctor, condimentum diam id, tincidunt diam. Donec feugiat, elit at facilisis varius, orci orci ultrices elit, vitae volutpat risus lorem non magna. Integer a tristique dolor. Pellentesque ut massa tristique, faucibus turpis vel, vehicula tellus. Sed eu risus augue. Aliquam erat volutpat.
 
-class _SectionSoftware {
-  final String title;
-  final String imageAsset;
+Phasellus lobortis non tortor at cursus. Proin viverra augue id ex rhoncus mattis. Aliquam in sollicitudin nunc, id venenatis lorem. Donec eu lacus vulputate dui sagittis semper. Cras ut suscipit enim, vel tempor elit. Donec gravida metus vitae blandit auctor. Morbi pellentesque vel sem sit amet hendrerit. Mauris eu lectus ac massa volutpat aliquam vitae ut orci. Pellentesque scelerisque malesuada libero eget efficitur. Aenean tincidunt, quam ac consequat pretium, odio mauris tristique odio, at venenatis tortor velit vitae eros. Maecenas et convallis justo, quis fringilla dui. Suspendisse et nunc mattis, bibendum velit sed, convallis turpis. Nam risus libero, condimentum ac diam eu, efficitur hendrerit libero. Proin purus dolor, porttitor eu finibus sed, volutpat ac diam.
 
-  _SectionSoftware({
-    required this.title,
-    required this.imageAsset,
-  });
-}
+Output....
+""";
