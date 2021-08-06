@@ -22,8 +22,8 @@ void main() {
   });
 
   test('locale', () async {
-    await _client.setLocale('en_US');
-    expect(await _client.locale(), 'en_US');
+    await _client.setLocale('en_US.UTF-8');
+    expect(await _client.locale(), 'en_US.UTF-8');
   });
 
   test('keyboard', () async {

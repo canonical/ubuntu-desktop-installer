@@ -54,7 +54,8 @@ class WelcomeModel extends ChangeNotifier {
 
   /// Applies the given [locale].
   Future<void> applyLocale(Locale locale) {
-    return _client.setLocale(locale.languageCode);
+    return _client
+        .setLocale('${locale.languageCode}_${locale.countryCode}.UTF-8');
   }
 
   /// Returns the number of languages.
