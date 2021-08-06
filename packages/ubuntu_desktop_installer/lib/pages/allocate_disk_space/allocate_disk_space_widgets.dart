@@ -23,20 +23,24 @@ Color _partitionColor(int index, int count) {
 }
 
 class _PartitionPainter extends CustomPainter {
-  _PartitionPainter(this._model) : _selectedIndex = _model.selectedIndex;
+  _PartitionPainter(this._model)
+      : _selectedDiskIndex = _model.selectedDiskIndex,
+        _selectedPartitionIndex = _model.selectedPartitionIndex;
 
   final AllocateDiskSpaceModel _model;
-  final int _selectedIndex;
+  final int _selectedDiskIndex;
+  final int _selectedPartitionIndex;
 
   @override
   void paint(Canvas canvas, Size size) {
-    final diskSize = _model.selectedDisk?.disk.size ?? 0;
+    final diskSize = _model.selectedDisk?.size ?? 0;
     if (diskSize <= 0) return;
 
     final rect = Offset.zero & size;
-    final partitions = _model.findPartitions(_model.selectedIndex);
-    for (var index = 0; index < partitions.length; ++index) {
-      final partitionSize = partitions[index].partition?.size ?? 0;
+    final partitions = _model.selectedPartitions;
+    final partitionCount = partitions?.length ?? 0;
+    for (var index = 0; index < partitionCount; ++index) {
+      final partitionSize = partitions![index].size ?? 0;
       if (partitionSize <= 0) continue;
 
       final paint = Paint();
@@ -51,7 +55,8 @@ class _PartitionPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _PartitionPainter old) {
-    return old._selectedIndex != _selectedIndex;
+    return old._selectedDiskIndex != _selectedDiskIndex ||
+        old._selectedPartitionIndex != _selectedPartitionIndex;
   }
 }
 
@@ -62,11 +67,10 @@ class _PartitionLegend extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
 
-    final partitions = model.findPartitions(model.selectedIndex);
-    final freeSpace = AllocateDiskSpaceModel.calculateFreeSpace(
-      disk: model.selectedDisk,
-      partitions: partitions,
-    );
+    final partitions = model.selectedPartitions;
+    final partitionCount = partitions?.length ?? 0;
+    final freeSpace =
+        AllocateDiskSpaceModel.calculateFreeSpace(model.selectedDisk);
 
     return SizedBox(
       height: 48,
@@ -76,10 +80,10 @@ class _PartitionLegend extends StatelessWidget {
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(vertical: 8),
-            itemCount: partitions.length + 1,
+            itemCount: partitionCount + 1,
             separatorBuilder: (context, index) => SizedBox(width: 40),
             itemBuilder: (context, index) {
-              if (index >= partitions.length) {
+              if (index >= partitionCount) {
                 return _PartitionLabel(
                   size: freeSpace,
                   title: lang.freeDiskSpace,
@@ -87,14 +91,14 @@ class _PartitionLegend extends StatelessWidget {
                 );
               }
 
-              final partition = partitions[index];
-              final partitionSize = partition.partition?.size ?? 0;
+              final partition = partitions![index];
+              final partitionSize = partition.size ?? 0;
 
               return _PartitionLabel(
                 // TODO:
                 // - localize?
                 // - partition type?
-                title: partition.name,
+                title: '${model.selectedDisk!.id}${partition.number}',
                 size: partitionSize,
                 color: _partitionColor(index, partitions.length),
               );
@@ -154,6 +158,65 @@ class _PartitionLabel extends StatelessWidget {
 class _PartitionTable extends StatelessWidget {
   const _PartitionTable({Key? key}) : super(key: key);
 
+  List<DataRow> _buildDataRows({
+    required AllocateDiskSpaceModel model,
+    required int diskIndex,
+  }) {
+    final disk = model.disks[diskIndex];
+    final partitions = disk.partitions ?? [];
+    return <DataRow>[
+      DataRow.byIndex(
+        index: diskIndex,
+        selected: model.isStorageSelected(diskIndex),
+        onSelectChanged: (selected) {
+          if (selected == true) model.selectStorage(diskIndex);
+        },
+        cells: <DataCell>[
+          DataCell(Row(children: [
+            const Icon(YaruIcons.drive_harddisk_filled),
+            const SizedBox(width: 16),
+            Text(disk.id ?? ''),
+          ])),
+          DataCell(Text(disk.type ?? '')),
+          DataCell(Text('')),
+          DataCell(Text(filesize(disk.size ?? 0))),
+          DataCell(Text('')),
+          DataCell(Text('')),
+          DataCell(Checkbox(value: true, onChanged: null)),
+        ],
+      ),
+      for (var partitionIndex = 0;
+          partitionIndex < partitions.length;
+          ++partitionIndex)
+        DataRow(
+          key: ValueKey(hashList([diskIndex, partitionIndex])),
+          selected: model.isStorageSelected(diskIndex, partitionIndex),
+          onSelectChanged: (selected) {
+            if (selected == true) {
+              model.selectStorage(diskIndex, partitionIndex);
+            }
+          },
+          cells: <DataCell>[
+            DataCell(Padding(
+              padding: EdgeInsets.only(left: 40),
+              child: Row(children: [
+                const Icon(YaruIcons.drive_harddisk),
+                const SizedBox(width: 16),
+                Text('${disk.id}${disk.partitions![partitionIndex].number}'),
+              ]),
+            )),
+            DataCell(Text('')),
+            DataCell(Text('')),
+            DataCell(
+                Text(filesize(disk.partitions![partitionIndex].size ?? 0))),
+            DataCell(Text('')),
+            DataCell(Text('')),
+            DataCell(Checkbox(value: true, onChanged: null)),
+          ],
+        ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
@@ -187,38 +250,12 @@ class _PartitionTable extends StatelessWidget {
                 label: Text(lang.diskHeadersFormat),
               ),
             ],
-            rows: List<DataRow>.generate(model.diskAndPartitionCount, (index) {
-              final element = model.diskAndPartition(index);
-              final isDisk = element.partition == null;
-              return DataRow.byIndex(
-                index: index,
-                selected: index == model.selectedIndex,
-                onSelectChanged: (selected) {
-                  if (selected == true) {
-                    model.selectIndex(index);
-                  }
-                },
-                cells: <DataCell>[
-                  DataCell(Padding(
-                    padding: EdgeInsets.only(left: isDisk ? 0 : 40),
-                    child: Row(children: [
-                      Icon(isDisk
-                          ? YaruIcons.drive_harddisk_filled
-                          : YaruIcons.drive_harddisk),
-                      const SizedBox(width: 16),
-                      Text(element.name),
-                    ]),
-                  )),
-                  DataCell(Text(element.disk.type!)),
-                  DataCell(Text('')),
-                  DataCell(Text(
-                      filesize(element.partition?.size ?? element.disk.size))),
-                  DataCell(Text('')),
-                  DataCell(Text('')),
-                  DataCell(Checkbox(value: true, onChanged: null)),
-                ],
-              );
-            }),
+            rows: List.generate(model.disks.length,
+                    (index) => _buildDataRows(model: model, diskIndex: index))
+                .fold<List<DataRow>>([], (allRows, diskRows) {
+              allRows.addAll(diskRows);
+              return allRows;
+            }).toList(),
           ),
         ),
       );
@@ -302,11 +339,13 @@ class _BootDiskSelector extends StatelessWidget {
           Text(lang.bootLoaderDevice),
           FractionallySizedBox(
             widthFactor: 0.5,
-            child: DropdownBuilder<DiskOrPartition>(
-              values: model.disks,
-              selected: model.bootDisk,
+            child: DropdownBuilder<int>(
+              values: List.generate(model.disks.length, (index) => index),
+              selected: model.bootDiskIndex,
               onSelected: model.selectBootDisk,
-              itemBuilder: (context, value, child) => Text(value.name),
+              itemBuilder: (context, index, _) {
+                return Text(model.disks[index].id ?? '');
+              },
             ),
           )
         ],

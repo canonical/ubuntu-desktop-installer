@@ -6,82 +6,61 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
   AllocateDiskSpaceModel(this._service);
 
   final DiskStorageService _service;
-  var _disksAndPartitions = <DiskOrPartition>[];
-  int _selectedIndex = 0;
 
-  int get selectedIndex => _selectedIndex;
-  void selectIndex(int index) {
-    if (_selectedIndex == index) return;
-    _selectedIndex = index;
+  var _disks = <Disk>[];
+  var _selectedDiskIndex = -1;
+  var _selectedPartitionIndex = -1;
+  var _bootDiskIndex = 0;
+
+  List<Disk> get disks => _disks;
+
+  int get selectedDiskIndex => _selectedDiskIndex;
+  int get selectedPartitionIndex => _selectedPartitionIndex;
+
+  bool isStorageSelected(int diskIndex, [int partitionIndex = -1]) {
+    return diskIndex == _selectedDiskIndex &&
+        partitionIndex == _selectedPartitionIndex;
+  }
+
+  void selectStorage(int diskIndex, [int partitionIndex = -1]) {
+    if (isStorageSelected(diskIndex, partitionIndex)) return;
+
+    _selectedDiskIndex = diskIndex;
+    _selectedPartitionIndex = partitionIndex;
     notifyListeners();
   }
 
-  List<DiskOrPartition> get disks =>
-      _disksAndPartitions.where((item) => item.partition == null).toList();
+  Disk? get selectedDisk => disks.elementAtOrNull(_selectedDiskIndex);
+  List<Partition>? get selectedPartitions => selectedDisk?.partitions;
 
-  DiskOrPartition? get selectedDisk {
-    final diskIndex = _findDisk(_selectedIndex);
-    if (!_isDisk(diskIndex)) return null;
-    return _disksAndPartitions[_selectedIndex];
-  }
-
-  DiskOrPartition? _bootDisk;
-
-  DiskOrPartition? get bootDisk => _bootDisk;
-  void selectBootDisk(DiskOrPartition disk) {
-    if (_bootDisk == disk) return;
-    _bootDisk = disk;
+  int get bootDiskIndex => _bootDiskIndex;
+  void selectBootDisk(int diskIndex) {
+    if (_bootDiskIndex == diskIndex) return;
+    _bootDiskIndex = diskIndex;
     notifyListeners();
   }
 
   Future<void> getGuidedStorage() {
-    return _service.getGuidedStorage().then((disksAndPartitions) {
-      _disksAndPartitions = disksAndPartitions;
+    return _service.getGuidedStorage().then((disks) {
+      _disks = disks;
       notifyListeners();
     });
   }
 
-  int get diskAndPartitionCount => _disksAndPartitions.length;
-
-  DiskOrPartition diskAndPartition(int index) => _disksAndPartitions[index];
-
-  bool _isValidIndex(int index) {
-    return index >= 0 && index < _disksAndPartitions.length;
-  }
-
-  bool _isDisk(int index) {
-    return _isValidIndex(index) && _disksAndPartitions[index].partition == null;
-  }
-
-  int _findDisk(int index) {
-    var diskIndex = index;
-    while (_isValidIndex(diskIndex) && !_isDisk(diskIndex)) {
-      --diskIndex;
-    }
-    return diskIndex;
-  }
-
-  List<DiskOrPartition> findPartitions(int index) {
-    var partitions = <DiskOrPartition>[];
-    var partitionIndex = _findDisk(index) + 1;
-    while (_isValidIndex(partitionIndex) && !_isDisk(partitionIndex)) {
-      partitions.add(_disksAndPartitions[partitionIndex]);
-      ++partitionIndex;
-    }
-    return partitions;
-  }
-
-  static int calculateFreeSpace({
-    required DiskOrPartition? disk,
-    required List<DiskOrPartition> partitions,
-  }) {
-    return partitions.fold<int>(
-      disk?.disk.size ?? 0,
+  static int calculateFreeSpace(Disk? disk) {
+    if (disk?.partitions == null) return disk?.size ?? 0;
+    return disk!.partitions!.fold<int>(
+      disk.size ?? 0,
       (remainingSize, partition) {
-        return remainingSize - (partition.partition?.size ?? 0);
+        return remainingSize - (partition.size ?? 0);
       },
     );
   }
 
   Future<void> setGuidedStorage() => _service.setGuidedStorage();
+}
+
+extension _ListOrNull<T> on List<T> {
+  T? elementAtOrNull(int index) =>
+      index < 0 || index >= length ? null : this[index];
 }

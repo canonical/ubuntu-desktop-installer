@@ -31,7 +31,8 @@ Future<void> runWizardApp(
     await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
   } else {
     await subiquityServer
-        .start(ServerMode.DRY_RUN, machineConfig ?? 'examples/simple.json')
+        .start(ServerMode.DRY_RUN,
+            machineConfig ?? 'examples/existing-partitions.json')
         .then(subiquityClient.open);
   }
 
