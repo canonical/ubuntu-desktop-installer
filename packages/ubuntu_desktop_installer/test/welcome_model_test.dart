@@ -68,14 +68,14 @@ void main() {
 
   test('set locale', () {
     final client = MockSubiquityClient();
-    when(client.setLocale('fr')).thenAnswer((_) async => null);
+    when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async => null);
 
     final model = WelcomeModel(
       client: client,
       keyboardService: MockKeyboardService(),
     );
     model.applyLocale(Locale('fr', 'CA'));
-    verify(client.setLocale('fr')).called(1);
+    verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
