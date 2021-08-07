@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../widgets.dart';
+import 'package:wizard_router/wizard_router.dart';
 
-const _kButtonPadding = EdgeInsets.only(right: 20, bottom: 20);
+import '../widgets.dart';
+import 'wizard_page.dart';
 
 class TurnOffBitLockerPage extends StatefulWidget {
   @override
@@ -19,12 +20,9 @@ class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
   @override
   Widget build(BuildContext context) {
     return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(
-          title: Text(lang.turnOffBitlockerTitle),
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
+      builder: (context, lang) => WizardPage(
+        title: Text(lang.turnOffBitlockerTitle),
+        content: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -57,31 +55,17 @@ class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
             ],
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: _kButtonPadding,
-          child: ButtonBar(
-            children: <Widget>[
-              OutlinedButton(
-                child: Text(lang.backButtonText),
-                onPressed: Navigator.of(context).pop,
-              ),
-              OutlinedButton(
-                style: OutlinedButtonTheme.of(context).style!.copyWith(
-                      backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => const Color(0xFF0e8420),
-                      ),
-                      foregroundColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.white,
-                      ),
-                    ),
-                child: Text(lang.restartIntoWindows),
-                onPressed: () {
-                  print('TODO: restart computer');
-                },
-              ),
-            ],
+        actions: [
+          WizardAction(
+            label: lang.backButtonText,
+            onActivated: Wizard.of(context).back,
           ),
-        ),
+          WizardAction(
+            label: lang.restartIntoWindows,
+            onActivated: Wizard.of(context).next,
+            highlighted: true,
+          ),
+        ],
       ),
     );
   }
