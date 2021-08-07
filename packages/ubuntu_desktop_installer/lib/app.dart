@@ -1,52 +1,73 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'dart:io';
+
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:gsettings/gsettings.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'disk_storage_service.dart';
+import 'keyboard_service.dart';
 
 import 'l10n/app_localizations.dart';
-import 'pages/keyboard_layout_page.dart';
-import 'pages/try_or_install_page.dart';
-import 'pages/turn_off_bitlocker_page.dart';
-import 'pages/turn_off_rst_page.dart';
-import 'pages/welcome_page.dart';
-import 'routes.dart';
+import 'settings.dart';
 
-class UbuntuDesktopInstallerApp extends StatelessWidget {
-  const UbuntuDesktopInstallerApp({
-    Key? key,
-  }) : super(key: key);
+/// Initializes and runs the given [app].
+///
+/// Optionally, the Subiquity client] and server may be overridden for building
+/// wizard variants and for testing purposes.
+Future<void> runWizardApp(
+  Widget app, {
+  SubiquityClient? subiquityClient,
+  SubiquityServer? subiquityServer,
+  String? machineConfig,
+}) async {
+  subiquityClient ??= SubiquityClient();
+  subiquityServer ??= SubiquityServer();
 
-  static final _locale =
-      ValueNotifier(Locale(Intl.shortLocale(Intl.systemLocale)));
+  final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
 
-  static Locale get locale => _locale.value;
-  static set locale(Locale locale) {
-    _locale.value = locale;
+  if (Platform.environment['LIVE_RUN'] == '1') {
+    await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
+  } else {
+    await subiquityServer
+        .start(ServerMode.DRY_RUN, machineConfig ?? 'examples/simple.json')
+        .then(subiquityClient.open);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return ValueListenableBuilder<Locale>(
-      valueListenable: _locale,
-      builder: (context, value, _) => MaterialApp(
-        locale: value,
-        onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
-        theme: yaru.lightTheme,
-        darkTheme: yaru.darkTheme,
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: [
-          ...AppLocalizations.localizationsDelegates,
-          const LocalizationsDelegateOc(),
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: WelcomePage(),
-        routes: <String, WidgetBuilder>{
-          Routes.tryOrInstall: (context) => TryOrInstallPage(),
-          Routes.turnOffRST: (context) => const TurnOffRSTPage(),
-          Routes.keyboardLayout: (context) => KeyboardLayoutPage(),
-          Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
-        },
-      ),
-    );
-  }
+  // Use the default values for a number of endpoints
+  // for which a UI page isn't implemented yet.
+  subiquityClient.markConfigured([
+    'mirror',
+    'proxy',
+    'network',
+    'ssh',
+    'snaplist',
+    'timezone',
+  ]);
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupAppLocalizations();
+
+  final eventChannel = EventChannel('ubuntu-desktop-installer');
+  eventChannel.receiveBroadcastStream().listen((event) async {
+    switch (event) {
+      case 'deleteEvent':
+        await subiquityClient!.close();
+        await subiquityServer!.stop();
+        break;
+      default:
+        print('Warning: event $event ignored');
+    }
+  });
+
+  runApp(MultiProvider(
+    providers: [
+      Provider.value(value: subiquityClient),
+      ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
+      Provider(create: (_) => DiskStorageService(subiquityClient!)),
+      Provider(create: (_) => KeyboardService()),
+    ],
+    child: app,
+  ));
 }

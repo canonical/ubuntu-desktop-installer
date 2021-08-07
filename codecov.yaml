@@ -1,0 +1,4 @@
+comment: false
+ignore:
+  - "**/*.freezed.dart"
+  - "**/*.g.dart"

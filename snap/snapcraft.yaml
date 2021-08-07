@@ -12,17 +12,102 @@ architectures:
   - build-on: amd64
 
 apps:
+  subiquity-server:
+    command: bin/subiquity-server
+    daemon: simple
+    restart-condition: always
+
+  subiquity-loadkeys:
+    command: bin/subiquity/bin/subiquity-loadkeys
+
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/:$SNAP/lib
-      LIBGL_ALWAYS_SOFTWARE: 1 # force software rendering for now
+      GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
+      LIVE_RUN: 1
+
+  probert:
+    command: bin/probert
 
 parts:
+  curtin:
+    override-pull: |
+      snapcraftctl pull
+      PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
+      sed -e "s,@@PACKAGED_VERSION@@,$PACKAGED_VERSION,g" -i curtin/version.py
+    plugin: python
+    source-type: git
+    source: https://git.launchpad.net/curtin
+    source-commit: 3673687e867eeb88a3e7fd72587a75d5fc811f5a
+    build-packages:
+      - shared-mime-info
+      - zlib1g-dev
+    python-packages:
+      - pyyaml==5.3.1
+      - oauthlib
+      - jsonschema
+      - pyrsistent
+      - wheel
+      - setuptools
+      - pip
+      - bson
+      - urwid
+      - requests
+      - requests-unixsocket
+    organize:
+      'lib/python*/site-packages/usr/lib/curtin': 'usr/lib/'
+    stage:
+     - "*"
+     - "-lib/python*/site-packages/_yaml.*.so"
+     - "-lib/python*/site-packages/setuptools"
+     - "-lib/python*/site-packages/pip"
+     - "-lib/python*/site-packages/pkg_resources"
+     - "-lib/python*/site-packages/jsonschema"
+     - "-lib/python*/site-packages/wheel*"
+     - "-lib/python*/site-packages/probert"
+     - "-bin/activate*"
+     - "-lib/python3.8/site-packages/__pycache__/six.cpython*"
+     - "-lib/python3.8/site-packages/pip-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/wheel-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/_distutils_hack"
+
+  probert:
+    plugin: python
+    build-packages: [python-setuptools, build-essential, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
+    source: https://github.com/canonical/probert.git
+    source-type: git
+    source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
+    requirements: [requirements.txt]
+
+  subiquitydeps:
+    plugin: nil
+    stage-packages:
+      - cloud-init
+      - libsystemd0
+      - iso-codes
+      - lsb-release
+      - ssh-import-id
+      - python3-aiohttp
+      - python3-bson
+      - python3-minimal
+      - python3.8-minimal
+      - libpython3-stdlib
+      - libpython3.8-stdlib
+      - libpython3.8-minimal
+      - python3-apport
+      - python3-requests-unixsocket
+      - python3-pyudev
+      - python3-systemd
+      - python3-urwid
+    prime:
+      - -lib/systemd/system/*
+
   ubuntu-desktop-installer:
     source: .
+    source-type: git
     plugin: nil
     build-environment:
       - C_INCLUDE_PATH: /snap/flutter/current/usr/include
@@ -31,6 +116,9 @@ parts:
       - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
       flutter channel dev
       flutter upgrade
@@ -38,7 +126,6 @@ parts:
       flutter doctor
       flutter pub get
       flutter build linux --release -v
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
       cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
     build-snaps:
       - flutter/latest/stable
@@ -51,6 +138,9 @@ parts:
       - libcairo2
       - libegl-mesa0
       - libegl1
+      - libgl1
+      - libglib2.0-0
+      - libglib2.0-dev
       - libgtk-3-0
       - libpango-1.0-0
       - libpangocairo-1.0-0
@@ -63,7 +153,6 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libgl1-mesa-dri
       - libllvm10
       - libpciaccess0
       - libvulkan1
@@ -76,8 +165,7 @@ parts:
       - usr/lib/*/libcairo*.so.*
       - usr/lib/*/libe*.so.*
       - usr/lib/*/libf*.so.*
-      - usr/lib/*/libgdk*.so.*
-      - usr/lib/*/libgtk*.so.*
+      - usr/lib/*/libg*.so.*
       - usr/lib/*/libharfbuzz*.so.*
       - usr/lib/*/libpango*.so.*
       - usr/lib/*/libpixman*.so.*
@@ -96,11 +184,20 @@ parts:
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*
-      - usr/lib/*/dri
       - usr/share/glvnd/egl_vendor.d
-      - usr/share/drirc.d
       - usr/lib/*/gdk-pixbuf-2.0
       - usr/lib/*/
       - usr/bin/update-mime-database
       - usr/bin/gdk*
       - usr/share/mime
+
+  dri-no-patchelf:
+    after: [libraries]
+    plugin: nil
+    stage-packages:
+      - libgl1-mesa-dri
+    build-attributes:
+      - no-patchelf # Otherwise snapcraft may strip the build ID and cause the driver to crash
+    stage:
+      - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+      - usr/share/drirc.d

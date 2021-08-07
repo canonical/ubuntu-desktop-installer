@@ -1,0 +1,179 @@
+{
+  "@@locale": "en_US",
+
+  "languageName": "English",
+  "@languageName": {
+    "description": "The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen."
+  },
+
+  "appTitle": "Ubuntu Desktop Installer",
+
+  "backButtonText": "Go Back",
+  "continueButtonText": "Continue",
+  "restartButtonText": "Restart",
+
+  "welcome": "Welcome",
+
+  "tryOrInstallPageTitle": "Try or install",
+  "repairInstallation": "Repair installation",
+  "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
+  "tryUbuntu": "Try Ubuntu",
+  "tryUbuntuDescription": "You can try Ubuntu without making any changes to your computer.",
+  "installUbuntu": "Install Ubuntu",
+  "installUbuntuDescription": "Install Ubuntu alongside (or instead of) your current operating system. This shouldn't take too long.",
+  "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "turnOffRST": "Turn off RST",
+  "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
+  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "keyboardLayoutPageTitle": "Keyboard layout",
+  "chooseYourKeyboardLayout": "Choose your keyboard layout:",
+  "typeToTest": "Type here to test your keyboard",
+  "detectLayout": "Detect Keyboard Layout",
+
+  "updatesOtherSoftwarePageTitle": "Updates and other software",
+  "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
+  "normalInstallationTitle": "Normal installation",
+  "normalInstallationSubtitle": "Web browser, utilities, office software, games and media players.",
+  "minimalInstallationTitle": "Minimal installation",
+  "minimalInstallationSubtitle": "Web browser and basic utilities.",
+  "otherOptions": "Other options",
+  "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
+  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary.",
+
+  "allocateDiskSpace": "Allocate disk space",
+  "startInstallingButtonText": "Start Installing",
+  "diskHeadersDevice": "Device",
+  "diskHeadersType": "Type",
+  "diskHeadersMountPoint": "Mount point",
+  "diskHeadersSize": "Size",
+  "diskHeadersUsed": "Used",
+  "diskHeadersSystem": "System",
+  "diskHeadersFormat": "Format",
+  "freeDiskSpace": "free space",
+
+  "whoAreYouPageTitle": "Who are you?",
+  "whoAreYouPageAutoLogin": "Log in automatically",
+  "whoAreYouPageRequirePassword": "Require my password to log in",
+  "whoAreYouPageRealNameLabel": "Your name",
+  "whoAreYouPageRealNameRequired": "A name is required",
+  "whoAreYouPageComputerNameLabel": "Your computer's name",
+  "whoAreYouPageComputerNameInfo": "The name it uses when it talks to other computers.",
+  "whoAreYouPageComputerNameRequired": "A computer name is required",
+  "whoAreYouPageInvalidComputerName": "The computer name is invalid",
+  "whoAreYouPageUsernameLabel": "Pick a username",
+  "whoAreYouPageUsernameRequired": "A username is required",
+  "whoAreYouPageInvalidUsername": "The username is invalid",
+  "whoAreYouPagePasswordLabel": "Choose a password",
+  "whoAreYouPagePasswordRequired": "A password is required",
+  "whoAreYouPageConfirmPasswordLabel": "Confirm your password",
+  "whoAreYouPagePasswordMismatch": "The passwords do not match",
+
+  "writeChangesToDisk": "Write changes to disk",
+  "writeChangesFallbackSerial": "disk",
+  "@writeChangesFallbackSerial": { "description": "Default display name for a disk without a serial (unlikely)" },
+  "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
+  "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "The following partitions are going to be formatted:",
+  "writeChangesPartitionEntryPrimaryFull": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntryPrimaryFull": {
+    "description": "An entry for a primary partition without secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {},
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimary": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as",
+  "@writeChangesPartitionEntryPrimary": {
+    "description": "An entry for a primary partition with secondary partitions",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {}
+    }
+  },
+  "writeChangesPartitionEntrySecondary": "        partition # as {fstype} used for {mountPath}",
+  "@writeChangesPartitionEntrySecondary": {
+    "description": "An entry for a secondary partition",
+    "placeholders": {
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+
+  "chooseYourLookPageTitle": "Choose your look",
+  "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
+  "chooseYourLookPageDarkSetting": "Dark",
+  "chooseYourLookPageLightSetting": "Light",
+  "chooseYourLookPageLightBodyText": "Everything is light and bright",
+  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+
+  "strongPassword": "Strong password",
+  "moderatePassword": "Moderate password",
+  "weakPassword": "Weak password",
+
+  "installationCompleteTitle": "Installation complete",
+  "readyToUse": "**{system}** is installed and ready to use.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Restart into {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+        "system": {}
+    }
+  },
+  "shutdown": "Shut Down",
+  "turnOffRST": "Turn off RST",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
+  "@turnOffRSTDescription": {},
+
+  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+
+  "turnOffBitlockerTitle": "Turn off BitLocker",
+  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
+  "turnOffBitlockerLinkInstructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Restart Into Windows"
+
+}

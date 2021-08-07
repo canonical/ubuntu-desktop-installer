@@ -25,9 +25,10 @@ flutter config --enable-linux-desktop
 Install dependencies:
 ```sh
 cd packages/subiquity_client
-flutter pub get
+dart pub get
 cd subiquity
 make install_deps
+sudo apt install python3-curtin
 cd ../../ubuntu_desktop_installer
 flutter pub get
 ```
@@ -35,6 +36,20 @@ flutter pub get
 Run:
 ```sh
 flutter run
+```
+
+## Run Live Installer
+
+In one terminal run:
+```sh
+cd /path/to/ubuntu-desktop-installer/packages/subiquity_client/subiquity
+sudo python3 -m subiquity.cmd.server
+```
+
+In another terminal run:
+```sh
+cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
+LIVE_RUN=1 flutter run
 ```
 
 ## Contributing

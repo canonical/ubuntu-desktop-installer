@@ -1,5 +1,5 @@
-import 'package:test/test.dart';
 import 'package:subiquity_client/src/types.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('keyboard setting', () {
@@ -32,6 +32,16 @@ void main() {
     };
     expect(identity.toJson(), equals(json));
     expect(IdentityData.fromJson(json), identity);
+  });
+
+  test('timezone data', () {
+    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoIP: false);
+    const json = <String, dynamic>{
+      'timezone': 'Europe/Paris',
+      'from_geoip': false,
+    };
+    expect(tzdata.toJson(), equals(json));
+    expect(TimezoneData.fromJson(json), tzdata);
   });
 
   test('ssh data', () {
@@ -103,5 +113,35 @@ void main() {
     };
     expect(status.toJson(), equals(json));
     expect(ApplicationStatus.fromJson(json), status);
+  });
+
+  test('partition', () {
+    const keyboard = Partition(
+      size: 1,
+      number: 2,
+      annotations: ['3', '4', '5'],
+    );
+    const json = <String, dynamic>{
+      'size': 1,
+      'number': 2,
+      'annotations': ['3', '4', '5'],
+    };
+    expect(keyboard.toJson(), equals(json));
+    expect(Partition.fromJson(json), keyboard);
+  });
+
+  test('guided choice', () {
+    const keyboard = GuidedChoice(
+      diskId: '0',
+      useLvm: true,
+      password: '2',
+    );
+    const json = <String, dynamic>{
+      'disk_id': '0',
+      'use_lvm': true,
+      'password': '2',
+    };
+    expect(keyboard.toJson(), equals(json));
+    expect(GuidedChoice.fromJson(json), keyboard);
   });
 }
