@@ -21,7 +21,7 @@
   "releaseNotesLabel": "Вы также можете прочитать <a href=\"{url}\">заметки о выпуске</a>.",
 
   "turnOffRST": "Выключить RST",
-  "turnOffRSTDescription": "Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
+  "turnOffRSTDescription": "Данный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
   "instructionsForRST": "Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://{url}\">{url}</a>",
   
   "keyboardLayoutPageTitle": "Раскладка клавиатуры",
