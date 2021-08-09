@@ -28,9 +28,9 @@ void main() {
         home: Wizard(
           routes: {
             '/': (_) {
-              return ChangeNotifierProvider<TurnOffBitLockerModel>.value(
+              return Provider<TurnOffBitLockerModel>.value(
                 value: model,
-                child: TurnOffBitLockerModel(),
+                child: TurnOffBitLockerPage(),
               );
             },
           },
