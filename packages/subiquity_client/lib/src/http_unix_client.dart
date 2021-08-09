@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:http/http.dart';
+import 'package:synchronized/synchronized.dart';
 
 enum _HttpParserState {
   status,
@@ -41,6 +42,7 @@ class HttpUnixClient extends BaseClient {
 
   // Unix socket connected to.
   Socket? _socket;
+  final _lock = Lock();
 
   // Requests in process.
   final _requests = <_HttpRequest>[];
@@ -57,11 +59,14 @@ class HttpUnixClient extends BaseClient {
 
   @override
   Future<StreamedResponse> send(BaseRequest request) async {
-    if (_socket == null) {
-      var address = InternetAddress(path, type: InternetAddressType.unix);
-      _socket = await Socket.connect(address, 0);
-      _socket?.listen(_processData);
-    }
+    // synchronize to prevent concurrent requests creating multiple sockets
+    await _lock.synchronized(() async {
+      if (_socket == null) {
+        var address = InternetAddress(path, type: InternetAddressType.unix);
+        _socket = await Socket.connect(address, 0);
+        _socket!.listen(_processData);
+      }
+    });
 
     var message = '';
     var url = request.url;
