@@ -36,6 +36,14 @@ class PartitionModel extends ChangeNotifier {
 
   int get size => _partition.size ?? 0;
   int get number => _partition.number ?? 0;
+
+  var _format = true;
+  bool get format => _format;
+  set format(bool format) {
+    if (_format == format) return;
+    _format = format;
+    notifyListeners();
+  }
 }
 
 class AllocateDiskSpaceModel extends ChangeNotifier {

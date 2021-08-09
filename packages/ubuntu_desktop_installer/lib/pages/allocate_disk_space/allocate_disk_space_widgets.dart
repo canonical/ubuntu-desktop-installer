@@ -153,6 +153,25 @@ class _PartitionLabel extends StatelessWidget {
   }
 }
 
+class _PartitionFormatCheckbox extends StatefulWidget {
+  const _PartitionFormatCheckbox({Key? key}) : super(key: key);
+
+  @override
+  _PartitionFormatCheckboxState createState() =>
+      _PartitionFormatCheckboxState();
+}
+
+class _PartitionFormatCheckboxState extends State<_PartitionFormatCheckbox> {
+  @override
+  Widget build(BuildContext context) {
+    final model = Provider.of<PartitionModel>(context);
+    return Checkbox(
+      value: model.format,
+      onChanged: (v) => model.format = v!,
+    );
+  }
+}
+
 class _PartitionTable extends StatelessWidget {
   const _PartitionTable({Key? key}) : super(key: key);
 
@@ -179,7 +198,7 @@ class _PartitionTable extends StatelessWidget {
           DataCell(Text(filesize(disk.size))),
           DataCell(Text('')),
           DataCell(Text('')),
-          DataCell(Checkbox(value: true, onChanged: null)),
+          DataCell(SizedBox.shrink()),
         ],
       ),
       for (var partitionIndex = 0;
@@ -207,7 +226,12 @@ class _PartitionTable extends StatelessWidget {
             DataCell(Text(filesize(disk.partitions[partitionIndex].size))),
             DataCell(Text('')),
             DataCell(Text('')),
-            DataCell(Checkbox(value: true, onChanged: null)),
+            DataCell(
+              ChangeNotifierProvider.value(
+                value: disk.partitions[partitionIndex],
+                child: _PartitionFormatCheckbox(),
+              ),
+            ),
           ],
         ),
     ];
