@@ -22,38 +22,26 @@ class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         title: Text(lang.turnOffBitlockerTitle),
-        content: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20, bottom: 8),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(lang.turnOffBitlockerDescription),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Html(
-                    data: lang.turnOffBitlockerLinkInstructions(
-                        'help.ubuntu.com/bitlocker'),
-                    style: {
-                      'body': Style(
-                        margin: EdgeInsets.all(0),
-                      ),
-                    },
-                    onLinkTap: (url, _, __, ___) => launch(url!),
+        header: Text(lang.turnOffBitlockerDescription),
+        content: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Html(
+                data: lang.turnOffBitlockerLinkInstructions(
+                    'help.ubuntu.com/bitlocker'),
+                style: {
+                  'body': Style(
+                    margin: EdgeInsets.all(0),
                   ),
-                ),
+                },
+                onLinkTap: (url, _, __, ___) => launch(url!),
               ),
-              const SizedBox(height: 60),
-              SvgPicture.asset('assets/qrbitlocker.svg')
-            ],
-          ),
+            ),
+            const SizedBox(height: 60),
+            SvgPicture.asset('assets/qrbitlocker.svg')
+          ],
         ),
         actions: [
           WizardAction(
