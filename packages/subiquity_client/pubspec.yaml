@@ -11,6 +11,7 @@ dependencies:
   http: ^0.13.1
   json_annotation: ^4.0.1
   path: ^1.8.0
+  synchronized: ^3.0.0
   xdg_directories: ^0.2.0
 
 dev_dependencies:
