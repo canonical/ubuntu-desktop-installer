@@ -40,7 +40,7 @@ class _PartitionPainter extends CustomPainter {
     final partitions = _model.selectedPartitions;
     final partitionCount = partitions?.length ?? 0;
     for (var index = 0; index < partitionCount; ++index) {
-      final partitionSize = partitions![index].size ?? 0;
+      final partitionSize = partitions![index].size;
       if (partitionSize <= 0) continue;
 
       final paint = Paint();
@@ -69,8 +69,7 @@ class _PartitionLegend extends StatelessWidget {
 
     final partitions = model.selectedPartitions;
     final partitionCount = partitions?.length ?? 0;
-    final freeSpace =
-        AllocateDiskSpaceModel.calculateFreeSpace(model.selectedDisk);
+    final freeSpace = model.selectedDisk?.calculateFreeSpace() ?? 0;
 
     return SizedBox(
       height: 48,
@@ -92,14 +91,13 @@ class _PartitionLegend extends StatelessWidget {
               }
 
               final partition = partitions![index];
-              final partitionSize = partition.size ?? 0;
 
               return _PartitionLabel(
                 // TODO:
                 // - localize?
                 // - partition type?
                 title: '${model.selectedDisk!.id}${partition.number}',
-                size: partitionSize,
+                size: partition.size,
                 color: _partitionColor(index, partitions.length),
               );
             },
@@ -163,7 +161,6 @@ class _PartitionTable extends StatelessWidget {
     required int diskIndex,
   }) {
     final disk = model.disks[diskIndex];
-    final partitions = disk.partitions ?? [];
     return <DataRow>[
       DataRow.byIndex(
         index: diskIndex,
@@ -175,18 +172,18 @@ class _PartitionTable extends StatelessWidget {
           DataCell(Row(children: [
             const Icon(YaruIcons.drive_harddisk_filled),
             const SizedBox(width: 16),
-            Text(disk.id ?? ''),
+            Text(disk.id),
           ])),
-          DataCell(Text(disk.type ?? '')),
+          DataCell(Text(disk.type)),
           DataCell(Text('')),
-          DataCell(Text(filesize(disk.size ?? 0))),
+          DataCell(Text(filesize(disk.size))),
           DataCell(Text('')),
           DataCell(Text('')),
           DataCell(Checkbox(value: true, onChanged: null)),
         ],
       ),
       for (var partitionIndex = 0;
-          partitionIndex < partitions.length;
+          partitionIndex < disk.partitions.length;
           ++partitionIndex)
         DataRow(
           key: ValueKey(hashList([diskIndex, partitionIndex])),
@@ -202,13 +199,12 @@ class _PartitionTable extends StatelessWidget {
               child: Row(children: [
                 const Icon(YaruIcons.drive_harddisk),
                 const SizedBox(width: 16),
-                Text('${disk.id}${disk.partitions![partitionIndex].number}'),
+                Text('${disk.id}${disk.partitions[partitionIndex].number}'),
               ]),
             )),
             DataCell(Text('')),
             DataCell(Text('')),
-            DataCell(
-                Text(filesize(disk.partitions![partitionIndex].size ?? 0))),
+            DataCell(Text(filesize(disk.partitions[partitionIndex].size))),
             DataCell(Text('')),
             DataCell(Text('')),
             DataCell(Checkbox(value: true, onChanged: null)),
@@ -344,7 +340,7 @@ class _BootDiskSelector extends StatelessWidget {
               selected: model.bootDiskIndex,
               onSelected: model.selectBootDisk,
               itemBuilder: (context, index, _) {
-                return Text(model.disks[index].id ?? '');
+                return Text(model.disks[index].id);
               },
             ),
           )
