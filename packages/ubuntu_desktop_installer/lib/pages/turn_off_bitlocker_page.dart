@@ -24,20 +24,16 @@ class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
         title: Text(lang.turnOffBitlockerTitle),
         header: Text(lang.turnOffBitlockerDescription),
         content: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Html(
-                data: lang.turnOffBitlockerLinkInstructions(
-                    'help.ubuntu.com/bitlocker'),
-                style: {
-                  'body': Style(
-                    margin: EdgeInsets.all(0),
-                  ),
-                },
-                onLinkTap: (url, _, __, ___) => launch(url!),
-              ),
+            Html(
+              data: lang.turnOffBitlockerLinkInstructions(
+                  'help.ubuntu.com/bitlocker'),
+              style: {
+                'body': Style(
+                  margin: EdgeInsets.all(0),
+                ),
+              },
+              onLinkTap: (url, _, __, ___) => launch(url!),
             ),
             const SizedBox(height: 60),
             SvgPicture.asset('assets/qrbitlocker.svg')
