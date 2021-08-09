@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wizard_router/wizard_router.dart';
 
-import '../widgets.dart';
-import 'wizard_page.dart';
+import '../../widgets.dart';
+import '../wizard_page.dart';
+import 'turn_off_bitlocker_model.dart';
 
-class TurnOffBitLockerPage extends StatefulWidget {
-  @override
-  _TurnOffBitLockerPageState createState() => _TurnOffBitLockerPageState();
-
+class TurnOffBitLockerPage extends StatelessWidget {
   static Widget create(BuildContext context) {
-    return TurnOffBitLockerPage();
+    final client = Provider.of<SubiquityClient>(context, listen: false);
+    return Provider(
+      create: (_) => TurnOffBitLockerModel(client),
+      child: TurnOffBitLockerPage(),
+    );
   }
-}
 
-class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<TurnOffBitLockerModel>(context);
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         title: Text(lang.turnOffBitlockerTitle),
@@ -46,8 +49,8 @@ class _TurnOffBitLockerPageState extends State<TurnOffBitLockerPage> {
           ),
           WizardAction(
             label: lang.restartIntoWindows,
-            onActivated: Wizard.of(context).next,
             highlighted: true,
+            onActivated: model.reboot,
           ),
         ],
       ),
