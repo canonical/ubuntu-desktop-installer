@@ -6,6 +6,12 @@ import 'dart:typed_data';
 import 'package:http/http.dart';
 import 'package:synchronized/synchronized.dart';
 
+const SOL_SOCKET = 1; // socket.h
+const SO_KEEPALIVE = 9; // socket.h
+
+const IPPROTO_TCP = 6; // netinet/in.h
+const TCP_KEEPINTVL = 5; // netinet/tcp.h
+
 enum _HttpParserState {
   status,
   header,
@@ -64,6 +70,15 @@ class HttpUnixClient extends BaseClient {
       if (_socket == null) {
         var address = InternetAddress(path, type: InternetAddressType.unix);
         _socket = await Socket.connect(address, 0);
+
+        final keepalive =
+            RawSocketOption.fromBool(SOL_SOCKET, SO_KEEPALIVE, true);
+        _socket!.setRawOption(keepalive);
+
+        final keepintvl =
+            RawSocketOption.fromInt(IPPROTO_TCP, TCP_KEEPINTVL, 60);
+        _socket!.setRawOption(keepintvl);
+
         _socket!.listen(_processData);
       }
     });
