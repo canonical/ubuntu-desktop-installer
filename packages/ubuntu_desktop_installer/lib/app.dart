@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io' as io;
 
 import 'package:args/args.dart';
 import 'package:flutter/services.dart';
@@ -72,11 +72,16 @@ Future<void> runWizardApp(
 }
 
 /// Parses the given command line [args].
-ArgResults parseCommandLine(List<String> args, {bool? showMachineConfig}) {
+ArgResults? parseCommandLine(
+  List<String> args, {
+  bool? showMachineConfig,
+  @visibleForTesting io.IOSink? out,
+  @visibleForTesting void Function(int exitCode) exit = io.exit,
+}) {
   final parser = ArgParser();
   parser.addFlag('help', abbr: 'h', negatable: false);
   parser.addFlag('dry-run',
-      defaultsTo: Platform.environment['LIVE_RUN'] != '1',
+      defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
   if (showMachineConfig == true) {
     parser.addOption('machine-config',
@@ -85,27 +90,33 @@ ArgResults parseCommandLine(List<String> args, {bool? showMachineConfig}) {
         help: 'Path of the machine config (dry-run only)');
   }
 
-  late ArgResults options;
+  ArgResults? options;
   try {
     options = parser.parse(args);
   } on FormatException catch (e) {
-    _printUsage(parser.usage, error: e.message);
-  } finally {
-    if (options['help'] == true) {
-      _printUsage(parser.usage);
-    }
-    if (options.rest.isNotEmpty) {
-      _printUsage(parser.usage,
-          error: 'Unknown positional arguments "${options.rest.join(' ')}"');
-    }
+    _printUsage(parser.usage, error: e.message, out: out, exit: exit);
+  }
+  if (options?['help'] == true) {
+    _printUsage(parser.usage, out: out, exit: exit);
+  }
+  if (options?.rest.isNotEmpty == true) {
+    _printUsage(parser.usage,
+        error: 'Unknown positional arguments "${options!.rest.join(' ')}"',
+        out: out,
+        exit: exit);
   }
   return options;
 }
 
-void _printUsage(String options, {String? error}) {
+void _printUsage(
+  String options, {
+  String? error,
+  io.IOSink? out,
+  required void Function(int exitCode) exit,
+}) {
   final hasError = error?.isNotEmpty == true;
-  final out = hasError ? stderr : stdout;
-  final executable = p.basename(Platform.resolvedExecutable);
+  out ??= hasError ? io.stderr : io.stdout;
+  final executable = p.basename(io.Platform.resolvedExecutable);
   if (hasError) {
     out.write('Error: $error\n\n');
   }

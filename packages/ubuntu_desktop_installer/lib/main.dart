@@ -11,7 +11,7 @@ import 'routes.dart';
 import 'settings.dart';
 
 void main(List<String> args) {
-  final options = parseCommandLine(args, showMachineConfig: true);
+  final options = parseCommandLine(args, showMachineConfig: true)!;
   runWizardApp(
     UbuntuDesktopInstallerApp(),
     serverMode:
