@@ -118,7 +118,6 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             const SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
-                border: const OutlineInputBorder(),
                 hintText: lang.typeToTest,
               ),
             ),
