@@ -357,6 +357,7 @@ class _BootDiskSelector extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(lang.bootLoaderDevice),
+          const SizedBox(height: 8),
           FractionallySizedBox(
             widthFactor: 0.5,
             child: DropdownBuilder<int>(
