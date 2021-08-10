@@ -3,21 +3,31 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wizard_router/wizard_router.dart';
 
-import '../widgets.dart';
-import 'wizard_page.dart';
+import '../../widgets.dart';
+import '../wizard_page.dart';
+import 'turn_off_rst_model.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
   const TurnOffRSTPage({
     Key? key,
   }) : super(key: key);
 
-  static Widget create(BuildContext context) => TurnOffRSTPage();
+  static Widget create(BuildContext context) {
+    final client = Provider.of<SubiquityClient>(context, listen: false);
+    return Provider(
+      create: (_) => TurnOffRSTModel(client),
+      child: TurnOffRSTPage(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<TurnOffRSTModel>(context);
     return LocalizedView(
       builder: (context, lang) => Scaffold(
         body: WizardPage(
@@ -49,9 +59,7 @@ class TurnOffRSTPage extends StatelessWidget {
             WizardAction(
               label: lang.restartButtonText,
               highlighted: true,
-              onActivated: () {
-                print('TODO: restart computer');
-              },
+              onActivated: model.reboot,
             ),
           ],
         ),
