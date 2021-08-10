@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wizard_router/wizard_router.dart';
 
+import '../../constants.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'updates_other_software_model.dart';
@@ -27,18 +28,19 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
     return LocalizedView(
       builder: (context, lang) => WizardPage(
         title: Text(lang.updatesOtherSoftwarePageTitle),
+        headerPadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              lang.updatesOtherSoftwarePageDescription,
-              style: Theme.of(context).textTheme.bodyText1,
+            Padding(
+              padding: kHeaderPadding.copyWith(bottom: kContentSpacing / 2),
+              child: Text(lang.updatesOtherSoftwarePageDescription),
             ),
-            const SizedBox(height: 8.0),
             RadioListTile<InstallationMode>(
               title: Text(lang.normalInstallationTitle),
               subtitle: Text(lang.normalInstallationSubtitle),
-              contentPadding: const EdgeInsets.only(left: 10),
+              contentPadding: kContentPadding,
               value: InstallationMode.normal,
               groupValue: model.installationMode,
               onChanged: model.setInstallationMode,
@@ -47,21 +49,19 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               title: Text(lang.minimalInstallationTitle),
               subtitle: Text(lang.minimalInstallationSubtitle),
               value: InstallationMode.minimal,
-              contentPadding: const EdgeInsets.only(left: 10),
+              contentPadding: kContentPadding,
               groupValue: model.installationMode,
               onChanged: model.setInstallationMode,
             ),
-            const SizedBox(height: 24),
-            Text(
-              lang.otherOptions,
-              style: Theme.of(context).textTheme.bodyText1,
+            Padding(
+              padding: kHeaderPadding.copyWith(bottom: kContentSpacing / 2),
+              child: Text(lang.otherOptions),
             ),
-            const SizedBox(height: 8.0),
             CheckboxListTile(
               title: Text(lang.installThirdPartyTitle),
               subtitle: Text(lang.installThirdPartySubtitle),
               controlAffinity: ListTileControlAffinity.leading,
-              contentPadding: const EdgeInsets.only(left: 10),
+              contentPadding: kContentPadding,
               value: model.installThirdParty,
               onChanged: model.setInstallThirdParty,
             )
