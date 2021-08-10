@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:subiquity_client/subiquity_server.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
@@ -9,8 +10,19 @@ import 'pages.dart';
 import 'routes.dart';
 import 'settings.dart';
 
-void main() {
-  runWizardApp(UbuntuDesktopInstallerApp());
+void main(List<String> args) {
+  final options = parseCommandLine(args, showMachineConfig: true);
+  runWizardApp(
+    UbuntuDesktopInstallerApp(),
+    serverMode:
+        options['dry-run'] == true ? ServerMode.DRY_RUN : ServerMode.LIVE,
+    serverArgs: [
+      if (options['machine-config'] != null) ...[
+        '--machine-config',
+        options['machine-config'],
+      ],
+    ],
+  );
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
