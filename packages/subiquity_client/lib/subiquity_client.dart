@@ -176,6 +176,27 @@ class SubiquityClient {
     await checkStatus('confirm("$tty")', response);
   }
 
+  /// Returns whether RST is turned on.
+  Future<bool> hasRst() async {
+    final request = Request('GET', Uri.http('localhost', 'storage/has_rst'));
+    final response = await _client.send(request);
+    await checkStatus("hasRst()", response);
+
+    final responseBool = await response.stream.bytesToString();
+    return responseBool == 'true';
+  }
+
+  /// Returns whether any disks contain BitLocker partitions.
+  Future<bool> hasBitLocker() async {
+    final request =
+        Request('GET', Uri.http('localhost', 'storage/has_bitlocker'));
+    final response = await _client.send(request);
+    await checkStatus("hasBitLocker()", response);
+
+    final responseJson = jsonDecode(await response.stream.bytesToString());
+    return (responseJson as List).isNotEmpty;
+  }
+
   /// Get guided disk options.
   Future<GuidedStorageResponse> getGuidedStorage(int minSize, bool wait) async {
     final request = Request(
