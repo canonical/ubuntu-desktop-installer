@@ -42,6 +42,16 @@ void main() {
     expect(kb.layouts, isNotEmpty);
   });
 
+  test('has rst', () async {
+    var rst = await _client.hasRst();
+    expect(rst, isFalse);
+  });
+
+  test('has bitlocker', () async {
+    var bitLocker = await _client.hasBitLocker();
+    expect(bitLocker, isFalse);
+  });
+
   test('guided storage', () async {
     var gs = await _client.getGuidedStorage(0, true);
     expect(gs.disks, isNotEmpty);
