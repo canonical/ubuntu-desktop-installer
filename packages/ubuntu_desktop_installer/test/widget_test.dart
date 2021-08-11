@@ -21,6 +21,12 @@ class SubiquityClientMock extends SubiquityClient {
   Future<KeyboardSetup> keyboard() async {
     return KeyboardSetup(layouts: []);
   }
+
+  @override
+  Future<bool> hasRst() async => false;
+
+  @override
+  Future<bool> hasBitLocker() async => false;
 }
 
 void main() {
