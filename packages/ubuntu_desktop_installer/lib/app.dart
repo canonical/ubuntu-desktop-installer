@@ -6,10 +6,9 @@ import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'disk_storage_service.dart';
-import 'keyboard_service.dart';
 
 import 'l10n/app_localizations.dart';
+import 'services.dart';
 import 'settings.dart';
 
 /// Initializes and runs the given [app].

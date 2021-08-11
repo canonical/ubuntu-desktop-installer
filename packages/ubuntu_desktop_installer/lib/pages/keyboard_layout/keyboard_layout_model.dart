@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-import '../../keyboard_service.dart';
+import '../../services.dart';
 
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends ChangeNotifier {

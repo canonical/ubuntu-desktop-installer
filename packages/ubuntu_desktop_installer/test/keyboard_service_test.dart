@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
+import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
 
 class SubiquityClientMock extends SubiquityClient {
   // ignore: type_annotate_public_apis
