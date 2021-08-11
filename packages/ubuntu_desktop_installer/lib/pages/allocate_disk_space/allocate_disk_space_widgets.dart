@@ -37,7 +37,7 @@ class _PartitionPainter extends CustomPainter {
     if (diskSize <= 0) return;
 
     final rect = Offset.zero & size;
-    final partitions = _model.selectedPartitions;
+    final partitions = _model.selectedDisk?.partitions;
     final partitionCount = partitions?.length ?? 0;
     for (var index = 0; index < partitionCount; ++index) {
       final partitionSize = partitions![index].size;
@@ -67,9 +67,9 @@ class _PartitionLegend extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
 
-    final partitions = model.selectedPartitions;
+    final partitions = model.selectedDisk?.partitions;
     final partitionCount = partitions?.length ?? 0;
-    final freeSpace = model.selectedDisk?.calculateFreeSpace() ?? 0;
+    final freeSpace = model.selectedDisk?.freeSpace ?? 0;
 
     return SizedBox(
       height: 48,
