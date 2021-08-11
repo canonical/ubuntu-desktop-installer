@@ -14,6 +14,8 @@ import 'keyboard_service.dart';
 import 'l10n/app_localizations.dart';
 import 'settings.dart';
 
+export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
+
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client] and server may be overridden for building
