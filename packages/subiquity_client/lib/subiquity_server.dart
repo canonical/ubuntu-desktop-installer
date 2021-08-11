@@ -10,24 +10,17 @@ enum ServerMode { LIVE, DRY_RUN }
 class SubiquityServer {
   late Process _serverProcess;
 
-  Future<String> start(ServerMode serverMode,
-      [String machineConfig = ""]) async {
+  Future<String> start(ServerMode serverMode, List<String>? args) async {
     if (serverMode == ServerMode.LIVE) {
       return '/run/subiquity/socket';
     }
 
-    var subiquityCmd;
-    if (machineConfig != "") {
-      subiquityCmd = [
-        '-m',
-        'subiquity.cmd.server',
-        '--dry-run',
-        '--machine-config',
-        machineConfig
-      ];
-    } else {
-      subiquityCmd = ['-m', 'subiquity.cmd.server', '--dry-run'];
-    }
+    var subiquityCmd = <String>[
+      '-m',
+      'subiquity.cmd.server',
+      if (serverMode == ServerMode.DRY_RUN) '--dry-run',
+      ...?args,
+    ];
 
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     var socketPath = p.join(Directory.current.path, 'test/socket');

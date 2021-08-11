@@ -11,8 +11,8 @@ void main() {
   var _socketPath;
 
   setUpAll(() async {
-    _socketPath =
-        await _testServer.start(ServerMode.DRY_RUN, 'examples/simple.json');
+    _socketPath = await _testServer.start(
+        ServerMode.DRY_RUN, ['--machine-config', 'examples/simple.json']);
     _client.open(_socketPath);
   });
 
