@@ -22,14 +22,31 @@ static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
   return FALSE;
 }
 
+static void on_channel_method(FlMethodChannel* channel,
+                              FlMethodCall* method_call, gpointer user_data) {
+  g_autoptr(FlMethodResponse) response = nullptr;
+  if (strcmp(fl_method_call_get_name(method_call), "setWindowTitle") == 0) {
+    FlValue* args = fl_method_call_get_args(method_call);
+    FlValue* title = fl_value_get_list_value(args, 0);
+    GtkHeaderBar* header_bar = GTK_HEADER_BAR(user_data);
+    gtk_header_bar_set_title(header_bar, fl_value_get_string(title));
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+  } else {
+    response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
+  }
+
+  g_autoptr(GError) error = NULL;
+  if (!fl_method_call_respond(method_call, response, &error))
+    g_warning("on_channel_method: %s", error->message);
+}
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
   GtkWindow* window =
       GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
-  GtkHeaderBar *header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
+  GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
   gtk_widget_show(GTK_WIDGET(header_bar));
-  gtk_header_bar_set_title(header_bar, "Install Ubuntu");
   gtk_header_bar_set_show_close_button(header_bar, TRUE);
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
@@ -49,10 +66,16 @@ static void my_application_activate(GApplication* application) {
   FlEngine* engine = fl_view_get_engine(view);
   FlBinaryMessenger* messenger = fl_engine_get_binary_messenger(engine);
   g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
+
   g_autoptr(FlEventChannel) event_channel = fl_event_channel_new(
-      messenger, "ubuntu-desktop-installer", FL_METHOD_CODEC(codec));
+      messenger, "ubuntu-desktop-installer/events", FL_METHOD_CODEC(codec));
   g_signal_connect(G_OBJECT(window), "delete-event",
                    G_CALLBACK(on_delete_event), event_channel);
+
+  g_autoptr(FlMethodChannel) method_channel = fl_method_channel_new(
+      messenger, "ubuntu-desktop-installer", FL_METHOD_CODEC(codec));
+  fl_method_channel_set_method_call_handler(method_channel, on_channel_method,
+                                            header_bar, nullptr);
 
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
@@ -95,7 +118,6 @@ static void my_application_class_init(MyApplicationClass* klass) {
 static void my_application_init(MyApplication* self) {}
 
 MyApplication* my_application_new() {
-  return MY_APPLICATION(g_object_new(my_application_get_type(),
-                                     "application-id", APPLICATION_ID,
-                                     nullptr));
+  return MY_APPLICATION(g_object_new(
+      my_application_get_type(), "application-id", APPLICATION_ID, nullptr));
 }
