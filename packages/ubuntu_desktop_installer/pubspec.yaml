@@ -19,6 +19,7 @@ dependencies:
   file: ^6.1.2
   filesize: ^2.0.0
   flutter_html: ^2.0.0-nullsafety
+  flutter_spinbox: ^0.5.2
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
   gsettings: ^0.1.2+1

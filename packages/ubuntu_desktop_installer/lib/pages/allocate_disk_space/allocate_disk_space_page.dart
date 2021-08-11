@@ -1,6 +1,8 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_spinbox/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
@@ -11,6 +13,7 @@ import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'allocate_disk_space_model.dart';
 
+part 'allocate_disk_space_dialogs.dart';
 part 'allocate_disk_space_widgets.dart';
 
 class AllocateDiskSpacePage extends StatefulWidget {

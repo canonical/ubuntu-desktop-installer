@@ -10,8 +10,10 @@
   "windowTitle": "Install Ubuntu",
 
   "backButtonText": "Go Back",
+  "cancelButtonText": "Cancel",
   "changeButtonText": "Change",
   "continueButtonText": "Continue",
+  "okButtonText": "OK",
   "restartButtonText": "Restart",
   "revertButtonText": "Revert",
 
@@ -69,6 +71,21 @@
   "freeDiskSpace": "free space",
   "newPartitionTable": "New partition table",
   "bootLoaderDevice": "Device for boot loader installation",
+
+  "partitionCreateTitle": "Create partition",
+  "partitionSizeLabel": "Size (MB):",
+  "partitionTypeLabel": "Type for the new Partition:",
+  "partitionTypePrimary": "Primary",
+  "partitionTypeLogical": "Logical",
+  "partitionLocationLabel": "Location for the new Partition:",
+  "partitionLocationBeginning": "Beginning of this space",
+  "partitionLocationEnd": "End of this space",
+  "partitionFormatLabel": "Used as:",
+  "partitionFormatExt4": "Ext4 (recommended)",
+  "partitionFormatExt3": "Ext3",
+  "partitionFormatExt2": "Ext2",
+  "partitionMountPointLabel": "Mount point:",
+  "partitionMountPointAutomatic": "Automatic",
 
   "whoAreYouPageTitle": "Who are you?",
   "whoAreYouPageAutoLogin": "Log in automatically",

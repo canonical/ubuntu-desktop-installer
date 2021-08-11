@@ -302,7 +302,7 @@ class _PartitionButtonRow extends StatelessWidget {
                       side: BorderSide.none,
                       shape: RoundedRectangleBorder(),
                     ),
-                    onPressed: () {},
+                    onPressed: () => showCreatePartitionDialog(context),
                   ),
                   VerticalDivider(width: 1),
                   OutlinedButton(
