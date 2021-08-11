@@ -11,8 +11,8 @@ void main() {
   var _socketPath;
 
   setUpAll(() async {
-    _socketPath =
-        await _testServer.start(ServerMode.DRY_RUN, 'examples/simple.json');
+    _socketPath = await _testServer.start(
+        ServerMode.DRY_RUN, ['--machine-config', 'examples/simple.json']);
     _client.open(_socketPath);
   });
 
@@ -40,6 +40,16 @@ void main() {
     expect(kb.setting?.variant, '');
     expect(kb.setting?.toggle, null);
     expect(kb.layouts, isNotEmpty);
+  });
+
+  test('has rst', () async {
+    var rst = await _client.hasRst();
+    expect(rst, isFalse);
+  });
+
+  test('has bitlocker', () async {
+    var bitLocker = await _client.hasBitLocker();
+    expect(bitLocker, isFalse);
   });
 
   test('guided storage', () async {

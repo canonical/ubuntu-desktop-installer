@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -9,7 +11,7 @@ import 'package:ubuntu_desktop_installer/app.dart';
 
 import 'wizard_app_test.mocks.dart';
 
-@GenerateMocks([SubiquityClient, SubiquityServer])
+@GenerateMocks([IOSink, SubiquityClient, SubiquityServer])
 void main() {
   testWidgets('initializes subiquity', (tester) async {
     final client = MockSubiquityClient();
@@ -20,9 +22,10 @@ void main() {
       Container(),
       subiquityClient: client,
       subiquityServer: server,
-      machineConfig: 'machine config',
+      serverMode: ServerMode.DRY_RUN,
+      serverArgs: ['--foo', 'bar'],
     );
-    verify(server.start(ServerMode.DRY_RUN, 'machine config')).called(1);
+    verify(server.start(ServerMode.DRY_RUN, ['--foo', 'bar'])).called(1);
     verify(client.open('socket path')).called(1);
   });
 
@@ -34,6 +37,7 @@ void main() {
       Container(key: ValueKey('app')),
       subiquityClient: MockSubiquityClient(),
       subiquityServer: server,
+      serverMode: ServerMode.DRY_RUN,
     );
 
     final app = find.byKey(ValueKey('app'));
@@ -41,5 +45,58 @@ void main() {
 
     final context = tester.element(app);
     expect(context.read<SubiquityClient>(), isNotNull);
+  });
+
+  testWidgets('parse command-line arguments', (tester) async {
+    int? didExit;
+    final out = MockIOSink();
+
+    final dryRun = parseCommandLine(
+      ['--dry-run'],
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, isNull);
+    expect(dryRun, isNotNull);
+    expect(dryRun!['dry-run'], isTrue);
+
+    final machineConfig = parseCommandLine(
+      ['--machine-config', 'foo.json'],
+      showMachineConfig: true,
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, isNull);
+    expect(machineConfig, isNotNull);
+    expect(machineConfig!['machine-config'], equals('foo.json'));
+
+    parseCommandLine(
+      ['--help'],
+      out: out,
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, isZero);
+
+    didExit = null;
+    parseCommandLine(
+      ['--machine-config', 'foo.json'],
+      out: out,
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, equals(1));
+
+    didExit = null;
+    parseCommandLine(
+      ['--unknown-option'],
+      out: out,
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, equals(1));
+
+    didExit = null;
+    parseCommandLine(
+      ['unknown rest arguments'],
+      out: out,
+      exit: (exitCode) => didExit = exitCode,
+    );
+    expect(didExit, equals(1));
   });
 }
