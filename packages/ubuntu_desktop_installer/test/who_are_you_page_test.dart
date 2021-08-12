@@ -9,13 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart
 import 'package:wizard_router/wizard_router.dart';
 
 import 'who_are_you_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(WhoAreYouPage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([WhoAreYouModel])
 void main() {

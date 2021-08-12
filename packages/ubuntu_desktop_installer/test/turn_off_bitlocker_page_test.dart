@@ -9,13 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlo
 import 'package:wizard_router/wizard_router.dart';
 
 import 'turn_off_bitlocker_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(TurnOffBitLockerPage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([TurnOffBitLockerModel])
 void main() {

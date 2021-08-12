@@ -9,13 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.da
 import 'package:wizard_router/wizard_router.dart';
 
 import 'turn_off_rst_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(TurnOffRSTPage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([TurnOffRSTModel])
 void main() {

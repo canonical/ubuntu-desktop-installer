@@ -9,13 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_ot
 import 'package:wizard_router/wizard_router.dart';
 
 import 'updates_other_software_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(UpdatesOtherSoftwarePage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([UpdateOtherSoftwareModel])
 void main() {
