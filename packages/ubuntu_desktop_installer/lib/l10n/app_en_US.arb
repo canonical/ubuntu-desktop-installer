@@ -9,6 +9,9 @@
   "appTitle": "Ubuntu Desktop Installer",
   "windowTitle": "Install Ubuntu",
 
+  "wslAppTitle": "Ubuntu WSL OOBE Wizard",
+  "wslWindowTitle": "Ubuntu WSL",
+
   "backButtonText": "Go Back",
   "changeButtonText": "Change",
   "continueButtonText": "Continue",

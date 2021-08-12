@@ -69,6 +69,7 @@ Future<void> runWizardApp(
 ArgResults? parseCommandLine(
   List<String> args, {
   bool? showMachineConfig,
+  bool? showReconfigure,
   @visibleForTesting io.IOSink? out,
   @visibleForTesting void Function(int exitCode) exit = io.exit,
 }) {
@@ -82,6 +83,10 @@ ArgResults? parseCommandLine(
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
+  }
+  if (showReconfigure == true) {
+    parser.addFlag('reconfigure',
+        help: 'Run the wizard in reconfiguration mode');
   }
 
   ArgResults? options;
