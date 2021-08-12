@@ -8,8 +8,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/main.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
@@ -21,6 +21,12 @@ class SubiquityClientMock extends SubiquityClient {
   Future<KeyboardSetup> keyboard() async {
     return KeyboardSetup(layouts: []);
   }
+
+  @override
+  Future<bool> hasRst() async => false;
+
+  @override
+  Future<bool> hasBitLocker() async => false;
 }
 
 void main() {

@@ -13,6 +13,8 @@ import 'services.dart';
 import 'settings.dart';
 import 'utils.dart';
 
+export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
+
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client] and server may be overridden for building
