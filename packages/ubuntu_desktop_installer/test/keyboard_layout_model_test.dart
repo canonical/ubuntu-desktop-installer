@@ -4,8 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'keyboard_layout_model_test.mocks.dart';
 

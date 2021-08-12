@@ -5,8 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'welcome_model_test.mocks.dart';
 
