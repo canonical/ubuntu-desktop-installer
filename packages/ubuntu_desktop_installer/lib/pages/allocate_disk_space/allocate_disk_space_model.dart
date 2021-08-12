@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../disk_storage_service.dart';
+import '../../services.dart';
 
 class AllocateDiskSpaceModel extends ChangeNotifier {
   AllocateDiskSpaceModel(this._service);

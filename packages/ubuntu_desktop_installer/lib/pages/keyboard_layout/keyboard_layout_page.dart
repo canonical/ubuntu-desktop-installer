@@ -5,7 +5,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:wizard_router/wizard_router.dart';
 
-import '../../keyboard_service.dart';
+import '../../services.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'keyboard_layout_model.dart';

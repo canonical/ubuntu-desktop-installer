@@ -50,7 +50,7 @@ class DropdownBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<T>(
+    return DropdownButtonFormField<T>(
       value: selected,
       items: values.map((value) {
         return DropdownMenuItem<T>(
@@ -58,14 +58,6 @@ class DropdownBuilder<T> extends StatelessWidget {
           child: itemBuilder(context, value, null),
         );
       }).toList(),
-      isExpanded: true,
-      icon: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Icon(
-          Icons.arrow_drop_down,
-          color: Theme.of(context).hintColor,
-        ),
-      ),
       onChanged: (value) => onSelected(value!),
     );
   }

@@ -8,10 +8,9 @@ import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'disk_storage_service.dart';
-import 'keyboard_service.dart';
 
 import 'l10n/app_localizations.dart';
+import 'services.dart';
 import 'settings.dart';
 
 export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
