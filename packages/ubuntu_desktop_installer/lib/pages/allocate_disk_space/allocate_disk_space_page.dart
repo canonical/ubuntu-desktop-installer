@@ -5,7 +5,7 @@ import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../../constants.dart';
-import '../../disk_storage_service.dart';
+import '../../services.dart';
 import '../../widgets.dart';
 import '../wizard_page.dart';
 import 'allocate_disk_space_model.dart';
