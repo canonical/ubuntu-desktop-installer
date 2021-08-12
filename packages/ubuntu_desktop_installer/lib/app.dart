@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 
-import 'l10n/app_localizations.dart';
+import 'l10n.dart';
 import 'services.dart';
 import 'settings.dart';
 
