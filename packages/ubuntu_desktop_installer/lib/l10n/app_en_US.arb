@@ -10,8 +10,10 @@
   "windowTitle": "Install Ubuntu",
 
   "backButtonText": "Go Back",
+  "changeButtonText": "Change",
   "continueButtonText": "Continue",
   "restartButtonText": "Restart",
+  "revertButtonText": "Revert",
 
   "welcome": "Welcome",
 
@@ -65,6 +67,8 @@
   "diskHeadersSystem": "System",
   "diskHeadersFormat": "Format",
   "freeDiskSpace": "free space",
+  "newPartitionTable": "New partition table",
+  "bootLoaderDevice": "Device for boot loader installation",
 
   "whoAreYouPageTitle": "Who are you?",
   "whoAreYouPageAutoLogin": "Log in automatically",

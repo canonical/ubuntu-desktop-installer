@@ -1,17 +1,6 @@
 import 'package:subiquity_client/subiquity_client.dart';
 
-class DiskOrPartition {
-  final Disk disk;
-  final Partition? partition;
-  late String name;
-
-  DiskOrPartition({required this.disk, this.partition}) {
-    name = disk.id!;
-    if (partition != null) {
-      name += partition!.number.toString();
-    }
-  }
-}
+export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 class DiskStorageService {
   DiskStorageService(this._client);
@@ -23,19 +12,11 @@ class DiskStorageService {
 
   List<dynamic>? get storageConfig => _storageResponse?.config;
 
-  Future<List<DiskOrPartition>> getGuidedStorage() {
+  Future<List<Disk>> getGuidedStorage() {
     return _client.getGuidedStorage(0, true).then((r) {
+      print(r.disks);
       _response = r;
-
-      final disksAndPartitions = <DiskOrPartition>[];
-      for (var disk in r.disks!) {
-        disksAndPartitions.add(DiskOrPartition(disk: disk));
-        for (var partition in disk.partitions!) {
-          disksAndPartitions
-              .add(DiskOrPartition(disk: disk, partition: partition));
-        }
-      }
-      return disksAndPartitions;
+      return r.disks ?? <Disk>[];
     });
   }
 
