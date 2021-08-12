@@ -4,6 +4,7 @@
   "languageName": "Français",
 
   "appTitle": "Programme d’installation du bureau Ubuntu",
+  "windowTitle": "Installer Ubuntu",
 
   "backButtonText": "Retour",
   "continueButtonText": "Continuer",

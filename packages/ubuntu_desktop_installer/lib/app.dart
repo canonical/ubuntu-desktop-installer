@@ -1,7 +1,6 @@
 import 'dart:io' as io;
 
 import 'package:args/args.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
@@ -9,9 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 
-import 'l10n/app_localizations.dart';
+import 'l10n.dart';
 import 'services.dart';
 import 'settings.dart';
+import 'utils.dart';
 
 export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
 
@@ -49,16 +49,9 @@ Future<void> runWizardApp(
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
 
-  final eventChannel = EventChannel('ubuntu-desktop-installer');
-  eventChannel.receiveBroadcastStream().listen((event) async {
-    switch (event) {
-      case 'deleteEvent':
-        await subiquityClient!.close();
-        await subiquityServer!.stop();
-        break;
-      default:
-        print('Warning: event $event ignored');
-    }
+  onWindowClosed().then((_) async {
+    await subiquityClient!.close();
+    await subiquityServer!.stop();
   });
 
   runApp(MultiProvider(

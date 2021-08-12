@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
-import 'l10n/app_localizations.dart';
+import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'settings.dart';
+import 'utils.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
@@ -19,7 +19,11 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       locale: Settings.of(context).locale,
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (context) {
+        final lang = AppLocalizations.of(context)!;
+        setWindowTitle(lang.windowTitle);
+        return lang.appTitle;
+      },
       theme: yaru.lightTheme,
       darkTheme: yaru.darkTheme,
       themeMode: Settings.of(context).theme,

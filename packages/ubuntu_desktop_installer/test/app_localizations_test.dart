@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 
 void main() {
   group('Occitan', () {
