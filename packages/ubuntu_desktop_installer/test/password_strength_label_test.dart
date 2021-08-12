@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/utils/password.dart';
 import 'package:ubuntu_desktop_installer/widgets/password_strength_label.dart';
 import 'package:ubuntu_desktop_installer/widgets/theme.dart';
