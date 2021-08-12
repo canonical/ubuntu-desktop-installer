@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../../services.dart';
+import '../../utils.dart';
 
 /// Models a disk.
 class DiskModel extends ChangeNotifier {
@@ -142,9 +143,4 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     }
     super.dispose();
   }
-}
-
-extension _ListOrNull<T> on List<T> {
-  T? elementAtOrNull(int index) =>
-      index < 0 || index >= length ? null : this[index];
 }

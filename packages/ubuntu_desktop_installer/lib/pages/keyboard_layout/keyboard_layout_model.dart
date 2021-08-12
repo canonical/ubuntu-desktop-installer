@@ -5,6 +5,7 @@ import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../services.dart';
+import '../../utils.dart';
 
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends ChangeNotifier {
@@ -150,9 +151,4 @@ class ProcessRunner {
   Future<ProcessResult> run(String executable, List<String> arguments) {
     return Process.run(executable, arguments);
   }
-}
-
-extension _ListOrNull<T> on List<T> {
-  T? elementAtOrNull(int index) =>
-      index < 0 || index >= length ? null : this[index];
 }
