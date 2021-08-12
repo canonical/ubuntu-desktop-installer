@@ -8,6 +8,7 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'settings.dart';
+import 'utils.dart';
 
 void main(List<String> args) {
   final options = parseCommandLine(args, showMachineConfig: true)!;
@@ -33,7 +34,11 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       locale: Settings.of(context).locale,
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (context) {
+        final lang = AppLocalizations.of(context)!;
+        setWindowTitle(lang.windowTitle);
+        return lang.appTitle;
+      },
       theme: yaru.lightTheme,
       darkTheme: yaru.darkTheme,
       themeMode: Settings.of(context).theme,

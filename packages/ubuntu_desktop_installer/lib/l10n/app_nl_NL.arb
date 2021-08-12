@@ -4,6 +4,7 @@
   "languageName": "Nederlands",
 
   "appTitle": "Ubuntu Desktop instalatie programma",
+  "windowTitle": "Ubuntu installeren",
 
   "backButtonText": "Terug",
   "continueButtonText": "Volgende",

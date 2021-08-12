@@ -4,6 +4,7 @@
   "languageName": "Italiano",
 
   "appTitle": "Installer di Ubuntu Desktop",
+  "windowTitle": "Installa Ubuntu",
 
   "backButtonText": "Torna indietro",
   "continueButtonText": "Continua",
