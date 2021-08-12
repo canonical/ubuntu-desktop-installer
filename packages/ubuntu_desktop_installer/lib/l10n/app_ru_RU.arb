@@ -4,6 +4,7 @@
   "languageName": "Русский",
 
   "appTitle": "Установка Ubuntu",
+  "windowTitle": "Установить Ubuntu",
 
   "backButtonText": "Назад",
   "continueButtonText": "Продолжить",

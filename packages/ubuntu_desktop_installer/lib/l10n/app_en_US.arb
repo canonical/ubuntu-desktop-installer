@@ -6,7 +6,8 @@
     "description": "The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen."
   },
 
-  "appTitle": "Install Ubuntu",
+  "appTitle": "Ubuntu Desktop Installer",
+  "windowTitle": "Install Ubuntu",
 
   "backButtonText": "Go Back",
   "continueButtonText": "Continue",

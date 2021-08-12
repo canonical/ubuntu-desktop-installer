@@ -4,6 +4,7 @@
   "languageName": "Español",
 
   "appTitle": "Instalador de Ubuntu para escritorio",
+  "windowTitle": "Instalar Ubuntu",
 
   "backButtonText": "Volver",
   "continueButtonText": "Continuar",
