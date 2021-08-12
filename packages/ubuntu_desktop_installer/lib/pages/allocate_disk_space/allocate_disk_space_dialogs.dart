@@ -17,7 +17,10 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
           return AlertDialog(
             title: Text(lang.partitionCreateTitle),
             titlePadding: kHeaderPadding,
-            contentPadding: kContentPadding,
+            contentPadding: kContentPadding.copyWith(
+                top: kContentSpacing, bottom: kContentSpacing),
+            actionsPadding: kFooterPadding,
+            buttonPadding: EdgeInsets.zero,
             scrollable: true,
             content: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,12 +105,12 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
                 ),
               ],
             ),
-            actionsPadding: const EdgeInsets.all(8.0),
             actions: [
               OutlinedButton(
                 onPressed: Navigator.of(context).pop,
                 child: Text(lang.cancelButtonText),
               ),
+              const SizedBox(width: kButtonBarSpacing),
               OutlinedButton(
                 onPressed: null,
                 child: Text(lang.okButtonText),
