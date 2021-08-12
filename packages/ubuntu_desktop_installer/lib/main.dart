@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'app.dart';
-import 'l10n/app_localizations.dart';
+import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'settings.dart';
