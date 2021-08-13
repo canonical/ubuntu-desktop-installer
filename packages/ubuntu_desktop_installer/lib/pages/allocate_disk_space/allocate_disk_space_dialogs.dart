@@ -101,8 +101,8 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: tileHeight),
                         child: DropdownBuilder<String>(
-                          selected: 'Automatic',
-                          values: ['Automatic'],
+                          selected: lang.partitionMountPointAutomatic,
+                          values: [lang.partitionMountPointAutomatic],
                           itemBuilder: (context, value, _) => Text(value),
                           onSelected: (value) {},
                         ),
