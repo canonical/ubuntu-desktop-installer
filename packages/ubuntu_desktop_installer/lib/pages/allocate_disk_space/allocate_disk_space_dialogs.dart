@@ -11,6 +11,7 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
       final partitionType = ValueNotifier(PartitionType.primary);
       final partitionLocation = ValueNotifier(PartitionLocation.beginning);
       final partitionFormat = ValueNotifier(PartitionFormat.ext4);
+      final tileHeight = _defaultTileHeight(context);
 
       return LocalizedView(
         builder: (context, lang) {
@@ -48,7 +49,7 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 48),
+                        constraints: BoxConstraints(maxHeight: tileHeight),
                         child: SpinBox(),
                       ),
                       const SizedBox(height: kContentSpacing),
@@ -75,7 +76,7 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
                       ),
                       const SizedBox(height: kContentSpacing),
                       ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 48),
+                        constraints: BoxConstraints(maxHeight: tileHeight),
                         child: ValueListenableBuilder<PartitionFormat>(
                           valueListenable: partitionFormat,
                           builder: (context, type, child) {
@@ -92,7 +93,7 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
                       ),
                       const SizedBox(height: kContentSpacing),
                       ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 48),
+                        constraints: BoxConstraints(maxHeight: tileHeight),
                         child: DropdownBuilder<String>(
                           selected: 'Automatic',
                           values: ['Automatic'],
@@ -121,6 +122,13 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
       );
     },
   );
+}
+
+// material/list_tile.dart
+double _defaultTileHeight(BuildContext context) {
+  final baseDensity = Theme.of(context).visualDensity.baseSizeAdjustment;
+  final isDense = ListTileTheme.of(context).dense;
+  return (isDense ? 48.0 : 56.0) + baseDensity.dy;
 }
 
 class _PartitionDialogLabel extends StatelessWidget {
