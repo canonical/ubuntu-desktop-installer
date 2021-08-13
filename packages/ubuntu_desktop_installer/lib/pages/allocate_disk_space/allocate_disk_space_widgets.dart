@@ -288,6 +288,8 @@ class _PartitionButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+
     return LocalizedView(builder: (context, lang) {
       return Row(
         children: [
@@ -302,7 +304,10 @@ class _PartitionButtonRow extends StatelessWidget {
                       side: BorderSide.none,
                       shape: RoundedRectangleBorder(),
                     ),
-                    onPressed: () => showCreatePartitionDialog(context),
+                    onPressed: model.selectedDisk != null
+                        ? () => showCreatePartitionDialog(
+                            context, model.selectedDisk!)
+                        : null,
                   ),
                   VerticalDivider(width: 1),
                   OutlinedButton(

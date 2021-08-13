@@ -4,10 +4,12 @@ enum PartitionType { primary, logical }
 enum PartitionFormat { ext4, ext3, ext2 }
 enum PartitionLocation { beginning, end }
 
-Future<void> showCreatePartitionDialog(BuildContext context) {
+Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
   return showDialog(
     context: context,
     builder: (context) {
+      final partitionUnit = ValueNotifier(SizeUnit.megabytes);
+      final partitionSize = ValueNotifier(disk.freeSpace);
       final partitionType = ValueNotifier(PartitionType.primary);
       final partitionLocation = ValueNotifier(PartitionLocation.beginning);
       final partitionFormat = ValueNotifier(PartitionFormat.ext4);
@@ -50,7 +52,11 @@ Future<void> showCreatePartitionDialog(BuildContext context) {
                     children: <Widget>[
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: tileHeight),
-                        child: SpinBox(),
+                        child: _PartitionSizeBox(
+                          bytes: partitionSize,
+                          unit: partitionUnit,
+                          freeSpace: disk.freeSpace,
+                        ),
                       ),
                       const SizedBox(height: kContentSpacing),
                       _RadioValueTile(
@@ -175,6 +181,73 @@ class _RadioValueTile<T> extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class _PartitionSizeBox extends StatelessWidget {
+  const _PartitionSizeBox({
+    Key? key,
+    required this.bytes,
+    required this.unit,
+    required this.freeSpace,
+  }) : super(key: key);
+
+  final ValueNotifier<int> bytes;
+  final ValueNotifier<SizeUnit> unit;
+  final int freeSpace;
+
+  void _setBytes(double value) => bytes.value = toBytes(value, unit.value);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: Listenable.merge([bytes, unit]),
+      builder: (context, snapshot) {
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              child: SpinBox(
+                value: fromBytes(bytes.value, unit.value),
+                max: freeSpace.toDouble(),
+                onChanged: _setBytes,
+              ),
+            ),
+            const SizedBox(width: kButtonBarSpacing),
+            IntrinsicWidth(
+              child: LocalizedView(
+                builder: (context, lang) {
+                  return DropdownBuilder<SizeUnit>(
+                    values: SizeUnit.values,
+                    selected: unit.value,
+                    onSelected: (value) => unit.value = value,
+                    itemBuilder: (context, unit, _) {
+                      return Text(unit.localize(context));
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+extension _PartitionUnitString on SizeUnit {
+  String localize(BuildContext context) {
+    final lang = AppLocalizations.of(context)!;
+    switch (this) {
+      case SizeUnit.bytes:
+        return lang.partitionUnitB;
+      case SizeUnit.kilobytes:
+        return lang.partitionUnitKB;
+      case SizeUnit.megabytes:
+        return lang.partitionUnitMB;
+      case SizeUnit.gigabytes:
+        return lang.partitionUnitGB;
+    }
   }
 }
 
