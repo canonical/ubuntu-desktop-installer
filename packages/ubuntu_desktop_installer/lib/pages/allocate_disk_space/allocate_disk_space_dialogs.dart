@@ -90,7 +90,7 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                               selected: type,
                               values: PartitionFormat.values,
                               itemBuilder: (context, type, _) {
-                                return Text(type.toFormat(context));
+                                return Text(type.localize(context));
                               },
                               onSelected: (value) {},
                             );
@@ -235,7 +235,7 @@ class _PartitionSizeBox extends StatelessWidget {
   }
 }
 
-extension _PartitionUnitString on DataUnit {
+extension _PartitionUnitLang on DataUnit {
   String localize(BuildContext context) {
     final lang = AppLocalizations.of(context)!;
     switch (this) {
@@ -251,20 +251,8 @@ extension _PartitionUnitString on DataUnit {
   }
 }
 
-extension _PartitionTypeString on PartitionType {
-  String toType(BuildContext context) {
-    final lang = AppLocalizations.of(context)!;
-    switch (this) {
-      case PartitionType.primary:
-        return lang.partitionTypePrimary;
-      case PartitionType.logical:
-        return lang.partitionTypeLogical;
-    }
-  }
-}
-
-extension _PartitionFormatString on PartitionFormat {
-  String toFormat(BuildContext context) {
+extension _PartitionFormatLang on PartitionFormat {
+  String localize(BuildContext context) {
     final lang = AppLocalizations.of(context)!;
     switch (this) {
       case PartitionFormat.ext4:
