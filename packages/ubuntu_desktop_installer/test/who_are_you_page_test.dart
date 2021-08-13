@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:wizard_router/wizard_router.dart';
 
 import 'who_are_you_page_test.mocks.dart';
@@ -176,25 +177,23 @@ void main() {
     Type typeOf<T>() => T;
 
     final autoLoginTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageAutoLogin,
     );
     expect(autoLoginTile, findsOneWidget);
 
     final requirePasswordTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageRequirePassword,
     );
     expect(requirePasswordTile, findsOneWidget);
 
     expect(
-      tester.widget<RadioListTile<LoginStrategy>>(autoLoginTile).groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(autoLoginTile).groupValue,
       LoginStrategy.autoLogin,
     );
     expect(
-      tester
-          .widget<RadioListTile<LoginStrategy>>(requirePasswordTile)
-          .groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(requirePasswordTile).groupValue,
       LoginStrategy.autoLogin,
     );
 
