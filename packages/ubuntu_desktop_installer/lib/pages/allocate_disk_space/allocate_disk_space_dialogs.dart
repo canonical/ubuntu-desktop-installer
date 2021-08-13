@@ -8,7 +8,7 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
   return showDialog(
     context: context,
     builder: (context) {
-      final partitionUnit = ValueNotifier(SizeUnit.megabytes);
+      final partitionUnit = ValueNotifier(DataUnit.megabytes);
       final partitionSize = ValueNotifier(disk.freeSpace);
       final partitionType = ValueNotifier(PartitionType.primary);
       final partitionLocation = ValueNotifier(PartitionLocation.beginning);
@@ -193,7 +193,7 @@ class _PartitionSizeBox extends StatelessWidget {
   }) : super(key: key);
 
   final ValueNotifier<int> bytes;
-  final ValueNotifier<SizeUnit> unit;
+  final ValueNotifier<DataUnit> unit;
   final int freeSpace;
 
   void _setBytes(double value) => bytes.value = toBytes(value, unit.value);
@@ -217,8 +217,8 @@ class _PartitionSizeBox extends StatelessWidget {
             IntrinsicWidth(
               child: LocalizedView(
                 builder: (context, lang) {
-                  return DropdownBuilder<SizeUnit>(
-                    values: SizeUnit.values,
+                  return DropdownBuilder<DataUnit>(
+                    values: DataUnit.values,
                     selected: unit.value,
                     onSelected: (value) => unit.value = value,
                     itemBuilder: (context, unit, _) {
@@ -235,17 +235,17 @@ class _PartitionSizeBox extends StatelessWidget {
   }
 }
 
-extension _PartitionUnitString on SizeUnit {
+extension _PartitionUnitString on DataUnit {
   String localize(BuildContext context) {
     final lang = AppLocalizations.of(context)!;
     switch (this) {
-      case SizeUnit.bytes:
+      case DataUnit.bytes:
         return lang.partitionUnitB;
-      case SizeUnit.kilobytes:
+      case DataUnit.kilobytes:
         return lang.partitionUnitKB;
-      case SizeUnit.megabytes:
+      case DataUnit.megabytes:
         return lang.partitionUnitMB;
-      case SizeUnit.gigabytes:
+      case DataUnit.gigabytes:
         return lang.partitionUnitGB;
     }
   }

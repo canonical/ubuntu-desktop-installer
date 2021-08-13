@@ -1,11 +1,11 @@
 import 'dart:math' as math;
 
-enum SizeUnit { bytes, kilobytes, megabytes, gigabytes }
+enum DataUnit { bytes, kilobytes, megabytes, gigabytes }
 
-int toBytes(double size, SizeUnit unit) {
+int toBytes(double size, DataUnit unit) {
   return (size * math.pow(1024, unit.index)).round();
 }
 
-double fromBytes(int size, SizeUnit unit) {
+double fromBytes(int size, DataUnit unit) {
   return size / math.pow(1024, unit.index).toInt();
 }
