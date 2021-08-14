@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/utils/password.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 const Matcher isWeak = PasswordStrengthMatcher(PasswordStrength.weak);
 const Matcher isModerate = PasswordStrengthMatcher(PasswordStrength.moderate);

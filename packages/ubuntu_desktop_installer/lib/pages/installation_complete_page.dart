@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
-import '../utils/product_info_extractor.dart';
 import '../widgets.dart';
-import 'wizard_page.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
 

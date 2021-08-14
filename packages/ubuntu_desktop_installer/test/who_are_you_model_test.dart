@@ -3,7 +3,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
-import 'package:ubuntu_desktop_installer/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import 'who_are_you_model_test.mocks.dart';
 

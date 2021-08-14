@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/utils/password.dart';
-import 'package:ubuntu_desktop_installer/widgets/password_strength_label.dart';
-import 'package:ubuntu_desktop_installer/widgets/theme.dart';
+
+import 'package:ubuntu_wizard/l10n.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
   testWidgets('weak password', (tester) async {
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
         return PasswordStrengthLabel(strength: PasswordStrength.weak);
       }),
@@ -16,7 +16,7 @@ void main() {
 
     final context = tester.element(find.byType(PasswordStrengthLabel));
 
-    final text = AppLocalizations.of(context)!.weakPassword;
+    final text = UbuntuLocalizations.of(context).weakPassword;
     expect(find.text(text), findsOneWidget);
 
     final widget = tester.widget<Text>(find.text(text));
@@ -26,14 +26,14 @@ void main() {
 
   testWidgets('moderate password', (tester) async {
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
         return PasswordStrengthLabel(strength: PasswordStrength.moderate);
       }),
     ));
 
     final context = tester.element(find.byType(PasswordStrengthLabel));
-    final text = AppLocalizations.of(context)!.moderatePassword;
+    final text = UbuntuLocalizations.of(context).moderatePassword;
     expect(find.text(text), findsOneWidget);
 
     final widget = tester.widget<Text>(find.text(text));
@@ -42,7 +42,7 @@ void main() {
 
   testWidgets('strong password', (tester) async {
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
         return PasswordStrengthLabel(strength: PasswordStrength.strong);
       }),
@@ -50,7 +50,7 @@ void main() {
 
     final context = tester.element(find.byType(PasswordStrengthLabel));
 
-    final text = AppLocalizations.of(context)!.strongPassword;
+    final text = UbuntuLocalizations.of(context).strongPassword;
     expect(find.text(text), findsOneWidget);
 
     final widget = tester.widget<Text>(find.text(text));

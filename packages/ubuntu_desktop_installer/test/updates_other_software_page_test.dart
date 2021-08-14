@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'updates_other_software_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';

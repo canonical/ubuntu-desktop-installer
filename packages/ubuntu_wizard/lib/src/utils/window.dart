@@ -3,8 +3,8 @@ import 'dart:ui';
 
 import 'package:flutter/services.dart';
 
-final _methodChannel = MethodChannel('ubuntu-desktop-installer');
-final _eventChannel = EventChannel('ubuntu-desktop-installer/events');
+final _methodChannel = MethodChannel('ubuntu_wizard');
+final _eventChannel = EventChannel('ubuntu_wizard/events');
 
 void _listenEvent(String event, VoidCallback callback) {
   _eventChannel.receiveBroadcastStream().listen((ev) {

@@ -2,7 +2,7 @@ import 'package:file/file.dart';
 import 'package:file/memory.dart';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/utils/product_info_extractor.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 void main() {
   group('ProductInfoExtractor', () {

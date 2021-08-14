@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/wizard_page.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
   testWidgets('activation', (tester) async {

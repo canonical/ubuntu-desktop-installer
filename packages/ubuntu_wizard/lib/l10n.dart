@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/intl_standalone.dart';
+
+export 'src/l10n/ubuntu_localizations.dart';
 
 /// Finds the Locale of Operating System i.e. Platform. and assigns it to
 /// [Intl.systemLocale] and [Intl.defaultLocale].

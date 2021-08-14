@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:ubuntu_desktop_installer/app.dart';
+import 'package:ubuntu_wizard/app.dart';
 
 import 'wizard_app_test.mocks.dart';
 
@@ -61,7 +61,9 @@ void main() {
 
     final machineConfig = parseCommandLine(
       ['--machine-config', 'foo.json'],
-      showMachineConfig: true,
+      onPopulateOptions: (parser) {
+        parser.addOption('machine-config');
+      },
       exit: (exitCode) => didExit = exitCode,
     );
     expect(didExit, isNull);

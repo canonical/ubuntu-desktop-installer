@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 enum TestEnum { foo, bar, baz }
 

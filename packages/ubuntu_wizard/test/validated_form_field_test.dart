@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-import 'package:ubuntu_desktop_installer/utils.dart';
-import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
   testWidgets('input validation', (tester) async {

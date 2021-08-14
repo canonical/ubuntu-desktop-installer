@@ -139,6 +139,14 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  _i4.Future<bool> hasRst() =>
+      (super.noSuchMethod(Invocation.method(#hasRst, []),
+          returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+  @override
+  _i4.Future<bool> hasBitLocker() =>
+      (super.noSuchMethod(Invocation.method(#hasBitLocker, []),
+          returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+  @override
   _i4.Future<_i2.GuidedStorageResponse> getGuidedStorage(
           int? minSize, bool? wait) =>
       (super.noSuchMethod(Invocation.method(#getGuidedStorage, [minSize, wait]),

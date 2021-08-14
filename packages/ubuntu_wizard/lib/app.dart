@@ -5,11 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 
 import 'l10n.dart';
-import 'services.dart';
 import 'settings.dart';
 import 'utils.dart';
 
@@ -21,14 +21,12 @@ export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
 /// wizard variants and for testing purposes.
 Future<void> runWizardApp(
   Widget app, {
-  SubiquityClient? subiquityClient,
-  SubiquityServer? subiquityServer,
+  required SubiquityClient subiquityClient,
+  required SubiquityServer subiquityServer,
   required ServerMode serverMode,
   List<String>? serverArgs,
+  List<SingleChildWidget>? providers,
 }) async {
-  subiquityClient ??= SubiquityClient();
-  subiquityServer ??= SubiquityServer();
-
   final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
 
   await subiquityServer
@@ -50,16 +48,15 @@ Future<void> runWizardApp(
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
-    await subiquityClient!.close();
-    await subiquityServer!.stop();
+    await subiquityClient.close();
+    await subiquityServer.stop();
   });
 
   runApp(MultiProvider(
     providers: [
       Provider.value(value: subiquityClient),
       ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
-      Provider(create: (_) => DiskStorageService(subiquityClient!)),
-      Provider(create: (_) => KeyboardService()),
+      ...?providers,
     ],
     child: app,
   ));
@@ -68,7 +65,7 @@ Future<void> runWizardApp(
 /// Parses the given command line [args].
 ArgResults? parseCommandLine(
   List<String> args, {
-  bool? showMachineConfig,
+  ValueChanged<ArgParser>? onPopulateOptions,
   @visibleForTesting io.IOSink? out,
   @visibleForTesting void Function(int exitCode) exit = io.exit,
 }) {
@@ -77,12 +74,7 @@ ArgResults? parseCommandLine(
   parser.addFlag('dry-run',
       defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
-  if (showMachineConfig == true) {
-    parser.addOption('machine-config',
-        valueHelp: 'path',
-        defaultsTo: 'examples/simple.json',
-        help: 'Path of the machine config (dry-run only)');
-  }
+  onPopulateOptions?.call(parser);
 
   ArgResults? options;
   try {

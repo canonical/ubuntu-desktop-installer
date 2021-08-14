@@ -1,10 +1,26 @@
-import 'app.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_wizard/app.dart';
+
 import 'installer.dart';
+import 'services.dart';
 
 void main(List<String> args) {
-  final options = parseCommandLine(args, showMachineConfig: true)!;
+  final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('machine-config',
+        valueHelp: 'path',
+        defaultsTo: 'examples/simple.json',
+        help: 'Path of the machine config (dry-run only)');
+  })!;
+
+  final subiquityClient = SubiquityClient();
+  final subiquityServer = SubiquityServer();
+
   runWizardApp(
     UbuntuDesktopInstallerApp(),
+    subiquityClient: subiquityClient,
+    subiquityServer: subiquityServer,
     serverMode:
         options['dry-run'] == true ? ServerMode.DRY_RUN : ServerMode.LIVE,
     serverArgs: [
@@ -12,6 +28,10 @@ void main(List<String> args) {
         '--machine-config',
         options['machine-config'],
       ],
+    ],
+    providers: [
+      Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => KeyboardService()),
     ],
   );
 }

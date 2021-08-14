@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
+
+export 'package:wizard_router/wizard_router.dart';
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
 class WizardAction {
