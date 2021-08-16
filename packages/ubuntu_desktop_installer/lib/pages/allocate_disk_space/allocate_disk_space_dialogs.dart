@@ -1,4 +1,11 @@
-part of 'allocate_disk_space_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinbox/material.dart';
+
+import '../../constants.dart';
+import '../../l10n.dart';
+import '../../utils.dart';
+import '../../widgets.dart';
+import 'allocate_disk_space_model.dart';
 
 enum PartitionType { primary, logical }
 enum PartitionFormat { ext4, ext3, ext2 }
