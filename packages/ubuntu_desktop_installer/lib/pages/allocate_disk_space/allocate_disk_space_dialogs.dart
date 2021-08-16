@@ -20,7 +20,21 @@ const _kDefaultMountPoints = <String>[
 ];
 
 enum PartitionType { primary, logical }
-enum PartitionFormat { ext4, ext3, ext2 }
+enum PartitionFormat {
+  ext4,
+  ext3,
+  ext2,
+  btrfs,
+  jfs,
+  xfs,
+  fat16,
+  fat32,
+  swap,
+  bios,
+  efi,
+  physical,
+  none,
+}
 enum PartitionLocation { beginning, end }
 
 Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
@@ -278,6 +292,7 @@ extension _PartitionUnitLang on DataUnit {
 extension _PartitionFormatLang on PartitionFormat {
   String localize(BuildContext context) {
     final lang = AppLocalizations.of(context)!;
+
     switch (this) {
       case PartitionFormat.ext4:
         return lang.partitionFormatExt4;
@@ -285,6 +300,26 @@ extension _PartitionFormatLang on PartitionFormat {
         return lang.partitionFormatExt3;
       case PartitionFormat.ext2:
         return lang.partitionFormatExt2;
+      case PartitionFormat.btrfs:
+        return lang.partitionFormatBtrfs;
+      case PartitionFormat.jfs:
+        return lang.partitionFormatJfs;
+      case PartitionFormat.xfs:
+        return lang.partitionFormatXfs;
+      case PartitionFormat.fat16:
+        return lang.partitionFormatFat16;
+      case PartitionFormat.fat32:
+        return lang.partitionFormatFat32;
+      case PartitionFormat.swap:
+        return lang.partitionFormatSwap;
+      case PartitionFormat.bios:
+        return lang.partitionFormatBios;
+      case PartitionFormat.efi:
+        return lang.partitionFormatEfi;
+      case PartitionFormat.physical:
+        return lang.partitionFormatPhysical;
+      case PartitionFormat.none:
+        return lang.partitionFormatNone;
     }
   }
 }
