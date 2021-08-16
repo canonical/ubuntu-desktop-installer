@@ -7,6 +7,13 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'ubuntu_localizations_en.dart';
+import 'ubuntu_localizations_es.dart';
+import 'ubuntu_localizations_fr.dart';
+import 'ubuntu_localizations_it.dart';
+import 'ubuntu_localizations_nl.dart';
+import 'ubuntu_localizations_oc.dart';
+import 'ubuntu_localizations_pt.dart';
+import 'ubuntu_localizations_ru.dart';
 
 /// Callers can lookup localized strings with an instance of UbuntuLocalizations returned
 /// by `UbuntuLocalizations.of(context)`.
@@ -90,7 +97,21 @@ abstract class UbuntuLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('en', 'US')
+    Locale('en', 'US'),
+    Locale('es'),
+    Locale('es', 'ES'),
+    Locale('fr'),
+    Locale('fr', 'FR'),
+    Locale('it'),
+    Locale('it', 'IT'),
+    Locale('nl'),
+    Locale('nl', 'NL'),
+    Locale('oc'),
+    Locale('oc', 'FR'),
+    Locale('pt'),
+    Locale('pt', 'BR'),
+    Locale('ru'),
+    Locale('ru', 'RU')
   ];
 
   /// No description provided for @strongPassword.
@@ -121,7 +142,7 @@ class _UbuntuLocalizationsDelegate extends LocalizationsDelegate<UbuntuLocalizat
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'fr', 'it', 'nl', 'oc', 'pt', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_UbuntuLocalizationsDelegate old) => false;
@@ -137,11 +158,60 @@ UbuntuLocalizations lookupUbuntuLocalizations(Locale locale) {
    }
   break;
    }
+    case 'es': {
+  switch (locale.countryCode) {
+    case 'ES': return UbuntuLocalizationsEsEs();
+   }
+  break;
+   }
+    case 'fr': {
+  switch (locale.countryCode) {
+    case 'FR': return UbuntuLocalizationsFrFr();
+   }
+  break;
+   }
+    case 'it': {
+  switch (locale.countryCode) {
+    case 'IT': return UbuntuLocalizationsItIt();
+   }
+  break;
+   }
+    case 'nl': {
+  switch (locale.countryCode) {
+    case 'NL': return UbuntuLocalizationsNlNl();
+   }
+  break;
+   }
+    case 'oc': {
+  switch (locale.countryCode) {
+    case 'FR': return UbuntuLocalizationsOcFr();
+   }
+  break;
+   }
+    case 'pt': {
+  switch (locale.countryCode) {
+    case 'BR': return UbuntuLocalizationsPtBr();
+   }
+  break;
+   }
+    case 'ru': {
+  switch (locale.countryCode) {
+    case 'RU': return UbuntuLocalizationsRuRu();
+   }
+  break;
+   }
   }
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return UbuntuLocalizationsEn();
+    case 'es': return UbuntuLocalizationsEs();
+    case 'fr': return UbuntuLocalizationsFr();
+    case 'it': return UbuntuLocalizationsIt();
+    case 'nl': return UbuntuLocalizationsNl();
+    case 'oc': return UbuntuLocalizationsOc();
+    case 'pt': return UbuntuLocalizationsPt();
+    case 'ru': return UbuntuLocalizationsRu();
   }
 
   throw FlutterError(

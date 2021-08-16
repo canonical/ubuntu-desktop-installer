@@ -137,10 +137,6 @@
   "chooseYourLookPageLightBodyText": "Everything is light and bright",
   "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
 
-  "strongPassword": "Strong password",
-  "moderatePassword": "Moderate password",
-  "weakPassword": "Weak password",
-
   "installationCompleteTitle": "Installation complete",
   "readyToUse": "**{system}** is installed and ready to use.",
   "@readyToUse": {
