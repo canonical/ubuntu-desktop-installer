@@ -7,6 +7,18 @@ import '../../utils.dart';
 import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
 
+const _kDefaultMountPoints = <String>[
+  '/',
+  '/boot',
+  '/home',
+  '/tmp',
+  '/usr',
+  '/var',
+  '/srv',
+  '/opt',
+  '/usr/local',
+];
+
 enum PartitionType { primary, logical }
 enum PartitionFormat { ext4, ext3, ext2 }
 enum PartitionLocation { beginning, end }
@@ -107,11 +119,16 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                       const SizedBox(height: kContentSpacing),
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: tileHeight),
-                        child: DropdownBuilder<String>(
-                          selected: lang.partitionMountPointAutomatic,
-                          values: [lang.partitionMountPointAutomatic],
-                          itemBuilder: (context, value, _) => Text(value),
-                          onSelected: (value) {},
+                        child: Autocomplete<String>(
+                          initialValue: TextEditingValue(
+                            text: lang.partitionMountPointAutomatic,
+                          ),
+                          optionsBuilder: (value) {
+                            return <String>[
+                              lang.partitionMountPointAutomatic,
+                              ..._kDefaultMountPoints,
+                            ].where((option) => option.startsWith(value.text));
+                          },
                         ),
                       ),
                     ],
