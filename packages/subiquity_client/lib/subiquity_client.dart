@@ -233,7 +233,6 @@ class SubiquityClient {
 
   Future<void> reboot() async {
     final request = Request('POST', Uri.http('localhost', 'reboot'));
-    final response = await _client.send(request);
-    await checkStatus("reboot()", response);
+    await _client.write(request);
   }
 }

@@ -57,8 +57,8 @@ class HttpUnixClient extends BaseClient {
   /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
   HttpUnixClient(this.path);
 
-  @override
-  Future<StreamedResponse> send(BaseRequest request) async {
+  //// Writes a request to the socket without awaiting response.
+  Future<void> write(BaseRequest request) async {
     // synchronize to prevent concurrent requests creating multiple sockets
     await _lock.synchronized(() async {
       if (_socket == null) {
@@ -81,7 +81,13 @@ class HttpUnixClient extends BaseClient {
     });
     message += '\r\n';
     _socket?.write(message);
+  }
 
+  /// Sends a request to the server and returns a future that completes when the
+  /// response is received.
+  @override
+  Future<StreamedResponse> send(BaseRequest request) async {
+    await write(request);
     if (request is Request) {
       _socket?.write(request.body);
     } else if (request is MultipartRequest) {
