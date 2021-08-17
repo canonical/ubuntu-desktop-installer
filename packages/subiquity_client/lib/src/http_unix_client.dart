@@ -98,6 +98,11 @@ class HttpUnixClient extends BaseClient {
   }
 
   @override
+  Future<void> flush() async {
+    return _socket?.flush();
+  }
+
+  @override
   Future<void> close() async {
     if (_socket != null) {
       await _socket!.close();

@@ -15,7 +15,7 @@ class SubiquityClient {
   }
 
   Future<void> close() {
-    return _client.close();
+    return _client.flush().then((_) => _client.close());
   }
 
   Future<void> checkStatus(String method, StreamedResponse response) async {
