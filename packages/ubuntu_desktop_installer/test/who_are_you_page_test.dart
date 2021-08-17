@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
+import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'who_are_you_page_test.mocks.dart';
@@ -115,9 +116,12 @@ void main() {
     final model = buildModel(password: '');
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.weakPassword), findsNothing);
-    expect(find.text(tester.lang.moderatePassword), findsNothing);
-    expect(find.text(tester.lang.strongPassword), findsNothing);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.weakPassword), findsNothing);
+    expect(find.text(lang.moderatePassword), findsNothing);
+    expect(find.text(lang.strongPassword), findsNothing);
   });
 
   testWidgets('weak password', (tester) async {
@@ -127,7 +131,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.weakPassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.weakPassword), findsOneWidget);
   });
 
   testWidgets('moderate password', (tester) async {
@@ -137,7 +144,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.moderatePassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.moderatePassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {
@@ -147,7 +157,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.strongPassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.strongPassword), findsOneWidget);
   });
 
   testWidgets('valid input', (tester) async {
