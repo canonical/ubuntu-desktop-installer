@@ -24,12 +24,16 @@ static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
 
 static void on_channel_method(FlMethodChannel* channel,
                               FlMethodCall* method_call, gpointer user_data) {
+  GtkWindow* window = GTK_WINDOW(user_data);
   g_autoptr(FlMethodResponse) response = nullptr;
   if (strcmp(fl_method_call_get_name(method_call), "setWindowTitle") == 0) {
     FlValue* args = fl_method_call_get_args(method_call);
     FlValue* title = fl_value_get_list_value(args, 0);
-    GtkHeaderBar* header_bar = GTK_HEADER_BAR(user_data);
+    GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_window_get_titlebar(window));
     gtk_header_bar_set_title(header_bar, fl_value_get_string(title));
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+  } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
+    gtk_window_close(window);
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
@@ -75,7 +79,7 @@ static void my_application_activate(GApplication* application) {
   g_autoptr(FlMethodChannel) method_channel = fl_method_channel_new(
       messenger, "ubuntu-desktop-installer", FL_METHOD_CODEC(codec));
   fl_method_channel_set_method_call_handler(method_channel, on_channel_method,
-                                            header_bar, nullptr);
+                                            window, nullptr);
 
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
