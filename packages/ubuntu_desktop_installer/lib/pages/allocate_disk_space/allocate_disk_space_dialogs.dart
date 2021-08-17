@@ -117,18 +117,8 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                       const SizedBox(height: kContentSpacing),
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: tileHeight),
-                        child: ValueListenableBuilder<PartitionFormat>(
-                          valueListenable: partitionFormat,
-                          builder: (context, type, child) {
-                            return DropdownBuilder<PartitionFormat>(
-                              selected: type,
-                              values: PartitionFormat.values,
-                              itemBuilder: (context, type, _) {
-                                return Text(type.localize(context));
-                              },
-                              onSelected: (value) {},
-                            );
-                          },
+                        child: _PartitionFormatSelector(
+                          partitionFormat: partitionFormat,
                         ),
                       ),
                       const SizedBox(height: kContentSpacing),
@@ -315,5 +305,118 @@ extension _PartitionFormatLang on PartitionFormat {
       case PartitionFormat.none:
         return lang.partitionFormatNone;
     }
+  }
+}
+
+Future<void> showEditPartitionDialog(
+    BuildContext context, PartitionModel partition) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      final partitionFormat = ValueNotifier(PartitionFormat.ext4);
+      final partitionErase = ValueNotifier(true);
+      final tileHeight = _defaultTileHeight(context);
+
+      return LocalizedView(
+        builder: (context, lang) {
+          return AlertDialog(
+            title: Text(lang.partitionEditTitle),
+            titlePadding: kHeaderPadding,
+            contentPadding: kContentPadding.copyWith(
+                top: kContentSpacing, bottom: kContentSpacing),
+            actionsPadding: kFooterPadding,
+            buttonPadding: EdgeInsets.zero,
+            scrollable: true,
+            content: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IntrinsicWidth(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      _PartitionDialogLabel(lang.partitionFormatLabel),
+                      const SizedBox(height: kContentSpacing),
+                      ListTile(),
+                      const SizedBox(height: kContentSpacing),
+                      _PartitionDialogLabel(lang.partitionMountPointLabel),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight: tileHeight),
+                        child: _PartitionFormatSelector(
+                          partitionFormat: partitionFormat,
+                        ),
+                      ),
+                      const SizedBox(height: kContentSpacing),
+                      ValueListenableBuilder<bool>(
+                        valueListenable: partitionErase,
+                        builder: (context, erase, child) {
+                          return CheckboxListTile(
+                            title: Text(lang.partitionErase),
+                            controlAffinity: ListTileControlAffinity.leading,
+                            value: erase,
+                            onChanged: (v) => partitionErase.value = v!,
+                          );
+                        },
+                      ),
+                      const SizedBox(height: kContentSpacing),
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight: tileHeight),
+                        child: Autocomplete<String>(
+                          optionsBuilder: (value) => _kDefaultMountPoints
+                              .where((option) => option.startsWith(value.text)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            actions: [
+              OutlinedButton(
+                onPressed: Navigator.of(context).pop,
+                child: Text(lang.cancelButtonText),
+              ),
+              const SizedBox(width: kButtonBarSpacing),
+              OutlinedButton(
+                onPressed: null,
+                child: Text(lang.okButtonText),
+              ),
+            ],
+          );
+        },
+      );
+    },
+  );
+}
+
+class _PartitionFormatSelector extends StatelessWidget {
+  const _PartitionFormatSelector({
+    Key? key,
+    required this.partitionFormat,
+  }) : super(key: key);
+
+  final ValueNotifier<PartitionFormat> partitionFormat;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<PartitionFormat>(
+      valueListenable: partitionFormat,
+      builder: (context, type, child) {
+        return DropdownBuilder<PartitionFormat>(
+          selected: type,
+          values: PartitionFormat.values,
+          itemBuilder: (context, type, _) {
+            return Text(type.localize(context));
+          },
+          onSelected: (value) {},
+        );
+      },
+    );
   }
 }
