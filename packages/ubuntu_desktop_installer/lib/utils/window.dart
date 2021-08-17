@@ -12,6 +12,11 @@ void _listenEvent(String event, VoidCallback callback) {
   });
 }
 
+/// Requests that the window is closed.
+Future<void> closeWindow() {
+  return _methodChannel.invokeMethod('closeWindow');
+}
+
 /// Completes when the window is closed.
 Future<void> onWindowClosed() {
   final completer = Completer();
