@@ -21,16 +21,19 @@ static void ubuntu_wizard_plugin_handle_method_call(
     FlPluginRegistrar* registrar, FlMethodCall* method_call) {
   g_autoptr(FlMethodResponse) response = nullptr;
 
+  FlView* view = fl_plugin_registrar_get_view(registrar);
+  GtkWidget* window = gtk_widget_get_toplevel(GTK_WIDGET(view));
   const gchar* method = fl_method_call_get_name(method_call);
 
   if (strcmp(method, "setWindowTitle") == 0) {
     FlValue* args = fl_method_call_get_args(method_call);
     FlValue* title = fl_value_get_list_value(args, 0);
-    FlView* view = fl_plugin_registrar_get_view(registrar);
-    GtkWidget* window = gtk_widget_get_toplevel(GTK_WIDGET(view));
     GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
     gtk_header_bar_set_title(GTK_HEADER_BAR(titlebar),
                              fl_value_get_string(title));
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+  } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
+    gtk_window_close(GTK_WINDOW(window));
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());

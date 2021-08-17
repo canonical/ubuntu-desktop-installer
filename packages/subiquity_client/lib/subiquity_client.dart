@@ -15,7 +15,7 @@ class SubiquityClient {
   }
 
   Future<void> close() {
-    return _client.close();
+    return _client.flush().then((_) => _client.close());
   }
 
   Future<void> checkStatus(String method, StreamedResponse response) async {
@@ -233,7 +233,6 @@ class SubiquityClient {
 
   Future<void> reboot() async {
     final request = Request('POST', Uri.http('localhost', 'reboot'));
-    final response = await _client.send(request);
-    await checkStatus("reboot()", response);
+    await _client.write(request);
   }
 }
