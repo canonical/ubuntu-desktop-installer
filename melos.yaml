@@ -27,7 +27,12 @@ scripts:
 
   # format all packages
   format: >
-    flutter format --set-exit-if-changed .
+    find . -name '*.dart' \
+      ! -name '*.g.dart' \
+      ! -name '*.freezed.dart' \
+      ! -path '*/l10n/*' \
+      ! -path "*/.*/*" \
+      | xargs flutter format --set-exit-if-changed
 
   # run build_runner to generate code in all packages
   generate: >
