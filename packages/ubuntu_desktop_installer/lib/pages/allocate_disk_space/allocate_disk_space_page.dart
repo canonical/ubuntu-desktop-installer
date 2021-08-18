@@ -2,13 +2,12 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
-import '../../../constants.dart';
 import '../../services.dart';
 import '../../widgets.dart';
-import '../wizard_page.dart';
 import 'allocate_disk_space_model.dart';
 
 part 'allocate_disk_space_widgets.dart';

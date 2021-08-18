@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
-import 'settings.dart';
-import 'utils.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
@@ -30,6 +30,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
         ...AppLocalizations.localizationsDelegates,
+        ...UbuntuLocalizations.localizationsDelegates,
         const LocalizationsDelegateOc(),
       ],
       supportedLocales: AppLocalizations.supportedLocales,

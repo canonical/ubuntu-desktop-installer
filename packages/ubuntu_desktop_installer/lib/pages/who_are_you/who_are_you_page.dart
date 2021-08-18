@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../constants.dart';
-import '../../utils.dart';
 import '../../widgets.dart';
-import '../wizard_page.dart';
 import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';

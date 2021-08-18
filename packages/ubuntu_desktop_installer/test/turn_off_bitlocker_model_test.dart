@@ -13,7 +13,7 @@ void main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
-    final methodChannel = MethodChannel('ubuntu-desktop-installer');
+    final methodChannel = MethodChannel('ubuntu_wizard');
     methodChannel.setMockMethodCallHandler((call) {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../constants.dart';
-import '../wizard_page.dart';
 import 'installation_slides_model.dart';
 
 class InstallationSlidesPage extends StatefulWidget {

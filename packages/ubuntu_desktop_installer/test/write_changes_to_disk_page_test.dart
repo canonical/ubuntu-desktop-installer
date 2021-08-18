@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
 

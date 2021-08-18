@@ -1,6 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../../utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 /// View model for [TurnOffRSTPage].
 class TurnOffRSTModel {

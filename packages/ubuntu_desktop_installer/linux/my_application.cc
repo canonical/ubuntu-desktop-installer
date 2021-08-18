@@ -11,39 +11,6 @@ struct _MyApplication {
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 
-static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
-                                gpointer user_data) {
-  g_autoptr(GError) error = nullptr;
-  FlValue* event = fl_value_new_string("deleteEvent");
-  FlEventChannel* event_channel = FL_EVENT_CHANNEL(user_data);
-  if (!fl_event_channel_send(event_channel, event, nullptr, &error)) {
-    g_warning("delete-event: %s", error->message);
-  }
-  return FALSE;
-}
-
-static void on_channel_method(FlMethodChannel* channel,
-                              FlMethodCall* method_call, gpointer user_data) {
-  GtkWindow* window = GTK_WINDOW(user_data);
-  g_autoptr(FlMethodResponse) response = nullptr;
-  if (strcmp(fl_method_call_get_name(method_call), "setWindowTitle") == 0) {
-    FlValue* args = fl_method_call_get_args(method_call);
-    FlValue* title = fl_value_get_list_value(args, 0);
-    GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_window_get_titlebar(window));
-    gtk_header_bar_set_title(header_bar, fl_value_get_string(title));
-    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
-  } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
-    gtk_window_close(window);
-    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
-  } else {
-    response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
-  }
-
-  g_autoptr(GError) error = NULL;
-  if (!fl_method_call_respond(method_call, response, &error))
-    g_warning("on_channel_method: %s", error->message);
-}
-
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
@@ -66,20 +33,6 @@ static void my_application_activate(GApplication* application) {
   gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
-
-  FlEngine* engine = fl_view_get_engine(view);
-  FlBinaryMessenger* messenger = fl_engine_get_binary_messenger(engine);
-  g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
-
-  g_autoptr(FlEventChannel) event_channel = fl_event_channel_new(
-      messenger, "ubuntu-desktop-installer/events", FL_METHOD_CODEC(codec));
-  g_signal_connect(G_OBJECT(window), "delete-event",
-                   G_CALLBACK(on_delete_event), event_channel);
-
-  g_autoptr(FlMethodChannel) method_channel = fl_method_channel_new(
-      messenger, "ubuntu-desktop-installer", FL_METHOD_CODEC(codec));
-  fl_method_channel_set_method_call_handler(method_channel, on_channel_method,
-                                            window, nullptr);
 
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }

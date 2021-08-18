@@ -5,11 +5,10 @@ import 'package:flutter_html/style.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wizard_router/wizard_router.dart';
 
 import '../../widgets.dart';
-import '../wizard_page.dart';
 import 'turn_off_rst_model.dart';
 
 class TurnOffRSTPage extends StatelessWidget {

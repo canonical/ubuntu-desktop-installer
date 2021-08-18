@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../../utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
