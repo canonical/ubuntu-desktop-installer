@@ -1,7 +1,6 @@
-import 'dart:io' as io;
-
-import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+
+import '../../utils.dart';
 
 /// View model for [TurnOffBitLockerPage].
 class TurnOffBitLockerModel {
@@ -11,11 +10,7 @@ class TurnOffBitLockerModel {
   final SubiquityClient _client;
 
   /// Requests system reboot.
-  Future<void> reboot({
-    @visibleForTesting void Function(int exitCode) exit = io.exit,
-  }) async {
-    // TODO: await for reboot result
-    _client.reboot();
-    exit(0);
+  Future<void> reboot() {
+    return _client.reboot().then((_) => closeWindow());
   }
 }

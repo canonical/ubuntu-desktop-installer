@@ -2,10 +2,10 @@ import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../utils.dart';
 
-/// View model for [TurnOffRSTPage].
-class TurnOffRSTModel {
+/// View model for [InstallationCompletePage].
+class InstallationCompleteModel {
   /// Creates an instance with the given client.
-  TurnOffRSTModel(this._client);
+  InstallationCompleteModel(this._client);
 
   final SubiquityClient _client;
 
