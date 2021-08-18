@@ -31,13 +31,13 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         headerPadding: EdgeInsets.zero,
         contentPadding: EdgeInsets.zero,
         content: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: kHeaderPadding.copyWith(bottom: kContentSpacing / 2),
+              padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
               child: Text(lang.updatesOtherSoftwarePageDescription),
             ),
-            RadioListTile<InstallationMode>(
+            RadioButton<InstallationMode>(
               title: Text(lang.normalInstallationTitle),
               subtitle: Text(lang.normalInstallationSubtitle),
               contentPadding: kContentPadding,
@@ -45,7 +45,8 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               groupValue: model.installationMode,
               onChanged: model.setInstallationMode,
             ),
-            RadioListTile<InstallationMode>(
+            const SizedBox(height: kContentSpacing),
+            RadioButton<InstallationMode>(
               title: Text(lang.minimalInstallationTitle),
               subtitle: Text(lang.minimalInstallationSubtitle),
               value: InstallationMode.minimal,
@@ -54,13 +55,12 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               onChanged: model.setInstallationMode,
             ),
             Padding(
-              padding: kHeaderPadding.copyWith(bottom: kContentSpacing / 2),
+              padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
               child: Text(lang.otherOptions),
             ),
-            CheckboxListTile(
+            CheckButton(
               title: Text(lang.installThirdPartyTitle),
               subtitle: Text(lang.installThirdPartySubtitle),
-              controlAffinity: ListTileControlAffinity.leading,
               contentPadding: kContentPadding,
               value: model.installThirdParty,
               onChanged: model.setInstallThirdParty,

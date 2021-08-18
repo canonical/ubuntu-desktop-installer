@@ -197,7 +197,7 @@ class _LoginStrategyTile extends StatelessWidget {
         final loginStrategy = context.select<WhoAreYouModel, LoginStrategy>(
             (model) => model.loginStrategy);
 
-        return RadioListTile<LoginStrategy>(
+        return RadioButton<LoginStrategy>(
           title: Text(label),
           contentPadding: EdgeInsets.only(left: _kRadioButtonIndentation),
           value: value,
