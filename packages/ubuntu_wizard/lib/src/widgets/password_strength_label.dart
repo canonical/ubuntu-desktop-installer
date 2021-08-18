@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils.dart';
 import '../../l10n.dart';
+import '../../utils.dart';
 import 'theme.dart';
 
 /// A widget that visualizes the strength of a password.
