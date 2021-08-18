@@ -61,7 +61,7 @@ static void on_method_call(FlMethodChannel* channel, FlMethodCall* method_call,
 static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
                                 gpointer user_data) {
   g_autoptr(GError) error = nullptr;
-  FlValue* event = fl_value_new_string("deleteEvent");
+  g_autoptr(FlValue) event = fl_value_new_string("deleteEvent");
   FlEventChannel* event_channel = FL_EVENT_CHANNEL(user_data);
   if (!fl_event_channel_send(event_channel, event, nullptr, &error)) {
     g_warning("delete-event: %s", error->message);
