@@ -1,10 +1,11 @@
 import 'package:subiquity_client/subiquity_client.dart';
+
 import 'package:ubuntu_wizard/utils.dart';
 
-/// View model for [TurnOffBitLockerPage].
-class TurnOffBitLockerModel {
+/// View model for [InstallationCompletePage].
+class InstallationCompleteModel {
   /// Creates an instance with the given client.
-  TurnOffBitLockerModel(this._client);
+  InstallationCompleteModel(this._client);
 
   final SubiquityClient _client;
 

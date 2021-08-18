@@ -48,26 +48,26 @@ void main() {
     Type typeOf<T>() => T;
 
     final normalInstallationTile = find.widgetWithText(
-      typeOf<RadioListTile<InstallationMode>>(),
+      typeOf<RadioButton<InstallationMode>>(),
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
     final minimalInstallationTile = find.widgetWithText(
-      typeOf<RadioListTile<InstallationMode>>(),
+      typeOf<RadioButton<InstallationMode>>(),
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);
 
     expect(
       tester
-          .widget<RadioListTile<InstallationMode>>(normalInstallationTile)
+          .widget<RadioButton<InstallationMode>>(normalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
     expect(
       tester
-          .widget<RadioListTile<InstallationMode>>(minimalInstallationTile)
+          .widget<RadioButton<InstallationMode>>(minimalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
@@ -86,13 +86,12 @@ void main() {
     Type typeOf<T>() => T;
 
     final installThirdPartyTile = find.widgetWithText(
-      typeOf<CheckboxListTile>(),
+      typeOf<CheckButton>(),
       tester.lang.installThirdPartyTitle,
     );
     expect(installThirdPartyTile, findsOneWidget);
 
-    expect(
-        tester.widget<CheckboxListTile>(installThirdPartyTile).value, isTrue);
+    expect(tester.widget<CheckButton>(installThirdPartyTile).value, isTrue);
 
     when(model.installThirdParty).thenReturn(false);
 

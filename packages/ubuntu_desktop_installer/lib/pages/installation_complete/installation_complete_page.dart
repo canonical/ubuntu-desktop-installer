@@ -7,14 +7,21 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../widgets.dart';
+import '../../widgets.dart';
+import 'installation_complete_model.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
 
 class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({Key? key}) : super(key: key);
 
-  static Widget create(BuildContext context) => InstallationCompletePage();
+  static Widget create(BuildContext context) {
+    final client = Provider.of<SubiquityClient>(context, listen: false);
+    return Provider(
+      create: (_) => InstallationCompleteModel(client),
+      child: InstallationCompletePage(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +59,9 @@ class InstallationCompletePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 24),
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: await for reboot result
-                        Provider.of<SubiquityClient>(context, listen: false)
+                        Provider.of<InstallationCompleteModel>(context,
+                                listen: false)
                             .reboot();
-                        io.exit(0);
                       },
                       child: Text(
                         lang.restartInto(

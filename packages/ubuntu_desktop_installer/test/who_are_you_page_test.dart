@@ -192,25 +192,23 @@ void main() {
     Type typeOf<T>() => T;
 
     final autoLoginTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageAutoLogin,
     );
     expect(autoLoginTile, findsOneWidget);
 
     final requirePasswordTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageRequirePassword,
     );
     expect(requirePasswordTile, findsOneWidget);
 
     expect(
-      tester.widget<RadioListTile<LoginStrategy>>(autoLoginTile).groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(autoLoginTile).groupValue,
       LoginStrategy.autoLogin,
     );
     expect(
-      tester
-          .widget<RadioListTile<LoginStrategy>>(requirePasswordTile)
-          .groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(requirePasswordTile).groupValue,
       LoginStrategy.autoLogin,
     );
 

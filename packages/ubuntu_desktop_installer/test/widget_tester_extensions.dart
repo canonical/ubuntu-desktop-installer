@@ -28,3 +28,28 @@ extension LangTester on WidgetTester {
     return AppLocalizations.of(view)!;
   }
 }
+
+/// An extension on [WidgetTester] that provides a [typeOf] method for finding
+/// widgets by generic types.
+///
+/// [CommonFinders.byType] does not support generic types. The [typeOf] method
+/// is a workaround for this.
+///
+/// ```dart
+/// import 'widget_tester_extensions.dart';
+///
+/// void main() {
+///   Widget buildApp(WidgetTester tester) { [...] }
+///
+///   testWidgets('test description', (tester) async {
+///     await tester.pumpWidget(buildApp(tester));
+///
+///     expect(find.byTypeOf<Radio<int>>(), findsOneWidget);
+///   });
+/// }
+/// ```
+extension TypeOfFinder on CommonFinders {
+  Finder byTypeOf<T>() => byType(_typeOf<T>());
+}
+
+Type _typeOf<T>() => T;
