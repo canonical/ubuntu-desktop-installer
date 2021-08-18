@@ -37,6 +37,9 @@ jobs:
       run: sudo ./scripts/installdeps.sh
 
     # test all packages
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
     
     - name: Run tests
       run: melos run coverage
