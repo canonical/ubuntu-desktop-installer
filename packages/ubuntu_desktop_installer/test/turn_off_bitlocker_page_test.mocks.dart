@@ -3,7 +3,6 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i3;
-import 'dart:io' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlocker_model.dart'
@@ -27,8 +26,8 @@ class MockTurnOffBitLockerModel extends _i1.Mock
   }
 
   @override
-  _i3.Future<void> reboot({void Function(int)? exit = _i4.exit}) =>
-      (super.noSuchMethod(Invocation.method(#reboot, [], {#exit: exit}),
+  _i3.Future<void> reboot() =>
+      (super.noSuchMethod(Invocation.method(#reboot, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override

@@ -3,7 +3,6 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i3;
-import 'dart:io' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart'
@@ -26,8 +25,8 @@ class MockTurnOffRSTModel extends _i1.Mock implements _i2.TurnOffRSTModel {
   }
 
   @override
-  _i3.Future<void> reboot({void Function(int)? exit = _i4.exit}) =>
-      (super.noSuchMethod(Invocation.method(#reboot, [], {#exit: exit}),
+  _i3.Future<void> reboot() =>
+      (super.noSuchMethod(Invocation.method(#reboot, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
