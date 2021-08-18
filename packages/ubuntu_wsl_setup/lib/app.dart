@@ -9,7 +9,7 @@ import 'wizard.dart';
 class UbuntuWslSetupApp extends StatelessWidget {
   const UbuntuWslSetupApp({
     Key? key,
-    required this.reconfigure,
+    this.reconfigure = false,
   }) : super(key: key);
 
   final bool reconfigure;
