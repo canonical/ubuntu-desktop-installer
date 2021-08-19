@@ -41,6 +41,13 @@ class _WelcomePageState extends State<WelcomePage> {
 
     model.loadLanguages().then((_) {
       model.selectLocale(Intl.defaultLocale!);
+      // If the system's locale didn't match exactly
+      // (language code + country code) one of the available translations,
+      // we still want to load translations and keyboard layouts for the next
+      // best match (language code only) that was picked by selectLocale().
+      final settings = Settings.of(context, listen: false);
+      settings.applyLocale(model.locale(model.selectedLanguageIndex));
+      model.loadKeyboards();
 
       _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
           preferPosition: AutoScrollPosition.middle,
