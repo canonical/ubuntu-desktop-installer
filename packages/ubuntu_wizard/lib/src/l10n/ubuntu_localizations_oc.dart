@@ -8,6 +8,9 @@ class UbuntuLocalizationsOc extends UbuntuLocalizations {
   UbuntuLocalizationsOc([String locale = 'oc']) : super(locale);
 
   @override
+  String get languageName => '';
+
+  @override
   String get strongPassword => 'Strong password';
 
   @override
@@ -21,5 +24,6 @@ class UbuntuLocalizationsOc extends UbuntuLocalizations {
 class UbuntuLocalizationsOcFr extends UbuntuLocalizationsOc {
   UbuntuLocalizationsOcFr(): super('oc_FR');
 
-
+  @override
+  String get languageName => 'Occitan';
 }

@@ -47,6 +47,7 @@ void main() {
         ),
       ], child: app),
     );
+    await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   }
 

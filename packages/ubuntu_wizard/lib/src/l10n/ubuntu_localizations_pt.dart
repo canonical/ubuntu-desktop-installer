@@ -8,6 +8,9 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
   UbuntuLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
+  String get languageName => '';
+
+  @override
   String get strongPassword => 'Strong password';
 
   @override
@@ -21,5 +24,6 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
 class UbuntuLocalizationsPtBr extends UbuntuLocalizationsPt {
   UbuntuLocalizationsPtBr(): super('pt_BR');
 
-
+  @override
+  String get languageName => 'Português do Brasil';
 }
