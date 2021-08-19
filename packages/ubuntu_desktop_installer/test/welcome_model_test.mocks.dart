@@ -196,10 +196,15 @@ class MockSubiquityClient extends _i1.Mock implements _i2.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i4.Future<void> reboot() =>
-      (super.noSuchMethod(Invocation.method(#reboot, []),
-          returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> reboot({bool? immediate = false}) => (super.noSuchMethod(
+      Invocation.method(#reboot, [], {#immediate: immediate}),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> shutdown({bool? immediate = false}) => (super.noSuchMethod(
+      Invocation.method(#shutdown, [], {#immediate: immediate}),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   _i4.Future<_i2.WSLConfiguration1Data> wslConfiguration1() =>
       (super.noSuchMethod(Invocation.method(#wslConfiguration1, []),
