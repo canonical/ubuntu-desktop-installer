@@ -66,11 +66,31 @@ class WelcomeModel extends ChangeNotifier {
 
   /// Selects the given [locale].
   void selectLocale(String locale) {
+    // Cater for various locale formats, such as "fr_FR.UTF-8" and "fr_UTF-8_FR"
+    var l = locale.toLowerCase();
+    l = l.replaceAll(RegExp(r'\.?utf-8'), '');
+    final codes = l.split('_');
+    final languageCode = codes.first;
+    final countryCode = codes.last;
+
+    // Try an exact match (language code + country code),
+    // and fall back on a partial match (language code only).
+    var found = false;
+    var fallbackLocaleIndex = -1;
     for (var i = 0; i < _languageList.length; ++i) {
-      if (locale.contains(this.locale(i).languageCode)) {
-        selectedLanguageIndex = i;
-        break;
+      final aLocale = this.locale(i);
+      if (aLocale.languageCode.toLowerCase() == languageCode) {
+        if (aLocale.countryCode?.toLowerCase() == countryCode) {
+          selectedLanguageIndex = i;
+          found = true;
+          break;
+        } else if (aLocale.countryCode == null || fallbackLocaleIndex == -1) {
+          fallbackLocaleIndex = i;
+        }
       }
+    }
+    if (!found && fallbackLocaleIndex > -1) {
+      selectedLanguageIndex = fallbackLocaleIndex;
     }
   }
 }
