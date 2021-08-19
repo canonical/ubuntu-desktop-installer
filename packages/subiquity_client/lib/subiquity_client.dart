@@ -231,8 +231,19 @@ class SubiquityClient {
     await checkStatus("setStorage(${jsonEncode(config)})", response);
   }
 
-  Future<void> reboot() async {
-    final request = Request('POST', Uri.http('localhost', 'reboot'));
+  Future<void> reboot({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"REBOOT"', 'immediate': '$immediate'}));
+    await _client.write(request);
+  }
+
+  Future<void> shutdown({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"POWEROFF"', 'immediate': '$immediate'}));
     await _client.write(request);
   }
 
