@@ -21,9 +21,11 @@ dependencies:
   flutter_html: ^2.0.0-nullsafety
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
-  gsettings: ^0.1.2+1
   intl: ^0.17.0
-  keyboard_info: ^0.1.0
+  keyboard_info:
+    git:
+      url: https://github.com/jpnurmi/keyboard_info.git
+      ref: pure-dart
   provider: ^5.0.0
   flutter_markdown: ^0.6.2
   scroll_to_index: ^2.0.0

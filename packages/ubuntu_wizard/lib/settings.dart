@@ -1,3 +1,4 @@
+import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:intl/intl.dart';
@@ -28,15 +29,14 @@ class Settings extends ChangeNotifier {
     switch (brightness) {
       case Brightness.dark:
         _theme = ThemeMode.dark;
-        _gsettings.setValue('gtk-theme', 'Yaru-dark');
+        _gsettings.set('gtk-theme', DBusString('Yaru-dark'));
         break;
       case Brightness.light:
         _theme = ThemeMode.light;
-        _gsettings.setValue('gtk-theme', 'Yaru');
+        _gsettings.set('gtk-theme', DBusString('Yaru'));
         break;
     }
     notifyListeners();
-    _gsettings.sync();
   }
 
   /// The current application locale.
@@ -48,11 +48,5 @@ class Settings extends ChangeNotifier {
     if (_locale == locale) return;
     _locale = locale;
     notifyListeners();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _gsettings.dispose();
   }
 }

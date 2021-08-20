@@ -27,7 +27,7 @@ Future<void> runWizardApp(
   List<String>? serverArgs,
   List<SingleChildWidget>? providers,
 }) async {
-  final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+  final interfaceSettings = GSettings('org.gnome.desktop.interface');
 
   await subiquityServer
       .start(serverMode, serverArgs)
