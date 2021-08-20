@@ -235,4 +235,36 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'reboot'));
     await _client.write(request);
   }
+
+  Future<WSLConfiguration1Data> wslConfiguration1() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconf1'));
+    final response = await _client.send(request);
+    await checkStatus("wslconf1()", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return WSLConfiguration1Data.fromJson(json);
+  }
+
+  Future<void> setWslConfiguration1(WSLConfiguration1Data conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconf1'));
+    request.body = jsonEncode(conf.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setWslconf1(${jsonEncode(conf.toJson())})", response);
+  }
+
+  Future<WSLConfiguration2Data> wslConfiguration2() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconf2'));
+    final response = await _client.send(request);
+    await checkStatus("wslconf2()", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return WSLConfiguration2Data.fromJson(json);
+  }
+
+  Future<void> setWslConfiguration2(WSLConfiguration2Data conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconf2'));
+    request.body = jsonEncode(conf.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setWslconf2(${jsonEncode(conf.toJson())})", response);
+  }
 }

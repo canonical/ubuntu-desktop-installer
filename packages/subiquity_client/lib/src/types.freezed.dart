@@ -3227,3 +3227,829 @@ abstract class _StorageResponse implements StorageResponse {
   _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+WSLConfiguration1Data _$WSLConfiguration1DataFromJson(
+    Map<String, dynamic> json) {
+  return _WSLConfiguration1Data.fromJson(json);
+}
+
+/// @nodoc
+class _$WSLConfiguration1DataTearOff {
+  const _$WSLConfiguration1DataTearOff();
+
+  _WSLConfiguration1Data call(
+      {@JsonKey(name: 'custom_path') String? customPath,
+      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
+      @JsonKey(name: 'gen_host') bool? genHost,
+      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) {
+    return _WSLConfiguration1Data(
+      customPath: customPath,
+      customMountOpt: customMountOpt,
+      genHost: genHost,
+      genResolvconf: genResolvconf,
+    );
+  }
+
+  WSLConfiguration1Data fromJson(Map<String, Object> json) {
+    return WSLConfiguration1Data.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $WSLConfiguration1Data = _$WSLConfiguration1DataTearOff();
+
+/// @nodoc
+mixin _$WSLConfiguration1Data {
+  @JsonKey(name: 'custom_path')
+  String? get customPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'custom_mount_opt')
+  String? get customMountOpt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gen_host')
+  bool? get genHost => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gen_resolvconf')
+  bool? get genResolvconf => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WSLConfiguration1DataCopyWith<WSLConfiguration1Data> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WSLConfiguration1DataCopyWith<$Res> {
+  factory $WSLConfiguration1DataCopyWith(WSLConfiguration1Data value,
+          $Res Function(WSLConfiguration1Data) then) =
+      _$WSLConfiguration1DataCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'custom_path') String? customPath,
+      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
+      @JsonKey(name: 'gen_host') bool? genHost,
+      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+}
+
+/// @nodoc
+class _$WSLConfiguration1DataCopyWithImpl<$Res>
+    implements $WSLConfiguration1DataCopyWith<$Res> {
+  _$WSLConfiguration1DataCopyWithImpl(this._value, this._then);
+
+  final WSLConfiguration1Data _value;
+  // ignore: unused_field
+  final $Res Function(WSLConfiguration1Data) _then;
+
+  @override
+  $Res call({
+    Object? customPath = freezed,
+    Object? customMountOpt = freezed,
+    Object? genHost = freezed,
+    Object? genResolvconf = freezed,
+  }) {
+    return _then(_value.copyWith(
+      customPath: customPath == freezed
+          ? _value.customPath
+          : customPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customMountOpt: customMountOpt == freezed
+          ? _value.customMountOpt
+          : customMountOpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genHost: genHost == freezed
+          ? _value.genHost
+          : genHost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      genResolvconf: genResolvconf == freezed
+          ? _value.genResolvconf
+          : genResolvconf // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$WSLConfiguration1DataCopyWith<$Res>
+    implements $WSLConfiguration1DataCopyWith<$Res> {
+  factory _$WSLConfiguration1DataCopyWith(_WSLConfiguration1Data value,
+          $Res Function(_WSLConfiguration1Data) then) =
+      __$WSLConfiguration1DataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'custom_path') String? customPath,
+      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
+      @JsonKey(name: 'gen_host') bool? genHost,
+      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+}
+
+/// @nodoc
+class __$WSLConfiguration1DataCopyWithImpl<$Res>
+    extends _$WSLConfiguration1DataCopyWithImpl<$Res>
+    implements _$WSLConfiguration1DataCopyWith<$Res> {
+  __$WSLConfiguration1DataCopyWithImpl(_WSLConfiguration1Data _value,
+      $Res Function(_WSLConfiguration1Data) _then)
+      : super(_value, (v) => _then(v as _WSLConfiguration1Data));
+
+  @override
+  _WSLConfiguration1Data get _value => super._value as _WSLConfiguration1Data;
+
+  @override
+  $Res call({
+    Object? customPath = freezed,
+    Object? customMountOpt = freezed,
+    Object? genHost = freezed,
+    Object? genResolvconf = freezed,
+  }) {
+    return _then(_WSLConfiguration1Data(
+      customPath: customPath == freezed
+          ? _value.customPath
+          : customPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customMountOpt: customMountOpt == freezed
+          ? _value.customMountOpt
+          : customMountOpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genHost: genHost == freezed
+          ? _value.genHost
+          : genHost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      genResolvconf: genResolvconf == freezed
+          ? _value.genResolvconf
+          : genResolvconf // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_WSLConfiguration1Data implements _WSLConfiguration1Data {
+  const _$_WSLConfiguration1Data(
+      {@JsonKey(name: 'custom_path') this.customPath,
+      @JsonKey(name: 'custom_mount_opt') this.customMountOpt,
+      @JsonKey(name: 'gen_host') this.genHost,
+      @JsonKey(name: 'gen_resolvconf') this.genResolvconf});
+
+  factory _$_WSLConfiguration1Data.fromJson(Map<String, dynamic> json) =>
+      _$_$_WSLConfiguration1DataFromJson(json);
+
+  @override
+  @JsonKey(name: 'custom_path')
+  final String? customPath;
+  @override
+  @JsonKey(name: 'custom_mount_opt')
+  final String? customMountOpt;
+  @override
+  @JsonKey(name: 'gen_host')
+  final bool? genHost;
+  @override
+  @JsonKey(name: 'gen_resolvconf')
+  final bool? genResolvconf;
+
+  @override
+  String toString() {
+    return 'WSLConfiguration1Data(customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WSLConfiguration1Data &&
+            (identical(other.customPath, customPath) ||
+                const DeepCollectionEquality()
+                    .equals(other.customPath, customPath)) &&
+            (identical(other.customMountOpt, customMountOpt) ||
+                const DeepCollectionEquality()
+                    .equals(other.customMountOpt, customMountOpt)) &&
+            (identical(other.genHost, genHost) ||
+                const DeepCollectionEquality()
+                    .equals(other.genHost, genHost)) &&
+            (identical(other.genResolvconf, genResolvconf) ||
+                const DeepCollectionEquality()
+                    .equals(other.genResolvconf, genResolvconf)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(customPath) ^
+      const DeepCollectionEquality().hash(customMountOpt) ^
+      const DeepCollectionEquality().hash(genHost) ^
+      const DeepCollectionEquality().hash(genResolvconf);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WSLConfiguration1DataCopyWith<_WSLConfiguration1Data> get copyWith =>
+      __$WSLConfiguration1DataCopyWithImpl<_WSLConfiguration1Data>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_WSLConfiguration1DataToJson(this);
+  }
+}
+
+abstract class _WSLConfiguration1Data implements WSLConfiguration1Data {
+  const factory _WSLConfiguration1Data(
+          {@JsonKey(name: 'custom_path') String? customPath,
+          @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
+          @JsonKey(name: 'gen_host') bool? genHost,
+          @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) =
+      _$_WSLConfiguration1Data;
+
+  factory _WSLConfiguration1Data.fromJson(Map<String, dynamic> json) =
+      _$_WSLConfiguration1Data.fromJson;
+
+  @override
+  @JsonKey(name: 'custom_path')
+  String? get customPath => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'custom_mount_opt')
+  String? get customMountOpt => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'gen_host')
+  bool? get genHost => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'gen_resolvconf')
+  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$WSLConfiguration1DataCopyWith<_WSLConfiguration1Data> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+WSLConfiguration2Data _$WSLConfiguration2DataFromJson(
+    Map<String, dynamic> json) {
+  return _WSLConfiguration2Data.fromJson(json);
+}
+
+/// @nodoc
+class _$WSLConfiguration2DataTearOff {
+  const _$WSLConfiguration2DataTearOff();
+
+  _WSLConfiguration2Data call(
+      {@JsonKey(name: 'gui_theme')
+          String? guiTheme,
+      @JsonKey(name: 'gui_followwintheme')
+          bool? guiFollowwintheme,
+      @JsonKey(name: 'legacy_gui')
+          bool? legacyGui,
+      @JsonKey(name: 'legacy_audio')
+          bool? legacyAudio,
+      @JsonKey(name: 'adv_ip_detect')
+          bool? advIpDetect,
+      @JsonKey(name: 'wsl_motd_news')
+          bool? wslMotdNews,
+      bool? automount,
+      bool? mountfstab,
+      @JsonKey(name: 'custom_path')
+          String? customPath,
+      @JsonKey(name: 'custom_mount_opt')
+          String? customMountOpt,
+      @JsonKey(name: 'gen_host')
+          bool? genHost,
+      @JsonKey(name: 'gen_resolvconf')
+          bool? genResolvconf,
+      @JsonKey(name: 'interop_enabled')
+          bool? interopEnabled,
+      @JsonKey(name: 'interop_appendwindowspath')
+          bool? interopAppendwindowspath}) {
+    return _WSLConfiguration2Data(
+      guiTheme: guiTheme,
+      guiFollowwintheme: guiFollowwintheme,
+      legacyGui: legacyGui,
+      legacyAudio: legacyAudio,
+      advIpDetect: advIpDetect,
+      wslMotdNews: wslMotdNews,
+      automount: automount,
+      mountfstab: mountfstab,
+      customPath: customPath,
+      customMountOpt: customMountOpt,
+      genHost: genHost,
+      genResolvconf: genResolvconf,
+      interopEnabled: interopEnabled,
+      interopAppendwindowspath: interopAppendwindowspath,
+    );
+  }
+
+  WSLConfiguration2Data fromJson(Map<String, Object> json) {
+    return WSLConfiguration2Data.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $WSLConfiguration2Data = _$WSLConfiguration2DataTearOff();
+
+/// @nodoc
+mixin _$WSLConfiguration2Data {
+  @JsonKey(name: 'gui_theme')
+  String? get guiTheme => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gui_followwintheme')
+  bool? get guiFollowwintheme => throw _privateConstructorUsedError;
+  @JsonKey(name: 'legacy_gui')
+  bool? get legacyGui => throw _privateConstructorUsedError;
+  @JsonKey(name: 'legacy_audio')
+  bool? get legacyAudio => throw _privateConstructorUsedError;
+  @JsonKey(name: 'adv_ip_detect')
+  bool? get advIpDetect => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wsl_motd_news')
+  bool? get wslMotdNews => throw _privateConstructorUsedError;
+  bool? get automount => throw _privateConstructorUsedError;
+  bool? get mountfstab => throw _privateConstructorUsedError;
+  @JsonKey(name: 'custom_path')
+  String? get customPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'custom_mount_opt')
+  String? get customMountOpt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gen_host')
+  bool? get genHost => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gen_resolvconf')
+  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_enabled')
+  bool? get interopEnabled => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_appendwindowspath')
+  bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WSLConfiguration2DataCopyWith<WSLConfiguration2Data> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WSLConfiguration2DataCopyWith<$Res> {
+  factory $WSLConfiguration2DataCopyWith(WSLConfiguration2Data value,
+          $Res Function(WSLConfiguration2Data) then) =
+      _$WSLConfiguration2DataCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'gui_theme')
+          String? guiTheme,
+      @JsonKey(name: 'gui_followwintheme')
+          bool? guiFollowwintheme,
+      @JsonKey(name: 'legacy_gui')
+          bool? legacyGui,
+      @JsonKey(name: 'legacy_audio')
+          bool? legacyAudio,
+      @JsonKey(name: 'adv_ip_detect')
+          bool? advIpDetect,
+      @JsonKey(name: 'wsl_motd_news')
+          bool? wslMotdNews,
+      bool? automount,
+      bool? mountfstab,
+      @JsonKey(name: 'custom_path')
+          String? customPath,
+      @JsonKey(name: 'custom_mount_opt')
+          String? customMountOpt,
+      @JsonKey(name: 'gen_host')
+          bool? genHost,
+      @JsonKey(name: 'gen_resolvconf')
+          bool? genResolvconf,
+      @JsonKey(name: 'interop_enabled')
+          bool? interopEnabled,
+      @JsonKey(name: 'interop_appendwindowspath')
+          bool? interopAppendwindowspath});
+}
+
+/// @nodoc
+class _$WSLConfiguration2DataCopyWithImpl<$Res>
+    implements $WSLConfiguration2DataCopyWith<$Res> {
+  _$WSLConfiguration2DataCopyWithImpl(this._value, this._then);
+
+  final WSLConfiguration2Data _value;
+  // ignore: unused_field
+  final $Res Function(WSLConfiguration2Data) _then;
+
+  @override
+  $Res call({
+    Object? guiTheme = freezed,
+    Object? guiFollowwintheme = freezed,
+    Object? legacyGui = freezed,
+    Object? legacyAudio = freezed,
+    Object? advIpDetect = freezed,
+    Object? wslMotdNews = freezed,
+    Object? automount = freezed,
+    Object? mountfstab = freezed,
+    Object? customPath = freezed,
+    Object? customMountOpt = freezed,
+    Object? genHost = freezed,
+    Object? genResolvconf = freezed,
+    Object? interopEnabled = freezed,
+    Object? interopAppendwindowspath = freezed,
+  }) {
+    return _then(_value.copyWith(
+      guiTheme: guiTheme == freezed
+          ? _value.guiTheme
+          : guiTheme // ignore: cast_nullable_to_non_nullable
+              as String?,
+      guiFollowwintheme: guiFollowwintheme == freezed
+          ? _value.guiFollowwintheme
+          : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      legacyGui: legacyGui == freezed
+          ? _value.legacyGui
+          : legacyGui // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      legacyAudio: legacyAudio == freezed
+          ? _value.legacyAudio
+          : legacyAudio // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      advIpDetect: advIpDetect == freezed
+          ? _value.advIpDetect
+          : advIpDetect // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      wslMotdNews: wslMotdNews == freezed
+          ? _value.wslMotdNews
+          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      automount: automount == freezed
+          ? _value.automount
+          : automount // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mountfstab: mountfstab == freezed
+          ? _value.mountfstab
+          : mountfstab // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      customPath: customPath == freezed
+          ? _value.customPath
+          : customPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customMountOpt: customMountOpt == freezed
+          ? _value.customMountOpt
+          : customMountOpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genHost: genHost == freezed
+          ? _value.genHost
+          : genHost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      genResolvconf: genResolvconf == freezed
+          ? _value.genResolvconf
+          : genResolvconf // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interopEnabled: interopEnabled == freezed
+          ? _value.interopEnabled
+          : interopEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interopAppendwindowspath: interopAppendwindowspath == freezed
+          ? _value.interopAppendwindowspath
+          : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$WSLConfiguration2DataCopyWith<$Res>
+    implements $WSLConfiguration2DataCopyWith<$Res> {
+  factory _$WSLConfiguration2DataCopyWith(_WSLConfiguration2Data value,
+          $Res Function(_WSLConfiguration2Data) then) =
+      __$WSLConfiguration2DataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'gui_theme')
+          String? guiTheme,
+      @JsonKey(name: 'gui_followwintheme')
+          bool? guiFollowwintheme,
+      @JsonKey(name: 'legacy_gui')
+          bool? legacyGui,
+      @JsonKey(name: 'legacy_audio')
+          bool? legacyAudio,
+      @JsonKey(name: 'adv_ip_detect')
+          bool? advIpDetect,
+      @JsonKey(name: 'wsl_motd_news')
+          bool? wslMotdNews,
+      bool? automount,
+      bool? mountfstab,
+      @JsonKey(name: 'custom_path')
+          String? customPath,
+      @JsonKey(name: 'custom_mount_opt')
+          String? customMountOpt,
+      @JsonKey(name: 'gen_host')
+          bool? genHost,
+      @JsonKey(name: 'gen_resolvconf')
+          bool? genResolvconf,
+      @JsonKey(name: 'interop_enabled')
+          bool? interopEnabled,
+      @JsonKey(name: 'interop_appendwindowspath')
+          bool? interopAppendwindowspath});
+}
+
+/// @nodoc
+class __$WSLConfiguration2DataCopyWithImpl<$Res>
+    extends _$WSLConfiguration2DataCopyWithImpl<$Res>
+    implements _$WSLConfiguration2DataCopyWith<$Res> {
+  __$WSLConfiguration2DataCopyWithImpl(_WSLConfiguration2Data _value,
+      $Res Function(_WSLConfiguration2Data) _then)
+      : super(_value, (v) => _then(v as _WSLConfiguration2Data));
+
+  @override
+  _WSLConfiguration2Data get _value => super._value as _WSLConfiguration2Data;
+
+  @override
+  $Res call({
+    Object? guiTheme = freezed,
+    Object? guiFollowwintheme = freezed,
+    Object? legacyGui = freezed,
+    Object? legacyAudio = freezed,
+    Object? advIpDetect = freezed,
+    Object? wslMotdNews = freezed,
+    Object? automount = freezed,
+    Object? mountfstab = freezed,
+    Object? customPath = freezed,
+    Object? customMountOpt = freezed,
+    Object? genHost = freezed,
+    Object? genResolvconf = freezed,
+    Object? interopEnabled = freezed,
+    Object? interopAppendwindowspath = freezed,
+  }) {
+    return _then(_WSLConfiguration2Data(
+      guiTheme: guiTheme == freezed
+          ? _value.guiTheme
+          : guiTheme // ignore: cast_nullable_to_non_nullable
+              as String?,
+      guiFollowwintheme: guiFollowwintheme == freezed
+          ? _value.guiFollowwintheme
+          : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      legacyGui: legacyGui == freezed
+          ? _value.legacyGui
+          : legacyGui // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      legacyAudio: legacyAudio == freezed
+          ? _value.legacyAudio
+          : legacyAudio // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      advIpDetect: advIpDetect == freezed
+          ? _value.advIpDetect
+          : advIpDetect // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      wslMotdNews: wslMotdNews == freezed
+          ? _value.wslMotdNews
+          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      automount: automount == freezed
+          ? _value.automount
+          : automount // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mountfstab: mountfstab == freezed
+          ? _value.mountfstab
+          : mountfstab // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      customPath: customPath == freezed
+          ? _value.customPath
+          : customPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customMountOpt: customMountOpt == freezed
+          ? _value.customMountOpt
+          : customMountOpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genHost: genHost == freezed
+          ? _value.genHost
+          : genHost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      genResolvconf: genResolvconf == freezed
+          ? _value.genResolvconf
+          : genResolvconf // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interopEnabled: interopEnabled == freezed
+          ? _value.interopEnabled
+          : interopEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interopAppendwindowspath: interopAppendwindowspath == freezed
+          ? _value.interopAppendwindowspath
+          : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
+  const _$_WSLConfiguration2Data(
+      {@JsonKey(name: 'gui_theme')
+          this.guiTheme,
+      @JsonKey(name: 'gui_followwintheme')
+          this.guiFollowwintheme,
+      @JsonKey(name: 'legacy_gui')
+          this.legacyGui,
+      @JsonKey(name: 'legacy_audio')
+          this.legacyAudio,
+      @JsonKey(name: 'adv_ip_detect')
+          this.advIpDetect,
+      @JsonKey(name: 'wsl_motd_news')
+          this.wslMotdNews,
+      this.automount,
+      this.mountfstab,
+      @JsonKey(name: 'custom_path')
+          this.customPath,
+      @JsonKey(name: 'custom_mount_opt')
+          this.customMountOpt,
+      @JsonKey(name: 'gen_host')
+          this.genHost,
+      @JsonKey(name: 'gen_resolvconf')
+          this.genResolvconf,
+      @JsonKey(name: 'interop_enabled')
+          this.interopEnabled,
+      @JsonKey(name: 'interop_appendwindowspath')
+          this.interopAppendwindowspath});
+
+  factory _$_WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =>
+      _$_$_WSLConfiguration2DataFromJson(json);
+
+  @override
+  @JsonKey(name: 'gui_theme')
+  final String? guiTheme;
+  @override
+  @JsonKey(name: 'gui_followwintheme')
+  final bool? guiFollowwintheme;
+  @override
+  @JsonKey(name: 'legacy_gui')
+  final bool? legacyGui;
+  @override
+  @JsonKey(name: 'legacy_audio')
+  final bool? legacyAudio;
+  @override
+  @JsonKey(name: 'adv_ip_detect')
+  final bool? advIpDetect;
+  @override
+  @JsonKey(name: 'wsl_motd_news')
+  final bool? wslMotdNews;
+  @override
+  final bool? automount;
+  @override
+  final bool? mountfstab;
+  @override
+  @JsonKey(name: 'custom_path')
+  final String? customPath;
+  @override
+  @JsonKey(name: 'custom_mount_opt')
+  final String? customMountOpt;
+  @override
+  @JsonKey(name: 'gen_host')
+  final bool? genHost;
+  @override
+  @JsonKey(name: 'gen_resolvconf')
+  final bool? genResolvconf;
+  @override
+  @JsonKey(name: 'interop_enabled')
+  final bool? interopEnabled;
+  @override
+  @JsonKey(name: 'interop_appendwindowspath')
+  final bool? interopAppendwindowspath;
+
+  @override
+  String toString() {
+    return 'WSLConfiguration2Data(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, legacyGui: $legacyGui, legacyAudio: $legacyAudio, advIpDetect: $advIpDetect, wslMotdNews: $wslMotdNews, automount: $automount, mountfstab: $mountfstab, customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WSLConfiguration2Data &&
+            (identical(other.guiTheme, guiTheme) ||
+                const DeepCollectionEquality()
+                    .equals(other.guiTheme, guiTheme)) &&
+            (identical(other.guiFollowwintheme, guiFollowwintheme) ||
+                const DeepCollectionEquality()
+                    .equals(other.guiFollowwintheme, guiFollowwintheme)) &&
+            (identical(other.legacyGui, legacyGui) ||
+                const DeepCollectionEquality()
+                    .equals(other.legacyGui, legacyGui)) &&
+            (identical(other.legacyAudio, legacyAudio) ||
+                const DeepCollectionEquality()
+                    .equals(other.legacyAudio, legacyAudio)) &&
+            (identical(other.advIpDetect, advIpDetect) ||
+                const DeepCollectionEquality()
+                    .equals(other.advIpDetect, advIpDetect)) &&
+            (identical(other.wslMotdNews, wslMotdNews) ||
+                const DeepCollectionEquality()
+                    .equals(other.wslMotdNews, wslMotdNews)) &&
+            (identical(other.automount, automount) ||
+                const DeepCollectionEquality()
+                    .equals(other.automount, automount)) &&
+            (identical(other.mountfstab, mountfstab) ||
+                const DeepCollectionEquality()
+                    .equals(other.mountfstab, mountfstab)) &&
+            (identical(other.customPath, customPath) ||
+                const DeepCollectionEquality()
+                    .equals(other.customPath, customPath)) &&
+            (identical(other.customMountOpt, customMountOpt) ||
+                const DeepCollectionEquality()
+                    .equals(other.customMountOpt, customMountOpt)) &&
+            (identical(other.genHost, genHost) ||
+                const DeepCollectionEquality()
+                    .equals(other.genHost, genHost)) &&
+            (identical(other.genResolvconf, genResolvconf) ||
+                const DeepCollectionEquality()
+                    .equals(other.genResolvconf, genResolvconf)) &&
+            (identical(other.interopEnabled, interopEnabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.interopEnabled, interopEnabled)) &&
+            (identical(
+                    other.interopAppendwindowspath, interopAppendwindowspath) ||
+                const DeepCollectionEquality().equals(
+                    other.interopAppendwindowspath, interopAppendwindowspath)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(guiTheme) ^
+      const DeepCollectionEquality().hash(guiFollowwintheme) ^
+      const DeepCollectionEquality().hash(legacyGui) ^
+      const DeepCollectionEquality().hash(legacyAudio) ^
+      const DeepCollectionEquality().hash(advIpDetect) ^
+      const DeepCollectionEquality().hash(wslMotdNews) ^
+      const DeepCollectionEquality().hash(automount) ^
+      const DeepCollectionEquality().hash(mountfstab) ^
+      const DeepCollectionEquality().hash(customPath) ^
+      const DeepCollectionEquality().hash(customMountOpt) ^
+      const DeepCollectionEquality().hash(genHost) ^
+      const DeepCollectionEquality().hash(genResolvconf) ^
+      const DeepCollectionEquality().hash(interopEnabled) ^
+      const DeepCollectionEquality().hash(interopAppendwindowspath);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WSLConfiguration2DataCopyWith<_WSLConfiguration2Data> get copyWith =>
+      __$WSLConfiguration2DataCopyWithImpl<_WSLConfiguration2Data>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_WSLConfiguration2DataToJson(this);
+  }
+}
+
+abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
+  const factory _WSLConfiguration2Data(
+      {@JsonKey(name: 'gui_theme')
+          String? guiTheme,
+      @JsonKey(name: 'gui_followwintheme')
+          bool? guiFollowwintheme,
+      @JsonKey(name: 'legacy_gui')
+          bool? legacyGui,
+      @JsonKey(name: 'legacy_audio')
+          bool? legacyAudio,
+      @JsonKey(name: 'adv_ip_detect')
+          bool? advIpDetect,
+      @JsonKey(name: 'wsl_motd_news')
+          bool? wslMotdNews,
+      bool? automount,
+      bool? mountfstab,
+      @JsonKey(name: 'custom_path')
+          String? customPath,
+      @JsonKey(name: 'custom_mount_opt')
+          String? customMountOpt,
+      @JsonKey(name: 'gen_host')
+          bool? genHost,
+      @JsonKey(name: 'gen_resolvconf')
+          bool? genResolvconf,
+      @JsonKey(name: 'interop_enabled')
+          bool? interopEnabled,
+      @JsonKey(name: 'interop_appendwindowspath')
+          bool? interopAppendwindowspath}) = _$_WSLConfiguration2Data;
+
+  factory _WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =
+      _$_WSLConfiguration2Data.fromJson;
+
+  @override
+  @JsonKey(name: 'gui_theme')
+  String? get guiTheme => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'gui_followwintheme')
+  bool? get guiFollowwintheme => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'legacy_gui')
+  bool? get legacyGui => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'legacy_audio')
+  bool? get legacyAudio => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'adv_ip_detect')
+  bool? get advIpDetect => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'wsl_motd_news')
+  bool? get wslMotdNews => throw _privateConstructorUsedError;
+  @override
+  bool? get automount => throw _privateConstructorUsedError;
+  @override
+  bool? get mountfstab => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'custom_path')
+  String? get customPath => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'custom_mount_opt')
+  String? get customMountOpt => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'gen_host')
+  bool? get genHost => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'gen_resolvconf')
+  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'interop_enabled')
+  bool? get interopEnabled => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'interop_appendwindowspath')
+  bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$WSLConfiguration2DataCopyWith<_WSLConfiguration2Data> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -38,6 +38,12 @@ class _FakeGuidedStorageResponse_6 extends _i1.Fake
 
 class _FakeStorageResponse_7 extends _i1.Fake implements _i3.StorageResponse {}
 
+class _FakeWSLConfiguration1Data_8 extends _i1.Fake
+    implements _i3.WSLConfiguration1Data {}
+
+class _FakeWSLConfiguration2Data_9 extends _i1.Fake
+    implements _i3.WSLConfiguration2Data {}
+
 /// A class which mocks [IOSink].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -230,6 +236,28 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
   @override
   _i5.Future<void> reboot() =>
       (super.noSuchMethod(Invocation.method(#reboot, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
+  _i5.Future<_i3.WSLConfiguration1Data> wslConfiguration1() =>
+      (super.noSuchMethod(Invocation.method(#wslConfiguration1, []),
+              returnValue: Future<_i3.WSLConfiguration1Data>.value(
+                  _FakeWSLConfiguration1Data_8()))
+          as _i5.Future<_i3.WSLConfiguration1Data>);
+  @override
+  _i5.Future<void> setWslConfiguration1(_i3.WSLConfiguration1Data? conf) =>
+      (super.noSuchMethod(Invocation.method(#setWslConfiguration1, [conf]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
+  _i5.Future<_i3.WSLConfiguration2Data> wslConfiguration2() =>
+      (super.noSuchMethod(Invocation.method(#wslConfiguration2, []),
+              returnValue: Future<_i3.WSLConfiguration2Data>.value(
+                  _FakeWSLConfiguration2Data_9()))
+          as _i5.Future<_i3.WSLConfiguration2Data>);
+  @override
+  _i5.Future<void> setWslConfiguration2(_i3.WSLConfiguration2Data? conf) =>
+      (super.noSuchMethod(Invocation.method(#setWslConfiguration2, [conf]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
