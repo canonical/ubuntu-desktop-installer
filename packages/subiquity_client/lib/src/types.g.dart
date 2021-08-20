@@ -345,3 +345,61 @@ const _$BootloaderEnumMap = {
   Bootloader.UEFI: 'UEFI',
   Bootloader.PREP: 'PREP',
 };
+
+_$_WSLConfiguration1Data _$_$_WSLConfiguration1DataFromJson(
+    Map<String, dynamic> json) {
+  return _$_WSLConfiguration1Data(
+    customPath: json['custom_path'] as String?,
+    customMountOpt: json['custom_mount_opt'] as String?,
+    genHost: json['gen_host'] as bool?,
+    genResolvconf: json['gen_resolvconf'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_WSLConfiguration1DataToJson(
+        _$_WSLConfiguration1Data instance) =>
+    <String, dynamic>{
+      'custom_path': instance.customPath,
+      'custom_mount_opt': instance.customMountOpt,
+      'gen_host': instance.genHost,
+      'gen_resolvconf': instance.genResolvconf,
+    };
+
+_$_WSLConfiguration2Data _$_$_WSLConfiguration2DataFromJson(
+    Map<String, dynamic> json) {
+  return _$_WSLConfiguration2Data(
+    guiTheme: json['gui_theme'] as String?,
+    guiFollowwintheme: json['gui_followwintheme'] as bool?,
+    legacyGui: json['legacy_gui'] as bool?,
+    legacyAudio: json['legacy_audio'] as bool?,
+    advIpDetect: json['adv_ip_detect'] as bool?,
+    wslMotdNews: json['wsl_motd_news'] as bool?,
+    automount: json['automount'] as bool?,
+    mountfstab: json['mountfstab'] as bool?,
+    customPath: json['custom_path'] as String?,
+    customMountOpt: json['custom_mount_opt'] as String?,
+    genHost: json['gen_host'] as bool?,
+    genResolvconf: json['gen_resolvconf'] as bool?,
+    interopEnabled: json['interop_enabled'] as bool?,
+    interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_WSLConfiguration2DataToJson(
+        _$_WSLConfiguration2Data instance) =>
+    <String, dynamic>{
+      'gui_theme': instance.guiTheme,
+      'gui_followwintheme': instance.guiFollowwintheme,
+      'legacy_gui': instance.legacyGui,
+      'legacy_audio': instance.legacyAudio,
+      'adv_ip_detect': instance.advIpDetect,
+      'wsl_motd_news': instance.wslMotdNews,
+      'automount': instance.automount,
+      'mountfstab': instance.mountfstab,
+      'custom_path': instance.customPath,
+      'custom_mount_opt': instance.customMountOpt,
+      'gen_host': instance.genHost,
+      'gen_resolvconf': instance.genResolvconf,
+      'interop_enabled': instance.interopEnabled,
+      'interop_appendwindowspath': instance.interopAppendwindowspath,
+    };
