@@ -2,11 +2,15 @@
 // in ubuntu_wsl_setup/test/app_test.dart.
 // Do not manually edit this file.
 
+import 'dart:async' as _i7;
 import 'dart:ui' as _i2;
 
-import 'package:flutter/material.dart' as _i4;
+import 'package:flutter/material.dart' as _i5;
+import 'package:http/http.dart' as _i8;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_wizard/settings.dart' as _i3;
+import 'package:subiquity_client/src/types.dart' as _i3;
+import 'package:subiquity_client/subiquity_client.dart' as _i6;
+import 'package:ubuntu_wizard/settings.dart' as _i4;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -18,17 +22,33 @@ import 'package:ubuntu_wizard/settings.dart' as _i3;
 
 class _FakeLocale_0 extends _i1.Fake implements _i2.Locale {}
 
+class _FakeKeyboardSetup_1 extends _i1.Fake implements _i3.KeyboardSetup {}
+
+class _FakeIdentityData_2 extends _i1.Fake implements _i3.IdentityData {}
+
+class _FakeTimezoneData_3 extends _i1.Fake implements _i3.TimezoneData {}
+
+class _FakeSSHData_4 extends _i1.Fake implements _i3.SSHData {}
+
+class _FakeApplicationStatus_5 extends _i1.Fake
+    implements _i3.ApplicationStatus {}
+
+class _FakeGuidedStorageResponse_6 extends _i1.Fake
+    implements _i3.GuidedStorageResponse {}
+
+class _FakeStorageResponse_7 extends _i1.Fake implements _i3.StorageResponse {}
+
 /// A class which mocks [Settings].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSettings extends _i1.Mock implements _i3.Settings {
+class MockSettings extends _i1.Mock implements _i4.Settings {
   MockSettings() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.ThemeMode get theme => (super.noSuchMethod(Invocation.getter(#theme),
-      returnValue: _i4.ThemeMode.system) as _i4.ThemeMode);
+  _i5.ThemeMode get theme => (super.noSuchMethod(Invocation.getter(#theme),
+      returnValue: _i5.ThemeMode.system) as _i5.ThemeMode);
   @override
   _i2.Locale get locale => (super.noSuchMethod(Invocation.getter(#locale),
       returnValue: _FakeLocale_0()) as _i2.Locale);
@@ -59,6 +79,146 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [SubiquityClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
+  MockSubiquityClient() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  void open(String? socketPath) =>
+      super.noSuchMethod(Invocation.method(#open, [socketPath]),
+          returnValueForMissingStub: null);
+  @override
+  _i7.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<void> checkStatus(
+          String? method, _i8.StreamedResponse? response) =>
+      (super.noSuchMethod(Invocation.method(#checkStatus, [method, response]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<String> locale() =>
+      (super.noSuchMethod(Invocation.method(#locale, []),
+          returnValue: Future<String>.value('')) as _i7.Future<String>);
+  @override
+  _i7.Future<void> setLocale(String? locale) =>
+      (super.noSuchMethod(Invocation.method(#setLocale, [locale]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<_i3.KeyboardSetup> keyboard() => (super.noSuchMethod(
+          Invocation.method(#keyboard, []),
+          returnValue: Future<_i3.KeyboardSetup>.value(_FakeKeyboardSetup_1()))
+      as _i7.Future<_i3.KeyboardSetup>);
+  @override
+  _i7.Future<void> setKeyboard(_i3.KeyboardSetting? setting) =>
+      (super.noSuchMethod(Invocation.method(#setKeyboard, [setting]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<String> proxy() =>
+      (super.noSuchMethod(Invocation.method(#proxy, []),
+          returnValue: Future<String>.value('')) as _i7.Future<String>);
+  @override
+  _i7.Future<void> setProxy(String? proxy) =>
+      (super.noSuchMethod(Invocation.method(#setProxy, [proxy]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<String> mirror() =>
+      (super.noSuchMethod(Invocation.method(#mirror, []),
+          returnValue: Future<String>.value('')) as _i7.Future<String>);
+  @override
+  _i7.Future<void> setMirror(String? mirror) =>
+      (super.noSuchMethod(Invocation.method(#setMirror, [mirror]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<_i3.IdentityData> identity() => (super.noSuchMethod(
+          Invocation.method(#identity, []),
+          returnValue: Future<_i3.IdentityData>.value(_FakeIdentityData_2()))
+      as _i7.Future<_i3.IdentityData>);
+  @override
+  _i7.Future<void> setIdentity(_i3.IdentityData? identity) =>
+      (super.noSuchMethod(Invocation.method(#setIdentity, [identity]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<_i3.TimezoneData> timezone() => (super.noSuchMethod(
+          Invocation.method(#timezone, []),
+          returnValue: Future<_i3.TimezoneData>.value(_FakeTimezoneData_3()))
+      as _i7.Future<_i3.TimezoneData>);
+  @override
+  _i7.Future<void> setTimezone(String? timezone) =>
+      (super.noSuchMethod(Invocation.method(#setTimezone, [timezone]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<_i3.SSHData> ssh() =>
+      (super.noSuchMethod(Invocation.method(#ssh, []),
+              returnValue: Future<_i3.SSHData>.value(_FakeSSHData_4()))
+          as _i7.Future<_i3.SSHData>);
+  @override
+  _i7.Future<void> setSsh(_i3.SSHData? ssh) =>
+      (super.noSuchMethod(Invocation.method(#setSsh, [ssh]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<_i3.ApplicationStatus> status({_i3.ApplicationState? current}) =>
+      (super.noSuchMethod(Invocation.method(#status, [], {#current: current}),
+              returnValue: Future<_i3.ApplicationStatus>.value(
+                  _FakeApplicationStatus_5()))
+          as _i7.Future<_i3.ApplicationStatus>);
+  @override
+  _i7.Future<void> markConfigured(List<String>? endpointNames) =>
+      (super.noSuchMethod(Invocation.method(#markConfigured, [endpointNames]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<void> confirm(String? tty) =>
+      (super.noSuchMethod(Invocation.method(#confirm, [tty]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<bool> hasRst() =>
+      (super.noSuchMethod(Invocation.method(#hasRst, []),
+          returnValue: Future<bool>.value(false)) as _i7.Future<bool>);
+  @override
+  _i7.Future<bool> hasBitLocker() =>
+      (super.noSuchMethod(Invocation.method(#hasBitLocker, []),
+          returnValue: Future<bool>.value(false)) as _i7.Future<bool>);
+  @override
+  _i7.Future<_i3.GuidedStorageResponse> getGuidedStorage(
+          int? minSize, bool? wait) =>
+      (super.noSuchMethod(Invocation.method(#getGuidedStorage, [minSize, wait]),
+              returnValue: Future<_i3.GuidedStorageResponse>.value(
+                  _FakeGuidedStorageResponse_6()))
+          as _i7.Future<_i3.GuidedStorageResponse>);
+  @override
+  _i7.Future<_i3.StorageResponse> setGuidedStorage(_i3.GuidedChoice? choice) =>
+      (super.noSuchMethod(Invocation.method(#setGuidedStorage, [choice]),
+              returnValue:
+                  Future<_i3.StorageResponse>.value(_FakeStorageResponse_7()))
+          as _i7.Future<_i3.StorageResponse>);
+  @override
+  _i7.Future<void> setStorage(List<dynamic>? config) =>
+      (super.noSuchMethod(Invocation.method(#setStorage, [config]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
+  @override
+  _i7.Future<void> reboot() =>
+      (super.noSuchMethod(Invocation.method(#reboot, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i7.Future<void>);
   @override
   String toString() => super.toString();
 }
