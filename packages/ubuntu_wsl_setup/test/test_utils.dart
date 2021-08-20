@@ -32,6 +32,11 @@ extension LangTester on WidgetTester {
     final view = element(find.byType(type));
     return AppLocalizations.of(view);
   }
+
+  UbuntuLocalizations get ulang {
+    final page = element(find.byType(type));
+    return UbuntuLocalizations.of(page);
+  }
 }
 
 /// An extension on [WidgetTester] that provides a [typeOf] method for finding
