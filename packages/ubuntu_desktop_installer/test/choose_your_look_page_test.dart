@@ -14,7 +14,7 @@ import 'choose_your_look_page_test.mocks.dart';
 void main() {
   AppLocalizations lang(WidgetTester tester) {
     final page = tester.element(find.byType(ChooseYourLookPage));
-    return AppLocalizations.of(page)!;
+    return AppLocalizations.of(page);
   }
 
   testWidgets('ChooseYourLookPage applies theme', (tester) async {

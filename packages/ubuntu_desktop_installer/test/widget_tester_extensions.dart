@@ -25,7 +25,7 @@ import 'package:ubuntu_desktop_installer/widgets.dart';
 extension LangTester on WidgetTester {
   AppLocalizations get lang {
     final view = element(find.byType(LocalizedView).first);
-    return AppLocalizations.of(view)!;
+    return AppLocalizations.of(view);
   }
 }
 
