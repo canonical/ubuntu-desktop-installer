@@ -274,6 +274,17 @@ void main() {
       model.selectLayout(1);
       expect(model.isValid, isTrue);
     });
+
+    test('try selecting by code', () async {
+      model.trySelectLayout('bar');
+      expect(model.selectedLayoutIndex, equals(1));
+      await expectLater(model.onLayoutSelected, emits(1));
+    });
+
+    test('try selecting by invalid code', () async {
+      model.trySelectLayout('invalid');
+      expect(model.selectedLayoutIndex, equals(-1));
+    });
   });
 
   test('apply the system settings', () async {

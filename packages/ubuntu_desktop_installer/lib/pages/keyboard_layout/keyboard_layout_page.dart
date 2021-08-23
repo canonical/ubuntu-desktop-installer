@@ -7,7 +7,10 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../services.dart';
 import '../../widgets.dart';
+import 'keyboard_layout_dialogs.dart';
 import 'keyboard_layout_model.dart';
+
+const _kScrollDuration = Duration(milliseconds: 1);
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
@@ -39,20 +42,30 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
     model.init().then((_) {
       if (model.selectedLayoutIndex > -1) {
-        _layoutListScrollController.scrollToIndex(
-          model.selectedLayoutIndex,
-          preferPosition: AutoScrollPosition.middle,
-          duration: const Duration(milliseconds: 1),
-        );
+        _scrollToLayout(model.selectedLayoutIndex);
       }
       if (model.selectedVariantIndex > -1) {
-        _keyboardVariantListScrollController.scrollToIndex(
-          model.selectedVariantIndex,
-          preferPosition: AutoScrollPosition.middle,
-          duration: const Duration(milliseconds: 1),
-        );
+        _scrollToVariant(model.selectedVariantIndex);
       }
     });
+
+    model.onLayoutSelected.listen(_scrollToLayout);
+  }
+
+  void _scrollToLayout(int index) {
+    _layoutListScrollController.scrollToIndex(
+      index,
+      preferPosition: AutoScrollPosition.middle,
+      duration: _kScrollDuration,
+    );
+  }
+
+  void _scrollToVariant(int index) {
+    _keyboardVariantListScrollController.scrollToIndex(
+      index,
+      preferPosition: AutoScrollPosition.middle,
+      duration: _kScrollDuration,
+    );
   }
 
   @override
@@ -125,8 +138,11 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               alignment: Alignment.centerLeft,
               child: OutlinedButton(
                 child: Text(lang.detectLayout),
-                onPressed: () {
-                  print('TODO: show dialog to detect keyboard layout');
+                onPressed: () async {
+                  final layout = await showDetectKeyboardLayoutDialog(context);
+                  if (layout != null) {
+                    model.trySelectLayout(layout);
+                  }
                 },
               ),
             ),

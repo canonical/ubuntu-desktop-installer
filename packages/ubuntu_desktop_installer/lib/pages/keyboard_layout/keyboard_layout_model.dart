@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -41,6 +42,10 @@ class KeyboardLayoutModel extends ChangeNotifier {
       ? _keyboardService.layouts[_selectedLayoutIndex]
       : null;
 
+  /// Emits keyboard layout changes.
+  Stream<int> get onLayoutSelected => _onLayoutSelected.stream;
+  final _onLayoutSelected = StreamController<int>();
+
   /// Selects the keyboard layout at [index].
   void selectLayout(int index) {
     assert(index > -1 && index < layoutCount);
@@ -50,6 +55,15 @@ class KeyboardLayoutModel extends ChangeNotifier {
         _selectedLayout!.variants?.isNotEmpty == true ? 0 : -1;
     _setXkbMap();
     notifyListeners();
+  }
+
+  /// Tries to find and select a keyboard layout by its code.
+  void trySelectLayout(String code) {
+    final index = _keyboardService.layouts.indexWhere((l) => l.code == code);
+    if (index != -1) {
+      selectLayout(index);
+      _onLayoutSelected.add(index);
+    }
   }
 
   /// The number of available layout variants.
