@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'gsettings.mocks.dart';
 

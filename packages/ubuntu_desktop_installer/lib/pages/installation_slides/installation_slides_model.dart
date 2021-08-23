@@ -1,7 +1,6 @@
-import 'dart:io' as io;
-
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
@@ -67,11 +66,7 @@ class InstallationSlidesModel extends ChangeNotifier {
   }
 
   /// Requests system reboot.
-  Future<void> reboot({
-    @visibleForTesting void Function(int exitCode) exit = io.exit,
-  }) async {
-    // TODO: await for reboot result
-    _client.reboot();
-    exit(0);
+  Future<void> reboot() {
+    return _client.reboot().then((_) => closeWindow());
   }
 }

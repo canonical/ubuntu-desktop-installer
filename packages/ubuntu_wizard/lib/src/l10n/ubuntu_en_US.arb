@@ -1,0 +1,7 @@
+{
+  "@@locale": "en_US",
+
+  "strongPassword": "Strong password",
+  "moderatePassword": "Moderate password",
+  "weakPassword": "Weak password"
+}

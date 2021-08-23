@@ -5,9 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
-import 'package:ubuntu_desktop_installer/widgets/option_card.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'choose_your_look_page_test.mocks.dart';
 

@@ -12,7 +12,7 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
+import 'package:ubuntu_wizard/settings.dart';
 
 import 'gsettings.mocks.dart';
 

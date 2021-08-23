@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wizard_router/wizard_router.dart';
 
-import '../../settings.dart';
 import '../../widgets.dart';
-import '../wizard_page.dart';
 import 'try_or_install_model.dart';
 
 export 'try_or_install_model.dart' show Option;

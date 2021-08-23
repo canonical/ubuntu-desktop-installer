@@ -6,16 +6,10 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'updates_other_software_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(UpdatesOtherSoftwarePage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([UpdateOtherSoftwareModel])
 void main() {
@@ -54,26 +48,26 @@ void main() {
     Type typeOf<T>() => T;
 
     final normalInstallationTile = find.widgetWithText(
-      typeOf<RadioListTile<InstallationMode>>(),
+      typeOf<RadioButton<InstallationMode>>(),
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
     final minimalInstallationTile = find.widgetWithText(
-      typeOf<RadioListTile<InstallationMode>>(),
+      typeOf<RadioButton<InstallationMode>>(),
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);
 
     expect(
       tester
-          .widget<RadioListTile<InstallationMode>>(normalInstallationTile)
+          .widget<RadioButton<InstallationMode>>(normalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
     expect(
       tester
-          .widget<RadioListTile<InstallationMode>>(minimalInstallationTile)
+          .widget<RadioButton<InstallationMode>>(minimalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
@@ -92,13 +86,12 @@ void main() {
     Type typeOf<T>() => T;
 
     final installThirdPartyTile = find.widgetWithText(
-      typeOf<CheckboxListTile>(),
+      typeOf<CheckButton>(),
       tester.lang.installThirdPartyTitle,
     );
     expect(installThirdPartyTile, findsOneWidget);
 
-    expect(
-        tester.widget<CheckboxListTile>(installThirdPartyTile).value, isTrue);
+    expect(tester.widget<CheckButton>(installThirdPartyTile).value, isTrue);
 
     when(model.installThirdParty).thenReturn(false);
 

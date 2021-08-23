@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
-import '../../utils.dart';
 
 /// Models a disk.
 class DiskModel extends ChangeNotifier {

@@ -3,12 +3,11 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../services.dart';
-import '../../settings.dart';
 import '../../widgets.dart';
-import '../wizard_page.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {

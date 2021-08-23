@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/material.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../constants.dart';
 import '../../l10n.dart';
-import '../../utils.dart';
 import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
 

@@ -144,4 +144,58 @@ void main() {
     expect(keyboard.toJson(), equals(json));
     expect(GuidedChoice.fromJson(json), keyboard);
   });
+
+  test('wsl configuration 1 data', () {
+    const conf = WSLConfiguration1Data(
+      customPath: '/mnt/',
+      customMountOpt: '',
+      genHost: true,
+      genResolvconf: true,
+    );
+    const json = <String, dynamic>{
+      'custom_path': '/mnt/',
+      'custom_mount_opt': '',
+      'gen_host': true,
+      'gen_resolvconf': true,
+    };
+    expect(conf.toJson(), equals(json));
+    expect(WSLConfiguration1Data.fromJson(json), conf);
+  });
+
+  test('wsl configuration 2 data', () {
+    const conf = WSLConfiguration2Data(
+      guiTheme: 'default',
+      guiFollowwintheme: true,
+      legacyGui: false,
+      legacyAudio: false,
+      advIpDetect: false,
+      wslMotdNews: true,
+      automount: true,
+      mountfstab: true,
+      customPath: '/mnt/',
+      customMountOpt: '',
+      genHost: true,
+      genResolvconf: true,
+      interopEnabled: true,
+      interopAppendwindowspath: true,
+    );
+    const json = <String, dynamic>{
+      'gui_theme': 'default',
+      'gui_followwintheme': true,
+      'legacy_gui': false,
+      'legacy_audio': false,
+      'adv_ip_detect': false,
+      'wsl_motd_news': true,
+      'automount': true,
+      'mountfstab': true,
+      'custom_path': '/mnt/',
+      'custom_mount_opt': '',
+      'gen_host': true,
+      'gen_resolvconf': true,
+      'interop_enabled': true,
+      'interop_appendwindowspath': true,
+    };
+    expect(conf.toJson(), equals(json));
+    expect(WSLConfiguration2Data.fromJson(json), conf);
+  });
 }
