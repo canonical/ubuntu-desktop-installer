@@ -24,8 +24,9 @@ class PressKeyView extends StatelessWidget {
             const SizedBox(height: kContentSpacing),
             DefaultTextStyle(
               style: Theme.of(context).textTheme.headline5!,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Wrap(
+                spacing: 24,
+                alignment: WrapAlignment.spaceEvenly,
                 children: _step.keys.map((key) => Text(key)).toList(),
               ),
             ),

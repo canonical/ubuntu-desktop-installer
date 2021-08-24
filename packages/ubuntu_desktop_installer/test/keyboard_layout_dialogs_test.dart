@@ -9,6 +9,9 @@ import 'widget_tester_extensions.dart';
 
 void main() {
   testWidgets('press key', (tester) async {
+    tester.binding.window.devicePixelRatioTestValue = 1;
+    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+
     await tester.pumpWidget(
       MaterialApp(
         supportedLocales: AppLocalizations.supportedLocales,

@@ -8,8 +8,8 @@ import 'keyboard_layout_widgets.dart';
 
 const _kKeymapAsset = 'assets/pc105.tree';
 
-const _kDialogWidthFactor = 0.6;
-const _kDialogHeightFactor = 0.1;
+const _kDialogWidthFactor = 0.65;
+const _kDialogHeightFactor = 0.15;
 
 /// Shows a dialog to detect the keyboard layout by asking the user to press
 /// and confirm keys. Returns the keyboard layout code or null if canceled.
