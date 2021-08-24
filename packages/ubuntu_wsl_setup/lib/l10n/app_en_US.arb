@@ -1,0 +1,23 @@
+{
+  "@@locale": "en_US",
+
+  "appTitle": "Ubuntu WSL",
+  "windowTitle": "Ubuntu WSL",
+
+  "backButton": "Go Back",
+  "continueButton": "Continue",
+  "exitButton": "Exit",
+  "finishButton": "Finish",
+  "saveButton": "Save",
+  "setupButton": "Setup",
+
+  "selectLanguageTitle": "Select your language",
+
+  "profileSetupTitle": "Profile setup",
+
+  "advancedSetupTitle": "Advanced setup",
+
+  "configurationUITitle": "Ubuntu WSL configuration UI (experimental)",
+
+  "setupCompleteTitle": "Setup complete"
+}
