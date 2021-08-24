@@ -23,5 +23,5 @@ class LocalizedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      builder(context, AppLocalizations.of(context)!);
+      builder(context, AppLocalizations.of(context));
 }
