@@ -18,12 +18,16 @@ class PressKeyView extends StatelessWidget {
       builder: (context, lang) {
         return Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(lang.pressOneKey),
-            const SizedBox(height: kContentSpacing * 2),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: _step.keys.map((key) => Text(key)).toList(),
+            const SizedBox(height: kContentSpacing),
+            DefaultTextStyle(
+              style: Theme.of(context).textTheme.headline5!,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: _step.keys.map((key) => Text(key)).toList(),
+              ),
             ),
           ],
         );
@@ -45,10 +49,17 @@ class FindKeyView extends StatelessWidget {
       builder: (context, lang) {
         return Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(lang.isKeyPresent),
-            const SizedBox(height: kContentSpacing * 2),
-            Text(_step.key),
+            const SizedBox(height: kContentSpacing),
+            DefaultTextStyle(
+              style: Theme.of(context).textTheme.headline5!,
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(_step.key),
+              ),
+            ),
           ],
         );
       },

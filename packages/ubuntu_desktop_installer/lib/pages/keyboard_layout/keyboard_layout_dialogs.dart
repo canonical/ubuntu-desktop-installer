@@ -8,8 +8,8 @@ import 'keyboard_layout_widgets.dart';
 
 const _kKeymapAsset = 'assets/pc105.tree';
 
-const _kDialogWidthFactor = 0.5;
-const _kDialogHeightFactor = 0.25;
+const _kDialogWidthFactor = 0.6;
+const _kDialogHeightFactor = 0.1;
 
 /// Shows a dialog to detect the keyboard layout by asking the user to press
 /// and confirm keys. Returns the keyboard layout code or null if canceled.
@@ -68,16 +68,16 @@ Future<String?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                   Opacity(
                     opacity: value is FindKeyStep ? 1.0 : 0.0,
                     child: OutlinedButton(
-                      child: Text(lang.yesButtonText),
-                      onPressed: value is FindKeyStep ? keyFound : null,
+                      child: Text(lang.noButtonText),
+                      onPressed: value is FindKeyStep ? keyNotFound : null,
                     ),
                   ),
                   const SizedBox(width: kButtonBarSpacing),
                   Opacity(
                     opacity: value is FindKeyStep ? 1.0 : 0.0,
                     child: OutlinedButton(
-                      child: Text(lang.noButtonText),
-                      onPressed: value is FindKeyStep ? keyNotFound : null,
+                      child: Text(lang.yesButtonText),
+                      onPressed: value is FindKeyStep ? keyFound : null,
                     ),
                   ),
                 ],
