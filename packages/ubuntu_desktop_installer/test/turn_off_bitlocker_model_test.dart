@@ -23,7 +23,7 @@ void main() async {
     final model = TurnOffBitLockerModel(client);
 
     await model.reboot();
-    verify(client.reboot()).called(1);
+    verify(client.reboot(immediate: true)).called(1);
     expect(windowClosed, isTrue);
   });
 }
