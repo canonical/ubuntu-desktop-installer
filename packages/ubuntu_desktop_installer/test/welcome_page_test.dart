@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -8,22 +9,9 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-
-import 'gsettings.mocks.dart';
-
-class SubiquityClientMock extends SubiquityClient {
-  @override
-  Future<String> setLocale(String code) async {
-    return '';
-  }
-
-  @override
-  Future<KeyboardSetup> keyboard() async {
-    return KeyboardSetup(layouts: []);
-  }
-}
 
 void main() {
   late MaterialApp app;
@@ -44,11 +32,13 @@ void main() {
         },
       ),
     );
+    final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
           create: (_) => WelcomeModel(
-            client: SubiquityClientMock(),
+            client: client,
             keyboardService: KeyboardService(),
           ),
         ),

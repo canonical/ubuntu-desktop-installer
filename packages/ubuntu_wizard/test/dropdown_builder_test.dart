@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
 enum TestEnum { foo, bar, baz }
-
-Type typeOf<T>() => T;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +59,7 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(typeOf<DropdownButton<TestEnum>>()));
+    await tester.tap(find.byTypeOf<DropdownButton<TestEnum>>());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text(TestEnum.bar.toString()).last);

@@ -1,13 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlocker_model.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
-import 'installation_slides_model_test.mocks.dart';
-
-@GenerateMocks([SubiquityClient])
 void main() async {
   test('reboot', () async {
     TestWidgetsFlutterBinding.ensureInitialized();

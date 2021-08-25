@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/settings.dart';
-
-import 'gsettings.mocks.dart';
 
 void main() {
   test('set gtk-theme via gsettings', () {

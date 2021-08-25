@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'updates_other_software_page_test.mocks.dart';
@@ -45,8 +46,6 @@ void main() {
     final model = buildModel(installationMode: InstallationMode.normal);
     await tester.pumpWidget(buildApp(tester, model));
 
-    Type typeOf<T>() => T;
-
     final normalInstallationTile = find.widgetWithText(
       typeOf<RadioButton<InstallationMode>>(),
       tester.lang.normalInstallationTitle,
@@ -83,10 +82,8 @@ void main() {
     final model = buildModel(installThirdParty: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    Type typeOf<T>() => T;
-
     final installThirdPartyTile = find.widgetWithText(
-      typeOf<CheckButton>(),
+      CheckButton,
       tester.lang.installThirdPartyTitle,
     );
     expect(installThirdPartyTile, findsOneWidget);
