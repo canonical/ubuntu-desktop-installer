@@ -120,7 +120,7 @@ parts:
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
-      flutter channel dev
+      flutter channel stable
       flutter upgrade
       flutter config --enable-linux-desktop
       flutter doctor
