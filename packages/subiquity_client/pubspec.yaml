@@ -11,8 +11,12 @@ dependencies:
   freezed_annotation: ^0.14.1
   http: ^0.13.1
   json_annotation: ^4.0.1
+  logger:
+    path: ../logger
   path: ^1.8.0
   synchronized: ^3.0.0
+  ubuntu_wizard:
+    path: ../ubuntu_wizard
   xdg_directories: ^0.2.0
 
 dev_dependencies:

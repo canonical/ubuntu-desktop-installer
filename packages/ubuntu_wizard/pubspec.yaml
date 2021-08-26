@@ -16,6 +16,8 @@ dependencies:
   form_field_validator: ^1.1.0
   gsettings: ^0.1.2+1
   intl: ^0.17.0
+  logger:
+    path: ../logger
   password_strength: ^0.2.0
   provider: ^6.0.0
   subiquity_client:
