@@ -40,6 +40,8 @@ class _FakeWSLConfiguration1Data_7 extends _i1.Fake
 class _FakeWSLConfiguration2Data_8 extends _i1.Fake
     implements _i2.WSLConfiguration2Data {}
 
+class _FakeKeyboardStep_9 extends _i1.Fake implements _i2.KeyboardStep {}
+
 /// A class which mocks [SubiquityClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -203,6 +205,12 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
       (super.noSuchMethod(Invocation.method(#setWslConfiguration2, [conf]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<_i2.KeyboardStep> getKeyboardStep([String? step = r'0']) =>
+      (super.noSuchMethod(Invocation.method(#getKeyboardStep, [step]),
+              returnValue:
+                  Future<_i2.KeyboardStep>.value(_FakeKeyboardStep_9()))
+          as _i4.Future<_i2.KeyboardStep>);
   @override
   String toString() => super.toString();
 }
