@@ -71,8 +71,9 @@ class InstallationCompletePage extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      // TODO: request shutdown
-                      io.exit(0);
+                      Provider.of<InstallationCompleteModel>(context,
+                              listen: false)
+                          .shutdown();
                     },
                     child: Text(lang.shutdown),
                   ),
