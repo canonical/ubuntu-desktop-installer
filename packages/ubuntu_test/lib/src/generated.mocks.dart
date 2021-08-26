@@ -8,6 +8,7 @@ import 'package:http/http.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/src/types.dart' as _i2;
 import 'package:subiquity_client/subiquity_client.dart' as _i3;
+import 'package:subiquity_client/subiquity_server.dart' as _i6;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -202,6 +203,26 @@ class MockSubiquityClient extends _i1.Mock implements _i3.SubiquityClient {
       (super.noSuchMethod(Invocation.method(#setWslConfiguration2, [conf]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [SubiquityServer].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSubiquityServer extends _i1.Mock implements _i6.SubiquityServer {
+  MockSubiquityServer() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<String> start(_i6.ServerMode? serverMode, List<String>? args) =>
+      (super.noSuchMethod(Invocation.method(#start, [serverMode, args]),
+          returnValue: Future<String>.value('')) as _i4.Future<String>);
+  @override
+  _i4.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   String toString() => super.toString();
 }
