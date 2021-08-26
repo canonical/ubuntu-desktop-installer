@@ -105,6 +105,12 @@ class _DetectKeyboardLayoutViewState extends State<DetectKeyboardLayoutView> {
   void _handleKey(RawKeyEvent event) {
     if (event is! RawKeyDownEvent) return;
     final data = event.data as RawKeyEventDataLinux;
+    // From Ubiquity:
+    // > FIXME needs to account for possible remapping. Find the API to translate
+    // > kernel keycodes to X keycodes (xkb).
+    //
+    // Refers to `min_key_code = 8` in xkb:
+    // https://github.com/xkbcommon/libxkbcommon/blob/master/src/xkbcomp/keycodes.c#L539
     widget._onKeyPress?.call(data.scanCode - 8);
   }
 
