@@ -20,15 +20,19 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return KeyboardStep.pressKey(symbols: ['a']);
-    });
-    when(client.getKeyboardStep('38')).thenAnswer((_) async {
-      return KeyboardStep.keyPresent(symbol: 'b', yes: '39');
-    });
-    when(client.getKeyboardStep('39')).thenAnswer((_) async {
-      return KeyboardStep.keyPresent(symbol: 'c', no: '40');
+      return KeyboardStep.pressKey(symbols: [
+        'a'
+      ], keycodes: [
+        [30, '40']
+      ]);
     });
     when(client.getKeyboardStep('40')).thenAnswer((_) async {
+      return KeyboardStep.keyPresent(symbol: 'b', yes: '50');
+    });
+    when(client.getKeyboardStep('50')).thenAnswer((_) async {
+      return KeyboardStep.keyPresent(symbol: 'c', no: '60');
+    });
+    when(client.getKeyboardStep('60')).thenAnswer((_) async {
       return KeyboardStep.result(layout: 'd', variant: 'e');
     });
 
@@ -58,7 +62,7 @@ void main() {
     expect(find.text('a'), findsOneWidget);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyA, platform: 'linux');
     await tester.pump();
-    verify(client.getKeyboardStep('38')).called(1);
+    verify(client.getKeyboardStep('40')).called(1);
 
     await tester.pumpAndSettle();
 
@@ -67,12 +71,14 @@ void main() {
     await tester
         .tap(find.widgetWithText(OutlinedButton, tester.lang.yesButtonText));
     await tester.pump();
+    verify(client.getKeyboardStep('50')).called(1);
 
     // c is not present
     expect(find.text('c'), findsOneWidget);
     await tester
         .tap(find.widgetWithText(OutlinedButton, tester.lang.noButtonText));
     await tester.pump();
+    verify(client.getKeyboardStep('60')).called(1);
 
     // result
     expect(await result, equals(StepResult(layout: 'd', variant: 'e')));

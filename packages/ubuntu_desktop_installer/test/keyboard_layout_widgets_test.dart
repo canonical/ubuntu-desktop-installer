@@ -28,10 +28,10 @@ void main() {
     expect(find.text(tester.lang.pressOneKey), findsOneWidget);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyW, platform: 'linux');
-    expect(keyPress, equals(25));
+    expect(keyPress, equals(25 - 8));
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyX, platform: 'linux');
-    expect(keyPress, equals(53));
+    expect(keyPress, equals(53 - 8));
   });
 
   testWidgets('find key', (tester) async {

@@ -12,12 +12,11 @@ import 'keyboard_layout_detector_test.mocks.dart';
 void main() {
   test('init', () async {
     final client = MockSubiquityClient();
-    final detector = KeyboardLayoutDetector(client);
-
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
       return KeyboardStep.pressKey(symbols: ['a', 'b', 'c']);
     });
 
+    final detector = KeyboardLayoutDetector(client);
     await detector.init();
     verify(client.getKeyboardStep(null)).called(1);
 
@@ -27,35 +26,44 @@ void main() {
 
   test('key press', () async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep('12')).thenAnswer((_) async {
-      return KeyboardStep.keyPresent(symbol: '3');
+    when(client.getKeyboardStep(null)).thenAnswer((_) async {
+      return KeyboardStep.pressKey(
+        symbols: ['a', 'b', 'c'],
+        keycodes: [
+          [12, '34']
+        ],
+      );
+    });
+    when(client.getKeyboardStep('34')).thenAnswer((_) async {
+      return KeyboardStep.keyPresent(symbol: '56');
     });
 
     final detector = KeyboardLayoutDetector(client);
+    await detector.init();
 
     final waitNotify = Completer();
     detector.addListener(waitNotify.complete);
 
     detector.press(12);
-    verify(client.getKeyboardStep('12')).called(1);
+    verify(client.getKeyboardStep('34')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);
 
     expect(detector.value, isA<StepKeyPresent>());
-    expect(detector.keyPresent, equals('3'));
+    expect(detector.keyPresent, equals('56'));
   });
 
   test('key present', () async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep('45')).thenAnswer((_) async {
+    when(client.getKeyboardStep('78')).thenAnswer((_) async {
       return KeyboardStep.result(layout: 'is', variant: 'present');
     });
 
     late KeyboardStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: KeyboardStep.keyPresent(symbol: 'y', yes: '45'),
+      value: KeyboardStep.keyPresent(symbol: 'y', yes: '78'),
       onResult: (value) => result = value,
     );
 
@@ -63,7 +71,7 @@ void main() {
     detector.addListener(waitNotify.complete);
 
     detector.yes();
-    verify(client.getKeyboardStep('45')).called(1);
+    verify(client.getKeyboardStep('78')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);
@@ -74,14 +82,14 @@ void main() {
 
   test('key not present', () async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep('67')).thenAnswer((_) async {
+    when(client.getKeyboardStep('90')).thenAnswer((_) async {
       return KeyboardStep.result(layout: 'not', variant: 'present');
     });
 
     late KeyboardStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: KeyboardStep.keyPresent(symbol: 'n', no: '67'),
+      value: KeyboardStep.keyPresent(symbol: 'n', no: '90'),
       onResult: (value) => result = value,
     );
 
@@ -89,7 +97,7 @@ void main() {
     detector.addListener(waitNotify.complete);
 
     detector.no();
-    verify(client.getKeyboardStep('67')).called(1);
+    verify(client.getKeyboardStep('90')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);
