@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
 
 import 'keyboard_layout_model_test.mocks.dart';
 
@@ -27,7 +28,7 @@ const testLayouts = <KeyboardLayout>[
   ),
 ];
 
-@GenerateMocks([KeyboardService, ProcessRunner, SubiquityClient])
+@GenerateMocks([KeyboardService, ProcessRunner])
 void main() {
   late MockProcessRunner processRunner;
   setUp(() {

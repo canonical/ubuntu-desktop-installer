@@ -10,6 +10,6 @@ class TurnOffBitLockerModel {
 
   /// Requests system reboot.
   Future<void> reboot() {
-    return _client.reboot().then((_) => closeWindow());
+    return _client.reboot(immediate: true).then((_) => closeWindow());
   }
 }
