@@ -110,6 +110,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
 
   @override
+  String get configurationUIInteroperabilityHeader => 'Interoperability';
+
+  @override
+  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+
+  @override
+  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+
+  @override
+  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+
+  @override
+  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+
+  @override
+  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+
+  @override
+  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+
+  @override
+  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+
+  @override
+  String get configurationUIWSLNewsTitle => 'WSL News';
+
+  @override
+  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+
+  @override
+  String get configurationUIAutoMountHeader => 'Auto-Mount';
+
+  @override
+  String get configurationUIAutoMountTitle => 'Enabled';
+
+  @override
+  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+
+  @override
+  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+
+  @override
+  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+
+  @override
   String get setupCompleteTitle => 'Setup complete';
 }
 
@@ -218,6 +263,51 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+
+  @override
+  String get configurationUIInteroperabilityHeader => 'Interoperability';
+
+  @override
+  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+
+  @override
+  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+
+  @override
+  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+
+  @override
+  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+
+  @override
+  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+
+  @override
+  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+
+  @override
+  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+
+  @override
+  String get configurationUIWSLNewsTitle => 'WSL News';
+
+  @override
+  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+
+  @override
+  String get configurationUIAutoMountHeader => 'Auto-Mount';
+
+  @override
+  String get configurationUIAutoMountTitle => 'Enabled';
+
+  @override
+  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+
+  @override
+  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+
+  @override
+  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
   String get setupCompleteTitle => 'Setup complete';
