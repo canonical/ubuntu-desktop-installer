@@ -6,13 +6,14 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app.dart';
 
 import 'app_test.mocks.dart';
 
-@GenerateMocks([Settings, SubiquityClient])
+@GenerateMocks([Settings])
 void main() {
   testWidgets('create an app instance', (tester) async {
     final client = MockSubiquityClient();

@@ -21,6 +21,8 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.0.14
   provider: ^5.0.0
+  ubuntu_test:
+    path: ../ubuntu_test
   wizard_router: ^0.1.0+1
 
 flutter:
