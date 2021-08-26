@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
+import 'package:ubuntu_test/mocks.dart';
 
-import 'keyboard_layout_dialogs_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([SubiquityClient])
 void main() {
   testWidgets('detect layout', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;
