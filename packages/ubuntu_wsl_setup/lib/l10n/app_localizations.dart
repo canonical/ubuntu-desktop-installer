@@ -392,6 +392,30 @@ abstract class AppLocalizations {
   /// In en_US, this message translates to:
   /// **'Setup complete'**
   String get setupCompleteTitle;
+
+  /// No description provided for @setupCompleteHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Hi {user},\nYou have successfully completed the setup.'**
+  String setupCompleteHeader(Object user);
+
+  /// No description provided for @setupCompleteUpdate.
+  ///
+  /// In en_US, this message translates to:
+  /// **'It is suggested to run the following command to update Ubuntu to the latest version:'**
+  String get setupCompleteUpdate;
+
+  /// No description provided for @setupCompleteManage.
+  ///
+  /// In en_US, this message translates to:
+  /// **'You can use the builtin ubuntuwsl command to manage your WSL settings:'**
+  String get setupCompleteManage;
+
+  /// No description provided for @setupCompleteRestart.
+  ///
+  /// In en_US, this message translates to:
+  /// **'* All settings will take effect after restarting Ubuntu.'**
+  String get setupCompleteRestart;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -156,6 +156,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get setupCompleteTitle => 'Setup complete';
+
+  @override
+  String setupCompleteHeader(Object user) {
+    return 'Hi $user,\nYou have successfully completed the setup.';
+  }
+
+  @override
+  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+
+  @override
+  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+
+  @override
+  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -311,4 +325,18 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get setupCompleteTitle => 'Setup complete';
+
+  @override
+  String setupCompleteHeader(Object user) {
+    return 'Hi $user,\nYou have successfully completed the setup.';
+  }
+
+  @override
+  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+
+  @override
+  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+
+  @override
+  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
 }

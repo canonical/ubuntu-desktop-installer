@@ -57,5 +57,15 @@
   "configurationUIMountFstabTitle": "Mount /etc/fstab",
   "configurationUIMountFstabSubtitle": "Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???",
 
-  "setupCompleteTitle": "Setup complete"
+  "setupCompleteTitle": "Setup complete",
+  "setupCompleteHeader": "Hi {user},\nYou have successfully completed the setup.",
+  "@setupCompleteHeader": {
+    "type": "text",
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "setupCompleteUpdate": "It is suggested to run the following command to update Ubuntu to the latest version:",
+  "setupCompleteManage": "You can use the builtin ubuntuwsl command to manage your WSL settings:",
+  "setupCompleteRestart": "* All settings will take effect after restarting Ubuntu."
 }
