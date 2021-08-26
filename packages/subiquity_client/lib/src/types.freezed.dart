@@ -4053,3 +4053,563 @@ abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
   _$WSLConfiguration2DataCopyWith<_WSLConfiguration2Data> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
+  switch (json['\$type'] as String) {
+    case 'StepPressKey':
+      return StepPressKey.fromJson(json);
+    case 'StepKeyPresent':
+      return StepKeyPresent.fromJson(json);
+    case 'StepResult':
+      return StepResult.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
+}
+
+/// @nodoc
+class _$KeyboardStepTearOff {
+  const _$KeyboardStepTearOff();
+
+  StepPressKey pressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) {
+    return StepPressKey(
+      symbols: symbols,
+      keycodes: keycodes,
+    );
+  }
+
+  StepKeyPresent keyPresent({String? symbol, String? yes, String? no}) {
+    return StepKeyPresent(
+      symbol: symbol,
+      yes: yes,
+      no: no,
+    );
+  }
+
+  StepResult result({String? layout, String? variant}) {
+    return StepResult(
+      layout: layout,
+      variant: variant,
+    );
+  }
+
+  KeyboardStep fromJson(Map<String, Object> json) {
+    return KeyboardStep.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardStep = _$KeyboardStepTearOff();
+
+/// @nodoc
+mixin _$KeyboardStep {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardStepCopyWith<$Res> {
+  factory $KeyboardStepCopyWith(
+          KeyboardStep value, $Res Function(KeyboardStep) then) =
+      _$KeyboardStepCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$KeyboardStepCopyWithImpl<$Res> implements $KeyboardStepCopyWith<$Res> {
+  _$KeyboardStepCopyWithImpl(this._value, this._then);
+
+  final KeyboardStep _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardStep) _then;
+}
+
+/// @nodoc
+abstract class $StepPressKeyCopyWith<$Res> {
+  factory $StepPressKeyCopyWith(
+          StepPressKey value, $Res Function(StepPressKey) then) =
+      _$StepPressKeyCopyWithImpl<$Res>;
+  $Res call({List<String>? symbols, List<List<dynamic>>? keycodes});
+}
+
+/// @nodoc
+class _$StepPressKeyCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepPressKeyCopyWith<$Res> {
+  _$StepPressKeyCopyWithImpl(
+      StepPressKey _value, $Res Function(StepPressKey) _then)
+      : super(_value, (v) => _then(v as StepPressKey));
+
+  @override
+  StepPressKey get _value => super._value as StepPressKey;
+
+  @override
+  $Res call({
+    Object? symbols = freezed,
+    Object? keycodes = freezed,
+  }) {
+    return _then(StepPressKey(
+      symbols: symbols == freezed
+          ? _value.symbols
+          : symbols // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      keycodes: keycodes == freezed
+          ? _value.keycodes
+          : keycodes // ignore: cast_nullable_to_non_nullable
+              as List<List<dynamic>>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepPressKey')
+class _$StepPressKey implements StepPressKey {
+  const _$StepPressKey({this.symbols, this.keycodes});
+
+  factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
+      _$_$StepPressKeyFromJson(json);
+
+  @override
+  final List<String>? symbols;
+  @override
+  final List<List<dynamic>>? keycodes;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.pressKey(symbols: $symbols, keycodes: $keycodes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepPressKey &&
+            (identical(other.symbols, symbols) ||
+                const DeepCollectionEquality()
+                    .equals(other.symbols, symbols)) &&
+            (identical(other.keycodes, keycodes) ||
+                const DeepCollectionEquality()
+                    .equals(other.keycodes, keycodes)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbols) ^
+      const DeepCollectionEquality().hash(keycodes);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return pressKey(symbols, keycodes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (pressKey != null) {
+      return pressKey(symbols, keycodes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return pressKey(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (pressKey != null) {
+      return pressKey(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
+  }
+}
+
+abstract class StepPressKey implements KeyboardStep {
+  const factory StepPressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
+
+  factory StepPressKey.fromJson(Map<String, dynamic> json) =
+      _$StepPressKey.fromJson;
+
+  List<String>? get symbols => throw _privateConstructorUsedError;
+  List<List<dynamic>>? get keycodes => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepKeyPresentCopyWith<$Res> {
+  factory $StepKeyPresentCopyWith(
+          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
+      _$StepKeyPresentCopyWithImpl<$Res>;
+  $Res call({String? symbol, String? yes, String? no});
+}
+
+/// @nodoc
+class _$StepKeyPresentCopyWithImpl<$Res>
+    extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepKeyPresentCopyWith<$Res> {
+  _$StepKeyPresentCopyWithImpl(
+      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
+      : super(_value, (v) => _then(v as StepKeyPresent));
+
+  @override
+  StepKeyPresent get _value => super._value as StepKeyPresent;
+
+  @override
+  $Res call({
+    Object? symbol = freezed,
+    Object? yes = freezed,
+    Object? no = freezed,
+  }) {
+    return _then(StepKeyPresent(
+      symbol: symbol == freezed
+          ? _value.symbol
+          : symbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+      yes: yes == freezed
+          ? _value.yes
+          : yes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      no: no == freezed
+          ? _value.no
+          : no // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepKeyPresent')
+class _$StepKeyPresent implements StepKeyPresent {
+  const _$StepKeyPresent({this.symbol, this.yes, this.no});
+
+  factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
+      _$_$StepKeyPresentFromJson(json);
+
+  @override
+  final String? symbol;
+  @override
+  final String? yes;
+  @override
+  final String? no;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.keyPresent(symbol: $symbol, yes: $yes, no: $no)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepKeyPresent &&
+            (identical(other.symbol, symbol) ||
+                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
+            (identical(other.yes, yes) ||
+                const DeepCollectionEquality().equals(other.yes, yes)) &&
+            (identical(other.no, no) ||
+                const DeepCollectionEquality().equals(other.no, no)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbol) ^
+      const DeepCollectionEquality().hash(yes) ^
+      const DeepCollectionEquality().hash(no);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return keyPresent(symbol, yes, no);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (keyPresent != null) {
+      return keyPresent(symbol, yes, no);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return keyPresent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (keyPresent != null) {
+      return keyPresent(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
+  }
+}
+
+abstract class StepKeyPresent implements KeyboardStep {
+  const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
+      _$StepKeyPresent;
+
+  factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
+      _$StepKeyPresent.fromJson;
+
+  String? get symbol => throw _privateConstructorUsedError;
+  String? get yes => throw _privateConstructorUsedError;
+  String? get no => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepResultCopyWith<$Res> {
+  factory $StepResultCopyWith(
+          StepResult value, $Res Function(StepResult) then) =
+      _$StepResultCopyWithImpl<$Res>;
+  $Res call({String? layout, String? variant});
+}
+
+/// @nodoc
+class _$StepResultCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepResultCopyWith<$Res> {
+  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
+      : super(_value, (v) => _then(v as StepResult));
+
+  @override
+  StepResult get _value => super._value as StepResult;
+
+  @override
+  $Res call({
+    Object? layout = freezed,
+    Object? variant = freezed,
+  }) {
+    return _then(StepResult(
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepResult')
+class _$StepResult implements StepResult {
+  const _$StepResult({this.layout, this.variant});
+
+  factory _$StepResult.fromJson(Map<String, dynamic> json) =>
+      _$_$StepResultFromJson(json);
+
+  @override
+  final String? layout;
+  @override
+  final String? variant;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.result(layout: $layout, variant: $variant)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepResult &&
+            (identical(other.layout, layout) ||
+                const DeepCollectionEquality().equals(other.layout, layout)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality().equals(other.variant, variant)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(layout) ^
+      const DeepCollectionEquality().hash(variant);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepResultCopyWith<StepResult> get copyWith =>
+      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return result(layout, variant);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (result != null) {
+      return result(layout, variant);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return result(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (result != null) {
+      return result(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
+  }
+}
+
+abstract class StepResult implements KeyboardStep {
+  const factory StepResult({String? layout, String? variant}) = _$StepResult;
+
+  factory StepResult.fromJson(Map<String, dynamic> json) =
+      _$StepResult.fromJson;
+
+  String? get layout => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepResultCopyWith<StepResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
