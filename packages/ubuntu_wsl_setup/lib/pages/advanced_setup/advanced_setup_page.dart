@@ -11,12 +11,6 @@ import 'advanced_setup_model.dart';
 part 'advanced_setup_utils.dart';
 part 'advanced_setup_widgets.dart';
 
-// The spacing between text form fields and checkmark icons.
-const _kIconSpacing = 10.0;
-
-// The fraction of the content width in relation to the page.
-const _kContentWidthFraction = 0.7;
-
 /// WSL Advanced setup page.
 ///
 /// See also:
@@ -59,7 +53,7 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
       title: Text(lang.advancedSetupTitle),
       header: Text(lang.advancedSetupHeader),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldWidth = constraints.maxWidth * _kContentWidthFraction;
+        final fieldWidth = constraints.maxWidth * kContentWidthFraction;
         final fieldPadding =
             EdgeInsets.symmetric(horizontal: kContentPadding.left);
         return ListView(

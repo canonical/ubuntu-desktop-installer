@@ -16,7 +16,6 @@ class _UsernameFormField extends StatelessWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      spacing: _kIconSpacing,
       labelText: lang.profileSetupUsernameHint,
       helperText: lang.profileSetupUsernameHelper,
       successWidget: const SuccessIcon(),
@@ -55,7 +54,6 @@ class _PasswordFormField extends StatelessWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      spacing: _kIconSpacing,
       labelText: lang.profileSetupPasswordHint,
       obscureText: true,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
@@ -89,7 +87,6 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      spacing: _kIconSpacing,
       obscureText: true,
       labelText: lang.profileSetupConfirmPasswordHint,
       successWidget: const SuccessIcon(),

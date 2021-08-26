@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
+// The spacing between the form field and the success icon.
+const _kIconSpacing = 10.0;
+
 /// A [TextFormField] rewarding a validated input with a specific widget.
 ///
 /// See also:
@@ -59,7 +62,7 @@ class ValidatedFormField extends StatefulWidget {
     this.helperText,
     this.obscureText = false,
     this.successWidget,
-    this.spacing,
+    this.spacing = _kIconSpacing,
     this.fieldWidth,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);

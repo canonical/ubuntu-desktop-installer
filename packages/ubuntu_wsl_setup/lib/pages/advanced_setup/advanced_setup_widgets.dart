@@ -14,7 +14,6 @@ class _MountLocationFormField extends StatelessWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      spacing: _kIconSpacing,
       labelText: lang.advancedSetupMountLocationHint,
       helperText: lang.advancedSetupMountLocationHelper,
       initialValue: mountLocation,
@@ -44,7 +43,6 @@ class _MountOptionFormField extends StatelessWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      spacing: _kIconSpacing,
       labelText: lang.advancedSetupMountOptionHint,
       helperText: lang.advancedSetupMountOptionHelper,
       initialValue: mountOption,

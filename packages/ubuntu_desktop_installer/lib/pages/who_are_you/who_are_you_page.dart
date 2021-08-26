@@ -11,14 +11,8 @@ import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';
 
-// The spacing between text form fields and checkmark icons.
-const _kIconSpacing = 10.0;
-
 // The horizontal indentation of the radio button.
 const _kRadioButtonIndentation = 36.0;
-
-// The fraction of the content width in relation to the page.
-const _kContentWidthFraction = 0.7;
 
 /// The installer page for setting up the user data.
 ///
@@ -61,7 +55,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           final fieldPadding = EdgeInsets.symmetric(
               horizontal: kContentPadding.left, vertical: 10);
           final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-              _kContentWidthFraction;
+              kContentWidthFraction;
 
           return Form(
             key: _whoAreYouFormKey,
