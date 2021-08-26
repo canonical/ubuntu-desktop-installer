@@ -27,6 +27,18 @@
   "profileSetupPasswordMismatch": "The passwords do not match",
 
   "advancedSetupTitle": "Advanced setup",
+  "advancedSetupHeader": "In this page, you can tweak Ubuntu WSL to your needs.",
+  "advancedSetupMountLocationHint": "Mount location",
+  "advancedSetupMountLocationHelper": "Location for the automount",
+  "advancedSetupMountLocationInvalid": "The location is invalid",
+  "advancedSetupMountOptionHint": "Mount option",
+  "advancedSetupMountOptionHelper": "Mount option passed for the automount",
+  "advancedSetupHostGenerationTitle": "Enable Host Generation",
+  "advancedSetupHostGenerationSubtitle": "Selecting enables /etc/hosts re-generation at every start.",
+  "advancedSetupResolvConfGenerationTitle": "Enable resolv.conf Generation",
+  "advancedSetupResolvConfGenerationSubtitle": "Selecting enables /etc/resolv.conf re-generation at every start.",
+  "advancedSetupGUIIntegrationTitle": "GUI Integration",
+  "advancedSetupGUIIntegrationSubtitle": "Selecting enables automatic DISPLAY environment set-up. Third-party X server required.",
 
   "configurationUITitle": "Ubuntu WSL configuration UI (experimental)",
 

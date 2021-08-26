@@ -71,6 +71,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get advancedSetupTitle => 'Advanced setup';
 
   @override
+  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+
+  @override
+  String get advancedSetupMountLocationHint => 'Mount location';
+
+  @override
+  String get advancedSetupMountLocationHelper => 'Location for the automount';
+
+  @override
+  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+
+  @override
+  String get advancedSetupMountOptionHint => 'Mount option';
+
+  @override
+  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+
+  @override
+  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+
+  @override
+  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+
+  @override
+  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+
+  @override
+  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+
+  @override
+  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+
+  @override
+  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+
+  @override
   String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
 
   @override
@@ -143,6 +179,42 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get advancedSetupTitle => 'Advanced setup';
+
+  @override
+  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+
+  @override
+  String get advancedSetupMountLocationHint => 'Mount location';
+
+  @override
+  String get advancedSetupMountLocationHelper => 'Location for the automount';
+
+  @override
+  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+
+  @override
+  String get advancedSetupMountOptionHint => 'Mount option';
+
+  @override
+  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+
+  @override
+  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+
+  @override
+  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+
+  @override
+  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+
+  @override
+  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+
+  @override
+  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+
+  @override
+  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
   String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';

@@ -219,6 +219,78 @@ abstract class AppLocalizations {
   /// **'Advanced setup'**
   String get advancedSetupTitle;
 
+  /// No description provided for @advancedSetupHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'In this page, you can tweak Ubuntu WSL to your needs.'**
+  String get advancedSetupHeader;
+
+  /// No description provided for @advancedSetupMountLocationHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Mount location'**
+  String get advancedSetupMountLocationHint;
+
+  /// No description provided for @advancedSetupMountLocationHelper.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Location for the automount'**
+  String get advancedSetupMountLocationHelper;
+
+  /// No description provided for @advancedSetupMountLocationInvalid.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The location is invalid'**
+  String get advancedSetupMountLocationInvalid;
+
+  /// No description provided for @advancedSetupMountOptionHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Mount option'**
+  String get advancedSetupMountOptionHint;
+
+  /// No description provided for @advancedSetupMountOptionHelper.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Mount option passed for the automount'**
+  String get advancedSetupMountOptionHelper;
+
+  /// No description provided for @advancedSetupHostGenerationTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Enable Host Generation'**
+  String get advancedSetupHostGenerationTitle;
+
+  /// No description provided for @advancedSetupHostGenerationSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Selecting enables /etc/hosts re-generation at every start.'**
+  String get advancedSetupHostGenerationSubtitle;
+
+  /// No description provided for @advancedSetupResolvConfGenerationTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Enable resolv.conf Generation'**
+  String get advancedSetupResolvConfGenerationTitle;
+
+  /// No description provided for @advancedSetupResolvConfGenerationSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Selecting enables /etc/resolv.conf re-generation at every start.'**
+  String get advancedSetupResolvConfGenerationSubtitle;
+
+  /// No description provided for @advancedSetupGUIIntegrationTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'GUI Integration'**
+  String get advancedSetupGUIIntegrationTitle;
+
+  /// No description provided for @advancedSetupGUIIntegrationSubtitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.'**
+  String get advancedSetupGUIIntegrationSubtitle;
+
   /// No description provided for @configurationUITitle.
   ///
   /// In en_US, this message translates to:
