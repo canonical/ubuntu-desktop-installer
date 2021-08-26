@@ -22,6 +22,7 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   gtk_window_set_default_size(window, 960, 680);
+  gtk_window_set_resizable(window, FALSE);
   gtk_widget_show(GTK_WIDGET(window));
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
