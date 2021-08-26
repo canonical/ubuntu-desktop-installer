@@ -41,18 +41,16 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
     model.init().then((_) {
-      if (model.selectedLayoutIndex > -1) {
-        _scrollToLayout(model.selectedLayoutIndex);
-      }
-      if (model.selectedVariantIndex > -1) {
-        _scrollToVariant(model.selectedVariantIndex);
-      }
+      _scrollToLayout(model.selectedLayoutIndex);
+      _scrollToVariant(model.selectedVariantIndex);
     });
 
     model.onLayoutSelected.listen(_scrollToLayout);
+    model.onVariantSelected.listen(_scrollToVariant);
   }
 
   void _scrollToLayout(int index) {
+    if (index == -1) return;
     _layoutListScrollController.scrollToIndex(
       index,
       preferPosition: AutoScrollPosition.middle,
@@ -61,6 +59,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   }
 
   void _scrollToVariant(int index) {
+    if (index == -1) return;
     _keyboardVariantListScrollController.scrollToIndex(
       index,
       preferPosition: AutoScrollPosition.middle,
@@ -139,9 +138,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               child: OutlinedButton(
                 child: Text(lang.detectLayout),
                 onPressed: () async {
-                  final layout = await showDetectKeyboardLayoutDialog(context);
-                  if (layout != null) {
-                    model.trySelectLayout(layout);
+                  final result = await showDetectKeyboardLayoutDialog(context);
+                  if (result != null) {
+                    model.trySelectLayoutVariant(result.layout, result.variant);
                   }
                 },
               ),

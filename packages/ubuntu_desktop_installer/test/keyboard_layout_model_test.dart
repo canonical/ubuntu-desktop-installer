@@ -275,15 +275,17 @@ void main() {
       expect(model.isValid, isTrue);
     });
 
-    test('try selecting by code', () async {
-      model.trySelectLayout('bar');
+    test('try selecting by codes', () async {
+      model.trySelectLayoutVariant('bar', 'qux');
       expect(model.selectedLayoutIndex, equals(1));
+      expect(model.selectedVariantIndex, equals(1));
       await expectLater(model.onLayoutSelected, emits(1));
     });
 
-    test('try selecting by invalid code', () async {
-      model.trySelectLayout('invalid');
+    test('try selecting by invalid codes', () async {
+      model.trySelectLayoutVariant('invalid', 'none');
       expect(model.selectedLayoutIndex, equals(-1));
+      expect(model.selectedVariantIndex, equals(-1));
     });
   });
 

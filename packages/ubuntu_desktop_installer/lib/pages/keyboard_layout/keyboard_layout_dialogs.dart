@@ -1,53 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
 import '../../widgets.dart';
 import 'keyboard_layout_detector.dart';
 import 'keyboard_layout_widgets.dart';
 
-const _kKeymapAsset = 'assets/pc105.tree';
-
 const _kDialogWidthFactor = 0.65;
 const _kDialogHeightFactor = 0.15;
 
 /// Shows a dialog to detect the keyboard layout by asking the user to press
-/// and confirm keys. Returns the keyboard layout code or null if canceled.
-Future<String?> showDetectKeyboardLayoutDialog(BuildContext context) async {
-  final detector = KeyboardLayoutDetector.fromData(
-    await rootBundle.loadString(_kKeymapAsset),
-  );
-  final step = ValueNotifier(detector.step(0));
+/// and confirm keys. Returns the result with a keyboard layout and variant
+/// codes or null if canceled.
+Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
+  final client = Provider.of<SubiquityClient>(context, listen: false);
 
-  return showDialog<String?>(
+  return showDialog<StepResult?>(
     context: context,
     builder: (context) {
-      String? nextStep() {
-        final next = step.value?.next();
-        if (next != null) {
-          final value = detector.step(next);
-          if (value is KeymapResultStep) {
-            Navigator.of(context).pop(value.keymap);
-          }
-          step.value = value;
-        }
-      }
-
-      void keyFound() {
-        (step.value as FindKeyStep).found();
-        nextStep();
-      }
-
-      void keyNotFound() {
-        (step.value as FindKeyStep).notFound();
-        nextStep();
-      }
+      final detector = KeyboardLayoutDetector(client, onResult: (result) {
+        Navigator.of(context).pop(result);
+      });
+      detector.init();
 
       return LocalizedView(
         builder: (context, lang) {
-          return ValueListenableBuilder<KeyboardLayoutStep?>(
-            valueListenable: step,
-            builder: (context, value, _) {
+          return ValueListenableBuilder<KeyboardStep?>(
+            valueListenable: detector,
+            builder: (context, step, _) {
               final size = MediaQuery.of(context).size;
               return AlertDialog(
                 title: Text(lang.detectLayout),
@@ -60,24 +42,31 @@ Future<String?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                   width: size.width * _kDialogWidthFactor,
                   height: size.height * _kDialogHeightFactor,
                   child: DetectKeyboardLayoutView(
-                    step: value,
-                    onNextStep: nextStep,
+                    pressKey: detector.pressKey,
+                    keyPresent: detector.keyPresent,
+                    onKeyPress: detector.press,
                   ),
                 ),
                 actions: <Widget>[
-                  Opacity(
-                    opacity: value is FindKeyStep ? 1.0 : 0.0,
+                  Visibility(
+                    maintainSize: true,
+                    maintainState: true,
+                    maintainAnimation: true,
+                    visible: step is StepKeyPresent,
                     child: OutlinedButton(
                       child: Text(lang.noButtonText),
-                      onPressed: value is FindKeyStep ? keyNotFound : null,
+                      onPressed: step is StepKeyPresent ? detector.no : null,
                     ),
                   ),
                   const SizedBox(width: kButtonBarSpacing),
-                  Opacity(
-                    opacity: value is FindKeyStep ? 1.0 : 0.0,
+                  Visibility(
+                    maintainSize: true,
+                    maintainState: true,
+                    maintainAnimation: true,
+                    visible: step is StepKeyPresent,
                     child: OutlinedButton(
                       child: Text(lang.yesButtonText),
-                      onPressed: value is FindKeyStep ? keyFound : null,
+                      onPressed: step is StepKeyPresent ? detector.yes : null,
                     ),
                   ),
                 ],

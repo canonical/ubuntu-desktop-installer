@@ -3,14 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
 import '../../widgets.dart';
-import 'keyboard_layout_detector.dart';
 
 /// Asks the user to press one of keys.
 class PressKeyView extends StatelessWidget {
   /// Creates a view.
-  const PressKeyView(this._step, {Key? key}) : super(key: key);
+  const PressKeyView(this._pressKey, {Key? key}) : super(key: key);
 
-  final PressKeyStep _step;
+  final List<String> _pressKey;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class PressKeyView extends StatelessWidget {
               child: Wrap(
                 spacing: 24,
                 alignment: WrapAlignment.spaceEvenly,
-                children: _step.keys.map((key) => Text(key)).toList(),
+                children: _pressKey.map((key) => Text(key)).toList(),
               ),
             ),
           ],
@@ -37,12 +36,12 @@ class PressKeyView extends StatelessWidget {
   }
 }
 
-/// Asks the user to confirm whether a key exists.
-class FindKeyView extends StatelessWidget {
+/// Asks the user to confirm whether a key is present.
+class KeyPresentView extends StatelessWidget {
   /// Creates a view.
-  const FindKeyView(this._step, {Key? key}) : super(key: key);
+  const KeyPresentView(this._keyPresent, {Key? key}) : super(key: key);
 
-  final FindKeyStep _step;
+  final String _keyPresent;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +57,7 @@ class FindKeyView extends StatelessWidget {
               style: Theme.of(context).textTheme.headline5!,
               child: Align(
                 alignment: Alignment.center,
-                child: Text(_step.key),
+                child: Text(_keyPresent),
               ),
             ),
           ],
@@ -73,14 +72,17 @@ class DetectKeyboardLayoutView extends StatefulWidget {
   /// Creates a keyboard layout detection view.
   const DetectKeyboardLayoutView({
     Key? key,
-    required KeyboardLayoutStep? step,
-    required VoidCallback onNextStep,
-  })  : _step = step,
-        _onNextStep = onNextStep,
+    String? keyPresent,
+    List<String>? pressKey,
+    ValueChanged<int>? onKeyPress,
+  })  : _keyPresent = keyPresent,
+        _pressKey = pressKey,
+        _onKeyPress = onKeyPress,
         super(key: key);
 
-  final KeyboardLayoutStep? _step;
-  final VoidCallback _onNextStep;
+  final String? _keyPresent;
+  final List<String>? _pressKey;
+  final ValueChanged<int>? _onKeyPress;
 
   @override
   _DetectKeyboardLayoutViewState createState() =>
@@ -101,11 +103,9 @@ class _DetectKeyboardLayoutViewState extends State<DetectKeyboardLayoutView> {
   }
 
   void _handleKey(RawKeyEvent event) {
-    if (event is! RawKeyDownEvent || widget._step is! PressKeyStep) return;
+    if (event is! RawKeyDownEvent) return;
     final data = event.data as RawKeyEventDataLinux;
-    final step = widget._step as PressKeyStep;
-    step.press(data.scanCode);
-    widget._onNextStep();
+    widget._onKeyPress?.call(data.scanCode - 8);
   }
 
   @override
@@ -116,10 +116,8 @@ class _DetectKeyboardLayoutViewState extends State<DetectKeyboardLayoutView> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (widget._step is PressKeyStep)
-              PressKeyView(widget._step as PressKeyStep),
-            if (widget._step is FindKeyStep)
-              FindKeyView(widget._step as FindKeyStep),
+            if (widget._pressKey != null) PressKeyView(widget._pressKey!),
+            if (widget._keyPresent != null) KeyPresentView(widget._keyPresent!),
           ],
         ),
       );
