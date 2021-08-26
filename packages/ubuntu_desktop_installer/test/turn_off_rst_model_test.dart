@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:ubuntu_test/mocks.dart';
 
 void main() async {
   test('reboot', () async {
