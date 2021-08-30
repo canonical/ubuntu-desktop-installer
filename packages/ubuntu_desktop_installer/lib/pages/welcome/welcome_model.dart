@@ -2,23 +2,23 @@ import 'dart:ui';
 
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:tuple/tuple.dart';
 
-import '../../keyboard_model.dart';
+import '../../l10n.dart';
+import '../../services.dart';
 
 /// Implements the business logic of the welcome page.
 class WelcomeModel extends ChangeNotifier {
-  /// Creates a model with the specified [client] and [keyboardModel].
+  /// Creates a model with the specified [client] and [keyboardService].
   WelcomeModel({
     required SubiquityClient client,
-    required KeyboardModel keyboardModel,
+    required KeyboardService keyboardService,
   })  : _client = client,
-        _keyboardModel = keyboardModel;
+        _keyboardService = keyboardService;
 
   final SubiquityClient _client;
-  final KeyboardModel _keyboardModel;
+  final KeyboardService _keyboardService;
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -46,15 +46,16 @@ class WelcomeModel extends ChangeNotifier {
         removeDiacritics(a.item2).compareTo(removeDiacritics(b.item2)));
   }
 
-  /// Loads keyboard model for the currently selected locale.
-  Future<void> loadKeyboardModel() => _keyboardModel.load(_client);
+  /// Loads keyboards for the currently selected locale.
+  Future<void> loadKeyboards() => _keyboardService.load(_client);
 
   /// Returns the locale for the given language [index].
   Locale locale(int index) => _languageList[index].item1;
 
   /// Applies the given [locale].
   Future<void> applyLocale(Locale locale) {
-    return _client.setLocale(locale.languageCode);
+    return _client
+        .setLocale('${locale.languageCode}_${locale.countryCode}.UTF-8');
   }
 
   /// Returns the number of languages.

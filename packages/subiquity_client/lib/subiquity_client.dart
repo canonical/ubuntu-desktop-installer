@@ -14,8 +14,8 @@ class SubiquityClient {
     _client = HttpUnixClient(socketPath);
   }
 
-  void close() {
-    _client.close();
+  Future<void> close() {
+    return _client.flush().then((_) => _client.close());
   }
 
   Future<void> checkStatus(String method, StreamedResponse response) async {
@@ -34,13 +34,11 @@ class SubiquityClient {
     return responseStr.replaceAll('"', '');
   }
 
-  // Note: subiquity's locale endpoint actually takes a language code, not a
-  // full locale (see https://bugs.launchpad.net/subiquity/+bug/1934114).
-  Future<void> setLocale(String code) async {
+  Future<void> setLocale(String locale) async {
     final request = Request('POST', Uri.http('localhost', 'locale'));
-    request.body = '"$code"';
+    request.body = '"$locale"';
     final response = await _client.send(request);
-    await checkStatus('setLocale("$code")', response);
+    await checkStatus('setLocale("$locale")', response);
   }
 
   Future<KeyboardSetup> keyboard() async {
@@ -108,6 +106,22 @@ class SubiquityClient {
         "setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
+  Future<TimezoneData> timezone() async {
+    final request = Request('GET', Uri.http('localhost', 'timezone'));
+    final response = await _client.send(request);
+    await checkStatus("timezone()", response);
+
+    final timezoneJson = jsonDecode(await response.stream.bytesToString());
+    return TimezoneData.fromJson(timezoneJson);
+  }
+
+  Future<void> setTimezone(String timezone) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'timezone', {'tz': '"$timezone"'}));
+    final response = await _client.send(request);
+    await checkStatus('setTimezone("$timezone")', response);
+  }
+
   Future<SSHData> ssh() async {
     final request = Request('GET', Uri.http('localhost', 'ssh'));
     final response = await _client.send(request);
@@ -162,6 +176,27 @@ class SubiquityClient {
     await checkStatus('confirm("$tty")', response);
   }
 
+  /// Returns whether RST is turned on.
+  Future<bool> hasRst() async {
+    final request = Request('GET', Uri.http('localhost', 'storage/has_rst'));
+    final response = await _client.send(request);
+    await checkStatus("hasRst()", response);
+
+    final responseBool = await response.stream.bytesToString();
+    return responseBool == 'true';
+  }
+
+  /// Returns whether any disks contain BitLocker partitions.
+  Future<bool> hasBitLocker() async {
+    final request =
+        Request('GET', Uri.http('localhost', 'storage/has_bitlocker'));
+    final response = await _client.send(request);
+    await checkStatus("hasBitLocker()", response);
+
+    final responseJson = jsonDecode(await response.stream.bytesToString());
+    return (responseJson as List).isNotEmpty;
+  }
+
   /// Get guided disk options.
   Future<GuidedStorageResponse> getGuidedStorage(int minSize, bool wait) async {
     final request = Request(
@@ -194,5 +229,53 @@ class SubiquityClient {
     request.body = jsonEncode(config);
     final response = await _client.send(request);
     await checkStatus("setStorage(${jsonEncode(config)})", response);
+  }
+
+  Future<void> reboot({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"REBOOT"', 'immediate': '$immediate'}));
+    await _client.write(request);
+  }
+
+  Future<void> shutdown({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"POWEROFF"', 'immediate': '$immediate'}));
+    await _client.write(request);
+  }
+
+  Future<WSLConfiguration1Data> wslConfiguration1() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconf1'));
+    final response = await _client.send(request);
+    await checkStatus("wslconf1()", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return WSLConfiguration1Data.fromJson(json);
+  }
+
+  Future<void> setWslConfiguration1(WSLConfiguration1Data conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconf1'));
+    request.body = jsonEncode(conf.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setWslconf1(${jsonEncode(conf.toJson())})", response);
+  }
+
+  Future<WSLConfiguration2Data> wslConfiguration2() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconf2'));
+    final response = await _client.send(request);
+    await checkStatus("wslconf2()", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return WSLConfiguration2Data.fromJson(json);
+  }
+
+  Future<void> setWslConfiguration2(WSLConfiguration2Data conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconf2'));
+    request.body = jsonEncode(conf.toJson());
+    final response = await _client.send(request);
+    await checkStatus("setWslconf2(${jsonEncode(conf.toJson())})", response);
   }
 }

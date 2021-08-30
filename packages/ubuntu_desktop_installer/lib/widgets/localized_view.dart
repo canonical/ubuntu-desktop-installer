@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../l10n.dart';
 
 /// The signature of the builder callback with access to localized strings.
 typedef LocalizedViewBuilder = Widget Function(
@@ -22,5 +23,5 @@ class LocalizedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      builder(context, AppLocalizations.of(context)!);
+      builder(context, AppLocalizations.of(context));
 }

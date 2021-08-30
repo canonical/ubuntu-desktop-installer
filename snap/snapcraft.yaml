@@ -41,7 +41,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: d49d35bc6643b063f085d870ea94a53677ae141c
+    source-commit: 3673687e867eeb88a3e7fd72587a75d5fc811f5a
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -79,7 +79,7 @@ parts:
     build-packages: [python-setuptools, build-essential, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
     source: https://github.com/canonical/probert.git
     source-type: git
-    source-commit: 51e7f1915b44ab792f46706026119a1fde39e49d
+    source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
     requirements: [requirements.txt]
 
   subiquitydeps:
@@ -120,7 +120,7 @@ parts:
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
-      flutter channel dev
+      flutter channel stable
       flutter upgrade
       flutter config --enable-linux-desktop
       flutter doctor

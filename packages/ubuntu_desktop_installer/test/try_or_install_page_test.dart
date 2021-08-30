@@ -1,37 +1,68 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
-import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
-import 'simple_navigator_observer.dart';
+import 'try_or_install_page_test.mocks.dart';
 
+@GenerateMocks([Settings])
 void main() {
-  late SimpleNavigatorObserver observer;
   late MaterialApp app;
+  late TryOrInstallModel model;
 
   Future<void> setUpApp(WidgetTester tester) async {
-    observer = SimpleNavigatorObserver();
+    model = TryOrInstallModel();
+    final settings = MockSettings();
+    when(settings.locale).thenReturn(Locale('en'));
+
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: Locale('en'),
-      initialRoute: Routes.tryOrInstall,
-      navigatorObservers: [observer],
-      routes: <String, WidgetBuilder>{
-        Routes.tryOrInstall: TryOrInstallPage.create,
-        Routes.repairUbuntu: (context) => Container(),
-        Routes.tryUbuntu: (context) => Container(),
-        Routes.keyboardLayout: (context) => Container(),
-      },
+      home: Wizard(
+        routes: {
+          Routes.tryOrInstall: (_) => TryOrInstallPage(),
+          Routes.repairUbuntu: (context) => Text(Routes.repairUbuntu),
+          Routes.tryUbuntu: (context) => Text(Routes.tryUbuntu),
+          Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
+        },
+        onNext: (settings) {
+          switch (settings.name) {
+            case Routes.tryOrInstall:
+              switch (model.option) {
+                case Option.repairUbuntu:
+                  return Routes.repairUbuntu;
+                case Option.tryUbuntu:
+                  return Routes.tryUbuntu;
+                case Option.installUbuntu:
+                  return Routes.keyboardLayout;
+                default:
+                  break;
+              }
+          }
+        },
+      ),
     );
-    await tester.pumpWidget(app);
-    expect(observer.pushed.length, 1);
-    expect(observer.pushed.first.settings.name, Routes.tryOrInstall);
+
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: model, child: app),
+        ChangeNotifierProvider<Settings>.value(value: settings),
+      ],
+      child: app,
+    ));
+
+    expect(find.byType(TryOrInstallPage), findsOneWidget);
   }
 
   testWidgets('should open release notes', (tester) async {
@@ -111,9 +142,10 @@ void main() {
       await tester.pump();
 
       await tester.tap(continueButton);
+      await tester.pumpAndSettle();
 
-      expect(observer.pushed.length, 2);
-      expect(observer.pushed.last.settings.name, key);
+      expect(find.byType(TryOrInstallPage), findsNothing);
+      expect(find.text(key), findsOneWidget);
     });
   });
 }

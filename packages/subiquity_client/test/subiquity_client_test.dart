@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -9,8 +11,8 @@ void main() {
   var _socketPath;
 
   setUpAll(() async {
-    _socketPath =
-        await _testServer.start(ServerMode.DRY_RUN, 'examples/simple.json');
+    _socketPath = await _testServer.start(
+        ServerMode.DRY_RUN, ['--machine-config', 'examples/simple.json']);
     _client.open(_socketPath);
   });
 
@@ -20,8 +22,8 @@ void main() {
   });
 
   test('locale', () async {
-    await _client.setLocale('en_US');
-    expect(await _client.locale(), 'en_US');
+    await _client.setLocale('en_US.UTF-8');
+    expect(await _client.locale(), 'en_US.UTF-8');
   });
 
   test('keyboard', () async {
@@ -38,6 +40,16 @@ void main() {
     expect(kb.setting?.variant, '');
     expect(kb.setting?.toggle, null);
     expect(kb.layouts, isNotEmpty);
+  });
+
+  test('has rst', () async {
+    var rst = await _client.hasRst();
+    expect(rst, isFalse);
+  });
+
+  test('has bitlocker', () async {
+    var bitLocker = await _client.hasBitLocker();
+    expect(bitLocker, isFalse);
   });
 
   test('guided storage', () async {
@@ -121,6 +133,28 @@ void main() {
     expect(id.cryptedPassword, '');
     expect(id.hostname, '');
   });
+
+  test('timezone', () async {
+    final systemTimezone =
+        Process.runSync('timedatectl', ['show', '-p', 'Timezone', '--value'])
+            .stdout
+            .toString()
+            .trim();
+    var tzdata = await _client.timezone();
+    expect(tzdata.timezone, systemTimezone);
+
+    try {
+      await _client.setTimezone('Pacific/Guam');
+      tzdata = await _client.timezone();
+      expect(tzdata.timezone, 'Pacific/Guam');
+      expect(tzdata.fromGeoIP, isFalse);
+    } finally {
+      // Restore initial timezone to leave the test system in a clean state
+      await _client.setTimezone(systemTimezone);
+    }
+  },
+      skip:
+          'fails on headless test systems (CI) because subiquity calls `timedatectl set-timezone`, which requires sudo');
 
   test('ssh', () async {
     var newSsh = SSHData(

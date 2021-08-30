@@ -26,11 +26,16 @@ Bugs are also tracked as [GitHub issues](https://github.com/canonical/ubuntu-des
 
 Translations for the Ubuntu desktop installer are managed with [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
 
-The template containing all the messages to be translated lives in `lib/l10n/app_en.arb`. When starting translations for a new language, that file needs to be copied to `lib/l10n/app_LANGCODE.arb` (e.g. `lib/l10n/app_fr.arb`), and messages should be translated in this new file.
+The templates containing all the messages to be translated live in `packages/ubuntu_desktop_installer/lib/l10n/app_en.arb` and `packages/ubuntu_wizard/lib/l10n/ubuntu_en.arb`.
+When starting translations for a new language, those files need to be copied to `app_LANGCODE.arb` in the respective directories (e.g. `app_fr.arb` and `ubuntu_fr.arb`), and messages should be translated in these new files.
 
-When new messages are added in the source code, they also need to be added to the translation template.
+When new messages are added in the source code, they also need to be added to the appropriate translation template.
 
-The translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
+The `ubuntu_wizard` library requires re-generating `ubuntu_localizations.dart` and `ubuntu_localizations_LANGCODE.dart` by running `flutter gen-l10n`.
+The `ubuntu_desktop_installer` application requires no further steps as it auto-generates `app_localizations.dart` and `app_localizations_LANGCODE.dart` at build time.
+
+The `app_en.arb` translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
+
 
 ## Code Generation
 

@@ -19,7 +19,7 @@ jobs:
 
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'dev'
+        channel: 'stable'
 
     - name: Enable Linux desktop support
       run: flutter config --enable-linux-desktop
@@ -31,10 +31,10 @@ jobs:
       run: sudo apt update && sudo apt install lcov
 
     # subiquity
-    
+
     - name: Get subiquity dependencies
       working-directory: ./packages/subiquity_client/subiquity
-      run: sudo apt update && make install_deps && sudo apt install python3-curtin
+      run: sudo ./scripts/installdeps.sh
 
     # test all packages
 
@@ -56,3 +56,6 @@ jobs:
     
     - name: Check for any analyzer issues
       run: melos run analyze
+
+    - name: Check for any outdated generated files
+      run: git clean -xdf && melos run generate && git diff --exit-code

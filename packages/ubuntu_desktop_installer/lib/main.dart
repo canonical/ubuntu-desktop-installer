@@ -1,45 +1,37 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_wizard/app.dart';
 
-import 'app.dart';
-import 'app_theme.dart';
-import 'keyboard_model.dart';
-import 'l10n/app_localizations.dart';
+import 'installer.dart';
+import 'services.dart';
 
-Future<void> main() async {
-  final themeSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+void main(List<String> args) {
+  final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('machine-config',
+        valueHelp: 'path',
+        defaultsTo: 'examples/simple.json',
+        help: 'Path of the machine config (dry-run only)');
+  })!;
+
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
-  if (Platform.environment['LIVE_RUN'] == '1') {
-    await subiquityServer.start(ServerMode.LIVE).then(subiquityClient.open);
-  } else {
-    await subiquityServer
-        .start(ServerMode.DRY_RUN, 'examples/simple.json')
-        .then(subiquityClient.open);
-  }
-
-  WidgetsFlutterBinding.ensureInitialized();
-  await setupAppLocalizations();
-  runApp(MultiProvider(
-    providers: [
-      Provider(
-          create: (_) => subiquityClient,
-          lazy: false,
-          dispose: (_, __) {
-            subiquityClient.close();
-            subiquityServer.stop();
-          }),
-      ChangeNotifierProvider(
-        create: (_) => AppTheme(themeSettings),
-      ),
-      ChangeNotifierProvider(create: (_) => KeyboardModel()),
+  runWizardApp(
+    UbuntuDesktopInstallerApp(),
+    subiquityClient: subiquityClient,
+    subiquityServer: subiquityServer,
+    serverMode:
+        options['dry-run'] == true ? ServerMode.DRY_RUN : ServerMode.LIVE,
+    serverArgs: [
+      if (options['machine-config'] != null) ...[
+        '--machine-config',
+        options['machine-config'],
+      ],
     ],
-    child: UbuntuDesktopInstallerApp(),
-  ));
+    providers: [
+      Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => KeyboardService()),
+    ],
+  );
 }

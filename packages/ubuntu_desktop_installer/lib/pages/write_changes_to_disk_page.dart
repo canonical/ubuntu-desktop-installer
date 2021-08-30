@@ -1,18 +1,19 @@
 import 'dart:convert';
 
-import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import '../routes.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
+import '../services.dart';
 import '../widgets.dart';
-import 'wizard_page.dart';
 
 class WriteChangesToDiskPage extends StatefulWidget {
   const WriteChangesToDiskPage({
     Key? key,
   }) : super(key: key);
+
+  static Widget create(BuildContext context) => WriteChangesToDiskPage();
 
   @override
   _WriteChangesToDiskPageState createState() => _WriteChangesToDiskPageState();
@@ -35,7 +36,7 @@ class _DiskObject {
         serial = json['serial'] ?? '',
         path = json['path'],
         name = json['name'],
-        wipe = json['wipe'],
+        wipe = json['wipe'] ?? '',
         preserve = json['preserve'],
         grubDevice = json['grub_device'];
 
@@ -121,8 +122,14 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   final List<_PartitionChangeComposite> _partitionChanges = [];
 
   @override
+  void initState() {
+    super.initState();
+    final model = Provider.of<DiskStorageService>(context, listen: false);
+    _storageConfig = model.storageConfig;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    _storageConfig = ModalRoute.of(context)!.settings.arguments as List?;
     print(
         'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
     for (var entry in _storageConfig!) {
@@ -141,7 +148,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           _mounts.add(_MountObject.fromJson(entry));
           break;
         default:
-          assert(false, 'Unexpected storage config type');
+          print('Unexpected storage config type: ${entry['type']}');
       }
     }
     for (var partition in _partitions) {
@@ -187,7 +194,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.writeChangesToDisk),
-              content: Column(children: <Widget>[
+              content: ListView(children: <Widget>[
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(lang.writeChangesDescription)),
@@ -253,33 +260,17 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
               actions: <WizardAction>[
                 WizardAction(
                   label: lang.backButtonText,
-                  onActivated: Navigator.of(context).pop,
+                  onActivated: Wizard.of(context).back,
                 ),
                 WizardAction(
                   label: lang.continueButtonText,
                   onActivated: () async {
                     final client =
                         Provider.of<SubiquityClient>(context, listen: false);
-
-                    // Use the default values for a number of endpoints
-                    // for which a UI page isn't implemented yet.
-                    await client.markConfigured(
-                        ['mirror', 'proxy', 'network', 'ssh', 'snaplist']);
-
-                    // Define a default identity until a UI page is implemented
-                    // for it.
-                    final identity = IdentityData(
-                        realname: 'Ubuntu',
-                        username: 'ubuntu',
-                        cryptedPassword: Crypt.sha512('ubuntu').toString(),
-                        hostname: 'ubuntu-desktop');
-                    await client.setIdentity(identity);
-
                     await client.setStorage(_storageConfig!);
-
                     await client.confirm('/dev/tty1');
 
-                    Navigator.pushNamed(context, Routes.chooseYourLook);
+                    Wizard.of(context).next();
                   },
                 ),
               ],
