@@ -26,5 +26,4 @@ dev_dependencies:
   wizard_router: ^0.1.0+1
 
 flutter:
-  generate: true
   uses-material-design: true
