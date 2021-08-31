@@ -84,6 +84,7 @@ void main() {
         home: Material(
           child: ValidatedFormField(
             fieldWidth: 123,
+            spacing: 45,
           ),
         ),
       ),
@@ -100,7 +101,7 @@ void main() {
           child: Center(
             child: SizedBox(
               width: 123,
-              child: ValidatedFormField(),
+              child: ValidatedFormField(spacing: 45),
             ),
           ),
         ),
@@ -108,7 +109,7 @@ void main() {
     );
 
     final field = find.byType(TextFormField);
-    expect(tester.getRect(field).width, equals(123));
+    expect(tester.getRect(field).width, equals(123 - 45));
   });
 
   testWidgets('icon baseline alignment', (tester) async {

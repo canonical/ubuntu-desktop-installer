@@ -14,3 +14,6 @@ const kHeaderPadding = EdgeInsets.fromLTRB(24, 24, 24, 0);
 
 /// The padding around the footer.
 const kFooterPadding = EdgeInsets.fromLTRB(24, 0, 24, 24);
+
+/// The fraction of content width in relation to the page.
+const kContentWidthFraction = 0.7;

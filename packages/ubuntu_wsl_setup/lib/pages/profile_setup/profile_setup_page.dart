@@ -13,12 +13,6 @@ import 'profile_setup_model.dart';
 
 part 'profile_setup_widgets.dart';
 
-// The spacing between text form fields and checkmark icons.
-const _kIconSpacing = 10.0;
-
-// The fraction of the content width in relation to the page.
-const _kContentWidthFraction = 0.7;
-
 /// WSL Profile setup page.
 ///
 /// See also:
@@ -66,7 +60,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
         final fieldPadding = EdgeInsets.symmetric(
             horizontal: kContentPadding.left, vertical: 12);
         final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-            _kContentWidthFraction;
+            kContentWidthFraction;
 
         return ListView(
           children: <Widget>[
