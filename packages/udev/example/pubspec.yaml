@@ -7,4 +7,4 @@ environment:
 dependencies:
   udev:
     path: ../
-  nm: ^0.2.0
+  nm: ^0.4.0
