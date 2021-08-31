@@ -34,7 +34,6 @@ dev_dependencies:
     path: ../ubuntu_test
 
 flutter:
-  generate: true
   plugin:
     platforms:
       linux:
