@@ -66,7 +66,7 @@ class UdevDevice {
 
   void _dispose() => Udev.lib!.udev_device_unref(_udev_device);
 
-  /// Model model (`ID_MODEL_FROM_DATABASE`).
+  /// Model name (`ID_MODEL_FROM_DATABASE`).
   String get model => _getPropertyValue("ID_MODEL_FROM_DATABASE");
 
   /// Vendor name (`ID_VENDOR_FROM_DATABASE`).
