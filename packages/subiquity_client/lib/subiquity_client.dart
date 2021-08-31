@@ -278,4 +278,14 @@ class SubiquityClient {
     final response = await _client.send(request);
     await checkStatus("setWslconf2(${jsonEncode(conf.toJson())})", response);
   }
+
+  Future<KeyboardStep> getKeyboardStep([String? step = '0']) async {
+    final request = Request('GET',
+        Uri.http('localhost', 'keyboard/steps', {'index': '"${step ?? 0}"'}));
+    final response = await _client.send(request);
+    await checkStatus("getKeyboardStep($step)", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return KeyboardStep.fromJson(json);
+  }
 }

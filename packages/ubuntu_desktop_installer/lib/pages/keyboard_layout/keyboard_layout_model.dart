@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -41,15 +42,37 @@ class KeyboardLayoutModel extends ChangeNotifier {
       ? _keyboardService.layouts[_selectedLayoutIndex]
       : null;
 
+  /// Emits keyboard layout selection changes.
+  Stream<int> get onLayoutSelected => _onLayoutSelected.stream;
+  final _onLayoutSelected = StreamController<int>();
+
+  /// Emits keyboard layout variant selection changes.
+  Stream<int> get onVariantSelected => _onVariantSelected.stream;
+  final _onVariantSelected = StreamController<int>();
+
   /// Selects the keyboard layout at [index].
-  void selectLayout(int index) {
+  void selectLayout(int index, [int variant = 0]) {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
     _selectedVariantIndex =
-        _selectedLayout!.variants?.isNotEmpty == true ? 0 : -1;
+        _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
     _setXkbMap();
     notifyListeners();
+  }
+
+  /// Tries to find and select a keyboard layout and variant.
+  void trySelectLayoutVariant(String? layout, String? variant) {
+    final layoutIndex =
+        _keyboardService.layouts.indexWhere((l) => l.code == layout);
+    if (layoutIndex != -1) {
+      final variantIndex = _keyboardService.layouts[layoutIndex].variants
+              ?.indexWhere((v) => v.code == variant) ??
+          -1;
+      selectLayout(layoutIndex, variantIndex);
+      _onLayoutSelected.add(layoutIndex);
+      _onVariantSelected.add(variantIndex);
+    }
   }
 
   /// The number of available layout variants.
