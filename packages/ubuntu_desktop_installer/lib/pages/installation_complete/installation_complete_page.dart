@@ -61,7 +61,7 @@ class InstallationCompletePage extends StatelessWidget {
                       onPressed: () {
                         Provider.of<InstallationCompleteModel>(context,
                                 listen: false)
-                            .reboot();
+                            .reboot(immediate: false);
                       },
                       child: Text(
                         lang.restartInto(
@@ -73,7 +73,7 @@ class InstallationCompletePage extends StatelessWidget {
                     onPressed: () {
                       Provider.of<InstallationCompleteModel>(context,
                               listen: false)
-                          .shutdown();
+                          .shutdown(immediate: false);
                     },
                     child: Text(lang.shutdown),
                   ),

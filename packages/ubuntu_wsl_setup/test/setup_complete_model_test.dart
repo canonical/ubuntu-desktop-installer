@@ -32,7 +32,7 @@ void main() {
     final client = MockSubiquityClient();
     final model = SetupCompleteModel(client);
 
-    await model.reboot();
+    await model.reboot(immediate: false);
     verify(client.reboot(immediate: false)).called(1);
     expect(windowClosed, isTrue);
   });

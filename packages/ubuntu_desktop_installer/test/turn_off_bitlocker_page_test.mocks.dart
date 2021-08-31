@@ -33,14 +33,14 @@ class MockTurnOffBitLockerModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#client),
           returnValue: _FakeSubiquityClient_0()) as _i2.SubiquityClient);
   @override
-  _i4.Future<void> reboot({bool? immediate = true}) => (super.noSuchMethod(
+  String toString() => super.toString();
+  @override
+  _i4.Future<void> reboot({bool? immediate}) => (super.noSuchMethod(
       Invocation.method(#reboot, [], {#immediate: immediate}),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  String toString() => super.toString();
-  @override
-  _i4.Future<void> shutdown({bool? immediate = false}) => (super.noSuchMethod(
+  _i4.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
       Invocation.method(#shutdown, [], {#immediate: immediate}),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);

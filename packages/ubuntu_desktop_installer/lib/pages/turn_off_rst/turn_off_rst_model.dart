@@ -8,9 +8,4 @@ class TurnOffRSTModel with SystemShutdown {
 
   @override
   final SubiquityClient client;
-
-  /// Requests an immediate system reboot.
-  Future<void> reboot({bool immediate = true}) {
-    return super.reboot(immediate: immediate);
-  }
 }
