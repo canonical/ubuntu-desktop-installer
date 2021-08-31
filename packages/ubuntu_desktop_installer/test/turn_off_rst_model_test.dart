@@ -19,7 +19,7 @@ void main() async {
     final client = MockSubiquityClient();
     final model = TurnOffRSTModel(client);
 
-    await model.reboot();
+    await model.reboot(immediate: true);
     verify(client.reboot(immediate: true)).called(1);
     expect(windowClosed, isTrue);
   });
