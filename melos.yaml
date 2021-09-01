@@ -44,6 +44,11 @@ scripts:
     melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" -- \
      flutter gen-l10n
 
+  # run integration tests in all packages
+  integration_test: >
+    melos exec -c 1 --fail-fast --dir-exists=integration_test -- \
+      flutter test integration_test
+
   # run tests in all packages
   test: >
     melos exec -c 1 --fail-fast --dir-exists=test -- \
