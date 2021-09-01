@@ -22,6 +22,7 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    command-chain: [ bin/gl-check ]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
@@ -117,6 +118,7 @@ parts:
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/gl-check $SNAPCRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
@@ -157,6 +159,7 @@ parts:
       - libpciaccess0
       - libvulkan1
       - shared-mime-info 
+      - mesa-utils # needed for gl-check
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
@@ -190,6 +193,7 @@ parts:
       - usr/bin/update-mime-database
       - usr/bin/gdk*
       - usr/share/mime
+      - usr/bin/glxinfo
 
   dri-no-patchelf:
     after: [libraries]

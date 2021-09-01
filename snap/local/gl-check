@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if $SNAP/usr/bin/glxinfo | grep "direct rendering: No" >/dev/null; then
+	echo "software rendering required"
+	export LIBGL_ALWAYS_SOFTWARE=1
+fi
+
+exec "$@"
