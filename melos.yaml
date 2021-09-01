@@ -39,6 +39,16 @@ scripts:
     melos exec -c 1 --fail-fast --depends-on="build_runner" -- \
       dart run build_runner build --delete-conflicting-outputs
 
+  # run gen-l10n to generate localizations in all packages
+  gen-l10n:
+    melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" -- \
+     flutter gen-l10n
+
+  # run integration tests in all packages
+  integration_test: >
+    melos exec -c 1 --fail-fast --dir-exists=integration_test -- \
+      flutter test integration_test
+
   # run tests in all packages
   test: >
     melos exec -c 1 --fail-fast --dir-exists=test -- \

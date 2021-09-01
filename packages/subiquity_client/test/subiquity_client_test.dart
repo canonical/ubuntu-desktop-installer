@@ -205,4 +205,35 @@ void main() {
   test('confirm', () async {
     await _client.confirm('1');
   });
+
+  test('keyboard detection steps', () async {
+    // This test is trying to avoid making too many assumptions on the test
+    // data, but a few steps are assumed to be of certain types to be able to
+    // test all three step types.
+
+    // assumes that step 0 is a key press step
+    final step0 = await _client.getKeyboardStep();
+    expect(step0, isA<StepPressKey>());
+    final stepPressKey = step0 as StepPressKey;
+    expect(stepPressKey.symbols, isNotEmpty);
+    expect(stepPressKey.keycodes, isNotEmpty);
+    expect(stepPressKey.keycodes!.first, hasLength(2));
+    expect(stepPressKey.keycodes!.first.first, isA<int>());
+    expect(stepPressKey.keycodes!.first.last, isA<String>());
+
+    // assumes that step 2 is a result step
+    final step2 = await _client.getKeyboardStep('2');
+    expect(step2, isA<StepResult>());
+    final stepResult = step2 as StepResult;
+    expect(stepResult.layout, isNotEmpty);
+    expect(stepResult.variant, isNotEmpty);
+
+    // assumes that step 3 is a result step
+    final step3 = await _client.getKeyboardStep('3');
+    expect(step3, isA<StepKeyPresent>());
+    final stepKeyPresent = step3 as StepKeyPresent;
+    expect(stepKeyPresent.symbol, isNotEmpty);
+    expect(stepKeyPresent.yes, isNotEmpty);
+    expect(stepKeyPresent.no, isNotEmpty);
+  });
 }

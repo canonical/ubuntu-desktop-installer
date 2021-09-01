@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-
-Type typeOf<T>() => T;
 
 void main() {
   testWidgets('contains radio and labels', (tester) async {
@@ -25,19 +24,19 @@ void main() {
     );
     expect(find.text('title'), findsOneWidget);
     expect(find.text('subtitle'), findsOneWidget);
-    expect(find.byType(typeOf<Radio<int>>()), findsOneWidget);
+    expect(find.byTypeOf<Radio<int>>(), findsOneWidget);
 
     await tester
         .pumpWidget(builder(title: const Text('title'), subtitle: null));
     expect(find.text('title'), findsOneWidget);
     expect(find.text('subtitle'), findsNothing);
-    expect(find.byType(typeOf<Radio<int>>()), findsOneWidget);
+    expect(find.byTypeOf<Radio<int>>(), findsOneWidget);
 
     await tester
         .pumpWidget(builder(title: null, subtitle: const Text('subtitle')));
     expect(find.text('title'), findsNothing);
     expect(find.text('subtitle'), findsOneWidget);
-    expect(find.byType(typeOf<Radio<int>>()), findsOneWidget);
+    expect(find.byTypeOf<Radio<int>>(), findsOneWidget);
   });
 
   testWidgets('the labels react to taps', (tester) async {

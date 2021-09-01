@@ -40,6 +40,6 @@ void main() {
     expect(restartButton, findsOneWidget);
 
     await tester.tap(restartButton);
-    verify(model.reboot()).called(1);
+    verify(model.reboot(immediate: true)).called(1);
   });
 }

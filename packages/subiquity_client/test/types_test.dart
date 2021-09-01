@@ -198,4 +198,54 @@ void main() {
     expect(conf.toJson(), equals(json));
     expect(WSLConfiguration2Data.fromJson(json), conf);
   });
+
+  test('keyboard layout key press step', () {
+    const step = StepPressKey(
+      symbols: ['z'],
+      keycodes: [
+        [21, '2'],
+        [44, '3']
+      ],
+    );
+    final json = <String, dynamic>{
+      'symbols': ['z'],
+      'keycodes': [
+        [21, '2'],
+        [44, '3']
+      ],
+      '\$type': 'StepPressKey',
+    };
+    expect(step.toJson(), equals(json));
+    expect(StepPressKey.fromJson(json), step);
+  });
+
+  test('keyboard layout key present step', () {
+    const step = KeyboardStep.keyPresent(
+      symbol: 'ö',
+      yes: '9',
+      no: '4',
+    );
+    final json = <String, dynamic>{
+      'symbol': 'ö',
+      'yes': '9',
+      'no': '4',
+      '\$type': 'StepKeyPresent',
+    };
+    expect(step.toJson(), equals(json));
+    expect(KeyboardStep.fromJson(json), step);
+  });
+
+  test('keyboard layout result step', () {
+    const step = StepResult(
+      layout: 'de',
+      variant: 'nodeadkeys',
+    );
+    final json = <String, dynamic>{
+      'layout': 'de',
+      'variant': 'nodeadkeys',
+      '\$type': 'StepResult',
+    };
+    expect(step.toJson(), equals(json));
+    expect(StepResult.fromJson(json), step);
+  });
 }

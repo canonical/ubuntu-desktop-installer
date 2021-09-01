@@ -1,0 +1,71 @@
+{
+  "@@locale": "en_US",
+
+  "appTitle": "Ubuntu WSL",
+  "windowTitle": "Ubuntu WSL",
+
+  "backButton": "Go Back",
+  "continueButton": "Continue",
+  "exitButton": "Exit",
+  "finishButton": "Finish",
+  "saveButton": "Save",
+  "setupButton": "Setup",
+
+  "selectLanguageTitle": "Select your language",
+
+  "profileSetupTitle": "Profile setup",
+  "profileSetupHeader": "Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "profileSetupUsernameHint": "Pick a username",
+  "profileSetupUsernameHelper": "The username does not need to match your windows username.",
+  "profileSetupPasswordHint": "Choose a password",
+  "profileSetupConfirmPasswordHint": "Confirm your password",
+  "profileSetupShowAdvancedOptions": "Show advanced options next page",
+  "profileSetupPasswordMismatch": "The passwords do not match",
+  "profileSetupUsernameRequired": "A username is required",
+  "profileSetupUsernameInvalid": "The username is invalid",
+  "profileSetupPasswordRequired": "A password is required",
+  "profileSetupPasswordMismatch": "The passwords do not match",
+
+  "advancedSetupTitle": "Advanced setup",
+  "advancedSetupHeader": "In this page, you can tweak Ubuntu WSL to your needs.",
+  "advancedSetupMountLocationHint": "Mount location",
+  "advancedSetupMountLocationHelper": "Location for the automount",
+  "advancedSetupMountLocationInvalid": "The location is invalid",
+  "advancedSetupMountOptionHint": "Mount option",
+  "advancedSetupMountOptionHelper": "Mount option passed for the automount",
+  "advancedSetupHostGenerationTitle": "Enable Host Generation",
+  "advancedSetupHostGenerationSubtitle": "Selecting enables /etc/hosts re-generation at every start.",
+  "advancedSetupResolvConfGenerationTitle": "Enable resolv.conf Generation",
+  "advancedSetupResolvConfGenerationSubtitle": "Selecting enables /etc/resolv.conf re-generation at every start.",
+  "advancedSetupGUIIntegrationTitle": "GUI Integration",
+  "advancedSetupGUIIntegrationSubtitle": "Selecting enables automatic DISPLAY environment set-up. Third-party X server required.",
+
+  "configurationUITitle": "Ubuntu WSL configuration UI (experimental)",
+  "configurationUIInteroperabilityHeader": "Interoperability",
+  "configurationUILegacyGUIIntegrationTitle": "Legacy GUI Integration",
+  "configurationUILegacyGUIIntegrationSubtitle": "This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.",
+  "configurationUILegacyAudioIntegrationTitle": "Legacy Audio Integration",
+  "configurationUILegacyAudioIntegrationSubtitle": "This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.",
+  "configurationUIAdvancedIPDetectionTitle": "Advanced IP Detection",
+  "configurationUIAdvancedIPDetectionSubtitle": "This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.",
+  "configurationUIMessageOfTheDayHeader": "Message Of The Day (MOTD)",
+  "configurationUIWSLNewsTitle": "WSL News",
+  "configurationUIWSLNewsSubtitle": "This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.",
+  "configurationUIAutoMountHeader": "Auto-Mount",
+  "configurationUIAutoMountTitle": "Enabled",
+  "configurationUIAutoMountSubtitle": "Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.",
+  "configurationUIMountFstabTitle": "Mount /etc/fstab",
+  "configurationUIMountFstabSubtitle": "Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???",
+
+  "setupCompleteTitle": "Setup complete",
+  "setupCompleteHeader": "Hi {user},\nYou have successfully completed the setup.",
+  "@setupCompleteHeader": {
+    "type": "text",
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "setupCompleteUpdate": "It is suggested to run the following command to update Ubuntu to the latest version:",
+  "setupCompleteManage": "You can use the builtin ubuntuwsl command to manage your WSL settings:",
+  "setupCompleteRestart": "* All settings will take effect after restarting Ubuntu."
+}

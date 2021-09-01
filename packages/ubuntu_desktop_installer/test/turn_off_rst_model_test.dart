@@ -1,14 +1,10 @@
 import 'package:flutter/services.dart';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
+import 'package:ubuntu_test/mocks.dart';
 
-import 'turn_off_rst_model_test.mocks.dart';
-
-@GenerateMocks([SubiquityClient])
 void main() async {
   test('reboot', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -23,8 +19,8 @@ void main() async {
     final client = MockSubiquityClient();
     final model = TurnOffRSTModel(client);
 
-    await model.reboot();
-    verify(client.reboot()).called(1);
+    await model.reboot(immediate: true);
+    verify(client.reboot(immediate: true)).called(1);
     expect(windowClosed, isTrue);
   });
 }

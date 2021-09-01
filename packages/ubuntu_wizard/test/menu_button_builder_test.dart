@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_test/utils.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
 enum TestEnum { foo, bar, baz }
-
-Type typeOf<T>() => T;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +24,7 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(typeOf<PopupMenuButton<TestEnum>>()));
+    await tester.tap(find.byTypeOf<PopupMenuButton<TestEnum>>());
     await tester.pumpAndSettle();
 
     expect(find.byIcon(Icons.arrow_drop_down), findsOneWidget);
@@ -49,12 +48,12 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(typeOf<PopupMenuButton<TestEnum>>()));
+    await tester.tap(find.byTypeOf<PopupMenuButton<TestEnum>>());
     await tester.pumpAndSettle();
 
     final item = find.ancestor(
       of: find.text(TestEnum.bar.toString()),
-      matching: find.byType(typeOf<CheckedPopupMenuItem<TestEnum>>()),
+      matching: find.byTypeOf<CheckedPopupMenuItem<TestEnum>>(),
     );
     expect(tester.widget<CheckedPopupMenuItem<TestEnum>>(item).checked, isTrue);
   });
@@ -75,7 +74,7 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(typeOf<PopupMenuButton<TestEnum>>()));
+    await tester.tap(find.byTypeOf<PopupMenuButton<TestEnum>>());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text(TestEnum.baz.toString()).last);

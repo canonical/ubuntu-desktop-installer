@@ -231,8 +231,19 @@ class SubiquityClient {
     await checkStatus("setStorage(${jsonEncode(config)})", response);
   }
 
-  Future<void> reboot() async {
-    final request = Request('POST', Uri.http('localhost', 'reboot'));
+  Future<void> reboot({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"REBOOT"', 'immediate': '$immediate'}));
+    await _client.write(request);
+  }
+
+  Future<void> shutdown({bool immediate = false}) async {
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'shutdown',
+            {'mode': '"POWEROFF"', 'immediate': '$immediate'}));
     await _client.write(request);
   }
 
@@ -266,5 +277,15 @@ class SubiquityClient {
     request.body = jsonEncode(conf.toJson());
     final response = await _client.send(request);
     await checkStatus("setWslconf2(${jsonEncode(conf.toJson())})", response);
+  }
+
+  Future<KeyboardStep> getKeyboardStep([String? step = '0']) async {
+    final request = Request('GET',
+        Uri.http('localhost', 'keyboard/steps', {'index': '"${step ?? 0}"'}));
+    final response = await _client.send(request);
+    await checkStatus("getKeyboardStep($step)", response);
+
+    final json = jsonDecode(await response.stream.bytesToString());
+    return KeyboardStep.fromJson(json);
   }
 }

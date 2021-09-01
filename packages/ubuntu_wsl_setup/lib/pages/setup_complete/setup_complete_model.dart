@@ -1,0 +1,24 @@
+import 'package:flutter/foundation.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
+
+/// Implements the business logic of the WSL Setup complete page.
+class SetupCompleteModel extends ChangeNotifier with SystemShutdown {
+  /// Creates a setup complete model.
+  SetupCompleteModel(this.client) {
+    _identity.addListener(notifyListeners);
+  }
+
+  @override
+  final SubiquityClient client;
+
+  final _identity = ValueNotifier(IdentityData());
+
+  /// The username for the profile.
+  String get username => _identity.value.username ?? '';
+
+  /// Initializes the model.
+  Future<void> init() {
+    return client.identity().then((identity) => _identity.value = identity);
+  }
+}

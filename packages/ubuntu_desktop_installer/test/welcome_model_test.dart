@@ -4,13 +4,13 @@ import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
 
 import 'welcome_model_test.mocks.dart';
 
-@GenerateMocks([KeyboardService, SubiquityClient])
+@GenerateMocks([KeyboardService])
 void main() {
   test('load keyboard model', () async {
     final client = MockSubiquityClient();

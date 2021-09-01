@@ -17,7 +17,6 @@ git submodule update --init --recursive
 Install and configure Flutter:
 ```sh
 snap install flutter --classic
-flutter channel dev
 flutter upgrade
 flutter config --enable-linux-desktop
 ```
@@ -28,7 +27,6 @@ cd packages/subiquity_client
 dart pub get
 cd subiquity
 make install_deps
-sudo apt install python3-curtin
 cd ../../ubuntu_desktop_installer
 flutter pub get
 ```

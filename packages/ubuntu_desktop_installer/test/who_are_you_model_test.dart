@@ -1,13 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'who_are_you_model_test.mocks.dart';
-
-@GenerateMocks([SubiquityClient])
 void main() {
   test('load identity', () async {
     const identity = IdentityData(
