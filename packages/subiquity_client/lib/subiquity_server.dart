@@ -67,8 +67,25 @@ abstract class SubiquityServer {
       workingDirectory: subiquityPath,
       environment: _getEnvironment(subiquityPath),
     ).then((process) {
-      stdout.addStream(process.stdout);
-      stderr.addStream(process.stderr);
+      try {
+        stdout.addStream(process.stdout);
+        stderr.addStream(process.stderr);
+        // ignore: avoid_catching_errors
+      } on StateError catch (_) {
+        // StreamSink (Stdout/Stderr) cannot be bound to multiple streams:
+        // "Bad state: StreamSink is already bound to a stream".
+        //
+        // This is not a problem under normal circumstances, because we only
+        // have a single server process. However, integration tests start and
+        // stop the server multiple times from the same parent process.
+        //
+        // Therefore, ignore the error in debug mode for integration testing.
+        const kReleaseMode = bool.fromEnvironment('dart.vm.product');
+        const kProfileMode = bool.fromEnvironment('dart.vm.profile');
+        if (kReleaseMode == true || kProfileMode == true) {
+          rethrow;
+        }
+      }
       return process;
     });
 
