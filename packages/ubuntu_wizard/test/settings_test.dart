@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -28,6 +30,12 @@ void main() {
     ]);
     expect(settings.theme, equals(ThemeMode.dark));
     expect(wasNotified, isTrue);
+  });
+
+  testWidgets('init locale', (tester) async {
+    tester.binding.window.localeTestValue = const Locale('fr', 'FR');
+    final settings = Settings(MockGSettings());
+    expect(settings.locale, equals(Locale('fr', 'FR')));
   });
 
   test('set locale', () {
