@@ -5,22 +5,23 @@ import 'package:logging/logging.dart' as log;
 import 'package:logging_appenders/logging_appenders.dart';
 import 'package:path/path.dart' as p;
 
+// ignore: avoid_classes_with_only_static_members
 /// Defines available logging levels.
 abstract class LogLevel {
   /// All messages, including debug output.
-  static const debug = const log.Level('DEBUG', 0);
+  static const debug = log.Level('DEBUG', 0);
 
   /// Info, warning, and error messages.
-  static const info = const log.Level('INFO', 1);
+  static const info = log.Level('INFO', 1);
 
   /// Warning and error messages only.
-  static const warning = const log.Level('WARNING', 2);
+  static const warning = log.Level('WARNING', 2);
 
   /// Error messages only.
-  static const error = const log.Level('ERROR', 3);
+  static const error = log.Level('ERROR', 3);
 
   /// No logging output.
-  static const none = const log.Level('NONE', 99);
+  static const none = log.Level('NONE', 99);
 
   /// Resolves logging level from a string.
   static log.Level? fromString(String? level) {
@@ -33,11 +34,10 @@ abstract class LogLevel {
 
 /// A logger that prints to the console and writes to a log file.
 class Logger {
+  /// Creates a named logger.
   Logger(String name) : _logger = log.Logger(name);
 
   final log.Logger _logger;
-
-  late final String path;
 
   /// Setup logging with the given level and log file path.
   static void setup({
