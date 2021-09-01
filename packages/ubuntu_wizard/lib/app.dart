@@ -1,8 +1,11 @@
+import 'dart:async';
 import 'dart:io' as io;
 
 import 'package:args/args.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
+import 'package:logger/logger.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -13,7 +16,8 @@ import 'l10n.dart';
 import 'settings.dart';
 import 'utils.dart';
 
-export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
+/// @internal
+final log = Logger(_appName);
 
 /// Initializes and runs the given [app].
 ///
@@ -21,13 +25,24 @@ export 'package:subiquity_client/subiquity_server.dart' show ServerMode;
 /// wizard variants and for testing purposes.
 Future<void> runWizardApp(
   Widget app, {
+  ArgResults? options,
   required SubiquityClient subiquityClient,
   required SubiquityServer subiquityServer,
-  required ServerMode serverMode,
   List<String>? serverArgs,
   List<SingleChildWidget>? providers,
 }) async {
   final interfaceSettings = GSettings(schemaId: 'org.gnome.desktop.interface');
+
+  if (options != null) {
+    Logger.setup(
+      path: _resolveLogPath(options['log-file']),
+      level: LogLevel.fromString(options['log-level']),
+    );
+  }
+
+  final serverMode = options == null || options['dry-run'] == true
+      ? ServerMode.DRY_RUN
+      : ServerMode.LIVE;
 
   await subiquityServer
       .start(serverMode, serverArgs)
@@ -52,15 +67,38 @@ Future<void> runWizardApp(
     await subiquityServer.stop();
   });
 
-  runApp(MultiProvider(
-    providers: [
-      Provider.value(value: subiquityClient),
-      ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
-      ...?providers,
-    ],
-    child: app,
-  ));
+  runZonedGuarded(() {
+    FlutterError.onError = (error) {
+      log.error('Unhandled exception', error.exception, error.stack);
+    };
+
+    return runApp(MultiProvider(
+      providers: [
+        Provider.value(value: subiquityClient),
+        ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
+        ...?providers,
+      ],
+      child: app,
+    ));
+  }, (error, stack) => log.error('Unhandled exception', error, stack));
 }
+
+String get _appName => p.basename(io.Platform.resolvedExecutable);
+
+String _resolveLogPath(String? logfile) {
+  if (logfile != null) {
+    return logfile;
+  }
+  if (kDebugMode) {
+    return '${p.dirname(io.Platform.resolvedExecutable)}/.$_appName/$_appName.log';
+  }
+  return '/var/log/installer/$_appName.log';
+}
+
+String? get _defaultLogFile => io.Platform.environment['LOG_FILE'];
+
+String? get _defaultLogLevel =>
+    io.Platform.environment['LOG_LEVEL'] ?? (kDebugMode ? 'debug' : 'info');
 
 /// Parses the given command line [args].
 ArgResults? parseCommandLine(
@@ -74,6 +112,25 @@ ArgResults? parseCommandLine(
   parser.addFlag('dry-run',
       defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
+  parser.addOption(
+    'log-file',
+    valueHelp: 'path',
+    defaultsTo: _defaultLogFile,
+    help: '''
+Path of the log file.
+Can also be specified in a LOG_FILE environment variable.
+(defaults to "/var/log/installer/$_appName.log")
+''',
+  );
+  parser.addOption(
+    'log-level',
+    valueHelp: 'level',
+    defaultsTo: _defaultLogLevel,
+    help: '''
+Available logging levels: "debug", "info", "warning", "error".
+Can also be specified in a LOG_LEVEL environment variable.
+''',
+  );
   onPopulateOptions?.call(parser);
 
   ArgResults? options;
@@ -102,11 +159,10 @@ void _printUsage(
 }) {
   final hasError = error?.isNotEmpty == true;
   out ??= hasError ? io.stderr : io.stdout;
-  final executable = p.basename(io.Platform.resolvedExecutable);
   if (hasError) {
     out.write('Error: $error\n\n');
   }
-  out.write('Usage: $executable [options]\n\n');
+  out.write('Usage: $_appName [options]\n\n');
   out.write('Options:\n$options\n');
   exit(hasError ? 1 : 0);
 }

@@ -9,6 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_html: ^2.1.1
+  logger:
+    path: ../logger
   provider: ^6.0.0
   scroll_to_index: ^2.0.0
   ubuntu_wizard:

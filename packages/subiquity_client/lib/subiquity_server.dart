@@ -1,12 +1,16 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
+import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 import '../src/http_unix_client.dart';
 
 enum ServerMode { LIVE, DRY_RUN }
+
+/// @internal
+final log = Logger('subiquity_server');
 
 abstract class SubiquityServer {
   late Process _serverProcess;
@@ -71,6 +75,7 @@ abstract class SubiquityServer {
       stderr.addStream(process.stderr);
       return process;
     });
+    log.info('Starting server (PID: ${_serverProcess.pid})');
 
     await _writePidFile(_serverProcess.pid);
 
