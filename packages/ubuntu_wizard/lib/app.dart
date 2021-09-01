@@ -17,7 +17,7 @@ import 'settings.dart';
 import 'utils.dart';
 
 /// @internal
-final log = Logger(p.basename(io.Platform.resolvedExecutable));
+final log = Logger(_appName);
 
 /// Initializes and runs the given [app].
 ///
@@ -159,11 +159,10 @@ void _printUsage(
 }) {
   final hasError = error?.isNotEmpty == true;
   out ??= hasError ? io.stderr : io.stdout;
-  final executable = p.basename(io.Platform.resolvedExecutable);
   if (hasError) {
     out.write('Error: $error\n\n');
   }
-  out.write('Usage: $executable [options]\n\n');
+  out.write('Usage: $_appName [options]\n\n');
   out.write('Options:\n$options\n');
   exit(hasError ? 1 : 0);
 }
