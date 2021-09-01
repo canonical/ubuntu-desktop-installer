@@ -1,6 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 /// Provides access to application-wide settings.
@@ -41,7 +42,7 @@ class Settings extends ChangeNotifier {
 
   /// The current application locale.
   Locale get locale => _locale;
-  Locale _locale = Locale(Intl.shortLocale(Intl.systemLocale));
+  Locale _locale = WidgetsBinding.instance!.window.locale;
 
   /// Applies the given [locale].
   void applyLocale(Locale locale) {
