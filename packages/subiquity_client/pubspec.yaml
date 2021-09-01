@@ -13,6 +13,7 @@ dependencies:
   json_annotation: ^4.0.1
   logger:
     path: ../logger
+  meta: ^1.3.0
   path: ^1.8.0
   synchronized: ^3.0.0
   ubuntu_wizard:
