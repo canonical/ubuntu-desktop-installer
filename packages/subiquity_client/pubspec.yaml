@@ -2,6 +2,7 @@ name: subiquity_client
 description: Subiquity Client
 version: 0.0.1
 homepage: https://github.com/canonical/ubuntu-desktop-installer
+publish_to: 'none'
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
