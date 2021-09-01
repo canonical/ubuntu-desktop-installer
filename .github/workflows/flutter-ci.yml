@@ -49,11 +49,28 @@ jobs:
       with:
         token: ${{secrets.CODECOV_TOKEN}}
 
-    # general
+  analyze:
+    runs-on: ubuntu-20.04
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Enable Linux desktop support
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Melos
+      run: flutter pub global activate melos
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
 
     - name: Check for any formatting issues
       run: melos run format
-    
+
     - name: Check for any analyzer issues
       run: melos run analyze
 
