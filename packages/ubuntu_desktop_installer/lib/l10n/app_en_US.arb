@@ -103,7 +103,6 @@
   "partitionFormatPhysical": "physical volume for encryption",
   "partitionFormatNone": "do not use the partition",
   "partitionMountPointLabel": "Mount point:",
-  "partitionMountPointAutomatic": "Automatic",
 
   "whoAreYouPageTitle": "Who are you?",
   "whoAreYouPageAutoLogin": "Log in automatically",

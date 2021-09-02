@@ -135,18 +135,8 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: tileHeight),
                         child: Autocomplete<String>(
-                          // TODO: uncomment when Autocomplete.initialValue
-                          // (https://github.com/flutter/flutter/pull/80257)
-                          // reaches Flutter stable:
-                          // initialValue: TextEditingValue(
-                          //   text: lang.partitionMountPointAutomatic,
-                          // ),
-                          optionsBuilder: (value) {
-                            return <String>[
-                              lang.partitionMountPointAutomatic,
-                              ..._kDefaultMountPoints,
-                            ].where((option) => option.startsWith(value.text));
-                          },
+                          optionsBuilder: (value) => _kDefaultMountPoints
+                              .where((option) => option.startsWith(value.text)),
                         ),
                       ),
                     ],
