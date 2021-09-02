@@ -116,7 +116,7 @@ abstract class SubiquityServer {
       await file.create(recursive: true);
       await file.writeAsString(pid.toString());
     } on FileSystemException catch (e) {
-      print('WARNING: Error writing ${file.path} (${e.message}). '
+      log.warning('Error writing ${file.path} (${e.message}). '
           'Hot restarts may cause multiple Subiquity test servers to run.');
     }
   }

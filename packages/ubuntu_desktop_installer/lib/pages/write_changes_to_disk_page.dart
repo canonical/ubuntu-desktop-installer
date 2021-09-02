@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../installer.dart';
 import '../l10n.dart';
 import '../services.dart';
 
@@ -130,7 +131,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(
+    UbuntuDesktopInstallerApp.log.debug(
         'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
     for (var entry in _storageConfig!) {
       entry = entry as Map<String, dynamic>;
@@ -148,7 +149,8 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           _mounts.add(_MountObject.fromJson(entry));
           break;
         default:
-          print('Unexpected storage config type: ${entry['type']}');
+          UbuntuDesktopInstallerApp.log
+              .warning('Unexpected storage config type: ${entry['type']}');
       }
     }
     for (var partition in _partitions) {

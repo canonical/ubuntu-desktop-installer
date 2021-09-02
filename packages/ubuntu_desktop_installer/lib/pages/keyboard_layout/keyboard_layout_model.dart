@@ -6,6 +6,7 @@ import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../../installer.dart';
 import '../../services.dart';
 
 /// Implements the business logic of the Keyboard Layout page.
@@ -113,7 +114,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
         .run('setxkbmap', arguments)
         .then((result) {})
         .catchError((e) {
-      print(e as ProcessException);
+      UbuntuDesktopInstallerApp.log.error(e);
     });
   }
 
