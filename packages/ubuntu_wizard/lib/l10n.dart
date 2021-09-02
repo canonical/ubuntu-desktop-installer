@@ -49,6 +49,7 @@ class LocalizedLanguage {
 /// Builds a sorted list of localized languages.
 Future<List<LocalizedLanguage>> loadLocalizedLanguages(
     List<Locale> locales) async {
+  assert(locales.contains(_kFallbackLocale));
   final languages = <LocalizedLanguage>[];
   for (final locale in locales) {
     final localization = await UbuntuLocalizations.delegate.load(locale);
@@ -60,6 +61,9 @@ Future<List<LocalizedLanguage>> loadLocalizedLanguages(
       (a, b) => removeDiacritics(a.name).compareTo(removeDiacritics(b.name)));
   return languages;
 }
+
+// A base locale that must always exist (same as the template .arb).
+const _kFallbackLocale = Locale('en', 'US');
 
 /// A helper to match locales.
 extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
@@ -76,7 +80,7 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
     return _indexOfLocaleOrNull(locale) ??
         _indexOfNeutralLocaleOrNull(locale) ??
         _indexOfParentLocaleOrNull(locale) ??
-        _indexOfParentLocaleOrNull(Locale('en'))!;
+        _indexOfLocaleOrNull(_kFallbackLocale)!;
   }
 
   // full match (language, country, and script)
