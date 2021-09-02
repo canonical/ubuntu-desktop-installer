@@ -23,6 +23,7 @@ void main() {
   });
 
   test('find best matching locale', () {
+    const localeEn = Locale('en');
     const localeFr = Locale('fr');
     const localeFrCA = Locale('fr', 'CA');
     const localeFrFR = Locale('fr', 'FR');
@@ -36,39 +37,43 @@ void main() {
     expect(
       <LocalizedLanguage>[
         LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEn),
         LocalizedLanguage('', localeFrFReuro),
-        LocalizedLanguage('', localeFrCA),
-        LocalizedLanguage('', localeFrFR),
-      ].findBestMatch(localeFrFReuro),
-      equals(1),
-    );
-
-    // matching language and country
-    expect(
-      <LocalizedLanguage>[
-        LocalizedLanguage('', localeFr),
         LocalizedLanguage('', localeFrCA),
         LocalizedLanguage('', localeFrFR),
       ].findBestMatch(localeFrFReuro),
       equals(2),
     );
 
+    // matching language and country
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEn),
+        LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
+      ].findBestMatch(localeFrFReuro),
+      equals(3),
+    );
+
     // matching language
     expect(
       <LocalizedLanguage>[
         LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEn),
         LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeFrFReuro),
       equals(0),
     );
 
-    // no match
+    // no match -> en
     expect(
       <LocalizedLanguage>[
         LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEn),
         LocalizedLanguage('', localeFrCA),
-      ].findBestMatch(Locale('en')),
-      equals(isNull),
+      ].findBestMatch(Locale('es')),
+      equals(1),
     );
   });
 }
