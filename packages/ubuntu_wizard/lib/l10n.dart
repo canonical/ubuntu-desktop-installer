@@ -2,6 +2,7 @@ import 'package:diacritic/diacritic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/intl_standalone.dart';
 
@@ -96,8 +97,9 @@ class LocalizationsDelegateOc
       <String>['oc'].contains(locale.languageCode);
 
   @override
-  Future<MaterialLocalizationOc> load(Locale locale) {
+  Future<MaterialLocalizationOc> load(Locale locale) async {
     assert(isSupported(locale));
+    await initializeDateFormatting();
     final extendsLocaleName = 'ca';
     return SynchronousFuture<MaterialLocalizationOc>(MaterialLocalizationOc(
       fullYearFormat: DateFormat.y(extendsLocaleName),
