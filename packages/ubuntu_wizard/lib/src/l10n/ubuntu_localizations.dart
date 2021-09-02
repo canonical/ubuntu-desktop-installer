@@ -114,6 +114,12 @@ abstract class UbuntuLocalizations {
     Locale('ru', 'RU')
   ];
 
+  /// The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen.
+  ///
+  /// In en_US, this message translates to:
+  /// **'English'**
+  String get languageName;
+
   /// No description provided for @strongPassword.
   ///
   /// In en_US, this message translates to:

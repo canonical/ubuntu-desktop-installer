@@ -1,9 +1,11 @@
+import 'package:diacritic/diacritic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/intl_standalone.dart';
 
+import 'src/l10n/ubuntu_localizations.dart';
 export 'src/l10n/ubuntu_localizations.dart';
 
 /// Finds the Locale of Operating System i.e. Platform. and assigns it to
@@ -15,6 +17,46 @@ export 'src/l10n/ubuntu_localizations.dart';
 Future<void> setupAppLocalizations() async {
   await findSystemLocale();
   Intl.defaultLocale = Intl.systemLocale;
+}
+
+/// A localized language and its locale.
+@immutable
+class LocalizedLanguage {
+  /// Creates a localized language with the given [name] and [locale].
+  const LocalizedLanguage(this.name, this.locale);
+
+  /// A localized name of the language.
+  final String name;
+
+  /// The locale of the language.
+  final Locale locale;
+
+  @override
+  String toString() => 'Language($name, $locale)';
+
+  @override
+  int get hashCode => hashValues(name, locale);
+
+  @override
+  bool operator ==(dynamic other) =>
+      other is LocalizedLanguage &&
+      other.name == name &&
+      other.locale == locale;
+}
+
+/// Builds a sorted list of localized languages.
+Future<List<LocalizedLanguage>> loadLocalizedLanguages(
+    List<Locale> locales) async {
+  final languages = <LocalizedLanguage>[];
+  for (final locale in locales) {
+    final localization = await UbuntuLocalizations.delegate.load(locale);
+    if (localization.languageName.isNotEmpty) {
+      languages.add(LocalizedLanguage(localization.languageName, locale));
+    }
+  }
+  languages.sort(
+      (a, b) => removeDiacritics(a.name).compareTo(removeDiacritics(b.name)));
+  return languages;
 }
 
 /// The translations for Occitan  (`oc`).

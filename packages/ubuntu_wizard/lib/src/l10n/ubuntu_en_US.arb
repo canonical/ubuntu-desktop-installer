@@ -1,6 +1,11 @@
 {
   "@@locale": "en_US",
 
+  "languageName": "English",
+  "@languageName": {
+    "description": "The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen."
+  },
+
   "strongPassword": "Strong password",
   "moderatePassword": "Moderate password",
   "weakPassword": "Weak password"

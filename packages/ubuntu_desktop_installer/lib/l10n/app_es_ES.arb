@@ -1,8 +1,6 @@
 {
   "@@locale": "es_ES",
 
-  "languageName": "Español",
-
   "appTitle": "Instalador de Ubuntu para escritorio",
   "windowTitle": "Instalar Ubuntu",
 
