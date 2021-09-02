@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +59,45 @@ Future<List<LocalizedLanguage>> loadLocalizedLanguages(
   languages.sort(
       (a, b) => removeDiacritics(a.name).compareTo(removeDiacritics(b.name)));
   return languages;
+}
+
+/// A helper to match locales.
+extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
+  /// Returns the index of the best match for the given [locale] or -1 if not
+  /// found.
+  ///
+  /// The best matching locale is determined by the following rules:
+  ///
+  /// - Full match (language + country + script)
+  /// - Matching language and country
+  /// - Matching language
+  int findBestMatch(Locale locale) {
+    return _indexOfLocaleOrNull(locale) ??
+        _indexOfLanguageAndCountryOrNull(locale) ??
+        _indexOfLanguageOrNull(locale) ??
+        -1;
+  }
+
+  // full match (language, country, and script)
+  int? _indexOfLocaleOrNull(Locale locale) {
+    final index = indexWhere((lang) => lang.locale == locale);
+    return index != -1 ? index : null;
+  }
+
+  // match language and country
+  int? _indexOfLanguageAndCountryOrNull(Locale locale) {
+    final index = indexWhere((lang) =>
+        lang.locale.languageCode == locale.languageCode &&
+        lang.locale.countryCode == locale.countryCode);
+    return index != -1 ? index : null;
+  }
+
+  // match language only
+  int? _indexOfLanguageOrNull(Locale locale) {
+    final index =
+        indexWhere((lang) => lang.locale.languageCode == locale.languageCode);
+    return index != -1 ? index : null;
+  }
 }
 
 /// The translations for Occitan  (`oc`).

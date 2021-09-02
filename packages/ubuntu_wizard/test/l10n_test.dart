@@ -21,4 +21,45 @@ void main() {
       ]),
     );
   });
+
+  test('find best matching locale', () {
+    const localeFr = Locale('fr');
+    const localeFrCA = Locale('fr', 'CA');
+    const localeFrFR = Locale('fr', 'FR');
+    const localeFrFReuro = Locale.fromSubtags(
+      languageCode: 'fr',
+      countryCode: 'FR',
+      scriptCode: 'euro',
+    );
+
+    // full match
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeFrFReuro),
+        LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
+      ].findBestMatch(localeFrFReuro),
+      equals(1),
+    );
+
+    // matching language and country
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
+      ].findBestMatch(localeFrFReuro),
+      equals(2),
+    );
+
+    // matching language
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeFrCA),
+      ].findBestMatch(localeFrFReuro),
+      equals(0),
+    );
+  });
 }
