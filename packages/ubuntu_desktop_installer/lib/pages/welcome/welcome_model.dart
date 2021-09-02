@@ -55,13 +55,11 @@ class WelcomeModel extends ChangeNotifier {
   /// Returns the name of the language at the given [index].
   String language(int index) => _languageList[index].name;
 
-  /// Selects the given [locale].
-  void selectLocale(String locale) {
-    for (var i = 0; i < _languageList.length; ++i) {
-      if (locale.contains(this.locale(i).languageCode)) {
-        selectedLanguageIndex = i;
-        break;
-      }
-    }
+  /// Selects the best match for the given [locale].
+  ///
+  /// See also:
+  /// * [LocalizedLanguageMatcher.findBestMatch]
+  void selectLocale(Locale locale) {
+    _selectedLanguageIndex = _languageList.findBestMatch(locale);
   }
 }
