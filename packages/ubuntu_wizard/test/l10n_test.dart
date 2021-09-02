@@ -24,8 +24,10 @@ void main() {
 
   test('find best matching locale', () {
     const localeEn = Locale('en');
+    const localeEs = Locale('es');
     const localeFr = Locale('fr');
     const localeFrCA = Locale('fr', 'CA');
+    const localeFrBE = Locale('fr', 'BE');
     const localeFrFR = Locale('fr', 'FR');
     const localeFrFReuro = Locale.fromSubtags(
       languageCode: 'fr',
@@ -72,7 +74,17 @@ void main() {
         LocalizedLanguage('', localeFr),
         LocalizedLanguage('', localeEn),
         LocalizedLanguage('', localeFrCA),
-      ].findBestMatch(Locale('es')),
+      ].findBestMatch(localeEs),
+      equals(1),
+    );
+
+    // country mismatch -> en
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFrFR),
+        LocalizedLanguage('', localeEn),
+        LocalizedLanguage('', localeFrCA),
+      ].findBestMatch(localeFrBE),
       equals(1),
     );
   });

@@ -74,9 +74,9 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
   /// - Fall back to `en`
   int findBestMatch(Locale locale) {
     return _indexOfLocaleOrNull(locale) ??
-        _indexOfLanguageAndCountryOrNull(locale) ??
-        _indexOfLanguageOrNull(locale) ??
-        _indexOfLanguageOrNull(Locale('en'))!;
+        _indexOfNeutralLocaleOrNull(locale) ??
+        _indexOfParentLocaleOrNull(locale) ??
+        _indexOfParentLocaleOrNull(Locale('en'))!;
   }
 
   // full match (language, country, and script)
@@ -86,19 +86,24 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
   }
 
   // match language and country
-  int? _indexOfLanguageAndCountryOrNull(Locale locale) {
-    final index = indexWhere((lang) =>
-        lang.locale.languageCode == locale.languageCode &&
-        lang.locale.countryCode == locale.countryCode);
+  int? _indexOfNeutralLocaleOrNull(Locale locale) {
+    final index = indexWhere((lang) => lang.locale == locale.neutral);
     return index != -1 ? index : null;
   }
 
   // match language only
-  int? _indexOfLanguageOrNull(Locale locale) {
-    final index =
-        indexWhere((lang) => lang.locale.languageCode == locale.languageCode);
+  int? _indexOfParentLocaleOrNull(Locale locale) {
+    final index = indexWhere((lang) => lang.locale == locale.parent);
     return index != -1 ? index : null;
   }
+}
+
+extension _LocaleExtension on Locale {
+  // not associated to a specific country
+  Locale get parent => Locale(languageCode);
+
+  // not associated to a specific script
+  Locale get neutral => Locale(languageCode, countryCode);
 }
 
 /// The translations for Occitan  (`oc`).
