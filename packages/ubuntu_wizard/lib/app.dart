@@ -63,6 +63,7 @@ Future<void> runWizardApp(
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
+    await interfaceSettings.close();
     await subiquityClient.close();
     await subiquityServer.stop();
   });
