@@ -276,7 +276,7 @@ class _PartitionSizeBox extends StatelessWidget {
 
 extension _PartitionUnitLang on DataUnit {
   String localize(BuildContext context) {
-    final lang = AppLocalizations.of(context)!;
+    final lang = AppLocalizations.of(context);
     switch (this) {
       case DataUnit.bytes:
         return lang.partitionUnitB;
@@ -292,7 +292,7 @@ extension _PartitionUnitLang on DataUnit {
 
 extension _PartitionFormatLang on PartitionFormat {
   String localize(BuildContext context) {
-    final lang = AppLocalizations.of(context)!;
+    final lang = AppLocalizations.of(context);
 
     switch (this) {
       case PartitionFormat.ext4:
