@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
+  gsettings: ^0.2.0
   mockito: 5.0.14
   subiquity_client:
     path: ../subiquity_client
