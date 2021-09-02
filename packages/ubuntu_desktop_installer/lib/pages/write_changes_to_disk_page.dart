@@ -194,7 +194,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
     return LocalizedView(
         builder: (context, lang) => WizardPage(
               title: Text(lang.writeChangesToDisk),
-              content: Column(children: <Widget>[
+              content: ListView(children: <Widget>[
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(lang.writeChangesDescription)),

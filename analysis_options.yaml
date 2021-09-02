@@ -1,7 +1,11 @@
 include: package:effective_dart/analysis_options.yaml
 
 analyzer:
-  exclude: [ test/*.mocks.dart ]
+  exclude:
+    - "**/*.freezed.dart"
+    - "**/*.g.dart"
+    - "**/*.mocks.dart"
+    - "**/l10/*.dart"
 
 linter:
   rules:

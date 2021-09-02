@@ -1,9 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/settings.dart';
-
-import 'gsettings.mocks.dart';
 
 void main() {
   test('set gtk-theme via gsettings', () {
@@ -29,6 +30,12 @@ void main() {
     ]);
     expect(settings.theme, equals(ThemeMode.dark));
     expect(wasNotified, isTrue);
+  });
+
+  testWidgets('init locale', (tester) async {
+    tester.binding.window.localeTestValue = const Locale('fr', 'FR');
+    final settings = Settings(MockGSettings());
+    expect(settings.locale, equals(Locale('fr', 'FR')));
   });
 
   test('set locale', () {

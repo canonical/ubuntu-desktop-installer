@@ -16,7 +16,6 @@ class _RealNameFormField extends StatelessWidget {
 
       return ValidatedFormField(
         fieldWidth: fieldWidth,
-        spacing: _kIconSpacing,
         labelText: lang.whoAreYouPageRealNameLabel,
         successWidget: const SuccessIcon(),
         initialValue: realName,
@@ -48,7 +47,6 @@ class _HostNameFormField extends StatelessWidget {
 
       return ValidatedFormField(
         fieldWidth: fieldWidth,
-        spacing: _kIconSpacing,
         labelText: lang.whoAreYouPageComputerNameLabel,
         helperText: lang.whoAreYouPageComputerNameInfo,
         successWidget: const SuccessIcon(),
@@ -87,7 +85,6 @@ class _UsernameFormField extends StatelessWidget {
 
       return ValidatedFormField(
         fieldWidth: fieldWidth,
-        spacing: _kIconSpacing,
         labelText: lang.whoAreYouPageUsernameLabel,
         successWidget: const SuccessIcon(),
         initialValue: username,
@@ -127,7 +124,6 @@ class _PasswordFormField extends StatelessWidget {
 
       return ValidatedFormField(
         fieldWidth: fieldWidth,
-        spacing: _kIconSpacing,
         labelText: lang.whoAreYouPagePasswordLabel,
         obscureText: true,
         successWidget: PasswordStrengthLabel(strength: passwordStrength),
@@ -163,7 +159,6 @@ class _ConfirmPasswordFormField extends StatelessWidget {
       return ValidatedFormField(
         obscureText: true,
         fieldWidth: fieldWidth,
-        spacing: _kIconSpacing,
         labelText: lang.whoAreYouPageConfirmPasswordLabel,
         successWidget: SuccessIcon(),
         initialValue: confirmedPassword,

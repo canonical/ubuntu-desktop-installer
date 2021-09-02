@@ -12,8 +12,10 @@
   "backButtonText": "Go Back",
   "changeButtonText": "Change",
   "continueButtonText": "Continue",
+  "noButtonText": "No",
   "restartButtonText": "Restart",
   "revertButtonText": "Revert",
+  "yesButtonText": "Yes",
 
   "welcome": "Welcome",
 
@@ -46,6 +48,8 @@
   "chooseYourKeyboardLayout": "Choose your keyboard layout:",
   "typeToTest": "Type here to test your keyboard",
   "detectLayout": "Detect Keyboard Layout",
+  "pressOneKey": "Please press one of the following keys:",
+  "isKeyPresent": "Is the following key present on your keyboard?",
 
   "updatesOtherSoftwarePageTitle": "Updates and other software",
   "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
