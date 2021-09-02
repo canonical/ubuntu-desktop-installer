@@ -15,13 +15,15 @@ dependencies:
     path: ../subiquity_client
   ubuntu_wizard:
     path: ../ubuntu_wizard
-  file: ^6.1.2
+  file: ^6.1.0
   filesize: ^2.0.0
   flutter_html: ^2.1.1
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
   gsettings: ^0.1.2+1
   intl: ^0.17.0
+  logger:
+    path: ../logger
   keyboard_info: ^0.1.0
   provider: ^6.0.0
   flutter_markdown: ^0.6.2

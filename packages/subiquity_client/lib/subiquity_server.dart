@@ -1,11 +1,16 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
+import 'package:logger/logger.dart';
+import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 import '../src/http_unix_client.dart';
 
 enum ServerMode { LIVE, DRY_RUN }
+
+/// @internal
+final log = Logger('subiquity_server');
 
 abstract class SubiquityServer {
   late Process _serverProcess;
@@ -17,6 +22,12 @@ abstract class SubiquityServer {
 
   /// Creates a WSL variant of the server.
   factory SubiquityServer.wsl() => _WslSubiquityServerImpl();
+
+  /// A callback for integration testing purposes. The callback is called when
+  /// the server has been started and thus, the application is ready for
+  /// integration testing.
+  @visibleForTesting
+  static void Function(String socketPath)? startupCallback;
 
   // Whether the server process should be started in the specified mode.
   bool _shouldStart(ServerMode mode);
@@ -64,6 +75,7 @@ abstract class SubiquityServer {
       stderr.addStream(process.stderr);
       return process;
     });
+    log.info('Starting server (PID: ${_serverProcess.pid})');
 
     await _writePidFile(_serverProcess.pid);
 
@@ -79,6 +91,8 @@ abstract class SubiquityServer {
         sleep(Duration(seconds: 1));
       }
     }
+
+    startupCallback?.call(socketPath);
 
     return socketPath;
   }
