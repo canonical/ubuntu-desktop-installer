@@ -60,6 +60,6 @@ class WelcomeModel extends ChangeNotifier {
   /// See also:
   /// * [LocalizedLanguageMatcher.findBestMatch]
   void selectLocale(Locale locale) {
-    _selectedLanguageIndex = _languageList.findBestMatch(locale);
+    _selectedLanguageIndex = _languageList.findBestMatch(locale) ?? 0;
   }
 }

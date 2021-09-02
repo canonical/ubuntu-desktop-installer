@@ -55,14 +55,17 @@ void main() {
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
 
-    model.selectLocale('foo');
+    model.selectLocale(Locale('foo'));
     expect(model.selectedLanguageIndex, equals(0));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
     expect(firstLocale, isNot(equals(lastLocale)));
 
-    model.selectLocale('$lastLocale.UTF-8');
+    model.selectLocale(Locale.fromSubtags(
+        languageCode: lastLocale.languageCode,
+        countryCode: lastLocale.countryCode,
+        scriptCode: 'bar'));
     expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
   });
 

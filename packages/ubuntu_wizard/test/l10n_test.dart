@@ -61,5 +61,14 @@ void main() {
       ].findBestMatch(localeFrFReuro),
       equals(0),
     );
+
+    // no match
+    expect(
+      <LocalizedLanguage>[
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeFrCA),
+      ].findBestMatch(Locale('en')),
+      equals(isNull),
+    );
   });
 }

@@ -63,7 +63,7 @@ Future<List<LocalizedLanguage>> loadLocalizedLanguages(
 
 /// A helper to match locales.
 extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
-  /// Returns the index of the best match for the given [locale] or -1 if not
+  /// Returns the index of the best match for the given [locale] or null if not
   /// found.
   ///
   /// The best matching locale is determined by the following rules:
@@ -71,11 +71,10 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
   /// - Full match (language + country + script)
   /// - Matching language and country
   /// - Matching language
-  int findBestMatch(Locale locale) {
+  int? findBestMatch(Locale locale) {
     return _indexOfLocaleOrNull(locale) ??
         _indexOfLanguageAndCountryOrNull(locale) ??
-        _indexOfLanguageOrNull(locale) ??
-        -1;
+        _indexOfLanguageOrNull(locale);
   }
 
   // full match (language, country, and script)
