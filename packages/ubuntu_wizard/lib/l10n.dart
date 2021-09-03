@@ -47,9 +47,11 @@ class LocalizedLanguage {
 }
 
 /// Builds a sorted list of localized languages.
+///
+/// [locales] must contain the base locale i.e. the template .arb locale.
 Future<List<LocalizedLanguage>> loadLocalizedLanguages(
     List<Locale> locales) async {
-  assert(locales.contains(_kFallbackLocale));
+  assert(locales.contains(_kBaseLocale));
   final languages = <LocalizedLanguage>[];
   for (final locale in locales) {
     final localization = await UbuntuLocalizations.delegate.load(locale);
@@ -62,8 +64,8 @@ Future<List<LocalizedLanguage>> loadLocalizedLanguages(
   return languages;
 }
 
-// A base locale that must always exist (same as the template .arb).
-const _kFallbackLocale = Locale('en', 'US');
+// A fallback locale that must always exist (same as the template .arb).
+const _kBaseLocale = Locale('en', 'US');
 
 /// A helper to match locales.
 extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
@@ -75,12 +77,12 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
   /// - Full match (language + country + script)
   /// - Matching language and country
   /// - Matching language
-  /// - Fall back to `en`
+  /// - Fall back to the base locale i.e. the template .arb locale.
   int findBestMatch(Locale locale) {
     return _indexOfLocaleOrNull(locale) ??
         _indexOfNeutralLocaleOrNull(locale) ??
         _indexOfParentLocaleOrNull(locale) ??
-        _indexOfLocaleOrNull(_kFallbackLocale)!;
+        _indexOfLocaleOrNull(_kBaseLocale)!;
   }
 
   // full match (language, country, and script)
@@ -103,10 +105,10 @@ extension LocalizedLanguageMatcher on List<LocalizedLanguage> {
 }
 
 extension _LocaleExtension on Locale {
-  // not associated to a specific country
+  // not associated to any specific country
   Locale get parent => Locale(languageCode);
 
-  // not associated to a specific script
+  // not associated to any specific script
   Locale get neutral => Locale(languageCode, countryCode);
 }
 
