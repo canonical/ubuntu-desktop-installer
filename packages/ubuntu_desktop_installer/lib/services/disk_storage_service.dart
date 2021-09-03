@@ -1,6 +1,5 @@
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../installer.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
@@ -16,7 +15,7 @@ class DiskStorageService {
 
   Future<List<Disk>> getGuidedStorage() {
     return _client.getGuidedStorage(0, true).then((r) {
-      UbuntuDesktopInstallerApp.log.debug(r.disks);
+      appLogger.debug(r.disks);
       _response = r;
       return r.disks ?? <Disk>[];
     });

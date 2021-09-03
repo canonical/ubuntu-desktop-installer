@@ -1,8 +1,4 @@
-import 'dart:io' as io;
-
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/settings.dart';
@@ -37,11 +33,6 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       home: _UbuntuDesktopInstallerWizard.create(context),
     );
   }
-
-  static final _appName = p.basename(io.Platform.resolvedExecutable);
-
-  /// Static reference to an application-level common [Logger].
-  static final log = Logger(_appName);
 }
 
 class _UbuntuDesktopInstallerWizard extends StatefulWidget {

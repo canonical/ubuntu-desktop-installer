@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
-
-import '../../installer.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
@@ -49,7 +48,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
 
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    UbuntuDesktopInstallerApp.log.debug(
+    appLogger.debug(
         'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();

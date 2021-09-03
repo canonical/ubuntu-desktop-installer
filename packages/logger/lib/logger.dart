@@ -5,6 +5,9 @@ import 'package:logging/logging.dart' as log;
 import 'package:logging_appenders/logging_appenders.dart';
 import 'package:path/path.dart' as p;
 
+/// A global application-level logger.
+final appLogger = Logger(p.basename(Platform.resolvedExecutable));
+
 // ignore: avoid_classes_with_only_static_members
 /// Defines available logging levels.
 abstract class LogLevel {
