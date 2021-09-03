@@ -171,4 +171,33 @@ void main() {
     expect(find.text('equal'), findsNothing);
     expect(find.text('not equal'), findsOneWidget);
   });
+
+  testWidgets('equal empty input', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            autofocus: true,
+            validator: EqualValidator('', errorText: 'not equal'),
+            successWidget: const Text('equal'),
+          ),
+        ),
+      ),
+    );
+
+    expect(find.text('equal'), findsOneWidget);
+    expect(find.text('not equal'), findsNothing);
+
+    await tester.enterText(find.byType(ValidatedFormField), 'foobar');
+    await tester.pumpAndSettle();
+
+    expect(find.text('equal'), findsNothing);
+    expect(find.text('not equal'), findsOneWidget);
+
+    await tester.enterText(find.byType(ValidatedFormField), '');
+    await tester.pumpAndSettle();
+
+    expect(find.text('equal'), findsOneWidget);
+    expect(find.text('not equal'), findsNothing);
+  });
 }

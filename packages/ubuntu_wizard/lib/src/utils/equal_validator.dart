@@ -11,5 +11,5 @@ class EqualValidator extends FieldValidator<String?> {
   final String _value;
 
   @override
-  bool isValid(String? value) => value?.isNotEmpty == true && value == _value;
+  bool isValid(String? value) => value == _value;
 }
