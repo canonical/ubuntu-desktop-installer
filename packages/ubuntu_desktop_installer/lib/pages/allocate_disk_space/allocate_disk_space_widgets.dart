@@ -1,7 +1,15 @@
-part of 'allocate_disk_space_page.dart';
+import 'package:filesize/filesize.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
-class _PartitionBar extends StatelessWidget {
-  _PartitionBar({Key? key}) : super(key: key);
+import '../../widgets.dart';
+import 'allocate_disk_space_dialogs.dart';
+import 'allocate_disk_space_model.dart';
+
+class PartitionBar extends StatelessWidget {
+  PartitionBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +68,8 @@ class _PartitionPainter extends CustomPainter {
   }
 }
 
-class _PartitionLegend extends StatelessWidget {
-  const _PartitionLegend({Key? key}) : super(key: key);
+class PartitionLegend extends StatelessWidget {
+  const PartitionLegend({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -172,8 +180,8 @@ class _PartitionFormatCheckboxState extends State<_PartitionFormatCheckbox> {
   }
 }
 
-class _PartitionTable extends StatelessWidget {
-  const _PartitionTable({Key? key}) : super(key: key);
+class PartitionTable extends StatelessWidget {
+  const PartitionTable({Key? key}) : super(key: key);
 
   List<DataRow> _buildDataRows({
     required AllocateDiskSpaceModel model,
@@ -283,11 +291,13 @@ class _PartitionTable extends StatelessWidget {
   }
 }
 
-class _PartitionButtonRow extends StatelessWidget {
-  const _PartitionButtonRow({Key? key}) : super(key: key);
+class PartitionButtonRow extends StatelessWidget {
+  const PartitionButtonRow({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+
     return LocalizedView(builder: (context, lang) {
       return Row(
         children: [
@@ -302,7 +312,10 @@ class _PartitionButtonRow extends StatelessWidget {
                       side: BorderSide.none,
                       shape: RoundedRectangleBorder(),
                     ),
-                    onPressed: () {},
+                    onPressed: model.selectedDisk != null
+                        ? () => showCreatePartitionDialog(
+                            context, model.selectedDisk!)
+                        : null,
                   ),
                   VerticalDivider(width: 1),
                   OutlinedButton(
@@ -345,8 +358,8 @@ class _PartitionButtonRow extends StatelessWidget {
   }
 }
 
-class _BootDiskSelector extends StatelessWidget {
-  const _BootDiskSelector({Key? key}) : super(key: key);
+class BootDiskSelector extends StatelessWidget {
+  const BootDiskSelector({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

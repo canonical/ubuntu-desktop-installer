@@ -2,8 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/src/utils/system_shutdown.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/src/utils/system_shutdown.dart';
 
 typedef SystemShutdownTester = Future<void> Function(SystemShutdown system);
 

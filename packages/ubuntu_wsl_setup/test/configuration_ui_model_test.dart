@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -29,6 +30,8 @@ void main() {
   });
 
   test('save UI configuration', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+
     final client = MockSubiquityClient();
 
     final model = ConfigurationUIModel(client);
@@ -48,8 +51,16 @@ void main() {
       mountfstab: false,
     );
 
+    var windowClosed = false;
+    final methodChannel = MethodChannel('ubuntu_wizard');
+    methodChannel.setMockMethodCallHandler((call) {
+      expect(call.method, equals('closeWindow'));
+      windowClosed = true;
+    });
+
     await model.saveConfiguration();
     verify(client.setWslConfiguration2(conf)).called(1);
+    expect(windowClosed, isTrue);
   });
 
   test('notify changes', () {

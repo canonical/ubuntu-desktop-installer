@@ -1,16 +1,13 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../services.dart';
 import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
-
-part 'allocate_disk_space_widgets.dart';
+import 'allocate_disk_space_widgets.dart';
 
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
@@ -47,15 +44,15 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            _PartitionBar(),
+            PartitionBar(),
             const SizedBox(height: kContentSpacing / 2),
-            _PartitionLegend(),
+            PartitionLegend(),
             const SizedBox(height: kContentSpacing / 2),
-            Expanded(child: _PartitionTable()),
+            Expanded(child: PartitionTable()),
             const SizedBox(height: kContentSpacing / 2),
-            _PartitionButtonRow(),
+            PartitionButtonRow(),
             const SizedBox(height: kContentSpacing),
-            _BootDiskSelector(),
+            BootDiskSelector(),
           ],
         ),
         actions: <WizardAction>[

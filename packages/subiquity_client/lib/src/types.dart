@@ -4,6 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'types.freezed.dart';
 part 'types.g.dart';
 
+// ignore_for_file: invalid_annotation_target
+
 @freezed
 class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({

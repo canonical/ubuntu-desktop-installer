@@ -16,14 +16,14 @@ enum _HttpParserState {
 }
 
 class _HttpRequest {
-  var httpVersion = '';
-  var statusCode = 0;
-  var reasonPhrase = '';
-  var headers = <String, String>{};
+  String httpVersion = '';
+  int statusCode = 0;
+  String reasonPhrase = '';
+  Map<String, String> headers = <String, String>{};
 
   BaseRequest request;
-  var completer = Completer<StreamedResponse>();
-  var stream = StreamController<List<int>>();
+  Completer<StreamedResponse> completer = Completer<StreamedResponse>();
+  StreamController<List<int>> stream = StreamController<List<int>>();
 
   _HttpRequest(this.request);
 
@@ -103,7 +103,6 @@ class HttpUnixClient extends BaseClient {
     return req.completer.future;
   }
 
-  @override
   Future<void> flush() async {
     return _socket?.flush();
   }

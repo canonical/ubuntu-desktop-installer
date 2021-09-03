@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -40,7 +39,8 @@ class _WelcomePageState extends State<WelcomePage> {
     model.loadKeyboards();
 
     model.loadLanguages().then((_) {
-      model.selectLocale(Intl.defaultLocale!);
+      final settings = Settings.of(context, listen: false);
+      model.selectLocale(settings.locale);
 
       _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
           preferPosition: AutoScrollPosition.middle,
