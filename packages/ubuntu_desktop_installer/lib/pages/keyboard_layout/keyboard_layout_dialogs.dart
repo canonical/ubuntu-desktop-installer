@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
-import '../../widgets.dart';
+import '../../l10n.dart';
 import 'keyboard_layout_detector.dart';
 import 'keyboard_layout_widgets.dart';
 
@@ -24,53 +24,50 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
       });
       detector.init();
 
-      return LocalizedView(
-        builder: (context, lang) {
-          return ValueListenableBuilder<KeyboardStep?>(
-            valueListenable: detector,
-            builder: (context, step, _) {
-              final size = MediaQuery.of(context).size;
-              return AlertDialog(
-                title: Text(lang.detectLayout),
-                titlePadding: kHeaderPadding,
-                contentPadding: kContentPadding.copyWith(
-                    top: kContentSpacing, bottom: kContentSpacing),
-                actionsPadding: kFooterPadding,
-                buttonPadding: EdgeInsets.zero,
-                content: SizedBox(
-                  width: size.width * _kDialogWidthFactor,
-                  height: size.height * _kDialogHeightFactor,
-                  child: DetectKeyboardLayoutView(
-                    pressKey: detector.pressKey,
-                    keyPresent: detector.keyPresent,
-                    onKeyPress: detector.press,
-                  ),
+      final lang = AppLocalizations.of(context);
+      return ValueListenableBuilder<KeyboardStep?>(
+        valueListenable: detector,
+        builder: (context, step, _) {
+          final size = MediaQuery.of(context).size;
+          return AlertDialog(
+            title: Text(lang.detectLayout),
+            titlePadding: kHeaderPadding,
+            contentPadding: kContentPadding.copyWith(
+                top: kContentSpacing, bottom: kContentSpacing),
+            actionsPadding: kFooterPadding,
+            buttonPadding: EdgeInsets.zero,
+            content: SizedBox(
+              width: size.width * _kDialogWidthFactor,
+              height: size.height * _kDialogHeightFactor,
+              child: DetectKeyboardLayoutView(
+                pressKey: detector.pressKey,
+                keyPresent: detector.keyPresent,
+                onKeyPress: detector.press,
+              ),
+            ),
+            actions: <Widget>[
+              Visibility(
+                maintainSize: true,
+                maintainState: true,
+                maintainAnimation: true,
+                visible: step is StepKeyPresent,
+                child: OutlinedButton(
+                  child: Text(lang.noButtonText),
+                  onPressed: step is StepKeyPresent ? detector.no : null,
                 ),
-                actions: <Widget>[
-                  Visibility(
-                    maintainSize: true,
-                    maintainState: true,
-                    maintainAnimation: true,
-                    visible: step is StepKeyPresent,
-                    child: OutlinedButton(
-                      child: Text(lang.noButtonText),
-                      onPressed: step is StepKeyPresent ? detector.no : null,
-                    ),
-                  ),
-                  const SizedBox(width: kButtonBarSpacing),
-                  Visibility(
-                    maintainSize: true,
-                    maintainState: true,
-                    maintainAnimation: true,
-                    visible: step is StepKeyPresent,
-                    child: OutlinedButton(
-                      child: Text(lang.yesButtonText),
-                      onPressed: step is StepKeyPresent ? detector.yes : null,
-                    ),
-                  ),
-                ],
-              );
-            },
+              ),
+              const SizedBox(width: kButtonBarSpacing),
+              Visibility(
+                maintainSize: true,
+                maintainState: true,
+                maintainAnimation: true,
+                visible: step is StepKeyPresent,
+                child: OutlinedButton(
+                  child: Text(lang.yesButtonText),
+                  onPressed: step is StepKeyPresent ? detector.yes : null,
+                ),
+              ),
+            ],
           );
         },
       );
