@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../widgets/localized_view.dart';
-import '../wizard_page.dart';
 import 'turn_off_secure_boot_model.dart';
+import 'turn_off_secure_boot_widgets.dart';
 
 const _kFormElementPadding = 8.0;
 
@@ -47,6 +48,31 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
                   onChanged: model.setSecureBootMode,
                 ),
                 const SizedBox(height: _kFormElementPadding),
+                // _PasswordSizedBox(
+                //   child: TextField(
+                //     obscureText: true,
+                //     onChanged: (value) {
+                //       model.setSecurityKey(value);
+                //       _formKey.currentState?.validate();
+                //     },
+                //     decoration: InputDecoration(
+                //         border: const OutlineInputBorder(),
+                //         hintText: lang.chooseSecurityKey,
+                //         enabled: model.areTextFieldEnabled),
+                //   ),
+                // ),
+                PasswordFormField(
+                  onChanged: (value) {
+                    model.setSecurityKey(value);
+                    _formKey.currentState?.validate();
+                  },
+                ),
+                PasswordConfirmFormField(
+                  onChanged: (value) {
+                    model.setSecurityKey(value);
+                    _formKey.currentState?.validate();
+                  },
+                ),
                 _PasswordSizedBox(
                   child: TextField(
                     obscureText: true,
@@ -95,15 +121,12 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
         actions: <WizardAction>[
           WizardAction(
             label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+            onActivated: Wizard.of(context).back,
           ),
           WizardAction(
             label: lang.continueButtonText,
-            onActivated: model.isFormValid
-                ? () {
-                    // TODO: add next step here
-                  }
-                : null,
+            enabled: model.isFormValid,
+            onActivated: Wizard.of(context).next,
           ),
         ],
       ),
