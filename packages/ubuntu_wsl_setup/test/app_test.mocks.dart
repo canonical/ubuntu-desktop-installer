@@ -45,9 +45,6 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
       super.noSuchMethod(Invocation.method(#applyLocale, [locale]),
           returnValueForMissingStub: null);
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
-  @override
   void addListener(_i2.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -55,6 +52,9 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
   void removeListener(_i2.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
+  @override
+  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
+      returnValueForMissingStub: null);
   @override
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),

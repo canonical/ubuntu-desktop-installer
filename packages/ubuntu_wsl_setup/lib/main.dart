@@ -10,10 +10,9 @@ void main(List<String> args) {
   })!;
   runWizardApp(
     UbuntuWslSetupApp(reconfigure: options['reconfigure'] == true),
+    options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer(),
-    serverMode:
-        options['dry-run'] == true ? ServerMode.DRY_RUN : ServerMode.LIVE,
     serverArgs: [
       if (options['reconfigure'] == true) '--reconfigure',
       '--machine-config',

@@ -1,5 +1,3 @@
-import 'dart:io' as io;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
@@ -61,7 +59,7 @@ class InstallationCompletePage extends StatelessWidget {
                       onPressed: () {
                         Provider.of<InstallationCompleteModel>(context,
                                 listen: false)
-                            .reboot();
+                            .reboot(immediate: false);
                       },
                       child: Text(
                         lang.restartInto(
@@ -71,8 +69,9 @@ class InstallationCompletePage extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      // TODO: request shutdown
-                      io.exit(0);
+                      Provider.of<InstallationCompleteModel>(context,
+                              listen: false)
+                          .shutdown(immediate: false);
                     },
                     child: Text(lang.shutdown),
                   ),

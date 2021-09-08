@@ -49,7 +49,7 @@ class TurnOffBitLockerPage extends StatelessWidget {
           WizardAction(
             label: lang.restartIntoWindows,
             highlighted: true,
-            onActivated: model.reboot,
+            onActivated: () => model.reboot(immediate: true),
           ),
         ],
       ),

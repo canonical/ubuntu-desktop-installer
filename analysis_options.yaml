@@ -5,6 +5,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.g.dart"
     - "**/*.mocks.dart"
+    - "**/l10/*.dart"
 
 linter:
   rules:

@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -7,14 +10,13 @@ import 'package:ubuntu_wizard/settings.dart';
 void main() {
   test('set gtk-theme via gsettings', () {
     final gsettings = MockGSettings();
-    when(gsettings.setValue(any, any)).thenAnswer((_) => true);
+    when(gsettings.set(any, any)).thenAnswer((_) async => null);
 
     final settings = Settings(gsettings);
 
     settings.applyTheme(Brightness.light);
     verifyInOrder([
-      gsettings.setValue('gtk-theme', 'Yaru'),
-      gsettings.sync(),
+      gsettings.set('gtk-theme', DBusString('Yaru')),
     ]);
     expect(settings.theme, equals(ThemeMode.light));
 
@@ -23,11 +25,16 @@ void main() {
 
     settings.applyTheme(Brightness.dark);
     verifyInOrder([
-      gsettings.setValue('gtk-theme', 'Yaru-dark'),
-      gsettings.sync(),
+      gsettings.set('gtk-theme', DBusString('Yaru-dark')),
     ]);
     expect(settings.theme, equals(ThemeMode.dark));
     expect(wasNotified, isTrue);
+  });
+
+  testWidgets('init locale', (tester) async {
+    tester.binding.window.localeTestValue = const Locale('fr', 'FR');
+    final settings = Settings(MockGSettings());
+    expect(settings.locale, equals(Locale('fr', 'FR')));
   });
 
   test('set locale', () {

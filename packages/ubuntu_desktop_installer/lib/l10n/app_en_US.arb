@@ -1,19 +1,18 @@
 {
   "@@locale": "en_US",
 
-  "languageName": "English",
-  "@languageName": {
-    "description": "The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen."
-  },
-
   "appTitle": "Ubuntu Desktop Installer",
   "windowTitle": "Install Ubuntu",
 
   "backButtonText": "Go Back",
+  "cancelButtonText": "Cancel",
   "changeButtonText": "Change",
   "continueButtonText": "Continue",
+  "okButtonText": "OK",
+  "noButtonText": "No",
   "restartButtonText": "Restart",
   "revertButtonText": "Revert",
+  "yesButtonText": "Yes",
 
   "welcome": "Welcome",
 
@@ -46,6 +45,8 @@
   "chooseYourKeyboardLayout": "Choose your keyboard layout:",
   "typeToTest": "Type here to test your keyboard",
   "detectLayout": "Detect Keyboard Layout",
+  "pressOneKey": "Please press one of the following keys:",
+  "isKeyPresent": "Is the following key present on your keyboard?",
 
   "turnOffSecureBootTitle": "Turn off secure boot",
   "turnOffSecureBootDescription": "You've chosen to install third-party driver software. This requires turning off  Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.",
@@ -65,7 +66,7 @@
   "minimalInstallationSubtitle": "Web browser and basic utilities.",
   "otherOptions": "Other options",
   "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
-  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some is proprietary.",
+  "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
 
   "allocateDiskSpace": "Allocate disk space",
   "startInstallingButtonText": "Start Installing",
@@ -79,6 +80,34 @@
   "freeDiskSpace": "free space",
   "newPartitionTable": "New partition table",
   "bootLoaderDevice": "Device for boot loader installation",
+
+  "partitionCreateTitle": "Create partition",
+  "partitionSizeLabel": "Size:",
+  "partitionUnitB": "B",
+  "partitionUnitKB": "KB",
+  "partitionUnitMB": "MB",
+  "partitionUnitGB": "GB",
+  "partitionTypeLabel": "Type for the new partition:",
+  "partitionTypePrimary": "Primary",
+  "partitionTypeLogical": "Logical",
+  "partitionLocationLabel": "Location for the new partition:",
+  "partitionLocationBeginning": "Beginning of this space",
+  "partitionLocationEnd": "End of this space",
+  "partitionFormatLabel": "Used as:",
+  "partitionFormatExt4": "Ext4 journaling file system",
+  "partitionFormatExt3": "Ext3 journaling file system",
+  "partitionFormatExt2": "Ext2 file system",
+  "partitionFormatBtrfs": "btrfs journaling file system",
+  "partitionFormatJfs": "JFS journaling file system",
+  "partitionFormatXfs": "XFS journaling file system",
+  "partitionFormatFat16": "FAT16 file system",
+  "partitionFormatFat32": "FAT32 file system",
+  "partitionFormatSwap": "swap area",
+  "partitionFormatBios": "Reserved BIOS boot area",
+  "partitionFormatEfi": "EFI System Partition",
+  "partitionFormatPhysical": "physical volume for encryption",
+  "partitionFormatNone": "do not use the partition",
+  "partitionMountPointLabel": "Mount point:",
 
   "whoAreYouPageTitle": "Who are you?",
   "whoAreYouPageAutoLogin": "Log in automatically",

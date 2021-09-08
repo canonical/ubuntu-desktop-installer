@@ -2,13 +2,13 @@
 // in ubuntu_wsl_setup/test/setup_complete_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i3;
-import 'dart:io' as _i4;
+import 'dart:async' as _i4;
 import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_wsl_setup/pages/setup_complete/setup_complete_model.dart'
-    as _i2;
+    as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -18,15 +18,21 @@ import 'package:ubuntu_wsl_setup/pages/setup_complete/setup_complete_model.dart'
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
+class _FakeSubiquityClient_0 extends _i1.Fake implements _i2.SubiquityClient {}
+
 /// A class which mocks [SetupCompleteModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSetupCompleteModel extends _i1.Mock
-    implements _i2.SetupCompleteModel {
+    implements _i3.SetupCompleteModel {
   MockSetupCompleteModel() {
     _i1.throwOnMissingStub(this);
   }
 
+  @override
+  _i2.SubiquityClient get client =>
+      (super.noSuchMethod(Invocation.getter(#client),
+          returnValue: _FakeSubiquityClient_0()) as _i2.SubiquityClient);
   @override
   String get username =>
       (super.noSuchMethod(Invocation.getter(#username), returnValue: '')
@@ -36,14 +42,9 @@ class MockSetupCompleteModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
-      returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
-  @override
-  _i3.Future<void> reboot({void Function(int)? exit = _i4.exit}) =>
-      (super.noSuchMethod(Invocation.method(#reboot, [], {#exit: exit}),
-          returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   void addListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
@@ -61,4 +62,14 @@ class MockSetupCompleteModel extends _i1.Mock
           returnValueForMissingStub: null);
   @override
   String toString() => super.toString();
+  @override
+  _i4.Future<void> reboot({bool? immediate}) => (super.noSuchMethod(
+      Invocation.method(#reboot, [], {#immediate: immediate}),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
+      Invocation.method(#shutdown, [], {#immediate: immediate}),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
 }

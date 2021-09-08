@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -19,13 +20,21 @@ void main() {
   });
 
   test('reboot', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+
+    var windowClosed = false;
+    final methodChannel = MethodChannel('ubuntu_wizard');
+    methodChannel.setMockMethodCallHandler((call) {
+      expect(call.method, equals('closeWindow'));
+      windowClosed = true;
+    });
+
     final client = MockSubiquityClient();
     final model = SetupCompleteModel(client);
 
-    var exited = false;
-    await model.reboot(exit: (_) => exited = true);
-    verify(client.reboot()).called(1);
-    expect(exited, isTrue);
+    await model.reboot(immediate: false);
+    verify(client.reboot(immediate: false)).called(1);
+    expect(windowClosed, isTrue);
   });
 
   test('notify changes', () async {

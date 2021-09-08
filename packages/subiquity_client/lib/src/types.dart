@@ -4,6 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'types.freezed.dart';
 part 'types.g.dart';
 
+// ignore_for_file: invalid_annotation_target
+
 @freezed
 class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({
@@ -255,4 +257,29 @@ class WSLConfiguration2Data with _$WSLConfiguration2Data {
 
   factory WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =>
       _$WSLConfiguration2DataFromJson(json);
+}
+
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class KeyboardStep with _$KeyboardStep {
+  @FreezedUnionValue('StepPressKey')
+  const factory KeyboardStep.pressKey({
+    List<String>? symbols,
+    List<List<dynamic>>? keycodes,
+  }) = StepPressKey;
+
+  @FreezedUnionValue('StepKeyPresent')
+  const factory KeyboardStep.keyPresent({
+    String? symbol,
+    String? yes,
+    String? no,
+  }) = StepKeyPresent;
+
+  @FreezedUnionValue('StepResult')
+  const factory KeyboardStep.result({
+    String? layout,
+    String? variant,
+  }) = StepResult;
+
+  factory KeyboardStep.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardStepFromJson(json);
 }

@@ -65,7 +65,7 @@ void main() {
     expect(finishButton, findsOneWidget);
 
     await tester.tap(finishButton);
-    verify(model.reboot()).called(1);
+    verify(model.reboot(immediate: false)).called(1);
   });
 
   testWidgets('creates a model', (tester) async {
