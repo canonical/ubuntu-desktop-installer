@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../widgets.dart';
+import 'turn_off_secure_boot_model.dart';
 
 class PasswordFormField extends StatelessWidget {
   const PasswordFormField({
@@ -14,6 +16,7 @@ class PasswordFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = context.watch<TurnOffSecureBootModel>();
     return FractionallySizedBox(
       widthFactor: 0.80,
       child: LocalizedView(builder: (context, lang) {
@@ -21,7 +24,8 @@ class PasswordFormField extends StatelessWidget {
           spacing: 190,
           obscureText: true,
           labelText: lang.chooseSecurityKey,
-          onChanged: onChanged,
+          onChanged: model.setSecurityKey,
+          enabled: model.areTextFieldEnabled,
           validator: RequiredValidator(errorText: ''),
         );
       }),
@@ -39,6 +43,7 @@ class PasswordConfirmFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = context.watch<TurnOffSecureBootModel>();
     return FractionallySizedBox(
       widthFactor: 0.80,
       child: LocalizedView(builder: (context, lang) {
@@ -46,7 +51,11 @@ class PasswordConfirmFormField extends StatelessWidget {
           spacing: 190,
           obscureText: true,
           labelText: lang.confirmSecurityKey,
-          onChanged: onChanged,
+          enabled: model.areTextFieldEnabled,
+          onChanged: model.setConfirmKey,
+          validator: RequiredValidator(
+            errorText: lang.secureBootPasswordsDontMatch,
+          ),
         );
       }),
     );

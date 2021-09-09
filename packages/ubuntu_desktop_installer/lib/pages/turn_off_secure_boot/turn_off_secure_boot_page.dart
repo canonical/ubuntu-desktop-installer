@@ -48,63 +48,18 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
                   onChanged: model.setSecureBootMode,
                 ),
                 const SizedBox(height: _kFormElementPadding),
-                // _PasswordSizedBox(
-                //   child: TextField(
-                //     obscureText: true,
-                //     onChanged: (value) {
-                //       model.setSecurityKey(value);
-                //       _formKey.currentState?.validate();
-                //     },
-                //     decoration: InputDecoration(
-                //         border: const OutlineInputBorder(),
-                //         hintText: lang.chooseSecurityKey,
-                //         enabled: model.areTextFieldEnabled),
-                //   ),
-                // ),
                 PasswordFormField(
                   onChanged: (value) {
                     model.setSecurityKey(value);
                     _formKey.currentState?.validate();
                   },
                 ),
+                const SizedBox(height: 24),
                 PasswordConfirmFormField(
                   onChanged: (value) {
                     model.setSecurityKey(value);
                     _formKey.currentState?.validate();
                   },
-                ),
-                _PasswordSizedBox(
-                  child: TextField(
-                    obscureText: true,
-                    onChanged: (value) {
-                      model.setSecurityKey(value);
-                      _formKey.currentState?.validate();
-                    },
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: lang.chooseSecurityKey,
-                        enabled: model.areTextFieldEnabled),
-                  ),
-                ),
-                const SizedBox(height: _kFormElementPadding),
-                _PasswordSizedBox(
-                  child: TextFormField(
-                    obscureText: true,
-                    validator: (value) {
-                      if (!model.isConfrmationKeyValid) {
-                        return lang.secureBootPasswordsDontMatch;
-                      }
-                      return '';
-                    },
-                    onChanged: (value) {
-                      model.setConfirmKey(value);
-                      _formKey.currentState?.validate();
-                    },
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: lang.confirmSecurityKey,
-                        enabled: model.areTextFieldEnabled),
-                  ),
                 ),
                 const SizedBox(height: _kFormElementPadding),
                 RadioListTile<SecureBootMode>(
@@ -129,24 +84,6 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
             onActivated: Wizard.of(context).next,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _PasswordSizedBox extends StatelessWidget {
-  final Widget child;
-
-  const _PasswordSizedBox({Key? key, required this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FractionallySizedBox(
-      alignment: Alignment.centerLeft,
-      widthFactor: 0.65,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 90),
-        child: child,
       ),
     );
   }
