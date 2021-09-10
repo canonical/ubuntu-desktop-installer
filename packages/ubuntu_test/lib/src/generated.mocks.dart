@@ -38,11 +38,11 @@ class _FakeGuidedStorageResponse_6 extends _i1.Fake
 
 class _FakeStorageResponse_7 extends _i1.Fake implements _i3.StorageResponse {}
 
-class _FakeWSLConfiguration1Data_8 extends _i1.Fake
-    implements _i3.WSLConfiguration1Data {}
+class _FakeWSLConfigurationBase_8 extends _i1.Fake
+    implements _i3.WSLConfigurationBase {}
 
-class _FakeWSLConfiguration2Data_9 extends _i1.Fake
-    implements _i3.WSLConfiguration2Data {}
+class _FakeWSLConfigurationAdvanced_9 extends _i1.Fake
+    implements _i3.WSLConfigurationAdvanced {}
 
 class _FakeKeyboardStep_10 extends _i1.Fake implements _i3.KeyboardStep {}
 
@@ -246,25 +246,27 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i5.Future<_i3.WSLConfiguration1Data> wslConfiguration1() =>
-      (super.noSuchMethod(Invocation.method(#wslConfiguration1, []),
-              returnValue: Future<_i3.WSLConfiguration1Data>.value(
-                  _FakeWSLConfiguration1Data_8()))
-          as _i5.Future<_i3.WSLConfiguration1Data>);
+  _i5.Future<_i3.WSLConfigurationBase> wslConfigurationBase() =>
+      (super.noSuchMethod(Invocation.method(#wslConfigurationBase, []),
+              returnValue: Future<_i3.WSLConfigurationBase>.value(
+                  _FakeWSLConfigurationBase_8()))
+          as _i5.Future<_i3.WSLConfigurationBase>);
   @override
-  _i5.Future<void> setWslConfiguration1(_i3.WSLConfiguration1Data? conf) =>
-      (super.noSuchMethod(Invocation.method(#setWslConfiguration1, [conf]),
+  _i5.Future<void> setWslConfigurationBase(_i3.WSLConfigurationBase? conf) =>
+      (super.noSuchMethod(Invocation.method(#setWslConfigurationBase, [conf]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i5.Future<_i3.WSLConfiguration2Data> wslConfiguration2() =>
-      (super.noSuchMethod(Invocation.method(#wslConfiguration2, []),
-              returnValue: Future<_i3.WSLConfiguration2Data>.value(
-                  _FakeWSLConfiguration2Data_9()))
-          as _i5.Future<_i3.WSLConfiguration2Data>);
+  _i5.Future<_i3.WSLConfigurationAdvanced> wslConfigurationAdvanced() =>
+      (super.noSuchMethod(Invocation.method(#wslConfigurationAdvanced, []),
+              returnValue: Future<_i3.WSLConfigurationAdvanced>.value(
+                  _FakeWSLConfigurationAdvanced_9()))
+          as _i5.Future<_i3.WSLConfigurationAdvanced>);
   @override
-  _i5.Future<void> setWslConfiguration2(_i3.WSLConfiguration2Data? conf) =>
-      (super.noSuchMethod(Invocation.method(#setWslConfiguration2, [conf]),
+  _i5.Future<void> setWslConfigurationAdvanced(
+          _i3.WSLConfigurationAdvanced? conf) =>
+      (super.noSuchMethod(
+          Invocation.method(#setWslConfigurationAdvanced, [conf]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
@@ -286,7 +288,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   }
 
   @override
-  _i5.Future<String> start(_i8.ServerMode? serverMode, List<String>? args) =>
+  _i5.Future<String> start(_i8.ServerMode? serverMode, [List<String>? args]) =>
       (super.noSuchMethod(Invocation.method(#start, [serverMode, args]),
           returnValue: Future<String>.value('')) as _i5.Future<String>);
   @override

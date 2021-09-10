@@ -224,21 +224,22 @@ class StorageResponse with _$StorageResponse {
 }
 
 @freezed
-class WSLConfiguration1Data with _$WSLConfiguration1Data {
-  const factory WSLConfiguration1Data({
+class WSLConfigurationBase with _$WSLConfigurationBase {
+  const factory WSLConfigurationBase({
     @JsonKey(name: 'custom_path') String? customPath,
     @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
     @JsonKey(name: 'gen_host') bool? genHost,
     @JsonKey(name: 'gen_resolvconf') bool? genResolvconf,
-  }) = _WSLConfiguration1Data;
+  }) = _WSLConfigurationBase;
 
-  factory WSLConfiguration1Data.fromJson(Map<String, dynamic> json) =>
-      _$WSLConfiguration1DataFromJson(json);
+  factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
+      _$WSLConfigurationBaseFromJson(json);
 }
 
+// TODO: remove all common attributes with WSLConfigurationBase
 @freezed
-class WSLConfiguration2Data with _$WSLConfiguration2Data {
-  const factory WSLConfiguration2Data({
+class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
+  const factory WSLConfigurationAdvanced({
     @JsonKey(name: 'gui_theme') String? guiTheme,
     @JsonKey(name: 'gui_followwintheme') bool? guiFollowwintheme,
     @JsonKey(name: 'legacy_gui') bool? legacyGui,
@@ -247,16 +248,12 @@ class WSLConfiguration2Data with _$WSLConfiguration2Data {
     @JsonKey(name: 'wsl_motd_news') bool? wslMotdNews,
     bool? automount,
     bool? mountfstab,
-    @JsonKey(name: 'custom_path') String? customPath,
-    @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-    @JsonKey(name: 'gen_host') bool? genHost,
-    @JsonKey(name: 'gen_resolvconf') bool? genResolvconf,
     @JsonKey(name: 'interop_enabled') bool? interopEnabled,
     @JsonKey(name: 'interop_appendwindowspath') bool? interopAppendwindowspath,
-  }) = _WSLConfiguration2Data;
+  }) = _WSLConfigurationAdvanced;
 
-  factory WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =>
-      _$WSLConfiguration2DataFromJson(json);
+  factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
+      _$WSLConfigurationAdvancedFromJson(json);
 }
 
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)

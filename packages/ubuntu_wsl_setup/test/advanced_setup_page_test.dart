@@ -132,8 +132,8 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.wslConfiguration1())
-        .thenAnswer((_) async => WSLConfiguration1Data());
+    when(client.wslConfigurationBase())
+        .thenAnswer((_) async => WSLConfigurationBase());
 
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,

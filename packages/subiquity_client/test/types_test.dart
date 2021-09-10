@@ -145,8 +145,8 @@ void main() {
     expect(GuidedChoice.fromJson(json), keyboard);
   });
 
-  test('wsl configuration 1 data', () {
-    const conf = WSLConfiguration1Data(
+  test('wsl configuration base data', () {
+    const conf = WSLConfigurationBase(
       customPath: '/mnt/',
       customMountOpt: '',
       genHost: true,
@@ -159,11 +159,11 @@ void main() {
       'gen_resolvconf': true,
     };
     expect(conf.toJson(), equals(json));
-    expect(WSLConfiguration1Data.fromJson(json), conf);
+    expect(WSLConfigurationBase.fromJson(json), conf);
   });
 
-  test('wsl configuration 2 data', () {
-    const conf = WSLConfiguration2Data(
+  test('wsl configuration advanced', () {
+    const conf = WSLConfigurationAdvanced(
       guiTheme: 'default',
       guiFollowwintheme: true,
       legacyGui: false,
@@ -172,10 +172,6 @@ void main() {
       wslMotdNews: true,
       automount: true,
       mountfstab: true,
-      customPath: '/mnt/',
-      customMountOpt: '',
-      genHost: true,
-      genResolvconf: true,
       interopEnabled: true,
       interopAppendwindowspath: true,
     );
@@ -188,15 +184,11 @@ void main() {
       'wsl_motd_news': true,
       'automount': true,
       'mountfstab': true,
-      'custom_path': '/mnt/',
-      'custom_mount_opt': '',
-      'gen_host': true,
-      'gen_resolvconf': true,
       'interop_enabled': true,
       'interop_appendwindowspath': true,
     };
     expect(conf.toJson(), equals(json));
-    expect(WSLConfiguration2Data.fromJson(json), conf);
+    expect(WSLConfigurationAdvanced.fromJson(json), conf);
   });
 
   test('keyboard layout key press step', () {

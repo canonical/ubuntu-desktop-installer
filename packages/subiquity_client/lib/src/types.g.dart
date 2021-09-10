@@ -346,9 +346,9 @@ const _$BootloaderEnumMap = {
   Bootloader.PREP: 'PREP',
 };
 
-_$_WSLConfiguration1Data _$_$_WSLConfiguration1DataFromJson(
+_$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {
-  return _$_WSLConfiguration1Data(
+  return _$_WSLConfigurationBase(
     customPath: json['custom_path'] as String?,
     customMountOpt: json['custom_mount_opt'] as String?,
     genHost: json['gen_host'] as bool?,
@@ -356,8 +356,8 @@ _$_WSLConfiguration1Data _$_$_WSLConfiguration1DataFromJson(
   );
 }
 
-Map<String, dynamic> _$_$_WSLConfiguration1DataToJson(
-        _$_WSLConfiguration1Data instance) =>
+Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
+        _$_WSLConfigurationBase instance) =>
     <String, dynamic>{
       'custom_path': instance.customPath,
       'custom_mount_opt': instance.customMountOpt,
@@ -365,9 +365,9 @@ Map<String, dynamic> _$_$_WSLConfiguration1DataToJson(
       'gen_resolvconf': instance.genResolvconf,
     };
 
-_$_WSLConfiguration2Data _$_$_WSLConfiguration2DataFromJson(
+_$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
     Map<String, dynamic> json) {
-  return _$_WSLConfiguration2Data(
+  return _$_WSLConfigurationAdvanced(
     guiTheme: json['gui_theme'] as String?,
     guiFollowwintheme: json['gui_followwintheme'] as bool?,
     legacyGui: json['legacy_gui'] as bool?,
@@ -376,17 +376,13 @@ _$_WSLConfiguration2Data _$_$_WSLConfiguration2DataFromJson(
     wslMotdNews: json['wsl_motd_news'] as bool?,
     automount: json['automount'] as bool?,
     mountfstab: json['mountfstab'] as bool?,
-    customPath: json['custom_path'] as String?,
-    customMountOpt: json['custom_mount_opt'] as String?,
-    genHost: json['gen_host'] as bool?,
-    genResolvconf: json['gen_resolvconf'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
     interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
   );
 }
 
-Map<String, dynamic> _$_$_WSLConfiguration2DataToJson(
-        _$_WSLConfiguration2Data instance) =>
+Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
+        _$_WSLConfigurationAdvanced instance) =>
     <String, dynamic>{
       'gui_theme': instance.guiTheme,
       'gui_followwintheme': instance.guiFollowwintheme,
@@ -396,10 +392,6 @@ Map<String, dynamic> _$_$_WSLConfiguration2DataToJson(
       'wsl_motd_news': instance.wslMotdNews,
       'automount': instance.automount,
       'mountfstab': instance.mountfstab,
-      'custom_path': instance.customPath,
-      'custom_mount_opt': instance.customMountOpt,
-      'gen_host': instance.genHost,
-      'gen_resolvconf': instance.genResolvconf,
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
     };

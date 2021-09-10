@@ -12,11 +12,6 @@ void main(List<String> args) {
     UbuntuWslSetupApp(reconfigure: options['reconfigure'] == true),
     options: options,
     subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer(),
-    serverArgs: [
-      if (options['reconfigure'] == true) '--reconfigure',
-      '--machine-config',
-      'examples/simple.json',
-    ],
+    subiquityServer: SubiquityServer.wsl(),
   );
 }
