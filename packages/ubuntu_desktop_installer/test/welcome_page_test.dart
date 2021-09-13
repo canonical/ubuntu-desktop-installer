@@ -23,7 +23,10 @@ void main() {
   Future<void> setUpApp(WidgetTester tester) async {
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: [
+        ...AppLocalizations.localizationsDelegates,
+        ...UbuntuLocalizations.localizationsDelegates,
+      ],
       locale: Locale('en'),
       home: Wizard(
         routes: <String, WidgetBuilder>{

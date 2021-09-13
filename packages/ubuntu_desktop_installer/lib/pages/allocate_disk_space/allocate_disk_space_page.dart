@@ -56,10 +56,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
           ],
         ),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
+          WizardAction.back(context),
           WizardAction(
             label: lang.startInstallingButtonText,
             highlighted: true,

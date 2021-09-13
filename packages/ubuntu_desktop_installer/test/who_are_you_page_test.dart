@@ -170,7 +170,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
   });
@@ -181,7 +181,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
@@ -224,7 +224,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
 

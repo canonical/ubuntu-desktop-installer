@@ -27,7 +27,10 @@ void main() {
 
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: [
+        ...AppLocalizations.localizationsDelegates,
+        ...UbuntuLocalizations.localizationsDelegates,
+      ],
       locale: Locale('en'),
       home: Wizard(
         routes: {

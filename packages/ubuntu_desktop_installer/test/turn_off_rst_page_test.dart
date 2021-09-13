@@ -18,7 +18,10 @@ void main() {
 
     await tester.pumpWidget(
       MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: [
+          ...AppLocalizations.localizationsDelegates,
+          ...UbuntuLocalizations.localizationsDelegates,
+        ],
         home: Wizard(
           routes: {
             '/': (_) {

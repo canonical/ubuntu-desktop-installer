@@ -4,10 +4,8 @@
   "appTitle": "Ubuntu Desktop Installer",
   "windowTitle": "Install Ubuntu",
 
-  "backButtonText": "Go Back",
   "cancelButtonText": "Cancel",
   "changeButtonText": "Change",
-  "continueButtonText": "Continue",
   "okButtonText": "OK",
   "noButtonText": "No",
   "restartButtonText": "Restart",

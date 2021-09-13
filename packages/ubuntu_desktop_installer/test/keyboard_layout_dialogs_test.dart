@@ -39,7 +39,10 @@ void main() {
         value: client,
         child: MaterialApp(
           supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: [
+            ...AppLocalizations.localizationsDelegates,
+            ...UbuntuLocalizations.localizationsDelegates,
+          ],
           home: DetectKeyboardLayoutView(
             pressKey: null,
             keyPresent: null,

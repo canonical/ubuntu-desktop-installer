@@ -13,7 +13,10 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: [
+          ...AppLocalizations.localizationsDelegates,
+          ...UbuntuLocalizations.localizationsDelegates,
+        ],
         home: DetectKeyboardLayoutView(
           pressKey: ['x', 'y', 'z'],
           onKeyPress: (code) => keyPress = code,
@@ -38,7 +41,10 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: [
+          ...AppLocalizations.localizationsDelegates,
+          ...UbuntuLocalizations.localizationsDelegates,
+        ],
         home: DetectKeyboardLayoutView(
           keyPresent: 'x',
         ),

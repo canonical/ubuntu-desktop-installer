@@ -34,7 +34,10 @@ void main() {
 
   Widget buildApp(WidgetTester tester, UpdateOtherSoftwareModel model) {
     return MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: [
+        ...AppLocalizations.localizationsDelegates,
+        ...UbuntuLocalizations.localizationsDelegates,
+      ],
       home: Wizard(
         routes: {'/': (_) => buildPage(model)},
         onNext: (settings) => '/',
@@ -100,7 +103,10 @@ void main() {
   testWidgets('creates a model', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: [
+          ...AppLocalizations.localizationsDelegates,
+          ...UbuntuLocalizations.localizationsDelegates,
+        ],
         home: Wizard(
           routes: {'/': UpdatesOtherSoftwarePage.create},
           onNext: (settings) => '/',
