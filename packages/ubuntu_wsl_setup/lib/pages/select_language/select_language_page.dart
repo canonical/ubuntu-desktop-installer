@@ -14,15 +14,8 @@ class SelectLanguagePage extends StatelessWidget {
     return WizardPage(
       title: Text(lang.selectLanguageTitle),
       actions: [
-        WizardAction(
-          enabled: false,
-          label: lang.backButton,
-          onActivated: Wizard.of(context).back,
-        ),
-        WizardAction(
-          label: lang.continueButton,
-          onActivated: Wizard.of(context).next,
-        )
+        WizardAction.back(context, enabled: false),
+        WizardAction.next(context),
       ],
     );
   }
