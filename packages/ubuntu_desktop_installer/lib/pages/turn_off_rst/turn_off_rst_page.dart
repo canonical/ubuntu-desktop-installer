@@ -51,10 +51,7 @@ class TurnOffRSTPage extends StatelessWidget {
             ],
           ),
           actions: <WizardAction>[
-            WizardAction(
-              label: lang.backButtonText,
-              onActivated: Wizard.of(context).back,
-            ),
+            WizardAction.back(context),
             WizardAction(
               label: lang.restartButtonText,
               highlighted: true,

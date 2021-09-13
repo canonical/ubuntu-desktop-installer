@@ -85,9 +85,9 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
         ),
         actions: <WizardAction>[
-          WizardAction(label: lang.backButtonText),
-          WizardAction(
-            label: lang.continueButtonText,
+          WizardAction.back(context, enabled: false),
+          WizardAction.next(
+            context,
             onActivated: () {
               model.applyLocale(model.locale(model.selectedLanguageIndex));
               Wizard.of(context).next();

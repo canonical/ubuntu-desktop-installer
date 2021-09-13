@@ -258,12 +258,9 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                 }),
               ]),
               actions: <WizardAction>[
-                WizardAction(
-                  label: lang.backButtonText,
-                  onActivated: Wizard.of(context).back,
-                ),
-                WizardAction(
-                  label: lang.continueButtonText,
+                WizardAction.back(context),
+                WizardAction.next(
+                  context,
                   onActivated: () async {
                     final client =
                         Provider.of<SubiquityClient>(context, listen: false);

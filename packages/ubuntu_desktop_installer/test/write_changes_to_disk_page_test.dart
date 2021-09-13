@@ -83,7 +83,7 @@ void main() {
       WidgetTester tester, List<Map<String, dynamic>> storageConfig) async {
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Wizard(
         routes: {

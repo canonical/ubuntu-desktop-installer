@@ -148,12 +148,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
           ],
         ),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
+          WizardAction.back(context),
+          WizardAction.next(
+            context,
             enabled: model.isValid,
             onActivated: () async {
               await model.applyKeyboardSettings();
