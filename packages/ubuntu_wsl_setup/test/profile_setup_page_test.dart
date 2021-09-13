@@ -51,10 +51,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
     return MaterialApp(
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-      ],
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {'/': (_) => buildPage(model)},
         onNext: (settings) => '/',
@@ -205,10 +202,7 @@ void main() {
     when(client.identity()).thenAnswer((_) async => IdentityData());
 
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-      ],
+      localizationsDelegates: localizationsDelegates,
       home: Provider<SubiquityClient>.value(
         value: client,
         child: Wizard(
