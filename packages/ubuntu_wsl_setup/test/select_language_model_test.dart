@@ -1,0 +1,67 @@
+import 'dart:ui';
+
+import 'package:diacritic/diacritic.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
+
+void main() {
+  test('load languages', () async {
+    final model = SelectLanguageModel(MockSubiquityClient());
+    await model.loadLanguages();
+    expect(model.languageCount, greaterThan(1));
+  });
+
+  test('sort languages', () async {
+    final model = SelectLanguageModel(MockSubiquityClient());
+    await model.loadLanguages();
+
+    final languages = List.generate(model.languageCount, model.language);
+    expect(languages.length, greaterThan(1));
+
+    final sortedLanguages = List.of(languages)
+      ..sort((a, b) => removeDiacritics(a).compareTo(removeDiacritics(b)));
+    expect(languages, equals(sortedLanguages));
+  });
+
+  test('select locale', () async {
+    final model = SelectLanguageModel(MockSubiquityClient());
+    await model.loadLanguages();
+    expect(model.languageCount, greaterThan(1));
+    expect(model.selectedLanguageIndex, equals(0));
+
+    model.selectLocale(Locale('foo'));
+    expect(model.selectedLanguageIndex, equals(0));
+
+    final firstLocale = model.locale(0);
+    final lastLocale = model.locale(model.languageCount - 1);
+    expect(firstLocale, isNot(equals(lastLocale)));
+
+    model.selectLocale(lastLocale);
+    expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
+  });
+
+  test('set locale', () {
+    final client = MockSubiquityClient();
+    final model = SelectLanguageModel(client);
+    model.applyLocale(Locale('fr', 'CA'));
+    verify(client.setLocale('fr_CA.UTF-8')).called(1);
+  });
+
+  test('selected language', () {
+    final model = SelectLanguageModel(MockSubiquityClient());
+
+    var wasNotified = false;
+    model.addListener(() => wasNotified = true);
+
+    expect(model.selectedLanguageIndex, isZero);
+    model.selectedLanguageIndex = 0;
+    expect(model.selectedLanguageIndex, isZero);
+    expect(wasNotified, isFalse);
+
+    model.selectedLanguageIndex = 1;
+    expect(model.selectedLanguageIndex, equals(1));
+    expect(wasNotified, isTrue);
+  });
+}
