@@ -12,6 +12,8 @@ import 'package:ubuntu_test/mocks.dart';
 import 'widget_tester_extensions.dart';
 
 void main() {
+  setUpAll(() => LangTester.context = DetectKeyboardLayoutView);
+
   testWidgets('detect layout', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);

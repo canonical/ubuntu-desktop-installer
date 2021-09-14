@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
-import '../../widgets.dart';
+import '../../l10n.dart';
 
 /// Asks the user to press one of keys.
 class PressKeyView extends StatelessWidget {
@@ -13,25 +13,22 @@ class PressKeyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(
-      builder: (context, lang) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(lang.pressOneKey),
-            const SizedBox(height: kContentSpacing),
-            DefaultTextStyle(
-              style: Theme.of(context).textTheme.headline5!,
-              child: Wrap(
-                spacing: 24,
-                alignment: WrapAlignment.spaceEvenly,
-                children: _pressKey.map((key) => Text(key)).toList(),
-              ),
-            ),
-          ],
-        );
-      },
+    final lang = AppLocalizations.of(context);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Text(lang.pressOneKey),
+        const SizedBox(height: kContentSpacing),
+        DefaultTextStyle(
+          style: Theme.of(context).textTheme.headline5!,
+          child: Wrap(
+            spacing: 24,
+            alignment: WrapAlignment.spaceEvenly,
+            children: _pressKey.map((key) => Text(key)).toList(),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -45,24 +42,21 @@ class KeyPresentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(
-      builder: (context, lang) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(lang.isKeyPresent),
-            const SizedBox(height: kContentSpacing),
-            DefaultTextStyle(
-              style: Theme.of(context).textTheme.headline5!,
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(_keyPresent),
-              ),
-            ),
-          ],
-        );
-      },
+    final lang = AppLocalizations.of(context);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Text(lang.isKeyPresent),
+        const SizedBox(height: kContentSpacing),
+        DefaultTextStyle(
+          style: Theme.of(context).textTheme.headline5!,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(_keyPresent),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -116,17 +110,15 @@ class _DetectKeyboardLayoutViewState extends State<DetectKeyboardLayoutView> {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            if (widget._pressKey != null) PressKeyView(widget._pressKey!),
-            if (widget._keyPresent != null) KeyPresentView(widget._keyPresent!),
-          ],
-        ),
-      );
-    });
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          if (widget._pressKey != null) PressKeyView(widget._pressKey!),
+          if (widget._keyPresent != null) KeyPresentView(widget._keyPresent!),
+        ],
+      ),
+    );
   }
 }
