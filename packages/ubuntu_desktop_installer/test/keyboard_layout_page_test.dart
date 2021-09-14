@@ -12,7 +12,6 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_p
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'keyboard_layout_page_test.mocks.dart';
@@ -61,10 +60,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
     return MaterialApp(
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-      ],
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {
           '/': (_) => buildPage(model),
@@ -145,7 +141,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
@@ -157,7 +153,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
@@ -169,7 +165,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
     await tester.tap(continueButton);
@@ -185,7 +181,7 @@ void main() {
 
     await tester.pumpWidget(
       MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: localizationsDelegates,
         home: MultiProvider(
           providers: [
             Provider<KeyboardService>.value(value: service),
