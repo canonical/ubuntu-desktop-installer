@@ -1,5 +1,8 @@
 {
   "@@locale": "pt_BR",
 
-  "languageName": "Português do Brasil"
+  "languageName": "Português do Brasil",
+
+  "backAction": "Voltar",
+  "continueAction": "Continuar"
 }

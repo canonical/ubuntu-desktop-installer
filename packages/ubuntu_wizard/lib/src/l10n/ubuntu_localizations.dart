@@ -120,6 +120,18 @@ abstract class UbuntuLocalizations {
   /// **'English'**
   String get languageName;
 
+  /// No description provided for @backAction.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Go Back'**
+  String get backAction;
+
+  /// No description provided for @continueAction.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Continue'**
+  String get continueAction;
+
   /// No description provided for @strongPassword.
   ///
   /// In en_US, this message translates to:

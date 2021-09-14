@@ -36,6 +36,9 @@ jobs:
       working-directory: ./packages/subiquity_client/subiquity
       run: sudo ./scripts/installdeps.sh
 
+    - name: Check subiquity integration
+      run: ./scripts/subiquity_integration
+
     # test all packages
 
     - name: Bootstrap workspace

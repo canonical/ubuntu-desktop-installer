@@ -7,13 +7,15 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_w
 import 'widget_tester_extensions.dart';
 
 void main() {
+  setUpAll(() => LangTester.context = DetectKeyboardLayoutView);
+
   testWidgets('press key', (tester) async {
     int? keyPress;
 
     await tester.pumpWidget(
       MaterialApp(
         supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: localizationsDelegates,
         home: DetectKeyboardLayoutView(
           pressKey: ['x', 'y', 'z'],
           onKeyPress: (code) => keyPress = code,
@@ -38,7 +40,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: localizationsDelegates,
         home: DetectKeyboardLayoutView(
           keyPresent: 'x',
         ),

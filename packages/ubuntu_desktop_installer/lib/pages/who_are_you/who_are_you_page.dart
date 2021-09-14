@@ -6,7 +6,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../widgets.dart';
+import '../../l10n.dart';
 import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';
@@ -47,71 +47,68 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      return WizardPage(
-        contentPadding: EdgeInsets.zero,
-        title: Text(lang.whoAreYouPageTitle),
-        content: LayoutBuilder(builder: (context, constraints) {
-          final fieldPadding = EdgeInsets.symmetric(
-              horizontal: kContentPadding.left, vertical: 10);
-          final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-              kContentWidthFraction;
+    final lang = AppLocalizations.of(context);
 
-          return Form(
-            key: _whoAreYouFormKey,
-            child: ListView(
-              children: [
-                Padding(
-                  padding: fieldPadding,
-                  child: _RealNameFormField(fieldWidth: fieldWidth),
-                ),
-                Padding(
-                  padding: fieldPadding,
-                  child: _HostNameFormField(fieldWidth: fieldWidth),
-                ),
-                Padding(
-                  padding: fieldPadding,
-                  child: _UsernameFormField(fieldWidth: fieldWidth),
-                ),
-                Padding(
-                  padding: fieldPadding,
-                  child: _PasswordFormField(fieldWidth: fieldWidth),
-                ),
-                Padding(
-                  padding: fieldPadding,
-                  child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
-                ),
-                _LoginStrategyTile(
-                  value: LoginStrategy.autoLogin,
-                  label: lang.whoAreYouPageAutoLogin,
-                ),
-                const SizedBox(height: kContentSpacing),
-                _LoginStrategyTile(
-                  value: LoginStrategy.requirePassword,
-                  label: lang.whoAreYouPageRequirePassword,
-                ),
-              ],
-            ),
-          );
-        }),
-        actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
-            enabled:
-                context.select<WhoAreYouModel, bool>((model) => model.isValid),
-            onActivated: () async {
-              final model = Provider.of<WhoAreYouModel>(context, listen: false);
-              await model.saveIdentity();
+    return WizardPage(
+      contentPadding: EdgeInsets.zero,
+      title: Text(lang.whoAreYouPageTitle),
+      content: LayoutBuilder(builder: (context, constraints) {
+        final fieldPadding = EdgeInsets.symmetric(
+            horizontal: kContentPadding.left, vertical: 10);
+        final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
+            kContentWidthFraction;
 
-              Wizard.of(context).next();
-            },
+        return Form(
+          key: _whoAreYouFormKey,
+          child: ListView(
+            children: [
+              Padding(
+                padding: fieldPadding,
+                child: _RealNameFormField(fieldWidth: fieldWidth),
+              ),
+              Padding(
+                padding: fieldPadding,
+                child: _HostNameFormField(fieldWidth: fieldWidth),
+              ),
+              Padding(
+                padding: fieldPadding,
+                child: _UsernameFormField(fieldWidth: fieldWidth),
+              ),
+              Padding(
+                padding: fieldPadding,
+                child: _PasswordFormField(fieldWidth: fieldWidth),
+              ),
+              Padding(
+                padding: fieldPadding,
+                child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              ),
+              _LoginStrategyTile(
+                value: LoginStrategy.autoLogin,
+                label: lang.whoAreYouPageAutoLogin,
+              ),
+              const SizedBox(height: kContentSpacing),
+              _LoginStrategyTile(
+                value: LoginStrategy.requirePassword,
+                label: lang.whoAreYouPageRequirePassword,
+              ),
+            ],
           ),
-        ],
-      );
-    });
+        );
+      }),
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.next(
+          context,
+          enabled:
+              context.select<WhoAreYouModel, bool>((model) => model.isValid),
+          onActivated: () async {
+            final model = Provider.of<WhoAreYouModel>(context, listen: false);
+            await model.saveIdentity();
+
+            Wizard.of(context).next();
+          },
+        ),
+      ],
+    );
   }
 }

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# inject-snap - install a snap into a live iso
+# inject-snap source_iso destination_iso file.snap
+
+set -eux
+
+src=$1
+dst=$2
+snap=$3
+
+LIVEFS_EDITOR="${LIVEFS_EDITOR-$(readlink -f "$(dirname $(dirname ${0}))/livefs-editor")}"
+[ -d "$LIVEFS_EDITOR" ] || git clone https://github.com/mwhudson/livefs-editor $LIVEFS_EDITOR
+
+sudo PYTHONPATH=$LIVEFS_EDITOR \
+    python3 -m livefs_edit $src $dst --inject-snap $snap
