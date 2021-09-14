@@ -7,6 +7,8 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_w
 import 'widget_tester_extensions.dart';
 
 void main() {
+  setUpAll(() => LangTester.context = DetectKeyboardLayoutView);
+
   testWidgets('press key', (tester) async {
     int? keyPress;
 
