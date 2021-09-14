@@ -14,12 +14,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get backButton => 'Go Back';
-
-  @override
-  String get continueButton => 'Continue';
-
-  @override
   String get exitButton => 'Exit';
 
   @override
