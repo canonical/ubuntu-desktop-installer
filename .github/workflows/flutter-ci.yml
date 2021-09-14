@@ -37,7 +37,7 @@ jobs:
       run: sudo ./scripts/installdeps.sh
 
     - name: Check subiquity integration
-      run: ./packages/subiquity_client/subiquity_integration
+      run: ./scripts/subiquity_integration
 
     # test all packages
 
