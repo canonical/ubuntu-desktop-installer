@@ -95,12 +95,9 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           );
         }),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
+          WizardAction.back(context),
+          WizardAction.next(
+            context,
             enabled:
                 context.select<WhoAreYouModel, bool>((model) => model.isValid),
             onActivated: () async {

@@ -2,21 +2,16 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/l10n.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 
-/// Implements the business logic of the welcome page.
-class WelcomeModel extends ChangeNotifier {
-  /// Creates a model with the specified [client] and [keyboardService].
-  WelcomeModel({
-    required SubiquityClient client,
-    required KeyboardService keyboardService,
-  })  : _client = client,
-        _keyboardService = keyboardService;
+/// View model for [SelectLanguagePage].
+class SelectLanguageModel extends ChangeNotifier {
+  /// Creates a model with the specified client.
+  SelectLanguageModel(this._client);
 
   final SubiquityClient _client;
-  final KeyboardService _keyboardService;
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -27,21 +22,17 @@ class WelcomeModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  final _languageList = <LocalizedLanguage>[];
+  var _languages = <LocalizedLanguage>[];
 
   /// Loads available languages.
   Future<void> loadLanguages() async {
-    assert(_languageList.isEmpty);
     return loadLocalizedLanguages(AppLocalizations.supportedLocales)
-        .then(_languageList.addAll)
+        .then((languages) => _languages = languages)
         .then((_) => notifyListeners());
   }
 
-  /// Loads keyboards for the currently selected locale.
-  Future<void> loadKeyboards() => _keyboardService.load(_client);
-
   /// Returns the locale for the given language [index].
-  Locale locale(int index) => _languageList[index].locale;
+  Locale locale(int index) => _languages[index].locale;
 
   /// Applies the given [locale].
   Future<void> applyLocale(Locale locale) {
@@ -50,16 +41,13 @@ class WelcomeModel extends ChangeNotifier {
   }
 
   /// Returns the number of languages.
-  int get languageCount => _languageList.length;
+  int get languageCount => _languages.length;
 
   /// Returns the name of the language at the given [index].
-  String language(int index) => _languageList[index].name;
+  String language(int index) => _languages[index].name;
 
-  /// Selects the best match for the given [locale].
-  ///
-  /// See also:
-  /// * [LocalizedLanguageMatcher.findBestMatch]
+  /// Selects the given [locale].
   void selectLocale(Locale locale) {
-    _selectedLanguageIndex = _languageList.findBestMatch(locale);
+    _selectedLanguageIndex = _languages.findBestMatch(locale);
   }
 }

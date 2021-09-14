@@ -4,10 +4,8 @@
   "appTitle": "Ubuntu Desktop Installer",
   "windowTitle": "Install Ubuntu",
 
-  "backButtonText": "Go Back",
   "cancelButtonText": "Cancel",
   "changeButtonText": "Change",
-  "continueButtonText": "Continue",
   "okButtonText": "OK",
   "noButtonText": "No",
   "restartButtonText": "Restart",
@@ -72,6 +70,7 @@
   "bootLoaderDevice": "Device for boot loader installation",
 
   "partitionCreateTitle": "Create partition",
+  "partitionEditTitle": "Edit partition",
   "partitionSizeLabel": "Size:",
   "partitionUnitB": "B",
   "partitionUnitKB": "KB",
@@ -97,6 +96,7 @@
   "partitionFormatEfi": "EFI System Partition",
   "partitionFormatPhysical": "physical volume for encryption",
   "partitionFormatNone": "do not use the partition",
+  "partitionErase": "Format the partition",
   "partitionMountPointLabel": "Mount point:",
 
   "whoAreYouPageTitle": "Who are you?",

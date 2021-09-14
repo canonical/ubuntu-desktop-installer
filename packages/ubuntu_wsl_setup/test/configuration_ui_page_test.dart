@@ -48,7 +48,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
     return MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {'/': (_) => buildPage(model)},
         onNext: (settings) => '/',
@@ -163,7 +163,7 @@ void main() {
         .thenAnswer((_) async => WSLConfiguration2Data());
 
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Provider<SubiquityClient>.value(
         value: client,
         child: Wizard(

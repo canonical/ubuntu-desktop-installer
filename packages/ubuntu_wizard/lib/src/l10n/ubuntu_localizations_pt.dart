@@ -11,6 +11,12 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
   String get languageName => '';
 
   @override
+  String get backAction => 'Go Back';
+
+  @override
+  String get continueAction => 'Continue';
+
+  @override
   String get strongPassword => 'Strong password';
 
   @override
@@ -26,4 +32,10 @@ class UbuntuLocalizationsPtBr extends UbuntuLocalizationsPt {
 
   @override
   String get languageName => 'Português do Brasil';
+
+  @override
+  String get backAction => 'Voltar';
+
+  @override
+  String get continueAction => 'Continuar';
 }

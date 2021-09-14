@@ -43,7 +43,7 @@ void main() {
 
   Widget buildApp(AdvancedSetupModel model) {
     return MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {'/': (_) => buildPage(model)},
         onNext: (settings) => '/',
@@ -136,7 +136,7 @@ void main() {
         .thenAnswer((_) async => WSLConfiguration1Data());
 
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Provider<SubiquityClient>.value(
         value: client,
         child: Wizard(
