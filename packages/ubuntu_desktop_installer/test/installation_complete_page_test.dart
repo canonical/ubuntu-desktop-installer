@@ -17,7 +17,7 @@ import 'widget_tester_extensions.dart';
 void main() {
   Widget buildApp(InstallationCompleteModel model) {
     return MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {
           '/': (_) {
@@ -58,7 +58,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: localizationsDelegates,
         home: Provider<SubiquityClient>(
           create: (_) => MockSubiquityClient(),
           child: Wizard(
