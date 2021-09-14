@@ -44,10 +44,7 @@ void main() {
   Widget buildApp(
       WidgetTester tester, SelectLanguageModel model, Settings settings) {
     return MaterialApp(
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-      ],
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {'/': (_) => buildPage(model, settings)},
         onNext: (settings) => '/',
@@ -83,7 +80,7 @@ void main() {
     verify(model.selectLocale(Locale('fr_FR'))).called(1);
 
     final continueButton =
-        find.widgetWithText(OutlinedButton, tester.lang.continueButton);
+        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
@@ -95,7 +92,7 @@ void main() {
     when(settings.locale).thenReturn(Locale('en_US'));
 
     await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: MultiProvider(
         providers: [
           ChangeNotifierProvider<Settings>.value(value: settings),
