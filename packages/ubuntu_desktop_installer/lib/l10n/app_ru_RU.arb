@@ -4,8 +4,6 @@
   "appTitle": "Установка Ubuntu",
   "windowTitle": "Установить Ubuntu",
 
-  "backButtonText": "Назад",
-  "continueButtonText": "Продолжить",
   "restartButtonText": "Перезагрузить",
 
   "welcome": "Добро пожаловать",

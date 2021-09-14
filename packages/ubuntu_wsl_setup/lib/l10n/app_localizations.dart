@@ -108,18 +108,6 @@ abstract class AppLocalizations {
   /// **'Ubuntu WSL'**
   String get windowTitle;
 
-  /// No description provided for @backButton.
-  ///
-  /// In en_US, this message translates to:
-  /// **'Go Back'**
-  String get backButton;
-
-  /// No description provided for @continueButton.
-  ///
-  /// In en_US, this message translates to:
-  /// **'Continue'**
-  String get continueButton;
-
   /// No description provided for @exitButton.
   ///
   /// In en_US, this message translates to:

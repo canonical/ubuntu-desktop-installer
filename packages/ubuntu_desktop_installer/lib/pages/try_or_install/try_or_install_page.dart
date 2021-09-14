@@ -73,12 +73,9 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           onLinkTap: (url, _, __, ___) => launch(url!),
         ),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
+          WizardAction.back(context),
+          WizardAction.next(
+            context,
             enabled: model.option != Option.none,
             onActivated: () => Wizard.of(context).next(arguments: model.option),
           ),

@@ -27,11 +27,7 @@ class UbuntuWslSetupApp extends StatelessWidget {
       darkTheme: yaru.darkTheme,
       themeMode: Settings.of(context).theme,
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-        const LocalizationsDelegateOc(),
-      ],
+      localizationsDelegates: localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: UbuntuWslSetupWizard(reconfigure: reconfigure),
     );

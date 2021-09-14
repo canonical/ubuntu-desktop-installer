@@ -107,10 +107,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
         ],
       ),
       actions: <WizardAction>[
-        WizardAction(
-          label: lang.backButton,
-          onActivated: Wizard.of(context).back,
-        ),
+        WizardAction.back(context),
         WizardAction(
           highlighted: true,
           label: lang.saveButton,

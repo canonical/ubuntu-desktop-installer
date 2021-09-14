@@ -78,10 +78,10 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
           },
         ),
       ),
-      actions: <WizardAction>[
-        WizardAction(label: lang.backButton),
-        WizardAction(
-          label: lang.continueButton,
+      actions: [
+        WizardAction.back(context, enabled: false),
+        WizardAction.next(
+          context,
           onActivated: () {
             model.applyLocale(model.locale(model.selectedLanguageIndex));
             Wizard.of(context).next();

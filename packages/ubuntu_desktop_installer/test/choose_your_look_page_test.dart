@@ -24,7 +24,7 @@ void main() {
       ChangeNotifierProvider.value(
         value: settings,
         child: MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: localizationsDelegates,
           home: Wizard(
             routes: {
               '/': ChooseYourLookPage.create,

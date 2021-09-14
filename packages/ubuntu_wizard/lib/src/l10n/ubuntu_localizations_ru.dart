@@ -11,6 +11,12 @@ class UbuntuLocalizationsRu extends UbuntuLocalizations {
   String get languageName => '';
 
   @override
+  String get backAction => 'Go Back';
+
+  @override
+  String get continueAction => 'Continue';
+
+  @override
   String get strongPassword => 'Strong password';
 
   @override
@@ -26,4 +32,10 @@ class UbuntuLocalizationsRuRu extends UbuntuLocalizationsRu {
 
   @override
   String get languageName => 'Русский';
+
+  @override
+  String get backAction => 'Назад';
+
+  @override
+  String get continueAction => 'Продолжить';
 }
