@@ -1,12 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
-
-/// @internal
-final log = Logger('installation_slides');
 
 /// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
@@ -46,13 +42,8 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   int get installationStepCount =>
       ApplicationState.DONE.index - ApplicationState.RUNNING.index;
 
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
-
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    log.debug(
-        'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();
   }
