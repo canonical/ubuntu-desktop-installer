@@ -5,6 +5,9 @@ import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
+/// @internal
+final log = Logger('installation_slides');
+
 /// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   /// Creates an instance with the given client.
@@ -48,7 +51,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
 
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    appLogger.debug(
+    log.debug(
         'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();

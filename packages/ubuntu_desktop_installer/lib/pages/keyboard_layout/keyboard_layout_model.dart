@@ -9,6 +9,9 @@ import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
+/// @internal
+final log = Logger('keyboard_layout');
+
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends ChangeNotifier {
   /// Creates a model with the specified [client] and [keyboardService].
@@ -114,7 +117,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
         .run('setxkbmap', arguments)
         .then((result) {})
         .catchError((e) {
-      appLogger.error(e);
+      log.error(e);
     });
   }
 
