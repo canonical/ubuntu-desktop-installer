@@ -15,15 +15,8 @@ class ChooseYourLookPage extends StatelessWidget {
       builder: (context, lang) => WizardPage(
         header: Text(lang.chooseYourLookPageHeader),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
-            enabled: true,
-            onActivated: Wizard.of(context).next,
-          ),
+          WizardAction.back(context),
+          WizardAction.next(context),
         ],
         title: Text(lang.chooseYourLookPageTitle),
         contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),

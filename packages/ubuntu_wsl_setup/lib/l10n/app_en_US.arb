@@ -4,8 +4,6 @@
   "appTitle": "Ubuntu WSL",
   "windowTitle": "Ubuntu WSL",
 
-  "backButton": "Go Back",
-  "continueButton": "Continue",
   "exitButton": "Exit",
   "finishButton": "Finish",
   "saveButton": "Save",

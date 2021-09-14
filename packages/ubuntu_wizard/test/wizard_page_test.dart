@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
@@ -126,6 +127,41 @@ void main() {
         matching: find.text('action'),
       ),
       findsNothing,
+    );
+  });
+
+  testWidgets('common actions', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
+        home: Builder(builder: (context) {
+          return WizardPage(
+            actions: <WizardAction>[
+              WizardAction.back(context),
+              WizardAction.next(context),
+            ],
+          );
+        }),
+      ),
+    );
+
+    final context = tester.element(find.byType(WizardPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(
+      find.descendant(
+        of: find.byType(OutlinedButton),
+        matching: find.text(lang.backAction),
+      ),
+      findsOneWidget,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(OutlinedButton),
+        matching: find.text(lang.continueAction),
+      ),
+      findsOneWidget,
     );
   });
 }

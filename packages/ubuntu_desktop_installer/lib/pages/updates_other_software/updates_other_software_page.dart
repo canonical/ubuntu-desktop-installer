@@ -67,14 +67,8 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           ],
         ),
         actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Wizard.of(context).back,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
-            onActivated: Wizard.of(context).next,
-          ),
+          WizardAction.back(context),
+          WizardAction.next(context),
         ],
       ),
     );
