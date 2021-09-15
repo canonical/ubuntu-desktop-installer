@@ -5,22 +5,16 @@ import 'pages.dart';
 import 'routes.dart';
 
 class UbuntuWslSetupWizard extends StatelessWidget {
-  const UbuntuWslSetupWizard({
-    Key? key,
-    required this.reconfigure,
-  }) : super(key: key);
-
-  final bool reconfigure;
+  const UbuntuWslSetupWizard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Wizard(
       initialRoute: Routes.selectLanguage,
       routes: <String, WidgetBuilder>{
-        if (!reconfigure) Routes.selectLanguage: SelectLanguagePage.create,
-        if (!reconfigure) Routes.profileSetup: ProfileSetupPage.create,
+        Routes.selectLanguage: SelectLanguagePage.create,
+        Routes.profileSetup: ProfileSetupPage.create,
         Routes.advancedSetup: AdvancedSetupPage.create,
-        Routes.configurationUI: ConfigurationUIPage.create,
         Routes.setupComplete: SetupCompletePage.create,
       },
       onNext: (settings) {
@@ -29,10 +23,25 @@ class UbuntuWslSetupWizard extends StatelessWidget {
             if ((settings.arguments as bool?) == true) {
               return Routes.advancedSetup;
             }
-            return Routes.configurationUI;
+            return Routes.setupComplete;
           default:
             return null;
         }
+      },
+    );
+  }
+}
+
+class UbuntuWslReconfigureWizard extends StatelessWidget {
+  const UbuntuWslReconfigureWizard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Wizard(
+      initialRoute: Routes.advancedSetup,
+      routes: <String, WidgetBuilder>{
+        Routes.advancedSetup: AdvancedSetupPage.create,
+        Routes.configurationUI: ConfigurationUIPage.create,
       },
     );
   }

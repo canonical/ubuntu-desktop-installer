@@ -29,7 +29,7 @@ class UbuntuWslSetupApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: UbuntuWslSetupWizard(reconfigure: reconfigure),
+      home: reconfigure ? UbuntuWslReconfigureWizard() : UbuntuWslSetupWizard(),
     );
   }
 }
