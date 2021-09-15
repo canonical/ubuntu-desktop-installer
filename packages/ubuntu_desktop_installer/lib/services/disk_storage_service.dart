@@ -1,6 +1,10 @@
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
+
+/// @internal
+final log = Logger('disk_storage');
 
 class DiskStorageService {
   DiskStorageService(this._client);
@@ -14,7 +18,7 @@ class DiskStorageService {
 
   Future<List<Disk>> getGuidedStorage() {
     return _client.getGuidedStorage(0, true).then((r) {
-      print(r.disks);
+      log.debug(r.disks);
       _response = r;
       return r.disks ?? <Disk>[];
     });

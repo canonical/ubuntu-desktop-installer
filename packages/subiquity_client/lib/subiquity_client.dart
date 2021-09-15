@@ -149,12 +149,15 @@ class SubiquityClient {
     await checkStatus("setSsh(${jsonEncode(ssh.toJson())})", response);
   }
 
+  String _formatState(ApplicationState? state) =>
+      state?.toString().split('.').last ?? 'null';
+
   /// Get the installer state.
   Future<ApplicationStatus> status({ApplicationState? current}) async {
     var response;
+    final currentState = _formatState(current);
 
     if (current != null) {
-      final currentState = current.toString().split('.').last;
       final request = Request('GET',
           Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
       response = await _send(request);
@@ -166,7 +169,10 @@ class SubiquityClient {
     }
 
     final statusJson = jsonDecode(await response.stream.bytesToString());
-    return ApplicationStatus.fromJson(statusJson);
+    final result = ApplicationStatus.fromJson(statusJson);
+    log.debug('state: $currentState => ${_formatState(result.state)}');
+
+    return result;
   }
 
   /// Mark the controllers for endpoint_names as configured.
