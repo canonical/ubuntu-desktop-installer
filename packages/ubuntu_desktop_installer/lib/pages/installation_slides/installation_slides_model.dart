@@ -42,13 +42,8 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   int get installationStepCount =>
       ApplicationState.DONE.index - ApplicationState.RUNNING.index;
 
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
-
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    print(
-        'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();
   }

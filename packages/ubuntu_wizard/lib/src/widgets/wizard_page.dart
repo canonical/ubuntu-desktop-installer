@@ -1,44 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import 'wizard_action.dart';
 
 export 'package:wizard_router/wizard_router.dart';
-
-/// Defines a wizard action, such as _Back_ or _Continue_.
-class WizardAction {
-  /// Creates a wizard action.
-  const WizardAction({
-    this.label,
-    this.visible,
-    this.highlighted,
-    this.enabled,
-    this.onActivated,
-  });
-
-  /// Text label of the back button.
-  final String? label;
-
-  /// Determines whether the action is visible.
-  ///
-  /// The default value is `true`
-  final bool? visible;
-
-  /// Determines whether the action is highlighted (green);
-  ///
-  /// The default value is `false`.
-  final bool? highlighted;
-
-  /// Determines whether the action is enabled.
-  ///
-  /// The default value is `false`. If not specified, the action is implicitly
-  /// disabled if [onActivated] is `null`.
-  final bool? enabled;
-
-  /// Called when the action is triggered e.g. by pressing the action button.
-  ///
-  /// See also [enabled].
-  final VoidCallback? onActivated;
-}
+export 'wizard_action.dart';
 
 /// The base for wizard pages in the installer.
 ///

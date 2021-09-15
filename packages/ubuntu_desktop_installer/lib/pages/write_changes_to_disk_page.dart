@@ -1,12 +1,16 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../l10n.dart';
 import '../services.dart';
-import '../widgets.dart';
+
+/// @internal
+final log = Logger('write_changes_to_disk');
 
 class WriteChangesToDiskPage extends StatefulWidget {
   const WriteChangesToDiskPage({
@@ -130,7 +134,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(
+    log.debug(
         'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
     for (var entry in _storageConfig!) {
       entry = entry as Map<String, dynamic>;
@@ -148,7 +152,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           _mounts.add(_MountObject.fromJson(entry));
           break;
         default:
-          print('Unexpected storage config type: ${entry['type']}');
+          log.warning('Unexpected storage config type: ${entry['type']}');
       }
     }
     for (var partition in _partitions) {
@@ -191,89 +195,84 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       }
     }
 
-    return LocalizedView(
-        builder: (context, lang) => WizardPage(
-              title: Text(lang.writeChangesToDisk),
-              content: ListView(children: <Widget>[
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(lang.writeChangesDescription)),
-                const SizedBox(height: 20),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(lang.writeChangesPartitionTablesHeader)),
-                const SizedBox(height: 10),
-                ...List.generate(
-                    _disks.length,
-                    (index) => Column(children: [
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                  lang.writeChangesPartitionTablesEntry(
-                                      _disks[index].serial.isNotEmpty
-                                          ? _disks[index].serial
-                                          : lang.writeChangesFallbackSerial,
-                                      _disks[index].path),
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          const SizedBox(height: 10),
-                        ])),
-                const SizedBox(height: 10),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(lang.writeChangesPartitionsHeader)),
-                const SizedBox(height: 10),
-                ...List.generate(_partitionChanges.length, (index) {
-                  final change = _partitionChanges[index];
-                  var text = '';
-                  if (change.primary) {
-                    if (change.fstype.isNotEmpty) {
-                      text = lang.writeChangesPartitionEntryPrimaryFull(
-                          change.partitionNumber,
-                          change.diskSerial.isNotEmpty
-                              ? change.diskSerial
-                              : lang.writeChangesFallbackSerial,
-                          change.diskPath,
-                          change.fstype,
-                          change.mountPath);
-                    } else {
-                      text = lang.writeChangesPartitionEntryPrimary(
-                          change.partitionNumber,
-                          change.diskSerial.isNotEmpty
-                              ? change.diskSerial
-                              : lang.writeChangesFallbackSerial,
-                          change.diskPath);
-                    }
-                  } else {
-                    text = lang.writeChangesPartitionEntrySecondary(
-                        change.fstype, change.mountPath);
-                  }
-                  return Column(children: [
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(text,
-                            style: TextStyle(fontWeight: FontWeight.bold))),
-                    const SizedBox(height: 10),
-                  ]);
-                }),
-              ]),
-              actions: <WizardAction>[
-                WizardAction(
-                  label: lang.backButtonText,
-                  onActivated: Wizard.of(context).back,
-                ),
-                WizardAction(
-                  label: lang.continueButtonText,
-                  onActivated: () async {
-                    final client =
-                        Provider.of<SubiquityClient>(context, listen: false);
-                    await client.setStorage(_storageConfig!);
-                    await client.confirm('/dev/tty1');
+    final lang = AppLocalizations.of(context);
+    return WizardPage(
+      title: Text(lang.writeChangesToDisk),
+      content: ListView(children: <Widget>[
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(lang.writeChangesDescription)),
+        const SizedBox(height: 20),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(lang.writeChangesPartitionTablesHeader)),
+        const SizedBox(height: 10),
+        ...List.generate(
+            _disks.length,
+            (index) => Column(children: [
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                          lang.writeChangesPartitionTablesEntry(
+                              _disks[index].serial.isNotEmpty
+                                  ? _disks[index].serial
+                                  : lang.writeChangesFallbackSerial,
+                              _disks[index].path),
+                          style: TextStyle(fontWeight: FontWeight.bold))),
+                  const SizedBox(height: 10),
+                ])),
+        const SizedBox(height: 10),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(lang.writeChangesPartitionsHeader)),
+        const SizedBox(height: 10),
+        ...List.generate(_partitionChanges.length, (index) {
+          final change = _partitionChanges[index];
+          var text = '';
+          if (change.primary) {
+            if (change.fstype.isNotEmpty) {
+              text = lang.writeChangesPartitionEntryPrimaryFull(
+                  change.partitionNumber,
+                  change.diskSerial.isNotEmpty
+                      ? change.diskSerial
+                      : lang.writeChangesFallbackSerial,
+                  change.diskPath,
+                  change.fstype,
+                  change.mountPath);
+            } else {
+              text = lang.writeChangesPartitionEntryPrimary(
+                  change.partitionNumber,
+                  change.diskSerial.isNotEmpty
+                      ? change.diskSerial
+                      : lang.writeChangesFallbackSerial,
+                  change.diskPath);
+            }
+          } else {
+            text = lang.writeChangesPartitionEntrySecondary(
+                change.fstype, change.mountPath);
+          }
+          return Column(children: [
+            Align(
+                alignment: Alignment.centerLeft,
+                child:
+                    Text(text, style: TextStyle(fontWeight: FontWeight.bold))),
+            const SizedBox(height: 10),
+          ]);
+        }),
+      ]),
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.next(
+          context,
+          onActivated: () async {
+            final client = Provider.of<SubiquityClient>(context, listen: false);
+            await client.setStorage(_storageConfig!);
+            await client.confirm('/dev/tty1');
 
-                    Wizard.of(context).next();
-                  },
-                ),
-              ],
-            ));
+            Wizard.of(context).next();
+          },
+        ),
+      ],
+    );
   }
 }

@@ -1,5 +1,8 @@
 {
   "@@locale": "nl_NL",
 
-  "languageName": "Nederlands"
+  "languageName": "Nederlands",
+
+  "backAction": "Terug",
+  "continueAction": "Volgende"
 }

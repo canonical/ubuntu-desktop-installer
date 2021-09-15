@@ -22,4 +22,6 @@ export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
-$PYTHON -m subiquity.cmd.server
+# autoinstall is explicitly disabled until UI support is present.
+# Remove this autoinstall argument when that is resolved.
+$PYTHON -m subiquity.cmd.server --autoinstall=""

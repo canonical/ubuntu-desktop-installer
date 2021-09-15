@@ -11,6 +11,12 @@ class UbuntuLocalizationsNl extends UbuntuLocalizations {
   String get languageName => '';
 
   @override
+  String get backAction => 'Go Back';
+
+  @override
+  String get continueAction => 'Continue';
+
+  @override
   String get strongPassword => 'Strong password';
 
   @override
@@ -26,4 +32,10 @@ class UbuntuLocalizationsNlNl extends UbuntuLocalizationsNl {
 
   @override
   String get languageName => 'Nederlands';
+
+  @override
+  String get backAction => 'Terug';
+
+  @override
+  String get continueAction => 'Volgende';
 }

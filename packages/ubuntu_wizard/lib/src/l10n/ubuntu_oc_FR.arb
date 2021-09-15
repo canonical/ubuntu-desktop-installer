@@ -1,5 +1,8 @@
 {
   "@@locale": "oc_FR",
 
-  "languageName": "Occitan"
+  "languageName": "Occitan",
+
+  "backAction": "Tornar",
+  "continueAction": "Contunhar"
 }

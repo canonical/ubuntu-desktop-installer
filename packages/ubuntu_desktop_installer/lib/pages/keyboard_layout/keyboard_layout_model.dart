@@ -3,10 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:keyboard_info/keyboard_info.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
+
+/// @internal
+final log = Logger('keyboard_layout');
 
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends ChangeNotifier {
@@ -113,7 +117,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
         .run('setxkbmap', arguments)
         .then((result) {})
         .catchError((e) {
-      print(e as ProcessException);
+      log.error(e);
     });
   }
 

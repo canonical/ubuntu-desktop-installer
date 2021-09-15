@@ -54,18 +54,24 @@ class Logger {
 
     // log file
     if (path != null) {
-      _createDirectory(p.dirname(path));
-
-      final file = RotatingFileAppender(
-        baseFilePath: '$path.$pid',
-        formatter: _LogFormatter(verbose: true),
-      );
-      file.attachToLogger(log.Logger.root);
-
-      _createSymlink(path, file.baseFilePath);
-
       final appName = p.basenameWithoutExtension(path);
-      console.handle(log.LogRecord(LogLevel.info, 'Logging to $path', appName));
+      try {
+        _createDirectory(p.dirname(path));
+
+        final file = RotatingFileAppender(
+          baseFilePath: '$path.$pid',
+          formatter: _LogFormatter(verbose: true),
+        );
+        file.attachToLogger(log.Logger.root);
+
+        _createSymlink(path, file.baseFilePath);
+
+        console
+            .handle(log.LogRecord(LogLevel.info, 'Logging to $path', appName));
+      } on FileSystemException catch (e) {
+        console.handle(log.LogRecord(
+            LogLevel.error, 'Logging to $path failed (${e.message})', appName));
+      }
     }
   }
 

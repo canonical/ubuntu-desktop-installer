@@ -10,24 +10,23 @@ class _RealNameFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      final realName =
-          context.select<WhoAreYouModel, String>((model) => model.realName);
+    final lang = AppLocalizations.of(context);
+    final realName =
+        context.select<WhoAreYouModel, String>((model) => model.realName);
 
-      return ValidatedFormField(
-        fieldWidth: fieldWidth,
-        labelText: lang.whoAreYouPageRealNameLabel,
-        successWidget: const SuccessIcon(),
-        initialValue: realName,
-        validator: RequiredValidator(
-          errorText: lang.whoAreYouPageRealNameRequired,
-        ),
-        onChanged: (value) {
-          final model = Provider.of<WhoAreYouModel>(context, listen: false);
-          model.realName = value;
-        },
-      );
-    });
+    return ValidatedFormField(
+      fieldWidth: fieldWidth,
+      labelText: lang.whoAreYouPageRealNameLabel,
+      successWidget: const SuccessIcon(),
+      initialValue: realName,
+      validator: RequiredValidator(
+        errorText: lang.whoAreYouPageRealNameRequired,
+      ),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.realName = value;
+      },
+    );
   }
 }
 
@@ -41,31 +40,30 @@ class _HostNameFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      final hostName =
-          context.select<WhoAreYouModel, String>((model) => model.hostName);
+    final lang = AppLocalizations.of(context);
+    final hostName =
+        context.select<WhoAreYouModel, String>((model) => model.hostName);
 
-      return ValidatedFormField(
-        fieldWidth: fieldWidth,
-        labelText: lang.whoAreYouPageComputerNameLabel,
-        helperText: lang.whoAreYouPageComputerNameInfo,
-        successWidget: const SuccessIcon(),
-        initialValue: hostName,
-        validator: MultiValidator([
-          RequiredValidator(
-            errorText: lang.whoAreYouPageComputerNameRequired,
-          ),
-          PatternValidator(
-            kValidHostNamePattern,
-            errorText: lang.whoAreYouPageInvalidComputerName,
-          )
-        ]),
-        onChanged: (value) {
-          final model = Provider.of<WhoAreYouModel>(context, listen: false);
-          model.hostName = value;
-        },
-      );
-    });
+    return ValidatedFormField(
+      fieldWidth: fieldWidth,
+      labelText: lang.whoAreYouPageComputerNameLabel,
+      helperText: lang.whoAreYouPageComputerNameInfo,
+      successWidget: const SuccessIcon(),
+      initialValue: hostName,
+      validator: MultiValidator([
+        RequiredValidator(
+          errorText: lang.whoAreYouPageComputerNameRequired,
+        ),
+        PatternValidator(
+          kValidHostNamePattern,
+          errorText: lang.whoAreYouPageInvalidComputerName,
+        )
+      ]),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.hostName = value;
+      },
+    );
   }
 }
 
@@ -79,30 +77,29 @@ class _UsernameFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      final username =
-          context.select<WhoAreYouModel, String>((model) => model.username);
+    final lang = AppLocalizations.of(context);
+    final username =
+        context.select<WhoAreYouModel, String>((model) => model.username);
 
-      return ValidatedFormField(
-        fieldWidth: fieldWidth,
-        labelText: lang.whoAreYouPageUsernameLabel,
-        successWidget: const SuccessIcon(),
-        initialValue: username,
-        validator: MultiValidator([
-          RequiredValidator(
-            errorText: lang.whoAreYouPageUsernameRequired,
-          ),
-          PatternValidator(
-            kValidUsernamePattern,
-            errorText: lang.whoAreYouPageInvalidUsername,
-          )
-        ]),
-        onChanged: (value) {
-          final model = Provider.of<WhoAreYouModel>(context, listen: false);
-          model.username = value;
-        },
-      );
-    });
+    return ValidatedFormField(
+      fieldWidth: fieldWidth,
+      labelText: lang.whoAreYouPageUsernameLabel,
+      successWidget: const SuccessIcon(),
+      initialValue: username,
+      validator: MultiValidator([
+        RequiredValidator(
+          errorText: lang.whoAreYouPageUsernameRequired,
+        ),
+        PatternValidator(
+          kValidUsernamePattern,
+          errorText: lang.whoAreYouPageInvalidUsername,
+        )
+      ]),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.username = value;
+      },
+    );
   }
 }
 
@@ -116,27 +113,26 @@ class _PasswordFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      final password =
-          context.select<WhoAreYouModel, String>((model) => model.password);
-      final passwordStrength = context.select<WhoAreYouModel, PasswordStrength>(
-          (model) => model.passwordStrength);
+    final lang = AppLocalizations.of(context);
+    final password =
+        context.select<WhoAreYouModel, String>((model) => model.password);
+    final passwordStrength = context.select<WhoAreYouModel, PasswordStrength>(
+        (model) => model.passwordStrength);
 
-      return ValidatedFormField(
-        fieldWidth: fieldWidth,
-        labelText: lang.whoAreYouPagePasswordLabel,
-        obscureText: true,
-        successWidget: PasswordStrengthLabel(strength: passwordStrength),
-        initialValue: password,
-        validator: RequiredValidator(
-          errorText: lang.whoAreYouPagePasswordRequired,
-        ),
-        onChanged: (value) {
-          final model = Provider.of<WhoAreYouModel>(context, listen: false);
-          model.password = value;
-        },
-      );
-    });
+    return ValidatedFormField(
+      fieldWidth: fieldWidth,
+      labelText: lang.whoAreYouPagePasswordLabel,
+      obscureText: true,
+      successWidget: PasswordStrengthLabel(strength: passwordStrength),
+      initialValue: password,
+      validator: RequiredValidator(
+        errorText: lang.whoAreYouPagePasswordRequired,
+      ),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.password = value;
+      },
+    );
   }
 }
 
@@ -150,28 +146,28 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(builder: (context, lang) {
-      final password =
-          context.select<WhoAreYouModel, String>((model) => model.password);
-      final confirmedPassword = context
-          .select<WhoAreYouModel, String>((model) => model.confirmedPassword);
+    final lang = AppLocalizations.of(context);
+    final password =
+        context.select<WhoAreYouModel, String>((model) => model.password);
+    final confirmedPassword = context
+        .select<WhoAreYouModel, String>((model) => model.confirmedPassword);
 
-      return ValidatedFormField(
-        obscureText: true,
-        fieldWidth: fieldWidth,
-        labelText: lang.whoAreYouPageConfirmPasswordLabel,
-        successWidget: SuccessIcon(),
-        initialValue: confirmedPassword,
-        validator: EqualValidator(
-          password,
-          errorText: lang.whoAreYouPagePasswordMismatch,
-        ),
-        onChanged: (value) {
-          final model = Provider.of<WhoAreYouModel>(context, listen: false);
-          model.confirmedPassword = value;
-        },
-      );
-    });
+    return ValidatedFormField(
+      obscureText: true,
+      fieldWidth: fieldWidth,
+      labelText: lang.whoAreYouPageConfirmPasswordLabel,
+      successWidget: password.isNotEmpty ? const SuccessIcon() : null,
+      initialValue: confirmedPassword,
+      autovalidateMode: AutovalidateMode.always,
+      validator: EqualValidator(
+        password,
+        errorText: lang.whoAreYouPagePasswordMismatch,
+      ),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.confirmedPassword = value;
+      },
+    );
   }
 }
 
@@ -187,21 +183,17 @@ class _LoginStrategyTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(
-      builder: (context, lang) {
-        final loginStrategy = context.select<WhoAreYouModel, LoginStrategy>(
-            (model) => model.loginStrategy);
+    final loginStrategy = context
+        .select<WhoAreYouModel, LoginStrategy>((model) => model.loginStrategy);
 
-        return RadioButton<LoginStrategy>(
-          title: Text(label),
-          contentPadding: EdgeInsets.only(left: _kRadioButtonIndentation),
-          value: value,
-          groupValue: loginStrategy,
-          onChanged: (value) {
-            final model = Provider.of<WhoAreYouModel>(context, listen: false);
-            model.loginStrategy = value!;
-          },
-        );
+    return RadioButton<LoginStrategy>(
+      title: Text(label),
+      contentPadding: EdgeInsets.only(left: _kRadioButtonIndentation),
+      value: value,
+      groupValue: loginStrategy,
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.loginStrategy = value!;
       },
     );
   }
