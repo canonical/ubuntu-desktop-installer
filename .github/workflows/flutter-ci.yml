@@ -78,4 +78,4 @@ jobs:
       run: melos run analyze
 
     - name: Check for any outdated generated files
-      run: git clean -xdf && melos run generate && git diff --exit-code
+      run: melos run generate && git diff --exit-code
