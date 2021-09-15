@@ -1,42 +1,27 @@
 #!/usr/bin/env python3
 
 import subprocess
-import yaml
-
-
-def str_presenter(dumper, data):
-    '''https://github.com/yaml/pyyaml/issues/240'''
-    def rep(val, **kwargs):
-        return dumper.represent_scalar('tag:yaml.org,2002:str', val, **kwargs)
-
-    try:
-        dlen = len(data.splitlines())
-        if (dlen > 1):
-            return rep(data, style='|')
-    except TypeError:
-        pass
-    return rep(data.strip())
-
-
-def dump_yaml(data, fp):
-    yaml.add_representer(str, str_presenter)
-    return yaml.dump(data, fp, sort_keys=False)
+from ruamel.yaml import YAML
 
 
 submodule = 'packages/subiquity_client/subiquity'
 cmd = 'git submodule update --init --recursive --remote ' + submodule
 subprocess.check_call(cmd.split(' '))
 
-with open('snap/snapcraft.yaml', 'r') as udi_snapcraft:
-    udi_data = yaml.safe_load(udi_snapcraft)
+yaml = YAML()
+yaml.default_flow_style = False
+yaml.pure = True
+yaml.indent(mapping=2, sequence=2, offset=2)
 
-with open('packages/subiquity_client/subiquity/snapcraft.yaml', 'r') \
-        as subiquity_snapcraft:
-    subiquity_data = yaml.safe_load(subiquity_snapcraft)
+with open('snap/snapcraft.yaml', 'r') as fp:
+    udi_data = yaml.load(fp)
+
+with open('packages/subiquity_client/subiquity/snapcraft.yaml', 'r') as fp:
+    subiquity_data = yaml.load(fp)
 
 for part in ('probert', 'curtin'):
     udi_data['parts'][part]['source-commit'] = \
         subiquity_data['parts'][part]['source-commit']
 
-with open('snap/snapcraft.yaml', 'w') as udi_snapcraft:
-    dump_yaml(udi_data, udi_snapcraft)
+with open('snap/snapcraft.yaml', 'w') as fp:
+    yaml.dump(udi_data, fp)
