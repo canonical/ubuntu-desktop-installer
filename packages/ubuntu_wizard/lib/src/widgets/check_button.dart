@@ -20,7 +20,7 @@ class CheckButton extends StatelessWidget {
   final bool value;
 
   /// See [Checkbox.onChanged]
-  final ValueChanged<bool?> onChanged;
+  final ValueChanged<bool?>? onChanged;
 
   /// See [ListTile.title]
   final Widget? title;
@@ -36,9 +36,11 @@ class CheckButton extends StatelessWidget {
     return Padding(
       padding: contentPadding ?? EdgeInsets.zero,
       child: GestureDetector(
-        onTap: () => onChanged(!value),
+        onTap: onChanged != null ? () => onChanged!(!value) : null,
         child: MouseRegion(
-          cursor: SystemMouseCursors.click,
+          cursor: onChanged != null
+              ? SystemMouseCursors.click
+              : SystemMouseCursors.basic,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -47,7 +49,7 @@ class CheckButton extends StatelessWidget {
                 height: _kRadioSize.height,
                 child: Checkbox(
                   value: value,
-                  onChanged: (v) => onChanged(v!),
+                  onChanged: onChanged,
                 ),
               ),
               const SizedBox(width: _kHorizontalSpacing),
@@ -58,7 +60,11 @@ class CheckButton extends StatelessWidget {
                   children: <Widget>[
                     if (title != null)
                       DefaultTextStyle(
-                        style: Theme.of(context).textTheme.subtitle1!,
+                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                              color: onChanged == null
+                                  ? Theme.of(context).disabledColor
+                                  : null,
+                            ),
                         overflow: TextOverflow.ellipsis,
                         child: title!,
                       ),
@@ -66,7 +72,11 @@ class CheckButton extends StatelessWidget {
                       const SizedBox(height: _kVerticalSpacing),
                     if (subtitle != null)
                       DefaultTextStyle(
-                        style: Theme.of(context).textTheme.caption!,
+                        style: Theme.of(context).textTheme.caption!.copyWith(
+                              color: onChanged == null
+                                  ? Theme.of(context).disabledColor
+                                  : null,
+                            ),
                         overflow: TextOverflow.ellipsis,
                         child: subtitle!,
                       ),
