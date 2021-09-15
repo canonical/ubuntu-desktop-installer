@@ -77,6 +77,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
+        Routes.installationType: InstallationTypePage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
         Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
         Routes.whoAreYou: WhoAreYouPage.create,

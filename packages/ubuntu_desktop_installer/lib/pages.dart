@@ -2,6 +2,7 @@ export 'pages/allocate_disk_space/allocate_disk_space_page.dart';
 export 'pages/choose_your_look_page.dart';
 export 'pages/installation_complete/installation_complete_page.dart';
 export 'pages/installation_slides/installation_slides_page.dart';
+export 'pages/installation_type/installation_type_page.dart';
 export 'pages/keyboard_layout/keyboard_layout_page.dart';
 export 'pages/try_or_install/try_or_install_page.dart';
 export 'pages/turn_off_bitlocker/turn_off_bitlocker_page.dart';

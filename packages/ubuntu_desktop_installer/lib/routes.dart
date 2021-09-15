@@ -13,4 +13,5 @@ abstract class Routes {
   static const whoAreYou = '/whoareyou';
   static const installationSlides = '/installationslides';
   static const turnOffBitlocker = '/turnoffbitlocker';
+  static const installationType = '/installationtype';
 }
