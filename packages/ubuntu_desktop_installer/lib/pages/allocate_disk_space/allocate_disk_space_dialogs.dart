@@ -64,17 +64,32 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  _PartitionDialogLabel(lang.partitionSizeLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionSizeLabel,
+                    height: tileHeight,
+                  ),
                   const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(lang.partitionTypeLabel),
-                  ListTile(),
+                  _PartitionDialogLabel(
+                    lang.partitionTypeLabel,
+                    height: kRadioSize.height,
+                  ),
+                  SizedBox(height: kRadioSize.height),
                   const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(lang.partitionLocationLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionLocationLabel,
+                    height: kRadioSize.height,
+                  ),
+                  SizedBox(height: kRadioSize.height),
                   const SizedBox(height: kContentSpacing),
-                  ListTile(),
-                  _PartitionDialogLabel(lang.partitionFormatLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionFormatLabel,
+                    height: tileHeight,
+                  ),
                   const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(lang.partitionMountPointLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionMountPointLabel,
+                    height: tileHeight,
+                  ),
                 ],
               ),
             ),
@@ -156,17 +171,22 @@ double _defaultTileHeight(BuildContext context) {
 }
 
 class _PartitionDialogLabel extends StatelessWidget {
-  const _PartitionDialogLabel(this.text, {Key? key}) : super(key: key);
+  const _PartitionDialogLabel(this.text, {Key? key, this.height})
+      : super(key: key);
 
   final String text;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: kContentPadding,
-      title: Align(
-        alignment: Alignment.topRight,
-        child: Text(text),
+    return SizedBox(
+      height: height,
+      child: Padding(
+        padding: kContentPadding,
+        child: Align(
+          alignment: Alignment.centerRight,
+          child: Text(text),
+        ),
       ),
     );
   }
@@ -191,7 +211,7 @@ class _RadioValueTile<T> extends StatelessWidget {
     return ValueListenableBuilder<T>(
       valueListenable: groupValue,
       builder: (context, groupValue, child) {
-        return RadioListTile<T>(
+        return RadioButton<T>(
           title: title,
           value: value,
           groupValue: groupValue,
@@ -325,11 +345,17 @@ Future<void> showEditPartitionDialog(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  _PartitionDialogLabel(lang.partitionFormatLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionFormatLabel,
+                    height: tileHeight,
+                  ),
                   const SizedBox(height: kContentSpacing),
-                  ListTile(),
+                  SizedBox(height: kRadioSize.height),
                   const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(lang.partitionMountPointLabel),
+                  _PartitionDialogLabel(
+                    lang.partitionMountPointLabel,
+                    height: tileHeight,
+                  ),
                 ],
               ),
             ),
@@ -347,9 +373,8 @@ Future<void> showEditPartitionDialog(
                   ValueListenableBuilder<bool>(
                     valueListenable: partitionErase,
                     builder: (context, erase, child) {
-                      return CheckboxListTile(
+                      return CheckButton(
                         title: Text(lang.partitionErase),
-                        controlAffinity: ListTileControlAffinity.leading,
                         value: erase,
                         onChanged: (v) => partitionErase.value = v!,
                       );
