@@ -58,21 +58,21 @@ parts:
       - requests
       - requests-unixsocket
     organize:
-      'lib/python*/site-packages/usr/lib/curtin': 'usr/lib/'
+      lib/python*/site-packages/usr/lib/curtin: usr/lib/
     stage:
-     - "*"
-     - "-lib/python*/site-packages/_yaml.*.so"
-     - "-lib/python*/site-packages/setuptools"
-     - "-lib/python*/site-packages/pip"
-     - "-lib/python*/site-packages/pkg_resources"
-     - "-lib/python*/site-packages/jsonschema"
-     - "-lib/python*/site-packages/wheel*"
-     - "-lib/python*/site-packages/probert"
-     - "-bin/activate*"
-     - "-lib/python3.8/site-packages/__pycache__/six.cpython*"
-     - "-lib/python3.8/site-packages/pip-*.dist-info/RECORD"
-     - "-lib/python3.8/site-packages/wheel-*.dist-info/RECORD"
-     - "-lib/python3.8/site-packages/_distutils_hack"
+      - '*'
+      - -lib/python*/site-packages/_yaml.*.so
+      - -lib/python*/site-packages/setuptools
+      - -lib/python*/site-packages/pip
+      - -lib/python*/site-packages/pkg_resources
+      - -lib/python*/site-packages/jsonschema
+      - -lib/python*/site-packages/wheel*
+      - -lib/python*/site-packages/probert
+      - -bin/activate*
+      - -lib/python3.8/site-packages/__pycache__/six.cpython*
+      - -lib/python3.8/site-packages/pip-*.dist-info/RECORD
+      - -lib/python3.8/site-packages/wheel-*.dist-info/RECORD
+      - -lib/python3.8/site-packages/_distutils_hack
 
   probert:
     plugin: python
@@ -161,7 +161,7 @@ parts:
       - libllvm10
       - libpciaccess0
       - libvulkan1
-      - shared-mime-info 
+      - shared-mime-info
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
