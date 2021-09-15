@@ -48,6 +48,9 @@ class ValidatedFormField extends StatefulWidget {
   /// Sets the optional space between the [TextField] and the successWidget
   final double? spacing;
 
+  /// See [FormField.autovalidateMode].
+  final AutovalidateMode autovalidateMode;
+
   /// Creates a [TextFormField] and a check mark.
   ///
   /// The `validator' helps to decide when to show the check mark.
@@ -64,6 +67,7 @@ class ValidatedFormField extends StatefulWidget {
     this.successWidget,
     this.spacing = _kIconSpacing,
     this.fieldWidth,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
 
@@ -85,7 +89,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
   Widget build(BuildContext context) {
     final formField = TextFormField(
       autofocus: widget.autofocus,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: widget.autovalidateMode,
       controller: _controller,
       onChanged: widget.onChanged,
       validator: widget.validator,

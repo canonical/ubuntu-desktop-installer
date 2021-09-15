@@ -89,8 +89,9 @@ class _ConfirmPasswordFormField extends StatelessWidget {
       fieldWidth: fieldWidth,
       obscureText: true,
       labelText: lang.profileSetupConfirmPasswordHint,
-      successWidget: const SuccessIcon(),
+      successWidget: password.isNotEmpty ? const SuccessIcon() : null,
       initialValue: confirmedPassword,
+      autovalidateMode: AutovalidateMode.always,
       validator: EqualValidator(
         password,
         errorText: lang.profileSetupPasswordMismatch,

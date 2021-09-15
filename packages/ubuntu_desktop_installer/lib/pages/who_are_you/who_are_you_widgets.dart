@@ -156,8 +156,9 @@ class _ConfirmPasswordFormField extends StatelessWidget {
       obscureText: true,
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPageConfirmPasswordLabel,
-      successWidget: SuccessIcon(),
+      successWidget: password.isNotEmpty ? const SuccessIcon() : null,
       initialValue: confirmedPassword,
+      autovalidateMode: AutovalidateMode.always,
       validator: EqualValidator(
         password,
         errorText: lang.whoAreYouPagePasswordMismatch,
