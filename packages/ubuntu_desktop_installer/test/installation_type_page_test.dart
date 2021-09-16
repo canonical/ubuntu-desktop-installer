@@ -52,10 +52,7 @@ void main() {
   }
 
   testWidgets('reinstall', (tester) async {
-    final model = buildModel(
-      installationType: InstallationType.reinstall,
-      existingOS: 'Ubuntu 18.04 LTS',
-    );
+    final model = buildModel(existingOS: 'Ubuntu 18.04 LTS');
     await tester.pumpWidget(buildApp(model));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
@@ -67,7 +64,6 @@ void main() {
 
   testWidgets('alongside', (tester) async {
     final model = buildModel(
-      installationType: InstallationType.alongside,
       productInfo: 'Ubuntu 21.10',
       existingOS: 'Ubuntu 18.04 LTS',
     );
@@ -83,7 +79,7 @@ void main() {
   });
 
   testWidgets('erase', (tester) async {
-    final model = buildModel(installationType: InstallationType.erase);
+    final model = buildModel();
     await tester.pumpWidget(buildApp(model));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
@@ -94,7 +90,7 @@ void main() {
   });
 
   testWidgets('manual', (tester) async {
-    final model = buildModel(installationType: InstallationType.manual);
+    final model = buildModel();
     await tester.pumpWidget(buildApp(model));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),

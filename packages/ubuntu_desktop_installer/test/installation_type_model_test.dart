@@ -38,6 +38,6 @@ void main() {
 
   test('product info', () {
     final model = InstallationTypeModel(MockSubiquityClient());
-    expect(model.productInfo, isNot(equals('')));
+    expect(model.productInfo, isNotEmpty);
   });
 }
