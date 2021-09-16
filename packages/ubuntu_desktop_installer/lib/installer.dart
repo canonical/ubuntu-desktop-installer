@@ -75,6 +75,8 @@ class _UbuntuDesktopInstallerWizardState
         if (model.hasRst) Routes.turnOffRST: TurnOffRSTPage.create,
         Routes.keyboardLayout: KeyboardLayoutPage.create,
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+        if (model.hasSecureBoot)
+          Routes.turnOffSecureBoot: TurnOffSecureBootPage.create,
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
@@ -113,6 +115,8 @@ class _UbuntuDesktopInstallerModel extends ChangeNotifier {
 
   bool get hasRst => _hasRst;
   bool get hasBitLocker => _hasBitLocker;
+  // TODO: add secure boot support
+  bool get hasSecureBoot => false;
 
   Future<void> init() {
     return Future.wait([
