@@ -77,8 +77,49 @@ jobs:
     - name: Check for any analyzer issues
       run: melos run analyze
 
-    - name: Check for any outdated generated files
-      run: melos run generate && git diff --exit-code
+    - name: Check for any code generation issues
+      run: melos run generate
 
-    - name: Check for any outdated localizations files
-      run: melos run gen-l10n && git diff --exit-code
+    - name: Check for any l10n generation issues
+      run: melos run gen-l10n
+
+    - name: Detect changes in generated files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "WARNING: the following generated files may be outdated or untracked:"
+          git status --porcelain
+          git diff
+          exit 1
+        fi
+
+  generate:
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'push'
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Enable Linux desktop support
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Melos
+      run: flutter pub global activate melos
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
+
+    - name: Generate source code
+      run: melos run generate
+
+    - name: Generate l10n files
+      run: melos run gen-l10n
+
+    - name: Commit changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        message: 'Regenerate files'
