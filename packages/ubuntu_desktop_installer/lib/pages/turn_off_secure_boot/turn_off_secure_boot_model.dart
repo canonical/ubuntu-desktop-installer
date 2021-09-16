@@ -11,10 +11,10 @@ class TurnOffSecureBootModel extends ChangeNotifier {
   SecureBootMode get secureBootMode => _mode;
 
   String? _securityKey;
-  String? get securityKey => _securityKey;
+  String get securityKey => _securityKey ?? '';
 
   String? _confirmKey;
-  String? get confirmKey => _confirmKey;
+  String get confirmKey => _confirmKey ?? '';
 
   bool get areTextFieldEnabled => secureBootMode == SecureBootMode.turnoff;
 
@@ -36,7 +36,7 @@ class TurnOffSecureBootModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setSecurityKey(String? key) {
+  void setSecurityKey(String key) {
     if (key == _securityKey) {
       return;
     }
@@ -48,7 +48,7 @@ class TurnOffSecureBootModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setConfirmKey(String? key) {
+  void setConfirmKey(String key) {
     if (key == _confirmKey) {
       return;
     }

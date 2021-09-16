@@ -51,6 +51,9 @@ class ValidatedFormField extends StatefulWidget {
   /// See [FormField.autovalidateMode].
   final AutovalidateMode autovalidateMode;
 
+  // Enables or disables TextField (defaults to true)
+  final bool enabled;
+
   /// Creates a [TextFormField] and a check mark.
   ///
   /// The `validator' helps to decide when to show the check mark.
@@ -68,6 +71,7 @@ class ValidatedFormField extends StatefulWidget {
     this.spacing = _kIconSpacing,
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
+    this.enabled = true,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
 

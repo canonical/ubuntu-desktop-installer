@@ -46,36 +46,6 @@ void main() {
       expect(model.areTextFieldEnabled, true);
     });
 
-    test('setting null for security key should invalidate form', () {
-      final model =
-          TurnOffSecureBootModel(secureBootMode: SecureBootMode.turnoff);
-
-      model.setSecurityKey(null);
-
-      expect(model.isFormValid, false);
-    });
-
-    test('setting null for confirm key should invalidate form', () {
-      final model =
-          TurnOffSecureBootModel(secureBootMode: SecureBootMode.turnoff);
-
-      model.setConfirmKey(null);
-
-      expect(model.isFormValid, false);
-    });
-
-    test(
-        'setting null for security key should invalidate form with confirmtion not null',
-        () {
-      final model =
-          TurnOffSecureBootModel(secureBootMode: SecureBootMode.turnoff);
-
-      model.setSecurityKey('mykey');
-      model.setConfirmKey(null);
-
-      expect(model.isFormValid, false);
-    });
-
     test(
         'setting different confirmation should invalid confirmation key and form',
         () {
