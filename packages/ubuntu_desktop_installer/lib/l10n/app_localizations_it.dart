@@ -93,6 +93,33 @@ class AppLocalizationsIt extends AppLocalizations {
   String get isKeyPresent => 'Is the following key present on your keyboard?';
 
   @override
+  String get turnOffSecureBootTitle => 'Configure secure boot';
+
+  @override
+  String get turnOffSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+
+  @override
+  String get turnOffSecureBootOption => 'Turn off secure boot';
+
+  @override
+  String get chooseSecurityKey => 'Choose a security key';
+
+  @override
+  String get confirmSecurityKey => 'Confirm security key';
+
+  @override
+  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+
+  @override
+  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates Settings.';
+
+  @override
+  String get turnOffSecureBootSecurityKeyRequired => 'Security key is required';
+
+  @override
+  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Updates and other software';
 
   @override
