@@ -28,7 +28,7 @@ class PasswordFormField extends StatelessWidget {
         onChanged: model.setSecurityKey,
         enabled: model.areTextFieldEnabled,
         validator: RequiredValidator(
-          errorText: lang.turnOffSecureBootPasswordRequired,
+          errorText: lang.turnOffSecureBootSecurityKeyRequired,
         ),
         successWidget: const SuccessIcon(),
       ),
@@ -61,7 +61,7 @@ class PasswordConfirmFormField extends StatelessWidget {
             model.securityKey.isNotEmpty ? const SuccessIcon() : null,
         validator: EqualValidator(
           model.securityKey,
-          errorText: lang.whoAreYouPagePasswordMismatch,
+          errorText: lang.secureBootSecurityKeysDontMatch,
         ),
       ),
     );

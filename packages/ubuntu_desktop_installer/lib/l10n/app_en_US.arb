@@ -53,8 +53,8 @@
   "confirmSecurityKey": "Confirm security key",
   "dontInstallDriverSoftwareNow": "Don't install the driver software for now",
   "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates Settings.",
-  "turnOffSecureBootPasswordRequired": "Security key is required",
-  "secureBootPasswordsDontMatch": "Security keys do not match",
+  "turnOffSecureBootSecurityKeyRequired": "Security key is required",
+  "secureBootSecurityKeysDontMatch": "Security keys do not match",
 
   "updatesOtherSoftwarePageTitle": "Updates and other software",
   "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
