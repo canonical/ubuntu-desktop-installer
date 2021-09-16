@@ -54,7 +54,6 @@ class PasswordConfirmFormField extends StatelessWidget {
         obscureText: true,
         fieldWidth: fieldWidth,
         labelText: lang.confirmSecurityKey,
-        initialValue: null,
         enabled: model.areTextFieldEnabled,
         onChanged: model.setConfirmKey,
         successWidget:
