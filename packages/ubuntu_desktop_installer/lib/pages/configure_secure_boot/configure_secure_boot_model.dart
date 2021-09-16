@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 
-enum SecureBootMode { turnoff, dontinstall }
+enum SecureBootMode { turnOff, dontInstall }
 
-class TurnOffSecureBootModel extends ChangeNotifier {
-  TurnOffSecureBootModel({
+class ConfigureSecureBootModel extends ChangeNotifier {
+  ConfigureSecureBootModel({
     required SecureBootMode secureBootMode,
   }) : _mode = secureBootMode;
 
@@ -16,13 +16,13 @@ class TurnOffSecureBootModel extends ChangeNotifier {
   String? _confirmKey;
   String get confirmKey => _confirmKey ?? '';
 
-  bool get areTextFieldEnabled => secureBootMode == SecureBootMode.turnoff;
+  bool get areTextFieldsEnabled => secureBootMode == SecureBootMode.turnOff;
 
   bool _isFormValid = false;
   bool get isFormValid => _isFormValid;
 
   bool _isConfirmationKeyValid = true;
-  bool get isConfrmationKeyValid => _isConfirmationKeyValid;
+  bool get isConfirmationKeyValid => _isConfirmationKeyValid;
 
   void setSecureBootMode(SecureBootMode? mode) {
     if (mode == null || mode == _mode) {
@@ -61,7 +61,7 @@ class TurnOffSecureBootModel extends ChangeNotifier {
   }
 
   void _validateForm() {
-    if (_mode == SecureBootMode.dontinstall) {
+    if (_mode == SecureBootMode.dontInstall) {
       _isFormValid = true;
       _isConfirmationKeyValid = true;
     } else {

@@ -46,14 +46,14 @@
   "pressOneKey": "Please press one of the following keys:",
   "isKeyPresent": "Is the following key present on your keyboard?",
 
-  "turnOffSecureBootTitle": "Configure secure boot",
-  "turnOffSecureBootDescription": "You've chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.",
-  "turnOffSecureBootOption": "Turn off secure boot",
+  "configureSecureBootTitle": "Configure secure boot",
+  "configureSecureBootDescription": "You've chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.",
+  "configureSecureBootOption": "Turn off secure boot",
   "chooseSecurityKey": "Choose a security key",
   "confirmSecurityKey": "Confirm security key",
   "dontInstallDriverSoftwareNow": "Don't install the driver software for now",
   "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates Settings.",
-  "turnOffSecureBootSecurityKeyRequired": "Security key is required",
+  "configureSecureBootSecurityKeyRequired": "Security key is required",
   "secureBootSecurityKeysDontMatch": "Security keys do not match",
 
   "updatesOtherSoftwarePageTitle": "Updates and other software",
