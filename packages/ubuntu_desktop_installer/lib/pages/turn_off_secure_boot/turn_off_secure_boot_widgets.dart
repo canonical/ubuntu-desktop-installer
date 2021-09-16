@@ -10,10 +10,7 @@ import 'turn_off_secure_boot_model.dart';
 class PasswordFormField extends StatelessWidget {
   const PasswordFormField({
     Key? key,
-    required this.onChanged,
   }) : super(key: key);
-
-  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +36,7 @@ class PasswordFormField extends StatelessWidget {
 class PasswordConfirmFormField extends StatelessWidget {
   const PasswordConfirmFormField({
     Key? key,
-    required this.onChanged,
   }) : super(key: key);
-
-  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {

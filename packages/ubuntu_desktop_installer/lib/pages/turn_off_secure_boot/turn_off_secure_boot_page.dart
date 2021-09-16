@@ -41,19 +41,9 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
               groupValue: model.secureBootMode,
               onChanged: model.setSecureBootMode,
             ),
-            PasswordFormField(
-              onChanged: (value) {
-                model.setSecurityKey(value);
-                _formKey.currentState?.validate();
-              },
-            ),
+            PasswordFormField(),
             const SizedBox(height: kContentSpacing),
-            PasswordConfirmFormField(
-              onChanged: (value) {
-                model.setSecurityKey(value);
-                _formKey.currentState?.validate();
-              },
-            ),
+            PasswordConfirmFormField(),
             const SizedBox(height: kContentSpacing),
             RadioButton<SecureBootMode>(
               title: Text(lang.dontInstallDriverSoftwareNow),
