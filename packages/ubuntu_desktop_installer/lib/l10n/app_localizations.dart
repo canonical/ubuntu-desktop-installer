@@ -276,23 +276,23 @@ abstract class AppLocalizations {
   /// **'Is the following key present on your keyboard?'**
   String get isKeyPresent;
 
-  /// No description provided for @turnOffSecureBootTitle.
+  /// No description provided for @configureSecureBootTitle.
   ///
   /// In en_US, this message translates to:
   /// **'Configure secure boot'**
-  String get turnOffSecureBootTitle;
+  String get configureSecureBootTitle;
 
-  /// No description provided for @turnOffSecureBootDescription.
+  /// No description provided for @configureSecureBootDescription.
   ///
   /// In en_US, this message translates to:
   /// **'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.'**
-  String get turnOffSecureBootDescription;
+  String get configureSecureBootDescription;
 
-  /// No description provided for @turnOffSecureBootOption.
+  /// No description provided for @configureSecureBootOption.
   ///
   /// In en_US, this message translates to:
   /// **'Turn off secure boot'**
-  String get turnOffSecureBootOption;
+  String get configureSecureBootOption;
 
   /// No description provided for @chooseSecurityKey.
   ///
@@ -318,11 +318,11 @@ abstract class AppLocalizations {
   /// **'You can install it later from Software & Updates Settings.'**
   String get dontInstallDriverSoftwareNowDescription;
 
-  /// No description provided for @turnOffSecureBootSecurityKeyRequired.
+  /// No description provided for @configureSecureBootSecurityKeyRequired.
   ///
   /// In en_US, this message translates to:
   /// **'Security key is required'**
-  String get turnOffSecureBootSecurityKeyRequired;
+  String get configureSecureBootSecurityKeyRequired;
 
   /// No description provided for @secureBootSecurityKeysDontMatch.
   ///

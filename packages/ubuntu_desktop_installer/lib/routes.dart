@@ -6,7 +6,7 @@ abstract class Routes {
   static const repairUbuntu = '/repairubuntu';
   static const tryUbuntu = '/tryubuntu';
   static const allocateDiskSpace = '/allocatediskspace';
-  static const turnOffSecureBoot = '/turnoffsecureboot';
+  static const configureSecureBoot = '/configuresecureboot';
   static const updatesOtherSoftware = '/updateothersoftware';
   static const installationComplete = '/installationcomplete';
   static const writeChangesToDisk = '/writechangestodisk';

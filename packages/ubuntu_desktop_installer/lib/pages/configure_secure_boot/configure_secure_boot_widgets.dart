@@ -5,10 +5,10 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
-import 'turn_off_secure_boot_model.dart';
+import 'configure_secure_boot_model.dart';
 
-class PasswordFormField extends StatelessWidget {
-  const PasswordFormField({
+class SecurityKeyFormField extends StatelessWidget {
+  const SecurityKeyFormField({
     Key? key,
     required this.fieldWidth,
   }) : super(key: key);
@@ -17,7 +17,7 @@ class PasswordFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<TurnOffSecureBootModel>();
+    final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
     return RadioIconTile(
       contentPadding: EdgeInsets.zero,
@@ -26,9 +26,9 @@ class PasswordFormField extends StatelessWidget {
         fieldWidth: fieldWidth,
         labelText: lang.chooseSecurityKey,
         onChanged: model.setSecurityKey,
-        enabled: model.areTextFieldEnabled,
+        enabled: model.areTextFieldsEnabled,
         validator: RequiredValidator(
-          errorText: lang.turnOffSecureBootSecurityKeyRequired,
+          errorText: lang.configureSecureBootSecurityKeyRequired,
         ),
         successWidget: const SuccessIcon(),
       ),
@@ -36,8 +36,8 @@ class PasswordFormField extends StatelessWidget {
   }
 }
 
-class PasswordConfirmFormField extends StatelessWidget {
-  const PasswordConfirmFormField({
+class SecurityKeyConfirmFormField extends StatelessWidget {
+  const SecurityKeyConfirmFormField({
     Key? key,
     required this.fieldWidth,
   }) : super(key: key);
@@ -46,7 +46,7 @@ class PasswordConfirmFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<TurnOffSecureBootModel>();
+    final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
     return RadioIconTile(
       contentPadding: EdgeInsets.zero,
@@ -54,7 +54,7 @@ class PasswordConfirmFormField extends StatelessWidget {
         obscureText: true,
         fieldWidth: fieldWidth,
         labelText: lang.confirmSecurityKey,
-        enabled: model.areTextFieldEnabled,
+        enabled: model.areTextFieldsEnabled,
         onChanged: model.setConfirmKey,
         successWidget:
             model.securityKey.isNotEmpty ? const SuccessIcon() : null,

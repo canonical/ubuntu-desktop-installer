@@ -76,7 +76,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.keyboardLayout: KeyboardLayoutPage.create,
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
         if (model.hasSecureBoot)
-          Routes.turnOffSecureBoot: TurnOffSecureBootPage.create,
+          Routes.configureSecureBoot: ConfigureSecureBootPage.create,
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,

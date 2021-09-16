@@ -93,13 +93,13 @@ class AppLocalizationsOc extends AppLocalizations {
   String get isKeyPresent => 'Is the following key present on your keyboard?';
 
   @override
-  String get turnOffSecureBootTitle => 'Configure secure boot';
+  String get configureSecureBootTitle => 'Configure secure boot';
 
   @override
-  String get turnOffSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
 
   @override
-  String get turnOffSecureBootOption => 'Turn off secure boot';
+  String get configureSecureBootOption => 'Turn off secure boot';
 
   @override
   String get chooseSecurityKey => 'Choose a security key';
@@ -114,7 +114,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates Settings.';
 
   @override
-  String get turnOffSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';

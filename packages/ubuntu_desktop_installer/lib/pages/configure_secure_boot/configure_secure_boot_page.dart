@@ -4,30 +4,31 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
-import 'turn_off_secure_boot_model.dart';
-import 'turn_off_secure_boot_widgets.dart';
+import 'configure_secure_boot_model.dart';
+import 'configure_secure_boot_widgets.dart';
 
-class TurnOffSecureBootPage extends StatefulWidget {
+class ConfigureSecureBootPage extends StatefulWidget {
   @override
-  _TurnOffSecureBootPageState createState() => _TurnOffSecureBootPageState();
+  _ConfigureSecureBootPageState createState() =>
+      _ConfigureSecureBootPageState();
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) =>
-          TurnOffSecureBootModel(secureBootMode: SecureBootMode.turnoff),
-      child: TurnOffSecureBootPage(),
+          ConfigureSecureBootModel(secureBootMode: SecureBootMode.turnOff),
+      child: ConfigureSecureBootPage(),
     );
   }
 }
 
-class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
+class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<TurnOffSecureBootModel>();
+    final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.turnOffSecureBootTitle),
-      header: Text(lang.turnOffSecureBootDescription),
+      title: Text(lang.configureSecureBootTitle),
+      header: Text(lang.configureSecureBootDescription),
       content: LayoutBuilder(
         builder: (context, constraints) {
           final fieldPadding = EdgeInsets.symmetric(
@@ -39,19 +40,19 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               RadioButton<SecureBootMode>(
-                title: Text(lang.turnOffSecureBootOption),
-                value: SecureBootMode.turnoff,
+                title: Text(lang.configureSecureBootOption),
+                value: SecureBootMode.turnOff,
                 groupValue: model.secureBootMode,
                 onChanged: model.setSecureBootMode,
               ),
-              PasswordFormField(fieldWidth: fieldWidth),
+              SecurityKeyFormField(fieldWidth: fieldWidth),
               const SizedBox(height: kContentSpacing),
-              PasswordConfirmFormField(fieldWidth: fieldWidth),
+              SecurityKeyConfirmFormField(fieldWidth: fieldWidth),
               const SizedBox(height: kContentSpacing),
               RadioButton<SecureBootMode>(
                 title: Text(lang.dontInstallDriverSoftwareNow),
                 subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
-                value: SecureBootMode.dontinstall,
+                value: SecureBootMode.dontInstall,
                 groupValue: model.secureBootMode,
                 onChanged: model.setSecureBootMode,
               ),
