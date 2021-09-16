@@ -19,9 +19,9 @@ class PasswordFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = context.watch<TurnOffSecureBootModel>();
     final lang = AppLocalizations.of(context);
-    return FractionallySizedBox(
-      widthFactor: 0.80,
-      child: ValidatedFormField(
+    return RadioIconTile(
+      contentPadding: EdgeInsets.zero,
+      title: ValidatedFormField(
         obscureText: true,
         fieldWidth: 580,
         labelText: lang.chooseSecurityKey,
@@ -48,9 +48,9 @@ class PasswordConfirmFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = context.watch<TurnOffSecureBootModel>();
     final lang = AppLocalizations.of(context);
-    return FractionallySizedBox(
-      widthFactor: 0.80,
-      child: ValidatedFormField(
+    return RadioIconTile(
+      contentPadding: EdgeInsets.zero,
+      title: ValidatedFormField(
         obscureText: true,
         fieldWidth: 580,
         labelText: lang.confirmSecurityKey,

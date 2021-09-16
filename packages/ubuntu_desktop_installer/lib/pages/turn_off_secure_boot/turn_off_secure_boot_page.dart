@@ -7,8 +7,6 @@ import '../../l10n.dart';
 import 'turn_off_secure_boot_model.dart';
 import 'turn_off_secure_boot_widgets.dart';
 
-const _kFormElementPadding = 8.0;
-
 class TurnOffSecureBootPage extends StatefulWidget {
   @override
   _TurnOffSecureBootPageState createState() => _TurnOffSecureBootPageState();
@@ -43,7 +41,6 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
               groupValue: model.secureBootMode,
               onChanged: model.setSecureBootMode,
             ),
-            const SizedBox(height: _kFormElementPadding),
             PasswordFormField(
               onChanged: (value) {
                 model.setSecurityKey(value);
