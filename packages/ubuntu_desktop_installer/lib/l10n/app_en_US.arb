@@ -66,6 +66,60 @@
   "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
   "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
 
+  "installationTypeTitle": "Installation type",
+  "installationTypeOSDetected": "This computer currently has {os} on it. What would you like to do?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeNoOSDetected": "This computer currently has no detected operating systems. What would you like to do?",
+  "installationTypeErase": "Erase disk and install Ubuntu",
+  "installationTypeEraseWarning": "<font color=\"{color}\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeAdvancedLabel": "Advanced Features...",
+  "installationTypeAdvancedTitle": "Advanced features",
+  "installationTypeNone": "None",
+  "installationTypeNoneSelected": "None selected",
+  "installationTypeLVM": "Use LVM with the new Ubuntu installation",
+  "installationTypeLVMSelected": "LVM selected",
+  "installationTypeEncrypt": "Encrypt the new Ubuntu installation for security",
+  "installationTypeEncryptInfo": "You will choose a security key in the next step.",
+  "installationTypeZFS": "EXPERIMENTAL: Erase disk and use ZFS",
+  "installationTypeZFSSelected": "ZFS selected",
+  "installationTypeReinstall": "Erase {os} and reinstall",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Warning:</font> This will delete all your {os} programs, documents, photos, music, and any other files.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "Install {product} alongside {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.",
+  "installationTypeManual": "Something else",
+  "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for Ubuntu",
+
   "allocateDiskSpace": "Allocate disk space",
   "startInstallingButtonText": "Start Installing",
   "diskHeadersDevice": "Device",
