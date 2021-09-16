@@ -22,7 +22,11 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   gtk_window_set_default_size(window, 960, 680);
+#ifdef NDEBUG
+  // The window has a fixed size in production/release mode, but resizing
+  // the window is allowed in debug mode for testing purposes.
   gtk_window_set_resizable(window, FALSE);
+#endif
   gtk_widget_show(GTK_WIDGET(window));
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
