@@ -147,6 +147,79 @@ class AppLocalizationsEn extends AppLocalizations {
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
 
   @override
+  String get installationTypeTitle => 'Installation type';
+
+  @override
+  String installationTypeOSDetected(Object os) {
+    return 'This computer currently has $os on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+
+  @override
+  String get installationTypeErase => 'Erase disk and install Ubuntu';
+
+  @override
+  String installationTypeEraseWarning(Object color) {
+    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+  }
+
+  @override
+  String get installationTypeAdvancedLabel => 'Advanced Features...';
+
+  @override
+  String get installationTypeAdvancedTitle => 'Advanced features';
+
+  @override
+  String get installationTypeNone => 'None';
+
+  @override
+  String get installationTypeNoneSelected => 'None selected';
+
+  @override
+  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
+
+  @override
+  String get installationTypeLVMSelected => 'LVM selected';
+
+  @override
+  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
+
+  @override
+  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+
+  @override
+  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+
+  @override
+  String get installationTypeZFSSelected => 'ZFS selected';
+
+  @override
+  String installationTypeReinstall(Object os) {
+    return 'Erase $os and reinstall';
+  }
+
+  @override
+  String installationTypeReinstallWarning(Object color, Object os) {
+    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+  }
+
+  @override
+  String installationTypeAlongside(Object product, Object os) {
+    return 'Install $product alongside $os';
+  }
+
+  @override
+  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+
+  @override
+  String get installationTypeManual => 'Something else';
+
+  @override
+  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
+
+  @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
@@ -543,6 +616,79 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
+  String get installationTypeTitle => 'Installation type';
+
+  @override
+  String installationTypeOSDetected(Object os) {
+    return 'This computer currently has $os on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+
+  @override
+  String get installationTypeErase => 'Erase disk and install Ubuntu';
+
+  @override
+  String installationTypeEraseWarning(Object color) {
+    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+  }
+
+  @override
+  String get installationTypeAdvancedLabel => 'Advanced Features...';
+
+  @override
+  String get installationTypeAdvancedTitle => 'Advanced features';
+
+  @override
+  String get installationTypeNone => 'None';
+
+  @override
+  String get installationTypeNoneSelected => 'None selected';
+
+  @override
+  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
+
+  @override
+  String get installationTypeLVMSelected => 'LVM selected';
+
+  @override
+  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
+
+  @override
+  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+
+  @override
+  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+
+  @override
+  String get installationTypeZFSSelected => 'ZFS selected';
+
+  @override
+  String installationTypeReinstall(Object os) {
+    return 'Erase $os and reinstall';
+  }
+
+  @override
+  String installationTypeReinstallWarning(Object color, Object os) {
+    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+  }
+
+  @override
+  String installationTypeAlongside(Object product, Object os) {
+    return 'Install $product alongside $os';
+  }
+
+  @override
+  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+
+  @override
+  String get installationTypeManual => 'Something else';
+
+  @override
+  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';

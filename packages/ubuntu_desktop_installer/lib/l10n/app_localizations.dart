@@ -384,6 +384,132 @@ abstract class AppLocalizations {
   /// **'This software is subject to license terms included with its documentation. Some are proprietary.'**
   String get installThirdPartySubtitle;
 
+  /// No description provided for @installationTypeTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Installation type'**
+  String get installationTypeTitle;
+
+  /// No description provided for @installationTypeOSDetected.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This computer currently has {os} on it. What would you like to do?'**
+  String installationTypeOSDetected(Object os);
+
+  /// No description provided for @installationTypeNoOSDetected.
+  ///
+  /// In en_US, this message translates to:
+  /// **'This computer currently has no detected operating systems. What would you like to do?'**
+  String get installationTypeNoOSDetected;
+
+  /// No description provided for @installationTypeErase.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Erase disk and install Ubuntu'**
+  String get installationTypeErase;
+
+  /// No description provided for @installationTypeEraseWarning.
+  ///
+  /// In en_US, this message translates to:
+  /// **'<font color=\"{color}\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.'**
+  String installationTypeEraseWarning(Object color);
+
+  /// No description provided for @installationTypeAdvancedLabel.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Advanced Features...'**
+  String get installationTypeAdvancedLabel;
+
+  /// No description provided for @installationTypeAdvancedTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Advanced features'**
+  String get installationTypeAdvancedTitle;
+
+  /// No description provided for @installationTypeNone.
+  ///
+  /// In en_US, this message translates to:
+  /// **'None'**
+  String get installationTypeNone;
+
+  /// No description provided for @installationTypeNoneSelected.
+  ///
+  /// In en_US, this message translates to:
+  /// **'None selected'**
+  String get installationTypeNoneSelected;
+
+  /// No description provided for @installationTypeLVM.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Use LVM with the new Ubuntu installation'**
+  String get installationTypeLVM;
+
+  /// No description provided for @installationTypeLVMSelected.
+  ///
+  /// In en_US, this message translates to:
+  /// **'LVM selected'**
+  String get installationTypeLVMSelected;
+
+  /// No description provided for @installationTypeEncrypt.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Encrypt the new Ubuntu installation for security'**
+  String get installationTypeEncrypt;
+
+  /// No description provided for @installationTypeEncryptInfo.
+  ///
+  /// In en_US, this message translates to:
+  /// **'You will choose a security key in the next step.'**
+  String get installationTypeEncryptInfo;
+
+  /// No description provided for @installationTypeZFS.
+  ///
+  /// In en_US, this message translates to:
+  /// **'EXPERIMENTAL: Erase disk and use ZFS'**
+  String get installationTypeZFS;
+
+  /// No description provided for @installationTypeZFSSelected.
+  ///
+  /// In en_US, this message translates to:
+  /// **'ZFS selected'**
+  String get installationTypeZFSSelected;
+
+  /// No description provided for @installationTypeReinstall.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Erase {os} and reinstall'**
+  String installationTypeReinstall(Object os);
+
+  /// No description provided for @installationTypeReinstallWarning.
+  ///
+  /// In en_US, this message translates to:
+  /// **'<font color=\"{color}\">Warning:</font> This will delete all your {os} programs, documents, photos, music, and any other files.'**
+  String installationTypeReinstallWarning(Object color, Object os);
+
+  /// No description provided for @installationTypeAlongside.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Install {product} alongside {os}'**
+  String installationTypeAlongside(Object product, Object os);
+
+  /// No description provided for @installationTypeAlongsideInfo.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.'**
+  String get installationTypeAlongsideInfo;
+
+  /// No description provided for @installationTypeManual.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Something else'**
+  String get installationTypeManual;
+
+  /// No description provided for @installationTypeManualInfo.
+  ///
+  /// In en_US, this message translates to:
+  /// **'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu'**
+  String get installationTypeManualInfo;
+
   /// No description provided for @allocateDiskSpace.
   ///
   /// In en_US, this message translates to:
