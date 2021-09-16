@@ -276,6 +276,60 @@ abstract class AppLocalizations {
   /// **'Is the following key present on your keyboard?'**
   String get isKeyPresent;
 
+  /// No description provided for @turnOffSecureBootTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Configure secure boot'**
+  String get turnOffSecureBootTitle;
+
+  /// No description provided for @turnOffSecureBootDescription.
+  ///
+  /// In en_US, this message translates to:
+  /// **'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.'**
+  String get turnOffSecureBootDescription;
+
+  /// No description provided for @turnOffSecureBootOption.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Turn off secure boot'**
+  String get turnOffSecureBootOption;
+
+  /// No description provided for @chooseSecurityKey.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Choose a security key'**
+  String get chooseSecurityKey;
+
+  /// No description provided for @confirmSecurityKey.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Confirm security key'**
+  String get confirmSecurityKey;
+
+  /// No description provided for @dontInstallDriverSoftwareNow.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Don\'t install the driver software for now'**
+  String get dontInstallDriverSoftwareNow;
+
+  /// No description provided for @dontInstallDriverSoftwareNowDescription.
+  ///
+  /// In en_US, this message translates to:
+  /// **'You can install it later from Software & Updates Settings.'**
+  String get dontInstallDriverSoftwareNowDescription;
+
+  /// No description provided for @turnOffSecureBootSecurityKeyRequired.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Security key is required'**
+  String get turnOffSecureBootSecurityKeyRequired;
+
+  /// No description provided for @secureBootSecurityKeysDontMatch.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Security keys do not match'**
+  String get secureBootSecurityKeysDontMatch;
+
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///
   /// In en_US, this message translates to:
