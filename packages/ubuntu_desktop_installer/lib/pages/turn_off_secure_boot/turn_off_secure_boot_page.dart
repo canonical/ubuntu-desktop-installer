@@ -32,27 +32,37 @@ class _TurnOffSecureBootPageState extends State<TurnOffSecureBootPage> {
       header: Text(lang.turnOffSecureBootDescription),
       content: Form(
         key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            RadioButton<SecureBootMode>(
-              title: Text(lang.turnOffSecureBootOption),
-              value: SecureBootMode.turnoff,
-              groupValue: model.secureBootMode,
-              onChanged: model.setSecureBootMode,
-            ),
-            PasswordFormField(),
-            const SizedBox(height: kContentSpacing),
-            PasswordConfirmFormField(),
-            const SizedBox(height: kContentSpacing),
-            RadioButton<SecureBootMode>(
-              title: Text(lang.dontInstallDriverSoftwareNow),
-              subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
-              value: SecureBootMode.dontinstall,
-              groupValue: model.secureBootMode,
-              onChanged: model.setSecureBootMode,
-            ),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final fieldPadding = EdgeInsets.symmetric(
+                horizontal: kContentPadding.left, vertical: 10);
+            final fieldWidth =
+                (constraints.maxWidth - fieldPadding.horizontal) *
+                    kContentWidthFraction;
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                RadioButton<SecureBootMode>(
+                  title: Text(lang.turnOffSecureBootOption),
+                  value: SecureBootMode.turnoff,
+                  groupValue: model.secureBootMode,
+                  onChanged: model.setSecureBootMode,
+                ),
+                PasswordFormField(fieldWidth: fieldWidth),
+                const SizedBox(height: kContentSpacing),
+                PasswordConfirmFormField(fieldWidth: fieldWidth),
+                const SizedBox(height: kContentSpacing),
+                RadioButton<SecureBootMode>(
+                  title: Text(lang.dontInstallDriverSoftwareNow),
+                  subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
+                  value: SecureBootMode.dontinstall,
+                  groupValue: model.secureBootMode,
+                  onChanged: model.setSecureBootMode,
+                ),
+              ],
+            );
+          },
         ),
       ),
       actions: <WizardAction>[

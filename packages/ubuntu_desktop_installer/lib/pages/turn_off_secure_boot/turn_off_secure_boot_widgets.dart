@@ -10,7 +10,10 @@ import 'turn_off_secure_boot_model.dart';
 class PasswordFormField extends StatelessWidget {
   const PasswordFormField({
     Key? key,
+    required this.fieldWidth,
   }) : super(key: key);
+
+  final double? fieldWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class PasswordFormField extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: ValidatedFormField(
         obscureText: true,
-        fieldWidth: 580,
+        fieldWidth: fieldWidth,
         labelText: lang.chooseSecurityKey,
         onChanged: model.setSecurityKey,
         enabled: model.areTextFieldEnabled,
@@ -36,7 +39,10 @@ class PasswordFormField extends StatelessWidget {
 class PasswordConfirmFormField extends StatelessWidget {
   const PasswordConfirmFormField({
     Key? key,
+    required this.fieldWidth,
   }) : super(key: key);
+
+  final double? fieldWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +52,7 @@ class PasswordConfirmFormField extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: ValidatedFormField(
         obscureText: true,
-        fieldWidth: 580,
+        fieldWidth: fieldWidth,
         labelText: lang.confirmSecurityKey,
         initialValue: null,
         enabled: model.areTextFieldEnabled,
