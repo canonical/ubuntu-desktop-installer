@@ -8,6 +8,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
+import 'services.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
@@ -65,6 +66,7 @@ class _UbuntuDesktopInstallerWizardState
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
+    final service = Provider.of<DiskStorageService>(context, listen: false);
 
     return Wizard(
       initialRoute: Routes.welcome,
@@ -79,6 +81,8 @@ class _UbuntuDesktopInstallerWizardState
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.installationType: InstallationTypePage.create,
+        if (service.hasMultipleDisks)
+          Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
         Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
         Routes.whoAreYou: WhoAreYouPage.create,
@@ -98,6 +102,17 @@ class _UbuntuDesktopInstallerWizardState
                 if (model.hasRst) return Routes.turnOffRST;
                 return Routes.keyboardLayout;
             }
+          case Routes.installationType:
+            if (settings.arguments == InstallationType.erase) {
+              if (service.hasMultipleDisks) {
+                return Routes.selectGuidedStorage;
+              } else {
+                return Routes.writeChangesToDisk;
+              }
+            }
+            return Routes.allocateDiskSpace;
+          case Routes.selectGuidedStorage:
+            return Routes.writeChangesToDisk;
           default:
             return null;
         }

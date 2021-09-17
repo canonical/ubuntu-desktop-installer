@@ -7,8 +7,11 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
+
+export 'installation_type_model.dart' show InstallationType;
 
 /// Select between guided and manual partitioning.
 class InstallationTypePage extends StatefulWidget {
@@ -19,8 +22,9 @@ class InstallationTypePage extends StatefulWidget {
   /// Creates a [InstallationTypePage] with [InstallationTypeModel].
   static Widget create(BuildContext context) {
     final client = Provider.of<SubiquityClient>(context, listen: false);
+    final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
-      create: (context) => InstallationTypeModel(client),
+      create: (context) => InstallationTypeModel(client, service),
       child: InstallationTypePage(),
     );
   }
@@ -117,7 +121,14 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction.next(context),
+        WizardAction.next(
+          context,
+          onActivated: () async {
+            await model.save();
+
+            Wizard.of(context).next(arguments: model.installationType);
+          },
+        ),
       ],
     );
   }

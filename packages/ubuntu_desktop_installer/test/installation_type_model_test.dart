@@ -1,13 +1,18 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'installation_type_model_test.mocks.dart';
+
+@GenerateMocks([DiskStorageService])
 void main() {
   test('init existing OS', () async {
     final client = MockSubiquityClient();
     // when(client.getExistingOS()).thenAnswer((_) async => 'Ubuntu 18.04 LTS');
 
-    final model = InstallationTypeModel(client);
+    final model = InstallationTypeModel(client, MockDiskStorageService());
     await model.init();
     // verify(client.getExistingOS()).called(1);
 
@@ -15,7 +20,10 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = InstallationTypeModel(MockSubiquityClient());
+    final model = InstallationTypeModel(
+      MockSubiquityClient(),
+      MockDiskStorageService(),
+    );
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -37,7 +45,10 @@ void main() {
   });
 
   test('product info', () {
-    final model = InstallationTypeModel(MockSubiquityClient());
+    final model = InstallationTypeModel(
+      MockSubiquityClient(),
+      MockDiskStorageService(),
+    );
     expect(model.productInfo, isNotEmpty);
   });
 }
