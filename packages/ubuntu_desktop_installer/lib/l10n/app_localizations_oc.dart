@@ -485,7 +485,25 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get windowTitle => 'Installar Ubuntu';
 
   @override
+  String get cancelButtonText => 'Anullar';
+
+  @override
+  String get changeButtonText => 'Modificar';
+
+  @override
+  String get okButtonText => 'D’acòrdi';
+
+  @override
+  String get noButtonText => 'Non';
+
+  @override
   String get restartButtonText => 'Reaviar';
+
+  @override
+  String get revertButtonText => 'Restablir';
+
+  @override
+  String get yesButtonText => 'Òc';
 
   @override
   String get welcome => 'La benvenguda';
@@ -538,6 +556,12 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
 
   @override
   String get detectLayout => 'Detectar l\'agençament del clavièr';
+
+  @override
+  String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
+
+  @override
+  String get isKeyPresent => 'La tòca seguenta es presenta sul clavièr ?';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
@@ -594,6 +618,150 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get diskHeadersFormat => 'Formatar';
 
   @override
+  String get freeDiskSpace => 'espaci liure';
+
+  @override
+  String get newPartitionTable => 'Taula de particion novèla';
+
+  @override
+  String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
+
+  @override
+  String get partitionCreateTitle => 'Crear una particion';
+
+  @override
+  String get partitionEditTitle => 'Modificar una particion';
+
+  @override
+  String get partitionSizeLabel => 'Talha :';
+
+  @override
+  String get partitionUnitB => 'o';
+
+  @override
+  String get partitionUnitKB => 'Ko';
+
+  @override
+  String get partitionUnitMB => 'Mo';
+
+  @override
+  String get partitionUnitGB => 'Go';
+
+  @override
+  String get partitionTypeLabel => 'Tipe per la particion novèla :';
+
+  @override
+  String get partitionTypePrimary => 'Primària';
+
+  @override
+  String get partitionTypeLogical => 'Logicala';
+
+  @override
+  String get partitionLocationLabel => 'Emplaçament de la particion novèla :';
+
+  @override
+  String get partitionLocationBeginning => 'Debuta d’aqueste espaci';
+
+  @override
+  String get partitionLocationEnd => 'Fin d’aqueste espaci';
+
+  @override
+  String get partitionFormatLabel => 'Utilizada coma :';
+
+  @override
+  String get partitionFormatExt4 => 'sistèma de fichièr de jornalizacion Ext4';
+
+  @override
+  String get partitionFormatExt3 => 'sistèma de fichièr de jornalizacion Ext3';
+
+  @override
+  String get partitionFormatExt2 => 'sistèma de fichièr de jornalizacion Ext2';
+
+  @override
+  String get partitionFormatBtrfs => 'sistèma de fichièr de jornalizacion BTRFS';
+
+  @override
+  String get partitionFormatJfs => 'sistèma de fichièr de jornalizacion JFS';
+
+  @override
+  String get partitionFormatXfs => 'sistèma de fichièr de jornalizacion XFS';
+
+  @override
+  String get partitionFormatFat16 => 'sistèma de fichièr FAT16';
+
+  @override
+  String get partitionFormatFat32 => 'sistèma de fichièr FAT32';
+
+  @override
+  String get partitionFormatSwap => 'zòna d’escambi';
+
+  @override
+  String get partitionFormatBios => 'zòna reservada a l’aviada del BIOS';
+
+  @override
+  String get partitionFormatEfi => 'particion sistèma EFI';
+
+  @override
+  String get partitionFormatPhysical => 'volum fisic pel chiframent';
+
+  @override
+  String get partitionFormatNone => 'utilizar pas la particion';
+
+  @override
+  String get partitionErase => 'Formatar la particion';
+
+  @override
+  String get partitionMountPointLabel => 'Punt de montatge :';
+
+  @override
+  String get whoAreYouPageTitle => 'Qual sètz ?';
+
+  @override
+  String get whoAreYouPageAutoLogin => 'Se connectar automaticament';
+
+  @override
+  String get whoAreYouPageRequirePassword => 'Demandar mon senhal per dobrir una session';
+
+  @override
+  String get whoAreYouPageRealNameLabel => 'Vòstre prenom';
+
+  @override
+  String get whoAreYouPageRealNameRequired => 'Cal un prenom';
+
+  @override
+  String get whoAreYouPageComputerNameLabel => 'Lo nom de l’ordenador';
+
+  @override
+  String get whoAreYouPageComputerNameInfo => 'Lo nom qu’utiliza per comunicar amb d’autres ordenadors.';
+
+  @override
+  String get whoAreYouPageComputerNameRequired => 'Un nom d’ordenador es requerit';
+
+  @override
+  String get whoAreYouPageInvalidComputerName => 'Lo nom de l’ordenador es invalid';
+
+  @override
+  String get whoAreYouPageUsernameLabel => 'Causissètz un nom d’utilizaire';
+
+  @override
+  String get whoAreYouPageUsernameRequired => 'Un nom d’utilizaire es requerit';
+
+  @override
+  String get whoAreYouPageInvalidUsername => 'Lo nom d’utilizaire es requerit';
+
+  @override
+  String get whoAreYouPagePasswordLabel => 'Causissètz un senhal';
+
+  @override
+  String get whoAreYouPagePasswordRequired => 'Un senhal es requerit';
+
+  @override
+  String get whoAreYouPageConfirmPasswordLabel => 'Confirmar lo senhal';
+
+  @override
+  String get whoAreYouPagePasswordMismatch => 'Los senhals correspondon pas';
+
+  @override
   String get writeChangesToDisk => 'Aplicar las modificacions suls disques';
 
   @override
@@ -645,4 +813,34 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
 
   @override
   String get chooseYourLookPageDarkBodyText => 'Fosc e escur';
+
+  @override
+  String get installationCompleteTitle => 'Installacion acabada';
+
+  @override
+  String readyToUse(Object system) {
+    return '**$system** es installat e prèst a utilizar.';
+  }
+
+  @override
+  String restartInto(Object system) {
+    return 'Reaviar jos $system';
+  }
+
+  @override
+  String get shutdown => 'Atudar';
+
+  @override
+  String get turnOffBitlockerTitle => 'Desactivar BitLocker';
+
+  @override
+  String get turnOffBitlockerDescription => 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
+
+  @override
+  String turnOffBitlockerLinkInstructions(Object url) {
+    return 'Per las consignas, dobrissètz aquesta pagina sus un mobil o un autre aparelh : <a href=\"https://$url\">$url</a>';
+  }
+
+  @override
+  String get restartIntoWindows => 'Reaviar jos Windows';
 }
