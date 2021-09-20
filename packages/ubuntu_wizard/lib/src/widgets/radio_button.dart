@@ -24,7 +24,7 @@ class RadioButton<T> extends StatelessWidget {
   final T? groupValue;
 
   /// See [Radio.onChanged]
-  final ValueChanged<T?> onChanged;
+  final ValueChanged<T?>? onChanged;
 
   /// See [ListTile.title]
   final Widget? title;
@@ -40,9 +40,11 @@ class RadioButton<T> extends StatelessWidget {
     return Padding(
       padding: contentPadding ?? EdgeInsets.zero,
       child: GestureDetector(
-        onTap: () => onChanged(value),
+        onTap: onChanged != null ? () => onChanged!(value) : null,
         child: MouseRegion(
-          cursor: SystemMouseCursors.click,
+          cursor: onChanged != null
+              ? SystemMouseCursors.click
+              : SystemMouseCursors.basic,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -63,7 +65,11 @@ class RadioButton<T> extends StatelessWidget {
                   children: <Widget>[
                     if (title != null)
                       DefaultTextStyle(
-                        style: Theme.of(context).textTheme.subtitle1!,
+                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                              color: onChanged == null
+                                  ? Theme.of(context).disabledColor
+                                  : null,
+                            ),
                         overflow: TextOverflow.ellipsis,
                         child: title!,
                       ),
@@ -71,7 +77,11 @@ class RadioButton<T> extends StatelessWidget {
                       const SizedBox(height: _kVerticalSpacing),
                     if (subtitle != null)
                       DefaultTextStyle(
-                        style: Theme.of(context).textTheme.caption!,
+                        style: Theme.of(context).textTheme.caption!.copyWith(
+                              color: onChanged == null
+                                  ? Theme.of(context).disabledColor
+                                  : null,
+                            ),
                         overflow: TextOverflow.ellipsis,
                         child: subtitle!,
                       ),
