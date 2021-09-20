@@ -24,11 +24,18 @@ class SubiquityClient {
     return _client.flush().then((_) => _client.close());
   }
 
-  Future<void> checkStatus(String method, StreamedResponse response) async {
+  Future<String> _receive(String method, StreamedResponse response) async {
+    final responseStr = await response.stream.bytesToString();
     if (response.statusCode != 200) {
-      final responseStr = await response.stream.bytesToString();
       throw ("$method returned error ${response.statusCode}\n$responseStr");
     }
+    return responseStr;
+  }
+
+  Future<Map<String, dynamic>> _receiveJson(
+      String method, StreamedResponse response) async {
+    final responseStr = await _receive(method, response);
+    return jsonDecode(responseStr) as Map<String, dynamic>;
   }
 
   Future<StreamedResponse> _send(Request request) {
@@ -39,9 +46,8 @@ class SubiquityClient {
   Future<String> locale() async {
     final request = Request('GET', Uri.http('localhost', 'locale'));
     final response = await _send(request);
-    await checkStatus("locale()", response);
 
-    final responseStr = await response.stream.bytesToString();
+    final responseStr = await _receive("locale()", response);
     return responseStr.replaceAll('"', '');
   }
 
@@ -49,15 +55,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'locale'));
     request.body = '"$locale"';
     final response = await _send(request);
-    await checkStatus('setLocale("$locale")', response);
+    await _receive('setLocale("$locale")', response);
   }
 
   Future<KeyboardSetup> keyboard() async {
     final request = Request('GET', Uri.http('localhost', 'keyboard'));
     final response = await _send(request);
-    await checkStatus("keyboard()", response);
 
-    final keyboardJson = jsonDecode(await response.stream.bytesToString());
+    final keyboardJson = await _receiveJson("keyboard()", response);
     return KeyboardSetup.fromJson(keyboardJson);
   }
 
@@ -65,15 +70,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'keyboard'));
     request.body = jsonEncode(setting.toJson());
     final response = await _send(request);
-    await checkStatus("setKeyboard(${jsonEncode(setting.toJson())})", response);
+    await _receive("setKeyboard(${jsonEncode(setting.toJson())})", response);
   }
 
   Future<String> proxy() async {
     final request = Request('GET', Uri.http('localhost', 'proxy'));
     final response = await _send(request);
-    await checkStatus("proxy()", response);
 
-    final responseStr = await response.stream.bytesToString();
+    final responseStr = await _receive("proxy()", response);
     return responseStr.replaceAll('"', '');
   }
 
@@ -81,15 +85,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'proxy'));
     request.body = '"$proxy"';
     final response = await _send(request);
-    await checkStatus('setProxy("$proxy")', response);
+    await _receive('setProxy("$proxy")', response);
   }
 
   Future<String> mirror() async {
     final request = Request('GET', Uri.http('localhost', 'mirror'));
     final response = await _send(request);
-    await checkStatus("mirror()", response);
 
-    final responseStr = await response.stream.bytesToString();
+    final responseStr = await _receive("mirror()", response);
     return responseStr.replaceAll('"', '');
   }
 
@@ -97,15 +100,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'mirror'));
     request.body = '"$mirror"';
     final response = await _send(request);
-    await checkStatus('setMirror("$mirror")', response);
+    await _receive('setMirror("$mirror")', response);
   }
 
   Future<IdentityData> identity() async {
     final request = Request('GET', Uri.http('localhost', 'identity'));
     final response = await _send(request);
-    await checkStatus("identity()", response);
 
-    final identityJson = jsonDecode(await response.stream.bytesToString());
+    final identityJson = await _receiveJson("identity()", response);
     return IdentityData.fromJson(identityJson);
   }
 
@@ -113,16 +115,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'identity'));
     request.body = jsonEncode(identity.toJson());
     final response = await _send(request);
-    await checkStatus(
-        "setIdentity(${jsonEncode(identity.toJson())})", response);
+    await _receive("setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
   Future<TimezoneData> timezone() async {
     final request = Request('GET', Uri.http('localhost', 'timezone'));
     final response = await _send(request);
-    await checkStatus("timezone()", response);
 
-    final timezoneJson = jsonDecode(await response.stream.bytesToString());
+    final timezoneJson = await _receiveJson("timezone()", response);
     return TimezoneData.fromJson(timezoneJson);
   }
 
@@ -130,15 +130,14 @@ class SubiquityClient {
     final request = Request(
         'POST', Uri.http('localhost', 'timezone', {'tz': '"$timezone"'}));
     final response = await _send(request);
-    await checkStatus('setTimezone("$timezone")', response);
+    await _receive('setTimezone("$timezone")', response);
   }
 
   Future<SSHData> ssh() async {
     final request = Request('GET', Uri.http('localhost', 'ssh'));
     final response = await _send(request);
-    await checkStatus("ssh()", response);
 
-    final sshJson = jsonDecode(await response.stream.bytesToString());
+    final sshJson = await _receiveJson("ssh()", response);
     return SSHData.fromJson(sshJson);
   }
 
@@ -146,7 +145,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'ssh'));
     request.body = jsonEncode(ssh.toJson());
     final response = await _send(request);
-    await checkStatus("setSsh(${jsonEncode(ssh.toJson())})", response);
+    await _receive("setSsh(${jsonEncode(ssh.toJson())})", response);
   }
 
   String _formatState(ApplicationState? state) =>
@@ -154,21 +153,20 @@ class SubiquityClient {
 
   /// Get the installer state.
   Future<ApplicationStatus> status({ApplicationState? current}) async {
-    var response;
+    late Map<String, dynamic> statusJson;
     final currentState = _formatState(current);
 
     if (current != null) {
       final request = Request('GET',
           Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
-      response = await _send(request);
-      await checkStatus('status("$currentState")', response);
+      final response = await _send(request);
+      statusJson = await _receiveJson('status("$currentState")', response);
     } else {
       final request = Request('GET', Uri.http('localhost', 'meta/status'));
-      response = await _send(request);
-      await checkStatus("status()", response);
+      final response = await _send(request);
+      statusJson = await _receiveJson("status()", response);
     }
 
-    final statusJson = jsonDecode(await response.stream.bytesToString());
     final result = ApplicationStatus.fromJson(statusJson);
     log.debug('state: $currentState => ${_formatState(result.state)}');
 
@@ -182,7 +180,7 @@ class SubiquityClient {
         Uri.http('localhost', 'meta/mark_configured',
             {'endpoint_names': jsonEncode(endpointNames)}));
     final response = await _send(request);
-    await checkStatus("markConfigured(${jsonEncode(endpointNames)})", response);
+    await _receive("markConfigured(${jsonEncode(endpointNames)})", response);
   }
 
   /// Confirm that the installation should proceed.
@@ -190,16 +188,15 @@ class SubiquityClient {
     final request = Request(
         'POST', Uri.http('localhost', 'meta/confirm', {'tty': '"$tty"'}));
     final response = await _send(request);
-    await checkStatus('confirm("$tty")', response);
+    await _receive('confirm("$tty")', response);
   }
 
   /// Returns whether RST is turned on.
   Future<bool> hasRst() async {
     final request = Request('GET', Uri.http('localhost', 'storage/has_rst'));
     final response = await _send(request);
-    await checkStatus("hasRst()", response);
 
-    final responseBool = await response.stream.bytesToString();
+    final responseBool = await _receive("hasRst()", response);
     return responseBool == 'true';
   }
 
@@ -208,10 +205,9 @@ class SubiquityClient {
     final request =
         Request('GET', Uri.http('localhost', 'storage/has_bitlocker'));
     final response = await _send(request);
-    await checkStatus("hasBitLocker()", response);
 
-    final responseJson = jsonDecode(await response.stream.bytesToString());
-    return (responseJson as List).isNotEmpty;
+    final responseStr = await _receive("hasBitLocker()", response);
+    return (jsonDecode(responseStr) as List).isNotEmpty;
   }
 
   /// Get guided disk options.
@@ -221,9 +217,9 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'min_size': '$minSize', 'wait': '$wait'}));
     final response = await _send(request);
-    await checkStatus("getGuidedStorage('$minSize', '$wait')", response);
 
-    final responseJson = jsonDecode(await response.stream.bytesToString());
+    final responseJson =
+        await _receiveJson("getGuidedStorage('$minSize', '$wait')", response);
     return GuidedStorageResponse.fromJson(responseJson);
   }
 
@@ -234,10 +230,9 @@ class SubiquityClient {
         Uri.http('localhost', 'storage/guided',
             {'choice': jsonEncode(choice.toJson())}));
     final response = await _send(request);
-    await checkStatus(
-        "setGuidedStorage(${jsonEncode(choice.toJson())})", response);
 
-    final responseJson = jsonDecode(await response.stream.bytesToString());
+    final responseJson = await _receiveJson(
+        "setGuidedStorage(${jsonEncode(choice.toJson())})", response);
     return StorageResponse.fromJson(responseJson);
   }
 
@@ -245,7 +240,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'storage'));
     request.body = jsonEncode(config);
     final response = await _send(request);
-    await checkStatus("setStorage(${jsonEncode(config)})", response);
+    await _receive("setStorage(${jsonEncode(config)})", response);
   }
 
   Future<void> reboot({bool immediate = false}) async {
@@ -267,9 +262,8 @@ class SubiquityClient {
   Future<WSLConfigurationBase> wslConfigurationBase() async {
     final request = Request('GET', Uri.http('localhost', 'wslconfbase'));
     final response = await _send(request);
-    await checkStatus("wslconfbase()", response);
 
-    final json = jsonDecode(await response.stream.bytesToString());
+    final json = await _receiveJson("wslconfbase()", response);
     return WSLConfigurationBase.fromJson(json);
   }
 
@@ -277,15 +271,14 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'wslconfbase'));
     request.body = jsonEncode(conf.toJson());
     final response = await _send(request);
-    await checkStatus("setWslconfbase(${jsonEncode(conf.toJson())})", response);
+    await _receive("setWslconfbase(${jsonEncode(conf.toJson())})", response);
   }
 
   Future<WSLConfigurationAdvanced> wslConfigurationAdvanced() async {
     final request = Request('GET', Uri.http('localhost', 'wslconfadvanced'));
     final response = await _send(request);
-    await checkStatus("wslconfadvanced()", response);
 
-    final json = jsonDecode(await response.stream.bytesToString());
+    final json = await _receiveJson("wslconfadvanced()", response);
     return WSLConfigurationAdvanced.fromJson(json);
   }
 
@@ -294,7 +287,7 @@ class SubiquityClient {
     final request = Request('POST', Uri.http('localhost', 'wslconfadvanced'));
     request.body = jsonEncode(conf.toJson());
     final response = await _send(request);
-    await checkStatus(
+    await _receive(
         "setWslconfadvanced(${jsonEncode(conf.toJson())})", response);
   }
 
@@ -302,9 +295,8 @@ class SubiquityClient {
     final request = Request('GET',
         Uri.http('localhost', 'keyboard/steps', {'index': '"${step ?? 0}"'}));
     final response = await _client.send(request);
-    await checkStatus("getKeyboardStep($step)", response);
 
-    final json = jsonDecode(await response.stream.bytesToString());
+    final json = await _receiveJson("getKeyboardStep($step)", response);
     return KeyboardStep.fromJson(json);
   }
 }
