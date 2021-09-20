@@ -264,36 +264,38 @@ class SubiquityClient {
     await _client.write(request);
   }
 
-  Future<WSLConfiguration1Data> wslConfiguration1() async {
-    final request = Request('GET', Uri.http('localhost', 'wslconf1'));
+  Future<WSLConfigurationBase> wslConfigurationBase() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconfbase'));
     final response = await _send(request);
-    await checkStatus("wslconf1()", response);
+    await checkStatus("wslconfbase()", response);
 
     final json = jsonDecode(await response.stream.bytesToString());
-    return WSLConfiguration1Data.fromJson(json);
+    return WSLConfigurationBase.fromJson(json);
   }
 
-  Future<void> setWslConfiguration1(WSLConfiguration1Data conf) async {
-    final request = Request('POST', Uri.http('localhost', 'wslconf1'));
+  Future<void> setWslConfigurationBase(WSLConfigurationBase conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconfbase'));
     request.body = jsonEncode(conf.toJson());
     final response = await _send(request);
-    await checkStatus("setWslconf1(${jsonEncode(conf.toJson())})", response);
+    await checkStatus("setWslconfbase(${jsonEncode(conf.toJson())})", response);
   }
 
-  Future<WSLConfiguration2Data> wslConfiguration2() async {
-    final request = Request('GET', Uri.http('localhost', 'wslconf2'));
+  Future<WSLConfigurationAdvanced> wslConfigurationAdvanced() async {
+    final request = Request('GET', Uri.http('localhost', 'wslconfadvanced'));
     final response = await _send(request);
-    await checkStatus("wslconf2()", response);
+    await checkStatus("wslconfadvanced()", response);
 
     final json = jsonDecode(await response.stream.bytesToString());
-    return WSLConfiguration2Data.fromJson(json);
+    return WSLConfigurationAdvanced.fromJson(json);
   }
 
-  Future<void> setWslConfiguration2(WSLConfiguration2Data conf) async {
-    final request = Request('POST', Uri.http('localhost', 'wslconf2'));
+  Future<void> setWslConfigurationAdvanced(
+      WSLConfigurationAdvanced conf) async {
+    final request = Request('POST', Uri.http('localhost', 'wslconfadvanced'));
     request.body = jsonEncode(conf.toJson());
     final response = await _send(request);
-    await checkStatus("setWslconf2(${jsonEncode(conf.toJson())})", response);
+    await checkStatus(
+        "setWslconfadvanced(${jsonEncode(conf.toJson())})", response);
   }
 
   Future<KeyboardStep> getKeyboardStep([String? step = '0']) async {

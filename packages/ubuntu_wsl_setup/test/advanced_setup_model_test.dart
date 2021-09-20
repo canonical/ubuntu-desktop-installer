@@ -6,7 +6,7 @@ import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart'
 
 void main() {
   test('load advanced setup', () async {
-    const conf = WSLConfiguration1Data(
+    const conf = WSLConfigurationBase(
       customPath: 'path',
       customMountOpt: 'opt',
       genHost: false,
@@ -14,11 +14,11 @@ void main() {
     );
 
     final client = MockSubiquityClient();
-    when(client.wslConfiguration1()).thenAnswer((_) async => conf);
+    when(client.wslConfigurationBase()).thenAnswer((_) async => conf);
 
     final model = AdvancedSetupModel(client);
     await model.loadAdvancedSetup();
-    verify(client.wslConfiguration1()).called(1);
+    verify(client.wslConfigurationBase()).called(1);
 
     expect(model.mountLocation, equals(conf.customPath));
     expect(model.mountOption, equals(conf.customMountOpt));
@@ -35,7 +35,7 @@ void main() {
     model.enableHostGeneration = false;
     model.enableResolvConfGeneration = false;
 
-    final conf = WSLConfiguration1Data(
+    final conf = WSLConfigurationBase(
       customPath: 'path',
       customMountOpt: 'opt',
       genHost: false,
@@ -43,7 +43,7 @@ void main() {
     );
 
     await model.saveAdvancedSetup();
-    verify(client.setWslConfiguration1(conf)).called(1);
+    verify(client.setWslConfigurationBase(conf)).called(1);
   });
 
   test('notify changes', () {

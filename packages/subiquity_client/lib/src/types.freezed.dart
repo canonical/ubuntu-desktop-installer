@@ -3228,21 +3228,20 @@ abstract class _StorageResponse implements StorageResponse {
       throw _privateConstructorUsedError;
 }
 
-WSLConfiguration1Data _$WSLConfiguration1DataFromJson(
-    Map<String, dynamic> json) {
-  return _WSLConfiguration1Data.fromJson(json);
+WSLConfigurationBase _$WSLConfigurationBaseFromJson(Map<String, dynamic> json) {
+  return _WSLConfigurationBase.fromJson(json);
 }
 
 /// @nodoc
-class _$WSLConfiguration1DataTearOff {
-  const _$WSLConfiguration1DataTearOff();
+class _$WSLConfigurationBaseTearOff {
+  const _$WSLConfigurationBaseTearOff();
 
-  _WSLConfiguration1Data call(
+  _WSLConfigurationBase call(
       {@JsonKey(name: 'custom_path') String? customPath,
       @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
       @JsonKey(name: 'gen_host') bool? genHost,
       @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) {
-    return _WSLConfiguration1Data(
+    return _WSLConfigurationBase(
       customPath: customPath,
       customMountOpt: customMountOpt,
       genHost: genHost,
@@ -3250,16 +3249,16 @@ class _$WSLConfiguration1DataTearOff {
     );
   }
 
-  WSLConfiguration1Data fromJson(Map<String, Object> json) {
-    return WSLConfiguration1Data.fromJson(json);
+  WSLConfigurationBase fromJson(Map<String, Object> json) {
+    return WSLConfigurationBase.fromJson(json);
   }
 }
 
 /// @nodoc
-const $WSLConfiguration1Data = _$WSLConfiguration1DataTearOff();
+const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
-mixin _$WSLConfiguration1Data {
+mixin _$WSLConfigurationBase {
   @JsonKey(name: 'custom_path')
   String? get customPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'custom_mount_opt')
@@ -3271,15 +3270,15 @@ mixin _$WSLConfiguration1Data {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WSLConfiguration1DataCopyWith<WSLConfiguration1Data> get copyWith =>
+  $WSLConfigurationBaseCopyWith<WSLConfigurationBase> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WSLConfiguration1DataCopyWith<$Res> {
-  factory $WSLConfiguration1DataCopyWith(WSLConfiguration1Data value,
-          $Res Function(WSLConfiguration1Data) then) =
-      _$WSLConfiguration1DataCopyWithImpl<$Res>;
+abstract class $WSLConfigurationBaseCopyWith<$Res> {
+  factory $WSLConfigurationBaseCopyWith(WSLConfigurationBase value,
+          $Res Function(WSLConfigurationBase) then) =
+      _$WSLConfigurationBaseCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'custom_path') String? customPath,
       @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
@@ -3288,13 +3287,13 @@ abstract class $WSLConfiguration1DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WSLConfiguration1DataCopyWithImpl<$Res>
-    implements $WSLConfiguration1DataCopyWith<$Res> {
-  _$WSLConfiguration1DataCopyWithImpl(this._value, this._then);
+class _$WSLConfigurationBaseCopyWithImpl<$Res>
+    implements $WSLConfigurationBaseCopyWith<$Res> {
+  _$WSLConfigurationBaseCopyWithImpl(this._value, this._then);
 
-  final WSLConfiguration1Data _value;
+  final WSLConfigurationBase _value;
   // ignore: unused_field
-  final $Res Function(WSLConfiguration1Data) _then;
+  final $Res Function(WSLConfigurationBase) _then;
 
   @override
   $Res call({
@@ -3325,11 +3324,11 @@ class _$WSLConfiguration1DataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$WSLConfiguration1DataCopyWith<$Res>
-    implements $WSLConfiguration1DataCopyWith<$Res> {
-  factory _$WSLConfiguration1DataCopyWith(_WSLConfiguration1Data value,
-          $Res Function(_WSLConfiguration1Data) then) =
-      __$WSLConfiguration1DataCopyWithImpl<$Res>;
+abstract class _$WSLConfigurationBaseCopyWith<$Res>
+    implements $WSLConfigurationBaseCopyWith<$Res> {
+  factory _$WSLConfigurationBaseCopyWith(_WSLConfigurationBase value,
+          $Res Function(_WSLConfigurationBase) then) =
+      __$WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'custom_path') String? customPath,
@@ -3339,15 +3338,15 @@ abstract class _$WSLConfiguration1DataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$WSLConfiguration1DataCopyWithImpl<$Res>
-    extends _$WSLConfiguration1DataCopyWithImpl<$Res>
-    implements _$WSLConfiguration1DataCopyWith<$Res> {
-  __$WSLConfiguration1DataCopyWithImpl(_WSLConfiguration1Data _value,
-      $Res Function(_WSLConfiguration1Data) _then)
-      : super(_value, (v) => _then(v as _WSLConfiguration1Data));
+class __$WSLConfigurationBaseCopyWithImpl<$Res>
+    extends _$WSLConfigurationBaseCopyWithImpl<$Res>
+    implements _$WSLConfigurationBaseCopyWith<$Res> {
+  __$WSLConfigurationBaseCopyWithImpl(
+      _WSLConfigurationBase _value, $Res Function(_WSLConfigurationBase) _then)
+      : super(_value, (v) => _then(v as _WSLConfigurationBase));
 
   @override
-  _WSLConfiguration1Data get _value => super._value as _WSLConfiguration1Data;
+  _WSLConfigurationBase get _value => super._value as _WSLConfigurationBase;
 
   @override
   $Res call({
@@ -3356,7 +3355,7 @@ class __$WSLConfiguration1DataCopyWithImpl<$Res>
     Object? genHost = freezed,
     Object? genResolvconf = freezed,
   }) {
-    return _then(_WSLConfiguration1Data(
+    return _then(_WSLConfigurationBase(
       customPath: customPath == freezed
           ? _value.customPath
           : customPath // ignore: cast_nullable_to_non_nullable
@@ -3379,15 +3378,15 @@ class __$WSLConfiguration1DataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WSLConfiguration1Data implements _WSLConfiguration1Data {
-  const _$_WSLConfiguration1Data(
+class _$_WSLConfigurationBase implements _WSLConfigurationBase {
+  const _$_WSLConfigurationBase(
       {@JsonKey(name: 'custom_path') this.customPath,
       @JsonKey(name: 'custom_mount_opt') this.customMountOpt,
       @JsonKey(name: 'gen_host') this.genHost,
       @JsonKey(name: 'gen_resolvconf') this.genResolvconf});
 
-  factory _$_WSLConfiguration1Data.fromJson(Map<String, dynamic> json) =>
-      _$_$_WSLConfiguration1DataFromJson(json);
+  factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
+      _$_$_WSLConfigurationBaseFromJson(json);
 
   @override
   @JsonKey(name: 'custom_path')
@@ -3404,13 +3403,13 @@ class _$_WSLConfiguration1Data implements _WSLConfiguration1Data {
 
   @override
   String toString() {
-    return 'WSLConfiguration1Data(customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf)';
+    return 'WSLConfigurationBase(customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WSLConfiguration1Data &&
+        (other is _WSLConfigurationBase &&
             (identical(other.customPath, customPath) ||
                 const DeepCollectionEquality()
                     .equals(other.customPath, customPath)) &&
@@ -3435,26 +3434,26 @@ class _$_WSLConfiguration1Data implements _WSLConfiguration1Data {
 
   @JsonKey(ignore: true)
   @override
-  _$WSLConfiguration1DataCopyWith<_WSLConfiguration1Data> get copyWith =>
-      __$WSLConfiguration1DataCopyWithImpl<_WSLConfiguration1Data>(
+  _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
+      __$WSLConfigurationBaseCopyWithImpl<_WSLConfigurationBase>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WSLConfiguration1DataToJson(this);
+    return _$_$_WSLConfigurationBaseToJson(this);
   }
 }
 
-abstract class _WSLConfiguration1Data implements WSLConfiguration1Data {
-  const factory _WSLConfiguration1Data(
+abstract class _WSLConfigurationBase implements WSLConfigurationBase {
+  const factory _WSLConfigurationBase(
           {@JsonKey(name: 'custom_path') String? customPath,
           @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
           @JsonKey(name: 'gen_host') bool? genHost,
           @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) =
-      _$_WSLConfiguration1Data;
+      _$_WSLConfigurationBase;
 
-  factory _WSLConfiguration1Data.fromJson(Map<String, dynamic> json) =
-      _$_WSLConfiguration1Data.fromJson;
+  factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
+      _$_WSLConfigurationBase.fromJson;
 
   @override
   @JsonKey(name: 'custom_path')
@@ -3470,20 +3469,20 @@ abstract class _WSLConfiguration1Data implements WSLConfiguration1Data {
   bool? get genResolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$WSLConfiguration1DataCopyWith<_WSLConfiguration1Data> get copyWith =>
+  _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-WSLConfiguration2Data _$WSLConfiguration2DataFromJson(
+WSLConfigurationAdvanced _$WSLConfigurationAdvancedFromJson(
     Map<String, dynamic> json) {
-  return _WSLConfiguration2Data.fromJson(json);
+  return _WSLConfigurationAdvanced.fromJson(json);
 }
 
 /// @nodoc
-class _$WSLConfiguration2DataTearOff {
-  const _$WSLConfiguration2DataTearOff();
+class _$WSLConfigurationAdvancedTearOff {
+  const _$WSLConfigurationAdvancedTearOff();
 
-  _WSLConfiguration2Data call(
+  _WSLConfigurationAdvanced call(
       {@JsonKey(name: 'gui_theme')
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
@@ -3498,19 +3497,11 @@ class _$WSLConfiguration2DataTearOff {
           bool? wslMotdNews,
       bool? automount,
       bool? mountfstab,
-      @JsonKey(name: 'custom_path')
-          String? customPath,
-      @JsonKey(name: 'custom_mount_opt')
-          String? customMountOpt,
-      @JsonKey(name: 'gen_host')
-          bool? genHost,
-      @JsonKey(name: 'gen_resolvconf')
-          bool? genResolvconf,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
           bool? interopAppendwindowspath}) {
-    return _WSLConfiguration2Data(
+    return _WSLConfigurationAdvanced(
       guiTheme: guiTheme,
       guiFollowwintheme: guiFollowwintheme,
       legacyGui: legacyGui,
@@ -3519,25 +3510,21 @@ class _$WSLConfiguration2DataTearOff {
       wslMotdNews: wslMotdNews,
       automount: automount,
       mountfstab: mountfstab,
-      customPath: customPath,
-      customMountOpt: customMountOpt,
-      genHost: genHost,
-      genResolvconf: genResolvconf,
       interopEnabled: interopEnabled,
       interopAppendwindowspath: interopAppendwindowspath,
     );
   }
 
-  WSLConfiguration2Data fromJson(Map<String, Object> json) {
-    return WSLConfiguration2Data.fromJson(json);
+  WSLConfigurationAdvanced fromJson(Map<String, Object> json) {
+    return WSLConfigurationAdvanced.fromJson(json);
   }
 }
 
 /// @nodoc
-const $WSLConfiguration2Data = _$WSLConfiguration2DataTearOff();
+const $WSLConfigurationAdvanced = _$WSLConfigurationAdvancedTearOff();
 
 /// @nodoc
-mixin _$WSLConfiguration2Data {
+mixin _$WSLConfigurationAdvanced {
   @JsonKey(name: 'gui_theme')
   String? get guiTheme => throw _privateConstructorUsedError;
   @JsonKey(name: 'gui_followwintheme')
@@ -3552,14 +3539,6 @@ mixin _$WSLConfiguration2Data {
   bool? get wslMotdNews => throw _privateConstructorUsedError;
   bool? get automount => throw _privateConstructorUsedError;
   bool? get mountfstab => throw _privateConstructorUsedError;
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_appendwindowspath')
@@ -3567,15 +3546,15 @@ mixin _$WSLConfiguration2Data {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WSLConfiguration2DataCopyWith<WSLConfiguration2Data> get copyWith =>
+  $WSLConfigurationAdvancedCopyWith<WSLConfigurationAdvanced> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WSLConfiguration2DataCopyWith<$Res> {
-  factory $WSLConfiguration2DataCopyWith(WSLConfiguration2Data value,
-          $Res Function(WSLConfiguration2Data) then) =
-      _$WSLConfiguration2DataCopyWithImpl<$Res>;
+abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
+  factory $WSLConfigurationAdvancedCopyWith(WSLConfigurationAdvanced value,
+          $Res Function(WSLConfigurationAdvanced) then) =
+      _$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'gui_theme')
           String? guiTheme,
@@ -3591,14 +3570,6 @@ abstract class $WSLConfiguration2DataCopyWith<$Res> {
           bool? wslMotdNews,
       bool? automount,
       bool? mountfstab,
-      @JsonKey(name: 'custom_path')
-          String? customPath,
-      @JsonKey(name: 'custom_mount_opt')
-          String? customMountOpt,
-      @JsonKey(name: 'gen_host')
-          bool? genHost,
-      @JsonKey(name: 'gen_resolvconf')
-          bool? genResolvconf,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -3606,13 +3577,13 @@ abstract class $WSLConfiguration2DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WSLConfiguration2DataCopyWithImpl<$Res>
-    implements $WSLConfiguration2DataCopyWith<$Res> {
-  _$WSLConfiguration2DataCopyWithImpl(this._value, this._then);
+class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
+    implements $WSLConfigurationAdvancedCopyWith<$Res> {
+  _$WSLConfigurationAdvancedCopyWithImpl(this._value, this._then);
 
-  final WSLConfiguration2Data _value;
+  final WSLConfigurationAdvanced _value;
   // ignore: unused_field
-  final $Res Function(WSLConfiguration2Data) _then;
+  final $Res Function(WSLConfigurationAdvanced) _then;
 
   @override
   $Res call({
@@ -3624,10 +3595,6 @@ class _$WSLConfiguration2DataCopyWithImpl<$Res>
     Object? wslMotdNews = freezed,
     Object? automount = freezed,
     Object? mountfstab = freezed,
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
@@ -3664,22 +3631,6 @@ class _$WSLConfiguration2DataCopyWithImpl<$Res>
           ? _value.mountfstab
           : mountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
-              as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
@@ -3693,11 +3644,11 @@ class _$WSLConfiguration2DataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$WSLConfiguration2DataCopyWith<$Res>
-    implements $WSLConfiguration2DataCopyWith<$Res> {
-  factory _$WSLConfiguration2DataCopyWith(_WSLConfiguration2Data value,
-          $Res Function(_WSLConfiguration2Data) then) =
-      __$WSLConfiguration2DataCopyWithImpl<$Res>;
+abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
+    implements $WSLConfigurationAdvancedCopyWith<$Res> {
+  factory _$WSLConfigurationAdvancedCopyWith(_WSLConfigurationAdvanced value,
+          $Res Function(_WSLConfigurationAdvanced) then) =
+      __$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'gui_theme')
@@ -3714,14 +3665,6 @@ abstract class _$WSLConfiguration2DataCopyWith<$Res>
           bool? wslMotdNews,
       bool? automount,
       bool? mountfstab,
-      @JsonKey(name: 'custom_path')
-          String? customPath,
-      @JsonKey(name: 'custom_mount_opt')
-          String? customMountOpt,
-      @JsonKey(name: 'gen_host')
-          bool? genHost,
-      @JsonKey(name: 'gen_resolvconf')
-          bool? genResolvconf,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -3729,15 +3672,16 @@ abstract class _$WSLConfiguration2DataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$WSLConfiguration2DataCopyWithImpl<$Res>
-    extends _$WSLConfiguration2DataCopyWithImpl<$Res>
-    implements _$WSLConfiguration2DataCopyWith<$Res> {
-  __$WSLConfiguration2DataCopyWithImpl(_WSLConfiguration2Data _value,
-      $Res Function(_WSLConfiguration2Data) _then)
-      : super(_value, (v) => _then(v as _WSLConfiguration2Data));
+class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
+    extends _$WSLConfigurationAdvancedCopyWithImpl<$Res>
+    implements _$WSLConfigurationAdvancedCopyWith<$Res> {
+  __$WSLConfigurationAdvancedCopyWithImpl(_WSLConfigurationAdvanced _value,
+      $Res Function(_WSLConfigurationAdvanced) _then)
+      : super(_value, (v) => _then(v as _WSLConfigurationAdvanced));
 
   @override
-  _WSLConfiguration2Data get _value => super._value as _WSLConfiguration2Data;
+  _WSLConfigurationAdvanced get _value =>
+      super._value as _WSLConfigurationAdvanced;
 
   @override
   $Res call({
@@ -3749,14 +3693,10 @@ class __$WSLConfiguration2DataCopyWithImpl<$Res>
     Object? wslMotdNews = freezed,
     Object? automount = freezed,
     Object? mountfstab = freezed,
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
-    return _then(_WSLConfiguration2Data(
+    return _then(_WSLConfigurationAdvanced(
       guiTheme: guiTheme == freezed
           ? _value.guiTheme
           : guiTheme // ignore: cast_nullable_to_non_nullable
@@ -3789,22 +3729,6 @@ class __$WSLConfiguration2DataCopyWithImpl<$Res>
           ? _value.mountfstab
           : mountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
-              as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
@@ -3819,8 +3743,8 @@ class __$WSLConfiguration2DataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
-  const _$_WSLConfiguration2Data(
+class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
+  const _$_WSLConfigurationAdvanced(
       {@JsonKey(name: 'gui_theme')
           this.guiTheme,
       @JsonKey(name: 'gui_followwintheme')
@@ -3835,21 +3759,13 @@ class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
           this.wslMotdNews,
       this.automount,
       this.mountfstab,
-      @JsonKey(name: 'custom_path')
-          this.customPath,
-      @JsonKey(name: 'custom_mount_opt')
-          this.customMountOpt,
-      @JsonKey(name: 'gen_host')
-          this.genHost,
-      @JsonKey(name: 'gen_resolvconf')
-          this.genResolvconf,
       @JsonKey(name: 'interop_enabled')
           this.interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
           this.interopAppendwindowspath});
 
-  factory _$_WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =>
-      _$_$_WSLConfiguration2DataFromJson(json);
+  factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
+      _$_$_WSLConfigurationAdvancedFromJson(json);
 
   @override
   @JsonKey(name: 'gui_theme')
@@ -3874,18 +3790,6 @@ class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
   @override
   final bool? mountfstab;
   @override
-  @JsonKey(name: 'custom_path')
-  final String? customPath;
-  @override
-  @JsonKey(name: 'custom_mount_opt')
-  final String? customMountOpt;
-  @override
-  @JsonKey(name: 'gen_host')
-  final bool? genHost;
-  @override
-  @JsonKey(name: 'gen_resolvconf')
-  final bool? genResolvconf;
-  @override
   @JsonKey(name: 'interop_enabled')
   final bool? interopEnabled;
   @override
@@ -3894,13 +3798,13 @@ class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
 
   @override
   String toString() {
-    return 'WSLConfiguration2Data(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, legacyGui: $legacyGui, legacyAudio: $legacyAudio, advIpDetect: $advIpDetect, wslMotdNews: $wslMotdNews, automount: $automount, mountfstab: $mountfstab, customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, legacyGui: $legacyGui, legacyAudio: $legacyAudio, advIpDetect: $advIpDetect, wslMotdNews: $wslMotdNews, automount: $automount, mountfstab: $mountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WSLConfiguration2Data &&
+        (other is _WSLConfigurationAdvanced &&
             (identical(other.guiTheme, guiTheme) ||
                 const DeepCollectionEquality()
                     .equals(other.guiTheme, guiTheme)) &&
@@ -3925,18 +3829,6 @@ class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
             (identical(other.mountfstab, mountfstab) ||
                 const DeepCollectionEquality()
                     .equals(other.mountfstab, mountfstab)) &&
-            (identical(other.customPath, customPath) ||
-                const DeepCollectionEquality()
-                    .equals(other.customPath, customPath)) &&
-            (identical(other.customMountOpt, customMountOpt) ||
-                const DeepCollectionEquality()
-                    .equals(other.customMountOpt, customMountOpt)) &&
-            (identical(other.genHost, genHost) ||
-                const DeepCollectionEquality()
-                    .equals(other.genHost, genHost)) &&
-            (identical(other.genResolvconf, genResolvconf) ||
-                const DeepCollectionEquality()
-                    .equals(other.genResolvconf, genResolvconf)) &&
             (identical(other.interopEnabled, interopEnabled) ||
                 const DeepCollectionEquality()
                     .equals(other.interopEnabled, interopEnabled)) &&
@@ -3957,27 +3849,23 @@ class _$_WSLConfiguration2Data implements _WSLConfiguration2Data {
       const DeepCollectionEquality().hash(wslMotdNews) ^
       const DeepCollectionEquality().hash(automount) ^
       const DeepCollectionEquality().hash(mountfstab) ^
-      const DeepCollectionEquality().hash(customPath) ^
-      const DeepCollectionEquality().hash(customMountOpt) ^
-      const DeepCollectionEquality().hash(genHost) ^
-      const DeepCollectionEquality().hash(genResolvconf) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
       const DeepCollectionEquality().hash(interopAppendwindowspath);
 
   @JsonKey(ignore: true)
   @override
-  _$WSLConfiguration2DataCopyWith<_WSLConfiguration2Data> get copyWith =>
-      __$WSLConfiguration2DataCopyWithImpl<_WSLConfiguration2Data>(
+  _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
+      __$WSLConfigurationAdvancedCopyWithImpl<_WSLConfigurationAdvanced>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WSLConfiguration2DataToJson(this);
+    return _$_$_WSLConfigurationAdvancedToJson(this);
   }
 }
 
-abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
-  const factory _WSLConfiguration2Data(
+abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
+  const factory _WSLConfigurationAdvanced(
       {@JsonKey(name: 'gui_theme')
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
@@ -3992,21 +3880,13 @@ abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
           bool? wslMotdNews,
       bool? automount,
       bool? mountfstab,
-      @JsonKey(name: 'custom_path')
-          String? customPath,
-      @JsonKey(name: 'custom_mount_opt')
-          String? customMountOpt,
-      @JsonKey(name: 'gen_host')
-          bool? genHost,
-      @JsonKey(name: 'gen_resolvconf')
-          bool? genResolvconf,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
-          bool? interopAppendwindowspath}) = _$_WSLConfiguration2Data;
+          bool? interopAppendwindowspath}) = _$_WSLConfigurationAdvanced;
 
-  factory _WSLConfiguration2Data.fromJson(Map<String, dynamic> json) =
-      _$_WSLConfiguration2Data.fromJson;
+  factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
+      _$_WSLConfigurationAdvanced.fromJson;
 
   @override
   @JsonKey(name: 'gui_theme')
@@ -4031,18 +3911,6 @@ abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
   @override
   bool? get mountfstab => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
-  @override
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @override
@@ -4050,7 +3918,7 @@ abstract class _WSLConfiguration2Data implements WSLConfiguration2Data {
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$WSLConfiguration2DataCopyWith<_WSLConfiguration2Data> get copyWith =>
+  _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

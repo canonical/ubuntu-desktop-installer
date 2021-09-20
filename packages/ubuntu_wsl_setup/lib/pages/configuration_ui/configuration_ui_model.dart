@@ -13,7 +13,7 @@ class ConfigurationUIModel extends ChangeNotifier {
   }
 
   final SubiquityClient _client;
-  final _conf = ValueNotifier(WSLConfiguration2Data());
+  final _conf = ValueNotifier(WSLConfigurationAdvanced());
 
   /// Whether legacy GUI integration is enabled.
   bool get legacyGUI => _conf.value.legacyGui ?? false;
@@ -56,11 +56,15 @@ class ConfigurationUIModel extends ChangeNotifier {
 
   /// Loads the UI configuration.
   Future<void> loadConfiguration() async {
-    return _client.wslConfiguration2().then((conf) => _conf.value = conf);
+    return _client
+        .wslConfigurationAdvanced()
+        .then((conf) => _conf.value = conf);
   }
 
   /// Saves the UI configuration.
   Future<void> saveConfiguration() async {
-    return _client.setWslConfiguration2(_conf.value).then((_) => closeWindow());
+    return _client
+        .setWslConfigurationAdvanced(_conf.value)
+        .then((_) => closeWindow());
   }
 }

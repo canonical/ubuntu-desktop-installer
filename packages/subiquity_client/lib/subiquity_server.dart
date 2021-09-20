@@ -41,9 +41,17 @@ abstract class SubiquityServer {
       : p.join(Directory.current.path, 'test/socket');
 
   // Optional environment variables for the server process.
-  Map<String, String>? _getEnvironment(String subiquityPath) => null;
+  Map<String, String> _getEnvironment(String subiquityPath) {
+    // prefer local curtin and probert python modules that are pinned to the
+    // correct versions
+    final pythonPath = (Platform.environment['PYTHONPATH'] ?? '').split(':');
+    pythonPath.add(subiquityPath);
+    pythonPath.add(p.join(subiquityPath, 'curtin'));
+    pythonPath.add(p.join(subiquityPath, 'probert'));
+    return {'PYTHONPATH': pythonPath.join(':')};
+  }
 
-  Future<String> start(ServerMode serverMode, List<String>? args) async {
+  Future<String> start(ServerMode serverMode, [List<String>? args]) async {
     final socketPath = _getSocketPath(serverMode);
     if (!_shouldStart(serverMode)) {
       return socketPath;
@@ -142,22 +150,15 @@ class _SubiquityServerImpl extends SubiquityServer {
   String get _pythonModule => 'subiquity.cmd.server';
 
   @override
-  Map<String, String>? _getEnvironment(String subiquityPath) {
-    // prefer local curtin and probert python modules that are pinned to the
-    // correct versions
-    final pythonPath = (Platform.environment['PYTHONPATH'] ?? '').split(':');
-    pythonPath.add(subiquityPath);
-    pythonPath.add(p.join(subiquityPath, 'curtin'));
-    pythonPath.add(p.join(subiquityPath, 'probert'));
-
+  Map<String, String> _getEnvironment(String subiquityPath) {
     // so subiquity doesn't think it's the installer or flutter snap...
-    return {
-      'PYTHONPATH': pythonPath.join(':'),
-      'SNAP': '.',
-      'SNAP_NAME': 'subiquity',
-      'SNAP_REVISION': '',
-      'SNAP_VERSION': '',
-    };
+    return super._getEnvironment(subiquityPath)
+      ..addAll({
+        'SNAP': '.',
+        'SNAP_NAME': 'subiquity',
+        'SNAP_REVISION': '',
+        'SNAP_VERSION': '',
+      });
   }
 }
 
