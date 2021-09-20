@@ -1,0 +1,12 @@
+{
+  "@@locale": "fi_FI",
+
+  "languageName": "Suomi",
+
+  "backAction": "Takaisin",
+  "continueAction": "Jatka",
+
+  "strongPassword": "Vahva salasana",
+  "moderatePassword": "Kohtalainen salasana",
+  "weakPassword": "Heikko salasana"
+}
