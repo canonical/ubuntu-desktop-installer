@@ -82,11 +82,11 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 padding: fieldPadding,
                 child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
               ),
+              const SizedBox(height: kContentSpacing),
               _LoginStrategyTile(
                 value: LoginStrategy.autoLogin,
                 label: lang.whoAreYouPageAutoLogin,
               ),
-              const SizedBox(height: kContentSpacing),
               _LoginStrategyTile(
                 value: LoginStrategy.requirePassword,
                 label: lang.whoAreYouPageRequirePassword,
