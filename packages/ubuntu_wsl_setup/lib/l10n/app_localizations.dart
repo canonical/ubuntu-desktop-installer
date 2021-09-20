@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
+import 'app_localizations_fi.dart';
 import 'app_localizations_fr.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations returned
@@ -92,6 +93,8 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('en', 'US'),
+    Locale('fi'),
+    Locale('fi', 'FI'),
     Locale('fr'),
     Locale('fr', 'FR')
   ];
@@ -418,7 +421,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'fr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'fi', 'fr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -434,6 +437,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
    }
   break;
    }
+    case 'fi': {
+  switch (locale.countryCode) {
+    case 'FI': return AppLocalizationsFiFi();
+   }
+  break;
+   }
     case 'fr': {
   switch (locale.countryCode) {
     case 'FR': return AppLocalizationsFrFr();
@@ -445,6 +454,7 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return AppLocalizationsEn();
+    case 'fi': return AppLocalizationsFi();
     case 'fr': return AppLocalizationsFr();
   }
 
