@@ -11,6 +11,16 @@ export 'src/types.dart';
 /// @internal
 final log = Logger('subiquity_client');
 
+const _kMaxResponseLogLength = 120;
+
+String _formatResponseLog(String method, String response) {
+  var formatted = response;
+  if (response.length > _kMaxResponseLogLength) {
+    formatted = '${response.substring(0, _kMaxResponseLogLength)}...';
+  }
+  return '==> $method $formatted';
+}
+
 class SubiquityClient {
   late HttpUnixClient _client;
 
@@ -29,6 +39,7 @@ class SubiquityClient {
     if (response.statusCode != 200) {
       throw ("$method returned error ${response.statusCode}\n$responseStr");
     }
+    log.debug(() => _formatResponseLog(method, responseStr));
     return responseStr;
   }
 
