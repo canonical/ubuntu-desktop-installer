@@ -22,7 +22,6 @@
   "profileSetupUsernameRequired": "A username is required",
   "profileSetupUsernameInvalid": "The username is invalid",
   "profileSetupPasswordRequired": "A password is required",
-  "profileSetupPasswordMismatch": "The passwords do not match",
 
   "advancedSetupTitle": "Advanced setup",
   "advancedSetupHeader": "In this page, you can tweak Ubuntu WSL to your needs.",
