@@ -305,7 +305,7 @@ class SubiquityClient {
   Future<KeyboardStep> getKeyboardStep([String? step = '0']) async {
     final request = Request('GET',
         Uri.http('localhost', 'keyboard/steps', {'index': '"${step ?? 0}"'}));
-    final response = await _client.send(request);
+    final response = await _send(request);
 
     final json = await _receiveJson("getKeyboardStep($step)", response);
     return KeyboardStep.fromJson(json);
