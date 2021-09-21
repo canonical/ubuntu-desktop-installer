@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../constants.dart';
+
 const _kHorizontalSpacing = 8.0;
-const _kRadioSize = Size.square(kMinInteractiveDimension - 8);
 const _kVerticalSpacing = 2.0;
 
 /// A desktop style checkbox with an interactive label.
@@ -45,8 +46,8 @@ class CheckButton extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               SizedBox(
-                width: _kRadioSize.width,
-                height: _kRadioSize.height,
+                width: kRadioSize.width,
+                height: kRadioSize.height,
                 child: Checkbox(
                   value: value,
                   onChanged: onChanged,

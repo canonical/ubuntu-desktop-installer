@@ -1,4 +1,4 @@
-import 'package:flutter/painting.dart';
+import 'package:flutter/material.dart';
 
 /// The spacing between Continue and Back buttons.
 const kButtonBarSpacing = 8.0;
@@ -17,3 +17,6 @@ const kFooterPadding = EdgeInsets.fromLTRB(24, 0, 24, 24);
 
 /// The fraction of content width in relation to the page.
 const kContentWidthFraction = 0.7;
+
+/// The size of a radio indicator.
+const kRadioSize = Size.square(kMinInteractiveDimension - 8);
