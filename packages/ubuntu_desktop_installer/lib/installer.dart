@@ -4,7 +4,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n.dart';
 import 'pages.dart';
@@ -24,8 +23,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         setWindowTitle(lang.windowTitle);
         return lang.appTitle;
       },
-      theme: yaru.lightTheme,
-      darkTheme: yaru.darkTheme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: Settings.of(context).theme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
