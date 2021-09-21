@@ -24,6 +24,12 @@ void main() {
       await _testServer.stop();
     });
 
+    test('variant', () async {
+      // Subiquity doesn't have an API to get the variant, only to set it
+      await _client.setVariant(Variant.SERVER);
+      await _client.setVariant(Variant.DESKTOP);
+    });
+
     test('locale', () async {
       await _client.setLocale('en_US.UTF-8');
       expect(await _client.locale(), 'en_US.UTF-8');
