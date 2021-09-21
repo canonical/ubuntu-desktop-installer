@@ -54,6 +54,24 @@ class SubiquityClient {
     return _client.send(request);
   }
 
+  Future<void> setVariant(Variant variant) async {
+    String variantString;
+    switch (variant) {
+      case Variant.SERVER:
+        variantString = "server";
+        break;
+      case Variant.DESKTOP:
+        variantString = "desktop";
+        break;
+    }
+    final request = Request(
+        'POST',
+        Uri.http('localhost', 'meta/client_variant',
+            {'variant': '"$variantString"'}));
+    final response = await _send(request);
+    await _receive('setVariant("$variantString")', response);
+  }
+
   Future<String> locale() async {
     final request = Request('GET', Uri.http('localhost', 'locale'));
     final response = await _send(request);

@@ -6,6 +6,8 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
+enum Variant { SERVER, DESKTOP }
+
 @freezed
 class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({

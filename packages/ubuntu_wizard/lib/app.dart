@@ -48,6 +48,8 @@ Future<void> runWizardApp(
       .start(serverMode, serverArgs)
       .then(subiquityClient.open);
 
+  subiquityClient.setVariant(Variant.DESKTOP);
+
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
   subiquityClient.markConfigured([

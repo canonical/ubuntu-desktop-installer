@@ -27,6 +27,7 @@ void main() {
     );
     verify(server.start(ServerMode.DRY_RUN, ['--foo', 'bar'])).called(1);
     verify(client.open('socket path')).called(1);
+    verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
   testWidgets('provides the client', (tester) async {
