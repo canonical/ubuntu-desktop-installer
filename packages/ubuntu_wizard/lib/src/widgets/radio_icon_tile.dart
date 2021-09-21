@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const _kRadioSize = Size.square(kMinInteractiveDimension - 8);
+import '../../constants.dart';
 
 /// List tile with an icon that matches the geometry of [RadioListTile]'s radio
 /// indicator.
@@ -26,7 +26,7 @@ class RadioIconTile extends StatelessWidget {
   Size _calculateIconSize(BuildContext context) {
     final theme = Theme.of(context);
     final visualDensity = theme.radioTheme.visualDensity ?? theme.visualDensity;
-    return _kRadioSize + visualDensity.baseSizeAdjustment;
+    return kRadioSize + visualDensity.baseSizeAdjustment;
   }
 
   @override
