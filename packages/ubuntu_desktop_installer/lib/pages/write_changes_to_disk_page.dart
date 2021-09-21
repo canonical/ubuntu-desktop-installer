@@ -130,10 +130,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
     super.initState();
     final model = Provider.of<DiskStorageService>(context, listen: false);
     _storageConfig = model.storageConfig;
-  }
 
-  @override
-  Widget build(BuildContext context) {
     log.debug(
         'Storage config: ${JsonEncoder.withIndent('  ').convert(_storageConfig)}');
     for (var entry in _storageConfig!) {
@@ -203,7 +200,10 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
         }
       }
     }
+  }
 
+  @override
+  Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: Text(lang.writeChangesToDisk),
