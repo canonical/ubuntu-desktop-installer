@@ -140,13 +140,22 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       entry = entry as Map<String, dynamic>;
       switch (entry['type']) {
         case 'disk':
-          _disks.add(_DiskObject.fromJson(entry));
+          final disk = _DiskObject.fromJson(entry);
+          if (!disk.preserve) {
+            _disks.add(disk);
+          }
           break;
         case 'partition':
-          _partitions.add(_PartitionObject.fromJson(entry));
+          final partition = _PartitionObject.fromJson(entry);
+          if (!partition.preserve) {
+            _partitions.add(partition);
+          }
           break;
         case 'format':
-          _formats.add(_FormatObject.fromJson(entry));
+          final format = _FormatObject.fromJson(entry);
+          if (!format.preserve) {
+            _formats.add(format);
+          }
           break;
         case 'mount':
           _mounts.add(_MountObject.fromJson(entry));
