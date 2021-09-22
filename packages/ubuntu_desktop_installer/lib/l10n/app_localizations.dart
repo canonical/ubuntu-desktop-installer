@@ -279,7 +279,7 @@ abstract class AppLocalizations {
   /// No description provided for @configureSecureBootTitle.
   ///
   /// In en_US, this message translates to:
-  /// **'Configure secure boot'**
+  /// **'Configure Secure Boot'**
   String get configureSecureBootTitle;
 
   /// No description provided for @configureSecureBootDescription.
@@ -291,7 +291,7 @@ abstract class AppLocalizations {
   /// No description provided for @configureSecureBootOption.
   ///
   /// In en_US, this message translates to:
-  /// **'Turn off secure boot'**
+  /// **'Configure Secure Boot'**
   String get configureSecureBootOption;
 
   /// No description provided for @chooseSecurityKey.
@@ -303,7 +303,7 @@ abstract class AppLocalizations {
   /// No description provided for @confirmSecurityKey.
   ///
   /// In en_US, this message translates to:
-  /// **'Confirm security key'**
+  /// **'Confirm the security key'**
   String get confirmSecurityKey;
 
   /// No description provided for @dontInstallDriverSoftwareNow.
@@ -315,7 +315,7 @@ abstract class AppLocalizations {
   /// No description provided for @dontInstallDriverSoftwareNowDescription.
   ///
   /// In en_US, this message translates to:
-  /// **'You can install it later from Software & Updates Settings.'**
+  /// **'You can install it later from Software & Updates.'**
   String get dontInstallDriverSoftwareNowDescription;
 
   /// No description provided for @configureSecureBootSecurityKeyRequired.
