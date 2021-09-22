@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -13,8 +14,9 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) =>
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal),
+      create: (_) => UpdateOtherSoftwareModel(
+          client: Provider.of<SubiquityClient>(context, listen: false),
+          installationMode: InstallationMode.normal),
       child: UpdatesOtherSoftwarePage(),
     );
   }
@@ -68,7 +70,13 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction.next(context),
+        WizardAction.next(
+          context,
+          onActivated: () async {
+            await model.selectInstallationSource();
+            Wizard.of(context).next();
+          },
+        ),
       ],
     );
   }
