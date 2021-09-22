@@ -270,7 +270,14 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
         }),
       ]),
       actions: <WizardAction>[
-        WizardAction.back(context),
+        WizardAction.back(
+          context,
+          onActivated: () async {
+            final client = Provider.of<SubiquityClient>(context, listen: false);
+            await client.resetStorage();
+            Wizard.of(context).back();
+          },
+        ),
         WizardAction.next(
           context,
           onActivated: () async {
