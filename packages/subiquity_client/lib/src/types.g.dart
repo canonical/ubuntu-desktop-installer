@@ -6,6 +6,44 @@ part of 'types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _$_SourceSelection(
+    name: json['name'] as String?,
+    description: json['description'] as String?,
+    id: json['id'] as String?,
+    size: json['size'] as int?,
+    variant: json['variant'] as String?,
+    isDefault: json['default'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionToJson(_$_SourceSelection instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+      'id': instance.id,
+      'size': instance.size,
+      'variant': instance.variant,
+      'default': instance.isDefault,
+    };
+
+_$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _$_SourceSelectionAndSetting(
+    sources: (json['sources'] as List<dynamic>?)
+        ?.map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    currentId: json['current_id'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
+        _$_SourceSelectionAndSetting instance) =>
+    <String, dynamic>{
+      'sources': instance.sources,
+      'current_id': instance.currentId,
+    };
+
 _$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _$_KeyboardSetting(
     layout: json['layout'] as String?,

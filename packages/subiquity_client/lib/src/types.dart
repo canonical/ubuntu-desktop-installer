@@ -9,6 +9,32 @@ part 'types.g.dart';
 enum Variant { SERVER, DESKTOP }
 
 @freezed
+class SourceSelection with _$SourceSelection {
+  const factory SourceSelection({
+    String? name,
+    String? description,
+    String? id,
+    int? size,
+    String? variant,
+    @JsonKey(name: 'default') bool? isDefault,
+  }) = _SourceSelection;
+
+  factory SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionFromJson(json);
+}
+
+@freezed
+class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
+  const factory SourceSelectionAndSetting({
+    List<SourceSelection>? sources,
+    @JsonKey(name: 'current_id') String? currentId,
+  }) = _SourceSelectionAndSetting;
+
+  factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionAndSettingFromJson(json);
+}
+
+@freezed
 class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({
     String? layout,

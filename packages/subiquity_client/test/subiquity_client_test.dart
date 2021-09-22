@@ -14,8 +14,12 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(
-          ServerMode.DRY_RUN, ['--machine-config', 'examples/simple.json']);
+      _socketPath = await _testServer.start(ServerMode.DRY_RUN, [
+        '--machine-config',
+        'examples/simple.json',
+        '--source-catalog',
+        '../test/install-sources.yaml'
+      ]);
       _client.open(_socketPath);
     });
 
@@ -28,6 +32,42 @@ void main() {
       // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.SERVER);
       await _client.setVariant(Variant.DESKTOP);
+    });
+
+    test('source', () async {
+      final expected = SourceSelectionAndSetting(sources: <SourceSelection>[
+        SourceSelection(
+            id: 'ubuntu-desktop',
+            name: 'Ubuntu Desktop',
+            description: 'Standard Ubuntu Desktop image',
+            size: 10,
+            variant: 'desktop',
+            isDefault: true),
+        SourceSelection(
+            id: 'ubuntu-desktop-minimal',
+            name: 'Ubuntu Desktop (minimized)',
+            description: 'Minimized Ubuntu Desktop image',
+            size: 5,
+            variant: 'desktop',
+            isDefault: false)
+      ], currentId: 'ubuntu-desktop');
+
+      await _client.setVariant(Variant.DESKTOP);
+      var actual = await _client.source();
+      expect(actual.sources, unorderedEquals(expected.sources!));
+      expect(actual.currentId, 'synthesized');
+
+      await _client.setSource('ubuntu-desktop-minimal');
+      actual = await _client.source();
+      expect(actual.currentId, 'ubuntu-desktop-minimal');
+
+      await _client.setSource('ubuntu-desktop');
+      actual = await _client.source();
+      expect(actual.currentId, 'ubuntu-desktop');
+
+      await _client.setVariant(Variant.SERVER);
+      actual = await _client.source();
+      expect(actual.currentId, 'synthesized');
     });
 
     test('locale', () async {
