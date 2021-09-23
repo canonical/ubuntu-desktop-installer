@@ -3,6 +3,17 @@ import 'package:subiquity_client/subiquity_client.dart';
 
 enum InstallationMode { normal, minimal }
 
+extension _InstallationSource on InstallationMode {
+  String get source {
+    switch (this) {
+      case InstallationMode.normal:
+        return 'ubuntu-desktop';
+      case InstallationMode.minimal:
+        return 'ubuntu-desktop-minimal';
+    }
+  }
+}
+
 class UpdateOtherSoftwareModel extends ChangeNotifier {
   // ignore: public_member_api_docs
   UpdateOtherSoftwareModel(
@@ -43,15 +54,6 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
 
   /// Select the source corresponding to the selected installation mode.
   Future<void> selectInstallationSource() {
-    String sourceId;
-    switch (installationMode) {
-      case InstallationMode.normal:
-        sourceId = 'ubuntu-desktop';
-        break;
-      case InstallationMode.minimal:
-        sourceId = 'ubuntu-desktop-minimal';
-        break;
-    }
-    return _client.setSource(sourceId);
+    return _client.setSource(installationMode.source);
   }
 }
