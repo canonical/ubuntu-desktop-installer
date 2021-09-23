@@ -72,6 +72,21 @@ class SubiquityClient {
     await _receive('setVariant("$variantString")', response);
   }
 
+  Future<SourceSelectionAndSetting> source() async {
+    final request = Request('GET', Uri.http('localhost', 'source'));
+    final response = await _send(request);
+
+    final json = await _receiveJson("source()", response);
+    return SourceSelectionAndSetting.fromJson(json);
+  }
+
+  Future<void> setSource(String sourceId) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'source', {'source_id': '"$sourceId"'}));
+    final response = await _send(request);
+    await _receive('setSource("$sourceId")', response);
+  }
+
   Future<String> locale() async {
     final request = Request('GET', Uri.http('localhost', 'locale'));
     final response = await _send(request);

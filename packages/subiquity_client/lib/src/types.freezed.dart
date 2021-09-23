@@ -12,6 +12,475 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _SourceSelection.fromJson(json);
+}
+
+/// @nodoc
+class _$SourceSelectionTearOff {
+  const _$SourceSelectionTearOff();
+
+  _SourceSelection call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) {
+    return _SourceSelection(
+      name: name,
+      description: description,
+      id: id,
+      size: size,
+      variant: variant,
+      isDefault: isDefault,
+    );
+  }
+
+  SourceSelection fromJson(Map<String, Object> json) {
+    return SourceSelection.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SourceSelection = _$SourceSelectionTearOff();
+
+/// @nodoc
+mixin _$SourceSelection {
+  String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SourceSelectionCopyWith<SourceSelection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SourceSelectionCopyWith<$Res> {
+  factory $SourceSelectionCopyWith(
+          SourceSelection value, $Res Function(SourceSelection) then) =
+      _$SourceSelectionCopyWithImpl<$Res>;
+  $Res call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
+}
+
+/// @nodoc
+class _$SourceSelectionCopyWithImpl<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  _$SourceSelectionCopyWithImpl(this._value, this._then);
+
+  final SourceSelection _value;
+  // ignore: unused_field
+  final $Res Function(SourceSelection) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SourceSelectionCopyWith<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  factory _$SourceSelectionCopyWith(
+          _SourceSelection value, $Res Function(_SourceSelection) then) =
+      __$SourceSelectionCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
+}
+
+/// @nodoc
+class __$SourceSelectionCopyWithImpl<$Res>
+    extends _$SourceSelectionCopyWithImpl<$Res>
+    implements _$SourceSelectionCopyWith<$Res> {
+  __$SourceSelectionCopyWithImpl(
+      _SourceSelection _value, $Res Function(_SourceSelection) _then)
+      : super(_value, (v) => _then(v as _SourceSelection));
+
+  @override
+  _SourceSelection get _value => super._value as _SourceSelection;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
+  }) {
+    return _then(_SourceSelection(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SourceSelection implements _SourceSelection {
+  const _$_SourceSelection(
+      {this.name,
+      this.description,
+      this.id,
+      this.size,
+      this.variant,
+      @JsonKey(name: 'default') this.isDefault});
+
+  factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionFromJson(json);
+
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? id;
+  @override
+  final int? size;
+  @override
+  final String? variant;
+  @override
+  @JsonKey(name: 'default')
+  final bool? isDefault;
+
+  @override
+  String toString() {
+    return 'SourceSelection(name: $name, description: $description, id: $id, size: $size, variant: $variant, isDefault: $isDefault)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceSelection &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality()
+                    .equals(other.variant, variant)) &&
+            (identical(other.isDefault, isDefault) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDefault, isDefault)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(variant) ^
+      const DeepCollectionEquality().hash(isDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SourceSelectionToJson(this);
+  }
+}
+
+abstract class _SourceSelection implements SourceSelection {
+  const factory _SourceSelection(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) = _$_SourceSelection;
+
+  factory _SourceSelection.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelection.fromJson;
+
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  String? get description => throw _privateConstructorUsedError;
+  @override
+  String? get id => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  String? get variant => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _SourceSelectionAndSetting.fromJson(json);
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingTearOff {
+  const _$SourceSelectionAndSettingTearOff();
+
+  _SourceSelectionAndSetting call(
+      {List<SourceSelection>? sources,
+      @JsonKey(name: 'current_id') String? currentId}) {
+    return _SourceSelectionAndSetting(
+      sources: sources,
+      currentId: currentId,
+    );
+  }
+
+  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
+    return SourceSelectionAndSetting.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
+
+/// @nodoc
+mixin _$SourceSelectionAndSetting {
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  @JsonKey(name: 'current_id')
+  String? get currentId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SourceSelectionAndSettingCopyWith<SourceSelectionAndSetting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SourceSelectionAndSettingCopyWith<$Res> {
+  factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
+          $Res Function(SourceSelectionAndSetting) then) =
+      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  $Res call(
+      {List<SourceSelection>? sources,
+      @JsonKey(name: 'current_id') String? currentId});
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
+
+  final SourceSelectionAndSetting _value;
+  // ignore: unused_field
+  final $Res Function(SourceSelectionAndSetting) _then;
+
+  @override
+  $Res call({
+    Object? sources = freezed,
+    Object? currentId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SourceSelectionAndSettingCopyWith<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
+          $Res Function(_SourceSelectionAndSetting) then) =
+      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {List<SourceSelection>? sources,
+      @JsonKey(name: 'current_id') String? currentId});
+}
+
+/// @nodoc
+class __$SourceSelectionAndSettingCopyWithImpl<$Res>
+    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements _$SourceSelectionAndSettingCopyWith<$Res> {
+  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
+      $Res Function(_SourceSelectionAndSetting) _then)
+      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
+
+  @override
+  _SourceSelectionAndSetting get _value =>
+      super._value as _SourceSelectionAndSetting;
+
+  @override
+  $Res call({
+    Object? sources = freezed,
+    Object? currentId = freezed,
+  }) {
+    return _then(_SourceSelectionAndSetting(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
+  const _$_SourceSelectionAndSetting(
+      {this.sources, @JsonKey(name: 'current_id') this.currentId});
+
+  factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionAndSettingFromJson(json);
+
+  @override
+  final List<SourceSelection>? sources;
+  @override
+  @JsonKey(name: 'current_id')
+  final String? currentId;
+
+  @override
+  String toString() {
+    return 'SourceSelectionAndSetting(sources: $sources, currentId: $currentId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceSelectionAndSetting &&
+            (identical(other.sources, sources) ||
+                const DeepCollectionEquality()
+                    .equals(other.sources, sources)) &&
+            (identical(other.currentId, currentId) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentId, currentId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(sources) ^
+      const DeepCollectionEquality().hash(currentId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith =>
+          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SourceSelectionAndSettingToJson(this);
+  }
+}
+
+abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
+  const factory _SourceSelectionAndSetting(
+          {List<SourceSelection>? sources,
+          @JsonKey(name: 'current_id') String? currentId}) =
+      _$_SourceSelectionAndSetting;
+
+  factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelectionAndSetting.fromJson;
+
+  @override
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'current_id')
+  String? get currentId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _KeyboardSetting.fromJson(json);
 }

@@ -2,7 +2,8 @@
 // in ubuntu_desktop_installer/test/updates_other_software_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:ui' as _i3;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart'
@@ -46,11 +47,16 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
       Invocation.method(#setInstallThirdParty, [installThirdParty]),
       returnValueForMissingStub: null);
   @override
-  void addListener(_i3.VoidCallback? listener) =>
+  _i3.Future<void> selectInstallationSource() =>
+      (super.noSuchMethod(Invocation.method(#selectInstallationSource, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  @override
+  void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i3.VoidCallback? listener) =>
+  void removeListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override
