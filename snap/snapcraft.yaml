@@ -69,6 +69,7 @@ parts:
       - -lib/python*/site-packages/wheel*
       - -lib/python*/site-packages/probert
       - -bin/activate*
+      - -bin/python3*
       - -lib/python3.8/site-packages/__pycache__/six.cpython*
       - -lib/python3.8/site-packages/pip-*.dist-info/RECORD
       - -lib/python3.8/site-packages/wheel-*.dist-info/RECORD
@@ -86,6 +87,9 @@ parts:
     source-type: git
     source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
     requirements: [requirements.txt]
+    stage:
+      - "*"
+      - -bin/python3*
 
   subiquitydeps:
     plugin: nil
