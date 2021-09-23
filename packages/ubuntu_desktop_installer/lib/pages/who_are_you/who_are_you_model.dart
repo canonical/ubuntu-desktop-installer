@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../../services.dart';
+
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
 /// The regular expression pattern for valid usernames:
@@ -29,21 +31,28 @@ enum LoginStrategy {
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends ChangeNotifier {
   /// Creates the model with the given client.
-  WhoAreYouModel(this._client) {
+  WhoAreYouModel({
+    required SubiquityClient client,
+    required HostnameService service,
+  })  : _client = client,
+        _service = service {
     Listenable.merge([
       _identity,
       _password,
       _confirmedPassword,
       _loginStrategy,
+      _systemHostname,
     ]).addListener(notifyListeners);
   }
 
   final SubiquityClient _client;
+  final HostnameService _service;
   final _identity = ValueNotifier<IdentityData>(IdentityData());
   final _password = ValueNotifier<String>('');
   final _confirmedPassword = ValueNotifier<String>('');
   final _loginStrategy =
       ValueNotifier<LoginStrategy>(LoginStrategy.requirePassword);
+  final _systemHostname = ValueNotifier<String>('');
 
   /// The current real name.
   String get realName => _identity.value.realname ?? '';
@@ -52,15 +61,33 @@ class WhoAreYouModel extends ChangeNotifier {
   }
 
   /// The current hostname.
-  String get hostName => _identity.value.hostname ?? '';
+  String get hostName => _getHostname();
   set hostName(String value) {
     _identity.value = _identity.value.copyWith(hostname: value);
   }
 
+  // Returns the current hostname or generates one if not set.
+  String _getHostname() {
+    final hostname = _identity.value.hostname ?? '';
+    return hostname.orIfEmpty(_generateHostname());
+  }
+
+  // Generates a hostname `<username>-<system hostname>`.
+  String _generateHostname() {
+    if (username.isEmpty || _systemHostname.value.isEmpty) return '';
+    return '$username-${_systemHostname.value}';
+  }
+
   /// The the current username.
-  String get username => _identity.value.username ?? '';
+  String get username => _getUserName();
   set username(String value) {
     _identity.value = _identity.value.copyWith(username: value);
+  }
+
+  // Returns the current username or a sanitized real name if not set.
+  String _getUserName() {
+    final username = _identity.value.username ?? '';
+    return username.orIfEmpty(realName.sanitize());
   }
 
   /// The current password.
@@ -89,7 +116,10 @@ class WhoAreYouModel extends ChangeNotifier {
 
   /// Loads the identity data from the server.
   Future<void> loadIdentity() {
-    return _client.identity().then((identity) => _identity.value = identity);
+    final id = _client.identity().then((value) => _identity.value = value);
+    final hn =
+        _service.init().then((_) => _systemHostname.value = _service.hostname);
+    return Future.wait<void>([id, hn]);
   }
 
   /// Saves the identity data to the server.
