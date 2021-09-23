@@ -74,7 +74,7 @@ abstract class SubiquityServer {
     }
 
     _serverProcess = await Process.start(
-      '/usr/bin/python3',
+      'python3',
       subiquityCmd,
       workingDirectory: subiquityPath,
       environment: _getEnvironment(subiquityPath),
