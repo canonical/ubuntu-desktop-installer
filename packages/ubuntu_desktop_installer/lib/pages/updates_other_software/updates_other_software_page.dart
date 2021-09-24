@@ -73,7 +73,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         WizardAction.next(
           context,
           onActivated: () async {
-            await model.selectInstallationSource();
+            // await model.selectInstallationSource();
             Wizard.of(context).next();
           },
         ),

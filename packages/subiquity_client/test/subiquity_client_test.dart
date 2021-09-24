@@ -25,8 +25,8 @@ void main() {
       _socketPath = await _testServer.start(ServerMode.DRY_RUN, [
         '--machine-config',
         'examples/simple.json',
-        '--source-catalog',
-        '../test/install-sources.yaml'
+        // '--source-catalog',
+        // '../test/install-sources.yaml'
       ]);
       _client.open(_socketPath);
     });
@@ -42,6 +42,7 @@ void main() {
       await _client.setVariant(Variant.DESKTOP);
     });
 
+    /*
     test('source', () async {
       final expected = SourceSelectionAndSetting(sources: <SourceSelection>[
         SourceSelection(
@@ -77,6 +78,7 @@ void main() {
       actual = await _client.source();
       expect(actual.currentId, 'synthesized');
     });
+     */
 
     test('locale', () async {
       await _client.setLocale('en_US.UTF-8');
