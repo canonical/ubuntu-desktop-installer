@@ -61,9 +61,9 @@ class ProfileSetupModel extends ChangeNotifier {
   /// Whether the current input is valid.
   bool get isValid =>
       realname.isNotEmpty &&
+      RegExp(kValidUsernamePattern).hasMatch(username) &&
       password.isNotEmpty &&
-      password == confirmedPassword &&
-      RegExp(kValidUsernamePattern).hasMatch(username);
+      password == confirmedPassword;
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
