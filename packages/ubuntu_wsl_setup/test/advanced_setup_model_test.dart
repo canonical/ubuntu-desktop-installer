@@ -86,8 +86,8 @@ void main() {
     }
 
     testValid('', isTrue);
-    testValid('/', isFalse);
-    testValid('/absolute/dir/', isFalse);
+    testValid('/', isTrue);
+    testValid('/absolute/dir/', isTrue);
     testValid('/absolute/file', isTrue);
     testValid('relative/dir/', isFalse);
     testValid('relative/file', isFalse);
