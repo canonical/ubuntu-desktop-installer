@@ -110,7 +110,7 @@ void main() {
     });
 
     test('guided storage', () async {
-      var gs = await _client.getGuidedStorage(0, true);
+      var gs = await _client.getGuidedStorage(true);
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
 
