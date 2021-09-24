@@ -24,14 +24,14 @@ String _formatResponseLog(String method, String response) {
 
 class SubiquityClient {
   late HttpUnixClient _client;
-  final _completer = Completer<bool>();
+  final _isOpen = Completer<bool>();
 
-  Future<bool> get isOpen => _completer.future;
+  Future<bool> get isOpen => _isOpen.future;
 
   void open(String socketPath) {
     log.info('Opening socket $socketPath');
-    _completer.complete(true);
     _client = HttpUnixClient(socketPath);
+    _isOpen.complete(true);
   }
 
   Future<void> close() {
