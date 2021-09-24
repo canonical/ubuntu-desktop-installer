@@ -65,6 +65,11 @@ abstract class SubiquityServer {
     ];
 
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
+    String? workingDirectory;
+    // try using local subiquity
+    if (Directory(subiquityPath).existsSync()) {
+      workingDirectory = subiquityPath;
+    }
 
     // kill the existing test server if it's already running, so they don't pile
     // up on hot restarts
@@ -74,9 +79,9 @@ abstract class SubiquityServer {
     }
 
     _serverProcess = await Process.start(
-      '/usr/bin/python3',
+      'python3',
       subiquityCmd,
-      workingDirectory: subiquityPath,
+      workingDirectory: workingDirectory,
       environment: _getEnvironment(subiquityPath),
     ).then((process) {
       stdout.addStream(process.stdout);
