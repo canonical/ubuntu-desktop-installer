@@ -57,10 +57,11 @@ abstract class SubiquityServer {
       return socketPath;
     }
 
+    var dryRunArgs = ['--dry-run', '--socket', socketPath];
     var subiquityCmd = <String>[
       '-m',
       _pythonModule,
-      if (serverMode == ServerMode.DRY_RUN) '--dry-run',
+      if (serverMode == ServerMode.DRY_RUN) ...dryRunArgs,
       ...?args,
     ];
 
