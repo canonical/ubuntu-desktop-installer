@@ -153,6 +153,18 @@ abstract class AppLocalizations {
   /// **'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>'**
   String get profileSetupHeader;
 
+  /// No description provided for @profileSetupRealnameLabel.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Your name'**
+  String get profileSetupRealnameLabel;
+
+  /// No description provided for @profileSetupRealnameRequired.
+  ///
+  /// In en_US, this message translates to:
+  /// **'A name is required'**
+  String get profileSetupRealnameRequired;
+
   /// No description provided for @profileSetupUsernameHint.
   ///
   /// In en_US, this message translates to:

@@ -81,6 +81,7 @@ class ValidatedFormField extends StatefulWidget {
 
 class _ValidatedFormFieldState extends State<ValidatedFormField> {
   late final TextEditingController _controller;
+  final _focusNode = FocusNode();
 
   @override
   void initState() {
@@ -90,11 +91,29 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(ValidatedFormField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!_focusNode.hasFocus &&
+        widget.initialValue != null &&
+        oldWidget.initialValue != widget.initialValue) {
+      _controller.text = widget.initialValue!;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final formField = TextFormField(
       autofocus: widget.autofocus,
       autovalidateMode: widget.autovalidateMode,
       controller: _controller,
+      focusNode: _focusNode,
       onChanged: widget.onChanged,
       validator: widget.validator,
       obscureText: widget.obscureText,

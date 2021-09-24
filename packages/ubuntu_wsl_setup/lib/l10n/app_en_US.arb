@@ -13,6 +13,8 @@
 
   "profileSetupTitle": "Profile setup",
   "profileSetupHeader": "Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "profileSetupRealnameLabel": "Your name",
+  "profileSetupRealnameRequired": "A name is required",
   "profileSetupUsernameHint": "Pick a username",
   "profileSetupUsernameHelper": "The username does not need to match your windows username.",
   "profileSetupPasswordHint": "Choose a password",
