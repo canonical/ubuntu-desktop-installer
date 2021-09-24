@@ -251,7 +251,7 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
   _i5.Future<_i3.StorageResponse> resetStorage() =>
       (super.noSuchMethod(Invocation.method(#resetStorage, []),
               returnValue:
-                  Future<_i3.StorageResponse>.value(_FakeStorageResponse_7()))
+                  Future<_i3.StorageResponse>.value(_FakeStorageResponse_8()))
           as _i5.Future<_i3.StorageResponse>);
   @override
   _i5.Future<void> reboot({bool? immediate = false}) => (super.noSuchMethod(
