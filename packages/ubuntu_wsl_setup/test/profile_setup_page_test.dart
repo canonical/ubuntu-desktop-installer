@@ -7,7 +7,6 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
@@ -23,6 +22,7 @@ void main() {
 
   ProfileSetupModel buildModel({
     bool? isValid,
+    String? realname,
     String? username,
     String? password,
     String? confirmedPassword,
@@ -31,6 +31,7 @@ void main() {
   }) {
     final model = MockProfileSetupModel();
     when(model.isValid).thenReturn(isValid ?? false);
+    when(model.realname).thenReturn(realname ?? '');
     when(model.username).thenReturn(username ?? '');
     when(model.password).thenReturn(password ?? '');
     when(model.confirmedPassword).thenReturn(confirmedPassword ?? '');
@@ -58,6 +59,16 @@ void main() {
       ),
     );
   }
+
+  testWidgets('realname input', (tester) async {
+    final model = buildModel(realname: 'realname');
+    await tester.pumpWidget(buildApp(tester, model));
+
+    final textField = find.widgetWithText(TextField, 'realname');
+    expect(textField, findsOneWidget);
+    await tester.enterText(textField, 'ubuntu');
+    verify(model.realname = 'ubuntu').called(1);
+  });
 
   testWidgets('username input', (tester) async {
     final model = buildModel(username: 'username');

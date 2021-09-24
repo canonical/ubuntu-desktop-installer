@@ -27,6 +27,14 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
   }
 
   @override
+  String get realname =>
+      (super.noSuchMethod(Invocation.getter(#realname), returnValue: '')
+          as String);
+  @override
+  set realname(String? realname) =>
+      super.noSuchMethod(Invocation.setter(#realname, realname),
+          returnValueForMissingStub: null);
+  @override
   String get username =>
       (super.noSuchMethod(Invocation.getter(#username), returnValue: '')
           as String);

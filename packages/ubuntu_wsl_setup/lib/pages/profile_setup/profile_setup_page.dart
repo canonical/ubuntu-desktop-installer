@@ -66,6 +66,10 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
           children: <Widget>[
             Padding(
               padding: fieldPadding,
+              child: _RealNameFormField(fieldWidth: fieldWidth),
+            ),
+            Padding(
+              padding: fieldPadding,
               child: _UsernameFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing),

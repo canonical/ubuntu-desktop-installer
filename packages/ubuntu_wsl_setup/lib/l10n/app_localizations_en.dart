@@ -35,6 +35,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
+  String get profileSetupRealnameLabel => 'Your name';
+
+  @override
+  String get profileSetupRealnameRequired => 'A name is required';
+
+  @override
   String get profileSetupUsernameHint => 'Pick a username';
 
   @override
@@ -196,6 +202,12 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+
+  @override
+  String get profileSetupRealnameLabel => 'Your name';
+
+  @override
+  String get profileSetupRealnameRequired => 'A name is required';
 
   @override
   String get profileSetupUsernameHint => 'Pick a username';

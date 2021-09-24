@@ -24,10 +24,22 @@ class ProfileSetupModel extends ChangeNotifier {
   final _password = ValueNotifier('');
   final _confirmedPassword = ValueNotifier('');
 
+  /// The real name for the profile.
+  String get realname => _identity.value.realname ?? '';
+  set realname(String realname) {
+    _identity.value = _identity.value.copyWith(realname: realname);
+  }
+
   /// The username for the profile.
-  String get username => _identity.value.username ?? '';
+  String get username => _getUserName();
   set username(String username) {
     _identity.value = _identity.value.copyWith(username: username);
+  }
+
+  // Returns the current username or a sanitized real name if not set.
+  String _getUserName() {
+    final username = _identity.value.username ?? '';
+    return username.orIfEmpty(realname.sanitize());
   }
 
   /// The password for the profile.
@@ -48,9 +60,10 @@ class ProfileSetupModel extends ChangeNotifier {
 
   /// Whether the current input is valid.
   bool get isValid =>
-      RegExp(kValidUsernamePattern).hasMatch(username) &&
+      realname.isNotEmpty &&
       password.isNotEmpty &&
-      password == confirmedPassword;
+      password == confirmedPassword &&
+      RegExp(kValidUsernamePattern).hasMatch(username);
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {

@@ -35,6 +35,14 @@ void main() {
     verify(client.setIdentity(identity)).called(1);
   });
 
+  test('username generation', () {
+    final client = MockSubiquityClient();
+
+    final model = ProfileSetupModel(client);
+    model.realname = 'Ubuntu Impish';
+    expect(model.username, equals('ubuntu-impish'));
+  });
+
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
     final model = ProfileSetupModel(MockSubiquityClient());
@@ -56,7 +64,12 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.username, isEmpty);
+    expect(model.realname, isEmpty);
+    model.realname = 'Ubuntu Impish';
+    expect(wasNotified, isTrue);
+
+    wasNotified = false;
+    expect(model.username, equals('ubuntu-impish')); // generated
     model.username = 'ubuntu';
     expect(wasNotified, isTrue);
 
@@ -81,11 +94,13 @@ void main() {
     expect(model.isValid, isFalse);
 
     void testValid(
+      String realname,
       String username,
       String password,
       String confirmedPassword,
       Matcher matcher,
     ) {
+      model.realname = realname;
       model.username = username;
       model.password = password;
       model.confirmedPassword = confirmedPassword;
@@ -93,20 +108,21 @@ void main() {
     }
 
     // any field missing
-    testValid('', 'password', '', isFalse);
-    testValid('', '', 'password', isFalse);
-    testValid('', 'password', 'password', isFalse);
-    testValid('username', '', '', isFalse);
-    testValid('username', 'password', '', isFalse);
-    testValid('username', '', 'password', isFalse);
+    testValid('', 'username', 'password', 'password', isFalse);
+    testValid('realname', '', 'password', '', isFalse);
+    testValid('realname', '', '', 'password', isFalse);
+    testValid('realname', '', 'password', 'password', isTrue); // generated
+    testValid('realname', 'username', '', '', isFalse);
+    testValid('realname', 'username', 'password', '', isFalse);
+    testValid('realname', 'username', '', 'password', isFalse);
 
     // password matching
-    testValid('ubuntu', 'password', 'confirmed', isFalse);
-    testValid('ubuntu', 'password', 'password', isTrue);
+    testValid('Ubuntu', 'ubuntu', 'password', 'confirmed', isFalse);
+    testValid('Ubuntu', 'ubuntu', 'password', 'password', isTrue);
 
     // username validation
-    testValid('123', 'password', 'password', isFalse);
-    testValid('UBUNTU', 'password', 'password', isFalse);
-    testValid('inv@lid', 'password', 'password', isFalse);
+    testValid('User', '123', 'password', 'password', isFalse);
+    testValid('User', 'UBUNTU', 'password', 'password', isFalse);
+    testValid('User', 'inv@lid', 'password', 'password', isFalse);
   });
 }
