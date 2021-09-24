@@ -260,15 +260,13 @@ class SubiquityClient {
   }
 
   /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage(int minSize, bool wait) async {
+  Future<GuidedStorageResponse> getGuidedStorage(bool wait) async {
     final request = Request(
-        'GET',
-        Uri.http('localhost', 'storage/guided',
-            {'min_size': '$minSize', 'wait': '$wait'}));
+        'GET', Uri.http('localhost', 'storage/guided', {'wait': '$wait'}));
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson("getGuidedStorage('$minSize', '$wait')", response);
+        await _receiveJson("getGuidedStorage('$wait')", response);
     return GuidedStorageResponse.fromJson(responseJson);
   }
 
