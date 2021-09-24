@@ -1,5 +1,6 @@
 library subiquity_client;
 
+import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:logger/logger.dart';
@@ -23,10 +24,14 @@ String _formatResponseLog(String method, String response) {
 
 class SubiquityClient {
   late HttpUnixClient _client;
+  final _isOpen = Completer<bool>();
+
+  Future<bool> get isOpen => _isOpen.future;
 
   void open(String socketPath) {
     log.info('Opening socket $socketPath');
     _client = HttpUnixClient(socketPath);
+    _isOpen.complete(true);
   }
 
   Future<void> close() {

@@ -10,6 +10,14 @@ void main() {
   late SubiquityClient _client;
   var _socketPath;
 
+  test('initialization', () async {
+    final client = SubiquityClient();
+    final isOpen = client.isOpen;
+    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
+    await expectLater(isOpen, completes);
+    expect(await isOpen, isTrue);
+  });
+
   group('subiquity', () {
     setUpAll(() async {
       _testServer = SubiquityServer();
