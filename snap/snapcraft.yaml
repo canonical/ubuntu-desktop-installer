@@ -151,6 +151,7 @@ parts:
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
       flutter channel stable
@@ -160,6 +161,7 @@ parts:
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
     build-snaps:
       - flutter/latest/stable
 
