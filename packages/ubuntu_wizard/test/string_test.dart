@@ -13,5 +13,7 @@ void main() {
     expect('abc'.sanitize(), equals('abc'));
     expect(' a b c '.sanitize(), equals('a-b-c'));
     expect('#a€_B@ëc?'.sanitize(), equals('a-b-c'));
+    expect(' "#§abc&?" '.sanitize(), equals('abc'));
+    expect('  myname  '.sanitize(), equals('myname'));
   });
 }
