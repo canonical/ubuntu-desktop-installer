@@ -135,6 +135,12 @@ void main() {
       await _client.setStorage(sr.config!);
     });
 
+    test('reset storage', () async {
+      final response = await _client.resetStorage();
+      expect(response.status, ProbeStatus.DONE);
+      expect(response.origConfig, isNotNull);
+    });
+
     test('proxy', () async {
       // TODO: Re-enable once we figure out why _client.setProxy() sometimes hangs
       // await _client.setProxy('test');

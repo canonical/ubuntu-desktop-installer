@@ -287,6 +287,14 @@ class SubiquityClient {
     await _receive("setStorage(${jsonEncode(config)})", response);
   }
 
+  Future<StorageResponse> resetStorage() async {
+    final request = Request('POST', Uri.http('localhost', 'storage/reset'));
+    final response = await _send(request);
+
+    final responseJson = await _receiveJson("resetStorage()", response);
+    return StorageResponse.fromJson(responseJson);
+  }
+
   Future<void> reboot({bool immediate = false}) async {
     final request = Request(
         'POST',
