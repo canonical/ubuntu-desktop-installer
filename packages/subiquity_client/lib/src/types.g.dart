@@ -6,6 +6,44 @@ part of 'types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _$_SourceSelection(
+    name: json['name'] as String?,
+    description: json['description'] as String?,
+    id: json['id'] as String?,
+    size: json['size'] as int?,
+    variant: json['variant'] as String?,
+    isDefault: json['default'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionToJson(_$_SourceSelection instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+      'id': instance.id,
+      'size': instance.size,
+      'variant': instance.variant,
+      'default': instance.isDefault,
+    };
+
+_$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _$_SourceSelectionAndSetting(
+    sources: (json['sources'] as List<dynamic>?)
+        ?.map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    currentId: json['current_id'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
+        _$_SourceSelectionAndSetting instance) =>
+    <String, dynamic>{
+      'sources': instance.sources,
+      'current_id': instance.currentId,
+    };
+
 _$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _$_KeyboardSetting(
     layout: json['layout'] as String?,
@@ -345,3 +383,97 @@ const _$BootloaderEnumMap = {
   Bootloader.UEFI: 'UEFI',
   Bootloader.PREP: 'PREP',
 };
+
+_$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
+    Map<String, dynamic> json) {
+  return _$_WSLConfigurationBase(
+    customPath: json['custom_path'] as String?,
+    customMountOpt: json['custom_mount_opt'] as String?,
+    genHost: json['gen_host'] as bool?,
+    genResolvconf: json['gen_resolvconf'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
+        _$_WSLConfigurationBase instance) =>
+    <String, dynamic>{
+      'custom_path': instance.customPath,
+      'custom_mount_opt': instance.customMountOpt,
+      'gen_host': instance.genHost,
+      'gen_resolvconf': instance.genResolvconf,
+    };
+
+_$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
+    Map<String, dynamic> json) {
+  return _$_WSLConfigurationAdvanced(
+    guiTheme: json['gui_theme'] as String?,
+    guiFollowwintheme: json['gui_followwintheme'] as bool?,
+    legacyGui: json['legacy_gui'] as bool?,
+    legacyAudio: json['legacy_audio'] as bool?,
+    advIpDetect: json['adv_ip_detect'] as bool?,
+    wslMotdNews: json['wsl_motd_news'] as bool?,
+    automount: json['automount'] as bool?,
+    mountfstab: json['mountfstab'] as bool?,
+    interopEnabled: json['interop_enabled'] as bool?,
+    interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
+        _$_WSLConfigurationAdvanced instance) =>
+    <String, dynamic>{
+      'gui_theme': instance.guiTheme,
+      'gui_followwintheme': instance.guiFollowwintheme,
+      'legacy_gui': instance.legacyGui,
+      'legacy_audio': instance.legacyAudio,
+      'adv_ip_detect': instance.advIpDetect,
+      'wsl_motd_news': instance.wslMotdNews,
+      'automount': instance.automount,
+      'mountfstab': instance.mountfstab,
+      'interop_enabled': instance.interopEnabled,
+      'interop_appendwindowspath': instance.interopAppendwindowspath,
+    };
+
+_$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
+  return _$StepPressKey(
+    symbols:
+        (json['symbols'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    keycodes: (json['keycodes'] as List<dynamic>?)
+        ?.map((e) => e as List<dynamic>)
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
+    <String, dynamic>{
+      'symbols': instance.symbols,
+      'keycodes': instance.keycodes,
+    };
+
+_$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {
+  return _$StepKeyPresent(
+    symbol: json['symbol'] as String?,
+    yes: json['yes'] as String?,
+    no: json['no'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$StepKeyPresentToJson(_$StepKeyPresent instance) =>
+    <String, dynamic>{
+      'symbol': instance.symbol,
+      'yes': instance.yes,
+      'no': instance.no,
+    };
+
+_$StepResult _$_$StepResultFromJson(Map<String, dynamic> json) {
+  return _$StepResult(
+    layout: json['layout'] as String?,
+    variant: json['variant'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$StepResultToJson(_$StepResult instance) =>
+    <String, dynamic>{
+      'layout': instance.layout,
+      'variant': instance.variant,
+    };

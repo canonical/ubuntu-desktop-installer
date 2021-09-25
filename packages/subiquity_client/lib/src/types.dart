@@ -4,6 +4,36 @@ import 'package:json_annotation/json_annotation.dart';
 part 'types.freezed.dart';
 part 'types.g.dart';
 
+// ignore_for_file: invalid_annotation_target
+
+enum Variant { SERVER, DESKTOP }
+
+@freezed
+class SourceSelection with _$SourceSelection {
+  const factory SourceSelection({
+    String? name,
+    String? description,
+    String? id,
+    int? size,
+    String? variant,
+    @JsonKey(name: 'default') bool? isDefault,
+  }) = _SourceSelection;
+
+  factory SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionFromJson(json);
+}
+
+@freezed
+class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
+  const factory SourceSelectionAndSetting({
+    List<SourceSelection>? sources,
+    @JsonKey(name: 'current_id') String? currentId,
+  }) = _SourceSelectionAndSetting;
+
+  factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionAndSettingFromJson(json);
+}
+
 @freezed
 class KeyboardSetting with _$KeyboardSetting {
   const factory KeyboardSetting({
@@ -219,4 +249,62 @@ class StorageResponse with _$StorageResponse {
 
   factory StorageResponse.fromJson(Map<String, dynamic> json) =>
       _$StorageResponseFromJson(json);
+}
+
+@freezed
+class WSLConfigurationBase with _$WSLConfigurationBase {
+  const factory WSLConfigurationBase({
+    @JsonKey(name: 'custom_path') String? customPath,
+    @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
+    @JsonKey(name: 'gen_host') bool? genHost,
+    @JsonKey(name: 'gen_resolvconf') bool? genResolvconf,
+  }) = _WSLConfigurationBase;
+
+  factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
+      _$WSLConfigurationBaseFromJson(json);
+}
+
+// TODO: remove all common attributes with WSLConfigurationBase
+@freezed
+class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
+  const factory WSLConfigurationAdvanced({
+    @JsonKey(name: 'gui_theme') String? guiTheme,
+    @JsonKey(name: 'gui_followwintheme') bool? guiFollowwintheme,
+    @JsonKey(name: 'legacy_gui') bool? legacyGui,
+    @JsonKey(name: 'legacy_audio') bool? legacyAudio,
+    @JsonKey(name: 'adv_ip_detect') bool? advIpDetect,
+    @JsonKey(name: 'wsl_motd_news') bool? wslMotdNews,
+    bool? automount,
+    bool? mountfstab,
+    @JsonKey(name: 'interop_enabled') bool? interopEnabled,
+    @JsonKey(name: 'interop_appendwindowspath') bool? interopAppendwindowspath,
+  }) = _WSLConfigurationAdvanced;
+
+  factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
+      _$WSLConfigurationAdvancedFromJson(json);
+}
+
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class KeyboardStep with _$KeyboardStep {
+  @FreezedUnionValue('StepPressKey')
+  const factory KeyboardStep.pressKey({
+    List<String>? symbols,
+    List<List<dynamic>>? keycodes,
+  }) = StepPressKey;
+
+  @FreezedUnionValue('StepKeyPresent')
+  const factory KeyboardStep.keyPresent({
+    String? symbol,
+    String? yes,
+    String? no,
+  }) = StepKeyPresent;
+
+  @FreezedUnionValue('StepResult')
+  const factory KeyboardStep.result({
+    String? layout,
+    String? variant,
+  }) = StepResult;
+
+  factory KeyboardStep.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardStepFromJson(json);
 }

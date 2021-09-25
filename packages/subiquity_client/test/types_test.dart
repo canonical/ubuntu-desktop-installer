@@ -144,4 +144,100 @@ void main() {
     expect(keyboard.toJson(), equals(json));
     expect(GuidedChoice.fromJson(json), keyboard);
   });
+
+  test('wsl configuration base data', () {
+    const conf = WSLConfigurationBase(
+      customPath: '/mnt/',
+      customMountOpt: '',
+      genHost: true,
+      genResolvconf: true,
+    );
+    const json = <String, dynamic>{
+      'custom_path': '/mnt/',
+      'custom_mount_opt': '',
+      'gen_host': true,
+      'gen_resolvconf': true,
+    };
+    expect(conf.toJson(), equals(json));
+    expect(WSLConfigurationBase.fromJson(json), conf);
+  });
+
+  test('wsl configuration advanced', () {
+    const conf = WSLConfigurationAdvanced(
+      guiTheme: 'default',
+      guiFollowwintheme: true,
+      legacyGui: false,
+      legacyAudio: false,
+      advIpDetect: false,
+      wslMotdNews: true,
+      automount: true,
+      mountfstab: true,
+      interopEnabled: true,
+      interopAppendwindowspath: true,
+    );
+    const json = <String, dynamic>{
+      'gui_theme': 'default',
+      'gui_followwintheme': true,
+      'legacy_gui': false,
+      'legacy_audio': false,
+      'adv_ip_detect': false,
+      'wsl_motd_news': true,
+      'automount': true,
+      'mountfstab': true,
+      'interop_enabled': true,
+      'interop_appendwindowspath': true,
+    };
+    expect(conf.toJson(), equals(json));
+    expect(WSLConfigurationAdvanced.fromJson(json), conf);
+  });
+
+  test('keyboard layout key press step', () {
+    const step = StepPressKey(
+      symbols: ['z'],
+      keycodes: [
+        [21, '2'],
+        [44, '3']
+      ],
+    );
+    final json = <String, dynamic>{
+      'symbols': ['z'],
+      'keycodes': [
+        [21, '2'],
+        [44, '3']
+      ],
+      '\$type': 'StepPressKey',
+    };
+    expect(step.toJson(), equals(json));
+    expect(StepPressKey.fromJson(json), step);
+  });
+
+  test('keyboard layout key present step', () {
+    const step = KeyboardStep.keyPresent(
+      symbol: 'ö',
+      yes: '9',
+      no: '4',
+    );
+    final json = <String, dynamic>{
+      'symbol': 'ö',
+      'yes': '9',
+      'no': '4',
+      '\$type': 'StepKeyPresent',
+    };
+    expect(step.toJson(), equals(json));
+    expect(KeyboardStep.fromJson(json), step);
+  });
+
+  test('keyboard layout result step', () {
+    const step = StepResult(
+      layout: 'de',
+      variant: 'nodeadkeys',
+    );
+    final json = <String, dynamic>{
+      'layout': 'de',
+      'variant': 'nodeadkeys',
+      '\$type': 'StepResult',
+    };
+    expect(step.toJson(), equals(json));
+    expect(StepResult.fromJson(json), step);
+  });
 }

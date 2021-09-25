@@ -1,16 +1,17 @@
-import 'dart:io' as io;
-
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
 /// View model for [InstallationSlidesPage].
-class InstallationSlidesModel extends ChangeNotifier {
+class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   /// Creates an instance with the given client.
-  InstallationSlidesModel(this._client);
+  InstallationSlidesModel(this.client);
 
-  final SubiquityClient _client;
+  @override
+  final SubiquityClient client;
+
   ApplicationStatus? _status;
 
   /// The current installation state.
@@ -41,20 +42,15 @@ class InstallationSlidesModel extends ChangeNotifier {
   int get installationStepCount =>
       ApplicationState.DONE.index - ApplicationState.RUNNING.index;
 
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
-
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    print(
-        'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
     notifyListeners();
   }
 
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
-    return _client.status().then((status) {
+    return client.status().then((status) {
       _updateStatus(status);
       _monitorStatus();
     });
@@ -62,16 +58,12 @@ class InstallationSlidesModel extends ChangeNotifier {
 
   Future<void> _monitorStatus() async {
     while (!isDone && !hasError) {
-      await _client.status(current: state).then(_updateStatus);
+      await client.status(current: state).then(_updateStatus);
     }
   }
 
-  /// Requests system reboot.
-  Future<void> reboot({
-    @visibleForTesting void Function(int exitCode) exit = io.exit,
-  }) async {
-    // TODO: await for reboot result
-    _client.reboot();
-    exit(0);
+  /// Requests an immediate system reboot.
+  Future<void> reboot({bool immediate = true}) {
+    return super.reboot(immediate: immediate);
   }
 }

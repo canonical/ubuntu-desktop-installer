@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:http/http.dart';
+import 'package:synchronized/synchronized.dart';
 
 enum _HttpParserState {
   status,
@@ -15,14 +16,14 @@ enum _HttpParserState {
 }
 
 class _HttpRequest {
-  var httpVersion = '';
-  var statusCode = 0;
-  var reasonPhrase = '';
-  var headers = <String, String>{};
+  String httpVersion = '';
+  int statusCode = 0;
+  String reasonPhrase = '';
+  Map<String, String> headers = <String, String>{};
 
   BaseRequest request;
-  var completer = Completer<StreamedResponse>();
-  var stream = StreamController<List<int>>();
+  Completer<StreamedResponse> completer = Completer<StreamedResponse>();
+  StreamController<List<int>> stream = StreamController<List<int>>();
 
   _HttpRequest(this.request);
 
@@ -41,6 +42,7 @@ class HttpUnixClient extends BaseClient {
 
   // Unix socket connected to.
   Socket? _socket;
+  final _lock = Lock();
 
   // Requests in process.
   final _requests = <_HttpRequest>[];
@@ -55,13 +57,16 @@ class HttpUnixClient extends BaseClient {
   /// Creates a new HTTP client that communicates on a Unix domain socket on [path].
   HttpUnixClient(this.path);
 
-  @override
-  Future<StreamedResponse> send(BaseRequest request) async {
-    if (_socket == null) {
-      var address = InternetAddress(path, type: InternetAddressType.unix);
-      _socket = await Socket.connect(address, 0);
-      _socket?.listen(_processData);
-    }
+  //// Writes a request to the socket without awaiting response.
+  Future<void> write(BaseRequest request) async {
+    // synchronize to prevent concurrent requests creating multiple sockets
+    await _lock.synchronized(() async {
+      if (_socket == null) {
+        var address = InternetAddress(path, type: InternetAddressType.unix);
+        _socket = await Socket.connect(address, 0);
+        _socket!.listen(_processData);
+      }
+    });
 
     var message = '';
     var url = request.url;
@@ -76,7 +81,13 @@ class HttpUnixClient extends BaseClient {
     });
     message += '\r\n';
     _socket?.write(message);
+  }
 
+  /// Sends a request to the server and returns a future that completes when the
+  /// response is received.
+  @override
+  Future<StreamedResponse> send(BaseRequest request) async {
+    await write(request);
     if (request is Request) {
       _socket?.write(request.body);
     } else if (request is MultipartRequest) {
@@ -90,6 +101,10 @@ class HttpUnixClient extends BaseClient {
     var req = _HttpRequest(request);
     _requests.add(req);
     return req.completer.future;
+  }
+
+  Future<void> flush() async {
+    return _socket?.flush();
   }
 
   @override

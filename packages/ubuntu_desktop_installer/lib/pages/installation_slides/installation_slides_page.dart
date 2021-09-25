@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
-import '../../widgets/localized_view.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+
 import 'installation_slides_model.dart';
 import 'intallation_slides_view_models.dart';
 
@@ -45,7 +47,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
   late ScrollController scrollController;
 
   bool isBottomCollapsed = true;
-   int slideCount = 8;
+  int slideCount = 8;
 
   @override
   void initState() {

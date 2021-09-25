@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/disk_storage_service.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'write_changes_to_disk_page_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService, SubiquityClient])
+@GenerateMocks([DiskStorageService])
 void main() {
   late MaterialApp app;
   late MockSubiquityClient client;
@@ -83,7 +83,7 @@ void main() {
       WidgetTester tester, List<Map<String, dynamic>> storageConfig) async {
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Wizard(
         routes: {

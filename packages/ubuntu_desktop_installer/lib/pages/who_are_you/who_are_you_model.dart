@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
-import '../../utils.dart';
-export '../../utils.dart' show PasswordStrength;
+export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter

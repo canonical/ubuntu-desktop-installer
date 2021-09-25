@@ -1,14 +1,12 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
+import 'package:ubuntu_test/mocks.dart';
 
-import 'installation_slides_model_test.mocks.dart';
-
-@GenerateMocks([SubiquityClient])
 void main() async {
   test('client status query loop', () async {
     final client = MockSubiquityClient();
@@ -101,15 +99,21 @@ void main() async {
   });
 
   test('reboot', () async {
-    final client = MockSubiquityClient();
-    when(client.reboot()).thenAnswer((_) async => null);
+    TestWidgetsFlutterBinding.ensureInitialized();
 
+    var windowClosed = false;
+    final methodChannel = MethodChannel('ubuntu_wizard');
+    methodChannel.setMockMethodCallHandler((call) {
+      expect(call.method, equals('closeWindow'));
+      windowClosed = true;
+    });
+
+    final client = MockSubiquityClient();
     final model = InstallationSlidesModel(client);
 
-    var didExit = -1;
-    await model.reboot(exit: (exitCode) => didExit = exitCode);
-    verify(client.reboot()).called(1);
-    expect(didExit, equals(0));
+    await model.reboot(immediate: true);
+    verify(client.reboot(immediate: true)).called(1);
+    expect(windowClosed, isTrue);
   });
 
   test('installation steps', () async {

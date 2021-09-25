@@ -1,74 +1,63 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
+import 'package:ubuntu_test/mocks.dart';
 
 void main() {
-  group('UpdatesOtherSoftwareModel', () {
-    test('init state should be ablet to set installation mode', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
+  late UpdateOtherSoftwareModel model;
 
-      expect(model.installationMode, InstallationMode.normal);
-    });
+  setUp(() {
+    model = UpdateOtherSoftwareModel(
+        client: MockSubiquityClient(),
+        installationMode: InstallationMode.normal);
+  });
 
-    test('should notify listeners when set installation mode', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
+  test('init state should be able to set installation mode', () {
+    expect(model.installationMode, InstallationMode.normal);
+  });
 
-      InstallationMode? mode;
+  test('should notify listeners when set installation mode', () {
+    InstallationMode? mode;
+    model.addListener(() => mode = model.installationMode);
+    model.setInstallationMode(InstallationMode.minimal);
+    expect(mode, InstallationMode.minimal);
+  });
 
-      model.addListener(() => mode = model.installationMode);
+  test('should have third party option set to false by default', () {
+    expect(model.installThirdParty, isFalse);
+  });
 
-      model.setInstallationMode(InstallationMode.minimal);
+  test('should be able to set third party', () {
+    bool? shouldInstallThirdParty;
+    model.addListener(() => shouldInstallThirdParty = model.installThirdParty);
+    model.setInstallThirdParty(true);
+    expect(shouldInstallThirdParty, isTrue);
+  });
 
-      expect(mode, InstallationMode.minimal);
-    });
+  test('should not notify installation mode when passed null', () {
+    InstallationMode? mode;
+    model.addListener(() => mode = model.installationMode);
+    model.setInstallationMode(null);
+    expect(mode, isNull);
+  });
 
-    test('should have third party option set to false by default', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
+  test('should not notify third party when passed null', () {
+    bool? shouldInstallThirdParty;
+    model.addListener(() => shouldInstallThirdParty = model.installThirdParty);
+    model.setInstallThirdParty(null);
+    expect(shouldInstallThirdParty, isNull);
+  });
 
-      expect(model.installThirdParty, false);
-    });
+  test('set the installation source', () async {
+    final client = MockSubiquityClient();
+    final model = UpdateOtherSoftwareModel(
+        client: client, installationMode: InstallationMode.normal);
 
-    test('should be able to set third party', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
+    await model.selectInstallationSource();
+    verify(client.setSource('ubuntu-desktop')).called(1);
 
-      bool? shouldInstallThirdParty;
-
-      model
-          .addListener(() => shouldInstallThirdParty = model.installThirdParty);
-
-      model.setInstallThirdParty(true);
-
-      expect(shouldInstallThirdParty, true);
-    });
-
-    test('should not notify installation mode when passed null', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
-
-      InstallationMode? mode;
-
-      model.addListener(() => mode = model.installationMode);
-
-      model.setInstallationMode(null);
-
-      expect(mode, null);
-    });
-
-    test('should not notify third party when passed null', () {
-      final model =
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal);
-
-      bool? shouldInstallThirdParty;
-
-      model
-          .addListener(() => shouldInstallThirdParty = model.installThirdParty);
-
-      model.setInstallThirdParty(null);
-
-      expect(shouldInstallThirdParty, null);
-    });
+    model.setInstallationMode(InstallationMode.minimal);
+    await model.selectInstallationSource();
+    verify(client.setSource('ubuntu-desktop-minimal')).called(1);
   });
 }

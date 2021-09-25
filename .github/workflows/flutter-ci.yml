@@ -19,7 +19,7 @@ jobs:
 
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'dev'
+        channel: 'stable'
 
     - name: Enable Linux desktop support
       run: flutter config --enable-linux-desktop
@@ -31,10 +31,13 @@ jobs:
       run: sudo apt update && sudo apt install lcov
 
     # subiquity
-    
+
     - name: Get subiquity dependencies
       working-directory: ./packages/subiquity_client/subiquity
-      run: sudo apt update && make install_deps && sudo apt install python3-curtin
+      run: sudo ./scripts/installdeps.sh
+
+    - name: Check subiquity integration
+      run: ./scripts/subiquity_integration
 
     # test all packages
 
@@ -49,10 +52,74 @@ jobs:
       with:
         token: ${{secrets.CODECOV_TOKEN}}
 
-    # general
+  analyze:
+    runs-on: ubuntu-20.04
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Enable Linux desktop support
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Melos
+      run: flutter pub global activate melos
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
 
     - name: Check for any formatting issues
       run: melos run format
-    
+
     - name: Check for any analyzer issues
       run: melos run analyze
+
+    - name: Check for any code generation issues
+      run: melos run generate
+
+    - name: Check for any l10n generation issues
+      run: melos run gen-l10n
+
+    - name: Detect changes in generated files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "WARNING: the following generated files may be outdated or untracked:"
+          git status --porcelain
+          git diff
+          exit 1
+        fi
+
+  generate:
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'push'
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Enable Linux desktop support
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Melos
+      run: flutter pub global activate melos
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
+
+    - name: Generate source code
+      run: melos run generate
+
+    - name: Generate l10n files
+      run: melos run gen-l10n
+
+    - name: Commit changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        message: 'Regenerate files'

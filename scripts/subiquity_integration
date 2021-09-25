@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+# consistency checks between ubuntu-desktop-installer and subiquity
+
+import unittest
+import yaml
+
+
+class Tests(unittest.TestCase):
+    def test_depends(self):
+        with open('snap/snapcraft.yaml', 'r') as udi_snapcraft:
+            udi_data = yaml.safe_load(udi_snapcraft)
+
+        with open('packages/subiquity_client/subiquity/snapcraft.yaml', 'r') \
+                as subiquity_snapcraft:
+            subiquity_data = yaml.safe_load(subiquity_snapcraft)
+
+        for part in ('probert', 'curtin'):
+            self.assertEqual(udi_data['parts'][part]['source-commit'],
+                             subiquity_data['parts'][part]['source-commit'],
+                             f'comparison of {part}')
+
+
+if __name__ == '__main__':
+    unittest.main()

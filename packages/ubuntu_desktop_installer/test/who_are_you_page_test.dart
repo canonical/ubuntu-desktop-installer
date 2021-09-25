@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/l10n.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'who_are_you_page_test.mocks.dart';
-
-extension LangTester<T> on WidgetTester {
-  AppLocalizations get lang {
-    final page = element(find.byType(WhoAreYouPage));
-    return AppLocalizations.of(page)!;
-  }
-}
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([WhoAreYouModel])
 void main() {
@@ -54,7 +50,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
     return MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {'/': (_) => buildPage(model)},
         onNext: (settings) => '/',
@@ -118,9 +114,12 @@ void main() {
     final model = buildModel(password: '');
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.weakPassword), findsNothing);
-    expect(find.text(tester.lang.moderatePassword), findsNothing);
-    expect(find.text(tester.lang.strongPassword), findsNothing);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.weakPassword), findsNothing);
+    expect(find.text(lang.moderatePassword), findsNothing);
+    expect(find.text(lang.strongPassword), findsNothing);
   });
 
   testWidgets('weak password', (tester) async {
@@ -130,7 +129,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.weakPassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.weakPassword), findsOneWidget);
   });
 
   testWidgets('moderate password', (tester) async {
@@ -140,7 +142,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.moderatePassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.moderatePassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {
@@ -150,7 +155,10 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.lang.strongPassword), findsOneWidget);
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.strongPassword), findsOneWidget);
   });
 
   testWidgets('valid input', (tester) async {
@@ -159,7 +167,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
   });
@@ -170,7 +178,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
@@ -179,28 +187,24 @@ void main() {
     final model = buildModel(loginStrategy: LoginStrategy.autoLogin);
     await tester.pumpWidget(buildApp(tester, model));
 
-    Type typeOf<T>() => T;
-
     final autoLoginTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageAutoLogin,
     );
     expect(autoLoginTile, findsOneWidget);
 
     final requirePasswordTile = find.widgetWithText(
-      typeOf<RadioListTile<LoginStrategy>>(),
+      typeOf<RadioButton<LoginStrategy>>(),
       tester.lang.whoAreYouPageRequirePassword,
     );
     expect(requirePasswordTile, findsOneWidget);
 
     expect(
-      tester.widget<RadioListTile<LoginStrategy>>(autoLoginTile).groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(autoLoginTile).groupValue,
       LoginStrategy.autoLogin,
     );
     expect(
-      tester
-          .widget<RadioListTile<LoginStrategy>>(requirePasswordTile)
-          .groupValue,
+      tester.widget<RadioButton<LoginStrategy>>(requirePasswordTile).groupValue,
       LoginStrategy.autoLogin,
     );
 
@@ -217,7 +221,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
-      tester.lang.continueButtonText,
+      tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
 

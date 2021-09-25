@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
-import 'package:wizard_router/wizard_router.dart';
-
-import 'gsettings.mocks.dart';
-
-class SubiquityClientMock extends SubiquityClient {
-  @override
-  Future<String> setLocale(String code) async {
-    return '';
-  }
-
-  @override
-  Future<KeyboardSetup> keyboard() async {
-    return KeyboardSetup(layouts: []);
-  }
-}
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
   late MaterialApp app;
@@ -36,7 +23,7 @@ void main() {
   Future<void> setUpApp(WidgetTester tester) async {
     app = MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Wizard(
         routes: <String, WidgetBuilder>{
@@ -45,11 +32,13 @@ void main() {
         },
       ),
     );
+    final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
           create: (_) => WelcomeModel(
-            client: SubiquityClientMock(),
+            client: client,
             keyboardService: KeyboardService(),
           ),
         ),
@@ -58,6 +47,7 @@ void main() {
         ),
       ], child: app),
     );
+    await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   }
 

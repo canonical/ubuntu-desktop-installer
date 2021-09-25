@@ -6,22 +6,15 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
-import 'package:ubuntu_desktop_installer/main.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
-
-import 'gsettings.mocks.dart';
-
-class SubiquityClientMock extends SubiquityClient {
-  @override
-  Future<KeyboardSetup> keyboard() async {
-    return KeyboardSetup(layouts: []);
-  }
-}
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/settings.dart';
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
@@ -29,11 +22,13 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await setupAppLocalizations();
 
+    final client = MockSubiquityClient();
+    when(client.hasRst()).thenAnswer((_) async => false);
+    when(client.hasBitLocker()).thenAnswer((_) async => false);
+    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
+
     await tester.pumpWidget(MultiProvider(providers: [
-      Provider(
-        // ignore: unnecessary_cast
-        create: (_) => SubiquityClientMock() as SubiquityClient,
-      ),
+      Provider<SubiquityClient>.value(value: client),
       Provider(create: (context) => KeyboardService()),
       ChangeNotifierProvider(create: (_) => Settings(MockGSettings())),
     ], child: UbuntuDesktopInstallerApp()));

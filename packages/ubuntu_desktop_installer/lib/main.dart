@@ -1,71 +1,36 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:wizard_router/wizard_router.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_wizard/app.dart';
 
-import 'app.dart';
-import 'l10n/app_localizations.dart';
-import 'pages.dart';
-import 'routes.dart';
-import 'settings.dart';
+import 'installer.dart';
+import 'services.dart';
 
-void main() {
-  runWizardApp(UbuntuDesktopInstallerApp());
-}
+void main(List<String> args) {
+  final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('machine-config',
+        valueHelp: 'path',
+        defaultsTo: 'examples/simple.json',
+        help: 'Path of the machine config (dry-run only)');
+  })!;
 
-class UbuntuDesktopInstallerApp extends StatelessWidget {
-  const UbuntuDesktopInstallerApp({
-    Key? key,
-  }) : super(key: key);
+  final subiquityClient = SubiquityClient();
+  final subiquityServer = SubiquityServer();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Settings.of(context).locale,
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
-      theme: yaru.lightTheme,
-      darkTheme: yaru.darkTheme,
-      themeMode: Settings.of(context).theme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        const LocalizationsDelegateOc(),
+  runWizardApp(
+    UbuntuDesktopInstallerApp(),
+    options: options,
+    subiquityClient: subiquityClient,
+    subiquityServer: subiquityServer,
+    serverArgs: [
+      if (options['machine-config'] != null) ...[
+        '--machine-config',
+        options['machine-config'],
       ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Wizard(
-        initialRoute: Routes.welcome,
-        routes: <String, WidgetBuilder>{
-          Routes.welcome: WelcomePage.create,
-          Routes.tryOrInstall: TryOrInstallPage.create,
-          Routes.turnOffRST: TurnOffRSTPage.create,
-          Routes.keyboardLayout: KeyboardLayoutPage.create,
-          Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
-          Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
-          Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
-          Routes.whoAreYou: WhoAreYouPage.create,
-          Routes.chooseYourLook: ChooseYourLookPage.create,
-          Routes.installationSlides: InstallationSlidesPage.create,
-          Routes.installationComplete: InstallationCompletePage.create,
-        },
-        onNext: (settings) {
-          switch (settings.name) {
-            case Routes.tryOrInstall:
-              switch (settings.arguments as Option?) {
-                case Option.repairUbuntu:
-                  return Routes.repairUbuntu;
-                case Option.tryUbuntu:
-                  return Routes.tryUbuntu;
-                default:
-                  // TODO: detect if we need to show the "Turn off RST" page,
-                  // or if we can proceed directly to installation
-                  //return Routes.turnOffRST;
-                  return Routes.keyboardLayout;
-              }
-            default:
-              return null;
-          }
-        },
-      ),
-    );
-  }
+    ],
+    providers: [
+      Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => KeyboardService()),
+    ],
+  );
 }

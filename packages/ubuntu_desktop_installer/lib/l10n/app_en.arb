@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "@@locale": "en",
 
   "languageName": "English",
@@ -181,3 +182,7 @@
   "installationSlide8Description": "The official documentation covers many of the most common areas about Ubuntu. It's available both *online* and via the Help icon in the Dock.\nAt *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.\nFor pointers to other useful resources, please visit *Community support* or *Commercial support*."
 
 }
+=======
+  "@@locale": "en"
+}
+>>>>>>> main

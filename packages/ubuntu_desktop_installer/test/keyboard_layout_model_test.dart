@@ -4,8 +4,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
 
 import 'keyboard_layout_model_test.mocks.dart';
 
@@ -27,7 +28,7 @@ const testLayouts = <KeyboardLayout>[
   ),
 ];
 
-@GenerateMocks([KeyboardService, ProcessRunner, SubiquityClient])
+@GenerateMocks([KeyboardService, ProcessRunner])
 void main() {
   late MockProcessRunner processRunner;
   setUp(() {
@@ -273,6 +274,19 @@ void main() {
 
       model.selectLayout(1);
       expect(model.isValid, isTrue);
+    });
+
+    test('try selecting by codes', () async {
+      model.trySelectLayoutVariant('bar', 'qux');
+      expect(model.selectedLayoutIndex, equals(1));
+      expect(model.selectedVariantIndex, equals(1));
+      await expectLater(model.onLayoutSelected, emits(1));
+    });
+
+    test('try selecting by invalid codes', () async {
+      model.trySelectLayoutVariant('invalid', 'none');
+      expect(model.selectedLayoutIndex, equals(-1));
+      expect(model.selectedVariantIndex, equals(-1));
     });
   });
 
