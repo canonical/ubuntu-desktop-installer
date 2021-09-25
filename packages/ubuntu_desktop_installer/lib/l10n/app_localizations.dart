@@ -989,6 +989,168 @@ abstract class AppLocalizations {
   /// In en_US, this message translates to:
   /// **'Restart Into Windows'**
   String get restartIntoWindows;
+
+  /// No description provided for @installSlide1Text.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...'**
+  String get installSlide1Text;
+
+  /// No description provided for @installSlide2Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Say goodbye to searching the web for new software. With access to the Snap Store and the Ubuntu software archive, you can find and install new apps with ease. Just type in what you’re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.'**
+  String get installSlide2Description;
+
+  /// No description provided for @installSlide3Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Ubuntu comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.'**
+  String get installSlide3Description;
+
+  /// No description provided for @installSlidesRhytmbox.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Rhythmbox Music Player'**
+  String get installSlidesRhytmbox;
+
+  /// No description provided for @installSlidesSpotify.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Spotify'**
+  String get installSlidesSpotify;
+
+  /// No description provided for @installSlidesVLC.
+  ///
+  /// In en_US, this message translates to:
+  /// **'VLC'**
+  String get installSlidesVLC;
+
+  /// No description provided for @installSlide4Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it’s easy to share them and keep them safe. And if you’re feeling creative, you can find many other photo apps in Ubuntu Software.'**
+  String get installSlide4Description;
+
+  /// No description provided for @installSlidesShotwell.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Shotwell Photo Manager'**
+  String get installSlidesShotwell;
+
+  /// No description provided for @installSlidesGimp.
+  ///
+  /// In en_US, this message translates to:
+  /// **'GIMP Image Editor'**
+  String get installSlidesGimp;
+
+  /// No description provided for @installSlidesShotcut.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Shotcut Video Editor'**
+  String get installSlidesShotcut;
+
+  /// No description provided for @installSlide5Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Ubuntu includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.'**
+  String get installSlide5Description;
+
+  /// No description provided for @installSlidesFirefox.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Firefox web browser'**
+  String get installSlidesFirefox;
+
+  /// No description provided for @installSlidesThunderbird.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Thunderbird'**
+  String get installSlidesThunderbird;
+
+  /// No description provided for @installSlidesChromium.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Chromium'**
+  String get installSlidesChromium;
+
+  /// No description provided for @installSlide6Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.'**
+  String get installSlide6Description;
+
+  /// No description provided for @installSlideWriter.
+  ///
+  /// In en_US, this message translates to:
+  /// **'LibreOffice Writer'**
+  String get installSlideWriter;
+
+  /// No description provided for @installSlideCalc.
+  ///
+  /// In en_US, this message translates to:
+  /// **'LibreOffice Calc'**
+  String get installSlideCalc;
+
+  /// No description provided for @installSlideImpress.
+  ///
+  /// In en_US, this message translates to:
+  /// **'LibreOffice Impress'**
+  String get installSlideImpress;
+
+  /// No description provided for @installSlide7Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'At the heart of the Ubuntu philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colour scheme and text size, Ubuntu makes computing easy – whoever and wherever you are.'**
+  String get installSlide7Description;
+
+  /// No description provided for @installSlideCustomization.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Customization options'**
+  String get installSlideCustomization;
+
+  /// No description provided for @installSlideAppearance.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Appearance'**
+  String get installSlideAppearance;
+
+  /// No description provided for @installSlideAssistive.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Assistive technologies'**
+  String get installSlideAssistive;
+
+  /// No description provided for @installSlideLangSupport.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Language support'**
+  String get installSlideLangSupport;
+
+  /// No description provided for @installSlidesIncludedSoftware.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Included software'**
+  String get installSlidesIncludedSoftware;
+
+  /// No description provided for @installSlidesAvailableSoftware.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Available software'**
+  String get installSlidesAvailableSoftware;
+
+  /// No description provided for @installSlidesSupportedSoftware.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Supported software'**
+  String get installSlidesSupportedSoftware;
+
+  /// No description provided for @installationSlide8Description.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The official documentation covers many of the most common areas about Ubuntu. It\'s available both *online* and via the Help icon in the Dock.\nAt *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.\nFor pointers to other useful resources, please visit *Community support* or *Commercial support*.'**
+  String get installationSlide8Description;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

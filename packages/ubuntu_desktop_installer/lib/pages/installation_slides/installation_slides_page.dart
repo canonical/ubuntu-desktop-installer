@@ -8,6 +8,7 @@ import 'package:yaru/yaru.dart' as yaru;
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../../l10n.dart';
 import 'installation_slides_model.dart';
 import 'intallation_slides_view_models.dart';
 
@@ -90,127 +91,125 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
 
   @override
   Widget build(BuildContext context) {
-    return LocalizedView(
-      builder: (context, lang) => Scaffold(
-        appBar: AppBar(
-            title: Text('Welcome to Ubuntu'), automaticallyImplyLeading: false),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: Stack(
+    final lang = AppLocalizations.of(context);
+    return WizardPage(
+      title: Text('Welcome to Ubuntu'),
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Flexible(
+            child: Stack(
+              children: [
+                PageView(
+                  controller: pageController,
+                  children: [
+                    TextSlide(
+                      backgroundAsset: 'assets/slides/welcome.png',
+                      text: lang.installSlide1Text,
+                    ),
+                    ...createImageSlides(lang)
+                        .map((isd) => ImageSlide(imageSlideData: isd)),
+                    TextSlide(
+                      backgroundAsset: 'assets/slides/welcome.png',
+                      text: lang.installationSlide8Description,
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: _iconPadding),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: _NavButton(
+                      icon: Icons.navigate_before_sharp,
+                      onTap: () {
+                        pageController.previousPage(
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeIn,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: _iconPadding),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: _NavButton(
+                      icon: Icons.navigate_next_sharp,
+                      onTap: () {
+                        pageController.nextPage(
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeIn,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          AnimatedContainer(
+            height: isBottomCollapsed ? 120 : 230,
+            duration: Duration(milliseconds: 300),
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  PageView(
-                    controller: pageController,
+                  Row(
                     children: [
-                      TextSlide(
-                        backgroundAsset: 'assets/slides/welcome.png',
-                        text: lang.installSlide1Text,
+                      AnimatedBuilder(
+                        animation: animationController,
+                        builder: (context, child) => Transform.rotate(
+                          angle: animation.value,
+                          child: IconButton(
+                            icon: Icon(Icons.arrow_right),
+                            onPressed: () {
+                              if (isBottomCollapsed) {
+                                animationController.forward();
+                              } else {
+                                animationController.reverse();
+                              }
+                              isBottomCollapsed = !isBottomCollapsed;
+                              setState(() {});
+
+                              // scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                            },
+                          ),
+                        ),
                       ),
-                      ...createImageSlides(lang)
-                          .map((isd) => ImageSlide(imageSlideData: isd)),
-                      TextSlide(
-                        backgroundAsset: 'assets/slides/welcome.png',
-                        text: lang.installationSlide8Description,
-                      ),
+                      SizedBox(width: 8),
+                      Text('Copying files...'),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: _iconPadding),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: _NavButton(
-                        icon: Icons.navigate_before_sharp,
-                        onTap: () {
-                          pageController.previousPage(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.easeIn,
-                          );
-                        },
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 300),
+                    height: isBottomCollapsed ? 0 : 120,
+                    width: double.infinity,
+                    color: yaru.Colors.coolGrey,
+                    child: SingleChildScrollView(
+                      controller: scrollController,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          mockTerminalOutput,
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: _iconPadding),
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: _NavButton(
-                        icon: Icons.navigate_next_sharp,
-                        onTap: () {
-                          pageController.nextPage(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.easeIn,
-                          );
-                        },
-                      ),
-                    ),
+                  SizedBox(height: 16),
+                  LinearProgressIndicator(
+                    minHeight: 4,
+                    value: 0.2,
+                    color: _progressColor,
+                    backgroundColor: _progressColor.withAlpha(61),
                   ),
                 ],
               ),
             ),
-            AnimatedContainer(
-              height: isBottomCollapsed ? 120 : 230,
-              duration: Duration(milliseconds: 300),
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        AnimatedBuilder(
-                          animation: animationController,
-                          builder: (context, child) => Transform.rotate(
-                            angle: animation.value,
-                            child: IconButton(
-                              icon: Icon(Icons.arrow_right),
-                              onPressed: () {
-                                if (isBottomCollapsed) {
-                                  animationController.forward();
-                                } else {
-                                  animationController.reverse();
-                                }
-                                isBottomCollapsed = !isBottomCollapsed;
-                                setState(() {});
-
-                                // scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
-                              },
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 8),
-                        Text('Copying files...'),
-                      ],
-                    ),
-                    AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
-                      height: isBottomCollapsed ? 0 : 120,
-                      width: double.infinity,
-                      color: yaru.Colors.coolGrey,
-                      child: SingleChildScrollView(
-                        controller: scrollController,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            mockTerminalOutput,
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 16),
-                    LinearProgressIndicator(
-                      minHeight: 4,
-                      value: 0.2,
-                      color: _progressColor,
-                      backgroundColor: _progressColor.withAlpha(61),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
