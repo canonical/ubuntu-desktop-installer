@@ -17,7 +17,7 @@ class DiskStorageService {
   List<dynamic>? get storageConfig => _storageResponse?.config;
 
   Future<List<Disk>> getGuidedStorage() {
-    return _client.getGuidedStorage(0, true).then((r) {
+    return _client.getGuidedStorage(true).then((r) {
       log.debug(r.disks);
       _response = r;
       return r.disks ?? <Disk>[];
