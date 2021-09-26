@@ -1,5 +1,7 @@
 import 'dart:math';
+import 'dart:async';
 
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -49,6 +51,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
 
   bool isBottomCollapsed = true;
   int slideCount = 8;
+  late Timer timer;
 
   @override
   void initState() {
@@ -63,11 +66,12 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
 
     scrollController = ScrollController();
 
-    _animateSlides();
+    _scheduleSlidesTimer();
   }
 
-  void _animateSlides() {
-    Future.delayed(Duration(seconds: 2)).then((value) {
+  void _scheduleSlidesTimer() {
+    const slideAnimationTime = Duration(seconds: 3);
+    timer = Timer.periodic(slideAnimationTime, (timer) {
       var currentPage = pageController.page!.toInt();
       var nextPage = currentPage + 1;
 
@@ -75,11 +79,8 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
       if (nextPage == 8) {
         nextPage = 0;
       }
-
-      pageController
-          .animateToPage(nextPage,
-              duration: Duration(seconds: 1), curve: Curves.easeInOut)
-          .then((value) => _animateSlides());
+      pageController.animateToPage(nextPage,
+          duration: Duration(seconds: 1), curve: Curves.easeInOut);
     });
   }
 
@@ -93,6 +94,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return WizardPage(
+      contentPadding: EdgeInsets.zero,
+      footerPadding: EdgeInsets.zero,
+      headerPadding: EdgeInsets.zero,
       title: Text('Welcome to Ubuntu'),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,10 +126,13 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
                     child: _NavButton(
                       icon: Icons.navigate_before_sharp,
                       onTap: () {
-                        pageController.previousPage(
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeIn,
-                        );
+                        timer.cancel();
+                        pageController
+                            .previousPage(
+                              duration: const Duration(seconds: 1),
+                              curve: Curves.easeIn,
+                            )
+                            .whenComplete(_scheduleSlidesTimer);
                       },
                     ),
                   ),
@@ -137,10 +144,13 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
                     child: _NavButton(
                       icon: Icons.navigate_next_sharp,
                       onTap: () {
-                        pageController.nextPage(
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeIn,
-                        );
+                        timer.cancel();
+                        pageController
+                            .nextPage(
+                              duration: const Duration(seconds: 1),
+                              curve: Curves.easeIn,
+                            )
+                            .whenComplete(_scheduleSlidesTimer);
                       },
                     ),
                   ),
@@ -172,8 +182,6 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
                               }
                               isBottomCollapsed = !isBottomCollapsed;
                               setState(() {});
-
-                              // scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
                             },
                           ),
                         ),
