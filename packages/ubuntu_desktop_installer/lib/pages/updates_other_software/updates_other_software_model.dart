@@ -1,5 +1,9 @@
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+
+/// @internal
+final log = Logger('updates_other_software');
 
 enum InstallationMode { normal, minimal }
 
@@ -38,6 +42,7 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
     }
 
     _mode = mode;
+    log.info('Selected ${describeEnum(mode)} installation mode');
     notifyListeners();
   }
 
@@ -48,12 +53,13 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
     }
 
     _installThirdParty = installThirdParty;
-
+    log.info('Install 3rd-party software: $installThirdParty');
     notifyListeners();
   }
 
   /// Select the source corresponding to the selected installation mode.
   Future<void> selectInstallationSource() {
+    log.info('Selected ${installationMode.source} installation source');
     return _client.setSource(installationMode.source);
   }
 }
