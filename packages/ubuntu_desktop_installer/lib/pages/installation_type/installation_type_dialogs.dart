@@ -48,11 +48,9 @@ Future<void> showAdvancedFeaturesDialog(
                     title: Text(lang.installationTypeEncrypt),
                     subtitle: Text(lang.installationTypeEncryptInfo),
                     value: encryption.value,
-                    // TODO: https://github.com/canonical/ubuntu-desktop-installer/pull/309
-                    // onChanged: model.advancedFeature == AdvancedFeature.lvm
-                    //     ? (v) => encryption.value = v!
-                    //     : null,
-                    onChanged: (v) => encryption.value = v!,
+                    onChanged: model.advancedFeature == AdvancedFeature.lvm
+                        ? (v) => encryption.value = v!
+                        : null,
                   ),
                 ),
                 const SizedBox(height: kContentSpacing),
