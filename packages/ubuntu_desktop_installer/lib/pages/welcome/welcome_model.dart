@@ -1,10 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+
+/// @internal
+final log = Logger('welcome');
 
 /// Implements the business logic of the welcome page.
 class WelcomeModel extends ChangeNotifier {
@@ -24,6 +28,9 @@ class WelcomeModel extends ChangeNotifier {
   set selectedLanguageIndex(int index) {
     if (_selectedLanguageIndex == index) return;
     _selectedLanguageIndex = index;
+    if (index >= 0 && index < _languageList.length) {
+      log.info('Selected ${_languageList[index].locale} as UI language');
+    }
     notifyListeners();
   }
 
@@ -32,19 +39,25 @@ class WelcomeModel extends ChangeNotifier {
   /// Loads available languages.
   Future<void> loadLanguages() async {
     assert(_languageList.isEmpty);
-    return loadLocalizedLanguages(AppLocalizations.supportedLocales)
-        .then(_languageList.addAll)
-        .then((_) => notifyListeners());
+    final languages =
+        await loadLocalizedLanguages(AppLocalizations.supportedLocales);
+    _languageList.addAll(languages);
+    log.info('Loaded ${languages.length} languages');
+    notifyListeners();
   }
 
   /// Loads keyboards for the currently selected locale.
-  Future<void> loadKeyboards() => _keyboardService.load(_client);
+  Future<void> loadKeyboards() async {
+    await _keyboardService.load(_client);
+    log.info('Loaded ${_keyboardService.layouts.length} keyboard layouts');
+  }
 
   /// Returns the locale for the given language [index].
   Locale locale(int index) => _languageList[index].locale;
 
   /// Applies the given [locale].
   Future<void> applyLocale(Locale locale) {
+    log.info('Set $locale as system locale');
     return _client
         .setLocale('${locale.languageCode}_${locale.countryCode}.UTF-8');
   }

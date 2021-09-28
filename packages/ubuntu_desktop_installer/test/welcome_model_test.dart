@@ -16,6 +16,7 @@ void main() {
     final client = MockSubiquityClient();
     final keyboard = MockKeyboardService();
     when(keyboard.load(client)).thenAnswer((_) async => null);
+    when(keyboard.layouts).thenReturn([]);
 
     final model = WelcomeModel(client: client, keyboardService: keyboard);
     await model.loadKeyboards();
