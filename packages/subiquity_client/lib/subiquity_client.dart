@@ -217,7 +217,7 @@ class SubiquityClient {
     }
 
     final result = ApplicationStatus.fromJson(statusJson);
-    log.debug('state: $currentState => ${_formatState(result.state)}');
+    log.info('state: $currentState => ${_formatState(result.state)}');
 
     return result;
   }
