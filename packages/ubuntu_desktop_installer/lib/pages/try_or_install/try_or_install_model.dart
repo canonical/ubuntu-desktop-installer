@@ -1,7 +1,12 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
+
+/// @internal
+final log = Logger('try_or_install');
 
 /// The available options on the Try Or Install page.
 enum Option {
@@ -28,6 +33,7 @@ class TryOrInstallModel extends ChangeNotifier {
   void selectOption(Option option) {
     if (_option == option) return;
     _option = option;
+    log.info('Selected ${describeEnum(option)} option');
     notifyListeners();
   }
 
