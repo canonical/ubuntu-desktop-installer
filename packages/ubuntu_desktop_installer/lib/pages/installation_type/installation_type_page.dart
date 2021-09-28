@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -120,15 +121,4 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       ],
     );
   }
-}
-
-// TODO: https://github.com/canonical/ubuntu-desktop-installer/pull/308
-extension _HexColor on Color {
-  String toHex() =>
-      _formatHex(alpha.toHex(), red.toHex(), green.toHex(), blue.toHex());
-  String _formatHex(String a, String r, String g, String b) => '#$a$r$g$b';
-}
-
-extension _IntHex on int {
-  String toHex() => toRadixString(16).padLeft(2, '0');
 }
