@@ -60,7 +60,7 @@ abstract class SubiquityServer {
         if (serverMode == ServerMode.DRY_RUN) '--dry-run',
         ...?args,
       ];
-      _startSubiquity(subiquityCmd);
+      await _startSubiquity(subiquityCmd);
     }
 
     return _waitSubiquity(socketPath).then((_) {
@@ -69,7 +69,7 @@ abstract class SubiquityServer {
     });
   }
 
-  void _startSubiquity(List<String> subiquityCmd) async {
+  Future<void> _startSubiquity(List<String> subiquityCmd) async {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     String? workingDirectory;
     // try using local subiquity
