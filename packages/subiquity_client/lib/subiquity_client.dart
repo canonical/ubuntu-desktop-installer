@@ -22,6 +22,14 @@ String _formatResponseLog(String method, String response) {
   return '==> $method $formatted';
 }
 
+class SubiquityException implements Exception {
+  const SubiquityException(this.method, this.statusCode, this.message);
+  final String method;
+  final int statusCode;
+  final String message;
+  String toString() => '$method returned error $statusCode\n$message';
+}
+
 class SubiquityClient {
   late HttpUnixClient _client;
   final _isOpen = Completer<bool>();
@@ -42,7 +50,7 @@ class SubiquityClient {
   Future<String> _receive(String method, StreamedResponse response) async {
     final responseStr = await response.stream.bytesToString();
     if (response.statusCode != 200) {
-      throw ("$method returned error ${response.statusCode}\n$responseStr");
+      throw SubiquityException(method, response.statusCode, responseStr);
     }
     log.debug(() => _formatResponseLog(method, responseStr));
     return responseStr;
