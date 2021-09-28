@@ -53,18 +53,29 @@ abstract class SubiquityServer {
 
   Future<String> start(ServerMode serverMode, [List<String>? args]) async {
     final socketPath = _getSocketPath(serverMode);
-    if (!_shouldStart(serverMode)) {
-      return socketPath;
+    if (_shouldStart(serverMode)) {
+      var subiquityCmd = <String>[
+        '-m',
+        _pythonModule,
+        if (serverMode == ServerMode.DRY_RUN) '--dry-run',
+        ...?args,
+      ];
+      await _startSubiquity(subiquityCmd);
     }
 
-    var subiquityCmd = <String>[
-      '-m',
-      _pythonModule,
-      if (serverMode == ServerMode.DRY_RUN) '--dry-run',
-      ...?args,
-    ];
+    return _waitSubiquity(socketPath).then((_) {
+      startupCallback?.call(socketPath);
+      return socketPath;
+    });
+  }
 
+  Future<void> _startSubiquity(List<String> subiquityCmd) async {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
+    String? workingDirectory;
+    // try using local subiquity
+    if (Directory(subiquityPath).existsSync()) {
+      workingDirectory = subiquityPath;
+    }
 
     // kill the existing test server if it's already running, so they don't pile
     // up on hot restarts
@@ -74,9 +85,9 @@ abstract class SubiquityServer {
     }
 
     _serverProcess = await Process.start(
-      '/usr/bin/python3',
+      'python3',
       subiquityCmd,
-      workingDirectory: subiquityPath,
+      workingDirectory: workingDirectory,
       environment: _getEnvironment(subiquityPath),
     ).then((process) {
       stdout.addStream(process.stdout);
@@ -86,7 +97,9 @@ abstract class SubiquityServer {
     log.info('Starting server (PID: ${_serverProcess.pid})');
 
     await _writePidFile(_serverProcess.pid);
+  }
 
+  static Future<void> _waitSubiquity(String socketPath) async {
     final client = HttpUnixClient(socketPath);
     final request = Request('GET', Uri.http('localhost', 'meta/status'));
 
@@ -96,13 +109,9 @@ abstract class SubiquityServer {
         await client.send(request);
         break;
       } on Exception catch (_) {
-        sleep(Duration(seconds: 1));
+        await Future.delayed(Duration(seconds: 1));
       }
     }
-
-    startupCallback?.call(socketPath);
-
-    return socketPath;
   }
 
   static File _pidFile() {

@@ -1,5 +1,6 @@
 library subiquity_client;
 
+import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:logger/logger.dart';
@@ -21,12 +22,24 @@ String _formatResponseLog(String method, String response) {
   return '==> $method $formatted';
 }
 
+class SubiquityException implements Exception {
+  const SubiquityException(this.method, this.statusCode, this.message);
+  final String method;
+  final int statusCode;
+  final String message;
+  String toString() => '$method returned error $statusCode\n$message';
+}
+
 class SubiquityClient {
   late HttpUnixClient _client;
+  final _isOpen = Completer<bool>();
+
+  Future<bool> get isOpen => _isOpen.future;
 
   void open(String socketPath) {
     log.info('Opening socket $socketPath');
     _client = HttpUnixClient(socketPath);
+    _isOpen.complete(true);
   }
 
   Future<void> close() {
@@ -37,7 +50,7 @@ class SubiquityClient {
   Future<String> _receive(String method, StreamedResponse response) async {
     final responseStr = await response.stream.bytesToString();
     if (response.statusCode != 200) {
-      throw ("$method returned error ${response.statusCode}\n$responseStr");
+      throw SubiquityException(method, response.statusCode, responseStr);
     }
     log.debug(() => _formatResponseLog(method, responseStr));
     return responseStr;
@@ -70,6 +83,21 @@ class SubiquityClient {
             {'variant': '"$variantString"'}));
     final response = await _send(request);
     await _receive('setVariant("$variantString")', response);
+  }
+
+  Future<SourceSelectionAndSetting> source() async {
+    final request = Request('GET', Uri.http('localhost', 'source'));
+    final response = await _send(request);
+
+    final json = await _receiveJson("source()", response);
+    return SourceSelectionAndSetting.fromJson(json);
+  }
+
+  Future<void> setSource(String sourceId) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'source', {'source_id': '"$sourceId"'}));
+    final response = await _send(request);
+    await _receive('setSource("$sourceId")', response);
   }
 
   Future<String> locale() async {
@@ -197,7 +225,7 @@ class SubiquityClient {
     }
 
     final result = ApplicationStatus.fromJson(statusJson);
-    log.debug('state: $currentState => ${_formatState(result.state)}');
+    log.info('state: $currentState => ${_formatState(result.state)}');
 
     return result;
   }
@@ -240,15 +268,13 @@ class SubiquityClient {
   }
 
   /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage(int minSize, bool wait) async {
+  Future<GuidedStorageResponse> getGuidedStorage(bool wait) async {
     final request = Request(
-        'GET',
-        Uri.http('localhost', 'storage/guided',
-            {'min_size': '$minSize', 'wait': '$wait'}));
+        'GET', Uri.http('localhost', 'storage/guided', {'wait': '$wait'}));
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson("getGuidedStorage('$minSize', '$wait')", response);
+        await _receiveJson("getGuidedStorage('$wait')", response);
     return GuidedStorageResponse.fromJson(responseJson);
   }
 
@@ -270,6 +296,14 @@ class SubiquityClient {
     request.body = jsonEncode(config);
     final response = await _send(request);
     await _receive("setStorage(${jsonEncode(config)})", response);
+  }
+
+  Future<StorageResponse> resetStorage() async {
+    final request = Request('POST', Uri.http('localhost', 'storage/reset'));
+    final response = await _send(request);
+
+    final responseJson = await _receiveJson("resetStorage()", response);
+    return StorageResponse.fromJson(responseJson);
   }
 
   Future<void> reboot({bool immediate = false}) async {

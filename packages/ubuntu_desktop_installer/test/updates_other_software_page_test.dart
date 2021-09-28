@@ -3,9 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -26,8 +28,12 @@ void main() {
   }
 
   Widget buildPage(UpdateOtherSoftwareModel model) {
-    return ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(
-      value: model,
+    final client = MockSubiquityClient();
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(value: model),
+        Provider<SubiquityClient>.value(value: client),
+      ],
       child: UpdatesOtherSoftwarePage(),
     );
   }
@@ -36,8 +42,10 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': (_) => buildPage(model),
+          '/next': (_) => Text('Next page'),
+        },
       ),
     );
   }
@@ -97,16 +105,33 @@ void main() {
     verify(model.setInstallThirdParty(false)).called(1);
   });
 
+  testWidgets('continue on the next page', (tester) async {
+    final model = buildModel(installationMode: InstallationMode.normal);
+    await tester.pumpWidget(buildApp(tester, model));
+
+    final continueButton = find.widgetWithText(
+      OutlinedButton,
+      tester.ulang.continueAction,
+    );
+    expect(continueButton, findsOneWidget);
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
+
+    verify(model.selectInstallationSource()).called(1);
+    expect(find.text('Next page'), findsOneWidget);
+  });
+
   testWidgets('creates a model', (tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Wizard(
+    await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: localizationsDelegates,
+      home: Provider<SubiquityClient>(
+        create: (_) => MockSubiquityClient(),
+        child: Wizard(
           routes: {'/': UpdatesOtherSoftwarePage.create},
           onNext: (settings) => '/',
         ),
       ),
-    );
+    ));
 
     final page = find.byType(UpdatesOtherSoftwarePage);
     expect(page, findsOneWidget);

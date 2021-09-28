@@ -22,7 +22,7 @@ void main() {
     final model = MockInstallationTypeModel();
     when(model.existingOS).thenReturn(null);
     when(model.installationType).thenReturn(InstallationType.erase);
-    when(model.advancedFeature).thenReturn(AdvancedFeature.none);
+    when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
 
     await tester.pumpWidget(
@@ -41,7 +41,7 @@ void main() {
     await tester.pumpAndSettle();
 
     await tester.tap(find.widgetWithText(typeOf<RadioButton<AdvancedFeature>>(),
-        tester.lang.installationTypeLVM));
+        tester.lang.installationTypeZFS));
     await tester.pump();
 
     await tester.tap(
@@ -52,7 +52,7 @@ void main() {
         .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
     await result;
 
-    verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
+    verify(model.advancedFeature = AdvancedFeature.zfs).called(1);
     verify(model.encryption = true).called(1);
   });
 }

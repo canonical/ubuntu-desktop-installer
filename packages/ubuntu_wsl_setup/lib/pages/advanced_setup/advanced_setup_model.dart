@@ -39,7 +39,7 @@ class AdvancedSetupModel extends ChangeNotifier {
   /// Returns `true` if the mount location is valid.
   static bool isValidMountLocation(String? path) {
     if (path == null || path.isEmpty) return true;
-    return p.isAbsolute(path) && !path.endsWith(p.separator);
+    return p.isAbsolute(path);
   }
 
   /// Whether the current input is valid.

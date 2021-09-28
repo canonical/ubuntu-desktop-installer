@@ -1,10 +1,14 @@
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
+
+/// @internal
+final log = Logger('who_are_you');
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -114,19 +118,27 @@ class WhoAreYouModel extends ChangeNotifier {
         RegExp(kValidHostNamePattern).hasMatch(hostName);
   }
 
-  /// Loads the identity data from the server.
-  Future<void> loadIdentity() {
-    final id = _client.identity().then((value) => _identity.value = value);
-    final hn =
-        _service.init().then((_) => _systemHostname.value = _service.hostname);
-    return Future.wait<void>([id, hn]);
+  /// Loads the identity data from the server, and resolves the system hostname.
+  Future<void> loadIdentity() async {
+    _identity.value = await _client.identity();
+    log.info('Loaded identity: ${_identity.value.description}');
+    await _service.init();
+    _systemHostname.value = _service.hostname;
+    log.info('Resolved hostname: ${_systemHostname.value}');
   }
 
   /// Saves the identity data to the server.
   Future<void> saveIdentity({@visibleForTesting String? salt}) async {
     final cryptedPassword = encryptPassword(password, salt: salt);
+    log.info('Saved identity: ${_identity.value.description}');
     return _client.setIdentity(
       _identity.value.copyWith(cryptedPassword: cryptedPassword),
     );
+  }
+}
+
+extension _IdentityDescription on IdentityData {
+  String get description {
+    return 'realname: "$realname", username: "$username", hostname: "$hostname"';
   }
 }

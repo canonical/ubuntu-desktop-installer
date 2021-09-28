@@ -10,12 +10,24 @@ void main() {
   late SubiquityClient _client;
   var _socketPath;
 
+  test('initialization', () async {
+    final client = SubiquityClient();
+    final isOpen = client.isOpen;
+    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
+    await expectLater(isOpen, completes);
+    expect(await isOpen, isTrue);
+  });
+
   group('subiquity', () {
     setUpAll(() async {
       _testServer = SubiquityServer();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(
-          ServerMode.DRY_RUN, ['--machine-config', 'examples/simple.json']);
+      _socketPath = await _testServer.start(ServerMode.DRY_RUN, [
+        '--machine-config',
+        'examples/simple.json',
+        '--source-catalog',
+        '../test/install-sources.yaml'
+      ]);
       _client.open(_socketPath);
     });
 
@@ -28,6 +40,42 @@ void main() {
       // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.SERVER);
       await _client.setVariant(Variant.DESKTOP);
+    });
+
+    test('source', () async {
+      final expected = SourceSelectionAndSetting(sources: <SourceSelection>[
+        SourceSelection(
+            id: 'ubuntu-desktop',
+            name: 'Ubuntu Desktop',
+            description: 'Standard Ubuntu Desktop image',
+            size: 10,
+            variant: 'desktop',
+            isDefault: true),
+        SourceSelection(
+            id: 'ubuntu-desktop-minimal',
+            name: 'Ubuntu Desktop (minimized)',
+            description: 'Minimized Ubuntu Desktop image',
+            size: 5,
+            variant: 'desktop',
+            isDefault: false)
+      ], currentId: 'ubuntu-desktop');
+
+      await _client.setVariant(Variant.DESKTOP);
+      var actual = await _client.source();
+      expect(actual.sources, unorderedEquals(expected.sources!));
+      expect(actual.currentId, 'synthesized');
+
+      await _client.setSource('ubuntu-desktop-minimal');
+      actual = await _client.source();
+      expect(actual.currentId, 'ubuntu-desktop-minimal');
+
+      await _client.setSource('ubuntu-desktop');
+      actual = await _client.source();
+      expect(actual.currentId, 'ubuntu-desktop');
+
+      await _client.setVariant(Variant.SERVER);
+      actual = await _client.source();
+      expect(actual.currentId, 'synthesized');
     });
 
     test('locale', () async {
@@ -62,7 +110,7 @@ void main() {
     });
 
     test('guided storage', () async {
-      var gs = await _client.getGuidedStorage(0, true);
+      var gs = await _client.getGuidedStorage(true);
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
 
@@ -72,16 +120,12 @@ void main() {
         password: '',
       );
 
-      // TODO: Re-enable once we figure out why _client.send() sometimes hangs in setGuidedStorage()
-      // try {
-      //   await _client.setGuidedStorage(gc); // should throw
-      //   // ignore: avoid_catches_without_on_clauses
-      // } catch (e) {
-      //   expect(
-      //       e,
-      //       startsWith(
-      //           'setGuidedStorage({"disk_id":"invalid","use_lvm":false,"password":""}) returned error 500'));
-      // }
+      await expectLater(() => _client.setGuidedStorage(gc),
+          throwsA(predicate((e) {
+        return e is SubiquityException &&
+            e.method.startsWith('setGuidedStorage(') &&
+            e.statusCode == 500;
+      })));
 
       gc = GuidedChoice(
         diskId: gs.disks?[0].id,
@@ -95,11 +139,16 @@ void main() {
       await _client.setStorage(sr.config!);
     });
 
+    test('reset storage', () async {
+      final response = await _client.resetStorage();
+      expect(response.status, ProbeStatus.DONE);
+      expect(response.origConfig, isNotNull);
+    });
+
     test('proxy', () async {
-      // TODO: Re-enable once we figure out why _client.setProxy() sometimes hangs
-      // await _client.setProxy('test');
-      // expect(await _client.proxy(), 'test');
-      // await _client.setProxy('');
+      await _client.setProxy('test');
+      expect(await _client.proxy(), 'test');
+      await _client.setProxy('');
       expect(await _client.proxy(), '');
     });
 
