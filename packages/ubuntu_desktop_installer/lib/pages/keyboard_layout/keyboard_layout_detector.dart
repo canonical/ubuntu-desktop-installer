@@ -1,7 +1,11 @@
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart';
+
+/// @internal
+final log = Logger('keyboard_layout');
 
 /// Detects keyboard layout with help of subiquity's keyboard API.
 class KeyboardLayoutDetector extends ValueNotifier<KeyboardStep?> {
@@ -29,6 +33,7 @@ class KeyboardLayoutDetector extends ValueNotifier<KeyboardStep?> {
 
   void _updateCurrentStep(KeyboardStep? step) {
     if (step is StepResult) {
+      log.info('Detected ${step.layout} (${step.variant}) keyboard layout');
       _onResult?.call(step);
     }
     value = step;
