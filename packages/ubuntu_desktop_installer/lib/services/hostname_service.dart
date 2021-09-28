@@ -32,7 +32,7 @@ class HostnameService {
   /// Initializes the service and initializes the hostname properties.
   Future<void> init() async {
     await _initProperties();
-    _propertyListener = _object.propertiesChanged.listen(_updateProperties);
+    _propertyListener ??= _object.propertiesChanged.listen(_updateProperties);
   }
 
   /// Releases the resources used by the service.
