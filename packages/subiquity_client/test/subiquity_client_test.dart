@@ -120,16 +120,15 @@ void main() {
         password: '',
       );
 
-      // TODO: Re-enable once we figure out why _client.send() sometimes hangs in setGuidedStorage()
-      // try {
-      //   await _client.setGuidedStorage(gc); // should throw
-      //   // ignore: avoid_catches_without_on_clauses
-      // } catch (e) {
-      //   expect(
-      //       e,
-      //       startsWith(
-      //           'setGuidedStorage({"disk_id":"invalid","use_lvm":false,"password":""}) returned error 500'));
-      // }
+      try {
+        await _client.setGuidedStorage(gc); // should throw
+        // ignore: avoid_catches_without_on_clauses
+      } catch (e) {
+        expect(
+            e,
+            startsWith(
+                'setGuidedStorage({"disk_id":"invalid","use_lvm":false,"password":""}) returned error 500'));
+      }
 
       gc = GuidedChoice(
         diskId: gs.disks?[0].id,
@@ -150,10 +149,9 @@ void main() {
     });
 
     test('proxy', () async {
-      // TODO: Re-enable once we figure out why _client.setProxy() sometimes hangs
-      // await _client.setProxy('test');
-      // expect(await _client.proxy(), 'test');
-      // await _client.setProxy('');
+      await _client.setProxy('test');
+      expect(await _client.proxy(), 'test');
+      await _client.setProxy('');
       expect(await _client.proxy(), '');
     });
 
