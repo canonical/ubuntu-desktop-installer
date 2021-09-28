@@ -61,6 +61,8 @@ class KeyboardLayoutModel extends ChangeNotifier {
     _selectedLayoutIndex = index;
     _selectedVariantIndex =
         _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
+    log.info(
+        'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     _setXkbMap();
     notifyListeners();
   }
@@ -102,23 +104,20 @@ class KeyboardLayoutModel extends ChangeNotifier {
     assert(index > -1 && index < variantCount);
     if (_selectedVariantIndex == index) return;
     _selectedVariantIndex = index;
+    log.info(
+        'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     _setXkbMap();
     notifyListeners();
   }
 
-  Future<void> _setXkbMap() async {
+  Future<void> _setXkbMap() {
     final arguments = <String>[
       '-layout',
       _selectedLayout!.code!,
       if (_selectedVariant != null) '-variant',
       if (_selectedVariant != null) _selectedVariant!.code!,
     ];
-    return _processRunner
-        .run('setxkbmap', arguments)
-        .then((result) {})
-        .catchError((e) {
-      log.error(e);
-    });
+    return _processRunner.run('setxkbmap', arguments);
   }
 
   /// Whether the layout and variant selections are valid.
@@ -138,6 +137,8 @@ class KeyboardLayoutModel extends ChangeNotifier {
           }) ??
           -1;
     }
+    log.info(
+        'Initialized ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     notifyListeners();
   }
 
@@ -160,10 +161,10 @@ class KeyboardLayoutModel extends ChangeNotifier {
 
   /// Applies the selected keyboard layout and variant to the system.
   Future<void> applyKeyboardSettings() {
-    final keyboard = KeyboardSetting(
-      layout: _selectedLayout!.code!,
-      variant: _selectedVariant?.code!,
-    );
+    final layout = _selectedLayout!.code!;
+    final variant = _selectedVariant?.code;
+    final keyboard = KeyboardSetting(layout: layout, variant: variant);
+    log.info('Set $layout ($variant) as system keyboard layout');
     return _client.setKeyboard(keyboard);
   }
 }
