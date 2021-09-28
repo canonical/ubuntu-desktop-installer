@@ -1,8 +1,12 @@
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
+
+/// @internal
+final log = Logger('who_are_you');
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -88,15 +92,23 @@ class WhoAreYouModel extends ChangeNotifier {
   }
 
   /// Loads the identity data from the server.
-  Future<void> loadIdentity() {
-    return _client.identity().then((identity) => _identity.value = identity);
+  Future<void> loadIdentity() async {
+    _identity.value = await _client.identity();
+    log.info('Loaded identity: ${_identity.value.description}');
   }
 
   /// Saves the identity data to the server.
   Future<void> saveIdentity({@visibleForTesting String? salt}) async {
     final cryptedPassword = encryptPassword(password, salt: salt);
+    log.info('Saved identity: ${_identity.value.description}');
     return _client.setIdentity(
       _identity.value.copyWith(cryptedPassword: cryptedPassword),
     );
+  }
+}
+
+extension _IdentityDescription on IdentityData {
+  String get description {
+    return 'realname: "$realname", username: "$username", hostname: "$hostname"';
   }
 }
