@@ -12,7 +12,10 @@ import 'routes.dart';
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
     Key? key,
+    this.initialRoute,
   }) : super(key: key);
+
+  final String? initialRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: _UbuntuDesktopInstallerWizard.create(context),
+      home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
     );
   }
 }
@@ -37,13 +40,16 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   const _UbuntuDesktopInstallerWizard({
     Key? key,
+    this.initialRoute,
   }) : super(key: key);
 
-  static Widget create(BuildContext context) {
+  final String? initialRoute;
+
+  static Widget create(BuildContext context, String? initialRoute) {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => _UbuntuDesktopInstallerModel(client),
-      child: _UbuntuDesktopInstallerWizard(),
+      child: _UbuntuDesktopInstallerWizard(initialRoute: initialRoute),
     );
   }
 
@@ -67,7 +73,7 @@ class _UbuntuDesktopInstallerWizardState
     final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
 
     return Wizard(
-      initialRoute: Routes.welcome,
+      initialRoute: widget.initialRoute ?? Routes.welcome,
       routes: <String, WidgetBuilder>{
         Routes.welcome: WelcomePage.create,
         Routes.tryOrInstall: TryOrInstallPage.create,

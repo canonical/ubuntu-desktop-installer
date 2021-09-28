@@ -18,7 +18,7 @@ void main(List<String> args) {
   final subiquityServer = SubiquityServer();
 
   runWizardApp(
-    UbuntuDesktopInstallerApp(),
+    UbuntuDesktopInstallerApp(initialRoute: options['initial-route']),
     options: options,
     subiquityClient: subiquityClient,
     subiquityServer: subiquityServer,

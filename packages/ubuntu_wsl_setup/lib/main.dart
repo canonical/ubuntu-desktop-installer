@@ -9,7 +9,10 @@ void main(List<String> args) {
     parser.addFlag('reconfigure');
   })!;
   runWizardApp(
-    UbuntuWslSetupApp(reconfigure: options['reconfigure'] == true),
+    UbuntuWslSetupApp(
+      initialRoute: options['initial-route'],
+      reconfigure: options['reconfigure'] == true,
+    ),
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
