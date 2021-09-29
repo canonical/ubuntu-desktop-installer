@@ -81,8 +81,7 @@ class _UbuntuDesktopInstallerWizardState
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.installationType: InstallationTypePage.create,
-        if (service.hasMultipleDisks)
-          Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
+        Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
         Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
         Routes.whoAreYou: WhoAreYouPage.create,
