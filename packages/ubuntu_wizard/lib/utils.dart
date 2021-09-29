@@ -5,5 +5,5 @@ export 'src/utils/list_extensions.dart';
 export 'src/utils/password.dart';
 export 'src/utils/product_info_extractor.dart';
 export 'src/utils/string.dart';
-export 'src/utils/system_shutdown.dart';
-export 'src/utils/window.dart';
+export 'src/utils/system_shutdown.dart' hide log;
+export 'src/utils/window.dart' hide log;
