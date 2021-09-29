@@ -51,14 +51,14 @@ class HostnameService {
   var _staticHostname = '';
 
   /// Returns the hostname.
-  String get hostname => _prettyHostname.orIfEmpty(_hostname);
+  String get hostname => _prettyHostname.orIfEmpty(_hostname)!;
 
   /// Stream of hostname changes.
   Stream<String> get hostnameChanged => _hostnameController.stream;
   final _hostnameController = StreamController<String>();
 
   /// Returns the static hostname.
-  String get staticHostname => _staticHostname.orIfEmpty(_hostname.sanitize());
+  String get staticHostname => _staticHostname.orIfEmpty(_hostname.sanitize())!;
 
   /// Stream of static hostname changes.
   Stream<String> get staticHostnameChanged => _staticHostnameController.stream;

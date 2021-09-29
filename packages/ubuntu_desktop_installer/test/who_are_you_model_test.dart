@@ -172,7 +172,7 @@ void main() {
     // any field missing
     testValid('', 'host', 'user', 'passwd', 'passwd', isFalse);
     testValid('real', '', 'user', 'passwd', 'passwd', isFalse);
-    testValid('real', 'host', '', 'passwd', 'passwd', isTrue); // generated
+    testValid('real', 'host', '', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', 'user', '', 'passwd', isFalse);
 
     // username validation
