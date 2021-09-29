@@ -32,7 +32,7 @@ void main() {
     expect(model.realName, equals(identity.realname));
     expect(model.username, equals(identity.username));
     expect(model.password, isEmpty); // not loaded
-    expect(model.hostName, equals(identity.hostname));
+    expect(model.hostname, equals(identity.hostname));
   });
 
   test('empty username and hostname', () async {
@@ -48,7 +48,7 @@ void main() {
     await model.loadIdentity();
     verify(service.init()).called(1);
 
-    expect(model.hostName, equals('ubuntu-impish'));
+    expect(model.hostname, equals('ubuntu-impish'));
   });
 
   test('non-empty username and empty hostname', () async {
@@ -64,7 +64,7 @@ void main() {
     await model.loadIdentity();
     verify(service.init()).called(1);
 
-    expect(model.hostName, equals('user-impish'));
+    expect(model.hostname, equals('user-impish'));
   });
 
   test('save identity', () async {
@@ -81,7 +81,7 @@ void main() {
     final model = WhoAreYouModel(client: client, service: service);
     model.realName = identity.realname!;
     model.username = identity.username!;
-    model.hostName = identity.hostname!;
+    model.hostname = identity.hostname!;
     model.password = 'passwd';
 
     await model.saveIdentity(salt: 'test');
@@ -121,8 +121,8 @@ void main() {
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.hostName, isEmpty);
-    model.hostName = 'impish';
+    expect(model.hostname, isEmpty);
+    model.hostname = 'impish';
     expect(wasNotified, isTrue);
 
     wasNotified = false;
@@ -155,14 +155,14 @@ void main() {
 
     void testValid(
       String realName,
-      String hostName,
+      String hostname,
       String username,
       String password,
       String confirmedPassword,
       Matcher matcher,
     ) {
       model.realName = realName;
-      model.hostName = hostName;
+      model.hostname = hostname;
       model.username = username;
       model.password = password;
       model.confirmedPassword = confirmedPassword;

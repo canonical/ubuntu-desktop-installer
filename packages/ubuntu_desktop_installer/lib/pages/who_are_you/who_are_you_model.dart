@@ -18,7 +18,7 @@ const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 /// The regular expression pattern for valid hostnames:
 /// - must start and end with a letter or digit
 /// - may contain letters, digits, hyphens, and dots
-const kValidHostNamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
+const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
 /// An enum for storing the login strategy.
 enum LoginStrategy {
@@ -65,8 +65,8 @@ class WhoAreYouModel extends ChangeNotifier {
   }
 
   /// The current hostname.
-  String get hostName => _getHostname();
-  set hostName(String value) {
+  String get hostname => _getHostname();
+  set hostname(String value) {
     _identity.value = _identity.value.copyWith(hostname: value);
   }
 
@@ -115,7 +115,7 @@ class WhoAreYouModel extends ChangeNotifier {
         password.isNotEmpty &&
         password == confirmedPassword &&
         RegExp(kValidUsernamePattern).hasMatch(username) &&
-        RegExp(kValidHostNamePattern).hasMatch(hostName);
+        RegExp(kValidHostnamePattern).hasMatch(hostname);
   }
 
   /// Loads the identity data from the server, and resolves the system hostname.

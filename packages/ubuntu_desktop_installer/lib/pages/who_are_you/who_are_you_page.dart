@@ -70,7 +70,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               ),
               Padding(
                 padding: fieldPadding,
-                child: _HostNameFormField(fieldWidth: fieldWidth),
+                child: _HostnameFormField(fieldWidth: fieldWidth),
               ),
               Padding(
                 padding: fieldPadding,
