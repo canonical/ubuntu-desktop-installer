@@ -1,7 +1,7 @@
 /// Utility extensions for [String].
 extension StringOrIfEmpty on String {
   /// Returns the string if it's not empty, otherwise returns the [other] string.
-  String orIfEmpty(String other) => isEmpty ? other : this;
+  String? orIfEmpty(String? other) => isEmpty ? other : this;
 
   /// Sanitizes a string for use in user- and hostnames.
   String sanitize() {
