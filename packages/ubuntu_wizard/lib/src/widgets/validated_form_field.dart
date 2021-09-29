@@ -53,7 +53,7 @@ class ValidatedFormField extends StatefulWidget {
   /// See [FormField.autovalidateMode].
   final AutovalidateMode autovalidateMode;
 
-  // Enables or disables TextField (defaults to true)
+  /// Enables or disables TextField (defaults to true)
   final bool enabled;
 
   /// Creates a [TextFormField] and a check mark.
