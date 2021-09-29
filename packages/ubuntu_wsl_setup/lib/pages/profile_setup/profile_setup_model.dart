@@ -32,7 +32,7 @@ class ProfileSetupModel extends ChangeNotifier {
 
   /// The current username or a sanitized real name if not set.
   String get username => _username.value ?? realname.sanitize();
-  set username(String value) => _username.value = value;
+  set username(String username) => _username.value = username;
 
   /// The password for the profile.
   String get password => _password.value;
