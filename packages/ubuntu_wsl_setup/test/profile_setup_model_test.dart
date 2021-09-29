@@ -23,10 +23,12 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = ProfileSetupModel(client);
+    model.realname = 'Ubuntu';
     model.username = 'ubuntu';
     model.password = 'password';
 
     final identity = IdentityData(
+      realname: model.realname,
       username: model.username,
       cryptedPassword: encryptPassword('password', salt: 'test'),
     );
@@ -111,7 +113,7 @@ void main() {
     testValid('', 'username', 'password', 'password', isFalse);
     testValid('realname', '', 'password', '', isFalse);
     testValid('realname', '', '', 'password', isFalse);
-    testValid('realname', '', 'password', 'password', isTrue); // generated
+    testValid('realname', '', 'password', 'password', isFalse);
     testValid('realname', 'username', '', '', isFalse);
     testValid('realname', 'username', 'password', '', isFalse);
     testValid('realname', 'username', '', 'password', isFalse);

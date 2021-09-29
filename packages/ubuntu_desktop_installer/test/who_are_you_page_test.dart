@@ -18,7 +18,7 @@ void main() {
   WhoAreYouModel buildModel({
     bool? isValid,
     String? realName,
-    String? hostName,
+    String? hostname,
     String? username,
     String? password,
     String? confirmedPassword,
@@ -28,7 +28,7 @@ void main() {
     final model = MockWhoAreYouModel();
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.realName).thenReturn(realName ?? '');
-    when(model.hostName).thenReturn(hostName ?? '');
+    when(model.hostname).thenReturn(hostname ?? '');
     when(model.username).thenReturn(username ?? '');
     when(model.password).thenReturn(password ?? '');
     when(model.confirmedPassword).thenReturn(confirmedPassword ?? '');
@@ -69,13 +69,13 @@ void main() {
   });
 
   testWidgets('host name input', (tester) async {
-    final model = buildModel(hostName: 'host name');
+    final model = buildModel(hostname: 'host name');
     await tester.pumpWidget(buildApp(tester, model));
 
     final textField = find.widgetWithText(TextField, 'host name');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.hostName = 'ubuntu').called(1);
+    verify(model.hostname = 'ubuntu').called(1);
   });
 
   testWidgets('username input', (tester) async {
