@@ -31,7 +31,9 @@ void main() {
         child: MaterialApp(
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: localizationsDelegates,
-          home: InstallationTypePage(),
+          home: Wizard(
+            routes: {'/': (_) => InstallationTypePage()},
+          ),
         ),
       ),
     );

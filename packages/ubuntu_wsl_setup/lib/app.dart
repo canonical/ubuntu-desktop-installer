@@ -9,9 +9,11 @@ import 'wizard.dart';
 class UbuntuWslSetupApp extends StatelessWidget {
   const UbuntuWslSetupApp({
     Key? key,
+    this.initialRoute,
     this.reconfigure = false,
   }) : super(key: key);
 
+  final String? initialRoute;
   final bool reconfigure;
 
   @override
@@ -29,7 +31,9 @@ class UbuntuWslSetupApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: reconfigure ? UbuntuWslReconfigureWizard() : UbuntuWslSetupWizard(),
+      home: reconfigure
+          ? UbuntuWslReconfigureWizard(initialRoute: initialRoute)
+          : UbuntuWslSetupWizard(initialRoute: initialRoute),
     );
   }
 }
