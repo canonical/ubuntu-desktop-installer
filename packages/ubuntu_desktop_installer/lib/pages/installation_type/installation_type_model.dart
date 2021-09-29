@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../../services.dart';
+
 /// Available installation types.
 enum InstallationType {
   /// Erase entire disk and perform guided partitioning.
@@ -31,10 +33,11 @@ enum AdvancedFeature {
 
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends ChangeNotifier {
-  /// Creates a new model with the given client.
-  InstallationTypeModel(this._client);
+  /// Creates a new model with the given client and service.
+  InstallationTypeModel(this._client, this._service);
 
   final SubiquityClient _client;
+  final DiskStorageService _service;
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
@@ -77,5 +80,11 @@ class InstallationTypeModel extends ChangeNotifier {
     //   _existingOS = os;
     //   notifyListeners();
     // });
+  }
+
+  Future<void> save() async {
+    if (!_service.hasMultipleDisks) {
+      await _service.setGuidedStorage();
+    }
   }
 }

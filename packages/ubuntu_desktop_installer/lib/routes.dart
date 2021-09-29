@@ -15,4 +15,5 @@ abstract class Routes {
   static const installationSlides = '/installationslides';
   static const turnOffBitlocker = '/turnoffbitlocker';
   static const installationType = '/installationtype';
+  static const selectGuidedStorage = '/selectguidedstorage';
 }
