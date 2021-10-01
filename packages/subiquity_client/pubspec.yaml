@@ -24,3 +24,7 @@ dev_dependencies:
   freezed: ^0.14.1
   json_serializable: ^4.1.1
   test: ^1.17.0
+
+# https://github.com/dart-lang/test/issues/1591
+dependency_overrides:
+  test_api: 0.4.3
