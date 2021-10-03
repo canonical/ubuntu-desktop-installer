@@ -1,6 +1,6 @@
 {
   "@@locale": "oc_FR",
-  "appTitle": "Programa d'installacion del burèu Ubuntu",
+  "appTitle": "Programa d’installacion del burèu Ubuntu",
   "@appTitle": {},
   "windowTitle": "Installar Ubuntu",
   "@windowTitle": {},
@@ -59,7 +59,7 @@
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "Picatz de tèxt aquí per ensajar lo clavièr",
   "@typeToTest": {},
-  "detectLayout": "Detectar l'agençament del clavièr",
+  "detectLayout": "Detectar l’agençament del clavièr",
   "@detectLayout": {},
   "pressOneKey": "Mercés de quichar una de las tòcas seguentas :",
   "@pressOneKey": {},
