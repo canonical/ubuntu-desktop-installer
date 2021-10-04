@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// flutter/lib/src/material/dropdown.dart
+const EdgeInsets _kMenuItemPadding = EdgeInsets.symmetric(horizontal: 16.0);
+
 /// A builder widget that makes it straight-forward to build a dropdown
 /// for an arbitrary list of values.
 ///
@@ -50,15 +53,21 @@ class DropdownBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<T>(
-      value: selected,
-      items: values.map((value) {
-        return DropdownMenuItem<T>(
-          value: value,
-          child: itemBuilder(context, value, null),
-        );
-      }).toList(),
-      onChanged: (value) => onSelected(value!),
+    return DropdownButtonHideUnderline(
+      child: InputDecorator(
+        decoration: InputDecoration(contentPadding: _kMenuItemPadding)
+            .applyDefaults(Theme.of(context).inputDecorationTheme),
+        child: DropdownButton<T>(
+          value: selected,
+          items: values.map((value) {
+            return DropdownMenuItem<T>(
+              value: value,
+              child: itemBuilder(context, value, null),
+            );
+          }).toList(),
+          onChanged: (value) => onSelected(value!),
+        ),
+      ),
     );
   }
 }
