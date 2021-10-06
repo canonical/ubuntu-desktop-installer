@@ -16,5 +16,6 @@ void main(List<String> args) {
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
+    variant: Variant.WSL_SETUP,
   );
 }

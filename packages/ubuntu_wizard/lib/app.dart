@@ -27,6 +27,7 @@ Future<void> runWizardApp(
   Widget app, {
   ArgResults? options,
   required SubiquityClient subiquityClient,
+  required Variant variant,
   required SubiquityServer subiquityServer,
   List<String>? serverArgs,
   List<SingleChildWidget>? providers,
@@ -48,7 +49,7 @@ Future<void> runWizardApp(
       .start(serverMode, serverArgs)
       .then(subiquityClient.open);
 
-  subiquityClient.setVariant(Variant.DESKTOP);
+  subiquityClient.setVariant(variant);
 
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.

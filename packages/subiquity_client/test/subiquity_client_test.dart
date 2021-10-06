@@ -309,6 +309,12 @@ void main() {
       await _testServer.stop();
     });
 
+    test('variant', () async {
+      // Subiquity doesn't have an API to get the variant, only to set it
+      await _client.setVariant(Variant.WSL_SETUP);
+      await _client.setVariant(Variant.WSL_CONFIGURATION);
+    });
+
     test('wslconfbase', () async {
       var newConf = WSLConfigurationBase(
         customPath: '/mnt/',

@@ -24,6 +24,7 @@ void main() {
       subiquityClient: client,
       subiquityServer: server,
       serverArgs: ['--foo', 'bar'],
+      variant: Variant.DESKTOP,
     );
     verify(server.start(ServerMode.DRY_RUN, ['--foo', 'bar'])).called(1);
     verify(client.open('socket path')).called(1);
@@ -38,6 +39,7 @@ void main() {
       Container(key: ValueKey('app')),
       subiquityClient: MockSubiquityClient(),
       subiquityServer: server,
+      variant: Variant.DESKTOP,
     );
 
     final app = find.byKey(ValueKey('app'));

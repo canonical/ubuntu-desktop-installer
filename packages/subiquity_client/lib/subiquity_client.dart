@@ -76,6 +76,12 @@ class SubiquityClient {
       case Variant.DESKTOP:
         variantString = "desktop";
         break;
+      case Variant.WSL_SETUP:
+        variantString = "wsl_setup";
+        break;
+      case Variant.WSL_CONFIGURATION:
+        variantString = "wsl_configuration";
+        break;
     }
     final request = Request(
         'POST',
