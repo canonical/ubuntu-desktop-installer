@@ -7,7 +7,8 @@ on:
   pull_request:
     branches:
       - main
-    
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -94,7 +95,7 @@ jobs:
 
   generate:
     runs-on: ubuntu-20.04
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
 
     - uses: actions/checkout@v2
