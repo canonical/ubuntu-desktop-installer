@@ -107,7 +107,7 @@ jobs:
       if: github.event_name == 'pull_request'
       run: |
         if [ -n "$(git status --porcelain)" ]; then
-          echo "WARNING: the following generated files may be outdated or untracked:"
+          echo "::warning ::Generated files may be outdated or untracked"
           git status --porcelain
           git diff
           exit 1
