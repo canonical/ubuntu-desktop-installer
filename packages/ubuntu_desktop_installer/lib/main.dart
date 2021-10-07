@@ -33,5 +33,6 @@ void main(List<String> args) {
       Provider(create: (_) => HostnameService()),
       Provider(create: (_) => KeyboardService()),
     ],
+    variant: Variant.DESKTOP,
   );
 }

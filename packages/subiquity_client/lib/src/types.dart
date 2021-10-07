@@ -6,7 +6,7 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
-enum Variant { SERVER, DESKTOP }
+enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
 
 @freezed
 class SourceSelection with _$SourceSelection {
