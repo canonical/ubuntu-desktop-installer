@@ -11,7 +11,7 @@ void main() {
       interopGuiintegration: true,
       interopAudiointegration: true,
       interopAdvancedipdetection: true,
-      motdWSLnewsenabled: false,
+      motdWslnewsenabled: false,
       automountEnabled: false,
       automountMountfstab: false,
     );
@@ -26,7 +26,7 @@ void main() {
     expect(model.interopGuiintegration, equals(conf.interopGuiintegration));
     expect(model.interopAudiointegration, equals(conf.interopAudiointegration));
     expect(model.advancedIPDetection, equals(conf.interopAdvancedipdetection));
-    expect(model.motdWSLnewsenabled, equals(conf.motdWSLnewsenabled));
+    expect(model.motdWSLnewsenabled, equals(conf.motdWslnewsenabled));
   });
 
   test('save UI configuration', () async {
@@ -46,7 +46,7 @@ void main() {
       interopGuiintegration: true,
       interopAudiointegration: true,
       interopAdvancedipdetection: true,
-      motdWSLnewsenabled: false,
+      motdWslnewsenabled: false,
       automountEnabled: false,
       automountMountfstab: false,
     );

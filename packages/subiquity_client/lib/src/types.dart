@@ -25,9 +25,10 @@ class SourceSelection with _$SourceSelection {
 
 @freezed
 class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory SourceSelectionAndSetting({
     List<SourceSelection>? sources,
-    @JsonKey(name: 'current_id') String? currentId,
+    String? currentId,
   }) = _SourceSelectionAndSetting;
 
   factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
@@ -82,10 +83,11 @@ class KeyboardSetup with _$KeyboardSetup {
 
 @freezed
 class IdentityData with _$IdentityData {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory IdentityData({
     @Default('') String? realname,
     @Default('') String? username,
-    @Default('') @JsonKey(name: 'crypted_password') String? cryptedPassword,
+    @Default('') String? cryptedPassword,
     @Default('') String? hostname,
   }) = _IdentityData;
 
@@ -95,9 +97,10 @@ class IdentityData with _$IdentityData {
 
 @freezed
 class TimezoneData with _$TimezoneData {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory TimezoneData({
     String? timezone,
-    @JsonKey(name: 'from_geoip') bool? fromGeoIP,
+    bool? fromGeoip,
   }) = _TimezoneData;
 
   factory TimezoneData.fromJson(Map<String, dynamic> json) =>
@@ -106,10 +109,11 @@ class TimezoneData with _$TimezoneData {
 
 @freezed
 class SSHData with _$SSHData {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory SSHData({
-    @JsonKey(name: 'install_server') bool? installServer,
-    @JsonKey(name: 'allow_pw') bool? allowPw,
-    @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys,
+    bool? installServer,
+    bool? allowPw,
+    List<dynamic>? authorizedKeys,
   }) = _SSHData;
 
   factory SSHData.fromJson(Map<String, dynamic> json) =>
@@ -150,12 +154,13 @@ enum ErrorReportKind {
 
 @freezed
 class ErrorReportRef with _$ErrorReportRef {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ErrorReportRef({
     ErrorReportState? state,
     String? base,
     ErrorReportKind? kind,
     bool? seen,
-    @JsonKey(name: 'oops_id') String? oopsId,
+    String? oopsId,
   }) = _ErrorReportRef;
 
   factory ErrorReportRef.fromJson(Map<String, dynamic> json) =>
@@ -164,16 +169,16 @@ class ErrorReportRef with _$ErrorReportRef {
 
 @freezed
 class ApplicationStatus with _$ApplicationStatus {
-  @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ApplicationStatus({
     ApplicationState? state,
-    @JsonKey(name: 'confirming_tty') String? confirmingTty,
+    String? confirmingTty,
     ErrorReportRef? error,
-    @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+    bool? cloudInitOk,
     bool? interactive,
-    @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
-    @JsonKey(name: 'log_syslog_id') String? logSyslogId,
-    @JsonKey(name: 'event_syslog_id') String? eventSyslogId,
+    String? echoSyslogId,
+    String? logSyslogId,
+    String? eventSyslogId,
   }) = _ApplicationStatus;
 
   factory ApplicationStatus.fromJson(Map<String, dynamic> json) =>
@@ -191,6 +196,7 @@ String? _wipeToString(bool? value) =>
 
 @freezed
 class Partition with _$Partition {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Partition({
     int? size,
     int? number,
@@ -199,7 +205,7 @@ class Partition with _$Partition {
     @Default([]) List<String>? annotations,
     String? mount,
     String? format,
-    @JsonKey(name: 'grub_device') bool? grubDevice,
+    bool? grubDevice,
   }) = _Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) =>
@@ -208,20 +214,20 @@ class Partition with _$Partition {
 
 @freezed
 class Disk with _$Disk {
-  @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Disk({
     String? id,
     String? label,
     String? path,
     String? type,
     int? size,
-    @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+    List<String>? usageLabels,
     List<Partition>? partitions,
-    @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
-    @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+    int? freeForPartitions,
+    bool? okForGuided,
     String? ptable,
     bool? preserve,
-    @JsonKey(name: 'boot_device') bool? bootDevice,
+    bool? bootDevice,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
@@ -229,9 +235,10 @@ class Disk with _$Disk {
 
 @freezed
 class GuidedChoice with _$GuidedChoice {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory GuidedChoice({
-    @JsonKey(name: 'disk_id') String? diskId,
-    @JsonKey(name: 'use_lvm') bool? useLvm,
+    String? diskId,
+    bool? useLvm,
     String? password,
   }) = _GuidedChoice;
 
@@ -241,9 +248,10 @@ class GuidedChoice with _$GuidedChoice {
 
 @freezed
 class GuidedStorageResponse with _$GuidedStorageResponse {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory GuidedStorageResponse({
     ProbeStatus? status,
-    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+    ErrorReportRef? errorReport,
     List<Disk>? disks,
   }) = _GuidedStorageResponse;
 
@@ -253,11 +261,12 @@ class GuidedStorageResponse with _$GuidedStorageResponse {
 
 @freezed
 class StorageResponse with _$StorageResponse {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory StorageResponse({
     ProbeStatus? status,
-    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+    ErrorReportRef? errorReport,
     Bootloader? bootloader,
-    @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+    List<dynamic>? origConfig,
     List<dynamic>? config,
     Map<String, dynamic>? blockdev,
     Map<String, dynamic>? dasd,
@@ -269,11 +278,12 @@ class StorageResponse with _$StorageResponse {
 
 @freezed
 class StorageResponseV2 with _$StorageResponseV2 {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory StorageResponseV2({
     List<Disk>? disks,
-    @JsonKey(name: 'need_root') bool? needRoot,
-    @JsonKey(name: 'need_boot') bool? needBoot,
-    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+    bool? needRoot,
+    bool? needBoot,
+    ErrorReportRef? errorReport,
   }) = _StorageResponseV2;
 
   factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
@@ -282,12 +292,12 @@ class StorageResponseV2 with _$StorageResponseV2 {
 
 @freezed
 class WSLConfigurationBase with _$WSLConfigurationBase {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory WSLConfigurationBase({
-    @JsonKey(name: 'automount_root') String? automountRoot,
-    @JsonKey(name: 'automount_options') String? automountOptions,
-    @JsonKey(name: 'network_generatehosts') bool? networkGeneratehosts,
-    @JsonKey(name: 'network_generateresolvconf')
-        bool? networkGenerateresolvconf,
+    String? automountRoot,
+    String? automountOptions,
+    bool? networkGeneratehosts,
+    bool? networkGenerateresolvconf,
   }) = _WSLConfigurationBase;
 
   factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
@@ -296,18 +306,18 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
 
 @freezed
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory WSLConfigurationAdvanced({
-    @JsonKey(name: 'gui_theme') String? guiTheme,
-    @JsonKey(name: 'gui_followwintheme') bool? guiFollowwintheme,
-    @JsonKey(name: 'interop_guiintegration') bool? interopGuiintegration,
-    @JsonKey(name: 'interop_audiointegration') bool? interopAudiointegration,
-    @JsonKey(name: 'interop_advancedipdetection')
-        bool? interopAdvancedipdetection,
-    @JsonKey(name: 'motd_wslnewsenabled') bool? motdWSLnewsenabled,
-    @JsonKey(name: 'automount_enabled') bool? automountEnabled,
-    @JsonKey(name: 'automount_mountfstab') bool? automountMountfstab,
-    @JsonKey(name: 'interop_enabled') bool? interopEnabled,
-    @JsonKey(name: 'interop_appendwindowspath') bool? interopAppendwindowspath,
+    String? guiTheme,
+    bool? guiFollowwintheme,
+    bool? interopGuiintegration,
+    bool? interopAudiointegration,
+    bool? interopAdvancedipdetection,
+    bool? motdWslnewsenabled,
+    bool? automountEnabled,
+    bool? automountMountfstab,
+    bool? interopEnabled,
+    bool? interopAppendwindowspath,
   }) = _WSLConfigurationAdvanced;
 
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>

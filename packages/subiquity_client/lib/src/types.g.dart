@@ -110,7 +110,7 @@ _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
   return _$_IdentityData(
     realname: json['realname'] as String? ?? '',
     username: json['username'] as String? ?? '',
-    cryptedPassword: json['crypted_password'] as String?,
+    cryptedPassword: json['crypted_password'] as String? ?? '',
     hostname: json['hostname'] as String? ?? '',
   );
 }
@@ -126,14 +126,14 @@ Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
 _$_TimezoneData _$_$_TimezoneDataFromJson(Map<String, dynamic> json) {
   return _$_TimezoneData(
     timezone: json['timezone'] as String?,
-    fromGeoIP: json['from_geoip'] as bool?,
+    fromGeoip: json['from_geoip'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_TimezoneDataToJson(_$_TimezoneData instance) =>
     <String, dynamic>{
       'timezone': instance.timezone,
-      'from_geoip': instance.fromGeoIP,
+      'from_geoip': instance.fromGeoip,
     };
 
 _$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
@@ -454,7 +454,7 @@ _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
     interopGuiintegration: json['interop_guiintegration'] as bool?,
     interopAudiointegration: json['interop_audiointegration'] as bool?,
     interopAdvancedipdetection: json['interop_advancedipdetection'] as bool?,
-    motdWSLnewsenabled: json['motd_wslnewsenabled'] as bool?,
+    motdWslnewsenabled: json['motd_wslnewsenabled'] as bool?,
     automountEnabled: json['automount_enabled'] as bool?,
     automountMountfstab: json['automount_mountfstab'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
@@ -470,7 +470,7 @@ Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
       'interop_guiintegration': instance.interopGuiintegration,
       'interop_audiointegration': instance.interopAudiointegration,
       'interop_advancedipdetection': instance.interopAdvancedipdetection,
-      'motd_wslnewsenabled': instance.motdWSLnewsenabled,
+      'motd_wslnewsenabled': instance.motdWslnewsenabled,
       'automount_enabled': instance.automountEnabled,
       'automount_mountfstab': instance.automountMountfstab,
       'interop_enabled': instance.interopEnabled,
