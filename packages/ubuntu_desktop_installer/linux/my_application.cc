@@ -15,12 +15,16 @@ G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
 
+#ifdef NDEBUG
+  // Activate an existing app instance if already running but only in
+  // production/release mode. Allow multiple instances in debug mode for
+  // easier debugging and testing.
   GList* windows = gtk_application_get_windows(GTK_APPLICATION(application));
   if (windows) {
-    // Activate an existing app instance
     gtk_window_present(GTK_WINDOW(windows->data));
     return;
   }
+#endif
 
   GtkWindow* window =
       GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
