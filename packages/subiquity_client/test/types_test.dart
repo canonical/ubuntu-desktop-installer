@@ -156,7 +156,7 @@ void main() {
       'automount_root': '/mnt/',
       'automount_options': '',
       'network_generatehosts': true,
-      'networkGenerateresolvconf': true,
+      'network_generateresolvconf': true,
     };
     expect(conf.toJson(), equals(json));
     expect(WSLConfigurationBase.fromJson(json), conf);
