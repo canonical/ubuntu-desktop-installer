@@ -22,6 +22,7 @@ class WizardPage extends StatelessWidget {
     this.footer,
     this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
+    this.showTitle = true,
   }) : super(key: key);
 
   /// The title widget in the app bar.
@@ -54,10 +55,15 @@ class WizardPage extends StatelessWidget {
   /// A list of actions in the button bar.
   final List<WizardAction> actions;
 
+  /// Shows/Hides title container, defaults to true
+  final bool showTitle;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: title, automaticallyImplyLeading: false),
+      appBar: showTitle
+          ? AppBar(title: title, automaticallyImplyLeading: false)
+          : null,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

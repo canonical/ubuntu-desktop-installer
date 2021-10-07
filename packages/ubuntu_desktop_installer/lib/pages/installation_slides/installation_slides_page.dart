@@ -1,14 +1,11 @@
-import 'dart:math';
 import 'dart:async';
+import 'dart:math';
 
-import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:yaru/yaru.dart' as yaru;
-
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart' as yaru;
 
 import '../../l10n.dart';
 import 'installation_slides_model.dart';
@@ -94,10 +91,10 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return WizardPage(
+      showTitle: false,
       contentPadding: EdgeInsets.zero,
       footerPadding: EdgeInsets.zero,
       headerPadding: EdgeInsets.zero,
-      title: Text('Welcome to Ubuntu'),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -108,14 +105,16 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage>
                   controller: pageController,
                   children: [
                     TextSlide(
+                      title: lang.installSlide1Title,
                       backgroundAsset: 'assets/slides/welcome.png',
                       text: lang.installSlide1Text,
                     ),
                     ...createImageSlides(lang)
                         .map((isd) => ImageSlide(imageSlideData: isd)),
                     TextSlide(
+                      title: lang.installSlide8Title,
                       backgroundAsset: 'assets/slides/welcome.png',
-                      text: lang.installationSlide8Description,
+                      text: lang.installSlide8Description,
                     ),
                   ],
                 ),
@@ -276,41 +275,44 @@ class TextSlide extends StatelessWidget {
     Key? key,
     required this.backgroundAsset,
     required this.text,
+    required this.title,
   }) : super(key: key);
 
   final String backgroundAsset;
   final String text;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: Image.asset(
-            backgroundAsset,
-            fit: BoxFit.fill,
+    return Container(
+      color: Colors.red,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              backgroundAsset,
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        Positioned(
-          left: 40,
-          right: 0,
-          top: 32,
-          child: FractionallySizedBox(
-            widthFactor: 0.5,
-            alignment: Alignment.topLeft,
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                letterSpacing: 0.25,
-                height: 1.8,
-                fontWeight: FontWeight.w200,
+          _SlideAppBar(title: title),
+          Positioned.fill(
+            top: 56,
+            child: Container(
+              width: double.infinity,
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  letterSpacing: 0.25,
+                  height: 1.8,
+                  fontWeight: FontWeight.w200,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -334,68 +336,100 @@ class ImageSlide extends StatelessWidget {
           _ImageSlideItem(itemName: sec.title, imageAsset: sec.imageAsset)));
     });
 
-    return Stack(
+    return Column(
       children: [
-        Positioned.fill(
-          child: Image.asset(
-            'assets/slides/background.png',
-            fit: BoxFit.fill,
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        _SlideAppBar(title: imageSlideData.title),
+        Stack(
           children: [
-            Expanded(
-              flex: 4,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24.0, top: 16),
-                    child: Container(
-                      color: Colors.black12,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 12),
-                        child: Text(
-                          imageSlideData.description,
-                          softWrap: true,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            height: 1.2,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  if (sections.isNotEmpty)
-                    Padding(
-                      padding: const EdgeInsets.only(left: 24.0),
-                      child: Container(
-                        color: Colors.black12,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 12),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: sections,
-                          ),
-                        ),
-                      ),
-                    ),
-                ],
+            Positioned.fill(
+              child: Image.asset(
+                'assets/slides/background.png',
+                fit: BoxFit.fill,
               ),
             ),
-            Expanded(flex: 6, child: Image.asset(imageSlideData.imageAsset))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 24.0, top: 16),
+                        child: Container(
+                          color: Colors.black12,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 12),
+                            child: Text(
+                              imageSlideData.description,
+                              softWrap: true,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                height: 1.2,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      if (sections.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 24.0),
+                          child: Container(
+                            color: Colors.black12,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8, horizontal: 12),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: sections,
+                              ),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                Expanded(flex: 6, child: Image.asset(imageSlideData.imageAsset))
+              ],
+            ),
           ],
         ),
       ],
     );
+  }
+}
+
+class _SlideAppBar extends StatelessWidget {
+  const _SlideAppBar({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        height: 56,
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              title,
+              style: Theme.of(context).appBarTheme.titleTextStyle,
+            ),
+          ),
+        ),
+        color: Theme.of(context).appBarTheme.backgroundColor);
   }
 }
 

@@ -474,10 +474,19 @@ class AppLocalizationsIt extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
+  String get installSlide1Title => 'Welcome to Ubuntu';
+
+  @override
   String get installSlide1Text => 'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...';
 
   @override
+  String get installSlide2Title => 'Find even more software';
+
+  @override
   String get installSlide2Description => 'Say goodbye to searching the web for new software. With access to the Snap Store and the Ubuntu software archive, you can find and install new apps with ease. Just type in what you’re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+
+  @override
+  String get installSlide3Title => 'Take your music with you';
 
   @override
   String get installSlide3Description => 'Ubuntu comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
@@ -492,6 +501,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installSlidesVLC => 'VLC';
 
   @override
+  String get installSlide4Title => 'Have fun with your photos';
+
+  @override
   String get installSlide4Description => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it’s easy to share them and keep them safe. And if you’re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
@@ -502,6 +514,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get installSlidesShotcut => 'Shotcut Video Editor';
+
+  @override
+  String get installSlide5Title => 'Make the most of the web';
 
   @override
   String get installSlide5Description => 'Ubuntu includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
@@ -516,6 +531,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installSlidesChromium => 'Chromium';
 
   @override
+  String get installSlide6Title => 'Everything you need for the office';
+
+  @override
   String get installSlide6Description => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
 
   @override
@@ -526,6 +544,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get installSlideImpress => 'LibreOffice Impress';
+
+  @override
+  String get installSlide7Title => 'Access for everyone';
 
   @override
   String get installSlide7Description => 'At the heart of the Ubuntu philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colour scheme and text size, Ubuntu makes computing easy – whoever and wherever you are.';
@@ -552,7 +573,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installSlidesSupportedSoftware => 'Supported software';
 
   @override
-  String get installationSlide8Description => 'The official documentation covers many of the most common areas about Ubuntu. It\'s available both *online* and via the Help icon in the Dock.\nAt *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.\nFor pointers to other useful resources, please visit *Community support* or *Commercial support*.';
+  String get installSlide8Title => 'Help and support';
+
+  @override
+  String get installSlide8Description => 'The official documentation covers many of the most common areas about Ubuntu. It\'s available both *online* and via the Help icon in the Dock.\nAt *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.\nFor pointers to other useful resources, please visit *Community support* or *Commercial support*.';
 }
 
 /// The translations for Italian, as used in Italy (`it_IT`).

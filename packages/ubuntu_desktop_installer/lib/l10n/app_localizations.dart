@@ -990,17 +990,35 @@ abstract class AppLocalizations {
   /// **'Restart Into Windows'**
   String get restartIntoWindows;
 
+  /// No description provided for @installSlide1Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Welcome to Ubuntu'**
+  String get installSlide1Title;
+
   /// No description provided for @installSlide1Text.
   ///
   /// In en_US, this message translates to:
   /// **'Fast and full of new features, the latest\nversion of Ubuntu makes computing easier\nthan ever. Here are just a few cool new things\nto look out for...'**
   String get installSlide1Text;
 
+  /// No description provided for @installSlide2Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Find even more software'**
+  String get installSlide2Title;
+
   /// No description provided for @installSlide2Description.
   ///
   /// In en_US, this message translates to:
   /// **'Say goodbye to searching the web for new software. With access to the Snap Store and the Ubuntu software archive, you can find and install new apps with ease. Just type in what you’re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.'**
   String get installSlide2Description;
+
+  /// No description provided for @installSlide3Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Take your music with you'**
+  String get installSlide3Title;
 
   /// No description provided for @installSlide3Description.
   ///
@@ -1026,6 +1044,12 @@ abstract class AppLocalizations {
   /// **'VLC'**
   String get installSlidesVLC;
 
+  /// No description provided for @installSlide4Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Have fun with your photos'**
+  String get installSlide4Title;
+
   /// No description provided for @installSlide4Description.
   ///
   /// In en_US, this message translates to:
@@ -1049,6 +1073,12 @@ abstract class AppLocalizations {
   /// In en_US, this message translates to:
   /// **'Shotcut Video Editor'**
   String get installSlidesShotcut;
+
+  /// No description provided for @installSlide5Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Make the most of the web'**
+  String get installSlide5Title;
 
   /// No description provided for @installSlide5Description.
   ///
@@ -1074,6 +1104,12 @@ abstract class AppLocalizations {
   /// **'Chromium'**
   String get installSlidesChromium;
 
+  /// No description provided for @installSlide6Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Everything you need for the office'**
+  String get installSlide6Title;
+
   /// No description provided for @installSlide6Description.
   ///
   /// In en_US, this message translates to:
@@ -1097,6 +1133,12 @@ abstract class AppLocalizations {
   /// In en_US, this message translates to:
   /// **'LibreOffice Impress'**
   String get installSlideImpress;
+
+  /// No description provided for @installSlide7Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Access for everyone'**
+  String get installSlide7Title;
 
   /// No description provided for @installSlide7Description.
   ///
@@ -1146,11 +1188,17 @@ abstract class AppLocalizations {
   /// **'Supported software'**
   String get installSlidesSupportedSoftware;
 
-  /// No description provided for @installationSlide8Description.
+  /// No description provided for @installSlide8Title.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Help and support'**
+  String get installSlide8Title;
+
+  /// No description provided for @installSlide8Description.
   ///
   /// In en_US, this message translates to:
   /// **'The official documentation covers many of the most common areas about Ubuntu. It\'s available both *online* and via the Help icon in the Dock.\nAt *Ask Ubuntu* you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided by your *Local Community Team*.\nFor pointers to other useful resources, please visit *Community support* or *Commercial support*.'**
-  String get installationSlide8Description;
+  String get installSlide8Description;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

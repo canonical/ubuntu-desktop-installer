@@ -1,11 +1,13 @@
 import '../../l10n.dart';
 
 class ImageSlideData {
+  final String title;
   final String description;
   final List<Section>? sections;
   final String imageAsset;
 
   ImageSlideData({
+    required this.title,
     required this.description,
     required this.imageAsset,
     this.sections,
@@ -35,10 +37,12 @@ class SectionSoftware {
 List<ImageSlideData> createImageSlides(AppLocalizations lang) =>
     <ImageSlideData>[
       ImageSlideData(
+          title: lang.installSlide2Title,
           description: lang.installSlide2Description,
           imageAsset: 'assets/slides/gs.png',
           sections: <Section>[]),
       ImageSlideData(
+        title: lang.installSlide3Title,
         description: lang.installSlide3Description,
         imageAsset: 'assets/slides/music.png',
         sections: <Section>[
@@ -67,6 +71,7 @@ List<ImageSlideData> createImageSlides(AppLocalizations lang) =>
         ],
       ),
       ImageSlideData(
+        title: lang.installSlide4Title,
         description: lang.installSlide4Description,
         imageAsset: 'assets/slides/photos.png',
         sections: <Section>[
@@ -95,6 +100,7 @@ List<ImageSlideData> createImageSlides(AppLocalizations lang) =>
         ],
       ),
       ImageSlideData(
+        title: lang.installSlide5Title,
         description: lang.installSlide5Description,
         imageAsset: 'assets/slides/browse.png',
         sections: <Section>[
@@ -123,6 +129,7 @@ List<ImageSlideData> createImageSlides(AppLocalizations lang) =>
         ],
       ),
       ImageSlideData(
+        title: lang.installSlide6Title,
         description: lang.installSlide6Description,
         imageAsset: 'assets/slides/office.png',
         sections: <Section>[
@@ -146,6 +153,7 @@ List<ImageSlideData> createImageSlides(AppLocalizations lang) =>
         ],
       ),
       ImageSlideData(
+        title: lang.installSlide7Title,
         description: lang.installSlide7Description,
         imageAsset: 'assets/slides/customize.png',
         sections: <Section>[
