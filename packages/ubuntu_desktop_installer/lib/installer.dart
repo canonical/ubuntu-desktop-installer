@@ -78,7 +78,8 @@ class _UbuntuDesktopInstallerWizardState
       initialRoute: widget.initialRoute ?? Routes.welcome,
       routes: <String, WidgetBuilder>{
         Routes.welcome: WelcomePage.create,
-        Routes.tryOrInstall: TryOrInstallPage.create,
+        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+        // Routes.tryOrInstall: TryOrInstallPage.create,
         if (model.hasRst) Routes.turnOffRST: TurnOffRSTPage.create,
         Routes.keyboardLayout: KeyboardLayoutPage.create,
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
