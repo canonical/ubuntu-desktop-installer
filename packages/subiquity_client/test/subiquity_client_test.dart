@@ -317,46 +317,46 @@ void main() {
 
     test('wslconfbase', () async {
       var newConf = WSLConfigurationBase(
-        customPath: '/mnt/',
-        customMountOpt: '-f',
-        genHost: false,
-        genResolvconf: false,
+        automountRoot: '/mnt/',
+        automountOptions: '-f',
+        networkGeneratehosts: false,
+        networkGenerateresolvconf: false,
       );
 
       await _client.setWslConfigurationBase(newConf);
 
       var conf = await _client.wslConfigurationBase();
-      expect(conf.customPath, '/mnt/');
-      expect(conf.customMountOpt, '-f');
-      expect(conf.genHost, false);
-      expect(conf.genResolvconf, false);
+      expect(conf.automountRoot, '/mnt/');
+      expect(conf.automountOptions, '-f');
+      expect(conf.networkGeneratehosts, false);
+      expect(conf.networkGenerateresolvconf, false);
 
       newConf = WSLConfigurationBase(
-        customPath: '',
-        customMountOpt: '',
-        genHost: true,
-        genResolvconf: true,
+        automountRoot: '',
+        automountOptions: '',
+        networkGeneratehosts: true,
+        networkGenerateresolvconf: true,
       );
 
       await _client.setWslConfigurationBase(newConf);
 
       conf = await _client.wslConfigurationBase();
-      expect(conf.customPath, '');
-      expect(conf.customMountOpt, '');
-      expect(conf.genHost, true);
-      expect(conf.genResolvconf, true);
+      expect(conf.automountRoot, '');
+      expect(conf.automountOptions, '');
+      expect(conf.networkGeneratehosts, true);
+      expect(conf.networkGenerateresolvconf, true);
     });
 
     test('wslconfadvanced', () async {
       var newConf = WSLConfigurationAdvanced(
         guiTheme: 'default',
         guiFollowwintheme: true,
-        legacyGui: false,
-        legacyAudio: false,
-        advIpDetect: false,
-        wslMotdNews: true,
-        automount: true,
-        mountfstab: true,
+        interopGuiintegration: false,
+        interopAudiointegration: false,
+        interopAdvancedipdetection: false,
+        motdWSLnewsenabled: true,
+        automountEnabled: true,
+        automountMountfstab: true,
         interopEnabled: true,
         interopAppendwindowspath: true,
       );
@@ -366,24 +366,24 @@ void main() {
       var conf = await _client.wslConfigurationAdvanced();
       expect(conf.guiTheme, 'default');
       expect(conf.guiFollowwintheme, true);
-      expect(conf.legacyGui, false);
-      expect(conf.legacyAudio, false);
-      expect(conf.advIpDetect, false);
-      expect(conf.wslMotdNews, true);
-      expect(conf.automount, true);
-      expect(conf.mountfstab, true);
+      expect(conf.interopGuiintegration, false);
+      expect(conf.interopAudiointegration, false);
+      expect(conf.interopAdvancedipdetection, false);
+      expect(conf.motdWSLnewsenabled, true);
+      expect(conf.automountEnabled, true);
+      expect(conf.automountMountfstab, true);
       expect(conf.interopEnabled, true);
       expect(conf.interopAppendwindowspath, true);
 
       newConf = WSLConfigurationAdvanced(
         guiTheme: '',
         guiFollowwintheme: false,
-        legacyGui: true,
-        legacyAudio: true,
-        advIpDetect: true,
-        wslMotdNews: false,
-        automount: false,
-        mountfstab: false,
+        interopGuiintegration: true,
+        interopAudiointegration: true,
+        interopAdvancedipdetection: true,
+        motdWSLnewsenabled: false,
+        automountEnabled: false,
+        automountMountfstab: false,
         interopEnabled: false,
         interopAppendwindowspath: false,
       );
@@ -393,12 +393,12 @@ void main() {
       conf = await _client.wslConfigurationAdvanced();
       expect(conf.guiTheme, '');
       expect(conf.guiFollowwintheme, false);
-      expect(conf.legacyGui, true);
-      expect(conf.legacyAudio, true);
-      expect(conf.advIpDetect, true);
-      expect(conf.wslMotdNews, false);
-      expect(conf.automount, false);
-      expect(conf.mountfstab, false);
+      expect(conf.interopGuiintegration, true);
+      expect(conf.interopAudiointegration, true);
+      expect(conf.interopAdvancedipdetection, true);
+      expect(conf.motdWSLnewsenabled, false);
+      expect(conf.automountEnabled, false);
+      expect(conf.automountMountfstab, false);
       expect(conf.interopEnabled, false);
       expect(conf.interopAppendwindowspath, false);
     });

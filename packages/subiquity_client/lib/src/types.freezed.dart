@@ -3706,15 +3706,19 @@ class _$WSLConfigurationBaseTearOff {
   const _$WSLConfigurationBaseTearOff();
 
   _WSLConfigurationBase call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) {
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf}) {
     return _WSLConfigurationBase(
-      customPath: customPath,
-      customMountOpt: customMountOpt,
-      genHost: genHost,
-      genResolvconf: genResolvconf,
+      automountRoot: automountRoot,
+      automountOptions: automountOptions,
+      networkGeneratehosts: networkGeneratehosts,
+      networkGenerateresolvconf: networkGenerateresolvconf,
     );
   }
 
@@ -3728,14 +3732,14 @@ const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationBase {
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_root')
+  String? get automountRoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_options')
+  String? get automountOptions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generatehosts')
+  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generateresolvconf')
+  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3749,10 +3753,14 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
           $Res Function(WSLConfigurationBase) then) =
       _$WSLConfigurationBaseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -3766,27 +3774,27 @@ class _$WSLConfigurationBaseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
+    Object? automountRoot = freezed,
+    Object? automountOptions = freezed,
+    Object? networkGeneratehosts = freezed,
+    Object? networkGenerateresolvconf = freezed,
   }) {
     return _then(_value.copyWith(
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
+      automountRoot: automountRoot == freezed
+          ? _value.automountRoot
+          : automountRoot // ignore: cast_nullable_to_non_nullable
               as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
+      automountOptions: automountOptions == freezed
+          ? _value.automountOptions
+          : automountOptions // ignore: cast_nullable_to_non_nullable
               as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
+      networkGeneratehosts: networkGeneratehosts == freezed
+          ? _value.networkGeneratehosts
+          : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
+      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+          ? _value.networkGenerateresolvconf
+          : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -3800,10 +3808,14 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
       __$WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -3819,27 +3831,27 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
+    Object? automountRoot = freezed,
+    Object? automountOptions = freezed,
+    Object? networkGeneratehosts = freezed,
+    Object? networkGenerateresolvconf = freezed,
   }) {
     return _then(_WSLConfigurationBase(
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
+      automountRoot: automountRoot == freezed
+          ? _value.automountRoot
+          : automountRoot // ignore: cast_nullable_to_non_nullable
               as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
+      automountOptions: automountOptions == freezed
+          ? _value.automountOptions
+          : automountOptions // ignore: cast_nullable_to_non_nullable
               as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
+      networkGeneratehosts: networkGeneratehosts == freezed
+          ? _value.networkGeneratehosts
+          : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
+      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+          ? _value.networkGenerateresolvconf
+          : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -3849,57 +3861,63 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
-      {@JsonKey(name: 'custom_path') this.customPath,
-      @JsonKey(name: 'custom_mount_opt') this.customMountOpt,
-      @JsonKey(name: 'gen_host') this.genHost,
-      @JsonKey(name: 'gen_resolvconf') this.genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          this.automountRoot,
+      @JsonKey(name: 'automount_options')
+          this.automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          this.networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          this.networkGenerateresolvconf});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationBaseFromJson(json);
 
   @override
-  @JsonKey(name: 'custom_path')
-  final String? customPath;
+  @JsonKey(name: 'automount_root')
+  final String? automountRoot;
   @override
-  @JsonKey(name: 'custom_mount_opt')
-  final String? customMountOpt;
+  @JsonKey(name: 'automount_options')
+  final String? automountOptions;
   @override
-  @JsonKey(name: 'gen_host')
-  final bool? genHost;
+  @JsonKey(name: 'network_generatehosts')
+  final bool? networkGeneratehosts;
   @override
-  @JsonKey(name: 'gen_resolvconf')
-  final bool? genResolvconf;
+  @JsonKey(name: 'network_generateresolvconf')
+  final bool? networkGenerateresolvconf;
 
   @override
   String toString() {
-    return 'WSLConfigurationBase(customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf)';
+    return 'WSLConfigurationBase(automountRoot: $automountRoot, automountOptions: $automountOptions, networkGeneratehosts: $networkGeneratehosts, networkGenerateresolvconf: $networkGenerateresolvconf)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WSLConfigurationBase &&
-            (identical(other.customPath, customPath) ||
+            (identical(other.automountRoot, automountRoot) ||
                 const DeepCollectionEquality()
-                    .equals(other.customPath, customPath)) &&
-            (identical(other.customMountOpt, customMountOpt) ||
+                    .equals(other.automountRoot, automountRoot)) &&
+            (identical(other.automountOptions, automountOptions) ||
                 const DeepCollectionEquality()
-                    .equals(other.customMountOpt, customMountOpt)) &&
-            (identical(other.genHost, genHost) ||
-                const DeepCollectionEquality()
-                    .equals(other.genHost, genHost)) &&
-            (identical(other.genResolvconf, genResolvconf) ||
-                const DeepCollectionEquality()
-                    .equals(other.genResolvconf, genResolvconf)));
+                    .equals(other.automountOptions, automountOptions)) &&
+            (identical(other.networkGeneratehosts, networkGeneratehosts) ||
+                const DeepCollectionEquality().equals(
+                    other.networkGeneratehosts, networkGeneratehosts)) &&
+            (identical(other.networkGenerateresolvconf,
+                    networkGenerateresolvconf) ||
+                const DeepCollectionEquality().equals(
+                    other.networkGenerateresolvconf,
+                    networkGenerateresolvconf)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(customPath) ^
-      const DeepCollectionEquality().hash(customMountOpt) ^
-      const DeepCollectionEquality().hash(genHost) ^
-      const DeepCollectionEquality().hash(genResolvconf);
+      const DeepCollectionEquality().hash(automountRoot) ^
+      const DeepCollectionEquality().hash(automountOptions) ^
+      const DeepCollectionEquality().hash(networkGeneratehosts) ^
+      const DeepCollectionEquality().hash(networkGenerateresolvconf);
 
   @JsonKey(ignore: true)
   @override
@@ -3915,27 +3933,30 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
 
 abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   const factory _WSLConfigurationBase(
-          {@JsonKey(name: 'custom_path') String? customPath,
-          @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-          @JsonKey(name: 'gen_host') bool? genHost,
-          @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) =
-      _$_WSLConfigurationBase;
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationBase.fromJson;
 
   @override
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_root')
+  String? get automountRoot => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_options')
+  String? get automountOptions => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generatehosts')
+  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generateresolvconf')
+  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
@@ -3956,16 +3977,18 @@ class _$WSLConfigurationAdvancedTearOff {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -3973,12 +3996,12 @@ class _$WSLConfigurationAdvancedTearOff {
     return _WSLConfigurationAdvanced(
       guiTheme: guiTheme,
       guiFollowwintheme: guiFollowwintheme,
-      legacyGui: legacyGui,
-      legacyAudio: legacyAudio,
-      advIpDetect: advIpDetect,
-      wslMotdNews: wslMotdNews,
-      automount: automount,
-      mountfstab: mountfstab,
+      interopGuiintegration: interopGuiintegration,
+      interopAudiointegration: interopAudiointegration,
+      interopAdvancedipdetection: interopAdvancedipdetection,
+      motdWSLnewsenabled: motdWSLnewsenabled,
+      automountEnabled: automountEnabled,
+      automountMountfstab: automountMountfstab,
       interopEnabled: interopEnabled,
       interopAppendwindowspath: interopAppendwindowspath,
     );
@@ -3998,16 +4021,18 @@ mixin _$WSLConfigurationAdvanced {
   String? get guiTheme => throw _privateConstructorUsedError;
   @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
-  @JsonKey(name: 'legacy_gui')
-  bool? get legacyGui => throw _privateConstructorUsedError;
-  @JsonKey(name: 'legacy_audio')
-  bool? get legacyAudio => throw _privateConstructorUsedError;
-  @JsonKey(name: 'adv_ip_detect')
-  bool? get advIpDetect => throw _privateConstructorUsedError;
-  @JsonKey(name: 'wsl_motd_news')
-  bool? get wslMotdNews => throw _privateConstructorUsedError;
-  bool? get automount => throw _privateConstructorUsedError;
-  bool? get mountfstab => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_guiintegration')
+  bool? get interopGuiintegration => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_audiointegration')
+  bool? get interopAudiointegration => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_advancedipdetection')
+  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_enabled')
+  bool? get automountEnabled => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_mountfstab')
+  bool? get automountMountfstab => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_appendwindowspath')
@@ -4029,16 +4054,18 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4058,12 +4085,12 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
   $Res call({
     Object? guiTheme = freezed,
     Object? guiFollowwintheme = freezed,
-    Object? legacyGui = freezed,
-    Object? legacyAudio = freezed,
-    Object? advIpDetect = freezed,
-    Object? wslMotdNews = freezed,
-    Object? automount = freezed,
-    Object? mountfstab = freezed,
+    Object? interopGuiintegration = freezed,
+    Object? interopAudiointegration = freezed,
+    Object? interopAdvancedipdetection = freezed,
+    Object? motdWSLnewsenabled = freezed,
+    Object? automountEnabled = freezed,
+    Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
@@ -4076,29 +4103,29 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.guiFollowwintheme
           : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyGui: legacyGui == freezed
-          ? _value.legacyGui
-          : legacyGui // ignore: cast_nullable_to_non_nullable
+      interopGuiintegration: interopGuiintegration == freezed
+          ? _value.interopGuiintegration
+          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyAudio: legacyAudio == freezed
-          ? _value.legacyAudio
-          : legacyAudio // ignore: cast_nullable_to_non_nullable
+      interopAudiointegration: interopAudiointegration == freezed
+          ? _value.interopAudiointegration
+          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      advIpDetect: advIpDetect == freezed
-          ? _value.advIpDetect
-          : advIpDetect // ignore: cast_nullable_to_non_nullable
+      interopAdvancedipdetection: interopAdvancedipdetection == freezed
+          ? _value.interopAdvancedipdetection
+          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      wslMotdNews: wslMotdNews == freezed
-          ? _value.wslMotdNews
-          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+      motdWSLnewsenabled: motdWSLnewsenabled == freezed
+          ? _value.motdWSLnewsenabled
+          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      automount: automount == freezed
-          ? _value.automount
-          : automount // ignore: cast_nullable_to_non_nullable
+      automountEnabled: automountEnabled == freezed
+          ? _value.automountEnabled
+          : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      mountfstab: mountfstab == freezed
-          ? _value.mountfstab
-          : mountfstab // ignore: cast_nullable_to_non_nullable
+      automountMountfstab: automountMountfstab == freezed
+          ? _value.automountMountfstab
+          : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
@@ -4124,16 +4151,18 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4156,12 +4185,12 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
   $Res call({
     Object? guiTheme = freezed,
     Object? guiFollowwintheme = freezed,
-    Object? legacyGui = freezed,
-    Object? legacyAudio = freezed,
-    Object? advIpDetect = freezed,
-    Object? wslMotdNews = freezed,
-    Object? automount = freezed,
-    Object? mountfstab = freezed,
+    Object? interopGuiintegration = freezed,
+    Object? interopAudiointegration = freezed,
+    Object? interopAdvancedipdetection = freezed,
+    Object? motdWSLnewsenabled = freezed,
+    Object? automountEnabled = freezed,
+    Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
@@ -4174,29 +4203,29 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.guiFollowwintheme
           : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyGui: legacyGui == freezed
-          ? _value.legacyGui
-          : legacyGui // ignore: cast_nullable_to_non_nullable
+      interopGuiintegration: interopGuiintegration == freezed
+          ? _value.interopGuiintegration
+          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyAudio: legacyAudio == freezed
-          ? _value.legacyAudio
-          : legacyAudio // ignore: cast_nullable_to_non_nullable
+      interopAudiointegration: interopAudiointegration == freezed
+          ? _value.interopAudiointegration
+          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      advIpDetect: advIpDetect == freezed
-          ? _value.advIpDetect
-          : advIpDetect // ignore: cast_nullable_to_non_nullable
+      interopAdvancedipdetection: interopAdvancedipdetection == freezed
+          ? _value.interopAdvancedipdetection
+          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      wslMotdNews: wslMotdNews == freezed
-          ? _value.wslMotdNews
-          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+      motdWSLnewsenabled: motdWSLnewsenabled == freezed
+          ? _value.motdWSLnewsenabled
+          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      automount: automount == freezed
-          ? _value.automount
-          : automount // ignore: cast_nullable_to_non_nullable
+      automountEnabled: automountEnabled == freezed
+          ? _value.automountEnabled
+          : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      mountfstab: mountfstab == freezed
-          ? _value.mountfstab
-          : mountfstab // ignore: cast_nullable_to_non_nullable
+      automountMountfstab: automountMountfstab == freezed
+          ? _value.automountMountfstab
+          : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
@@ -4218,16 +4247,18 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
           this.guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           this.guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          this.legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          this.legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          this.advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          this.wslMotdNews,
-      this.automount,
-      this.mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          this.interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          this.interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          this.interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          this.motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          this.automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          this.automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           this.interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4243,21 +4274,23 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   @JsonKey(name: 'gui_followwintheme')
   final bool? guiFollowwintheme;
   @override
-  @JsonKey(name: 'legacy_gui')
-  final bool? legacyGui;
+  @JsonKey(name: 'interop_guiintegration')
+  final bool? interopGuiintegration;
   @override
-  @JsonKey(name: 'legacy_audio')
-  final bool? legacyAudio;
+  @JsonKey(name: 'interop_audiointegration')
+  final bool? interopAudiointegration;
   @override
-  @JsonKey(name: 'adv_ip_detect')
-  final bool? advIpDetect;
+  @JsonKey(name: 'interop_advancedipdetection')
+  final bool? interopAdvancedipdetection;
   @override
-  @JsonKey(name: 'wsl_motd_news')
-  final bool? wslMotdNews;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  final bool? motdWSLnewsenabled;
   @override
-  final bool? automount;
+  @JsonKey(name: 'automount_enabled')
+  final bool? automountEnabled;
   @override
-  final bool? mountfstab;
+  @JsonKey(name: 'automount_mountfstab')
+  final bool? automountMountfstab;
   @override
   @JsonKey(name: 'interop_enabled')
   final bool? interopEnabled;
@@ -4267,7 +4300,7 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
 
   @override
   String toString() {
-    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, legacyGui: $legacyGui, legacyAudio: $legacyAudio, advIpDetect: $advIpDetect, wslMotdNews: $wslMotdNews, automount: $automount, mountfstab: $mountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, interopGuiintegration: $interopGuiintegration, interopAudiointegration: $interopAudiointegration, interopAdvancedipdetection: $interopAdvancedipdetection, motdWSLnewsenabled: $motdWSLnewsenabled, automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
   }
 
   @override
@@ -4280,24 +4313,27 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
             (identical(other.guiFollowwintheme, guiFollowwintheme) ||
                 const DeepCollectionEquality()
                     .equals(other.guiFollowwintheme, guiFollowwintheme)) &&
-            (identical(other.legacyGui, legacyGui) ||
+            (identical(other.interopGuiintegration, interopGuiintegration) ||
+                const DeepCollectionEquality().equals(
+                    other.interopGuiintegration, interopGuiintegration)) &&
+            (identical(
+                    other.interopAudiointegration, interopAudiointegration) ||
+                const DeepCollectionEquality().equals(
+                    other.interopAudiointegration, interopAudiointegration)) &&
+            (identical(other.interopAdvancedipdetection,
+                    interopAdvancedipdetection) ||
+                const DeepCollectionEquality().equals(
+                    other.interopAdvancedipdetection,
+                    interopAdvancedipdetection)) &&
+            (identical(other.motdWSLnewsenabled, motdWSLnewsenabled) ||
                 const DeepCollectionEquality()
-                    .equals(other.legacyGui, legacyGui)) &&
-            (identical(other.legacyAudio, legacyAudio) ||
+                    .equals(other.motdWSLnewsenabled, motdWSLnewsenabled)) &&
+            (identical(other.automountEnabled, automountEnabled) ||
                 const DeepCollectionEquality()
-                    .equals(other.legacyAudio, legacyAudio)) &&
-            (identical(other.advIpDetect, advIpDetect) ||
+                    .equals(other.automountEnabled, automountEnabled)) &&
+            (identical(other.automountMountfstab, automountMountfstab) ||
                 const DeepCollectionEquality()
-                    .equals(other.advIpDetect, advIpDetect)) &&
-            (identical(other.wslMotdNews, wslMotdNews) ||
-                const DeepCollectionEquality()
-                    .equals(other.wslMotdNews, wslMotdNews)) &&
-            (identical(other.automount, automount) ||
-                const DeepCollectionEquality()
-                    .equals(other.automount, automount)) &&
-            (identical(other.mountfstab, mountfstab) ||
-                const DeepCollectionEquality()
-                    .equals(other.mountfstab, mountfstab)) &&
+                    .equals(other.automountMountfstab, automountMountfstab)) &&
             (identical(other.interopEnabled, interopEnabled) ||
                 const DeepCollectionEquality()
                     .equals(other.interopEnabled, interopEnabled)) &&
@@ -4312,12 +4348,12 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(guiTheme) ^
       const DeepCollectionEquality().hash(guiFollowwintheme) ^
-      const DeepCollectionEquality().hash(legacyGui) ^
-      const DeepCollectionEquality().hash(legacyAudio) ^
-      const DeepCollectionEquality().hash(advIpDetect) ^
-      const DeepCollectionEquality().hash(wslMotdNews) ^
-      const DeepCollectionEquality().hash(automount) ^
-      const DeepCollectionEquality().hash(mountfstab) ^
+      const DeepCollectionEquality().hash(interopGuiintegration) ^
+      const DeepCollectionEquality().hash(interopAudiointegration) ^
+      const DeepCollectionEquality().hash(interopAdvancedipdetection) ^
+      const DeepCollectionEquality().hash(motdWSLnewsenabled) ^
+      const DeepCollectionEquality().hash(automountEnabled) ^
+      const DeepCollectionEquality().hash(automountMountfstab) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
       const DeepCollectionEquality().hash(interopAppendwindowspath);
 
@@ -4339,16 +4375,18 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4364,21 +4402,23 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'legacy_gui')
-  bool? get legacyGui => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_guiintegration')
+  bool? get interopGuiintegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'legacy_audio')
-  bool? get legacyAudio => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_audiointegration')
+  bool? get interopAudiointegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'adv_ip_detect')
-  bool? get advIpDetect => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_advancedipdetection')
+  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'wsl_motd_news')
-  bool? get wslMotdNews => throw _privateConstructorUsedError;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
   @override
-  bool? get automount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_enabled')
+  bool? get automountEnabled => throw _privateConstructorUsedError;
   @override
-  bool? get mountfstab => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_mountfstab')
+  bool? get automountMountfstab => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;

@@ -387,20 +387,20 @@ const _$BootloaderEnumMap = {
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {
   return _$_WSLConfigurationBase(
-    customPath: json['custom_path'] as String?,
-    customMountOpt: json['custom_mount_opt'] as String?,
-    genHost: json['gen_host'] as bool?,
-    genResolvconf: json['gen_resolvconf'] as bool?,
+    automountRoot: json['automount_root'] as String?,
+    automountOptions: json['automount_options'] as String?,
+    networkGeneratehosts: json['network_generatehosts'] as bool?,
+    networkGenerateresolvconf: json['network_generateresolvconf'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
         _$_WSLConfigurationBase instance) =>
     <String, dynamic>{
-      'custom_path': instance.customPath,
-      'custom_mount_opt': instance.customMountOpt,
-      'gen_host': instance.genHost,
-      'gen_resolvconf': instance.genResolvconf,
+      'automount_root': instance.automountRoot,
+      'automount_options': instance.automountOptions,
+      'network_generatehosts': instance.networkGeneratehosts,
+      'network_generateresolvconf': instance.networkGenerateresolvconf,
     };
 
 _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
@@ -408,12 +408,12 @@ _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
   return _$_WSLConfigurationAdvanced(
     guiTheme: json['gui_theme'] as String?,
     guiFollowwintheme: json['gui_followwintheme'] as bool?,
-    legacyGui: json['legacy_gui'] as bool?,
-    legacyAudio: json['legacy_audio'] as bool?,
-    advIpDetect: json['adv_ip_detect'] as bool?,
-    wslMotdNews: json['wsl_motd_news'] as bool?,
-    automount: json['automount'] as bool?,
-    mountfstab: json['mountfstab'] as bool?,
+    interopGuiintegration: json['interop_guiintegration'] as bool?,
+    interopAudiointegration: json['interop_audiointegration'] as bool?,
+    interopAdvancedipdetection: json['interop_advancedipdetection'] as bool?,
+    motdWSLnewsenabled: json['motd_wslnewsenabled'] as bool?,
+    automountEnabled: json['automount_enabled'] as bool?,
+    automountMountfstab: json['automount_mountfstab'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
     interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
   );
@@ -424,12 +424,12 @@ Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
     <String, dynamic>{
       'gui_theme': instance.guiTheme,
       'gui_followwintheme': instance.guiFollowwintheme,
-      'legacy_gui': instance.legacyGui,
-      'legacy_audio': instance.legacyAudio,
-      'adv_ip_detect': instance.advIpDetect,
-      'wsl_motd_news': instance.wslMotdNews,
-      'automount': instance.automount,
-      'mountfstab': instance.mountfstab,
+      'interop_guiintegration': instance.interopGuiintegration,
+      'interop_audiointegration': instance.interopAudiointegration,
+      'interop_advancedipdetection': instance.interopAdvancedipdetection,
+      'motd_wslnewsenabled': instance.motdWSLnewsenabled,
+      'automount_enabled': instance.automountEnabled,
+      'automount_mountfstab': instance.automountMountfstab,
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
     };

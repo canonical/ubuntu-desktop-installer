@@ -7,10 +7,10 @@ import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart'
 void main() {
   test('load advanced setup', () async {
     const conf = WSLConfigurationBase(
-      customPath: 'path',
-      customMountOpt: 'opt',
-      genHost: false,
-      genResolvconf: false,
+      automountRoot: 'path',
+      automountOptions: 'opt',
+      networkGeneratehosts: false,
+      networkGenerateresolvconf: false,
     );
 
     final client = MockSubiquityClient();
@@ -20,10 +20,11 @@ void main() {
     await model.loadAdvancedSetup();
     verify(client.wslConfigurationBase()).called(1);
 
-    expect(model.mountLocation, equals(conf.customPath));
-    expect(model.mountOption, equals(conf.customMountOpt));
-    expect(model.enableHostGeneration, equals(conf.genHost));
-    expect(model.enableResolvConfGeneration, equals(conf.genResolvconf));
+    expect(model.mountLocation, equals(conf.automountRoot));
+    expect(model.mountOption, equals(conf.automountOptions));
+    expect(model.enableHostGeneration, equals(conf.networkGeneratehosts));
+    expect(model.enableResolvConfGeneration,
+        equals(conf.networkGenerateresolvconf));
   });
 
   test('save advanced setup', () async {
@@ -36,10 +37,10 @@ void main() {
     model.enableResolvConfGeneration = false;
 
     final conf = WSLConfigurationBase(
-      customPath: 'path',
-      customMountOpt: 'opt',
-      genHost: false,
-      genResolvconf: false,
+      automountRoot: 'path',
+      automountOptions: 'opt',
+      networkGeneratehosts: false,
+      networkGenerateresolvconf: false,
     );
 
     await model.saveAdvancedSetup();

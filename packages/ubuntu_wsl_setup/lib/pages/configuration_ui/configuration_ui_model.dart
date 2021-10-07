@@ -16,39 +16,41 @@ class ConfigurationUIModel extends ChangeNotifier {
   final _conf = ValueNotifier(WSLConfigurationAdvanced());
 
   /// Whether legacy GUI integration is enabled.
-  bool get legacyGUI => _conf.value.legacyGui ?? false;
-  set legacyGUI(bool value) {
-    _conf.value = _conf.value.copyWith(legacyGui: value);
+  bool get interopGuiintegration => _conf.value.interopGuiintegration ?? false;
+  set interopGuiintegration(bool value) {
+    _conf.value = _conf.value.copyWith(interopGuiintegration: value);
   }
 
   /// Whether legacy audio integration is enabled.
-  bool get legacyAudio => _conf.value.legacyAudio ?? false;
-  set legacyAudio(bool value) {
-    _conf.value = _conf.value.copyWith(legacyAudio: value);
+  bool get interopAudiointegration =>
+      _conf.value.interopAudiointegration ?? false;
+  set interopAudiointegration(bool value) {
+    _conf.value = _conf.value.copyWith(interopAudiointegration: value);
   }
 
   /// Whether advanced IP detection is enabled.
-  bool get advancedIPDetection => _conf.value.advIpDetect ?? false;
+  bool get advancedIPDetection =>
+      _conf.value.interopAdvancedipdetection ?? false;
   set advancedIPDetection(bool value) {
-    _conf.value = _conf.value.copyWith(advIpDetect: value);
+    _conf.value = _conf.value.copyWith(interopAdvancedipdetection: value);
   }
 
   /// Whether WSL MOTD news are enabled.
-  bool get wslMotdNews => _conf.value.wslMotdNews ?? true;
-  set wslMotdNews(bool value) {
-    _conf.value = _conf.value.copyWith(wslMotdNews: value);
+  bool get motdWSLnewsenabled => _conf.value.motdWSLnewsenabled ?? true;
+  set motdWSLnewsenabled(bool value) {
+    _conf.value = _conf.value.copyWith(motdWSLnewsenabled: value);
   }
 
-  /// Whether automount is enabled.
-  bool get automount => _conf.value.automount ?? true;
-  set automount(bool value) {
-    _conf.value = _conf.value.copyWith(automount: value);
+  /// Whether automountEnabled is enabled.
+  bool get automountEnabled => _conf.value.automountEnabled ?? true;
+  set automountEnabled(bool value) {
+    _conf.value = _conf.value.copyWith(automountEnabled: value);
   }
 
   /// Whether `/etc/fstab` will be mounted.
-  bool get mountFstab => _conf.value.mountfstab ?? true;
-  set mountFstab(bool value) {
-    _conf.value = _conf.value.copyWith(mountfstab: value);
+  bool get automountMountfstab => _conf.value.automountMountfstab ?? true;
+  set automountMountfstab(bool value) {
+    _conf.value = _conf.value.copyWith(automountMountfstab: value);
   }
 
   /// Whether the current input is valid.

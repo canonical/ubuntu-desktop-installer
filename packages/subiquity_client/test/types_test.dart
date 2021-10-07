@@ -147,16 +147,16 @@ void main() {
 
   test('wsl configuration base data', () {
     const conf = WSLConfigurationBase(
-      customPath: '/mnt/',
-      customMountOpt: '',
-      genHost: true,
-      genResolvconf: true,
+      automountRoot: '/mnt/',
+      automountOptions: '',
+      networkGeneratehosts: true,
+      networkGenerateresolvconf: true,
     );
     const json = <String, dynamic>{
-      'custom_path': '/mnt/',
-      'custom_mount_opt': '',
-      'gen_host': true,
-      'gen_resolvconf': true,
+      'automount_root': '/mnt/',
+      'automount_options': '',
+      'network_generatehosts': true,
+      'network_generateresolvconf': true,
     };
     expect(conf.toJson(), equals(json));
     expect(WSLConfigurationBase.fromJson(json), conf);
@@ -166,24 +166,24 @@ void main() {
     const conf = WSLConfigurationAdvanced(
       guiTheme: 'default',
       guiFollowwintheme: true,
-      legacyGui: false,
-      legacyAudio: false,
-      advIpDetect: false,
-      wslMotdNews: true,
-      automount: true,
-      mountfstab: true,
+      interopGuiintegration: false,
+      interopAudiointegration: false,
+      interopAdvancedipdetection: false,
+      motdWSLnewsenabled: true,
+      automountEnabled: true,
+      automountMountfstab: true,
       interopEnabled: true,
       interopAppendwindowspath: true,
     );
     const json = <String, dynamic>{
       'gui_theme': 'default',
       'gui_followwintheme': true,
-      'legacy_gui': false,
-      'legacy_audio': false,
-      'adv_ip_detect': false,
-      'wsl_motd_news': true,
-      'automount': true,
-      'mountfstab': true,
+      'interop_guiintegration': false,
+      'interop_audiointegration': false,
+      'interop_advancedipdetection': false,
+      'motd_wslnewsenabled': true,
+      'automount_enabled': true,
+      'automount_mountfstab': true,
       'interop_enabled': true,
       'interop_appendwindowspath': true,
     };

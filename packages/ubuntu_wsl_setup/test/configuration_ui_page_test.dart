@@ -19,21 +19,23 @@ void main() {
 
   ConfigurationUIModel buildModel({
     bool? isValid,
-    bool? legacyGUI,
-    bool? legacyAudio,
+    bool? interopGuiintegration,
+    bool? interopAudiointegration,
     bool? advancedIPDetection,
-    bool? wslMotdNews,
-    bool? automount,
-    bool? mountFstab,
+    bool? motdWSLnewsenabled,
+    bool? automountEnabled,
+    bool? automountMountfstab,
   }) {
     final model = MockConfigurationUIModel();
     when(model.isValid).thenReturn(isValid ?? false);
-    when(model.legacyGUI).thenReturn(legacyGUI ?? false);
-    when(model.legacyAudio).thenReturn(legacyAudio ?? false);
+    when(model.interopGuiintegration)
+        .thenReturn(interopGuiintegration ?? false);
+    when(model.interopAudiointegration)
+        .thenReturn(interopAudiointegration ?? false);
     when(model.advancedIPDetection).thenReturn(advancedIPDetection ?? false);
-    when(model.wslMotdNews).thenReturn(wslMotdNews ?? true);
-    when(model.automount).thenReturn(automount ?? true);
-    when(model.mountFstab).thenReturn(mountFstab ?? true);
+    when(model.motdWSLnewsenabled).thenReturn(motdWSLnewsenabled ?? true);
+    when(model.automountEnabled).thenReturn(automountEnabled ?? true);
+    when(model.automountMountfstab).thenReturn(automountMountfstab ?? true);
     return model;
   }
 
@@ -57,25 +59,25 @@ void main() {
   }
 
   testWidgets('legacy GUI input', (tester) async {
-    final model = buildModel(legacyGUI: false);
+    final model = buildModel(interopGuiintegration: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
         CheckButton, tester.lang.configurationUILegacyGUIIntegrationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
-    verify(model.legacyGUI = true).called(1);
+    verify(model.interopGuiintegration = true).called(1);
   });
 
   testWidgets('legacy audio input', (tester) async {
-    final model = buildModel(legacyAudio: false);
+    final model = buildModel(interopAudiointegration: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
         CheckButton, tester.lang.configurationUILegacyAudioIntegrationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
-    verify(model.legacyAudio = true).called(1);
+    verify(model.interopAudiointegration = true).called(1);
   });
 
   testWidgets('advanced IP detection input', (tester) async {
@@ -90,36 +92,36 @@ void main() {
   });
 
   testWidgets('WSL MOTD news input', (tester) async {
-    final model = buildModel(wslMotdNews: false);
+    final model = buildModel(motdWSLnewsenabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
         CheckButton, tester.lang.configurationUIWSLNewsTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
-    verify(model.wslMotdNews = true).called(1);
+    verify(model.motdWSLnewsenabled = true).called(1);
   });
 
-  testWidgets('automount input', (tester) async {
-    final model = buildModel(automount: false);
+  testWidgets('automountEnabled input', (tester) async {
+    final model = buildModel(automountEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
         CheckButton, tester.lang.configurationUIAutoMountTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
-    verify(model.automount = true).called(1);
+    verify(model.automountEnabled = true).called(1);
   });
 
   testWidgets('mount fstab input', (tester) async {
-    final model = buildModel(mountFstab: false);
+    final model = buildModel(automountMountfstab: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
         CheckButton, tester.lang.configurationUIMountFstabTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
-    verify(model.mountFstab = true).called(1);
+    verify(model.automountMountfstab = true).called(1);
   });
 
   testWidgets('valid input', (tester) async {

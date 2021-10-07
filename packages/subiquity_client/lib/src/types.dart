@@ -254,10 +254,11 @@ class StorageResponse with _$StorageResponse {
 @freezed
 class WSLConfigurationBase with _$WSLConfigurationBase {
   const factory WSLConfigurationBase({
-    @JsonKey(name: 'custom_path') String? customPath,
-    @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-    @JsonKey(name: 'gen_host') bool? genHost,
-    @JsonKey(name: 'gen_resolvconf') bool? genResolvconf,
+    @JsonKey(name: 'automount_root') String? automountRoot,
+    @JsonKey(name: 'automount_options') String? automountOptions,
+    @JsonKey(name: 'network_generatehosts') bool? networkGeneratehosts,
+    @JsonKey(name: 'network_generateresolvconf')
+        bool? networkGenerateresolvconf,
   }) = _WSLConfigurationBase;
 
   factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
@@ -269,12 +270,13 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   const factory WSLConfigurationAdvanced({
     @JsonKey(name: 'gui_theme') String? guiTheme,
     @JsonKey(name: 'gui_followwintheme') bool? guiFollowwintheme,
-    @JsonKey(name: 'legacy_gui') bool? legacyGui,
-    @JsonKey(name: 'legacy_audio') bool? legacyAudio,
-    @JsonKey(name: 'adv_ip_detect') bool? advIpDetect,
-    @JsonKey(name: 'wsl_motd_news') bool? wslMotdNews,
-    bool? automount,
-    bool? mountfstab,
+    @JsonKey(name: 'interop_guiintegration') bool? interopGuiintegration,
+    @JsonKey(name: 'interop_audiointegration') bool? interopAudiointegration,
+    @JsonKey(name: 'interop_advancedipdetection')
+        bool? interopAdvancedipdetection,
+    @JsonKey(name: 'motd_wslnewsenabled') bool? motdWSLnewsenabled,
+    @JsonKey(name: 'automount_enabled') bool? automountEnabled,
+    @JsonKey(name: 'automount_mountfstab') bool? automountMountfstab,
     @JsonKey(name: 'interop_enabled') bool? interopEnabled,
     @JsonKey(name: 'interop_appendwindowspath') bool? interopAppendwindowspath,
   }) = _WSLConfigurationAdvanced;

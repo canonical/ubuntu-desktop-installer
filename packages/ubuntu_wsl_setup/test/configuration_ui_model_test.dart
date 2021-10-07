@@ -8,12 +8,12 @@ import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.d
 void main() {
   test('load UI configuration', () async {
     const conf = WSLConfigurationAdvanced(
-      legacyGui: true,
-      legacyAudio: true,
-      advIpDetect: true,
-      wslMotdNews: false,
-      automount: false,
-      mountfstab: false,
+      interopGuiintegration: true,
+      interopAudiointegration: true,
+      interopAdvancedipdetection: true,
+      motdWSLnewsenabled: false,
+      automountEnabled: false,
+      automountMountfstab: false,
     );
 
     final client = MockSubiquityClient();
@@ -23,10 +23,10 @@ void main() {
     await model.loadConfiguration();
     verify(client.wslConfigurationAdvanced()).called(1);
 
-    expect(model.legacyGUI, equals(conf.legacyGui));
-    expect(model.legacyAudio, equals(conf.legacyAudio));
-    expect(model.advancedIPDetection, equals(conf.advIpDetect));
-    expect(model.wslMotdNews, equals(conf.wslMotdNews));
+    expect(model.interopGuiintegration, equals(conf.interopGuiintegration));
+    expect(model.interopAudiointegration, equals(conf.interopAudiointegration));
+    expect(model.advancedIPDetection, equals(conf.interopAdvancedipdetection));
+    expect(model.motdWSLnewsenabled, equals(conf.motdWSLnewsenabled));
   });
 
   test('save UI configuration', () async {
@@ -35,20 +35,20 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = ConfigurationUIModel(client);
-    model.legacyGUI = true;
-    model.legacyAudio = true;
+    model.interopGuiintegration = true;
+    model.interopAudiointegration = true;
     model.advancedIPDetection = true;
-    model.wslMotdNews = false;
-    model.automount = false;
-    model.mountFstab = false;
+    model.motdWSLnewsenabled = false;
+    model.automountEnabled = false;
+    model.automountMountfstab = false;
 
     final conf = WSLConfigurationAdvanced(
-      legacyGui: true,
-      legacyAudio: true,
-      advIpDetect: true,
-      wslMotdNews: false,
-      automount: false,
-      mountfstab: false,
+      interopGuiintegration: true,
+      interopAudiointegration: true,
+      interopAdvancedipdetection: true,
+      motdWSLnewsenabled: false,
+      automountEnabled: false,
+      automountMountfstab: false,
     );
 
     var windowClosed = false;
@@ -70,13 +70,13 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.legacyGUI, isFalse);
-    model.legacyGUI = true;
+    expect(model.interopGuiintegration, isFalse);
+    model.interopGuiintegration = true;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.legacyAudio, isFalse);
-    model.legacyAudio = true;
+    expect(model.interopAudiointegration, isFalse);
+    model.interopAudiointegration = true;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
@@ -85,18 +85,18 @@ void main() {
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.wslMotdNews, isTrue);
-    model.wslMotdNews = false;
+    expect(model.motdWSLnewsenabled, isTrue);
+    model.motdWSLnewsenabled = false;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.automount, isTrue);
-    model.automount = false;
+    expect(model.automountEnabled, isTrue);
+    model.automountEnabled = false;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.mountFstab, isTrue);
-    model.mountFstab = false;
+    expect(model.automountMountfstab, isTrue);
+    model.automountMountfstab = false;
     expect(wasNotified, isTrue);
   });
 
