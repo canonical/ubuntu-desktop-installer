@@ -91,7 +91,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
         Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
         Routes.whoAreYou: WhoAreYouPage.create,
-        Routes.chooseYourLook: ChooseYourLookPage.create,
+        // Routes.chooseYourLook: ChooseYourLookPage.create,
         Routes.installationSlides: InstallationSlidesPage.create,
         Routes.installationComplete: InstallationCompletePage.create,
       },
