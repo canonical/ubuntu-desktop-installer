@@ -1,10 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import 'who_are_you_model_test.mocks.dart';
+
+@GenerateMocks([HostnameService])
 void main() {
   test('load identity', () async {
     const identity = IdentityData(
@@ -17,14 +22,49 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final model = WhoAreYouModel(client);
+    final service = MockHostnameService();
+    when(service.hostname).thenReturn('impish');
+
+    final model = WhoAreYouModel(client: client, service: service);
     await model.loadIdentity();
     verify(client.identity()).called(1);
 
     expect(model.realName, equals(identity.realname));
     expect(model.username, equals(identity.username));
     expect(model.password, isEmpty); // not loaded
-    expect(model.hostName, equals(identity.hostname));
+    expect(model.hostname, equals(identity.hostname));
+  });
+
+  test('empty username and hostname', () async {
+    const identity = IdentityData(realname: 'Ubuntu');
+
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => identity);
+
+    final service = MockHostnameService();
+    when(service.hostname).thenReturn('impish');
+
+    final model = WhoAreYouModel(client: client, service: service);
+    await model.loadIdentity();
+    verify(service.init()).called(1);
+
+    expect(model.hostname, equals('ubuntu-impish'));
+  });
+
+  test('non-empty username and empty hostname', () async {
+    const identity = IdentityData(username: 'user');
+
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => identity);
+
+    final service = MockHostnameService();
+    when(service.hostname).thenReturn('impish');
+
+    final model = WhoAreYouModel(client: client, service: service);
+    await model.loadIdentity();
+    verify(service.init()).called(1);
+
+    expect(model.hostname, equals('user-impish'));
   });
 
   test('save identity', () async {
@@ -36,11 +76,12 @@ void main() {
     );
 
     final client = MockSubiquityClient();
+    final service = MockHostnameService();
 
-    final model = WhoAreYouModel(client);
+    final model = WhoAreYouModel(client: client, service: service);
     model.realName = identity.realname!;
     model.username = identity.username!;
-    model.hostName = identity.hostname!;
+    model.hostname = identity.hostname!;
     model.password = 'passwd';
 
     await model.saveIdentity(salt: 'test');
@@ -50,7 +91,10 @@ void main() {
 
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(
+      client: MockSubiquityClient(),
+      service: MockHostnameService(),
+    );
 
     void testPasswordStrength(String password, Matcher matcher) {
       model.password = password;
@@ -63,7 +107,10 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(
+      client: MockSubiquityClient(),
+      service: MockHostnameService(),
+    );
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -74,12 +121,12 @@ void main() {
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.hostName, isEmpty);
-    model.hostName = 'impish';
+    expect(model.hostname, isEmpty);
+    model.hostname = 'impish';
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.username, isEmpty);
+    expect(model.username, 'ubuntu-impish');
     model.username = 'ubuntu';
     expect(wasNotified, isTrue);
 
@@ -100,19 +147,22 @@ void main() {
   });
 
   test('validation', () {
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(
+      client: MockSubiquityClient(),
+      service: MockHostnameService(),
+    );
     expect(model.isValid, isFalse);
 
     void testValid(
       String realName,
-      String hostName,
+      String hostname,
       String username,
       String password,
       String confirmedPassword,
       Matcher matcher,
     ) {
       model.realName = realName;
-      model.hostName = hostName;
+      model.hostname = hostname;
       model.username = username;
       model.password = password;
       model.confirmedPassword = confirmedPassword;

@@ -220,6 +220,18 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
 
   @override
+  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
+
+  @override
+  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+
+  @override
+  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+
+  @override
+  String get selectGuidedStorageInstallNow => 'Install Now';
+
+  @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override

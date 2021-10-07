@@ -115,6 +115,7 @@ ArgResults? parseCommandLine(
   parser.addFlag('dry-run',
       defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
+  parser.addOption('initial-route', hide: true);
   parser.addOption(
     'log-file',
     valueHelp: 'path',

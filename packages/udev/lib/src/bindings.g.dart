@@ -71,6 +71,26 @@ class Libudev {
       _udev_device_new_from_syspath_ptr
           .asFunction<_dart_udev_device_new_from_syspath>();
 
+  ffi.Pointer<udev_device> udev_device_new_from_subsystem_sysname(
+    ffi.Pointer<udev> udev,
+    ffi.Pointer<ffi.Int8> subsystem,
+    ffi.Pointer<ffi.Int8> sysname,
+  ) {
+    return _udev_device_new_from_subsystem_sysname(
+      udev,
+      subsystem,
+      sysname,
+    );
+  }
+
+  late final _udev_device_new_from_subsystem_sysname_ptr =
+      _lookup<ffi.NativeFunction<_c_udev_device_new_from_subsystem_sysname>>(
+          'udev_device_new_from_subsystem_sysname');
+  late final _dart_udev_device_new_from_subsystem_sysname
+      _udev_device_new_from_subsystem_sysname =
+      _udev_device_new_from_subsystem_sysname_ptr
+          .asFunction<_dart_udev_device_new_from_subsystem_sysname>();
+
   ffi.Pointer<ffi.Int8> udev_device_get_property_value(
     ffi.Pointer<udev_device> udev_device,
     ffi.Pointer<ffi.Int8> key,
@@ -121,6 +141,20 @@ typedef _c_udev_device_new_from_syspath = ffi.Pointer<udev_device> Function(
 typedef _dart_udev_device_new_from_syspath = ffi.Pointer<udev_device> Function(
   ffi.Pointer<udev> udev,
   ffi.Pointer<ffi.Int8> syspath,
+);
+
+typedef _c_udev_device_new_from_subsystem_sysname = ffi.Pointer<udev_device>
+    Function(
+  ffi.Pointer<udev> udev,
+  ffi.Pointer<ffi.Int8> subsystem,
+  ffi.Pointer<ffi.Int8> sysname,
+);
+
+typedef _dart_udev_device_new_from_subsystem_sysname = ffi.Pointer<udev_device>
+    Function(
+  ffi.Pointer<udev> udev,
+  ffi.Pointer<ffi.Int8> subsystem,
+  ffi.Pointer<ffi.Int8> sysname,
 );
 
 typedef _c_udev_device_get_property_value = ffi.Pointer<ffi.Int8> Function(

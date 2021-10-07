@@ -264,7 +264,6 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
       _$WSLConfigurationBaseFromJson(json);
 }
 
-// TODO: remove all common attributes with WSLConfigurationBase
 @freezed
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   const factory WSLConfigurationAdvanced({

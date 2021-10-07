@@ -3,11 +3,15 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
+
+export 'installation_type_model.dart' show InstallationType;
 
 /// Select between guided and manual partitioning.
 class InstallationTypePage extends StatefulWidget {
@@ -18,8 +22,9 @@ class InstallationTypePage extends StatefulWidget {
   /// Creates a [InstallationTypePage] with [InstallationTypeModel].
   static Widget create(BuildContext context) {
     final client = Provider.of<SubiquityClient>(context, listen: false);
+    final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
-      create: (context) => InstallationTypeModel(client),
+      create: (context) => InstallationTypeModel(client, service),
       child: InstallationTypePage(),
     );
   }
@@ -116,19 +121,15 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction.next(context),
+        WizardAction.next(
+          context,
+          onActivated: () async {
+            await model.save();
+
+            Wizard.of(context).next(arguments: model.installationType);
+          },
+        ),
       ],
     );
   }
-}
-
-// TODO: https://github.com/canonical/ubuntu-desktop-installer/pull/308
-extension _HexColor on Color {
-  String toHex() =>
-      _formatHex(alpha.toHex(), red.toHex(), green.toHex(), blue.toHex());
-  String _formatHex(String a, String r, String g, String b) => '#$a$r$g$b';
-}
-
-extension _IntHex on int {
-  String toHex() => toRadixString(16).padLeft(2, '0');
 }

@@ -120,6 +120,11 @@
   "installationTypeManual": "Something else",
   "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for Ubuntu",
 
+  "selectGuidedStoragePageTitle": "Erase disk and install Ubuntu",
+  "selectGuidedStorageDropdownLabel": "Select drive:",
+  "selectGuidedStorageInfoLabel": "The entire disk will be used:",
+  "selectGuidedStorageInstallNow": "Install Now",
+
   "allocateDiskSpace": "Allocate disk space",
   "startInstallingButtonText": "Start Installing",
   "diskHeadersDevice": "Device",

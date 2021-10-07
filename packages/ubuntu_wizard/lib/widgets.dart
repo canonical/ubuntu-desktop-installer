@@ -1,4 +1,3 @@
-export 'src/widgets/affinity_expansion_tile.dart';
 export 'src/widgets/animated_expanded.dart';
 export 'src/widgets/check_button.dart';
 export 'src/widgets/dropdown_builder.dart';

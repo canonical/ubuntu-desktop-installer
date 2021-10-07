@@ -16,7 +16,6 @@ dependencies:
   ubuntu_wizard:
     path: ../ubuntu_wizard
   url_launcher: ^6.0.9
-  wizard_router: ^0.2.0
 
 dev_dependencies:
   build_runner: ^2.1.1

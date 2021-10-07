@@ -5,6 +5,7 @@ void main() {
   test('if not empty', () {
     expect(''.orIfEmpty('other'), equals('other'));
     expect('not empty'.orIfEmpty('other'), equals('not empty'));
+    expect(''.orIfEmpty(null), isNull);
   });
 
   test('sanitize', () {

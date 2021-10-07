@@ -35,12 +35,12 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       super.noSuchMethod(Invocation.setter(#realName, value),
           returnValueForMissingStub: null);
   @override
-  String get hostName =>
-      (super.noSuchMethod(Invocation.getter(#hostName), returnValue: '')
+  String get hostname =>
+      (super.noSuchMethod(Invocation.getter(#hostname), returnValue: '')
           as String);
   @override
-  set hostName(String? value) =>
-      super.noSuchMethod(Invocation.setter(#hostName, value),
+  set hostname(String? value) =>
+      super.noSuchMethod(Invocation.setter(#hostname, value),
           returnValueForMissingStub: null);
   @override
   String get username =>

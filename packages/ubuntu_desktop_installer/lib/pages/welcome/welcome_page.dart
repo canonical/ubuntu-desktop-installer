@@ -85,7 +85,7 @@ class _WelcomePageState extends State<WelcomePage> {
         ),
       ),
       actions: <WizardAction>[
-        WizardAction.back(context, enabled: false),
+        WizardAction.back(context),
         WizardAction.next(
           context,
           onActivated: () {

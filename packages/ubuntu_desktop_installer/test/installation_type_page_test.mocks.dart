@@ -63,6 +63,10 @@ class MockInstallationTypeModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
+  _i3.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  @override
   void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);

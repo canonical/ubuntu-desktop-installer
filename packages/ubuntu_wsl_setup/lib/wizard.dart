@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:wizard_router/wizard_router.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import 'pages.dart';
 import 'routes.dart';
 
 class UbuntuWslSetupWizard extends StatelessWidget {
-  const UbuntuWslSetupWizard({Key? key}) : super(key: key);
+  const UbuntuWslSetupWizard({
+    Key? key,
+    this.initialRoute,
+  }) : super(key: key);
+
+  final String? initialRoute;
 
   @override
   Widget build(BuildContext context) {
     return Wizard(
-      initialRoute: Routes.selectLanguage,
+      initialRoute: initialRoute ?? Routes.selectLanguage,
       routes: <String, WidgetBuilder>{
         Routes.selectLanguage: SelectLanguagePage.create,
         Routes.profileSetup: ProfileSetupPage.create,
@@ -33,12 +38,17 @@ class UbuntuWslSetupWizard extends StatelessWidget {
 }
 
 class UbuntuWslReconfigureWizard extends StatelessWidget {
-  const UbuntuWslReconfigureWizard({Key? key}) : super(key: key);
+  const UbuntuWslReconfigureWizard({
+    Key? key,
+    this.initialRoute,
+  }) : super(key: key);
+
+  final String? initialRoute;
 
   @override
   Widget build(BuildContext context) {
     return Wizard(
-      initialRoute: Routes.advancedSetup,
+      initialRoute: initialRoute ?? Routes.advancedSetup,
       routes: <String, WidgetBuilder>{
         Routes.advancedSetup: AdvancedSetupPage.create,
         Routes.configurationUI: ConfigurationUIPage.create,

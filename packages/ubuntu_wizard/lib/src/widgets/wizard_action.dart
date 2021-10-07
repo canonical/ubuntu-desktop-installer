@@ -28,7 +28,7 @@ class WizardAction {
     return WizardAction(
       label: UbuntuLocalizations.of(context).backAction,
       visible: visible,
-      enabled: enabled,
+      enabled: enabled ?? Wizard.of(context).hasPrevious,
       onActivated: () {
         if (onActivated != null) {
           onActivated();

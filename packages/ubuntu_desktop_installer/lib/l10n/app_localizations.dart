@@ -510,6 +510,30 @@ abstract class AppLocalizations {
   /// **'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu'**
   String get installationTypeManualInfo;
 
+  /// No description provided for @selectGuidedStoragePageTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Erase disk and install Ubuntu'**
+  String get selectGuidedStoragePageTitle;
+
+  /// No description provided for @selectGuidedStorageDropdownLabel.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Select drive:'**
+  String get selectGuidedStorageDropdownLabel;
+
+  /// No description provided for @selectGuidedStorageInfoLabel.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The entire disk will be used:'**
+  String get selectGuidedStorageInfoLabel;
+
+  /// No description provided for @selectGuidedStorageInstallNow.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Install Now'**
+  String get selectGuidedStorageInstallNow;
+
   /// No description provided for @allocateDiskSpace.
   ///
   /// In en_US, this message translates to:
