@@ -101,18 +101,19 @@ void main() {
     verify(model.installationType = InstallationType.manual).called(1);
   });
 
-  testWidgets('advanced features', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(buildApp(model));
+  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+  // testWidgets('advanced features', (tester) async {
+  //   final model = buildModel();
+  //   await tester.pumpWidget(buildApp(model));
 
-    final button = find.widgetWithText(
-        OutlinedButton, tester.lang.installationTypeAdvancedLabel);
-    expect(button, findsOneWidget);
-    await tester.tap(button);
-    await tester.pumpAndSettle();
+  //   final button = find.widgetWithText(
+  //       OutlinedButton, tester.lang.installationTypeAdvancedLabel);
+  //   expect(button, findsOneWidget);
+  //   await tester.tap(button);
+  //   await tester.pumpAndSettle();
 
-    expect(find.byType(AlertDialog), findsOneWidget);
-  });
+  //   expect(find.byType(AlertDialog), findsOneWidget);
+  // });
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
