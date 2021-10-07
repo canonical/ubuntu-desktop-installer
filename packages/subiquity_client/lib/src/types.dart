@@ -257,7 +257,8 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
     @JsonKey(name: 'automount_root') String? automountRoot,
     @JsonKey(name: 'automount_options') String? automountOptions,
     @JsonKey(name: 'network_generatehosts') bool? networkGeneratehosts,
-    @JsonKey(name: 'networkGenerateresolvconf') bool? networkGenerateresolvconf,
+    @JsonKey(name: 'network_generateresolvconf')
+        bool? networkGenerateresolvconf,
   }) = _WSLConfigurationBase;
 
   factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>

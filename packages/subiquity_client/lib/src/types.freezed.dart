@@ -3712,7 +3712,7 @@ class _$WSLConfigurationBaseTearOff {
           String? automountOptions,
       @JsonKey(name: 'network_generatehosts')
           bool? networkGeneratehosts,
-      @JsonKey(name: 'networkGenerateresolvconf')
+      @JsonKey(name: 'network_generateresolvconf')
           bool? networkGenerateresolvconf}) {
     return _WSLConfigurationBase(
       automountRoot: automountRoot,
@@ -3738,7 +3738,7 @@ mixin _$WSLConfigurationBase {
   String? get automountOptions => throw _privateConstructorUsedError;
   @JsonKey(name: 'network_generatehosts')
   bool? get networkGeneratehosts => throw _privateConstructorUsedError;
-  @JsonKey(name: 'networkGenerateresolvconf')
+  @JsonKey(name: 'network_generateresolvconf')
   bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -3759,7 +3759,7 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
           String? automountOptions,
       @JsonKey(name: 'network_generatehosts')
           bool? networkGeneratehosts,
-      @JsonKey(name: 'networkGenerateresolvconf')
+      @JsonKey(name: 'network_generateresolvconf')
           bool? networkGenerateresolvconf});
 }
 
@@ -3814,7 +3814,7 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
           String? automountOptions,
       @JsonKey(name: 'network_generatehosts')
           bool? networkGeneratehosts,
-      @JsonKey(name: 'networkGenerateresolvconf')
+      @JsonKey(name: 'network_generateresolvconf')
           bool? networkGenerateresolvconf});
 }
 
@@ -3867,7 +3867,7 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
           this.automountOptions,
       @JsonKey(name: 'network_generatehosts')
           this.networkGeneratehosts,
-      @JsonKey(name: 'networkGenerateresolvconf')
+      @JsonKey(name: 'network_generateresolvconf')
           this.networkGenerateresolvconf});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
@@ -3883,7 +3883,7 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   @JsonKey(name: 'network_generatehosts')
   final bool? networkGeneratehosts;
   @override
-  @JsonKey(name: 'networkGenerateresolvconf')
+  @JsonKey(name: 'network_generateresolvconf')
   final bool? networkGenerateresolvconf;
 
   @override
@@ -3939,7 +3939,7 @@ abstract class _WSLConfigurationBase implements WSLConfigurationBase {
           String? automountOptions,
       @JsonKey(name: 'network_generatehosts')
           bool? networkGeneratehosts,
-      @JsonKey(name: 'networkGenerateresolvconf')
+      @JsonKey(name: 'network_generateresolvconf')
           bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
@@ -3955,7 +3955,7 @@ abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   @JsonKey(name: 'network_generatehosts')
   bool? get networkGeneratehosts => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'networkGenerateresolvconf')
+  @JsonKey(name: 'network_generateresolvconf')
   bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

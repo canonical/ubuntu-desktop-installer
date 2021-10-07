@@ -390,7 +390,7 @@ _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     automountRoot: json['automount_root'] as String?,
     automountOptions: json['automount_options'] as String?,
     networkGeneratehosts: json['network_generatehosts'] as bool?,
-    networkGenerateresolvconf: json['networkGenerateresolvconf'] as bool?,
+    networkGenerateresolvconf: json['network_generateresolvconf'] as bool?,
   );
 }
 
@@ -400,7 +400,7 @@ Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
       'automount_root': instance.automountRoot,
       'automount_options': instance.automountOptions,
       'network_generatehosts': instance.networkGeneratehosts,
-      'networkGenerateresolvconf': instance.networkGenerateresolvconf,
+      'network_generateresolvconf': instance.networkGenerateresolvconf,
     };
 
 _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
