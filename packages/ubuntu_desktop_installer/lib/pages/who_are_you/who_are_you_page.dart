@@ -84,15 +84,16 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 padding: fieldPadding,
                 child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
               ),
-              const SizedBox(height: kContentSpacing),
-              _LoginStrategyTile(
-                value: LoginStrategy.autoLogin,
-                label: lang.whoAreYouPageAutoLogin,
-              ),
-              _LoginStrategyTile(
-                value: LoginStrategy.requirePassword,
-                label: lang.whoAreYouPageRequirePassword,
-              ),
+              // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+              // const SizedBox(height: kContentSpacing),
+              // _LoginStrategyTile(
+              //   value: LoginStrategy.autoLogin,
+              //   label: lang.whoAreYouPageAutoLogin,
+              // ),
+              // _LoginStrategyTile(
+              //   value: LoginStrategy.requirePassword,
+              //   label: lang.whoAreYouPageRequirePassword,
+              // ),
             ],
           ),
         );
