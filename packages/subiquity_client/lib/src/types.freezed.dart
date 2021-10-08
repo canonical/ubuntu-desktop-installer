@@ -2466,11 +2466,24 @@ Partition _$PartitionFromJson(Map<String, dynamic> json) {
 class _$PartitionTearOff {
   const _$PartitionTearOff();
 
-  _Partition call({int? size, int? number, List<String>? annotations}) {
+  _Partition call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations = const [],
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) {
     return _Partition(
       size: size,
       number: number,
+      wipe: wipe,
+      preserve: preserve,
       annotations: annotations,
+      mount: mount,
+      format: format,
+      grubDevice: grubDevice,
     );
   }
 
@@ -2486,7 +2499,14 @@ const $Partition = _$PartitionTearOff();
 mixin _$Partition {
   int? get size => throw _privateConstructorUsedError;
   int? get number => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  bool? get wipe => throw _privateConstructorUsedError;
+  bool? get preserve => throw _privateConstructorUsedError;
   List<String>? get annotations => throw _privateConstructorUsedError;
+  String? get mount => throw _privateConstructorUsedError;
+  String? get format => throw _privateConstructorUsedError;
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2498,7 +2518,15 @@ mixin _$Partition {
 abstract class $PartitionCopyWith<$Res> {
   factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
       _$PartitionCopyWithImpl<$Res>;
-  $Res call({int? size, int? number, List<String>? annotations});
+  $Res call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2513,7 +2541,12 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
   $Res call({
     Object? size = freezed,
     Object? number = freezed,
+    Object? wipe = freezed,
+    Object? preserve = freezed,
     Object? annotations = freezed,
+    Object? mount = freezed,
+    Object? format = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_value.copyWith(
       size: size == freezed
@@ -2524,10 +2557,30 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
+      wipe: wipe == freezed
+          ? _value.wipe
+          : wipe // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
       annotations: annotations == freezed
           ? _value.annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mount: mount == freezed
+          ? _value.mount
+          : mount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -2538,7 +2591,15 @@ abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
           _Partition value, $Res Function(_Partition) then) =
       __$PartitionCopyWithImpl<$Res>;
   @override
-  $Res call({int? size, int? number, List<String>? annotations});
+  $Res call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2554,7 +2615,12 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
   $Res call({
     Object? size = freezed,
     Object? number = freezed,
+    Object? wipe = freezed,
+    Object? preserve = freezed,
     Object? annotations = freezed,
+    Object? mount = freezed,
+    Object? format = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_Partition(
       size: size == freezed
@@ -2565,10 +2631,30 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
+      wipe: wipe == freezed
+          ? _value.wipe
+          : wipe // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
       annotations: annotations == freezed
           ? _value.annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mount: mount == freezed
+          ? _value.mount
+          : mount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -2576,7 +2662,15 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Partition implements _Partition {
-  const _$_Partition({this.size, this.number, this.annotations});
+  const _$_Partition(
+      {this.size,
+      this.number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) this.wipe,
+      this.preserve,
+      this.annotations = const [],
+      this.mount,
+      this.format,
+      @JsonKey(name: 'grub_device') this.grubDevice});
 
   factory _$_Partition.fromJson(Map<String, dynamic> json) =>
       _$_$_PartitionFromJson(json);
@@ -2586,11 +2680,24 @@ class _$_Partition implements _Partition {
   @override
   final int? number;
   @override
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  final bool? wipe;
+  @override
+  final bool? preserve;
+  @JsonKey(defaultValue: const [])
+  @override
   final List<String>? annotations;
+  @override
+  final String? mount;
+  @override
+  final String? format;
+  @override
+  @JsonKey(name: 'grub_device')
+  final bool? grubDevice;
 
   @override
   String toString() {
-    return 'Partition(size: $size, number: $number, annotations: $annotations)';
+    return 'Partition(size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice)';
   }
 
   @override
@@ -2601,9 +2708,21 @@ class _$_Partition implements _Partition {
                 const DeepCollectionEquality().equals(other.size, size)) &&
             (identical(other.number, number) ||
                 const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.wipe, wipe) ||
+                const DeepCollectionEquality().equals(other.wipe, wipe)) &&
+            (identical(other.preserve, preserve) ||
+                const DeepCollectionEquality()
+                    .equals(other.preserve, preserve)) &&
             (identical(other.annotations, annotations) ||
                 const DeepCollectionEquality()
-                    .equals(other.annotations, annotations)));
+                    .equals(other.annotations, annotations)) &&
+            (identical(other.mount, mount) ||
+                const DeepCollectionEquality().equals(other.mount, mount)) &&
+            (identical(other.format, format) ||
+                const DeepCollectionEquality().equals(other.format, format)) &&
+            (identical(other.grubDevice, grubDevice) ||
+                const DeepCollectionEquality()
+                    .equals(other.grubDevice, grubDevice)));
   }
 
   @override
@@ -2611,7 +2730,12 @@ class _$_Partition implements _Partition {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(annotations);
+      const DeepCollectionEquality().hash(wipe) ^
+      const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(annotations) ^
+      const DeepCollectionEquality().hash(mount) ^
+      const DeepCollectionEquality().hash(format) ^
+      const DeepCollectionEquality().hash(grubDevice);
 
   @JsonKey(ignore: true)
   @override
@@ -2626,7 +2750,14 @@ class _$_Partition implements _Partition {
 
 abstract class _Partition implements Partition {
   const factory _Partition(
-      {int? size, int? number, List<String>? annotations}) = _$_Partition;
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) = _$_Partition;
 
   factory _Partition.fromJson(Map<String, dynamic> json) =
       _$_Partition.fromJson;
@@ -2636,7 +2767,19 @@ abstract class _Partition implements Partition {
   @override
   int? get number => throw _privateConstructorUsedError;
   @override
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  bool? get wipe => throw _privateConstructorUsedError;
+  @override
+  bool? get preserve => throw _privateConstructorUsedError;
+  @override
   List<String>? get annotations => throw _privateConstructorUsedError;
+  @override
+  String? get mount => throw _privateConstructorUsedError;
+  @override
+  String? get format => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PartitionCopyWith<_Partition> get copyWith =>
@@ -2654,19 +2797,29 @@ class _$DiskTearOff {
   _Disk call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) {
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) {
     return _Disk(
       id: id,
       label: label,
+      path: path,
       type: type,
       size: size,
       usageLabels: usageLabels,
       partitions: partitions,
+      freeForPartitions: freeForPartitions,
       okForGuided: okForGuided,
+      ptable: ptable,
+      preserve: preserve,
+      grubDevice: grubDevice,
     );
   }
 
@@ -2682,13 +2835,20 @@ const $Disk = _$DiskTearOff();
 mixin _$Disk {
   String? get id => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
   @JsonKey(name: 'usage_labels')
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'free_for_partitions')
+  int? get freeForPartitions => throw _privateConstructorUsedError;
   @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
+  String? get ptable => throw _privateConstructorUsedError;
+  bool? get preserve => throw _privateConstructorUsedError;
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2702,11 +2862,16 @@ abstract class $DiskCopyWith<$Res> {
   $Res call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2721,11 +2886,16 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
+    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? partitions = freezed,
+    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
+    Object? ptable = freezed,
+    Object? preserve = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -2735,6 +2905,10 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -2752,9 +2926,25 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<Partition>?,
+      freeForPartitions: freeForPartitions == freezed
+          ? _value.freeForPartitions
+          : freeForPartitions // ignore: cast_nullable_to_non_nullable
+              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ptable: ptable == freezed
+          ? _value.ptable
+          : ptable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -2768,11 +2958,16 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
   $Res call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2788,11 +2983,16 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
+    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? partitions = freezed,
+    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
+    Object? ptable = freezed,
+    Object? preserve = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_Disk(
       id: id == freezed
@@ -2802,6 +3002,10 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -2819,9 +3023,25 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<Partition>?,
+      freeForPartitions: freeForPartitions == freezed
+          ? _value.freeForPartitions
+          : freeForPartitions // ignore: cast_nullable_to_non_nullable
+              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ptable: ptable == freezed
+          ? _value.ptable
+          : ptable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -2833,11 +3053,16 @@ class _$_Disk implements _Disk {
   const _$_Disk(
       {this.id,
       this.label,
+      this.path,
       this.type,
       this.size,
       @JsonKey(name: 'usage_labels') this.usageLabels,
       this.partitions,
-      @JsonKey(name: 'ok_for_guided') this.okForGuided});
+      @JsonKey(name: 'free_for_partitions') this.freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') this.okForGuided,
+      this.ptable,
+      this.preserve,
+      @JsonKey(name: 'grub_device') this.grubDevice});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -2846,6 +3071,8 @@ class _$_Disk implements _Disk {
   final String? id;
   @override
   final String? label;
+  @override
+  final String? path;
   @override
   final String? type;
   @override
@@ -2856,12 +3083,22 @@ class _$_Disk implements _Disk {
   @override
   final List<Partition>? partitions;
   @override
+  @JsonKey(name: 'free_for_partitions')
+  final int? freeForPartitions;
+  @override
   @JsonKey(name: 'ok_for_guided')
   final bool? okForGuided;
+  @override
+  final String? ptable;
+  @override
+  final bool? preserve;
+  @override
+  @JsonKey(name: 'grub_device')
+  final bool? grubDevice;
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, grubDevice: $grubDevice)';
   }
 
   @override
@@ -2872,6 +3109,8 @@ class _$_Disk implements _Disk {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.label, label) ||
                 const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.size, size) ||
@@ -2882,9 +3121,20 @@ class _$_Disk implements _Disk {
             (identical(other.partitions, partitions) ||
                 const DeepCollectionEquality()
                     .equals(other.partitions, partitions)) &&
+            (identical(other.freeForPartitions, freeForPartitions) ||
+                const DeepCollectionEquality()
+                    .equals(other.freeForPartitions, freeForPartitions)) &&
             (identical(other.okForGuided, okForGuided) ||
                 const DeepCollectionEquality()
-                    .equals(other.okForGuided, okForGuided)));
+                    .equals(other.okForGuided, okForGuided)) &&
+            (identical(other.ptable, ptable) ||
+                const DeepCollectionEquality().equals(other.ptable, ptable)) &&
+            (identical(other.preserve, preserve) ||
+                const DeepCollectionEquality()
+                    .equals(other.preserve, preserve)) &&
+            (identical(other.grubDevice, grubDevice) ||
+                const DeepCollectionEquality()
+                    .equals(other.grubDevice, grubDevice)));
   }
 
   @override
@@ -2892,11 +3142,16 @@ class _$_Disk implements _Disk {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(path) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
       const DeepCollectionEquality().hash(partitions) ^
-      const DeepCollectionEquality().hash(okForGuided);
+      const DeepCollectionEquality().hash(freeForPartitions) ^
+      const DeepCollectionEquality().hash(okForGuided) ^
+      const DeepCollectionEquality().hash(ptable) ^
+      const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(grubDevice);
 
   @JsonKey(ignore: true)
   @override
@@ -2913,11 +3168,16 @@ abstract class _Disk implements Disk {
   const factory _Disk(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) = _$_Disk;
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -2925,6 +3185,8 @@ abstract class _Disk implements Disk {
   String? get id => throw _privateConstructorUsedError;
   @override
   String? get label => throw _privateConstructorUsedError;
+  @override
+  String? get path => throw _privateConstructorUsedError;
   @override
   String? get type => throw _privateConstructorUsedError;
   @override
@@ -2935,8 +3197,18 @@ abstract class _Disk implements Disk {
   @override
   List<Partition>? get partitions => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'free_for_partitions')
+  int? get freeForPartitions => throw _privateConstructorUsedError;
+  @override
   @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
+  @override
+  String? get ptable => throw _privateConstructorUsedError;
+  @override
+  bool? get preserve => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
@@ -3697,6 +3969,262 @@ abstract class _StorageResponse implements StorageResponse {
   @override
   @JsonKey(ignore: true)
   _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StorageResponseV2 _$StorageResponseV2FromJson(Map<String, dynamic> json) {
+  return _StorageResponseV2.fromJson(json);
+}
+
+/// @nodoc
+class _$StorageResponseV2TearOff {
+  const _$StorageResponseV2TearOff();
+
+  _StorageResponseV2 call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) {
+    return _StorageResponseV2(
+      disks: disks,
+      needRoot: needRoot,
+      needBoot: needBoot,
+      errorReport: errorReport,
+    );
+  }
+
+  StorageResponseV2 fromJson(Map<String, Object> json) {
+    return StorageResponseV2.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $StorageResponseV2 = _$StorageResponseV2TearOff();
+
+/// @nodoc
+mixin _$StorageResponseV2 {
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @JsonKey(name: 'need_root')
+  bool? get needRoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'need_boot')
+  bool? get needBoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StorageResponseV2CopyWith<StorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StorageResponseV2CopyWith<$Res> {
+  factory $StorageResponseV2CopyWith(
+          StorageResponseV2 value, $Res Function(StorageResponseV2) then) =
+      _$StorageResponseV2CopyWithImpl<$Res>;
+  $Res call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$StorageResponseV2CopyWithImpl<$Res>
+    implements $StorageResponseV2CopyWith<$Res> {
+  _$StorageResponseV2CopyWithImpl(this._value, this._then);
+
+  final StorageResponseV2 _value;
+  // ignore: unused_field
+  final $Res Function(StorageResponseV2) _then;
+
+  @override
+  $Res call({
+    Object? disks = freezed,
+    Object? needRoot = freezed,
+    Object? needBoot = freezed,
+    Object? errorReport = freezed,
+  }) {
+    return _then(_value.copyWith(
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+      needRoot: needRoot == freezed
+          ? _value.needRoot
+          : needRoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      needBoot: needBoot == freezed
+          ? _value.needBoot
+          : needBoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$StorageResponseV2CopyWith<$Res>
+    implements $StorageResponseV2CopyWith<$Res> {
+  factory _$StorageResponseV2CopyWith(
+          _StorageResponseV2 value, $Res Function(_StorageResponseV2) then) =
+      __$StorageResponseV2CopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$StorageResponseV2CopyWithImpl<$Res>
+    extends _$StorageResponseV2CopyWithImpl<$Res>
+    implements _$StorageResponseV2CopyWith<$Res> {
+  __$StorageResponseV2CopyWithImpl(
+      _StorageResponseV2 _value, $Res Function(_StorageResponseV2) _then)
+      : super(_value, (v) => _then(v as _StorageResponseV2));
+
+  @override
+  _StorageResponseV2 get _value => super._value as _StorageResponseV2;
+
+  @override
+  $Res call({
+    Object? disks = freezed,
+    Object? needRoot = freezed,
+    Object? needBoot = freezed,
+    Object? errorReport = freezed,
+  }) {
+    return _then(_StorageResponseV2(
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+      needRoot: needRoot == freezed
+          ? _value.needRoot
+          : needRoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      needBoot: needBoot == freezed
+          ? _value.needBoot
+          : needBoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StorageResponseV2 implements _StorageResponseV2 {
+  const _$_StorageResponseV2(
+      {this.disks,
+      @JsonKey(name: 'need_root') this.needRoot,
+      @JsonKey(name: 'need_boot') this.needBoot,
+      @JsonKey(name: 'error_report') this.errorReport});
+
+  factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$_$_StorageResponseV2FromJson(json);
+
+  @override
+  final List<Disk>? disks;
+  @override
+  @JsonKey(name: 'need_root')
+  final bool? needRoot;
+  @override
+  @JsonKey(name: 'need_boot')
+  final bool? needBoot;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+
+  @override
+  String toString() {
+    return 'StorageResponseV2(disks: $disks, needRoot: $needRoot, needBoot: $needBoot, errorReport: $errorReport)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StorageResponseV2 &&
+            (identical(other.disks, disks) ||
+                const DeepCollectionEquality().equals(other.disks, disks)) &&
+            (identical(other.needRoot, needRoot) ||
+                const DeepCollectionEquality()
+                    .equals(other.needRoot, needRoot)) &&
+            (identical(other.needBoot, needBoot) ||
+                const DeepCollectionEquality()
+                    .equals(other.needBoot, needBoot)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(disks) ^
+      const DeepCollectionEquality().hash(needRoot) ^
+      const DeepCollectionEquality().hash(needBoot) ^
+      const DeepCollectionEquality().hash(errorReport);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+      __$StorageResponseV2CopyWithImpl<_StorageResponseV2>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_StorageResponseV2ToJson(this);
+  }
+}
+
+abstract class _StorageResponseV2 implements StorageResponseV2 {
+  const factory _StorageResponseV2(
+          {List<Disk>? disks,
+          @JsonKey(name: 'need_root') bool? needRoot,
+          @JsonKey(name: 'need_boot') bool? needBoot,
+          @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) =
+      _$_StorageResponseV2;
+
+  factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
+      _$_StorageResponseV2.fromJson;
+
+  @override
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'need_root')
+  bool? get needRoot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'need_boot')
+  bool? get needBoot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

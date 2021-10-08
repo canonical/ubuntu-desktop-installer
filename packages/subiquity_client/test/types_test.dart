@@ -119,12 +119,22 @@ void main() {
     const keyboard = Partition(
       size: 1,
       number: 2,
+      preserve: false,
+      wipe: true,
       annotations: ['3', '4', '5'],
+      mount: '/foo',
+      format: 'bar',
+      grubDevice: false,
     );
     const json = <String, dynamic>{
       'size': 1,
       'number': 2,
+      'preserve': false,
+      'wipe': 'superblock',
       'annotations': ['3', '4', '5'],
+      'mount': '/foo',
+      'format': 'bar',
+      'grub_device': false,
     };
     expect(keyboard.toJson(), equals(json));
     expect(Partition.fromJson(json), keyboard);
