@@ -2,15 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../../services.dart';
+
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
 /// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   /// Creates an instance with the given client.
-  InstallationSlidesModel(this.client);
+  InstallationSlidesModel(this.client, this._journal);
 
   @override
   final SubiquityClient client;
+  final JournalService _journal;
 
   ApplicationStatus? _status;
 
@@ -48,8 +51,12 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
     notifyListeners();
   }
 
+  /// A stream of journal lines.
+  Stream<String> get journal => _journal.stream;
+
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
+    _journal.start();
     return client.status().then((status) {
       _updateStatus(status);
       _monitorStatus();
