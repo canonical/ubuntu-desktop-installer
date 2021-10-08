@@ -201,7 +201,8 @@ class PartitionTable extends StatelessWidget {
           DataCell(Text(disk.type)),
           DataCell(Text('')),
           DataCell(Text(filesize(disk.size))),
-          DataCell(Text('')),
+          // https://github.com/canonical/ubuntu-desktop-installer/pull/375
+          // DataCell(Text('')), // used disk space not supported by subiquity
           DataCell(Text('')),
           DataCell(SizedBox.shrink()),
         ],
@@ -229,7 +230,8 @@ class PartitionTable extends StatelessWidget {
             DataCell(Text('')),
             DataCell(Text('')),
             DataCell(Text(filesize(disk.partitions[partitionIndex].size))),
-            DataCell(Text('')),
+            // https://github.com/canonical/ubuntu-desktop-installer/pull/375
+            // DataCell(Text('')), // used disk space not supported by subiquity
             DataCell(Text('')),
             DataCell(
               ChangeNotifierProvider.value(
@@ -265,9 +267,10 @@ class PartitionTable extends StatelessWidget {
             DataColumn(
               label: Text(lang.diskHeadersSize),
             ),
-            DataColumn(
-              label: Text(lang.diskHeadersUsed),
-            ),
+            // https://github.com/canonical/ubuntu-desktop-installer/pull/375
+            // DataColumn(
+            //   label: Text(lang.diskHeadersUsed),
+            // ),
             DataColumn(
               label: Text(lang.diskHeadersSystem),
             ),

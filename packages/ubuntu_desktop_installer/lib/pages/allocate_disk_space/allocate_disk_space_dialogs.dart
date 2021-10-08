@@ -69,18 +69,19 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                     height: tileHeight,
                   ),
                   const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionTypeLabel,
-                    height: kRadioSize.height,
-                  ),
-                  SizedBox(height: kRadioSize.height),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionLocationLabel,
-                    height: kRadioSize.height,
-                  ),
-                  SizedBox(height: kRadioSize.height),
-                  const SizedBox(height: kContentSpacing),
+                  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+                  // _PartitionDialogLabel(
+                  //   lang.partitionTypeLabel,
+                  //   height: kRadioSize.height,
+                  // ),
+                  // SizedBox(height: kRadioSize.height),
+                  // const SizedBox(height: kContentSpacing),
+                  // _PartitionDialogLabel(
+                  //   lang.partitionLocationLabel,
+                  //   height: kRadioSize.height,
+                  // ),
+                  // SizedBox(height: kRadioSize.height),
+                  // const SizedBox(height: kContentSpacing),
                   _PartitionDialogLabel(
                     lang.partitionFormatLabel,
                     height: tileHeight,
@@ -106,28 +107,29 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                     ),
                   ),
                   const SizedBox(height: kContentSpacing),
-                  _RadioValueTile(
-                    title: Text(lang.partitionTypePrimary),
-                    value: PartitionType.primary,
-                    groupValue: partitionType,
-                  ),
-                  _RadioValueTile(
-                    title: Text(lang.partitionTypeLogical),
-                    value: PartitionType.logical,
-                    groupValue: partitionType,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _RadioValueTile<PartitionLocation>(
-                    title: Text(lang.partitionLocationBeginning),
-                    value: PartitionLocation.beginning,
-                    groupValue: partitionLocation,
-                  ),
-                  _RadioValueTile<PartitionLocation>(
-                    title: Text(lang.partitionLocationEnd),
-                    value: PartitionLocation.end,
-                    groupValue: partitionLocation,
-                  ),
-                  const SizedBox(height: kContentSpacing),
+                  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+                  // _RadioValueTile(
+                  //   title: Text(lang.partitionTypePrimary),
+                  //   value: PartitionType.primary,
+                  //   groupValue: partitionType,
+                  // ),
+                  // _RadioValueTile(
+                  //   title: Text(lang.partitionTypeLogical),
+                  //   value: PartitionType.logical,
+                  //   groupValue: partitionType,
+                  // ),
+                  // const SizedBox(height: kContentSpacing),
+                  // _RadioValueTile<PartitionLocation>(
+                  //   title: Text(lang.partitionLocationBeginning),
+                  //   value: PartitionLocation.beginning,
+                  //   groupValue: partitionLocation,
+                  // ),
+                  // _RadioValueTile<PartitionLocation>(
+                  //   title: Text(lang.partitionLocationEnd),
+                  //   value: PartitionLocation.end,
+                  //   groupValue: partitionLocation,
+                  // ),
+                  // const SizedBox(height: kContentSpacing),
                   ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: tileHeight),
                     child: _PartitionFormatSelector(
