@@ -108,10 +108,10 @@ Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
 
 _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
   return _$_IdentityData(
-    realname: json['realname'] as String?,
-    username: json['username'] as String?,
+    realname: json['realname'] as String? ?? '',
+    username: json['username'] as String? ?? '',
     cryptedPassword: json['crypted_password'] as String?,
-    hostname: json['hostname'] as String?,
+    hostname: json['hostname'] as String? ?? '',
   );
 }
 

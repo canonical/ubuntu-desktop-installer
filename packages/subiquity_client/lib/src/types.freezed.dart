@@ -1232,10 +1232,10 @@ class _$IdentityDataTearOff {
   const _$IdentityDataTearOff();
 
   _IdentityData call(
-      {String? realname,
-      String? username,
-      @JsonKey(name: 'crypted_password') String? cryptedPassword,
-      String? hostname}) {
+      {String? realname = '',
+      String? username = '',
+      @JsonKey(name: 'crypted_password') String? cryptedPassword = '',
+      String? hostname = ''}) {
     return _IdentityData(
       realname: realname,
       username: username,
@@ -1370,21 +1370,24 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_IdentityData implements _IdentityData {
   const _$_IdentityData(
-      {this.realname,
-      this.username,
-      @JsonKey(name: 'crypted_password') this.cryptedPassword,
-      this.hostname});
+      {this.realname = '',
+      this.username = '',
+      @JsonKey(name: 'crypted_password') this.cryptedPassword = '',
+      this.hostname = ''});
 
   factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
       _$_$_IdentityDataFromJson(json);
 
+  @JsonKey(defaultValue: '')
   @override
   final String? realname;
+  @JsonKey(defaultValue: '')
   @override
   final String? username;
   @override
   @JsonKey(name: 'crypted_password')
   final String? cryptedPassword;
+  @JsonKey(defaultValue: '')
   @override
   final String? hostname;
 

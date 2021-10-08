@@ -176,12 +176,8 @@ void main() {
       expect(id.cryptedPassword, '');
       expect(id.hostname, 'ubuntu-desktop');
 
-      newId = IdentityData(
-        realname: '',
-        username: '',
-        cryptedPassword: '',
-        hostname: '',
-      );
+      // empty defaults for null values
+      newId = IdentityData();
 
       await _client.setIdentity(newId);
 

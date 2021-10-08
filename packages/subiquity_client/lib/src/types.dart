@@ -83,10 +83,10 @@ class KeyboardSetup with _$KeyboardSetup {
 @freezed
 class IdentityData with _$IdentityData {
   const factory IdentityData({
-    String? realname,
-    String? username,
-    @JsonKey(name: 'crypted_password') String? cryptedPassword,
-    String? hostname,
+    @Default('') String? realname,
+    @Default('') String? username,
+    @Default('') @JsonKey(name: 'crypted_password') String? cryptedPassword,
+    @Default('') String? hostname,
   }) = _IdentityData;
 
   factory IdentityData.fromJson(Map<String, dynamic> json) =>
