@@ -22,6 +22,8 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    slots: [dbus-ubuntu-desktop-installer]
+    common-id: com.canonical.ubuntu_desktop_installer
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
@@ -239,3 +241,9 @@ parts:
     stage:
       - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
+
+slots:
+  dbus-ubuntu-desktop-installer:
+    interface: dbus
+    bus: session
+    name: com.canonical.ubuntu_desktop_installer
