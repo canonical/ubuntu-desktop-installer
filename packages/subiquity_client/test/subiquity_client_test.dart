@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:subiquity_client/src/types.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
@@ -26,7 +25,9 @@ void main() {
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
-        '../test/install-sources.yaml'
+        '../test/install-sources.yaml',
+        '--bootloader',
+        'uefi',
       ]);
       _client.open(_socketPath);
     });
@@ -143,6 +144,156 @@ void main() {
       final response = await _client.resetStorage();
       expect(response.status, ProbeStatus.DONE);
       expect(response.origConfig, isNotNull);
+    });
+
+    test('set guided storage v2', () async {
+      final guided = await _client.getGuidedStorage(true);
+      expect(guided.disks, isNotEmpty);
+
+      final choice = GuidedChoice(
+        diskId: guided.disks!.first.id,
+        useLvm: false,
+      );
+      final response = await _client.setGuidedStorageV2(choice);
+      expect(response.disks, isNotNull);
+      expect(response.disks, isNotEmpty);
+    });
+
+    test('get storage v2', () async {
+      final response = await _client.getStorageV2();
+      expect(response.disks, isNotNull);
+      expect(response.disks, isNotEmpty);
+    });
+
+    test('set storage v2', () async {
+      final response = await _client.setStorageV2();
+      expect(response.disks, isNotNull);
+      expect(response.disks, isNotEmpty);
+    });
+
+    test('reset storage v2', () async {
+      final response = await _client.resetStorageV2();
+      expect(response.disks, isNotNull);
+      expect(response.disks, isNotEmpty);
+    });
+
+    test('add/edit/delete partition v2', () async {
+      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      expect(disks, isNotNull);
+      expect(disks, isNotEmpty);
+
+      // add
+      var response = await _client.addPartitionV2(
+        disks!.first,
+        Partition(mount: '/foo', format: 'ext2'),
+      );
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      final added = response.disks!.last.partitions;
+      expect(added, isNotNull);
+      expect(added, isNotEmpty);
+
+      expect(added!.last.mount, equals('/foo'));
+      expect(added.last.format, equals('ext2'));
+
+      // edit
+      response = await _client.editPartitionV2(
+        disks.first,
+        added.last.copyWith(mount: '/bar', format: 'ext3'),
+      );
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      final edited = response.disks!.last.partitions;
+      expect(edited, isNotNull);
+      expect(edited, hasLength(added.length));
+
+      expect(edited!.last.mount, equals('/bar'));
+      expect(edited.last.format, equals('ext3'));
+
+      // delete
+      response = await _client.deletePartitionV2(
+        disks.first,
+        edited.last,
+      );
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      final deleted = response.disks!.last.partitions;
+      expect(deleted, isNotNull);
+      expect(deleted, hasLength(added.length - 1));
+    });
+
+    test('add swap', () async {
+      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      expect(disks, isNotNull);
+      expect(disks, isNotEmpty);
+
+      // add
+      var response = await _client.addPartitionV2(
+        disks!.first,
+        Partition(format: 'swap'),
+      );
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      final added = response.disks!.last.partitions;
+      expect(added, isNotNull);
+      expect(added, isNotEmpty);
+
+      expect(added!.last.mount, anyOf(isNull, isEmpty));
+      expect(added.last.format, equals('swap'));
+    });
+
+    test('add boot partition v2', () async {
+      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      expect(disks, isNotNull);
+      expect(disks, isNotEmpty);
+
+      final response = await _client.addBootPartitionV2(disks!.first);
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      final partitions = response.disks!.first.partitions;
+      expect(partitions, isNotNull);
+      expect(partitions, isNotEmpty);
+
+      expect(partitions!.last.grubDevice, isNotNull);
+      expect(partitions.last.grubDevice, isTrue);
+    });
+
+    test('reformat disk v2', () async {
+      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      expect(disks, isNotNull);
+      expect(disks, isNotEmpty);
+
+      expect(disks!.first.partitions, isNotNull);
+      expect(disks.first.partitions, isEmpty);
+
+      var response = await _client.addPartitionV2(
+        disks.first,
+        Partition(mount: '/foo', format: 'ext2'),
+      );
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      expect(response.disks!.first.partitions, isNotNull);
+      expect(response.disks!.first.partitions, isNotEmpty);
+
+      response = await _client.reformatDiskV2(disks.first);
+
+      expect(response.disks, isNotNull);
+      expect(response.disks, hasLength(disks.length));
+
+      expect(response.disks!.first.partitions, isNotNull);
+      expect(response.disks!.first.partitions, isEmpty);
+    });
+
+    test('needs root/boot', () async {
+      final response = await _client.getStorageV2();
+      expect(response.needRoot, isNotNull);
+      expect(response.needBoot, isNotNull);
     });
 
     test('proxy', () async {

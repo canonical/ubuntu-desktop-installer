@@ -184,12 +184,22 @@ enum ProbeStatus { PROBING, FAILED, DONE }
 
 enum Bootloader { NONE, BIOS, UEFI, PREP }
 
+bool? _wipeFromString(String? value) =>
+    value == null ? null : value == 'superblock';
+String? _wipeToString(bool? value) =>
+    value != null && value == true ? 'superblock' : null;
+
 @freezed
 class Partition with _$Partition {
   const factory Partition({
     int? size,
     int? number,
-    List<String>? annotations,
+    @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+    bool? preserve,
+    @Default([]) List<String>? annotations,
+    String? mount,
+    String? format,
+    @JsonKey(name: 'grub_device') bool? grubDevice,
   }) = _Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) =>
@@ -201,11 +211,16 @@ class Disk with _$Disk {
   const factory Disk({
     String? id,
     String? label,
+    String? path,
     String? type,
     int? size,
     @JsonKey(name: 'usage_labels') List<String>? usageLabels,
     List<Partition>? partitions,
+    @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
     @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+    String? ptable,
+    bool? preserve,
+    @JsonKey(name: 'grub_device') bool? grubDevice,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
@@ -249,6 +264,19 @@ class StorageResponse with _$StorageResponse {
 
   factory StorageResponse.fromJson(Map<String, dynamic> json) =>
       _$StorageResponseFromJson(json);
+}
+
+@freezed
+class StorageResponseV2 with _$StorageResponseV2 {
+  const factory StorageResponseV2({
+    List<Disk>? disks,
+    @JsonKey(name: 'need_root') bool? needRoot,
+    @JsonKey(name: 'need_boot') bool? needBoot,
+    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+  }) = _StorageResponseV2;
+
+  factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$StorageResponseV2FromJson(json);
 }
 
 @freezed

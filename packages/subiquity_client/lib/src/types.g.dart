@@ -271,9 +271,15 @@ _$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
   return _$_Partition(
     size: json['size'] as int?,
     number: json['number'] as int?,
+    wipe: _wipeFromString(json['wipe'] as String?),
+    preserve: json['preserve'] as bool?,
     annotations: (json['annotations'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
+            ?.map((e) => e as String)
+            .toList() ??
+        [],
+    mount: json['mount'] as String?,
+    format: json['format'] as String?,
+    grubDevice: json['grub_device'] as bool?,
   );
 }
 
@@ -281,13 +287,19 @@ Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
     <String, dynamic>{
       'size': instance.size,
       'number': instance.number,
+      'wipe': _wipeToString(instance.wipe),
+      'preserve': instance.preserve,
       'annotations': instance.annotations,
+      'mount': instance.mount,
+      'format': instance.format,
+      'grub_device': instance.grubDevice,
     };
 
 _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
   return _$_Disk(
     id: json['id'] as String?,
     label: json['label'] as String?,
+    path: json['path'] as String?,
     type: json['type'] as String?,
     size: json['size'] as int?,
     usageLabels: (json['usage_labels'] as List<dynamic>?)
@@ -296,18 +308,27 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     partitions: (json['partitions'] as List<dynamic>?)
         ?.map((e) => Partition.fromJson(e as Map<String, dynamic>))
         .toList(),
+    freeForPartitions: json['free_for_partitions'] as int?,
     okForGuided: json['ok_for_guided'] as bool?,
+    ptable: json['ptable'] as String?,
+    preserve: json['preserve'] as bool?,
+    grubDevice: json['grub_device'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'id': instance.id,
       'label': instance.label,
+      'path': instance.path,
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
       'partitions': instance.partitions,
+      'free_for_partitions': instance.freeForPartitions,
       'ok_for_guided': instance.okForGuided,
+      'ptable': instance.ptable,
+      'preserve': instance.preserve,
+      'grub_device': instance.grubDevice,
     };
 
 _$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {
@@ -383,6 +404,28 @@ const _$BootloaderEnumMap = {
   Bootloader.UEFI: 'UEFI',
   Bootloader.PREP: 'PREP',
 };
+
+_$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
+  return _$_StorageResponseV2(
+    disks: (json['disks'] as List<dynamic>?)
+        ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    needRoot: json['need_root'] as bool?,
+    needBoot: json['need_boot'] as bool?,
+    errorReport: json['error_report'] == null
+        ? null
+        : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$_StorageResponseV2ToJson(
+        _$_StorageResponseV2 instance) =>
+    <String, dynamic>{
+      'disks': instance.disks,
+      'need_root': instance.needRoot,
+      'need_boot': instance.needBoot,
+      'error_report': instance.errorReport,
+    };
 
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {
