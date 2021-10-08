@@ -9,6 +9,7 @@ export 'src/widgets/radio_button.dart';
 export 'src/widgets/radio_icon_tile.dart';
 export 'src/widgets/rounded_container.dart';
 export 'src/widgets/rounded_list_view.dart';
+export 'src/widgets/slide_show.dart';
 export 'src/widgets/success_icon.dart';
 export 'src/widgets/theme.dart';
 export 'src/widgets/validated_form_field.dart';
