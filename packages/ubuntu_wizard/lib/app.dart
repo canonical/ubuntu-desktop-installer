@@ -59,8 +59,8 @@ Future<void> runWizardApp(
     'network',
     'ssh',
     'snaplist',
-    'timezone',
   ]);
+  subiquityClient.setTimezone('geoip');
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
