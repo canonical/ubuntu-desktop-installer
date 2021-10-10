@@ -1,8 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
-
 /// @internal
 final log = Logger('disk_storage');
 

@@ -4,6 +4,8 @@ import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
+export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
+
 /// View model for [SelectGuidedStoragePage].
 class SelectGuidedStorageModel extends ChangeNotifier {
   /// Creates a new model with the given service.
