@@ -6,9 +6,9 @@ import 'dart:async' as _i4;
 import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i3;
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart'
     as _i2;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters

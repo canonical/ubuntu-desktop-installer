@@ -1,7 +1,10 @@
 import 'package:flutter/foundation.dart';
+import 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
+
+export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 /// Models a disk.
 class DiskModel extends ChangeNotifier {
