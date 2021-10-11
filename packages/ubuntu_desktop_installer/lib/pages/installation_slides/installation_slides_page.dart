@@ -88,8 +88,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                           ? 'Preparing...'
                           : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
                   style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                      color:
-                          model.hasError ? Theme.of(context).errorColor : null),
+                      color: model.hasError
+                          ? Theme.of(context).errorColor
+                          : Colors.white),
                 ),
               ),
             ],
