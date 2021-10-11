@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -8,9 +6,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../services.dart';
 import 'installation_slides_model.dart';
-
-const _kAssetPath = 'assets/slides';
-String _getAssetFile(String asset) => '$_kAssetPath/$asset.png';
 
 /// Slideshow during installation.
 class InstallationSlidesPage extends StatefulWidget {
@@ -47,14 +42,8 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     });
     model.init();
 
-    _precacheSlides();
-  }
-
-  void _precacheSlides() {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      Directory(_kAssetPath).list().forEach((slide) {
-        precacheImage(AssetImage(slide.path), context);
-      });
+      model.precacheSlideImages(context);
     });
   }
 
@@ -68,14 +57,38 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
             children: <Widget>[
               SlideShow(
                 slides: <Widget>[
-                  _Slide('welcome', 'Welcome to Ubuntu'),
-                  _Slide('usc', 'Find even more software'),
-                  _Slide('music', 'Take your music with you'),
-                  _Slide('photos', 'Have fun with your photos'),
-                  _Slide('browse', 'Make the most of the web'),
-                  _Slide('office', 'Everything you need for the office'),
-                  _Slide('accessibility', 'Access for everyone'),
-                  _Slide('gethelp', 'Help and support'),
+                  _Slide(
+                    image: model.slideImage('welcome'),
+                    title: 'Welcome to Ubuntu',
+                  ),
+                  _Slide(
+                    image: model.slideImage('usc'),
+                    title: 'Find even more software',
+                  ),
+                  _Slide(
+                    image: model.slideImage('music'),
+                    title: 'Take your music with you',
+                  ),
+                  _Slide(
+                    image: model.slideImage('photos'),
+                    title: 'Have fun with your photos',
+                  ),
+                  _Slide(
+                    image: model.slideImage('browse'),
+                    title: 'Make the most of the web',
+                  ),
+                  _Slide(
+                    image: model.slideImage('office'),
+                    title: 'Everything you need for the office',
+                  ),
+                  _Slide(
+                    image: model.slideImage('accessibility'),
+                    title: 'Access for everyone',
+                  ),
+                  _Slide(
+                    image: model.slideImage('gethelp'),
+                    title: 'Help and support',
+                  ),
                 ],
               ),
               Positioned(
@@ -104,10 +117,14 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 }
 
 class _Slide extends StatelessWidget {
-  const _Slide(this.asset, this.title, {Key? key}) : super(key: key);
+  const _Slide({
+    Key? key,
+    required this.image,
+    required this.title,
+  }) : super(key: key);
 
+  final ImageProvider image;
   final String title;
-  final String asset;
 
   @override
   Widget build(BuildContext context) {
@@ -118,8 +135,8 @@ class _Slide extends StatelessWidget {
           title: Text(title),
           automaticallyImplyLeading: false,
         ),
-        Image.asset(
-          _getAssetFile(asset),
+        Image(
+          image: image,
           fit: BoxFit.cover,
         ),
       ],
