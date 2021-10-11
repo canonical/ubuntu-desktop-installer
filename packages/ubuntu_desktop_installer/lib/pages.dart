@@ -12,4 +12,4 @@ export 'pages/turn_off_rst/turn_off_rst_page.dart';
 export 'pages/updates_other_software/updates_other_software_page.dart';
 export 'pages/welcome/welcome_page.dart';
 export 'pages/who_are_you/who_are_you_page.dart';
-export 'pages/write_changes_to_disk_page.dart';
+export 'pages/write_changes_to_disk/write_changes_to_disk_page.dart';

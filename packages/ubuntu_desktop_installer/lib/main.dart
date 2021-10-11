@@ -32,6 +32,7 @@ void main(List<String> args) {
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => HostnameService()),
       Provider(create: (_) => KeyboardService()),
+      Provider(create: (_) => UdevService()),
     ],
     variant: Variant.DESKTOP,
   );

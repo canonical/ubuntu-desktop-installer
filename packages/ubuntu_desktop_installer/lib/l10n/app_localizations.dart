@@ -726,6 +726,18 @@ abstract class AppLocalizations {
   /// **'XFS journaling file system'**
   String get partitionFormatXfs;
 
+  /// No description provided for @partitionFormatFat.
+  ///
+  /// In en_US, this message translates to:
+  /// **'FAT file system'**
+  String get partitionFormatFat;
+
+  /// No description provided for @partitionFormatFat12.
+  ///
+  /// In en_US, this message translates to:
+  /// **'FAT12 file system'**
+  String get partitionFormatFat12;
+
   /// No description provided for @partitionFormatFat16.
   ///
   /// In en_US, this message translates to:
@@ -741,32 +753,38 @@ abstract class AppLocalizations {
   /// No description provided for @partitionFormatSwap.
   ///
   /// In en_US, this message translates to:
-  /// **'swap area'**
+  /// **'Swap area'**
   String get partitionFormatSwap;
 
-  /// No description provided for @partitionFormatBios.
+  /// No description provided for @partitionFormatIso9660.
   ///
   /// In en_US, this message translates to:
-  /// **'Reserved BIOS boot area'**
-  String get partitionFormatBios;
+  /// **'ISO 9660 file system'**
+  String get partitionFormatIso9660;
 
-  /// No description provided for @partitionFormatEfi.
+  /// No description provided for @partitionFormatVfat.
   ///
   /// In en_US, this message translates to:
-  /// **'EFI System Partition'**
-  String get partitionFormatEfi;
+  /// **'VFAT file system'**
+  String get partitionFormatVfat;
 
-  /// No description provided for @partitionFormatPhysical.
+  /// No description provided for @partitionFormatNtfs.
   ///
   /// In en_US, this message translates to:
-  /// **'physical volume for encryption'**
-  String get partitionFormatPhysical;
+  /// **'NTFS file system'**
+  String get partitionFormatNtfs;
 
-  /// No description provided for @partitionFormatNone.
+  /// No description provided for @partitionFormatReiserFS.
   ///
   /// In en_US, this message translates to:
-  /// **'do not use the partition'**
-  String get partitionFormatNone;
+  /// **'ReiserFS file system'**
+  String get partitionFormatReiserFS;
+
+  /// No description provided for @partitionFormatZfsroot.
+  ///
+  /// In en_US, this message translates to:
+  /// **'ZFS root file system'**
+  String get partitionFormatZfsroot;
 
   /// No description provided for @partitionErase.
   ///
@@ -912,23 +930,17 @@ abstract class AppLocalizations {
   /// **'The following partitions are going to be formatted:'**
   String get writeChangesPartitionsHeader;
 
-  /// An entry for a primary partition without secondary partitions
+  /// A mounted partition entry
   ///
   /// In en_US, this message translates to:
-  /// **'partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}'**
-  String writeChangesPartitionEntryPrimaryFull(Object partitionNumber, Object diskSerial, Object diskPath, Object fstype, Object mountPath);
+  /// **'partition #{disk}{partition} as {format} used for {mount}'**
+  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount);
 
-  /// An entry for a primary partition with secondary partitions
+  /// An unmounted partition entry
   ///
   /// In en_US, this message translates to:
-  /// **'partition #{partitionNumber} of {diskSerial} ({diskPath}) as'**
-  String writeChangesPartitionEntryPrimary(Object partitionNumber, Object diskSerial, Object diskPath);
-
-  /// An entry for a secondary partition
-  ///
-  /// In en_US, this message translates to:
-  /// **'        partition # as {fstype} used for {mountPath}'**
-  String writeChangesPartitionEntrySecondary(Object fstype, Object mountPath);
+  /// **'partition #{disk}{partition} as {format}'**
+  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format);
 
   /// No description provided for @chooseYourLookPageTitle.
   ///

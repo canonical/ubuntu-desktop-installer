@@ -15,11 +15,11 @@ import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([SelectGuidedStorageModel])
+@GenerateMocks([SelectGuidedStorageModel, UdevService])
 void main() {
   const testStorages = <Disk>[
-    Disk(id: 'a', size: 12, label: 'A'),
-    Disk(id: 'b', size: 23, label: 'B'),
+    Disk(path: '/dev/sda', size: 12),
+    Disk(path: '/dev/sdb', size: 23),
   ];
 
   SelectGuidedStorageModel buildModel({
@@ -35,9 +35,18 @@ void main() {
   }
 
   Widget buildPage(SelectGuidedStorageModel model) {
-    return ChangeNotifierProvider<SelectGuidedStorageModel>.value(
-      value: model,
-      child: SelectGuidedStoragePage(),
+    final udev = MockUdevService();
+    when(udev.modelName('sda')).thenReturn('SDA');
+    when(udev.modelName('sdb')).thenReturn('SDB');
+    when(udev.vendorName('sda')).thenReturn('ATA');
+    when(udev.vendorName('sdb')).thenReturn('ATA');
+
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<SelectGuidedStorageModel>.value(value: model),
+        Provider<UdevService>.value(value: udev),
+      ],
+      child: const SelectGuidedStoragePage(),
     );
   }
 
@@ -62,7 +71,7 @@ void main() {
       expect(
         find.descendant(
           of: find.byTypeOf<DropdownButton<int>>(),
-          matching: find.textContaining(storage.id!),
+          matching: find.textContaining(storage.sysname.toUpperCase()),
         ),
         findsOneWidget,
       );
@@ -93,8 +102,7 @@ void main() {
       selectedStorage: selectedStorage,
     );
     await tester.pumpWidget(buildApp(tester, model));
-    // in the dropdown and on the page
-    expect(find.text(selectedStorage.id!), findsNWidgets(2));
+    expect(find.text(selectedStorage.path!), findsOneWidget);
     expect(find.text(filesize(selectedStorage.size)), findsOneWidget);
   });
 
