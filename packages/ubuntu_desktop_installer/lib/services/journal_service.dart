@@ -4,8 +4,13 @@ import 'dart:io';
 
 /// Provides `journalctl` output.
 class JournalService {
+  /// Creates the service. Optionally, the output can be limited to a specific
+  /// systemd unit.
+  JournalService(this._unit);
+
   Process? _process;
   final _controller = StreamController<String>.broadcast();
+  final String? _unit;
 
   /// The output stream of lines from the `journalctl` command.
   Stream<String> get stream => _controller.stream;
@@ -15,7 +20,12 @@ class JournalService {
     if (_process != null) return;
     _process = await Process.start(
       'journalctl',
-      ['--follow', '--no-pager'],
+      [
+        '--follow',
+        '--no-pager',
+        '--no-tail',
+        if (_unit != null) ...['--unit', _unit!],
+      ],
       environment: {'SYSTEMD_COLORS': '0'},
     );
     _process!.stdout

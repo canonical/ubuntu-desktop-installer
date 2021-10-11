@@ -6,6 +6,8 @@ import 'package:ubuntu_wizard/app.dart';
 import 'installer.dart';
 import 'services.dart';
 
+const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
+
 void main(List<String> args) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
@@ -31,7 +33,7 @@ void main(List<String> args) {
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => HostnameService()),
-      Provider(create: (_) => JournalService()),
+      Provider(create: (_) => JournalService(_kSystemdUnit)),
       Provider(create: (_) => KeyboardService()),
     ],
     variant: Variant.DESKTOP,
