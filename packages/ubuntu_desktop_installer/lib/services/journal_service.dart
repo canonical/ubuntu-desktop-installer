@@ -23,8 +23,7 @@ class JournalService {
       [
         '--follow',
         '--no-pager',
-        '--no-tail',
-        if (_unit != null) ...['--unit', _unit!],
+        if (_unit != null) ...['--no-tail', '--unit', _unit!],
       ],
       environment: {'SYSTEMD_COLORS': '0'},
     );
