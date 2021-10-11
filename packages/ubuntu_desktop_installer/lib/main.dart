@@ -19,6 +19,8 @@ void main(List<String> args) {
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
+  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+
   runWizardApp(
     UbuntuDesktopInstallerApp(initialRoute: options['initial-route']),
     options: options,
@@ -33,7 +35,7 @@ void main(List<String> args) {
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => HostnameService()),
-      Provider(create: (_) => JournalService(_kSystemdUnit)),
+      Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
     ],
     variant: Variant.DESKTOP,
