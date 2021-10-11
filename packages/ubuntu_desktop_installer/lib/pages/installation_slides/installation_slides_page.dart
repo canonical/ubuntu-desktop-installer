@@ -115,6 +115,7 @@ class _Slide extends StatelessWidget {
       children: <Widget>[
         AppBar(
           title: Text(title),
+          automaticallyImplyLeading: false,
         ),
         Image.asset(
           _getAssetFile(asset),
