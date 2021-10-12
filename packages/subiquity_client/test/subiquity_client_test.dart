@@ -340,23 +340,15 @@ void main() {
     });
 
     test('timezone', () async {
-      final systemTimezone =
-          Process.runSync('timedatectl', ['show', '-p', 'Timezone', '--value'])
-              .stdout
-              .toString()
-              .trim();
+      await _client.setTimezone('Pacific/Guam');
       var tzdata = await _client.timezone();
-      expect(tzdata.timezone, systemTimezone);
+      expect(tzdata.timezone, 'Pacific/Guam');
+      expect(tzdata.fromGeoIP, isFalse);
 
-      try {
-        await _client.setTimezone('Pacific/Guam');
-        tzdata = await _client.timezone();
-        expect(tzdata.timezone, 'Pacific/Guam');
-        expect(tzdata.fromGeoIP, isFalse);
-      } finally {
-        // Restore initial timezone to leave the test system in a clean state
-        await _client.setTimezone(systemTimezone);
-      }
+      await _client.setTimezone('geoip');
+      tzdata = await _client.timezone();
+      expect(tzdata.timezone, isNotNull);
+      expect(tzdata.fromGeoIP, isTrue);
     });
 
     test('ssh', () async {
