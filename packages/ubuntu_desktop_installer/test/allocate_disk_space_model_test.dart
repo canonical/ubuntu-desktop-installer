@@ -14,7 +14,7 @@ void main() {
     ]),
     Disk(
       id: 'b',
-      grubDevice: true,
+      bootDevice: true,
       preserve: true,
       partitions: [
         Partition(number: 1),
@@ -149,8 +149,8 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.addBootPartition(any)).thenAnswer((_) async {
       return [
-        testDisks.first.copyWith(grubDevice: true),
-        testDisks.last.copyWith(grubDevice: true),
+        testDisks.first.copyWith(bootDevice: true),
+        testDisks.last.copyWith(bootDevice: true),
       ];
     });
 

@@ -208,6 +208,7 @@ class Partition with _$Partition {
 
 @freezed
 class Disk with _$Disk {
+  @JsonSerializable(explicitToJson: true)
   const factory Disk({
     String? id,
     String? label,
@@ -220,7 +221,7 @@ class Disk with _$Disk {
     @JsonKey(name: 'ok_for_guided') bool? okForGuided,
     String? ptable,
     bool? preserve,
-    @JsonKey(name: 'grub_device') bool? grubDevice,
+    @JsonKey(name: 'boot_device') bool? bootDevice,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);

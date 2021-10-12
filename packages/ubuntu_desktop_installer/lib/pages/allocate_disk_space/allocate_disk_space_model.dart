@@ -217,7 +217,7 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
 
   /// Selects the specified boot disk.
   void selectBootDisk(int diskIndex) {
-    if (_bootDiskIndex == diskIndex || disks[diskIndex].grubDevice == true) {
+    if (_bootDiskIndex == diskIndex || disks[diskIndex].bootDevice == true) {
       return;
     }
     _bootDiskIndex = diskIndex;
@@ -250,7 +250,7 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     if (_selectedDiskIndex == -1 || _selectedDiskIndex >= disks.length) {
       selectStorage(disks.isEmpty ? -1 : 0);
     }
-    _bootDiskIndex = disks.indexWhere((disk) => disk.grubDevice == true);
+    _bootDiskIndex = disks.indexWhere((disk) => disk.bootDevice == true);
     notifyListeners();
   }
 

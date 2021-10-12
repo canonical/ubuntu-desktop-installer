@@ -549,5 +549,5 @@ void main() {
       expect(conf.interopEnabled, false);
       expect(conf.interopAppendwindowspath, false);
     });
-  }, skip: true); // TODO: dbungert:fr-1710-storage-v2-part2 needs rebasing
+  });
 }

@@ -312,7 +312,7 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     okForGuided: json['ok_for_guided'] as bool?,
     ptable: json['ptable'] as String?,
     preserve: json['preserve'] as bool?,
-    grubDevice: json['grub_device'] as bool?,
+    bootDevice: json['boot_device'] as bool?,
   );
 }
 
@@ -323,12 +323,12 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
-      'partitions': instance.partitions,
+      'partitions': instance.partitions?.map((e) => e.toJson()).toList(),
       'free_for_partitions': instance.freeForPartitions,
       'ok_for_guided': instance.okForGuided,
       'ptable': instance.ptable,
       'preserve': instance.preserve,
-      'grub_device': instance.grubDevice,
+      'boot_device': instance.bootDevice,
     };
 
 _$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {
