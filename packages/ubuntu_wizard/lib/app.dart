@@ -19,6 +19,10 @@ import 'utils.dart';
 /// @internal
 final log = Logger(_appName);
 
+/// The signature of a callback for initializing the Subiquity [client], which
+/// is called when the server connection has been established.
+typedef SubiquityInitCallback = void Function(SubiquityClient client);
+
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client] and server may be overridden for building
@@ -27,8 +31,8 @@ Future<void> runWizardApp(
   Widget app, {
   ArgResults? options,
   required SubiquityClient subiquityClient,
-  required Variant variant,
   required SubiquityServer subiquityServer,
+  SubiquityInitCallback? onInitSubiquity,
   List<String>? serverArgs,
   List<SingleChildWidget>? providers,
 }) async {
@@ -49,7 +53,7 @@ Future<void> runWizardApp(
       .start(serverMode, serverArgs)
       .then(subiquityClient.open);
 
-  subiquityClient.setVariant(variant);
+  onInitSubiquity?.call(subiquityClient);
 
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
@@ -60,7 +64,6 @@ Future<void> runWizardApp(
     'ssh',
     'snaplist',
   ]);
-  subiquityClient.setTimezone('geoip');
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();

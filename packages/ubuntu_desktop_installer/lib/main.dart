@@ -33,6 +33,9 @@ void main(List<String> args) {
       Provider(create: (_) => HostnameService()),
       Provider(create: (_) => KeyboardService()),
     ],
-    variant: Variant.DESKTOP,
+    onInitSubiquity: (client) {
+      client.setVariant(Variant.DESKTOP);
+      client.setTimezone('geoip');
+    },
   );
 }

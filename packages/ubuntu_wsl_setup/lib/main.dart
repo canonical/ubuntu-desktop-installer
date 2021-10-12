@@ -20,6 +20,6 @@ void main(List<String> args) {
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
-    variant: variant,
+    onInitSubiquity: (client) => client.setVariant(variant),
   );
 }
