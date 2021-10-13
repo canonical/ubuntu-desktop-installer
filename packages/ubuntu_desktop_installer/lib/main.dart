@@ -37,6 +37,7 @@ void main(List<String> args) {
       Provider(create: (_) => HostnameService()),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
+      Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {
       client.setVariant(Variant.DESKTOP);

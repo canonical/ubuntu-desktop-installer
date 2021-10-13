@@ -2806,7 +2806,7 @@ class _$DiskTearOff {
       @JsonKey(name: 'ok_for_guided') bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'grub_device') bool? grubDevice}) {
+      @JsonKey(name: 'boot_device') bool? bootDevice}) {
     return _Disk(
       id: id,
       label: label,
@@ -2819,7 +2819,7 @@ class _$DiskTearOff {
       okForGuided: okForGuided,
       ptable: ptable,
       preserve: preserve,
-      grubDevice: grubDevice,
+      bootDevice: bootDevice,
     );
   }
 
@@ -2847,8 +2847,8 @@ mixin _$Disk {
   bool? get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
-  @JsonKey(name: 'grub_device')
-  bool? get grubDevice => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boot_device')
+  bool? get bootDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2871,7 +2871,7 @@ abstract class $DiskCopyWith<$Res> {
       @JsonKey(name: 'ok_for_guided') bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'grub_device') bool? grubDevice});
+      @JsonKey(name: 'boot_device') bool? bootDevice});
 }
 
 /// @nodoc
@@ -2895,7 +2895,7 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
-    Object? grubDevice = freezed,
+    Object? bootDevice = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -2942,9 +2942,9 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool?,
-      grubDevice: grubDevice == freezed
-          ? _value.grubDevice
-          : grubDevice // ignore: cast_nullable_to_non_nullable
+      bootDevice: bootDevice == freezed
+          ? _value.bootDevice
+          : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -2967,7 +2967,7 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       @JsonKey(name: 'ok_for_guided') bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'grub_device') bool? grubDevice});
+      @JsonKey(name: 'boot_device') bool? bootDevice});
 }
 
 /// @nodoc
@@ -2992,7 +2992,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
-    Object? grubDevice = freezed,
+    Object? bootDevice = freezed,
   }) {
     return _then(_Disk(
       id: id == freezed
@@ -3039,16 +3039,17 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool?,
-      grubDevice: grubDevice == freezed
-          ? _value.grubDevice
-          : grubDevice // ignore: cast_nullable_to_non_nullable
+      bootDevice: bootDevice == freezed
+          ? _value.bootDevice
+          : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Disk implements _Disk {
   const _$_Disk(
       {this.id,
@@ -3062,7 +3063,7 @@ class _$_Disk implements _Disk {
       @JsonKey(name: 'ok_for_guided') this.okForGuided,
       this.ptable,
       this.preserve,
-      @JsonKey(name: 'grub_device') this.grubDevice});
+      @JsonKey(name: 'boot_device') this.bootDevice});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -3093,12 +3094,12 @@ class _$_Disk implements _Disk {
   @override
   final bool? preserve;
   @override
-  @JsonKey(name: 'grub_device')
-  final bool? grubDevice;
+  @JsonKey(name: 'boot_device')
+  final bool? bootDevice;
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, grubDevice: $grubDevice)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice)';
   }
 
   @override
@@ -3132,9 +3133,9 @@ class _$_Disk implements _Disk {
             (identical(other.preserve, preserve) ||
                 const DeepCollectionEquality()
                     .equals(other.preserve, preserve)) &&
-            (identical(other.grubDevice, grubDevice) ||
+            (identical(other.bootDevice, bootDevice) ||
                 const DeepCollectionEquality()
-                    .equals(other.grubDevice, grubDevice)));
+                    .equals(other.bootDevice, bootDevice)));
   }
 
   @override
@@ -3151,7 +3152,7 @@ class _$_Disk implements _Disk {
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
       const DeepCollectionEquality().hash(preserve) ^
-      const DeepCollectionEquality().hash(grubDevice);
+      const DeepCollectionEquality().hash(bootDevice);
 
   @JsonKey(ignore: true)
   @override
@@ -3177,7 +3178,7 @@ abstract class _Disk implements Disk {
       @JsonKey(name: 'ok_for_guided') bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'grub_device') bool? grubDevice}) = _$_Disk;
+      @JsonKey(name: 'boot_device') bool? bootDevice}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -3207,8 +3208,8 @@ abstract class _Disk implements Disk {
   @override
   bool? get preserve => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'grub_device')
-  bool? get grubDevice => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boot_device')
+  bool? get bootDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;

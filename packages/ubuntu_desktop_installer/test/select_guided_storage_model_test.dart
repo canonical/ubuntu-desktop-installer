@@ -59,6 +59,15 @@ void main() {
     expect(model.selectedStorage, equals(testStorages[1]));
   });
 
+  test('reset guided storage', () async {
+    final service = MockDiskStorageService();
+    when(service.resetGuidedStorage()).thenAnswer((_) async => testStorages);
+
+    final model = SelectGuidedStorageModel(service);
+    await model.resetGuidedStorage();
+    verify(service.resetGuidedStorage()).called(1);
+  });
+
   test('notify changes', () {
     final model = SelectGuidedStorageModel(MockDiskStorageService());
     expect(model.selectedIndex, isZero);

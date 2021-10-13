@@ -82,8 +82,11 @@ class InstallationTypeModel extends ChangeNotifier {
     // });
   }
 
+  /// Saves the installation type selection and applies the guide storage
+  /// if appropriate (single guided storage).
   Future<void> save() async {
-    if (!_service.hasMultipleDisks) {
+    if (!_service.hasMultipleDisks &&
+        _installationType == InstallationType.erase) {
       await _service.setGuidedStorage();
     }
   }
