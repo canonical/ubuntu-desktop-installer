@@ -13,7 +13,7 @@ enum ServerMode { LIVE, DRY_RUN }
 final log = Logger('subiquity_server');
 
 abstract class SubiquityServer {
-  late Process _serverProcess;
+  Process? _serverProcess;
 
   SubiquityServer._();
 
@@ -94,9 +94,9 @@ abstract class SubiquityServer {
       stderr.addStream(process.stderr);
       return process;
     });
-    log.info('Starting server (PID: ${_serverProcess.pid})');
+    log.info('Starting server (PID: ${_serverProcess!.pid})');
 
-    await _writePidFile(_serverProcess.pid);
+    await _writePidFile(_serverProcess!.pid);
   }
 
   static Future<void> _waitSubiquity(String socketPath) async {
@@ -142,8 +142,8 @@ abstract class SubiquityServer {
     try {
       await _pidFile().delete();
     } on FileSystemException catch (_) {}
-    _serverProcess.kill();
-    await _serverProcess.exitCode;
+    _serverProcess?.kill();
+    await _serverProcess?.exitCode;
   }
 }
 
