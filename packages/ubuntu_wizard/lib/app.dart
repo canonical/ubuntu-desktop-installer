@@ -19,6 +19,10 @@ import 'utils.dart';
 /// @internal
 final log = Logger(_appName);
 
+bool isLiveRun(ArgResults? options) {
+  return options != null && options['dry-run'] != true;
+}
+
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client] and server may be overridden for building
@@ -41,9 +45,7 @@ Future<void> runWizardApp(
     );
   }
 
-  final serverMode = options == null || options['dry-run'] == true
-      ? ServerMode.DRY_RUN
-      : ServerMode.LIVE;
+  final serverMode = isLiveRun(options) ? ServerMode.LIVE : ServerMode.DRY_RUN;
 
   await subiquityServer
       .start(serverMode, serverArgs)

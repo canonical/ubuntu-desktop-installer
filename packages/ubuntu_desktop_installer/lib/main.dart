@@ -6,6 +6,8 @@ import 'package:ubuntu_wizard/app.dart';
 import 'installer.dart';
 import 'services.dart';
 
+const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
+
 void main(List<String> args) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
@@ -16,6 +18,8 @@ void main(List<String> args) {
 
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
+
+  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
   runWizardApp(
     UbuntuDesktopInstallerApp(initialRoute: options['initial-route']),
@@ -31,6 +35,7 @@ void main(List<String> args) {
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => HostnameService()),
+      Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
     ],
     variant: Variant.DESKTOP,
