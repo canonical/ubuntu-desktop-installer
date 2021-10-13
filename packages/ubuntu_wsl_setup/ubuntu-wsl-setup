@@ -590,4 +590,15 @@ export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 # Needed for flutter
 export LIVE_RUN=1
 
-exec $SNAP/usr/libexec/ubuntu_wsl_setup $@
+BIN=$SNAP/usr/libexec/ubuntu_wsl_setup
+args=""
+for arg in $@; do
+  if [ ${arg} = "-t" -o ${arg} = "--text" ]; then
+    BIN="$PYTHON -m system_setup.cmd.tui"
+    continue
+  fi
+
+  args="$args $arg"
+done
+
+exec $BIN $args

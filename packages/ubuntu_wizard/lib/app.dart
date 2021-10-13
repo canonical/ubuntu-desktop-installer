@@ -23,6 +23,10 @@ final log = Logger(_appName);
 /// is called when the server connection has been established.
 typedef SubiquityInitCallback = void Function(SubiquityClient client);
 
+bool isLiveRun(ArgResults? options) {
+  return options != null && options['dry-run'] != true;
+}
+
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client] and server may be overridden for building
@@ -45,9 +49,7 @@ Future<void> runWizardApp(
     );
   }
 
-  final serverMode = options == null || options['dry-run'] == true
-      ? ServerMode.DRY_RUN
-      : ServerMode.LIVE;
+  final serverMode = isLiveRun(options) ? ServerMode.LIVE : ServerMode.DRY_RUN;
 
   await subiquityServer
       .start(serverMode, serverArgs)
