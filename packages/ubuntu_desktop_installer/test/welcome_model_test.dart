@@ -12,6 +12,8 @@ import 'welcome_model_test.mocks.dart';
 
 @GenerateMocks([KeyboardService])
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   test('load keyboard model', () async {
     final client = MockSubiquityClient();
     final keyboard = MockKeyboardService();
@@ -57,7 +59,7 @@ void main() {
     expect(model.selectedLanguageIndex, equals(0));
 
     model.selectLocale(Locale('foo'));
-    expect(model.selectedLanguageIndex, equals(0));
+    expect(model.selectedLanguageIndex, equals(5));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);

@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -39,8 +41,8 @@ class WelcomeModel extends ChangeNotifier {
   /// Loads available languages.
   Future<void> loadLanguages() async {
     assert(_languageList.isEmpty);
-    final languages =
-        await loadLocalizedLanguages(AppLocalizations.supportedLocales);
+    final languages = loadSubiquityLanguages(
+        await rootBundle.loadString('subiquity/languagelist', cache: false));
     _languageList.addAll(languages);
     log.info('Loaded ${languages.length} languages');
     notifyListeners();
@@ -66,7 +68,8 @@ class WelcomeModel extends ChangeNotifier {
   int get languageCount => _languageList.length;
 
   /// Returns the name of the language at the given [index].
-  String language(int index) => _languageList[index].name;
+  String language(int index) =>
+      _languageList.elementAtOrNull(index)?.name ?? '';
 
   /// Selects the best match for the given [locale].
   ///

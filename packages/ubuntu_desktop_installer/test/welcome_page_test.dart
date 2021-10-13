@@ -63,7 +63,7 @@ void main() {
         find.descendant(of: languageList, matching: find.byType(ListTile));
     expect(listItems, findsWidgets);
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
-    for (final language in ['English', 'Français', 'Italiano']) {
+    for (final language in ['English', 'Français', 'Español']) {
       expect(find.descendant(of: languageList, matching: find.text(language)),
           findsOneWidget);
     }

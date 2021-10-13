@@ -46,3 +46,4 @@ flutter:
   assets:
     - assets/
     - assets/slides/
+    - subiquity/languagelist
