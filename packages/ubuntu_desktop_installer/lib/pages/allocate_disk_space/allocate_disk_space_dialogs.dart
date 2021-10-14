@@ -175,7 +175,7 @@ class _PartitionSizeBox extends StatelessWidget {
               child: DropdownBuilder<DataUnit>(
                 values: DataUnit.values,
                 selected: unit.value,
-                onSelected: (value) => unit.value = value,
+                onSelected: (value) => unit.value = value!,
                 itemBuilder: (context, unit, _) {
                   return Text(unit.localize(context), key: ValueKey(unit));
                 },

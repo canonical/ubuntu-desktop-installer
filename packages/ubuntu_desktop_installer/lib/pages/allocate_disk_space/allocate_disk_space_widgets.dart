@@ -396,7 +396,7 @@ class BootDiskSelector extends StatelessWidget {
           child: DropdownBuilder<int>(
             values: List.generate(model.disks.length, (index) => index),
             selected: model.bootDiskIndex,
-            onSelected: model.selectBootDisk,
+            onSelected: (index) => model.selectBootDisk(index!),
             itemBuilder: (context, index, _) {
               return Text(
                 prettyFormatDisk(model.disks[index]),
