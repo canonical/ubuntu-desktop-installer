@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
@@ -111,7 +109,7 @@ void main() {
     });
 
     test('guided storage', () async {
-      var gs = await _client.getGuidedStorage(true);
+      var gs = await _client.getGuidedStorage();
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
 
@@ -147,7 +145,7 @@ void main() {
     });
 
     test('set guided storage v2', () async {
-      final guided = await _client.getGuidedStorage(true);
+      final guided = await _client.getGuidedStorage();
       expect(guided.disks, isNotEmpty);
 
       final choice = GuidedChoice(

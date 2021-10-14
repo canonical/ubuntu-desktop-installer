@@ -236,8 +236,9 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       (super.noSuchMethod(Invocation.method(#hasBitLocker, []),
           returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
   @override
-  _i5.Future<_i3.GuidedStorageResponse> getGuidedStorage(bool? wait) =>
-      (super.noSuchMethod(Invocation.method(#getGuidedStorage, [wait]),
+  _i5.Future<_i3.GuidedStorageResponse> getGuidedStorage({bool? wait = true}) =>
+      (super.noSuchMethod(
+              Invocation.method(#getGuidedStorage, [], {#wait: wait}),
               returnValue: Future<_i3.GuidedStorageResponse>.value(
                   _FakeGuidedStorageResponse_7()))
           as _i5.Future<_i3.GuidedStorageResponse>);

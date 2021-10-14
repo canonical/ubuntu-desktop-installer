@@ -274,7 +274,7 @@ class SubiquityClient {
   }
 
   /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage(bool wait) async {
+  Future<GuidedStorageResponse> getGuidedStorage({bool wait = true}) async {
     final request = Request(
         'GET', Uri.http('localhost', 'storage/guided', {'wait': '$wait'}));
     final response = await _send(request);
