@@ -18,7 +18,7 @@ mixin SystemShutdown {
   /// The [immediate] argument should be `true` if the system should be rebooted
   /// immediately before the installation has finished.
   Future<void> reboot({required bool immediate}) {
-    log.info('request reboot');
+    log.info('request reboot (immediate: $immediate)');
     return client.reboot(immediate: immediate).then((_) => closeWindow());
   }
 
@@ -27,7 +27,7 @@ mixin SystemShutdown {
   /// The [immediate] argument should be `true` if the system should be shut
   /// down immediately before the installation has finished.
   Future<void> shutdown({required bool immediate}) {
-    log.info('request shutdown');
+    log.info('request shutdown (immediate: $immediate)');
     return client.shutdown(immediate: immediate).then((_) => closeWindow());
   }
 }
