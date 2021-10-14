@@ -26,9 +26,13 @@ void main() {
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
+    when(client.getGuidedStorage(true))
+        .thenAnswer((_) async => GuidedStorageResponse());
+    when(client.isOpen).thenAnswer((_) async => true);
 
     await tester.pumpWidget(MultiProvider(providers: [
       Provider<SubiquityClient>.value(value: client),
+      Provider(create: (context) => DiskStorageService(client)),
       Provider(create: (context) => KeyboardService()),
       ChangeNotifierProvider(create: (_) => Settings(MockGSettings())),
     ], child: UbuntuDesktopInstallerApp()));

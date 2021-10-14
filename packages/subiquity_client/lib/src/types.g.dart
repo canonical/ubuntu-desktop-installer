@@ -108,10 +108,10 @@ Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
 
 _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
   return _$_IdentityData(
-    realname: json['realname'] as String?,
-    username: json['username'] as String?,
+    realname: json['realname'] as String? ?? '',
+    username: json['username'] as String? ?? '',
     cryptedPassword: json['crypted_password'] as String?,
-    hostname: json['hostname'] as String?,
+    hostname: json['hostname'] as String? ?? '',
   );
 }
 
@@ -271,9 +271,15 @@ _$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
   return _$_Partition(
     size: json['size'] as int?,
     number: json['number'] as int?,
+    wipe: _wipeFromString(json['wipe'] as String?),
+    preserve: json['preserve'] as bool?,
     annotations: (json['annotations'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
+            ?.map((e) => e as String)
+            .toList() ??
+        [],
+    mount: json['mount'] as String?,
+    format: json['format'] as String?,
+    grubDevice: json['grub_device'] as bool?,
   );
 }
 
@@ -281,13 +287,19 @@ Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
     <String, dynamic>{
       'size': instance.size,
       'number': instance.number,
+      'wipe': _wipeToString(instance.wipe),
+      'preserve': instance.preserve,
       'annotations': instance.annotations,
+      'mount': instance.mount,
+      'format': instance.format,
+      'grub_device': instance.grubDevice,
     };
 
 _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
   return _$_Disk(
     id: json['id'] as String?,
     label: json['label'] as String?,
+    path: json['path'] as String?,
     type: json['type'] as String?,
     size: json['size'] as int?,
     usageLabels: (json['usage_labels'] as List<dynamic>?)
@@ -296,18 +308,27 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     partitions: (json['partitions'] as List<dynamic>?)
         ?.map((e) => Partition.fromJson(e as Map<String, dynamic>))
         .toList(),
+    freeForPartitions: json['free_for_partitions'] as int?,
     okForGuided: json['ok_for_guided'] as bool?,
+    ptable: json['ptable'] as String?,
+    preserve: json['preserve'] as bool?,
+    bootDevice: json['boot_device'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'id': instance.id,
       'label': instance.label,
+      'path': instance.path,
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
-      'partitions': instance.partitions,
+      'partitions': instance.partitions?.map((e) => e.toJson()).toList(),
+      'free_for_partitions': instance.freeForPartitions,
       'ok_for_guided': instance.okForGuided,
+      'ptable': instance.ptable,
+      'preserve': instance.preserve,
+      'boot_device': instance.bootDevice,
     };
 
 _$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {
@@ -384,23 +405,45 @@ const _$BootloaderEnumMap = {
   Bootloader.PREP: 'PREP',
 };
 
+_$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
+  return _$_StorageResponseV2(
+    disks: (json['disks'] as List<dynamic>?)
+        ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    needRoot: json['need_root'] as bool?,
+    needBoot: json['need_boot'] as bool?,
+    errorReport: json['error_report'] == null
+        ? null
+        : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$_StorageResponseV2ToJson(
+        _$_StorageResponseV2 instance) =>
+    <String, dynamic>{
+      'disks': instance.disks,
+      'need_root': instance.needRoot,
+      'need_boot': instance.needBoot,
+      'error_report': instance.errorReport,
+    };
+
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {
   return _$_WSLConfigurationBase(
-    customPath: json['custom_path'] as String?,
-    customMountOpt: json['custom_mount_opt'] as String?,
-    genHost: json['gen_host'] as bool?,
-    genResolvconf: json['gen_resolvconf'] as bool?,
+    automountRoot: json['automount_root'] as String?,
+    automountOptions: json['automount_options'] as String?,
+    networkGeneratehosts: json['network_generatehosts'] as bool?,
+    networkGenerateresolvconf: json['network_generateresolvconf'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
         _$_WSLConfigurationBase instance) =>
     <String, dynamic>{
-      'custom_path': instance.customPath,
-      'custom_mount_opt': instance.customMountOpt,
-      'gen_host': instance.genHost,
-      'gen_resolvconf': instance.genResolvconf,
+      'automount_root': instance.automountRoot,
+      'automount_options': instance.automountOptions,
+      'network_generatehosts': instance.networkGeneratehosts,
+      'network_generateresolvconf': instance.networkGenerateresolvconf,
     };
 
 _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
@@ -408,12 +451,12 @@ _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
   return _$_WSLConfigurationAdvanced(
     guiTheme: json['gui_theme'] as String?,
     guiFollowwintheme: json['gui_followwintheme'] as bool?,
-    legacyGui: json['legacy_gui'] as bool?,
-    legacyAudio: json['legacy_audio'] as bool?,
-    advIpDetect: json['adv_ip_detect'] as bool?,
-    wslMotdNews: json['wsl_motd_news'] as bool?,
-    automount: json['automount'] as bool?,
-    mountfstab: json['mountfstab'] as bool?,
+    interopGuiintegration: json['interop_guiintegration'] as bool?,
+    interopAudiointegration: json['interop_audiointegration'] as bool?,
+    interopAdvancedipdetection: json['interop_advancedipdetection'] as bool?,
+    motdWSLnewsenabled: json['motd_wslnewsenabled'] as bool?,
+    automountEnabled: json['automount_enabled'] as bool?,
+    automountMountfstab: json['automount_mountfstab'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
     interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
   );
@@ -424,12 +467,12 @@ Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
     <String, dynamic>{
       'gui_theme': instance.guiTheme,
       'gui_followwintheme': instance.guiFollowwintheme,
-      'legacy_gui': instance.legacyGui,
-      'legacy_audio': instance.legacyAudio,
-      'adv_ip_detect': instance.advIpDetect,
-      'wsl_motd_news': instance.wslMotdNews,
-      'automount': instance.automount,
-      'mountfstab': instance.mountfstab,
+      'interop_guiintegration': instance.interopGuiintegration,
+      'interop_audiointegration': instance.interopAudiointegration,
+      'interop_advancedipdetection': instance.interopAdvancedipdetection,
+      'motd_wslnewsenabled': instance.motdWSLnewsenabled,
+      'automount_enabled': instance.automountEnabled,
+      'automount_mountfstab': instance.automountMountfstab,
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
     };

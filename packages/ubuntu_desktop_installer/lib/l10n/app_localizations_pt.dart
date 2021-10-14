@@ -220,6 +220,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
 
   @override
+  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
+
+  @override
+  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+
+  @override
+  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+
+  @override
+  String get selectGuidedStorageInstallNow => 'Install Now';
+
+  @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
@@ -316,25 +328,34 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
+  String get partitionFormatFat => 'FAT file system';
+
+  @override
+  String get partitionFormatFat12 => 'FAT12 file system';
+
+  @override
   String get partitionFormatFat16 => 'FAT16 file system';
 
   @override
   String get partitionFormatFat32 => 'FAT32 file system';
 
   @override
-  String get partitionFormatSwap => 'swap area';
+  String get partitionFormatSwap => 'Swap area';
 
   @override
-  String get partitionFormatBios => 'Reserved BIOS boot area';
+  String get partitionFormatIso9660 => 'ISO 9660 file system';
 
   @override
-  String get partitionFormatEfi => 'EFI System Partition';
+  String get partitionFormatVfat => 'VFAT file system';
 
   @override
-  String get partitionFormatPhysical => 'physical volume for encryption';
+  String get partitionFormatNtfs => 'NTFS file system';
 
   @override
-  String get partitionFormatNone => 'do not use the partition';
+  String get partitionFormatReiserFS => 'ReiserFS file system';
+
+  @override
+  String get partitionFormatZfsroot => 'ZFS root file system';
 
   @override
   String get partitionErase => 'Format the partition';
@@ -411,18 +432,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
 
   @override
-  String writeChangesPartitionEntryPrimaryFull(Object partitionNumber, Object diskSerial, Object diskPath, Object fstype, Object mountPath) {
-    return 'partition #$partitionNumber of $diskSerial ($diskPath) as $fstype used for $mountPath';
+  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} as $format used for $mount';
   }
 
   @override
-  String writeChangesPartitionEntryPrimary(Object partitionNumber, Object diskSerial, Object diskPath) {
-    return 'partition #$partitionNumber of $diskSerial ($diskPath) as';
-  }
-
-  @override
-  String writeChangesPartitionEntrySecondary(Object fstype, Object mountPath) {
-    return '        partition # as $fstype used for $mountPath';
+  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} as $format';
   }
 
   @override

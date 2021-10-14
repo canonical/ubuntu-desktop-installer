@@ -7,7 +7,8 @@ on:
   pull_request:
     branches:
       - main
-    
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -77,24 +78,8 @@ jobs:
     - name: Check for any analyzer issues
       run: melos run analyze
 
-    - name: Check for any code generation issues
-      run: melos run generate
-
-    - name: Check for any l10n generation issues
-      run: melos run gen-l10n
-
-    - name: Detect changes in generated files
-      run: |
-        if [ -n "$(git status --porcelain)" ]; then
-          echo "WARNING: the following generated files may be outdated or untracked:"
-          git status --porcelain
-          git diff
-          exit 1
-        fi
-
   generate:
     runs-on: ubuntu-20.04
-    if: github.event_name == 'push'
     steps:
 
     - uses: actions/checkout@v2
@@ -118,7 +103,22 @@ jobs:
     - name: Generate l10n files
       run: melos run gen-l10n
 
-    - name: Commit changes
+    - name: Warn about outdated generated files
+      if: github.event_name == 'pull_request'
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          for f in $(git ls-files --modified); do
+            echo "::warning ::$f may be outdated"
+          done
+          for f in $(git ls-files --others --exclude-standard); do
+            echo "::warning ::$f may be untracked"
+          done
+          git diff
+          exit 1
+        fi
+
+    - name: Commit outdated generated files
+      if: github.event_name == 'workflow_dispatch'
       uses: actions-js/push@master
       with:
         github_token: ${{secrets.GITHUB_TOKEN}}

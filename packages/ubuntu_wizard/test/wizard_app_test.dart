@@ -24,6 +24,7 @@ void main() {
       subiquityClient: client,
       subiquityServer: server,
       serverArgs: ['--foo', 'bar'],
+      onInitSubiquity: (client) => client.setVariant(Variant.DESKTOP),
     );
     verify(server.start(ServerMode.DRY_RUN, ['--foo', 'bar'])).called(1);
     verify(client.open('socket path')).called(1);

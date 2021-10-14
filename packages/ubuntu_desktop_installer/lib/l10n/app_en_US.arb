@@ -120,6 +120,11 @@
   "installationTypeManual": "Something else",
   "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for Ubuntu",
 
+  "selectGuidedStoragePageTitle": "Erase disk and install Ubuntu",
+  "selectGuidedStorageDropdownLabel": "Select drive:",
+  "selectGuidedStorageInfoLabel": "The entire disk will be used:",
+  "selectGuidedStorageInstallNow": "Install Now",
+
   "allocateDiskSpace": "Allocate disk space",
   "startInstallingButtonText": "Start Installing",
   "diskHeadersDevice": "Device",
@@ -153,13 +158,16 @@
   "partitionFormatBtrfs": "btrfs journaling file system",
   "partitionFormatJfs": "JFS journaling file system",
   "partitionFormatXfs": "XFS journaling file system",
+  "partitionFormatFat": "FAT file system",
+  "partitionFormatFat12": "FAT12 file system",
   "partitionFormatFat16": "FAT16 file system",
   "partitionFormatFat32": "FAT32 file system",
-  "partitionFormatSwap": "swap area",
-  "partitionFormatBios": "Reserved BIOS boot area",
-  "partitionFormatEfi": "EFI System Partition",
-  "partitionFormatPhysical": "physical volume for encryption",
-  "partitionFormatNone": "do not use the partition",
+  "partitionFormatSwap": "Swap area",
+  "partitionFormatIso9660": "ISO 9660 file system",
+  "partitionFormatVfat": "VFAT file system",
+  "partitionFormatNtfs": "NTFS file system",
+  "partitionFormatReiserFS": "ReiserFS file system",
+  "partitionFormatZfsroot": "ZFS root file system",
   "partitionErase": "Format the partition",
   "partitionMountPointLabel": "Mount point:",
 
@@ -194,32 +202,23 @@
     }
   },
   "writeChangesPartitionsHeader": "The following partitions are going to be formatted:",
-  "writeChangesPartitionEntryPrimaryFull": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as {fstype} used for {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {
-    "description": "An entry for a primary partition without secondary partitions",
+  "writeChangesPartitionEntryMounted": "partition #{disk}{partition} as {format} used for {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
     "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {},
-      "fstype": {},
-      "mountPath": {}
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
     }
   },
-  "writeChangesPartitionEntryPrimary": "partition #{partitionNumber} of {diskSerial} ({diskPath}) as",
-  "@writeChangesPartitionEntryPrimary": {
-    "description": "An entry for a primary partition with secondary partitions",
+  "writeChangesPartitionEntryUnmounted": "partition #{disk}{partition} as {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
     "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {}
-    }
-  },
-  "writeChangesPartitionEntrySecondary": "        partition # as {fstype} used for {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {
-    "description": "An entry for a secondary partition",
-    "placeholders": {
-      "fstype": {},
-      "mountPath": {}
+      "disk": {},
+      "partition": {},
+      "format": {}
     }
   },
 

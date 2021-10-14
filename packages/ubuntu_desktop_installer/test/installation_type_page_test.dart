@@ -7,6 +7,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -100,26 +101,33 @@ void main() {
     verify(model.installationType = InstallationType.manual).called(1);
   });
 
-  testWidgets('advanced features', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(buildApp(model));
+  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+  // testWidgets('advanced features', (tester) async {
+  //   final model = buildModel();
+  //   await tester.pumpWidget(buildApp(model));
 
-    final button = find.widgetWithText(
-        OutlinedButton, tester.lang.installationTypeAdvancedLabel);
-    expect(button, findsOneWidget);
-    await tester.tap(button);
-    await tester.pumpAndSettle();
+  //   final button = find.widgetWithText(
+  //       OutlinedButton, tester.lang.installationTypeAdvancedLabel);
+  //   expect(button, findsOneWidget);
+  //   await tester.tap(button);
+  //   await tester.pumpAndSettle();
 
-    expect(find.byType(AlertDialog), findsOneWidget);
-  });
+  //   expect(find.byType(AlertDialog), findsOneWidget);
+  // });
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
+    when(client.isOpen).thenAnswer((_) async => true);
+    when(client.getGuidedStorage(true))
+        .thenAnswer((_) async => GuidedStorageResponse());
 
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,
-      home: Provider<SubiquityClient>.value(
-        value: client,
+      home: MultiProvider(
+        providers: [
+          Provider<SubiquityClient>.value(value: client),
+          Provider(create: (_) => DiskStorageService(client)),
+        ],
         child: Wizard(
           routes: {'/': InstallationTypePage.create},
           onNext: (settings) => '/',

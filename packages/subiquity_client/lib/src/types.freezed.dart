@@ -1232,10 +1232,10 @@ class _$IdentityDataTearOff {
   const _$IdentityDataTearOff();
 
   _IdentityData call(
-      {String? realname,
-      String? username,
-      @JsonKey(name: 'crypted_password') String? cryptedPassword,
-      String? hostname}) {
+      {String? realname = '',
+      String? username = '',
+      @JsonKey(name: 'crypted_password') String? cryptedPassword = '',
+      String? hostname = ''}) {
     return _IdentityData(
       realname: realname,
       username: username,
@@ -1370,21 +1370,24 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_IdentityData implements _IdentityData {
   const _$_IdentityData(
-      {this.realname,
-      this.username,
-      @JsonKey(name: 'crypted_password') this.cryptedPassword,
-      this.hostname});
+      {this.realname = '',
+      this.username = '',
+      @JsonKey(name: 'crypted_password') this.cryptedPassword = '',
+      this.hostname = ''});
 
   factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
       _$_$_IdentityDataFromJson(json);
 
+  @JsonKey(defaultValue: '')
   @override
   final String? realname;
+  @JsonKey(defaultValue: '')
   @override
   final String? username;
   @override
   @JsonKey(name: 'crypted_password')
   final String? cryptedPassword;
+  @JsonKey(defaultValue: '')
   @override
   final String? hostname;
 
@@ -2463,11 +2466,24 @@ Partition _$PartitionFromJson(Map<String, dynamic> json) {
 class _$PartitionTearOff {
   const _$PartitionTearOff();
 
-  _Partition call({int? size, int? number, List<String>? annotations}) {
+  _Partition call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations = const [],
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) {
     return _Partition(
       size: size,
       number: number,
+      wipe: wipe,
+      preserve: preserve,
       annotations: annotations,
+      mount: mount,
+      format: format,
+      grubDevice: grubDevice,
     );
   }
 
@@ -2483,7 +2499,14 @@ const $Partition = _$PartitionTearOff();
 mixin _$Partition {
   int? get size => throw _privateConstructorUsedError;
   int? get number => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  bool? get wipe => throw _privateConstructorUsedError;
+  bool? get preserve => throw _privateConstructorUsedError;
   List<String>? get annotations => throw _privateConstructorUsedError;
+  String? get mount => throw _privateConstructorUsedError;
+  String? get format => throw _privateConstructorUsedError;
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2495,7 +2518,15 @@ mixin _$Partition {
 abstract class $PartitionCopyWith<$Res> {
   factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
       _$PartitionCopyWithImpl<$Res>;
-  $Res call({int? size, int? number, List<String>? annotations});
+  $Res call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2510,7 +2541,12 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
   $Res call({
     Object? size = freezed,
     Object? number = freezed,
+    Object? wipe = freezed,
+    Object? preserve = freezed,
     Object? annotations = freezed,
+    Object? mount = freezed,
+    Object? format = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_value.copyWith(
       size: size == freezed
@@ -2521,10 +2557,30 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
+      wipe: wipe == freezed
+          ? _value.wipe
+          : wipe // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
       annotations: annotations == freezed
           ? _value.annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mount: mount == freezed
+          ? _value.mount
+          : mount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -2535,7 +2591,15 @@ abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
           _Partition value, $Res Function(_Partition) then) =
       __$PartitionCopyWithImpl<$Res>;
   @override
-  $Res call({int? size, int? number, List<String>? annotations});
+  $Res call(
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice});
 }
 
 /// @nodoc
@@ -2551,7 +2615,12 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
   $Res call({
     Object? size = freezed,
     Object? number = freezed,
+    Object? wipe = freezed,
+    Object? preserve = freezed,
     Object? annotations = freezed,
+    Object? mount = freezed,
+    Object? format = freezed,
+    Object? grubDevice = freezed,
   }) {
     return _then(_Partition(
       size: size == freezed
@@ -2562,10 +2631,30 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
+      wipe: wipe == freezed
+          ? _value.wipe
+          : wipe // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
       annotations: annotations == freezed
           ? _value.annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mount: mount == freezed
+          ? _value.mount
+          : mount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String?,
+      grubDevice: grubDevice == freezed
+          ? _value.grubDevice
+          : grubDevice // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -2573,7 +2662,15 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Partition implements _Partition {
-  const _$_Partition({this.size, this.number, this.annotations});
+  const _$_Partition(
+      {this.size,
+      this.number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) this.wipe,
+      this.preserve,
+      this.annotations = const [],
+      this.mount,
+      this.format,
+      @JsonKey(name: 'grub_device') this.grubDevice});
 
   factory _$_Partition.fromJson(Map<String, dynamic> json) =>
       _$_$_PartitionFromJson(json);
@@ -2583,11 +2680,24 @@ class _$_Partition implements _Partition {
   @override
   final int? number;
   @override
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  final bool? wipe;
+  @override
+  final bool? preserve;
+  @JsonKey(defaultValue: const [])
+  @override
   final List<String>? annotations;
+  @override
+  final String? mount;
+  @override
+  final String? format;
+  @override
+  @JsonKey(name: 'grub_device')
+  final bool? grubDevice;
 
   @override
   String toString() {
-    return 'Partition(size: $size, number: $number, annotations: $annotations)';
+    return 'Partition(size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice)';
   }
 
   @override
@@ -2598,9 +2708,21 @@ class _$_Partition implements _Partition {
                 const DeepCollectionEquality().equals(other.size, size)) &&
             (identical(other.number, number) ||
                 const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.wipe, wipe) ||
+                const DeepCollectionEquality().equals(other.wipe, wipe)) &&
+            (identical(other.preserve, preserve) ||
+                const DeepCollectionEquality()
+                    .equals(other.preserve, preserve)) &&
             (identical(other.annotations, annotations) ||
                 const DeepCollectionEquality()
-                    .equals(other.annotations, annotations)));
+                    .equals(other.annotations, annotations)) &&
+            (identical(other.mount, mount) ||
+                const DeepCollectionEquality().equals(other.mount, mount)) &&
+            (identical(other.format, format) ||
+                const DeepCollectionEquality().equals(other.format, format)) &&
+            (identical(other.grubDevice, grubDevice) ||
+                const DeepCollectionEquality()
+                    .equals(other.grubDevice, grubDevice)));
   }
 
   @override
@@ -2608,7 +2730,12 @@ class _$_Partition implements _Partition {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(annotations);
+      const DeepCollectionEquality().hash(wipe) ^
+      const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(annotations) ^
+      const DeepCollectionEquality().hash(mount) ^
+      const DeepCollectionEquality().hash(format) ^
+      const DeepCollectionEquality().hash(grubDevice);
 
   @JsonKey(ignore: true)
   @override
@@ -2623,7 +2750,14 @@ class _$_Partition implements _Partition {
 
 abstract class _Partition implements Partition {
   const factory _Partition(
-      {int? size, int? number, List<String>? annotations}) = _$_Partition;
+      {int? size,
+      int? number,
+      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+      bool? preserve,
+      List<String>? annotations,
+      String? mount,
+      String? format,
+      @JsonKey(name: 'grub_device') bool? grubDevice}) = _$_Partition;
 
   factory _Partition.fromJson(Map<String, dynamic> json) =
       _$_Partition.fromJson;
@@ -2633,7 +2767,19 @@ abstract class _Partition implements Partition {
   @override
   int? get number => throw _privateConstructorUsedError;
   @override
+  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+  bool? get wipe => throw _privateConstructorUsedError;
+  @override
+  bool? get preserve => throw _privateConstructorUsedError;
+  @override
   List<String>? get annotations => throw _privateConstructorUsedError;
+  @override
+  String? get mount => throw _privateConstructorUsedError;
+  @override
+  String? get format => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'grub_device')
+  bool? get grubDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PartitionCopyWith<_Partition> get copyWith =>
@@ -2651,19 +2797,29 @@ class _$DiskTearOff {
   _Disk call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) {
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'boot_device') bool? bootDevice}) {
     return _Disk(
       id: id,
       label: label,
+      path: path,
       type: type,
       size: size,
       usageLabels: usageLabels,
       partitions: partitions,
+      freeForPartitions: freeForPartitions,
       okForGuided: okForGuided,
+      ptable: ptable,
+      preserve: preserve,
+      bootDevice: bootDevice,
     );
   }
 
@@ -2679,13 +2835,20 @@ const $Disk = _$DiskTearOff();
 mixin _$Disk {
   String? get id => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
   @JsonKey(name: 'usage_labels')
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'free_for_partitions')
+  int? get freeForPartitions => throw _privateConstructorUsedError;
   @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
+  String? get ptable => throw _privateConstructorUsedError;
+  bool? get preserve => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boot_device')
+  bool? get bootDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2699,11 +2862,16 @@ abstract class $DiskCopyWith<$Res> {
   $Res call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'boot_device') bool? bootDevice});
 }
 
 /// @nodoc
@@ -2718,11 +2886,16 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
+    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? partitions = freezed,
+    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
+    Object? ptable = freezed,
+    Object? preserve = freezed,
+    Object? bootDevice = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -2732,6 +2905,10 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -2749,9 +2926,25 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<Partition>?,
+      freeForPartitions: freeForPartitions == freezed
+          ? _value.freeForPartitions
+          : freeForPartitions // ignore: cast_nullable_to_non_nullable
+              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ptable: ptable == freezed
+          ? _value.ptable
+          : ptable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      bootDevice: bootDevice == freezed
+          ? _value.bootDevice
+          : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -2765,11 +2958,16 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
   $Res call(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided});
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'boot_device') bool? bootDevice});
 }
 
 /// @nodoc
@@ -2785,11 +2983,16 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
+    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? partitions = freezed,
+    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
+    Object? ptable = freezed,
+    Object? preserve = freezed,
+    Object? bootDevice = freezed,
   }) {
     return _then(_Disk(
       id: id == freezed
@@ -2799,6 +3002,10 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -2816,25 +3023,47 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<Partition>?,
+      freeForPartitions: freeForPartitions == freezed
+          ? _value.freeForPartitions
+          : freeForPartitions // ignore: cast_nullable_to_non_nullable
+              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ptable: ptable == freezed
+          ? _value.ptable
+          : ptable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preserve: preserve == freezed
+          ? _value.preserve
+          : preserve // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      bootDevice: bootDevice == freezed
+          ? _value.bootDevice
+          : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Disk implements _Disk {
   const _$_Disk(
       {this.id,
       this.label,
+      this.path,
       this.type,
       this.size,
       @JsonKey(name: 'usage_labels') this.usageLabels,
       this.partitions,
-      @JsonKey(name: 'ok_for_guided') this.okForGuided});
+      @JsonKey(name: 'free_for_partitions') this.freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') this.okForGuided,
+      this.ptable,
+      this.preserve,
+      @JsonKey(name: 'boot_device') this.bootDevice});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -2843,6 +3072,8 @@ class _$_Disk implements _Disk {
   final String? id;
   @override
   final String? label;
+  @override
+  final String? path;
   @override
   final String? type;
   @override
@@ -2853,12 +3084,22 @@ class _$_Disk implements _Disk {
   @override
   final List<Partition>? partitions;
   @override
+  @JsonKey(name: 'free_for_partitions')
+  final int? freeForPartitions;
+  @override
   @JsonKey(name: 'ok_for_guided')
   final bool? okForGuided;
+  @override
+  final String? ptable;
+  @override
+  final bool? preserve;
+  @override
+  @JsonKey(name: 'boot_device')
+  final bool? bootDevice;
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice)';
   }
 
   @override
@@ -2869,6 +3110,8 @@ class _$_Disk implements _Disk {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.label, label) ||
                 const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.size, size) ||
@@ -2879,9 +3122,20 @@ class _$_Disk implements _Disk {
             (identical(other.partitions, partitions) ||
                 const DeepCollectionEquality()
                     .equals(other.partitions, partitions)) &&
+            (identical(other.freeForPartitions, freeForPartitions) ||
+                const DeepCollectionEquality()
+                    .equals(other.freeForPartitions, freeForPartitions)) &&
             (identical(other.okForGuided, okForGuided) ||
                 const DeepCollectionEquality()
-                    .equals(other.okForGuided, okForGuided)));
+                    .equals(other.okForGuided, okForGuided)) &&
+            (identical(other.ptable, ptable) ||
+                const DeepCollectionEquality().equals(other.ptable, ptable)) &&
+            (identical(other.preserve, preserve) ||
+                const DeepCollectionEquality()
+                    .equals(other.preserve, preserve)) &&
+            (identical(other.bootDevice, bootDevice) ||
+                const DeepCollectionEquality()
+                    .equals(other.bootDevice, bootDevice)));
   }
 
   @override
@@ -2889,11 +3143,16 @@ class _$_Disk implements _Disk {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(path) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
       const DeepCollectionEquality().hash(partitions) ^
-      const DeepCollectionEquality().hash(okForGuided);
+      const DeepCollectionEquality().hash(freeForPartitions) ^
+      const DeepCollectionEquality().hash(okForGuided) ^
+      const DeepCollectionEquality().hash(ptable) ^
+      const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(bootDevice);
 
   @JsonKey(ignore: true)
   @override
@@ -2910,11 +3169,16 @@ abstract class _Disk implements Disk {
   const factory _Disk(
       {String? id,
       String? label,
+      String? path,
       String? type,
       int? size,
       @JsonKey(name: 'usage_labels') List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided}) = _$_Disk;
+      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
+      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      String? ptable,
+      bool? preserve,
+      @JsonKey(name: 'boot_device') bool? bootDevice}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -2922,6 +3186,8 @@ abstract class _Disk implements Disk {
   String? get id => throw _privateConstructorUsedError;
   @override
   String? get label => throw _privateConstructorUsedError;
+  @override
+  String? get path => throw _privateConstructorUsedError;
   @override
   String? get type => throw _privateConstructorUsedError;
   @override
@@ -2932,8 +3198,18 @@ abstract class _Disk implements Disk {
   @override
   List<Partition>? get partitions => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'free_for_partitions')
+  int? get freeForPartitions => throw _privateConstructorUsedError;
+  @override
   @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
+  @override
+  String? get ptable => throw _privateConstructorUsedError;
+  @override
+  bool? get preserve => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'boot_device')
+  bool? get bootDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
@@ -3697,6 +3973,262 @@ abstract class _StorageResponse implements StorageResponse {
       throw _privateConstructorUsedError;
 }
 
+StorageResponseV2 _$StorageResponseV2FromJson(Map<String, dynamic> json) {
+  return _StorageResponseV2.fromJson(json);
+}
+
+/// @nodoc
+class _$StorageResponseV2TearOff {
+  const _$StorageResponseV2TearOff();
+
+  _StorageResponseV2 call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) {
+    return _StorageResponseV2(
+      disks: disks,
+      needRoot: needRoot,
+      needBoot: needBoot,
+      errorReport: errorReport,
+    );
+  }
+
+  StorageResponseV2 fromJson(Map<String, Object> json) {
+    return StorageResponseV2.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $StorageResponseV2 = _$StorageResponseV2TearOff();
+
+/// @nodoc
+mixin _$StorageResponseV2 {
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @JsonKey(name: 'need_root')
+  bool? get needRoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'need_boot')
+  bool? get needBoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StorageResponseV2CopyWith<StorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StorageResponseV2CopyWith<$Res> {
+  factory $StorageResponseV2CopyWith(
+          StorageResponseV2 value, $Res Function(StorageResponseV2) then) =
+      _$StorageResponseV2CopyWithImpl<$Res>;
+  $Res call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class _$StorageResponseV2CopyWithImpl<$Res>
+    implements $StorageResponseV2CopyWith<$Res> {
+  _$StorageResponseV2CopyWithImpl(this._value, this._then);
+
+  final StorageResponseV2 _value;
+  // ignore: unused_field
+  final $Res Function(StorageResponseV2) _then;
+
+  @override
+  $Res call({
+    Object? disks = freezed,
+    Object? needRoot = freezed,
+    Object? needBoot = freezed,
+    Object? errorReport = freezed,
+  }) {
+    return _then(_value.copyWith(
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+      needRoot: needRoot == freezed
+          ? _value.needRoot
+          : needRoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      needBoot: needBoot == freezed
+          ? _value.needBoot
+          : needBoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$StorageResponseV2CopyWith<$Res>
+    implements $StorageResponseV2CopyWith<$Res> {
+  factory _$StorageResponseV2CopyWith(
+          _StorageResponseV2 value, $Res Function(_StorageResponseV2) then) =
+      __$StorageResponseV2CopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {List<Disk>? disks,
+      @JsonKey(name: 'need_root') bool? needRoot,
+      @JsonKey(name: 'need_boot') bool? needBoot,
+      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
+}
+
+/// @nodoc
+class __$StorageResponseV2CopyWithImpl<$Res>
+    extends _$StorageResponseV2CopyWithImpl<$Res>
+    implements _$StorageResponseV2CopyWith<$Res> {
+  __$StorageResponseV2CopyWithImpl(
+      _StorageResponseV2 _value, $Res Function(_StorageResponseV2) _then)
+      : super(_value, (v) => _then(v as _StorageResponseV2));
+
+  @override
+  _StorageResponseV2 get _value => super._value as _StorageResponseV2;
+
+  @override
+  $Res call({
+    Object? disks = freezed,
+    Object? needRoot = freezed,
+    Object? needBoot = freezed,
+    Object? errorReport = freezed,
+  }) {
+    return _then(_StorageResponseV2(
+      disks: disks == freezed
+          ? _value.disks
+          : disks // ignore: cast_nullable_to_non_nullable
+              as List<Disk>?,
+      needRoot: needRoot == freezed
+          ? _value.needRoot
+          : needRoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      needBoot: needBoot == freezed
+          ? _value.needBoot
+          : needBoot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StorageResponseV2 implements _StorageResponseV2 {
+  const _$_StorageResponseV2(
+      {this.disks,
+      @JsonKey(name: 'need_root') this.needRoot,
+      @JsonKey(name: 'need_boot') this.needBoot,
+      @JsonKey(name: 'error_report') this.errorReport});
+
+  factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$_$_StorageResponseV2FromJson(json);
+
+  @override
+  final List<Disk>? disks;
+  @override
+  @JsonKey(name: 'need_root')
+  final bool? needRoot;
+  @override
+  @JsonKey(name: 'need_boot')
+  final bool? needBoot;
+  @override
+  @JsonKey(name: 'error_report')
+  final ErrorReportRef? errorReport;
+
+  @override
+  String toString() {
+    return 'StorageResponseV2(disks: $disks, needRoot: $needRoot, needBoot: $needBoot, errorReport: $errorReport)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StorageResponseV2 &&
+            (identical(other.disks, disks) ||
+                const DeepCollectionEquality().equals(other.disks, disks)) &&
+            (identical(other.needRoot, needRoot) ||
+                const DeepCollectionEquality()
+                    .equals(other.needRoot, needRoot)) &&
+            (identical(other.needBoot, needBoot) ||
+                const DeepCollectionEquality()
+                    .equals(other.needBoot, needBoot)) &&
+            (identical(other.errorReport, errorReport) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorReport, errorReport)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(disks) ^
+      const DeepCollectionEquality().hash(needRoot) ^
+      const DeepCollectionEquality().hash(needBoot) ^
+      const DeepCollectionEquality().hash(errorReport);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+      __$StorageResponseV2CopyWithImpl<_StorageResponseV2>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_StorageResponseV2ToJson(this);
+  }
+}
+
+abstract class _StorageResponseV2 implements StorageResponseV2 {
+  const factory _StorageResponseV2(
+          {List<Disk>? disks,
+          @JsonKey(name: 'need_root') bool? needRoot,
+          @JsonKey(name: 'need_boot') bool? needBoot,
+          @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) =
+      _$_StorageResponseV2;
+
+  factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
+      _$_StorageResponseV2.fromJson;
+
+  @override
+  List<Disk>? get disks => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'need_root')
+  bool? get needRoot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'need_boot')
+  bool? get needBoot => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'error_report')
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 WSLConfigurationBase _$WSLConfigurationBaseFromJson(Map<String, dynamic> json) {
   return _WSLConfigurationBase.fromJson(json);
 }
@@ -3706,15 +4238,19 @@ class _$WSLConfigurationBaseTearOff {
   const _$WSLConfigurationBaseTearOff();
 
   _WSLConfigurationBase call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) {
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf}) {
     return _WSLConfigurationBase(
-      customPath: customPath,
-      customMountOpt: customMountOpt,
-      genHost: genHost,
-      genResolvconf: genResolvconf,
+      automountRoot: automountRoot,
+      automountOptions: automountOptions,
+      networkGeneratehosts: networkGeneratehosts,
+      networkGenerateresolvconf: networkGenerateresolvconf,
     );
   }
 
@@ -3728,14 +4264,14 @@ const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationBase {
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_root')
+  String? get automountRoot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_options')
+  String? get automountOptions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generatehosts')
+  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generateresolvconf')
+  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3749,10 +4285,14 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
           $Res Function(WSLConfigurationBase) then) =
       _$WSLConfigurationBaseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -3766,27 +4306,27 @@ class _$WSLConfigurationBaseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
+    Object? automountRoot = freezed,
+    Object? automountOptions = freezed,
+    Object? networkGeneratehosts = freezed,
+    Object? networkGenerateresolvconf = freezed,
   }) {
     return _then(_value.copyWith(
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
+      automountRoot: automountRoot == freezed
+          ? _value.automountRoot
+          : automountRoot // ignore: cast_nullable_to_non_nullable
               as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
+      automountOptions: automountOptions == freezed
+          ? _value.automountOptions
+          : automountOptions // ignore: cast_nullable_to_non_nullable
               as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
+      networkGeneratehosts: networkGeneratehosts == freezed
+          ? _value.networkGeneratehosts
+          : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
+      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+          ? _value.networkGenerateresolvconf
+          : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -3800,10 +4340,14 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
       __$WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'custom_path') String? customPath,
-      @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-      @JsonKey(name: 'gen_host') bool? genHost,
-      @JsonKey(name: 'gen_resolvconf') bool? genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -3819,27 +4363,27 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? customPath = freezed,
-    Object? customMountOpt = freezed,
-    Object? genHost = freezed,
-    Object? genResolvconf = freezed,
+    Object? automountRoot = freezed,
+    Object? automountOptions = freezed,
+    Object? networkGeneratehosts = freezed,
+    Object? networkGenerateresolvconf = freezed,
   }) {
     return _then(_WSLConfigurationBase(
-      customPath: customPath == freezed
-          ? _value.customPath
-          : customPath // ignore: cast_nullable_to_non_nullable
+      automountRoot: automountRoot == freezed
+          ? _value.automountRoot
+          : automountRoot // ignore: cast_nullable_to_non_nullable
               as String?,
-      customMountOpt: customMountOpt == freezed
-          ? _value.customMountOpt
-          : customMountOpt // ignore: cast_nullable_to_non_nullable
+      automountOptions: automountOptions == freezed
+          ? _value.automountOptions
+          : automountOptions // ignore: cast_nullable_to_non_nullable
               as String?,
-      genHost: genHost == freezed
-          ? _value.genHost
-          : genHost // ignore: cast_nullable_to_non_nullable
+      networkGeneratehosts: networkGeneratehosts == freezed
+          ? _value.networkGeneratehosts
+          : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool?,
-      genResolvconf: genResolvconf == freezed
-          ? _value.genResolvconf
-          : genResolvconf // ignore: cast_nullable_to_non_nullable
+      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+          ? _value.networkGenerateresolvconf
+          : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -3849,57 +4393,63 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
-      {@JsonKey(name: 'custom_path') this.customPath,
-      @JsonKey(name: 'custom_mount_opt') this.customMountOpt,
-      @JsonKey(name: 'gen_host') this.genHost,
-      @JsonKey(name: 'gen_resolvconf') this.genResolvconf});
+      {@JsonKey(name: 'automount_root')
+          this.automountRoot,
+      @JsonKey(name: 'automount_options')
+          this.automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          this.networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          this.networkGenerateresolvconf});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationBaseFromJson(json);
 
   @override
-  @JsonKey(name: 'custom_path')
-  final String? customPath;
+  @JsonKey(name: 'automount_root')
+  final String? automountRoot;
   @override
-  @JsonKey(name: 'custom_mount_opt')
-  final String? customMountOpt;
+  @JsonKey(name: 'automount_options')
+  final String? automountOptions;
   @override
-  @JsonKey(name: 'gen_host')
-  final bool? genHost;
+  @JsonKey(name: 'network_generatehosts')
+  final bool? networkGeneratehosts;
   @override
-  @JsonKey(name: 'gen_resolvconf')
-  final bool? genResolvconf;
+  @JsonKey(name: 'network_generateresolvconf')
+  final bool? networkGenerateresolvconf;
 
   @override
   String toString() {
-    return 'WSLConfigurationBase(customPath: $customPath, customMountOpt: $customMountOpt, genHost: $genHost, genResolvconf: $genResolvconf)';
+    return 'WSLConfigurationBase(automountRoot: $automountRoot, automountOptions: $automountOptions, networkGeneratehosts: $networkGeneratehosts, networkGenerateresolvconf: $networkGenerateresolvconf)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WSLConfigurationBase &&
-            (identical(other.customPath, customPath) ||
+            (identical(other.automountRoot, automountRoot) ||
                 const DeepCollectionEquality()
-                    .equals(other.customPath, customPath)) &&
-            (identical(other.customMountOpt, customMountOpt) ||
+                    .equals(other.automountRoot, automountRoot)) &&
+            (identical(other.automountOptions, automountOptions) ||
                 const DeepCollectionEquality()
-                    .equals(other.customMountOpt, customMountOpt)) &&
-            (identical(other.genHost, genHost) ||
-                const DeepCollectionEquality()
-                    .equals(other.genHost, genHost)) &&
-            (identical(other.genResolvconf, genResolvconf) ||
-                const DeepCollectionEquality()
-                    .equals(other.genResolvconf, genResolvconf)));
+                    .equals(other.automountOptions, automountOptions)) &&
+            (identical(other.networkGeneratehosts, networkGeneratehosts) ||
+                const DeepCollectionEquality().equals(
+                    other.networkGeneratehosts, networkGeneratehosts)) &&
+            (identical(other.networkGenerateresolvconf,
+                    networkGenerateresolvconf) ||
+                const DeepCollectionEquality().equals(
+                    other.networkGenerateresolvconf,
+                    networkGenerateresolvconf)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(customPath) ^
-      const DeepCollectionEquality().hash(customMountOpt) ^
-      const DeepCollectionEquality().hash(genHost) ^
-      const DeepCollectionEquality().hash(genResolvconf);
+      const DeepCollectionEquality().hash(automountRoot) ^
+      const DeepCollectionEquality().hash(automountOptions) ^
+      const DeepCollectionEquality().hash(networkGeneratehosts) ^
+      const DeepCollectionEquality().hash(networkGenerateresolvconf);
 
   @JsonKey(ignore: true)
   @override
@@ -3915,27 +4465,30 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
 
 abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   const factory _WSLConfigurationBase(
-          {@JsonKey(name: 'custom_path') String? customPath,
-          @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-          @JsonKey(name: 'gen_host') bool? genHost,
-          @JsonKey(name: 'gen_resolvconf') bool? genResolvconf}) =
-      _$_WSLConfigurationBase;
+      {@JsonKey(name: 'automount_root')
+          String? automountRoot,
+      @JsonKey(name: 'automount_options')
+          String? automountOptions,
+      @JsonKey(name: 'network_generatehosts')
+          bool? networkGeneratehosts,
+      @JsonKey(name: 'network_generateresolvconf')
+          bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationBase.fromJson;
 
   @override
-  @JsonKey(name: 'custom_path')
-  String? get customPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_root')
+  String? get automountRoot => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'custom_mount_opt')
-  String? get customMountOpt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_options')
+  String? get automountOptions => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'gen_host')
-  bool? get genHost => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generatehosts')
+  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'gen_resolvconf')
-  bool? get genResolvconf => throw _privateConstructorUsedError;
+  @JsonKey(name: 'network_generateresolvconf')
+  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
@@ -3956,16 +4509,18 @@ class _$WSLConfigurationAdvancedTearOff {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -3973,12 +4528,12 @@ class _$WSLConfigurationAdvancedTearOff {
     return _WSLConfigurationAdvanced(
       guiTheme: guiTheme,
       guiFollowwintheme: guiFollowwintheme,
-      legacyGui: legacyGui,
-      legacyAudio: legacyAudio,
-      advIpDetect: advIpDetect,
-      wslMotdNews: wslMotdNews,
-      automount: automount,
-      mountfstab: mountfstab,
+      interopGuiintegration: interopGuiintegration,
+      interopAudiointegration: interopAudiointegration,
+      interopAdvancedipdetection: interopAdvancedipdetection,
+      motdWSLnewsenabled: motdWSLnewsenabled,
+      automountEnabled: automountEnabled,
+      automountMountfstab: automountMountfstab,
       interopEnabled: interopEnabled,
       interopAppendwindowspath: interopAppendwindowspath,
     );
@@ -3998,16 +4553,18 @@ mixin _$WSLConfigurationAdvanced {
   String? get guiTheme => throw _privateConstructorUsedError;
   @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
-  @JsonKey(name: 'legacy_gui')
-  bool? get legacyGui => throw _privateConstructorUsedError;
-  @JsonKey(name: 'legacy_audio')
-  bool? get legacyAudio => throw _privateConstructorUsedError;
-  @JsonKey(name: 'adv_ip_detect')
-  bool? get advIpDetect => throw _privateConstructorUsedError;
-  @JsonKey(name: 'wsl_motd_news')
-  bool? get wslMotdNews => throw _privateConstructorUsedError;
-  bool? get automount => throw _privateConstructorUsedError;
-  bool? get mountfstab => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_guiintegration')
+  bool? get interopGuiintegration => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_audiointegration')
+  bool? get interopAudiointegration => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_advancedipdetection')
+  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_enabled')
+  bool? get automountEnabled => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_mountfstab')
+  bool? get automountMountfstab => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @JsonKey(name: 'interop_appendwindowspath')
@@ -4029,16 +4586,18 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4058,12 +4617,12 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
   $Res call({
     Object? guiTheme = freezed,
     Object? guiFollowwintheme = freezed,
-    Object? legacyGui = freezed,
-    Object? legacyAudio = freezed,
-    Object? advIpDetect = freezed,
-    Object? wslMotdNews = freezed,
-    Object? automount = freezed,
-    Object? mountfstab = freezed,
+    Object? interopGuiintegration = freezed,
+    Object? interopAudiointegration = freezed,
+    Object? interopAdvancedipdetection = freezed,
+    Object? motdWSLnewsenabled = freezed,
+    Object? automountEnabled = freezed,
+    Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
@@ -4076,29 +4635,29 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.guiFollowwintheme
           : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyGui: legacyGui == freezed
-          ? _value.legacyGui
-          : legacyGui // ignore: cast_nullable_to_non_nullable
+      interopGuiintegration: interopGuiintegration == freezed
+          ? _value.interopGuiintegration
+          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyAudio: legacyAudio == freezed
-          ? _value.legacyAudio
-          : legacyAudio // ignore: cast_nullable_to_non_nullable
+      interopAudiointegration: interopAudiointegration == freezed
+          ? _value.interopAudiointegration
+          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      advIpDetect: advIpDetect == freezed
-          ? _value.advIpDetect
-          : advIpDetect // ignore: cast_nullable_to_non_nullable
+      interopAdvancedipdetection: interopAdvancedipdetection == freezed
+          ? _value.interopAdvancedipdetection
+          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      wslMotdNews: wslMotdNews == freezed
-          ? _value.wslMotdNews
-          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+      motdWSLnewsenabled: motdWSLnewsenabled == freezed
+          ? _value.motdWSLnewsenabled
+          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      automount: automount == freezed
-          ? _value.automount
-          : automount // ignore: cast_nullable_to_non_nullable
+      automountEnabled: automountEnabled == freezed
+          ? _value.automountEnabled
+          : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      mountfstab: mountfstab == freezed
-          ? _value.mountfstab
-          : mountfstab // ignore: cast_nullable_to_non_nullable
+      automountMountfstab: automountMountfstab == freezed
+          ? _value.automountMountfstab
+          : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
@@ -4124,16 +4683,18 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4156,12 +4717,12 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
   $Res call({
     Object? guiTheme = freezed,
     Object? guiFollowwintheme = freezed,
-    Object? legacyGui = freezed,
-    Object? legacyAudio = freezed,
-    Object? advIpDetect = freezed,
-    Object? wslMotdNews = freezed,
-    Object? automount = freezed,
-    Object? mountfstab = freezed,
+    Object? interopGuiintegration = freezed,
+    Object? interopAudiointegration = freezed,
+    Object? interopAdvancedipdetection = freezed,
+    Object? motdWSLnewsenabled = freezed,
+    Object? automountEnabled = freezed,
+    Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
   }) {
@@ -4174,29 +4735,29 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.guiFollowwintheme
           : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyGui: legacyGui == freezed
-          ? _value.legacyGui
-          : legacyGui // ignore: cast_nullable_to_non_nullable
+      interopGuiintegration: interopGuiintegration == freezed
+          ? _value.interopGuiintegration
+          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      legacyAudio: legacyAudio == freezed
-          ? _value.legacyAudio
-          : legacyAudio // ignore: cast_nullable_to_non_nullable
+      interopAudiointegration: interopAudiointegration == freezed
+          ? _value.interopAudiointegration
+          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
               as bool?,
-      advIpDetect: advIpDetect == freezed
-          ? _value.advIpDetect
-          : advIpDetect // ignore: cast_nullable_to_non_nullable
+      interopAdvancedipdetection: interopAdvancedipdetection == freezed
+          ? _value.interopAdvancedipdetection
+          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      wslMotdNews: wslMotdNews == freezed
-          ? _value.wslMotdNews
-          : wslMotdNews // ignore: cast_nullable_to_non_nullable
+      motdWSLnewsenabled: motdWSLnewsenabled == freezed
+          ? _value.motdWSLnewsenabled
+          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      automount: automount == freezed
-          ? _value.automount
-          : automount // ignore: cast_nullable_to_non_nullable
+      automountEnabled: automountEnabled == freezed
+          ? _value.automountEnabled
+          : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      mountfstab: mountfstab == freezed
-          ? _value.mountfstab
-          : mountfstab // ignore: cast_nullable_to_non_nullable
+      automountMountfstab: automountMountfstab == freezed
+          ? _value.automountMountfstab
+          : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool?,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
@@ -4218,16 +4779,18 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
           this.guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           this.guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          this.legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          this.legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          this.advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          this.wslMotdNews,
-      this.automount,
-      this.mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          this.interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          this.interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          this.interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          this.motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          this.automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          this.automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           this.interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4243,21 +4806,23 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   @JsonKey(name: 'gui_followwintheme')
   final bool? guiFollowwintheme;
   @override
-  @JsonKey(name: 'legacy_gui')
-  final bool? legacyGui;
+  @JsonKey(name: 'interop_guiintegration')
+  final bool? interopGuiintegration;
   @override
-  @JsonKey(name: 'legacy_audio')
-  final bool? legacyAudio;
+  @JsonKey(name: 'interop_audiointegration')
+  final bool? interopAudiointegration;
   @override
-  @JsonKey(name: 'adv_ip_detect')
-  final bool? advIpDetect;
+  @JsonKey(name: 'interop_advancedipdetection')
+  final bool? interopAdvancedipdetection;
   @override
-  @JsonKey(name: 'wsl_motd_news')
-  final bool? wslMotdNews;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  final bool? motdWSLnewsenabled;
   @override
-  final bool? automount;
+  @JsonKey(name: 'automount_enabled')
+  final bool? automountEnabled;
   @override
-  final bool? mountfstab;
+  @JsonKey(name: 'automount_mountfstab')
+  final bool? automountMountfstab;
   @override
   @JsonKey(name: 'interop_enabled')
   final bool? interopEnabled;
@@ -4267,7 +4832,7 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
 
   @override
   String toString() {
-    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, legacyGui: $legacyGui, legacyAudio: $legacyAudio, advIpDetect: $advIpDetect, wslMotdNews: $wslMotdNews, automount: $automount, mountfstab: $mountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, interopGuiintegration: $interopGuiintegration, interopAudiointegration: $interopAudiointegration, interopAdvancedipdetection: $interopAdvancedipdetection, motdWSLnewsenabled: $motdWSLnewsenabled, automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
   }
 
   @override
@@ -4280,24 +4845,27 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
             (identical(other.guiFollowwintheme, guiFollowwintheme) ||
                 const DeepCollectionEquality()
                     .equals(other.guiFollowwintheme, guiFollowwintheme)) &&
-            (identical(other.legacyGui, legacyGui) ||
+            (identical(other.interopGuiintegration, interopGuiintegration) ||
+                const DeepCollectionEquality().equals(
+                    other.interopGuiintegration, interopGuiintegration)) &&
+            (identical(
+                    other.interopAudiointegration, interopAudiointegration) ||
+                const DeepCollectionEquality().equals(
+                    other.interopAudiointegration, interopAudiointegration)) &&
+            (identical(other.interopAdvancedipdetection,
+                    interopAdvancedipdetection) ||
+                const DeepCollectionEquality().equals(
+                    other.interopAdvancedipdetection,
+                    interopAdvancedipdetection)) &&
+            (identical(other.motdWSLnewsenabled, motdWSLnewsenabled) ||
                 const DeepCollectionEquality()
-                    .equals(other.legacyGui, legacyGui)) &&
-            (identical(other.legacyAudio, legacyAudio) ||
+                    .equals(other.motdWSLnewsenabled, motdWSLnewsenabled)) &&
+            (identical(other.automountEnabled, automountEnabled) ||
                 const DeepCollectionEquality()
-                    .equals(other.legacyAudio, legacyAudio)) &&
-            (identical(other.advIpDetect, advIpDetect) ||
+                    .equals(other.automountEnabled, automountEnabled)) &&
+            (identical(other.automountMountfstab, automountMountfstab) ||
                 const DeepCollectionEquality()
-                    .equals(other.advIpDetect, advIpDetect)) &&
-            (identical(other.wslMotdNews, wslMotdNews) ||
-                const DeepCollectionEquality()
-                    .equals(other.wslMotdNews, wslMotdNews)) &&
-            (identical(other.automount, automount) ||
-                const DeepCollectionEquality()
-                    .equals(other.automount, automount)) &&
-            (identical(other.mountfstab, mountfstab) ||
-                const DeepCollectionEquality()
-                    .equals(other.mountfstab, mountfstab)) &&
+                    .equals(other.automountMountfstab, automountMountfstab)) &&
             (identical(other.interopEnabled, interopEnabled) ||
                 const DeepCollectionEquality()
                     .equals(other.interopEnabled, interopEnabled)) &&
@@ -4312,12 +4880,12 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(guiTheme) ^
       const DeepCollectionEquality().hash(guiFollowwintheme) ^
-      const DeepCollectionEquality().hash(legacyGui) ^
-      const DeepCollectionEquality().hash(legacyAudio) ^
-      const DeepCollectionEquality().hash(advIpDetect) ^
-      const DeepCollectionEquality().hash(wslMotdNews) ^
-      const DeepCollectionEquality().hash(automount) ^
-      const DeepCollectionEquality().hash(mountfstab) ^
+      const DeepCollectionEquality().hash(interopGuiintegration) ^
+      const DeepCollectionEquality().hash(interopAudiointegration) ^
+      const DeepCollectionEquality().hash(interopAdvancedipdetection) ^
+      const DeepCollectionEquality().hash(motdWSLnewsenabled) ^
+      const DeepCollectionEquality().hash(automountEnabled) ^
+      const DeepCollectionEquality().hash(automountMountfstab) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
       const DeepCollectionEquality().hash(interopAppendwindowspath);
 
@@ -4339,16 +4907,18 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
           String? guiTheme,
       @JsonKey(name: 'gui_followwintheme')
           bool? guiFollowwintheme,
-      @JsonKey(name: 'legacy_gui')
-          bool? legacyGui,
-      @JsonKey(name: 'legacy_audio')
-          bool? legacyAudio,
-      @JsonKey(name: 'adv_ip_detect')
-          bool? advIpDetect,
-      @JsonKey(name: 'wsl_motd_news')
-          bool? wslMotdNews,
-      bool? automount,
-      bool? mountfstab,
+      @JsonKey(name: 'interop_guiintegration')
+          bool? interopGuiintegration,
+      @JsonKey(name: 'interop_audiointegration')
+          bool? interopAudiointegration,
+      @JsonKey(name: 'interop_advancedipdetection')
+          bool? interopAdvancedipdetection,
+      @JsonKey(name: 'motd_wslnewsenabled')
+          bool? motdWSLnewsenabled,
+      @JsonKey(name: 'automount_enabled')
+          bool? automountEnabled,
+      @JsonKey(name: 'automount_mountfstab')
+          bool? automountMountfstab,
       @JsonKey(name: 'interop_enabled')
           bool? interopEnabled,
       @JsonKey(name: 'interop_appendwindowspath')
@@ -4364,21 +4934,23 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'legacy_gui')
-  bool? get legacyGui => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_guiintegration')
+  bool? get interopGuiintegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'legacy_audio')
-  bool? get legacyAudio => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_audiointegration')
+  bool? get interopAudiointegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'adv_ip_detect')
-  bool? get advIpDetect => throw _privateConstructorUsedError;
+  @JsonKey(name: 'interop_advancedipdetection')
+  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'wsl_motd_news')
-  bool? get wslMotdNews => throw _privateConstructorUsedError;
+  @JsonKey(name: 'motd_wslnewsenabled')
+  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
   @override
-  bool? get automount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_enabled')
+  bool? get automountEnabled => throw _privateConstructorUsedError;
   @override
-  bool? get mountfstab => throw _privateConstructorUsedError;
+  @JsonKey(name: 'automount_mountfstab')
+  bool? get automountMountfstab => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;

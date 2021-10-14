@@ -6,7 +6,7 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
-enum Variant { SERVER, DESKTOP }
+enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
 
 @freezed
 class SourceSelection with _$SourceSelection {
@@ -83,10 +83,10 @@ class KeyboardSetup with _$KeyboardSetup {
 @freezed
 class IdentityData with _$IdentityData {
   const factory IdentityData({
-    String? realname,
-    String? username,
-    @JsonKey(name: 'crypted_password') String? cryptedPassword,
-    String? hostname,
+    @Default('') String? realname,
+    @Default('') String? username,
+    @Default('') @JsonKey(name: 'crypted_password') String? cryptedPassword,
+    @Default('') String? hostname,
   }) = _IdentityData;
 
   factory IdentityData.fromJson(Map<String, dynamic> json) =>
@@ -184,12 +184,22 @@ enum ProbeStatus { PROBING, FAILED, DONE }
 
 enum Bootloader { NONE, BIOS, UEFI, PREP }
 
+bool? _wipeFromString(String? value) =>
+    value == null ? null : value == 'superblock';
+String? _wipeToString(bool? value) =>
+    value != null && value == true ? 'superblock' : null;
+
 @freezed
 class Partition with _$Partition {
   const factory Partition({
     int? size,
     int? number,
-    List<String>? annotations,
+    @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
+    bool? preserve,
+    @Default([]) List<String>? annotations,
+    String? mount,
+    String? format,
+    @JsonKey(name: 'grub_device') bool? grubDevice,
   }) = _Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) =>
@@ -198,14 +208,20 @@ class Partition with _$Partition {
 
 @freezed
 class Disk with _$Disk {
+  @JsonSerializable(explicitToJson: true)
   const factory Disk({
     String? id,
     String? label,
+    String? path,
     String? type,
     int? size,
     @JsonKey(name: 'usage_labels') List<String>? usageLabels,
     List<Partition>? partitions,
+    @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
     @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+    String? ptable,
+    bool? preserve,
+    @JsonKey(name: 'boot_device') bool? bootDevice,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
@@ -252,12 +268,26 @@ class StorageResponse with _$StorageResponse {
 }
 
 @freezed
+class StorageResponseV2 with _$StorageResponseV2 {
+  const factory StorageResponseV2({
+    List<Disk>? disks,
+    @JsonKey(name: 'need_root') bool? needRoot,
+    @JsonKey(name: 'need_boot') bool? needBoot,
+    @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+  }) = _StorageResponseV2;
+
+  factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$StorageResponseV2FromJson(json);
+}
+
+@freezed
 class WSLConfigurationBase with _$WSLConfigurationBase {
   const factory WSLConfigurationBase({
-    @JsonKey(name: 'custom_path') String? customPath,
-    @JsonKey(name: 'custom_mount_opt') String? customMountOpt,
-    @JsonKey(name: 'gen_host') bool? genHost,
-    @JsonKey(name: 'gen_resolvconf') bool? genResolvconf,
+    @JsonKey(name: 'automount_root') String? automountRoot,
+    @JsonKey(name: 'automount_options') String? automountOptions,
+    @JsonKey(name: 'network_generatehosts') bool? networkGeneratehosts,
+    @JsonKey(name: 'network_generateresolvconf')
+        bool? networkGenerateresolvconf,
   }) = _WSLConfigurationBase;
 
   factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
@@ -269,12 +299,13 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   const factory WSLConfigurationAdvanced({
     @JsonKey(name: 'gui_theme') String? guiTheme,
     @JsonKey(name: 'gui_followwintheme') bool? guiFollowwintheme,
-    @JsonKey(name: 'legacy_gui') bool? legacyGui,
-    @JsonKey(name: 'legacy_audio') bool? legacyAudio,
-    @JsonKey(name: 'adv_ip_detect') bool? advIpDetect,
-    @JsonKey(name: 'wsl_motd_news') bool? wslMotdNews,
-    bool? automount,
-    bool? mountfstab,
+    @JsonKey(name: 'interop_guiintegration') bool? interopGuiintegration,
+    @JsonKey(name: 'interop_audiointegration') bool? interopAudiointegration,
+    @JsonKey(name: 'interop_advancedipdetection')
+        bool? interopAdvancedipdetection,
+    @JsonKey(name: 'motd_wslnewsenabled') bool? motdWSLnewsenabled,
+    @JsonKey(name: 'automount_enabled') bool? automountEnabled,
+    @JsonKey(name: 'automount_mountfstab') bool? automountMountfstab,
     @JsonKey(name: 'interop_enabled') bool? interopEnabled,
     @JsonKey(name: 'interop_appendwindowspath') bool? interopAppendwindowspath,
   }) = _WSLConfigurationAdvanced;

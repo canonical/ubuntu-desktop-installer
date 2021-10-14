@@ -8,10 +8,18 @@ void main(List<String> args) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addFlag('reconfigure');
   })!;
+  var variant = Variant.WSL_SETUP;
+  if (options['reconfigure'] == true) {
+    variant = Variant.WSL_CONFIGURATION;
+  }
   runWizardApp(
-    UbuntuWslSetupApp(reconfigure: options['reconfigure'] == true),
+    UbuntuWslSetupApp(
+      initialRoute: options['initial-route'],
+      reconfigure: options['reconfigure'] == true,
+    ),
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
+    onInitSubiquity: (client) => client.setVariant(variant),
   );
 }

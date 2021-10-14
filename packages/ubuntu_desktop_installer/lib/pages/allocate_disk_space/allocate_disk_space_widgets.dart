@@ -1,10 +1,12 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 
@@ -48,7 +50,7 @@ class _PartitionPainter extends CustomPainter {
     final partitions = _model.selectedDisk?.partitions;
     final partitionCount = partitions?.length ?? 0;
     for (var index = 0; index < partitionCount; ++index) {
-      final partitionSize = partitions![index].size;
+      final partitionSize = partitions![index].size ?? 0;
       if (partitionSize <= 0) continue;
 
       final paint = Paint();
@@ -78,7 +80,7 @@ class PartitionLegend extends StatelessWidget {
 
     final partitions = model.selectedDisk?.partitions;
     final partitionCount = partitions?.length ?? 0;
-    final freeSpace = model.selectedDisk?.freeSpace ?? 0;
+    final freeSpace = model.selectedDisk?.freeForPartitions ?? 0;
 
     return SizedBox(
       height: 48,
@@ -104,7 +106,7 @@ class PartitionLegend extends StatelessWidget {
             // - localize?
             // - partition type?
             title: '${model.selectedDisk!.id}${partition.number}',
-            size: partition.size,
+            size: partition.size ?? 0,
             color: _partitionColor(index, partitions.length),
           );
         },
@@ -158,27 +160,10 @@ class _PartitionLabel extends StatelessWidget {
   }
 }
 
-class _PartitionFormatCheckbox extends StatefulWidget {
-  const _PartitionFormatCheckbox({Key? key}) : super(key: key);
-
-  @override
-  _PartitionFormatCheckboxState createState() =>
-      _PartitionFormatCheckboxState();
-}
-
-class _PartitionFormatCheckboxState extends State<_PartitionFormatCheckbox> {
-  @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<PartitionModel>(context);
-    return Checkbox(
-      value: model.format,
-      onChanged: (v) => model.format = v!,
-    );
-  }
-}
-
 class PartitionTable extends StatelessWidget {
-  const PartitionTable({Key? key}) : super(key: key);
+  const PartitionTable({Key? key, required this.controller}) : super(key: key);
+
+  final AutoScrollController controller;
 
   List<DataRow> _buildDataRows({
     required AllocateDiskSpaceModel model,
@@ -193,21 +178,30 @@ class PartitionTable extends StatelessWidget {
           if (selected == true) model.selectStorage(diskIndex);
         },
         cells: <DataCell>[
-          DataCell(Row(children: [
-            const Icon(YaruIcons.drive_harddisk_filled),
-            const SizedBox(width: 16),
-            Text(disk.id),
-          ])),
-          DataCell(Text(disk.type)),
-          DataCell(Text('')),
-          DataCell(Text(filesize(disk.size))),
-          DataCell(Text('')),
-          DataCell(Text('')),
+          DataCell(
+            SizedBox(
+              height: kMinInteractiveDimension,
+              child: AutoScrollTag(
+                controller: controller,
+                index: hashList([diskIndex, -1]),
+                key: ValueKey(hashList([diskIndex, -1])),
+                child: Row(children: [
+                  const Icon(YaruIcons.drive_harddisk_filled),
+                  const SizedBox(width: 16),
+                  Text(disk.path ?? disk.id ?? ''),
+                ]),
+              ),
+            ),
+          ),
+          DataCell(SizedBox.shrink()),
+          DataCell(SizedBox.shrink()),
+          DataCell(Text(disk.prettySize)),
+          DataCell(Text(disk.ptable ?? '')),
           DataCell(SizedBox.shrink()),
         ],
       ),
       for (var partitionIndex = 0;
-          partitionIndex < disk.partitions.length;
+          partitionIndex < (disk.partitions?.length ?? 0);
           ++partitionIndex)
         DataRow(
           key: ValueKey(hashList([diskIndex, partitionIndex])),
@@ -218,23 +212,43 @@ class PartitionTable extends StatelessWidget {
             }
           },
           cells: <DataCell>[
-            DataCell(Padding(
-              padding: EdgeInsets.only(left: 40),
-              child: Row(children: [
-                const Icon(YaruIcons.drive_harddisk),
-                const SizedBox(width: 16),
-                Text('${disk.id}${disk.partitions[partitionIndex].number}'),
-              ]),
-            )),
-            DataCell(Text('')),
-            DataCell(Text('')),
-            DataCell(Text(filesize(disk.partitions[partitionIndex].size))),
-            DataCell(Text('')),
-            DataCell(Text('')),
             DataCell(
-              ChangeNotifierProvider.value(
-                value: disk.partitions[partitionIndex],
-                child: _PartitionFormatCheckbox(),
+              SizedBox(
+                height: kMinInteractiveDimension,
+                child: AutoScrollTag(
+                  controller: controller,
+                  index: hashList([diskIndex, partitionIndex]),
+                  key: ValueKey(hashList([diskIndex, partitionIndex])),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 40),
+                    child: Row(
+                      children: [
+                        const Icon(YaruIcons.drive_harddisk),
+                        const SizedBox(width: 16),
+                        Text(
+                            '${disk.path}${disk.partitions![partitionIndex].number}'),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            DataCell(Text(disk.partitions![partitionIndex].format ?? '')),
+            DataCell(Text(disk.partitions![partitionIndex].mount ?? '')),
+            DataCell(Text(disk.partitions![partitionIndex].prettySize)),
+            DataCell(Text(disk.partitions![partitionIndex].grubDevice == true
+                ? 'boot'
+                : '')),
+            DataCell(
+              Checkbox(
+                value: disk.partitions![partitionIndex].wipe == true,
+                onChanged: disk.partitions![partitionIndex].canWipe
+                    ? (v) {
+                        model.editPartition(
+                            disk, disk.partitions![partitionIndex],
+                            wipe: v!);
+                      }
+                    : null,
               ),
             ),
           ],
@@ -247,42 +261,39 @@ class PartitionTable extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     final lang = AppLocalizations.of(context);
     return RoundedContainer(
-      child: SingleChildScrollView(
-        child: DataTable(
-          showCheckboxColumn: false,
-          headingTextStyle: Theme.of(context).textTheme.subtitle2,
-          dataTextStyle: Theme.of(context).textTheme.bodyText2,
-          columns: <DataColumn>[
-            DataColumn(
-              label: Text(lang.diskHeadersDevice),
+      child: LayoutBuilder(builder: (context, constraints) {
+        return OverflowBox(
+          maxWidth: double.infinity,
+          alignment: Alignment.topLeft,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minWidth: constraints.minWidth),
+            child: SingleChildScrollView(
+              controller: controller,
+              child: DataTable(
+                showCheckboxColumn: false,
+                headingTextStyle: Theme.of(context).textTheme.subtitle2,
+                dataTextStyle: Theme.of(context).textTheme.bodyText2,
+                columns: <DataColumn>[
+                  DataColumn(label: Text(lang.diskHeadersDevice)),
+                  DataColumn(label: Text(lang.diskHeadersType)),
+                  DataColumn(label: Text(lang.diskHeadersMountPoint)),
+                  DataColumn(label: Text(lang.diskHeadersSize)),
+                  DataColumn(label: Text(lang.diskHeadersSystem)),
+                  DataColumn(label: Text(lang.diskHeadersFormat)),
+                ],
+                rows: List.generate(
+                        model.disks.length,
+                        (index) =>
+                            _buildDataRows(model: model, diskIndex: index))
+                    .fold<List<DataRow>>([], (allRows, diskRows) {
+                  allRows.addAll(diskRows);
+                  return allRows;
+                }).toList(),
+              ),
             ),
-            DataColumn(
-              label: Text(lang.diskHeadersType),
-            ),
-            DataColumn(
-              label: Text(lang.diskHeadersMountPoint),
-            ),
-            DataColumn(
-              label: Text(lang.diskHeadersSize),
-            ),
-            DataColumn(
-              label: Text(lang.diskHeadersUsed),
-            ),
-            DataColumn(
-              label: Text(lang.diskHeadersSystem),
-            ),
-            DataColumn(
-              label: Text(lang.diskHeadersFormat),
-            ),
-          ],
-          rows: List.generate(model.disks.length,
-                  (index) => _buildDataRows(model: model, diskIndex: index))
-              .fold<List<DataRow>>([], (allRows, diskRows) {
-            allRows.addAll(diskRows);
-            return allRows;
-          }).toList(),
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
@@ -292,11 +303,11 @@ class PartitionButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+    final model = Provider.of<AllocateDiskSpaceModel>(context);
     final lang = AppLocalizations.of(context);
 
     return Row(
-      children: [
+      children: <Widget>[
         RoundedContainer(
           child: IntrinsicHeight(
             child: Row(
@@ -308,7 +319,7 @@ class PartitionButtonRow extends StatelessWidget {
                     side: BorderSide.none,
                     shape: RoundedRectangleBorder(),
                   ),
-                  onPressed: model.selectedDisk != null
+                  onPressed: model.canAddPartition
                       ? () => showCreatePartitionDialog(
                           context, model.selectedDisk!)
                       : null,
@@ -320,7 +331,10 @@ class PartitionButtonRow extends StatelessWidget {
                     side: BorderSide.none,
                     shape: RoundedRectangleBorder(),
                   ),
-                  onPressed: null,
+                  onPressed: model.canRemovePartition
+                      ? () => model.deletePartition(
+                          model.selectedDisk!, model.selectedPartition!)
+                      : null,
                 ),
                 VerticalDivider(width: 1),
                 OutlinedButton(
@@ -329,11 +343,9 @@ class PartitionButtonRow extends StatelessWidget {
                     side: BorderSide.none,
                     shape: RoundedRectangleBorder(),
                   ),
-                  onPressed: model.selectedPartitionIndex != -1
-                      ? () => showEditPartitionDialog(
-                          context,
-                          model.selectedDisk!
-                              .partitions[model.selectedPartitionIndex])
+                  onPressed: model.canEditPartition
+                      ? () => showEditPartitionDialog(context,
+                          model.selectedDisk!, model.selectedPartition!)
                       : null,
                 ),
               ],
@@ -345,13 +357,15 @@ class PartitionButtonRow extends StatelessWidget {
           children: [
             OutlinedButton(
               child: Text(lang.newPartitionTable),
-              onPressed: null,
+              onPressed: model.canReformatDisk
+                  ? () => model.reformatDisk(model.selectedDisk!)
+                  : null,
             ),
           ],
         ),
         OutlinedButton(
           child: Text(lang.revertButtonText),
-          onPressed: () {},
+          onPressed: model.resetStorage,
         ),
       ],
     );
@@ -364,7 +378,13 @@ class BootDiskSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
+    final udev = Provider.of<UdevService>(context, listen: false);
     final lang = AppLocalizations.of(context);
+
+    String prettyFormatDisk(Disk disk) {
+      return '${disk.path} ${udev.fullName(disk.sysname)} (${disk.prettySize})';
+    }
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -378,7 +398,10 @@ class BootDiskSelector extends StatelessWidget {
             selected: model.bootDiskIndex,
             onSelected: model.selectBootDisk,
             itemBuilder: (context, index, _) {
-              return Text(model.disks[index].id);
+              return Text(
+                prettyFormatDisk(model.disks[index]),
+                key: ValueKey(index),
+              );
             },
           ),
         )

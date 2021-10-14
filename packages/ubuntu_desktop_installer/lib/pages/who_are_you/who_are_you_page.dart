@@ -7,6 +7,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';
@@ -24,8 +25,9 @@ class WhoAreYouPage extends StatefulWidget {
   /// Creates an instance with [WhoAreYouModel].
   static Widget create(BuildContext context) {
     final client = Provider.of<SubiquityClient>(context, listen: false);
+    final service = Provider.of<HostnameService>(context, listen: false);
     return ChangeNotifierProvider(
-      create: (_) => WhoAreYouModel(client),
+      create: (_) => WhoAreYouModel(client: client, service: service),
       child: WhoAreYouPage(),
     );
   }
@@ -68,7 +70,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               ),
               Padding(
                 padding: fieldPadding,
-                child: _HostNameFormField(fieldWidth: fieldWidth),
+                child: _HostnameFormField(fieldWidth: fieldWidth),
               ),
               Padding(
                 padding: fieldPadding,
@@ -82,15 +84,16 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 padding: fieldPadding,
                 child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
               ),
-              const SizedBox(height: kContentSpacing),
-              _LoginStrategyTile(
-                value: LoginStrategy.autoLogin,
-                label: lang.whoAreYouPageAutoLogin,
-              ),
-              _LoginStrategyTile(
-                value: LoginStrategy.requirePassword,
-                label: lang.whoAreYouPageRequirePassword,
-              ),
+              // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+              // const SizedBox(height: kContentSpacing),
+              // _LoginStrategyTile(
+              //   value: LoginStrategy.autoLogin,
+              //   label: lang.whoAreYouPageAutoLogin,
+              // ),
+              // _LoginStrategyTile(
+              //   value: LoginStrategy.requirePassword,
+              //   label: lang.whoAreYouPageRequirePassword,
+              // ),
             ],
           ),
         );

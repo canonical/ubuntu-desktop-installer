@@ -13,27 +13,28 @@ class AdvancedSetupModel extends ChangeNotifier {
   final _conf = ValueNotifier(WSLConfigurationBase());
 
   /// Location for the automount.
-  String get mountLocation => _conf.value.customPath ?? '';
+  String get mountLocation => _conf.value.automountRoot ?? '';
   set mountLocation(String value) {
-    _conf.value = _conf.value.copyWith(customPath: value);
+    _conf.value = _conf.value.copyWith(automountRoot: value);
   }
 
   /// Option passed for the automount.
-  String get mountOption => _conf.value.customMountOpt ?? '';
+  String get mountOption => _conf.value.automountOptions ?? '';
   set mountOption(String value) {
-    _conf.value = _conf.value.copyWith(customMountOpt: value);
+    _conf.value = _conf.value.copyWith(automountOptions: value);
   }
 
   /// Whether to enable /etc/hosts re-generation at every start.
-  bool get enableHostGeneration => _conf.value.genHost ?? true;
+  bool get enableHostGeneration => _conf.value.networkGeneratehosts ?? true;
   set enableHostGeneration(bool value) {
-    _conf.value = _conf.value.copyWith(genHost: value);
+    _conf.value = _conf.value.copyWith(networkGeneratehosts: value);
   }
 
   /// Whether to enable /etc/resolv.conf re-generation at every start.
-  bool get enableResolvConfGeneration => _conf.value.genResolvconf ?? true;
+  bool get enableResolvConfGeneration =>
+      _conf.value.networkGenerateresolvconf ?? true;
   set enableResolvConfGeneration(bool value) {
-    _conf.value = _conf.value.copyWith(genResolvconf: value);
+    _conf.value = _conf.value.copyWith(networkGenerateresolvconf: value);
   }
 
   /// Returns `true` if the mount location is valid.

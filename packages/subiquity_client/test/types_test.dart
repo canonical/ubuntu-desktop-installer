@@ -119,15 +119,65 @@ void main() {
     const keyboard = Partition(
       size: 1,
       number: 2,
+      preserve: false,
+      wipe: true,
       annotations: ['3', '4', '5'],
+      mount: '/foo',
+      format: 'bar',
+      grubDevice: false,
     );
     const json = <String, dynamic>{
       'size': 1,
       'number': 2,
+      'preserve': false,
+      'wipe': 'superblock',
       'annotations': ['3', '4', '5'],
+      'mount': '/foo',
+      'format': 'bar',
+      'grub_device': false,
     };
     expect(keyboard.toJson(), equals(json));
     expect(Partition.fromJson(json), keyboard);
+  });
+
+  test('disk', () {
+    const p1 = Partition(number: 1);
+    const p2 = Partition(number: 2);
+    const disk = Disk(
+      id: 'test-id',
+      label: 'test-label',
+      path: '/test/path',
+      type: 'test-type',
+      size: 123,
+      usageLabels: ['test', 'usage', 'label'],
+      partitions: [p1, p2],
+      freeForPartitions: 456,
+      okForGuided: true,
+      ptable: 'tst',
+      preserve: true,
+      bootDevice: true,
+    );
+
+    final json = <String, dynamic>{
+      'id': 'test-id',
+      'label': 'test-label',
+      'path': '/test/path',
+      'type': 'test-type',
+      'size': 123,
+      'usage_labels': ['test', 'usage', 'label'],
+      'partitions': [
+        p1.toJson(),
+        p2.toJson(),
+      ],
+      'free_for_partitions': 456,
+      'ok_for_guided': true,
+      'ptable': 'tst',
+      'preserve': true,
+      'boot_device': true,
+    };
+
+    expect(disk.toJson(), equals(json));
+    expect(Disk.fromJson(json), disk);
   });
 
   test('guided choice', () {
@@ -147,16 +197,16 @@ void main() {
 
   test('wsl configuration base data', () {
     const conf = WSLConfigurationBase(
-      customPath: '/mnt/',
-      customMountOpt: '',
-      genHost: true,
-      genResolvconf: true,
+      automountRoot: '/mnt/',
+      automountOptions: '',
+      networkGeneratehosts: true,
+      networkGenerateresolvconf: true,
     );
     const json = <String, dynamic>{
-      'custom_path': '/mnt/',
-      'custom_mount_opt': '',
-      'gen_host': true,
-      'gen_resolvconf': true,
+      'automount_root': '/mnt/',
+      'automount_options': '',
+      'network_generatehosts': true,
+      'network_generateresolvconf': true,
     };
     expect(conf.toJson(), equals(json));
     expect(WSLConfigurationBase.fromJson(json), conf);
@@ -166,24 +216,24 @@ void main() {
     const conf = WSLConfigurationAdvanced(
       guiTheme: 'default',
       guiFollowwintheme: true,
-      legacyGui: false,
-      legacyAudio: false,
-      advIpDetect: false,
-      wslMotdNews: true,
-      automount: true,
-      mountfstab: true,
+      interopGuiintegration: false,
+      interopAudiointegration: false,
+      interopAdvancedipdetection: false,
+      motdWSLnewsenabled: true,
+      automountEnabled: true,
+      automountMountfstab: true,
       interopEnabled: true,
       interopAppendwindowspath: true,
     );
     const json = <String, dynamic>{
       'gui_theme': 'default',
       'gui_followwintheme': true,
-      'legacy_gui': false,
-      'legacy_audio': false,
-      'adv_ip_detect': false,
-      'wsl_motd_news': true,
-      'automount': true,
-      'mountfstab': true,
+      'interop_guiintegration': false,
+      'interop_audiointegration': false,
+      'interop_advancedipdetection': false,
+      'motd_wslnewsenabled': true,
+      'automount_enabled': true,
+      'automount_mountfstab': true,
       'interop_enabled': true,
       'interop_appendwindowspath': true,
     };

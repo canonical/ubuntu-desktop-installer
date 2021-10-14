@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -7,45 +8,17 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../../l10n.dart';
 import 'allocate_disk_space_model.dart';
 
-const _kDefaultMountPoints = <String>[
-  '/',
-  '/boot',
-  '/home',
-  '/tmp',
-  '/usr',
-  '/var',
-  '/srv',
-  '/opt',
-  '/usr/local',
-];
+/// Shows a dialog for creating a new partition for the given [disk].
+Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
+  final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
 
-enum PartitionType { primary, logical }
-enum PartitionFormat {
-  ext4,
-  ext3,
-  ext2,
-  btrfs,
-  jfs,
-  xfs,
-  fat16,
-  fat32,
-  swap,
-  bios,
-  efi,
-  physical,
-  none,
-}
-enum PartitionLocation { beginning, end }
-
-Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
   return showDialog(
     context: context,
     builder: (context) {
       final partitionUnit = ValueNotifier(DataUnit.megabytes);
-      final partitionSize = ValueNotifier(disk.freeSpace);
-      final partitionType = ValueNotifier(PartitionType.primary);
-      final partitionLocation = ValueNotifier(PartitionLocation.beginning);
-      final partitionFormat = ValueNotifier(PartitionFormat.ext4);
+      final partitionSize = ValueNotifier(disk.freeForPartitions ?? 0);
+      final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
+      final partitionMount = ValueNotifier<String?>(null);
       final tileHeight = _defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
@@ -70,18 +43,6 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                   ),
                   const SizedBox(height: kContentSpacing),
                   _PartitionDialogLabel(
-                    lang.partitionTypeLabel,
-                    height: kRadioSize.height,
-                  ),
-                  SizedBox(height: kRadioSize.height),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionLocationLabel,
-                    height: kRadioSize.height,
-                  ),
-                  SizedBox(height: kRadioSize.height),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
                     lang.partitionFormatLabel,
                     height: tileHeight,
                   ),
@@ -102,30 +63,8 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                     child: _PartitionSizeBox(
                       bytes: partitionSize,
                       unit: partitionUnit,
-                      freeSpace: disk.freeSpace,
+                      freeSpace: disk.freeForPartitions ?? 0,
                     ),
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _RadioValueTile(
-                    title: Text(lang.partitionTypePrimary),
-                    value: PartitionType.primary,
-                    groupValue: partitionType,
-                  ),
-                  _RadioValueTile(
-                    title: Text(lang.partitionTypeLogical),
-                    value: PartitionType.logical,
-                    groupValue: partitionType,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _RadioValueTile<PartitionLocation>(
-                    title: Text(lang.partitionLocationBeginning),
-                    value: PartitionLocation.beginning,
-                    groupValue: partitionLocation,
-                  ),
-                  _RadioValueTile<PartitionLocation>(
-                    title: Text(lang.partitionLocationEnd),
-                    value: PartitionLocation.end,
-                    groupValue: partitionLocation,
                   ),
                   const SizedBox(height: kContentSpacing),
                   ConstrainedBox(
@@ -137,9 +76,9 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
                   const SizedBox(height: kContentSpacing),
                   ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: Autocomplete<String>(
-                      optionsBuilder: (value) => _kDefaultMountPoints
-                          .where((option) => option.startsWith(value.text)),
+                    child: _PartitionMountField(
+                      partitionFormat: partitionFormat,
+                      partitionMount: partitionMount,
                     ),
                   ),
                 ],
@@ -154,7 +93,17 @@ Future<void> showCreatePartitionDialog(BuildContext context, DiskModel disk) {
           ),
           const SizedBox(width: kButtonBarSpacing),
           OutlinedButton(
-            onPressed: null,
+            onPressed: model.selectedDisk != null
+                ? () {
+                    model.addPartition(
+                      model.selectedDisk!,
+                      size: partitionSize.value,
+                      format: partitionFormat.value,
+                      mount: partitionMount.value,
+                    );
+                    Navigator.of(context).pop();
+                  }
+                : null,
             child: Text(lang.okButtonText),
           ),
         ],
@@ -192,36 +141,6 @@ class _PartitionDialogLabel extends StatelessWidget {
   }
 }
 
-class _RadioValueTile<T> extends StatelessWidget {
-  const _RadioValueTile({
-    Key? key,
-    required this.value,
-    required this.groupValue,
-    required this.title,
-  }) : super(key: key);
-
-  final T value;
-  final ValueNotifier<T> groupValue;
-  final Widget title;
-
-  void _setValue(T? value) => groupValue.value = value!;
-
-  @override
-  Widget build(BuildContext context) {
-    return ValueListenableBuilder<T>(
-      valueListenable: groupValue,
-      builder: (context, groupValue, child) {
-        return RadioButton<T>(
-          title: title,
-          value: value,
-          groupValue: groupValue,
-          onChanged: _setValue,
-        );
-      },
-    );
-  }
-}
-
 class _PartitionSizeBox extends StatelessWidget {
   const _PartitionSizeBox({
     Key? key,
@@ -247,7 +166,7 @@ class _PartitionSizeBox extends StatelessWidget {
             Expanded(
               child: SpinBox(
                 value: fromBytes(bytes.value, unit.value),
-                max: freeSpace.toDouble(),
+                max: fromBytes(freeSpace, unit.value),
                 onChanged: _setBytes,
               ),
             ),
@@ -258,7 +177,7 @@ class _PartitionSizeBox extends StatelessWidget {
                 selected: unit.value,
                 onSelected: (value) => unit.value = value,
                 itemBuilder: (context, unit, _) {
-                  return Text(unit.localize(context));
+                  return Text(unit.localize(context), key: ValueKey(unit));
                 },
               ),
             ),
@@ -286,47 +205,58 @@ extension _PartitionUnitLang on DataUnit {
 }
 
 extension _PartitionFormatLang on PartitionFormat {
-  String localize(BuildContext context) {
-    final lang = AppLocalizations.of(context);
-
+  String localize(AppLocalizations lang) {
     switch (this) {
-      case PartitionFormat.ext4:
-        return lang.partitionFormatExt4;
-      case PartitionFormat.ext3:
-        return lang.partitionFormatExt3;
-      case PartitionFormat.ext2:
-        return lang.partitionFormatExt2;
       case PartitionFormat.btrfs:
         return lang.partitionFormatBtrfs;
-      case PartitionFormat.jfs:
-        return lang.partitionFormatJfs;
-      case PartitionFormat.xfs:
-        return lang.partitionFormatXfs;
+      case PartitionFormat.ext2:
+        return lang.partitionFormatExt2;
+      case PartitionFormat.ext3:
+        return lang.partitionFormatExt3;
+      case PartitionFormat.ext4:
+        return lang.partitionFormatExt4;
+      case PartitionFormat.fat:
+        return lang.partitionFormatFat;
+      case PartitionFormat.fat12:
+        return lang.partitionFormatFat12;
       case PartitionFormat.fat16:
         return lang.partitionFormatFat16;
       case PartitionFormat.fat32:
         return lang.partitionFormatFat32;
+      case PartitionFormat.iso9660:
+        return lang.partitionFormatIso9660;
+      case PartitionFormat.vfat:
+        return lang.partitionFormatVfat;
+      case PartitionFormat.jfs:
+        return lang.partitionFormatJfs;
+      case PartitionFormat.ntfs:
+        return lang.partitionFormatNtfs;
+      case PartitionFormat.reiserfs:
+        return lang.partitionFormatReiserFS;
       case PartitionFormat.swap:
         return lang.partitionFormatSwap;
-      case PartitionFormat.bios:
-        return lang.partitionFormatBios;
-      case PartitionFormat.efi:
-        return lang.partitionFormatEfi;
-      case PartitionFormat.physical:
-        return lang.partitionFormatPhysical;
-      case PartitionFormat.none:
-        return lang.partitionFormatNone;
+      case PartitionFormat.xfs:
+        return lang.partitionFormatXfs;
+      case PartitionFormat.zfsroot:
+        return lang.partitionFormatZfsroot;
+      default:
+        throw UnimplementedError(toString());
     }
   }
 }
 
+/// Shows a dialog for editing an existing partition on the given [disk].
 Future<void> showEditPartitionDialog(
-    BuildContext context, PartitionModel partition) {
+    BuildContext context, Disk disk, Partition partition) {
+  final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+
   return showDialog(
     context: context,
     builder: (context) {
-      final partitionFormat = ValueNotifier(PartitionFormat.ext4);
-      final partitionErase = ValueNotifier(true);
+      final partitionFormat =
+          ValueNotifier(PartitionFormat.fromPartition(partition));
+      final partitionWipe = ValueNotifier(partition.wipe);
+      final partitionMount = ValueNotifier(partition.mount);
       final tileHeight = _defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
@@ -370,22 +300,17 @@ Future<void> showEditPartitionDialog(
                     ),
                   ),
                   const SizedBox(height: kContentSpacing),
-                  ValueListenableBuilder<bool>(
-                    valueListenable: partitionErase,
-                    builder: (context, erase, child) {
-                      return CheckButton(
-                        title: Text(lang.partitionErase),
-                        value: erase,
-                        onChanged: (v) => partitionErase.value = v!,
-                      );
-                    },
+                  _PartitionWipeCheckbox(
+                    canWipe: partition.canWipe,
+                    wipe: partitionWipe,
                   ),
                   const SizedBox(height: kContentSpacing),
                   ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: Autocomplete<String>(
-                      optionsBuilder: (value) => _kDefaultMountPoints
-                          .where((option) => option.startsWith(value.text)),
+                    child: _PartitionMountField(
+                      initialMount: partition.mount,
+                      partitionFormat: partitionFormat,
+                      partitionMount: partitionMount,
                     ),
                   ),
                 ],
@@ -400,7 +325,16 @@ Future<void> showEditPartitionDialog(
           ),
           const SizedBox(width: kButtonBarSpacing),
           OutlinedButton(
-            onPressed: null,
+            onPressed: () {
+              model.editPartition(
+                disk,
+                partition,
+                format: partitionFormat.value,
+                mount: partitionMount.value,
+                wipe: partitionWipe.value,
+              );
+              Navigator.of(context).pop();
+            },
             child: Text(lang.okButtonText),
           ),
         ],
@@ -409,26 +343,96 @@ Future<void> showEditPartitionDialog(
   );
 }
 
+class _PartitionMountField extends StatelessWidget {
+  const _PartitionMountField({
+    Key? key,
+    this.initialMount,
+    required this.partitionFormat,
+    required this.partitionMount,
+  }) : super(key: key);
+
+  final String? initialMount;
+  final ValueNotifier<PartitionFormat?> partitionFormat;
+  final ValueNotifier<String?> partitionMount;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<PartitionFormat?>(
+      valueListenable: partitionFormat,
+      builder: (context, format, child) {
+        return Autocomplete<String>(
+          initialValue: initialMount != null
+              ? TextEditingValue(text: initialMount!)
+              : null,
+          optionsBuilder: (value) => kDefaultMountPoints
+              .where((option) => option.startsWith(value.text)),
+          onSelected: (option) => partitionMount.value = option,
+          fieldViewBuilder:
+              (context, textEditingController, focusNode, onFieldSubmitted) {
+            return TextFormField(
+              enabled: format != PartitionFormat.swap,
+              controller: textEditingController,
+              focusNode: focusNode,
+              onChanged: (value) => partitionMount.value = value,
+              onFieldSubmitted: (_) => onFieldSubmitted(),
+            );
+          },
+        );
+      },
+    );
+  }
+}
+
+class _PartitionWipeCheckbox extends StatelessWidget {
+  const _PartitionWipeCheckbox({
+    Key? key,
+    required this.canWipe,
+    required this.wipe,
+  }) : super(key: key);
+
+  final bool canWipe;
+  final ValueNotifier<bool?> wipe;
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
+    return ValueListenableBuilder<bool?>(
+      valueListenable: wipe,
+      builder: (context, value, child) {
+        return CheckButton(
+          title: Text(lang.partitionErase),
+          value: value ?? false,
+          onChanged: canWipe ? (v) => wipe.value = v! : null,
+        );
+      },
+    );
+  }
+}
+
 class _PartitionFormatSelector extends StatelessWidget {
   const _PartitionFormatSelector({
     Key? key,
     required this.partitionFormat,
   }) : super(key: key);
 
-  final ValueNotifier<PartitionFormat> partitionFormat;
+  final ValueNotifier<PartitionFormat?> partitionFormat;
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<PartitionFormat>(
+    final lang = AppLocalizations.of(context);
+    return ValueListenableBuilder<PartitionFormat?>(
       valueListenable: partitionFormat,
       builder: (context, type, child) {
         return DropdownBuilder<PartitionFormat>(
-          selected: type,
+          selected: type ?? PartitionFormat.defaultValue,
           values: PartitionFormat.values,
-          itemBuilder: (context, type, _) {
-            return Text(type.localize(context));
+          itemBuilder: (context, format, _) {
+            return Text(
+              format.localize(lang),
+              key: ValueKey(format.type),
+            );
           },
-          onSelected: (value) {},
+          onSelected: (value) => partitionFormat.value = value,
         );
       },
     );

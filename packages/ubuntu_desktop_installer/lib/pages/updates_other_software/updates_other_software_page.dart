@@ -55,17 +55,18 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             groupValue: model.installationMode,
             onChanged: model.setInstallationMode,
           ),
-          Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-            child: Text(lang.otherOptions),
-          ),
-          CheckButton(
-            title: Text(lang.installThirdPartyTitle),
-            subtitle: Text(lang.installThirdPartySubtitle),
-            contentPadding: kContentPadding,
-            value: model.installThirdParty,
-            onChanged: model.setInstallThirdParty,
-          )
+          // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+          // Padding(
+          //   padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+          //   child: Text(lang.otherOptions),
+          // ),
+          // CheckButton(
+          //   title: Text(lang.installThirdPartyTitle),
+          //   subtitle: Text(lang.installThirdPartySubtitle),
+          //   contentPadding: kContentPadding,
+          //   value: model.installThirdParty,
+          //   onChanged: model.setInstallThirdParty,
+          // )
         ],
       ),
       actions: <WizardAction>[

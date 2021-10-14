@@ -134,13 +134,17 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
-        home: Builder(builder: (context) {
-          return WizardPage(
-            actions: <WizardAction>[
-              WizardAction.back(context),
-              WizardAction.next(context),
-            ],
-          );
+        home: Wizard(routes: {
+          '/': (_) {
+            return Builder(builder: (context) {
+              return WizardPage(
+                actions: <WizardAction>[
+                  WizardAction.back(context),
+                  WizardAction.next(context),
+                ],
+              );
+            });
+          }
         }),
       ),
     );

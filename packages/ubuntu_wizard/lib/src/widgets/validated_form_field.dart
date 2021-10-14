@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -51,7 +53,7 @@ class ValidatedFormField extends StatefulWidget {
   /// See [FormField.autovalidateMode].
   final AutovalidateMode autovalidateMode;
 
-  // Enables or disables TextField (defaults to true)
+  /// Enables or disables TextField (defaults to true)
   final bool enabled;
 
   /// Creates a [TextFormField] and a check mark.
@@ -103,7 +105,9 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
     if (!_focusNode.hasFocus &&
         widget.initialValue != null &&
         oldWidget.initialValue != widget.initialValue) {
-      _controller.text = widget.initialValue!;
+      scheduleMicrotask(() {
+        _controller.text = widget.initialValue!;
+      });
     }
   }
 

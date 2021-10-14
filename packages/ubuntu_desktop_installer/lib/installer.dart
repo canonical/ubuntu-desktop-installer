@@ -8,11 +8,15 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
+import 'services.dart';
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   const UbuntuDesktopInstallerApp({
     Key? key,
+    this.initialRoute,
   }) : super(key: key);
+
+  final String? initialRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: _UbuntuDesktopInstallerWizard.create(context),
+      home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
     );
   }
 }
@@ -37,13 +41,16 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   const _UbuntuDesktopInstallerWizard({
     Key? key,
+    this.initialRoute,
   }) : super(key: key);
 
-  static Widget create(BuildContext context) {
+  final String? initialRoute;
+
+  static Widget create(BuildContext context, String? initialRoute) {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => _UbuntuDesktopInstallerModel(client),
-      child: _UbuntuDesktopInstallerWizard(),
+      child: _UbuntuDesktopInstallerWizard(initialRoute: initialRoute),
     );
   }
 
@@ -65,12 +72,14 @@ class _UbuntuDesktopInstallerWizardState
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
+    final service = Provider.of<DiskStorageService>(context, listen: false);
 
     return Wizard(
-      initialRoute: Routes.welcome,
+      initialRoute: widget.initialRoute ?? Routes.welcome,
       routes: <String, WidgetBuilder>{
         Routes.welcome: WelcomePage.create,
-        Routes.tryOrInstall: TryOrInstallPage.create,
+        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+        // Routes.tryOrInstall: TryOrInstallPage.create,
         if (model.hasRst) Routes.turnOffRST: TurnOffRSTPage.create,
         Routes.keyboardLayout: KeyboardLayoutPage.create,
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
@@ -79,10 +88,12 @@ class _UbuntuDesktopInstallerWizardState
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.installationType: InstallationTypePage.create,
+        Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
         Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
         Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
         Routes.whoAreYou: WhoAreYouPage.create,
-        Routes.chooseYourLook: ChooseYourLookPage.create,
+        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+        // Routes.chooseYourLook: ChooseYourLookPage.create,
         Routes.installationSlides: InstallationSlidesPage.create,
         Routes.installationComplete: InstallationCompletePage.create,
       },
@@ -98,6 +109,17 @@ class _UbuntuDesktopInstallerWizardState
                 if (model.hasRst) return Routes.turnOffRST;
                 return Routes.keyboardLayout;
             }
+          case Routes.installationType:
+            if (settings.arguments == InstallationType.erase) {
+              if (service.hasMultipleDisks) {
+                return Routes.selectGuidedStorage;
+              } else {
+                return Routes.writeChangesToDisk;
+              }
+            }
+            return Routes.allocateDiskSpace;
+          case Routes.selectGuidedStorage:
+            return Routes.writeChangesToDisk;
           default:
             return null;
         }
