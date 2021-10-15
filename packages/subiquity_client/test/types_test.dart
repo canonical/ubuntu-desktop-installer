@@ -35,7 +35,7 @@ void main() {
   });
 
   test('timezone data', () {
-    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoIP: false);
+    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoip: false);
     const json = <String, dynamic>{
       'timezone': 'Europe/Paris',
       'from_geoip': false,
@@ -219,7 +219,7 @@ void main() {
       interopGuiintegration: false,
       interopAudiointegration: false,
       interopAdvancedipdetection: false,
-      motdWSLnewsenabled: true,
+      motdWslnewsenabled: true,
       automountEnabled: true,
       automountMountfstab: true,
       interopEnabled: true,
