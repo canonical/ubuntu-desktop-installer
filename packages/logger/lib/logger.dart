@@ -32,6 +32,9 @@ abstract class LogLevel {
   }
 }
 
+PrintAppender? _consoleLog;
+RotatingFileAppender? _fileLog;
+
 /// A logger that prints to the console and writes to a log file.
 class Logger {
   /// Creates a named logger.
@@ -49,8 +52,10 @@ class Logger {
     }
 
     // console output
-    final console = PrintAppender(formatter: _LogFormatter(verbose: false));
-    console.attachToLogger(log.Logger.root);
+    if (_consoleLog == null) {
+      _consoleLog = PrintAppender(formatter: _LogFormatter(verbose: false));
+      _consoleLog!.attachToLogger(log.Logger.root);
+    }
 
     // log file
     if (path != null) {
@@ -58,18 +63,20 @@ class Logger {
       try {
         _createDirectory(p.dirname(path));
 
-        final file = RotatingFileAppender(
-          baseFilePath: '$path.$pid',
-          formatter: _LogFormatter(verbose: true),
-        );
-        file.attachToLogger(log.Logger.root);
+        if (_fileLog == null) {
+          _fileLog = RotatingFileAppender(
+            baseFilePath: '$path.$pid',
+            formatter: _LogFormatter(verbose: true),
+          );
+          _fileLog!.attachToLogger(log.Logger.root);
 
-        _createSymlink(path, file.baseFilePath);
+          _createSymlink(path, _fileLog!.baseFilePath);
+        }
 
-        console
+        _consoleLog!
             .handle(log.LogRecord(LogLevel.info, 'Logging to $path', appName));
       } on FileSystemException catch (e) {
-        console.handle(log.LogRecord(
+        _consoleLog!.handle(log.LogRecord(
             LogLevel.error, 'Logging to $path failed (${e.message})', appName));
       }
     }
