@@ -17,3 +17,5 @@ dependencies:
   mockito: 5.0.14
   subiquity_client:
     path: ../subiquity_client
+  ubuntu_wizard:
+    path: ../ubuntu_wizard
