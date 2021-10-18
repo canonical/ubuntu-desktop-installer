@@ -27,7 +27,7 @@ void main() {
           localizationsDelegates: localizationsDelegates,
           home: Wizard(
             routes: {
-              '/': ChooseYourLookPage.create,
+              '/': WizardRoute(builder: ChooseYourLookPage.create),
             },
           ),
         ),

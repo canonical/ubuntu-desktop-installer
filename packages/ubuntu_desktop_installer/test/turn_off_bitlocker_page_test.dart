@@ -21,14 +21,16 @@ void main() {
         localizationsDelegates: localizationsDelegates,
         home: Wizard(
           routes: {
-            '/': (_) {
-              return Provider<TurnOffBitLockerModel>.value(
-                value: model,
-                child: TurnOffBitLockerPage(),
-              );
-            },
+            '/': WizardRoute(
+              builder: (_) {
+                return Provider<TurnOffBitLockerModel>.value(
+                  value: model,
+                  child: TurnOffBitLockerPage(),
+                );
+              },
+              onNext: (settings) => '/',
+            ),
           },
-          onNext: (settings) => '/',
         ),
       ),
     );

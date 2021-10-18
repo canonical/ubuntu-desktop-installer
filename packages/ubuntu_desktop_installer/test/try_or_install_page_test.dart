@@ -31,14 +31,9 @@ void main() {
       locale: Locale('en'),
       home: Wizard(
         routes: {
-          Routes.tryOrInstall: (_) => TryOrInstallPage(),
-          Routes.repairUbuntu: (context) => Text(Routes.repairUbuntu),
-          Routes.tryUbuntu: (context) => Text(Routes.tryUbuntu),
-          Routes.keyboardLayout: (context) => Text(Routes.keyboardLayout),
-        },
-        onNext: (settings) {
-          switch (settings.name) {
-            case Routes.tryOrInstall:
+          Routes.tryOrInstall: WizardRoute(
+            builder: (_) => TryOrInstallPage(),
+            onNext: (settings) {
               switch (model.option) {
                 case Option.repairUbuntu:
                   return Routes.repairUbuntu;
@@ -49,7 +44,17 @@ void main() {
                 default:
                   break;
               }
-          }
+            },
+          ),
+          Routes.repairUbuntu: WizardRoute(
+            builder: (context) => Text(Routes.repairUbuntu),
+          ),
+          Routes.tryUbuntu: WizardRoute(
+            builder: (context) => Text(Routes.tryUbuntu),
+          ),
+          Routes.keyboardLayout: WizardRoute(
+            builder: (context) => Text(Routes.keyboardLayout),
+          ),
         },
       ),
     );

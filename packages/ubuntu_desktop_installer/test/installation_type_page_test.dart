@@ -46,8 +46,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -129,8 +133,12 @@ void main() {
           Provider(create: (_) => DiskStorageService(client)),
         ],
         child: Wizard(
-          routes: {'/': InstallationTypePage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: InstallationTypePage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

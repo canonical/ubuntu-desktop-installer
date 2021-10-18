@@ -76,42 +76,50 @@ class _UbuntuDesktopInstallerWizardState
 
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.welcome,
-      routes: <String, WidgetBuilder>{
-        Routes.welcome: WelcomePage.create,
+      routes: <String, WizardRoute>{
+        Routes.welcome: const WizardRoute(
+          builder: WelcomePage.create,
+        ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.tryOrInstall: TryOrInstallPage.create,
-        if (model.hasRst) Routes.turnOffRST: TurnOffRSTPage.create,
-        Routes.keyboardLayout: KeyboardLayoutPage.create,
-        Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+        // Routes.tryOrInstall: WizardRoute(
+        //   builder: TryOrInstallPage.create,
+        //   onNext: (settings) {
+        //     switch (settings.arguments as Option?) {
+        //       case Option.repairUbuntu:
+        //         return Routes.repairUbuntu;
+        //       case Option.tryUbuntu:
+        //         return Routes.tryUbuntu;
+        //       default:
+        //         if (model.hasRst) return Routes.turnOffRST;
+        //         return Routes.keyboardLayout;
+        //     }
+        //   },
+        // ),
+        if (model.hasRst)
+          Routes.turnOffRST: const WizardRoute(
+            builder: TurnOffRSTPage.create,
+          ),
+        Routes.keyboardLayout: const WizardRoute(
+          builder: KeyboardLayoutPage.create,
+        ),
+        Routes.updatesOtherSoftware: const WizardRoute(
+          builder: UpdatesOtherSoftwarePage.create,
+        ),
         if (model.hasSecureBoot)
-          Routes.configureSecureBoot: ConfigureSecureBootPage.create,
+          Routes.configureSecureBoot: const WizardRoute(
+            builder: ConfigureSecureBootPage.create,
+          ),
         if (model.hasEncryption)
-          Routes.chooseSecurityKey: ChooseSecurityKeyPage.create,
+          Routes.chooseSecurityKey: const WizardRoute(
+            builder: ChooseSecurityKeyPage.create,
+          ),
         if (model.hasBitLocker)
-          Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
-        Routes.installationType: InstallationTypePage.create,
-        Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
-        Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
-        Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
-        Routes.whoAreYou: WhoAreYouPage.create,
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.chooseYourLook: ChooseYourLookPage.create,
-        Routes.installationSlides: InstallationSlidesPage.create,
-        Routes.installationComplete: InstallationCompletePage.create,
-      },
-      onNext: (settings) {
-        switch (settings.name) {
-          case Routes.tryOrInstall:
-            switch (settings.arguments as Option?) {
-              case Option.repairUbuntu:
-                return Routes.repairUbuntu;
-              case Option.tryUbuntu:
-                return Routes.tryUbuntu;
-              default:
-                if (model.hasRst) return Routes.turnOffRST;
-                return Routes.keyboardLayout;
-            }
-          case Routes.installationType:
+          Routes.turnOffBitlocker: const WizardRoute(
+            builder: TurnOffBitLockerPage.create,
+          ),
+        Routes.installationType: WizardRoute(
+          builder: InstallationTypePage.create,
+          onNext: (settings) {
             if (settings.arguments == InstallationType.erase) {
               if (service.hasMultipleDisks) {
                 return Routes.selectGuidedStorage;
@@ -120,11 +128,31 @@ class _UbuntuDesktopInstallerWizardState
               }
             }
             return Routes.allocateDiskSpace;
-          case Routes.selectGuidedStorage:
-            return Routes.writeChangesToDisk;
-          default:
-            return null;
-        }
+          },
+        ),
+        Routes.selectGuidedStorage: WizardRoute(
+          builder: SelectGuidedStoragePage.create,
+          onNext: (settings) => Routes.writeChangesToDisk,
+        ),
+        Routes.allocateDiskSpace: const WizardRoute(
+          builder: AllocateDiskSpacePage.create,
+        ),
+        Routes.writeChangesToDisk: const WizardRoute(
+          builder: WriteChangesToDiskPage.create,
+        ),
+        Routes.whoAreYou: const WizardRoute(
+          builder: WhoAreYouPage.create,
+        ),
+        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+        // Routes.chooseYourLook: const WizardRoute(
+        //   builder: ChooseYourLookPage.create,
+        // ),
+        Routes.installationSlides: const WizardRoute(
+          builder: InstallationSlidesPage.create,
+        ),
+        Routes.installationComplete: const WizardRoute(
+          builder: InstallationCompletePage.create,
+        ),
       },
     );
   }

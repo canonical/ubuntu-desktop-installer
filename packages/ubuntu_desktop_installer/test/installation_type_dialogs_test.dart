@@ -32,7 +32,7 @@ void main() {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: localizationsDelegates,
           home: Wizard(
-            routes: {'/': (_) => InstallationTypePage()},
+            routes: {'/': WizardRoute(builder: (_) => InstallationTypePage())},
           ),
         ),
       ),

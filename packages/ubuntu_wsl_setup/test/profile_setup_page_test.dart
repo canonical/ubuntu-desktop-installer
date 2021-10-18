@@ -54,8 +54,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -220,8 +224,12 @@ void main() {
       home: Provider<SubiquityClient>.value(
         value: client,
         child: Wizard(
-          routes: {'/': ProfileSetupPage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: ProfileSetupPage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

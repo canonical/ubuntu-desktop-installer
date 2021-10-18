@@ -54,8 +54,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -130,8 +134,12 @@ void main() {
       home: Provider<DiskStorageService>.value(
         value: service,
         child: Wizard(
-          routes: {'/': SelectGuidedStoragePage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: SelectGuidedStoragePage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));
