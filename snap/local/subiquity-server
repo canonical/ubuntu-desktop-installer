@@ -20,6 +20,9 @@ export PATH=$PATH:$SNAP/bin
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
+# controls what snap to look for in the refresh check
+export SNAP_NAME="ubuntu-desktop-installer"
+
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
 # autoinstall is explicitly disabled until UI support is present.
