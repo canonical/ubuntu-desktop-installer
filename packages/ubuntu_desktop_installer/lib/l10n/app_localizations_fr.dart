@@ -147,6 +147,29 @@ class AppLocalizationsFr extends AppLocalizations {
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
 
   @override
+  String get chooseSecurityKeyTitle => 'Choose a security key';
+
+  @override
+  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+
+  @override
+  String get chooseSecurityKeyHint => 'Choose a security key';
+
+  @override
+  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+
+  @override
+  String get chooseSecurityKeyRequired => 'A security key is required';
+
+  @override
+  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+
+  @override
+  String chooseSecurityKeyWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+  }
+
+  @override
   String get installationTypeTitle => 'Installation type';
 
   @override
