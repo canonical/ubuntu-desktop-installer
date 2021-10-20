@@ -94,7 +94,9 @@ abstract class SubiquityServer {
       stderr.addStream(process.stderr);
       return process;
     });
-    log.info('Starting server (PID: ${_serverProcess!.pid})');
+    log.info(
+      'Starting server (PID: ${_serverProcess!.pid}) with args: $subiquityCmd',
+    );
 
     await _writePidFile(_serverProcess!.pid);
   }
