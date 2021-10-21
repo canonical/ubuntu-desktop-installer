@@ -85,10 +85,13 @@ void main() {
     model.confirmedPassword = 'password';
     expect(wasNotified, isTrue);
 
-    wasNotified = false;
-    expect(model.showAdvancedOptions, isFalse);
-    model.showAdvancedOptions = true;
-    expect(wasNotified, isTrue);
+    // NOTE: The advanced options cannot be skipped for now (#431).
+    //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+    //
+    // wasNotified = false;
+    // expect(model.showAdvancedOptions, isFalse);
+    // model.showAdvancedOptions = true;
+    // expect(wasNotified, isTrue);
   });
 
   test('validation', () {
