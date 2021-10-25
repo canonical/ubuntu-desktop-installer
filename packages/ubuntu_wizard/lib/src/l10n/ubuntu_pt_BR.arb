@@ -2,7 +2,14 @@
   "@@locale": "pt_BR",
 
   "languageName": "Português do Brasil",
+  "@languageName": {
+    "description": "Português do Brasil"
+  },
 
   "backAction": "Voltar",
-  "continueAction": "Continuar"
+  "continueAction": "Continuar",
+  
+  "strongPassword": "Senha forte",
+  "moderatePassword": "Senha média",
+  "weakPassword": "Senha fraca"
 }
