@@ -50,4 +50,11 @@ class SelectLanguageModel extends ChangeNotifier {
   void selectLocale(Locale locale) {
     _selectedLanguageIndex = _languages.findBestMatch(locale);
   }
+
+  /// Returns the [locale] defined in Subiquity server.
+  Future<Locale> getServerLocale() {
+    return _client
+        .locale()
+        .then((value) => Locale(value.substring(0, 2), value.substring(3, 5)));
+  }
 }
