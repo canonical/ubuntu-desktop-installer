@@ -340,26 +340,16 @@ void main() {
     });
 
     test('timezone', () async {
-      final systemTimezone =
-          Process.runSync('timedatectl', ['show', '-p', 'Timezone', '--value'])
-              .stdout
-              .toString()
-              .trim();
+      await _client.setTimezone('Pacific/Guam');
       var tzdata = await _client.timezone();
-      expect(tzdata.timezone, systemTimezone);
+      expect(tzdata.timezone, 'Pacific/Guam');
+      expect(tzdata.fromGeoip, isFalse);
 
-      try {
-        await _client.setTimezone('Pacific/Guam');
-        tzdata = await _client.timezone();
-        expect(tzdata.timezone, 'Pacific/Guam');
-        expect(tzdata.fromGeoIP, isFalse);
-      } finally {
-        // Restore initial timezone to leave the test system in a clean state
-        await _client.setTimezone(systemTimezone);
-      }
-    },
-        skip:
-            'fails on headless test systems (CI) because subiquity calls `timedatectl set-timezone`, which requires sudo');
+      await _client.setTimezone('geoip');
+      tzdata = await _client.timezone();
+      expect(tzdata.timezone, isNotNull);
+      expect(tzdata.fromGeoip, isTrue);
+    });
 
     test('ssh', () async {
       var newSsh = SSHData(
@@ -501,7 +491,7 @@ void main() {
         interopGuiintegration: false,
         interopAudiointegration: false,
         interopAdvancedipdetection: false,
-        motdWSLnewsenabled: true,
+        motdWslnewsenabled: true,
         automountEnabled: true,
         automountMountfstab: true,
         interopEnabled: true,
@@ -516,7 +506,7 @@ void main() {
       expect(conf.interopGuiintegration, false);
       expect(conf.interopAudiointegration, false);
       expect(conf.interopAdvancedipdetection, false);
-      expect(conf.motdWSLnewsenabled, true);
+      expect(conf.motdWslnewsenabled, true);
       expect(conf.automountEnabled, true);
       expect(conf.automountMountfstab, true);
       expect(conf.interopEnabled, true);
@@ -528,7 +518,7 @@ void main() {
         interopGuiintegration: true,
         interopAudiointegration: true,
         interopAdvancedipdetection: true,
-        motdWSLnewsenabled: false,
+        motdWslnewsenabled: false,
         automountEnabled: false,
         automountMountfstab: false,
         interopEnabled: false,
@@ -543,7 +533,7 @@ void main() {
       expect(conf.interopGuiintegration, true);
       expect(conf.interopAudiointegration, true);
       expect(conf.interopAdvancedipdetection, true);
-      expect(conf.motdWSLnewsenabled, false);
+      expect(conf.motdWslnewsenabled, false);
       expect(conf.automountEnabled, false);
       expect(conf.automountMountfstab, false);
       expect(conf.interopEnabled, false);

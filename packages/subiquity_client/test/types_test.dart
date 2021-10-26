@@ -35,7 +35,7 @@ void main() {
   });
 
   test('timezone data', () {
-    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoIP: false);
+    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoip: false);
     const json = <String, dynamic>{
       'timezone': 'Europe/Paris',
       'from_geoip': false,
@@ -140,6 +140,46 @@ void main() {
     expect(Partition.fromJson(json), keyboard);
   });
 
+  test('disk', () {
+    const p1 = Partition(number: 1);
+    const p2 = Partition(number: 2);
+    const disk = Disk(
+      id: 'test-id',
+      label: 'test-label',
+      path: '/test/path',
+      type: 'test-type',
+      size: 123,
+      usageLabels: ['test', 'usage', 'label'],
+      partitions: [p1, p2],
+      freeForPartitions: 456,
+      okForGuided: true,
+      ptable: 'tst',
+      preserve: true,
+      bootDevice: true,
+    );
+
+    final json = <String, dynamic>{
+      'id': 'test-id',
+      'label': 'test-label',
+      'path': '/test/path',
+      'type': 'test-type',
+      'size': 123,
+      'usage_labels': ['test', 'usage', 'label'],
+      'partitions': [
+        p1.toJson(),
+        p2.toJson(),
+      ],
+      'free_for_partitions': 456,
+      'ok_for_guided': true,
+      'ptable': 'tst',
+      'preserve': true,
+      'boot_device': true,
+    };
+
+    expect(disk.toJson(), equals(json));
+    expect(Disk.fromJson(json), disk);
+  });
+
   test('guided choice', () {
     const keyboard = GuidedChoice(
       diskId: '0',
@@ -179,7 +219,7 @@ void main() {
       interopGuiintegration: false,
       interopAudiointegration: false,
       interopAdvancedipdetection: false,
-      motdWSLnewsenabled: true,
+      motdWslnewsenabled: true,
       automountEnabled: true,
       automountMountfstab: true,
       interopEnabled: true,

@@ -2,15 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'installation_slides_model_test.mocks.dart';
+
+@GenerateMocks([JournalService])
 void main() async {
   test('client status query loop', () async {
     final client = MockSubiquityClient();
-    final model = InstallationSlidesModel(client);
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
 
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
@@ -45,7 +51,8 @@ void main() async {
       currentState = nextState;
     }
 
-    final model = InstallationSlidesModel(client);
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
 
     expect(model.state, equals(ApplicationState.UNKNOWN));
     expect(model.isPreparing, isFalse);
@@ -89,7 +96,8 @@ void main() async {
       (_) async => ApplicationStatus(state: ApplicationState.ERROR),
     );
 
-    final model = InstallationSlidesModel(client);
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
 
     expect(model.hasError, isFalse);
 
@@ -109,7 +117,8 @@ void main() async {
     });
 
     final client = MockSubiquityClient();
-    final model = InstallationSlidesModel(client);
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
 
     await model.reboot(immediate: true);
     verify(client.reboot(immediate: true)).called(1);
@@ -122,7 +131,8 @@ void main() async {
       (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
     );
 
-    final model = InstallationSlidesModel(client);
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
     expect(model.installationStep, equals(-1));
     expect(model.installationStepCount, equals(5));
 

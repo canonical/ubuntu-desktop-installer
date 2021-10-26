@@ -36,9 +36,9 @@ class ConfigurationUIModel extends ChangeNotifier {
   }
 
   /// Whether WSL MOTD news are enabled.
-  bool get motdWSLnewsenabled => _conf.value.motdWSLnewsenabled ?? true;
+  bool get motdWSLnewsenabled => _conf.value.motdWslnewsenabled ?? true;
   set motdWSLnewsenabled(bool value) {
-    _conf.value = _conf.value.copyWith(motdWSLnewsenabled: value);
+    _conf.value = _conf.value.copyWith(motdWslnewsenabled: value);
   }
 
   /// Whether automountEnabled is enabled.

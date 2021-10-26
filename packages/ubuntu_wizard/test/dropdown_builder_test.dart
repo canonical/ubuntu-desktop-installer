@@ -67,4 +67,27 @@ void main() {
 
     expect(selectedValue, equals(TestEnum.bar));
   });
+
+  testWidgets('allows null value', (tester) async {
+    int? selectedValue = -1;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: DropdownBuilder<int?>(
+            values: [1, 2, 3, null],
+            onSelected: (value) => selectedValue = value,
+            itemBuilder: (context, value, _) => Text(value.toString()),
+          ),
+        ),
+      ),
+    );
+
+    await tester.tap(find.byTypeOf<DropdownButton<int?>>());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('null').last);
+    await tester.pumpAndSettle();
+
+    expect(selectedValue, isNull);
+  });
 }

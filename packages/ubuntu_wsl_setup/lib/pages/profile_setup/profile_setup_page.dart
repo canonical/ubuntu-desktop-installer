@@ -81,8 +81,11 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
               padding: fieldPadding,
               child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
-            const _ShowAdvancedOptionsCheckButton(),
+            // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
+            //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+            //
+            // const SizedBox(height: kContentSpacing),
+            // const _ShowAdvancedOptionsCheckButton(),
           ],
         );
       }),

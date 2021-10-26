@@ -7,10 +7,23 @@ import 'app.dart';
 void main(List<String> args) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addFlag('reconfigure');
+    parser.addOption(
+      'prefill',
+      valueHelp: 'prefill',
+      help: '''
+Path of the YAML file containing prefill information, which
+feeds the installer with partial information to prefill the
+screens, yet allowing user to overwrite any of those during setup.
+  ''',
+    );
   })!;
   var variant = Variant.WSL_SETUP;
+  List<String>? serverArgs;
   if (options['reconfigure'] == true) {
     variant = Variant.WSL_CONFIGURATION;
+  }
+  if (options['prefill'] != null) {
+    serverArgs = ['--prefill', options['prefill']];
   }
   runWizardApp(
     UbuntuWslSetupApp(
@@ -20,6 +33,7 @@ void main(List<String> args) {
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
-    variant: variant,
+    onInitSubiquity: (client) => client.setVariant(variant),
+    serverArgs: serverArgs,
   );
 }

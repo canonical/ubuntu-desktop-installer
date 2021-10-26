@@ -44,7 +44,7 @@ class DropdownBuilder<T> extends StatelessWidget {
   final List<T> values;
 
   /// Called when the user selects an item.
-  final ValueChanged<T> onSelected;
+  final ValueChanged<T?> onSelected;
 
   /// Builds a dropdown item for the given `value`.
   ///
@@ -65,7 +65,7 @@ class DropdownBuilder<T> extends StatelessWidget {
               child: itemBuilder(context, value, null),
             );
           }).toList(),
-          onChanged: (value) => onSelected(value!),
+          onChanged: onSelected,
         ),
       ),
     );

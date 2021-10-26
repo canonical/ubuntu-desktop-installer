@@ -328,25 +328,34 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
+  String get partitionFormatFat => 'FAT file system';
+
+  @override
+  String get partitionFormatFat12 => 'FAT12 file system';
+
+  @override
   String get partitionFormatFat16 => 'FAT16 file system';
 
   @override
   String get partitionFormatFat32 => 'FAT32 file system';
 
   @override
-  String get partitionFormatSwap => 'swap area';
+  String get partitionFormatSwap => 'Swap area';
 
   @override
-  String get partitionFormatBios => 'Reserved BIOS boot area';
+  String get partitionFormatIso9660 => 'ISO 9660 file system';
 
   @override
-  String get partitionFormatEfi => 'EFI System Partition';
+  String get partitionFormatVfat => 'VFAT file system';
 
   @override
-  String get partitionFormatPhysical => 'physical volume for encryption';
+  String get partitionFormatNtfs => 'NTFS file system';
 
   @override
-  String get partitionFormatNone => 'do not use the partition';
+  String get partitionFormatReiserFS => 'ReiserFS file system';
+
+  @override
+  String get partitionFormatZfsroot => 'ZFS root file system';
 
   @override
   String get partitionErase => 'Format the partition';
@@ -423,18 +432,13 @@ class AppLocalizationsOc extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
 
   @override
-  String writeChangesPartitionEntryPrimaryFull(Object partitionNumber, Object diskSerial, Object diskPath, Object fstype, Object mountPath) {
-    return 'partition #$partitionNumber of $diskSerial ($diskPath) as $fstype used for $mountPath';
+  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} as $format used for $mount';
   }
 
   @override
-  String writeChangesPartitionEntryPrimary(Object partitionNumber, Object diskSerial, Object diskPath) {
-    return 'partition #$partitionNumber of $diskSerial ($diskPath) as';
-  }
-
-  @override
-  String writeChangesPartitionEntrySecondary(Object fstype, Object mountPath) {
-    return '        partition # as $fstype used for $mountPath';
+  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} as $format';
   }
 
   @override
@@ -491,7 +495,7 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   AppLocalizationsOcFr(): super('oc_FR');
 
   @override
-  String get appTitle => 'Programa d\'installacion del burèu Ubuntu';
+  String get appTitle => 'Programa d’installacion del burèu Ubuntu';
 
   @override
   String get windowTitle => 'Installar Ubuntu';
@@ -524,7 +528,7 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get tryOrInstallPageTitle => 'Ensajar o installar';
 
   @override
-  String get repairInstallation => 'Reparar l\'installacion';
+  String get repairInstallation => 'Reparar l’installacion';
 
   @override
   String get repairInstallationDescription => 'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
@@ -550,7 +554,7 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get turnOffRST => 'Desactivar RST';
 
   @override
-  String get turnOffRSTDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d\'Intel. Cal desactivar RST jos Windows abans d\'installar Ubuntu.';
+  String get turnOffRSTDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
@@ -561,19 +565,46 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get keyboardLayoutPageTitle => 'Agençament del clavièr';
 
   @override
-  String get chooseYourKeyboardLayout => 'Indicatz l\'agençament del clavièr :';
+  String get chooseYourKeyboardLayout => 'Indicatz l’agençament del clavièr :';
 
   @override
   String get typeToTest => 'Picatz de tèxt aquí per ensajar lo clavièr';
 
   @override
-  String get detectLayout => 'Detectar l\'agençament del clavièr';
+  String get detectLayout => 'Detectar l’agençament del clavièr';
 
   @override
   String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
 
   @override
   String get isKeyPresent => 'La tòca seguenta es presenta sul clavièr ?';
+
+  @override
+  String get configureSecureBootTitle => 'Configurar l’amorçatge segur';
+
+  @override
+  String get configureSecureBootDescription => 'Avètz causit d’installar de pilòts tèrces. Aquò requerís la desactivacion de l’amorçatge segur.\nPer aquò far, devètz causir una clau de seguretat ara, e la picar quand lo sistèma avia.';
+
+  @override
+  String get configureSecureBootOption => 'Configurar l’amorçatge segur';
+
+  @override
+  String get chooseSecurityKey => 'Causir una clau de seguretat';
+
+  @override
+  String get confirmSecurityKey => 'Confirmat la clau de seguretat';
+
+  @override
+  String get dontInstallDriverSoftwareNow => 'Installar pas lo logicial pilòt pel moment';
+
+  @override
+  String get dontInstallDriverSoftwareNowDescription => 'Lo podètz installar mai tard de Logicials e Mesas a jorn estant.';
+
+  @override
+  String get configureSecureBootSecurityKeyRequired => 'La clau de seguretat es requerida';
+
+  @override
+  String get secureBootSecurityKeysDontMatch => 'Las claus de seguretat correspondon pas';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
@@ -603,10 +634,92 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get installThirdPartySubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
-  String get allocateDiskSpace => 'Atribuir l\'espaci disc';
+  String get installationTypeTitle => 'Tipe d’installacion';
 
   @override
-  String get startInstallingButtonText => 'Començar l\'installacion';
+  String installationTypeOSDetected(Object os) {
+    return 'Aqueste ordenador possedís actualament $os. De qué volètz far ?';
+  }
+
+  @override
+  String get installationTypeNoOSDetected => 'Aqueste ordenador possedís pas cap de sistèma operatiu detectat actualament. De qué volètz far ?';
+
+  @override
+  String get installationTypeErase => 'Escafar lo disc e installar Ubuntu';
+
+  @override
+  String installationTypeEraseWarning(Object color) {
+    return '<font color=\"$color\">Avertiment :</font> aquò suprimirà totes vòstres programas, documents, fòtos e autres fichièrs de totes lo sistèmas operatius.';
+  }
+
+  @override
+  String get installationTypeAdvancedLabel => 'Foncionalitats avançadas...';
+
+  @override
+  String get installationTypeAdvancedTitle => 'Foncionalitats avançadas';
+
+  @override
+  String get installationTypeNone => 'Cap';
+
+  @override
+  String get installationTypeNoneSelected => 'Cap pas seleccionat';
+
+  @override
+  String get installationTypeLVM => 'Utilizar LVM amb l’installation d’Ubuntu novèla';
+
+  @override
+  String get installationTypeLVMSelected => 'LVM seleccionat';
+
+  @override
+  String get installationTypeEncrypt => 'Chifrar l’installacion d’Ubuntu novèla per la seguretat';
+
+  @override
+  String get installationTypeEncryptInfo => 'Causiretz una clau de seguretat a l’etapa seguenta.';
+
+  @override
+  String get installationTypeZFS => 'EXPERIMENTAL : escafar lo disc e utilizar ZFS';
+
+  @override
+  String get installationTypeZFSSelected => 'ZFS seleccionat';
+
+  @override
+  String installationTypeReinstall(Object os) {
+    return 'Escafar $os e reinstallar';
+  }
+
+  @override
+  String installationTypeReinstallWarning(Object color, Object os) {
+    return '<font color=\"$color\">Avertiment :</font> aquò suprimirà totes vòstres programas $os, documents, fòtos e autres fichièrs.';
+  }
+
+  @override
+  String installationTypeAlongside(Object product, Object os) {
+    return 'Installar $product al costat de $os';
+  }
+
+  @override
+  String get installationTypeAlongsideInfo => 'Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.';
+
+  @override
+  String get installationTypeManual => 'Quicòm mai';
+
+  @override
+  String get installationTypeManualInfo => 'Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per Ubuntu';
+
+  @override
+  String get selectGuidedStoragePageTitle => 'Escafar lo disc e installar Ubuntu';
+
+  @override
+  String get selectGuidedStorageInfoLabel => 'Lo disc entièr serà utilizat :';
+
+  @override
+  String get selectGuidedStorageInstallNow => 'Installar ara';
+
+  @override
+  String get allocateDiskSpace => 'Atribuir l’espaci disc';
+
+  @override
+  String get startInstallingButtonText => 'Començar l’installacion';
 
   @override
   String get diskHeadersDevice => 'Disc';
@@ -708,18 +821,6 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get partitionFormatSwap => 'zòna d’escambi';
 
   @override
-  String get partitionFormatBios => 'zòna reservada a l’aviada del BIOS';
-
-  @override
-  String get partitionFormatEfi => 'particion sistèma EFI';
-
-  @override
-  String get partitionFormatPhysical => 'volum fisic pel chiframent';
-
-  @override
-  String get partitionFormatNone => 'utilizar pas la particion';
-
-  @override
   String get partitionErase => 'Formatar la particion';
 
   @override
@@ -794,25 +895,10 @@ class AppLocalizationsOcFr extends AppLocalizationsOc {
   String get writeChangesPartitionsHeader => 'Las particions seguentas seràn formatadas :';
 
   @override
-  String writeChangesPartitionEntryPrimaryFull(Object partitionNumber, Object diskSerial, Object diskPath, Object fstype, Object mountPath) {
-    return 'particion n° $partitionNumber de $diskSerial ($diskPath) de tipe $fstype coma $mountPath';
-  }
+  String get chooseYourLookPageTitle => 'Causissètz l’aparéncia';
 
   @override
-  String writeChangesPartitionEntryPrimary(Object partitionNumber, Object diskSerial, Object diskPath) {
-    return 'particion n° $partitionNumber de $diskSerial ($diskPath) coma';
-  }
-
-  @override
-  String writeChangesPartitionEntrySecondary(Object fstype, Object mountPath) {
-    return '        particion n° de tipe $fstype coma $mountPath';
-  }
-
-  @override
-  String get chooseYourLookPageTitle => 'Causissètz l\'aparéncia';
-
-  @override
-  String get chooseYourLookPageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d\'aparéncia.';
+  String get chooseYourLookPageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
 
   @override
   String get chooseYourLookPageDarkSetting => 'Fosc';

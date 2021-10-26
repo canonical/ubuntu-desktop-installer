@@ -38,6 +38,22 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     model.loadGuidedStorage();
   }
 
+  String prettyFormatPartition(Disk disk, Partition partition) {
+    return '${disk.sysname}${partition.number}';
+  }
+
+  /// Formats a disk in a pretty way e.g. "/dev/sda ATA Maxtor (123 GB)"
+  String prettyFormatStorage(Disk disk) {
+    final udev = Provider.of<UdevService>(context, listen: false);
+    final fullName = <String?>[
+      udev.modelName(disk.sysname),
+      udev.vendorName(disk.sysname)
+    ].where((p) => p?.isNotEmpty == true).join(' ');
+
+    final size = filesize(disk.size);
+    return '${disk.path} - $size $fullName';
+  }
+
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<SelectGuidedStorageModel>(context);
@@ -55,10 +71,13 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                 child: DropdownBuilder<int>(
                   values: List.generate(model.storages.length, (i) => i),
                   selected: model.selectedIndex,
-                  onSelected: model.selectStorage,
+                  onSelected: (i) => model.selectStorage(i!),
                   itemBuilder: (context, index, child) {
                     final storage = model.storages[index];
-                    return Text(storage.id ?? '', key: ValueKey(index));
+                    return Text(
+                      prettyFormatStorage(storage),
+                      key: ValueKey(index),
+                    );
                   },
                 ),
               )
@@ -84,7 +103,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   const SizedBox(height: kContentSpacing / 2),
-                  Text(model.selectedStorage?.id ?? ''),
+                  Text(model.selectedStorage?.path ?? ''),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
                     filesize(model.selectedStorage?.size ?? 0),

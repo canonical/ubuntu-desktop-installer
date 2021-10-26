@@ -29,6 +29,8 @@ dependencies:
   provider: ^6.0.0
   flutter_markdown: ^0.6.2
   scroll_to_index: ^2.0.0
+  udev:
+    path: ../udev
   url_launcher: ^6.0.3
   yaru_icons: ^0.0.3
 
@@ -45,3 +47,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/slides/
