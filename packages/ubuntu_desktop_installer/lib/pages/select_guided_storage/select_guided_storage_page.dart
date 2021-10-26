@@ -71,7 +71,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                 child: DropdownBuilder<int>(
                   values: List.generate(model.storages.length, (i) => i),
                   selected: model.selectedIndex,
-                  onSelected: model.selectStorage,
+                  onSelected: (i) => model.selectStorage(i!),
                   itemBuilder: (context, index, child) {
                     final storage = model.storages[index];
                     return Text(
