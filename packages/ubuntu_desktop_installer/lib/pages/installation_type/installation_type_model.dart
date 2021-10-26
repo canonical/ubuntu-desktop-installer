@@ -36,6 +36,7 @@ class InstallationTypeModel extends ChangeNotifier {
   /// Creates a new model with the given client and service.
   InstallationTypeModel(this._client, this._service);
 
+  // ignore: unused_field, will be used for querying existing OS installations
   final SubiquityClient _client;
   final DiskStorageService _service;
   var _installationType = InstallationType.erase;

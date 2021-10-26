@@ -8,7 +8,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
 
 export 'installation_type_model.dart' show InstallationType;

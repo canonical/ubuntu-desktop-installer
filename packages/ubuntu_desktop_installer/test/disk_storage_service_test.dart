@@ -12,17 +12,17 @@ void main() {
   setUp(() {
     client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage(true))
+    when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse(disks: testDisks));
   });
 
   test('get guided storage', () async {
     final service = DiskStorageService(client);
-    await untilCalled(client.getGuidedStorage(true));
+    await untilCalled(client.getGuidedStorage());
 
     expect(await service.getGuidedStorage(), equals(testDisks));
     expect(service.guidedStorage, equals(testDisks));
-    verify(client.getGuidedStorage(true)).called(2);
+    verify(client.getGuidedStorage()).called(2);
   });
 
   test('set guided storage', () async {
@@ -39,12 +39,12 @@ void main() {
   test('reset guided storage', () async {
     final service = DiskStorageService(client);
     expect(service.hasMultipleDisks, isFalse);
-    await untilCalled(client.getGuidedStorage(true));
+    await untilCalled(client.getGuidedStorage());
 
     await service.getGuidedStorage();
     expect(service.hasMultipleDisks, isTrue);
 
-    when(client.getGuidedStorage(true)).thenAnswer(
+    when(client.getGuidedStorage()).thenAnswer(
         (_) async => GuidedStorageResponse(disks: [testDisks.first]));
     when(client.resetStorageV2()).thenAnswer((_) async => StorageResponseV2());
 
