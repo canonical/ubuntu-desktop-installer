@@ -69,6 +69,11 @@ class MockSelectLanguageModel extends _i1.Mock
       super.noSuchMethod(Invocation.method(#selectLocale, [locale]),
           returnValueForMissingStub: null);
   @override
+  _i4.Future<_i2.Locale> getServerLocale() =>
+      (super.noSuchMethod(Invocation.method(#getServerLocale, []),
+              returnValue: Future<_i2.Locale>.value(_FakeLocale_0()))
+          as _i4.Future<_i2.Locale>);
+  @override
   void addListener(_i2.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
