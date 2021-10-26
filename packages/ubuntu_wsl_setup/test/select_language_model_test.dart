@@ -42,6 +42,16 @@ void main() {
     expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
   });
 
+  test('load locale', () async {
+    final client = MockSubiquityClient();
+    when(client.locale()).thenAnswer((_) async => 'fr_FR.UTF-8');
+
+    final model = SelectLanguageModel(client);
+    final locale = await model.getServerLocale();
+    verify(client.locale()).called(1);
+    expect(locale, equals(Locale('fr', 'FR')));
+  });
+
   test('set locale', () {
     final client = MockSubiquityClient();
     final model = SelectLanguageModel(client);
