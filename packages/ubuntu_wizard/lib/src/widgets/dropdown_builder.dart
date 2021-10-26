@@ -50,15 +50,24 @@ class DropdownBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<T>(
-      value: selected,
-      items: values.map((value) {
-        return DropdownMenuItem<T>(
-          value: value,
-          child: itemBuilder(context, value, null),
-        );
-      }).toList(),
-      onChanged: onSelected,
+    return ButtonTheme(
+      alignedDropdown: true,
+      child: DropdownButtonHideUnderline(
+        child: InputDecorator(
+          decoration: InputDecoration(contentPadding: EdgeInsets.zero)
+              .applyDefaults(Theme.of(context).inputDecorationTheme),
+          child: DropdownButton<T>(
+            value: selected,
+            items: values.map((value) {
+              return DropdownMenuItem<T>(
+                value: value,
+                child: itemBuilder(context, value, null),
+              );
+            }).toList(),
+            onChanged: onSelected,
+          ),
+        ),
+      ),
     );
   }
 }
