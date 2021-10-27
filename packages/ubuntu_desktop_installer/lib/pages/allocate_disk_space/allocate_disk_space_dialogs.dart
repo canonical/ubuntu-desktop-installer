@@ -19,7 +19,7 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
       final partitionSize = ValueNotifier(disk.freeForPartitions ?? 0);
       final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
-      final tileHeight = _defaultTileHeight(context);
+      final tileHeight = defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
@@ -110,13 +110,6 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
       );
     },
   );
-}
-
-// material/list_tile.dart
-double _defaultTileHeight(BuildContext context) {
-  final baseDensity = Theme.of(context).visualDensity.baseSizeAdjustment;
-  final isDense = ListTileTheme.of(context).dense;
-  return (isDense ? 48.0 : 56.0) + baseDensity.dy;
 }
 
 class _PartitionDialogLabel extends StatelessWidget {
@@ -257,7 +250,7 @@ Future<void> showEditPartitionDialog(
           ValueNotifier(PartitionFormat.fromPartition(partition));
       final partitionWipe = ValueNotifier(partition.wipe);
       final partitionMount = ValueNotifier(partition.mount);
-      final tileHeight = _defaultTileHeight(context);
+      final tileHeight = defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
