@@ -11,6 +11,7 @@ class ChooseSecurityKeyModel extends ChangeNotifier {
     ]).addListener(notifyListeners);
   }
 
+  // ignore: unused_field, will be used for sending the security key to subiquity
   final SubiquityClient _client;
   final _securityKey = ValueNotifier('');
   final _confirmedSecurityKey = ValueNotifier('');
@@ -24,11 +25,16 @@ class ChooseSecurityKeyModel extends ChangeNotifier {
   set confirmedSecurityKey(String value) => _confirmedSecurityKey.value = value;
 
   /// Whether the current input is valid.
-  bool get isValid => securityKey == confirmedSecurityKey;
+  bool get isValid =>
+      securityKey.isNotEmpty && securityKey == confirmedSecurityKey;
 
   /// Loads the security key.
-  Future<void> loadSecurityKey() async {}
+  Future<void> loadSecurityKey() async {
+    // TODO: fetch from subiquity
+  }
 
   /// Saves the security key.
-  Future<void> saveSecurityKey() async {}
+  Future<void> saveSecurityKey() async {
+    // TODO: send to subiquity
+  }
 }

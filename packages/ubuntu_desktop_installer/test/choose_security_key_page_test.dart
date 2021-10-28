@@ -66,11 +66,11 @@ void main() {
     final model = buildModel(securityKey: 'foo', confirmedSecurityKey: 'foo');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'foo');
-    expect(textField, findsNWidgets(2));
-    await tester.enterText(textField.first, 'bar');
+    final textFields = find.widgetWithText(TextField, 'foo');
+    expect(textFields, findsNWidgets(2));
+    await tester.enterText(textFields.first, 'bar');
     verify(model.securityKey = 'bar').called(1);
-    await tester.enterText(textField.last, 'bar');
+    await tester.enterText(textFields.last, 'bar');
     verify(model.confirmedSecurityKey = 'bar').called(1);
   });
 

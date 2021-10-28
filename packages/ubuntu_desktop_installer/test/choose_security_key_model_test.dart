@@ -22,7 +22,7 @@ void main() {
 
   test('validation', () {
     final model = ChooseSecurityKeyModel(MockSubiquityClient());
-    expect(model.isValid, isTrue);
+    expect(model.isValid, isFalse);
 
     void testValid(
       String securityKey,
@@ -34,7 +34,7 @@ void main() {
       expect(model.isValid, matcher);
     }
 
-    testValid('', '', isTrue);
+    testValid('', '', isFalse);
     testValid('foo', 'foo', isTrue);
     testValid('foo', 'bar', isFalse);
   });
