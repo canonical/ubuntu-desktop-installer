@@ -17,6 +17,7 @@ import 'app_test.mocks.dart';
 void main() {
   testWidgets('create an app instance', (tester) async {
     final client = MockSubiquityClient();
+    when(client.locale()).thenAnswer((_) async => 'en');
 
     final settings = MockSettings();
     when(settings.locale).thenReturn(Locale('en'));
