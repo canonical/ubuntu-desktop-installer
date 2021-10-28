@@ -66,6 +66,20 @@
   "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
   "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
 
+  "chooseSecurityKeyTitle": "Choose a security key",
+  "chooseSecurityKeyHeader": "Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.",
+  "chooseSecurityKeyHint": "Choose a security key",
+  "chooseSecurityKeyConfirmHint": "Confirm the security key",
+  "chooseSecurityKeyRequired": "A security key is required",
+  "chooseSecurityKeyMismatch": "The security keys do not match",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+
   "installationTypeTitle": "Installation type",
   "installationTypeOSDetected": "This computer currently has {os} on it. What would you like to do?",
   "@installationTypeOSDetected": {

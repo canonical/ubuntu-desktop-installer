@@ -387,6 +387,48 @@ abstract class AppLocalizations {
   /// **'This software is subject to license terms included with its documentation. Some are proprietary.'**
   String get installThirdPartySubtitle;
 
+  /// No description provided for @chooseSecurityKeyTitle.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Choose a security key'**
+  String get chooseSecurityKeyTitle;
+
+  /// No description provided for @chooseSecurityKeyHeader.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.'**
+  String get chooseSecurityKeyHeader;
+
+  /// No description provided for @chooseSecurityKeyHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Choose a security key'**
+  String get chooseSecurityKeyHint;
+
+  /// No description provided for @chooseSecurityKeyConfirmHint.
+  ///
+  /// In en_US, this message translates to:
+  /// **'Confirm the security key'**
+  String get chooseSecurityKeyConfirmHint;
+
+  /// No description provided for @chooseSecurityKeyRequired.
+  ///
+  /// In en_US, this message translates to:
+  /// **'A security key is required'**
+  String get chooseSecurityKeyRequired;
+
+  /// No description provided for @chooseSecurityKeyMismatch.
+  ///
+  /// In en_US, this message translates to:
+  /// **'The security keys do not match'**
+  String get chooseSecurityKeyMismatch;
+
+  /// No description provided for @chooseSecurityKeyWarning.
+  ///
+  /// In en_US, this message translates to:
+  /// **'<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.'**
+  String chooseSecurityKeyWarning(Object color);
+
   /// No description provided for @installationTypeTitle.
   ///
   /// In en_US, this message translates to:
