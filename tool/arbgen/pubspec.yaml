@@ -1,0 +1,13 @@
+name: arbgen
+description: Generates stub .arb files from a languagelist file.
+publist_to: 'none'
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  args: ^2.3.0
+  collection: ^1.15.0
+  gettext_parser: ^0.2.0
+  path: ^1.8.0
+  quiver: ^3.0.1+1
