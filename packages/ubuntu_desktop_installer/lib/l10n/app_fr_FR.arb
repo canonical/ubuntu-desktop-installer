@@ -244,5 +244,146 @@
     }
   },
   "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d'installer Ubuntu.",
-  "@turnOffBitlockerDescription": {}
+  "@turnOffBitlockerDescription": {},
+  "chooseSecurityKeyHint": "Choisissez une clé de sécurité",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Confirmez la clé de sécurité",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyRequired": "Une clé de sécurité est requise",
+  "@chooseSecurityKeyRequired": {},
+  "restartInto": "Redémarrer sous {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartIntoWindows": "Redémarrer sous Windows",
+  "@restartIntoWindows": {},
+  "chooseSecurityKeyTitle": "Choisissez une clé de sécurité",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHeader": "L'encryptage du disque permet de protéger vos fichiers au cas où vous perdiez votre ordinateur. Cela nécessite d'entrée une clé de sécurité chaque fois que l'ordinateur démarre.\n\nTous les fichiers en dehors d'Ubuntu ne seront pas encryptés.",
+  "@chooseSecurityKeyHeader": {},
+  "chooseSecurityKeyMismatch": "Les deux clés ne correspondent pas",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font>: Si vous perdez cette clé de sécurité, toutes vos données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans un lieu en sécurité.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "readyToUse": "**{system}** est installé et est prêt à être utilisé.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "configureSecureBootTitle": "Configurer Secure Boot",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootDescription": "Vous avez choisi d'installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l'entrer quand le système démarrera.",
+  "@configureSecureBootDescription": {},
+  "configureSecureBootSecurityKeyRequired": "La clé de sécurité est obligatoire",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "Les clés ne correspondent pas",
+  "@secureBootSecurityKeysDontMatch": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d'exploitations.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers de {os}.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "bootLoaderDevice": "Disque pour installer le chargeur d'amorçage",
+  "@bootLoaderDevice": {},
+  "partitionUnitB": "o",
+  "@partitionUnitB": {},
+  "partitionUnitKB": "ko",
+  "@partitionUnitKB": {},
+  "partitionUnitMB": "Mo",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "Go",
+  "@partitionUnitGB": {},
+  "partitionTypeLabel": "Type pour la nouvelle partition :",
+  "@partitionTypeLabel": {},
+  "partitionLocationLabel": "Emplacement pour la nouvelle partition :",
+  "@partitionLocationLabel": {},
+  "partitionFormatLabel": "Utilisée comme :",
+  "@partitionFormatLabel": {},
+  "partitionFormatExt3": "Système de fichiers Ext3 journalisé",
+  "@partitionFormatExt3": {},
+  "partitionFormatExt4": "Système de fichiers Ext4 journalisé",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt2": "Système de fichiers Ext2",
+  "@partitionFormatExt2": {},
+  "partitionFormatBtrfs": "Système de fichiers btrfs journalisé",
+  "@partitionFormatBtrfs": {},
+  "partitionFormatJfs": "Système de fichiers JFS journalisé",
+  "@partitionFormatJfs": {},
+  "partitionFormatXfs": "Système de fichiers XFS journalisé",
+  "@partitionFormatXfs": {},
+  "partitionFormatFat": "Système de fichiers FAT",
+  "@partitionFormatFat": {},
+  "partitionFormatIso9660": "Système de fichiers ISO 9660",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "Système de fichiers VFAT",
+  "@partitionFormatVfat": {},
+  "partitionFormatNtfs": "Système de fichiers NTFS",
+  "@partitionFormatNtfs": {},
+  "partitionFormatReiserFS": "Système de fichiers ReiserFS",
+  "@partitionFormatReiserFS": {},
+  "partitionFormatZfsroot": "Système de fichiers racine ZFS",
+  "@partitionFormatZfsroot": {},
+  "partitionErase": "Formatter la partition",
+  "@partitionErase": {},
+  "whoAreYouPageRealNameRequired": "Votre nom est requis",
+  "@whoAreYouPageRealNameRequired": {},
+  "partitionFormatFat12": "Système de fichiers FAT12",
+  "@partitionFormatFat12": {},
+  "partitionFormatFat16": "Système de fichiers FAT16",
+  "@partitionFormatFat16": {},
+  "partitionFormatFat32": "Système de fichiers FAT32",
+  "@partitionFormatFat32": {},
+  "partitionFormatSwap": "Espace de swap",
+  "@partitionFormatSwap": {},
+  "whoAreYouPageComputerNameInfo": "Le nom que vous voulez utiliser quand votre ordinateur communique avec les autres ordinateurs.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageComputerNameRequired": "Un nom pour l'ordinateur est requis",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "Ce nom d'ordinateur est invalide",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageUsernameRequired": "Un nom d'utilisateur est requis",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageInvalidUsername": "Ce nom d'utilisateur est invalide",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPagePasswordRequired": "Un mot de passe est requis",
+  "@whoAreYouPagePasswordRequired": {},
+  "writeChangesPartitionEntryMounted": "la partition #{disk}{partition} en {format} est utilisée pour {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "partition #{disk}{partition} en {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  }
 }
