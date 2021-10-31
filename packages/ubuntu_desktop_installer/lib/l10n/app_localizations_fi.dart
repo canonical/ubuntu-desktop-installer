@@ -8,10 +8,10 @@ class AppLocalizationsFi extends AppLocalizations {
   AppLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntun Työpöytäversion Asennusohjelma';
 
   @override
-  String get windowTitle => 'Install Ubuntu';
+  String get windowTitle => 'Asenna Ubuntu';
 
   @override
   String get cancelButtonText => 'Cancel';
@@ -35,7 +35,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get yesButtonText => 'Yes';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Tervetuloa';
 
   @override
   String get tryOrInstallPageTitle => 'Try or install';
@@ -511,18 +511,4 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
-}
-
-/// The translations for Finnish, as used in Finland (`fi_FI`).
-class AppLocalizationsFiFi extends AppLocalizationsFi {
-  AppLocalizationsFiFi(): super('fi_FI');
-
-  @override
-  String get appTitle => 'Ubuntun Työpöytäversion Asennusohjelma';
-
-  @override
-  String get windowTitle => 'Asenna Ubuntu';
-
-  @override
-  String get welcome => 'Tervetuloa';
 }

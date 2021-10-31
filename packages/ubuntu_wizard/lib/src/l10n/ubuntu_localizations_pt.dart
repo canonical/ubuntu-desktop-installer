@@ -8,7 +8,10 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
   UbuntuLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get languageName => '';
+  String get countryCode => 'PT';
+
+  @override
+  String get languageName => 'Português';
 
   @override
   String get backAction => 'Go Back';
@@ -29,6 +32,9 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
 class UbuntuLocalizationsPtBr extends UbuntuLocalizationsPt {
   UbuntuLocalizationsPtBr(): super('pt_BR');
+
+  @override
+  String get countryCode => 'BR';
 
   @override
   String get languageName => 'Português do Brasil';
