@@ -4,7 +4,13 @@
   "appTitle": "Instalador do Ubuntu Desktop",
   "windowTitle": "Instalar o Ubuntu",
 
+  "cancelButtonText": "Cancelar",
+  "changeButtonText": "Alterar",
+  "okButtonText": "Ok",
+  "noButtonText": "Não",
   "restartButtonText": "Reiniciar",
+  "revertButtonText": "Desfazer",
+  "yesButtonText": "Sim",
 
   "welcome": "Bem-vindo",
 
@@ -16,8 +22,238 @@
   "installUbuntu": "Instalar o Ubuntu",
   "installUbuntuDescription": "Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.",
   "releaseNotesLabel": "Talvez você queira ler as <a href=\"{url}\">notas de lançamento</a>.",
+    "@releaseNotesLabel": {
+      "type": "text",
+      "placeholders": {
+        "url": {}
+      }
+    },
 
   "turnOffRST": "Desligue a RST",
   "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
-  "instructionsForRST": "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://{url}\">{url}</a>"
-}
+  "instructionsForRST": "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://{url}\">{url}</a>",
+    "@instructionsForRST": {
+      "type": "text",
+      "placeholders": {
+        "url": {}
+      }
+    },
+
+    "keyboardLayoutPageTitle": "Layout do teclado",
+    "chooseYourKeyboardLayout": "Escolha o layout do seu teclado:",
+    "typeToTest": "Digite aqui para testar seu teclado",
+    "detectLayout": "Detectar o layout do teclado",
+    "pressOneKey": "Por favor pressione uma das seguintes teclas:",
+    "isKeyPresent": "A seguinte tecla está presente no seu teclado?",
+  
+    "configureSecureBootTitle": "Configurar Secure Boot",
+    "configureSecureBootDescription": "Você optou por instalar drivers de terceiros. Isso requer desabilitar o Secure Boot.\nPara isso, você precisa escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.",
+    "configureSecureBootOption": "Configurar Secure Boot",
+    "chooseSecurityKey": "Escolha uma chave de segurança",
+    "confirmSecurityKey": "Confirme a chave de segurança",
+    "dontInstallDriverSoftwareNow": "Não instalar os drivers agora",
+    "dontInstallDriverSoftwareNowDescription": "Você pode instalar depois pelo Programas & Atualizações.",
+    "configureSecureBootSecurityKeyRequired": "Chave de segurança é obrigatória",
+    "secureBootSecurityKeysDontMatch": "Chaves de segurança não correspondem",
+  
+    "updatesOtherSoftwarePageTitle": "Atualizações e outros softwares",
+    "updatesOtherSoftwarePageDescription": "Quais apps você gostaria de instalar para começar?",
+    "normalInstallationTitle": "Instalação normal",
+    "normalInstallationSubtitle": "Web browser, utilidades, pacote office, games and players de mídia.",
+    "minimalInstallationTitle": "Instalação mínima",
+    "minimalInstallationSubtitle": "Web browser utilidades básicas.",
+    "otherOptions": "Outras opções",
+    "installThirdPartyTitle": "Instalar software de terceiros para hardware gráfico e de Wi-Fi, bem como formatos de mídia adicionais",
+    "installThirdPartySubtitle": "Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.",
+  
+    "installationTypeTitle": "Tipo de installation",
+    "installationTypeOSDetected": "Este computador possui {os} atualmente instalado. O que você deseja fazer?",
+    "@installationTypeOSDetected": {
+      "type": "text",
+      "placeholders": {
+        "os": {}
+      }
+    },
+    "installationTypeNoOSDetected": "Este computador não possui sistemas operacionais detectados atualmente. O que você deseja fazer?",
+    "installationTypeErase": "Apagar o disco e instalar o Ubuntu",
+    "installationTypeEraseWarning": "<font color=\"{color}\">Aviso:</font> Isso vai apagar todos os seus programas, documentos, fotos, músicas, e quaisquer outrso arquivos em todos os sistemas operacionais existentes.",
+    "@installationTypeEraseWarning": {
+      "type": "text",
+      "placeholders": {
+        "color": {}
+      }
+    },
+    "installationTypeAdvancedLabel": "Recursos Avançados...",
+    "installationTypeAdvancedTitle": "Recursos avançados",
+    "installationTypeNone": "Nenhum",
+    "installationTypeNoneSelected": "Nenhum selecionado",
+    "installationTypeLVM": "Usar LVM com a nova instalação do Ubuntu",
+    "installationTypeLVMSelected": "LVM selecionado",
+    "installationTypeEncrypt": "Criptograsfar a nova instalação do Ubuntu para maior segurança",
+    "installationTypeEncryptInfo": "Você deverá escolher uma chave de segurança no próximo passo.",
+    "installationTypeZFS": "EXPERIMENTAL: Apagar o disco e usar ZFS",
+    "installationTypeZFSSelected": "ZFS selecionado",
+    "installationTypeReinstall": "Apagar {os} e reinstalar",
+    "@installationTypeReinstall": {
+      "type": "text",
+      "placeholders": {
+        "os": {}
+      }
+    },
+    "installationTypeReinstallWarning": "<font color=\"{color}\">Aviso:</font> Isso vai apagar todos os programas do {os}, documentos, fotos, músicas e quaisquer outros arquivos.",
+    "@installationTypeReinstallWarning": {
+      "type": "text",
+      "placeholders": {
+        "color": {},
+        "os": {}
+      }
+    },
+    "installationTypeAlongside": "Instalar {product} junto com {os}",
+    "@installationTypeAlongside": {
+      "type": "text",
+      "placeholders": {
+        "product": {},
+        "os": {}
+      }
+    },
+    "installationTypeAlongsideInfo": "Documentos, músicas, e outros arquivos pessoais serão mantidos. Você poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.",
+    "installationTypeManual": "Opção avançada",
+    "installationTypeManualInfo": "Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o Ubuntu.",
+  
+    "selectGuidedStoragePageTitle": "Apagar o disco e instalar o Ubuntu",
+    "selectGuidedStorageDropdownLabel": "Selecione o disco:",
+    "selectGuidedStorageInfoLabel": "O disco inteiro será utilizado:",
+    "selectGuidedStorageInstallNow": "Instalar agora",
+  
+    "allocateDiskSpace": "Alocar espaço em disco",
+    "startInstallingButtonText": "Iniciar instalação",
+    "diskHeadersDevice": "Dispositivo",
+    "diskHeadersType": "Tipo",
+    "diskHeadersMountPoint": "Ponto de montagem",
+    "diskHeadersSize": "Tamanho",
+    "diskHeadersUsed": "Utilizado",
+    "diskHeadersSystem": "Sistema",
+    "diskHeadersFormat": "Formato",
+    "freeDiskSpace": "espaço livre",
+    "newPartitionTable": "Nova tabela de partições",
+    "bootLoaderDevice": "Dispositivo para instalação do boot loader",
+  
+    "partitionCreateTitle": "Criar partição",
+    "partitionEditTitle": "Editar partição",
+    "partitionSizeLabel": "Tamanho:",
+    "partitionUnitB": "B",
+    "partitionUnitKB": "KB",
+    "partitionUnitMB": "MB",
+    "partitionUnitGB": "GB",
+    "partitionTypeLabel": "Tipo para a nova partiçaõ:",
+    "partitionTypePrimary": "Primária",
+    "partitionTypeLogical": "Lógica",
+    "partitionLocationLabel": "Localização para a nova partição:",
+    "partitionLocationBeginning": "Início deste espaço",
+    "partitionLocationEnd": "Final deste espaço",
+    "partitionFormatLabel": "Utilizado como:",
+    "partitionFormatExt4": "Sistema de arquivos Ext4 com journaling",
+    "partitionFormatExt3": "Sistema de arquivos Ext3 com journaling",
+    "partitionFormatExt2": "Sistema de arquivos Ext2",
+    "partitionFormatBtrfs": "Sistema de arquivos btrfs com journaling",
+    "partitionFormatJfs": "Sistema de arquivos JFS com journaling",
+    "partitionFormatXfs": "Sistema de arquivos XFS com journaling",
+    "partitionFormatFat": "Sistema de arquivos FAT",
+    "partitionFormatFat12": "Sistema de arquivos FA12",
+    "partitionFormatFat16": "Sistema de arquivos FA16",
+    "partitionFormatFat32": "Sistema de arquivos FAT32",
+    "partitionFormatSwap": "Swap area",
+    "partitionFormatIso9660": "Sistema de arquivos ISO 9660",
+    "partitionFormatVfat": "Sistema de arquivos VFAT",
+    "partitionFormatNtfs": "Sistema de arquivos NTFS",
+    "partitionFormatReiserFS": "Sistema de arquivos ReiserFS",
+    "partitionFormatZfsroot": "Sistema de arquivos raiz ZFS",
+    "partitionErase": "Formatar a partição",
+    "partitionMountPointLabel": "Ponto de montagem:",
+  
+    "whoAreYouPageTitle": "Quem é você?",
+    "whoAreYouPageAutoLogin": "Iniciar sessão automaticamente",
+    "whoAreYouPageRequirePassword": "Solicitar minha senha para entrar",
+    "whoAreYouPageRealNameLabel": "Seu nome",
+    "whoAreYouPageRealNameRequired": "O nome é obrigatório",
+    "whoAreYouPageComputerNameLabel": "Nome do seu computador",
+    "whoAreYouPageComputerNameInfo": "O nome usado para falar com outros computadores.",
+    "whoAreYouPageComputerNameRequired": "O nome do computador é obrigatório",
+    "whoAreYouPageInvalidComputerName": "The computer name is invalid",
+    "whoAreYouPageUsernameLabel": "Escolha um nome de usuário",
+    "whoAreYouPageUsernameRequired": "Nome de usuário é obrigatório",
+    "whoAreYouPageInvalidUsername": "O nome de usuário informado é inválido",
+    "whoAreYouPagePasswordLabel": "Escolha uma senha",
+    "whoAreYouPagePasswordRequired": "A senha é obrigatória",
+    "whoAreYouPageConfirmPasswordLabel": "Confirme sua senha",
+    "whoAreYouPagePasswordMismatch": "As senhas não correspondem",
+  
+    "writeChangesToDisk": "Gravar alterações no disco",
+    "writeChangesFallbackSerial": "disco",
+    "@writeChangesFallbackSerial": { "description": "Nome de exibição padrão para um disco sem o serial (improvável)" },
+    "writeChangesDescription": "Se você prosseguir, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.",
+    "writeChangesPartitionTablesHeader": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
+    "writeChangesPartitionTablesEntry": "{serial} ({path})",
+    "@writeChangesPartitionTablesEntry": {
+      "description": "Um registro para um disco cuja tabela de partição está sendo alterada",
+      "placeholders": {
+        "serial": {},
+        "path": {}
+      }
+    },
+    "writeChangesPartitionsHeader": "As seguintes partições serão formatadas:",
+    "writeChangesPartitionEntryMounted": "partição #{disk}{partition} como {format} usada para {mount}",
+    "@writeChangesPartitionEntryMounted": {
+      "description": "Um registro de partição montada",
+      "placeholders": {
+        "disk": {},
+        "partition": {},
+        "format": {},
+        "mount": {}
+      }
+    },
+    "writeChangesPartitionEntryUnmounted": "partição #{disk}{partition} como {format}",
+    "@writeChangesPartitionEntryUnmounted": {
+      "description": "Um registro de partição não montada",
+      "placeholders": {
+        "disk": {},
+        "partition": {},
+        "format": {}
+      }
+    },
+  
+    "chooseYourLookPageTitle": "Escolha seu visual",
+    "chooseYourLookPageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
+    "chooseYourLookPageDarkSetting": "Escuro",
+    "chooseYourLookPageLightSetting": "Claro",
+    "chooseYourLookPageLightBodyText": "Tudo está claro e brilhante",
+    "chooseYourLookPageDarkBodyText": "Olá, escuridão, minha velha amiga",
+  
+    "installationCompleteTitle": "Instalação concluída",
+    "readyToUse": "**{system}** está instalado e pronto pra uso.",
+    "@readyToUse": {
+      "type": "text",
+      "placeholders": {
+        "system": {}
+      }
+    },
+    "restartInto": "Reiniciar no {system}",
+    "@restartInto": {
+      "type": "text",
+      "placeholders": {
+          "system": {}
+      }
+    },
+    "shutdown": "Desligar",
+  
+    "turnOffBitlockerTitle": "Desligar BitLocker",
+    "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker. Você precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
+    "turnOffBitlockerLinkInstructions": "Para obter instruções, abra esta página em um telefone ou outro dispositivo: <a href=\"https://{url}\">{url}</a>",
+    "@turnOffBitlockerLinkInstructions": {
+      "type": "text",
+      "placeholders": {
+        "url": {}
+      }
+    },
+    "restartIntoWindows": "Reiniciar no Windows"
+  }

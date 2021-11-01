@@ -1,0 +1,70 @@
+{
+  "@@locale": "pt",
+
+  "appTitle": "Ubuntu WSL",
+  "windowTitle": "Ubuntu WSL",
+
+  "exitButton": "Sair",
+  "finishButton": "Concluir",
+  "saveButton": "Salvar",
+  "setupButton": "Configurar",
+
+  "selectLanguageTitle": "Selecione seu idioma",
+
+  "profileSetupTitle": "Configurar perfil",
+  "profileSetupHeader": "Por favor crie a sua conta UNIX padrão. Para mais informações visite: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "profileSetupRealnameLabel": "Seu nome",
+  "profileSetupRealnameRequired": "Um nome é necessário",
+  "profileSetupUsernameHint": "Escolha um nome de usuário",
+  "profileSetupUsernameHelper": "O nome de usuário não precisa ser igual ao Windows.",
+  "profileSetupPasswordHint": "Escolha uma senha",
+  "profileSetupConfirmPasswordHint": "Confirme a senha",
+  "profileSetupShowAdvancedOptions": "Mostrar opções avançadas na próxima página",
+  "profileSetupPasswordMismatch": "As senhas não correspondem",
+  "profileSetupUsernameRequired": "Nome de usuário é obrigatório",
+  "profileSetupUsernameInvalid": "O nome de usuário é inválido",
+  "profileSetupPasswordRequired": "Senha é obrigatória",
+
+  "advancedSetupTitle": "Configurações avançadas",
+  "advancedSetupHeader": "Nessa página você pode ajustar o Ubuntu WSL de acordo com suas necessidades.",
+  "advancedSetupMountLocationHint": "Ponto de montagem",
+  "advancedSetupMountLocationHelper": "Local para montagem automática",
+  "advancedSetupMountLocationInvalid": "O local informado é inválido",
+  "advancedSetupMountOptionHint": "Opções de montagem",
+  "advancedSetupMountOptionHelper": "Opções passadas para a montagem automática",
+  "advancedSetupHostGenerationTitle": "Habilitar geração de host",
+  "advancedSetupHostGenerationSubtitle": "Selecione para habilitar re-criação do arquivo /etc/hosts a cada reinicialização do sistema.",
+  "advancedSetupResolvConfGenerationTitle": "Habilitar geração do arquivo resolv.conf",
+  "advancedSetupResolvConfGenerationSubtitle": "Selecione para habilitar re-criação do arquivo /etc/resolv.conf a cada reinicialização do sistema.",
+  "advancedSetupGUIIntegrationTitle": "Intergração gráfica",
+  "advancedSetupGUIIntegrationSubtitle": "Selecione para habilitar configuração automática do DISPLAY. É necessário X server de terceiros.",
+
+  "configurationUITitle": "UI de Configuração do Ubuntu WSL (experimental)",
+  "configurationUIInteroperabilityHeader": "Interoperabilidade",
+  "configurationUILegacyGUIIntegrationTitle": "Integration Gráfica Legada",
+  "configurationUILegacyGUIIntegrationSubtitle": "Esta opção habilita a integração gráfica legada no Windows 10. Requer X server de terceiros.",
+  "configurationUILegacyAudioIntegrationTitle": "Integração de Áudio Legada",
+  "configurationUILegacyAudioIntegrationSubtitle": "Esta opção habilita a integração de áudio legada no Windows 10. Requer PulseAudio para Windows instalado.",
+  "configurationUIAdvancedIPDetectionTitle": "Detecção Avançada de IP",
+  "configurationUIAdvancedIPDetectionSubtitle": "Esta opção habilita detecção avançada de IP pelo endereço IPv4 do Windows que é mais confiável para uso com WSL2.\nRequer Interoperabilidade com WSL habilitada.",
+  "configurationUIMessageOfTheDayHeader": "Mensagem do Dia (MOTD)",
+  "configurationUIWSLNewsTitle": "WSL News",
+  "configurationUIWSLNewsSubtitle": "Esta opção permite ao usuário controlar seu MOTD News. Selecione para habilitar a exibição do MOTD.",
+  "configurationUIAutoMountHeader": "Montagem Automática",
+  "configurationUIAutoMountTitle": "Habiltar",
+  "configurationUIAutoMountSubtitle": "Habilitar o recurso de montagem automática. Esse recurso permite a montagem automática dos drives do Windows no WSL.",
+  "configurationUIMountFstabTitle": "Montar /etc/fstab",
+  "configurationUIMountFstabSubtitle": "Habilita a montagem do arquivo /etc/fstab. O arquivo de configuração /etc/fstab contém ???",
+
+  "setupCompleteTitle": "Configuração concluída",
+  "setupCompleteHeader": "Olá {user},\nVocê concluiu a configuração com sucesso.",
+  "@setupCompleteHeader": {
+    "type": "text",
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "setupCompleteUpdate": "Recomendamos rodar os seguintes commandos para atualizar o Ubuntu para a última versão:",
+  "setupCompleteManage": "Você pode usar o comando ubuntuwsl para gerenciar suas configurações do WSL:",
+  "setupCompleteRestart": "* Todas as configurações serão aplicadas após reiniciar o Ubuntu."
+}
