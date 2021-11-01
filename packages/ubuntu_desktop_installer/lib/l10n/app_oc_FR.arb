@@ -379,5 +379,59 @@
   "selectGuidedStorageInfoLabel": "Lo disc entièr serà utilizat :",
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Installar ara",
-  "@selectGuidedStorageInstallNow": {}
+  "@selectGuidedStorageInstallNow": {},
+  "chooseSecurityKeyHint": "Causissètz una clau de seguretat",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Confirmatz la clau de seguretat",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyRequired": "Una clau de seguretat es requerida",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyMismatch": "Los doas claus correspondon pas",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyTitle": "Causissètz una clau de seguretat",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHeader": "Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra d’Ubuntu seràn pas chifrats.",
+  "@chooseSecurityKeyHeader": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
+  "@selectGuidedStorageDropdownLabel": {},
+  "partitionFormatFat": "sistèma de fichièr FAT",
+  "@partitionFormatFat": {},
+  "partitionFormatFat12": "sistèma de fichièr FAT12",
+  "@partitionFormatFat12": {},
+  "partitionFormatIso9660": "sistèma de fichièr ISO 9660",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "sistèma de fichièr VFAT",
+  "@partitionFormatVfat": {},
+  "partitionFormatNtfs": "sistèma de fichièr NTFS",
+  "@partitionFormatNtfs": {},
+  "partitionFormatReiserFS": "sistèma de fichièr ReiserFS",
+  "@partitionFormatReiserFS": {},
+  "partitionFormatZfsroot": "sistèma de fichièr ZFS",
+  "@partitionFormatZfsroot": {},
+  "writeChangesPartitionEntryMounted": "la particion #{disk}{partition} en {format} utilizada per {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "particion #{disk}{partition} en {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  }
 }
