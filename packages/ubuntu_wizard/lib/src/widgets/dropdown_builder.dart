@@ -54,7 +54,7 @@ class DropdownBuilder<T> extends StatelessWidget {
       alignedDropdown: true,
       child: DropdownButtonHideUnderline(
         child: InputDecorator(
-          decoration: InputDecoration(contentPadding: EdgeInsets.zero)
+          decoration: const InputDecoration(contentPadding: EdgeInsets.zero)
               .applyDefaults(Theme.of(context).inputDecorationTheme),
           child: DropdownButton<T>(
             value: selected,

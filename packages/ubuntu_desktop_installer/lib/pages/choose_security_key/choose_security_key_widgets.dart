@@ -18,7 +18,7 @@ class _SecurityKeyFormField extends StatelessWidget {
       fieldWidth: fieldWidth,
       labelText: lang.chooseSecurityKeyHint,
       obscureText: true,
-      successWidget: securityKey.isNotEmpty ? SuccessIcon() : null,
+      successWidget: securityKey.isNotEmpty ? const SuccessIcon() : null,
       initialValue: securityKey,
       validator: RequiredValidator(
         errorText: lang.chooseSecurityKeyRequired,
@@ -52,7 +52,8 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
       fieldWidth: fieldWidth,
       labelText: lang.chooseSecurityKeyConfirmHint,
       obscureText: true,
-      successWidget: confirmedSecurityKey.isNotEmpty ? SuccessIcon() : null,
+      successWidget:
+          confirmedSecurityKey.isNotEmpty ? const SuccessIcon() : null,
       initialValue: confirmedSecurityKey,
       autovalidateMode: AutovalidateMode.always,
       validator: EqualValidator(

@@ -7,8 +7,8 @@ import 'package:logger/logger.dart';
 /// @internal
 final log = Logger('window');
 
-final _methodChannel = MethodChannel('ubuntu_wizard');
-final _eventChannel = EventChannel('ubuntu_wizard/events');
+const _methodChannel = MethodChannel('ubuntu_wizard');
+const _eventChannel = EventChannel('ubuntu_wizard/events');
 
 void _listenEvent(String event, VoidCallback callback) {
   _eventChannel.receiveBroadcastStream().listen((ev) {

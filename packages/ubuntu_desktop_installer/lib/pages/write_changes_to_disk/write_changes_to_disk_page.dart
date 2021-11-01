@@ -22,7 +22,7 @@ class WriteChangesToDiskPage extends StatefulWidget {
     final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => WriteChangesToDiskModel(client, service),
-      child: WriteChangesToDiskPage(),
+      child: const WriteChangesToDiskPage(),
     );
   }
 
@@ -68,7 +68,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   prettyFormatDisk(disk),
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                   key: ValueKey(disk),
                 ),
               ),

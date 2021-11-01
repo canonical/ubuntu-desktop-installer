@@ -28,7 +28,7 @@ class WhoAreYouPage extends StatefulWidget {
     final service = Provider.of<HostnameService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => WhoAreYouModel(client: client, service: service),
-      child: WhoAreYouPage(),
+      child: const WhoAreYouPage(),
     );
   }
 

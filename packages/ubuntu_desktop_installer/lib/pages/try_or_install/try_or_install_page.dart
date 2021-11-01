@@ -18,7 +18,7 @@ class TryOrInstallPage extends StatefulWidget {
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TryOrInstallModel(),
-      child: TryOrInstallPage(),
+      child: const TryOrInstallPage(),
     );
   }
 
@@ -33,7 +33,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: Text(lang.tryOrInstallPageTitle),
-      contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
+      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 150),
       content: Row(
         children: [
           Expanded(

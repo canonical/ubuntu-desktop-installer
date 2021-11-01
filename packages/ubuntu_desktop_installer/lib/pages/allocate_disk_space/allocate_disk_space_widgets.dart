@@ -18,7 +18,7 @@ class PartitionBar extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     return RoundedContainer(
       child: CustomPaint(
-        size: Size(double.infinity, 24),
+        size: const Size(double.infinity, 24),
         painter: _PartitionPainter(model),
       ),
     );
@@ -87,9 +87,9 @@ class PartitionLegend extends StatelessWidget {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: partitionCount + 1,
-        separatorBuilder: (context, index) => SizedBox(width: 40),
+        separatorBuilder: (context, index) => const SizedBox(width: 40),
         itemBuilder: (context, index) {
           if (index >= partitionCount) {
             return _PartitionLabel(
@@ -193,11 +193,11 @@ class PartitionTable extends StatelessWidget {
               ),
             ),
           ),
-          DataCell(SizedBox.shrink()),
-          DataCell(SizedBox.shrink()),
+          const DataCell(SizedBox.shrink()),
+          const DataCell(SizedBox.shrink()),
           DataCell(Text(disk.prettySize)),
           DataCell(Text(disk.ptable ?? '')),
-          DataCell(SizedBox.shrink()),
+          const DataCell(SizedBox.shrink()),
         ],
       ),
       for (var partitionIndex = 0;
@@ -220,7 +220,7 @@ class PartitionTable extends StatelessWidget {
                   index: hashList([diskIndex, partitionIndex]),
                   key: ValueKey(hashList([diskIndex, partitionIndex])),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: const EdgeInsets.only(left: 40),
                     child: Row(
                       children: [
                         const Icon(YaruIcons.drive_harddisk),
@@ -317,31 +317,31 @@ class PartitionButtonRow extends StatelessWidget {
                   child: const Icon(Icons.add),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
-                    shape: RoundedRectangleBorder(),
+                    shape: const RoundedRectangleBorder(),
                   ),
                   onPressed: model.canAddPartition
                       ? () => showCreatePartitionDialog(
                           context, model.selectedDisk!)
                       : null,
                 ),
-                VerticalDivider(width: 1),
+                const VerticalDivider(width: 1),
                 OutlinedButton(
                   child: const Icon(Icons.remove),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
-                    shape: RoundedRectangleBorder(),
+                    shape: const RoundedRectangleBorder(),
                   ),
                   onPressed: model.canRemovePartition
                       ? () => model.deletePartition(
                           model.selectedDisk!, model.selectedPartition!)
                       : null,
                 ),
-                VerticalDivider(width: 1),
+                const VerticalDivider(width: 1),
                 OutlinedButton(
                   child: Text(lang.changeButtonText),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
-                    shape: RoundedRectangleBorder(),
+                    shape: const RoundedRectangleBorder(),
                   ),
                   onPressed: model.canEditPartition
                       ? () => showEditPartitionDialog(context,

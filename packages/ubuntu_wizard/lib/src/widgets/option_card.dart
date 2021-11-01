@@ -97,7 +97,7 @@ class OptionCardState extends State<OptionCard> {
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.titleText ?? '',
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 19,
                 ),
