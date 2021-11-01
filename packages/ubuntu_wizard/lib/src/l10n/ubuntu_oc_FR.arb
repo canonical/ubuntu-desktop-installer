@@ -1,8 +1,15 @@
 {
   "@@locale": "oc_FR",
-
   "languageName": "Occitan",
-
+  "@languageName": {},
   "backAction": "Tornar",
-  "continueAction": "Contunhar"
+  "@backAction": {},
+  "continueAction": "Contunhar",
+  "@continueAction": {},
+  "moderatePassword": "Senhal moderat",
+  "@moderatePassword": {},
+  "strongPassword": "Senhal fòrt",
+  "@strongPassword": {},
+  "weakPassword": "Senhal feble",
+  "@weakPassword": {}
 }
