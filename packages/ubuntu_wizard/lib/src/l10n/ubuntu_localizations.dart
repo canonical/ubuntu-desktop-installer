@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'ubuntu_localizations_de.dart';
 import 'ubuntu_localizations_en.dart';
 import 'ubuntu_localizations_es.dart';
 import 'ubuntu_localizations_fi.dart';
@@ -97,6 +98,7 @@ abstract class UbuntuLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('de'),
     Locale('en'),
     Locale('es'),
     Locale('fi'),
@@ -161,7 +163,7 @@ class _UbuntuLocalizationsDelegate extends LocalizationsDelegate<UbuntuLocalizat
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es', 'fi', 'fr', 'it', 'nl', 'oc', 'pt', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'fi', 'fr', 'it', 'nl', 'oc', 'pt', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_UbuntuLocalizationsDelegate old) => false;
@@ -181,6 +183,7 @@ UbuntuLocalizations lookupUbuntuLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'de': return UbuntuLocalizationsDe();
     case 'en': return UbuntuLocalizationsEn();
     case 'es': return UbuntuLocalizationsEs();
     case 'fi': return UbuntuLocalizationsFi();
