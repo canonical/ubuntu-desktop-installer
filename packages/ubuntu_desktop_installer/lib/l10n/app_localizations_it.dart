@@ -8,10 +8,10 @@ class AppLocalizationsIt extends AppLocalizations {
   AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Installer di Ubuntu Desktop';
 
   @override
-  String get windowTitle => 'Install Ubuntu';
+  String get windowTitle => 'Installa Ubuntu';
 
   @override
   String get cancelButtonText => 'Cancel';
@@ -26,7 +26,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get noButtonText => 'No';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Riavvia';
 
   @override
   String get revertButtonText => 'Revert';
@@ -35,43 +35,43 @@ class AppLocalizationsIt extends AppLocalizations {
   String get yesButtonText => 'Yes';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Benvenuto';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Prova o installa';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Ripara installazione';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione.';
 
   @override
-  String get tryUbuntu => 'Try Ubuntu';
+  String get tryUbuntu => 'Prova Ubuntu';
 
   @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
+  String get tryUbuntuDescription => 'Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.';
 
   @override
-  String get installUbuntu => 'Install Ubuntu';
+  String get installUbuntu => 'Installa Ubuntu';
 
   @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+  String get installUbuntuDescription => 'Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Forse vorresti leggere le <a href=\"$url\">informazioni di rilascio</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Disattiva RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Per istruzioni, apri questa pagina da un telefono o un altro dispositivo: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -511,58 +511,4 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
-}
-
-/// The translations for Italian, as used in Italy (`it_IT`).
-class AppLocalizationsItIt extends AppLocalizationsIt {
-  AppLocalizationsItIt(): super('it_IT');
-
-  @override
-  String get appTitle => 'Installer di Ubuntu Desktop';
-
-  @override
-  String get windowTitle => 'Installa Ubuntu';
-
-  @override
-  String get restartButtonText => 'Riavvia';
-
-  @override
-  String get welcome => 'Benvenuto';
-
-  @override
-  String get tryOrInstallPageTitle => 'Prova o installa';
-
-  @override
-  String get repairInstallation => 'Ripara installazione';
-
-  @override
-  String get repairInstallationDescription => 'La riparazione reinstallerá tutti i programmi senza toccare alcun documento o impostazione.';
-
-  @override
-  String get tryUbuntu => 'Prova Ubuntu';
-
-  @override
-  String get tryUbuntuDescription => 'Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.';
-
-  @override
-  String get installUbuntu => 'Installa Ubuntu';
-
-  @override
-  String get installUbuntuDescription => 'Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
-
-  @override
-  String releaseNotesLabel(Object url) {
-    return 'Forse vorresti leggere le <a href=\"$url\">informazioni di rilascio</a>.';
-  }
-
-  @override
-  String get turnOffRST => 'Disattiva RST';
-
-  @override
-  String get turnOffRSTDescription => 'Questo computer usa Intel RST (Rapid Storage Technology). Devi disattivare RST da Windows prima di poter installare Ubuntu.';
-
-  @override
-  String instructionsForRST(Object url) {
-    return 'Per istruzioni, apri questa pagina da un telefono o un altro dispositivo: <a href=\"https://$url\">$url</a>';
-  }
 }

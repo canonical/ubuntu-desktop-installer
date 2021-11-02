@@ -14,22 +14,22 @@ class AppLocalizationsFi extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Sulje';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Valmis';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Tallenna';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Aseta';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Valitse kieli';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Profiilin luonti';
 
   @override
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
@@ -68,7 +68,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get profileSetupPasswordRequired => 'A password is required';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Lisäasetukset';
 
   @override
   String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
@@ -107,7 +107,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'Ubuntu WSL konfiguraatio (kokeilu)';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperability';
@@ -155,7 +155,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Asennus valmis';
 
   @override
   String setupCompleteHeader(Object user) {
@@ -170,36 +170,4 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
-}
-
-/// The translations for Finnish, as used in Finland (`fi_FI`).
-class AppLocalizationsFiFi extends AppLocalizationsFi {
-  AppLocalizationsFiFi(): super('fi_FI');
-
-  @override
-  String get exitButton => 'Sulje';
-
-  @override
-  String get finishButton => 'Valmis';
-
-  @override
-  String get saveButton => 'Tallenna';
-
-  @override
-  String get setupButton => 'Aseta';
-
-  @override
-  String get selectLanguageTitle => 'Valitse kieli';
-
-  @override
-  String get profileSetupTitle => 'Profiilin luonti';
-
-  @override
-  String get advancedSetupTitle => 'Lisäasetukset';
-
-  @override
-  String get configurationUITitle => 'Ubuntu WSL konfiguraatio (kokeilu)';
-
-  @override
-  String get setupCompleteTitle => 'Asennus valmis';
 }

@@ -1,5 +1,9 @@
 {
   "@@locale": "fr",
+  "countryCode": "FR",
+  
+  "languageName": "Français",
 
-  "languageName": ""
+  "backAction": "Retour",
+  "continueAction": "Continuer"
 }

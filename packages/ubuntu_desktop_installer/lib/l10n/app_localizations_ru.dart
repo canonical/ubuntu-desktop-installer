@@ -8,10 +8,10 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Установка Ubuntu';
 
   @override
-  String get windowTitle => 'Install Ubuntu';
+  String get windowTitle => 'Установить Ubuntu';
 
   @override
   String get cancelButtonText => 'Cancel';
@@ -26,7 +26,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noButtonText => 'No';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Перезагрузить';
 
   @override
   String get revertButtonText => 'Revert';
@@ -35,56 +35,56 @@ class AppLocalizationsRu extends AppLocalizations {
   String get yesButtonText => 'Yes';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Добро пожаловать';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Попробовать или установить';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Исправить установку';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.';
 
   @override
-  String get tryUbuntu => 'Try Ubuntu';
+  String get tryUbuntu => 'Попробовать Ubuntu';
 
   @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
+  String get tryUbuntuDescription => 'Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.';
 
   @override
-  String get installUbuntu => 'Install Ubuntu';
+  String get installUbuntu => 'Установить Ubuntu';
 
   @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+  String get installUbuntuDescription => 'Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Вы также можете прочитать <a href=\"$url\">заметки о выпуске</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Выключить RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Раскладка клавиатуры';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Выберите раскладку клавиатуры:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Введите здесь, чтобы проверить свою клавиатуру';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Определить раскладку клавиатуры';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -511,70 +511,4 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
-}
-
-/// The translations for Russian, as used in Russian Federation (`ru_RU`).
-class AppLocalizationsRuRu extends AppLocalizationsRu {
-  AppLocalizationsRuRu(): super('ru_RU');
-
-  @override
-  String get appTitle => 'Установка Ubuntu';
-
-  @override
-  String get windowTitle => 'Установить Ubuntu';
-
-  @override
-  String get restartButtonText => 'Перезагрузить';
-
-  @override
-  String get welcome => 'Добро пожаловать';
-
-  @override
-  String get tryOrInstallPageTitle => 'Попробовать или установить';
-
-  @override
-  String get repairInstallation => 'Исправить установку';
-
-  @override
-  String get repairInstallationDescription => 'Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.';
-
-  @override
-  String get tryUbuntu => 'Попробовать Ubuntu';
-
-  @override
-  String get tryUbuntuDescription => 'Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.';
-
-  @override
-  String get installUbuntu => 'Установить Ubuntu';
-
-  @override
-  String get installUbuntuDescription => 'Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
-
-  @override
-  String releaseNotesLabel(Object url) {
-    return 'Вы также можете прочитать <a href=\"$url\">заметки о выпуске</a>.';
-  }
-
-  @override
-  String get turnOffRST => 'Выключить RST';
-
-  @override
-  String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
-
-  @override
-  String instructionsForRST(Object url) {
-    return 'Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://$url\">$url</a>';
-  }
-
-  @override
-  String get keyboardLayoutPageTitle => 'Раскладка клавиатуры';
-
-  @override
-  String get chooseYourKeyboardLayout => 'Выберите раскладку клавиатуры:';
-
-  @override
-  String get typeToTest => 'Введите здесь, чтобы проверить свою клавиатуру';
-
-  @override
-  String get detectLayout => 'Определить раскладку клавиатуры';
 }

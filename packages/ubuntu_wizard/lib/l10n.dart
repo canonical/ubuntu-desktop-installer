@@ -52,12 +52,15 @@ class LocalizedLanguage {
 /// [locales] must contain the base locale i.e. the template .arb locale.
 Future<List<LocalizedLanguage>> loadLocalizedLanguages(
     List<Locale> locales) async {
-  assert(locales.contains(_kBaseLocale));
   final languages = <LocalizedLanguage>[];
   for (final locale in locales) {
     final localization = await UbuntuLocalizations.delegate.load(locale);
     if (localization.languageName.isNotEmpty) {
-      languages.add(LocalizedLanguage(localization.languageName, locale));
+      final fullLocale = Locale(
+        locale.languageCode,
+        locale.countryCode ?? localization.countryCode,
+      );
+      languages.add(LocalizedLanguage(localization.languageName, fullLocale));
     }
   }
   languages.sort(

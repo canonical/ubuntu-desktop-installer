@@ -1,3 +1,8 @@
 {
-  "@@locale": "fi"
+  "@@locale": "fi",
+
+  "appTitle": "Ubuntun Työpöytäversion Asennusohjelma",
+  "windowTitle": "Asenna Ubuntu",
+
+  "welcome": "Tervetuloa"
 }

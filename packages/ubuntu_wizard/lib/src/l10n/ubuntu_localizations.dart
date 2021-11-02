@@ -98,58 +98,56 @@ abstract class UbuntuLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('en', 'US'),
     Locale('es'),
-    Locale('es', 'ES'),
     Locale('fi'),
-    Locale('fi', 'FI'),
     Locale('fr'),
-    Locale('fr', 'FR'),
     Locale('it'),
-    Locale('it', 'IT'),
     Locale('nl'),
-    Locale('nl', 'NL'),
     Locale('oc'),
-    Locale('oc', 'FR'),
     Locale('pt'),
     Locale('pt', 'BR'),
-    Locale('ru'),
-    Locale('ru', 'RU')
+    Locale('ru')
   ];
+
+  /// No description provided for @countryCode.
+  ///
+  /// In en, this message translates to:
+  /// **'US'**
+  String get countryCode;
 
   /// The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'English'**
   String get languageName;
 
   /// No description provided for @backAction.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Go Back'**
   String get backAction;
 
   /// No description provided for @continueAction.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Continue'**
   String get continueAction;
 
   /// No description provided for @strongPassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Strong password'**
   String get strongPassword;
 
   /// No description provided for @moderatePassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Moderate password'**
   String get moderatePassword;
 
   /// No description provided for @weakPassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Weak password'**
   String get weakPassword;
 }
@@ -173,57 +171,9 @@ UbuntuLocalizations lookupUbuntuLocalizations(Locale locale) {
 
   // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
-    case 'en': {
-  switch (locale.countryCode) {
-    case 'US': return UbuntuLocalizationsEnUs();
-   }
-  break;
-   }
-    case 'es': {
-  switch (locale.countryCode) {
-    case 'ES': return UbuntuLocalizationsEsEs();
-   }
-  break;
-   }
-    case 'fi': {
-  switch (locale.countryCode) {
-    case 'FI': return UbuntuLocalizationsFiFi();
-   }
-  break;
-   }
-    case 'fr': {
-  switch (locale.countryCode) {
-    case 'FR': return UbuntuLocalizationsFrFr();
-   }
-  break;
-   }
-    case 'it': {
-  switch (locale.countryCode) {
-    case 'IT': return UbuntuLocalizationsItIt();
-   }
-  break;
-   }
-    case 'nl': {
-  switch (locale.countryCode) {
-    case 'NL': return UbuntuLocalizationsNlNl();
-   }
-  break;
-   }
-    case 'oc': {
-  switch (locale.countryCode) {
-    case 'FR': return UbuntuLocalizationsOcFr();
-   }
-  break;
-   }
     case 'pt': {
   switch (locale.countryCode) {
     case 'BR': return UbuntuLocalizationsPtBr();
-   }
-  break;
-   }
-    case 'ru': {
-  switch (locale.countryCode) {
-    case 'RU': return UbuntuLocalizationsRuRu();
    }
   break;
    }
