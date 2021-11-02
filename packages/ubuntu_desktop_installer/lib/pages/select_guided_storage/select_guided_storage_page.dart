@@ -20,7 +20,7 @@ class SelectGuidedStoragePage extends StatefulWidget {
     final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (context) => SelectGuidedStorageModel(service),
-      child: SelectGuidedStoragePage(),
+      child: const SelectGuidedStoragePage(),
     );
   }
 

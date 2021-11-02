@@ -28,7 +28,7 @@ class ChooseSecurityKeyPage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => ChooseSecurityKeyModel(client),
-      child: ChooseSecurityKeyPage(),
+      child: const ChooseSecurityKeyPage(),
     );
   }
 
@@ -69,7 +69,7 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
                 child: Html(
                   data: lang.chooseSecurityKeyWarning(
                       Theme.of(context).errorColor.toHex()),
-                  style: {'body': Style(margin: EdgeInsets.all(0))},
+                  style: {'body': Style(margin: EdgeInsets.zero)},
                 ),
               ),
             ),

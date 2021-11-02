@@ -140,7 +140,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
               padding: EdgeInsets.only(left: widget.spacing ?? 0.0),
               child: widget.successWidget == null ||
                       !widget.validator.isValid(value.text)
-                  ? SizedBox.shrink()
+                  ? const SizedBox.shrink()
                   : _alignBaseline(widget.successWidget),
             );
           },

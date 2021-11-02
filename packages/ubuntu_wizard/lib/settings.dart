@@ -30,11 +30,11 @@ class Settings extends ChangeNotifier {
     switch (brightness) {
       case Brightness.dark:
         _theme = ThemeMode.dark;
-        _gsettings.set('gtk-theme', DBusString('Yaru-dark'));
+        _gsettings.set('gtk-theme', const DBusString('Yaru-dark'));
         break;
       case Brightness.light:
         _theme = ThemeMode.light;
-        _gsettings.set('gtk-theme', DBusString('Yaru'));
+        _gsettings.set('gtk-theme', const DBusString('Yaru'));
         break;
     }
     notifyListeners();

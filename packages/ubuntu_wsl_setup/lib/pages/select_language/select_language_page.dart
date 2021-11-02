@@ -17,7 +17,7 @@ class SelectLanguagePage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => SelectLanguageModel(client),
-      child: SelectLanguagePage(),
+      child: const SelectLanguagePage(),
     );
   }
 

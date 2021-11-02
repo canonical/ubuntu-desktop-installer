@@ -10,7 +10,7 @@ class AdvancedSetupModel extends ChangeNotifier {
   }
 
   final SubiquityClient _client;
-  final _conf = ValueNotifier(WSLConfigurationBase());
+  final _conf = ValueNotifier(const WSLConfigurationBase());
 
   /// Location for the automount.
   String get mountLocation => _conf.value.automountRoot ?? '';
