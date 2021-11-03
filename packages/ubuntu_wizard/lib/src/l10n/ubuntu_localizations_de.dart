@@ -8,7 +8,7 @@ class UbuntuLocalizationsDe extends UbuntuLocalizations {
   UbuntuLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get countryCode => 'US';
+  String get countryCode => 'DE';
 
   @override
   String get languageName => 'Deutsch';
