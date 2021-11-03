@@ -14,17 +14,17 @@ class UbuntuLocalizationsDe extends UbuntuLocalizations {
   String get languageName => 'Deutsch';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => 'Zurück';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => 'Weiter';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Starkes Passwort';
 
   @override
-  String get moderatePassword => 'Moderate password';
+  String get moderatePassword => 'Mittelmäßiges Passwort';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Schwaches Passwort';
 }
