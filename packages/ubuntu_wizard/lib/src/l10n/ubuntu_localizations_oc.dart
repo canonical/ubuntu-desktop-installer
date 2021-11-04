@@ -20,11 +20,11 @@ class UbuntuLocalizationsOc extends UbuntuLocalizations {
   String get continueAction => 'Contunhar';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Senhal fòrt';
 
   @override
-  String get moderatePassword => 'Moderate password';
+  String get moderatePassword => 'Senhal moderat';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Senhal feble';
 }
