@@ -117,4 +117,58 @@ void main() {
     final model = Provider.of<SelectLanguageModel>(context, listen: false);
     expect(model, isNotNull);
   });
+
+  testWidgets('back button is disabled', (tester) async {
+    final client = MockSubiquityClient();
+    when(client.locale()).thenAnswer((_) async => 'en_US');
+
+    final settings = MockSettings();
+    when(settings.locale).thenReturn(Locale('en_US'));
+
+    await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: localizationsDelegates,
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<Settings>.value(value: settings),
+          Provider<SubiquityClient>.value(value: client),
+        ],
+        child: Wizard(
+          routes: {
+            '/': SelectLanguagePage.create,
+            '/next': (context) {
+              return Builder(
+                builder: (context) {
+                  return ElevatedButton(
+                    onPressed: Wizard.of(context).back,
+                    child: Text('Next Page'),
+                  );
+                },
+              );
+            },
+          },
+        ),
+      ),
+    ));
+
+    final firstPage = find.byType(SelectLanguagePage);
+    expect(firstPage, findsOneWidget);
+
+    final backButton =
+        find.widgetWithText(OutlinedButton, tester.ulang.backAction);
+    expect(backButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
+
+    final continueButton =
+        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
+    expect(continueButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byType(ElevatedButton));
+    await tester.pumpAndSettle();
+
+    expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
+  });
 }

@@ -84,7 +84,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
         ),
       ),
       actions: [
-        WizardAction.back(context),
+        WizardAction.back(context, enabled: false),
         WizardAction.next(
           context,
           onActivated: () {
