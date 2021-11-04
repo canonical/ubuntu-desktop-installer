@@ -155,16 +155,9 @@ class MockUdevService extends _i1.Mock implements _i6.UdevService {
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  String fullName(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#fullName, [sysname]),
-          returnValue: '') as String);
-  @override
-  String? modelName(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#modelName, [sysname])) as String?);
-  @override
-  String? vendorName(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#vendorName, [sysname]))
-          as String?);
+  String fullName({String? sysname, String? syspath}) => (super.noSuchMethod(
+      Invocation.method(#fullName, [], {#sysname: sysname, #syspath: syspath}),
+      returnValue: '') as String);
   @override
   String toString() => super.toString();
 }

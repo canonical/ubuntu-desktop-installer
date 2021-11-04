@@ -46,8 +46,8 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
   String prettyFormatStorage(Disk disk) {
     final udev = Provider.of<UdevService>(context, listen: false);
     final fullName = <String?>[
-      udev.modelName(disk.sysname),
-      udev.vendorName(disk.sysname)
+      udev.modelName(sysname: disk.sysname),
+      udev.vendorName(sysname: disk.sysname)
     ].where((p) => p?.isNotEmpty == true).join(' ');
 
     final size = filesize(disk.size);

@@ -73,10 +73,10 @@ WriteChangesToDiskModel buildModel({List<Disk>? disks}) {
 void main() {
   Widget buildPage(WriteChangesToDiskModel model) {
     final udev = MockUdevService();
-    when(udev.modelName('sda')).thenReturn('SDA');
-    when(udev.modelName('sdb')).thenReturn('SDB');
-    when(udev.vendorName('sda')).thenReturn('ATA');
-    when(udev.vendorName('sdb')).thenReturn('ATA');
+    when(udev.modelName(sysname: 'sda')).thenReturn('SDA');
+    when(udev.modelName(sysname: 'sdb')).thenReturn('SDB');
+    when(udev.vendorName(sysname: 'sda')).thenReturn('ATA');
+    when(udev.vendorName(sysname: 'sdb')).thenReturn('ATA');
 
     return MultiProvider(
       providers: [
