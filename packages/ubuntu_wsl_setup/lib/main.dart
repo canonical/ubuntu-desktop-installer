@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_wizard/app.dart';
@@ -17,23 +18,31 @@ screens, yet allowing user to overwrite any of those during setup.
   ''',
     );
   })!;
-  var variant = Variant.WSL_SETUP;
+  final variant = ValueNotifier<Variant?>(null);
   List<String>? serverArgs;
-  if (options['reconfigure'] == true) {
-    variant = Variant.WSL_CONFIGURATION;
-  }
   if (options['prefill'] != null) {
     serverArgs = ['--prefill', options['prefill']];
   }
   runWizardApp(
-    UbuntuWslSetupApp(
-      initialRoute: options['initial-route'],
-      reconfigure: options['reconfigure'] == true,
+    ValueListenableBuilder<Variant?>(
+      valueListenable: variant,
+      builder: (context, value, child) {
+        return UbuntuWslSetupApp(
+          variant: value,
+          initialRoute: options['initial-route'],
+        );
+      },
     ),
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
-    onInitSubiquity: (client) => client.setVariant(variant),
+    onInitSubiquity: (client) {
+      client.variant().then((value) => variant.value = value);
+    },
     serverArgs: serverArgs,
+    serverEnvironment: {
+      if (!isLiveRun(options) && options['reconfigure'] == true)
+        'DRYRUN_RECONFIG': 'true',
+    },
   );
 }

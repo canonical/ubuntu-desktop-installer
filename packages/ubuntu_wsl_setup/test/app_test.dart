@@ -28,7 +28,7 @@ void main() {
         ChangeNotifierProvider<Settings>.value(value: settings),
         Provider<SubiquityClient>.value(value: client),
       ],
-      child: const UbuntuWslSetupApp(),
+      child: const UbuntuWslSetupApp(variant: Variant.WSL_SETUP),
     ));
 
     expect(find.byType(Wizard), findsOneWidget);
