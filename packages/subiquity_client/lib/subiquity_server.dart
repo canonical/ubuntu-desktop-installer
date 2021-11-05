@@ -40,10 +40,9 @@ abstract class SubiquityServer {
       ? '/run/subiquity/socket'
       : p.join(Directory.current.path, 'test/socket');
 
-  // Optional environment variables for the server process.
-  Map<String, String> _getEnvironment(String subiquityPath) {
-    // prefer local curtin and probert python modules that are pinned to the
-    // correct versions
+  // Prefer local curtin and probert python modules that are pinned to the
+  // correct versions
+  Map<String, String> _pythonPath(String subiquityPath) {
     final pythonPath = (Platform.environment['PYTHONPATH'] ?? '').split(':');
     pythonPath.add(subiquityPath);
     pythonPath.add(p.join(subiquityPath, 'curtin'));
@@ -51,7 +50,8 @@ abstract class SubiquityServer {
     return {'PYTHONPATH': pythonPath.join(':')};
   }
 
-  Future<String> start(ServerMode serverMode, [List<String>? args]) async {
+  Future<String> start(ServerMode serverMode,
+      {List<String>? args, Map<String, String>? environment}) async {
     final socketPath = _getSocketPath(serverMode);
     if (_shouldStart(serverMode)) {
       var subiquityCmd = <String>[
@@ -60,7 +60,7 @@ abstract class SubiquityServer {
         if (serverMode == ServerMode.DRY_RUN) '--dry-run',
         ...?args,
       ];
-      await _startSubiquity(subiquityCmd);
+      await _startSubiquity(subiquityCmd, environment);
     }
 
     return _waitSubiquity(socketPath).then((_) {
@@ -69,7 +69,8 @@ abstract class SubiquityServer {
     });
   }
 
-  Future<void> _startSubiquity(List<String> subiquityCmd) async {
+  Future<void> _startSubiquity(
+      List<String> subiquityCmd, Map<String, String>? environment) async {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     String? workingDirectory;
     // try using local subiquity
@@ -88,7 +89,10 @@ abstract class SubiquityServer {
       'python3',
       subiquityCmd,
       workingDirectory: workingDirectory,
-      environment: _getEnvironment(subiquityPath),
+      environment: {
+        ..._pythonPath(subiquityPath),
+        ...?environment,
+      },
     ).then((process) {
       stdout.addStream(process.stdout);
       stderr.addStream(process.stderr);
@@ -159,18 +163,6 @@ class _SubiquityServerImpl extends SubiquityServer {
 
   @override
   String get _pythonModule => 'subiquity.cmd.server';
-
-  @override
-  Map<String, String> _getEnvironment(String subiquityPath) {
-    // so subiquity doesn't think it's the installer or flutter snap...
-    return super._getEnvironment(subiquityPath)
-      ..addAll({
-        'SNAP': '.',
-        'SNAP_NAME': 'subiquity',
-        'SNAP_REVISION': '',
-        'SNAP_VERSION': '',
-      });
-  }
 }
 
 // A server that runs in a WSL environment.

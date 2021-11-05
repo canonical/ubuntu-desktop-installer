@@ -38,6 +38,7 @@ Future<void> runWizardApp(
   required SubiquityServer subiquityServer,
   SubiquityInitCallback? onInitSubiquity,
   List<String>? serverArgs,
+  Map<String, String>? serverEnvironment,
   List<SingleChildWidget>? providers,
 }) async {
   final interfaceSettings = GSettings('org.gnome.desktop.interface');
@@ -52,7 +53,7 @@ Future<void> runWizardApp(
   final serverMode = isLiveRun(options) ? ServerMode.LIVE : ServerMode.DRY_RUN;
 
   await subiquityServer
-      .start(serverMode, serverArgs)
+      .start(serverMode, args: serverArgs, environment: serverEnvironment)
       .then(subiquityClient.open);
 
   onInitSubiquity?.call(subiquityClient);
