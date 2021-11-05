@@ -129,6 +129,11 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<_i3.Variant> variant() =>
+      (super.noSuchMethod(Invocation.method(#variant, []),
+              returnValue: Future<_i3.Variant>.value(_i3.Variant.SERVER))
+          as _i5.Future<_i3.Variant>);
+  @override
   _i5.Future<void> setVariant(_i3.Variant? variant) =>
       (super.noSuchMethod(Invocation.method(#setVariant, [variant]),
           returnValue: Future<void>.value(),
