@@ -36,9 +36,11 @@ void main() {
     });
 
     test('variant', () async {
-      // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.SERVER);
+      expect(await _client.variant(), equals(Variant.SERVER));
+
       await _client.setVariant(Variant.DESKTOP);
+      expect(await _client.variant(), equals(Variant.DESKTOP));
     });
 
     test('source', () async {
@@ -445,9 +447,11 @@ void main() {
     });
 
     test('variant', () async {
-      // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.WSL_SETUP);
+      expect(await _client.variant(), equals(Variant.WSL_SETUP));
+
       await _client.setVariant(Variant.WSL_CONFIGURATION);
+      expect(await _client.variant(), equals(Variant.WSL_CONFIGURATION));
     });
 
     test('wslconfbase', () async {
