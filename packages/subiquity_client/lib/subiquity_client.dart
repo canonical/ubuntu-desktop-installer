@@ -2,6 +2,7 @@ library subiquity_client;
 
 import 'dart:async';
 import 'dart:convert';
+import 'package:dartx/dartx.dart';
 import 'package:http/http.dart';
 import 'package:logger/logger.dart';
 import 'src/http_unix_client.dart';
@@ -68,21 +69,7 @@ class SubiquityClient {
   }
 
   Future<void> setVariant(Variant variant) async {
-    String variantString;
-    switch (variant) {
-      case Variant.SERVER:
-        variantString = "server";
-        break;
-      case Variant.DESKTOP:
-        variantString = "desktop";
-        break;
-      case Variant.WSL_SETUP:
-        variantString = "wsl_setup";
-        break;
-      case Variant.WSL_CONFIGURATION:
-        variantString = "wsl_configuration";
-        break;
-    }
+    final variantString = variant.toVariantString();
     final request = Request(
         'POST',
         Uri.http('localhost', 'meta/client_variant',
