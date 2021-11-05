@@ -29,13 +29,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Reverteix';
 
   @override
   String get yesButtonText => 'Yes';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Benvingut';
 
   @override
   String get tryOrInstallPageTitle => 'Try or install';
@@ -64,7 +64,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Desactiva la RST.';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -75,22 +75,22 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Disposició de teclat';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Trieu la vostra distribució de teclat:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Escriviu aquí per provar el vostre teclat';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Detecta la disposició del teclat';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Premeu una de les tecles següents:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Teniu la tecla següent al vostre teclat?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';
@@ -120,25 +120,25 @@ class AppLocalizationsCa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Quines aplicacions us agradaria instal·lar per començar?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Instal·lació normal';
 
   @override
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Instal·lació mínima';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Navegador web i utilitats bàsiques.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Altres opcions';
 
   @override
   String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
@@ -170,7 +170,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Tipus d\'instal·lació';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -178,7 +178,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'Aquest ordinador no duu cap sistema operatiu que s\'hagi detectat. Què voleu fer?';
 
   @override
   String get installationTypeErase => 'Erase disk and install Ubuntu';
@@ -195,28 +195,28 @@ class AppLocalizationsCa extends AppLocalizations {
   String get installationTypeAdvancedTitle => 'Advanced features';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Cap';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Cap seleccionat';
 
   @override
   String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'Seleccionat LVM';
 
   @override
   String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'En el pas següent triareu la clau de seguretat.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'Seleccionat ZFS';
 
   @override
   String installationTypeReinstall(Object os) {
@@ -237,7 +237,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Alguna altra cosa';
 
   @override
   String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
@@ -246,10 +246,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Seleccioneu la unitat:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'S\'utilitzarà el disc sencer:';
 
   @override
   String get selectGuidedStorageInstallNow => 'Install Now';
@@ -261,28 +261,28 @@ class AppLocalizationsCa extends AppLocalizations {
   String get startInstallingButtonText => 'Start Installing';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Dispositiu';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Tipus';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Punt de muntatge';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Mida';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'En ús';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Sistema';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'espai lliure';
 
   @override
   String get newPartitionTable => 'New partition table';
@@ -291,13 +291,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get bootLoaderDevice => 'Device for boot loader installation';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Crea una partició';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Edita la partició';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Mida:';
 
   @override
   String get partitionUnitB => 'B';
@@ -315,19 +315,19 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Primària';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Lògica';
 
   @override
   String get partitionLocationLabel => 'Location for the new partition:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Començament d\'aquest espai';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Final d\'aquest espai';
 
   @override
   String get partitionFormatLabel => 'Used as:';
@@ -387,13 +387,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Qui sou?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Entra de manera automàtica';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Fes que calgui una contrasenya per a entrar';
 
   @override
   String get whoAreYouPageRealNameLabel => 'Your name';
@@ -405,7 +405,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'El nom que utilitza quan es comunica amb altres ordinadors.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'A computer name is required';
@@ -499,7 +499,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get shutdown => 'Shut Down';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Desactiva el BitLocker';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';

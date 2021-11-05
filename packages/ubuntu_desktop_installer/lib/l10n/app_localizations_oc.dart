@@ -147,26 +147,26 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installThirdPartySubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';
 
   @override
-  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+  String get chooseSecurityKeyHeader => 'Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra d’Ubuntu seràn pas chifrats.';
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Causissètz una clau de seguretat';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Confirmatz la clau de seguretat';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'Una clau de seguretat es requerida';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'Las doas claus correspondon pas';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.';
   }
 
   @override
@@ -246,7 +246,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get selectGuidedStoragePageTitle => 'Escafar lo disc e installar Ubuntu';
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Seleccionatz lo disc :';
 
   @override
   String get selectGuidedStorageInfoLabel => 'Lo disc entièr serà utilizat :';
@@ -351,10 +351,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatXfs => 'sistèma de fichièr de jornalizacion XFS';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'sistèma de fichièr FAT';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'sistèma de fichièr FAT12';
 
   @override
   String get partitionFormatFat16 => 'sistèma de fichièr FAT16';
@@ -366,19 +366,19 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatSwap => 'zòna d’escambi';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'sistèma de fichièr ISO 9660';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'sistèma de fichièr VFAT';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'sistèma de fichièr NTFS';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'sistèma de fichièr ReiserFS';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'sistèma de fichièr ZFS';
 
   @override
   String get partitionErase => 'Formatar la particion';
@@ -456,12 +456,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return 'la particion #$disk${partition} en $format utilizada per $mount';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return 'particion #$disk${partition} en $format';
   }
 
   @override

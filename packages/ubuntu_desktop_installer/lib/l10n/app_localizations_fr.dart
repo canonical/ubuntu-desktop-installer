@@ -14,25 +14,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get windowTitle => 'Installer Ubuntu';
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Annuler';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Changer';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Ok';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Non';
 
   @override
   String get restartButtonText => 'Redémarrer';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Rétablir';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Oui';
 
   @override
   String get welcome => 'Bienvenue';
@@ -87,10 +87,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get detectLayout => 'Détecter la disposition du clavier';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Veuillez presser une des touches suivantes :';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Est-ce que la touche suivante est présente sur votre clavier ?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

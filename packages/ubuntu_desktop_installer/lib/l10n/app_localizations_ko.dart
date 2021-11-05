@@ -8,55 +8,55 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => '우분투 데스크톱 인스톨러';
 
   @override
-  String get windowTitle => 'Install Ubuntu';
+  String get windowTitle => '우분투 설치';
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => '취소';
 
   @override
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => '확인';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => '아니오';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => '다시 시작';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => '되돌리기';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => '예';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => '환영합니다';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => '체험해 보거나 설치하기';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => '설치 복구';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
 
   @override
-  String get tryUbuntu => 'Try Ubuntu';
+  String get tryUbuntu => '우분투 체험하기';
 
   @override
   String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
 
   @override
-  String get installUbuntu => 'Install Ubuntu';
+  String get installUbuntu => '우분투 설치하기';
 
   @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+  String get installUbuntuDescription => '우분투를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
 
   @override
   String releaseNotesLabel(Object url) {
@@ -71,14 +71,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '절차를 알아보려면, 휴대전화나 다른 기기에서 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => '키보드 레이아웃';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => '키보드 레이아웃을 선택하십시오:';
 
   @override
   String get typeToTest => 'Type here to test your keyboard';
@@ -87,19 +87,19 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detectLayout => 'Detect Keyboard Layout';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => '다음 키 중 하나를 누르십시오:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => '다음 키가 키보드에 존재합니까?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Secure Boot 구성';
 
   @override
   String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Secure Boot 구성';
 
   @override
   String get chooseSecurityKey => 'Choose a security key';
@@ -132,7 +132,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => '최소 설치';
 
   @override
   String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
@@ -201,7 +201,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeNoneSelected => 'None selected';
 
   @override
-  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
+  String get installationTypeLVM => '새 우분투 설치에 LVM 사용';
 
   @override
   String get installationTypeLVMSelected => 'LVM selected';
@@ -252,7 +252,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => '지금 설치';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';

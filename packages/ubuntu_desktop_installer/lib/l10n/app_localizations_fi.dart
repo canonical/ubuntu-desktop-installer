@@ -14,437 +14,437 @@ class AppLocalizationsFi extends AppLocalizations {
   String get windowTitle => 'Asenna Ubuntu';
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Peruuta';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Muuta';
 
   @override
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ei';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Käynnistä uudelleen';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Kumoa';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Kyllä';
 
   @override
   String get welcome => 'Tervetuloa';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Kokeile tai asenna';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Korjaa asennus';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen mutta asiakirjat ja asennukset säilytetään.';
 
   @override
-  String get tryUbuntu => 'Try Ubuntu';
+  String get tryUbuntu => 'Kokeile Ubuntua';
 
   @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
+  String get tryUbuntuDescription => 'Voit kokeilla Ubuntua tekemättä muutoksia tietokoneellesi.';
 
   @override
-  String get installUbuntu => 'Install Ubuntu';
+  String get installUbuntu => 'Asenna Ubuntu';
 
   @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+  String get installUbuntuDescription => 'Asenna Ubuntu nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Voit halutessasi lukea <a href=\"$url\">julkaisumuistion</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Sammuta RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Lue ohjeet esimerkiksi puhelimellasi tai jollain toisella laitteella: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Näppäimistön asettelu';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Valitse näppäimistön asettelu:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Kokeile näppäimistön asetuksia kirjoittamalla tähän';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Tunnista näppäimistön asettelu';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Paina yhtä seuraavista näppäimistä:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Löytyykö seuraava näppäin näppäimistöstäsi?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Määritä Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Valitsit kolmansien osapuolten ajurien asennuksen. Tämä vaatii että Secure Boot tulee määrittää.\nTämä vaatii, että valitset turva-avaimen nyt ja kirjoitat sen järjestelmän käynnistyessä uudelleen.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Määritä Secure Boot';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Valitse salausavain';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Vahvista salausavain';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Älä asenna ajureita toistaiseksi';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'Voit asentaa ne myöhemmin Päivitykset ja muut ohjelmistot -ohjelmassa.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Salausavain vaaditaan';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'Salausavaimet eivät täsmää';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Päivitykset ja muut ohjelmistot';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Millä sovelluksin haluat aloittaa?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Tavallinen asennus';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Verkkoselain, apuohjelmat, toimisto-ohjelmisto, pelit ja multimediasoittimet.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Vähimmäisasennus';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Verkkoselain ja perusapuohjelmat.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Muut valinnat';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa sekä eri mediamuotoja varten';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'Näihin ohjelmistoihin kohdistuvat dokumentaation mukana olevat lisenssiehdot. Jotkin voivat olla suljetun lähdekoodin ohjelmistoja.';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Valitse salausavain';
 
   @override
-  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+  String get chooseSecurityKeyHeader => 'Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\nUbuntu-asennuksen ulkopuolisia tiedostoja ei salata.';
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Valitse salausavain';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Vahvista salausavain';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'Salausavain vaaditaan';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'Salausavaimet eivät täsmää';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">Varoitus</font>: Jos tämä salausavain katoaa tai unohdat sen, kaikki tiedot menetetään. Kirjoita tarvittaessa salausavain muistiin ja säilytä sitä turvallisessa paikassa ja älä tietokoneen lähettyvillä.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Asennustyyppi';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'Tässä tietokoneessa on tällä hetkellä asennettuna käyttöjärjestelmä \"$os\". Mitä haluat tehdä?';
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
 
   @override
-  String get installationTypeErase => 'Erase disk and install Ubuntu';
+  String get installationTypeErase => 'Tyhjennä levy ja asenna Ubuntu';
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">Varoitus:</font> Tämä poistaa kaikkien käyttöjärjestelmien kaikki sovellukset, asiakirjat, valokuvat, musiikit ja muut tiedostot.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Edistyneet asetukset...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Edistyneet asetukset';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Ei mitään';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Ei valintoja';
 
   @override
-  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
+  String get installationTypeLVM => 'Käytä LVM:ää uudessa Ubuntu-asennuksessa';
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM valittu';
 
   @override
-  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
+  String get installationTypeEncrypt => 'Salaa uusi Ubuntu-asennus paremman tietoturvan vuoksi';
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'Salausavain valitaan seuraavassa vaiheessa.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'KOKEELLINEN: Tyhjennä levy ja käytä ZFS:ää';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS valittu';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return 'Poista $os ja asenna uudelleen';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">Varoitus:</font> Tämä poistaa kaikki käyttäjärjestelmän \"$os\" sovellukset, asiakirjat, valokuvat, musiikit ja muut tiedostot.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return 'Asenna $product käyttöjärjestelmän \"$os\" tilalle';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Asiakirjat, musiikki ja muut henkilökohtaiset tiedostot säilytetään. Jokaisella tietokoneen käynnistyskerralla voit valita, mikä käyttöjärjestelmä käynnistetään.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Jokin muu vaihtoehto';
 
   @override
-  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
+  String get installationTypeManualInfo => 'Voit luoda tai muuttaa osioiden kokoja itse, tai valita useita osioita Ubuntun käytettäväksi';
 
   @override
-  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
+  String get selectGuidedStoragePageTitle => 'Tyhjennä levy ja asenna Ubuntu';
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Valitse asema:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Koko levy käytetään:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Asenna nyt';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Varaa levytilaa';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Aloita asennus';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Laite';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Tyyppi';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Liitoskohta';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Koko';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Käytössä';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Järjestelmä';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Alusta';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'vapaata tilaa';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Uusi osiotaulu';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Laite, jolle alkulatausohjelma asennetaan';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Luo osio';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Muokkaa osiota';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Koko:';
 
   @override
-  String get partitionUnitB => 'B';
+  String get partitionUnitB => 't';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kt';
 
   @override
-  String get partitionUnitMB => 'MB';
+  String get partitionUnitMB => 'Mt';
 
   @override
-  String get partitionUnitGB => 'GB';
+  String get partitionUnitGB => 'Gt';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Uuden osion tyyppi:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Ensisijainen';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Looginen';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Uuden osion paikka:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Tilan alku';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Tilan loppu';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'Tiedostojärjestelmä:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Sivutusosio (swap)';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS root-tiedostojärjestelmä';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'Alusta osio';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Liitoskohta:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Kuka olet?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Kirjaudu sisään automaattisesti';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Vaadi salasana sisäänkirjautumiseen';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Nimi';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Nimi vaaditaan';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Tietokoneen nimi';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'Nimi, jolla tietokone tunnistautuu toisille tietokoneille.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'Tietokoneen nimi vaaditaan';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'Tietokoneen nimi on virheellinen';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Valitse käyttäjänimi';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Käyttäjätunnus vaaditaan';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'Käyttäjätunnus on virheellinen';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Valitse salasana';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Salasana vaaditaan';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Vahvista salasana';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Tallenna muutokset levylle';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'levy';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'Seuraavien laitteiden osiotauluja on muutettu:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -452,16 +452,16 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => 'Seuraaviin levyosioihin luodaan uusi tiedostojärjestelmä:';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return 'osio #$disk${partition} tiedostojärjestelmänä $format liitetty kohtaan $mount';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return 'osio #$disk${partition} tiedostojärjestelmänä $format';
   }
 
   @override
@@ -483,32 +483,32 @@ class AppLocalizationsFi extends AppLocalizations {
   String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Asennus on valmis';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** on asennettu ja on valmis käytettäväksi.';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Käynnistä uudelleen käyttöjärjestelmään \"$system\"';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Sammuta';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Sammuta BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'Tämä tietokone käyttää Windowsin BitLocker-salausta.\nSinun tulee sammuttaa BitLocker, ennen kuin asennat Ubuntun.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Lue ohjeet esimerkiksi puhelimellasi tai jollain toisella laitteella: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Uudelleenkäynnistä Windowsiin';
 }
