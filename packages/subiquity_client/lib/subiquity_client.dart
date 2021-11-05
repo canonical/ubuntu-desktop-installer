@@ -68,6 +68,16 @@ class SubiquityClient {
     return _client.send(request);
   }
 
+  Future<Variant> variant() async {
+    final request =
+        Request('GET', Uri.http('localhost', 'meta/client_variant'));
+    final response = await _send(request);
+
+    final responseStr = await _receive("variant()", response);
+    return VariantString.fromString(
+        responseStr.removePrefix('"').removeSuffix('"'));
+  }
+
   Future<void> setVariant(Variant variant) async {
     final variantString = variant.toVariantString();
     final request = Request(
