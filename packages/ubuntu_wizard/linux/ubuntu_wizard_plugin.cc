@@ -35,6 +35,12 @@ static void ubuntu_wizard_plugin_handle_method_call(
   } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
     gtk_window_close(GTK_WINDOW(window));
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+  } else if (strcmp(method, "setWindowClosable") == 0) {
+    FlValue* args = fl_method_call_get_args(method_call);
+    bool closable = fl_value_get_bool(fl_value_get_list_value(args, 0));
+    GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
+    gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(titlebar), closable);
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
   }
@@ -58,8 +64,13 @@ static void on_method_call(FlMethodChannel* channel, FlMethodCall* method_call,
   ubuntu_wizard_plugin_handle_method_call(registrar, method_call);
 }
 
-static gboolean on_delete_event(GtkWidget* /*window*/, GdkEvent* /*event*/,
+static gboolean on_delete_event(GtkWidget* window, GdkEvent* /*event*/,
                                 gpointer user_data) {
+  GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
+  if (!gtk_header_bar_get_show_close_button(GTK_HEADER_BAR(titlebar))) {
+    return TRUE;
+  }
+
   g_autoptr(GError) error = nullptr;
   g_autoptr(FlValue) event = fl_value_new_string("deleteEvent");
   FlEventChannel* event_channel = FL_EVENT_CHANNEL(user_data);

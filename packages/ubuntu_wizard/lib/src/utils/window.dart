@@ -36,3 +36,9 @@ Future<void> onWindowClosed() {
 Future<void> setWindowTitle(String title) {
   return _methodChannel.invokeMethod('setWindowTitle', [title]);
 }
+
+/// Sets whether the window can be closed.
+// ignore: avoid_positional_boolean_parameters
+Future<void> setWindowClosable(bool closable) {
+  return _methodChannel.invokeMethod('setWindowClosable', [closable]);
+}
