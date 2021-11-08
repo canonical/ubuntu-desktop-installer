@@ -1,3 +1,161 @@
 {
-  "@@locale": "he"
+  "@@locale": "he",
+  "chooseYourLookPageLightBodyText": "הכול בהיר ומואר",
+  "@chooseYourLookPageLightBodyText": {},
+  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "okButtonText": "אישור",
+  "@okButtonText": {},
+  "restartButtonText": "הפעלה מחדש",
+  "@restartButtonText": {},
+  "releaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "dontInstallDriverSoftwareNowDescription": "אפשר להתקין מאוחר יותר דרך תכנה ועדכונים.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "revertButtonText": "החזרה",
+  "@revertButtonText": {},
+  "changeButtonText": "עריכה",
+  "@changeButtonText": {},
+  "noButtonText": "לא",
+  "@noButtonText": {},
+  "tryUbuntuDescription": "אפשר להתנסות באובונטו מבלי לערוך שינויים במחשב שלך.",
+  "@tryUbuntuDescription": {},
+  "appTitle": "מתקין אובונטו לשולחן עבודה",
+  "@appTitle": {},
+  "windowTitle": "התקנת אובונטו",
+  "@windowTitle": {},
+  "installUbuntuDescription": "התקנת אובונטו לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.",
+  "@installUbuntuDescription": {},
+  "tryUbuntu": "להתנסות באובונטו",
+  "@tryUbuntu": {},
+  "installUbuntu": "להתקין את אובונטו",
+  "@installUbuntu": {},
+  "turnOffRST": "כיבוי RST",
+  "@turnOffRST": {},
+  "restartIntoWindows": "הפעלה מחדש אל Windows",
+  "@restartIntoWindows": {},
+  "confirmSecurityKey": "אישור מפתח האבטחה",
+  "@confirmSecurityKey": {},
+  "secureBootSecurityKeysDontMatch": "מפתחות האבטחה סותרים זה את זה",
+  "@secureBootSecurityKeysDontMatch": {},
+  "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nעליך לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
+  "@turnOffBitlockerDescription": {},
+  "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "chooseYourLookPageLightSetting": "בהיר",
+  "@chooseYourLookPageLightSetting": {},
+  "chooseSecurityKey": "נא לבחור מפתח אבטחה",
+  "@chooseSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "לא להתקין את תכנית מנהל ההתקן לבינתיים",
+  "@dontInstallDriverSoftwareNow": {},
+  "updatesOtherSoftwarePageTitle": "עדכונים ותכניות נוספות",
+  "@updatesOtherSoftwarePageTitle": {},
+  "normalInstallationTitle": "התקנה רגילה",
+  "@normalInstallationTitle": {},
+  "cancelButtonText": "ביטול",
+  "@cancelButtonText": {},
+  "yesButtonText": "כן",
+  "@yesButtonText": {},
+  "welcome": "ברוך בואך",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "לנסות להתקין",
+  "@tryOrInstallPageTitle": {},
+  "repairInstallation": "תיקון התקנה",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
+  "@repairInstallationDescription": {},
+  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. עליך לכבות את RST דרך Windows בטרם הסרת אובונטו.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "keyboardLayoutPageTitle": "פריסת מקלדת",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "נא לבחור את פריסת המקלדת שלך:",
+  "@chooseYourKeyboardLayout": {},
+  "typeToTest": "ניתן להקליד כאן כדי לבדוק את המקלדת שלך",
+  "@typeToTest": {},
+  "detectLayout": "איתור פריסת המקלדת",
+  "@detectLayout": {},
+  "pressOneKey": "נא ללחוץ על אחד מהתווים הבאים:",
+  "@pressOneKey": {},
+  "isKeyPresent": "האם המקש הבא קיים במקלדת שלך?",
+  "@isKeyPresent": {},
+  "configureSecureBootTitle": "הגדרת טעינה מאובטחת (Secure Boot)",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootDescription": "בחרת להתקין תכנית מנהל התקן מגורם צד־שלישי. פעולה שכזאת דורשת את כיבוי הטעינה המאובטחת (Secure Boot).\nכדי לעשות זאת, עליך לבחור מפתח אבטחה כעת ולהקליד אותו לאחר שהמערכת תופעל מחדש.",
+  "@configureSecureBootDescription": {},
+  "configureSecureBootOption": "הגדרת טעינה מאובטחת (Secure Boot)",
+  "@configureSecureBootOption": {},
+  "configureSecureBootSecurityKeyRequired": "נדרש מפתח אבטחה",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "normalInstallationSubtitle": "דפדפן, עזרים, חבילת תכניות משרדיות, משחקים ונגני מדיה.",
+  "@normalInstallationSubtitle": {},
+  "minimalInstallationTitle": "התקנה מצומצמת",
+  "@minimalInstallationTitle": {},
+  "minimalInstallationSubtitle": "דפדפן ועזרים בסיסיים.",
+  "@minimalInstallationSubtitle": {},
+  "otherOptions": "אפשרויות נוספות",
+  "@otherOptions": {},
+  "turnOffBitlockerTitle": "כיבוי BitLocker",
+  "@turnOffBitlockerTitle": {},
+  "chooseYourLookPageDarkBodyText": "אפלה, ידידתי משכבר הימים",
+  "@chooseYourLookPageDarkBodyText": {},
+  "installationCompleteTitle": "ההתקנה הושלמה",
+  "@installationCompleteTitle": {},
+  "restartInto": "הפעלה מחדש אל {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "chooseYourLookPageDarkSetting": "כהה",
+  "@chooseYourLookPageDarkSetting": {},
+  "shutdown": "כיבוי",
+  "@shutdown": {},
+  "chooseYourLookPageTitle": "נא לבחור את הסגנון שלך",
+  "@chooseYourLookPageTitle": {},
+  "chooseYourLookPageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
+  "@chooseYourLookPageHeader": {},
+  "writeChangesPartitionEntryMounted": "מחיצה מס׳ {disk}{partition} בתור {format} משמשת עבור {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "מחיצה מס׳ {disk}{partition} בתור {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  }
 }
