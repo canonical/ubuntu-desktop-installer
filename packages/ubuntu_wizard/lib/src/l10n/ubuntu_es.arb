@@ -1,9 +1,17 @@
 {
   "@@locale": "es",
   "countryCode": "ES",
-
+  "@countryCode": {},
   "languageName": "Español",
-
+  "@languageName": {},
   "backAction": "Volver",
-  "continueAction": "Continuar"
+  "@backAction": {},
+  "continueAction": "Continuar",
+  "@continueAction": {},
+  "strongPassword": "Contraseña fuerte",
+  "@strongPassword": {},
+  "weakPassword": "Contraseña débil",
+  "@weakPassword": {},
+  "moderatePassword": "Contraseña moderada",
+  "@moderatePassword": {}
 }
