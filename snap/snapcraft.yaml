@@ -133,7 +133,7 @@ parts:
       flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
     build-snaps:
       - flutter/latest/stable
 
@@ -158,7 +158,7 @@ parts:
       flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
       mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
