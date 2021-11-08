@@ -8,9 +8,6 @@ grade: stable
 confinement: classic
 base: core20
 
-architectures:
-  - build-on: amd64
-
 apps:
   subiquity-server:
     command: bin/subiquity-server
