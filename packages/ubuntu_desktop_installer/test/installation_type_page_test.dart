@@ -118,7 +118,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage(true))
+    when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
 
     await tester.pumpWidget(MaterialApp(

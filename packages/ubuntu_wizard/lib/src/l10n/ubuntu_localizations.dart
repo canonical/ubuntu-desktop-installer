@@ -6,15 +6,79 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'ubuntu_localizations_am.dart';
+import 'ubuntu_localizations_ar.dart';
+import 'ubuntu_localizations_be.dart';
+import 'ubuntu_localizations_bg.dart';
+import 'ubuntu_localizations_bn.dart';
+import 'ubuntu_localizations_bo.dart';
+import 'ubuntu_localizations_bs.dart';
+import 'ubuntu_localizations_ca.dart';
+import 'ubuntu_localizations_cs.dart';
+import 'ubuntu_localizations_cy.dart';
+import 'ubuntu_localizations_da.dart';
+import 'ubuntu_localizations_de.dart';
+import 'ubuntu_localizations_dz.dart';
+import 'ubuntu_localizations_el.dart';
 import 'ubuntu_localizations_en.dart';
+import 'ubuntu_localizations_eo.dart';
 import 'ubuntu_localizations_es.dart';
+import 'ubuntu_localizations_et.dart';
+import 'ubuntu_localizations_eu.dart';
+import 'ubuntu_localizations_fa.dart';
 import 'ubuntu_localizations_fi.dart';
 import 'ubuntu_localizations_fr.dart';
+import 'ubuntu_localizations_ga.dart';
+import 'ubuntu_localizations_gl.dart';
+import 'ubuntu_localizations_gu.dart';
+import 'ubuntu_localizations_he.dart';
+import 'ubuntu_localizations_hi.dart';
+import 'ubuntu_localizations_hr.dart';
+import 'ubuntu_localizations_hu.dart';
+import 'ubuntu_localizations_id.dart';
+import 'ubuntu_localizations_is.dart';
 import 'ubuntu_localizations_it.dart';
+import 'ubuntu_localizations_ja.dart';
+import 'ubuntu_localizations_ka.dart';
+import 'ubuntu_localizations_kk.dart';
+import 'ubuntu_localizations_km.dart';
+import 'ubuntu_localizations_kn.dart';
+import 'ubuntu_localizations_ko.dart';
+import 'ubuntu_localizations_ku.dart';
+import 'ubuntu_localizations_lo.dart';
+import 'ubuntu_localizations_lt.dart';
+import 'ubuntu_localizations_lv.dart';
+import 'ubuntu_localizations_mk.dart';
+import 'ubuntu_localizations_ml.dart';
+import 'ubuntu_localizations_mr.dart';
+import 'ubuntu_localizations_my.dart';
+import 'ubuntu_localizations_nb.dart';
+import 'ubuntu_localizations_ne.dart';
 import 'ubuntu_localizations_nl.dart';
+import 'ubuntu_localizations_nn.dart';
 import 'ubuntu_localizations_oc.dart';
+import 'ubuntu_localizations_pa.dart';
+import 'ubuntu_localizations_pl.dart';
 import 'ubuntu_localizations_pt.dart';
+import 'ubuntu_localizations_ro.dart';
 import 'ubuntu_localizations_ru.dart';
+import 'ubuntu_localizations_se.dart';
+import 'ubuntu_localizations_si.dart';
+import 'ubuntu_localizations_sk.dart';
+import 'ubuntu_localizations_sl.dart';
+import 'ubuntu_localizations_sq.dart';
+import 'ubuntu_localizations_sr.dart';
+import 'ubuntu_localizations_sv.dart';
+import 'ubuntu_localizations_ta.dart';
+import 'ubuntu_localizations_te.dart';
+import 'ubuntu_localizations_tg.dart';
+import 'ubuntu_localizations_th.dart';
+import 'ubuntu_localizations_tl.dart';
+import 'ubuntu_localizations_tr.dart';
+import 'ubuntu_localizations_ug.dart';
+import 'ubuntu_localizations_uk.dart';
+import 'ubuntu_localizations_vi.dart';
+import 'ubuntu_localizations_zh.dart';
 
 /// Callers can lookup localized strings with an instance of UbuntuLocalizations returned
 /// by `UbuntuLocalizations.of(context)`.
@@ -97,59 +161,121 @@ abstract class UbuntuLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('am'),
+    Locale('ar'),
+    Locale('be'),
+    Locale('bg'),
+    Locale('bn'),
+    Locale('bo'),
+    Locale('bs'),
+    Locale('ca'),
+    Locale('cs'),
+    Locale('cy'),
+    Locale('da'),
+    Locale('de'),
+    Locale('dz'),
+    Locale('el'),
     Locale('en'),
-    Locale('en', 'US'),
+    Locale('eo'),
     Locale('es'),
-    Locale('es', 'ES'),
+    Locale('et'),
+    Locale('eu'),
+    Locale('fa'),
     Locale('fi'),
-    Locale('fi', 'FI'),
     Locale('fr'),
-    Locale('fr', 'FR'),
+    Locale('ga'),
+    Locale('gl'),
+    Locale('gu'),
+    Locale('he'),
+    Locale('hi'),
+    Locale('hr'),
+    Locale('hu'),
+    Locale('id'),
+    Locale('is'),
     Locale('it'),
-    Locale('it', 'IT'),
+    Locale('ja'),
+    Locale('ka'),
+    Locale('kk'),
+    Locale('km'),
+    Locale('kn'),
+    Locale('ko'),
+    Locale('ku'),
+    Locale('lo'),
+    Locale('lt'),
+    Locale('lv'),
+    Locale('mk'),
+    Locale('ml'),
+    Locale('mr'),
+    Locale('my'),
+    Locale('nb'),
+    Locale('ne'),
     Locale('nl'),
-    Locale('nl', 'NL'),
+    Locale('nn'),
     Locale('oc'),
-    Locale('oc', 'FR'),
+    Locale('pa'),
+    Locale('pl'),
     Locale('pt'),
     Locale('pt', 'BR'),
+    Locale('ro'),
     Locale('ru'),
-    Locale('ru', 'RU')
+    Locale('se'),
+    Locale('si'),
+    Locale('sk'),
+    Locale('sl'),
+    Locale('sq'),
+    Locale('sr'),
+    Locale('sv'),
+    Locale('ta'),
+    Locale('te'),
+    Locale('tg'),
+    Locale('th'),
+    Locale('tl'),
+    Locale('tr'),
+    Locale('ug'),
+    Locale('uk'),
+    Locale('vi'),
+    Locale('zh')
   ];
+
+  /// No description provided for @countryCode.
+  ///
+  /// In en, this message translates to:
+  /// **'US'**
+  String get countryCode;
 
   /// The display name for the language. Leave empty to exclude the language from the list of languages on the welcome screen.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'English'**
   String get languageName;
 
   /// No description provided for @backAction.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Go Back'**
   String get backAction;
 
   /// No description provided for @continueAction.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Continue'**
   String get continueAction;
 
   /// No description provided for @strongPassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Strong password'**
   String get strongPassword;
 
   /// No description provided for @moderatePassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Moderate password'**
   String get moderatePassword;
 
   /// No description provided for @weakPassword.
   ///
-  /// In en_US, this message translates to:
+  /// In en, this message translates to:
   /// **'Weak password'**
   String get weakPassword;
 }
@@ -163,7 +289,7 @@ class _UbuntuLocalizationsDelegate extends LocalizationsDelegate<UbuntuLocalizat
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es', 'fi', 'fr', 'it', 'nl', 'oc', 'pt', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['am', 'ar', 'be', 'bg', 'bn', 'bo', 'bs', 'ca', 'cs', 'cy', 'da', 'de', 'dz', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fr', 'ga', 'gl', 'gu', 'he', 'hi', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku', 'lo', 'lt', 'lv', 'mk', 'ml', 'mr', 'my', 'nb', 'ne', 'nl', 'nn', 'oc', 'pa', 'pl', 'pt', 'ro', 'ru', 'se', 'si', 'sk', 'sl', 'sq', 'sr', 'sv', 'ta', 'te', 'tg', 'th', 'tl', 'tr', 'ug', 'uk', 'vi', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_UbuntuLocalizationsDelegate old) => false;
@@ -173,57 +299,9 @@ UbuntuLocalizations lookupUbuntuLocalizations(Locale locale) {
 
   // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
-    case 'en': {
-  switch (locale.countryCode) {
-    case 'US': return UbuntuLocalizationsEnUs();
-   }
-  break;
-   }
-    case 'es': {
-  switch (locale.countryCode) {
-    case 'ES': return UbuntuLocalizationsEsEs();
-   }
-  break;
-   }
-    case 'fi': {
-  switch (locale.countryCode) {
-    case 'FI': return UbuntuLocalizationsFiFi();
-   }
-  break;
-   }
-    case 'fr': {
-  switch (locale.countryCode) {
-    case 'FR': return UbuntuLocalizationsFrFr();
-   }
-  break;
-   }
-    case 'it': {
-  switch (locale.countryCode) {
-    case 'IT': return UbuntuLocalizationsItIt();
-   }
-  break;
-   }
-    case 'nl': {
-  switch (locale.countryCode) {
-    case 'NL': return UbuntuLocalizationsNlNl();
-   }
-  break;
-   }
-    case 'oc': {
-  switch (locale.countryCode) {
-    case 'FR': return UbuntuLocalizationsOcFr();
-   }
-  break;
-   }
     case 'pt': {
   switch (locale.countryCode) {
     case 'BR': return UbuntuLocalizationsPtBr();
-   }
-  break;
-   }
-    case 'ru': {
-  switch (locale.countryCode) {
-    case 'RU': return UbuntuLocalizationsRuRu();
    }
   break;
    }
@@ -231,15 +309,79 @@ UbuntuLocalizations lookupUbuntuLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'am': return UbuntuLocalizationsAm();
+    case 'ar': return UbuntuLocalizationsAr();
+    case 'be': return UbuntuLocalizationsBe();
+    case 'bg': return UbuntuLocalizationsBg();
+    case 'bn': return UbuntuLocalizationsBn();
+    case 'bo': return UbuntuLocalizationsBo();
+    case 'bs': return UbuntuLocalizationsBs();
+    case 'ca': return UbuntuLocalizationsCa();
+    case 'cs': return UbuntuLocalizationsCs();
+    case 'cy': return UbuntuLocalizationsCy();
+    case 'da': return UbuntuLocalizationsDa();
+    case 'de': return UbuntuLocalizationsDe();
+    case 'dz': return UbuntuLocalizationsDz();
+    case 'el': return UbuntuLocalizationsEl();
     case 'en': return UbuntuLocalizationsEn();
+    case 'eo': return UbuntuLocalizationsEo();
     case 'es': return UbuntuLocalizationsEs();
+    case 'et': return UbuntuLocalizationsEt();
+    case 'eu': return UbuntuLocalizationsEu();
+    case 'fa': return UbuntuLocalizationsFa();
     case 'fi': return UbuntuLocalizationsFi();
     case 'fr': return UbuntuLocalizationsFr();
+    case 'ga': return UbuntuLocalizationsGa();
+    case 'gl': return UbuntuLocalizationsGl();
+    case 'gu': return UbuntuLocalizationsGu();
+    case 'he': return UbuntuLocalizationsHe();
+    case 'hi': return UbuntuLocalizationsHi();
+    case 'hr': return UbuntuLocalizationsHr();
+    case 'hu': return UbuntuLocalizationsHu();
+    case 'id': return UbuntuLocalizationsId();
+    case 'is': return UbuntuLocalizationsIs();
     case 'it': return UbuntuLocalizationsIt();
+    case 'ja': return UbuntuLocalizationsJa();
+    case 'ka': return UbuntuLocalizationsKa();
+    case 'kk': return UbuntuLocalizationsKk();
+    case 'km': return UbuntuLocalizationsKm();
+    case 'kn': return UbuntuLocalizationsKn();
+    case 'ko': return UbuntuLocalizationsKo();
+    case 'ku': return UbuntuLocalizationsKu();
+    case 'lo': return UbuntuLocalizationsLo();
+    case 'lt': return UbuntuLocalizationsLt();
+    case 'lv': return UbuntuLocalizationsLv();
+    case 'mk': return UbuntuLocalizationsMk();
+    case 'ml': return UbuntuLocalizationsMl();
+    case 'mr': return UbuntuLocalizationsMr();
+    case 'my': return UbuntuLocalizationsMy();
+    case 'nb': return UbuntuLocalizationsNb();
+    case 'ne': return UbuntuLocalizationsNe();
     case 'nl': return UbuntuLocalizationsNl();
+    case 'nn': return UbuntuLocalizationsNn();
     case 'oc': return UbuntuLocalizationsOc();
+    case 'pa': return UbuntuLocalizationsPa();
+    case 'pl': return UbuntuLocalizationsPl();
     case 'pt': return UbuntuLocalizationsPt();
+    case 'ro': return UbuntuLocalizationsRo();
     case 'ru': return UbuntuLocalizationsRu();
+    case 'se': return UbuntuLocalizationsSe();
+    case 'si': return UbuntuLocalizationsSi();
+    case 'sk': return UbuntuLocalizationsSk();
+    case 'sl': return UbuntuLocalizationsSl();
+    case 'sq': return UbuntuLocalizationsSq();
+    case 'sr': return UbuntuLocalizationsSr();
+    case 'sv': return UbuntuLocalizationsSv();
+    case 'ta': return UbuntuLocalizationsTa();
+    case 'te': return UbuntuLocalizationsTe();
+    case 'tg': return UbuntuLocalizationsTg();
+    case 'th': return UbuntuLocalizationsTh();
+    case 'tl': return UbuntuLocalizationsTl();
+    case 'tr': return UbuntuLocalizationsTr();
+    case 'ug': return UbuntuLocalizationsUg();
+    case 'uk': return UbuntuLocalizationsUk();
+    case 'vi': return UbuntuLocalizationsVi();
+    case 'zh': return UbuntuLocalizationsZh();
   }
 
   throw FlutterError(

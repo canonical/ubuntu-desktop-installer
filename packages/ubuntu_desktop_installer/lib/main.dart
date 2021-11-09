@@ -32,6 +32,13 @@ void main(List<String> args) {
         options['machine-config'],
       ],
     ],
+    serverEnvironment: {
+      // so subiquity doesn't think it's the installer or flutter snap...
+      'SNAP': '.',
+      'SNAP_NAME': 'subiquity',
+      'SNAP_REVISION': '',
+      'SNAP_VERSION': '',
+    },
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => JournalService(journalUnit)),

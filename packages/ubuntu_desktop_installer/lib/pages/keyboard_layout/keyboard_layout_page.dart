@@ -23,7 +23,7 @@ class KeyboardLayoutPage extends StatefulWidget {
         client: Provider.of<SubiquityClient>(context, listen: false),
         keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
-      child: KeyboardLayoutPage(),
+      child: const KeyboardLayoutPage(),
     );
   }
 

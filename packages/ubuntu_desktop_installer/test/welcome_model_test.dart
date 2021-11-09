@@ -56,8 +56,10 @@ void main() {
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
 
+    // falls back to the base locale (en_US)
     model.selectLocale(Locale('foo'));
-    expect(model.selectedLanguageIndex, equals(0));
+    expect(
+        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);

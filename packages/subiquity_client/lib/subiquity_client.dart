@@ -2,6 +2,7 @@ library subiquity_client;
 
 import 'dart:async';
 import 'dart:convert';
+import 'package:dartx/dartx.dart';
 import 'package:http/http.dart';
 import 'package:logger/logger.dart';
 import 'src/http_unix_client.dart';
@@ -67,22 +68,18 @@ class SubiquityClient {
     return _client.send(request);
   }
 
+  Future<Variant> variant() async {
+    final request =
+        Request('GET', Uri.http('localhost', 'meta/client_variant'));
+    final response = await _send(request);
+
+    final responseStr = await _receive("variant()", response);
+    return VariantString.fromString(
+        responseStr.removePrefix('"').removeSuffix('"'));
+  }
+
   Future<void> setVariant(Variant variant) async {
-    String variantString;
-    switch (variant) {
-      case Variant.SERVER:
-        variantString = "server";
-        break;
-      case Variant.DESKTOP:
-        variantString = "desktop";
-        break;
-      case Variant.WSL_SETUP:
-        variantString = "wsl_setup";
-        break;
-      case Variant.WSL_CONFIGURATION:
-        variantString = "wsl_configuration";
-        break;
-    }
+    final variantString = variant.toVariantString();
     final request = Request(
         'POST',
         Uri.http('localhost', 'meta/client_variant',
@@ -274,7 +271,7 @@ class SubiquityClient {
   }
 
   /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage(bool wait) async {
+  Future<GuidedStorageResponse> getGuidedStorage({bool wait = true}) async {
     final request = Request(
         'GET', Uri.http('localhost', 'storage/guided', {'wait': '$wait'}));
     final response = await _send(request);

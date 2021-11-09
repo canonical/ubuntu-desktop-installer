@@ -27,7 +27,7 @@ class ProfileSetupPage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => ProfileSetupModel(client),
-      child: ProfileSetupPage(),
+      child: const ProfileSetupPage(),
     );
   }
 
@@ -53,7 +53,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
       title: Text(lang.profileSetupTitle),
       header: Html(
         data: lang.profileSetupHeader,
-        style: {'body': Style(margin: EdgeInsets.all(0))},
+        style: {'body': Style(margin: EdgeInsets.zero)},
         onLinkTap: (url, _, __, ___) => launch(url!),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
@@ -81,8 +81,11 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
               padding: fieldPadding,
               child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
-            const _ShowAdvancedOptionsCheckButton(),
+            // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
+            //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+            //
+            // const SizedBox(height: kContentSpacing),
+            // const _ShowAdvancedOptionsCheckButton(),
           ],
         );
       }),

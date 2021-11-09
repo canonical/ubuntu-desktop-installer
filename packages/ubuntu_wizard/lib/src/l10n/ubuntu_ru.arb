@@ -1,5 +1,9 @@
 {
   "@@locale": "ru",
+  "countryCode": "RU",
 
-  "languageName": ""
+  "languageName": "Русский",
+
+  "backAction": "Назад",
+  "continueAction": "Продолжить"
 }

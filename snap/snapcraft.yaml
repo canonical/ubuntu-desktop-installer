@@ -8,9 +8,6 @@ grade: stable
 confinement: classic
 base: core20
 
-architectures:
-  - build-on: amd64
-
 apps:
   subiquity-server:
     command: bin/subiquity-server
@@ -136,7 +133,7 @@ parts:
       flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
     build-snaps:
       - flutter/latest/stable
 
@@ -161,7 +158,7 @@ parts:
       flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
       mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
@@ -191,7 +188,7 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libllvm10
+      - libllvm12
       - libpciaccess0
       - libvulkan1
       - shared-mime-info
@@ -218,7 +215,7 @@ parts:
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
       - usr/lib/*/libxshmfence*.so.*
-      - usr/lib/*/libLLVM-10.so.*
+      - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*

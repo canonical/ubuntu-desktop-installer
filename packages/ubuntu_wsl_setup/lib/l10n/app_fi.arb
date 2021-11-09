@@ -1,3 +1,18 @@
 {
-  "@@locale": "fi"
+  "@@locale": "fi",
+
+  "exitButton": "Sulje",
+  "finishButton": "Valmis",
+  "saveButton": "Tallenna",
+  "setupButton": "Aseta",
+
+  "selectLanguageTitle": "Valitse kieli",
+
+  "profileSetupTitle": "Profiilin luonti",
+
+  "advancedSetupTitle": "Lisäasetukset",
+
+  "configurationUITitle": "Ubuntu WSL konfiguraatio (kokeilu)",
+
+  "setupCompleteTitle": "Asennus valmis"
 }

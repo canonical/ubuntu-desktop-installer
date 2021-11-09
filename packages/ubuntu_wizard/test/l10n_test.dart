@@ -9,7 +9,7 @@ void main() {
       Locale('fr', 'FR'),
       Locale('es', 'ES'),
       Locale('en', 'US'),
-      Locale('ru'),
+      Locale('ru', 'RU'),
     ];
 
     expect(
@@ -18,6 +18,7 @@ void main() {
         LocalizedLanguage('English', Locale('en', 'US')),
         LocalizedLanguage('Español', Locale('es', 'ES')),
         LocalizedLanguage('Français', Locale('fr', 'FR')),
+        LocalizedLanguage('Русский', Locale('ru', 'RU')),
       ]),
     );
   });

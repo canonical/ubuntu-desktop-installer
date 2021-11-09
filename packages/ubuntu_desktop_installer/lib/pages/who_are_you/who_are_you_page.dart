@@ -13,7 +13,7 @@ import 'who_are_you_model.dart';
 part 'who_are_you_widgets.dart';
 
 // The horizontal indentation of the radio button.
-const _kRadioButtonIndentation = 36.0;
+// const _kRadioButtonIndentation = 36.0;
 
 /// The installer page for setting up the user data.
 ///
@@ -27,7 +27,7 @@ class WhoAreYouPage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => WhoAreYouModel(client),
-      child: WhoAreYouPage(),
+      child: const WhoAreYouPage(),
     );
   }
 

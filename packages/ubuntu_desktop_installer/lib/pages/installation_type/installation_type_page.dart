@@ -8,7 +8,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
 
 export 'installation_type_model.dart' show InstallationType;
@@ -25,7 +24,7 @@ class InstallationTypePage extends StatefulWidget {
     final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (context) => InstallationTypeModel(client, service),
-      child: InstallationTypePage(),
+      child: const InstallationTypePage(),
     );
   }
 
@@ -62,7 +61,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
               subtitle: Html(
                 data: lang.installationTypeReinstallWarning(
                     Theme.of(context).errorColor.toHex(), model.existingOS!),
-                style: {'body': Style(margin: EdgeInsets.all(0))},
+                style: {'body': Style(margin: EdgeInsets.zero)},
               ),
               value: InstallationType.reinstall,
               groupValue: model.installationType,
@@ -84,7 +83,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
                   Theme.of(context).errorColor.toHex()),
-              style: {'body': Style(margin: EdgeInsets.all(0))},
+              style: {'body': Style(margin: EdgeInsets.zero)},
             ),
             value: InstallationType.erase,
             groupValue: model.installationType,

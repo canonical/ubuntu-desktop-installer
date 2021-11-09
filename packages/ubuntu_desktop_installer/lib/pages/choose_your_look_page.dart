@@ -7,7 +7,7 @@ import '../../l10n.dart';
 class ChooseYourLookPage extends StatelessWidget {
   const ChooseYourLookPage({Key? key}) : super(key: key);
 
-  static Widget create(BuildContext context) => ChooseYourLookPage();
+  static Widget create(BuildContext context) => const ChooseYourLookPage();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ChooseYourLookPage extends StatelessWidget {
         WizardAction.next(context),
       ],
       title: Text(lang.chooseYourLookPageTitle),
-      contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
+      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 150),
       content: Center(
         child: ListView(
             shrinkWrap: true,

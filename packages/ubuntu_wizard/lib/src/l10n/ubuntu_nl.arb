@@ -1,5 +1,9 @@
 {
   "@@locale": "nl",
+  "countryCode": "NL",
 
-  "languageName": ""
+  "languageName": "Nederlands",
+
+  "backAction": "Terug",
+  "continueAction": "Volgende"
 }

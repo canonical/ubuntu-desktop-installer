@@ -20,7 +20,7 @@ class TurnOffRSTPage extends StatelessWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return Provider(
       create: (_) => TurnOffRSTModel(client),
-      child: TurnOffRSTPage(),
+      child: const TurnOffRSTPage(),
     );
   }
 
@@ -38,7 +38,7 @@ class TurnOffRSTPage extends StatelessWidget {
               data: lang.instructionsForRST('help.ubuntu.com/rst'),
               style: {
                 'body': Style(
-                  margin: EdgeInsets.all(0),
+                  margin: EdgeInsets.zero,
                 ),
               },
               onLinkTap: (url, _, __, ___) => launch(url!),

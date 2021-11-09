@@ -27,7 +27,7 @@ class AdvancedSetupPage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => AdvancedSetupModel(client),
-      child: AdvancedSetupPage(),
+      child: const AdvancedSetupPage(),
     );
   }
 
@@ -68,9 +68,9 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
               child: _MountOptionFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing * 2),
-            _HostGenerationCheckButton(),
+            const _HostGenerationCheckButton(),
             const SizedBox(height: kContentSpacing),
-            _ResolvConfGenerationCheckButton(),
+            const _ResolvConfGenerationCheckButton(),
           ],
         );
       }),

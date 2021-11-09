@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
@@ -21,7 +19,7 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(ServerMode.DRY_RUN, [
+      _socketPath = await _testServer.start(ServerMode.DRY_RUN, args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -38,9 +36,11 @@ void main() {
     });
 
     test('variant', () async {
-      // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.SERVER);
+      expect(await _client.variant(), equals(Variant.SERVER));
+
       await _client.setVariant(Variant.DESKTOP);
+      expect(await _client.variant(), equals(Variant.DESKTOP));
     });
 
     test('source', () async {
@@ -111,7 +111,7 @@ void main() {
     });
 
     test('guided storage', () async {
-      var gs = await _client.getGuidedStorage(true);
+      var gs = await _client.getGuidedStorage();
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
 
@@ -147,7 +147,7 @@ void main() {
     });
 
     test('set guided storage v2', () async {
-      final guided = await _client.getGuidedStorage(true);
+      final guided = await _client.getGuidedStorage();
       expect(guided.disks, isNotEmpty);
 
       final choice = GuidedChoice(
@@ -343,12 +343,12 @@ void main() {
       await _client.setTimezone('Pacific/Guam');
       var tzdata = await _client.timezone();
       expect(tzdata.timezone, 'Pacific/Guam');
-      expect(tzdata.fromGeoIP, isFalse);
+      expect(tzdata.fromGeoip, isFalse);
 
       await _client.setTimezone('geoip');
       tzdata = await _client.timezone();
       expect(tzdata.timezone, isNotNull);
-      expect(tzdata.fromGeoIP, isTrue);
+      expect(tzdata.fromGeoip, isTrue);
     });
 
     test('ssh', () async {
@@ -447,9 +447,11 @@ void main() {
     });
 
     test('variant', () async {
-      // Subiquity doesn't have an API to get the variant, only to set it
       await _client.setVariant(Variant.WSL_SETUP);
+      expect(await _client.variant(), equals(Variant.WSL_SETUP));
+
       await _client.setVariant(Variant.WSL_CONFIGURATION);
+      expect(await _client.variant(), equals(Variant.WSL_CONFIGURATION));
     });
 
     test('wslconfbase', () async {
@@ -491,7 +493,7 @@ void main() {
         interopGuiintegration: false,
         interopAudiointegration: false,
         interopAdvancedipdetection: false,
-        motdWSLnewsenabled: true,
+        motdWslnewsenabled: true,
         automountEnabled: true,
         automountMountfstab: true,
         interopEnabled: true,
@@ -506,7 +508,7 @@ void main() {
       expect(conf.interopGuiintegration, false);
       expect(conf.interopAudiointegration, false);
       expect(conf.interopAdvancedipdetection, false);
-      expect(conf.motdWSLnewsenabled, true);
+      expect(conf.motdWslnewsenabled, true);
       expect(conf.automountEnabled, true);
       expect(conf.automountMountfstab, true);
       expect(conf.interopEnabled, true);
@@ -518,7 +520,7 @@ void main() {
         interopGuiintegration: true,
         interopAudiointegration: true,
         interopAdvancedipdetection: true,
-        motdWSLnewsenabled: false,
+        motdWslnewsenabled: false,
         automountEnabled: false,
         automountMountfstab: false,
         interopEnabled: false,
@@ -533,7 +535,7 @@ void main() {
       expect(conf.interopGuiintegration, true);
       expect(conf.interopAudiointegration, true);
       expect(conf.interopAdvancedipdetection, true);
-      expect(conf.motdWSLnewsenabled, false);
+      expect(conf.motdWslnewsenabled, false);
       expect(conf.automountEnabled, false);
       expect(conf.automountMountfstab, false);
       expect(conf.interopEnabled, false);
