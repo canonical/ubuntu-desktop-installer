@@ -28,7 +28,7 @@ String configFile(String fileName) => p.join(configPath, p.basename(fileName));
 /// "integration_test/goldens/"
 final String goldenPath = p.join('integration_test', 'goldens');
 
-/// e.g. "integration_test/files/basic-setup/wsl.conf"
+/// e.g. "integration_test/goldens/wsl.conf"
 String goldenFile(String fileName) => p.join(goldenPath, fileName);
 
 /// Verifies that a subiquity state file matches a golden file.
@@ -46,6 +46,7 @@ void verifyConfigFile(String fileName) {
 }
 
 void _verifyGoldenFile(String fileName, String goldenName) {
+  // https://api.flutter.dev/flutter/flutter_test/autoUpdateGoldenFiles.html
   if (autoUpdateGoldenFiles) {
     File(fileName).copySync(goldenFile(goldenName));
   }
@@ -67,7 +68,7 @@ Future<void> waitForSubiquityServer() async {
   return startup.future;
 }
 
-/// Cleans up the .subiquity direcrory to ensure a clean test environment for
+/// Cleans up the .subiquity directory to ensure a clean test environment for
 /// integration test cases.
 Future<void> cleanUpSubiquity() {
   // Ignore errors because the directory may not exist.
