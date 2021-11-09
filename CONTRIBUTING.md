@@ -24,14 +24,30 @@ Bugs are also tracked as [GitHub issues](https://github.com/canonical/ubuntu-des
 
 ## Translations
 
-Translations are managed with [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
+Translations are managed using [Weblate](https://hosted.weblate.org/projects/ubuntu-desktop-installer/).
+This project has the following translation components:
+
+- [ubuntu-desktop-installer](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-desktop-installer/):
+  The main translation component of the Ubuntu Desktop Installer.
+- [ubuntu-wizard](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-desktop-wizard/):
+  Common translations and language names shared with other projects.
+- [ubiquity](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubiquity/):
+  A read-only glossary imported from Ubiquity.
+
+When translating the **ubuntu-desktop-installer** and **ubuntu-wizard** components,
+matching **ubiquity** translations are offered in the _Glossary_ sidebar of the translation editor.
+
+**NOTE**: The Weblate project is integrated with the GitHub project. Weblate pushes changes daily and
+opens a [pull request](https://github.com/canonical/ubuntu-desktop-installer/pulls) on GitHub.
+
+## Internationalization
+
+This project uses [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
 
 The templates containing all the messages to be translated live in:
 - `packages/ubuntu_desktop_installer/lib/l10n/app_en.arb`
 - `packages/ubuntu_wizard/lib/src/l10n/ubuntu_en.arb`
 - `packages/ubuntu_wsl_setup/lib/l10n/app_en.arb`
-
-When starting translations for a new language, those files need to be copied to `NAME_LANGCODE.arb` in the respective directories (e.g. `app_fr.arb` and `ubuntu_fr.arb`), and messages should be translated in these new files.
 
 When new messages are added in the source code, they also need to be added to the appropriate translation template, and the translation files need to be re-generated.
 

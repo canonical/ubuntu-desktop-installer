@@ -53,7 +53,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
     },
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
-      Provider(create: (_) => HostnameService()),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
       Provider(create: (_) => UdevService()),
