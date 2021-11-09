@@ -124,7 +124,7 @@
   "@chooseSecurityKeyHeader": {},
   "installationTypeEncryptInfo": "Vous allez choisir une clé de sécurité à l'étape suivante.",
   "@installationTypeEncryptInfo": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> :  Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si vous en avez besoin, notez votre clé et conservez-la dans un endroit sûr.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si vous en avez besoin, notez votre clé et conservez-la dans un endroit sûr.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -183,5 +183,81 @@
   "installationTypeLVMSelected": "LVM sélectionné",
   "@installationTypeLVMSelected": {},
   "turnOffBitlockerTitle": "Désactiver BitLocker",
-  "@turnOffBitlockerTitle": {}
+  "@turnOffBitlockerTitle": {},
+  "chooseSecurityKeyHint": "Choisir un code de sécurité",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Confirmer le code de sécurité",
+  "@chooseSecurityKeyConfirmHint": {},
+  "installationTypeLVM": "Utiliser LVM pour la nouvelle installation Ubuntu",
+  "@installationTypeLVM": {},
+  "installationTypeReinstall": "Supprimer {os} et réinstaller",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "chooseSecurityKeyTitle": "Choisir un code de sécurité",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyMismatch": "Les codes de sécurité ne correspondent pas",
+  "@chooseSecurityKeyMismatch": {},
+  "configureSecureBootTitle": "Configurer Secure Boot",
+  "@configureSecureBootTitle": {},
+  "chooseSecurityKey": "Choisir un code de sécurité",
+  "@chooseSecurityKey": {},
+  "confirmSecurityKey": "Confirmer le code de sécurité",
+  "@confirmSecurityKey": {},
+  "chooseSecurityKeyRequired": "Un code de sécurité est requis",
+  "@chooseSecurityKeyRequired": {},
+  "installationTypeZFS": "EXPERIMENTAL : Effacer le disque et utiliser ZFS",
+  "@installationTypeZFS": {},
+  "dontInstallDriverSoftwareNow": "Ne pas installer le pilote maintenant",
+  "@dontInstallDriverSoftwareNow": {},
+  "configureSecureBootSecurityKeyRequired": "Le code de sécurité est requis",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "Les codes de sécurité ne correspondent pas",
+  "@secureBootSecurityKeysDontMatch": {},
+  "dontInstallDriverSoftwareNowDescription": "Vous pouvez l'installer ultérieurement depuis Logiciel & Mises à jour.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "installationTypeOSDetected": "Cet ordinateur est installé avec {os}. Que voulez-vous faire ?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeErase": "Effacer le disque et installer Ubuntu",
+  "@installationTypeErase": {},
+  "installationTypeAdvancedLabel": "Fonctions avancées ...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "Fonctions avancées",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les fichiers de {os}.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "Installer {product} à côté de {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "Les documents, musiques et autres fichiers personnels seront conservés. Vous pouvez choisir le système d’exploitation à lancer au moment du démarrage de l’ordinateur.",
+  "@installationTypeAlongsideInfo": {},
+  "installationTypeManualInfo": "Vous pouvez créer ou redimensionner les partitions vous-même, ou choisir plusieurs partitions pour Ubuntu",
+  "@installationTypeManualInfo": {},
+  "selectGuidedStoragePageTitle": "Effacer le disque et installer Ubuntu",
+  "@selectGuidedStoragePageTitle": {},
+  "selectGuidedStorageInstallNow": "Installer maintenant",
+  "@selectGuidedStorageInstallNow": {},
+  "bootLoaderDevice": "Périphérique pour installer le chargeur d'amorçage",
+  "@bootLoaderDevice": {},
+  "configureSecureBootOption": "Configurer Secure Boot",
+  "@configureSecureBootOption": {}
 }
