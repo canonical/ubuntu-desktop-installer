@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 export 'src/widgets/animated_expanded.dart';
 export 'src/widgets/check_button.dart';
 export 'src/widgets/dropdown_builder.dart';
+export 'src/widgets/flavor.dart';
 export 'src/widgets/log_view.dart';
 export 'src/widgets/menu_button_builder.dart';
 export 'src/widgets/option_card.dart';

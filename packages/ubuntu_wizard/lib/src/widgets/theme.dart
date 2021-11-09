@@ -11,6 +11,3 @@ extension AppThemeData on ThemeData {
   /// ```
   Color get successColor => yaru.Colors.green;
 }
-
-ThemeData get lightTheme => yaru.lightTheme;
-ThemeData get darkTheme => yaru.darkTheme;

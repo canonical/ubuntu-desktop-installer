@@ -1,39 +1,107 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
 
+export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
+
+const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
+
+void runInstallerApp(List<String> args, {FlavorData? flavor}) {
+  final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('machine-config',
+        valueHelp: 'path',
+        defaultsTo: 'examples/simple.json',
+        help: 'Path of the machine config (dry-run only)');
+  })!;
+
+  final subiquityClient = SubiquityClient();
+  final subiquityServer = SubiquityServer();
+
+  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+
+  runWizardApp(
+    UbuntuDesktopInstallerApp(
+      flavor: flavor,
+      initialRoute: options['initial-route'],
+    ),
+    options: options,
+    subiquityClient: subiquityClient,
+    subiquityServer: subiquityServer,
+    serverArgs: [
+      if (options['machine-config'] != null) ...[
+        '--machine-config',
+        options['machine-config'],
+      ],
+    ],
+    serverEnvironment: {
+      // so subiquity doesn't think it's the installer or flutter snap...
+      'SNAP': '.',
+      'SNAP_NAME': 'subiquity',
+      'SNAP_REVISION': '',
+      'SNAP_VERSION': '',
+    },
+    providers: [
+      Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => JournalService(journalUnit)),
+      Provider(create: (_) => KeyboardService()),
+      Provider(create: (_) => UdevService()),
+    ],
+    onInitSubiquity: (client) {
+      client.setVariant(Variant.DESKTOP);
+      client.setTimezone('geoip');
+    },
+  );
+}
+
 class UbuntuDesktopInstallerApp extends StatelessWidget {
-  const UbuntuDesktopInstallerApp({
+  UbuntuDesktopInstallerApp({
     Key? key,
     this.initialRoute,
-  }) : super(key: key);
+    FlavorData? flavor,
+  })  : flavor = flavor ?? defaultFlavor,
+        super(key: key);
 
   final String? initialRoute;
+  final FlavorData flavor;
+
+  static FlavorData get defaultFlavor {
+    return FlavorData(
+      name: 'Ubuntu',
+      theme: yaru.lightTheme,
+      darkTheme: yaru.darkTheme,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Settings.of(context).locale,
-      onGenerateTitle: (context) {
-        final lang = AppLocalizations.of(context);
-        setWindowTitle(lang.windowTitle('Ubuntu'));
-        return lang.appTitle;
-      },
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: Settings.of(context).theme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
+    return Flavor(
+      data: flavor.copyWith(package: 'ubuntu_desktop_installer'),
+      child: MaterialApp(
+        locale: Settings.of(context).locale,
+        onGenerateTitle: (context) {
+          final lang = AppLocalizations.of(context);
+          setWindowTitle(lang.windowTitle('Ubuntu'));
+          return lang.appTitle;
+        },
+        theme: flavor.theme,
+        darkTheme: flavor.darkTheme,
+        themeMode: Settings.of(context).theme,
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
+      ),
     );
   }
 }
