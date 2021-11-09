@@ -53,7 +53,8 @@ class Logger {
 
     // console output
     if (_consoleLog == null) {
-      _consoleLog = PrintAppender(formatter: const _LogFormatter(verbose: false));
+      _consoleLog =
+          PrintAppender(formatter: const _LogFormatter(verbose: false));
       _consoleLog!.attachToLogger(log.Logger.root);
     }
 
