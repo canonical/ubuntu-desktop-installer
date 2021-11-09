@@ -53,7 +53,7 @@ class Logger {
 
     // console output
     if (_consoleLog == null) {
-      _consoleLog = PrintAppender(formatter: _LogFormatter(verbose: false));
+      _consoleLog = PrintAppender(formatter: const _LogFormatter(verbose: false));
       _consoleLog!.attachToLogger(log.Logger.root);
     }
 
@@ -66,7 +66,7 @@ class Logger {
         if (_fileLog == null) {
           _fileLog = RotatingFileAppender(
             baseFilePath: '$path.$pid',
-            formatter: _LogFormatter(verbose: true),
+            formatter: const _LogFormatter(verbose: true),
           );
           _fileLog!.attachToLogger(log.Logger.root);
 

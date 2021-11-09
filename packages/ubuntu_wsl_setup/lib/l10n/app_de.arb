@@ -1,0 +1,70 @@
+{
+  "@@locale": "de",
+
+  "appTitle": "Ubuntu WSL",
+  "windowTitle": "Ubuntu WSL",
+
+  "exitButton": "Beenden",
+  "finishButton": "Fertigstellen",
+  "saveButton": "Speichern",
+  "setupButton": "Einrichtung",
+
+  "selectLanguageTitle": "Wählen Sie Ihre Sprache aus",
+
+  "profileSetupTitle": "Profileinrichtung",
+  "profileSetupHeader": "Bitte erstellen Sie ein Standard-UNIX-Benutzerkonto. Weitere Informationen finden Sie unter: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "profileSetupRealnameLabel": "Ihr Name",
+  "profileSetupRealnameRequired": "Ein Name ist erforderlich",
+  "profileSetupUsernameHint": "Einen Benutzernamen auswählen",
+  "profileSetupUsernameHelper": "Der Benutzername muss nicht mit Ihrem Windows-Benutzernamen übereinstimmen.",
+  "profileSetupPasswordHint": "Ein Passwort auswählen",
+  "profileSetupConfirmPasswordHint": "Bestätigen Sie Ihr Passwort",
+  "profileSetupShowAdvancedOptions": "Erweiterte Optionen auf der nächsten Seite anzeigen",
+  "profileSetupPasswordMismatch": "Die Passwörter stimmen nicht überein",
+  "profileSetupUsernameRequired": "Ein Benutzername ist erforderlich",
+  "profileSetupUsernameInvalid": "Der Benutzername ist ungültig",
+  "profileSetupPasswordRequired": "Ein Passwort ist erforderlich",
+
+  "advancedSetupTitle": "Erweiterte Einrichtung",
+  "advancedSetupHeader": "Auf dieser Seite können Sie Ubuntu WSL an Ihre Bedürfnisse anpassen.",
+  "advancedSetupMountLocationHint": "Einhängeort",
+  "advancedSetupMountLocationHelper": "Ort für das automatische Einhängen",
+  "advancedSetupMountLocationInvalid": "Der Ort ist ungültig",
+  "advancedSetupMountOptionHint": "Einhängeoption",
+  "advancedSetupMountOptionHelper": "Einhängeoption, die für die automatische Einhängung übergeben wurde",
+  "advancedSetupHostGenerationTitle": "Generierung des Hosts aktivieren",
+  "advancedSetupHostGenerationSubtitle": "Wenn diese Option ausgewählt ist, wird /etc/hosts bei jedem Start neu generiert.",
+  "advancedSetupResolvConfGenerationTitle": "Generierung der resolv.conf aktivieren",
+  "advancedSetupResolvConfGenerationSubtitle": "Wenn diese Option ausgewählt ist, wird /etc/resolv.conf bei jedem Start neu generiert.",
+  "advancedSetupGUIIntegrationTitle": "GUI-Integration",
+  "advancedSetupGUIIntegrationSubtitle": "Wenn diese Option ausgewählt ist, wird die DISPLAY-Umgebung automatisch eingerichtet. X-Server eines Drittanbieters erforderlich.",
+
+  "configurationUITitle": "Ubuntu WSL Konfigurations-UI (experimentell)",
+  "configurationUIInteroperabilityHeader": "Interoperabilität",
+  "configurationUILegacyGUIIntegrationTitle": "Ältere GUI-Integration",
+  "configurationUILegacyGUIIntegrationSubtitle": "Diese Option aktiviert die ältere GUI-Integration unter Windows 10. Erfordert einen X-Server eines Drittanbieters.",
+  "configurationUILegacyAudioIntegrationTitle": "Ältere Audio-Integration",
+  "configurationUILegacyAudioIntegrationSubtitle": "Diese Option aktiviert die ältere Audio-Integration unter Windows 10. PulseAudio für Windows muss installiert sein.",
+  "configurationUIAdvancedIPDetectionTitle": "Erweiterte IP-Erkennung",
+  "configurationUIAdvancedIPDetectionSubtitle": "Diese Option aktiviert die erweiterte IP-Erkennung über die Windows IPv4-Adresse, die für die Verwendung mit WSL2 zuverlässiger ist.\nErfordert die Aktivierung der WSL-Interoperabilität.",
+  "configurationUIMessageOfTheDayHeader": "Nachricht des Tages (MOTD)",
+  "configurationUIWSLNewsTitle": "WSL-Nachrichten",
+  "configurationUIWSLNewsSubtitle": "Mit dieser Option können Sie Ihre MOTD-Nachrichten kontrollieren. Wenn Sie sie einschalten, können Sie die MOTD sehen.",
+  "configurationUIAutoMountHeader": "Automatisches Einhängen",
+  "configurationUIAutoMountTitle": "Aktiviert",
+  "configurationUIAutoMountSubtitle": "Ob die Funktion zum automatischen Einhängen aktiviert ist. Mit dieser Funktion können Sie Windows-Laufwerke in WSL einhängen.",
+  "configurationUIMountFstabTitle": "/etc/fstab einhängen",
+  "configurationUIMountFstabSubtitle": "Ob /etc/fstab eingehängt werden soll. Die Konfigurationsdatei /etc/fstab enthält die ???",
+
+  "setupCompleteTitle": "Einrichtung abgeschlossen",
+  "setupCompleteHeader": "Hallo {user},\nSie haben die Einrichtung erfolgreich abgeschlossen.",
+  "@setupCompleteHeader": {
+    "type": "text",
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "setupCompleteUpdate": "Es wird empfohlen, den folgenden Befehl auszuführen, um Ubuntu auf die neueste Version zu aktualisieren:",
+  "setupCompleteManage": "Sie können den eingebauten Befehl ubuntuwsl verwenden, um Ihre WSL-Einstellungen zu verwalten:",
+  "setupCompleteRestart": "* Alle Einstellungen werden erst nach einem Neustart von Ubuntu wirksam."
+}

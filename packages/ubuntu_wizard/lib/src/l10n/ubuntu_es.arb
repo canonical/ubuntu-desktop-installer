@@ -1,5 +1,9 @@
 {
   "@@locale": "es",
+  "countryCode": "ES",
 
-  "languageName": ""
+  "languageName": "Español",
+
+  "backAction": "Volver",
+  "continueAction": "Continuar"
 }

@@ -25,7 +25,7 @@ class SetupCompletePage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => SetupCompleteModel(client),
-      child: SetupCompletePage(),
+      child: const SetupCompletePage(),
     );
   }
 

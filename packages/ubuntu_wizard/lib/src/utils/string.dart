@@ -17,6 +17,6 @@ extension StringOrIfEmpty on String {
     }
     // Remove consecutive hyphens.
     sanitized = sanitized.replaceAll(RegExp('-{2,}'), '-');
-    return sanitized.toLowerCase();
+    return sanitized;
   }
 }

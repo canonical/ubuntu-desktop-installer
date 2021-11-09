@@ -85,6 +85,8 @@ class _UbuntuDesktopInstallerWizardState
         Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
         if (model.hasSecureBoot)
           Routes.configureSecureBoot: ConfigureSecureBootPage.create,
+        if (model.hasEncryption)
+          Routes.chooseSecurityKey: ChooseSecurityKeyPage.create,
         if (model.hasBitLocker)
           Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
         Routes.installationType: InstallationTypePage.create,
@@ -139,6 +141,8 @@ class _UbuntuDesktopInstallerModel extends ChangeNotifier {
   bool get hasBitLocker => _hasBitLocker;
   // TODO: add secure boot support
   bool get hasSecureBoot => false;
+  // TODO: add encryption support
+  bool get hasEncryption => false;
 
   Future<void> init() {
     return Future.wait([

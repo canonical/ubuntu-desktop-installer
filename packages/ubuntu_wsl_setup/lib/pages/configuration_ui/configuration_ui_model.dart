@@ -13,7 +13,7 @@ class ConfigurationUIModel extends ChangeNotifier {
   }
 
   final SubiquityClient _client;
-  final _conf = ValueNotifier(WSLConfigurationAdvanced());
+  final _conf = ValueNotifier(const WSLConfigurationAdvanced());
 
   /// Whether legacy GUI integration is enabled.
   bool get interopGuiintegration => _conf.value.interopGuiintegration ?? false;
@@ -36,9 +36,9 @@ class ConfigurationUIModel extends ChangeNotifier {
   }
 
   /// Whether WSL MOTD news are enabled.
-  bool get motdWSLnewsenabled => _conf.value.motdWSLnewsenabled ?? true;
+  bool get motdWSLnewsenabled => _conf.value.motdWslnewsenabled ?? true;
   set motdWSLnewsenabled(bool value) {
-    _conf.value = _conf.value.copyWith(motdWSLnewsenabled: value);
+    _conf.value = _conf.value.copyWith(motdWslnewsenabled: value);
   }
 
   /// Whether automountEnabled is enabled.

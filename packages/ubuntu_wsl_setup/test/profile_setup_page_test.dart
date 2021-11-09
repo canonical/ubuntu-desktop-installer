@@ -161,21 +161,24 @@ void main() {
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
 
-  testWidgets('advanced options', (tester) async {
-    final model = buildModel(showAdvancedOptions: true);
-    await tester.pumpWidget(buildApp(tester, model));
+  // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
+  //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+  //
+  // testWidgets('advanced options', (tester) async {
+  //   final model = buildModel(showAdvancedOptions: true);
+  //   await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.profileSetupShowAdvancedOptions);
-    expect(checkbox, findsOneWidget);
-    expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   final checkbox = find.widgetWithText(
+  //       CheckButton, tester.lang.profileSetupShowAdvancedOptions);
+  //   expect(checkbox, findsOneWidget);
+  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
 
-    when(model.showAdvancedOptions).thenReturn(true);
+  //   when(model.showAdvancedOptions).thenReturn(true);
 
-    await tester.tap(checkbox);
-    verify(model.showAdvancedOptions = false).called(1);
-    expect(tester.widget<CheckButton>(checkbox).value, isTrue);
-  });
+  //   await tester.tap(checkbox);
+  //   verify(model.showAdvancedOptions = false).called(1);
+  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  // });
 
   testWidgets('load and save profile setup', (tester) async {
     final model = buildModel(isValid: true);

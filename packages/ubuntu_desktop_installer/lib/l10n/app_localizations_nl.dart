@@ -8,10 +8,10 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu Desktop instalatie programma';
 
   @override
-  String get windowTitle => 'Install Ubuntu';
+  String get windowTitle => 'Ubuntu installeren';
 
   @override
   String get cancelButtonText => 'Cancel';
@@ -26,7 +26,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get noButtonText => 'No';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Opnieuw opstarten';
 
   @override
   String get revertButtonText => 'Revert';
@@ -35,56 +35,56 @@ class AppLocalizationsNl extends AppLocalizations {
   String get yesButtonText => 'Yes';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Welkom';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Uitproberen of installeren';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Repareer de installatie';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.';
 
   @override
-  String get tryUbuntu => 'Try Ubuntu';
+  String get tryUbuntu => 'Ubuntu uitproberen';
 
   @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
+  String get tryUbuntuDescription => 'U kunt Ubuntu uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.';
 
   @override
-  String get installUbuntu => 'Install Ubuntu';
+  String get installUbuntu => 'Ubuntu installeren';
 
   @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+  String get installUbuntuDescription => 'Installeer Ubuntu naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.';
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'De wijzigingen in deze uitgave kunt U <a href=\"$url\">hier, in het Engels, lezen</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST uitschakelen';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Deze computer maakt gebruik van Intel RST (Rapid Storage Technology). Om Ubuntu te installeren, is het noodzakelijk om dit uit te schakelen.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Voor instructies, open de volgende website op uw telefoon of op een ander apparaat: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Toetsenbordindeling';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Kies uw toetsenbordindeling:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Type hieronder om het toetsenbord te testen';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Toetsenbordindeling bepalen';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -145,6 +145,29 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
+  String get chooseSecurityKeyTitle => 'Choose a security key';
+
+  @override
+  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+
+  @override
+  String get chooseSecurityKeyHint => 'Choose a security key';
+
+  @override
+  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+
+  @override
+  String get chooseSecurityKeyRequired => 'A security key is required';
+
+  @override
+  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+
+  @override
+  String chooseSecurityKeyWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+  }
 
   @override
   String get installationTypeTitle => 'Installation type';
@@ -488,70 +511,4 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
-}
-
-/// The translations for Dutch Flemish, as used in Netherlands (`nl_NL`).
-class AppLocalizationsNlNl extends AppLocalizationsNl {
-  AppLocalizationsNlNl(): super('nl_NL');
-
-  @override
-  String get appTitle => 'Ubuntu Desktop instalatie programma';
-
-  @override
-  String get windowTitle => 'Ubuntu installeren';
-
-  @override
-  String get restartButtonText => 'Opnieuw opstarten';
-
-  @override
-  String get welcome => 'Welkom';
-
-  @override
-  String get tryOrInstallPageTitle => 'Uitproberen of installeren';
-
-  @override
-  String get repairInstallation => 'Repareer de installatie';
-
-  @override
-  String get repairInstallationDescription => 'Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.';
-
-  @override
-  String get tryUbuntu => 'Ubuntu uitproberen';
-
-  @override
-  String get tryUbuntuDescription => 'U kunt Ubuntu uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.';
-
-  @override
-  String get installUbuntu => 'Ubuntu installeren';
-
-  @override
-  String get installUbuntuDescription => 'Installeer Ubuntu naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.';
-
-  @override
-  String releaseNotesLabel(Object url) {
-    return 'De wijzigingen in deze uitgave kunt U <a href=\"$url\">hier, in het Engels, lezen</a>.';
-  }
-
-  @override
-  String get turnOffRST => 'RST uitschakelen';
-
-  @override
-  String get turnOffRSTDescription => 'Deze computer maakt gebruik van Intel RST (Rapid Storage Technology). Om Ubuntu te installeren, is het noodzakelijk om dit uit te schakelen.';
-
-  @override
-  String instructionsForRST(Object url) {
-    return 'Voor instructies, open de volgende website op uw telefoon of op een ander apparaat: <a href=\"https://$url\">$url</a>';
-  }
-
-  @override
-  String get keyboardLayoutPageTitle => 'Toetsenbordindeling';
-
-  @override
-  String get chooseYourKeyboardLayout => 'Kies uw toetsenbordindeling:';
-
-  @override
-  String get typeToTest => 'Type hieronder om het toetsenbord te testen';
-
-  @override
-  String get detectLayout => 'Toetsenbordindeling bepalen';
 }

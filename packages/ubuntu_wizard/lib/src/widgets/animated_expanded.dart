@@ -40,7 +40,6 @@ class _AnimatedExpandedState extends State<AnimatedExpanded>
       child: AnimatedSize(
         curve: widget.curve,
         duration: widget.duration,
-        vsync: this,
         child: AnimatedOpacity(
           curve: widget.curve,
           duration: widget.duration,

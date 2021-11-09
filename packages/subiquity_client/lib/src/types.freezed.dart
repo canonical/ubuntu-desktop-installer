@@ -303,8 +303,7 @@ class _$SourceSelectionAndSettingTearOff {
   const _$SourceSelectionAndSettingTearOff();
 
   _SourceSelectionAndSetting call(
-      {List<SourceSelection>? sources,
-      @JsonKey(name: 'current_id') String? currentId}) {
+      {List<SourceSelection>? sources, String? currentId}) {
     return _SourceSelectionAndSetting(
       sources: sources,
       currentId: currentId,
@@ -322,7 +321,6 @@ const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
 /// @nodoc
 mixin _$SourceSelectionAndSetting {
   List<SourceSelection>? get sources => throw _privateConstructorUsedError;
-  @JsonKey(name: 'current_id')
   String? get currentId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -336,9 +334,7 @@ abstract class $SourceSelectionAndSettingCopyWith<$Res> {
   factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
           $Res Function(SourceSelectionAndSetting) then) =
       _$SourceSelectionAndSettingCopyWithImpl<$Res>;
-  $Res call(
-      {List<SourceSelection>? sources,
-      @JsonKey(name: 'current_id') String? currentId});
+  $Res call({List<SourceSelection>? sources, String? currentId});
 }
 
 /// @nodoc
@@ -375,9 +371,7 @@ abstract class _$SourceSelectionAndSettingCopyWith<$Res>
           $Res Function(_SourceSelectionAndSetting) then) =
       __$SourceSelectionAndSettingCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {List<SourceSelection>? sources,
-      @JsonKey(name: 'current_id') String? currentId});
+  $Res call({List<SourceSelection>? sources, String? currentId});
 }
 
 /// @nodoc
@@ -411,10 +405,10 @@ class __$SourceSelectionAndSettingCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
-  const _$_SourceSelectionAndSetting(
-      {this.sources, @JsonKey(name: 'current_id') this.currentId});
+  const _$_SourceSelectionAndSetting({this.sources, this.currentId});
 
   factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
       _$_$_SourceSelectionAndSettingFromJson(json);
@@ -422,7 +416,6 @@ class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
   @override
   final List<SourceSelection>? sources;
   @override
-  @JsonKey(name: 'current_id')
   final String? currentId;
 
   @override
@@ -463,9 +456,8 @@ class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
 
 abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
   const factory _SourceSelectionAndSetting(
-          {List<SourceSelection>? sources,
-          @JsonKey(name: 'current_id') String? currentId}) =
-      _$_SourceSelectionAndSetting;
+      {List<SourceSelection>? sources,
+      String? currentId}) = _$_SourceSelectionAndSetting;
 
   factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
       _$_SourceSelectionAndSetting.fromJson;
@@ -473,7 +465,6 @@ abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
   @override
   List<SourceSelection>? get sources => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'current_id')
   String? get currentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -1234,7 +1225,7 @@ class _$IdentityDataTearOff {
   _IdentityData call(
       {String? realname = '',
       String? username = '',
-      @JsonKey(name: 'crypted_password') String? cryptedPassword = '',
+      String? cryptedPassword = '',
       String? hostname = ''}) {
     return _IdentityData(
       realname: realname,
@@ -1256,7 +1247,6 @@ const $IdentityData = _$IdentityDataTearOff();
 mixin _$IdentityData {
   String? get realname => throw _privateConstructorUsedError;
   String? get username => throw _privateConstructorUsedError;
-  @JsonKey(name: 'crypted_password')
   String? get cryptedPassword => throw _privateConstructorUsedError;
   String? get hostname => throw _privateConstructorUsedError;
 
@@ -1274,7 +1264,7 @@ abstract class $IdentityDataCopyWith<$Res> {
   $Res call(
       {String? realname,
       String? username,
-      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? cryptedPassword,
       String? hostname});
 }
 
@@ -1324,7 +1314,7 @@ abstract class _$IdentityDataCopyWith<$Res>
   $Res call(
       {String? realname,
       String? username,
-      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? cryptedPassword,
       String? hostname});
 }
 
@@ -1367,12 +1357,13 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_IdentityData implements _IdentityData {
   const _$_IdentityData(
       {this.realname = '',
       this.username = '',
-      @JsonKey(name: 'crypted_password') this.cryptedPassword = '',
+      this.cryptedPassword = '',
       this.hostname = ''});
 
   factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
@@ -1384,8 +1375,8 @@ class _$_IdentityData implements _IdentityData {
   @JsonKey(defaultValue: '')
   @override
   final String? username;
+  @JsonKey(defaultValue: '')
   @override
-  @JsonKey(name: 'crypted_password')
   final String? cryptedPassword;
   @JsonKey(defaultValue: '')
   @override
@@ -1437,7 +1428,7 @@ abstract class _IdentityData implements IdentityData {
   const factory _IdentityData(
       {String? realname,
       String? username,
-      @JsonKey(name: 'crypted_password') String? cryptedPassword,
+      String? cryptedPassword,
       String? hostname}) = _$_IdentityData;
 
   factory _IdentityData.fromJson(Map<String, dynamic> json) =
@@ -1448,7 +1439,6 @@ abstract class _IdentityData implements IdentityData {
   @override
   String? get username => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'crypted_password')
   String? get cryptedPassword => throw _privateConstructorUsedError;
   @override
   String? get hostname => throw _privateConstructorUsedError;
@@ -1466,11 +1456,10 @@ TimezoneData _$TimezoneDataFromJson(Map<String, dynamic> json) {
 class _$TimezoneDataTearOff {
   const _$TimezoneDataTearOff();
 
-  _TimezoneData call(
-      {String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP}) {
+  _TimezoneData call({String? timezone, bool? fromGeoip}) {
     return _TimezoneData(
       timezone: timezone,
-      fromGeoIP: fromGeoIP,
+      fromGeoip: fromGeoip,
     );
   }
 
@@ -1485,8 +1474,7 @@ const $TimezoneData = _$TimezoneDataTearOff();
 /// @nodoc
 mixin _$TimezoneData {
   String? get timezone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'from_geoip')
-  bool? get fromGeoIP => throw _privateConstructorUsedError;
+  bool? get fromGeoip => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1499,7 +1487,7 @@ abstract class $TimezoneDataCopyWith<$Res> {
   factory $TimezoneDataCopyWith(
           TimezoneData value, $Res Function(TimezoneData) then) =
       _$TimezoneDataCopyWithImpl<$Res>;
-  $Res call({String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP});
+  $Res call({String? timezone, bool? fromGeoip});
 }
 
 /// @nodoc
@@ -1513,16 +1501,16 @@ class _$TimezoneDataCopyWithImpl<$Res> implements $TimezoneDataCopyWith<$Res> {
   @override
   $Res call({
     Object? timezone = freezed,
-    Object? fromGeoIP = freezed,
+    Object? fromGeoip = freezed,
   }) {
     return _then(_value.copyWith(
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
-      fromGeoIP: fromGeoIP == freezed
-          ? _value.fromGeoIP
-          : fromGeoIP // ignore: cast_nullable_to_non_nullable
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -1535,7 +1523,7 @@ abstract class _$TimezoneDataCopyWith<$Res>
           _TimezoneData value, $Res Function(_TimezoneData) then) =
       __$TimezoneDataCopyWithImpl<$Res>;
   @override
-  $Res call({String? timezone, @JsonKey(name: 'from_geoip') bool? fromGeoIP});
+  $Res call({String? timezone, bool? fromGeoip});
 }
 
 /// @nodoc
@@ -1551,26 +1539,26 @@ class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? timezone = freezed,
-    Object? fromGeoIP = freezed,
+    Object? fromGeoip = freezed,
   }) {
     return _then(_TimezoneData(
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
-      fromGeoIP: fromGeoIP == freezed
-          ? _value.fromGeoIP
-          : fromGeoIP // ignore: cast_nullable_to_non_nullable
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_TimezoneData implements _TimezoneData {
-  const _$_TimezoneData(
-      {this.timezone, @JsonKey(name: 'from_geoip') this.fromGeoIP});
+  const _$_TimezoneData({this.timezone, this.fromGeoip});
 
   factory _$_TimezoneData.fromJson(Map<String, dynamic> json) =>
       _$_$_TimezoneDataFromJson(json);
@@ -1578,12 +1566,11 @@ class _$_TimezoneData implements _TimezoneData {
   @override
   final String? timezone;
   @override
-  @JsonKey(name: 'from_geoip')
-  final bool? fromGeoIP;
+  final bool? fromGeoip;
 
   @override
   String toString() {
-    return 'TimezoneData(timezone: $timezone, fromGeoIP: $fromGeoIP)';
+    return 'TimezoneData(timezone: $timezone, fromGeoip: $fromGeoip)';
   }
 
   @override
@@ -1593,16 +1580,16 @@ class _$_TimezoneData implements _TimezoneData {
             (identical(other.timezone, timezone) ||
                 const DeepCollectionEquality()
                     .equals(other.timezone, timezone)) &&
-            (identical(other.fromGeoIP, fromGeoIP) ||
+            (identical(other.fromGeoip, fromGeoip) ||
                 const DeepCollectionEquality()
-                    .equals(other.fromGeoIP, fromGeoIP)));
+                    .equals(other.fromGeoip, fromGeoip)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(timezone) ^
-      const DeepCollectionEquality().hash(fromGeoIP);
+      const DeepCollectionEquality().hash(fromGeoip);
 
   @JsonKey(ignore: true)
   @override
@@ -1616,9 +1603,8 @@ class _$_TimezoneData implements _TimezoneData {
 }
 
 abstract class _TimezoneData implements TimezoneData {
-  const factory _TimezoneData(
-      {String? timezone,
-      @JsonKey(name: 'from_geoip') bool? fromGeoIP}) = _$_TimezoneData;
+  const factory _TimezoneData({String? timezone, bool? fromGeoip}) =
+      _$_TimezoneData;
 
   factory _TimezoneData.fromJson(Map<String, dynamic> json) =
       _$_TimezoneData.fromJson;
@@ -1626,8 +1612,7 @@ abstract class _TimezoneData implements TimezoneData {
   @override
   String? get timezone => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'from_geoip')
-  bool? get fromGeoIP => throw _privateConstructorUsedError;
+  bool? get fromGeoip => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
@@ -1643,9 +1628,7 @@ class _$SSHDataTearOff {
   const _$SSHDataTearOff();
 
   _SSHData call(
-      {@JsonKey(name: 'install_server') bool? installServer,
-      @JsonKey(name: 'allow_pw') bool? allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys}) {
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys}) {
     return _SSHData(
       installServer: installServer,
       allowPw: allowPw,
@@ -1663,11 +1646,8 @@ const $SSHData = _$SSHDataTearOff();
 
 /// @nodoc
 mixin _$SSHData {
-  @JsonKey(name: 'install_server')
   bool? get installServer => throw _privateConstructorUsedError;
-  @JsonKey(name: 'allow_pw')
   bool? get allowPw => throw _privateConstructorUsedError;
-  @JsonKey(name: 'authorized_keys')
   List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1680,9 +1660,7 @@ abstract class $SSHDataCopyWith<$Res> {
   factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
       _$SSHDataCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'install_server') bool? installServer,
-      @JsonKey(name: 'allow_pw') bool? allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys});
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
 }
 
 /// @nodoc
@@ -1722,9 +1700,7 @@ abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
       __$SSHDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'install_server') bool? installServer,
-      @JsonKey(name: 'allow_pw') bool? allowPw,
-      @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys});
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
 }
 
 /// @nodoc
@@ -1760,24 +1736,19 @@ class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_SSHData implements _SSHData {
-  const _$_SSHData(
-      {@JsonKey(name: 'install_server') this.installServer,
-      @JsonKey(name: 'allow_pw') this.allowPw,
-      @JsonKey(name: 'authorized_keys') this.authorizedKeys});
+  const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
 
   factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
       _$_$_SSHDataFromJson(json);
 
   @override
-  @JsonKey(name: 'install_server')
   final bool? installServer;
   @override
-  @JsonKey(name: 'allow_pw')
   final bool? allowPw;
   @override
-  @JsonKey(name: 'authorized_keys')
   final List<dynamic>? authorizedKeys;
 
   @override
@@ -1820,21 +1791,17 @@ class _$_SSHData implements _SSHData {
 
 abstract class _SSHData implements SSHData {
   const factory _SSHData(
-          {@JsonKey(name: 'install_server') bool? installServer,
-          @JsonKey(name: 'allow_pw') bool? allowPw,
-          @JsonKey(name: 'authorized_keys') List<dynamic>? authorizedKeys}) =
-      _$_SSHData;
+      {bool? installServer,
+      bool? allowPw,
+      List<dynamic>? authorizedKeys}) = _$_SSHData;
 
   factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
 
   @override
-  @JsonKey(name: 'install_server')
   bool? get installServer => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'allow_pw')
   bool? get allowPw => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'authorized_keys')
   List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -1855,7 +1822,7 @@ class _$ErrorReportRefTearOff {
       String? base,
       ErrorReportKind? kind,
       bool? seen,
-      @JsonKey(name: 'oops_id') String? oopsId}) {
+      String? oopsId}) {
     return _ErrorReportRef(
       state: state,
       base: base,
@@ -1879,7 +1846,6 @@ mixin _$ErrorReportRef {
   String? get base => throw _privateConstructorUsedError;
   ErrorReportKind? get kind => throw _privateConstructorUsedError;
   bool? get seen => throw _privateConstructorUsedError;
-  @JsonKey(name: 'oops_id')
   String? get oopsId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1898,7 +1864,7 @@ abstract class $ErrorReportRefCopyWith<$Res> {
       String? base,
       ErrorReportKind? kind,
       bool? seen,
-      @JsonKey(name: 'oops_id') String? oopsId});
+      String? oopsId});
 }
 
 /// @nodoc
@@ -1955,7 +1921,7 @@ abstract class _$ErrorReportRefCopyWith<$Res>
       String? base,
       ErrorReportKind? kind,
       bool? seen,
-      @JsonKey(name: 'oops_id') String? oopsId});
+      String? oopsId});
 }
 
 /// @nodoc
@@ -2003,14 +1969,11 @@ class __$ErrorReportRefCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_ErrorReportRef implements _ErrorReportRef {
   const _$_ErrorReportRef(
-      {this.state,
-      this.base,
-      this.kind,
-      this.seen,
-      @JsonKey(name: 'oops_id') this.oopsId});
+      {this.state, this.base, this.kind, this.seen, this.oopsId});
 
   factory _$_ErrorReportRef.fromJson(Map<String, dynamic> json) =>
       _$_$_ErrorReportRefFromJson(json);
@@ -2024,7 +1987,6 @@ class _$_ErrorReportRef implements _ErrorReportRef {
   @override
   final bool? seen;
   @override
-  @JsonKey(name: 'oops_id')
   final String? oopsId;
 
   @override
@@ -2074,7 +2036,7 @@ abstract class _ErrorReportRef implements ErrorReportRef {
       String? base,
       ErrorReportKind? kind,
       bool? seen,
-      @JsonKey(name: 'oops_id') String? oopsId}) = _$_ErrorReportRef;
+      String? oopsId}) = _$_ErrorReportRef;
 
   factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
       _$_ErrorReportRef.fromJson;
@@ -2088,7 +2050,6 @@ abstract class _ErrorReportRef implements ErrorReportRef {
   @override
   bool? get seen => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'oops_id')
   String? get oopsId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -2106,13 +2067,13 @@ class _$ApplicationStatusTearOff {
 
   _ApplicationStatus call(
       {ApplicationState? state,
-      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      String? confirmingTty,
       ErrorReportRef? error,
-      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? cloudInitOk,
       bool? interactive,
-      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String? eventSyslogId}) {
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId}) {
     return _ApplicationStatus(
       state: state,
       confirmingTty: confirmingTty,
@@ -2136,17 +2097,12 @@ const $ApplicationStatus = _$ApplicationStatusTearOff();
 /// @nodoc
 mixin _$ApplicationStatus {
   ApplicationState? get state => throw _privateConstructorUsedError;
-  @JsonKey(name: 'confirming_tty')
   String? get confirmingTty => throw _privateConstructorUsedError;
   ErrorReportRef? get error => throw _privateConstructorUsedError;
-  @JsonKey(name: 'cloud_init_ok')
   bool? get cloudInitOk => throw _privateConstructorUsedError;
   bool? get interactive => throw _privateConstructorUsedError;
-  @JsonKey(name: 'echo_syslog_id')
   String? get echoSyslogId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'log_syslog_id')
   String? get logSyslogId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'event_syslog_id')
   String? get eventSyslogId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2162,13 +2118,13 @@ abstract class $ApplicationStatusCopyWith<$Res> {
       _$ApplicationStatusCopyWithImpl<$Res>;
   $Res call(
       {ApplicationState? state,
-      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      String? confirmingTty,
       ErrorReportRef? error,
-      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? cloudInitOk,
       bool? interactive,
-      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String? eventSyslogId});
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId});
 
   $ErrorReportRefCopyWith<$Res>? get error;
 }
@@ -2250,13 +2206,13 @@ abstract class _$ApplicationStatusCopyWith<$Res>
   @override
   $Res call(
       {ApplicationState? state,
-      @JsonKey(name: 'confirming_tty') String? confirmingTty,
+      String? confirmingTty,
       ErrorReportRef? error,
-      @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
+      bool? cloudInitOk,
       bool? interactive,
-      @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') String? logSyslogId,
-      @JsonKey(name: 'event_syslog_id') String? eventSyslogId});
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get error;
@@ -2323,17 +2279,17 @@ class __$ApplicationStatusCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_ApplicationStatus implements _ApplicationStatus {
   const _$_ApplicationStatus(
       {this.state,
-      @JsonKey(name: 'confirming_tty') this.confirmingTty,
+      this.confirmingTty,
       this.error,
-      @JsonKey(name: 'cloud_init_ok') this.cloudInitOk,
+      this.cloudInitOk,
       this.interactive,
-      @JsonKey(name: 'echo_syslog_id') this.echoSyslogId,
-      @JsonKey(name: 'log_syslog_id') this.logSyslogId,
-      @JsonKey(name: 'event_syslog_id') this.eventSyslogId});
+      this.echoSyslogId,
+      this.logSyslogId,
+      this.eventSyslogId});
 
   factory _$_ApplicationStatus.fromJson(Map<String, dynamic> json) =>
       _$_$_ApplicationStatusFromJson(json);
@@ -2341,23 +2297,18 @@ class _$_ApplicationStatus implements _ApplicationStatus {
   @override
   final ApplicationState? state;
   @override
-  @JsonKey(name: 'confirming_tty')
   final String? confirmingTty;
   @override
   final ErrorReportRef? error;
   @override
-  @JsonKey(name: 'cloud_init_ok')
   final bool? cloudInitOk;
   @override
   final bool? interactive;
   @override
-  @JsonKey(name: 'echo_syslog_id')
   final String? echoSyslogId;
   @override
-  @JsonKey(name: 'log_syslog_id')
   final String? logSyslogId;
   @override
-  @JsonKey(name: 'event_syslog_id')
   final String? eventSyslogId;
 
   @override
@@ -2418,15 +2369,14 @@ class _$_ApplicationStatus implements _ApplicationStatus {
 
 abstract class _ApplicationStatus implements ApplicationStatus {
   const factory _ApplicationStatus(
-          {ApplicationState? state,
-          @JsonKey(name: 'confirming_tty') String? confirmingTty,
-          ErrorReportRef? error,
-          @JsonKey(name: 'cloud_init_ok') bool? cloudInitOk,
-          bool? interactive,
-          @JsonKey(name: 'echo_syslog_id') String? echoSyslogId,
-          @JsonKey(name: 'log_syslog_id') String? logSyslogId,
-          @JsonKey(name: 'event_syslog_id') String? eventSyslogId}) =
-      _$_ApplicationStatus;
+      {ApplicationState? state,
+      String? confirmingTty,
+      ErrorReportRef? error,
+      bool? cloudInitOk,
+      bool? interactive,
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId}) = _$_ApplicationStatus;
 
   factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
       _$_ApplicationStatus.fromJson;
@@ -2434,23 +2384,18 @@ abstract class _ApplicationStatus implements ApplicationStatus {
   @override
   ApplicationState? get state => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'confirming_tty')
   String? get confirmingTty => throw _privateConstructorUsedError;
   @override
   ErrorReportRef? get error => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'cloud_init_ok')
   bool? get cloudInitOk => throw _privateConstructorUsedError;
   @override
   bool? get interactive => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'echo_syslog_id')
   String? get echoSyslogId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'log_syslog_id')
   String? get logSyslogId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'event_syslog_id')
   String? get eventSyslogId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -2474,7 +2419,7 @@ class _$PartitionTearOff {
       List<String>? annotations = const [],
       String? mount,
       String? format,
-      @JsonKey(name: 'grub_device') bool? grubDevice}) {
+      bool? grubDevice}) {
     return _Partition(
       size: size,
       number: number,
@@ -2505,7 +2450,6 @@ mixin _$Partition {
   List<String>? get annotations => throw _privateConstructorUsedError;
   String? get mount => throw _privateConstructorUsedError;
   String? get format => throw _privateConstructorUsedError;
-  @JsonKey(name: 'grub_device')
   bool? get grubDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2526,7 +2470,7 @@ abstract class $PartitionCopyWith<$Res> {
       List<String>? annotations,
       String? mount,
       String? format,
-      @JsonKey(name: 'grub_device') bool? grubDevice});
+      bool? grubDevice});
 }
 
 /// @nodoc
@@ -2599,7 +2543,7 @@ abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
       List<String>? annotations,
       String? mount,
       String? format,
-      @JsonKey(name: 'grub_device') bool? grubDevice});
+      bool? grubDevice});
 }
 
 /// @nodoc
@@ -2660,7 +2604,8 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Partition implements _Partition {
   const _$_Partition(
       {this.size,
@@ -2670,7 +2615,7 @@ class _$_Partition implements _Partition {
       this.annotations = const [],
       this.mount,
       this.format,
-      @JsonKey(name: 'grub_device') this.grubDevice});
+      this.grubDevice});
 
   factory _$_Partition.fromJson(Map<String, dynamic> json) =>
       _$_$_PartitionFromJson(json);
@@ -2692,7 +2637,6 @@ class _$_Partition implements _Partition {
   @override
   final String? format;
   @override
-  @JsonKey(name: 'grub_device')
   final bool? grubDevice;
 
   @override
@@ -2757,7 +2701,7 @@ abstract class _Partition implements Partition {
       List<String>? annotations,
       String? mount,
       String? format,
-      @JsonKey(name: 'grub_device') bool? grubDevice}) = _$_Partition;
+      bool? grubDevice}) = _$_Partition;
 
   factory _Partition.fromJson(Map<String, dynamic> json) =
       _$_Partition.fromJson;
@@ -2778,7 +2722,6 @@ abstract class _Partition implements Partition {
   @override
   String? get format => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'grub_device')
   bool? get grubDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -2800,13 +2743,13 @@ class _$DiskTearOff {
       String? path,
       String? type,
       int? size,
-      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      int? freeForPartitions,
+      bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'boot_device') bool? bootDevice}) {
+      bool? bootDevice}) {
     return _Disk(
       id: id,
       label: label,
@@ -2838,16 +2781,12 @@ mixin _$Disk {
   String? get path => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
-  @JsonKey(name: 'usage_labels')
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   List<Partition>? get partitions => throw _privateConstructorUsedError;
-  @JsonKey(name: 'free_for_partitions')
   int? get freeForPartitions => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
-  @JsonKey(name: 'boot_device')
   bool? get bootDevice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2865,13 +2804,13 @@ abstract class $DiskCopyWith<$Res> {
       String? path,
       String? type,
       int? size,
-      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      int? freeForPartitions,
+      bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'boot_device') bool? bootDevice});
+      bool? bootDevice});
 }
 
 /// @nodoc
@@ -2961,13 +2900,13 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       String? path,
       String? type,
       int? size,
-      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      int? freeForPartitions,
+      bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'boot_device') bool? bootDevice});
+      bool? bootDevice});
 }
 
 /// @nodoc
@@ -3049,7 +2988,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_Disk implements _Disk {
   const _$_Disk(
       {this.id,
@@ -3057,13 +2996,13 @@ class _$_Disk implements _Disk {
       this.path,
       this.type,
       this.size,
-      @JsonKey(name: 'usage_labels') this.usageLabels,
+      this.usageLabels,
       this.partitions,
-      @JsonKey(name: 'free_for_partitions') this.freeForPartitions,
-      @JsonKey(name: 'ok_for_guided') this.okForGuided,
+      this.freeForPartitions,
+      this.okForGuided,
       this.ptable,
       this.preserve,
-      @JsonKey(name: 'boot_device') this.bootDevice});
+      this.bootDevice});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -3079,22 +3018,18 @@ class _$_Disk implements _Disk {
   @override
   final int? size;
   @override
-  @JsonKey(name: 'usage_labels')
   final List<String>? usageLabels;
   @override
   final List<Partition>? partitions;
   @override
-  @JsonKey(name: 'free_for_partitions')
   final int? freeForPartitions;
   @override
-  @JsonKey(name: 'ok_for_guided')
   final bool? okForGuided;
   @override
   final String? ptable;
   @override
   final bool? preserve;
   @override
-  @JsonKey(name: 'boot_device')
   final bool? bootDevice;
 
   @override
@@ -3172,13 +3107,13 @@ abstract class _Disk implements Disk {
       String? path,
       String? type,
       int? size,
-      @JsonKey(name: 'usage_labels') List<String>? usageLabels,
+      List<String>? usageLabels,
       List<Partition>? partitions,
-      @JsonKey(name: 'free_for_partitions') int? freeForPartitions,
-      @JsonKey(name: 'ok_for_guided') bool? okForGuided,
+      int? freeForPartitions,
+      bool? okForGuided,
       String? ptable,
       bool? preserve,
-      @JsonKey(name: 'boot_device') bool? bootDevice}) = _$_Disk;
+      bool? bootDevice}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -3193,22 +3128,18 @@ abstract class _Disk implements Disk {
   @override
   int? get size => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'usage_labels')
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   @override
   List<Partition>? get partitions => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'free_for_partitions')
   int? get freeForPartitions => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'ok_for_guided')
   bool? get okForGuided => throw _privateConstructorUsedError;
   @override
   String? get ptable => throw _privateConstructorUsedError;
   @override
   bool? get preserve => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'boot_device')
   bool? get bootDevice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -3223,10 +3154,7 @@ GuidedChoice _$GuidedChoiceFromJson(Map<String, dynamic> json) {
 class _$GuidedChoiceTearOff {
   const _$GuidedChoiceTearOff();
 
-  _GuidedChoice call(
-      {@JsonKey(name: 'disk_id') String? diskId,
-      @JsonKey(name: 'use_lvm') bool? useLvm,
-      String? password}) {
+  _GuidedChoice call({String? diskId, bool? useLvm, String? password}) {
     return _GuidedChoice(
       diskId: diskId,
       useLvm: useLvm,
@@ -3244,9 +3172,7 @@ const $GuidedChoice = _$GuidedChoiceTearOff();
 
 /// @nodoc
 mixin _$GuidedChoice {
-  @JsonKey(name: 'disk_id')
   String? get diskId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'use_lvm')
   bool? get useLvm => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
 
@@ -3261,10 +3187,7 @@ abstract class $GuidedChoiceCopyWith<$Res> {
   factory $GuidedChoiceCopyWith(
           GuidedChoice value, $Res Function(GuidedChoice) then) =
       _$GuidedChoiceCopyWithImpl<$Res>;
-  $Res call(
-      {@JsonKey(name: 'disk_id') String? diskId,
-      @JsonKey(name: 'use_lvm') bool? useLvm,
-      String? password});
+  $Res call({String? diskId, bool? useLvm, String? password});
 }
 
 /// @nodoc
@@ -3305,10 +3228,7 @@ abstract class _$GuidedChoiceCopyWith<$Res>
           _GuidedChoice value, $Res Function(_GuidedChoice) then) =
       __$GuidedChoiceCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {@JsonKey(name: 'disk_id') String? diskId,
-      @JsonKey(name: 'use_lvm') bool? useLvm,
-      String? password});
+  $Res call({String? diskId, bool? useLvm, String? password});
 }
 
 /// @nodoc
@@ -3345,21 +3265,17 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_GuidedChoice implements _GuidedChoice {
-  const _$_GuidedChoice(
-      {@JsonKey(name: 'disk_id') this.diskId,
-      @JsonKey(name: 'use_lvm') this.useLvm,
-      this.password});
+  const _$_GuidedChoice({this.diskId, this.useLvm, this.password});
 
   factory _$_GuidedChoice.fromJson(Map<String, dynamic> json) =>
       _$_$_GuidedChoiceFromJson(json);
 
   @override
-  @JsonKey(name: 'disk_id')
   final String? diskId;
   @override
-  @JsonKey(name: 'use_lvm')
   final bool? useLvm;
   @override
   final String? password;
@@ -3402,18 +3318,14 @@ class _$_GuidedChoice implements _GuidedChoice {
 
 abstract class _GuidedChoice implements GuidedChoice {
   const factory _GuidedChoice(
-      {@JsonKey(name: 'disk_id') String? diskId,
-      @JsonKey(name: 'use_lvm') bool? useLvm,
-      String? password}) = _$_GuidedChoice;
+      {String? diskId, bool? useLvm, String? password}) = _$_GuidedChoice;
 
   factory _GuidedChoice.fromJson(Map<String, dynamic> json) =
       _$_GuidedChoice.fromJson;
 
   @override
-  @JsonKey(name: 'disk_id')
   String? get diskId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'use_lvm')
   bool? get useLvm => throw _privateConstructorUsedError;
   @override
   String? get password => throw _privateConstructorUsedError;
@@ -3433,9 +3345,7 @@ class _$GuidedStorageResponseTearOff {
   const _$GuidedStorageResponseTearOff();
 
   _GuidedStorageResponse call(
-      {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
-      List<Disk>? disks}) {
+      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks}) {
     return _GuidedStorageResponse(
       status: status,
       errorReport: errorReport,
@@ -3454,7 +3364,6 @@ const $GuidedStorageResponse = _$GuidedStorageResponseTearOff();
 /// @nodoc
 mixin _$GuidedStorageResponse {
   ProbeStatus? get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   List<Disk>? get disks => throw _privateConstructorUsedError;
 
@@ -3470,9 +3379,7 @@ abstract class $GuidedStorageResponseCopyWith<$Res> {
           $Res Function(GuidedStorageResponse) then) =
       _$GuidedStorageResponseCopyWithImpl<$Res>;
   $Res call(
-      {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
-      List<Disk>? disks});
+      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
 }
@@ -3528,9 +3435,7 @@ abstract class _$GuidedStorageResponseCopyWith<$Res>
       __$GuidedStorageResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
-      List<Disk>? disks});
+      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -3571,12 +3476,10 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_GuidedStorageResponse implements _GuidedStorageResponse {
-  const _$_GuidedStorageResponse(
-      {this.status,
-      @JsonKey(name: 'error_report') this.errorReport,
-      this.disks});
+  const _$_GuidedStorageResponse({this.status, this.errorReport, this.disks});
 
   factory _$_GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GuidedStorageResponseFromJson(json);
@@ -3584,7 +3487,6 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   @override
   final ProbeStatus? status;
   @override
-  @JsonKey(name: 'error_report')
   final ErrorReportRef? errorReport;
   @override
   final List<Disk>? disks;
@@ -3629,7 +3531,7 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
 abstract class _GuidedStorageResponse implements GuidedStorageResponse {
   const factory _GuidedStorageResponse(
       {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      ErrorReportRef? errorReport,
       List<Disk>? disks}) = _$_GuidedStorageResponse;
 
   factory _GuidedStorageResponse.fromJson(Map<String, dynamic> json) =
@@ -3638,7 +3540,6 @@ abstract class _GuidedStorageResponse implements GuidedStorageResponse {
   @override
   ProbeStatus? get status => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
   List<Disk>? get disks => throw _privateConstructorUsedError;
@@ -3658,9 +3559,9 @@ class _$StorageResponseTearOff {
 
   _StorageResponse call(
       {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      ErrorReportRef? errorReport,
       Bootloader? bootloader,
-      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
       Map<String, dynamic>? dasd}) {
@@ -3686,10 +3587,8 @@ const $StorageResponse = _$StorageResponseTearOff();
 /// @nodoc
 mixin _$StorageResponse {
   ProbeStatus? get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   Bootloader? get bootloader => throw _privateConstructorUsedError;
-  @JsonKey(name: 'orig_config')
   List<dynamic>? get origConfig => throw _privateConstructorUsedError;
   List<dynamic>? get config => throw _privateConstructorUsedError;
   Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
@@ -3708,9 +3607,9 @@ abstract class $StorageResponseCopyWith<$Res> {
       _$StorageResponseCopyWithImpl<$Res>;
   $Res call(
       {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      ErrorReportRef? errorReport,
       Bootloader? bootloader,
-      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
       Map<String, dynamic>? dasd});
@@ -3790,9 +3689,9 @@ abstract class _$StorageResponseCopyWith<$Res>
   @override
   $Res call(
       {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      ErrorReportRef? errorReport,
       Bootloader? bootloader,
-      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
       Map<String, dynamic>? dasd});
@@ -3856,13 +3755,14 @@ class __$StorageResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_StorageResponse implements _StorageResponse {
   const _$_StorageResponse(
       {this.status,
-      @JsonKey(name: 'error_report') this.errorReport,
+      this.errorReport,
       this.bootloader,
-      @JsonKey(name: 'orig_config') this.origConfig,
+      this.origConfig,
       this.config,
       this.blockdev,
       this.dasd});
@@ -3873,12 +3773,10 @@ class _$_StorageResponse implements _StorageResponse {
   @override
   final ProbeStatus? status;
   @override
-  @JsonKey(name: 'error_report')
   final ErrorReportRef? errorReport;
   @override
   final Bootloader? bootloader;
   @override
-  @JsonKey(name: 'orig_config')
   final List<dynamic>? origConfig;
   @override
   final List<dynamic>? config;
@@ -3941,9 +3839,9 @@ class _$_StorageResponse implements _StorageResponse {
 abstract class _StorageResponse implements StorageResponse {
   const factory _StorageResponse(
       {ProbeStatus? status,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport,
+      ErrorReportRef? errorReport,
       Bootloader? bootloader,
-      @JsonKey(name: 'orig_config') List<dynamic>? origConfig,
+      List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
       Map<String, dynamic>? dasd}) = _$_StorageResponse;
@@ -3954,12 +3852,10 @@ abstract class _StorageResponse implements StorageResponse {
   @override
   ProbeStatus? get status => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
   Bootloader? get bootloader => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'orig_config')
   List<dynamic>? get origConfig => throw _privateConstructorUsedError;
   @override
   List<dynamic>? get config => throw _privateConstructorUsedError;
@@ -3983,9 +3879,9 @@ class _$StorageResponseV2TearOff {
 
   _StorageResponseV2 call(
       {List<Disk>? disks,
-      @JsonKey(name: 'need_root') bool? needRoot,
-      @JsonKey(name: 'need_boot') bool? needBoot,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) {
+      bool? needRoot,
+      bool? needBoot,
+      ErrorReportRef? errorReport}) {
     return _StorageResponseV2(
       disks: disks,
       needRoot: needRoot,
@@ -4005,11 +3901,8 @@ const $StorageResponseV2 = _$StorageResponseV2TearOff();
 /// @nodoc
 mixin _$StorageResponseV2 {
   List<Disk>? get disks => throw _privateConstructorUsedError;
-  @JsonKey(name: 'need_root')
   bool? get needRoot => throw _privateConstructorUsedError;
-  @JsonKey(name: 'need_boot')
   bool? get needBoot => throw _privateConstructorUsedError;
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -4025,9 +3918,9 @@ abstract class $StorageResponseV2CopyWith<$Res> {
       _$StorageResponseV2CopyWithImpl<$Res>;
   $Res call(
       {List<Disk>? disks,
-      @JsonKey(name: 'need_root') bool? needRoot,
-      @JsonKey(name: 'need_boot') bool? needBoot,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+      bool? needRoot,
+      bool? needBoot,
+      ErrorReportRef? errorReport});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
 }
@@ -4089,9 +3982,9 @@ abstract class _$StorageResponseV2CopyWith<$Res>
   @override
   $Res call(
       {List<Disk>? disks,
-      @JsonKey(name: 'need_root') bool? needRoot,
-      @JsonKey(name: 'need_boot') bool? needBoot,
-      @JsonKey(name: 'error_report') ErrorReportRef? errorReport});
+      bool? needRoot,
+      bool? needBoot,
+      ErrorReportRef? errorReport});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -4137,13 +4030,11 @@ class __$StorageResponseV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
-      {this.disks,
-      @JsonKey(name: 'need_root') this.needRoot,
-      @JsonKey(name: 'need_boot') this.needBoot,
-      @JsonKey(name: 'error_report') this.errorReport});
+      {this.disks, this.needRoot, this.needBoot, this.errorReport});
 
   factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$_$_StorageResponseV2FromJson(json);
@@ -4151,13 +4042,10 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
   @override
   final List<Disk>? disks;
   @override
-  @JsonKey(name: 'need_root')
   final bool? needRoot;
   @override
-  @JsonKey(name: 'need_boot')
   final bool? needBoot;
   @override
-  @JsonKey(name: 'error_report')
   final ErrorReportRef? errorReport;
 
   @override
@@ -4203,11 +4091,10 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
 
 abstract class _StorageResponseV2 implements StorageResponseV2 {
   const factory _StorageResponseV2(
-          {List<Disk>? disks,
-          @JsonKey(name: 'need_root') bool? needRoot,
-          @JsonKey(name: 'need_boot') bool? needBoot,
-          @JsonKey(name: 'error_report') ErrorReportRef? errorReport}) =
-      _$_StorageResponseV2;
+      {List<Disk>? disks,
+      bool? needRoot,
+      bool? needBoot,
+      ErrorReportRef? errorReport}) = _$_StorageResponseV2;
 
   factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_StorageResponseV2.fromJson;
@@ -4215,13 +4102,10 @@ abstract class _StorageResponseV2 implements StorageResponseV2 {
   @override
   List<Disk>? get disks => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'need_root')
   bool? get needRoot => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'need_boot')
   bool? get needBoot => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'error_report')
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -4238,14 +4122,10 @@ class _$WSLConfigurationBaseTearOff {
   const _$WSLConfigurationBaseTearOff();
 
   _WSLConfigurationBase call(
-      {@JsonKey(name: 'automount_root')
-          String? automountRoot,
-      @JsonKey(name: 'automount_options')
-          String? automountOptions,
-      @JsonKey(name: 'network_generatehosts')
-          bool? networkGeneratehosts,
-      @JsonKey(name: 'network_generateresolvconf')
-          bool? networkGenerateresolvconf}) {
+      {String? automountRoot,
+      String? automountOptions,
+      bool? networkGeneratehosts,
+      bool? networkGenerateresolvconf}) {
     return _WSLConfigurationBase(
       automountRoot: automountRoot,
       automountOptions: automountOptions,
@@ -4264,13 +4144,9 @@ const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationBase {
-  @JsonKey(name: 'automount_root')
   String? get automountRoot => throw _privateConstructorUsedError;
-  @JsonKey(name: 'automount_options')
   String? get automountOptions => throw _privateConstructorUsedError;
-  @JsonKey(name: 'network_generatehosts')
   bool? get networkGeneratehosts => throw _privateConstructorUsedError;
-  @JsonKey(name: 'network_generateresolvconf')
   bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -4285,14 +4161,10 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
           $Res Function(WSLConfigurationBase) then) =
       _$WSLConfigurationBaseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'automount_root')
-          String? automountRoot,
-      @JsonKey(name: 'automount_options')
-          String? automountOptions,
-      @JsonKey(name: 'network_generatehosts')
-          bool? networkGeneratehosts,
-      @JsonKey(name: 'network_generateresolvconf')
-          bool? networkGenerateresolvconf});
+      {String? automountRoot,
+      String? automountOptions,
+      bool? networkGeneratehosts,
+      bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -4340,14 +4212,10 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
       __$WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'automount_root')
-          String? automountRoot,
-      @JsonKey(name: 'automount_options')
-          String? automountOptions,
-      @JsonKey(name: 'network_generatehosts')
-          bool? networkGeneratehosts,
-      @JsonKey(name: 'network_generateresolvconf')
-          bool? networkGenerateresolvconf});
+      {String? automountRoot,
+      String? automountOptions,
+      bool? networkGeneratehosts,
+      bool? networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -4390,32 +4258,25 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
-      {@JsonKey(name: 'automount_root')
-          this.automountRoot,
-      @JsonKey(name: 'automount_options')
-          this.automountOptions,
-      @JsonKey(name: 'network_generatehosts')
-          this.networkGeneratehosts,
-      @JsonKey(name: 'network_generateresolvconf')
-          this.networkGenerateresolvconf});
+      {this.automountRoot,
+      this.automountOptions,
+      this.networkGeneratehosts,
+      this.networkGenerateresolvconf});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationBaseFromJson(json);
 
   @override
-  @JsonKey(name: 'automount_root')
   final String? automountRoot;
   @override
-  @JsonKey(name: 'automount_options')
   final String? automountOptions;
   @override
-  @JsonKey(name: 'network_generatehosts')
   final bool? networkGeneratehosts;
   @override
-  @JsonKey(name: 'network_generateresolvconf')
   final bool? networkGenerateresolvconf;
 
   @override
@@ -4465,29 +4326,21 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
 
 abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   const factory _WSLConfigurationBase(
-      {@JsonKey(name: 'automount_root')
-          String? automountRoot,
-      @JsonKey(name: 'automount_options')
-          String? automountOptions,
-      @JsonKey(name: 'network_generatehosts')
-          bool? networkGeneratehosts,
-      @JsonKey(name: 'network_generateresolvconf')
-          bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
+      {String? automountRoot,
+      String? automountOptions,
+      bool? networkGeneratehosts,
+      bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationBase.fromJson;
 
   @override
-  @JsonKey(name: 'automount_root')
   String? get automountRoot => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'automount_options')
   String? get automountOptions => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'network_generatehosts')
   bool? get networkGeneratehosts => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'network_generateresolvconf')
   bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -4505,33 +4358,23 @@ class _$WSLConfigurationAdvancedTearOff {
   const _$WSLConfigurationAdvancedTearOff();
 
   _WSLConfigurationAdvanced call(
-      {@JsonKey(name: 'gui_theme')
-          String? guiTheme,
-      @JsonKey(name: 'gui_followwintheme')
-          bool? guiFollowwintheme,
-      @JsonKey(name: 'interop_guiintegration')
-          bool? interopGuiintegration,
-      @JsonKey(name: 'interop_audiointegration')
-          bool? interopAudiointegration,
-      @JsonKey(name: 'interop_advancedipdetection')
-          bool? interopAdvancedipdetection,
-      @JsonKey(name: 'motd_wslnewsenabled')
-          bool? motdWSLnewsenabled,
-      @JsonKey(name: 'automount_enabled')
-          bool? automountEnabled,
-      @JsonKey(name: 'automount_mountfstab')
-          bool? automountMountfstab,
-      @JsonKey(name: 'interop_enabled')
-          bool? interopEnabled,
-      @JsonKey(name: 'interop_appendwindowspath')
-          bool? interopAppendwindowspath}) {
+      {String? guiTheme,
+      bool? guiFollowwintheme,
+      bool? interopGuiintegration,
+      bool? interopAudiointegration,
+      bool? interopAdvancedipdetection,
+      bool? motdWslnewsenabled,
+      bool? automountEnabled,
+      bool? automountMountfstab,
+      bool? interopEnabled,
+      bool? interopAppendwindowspath}) {
     return _WSLConfigurationAdvanced(
       guiTheme: guiTheme,
       guiFollowwintheme: guiFollowwintheme,
       interopGuiintegration: interopGuiintegration,
       interopAudiointegration: interopAudiointegration,
       interopAdvancedipdetection: interopAdvancedipdetection,
-      motdWSLnewsenabled: motdWSLnewsenabled,
+      motdWslnewsenabled: motdWslnewsenabled,
       automountEnabled: automountEnabled,
       automountMountfstab: automountMountfstab,
       interopEnabled: interopEnabled,
@@ -4549,25 +4392,15 @@ const $WSLConfigurationAdvanced = _$WSLConfigurationAdvancedTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationAdvanced {
-  @JsonKey(name: 'gui_theme')
   String? get guiTheme => throw _privateConstructorUsedError;
-  @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
-  @JsonKey(name: 'interop_guiintegration')
   bool? get interopGuiintegration => throw _privateConstructorUsedError;
-  @JsonKey(name: 'interop_audiointegration')
   bool? get interopAudiointegration => throw _privateConstructorUsedError;
-  @JsonKey(name: 'interop_advancedipdetection')
   bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
-  @JsonKey(name: 'motd_wslnewsenabled')
-  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
-  @JsonKey(name: 'automount_enabled')
+  bool? get motdWslnewsenabled => throw _privateConstructorUsedError;
   bool? get automountEnabled => throw _privateConstructorUsedError;
-  @JsonKey(name: 'automount_mountfstab')
   bool? get automountMountfstab => throw _privateConstructorUsedError;
-  @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
-  @JsonKey(name: 'interop_appendwindowspath')
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -4582,26 +4415,16 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
           $Res Function(WSLConfigurationAdvanced) then) =
       _$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'gui_theme')
-          String? guiTheme,
-      @JsonKey(name: 'gui_followwintheme')
-          bool? guiFollowwintheme,
-      @JsonKey(name: 'interop_guiintegration')
-          bool? interopGuiintegration,
-      @JsonKey(name: 'interop_audiointegration')
-          bool? interopAudiointegration,
-      @JsonKey(name: 'interop_advancedipdetection')
-          bool? interopAdvancedipdetection,
-      @JsonKey(name: 'motd_wslnewsenabled')
-          bool? motdWSLnewsenabled,
-      @JsonKey(name: 'automount_enabled')
-          bool? automountEnabled,
-      @JsonKey(name: 'automount_mountfstab')
-          bool? automountMountfstab,
-      @JsonKey(name: 'interop_enabled')
-          bool? interopEnabled,
-      @JsonKey(name: 'interop_appendwindowspath')
-          bool? interopAppendwindowspath});
+      {String? guiTheme,
+      bool? guiFollowwintheme,
+      bool? interopGuiintegration,
+      bool? interopAudiointegration,
+      bool? interopAdvancedipdetection,
+      bool? motdWslnewsenabled,
+      bool? automountEnabled,
+      bool? automountMountfstab,
+      bool? interopEnabled,
+      bool? interopAppendwindowspath});
 }
 
 /// @nodoc
@@ -4620,7 +4443,7 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
     Object? interopGuiintegration = freezed,
     Object? interopAudiointegration = freezed,
     Object? interopAdvancedipdetection = freezed,
-    Object? motdWSLnewsenabled = freezed,
+    Object? motdWslnewsenabled = freezed,
     Object? automountEnabled = freezed,
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
@@ -4647,9 +4470,9 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAdvancedipdetection
           : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      motdWSLnewsenabled: motdWSLnewsenabled == freezed
-          ? _value.motdWSLnewsenabled
-          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
+      motdWslnewsenabled: motdWslnewsenabled == freezed
+          ? _value.motdWslnewsenabled
+          : motdWslnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
@@ -4679,26 +4502,16 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
       __$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'gui_theme')
-          String? guiTheme,
-      @JsonKey(name: 'gui_followwintheme')
-          bool? guiFollowwintheme,
-      @JsonKey(name: 'interop_guiintegration')
-          bool? interopGuiintegration,
-      @JsonKey(name: 'interop_audiointegration')
-          bool? interopAudiointegration,
-      @JsonKey(name: 'interop_advancedipdetection')
-          bool? interopAdvancedipdetection,
-      @JsonKey(name: 'motd_wslnewsenabled')
-          bool? motdWSLnewsenabled,
-      @JsonKey(name: 'automount_enabled')
-          bool? automountEnabled,
-      @JsonKey(name: 'automount_mountfstab')
-          bool? automountMountfstab,
-      @JsonKey(name: 'interop_enabled')
-          bool? interopEnabled,
-      @JsonKey(name: 'interop_appendwindowspath')
-          bool? interopAppendwindowspath});
+      {String? guiTheme,
+      bool? guiFollowwintheme,
+      bool? interopGuiintegration,
+      bool? interopAudiointegration,
+      bool? interopAdvancedipdetection,
+      bool? motdWslnewsenabled,
+      bool? automountEnabled,
+      bool? automountMountfstab,
+      bool? interopEnabled,
+      bool? interopAppendwindowspath});
 }
 
 /// @nodoc
@@ -4720,7 +4533,7 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
     Object? interopGuiintegration = freezed,
     Object? interopAudiointegration = freezed,
     Object? interopAdvancedipdetection = freezed,
-    Object? motdWSLnewsenabled = freezed,
+    Object? motdWslnewsenabled = freezed,
     Object? automountEnabled = freezed,
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
@@ -4747,9 +4560,9 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAdvancedipdetection
           : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
               as bool?,
-      motdWSLnewsenabled: motdWSLnewsenabled == freezed
-          ? _value.motdWSLnewsenabled
-          : motdWSLnewsenabled // ignore: cast_nullable_to_non_nullable
+      motdWslnewsenabled: motdWslnewsenabled == freezed
+          ? _value.motdWslnewsenabled
+          : motdWslnewsenabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
@@ -4772,67 +4585,48 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   const _$_WSLConfigurationAdvanced(
-      {@JsonKey(name: 'gui_theme')
-          this.guiTheme,
-      @JsonKey(name: 'gui_followwintheme')
-          this.guiFollowwintheme,
-      @JsonKey(name: 'interop_guiintegration')
-          this.interopGuiintegration,
-      @JsonKey(name: 'interop_audiointegration')
-          this.interopAudiointegration,
-      @JsonKey(name: 'interop_advancedipdetection')
-          this.interopAdvancedipdetection,
-      @JsonKey(name: 'motd_wslnewsenabled')
-          this.motdWSLnewsenabled,
-      @JsonKey(name: 'automount_enabled')
-          this.automountEnabled,
-      @JsonKey(name: 'automount_mountfstab')
-          this.automountMountfstab,
-      @JsonKey(name: 'interop_enabled')
-          this.interopEnabled,
-      @JsonKey(name: 'interop_appendwindowspath')
-          this.interopAppendwindowspath});
+      {this.guiTheme,
+      this.guiFollowwintheme,
+      this.interopGuiintegration,
+      this.interopAudiointegration,
+      this.interopAdvancedipdetection,
+      this.motdWslnewsenabled,
+      this.automountEnabled,
+      this.automountMountfstab,
+      this.interopEnabled,
+      this.interopAppendwindowspath});
 
   factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationAdvancedFromJson(json);
 
   @override
-  @JsonKey(name: 'gui_theme')
   final String? guiTheme;
   @override
-  @JsonKey(name: 'gui_followwintheme')
   final bool? guiFollowwintheme;
   @override
-  @JsonKey(name: 'interop_guiintegration')
   final bool? interopGuiintegration;
   @override
-  @JsonKey(name: 'interop_audiointegration')
   final bool? interopAudiointegration;
   @override
-  @JsonKey(name: 'interop_advancedipdetection')
   final bool? interopAdvancedipdetection;
   @override
-  @JsonKey(name: 'motd_wslnewsenabled')
-  final bool? motdWSLnewsenabled;
+  final bool? motdWslnewsenabled;
   @override
-  @JsonKey(name: 'automount_enabled')
   final bool? automountEnabled;
   @override
-  @JsonKey(name: 'automount_mountfstab')
   final bool? automountMountfstab;
   @override
-  @JsonKey(name: 'interop_enabled')
   final bool? interopEnabled;
   @override
-  @JsonKey(name: 'interop_appendwindowspath')
   final bool? interopAppendwindowspath;
 
   @override
   String toString() {
-    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, interopGuiintegration: $interopGuiintegration, interopAudiointegration: $interopAudiointegration, interopAdvancedipdetection: $interopAdvancedipdetection, motdWSLnewsenabled: $motdWSLnewsenabled, automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, interopGuiintegration: $interopGuiintegration, interopAudiointegration: $interopAudiointegration, interopAdvancedipdetection: $interopAdvancedipdetection, motdWslnewsenabled: $motdWslnewsenabled, automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
   }
 
   @override
@@ -4857,9 +4651,9 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
                 const DeepCollectionEquality().equals(
                     other.interopAdvancedipdetection,
                     interopAdvancedipdetection)) &&
-            (identical(other.motdWSLnewsenabled, motdWSLnewsenabled) ||
+            (identical(other.motdWslnewsenabled, motdWslnewsenabled) ||
                 const DeepCollectionEquality()
-                    .equals(other.motdWSLnewsenabled, motdWSLnewsenabled)) &&
+                    .equals(other.motdWslnewsenabled, motdWslnewsenabled)) &&
             (identical(other.automountEnabled, automountEnabled) ||
                 const DeepCollectionEquality()
                     .equals(other.automountEnabled, automountEnabled)) &&
@@ -4883,7 +4677,7 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       const DeepCollectionEquality().hash(interopGuiintegration) ^
       const DeepCollectionEquality().hash(interopAudiointegration) ^
       const DeepCollectionEquality().hash(interopAdvancedipdetection) ^
-      const DeepCollectionEquality().hash(motdWSLnewsenabled) ^
+      const DeepCollectionEquality().hash(motdWslnewsenabled) ^
       const DeepCollectionEquality().hash(automountEnabled) ^
       const DeepCollectionEquality().hash(automountMountfstab) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
@@ -4903,59 +4697,39 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
 
 abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   const factory _WSLConfigurationAdvanced(
-      {@JsonKey(name: 'gui_theme')
-          String? guiTheme,
-      @JsonKey(name: 'gui_followwintheme')
-          bool? guiFollowwintheme,
-      @JsonKey(name: 'interop_guiintegration')
-          bool? interopGuiintegration,
-      @JsonKey(name: 'interop_audiointegration')
-          bool? interopAudiointegration,
-      @JsonKey(name: 'interop_advancedipdetection')
-          bool? interopAdvancedipdetection,
-      @JsonKey(name: 'motd_wslnewsenabled')
-          bool? motdWSLnewsenabled,
-      @JsonKey(name: 'automount_enabled')
-          bool? automountEnabled,
-      @JsonKey(name: 'automount_mountfstab')
-          bool? automountMountfstab,
-      @JsonKey(name: 'interop_enabled')
-          bool? interopEnabled,
-      @JsonKey(name: 'interop_appendwindowspath')
-          bool? interopAppendwindowspath}) = _$_WSLConfigurationAdvanced;
+      {String? guiTheme,
+      bool? guiFollowwintheme,
+      bool? interopGuiintegration,
+      bool? interopAudiointegration,
+      bool? interopAdvancedipdetection,
+      bool? motdWslnewsenabled,
+      bool? automountEnabled,
+      bool? automountMountfstab,
+      bool? interopEnabled,
+      bool? interopAppendwindowspath}) = _$_WSLConfigurationAdvanced;
 
   factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationAdvanced.fromJson;
 
   @override
-  @JsonKey(name: 'gui_theme')
   String? get guiTheme => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'gui_followwintheme')
   bool? get guiFollowwintheme => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'interop_guiintegration')
   bool? get interopGuiintegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'interop_audiointegration')
   bool? get interopAudiointegration => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'interop_advancedipdetection')
   bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'motd_wslnewsenabled')
-  bool? get motdWSLnewsenabled => throw _privateConstructorUsedError;
+  bool? get motdWslnewsenabled => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'automount_enabled')
   bool? get automountEnabled => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'automount_mountfstab')
   bool? get automountMountfstab => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'interop_enabled')
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'interop_appendwindowspath')
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

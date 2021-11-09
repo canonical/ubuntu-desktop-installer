@@ -17,6 +17,7 @@ import 'app_test.mocks.dart';
 void main() {
   testWidgets('create an app instance', (tester) async {
     final client = MockSubiquityClient();
+    when(client.locale()).thenAnswer((_) async => 'en');
 
     final settings = MockSettings();
     when(settings.locale).thenReturn(Locale('en'));
@@ -27,7 +28,7 @@ void main() {
         ChangeNotifierProvider<Settings>.value(value: settings),
         Provider<SubiquityClient>.value(value: client),
       ],
-      child: const UbuntuWslSetupApp(),
+      child: const UbuntuWslSetupApp(variant: Variant.WSL_SETUP),
     ));
 
     expect(find.byType(Wizard), findsOneWidget);

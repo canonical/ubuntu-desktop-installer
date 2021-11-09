@@ -17,7 +17,7 @@ class SelectLanguagePage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => SelectLanguageModel(client),
-      child: SelectLanguagePage(),
+      child: const SelectLanguagePage(),
     );
   }
 
@@ -36,10 +36,15 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     model.loadLanguages().then((_) {
       final settings = Settings.of(context, listen: false);
       model.selectLocale(settings.locale);
+      model.getServerLocale().then((loc) {
+        if (loc == settings.locale) return;
 
-      _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
-          preferPosition: AutoScrollPosition.middle,
-          duration: const Duration(milliseconds: 1));
+        model.selectLocale(loc);
+        settings.applyLocale(loc);
+        _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
+            preferPosition: AutoScrollPosition.middle,
+            duration: const Duration(milliseconds: 1));
+      });
     });
   }
 

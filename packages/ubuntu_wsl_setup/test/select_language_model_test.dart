@@ -31,8 +31,10 @@ void main() {
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
 
+    // falls back to the base locale (en_US)
     model.selectLocale(Locale('foo'));
-    expect(model.selectedLanguageIndex, equals(0));
+    expect(
+        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -40,6 +42,16 @@ void main() {
 
     model.selectLocale(lastLocale);
     expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
+  });
+
+  test('load locale', () async {
+    final client = MockSubiquityClient();
+    when(client.locale()).thenAnswer((_) async => 'fr_FR.UTF-8');
+
+    final model = SelectLanguageModel(client);
+    final locale = await model.getServerLocale();
+    verify(client.locale()).called(1);
+    expect(locale, equals(Locale('fr', 'FR')));
   });
 
   test('set locale', () {
