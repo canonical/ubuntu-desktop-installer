@@ -23,7 +23,10 @@ class UbuntuLocalizationsDe extends UbuntuLocalizations {
   String get strongPassword => 'Starkes Passwort';
 
   @override
-  String get moderatePassword => 'Mittelmäßiges Passwort';
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
 
   @override
   String get weakPassword => 'Schwaches Passwort';

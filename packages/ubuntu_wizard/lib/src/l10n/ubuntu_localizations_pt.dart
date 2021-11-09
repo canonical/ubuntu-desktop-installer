@@ -23,7 +23,10 @@ class UbuntuLocalizationsPt extends UbuntuLocalizations {
   String get strongPassword => 'Strong password';
 
   @override
-  String get moderatePassword => 'Moderate password';
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
 
   @override
   String get weakPassword => 'Weak password';
@@ -47,9 +50,6 @@ class UbuntuLocalizationsPtBr extends UbuntuLocalizationsPt {
 
   @override
   String get strongPassword => 'Senha forte';
-
-  @override
-  String get moderatePassword => 'Senha média';
 
   @override
   String get weakPassword => 'Senha fraca';

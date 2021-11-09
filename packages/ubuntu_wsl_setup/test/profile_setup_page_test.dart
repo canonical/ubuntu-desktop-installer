@@ -107,7 +107,8 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     expect(find.text(tester.ulang.weakPassword), findsNothing);
-    expect(find.text(tester.ulang.moderatePassword), findsNothing);
+    expect(find.text(tester.ulang.fairPassword), findsNothing);
+    expect(find.text(tester.ulang.goodPassword), findsNothing);
     expect(find.text(tester.ulang.strongPassword), findsNothing);
   });
 
@@ -121,14 +122,24 @@ void main() {
     expect(find.text(tester.ulang.weakPassword), findsOneWidget);
   });
 
-  testWidgets('moderate password', (tester) async {
+  testWidgets('fair password', (tester) async {
     final model = buildModel(
       password: 'not empty',
-      passwordStrength: PasswordStrength.moderate,
+      passwordStrength: PasswordStrength.fair,
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.moderatePassword), findsOneWidget);
+    expect(find.text(tester.ulang.fairPassword), findsOneWidget);
+  });
+
+  testWidgets('good password', (tester) async {
+    final model = buildModel(
+      password: 'not empty',
+      passwordStrength: PasswordStrength.good,
+    );
+    await tester.pumpWidget(buildApp(tester, model));
+
+    expect(find.text(tester.ulang.goodPassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {

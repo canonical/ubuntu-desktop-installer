@@ -24,16 +24,32 @@ void main() {
     expect(widget.style!.color, equals(Theme.of(context).errorColor));
   });
 
-  testWidgets('moderate password', (tester) async {
+  testWidgets('fair password', (tester) async {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
-        return PasswordStrengthLabel(strength: PasswordStrength.moderate);
+        return PasswordStrengthLabel(strength: PasswordStrength.fair);
       }),
     ));
 
     final context = tester.element(find.byType(PasswordStrengthLabel));
-    final text = UbuntuLocalizations.of(context).moderatePassword;
+    final text = UbuntuLocalizations.of(context).fairPassword;
+    expect(find.text(text), findsOneWidget);
+
+    final widget = tester.widget<Text>(find.text(text));
+    expect(widget.style?.color, isNull);
+  });
+
+  testWidgets('good password', (tester) async {
+    await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
+      home: Builder(builder: (context) {
+        return PasswordStrengthLabel(strength: PasswordStrength.good);
+      }),
+    ));
+
+    final context = tester.element(find.byType(PasswordStrengthLabel));
+    final text = UbuntuLocalizations.of(context).goodPassword;
     expect(find.text(text), findsOneWidget);
 
     final widget = tester.widget<Text>(find.text(text));
