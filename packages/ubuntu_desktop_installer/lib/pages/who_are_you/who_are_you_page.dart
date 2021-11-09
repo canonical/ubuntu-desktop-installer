@@ -7,7 +7,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';
