@@ -1,15 +1,20 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'who_are_you_model_test.mocks.dart';
+class MockProductNameFile extends Mock implements File {
+  MockProductNameFile(this._product);
+  final String _product;
+  @override
+  Future<String> readAsString({Encoding encoding = utf8}) async => _product;
+}
 
-@GenerateMocks([HostnameService])
 void main() {
   test('load identity', () async {
     const identity = IdentityData(
@@ -22,11 +27,11 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final service = MockHostnameService();
-    when(service.hostname).thenReturn('impish');
+    final model = WhoAreYouModel(client);
 
-    final model = WhoAreYouModel(client: client, service: service);
-    await model.loadIdentity();
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile('impish'));
     verify(client.identity()).called(1);
 
     expect(model.realName, equals(identity.realname));
@@ -41,12 +46,11 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final service = MockHostnameService();
-    when(service.hostname).thenReturn('impish');
-
-    final model = WhoAreYouModel(client: client, service: service);
-    await model.loadIdentity();
-    verify(service.init()).called(1);
+    final model = WhoAreYouModel(client);
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile('impish'));
+    verify(client.identity()).called(1);
 
     expect(model.hostname, equals('ubuntu-impish'));
   });
@@ -57,12 +61,10 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final service = MockHostnameService();
-    when(service.hostname).thenReturn('impish');
-
-    final model = WhoAreYouModel(client: client, service: service);
-    await model.loadIdentity();
-    verify(service.init()).called(1);
+    final model = WhoAreYouModel(client);
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile('impish'));
 
     expect(model.hostname, equals('user-impish'));
   });
@@ -76,9 +78,8 @@ void main() {
     );
 
     final client = MockSubiquityClient();
-    final service = MockHostnameService();
 
-    final model = WhoAreYouModel(client: client, service: service);
+    final model = WhoAreYouModel(client);
     model.realName = identity.realname!;
     model.username = identity.username!;
     model.hostname = identity.hostname!;
@@ -91,10 +92,7 @@ void main() {
 
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
-    final model = WhoAreYouModel(
-      client: MockSubiquityClient(),
-      service: MockHostnameService(),
-    );
+    final model = WhoAreYouModel(MockSubiquityClient());
 
     void testPasswordStrength(String password, Matcher matcher) {
       model.password = password;
@@ -107,10 +105,7 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = WhoAreYouModel(
-      client: MockSubiquityClient(),
-      service: MockHostnameService(),
-    );
+    final model = WhoAreYouModel(MockSubiquityClient());
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -147,10 +142,7 @@ void main() {
   });
 
   test('validation', () {
-    final model = WhoAreYouModel(
-      client: MockSubiquityClient(),
-      service: MockHostnameService(),
-    );
+    final model = WhoAreYouModel(MockSubiquityClient());
     expect(model.isValid, isFalse);
 
     void testValid(

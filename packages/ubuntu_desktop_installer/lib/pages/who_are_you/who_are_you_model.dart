@@ -1,9 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
-
-import '../../services.dart';
 
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
@@ -35,11 +35,7 @@ enum LoginStrategy {
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends ChangeNotifier {
   /// Creates the model with the given client.
-  WhoAreYouModel({
-    required SubiquityClient client,
-    required HostnameService service,
-  })  : _client = client,
-        _service = service {
+  WhoAreYouModel(this._client) {
     Listenable.merge([
       _realName,
       _hostname,
@@ -47,12 +43,11 @@ class WhoAreYouModel extends ChangeNotifier {
       _password,
       _confirmedPassword,
       _loginStrategy,
-      _systemHostname,
+      _productName,
     ]).addListener(notifyListeners);
   }
 
   final SubiquityClient _client;
-  final HostnameService _service;
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
   final _hostname = ValueNotifier<String?>(null);
@@ -60,7 +55,7 @@ class WhoAreYouModel extends ChangeNotifier {
   final _confirmedPassword = ValueNotifier<String?>(null);
   final _loginStrategy =
       ValueNotifier<LoginStrategy>(LoginStrategy.requirePassword);
-  final _systemHostname = ValueNotifier<String>('');
+  final _productName = ValueNotifier<String>('');
 
   /// The current real name.
   String get realName => _realName.value ?? '';
@@ -72,12 +67,12 @@ class WhoAreYouModel extends ChangeNotifier {
 
   // Generates a hostname `<username>-<system hostname>`.
   String _generateHostname() {
-    if (username.isEmpty || _systemHostname.value.isEmpty) return '';
-    return '$username-${_systemHostname.value}';
+    if (username.isEmpty || _productName.value.isEmpty) return '';
+    return '$username-${_productName.value}';
   }
 
   /// The current username or a sanitized real name if not set.
-  String get username => _username.value ?? realName.sanitize();
+  String get username => _username.value ?? realName.sanitize().toLowerCase();
   set username(String value) => _username.value = value;
 
   /// The current password.
@@ -113,9 +108,8 @@ class WhoAreYouModel extends ChangeNotifier {
     _hostname.value = identity.hostname?.orIfEmpty(null);
     _username.value = identity.username?.orIfEmpty(null);
     log.info('Loaded identity: ${identity.description}');
-    await _service.init();
-    _systemHostname.value = _service.hostname;
-    log.info('Resolved hostname: ${_systemHostname.value}');
+    _productName.value = await _readProductName();
+    log.info('Read product name: ${_productName.value}');
   }
 
   /// Saves the identity data to the server.
@@ -129,6 +123,17 @@ class WhoAreYouModel extends ChangeNotifier {
     log.info('Saved identity: ${identity.description}');
     return _client.setIdentity(identity);
   }
+}
+
+/// The DMI product name file. Available for testing.
+@visibleForTesting
+const kDMIProductNameFile = '/sys/devices/virtual/dmi/id/product_name';
+
+Future<String> _readProductName() {
+  return File(kDMIProductNameFile)
+      .readAsString()
+      .then((value) => value.trim().sanitize())
+      .catchError((_) => '');
 }
 
 extension _IdentityDescription on IdentityData {
