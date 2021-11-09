@@ -23,7 +23,10 @@ class UbuntuLocalizationsKu extends UbuntuLocalizations {
   String get strongPassword => 'Strong password';
 
   @override
-  String get moderatePassword => 'Moderate password';
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
 
   @override
   String get weakPassword => 'Weak password';

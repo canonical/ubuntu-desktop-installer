@@ -2,7 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 const Matcher isWeak = PasswordStrengthMatcher(PasswordStrength.weak);
-const Matcher isModerate = PasswordStrengthMatcher(PasswordStrength.moderate);
+const Matcher isFair = PasswordStrengthMatcher(PasswordStrength.fair);
+const Matcher isGood = PasswordStrengthMatcher(PasswordStrength.good);
 const Matcher isStrong = PasswordStrengthMatcher(PasswordStrength.strong);
 
 void main() {
@@ -18,24 +19,29 @@ void main() {
     // 6
     expect(estimatePasswordStrength('passwd'), isWeak);
     expect(estimatePasswordStrength('p4sswd'), isWeak);
-    expect(estimatePasswordStrength('p@sswd'), isModerate);
+    expect(estimatePasswordStrength('p@sswd'), isWeak);
 
     // 8
     expect(estimatePasswordStrength('password'), isWeak);
     expect(estimatePasswordStrength('Password'), isWeak);
-    expect(estimatePasswordStrength('p4ssword'), isModerate);
-    expect(estimatePasswordStrength('P4ssword'), isModerate);
-    expect(estimatePasswordStrength('p@ssw0rd'), isModerate);
-    expect(estimatePasswordStrength('P@ssw0rd'), isModerate);
+    expect(estimatePasswordStrength('p4ssword'), isWeak);
+    expect(estimatePasswordStrength('P4ssword'), isFair);
+    expect(estimatePasswordStrength('p@ssw0rd'), isFair);
+    expect(estimatePasswordStrength('P@ssw0rd'), isFair);
+    expect(estimatePasswordStrength('P@ssw0rD'), isFair);
 
     // 9
     expect(estimatePasswordStrength('passsword'), isWeak);
-    expect(estimatePasswordStrength('p4sssword'), isModerate);
-    expect(estimatePasswordStrength('P4sssword'), isModerate);
-    expect(estimatePasswordStrength('p@sssword'), isStrong);
-    expect(estimatePasswordStrength('P@sssword'), isStrong);
-    expect(estimatePasswordStrength('p@sssw0rd'), isStrong);
-    expect(estimatePasswordStrength('P@sssw0rd'), isStrong);
+    expect(estimatePasswordStrength('p4sssword'), isWeak);
+    expect(estimatePasswordStrength('P4sssword'), isFair);
+    expect(estimatePasswordStrength('p@sssword'), isGood);
+    expect(estimatePasswordStrength('P@sssword'), isGood);
+    expect(estimatePasswordStrength('p@sssw0rd'), isGood);
+    expect(estimatePasswordStrength('P@sssw0rd'), isGood);
+    expect(estimatePasswordStrength('P@555w0rD'), isGood);
+
+    expect(estimatePasswordStrength('321Dr0w55@P'), isStrong);
+    expect(estimatePasswordStrength('y42JU%#agK%kj64'), isStrong);
   });
 
   test('encrypt password', () {

@@ -117,7 +117,8 @@ void main() {
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.weakPassword), findsNothing);
-    expect(find.text(lang.moderatePassword), findsNothing);
+    expect(find.text(lang.fairPassword), findsNothing);
+    expect(find.text(lang.goodPassword), findsNothing);
     expect(find.text(lang.strongPassword), findsNothing);
   });
 
@@ -134,17 +135,30 @@ void main() {
     expect(find.text(lang.weakPassword), findsOneWidget);
   });
 
-  testWidgets('moderate password', (tester) async {
+  testWidgets('fair password', (tester) async {
     final model = buildModel(
       password: 'not empty',
-      passwordStrength: PasswordStrength.moderate,
+      passwordStrength: PasswordStrength.fair,
     );
     await tester.pumpWidget(buildApp(tester, model));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.moderatePassword), findsOneWidget);
+    expect(find.text(lang.fairPassword), findsOneWidget);
+  });
+
+  testWidgets('good password', (tester) async {
+    final model = buildModel(
+      password: 'not empty',
+      passwordStrength: PasswordStrength.good,
+    );
+    await tester.pumpWidget(buildApp(tester, model));
+
+    final context = tester.element(find.byType(WhoAreYouPage));
+    final lang = UbuntuLocalizations.of(context);
+
+    expect(find.text(lang.goodPassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {

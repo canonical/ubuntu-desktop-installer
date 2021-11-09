@@ -11,6 +11,7 @@
   "continueAction": "Continue",
 
   "strongPassword": "Strong password",
-  "moderatePassword": "Moderate password",
+  "fairPassword": "Fair password",
+  "goodPassword": "Good password",
   "weakPassword": "Weak password"
 }

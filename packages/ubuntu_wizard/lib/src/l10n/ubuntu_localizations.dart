@@ -267,11 +267,17 @@ abstract class UbuntuLocalizations {
   /// **'Strong password'**
   String get strongPassword;
 
-  /// No description provided for @moderatePassword.
+  /// No description provided for @fairPassword.
   ///
   /// In en, this message translates to:
-  /// **'Moderate password'**
-  String get moderatePassword;
+  /// **'Fair password'**
+  String get fairPassword;
+
+  /// No description provided for @goodPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Good password'**
+  String get goodPassword;
 
   /// No description provided for @weakPassword.
   ///

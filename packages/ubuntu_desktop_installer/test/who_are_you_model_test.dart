@@ -100,8 +100,9 @@ void main() {
     }
 
     testPasswordStrength('password', equals(PasswordStrength.weak));
-    testPasswordStrength('P4ssword', equals(PasswordStrength.moderate));
-    testPasswordStrength('P@ssw0rd123', equals(PasswordStrength.strong));
+    testPasswordStrength('P4ssword', equals(PasswordStrength.fair));
+    testPasswordStrength('P@555w0rD', equals(PasswordStrength.good));
+    testPasswordStrength('321Dr0w55@P', equals(PasswordStrength.strong));
   });
 
   test('notify changes', () {

@@ -23,7 +23,10 @@ class UbuntuLocalizationsFi extends UbuntuLocalizations {
   String get strongPassword => 'Vahva salasana';
 
   @override
-  String get moderatePassword => 'Kohtalainen salasana';
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
 
   @override
   String get weakPassword => 'Heikko salasana';
