@@ -79,7 +79,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             ),
           if (model.existingOS != null) const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
-            title: Text(lang.installationTypeErase),
+            title: Text(lang.installationTypeErase('Ubuntu')),
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
                   Theme.of(context).errorColor.toHex()),
@@ -112,7 +112,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           // const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
             title: Text(lang.installationTypeManual),
-            subtitle: Text(lang.installationTypeManualInfo),
+            subtitle: Text(lang.installationTypeManualInfo('Ubuntu')),
             value: InstallationType.manual,
             groupValue: model.installationType,
             onChanged: (v) => model.installationType = v!,

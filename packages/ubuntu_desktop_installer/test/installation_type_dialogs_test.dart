@@ -46,8 +46,8 @@ void main() {
         tester.lang.installationTypeZFS));
     await tester.pump();
 
-    await tester.tap(
-        find.widgetWithText(CheckButton, tester.lang.installationTypeEncrypt));
+    await tester.tap(find.widgetWithText(
+        CheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester

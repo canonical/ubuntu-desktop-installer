@@ -24,7 +24,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       locale: Settings.of(context).locale,
       onGenerateTitle: (context) {
         final lang = AppLocalizations.of(context);
-        setWindowTitle(lang.windowTitle);
+        setWindowTitle(lang.windowTitle('Ubuntu'));
         return lang.appTitle;
       },
       theme: lightTheme,

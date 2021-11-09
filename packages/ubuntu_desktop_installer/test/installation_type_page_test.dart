@@ -84,7 +84,7 @@ void main() {
     await tester.pumpWidget(buildApp(model));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
-        tester.lang.installationTypeErase);
+        tester.lang.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.erase).called(1);
