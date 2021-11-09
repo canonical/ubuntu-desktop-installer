@@ -11,7 +11,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get appTitle => 'Установка Ubuntu';
 
   @override
-  String get windowTitle => 'Установить Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Установить Ubuntu';
+  }
 
   @override
   String get cancelButtonText => 'Cancel';
@@ -47,16 +49,24 @@ class AppLocalizationsRu extends AppLocalizations {
   String get repairInstallationDescription => 'Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.';
 
   @override
-  String get tryUbuntu => 'Попробовать Ubuntu';
+  String tryUbuntu(Object RELEASE) {
+    return 'Попробовать Ubuntu';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.';
+  }
 
   @override
-  String get installUbuntu => 'Установить Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Установить Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Choose a security key';
 
   @override
-  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Choose a security key';
@@ -181,7 +193,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
 
   @override
-  String get installationTypeErase => 'Erase disk and install Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Erase disk and install $DISTRO';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeNoneSelected => 'None selected';
 
   @override
-  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
+  String installationTypeLVM(Object RELEASE) {
+    return 'Use LVM with the new $RELEASE installation';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM selected';
 
   @override
-  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Encrypt the new $RELEASE installation for security';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
@@ -240,10 +258,14 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeManual => 'Something else';
 
   @override
-  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Erase disk and install $DISTRO';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Select drive:';

@@ -11,7 +11,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get appTitle => 'Programa d’installacion del burèu Ubuntu';
 
   @override
-  String get windowTitle => 'Installar Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Installar Ubuntu';
+  }
 
   @override
   String get cancelButtonText => 'Anullar';
@@ -47,16 +49,24 @@ class AppLocalizationsOc extends AppLocalizations {
   String get repairInstallationDescription => 'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
 
   @override
-  String get tryUbuntu => 'Ensajar Ubuntu';
+  String tryUbuntu(Object RELEASE) {
+    return 'Ensajar Ubuntu';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.';
+  }
 
   @override
-  String get installUbuntu => 'Installar Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Installar Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';
 
   @override
-  String get chooseSecurityKeyHeader => 'Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra d’Ubuntu seràn pas chifrats.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra d’Ubuntu seràn pas chifrats.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Causissètz una clau de seguretat';
@@ -181,7 +193,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeNoOSDetected => 'Aqueste ordenador possedís pas cap de sistèma operatiu detectat actualament. De qué volètz far ?';
 
   @override
-  String get installationTypeErase => 'Escafar lo disc e installar Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Escafar lo disc e installar Ubuntu';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeNoneSelected => 'Cap pas seleccionat';
 
   @override
-  String get installationTypeLVM => 'Utilizar LVM amb l’installation d’Ubuntu novèla';
+  String installationTypeLVM(Object RELEASE) {
+    return 'Utilizar LVM amb l’installation d’Ubuntu novèla';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM seleccionat';
 
   @override
-  String get installationTypeEncrypt => 'Chifrar l’installacion d’Ubuntu novèla per la seguretat';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Chifrar l’installacion d’Ubuntu novèla per la seguretat';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'Causiretz una clau de seguretat a l’etapa seguenta.';
@@ -240,10 +258,14 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeManual => 'Quicòm mai';
 
   @override
-  String get installationTypeManualInfo => 'Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per Ubuntu';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per Ubuntu';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Escafar lo disc e installar Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Escafar lo disc e installar Ubuntu';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Seleccionatz lo disc :';

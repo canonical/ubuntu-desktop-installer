@@ -246,8 +246,8 @@ abstract class AppLocalizations {
   /// No description provided for @windowTitle.
   ///
   /// In en, this message translates to:
-  /// **'Install Ubuntu'**
-  String get windowTitle;
+  /// **'Install {RELEASE}'**
+  String windowTitle(Object RELEASE);
 
   /// No description provided for @cancelButtonText.
   ///
@@ -318,26 +318,26 @@ abstract class AppLocalizations {
   /// No description provided for @tryUbuntu.
   ///
   /// In en, this message translates to:
-  /// **'Try Ubuntu'**
-  String get tryUbuntu;
+  /// **'Try {RELEASE}'**
+  String tryUbuntu(Object RELEASE);
 
   /// No description provided for @tryUbuntuDescription.
   ///
   /// In en, this message translates to:
-  /// **'You can try Ubuntu without making any changes to your computer.'**
-  String get tryUbuntuDescription;
+  /// **'You can try {RELEASE} without making any changes to your computer.'**
+  String tryUbuntuDescription(Object RELEASE);
 
   /// No description provided for @installUbuntu.
   ///
   /// In en, this message translates to:
-  /// **'Install Ubuntu'**
-  String get installUbuntu;
+  /// **'Install {RELEASE}'**
+  String installUbuntu(Object RELEASE);
 
   /// No description provided for @installUbuntuDescription.
   ///
   /// In en, this message translates to:
-  /// **'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.'**
-  String get installUbuntuDescription;
+  /// **'Install {RELEASE} alongside (or instead of) your current operating system. This shouldn\'t take too long.'**
+  String installUbuntuDescription(Object RELEASE);
 
   /// No description provided for @releaseNotesLabel.
   ///
@@ -516,8 +516,8 @@ abstract class AppLocalizations {
   /// No description provided for @chooseSecurityKeyHeader.
   ///
   /// In en, this message translates to:
-  /// **'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.'**
-  String get chooseSecurityKeyHeader;
+  /// **'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of {RELEASE} will not be encrypted.'**
+  String chooseSecurityKeyHeader(Object RELEASE);
 
   /// No description provided for @chooseSecurityKeyHint.
   ///
@@ -570,8 +570,8 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeErase.
   ///
   /// In en, this message translates to:
-  /// **'Erase disk and install Ubuntu'**
-  String get installationTypeErase;
+  /// **'Erase disk and install {DISTRO}'**
+  String installationTypeErase(Object DISTRO);
 
   /// No description provided for @installationTypeEraseWarning.
   ///
@@ -606,8 +606,8 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeLVM.
   ///
   /// In en, this message translates to:
-  /// **'Use LVM with the new Ubuntu installation'**
-  String get installationTypeLVM;
+  /// **'Use LVM with the new {RELEASE} installation'**
+  String installationTypeLVM(Object RELEASE);
 
   /// No description provided for @installationTypeLVMSelected.
   ///
@@ -618,8 +618,8 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeEncrypt.
   ///
   /// In en, this message translates to:
-  /// **'Encrypt the new Ubuntu installation for security'**
-  String get installationTypeEncrypt;
+  /// **'Encrypt the new {RELEASE} installation for security'**
+  String installationTypeEncrypt(Object RELEASE);
 
   /// No description provided for @installationTypeEncryptInfo.
   ///
@@ -672,14 +672,14 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeManualInfo.
   ///
   /// In en, this message translates to:
-  /// **'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu'**
-  String get installationTypeManualInfo;
+  /// **'You can create or resize partitions yourself, or choose multiple partitions for {DISTRO}'**
+  String installationTypeManualInfo(Object DISTRO);
 
   /// No description provided for @selectGuidedStoragePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Erase disk and install Ubuntu'**
-  String get selectGuidedStoragePageTitle;
+  /// **'Erase disk and install {DISTRO}'**
+  String selectGuidedStoragePageTitle(Object DISTRO);
 
   /// No description provided for @selectGuidedStorageDropdownLabel.
   ///

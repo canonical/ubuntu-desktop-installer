@@ -11,7 +11,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get appTitle => 'Instalador do Ubuntu Desktop';
 
   @override
-  String get windowTitle => 'Instalar o Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Instalar o Ubuntu';
+  }
 
   @override
   String get cancelButtonText => 'Cancelar';
@@ -47,16 +49,24 @@ class AppLocalizationsPt extends AppLocalizations {
   String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
 
   @override
-  String get tryUbuntu => 'Experimentar o Ubuntu';
+  String tryUbuntu(Object RELEASE) {
+    return 'Experimentar o Ubuntu';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.';
+  }
 
   @override
-  String get installUbuntu => 'Instalar o Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Instalar o Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Choose a security key';
 
   @override
-  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Choose a security key';
@@ -181,7 +193,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeNoOSDetected => 'Este computador não possui sistemas operacionais detectados atualmente. O que deseja fazer?';
 
   @override
-  String get installationTypeErase => 'Apagar o disco e instalar o Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Apagar o disco e instalar o Ubuntu';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeNoneSelected => 'Nenhum selecionado';
 
   @override
-  String get installationTypeLVM => 'Usar LVM com a nova instalação do Ubuntu';
+  String installationTypeLVM(Object RELEASE) {
+    return 'Usar LVM com a nova instalação do Ubuntu';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM selecionado';
 
   @override
-  String get installationTypeEncrypt => 'Criptograsfar a nova instalação do Ubuntu para maior segurança';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Criptograsfar a nova instalação do Ubuntu para maior segurança';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'Deverá escolher uma chave de segurança no próximo passo.';
@@ -240,10 +258,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeManual => 'Opção avançada';
 
   @override
-  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Apagar o disco e instalar o Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Apagar o disco e instalar o Ubuntu';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Selecione o disco:';
@@ -521,7 +543,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get appTitle => 'Instalador do Ubuntu Desktop';
 
   @override
-  String get windowTitle => 'Instalar o Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Instalar o Ubuntu';
+  }
 
   @override
   String get cancelButtonText => 'Cancelar';
@@ -557,16 +581,24 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
 
   @override
-  String get tryUbuntu => 'Experimentar o Ubuntu';
+  String tryUbuntu(Object RELEASE) {
+    return 'Experimentar o Ubuntu';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Você pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Você pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.';
+  }
 
   @override
-  String get installUbuntu => 'Instalar o Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Instalar o Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -668,7 +700,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeNoOSDetected => 'Este computador não possui sistemas operacionais detectados atualmente. O que você deseja fazer?';
 
   @override
-  String get installationTypeErase => 'Apagar o disco e instalar o Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Apagar o disco e instalar o Ubuntu';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -688,13 +722,17 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeNoneSelected => 'Nenhum selecionado';
 
   @override
-  String get installationTypeLVM => 'Usar LVM com a nova instalação do Ubuntu';
+  String installationTypeLVM(Object RELEASE) {
+    return 'Usar LVM com a nova instalação do Ubuntu';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM selecionado';
 
   @override
-  String get installationTypeEncrypt => 'Criptograsfar a nova instalação do Ubuntu para maior segurança';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Criptograsfar a nova instalação do Ubuntu para maior segurança';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'Você deverá escolher uma chave de segurança no próximo passo.';
@@ -727,10 +765,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeManual => 'Opção avançada';
 
   @override
-  String get installationTypeManualInfo => 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o Ubuntu.';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o Ubuntu.';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Apagar o disco e instalar o Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Apagar o disco e instalar o Ubuntu';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Selecione o disco:';
