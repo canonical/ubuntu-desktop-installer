@@ -59,7 +59,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     final model = Provider.of<SelectGuidedStorageModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.selectGuidedStoragePageTitle),
+      title: Text(lang.selectGuidedStoragePageTitle('Ubuntu')),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

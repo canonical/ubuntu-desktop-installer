@@ -11,7 +11,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appTitle => '우분투 데스크톱 인스톨러';
 
   @override
-  String get windowTitle => '우분투 설치';
+  String windowTitle(Object RELEASE) {
+    return '우분투 설치';
+  }
 
   @override
   String get cancelButtonText => '취소';
@@ -47,16 +49,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get repairInstallationDescription => '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
 
   @override
-  String get tryUbuntu => '우분투 체험하기';
+  String tryUbuntu(Object RELEASE) {
+    return '우분투 체험하기';
+  }
 
   @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'You can try $RELEASE without making any changes to your computer.';
+  }
 
   @override
-  String get installUbuntu => '우분투 설치하기';
+  String installUbuntu(Object RELEASE) {
+    return '우분투 설치하기';
+  }
 
   @override
-  String get installUbuntuDescription => '우분투를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
+  String installUbuntuDescription(Object RELEASE) {
+    return '우분투를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Choose a security key';
 
   @override
-  String get chooseSecurityKeyHeader => 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of Ubuntu will not be encrypted.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Choose a security key';
@@ -181,7 +193,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
 
   @override
-  String get installationTypeErase => 'Erase disk and install Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Erase disk and install $DISTRO';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeNoneSelected => 'None selected';
 
   @override
-  String get installationTypeLVM => '새 우분투 설치에 LVM 사용';
+  String installationTypeLVM(Object RELEASE) {
+    return '새 우분투 설치에 LVM 사용';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM selected';
 
   @override
-  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Encrypt the new $RELEASE installation for security';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
@@ -240,10 +258,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeManual => 'Something else';
 
   @override
-  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Erase disk and install $DISTRO';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Select drive:';

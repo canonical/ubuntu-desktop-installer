@@ -52,7 +52,7 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
       title: Text(lang.chooseSecurityKeyTitle),
       header: FractionallySizedBox(
         widthFactor: kContentWidthFraction,
-        child: Text(lang.chooseSecurityKeyHeader),
+        child: Text(lang.chooseSecurityKeyHeader('Ubuntu')),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldWidth = constraints.maxWidth * kContentWidthFraction;

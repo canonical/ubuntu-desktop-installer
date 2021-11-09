@@ -11,7 +11,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get appTitle => 'Ubuntu-Desktop-Installationsprogramm';
 
   @override
-  String get windowTitle => 'Ubuntu installieren';
+  String windowTitle(Object RELEASE) {
+    return 'Ubuntu installieren';
+  }
 
   @override
   String get cancelButtonText => 'Abbrechen';
@@ -47,16 +49,24 @@ class AppLocalizationsDe extends AppLocalizations {
   String get repairInstallationDescription => 'Beim Reparieren wird die gesamte installierte Software neu installiert, ohne dass Dokumente oder Einstellungen angerührt werden.';
 
   @override
-  String get tryUbuntu => 'Ubuntu ausprobieren';
+  String tryUbuntu(Object RELEASE) {
+    return 'Ubuntu ausprobieren';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Sie können Ubuntu ausprobieren, ohne irgendwelche Änderungen an Ihrem Computer vorzunehmen.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Sie können Ubuntu ausprobieren, ohne irgendwelche Änderungen an Ihrem Computer vorzunehmen.';
+  }
 
   @override
-  String get installUbuntu => 'Ubuntu installieren';
+  String installUbuntu(Object RELEASE) {
+    return 'Ubuntu installieren';
+  }
 
   @override
-  String get installUbuntuDescription => 'Installieren Sie Ubuntu neben (oder anstelle) Ihres aktuellen Betriebssystems. Dies sollte nicht allzu lange dauern.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Installieren Sie Ubuntu neben (oder anstelle) Ihres aktuellen Betriebssystems. Dies sollte nicht allzu lange dauern.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel auswählen';
 
   @override
-  String get chooseSecurityKeyHeader => 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von Ubuntu werden nicht verschlüsselt.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von Ubuntu werden nicht verschlüsselt.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Wählen Sie einen Sicherheitsschlüssel aus';
@@ -181,7 +193,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeNoOSDetected => 'Auf diesem Rechner befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
 
   @override
-  String get installationTypeErase => 'Festplatte löschen und Ubuntu installieren';
+  String installationTypeErase(Object DISTRO) {
+    return 'Festplatte löschen und Ubuntu installieren';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeNoneSelected => 'Keine ausgewählt';
 
   @override
-  String get installationTypeLVM => 'LVM bei der neuen Ubuntu-Installation verwenden';
+  String installationTypeLVM(Object RELEASE) {
+    return 'LVM bei der neuen Ubuntu-Installation verwenden';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM ausgewählt';
 
   @override
-  String get installationTypeEncrypt => 'Die neue Ubuntu-Installation zur Sicherheit verschlüsseln';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Die neue Ubuntu-Installation zur Sicherheit verschlüsseln';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'Im nächsten Schritt wählen Sie einen Sicherheitsschlüssel aus.';
@@ -240,10 +258,14 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeManual => 'Etwas Anderes';
 
   @override
-  String get installationTypeManualInfo => 'Sie können selbst Partitionen erstellen, deren Größe ändern oder mehrere Partitionen für Ubuntu auswählen';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'Sie können selbst Partitionen erstellen, deren Größe ändern oder mehrere Partitionen für Ubuntu auswählen';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Festplatte löschen und Ubuntu installieren';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Festplatte löschen und Ubuntu installieren';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Laufwerk auswählen:';

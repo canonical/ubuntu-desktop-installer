@@ -11,7 +11,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get appTitle => 'Ubuntun Työpöytäversion Asennusohjelma';
 
   @override
-  String get windowTitle => 'Asenna Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Asenna Ubuntu';
+  }
 
   @override
   String get cancelButtonText => 'Peruuta';
@@ -47,16 +49,24 @@ class AppLocalizationsFi extends AppLocalizations {
   String get repairInstallationDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen mutta asiakirjat ja asennukset säilytetään.';
 
   @override
-  String get tryUbuntu => 'Kokeile Ubuntua';
+  String tryUbuntu(Object RELEASE) {
+    return 'Kokeile Ubuntua';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Voit kokeilla Ubuntua tekemättä muutoksia tietokoneellesi.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Voit kokeilla Ubuntua tekemättä muutoksia tietokoneellesi.';
+  }
 
   @override
-  String get installUbuntu => 'Asenna Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Asenna Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Asenna Ubuntu nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Asenna Ubuntu nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -150,7 +160,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get chooseSecurityKeyTitle => 'Valitse salausavain';
 
   @override
-  String get chooseSecurityKeyHeader => 'Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\nUbuntu-asennuksen ulkopuolisia tiedostoja ei salata.';
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\nUbuntu-asennuksen ulkopuolisia tiedostoja ei salata.';
+  }
 
   @override
   String get chooseSecurityKeyHint => 'Valitse salausavain';
@@ -181,7 +193,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installationTypeNoOSDetected => 'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
 
   @override
-  String get installationTypeErase => 'Tyhjennä levy ja asenna Ubuntu';
+  String installationTypeErase(Object DISTRO) {
+    return 'Tyhjennä levy ja asenna Ubuntu';
+  }
 
   @override
   String installationTypeEraseWarning(Object color) {
@@ -201,13 +215,17 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installationTypeNoneSelected => 'Ei valintoja';
 
   @override
-  String get installationTypeLVM => 'Käytä LVM:ää uudessa Ubuntu-asennuksessa';
+  String installationTypeLVM(Object RELEASE) {
+    return 'Käytä LVM:ää uudessa Ubuntu-asennuksessa';
+  }
 
   @override
   String get installationTypeLVMSelected => 'LVM valittu';
 
   @override
-  String get installationTypeEncrypt => 'Salaa uusi Ubuntu-asennus paremman tietoturvan vuoksi';
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Salaa uusi Ubuntu-asennus paremman tietoturvan vuoksi';
+  }
 
   @override
   String get installationTypeEncryptInfo => 'Salausavain valitaan seuraavassa vaiheessa.';
@@ -240,10 +258,14 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installationTypeManual => 'Jokin muu vaihtoehto';
 
   @override
-  String get installationTypeManualInfo => 'Voit luoda tai muuttaa osioiden kokoja itse, tai valita useita osioita Ubuntun käytettäväksi';
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'Voit luoda tai muuttaa osioiden kokoja itse, tai valita useita osioita Ubuntun käytettäväksi';
+  }
 
   @override
-  String get selectGuidedStoragePageTitle => 'Tyhjennä levy ja asenna Ubuntu';
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Tyhjennä levy ja asenna Ubuntu';
+  }
 
   @override
   String get selectGuidedStorageDropdownLabel => 'Valitse asema:';
