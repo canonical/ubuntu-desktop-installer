@@ -8,10 +8,14 @@
   "@continueAction": {},
   "backAction": "Reen",
   "@backAction": {},
-  "strongPassword": "Forta pasvorto",
+  "strongPassword": "Fortega pasvorto",
   "@strongPassword": {},
   "moderatePassword": "Mezforta pasvorto",
   "@moderatePassword": {},
   "weakPassword": "Malforta pasvorto",
-  "@weakPassword": {}
+  "@weakPassword": {},
+  "fairPassword": "Forteta pasvorto",
+  "@fairPassword": {},
+  "goodPassword": "Forta pasvorto",
+  "@goodPassword": {}
 }
