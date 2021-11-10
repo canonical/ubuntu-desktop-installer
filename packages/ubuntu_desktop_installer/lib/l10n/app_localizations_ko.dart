@@ -19,7 +19,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get cancelButtonText => '취소';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => '바꾸기';
 
   @override
   String get okButtonText => '확인';
@@ -91,10 +91,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseYourKeyboardLayout => '키보드 레이아웃을 선택하십시오:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => '키보드를 테스트해보려면 이 곳을 사용하십시오';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => '키보드 레이아웃 감지';
 
   @override
   String get pressOneKey => '다음 키 중 하나를 누르십시오:';
@@ -136,10 +136,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => '일반 설치';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => '웹 브라우저, 유틸리티, 오피스 소프트웨어, 게임 및 미디어 플레이어.';
 
   @override
   String get minimalInstallationTitle => '최소 설치';
@@ -186,11 +186,11 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return '현재 컴퓨터에 $os(이)가 설치되어 있습니다. 어떻게 하시겠습니까?';
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => '현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -203,10 +203,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => '고급 기능...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => '고급 기능';
 
   @override
   String get installationTypeNone => 'None';
@@ -277,7 +277,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectGuidedStorageInstallNow => '지금 설치';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => '디스크 공간 할당';
 
   @override
   String get startInstallingButtonText => 'Start Installing';
@@ -307,7 +307,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get freeDiskSpace => 'free space';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => '새 파티션 테이블';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
@@ -316,7 +316,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionCreateTitle => 'Create partition';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => '파티션 편집';
 
   @override
   String get partitionSizeLabel => 'Size:';
@@ -355,49 +355,49 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatLabel => 'Used as:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 저널링 파일 시스템';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 저널링 파일 시스템';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2 파일 시스템';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs 저널링 파일 시스템';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS 저널링 파일 시스템';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS 저널링 파일 시스템';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT 파일 시스템';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12 파일 시스템';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16 파일 시스템';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32 파일 시스템';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => '스왑 영역';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660 파일 시스템';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT 파일 시스템';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS 파일 시스템';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS 파일 시스템';
 
   @override
   String get partitionFormatZfsroot => 'ZFS root file system';
@@ -409,22 +409,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => '당신은 누구십니까?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => '자동으로 로그인';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => '로그인 할 때 암호 요구';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => '이름';
 
   @override
   String get whoAreYouPageRealNameRequired => 'A name is required';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
 
   @override
   String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
@@ -445,13 +445,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'The username is invalid';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => '암호 선택';
 
   @override
   String get whoAreYouPagePasswordRequired => 'A password is required';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => '암호 확인';
 
   @override
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';

@@ -8,7 +8,7 @@ class AppLocalizationsFi extends AppLocalizations {
   AppLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntun Työpöytäversion Asennusohjelma';
+  String get appTitle => 'Ubuntun työpöytäversion asennusohjelma';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -16,7 +16,7 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Peruuta';
+  String get cancelButtonText => 'Peru';
 
   @override
   String get changeButtonText => 'Muuta';
@@ -355,22 +355,22 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatLabel => 'Tiedostojärjestelmä:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
+  String get partitionFormatExt4 => 'Ext4-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
+  String get partitionFormatExt3 => 'Ext3-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override
   String get partitionFormatExt2 => 'Ext2-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
+  String get partitionFormatBtrfs => 'btrfs-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override
-  String get partitionFormatJfs => 'JFS tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
+  String get partitionFormatJfs => 'JFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override
-  String get partitionFormatXfs => 'XFS tapahtumakirjanpidon sisältävä tiedostojärjestelmä';
+  String get partitionFormatXfs => 'XFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override
   String get partitionFormatFat => 'FAT-tiedostojärjestelmä';
@@ -388,7 +388,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatSwap => 'Sivutusosio (swap)';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660-tiedostojärjestelmä';
+  String get partitionFormatIso9660 => 'ISO 9660 -tiedostojärjestelmä';
 
   @override
   String get partitionFormatVfat => 'VFAT-tiedostojärjestelmä';
@@ -400,7 +400,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatReiserFS => 'ReiserFS-tiedostojärjestelmä';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root-tiedostojärjestelmä';
+  String get partitionFormatZfsroot => 'ZFS root -tiedostojärjestelmä';
 
   @override
   String get partitionErase => 'Alusta osio';
@@ -436,7 +436,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPageInvalidComputerName => 'Tietokoneen nimi on virheellinen';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Valitse käyttäjänimi';
+  String get whoAreYouPageUsernameLabel => 'Valitse käyttäjätunnus';
 
   @override
   String get whoAreYouPageUsernameRequired => 'Käyttäjätunnus vaaditaan';
@@ -487,22 +487,22 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Valitse ulkoasu';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Tumma';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Vaalea';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'Kaikki on vaaleaa ja kirkasta';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => 'Hei pimeys, vanha ystäväni';
 
   @override
   String get installationCompleteTitle => 'Asennus on valmis';

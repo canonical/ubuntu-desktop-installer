@@ -448,7 +448,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPagePasswordLabel => 'Ein Passwort auswählen';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Ein Passwort ist erforderlich';
 
   @override
   String get whoAreYouPageConfirmPasswordLabel => 'Bestätigen Sie Ihr Passwort';
