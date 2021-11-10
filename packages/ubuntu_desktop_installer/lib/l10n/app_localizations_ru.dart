@@ -16,16 +16,16 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Отменить';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Изменить';
 
   @override
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Нет';
 
   @override
   String get restartButtonText => 'Перезагрузить';
@@ -34,7 +34,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get revertButtonText => 'Revert';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Да';
 
   @override
   String get welcome => 'Добро пожаловать';
@@ -97,13 +97,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detectLayout => 'Определить раскладку клавиатуры';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Нажмите одну из следующих клавиш:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Есть ли следующая клавиша на вашей клавиатуре?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Настроить Secure Boot';
 
   @override
   String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
@@ -136,13 +136,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Обычная установка';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Веб-браузер, утилиты, офисные программы, игры и медиапроигрыватели.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Минимальная установка';
 
   @override
   String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
@@ -182,24 +182,24 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Тип установки';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'На этом компьютере установлена операционная система $os. Что вы хотите сделать?';
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'На этом компьютере не обнаружено установленных операционных систем. Что вы хотите сделать?';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Стереть диск и установить Ubuntu';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">Внимание:</font> При этом будут удалены все ваши программы, документы, фото, музыка и другие файлы во всех операционных системах.';
   }
 
   @override
@@ -212,7 +212,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeNone => 'None';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => '';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -231,119 +231,119 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'ЭКСПЕРИМЕНТАЛЬНОЕ: Стереть диск и использовать ZFS';
 
   @override
   String get installationTypeZFSSelected => 'ZFS selected';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return 'Удалить $os и переустановить';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">Внимание:</font> При этом будут удалены все имевшиеся в $os программы, документы, фото, музыка и другие файлы.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return 'Установить $product вместе с $os';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Документы, музыка и другие личные файлы будут сохранены. Вы сможете выбрать нужную операционную систему для загрузки при каждом запуске компьютера.';
 
   @override
   String get installationTypeManual => 'Something else';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'Вы можете создать или изменить разделы самостоятельно, или выбрать для Ubuntu несколько разделов';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Стереть диск и установить Ubuntu';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Выберите диск:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Диск будет использован целиком:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Установить сейчас';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Начать установку';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Устройство';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Тип';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Точка монтирования';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Размер';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Использовано';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Система';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'свободное место';
 
   @override
   String get newPartitionTable => 'New partition table';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Устройство для установки загрузчика';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Создать раздел';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Изменить раздел';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Размер:';
 
   @override
-  String get partitionUnitB => 'B';
+  String get partitionUnitB => 'Б';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'КБ';
 
   @override
-  String get partitionUnitMB => 'MB';
+  String get partitionUnitMB => 'МБ';
 
   @override
-  String get partitionUnitGB => 'GB';
+  String get partitionUnitGB => 'ГБ';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Тип нового раздела:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Первичный';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Логический';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Расположение нового раздела:';
 
   @override
   String get partitionLocationBeginning => 'Beginning of this space';
@@ -355,61 +355,61 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionFormatLabel => 'Used as:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Журналируемая файловая система Ext4';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Журналируемая файловая система Ext3';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Файловая система Ext2';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'Журналируемая файловая система btrfs';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'Журналируемая файловая система JFS';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'Журналируемя файловая система XFS';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'Файловая система FAT';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'Файловая система FAT12';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'Файловая система FAT16';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'Файловая система FAT32';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Область подкачки';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'Файловая система ISO 9660';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'Файловая система VFAT';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'Файловая система NTFS';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'Файловая система ReiserFS';
 
   @override
   String get partitionFormatZfsroot => 'ZFS root file system';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'Форматировать раздел';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Точка монтирования:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Кто вы?';
 
   @override
   String get whoAreYouPageAutoLogin => 'Log in automatically';
@@ -418,13 +418,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPageRequirePassword => 'Require my password to log in';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Ваше имя';
 
   @override
   String get whoAreYouPageRealNameRequired => 'A name is required';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Имя компьютера';
 
   @override
   String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
@@ -436,28 +436,28 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Выберите имя пользователя';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Необходимо имя пользователя';
 
   @override
   String get whoAreYouPageInvalidUsername => 'The username is invalid';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Выберите пароль';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Необходим пароль';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Подтвердите пароль';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Пароли не совпадают';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Записать изменения на диск';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
@@ -466,7 +466,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'Изменены таблицы разделов на следующих устройствах:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -474,7 +474,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => 'Следующие разделы будут отформатированы:';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
@@ -505,11 +505,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Установка завершена';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** установлена и готова к использованию.';
   }
 
   @override

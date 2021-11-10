@@ -8,59 +8,59 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu Masaüstü Yükleyicisi';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Ubuntu Kur';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'İptal Et';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Değiştir';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Tamam';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Hayır';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Yeniden Başlat';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Geri Al';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Evet';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Hoş Geldiniz';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Dene veya kur';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Kurulumu Tamir Et';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Ubuntu\'yu Dene';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Bilgisayarınızda hiç bir değişiklik yapmadan Ubuntu\'yu deneyebilirsiniz.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Ubuntu Yükle';
   }
 
   @override
