@@ -13,5 +13,9 @@
   "strongPassword": "סיסמה חזקה",
   "@strongPassword": {},
   "weakPassword": "סיסמה חלשה",
-  "@weakPassword": {}
+  "@weakPassword": {},
+  "fairPassword": "סיסמה הוגנת",
+  "@fairPassword": {},
+  "goodPassword": "סיסמה טובה",
+  "@goodPassword": {}
 }
