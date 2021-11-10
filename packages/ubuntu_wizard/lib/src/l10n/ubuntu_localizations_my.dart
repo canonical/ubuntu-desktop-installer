@@ -11,7 +11,7 @@ class UbuntuLocalizationsMy extends UbuntuLocalizations {
   String get countryCode => 'MM';
 
   @override
-  String get languageName => ' ﻿မြန်မာစာ';
+  String get languageName => '﻿မြန်မာစာ';
 
   @override
   String get backAction => 'Go Back';
