@@ -13,5 +13,9 @@
   "weakPassword": "Słabe hasło",
   "@weakPassword": {},
   "moderatePassword": "Przeciętne hasło",
-  "@moderatePassword": {}
+  "@moderatePassword": {},
+  "goodPassword": "Dobre hasło",
+  "@goodPassword": {},
+  "fairPassword": "Wystarczające hasło",
+  "@fairPassword": {}
 }
