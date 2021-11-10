@@ -1,5 +1,17 @@
 {
   "@@locale": "eo",
   "countryCode": "AQ",
-  "languageName": "Esperanto"
+  "@countryCode": {},
+  "languageName": "Esperanto",
+  "@languageName": {},
+  "continueAction": "Daŭrigi",
+  "@continueAction": {},
+  "backAction": "Reen",
+  "@backAction": {},
+  "strongPassword": "Forta pasvorto",
+  "@strongPassword": {},
+  "moderatePassword": "Mezforta pasvorto",
+  "@moderatePassword": {},
+  "weakPassword": "Malforta pasvorto",
+  "@weakPassword": {}
 }

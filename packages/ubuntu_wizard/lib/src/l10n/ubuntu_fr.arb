@@ -1,9 +1,17 @@
 {
   "@@locale": "fr",
   "countryCode": "FR",
-  
+  "@countryCode": {},
   "languageName": "Français",
-
+  "@languageName": {},
   "backAction": "Retour",
-  "continueAction": "Continuer"
+  "@backAction": {},
+  "continueAction": "Continuer",
+  "@continueAction": {},
+  "strongPassword": "Mot de passe sûr",
+  "@strongPassword": {},
+  "weakPassword": "Mot de passe trop faible",
+  "@weakPassword": {},
+  "moderatePassword": "Mot de passe peu sûr",
+  "@moderatePassword": {}
 }

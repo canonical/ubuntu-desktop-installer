@@ -1,5 +1,15 @@
 {
   "@@locale": "nb",
   "countryCode": "NO",
-  "languageName": "Norsk bokmål"
+  "@countryCode": {},
+  "languageName": "Norsk bokmål",
+  "@languageName": {},
+  "backAction": "Gå tilbake",
+  "@backAction": {},
+  "continueAction": "Fortsett",
+  "@continueAction": {},
+  "strongPassword": "Sterkt passord",
+  "@strongPassword": {},
+  "weakPassword": "Svakt passord",
+  "@weakPassword": {}
 }
