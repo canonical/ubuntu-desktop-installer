@@ -20,7 +20,7 @@ class AllocateDiskSpacePage extends StatefulWidget {
     final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => AllocateDiskSpaceModel(service),
-      child: AllocateDiskSpacePage(),
+      child: const AllocateDiskSpacePage(),
     );
   }
 
@@ -74,13 +74,13 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
         children: <Widget>[
           PartitionBar(),
           const SizedBox(height: kContentSpacing / 2),
-          PartitionLegend(),
+          const PartitionLegend(),
           const SizedBox(height: kContentSpacing / 2),
           Expanded(child: PartitionTable(controller: _scrollController)),
           const SizedBox(height: kContentSpacing / 2),
-          PartitionButtonRow(),
+          const PartitionButtonRow(),
           const SizedBox(height: kContentSpacing),
-          BootDiskSelector(),
+          const BootDiskSelector(),
         ],
       ),
       actions: <WizardAction>[

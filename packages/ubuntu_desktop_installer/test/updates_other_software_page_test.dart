@@ -43,8 +43,8 @@ void main() {
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {
-          '/': (_) => buildPage(model),
-          '/next': (_) => Text('Next page'),
+          '/': WizardRoute(builder: (_) => buildPage(model)),
+          '/next': WizardRoute(builder: (_) => Text('Next page')),
         },
       ),
     );
@@ -128,8 +128,12 @@ void main() {
       home: Provider<SubiquityClient>(
         create: (_) => MockSubiquityClient(),
         child: Wizard(
-          routes: {'/': UpdatesOtherSoftwarePage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: UpdatesOtherSoftwarePage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

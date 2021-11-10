@@ -20,7 +20,7 @@ class ConfigurationUIPage extends StatefulWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => ConfigurationUIModel(client),
-      child: ConfigurationUIPage(),
+      child: const ConfigurationUIPage(),
     );
   }
 

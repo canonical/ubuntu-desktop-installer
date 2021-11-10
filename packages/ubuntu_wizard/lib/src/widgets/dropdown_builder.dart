@@ -41,7 +41,7 @@ class DropdownBuilder<T> extends StatelessWidget {
   final List<T> values;
 
   /// Called when the user selects an item.
-  final ValueChanged<T> onSelected;
+  final ValueChanged<T?> onSelected;
 
   /// Builds a dropdown item for the given `value`.
   ///
@@ -50,15 +50,24 @@ class DropdownBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<T>(
-      value: selected,
-      items: values.map((value) {
-        return DropdownMenuItem<T>(
-          value: value,
-          child: itemBuilder(context, value, null),
-        );
-      }).toList(),
-      onChanged: (value) => onSelected(value!),
+    return ButtonTheme(
+      alignedDropdown: true,
+      child: DropdownButtonHideUnderline(
+        child: InputDecorator(
+          decoration: const InputDecoration(contentPadding: EdgeInsets.zero)
+              .applyDefaults(Theme.of(context).inputDecorationTheme),
+          child: DropdownButton<T>(
+            value: selected,
+            items: values.map((value) {
+              return DropdownMenuItem<T>(
+                value: value,
+                child: itemBuilder(context, value, null),
+              );
+            }).toList(),
+            onChanged: onSelected,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,0 +1,16 @@
+{
+  "@@locale": "de",
+  "countryCode": "DE",
+
+  "languageName": "Deutsch",
+  "@languageName": {
+    "description": "Der Anzeigename für die Sprache. Leer lassen, um die Sprache aus der Liste der Sprachen im Begrüßungsbildschirm auszuschließen."
+  },
+
+  "backAction": "Zurück",
+  "continueAction": "Weiter",
+
+  "strongPassword": "Starkes Passwort",
+  "moderatePassword": "Mittelmäßiges Passwort",
+  "weakPassword": "Schwaches Passwort"
+}

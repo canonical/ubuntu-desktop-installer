@@ -37,7 +37,7 @@ Future<void> showAdvancedFeaturesDialog(
                 ),
                 const SizedBox(height: kContentSpacing),
                 RadioButton<AdvancedFeature>(
-                  title: Text(lang.installationTypeLVM),
+                  title: Text(lang.installationTypeLVM('Ubuntu')),
                   value: AdvancedFeature.lvm,
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
@@ -45,7 +45,7 @@ Future<void> showAdvancedFeaturesDialog(
                 RadioIconTile(
                   contentPadding: EdgeInsets.zero,
                   title: CheckButton(
-                    title: Text(lang.installationTypeEncrypt),
+                    title: Text(lang.installationTypeEncrypt('Ubuntu')),
                     subtitle: Text(lang.installationTypeEncryptInfo),
                     value: encryption.value,
                     onChanged: model.advancedFeature == AdvancedFeature.lvm

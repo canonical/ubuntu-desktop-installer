@@ -23,7 +23,7 @@ class KeyboardLayoutPage extends StatefulWidget {
         client: Provider.of<SubiquityClient>(context, listen: false),
         keyboardService: Provider.of<KeyboardService>(context, listen: false),
       ),
-      child: KeyboardLayoutPage(),
+      child: const KeyboardLayoutPage(),
     );
   }
 
@@ -87,21 +87,24 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: RoundedListView.builder(
-                    controller: _layoutListScrollController,
-                    itemCount: model.layoutCount,
-                    itemBuilder: (context, index) {
-                      return AutoScrollTag(
-                        index: index,
-                        key: ValueKey(index),
-                        controller: _layoutListScrollController,
-                        child: ListTile(
-                          title: Text(model.layoutName(index)),
-                          selected: index == model.selectedLayoutIndex,
-                          onTap: () => model.selectLayout(index),
-                        ),
-                      );
-                    },
+                  child: FocusTraversalGroup(
+                    policy: WidgetOrderTraversalPolicy(),
+                    child: RoundedListView.builder(
+                      controller: _layoutListScrollController,
+                      itemCount: model.layoutCount,
+                      itemBuilder: (context, index) {
+                        return AutoScrollTag(
+                          index: index,
+                          key: ValueKey(index),
+                          controller: _layoutListScrollController,
+                          child: ListTile(
+                            title: Text(model.layoutName(index)),
+                            selected: index == model.selectedLayoutIndex,
+                            onTap: () => model.selectLayout(index),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 const SizedBox(width: 20),

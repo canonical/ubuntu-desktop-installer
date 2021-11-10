@@ -31,7 +31,7 @@ class ProfileSetupModel extends ChangeNotifier {
   set realname(String realname) => _realname.value = realname;
 
   /// The current username or a sanitized real name if not set.
-  String get username => _username.value ?? realname.sanitize();
+  String get username => _username.value ?? realname.sanitize().toLowerCase();
   set username(String username) => _username.value = username;
 
   /// The password for the profile.
@@ -46,7 +46,16 @@ class ProfileSetupModel extends ChangeNotifier {
   PasswordStrength get passwordStrength => estimatePasswordStrength(password);
 
   /// Whether to show the advanced options.
-  bool get showAdvancedOptions => _showAdvanced.value;
+  ///
+  /// NOTE: The advanced options cannot be skipped for now. This ensures that
+  /// the UI posts a `/wslconfbase` request. That way, the respective controller
+  /// in Subiquity is always marked as configured and the `wsl.conf` file is
+  /// forced to be written.
+  ///
+  /// More details:
+  /// https://github.com/canonical/ubuntu-desktop-installer/issues/431
+  ///
+  bool get showAdvancedOptions => true; // _showAdvanced.value;
   final _showAdvanced = ValueNotifier<bool>(false);
   set showAdvancedOptions(bool value) => _showAdvanced.value = value;
 

@@ -55,8 +55,9 @@ void main() {
     }
 
     testPasswordStrength('password', equals(PasswordStrength.weak));
-    testPasswordStrength('P4ssword', equals(PasswordStrength.moderate));
-    testPasswordStrength('P@ssw0rd123', equals(PasswordStrength.strong));
+    testPasswordStrength('P4ssword', equals(PasswordStrength.fair));
+    testPasswordStrength('P@555w0rD', equals(PasswordStrength.good));
+    testPasswordStrength('321Dr0w55@P', equals(PasswordStrength.strong));
   });
 
   test('notify changes', () {
@@ -85,10 +86,13 @@ void main() {
     model.confirmedPassword = 'password';
     expect(wasNotified, isTrue);
 
-    wasNotified = false;
-    expect(model.showAdvancedOptions, isFalse);
-    model.showAdvancedOptions = true;
-    expect(wasNotified, isTrue);
+    // NOTE: The advanced options cannot be skipped for now (#431).
+    //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+    //
+    // wasNotified = false;
+    // expect(model.showAdvancedOptions, isFalse);
+    // model.showAdvancedOptions = true;
+    // expect(wasNotified, isTrue);
   });
 
   test('validation', () {

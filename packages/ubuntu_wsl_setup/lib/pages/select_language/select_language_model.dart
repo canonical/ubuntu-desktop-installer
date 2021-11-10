@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/l10n.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
 
@@ -49,5 +50,10 @@ class SelectLanguageModel extends ChangeNotifier {
   /// Selects the given [locale].
   void selectLocale(Locale locale) {
     _selectedLanguageIndex = _languages.findBestMatch(locale);
+  }
+
+  /// Returns the [locale] defined in Subiquity server.
+  Future<Locale> getServerLocale() {
+    return _client.locale().then(parseLocale);
   }
 }

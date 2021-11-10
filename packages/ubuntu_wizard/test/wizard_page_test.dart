@@ -135,7 +135,7 @@ void main() {
       MaterialApp(
         localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
         home: Wizard(routes: {
-          '/': (_) {
+          '/': WizardRoute(builder: (_) {
             return Builder(builder: (context) {
               return WizardPage(
                 actions: <WizardAction>[
@@ -144,7 +144,7 @@ void main() {
                 ],
               );
             });
-          }
+          }),
         }),
       ),
     );

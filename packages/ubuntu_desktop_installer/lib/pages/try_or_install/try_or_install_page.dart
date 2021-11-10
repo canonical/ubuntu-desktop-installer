@@ -18,7 +18,7 @@ class TryOrInstallPage extends StatefulWidget {
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TryOrInstallModel(),
-      child: TryOrInstallPage(),
+      child: const TryOrInstallPage(),
     );
   }
 
@@ -33,7 +33,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: Text(lang.tryOrInstallPageTitle),
-      contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
+      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 150),
       content: Row(
         children: [
           Expanded(
@@ -50,8 +50,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
             child: OptionCard(
               selected: model.option == Option.tryUbuntu,
               imageAsset: 'assets/steering-wheel.png',
-              titleText: lang.tryUbuntu,
-              bodyText: lang.tryUbuntuDescription,
+              titleText: lang.tryUbuntu('Ubuntu'),
+              bodyText: lang.tryUbuntuDescription('Ubuntu'),
               onSelected: () => model.selectOption(Option.tryUbuntu),
             ),
           ),
@@ -60,8 +60,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
             child: OptionCard(
               selected: model.option == Option.installUbuntu,
               imageAsset: 'assets/hard-drive.png',
-              titleText: lang.installUbuntu,
-              bodyText: lang.installUbuntuDescription,
+              titleText: lang.installUbuntu('Ubuntu'),
+              bodyText: lang.installUbuntuDescription('Ubuntu'),
               onSelected: () => model.selectOption(Option.installUbuntu),
             ),
           ),

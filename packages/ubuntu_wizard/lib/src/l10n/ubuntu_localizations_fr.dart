@@ -8,27 +8,7 @@ class UbuntuLocalizationsFr extends UbuntuLocalizations {
   UbuntuLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get languageName => '';
-
-  @override
-  String get backAction => 'Go Back';
-
-  @override
-  String get continueAction => 'Continue';
-
-  @override
-  String get strongPassword => 'Strong password';
-
-  @override
-  String get moderatePassword => 'Moderate password';
-
-  @override
-  String get weakPassword => 'Weak password';
-}
-
-/// The translations for French, as used in France (`fr_FR`).
-class UbuntuLocalizationsFrFr extends UbuntuLocalizationsFr {
-  UbuntuLocalizationsFrFr(): super('fr_FR');
+  String get countryCode => 'FR';
 
   @override
   String get languageName => 'Français';
@@ -38,4 +18,16 @@ class UbuntuLocalizationsFrFr extends UbuntuLocalizationsFr {
 
   @override
   String get continueAction => 'Continuer';
+
+  @override
+  String get strongPassword => 'Mot de passe sûr';
+
+  @override
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
+
+  @override
+  String get weakPassword => 'Mot de passe trop faible';
 }

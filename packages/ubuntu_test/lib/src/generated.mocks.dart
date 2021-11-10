@@ -129,6 +129,11 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<_i3.Variant> variant() =>
+      (super.noSuchMethod(Invocation.method(#variant, []),
+              returnValue: Future<_i3.Variant>.value(_i3.Variant.SERVER))
+          as _i5.Future<_i3.Variant>);
+  @override
   _i5.Future<void> setVariant(_i3.Variant? variant) =>
       (super.noSuchMethod(Invocation.method(#setVariant, [variant]),
           returnValue: Future<void>.value(),
@@ -236,8 +241,9 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       (super.noSuchMethod(Invocation.method(#hasBitLocker, []),
           returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
   @override
-  _i5.Future<_i3.GuidedStorageResponse> getGuidedStorage(bool? wait) =>
-      (super.noSuchMethod(Invocation.method(#getGuidedStorage, [wait]),
+  _i5.Future<_i3.GuidedStorageResponse> getGuidedStorage({bool? wait = true}) =>
+      (super.noSuchMethod(
+              Invocation.method(#getGuidedStorage, [], {#wait: wait}),
               returnValue: Future<_i3.GuidedStorageResponse>.value(
                   _FakeGuidedStorageResponse_7()))
           as _i5.Future<_i3.GuidedStorageResponse>);
@@ -371,8 +377,11 @@ class MockSubiquityServer extends _i1.Mock implements _i7.SubiquityServer {
   }
 
   @override
-  _i5.Future<String> start(_i7.ServerMode? serverMode, [List<String>? args]) =>
-      (super.noSuchMethod(Invocation.method(#start, [serverMode, args]),
+  _i5.Future<String> start(_i7.ServerMode? serverMode,
+          {List<String>? args, Map<String, String>? environment}) =>
+      (super.noSuchMethod(
+          Invocation.method(
+              #start, [serverMode], {#args: args, #environment: environment}),
           returnValue: Future<String>.value('')) as _i5.Future<String>);
   @override
   _i5.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),

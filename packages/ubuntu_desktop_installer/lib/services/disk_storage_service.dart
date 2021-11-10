@@ -48,7 +48,7 @@ class DiskStorageService {
   /// Fetches the current guided storage configuration.
   Future<List<Disk>> getGuidedStorage() async {
     if (guidedStorage == null) {
-      await _client.getGuidedStorage(true).then(_updateGuidedStorage);
+      await _client.getGuidedStorage().then(_updateGuidedStorage);
     }
     return guidedStorage ?? const <Disk>[];
   }

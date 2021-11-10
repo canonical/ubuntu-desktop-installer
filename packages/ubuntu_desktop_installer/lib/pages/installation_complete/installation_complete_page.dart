@@ -17,7 +17,7 @@ class InstallationCompletePage extends StatelessWidget {
     final client = Provider.of<SubiquityClient>(context, listen: false);
     return Provider(
       create: (_) => InstallationCompleteModel(client),
-      child: InstallationCompletePage(),
+      child: const InstallationCompletePage(),
     );
   }
 
@@ -38,7 +38,7 @@ class InstallationCompletePage extends StatelessWidget {
                   width: 8,
                 ),
               ),
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 radius: 80,
                 backgroundImage: AssetImage(
                   'assets/version.png',

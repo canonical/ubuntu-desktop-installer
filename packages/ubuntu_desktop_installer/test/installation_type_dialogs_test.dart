@@ -32,7 +32,7 @@ void main() {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: localizationsDelegates,
           home: Wizard(
-            routes: {'/': (_) => InstallationTypePage()},
+            routes: {'/': WizardRoute(builder: (_) => InstallationTypePage())},
           ),
         ),
       ),
@@ -46,8 +46,8 @@ void main() {
         tester.lang.installationTypeZFS));
     await tester.pump();
 
-    await tester.tap(
-        find.widgetWithText(CheckButton, tester.lang.installationTypeEncrypt));
+    await tester.tap(find.widgetWithText(
+        CheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester

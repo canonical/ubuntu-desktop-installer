@@ -171,10 +171,3 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
 }
-
-/// The translations for French, as used in France (`fr_FR`).
-class AppLocalizationsFrFr extends AppLocalizationsFr {
-  AppLocalizationsFrFr(): super('fr_FR');
-
-
-}

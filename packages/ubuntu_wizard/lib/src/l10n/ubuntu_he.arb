@@ -1,0 +1,21 @@
+{
+  "@@locale": "he",
+  "countryCode": "IL",
+  "@countryCode": {},
+  "languageName": "עברית",
+  "@languageName": {},
+  "backAction": "חזרה אחורה",
+  "@backAction": {},
+  "continueAction": "להמשיך",
+  "@continueAction": {},
+  "moderatePassword": "סיסמה בינונית",
+  "@moderatePassword": {},
+  "strongPassword": "סיסמה חזקה",
+  "@strongPassword": {},
+  "weakPassword": "סיסמה חלשה",
+  "@weakPassword": {},
+  "fairPassword": "סיסמה הוגנת",
+  "@fairPassword": {},
+  "goodPassword": "סיסמה טובה",
+  "@goodPassword": {}
+}

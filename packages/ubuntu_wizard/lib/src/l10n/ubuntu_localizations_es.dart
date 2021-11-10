@@ -8,27 +8,7 @@ class UbuntuLocalizationsEs extends UbuntuLocalizations {
   UbuntuLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get languageName => '';
-
-  @override
-  String get backAction => 'Go Back';
-
-  @override
-  String get continueAction => 'Continue';
-
-  @override
-  String get strongPassword => 'Strong password';
-
-  @override
-  String get moderatePassword => 'Moderate password';
-
-  @override
-  String get weakPassword => 'Weak password';
-}
-
-/// The translations for Spanish Castilian, as used in Spain (`es_ES`).
-class UbuntuLocalizationsEsEs extends UbuntuLocalizationsEs {
-  UbuntuLocalizationsEsEs(): super('es_ES');
+  String get countryCode => 'ES';
 
   @override
   String get languageName => 'Español';
@@ -38,4 +18,16 @@ class UbuntuLocalizationsEsEs extends UbuntuLocalizationsEs {
 
   @override
   String get continueAction => 'Continuar';
+
+  @override
+  String get strongPassword => 'Contraseña fuerte';
+
+  @override
+  String get fairPassword => 'Fair password';
+
+  @override
+  String get goodPassword => 'Good password';
+
+  @override
+  String get weakPassword => 'Contraseña débil';
 }

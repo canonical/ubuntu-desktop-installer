@@ -21,7 +21,7 @@ class InstallationSlidesPage extends StatefulWidget {
     final journal = Provider.of<JournalService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (_) => InstallationSlidesModel(client, journal),
-      child: InstallationSlidesPage(),
+      child: const InstallationSlidesPage(),
     );
   }
 

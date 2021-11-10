@@ -20,7 +20,7 @@ class SelectGuidedStoragePage extends StatefulWidget {
     final service = Provider.of<DiskStorageService>(context, listen: false);
     return ChangeNotifierProvider(
       create: (context) => SelectGuidedStorageModel(service),
-      child: SelectGuidedStoragePage(),
+      child: const SelectGuidedStoragePage(),
     );
   }
 
@@ -59,7 +59,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     final model = Provider.of<SelectGuidedStorageModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.selectGuidedStoragePageTitle),
+      title: Text(lang.selectGuidedStoragePageTitle('Ubuntu')),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -71,7 +71,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                 child: DropdownBuilder<int>(
                   values: List.generate(model.storages.length, (i) => i),
                   selected: model.selectedIndex,
-                  onSelected: model.selectStorage,
+                  onSelected: (i) => model.selectStorage(i!),
                   itemBuilder: (context, index, child) {
                     final storage = model.storages[index];
                     return Text(

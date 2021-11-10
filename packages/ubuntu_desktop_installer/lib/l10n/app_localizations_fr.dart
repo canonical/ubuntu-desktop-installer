@@ -8,500 +8,33 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
-
-  @override
-  String get windowTitle => 'Install Ubuntu';
-
-  @override
-  String get cancelButtonText => 'Cancel';
-
-  @override
-  String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'No';
-
-  @override
-  String get restartButtonText => 'Restart';
-
-  @override
-  String get revertButtonText => 'Revert';
-
-  @override
-  String get yesButtonText => 'Yes';
-
-  @override
-  String get welcome => 'Welcome';
-
-  @override
-  String get tryOrInstallPageTitle => 'Try or install';
-
-  @override
-  String get repairInstallation => 'Repair installation';
-
-  @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
-
-  @override
-  String get tryUbuntu => 'Try Ubuntu';
-
-  @override
-  String get tryUbuntuDescription => 'You can try Ubuntu without making any changes to your computer.';
-
-  @override
-  String get installUbuntu => 'Install Ubuntu';
-
-  @override
-  String get installUbuntuDescription => 'Install Ubuntu alongside (or instead of) your current operating system. This shouldn\'t take too long.';
-
-  @override
-  String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
-  }
-
-  @override
-  String get turnOffRST => 'Turn off RST';
-
-  @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
-
-  @override
-  String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
-  }
-
-  @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
-
-  @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
-
-  @override
-  String get typeToTest => 'Type here to test your keyboard';
-
-  @override
-  String get detectLayout => 'Detect Keyboard Layout';
-
-  @override
-  String get pressOneKey => 'Please press one of the following keys:';
-
-  @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
-
-  @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
-
-  @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
-
-  @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
-
-  @override
-  String get chooseSecurityKey => 'Choose a security key';
-
-  @override
-  String get confirmSecurityKey => 'Confirm the security key';
-
-  @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
-
-  @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
-
-  @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
-
-  @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
-
-  @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
-
-  @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
-
-  @override
-  String get normalInstallationTitle => 'Normal installation';
-
-  @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
-
-  @override
-  String get minimalInstallationTitle => 'Minimal installation';
-
-  @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
-
-  @override
-  String get otherOptions => 'Other options';
-
-  @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
-
-  @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
-
-  @override
-  String get installationTypeTitle => 'Installation type';
-
-  @override
-  String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
-  }
-
-  @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
-
-  @override
-  String get installationTypeErase => 'Erase disk and install Ubuntu';
-
-  @override
-  String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
-  }
-
-  @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
-
-  @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
-
-  @override
-  String get installationTypeNone => 'None';
-
-  @override
-  String get installationTypeNoneSelected => 'None selected';
-
-  @override
-  String get installationTypeLVM => 'Use LVM with the new Ubuntu installation';
-
-  @override
-  String get installationTypeLVMSelected => 'LVM selected';
-
-  @override
-  String get installationTypeEncrypt => 'Encrypt the new Ubuntu installation for security';
-
-  @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
-
-  @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
-
-  @override
-  String get installationTypeZFSSelected => 'ZFS selected';
-
-  @override
-  String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
-  }
-
-  @override
-  String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
-  }
-
-  @override
-  String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
-  }
-
-  @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
-
-  @override
-  String get installationTypeManual => 'Something else';
-
-  @override
-  String get installationTypeManualInfo => 'You can create or resize partitions yourself, or choose multiple partitions for Ubuntu';
-
-  @override
-  String get selectGuidedStoragePageTitle => 'Erase disk and install Ubuntu';
-
-  @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
-
-  @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
-
-  @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
-
-  @override
-  String get allocateDiskSpace => 'Allocate disk space';
-
-  @override
-  String get startInstallingButtonText => 'Start Installing';
-
-  @override
-  String get diskHeadersDevice => 'Device';
-
-  @override
-  String get diskHeadersType => 'Type';
-
-  @override
-  String get diskHeadersMountPoint => 'Mount point';
-
-  @override
-  String get diskHeadersSize => 'Size';
-
-  @override
-  String get diskHeadersUsed => 'Used';
-
-  @override
-  String get diskHeadersSystem => 'System';
-
-  @override
-  String get diskHeadersFormat => 'Format';
-
-  @override
-  String get freeDiskSpace => 'free space';
-
-  @override
-  String get newPartitionTable => 'New partition table';
-
-  @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
-
-  @override
-  String get partitionCreateTitle => 'Create partition';
-
-  @override
-  String get partitionEditTitle => 'Edit partition';
-
-  @override
-  String get partitionSizeLabel => 'Size:';
-
-  @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'KB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
-  String get partitionTypeLabel => 'Type for the new partition:';
-
-  @override
-  String get partitionTypePrimary => 'Primary';
-
-  @override
-  String get partitionTypeLogical => 'Logical';
-
-  @override
-  String get partitionLocationLabel => 'Location for the new partition:';
-
-  @override
-  String get partitionLocationBeginning => 'Beginning of this space';
-
-  @override
-  String get partitionLocationEnd => 'End of this space';
-
-  @override
-  String get partitionFormatLabel => 'Used as:';
-
-  @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 file system';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
-
-  @override
-  String get partitionFormatJfs => 'JFS journaling file system';
-
-  @override
-  String get partitionFormatXfs => 'XFS journaling file system';
-
-  @override
-  String get partitionFormatFat => 'FAT file system';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 file system';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 file system';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 file system';
-
-  @override
-  String get partitionFormatSwap => 'Swap area';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
-
-  @override
-  String get partitionFormatVfat => 'VFAT file system';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS file system';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
-
-  @override
-  String get partitionErase => 'Format the partition';
-
-  @override
-  String get partitionMountPointLabel => 'Mount point:';
-
-  @override
-  String get whoAreYouPageTitle => 'Who are you?';
-
-  @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
-
-  @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
-
-  @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
-
-  @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
-
-  @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
-
-  @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
-
-  @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
-
-  @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
-
-  @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
-
-  @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
-
-  @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
-
-  @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
-
-  @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
-
-  @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
-
-  @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
-
-  @override
-  String get writeChangesToDisk => 'Write changes to disk';
-
-  @override
-  String get writeChangesFallbackSerial => 'disk';
-
-  @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
-
-  @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
-    return '$serial ($path)';
-  }
-
-  @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
-
-  @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
-  }
-
-  @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
-  }
-
-  @override
-  String get chooseYourLookPageTitle => 'Choose your look';
-
-  @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
-
-  @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
-
-  @override
-  String get chooseYourLookPageLightSetting => 'Light';
-
-  @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
-
-  @override
-  String get installationCompleteTitle => 'Installation complete';
-
-  @override
-  String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
-  }
-
-  @override
-  String restartInto(Object system) {
-    return 'Restart into $system';
-  }
-
-  @override
-  String get shutdown => 'Shut Down';
-
-  @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
-
-  @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
-
-  @override
-  String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
-  }
-
-  @override
-  String get restartIntoWindows => 'Restart Into Windows';
-}
-
-/// The translations for French, as used in France (`fr_FR`).
-class AppLocalizationsFrFr extends AppLocalizationsFr {
-  AppLocalizationsFrFr(): super('fr_FR');
-
-  @override
   String get appTitle => 'Programme d’installation du bureau Ubuntu';
 
   @override
-  String get windowTitle => 'Installer Ubuntu';
+  String windowTitle(Object RELEASE) {
+    return 'Installer Ubuntu';
+  }
+
+  @override
+  String get cancelButtonText => 'Annuler';
+
+  @override
+  String get changeButtonText => 'Changer';
+
+  @override
+  String get okButtonText => 'Ok';
+
+  @override
+  String get noButtonText => 'Non';
 
   @override
   String get restartButtonText => 'Redémarrer';
+
+  @override
+  String get revertButtonText => 'Rétablir';
+
+  @override
+  String get yesButtonText => 'Oui';
 
   @override
   String get welcome => 'Bienvenue';
@@ -516,16 +49,24 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get repairInstallationDescription => 'La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres.';
 
   @override
-  String get tryUbuntu => 'Essayer Ubuntu';
+  String tryUbuntu(Object RELEASE) {
+    return 'Essayer Ubuntu';
+  }
 
   @override
-  String get tryUbuntuDescription => 'Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur.';
+  String tryUbuntuDescription(Object RELEASE) {
+    return 'Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur.';
+  }
 
   @override
-  String get installUbuntu => 'Installer Ubuntu';
+  String installUbuntu(Object RELEASE) {
+    return 'Installer Ubuntu';
+  }
 
   @override
-  String get installUbuntuDescription => 'Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.';
+  String installUbuntuDescription(Object RELEASE) {
+    return 'Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.';
+  }
 
   @override
   String releaseNotesLabel(Object url) {
@@ -547,7 +88,7 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get keyboardLayoutPageTitle => 'Disposition du clavier';
 
   @override
-  String get chooseYourKeyboardLayout => 'Indiquez la disposition de votre clavier :';
+  String get chooseYourKeyboardLayout => 'Indiquez la disposition de votre clavier :';
 
   @override
   String get typeToTest => 'Saisissez du texte ici pour tester votre clavier';
@@ -556,10 +97,43 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get detectLayout => 'Détecter la disposition du clavier';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Mises à jour et logiciels supplémentaires';
+  String get pressOneKey => 'Veuillez appuyer sur l\'une des touches suivantes :';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Quelles applications souhaitez-vous installer pour commencer?';
+  String get isKeyPresent => 'Cette touche est-elle présente sur votre clavier ?';
+
+  @override
+  String get configureSecureBootTitle => 'Configurer Secure Boot';
+
+  @override
+  String get configureSecureBootDescription => 'Vous avez choisi d\'installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l\'entrer quand le système démarrera.';
+
+  @override
+  String get configureSecureBootOption => 'Configurer Secure Boot';
+
+  @override
+  String get chooseSecurityKey => 'Choisir un code de sécurité';
+
+  @override
+  String get confirmSecurityKey => 'Confirmer le code de sécurité';
+
+  @override
+  String get dontInstallDriverSoftwareNow => 'Ne pas installer le pilote maintenant';
+
+  @override
+  String get dontInstallDriverSoftwareNowDescription => 'Vous pouvez l\'installer ultérieurement depuis Logiciel & Mises à jour.';
+
+  @override
+  String get configureSecureBootSecurityKeyRequired => 'Le code de sécurité est requis';
+
+  @override
+  String get secureBootSecurityKeysDontMatch => 'Les codes de sécurité ne correspondent pas';
+
+  @override
+  String get updatesOtherSoftwarePageTitle => 'Mises à jour et autres logiciels';
+
+  @override
+  String get updatesOtherSoftwarePageDescription => 'Quelles applications souhaitez-vous installer pour commencer ?';
 
   @override
   String get normalInstallationTitle => 'Installation normale';
@@ -571,7 +145,7 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get minimalInstallationTitle => 'Installation minimale';
 
   @override
-  String get minimalInstallationSubtitle => 'Navigateur internet et utilitaires de base.';
+  String get minimalInstallationSubtitle => 'Navigateur web et utilitaires de base.';
 
   @override
   String get otherOptions => 'Autres options';
@@ -583,13 +157,133 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get installThirdPartySubtitle => 'Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires.';
 
   @override
+  String get chooseSecurityKeyTitle => 'Choisir un code de sécurité';
+
+  @override
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre.\n\nAucun autre fichier en dehors de Ubuntu ne sera chiffré.';
+  }
+
+  @override
+  String get chooseSecurityKeyHint => 'Choisir un code de sécurité';
+
+  @override
+  String get chooseSecurityKeyConfirmHint => 'Confirmer le code de sécurité';
+
+  @override
+  String get chooseSecurityKeyRequired => 'Un code de sécurité est requis';
+
+  @override
+  String get chooseSecurityKeyMismatch => 'Les codes de sécurité ne correspondent pas';
+
+  @override
+  String chooseSecurityKeyWarning(Object color) {
+    return '<font color=\"$color\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si vous en avez besoin, notez votre clé et conservez-la dans un endroit sûr.';
+  }
+
+  @override
+  String get installationTypeTitle => 'Type d’installation';
+
+  @override
+  String installationTypeOSDetected(Object os) {
+    return 'Cet ordinateur est installé avec $os. Que voulez-vous faire ?';
+  }
+
+  @override
+  String get installationTypeNoOSDetected => 'Aucun système d’exploitation n’a été détecté sur cet ordinateur. Que voulez-vous faire ?';
+
+  @override
+  String installationTypeErase(Object DISTRO) {
+    return 'Effacer le disque et installer Ubuntu';
+  }
+
+  @override
+  String installationTypeEraseWarning(Object color) {
+    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d\'exploitations.';
+  }
+
+  @override
+  String get installationTypeAdvancedLabel => 'Fonctions avancées ...';
+
+  @override
+  String get installationTypeAdvancedTitle => 'Fonctions avancées';
+
+  @override
+  String get installationTypeNone => 'Aucune';
+
+  @override
+  String get installationTypeNoneSelected => 'Aucune sélectionnée';
+
+  @override
+  String installationTypeLVM(Object RELEASE) {
+    return 'Utiliser LVM pour la nouvelle installation Ubuntu';
+  }
+
+  @override
+  String get installationTypeLVMSelected => 'LVM sélectionné';
+
+  @override
+  String installationTypeEncrypt(Object RELEASE) {
+    return 'Chiffrer la nouvelle installation de Ubuntu pour la sécurité';
+  }
+
+  @override
+  String get installationTypeEncryptInfo => 'Vous allez choisir une clé de sécurité à l\'étape suivante.';
+
+  @override
+  String get installationTypeZFS => 'EXPERIMENTAL : Effacer le disque et utiliser ZFS';
+
+  @override
+  String get installationTypeZFSSelected => 'ZFS sélectionné';
+
+  @override
+  String installationTypeReinstall(Object os) {
+    return 'Supprimer $os et réinstaller';
+  }
+
+  @override
+  String installationTypeReinstallWarning(Object color, Object os) {
+    return '<font color=\"$color\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les fichiers de $os.';
+  }
+
+  @override
+  String installationTypeAlongside(Object product, Object os) {
+    return 'Installer $product à côté de $os';
+  }
+
+  @override
+  String get installationTypeAlongsideInfo => 'Les documents, musiques et autres fichiers personnels seront conservés. Vous pouvez choisir le système d’exploitation à lancer au moment du démarrage de l’ordinateur.';
+
+  @override
+  String get installationTypeManual => 'Autre chose';
+
+  @override
+  String installationTypeManualInfo(Object DISTRO) {
+    return 'Vous pouvez créer ou redimensionner les partitions vous-même, ou choisir plusieurs partitions pour Ubuntu';
+  }
+
+  @override
+  String selectGuidedStoragePageTitle(Object DISTRO) {
+    return 'Effacer le disque et installer Ubuntu';
+  }
+
+  @override
+  String get selectGuidedStorageDropdownLabel => 'Sélectionnez le disque :';
+
+  @override
+  String get selectGuidedStorageInfoLabel => 'La totalité du disque sera utilisée :';
+
+  @override
+  String get selectGuidedStorageInstallNow => 'Installer maintenant';
+
+  @override
   String get allocateDiskSpace => 'Allouer de l’espace disque';
 
   @override
   String get startInstallingButtonText => 'Commencer l’installation';
 
   @override
-  String get diskHeadersDevice => 'Disque';
+  String get diskHeadersDevice => 'Périphérique';
 
   @override
   String get diskHeadersType => 'Type';
@@ -608,6 +302,159 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get diskHeadersFormat => 'Formatter';
+
+  @override
+  String get freeDiskSpace => 'espace libre';
+
+  @override
+  String get newPartitionTable => 'Nouvelle table de partition';
+
+  @override
+  String get bootLoaderDevice => 'Périphérique pour installer le chargeur d\'amorçage';
+
+  @override
+  String get partitionCreateTitle => 'Créer une partition';
+
+  @override
+  String get partitionEditTitle => 'Modifier la partition';
+
+  @override
+  String get partitionSizeLabel => 'Taille :';
+
+  @override
+  String get partitionUnitB => 'o';
+
+  @override
+  String get partitionUnitKB => 'ko';
+
+  @override
+  String get partitionUnitMB => 'Mo';
+
+  @override
+  String get partitionUnitGB => 'Go';
+
+  @override
+  String get partitionTypeLabel => 'Type pour la nouvelle partition :';
+
+  @override
+  String get partitionTypePrimary => 'Primaire';
+
+  @override
+  String get partitionTypeLogical => 'Logique';
+
+  @override
+  String get partitionLocationLabel => 'Emplacement pour la nouvelle partition :';
+
+  @override
+  String get partitionLocationBeginning => 'Début de cet espace';
+
+  @override
+  String get partitionLocationEnd => 'Fin de cet espace';
+
+  @override
+  String get partitionFormatLabel => 'Utilisée comme :';
+
+  @override
+  String get partitionFormatExt4 => 'Système de fichiers Ext4 journalisé';
+
+  @override
+  String get partitionFormatExt3 => 'Système de fichiers Ext3 journalisé';
+
+  @override
+  String get partitionFormatExt2 => 'Système de fichiers Ext2';
+
+  @override
+  String get partitionFormatBtrfs => 'Système de fichiers btrfs journalisé';
+
+  @override
+  String get partitionFormatJfs => 'Système de fichiers JFS journalisé';
+
+  @override
+  String get partitionFormatXfs => 'Système de fichiers XFS journalisé';
+
+  @override
+  String get partitionFormatFat => 'Système de fichiers FAT';
+
+  @override
+  String get partitionFormatFat12 => 'Système de fichiers FAT12';
+
+  @override
+  String get partitionFormatFat16 => 'Système de fichiers FAT16';
+
+  @override
+  String get partitionFormatFat32 => 'Système de fichiers FAT32';
+
+  @override
+  String get partitionFormatSwap => 'Espace de swap';
+
+  @override
+  String get partitionFormatIso9660 => 'Système de fichiers ISO 9660';
+
+  @override
+  String get partitionFormatVfat => 'Système de fichiers VFAT';
+
+  @override
+  String get partitionFormatNtfs => 'Système de fichiers NTFS';
+
+  @override
+  String get partitionFormatReiserFS => 'Système de fichiers ReiserFS';
+
+  @override
+  String get partitionFormatZfsroot => 'Système de fichiers racine ZFS';
+
+  @override
+  String get partitionErase => 'Formatter la partition';
+
+  @override
+  String get partitionMountPointLabel => 'Point de montage :';
+
+  @override
+  String get whoAreYouPageTitle => 'Qui êtes-vous ?';
+
+  @override
+  String get whoAreYouPageAutoLogin => 'Ouvrir la session automatiquement';
+
+  @override
+  String get whoAreYouPageRequirePassword => 'Demander mon mot de passe pour ouvrir une session';
+
+  @override
+  String get whoAreYouPageRealNameLabel => 'Votre nom';
+
+  @override
+  String get whoAreYouPageRealNameRequired => 'Votre nom est requis';
+
+  @override
+  String get whoAreYouPageComputerNameLabel => 'Le nom de votre ordinateur';
+
+  @override
+  String get whoAreYouPageComputerNameInfo => 'Le nom que vous voulez utiliser quand votre ordinateur communique avec les autres ordinateurs.';
+
+  @override
+  String get whoAreYouPageComputerNameRequired => 'Un nom pour l\'ordinateur est requis';
+
+  @override
+  String get whoAreYouPageInvalidComputerName => 'Ce nom d\'ordinateur est invalide';
+
+  @override
+  String get whoAreYouPageUsernameLabel => 'Choisir un nom d’utilisateur';
+
+  @override
+  String get whoAreYouPageUsernameRequired => 'Un nom d\'utilisateur est requis';
+
+  @override
+  String get whoAreYouPageInvalidUsername => 'Ce nom d\'utilisateur est invalide';
+
+  @override
+  String get whoAreYouPagePasswordLabel => 'Choisir un mot de passe';
+
+  @override
+  String get whoAreYouPagePasswordRequired => 'Un mot de passe est requis';
+
+  @override
+  String get whoAreYouPageConfirmPasswordLabel => 'Confirmez votre mot de passe';
+
+  @override
+  String get whoAreYouPagePasswordMismatch => 'Les mots de passe ne correspondent pas';
 
   @override
   String get writeChangesToDisk => 'Appliquer les changements sur les disques';
@@ -630,6 +477,16 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get writeChangesPartitionsHeader => 'Les partitions suivantes seront formattées :';
 
   @override
+  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'la partition #$disk${partition} en $format est utilisée pour $mount';
+  }
+
+  @override
+  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} en $format';
+  }
+
+  @override
   String get chooseYourLookPageTitle => 'Choisissez l’apparence';
 
   @override
@@ -646,4 +503,34 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get chooseYourLookPageDarkBodyText => 'Sombre et foncé';
+
+  @override
+  String get installationCompleteTitle => 'Installation terminée';
+
+  @override
+  String readyToUse(Object system) {
+    return '**$system** est installé et prêt à être utilisé.';
+  }
+
+  @override
+  String restartInto(Object system) {
+    return 'Redémarrer sous $system';
+  }
+
+  @override
+  String get shutdown => 'Éteindre';
+
+  @override
+  String get turnOffBitlockerTitle => 'Désactiver BitLocker';
+
+  @override
+  String get turnOffBitlockerDescription => 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d\'installer Ubuntu.';
+
+  @override
+  String turnOffBitlockerLinkInstructions(Object url) {
+    return 'Pour obtenir des instructions, ouvrez cette page sur un téléphone ou un autre appareil : <a href=\"https://$url\">$url</a>';
+  }
+
+  @override
+  String get restartIntoWindows => 'Redémarrer sous Windows';
 }

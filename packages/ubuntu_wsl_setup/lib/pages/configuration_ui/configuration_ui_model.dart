@@ -13,7 +13,7 @@ class ConfigurationUIModel extends ChangeNotifier {
   }
 
   final SubiquityClient _client;
-  final _conf = ValueNotifier(WSLConfigurationAdvanced());
+  final _conf = ValueNotifier(const WSLConfigurationAdvanced());
 
   /// Whether legacy GUI integration is enabled.
   bool get interopGuiintegration => _conf.value.interopGuiintegration ?? false;

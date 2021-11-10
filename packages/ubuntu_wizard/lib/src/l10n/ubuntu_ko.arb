@@ -1,0 +1,17 @@
+{
+  "@@locale": "ko",
+  "countryCode": "KR",
+  "@countryCode": {},
+  "languageName": "한국어",
+  "@languageName": {},
+  "backAction": "뒤로 가기",
+  "@backAction": {},
+  "strongPassword": "강한 암호",
+  "@strongPassword": {},
+  "weakPassword": "약한 암호",
+  "@weakPassword": {},
+  "continueAction": "계속하기",
+  "@continueAction": {},
+  "moderatePassword": "양호한 암호",
+  "@moderatePassword": {}
+}

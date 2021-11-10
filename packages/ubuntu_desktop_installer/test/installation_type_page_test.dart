@@ -46,8 +46,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -84,7 +88,7 @@ void main() {
     await tester.pumpWidget(buildApp(model));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
-        tester.lang.installationTypeErase);
+        tester.lang.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.erase).called(1);
@@ -118,7 +122,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage(true))
+    when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
 
     await tester.pumpWidget(MaterialApp(
@@ -129,8 +133,12 @@ void main() {
           Provider(create: (_) => DiskStorageService(client)),
         ],
         child: Wizard(
-          routes: {'/': InstallationTypePage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: InstallationTypePage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

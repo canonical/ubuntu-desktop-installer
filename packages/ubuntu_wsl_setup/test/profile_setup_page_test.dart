@@ -54,8 +54,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -107,7 +111,8 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     expect(find.text(tester.ulang.weakPassword), findsNothing);
-    expect(find.text(tester.ulang.moderatePassword), findsNothing);
+    expect(find.text(tester.ulang.fairPassword), findsNothing);
+    expect(find.text(tester.ulang.goodPassword), findsNothing);
     expect(find.text(tester.ulang.strongPassword), findsNothing);
   });
 
@@ -121,14 +126,24 @@ void main() {
     expect(find.text(tester.ulang.weakPassword), findsOneWidget);
   });
 
-  testWidgets('moderate password', (tester) async {
+  testWidgets('fair password', (tester) async {
     final model = buildModel(
       password: 'not empty',
-      passwordStrength: PasswordStrength.moderate,
+      passwordStrength: PasswordStrength.fair,
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.moderatePassword), findsOneWidget);
+    expect(find.text(tester.ulang.fairPassword), findsOneWidget);
+  });
+
+  testWidgets('good password', (tester) async {
+    final model = buildModel(
+      password: 'not empty',
+      passwordStrength: PasswordStrength.good,
+    );
+    await tester.pumpWidget(buildApp(tester, model));
+
+    expect(find.text(tester.ulang.goodPassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {
@@ -161,21 +176,24 @@ void main() {
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
 
-  testWidgets('advanced options', (tester) async {
-    final model = buildModel(showAdvancedOptions: true);
-    await tester.pumpWidget(buildApp(tester, model));
+  // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
+  //       See [ProfileSetupModel.showAdvancedOptions] for more details.
+  //
+  // testWidgets('advanced options', (tester) async {
+  //   final model = buildModel(showAdvancedOptions: true);
+  //   await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.profileSetupShowAdvancedOptions);
-    expect(checkbox, findsOneWidget);
-    expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   final checkbox = find.widgetWithText(
+  //       CheckButton, tester.lang.profileSetupShowAdvancedOptions);
+  //   expect(checkbox, findsOneWidget);
+  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
 
-    when(model.showAdvancedOptions).thenReturn(true);
+  //   when(model.showAdvancedOptions).thenReturn(true);
 
-    await tester.tap(checkbox);
-    verify(model.showAdvancedOptions = false).called(1);
-    expect(tester.widget<CheckButton>(checkbox).value, isTrue);
-  });
+  //   await tester.tap(checkbox);
+  //   verify(model.showAdvancedOptions = false).called(1);
+  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  // });
 
   testWidgets('load and save profile setup', (tester) async {
     final model = buildModel(isValid: true);
@@ -217,8 +235,12 @@ void main() {
       home: Provider<SubiquityClient>.value(
         value: client,
         child: Wizard(
-          routes: {'/': ProfileSetupPage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: ProfileSetupPage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

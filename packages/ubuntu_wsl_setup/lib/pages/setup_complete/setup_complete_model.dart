@@ -12,7 +12,7 @@ class SetupCompleteModel extends ChangeNotifier with SystemShutdown {
   @override
   final SubiquityClient client;
 
-  final _identity = ValueNotifier(IdentityData());
+  final _identity = ValueNotifier(const IdentityData());
 
   /// The username for the profile.
   String get username => _identity.value.username ?? '';

@@ -8,6 +8,16 @@ part 'types.g.dart';
 
 enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
 
+extension VariantString on Variant {
+  static Variant fromString(String value) {
+    return Variant.values.firstWhere((v) => value == v.toVariantString());
+  }
+
+  String toVariantString() {
+    return toString().split('.').last.toLowerCase();
+  }
+}
+
 @freezed
 class SourceSelection with _$SourceSelection {
   const factory SourceSelection({

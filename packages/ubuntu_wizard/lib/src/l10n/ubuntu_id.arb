@@ -1,0 +1,17 @@
+{
+  "@@locale": "id",
+  "countryCode": "ID",
+  "@countryCode": {},
+  "languageName": "Bahasa Indonesia",
+  "@languageName": {},
+  "moderatePassword": "Kata sandi sedang",
+  "@moderatePassword": {},
+  "weakPassword": "Kata sandi yang lemah",
+  "@weakPassword": {},
+  "backAction": "Kembali",
+  "@backAction": {},
+  "continueAction": "Terus",
+  "@continueAction": {},
+  "strongPassword": "Kata sandi yang kuat",
+  "@strongPassword": {}
+}

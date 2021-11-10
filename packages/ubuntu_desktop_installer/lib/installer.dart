@@ -1,39 +1,107 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart' as yaru;
 
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
 
+export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
+
+const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
+
+void runInstallerApp(List<String> args, {FlavorData? flavor}) {
+  final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('machine-config',
+        valueHelp: 'path',
+        defaultsTo: 'examples/simple.json',
+        help: 'Path of the machine config (dry-run only)');
+  })!;
+
+  final subiquityClient = SubiquityClient();
+  final subiquityServer = SubiquityServer();
+
+  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+
+  runWizardApp(
+    UbuntuDesktopInstallerApp(
+      flavor: flavor,
+      initialRoute: options['initial-route'],
+    ),
+    options: options,
+    subiquityClient: subiquityClient,
+    subiquityServer: subiquityServer,
+    serverArgs: [
+      if (options['machine-config'] != null) ...[
+        '--machine-config',
+        options['machine-config'],
+      ],
+    ],
+    serverEnvironment: {
+      // so subiquity doesn't think it's the installer or flutter snap...
+      'SNAP': '.',
+      'SNAP_NAME': 'subiquity',
+      'SNAP_REVISION': '',
+      'SNAP_VERSION': '',
+    },
+    providers: [
+      Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => JournalService(journalUnit)),
+      Provider(create: (_) => KeyboardService()),
+      Provider(create: (_) => UdevService()),
+    ],
+    onInitSubiquity: (client) {
+      client.setVariant(Variant.DESKTOP);
+      client.setTimezone('geoip');
+    },
+  );
+}
+
 class UbuntuDesktopInstallerApp extends StatelessWidget {
-  const UbuntuDesktopInstallerApp({
+  UbuntuDesktopInstallerApp({
     Key? key,
     this.initialRoute,
-  }) : super(key: key);
+    FlavorData? flavor,
+  })  : flavor = flavor ?? defaultFlavor,
+        super(key: key);
 
   final String? initialRoute;
+  final FlavorData flavor;
+
+  static FlavorData get defaultFlavor {
+    return FlavorData(
+      name: 'Ubuntu',
+      theme: yaru.lightTheme,
+      darkTheme: yaru.darkTheme,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Settings.of(context).locale,
-      onGenerateTitle: (context) {
-        final lang = AppLocalizations.of(context);
-        setWindowTitle(lang.windowTitle);
-        return lang.appTitle;
-      },
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: Settings.of(context).theme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
+    return Flavor(
+      data: flavor.copyWith(package: 'ubuntu_desktop_installer'),
+      child: MaterialApp(
+        locale: Settings.of(context).locale,
+        onGenerateTitle: (context) {
+          final lang = AppLocalizations.of(context);
+          setWindowTitle(lang.windowTitle('Ubuntu'));
+          return lang.appTitle;
+        },
+        theme: flavor.theme,
+        darkTheme: flavor.darkTheme,
+        themeMode: Settings.of(context).theme,
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
+      ),
     );
   }
 }
@@ -76,40 +144,50 @@ class _UbuntuDesktopInstallerWizardState
 
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.welcome,
-      routes: <String, WidgetBuilder>{
-        Routes.welcome: WelcomePage.create,
+      routes: <String, WizardRoute>{
+        Routes.welcome: const WizardRoute(
+          builder: WelcomePage.create,
+        ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.tryOrInstall: TryOrInstallPage.create,
-        if (model.hasRst) Routes.turnOffRST: TurnOffRSTPage.create,
-        Routes.keyboardLayout: KeyboardLayoutPage.create,
-        Routes.updatesOtherSoftware: UpdatesOtherSoftwarePage.create,
+        // Routes.tryOrInstall: WizardRoute(
+        //   builder: TryOrInstallPage.create,
+        //   onNext: (settings) {
+        //     switch (settings.arguments as Option?) {
+        //       case Option.repairUbuntu:
+        //         return Routes.repairUbuntu;
+        //       case Option.tryUbuntu:
+        //         return Routes.tryUbuntu;
+        //       default:
+        //         if (model.hasRst) return Routes.turnOffRST;
+        //         return Routes.keyboardLayout;
+        //     }
+        //   },
+        // ),
+        if (model.hasRst)
+          Routes.turnOffRST: const WizardRoute(
+            builder: TurnOffRSTPage.create,
+          ),
+        Routes.keyboardLayout: const WizardRoute(
+          builder: KeyboardLayoutPage.create,
+        ),
+        Routes.updatesOtherSoftware: const WizardRoute(
+          builder: UpdatesOtherSoftwarePage.create,
+        ),
         if (model.hasSecureBoot)
-          Routes.configureSecureBoot: ConfigureSecureBootPage.create,
+          Routes.configureSecureBoot: const WizardRoute(
+            builder: ConfigureSecureBootPage.create,
+          ),
+        if (model.hasEncryption)
+          Routes.chooseSecurityKey: const WizardRoute(
+            builder: ChooseSecurityKeyPage.create,
+          ),
         if (model.hasBitLocker)
-          Routes.turnOffBitlocker: TurnOffBitLockerPage.create,
-        Routes.installationType: InstallationTypePage.create,
-        Routes.selectGuidedStorage: SelectGuidedStoragePage.create,
-        Routes.allocateDiskSpace: AllocateDiskSpacePage.create,
-        Routes.writeChangesToDisk: WriteChangesToDiskPage.create,
-        Routes.whoAreYou: WhoAreYouPage.create,
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.chooseYourLook: ChooseYourLookPage.create,
-        Routes.installationSlides: InstallationSlidesPage.create,
-        Routes.installationComplete: InstallationCompletePage.create,
-      },
-      onNext: (settings) {
-        switch (settings.name) {
-          case Routes.tryOrInstall:
-            switch (settings.arguments as Option?) {
-              case Option.repairUbuntu:
-                return Routes.repairUbuntu;
-              case Option.tryUbuntu:
-                return Routes.tryUbuntu;
-              default:
-                if (model.hasRst) return Routes.turnOffRST;
-                return Routes.keyboardLayout;
-            }
-          case Routes.installationType:
+          Routes.turnOffBitlocker: const WizardRoute(
+            builder: TurnOffBitLockerPage.create,
+          ),
+        Routes.installationType: WizardRoute(
+          builder: InstallationTypePage.create,
+          onNext: (settings) {
             if (settings.arguments == InstallationType.erase) {
               if (service.hasMultipleDisks) {
                 return Routes.selectGuidedStorage;
@@ -118,11 +196,31 @@ class _UbuntuDesktopInstallerWizardState
               }
             }
             return Routes.allocateDiskSpace;
-          case Routes.selectGuidedStorage:
-            return Routes.writeChangesToDisk;
-          default:
-            return null;
-        }
+          },
+        ),
+        Routes.selectGuidedStorage: WizardRoute(
+          builder: SelectGuidedStoragePage.create,
+          onNext: (settings) => Routes.writeChangesToDisk,
+        ),
+        Routes.allocateDiskSpace: const WizardRoute(
+          builder: AllocateDiskSpacePage.create,
+        ),
+        Routes.writeChangesToDisk: const WizardRoute(
+          builder: WriteChangesToDiskPage.create,
+        ),
+        Routes.whoAreYou: const WizardRoute(
+          builder: WhoAreYouPage.create,
+        ),
+        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+        // Routes.chooseYourLook: const WizardRoute(
+        //   builder: ChooseYourLookPage.create,
+        // ),
+        Routes.installationSlides: const WizardRoute(
+          builder: InstallationSlidesPage.create,
+        ),
+        Routes.installationComplete: const WizardRoute(
+          builder: InstallationCompletePage.create,
+        ),
       },
     );
   }
@@ -139,6 +237,8 @@ class _UbuntuDesktopInstallerModel extends ChangeNotifier {
   bool get hasBitLocker => _hasBitLocker;
   // TODO: add secure boot support
   bool get hasSecureBoot => false;
+  // TODO: add encryption support
+  bool get hasEncryption => false;
 
   Future<void> init() {
     return Future.wait([

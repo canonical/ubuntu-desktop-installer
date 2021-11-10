@@ -20,14 +20,16 @@ void main() {
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {
-          '/': (_) {
-            return Provider<InstallationCompleteModel>.value(
-              value: model,
-              child: InstallationCompletePage(),
-            );
-          },
+          '/': WizardRoute(
+            builder: (_) {
+              return Provider<InstallationCompleteModel>.value(
+                value: model,
+                child: InstallationCompletePage(),
+              );
+            },
+            onNext: (settings) => '/',
+          ),
         },
-        onNext: (settings) => '/',
       ),
     );
   }
@@ -62,7 +64,9 @@ void main() {
         home: Provider<SubiquityClient>(
           create: (_) => MockSubiquityClient(),
           child: Wizard(
-            routes: {'/': InstallationCompletePage.create},
+            routes: {
+              '/': WizardRoute(builder: InstallationCompletePage.create),
+            },
           ),
         ),
       ),

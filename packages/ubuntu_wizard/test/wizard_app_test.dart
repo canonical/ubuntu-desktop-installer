@@ -17,23 +17,29 @@ void main() {
   testWidgets('initializes subiquity', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
-    when(server.start(any, any)).thenAnswer((_) async => 'socket path');
+    when(server.start(any,
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer((_) async => 'socket path');
 
     await runWizardApp(
       Container(),
       subiquityClient: client,
       subiquityServer: server,
       serverArgs: ['--foo', 'bar'],
+      serverEnvironment: {'baz': 'qux'},
       onInitSubiquity: (client) => client.setVariant(Variant.DESKTOP),
     );
-    verify(server.start(ServerMode.DRY_RUN, ['--foo', 'bar'])).called(1);
+    verify(server.start(ServerMode.DRY_RUN,
+        args: ['--foo', 'bar'], environment: {'baz': 'qux'})).called(1);
     verify(client.open('socket path')).called(1);
     verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
   testWidgets('provides the client', (tester) async {
     final server = MockSubiquityServer();
-    when(server.start(any, any)).thenAnswer((_) async => '');
+    when(server.start(any,
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer((_) async => '');
 
     await runWizardApp(
       Container(key: ValueKey('app')),
