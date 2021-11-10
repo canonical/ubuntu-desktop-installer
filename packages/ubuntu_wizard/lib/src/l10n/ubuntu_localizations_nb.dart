@@ -14,13 +14,13 @@ class UbuntuLocalizationsNb extends UbuntuLocalizations {
   String get languageName => 'Norsk bokmål';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => 'Gå tilbake';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => 'Fortsett';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Sterkt passord';
 
   @override
   String get fairPassword => 'Fair password';
@@ -29,5 +29,5 @@ class UbuntuLocalizationsNb extends UbuntuLocalizations {
   String get goodPassword => 'Good password';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Svakt passord';
 }

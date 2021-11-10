@@ -14,13 +14,13 @@ class UbuntuLocalizationsPl extends UbuntuLocalizations {
   String get languageName => 'Polski';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => 'Wstecz';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => 'Naprzód';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Silne hasło';
 
   @override
   String get fairPassword => 'Fair password';
@@ -29,5 +29,5 @@ class UbuntuLocalizationsPl extends UbuntuLocalizations {
   String get goodPassword => 'Good password';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Słabe hasło';
 }

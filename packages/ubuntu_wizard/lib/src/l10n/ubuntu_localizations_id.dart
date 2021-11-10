@@ -14,13 +14,13 @@ class UbuntuLocalizationsId extends UbuntuLocalizations {
   String get languageName => 'Bahasa Indonesia';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => 'Kembali';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => 'Terus';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Kata sandi yang kuat';
 
   @override
   String get fairPassword => 'Fair password';
@@ -29,5 +29,5 @@ class UbuntuLocalizationsId extends UbuntuLocalizations {
   String get goodPassword => 'Good password';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Kata sandi yang lemah';
 }

@@ -20,7 +20,7 @@ class UbuntuLocalizationsEs extends UbuntuLocalizations {
   String get continueAction => 'Continuar';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Contraseña fuerte';
 
   @override
   String get fairPassword => 'Fair password';
@@ -29,5 +29,5 @@ class UbuntuLocalizationsEs extends UbuntuLocalizations {
   String get goodPassword => 'Good password';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Contraseña débil';
 }

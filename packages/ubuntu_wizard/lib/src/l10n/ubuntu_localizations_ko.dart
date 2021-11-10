@@ -14,13 +14,13 @@ class UbuntuLocalizationsKo extends UbuntuLocalizations {
   String get languageName => '한국어';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => '뒤로 가기';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => '계속하기';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => '강한 암호';
 
   @override
   String get fairPassword => 'Fair password';
@@ -29,5 +29,5 @@ class UbuntuLocalizationsKo extends UbuntuLocalizations {
   String get goodPassword => 'Good password';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => '약한 암호';
 }
