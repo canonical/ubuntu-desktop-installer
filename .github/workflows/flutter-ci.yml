@@ -121,9 +121,9 @@ jobs:
           exit 1
         fi
 
-    - name: Commit outdated generated files
-      if: github.event_name == 'workflow_dispatch'
-      uses: actions-js/push@master
+    - name: Create PR for outdated generated files
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v3
       with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        message: 'Regenerate files'
+        title: 'Regenerate files'
+        commit-message: 'Regenerate files'
