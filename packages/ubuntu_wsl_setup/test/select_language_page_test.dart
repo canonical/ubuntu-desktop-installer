@@ -47,8 +47,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model, settings)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model, settings),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -104,8 +108,12 @@ void main() {
           Provider<SubiquityClient>.value(value: client),
         ],
         child: Wizard(
-          routes: {'/': SelectLanguagePage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: SelectLanguagePage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

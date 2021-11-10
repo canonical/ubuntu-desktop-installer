@@ -36,7 +36,7 @@ void main() {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: localizationsDelegates,
           home: Wizard(
-            routes: {'/': (_) => AllocateDiskSpacePage()},
+            routes: {'/': WizardRoute(builder: (_) => AllocateDiskSpacePage())},
           ),
         ),
       ),
@@ -104,7 +104,7 @@ void main() {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: localizationsDelegates,
           home: Wizard(
-            routes: {'/': (_) => AllocateDiskSpacePage()},
+            routes: {'/': WizardRoute(builder: (_) => AllocateDiskSpacePage())},
           ),
         ),
       ),

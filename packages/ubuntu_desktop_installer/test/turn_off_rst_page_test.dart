@@ -21,14 +21,16 @@ void main() {
         localizationsDelegates: localizationsDelegates,
         home: Wizard(
           routes: {
-            '/': (_) {
-              return Provider<TurnOffRSTModel>.value(
-                value: model,
-                child: TurnOffRSTPage(),
-              );
-            },
+            '/': WizardRoute(
+              builder: (_) {
+                return Provider<TurnOffRSTModel>.value(
+                  value: model,
+                  child: TurnOffRSTPage(),
+                );
+              },
+              onNext: (settings) => '/',
+            ),
           },
-          onNext: (settings) => '/',
         ),
       ),
     );

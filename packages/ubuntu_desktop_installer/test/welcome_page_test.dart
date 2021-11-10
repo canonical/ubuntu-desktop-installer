@@ -26,9 +26,10 @@ void main() {
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Wizard(
-        routes: <String, WidgetBuilder>{
-          Routes.welcome: (_) => WelcomePage(),
-          Routes.tryOrInstall: (context) => Text(Routes.tryOrInstall),
+        routes: <String, WizardRoute>{
+          Routes.welcome: WizardRoute(builder: (_) => WelcomePage()),
+          Routes.tryOrInstall:
+              WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
         },
       ),
     );

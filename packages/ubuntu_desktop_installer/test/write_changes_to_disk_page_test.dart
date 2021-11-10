@@ -93,8 +93,12 @@ void main() {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
-        routes: {'/': (_) => buildPage(model)},
-        onNext: (settings) => '/',
+        routes: {
+          '/': WizardRoute(
+            builder: (_) => buildPage(model),
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     );
   }
@@ -141,8 +145,12 @@ void main() {
           ),
         ],
         child: Wizard(
-          routes: {'/': WriteChangesToDiskPage.create},
-          onNext: (settings) => '/',
+          routes: {
+            '/': WizardRoute(
+              builder: WriteChangesToDiskPage.create,
+              onNext: (settings) => '/',
+            ),
+          },
         ),
       ),
     ));

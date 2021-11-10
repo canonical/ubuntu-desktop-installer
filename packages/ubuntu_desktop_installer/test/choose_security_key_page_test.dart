@@ -45,8 +45,8 @@ void main() {
       ],
       home: Wizard(
         routes: {
-          '/': (_) => buildPage(model),
-          '/next': (_) => const Text('Next'),
+          '/': WizardRoute(builder: (_) => buildPage(model)),
+          '/next': WizardRoute(builder: (_) => const Text('Next')),
         },
       ),
     );
@@ -121,7 +121,9 @@ void main() {
       localizationsDelegates: localizationsDelegates,
       home: Provider<SubiquityClient>.value(
         value: client,
-        child: Wizard(routes: {'/': ChooseSecurityKeyPage.create}),
+        child: Wizard(routes: {
+          '/': WizardRoute(builder: ChooseSecurityKeyPage.create),
+        }),
       ),
     ));
 
