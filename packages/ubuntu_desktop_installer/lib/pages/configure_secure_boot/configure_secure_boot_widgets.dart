@@ -25,6 +25,7 @@ class SecurityKeyFormField extends StatelessWidget {
         obscureText: true,
         fieldWidth: fieldWidth,
         labelText: lang.chooseSecurityKey,
+        initialValue: model.securityKey,
         onChanged: model.setSecurityKey,
         enabled: model.areTextFieldsEnabled,
         validator: RequiredValidator(
@@ -55,6 +56,7 @@ class SecurityKeyConfirmFormField extends StatelessWidget {
         fieldWidth: fieldWidth,
         labelText: lang.confirmSecurityKey,
         enabled: model.areTextFieldsEnabled,
+        initialValue: model.confirmKey,
         onChanged: model.setConfirmKey,
         successWidget:
             model.securityKey.isNotEmpty ? const SuccessIcon() : null,
