@@ -71,7 +71,7 @@ void main() {
     expect(radios, findsNWidgets(2));
     expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.turnOff));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
+    expect(tester.widget<RadioButton<SecureBootMode>>(radios.last).groupValue,
         equals(SecureBootMode.turnOff));
 
     expect(find.byType(SuccessIcon), findsNWidgets(2));
@@ -108,7 +108,7 @@ void main() {
     expect(radios, findsNWidgets(2));
     expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.dontInstall));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
+    expect(tester.widget<RadioButton<SecureBootMode>>(radios.last).groupValue,
         equals(SecureBootMode.dontInstall));
   });
 
