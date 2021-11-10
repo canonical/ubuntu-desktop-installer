@@ -365,5 +365,25 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "readyToUse": "**{system}** est installé et prêt à être utilisé.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Redémarrer sous {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "whoAreYouPagePasswordMismatch": "Les mots de passe ne correspondent pas",
+  "@whoAreYouPagePasswordMismatch": {},
+  "installationCompleteTitle": "Installation terminée",
+  "@installationCompleteTitle": {},
+  "shutdown": "Éteindre",
+  "@shutdown": {}
 }
