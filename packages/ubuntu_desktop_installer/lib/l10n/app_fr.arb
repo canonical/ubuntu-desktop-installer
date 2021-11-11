@@ -213,7 +213,7 @@
   "@installationTypeZFS": {},
   "dontInstallDriverSoftwareNow": "Ne pas installer le pilote maintenant",
   "@dontInstallDriverSoftwareNow": {},
-  "configureSecureBootSecurityKeyRequired": "Le code de sécurité est requis",
+  "configureSecureBootSecurityKeyRequired": "La clé de sécurité est nécessaire",
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Les codes de sécurité ne correspondent pas",
   "@secureBootSecurityKeysDontMatch": {},
