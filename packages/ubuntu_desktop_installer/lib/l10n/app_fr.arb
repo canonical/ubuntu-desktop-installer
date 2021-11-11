@@ -120,11 +120,11 @@
   "@yesButtonText": {},
   "pressOneKey": "Veuillez appuyer sur l'une des touches suivantes :",
   "@pressOneKey": {},
-  "chooseSecurityKeyHeader": "Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l'ordinateur démarre.\n\nAucun autre fichier en dehors de {RELEASE} ne sera chiffré.",
+  "chooseSecurityKeyHeader": "Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l'ordinateur démarre. \n\nTous les fichiers en dehors de {RELEASE} ne seront pas chiffrés.",
   "@chooseSecurityKeyHeader": {},
   "installationTypeEncryptInfo": "Vous allez choisir une clé de sécurité à l'étape suivante.",
   "@installationTypeEncryptInfo": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si vous en avez besoin, notez votre clé et conservez-la dans un endroit sûr.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si nécessaire, notez votre clé et conservez-la en un endroit sûr.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -137,7 +137,7 @@
   "@installationTypeTitle": {},
   "installationTypeNoOSDetected": "Aucun système d’exploitation n’a été détecté sur cet ordinateur. Que voulez-vous faire ?",
   "@installationTypeNoOSDetected": {},
-  "installationTypeEraseWarning": "<font color=\"{color}\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d'exploitations.",
+  "installationTypeEraseWarning": "<font color=\"{color}\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d'exploitation.",
   "@installationTypeEraseWarning": {
     "type": "text",
     "placeholders": {
@@ -178,7 +178,7 @@
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "Demander mon mot de passe pour ouvrir une session",
   "@whoAreYouPageRequirePassword": {},
-  "whoAreYouPageComputerNameInfo": "Le nom que vous voulez utiliser quand votre ordinateur communique avec les autres ordinateurs.",
+  "whoAreYouPageComputerNameInfo": "Le nom utilisé quand votre ordinateur communique avec d'autres ordinateurs.",
   "@whoAreYouPageComputerNameInfo": {},
   "installationTypeLVMSelected": "LVM sélectionné",
   "@installationTypeLVMSelected": {},
