@@ -19,6 +19,24 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
+class _FakeUdevDeviceInfo_0 extends _i1.Fake implements _i2.UdevDeviceInfo {}
+
+/// A class which mocks [UdevDeviceInfo].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUdevDeviceInfo extends _i1.Mock implements _i2.UdevDeviceInfo {
+  MockUdevDeviceInfo() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get fullName =>
+      (super.noSuchMethod(Invocation.getter(#fullName), returnValue: '')
+          as String);
+  @override
+  String toString() => super.toString();
+}
+
 /// A class which mocks [UdevService].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -31,9 +49,13 @@ class MockUdevService extends _i1.Mock implements _i2.UdevService {
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  String fullName({String? sysname, String? syspath}) => (super.noSuchMethod(
-      Invocation.method(#fullName, [], {#sysname: sysname, #syspath: syspath}),
-      returnValue: '') as String);
+  _i2.UdevDeviceInfo bySysname(String? sysname) =>
+      (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
+          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
+  @override
+  _i2.UdevDeviceInfo bySyspath(String? syspath) =>
+      (super.noSuchMethod(Invocation.method(#bySyspath, [syspath]),
+          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
   @override
   String toString() => super.toString();
 }

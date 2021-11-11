@@ -92,12 +92,16 @@ AllocateDiskSpaceModel buildModel({
   return model;
 }
 
-@GenerateMocks([AllocateDiskSpaceModel, UdevService])
+@GenerateMocks([AllocateDiskSpaceModel, UdevDeviceInfo, UdevService])
 void main() {
   Widget buildPage(AllocateDiskSpaceModel model) {
     final udev = MockUdevService();
-    when(udev.fullName(sysname: 'sda')).thenReturn('SDA');
-    when(udev.fullName(sysname: 'sdb')).thenReturn('SDB');
+    final sda = MockUdevDeviceInfo();
+    when(sda.fullName).thenReturn('SDA');
+    when(udev.bySysname('sda')).thenReturn(sda);
+    final sdb = MockUdevDeviceInfo();
+    when(sdb.fullName).thenReturn('SDB');
+    when(udev.bySysname('sdb')).thenReturn(sdb);
 
     return MultiProvider(
       providers: [

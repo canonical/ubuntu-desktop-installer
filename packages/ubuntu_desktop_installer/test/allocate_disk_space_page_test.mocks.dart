@@ -2,14 +2,14 @@
 // in ubuntu_desktop_installer/test/allocate_disk_space_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i4;
-import 'dart:ui' as _i5;
+import 'dart:async' as _i5;
+import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i3;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_model.dart'
-    as _i2;
-import 'package:ubuntu_desktop_installer/services.dart' as _i6;
+    as _i3;
+import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -19,11 +19,13 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i6;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
+class _FakeUdevDeviceInfo_0 extends _i1.Fake implements _i2.UdevDeviceInfo {}
+
 /// A class which mocks [AllocateDiskSpaceModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockAllocateDiskSpaceModel extends _i1.Mock
-    implements _i2.AllocateDiskSpaceModel {
+    implements _i3.AllocateDiskSpaceModel {
   MockAllocateDiskSpaceModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -33,9 +35,9 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
-  List<_i3.Disk> get disks =>
-      (super.noSuchMethod(Invocation.getter(#disks), returnValue: <_i3.Disk>[])
-          as List<_i3.Disk>);
+  List<_i4.Disk> get disks =>
+      (super.noSuchMethod(Invocation.getter(#disks), returnValue: <_i4.Disk>[])
+          as List<_i4.Disk>);
   @override
   int get selectedDiskIndex =>
       (super.noSuchMethod(Invocation.getter(#selectedDiskIndex), returnValue: 0)
@@ -45,9 +47,9 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#selectedPartitionIndex),
           returnValue: 0) as int);
   @override
-  _i4.Stream<dynamic> get onSelectionChanged =>
+  _i5.Stream<dynamic> get onSelectionChanged =>
       (super.noSuchMethod(Invocation.getter(#onSelectionChanged),
-          returnValue: Stream<dynamic>.empty()) as _i4.Stream<dynamic>);
+          returnValue: Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
   @override
   bool get canAddPartition => (super
           .noSuchMethod(Invocation.getter(#canAddPartition), returnValue: false)
@@ -74,27 +76,27 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
           Invocation.method(#isStorageSelected, [diskIndex, partitionIndex]),
           returnValue: false) as bool);
   @override
-  _i4.Future<void> addPartition(_i3.Disk? disk,
-          {int? size, _i2.PartitionFormat? format, String? mount}) =>
+  _i5.Future<void> addPartition(_i4.Disk? disk,
+          {int? size, _i3.PartitionFormat? format, String? mount}) =>
       (super.noSuchMethod(
           Invocation.method(#addPartition, [disk],
               {#size: size, #format: format, #mount: mount}),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> editPartition(_i3.Disk? disk, _i3.Partition? partition,
-          {_i2.PartitionFormat? format, bool? wipe, String? mount}) =>
+  _i5.Future<void> editPartition(_i4.Disk? disk, _i4.Partition? partition,
+          {_i3.PartitionFormat? format, bool? wipe, String? mount}) =>
       (super.noSuchMethod(
           Invocation.method(#editPartition, [disk, partition],
               {#format: format, #wipe: wipe, #mount: mount}),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> deletePartition(_i3.Disk? disk, _i3.Partition? partition) =>
+  _i5.Future<void> deletePartition(_i4.Disk? disk, _i4.Partition? partition) =>
       (super.noSuchMethod(
           Invocation.method(#deletePartition, [disk, partition]),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   void selectStorage(int? diskIndex, [int? partitionIndex = -1]) =>
       super.noSuchMethod(
@@ -105,34 +107,34 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
       super.noSuchMethod(Invocation.method(#selectBootDisk, [diskIndex]),
           returnValueForMissingStub: null);
   @override
-  _i4.Future<void> getStorage() =>
+  _i5.Future<void> getStorage() =>
       (super.noSuchMethod(Invocation.method(#getStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> setStorage() =>
+  _i5.Future<void> setStorage() =>
       (super.noSuchMethod(Invocation.method(#setStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> resetStorage() =>
+  _i5.Future<void> resetStorage() =>
       (super.noSuchMethod(Invocation.method(#resetStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> reformatDisk(_i3.Disk? disk) =>
+  _i5.Future<void> reformatDisk(_i4.Disk? disk) =>
       (super.noSuchMethod(Invocation.method(#reformatDisk, [disk]),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  void addListener(_i5.VoidCallback? listener) =>
+  void addListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
+  void removeListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override
@@ -143,10 +145,26 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
   String toString() => super.toString();
 }
 
+/// A class which mocks [UdevDeviceInfo].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUdevDeviceInfo extends _i1.Mock implements _i2.UdevDeviceInfo {
+  MockUdevDeviceInfo() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get fullName =>
+      (super.noSuchMethod(Invocation.getter(#fullName), returnValue: '')
+          as String);
+  @override
+  String toString() => super.toString();
+}
+
 /// A class which mocks [UdevService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockUdevService extends _i1.Mock implements _i6.UdevService {
+class MockUdevService extends _i1.Mock implements _i2.UdevService {
   MockUdevService() {
     _i1.throwOnMissingStub(this);
   }
@@ -155,9 +173,13 @@ class MockUdevService extends _i1.Mock implements _i6.UdevService {
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  String fullName({String? sysname, String? syspath}) => (super.noSuchMethod(
-      Invocation.method(#fullName, [], {#sysname: sysname, #syspath: syspath}),
-      returnValue: '') as String);
+  _i2.UdevDeviceInfo bySysname(String? sysname) =>
+      (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
+          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
+  @override
+  _i2.UdevDeviceInfo bySyspath(String? syspath) =>
+      (super.noSuchMethod(Invocation.method(#bySyspath, [syspath]),
+          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
   @override
   String toString() => super.toString();
 }

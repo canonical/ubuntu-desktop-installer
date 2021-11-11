@@ -69,14 +69,18 @@ WriteChangesToDiskModel buildModel({List<Disk>? disks}) {
   return model;
 }
 
-@GenerateMocks([UdevService, WriteChangesToDiskModel])
+@GenerateMocks([UdevDeviceInfo, UdevService, WriteChangesToDiskModel])
 void main() {
   Widget buildPage(WriteChangesToDiskModel model) {
     final udev = MockUdevService();
-    when(udev.modelName(sysname: 'sda')).thenReturn('SDA');
-    when(udev.modelName(sysname: 'sdb')).thenReturn('SDB');
-    when(udev.vendorName(sysname: 'sda')).thenReturn('ATA');
-    when(udev.vendorName(sysname: 'sdb')).thenReturn('ATA');
+    final sda = MockUdevDeviceInfo();
+    when(sda.modelName).thenReturn('SDA');
+    when(sda.vendorName).thenReturn('ATA');
+    when(udev.bySysname('sda')).thenReturn(sda);
+    final sdb = MockUdevDeviceInfo();
+    when(sdb.modelName).thenReturn('SDB');
+    when(sdb.vendorName).thenReturn('ATA');
+    when(udev.bySysname('sdb')).thenReturn(sdb);
 
     return MultiProvider(
       providers: [

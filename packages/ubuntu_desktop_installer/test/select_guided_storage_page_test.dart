@@ -15,7 +15,7 @@ import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([SelectGuidedStorageModel, UdevService])
+@GenerateMocks([SelectGuidedStorageModel, UdevDeviceInfo, UdevService])
 void main() {
   const testStorages = <Disk>[
     Disk(path: '/dev/sda', size: 12),
@@ -36,10 +36,14 @@ void main() {
 
   Widget buildPage(SelectGuidedStorageModel model) {
     final udev = MockUdevService();
-    when(udev.modelName(sysname: 'sda')).thenReturn('SDA');
-    when(udev.modelName(sysname: 'sdb')).thenReturn('SDB');
-    when(udev.vendorName(sysname: 'sda')).thenReturn('ATA');
-    when(udev.vendorName(sysname: 'sdb')).thenReturn('ATA');
+    final sda = MockUdevDeviceInfo();
+    when(sda.modelName).thenReturn('SDA');
+    when(sda.vendorName).thenReturn('ATA');
+    when(udev.bySysname('sda')).thenReturn(sda);
+    final sdb = MockUdevDeviceInfo();
+    when(sdb.modelName).thenReturn('SDB');
+    when(sdb.vendorName).thenReturn('ATA');
+    when(udev.bySysname('sdb')).thenReturn(sdb);
 
     return MultiProvider(
       providers: [
