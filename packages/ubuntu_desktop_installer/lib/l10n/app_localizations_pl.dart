@@ -12,7 +12,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Zainstaluj Ubuntu';
+    return 'Zainstaluj $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Wypróbuj Ubuntu';
+    return 'Wypróbuj $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Możesz wypróbować Ubuntu bez wprowadzania jakichkolwiek zmian na swoim komputerze.';
+    return 'Możesz wypróbować $RELEASE bez wprowadzania jakichkolwiek zmian na swoim komputerze.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Zainstaluj Ubuntu';
+    return 'Zainstaluj $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Zainstaluj Ubuntu obok (lub zamiast) obecnego systemu operacyjnego. Nie powinno to potrwać zbyt długo.';
+    return 'Zainstaluj $RELEASE obok (lub zamiast) obecnego systemu operacyjnego. Nie powinno to potrwać zbyt długo.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Szyfrowanie dysku chroni pliki w przypadku utraty komputera. Wymaga ono podania klucza bezpieczeństwa przy każdym uruchomieniu komputera.\n\nWszelkie pliki spoza Ubuntu nie będą zaszyfrowane.';
+    return 'Szyfrowanie dysku chroni pliki w przypadku utraty komputera. Wymaga ono podania klucza bezpieczeństwa przy każdym uruchomieniu komputera.\n\nWszelkie pliki spoza $RELEASE nie zostaną zaszyfrowane.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Wymaż dysk i zainstaluj Ubuntu';
+    return 'Wymaż dysk i zainstaluj $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Użyj LVM z nową instalacją Ubuntu';
+    return 'Użyj LVM z nową instalacją $RELEASE';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Zaszyfruj nową instalację Ubuntu dla bezpieczeństwa';
+    return 'Zaszyfruj nową instalację $RELEASE dla bezpieczeństwa';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Możesz samodzielnie utworzyć lub zmienić rozmiar partycji lub wybrać wiele partycji dla Ubuntu';
+    return 'Możesz samodzielnie utworzyć lub zmienić rozmiar partycji lub wybrać wiele partycji dla $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Wymaż dysk i zainstaluj Ubuntu';
+    return 'Wymaż dysk i zainstaluj $DISTRO';
   }
 
   @override

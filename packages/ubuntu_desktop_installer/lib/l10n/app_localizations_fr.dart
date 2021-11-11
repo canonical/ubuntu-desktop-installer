@@ -12,7 +12,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Installer Ubuntu';
+    return 'Installer $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Essayer Ubuntu';
+    return 'Essayer $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Vous pouvez essayer Ubuntu sans appliquer aucun changement à votre ordinateur.';
+    return 'Vous pouvez essayer $RELEASE sans appliquer aucun changement à votre ordinateur.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Installer Ubuntu';
+    return 'Installer $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installer Ubuntu à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.';
+    return 'Installer $RELEASE à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.';
   }
 
   @override
@@ -124,7 +124,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dontInstallDriverSoftwareNowDescription => 'Vous pouvez l\'installer ultérieurement depuis Logiciel & Mises à jour.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Le code de sécurité est requis';
+  String get configureSecureBootSecurityKeyRequired => 'La clé de sécurité est nécessaire';
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Les codes de sécurité ne correspondent pas';
@@ -161,7 +161,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre.\n\nAucun autre fichier en dehors de Ubuntu ne sera chiffré.';
+    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre.\n\nAucun autre fichier en dehors de $RELEASE ne sera chiffré.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Effacer le disque et installer Ubuntu';
+    return 'Effacer le disque et installer $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Utiliser LVM pour la nouvelle installation Ubuntu';
+    return 'Utiliser LVM pour la nouvelle installation $RELEASE';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Chiffrer la nouvelle installation de Ubuntu pour la sécurité';
+    return 'Chiffrer la nouvelle installation de $RELEASE pour la sécurité';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Vous pouvez créer ou redimensionner les partitions vous-même, ou choisir plusieurs partitions pour Ubuntu';
+    return 'Vous pouvez créer ou redimensionner les partitions vous-même, ou choisir plusieurs partitions pour $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Effacer le disque et installer Ubuntu';
+    return 'Effacer le disque et installer $DISTRO';
   }
 
   @override

@@ -12,7 +12,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'התקנת אובונטו';
+    return 'להתקין את $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'להתנסות באובונטו';
+    return 'להתנסות ב־$RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'אפשר להתנסות באובונטו מבלי לערוך שינויים במחשב שלך.';
+    return 'אפשר להתנסות ב־$RELEASE מבלי לערוך שינויים במחשב שלך.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'להתקין את אובונטו';
+    return 'להתקין את $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'התקנת אובונטו לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.';
+    return 'התקנת $RELEASE לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'הצפנת הכונן מגנה על הקבצים שלך במקרה של אובדן המחשב. התכונה דורשת ממך להזין מפתח אבטחה עם כל הפעלה של המחשב.\n\nקבצים שמחוץ לאובונטו לא יוצפנו.';
+    return 'הצפנת הכונן מגנה על הקבצים שלך במקרה של אובדן המחשב. התכונה דורשת ממך להזין מפתח אבטחה עם כל הפעלה של המחשב.\n\nקבצים שמחוץ ל־$RELEASE לא יוצפנו.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'למחוק את הכונן ולהתקין את אובונטו';
+    return 'למחוק את הכונן ולהתקין את $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'להשתמש במנהל כרכים לוגי עם התקנת אובונטו החדשה';
+    return 'להשתמש במנהל כרכים לוגי עם התקנת $RELEASE החדשה';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'להצפין את התקנת אובונטו החדש לשיפור האבטחה';
+    return 'להצפין את התקנת $RELEASE החדשה לשיפור האבטחה';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'אפשר ליצור או לשנות גודל של מחיצות באופן עצמאי או לבחור מגוון מחיצות עבור אובונטו';
+    return 'אפשר ליצור או לשנות גודל של מחיצות באופן עצמאי או לבחור מגוון מחיצות עבור $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'למחוק את הכונן ולהתקין את אובונטו';
+    return 'למחוק את הכונן ולהתקין את $DISTRO';
   }
 
   @override
