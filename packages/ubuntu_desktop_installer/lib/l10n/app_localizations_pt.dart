@@ -544,7 +544,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar o Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
@@ -582,22 +582,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Experimentar o Ubuntu';
+    return 'Experimentar $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Você pode experimentar o Ubuntu sem fazer nenhuma alteração no seu computador.';
+    return 'Você pode experimentar o $RELEASE sem precisar fazer qualquer alteração em seu computador.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instalar o Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Instalar o Ubuntu ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
+    return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
   }
 
   @override
@@ -689,6 +689,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.';
 
   @override
+  String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
+
+  @override
+  String chooseSecurityKeyHeader(Object RELEASE) {
+    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.';
+  }
+
+  @override
+  String get chooseSecurityKeyHint => 'Escolha uma chave de segurança';
+
+  @override
+  String get chooseSecurityKeyConfirmHint => 'Confirme a chave de segurança';
+
+  @override
+  String get chooseSecurityKeyRequired => 'Uma chave de segurança é necessária';
+
+  @override
+  String get chooseSecurityKeyMismatch => 'As chaves de segurança não conferem';
+
+  @override
+  String chooseSecurityKeyWarning(Object color) {
+    return '<font color=\"$color\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se você precisar, escreva sua chave em um papel e coloque em um local seguro.';
+  }
+
+  @override
   String get installationTypeTitle => 'Tipo de installation';
 
   @override
@@ -701,7 +726,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Apagar o disco e instalar o Ubuntu';
+    return 'Apagar o disco e instalar o $DISTRO';
   }
 
   @override
@@ -723,7 +748,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Usar LVM com a nova instalação do Ubuntu';
+    return 'Usar LVM com a nova instalação do $RELEASE';
   }
 
   @override
@@ -731,7 +756,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Criptograsfar a nova instalação do Ubuntu para maior segurança';
+    return 'Criptografar a nova instalação do $RELEASE  para maior segurança';
   }
 
   @override
@@ -766,12 +791,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o Ubuntu.';
+    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o $DISTRO.';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Apagar o disco e instalar o Ubuntu';
+    return 'Apagar o disco e instalar o $DISTRO';
   }
 
   @override

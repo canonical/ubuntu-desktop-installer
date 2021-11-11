@@ -12,7 +12,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instali Ubuntu';
+    return 'Instali $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Provi Ubuntu';
+    return 'Provi $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Vi povas provi Ubuntu sen iel ajn ŝanĝi vian komputilon.';
+    return 'Vi povas provi $RELEASE sen iel ajn ŝanĝi vian komputilon.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instali Ubuntu';
+    return 'Instali $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Instali Ubuntu apud (aŭ anstataŭ) via aktuala mastruma sistemo. Tio ne daŭros tro longe.';
+    return 'Instali $RELEASE apud (aŭ anstataŭ) via aktuala mastruma sistemo. Tio ne daŭros tro longe.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Ĉifrado de la disko protektos viajn dosierojn, se vi perdos vian komputilon. Ĝi postulas, ke vi ĉiufoje tajpu sekurigan ŝlosilon por startigi vian komputilon.\n\nAjna dosieroj ekster Ubuntu restos neĉifritaj.';
+    return 'Ĉifrado de la disko protektos viajn dosierojn, se vi perdos vian komputilon. Ĝi postulas, ke vi ĉiufoje tajpu sekurigan ŝlosilon por startigi vian komputilon.\n\nAjna dosieroj ekster $RELEASE restos neĉifritaj.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Forviŝi la diskon kaj instali Ubuntu';
+    return 'Forviŝi la diskon kaj instali $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Uzi LVM por la nova Ubuntu-instalaĵo';
+    return 'Uzi LVM por la nova instalaĵo de $RELEASE';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Ĉifri la novan Ubuntu-instalaĵon por sekurigi ĝin';
+    return 'Ĉifri la novan instalaĵon de $RELEASE por sekurigi ĝin';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Vi povas mem krei subdiskojn aŭ ŝanĝi iliajn grandojn, aŭ elekti plurajn subdiskojn por Ubuntu';
+    return 'Vi povas mem krei subdiskojn aŭ ŝanĝi iliajn grandojn, aŭ elekti plurajn subdiskojn por $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Forviŝi la diskon kaj instali Ubuntu';
+    return 'Forviŝi la diskon kaj instali $DISTRO';
   }
 
   @override

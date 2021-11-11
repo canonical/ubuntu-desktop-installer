@@ -12,7 +12,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Pasang Ubuntu';
+    return 'Pasang $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Coba Ubuntu';
+    return 'Coba $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Anda dapat mencoba Ubuntu tanpa membuat perubahan apa pun pada komputer Anda.';
+    return 'Anda dapat mencoba $RELEASE tanpa membuat perubahan apa pun pada komputer Anda.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Pasang Ubuntu';
+    return 'Pasang $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Pasang Ubuntu bersama (atau sebagai pengganti) sistem operasi Anda saat ini. Ini seharusnya tidak memakan waktu terlalu lama.';
+    return 'Pasang $RELEASE bersama (atau sebagai pengganti) sistem operasi Anda saat ini. Ini seharusnya tidak memakan waktu terlalu lama.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Enkripsi disk melindungi berkas-berkas Anda jika Anda kehilangan komputer. Ini mengharuskan Anda memasukkan kunci keamanan setiap kali komputer dinyalakan.\n\nBerkas apa pun di luar Ubuntu tidak akan dienkripsi.';
+    return 'Enkripsi disk melindungi berkas-berkas Anda jika Anda kehilangan komputer. Ini mengharuskan Anda memasukkan kunci keamanan setiap kali komputer dinyalakan.\n\nBerkas apa pun di luar $RELEASE tidak akan dienkripsi.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Hapus disk dan pasang Ubuntu';
+    return 'Hapus disk dan pasang $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Gunakan LVM dengan instalasi Ubuntu baru';
+    return 'Gunakan LVM dengan instalasi $RELEASE baru';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Enkripsi instalasi Ubuntu baru untuk keamanan';
+    return 'Enkripsi instalasi $RELEASE baru untuk keamanan';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Anda dapat membuat atau mengubah ukuran partisi sendiri, atau memilih beberapa partisi untuk Ubuntu';
+    return 'Anda dapat membuat atau mengubah ukuran partisi sendiri, atau memilih beberapa partisi untuk $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Hapus disk dan pasang Ubuntu';
+    return 'Hapus disk dan pasang $DISTRO';
   }
 
   @override
