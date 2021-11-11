@@ -124,7 +124,7 @@
   "@chooseSecurityKeyHeader": {},
   "installationTypeEncryptInfo": "Vous allez choisir une clé de sécurité à l'étape suivante.",
   "@installationTypeEncryptInfo": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si nécessaire, notez votre clé et conservez-la en un endroit sûr.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
