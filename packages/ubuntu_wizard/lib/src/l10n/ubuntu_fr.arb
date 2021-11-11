@@ -13,5 +13,9 @@
   "weakPassword": "Mot de passe trop faible",
   "@weakPassword": {},
   "moderatePassword": "Mot de passe peu sûr",
-  "@moderatePassword": {}
+  "@moderatePassword": {},
+  "fairPassword": "Mot-de-passe acceptable",
+  "@fairPassword": {},
+  "goodPassword": "Mot-de-passe sûr",
+  "@goodPassword": {}
 }
