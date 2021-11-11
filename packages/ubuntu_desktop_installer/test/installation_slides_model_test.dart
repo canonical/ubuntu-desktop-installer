@@ -13,6 +13,13 @@ import 'installation_slides_model_test.mocks.dart';
 
 @GenerateMocks([JournalService])
 void main() async {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  final methodChannel = MethodChannel('ubuntu_wizard');
+
+  setUp(() {
+    methodChannel.setMockMethodCallHandler((_) {});
+  });
+
   test('client status query loop', () async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
@@ -107,10 +114,7 @@ void main() async {
   });
 
   test('reboot', () async {
-    TestWidgetsFlutterBinding.ensureInitialized();
-
     var windowClosed = false;
-    final methodChannel = MethodChannel('ubuntu_wizard');
     methodChannel.setMockMethodCallHandler((call) {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;
@@ -123,6 +127,41 @@ void main() async {
     await model.reboot(immediate: true);
     verify(client.reboot(immediate: true)).called(1);
     expect(windowClosed, isTrue);
+  });
+
+  test('non-closable window', () async {
+    final windowClosable = StreamController<bool>.broadcast();
+    methodChannel.setMockMethodCallHandler((call) {
+      expect(call.method, equals('setWindowClosable'));
+      windowClosable.add(call.arguments[0] as bool);
+    });
+
+    final client = MockSubiquityClient();
+    when(client.status(current: anyNamed('current'))).thenAnswer(
+      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
+    );
+
+    final journal = MockJournalService();
+    final model = InstallationSlidesModel(client, journal);
+
+    model.init();
+    await expectLater(windowClosable.stream, emits(false));
+
+    when(client.status(current: anyNamed('current'))).thenAnswer(
+      (_) async => ApplicationStatus(state: ApplicationState.ERROR),
+    );
+    await expectLater(windowClosable.stream, emits(true));
+
+    when(client.status(current: anyNamed('current'))).thenAnswer(
+      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
+    );
+    model.init();
+    await expectLater(windowClosable.stream, emits(false));
+
+    when(client.status(current: anyNamed('current'))).thenAnswer(
+      (_) async => ApplicationStatus(state: ApplicationState.DONE),
+    );
+    await expectLater(windowClosable.stream, emits(true));
   });
 
   test('installation steps', () async {

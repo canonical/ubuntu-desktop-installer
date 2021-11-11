@@ -52,6 +52,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
     _status = status;
+    setWindowClosable(isDone || hasError);
     notifyListeners();
   }
 
