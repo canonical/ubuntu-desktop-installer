@@ -14,20 +14,20 @@ class UbuntuLocalizationsSv extends UbuntuLocalizations {
   String get languageName => 'Svenska';
 
   @override
-  String get backAction => 'Go Back';
+  String get backAction => 'Gå tillbaka';
 
   @override
-  String get continueAction => 'Continue';
+  String get continueAction => 'Fortsätt';
 
   @override
-  String get strongPassword => 'Strong password';
+  String get strongPassword => 'Starkt lösenord';
 
   @override
-  String get fairPassword => 'Fair password';
+  String get fairPassword => 'Medelbra lösenord';
 
   @override
-  String get goodPassword => 'Good password';
+  String get goodPassword => 'Bra lösenord';
 
   @override
-  String get weakPassword => 'Weak password';
+  String get weakPassword => 'Svagt lösenord';
 }

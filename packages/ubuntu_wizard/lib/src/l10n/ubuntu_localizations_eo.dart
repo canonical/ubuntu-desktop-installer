@@ -20,13 +20,13 @@ class UbuntuLocalizationsEo extends UbuntuLocalizations {
   String get continueAction => 'Daŭrigi';
 
   @override
-  String get strongPassword => 'Forta pasvorto';
+  String get strongPassword => 'Fortega pasvorto';
 
   @override
-  String get fairPassword => 'Fair password';
+  String get fairPassword => 'Forteta pasvorto';
 
   @override
-  String get goodPassword => 'Good password';
+  String get goodPassword => 'Forta pasvorto';
 
   @override
   String get weakPassword => 'Malforta pasvorto';

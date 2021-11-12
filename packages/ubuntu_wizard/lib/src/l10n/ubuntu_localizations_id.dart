@@ -23,10 +23,10 @@ class UbuntuLocalizationsId extends UbuntuLocalizations {
   String get strongPassword => 'Kata sandi yang kuat';
 
   @override
-  String get fairPassword => 'Fair password';
+  String get fairPassword => 'Kata sandi yang lumayan';
 
   @override
-  String get goodPassword => 'Good password';
+  String get goodPassword => 'Kata sandi yang baik';
 
   @override
   String get weakPassword => 'Kata sandi yang lemah';

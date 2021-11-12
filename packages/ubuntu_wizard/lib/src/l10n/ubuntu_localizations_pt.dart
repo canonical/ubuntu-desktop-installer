@@ -52,5 +52,11 @@ class UbuntuLocalizationsPtBr extends UbuntuLocalizationsPt {
   String get strongPassword => 'Senha forte';
 
   @override
+  String get fairPassword => 'Senha justa';
+
+  @override
+  String get goodPassword => 'Senha boa';
+
+  @override
   String get weakPassword => 'Senha fraca';
 }
