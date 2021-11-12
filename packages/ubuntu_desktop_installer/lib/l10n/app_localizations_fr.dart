@@ -161,7 +161,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre.\n\nAucun autre fichier en dehors de $RELEASE ne sera chiffré.';
+    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre. \n\nTous les fichiers en dehors de $RELEASE ne seront pas chiffrés.';
   }
 
   @override
@@ -178,7 +178,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Si vous en avez besoin, notez votre clé et conservez-la dans un endroit sûr.';
+    return '<font color=\"$color\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.';
   }
 
   @override
@@ -199,7 +199,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d\'exploitations.';
+    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d\'exploitation.';
   }
 
   @override
@@ -427,7 +427,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageComputerNameLabel => 'Le nom de votre ordinateur';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Le nom que vous voulez utiliser quand votre ordinateur communique avec les autres ordinateurs.';
+  String get whoAreYouPageComputerNameInfo => 'Le nom utilisé quand votre ordinateur communique avec d\'autres ordinateurs.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Un nom pour l\'ordinateur est requis';
