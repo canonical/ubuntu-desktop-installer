@@ -17,7 +17,7 @@ export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
-void runInstallerApp(List<String> args, {FlavorData? flavor}) {
+Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
         valueHelp: 'path',
@@ -27,6 +27,9 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
+
+  final networkService = NetworkService();
+  await networkService.connect();
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
@@ -55,6 +58,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
+      Provider.value(value: networkService),
       Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {
@@ -169,6 +173,9 @@ class _UbuntuDesktopInstallerWizardState
           ),
         Routes.keyboardLayout: const WizardRoute(
           builder: KeyboardLayoutPage.create,
+        ),
+        Routes.connectToInternet: const WizardRoute(
+          builder: ConnectToInternetPage.create,
         ),
         Routes.updatesOtherSoftware: const WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
