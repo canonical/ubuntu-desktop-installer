@@ -382,7 +382,7 @@ class BootDiskSelector extends StatelessWidget {
     final lang = AppLocalizations.of(context);
 
     String prettyFormatDisk(Disk disk) {
-      return '${disk.path} ${udev.fullName(disk.sysname)} (${disk.prettySize})';
+      return '${disk.path} ${udev.bySysname(disk.sysname).fullName} (${disk.prettySize})';
     }
 
     return Column(

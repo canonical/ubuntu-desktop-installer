@@ -42,8 +42,8 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   String prettyFormatDisk(Disk disk) {
     final udev = Provider.of<UdevService>(context, listen: false);
     final fullName = <String?>[
-      udev.modelName(disk.sysname),
-      udev.vendorName(disk.sysname)
+      udev.bySysname(disk.sysname).modelName,
+      udev.bySysname(disk.sysname).vendorName,
     ].where((p) => p?.isNotEmpty == true).join(' ');
     return '$fullName (${disk.sysname})';
   }
