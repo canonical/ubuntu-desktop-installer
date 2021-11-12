@@ -15,6 +15,7 @@ Future<void> showAdvancedFeaturesDialog(
     context: context,
     builder: (context) {
       final lang = AppLocalizations.of(context);
+      final flavor = Flavor.of(context);
 
       return AlertDialog(
         title: Text(lang.installationTypeAdvancedTitle),
@@ -37,7 +38,7 @@ Future<void> showAdvancedFeaturesDialog(
                 ),
                 const SizedBox(height: kContentSpacing),
                 RadioButton<AdvancedFeature>(
-                  title: Text(lang.installationTypeLVM('Ubuntu')),
+                  title: Text(lang.installationTypeLVM(flavor.name)),
                   value: AdvancedFeature.lvm,
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
@@ -45,7 +46,7 @@ Future<void> showAdvancedFeaturesDialog(
                 RadioIconTile(
                   contentPadding: EdgeInsets.zero,
                   title: CheckButton(
-                    title: Text(lang.installationTypeEncrypt('Ubuntu')),
+                    title: Text(lang.installationTypeEncrypt(flavor.name)),
                     subtitle: Text(lang.installationTypeEncryptInfo),
                     value: encryption.value,
                     onChanged: model.advancedFeature == AdvancedFeature.lvm

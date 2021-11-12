@@ -50,18 +50,21 @@ extension UbuntuTester on WidgetTester {
   Widget buildApp(WidgetBuilder builder) {
     binding.window.devicePixelRatioTestValue = 1;
     binding.window.physicalSizeTestValue = const Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: builder,
-            onNext: (settings) => '/next',
-          ),
-          '/next': WizardRoute(
-            builder: (_) => const Text('Next page'),
-          ),
-        },
+    return Flavor(
+      data: const FlavorData(name: 'Ubuntu'),
+      child: MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: Wizard(
+          routes: {
+            '/': WizardRoute(
+              builder: builder,
+              onNext: (settings) => '/next',
+            ),
+            '/next': WizardRoute(
+              builder: (_) => const Text('Next page'),
+            ),
+          },
+        ),
       ),
     );
   }

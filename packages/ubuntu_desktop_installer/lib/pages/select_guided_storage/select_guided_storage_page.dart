@@ -58,8 +58,9 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<SelectGuidedStorageModel>(context);
     final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
     return WizardPage(
-      title: Text(lang.selectGuidedStoragePageTitle('Ubuntu')),
+      title: Text(lang.selectGuidedStoragePageTitle(flavor.name)),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -99,7 +100,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                   ),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
-                    'Ubuntu',
+                    flavor.name,
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   const SizedBox(height: kContentSpacing / 2),

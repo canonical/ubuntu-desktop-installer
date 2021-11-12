@@ -29,33 +29,36 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
-      home: Wizard(
-        routes: {
-          Routes.tryOrInstall: WizardRoute(
-            builder: (_) => TryOrInstallPage(),
-            onNext: (settings) {
-              switch (model.option) {
-                case Option.repairUbuntu:
-                  return Routes.repairUbuntu;
-                case Option.tryUbuntu:
-                  return Routes.tryUbuntu;
-                case Option.installUbuntu:
-                  return Routes.keyboardLayout;
-                default:
-                  break;
-              }
-            },
-          ),
-          Routes.repairUbuntu: WizardRoute(
-            builder: (context) => Text(Routes.repairUbuntu),
-          ),
-          Routes.tryUbuntu: WizardRoute(
-            builder: (context) => Text(Routes.tryUbuntu),
-          ),
-          Routes.keyboardLayout: WizardRoute(
-            builder: (context) => Text(Routes.keyboardLayout),
-          ),
-        },
+      home: Flavor(
+        data: const FlavorData(name: 'Ubuntu'),
+        child: Wizard(
+          routes: {
+            Routes.tryOrInstall: WizardRoute(
+              builder: (_) => TryOrInstallPage(),
+              onNext: (settings) {
+                switch (model.option) {
+                  case Option.repairUbuntu:
+                    return Routes.repairUbuntu;
+                  case Option.tryUbuntu:
+                    return Routes.tryUbuntu;
+                  case Option.installUbuntu:
+                    return Routes.keyboardLayout;
+                  default:
+                    break;
+                }
+              },
+            ),
+            Routes.repairUbuntu: WizardRoute(
+              builder: (context) => Text(Routes.repairUbuntu),
+            ),
+            Routes.tryUbuntu: WizardRoute(
+              builder: (context) => Text(Routes.tryUbuntu),
+            ),
+            Routes.keyboardLayout: WizardRoute(
+              builder: (context) => Text(Routes.keyboardLayout),
+            ),
+          },
+        ),
       ),
     );
 

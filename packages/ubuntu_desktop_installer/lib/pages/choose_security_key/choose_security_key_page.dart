@@ -48,11 +48,12 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
     return WizardPage(
       title: Text(lang.chooseSecurityKeyTitle),
       header: FractionallySizedBox(
         widthFactor: kContentWidthFraction,
-        child: Text(lang.chooseSecurityKeyHeader('Ubuntu')),
+        child: Text(lang.chooseSecurityKeyHeader(flavor.name)),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldWidth = constraints.maxWidth * kContentWidthFraction;
