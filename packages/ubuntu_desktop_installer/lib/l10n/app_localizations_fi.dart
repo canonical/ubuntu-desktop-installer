@@ -12,7 +12,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Asenna Ubuntu';
+    return 'Asenna $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Kokeile Ubuntua';
+    return 'Kokeile ${RELEASE}a';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Voit kokeilla Ubuntua tekemättä muutoksia tietokoneellesi.';
+    return 'Voit kokeilla ${RELEASE}a tekemättä muutoksia tietokoneellesi.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Asenna Ubuntu';
+    return 'Asenna $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Asenna Ubuntu nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
+    return 'Asenna $RELEASE nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\nUbuntu-asennuksen ulkopuolisia tiedostoja ei salata.';
+    return 'Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\n${RELEASE}-asennuksen ulkopuolisia tiedostoja ei salata.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Tyhjennä levy ja asenna Ubuntu';
+    return 'Tyhjennä levy ja asenna $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Käytä LVM:ää uudessa Ubuntu-asennuksessa';
+    return 'Käytä LVM:ää uudessa $RELEASE-asennuksessa';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Salaa uusi Ubuntu-asennus paremman tietoturvan vuoksi';
+    return 'Salaa uusi $RELEASE-asennus paremman tietoturvan vuoksi';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Voit luoda tai muuttaa osioiden kokoja itse, tai valita useita osioita Ubuntun käytettäväksi';
+    return 'Voit luoda tai muuttaa osioiden kokoja itse, tai valita useita osioita ${DISTRO}n käytettäväksi';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Tyhjennä levy ja asenna Ubuntu';
+    return 'Tyhjennä levy ja asenna $DISTRO';
   }
 
   @override
