@@ -1,9 +1,9 @@
 {
   "@@locale": "oc",
   "countryCode": "FR",
-
+  "@countryCode": {},
   "languageName": "Occitan",
-
+  "@languageName": {},
   "backAction": "Tornar",
   "@backAction": {},
   "continueAction": "Contunhar",
@@ -13,5 +13,9 @@
   "strongPassword": "Senhal fòrt",
   "@strongPassword": {},
   "weakPassword": "Senhal feble",
-  "@weakPassword": {}
+  "@weakPassword": {},
+  "fairPassword": "Senhal acceptable",
+  "@fairPassword": {},
+  "goodPassword": "Senhal bon",
+  "@goodPassword": {}
 }
