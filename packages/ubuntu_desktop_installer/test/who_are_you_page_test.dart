@@ -7,7 +7,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
 import 'package:ubuntu_wizard/l10n.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'who_are_you_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
@@ -45,25 +44,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, WhoAreYouModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
-    );
-  }
-
   testWidgets('real name input', (tester) async {
     final model = buildModel(realName: 'real name');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'real name');
     expect(textField, findsOneWidget);
@@ -73,7 +56,7 @@ void main() {
 
   testWidgets('host name input', (tester) async {
     final model = buildModel(hostname: 'host name');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'host name');
     expect(textField, findsOneWidget);
@@ -83,7 +66,7 @@ void main() {
 
   testWidgets('username input', (tester) async {
     final model = buildModel(username: 'username');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'username');
     expect(textField, findsOneWidget);
@@ -93,7 +76,7 @@ void main() {
 
   testWidgets('password input', (tester) async {
     final model = buildModel(password: 'password');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'password');
     expect(textField, findsOneWidget);
@@ -103,7 +86,7 @@ void main() {
 
   testWidgets('password confirmation', (tester) async {
     final model = buildModel(password: 'passwd', confirmedPassword: 'passwd');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'passwd');
     expect(textField, findsNWidgets(2));
@@ -115,7 +98,7 @@ void main() {
 
   testWidgets('empty password', (tester) async {
     final model = buildModel(password: '');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
@@ -131,7 +114,7 @@ void main() {
       password: 'not empty',
       passwordStrength: PasswordStrength.weak,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
@@ -144,7 +127,7 @@ void main() {
       password: 'not empty',
       passwordStrength: PasswordStrength.fair,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
@@ -157,7 +140,7 @@ void main() {
       password: 'not empty',
       passwordStrength: PasswordStrength.good,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
@@ -170,7 +153,7 @@ void main() {
       password: 'not empty',
       passwordStrength: PasswordStrength.strong,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(WhoAreYouPage));
     final lang = UbuntuLocalizations.of(context);
@@ -180,7 +163,7 @@ void main() {
 
   testWidgets('valid input', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -191,7 +174,7 @@ void main() {
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -203,7 +186,7 @@ void main() {
   // https://github.com/canonical/ubuntu-desktop-installer/issues/373
   // testWidgets('login strategy', (tester) async {
   //   final model = buildModel(loginStrategy: LoginStrategy.autoLogin);
-  //   await tester.pumpWidget(buildApp(tester, model));
+  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
   //   final autoLoginTile = find.widgetWithText(
   //     typeOf<RadioButton<LoginStrategy>>(),
@@ -235,7 +218,7 @@ void main() {
 
   testWidgets('save identity', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,

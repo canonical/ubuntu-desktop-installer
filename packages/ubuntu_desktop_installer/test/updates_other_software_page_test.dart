@@ -4,7 +4,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -38,21 +37,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, UpdateOtherSoftwareModel model) {
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(builder: (_) => buildPage(model)),
-          '/next': WizardRoute(builder: (_) => Text('Next page')),
-        },
-      ),
-    );
-  }
-
   testWidgets('installation mode', (tester) async {
     final model = buildModel(installationMode: InstallationMode.normal);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final normalInstallationTile = find.widgetWithText(
       typeOf<RadioButton<InstallationMode>>(),
@@ -89,7 +76,7 @@ void main() {
   // https://github.com/canonical/ubuntu-desktop-installer/issues/373
   // testWidgets('install third-party software', (tester) async {
   //   final model = buildModel(installThirdParty: true);
-  //   await tester.pumpWidget(buildApp(tester, model));
+  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
   //   final installThirdPartyTile = find.widgetWithText(
   //     CheckButton,
@@ -108,7 +95,7 @@ void main() {
 
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(installationMode: InstallationMode.normal);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -123,20 +110,12 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Provider<SubiquityClient>(
+    await tester.pumpWidget(
+      Provider<SubiquityClient>(
         create: (_) => MockSubiquityClient(),
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: UpdatesOtherSoftwarePage.create,
-              onNext: (settings) => '/',
-            ),
-          },
-        ),
+        child: tester.buildApp(UpdatesOtherSoftwarePage.create),
       ),
-    ));
+    );
 
     final page = find.byType(UpdatesOtherSoftwarePage);
     expect(page, findsOneWidget);
