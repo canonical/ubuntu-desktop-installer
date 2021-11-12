@@ -1,5 +1,19 @@
 {
   "@@locale": "sv",
   "countryCode": "SE",
-  "languageName": "Svenska"
+  "@countryCode": {},
+  "languageName": "Svenska",
+  "@languageName": {},
+  "backAction": "Gå tillbaka",
+  "@backAction": {},
+  "continueAction": "Fortsätt",
+  "@continueAction": {},
+  "strongPassword": "Starkt lösenord",
+  "@strongPassword": {},
+  "fairPassword": "Medelbra lösenord",
+  "@fairPassword": {},
+  "goodPassword": "Bra lösenord",
+  "@goodPassword": {},
+  "weakPassword": "Svagt lösenord",
+  "@weakPassword": {}
 }

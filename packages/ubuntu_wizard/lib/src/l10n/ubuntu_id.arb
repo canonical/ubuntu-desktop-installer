@@ -13,5 +13,9 @@
   "continueAction": "Terus",
   "@continueAction": {},
   "strongPassword": "Kata sandi yang kuat",
-  "@strongPassword": {}
+  "@strongPassword": {},
+  "goodPassword": "Kata sandi yang baik",
+  "@goodPassword": {},
+  "fairPassword": "Kata sandi yang lumayan",
+  "@fairPassword": {}
 }

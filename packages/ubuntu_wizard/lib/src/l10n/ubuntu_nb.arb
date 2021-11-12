@@ -11,5 +11,9 @@
   "strongPassword": "Sterkt passord",
   "@strongPassword": {},
   "weakPassword": "Svakt passord",
-  "@weakPassword": {}
+  "@weakPassword": {},
+  "goodPassword": "Godt passord",
+  "@goodPassword": {},
+  "fairPassword": "Middels sterkt passord",
+  "@fairPassword": {}
 }

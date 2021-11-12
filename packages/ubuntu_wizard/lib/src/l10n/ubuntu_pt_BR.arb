@@ -1,16 +1,23 @@
 {
   "@@locale": "pt_BR",
   "countryCode": "BR",
-
+  "@countryCode": {},
   "languageName": "Português do Brasil",
   "@languageName": {
     "description": "Português do Brasil"
   },
-
   "backAction": "Voltar",
+  "@backAction": {},
   "continueAction": "Continuar",
-  
+  "@continueAction": {},
   "strongPassword": "Senha forte",
+  "@strongPassword": {},
   "moderatePassword": "Senha média",
-  "weakPassword": "Senha fraca"
+  "@moderatePassword": {},
+  "weakPassword": "Senha fraca",
+  "@weakPassword": {},
+  "fairPassword": "Senha justa",
+  "@fairPassword": {},
+  "goodPassword": "Senha boa",
+  "@goodPassword": {}
 }
