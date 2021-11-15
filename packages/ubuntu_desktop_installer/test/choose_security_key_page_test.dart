@@ -8,7 +8,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'choose_security_key_page_test.mocks.dart';

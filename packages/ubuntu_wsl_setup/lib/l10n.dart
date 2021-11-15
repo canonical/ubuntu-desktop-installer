@@ -1,13 +1,12 @@
 import 'package:flutter/widgets.dart';
-import 'package:ubuntu_wizard/l10n.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'l10n/app_localizations.dart';
 
-export 'package:ubuntu_wizard/l10n.dart';
+export 'package:ubuntu_localizations/ubuntu_localizations.dart';
 export 'l10n/app_localizations.dart';
 
 /// All localization delegates for the Ubuntu Desktop Installer.
 const localizationsDelegates = <LocalizationsDelegate<dynamic>>[
   ...AppLocalizations.localizationsDelegates,
-  ...UbuntuLocalizations.localizationsDelegates,
-  LocalizationsDelegateOc(),
+  ...GlobalUbuntuLocalizations.delegates,
 ];
