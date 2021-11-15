@@ -11,7 +11,7 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Desktop LTS 22.04 Jammy Jellyfish.
 
-## Test the new Ubuntu Desktop installer
+## Test a live image
 
 If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
 
