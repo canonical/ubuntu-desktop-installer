@@ -12,7 +12,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Installar Ubuntu';
+    return 'Installar $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Ensajar Ubuntu';
+    return 'Ensajar $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.';
+    return 'Podètz ensajar $RELEASE sens aplicar cap de modificacion a vòstre ordenador.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Installar Ubuntu';
+    return 'Installar $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.';
+    return 'Installar $RELEASE a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.';
   }
 
   @override
@@ -161,7 +161,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra d’Ubuntu seràn pas chifrats.';
+    return 'Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra de $RELEASE seràn pas chifrats.';
   }
 
   @override
@@ -194,7 +194,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Escafar lo disc e installar Ubuntu';
+    return 'Escafar lo disc e installar $DISTRO';
   }
 
   @override
@@ -216,7 +216,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Utilizar LVM amb l’installation d’Ubuntu novèla';
+    return 'Utilizar LVM amb l’installation de $RELEASE novèla';
   }
 
   @override
@@ -224,7 +224,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Chifrar l’installacion d’Ubuntu novèla per la seguretat';
+    return 'Chifrar l’installacion de $RELEASE novèla per la seguretat';
   }
 
   @override
@@ -259,12 +259,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per Ubuntu';
+    return 'Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Escafar lo disc e installar Ubuntu';
+    return 'Escafar lo disc e installar $DISTRO';
   }
 
   @override
