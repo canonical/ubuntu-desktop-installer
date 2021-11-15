@@ -24,8 +24,7 @@ Please follow the [official Linux setup instructions from flutter.dev](https://f
 
 ### Configure Flutter
 
-You need to activate the linux desktop support in the flutter SDK.
-To do so, run the following commands:
+NOTE: Notice to enable desktop support for Flutter:
 
 ```
 flutter config --enable-linux-desktop
