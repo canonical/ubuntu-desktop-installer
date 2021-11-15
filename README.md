@@ -7,9 +7,9 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 ![Preview Screenshot](.github/docs/images/preview_screenshot.png)
 
-## Availibilty
+## Availability
 
-The new Ubuntu Desktop installer is *planed* to ship with the next Ubuntu Desktpo LTS 22.04 Impish Idri.
+The new Ubuntu Desktop installer is *planed* to ship with the next Ubuntu Desktop LTS 22.04 Impish Idri.
 
 ## Test the new Ubuntu Desktop installer
 
