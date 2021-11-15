@@ -13,5 +13,9 @@
   "weakPassword": "Contraseña débil",
   "@weakPassword": {},
   "moderatePassword": "Contraseña moderada",
-  "@moderatePassword": {}
+  "@moderatePassword": {},
+  "fairPassword": "Contraseña aceptable",
+  "@fairPassword": {},
+  "goodPassword": "Contraseña buena",
+  "@goodPassword": {}
 }
