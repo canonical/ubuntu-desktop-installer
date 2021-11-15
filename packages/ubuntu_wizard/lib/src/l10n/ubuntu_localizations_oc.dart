@@ -23,10 +23,10 @@ class UbuntuLocalizationsOc extends UbuntuLocalizations {
   String get strongPassword => 'Senhal fòrt';
 
   @override
-  String get fairPassword => 'Fair password';
+  String get fairPassword => 'Senhal acceptable';
 
   @override
-  String get goodPassword => 'Good password';
+  String get goodPassword => 'Senhal bon';
 
   @override
   String get weakPassword => 'Senhal feble';
