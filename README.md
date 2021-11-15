@@ -39,22 +39,10 @@ cd ubuntu-desktop-installer
 git submodule update --init --recursive
 ```
 
-Install the Python (subitquity), Dart and Flutter dependencies:
+Install Subiquity dependencies:
 ```sh
-cd packages/subiquity_client
-dart pub get
-cd subiquity
-make install_deps
-cd ../../udev/
-flutter pub get
-cd ../ubuntu_wsl_setup/
-flutter pub get
-cd ../ubuntu_wizard/
-flutter pub get
-cd ../logger/
-flutter pub get
-cd ../ubuntu_desktop_installer
-flutter pub get
+cd packages/subiquity_client/subiquity
+sudo ./scripts/installdeps.sh
 ```
 
 ### Run the installer
