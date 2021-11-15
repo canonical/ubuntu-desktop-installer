@@ -9,48 +9,25 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 ## Availability
 
-The new Ubuntu Desktop installer is *planed* to ship with the next Ubuntu Desktop LTS 22.04 Impish Idri.
+The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Desktop LTS 22.04 Jammy Jellyfish.
 
 ## Test the new Ubuntu Desktop installer
 
 If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
 
-[Download](http://cdimage.ubuntu.com/impish/daily-canary/current/)
+[Download](https://cdimage.ubuntu.com/daily-canary/current/)
 
 
 ## Building and running manually
 
-To build the installer manually you need to have the [Flutter UI toolkit](https://flutter.dev) installed and the source code in this repository downloaded on your computer.
-
-To install Flutter you have two options: a manual installation by cloning the flutter repo and adding it tou your $PATH or installing the Flutter snap.
-
-### Either: Install Flutter manually
-
-Install the Flutter dependencies:
-```sh
-sudo apt install git curl cmake meson clang cmake pkg-config libgtk-3-dev
-```
-Install Flutter:
-```sh
-mkdir ~/development
-cd ~/development
-git clone https://github.com/flutter/flutter.git -b master
-echo 'export PATH="$PATH:$HOME/development/flutter/bin"' >> ~/.bashrc
-```
-
-### Or: Install Flutter with Snapd
-
-```
-sudo snap install flutter --classic
-```
+Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter on your computer.
 
 ### Configure Flutter
 
-In any case you need to activate the linux desktop support in the flutter SDK.
+You need to activate the linux desktop support in the flutter SDK.
 To do so, run the following commands:
 
 ```
-flutter upgrade
 flutter config --enable-linux-desktop
 ```
 
@@ -87,14 +64,6 @@ Run the installer either from within your IDE or by running the following comman
 
 ```sh
 flutter run
-```
-
-If you want to test a dedicated page you can run the installer with the argument `-a "--initial-route=/[ROUTE_NAME]"`
-
-For example
-
-```
-flutter run -a "--initial-route=/welcome"
 ```
 
 ### Run live installer
