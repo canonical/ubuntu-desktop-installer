@@ -3,26 +3,21 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
 void main() {
-  setUpAll(() => LangTester.context = AlertDialog);
+  setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-
     final testDisk = Disk(freeForPartitions: 1000000);
     final model = buildModel(selectedDisk: testDisk);
 
@@ -32,13 +27,7 @@ void main() {
           ChangeNotifierProvider<AllocateDiskSpaceModel>.value(value: model),
           Provider<UdevService>(create: (_) => MockUdevService()),
         ],
-        child: MaterialApp(
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: localizationsDelegates,
-          home: Wizard(
-            routes: {'/': WizardRoute(builder: (_) => AllocateDiskSpacePage())},
-          ),
-        ),
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );
 
@@ -100,13 +89,7 @@ void main() {
           ChangeNotifierProvider<AllocateDiskSpaceModel>.value(value: model),
           Provider<UdevService>(create: (_) => MockUdevService()),
         ],
-        child: MaterialApp(
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: localizationsDelegates,
-          home: Wizard(
-            routes: {'/': WizardRoute(builder: (_) => AllocateDiskSpacePage())},
-          ),
-        ),
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );
 

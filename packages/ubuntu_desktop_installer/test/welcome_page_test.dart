@@ -25,12 +25,15 @@ void main() {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
-      home: Wizard(
-        routes: <String, WizardRoute>{
-          Routes.welcome: WizardRoute(builder: (_) => WelcomePage()),
-          Routes.tryOrInstall:
-              WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
-        },
+      home: Flavor(
+        data: const FlavorData(name: 'Ubuntu'),
+        child: Wizard(
+          routes: <String, WizardRoute>{
+            Routes.welcome: WizardRoute(builder: (_) => WelcomePage()),
+            Routes.tryOrInstall:
+                WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
+          },
+        ),
       ),
     );
     final client = MockSubiquityClient();

@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -12,12 +11,9 @@ import 'package:ubuntu_test/mocks.dart';
 import 'widget_tester_extensions.dart';
 
 void main() {
-  setUpAll(() => LangTester.context = DetectKeyboardLayoutView);
+  setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 
   testWidgets('detect layout', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
       return KeyboardStep.pressKey(symbols: [
@@ -39,10 +35,8 @@ void main() {
     await tester.pumpWidget(
       Provider<SubiquityClient>.value(
         value: client,
-        child: MaterialApp(
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: localizationsDelegates,
-          home: DetectKeyboardLayoutView(
+        child: tester.buildApp(
+          (_) => DetectKeyboardLayoutView(
             pressKey: null,
             keyPresent: null,
             onKeyPress: (_) {},

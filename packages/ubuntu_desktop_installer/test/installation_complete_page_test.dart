@@ -4,39 +4,25 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'installation_complete_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
 @GenerateMocks([InstallationCompleteModel])
 void main() {
-  Widget buildApp(InstallationCompleteModel model) {
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) {
-              return Provider<InstallationCompleteModel>.value(
-                value: model,
-                child: InstallationCompletePage(),
-              );
-            },
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
+  Widget buildPage(InstallationCompleteModel model) {
+    return Provider<InstallationCompleteModel>.value(
+      value: model,
+      child: InstallationCompletePage(),
     );
   }
 
   testWidgets('restart', (tester) async {
     final model = MockInstallationCompleteModel();
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final restartButton = find.textContaining(tester.lang.restartButtonText);
     expect(restartButton, findsOneWidget);
@@ -47,7 +33,7 @@ void main() {
 
   testWidgets('shutdown', (tester) async {
     final model = MockInstallationCompleteModel();
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final shutdownButton =
         find.widgetWithText(OutlinedButton, tester.lang.shutdown);
@@ -59,16 +45,9 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Provider<SubiquityClient>(
-          create: (_) => MockSubiquityClient(),
-          child: Wizard(
-            routes: {
-              '/': WizardRoute(builder: InstallationCompletePage.create),
-            },
-          ),
-        ),
+      Provider<SubiquityClient>(
+        create: (_) => MockSubiquityClient(),
+        child: tester.buildApp(InstallationCompletePage.create),
       ),
     );
 

@@ -4,7 +4,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -42,23 +41,9 @@ void main() {
     );
   }
 
-  Widget buildApp(InstallationTypeModel model) {
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
-    );
-  }
-
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: 'Ubuntu 18.04 LTS');
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
         tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
@@ -72,7 +57,7 @@ void main() {
       productInfo: 'Ubuntu 21.10',
       existingOS: 'Ubuntu 18.04 LTS',
     );
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
         typeOf<RadioButton<InstallationType>>(),
@@ -85,7 +70,7 @@ void main() {
 
   testWidgets('erase', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
         tester.lang.installationTypeErase('Ubuntu'));
@@ -96,7 +81,7 @@ void main() {
 
   testWidgets('manual', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
         tester.lang.installationTypeManual);
@@ -108,7 +93,7 @@ void main() {
   // https://github.com/canonical/ubuntu-desktop-installer/issues/373
   // testWidgets('advanced features', (tester) async {
   //   final model = buildModel();
-  //   await tester.pumpWidget(buildApp(model));
+  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
   //   final button = find.widgetWithText(
   //       OutlinedButton, tester.lang.installationTypeAdvancedLabel);
@@ -125,23 +110,15 @@ void main() {
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
 
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: MultiProvider(
+    await tester.pumpWidget(
+      MultiProvider(
         providers: [
           Provider<SubiquityClient>.value(value: client),
           Provider(create: (_) => DiskStorageService(client)),
         ],
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: InstallationTypePage.create,
-              onNext: (settings) => '/',
-            ),
-          },
-        ),
+        child: tester.buildApp(InstallationTypePage.create),
       ),
-    ));
+    );
 
     final page = find.byType(InstallationTypePage);
     expect(page, findsOneWidget);

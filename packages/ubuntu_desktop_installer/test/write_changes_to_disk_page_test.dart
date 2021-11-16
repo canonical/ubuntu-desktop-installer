@@ -4,12 +4,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'widget_tester_extensions.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
@@ -91,25 +89,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, WriteChangesToDiskModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
-    );
-  }
-
   testWidgets('list of disks and partitions', (tester) async {
     final model = buildModel(disks: testDisks);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
       expect(find.byKey(ValueKey(disk)), findsOneWidget);
@@ -122,7 +104,7 @@ void main() {
 
   testWidgets('starts installation', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       ElevatedButton,
@@ -139,25 +121,17 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
 
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: MultiProvider(
+    await tester.pumpWidget(
+      MultiProvider(
         providers: [
           Provider<SubiquityClient>.value(value: client),
           Provider<DiskStorageService>.value(
             value: service,
           ),
         ],
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: WriteChangesToDiskPage.create,
-              onNext: (settings) => '/',
-            ),
-          },
-        ),
+        child: tester.buildApp(WriteChangesToDiskPage.create),
       ),
-    ));
+    );
 
     final page = find.byType(WriteChangesToDiskPage);
     expect(page, findsOneWidget);
