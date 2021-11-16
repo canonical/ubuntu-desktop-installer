@@ -9,6 +9,7 @@ import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'choose_your_look_page_test.mocks.dart';
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([Settings])
 void main() {
@@ -23,14 +24,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider.value(
         value: settings,
-        child: MaterialApp(
-          localizationsDelegates: localizationsDelegates,
-          home: Wizard(
-            routes: {
-              '/': WizardRoute(builder: ChooseYourLookPage.create),
-            },
-          ),
-        ),
+        child: tester.buildApp(ChooseYourLookPage.create),
       ),
     );
 

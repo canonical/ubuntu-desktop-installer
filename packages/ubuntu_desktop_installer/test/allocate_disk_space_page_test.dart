@@ -6,12 +6,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
@@ -112,25 +110,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, AllocateDiskSpaceModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
-    );
-  }
-
   testWidgets('list of disks and partitions', (tester) async {
     final model = buildModel(disks: testDisks);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
       expect(find.text(disk.path!), findsOneWidget);
@@ -146,7 +128,7 @@ void main() {
 
   testWidgets('select storage', (tester) async {
     final model = buildModel(disks: testDisks);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.text(testDisks.first.path!));
     await tester.pumpAndSettle();
@@ -171,7 +153,7 @@ void main() {
         canEditPartition: false,
         canRemovePartition: false,
         canReformatDisk: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.ancestor(
       of: find.byIcon(Icons.add),
@@ -204,7 +186,7 @@ void main() {
 
   testWidgets('can add', (tester) async {
     final model = buildModel(disks: testDisks, canAddPartition: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.ancestor(
       of: find.byIcon(Icons.add),
@@ -216,7 +198,7 @@ void main() {
 
   testWidgets('can edit', (tester) async {
     final model = buildModel(disks: testDisks, canEditPartition: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final editButton = find.ancestor(
       of: find.text(tester.lang.changeButtonText),
@@ -230,7 +212,7 @@ void main() {
     final disk = testDisks.first;
     final partition = disk.partitions!.first;
     final model = buildModel(disks: testDisks);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final checkbox = find.byType(Checkbox);
     expect(checkbox, findsWidgets);
@@ -248,7 +230,7 @@ void main() {
       selectedPartition: partition,
       canRemovePartition: true,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final removeButton = find.ancestor(
       of: find.byIcon(Icons.remove),
@@ -268,7 +250,7 @@ void main() {
       selectedDisk: disk,
       canReformatDisk: true,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final resetButton = find.ancestor(
       of: find.text(tester.lang.newPartitionTable),
@@ -283,7 +265,7 @@ void main() {
 
   testWidgets('revert', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final revertButton = find.ancestor(
       of: find.text(tester.lang.revertButtonText),
@@ -298,7 +280,7 @@ void main() {
 
   testWidgets('boot disk', (tester) async {
     final model = buildModel(disks: testDisks, bootDiskIndex: 1);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byTypeOf<DropdownButton<int>>());
     await tester.pumpAndSettle();
@@ -315,7 +297,7 @@ void main() {
 
   testWidgets('set storage', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -329,7 +311,7 @@ void main() {
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -345,22 +327,12 @@ void main() {
     when(storage.needRoot).thenReturn(false);
     when(storage.needBoot).thenReturn(false);
 
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: MultiProvider(
-        providers: [
-          Provider<DiskStorageService>.value(value: storage),
-          Provider<UdevService>(create: (_) => MockUdevService()),
-        ],
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: AllocateDiskSpacePage.create,
-              onNext: (settings) => '/',
-            )
-          },
-        ),
-      ),
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        Provider<DiskStorageService>.value(value: storage),
+        Provider<UdevService>(create: (_) => MockUdevService()),
+      ],
+      child: tester.buildApp(AllocateDiskSpacePage.create),
     ));
 
     final page = find.byType(AllocateDiskSpacePage);

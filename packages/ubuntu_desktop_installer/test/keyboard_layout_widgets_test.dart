@@ -1,22 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 
 import 'widget_tester_extensions.dart';
 
 void main() {
-  setUpAll(() => LangTester.context = DetectKeyboardLayoutView);
+  setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 
   testWidgets('press key', (tester) async {
     int? keyPress;
 
     await tester.pumpWidget(
-      MaterialApp(
-        supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: localizationsDelegates,
-        home: DetectKeyboardLayoutView(
+      tester.buildApp(
+        (_) => DetectKeyboardLayoutView(
           pressKey: ['x', 'y', 'z'],
           onKeyPress: (code) => keyPress = code,
         ),
@@ -38,13 +34,7 @@ void main() {
 
   testWidgets('find key', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
-        supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: localizationsDelegates,
-        home: DetectKeyboardLayoutView(
-          keyPresent: 'x',
-        ),
-      ),
+      tester.buildApp((_) => DetectKeyboardLayoutView(keyPresent: 'x')),
     );
 
     expect(find.byType(KeyPresentView), findsOneWidget);
