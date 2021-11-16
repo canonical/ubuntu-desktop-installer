@@ -31,7 +31,7 @@ class UbuntuWslSetupApp extends StatelessWidget {
       themeMode: Settings.of(context).theme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales: supportedLocales,
       home: buildWizard(context),
     );
   }

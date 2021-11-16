@@ -26,7 +26,7 @@ class SelectLanguageModel extends ChangeNotifier {
 
   /// Loads available languages.
   Future<void> loadLanguages() async {
-    return loadLocalizedLanguages(AppLocalizations.supportedLocales)
+    return loadLocalizedLanguages(supportedLocales)
         .then((languages) => _languages = languages)
         .then((_) => notifyListeners());
   }
