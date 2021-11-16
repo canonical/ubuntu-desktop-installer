@@ -6,10 +6,9 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.mocks.dart"
     - "**/l10n/*.dart"
-#    - "**/test/**.dart"
 
 linter:
   rules:
     constant_identifier_names: false
     lines_longer_than_80_chars: false
-    prefer_const_constructors: true
+    # prefer_const_constructors: true
