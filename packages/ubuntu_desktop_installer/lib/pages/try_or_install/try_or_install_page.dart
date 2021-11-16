@@ -31,6 +31,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
   Widget build(BuildContext context) {
     final model = Provider.of<TryOrInstallModel>(context);
     final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
     return WizardPage(
       title: Text(lang.tryOrInstallPageTitle),
       contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 150),
@@ -50,8 +51,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
             child: OptionCard(
               selected: model.option == Option.tryUbuntu,
               imageAsset: 'assets/steering-wheel.png',
-              titleText: lang.tryUbuntu('Ubuntu'),
-              bodyText: lang.tryUbuntuDescription('Ubuntu'),
+              titleText: lang.tryUbuntu(flavor.name),
+              bodyText: lang.tryUbuntuDescription(flavor.name),
               onSelected: () => model.selectOption(Option.tryUbuntu),
             ),
           ),
@@ -60,8 +61,8 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
             child: OptionCard(
               selected: model.option == Option.installUbuntu,
               imageAsset: 'assets/hard-drive.png',
-              titleText: lang.installUbuntu('Ubuntu'),
-              bodyText: lang.installUbuntuDescription('Ubuntu'),
+              titleText: lang.installUbuntu(flavor.name),
+              bodyText: lang.installUbuntuDescription(flavor.name),
               onSelected: () => model.selectOption(Option.installUbuntu),
             ),
           ),
