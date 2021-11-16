@@ -12,3 +12,4 @@ linter:
     constant_identifier_names: false
     lines_longer_than_80_chars: false
     # prefer_const_constructors: true
+    public_member_api_docs: false
