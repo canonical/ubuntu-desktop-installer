@@ -28,6 +28,7 @@ class DiskStorageService {
 
   bool? _needRoot;
   bool? _needBoot;
+  bool? _useLvm;
   int get _diskCount => guidedStorage?.length ?? 0;
 
   /// Whether the system has multiple disks available for guided partitioning.
@@ -38,6 +39,10 @@ class DiskStorageService {
 
   /// Whether the storage configuration is missing a boot partition.
   bool get needBoot => _needBoot ?? true;
+
+  /// Whether the storage configuration should use LVM.
+  bool get useLvm => _useLvm ?? false;
+  set useLvm(bool useLvm) => _useLvm = useLvm;
 
   List<Disk> _updateGuidedStorage(GuidedStorageResponse response) {
     log.debug('Update guided storage: $response');
@@ -57,7 +62,7 @@ class DiskStorageService {
   Future<void> setGuidedStorage([Disk? disk]) {
     final choice = GuidedChoice(
       diskId: disk?.id ?? guidedStorage![0].id,
-      useLvm: false,
+      useLvm: useLvm,
     );
     return _client.setGuidedStorageV2(choice).then(_updateStorage);
   }

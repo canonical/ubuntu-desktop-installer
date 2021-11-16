@@ -47,6 +47,14 @@ class MockDiskStorageService extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#needBoot), returnValue: false)
           as bool);
   @override
+  bool get useLvm =>
+      (super.noSuchMethod(Invocation.getter(#useLvm), returnValue: false)
+          as bool);
+  @override
+  set useLvm(bool? useLvm) =>
+      super.noSuchMethod(Invocation.setter(#useLvm, useLvm),
+          returnValueForMissingStub: null);
+  @override
   _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);

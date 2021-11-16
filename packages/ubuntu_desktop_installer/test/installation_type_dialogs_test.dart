@@ -46,5 +46,5 @@ void main() {
 
     verify(model.advancedFeature = AdvancedFeature.zfs).called(1);
     verify(model.encryption = true).called(1);
-  });
+  }, skip: true); // #373
 }

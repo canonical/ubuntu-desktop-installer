@@ -8,6 +8,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
 
 export 'installation_type_model.dart' show InstallationType;
@@ -91,26 +92,25 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             onChanged: (value) => model.installationType = value!,
           ),
           const SizedBox(height: kContentSpacing),
-          // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-          // RadioIconTile(
-          //   contentPadding: EdgeInsets.zero,
-          //   title: Row(
-          //     mainAxisSize: MainAxisSize.min,
-          //     children: <Widget>[
-          //       OutlinedButton(
-          //         onPressed: () => showAdvancedFeaturesDialog(context, model),
-          //         child: Text(lang.installationTypeAdvancedLabel),
-          //       ),
-          //       const SizedBox(width: kContentSpacing),
-          //       Text(model.advancedFeature == AdvancedFeature.lvm
-          //           ? lang.installationTypeLVMSelected
-          //           : model.advancedFeature == AdvancedFeature.zfs
-          //               ? lang.installationTypeZFSSelected
-          //               : lang.installationTypeNoneSelected),
-          //     ],
-          //   ),
-          // ),
-          // const SizedBox(height: kContentSpacing),
+          RadioIconTile(
+            contentPadding: EdgeInsets.zero,
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                OutlinedButton(
+                  onPressed: () => showAdvancedFeaturesDialog(context, model),
+                  child: Text(lang.installationTypeAdvancedLabel),
+                ),
+                const SizedBox(width: kContentSpacing),
+                Text(model.advancedFeature == AdvancedFeature.lvm
+                    ? lang.installationTypeLVMSelected
+                    : model.advancedFeature == AdvancedFeature.zfs
+                        ? lang.installationTypeZFSSelected
+                        : lang.installationTypeNoneSelected),
+              ],
+            ),
+          ),
+          const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
             title: Text(lang.installationTypeManual),
             subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
