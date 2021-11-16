@@ -27,9 +27,7 @@ dependencies:
   keyboard_info: ^0.2.0
   logger:
     path: ../logger
-  nm: # TODO: ^0.5.0
-    git:
-      url: https://github.com/canonical/nm.dart.git
+  nm: ^0.4.1
   provider: ^6.0.0
   flutter_markdown: ^0.6.2
   safe_change_notifier: ^0.1.0
