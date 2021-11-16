@@ -143,7 +143,7 @@ class _UbuntuDesktopInstallerWizardState
     final service = Provider.of<DiskStorageService>(context, listen: false);
 
     return Wizard(
-      initialRoute: widget.initialRoute ?? Routes.welcome,
+      initialRoute: widget.initialRoute ?? Routes.initial,
       routes: <String, WizardRoute>{
         Routes.welcome: const WizardRoute(
           builder: WelcomePage.create,
