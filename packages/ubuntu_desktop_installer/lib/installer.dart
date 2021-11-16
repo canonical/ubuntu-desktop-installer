@@ -195,7 +195,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
           onNext: (_) =>
-              (!model.hasEncryption) ? Routes.writeChangesToDisk : null,
+              !model.hasEncryption ? Routes.writeChangesToDisk : null,
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,
