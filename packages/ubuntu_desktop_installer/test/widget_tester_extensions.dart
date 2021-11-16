@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 /// An extension on [WidgetTester] for building test apps.

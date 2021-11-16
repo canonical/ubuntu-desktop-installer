@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/l10n.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
