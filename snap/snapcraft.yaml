@@ -109,6 +109,7 @@ parts:
       - python3-pyudev
       - python3-systemd
       - python3-urwid
+      - util-linux
     prime:
       - -lib/systemd/system/*
 
