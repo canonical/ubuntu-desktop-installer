@@ -31,6 +31,7 @@ void main() {
 
     device = MockNetworkManagerDevice();
     when(device.udi).thenReturn('test udi');
+    when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     deviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(device.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
 
@@ -95,5 +96,19 @@ void main() {
 
     when(device.state).thenReturn(NetworkManagerDeviceState.disconnected);
     expect(model.isEnabled, isFalse);
+  });
+
+  test('unmanaged', () async {
+    when(service.wiredDevices).thenReturn([device]);
+
+    when(device.state).thenReturn(NetworkManagerDeviceState.unmanaged);
+    expect(model.devices, isEmpty);
+  });
+
+  test('unavailable', () async {
+    when(service.wiredDevices).thenReturn([device]);
+
+    when(device.state).thenReturn(NetworkManagerDeviceState.unavailable);
+    expect(model.devices, isEmpty);
   });
 }
