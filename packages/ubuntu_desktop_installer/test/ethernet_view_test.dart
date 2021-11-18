@@ -15,7 +15,7 @@ import 'widget_tester_extensions.dart';
 
 @GenerateMocks([EthernetModel, EthernetDevice])
 void main() {
-  setUpAll(() => LangTester.context = Column);
+  setUpAll(() => UbuntuTester.context = Column);
 
   testWidgets('select ethernet mode', (tester) async {
     ConnectMode? mode;

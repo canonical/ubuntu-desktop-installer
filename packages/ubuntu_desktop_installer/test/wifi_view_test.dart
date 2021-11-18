@@ -15,7 +15,7 @@ import 'wifi_view_test.mocks.dart';
 
 @GenerateMocks([AccessPoint, WifiModel, WifiDevice])
 void main() {
-  setUpAll(() => LangTester.context = WifiView);
+  setUpAll(() => UbuntuTester.context = WifiView);
 
   testWidgets('device and access point tiles', (tester) async {
     final device1 = MockWifiDevice();
