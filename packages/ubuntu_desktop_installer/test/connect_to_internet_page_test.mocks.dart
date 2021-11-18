@@ -216,6 +216,14 @@ class MockEthernetDevice extends _i1.Mock implements _i7.EthernetDevice {
       (super.noSuchMethod(Invocation.getter(#isDisabled), returnValue: false)
           as bool);
   @override
+  bool get isUnmanaged =>
+      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
+          as bool);
+  @override
+  bool get isUnavailable =>
+      (super.noSuchMethod(Invocation.getter(#isUnavailable), returnValue: false)
+          as bool);
+  @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
       Invocation.getter(#device),
       returnValue: _FakeNetworkManagerDevice_0()) as _i2.NetworkManagerDevice);
