@@ -28,9 +28,9 @@ class ChooseYourLookPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: OptionCard(
-                  imageAsset: 'assets/Theme_thumbnails-Light.png',
-                  titleText: lang.chooseYourLookPageLightSetting,
-                  bodyText: lang.chooseYourLookPageLightBodyText,
+                  image: Image.asset('assets/Theme_thumbnails-Light.png'),
+                  title: Text(lang.chooseYourLookPageLightSetting),
+                  body: Text(lang.chooseYourLookPageLightBodyText),
                   selected: Theme.of(context).brightness == Brightness.light,
                   onSelected: () {
                     final settings = Settings.of(context, listen: false);
@@ -41,9 +41,9 @@ class ChooseYourLookPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: OptionCard(
-                  imageAsset: 'assets/Theme_thumbnails-Dark.png',
-                  titleText: lang.chooseYourLookPageDarkSetting,
-                  bodyText: lang.chooseYourLookPageDarkBodyText,
+                  image: Image.asset('assets/Theme_thumbnails-Dark.png'),
+                  title: Text(lang.chooseYourLookPageDarkSetting),
+                  body: Text(lang.chooseYourLookPageDarkBodyText),
                   selected: Theme.of(context).brightness == Brightness.dark,
                   onSelected: () {
                     final settings = Settings.of(context, listen: false);
