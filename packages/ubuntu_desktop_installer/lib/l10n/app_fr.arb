@@ -178,7 +178,7 @@
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "Demander mon mot de passe pour ouvrir une session",
   "@whoAreYouPageRequirePassword": {},
-  "whoAreYouPageComputerNameInfo": "Le nom utilisé quand votre ordinateur communique avec d'autres ordinateurs.",
+  "whoAreYouPageComputerNameInfo": "Le nom qu’il utilise pour communiquer avec d’autres ordinateurs.",
   "@whoAreYouPageComputerNameInfo": {},
   "installationTypeLVMSelected": "LVM sélectionné",
   "@installationTypeLVMSelected": {},

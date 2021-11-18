@@ -4,12 +4,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/l10n.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'choose_security_key_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
@@ -35,26 +32,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, ChooseSecurityKeyModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: [
-        ...AppLocalizations.localizationsDelegates,
-        ...UbuntuLocalizations.localizationsDelegates,
-      ],
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(builder: (_) => buildPage(model)),
-          '/next': WizardRoute(builder: (_) => const Text('Next')),
-        },
-      ),
-    );
-  }
-
   testWidgets('security key input', (tester) async {
     final model = buildModel(securityKey: 'foo');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, 'foo');
     expect(textField, findsOneWidget);
@@ -64,7 +44,7 @@ void main() {
 
   testWidgets('security key confirmation', (tester) async {
     final model = buildModel(securityKey: 'foo', confirmedSecurityKey: 'foo');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textFields = find.widgetWithText(TextField, 'foo');
     expect(textFields, findsNWidgets(2));
@@ -76,7 +56,7 @@ void main() {
 
   testWidgets('valid input', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -87,7 +67,7 @@ void main() {
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -98,7 +78,7 @@ void main() {
 
   testWidgets('load and save security key', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     verify(model.loadSecurityKey()).called(1);
     verifyNever(model.saveSecurityKey());
@@ -117,15 +97,12 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => IdentityData());
 
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Provider<SubiquityClient>.value(
+    await tester.pumpWidget(
+      Provider<SubiquityClient>.value(
         value: client,
-        child: Wizard(routes: {
-          '/': WizardRoute(builder: ChooseSecurityKeyPage.create),
-        }),
+        child: tester.buildApp(ChooseSecurityKeyPage.create),
       ),
-    ));
+    );
 
     final page = find.byType(ChooseSecurityKeyPage);
     expect(page, findsOneWidget);

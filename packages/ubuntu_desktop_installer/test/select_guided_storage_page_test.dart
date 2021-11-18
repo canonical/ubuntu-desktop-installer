@@ -4,12 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
@@ -54,23 +52,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, SelectGuidedStorageModel model) {
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          ),
-        },
-      ),
-    );
-  }
-
   testWidgets('list of guided storages', (tester) async {
     final model = buildModel(storages: testStorages);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byTypeOf<DropdownButton<int>>());
     await tester.pumpAndSettle();
@@ -88,7 +72,7 @@ void main() {
 
   testWidgets('select a guided storage', (tester) async {
     final model = buildModel(storages: testStorages);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byTypeOf<DropdownButton<int>>());
     await tester.pumpAndSettle();
@@ -109,14 +93,14 @@ void main() {
       storages: testStorages,
       selectedStorage: selectedStorage,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     expect(find.text(selectedStorage.path!), findsOneWidget);
     expect(find.text(filesize(selectedStorage.size)), findsOneWidget);
   });
 
   testWidgets('loads and saves guided storages', (tester) async {
     final model = buildModel(storages: testStorages);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     verify(model.loadGuidedStorage()).called(1);
     verifyNever(model.saveGuidedStorage());
@@ -133,20 +117,12 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getGuidedStorage()).thenAnswer((_) async => testStorages);
 
-    await tester.pumpWidget(MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Provider<DiskStorageService>.value(
+    await tester.pumpWidget(
+      Provider<DiskStorageService>.value(
         value: service,
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: SelectGuidedStoragePage.create,
-              onNext: (settings) => '/',
-            ),
-          },
-        ),
+        child: tester.buildApp(SelectGuidedStoragePage.create),
       ),
-    ));
+    );
 
     final page = find.byType(SelectGuidedStoragePage);
     expect(page, findsOneWidget);

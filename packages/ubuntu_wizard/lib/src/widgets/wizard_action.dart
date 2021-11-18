@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:wizard_router/wizard_router.dart';
-
-import '../../l10n.dart';
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
 ///

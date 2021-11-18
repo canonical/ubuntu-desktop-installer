@@ -6,13 +6,11 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'keyboard_layout_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
@@ -56,23 +54,9 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, KeyboardLayoutModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(builder: (_) => buildPage(model)),
-          '/next': WizardRoute(builder: (_) => Text('Next page')),
-        },
-      ),
-    );
-  }
-
   testWidgets('initializes the model', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     verify(model.init()).called(1);
   });
 
@@ -80,7 +64,7 @@ void main() {
     final model = buildModel(
       layouts: List.generate(3, (i) => 'Layout $i'),
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (var i = 0; i < 3; ++i) {
       final layoutTile = find.widgetWithText(ListTile, 'Layout $i');
@@ -94,7 +78,7 @@ void main() {
     final model = buildModel(
       variants: List.generate(3, (i) => 'Variant $i'),
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (var i = 0; i < 3; ++i) {
       final variantTile = find.widgetWithText(ListTile, 'Variant $i');
@@ -106,7 +90,7 @@ void main() {
 
   testWidgets('type to test keyboard', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.widgetWithText(TextField, tester.lang.typeToTest);
     expect(textField, findsOneWidget);
@@ -117,7 +101,7 @@ void main() {
 
   testWidgets('detect keyboard layout', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final detectButton =
         find.widgetWithText(OutlinedButton, tester.lang.detectLayout);
@@ -137,7 +121,7 @@ void main() {
 
   testWidgets('valid input', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -149,7 +133,7 @@ void main() {
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -161,7 +145,7 @@ void main() {
 
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(isValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -180,22 +164,12 @@ void main() {
     when(service.layouts).thenReturn([]);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: MultiProvider(
-          providers: [
-            Provider<KeyboardService>.value(value: service),
-            Provider<SubiquityClient>(create: (_) => MockSubiquityClient()),
-          ],
-          child: Wizard(
-            routes: {
-              '/': WizardRoute(
-                builder: KeyboardLayoutPage.create,
-                onNext: (settings) => '/',
-              )
-            },
-          ),
-        ),
+      MultiProvider(
+        providers: [
+          Provider<KeyboardService>.value(value: service),
+          Provider<SubiquityClient>(create: (_) => MockSubiquityClient()),
+        ],
+        child: tester.buildApp(KeyboardLayoutPage.create),
       ),
     );
 

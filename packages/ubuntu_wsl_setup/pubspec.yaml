@@ -13,6 +13,10 @@ dependencies:
     path: ../logger
   provider: ^6.0.0
   scroll_to_index: ^2.0.0
+  ubuntu_localizations:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_localizations
   ubuntu_wizard:
     path: ../ubuntu_wizard
   url_launcher: ^6.0.9

@@ -45,6 +45,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<InstallationTypeModel>(context);
     final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
     return WizardPage(
       title: Text(lang.installationTypeTitle),
       header: Text(
@@ -79,7 +80,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             ),
           if (model.existingOS != null) const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
-            title: Text(lang.installationTypeErase('Ubuntu')),
+            title: Text(lang.installationTypeErase(flavor.name)),
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
                   Theme.of(context).errorColor.toHex()),
@@ -112,7 +113,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           // const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
             title: Text(lang.installationTypeManual),
-            subtitle: Text(lang.installationTypeManualInfo('Ubuntu')),
+            subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
             value: InstallationType.manual,
             groupValue: model.installationType,
             onChanged: (v) => model.installationType = v!,

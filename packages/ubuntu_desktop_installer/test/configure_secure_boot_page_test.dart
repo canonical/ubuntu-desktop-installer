@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_page.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -41,22 +40,6 @@ void main() {
     );
   }
 
-  Widget buildApp(WidgetTester tester, ConfigureSecureBootModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(
-        routes: {
-          '/': WizardRoute(
-            builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
-          )
-        },
-      ),
-    );
-  }
-
   testWidgets('security key input', (tester) async {
     final model = buildModel(
       secureBootMode: SecureBootMode.turnOff,
@@ -64,7 +47,7 @@ void main() {
       confirmKey: 'key',
       areTextFieldsEnabled: true,
     );
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final fields = find.widgetWithText(ValidatedFormField, 'key');
     expect(fields, findsNWidgets(2));
@@ -89,7 +72,7 @@ void main() {
 
   testWidgets('disabled input fields', (tester) async {
     final model = buildModel(areTextFieldsEnabled: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final fields = find.byType(ValidatedFormField);
     expect(fields, findsNWidgets(2));
@@ -99,14 +82,14 @@ void main() {
 
   testWidgets('empty security key', (tester) async {
     final model = buildModel(securityKey: '');
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(find.byType(SuccessIcon), findsNothing);
   });
 
   testWidgets('don\'t install', (tester) async {
     final model = buildModel(secureBootMode: SecureBootMode.dontInstall);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radios = find.byTypeOf<RadioButton<SecureBootMode>>();
     expect(radios, findsNWidgets(2));
@@ -118,7 +101,7 @@ void main() {
 
   testWidgets('valid input', (tester) async {
     final model = buildModel(isFormValid: true);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -129,7 +112,7 @@ void main() {
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isFormValid: false);
-    await tester.pumpWidget(buildApp(tester, model));
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,

@@ -469,7 +469,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageComputerNameLabel => 'Le nom de votre ordinateur';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Le nom utilisé quand votre ordinateur communique avec d\'autres ordinateurs.';
+  String get whoAreYouPageComputerNameInfo => 'Le nom qu’il utilise pour communiquer avec d’autres ordinateurs.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Un nom pour l\'ordinateur est requis';

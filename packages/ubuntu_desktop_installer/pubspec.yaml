@@ -32,6 +32,10 @@ dependencies:
   flutter_markdown: ^0.6.2
   safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
+  ubuntu_localizations:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_localizations
   udev:
     path: ../udev
   url_launcher: ^6.0.3

@@ -12,7 +12,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Probar Ubuntu';
+    return 'Probar $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Puede probar Ubuntu sin hacer ningún cambio en su equipo.';
+    return 'Puede probar $RELEASE sin efectuar ningún cambio en el equipo.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instalar Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Instalar Ubuntu junto con (o reemplazando) su sistema operativo actual. No debería tardar mucho.';
+    return 'Instalar $RELEASE junto con (o en lugar de) su sistema operativo actual. No demorará mucho.';
   }
 
   @override
@@ -203,7 +203,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'El cifrado del disco protege sus archivos en caso de extravío del equipo. Necesitará introducir una clave de seguridad cada vez que inicie el equipo.\n\nNo se cifrarán los archivos que se encuentren fuera de Ubuntu.';
+    return 'El cifrado del disco protege sus archivos en caso de extravío del equipo. Necesitará introducir una clave de seguridad cada vez que inicie el equipo.\n\nNo se cifrarán los archivos que se encuentren fuera de $RELEASE.';
   }
 
   @override
@@ -236,7 +236,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Borrar disco e instalar Ubuntu';
+    return 'Borrar disco e instalar $DISTRO';
   }
 
   @override
@@ -258,7 +258,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Utilizar LVM en la instalación nueva de Ubuntu';
+    return 'Utilizar LVM en la instalación nueva de $RELEASE';
   }
 
   @override
@@ -266,7 +266,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Cifrar la instalación nueva de Ubuntu por seguridad';
+    return 'Cifrar la instalación nueva de $RELEASE por seguridad';
   }
 
   @override
@@ -301,12 +301,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Puede crear o redimensionar las particiones por su cuenta, o bien, elegir varias particiones para Ubuntu';
+    return 'Puede crear o redimensionar las particiones por su cuenta, o bien, elegir varias particiones para $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Borrar disco e instalar Ubuntu';
+    return 'Borrar disco e instalar $DISTRO';
   }
 
   @override
@@ -397,22 +397,22 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizada como:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Sistema de archivos transaccional Ext4';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Sistema de archivos transaccional Ext3';
 
   @override
   String get partitionFormatExt2 => 'Sistema de archivos Ext2';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'Sistema de archivos transaccional btrfs';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'Sistema de archivos transaccional JFS';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'Sistema de archivos transaccional XFS';
 
   @override
   String get partitionFormatFat => 'Sistema de archivos FAT';
@@ -442,7 +442,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionFormatReiserFS => 'Sistema de archivos ReiserFS';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'Sistema de archivos raíz ZFS';
 
   @override
   String get partitionErase => 'Formatear la partición';
