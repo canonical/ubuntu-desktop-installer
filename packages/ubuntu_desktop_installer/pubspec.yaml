@@ -36,7 +36,7 @@ dependencies:
     path: ../udev
   url_launcher: ^6.0.3
   yaru: ^0.1.8
-  yaru_icons: ^0.0.6
+  yaru_icons: ^0.0.8
 
 dev_dependencies:
   flutter_test:

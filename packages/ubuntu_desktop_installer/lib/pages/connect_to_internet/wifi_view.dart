@@ -32,7 +32,8 @@ class WifiRadioButton extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8),
       child: !model.isEnabled || model.devices.isEmpty
           ? NetworkTile(
-              leading: Icon(Icons.close, color: Theme.of(context).errorColor),
+              leading: Icon(YaruIcons.window_close,
+                  color: Theme.of(context).errorColor),
               title: !model.isEnabled
                   ? Text(lang.wirelessNetworkingDisabled)
                   : Text(lang.noWifiDevicesDetected),
@@ -170,7 +171,7 @@ class WifiListTile extends StatelessWidget {
             : device.scanning || device.isBusy
                 ? const CircularProgressIndicator()
                 : IconButton(
-                    icon: const Icon(Icons.refresh),
+                    icon: const Icon(YaruIcons.refresh),
                     padding: EdgeInsets.zero,
                     onPressed: device.requestScan,
                   ),
@@ -184,7 +185,7 @@ class WifiListTile extends StatelessWidget {
               title: Text(accessPoint.name),
               leading:
                   device.isActive && device.isActiveAccessPoint(accessPoint)
-                      ? const Icon(Icons.check)
+                      ? const Icon(YaruIcons.ok_simple)
                       : const SizedBox.shrink(),
               selected: selected && device.isSelectedAccessPoint(accessPoint),
               trailing: SizedBox(

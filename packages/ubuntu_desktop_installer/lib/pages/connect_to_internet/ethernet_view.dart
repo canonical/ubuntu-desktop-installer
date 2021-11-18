@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../l10n.dart';
 import 'connect_model.dart';
@@ -23,7 +24,8 @@ class EthernetRadioButton extends StatelessWidget {
     final lang = AppLocalizations.of(context);
     if (!model.isEnabled || model.devices.isEmpty) {
       return NetworkTile(
-        leading: Icon(Icons.close, color: Theme.of(context).errorColor),
+        leading:
+            Icon(YaruIcons.window_close, color: Theme.of(context).errorColor),
         title: model.devices.isEmpty
             ? Text(lang.noWiredConnection)
             : Text(lang.wiredDisabled),
