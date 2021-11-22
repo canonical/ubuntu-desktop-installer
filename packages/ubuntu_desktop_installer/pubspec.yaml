@@ -17,6 +17,7 @@ dependencies:
     path: ../ubuntu_wizard
   collection: ^1.15.0
   dbus: ^0.6.3
+  dio: ^4.0.3
   file: ^6.1.0
   filesize: ^2.0.0
   flutter_html: ^2.1.1
@@ -40,6 +41,7 @@ dependencies:
   udev:
     path: ../udev
   url_launcher: ^6.0.3
+  xml: ^5.3.1
   yaru: ^0.2.0
   yaru_icons: ^0.0.8
 
