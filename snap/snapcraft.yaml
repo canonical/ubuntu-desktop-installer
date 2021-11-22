@@ -19,6 +19,7 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    command-chain: [ bin/launcher ]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
@@ -125,6 +126,7 @@ parts:
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
