@@ -1,3 +1,19 @@
 {
-  "@@locale": "fr"
+  "@@locale": "fr",
+  "exitButton": "Quitter",
+  "@exitButton": {},
+  "appTitle": "Ubuntu WSL",
+  "@appTitle": {},
+  "windowTitle": "Ubuntu WSL",
+  "@windowTitle": {},
+  "finishButton": "Finir",
+  "@finishButton": {},
+  "saveButton": "Enregistrer",
+  "@saveButton": {},
+  "setupButton": "Configurer",
+  "@setupButton": {},
+  "selectLanguageTitle": "Sélectionnez votre langue",
+  "@selectLanguageTitle": {},
+  "profileSetupTitle": "Configuration du profil",
+  "@profileSetupTitle": {}
 }
