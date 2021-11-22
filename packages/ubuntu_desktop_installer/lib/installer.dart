@@ -265,15 +265,14 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
-          onNext: (_) => !model.hasBitLocker ? Routes.whoAreYou : null,
+          onNext: (_) => !model.hasBitLocker ? Routes.whereAreYou : null,
         ),
         Routes.turnOffBitlocker: const WizardRoute(
           builder: TurnOffBitLockerPage.create,
         ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/38
-        // Routes.whereAreYou: const WizardRoute(
-        //   builder: WhereAreYouPage.create,
-        // ),
+        Routes.whereAreYou: const WizardRoute(
+          builder: WhereAreYouPage.create,
+        ),
         Routes.whoAreYou: const WizardRoute(
           builder: WhoAreYouPage.create,
         ),

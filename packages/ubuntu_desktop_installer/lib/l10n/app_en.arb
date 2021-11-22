@@ -335,5 +335,8 @@
       "url": {}
     }
   },
-  "restartIntoWindows": "Restart Into Windows"
+  "restartIntoWindows": "Restart Into Windows",
+  "whereAreYouPageTitle": "Where are you?",
+  "whereAreYouLocationLabel": "Location",
+  "whereAreYouTimezoneLabel": "Timezone"
 }

@@ -581,4 +581,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Reiniciar en Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }
