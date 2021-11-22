@@ -15,6 +15,7 @@ dependencies:
     path: ../subiquity_client
   ubuntu_wizard:
     path: ../ubuntu_wizard
+  dio: ^4.0.3
   dbus: ^0.6.3
   file: ^6.1.0
   filesize: ^2.0.0
@@ -36,6 +37,7 @@ dependencies:
   udev:
     path: ../udev
   url_launcher: ^6.0.3
+  xml: ^5.3.1
   yaru: ^0.1.8
   yaru_icons: ^0.0.6
 

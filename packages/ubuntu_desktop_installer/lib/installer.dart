@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -15,6 +16,8 @@ import 'services.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 
+const _kGeoIPUrl = 'https://geoip.ubuntu.com/lookup';
+const _kGeonameUrl = 'http://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
 void runInstallerApp(List<String> args, {FlavorData? flavor}) {
@@ -29,6 +32,15 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
   final subiquityServer = SubiquityServer();
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+
+  final geodata = Geodata(
+    loadCities: () => rootBundle.loadString('assets/cities15000.txt'),
+    loadAdmins: () => rootBundle.loadString('assets/admin1CodesASCII.txt'),
+    loadCountries: () => rootBundle.loadString('assets/countryInfo.txt'),
+  );
+
+  final geoip = GeoIP(url: _kGeoIPUrl, geodata: geodata);
+  final geoname = Geoname(url: _kGeonameUrl, geodata: geodata);
 
   runWizardApp(
     UbuntuDesktopInstallerApp(
@@ -53,6 +65,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
     },
     providers: [
       Provider(create: (_) => DiskStorageService(subiquityClient)),
+      Provider(create: (_) => GeoService(geoip, sources: [geodata, geoname])),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
       Provider(create: (_) => UdevService()),
