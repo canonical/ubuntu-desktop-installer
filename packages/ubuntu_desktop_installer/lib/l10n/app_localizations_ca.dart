@@ -161,7 +161,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'El xifratge de discs protegeix els fitxers en cas que perdeu l\'ordinador. Us caldrà escriure una clau de seguretat cada cop que s\'iniciï l\'ordinador.\n\nQualssevol fitxers que no siguin dins el sistema $RELEASE no es xifraran.';
   }
 
   @override
@@ -171,10 +171,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get chooseSecurityKeyConfirmHint => 'Confirmeu la clau de seguretat';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'Cal una clau de seguretat';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'Les claus de seguretat no coincideixen';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -186,7 +186,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'L\'ordinador actualment duu el sistema $os. Què voleu fer?';
   }
 
   @override
@@ -252,7 +252,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Els documents, la música i la resta de fitxers personals es conservaran. Podreu triar quin sistema operatiu voleu utilitzar cada cop que engegueu l\'ordinador.';
 
   @override
   String get installationTypeManual => 'Alguna altra cosa';
@@ -421,7 +421,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageRealNameLabel => 'El vostre nom';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Cal un nom';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'El nom de l\'ordinador';
@@ -430,7 +430,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageComputerNameInfo => 'El nom que utilitza quan es comunica amb altres ordinadors.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'Cal un nom per a l\'ordinador';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'El nom de l\'ordinador no és vàlid';
@@ -439,7 +439,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageUsernameLabel => 'Trieu un nom d\'usuari';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Cal un nom d\'usuari';
 
   @override
   String get whoAreYouPageInvalidUsername => 'El nom d\'usuari no és vàlid';
@@ -448,7 +448,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPagePasswordLabel => 'Trieu una contrasenya';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Cal una contrasenya';
 
   @override
   String get whoAreYouPageConfirmPasswordLabel => 'Confirmeu la contrasenya';
