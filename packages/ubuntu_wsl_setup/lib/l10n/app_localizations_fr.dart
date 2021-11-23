@@ -14,58 +14,58 @@ class AppLocalizationsFr extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Quitter';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Finir';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Enregistrer';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Configurer';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Sélectionnez votre langue';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Configuration du profil';
 
   @override
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Votre nom';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Votre nom est requis';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Choisir un nom d’utilisateur';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Choisir un mot de passe';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Confirmez votre mot de passe';
 
   @override
   String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Les mots de passe ne correspondent pas';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Un nom d\'utilisateur est requis';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Ce nom d\'utilisateur est invalide';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Un mot de passe est requis';
 
   @override
   String get advancedSetupTitle => 'Advanced setup';
