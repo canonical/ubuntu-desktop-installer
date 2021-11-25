@@ -106,7 +106,8 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
             final model = Provider.of<WhoAreYouModel>(context, listen: false);
             await model.saveIdentity();
 
-            Wizard.of(context).next();
+            // TODO: "Configure Active Directory" checkbox
+            Wizard.of(context).next(arguments: false);
           },
         ),
       ],

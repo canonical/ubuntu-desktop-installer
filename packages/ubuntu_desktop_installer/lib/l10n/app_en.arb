@@ -319,5 +319,13 @@
       "url": {}
     }
   },
-  "restartIntoWindows": "Restart Into Windows"
+  "restartIntoWindows": "Restart Into Windows",
+  "configureActiveDirectoryTitle": "Configure Active Directory",
+  "configureActiveDirectoryDomain": "Domain",
+  "configureActiveDirectoryDomainRequired": "A domain is required",
+  "configureActiveDirectoryTestConnection": "Test Connection",
+  "configureActiveDirectoryAdmin": "Domain Administrator",
+  "configureActiveDirectoryAdminRequired": "An administrator is required",
+  "configureActiveDirectoryPassword": "Password",
+  "configureActiveDirectoryPasswordRequired": "A password is required"
 }

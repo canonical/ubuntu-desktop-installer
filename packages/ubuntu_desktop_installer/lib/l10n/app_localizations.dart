@@ -1190,6 +1190,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restart Into Windows'**
   String get restartIntoWindows;
+
+  /// No description provided for @configureActiveDirectoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure Active Directory'**
+  String get configureActiveDirectoryTitle;
+
+  /// No description provided for @configureActiveDirectoryDomain.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain'**
+  String get configureActiveDirectoryDomain;
+
+  /// No description provided for @configureActiveDirectoryDomainRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A domain is required'**
+  String get configureActiveDirectoryDomainRequired;
+
+  /// No description provided for @configureActiveDirectoryTestConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Connection'**
+  String get configureActiveDirectoryTestConnection;
+
+  /// No description provided for @configureActiveDirectoryAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain Administrator'**
+  String get configureActiveDirectoryAdmin;
+
+  /// No description provided for @configureActiveDirectoryAdminRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'An administrator is required'**
+  String get configureActiveDirectoryAdminRequired;
+
+  /// No description provided for @configureActiveDirectoryPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get configureActiveDirectoryPassword;
+
+  /// No description provided for @configureActiveDirectoryPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A password is required'**
+  String get configureActiveDirectoryPasswordRequired;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

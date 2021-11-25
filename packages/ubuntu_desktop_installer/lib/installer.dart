@@ -215,13 +215,14 @@ class _UbuntuDesktopInstallerWizardState
         // Routes.whereAreYou: const WizardRoute(
         //   builder: WhereAreYouPage.create,
         // ),
-        Routes.whoAreYou: const WizardRoute(
+        Routes.whoAreYou: WizardRoute(
           builder: WhoAreYouPage.create,
+          onNext: (settings) =>
+              settings.arguments != true ? Routes.installationSlides : null,
         ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/41
-        // Routes.configureActiveDirectory: const WizardRoute(
-        //   builder: ConfigureActiveDirectoryPage.create,
-        // ),
+        Routes.configureActiveDirectory: const WizardRoute(
+          builder: ConfigureActiveDirectoryPage.create,
+        ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/373
         // Routes.chooseYourLook: const WizardRoute(
         //   builder: ChooseYourLookPage.create,

@@ -533,4 +533,28 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
+
+  @override
+  String get configureActiveDirectoryTitle => 'Configure Active Directory';
+
+  @override
+  String get configureActiveDirectoryDomain => 'Domain';
+
+  @override
+  String get configureActiveDirectoryDomainRequired => 'A domain is required';
+
+  @override
+  String get configureActiveDirectoryTestConnection => 'Test Connection';
+
+  @override
+  String get configureActiveDirectoryAdmin => 'Domain Administrator';
+
+  @override
+  String get configureActiveDirectoryAdminRequired => 'An administrator is required';
+
+  @override
+  String get configureActiveDirectoryPassword => 'Password';
+
+  @override
+  String get configureActiveDirectoryPasswordRequired => 'A password is required';
 }
