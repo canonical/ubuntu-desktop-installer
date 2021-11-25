@@ -73,25 +73,24 @@ void main() {
     verify(model.setInstallationMode(InstallationMode.minimal)).called(1);
   });
 
-  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-  // testWidgets('install third-party software', (tester) async {
-  //   final model = buildModel(installThirdParty: true);
-  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+  testWidgets('install third-party software', (tester) async {
+    final model = buildModel(installThirdParty: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-  //   final installThirdPartyTile = find.widgetWithText(
-  //     CheckButton,
-  //     tester.lang.installThirdPartyTitle,
-  //   );
-  //   expect(installThirdPartyTile, findsOneWidget);
+    final installThirdPartyTile = find.widgetWithText(
+      CheckButton,
+      tester.lang.installThirdPartyTitle,
+    );
+    expect(installThirdPartyTile, findsOneWidget);
 
-  //   expect(tester.widget<CheckButton>(installThirdPartyTile).value, isTrue);
+    expect(tester.widget<CheckButton>(installThirdPartyTile).value, isTrue);
 
-  //   when(model.installThirdParty).thenReturn(false);
+    when(model.installThirdParty).thenReturn(false);
 
-  //   await tester.tap(installThirdPartyTile);
+    await tester.tap(installThirdPartyTile);
 
-  //   verify(model.setInstallThirdParty(false)).called(1);
-  // });
+    verify(model.setInstallThirdParty(false)).called(1);
+  });
 
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(installationMode: InstallationMode.normal);
@@ -110,9 +109,12 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
+    final client = MockSubiquityClient();
+    when(client.freeOnly()).thenAnswer((_) async => true);
+
     await tester.pumpWidget(
-      Provider<SubiquityClient>(
-        create: (_) => MockSubiquityClient(),
+      Provider<SubiquityClient>.value(
+        value: client,
         child: tester.buildApp(UpdatesOtherSoftwarePage.create),
       ),
     );

@@ -48,16 +48,36 @@ void main() {
     expect(shouldInstallThirdParty, isNull);
   });
 
+  test('initialization', () async {
+    final client = MockSubiquityClient();
+    when(client.freeOnly()).thenAnswer((_) async => true);
+
+    final model = UpdateOtherSoftwareModel(
+        client: client,
+        installationMode: InstallationMode.normal,
+        installThirdParty: true);
+
+    await model.init();
+    expect(model.installThirdParty, isFalse);
+    verify(client.freeOnly()).called(1);
+  });
+
   test('set the installation source', () async {
     final client = MockSubiquityClient();
     final model = UpdateOtherSoftwareModel(
-        client: client, installationMode: InstallationMode.normal);
+      client: client,
+      installationMode: InstallationMode.normal,
+      installThirdParty: true,
+    );
 
     await model.selectInstallationSource();
     verify(client.setSource('ubuntu-desktop')).called(1);
+    verify(client.setFreeOnly(false)).called(1);
 
     model.setInstallationMode(InstallationMode.minimal);
+    model.setInstallThirdParty(false);
     await model.selectInstallationSource();
     verify(client.setSource('ubuntu-desktop-minimal')).called(1);
+    verify(client.setFreeOnly(true)).called(1);
   });
 }

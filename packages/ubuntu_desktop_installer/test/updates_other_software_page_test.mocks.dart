@@ -39,6 +39,10 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
+  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  @override
   void setInstallationMode(_i2.InstallationMode? mode) =>
       super.noSuchMethod(Invocation.method(#setInstallationMode, [mode]),
           returnValueForMissingStub: null);

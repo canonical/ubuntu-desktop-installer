@@ -36,6 +36,11 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
   bool _installThirdParty;
   bool get installThirdParty => _installThirdParty;
 
+  Future<void> init() async {
+    final freeOnly = await _client.freeOnly();
+    setInstallThirdParty(!freeOnly);
+  }
+
   void setInstallationMode(InstallationMode? mode) {
     if (mode == null || _mode == mode) {
       return;
@@ -60,6 +65,10 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
   /// Select the source corresponding to the selected installation mode.
   Future<void> selectInstallationSource() {
     log.info('Selected ${installationMode.source} installation source');
-    return _client.setSource(installationMode.source);
+
+    return Future.wait([
+      _client.setSource(installationMode.source),
+      _client.setFreeOnly(!installThirdParty),
+    ]);
   }
 }

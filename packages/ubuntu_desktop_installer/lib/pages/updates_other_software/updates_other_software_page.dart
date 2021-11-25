@@ -24,6 +24,12 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
 
 class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
   @override
+  void initState() {
+    super.initState();
+    Provider.of<UpdateOtherSoftwareModel>(context, listen: false).init();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final model = context.watch<UpdateOtherSoftwareModel>();
     final lang = AppLocalizations.of(context);
@@ -55,18 +61,17 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             groupValue: model.installationMode,
             onChanged: model.setInstallationMode,
           ),
-          // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-          // Padding(
-          //   padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-          //   child: Text(lang.otherOptions),
-          // ),
-          // CheckButton(
-          //   title: Text(lang.installThirdPartyTitle),
-          //   subtitle: Text(lang.installThirdPartySubtitle),
-          //   contentPadding: kContentPadding,
-          //   value: model.installThirdParty,
-          //   onChanged: model.setInstallThirdParty,
-          // )
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.otherOptions),
+          ),
+          CheckButton(
+            title: Text(lang.installThirdPartyTitle),
+            subtitle: Text(lang.installThirdPartySubtitle),
+            contentPadding: kContentPadding,
+            value: model.installThirdParty,
+            onChanged: model.setInstallThirdParty,
+          )
         ],
       ),
       actions: <WizardAction>[
