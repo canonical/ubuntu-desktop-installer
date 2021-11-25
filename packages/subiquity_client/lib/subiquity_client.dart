@@ -163,6 +163,22 @@ class SubiquityClient {
     await _receive('setMirror("$mirror")', response);
   }
 
+  Future<bool> freeOnly() async {
+    final request = Request('GET', Uri.http('localhost', 'meta/free_only'));
+    final response = await _send(request);
+
+    final responseBool = await _receive("freeOnly()", response);
+    return responseBool == 'true';
+  }
+
+  // ignore: avoid_positional_boolean_parameters
+  Future<void> setFreeOnly(bool enable) async {
+    final request = Request(
+        'POST', Uri.http('localhost', 'meta/free_only', {'enable': '$enable'}));
+    final response = await _send(request);
+    await _receive('setFreeOnly("$freeOnly")', response);
+  }
+
   Future<IdentityData> identity() async {
     final request = Request('GET', Uri.http('localhost', 'identity'));
     final response = await _send(request);
