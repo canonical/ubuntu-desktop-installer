@@ -11,6 +11,31 @@ struct _MyApplication {
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 
+static void my_application_get_workarea(GtkWindow* window,
+                                        GdkRectangle* workarea) {
+  GdkWindow* gdk_window = gtk_widget_get_window(GTK_WIDGET(window));
+  GdkDisplay* gdk_display = gdk_window_get_display(gdk_window);
+  GdkMonitor* monitor =
+      gdk_display_get_monitor_at_window(gdk_display, gdk_window);
+  gdk_monitor_get_workarea(monitor, workarea);
+}
+
+static gboolean my_application_fit_to_workarea(GtkWindow* window) {
+  GtkAllocation allocation;
+  gtk_widget_get_allocation(GTK_WIDGET(window), &allocation);
+
+  GdkRectangle workarea;
+  my_application_get_workarea(window, &workarea);
+
+  gboolean fits_workarea =
+      allocation.width < workarea.width || allocation.height < workarea.height;
+  if (!fits_workarea) {
+    gtk_window_move(window, workarea.x, workarea.y);
+    gtk_window_resize(window, workarea.width, workarea.height);
+  }
+  return fits_workarea;
+}
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
@@ -34,11 +59,16 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   gtk_window_set_default_size(window, 960, 680);
+  gtk_widget_realize(GTK_WIDGET(window));
+
+  if (my_application_fit_to_workarea(window)) {
 #ifdef NDEBUG
-  // The window has a fixed size in production/release mode, but resizing
-  // the window is allowed in debug mode for testing purposes.
-  gtk_window_set_resizable(window, FALSE);
+    // The window has a fixed size in production/release mode, but resizing
+    // the window is allowed in debug mode for testing purposes, or if it
+    // doesn't fit the available workarea.
+    gtk_window_set_resizable(window, FALSE);
 #endif
+  }
   gtk_widget_show(GTK_WIDGET(window));
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
