@@ -30,8 +30,7 @@ static gboolean my_application_fit_to_workarea(GtkWindow* window) {
   gboolean fits_workarea =
       allocation.width < workarea.width || allocation.height < workarea.height;
   if (!fits_workarea) {
-    gtk_window_move(window, workarea.x, workarea.y);
-    gtk_window_resize(window, workarea.width, workarea.height);
+    gtk_window_maximize(window);
   }
   return fits_workarea;
 }
