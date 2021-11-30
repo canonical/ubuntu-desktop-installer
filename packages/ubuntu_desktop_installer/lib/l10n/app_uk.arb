@@ -2,7 +2,7 @@
   "@@locale": "uk",
   "appTitle": "Встановлювач стільниці Ubuntu",
   "@appTitle": {},
-  "windowTitle": "Встановлення {RELEASE}",
+  "windowTitle": "Встановити {RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
