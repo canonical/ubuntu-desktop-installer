@@ -5,7 +5,6 @@ import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nm/nm.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
@@ -104,29 +103,29 @@ void main() {
     expect(wifi.accessPoints.map((model) => model.accessPoint), [ap]);
   });
 
-  test('init and cleanup', () {
+  test('select and deselect', () {
     when(service.wirelessDevices).thenReturn([device]);
 
     when(wireless.accessPoints).thenReturn([ap]);
     when(wireless.activeAccessPoint).thenReturn(null);
-    model.init();
+    model.onSelected();
     expect(model.selectedDevice, isNull);
 
     when(wireless.activeAccessPoint).thenReturn(ap);
-    model.init();
+    model.onSelected();
     expect(model.selectedDevice, isNotNull);
     expect(model.selectedDevice!.device, equals(device));
 
     when(device.state).thenReturn(NetworkManagerDeviceState.prepare);
     expect(model.selectedDevice!.isBusy, isTrue);
 
-    model.cleanup();
+    model.onDeselected();
     verify(device.disconnect()).called(1);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     expect(model.selectedDevice!.isBusy, isFalse);
 
-    model.cleanup();
+    model.onDeselected();
     verifyNever(device.disconnect());
   });
 

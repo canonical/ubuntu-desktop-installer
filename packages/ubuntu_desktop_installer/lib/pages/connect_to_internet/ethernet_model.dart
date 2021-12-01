@@ -28,10 +28,13 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   ConnectMode get connectMode => ConnectMode.ethernet;
 
   @override
-  void init() {}
+  void onSelected() async {}
 
   @override
-  void cleanup() {}
+  void onDeselected() async {}
+
+  @override
+  Future<void> init() async => _updateDevices();
 
   @override
   Future<void> enable() async {

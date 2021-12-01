@@ -40,7 +40,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   ConnectMode get connectMode => ConnectMode.wifi;
 
   @override
-  void init() {
+  void onSelected() {
     final device = devices.firstWhereOrNull((device) {
       return device.activeAccessPoint != null;
     });
@@ -49,10 +49,13 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   }
 
   @override
-  void cleanup() {
+  void onDeselected() {
     if (_selected?.isBusy != true) return;
     _selected!.disconnect();
   }
+
+  @override
+  Future<void> init() async => _updateDevices();
 
   @override
   void dispose() {

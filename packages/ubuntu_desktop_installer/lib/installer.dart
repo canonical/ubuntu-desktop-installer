@@ -28,9 +28,6 @@ Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
-  final networkService = NetworkService();
-  await networkService.connect();
-
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
   runWizardApp(
@@ -58,7 +55,7 @@ Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
-      Provider.value(value: networkService),
+      Provider(create: (_) => NetworkService()),
       Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {

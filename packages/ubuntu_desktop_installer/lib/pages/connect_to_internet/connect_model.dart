@@ -16,9 +16,10 @@ abstract class ConnectModel extends SafeChangeNotifier {
   bool get isActive;
   bool get isBusy;
   bool get isEnabled;
-  ConnectMode? get connectMode;
-  void init();
-  void cleanup();
+  ConnectMode get connectMode;
+  void onSelected();
+  void onDeselected();
+  Future<void> init();
   Future<void> enable();
   Future<void> connect();
 }
@@ -40,13 +41,16 @@ class NoConnectModel extends ConnectModel {
   bool get isEnabled => false;
 
   @override
-  ConnectMode? get connectMode => ConnectMode.none;
+  ConnectMode get connectMode => ConnectMode.none;
 
   @override
-  void init() {}
+  void onSelected() {}
 
   @override
-  void cleanup() {}
+  void onDeselected() {}
+
+  @override
+  Future<void> init() async {}
 
   @override
   Future<void> enable() {

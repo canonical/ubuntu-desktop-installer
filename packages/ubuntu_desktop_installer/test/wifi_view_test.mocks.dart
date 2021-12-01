@@ -134,11 +134,16 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);

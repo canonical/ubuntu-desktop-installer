@@ -68,11 +68,16 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   _i5.Future<void> enable() =>
       (super.noSuchMethod(Invocation.method(#enable, []),

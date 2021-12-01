@@ -98,7 +98,7 @@ void main() {
   }
 
   testWidgets('selects the right connect mode on tap', (tester) async {
-    final model = ConnectToInternetModel();
+    final model = ConnectToInternetModel(MockNetworkService());
     await buildTestApp(tester, model: model);
     await tester.pumpAndSettle();
 
@@ -120,7 +120,7 @@ void main() {
   });
 
   testWidgets('pre-selects ethernet', (tester) async {
-    final model = ConnectToInternetModel();
+    final model = ConnectToInternetModel(MockNetworkService());
     await buildTestApp(tester, model: model, ethernetActive: true);
     await tester.pumpAndSettle();
 
@@ -132,7 +132,7 @@ void main() {
   });
 
   testWidgets('pre-selects wifi', (tester) async {
-    final model = ConnectToInternetModel();
+    final model = ConnectToInternetModel(MockNetworkService());
     await buildTestApp(tester, model: model, wifiActive: true);
     await tester.pumpAndSettle();
 
@@ -143,7 +143,7 @@ void main() {
   });
 
   testWidgets('pre-selects no connect', (tester) async {
-    final model = ConnectToInternetModel();
+    final model = ConnectToInternetModel(MockNetworkService());
     await buildTestApp(tester,
         model: model, ethernetActive: false, wifiActive: false);
     await tester.pumpAndSettle();

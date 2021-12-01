@@ -69,6 +69,10 @@ class MockConnectToInternetModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
           as bool);
   @override
+  _i4.ConnectMode get connectMode =>
+      (super.noSuchMethod(Invocation.getter(#connectMode),
+          returnValue: _i4.ConnectMode.none) as _i4.ConnectMode);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -77,15 +81,24 @@ class MockConnectToInternetModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void select(_i4.ConnectModel? model) =>
-      super.noSuchMethod(Invocation.method(#select, [model]),
+  void addConnectMode(_i4.ConnectModel? model) =>
+      super.noSuchMethod(Invocation.method(#addConnectMode, [model]),
           returnValueForMissingStub: null);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void selectConnectMode([_i4.ConnectMode? mode]) =>
+      super.noSuchMethod(Invocation.method(#selectConnectMode, [mode]),
+          returnValueForMissingStub: null);
+  @override
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   _i5.Future<void> enable() =>
       (super.noSuchMethod(Invocation.method(#enable, []),
@@ -160,11 +173,16 @@ class MockEthernetModel extends _i1.Mock implements _i7.EthernetModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   _i5.Future<void> enable() =>
       (super.noSuchMethod(Invocation.method(#enable, []),
@@ -575,11 +593,16 @@ class MockWifiModel extends _i1.Mock implements _i9.WifiModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);

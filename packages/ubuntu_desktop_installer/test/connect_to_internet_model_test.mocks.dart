@@ -46,6 +46,10 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
           as bool);
   @override
+  _i2.ConnectMode get connectMode =>
+      (super.noSuchMethod(Invocation.getter(#connectMode),
+          returnValue: _i2.ConnectMode.none) as _i2.ConnectMode);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -54,11 +58,16 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
+  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
       returnValueForMissingStub: null);
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void onDeselected() =>
+      super.noSuchMethod(Invocation.method(#onDeselected, []),
+          returnValueForMissingStub: null);
+  @override
+  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
   _i3.Future<void> enable() =>
       (super.noSuchMethod(Invocation.method(#enable, []),

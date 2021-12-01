@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -21,7 +19,7 @@ class ConnectToInternetPage extends StatefulWidget {
     final service = Provider.of<NetworkService>(context, listen: false);
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ConnectToInternetModel()),
+        ChangeNotifierProvider(create: (_) => ConnectToInternetModel(service)),
         ChangeNotifierProvider(create: (_) => EthernetModel(service, udev)),
         ChangeNotifierProvider(create: (_) => WifiModel(service, udev)),
         ChangeNotifierProvider(create: (_) => NoConnectModel()),
@@ -39,19 +37,11 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
   void initState() {
     super.initState();
 
-    scheduleMicrotask(() {
-      final model = context.read<ConnectToInternetModel>();
-      final ethernet = context.read<EthernetModel>();
-      final wifi = context.read<WifiModel>();
-      final none = context.read<NoConnectModel>();
-      if (ethernet.isActive) {
-        model.select(ethernet);
-      } else if (wifi.isActive) {
-        model.select(wifi);
-      } else {
-        model.select(none);
-      }
-    });
+    final model = context.read<ConnectToInternetModel>();
+    model.addConnectMode(context.read<EthernetModel>());
+    model.addConnectMode(context.read<WifiModel>());
+    model.addConnectMode(context.read<NoConnectModel>());
+    model.init().then((_) => model.selectConnectMode());
   }
 
   @override
@@ -66,27 +56,27 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
         children: <Widget>[
           EthernetRadioButton(
             value: model.connectMode,
-            onChanged: (_) => model.select(context.read<EthernetModel>()),
+            onChanged: (_) => model.selectConnectMode(ConnectMode.ethernet),
           ),
           EthernetView(
             expanded: model.connectMode == ConnectMode.ethernet,
-            onEnabled: () => model.select(context.read<EthernetModel>()),
+            onEnabled: () => model.selectConnectMode(ConnectMode.ethernet),
           ),
           WifiRadioButton(
             value: model.connectMode,
-            onChanged: (_) => model.select(context.read<WifiModel>()),
+            onChanged: (_) => model.selectConnectMode(ConnectMode.wifi),
           ),
           WifiView(
             expanded: model.connectMode == ConnectMode.wifi,
-            onEnabled: () => model.select(context.read<WifiModel>()),
-            onSelected: (_, __) => model.select(context.read<WifiModel>()),
+            onEnabled: () => model.selectConnectMode(ConnectMode.wifi),
+            onSelected: (_, __) => model.selectConnectMode(ConnectMode.wifi),
           ),
           RadioButton<ConnectMode>(
             title: Text(lang.noInternet),
             value: ConnectMode.none,
             contentPadding: const EdgeInsets.only(top: 8),
             groupValue: model.connectMode,
-            onChanged: (_) => model.select(context.read<NoConnectModel>()),
+            onChanged: (_) => model.selectConnectMode(ConnectMode.none),
           ),
         ],
       ),
