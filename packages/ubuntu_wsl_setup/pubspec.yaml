@@ -28,7 +28,10 @@ dev_dependencies:
   effective_dart: ^1.3.2
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
   mockito: 5.0.14
+  path: ^1.8.0
   ubuntu_test:
     path: ../ubuntu_test
 
