@@ -5,13 +5,13 @@ import 'package:args/args.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
-import 'package:logger/logger.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 import 'settings.dart';
 import 'utils.dart';
