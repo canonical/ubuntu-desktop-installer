@@ -80,15 +80,6 @@ void main() {
       ),
     );
 
-    // device is not scanning
-    expect(
-      find.descendant(
-        of: find.widgetWithText(ListTile, 'model1').first,
-        matching: find.byType(CircularProgressIndicator),
-      ),
-      findsNothing,
-    );
-
     // select ap
     final ap1 = find.widgetWithText(ListTile, 'ap1').first;
     expect(ap1, findsOneWidget);
@@ -96,39 +87,12 @@ void main() {
     expect(selectedDevice, equals(device1));
     expect(selectedAccessPoint, equals(accessPoint1));
 
-    // ap is not busy
-    expect(
-      find.descendant(
-        of: ap1,
-        matching: find.byType(CircularProgressIndicator),
-      ),
-      findsNothing,
-    );
-
-    // device is scanning
-    expect(
-      find.descendant(
-        of: find.widgetWithText(ListTile, 'model2').first,
-        matching: find.byType(CircularProgressIndicator),
-      ),
-      findsOneWidget,
-    );
-
     // select another ap
     final ap2 = find.widgetWithText(ListTile, 'ap2').first;
     expect(ap2, findsOneWidget);
     await tester.tap(ap2);
     expect(selectedDevice, equals(device2));
     expect(selectedAccessPoint, equals(accessPoint2));
-
-    // device is busy
-    expect(
-      find.descendant(
-        of: find.widgetWithText(ListTile, 'model2').first,
-        matching: find.byType(CircularProgressIndicator),
-      ),
-      findsOneWidget,
-    );
   });
 
   testWidgets('wifi disabled', (tester) async {
