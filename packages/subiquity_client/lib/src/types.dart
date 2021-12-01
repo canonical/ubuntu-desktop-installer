@@ -237,6 +237,8 @@ class Disk with _$Disk {
     String? ptable,
     bool? preserve,
     bool? bootDevice,
+    String? model,
+    String? vendor,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
