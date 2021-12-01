@@ -2,14 +2,13 @@
 // in ubuntu_desktop_installer/test/select_guided_storage_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i5;
-import 'dart:ui' as _i6;
+import 'dart:async' as _i4;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i4;
+import 'package:subiquity_client/subiquity_client.dart' as _i3;
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart'
-    as _i3;
-import 'package:ubuntu_desktop_installer/services.dart' as _i2;
+    as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -19,21 +18,19 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-class _FakeUdevDeviceInfo_0 extends _i1.Fake implements _i2.UdevDeviceInfo {}
-
 /// A class which mocks [SelectGuidedStorageModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSelectGuidedStorageModel extends _i1.Mock
-    implements _i3.SelectGuidedStorageModel {
+    implements _i2.SelectGuidedStorageModel {
   MockSelectGuidedStorageModel() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  List<_i4.Disk> get storages => (super
-          .noSuchMethod(Invocation.getter(#storages), returnValue: <_i4.Disk>[])
-      as List<_i4.Disk>);
+  List<_i3.Disk> get storages => (super
+          .noSuchMethod(Invocation.getter(#storages), returnValue: <_i3.Disk>[])
+      as List<_i3.Disk>);
   @override
   int get selectedIndex =>
       (super.noSuchMethod(Invocation.getter(#selectedIndex), returnValue: 0)
@@ -47,26 +44,26 @@ class MockSelectGuidedStorageModel extends _i1.Mock
       super.noSuchMethod(Invocation.method(#selectStorage, [index]),
           returnValueForMissingStub: null);
   @override
-  _i5.Future<void> loadGuidedStorage() =>
+  _i4.Future<void> loadGuidedStorage() =>
       (super.noSuchMethod(Invocation.method(#loadGuidedStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i5.Future<void> saveGuidedStorage() =>
+  _i4.Future<void> saveGuidedStorage() =>
       (super.noSuchMethod(Invocation.method(#saveGuidedStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i5.Future<void> resetGuidedStorage() =>
+  _i4.Future<void> resetGuidedStorage() =>
       (super.noSuchMethod(Invocation.method(#resetGuidedStorage, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  void addListener(_i6.VoidCallback? listener) =>
+  void addListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
+  void removeListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override
@@ -76,45 +73,6 @@ class MockSelectGuidedStorageModel extends _i1.Mock
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
-  @override
-  String toString() => super.toString();
-}
-
-/// A class which mocks [UdevDeviceInfo].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevDeviceInfo extends _i1.Mock implements _i2.UdevDeviceInfo {
-  MockUdevDeviceInfo() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get fullName =>
-      (super.noSuchMethod(Invocation.getter(#fullName), returnValue: '')
-          as String);
-  @override
-  String toString() => super.toString();
-}
-
-/// A class which mocks [UdevService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevService extends _i1.Mock implements _i2.UdevService {
-  MockUdevService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
-  @override
-  _i2.UdevDeviceInfo bySysname(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
-          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
-  @override
-  _i2.UdevDeviceInfo bySyspath(String? syspath) =>
-      (super.noSuchMethod(Invocation.method(#bySyspath, [syspath]),
-          returnValue: _FakeUdevDeviceInfo_0()) as _i2.UdevDeviceInfo);
   @override
   String toString() => super.toString();
 }
