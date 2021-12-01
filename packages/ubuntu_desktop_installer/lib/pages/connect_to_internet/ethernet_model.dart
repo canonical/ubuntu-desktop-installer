@@ -4,10 +4,7 @@ import 'network_device.dart';
 import 'property_stream_notifier.dart';
 
 class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
-  EthernetModel(this._service, [this._udev]) {
-    addProperties(_service.propertiesChanged);
-    addPropertyListener('Devices', _updateDevices);
-  }
+  EthernetModel(this._service, [this._udev]);
 
   @override
   bool get canConnect => false;
@@ -34,7 +31,11 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   void onDeselected() async {}
 
   @override
-  Future<void> init() async => _updateDevices();
+  Future<void> init() async {
+    addProperties(_service.propertiesChanged);
+    addPropertyListener('Devices', _updateDevices);
+    _updateDevices();
+  }
 
   @override
   Future<void> enable() async {

@@ -15,11 +15,7 @@ import 'property_stream_notifier.dart';
 const kWifiScanTimeout = Duration(milliseconds: 7500);
 
 class WifiModel extends PropertyStreamNotifier implements ConnectModel {
-  WifiModel(this._service, [this._udev]) {
-    addProperties(_service.propertiesChanged);
-    addPropertyListener('Devices', _updateDevices);
-    addPropertyListener('WirelessEnabled', notifyListeners);
-  }
+  WifiModel(this._service, [this._udev]);
 
   @override
   bool get canConnect => _selected?.canConnect == false;
@@ -55,7 +51,12 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   }
 
   @override
-  Future<void> init() async => _updateDevices();
+  Future<void> init() async {
+    addProperties(_service.propertiesChanged);
+    addPropertyListener('Devices', _updateDevices);
+    addPropertyListener('WirelessEnabled', notifyListeners);
+    _updateDevices();
+  }
 
   @override
   void dispose() {
@@ -66,7 +67,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   @override
   Future<void> enable() {
     log.debug('Enable wireless networking');
-    return _service.setWirelessEnabled(true);
+    return _service.setWirelessEnabled(true).then((_) => notifyListeners());
   }
 
   @override

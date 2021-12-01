@@ -34,7 +34,7 @@ void main() {
   late StreamController<List<String>> wirelessChanged;
   late StreamController<List<String>> accessPointChanged;
 
-  setUp(() {
+  setUp(() async {
     service = MockNetworkService();
     serviceChanged = StreamController<List<String>>.broadcast();
     when(service.propertiesChanged).thenAnswer((_) => serviceChanged.stream);
@@ -59,6 +59,7 @@ void main() {
     when(wireless.accessPoints).thenReturn([]);
 
     model = WifiModel(service);
+    await model.init();
     wifi = WifiDevice(device);
     accessPoint = AccessPoint(ap);
   });

@@ -22,7 +22,7 @@ void main() {
   late StreamController<List<String>> serviceChanged;
   late StreamController<List<String>> deviceChanged;
 
-  setUp(() {
+  setUp(() async {
     service = MockNetworkService();
     serviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(service.propertiesChanged).thenAnswer((_) => serviceChanged.stream);
@@ -35,6 +35,7 @@ void main() {
     when(device.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
 
     model = EthernetModel(service);
+    await model.init();
   });
 
   tearDown(() {
