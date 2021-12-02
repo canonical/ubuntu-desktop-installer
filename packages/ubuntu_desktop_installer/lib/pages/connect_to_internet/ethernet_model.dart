@@ -76,7 +76,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
       model.addListener(notifyListeners);
       return model;
     }).toList();
-    log.debug(() => 'Update ethernet devices: ${describeDevices(devices)}');
+    log.debug(() => 'Update ethernet devices: $devices');
     return devices;
   }
 

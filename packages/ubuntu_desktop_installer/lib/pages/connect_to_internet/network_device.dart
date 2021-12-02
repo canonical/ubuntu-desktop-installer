@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:nm/nm.dart';
 
 import '../../services.dart';
@@ -44,10 +45,9 @@ class NetworkDevice extends PropertyStreamNotifier {
   String? get model => _model;
   String? get vendor => _vendor;
 
-  String _describe() => '$this (${device.state.toString().split('.')[1]})';
-
   @override
-  String toString() => 'NetworkDevice(vendor: $vendor, model: $model';
+  String toString() =>
+      '$runtimeType(vendor: $vendor, model: $model, state: ${describeEnum(state)})';
 
   final UdevService? _udev;
 
@@ -61,8 +61,4 @@ class NetworkDevice extends PropertyStreamNotifier {
       _device.activeConnection;
   List<NetworkManagerSettingsConnection> get availableConnections =>
       _device.availableConnections;
-}
-
-String describeDevices(List<NetworkDevice> devices) {
-  return devices.map((d) => d._describe()).join(', ');
 }

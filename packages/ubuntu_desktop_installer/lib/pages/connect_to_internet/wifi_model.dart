@@ -100,7 +100,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     final devices = _service.wirelessDevices
         .map((device) => WifiDevice(device, _udev))
         .toList();
-    log.debug(() => 'Update Wi-Fi devices: ${describeDevices(devices)}');
+    log.debug(() => 'Update Wi-Fi devices: $devices');
     return devices;
   }
 
@@ -206,8 +206,7 @@ class WifiDevice extends NetworkDevice {
         .where((ap) => acceptSsid(ap.ssid))
         .map((ap) => AccessPoint(ap))
         .sorted((a, b) => b.strength.compareTo(a.strength));
-    log.debug(() =>
-        'Update access points: ${_describeAccessPoints(accessPoints)} (device: $this)');
+    log.debug(() => 'Update access points: $accessPoints ($this)');
     return accessPoints;
   }
 
@@ -333,11 +332,7 @@ class AccessPoint extends PropertyStreamNotifier {
   bool get isOpen => _accessPoint.isOpen;
 
   @override
-  String toString() => name;
-}
-
-String _describeAccessPoints(List<AccessPoint> accessPoints) {
-  return accessPoints.map((ap) => ap.name).join(', ');
+  String toString() => 'AccessPoint(ssid: $name)';
 }
 
 extension _SsidList on List<int> {
