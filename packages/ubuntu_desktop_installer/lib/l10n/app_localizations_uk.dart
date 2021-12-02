@@ -12,7 +12,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Встановлення $RELEASE';
+    return 'Встановити $RELEASE';
   }
 
   @override

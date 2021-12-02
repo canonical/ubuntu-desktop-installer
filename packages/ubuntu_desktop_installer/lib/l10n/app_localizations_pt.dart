@@ -693,7 +693,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.';
+    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer arquivos fora de $RELEASE não serão criptografados.';
   }
 
   @override
@@ -756,7 +756,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Criptografar a nova instalação do $RELEASE  para maior segurança';
+    return 'Criptografar a nova instalação do $RELEASE para maior segurança';
   }
 
   @override
@@ -791,7 +791,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o $DISTRO.';
+    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o $DISTRO';
   }
 
   @override
@@ -965,7 +965,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get whoAreYouPageComputerNameRequired => 'O nome do computador é obrigatório';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'O nome do computador não é válido';
 
   @override
   String get whoAreYouPageUsernameLabel => 'Escolha um nome de usuário';
@@ -1056,7 +1056,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get turnOffBitlockerTitle => 'Desligar BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker. Você precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
