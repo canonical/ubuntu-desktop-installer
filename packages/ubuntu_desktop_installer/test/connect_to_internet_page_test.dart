@@ -57,8 +57,7 @@ void main() {
 
     final wifiModel = MockWifiModel();
     when(wifiModel.connectMode).thenReturn(ConnectMode.wifi);
-    when(wifiModel.requestScan(ssid: anyNamed('ssid')))
-        .thenAnswer((_) async => null);
+    when(wifiModel.startPeriodicScanning()).thenReturn(null);
     when(wifiModel.isEnabled).thenReturn(true);
     when(wifiModel.devices).thenReturn([wifiDevice]);
     when(wifiModel.isSelectedDevice(any)).thenReturn(false);

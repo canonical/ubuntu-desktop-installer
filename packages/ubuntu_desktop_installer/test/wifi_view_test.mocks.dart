@@ -166,8 +166,12 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       super.noSuchMethod(Invocation.method(#selectDevice, [device]),
           returnValueForMissingStub: null);
   @override
-  void requestPeriodicScan() =>
-      super.noSuchMethod(Invocation.method(#requestPeriodicScan, []),
+  void startPeriodicScanning() =>
+      super.noSuchMethod(Invocation.method(#startPeriodicScanning, []),
+          returnValueForMissingStub: null);
+  @override
+  void stopPeriodicScanning() =>
+      super.noSuchMethod(Invocation.method(#stopPeriodicScanning, []),
           returnValueForMissingStub: null);
   @override
   _i4.Future<dynamic> requestScan({String? ssid}) =>

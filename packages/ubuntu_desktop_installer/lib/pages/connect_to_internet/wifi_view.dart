@@ -68,7 +68,7 @@ class _WifiViewState extends State<WifiView> {
   @override
   void initState() {
     super.initState();
-    Provider.of<WifiModel>(context, listen: false).requestScan();
+    Provider.of<WifiModel>(context, listen: false).startPeriodicScanning();
   }
 
   @override

@@ -51,7 +51,7 @@ void main() {
     final model = MockWifiModel();
     when(model.devices).thenReturn([device1, device2]);
     when(model.isSelectedDevice(any)).thenReturn(false);
-    when(model.requestScan()).thenAnswer((_) async => null);
+    when(model.startPeriodicScanning()).thenReturn(null);
     when(model.isEnabled).thenReturn(true);
 
     WifiDevice? selectedDevice;
@@ -97,7 +97,7 @@ void main() {
 
   testWidgets('wifi disabled', (tester) async {
     final model = MockWifiModel();
-    when(model.requestScan()).thenAnswer((_) async => null);
+    when(model.startPeriodicScanning()).thenReturn(null);
     when(model.isEnabled).thenReturn(false);
 
     var wasEnabled = false;
@@ -138,7 +138,7 @@ void main() {
 
   testWidgets('no wifi devices', (tester) async {
     final model = MockWifiModel();
-    when(model.requestScan()).thenAnswer((_) async => null);
+    when(model.startPeriodicScanning()).thenReturn(null);
     when(model.isEnabled).thenReturn(true);
     when(model.devices).thenReturn([]);
 
@@ -167,5 +167,28 @@ void main() {
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(typeOf<RadioButton<ConnectMode>>()), findsNothing);
     expect(find.text(tester.lang.noWifiDevicesDetected), findsOneWidget);
+  });
+
+  testWidgets('starts periodic scanning', (tester) async {
+    final model = MockWifiModel();
+    when(model.startPeriodicScanning()).thenReturn(null);
+    when(model.isEnabled).thenReturn(true);
+    when(model.devices).thenReturn([]);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: ChangeNotifierProvider<WifiModel>.value(
+          value: model,
+          child: WifiView(
+            expanded: true,
+            onEnabled: () {},
+            onSelected: (device, accessPoint) {},
+          ),
+        ),
+      ),
+    );
+
+    verify(model.startPeriodicScanning()).called(1);
   });
 }

@@ -10,9 +10,11 @@ import 'connect_model.dart';
 import 'network_device.dart';
 import 'property_stream_notifier.dart';
 
-// TODO: appropriate timeout?
 @visibleForTesting
-const kWifiScanTimeout = Duration(milliseconds: 7500);
+const kWifiScanInterval = Duration(seconds: 15);
+
+@visibleForTesting
+const kWifiScanTimeout = Duration(seconds: 3);
 
 class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   WifiModel(this._service, [this._udev]);
@@ -43,10 +45,12 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     });
     device?.init();
     selectDevice(device);
+    startPeriodicScanning();
   }
 
   @override
   void onDeselected() {
+    stopPeriodicScanning();
     if (_selectedDevice?.isBusy != true) return;
     _selectedDevice!.disconnect();
   }
@@ -61,6 +65,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
 
   @override
   void dispose() {
+    stopPeriodicScanning();
     _resetDevices();
     super.dispose();
   }
@@ -121,6 +126,16 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     notifyListeners();
   }
 
+  Timer? _scanTimer;
+
+  void startPeriodicScanning() {
+    stopPeriodicScanning();
+    _scanTimer = Timer.periodic(kWifiScanInterval, (_) => requestScan());
+    requestScan();
+  }
+
+  void stopPeriodicScanning() => _scanTimer?.cancel();
+
   Future requestScan({String? ssid}) async {
     if (!isEnabled) return;
     final scans = <Future<void>>[];
@@ -140,13 +155,7 @@ class WifiDevice extends NetworkDevice {
     addProperties(_wireless.propertiesChanged);
     addPropertyListener('AccessPoints', _updateAccessPoints);
     addPropertyListener('ActiveAccessPoint', notifyListeners);
-    addPropertyListener('LastScan', () {
-      _setLastScan(device.wireless!.lastScan);
-      _setScanning(false);
-      if (_completer?.isCompleted == false) {
-        _completer!.complete(device);
-      }
-    });
+    addPropertyListener('LastScan', () => _completeScan(_wireless));
   }
 
   void init() => selectAccessPoint(activeAccessPoint);
@@ -266,18 +275,26 @@ class WifiDevice extends NetworkDevice {
   }
 
   Future<void> requestScan({String? ssid}) async {
+    _cancelScan();
     final ssids = <List<int>>[if (ssid != null) ssid.codeUnits];
     log.debug('Request scan: $this');
     _setScanning(true);
     _completer = Completer();
-    _completer!.future.timeout(kWifiScanTimeout, onTimeout: () {
-      _setLastScan(-1);
-      _setScanning(false);
-      _completer?.complete(null);
-    });
+    _completer!.future.timeout(kWifiScanTimeout, onTimeout: _cancelScan);
     if (!isAvailable) return;
     _wireless.requestScan(ssids: ssids);
     return _completer!.future;
+  }
+
+  void _cancelScan() => _completeScan(null);
+
+  void _completeScan(NetworkManagerDeviceWireless? wireless) {
+    _setLastScan(wireless?.lastScan ?? -1);
+    _setScanning(false);
+    if (_completer?.isCompleted == false) {
+      _completer!.complete(device);
+    }
+    _completer = null;
   }
 
   AccessPoint? findAccessPoint(String ssid) {
