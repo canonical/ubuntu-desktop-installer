@@ -18,16 +18,17 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   WifiModel(this._service, [this._udev]);
 
   @override
-  bool get canConnect => _selected?._canContinue == false;
+  bool get canConnect => _selectedDevice?._canContinue == false;
 
   @override
-  bool get canContinue => _selected?._canContinue == true;
+  bool get canContinue => _selectedDevice?._canContinue == true;
 
   @override
   bool get isActive => devices.any((device) => device.isActive);
 
   @override
-  bool get isBusy => _selected?.isBusy == true || _selected?.scanning == true;
+  bool get isBusy =>
+      _selectedDevice?.isBusy == true || _selectedDevice?.scanning == true;
 
   @override
   bool get isEnabled => _service.wirelessEnabled;
@@ -46,8 +47,8 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
 
   @override
   void onDeselected() {
-    if (_selected?.isBusy != true) return;
-    _selected!.disconnect();
+    if (_selectedDevice?.isBusy != true) return;
+    _selectedDevice!.disconnect();
   }
 
   @override
@@ -109,14 +110,14 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     notifyListeners();
   }
 
-  WifiDevice? _selected;
-  WifiDevice? get selectedDevice => _selected;
-  bool isSelectedDevice(WifiDevice device) => device == _selected;
+  WifiDevice? _selectedDevice;
+  WifiDevice? get selectedDevice => _selectedDevice;
+  bool isSelectedDevice(WifiDevice device) => device == _selectedDevice;
   void selectDevice(WifiDevice? device) {
-    if (device == _selected) return;
+    if (device == _selectedDevice) return;
     selectedDevice?.removeListener(notifyListeners);
     device?.addListener(notifyListeners);
-    _selected = device;
+    _selectedDevice = device;
     notifyListeners();
   }
 
