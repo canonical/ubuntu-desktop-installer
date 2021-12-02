@@ -225,9 +225,7 @@ class WifiDevice extends NetworkDevice {
 
   AccessPoint? get activeAccessPoint {
     if (_wireless.activeAccessPoint == null) return null;
-    return accessPoints.firstWhereOrNull((ap) {
-      return ap.accessPoint == _wireless.activeAccessPoint;
-    });
+    return accessPoints.firstWhereOrNull(isActiveAccessPoint);
   }
 
   bool isActiveAccessPoint(AccessPoint accessPoint) {
