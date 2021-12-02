@@ -30,17 +30,17 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
       (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
           as bool);
   @override
-  bool get canContinue =>
-      (super.noSuchMethod(Invocation.getter(#canContinue), returnValue: false)
+  bool get isConnected =>
+      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
           as bool);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
-          as bool);
+  bool get hasActiveConnection =>
+      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
+          returnValue: false) as bool);
   @override
   bool get isEnabled =>
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)

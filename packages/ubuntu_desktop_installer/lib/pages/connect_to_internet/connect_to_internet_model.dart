@@ -4,6 +4,7 @@ import 'package:safe_change_notifier/safe_change_notifier.dart';
 import '../../services.dart';
 import 'connect_model.dart';
 
+/// A proxy model for the currently selected [ConnectModel] (eth, wifi, none).
 class ConnectToInternetModel extends SafeChangeNotifier
     implements ConnectModel {
   ConnectToInternetModel(this._service);
@@ -14,13 +15,13 @@ class ConnectToInternetModel extends SafeChangeNotifier
   bool get canConnect => _connectModel?.canConnect ?? false;
 
   @override
-  bool get canContinue => _connectModel?.canContinue ?? false;
+  bool get isConnected => _connectModel?.isConnected ?? false;
 
   @override
-  bool get isActive => _connectModel?.isActive ?? false;
+  bool get hasActiveConnection => _connectModel?.hasActiveConnection ?? false;
 
   @override
-  bool get isBusy => _connectModel?.isBusy ?? false;
+  bool get isConnecting => _connectModel?.isConnecting ?? false;
 
   @override
   bool get isEnabled => _connectModel?.isEnabled ?? false;
@@ -37,7 +38,7 @@ class ConnectToInternetModel extends SafeChangeNotifier
 
   ConnectMode get _defaultConnectMode {
     return _connectModels.keys.firstWhereOrNull(
-            (mode) => _connectModels[mode]?.isActive == true) ??
+            (mode) => _connectModels[mode]?.hasActiveConnection == true) ??
         ConnectMode.none;
   }
 

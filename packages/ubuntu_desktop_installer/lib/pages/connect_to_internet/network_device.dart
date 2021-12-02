@@ -23,7 +23,7 @@ class NetworkDevice extends PropertyStreamNotifier {
   Future<void> disconnect() => _device.disconnect();
 
   bool get isActive => state == NetworkManagerDeviceState.activated;
-  bool get isBusy {
+  bool get isConnecting {
     switch (state) {
       case NetworkManagerDeviceState.config:
       case NetworkManagerDeviceState.ip_check:
@@ -44,13 +44,10 @@ class NetworkDevice extends PropertyStreamNotifier {
   String? get model => _model;
   String? get vendor => _vendor;
 
-  String describe() {
-    return '$this (${device.state.toString().split('.')[1]})';
-  }
+  String _describe() => '$this (${device.state.toString().split('.')[1]})';
 
   @override
-  String toString() =>
-      '${vendor ?? '<unknown vendor>'} ${model ?? '<unknown model>'}';
+  String toString() => 'NetworkDevice(vendor: $vendor, model: $model';
 
   final UdevService? _udev;
 
@@ -67,5 +64,5 @@ class NetworkDevice extends PropertyStreamNotifier {
 }
 
 String describeDevices(List<NetworkDevice> devices) {
-  return devices.map((d) => d.describe()).join(', ');
+  return devices.map((d) => d._describe()).join(', ');
 }

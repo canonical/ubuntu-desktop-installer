@@ -39,9 +39,9 @@ void main() {
     final service = MockNetworkService();
     final model = ConnectToInternetModel(service);
     expect(model.connectMode, equals(ConnectMode.none));
-    expect(model.canContinue, isFalse);
+    expect(model.isConnected, isFalse);
     expect(model.canConnect, isFalse);
-    expect(model.isBusy, isFalse);
+    expect(model.isConnecting, isFalse);
   });
 
   test('selected model', () {
@@ -55,14 +55,14 @@ void main() {
     model.selectConnectMode(ConnectMode.wifi);
     expect(model.connectMode, equals(ConnectMode.wifi));
 
-    when(wifi.canContinue).thenReturn(true);
-    expect(model.canContinue, isTrue);
+    when(wifi.isConnected).thenReturn(true);
+    expect(model.isConnected, isTrue);
 
     when(wifi.canConnect).thenReturn(true);
     expect(model.canConnect, isTrue);
 
-    when(wifi.isBusy).thenReturn(true);
-    expect(model.isBusy, isTrue);
+    when(wifi.isConnecting).thenReturn(true);
+    expect(model.isConnecting, isTrue);
 
     when(wifi.onSelected()).thenAnswer((_) async {});
     model.init();
@@ -88,23 +88,23 @@ void main() {
     model.addConnectMode(none);
     expect(model.connectMode, equals(ConnectMode.none));
 
-    when(ethernet.isActive).thenReturn(true);
-    when(wifi.isActive).thenReturn(true);
-    when(none.isActive).thenReturn(false);
+    when(ethernet.hasActiveConnection).thenReturn(true);
+    when(wifi.hasActiveConnection).thenReturn(true);
+    when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
     expect(model.connectMode, equals(ConnectMode.ethernet));
 
-    when(ethernet.isActive).thenReturn(false);
-    when(wifi.isActive).thenReturn(true);
-    when(none.isActive).thenReturn(false);
+    when(ethernet.hasActiveConnection).thenReturn(false);
+    when(wifi.hasActiveConnection).thenReturn(true);
+    when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
     expect(model.connectMode, equals(ConnectMode.wifi));
 
-    when(ethernet.isActive).thenReturn(false);
-    when(wifi.isActive).thenReturn(false);
-    when(none.isActive).thenReturn(false);
+    when(ethernet.hasActiveConnection).thenReturn(false);
+    when(wifi.hasActiveConnection).thenReturn(false);
+    when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
     expect(model.connectMode, equals(ConnectMode.none));

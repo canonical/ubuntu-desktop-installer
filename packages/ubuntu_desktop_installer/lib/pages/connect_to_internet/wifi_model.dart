@@ -16,21 +16,23 @@ const kWifiScanInterval = Duration(seconds: 15);
 @visibleForTesting
 const kWifiScanTimeout = Duration(seconds: 3);
 
+/// "Connect to Wi-Fi network"
 class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   WifiModel(this._service, [this._udev]);
 
   @override
-  bool get canConnect => _selectedDevice?._canContinue == false;
+  bool get canConnect => _selectedDevice?._isConnected == false;
 
   @override
-  bool get canContinue => _selectedDevice?._canContinue == true;
+  bool get isConnected => _selectedDevice?._isConnected == true;
 
   @override
-  bool get isActive => devices.any((device) => device.isActive);
+  bool get hasActiveConnection => devices.any((device) => device.isActive);
 
   @override
-  bool get isBusy =>
-      _selectedDevice?.isBusy == true || _selectedDevice?.scanning == true;
+  bool get isConnecting =>
+      _selectedDevice?.isConnecting == true ||
+      _selectedDevice?.scanning == true;
 
   @override
   bool get isEnabled => _service.wirelessEnabled;
@@ -51,7 +53,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   @override
   void onDeselected() {
     stopPeriodicScanning();
-    if (_selectedDevice?.isBusy != true) return;
+    if (_selectedDevice?.isConnecting != true) return;
     _selectedDevice!.disconnect();
   }
 
@@ -128,6 +130,10 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
 
   Timer? _scanTimer;
 
+  /// Starts a periodic AP scanning at 15s interval.
+  ///
+  /// See also:
+  /// * [requestScan]
   void startPeriodicScanning() {
     stopPeriodicScanning();
     _scanTimer = Timer.periodic(kWifiScanInterval, (_) => requestScan());
@@ -136,6 +142,8 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
 
   void stopPeriodicScanning() => _scanTimer?.cancel();
 
+  /// Requests all devices to scan for access points, or a specific access point
+  /// if `ssid` is specified.
   Future requestScan({String? ssid}) async {
     if (!isEnabled) return;
     final scans = <Future<void>>[];
@@ -169,7 +177,7 @@ class WifiDevice extends NetworkDevice {
   @override
   bool get isActive => super.isActive && activeAccessPoint != null;
 
-  bool get _canContinue =>
+  bool get _isConnected =>
       isActive &&
       _selectedAccessPoint != null &&
       _selectedAccessPoint!.name == activeAccessPoint?.name;
@@ -199,7 +207,7 @@ class WifiDevice extends NetworkDevice {
         .map((ap) => AccessPoint(ap))
         .sorted((a, b) => b.strength.compareTo(a.strength));
     log.debug(() =>
-        'Update access points: ${describeAccessPoints(accessPoints)} (device: $this)');
+        'Update access points: ${_describeAccessPoints(accessPoints)} (device: $this)');
     return accessPoints;
   }
 
@@ -245,6 +253,7 @@ class WifiDevice extends NetworkDevice {
     return array?.toSsid();
   }
 
+  /// Tries to find an available connection for the specified access point.
   Future<NetworkManagerSettingsConnection?> findAvailableConnection(
     AccessPoint accessPoint,
   ) async {
@@ -256,9 +265,11 @@ class WifiDevice extends NetworkDevice {
     return null;
   }
 
+  bool _scanning = false;
+  int _lastScan = -1;
   Completer<void>? _completer;
 
-  bool _scanning = false;
+  /// Whether the device is scanning for access points.
   bool get scanning => _scanning;
   void _setScanning(bool scanning) {
     if (_scanning == scanning) return;
@@ -266,7 +277,7 @@ class WifiDevice extends NetworkDevice {
     notifyListeners();
   }
 
-  int _lastScan = -1;
+  /// Seconds since the last scan.
   int get lastScan => _lastScan;
   void _setLastScan(int lastScan) {
     if (_lastScan == lastScan) return;
@@ -274,6 +285,8 @@ class WifiDevice extends NetworkDevice {
     notifyListeners();
   }
 
+  /// Requests the device to scan for access points, or a specific access point
+  /// if `ssid` is specified.
   Future<void> requestScan({String? ssid}) async {
     _cancelScan();
     final ssids = <List<int>>[if (ssid != null) ssid.codeUnits];
@@ -297,6 +310,7 @@ class WifiDevice extends NetworkDevice {
     _completer = null;
   }
 
+  /// Tries to find an access point by `ssid`.
   AccessPoint? findAccessPoint(String ssid) {
     return accessPoints.firstWhereOrNull((accessPoint) {
       return ssid == accessPoint.name;
@@ -322,7 +336,7 @@ class AccessPoint extends PropertyStreamNotifier {
   String toString() => name;
 }
 
-String describeAccessPoints(List<AccessPoint> accessPoints) {
+String _describeAccessPoints(List<AccessPoint> accessPoints) {
   return accessPoints.map((ap) => ap.name).join(', ');
 }
 

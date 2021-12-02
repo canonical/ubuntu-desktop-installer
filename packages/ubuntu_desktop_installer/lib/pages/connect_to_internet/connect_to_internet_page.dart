@@ -11,7 +11,9 @@ import 'ethernet_view.dart';
 import 'wifi_model.dart';
 import 'wifi_view.dart';
 
+/// https://github.com/canonical/ubuntu-desktop-installer/issues/30
 class ConnectToInternetPage extends StatefulWidget {
+  @visibleForTesting
   const ConnectToInternetPage({Key? key}) : super(key: key);
 
   static Widget create(BuildContext context) {
@@ -84,13 +86,13 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
         WizardAction.back(context),
         WizardAction(
           label: lang.connectButtonText,
-          enabled: !model.isBusy,
+          enabled: !model.isConnecting,
           visible: model.canConnect,
           onActivated: model.connect,
         ),
         WizardAction.next(
           context,
-          enabled: !model.isBusy && model.canContinue,
+          enabled: !model.isConnecting && model.isConnected,
           visible: !model.canConnect,
           onActivated: Wizard.of(context).next,
         ),

@@ -63,22 +63,18 @@ void main() {
   });
 
   test('state', () async {
-    const activeStates = [
-      NetworkManagerDeviceState.activated,
-    ];
-
-    const busyStates = [
+    const connectingStates = {
       NetworkManagerDeviceState.prepare,
       NetworkManagerDeviceState.config,
       NetworkManagerDeviceState.ip_check,
       NetworkManagerDeviceState.ip_config,
-    ];
+    };
 
     final device = model.device;
     for (final state in NetworkManagerDeviceState.values) {
       when(device.state).thenReturn(state);
-      expect(model.isActive, activeStates.contains(state));
-      expect(model.isBusy, busyStates.contains(state));
+      expect(model.isActive, state == NetworkManagerDeviceState.activated);
+      expect(model.isConnecting, connectingStates.contains(state));
       expect(model.isAvailable,
           equals(state != NetworkManagerDeviceState.unavailable));
       expect(model.isDisconnected,

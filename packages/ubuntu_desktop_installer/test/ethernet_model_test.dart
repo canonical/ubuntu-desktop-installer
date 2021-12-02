@@ -62,23 +62,23 @@ void main() {
     when(device.state).thenReturn(NetworkManagerDeviceState.disconnected);
 
     expect(model.canConnect, isFalse);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isFalse);
-    expect(model.isActive, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isFalse);
+    expect(model.hasActiveConnection, isFalse);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.config);
 
     expect(model.canConnect, isFalse);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isFalse);
-    expect(model.isActive, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isFalse);
+    expect(model.hasActiveConnection, isFalse);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
 
-    expect(model.isActive, isTrue);
     expect(model.canConnect, isFalse);
-    expect(model.canContinue, isTrue);
-    expect(model.isBusy, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isTrue);
+    expect(model.hasActiveConnection, isTrue);
   });
 
   test('disabled', () async {

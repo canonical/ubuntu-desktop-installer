@@ -21,7 +21,7 @@ void main() {
     final device1 = MockWifiDevice();
     when(device1.model).thenReturn('model1');
     when(device1.scanning).thenReturn(false);
-    when(device1.isBusy).thenReturn(false);
+    when(device1.isConnecting).thenReturn(false);
     when(device1.isAvailable).thenReturn(true);
     when(device1.isActive).thenReturn(false);
 
@@ -36,7 +36,7 @@ void main() {
     final device2 = MockWifiDevice();
     when(device2.model).thenReturn('model2');
     when(device2.scanning).thenReturn(true);
-    when(device2.isBusy).thenReturn(true);
+    when(device2.isConnecting).thenReturn(true);
     when(device2.isAvailable).thenReturn(true);
     when(device2.isActive).thenReturn(true);
 

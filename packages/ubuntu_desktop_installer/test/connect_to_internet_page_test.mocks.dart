@@ -53,16 +53,16 @@ class MockConnectToInternetModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
           as bool);
   @override
-  bool get canContinue =>
-      (super.noSuchMethod(Invocation.getter(#canContinue), returnValue: false)
+  bool get isConnected =>
+      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
           as bool);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get hasActiveConnection =>
+      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
+          returnValue: false) as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
   bool get isEnabled =>
@@ -141,17 +141,17 @@ class MockEthernetModel extends _i1.Mock implements _i7.EthernetModel {
       (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
           as bool);
   @override
-  bool get canContinue =>
-      (super.noSuchMethod(Invocation.getter(#canContinue), returnValue: false)
+  bool get isConnected =>
+      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
           as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get hasActiveConnection =>
+      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
+          returnValue: false) as bool);
   @override
   bool get isEnabled =>
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
@@ -252,8 +252,8 @@ class MockEthernetDevice extends _i1.Mock implements _i7.EthernetDevice {
       (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
           as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
   bool get isAvailable =>
@@ -285,10 +285,6 @@ class MockEthernetDevice extends _i1.Mock implements _i7.EthernetDevice {
       (super.noSuchMethod(Invocation.method(#disconnect, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
-  @override
-  String describe() =>
-      (super.noSuchMethod(Invocation.method(#describe, []), returnValue: '')
-          as String);
   @override
   String toString() => super.toString();
   @override
@@ -557,16 +553,16 @@ class MockWifiModel extends _i1.Mock implements _i9.WifiModel {
       (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
           as bool);
   @override
-  bool get canContinue =>
-      (super.noSuchMethod(Invocation.getter(#canContinue), returnValue: false)
+  bool get isConnected =>
+      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
           as bool);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get hasActiveConnection =>
+      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
+          returnValue: false) as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
   bool get isEnabled =>
@@ -699,8 +695,8 @@ class MockWifiDevice extends _i1.Mock implements _i9.WifiDevice {
               returnValue: _i2.NetworkManagerDeviceStateReason.none)
           as _i2.NetworkManagerDeviceStateReason);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
   bool get isAvailable =>
@@ -767,10 +763,6 @@ class MockWifiDevice extends _i1.Mock implements _i9.WifiDevice {
       (super.noSuchMethod(Invocation.method(#disconnect, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
-  @override
-  String describe() =>
-      (super.noSuchMethod(Invocation.method(#describe, []), returnValue: '')
-          as String);
   @override
   String toString() => super.toString();
   @override

@@ -122,13 +122,13 @@ void main() {
     verify(wireless.requestScan(ssids: [])).called(1);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.prepare);
-    expect(model.selectedDevice!.isBusy, isTrue);
+    expect(model.selectedDevice!.isConnecting, isTrue);
 
     model.onDeselected();
     verify(device.disconnect()).called(1);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
-    expect(model.selectedDevice!.isBusy, isFalse);
+    expect(model.selectedDevice!.isConnecting, isFalse);
 
     model.onDeselected();
     verifyNever(device.disconnect());
@@ -173,8 +173,8 @@ void main() {
     expect(model.connectMode, equals(ConnectMode.wifi));
 
     expect(model.canConnect, isFalse);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isFalse);
 
     model.selectDevice(wifi);
     wifi.selectAccessPoint(wifi.accessPoints.first);
@@ -182,21 +182,21 @@ void main() {
     when(device.state).thenReturn(NetworkManagerDeviceState.disconnected);
 
     expect(model.canConnect, isTrue);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isFalse);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.config);
 
     expect(model.canConnect, isTrue);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isTrue);
+    expect(model.isConnecting, isTrue);
+    expect(model.isConnected, isFalse);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     when(wireless.activeAccessPoint).thenReturn(ap);
 
     expect(model.canConnect, isFalse);
-    expect(model.canContinue, isTrue);
-    expect(model.isBusy, isFalse);
+    expect(model.isConnecting, isFalse);
+    expect(model.isConnected, isTrue);
   });
 
   test('available connection', () async {

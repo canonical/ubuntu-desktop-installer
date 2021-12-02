@@ -36,17 +36,17 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
       (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
           as bool);
   @override
-  bool get canContinue =>
-      (super.noSuchMethod(Invocation.getter(#canContinue), returnValue: false)
+  bool get isConnected =>
+      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
           as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get hasActiveConnection =>
+      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
+          returnValue: false) as bool);
   @override
   bool get isEnabled =>
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
@@ -147,8 +147,8 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
       (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
           as bool);
   @override
-  bool get isBusy =>
-      (super.noSuchMethod(Invocation.getter(#isBusy), returnValue: false)
+  bool get isConnecting =>
+      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
   @override
   bool get isAvailable =>
@@ -180,10 +180,6 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
       (super.noSuchMethod(Invocation.method(#disconnect, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
-  @override
-  String describe() =>
-      (super.noSuchMethod(Invocation.method(#describe, []), returnValue: '')
-          as String);
   @override
   String toString() => super.toString();
   @override

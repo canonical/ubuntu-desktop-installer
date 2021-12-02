@@ -3,6 +3,7 @@ import 'connect_model.dart';
 import 'network_device.dart';
 import 'property_stream_notifier.dart';
 
+/// "Use wired connection"
 class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   EthernetModel(this._service, [this._udev]);
 
@@ -10,13 +11,13 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   bool get canConnect => false;
 
   @override
-  bool get canContinue => isActive;
+  bool get isConnected => hasActiveConnection;
 
   @override
-  bool get isBusy => false;
+  bool get isConnecting => false;
 
   @override
-  bool get isActive => devices.any((device) => device.isActive);
+  bool get hasActiveConnection => devices.any((device) => device.isActive);
 
   @override
   bool get isEnabled => devices.any((device) => !device.isDisconnected);

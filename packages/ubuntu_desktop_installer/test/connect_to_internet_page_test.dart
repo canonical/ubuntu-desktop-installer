@@ -42,16 +42,16 @@ void main() {
     final ethernetModel = MockEthernetModel();
     when(ethernetModel.connectMode).thenReturn(ConnectMode.ethernet);
     when(ethernetModel.devices).thenReturn([MockEthernetDevice()]);
-    when(ethernetModel.isActive).thenReturn(ethernetActive ?? false);
+    when(ethernetModel.hasActiveConnection).thenReturn(ethernetActive ?? false);
     when(ethernetModel.canConnect).thenReturn(true);
-    when(ethernetModel.canContinue).thenReturn(true);
-    when(ethernetModel.isBusy).thenReturn(false);
+    when(ethernetModel.isConnected).thenReturn(true);
+    when(ethernetModel.isConnecting).thenReturn(false);
     when(ethernetModel.isEnabled).thenReturn(true);
 
     final wifiDevice = MockWifiDevice();
     when(wifiDevice.model).thenReturn('model');
     when(wifiDevice.isAvailable).thenReturn(true);
-    when(wifiDevice.isBusy).thenReturn(false);
+    when(wifiDevice.isConnecting).thenReturn(false);
     when(wifiDevice.scanning).thenReturn(false);
     when(wifiDevice.accessPoints).thenReturn([]);
 
@@ -61,10 +61,10 @@ void main() {
     when(wifiModel.isEnabled).thenReturn(true);
     when(wifiModel.devices).thenReturn([wifiDevice]);
     when(wifiModel.isSelectedDevice(any)).thenReturn(false);
-    when(wifiModel.isActive).thenReturn(wifiActive ?? false);
+    when(wifiModel.hasActiveConnection).thenReturn(wifiActive ?? false);
     when(wifiModel.canConnect).thenReturn(true);
-    when(wifiModel.canContinue).thenReturn(true);
-    when(wifiModel.isBusy).thenReturn(false);
+    when(wifiModel.isConnected).thenReturn(true);
+    when(wifiModel.isConnecting).thenReturn(false);
 
     await tester.pumpWidget(
       MaterialApp(
@@ -120,9 +120,9 @@ void main() {
   testWidgets('initializes the model', (tester) async {
     final model = MockConnectToInternetModel();
     when(model.connectMode).thenReturn(ConnectMode.none);
-    when(model.isBusy).thenReturn(false);
+    when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(true);
-    when(model.canContinue).thenReturn(true);
+    when(model.isConnected).thenReturn(true);
 
     await buildTestApp(tester,
         model: model, ethernetActive: false, wifiActive: false);
