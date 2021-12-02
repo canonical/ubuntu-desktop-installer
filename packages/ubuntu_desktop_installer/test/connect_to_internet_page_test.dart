@@ -123,6 +123,7 @@ void main() {
     when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(true);
     when(model.isConnected).thenReturn(true);
+    when(model.isEnabled).thenReturn(true);
 
     await buildTestApp(tester,
         model: model, ethernetActive: false, wifiActive: false);
