@@ -9,6 +9,32 @@ import 'connect_to_internet_page_test.mocks.dart';
 
 @GenerateMocks([ConnectModel])
 void main() {
+  test('connects the service', () async {
+    final service = MockNetworkService();
+    final model = ConnectToInternetModel(service);
+    await model.init();
+    verify(service.connect()).called(1);
+  });
+
+  test('initializes connect models', () async {
+    final model = ConnectToInternetModel(MockNetworkService());
+    final ethernet = MockConnectModel();
+    when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
+    model.addConnectMode(ethernet);
+    final wifi = MockConnectModel();
+    when(wifi.connectMode).thenReturn(ConnectMode.wifi);
+    model.addConnectMode(wifi);
+    final none = MockConnectModel();
+    when(none.connectMode).thenReturn(ConnectMode.none);
+    model.addConnectMode(none);
+
+    await model.init();
+
+    verify(ethernet.init()).called(1);
+    verify(wifi.init()).called(1);
+    verify(none.init()).called(1);
+  });
+
   test('no model selected', () {
     final service = MockNetworkService();
     final model = ConnectToInternetModel(service);

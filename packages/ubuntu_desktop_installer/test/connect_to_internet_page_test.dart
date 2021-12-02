@@ -119,6 +119,20 @@ void main() {
     expect(model.connectMode, ConnectMode.none);
   });
 
+  testWidgets('initializes the model', (tester) async {
+    final model = MockConnectToInternetModel();
+    when(model.connectMode).thenReturn(ConnectMode.none);
+    when(model.isBusy).thenReturn(false);
+    when(model.canConnect).thenReturn(true);
+    when(model.canContinue).thenReturn(true);
+
+    await buildTestApp(tester,
+        model: model, ethernetActive: false, wifiActive: false);
+    await tester.pumpAndSettle();
+
+    verify(model.init()).called(1);
+  });
+
   testWidgets('pre-selects ethernet', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
     await buildTestApp(tester, model: model, ethernetActive: true);
