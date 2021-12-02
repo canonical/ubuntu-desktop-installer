@@ -113,6 +113,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   WifiDevice? get selectedDevice => _selected;
   bool isSelectedDevice(WifiDevice device) => device == _selected;
   void selectDevice(WifiDevice? device) {
+    if (device == _selected) return;
     selectedDevice?.removeListener(notifyListeners);
     device?.addListener(notifyListeners);
     _selected = device;
