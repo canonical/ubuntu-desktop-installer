@@ -185,8 +185,7 @@ void main() {
     final context = tester.element(page);
     expect(
         Provider.of<ConnectToInternetModel>(context, listen: false), isNotNull);
-    expect(
-        Provider.of<ConnectToInternetModel>(context, listen: false), isNotNull);
+    expect(Provider.of<NoConnectModel>(context, listen: false), isNotNull);
     expect(Provider.of<EthernetModel>(context, listen: false), isNotNull);
     expect(Provider.of<WifiModel>(context, listen: false), isNotNull);
   });
