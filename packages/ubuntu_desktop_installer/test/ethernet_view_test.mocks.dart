@@ -125,18 +125,6 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
   }
 
   @override
-  bool get isDisabled =>
-      (super.noSuchMethod(Invocation.getter(#isDisabled), returnValue: false)
-          as bool);
-  @override
-  bool get isUnmanaged =>
-      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
-          as bool);
-  @override
-  bool get isUnavailable =>
-      (super.noSuchMethod(Invocation.getter(#isUnavailable), returnValue: false)
-          as bool);
-  @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
       Invocation.getter(#device),
       returnValue: _FakeNetworkManagerDevice_0()) as _i2.NetworkManagerDevice);
@@ -165,6 +153,14 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
   @override
   bool get isAvailable =>
       (super.noSuchMethod(Invocation.getter(#isAvailable), returnValue: false)
+          as bool);
+  @override
+  bool get isDisconnected => (super
+          .noSuchMethod(Invocation.getter(#isDisconnected), returnValue: false)
+      as bool);
+  @override
+  bool get isUnmanaged =>
+      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
           as bool);
   @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>

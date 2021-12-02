@@ -230,18 +230,6 @@ class MockEthernetDevice extends _i1.Mock implements _i7.EthernetDevice {
   }
 
   @override
-  bool get isDisabled =>
-      (super.noSuchMethod(Invocation.getter(#isDisabled), returnValue: false)
-          as bool);
-  @override
-  bool get isUnmanaged =>
-      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
-          as bool);
-  @override
-  bool get isUnavailable =>
-      (super.noSuchMethod(Invocation.getter(#isUnavailable), returnValue: false)
-          as bool);
-  @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
       Invocation.getter(#device),
       returnValue: _FakeNetworkManagerDevice_0()) as _i2.NetworkManagerDevice);
@@ -270,6 +258,14 @@ class MockEthernetDevice extends _i1.Mock implements _i7.EthernetDevice {
   @override
   bool get isAvailable =>
       (super.noSuchMethod(Invocation.getter(#isAvailable), returnValue: false)
+          as bool);
+  @override
+  bool get isDisconnected => (super
+          .noSuchMethod(Invocation.getter(#isDisconnected), returnValue: false)
+      as bool);
+  @override
+  bool get isUnmanaged =>
+      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
           as bool);
   @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
@@ -625,6 +621,10 @@ class MockWifiModel extends _i1.Mock implements _i9.WifiModel {
       super.noSuchMethod(Invocation.method(#selectDevice, [device]),
           returnValueForMissingStub: null);
   @override
+  void requestPeriodicScan() =>
+      super.noSuchMethod(Invocation.method(#requestPeriodicScan, []),
+          returnValueForMissingStub: null);
+  @override
   _i5.Future<dynamic> requestScan({String? ssid}) =>
       (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssid: ssid}),
           returnValue: Future<dynamic>.value()) as _i5.Future<dynamic>);
@@ -666,10 +666,6 @@ class MockWifiDevice extends _i1.Mock implements _i9.WifiDevice {
       (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
           as bool);
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
-  @override
   List<_i9.AccessPoint> get accessPoints =>
       (super.noSuchMethod(Invocation.getter(#accessPoints),
           returnValue: <_i9.AccessPoint>[]) as List<_i9.AccessPoint>);
@@ -707,6 +703,14 @@ class MockWifiDevice extends _i1.Mock implements _i9.WifiDevice {
       (super.noSuchMethod(Invocation.getter(#isAvailable), returnValue: false)
           as bool);
   @override
+  bool get isDisconnected => (super
+          .noSuchMethod(Invocation.getter(#isDisconnected), returnValue: false)
+      as bool);
+  @override
+  bool get isUnmanaged =>
+      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
+          as bool);
+  @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
       (super.noSuchMethod(Invocation.getter(#availableConnections),
               returnValue: <_i2.NetworkManagerSettingsConnection>[])
@@ -737,11 +741,6 @@ class MockWifiDevice extends _i1.Mock implements _i9.WifiDevice {
   void selectAccessPoint(_i9.AccessPoint? accessPoint) =>
       super.noSuchMethod(Invocation.method(#selectAccessPoint, [accessPoint]),
           returnValueForMissingStub: null);
-  @override
-  _i5.Future<List<int>?> getSsid(
-          _i2.NetworkManagerSettingsConnection? connection) =>
-      (super.noSuchMethod(Invocation.method(#getSsid, [connection]),
-          returnValue: Future<List<int>?>.value()) as _i5.Future<List<int>?>);
   @override
   _i5.Future<_i2.NetworkManagerSettingsConnection?> findAvailableConnection(
           _i9.AccessPoint? accessPoint) =>
