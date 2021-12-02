@@ -8,166 +8,166 @@ class AppLocalizationsEo extends AppLocalizations {
   AppLocalizationsEo([String locale = 'eo']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'Ubuntu sur Windows-Subsistemo por Linux';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'Ubuntu sur Windows-Subsistemo por Linux';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Foriri';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Fini';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Konservi';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Agordi';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Elektu vian lingvon';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Agordi profilon';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Bonvolu krei implicitan Uniksan konton. Por pliaj informoj, vizitu la paĝon <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Via nomo';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Nomo bezoniĝas';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Elektu salutnomon';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'La salutnomo ne devas kongrui kun via salutnomo por Windows.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Elektu pasvorton';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Konfirmu vian pasvorton';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Montri altnivelajn opciojn sur la sekva paĝo';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'La pasvortoj ne kongruas';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Salutnomo bezoniĝas';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'La salutnomo ne validas';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Pasvorto bezoniĝas';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Altnivela agordado';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'Per ĉi tiu paĝo, vi povas laŭbezone agordi Ubuntu sur Windows-Subsistemo por Linux.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Surmeta loko';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Loko de la aŭtomata surmeto';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'La loko ne validas';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Opcioj pri surmetado';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Opcioj pri surmetado donotaj al la komando de aŭtomata surmetado';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Aŭtomate faradi dosieron de gastigantoj';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Aŭtomate refari la dosieron /etc/hosts post ĉiu starto.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Aŭtomate faradi resolv.conf';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Aŭtomate refari la dosieron /etc/resolv.conf post ĉiu starto.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'Integrado de grafika fasado';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Ĉi tiu opcio ebligas aŭtomatan agordadon de la medivariablo DISPLAY. Postulas triapartian X-servilon.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'Agorda fasado por Ubuntu sur Windows-Subsistemo por Linux (eksperimenta)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Kunfunkciado';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+  String get configurationUILegacyGUIIntegrationTitle => 'Integrado de malnova grafika fasado';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+  String get configurationUILegacyGUIIntegrationSubtitle => 'Ĉi tiu opcio integras malnovajn grafikaj fasadojn sur Windows 10. Postulas triapartian X-servilon.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+  String get configurationUILegacyAudioIntegrationTitle => 'Integrado de malnova sonsistemo';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+  String get configurationUILegacyAudioIntegrationSubtitle => 'Ĉi tiu opcio integras malnovan sonsistemon sur Windows 10. Postulas instalon de PulseAudio por Windows.';
 
   @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+  String get configurationUIAdvancedIPDetectionTitle => 'Altnivela trovado de IP-adreso';
 
   @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+  String get configurationUIAdvancedIPDetectionSubtitle => 'Ĉi tiu opcio ebligas trovadon de IP-adresoj per Windows IPv4 Address, kiu estas pli fidinda por Windows-Subsistemo por Linux 2.\nPostulas kunfunciadon kun Windows-Subsistemo por Linux.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => 'Mesaĝo de la Tago (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'Novaĵoj pri Windows-Subsistemo por Linux';
 
   @override
-  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+  String get configurationUIWSLNewsSubtitle => 'Ĉi tiu opcio permesas vin agordi viajn novaĵojn en la Mesaĝo de la Tago. Ŝaltinte ĝin, vi vidos la Mesaĝon de la Tago.';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Aŭtomata Surmeto';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Ŝaltita';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Ĉu aŭtomate surmenti diskojn. Ĉi tiu funkcio ebligas surmetadon de Windows-disko por Windows-Subsistemo por Linux.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Surmeti /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Instalado finiĝis';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Saluton $user,\nVi sukcese finis la instaladon.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Ni konsilas vin ruli la jenan komandon por ĝisdatigi Ubuntu al la plej nova versio:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => 'Vi povas uzi la komandon «ubuntuwsl» por administri viajn agordojn pri Windows-Subsistemo por Linux:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Ĉiuj agordoj estos efektivaj post restarto de Ubuntu.';
 }
