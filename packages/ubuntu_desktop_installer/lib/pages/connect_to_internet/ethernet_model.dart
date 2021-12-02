@@ -19,7 +19,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   bool get isActive => devices.any((device) => device.isActive);
 
   @override
-  bool get isEnabled => devices.any((device) => !device.isDisabled);
+  bool get isEnabled => devices.any((device) => !device.isDisconnected);
 
   @override
   ConnectMode get connectMode => ConnectMode.ethernet;
@@ -40,7 +40,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   @override
   Future<void> enable() async {
     log.debug('Enable wired networking');
-    devices.where((device) => device.isDisabled).forEach((device) {
+    devices.where((device) => device.isDisconnected).forEach((device) {
       if (device.availableConnections.isNotEmpty) {
         _service.activateConnection(device: device.device);
       } else if (!device.isUnmanaged) {
@@ -65,7 +65,7 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
 
   List<EthernetDevice>? _devices;
   List<EthernetDevice> get devices => _allDevices
-      .where((device) => !device.isUnmanaged && !device.isUnavailable)
+      .where((device) => !device.isUnmanaged && device.isAvailable)
       .toList();
   List<EthernetDevice> get _allDevices => _devices ??= _getDevices();
 
@@ -97,8 +97,4 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
 class EthernetDevice extends NetworkDevice {
   EthernetDevice(NetworkManagerDevice device, UdevService? udev)
       : super(device, udev);
-
-  bool get isDisabled => state == NetworkManagerDeviceState.disconnected;
-  bool get isUnmanaged => state == NetworkManagerDeviceState.unmanaged;
-  bool get isUnavailable => state == NetworkManagerDeviceState.unavailable;
 }

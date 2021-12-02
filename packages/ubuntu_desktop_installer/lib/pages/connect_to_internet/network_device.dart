@@ -36,6 +36,8 @@ class NetworkDevice extends PropertyStreamNotifier {
   }
 
   bool get isAvailable => state != NetworkManagerDeviceState.unavailable;
+  bool get isDisconnected => state == NetworkManagerDeviceState.disconnected;
+  bool get isUnmanaged => state == NetworkManagerDeviceState.unmanaged;
 
   String? _model;
   String? _vendor;

@@ -79,6 +79,12 @@ void main() {
       when(device.state).thenReturn(state);
       expect(model.isActive, activeStates.contains(state));
       expect(model.isBusy, busyStates.contains(state));
+      expect(model.isAvailable,
+          equals(state != NetworkManagerDeviceState.unavailable));
+      expect(model.isDisconnected,
+          equals(state == NetworkManagerDeviceState.disconnected));
+      expect(model.isUnmanaged,
+          equals(state == NetworkManagerDeviceState.unmanaged));
     }
 
     final wasNotified = Completer<bool>();
