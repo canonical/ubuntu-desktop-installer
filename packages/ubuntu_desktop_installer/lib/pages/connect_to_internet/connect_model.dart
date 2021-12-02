@@ -62,7 +62,7 @@ class NoConnectModel extends ConnectModel {
   bool get isConnecting => false;
 
   @override
-  bool get isEnabled => false;
+  bool get isEnabled => true;
 
   @override
   ConnectMode get connectMode => ConnectMode.none;

@@ -87,13 +87,13 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
         WizardAction(
           label: lang.connectButtonText,
           enabled: !model.isConnecting,
-          visible: model.canConnect,
+          visible: model.isEnabled && model.canConnect,
           onActivated: model.connect,
         ),
         WizardAction.next(
           context,
-          enabled: !model.isConnecting && model.isConnected,
-          visible: !model.canConnect,
+          enabled: model.isEnabled && !model.isConnecting && model.isConnected,
+          visible: !model.isEnabled || !model.canConnect,
           onActivated: Wizard.of(context).next,
         ),
       ],
