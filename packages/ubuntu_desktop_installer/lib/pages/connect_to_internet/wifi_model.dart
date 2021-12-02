@@ -61,7 +61,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   Future<void> init() async {
     addProperties(_service.propertiesChanged);
     addPropertyListener('Devices', _updateDevices);
-    addPropertyListener('WirelessEnabled', notifyListeners);
+    addPropertyListener('WirelessEnabled', _updateDevices);
     _updateDevices();
   }
 
