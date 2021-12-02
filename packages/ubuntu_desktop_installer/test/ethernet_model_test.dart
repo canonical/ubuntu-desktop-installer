@@ -66,11 +66,6 @@ void main() {
     expect(model.isBusy, isFalse);
     expect(model.isActive, isFalse);
 
-    expect(model.canConnect, isFalse);
-    expect(model.canContinue, isFalse);
-    expect(model.isBusy, isFalse);
-    expect(model.isActive, isFalse);
-
     when(device.state).thenReturn(NetworkManagerDeviceState.config);
 
     expect(model.canConnect, isFalse);
