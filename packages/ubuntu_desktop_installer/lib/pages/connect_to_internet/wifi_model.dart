@@ -174,7 +174,7 @@ class WifiDevice extends NetworkDevice {
     final ssids = <List<int>>[];
 
     bool hasSsid(List<int> ssid) {
-      return ssids.any((s) => const ListEquality().equals(s, ssid));
+      return ssids.any((s) => s.equals(ssid));
     }
 
     bool acceptSsid(List<int> ssid) {
@@ -232,16 +232,15 @@ class WifiDevice extends NetworkDevice {
   Future<List<int>?> getSsid(
       NetworkManagerSettingsConnection connection) async {
     final settings = await connection.getSettings();
-    final ssid = settings['802-11-wireless']?['ssid'] as DBusArray?;
-    return ssid?.children.map((c) => (c as DBusByte).value).toList();
+    final array = settings['802-11-wireless']?['ssid'] as DBusArray?;
+    return array?.toSsid();
   }
 
   Future<NetworkManagerSettingsConnection?> findAvailableConnection(
     AccessPoint accessPoint,
   ) async {
     for (final connection in availableConnections) {
-      if (const ListEquality()
-          .equals(accessPoint.ssid, await getSsid(connection))) {
+      if (accessPoint.ssid.equals(await getSsid(connection))) {
         return connection;
       }
     }
@@ -298,15 +297,9 @@ class AccessPoint extends PropertyStreamNotifier {
   NetworkManagerAccessPoint get accessPoint => _accessPoint;
 
   List<int> get ssid => _accessPoint.ssid;
-
   String get name => utf8.decode(ssid, allowMalformed: true);
-
   int get strength => _accessPoint.strength;
-
-  bool get isOpen {
-    return !_accessPoint.flags
-        .contains(NetworkManagerWifiAccessPointFlag.privacy);
-  }
+  bool get isOpen => _accessPoint.isOpen;
 
   @override
   String toString() => name;
@@ -314,4 +307,16 @@ class AccessPoint extends PropertyStreamNotifier {
 
 String describeAccessPoints(List<AccessPoint> accessPoints) {
   return accessPoints.map((ap) => ap.name).join(', ');
+}
+
+extension _SsidList on List<int> {
+  bool equals(List<int>? ssid) => const ListEquality().equals(this, ssid);
+}
+
+extension _SsidArray on DBusArray {
+  List<int> toSsid() => children.map((c) => (c as DBusByte).value).toList();
+}
+
+extension _AccessPointFlags on NetworkManagerAccessPoint {
+  bool get isOpen => !flags.contains(NetworkManagerWifiAccessPointFlag.privacy);
 }
