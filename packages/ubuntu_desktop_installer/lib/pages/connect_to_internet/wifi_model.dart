@@ -162,8 +162,8 @@ class WifiDevice extends NetworkDevice {
 
   bool get _canContinue =>
       isActive &&
-      _selected != null &&
-      _selected!.name == activeAccessPoint?.name;
+      _selectedAccessPoint != null &&
+      _selectedAccessPoint!.name == activeAccessPoint?.name;
 
   final NetworkManagerDeviceWireless _wireless;
 
@@ -218,14 +218,14 @@ class WifiDevice extends NetworkDevice {
     return accessPoint._accessPoint == _wireless.activeAccessPoint;
   }
 
-  AccessPoint? _selected;
-  AccessPoint? get selectedAccessPoint => _selected;
+  AccessPoint? _selectedAccessPoint;
+  AccessPoint? get selectedAccessPoint => _selectedAccessPoint;
   bool isSelectedAccessPoint(AccessPoint accessPoint) {
-    return accessPoint._accessPoint == _selected?._accessPoint;
+    return accessPoint._accessPoint == _selectedAccessPoint?._accessPoint;
   }
 
   void selectAccessPoint(AccessPoint? accessPoint) {
-    _selected = accessPoint;
+    _selectedAccessPoint = accessPoint;
     notifyListeners();
   }
 
