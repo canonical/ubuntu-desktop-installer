@@ -229,7 +229,7 @@ class WifiDevice extends NetworkDevice {
     notifyListeners();
   }
 
-  Future<List<int>?> getSsid(
+  Future<List<int>?> _getSsid(
       NetworkManagerSettingsConnection connection) async {
     final settings = await connection.getSettings();
     final array = settings['802-11-wireless']?['ssid'] as DBusArray?;
@@ -240,7 +240,7 @@ class WifiDevice extends NetworkDevice {
     AccessPoint accessPoint,
   ) async {
     for (final connection in availableConnections) {
-      if (accessPoint.ssid.equals(await getSsid(connection))) {
+      if (accessPoint.ssid.equals(await _getSsid(connection))) {
         return connection;
       }
     }
