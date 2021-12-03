@@ -30,9 +30,7 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   bool get hasActiveConnection => devices.any((device) => device.isActive);
 
   @override
-  bool get isConnecting =>
-      _selectedDevice?.isConnecting == true ||
-      _selectedDevice?.scanning == true;
+  bool get isConnecting => _selectedDevice?.isConnecting == true;
 
   @override
   bool get isEnabled => _service.wirelessEnabled;
