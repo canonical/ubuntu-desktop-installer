@@ -358,7 +358,7 @@ class PartitionButtonRow extends StatelessWidget {
             OutlinedButton(
               child: Text(lang.newPartitionTable),
               onPressed: model.canReformatDisk
-                  ? () => model.reformatDisk(model.selectedDisk!)
+                  ? () => _maybeReformatDisk(context)
                   : null,
             ),
           ],
@@ -369,6 +369,22 @@ class PartitionButtonRow extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Future<void> _maybeReformatDisk(BuildContext context) async {
+    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+    final lang = AppLocalizations.of(context);
+
+    final disk = model.selectedDisk!;
+    if (disk.ptable != null) {
+      final confirmed = await showConfirmationDialog(
+        context,
+        title: lang.newPartitionTableConfirmationTitle,
+        message: lang.newPartitionTableConfirmationMessage,
+      );
+      if (!confirmed) return;
+    }
+    model.reformatDisk(model.selectedDisk!);
   }
 }
 

@@ -310,6 +310,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTable => 'Taula de particion novèla';
 
   @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+
+  @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
 
   @override

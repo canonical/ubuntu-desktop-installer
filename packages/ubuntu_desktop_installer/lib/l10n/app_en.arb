@@ -204,6 +204,8 @@
   "diskHeadersFormat": "Format",
   "freeDiskSpace": "free space",
   "newPartitionTable": "New partition table",
+  "newPartitionTableConfirmationTitle": "Create a new empty partition table on this device?",
+  "newPartitionTableConfirmationMessage": "You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.",
   "bootLoaderDevice": "Device for boot loader installation",
   "partitionCreateTitle": "Create partition",
   "partitionEditTitle": "Edit partition",

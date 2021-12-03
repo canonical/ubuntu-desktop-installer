@@ -765,6 +765,18 @@ abstract class AppLocalizations {
   /// **'New partition table'**
   String get newPartitionTable;
 
+  /// No description provided for @newPartitionTableConfirmationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a new empty partition table on this device?'**
+  String get newPartitionTableConfirmationTitle;
+
+  /// No description provided for @newPartitionTableConfirmationMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.'**
+  String get newPartitionTableConfirmationMessage;
+
   /// No description provided for @bootLoaderDevice.
   ///
   /// In en, this message translates to:

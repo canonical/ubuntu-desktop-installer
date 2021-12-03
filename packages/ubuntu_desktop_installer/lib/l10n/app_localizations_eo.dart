@@ -310,6 +310,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get newPartitionTable => 'Nova subdiskotabelo';
 
   @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+
+  @override
   String get bootLoaderDevice => 'Aparato, sur kiun instaliĝos la praŝargilo';
 
   @override
