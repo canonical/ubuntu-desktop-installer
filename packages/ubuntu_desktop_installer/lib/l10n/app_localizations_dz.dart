@@ -151,7 +151,7 @@ class AppLocalizationsDz extends AppLocalizations {
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to this Wi-Fi network';
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
 
   @override
   String get noInternet => 'I don\'t want to connect to the internet just now';

@@ -498,7 +498,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectWifiNetwork.
   ///
   /// In en, this message translates to:
-  /// **'Connect to this Wi-Fi network'**
+  /// **'Connect to a Wi-Fi network'**
   String get selectWifiNetwork;
 
   /// No description provided for @noInternet.

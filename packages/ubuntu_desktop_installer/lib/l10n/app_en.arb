@@ -85,7 +85,7 @@
   "wiredDisabled": "Wired connection is turned off",
   "wiredMustBeEnabled": "To use ethernet on this computer, a wired connection must be enabled",
   "enableWired": "Enable wired",
-  "selectWifiNetwork": "Connect to this Wi-Fi network",
+  "selectWifiNetwork": "Connect to a Wi-Fi network",
   "noInternet": "I don't want to connect to the internet just now",
   "wirelessNetworkingDisabled": "Wireless networking disabled",
   "noWifiDevicesDetected": "No Wi-Fi devices detected",
