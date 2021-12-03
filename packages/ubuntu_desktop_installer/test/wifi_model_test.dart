@@ -64,9 +64,7 @@ void main() {
     model = WifiModel(service);
     await model.init();
     wifi = WifiDevice(device);
-    wifi.setDevice(device);
     accessPoint = AccessPoint(ap);
-    accessPoint.setAccessPoint(ap);
   });
 
   tearDown(() {

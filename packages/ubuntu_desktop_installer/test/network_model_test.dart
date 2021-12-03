@@ -38,7 +38,6 @@ void main() {
     when(mock.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
 
     device = NetworkDevice(mock, udev);
-    device.setDevice(mock);
   });
 
   tearDown(() {

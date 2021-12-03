@@ -125,6 +125,7 @@ class WifiDevice extends NetworkDevice {
   WifiDevice(NetworkManagerDevice device, [UdevService? udev])
       : _wireless = device.wireless!,
         super(device, udev) {
+    _setWireless(device.wireless!);
     addPropertyListener('AccessPoints', _updateAccessPoints);
     addPropertyListener('ActiveAccessPoint', _updateAccessPoints);
     addPropertyListener('LastScan', () => _completeScan(_wireless));
@@ -142,12 +143,17 @@ class WifiDevice extends NetworkDevice {
     super.dispose();
   }
 
-  @override
-  void setDevice(NetworkManagerDevice device) {
-    super.setDevice(device);
-    _wireless = device.wireless!;
+  void _setWireless(NetworkManagerDeviceWireless wireless) {
+    _wireless = wireless;
     setProperties(_wireless.propertiesChanged);
     _updateAccessPoints();
+  }
+
+  @override
+  void updateDevice(NetworkManagerDevice device) {
+    super.updateDevice(device);
+    if (_wireless == device.wireless) return;
+    _setWireless(device.wireless!);
   }
 
   @override
@@ -190,10 +196,15 @@ class WifiDevice extends NetworkDevice {
     final previousSelected = _selectedAccessPoint;
     _selectedAccessPoint = null;
     for (final ap in _getAccessPoints()) {
-      final model = _allAccessPoints[ap.hwAddress] ?? _createAccessPoint(ap);
-      model.setAccessPoint(ap);
+      var model = _allAccessPoints[ap.hwAddress];
+      if (model == null) {
+        model = _createAccessPoint(ap);
+        model.addListener(_updateAccessPoints);
+        _allAccessPoints[ap.hwAddress] = model;
+      } else {
+        model._updateAccessPoint(ap);
+      }
       _accessPoints.add(model);
-      _allAccessPoints[ap.hwAddress] = model;
       if (model == previousSelected) {
         _selectedAccessPoint = model;
       }
@@ -297,15 +308,22 @@ class WifiDevice extends NetworkDevice {
 
 class AccessPoint extends PropertyStreamNotifier {
   AccessPoint(this._accessPoint) {
+    _setAccessPoint(_accessPoint);
     addPropertyListener('Strength', notifyListeners);
   }
 
   NetworkManagerAccessPoint _accessPoint;
 
   NetworkManagerAccessPoint get accessPoint => _accessPoint;
-  void setAccessPoint(NetworkManagerAccessPoint accessPoint) {
+
+  void _setAccessPoint(NetworkManagerAccessPoint accessPoint) {
     _accessPoint = accessPoint;
     setProperties(_accessPoint.propertiesChanged);
+  }
+
+  void _updateAccessPoint(NetworkManagerAccessPoint accessPoint) {
+    if (accessPoint == _accessPoint) return;
+    _setAccessPoint(accessPoint);
     notifyListeners();
   }
 

@@ -51,11 +51,18 @@ abstract class NetworkModel<T extends NetworkDevice>
     final previousSelected = _selectedDevice;
     _selectedDevice = null;
     for (final device in getDevices()) {
-      final model = _allDevices[device.hwAddress] ?? createDevice(device);
-      model.setDevice(device);
+      var model = _allDevices[device.hwAddress];
+      if (model == null) {
+        model = createDevice(device);
+        model.addListener(updateDevices);
+        _allDevices[device.hwAddress] = model;
+      } else {
+        model.updateDevice(device);
+      }
       _devices.add(model);
-      _allDevices[device.hwAddress] = model;
-      if (model == previousSelected) {
+      if (model == previousSelected &&
+          !model.isUnmanaged &&
+          model.isAvailable) {
         _selectedDevice = model;
       }
     }
@@ -80,17 +87,23 @@ abstract class NetworkModel<T extends NetworkDevice>
 
 class NetworkDevice extends PropertyStreamNotifier {
   NetworkDevice(this._device, this._udev) {
+    _setDevice(_device);
     addPropertyListener('ActiveConnection', notifyListeners);
     addPropertyListener('AvailableConnections', notifyListeners);
     addPropertyListener('State', notifyListeners);
     addPropertyListener('Udi', _updateUdi);
-    _updateUdi();
   }
 
-  void setDevice(NetworkManagerDevice device) {
+  void _setDevice(NetworkManagerDevice device) {
     _device = device;
     setProperties(_device.propertiesChanged);
     _updateUdi();
+  }
+
+  @protected
+  void updateDevice(NetworkManagerDevice device) {
+    if (_device == device) return;
+    _setDevice(device);
     notifyListeners();
   }
 
