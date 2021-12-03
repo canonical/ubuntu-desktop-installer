@@ -14,160 +14,160 @@ class AppLocalizationsUk extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Вийти';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Завершити';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Зберегти';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Встановити';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Оберіть мову';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Налаштування профілю';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Будь ласка, створіть типовий обліковий запис користувача UNIX. Для отримання додаткової інформації відвідайте: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Ваше ім\'я';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Ім’я - обов’язково';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Оберіть ім’я користувача';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Ім’я користувача не повинно збігатися з вашим ім’ям користувача Windows.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Виберіть пароль';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Підтвердити пароль';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Показати розширені параметри на наступній сторінці';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Паролі не збігаються';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Ім’я користувача - обов\'язково';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Ім’я користувача непридатне';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Пароль - обов’язково';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Розширені налаштування';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'На цій сторінці ви можете налаштувати Ubuntu WSL відповідно до ваших потреб.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Місце монтування';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Місце автоматичного монтування';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'Місце непридатне';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Параметри монтування';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Параметри монтування для автоматичного монтування';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Увімкнути створення hosts';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Дозволяє повторно генерувати /etc/hosts під час кожного запуску.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Увімкнути створення resolv.conf';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Дозволяє повторно генерувати /etc/resolv.conf під час кожного запуску.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'GUI інтеграція';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Дозволяє автоматичне налаштування оточення DISPLAY. Потрібен сторонній X-сервер.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'Інтерфейс користувача налаштування Ubuntu WSL (експериментальний)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Взаємодія';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+  String get configurationUILegacyGUIIntegrationTitle => 'Успадкована інтеграція GUI';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+  String get configurationUILegacyGUIIntegrationSubtitle => 'Цей параметр вмикає інтеграцію успадкованого графічного інтерфейсу у Windows 10. Потрібен сторонній X-сервер.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+  String get configurationUILegacyAudioIntegrationTitle => 'Успадкована інтеграція аудіо';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+  String get configurationUILegacyAudioIntegrationSubtitle => 'Цей параметр вмикає інтеграцію успадкованого аудіо інтерфейсу у Windows 10. Потрібне встановлення PulseAudio для Windows.';
 
   @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+  String get configurationUIAdvancedIPDetectionTitle => 'Розширене визначення IP';
 
   @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+  String get configurationUIAdvancedIPDetectionSubtitle => 'Цей параметр дозволяє розширити визначення IP-адреси за IPv4-адресою Windows, яка є більш надійною для використання з WSL2.\nПотребує ввімкнення взаємодії WSL.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => 'Повідомлення дня (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'Новини WSL';
 
   @override
-  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+  String get configurationUIWSLNewsSubtitle => 'Ця опція дозволяє вам керувати новинами MOTD. Увімкнувши його, ви зможете побачити повідомлення дня (MOTD).';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Автоматичне монтування';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Увімкнено';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Показує чи ввімкнено функцію автоматичного монтування. Ця функція дозволяє монтувати диск Windows у WSL.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Монтування у /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => 'Показує чи буде змонтовано пристрої з /etc/fstab. Чи файл конфігурації /etc/fstab містить їх?';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Встановлення завершено';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Вітаємо, $user!\nВи успішно завершили встановлення.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Для оновлення Ubuntu до останньої версії рекомендується виконати наступну команду:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => 'Ви можете використовувати вбудовану команду ubuntuwsl для керування параметрами WSL:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Усі налаштування набудуть чинності після перезапуску Ubuntu.';
 }
