@@ -187,6 +187,15 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<bool> freeOnly() =>
+      (super.noSuchMethod(Invocation.method(#freeOnly, []),
+          returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
+  @override
+  _i5.Future<void> setFreeOnly(bool? enable) =>
+      (super.noSuchMethod(Invocation.method(#setFreeOnly, [enable]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
   _i5.Future<_i3.IdentityData> identity() => (super.noSuchMethod(
           Invocation.method(#identity, []),
           returnValue: Future<_i3.IdentityData>.value(_FakeIdentityData_3()))

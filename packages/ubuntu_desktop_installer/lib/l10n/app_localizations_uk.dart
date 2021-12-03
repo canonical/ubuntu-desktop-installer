@@ -8,76 +8,76 @@ class AppLocalizationsUk extends AppLocalizations {
   AppLocalizationsUk([String locale = 'uk']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Встановлювач стільниці Ubuntu';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Встановити $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Скасувати';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Змінити';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Гаразд';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ні';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Перезавантажити';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Повернутися';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Так';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Вітаємо';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Спробувати або встановити';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Виправити встановлення';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Спробувати $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Ви можете спробувати $RELEASE без виконання жодних змін у вашому комп’ютері.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Встановити $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Встановити $RELEASE поряд (або замість) вашої поточної операційної системи. Це не повинно зайняти занадто багато часу.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Ви можете прочитати <a href=\"$url\">примітки до випуску</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Вимкнути RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.';
 
   @override
   String instructionsForRST(Object url) {

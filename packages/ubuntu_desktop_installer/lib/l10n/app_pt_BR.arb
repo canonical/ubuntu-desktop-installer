@@ -132,7 +132,7 @@
   "@installationTypeLVM": {},
   "installationTypeLVMSelected": "LVM selecionado",
   "@installationTypeLVMSelected": {},
-  "installationTypeEncrypt": "Criptografar a nova instalação do {RELEASE}  para maior segurança",
+  "installationTypeEncrypt": "Criptografar a nova instalação do {RELEASE} para maior segurança",
   "@installationTypeEncrypt": {},
   "installationTypeEncryptInfo": "Você deverá escolher uma chave de segurança no próximo passo.",
   "@installationTypeEncryptInfo": {},
@@ -167,7 +167,7 @@
   "@installationTypeAlongsideInfo": {},
   "installationTypeManual": "Opção avançada",
   "@installationTypeManual": {},
-  "installationTypeManualInfo": "Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o {DISTRO}.",
+  "installationTypeManualInfo": "Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o {DISTRO}",
   "@installationTypeManualInfo": {},
   "selectGuidedStoragePageTitle": "Apagar o disco e instalar o {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
@@ -281,7 +281,7 @@
   "@whoAreYouPageComputerNameInfo": {},
   "whoAreYouPageComputerNameRequired": "O nome do computador é obrigatório",
   "@whoAreYouPageComputerNameRequired": {},
-  "whoAreYouPageInvalidComputerName": "The computer name is invalid",
+  "whoAreYouPageInvalidComputerName": "O nome do computador não é válido",
   "@whoAreYouPageInvalidComputerName": {},
   "whoAreYouPageUsernameLabel": "Escolha um nome de usuário",
   "@whoAreYouPageUsernameLabel": {},
@@ -368,7 +368,7 @@
   "@shutdown": {},
   "turnOffBitlockerTitle": "Desligar BitLocker",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker. Você precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
+  "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
   "@turnOffBitlockerDescription": {},
   "turnOffBitlockerLinkInstructions": "Para obter instruções, abra esta página em um telefone ou outro dispositivo: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
@@ -396,7 +396,7 @@
       "color": {}
     }
   },
-  "chooseSecurityKeyHeader": "Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.",
+  "chooseSecurityKeyHeader": "Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer arquivos fora de {RELEASE} não serão criptografados.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
     "placeholders": {

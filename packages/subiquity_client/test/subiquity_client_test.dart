@@ -431,6 +431,14 @@ void main() {
       expect(stepKeyPresent.yes, isNotEmpty);
       expect(stepKeyPresent.no, isNotEmpty);
     });
+
+    test('free_only', () async {
+      await _client.setFreeOnly(true);
+      expect(await _client.freeOnly(), true);
+
+      await _client.setFreeOnly(false);
+      expect(await _client.freeOnly(), false);
+    });
   });
 
   group('wsl', () {
