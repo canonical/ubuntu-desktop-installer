@@ -34,10 +34,11 @@ void main() {
     final mock = MockNetworkManagerDevice();
     when(mock.udi).thenReturn('test udi');
 
-    propertiesChanged = StreamController<List<String>>();
+    propertiesChanged = StreamController<List<String>>(sync: true);
     when(mock.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
 
     device = NetworkDevice(mock, udev);
+    device.setDevice(mock);
   });
 
   tearDown(() {
@@ -53,10 +54,10 @@ void main() {
     expect(device.model, equals('test model'));
     expect(device.vendor, equals('test vendor'));
 
-    final wasNotified = Completer<bool>();
-    device.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    device.addListener(() => wasNotified = true);
     propertiesChanged.add(['Udi']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
 
     expect(device.model, equals('another model'));
     expect(device.vendor, equals('another vendor'));
@@ -83,10 +84,10 @@ void main() {
           equals(state == NetworkManagerDeviceState.unmanaged));
     }
 
-    final wasNotified = Completer<bool>();
-    device.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    device.addListener(() => wasNotified = true);
     propertiesChanged.add(['State']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
   });
 
   test('active connection', () async {
@@ -98,10 +99,10 @@ void main() {
     when(mock.activeConnection).thenReturn(connection);
     expect(device.activeConnection, equals(connection));
 
-    final wasNotified = Completer<bool>();
-    device.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    device.addListener(() => wasNotified = true);
     propertiesChanged.add(['ActiveConnection']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
   });
 
   test('available connections', () async {
@@ -113,10 +114,10 @@ void main() {
     when(mock.availableConnections).thenReturn([connection]);
     expect(device.availableConnections, equals([connection]));
 
-    final wasNotified = Completer<bool>();
-    device.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    device.addListener(() => wasNotified = true);
     propertiesChanged.add(['AvailableConnections']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
   });
 
   test('interface', () async {

@@ -36,32 +36,37 @@ void main() {
 
   setUp(() async {
     service = MockNetworkService();
-    serviceChanged = StreamController<List<String>>.broadcast();
+    serviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(service.propertiesChanged).thenAnswer((_) => serviceChanged.stream);
     when(service.wirelessDevices).thenReturn([]);
     when(service.wirelessEnabled).thenReturn(true);
 
     device = MockNetworkManagerDevice();
     when(device.udi).thenReturn('test udi');
-    deviceChanged = StreamController<List<String>>.broadcast();
+    when(device.hwAddress).thenReturn('test address');
+    deviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(device.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
     when(device.state).thenReturn(NetworkManagerDeviceState.config);
 
     ap = MockNetworkManagerAccessPoint();
-    accessPointChanged = StreamController<List<String>>.broadcast();
+    accessPointChanged = StreamController<List<String>>.broadcast(sync: true);
     when(ap.propertiesChanged).thenAnswer((_) => accessPointChanged.stream);
     when(ap.ssid).thenReturn(kTestSsid);
+    when(ap.hwAddress).thenReturn('test address');
 
     wireless = MockNetworkManagerDeviceWireless();
     when(device.wireless).thenReturn(wireless);
-    wirelessChanged = StreamController<List<String>>.broadcast();
+    wirelessChanged = StreamController<List<String>>.broadcast(sync: true);
     when(wireless.propertiesChanged).thenAnswer((_) => wirelessChanged.stream);
     when(wireless.accessPoints).thenReturn([]);
+    when(wireless.activeAccessPoint).thenReturn(null);
 
     model = WifiModel(service);
     await model.init();
     wifi = WifiDevice(device);
+    wifi.setDevice(device);
     accessPoint = AccessPoint(ap);
+    accessPoint.setAccessPoint(ap);
   });
 
   tearDown(() {
@@ -76,13 +81,14 @@ void main() {
 
   test('devices', () async {
     when(service.wirelessDevices).thenReturn([device]);
-
-    final wasNotified = Completer<bool>();
-    model.addListener(() => wasNotified.complete(true));
     serviceChanged.add(['Devices']);
-    await expectLater(wasNotified.future, completes);
 
-    expect(model.devices.map((model) => model.device), [device]);
+    bool? wasNotified;
+    model.addListener(() => wasNotified = true);
+    serviceChanged.add(['Devices']);
+    expect(wasNotified, isTrue);
+
+    expect(model.devices.single.device, equals(device));
   });
 
   test('disabled', () async {
@@ -95,32 +101,29 @@ void main() {
 
   test('access points', () async {
     when(wireless.accessPoints).thenReturn([ap]);
-
-    final wasNotified = Completer<bool>();
-    wifi.addListener(() => wasNotified.complete(true));
     wirelessChanged.add(['AccessPoints']);
-    await expectLater(wasNotified.future, completes);
 
-    expect(wifi.accessPoints.map((model) => model.accessPoint), [ap]);
+    bool? wasNotified;
+    wifi.addListener(() => wasNotified = true);
+    wirelessChanged.add(['AccessPoints']);
+    expect(wasNotified, isTrue);
+
+    expect(wifi.accessPoints.single.accessPoint, equals(ap));
   });
 
   test('select and deselect', () {
     when(service.wirelessDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(wireless.accessPoints).thenReturn([ap]);
+    wirelessChanged.add(['AccessPoints']);
     when(wireless.activeAccessPoint).thenReturn(null);
     when(wireless.requestScan(ssids: [])).thenAnswer((_) async {});
 
     model.onSelected();
-    expect(model.selectedDevice, isNull);
     verify(wireless.requestScan(ssids: [])).called(1);
 
-    when(wireless.activeAccessPoint).thenReturn(ap);
-    model.onSelected();
-    expect(model.selectedDevice, isNotNull);
-    expect(model.selectedDevice!.device, equals(device));
-    verify(wireless.requestScan(ssids: [])).called(1);
-
+    model.selectDevice(wifi);
     when(device.state).thenReturn(NetworkManagerDeviceState.prepare);
     expect(model.selectedDevice!.isConnecting, isTrue);
 
@@ -169,6 +172,7 @@ void main() {
 
   test('state', () {
     when(wireless.accessPoints).thenReturn([ap]);
+    wirelessChanged.add(['AccessPoints']);
 
     expect(model.connectMode, equals(ConnectMode.wifi));
 
@@ -202,6 +206,7 @@ void main() {
   test('available connection', () async {
     when(device.activeConnection).thenReturn(null);
     when(wireless.accessPoints).thenReturn([ap]);
+    wirelessChanged.add(['AccessPoints']);
 
     model.selectDevice(wifi);
     wifi.selectAccessPoint(wifi.accessPoints.first);
@@ -242,6 +247,7 @@ void main() {
 
   test('periodic scanning', () async {
     when(service.wirelessDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(wireless.lastScan).thenReturn(1);
     when(wireless.requestScan(ssids: [])).thenAnswer((_) async => null);
@@ -263,6 +269,7 @@ void main() {
 
   test('request scan', () async {
     when(service.wirelessDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(wireless.lastScan).thenReturn(1);
     when(wireless.requestScan(ssids: [kTestSsid]))
@@ -297,16 +304,17 @@ void main() {
   test('strength', () async {
     when(ap.strength).thenReturn(50);
 
-    final wasNotified = Completer<bool>();
-    accessPoint.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    accessPoint.addListener(() => wasNotified = true);
     accessPointChanged.add(['Strength']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
 
     expect(accessPoint.strength, equals(50));
   });
 
   test('active access point', () {
     when(wireless.accessPoints).thenReturn([ap]);
+    wirelessChanged.add(['AccessPoints']);
     when(wireless.activeAccessPoint).thenReturn(null);
     expect(wifi.activeAccessPoint, isNull);
     expect(wifi.isActiveAccessPoint(accessPoint), isFalse);
@@ -318,6 +326,7 @@ void main() {
 
   test('find access point', () {
     when(wireless.accessPoints).thenReturn([ap]);
+    wirelessChanged.add(['AccessPoints']);
 
     final ap1 = wifi.findAccessPoint(String.fromCharCodes(kTestSsid.reversed));
     expect(ap1, isNull);

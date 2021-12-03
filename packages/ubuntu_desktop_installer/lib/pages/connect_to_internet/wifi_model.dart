@@ -39,14 +39,7 @@ class WifiModel extends NetworkModel<WifiDevice> {
   ConnectMode get connectMode => ConnectMode.wifi;
 
   @override
-  void onSelected() {
-    final device = devices.firstWhereOrNull((device) {
-      return device.activeAccessPoint != null;
-    });
-    device?.init();
-    selectDevice(device);
-    startPeriodicScanning();
-  }
+  void onSelected() => startPeriodicScanning();
 
   @override
   void onDeselected() {
@@ -86,12 +79,18 @@ class WifiModel extends NetworkModel<WifiDevice> {
   }
 
   @override
-  List<WifiDevice> getDevices() {
-    final devices = service.wirelessDevices
-        .map((device) => WifiDevice(device, udev))
-        .toList();
-    log.debug(() => 'Update Wi-Fi devices: $devices');
-    return devices;
+  List<NetworkManagerDevice> getDevices() => service.wirelessDevices;
+
+  @override
+  WifiDevice createDevice(NetworkManagerDevice device) {
+    return WifiDevice(device, udev);
+  }
+
+  @override
+  WifiDevice? findActiveDevice() {
+    return devices.firstWhereOrNull((device) {
+      return device.activeAccessPoint != null;
+    });
   }
 
   Timer? _scanTimer;
@@ -126,18 +125,29 @@ class WifiDevice extends NetworkDevice {
   WifiDevice(NetworkManagerDevice device, [UdevService? udev])
       : _wireless = device.wireless!,
         super(device, udev) {
-    addProperties(_wireless.propertiesChanged);
     addPropertyListener('AccessPoints', _updateAccessPoints);
-    addPropertyListener('ActiveAccessPoint', notifyListeners);
+    addPropertyListener('ActiveAccessPoint', _updateAccessPoints);
     addPropertyListener('LastScan', () => _completeScan(_wireless));
   }
 
-  void init() => selectAccessPoint(activeAccessPoint);
+  NetworkManagerDeviceWireless _wireless;
+  final _accessPoints = <AccessPoint>[];
+  final _allAccessPoints = <String, AccessPoint>{};
 
   @override
   void dispose() {
-    _resetAccessPoints();
+    for (final ap in _accessPoints) {
+      ap.dispose();
+    }
     super.dispose();
+  }
+
+  @override
+  void setDevice(NetworkManagerDevice device) {
+    super.setDevice(device);
+    _wireless = device.wireless!;
+    setProperties(_wireless.propertiesChanged);
+    _updateAccessPoints();
   }
 
   @override
@@ -148,12 +158,9 @@ class WifiDevice extends NetworkDevice {
       _selectedAccessPoint != null &&
       _selectedAccessPoint!.name == activeAccessPoint?.name;
 
-  final NetworkManagerDeviceWireless _wireless;
+  List<AccessPoint> get accessPoints => _accessPoints;
 
-  List<AccessPoint>? _accessPoints;
-  List<AccessPoint> get accessPoints => _accessPoints ??= _getAccessPoints();
-
-  List<AccessPoint> _getAccessPoints() {
+  List<NetworkManagerAccessPoint> _getAccessPoints() {
     final ssids = <List<int>>[];
 
     bool hasSsid(List<int> ssid) {
@@ -170,22 +177,29 @@ class WifiDevice extends NetworkDevice {
 
     final accessPoints = _wireless.accessPoints
         .where((ap) => acceptSsid(ap.ssid))
-        .map((ap) => AccessPoint(ap))
         .sorted((a, b) => b.strength.compareTo(a.strength));
-    log.debug(() => 'Update access points: $accessPoints ($this)');
     return accessPoints;
   }
 
-  void _resetAccessPoints() {
-    if (_accessPoints == null) return;
-    for (final ap in _accessPoints!) {
-      ap.dispose();
-    }
-    _accessPoints = null;
+  AccessPoint _createAccessPoint(NetworkManagerAccessPoint accessPoint) {
+    return AccessPoint(accessPoint);
   }
 
   void _updateAccessPoints() {
-    _resetAccessPoints();
+    _accessPoints.clear();
+    final previousSelected = _selectedAccessPoint;
+    _selectedAccessPoint = null;
+    for (final ap in _getAccessPoints()) {
+      final model = _allAccessPoints[ap.hwAddress] ?? _createAccessPoint(ap);
+      model.setAccessPoint(ap);
+      _accessPoints.add(model);
+      _allAccessPoints[ap.hwAddress] = model;
+      if (model == previousSelected) {
+        _selectedAccessPoint = model;
+      }
+    }
+    _selectedAccessPoint ??= activeAccessPoint;
+    log.debug(() => 'Update access points: $_accessPoints ($this)');
     notifyListeners();
   }
 
@@ -283,14 +297,20 @@ class WifiDevice extends NetworkDevice {
 
 class AccessPoint extends PropertyStreamNotifier {
   AccessPoint(this._accessPoint) {
-    addProperties(_accessPoint.propertiesChanged);
     addPropertyListener('Strength', notifyListeners);
   }
 
-  final NetworkManagerAccessPoint _accessPoint;
+  NetworkManagerAccessPoint _accessPoint;
+
   NetworkManagerAccessPoint get accessPoint => _accessPoint;
+  void setAccessPoint(NetworkManagerAccessPoint accessPoint) {
+    _accessPoint = accessPoint;
+    setProperties(_accessPoint.propertiesChanged);
+    notifyListeners();
+  }
 
   List<int> get ssid => _accessPoint.ssid;
+  String get hwAddress => _accessPoint.hwAddress;
   String get name => utf8.decode(ssid, allowMalformed: true);
   int get strength => _accessPoint.strength;
   bool get isOpen => _accessPoint.isOpen;

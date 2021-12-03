@@ -16,7 +16,7 @@ void main() {
       onCancel: () => wasCanceled = true,
     );
 
-    notifier.addProperties(controller.stream);
+    notifier.setProperties(controller.stream);
     expect(wasListened, isTrue);
 
     var foo = 0;

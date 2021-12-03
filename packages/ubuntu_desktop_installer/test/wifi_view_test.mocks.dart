@@ -25,7 +25,9 @@ class _FakeNetworkManagerAccessPoint_0 extends _i1.Fake
 
 class _FakeNetworkService_1 extends _i1.Fake implements _i2.NetworkService {}
 
-class _FakeNetworkManagerDevice_2 extends _i1.Fake
+class _FakeWifiDevice_2 extends _i1.Fake implements _i3.WifiDevice {}
+
+class _FakeNetworkManagerDevice_3 extends _i1.Fake
     implements _i2.NetworkManagerDevice {}
 
 /// A class which mocks [AccessPoint].
@@ -46,6 +48,10 @@ class MockAccessPoint extends _i1.Mock implements _i3.AccessPoint {
       (super.noSuchMethod(Invocation.getter(#ssid), returnValue: <int>[])
           as List<int>);
   @override
+  String get hwAddress =>
+      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
+          as String);
+  @override
   String get name =>
       (super.noSuchMethod(Invocation.getter(#name), returnValue: '') as String);
   @override
@@ -64,10 +70,14 @@ class MockAccessPoint extends _i1.Mock implements _i3.AccessPoint {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
+  void setAccessPoint(_i2.NetworkManagerAccessPoint? accessPoint) =>
+      super.noSuchMethod(Invocation.method(#setAccessPoint, [accessPoint]),
+          returnValueForMissingStub: null);
+  @override
   String toString() => super.toString();
   @override
-  void addProperties(_i4.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#addProperties, [properties]),
+  void setProperties(_i4.Stream<List<String>>? properties) =>
+      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
           returnValueForMissingStub: null);
   @override
   void addPropertyListener(String? property, _i5.VoidCallback? onChanged) =>
@@ -132,10 +142,6 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       (super.noSuchMethod(Invocation.getter(#devices),
           returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
   @override
-  List<_i3.WifiDevice> get allDevices =>
-      (super.noSuchMethod(Invocation.getter(#allDevices),
-          returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
-  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -168,9 +174,14 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  List<_i3.WifiDevice> getDevices() =>
+  List<_i2.NetworkManagerDevice> getDevices() =>
       (super.noSuchMethod(Invocation.method(#getDevices, []),
-          returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
+              returnValue: <_i2.NetworkManagerDevice>[])
+          as List<_i2.NetworkManagerDevice>);
+  @override
+  _i3.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
+      (super.noSuchMethod(Invocation.method(#createDevice, [device]),
+          returnValue: _FakeWifiDevice_2()) as _i3.WifiDevice);
   @override
   void startPeriodicScanning() =>
       super.noSuchMethod(Invocation.method(#startPeriodicScanning, []),
@@ -188,10 +199,6 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       super.noSuchMethod(Invocation.method(#updateDevices, []),
           returnValueForMissingStub: null);
   @override
-  void resetDevices() =>
-      super.noSuchMethod(Invocation.method(#resetDevices, []),
-          returnValueForMissingStub: null);
-  @override
   bool isSelectedDevice(_i3.WifiDevice? device) =>
       (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
           returnValue: false) as bool);
@@ -200,8 +207,8 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       super.noSuchMethod(Invocation.method(#selectDevice, [device]),
           returnValueForMissingStub: null);
   @override
-  void addProperties(_i4.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#addProperties, [properties]),
+  void setProperties(_i4.Stream<List<String>>? properties) =>
+      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
           returnValueForMissingStub: null);
   @override
   void addPropertyListener(String? property, _i5.VoidCallback? onChanged) =>
@@ -250,7 +257,7 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
   @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
       Invocation.getter(#device),
-      returnValue: _FakeNetworkManagerDevice_2()) as _i2.NetworkManagerDevice);
+      returnValue: _FakeNetworkManagerDevice_3()) as _i2.NetworkManagerDevice);
   @override
   String get interface =>
       (super.noSuchMethod(Invocation.getter(#interface), returnValue: '')
@@ -282,6 +289,10 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
       (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
           as bool);
   @override
+  String get hwAddress =>
+      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
+          as String);
+  @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
       (super.noSuchMethod(Invocation.getter(#availableConnections),
               returnValue: <_i2.NetworkManagerSettingsConnection>[])
@@ -295,11 +306,12 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
-      returnValueForMissingStub: null);
-  @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
+  @override
+  void setDevice(_i2.NetworkManagerDevice? device) =>
+      super.noSuchMethod(Invocation.method(#setDevice, [device]),
+          returnValueForMissingStub: null);
   @override
   bool isActiveAccessPoint(_i3.AccessPoint? accessPoint) => (super.noSuchMethod(
       Invocation.method(#isActiveAccessPoint, [accessPoint]),
@@ -337,8 +349,8 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
   @override
   String toString() => super.toString();
   @override
-  void addProperties(_i4.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#addProperties, [properties]),
+  void setProperties(_i4.Stream<List<String>>? properties) =>
+      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
           returnValueForMissingStub: null);
   @override
   void addPropertyListener(String? property, _i5.VoidCallback? onChanged) =>

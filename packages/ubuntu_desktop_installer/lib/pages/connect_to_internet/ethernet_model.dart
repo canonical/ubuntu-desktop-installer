@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../../services.dart';
 import 'connect_model.dart';
 import 'network_model.dart';
@@ -49,14 +51,16 @@ class EthernetModel extends NetworkModel<EthernetDevice> {
   }
 
   @override
-  List<EthernetDevice> getDevices() {
-    final devices = service.wiredDevices.map((device) {
-      final model = EthernetDevice(device, udev);
-      model.addListener(notifyListeners);
-      return model;
-    }).toList();
-    log.debug(() => 'Update ethernet devices: $devices');
-    return devices;
+  List<NetworkManagerDevice> getDevices() => service.wiredDevices;
+
+  @override
+  EthernetDevice createDevice(NetworkManagerDevice device) {
+    return EthernetDevice(device, udev);
+  }
+
+  @override
+  EthernetDevice? findActiveDevice() {
+    return devices.firstWhereOrNull((device) => device.isActive);
   }
 }
 

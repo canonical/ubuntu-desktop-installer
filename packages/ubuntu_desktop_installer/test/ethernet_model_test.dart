@@ -30,6 +30,7 @@ void main() {
 
     device = MockNetworkManagerDevice();
     when(device.udi).thenReturn('test udi');
+    when(device.hwAddress).thenReturn('test address');
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     deviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(device.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
@@ -47,18 +48,20 @@ void main() {
   test('devices', () async {
     when(service.wiredDevices).thenReturn([device]);
 
-    final wasNotified = Completer<bool>();
-    model.addListener(() => wasNotified.complete(true));
+    bool? wasNotified;
+    model.addListener(() => wasNotified = true);
     serviceChanged.add(['Devices']);
-    await expectLater(wasNotified.future, completes);
+    expect(wasNotified, isTrue);
 
-    expect(model.devices.map((model) => model.device), [device]);
+    expect(model.devices.single.device, equals(device));
   });
 
   test('state', () {
     expect(model.connectMode, equals(ConnectMode.ethernet));
 
     when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
+
     when(device.state).thenReturn(NetworkManagerDeviceState.disconnected);
 
     expect(model.canConnect, isFalse);
@@ -83,6 +86,7 @@ void main() {
 
   test('disabled', () async {
     when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     expect(model.isEnabled, isTrue);
@@ -95,6 +99,7 @@ void main() {
 
   test('unmanaged', () async {
     when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.unmanaged);
     expect(model.devices, isEmpty);
@@ -102,6 +107,7 @@ void main() {
 
   test('unavailable', () async {
     when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
 
     when(device.state).thenReturn(NetworkManagerDeviceState.unavailable);
     expect(model.devices, isEmpty);

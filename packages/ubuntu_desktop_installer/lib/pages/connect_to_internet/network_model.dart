@@ -6,7 +6,9 @@ import 'property_stream_notifier.dart';
 
 abstract class NetworkModel<T extends NetworkDevice>
     extends PropertyStreamNotifier implements ConnectModel {
-  NetworkModel(this.service, [this.udev]);
+  NetworkModel(this.service, [this.udev]) {
+    addPropertyListener('Devices', updateDevices);
+  }
 
   @protected
   final NetworkService service;
@@ -16,39 +18,52 @@ abstract class NetworkModel<T extends NetworkDevice>
 
   @override
   Future<void> init() async {
-    addProperties(service.propertiesChanged);
-    addPropertyListener('Devices', updateDevices);
+    setProperties(service.propertiesChanged);
     updateDevices();
   }
 
   @override
   void dispose() {
-    resetDevices();
+    for (final device in _devices) {
+      device.dispose();
+    }
     super.dispose();
   }
 
-  List<T>? _devices;
-  List<T> get devices => allDevices
+  final _devices = <T>[];
+  final _allDevices = <String, T>{};
+  List<T> get devices => _devices
       .where((device) => !device.isUnmanaged && device.isAvailable)
       .toList();
-  List<T> get allDevices => _devices ??= getDevices();
 
   @protected
-  List<T> getDevices();
+  List<NetworkManagerDevice> getDevices();
+
+  @protected
+  T createDevice(NetworkManagerDevice device);
+
+  @protected
+  T? findActiveDevice();
 
   @protected
   void updateDevices() {
-    resetDevices();
-    notifyListeners();
-  }
-
-  @protected
-  void resetDevices() {
-    if (_devices == null) return;
-    for (final device in _devices!) {
-      device.dispose();
+    _devices.clear();
+    final previousSelected = _selectedDevice;
+    _selectedDevice = null;
+    for (final device in getDevices()) {
+      final model = _allDevices[device.hwAddress] ?? createDevice(device);
+      model.setDevice(device);
+      _devices.add(model);
+      _allDevices[device.hwAddress] = model;
+      if (model == previousSelected) {
+        _selectedDevice = model;
+      }
     }
-    _devices = null;
+    if (_selectedDevice == null) {
+      selectDevice(findActiveDevice());
+    }
+    log.debug('Update devices: $_devices');
+    notifyListeners();
   }
 
   T? _selectedDevice;
@@ -65,7 +80,6 @@ abstract class NetworkModel<T extends NetworkDevice>
 
 class NetworkDevice extends PropertyStreamNotifier {
   NetworkDevice(this._device, this._udev) {
-    addProperties(_device.propertiesChanged);
     addPropertyListener('ActiveConnection', notifyListeners);
     addPropertyListener('AvailableConnections', notifyListeners);
     addPropertyListener('State', notifyListeners);
@@ -73,7 +87,14 @@ class NetworkDevice extends PropertyStreamNotifier {
     _updateUdi();
   }
 
-  final NetworkManagerDevice _device;
+  void setDevice(NetworkManagerDevice device) {
+    _device = device;
+    setProperties(_device.propertiesChanged);
+    _updateUdi();
+    notifyListeners();
+  }
+
+  NetworkManagerDevice _device;
   NetworkManagerDevice get device => _device;
 
   String get interface => _device.interface;
@@ -103,6 +124,7 @@ class NetworkDevice extends PropertyStreamNotifier {
   String? _vendor;
   String? get model => _model;
   String? get vendor => _vendor;
+  String get hwAddress => _device.hwAddress;
 
   @override
   String toString() =>
