@@ -209,8 +209,8 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void setDevice(_i2.NetworkManagerDevice? device) =>
-      super.noSuchMethod(Invocation.method(#setDevice, [device]),
+  void updateDevice(_i2.NetworkManagerDevice? device) =>
+      super.noSuchMethod(Invocation.method(#updateDevice, [device]),
           returnValueForMissingStub: null);
   @override
   _i5.Future<void> disconnect() =>

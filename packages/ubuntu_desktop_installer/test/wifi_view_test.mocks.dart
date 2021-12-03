@@ -70,10 +70,6 @@ class MockAccessPoint extends _i1.Mock implements _i3.AccessPoint {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  void setAccessPoint(_i2.NetworkManagerAccessPoint? accessPoint) =>
-      super.noSuchMethod(Invocation.method(#setAccessPoint, [accessPoint]),
-          returnValueForMissingStub: null);
-  @override
   String toString() => super.toString();
   @override
   void setProperties(_i4.Stream<List<String>>? properties) =>
@@ -309,8 +305,8 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  void setDevice(_i2.NetworkManagerDevice? device) =>
-      super.noSuchMethod(Invocation.method(#setDevice, [device]),
+  void updateDevice(_i2.NetworkManagerDevice? device) =>
+      super.noSuchMethod(Invocation.method(#updateDevice, [device]),
           returnValueForMissingStub: null);
   @override
   bool isActiveAccessPoint(_i3.AccessPoint? accessPoint) => (super.noSuchMethod(
