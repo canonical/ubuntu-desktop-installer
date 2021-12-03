@@ -66,9 +66,7 @@ abstract class NetworkModel<T extends NetworkDevice>
         _selectedDevice = model;
       }
     }
-    if (_selectedDevice == null) {
-      selectDevice(findActiveDevice());
-    }
+    _selectedDevice ??= findActiveDevice();
     log.debug('Update devices: $_devices');
     notifyListeners();
   }
@@ -78,8 +76,6 @@ abstract class NetworkModel<T extends NetworkDevice>
   bool isSelectedDevice(T device) => device == _selectedDevice;
   void selectDevice(T? device) {
     if (device == _selectedDevice) return;
-    selectedDevice?.removeListener(notifyListeners);
-    device?.addListener(notifyListeners);
     _selectedDevice = device;
     notifyListeners();
   }

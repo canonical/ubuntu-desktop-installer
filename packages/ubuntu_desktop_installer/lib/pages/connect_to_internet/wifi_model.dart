@@ -230,6 +230,7 @@ class WifiDevice extends NetworkDevice {
   }
 
   void selectAccessPoint(AccessPoint? accessPoint) {
+    if (_selectedAccessPoint == accessPoint) return;
     _selectedAccessPoint = accessPoint;
     notifyListeners();
   }

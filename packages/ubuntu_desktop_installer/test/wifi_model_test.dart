@@ -136,6 +136,9 @@ void main() {
   });
 
   test('select', () {
+    when(service.wirelessDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
+
     expect(model.selectedDevice, isNull);
 
     var wasNotified = false;
@@ -148,6 +151,7 @@ void main() {
     expect(wasNotified, isTrue);
 
     wasNotified = false;
+    wifi.addListener(() => wasNotified = true);
 
     wifi.selectAccessPoint(accessPoint);
     expect(wifi.selectedAccessPoint, isNotNull);
