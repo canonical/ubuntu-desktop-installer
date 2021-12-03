@@ -23,7 +23,9 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 class _FakeNetworkManagerAccessPoint_0 extends _i1.Fake
     implements _i2.NetworkManagerAccessPoint {}
 
-class _FakeNetworkManagerDevice_1 extends _i1.Fake
+class _FakeNetworkService_1 extends _i1.Fake implements _i2.NetworkService {}
+
+class _FakeNetworkManagerDevice_2 extends _i1.Fake
     implements _i2.NetworkManagerDevice {}
 
 /// A class which mocks [AccessPoint].
@@ -122,8 +124,16 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       (super.noSuchMethod(Invocation.getter(#connectMode),
           returnValue: _i6.ConnectMode.none) as _i6.ConnectMode);
   @override
+  _i2.NetworkService get service =>
+      (super.noSuchMethod(Invocation.getter(#service),
+          returnValue: _FakeNetworkService_1()) as _i2.NetworkService);
+  @override
   List<_i3.WifiDevice> get devices =>
       (super.noSuchMethod(Invocation.getter(#devices),
+          returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
+  @override
+  List<_i3.WifiDevice> get allDevices =>
+      (super.noSuchMethod(Invocation.getter(#allDevices),
           returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
   @override
   bool get isDisposed =>
@@ -158,13 +168,9 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  bool isSelectedDevice(_i3.WifiDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
-          returnValue: false) as bool);
-  @override
-  void selectDevice(_i3.WifiDevice? device) =>
-      super.noSuchMethod(Invocation.method(#selectDevice, [device]),
-          returnValueForMissingStub: null);
+  List<_i3.WifiDevice> getDevices() =>
+      (super.noSuchMethod(Invocation.method(#getDevices, []),
+          returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
   @override
   void startPeriodicScanning() =>
       super.noSuchMethod(Invocation.method(#startPeriodicScanning, []),
@@ -177,6 +183,22 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
   _i4.Future<dynamic> requestScan({String? ssid}) =>
       (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssid: ssid}),
           returnValue: Future<dynamic>.value()) as _i4.Future<dynamic>);
+  @override
+  void updateDevices() =>
+      super.noSuchMethod(Invocation.method(#updateDevices, []),
+          returnValueForMissingStub: null);
+  @override
+  void resetDevices() =>
+      super.noSuchMethod(Invocation.method(#resetDevices, []),
+          returnValueForMissingStub: null);
+  @override
+  bool isSelectedDevice(_i3.WifiDevice? device) =>
+      (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
+          returnValue: false) as bool);
+  @override
+  void selectDevice(_i3.WifiDevice? device) =>
+      super.noSuchMethod(Invocation.method(#selectDevice, [device]),
+          returnValueForMissingStub: null);
   @override
   void addProperties(_i4.Stream<List<String>>? properties) =>
       super.noSuchMethod(Invocation.method(#addProperties, [properties]),
@@ -228,7 +250,7 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
   @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
       Invocation.getter(#device),
-      returnValue: _FakeNetworkManagerDevice_1()) as _i2.NetworkManagerDevice);
+      returnValue: _FakeNetworkManagerDevice_2()) as _i2.NetworkManagerDevice);
   @override
   String get interface =>
       (super.noSuchMethod(Invocation.getter(#interface), returnValue: '')

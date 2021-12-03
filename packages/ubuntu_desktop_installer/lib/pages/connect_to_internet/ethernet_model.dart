@@ -1,11 +1,11 @@
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_device.dart';
-import 'property_stream_notifier.dart';
+import 'network_model.dart';
 
 /// "Use wired connection"
-class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
-  EthernetModel(this._service, [this._udev]);
+class EthernetModel extends NetworkModel<EthernetDevice> {
+  EthernetModel(NetworkService service, [UdevService? udev])
+      : super(service, udev);
 
   @override
   bool get canConnect => false;
@@ -32,20 +32,13 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   void onDeselected() async {}
 
   @override
-  Future<void> init() async {
-    addProperties(_service.propertiesChanged);
-    addPropertyListener('Devices', _updateDevices);
-    _updateDevices();
-  }
-
-  @override
   Future<void> enable() async {
     log.debug('Enable wired networking');
     devices.where((device) => device.isDisconnected).forEach((device) {
       if (device.availableConnections.isNotEmpty) {
-        _service.activateConnection(device: device.device);
+        service.activateConnection(device: device.device);
       } else if (!device.isUnmanaged) {
-        _service.addAndActivateConnection(device: device.device);
+        service.addAndActivateConnection(device: device.device);
       }
     });
   }
@@ -56,42 +49,14 @@ class EthernetModel extends PropertyStreamNotifier implements ConnectModel {
   }
 
   @override
-  void dispose() {
-    _resetDevices();
-    super.dispose();
-  }
-
-  final NetworkService _service;
-  final UdevService? _udev;
-
-  List<EthernetDevice>? _devices;
-  List<EthernetDevice> get devices => _allDevices
-      .where((device) => !device.isUnmanaged && device.isAvailable)
-      .toList();
-  List<EthernetDevice> get _allDevices => _devices ??= _getDevices();
-
-  List<EthernetDevice> _getDevices() {
-    final devices = _service.wiredDevices.map((device) {
-      final model = EthernetDevice(device, _udev);
+  List<EthernetDevice> getDevices() {
+    final devices = service.wiredDevices.map((device) {
+      final model = EthernetDevice(device, udev);
       model.addListener(notifyListeners);
       return model;
     }).toList();
     log.debug(() => 'Update ethernet devices: $devices');
     return devices;
-  }
-
-  void _resetDevices() {
-    if (_devices == null) return;
-    for (final device in _devices!) {
-      device.removeListener(notifyListeners);
-      device.dispose();
-    }
-    _devices = null;
-  }
-
-  void _updateDevices() {
-    _resetDevices();
-    notifyListeners();
   }
 }
 

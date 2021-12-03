@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_device.dart';
+import 'network_model.dart';
 import 'property_stream_notifier.dart';
 
 @visibleForTesting
@@ -17,23 +17,23 @@ const kWifiScanInterval = Duration(seconds: 15);
 const kWifiScanTimeout = Duration(seconds: 3);
 
 /// "Connect to Wi-Fi network"
-class WifiModel extends PropertyStreamNotifier implements ConnectModel {
-  WifiModel(this._service, [this._udev]);
+class WifiModel extends NetworkModel<WifiDevice> {
+  WifiModel(NetworkService service, [UdevService? udev]) : super(service, udev);
 
   @override
-  bool get canConnect => _selectedDevice?._isConnected == false;
+  bool get canConnect => selectedDevice?._isConnected == false;
 
   @override
-  bool get isConnected => _selectedDevice?._isConnected == true;
+  bool get isConnected => selectedDevice?._isConnected == true;
 
   @override
   bool get hasActiveConnection => devices.any((device) => device.isActive);
 
   @override
-  bool get isConnecting => _selectedDevice?.isConnecting == true;
+  bool get isConnecting => selectedDevice?.isConnecting == true;
 
   @override
-  bool get isEnabled => _service.wirelessEnabled;
+  bool get isEnabled => service.wirelessEnabled;
 
   @override
   ConnectMode get connectMode => ConnectMode.wifi;
@@ -51,29 +51,26 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
   @override
   void onDeselected() {
     stopPeriodicScanning();
-    if (_selectedDevice?.isConnecting != true) return;
-    _selectedDevice!.disconnect();
+    if (selectedDevice?.isConnecting != true) return;
+    selectedDevice!.disconnect();
   }
 
   @override
   Future<void> init() async {
-    addProperties(_service.propertiesChanged);
-    addPropertyListener('Devices', _updateDevices);
-    addPropertyListener('WirelessEnabled', _updateDevices);
-    _updateDevices();
+    super.init();
+    addPropertyListener('WirelessEnabled', updateDevices);
   }
 
   @override
   void dispose() {
     stopPeriodicScanning();
-    _resetDevices();
     super.dispose();
   }
 
   @override
   Future<void> enable() {
     log.debug('Enable wireless networking');
-    return _service.setWirelessEnabled(true).then((_) => notifyListeners());
+    return service.setWirelessEnabled(true).then((_) => notifyListeners());
   }
 
   @override
@@ -81,49 +78,20 @@ class WifiModel extends PropertyStreamNotifier implements ConnectModel {
     final device = selectedDevice!;
     final accessPoint = device.selectedAccessPoint!;
     log.debug('Connect $device to $accessPoint');
-    return _service.addAndActivateConnection(
+    return service.addAndActivateConnection(
       connection: <String, Map<String, DBusValue>>{},
       device: device.device,
       accessPoint: accessPoint.accessPoint,
     );
   }
 
-  final NetworkService _service;
-  final UdevService? _udev;
-
-  List<WifiDevice>? _devices;
-  List<WifiDevice> get devices => _devices ??= _getDevices();
-
-  List<WifiDevice> _getDevices() {
-    final devices = _service.wirelessDevices
-        .map((device) => WifiDevice(device, _udev))
+  @override
+  List<WifiDevice> getDevices() {
+    final devices = service.wirelessDevices
+        .map((device) => WifiDevice(device, udev))
         .toList();
     log.debug(() => 'Update Wi-Fi devices: $devices');
     return devices;
-  }
-
-  void _resetDevices() {
-    if (_devices == null) return;
-    for (final device in _devices!) {
-      device.dispose();
-    }
-    _devices = null;
-  }
-
-  void _updateDevices() {
-    _resetDevices();
-    notifyListeners();
-  }
-
-  WifiDevice? _selectedDevice;
-  WifiDevice? get selectedDevice => _selectedDevice;
-  bool isSelectedDevice(WifiDevice device) => device == _selectedDevice;
-  void selectDevice(WifiDevice? device) {
-    if (device == _selectedDevice) return;
-    selectedDevice?.removeListener(notifyListeners);
-    device?.addListener(notifyListeners);
-    _selectedDevice = device;
-    notifyListeners();
   }
 
   Timer? _scanTimer;
