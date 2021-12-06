@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -9,8 +10,10 @@ import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_ot
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import 'updates_other_software_model_test.mocks.dart';
 import 'updates_other_software_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
@@ -19,11 +22,13 @@ void main() {
   UpdateOtherSoftwareModel buildModel({
     InstallationMode? installationMode,
     bool? installThirdParty,
+    bool? onBattery,
   }) {
     final model = MockUpdateOtherSoftwareModel();
     when(model.installationMode)
         .thenReturn(installationMode ?? InstallationMode.normal);
     when(model.installThirdParty).thenReturn(installThirdParty ?? false);
+    when(model.onBattery).thenReturn(onBattery ?? false);
     return model;
   }
 
@@ -92,6 +97,26 @@ void main() {
   //   verify(model.setInstallThirdParty(false)).called(1);
   // });
 
+  testWidgets('on battery', (tester) async {
+    final model = buildModel(onBattery: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final warning = find.byType(Html);
+    final theme = Theme.of(tester.element(warning));
+    expect(warning, findsOneWidget);
+    expect(
+      tester.widget<Html>(warning).data,
+      equals(tester.lang.onBatteryWarning(theme.errorColor.toHex())),
+    );
+  });
+
+  testWidgets('not on battery', (tester) async {
+    final model = buildModel(onBattery: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(find.byType(Html), findsNothing);
+  });
+
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(installationMode: InstallationMode.normal);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
@@ -110,6 +135,11 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     registerMockService<SubiquityClient>(MockSubiquityClient());
+
+    final power = MockPowerService();
+    when(power.onBattery).thenReturn(false);
+    when(power.propertiesChanged).thenAnswer((_) => Stream.empty());
+    registerMockService<PowerService>(power);
 
     await tester.pumpWidget(tester.buildApp(UpdatesOtherSoftwarePage.create));
 
