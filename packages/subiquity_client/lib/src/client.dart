@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:dartx/dartx.dart';
 import 'package:http/http.dart';
-import 'package:logger/logger.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'http_unix_client.dart';
 import 'types.dart';
 

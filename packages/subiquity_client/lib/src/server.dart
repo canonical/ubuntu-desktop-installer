@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 import 'http_unix_client.dart';
 
