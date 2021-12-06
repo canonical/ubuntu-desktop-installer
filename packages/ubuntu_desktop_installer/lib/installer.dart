@@ -36,6 +36,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
   registerService(() => JournalService(journalUnit));
   registerService(KeyboardService.new);
   registerService(NetworkService.new);
+  registerService(PowerService.new);
   registerService(UdevService.new);
 
   final appStatus = ValueNotifier(AppStatus.loading);
