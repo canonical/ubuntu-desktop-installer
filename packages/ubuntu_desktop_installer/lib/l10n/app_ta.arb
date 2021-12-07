@@ -103,5 +103,39 @@
   "chooseYourLookPageDarkSetting": "கருமை",
   "@chooseYourLookPageDarkSetting": {},
   "installationCompleteTitle": "நிறுவல் முடிவுற்றது",
-  "@installationCompleteTitle": {}
+  "@installationCompleteTitle": {},
+  "windowTitle": "நிறுவு{RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntuDescription": "உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் {RELEASE}ஐ சோதிக்கலாம்.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "revertButtonText": "மீட்டல்",
+  "@revertButtonText": {},
+  "welcome": "நல்வரவு",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "சோதி அல்லது நிறுவு",
+  "@tryOrInstallPageTitle": {},
+  "tryUbuntu": "சோதி {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "நிறுவு{RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
