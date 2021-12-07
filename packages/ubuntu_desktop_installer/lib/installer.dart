@@ -17,7 +17,9 @@ export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
-Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
+enum AppStatus { loading, ready }
+
+void runInstallerApp(List<String> args, {FlavorData? flavor}) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
         valueHelp: 'path',
@@ -30,10 +32,18 @@ Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
+  final appStatus = ValueNotifier(AppStatus.loading);
+
   runWizardApp(
-    UbuntuDesktopInstallerApp(
-      flavor: flavor,
-      initialRoute: options['initial-route'],
+    ValueListenableBuilder<AppStatus>(
+      valueListenable: appStatus,
+      builder: (context, value, child) {
+        return UbuntuDesktopInstallerApp(
+          appStatus: value,
+          flavor: flavor,
+          initialRoute: options['initial-route'],
+        );
+      },
     ),
     options: options,
     subiquityClient: subiquityClient,
@@ -59,6 +69,7 @@ Future<void> runInstallerApp(List<String> args, {FlavorData? flavor}) async {
       Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {
+      appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
       client.setTimezone('geoip');
     },
@@ -70,11 +81,13 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
     Key? key,
     this.initialRoute,
     FlavorData? flavor,
+    this.appStatus = AppStatus.ready,
   })  : flavor = flavor ?? defaultFlavor,
         super(key: key);
 
   final String? initialRoute;
   final FlavorData flavor;
+  final AppStatus appStatus;
 
   static FlavorData get defaultFlavor {
     return FlavorData(
@@ -101,8 +114,36 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         localizationsDelegates: localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: _UbuntuDesktopInstallerWizard.create(context, initialRoute),
+        home: buildApp(context),
       ),
+    );
+  }
+
+  Widget buildApp(BuildContext context) {
+    switch (appStatus) {
+      case AppStatus.loading:
+        return _UbuntuDesktopInstallerLoadingPage();
+      case AppStatus.ready:
+        return _UbuntuDesktopInstallerWizard.create(context, initialRoute);
+    }
+  }
+}
+
+class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
+  const _UbuntuDesktopInstallerLoadingPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return WizardPage(
+      title: Text(AppLocalizations.of(context).welcome),
+      content: FractionallySizedBox(
+        widthFactor: 0.5,
+        child: RoundedContainer(),
+      ),
+      actions: <WizardAction>[
+        WizardAction.back(context, enabled: false),
+        WizardAction.next(context, enabled: false),
+      ],
     );
   }
 }

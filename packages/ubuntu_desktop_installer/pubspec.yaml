@@ -25,8 +25,6 @@ dependencies:
   form_field_validator: ^1.1.0
   intl: ^0.17.0
   keyboard_info: ^0.2.0
-  logger:
-    path: ../logger
   nm: ^0.4.1
   provider: ^6.0.0
   flutter_markdown: ^0.6.2
@@ -36,6 +34,10 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_localizations
+  ubuntu_logger:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_logger
   udev:
     path: ../udev
   url_launcher: ^6.0.3

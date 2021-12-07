@@ -1,5 +1,5 @@
-import 'package:logger/logger.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
 final log = Logger('connect_to_internet');

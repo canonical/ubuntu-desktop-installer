@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
