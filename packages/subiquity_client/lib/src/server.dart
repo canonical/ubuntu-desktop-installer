@@ -54,13 +54,15 @@ abstract class SubiquityServer {
       {List<String>? args, Map<String, String>? environment}) async {
     final socketPath = _getSocketPath(serverMode);
     if (_shouldStart(serverMode)) {
-      var subiquityCmd = <String>[
+      final pythonCmd =
+          serverMode == ServerMode.DRY_RUN ? '/usr/bin/python3' : 'python3';
+      final subiquityArgs = <String>[
         '-m',
         _pythonModule,
         if (serverMode == ServerMode.DRY_RUN) '--dry-run',
         ...?args,
       ];
-      await _startSubiquity(subiquityCmd, environment);
+      await _startSubiquity(pythonCmd, subiquityArgs, environment);
     }
 
     return _waitSubiquity(socketPath).then((_) {
@@ -69,8 +71,8 @@ abstract class SubiquityServer {
     });
   }
 
-  Future<void> _startSubiquity(
-      List<String> subiquityCmd, Map<String, String>? environment) async {
+  Future<void> _startSubiquity(String pythonCmd, List<String> subiquityArgs,
+      Map<String, String>? environment) async {
     var subiquityPath = p.join(Directory.current.path, 'subiquity');
     String? workingDirectory;
     // try using local subiquity
@@ -86,8 +88,8 @@ abstract class SubiquityServer {
     }
 
     _serverProcess = await Process.start(
-      'python3',
-      subiquityCmd,
+      pythonCmd,
+      subiquityArgs,
       workingDirectory: workingDirectory,
       environment: {
         ..._pythonPath(subiquityPath),
@@ -99,7 +101,7 @@ abstract class SubiquityServer {
       return process;
     });
     log.info(
-      'Starting server (PID: ${_serverProcess!.pid}) with args: $subiquityCmd',
+      'Starting $pythonCmd $subiquityArgs (PID: ${_serverProcess!.pid})',
     );
 
     await _writePidFile(_serverProcess!.pid);
