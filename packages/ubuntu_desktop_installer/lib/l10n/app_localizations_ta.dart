@@ -12,7 +12,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
@@ -31,16 +31,16 @@ class AppLocalizationsTa extends AppLocalizations {
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'மீட்டல்';
 
   @override
   String get yesButtonText => 'ஆம்';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'நல்வரவு';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'சோதி அல்லது நிறுவு';
 
   @override
   String get repairInstallation => 'நிறுவலை பழுதுபார்';
@@ -50,17 +50,17 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'சோதி $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் $RELEASEஐ சோதிக்கலாம்.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
