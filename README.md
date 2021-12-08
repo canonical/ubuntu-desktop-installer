@@ -5,7 +5,42 @@
 
 This project is a modern implementation of the Ubuntu Desktop installer, using [subiquity](https://github.com/canonical/subiquity) as a backend and [Flutter](https://flutter.dev/) for the UI.
 
-## Checkout & Run
+![Preview Screenshot](.github/docs/images/preview_screenshot.png)
+
+## Availability
+
+The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Desktop LTS 22.04 Jammy Jellyfish.
+
+## Test a live image
+
+If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
+
+[Download](https://cdimage.ubuntu.com/daily-canary/current/)
+
+
+## Building and running manually
+
+If you prefer to build and run the installer from source you need to install Flutter.
+
+### Either: Install Flutter with Snapd
+
+```
+sudo snap install flutter --classic
+```
+
+### Or: Install Flutter manually
+
+Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
+
+### Configure Flutter
+
+NOTE: Notice to enable desktop support for Flutter:
+
+```
+flutter config --enable-linux-desktop
+```
+
+### Download and build the Ubuntu Desktop installer
 
 Grab the source:
 ```sh
@@ -14,29 +49,21 @@ cd ubuntu-desktop-installer
 git submodule update --init --recursive
 ```
 
-Install and configure Flutter:
+Install Subiquity dependencies:
 ```sh
-snap install flutter --classic
-flutter upgrade
-flutter config --enable-linux-desktop
+cd packages/subiquity_client/subiquity
+sudo ./scripts/installdeps.sh
 ```
 
-Install dependencies:
-```sh
-cd packages/subiquity_client
-dart pub get
-cd subiquity
-make install_deps
-cd ../../ubuntu_desktop_installer
-flutter pub get
-```
+### Run the installer
 
-Run:
+Run the installer either from within your IDE or by running the following command:
+
 ```sh
 flutter run
 ```
 
-## Run Live Installer
+### Run live installer
 
 In one terminal run:
 ```sh
