@@ -8,6 +8,7 @@ class FlavorData {
     required this.name,
     this.theme,
     this.darkTheme,
+    this.localizationsDelegates,
     this.package = '',
   });
 
@@ -20,6 +21,9 @@ class FlavorData {
   /// The dark theme of the application.
   final ThemeData? darkTheme;
 
+  /// The list of localizations for the application.
+  final List<LocalizationsDelegate>? localizationsDelegates;
+
   /// The package name of the application. This is used to determine the
   /// fallback package for assets. This is set by the application - specifying
   /// one in a flavor has no effect.
@@ -30,12 +34,15 @@ class FlavorData {
     String? name,
     ThemeData? theme,
     ThemeData? darkTheme,
+    List<LocalizationsDelegate>? localizationsDelegates,
     String? package,
   }) {
     return FlavorData(
       name: name ?? this.name,
       theme: theme ?? this.theme,
       darkTheme: darkTheme ?? this.darkTheme,
+      localizationsDelegates:
+          localizationsDelegates ?? this.localizationsDelegates,
       package: package ?? this.package,
     );
   }
@@ -47,12 +54,13 @@ class FlavorData {
         other.name == name &&
         other.theme == theme &&
         other.darkTheme == darkTheme &&
+        other.localizationsDelegates == localizationsDelegates &&
         other.package == package;
   }
 
   @override
-  int get hashCode => Object.hash(
-      name.hashCode, theme.hashCode, darkTheme.hashCode, package.hashCode);
+  int get hashCode => Object.hashAll(
+      [name, theme, darkTheme, ...?localizationsDelegates, package]);
 
   @override
   String toString() =>
