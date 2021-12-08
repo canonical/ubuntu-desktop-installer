@@ -138,6 +138,10 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       (super.noSuchMethod(Invocation.getter(#devices),
           returnValue: <_i3.WifiDevice>[]) as List<_i3.WifiDevice>);
   @override
+  _i4.Stream<dynamic> get onAvailabilityChanged =>
+      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
+          returnValue: Stream<dynamic>.empty()) as _i4.Stream<dynamic>);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -203,6 +207,10 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
       super.noSuchMethod(Invocation.method(#selectDevice, [device]),
           returnValueForMissingStub: null);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void setProperties(_i4.Stream<List<String>>? properties) =>
       super.noSuchMethod(Invocation.method(#setProperties, [properties]),
           returnValueForMissingStub: null);
@@ -210,10 +218,6 @@ class MockWifiModel extends _i1.Mock implements _i3.WifiModel {
   void addPropertyListener(String? property, _i5.VoidCallback? onChanged) =>
       super.noSuchMethod(
           Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
   void addListener(_i5.VoidCallback? listener) =>

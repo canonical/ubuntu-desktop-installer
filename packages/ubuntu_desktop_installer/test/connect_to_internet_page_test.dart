@@ -36,17 +36,18 @@ void main() {
 
   Widget buildPage({
     required ConnectToInternetModel model,
-    bool? ethernetActive,
-    bool? wifiActive,
+    bool? ethernet,
+    bool? wifi,
   }) {
     final ethernetModel = MockEthernetModel();
     when(ethernetModel.connectMode).thenReturn(ConnectMode.ethernet);
     when(ethernetModel.devices).thenReturn([MockEthernetDevice()]);
-    when(ethernetModel.hasActiveConnection).thenReturn(ethernetActive ?? false);
+    when(ethernetModel.hasActiveConnection).thenReturn(ethernet ?? false);
     when(ethernetModel.canConnect).thenReturn(true);
     when(ethernetModel.isConnected).thenReturn(true);
     when(ethernetModel.isConnecting).thenReturn(false);
-    when(ethernetModel.isEnabled).thenReturn(true);
+    when(ethernetModel.isEnabled).thenReturn(ethernet ?? true);
+    when(ethernetModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
     final wifiDevice = MockWifiDevice();
     when(wifiDevice.model).thenReturn('model');
@@ -58,13 +59,14 @@ void main() {
     final wifiModel = MockWifiModel();
     when(wifiModel.connectMode).thenReturn(ConnectMode.wifi);
     when(wifiModel.startPeriodicScanning()).thenReturn(null);
-    when(wifiModel.isEnabled).thenReturn(true);
+    when(wifiModel.isEnabled).thenReturn(wifi ?? true);
     when(wifiModel.devices).thenReturn([wifiDevice]);
     when(wifiModel.isSelectedDevice(any)).thenReturn(false);
-    when(wifiModel.hasActiveConnection).thenReturn(wifiActive ?? false);
+    when(wifiModel.hasActiveConnection).thenReturn(wifi ?? false);
     when(wifiModel.canConnect).thenReturn(true);
     when(wifiModel.isConnected).thenReturn(true);
     when(wifiModel.isConnecting).thenReturn(false);
+    when(wifiModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
     return MultiProvider(
       providers: [
@@ -116,7 +118,7 @@ void main() {
   testWidgets('pre-selects ethernet', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
     await tester.pumpWidget(
-        tester.buildApp((_) => buildPage(model: model, ethernetActive: true)));
+        tester.buildApp((_) => buildPage(model: model, ethernet: true)));
     await tester.pumpAndSettle();
 
     final ethernetTile = find.byType(EthernetRadioButton);
@@ -129,7 +131,7 @@ void main() {
   testWidgets('pre-selects wifi', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
     await tester.pumpWidget(
-        tester.buildApp((_) => buildPage(model: model, wifiActive: true)));
+        tester.buildApp((_) => buildPage(model: model, wifi: true)));
     await tester.pumpAndSettle();
 
     final wifiTile = find.byType(WifiRadioButton);

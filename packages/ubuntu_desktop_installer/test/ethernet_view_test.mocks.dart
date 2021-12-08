@@ -68,6 +68,10 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
       (super.noSuchMethod(Invocation.getter(#devices),
           returnValue: <_i3.EthernetDevice>[]) as List<_i3.EthernetDevice>);
   @override
+  _i5.Stream<dynamic> get onAvailabilityChanged =>
+      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
+          returnValue: Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -121,6 +125,10 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
       super.noSuchMethod(Invocation.method(#selectDevice, [device]),
           returnValueForMissingStub: null);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
       super.noSuchMethod(Invocation.method(#setProperties, [properties]),
           returnValueForMissingStub: null);
@@ -128,10 +136,6 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
   void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
           Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
   void addListener(_i6.VoidCallback? listener) =>

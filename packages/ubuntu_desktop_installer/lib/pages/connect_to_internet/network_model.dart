@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../../services.dart';
@@ -78,6 +80,22 @@ abstract class NetworkModel<T extends NetworkDevice>
     if (device == _selectedDevice) return;
     _selectedDevice = device;
     notifyListeners();
+  }
+
+  bool? _wasEnabled;
+  bool? _hadActiveConnection;
+  Stream get onAvailabilityChanged => _onAvailable.stream;
+  final _onAvailable = StreamController();
+
+  @override
+  void notifyListeners() {
+    super.notifyListeners();
+    if (_wasEnabled != isEnabled ||
+        _hadActiveConnection != hasActiveConnection) {
+      _onAvailable.add(isEnabled && hasActiveConnection);
+    }
+    _wasEnabled = isEnabled;
+    _hadActiveConnection = hasActiveConnection;
   }
 }
 

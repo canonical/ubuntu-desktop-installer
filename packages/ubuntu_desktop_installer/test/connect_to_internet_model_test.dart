@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -18,14 +20,20 @@ void main() {
 
   test('initializes connect models', () async {
     final model = ConnectToInternetModel(MockNetworkService());
+
     final ethernet = MockConnectModel();
     when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
+    when(ethernet.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(ethernet);
+
     final wifi = MockConnectModel();
     when(wifi.connectMode).thenReturn(ConnectMode.wifi);
+    when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(wifi);
+
     final none = MockConnectModel();
     when(none.connectMode).thenReturn(ConnectMode.none);
+    when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(none);
 
     await model.init();
@@ -35,7 +43,7 @@ void main() {
     verify(none.init()).called(1);
   });
 
-  test('no model selected', () {
+  test('no mode selected', () {
     final service = MockNetworkService();
     final model = ConnectToInternetModel(service);
     expect(model.connectMode, equals(ConnectMode.none));
@@ -44,13 +52,14 @@ void main() {
     expect(model.isConnecting, isFalse);
   });
 
-  test('selected model', () {
+  test('selected mode', () {
     final service = MockNetworkService();
     final model = ConnectToInternetModel(service);
     expect(model.connectMode, equals(ConnectMode.none));
 
     final wifi = MockConnectModel();
     when(wifi.connectMode).thenReturn(ConnectMode.wifi);
+    when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(wifi);
     model.selectConnectMode(ConnectMode.wifi);
     expect(model.connectMode, equals(ConnectMode.wifi));
@@ -73,14 +82,23 @@ void main() {
     verify(wifi.connect());
   });
 
-  test('preferred model', () {
+  test('preferred mode', () {
     final service = MockNetworkService();
+
     final ethernet = MockConnectModel();
+    when(ethernet.isEnabled).thenReturn(true);
     when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
+    when(ethernet.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+
     final wifi = MockConnectModel();
+    when(wifi.isEnabled).thenReturn(true);
     when(wifi.connectMode).thenReturn(ConnectMode.wifi);
+    when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+
     final none = MockConnectModel();
+    when(none.isEnabled).thenReturn(true);
     when(none.connectMode).thenReturn(ConnectMode.none);
+    when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
     final model = ConnectToInternetModel(service);
     model.addConnectMode(ethernet);
@@ -107,6 +125,66 @@ void main() {
     when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
+    expect(model.connectMode, equals(ConnectMode.none));
+  });
+
+  test('finds best mode', () {
+    final service = MockNetworkService();
+
+    final ethernet = MockConnectModel();
+    final ethernetChanged = StreamController(sync: true);
+    when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
+    when(ethernet.isEnabled).thenReturn(true);
+    when(ethernet.hasActiveConnection).thenReturn(false);
+    when(ethernet.onAvailabilityChanged)
+        .thenAnswer((_) => ethernetChanged.stream);
+
+    final wifi = MockConnectModel();
+    final wifiChanged = StreamController(sync: true);
+    when(wifi.connectMode).thenReturn(ConnectMode.wifi);
+    when(wifi.isEnabled).thenReturn(true);
+    when(wifi.hasActiveConnection).thenReturn(false);
+    when(wifi.onAvailabilityChanged).thenAnswer((_) => wifiChanged.stream);
+
+    final none = MockConnectModel();
+    when(none.connectMode).thenReturn(ConnectMode.none);
+    when(none.isEnabled).thenReturn(true);
+    when(none.hasActiveConnection).thenReturn(false);
+    when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+
+    final model = ConnectToInternetModel(service);
+    model.addConnectMode(ethernet);
+    model.addConnectMode(wifi);
+    model.addConnectMode(none);
+    expect(model.connectMode, equals(ConnectMode.none));
+
+    // wifi available -> gets selected
+    when(wifi.hasActiveConnection).thenReturn(true);
+    wifiChanged.add(true);
+    expect(model.connectMode, equals(ConnectMode.wifi));
+
+    // ethernet available -> gets selected
+    when(ethernet.hasActiveConnection).thenReturn(true);
+    ethernetChanged.add(true);
+    expect(model.connectMode, equals(ConnectMode.ethernet));
+
+    // explicit wifi selection
+    model.selectConnectMode(ConnectMode.wifi);
+    expect(model.connectMode, equals(ConnectMode.wifi));
+
+    // keeps explicit selection
+    when(ethernet.hasActiveConnection).thenReturn(true);
+    ethernetChanged.add(true);
+    expect(model.connectMode, equals(ConnectMode.wifi));
+
+    // wifi disabled -> selects ethernet
+    when(wifi.isEnabled).thenReturn(false);
+    wifiChanged.add(true);
+    expect(model.connectMode, equals(ConnectMode.ethernet));
+
+    // ethernet disabled -> selects none
+    when(ethernet.isEnabled).thenReturn(false);
+    ethernetChanged.add(true);
     expect(model.connectMode, equals(ConnectMode.none));
   });
 }

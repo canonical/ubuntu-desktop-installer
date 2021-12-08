@@ -27,6 +27,9 @@ abstract class ConnectModel extends SafeChangeNotifier {
   /// Whether this connection mode is enabled.
   bool get isEnabled;
 
+  /// Emits when the availability (enabled, has active connection) changes.
+  Stream get onAvailabilityChanged;
+
   /// Ethernet/wifi/none...
   ConnectMode get connectMode;
 
@@ -63,6 +66,9 @@ class NoConnectModel extends ConnectModel {
 
   @override
   bool get isEnabled => true;
+
+  @override
+  Stream get onAvailabilityChanged => const Stream.empty();
 
   @override
   ConnectMode get connectMode => ConnectMode.none;

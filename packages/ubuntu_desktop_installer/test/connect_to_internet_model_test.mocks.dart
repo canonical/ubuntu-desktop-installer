@@ -46,6 +46,10 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
       (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
           as bool);
   @override
+  _i3.Stream<dynamic> get onAvailabilityChanged =>
+      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
+          returnValue: Stream<dynamic>.empty()) as _i3.Stream<dynamic>);
+  @override
   _i2.ConnectMode get connectMode =>
       (super.noSuchMethod(Invocation.getter(#connectMode),
           returnValue: _i2.ConnectMode.none) as _i2.ConnectMode);

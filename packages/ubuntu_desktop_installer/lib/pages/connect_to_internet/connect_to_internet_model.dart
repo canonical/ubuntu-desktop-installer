@@ -27,31 +27,59 @@ class ConnectToInternetModel extends SafeChangeNotifier
   bool get isEnabled => _connectModel?.isEnabled ?? false;
 
   @override
+  Stream get onAvailabilityChanged =>
+      _connectModel?.onAvailabilityChanged ?? const Stream.empty();
+
+  @override
   ConnectMode get connectMode => _connectMode;
 
   var _connectMode = ConnectMode.none;
   ConnectModel? get _connectModel => _connectModels[_connectMode];
   final _connectModels = <ConnectMode, ConnectModel>{};
 
-  void addConnectMode(ConnectModel model) =>
-      _connectModels[model.connectMode] = model;
+  ConnectMode? _preferredConnectMode;
+  ConnectModel? get _preferredConnectModel =>
+      _connectModels[_preferredConnectMode];
 
-  ConnectMode get _defaultConnectMode {
-    return _connectModels.keys.firstWhereOrNull(
-            (mode) => _connectModels[mode]?.hasActiveConnection == true) ??
-        ConnectMode.none;
+  void addConnectMode(ConnectModel model) {
+    _connectModels[model.connectMode] = model;
+    model.onAvailabilityChanged.listen((_) => _updateConnectMode());
+  }
+
+  ConnectMode _findBestConnectMode() {
+    if (_preferredConnectModel?.isEnabled == true) {
+      return _preferredConnectMode!;
+    }
+    final best = _connectModels.keys.firstWhereOrNull((mode) {
+      final model = _connectModels[mode];
+      return model?.isEnabled == true && model?.hasActiveConnection == true;
+    });
+    return best ?? ConnectMode.none;
+  }
+
+  void _updateConnectMode() {
+    if (_preferredConnectModel?.isEnabled == true) {
+      // the preferred (previously selected) mode is available -> re-select
+      selectConnectMode(_preferredConnectMode);
+    } else if (_connectModel?.isEnabled == false ||
+        _connectMode != _preferredConnectMode) {
+      // the current mode is not available nor preferred -> select best
+      selectConnectMode();
+    }
   }
 
   void selectConnectMode([ConnectMode? mode]) {
-    final model = _connectModels[mode ?? _defaultConnectMode]!;
-    if (_connectModel == model) {
-      return;
-    }
-    _connectModel?.onDeselected();
-    _connectModel?.removeListener(notifyListeners);
-    model.addListener(notifyListeners);
-    model.onSelected();
-    _connectMode = model.connectMode;
+    // keep track of the mode that was explicitly selected
+    if (mode != null) _preferredConnectMode = mode;
+
+    final oldModel = _connectModel;
+    final newModel = _connectModels[mode ?? _findBestConnectMode()]!;
+    if (oldModel == newModel) return;
+    oldModel?.removeListener(notifyListeners);
+    oldModel?.onDeselected();
+    newModel.onSelected();
+    newModel.addListener(notifyListeners);
+    _connectMode = newModel.connectMode;
     log.debug(() =>
         'Selected connection mode: ${_connectMode.toString().split('.')[1]}');
     notifyListeners();
