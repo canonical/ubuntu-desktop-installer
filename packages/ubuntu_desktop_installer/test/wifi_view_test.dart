@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
@@ -58,9 +57,8 @@ void main() {
     AccessPoint? selectedAccessPoint;
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<WifiModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<WifiModel>.value(
           value: model,
           child: Material(
             child: Column(
@@ -103,9 +101,8 @@ void main() {
     var wasEnabled = false;
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<WifiModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<WifiModel>.value(
           value: model,
           child: Column(
             children: [
@@ -143,9 +140,8 @@ void main() {
     when(model.devices).thenReturn([]);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<WifiModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<WifiModel>.value(
           value: model,
           child: Column(
             children: [
@@ -176,9 +172,8 @@ void main() {
     when(model.devices).thenReturn([]);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<WifiModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<WifiModel>.value(
           value: model,
           child: WifiView(
             expanded: true,

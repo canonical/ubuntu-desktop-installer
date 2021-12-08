@@ -17,6 +17,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'connect_to_internet_page_test.mocks.dart';
+import 'widget_tester_extensions.dart';
 
 @GenerateMocks([
   ConnectToInternetModel,
@@ -33,12 +34,11 @@ void main() {
     await setupAppLocalizations();
   });
 
-  Future<void> buildTestApp(
-    WidgetTester tester, {
+  Widget buildPage({
     required ConnectToInternetModel model,
     bool? ethernetActive,
     bool? wifiActive,
-  }) async {
+  }) {
     final ethernetModel = MockEthernetModel();
     when(ethernetModel.connectMode).thenReturn(ConnectMode.ethernet);
     when(ethernetModel.devices).thenReturn([MockEthernetDevice()]);
@@ -66,38 +66,20 @@ void main() {
     when(wifiModel.isConnected).thenReturn(true);
     when(wifiModel.isConnecting).thenReturn(false);
 
-    await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Scaffold(
-          body: Wizard(
-            routes: {
-              '/': WizardRoute(
-                builder: (_) {
-                  return MultiProvider(
-                    providers: [
-                      ChangeNotifierProvider<ConnectToInternetModel>.value(
-                          value: model),
-                      ChangeNotifierProvider<EthernetModel>.value(
-                          value: ethernetModel),
-                      ChangeNotifierProvider<WifiModel>.value(value: wifiModel),
-                      ChangeNotifierProvider<NoConnectModel>(
-                          create: (_) => NoConnectModel()),
-                    ],
-                    child: ConnectToInternetPage(),
-                  );
-                },
-              ),
-            },
-          ),
-        ),
-      ),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ConnectToInternetModel>.value(value: model),
+        ChangeNotifierProvider<EthernetModel>.value(value: ethernetModel),
+        ChangeNotifierProvider<WifiModel>.value(value: wifiModel),
+        ChangeNotifierProvider<NoConnectModel>(create: (_) => NoConnectModel()),
+      ],
+      child: const ConnectToInternetPage(),
     );
   }
 
   testWidgets('selects the right connect mode on tap', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
-    await buildTestApp(tester, model: model);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
     final ethernetTile = find.byType(EthernetRadioButton);
@@ -125,8 +107,7 @@ void main() {
     when(model.isConnected).thenReturn(true);
     when(model.isEnabled).thenReturn(true);
 
-    await buildTestApp(tester,
-        model: model, ethernetActive: false, wifiActive: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
     verify(model.init()).called(1);
@@ -134,7 +115,8 @@ void main() {
 
   testWidgets('pre-selects ethernet', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
-    await buildTestApp(tester, model: model, ethernetActive: true);
+    await tester.pumpWidget(
+        tester.buildApp((_) => buildPage(model: model, ethernetActive: true)));
     await tester.pumpAndSettle();
 
     final ethernetTile = find.byType(EthernetRadioButton);
@@ -146,7 +128,8 @@ void main() {
 
   testWidgets('pre-selects wifi', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
-    await buildTestApp(tester, model: model, wifiActive: true);
+    await tester.pumpWidget(
+        tester.buildApp((_) => buildPage(model: model, wifiActive: true)));
     await tester.pumpAndSettle();
 
     final wifiTile = find.byType(WifiRadioButton);
@@ -157,8 +140,7 @@ void main() {
 
   testWidgets('pre-selects no connect', (tester) async {
     final model = ConnectToInternetModel(MockNetworkService());
-    await buildTestApp(tester,
-        model: model, ethernetActive: false, wifiActive: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
     final noConnectTile = find.byWidgetPredicate((widget) =>
@@ -176,17 +158,14 @@ void main() {
     when(service.wirelessEnabled).thenReturn(true);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Scaffold(
-          body: MultiProvider(
-            providers: [
-              Provider<NetworkService>.value(value: service),
-              Provider<UdevService>(create: (_) => MockUdevService()),
-            ],
-            child: const Wizard(
-              routes: {'/': WizardRoute(builder: ConnectToInternetPage.create)},
-            ),
+      tester.buildApp(
+        (_) => MultiProvider(
+          providers: [
+            Provider<NetworkService>.value(value: service),
+            Provider<UdevService>(create: (_) => MockUdevService()),
+          ],
+          child: const Wizard(
+            routes: {'/': WizardRoute(builder: ConnectToInternetPage.create)},
           ),
         ),
       ),

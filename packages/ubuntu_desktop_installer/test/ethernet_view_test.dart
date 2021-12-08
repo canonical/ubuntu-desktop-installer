@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
@@ -25,9 +24,8 @@ void main() {
     when(model.devices).thenReturn([MockEthernetDevice()]);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<EthernetModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<EthernetModel>.value(
           value: model,
           child: Material(
             child: EthernetRadioButton(
@@ -53,9 +51,8 @@ void main() {
     var wasEnabled = false;
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<EthernetModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<EthernetModel>.value(
           value: model,
           child: Column(
             children: [
@@ -90,9 +87,8 @@ void main() {
     when(model.isEnabled).thenReturn(true);
 
     await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: ChangeNotifierProvider<EthernetModel>.value(
+      tester.buildApp(
+        (_) => ChangeNotifierProvider<EthernetModel>.value(
           value: model,
           child: Column(
             children: [
