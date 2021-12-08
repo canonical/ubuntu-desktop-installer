@@ -126,7 +126,6 @@ class NetworkDevice extends PropertyStreamNotifier {
 
   String get interface => _device.interface;
   NetworkManagerDeviceState get state => _device.state;
-  NetworkManagerDeviceStateReason get stateReason => _device.stateReason.reason;
 
   Future<void> disconnect() => _device.disconnect();
 

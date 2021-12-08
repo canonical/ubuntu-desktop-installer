@@ -235,25 +235,6 @@ class WifiDevice extends NetworkDevice {
     notifyListeners();
   }
 
-  Future<List<int>?> _getSsid(
-      NetworkManagerSettingsConnection connection) async {
-    final settings = await connection.getSettings();
-    final array = settings['802-11-wireless']?['ssid'] as DBusArray?;
-    return array?.toSsid();
-  }
-
-  /// Tries to find an available connection for the specified access point.
-  Future<NetworkManagerSettingsConnection?> findAvailableConnection(
-    AccessPoint accessPoint,
-  ) async {
-    for (final connection in availableConnections) {
-      if (accessPoint.ssid.equals(await _getSsid(connection))) {
-        return connection;
-      }
-    }
-    return null;
-  }
-
   bool _scanning = false;
   int _lastScan = -1;
   Completer<void>? _completer;
@@ -340,10 +321,6 @@ class AccessPoint extends PropertyStreamNotifier {
 
 extension _SsidList on List<int> {
   bool equals(List<int>? ssid) => const ListEquality().equals(this, ssid);
-}
-
-extension _SsidArray on DBusArray {
-  List<int> toSsid() => children.map((c) => (c as DBusByte).value).toList();
 }
 
 extension _AccessPointFlags on NetworkManagerAccessPoint {
