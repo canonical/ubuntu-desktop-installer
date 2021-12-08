@@ -571,7 +571,8 @@ if [ -n "$SNAP_DESKTOP_DEBUG" ]; then
   echo "Now running: exec $*"
 fi
 
-PATH="${SNAP}/usr/bin:${SNAP}/bin:${SNAP_CORE_DIR}/bin:${SNAP_CORE_DIR}/usr/bin"
+PATH="${SNAP}/usr/sbin:${SNAP}/usr/bin:${SNAP}/sbin:${SNAP}/bin"
+PATH="${PATH}:${SNAP_CORE_DIR}/usr/sbin:${SNAP_CORE_DIR}/usr/bin:${SNAP_CORE_DIR}/sbin:${SNAP_CORE_DIR}/bin"
 
 # configure python environment
 export PYTHONIOENCODING=utf-8
