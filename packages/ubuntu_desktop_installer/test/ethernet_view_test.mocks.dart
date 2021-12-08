@@ -171,11 +171,6 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
               returnValue: _i2.NetworkManagerDeviceState.unknown)
           as _i2.NetworkManagerDeviceState);
   @override
-  _i2.NetworkManagerDeviceStateReason get stateReason =>
-      (super.noSuchMethod(Invocation.getter(#stateReason),
-              returnValue: _i2.NetworkManagerDeviceStateReason.none)
-          as _i2.NetworkManagerDeviceStateReason);
-  @override
   bool get isActive =>
       (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
           as bool);

@@ -303,15 +303,19 @@ void main() {
     verify(wireless.requestScan(ssids: [kTestSsid])).called(2);
   });
 
-  test('strength', () async {
+  test('access point properties', () async {
+    when(ap.hwAddress).thenReturn('hw address');
+    when(ap.flags).thenReturn([]);
     when(ap.strength).thenReturn(50);
+
+    expect(accessPoint.hwAddress, equals('hw address'));
+    expect(accessPoint.isOpen, isTrue);
+    expect(accessPoint.strength, equals(50));
 
     bool? wasNotified;
     accessPoint.addListener(() => wasNotified = true);
     accessPointChanged.add(['Strength']);
     expect(wasNotified, isTrue);
-
-    expect(accessPoint.strength, equals(50));
   });
 
   test('active access point', () {
@@ -335,5 +339,12 @@ void main() {
 
     final ap2 = wifi.findAccessPoint(String.fromCharCodes(kTestSsid));
     expect(ap2, isNotNull);
+  });
+
+  test('enable', () async {
+    when(service.setWirelessEnabled(true)).thenAnswer((_) async => null);
+
+    model.enable();
+    verify(service.setWirelessEnabled(true)).called(1);
   });
 }

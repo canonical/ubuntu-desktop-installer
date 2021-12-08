@@ -31,6 +31,7 @@ void main() {
     device = MockNetworkManagerDevice();
     when(device.udi).thenReturn('test udi');
     when(device.hwAddress).thenReturn('test address');
+    when(device.interface).thenReturn('test interface');
     when(device.state).thenReturn(NetworkManagerDeviceState.activated);
     deviceChanged = StreamController<List<String>>.broadcast(sync: true);
     when(device.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
@@ -54,6 +55,10 @@ void main() {
     expect(wasNotified, isTrue);
 
     expect(model.devices.single.device, equals(device));
+  });
+
+  test('connect', () {
+    expect(model.connect(), throwsAssertionError);
   });
 
   test('state', () {
@@ -111,5 +116,51 @@ void main() {
 
     when(device.state).thenReturn(NetworkManagerDeviceState.unavailable);
     expect(model.devices, isEmpty);
+  });
+
+  test('enable', () async {
+    when(service.addAndActivateConnection(device: device))
+        .thenAnswer((_) async => MockNetworkManagerActiveConnection());
+    when(service.activateConnection(device: device))
+        .thenAnswer((_) async => MockNetworkManagerActiveConnection());
+
+    when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
+
+    when(device.state).thenReturn(NetworkManagerDeviceState.disconnected);
+
+    when(device.availableConnections).thenReturn([]);
+    model.enable();
+    verify(service.addAndActivateConnection(device: device)).called(1);
+
+    when(device.availableConnections)
+        .thenReturn([MockNetworkManagerSettingsConnection()]);
+    model.enable();
+    verify(service.activateConnection(device: device)).called(1);
+  });
+
+  test('keep track by hwaddress', () {
+    when(service.wiredDevices).thenReturn([device]);
+    serviceChanged.add(['Devices']);
+
+    expect(model.devices, hasLength(1));
+    final originalDevice = model.devices.single;
+
+    final mock = MockNetworkManagerDevice();
+    when(mock.udi).thenReturn('test udi');
+    when(mock.hwAddress).thenReturn('test address');
+    when(mock.interface).thenReturn('changed interface');
+
+    when(mock.state).thenReturn(NetworkManagerDeviceState.activated);
+    when(mock.propertiesChanged).thenAnswer((_) => deviceChanged.stream);
+
+    when(service.wiredDevices).thenReturn([mock]);
+    serviceChanged.add(['Devices']);
+
+    expect(model.devices, hasLength(1));
+    final changedDevice = model.devices.single;
+    expect(changedDevice.hwAddress, equals(originalDevice.hwAddress));
+    expect(changedDevice.interface, equals('changed interface'));
+    expect(identical(originalDevice, changedDevice), isTrue);
   });
 }

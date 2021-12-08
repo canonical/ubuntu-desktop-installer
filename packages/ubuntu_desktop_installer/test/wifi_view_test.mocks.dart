@@ -268,11 +268,6 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
               returnValue: _i2.NetworkManagerDeviceState.unknown)
           as _i2.NetworkManagerDeviceState);
   @override
-  _i2.NetworkManagerDeviceStateReason get stateReason =>
-      (super.noSuchMethod(Invocation.getter(#stateReason),
-              returnValue: _i2.NetworkManagerDeviceStateReason.none)
-          as _i2.NetworkManagerDeviceStateReason);
-  @override
   bool get isConnecting =>
       (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
           as bool);
@@ -324,14 +319,6 @@ class MockWifiDevice extends _i1.Mock implements _i3.WifiDevice {
   void selectAccessPoint(_i3.AccessPoint? accessPoint) =>
       super.noSuchMethod(Invocation.method(#selectAccessPoint, [accessPoint]),
           returnValueForMissingStub: null);
-  @override
-  _i4.Future<_i2.NetworkManagerSettingsConnection?> findAvailableConnection(
-          _i3.AccessPoint? accessPoint) =>
-      (super.noSuchMethod(
-              Invocation.method(#findAvailableConnection, [accessPoint]),
-              returnValue:
-                  Future<_i2.NetworkManagerSettingsConnection?>.value())
-          as _i4.Future<_i2.NetworkManagerSettingsConnection?>);
   @override
   _i4.Future<void> requestScan({String? ssid}) =>
       (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssid: ssid}),

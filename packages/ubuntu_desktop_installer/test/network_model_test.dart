@@ -34,7 +34,7 @@ void main() {
     final mock = MockNetworkManagerDevice();
     when(mock.udi).thenReturn('test udi');
 
-    propertiesChanged = StreamController<List<String>>(sync: true);
+    propertiesChanged = StreamController<List<String>>.broadcast(sync: true);
     when(mock.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
 
     device = NetworkDevice(mock, udev);

@@ -32,7 +32,7 @@ abstract class NetworkModel<T extends NetworkDevice>
     super.dispose();
   }
 
-  final _devices = <T>[];
+  var _devices = <T>[];
   final _allDevices = <String, T>{};
   List<T> get devices => _devices
       .where((device) => !device.isUnmanaged && device.isAvailable)
@@ -49,9 +49,9 @@ abstract class NetworkModel<T extends NetworkDevice>
 
   @protected
   void updateDevices() {
-    _devices.clear();
     final previousSelected = _selectedDevice;
     _selectedDevice = null;
+    final devices = <T>[];
     for (final device in getDevices()) {
       var model = _allDevices[device.hwAddress];
       if (model == null) {
@@ -61,13 +61,14 @@ abstract class NetworkModel<T extends NetworkDevice>
       } else {
         model.updateDevice(device);
       }
-      _devices.add(model);
+      devices.add(model);
       if (model == previousSelected &&
           !model.isUnmanaged &&
           model.isAvailable) {
         _selectedDevice = model;
       }
     }
+    _devices = devices;
     _selectedDevice ??= findActiveDevice();
     log.debug('Update devices: $_devices');
     notifyListeners();

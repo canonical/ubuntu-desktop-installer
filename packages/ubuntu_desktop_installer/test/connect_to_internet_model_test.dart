@@ -61,21 +61,38 @@ void main() {
     when(wifi.connectMode).thenReturn(ConnectMode.wifi);
     when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(wifi);
+    verify(wifi.connectMode).called(1);
+    verify(wifi.onAvailabilityChanged).called(1);
+
     model.selectConnectMode(ConnectMode.wifi);
     expect(model.connectMode, equals(ConnectMode.wifi));
 
     when(wifi.isConnected).thenReturn(true);
     expect(model.isConnected, isTrue);
+    verify(wifi.isConnected).called(1);
 
     when(wifi.canConnect).thenReturn(true);
     expect(model.canConnect, isTrue);
+    verify(wifi.canConnect).called(1);
 
     when(wifi.isConnecting).thenReturn(true);
     expect(model.isConnecting, isTrue);
+    verify(wifi.isConnecting).called(1);
+
+    when(wifi.hasActiveConnection).thenReturn(true);
+    expect(model.hasActiveConnection, isTrue);
+    verify(wifi.hasActiveConnection).called(1);
+
+    expect(model.onAvailabilityChanged, isA<Stream>());
+    verify(wifi.onAvailabilityChanged).called(1);
 
     when(wifi.onSelected()).thenAnswer((_) async {});
     model.init();
     verify(wifi.onSelected());
+
+    when(wifi.connect()).thenAnswer((_) async {});
+    model.enable();
+    verify(wifi.enable());
 
     when(wifi.connect()).thenAnswer((_) async {});
     model.connect();
@@ -186,5 +203,11 @@ void main() {
     when(ethernet.isEnabled).thenReturn(false);
     ethernetChanged.add(true);
     expect(model.connectMode, equals(ConnectMode.none));
+
+    // explicit selection without active connection
+    when(wifi.isEnabled).thenReturn(true);
+    when(wifi.hasActiveConnection).thenReturn(false);
+    model.selectConnectMode();
+    expect(model.connectMode, equals(ConnectMode.wifi));
   });
 }

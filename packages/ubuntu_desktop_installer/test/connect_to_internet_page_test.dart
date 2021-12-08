@@ -20,6 +20,7 @@ import 'connect_to_internet_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
 @GenerateMocks([
+  AccessPoint,
   ConnectToInternetModel,
   EthernetModel,
   EthernetDevice,
@@ -49,12 +50,18 @@ void main() {
     when(ethernetModel.isEnabled).thenReturn(ethernet ?? true);
     when(ethernetModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
+    final accessPoint = MockAccessPoint();
+    when(accessPoint.name).thenReturn('ap');
+    when(accessPoint.strength).thenReturn(0);
+    when(accessPoint.isOpen).thenReturn(true);
+
     final wifiDevice = MockWifiDevice();
     when(wifiDevice.model).thenReturn('model');
     when(wifiDevice.isAvailable).thenReturn(true);
     when(wifiDevice.isConnecting).thenReturn(false);
     when(wifiDevice.scanning).thenReturn(false);
-    when(wifiDevice.accessPoints).thenReturn([]);
+    when(wifiDevice.accessPoints).thenReturn([accessPoint]);
+    when(wifiDevice.isActive).thenReturn(false);
 
     final wifiModel = MockWifiModel();
     when(wifiModel.connectMode).thenReturn(ConnectMode.wifi);
@@ -99,6 +106,43 @@ void main() {
     expect(noConnectTile, findsOneWidget);
     await tester.tap(noConnectTile);
     expect(model.connectMode, ConnectMode.none);
+  });
+
+  testWidgets('enables ethernet', (tester) async {
+    final model = ConnectToInternetModel(MockNetworkService());
+    await tester.pumpWidget(
+        tester.buildApp((_) => buildPage(model: model, ethernet: false)));
+    await tester.pumpAndSettle();
+
+    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWired);
+    expect(button, findsOneWidget);
+    await tester.tap(button);
+    expect(model.connectMode, ConnectMode.ethernet);
+  });
+
+  testWidgets('enables wifi', (tester) async {
+    final model = ConnectToInternetModel(MockNetworkService());
+    await tester.pumpWidget(
+        tester.buildApp((_) => buildPage(model: model, wifi: false)));
+    await tester.pumpAndSettle();
+
+    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWifi);
+    expect(button, findsOneWidget);
+    await tester.tap(button);
+    expect(model.connectMode, ConnectMode.wifi);
+  });
+
+  testWidgets('selects wifi', (tester) async {
+    final model = ConnectToInternetModel(MockNetworkService());
+    await tester.pumpWidget(tester
+        .buildApp((_) => buildPage(model: model, ethernet: false, wifi: true)));
+    await tester.pumpAndSettle();
+
+    final tile = find.widgetWithText(ListTile, 'ap').first;
+    expect(tile, findsOneWidget);
+    await tester.pump();
+    await tester.tap(tile);
+    expect(model.connectMode, ConnectMode.wifi);
   });
 
   testWidgets('initializes the model', (tester) async {
