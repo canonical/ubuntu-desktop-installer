@@ -20,7 +20,17 @@ If you want to test the new installer before 22.04 goes live, you can download a
 
 ## Building and running manually
 
-Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter on your computer.
+If you prefer to build and run the installer from source you need to install Flutter.
+
+### Either: Install Flutter with Snapd
+
+```
+sudo snap install flutter --classic
+```
+
+### Or: installer Flutter manually
+
+Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
 
 ### Configure Flutter
 
