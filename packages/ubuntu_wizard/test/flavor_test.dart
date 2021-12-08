@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
@@ -8,6 +10,7 @@ void main() {
       name: 'Test Flavor 1',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       package: 'test_package_1',
     );
     expect(flavor1, equals(flavor1));
@@ -19,6 +22,7 @@ void main() {
       name: 'Test Flavor 2',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
+      localizationsDelegates: GlobalUbuntuLocalizations.delegates,
       package: 'test_package_2',
     );
     expect(flavor2, isNot(equals(flavor1)));
@@ -31,6 +35,7 @@ void main() {
           name: 'Test Flavor',
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
+          localizationsDelegates: GlobalUbuntuLocalizations.delegates,
           package: 'test_package',
         ),
         child: Builder(builder: (_) => MaterialApp()),
@@ -42,6 +47,8 @@ void main() {
     expect(flavor.name, equals('Test Flavor'));
     expect(flavor.theme, equals(ThemeData.light()));
     expect(flavor.darkTheme, equals(ThemeData.dark()));
+    expect(flavor.localizationsDelegates,
+        equals(GlobalUbuntuLocalizations.delegates));
     expect(flavor.package, equals('test_package'));
   });
 
@@ -50,6 +57,7 @@ void main() {
       name: 'Test Flavor',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       package: 'test_package',
     );
 
@@ -58,6 +66,8 @@ void main() {
     expect(namedFlavor.name, equals('New Flavor'));
     expect(namedFlavor.theme, equals(flavor.theme));
     expect(namedFlavor.darkTheme, equals(flavor.darkTheme));
+    expect(namedFlavor.localizationsDelegates,
+        equals(flavor.localizationsDelegates));
     expect(namedFlavor.package, equals(flavor.package));
 
     final themedFlavor = flavor.copyWith(
@@ -69,6 +79,21 @@ void main() {
     expect(themedFlavor.name, equals(flavor.name));
     expect(themedFlavor.theme, equals(flavor.darkTheme));
     expect(themedFlavor.darkTheme, equals(flavor.theme));
+    expect(themedFlavor.localizationsDelegates,
+        equals(flavor.localizationsDelegates));
     expect(themedFlavor.package, equals(flavor.package));
+
+    final localizedFlavor = flavor.copyWith(
+      localizationsDelegates: GlobalUbuntuLocalizations.delegates,
+    );
+    expect(localizedFlavor, isNot(equals(flavor)));
+    expect(localizedFlavor, isNot(equals(namedFlavor)));
+    expect(localizedFlavor, isNot(equals(themedFlavor)));
+    expect(localizedFlavor.name, equals(flavor.name));
+    expect(localizedFlavor.theme, equals(flavor.theme));
+    expect(localizedFlavor.darkTheme, equals(flavor.darkTheme));
+    expect(localizedFlavor.localizationsDelegates,
+        equals(GlobalUbuntuLocalizations.delegates));
+    expect(localizedFlavor.package, equals(flavor.package));
   });
 }
