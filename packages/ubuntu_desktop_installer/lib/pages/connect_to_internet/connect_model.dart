@@ -21,7 +21,7 @@ abstract class ConnectModel extends SafeChangeNotifier {
   /// Whether the currently selected connection is being established.
   bool get isConnecting;
 
-  /// Whether any of the connections is active.
+  /// Whether any of the connections is active, but not necessarily selected.
   bool get hasActiveConnection;
 
   /// Whether this connection mode is enabled.
