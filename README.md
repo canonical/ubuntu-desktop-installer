@@ -28,7 +28,7 @@ If you prefer to build and run the installer from source you need to install Flu
 sudo snap install flutter --classic
 ```
 
-### Or: installer Flutter manually
+### Or: Install Flutter manually
 
 Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
 
