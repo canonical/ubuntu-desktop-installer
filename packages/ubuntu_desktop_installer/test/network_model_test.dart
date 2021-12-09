@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nm/nm.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/network_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
