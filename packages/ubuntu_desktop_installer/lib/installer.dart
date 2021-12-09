@@ -65,6 +65,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
       Provider(create: (_) => DiskStorageService(subiquityClient)),
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
+      Provider(create: (_) => NetworkService()),
       Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {
@@ -210,6 +211,9 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.keyboardLayout: const WizardRoute(
           builder: KeyboardLayoutPage.create,
+        ),
+        Routes.connectToInternet: const WizardRoute(
+          builder: ConnectToInternetPage.create,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
