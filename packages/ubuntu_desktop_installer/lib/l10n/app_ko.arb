@@ -49,7 +49,7 @@
   "@noButtonText": {},
   "tryUbuntu": "{RELEASE} 체험하기",
   "@tryUbuntu": {},
-  "installationTypeLVM": "새 우분투 설치에 LVM 사용",
+  "installationTypeLVM": "새 {RELEASE} 설치에 LVM 사용",
   "@installationTypeLVM": {},
   "repairInstallationDescription": "복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.",
   "@repairInstallationDescription": {},
@@ -276,6 +276,20 @@
     "type": "text",
     "placeholders": {
       "color": {},
+      "os": {}
+    }
+  },
+  "updatesOtherSoftwarePageDescription": "어떤 앱을 설치하고 시작하시겠습니까?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "otherOptions": "기타 설정",
+  "@otherOptions": {},
+  "installationTypeZFS": "시험적 기능: 디스크 지우기 및 ZFS 사용",
+  "@installationTypeZFS": {},
+  "installationTypeAlongside": "{product}을(를) {os}와 나란히 설치",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
       "os": {}
     }
   }
