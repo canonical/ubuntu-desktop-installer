@@ -10,9 +10,9 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../widget_tester_extensions.dart';
 import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);

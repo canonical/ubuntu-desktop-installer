@@ -16,8 +16,8 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dar
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../widget_tester_extensions.dart';
 import 'connect_to_internet_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([
   AccessPoint,

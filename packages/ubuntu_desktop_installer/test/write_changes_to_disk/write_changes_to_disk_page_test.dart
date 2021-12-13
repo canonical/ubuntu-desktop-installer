@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_chang
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import 'widget_tester_extensions.dart';
+import '../widget_tester_extensions.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
 import 'write_changes_to_disk_page_test.mocks.dart';
 

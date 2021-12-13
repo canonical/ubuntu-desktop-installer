@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.dart';
 
+import '../widget_tester_extensions.dart';
 import 'turn_off_rst_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([TurnOffRSTModel])
 void main() {

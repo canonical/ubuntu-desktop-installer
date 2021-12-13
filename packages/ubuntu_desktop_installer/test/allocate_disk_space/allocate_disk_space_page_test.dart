@@ -11,9 +11,9 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
+import '../widget_tester_extensions.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 final selection = StreamController.broadcast();
 

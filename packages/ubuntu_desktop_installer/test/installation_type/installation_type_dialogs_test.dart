@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../widget_tester_extensions.dart';
 import 'installation_type_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);

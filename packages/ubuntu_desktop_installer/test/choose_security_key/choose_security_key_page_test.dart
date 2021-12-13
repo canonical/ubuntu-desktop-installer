@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_securi
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import '../widget_tester_extensions.dart';
 import 'choose_security_key_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([ChooseSecurityKeyModel])
 void main() {

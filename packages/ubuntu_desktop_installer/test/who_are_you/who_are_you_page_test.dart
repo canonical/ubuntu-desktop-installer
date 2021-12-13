@@ -7,8 +7,8 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
 
+import '../widget_tester_extensions.dart';
 import 'who_are_you_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([WhoAreYouModel])
 void main() {

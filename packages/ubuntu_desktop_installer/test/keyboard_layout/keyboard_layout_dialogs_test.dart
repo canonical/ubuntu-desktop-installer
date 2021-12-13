@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_d
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import 'widget_tester_extensions.dart';
+import '../widget_tester_extensions.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);

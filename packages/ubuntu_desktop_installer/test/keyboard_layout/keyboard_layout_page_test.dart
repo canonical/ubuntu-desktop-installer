@@ -12,8 +12,8 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_w
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import '../widget_tester_extensions.dart';
 import 'keyboard_layout_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([KeyboardLayoutModel, KeyboardService])
 void main() {

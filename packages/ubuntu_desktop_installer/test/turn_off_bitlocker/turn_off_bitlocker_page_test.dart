@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlocker_model.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlocker_page.dart';
 
+import '../widget_tester_extensions.dart';
 import 'turn_off_bitlocker_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([TurnOffBitLockerModel])
 void main() {

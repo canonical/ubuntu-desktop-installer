@@ -9,9 +9,9 @@ import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guid
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
+import '../widget_tester_extensions.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
-import 'widget_tester_extensions.dart';
 
 @GenerateMocks([SelectGuidedStorageModel, UdevDeviceInfo, UdevService])
 void main() {
