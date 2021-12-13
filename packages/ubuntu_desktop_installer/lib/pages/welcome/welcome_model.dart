@@ -5,22 +5,16 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 
 /// @internal
 final log = Logger('welcome');
 
 /// Implements the business logic of the welcome page.
 class WelcomeModel extends ChangeNotifier {
-  /// Creates a model with the specified [client] and [keyboardService].
-  WelcomeModel({
-    required SubiquityClient client,
-    required KeyboardService keyboardService,
-  })  : _client = client,
-        _keyboardService = keyboardService;
+  /// Creates a model with the specified [client].
+  WelcomeModel(this._client);
 
   final SubiquityClient _client;
-  final KeyboardService _keyboardService;
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -44,12 +38,6 @@ class WelcomeModel extends ChangeNotifier {
     _languageList.addAll(languages);
     log.info('Loaded ${languages.length} languages');
     notifyListeners();
-  }
-
-  /// Loads keyboards for the currently selected locale.
-  Future<void> loadKeyboards() async {
-    await _keyboardService.load(_client);
-    log.info('Loaded ${_keyboardService.layouts.length} keyboard layouts');
   }
 
   /// Returns the locale for the given language [index].

@@ -126,6 +126,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
+    await _keyboardService.load(_client);
     final detectedLayout = await detectKeyboardLayout();
     _selectedLayoutIndex = _keyboardService.layouts.indexWhere((layout) {
       return layout.code == detectedLayout;
