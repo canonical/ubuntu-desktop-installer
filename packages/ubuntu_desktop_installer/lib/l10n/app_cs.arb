@@ -452,5 +452,33 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "connectToInternetPageTitle": "Připojit k Internetu",
+  "@connectToInternetPageTitle": {},
+  "useWiredConnection": "Použít drátové připojení",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Nezjištěno žádné drátové připojení",
+  "@noWiredConnection": {},
+  "noWifiDevicesDetected": "Nevybrána žádná Wi-Fi zařízení",
+  "@noWifiDevicesDetected": {},
+  "connectToInternetDescription": "Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se ethernetovým kabelem, nebo zvolte Wi-Fi síť",
+  "@connectToInternetDescription": {},
+  "wiredDisabled": "Drátové připojení je vypnuto",
+  "@wiredDisabled": {},
+  "wiredMustBeEnabled": "Aby na tomto počítači bylo možné použít rozhraní ethernet, je třeba zapnout drátové připojení",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "Zapnout drátové",
+  "@enableWired": {},
+  "selectWifiNetwork": "Připojit k Wi-Fi síti",
+  "@selectWifiNetwork": {},
+  "connectButtonText": "Připojit",
+  "@connectButtonText": {},
+  "enableWifi": "Zapnout Wi-Fi",
+  "@enableWifi": {},
+  "wifiMustBeEnabled": "Aby na tomto počítači bylo možné použít rozhraní Wi-Fi, je třeba zapnout bezdrátové připojení",
+  "@wifiMustBeEnabled": {},
+  "wirelessNetworkingDisabled": "Bezdrátové připojení je vypnuté",
+  "@wirelessNetworkingDisabled": {},
+  "noInternet": "V tuto chvíli se nechci připojovat k Internetu",
+  "@noInternet": {}
 }
