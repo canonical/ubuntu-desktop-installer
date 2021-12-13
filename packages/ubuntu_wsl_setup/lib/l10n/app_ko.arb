@@ -100,5 +100,17 @@
     }
   },
   "setupCompleteManage": "내장된 ubuntuwsl 명령으로 WSL 설정을 관리할 수 있습니다:",
-  "@setupCompleteManage": {}
+  "@setupCompleteManage": {},
+  "finishButton": "완료",
+  "@finishButton": {},
+  "profileSetupShowAdvancedOptions": "다음 페이지에서 고급 옵션 보기",
+  "@profileSetupShowAdvancedOptions": {},
+  "advancedSetupGUIIntegrationSubtitle": "선택하면 DISPLAY 환경변수 자동 설정을 활성화 합니다. 서드파티 X 서버를 요구합니다.",
+  "@advancedSetupGUIIntegrationSubtitle": {},
+  "advancedSetupMountLocationHelper": "automount 설정할 위치",
+  "@advancedSetupMountLocationHelper": {},
+  "advancedSetupMountOptionHelper": "automount 설정에 전달할 마운트 옵션",
+  "@advancedSetupMountOptionHelper": {},
+  "configurationUIMountFstabSubtitle": "/etc/fstab 마운트 여부. The configuration file /etc/fstab contains the???",
+  "@configurationUIMountFstabSubtitle": {}
 }
