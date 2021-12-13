@@ -175,7 +175,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => '업데이트 및 다른 소프트웨어';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => '어떤 앱을 설치하고 시작하시겠습니까?';
 
   @override
   String get normalInstallationTitle => '일반 설치';
@@ -190,7 +190,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get minimalInstallationSubtitle => '웹 브라우저와 기본 유틸리티.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => '기타 설정';
 
   @override
   String get installThirdPartyTitle => '그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치';
@@ -258,7 +258,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return '새 우분투 설치에 LVM 사용';
+    return '새 $RELEASE 설치에 LVM 사용';
   }
 
   @override
@@ -273,7 +273,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeEncryptInfo => '다음 단계에서 보안 키를 선택합니다.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => '시험적 기능: 디스크 지우기 및 ZFS 사용';
 
   @override
   String get installationTypeZFSSelected => 'ZFS 선택됨';
@@ -290,7 +290,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$product을(를) $os와 나란히 설치';
   }
 
   @override
