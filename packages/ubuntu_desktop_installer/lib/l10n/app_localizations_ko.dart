@@ -352,6 +352,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTable => '새 파티션 테이블';
 
   @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+
+  @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
 
   @override
