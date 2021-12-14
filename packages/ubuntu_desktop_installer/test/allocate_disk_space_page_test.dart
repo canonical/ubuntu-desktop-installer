@@ -285,13 +285,16 @@ void main() {
     expect(find.byType(AlertDialog), findsOneWidget);
     verifyNever(model.reformatDisk(disk));
 
-    final continueButton = find.widgetWithText(
-      OutlinedButton,
-      tester.ulang.continueAction,
+    final continueButton = find.descendant(
+      of: find.byType(AlertDialog),
+      matching: find.widgetWithText(
+        OutlinedButton,
+        tester.ulang.continueAction,
+      ),
     );
-    expect(continueButton, findsNWidgets(2));
+    expect(continueButton, findsOneWidget);
 
-    await tester.tap(continueButton.last);
+    await tester.tap(continueButton);
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);

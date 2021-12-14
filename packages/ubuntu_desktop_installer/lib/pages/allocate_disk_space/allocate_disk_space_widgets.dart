@@ -384,7 +384,7 @@ class PartitionButtonRow extends StatelessWidget {
       );
       if (!confirmed) return;
     }
-    model.reformatDisk(model.selectedDisk!);
+    model.reformatDisk(disk);
   }
 }
 
