@@ -413,5 +413,7 @@
   "enableWifi": "Activer le Wifi",
   "@enableWifi": {},
   "wifiMustBeEnabled": "Pour utiliser le Wifi sur cet ordinateur, cette fonctionnalité doit être activée",
-  "@wifiMustBeEnabled": {}
+  "@wifiMustBeEnabled": {},
+  "newPartitionTableConfirmationTitle": "Créer une nouvelle table de partitions sur ce périphérique ?",
+  "@newPartitionTableConfirmationTitle": {}
 }
