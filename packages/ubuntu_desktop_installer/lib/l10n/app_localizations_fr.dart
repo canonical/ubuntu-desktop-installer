@@ -130,46 +130,46 @@ class AppLocalizationsFr extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Les codes de sécurité ne correspondent pas';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Se connecter à internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wifi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Utiliser une connexion câblée';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Aucune connexion câblée détectée';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'La connexion câblée est désactivée';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Pour utiliser Ethernet sur cet ordinateur, une connexion câblée doit être activée';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Activer une connexion câblée';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Se connecter à un réseau Wifi';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Je ne souhaite pas me connecter à internet pour l\'instant';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Le réseau sans fil est désactivé';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Aucun périphérique Wifi détecté';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Pour utiliser le Wifi sur cet ordinateur, cette fonctionnalité doit être activée';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Activer le Wifi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Se connecter';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Mises à jour et autres logiciels';
