@@ -8,49 +8,49 @@ class AppLocalizationsIs extends AppLocalizations {
   AppLocalizationsIs([String locale = 'is']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Skjáborðsuppsetningarforrit Ubuntu';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Uppsetja $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Hætta Við';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Breyta';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Í Lagi';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Nei';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Endurræsa';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Afturkalla';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Já';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Velkomin(n)';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Prófa eða uppsetja';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Viðgera uppsetningu';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Prófa $RELEASE';
   }
 
   @override
@@ -60,7 +60,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Uppsetja $RELEASE';
   }
 
   @override
@@ -74,7 +74,7 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Slökkva á RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -85,16 +85,16 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Lyklaborðsútfærsla';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Veldu lyklaborðsútfærslu:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Innsláðu hér til að prófa lyklaborðið þitt';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Greina Sjálfvirkt Lyklaborðsútfærslu';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -128,6 +128,48 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+
+  @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Updates and other software';

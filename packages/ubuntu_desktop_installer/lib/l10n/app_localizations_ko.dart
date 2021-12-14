@@ -106,16 +106,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configureSecureBootTitle => 'Secure Boot 구성';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => '서드파티 드라이버 소프트웨어 설치를 선택 하시려면, Secure Boot를 꺼야 합니다.\n이를 위해 지금 보안 키를 지정하고, 시스템 다시 시작 시 입력해야 합니다.';
 
   @override
   String get configureSecureBootOption => 'Secure Boot 구성';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => '보안 키 선택';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => '보안 키 확인';
 
   @override
   String get dontInstallDriverSoftwareNow => '지금은 드라이버 소프트웨어 설치하지 않기';
@@ -124,16 +124,58 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dontInstallDriverSoftwareNowDescription => '소프트웨어 & 업데이트 에서 나중에 설치하실 수 있습니다.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => '보안 키가 필요합니다';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => '보안 키가 일치하지 않습니다';
+
+  @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => '업데이트 및 다른 소프트웨어';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => '어떤 앱을 설치하고 시작하시겠습니까?';
 
   @override
   String get normalInstallationTitle => '일반 설치';
@@ -148,41 +190,41 @@ class AppLocalizationsKo extends AppLocalizations {
   String get minimalInstallationSubtitle => '웹 브라우저와 기본 유틸리티.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => '기타 설정';
 
   @override
   String get installThirdPartyTitle => '그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => '보안 키 선택';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'license terms디스크를 암호화하면 컴퓨터를 분실했을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n${RELEASE} 밖의 파일은 암호화 되지 않습니다.';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => '보안 키 선택';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => '보안 키 확인';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => '보안 키가 필요합니다';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => '보안 키가 일치하지 않습니다';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => '설치 형식';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -216,7 +258,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return '새 우분투 설치에 LVM 사용';
+    return '새 $RELEASE 설치에 LVM 사용';
   }
 
   @override
@@ -228,27 +270,27 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => '다음 단계에서 보안 키를 선택합니다.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => '시험적 기능: 디스크 지우기 및 ZFS 사용';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS 선택됨';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return '$os 지우고 다시 설치';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">경고:</font> $os에 있는 모든 프로그램, 문서, 사진, 음악 및 다른 파일을 삭제합니다.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$product을(를) $os와 나란히 설치';
   }
 
   @override

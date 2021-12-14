@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:keyboard_info/keyboard_info.dart';
-import 'package:logger/logger.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
@@ -126,6 +126,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
+    await _keyboardService.load(_client);
     final detectedLayout = await detectKeyboardLayout();
     _selectedLayoutIndex = _keyboardService.layouts.indexWhere((layout) {
       return layout.code == detectedLayout;

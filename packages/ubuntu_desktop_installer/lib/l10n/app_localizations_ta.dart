@@ -12,7 +12,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
@@ -31,16 +31,16 @@ class AppLocalizationsTa extends AppLocalizations {
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'மீட்டல்';
 
   @override
   String get yesButtonText => 'ஆம்';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'நல்வரவு';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'சோதி அல்லது நிறுவு';
 
   @override
   String get repairInstallation => 'நிறுவலை பழுதுபார்';
@@ -50,17 +50,17 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'சோதி $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் $RELEASEஐ சோதிக்கலாம்.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
@@ -128,6 +128,48 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+
+  @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Updates and other software';

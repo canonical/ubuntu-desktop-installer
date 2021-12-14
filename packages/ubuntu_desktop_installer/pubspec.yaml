@@ -15,6 +15,7 @@ dependencies:
     path: ../subiquity_client
   ubuntu_wizard:
     path: ../ubuntu_wizard
+  collection: ^1.15.0
   dbus: ^0.6.3
   file: ^6.1.0
   filesize: ^2.0.0
@@ -24,26 +25,31 @@ dependencies:
   form_field_validator: ^1.1.0
   intl: ^0.17.0
   keyboard_info: ^0.2.0
-  logger:
-    path: ../logger
+  nm: ^0.4.1
   provider: ^6.0.0
   flutter_markdown: ^0.6.2
+  safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
   ubuntu_localizations:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_localizations
+  ubuntu_logger:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_logger
   udev:
     path: ../udev
   url_launcher: ^6.0.3
-  yaru: ^0.1.8
-  yaru_icons: ^0.0.6
+  yaru: ^0.2.0
+  yaru_icons: ^0.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.0.5
   effective_dart: ^1.3.1
+  fake_async: ^1.2.0
   mockito: 5.0.14
   ubuntu_test:
     path: ../ubuntu_test

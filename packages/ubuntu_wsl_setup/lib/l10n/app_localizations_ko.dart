@@ -8,166 +8,166 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => '우분투 WSL';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => '우분투 WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => '나가기';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => '완료';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => '저장';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => '설치';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => '언어를 선택하십시오';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => '프로필 구성';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => '기본 유닉스 사용자 계정을 생성해 주십시오. 자세한 정보는 <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>를 방문하십시오';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => '이름';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => '이름이 필요합니다';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => '사용자 이름 선택';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => '사용자 이름은 Windows 사용자 이름과 일치하지 않아도 됩니다.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => '암호 선택';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => '암호 확인';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => '다음 페이지에서 고급 옵션 보기';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => '사용자 이름이 필요합니다';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => '올바른 사용자 이름이 아닙니다';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => '암호가 필요합니다';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => '고급 설치';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => '이 페이지에서는, 우분투 WSL을 필요에 따라 트윅할 수 있습니다.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => '마운트 위치';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'automount 설정할 위치';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => '올바른 위치가 아닙니다';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => '마운트 옵션';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'automount 설정에 전달할 마운트 옵션';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Host 생성 활성화';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => '선택하면 시작할 때 마다 /etc/hosts 를 다시 생성합니다.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'resolv.conf 생성 활성화';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => '선택하면 시작할 때 마다 /etc/resolv.conf 를 다시 생성합니다.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'GUI 통합';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => '선택하면 DISPLAY 환경변수 자동 설정을 활성화 합니다. 서드파티 X 서버를 요구합니다.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => '우분투 WSL 구성 UI (실험적 기능)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => '상호운용성';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+  String get configurationUILegacyGUIIntegrationTitle => '레거시 GUI 통합';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+  String get configurationUILegacyGUIIntegrationSubtitle => '이 옵션은 Windows 10에서의 레거시 GUI 통합을 활성화 합니다. 서드파티 X 서버를 요구합니다.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+  String get configurationUILegacyAudioIntegrationTitle => '레거시 오디오 통합';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+  String get configurationUILegacyAudioIntegrationSubtitle => '이 옵션은 Windows 10에서의 레거시 오디오 통합을 활성화 합니다. Windows용 PulseAudio 설치를 요구합니다.';
 
   @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+  String get configurationUIAdvancedIPDetectionTitle => '고급 IP 감지';
 
   @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+  String get configurationUIAdvancedIPDetectionSubtitle => '이 옵션은 WSL2와 사용하기에 더 안정적인 Windows IPv4 주소에 의한 IP의 고급 감지를 활성화 합니다.\nWSL 상호운용성 활성화를 요구합니다.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => '오늘의 메시지 (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'WSL 뉴스';
 
   @override
-  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+  String get configurationUIWSLNewsSubtitle => '이 옵션은 MOTD 뉴스를 제어할 수 있도록 합니다. 토글을 켜면 MOTD를 볼 수 있게 됩니다.';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => '자동 마운트';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => '활성화됨';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => '자동 마운트 활성화 여부. 이 기능은 Windows 드라이브를 WSL에 마운트 할 수 있도록 해줍니다.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => '/etc/fstab 마운트';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. The configuration file /etc/fstab contains the???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => '설치 완료';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return '$user님 안녕하세요,\n설치가 성공적으로 완료되었습니다.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => '아래 명령을 실행하여 우분투를 최신 버전으로 업데이트 하는 것을 제안 드립니다:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => '내장된 ubuntuwsl 명령으로 WSL 설정을 관리할 수 있습니다:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* 모든 설정은 우분투를 다시 시작 후 적용됩니다.';
 }
