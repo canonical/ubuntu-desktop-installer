@@ -26,7 +26,7 @@ void main() {
     when(settings.locale).thenReturn(Locale('en'));
 
     app = MaterialApp(
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Flavor(

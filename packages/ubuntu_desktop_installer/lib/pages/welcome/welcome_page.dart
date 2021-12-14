@@ -6,7 +6,6 @@ import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -15,11 +14,9 @@ class WelcomePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
+    final client = Provider.of<SubiquityClient>(context, listen: false);
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(
-        client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardService: Provider.of<KeyboardService>(context, listen: false),
-      ),
+      create: (_) => WelcomeModel(client),
       child: const WelcomePage(),
     );
   }
@@ -36,8 +33,6 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     final model = Provider.of<WelcomeModel>(context, listen: false);
-    model.loadKeyboards();
-
     model.loadLanguages().then((_) {
       final settings = Settings.of(context, listen: false);
       model.selectLocale(settings.locale);
@@ -77,7 +72,6 @@ class _WelcomePageState extends State<WelcomePage> {
                   model.selectedLanguageIndex = index;
                   final settings = Settings.of(context, listen: false);
                   settings.applyLocale(model.locale(index));
-                  model.loadKeyboards();
                 },
               ),
             );
