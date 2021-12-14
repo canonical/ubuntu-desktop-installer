@@ -85,7 +85,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
-      client.setTimezone('geoip');
     },
   );
 }
