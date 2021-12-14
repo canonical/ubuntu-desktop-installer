@@ -130,46 +130,46 @@ class AppLocalizationsHe extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'מפתחות האבטחה סותרים זה את זה';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'התחברות לאינטרנט';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'להשתמש בחיבור קווי';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'לא זוהה חיבור קווי';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'החיבור הקווי מושבת';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'כדי להשתמש בכבל רשת במחשב הזה יש להפעיל את החיבור הקווי';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'להפעיל חיבור קווי';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'התחברות לרשת אלחוטית';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'לא רוצה להתחבר לאינטרנט כרגע';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'רשת אלחוטית מושבתת';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'לא זוהו התקני רשת אלחוטית';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'כדי להשתמש ברשת אלחוטית במחשב הזה, יש להפעיל את התקשורת האלחוטית';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'הפעלת רשת אלחוטית';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'התחברות';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'עדכונים ותכניות נוספות';
