@@ -8,76 +8,76 @@ class AppLocalizationsUk extends AppLocalizations {
   AppLocalizationsUk([String locale = 'uk']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Встановлювач стільниці Ubuntu';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Встановити $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Скасувати';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Змінити';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Гаразд';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ні';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Перезавантажити';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Повернутися';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Так';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Вітаємо';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Спробувати або встановити';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Виправити встановлення';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Спробувати $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Ви можете спробувати $RELEASE без виконання жодних змін у вашому комп’ютері.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Встановити $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Встановити $RELEASE поряд (або замість) вашої поточної операційної системи. Це не повинно зайняти занадто багато часу.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Ви можете прочитати <a href=\"$url\">примітки до випуску</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Вимкнути RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.';
 
   @override
   String instructionsForRST(Object url) {
@@ -128,6 +128,48 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+
+  @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Updates and other software';

@@ -13,7 +13,7 @@ scripts:
   # analyze all packages
   analyze: >
     melos exec -c 1 -- \
-      flutter analyze --no-fatal-infos .
+      flutter analyze .
 
   # collect coverage information for all packages
   coverage: >

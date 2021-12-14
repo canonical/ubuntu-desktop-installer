@@ -2,7 +2,7 @@
   "@@locale": "ko",
   "appTitle": "우분투 데스크톱 인스톨러",
   "@appTitle": {},
-  "windowTitle": "우분투 설치",
+  "windowTitle": "{RELEASE} 설치",
   "@windowTitle": {},
   "okButtonText": "확인",
   "@okButtonText": {},
@@ -12,7 +12,7 @@
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "설치 복구",
   "@repairInstallation": {},
-  "installUbuntu": "우분투 설치하기",
+  "installUbuntu": "{RELEASE} 설치하기",
   "@installUbuntu": {},
   "keyboardLayoutPageTitle": "키보드 레이아웃",
   "@keyboardLayoutPageTitle": {},
@@ -47,13 +47,13 @@
   "@revertButtonText": {},
   "noButtonText": "아니오",
   "@noButtonText": {},
-  "tryUbuntu": "우분투 체험하기",
+  "tryUbuntu": "{RELEASE} 체험하기",
   "@tryUbuntu": {},
-  "installationTypeLVM": "새 우분투 설치에 LVM 사용",
+  "installationTypeLVM": "새 {RELEASE} 설치에 LVM 사용",
   "@installationTypeLVM": {},
   "repairInstallationDescription": "복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.",
   "@repairInstallationDescription": {},
-  "installUbuntuDescription": "우분투를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.",
+  "installUbuntuDescription": "{RELEASE}를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.",
   "@installUbuntuDescription": {},
   "installationTypeAdvancedLabel": "고급 기능...",
   "@installationTypeAdvancedLabel": {},
@@ -127,5 +127,170 @@
   "whoAreYouPagePasswordLabel": "암호 선택",
   "@whoAreYouPagePasswordLabel": {},
   "whoAreYouPageConfirmPasswordLabel": "암호 확인",
-  "@whoAreYouPageConfirmPasswordLabel": {}
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "tryUbuntuDescription": "컴퓨터에서 변경사항을 만들지 않고 {RELEASE}를 체험하실 수 있습니다.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "<a href=\"{url}\">릴리즈 노트</a>를 읽어보십시오.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRST": "RST 끄기",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전 Windows 에서 꺼야 합니다.",
+  "@turnOffRSTDescription": {},
+  "dontInstallDriverSoftwareNow": "지금은 드라이버 소프트웨어 설치하지 않기",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트 에서 나중에 설치하실 수 있습니다.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "updatesOtherSoftwarePageTitle": "업데이트 및 다른 소프트웨어",
+  "@updatesOtherSoftwarePageTitle": {},
+  "minimalInstallationSubtitle": "웹 브라우저와 기본 유틸리티.",
+  "@minimalInstallationSubtitle": {},
+  "installThirdPartyTitle": "그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치",
+  "@installThirdPartyTitle": {},
+  "installationTypeErase": "디스크 지우고 {DISTRO} 설치",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeEraseWarning": "<font color=\"{color}\">경고:</font> 모든 프로그램, 문서, 사진, 음악 및 모든 운영체제에 있는 다른 파일까지 모두 삭제됩니다.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeLVMSelected": "LVM 선택됨",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncrypt": "보안을 위해 새 {RELEASE} 설치 암호화",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "selectGuidedStorageInfoLabel": "디스크 전체가 사용됩니다:",
+  "@selectGuidedStorageInfoLabel": {},
+  "partitionTypeLabel": "새 파티션 유형:",
+  "@partitionTypeLabel": {},
+  "whoAreYouPageComputerNameInfo": "다른 컴퓨터와 통신할 때 사용하는 이름 입니다.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageComputerNameRequired": "컴퓨터 이름이 필요합니다",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "올바르지 않은 컴퓨터 이름 입니다",
+  "@whoAreYouPageInvalidComputerName": {},
+  "partitionFormatZfsroot": "ZFS 루트 파일 시스템",
+  "@partitionFormatZfsroot": {},
+  "partitionErase": "파티션 포맷",
+  "@partitionErase": {},
+  "writeChangesPartitionsHeader": "다음과 같은 파티션이 포맷됩니다:",
+  "@writeChangesPartitionsHeader": {},
+  "whoAreYouPagePasswordRequired": "암호가 필요합니다",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPageUsernameLabel": "사용자 이름 선택",
+  "@whoAreYouPageUsernameLabel": {},
+  "whoAreYouPageUsernameRequired": "사용자 이름이 필요합니다",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageInvalidUsername": "올바르지 않은 사용자 이름 입니다",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPagePasswordMismatch": "암호가 일치하지 않습니다",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesToDisk": "디스크에 변경사항 쓰기",
+  "@writeChangesToDisk": {},
+  "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
+  "@writeChangesPartitionTablesHeader": {},
+  "turnOffBitlockerTitle": "BitLocker 끄기",
+  "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.",
+  "@turnOffBitlockerDescription": {},
+  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Windows로 다시 시작",
+  "@restartIntoWindows": {},
+  "chooseSecurityKeyRequired": "보안 키가 필요합니다",
+  "@chooseSecurityKeyRequired": {},
+  "confirmSecurityKey": "보안 키 확인",
+  "@confirmSecurityKey": {},
+  "configureSecureBootSecurityKeyRequired": "보안 키가 필요합니다",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "보안 키가 일치하지 않습니다",
+  "@secureBootSecurityKeysDontMatch": {},
+  "configureSecureBootDescription": "서드파티 드라이버 소프트웨어 설치를 선택 하시려면, Secure Boot를 꺼야 합니다.\n이를 위해 지금 보안 키를 지정하고, 시스템 다시 시작 시 입력해야 합니다.",
+  "@configureSecureBootDescription": {},
+  "chooseSecurityKey": "보안 키 선택",
+  "@chooseSecurityKey": {},
+  "installThirdPartySubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
+  "@installThirdPartySubtitle": {},
+  "chooseSecurityKeyTitle": "보안 키 선택",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHeader": "license terms디스크를 암호화하면 컴퓨터를 분실했을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n{RELEASE} 밖의 파일은 암호화 되지 않습니다.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "chooseSecurityKeyHint": "보안 키 선택",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "보안 키 확인",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyMismatch": "보안 키가 일치하지 않습니다",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeTitle": "설치 형식",
+  "@installationTypeTitle": {},
+  "installationTypeEncryptInfo": "다음 단계에서 보안 키를 선택합니다.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFSSelected": "ZFS 선택됨",
+  "@installationTypeZFSSelected": {},
+  "installationTypeReinstall": "{os} 지우고 다시 설치",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">경고:</font> {os}에 있는 모든 프로그램, 문서, 사진, 음악 및 다른 파일을 삭제합니다.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "updatesOtherSoftwarePageDescription": "어떤 앱을 설치하고 시작하시겠습니까?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "otherOptions": "기타 설정",
+  "@otherOptions": {},
+  "installationTypeZFS": "시험적 기능: 디스크 지우기 및 ZFS 사용",
+  "@installationTypeZFS": {},
+  "installationTypeAlongside": "{product}을(를) {os}와 나란히 설치",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  }
 }

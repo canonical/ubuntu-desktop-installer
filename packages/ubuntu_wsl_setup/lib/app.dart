@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'package:yaru/yaru.dart';
 
 import 'l10n.dart';
 import 'wizard.dart';
@@ -26,12 +26,12 @@ class UbuntuWslSetupApp extends StatelessWidget {
         setWindowTitle(lang.windowTitle);
         return lang.appTitle;
       },
-      theme: yaru.lightTheme,
-      darkTheme: yaru.darkTheme,
+      theme: yaruLight,
+      darkTheme: yaruDark,
       themeMode: Settings.of(context).theme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales: supportedLocales,
       home: buildWizard(context),
     );
   }

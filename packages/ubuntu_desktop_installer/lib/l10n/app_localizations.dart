@@ -453,6 +453,90 @@ abstract class AppLocalizations {
   /// **'Security keys do not match'**
   String get secureBootSecurityKeysDontMatch;
 
+  /// No description provided for @connectToInternetPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to internet'**
+  String get connectToInternetPageTitle;
+
+  /// No description provided for @connectToInternetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network'**
+  String get connectToInternetDescription;
+
+  /// No description provided for @useWiredConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Use wired connection'**
+  String get useWiredConnection;
+
+  /// No description provided for @noWiredConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'No wired connection detected'**
+  String get noWiredConnection;
+
+  /// No description provided for @wiredDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Wired connection is turned off'**
+  String get wiredDisabled;
+
+  /// No description provided for @wiredMustBeEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'To use ethernet on this computer, a wired connection must be enabled'**
+  String get wiredMustBeEnabled;
+
+  /// No description provided for @enableWired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable wired'**
+  String get enableWired;
+
+  /// No description provided for @selectWifiNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to a Wi-Fi network'**
+  String get selectWifiNetwork;
+
+  /// No description provided for @noInternet.
+  ///
+  /// In en, this message translates to:
+  /// **'I don\'t want to connect to the internet just now'**
+  String get noInternet;
+
+  /// No description provided for @wirelessNetworkingDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Wireless networking disabled'**
+  String get wirelessNetworkingDisabled;
+
+  /// No description provided for @noWifiDevicesDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'No Wi-Fi devices detected'**
+  String get noWifiDevicesDetected;
+
+  /// No description provided for @wifiMustBeEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'To use Wi-Fi on this computer, wireless networking must be enabled'**
+  String get wifiMustBeEnabled;
+
+  /// No description provided for @enableWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Wi-Fi'**
+  String get enableWifi;
+
+  /// No description provided for @connectButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get connectButtonText;
+
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///
   /// In en, this message translates to:

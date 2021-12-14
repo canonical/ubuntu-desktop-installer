@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'package:yaru/yaru.dart';
 
 /// Application-specific theming extensions.
 extension AppThemeData on ThemeData {
@@ -9,5 +9,5 @@ extension AppThemeData on ThemeData {
   /// ```dart
   /// Theme.of(context).successColor
   /// ```
-  Color get successColor => yaru.Colors.green;
+  Color get successColor => YaruColors.green;
 }

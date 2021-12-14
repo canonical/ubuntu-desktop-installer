@@ -7,9 +7,9 @@ import 'dart:async' as _i5;
 import 'package:dbus/dbus.dart' as _i2;
 import 'package:gsettings/src/gsettings.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/src/client.dart' as _i6;
+import 'package:subiquity_client/src/server.dart' as _i7;
 import 'package:subiquity_client/src/types.dart' as _i3;
-import 'package:subiquity_client/subiquity_client.dart' as _i6;
-import 'package:subiquity_client/subiquity_server.dart' as _i7;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -184,6 +184,15 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
   @override
   _i5.Future<void> setMirror(String? mirror) =>
       (super.noSuchMethod(Invocation.method(#setMirror, [mirror]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
+  _i5.Future<bool> freeOnly() =>
+      (super.noSuchMethod(Invocation.method(#freeOnly, []),
+          returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
+  @override
+  _i5.Future<void> setFreeOnly(bool? enable) =>
+      (super.noSuchMethod(Invocation.method(#setFreeOnly, [enable]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
