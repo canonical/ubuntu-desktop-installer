@@ -33,8 +33,7 @@ class WelcomeModel extends ChangeNotifier {
   /// Loads available languages.
   Future<void> loadLanguages() async {
     assert(_languageList.isEmpty);
-    final languages =
-        await loadLocalizedLanguages(AppLocalizations.supportedLocales);
+    final languages = await loadLocalizedLanguages(supportedLocales);
     _languageList.addAll(languages);
     log.info('Loaded ${languages.length} languages');
     notifyListeners();

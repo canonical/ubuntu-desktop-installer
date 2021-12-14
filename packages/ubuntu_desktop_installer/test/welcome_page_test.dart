@@ -20,7 +20,7 @@ void main() {
 
   Future<void> setUpApp(WidgetTester tester) async {
     app = MaterialApp(
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
       home: Flavor(
