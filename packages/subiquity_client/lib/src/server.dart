@@ -118,6 +118,7 @@ abstract class SubiquityServer {
         await Future.delayed(const Duration(seconds: 1));
       }
     }
+    await client.close();
   }
 
   static File _pidFile() {
