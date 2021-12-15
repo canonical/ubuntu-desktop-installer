@@ -12,7 +12,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return '우분투 설치';
+    return '$RELEASE 설치';
   }
 
   @override
@@ -50,34 +50,34 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return '우분투 체험하기';
+    return '$RELEASE 체험하기';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return '컴퓨터에서 변경사항을 만들지 않고 $RELEASE를 체험하실 수 있습니다.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return '우분투 설치하기';
+    return '$RELEASE 설치하기';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return '우분투를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
+    return '$RELEASE를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return '<a href=\"$url\">릴리즈 노트</a>를 읽어보십시오.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST 끄기';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전 Windows 에서 꺼야 합니다.';
 
   @override
   String instructionsForRST(Object url) {
@@ -91,7 +91,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseYourKeyboardLayout => '키보드 레이아웃을 선택하십시오:';
 
   @override
-  String get typeToTest => '키보드를 테스트해보려면 이 곳을 사용하십시오';
+  String get typeToTest => '키보드를 테스트 해보려면 이 곳을 사용하십시오';
 
   @override
   String get detectLayout => '키보드 레이아웃 감지';
@@ -106,34 +106,76 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configureSecureBootTitle => 'Secure Boot 구성';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => '서드파티 드라이버 소프트웨어 설치를 선택 하시려면, Secure Boot를 꺼야 합니다.\n이를 위해 지금 보안 키를 지정하고, 시스템 다시 시작 시 입력해야 합니다.';
 
   @override
   String get configureSecureBootOption => 'Secure Boot 구성';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => '보안 키 선택';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => '보안 키 확인';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => '지금은 드라이버 소프트웨어 설치하지 않기';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => '소프트웨어 & 업데이트 에서 나중에 설치하실 수 있습니다.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => '보안 키가 필요합니다';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => '보안 키가 일치하지 않습니다';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get connectToInternetPageTitle => '인터넷에 연결하기';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블을 연결하거나, Wi-Fi 네트워크를 선택하십시오';
+
+  @override
+  String get useWiredConnection => '유선 연결 사용';
+
+  @override
+  String get noWiredConnection => '유선 연결 감지 안됨';
+
+  @override
+  String get wiredDisabled => '유선 연결이 꺼져 있음';
+
+  @override
+  String get wiredMustBeEnabled => '이 컴퓨터에서 이더넷 연결을 사용하려면, 유선 연결이 반드시 활성화 되어야 합니다';
+
+  @override
+  String get enableWired => '유선 연결 활성화';
+
+  @override
+  String get selectWifiNetwork => 'Wi-Fi 네트워크에 연결';
+
+  @override
+  String get noInternet => '지금은 인터넷에 연결하지 않기';
+
+  @override
+  String get wirelessNetworkingDisabled => '무선 네트워킹 비활성화됨';
+
+  @override
+  String get noWifiDevicesDetected => '감지된 Wi-Fi 장치가 없음';
+
+  @override
+  String get wifiMustBeEnabled => '이 컴퓨터에서 Wi-Fi를 사용하려면, 무선 네트워킹이 반드시 활성화 되어야 합니다';
+
+  @override
+  String get enableWifi => 'Wi-Fi 활성화';
+
+  @override
+  String get connectButtonText => '연결하기';
+
+  @override
+  String get updatesOtherSoftwarePageTitle => '업데이트 및 다른 소프트웨어';
+
+  @override
+  String get updatesOtherSoftwarePageDescription => '어떤 앱을 설치하고 시작하시겠습니까?';
 
   @override
   String get normalInstallationTitle => '일반 설치';
@@ -145,44 +187,44 @@ class AppLocalizationsKo extends AppLocalizations {
   String get minimalInstallationTitle => '최소 설치';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => '웹 브라우저와 기본 유틸리티.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => '기타 설정';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => '그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => '보안 키 선택';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'license terms디스크를 암호화하면 컴퓨터를 분실했을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n${RELEASE} 밖의 파일은 암호화 되지 않습니다.';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => '보안 키 선택';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => '보안 키 확인';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => '보안 키가 필요합니다';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => '보안 키가 일치하지 않습니다';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => '설치 형식';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -194,12 +236,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return '디스크 지우고 $DISTRO 설치';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">경고:</font> 모든 프로그램, 문서, 사진, 음악 및 모든 운영체제에 있는 다른 파일까지 모두 삭제됩니다.';
   }
 
   @override
@@ -209,69 +251,69 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeAdvancedTitle => '고급 기능';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => '선택 안 함';
 
   @override
   String get installationTypeNoneSelected => 'None selected';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return '새 우분투 설치에 LVM 사용';
+    return '새 $RELEASE 설치에 LVM 사용';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM 선택됨';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return '보안을 위해 새 $RELEASE 설치 암호화';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => '다음 단계에서 보안 키를 선택합니다.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => '실험적 기능: 디스크 지우기 및 ZFS 사용';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS 선택됨';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return '$os 지우고 다시 설치';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">경고:</font> $os에 있는 모든 프로그램, 문서, 사진, 음악 및 다른 파일을 삭제합니다.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$product을(를) $os와 나란히 설치';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => '다른 방법';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return '파티션을 직접 만들고 크기를 조절 하거나, $DISTRO에 대해 여러 파티션을 선택할 수 있습니다';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return '디스크 지우고 $DISTRO 설치';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => '드라이브 선택:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => '디스크 전체가 사용됩니다:';
 
   @override
   String get selectGuidedStorageInstallNow => '지금 설치';
@@ -280,46 +322,52 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allocateDiskSpace => '디스크 공간 할당';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => '설치 시작하기';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => '장치';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => '형식';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => '마운트 위치';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => '크기';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => '사용됨';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => '시스템';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => '남은 공간';
 
   @override
   String get newPartitionTable => '새 파티션 테이블';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+
+  @override
+  String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
+
+  @override
+  String get partitionCreateTitle => '파티션 만들기';
 
   @override
   String get partitionEditTitle => '파티션 편집';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => '크기:';
 
   @override
   String get partitionUnitB => 'B';
@@ -334,22 +382,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => '새 파티션 유형:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => '주';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => '논리';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => '새 파티션 위치:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => '이 공간이 시작하는 지점';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => '이 공간이 끝나는 지점';
 
   @override
   String get partitionFormatLabel => 'Used as:';
@@ -400,13 +448,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatReiserFS => 'ReiserFS 파일 시스템';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS 루트 파일 시스템';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => '파티션 포맷';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => '마운트 위치:';
 
   @override
   String get whoAreYouPageTitle => '당신은 누구십니까?';
@@ -421,52 +469,52 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageRealNameLabel => '이름';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => '이름이 필요합니다';
 
   @override
   String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => '다른 컴퓨터와 통신할 때 사용하는 이름 입니다.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => '컴퓨터 이름이 필요합니다';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => '올바르지 않은 컴퓨터 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => '사용자 이름 선택';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => '사용자 이름이 필요합니다';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => '올바르지 않은 사용자 이름 입니다';
 
   @override
   String get whoAreYouPagePasswordLabel => '암호 선택';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => '암호가 필요합니다';
 
   @override
   String get whoAreYouPageConfirmPasswordLabel => '암호 확인';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => '디스크에 변경사항 쓰기';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -474,7 +522,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => '다음과 같은 파티션이 포맷됩니다:';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
@@ -487,50 +535,50 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => '모양을 선택하십시오';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => '어두움';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => '밝음';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => '모든 것이 밝고 선명해요';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => '안녕 내 오랜 친구 어둠이여';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => '설치 완료';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** 설치가 완료 되었으며 사용할 준비가 되었습니다.';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return '$system 으(로) 다시 시작';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => '시스템 종료';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker 끄기';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Windows로 다시 시작';
 }

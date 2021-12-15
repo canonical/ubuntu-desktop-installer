@@ -12,55 +12,55 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'ரத்து செய்';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'மாற்று';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'சரி';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'இல்லை';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'மீட்டல்';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'ஆம்';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'நல்வரவு';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'சோதி அல்லது நிறுவு';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'நிறுவலை பழுதுபார்';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'சோதி $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் $RELEASEஐ சோதிக்கலாம்.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'நிறுவு$RELEASE';
   }
 
   @override
@@ -91,7 +91,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்';
 
   @override
   String get detectLayout => 'Detect Keyboard Layout';
@@ -130,19 +130,61 @@ class AppLocalizationsTa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
 
   @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Updates and other software';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'இயல்பான நிறுவல்';
 
   @override
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'குறைந்தபட்ச  நிறுவல்';
 
   @override
   String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
@@ -182,7 +224,7 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'நிறுவல் வகை';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -190,7 +232,7 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'இந்த கணினியில் தற்போது எந்த இயங்கு தளங்களும் கண்டறியப்படவில்லை.என்ன செய்ய விரும்புகிறீர்கள்?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -203,16 +245,16 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'மேம்பட்ட அம்சங்கள்...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'மேம்பட்ட அம்சங்கள்';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'எதுவும் இல்லை';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'எதுவும் தேர்வாகவில்லை';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -274,7 +316,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'இப்போது நிறுவு';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
@@ -286,40 +328,46 @@ class AppLocalizationsTa extends AppLocalizations {
   String get diskHeadersDevice => 'Device';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'வகை';
 
   @override
   String get diskHeadersMountPoint => 'Mount point';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'அளவு';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'பயன்படுத்தப்பட்ட அளவு';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'கணினி';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'காலி இடம்';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'புதிய பகிர்வு அட்டவணை';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'பகிர்வை உருவாக்கு';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'பகிர்வைத் திருத்து';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'அளவு:';
 
   @override
   String get partitionUnitB => 'B';
@@ -328,31 +376,31 @@ class AppLocalizationsTa extends AppLocalizations {
   String get partitionUnitKB => 'KB';
 
   @override
-  String get partitionUnitMB => 'MB';
+  String get partitionUnitMB => 'எம்பி';
 
   @override
-  String get partitionUnitGB => 'GB';
+  String get partitionUnitGB => 'ஜிபி';
 
   @override
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'முதன்மை';
 
   @override
   String get partitionTypeLogical => 'Logical';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'புதிய பகிர்வுக்கான இடம்:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'இந்த இடத்தின் தொடக்கத்திலிருந்து';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'இந்த இடத்தின் முடிவில்';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'பயன்படுத்தப்பட்ட அளவு:';
 
   @override
   String get partitionFormatExt4 => 'Ext4 journaling file system';
@@ -409,52 +457,52 @@ class AppLocalizationsTa extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'நீங்கள் யார்?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'தானியங்கியாக உள்நுழையவும்';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'உள்நுழைய எனது கடவுச்சொல் தேவை';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'உங்கள் பெயர்';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'ஒரு பெயர் தேவை';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'உங்கள் கணினியின் பெயர்';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'மற்ற கணினிகளுடன் பேசும்போது அது பயன்படுத்தும் பெயர்.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'கணினி பெயர் தேவை';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'கணினியின் பெயர் தவறானது';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'பயனர்பெயரை தேர்ந்தெடுங்கள்';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'ஒரு பயனர்பெயர் தேவை';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'பயனர்பெயர் தவறானது';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'கடவுச்சொல்லை தேர்வு செய்யவும்';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'கடவுச்சொல் தேவை';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'உங்கள் கடவுச்சொல்லை உறுதிப்படுத்தவும்';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
@@ -487,13 +535,13 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'உங்கள் தோற்றத்தை தேர்வு செய்யவும்';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'கருமை';
 
   @override
   String get chooseYourLookPageLightSetting => 'Light';
@@ -505,7 +553,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'நிறுவல் முடிவுற்றது';
 
   @override
   String readyToUse(Object system) {

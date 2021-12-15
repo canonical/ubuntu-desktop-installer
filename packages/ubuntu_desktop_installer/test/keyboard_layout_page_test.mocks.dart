@@ -86,14 +86,6 @@ class MockKeyboardLayoutModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
-  _i3.Future<String?> detectKeyboardLayout() =>
-      (super.noSuchMethod(Invocation.method(#detectKeyboardLayout, []),
-          returnValue: Future<String?>.value()) as _i3.Future<String?>);
-  @override
-  _i3.Future<String?> detectLayoutVariant() =>
-      (super.noSuchMethod(Invocation.method(#detectLayoutVariant, []),
-          returnValue: Future<String?>.value()) as _i3.Future<String?>);
-  @override
   _i3.Future<void> applyKeyboardSettings() =>
       (super.noSuchMethod(Invocation.method(#applyKeyboardSettings, []),
           returnValue: Future<void>.value(),

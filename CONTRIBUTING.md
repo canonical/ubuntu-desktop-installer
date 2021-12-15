@@ -29,13 +29,14 @@ This project has the following translation components:
 
 - [ubuntu-desktop-installer](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-desktop-installer/):
   The main translation component of the Ubuntu Desktop Installer.
-- [ubuntu-wizard](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-desktop-wizard/):
+- [ubuntu-localizations](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-localizations/):
   Common translations and language names shared with other projects.
 - [ubiquity](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubiquity/):
   A read-only glossary imported from Ubiquity.
 
-When translating the **ubuntu-desktop-installer** and **ubuntu-wizard** components,
-matching **ubiquity** translations are offered in the _Glossary_ sidebar of the translation editor.
+When translating the **ubuntu-desktop-installer** and **ubuntu-localizations** components,
+matching **ubiquity** translations are suggested in the _Automatic suggestions_ tab below,
+and matching terms are offered in the _Glossary_ sidebar of the translation editor.
 
 **NOTE**: The Weblate project is integrated with the GitHub project. Weblate pushes changes daily and
 opens a [pull request](https://github.com/canonical/ubuntu-desktop-installer/pulls) on GitHub.

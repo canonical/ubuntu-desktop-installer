@@ -130,6 +130,48 @@ class AppLocalizationsPt extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Chaves de segurança não correspondem';
 
   @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Nova tabela de partições';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
@@ -693,7 +741,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.';
+    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer arquivos fora de $RELEASE não serão criptografados.';
   }
 
   @override
@@ -756,7 +804,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Criptografar a nova instalação do $RELEASE  para maior segurança';
+    return 'Criptografar a nova instalação do $RELEASE para maior segurança';
   }
 
   @override
@@ -791,7 +839,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o $DISTRO.';
+    return 'Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o $DISTRO';
   }
 
   @override
@@ -965,7 +1013,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get whoAreYouPageComputerNameRequired => 'O nome do computador é obrigatório';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'O nome do computador não é válido';
 
   @override
   String get whoAreYouPageUsernameLabel => 'Escolha um nome de usuário';
@@ -1056,7 +1104,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get turnOffBitlockerTitle => 'Desligar BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker. Você precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

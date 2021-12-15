@@ -19,6 +19,7 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    command-chain: [ bin/launcher ]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
@@ -39,7 +40,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: 809817fdac257de1769e385a42aeaf3d5bcc2c60
+    source-commit: ce811db127fe1ce46498b83615f8faed8c7dfeb6
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -109,6 +110,7 @@ parts:
       - python3-pyudev
       - python3-systemd
       - python3-urwid
+      - util-linux
     prime:
       - -lib/systemd/system/*
 
@@ -124,6 +126,7 @@ parts:
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer

@@ -130,6 +130,48 @@ class AppLocalizationsHe extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'מפתחות האבטחה סותרים זה את זה';
 
   @override
+  String get connectToInternetPageTitle => 'התחברות לאינטרנט';
+
+  @override
+  String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
+
+  @override
+  String get useWiredConnection => 'להשתמש בחיבור קווי';
+
+  @override
+  String get noWiredConnection => 'לא זוהה חיבור קווי';
+
+  @override
+  String get wiredDisabled => 'החיבור הקווי מושבת';
+
+  @override
+  String get wiredMustBeEnabled => 'כדי להשתמש בכבל רשת במחשב הזה יש להפעיל את החיבור הקווי';
+
+  @override
+  String get enableWired => 'להפעיל חיבור קווי';
+
+  @override
+  String get selectWifiNetwork => 'התחברות לרשת אלחוטית';
+
+  @override
+  String get noInternet => 'לא רוצה להתחבר לאינטרנט כרגע';
+
+  @override
+  String get wirelessNetworkingDisabled => 'רשת אלחוטית מושבתת';
+
+  @override
+  String get noWifiDevicesDetected => 'לא זוהו התקני רשת אלחוטית';
+
+  @override
+  String get wifiMustBeEnabled => 'כדי להשתמש ברשת אלחוטית במחשב הזה, יש להפעיל את התקשורת האלחוטית';
+
+  @override
+  String get enableWifi => 'הפעלת רשת אלחוטית';
+
+  @override
+  String get connectButtonText => 'התחברות';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'עדכונים ותכניות נוספות';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'טבלת מחיצות חדשה';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'התקן להתקנת מנהל טעינה';

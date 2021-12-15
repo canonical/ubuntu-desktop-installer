@@ -8,7 +8,7 @@ class AppLocalizationsCa extends AppLocalizations {
   AppLocalizationsCa([String locale = 'ca']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Instal·lador de l\'Ubuntu per a l\'escriptori';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -16,31 +16,31 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Cancel·la';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Canvia';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'D\'acord';
 
   @override
   String get noButtonText => 'No';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Reinicia';
 
   @override
   String get revertButtonText => 'Reverteix';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Sí';
 
   @override
-  String get welcome => 'Benvingut';
+  String get welcome => 'Us donem la benvinguda';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Prova o instal·la';
 
   @override
   String get repairInstallation => 'Repair installation';
@@ -112,10 +112,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get configureSecureBootOption => 'Configure Secure Boot';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Trieu una clau de seguretat';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Confirmeu la clau de seguretat';
 
   @override
   String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
@@ -128,6 +128,48 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+
+  @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';
@@ -157,24 +199,24 @@ class AppLocalizationsCa extends AppLocalizations {
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Trieu una clau de seguretat';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'El xifratge de discs protegeix els fitxers en cas que perdeu l\'ordinador. Us caldrà escriure una clau de seguretat cada cop que s\'iniciï l\'ordinador.\n\nQualssevol fitxers que no siguin dins el sistema $RELEASE no es xifraran.';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Trieu una clau de seguretat';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Confirmeu la clau de seguretat';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'Cal una clau de seguretat';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'Les claus de seguretat no coincideixen';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -186,7 +228,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'L\'ordinador actualment duu el sistema $os. Què voleu fer?';
   }
 
   @override
@@ -203,10 +245,10 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Característiques avançades…';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Característiques avançades';
 
   @override
   String get installationTypeNone => 'Cap';
@@ -252,7 +294,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Els documents, la música i la resta de fitxers personals es conservaran. Podreu triar quin sistema operatiu voleu utilitzar cada cop que engegueu l\'ordinador.';
 
   @override
   String get installationTypeManual => 'Alguna altra cosa';
@@ -274,13 +316,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'S\'utilitzarà el disc sencer:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Instal·la ara';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Comença a instal·lar';
 
   @override
   String get diskHeadersDevice => 'Dispositiu';
@@ -307,7 +349,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get freeDiskSpace => 'espai lliure';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Taula de particions nova';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
@@ -325,7 +373,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -334,7 +382,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Tipus de partició nova:';
 
   @override
   String get partitionTypePrimary => 'Primària';
@@ -343,7 +391,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionTypeLogical => 'Lògica';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Ubicació de la partició nova:';
 
   @override
   String get partitionLocationBeginning => 'Començament d\'aquest espai';
@@ -361,7 +409,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionFormatExt3 => 'Ext3 journaling file system';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Sistema de fitxers Ext2';
 
   @override
   String get partitionFormatBtrfs => 'btrfs journaling file system';
@@ -373,40 +421,40 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'Sistema de fitxers FAT';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'Sistema de fitxers FAT12';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'Sistema de fitxers FAT16';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'Sistema de fitxers FAT32';
 
   @override
   String get partitionFormatSwap => 'Swap area';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'Sistema de fitxers ISO 9660';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'Sistema de fitxers VFAT';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'Sistema de fitxers NTFS';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'Sistema de fitxers ReiserFS';
 
   @override
   String get partitionFormatZfsroot => 'ZFS root file system';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'Formata la partició';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Punt de muntatge:';
 
   @override
   String get whoAreYouPageTitle => 'Qui sou?';
@@ -418,49 +466,49 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageRequirePassword => 'Fes que calgui una contrasenya per a entrar';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'El vostre nom';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Cal un nom';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'El nom de l\'ordinador';
 
   @override
   String get whoAreYouPageComputerNameInfo => 'El nom que utilitza quan es comunica amb altres ordinadors.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'Cal un nom per a l\'ordinador';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'El nom de l\'ordinador no és vàlid';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Trieu un nom d\'usuari';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Cal un nom d\'usuari';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'El nom d\'usuari no és vàlid';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Trieu una contrasenya';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Cal una contrasenya';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Confirmeu la contrasenya';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Les contrasenyes no coincideixen';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'disc';
 
   @override
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
@@ -505,7 +553,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'S\'ha completat la instal·lació';
 
   @override
   String readyToUse(Object system) {
@@ -518,7 +566,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Atura';
 
   @override
   String get turnOffBitlockerTitle => 'Desactiva el BitLocker';
