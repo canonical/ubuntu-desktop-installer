@@ -130,46 +130,46 @@ class AppLocalizationsPl extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Klucze bezpieczeństwa nie są zgodne';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Połącz się z Internetem';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Użyj połączenia przewodowego';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Nie wykryto połączenia przewodowego';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Połączenie przewodowe jest wyłączone';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Włącz przewodowe';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Sieć bezprzewodowa wyłączona';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Nie wykryto urządzeń Wi-Fi';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Włącz Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Połącz';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aktualizacje i inne oprogramowanie';
@@ -350,6 +350,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Nowa tablica partycji';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';

@@ -263,6 +263,44 @@ void main() {
     verify(model.reformatDisk(disk)).called(1);
   });
 
+  testWidgets('confirm new partition table', (tester) async {
+    const disk = Disk(ptable: 'gpt', path: '/dev/sda');
+    final model = buildModel(
+      disks: [disk],
+      selectedDisk: disk,
+      canReformatDisk: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final resetButton = find.ancestor(
+      of: find.text(tester.lang.newPartitionTable),
+      matching: find.byType(OutlinedButton),
+    );
+    expect(resetButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(resetButton).enabled, isTrue);
+
+    await tester.tap(resetButton);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(AlertDialog), findsOneWidget);
+    verifyNever(model.reformatDisk(disk));
+
+    final continueButton = find.descendant(
+      of: find.byType(AlertDialog),
+      matching: find.widgetWithText(
+        OutlinedButton,
+        tester.ulang.continueAction,
+      ),
+    );
+    expect(continueButton, findsOneWidget);
+
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(AlertDialog), findsNothing);
+    verify(model.reformatDisk(disk)).called(1);
+  });
+
   testWidgets('revert', (tester) async {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));

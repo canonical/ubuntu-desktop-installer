@@ -405,6 +405,10 @@ class MockNetworkService extends _i1.Mock implements _i5.NetworkService {
       (super.noSuchMethod(Invocation.getter(#connectivityCheckUri),
           returnValue: '') as String);
   @override
+  _i2.NetworkManagerState get state => (super.noSuchMethod(
+      Invocation.getter(#state),
+      returnValue: _i2.NetworkManagerState.unknown) as _i2.NetworkManagerState);
+  @override
   _i2.NetworkManagerSettings get settings =>
       (super.noSuchMethod(Invocation.getter(#settings),
               returnValue: _FakeNetworkManagerSettings_1())

@@ -160,6 +160,9 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
+    final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup());
+
     final service = MockKeyboardService();
     when(service.layouts).thenReturn([]);
 
@@ -167,7 +170,7 @@ void main() {
       MultiProvider(
         providers: [
           Provider<KeyboardService>.value(value: service),
-          Provider<SubiquityClient>(create: (_) => MockSubiquityClient()),
+          Provider<SubiquityClient>.value(value: client),
         ],
         child: tester.buildApp(KeyboardLayoutPage.create),
       ),

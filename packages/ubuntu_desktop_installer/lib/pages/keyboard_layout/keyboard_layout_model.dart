@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:keyboard_info/keyboard_info.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -127,37 +126,21 @@ class KeyboardLayoutModel extends ChangeNotifier {
   /// variant.
   Future<void> init() async {
     await _keyboardService.load(_client);
-    final detectedLayout = await detectKeyboardLayout();
+    log.info('Loaded ${_keyboardService.layouts.length} keyboard layouts');
+
+    final keyboard = await _client.keyboard();
     _selectedLayoutIndex = _keyboardService.layouts.indexWhere((layout) {
-      return layout.code == detectedLayout;
+      return (layout.code ?? '') == (keyboard.setting?.layout ?? '');
     });
     if (_selectedLayoutIndex > -1) {
-      final detectedVariant = await detectLayoutVariant();
       _selectedVariantIndex = _selectedLayout!.variants?.indexWhere((variant) {
-            return (variant.code ?? '') == (detectedVariant ?? '');
+            return (variant.code ?? '') == (keyboard.setting?.variant ?? '');
           }) ??
           -1;
     }
     log.info(
         'Initialized ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     notifyListeners();
-  }
-
-  KeyboardInfo? __info;
-  Future<KeyboardInfo> _getKeyboardInfo() async {
-    return __info ??= await getKeyboardInfo();
-  }
-
-  /// Detects the current system keyboard layout.
-  @visibleForTesting
-  Future<String?> detectKeyboardLayout() async {
-    return _getKeyboardInfo().then((info) => info.layout);
-  }
-
-  /// Detects the current system keyboard layout variant.
-  @visibleForTesting
-  Future<String?> detectLayoutVariant() {
-    return _getKeyboardInfo().then((info) => info.variant);
   }
 
   /// Applies the selected keyboard layout and variant to the system.

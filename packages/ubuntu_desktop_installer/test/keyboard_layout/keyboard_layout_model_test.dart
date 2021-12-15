@@ -28,6 +28,11 @@ const testLayouts = <KeyboardLayout>[
   ),
 ];
 
+KeyboardSetup testSetup({required String? layout, required String? variant}) {
+  final setting = KeyboardSetting(layout: layout, variant: variant);
+  return KeyboardSetup(setting: setting);
+}
+
 @GenerateMocks([KeyboardService, ProcessRunner])
 void main() {
   late MockProcessRunner processRunner;
@@ -39,13 +44,15 @@ void main() {
   });
 
   group('detect layout and variant when', () {
+    late MockSubiquityClient client;
     late MockKeyboardService keyboard;
-    late TestKeyboardLayoutModel model;
+    late KeyboardLayoutModel model;
 
     setUp(() {
+      client = MockSubiquityClient();
       keyboard = MockKeyboardService();
-      model = TestKeyboardLayoutModel(
-        client: MockSubiquityClient(),
+      model = KeyboardLayoutModel(
+        client: client,
         keyboardService: keyboard,
         processRunner: MockProcessRunner(),
       );
@@ -53,6 +60,9 @@ void main() {
 
     test('layouts=[]', () async {
       when(keyboard.layouts).thenReturn([]);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-variants', variant: 'variant1');
+      });
 
       await model.init();
       expect(model.selectedLayoutIndex, equals(-1));
@@ -61,9 +71,10 @@ void main() {
 
     test('layout=null and variant=null', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: null, variant: null);
+      });
 
-      model.layout = null;
-      model.variant = null;
       await model.init();
       expect(model.selectedLayoutIndex, equals(-1));
       expect(model.selectedVariantIndex, equals(-1));
@@ -71,9 +82,10 @@ void main() {
 
     test('layout=unknown and variant=unknown', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'unknown', variant: 'unknown');
+      });
 
-      model.layout = 'unknown';
-      model.variant = 'unknown';
       await model.init();
       expect(model.selectedLayoutIndex, equals(-1));
       expect(model.selectedVariantIndex, equals(-1));
@@ -81,19 +93,21 @@ void main() {
 
     test('variants=null and variant=null', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'null-variants', variant: null);
+      });
 
-      model.layout = 'null-variants';
-      model.variant = null;
       await model.init();
       expect(model.selectedLayoutIndex, equals(0));
       expect(model.selectedVariantIndex, equals(-1));
     });
 
     test('variants=null and variant=unknown', () async {
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'null-variants', variant: 'unknown');
+      });
       when(keyboard.layouts).thenReturn(testLayouts);
 
-      model.layout = 'null-variants';
-      model.variant = 'unknown';
       await model.init();
       expect(model.selectedLayoutIndex, equals(0));
       expect(model.selectedVariantIndex, equals(-1));
@@ -101,9 +115,10 @@ void main() {
 
     test('variants=[] and variant=null', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'empty-variants', variant: null);
+      });
 
-      model.layout = 'empty-variants';
-      model.variant = null;
       await model.init();
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(-1));
@@ -111,9 +126,10 @@ void main() {
 
     test('variants=[] and variant=unknown', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'empty-variants', variant: 'unknown');
+      });
 
-      model.layout = 'empty-variants';
-      model.variant = 'unknown';
       await model.init();
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(-1));
@@ -121,9 +137,10 @@ void main() {
 
     test('variants=[null] and variant=null', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-null-variants', variant: null);
+      });
 
-      model.layout = 'with-null-variants';
-      model.variant = null;
       await model.init();
       expect(model.selectedLayoutIndex, equals(2));
       expect(model.selectedVariantIndex, equals(0));
@@ -131,9 +148,10 @@ void main() {
 
     test('variants=[null] and variant=unknown', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-null-variants', variant: 'unknown');
+      });
 
-      model.layout = 'with-null-variants';
-      model.variant = 'unknown';
       await model.init();
       expect(model.selectedLayoutIndex, equals(2));
       expect(model.selectedVariantIndex, equals(-1));
@@ -141,9 +159,10 @@ void main() {
 
     test('variant=null', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-variants', variant: null);
+      });
 
-      model.layout = 'with-variants';
-      model.variant = null;
       await model.init();
       expect(model.selectedLayoutIndex, equals(3));
       expect(model.selectedVariantIndex, equals(-1));
@@ -151,9 +170,10 @@ void main() {
 
     test('variant=unknown', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-variants', variant: 'unknown');
+      });
 
-      model.layout = 'with-variants';
-      model.variant = 'unknown';
       await model.init();
       expect(model.selectedLayoutIndex, equals(3));
       expect(model.selectedVariantIndex, equals(-1));
@@ -161,9 +181,10 @@ void main() {
 
     test('all ok', () async {
       when(keyboard.layouts).thenReturn(testLayouts);
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup(layout: 'with-variants', variant: 'variant2');
+      });
 
-      model.layout = 'with-variants';
-      model.variant = 'variant2';
       await model.init();
       expect(model.selectedLayoutIndex, equals(3));
       expect(model.selectedVariantIndex, equals(1));
@@ -172,7 +193,7 @@ void main() {
 
   group('layout and variant', () {
     late MockKeyboardService keyboard;
-    late TestKeyboardLayoutModel model;
+    late KeyboardLayoutModel model;
 
     setUp(() {
       keyboard = MockKeyboardService();
@@ -184,7 +205,7 @@ void main() {
         ]),
       ]);
 
-      model = TestKeyboardLayoutModel(
+      model = KeyboardLayoutModel(
         client: MockSubiquityClient(),
         keyboardService: keyboard,
         processRunner: processRunner,
@@ -302,7 +323,7 @@ void main() {
       ]),
     ]);
 
-    final model = TestKeyboardLayoutModel(
+    final model = KeyboardLayoutModel(
       client: client,
       keyboardService: keyboard,
       processRunner: processRunner,
@@ -315,26 +336,4 @@ void main() {
     verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
         .called(1);
   });
-}
-
-// A normal KeyboardLayoutModel with overridden detectFoo() methods to eliminate
-// the keyboard_info dependency and to return specific values for testing.
-class TestKeyboardLayoutModel extends KeyboardLayoutModel {
-  TestKeyboardLayoutModel({
-    required SubiquityClient client,
-    required KeyboardService keyboardService,
-    required ProcessRunner processRunner,
-  }) : super(
-            client: client,
-            keyboardService: keyboardService,
-            processRunner: processRunner);
-
-  String? layout;
-  String? variant;
-
-  @override
-  Future<String?> detectKeyboardLayout() async => layout;
-
-  @override
-  Future<String?> detectLayoutVariant() async => variant;
 }

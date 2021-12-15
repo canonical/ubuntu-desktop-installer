@@ -6,7 +6,7 @@ import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru/yaru.dart' as yaru;
+import 'package:yaru/yaru.dart';
 
 import 'l10n.dart';
 import 'pages.dart';
@@ -92,8 +92,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   static FlavorData get defaultFlavor {
     return FlavorData(
       name: 'Ubuntu',
-      theme: yaru.lightTheme,
-      darkTheme: yaru.darkTheme,
+      theme: yaruLight,
+      darkTheme: yaruDark,
     );
   }
 
@@ -113,7 +113,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         themeMode: Settings.of(context).theme,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
+        supportedLocales: supportedLocales,
         home: buildApp(context),
       ),
     );

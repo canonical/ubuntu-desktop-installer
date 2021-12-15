@@ -24,7 +24,6 @@ dependencies:
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
   intl: ^0.17.0
-  keyboard_info: ^0.2.0
   nm: ^0.4.1
   provider: ^6.0.0
   flutter_markdown: ^0.6.2
@@ -41,7 +40,7 @@ dependencies:
   udev:
     path: ../udev
   url_launcher: ^6.0.3
-  yaru: ^0.1.8
+  yaru: ^0.2.0
   yaru_icons: ^0.0.8
 
 dev_dependencies:
