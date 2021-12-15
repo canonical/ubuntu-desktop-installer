@@ -113,6 +113,7 @@ abstract class SubiquityServer {
     for (var i = 0; i < 10; ++i) {
       try {
         await client.send(request);
+        await client.close();
         break;
       } on Exception catch (_) {
         await Future.delayed(const Duration(seconds: 1));
