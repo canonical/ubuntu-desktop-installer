@@ -41,4 +41,26 @@ void main() {
 
     expect(state.hovered, isTrue);
   });
+
+  testWidgets('title text style', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: OptionCard(
+          title: Text('title'),
+          selected: false,
+          onSelected: () {},
+        ),
+      ),
+    );
+
+    final title = find.text('title');
+    expect(title, findsOneWidget);
+
+    final titleStyle = DefaultTextStyle.of(tester.element(title)).style;
+    expect(titleStyle, isNotNull);
+
+    final theme = Theme.of(tester.element(title)).textTheme;
+    expect(titleStyle.color, equals(theme.bodyText2!.color));
+    expect(titleStyle.fontSize, greaterThan(theme.bodyText2!.fontSize!));
+  });
 }

@@ -94,10 +94,10 @@ class OptionCardState extends State<OptionCard> {
             Align(
               alignment: Alignment.centerLeft,
               child: DefaultTextStyle(
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 19,
-                ),
+                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19,
+                    ),
                 child: widget.title ?? const SizedBox.shrink(),
               ),
             ),
