@@ -22,6 +22,12 @@ export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
-# autoinstall is explicitly disabled until UI support is present.
-# Remove this autoinstall argument when that is resolved.
-$PYTHON -m subiquity.cmd.server --autoinstall=""
+
+args=()
+if grep -qv "experimental-autoinstall" /proc/cmdline; then
+    # autoinstall is explicitly disabled until UI support is present.
+    # Remove this autoinstall argument when that is resolved.
+    args+=(--autoinstall="")
+fi
+
+$PYTHON -m subiquity.cmd.server "${args[@]}"
