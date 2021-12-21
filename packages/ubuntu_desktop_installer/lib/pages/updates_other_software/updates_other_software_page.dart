@@ -5,6 +5,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'updates_other_software_model.dart';
 
 class UpdatesOtherSoftwarePage extends StatefulWidget {
@@ -74,6 +75,11 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         WizardAction.next(
           context,
           onActivated: () async {
+            final telemetry =
+                Provider.of<TelemetryService>(context, listen: false);
+            telemetry.setMinimal(
+                enabled: model.installationMode == InstallationMode.minimal);
+            telemetry.setRestrictedAddons(enabled: model.installThirdParty);
             await model.selectInstallationSource();
             Wizard.of(context).next();
           },

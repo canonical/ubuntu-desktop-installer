@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
+import 'package:ubuntu_desktop_installer/services/telemetry_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -13,7 +14,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'updates_other_software_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([UpdateOtherSoftwareModel])
+@GenerateMocks([UpdateOtherSoftwareModel, TelemetryService])
 void main() {
   UpdateOtherSoftwareModel buildModel({
     InstallationMode? installationMode,
@@ -32,6 +33,7 @@ void main() {
       providers: [
         ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(value: model),
         Provider<SubiquityClient>.value(value: client),
+        Provider<TelemetryService>.value(value: MockTelemetryService()),
       ],
       child: UpdatesOtherSoftwarePage(),
     );

@@ -66,6 +66,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
       Provider(create: (_) => JournalService(journalUnit)),
       Provider(create: (_) => KeyboardService()),
       Provider(create: (_) => NetworkService()),
+      Provider(create: (_) => TelemetryService()),
       Provider(create: (_) => UdevService()),
     ],
     onInitSubiquity: (client) {
@@ -278,7 +279,24 @@ class _UbuntuDesktopInstallerWizardState
           builder: InstallationCompletePage.create,
         ),
       },
+      observers: [
+        _UbuntuDesktopInstallerWizardObserver(
+            Provider.of<TelemetryService>(context))
+      ],
     );
+  }
+}
+
+class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
+  _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
+
+  final TelemetryService _telemetryService;
+
+  @override
+  void didPush(Route route, Route? previousRoute) {
+    if (route.settings.name != null) {
+      _telemetryService.addStage(route.settings.name!);
+    }
   }
 }
 

@@ -127,6 +127,33 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           onActivated: () async {
             await model.save();
 
+            final telemetry = Provider.of<TelemetryService>(context);
+            // All possible values for the partition method
+            // were extracted from Ubiquity's ubi-partman.py
+            // (see PageGtk.get_autopartition_choice()).
+            if (model.installationType == InstallationType.erase) {
+              telemetry.setPartitionMethod('use_device');
+            } else if (model.installationType == InstallationType.reinstall) {
+              telemetry.setPartitionMethod('reinstall_partition');
+            } else if (model.installationType == InstallationType.alongside) {
+              telemetry.setPartitionMethod('resize_use_free');
+            } else if (model.installationType == InstallationType.manual) {
+              telemetry.setPartitionMethod('manual');
+            }
+            if (model.advancedFeature == AdvancedFeature.lvm) {
+              telemetry.setPartitionMethod('use_lvm');
+            } else if (model.advancedFeature == AdvancedFeature.zfs) {
+              telemetry.setPartitionMethod('use_zfs');
+            }
+            final hasEncryption =
+                false; // TODO: get this value from _UbuntuDesktopInstallerModel
+            if (hasEncryption && model.advancedFeature != AdvancedFeature.zfs) {
+              telemetry.setPartitionMethod('use_crypto');
+            }
+            // TODO: map upgrading the current Ubuntu installation without
+            // wiping the user's home directory (not implemented yet)
+            // to the 'reuse_partition' method.
+
             Wizard.of(context).next(arguments: model.installationType);
           },
         ),

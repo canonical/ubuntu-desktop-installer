@@ -34,6 +34,7 @@ void main() {
       Provider<SubiquityClient>.value(value: client),
       Provider(create: (context) => DiskStorageService(client)),
       Provider(create: (context) => KeyboardService()),
+      Provider(create: (context) => TelemetryService()),
       ChangeNotifierProvider(create: (_) => Settings(MockGSettings())),
     ], child: UbuntuDesktopInstallerApp()));
     await tester.pumpAndSettle();

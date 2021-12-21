@@ -6,16 +6,20 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
+import 'package:ubuntu_desktop_installer/services/telemetry_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import 'installation_complete_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([InstallationCompleteModel])
+@GenerateMocks([InstallationCompleteModel, TelemetryService])
 void main() {
   Widget buildPage(InstallationCompleteModel model) {
-    return Provider<InstallationCompleteModel>.value(
-      value: model,
+    return MultiProvider(
+      providers: [
+        Provider<InstallationCompleteModel>.value(value: model),
+        Provider<TelemetryService>.value(value: MockTelemetryService()),
+      ],
       child: InstallationCompletePage(),
     );
   }
