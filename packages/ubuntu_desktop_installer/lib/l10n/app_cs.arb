@@ -306,7 +306,7 @@
   "@shutdown": {},
   "chooseYourLookPageLightBodyText": "Vše je světlé a svítivé",
   "@chooseYourLookPageLightBodyText": {},
-  "restartInto": "Restartovat do {systému}",
+  "restartInto": "Restartovat do {system}",
   "@restartInto": {
     "type": "text",
     "placeholders": {
