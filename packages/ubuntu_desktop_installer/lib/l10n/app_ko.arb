@@ -8,7 +8,7 @@
   "@okButtonText": {},
   "yesButtonText": "예",
   "@yesButtonText": {},
-  "tryOrInstallPageTitle": "체험해 보거나 설치하기",
+  "tryOrInstallPageTitle": "체험 또는 설치",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "설치 복구",
   "@repairInstallation": {},
@@ -144,11 +144,11 @@
   },
   "turnOffRST": "RST 끄기",
   "@turnOffRST": {},
-  "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전 Windows 에서 꺼야 합니다.",
+  "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.",
   "@turnOffRSTDescription": {},
   "dontInstallDriverSoftwareNow": "지금은 드라이버 소프트웨어 설치하지 않기",
   "@dontInstallDriverSoftwareNow": {},
-  "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트 에서 나중에 설치하실 수 있습니다.",
+  "dontInstallDriverSoftwareNowDescription": "Software & Updates 에서 나중에 설치하실 수 있습니다.",
   "@dontInstallDriverSoftwareNowDescription": {},
   "updatesOtherSoftwarePageTitle": "업데이트 및 다른 소프트웨어",
   "@updatesOtherSoftwarePageTitle": {},
@@ -238,7 +238,7 @@
   "@installThirdPartySubtitle": {},
   "chooseSecurityKeyTitle": "보안 키 선택",
   "@chooseSecurityKeyTitle": {},
-  "chooseSecurityKeyHeader": "license terms디스크를 암호화하면 컴퓨터를 분실했을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n{RELEASE} 밖의 파일은 암호화 되지 않습니다.",
+  "chooseSecurityKeyHeader": "디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n{RELEASE} 밖의 파일은 암호화 되지 않습니다.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
     "placeholders": {
@@ -283,7 +283,7 @@
   "@updatesOtherSoftwarePageDescription": {},
   "otherOptions": "기타 설정",
   "@otherOptions": {},
-  "installationTypeZFS": "실험적 기능: 디스크 지우기 및 ZFS 사용",
+  "installationTypeZFS": "실험적 기능: 디스크 지우고 ZFS 사용",
   "@installationTypeZFS": {},
   "installationTypeAlongside": "{product}을(를) {os}와 나란히 설치",
   "@installationTypeAlongside": {
@@ -455,5 +455,9 @@
       "partition": {},
       "format": {}
     }
+  },
+  "writeChangesFallbackSerial": "디스크",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
   }
 }
