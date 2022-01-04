@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 /// Row(
 ///   children: [
 ///     OptionCard(
-///       imageAsset: 'assets/foo.png',
-///       titleText: 'Foo',
-///       bodyText: 'Description...',
+///       image: Image.asset('assets/foo.png'),
+///       title: Text('Foo'),
+///       body: Text('Description...'),
 ///       selected: model.option == MyOption.foo,
 ///       onSelected: () => model.option = Option.foo,
 ///     ),
 ///     OptionCard(
-///       imageAsset: 'assets/bar.png',
-///       titleText: 'Bar',
-///       bodyText: 'Description...',
+///       image: Image.asset('assets/bar.png'),
+///       title: Text('Bar'),
+///       body: Text('Description...'),
 ///       selected: model.option == MyOption.bar,
 ///       onSelected: () => model.option = MyOption.bar,
 ///     ),
@@ -27,21 +27,21 @@ class OptionCard extends StatefulWidget {
   /// Creates an option card with the given properties.
   const OptionCard({
     Key? key,
-    this.imageAsset,
-    this.titleText,
-    this.bodyText,
+    this.image,
+    this.title,
+    this.body,
     required this.selected,
     required this.onSelected,
   }) : super(key: key);
 
   /// An image asset that illustrates the option.
-  final String? imageAsset;
+  final Widget? image;
 
-  /// A short title below the image.
-  final String? titleText;
+  /// A title below the image. It should be a short text.
+  final Widget? title;
 
-  /// A longer descriptive body text below the title.
-  final String? bodyText;
+  /// A body below the title. It should be a longer descriptive text.
+  final Widget? body;
 
   /// Whether the option is currently selected.
   final bool selected;
@@ -88,24 +88,22 @@ class OptionCardState extends State<OptionCard> {
             const SizedBox(height: 20),
             Expanded(
               flex: 2,
-              child: widget.imageAsset != null
-                  ? Image.asset(widget.imageAsset!)
-                  : const SizedBox.shrink(),
+              child: widget.image ?? const SizedBox.shrink(),
             ),
             const SizedBox(height: 40),
             Align(
               alignment: Alignment.centerLeft,
-              child: Text(
-                widget.titleText ?? '',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 19,
-                ),
+              child: DefaultTextStyle(
+                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19,
+                    ),
+                child: widget.title ?? const SizedBox.shrink(),
               ),
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: Text(widget.bodyText ?? ''),
+              child: widget.body ?? const SizedBox.shrink(),
             ),
           ]),
         ),

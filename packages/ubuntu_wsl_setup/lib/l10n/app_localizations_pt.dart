@@ -303,7 +303,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get configurationUIMessageOfTheDayHeader => 'Mensagem do Dia (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'Novidades WSL';
 
   @override
   String get configurationUIWSLNewsSubtitle => 'Esta opção permite ao usuário controlar seu MOTD News. Selecione para habilitar a exibição do MOTD.';

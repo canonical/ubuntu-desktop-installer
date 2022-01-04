@@ -313,6 +313,8 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     ptable: json['ptable'] as String?,
     preserve: json['preserve'] as bool?,
     bootDevice: json['boot_device'] as bool?,
+    model: json['model'] as String?,
+    vendor: json['vendor'] as String?,
   );
 }
 
@@ -329,6 +331,8 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'ptable': instance.ptable,
       'preserve': instance.preserve,
       'boot_device': instance.bootDevice,
+      'model': instance.model,
+      'vendor': instance.vendor,
     };
 
 _$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {

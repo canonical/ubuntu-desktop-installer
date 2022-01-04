@@ -8,6 +8,35 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../../l10n.dart';
 import 'allocate_disk_space_model.dart';
 
+/// Shows a confirmation dialog with the given title and message.
+Future<bool> showConfirmationDialog(
+  BuildContext context, {
+  required String title,
+  required String message,
+}) async {
+  final lang = UbuntuLocalizations.of(context);
+  final result = await showDialog<bool>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: <Widget>[
+          OutlinedButton(
+            child: Text(lang.backAction),
+            onPressed: () => Navigator.of(context).pop(false),
+          ),
+          OutlinedButton(
+            child: Text(lang.continueAction),
+            onPressed: () => Navigator.of(context).pop(true),
+          ),
+        ],
+      );
+    },
+  );
+  return result == true;
+}
+
 /// Shows a dialog for creating a new partition for the given [disk].
 Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
   final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);

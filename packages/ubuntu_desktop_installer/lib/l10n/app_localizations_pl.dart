@@ -130,6 +130,48 @@ class AppLocalizationsPl extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Klucze bezpieczeństwa nie są zgodne';
 
   @override
+  String get connectToInternetPageTitle => 'Połącz się z Internetem';
+
+  @override
+  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi';
+
+  @override
+  String get useWiredConnection => 'Użyj połączenia przewodowego';
+
+  @override
+  String get noWiredConnection => 'Nie wykryto połączenia przewodowego';
+
+  @override
+  String get wiredDisabled => 'Połączenie przewodowe jest wyłączone';
+
+  @override
+  String get wiredMustBeEnabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
+
+  @override
+  String get enableWired => 'Włącz przewodowe';
+
+  @override
+  String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
+
+  @override
+  String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Sieć bezprzewodowa wyłączona';
+
+  @override
+  String get noWifiDevicesDetected => 'Nie wykryto urządzeń Wi-Fi';
+
+  @override
+  String get wifiMustBeEnabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
+
+  @override
+  String get enableWifi => 'Włącz Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Połącz';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Aktualizacje i inne oprogramowanie';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Nowa tablica partycji';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Utworzyć nową pustą tablicę partycji na tym urządzeniu?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia nowej tabeli partycji na urządzeniu, wszystkie bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
 
   @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';

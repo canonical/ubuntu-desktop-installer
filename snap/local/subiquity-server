@@ -15,7 +15,7 @@ export PYTHON=$SNAP/usr/bin/python3.8
 export PY3OR2_PYTHON=$PYTHON
 
 # set the PATH so subiquity finds curtin
-export PATH=$PATH:$SNAP/bin
+export PATH=$SNAP/bin:$PATH
 
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity

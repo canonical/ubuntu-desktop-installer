@@ -12,7 +12,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Probar Ubuntu';
+    return 'Probar $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Puede probar Ubuntu sin hacer ningún cambio en su equipo.';
+    return 'Puede probar $RELEASE sin efectuar ningún cambio en el equipo.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instalar Ubuntu';
+    return 'Instalar $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Instalar Ubuntu junto con (o reemplazando) su sistema operativo actual. No debería tardar mucho.';
+    return 'Instalar $RELEASE junto con (o en lugar de) su sistema operativo actual. No demorará mucho.';
   }
 
   @override
@@ -130,6 +130,48 @@ class AppLocalizationsEs extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claves de seguridad no coinciden';
 
   @override
+  String get connectToInternetPageTitle => 'Connect to internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+
+  @override
+  String get useWiredConnection => 'Use wired connection';
+
+  @override
+  String get noWiredConnection => 'No wired connection detected';
+
+  @override
+  String get wiredDisabled => 'Wired connection is turned off';
+
+  @override
+  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+
+  @override
+  String get enableWired => 'Enable wired';
+
+  @override
+  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get noInternet => 'I don\'t want to connect to the internet just now';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+
+  @override
+  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+
+  @override
+  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+
+  @override
+  String get enableWifi => 'Enable Wi-Fi';
+
+  @override
+  String get connectButtonText => 'Connect';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Actualizaciones y otro software';
 
   @override
@@ -161,7 +203,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'El cifrado del disco protege sus archivos en caso de extravío del equipo. Necesitará introducir una clave de seguridad cada vez que inicie el equipo.\n\nNo se cifrarán los archivos que se encuentren fuera de Ubuntu.';
+    return 'El cifrado del disco protege sus archivos en caso de extravío del equipo. Necesitará introducir una clave de seguridad cada vez que inicie el equipo.\n\nNo se cifrarán los archivos que se encuentren fuera de $RELEASE.';
   }
 
   @override
@@ -194,7 +236,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Borrar disco e instalar Ubuntu';
+    return 'Borrar disco e instalar $DISTRO';
   }
 
   @override
@@ -216,7 +258,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Utilizar LVM en la instalación nueva de Ubuntu';
+    return 'Utilizar LVM en la instalación nueva de $RELEASE';
   }
 
   @override
@@ -224,7 +266,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Cifrar la instalación nueva de Ubuntu por seguridad';
+    return 'Cifrar la instalación nueva de $RELEASE por seguridad';
   }
 
   @override
@@ -259,12 +301,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Puede crear o redimensionar las particiones por su cuenta, o bien, elegir varias particiones para Ubuntu';
+    return 'Puede crear o redimensionar las particiones por su cuenta, o bien, elegir varias particiones para $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Borrar disco e instalar Ubuntu';
+    return 'Borrar disco e instalar $DISTRO';
   }
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Tabla de particiones nueva';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Dispositivo donde instalar el cargador de arranque';
@@ -355,22 +403,22 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizada como:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Sistema de archivos transaccional Ext4';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Sistema de archivos transaccional Ext3';
 
   @override
   String get partitionFormatExt2 => 'Sistema de archivos Ext2';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'Sistema de archivos transaccional btrfs';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'Sistema de archivos transaccional JFS';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'Sistema de archivos transaccional XFS';
 
   @override
   String get partitionFormatFat => 'Sistema de archivos FAT';
@@ -400,7 +448,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionFormatReiserFS => 'Sistema de archivos ReiserFS';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'Sistema de archivos raíz ZFS';
 
   @override
   String get partitionErase => 'Formatear la partición';

@@ -130,6 +130,48 @@ class AppLocalizationsFr extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Les codes de sécurité ne correspondent pas';
 
   @override
+  String get connectToInternetPageTitle => 'Se connecter à internet';
+
+  @override
+  String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wifi';
+
+  @override
+  String get useWiredConnection => 'Utiliser une connexion câblée';
+
+  @override
+  String get noWiredConnection => 'Aucune connexion câblée détectée';
+
+  @override
+  String get wiredDisabled => 'La connexion câblée est désactivée';
+
+  @override
+  String get wiredMustBeEnabled => 'Pour utiliser Ethernet sur cet ordinateur, une connexion câblée doit être activée';
+
+  @override
+  String get enableWired => 'Activer une connexion câblée';
+
+  @override
+  String get selectWifiNetwork => 'Se connecter à un réseau Wifi';
+
+  @override
+  String get noInternet => 'Je ne souhaite pas me connecter à internet pour l\'instant';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Le réseau sans fil est désactivé';
+
+  @override
+  String get noWifiDevicesDetected => 'Aucun périphérique Wifi détecté';
+
+  @override
+  String get wifiMustBeEnabled => 'Pour utiliser le Wifi sur cet ordinateur, cette fonctionnalité doit être activée';
+
+  @override
+  String get enableWifi => 'Activer le Wifi';
+
+  @override
+  String get connectButtonText => 'Se connecter';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Mises à jour et autres logiciels';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Nouvelle table de partition';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Créer une nouvelle table de partitions sur ce périphérique ?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Vous avez sélectionné un périphérique entier à partitionner. Si vous continuez en créant une nouvelle table de partitions, toutes les partitions actuellement sur ce périphérique seront supprimées.\n\nVous pourrez annuler cette opération plus tard si vous le souhaitez.';
 
   @override
   String get bootLoaderDevice => 'Périphérique pour installer le chargeur d\'amorçage';

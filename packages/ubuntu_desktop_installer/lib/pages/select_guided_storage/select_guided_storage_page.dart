@@ -44,10 +44,9 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
 
   /// Formats a disk in a pretty way e.g. "/dev/sda ATA Maxtor (123 GB)"
   String prettyFormatStorage(Disk disk) {
-    final udev = Provider.of<UdevService>(context, listen: false);
     final fullName = <String?>[
-      udev.bySysname(disk.sysname).modelName,
-      udev.bySysname(disk.sysname).vendorName,
+      disk.model,
+      disk.vendor,
     ].where((p) => p?.isNotEmpty == true).join(' ');
 
     final size = filesize(disk.size);

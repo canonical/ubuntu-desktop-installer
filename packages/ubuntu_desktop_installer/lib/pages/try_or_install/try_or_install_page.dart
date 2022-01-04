@@ -40,9 +40,9 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.repairUbuntu,
-              imageAsset: 'assets/repair-wrench.png',
-              titleText: lang.repairInstallation,
-              bodyText: lang.repairInstallationDescription,
+              image: FlavorImage.asset('assets/repair-wrench.png'),
+              title: Text(lang.repairInstallation),
+              body: Text(lang.repairInstallationDescription),
               onSelected: () => model.selectOption(Option.repairUbuntu),
             ),
           ),
@@ -50,9 +50,9 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.tryUbuntu,
-              imageAsset: 'assets/steering-wheel.png',
-              titleText: lang.tryUbuntu(flavor.name),
-              bodyText: lang.tryUbuntuDescription(flavor.name),
+              image: FlavorImage.asset('assets/steering-wheel.png'),
+              title: Text(lang.tryUbuntu(flavor.name)),
+              body: Text(lang.tryUbuntuDescription(flavor.name)),
               onSelected: () => model.selectOption(Option.tryUbuntu),
             ),
           ),
@@ -60,9 +60,9 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.installUbuntu,
-              imageAsset: 'assets/hard-drive.png',
-              titleText: lang.installUbuntu(flavor.name),
-              bodyText: lang.installUbuntuDescription(flavor.name),
+              image: FlavorImage.asset('assets/hard-drive.png'),
+              title: Text(lang.installUbuntu(flavor.name)),
+              body: Text(lang.installUbuntuDescription(flavor.name)),
               onSelected: () => model.selectOption(Option.installUbuntu),
             ),
           ),

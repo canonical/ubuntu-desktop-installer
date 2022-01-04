@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'types.freezed.dart';
 part 'types.g.dart';
@@ -238,6 +237,8 @@ class Disk with _$Disk {
     String? ptable,
     bool? preserve,
     bool? bootDevice,
+    String? model,
+    String? vendor,
   }) = _Disk;
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
