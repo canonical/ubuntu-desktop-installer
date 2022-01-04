@@ -57,7 +57,7 @@ class WhoAreYouModel extends ChangeNotifier {
   final _loginStrategy =
       ValueNotifier<LoginStrategy>(LoginStrategy.requirePassword);
   final _productName = ValueNotifier<String>('');
-  final _obscureText = ValueNotifier<bool>(false);
+  final _obscureText = ValueNotifier<bool>(true);
 
   /// The current real name.
   String get realName => _realName.value ?? '';
