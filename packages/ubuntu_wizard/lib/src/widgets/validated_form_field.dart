@@ -56,6 +56,9 @@ class ValidatedFormField extends StatefulWidget {
   /// Enables or disables TextField (defaults to true)
   final bool enabled;
 
+  /// An optional Widget placed inside the text input.
+  final Widget? suffixIcon;
+
   /// Creates a [TextFormField] and a check mark.
   ///
   /// The `validator' helps to decide when to show the check mark.
@@ -74,6 +77,7 @@ class ValidatedFormField extends StatefulWidget {
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
+    this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
 
@@ -125,6 +129,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       decoration: InputDecoration(
         labelText: widget.labelText,
         helperText: widget.helperText,
+        suffixIcon: widget.suffixIcon,
       ),
     );
 
