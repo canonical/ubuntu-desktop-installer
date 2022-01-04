@@ -6,7 +6,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 
@@ -394,11 +393,14 @@ class BootDiskSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
-    final udev = Provider.of<UdevService>(context, listen: false);
     final lang = AppLocalizations.of(context);
 
     String prettyFormatDisk(Disk disk) {
-      return '${disk.path} ${udev.bySysname(disk.sysname).fullName} (${disk.prettySize})';
+      final fullName = <String?>[
+        disk.model,
+        disk.vendor,
+      ].where((p) => p?.isNotEmpty == true).join(' ');
+      return '${disk.path} $fullName (${disk.prettySize})';
     }
 
     return Column(

@@ -425,5 +425,9 @@
   "wiredDisabled": "Drataj retoj estas malŝaltitaj",
   "@wiredDisabled": {},
   "wiredMustBeEnabled": "Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn",
-  "@wiredMustBeEnabled": {}
+  "@wiredMustBeEnabled": {},
+  "newPartitionTableConfirmationMessage": "Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur la aparaton, ĉiuj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.",
+  "@newPartitionTableConfirmationMessage": {},
+  "newPartitionTableConfirmationTitle": "Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?",
+  "@newPartitionTableConfirmationTitle": {}
 }

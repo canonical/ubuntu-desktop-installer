@@ -28,7 +28,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get noButtonText => 'இல்லை';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'மீண்டும் இயக்கு';
 
   @override
   String get revertButtonText => 'மீட்டல்';
@@ -74,7 +74,7 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RSTயை முடக்கு';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -85,22 +85,22 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'விசைப்பலகை அமைப்பு';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'உங்களின் விசைப்பலகை அமைப்பைத் தேர்வு செய்யவும்:';
 
   @override
   String get typeToTest => 'உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'விசைப்பலகையின் அமைப்பைக் கண்டறியவும்';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

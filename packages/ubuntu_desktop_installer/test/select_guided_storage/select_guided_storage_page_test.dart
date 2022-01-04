@@ -13,11 +13,11 @@ import '../widget_tester_extensions.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 
-@GenerateMocks([SelectGuidedStorageModel, UdevDeviceInfo, UdevService])
+@GenerateMocks([SelectGuidedStorageModel])
 void main() {
   const testStorages = <Disk>[
-    Disk(path: '/dev/sda', size: 12),
-    Disk(path: '/dev/sdb', size: 23),
+    Disk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
+    Disk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
   ];
 
   SelectGuidedStorageModel buildModel({
@@ -33,21 +33,8 @@ void main() {
   }
 
   Widget buildPage(SelectGuidedStorageModel model) {
-    final udev = MockUdevService();
-    final sda = MockUdevDeviceInfo();
-    when(sda.modelName).thenReturn('SDA');
-    when(sda.vendorName).thenReturn('ATA');
-    when(udev.bySysname('sda')).thenReturn(sda);
-    final sdb = MockUdevDeviceInfo();
-    when(sdb.modelName).thenReturn('SDB');
-    when(sdb.vendorName).thenReturn('ATA');
-    when(udev.bySysname('sdb')).thenReturn(sdb);
-
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<SelectGuidedStorageModel>.value(value: model),
-        Provider<UdevService>.value(value: udev),
-      ],
+    return ChangeNotifierProvider<SelectGuidedStorageModel>.value(
+      value: model,
       child: const SelectGuidedStoragePage(),
     );
   }
@@ -63,7 +50,7 @@ void main() {
       expect(
         find.descendant(
           of: find.byTypeOf<DropdownButton<int>>(),
-          matching: find.textContaining(storage.sysname.toUpperCase()),
+          matching: find.textContaining(storage.path!),
         ),
         findsOneWidget,
       );

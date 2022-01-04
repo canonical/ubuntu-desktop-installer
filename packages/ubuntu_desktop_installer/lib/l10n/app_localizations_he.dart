@@ -352,10 +352,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get newPartitionTable => 'טבלת מחיצות חדשה';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'ליצור טבלת מחיצות ריקה בהתקן הזה?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'בחרת לחלק התקן שלם למחיצות. בחירה להמשיך ביצירת טבלת מחיצות חדשה בהתקן תסיר את כל המחיצות הנוכחיות.\n\nנא לשים לב שזאת פעולה בלתי הפיכה.';
 
   @override
   String get bootLoaderDevice => 'התקן להתקנת מנהל טעינה';

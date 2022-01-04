@@ -130,46 +130,46 @@ class AppLocalizationsOc extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claus de seguretat correspondon pas';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Se connectar a internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Utilizar una connexion filara';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Cap de connexion filara pas detectada';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'La connexion filara es desactivada';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Activar la connexion filara';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Se connectar a un ret Wifi';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Vòli pas me connectar a internet pel moment';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Lo ret sens fial es desactivat';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Cap de periferic Wifi pas detectat';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Activar lo Wifi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Se connectar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
@@ -352,10 +352,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTable => 'Taula de particion novèla';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla, totas las particions actualament sus aqueste periferics seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
