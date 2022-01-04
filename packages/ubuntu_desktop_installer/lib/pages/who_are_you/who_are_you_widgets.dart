@@ -139,8 +139,8 @@ class _PasswordFormField extends StatelessWidget {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.obscureText = !model.obscureText;
       },
-      hideTextIcon: YaruIcons.hide,
-      showTextIcon: YaruIcons.view,
+      hideTextIcon: YaruIcons.view,
+      showTextIcon: YaruIcons.hide,
     );
   }
 }
