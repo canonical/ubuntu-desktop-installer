@@ -135,9 +135,16 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       obscureText: widget.obscureText,
       enabled: widget.enabled,
       decoration: InputDecoration(
-        labelText: widget.labelText,
-        helperText: widget.helperText,
-      ),
+          labelText: widget.labelText,
+          helperText: widget.helperText,
+          suffixIcon: widget.onShowText != null
+              ? IconButton(
+                  onPressed: () => widget.onShowText ?? {},
+                  icon: Icon(widget.obscureText
+                      ? widget.showTextIcon ?? Icons.visibility_off
+                      : widget.hideTextIcon ?? Icons.visibility),
+                )
+              : null),
     );
 
     return Row(
@@ -145,20 +152,6 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
         widget.fieldWidth == null
             ? Expanded(child: formField)
             : SizedBox(width: widget.fieldWidth, child: formField),
-        SizedBox(
-          width: widget.onShowText != null ? 10 : 0,
-        ),
-        SizedBox(
-          height: widget.onShowText != null ? 40 : 0,
-          width: widget.onShowText != null ? 40 : 0,
-          child: widget.onShowText != null
-              ? TextButton(
-                  onPressed: () => widget.onShowText ?? {},
-                  child: Icon(widget.obscureText
-                      ? widget.showTextIcon ?? Icons.visibility_off
-                      : widget.hideTextIcon ?? Icons.visibility))
-              : null,
-        ),
         const SizedBox(width: 10),
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: _controller,
