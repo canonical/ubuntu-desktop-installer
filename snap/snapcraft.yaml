@@ -111,6 +111,9 @@ parts:
       - python3-systemd
       - python3-urwid
       - util-linux
+      # WSL specifics:
+      - language-selector-common
+      - locales
     prime:
       - -lib/systemd/system/*
 

@@ -2749,7 +2749,9 @@ class _$DiskTearOff {
       bool? okForGuided,
       String? ptable,
       bool? preserve,
-      bool? bootDevice}) {
+      bool? bootDevice,
+      String? model,
+      String? vendor}) {
     return _Disk(
       id: id,
       label: label,
@@ -2763,6 +2765,8 @@ class _$DiskTearOff {
       ptable: ptable,
       preserve: preserve,
       bootDevice: bootDevice,
+      model: model,
+      vendor: vendor,
     );
   }
 
@@ -2788,6 +2792,8 @@ mixin _$Disk {
   String? get ptable => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
   bool? get bootDevice => throw _privateConstructorUsedError;
+  String? get model => throw _privateConstructorUsedError;
+  String? get vendor => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2810,7 +2816,9 @@ abstract class $DiskCopyWith<$Res> {
       bool? okForGuided,
       String? ptable,
       bool? preserve,
-      bool? bootDevice});
+      bool? bootDevice,
+      String? model,
+      String? vendor});
 }
 
 /// @nodoc
@@ -2835,6 +2843,8 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? ptable = freezed,
     Object? preserve = freezed,
     Object? bootDevice = freezed,
+    Object? model = freezed,
+    Object? vendor = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -2885,6 +2895,14 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
+      model: model == freezed
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vendor: vendor == freezed
+          ? _value.vendor
+          : vendor // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2906,7 +2924,9 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       bool? okForGuided,
       String? ptable,
       bool? preserve,
-      bool? bootDevice});
+      bool? bootDevice,
+      String? model,
+      String? vendor});
 }
 
 /// @nodoc
@@ -2932,6 +2952,8 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? ptable = freezed,
     Object? preserve = freezed,
     Object? bootDevice = freezed,
+    Object? model = freezed,
+    Object? vendor = freezed,
   }) {
     return _then(_Disk(
       id: id == freezed
@@ -2982,6 +3004,14 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
+      model: model == freezed
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vendor: vendor == freezed
+          ? _value.vendor
+          : vendor // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -3002,7 +3032,9 @@ class _$_Disk implements _Disk {
       this.okForGuided,
       this.ptable,
       this.preserve,
-      this.bootDevice});
+      this.bootDevice,
+      this.model,
+      this.vendor});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -3031,10 +3063,14 @@ class _$_Disk implements _Disk {
   final bool? preserve;
   @override
   final bool? bootDevice;
+  @override
+  final String? model;
+  @override
+  final String? vendor;
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
   }
 
   @override
@@ -3070,7 +3106,11 @@ class _$_Disk implements _Disk {
                     .equals(other.preserve, preserve)) &&
             (identical(other.bootDevice, bootDevice) ||
                 const DeepCollectionEquality()
-                    .equals(other.bootDevice, bootDevice)));
+                    .equals(other.bootDevice, bootDevice)) &&
+            (identical(other.model, model) ||
+                const DeepCollectionEquality().equals(other.model, model)) &&
+            (identical(other.vendor, vendor) ||
+                const DeepCollectionEquality().equals(other.vendor, vendor)));
   }
 
   @override
@@ -3087,7 +3127,9 @@ class _$_Disk implements _Disk {
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
       const DeepCollectionEquality().hash(preserve) ^
-      const DeepCollectionEquality().hash(bootDevice);
+      const DeepCollectionEquality().hash(bootDevice) ^
+      const DeepCollectionEquality().hash(model) ^
+      const DeepCollectionEquality().hash(vendor);
 
   @JsonKey(ignore: true)
   @override
@@ -3113,7 +3155,9 @@ abstract class _Disk implements Disk {
       bool? okForGuided,
       String? ptable,
       bool? preserve,
-      bool? bootDevice}) = _$_Disk;
+      bool? bootDevice,
+      String? model,
+      String? vendor}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -3141,6 +3185,10 @@ abstract class _Disk implements Disk {
   bool? get preserve => throw _privateConstructorUsedError;
   @override
   bool? get bootDevice => throw _privateConstructorUsedError;
+  @override
+  String? get model => throw _privateConstructorUsedError;
+  @override
+  String? get vendor => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;

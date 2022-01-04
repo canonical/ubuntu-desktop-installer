@@ -14,73 +14,73 @@ class AppLocalizationsSv extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Avsluta';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Slutför';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Spara';
 
   @override
   String get setupButton => 'Setup';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Välj ditt språk';
 
   @override
   String get profileSetupTitle => 'Profile setup';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Skapa ett standard UNIX-användarkonto. För mer information besök: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Ditt namn';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Ett namn krävs';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Välj ett användarnamn';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Användarnamnet behöver inte matcha ditt Windows-användarnamn.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Välj ett lösenord';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Bekräfta ditt lösenord';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Visa avancerade alternativ nästa sida';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Ett användarnamn krävs';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Användarnamnet är ogiltigt';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Ett lösenord krävs';
 
   @override
   String get advancedSetupTitle => 'Advanced setup';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'På den här sidan kan du anpassa Ubuntu WSL efter dina behov.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Monteringsplats';
 
   @override
   String get advancedSetupMountLocationHelper => 'Location for the automount';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'Platsen är ogiltig';
 
   @override
   String get advancedSetupMountOptionHint => 'Mount option';
@@ -104,37 +104,37 @@ class AppLocalizationsSv extends AppLocalizations {
   String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Genom att välja aktiveras automatisk DISPLAY-miljöinställning. Tredjeparts X-server krävs.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'Ubuntu WSL-konfigurationsgränssnitt (experimentellt)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Interoperabilitet';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+  String get configurationUILegacyGUIIntegrationTitle => 'Äldre GUI-integration';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+  String get configurationUILegacyGUIIntegrationSubtitle => 'Det här alternativet aktiverar äldre GUI-integration på Windows 10. Kräver tredjeparts X-server.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+  String get configurationUILegacyAudioIntegrationTitle => 'Äldre ljudintegration';
 
   @override
   String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
 
   @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+  String get configurationUIAdvancedIPDetectionTitle => 'Avancerad IP-detektion';
 
   @override
   String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => 'Dagens meddelande (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'WSL nyheter';
 
   @override
   String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
@@ -143,31 +143,31 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIAutoMountHeader => 'Auto-Mount';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Aktiverad';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Montera /etc/fstab';
 
   @override
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Installationen är klar';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Hej $user,\nDu har slutfört installationen.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Det föreslås att du kör följande kommando för att uppdatera Ubuntu till den senaste versionen:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => 'Du kan använda det inbyggda ubuntuwsl kommandot för att hantera dina WSL-inställningar:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Alla inställningar träder i kraft efter omstart av Ubuntu.';
 }

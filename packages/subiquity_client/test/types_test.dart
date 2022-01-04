@@ -156,6 +156,8 @@ void main() {
       ptable: 'tst',
       preserve: true,
       bootDevice: true,
+      model: 'QEMU',
+      vendor: 'ATA',
     );
 
     final json = <String, dynamic>{
@@ -174,6 +176,8 @@ void main() {
       'ptable': 'tst',
       'preserve': true,
       'boot_device': true,
+      'model': 'QEMU',
+      'vendor': 'ATA',
     };
 
     expect(disk.toJson(), equals(json));

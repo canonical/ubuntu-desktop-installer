@@ -35,8 +35,6 @@ class WhoAreYouPage extends StatefulWidget {
 }
 
 class _WhoAreYouPageState extends State<WhoAreYouPage> {
-  final _whoAreYouFormKey = GlobalKey<FormState>();
-
   @override
   void initState() {
     super.initState();
@@ -58,42 +56,39 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
         final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
             kContentWidthFraction;
 
-        return Form(
-          key: _whoAreYouFormKey,
-          child: ListView(
-            children: [
-              Padding(
-                padding: fieldPadding,
-                child: _RealNameFormField(fieldWidth: fieldWidth),
-              ),
-              Padding(
-                padding: fieldPadding,
-                child: _HostnameFormField(fieldWidth: fieldWidth),
-              ),
-              Padding(
-                padding: fieldPadding,
-                child: _UsernameFormField(fieldWidth: fieldWidth),
-              ),
-              Padding(
-                padding: fieldPadding,
-                child: _PasswordFormField(fieldWidth: fieldWidth),
-              ),
-              Padding(
-                padding: fieldPadding,
-                child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
-              ),
-              // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-              // const SizedBox(height: kContentSpacing),
-              // _LoginStrategyTile(
-              //   value: LoginStrategy.autoLogin,
-              //   label: lang.whoAreYouPageAutoLogin,
-              // ),
-              // _LoginStrategyTile(
-              //   value: LoginStrategy.requirePassword,
-              //   label: lang.whoAreYouPageRequirePassword,
-              // ),
-            ],
-          ),
+        return ListView(
+          children: [
+            Padding(
+              padding: fieldPadding,
+              child: _RealNameFormField(fieldWidth: fieldWidth),
+            ),
+            Padding(
+              padding: fieldPadding,
+              child: _HostnameFormField(fieldWidth: fieldWidth),
+            ),
+            Padding(
+              padding: fieldPadding,
+              child: _UsernameFormField(fieldWidth: fieldWidth),
+            ),
+            Padding(
+              padding: fieldPadding,
+              child: _PasswordFormField(fieldWidth: fieldWidth),
+            ),
+            Padding(
+              padding: fieldPadding,
+              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+            ),
+            // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+            // const SizedBox(height: kContentSpacing),
+            // _LoginStrategyTile(
+            //   value: LoginStrategy.autoLogin,
+            //   label: lang.whoAreYouPageAutoLogin,
+            // ),
+            // _LoginStrategyTile(
+            //   value: LoginStrategy.requirePassword,
+            //   label: lang.whoAreYouPageRequirePassword,
+            // ),
+          ],
         );
       }),
       actions: <WizardAction>[

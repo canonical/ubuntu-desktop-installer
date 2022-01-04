@@ -130,6 +130,48 @@ class AppLocalizationsOc extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claus de seguretat correspondon pas';
 
   @override
+  String get connectToInternetPageTitle => 'Se connectar a internet';
+
+  @override
+  String get connectToInternetDescription => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
+
+  @override
+  String get useWiredConnection => 'Utilizar una connexion filara';
+
+  @override
+  String get noWiredConnection => 'Cap de connexion filara pas detectada';
+
+  @override
+  String get wiredDisabled => 'La connexion filara es desactivada';
+
+  @override
+  String get wiredMustBeEnabled => 'Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada';
+
+  @override
+  String get enableWired => 'Activar la connexion filara';
+
+  @override
+  String get selectWifiNetwork => 'Se connectar a un ret Wifi';
+
+  @override
+  String get noInternet => 'Vòli pas me connectar a internet pel moment';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Lo ret sens fial es desactivat';
+
+  @override
+  String get noWifiDevicesDetected => 'Cap de periferic Wifi pas detectat';
+
+  @override
+  String get wifiMustBeEnabled => 'Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat';
+
+  @override
+  String get enableWifi => 'Activar lo Wifi';
+
+  @override
+  String get connectButtonText => 'Se connectar';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Taula de particion novèla';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla, totas las particions actualament sus aqueste periferics seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';

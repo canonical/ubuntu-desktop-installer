@@ -111,6 +111,7 @@ class HttpUnixClient extends BaseClient {
   Future<void> close() async {
     if (_socket != null) {
       await _socket!.close();
+      _socket!.destroy();
       _socket = null;
     }
   }

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:logger/logger.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
 final log = Logger('window');

@@ -6,7 +6,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../l10n.dart';
-import '../../services.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 
@@ -358,7 +357,7 @@ class PartitionButtonRow extends StatelessWidget {
             OutlinedButton(
               child: Text(lang.newPartitionTable),
               onPressed: model.canReformatDisk
-                  ? () => model.reformatDisk(model.selectedDisk!)
+                  ? () => _maybeReformatDisk(context)
                   : null,
             ),
           ],
@@ -370,6 +369,22 @@ class PartitionButtonRow extends StatelessWidget {
       ],
     );
   }
+
+  Future<void> _maybeReformatDisk(BuildContext context) async {
+    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+    final lang = AppLocalizations.of(context);
+
+    final disk = model.selectedDisk!;
+    if (disk.ptable != null) {
+      final confirmed = await showConfirmationDialog(
+        context,
+        title: lang.newPartitionTableConfirmationTitle,
+        message: lang.newPartitionTableConfirmationMessage,
+      );
+      if (!confirmed) return;
+    }
+    model.reformatDisk(disk);
+  }
 }
 
 class BootDiskSelector extends StatelessWidget {
@@ -378,11 +393,14 @@ class BootDiskSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
-    final udev = Provider.of<UdevService>(context, listen: false);
     final lang = AppLocalizations.of(context);
 
     String prettyFormatDisk(Disk disk) {
-      return '${disk.path} ${udev.bySysname(disk.sysname).fullName} (${disk.prettySize})';
+      final fullName = <String?>[
+        disk.model,
+        disk.vendor,
+      ].where((p) => p?.isNotEmpty == true).join(' ');
+      return '${disk.path} $fullName (${disk.prettySize})';
     }
 
     return Column(

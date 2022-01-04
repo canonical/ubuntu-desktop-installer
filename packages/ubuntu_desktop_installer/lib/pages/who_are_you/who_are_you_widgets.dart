@@ -15,6 +15,7 @@ class _RealNameFormField extends StatelessWidget {
         context.select<WhoAreYouModel, String>((model) => model.realName);
 
     return ValidatedFormField(
+      autofocus: true,
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPageRealNameLabel,
       successWidget: const SuccessIcon(),

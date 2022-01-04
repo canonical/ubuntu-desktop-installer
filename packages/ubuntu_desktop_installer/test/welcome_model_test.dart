@@ -2,41 +2,23 @@ import 'dart:ui';
 
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import 'welcome_model_test.mocks.dart';
-
-@GenerateMocks([KeyboardService])
 void main() {
-  test('load keyboard model', () async {
-    final client = MockSubiquityClient();
-    final keyboard = MockKeyboardService();
-    when(keyboard.load(client)).thenAnswer((_) async => null);
-    when(keyboard.layouts).thenReturn([]);
-
-    final model = WelcomeModel(client: client, keyboardService: keyboard);
-    await model.loadKeyboards();
-    verify(keyboard.load(client)).called(1);
-  });
-
   test('load languages', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardService: keyboard);
+    final model = WelcomeModel(client);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardService: keyboard);
+    final model = WelcomeModel(client);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -49,9 +31,8 @@ void main() {
 
   test('select locale', () async {
     final client = MockSubiquityClient();
-    final keyboard = MockKeyboardService();
 
-    final model = WelcomeModel(client: client, keyboardService: keyboard);
+    final model = WelcomeModel(client);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -76,19 +57,13 @@ void main() {
     final client = MockSubiquityClient();
     when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async => null);
 
-    final model = WelcomeModel(
-      client: client,
-      keyboardService: MockKeyboardService(),
-    );
+    final model = WelcomeModel(client);
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
-    final model = WelcomeModel(
-      client: MockSubiquityClient(),
-      keyboardService: MockKeyboardService(),
-    );
+    final model = WelcomeModel(MockSubiquityClient());
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);

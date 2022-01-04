@@ -130,6 +130,48 @@ class AppLocalizationsEo extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'La sekurigaj ŝlosiloj ne kongruas';
 
   @override
+  String get connectToInternetPageTitle => 'Konekti al Interreto';
+
+  @override
+  String get connectToInternetDescription => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
+
+  @override
+  String get useWiredConnection => 'Uzi dratan konekton';
+
+  @override
+  String get noWiredConnection => 'Neniu drata konekto troviĝis';
+
+  @override
+  String get wiredDisabled => 'Drataj retoj estas malŝaltitaj';
+
+  @override
+  String get wiredMustBeEnabled => 'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
+
+  @override
+  String get enableWired => 'Ebligi dratajn retojn';
+
+  @override
+  String get selectWifiNetwork => 'Konekti al sendrata reto';
+
+  @override
+  String get noInternet => 'Mi ne volas konekti al Interreto nun';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Sendrataj retoj estas malŝaltitaj';
+
+  @override
+  String get noWifiDevicesDetected => 'Neniu sendratreta aparato troviĝis';
+
+  @override
+  String get wifiMustBeEnabled => 'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
+
+  @override
+  String get enableWifi => 'Ebligi sendratajn retojn';
+
+  @override
+  String get connectButtonText => 'Konekti';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Ĝisdatigoj kaj aliaj programoj';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Nova subdiskotabelo';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur la aparaton, ĉiuj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.';
 
   @override
   String get bootLoaderDevice => 'Aparato, sur kiun instaliĝos la praŝargilo';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -40,10 +40,9 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   }
 
   String prettyFormatDisk(Disk disk) {
-    final udev = Provider.of<UdevService>(context, listen: false);
     final fullName = <String?>[
-      udev.bySysname(disk.sysname).modelName,
-      udev.bySysname(disk.sysname).vendorName,
+      disk.model,
+      disk.vendor,
     ].where((p) => p?.isNotEmpty == true).join(' ');
     return '$fullName (${disk.sysname})';
   }

@@ -130,6 +130,48 @@ class AppLocalizationsFi extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Salausavaimet eivät täsmää';
 
   @override
+  String get connectToInternetPageTitle => 'Yhdistä internetiin';
+
+  @override
+  String get connectToInternetDescription => 'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
+
+  @override
+  String get useWiredConnection => 'Käytä langallista yhteyttä';
+
+  @override
+  String get noWiredConnection => 'Langallista yhteyttä ei havaittu';
+
+  @override
+  String get wiredDisabled => 'Langallinen yhteys on kytketty pois päältä';
+
+  @override
+  String get wiredMustBeEnabled => 'Jos haluat käyttää ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
+
+  @override
+  String get enableWired => 'Ota langallinen yhteys käyttöön';
+
+  @override
+  String get selectWifiNetwork => 'Yhdistä Wi-Fi-verkkoon';
+
+  @override
+  String get noInternet => 'En halua muodostaa yhteyttä internetiin juuri nyt';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Langaton verkko ei käytössä';
+
+  @override
+  String get noWifiDevicesDetected => 'Wi-Fi-laitteita ei havaittu';
+
+  @override
+  String get wifiMustBeEnabled => 'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
+
+  @override
+  String get enableWifi => 'Ota Wi-Fi käyttöön';
+
+  @override
+  String get connectButtonText => 'Yhdistä';
+
+  @override
   String get updatesOtherSoftwarePageTitle => 'Päivitykset ja muut ohjelmistot';
 
   @override
@@ -308,6 +350,12 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get newPartitionTable => 'Uusi osiotaulu';
+
+  @override
+  String get newPartitionTableConfirmationTitle => 'Luo uusi tyhjä osiotaulu tälle laitteelle?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Valitsit koko laitteen osioitavaksi. Mikäli jatkat uuden osiotaulun tekemistä, kaikki laitteen nykyiset levyosiot poistetaan.\n\nHuomaa, että voit myöhemmin perua tämän toimenpiteen, jos haluat.';
 
   @override
   String get bootLoaderDevice => 'Laite, jolle alkulatausohjelma asennetaan';
