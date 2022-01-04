@@ -63,7 +63,7 @@ class ValidatedFormField extends StatefulWidget {
   final IconData? hideTextIcon;
 
   /// Used when the show text button is pressed
-  final Function(bool value)? onShowText;
+  final VoidCallback? onShowText;
 
   /// Creates a [TextFormField] and a check mark.
   ///
@@ -139,7 +139,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
           helperText: widget.helperText,
           suffixIcon: widget.onShowText != null
               ? IconButton(
-                  onPressed: () => widget.onShowText ?? {},
+                  onPressed: () => widget.onShowText!(),
                   icon: Icon(widget.obscureText
                       ? widget.showTextIcon ?? Icons.visibility_off
                       : widget.hideTextIcon ?? Icons.visibility),

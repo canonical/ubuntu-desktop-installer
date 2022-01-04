@@ -121,7 +121,6 @@ class _PasswordFormField extends StatelessWidget {
         (model) => model.passwordStrength);
     final obscureText =
         context.select<WhoAreYouModel, bool>((model) => model.obscureText);
-    final model = context.read<WhoAreYouModel>();
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -136,7 +135,10 @@ class _PasswordFormField extends StatelessWidget {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.password = value;
       },
-      onShowText: (value) => model.obscureText = value,
+      onShowText: () {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.obscureText = !model.obscureText;
+      },
     );
   }
 }
