@@ -56,11 +56,8 @@ class ValidatedFormField extends StatefulWidget {
   /// Enables or disables TextField (defaults to true)
   final bool enabled;
 
-  /// An optional custom icon for the show text button
-  final IconData? showTextIcon;
-
-  /// An optional custom icon for the show text button
-  final IconData? hideTextIcon;
+  /// An optional Widget placed inside the text input.
+  final Widget? suffixIcon;
 
   /// Used when the show text button is pressed
   final VoidCallback? onShowText;
@@ -83,9 +80,8 @@ class ValidatedFormField extends StatefulWidget {
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
-    this.showTextIcon,
-    this.hideTextIcon,
     this.onShowText,
+    this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
 
@@ -137,14 +133,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       decoration: InputDecoration(
           labelText: widget.labelText,
           helperText: widget.helperText,
-          suffixIcon: widget.onShowText != null
-              ? IconButton(
-                  onPressed: () => widget.onShowText!(),
-                  icon: Icon(widget.obscureText
-                      ? widget.showTextIcon ?? Icons.visibility_off
-                      : widget.hideTextIcon ?? Icons.visibility),
-                )
-              : null),
+          suffixIcon: widget.suffixIcon),
     );
 
     return Row(
@@ -152,7 +141,6 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
         widget.fieldWidth == null
             ? Expanded(child: formField)
             : SizedBox(width: widget.fieldWidth, child: formField),
-        const SizedBox(width: 10),
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: _controller,
           builder: (context, value, child) {
