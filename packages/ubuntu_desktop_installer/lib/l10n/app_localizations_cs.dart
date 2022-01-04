@@ -322,7 +322,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpace => 'Přidělit prostor na disku';
 
   @override
-  String get startInstallingButtonText => 'Zahajování instalace';
+  String get startInstallingButtonText => 'Zahájit instalaci';
 
   @override
   String get diskHeadersDevice => 'Zařízení';
@@ -352,10 +352,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get newPartitionTable => 'Nová tabulka rozdělení na oddíly';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na zařízení, budou všechny stávající oddíly odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.';
 
   @override
   String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
@@ -562,7 +562,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String restartInto(Object system) {
-    return 'Restartovat do {systému}';
+    return 'Restartovat do $system';
   }
 
   @override
