@@ -425,5 +425,9 @@
   "connectToInternetDescription": "Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi",
   "@connectToInternetDescription": {},
   "enableWired": "Włącz przewodowe",
-  "@enableWired": {}
+  "@enableWired": {},
+  "newPartitionTableConfirmationTitle": "Utworzyć nową pustą tablicę partycji na tym urządzeniu?",
+  "@newPartitionTableConfirmationTitle": {},
+  "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia nowej tabeli partycji na urządzeniu, wszystkie bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
+  "@newPartitionTableConfirmationMessage": {}
 }

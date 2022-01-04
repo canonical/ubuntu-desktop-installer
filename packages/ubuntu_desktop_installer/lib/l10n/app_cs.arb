@@ -204,7 +204,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Přidělit prostor na disku",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Zahajování instalace",
+  "startInstallingButtonText": "Zahájit instalaci",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Zařízení",
   "@diskHeadersDevice": {},
@@ -306,7 +306,7 @@
   "@shutdown": {},
   "chooseYourLookPageLightBodyText": "Vše je světlé a svítivé",
   "@chooseYourLookPageLightBodyText": {},
-  "restartInto": "Restartovat do {systému}",
+  "restartInto": "Restartovat do {system}",
   "@restartInto": {
     "type": "text",
     "placeholders": {
@@ -480,5 +480,9 @@
   "wirelessNetworkingDisabled": "Bezdrátové připojení je vypnuté",
   "@wirelessNetworkingDisabled": {},
   "noInternet": "V tuto chvíli se nechci připojovat k Internetu",
-  "@noInternet": {}
+  "@noInternet": {},
+  "newPartitionTableConfirmationTitle": "Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?",
+  "@newPartitionTableConfirmationTitle": {},
+  "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na zařízení, budou všechny stávající oddíly odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
+  "@newPartitionTableConfirmationMessage": {}
 }
