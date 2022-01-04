@@ -119,11 +119,14 @@ class _PasswordFormField extends StatelessWidget {
         context.select<WhoAreYouModel, String>((model) => model.password);
     final passwordStrength = context.select<WhoAreYouModel, PasswordStrength>(
         (model) => model.passwordStrength);
+    final obscureText =
+        context.select<WhoAreYouModel, bool>((model) => model.obscureText);
+    final model = context.read<WhoAreYouModel>();
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPagePasswordLabel,
-      obscureText: true,
+      obscureText: obscureText,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
       initialValue: password,
       validator: RequiredValidator(
@@ -133,6 +136,7 @@ class _PasswordFormField extends StatelessWidget {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.password = value;
       },
+      onShowText: (value) => model.obscureText = value,
     );
   }
 }
@@ -152,9 +156,11 @@ class _ConfirmPasswordFormField extends StatelessWidget {
         context.select<WhoAreYouModel, String>((model) => model.password);
     final confirmedPassword = context
         .select<WhoAreYouModel, String>((model) => model.confirmedPassword);
+    final obscureText =
+        context.select<WhoAreYouModel, bool>((model) => model.obscureText);
 
     return ValidatedFormField(
-      obscureText: true,
+      obscureText: obscureText,
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPageConfirmPasswordLabel,
       successWidget: password.isNotEmpty ? const SuccessIcon() : null,

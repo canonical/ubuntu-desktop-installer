@@ -56,6 +56,15 @@ class ValidatedFormField extends StatefulWidget {
   /// Enables or disables TextField (defaults to true)
   final bool enabled;
 
+  /// An optional custom icon for the show text button
+  final IconData? showTextIcon;
+
+  /// An optional custom icon for the show text button
+  final IconData? hideTextIcon;
+
+  /// Used when [showTextIcon] is not null and the show text button is pressed
+  final Function(bool value)? onShowText;
+
   /// Creates a [TextFormField] and a check mark.
   ///
   /// The `validator' helps to decide when to show the check mark.
@@ -74,6 +83,9 @@ class ValidatedFormField extends StatefulWidget {
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
+    this.showTextIcon,
+    this.hideTextIcon,
+    this.onShowText,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
 
@@ -133,6 +145,21 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
         widget.fieldWidth == null
             ? Expanded(child: formField)
             : SizedBox(width: widget.fieldWidth, child: formField),
+        SizedBox(
+          width: widget.showTextIcon != null ? 10 : 0,
+        ),
+        SizedBox(
+          height: widget.showTextIcon != null ? 40 : 0,
+          width: widget.showTextIcon != null ? 40 : 0,
+          child: widget.showTextIcon != null
+              ? TextButton(
+                  onPressed: () => widget.onShowText ?? {},
+                  child: Icon(widget.obscureText
+                      ? widget.showTextIcon ?? Icons.visibility_off
+                      : widget.hideTextIcon ?? Icons.visibility))
+              : null,
+        ),
+        const SizedBox(width: 10),
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: _controller,
           builder: (context, value, child) {
