@@ -135,10 +135,6 @@ class _PasswordFormField extends StatelessWidget {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.password = value;
       },
-      onShowText: () {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
-        model.obscureText = !model.obscureText;
-      },
       suffixIcon: IconButton(
         onPressed: () {
           final model = Provider.of<WhoAreYouModel>(context, listen: false);

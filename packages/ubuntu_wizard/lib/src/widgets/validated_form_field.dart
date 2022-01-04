@@ -59,9 +59,6 @@ class ValidatedFormField extends StatefulWidget {
   /// An optional Widget placed inside the text input.
   final Widget? suffixIcon;
 
-  /// Used when the show text button is pressed
-  final VoidCallback? onShowText;
-
   /// Creates a [TextFormField] and a check mark.
   ///
   /// The `validator' helps to decide when to show the check mark.
@@ -80,7 +77,6 @@ class ValidatedFormField extends StatefulWidget {
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
-    this.onShowText,
     this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
         super(key: key);
@@ -131,9 +127,10 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       obscureText: widget.obscureText,
       enabled: widget.enabled,
       decoration: InputDecoration(
-          labelText: widget.labelText,
-          helperText: widget.helperText,
-          suffixIcon: widget.suffixIcon),
+        labelText: widget.labelText,
+        helperText: widget.helperText,
+        suffixIcon: widget.suffixIcon,
+      ),
     );
 
     return Row(
