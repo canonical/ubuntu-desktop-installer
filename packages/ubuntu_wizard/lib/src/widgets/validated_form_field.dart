@@ -62,7 +62,7 @@ class ValidatedFormField extends StatefulWidget {
   /// An optional custom icon for the show text button
   final IconData? hideTextIcon;
 
-  /// Used when [showTextIcon] is not null and the show text button is pressed
+  /// Used when the show text button is pressed
   final Function(bool value)? onShowText;
 
   /// Creates a [TextFormField] and a check mark.
@@ -146,12 +146,12 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
             ? Expanded(child: formField)
             : SizedBox(width: widget.fieldWidth, child: formField),
         SizedBox(
-          width: widget.showTextIcon != null ? 10 : 0,
+          width: widget.onShowText != null ? 10 : 0,
         ),
         SizedBox(
-          height: widget.showTextIcon != null ? 40 : 0,
-          width: widget.showTextIcon != null ? 40 : 0,
-          child: widget.showTextIcon != null
+          height: widget.onShowText != null ? 40 : 0,
+          width: widget.onShowText != null ? 40 : 0,
+          child: widget.onShowText != null
               ? TextButton(
                   onPressed: () => widget.onShowText ?? {},
                   child: Icon(widget.obscureText
