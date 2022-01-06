@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 import '../../l10n.dart';
 import 'who_are_you_model.dart';
@@ -47,6 +44,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final model = Provider.of<WhoAreYouModel>(context);
 
     return WizardPage(
       contentPadding: EdgeInsets.zero,
@@ -61,23 +59,51 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           children: [
             Padding(
               padding: fieldPadding,
-              child: _RealNameFormField(fieldWidth: fieldWidth),
+              child: RealNameFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.whoAreYouPageRealNameLabel,
+                realName: model.realName,
+                onChanged: (value) => model.realName = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _HostnameFormField(fieldWidth: fieldWidth),
+              child: HostnameFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.whoAreYouPageComputerNameLabel,
+                helperText: lang.whoAreYouPageComputerNameInfo,
+                hostname: model.hostname,
+                onChanged: (value) => model.hostname = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _UsernameFormField(fieldWidth: fieldWidth),
+              child: UsernameFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.whoAreYouPageUsernameLabel,
+                username: model.username,
+                onChanged: (value) => model.username = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _PasswordFormField(fieldWidth: fieldWidth),
+              child: PasswordFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.whoAreYouPagePasswordLabel,
+                password: model.password,
+                passwordStrength: model.passwordStrength,
+                onChanged: (value) => model.password = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              child: ConfirmPasswordFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.whoAreYouPageConfirmPasswordLabel,
+                password: model.password,
+                confirmedPassword: model.confirmedPassword,
+                onChanged: (value) => model.confirmedPassword = value,
+              ),
             ),
             // https://github.com/canonical/ubuntu-desktop-installer/issues/373
             // const SizedBox(height: kContentSpacing),
