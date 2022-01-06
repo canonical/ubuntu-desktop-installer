@@ -2,6 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:yaru_icons/widgets/yaru_icons.dart';
+
+import '../../utils.dart';
+import 'password_strength_label.dart';
+import 'success_icon.dart';
+
+/// The regular expression pattern for valid usernames:
+/// - must start with a lowercase letter
+/// - may contain lowercase letters, digits, hyphens, and underscores
+const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
+
+/// The regular expression pattern for valid hostnames:
+/// - must start and end with a letter or digit
+/// - may contain letters, digits, hyphens, and dots
+const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
 // The spacing between the form field and the success icon.
 const _kIconSpacing = 10.0;
@@ -68,10 +83,10 @@ class ValidatedFormField extends StatefulWidget {
     this.initialValue,
     this.onChanged,
     FieldValidator<String?>? validator,
-    this.autofocus = false,
+    bool? autofocus,
     this.labelText,
     this.helperText,
-    this.obscureText = false,
+    bool? obscureText,
     this.successWidget,
     this.spacing = _kIconSpacing,
     this.fieldWidth,
@@ -79,6 +94,8 @@ class ValidatedFormField extends StatefulWidget {
     this.enabled = true,
     this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
+        autofocus = autofocus ?? false,
+        obscureText = obscureText ?? false,
         super(key: key);
 
   @override
@@ -164,6 +181,243 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       baseline: border?.borderSide.width ?? 0,
       baselineType: TextBaseline.alphabetic,
       child: child,
+    );
+  }
+}
+
+/// Input field for the user's real name. The real name is validated to ensure
+/// that it's not empty.
+class RealNameFormField extends StatelessWidget {
+  const RealNameFormField({
+    Key? key,
+    required this.realName,
+    required this.onChanged,
+    this.labelText,
+    this.helperText,
+    this.requiredText,
+    this.fieldWidth,
+    this.autofocus,
+  }) : super(key: key);
+
+  final String realName;
+  final ValueChanged<String> onChanged;
+  final String? labelText;
+  final String? helperText;
+  final String? requiredText;
+  final double? fieldWidth;
+  final bool? autofocus;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValidatedFormField(
+      autofocus: autofocus,
+      fieldWidth: fieldWidth,
+      labelText: labelText,
+      helperText: helperText,
+      successWidget: const SuccessIcon(),
+      initialValue: realName,
+      validator: RequiredValidator(errorText: requiredText ?? ''),
+      onChanged: onChanged,
+    );
+  }
+}
+
+/// Username input field that validates that the username is valid.
+///
+/// See also: [kValidUsernamePattern]
+class UsernameFormField extends StatelessWidget {
+  const UsernameFormField({
+    Key? key,
+    required this.username,
+    required this.onChanged,
+    this.labelText,
+    this.helperText,
+    this.requiredText,
+    this.invalidText,
+    this.fieldWidth,
+    this.autofocus,
+  }) : super(key: key);
+
+  final String username;
+  final ValueChanged<String> onChanged;
+  final String? labelText;
+  final String? helperText;
+  final String? requiredText;
+  final String? invalidText;
+  final double? fieldWidth;
+  final bool? autofocus;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValidatedFormField(
+      autofocus: autofocus,
+      fieldWidth: fieldWidth,
+      labelText: labelText,
+      helperText: helperText,
+      successWidget: const SuccessIcon(),
+      initialValue: username,
+      validator: MultiValidator([
+        RequiredValidator(errorText: requiredText ?? ''),
+        PatternValidator(kValidUsernamePattern, errorText: invalidText ?? ''),
+      ]),
+      onChanged: onChanged,
+    );
+  }
+}
+
+/// Validates a password that it's not empty, and displays its strength.
+class PasswordFormField extends StatefulWidget {
+  const PasswordFormField({
+    Key? key,
+    required this.password,
+    required this.onChanged,
+    required this.passwordStrength,
+    this.labelText,
+    this.requiredText,
+    this.fieldWidth,
+    this.autofocus,
+  }) : super(key: key);
+
+  final String password;
+  final PasswordStrength passwordStrength;
+  final String? labelText;
+  final String? requiredText;
+  final ValueChanged<String> onChanged;
+  final double? fieldWidth;
+  final bool? autofocus;
+
+  @override
+  State<PasswordFormField> createState() => PasswordFormFieldState();
+}
+
+@visibleForTesting
+class PasswordFormFieldState extends State<PasswordFormField> {
+  var _obscureText = true;
+
+  @visibleForTesting
+  bool get obscureText => _obscureText;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValidatedFormField(
+      autofocus: widget.autofocus,
+      fieldWidth: widget.fieldWidth,
+      obscureText: _obscureText,
+      labelText: widget.labelText,
+      successWidget: PasswordStrengthLabel(strength: widget.passwordStrength),
+      suffixIcon: widget.password.isNotEmpty
+          ? IconButton(
+              onPressed: () => setState(() => _obscureText = !_obscureText),
+              icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+            )
+          : null,
+      initialValue: widget.password,
+      validator: RequiredValidator(errorText: widget.requiredText ?? ''),
+      onChanged: widget.onChanged,
+    );
+  }
+}
+
+/// Validates that a confirmed password matches the original password.
+class ConfirmPasswordFormField extends StatefulWidget {
+  const ConfirmPasswordFormField({
+    Key? key,
+    required this.password,
+    required this.confirmedPassword,
+    required this.onChanged,
+    this.obscureText,
+    this.labelText,
+    this.helperText,
+    this.mismatchText,
+    this.fieldWidth,
+    this.autofocus,
+  }) : super(key: key);
+
+  final String password;
+  final String confirmedPassword;
+  final ValueChanged<String> onChanged;
+  final bool? obscureText;
+  final String? labelText;
+  final String? helperText;
+  final String? mismatchText;
+  final double? fieldWidth;
+  final bool? autofocus;
+
+  @override
+  State<ConfirmPasswordFormField> createState() =>
+      ConfirmPasswordFormFieldState();
+}
+
+@visibleForTesting
+class ConfirmPasswordFormFieldState extends State<ConfirmPasswordFormField> {
+  var _obscureText = true;
+
+  @visibleForTesting
+  bool get obscureText => _obscureText;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValidatedFormField(
+      autofocus: widget.autofocus,
+      obscureText: _obscureText,
+      labelText: widget.labelText,
+      helperText: widget.helperText,
+      fieldWidth: widget.fieldWidth,
+      successWidget: widget.password.isNotEmpty ? const SuccessIcon() : null,
+      suffixIcon: widget.confirmedPassword.isNotEmpty
+          ? IconButton(
+              onPressed: () => setState(() => _obscureText = !_obscureText),
+              icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+            )
+          : null,
+      initialValue: widget.confirmedPassword,
+      autovalidateMode: AutovalidateMode.always,
+      validator:
+          EqualValidator(widget.password, errorText: widget.mismatchText ?? ''),
+      onChanged: widget.onChanged,
+    );
+  }
+}
+
+/// Validates that a hostname is valid.
+///
+/// See also: [kValidHostnamePattern]
+class HostnameFormField extends StatelessWidget {
+  const HostnameFormField({
+    Key? key,
+    required this.hostname,
+    required this.onChanged,
+    this.labelText,
+    this.helperText,
+    this.requiredText,
+    this.invalidText,
+    this.fieldWidth,
+    this.autofocus,
+  }) : super(key: key);
+
+  final String hostname;
+  final ValueChanged<String> onChanged;
+  final String? labelText;
+  final String? helperText;
+  final String? requiredText;
+  final String? invalidText;
+  final double? fieldWidth;
+  final bool? autofocus;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValidatedFormField(
+      autofocus: autofocus,
+      fieldWidth: fieldWidth,
+      labelText: labelText,
+      helperText: helperText,
+      successWidget: const SuccessIcon(),
+      initialValue: hostname,
+      validator: MultiValidator([
+        RequiredValidator(errorText: requiredText ?? ''),
+        PatternValidator(kValidHostnamePattern, errorText: invalidText ?? ''),
+      ]),
+      onChanged: onChanged,
     );
   }
 }

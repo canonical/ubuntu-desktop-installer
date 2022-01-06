@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -199,5 +200,171 @@ void main() {
 
     expect(find.text('equal'), findsOneWidget);
     expect(find.text('not equal'), findsNothing);
+  });
+
+  testWidgets('real name input', (tester) async {
+    String? realName;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: RealNameFormField(
+            autofocus: true,
+            realName: '',
+            onChanged: (v) => realName = v,
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(realName, isNull);
+
+    await tester.enterText(find.byType(TextField), 'real name');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsOneWidget);
+    expect(realName, equals('real name'));
+
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(realName, isEmpty);
+  });
+
+  testWidgets('username input', (tester) async {
+    String? username;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: UsernameFormField(
+            autofocus: true,
+            username: '',
+            onChanged: (v) => username = v,
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(username, isNull);
+
+    await tester.enterText(find.byType(TextField), 'username');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsOneWidget);
+    expect(username, equals('username'));
+
+    await tester.enterText(find.byType(TextField), '1nv@lid!');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(username, equals('1nv@lid!'));
+
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(username, isEmpty);
+  });
+
+  testWidgets('hostname input', (tester) async {
+    String? hostname;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: HostnameFormField(
+            autofocus: true,
+            hostname: '',
+            onChanged: (v) => hostname = v,
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(hostname, isNull);
+
+    await tester.enterText(find.byType(TextField), 'hostname');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsOneWidget);
+    expect(hostname, equals('hostname'));
+
+    await tester.enterText(find.byType(TextField), '@#%&/!');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(hostname, equals('@#%&/!'));
+
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(hostname, isEmpty);
+  });
+
+  testWidgets('password input', (tester) async {
+    String? password;
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: GlobalUbuntuLocalizations.delegates,
+        home: Material(
+          child: PasswordFormField(
+            autofocus: true,
+            password: 'password',
+            passwordStrength: PasswordStrength.good,
+            onChanged: (v) => password = v,
+          ),
+        ),
+      ),
+    );
+
+    final state =
+        tester.state<PasswordFormFieldState>(find.byType(PasswordFormField));
+
+    await tester.enterText(find.byType(TextField), 'drowssap');
+    await tester.pump();
+    expect(state.obscureText, isTrue);
+    expect(password, equals('drowssap'));
+
+    await tester.tap(find.byType(IconButton));
+    await tester.pump();
+    expect(state.obscureText, isFalse);
+    expect(password, equals('drowssap'));
+  });
+
+  testWidgets('confirmed password input', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ConfirmPasswordFormField(
+            autofocus: true,
+            password: 'password',
+            confirmedPassword: 'password',
+            onChanged: (_) {},
+          ),
+        ),
+      ),
+    );
+
+    final state = tester.state<ConfirmPasswordFormFieldState>(
+        find.byType(ConfirmPasswordFormField));
+
+    expect(find.byType(SuccessIcon), findsOneWidget);
+    expect(state.obscureText, isTrue);
+
+    await tester.tap(find.byType(IconButton));
+    await tester.pumpAndSettle();
+    expect(state.obscureText, isFalse);
+  });
+
+  testWidgets('unconfirmed password input', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ConfirmPasswordFormField(
+            autofocus: true,
+            password: 'password',
+            confirmedPassword: '',
+            onChanged: (_) {},
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byType(SuccessIcon), findsNothing);
   });
 }
