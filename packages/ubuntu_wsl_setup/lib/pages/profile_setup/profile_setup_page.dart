@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -66,20 +64,43 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
           children: <Widget>[
             Padding(
               padding: fieldPadding,
-              child: _RealNameFormField(fieldWidth: fieldWidth),
+              child: RealNameFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.profileSetupRealnameLabel,
+                realName: model.realname,
+                onChanged: (value) => model.realname = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _UsernameFormField(fieldWidth: fieldWidth),
+              child: UsernameFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.profileSetupUsernameHint,
+                helperText: lang.profileSetupUsernameHelper,
+                username: model.username,
+                onChanged: (value) => model.username = value,
+              ),
             ),
             const SizedBox(height: kContentSpacing),
             Padding(
               padding: fieldPadding,
-              child: _PasswordFormField(fieldWidth: fieldWidth),
+              child: PasswordFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.profileSetupPasswordHint,
+                password: model.password,
+                passwordStrength: model.passwordStrength,
+                onChanged: (value) => model.password = value,
+              ),
             ),
             Padding(
               padding: fieldPadding,
-              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              child: ConfirmPasswordFormField(
+                fieldWidth: fieldWidth,
+                labelText: lang.profileSetupConfirmPasswordHint,
+                password: model.password,
+                confirmedPassword: model.confirmedPassword,
+                onChanged: (value) => model.confirmedPassword = value,
+              ),
             ),
             // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
             //       See [ProfileSetupModel.showAdvancedOptions] for more details.
