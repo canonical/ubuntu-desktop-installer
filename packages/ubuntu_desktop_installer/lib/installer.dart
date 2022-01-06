@@ -12,14 +12,20 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
+import 'slides.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
+export 'slides.dart';
 
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
 enum AppStatus { loading, ready }
 
-void runInstallerApp(List<String> args, {FlavorData? flavor}) {
+void runInstallerApp(
+  List<String> args, {
+  FlavorData? flavor,
+  List<Slide>? slides,
+}) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
         valueHelp: 'path',
@@ -81,12 +87,15 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
     Key? key,
     this.initialRoute,
     FlavorData? flavor,
+    List<Slide>? slides,
     this.appStatus = AppStatus.ready,
   })  : flavor = flavor ?? defaultFlavor,
+        slides = slides ?? defaultSlides,
         super(key: key);
 
   final String? initialRoute;
   final FlavorData flavor;
+  final List<Slide> slides;
   final AppStatus appStatus;
 
   static FlavorData get defaultFlavor {
@@ -101,23 +110,26 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flavor(
       data: flavor.copyWith(package: 'ubuntu_desktop_installer'),
-      child: MaterialApp(
-        locale: Settings.of(context).locale,
-        onGenerateTitle: (context) {
-          final lang = AppLocalizations.of(context);
-          setWindowTitle(lang.windowTitle(flavor.name));
-          return lang.appTitle;
-        },
-        theme: flavor.theme,
-        darkTheme: flavor.darkTheme,
-        themeMode: Settings.of(context).theme,
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: <LocalizationsDelegate>[
-          ...localizationsDelegates,
-          ...?flavor.localizationsDelegates,
-        ],
-        supportedLocales: supportedLocales,
-        home: buildApp(context),
+      child: Slides(
+        slides: slides,
+        child: MaterialApp(
+          locale: Settings.of(context).locale,
+          onGenerateTitle: (context) {
+            final lang = AppLocalizations.of(context);
+            setWindowTitle(lang.windowTitle(flavor.name));
+            return lang.appTitle;
+          },
+          theme: flavor.theme,
+          darkTheme: flavor.darkTheme,
+          themeMode: Settings.of(context).theme,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: <LocalizationsDelegate>[
+            ...localizationsDelegates,
+            ...?flavor.localizationsDelegates,
+          ],
+          supportedLocales: supportedLocales,
+          home: buildApp(context),
+        ),
       ),
     );
   }

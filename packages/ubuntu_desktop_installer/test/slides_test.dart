@@ -1,0 +1,393 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_desktop_installer/slides.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+
+import 'widget_tester_extensions.dart';
+
+void main() {
+  testWidgets('inherited slides', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Slides(
+          slides: [
+            Slide(
+              title: (_) => Text('title1'),
+              body: (_) => Text('body1'),
+            ),
+            Slide(
+              title: (_) => Text('title2'),
+              body: (_) => Text('body2'),
+            ),
+          ],
+          child: Text('page'),
+        ),
+      ),
+    );
+
+    final context = tester.element(find.text('page'));
+
+    final slides = Slides.of(context);
+    expect(slides, hasLength(2));
+    expect((slides.first.title(context) as Text).data, equals('title1'));
+    expect((slides.first.body(context) as Text).data, equals('body1'));
+    expect((slides.last.title(context) as Text).data, equals('title2'));
+    expect((slides.last.body(context) as Text).data, equals('body2'));
+  });
+
+  testWidgets('slide layout', (tester) async {
+    Future<void> pumpLayout(
+      WidgetTester tester, {
+      AlignmentGeometry? contentAlignment,
+      AlignmentGeometry? imageAlignment,
+      EdgeInsetsGeometry? padding,
+    }) {
+      return tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: SlideLayout(
+              content: Text('content'),
+              contentAlignment: contentAlignment,
+              image: Text('image'),
+              imageAlignment: imageAlignment,
+              background: SizedBox(width: 200, height: 200),
+              padding: padding,
+            ),
+          ),
+        ),
+      );
+    }
+
+    await pumpLayout(tester);
+
+    final layout = find.byType(SlideLayout);
+    final content = find.text('content');
+    final image = find.text('image');
+    final background = find.byType(SizedBox);
+
+    expect(tester.getRect(content), isNot(equals(tester.getRect(layout))));
+    expect(tester.getRect(image), isNot(equals(tester.getRect(layout))));
+    expect(tester.getRect(background), equals(tester.getRect(layout)));
+
+    await pumpLayout(
+      tester,
+      contentAlignment: Alignment.center,
+      imageAlignment: Alignment.center,
+    );
+
+    expect(tester.getCenter(content), equals(tester.getCenter(layout)));
+    expect(tester.getCenter(image), equals(tester.getCenter(layout)));
+    expect(tester.getRect(background), equals(tester.getRect(layout)));
+
+    await pumpLayout(
+      tester,
+      contentAlignment: Alignment.topLeft,
+      imageAlignment: Alignment.bottomRight,
+      padding: EdgeInsets.fromLTRB(1, 2, 3, 4),
+    );
+
+    expect(tester.getTopLeft(content),
+        equals(tester.getTopLeft(layout) + Offset(1, 2)));
+    expect(tester.getBottomRight(image),
+        equals(tester.getBottomRight(layout) - Offset(3, 4)));
+    expect(tester.getRect(background), equals(tester.getRect(layout)));
+  });
+
+  group('slide image', () {
+    Future<void> testImage(
+      WidgetTester tester, {
+      required String asset,
+      required Widget child,
+    }) async {
+      FlutterError? error;
+      FlutterError.onError = (e) => error = e.exception as FlutterError;
+
+      await runZonedGuarded(() async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Flavor(
+              data: FlavorData(name: 'slides_test'),
+              child: Builder(builder: (context) => child),
+            ),
+          ),
+        );
+        await tester.pump();
+      }, (error, stack) {});
+
+      expect(error, isNotNull);
+      expect(error!.message, contains(asset));
+    }
+
+    testWidgets('asset', (tester) async {
+      await testImage(
+        tester,
+        asset: 'assets/slides/foo.png',
+        child: SlideImage.asset('foo.png'),
+      );
+    });
+
+    testWidgets('icon', (tester) async {
+      await testImage(
+        tester,
+        asset: 'assets/slides/icons/foo.png',
+        child: SlideImage.icon('foo.png'),
+      );
+    });
+
+    testWidgets('screenshot', (tester) async {
+      await testImage(
+        tester,
+        asset: 'assets/slides/screenshots/foo.png',
+        child: SlideImage.screenshot('foo.png'),
+      );
+    });
+  });
+
+  testWidgets('slide card', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Center(
+          child: SlideCard(
+            backgroundColor: Colors.red,
+            borderRadius: BorderRadius.circular(1.234),
+            padding: EdgeInsets.fromLTRB(1, 2, 3, 4),
+            width: 123.4,
+            child: Text('card'),
+          ),
+        ),
+      ),
+    );
+
+    final container = find.byType(Container);
+    expect(container, findsOneWidget);
+    expect(tester.getSize(container).width, moreOrLessEquals(123.4));
+
+    final widget = tester.widget<Container>(container);
+    expect(widget.padding, equals(EdgeInsets.fromLTRB(1, 2, 3, 4)));
+
+    final decoration = widget.decoration as BoxDecoration?;
+    expect(decoration, isNotNull);
+    expect(decoration!.color, equals(Colors.red));
+    expect(decoration.borderRadius, equals(BorderRadius.circular(1.234)));
+  });
+
+  group('slide label', () {
+    testWidgets('plain', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: SlideLabel(
+              'label',
+              width: 123.4,
+            ),
+          ),
+        ),
+      );
+
+      final label = find.byType(Html);
+      expect(label, findsOneWidget);
+      expect(tester.getSize(label).width, moreOrLessEquals(123.4));
+    });
+
+    testWidgets('plain', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: SlideLabel(
+              'label',
+              width: 123.4,
+            ),
+          ),
+        ),
+      );
+
+      final label = find.byType(Html);
+      expect(label, findsOneWidget);
+      expect(tester.getSize(label).width, moreOrLessEquals(123.4));
+      expect(find.byType(Row), findsNothing);
+    });
+
+    testWidgets('icon', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: SlideLabel.icon(
+              icon: 'foo.png',
+              text: 'label',
+              width: 432.1,
+            ),
+          ),
+        ),
+      );
+
+      final row = find.byType(Row);
+      final icon = find.byType(Image);
+      final label = find.byType(Text);
+      expect(row, findsOneWidget);
+      expect(icon, findsOneWidget);
+      expect(label, findsOneWidget);
+      expect(tester.getSize(row).width, moreOrLessEquals(432.1));
+      expect(tester.getRect(icon).left, lessThan(tester.getRect(label).left));
+    });
+
+    testWidgets('large', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: Column(
+              children: [
+                SlideLabel('small'),
+                SlideLabel.large('large'),
+              ],
+            ),
+          ),
+        ),
+      );
+
+      final small = find.widgetWithText(Html, 'small');
+      expect(small, findsOneWidget);
+
+      final large = find.widgetWithText(Html, 'large');
+      expect(large, findsOneWidget);
+
+      final smallFontSize = tester.widget<Html>(small).style['body']?.fontSize;
+      expect(smallFontSize?.size, isNotNull);
+
+      final largeFontSize = tester.widget<Html>(large).style['body']?.fontSize;
+      expect(largeFontSize?.size, isNotNull);
+
+      expect(largeFontSize!.size, greaterThan(smallFontSize!.size!));
+    });
+  });
+
+  group('default slide', () {
+    setUp(() => UbuntuTester.context = Scaffold);
+
+    Finder findAsset(String assetName) {
+      return find.byWidgetPredicate((widget) {
+        return widget is Image &&
+            widget.image is AssetImage &&
+            (widget.image as AssetImage).assetName.endsWith(assetName);
+      });
+    }
+
+    Finder findHtml(String html) {
+      return find.byWidgetPredicate((widget) {
+        return widget is Html && widget.data == html;
+      });
+    }
+
+    Future<void> pumpSlide(WidgetTester tester, int index) {
+      return tester.pumpWidget(
+        tester.buildApp(
+          (context) => MediaQuery(
+            // shrink the text for testing purposes to avoid overflows when
+            // loading slides outside the constrained slideshow environment
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 0.5),
+            child: Scaffold(
+              appBar: AppBar(
+                title: Builder(builder: defaultSlides[index].title),
+              ),
+              body: Builder(builder: defaultSlides[index].body),
+            ),
+          ),
+        ),
+      );
+    }
+
+    Future<void> expectSlide({
+      String? title,
+      String? text,
+      String? description,
+      String? background,
+      String? screenshot,
+    }) async {
+      if (title != null) expect(find.text(title), findsOneWidget);
+      if (text != null) expect(find.text(text), findsOneWidget);
+      if (description != null) expect(findHtml(description), findsOneWidget);
+      if (background != null) expect(findAsset(background), findsOneWidget);
+      if (screenshot != null) expect(findAsset(screenshot), findsOneWidget);
+    }
+
+    testWidgets('welcome', (tester) async {
+      await pumpSlide(tester, 0);
+      expectSlide(
+        title: tester.lang.welcomeSlideTitle('Ubuntu'),
+        text: tester.lang.welcomeSlideDescription('Ubuntu'),
+        background: 'welcome.png',
+      );
+    });
+
+    testWidgets('software', (tester) async {
+      await pumpSlide(tester, 1);
+      expectSlide(
+        title: tester.lang.softwareSlideTitle,
+        description: tester.lang.softwareSlideDescription('Ubuntu'),
+        screenshot: 'software.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('music', (tester) async {
+      await pumpSlide(tester, 2);
+      expectSlide(
+        title: tester.lang.musicSlideTitle,
+        description: tester.lang.musicSlideDescription('Ubuntu'),
+        screenshot: 'music.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('photos', (tester) async {
+      await pumpSlide(tester, 3);
+      expectSlide(
+        title: tester.lang.photoSlideTitle,
+        description: tester.lang.photoSlideDescription,
+        screenshot: 'photos.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('web', (tester) async {
+      await pumpSlide(tester, 4);
+      expectSlide(
+        title: tester.lang.webSlideTitle,
+        description: tester.lang.webSlideDescription('Ubuntu'),
+        screenshot: 'web.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('office', (tester) async {
+      await pumpSlide(tester, 5);
+      expectSlide(
+        title: tester.lang.officeSlideTitle,
+        description: tester.lang.officeSlideDescription,
+        screenshot: 'office.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('access', (tester) async {
+      await pumpSlide(tester, 6);
+      expectSlide(
+        title: tester.lang.accessSlideTitle,
+        description: tester.lang.accessSlideDescription('Ubuntu'),
+        screenshot: 'settings.png',
+        background: 'background.png',
+      );
+    });
+
+    testWidgets('support', (tester) async {
+      await pumpSlide(tester, 7);
+      expectSlide(
+        title: tester.lang.supportSlideTitle,
+        description: tester.lang.supportSlideResources,
+        background: 'welcome.png',
+      );
+    });
+  });
+}
