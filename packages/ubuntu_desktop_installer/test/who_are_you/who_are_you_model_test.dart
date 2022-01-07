@@ -38,6 +38,7 @@ void main() {
     expect(model.username, equals(identity.username));
     expect(model.password, isEmpty); // not loaded
     expect(model.hostname, equals(identity.hostname));
+    expect(model.obscureText, true);
   });
 
   test('empty username and hostname', () async {
