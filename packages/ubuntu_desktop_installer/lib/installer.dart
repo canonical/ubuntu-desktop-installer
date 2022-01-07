@@ -112,7 +112,10 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         darkTheme: flavor.darkTheme,
         themeMode: Settings.of(context).theme,
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: localizationsDelegates,
+        localizationsDelegates: <LocalizationsDelegate>[
+          ...localizationsDelegates,
+          ...?flavor.localizationsDelegates,
+        ],
         supportedLocales: supportedLocales,
         home: buildApp(context),
       ),
