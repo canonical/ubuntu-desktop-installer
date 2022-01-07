@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -50,5 +51,20 @@ void main() {
       MockDiskStorageService(),
     );
     expect(model.productInfo, isNotEmpty);
+  });
+
+  test('save lvm', () {
+    final service = MockDiskStorageService();
+    when(service.hasMultipleDisks).thenReturn(false);
+
+    final model = InstallationTypeModel(MockSubiquityClient(), service);
+
+    model.advancedFeature = AdvancedFeature.none;
+    model.save();
+    verify(service.useLvm = false).called(1);
+
+    model.advancedFeature = AdvancedFeature.lvm;
+    model.save();
+    verify(service.useLvm = true).called(1);
   });
 }
