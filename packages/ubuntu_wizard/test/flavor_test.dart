@@ -61,8 +61,13 @@ void main() {
       package: 'test_package',
     );
 
+    final copy = flavor.copyWith();
+    expect(copy, equals(flavor));
+    expect(copy.hashCode, equals(flavor.hashCode));
+
     final namedFlavor = flavor.copyWith(name: 'New Flavor');
     expect(namedFlavor, isNot(equals(flavor)));
+    expect(namedFlavor.hashCode, isNot(equals(flavor.hashCode)));
     expect(namedFlavor.name, equals('New Flavor'));
     expect(namedFlavor.theme, equals(flavor.theme));
     expect(namedFlavor.darkTheme, equals(flavor.darkTheme));
@@ -76,6 +81,7 @@ void main() {
     );
     expect(themedFlavor, isNot(equals(flavor)));
     expect(themedFlavor, isNot(equals(namedFlavor)));
+    expect(themedFlavor.hashCode, isNot(equals(flavor.hashCode)));
     expect(themedFlavor.name, equals(flavor.name));
     expect(themedFlavor.theme, equals(flavor.darkTheme));
     expect(themedFlavor.darkTheme, equals(flavor.theme));
@@ -87,6 +93,7 @@ void main() {
       localizationsDelegates: GlobalUbuntuLocalizations.delegates,
     );
     expect(localizedFlavor, isNot(equals(flavor)));
+    expect(localizedFlavor.hashCode, isNot(equals(flavor.hashCode)));
     expect(localizedFlavor, isNot(equals(namedFlavor)));
     expect(localizedFlavor, isNot(equals(themedFlavor)));
     expect(localizedFlavor.name, equals(flavor.name));
