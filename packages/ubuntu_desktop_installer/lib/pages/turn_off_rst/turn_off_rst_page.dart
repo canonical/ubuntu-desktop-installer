@@ -7,6 +7,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'turn_off_rst_model.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
@@ -15,7 +16,7 @@ class TurnOffRSTPage extends StatelessWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return Provider(
       create: (_) => TurnOffRSTModel(client),
       child: const TurnOffRSTPage(),

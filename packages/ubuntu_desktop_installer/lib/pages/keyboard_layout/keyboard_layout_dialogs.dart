@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'keyboard_layout_detector.dart';
 import 'keyboard_layout_widgets.dart';
 
@@ -13,7 +13,7 @@ const _kDialogHeightFactor = 0.15;
 /// and confirm keys. Returns the result with a keyboard layout and variant
 /// codes or null if canceled.
 Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
-  final client = Provider.of<SubiquityClient>(context, listen: false);
+  final client = getService<SubiquityClient>();
 
   return showDialog<StepResult?>(
     context: context,
