@@ -6,18 +6,16 @@ import 'package:flutter/widgets.dart';
 import 'package:system_clock/system_clock.dart';
 
 class TelemetryService {
-  TelemetryService() {
-    _startTime = _uptime();
-  }
+  TelemetryService() : _startTime = _uptime();
 
   static const reportLocation = '/target/var/log/installer/telemetry';
 
+  final int _startTime;
   final Map<String, dynamic> _metrics = {};
   final Map<String, String> _stages = {};
   bool _done = false;
-  late int _startTime;
 
-  int _uptime() {
+  static int _uptime() {
     try {
       return SystemClock.uptime().inSeconds;
       // ignore: avoid_catching_errors
