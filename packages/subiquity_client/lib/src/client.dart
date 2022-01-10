@@ -220,19 +220,15 @@ class SubiquityClient {
     await _receive("setSsh(${jsonEncode(ssh.toJson())})", response);
   }
 
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
-
   /// Get the installer state.
   Future<ApplicationStatus> status({ApplicationState? current}) async {
     late Map<String, dynamic> statusJson;
-    final currentState = _formatState(current);
 
     if (current != null) {
       final request = Request('GET',
-          Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
+          Uri.http('localhost', 'meta/status', {'cur': '"${current.name}"'}));
       final response = await _send(request);
-      statusJson = await _receiveJson('status("$currentState")', response);
+      statusJson = await _receiveJson('status("${current.name}")', response);
     } else {
       final request = Request('GET', Uri.http('localhost', 'meta/status'));
       final response = await _send(request);
@@ -240,7 +236,7 @@ class SubiquityClient {
     }
 
     final result = ApplicationStatus.fromJson(statusJson);
-    log.info('state: $currentState => ${_formatState(result.state)}');
+    log.info('state: ${current?.name} => ${result.state?.name}');
 
     return result;
   }

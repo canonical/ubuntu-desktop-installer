@@ -155,7 +155,7 @@ class NetworkDevice extends PropertyStreamNotifier {
 
   @override
   String toString() =>
-      '$runtimeType(vendor: $vendor, model: $model, state: ${describeEnum(state)})';
+      '$runtimeType(vendor: $vendor, model: $model, state: ${state.name})';
 
   final UdevService? _udev;
 
