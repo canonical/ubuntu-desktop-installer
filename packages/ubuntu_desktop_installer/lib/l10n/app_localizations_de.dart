@@ -12,7 +12,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Ubuntu installieren';
+    return '$RELEASE installieren';
   }
 
   @override
@@ -50,22 +50,22 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Ubuntu ausprobieren';
+    return '$RELEASE ausprobieren';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Sie können Ubuntu ausprobieren, ohne irgendwelche Änderungen an Ihrem Computer vorzunehmen.';
+    return 'Sie können $RELEASE ausprobieren, ohne irgendwelche Änderungen an Ihrem Computer vorzunehmen.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Ubuntu installieren';
+    return '$RELEASE installieren';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installieren Sie Ubuntu neben (oder anstelle) Ihres aktuellen Betriebssystems. Dies sollte nicht allzu lange dauern.';
+    return 'Installieren Sie $RELEASE neben (oder anstelle) Ihres aktuellen Betriebssystems. Dies sollte nicht allzu lange dauern.';
   }
 
   @override
@@ -130,46 +130,46 @@ class AppLocalizationsDe extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Die Sicherheitsschlüssel stimmen nicht überein';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Mit dem Internet verbinden';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Kabelgebundene Verbindung verwenden';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Keine kabelgebundene Verbindung erkannt';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Kabelgebundene Verbindung ist ausgeschaltet';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Für die Verwendung von Ethernet auf diesem Computer muss eine kabelgebundene Verbindung aktiviert sein';
 
   @override
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Mit einem WLAN-Netzwerk verbinden';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Ich will gerade keine Verbindung zum Internet herstellen';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Drahtloses Netzwerk deaktiviert';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Keine WLAN-Geräte erkannt';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Für die Verwendung von WLAN auf diesem Computer muss das drahtlose Netzwerk aktiviert sein';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'WLAN aktivieren';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Verbinden';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aktualisierungen und andere Software';
@@ -203,7 +203,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von Ubuntu werden nicht verschlüsselt.';
+    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von $RELEASE werden nicht verschlüsselt.';
   }
 
   @override
@@ -236,7 +236,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Festplatte löschen und Ubuntu installieren';
+    return 'Festplatte löschen und $DISTRO installieren';
   }
 
   @override
@@ -258,7 +258,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'LVM bei der neuen Ubuntu-Installation verwenden';
+    return 'LVM bei der neuen $RELEASE -Installation verwenden';
   }
 
   @override
@@ -266,7 +266,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Die neue Ubuntu-Installation zur Sicherheit verschlüsseln';
+    return 'Die neue $RELEASE -Installation zur Sicherheit verschlüsseln';
   }
 
   @override
@@ -301,12 +301,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Sie können selbst Partitionen erstellen, deren Größe ändern oder mehrere Partitionen für Ubuntu auswählen';
+    return 'Sie können selbst Partitionen erstellen, deren Größe ändern oder mehrere Partitionen für $DISTRO auswählen';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Festplatte löschen und Ubuntu installieren';
+    return 'Festplatte löschen und $DISTRO installieren';
   }
 
   @override
@@ -352,10 +352,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTable => 'Neue Partitionstabelle';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Eine neue leere Partitionstabelle auf diesem Gerät erstellen?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle auf dem Gerät fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
 
   @override
   String get bootLoaderDevice => 'Laufwerk zur Installation des Bootloaders';
