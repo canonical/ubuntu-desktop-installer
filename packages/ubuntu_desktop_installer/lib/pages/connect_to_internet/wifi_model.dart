@@ -55,6 +55,12 @@ class WifiModel extends NetworkModel<WifiDevice> {
   }
 
   @override
+  Future<void> cleanup() async {
+    stopPeriodicScanning();
+    super.cleanup();
+  }
+
+  @override
   void dispose() {
     stopPeriodicScanning();
     super.dispose();
@@ -134,6 +140,22 @@ class WifiDevice extends NetworkDevice {
   NetworkManagerDeviceWireless _wireless;
   final _accessPoints = <AccessPoint>[];
   final _allAccessPoints = <String, AccessPoint>{};
+
+  @override
+  void init() {
+    for (final ap in _accessPoints) {
+      ap.init();
+    }
+    super.init();
+  }
+
+  @override
+  void cleanup() {
+    for (final ap in _accessPoints) {
+      ap.cleanup();
+    }
+    super.cleanup();
+  }
 
   @override
   void dispose() {
@@ -297,6 +319,9 @@ class AccessPoint extends PropertyStreamNotifier {
   NetworkManagerAccessPoint _accessPoint;
 
   NetworkManagerAccessPoint get accessPoint => _accessPoint;
+
+  void init() => enablePropertyListeners();
+  void cleanup() => disablePropertyListeners();
 
   void _setAccessPoint(NetworkManagerAccessPoint accessPoint) {
     _accessPoint = accessPoint;
