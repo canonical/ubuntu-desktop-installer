@@ -200,4 +200,22 @@ void main() {
     expect(find.text('equal'), findsOneWidget);
     expect(find.text('not equal'), findsNothing);
   });
+
+  testWidgets('focus', (tester) async {
+    final focusNode = FocusNode();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(autofocus: true, focusNode: focusNode),
+        ),
+      ),
+    );
+
+    expect(focusNode.hasFocus, isTrue);
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).focusNode,
+      equals(focusNode),
+    );
+  });
 }
