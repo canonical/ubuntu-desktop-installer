@@ -2,6 +2,9 @@
 
 #include <flutter_linux/flutter_linux.h>
 #include <gtk/gtk.h>
+#ifdef HAVE_LIBHANDY
+#include <handy.h>
+#endif
 #include <sys/utsname.h>
 
 #include <cstring>
@@ -16,6 +19,57 @@ struct _UbuntuWizardPlugin {
 
 G_DEFINE_TYPE(UbuntuWizardPlugin, ubuntu_wizard_plugin, g_object_get_type())
 
+static GtkWidget* get_header_bar(GtkWindow* window) {
+#ifdef HAVE_LIBHANDY
+  if (HDY_IS_WINDOW(window) || HDY_IS_APPLICATION_WINDOW(window)) {
+    GtkWidget* deck = gtk_bin_get_child(GTK_BIN(window));
+    GList* content = gtk_container_get_children(GTK_CONTAINER(deck));
+    GList* children = gtk_container_get_children(GTK_CONTAINER(content->data));
+    GtkWidget* header_bar = GTK_WIDGET(children->data);
+    g_list_free(content);
+    g_list_free(children);
+    return header_bar;
+  }
+#endif
+  return gtk_window_get_titlebar(window);
+}
+
+static gboolean set_window_title(GtkWindow* window, const gchar* title) {
+  GtkWidget* header_bar = get_header_bar(window);
+  g_return_val_if_fail(header_bar != nullptr, false);
+#ifdef HAVE_LIBHANDY
+  if (HDY_IS_HEADER_BAR(header_bar)) {
+    hdy_header_bar_set_title(HDY_HEADER_BAR(header_bar), title);
+    return TRUE;
+  }
+#endif
+  gtk_header_bar_set_title(GTK_HEADER_BAR(header_bar), title);
+  return TRUE;
+}
+
+static gboolean is_window_closable(GtkWindow* window) {
+  GtkWidget* header_bar = get_header_bar(GTK_WINDOW(window));
+#ifdef HAVE_LIBHANDY
+  if (HDY_IS_HEADER_BAR(header_bar)) {
+    return hdy_header_bar_get_show_close_button(HDY_HEADER_BAR(header_bar));
+  }
+#endif
+  return gtk_header_bar_get_show_close_button(GTK_HEADER_BAR(header_bar));
+}
+
+static gboolean set_window_closable(GtkWindow* window, gboolean closable) {
+  GtkWidget* header_bar = get_header_bar(window);
+  g_return_val_if_fail(header_bar != nullptr, FALSE);
+#ifdef HAVE_LIBHANDY
+  if (HDY_IS_HEADER_BAR(header_bar)) {
+    hdy_header_bar_set_show_close_button(HDY_HEADER_BAR(header_bar), closable);
+    return TRUE;
+  }
+#endif
+  gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(header_bar), closable);
+  return TRUE;
+}
+
 // Called when a method call is received from Flutter.
 static void ubuntu_wizard_plugin_handle_method_call(
     FlPluginRegistrar* registrar, FlMethodCall* method_call) {
@@ -28,19 +82,24 @@ static void ubuntu_wizard_plugin_handle_method_call(
   if (strcmp(method, "setWindowTitle") == 0) {
     FlValue* args = fl_method_call_get_args(method_call);
     FlValue* title = fl_value_get_list_value(args, 0);
-    GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
-    gtk_header_bar_set_title(GTK_HEADER_BAR(titlebar),
-                             fl_value_get_string(title));
-    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+    if (set_window_title(GTK_WINDOW(window), fl_value_get_string(title))) {
+      response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+    } else {
+      response = FL_METHOD_RESPONSE(fl_method_error_response_new(
+          "ubuntu_wizard", "setWindowTitle", nullptr));
+    }
   } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
     gtk_window_close(GTK_WINDOW(window));
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
   } else if (strcmp(method, "setWindowClosable") == 0) {
     FlValue* args = fl_method_call_get_args(method_call);
-    bool closable = fl_value_get_bool(fl_value_get_list_value(args, 0));
-    GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
-    gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(titlebar), closable);
-    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+    FlValue* closable = fl_value_get_list_value(args, 0);
+    if (set_window_closable(GTK_WINDOW(window), fl_value_get_bool(closable))) {
+      response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
+    } else {
+      response = FL_METHOD_RESPONSE(fl_method_error_response_new(
+          "ubuntu_wizard", "setWindowClosable", nullptr));
+    }
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
   }
@@ -66,8 +125,7 @@ static void on_method_call(FlMethodChannel* channel, FlMethodCall* method_call,
 
 static gboolean on_delete_event(GtkWidget* window, GdkEvent* /*event*/,
                                 gpointer user_data) {
-  GtkWidget* titlebar = gtk_window_get_titlebar(GTK_WINDOW(window));
-  if (!gtk_header_bar_get_show_close_button(GTK_HEADER_BAR(titlebar))) {
+  if (!is_window_closable(GTK_WINDOW(window))) {
     return TRUE;
   }
 
