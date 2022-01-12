@@ -80,8 +80,7 @@ class ConnectToInternetModel extends SafeChangeNotifier
     newModel.onSelected();
     newModel.addListener(notifyListeners);
     _connectMode = newModel.connectMode;
-    log.debug(() =>
-        'Selected connection mode: ${_connectMode.toString().split('.')[1]}');
+    log.debug(() => 'Selected connection mode: ${_connectMode.name}');
     notifyListeners();
   }
 

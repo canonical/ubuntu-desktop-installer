@@ -32,6 +32,13 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
+  registerService(() => DiskStorageService(subiquityClient));
+  registerService(() => JournalService(journalUnit));
+  registerService(() => KeyboardService());
+  registerService(() => NetworkService());
+  registerService(() => TelemetryService());
+  registerService(() => UdevService());
+
   final appStatus = ValueNotifier(AppStatus.loading);
 
   runWizardApp(
@@ -61,14 +68,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
       'SNAP_REVISION': '',
       'SNAP_VERSION': '',
     },
-    providers: [
-      Provider(create: (_) => DiskStorageService(subiquityClient)),
-      Provider(create: (_) => JournalService(journalUnit)),
-      Provider(create: (_) => KeyboardService()),
-      Provider(create: (_) => NetworkService()),
-      Provider(create: (_) => TelemetryService()),
-      Provider(create: (_) => UdevService()),
-    ],
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
@@ -113,7 +112,10 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         darkTheme: flavor.darkTheme,
         themeMode: Settings.of(context).theme,
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: localizationsDelegates,
+        localizationsDelegates: <LocalizationsDelegate>[
+          ...localizationsDelegates,
+          ...?flavor.localizationsDelegates,
+        ],
         supportedLocales: supportedLocales,
         home: buildApp(context),
       ),
@@ -158,7 +160,7 @@ class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   final String? initialRoute;
 
   static Widget create(BuildContext context, String? initialRoute) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => _UbuntuDesktopInstallerModel(client),
       child: _UbuntuDesktopInstallerWizard(initialRoute: initialRoute),
@@ -183,7 +185,7 @@ class _UbuntuDesktopInstallerWizardState
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final service = getService<DiskStorageService>();
 
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.initial,
@@ -280,8 +282,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
       },
       observers: [
-        _UbuntuDesktopInstallerWizardObserver(
-            Provider.of<TelemetryService>(context))
+        _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
       ],
     );
   }

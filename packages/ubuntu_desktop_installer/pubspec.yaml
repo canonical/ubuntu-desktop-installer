@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -42,7 +42,7 @@ dependencies:
     path: ../udev
   url_launcher: ^6.0.3
   yaru: ^0.2.0
-  yaru_icons: ^0.0.8
+  yaru_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:

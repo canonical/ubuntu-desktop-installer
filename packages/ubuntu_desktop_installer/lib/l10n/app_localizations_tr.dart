@@ -12,7 +12,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Ubuntu Kur';
+    return '$RELEASE Kur';
   }
 
   @override
@@ -46,106 +46,106 @@ class AppLocalizationsTr extends AppLocalizations {
   String get repairInstallation => 'Kurulumu Tamir Et';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Tamir etme seçeneği, tüm yazılımlarınızı tekrardan yükleyecek ve belgeleriniz ile ayarlarınıza dokunmayacaktır.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Ubuntu\'yu Dene';
+    return '$RELEASE Dene';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Bilgisayarınızda hiç bir değişiklik yapmadan Ubuntu\'yu deneyebilirsiniz.';
+    return 'Bilgisayarınızda hiç bir değişiklik yapmadan $RELEASE\'ü/u deneyebilirsiniz.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Ubuntu Yükle';
+    return '$RELEASE\'ü/u Kur';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return '$RELEASE\'ü/u halihazırda kullandığınız işletim sisteminizin yanına (ya da yerine) kur. Çok uzun sürmeyecektir.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return '<a href=\"$url\">Sürüm notlarını</a> okumak isteyebilirsiniz.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST\'yi kapat';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu yüklemeden önce Windows\'tan RST\'yi kapatmalısınız.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Talimatlar için şu adresi bir telefondan veya başka bir cihazdan açın: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Klavye düzeni';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Klavye düzeninizi seçin:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Klavyenizi test etmek için buraya yazın';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Klavye Düzenini Tespit Et';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Lütfen aşağıdaki tuşlardan birine basın:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Aşağıdaki tuş klavyenizde bulunuyor mu?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Güvenli Önyüklemeyi Ayarlayın';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri yüklemeyi seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir. \nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Güvenli Önyüklemeyi Ayarla';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Güvenlik anahtarı seçin';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Güvenlik anahtarını onaylayın';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Şimdilik sürücü yazılımını yükleme';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'Daha sonra Yazılımlar & Güncellemeler uygulamasından yükleyebilirsiniz.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Güvenlik anahtarı gereklidir';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'Güvenlik anahtarları uyuşmamaktadır';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'İnternete bağlan';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları yüklemesine ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Kablolu bağlantı kullan';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Kablolu bağlantı saptanamadı';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Kablolu bağlantı kapalı';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Bilgisayarda etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
 
   @override
   String get enableWired => 'Enable wired';

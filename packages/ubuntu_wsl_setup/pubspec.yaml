@@ -3,12 +3,13 @@ description: Ubuntu WSL OOBE Setup Wizard
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_html: ^2.1.1
+  get_it: ^7.2.0
   provider: ^6.0.0
   scroll_to_index: ^2.0.0
   ubuntu_localizations:

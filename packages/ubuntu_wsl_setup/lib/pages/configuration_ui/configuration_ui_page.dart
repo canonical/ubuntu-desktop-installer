@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -17,7 +18,7 @@ class ConfigurationUIPage extends StatefulWidget {
 
   /// Creates an instance with [ConfigurationUIModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => ConfigurationUIModel(client),
       child: const ConfigurationUIPage(),

@@ -100,12 +100,10 @@ void main() {
     final sdb = MockUdevDeviceInfo();
     when(sdb.fullName).thenReturn('SDB');
     when(udev.bySysname('sdb')).thenReturn(sdb);
+    registerMockService<UdevService>(udev);
 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<AllocateDiskSpaceModel>.value(value: model),
-        Provider<UdevService>.value(value: udev),
-      ],
+    return ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
+      value: model,
       child: const AllocateDiskSpacePage(),
     );
   }
@@ -364,14 +362,10 @@ void main() {
     when(storage.getStorage()).thenAnswer((_) async => testDisks);
     when(storage.needRoot).thenReturn(false);
     when(storage.needBoot).thenReturn(false);
+    registerMockService<DiskStorageService>(storage);
+    registerMockService<UdevService>(MockUdevService());
 
-    await tester.pumpWidget(MultiProvider(
-      providers: [
-        Provider<DiskStorageService>.value(value: storage),
-        Provider<UdevService>(create: (_) => MockUdevService()),
-      ],
-      child: tester.buildApp(AllocateDiskSpacePage.create),
-    ));
+    await tester.pumpWidget(tester.buildApp(AllocateDiskSpacePage.create));
 
     final page = find.byType(AllocateDiskSpacePage);
     expect(page, findsOneWidget);

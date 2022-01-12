@@ -15,7 +15,7 @@ class WelcomePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => WelcomeModel(client),
       child: const WelcomePage(),
@@ -86,8 +86,7 @@ class _WelcomePageState extends State<WelcomePage> {
           onActivated: () {
             final locale = model.locale(model.selectedLanguageIndex);
             model.applyLocale(locale);
-            Provider.of<TelemetryService>(context, listen: false)
-                .setLanguage(locale.languageCode);
+            getService<TelemetryService>().setLanguage(locale.languageCode);
             Wizard.of(context).next();
           },
         ),

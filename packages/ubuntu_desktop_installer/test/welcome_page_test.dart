@@ -24,6 +24,7 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
+    registerMockService<TelemetryService>(MockTelemetryService());
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
@@ -49,7 +50,6 @@ void main() {
         ChangeNotifierProvider<Settings>(
           create: (_) => Settings(MockGSettings()),
         ),
-        Provider<TelemetryService>.value(value: MockTelemetryService()),
       ], child: app),
     );
     await tester.pumpAndSettle();

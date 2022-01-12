@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import 'widget_tester_extensions.dart';
@@ -31,16 +31,14 @@ void main() {
     when(client.getKeyboardStep('60')).thenAnswer((_) async {
       return KeyboardStep.result(layout: 'd', variant: 'e');
     });
+    registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(
-      Provider<SubiquityClient>.value(
-        value: client,
-        child: tester.buildApp(
-          (_) => DetectKeyboardLayoutView(
-            pressKey: null,
-            keyPresent: null,
-            onKeyPress: (_) {},
-          ),
+      tester.buildApp(
+        (_) => DetectKeyboardLayoutView(
+          pressKey: null,
+          keyPresent: null,
+          onKeyPress: (_) {},
         ),
       ),
     );

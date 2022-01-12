@@ -15,7 +15,7 @@ class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({Key? key}) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return Provider(
       create: (_) => InstallationCompleteModel(client),
       child: const InstallationCompletePage(),
@@ -58,8 +58,7 @@ class InstallationCompletePage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 24),
                   child: ElevatedButton(
                     onPressed: () {
-                      Provider.of<TelemetryService>(context, listen: false)
-                          .done();
+                      getService<TelemetryService>().done();
                       Provider.of<InstallationCompleteModel>(context,
                               listen: false)
                           .reboot(immediate: false);
@@ -71,8 +70,7 @@ class InstallationCompletePage extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    Provider.of<TelemetryService>(context, listen: false)
-                        .done();
+                    getService<TelemetryService>().done();
                     Provider.of<InstallationCompleteModel>(context,
                             listen: false)
                         .shutdown(immediate: false);

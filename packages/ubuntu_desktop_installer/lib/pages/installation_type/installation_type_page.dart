@@ -20,8 +20,8 @@ class InstallationTypePage extends StatefulWidget {
 
   /// Creates a [InstallationTypePage] with [InstallationTypeModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final client = getService<SubiquityClient>();
+    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
       create: (context) => InstallationTypeModel(client, service),
       child: const InstallationTypePage(),
@@ -127,7 +127,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           onActivated: () async {
             await model.save();
 
-            final telemetry = Provider.of<TelemetryService>(context);
+            final telemetry = getService<TelemetryService>();
             // All possible values for the partition method
             // were extracted from Ubiquity's ubi-partman.py
             // (see PageGtk.get_autopartition_choice()).

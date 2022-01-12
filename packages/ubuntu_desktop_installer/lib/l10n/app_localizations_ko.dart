@@ -40,7 +40,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcome => '환영합니다';
 
   @override
-  String get tryOrInstallPageTitle => '체험해 보거나 설치하기';
+  String get tryOrInstallPageTitle => '체험 또는 설치';
 
   @override
   String get repairInstallation => '설치 복구';
@@ -77,7 +77,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get turnOffRST => 'RST 끄기';
 
   @override
-  String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전 Windows 에서 꺼야 합니다.';
+  String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override
   String instructionsForRST(Object url) {
@@ -121,7 +121,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => '지금은 드라이버 소프트웨어 설치하지 않기';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => '소프트웨어 & 업데이트 에서 나중에 설치하실 수 있습니다.';
+  String get dontInstallDriverSoftwareNowDescription => 'Software & Updates 에서 나중에 설치하실 수 있습니다.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => '보안 키가 필요합니다';
@@ -203,7 +203,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'license terms디스크를 암호화하면 컴퓨터를 분실했을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n${RELEASE} 밖의 파일은 암호화 되지 않습니다.';
+    return '디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n${RELEASE} 밖의 파일은 암호화 되지 않습니다.';
   }
 
   @override
@@ -254,7 +254,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeNone => '선택 안 함';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => '선택 안 함';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -273,7 +273,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeEncryptInfo => '다음 단계에서 보안 키를 선택합니다.';
 
   @override
-  String get installationTypeZFS => '실험적 기능: 디스크 지우기 및 ZFS 사용';
+  String get installationTypeZFS => '실험적 기능: 디스크 지우고 ZFS 사용';
 
   @override
   String get installationTypeZFSSelected => 'ZFS 선택됨';
@@ -343,7 +343,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get diskHeadersSystem => '시스템';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => '포맷';
 
   @override
   String get freeDiskSpace => '남은 공간';
@@ -352,10 +352,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTable => '새 파티션 테이블';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => '이 장치에 빈 파티션을 새로 생성하시겠습니까?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => '장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.';
 
   @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
@@ -400,7 +400,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionLocationEnd => '이 공간이 끝나는 지점';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => '용도:';
 
   @override
   String get partitionFormatExt4 => 'Ext4 저널링 파일 시스템';
@@ -508,7 +508,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get writeChangesToDisk => '디스크에 변경사항 쓰기';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => '디스크';
 
   @override
   String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
@@ -526,12 +526,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return '$mount 로 사용되는 $format 포맷의 #$disk${partition} 파티션';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return '#$disk${partition} 파티션을 $format 로 포맷';
   }
 
   @override

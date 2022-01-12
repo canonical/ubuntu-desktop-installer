@@ -425,5 +425,9 @@
   "enableWifi": "הפעלת רשת אלחוטית",
   "@enableWifi": {},
   "connectButtonText": "התחברות",
-  "@connectButtonText": {}
+  "@connectButtonText": {},
+  "newPartitionTableConfirmationMessage": "בחרת לחלק התקן שלם למחיצות. בחירה להמשיך ביצירת טבלת מחיצות חדשה בהתקן תסיר את כל המחיצות הנוכחיות.\n\nנא לשים לב שזאת פעולה בלתי הפיכה.",
+  "@newPartitionTableConfirmationMessage": {},
+  "newPartitionTableConfirmationTitle": "ליצור טבלת מחיצות ריקה בהתקן הזה?",
+  "@newPartitionTableConfirmationTitle": {}
 }

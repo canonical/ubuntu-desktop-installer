@@ -8,7 +8,7 @@ extension AppTester on WidgetTester {
     return pumpWidget(MaterialApp(
       home: SlideShow(
         interval: interval ?? const Duration(seconds: 5),
-        slides: slides.map((label) => Text(label)).toList(),
+        slides: slides.map(Text.new).toList(),
         wrap: wrap,
       ),
     ));
