@@ -172,29 +172,26 @@ parts:
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
+    #build-environment:
+    #  - C_INCLUDE_PATH: /snap/flutter/current/usr/include
+    #  - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+    #  - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
+    #  - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
-      flutter channel stable
-      flutter upgrade
-      flutter config --enable-linux-desktop
-      flutter doctor
-      flutter pub get
-      flutter build linux --release -v
+      git clone --depth=1 --branch stable https://github.com/flutter/flutter.git
+      ./flutter/bin/flutter config --enable-linux-desktop
+      ./flutter/bin/flutter doctor -v
+      ./flutter/bin/flutter pub get
+      ./flutter/bin/flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
       mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
-    build-snaps:
-      - flutter/latest/stable
 
   libraries:
     plugin: nil
