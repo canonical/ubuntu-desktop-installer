@@ -271,7 +271,7 @@ class PasswordFormField extends StatefulWidget {
     Key? key,
     required this.password,
     required this.onChanged,
-    required this.passwordStrength,
+    this.passwordStrength,
     this.labelText,
     this.requiredText,
     this.fieldWidth,
@@ -279,7 +279,7 @@ class PasswordFormField extends StatefulWidget {
   }) : super(key: key);
 
   final String password;
-  final PasswordStrength passwordStrength;
+  final PasswordStrength? passwordStrength;
   final String? labelText;
   final String? requiredText;
   final ValueChanged<String> onChanged;
@@ -304,7 +304,9 @@ class PasswordFormFieldState extends State<PasswordFormField> {
       fieldWidth: widget.fieldWidth,
       obscureText: _obscureText,
       labelText: widget.labelText,
-      successWidget: PasswordStrengthLabel(strength: widget.passwordStrength),
+      successWidget: widget.passwordStrength != null
+          ? PasswordStrengthLabel(strength: widget.passwordStrength!)
+          : null,
       suffixIcon: widget.password.isNotEmpty
           ? IconButton(
               onPressed: () => setState(() => _obscureText = !_obscureText),
