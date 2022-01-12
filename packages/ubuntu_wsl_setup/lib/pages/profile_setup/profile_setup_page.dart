@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,7 +23,7 @@ class ProfileSetupPage extends StatefulWidget {
 
   /// Creates an instance with [ProfileSetupModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => ProfileSetupModel(client),
       child: const ProfileSetupPage(),

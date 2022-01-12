@@ -18,8 +18,8 @@ class WriteChangesToDiskPage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final client = getService<SubiquityClient>();
+    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
       create: (_) => WriteChangesToDiskModel(client, service),
       child: const WriteChangesToDiskPage(),

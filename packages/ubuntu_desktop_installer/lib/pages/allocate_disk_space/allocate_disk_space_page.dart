@@ -17,7 +17,7 @@ class AllocateDiskSpacePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
       create: (_) => AllocateDiskSpaceModel(service),
       child: const AllocateDiskSpacePage(),

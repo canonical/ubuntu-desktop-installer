@@ -21,12 +21,11 @@ void main() {
     final testDisk = Disk(freeForPartitions: 1000000);
     final model = buildModel(selectedDisk: testDisk);
 
+    registerMockService<UdevService>(MockUdevService());
+
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider<AllocateDiskSpaceModel>.value(value: model),
-          Provider<UdevService>(create: (_) => MockUdevService()),
-        ],
+      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
+        value: model,
         child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );
@@ -83,12 +82,11 @@ void main() {
     ]);
     final model = buildModel(selectedDisk: testDisk);
 
+    registerMockService<UdevService>(MockUdevService());
+
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider<AllocateDiskSpaceModel>.value(value: model),
-          Provider<UdevService>(create: (_) => MockUdevService()),
-        ],
+      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
+        value: model,
         child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );

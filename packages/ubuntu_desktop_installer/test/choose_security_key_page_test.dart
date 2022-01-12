@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import 'choose_security_key_page_test.mocks.dart';
@@ -96,13 +97,9 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => IdentityData());
+    registerMockService<SubiquityClient>(client);
 
-    await tester.pumpWidget(
-      Provider<SubiquityClient>.value(
-        value: client,
-        child: tester.buildApp(ChooseSecurityKeyPage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(ChooseSecurityKeyPage.create));
 
     final page = find.byType(ChooseSecurityKeyPage);
     expect(page, findsOneWidget);

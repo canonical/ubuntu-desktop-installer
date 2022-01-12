@@ -5,6 +5,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'who_are_you_model.dart';
 
 part 'who_are_you_widgets.dart';
@@ -21,7 +22,7 @@ class WhoAreYouPage extends StatefulWidget {
 
   /// Creates an instance with [WhoAreYouModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => WhoAreYouModel(client),
       child: const WhoAreYouPage(),
