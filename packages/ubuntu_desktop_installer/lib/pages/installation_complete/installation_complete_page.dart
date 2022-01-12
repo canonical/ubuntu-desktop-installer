@@ -57,8 +57,8 @@ class InstallationCompletePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24),
                   child: ElevatedButton(
-                    onPressed: () {
-                      getService<TelemetryService>().done();
+                    onPressed: () async {
+                      await getService<TelemetryService>().done();
                       Provider.of<InstallationCompleteModel>(context,
                               listen: false)
                           .reboot(immediate: false);
@@ -69,8 +69,8 @@ class InstallationCompletePage extends StatelessWidget {
                   ),
                 ),
                 OutlinedButton(
-                  onPressed: () {
-                    getService<TelemetryService>().done();
+                  onPressed: () async {
+                    await getService<TelemetryService>().done();
                     Provider.of<InstallationCompleteModel>(context,
                             listen: false)
                         .shutdown(immediate: false);

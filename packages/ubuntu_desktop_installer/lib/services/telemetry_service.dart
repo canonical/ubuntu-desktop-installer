@@ -4,6 +4,7 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
 import 'package:system_clock/system_clock.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 class TelemetryService {
   TelemetryService() : _startTime = _uptime();
@@ -59,7 +60,12 @@ class TelemetryService {
     _metrics['OEM'] = false;
     _metrics['Stages'] = _stages;
     final file = fs.file(reportLocation);
-    await file.parent.create(recursive: true);
-    await file.writeAsString(json.encode(_metrics), flush: true);
+    try {
+      await file.parent.create(recursive: true);
+      await file.writeAsString(json.encode(_metrics), flush: true);
+    } on FileSystemException {
+      Logger('telemetry')
+          .error('Failed to write telemetry report to $reportLocation');
+    }
   }
 }
