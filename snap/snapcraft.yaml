@@ -140,11 +140,11 @@ parts:
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
+    # build-environment:
+    #   - C_INCLUDE_PATH: /snap/flutter/current/usr/include
+    #   - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+    #   - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
+    #   - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
@@ -152,15 +152,21 @@ parts:
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       cd packages/ubuntu_desktop_installer
-      flutter channel stable
-      flutter upgrade
-      flutter config --enable-linux-desktop
-      flutter doctor
-      flutter pub get
-      flutter build linux --release -v
+      git clone --depth=1 --branch stable https://github.com/flutter/flutter.git
+      ./flutter/bin/flutter config --enable-linux-desktop
+      ./flutter/bin/flutter doctor -v
+      ./flutter/bin/flutter pub get
+      ./flutter/bin/flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
-    build-snaps:
-      - flutter/latest/stable
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - libgtk-3-dev
+      - ninja-build
+      - unzip
+      - xz-utils
+      - zip
 
   ubuntu-wsl-setup:
     source: .
