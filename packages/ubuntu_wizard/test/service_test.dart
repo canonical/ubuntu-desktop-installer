@@ -11,8 +11,8 @@ void main() {
   });
 
   test('re-register service', () {
-    expect(() => registerService(() => Service()), isNot(throwsAssertionError));
-    expect(() => registerService(() => Service()), throwsAssertionError);
+    expect(() => registerService(Service.new), isNot(throwsAssertionError));
+    expect(() => registerService(Service.new), throwsAssertionError);
   });
 
   test('re-register service instance', () {
@@ -22,7 +22,7 @@ void main() {
   });
 
   test('locate service', () {
-    registerService(() => Service());
+    registerService(Service.new);
     expect(getService<Service>(), isNotNull);
   });
 
