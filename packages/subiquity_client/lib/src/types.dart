@@ -12,9 +12,7 @@ extension VariantString on Variant {
     return Variant.values.firstWhere((v) => value == v.toVariantString());
   }
 
-  String toVariantString() {
-    return toString().split('.').last.toLowerCase();
-  }
+  String toVariantString() => name.toLowerCase();
 }
 
 @freezed
