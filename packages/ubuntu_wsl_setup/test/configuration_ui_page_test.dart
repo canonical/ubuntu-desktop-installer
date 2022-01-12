@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
@@ -167,19 +168,17 @@ void main() {
     final client = MockSubiquityClient();
     when(client.wslConfigurationAdvanced())
         .thenAnswer((_) async => WSLConfigurationAdvanced());
+    registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,
-      home: Provider<SubiquityClient>.value(
-        value: client,
-        child: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: ConfigurationUIPage.create,
-              onNext: (settings) => '/',
-            ),
-          },
-        ),
+      home: Wizard(
+        routes: {
+          '/': WizardRoute(
+            builder: ConfigurationUIPage.create,
+            onNext: (settings) => '/',
+          ),
+        },
       ),
     ));
 

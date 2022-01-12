@@ -17,8 +17,8 @@ class ConnectToInternetPage extends StatefulWidget {
   const ConnectToInternetPage({Key? key}) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final udev = Provider.of<UdevService>(context, listen: false);
-    final service = Provider.of<NetworkService>(context, listen: false);
+    final udev = getService<UdevService>();
+    final service = getService<NetworkService>();
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ConnectToInternetModel(service)),

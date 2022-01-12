@@ -202,20 +202,10 @@ void main() {
     when(service.wiredDevices).thenReturn([]);
     when(service.wirelessDevices).thenReturn([]);
     when(service.wirelessEnabled).thenReturn(true);
+    registerMockService<NetworkService>(service);
+    registerMockService<UdevService>(MockUdevService());
 
-    await tester.pumpWidget(
-      tester.buildApp(
-        (_) => MultiProvider(
-          providers: [
-            Provider<NetworkService>.value(value: service),
-            Provider<UdevService>(create: (_) => MockUdevService()),
-          ],
-          child: const Wizard(
-            routes: {'/': WizardRoute(builder: ConnectToInternetPage.create)},
-          ),
-        ),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(ConnectToInternetPage.create));
 
     final page = find.byType(ConnectToInternetPage);
     expect(page, findsOneWidget);

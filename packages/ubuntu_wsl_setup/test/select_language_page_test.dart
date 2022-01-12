@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
@@ -96,17 +97,15 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.locale()).thenAnswer((_) async => 'en_US.UTF-8');
+    registerMockService<SubiquityClient>(client);
 
     final settings = MockSettings();
     when(settings.locale).thenReturn(Locale('en_US'));
 
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider<Settings>.value(value: settings),
-          Provider<SubiquityClient>.value(value: client),
-        ],
+      home: ChangeNotifierProvider<Settings>.value(
+        value: settings,
         child: Wizard(
           routes: {
             '/': WizardRoute(
