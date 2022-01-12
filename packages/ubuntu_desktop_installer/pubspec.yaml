@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  glibc:
+    path: ../glibc
   subiquity_client:
     path: ../subiquity_client
   ubuntu_wizard:
@@ -29,7 +31,6 @@ dependencies:
   flutter_markdown: ^0.6.2
   safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
-  system_clock: ^1.2.0
   ubuntu_localizations:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git

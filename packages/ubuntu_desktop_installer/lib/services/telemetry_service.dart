@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
-import 'package:system_clock/system_clock.dart';
+import 'package:glibc/glibc.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 class TelemetryService {
@@ -17,13 +17,7 @@ class TelemetryService {
   bool _done = false;
 
   static int _uptime() {
-    try {
-      return SystemClock.uptime().inSeconds;
-      // ignore: avoid_catching_errors
-    } on ArgumentError catch (__) {
-      // See https://github.com/boyan01/system_clock/issues/5
-      return DateTime.now().millisecondsSinceEpoch ~/ 1000;
-    }
+    return sysinfo().uptime.inSeconds;
   }
 
   int _timestamp() {
