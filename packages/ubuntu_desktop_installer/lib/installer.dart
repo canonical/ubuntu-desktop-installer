@@ -34,9 +34,9 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => JournalService(journalUnit));
-  registerService(() => KeyboardService());
-  registerService(() => NetworkService());
-  registerService(() => UdevService());
+  registerService(KeyboardService.new);
+  registerService(NetworkService.new);
+  registerService(UdevService.new);
 
   final appStatus = ValueNotifier(AppStatus.loading);
 
