@@ -147,6 +147,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             }
             final hasEncryption =
                 false; // TODO: get this value from _UbuntuDesktopInstallerModel
+            // ignore: dead_code
             if (hasEncryption && model.advancedFeature != AdvancedFeature.zfs) {
               telemetry.setPartitionMethod('use_crypto');
             }
