@@ -145,10 +145,8 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             } else if (model.advancedFeature == AdvancedFeature.zfs) {
               telemetry.setPartitionMethod('use_zfs');
             }
-            final hasEncryption =
-                false; // TODO: get this value from _UbuntuDesktopInstallerModel
-            // ignore: dead_code
-            if (hasEncryption && model.advancedFeature != AdvancedFeature.zfs) {
+            if (getService<DiskStorageService>().hasEncryption &&
+                model.advancedFeature != AdvancedFeature.zfs) {
               telemetry.setPartitionMethod('use_crypto');
             }
             // TODO: map upgrading the current Ubuntu installation without
