@@ -135,49 +135,65 @@ parts:
       - cmake
       - libgtk-3-dev
 
-  ubuntu-desktop-installer:
-    after: [libhandy]
-    source: .
-    source-type: git
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-branch: stable
+    source-depth: 1
     plugin: nil
     override-build: |
-      set -eux
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
-      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
-      cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
-      cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
-      cd packages/ubuntu_desktop_installer
-      git clone --depth=1 --branch stable https://github.com/flutter/flutter.git
-      ./flutter/bin/flutter config --enable-linux-desktop
-      ./flutter/bin/flutter doctor -v
-      ./flutter/bin/flutter pub get
-      ./flutter/bin/flutter build linux --release -v
-      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+      flutter config --enable-linux-desktop
+      flutter doctor -v
     build-packages:
+      - clang
+      - libgtk-3-dev
+    stage-packages:
       - clang
       - cmake
       - curl
+      - libglib2.0-0
       - libgtk-3-dev
       - ninja-build
       - unzip
       - xz-utils
       - zip
+    prime:
+      - -"*"
 
-  ubuntu-wsl-setup:
+  ubuntu-desktop-installer:
+    after: [libhandy, flutter-git]
     source: .
     source-type: git
     plugin: nil
     override-build: |
       set -eux
+      echo $PATH
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
+      cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
+      cd packages/ubuntu_desktop_installer
+      flutter pub get
+      flutter build linux --release -v
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+
+  ubuntu-wsl-setup:
+    after: [flutter-git]
+    source: .
+    source-type: git
+    plugin: nil
+    override-build: |
+      set -eux
+      echo $PATH
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
-      git clone --depth=1 --branch stable https://github.com/flutter/flutter.git
-      ./flutter/bin/flutter config --enable-linux-desktop
-      ./flutter/bin/flutter doctor -v
-      ./flutter/bin/flutter pub get
-      ./flutter/bin/flutter build linux --release -v
+      flutter pub get
+      flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
