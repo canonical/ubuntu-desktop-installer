@@ -140,11 +140,6 @@ parts:
     source: .
     source-type: git
     plugin: nil
-    # build-environment:
-    #   - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-    #   - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-    #   - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-    #   - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
@@ -172,11 +167,6 @@ parts:
     source: .
     source-type: git
     plugin: nil
-    #build-environment:
-    #  - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-    #  - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-    #  - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-    #  - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
