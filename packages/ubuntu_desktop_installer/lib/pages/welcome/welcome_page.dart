@@ -55,7 +55,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
-    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return WizardPage(
       title: Text(lang.welcome),
       header: Text(lang.welcomeHeader),
@@ -63,8 +63,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              width: width / 2.4,
+            Expanded(
               child: RoundedListView.builder(
                 controller: _languageListScrollController,
                 itemCount: model.languageCount,
@@ -86,9 +85,10 @@ class _WelcomePageState extends State<WelcomePage> {
                 },
               ),
             ),
+            const SizedBox(width: 20),
             Expanded(
               child: SvgPicture.asset('assets/mascot_white.svg',
-                  height: 150, color: Theme.of(context).primaryColor),
+                  height: height / 4, color: Theme.of(context).primaryColor),
             )
           ],
         ),
