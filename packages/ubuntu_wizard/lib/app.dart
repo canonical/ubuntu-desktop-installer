@@ -7,12 +7,12 @@ import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
+import 'services.dart';
 import 'settings.dart';
 import 'utils.dart';
 
@@ -39,7 +39,6 @@ Future<void> runWizardApp(
   SubiquityInitCallback? onInitSubiquity,
   List<String>? serverArgs,
   Map<String, String>? serverEnvironment,
-  List<SingleChildWidget>? providers,
 }) async {
   final interfaceSettings = GSettings('org.gnome.desktop.interface');
 
@@ -67,8 +66,11 @@ Future<void> runWizardApp(
       'network',
       'ssh',
       'snaplist',
+      'ubuntu_advantage',
     ]);
   });
+
+  registerServiceInstance(subiquityClient);
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
@@ -84,12 +86,8 @@ Future<void> runWizardApp(
       log.error('Unhandled exception', error.exception, error.stack);
     };
 
-    return runApp(MultiProvider(
-      providers: [
-        Provider.value(value: subiquityClient),
-        ChangeNotifierProvider(create: (_) => Settings(interfaceSettings)),
-        ...?providers,
-      ],
+    return runApp(ChangeNotifierProvider(
+      create: (_) => Settings(interfaceSettings),
       child: app,
     ));
   }, (error, stack) => log.error('Unhandled exception', error, stack));

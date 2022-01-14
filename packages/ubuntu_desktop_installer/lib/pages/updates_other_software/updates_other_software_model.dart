@@ -47,7 +47,7 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
     }
 
     _mode = mode;
-    log.info('Selected ${describeEnum(mode)} installation mode');
+    log.info('Selected ${mode.name} installation mode');
     notifyListeners();
   }
 

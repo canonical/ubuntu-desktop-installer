@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -22,7 +23,7 @@ class SetupCompletePage extends StatefulWidget {
 
   /// Creates an instance with [SetupCompleteModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => SetupCompleteModel(client),
       child: const SetupCompletePage(),

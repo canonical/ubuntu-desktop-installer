@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import 'installation_complete_page_test.mocks.dart';
@@ -44,12 +45,9 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
-    await tester.pumpWidget(
-      Provider<SubiquityClient>(
-        create: (_) => MockSubiquityClient(),
-        child: tester.buildApp(InstallationCompletePage.create),
-      ),
-    );
+    registerMockService<SubiquityClient>(MockSubiquityClient());
+
+    await tester.pumpWidget(tester.buildApp(InstallationCompletePage.create));
 
     final page = find.byType(InstallationCompletePage);
     expect(page, findsOneWidget);

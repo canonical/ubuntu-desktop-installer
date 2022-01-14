@@ -6,6 +6,7 @@ import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -14,7 +15,7 @@ class WelcomePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => WelcomeModel(client),
       child: const WelcomePage(),

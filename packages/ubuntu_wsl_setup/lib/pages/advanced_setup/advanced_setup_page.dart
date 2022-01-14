@@ -3,6 +3,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -24,7 +25,7 @@ class AdvancedSetupPage extends StatefulWidget {
 
   /// Creates an instance with [AdvancedSetupModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => AdvancedSetupModel(client),
       child: const AdvancedSetupPage(),

@@ -103,13 +103,9 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final service = MockDiskStorageService();
     when(service.getGuidedStorage()).thenAnswer((_) async => testStorages);
+    registerMockService<DiskStorageService>(service);
 
-    await tester.pumpWidget(
-      Provider<DiskStorageService>.value(
-        value: service,
-        child: tester.buildApp(SelectGuidedStoragePage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(SelectGuidedStoragePage.create));
 
     final page = find.byType(SelectGuidedStoragePage);
     expect(page, findsOneWidget);

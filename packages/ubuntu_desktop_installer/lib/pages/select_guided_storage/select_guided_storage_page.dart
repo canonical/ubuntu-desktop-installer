@@ -17,7 +17,7 @@ class SelectGuidedStoragePage extends StatefulWidget {
 
   /// Creates a [SelectGuidedStoragePage] with [SelectGuidedStorageModel].
   static Widget create(BuildContext context) {
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
       create: (context) => SelectGuidedStorageModel(service),
       child: const SelectGuidedStoragePage(),
