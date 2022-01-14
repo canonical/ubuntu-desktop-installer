@@ -201,8 +201,26 @@ void main() {
     expect(find.text('not equal'), findsNothing);
   });
 
-  testWidgets('focus', (tester) async {
+  testWidgets('focus node is attached', (tester) async {
     final focusNode = FocusNode();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(focusNode: focusNode),
+        ),
+      ),
+    );
+
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).focusNode,
+      equals(focusNode),
+    );
+  });
+
+  testWidgets('initial autofocus', (tester) async {
+    final focusNode = FocusNode();
+    expect(focusNode.hasFocus, isFalse);
 
     await tester.pumpWidget(
       MaterialApp(
@@ -213,9 +231,62 @@ void main() {
     );
 
     expect(focusNode.hasFocus, isTrue);
-    expect(
-      tester.widget<TextField>(find.byType(TextField)).focusNode,
-      equals(focusNode),
+  });
+
+  testWidgets('no initial autofocus', (tester) async {
+    final focusNode = FocusNode();
+    expect(focusNode.hasFocus, isFalse);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(autofocus: false, focusNode: focusNode),
+        ),
+      ),
     );
+
+    expect(focusNode.hasFocus, isFalse);
+  });
+
+  testWidgets('initial focus with focus node', (tester) async {
+    final focusNode = FocusNode();
+    expect(focusNode.hasFocus, isFalse);
+
+    focusNode.requestFocus();
+    await tester.pump();
+    expect(focusNode.hasFocus, isFalse); // the focus node is not yet attached
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(focusNode: focusNode),
+        ),
+      ),
+    );
+
+    expect(focusNode.hasFocus, isTrue);
+  });
+
+  testWidgets('request focus and unfocus', (tester) async {
+    final focusNode = FocusNode();
+    expect(focusNode.hasFocus, isFalse);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(focusNode: focusNode),
+        ),
+      ),
+    );
+
+    expect(focusNode.hasFocus, isFalse);
+
+    focusNode.requestFocus();
+    await tester.pump();
+    expect(focusNode.hasFocus, isTrue);
+
+    focusNode.unfocus();
+    await tester.pump();
+    expect(focusNode.hasFocus, isFalse);
   });
 }
