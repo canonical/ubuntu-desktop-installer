@@ -40,6 +40,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcome => 'Tervetuloa';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Kokeile tai asenna';
 
   @override

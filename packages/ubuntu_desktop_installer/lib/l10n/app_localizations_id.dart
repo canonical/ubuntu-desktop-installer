@@ -40,6 +40,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get welcome => 'Selamat Datang';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Coba atau pasang';
 
   @override

@@ -40,6 +40,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get welcome => 'Welkom';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Uitproberen of installeren';
 
   @override

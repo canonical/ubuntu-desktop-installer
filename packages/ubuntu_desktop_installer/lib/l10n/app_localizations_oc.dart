@@ -40,6 +40,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get welcome => 'La benvenguda';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Ensajar o installar';
 
   @override

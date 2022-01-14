@@ -40,6 +40,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get welcome => 'Вітаємо';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Спробувати або встановити';
 
   @override

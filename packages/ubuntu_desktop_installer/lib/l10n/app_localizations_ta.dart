@@ -40,6 +40,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get welcome => 'நல்வரவு';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'சோதி அல்லது நிறுவு';
 
   @override

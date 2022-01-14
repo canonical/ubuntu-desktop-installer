@@ -40,6 +40,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get welcome => 'Välkommen';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Try or install';
 
   @override

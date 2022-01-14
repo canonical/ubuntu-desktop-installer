@@ -40,6 +40,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcome => '환영합니다';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => '체험 또는 설치';
 
   @override
