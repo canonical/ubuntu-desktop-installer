@@ -108,16 +108,10 @@ void main() {
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
+    registerMockService<SubiquityClient>(client);
+    registerMockService<DiskStorageService>(DiskStorageService(client));
 
-    await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          Provider<SubiquityClient>.value(value: client),
-          Provider(create: (_) => DiskStorageService(client)),
-        ],
-        child: tester.buildApp(InstallationTypePage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(InstallationTypePage.create));
 
     final page = find.byType(InstallationTypePage);
     expect(page, findsOneWidget);

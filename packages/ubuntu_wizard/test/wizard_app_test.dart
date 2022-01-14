@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/app.dart';
+import 'package:ubuntu_wizard/services.dart';
 
 import 'wizard_app_test.mocks.dart';
 
 @GenerateMocks([IOSink])
 void main() {
+  tearDown(() => unregisterMockService<SubiquityClient>());
+
   testWidgets('initializes subiquity', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
@@ -35,23 +37,20 @@ void main() {
     verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
-  testWidgets('provides the client', (tester) async {
+  testWidgets('registers the client', (tester) async {
+    final client = MockSubiquityClient();
     final server = MockSubiquityServer();
     when(server.start(any,
             args: anyNamed('args'), environment: anyNamed('environment')))
         .thenAnswer((_) async => '');
 
     await runWizardApp(
-      Container(key: ValueKey('app')),
-      subiquityClient: MockSubiquityClient(),
+      SizedBox(),
+      subiquityClient: client,
       subiquityServer: server,
     );
 
-    final app = find.byKey(ValueKey('app'));
-    expect(app, findsOneWidget);
-
-    final context = tester.element(app);
-    expect(context.read<SubiquityClient>(), isNotNull);
+    expect(getService<SubiquityClient>(), equals(client));
   });
 
   testWidgets('parse command-line arguments', (tester) async {
