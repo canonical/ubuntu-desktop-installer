@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -131,16 +132,35 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   }
 }
 
-class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
+class _UbuntuDesktopInstallerLoadingPage extends StatefulWidget {
   const _UbuntuDesktopInstallerLoadingPage({Key? key}) : super(key: key);
 
   @override
+  State<_UbuntuDesktopInstallerLoadingPage> createState() =>
+      _UbuntuDesktopInstallerLoadingPageState();
+}
+
+class _UbuntuDesktopInstallerLoadingPageState
+    extends State<_UbuntuDesktopInstallerLoadingPage> {
+  @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return WizardPage(
       title: Text(AppLocalizations.of(context).welcome),
-      content: FractionallySizedBox(
-        widthFactor: 0.5,
-        child: RoundedContainer(),
+      header: Text(''),
+      content: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+              child: RoundedContainer(
+            height: height,
+          )),
+          const SizedBox(width: 20),
+          Expanded(
+            child: SvgPicture.asset('assets/mascot_white.svg',
+                height: height / 4, color: Theme.of(context).disabledColor),
+          ),
+        ],
       ),
       actions: <WizardAction>[
         WizardAction.back(context, enabled: false),
