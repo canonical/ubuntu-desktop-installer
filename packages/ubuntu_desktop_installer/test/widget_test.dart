@@ -32,6 +32,7 @@ void main() {
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<KeyboardService>(KeyboardService());
+    registerMockService<TelemetryService>(TelemetryService());
 
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (_) => Settings(MockGSettings()),

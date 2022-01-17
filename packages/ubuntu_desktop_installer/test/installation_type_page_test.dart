@@ -111,6 +111,7 @@ void main() {
         .thenAnswer((_) async => GuidedStorageResponse());
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
+    registerMockService<TelemetryService>(TelemetryService());
 
     await tester.pumpWidget(tester.buildApp(InstallationTypePage.create));
 
