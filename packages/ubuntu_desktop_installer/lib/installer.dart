@@ -132,16 +132,9 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   }
 }
 
-class _UbuntuDesktopInstallerLoadingPage extends StatefulWidget {
+class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   const _UbuntuDesktopInstallerLoadingPage({Key? key}) : super(key: key);
 
-  @override
-  State<_UbuntuDesktopInstallerLoadingPage> createState() =>
-      _UbuntuDesktopInstallerLoadingPageState();
-}
-
-class _UbuntuDesktopInstallerLoadingPageState
-    extends State<_UbuntuDesktopInstallerLoadingPage> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
