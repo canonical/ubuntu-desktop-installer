@@ -117,6 +117,27 @@ parts:
     prime:
       - -lib/systemd/system/*
 
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-branch: stable
+    source-depth: 1
+    plugin: nil
+    override-build: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - libgtk-3-dev
+      - ninja-build
+      - unzip
+      - xz-utils
+      - zip
+    override-prime: ''
+
   libhandy:
     source: https://gitlab.gnome.org/GNOME/libhandy.git
     source-branch: "libhandy-1-2"
@@ -135,15 +156,10 @@ parts:
       - libgtk-3-dev
 
   ubuntu-desktop-installer:
-    after: [libhandy]
+    after: [flutter-git, libhandy]
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
@@ -158,18 +174,12 @@ parts:
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
-    build-snaps:
-      - flutter/latest/stable
 
   ubuntu-wsl-setup:
+    after: [flutter-git]
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
@@ -186,8 +196,6 @@ parts:
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
       mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
-    build-snaps:
-      - flutter/latest/stable
 
   libraries:
     plugin: nil
