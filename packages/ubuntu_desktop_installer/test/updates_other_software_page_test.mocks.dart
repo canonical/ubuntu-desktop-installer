@@ -10,8 +10,7 @@ import 'package:file/local.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart'
     as _i2;
-import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i5;
+import 'package:ubuntu_desktop_installer/services.dart' as _i5;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
