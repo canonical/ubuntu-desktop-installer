@@ -52,7 +52,7 @@ abstract class SubiquityServer {
     return _subiquityPath ??= await _findSubiquityPath();
   }
 
-  // Finds local subiquity in relation to the `subiquity_client` Dart package.
+  // Finds local subiquity relative to the `subiquity_client` Dart package.
   Future<String> _findSubiquityPath() async {
     Object? error;
     final config = await findPackageConfig(
