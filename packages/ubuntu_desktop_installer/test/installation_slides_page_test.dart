@@ -120,25 +120,21 @@ void main() {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current')))
         .thenAnswer((_) => never.future);
+    registerMockService<SubiquityClient>(client);
 
     final service = MockJournalService();
     when(service.stream).thenAnswer((_) => Stream<String>.empty());
+    registerMockService<JournalService>(service);
 
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          Provider<SubiquityClient>.value(value: client),
-          Provider<JournalService>.value(value: service),
+      Slides(
+        slides: [
+          Slide(
+            title: (_) => SizedBox.shrink(),
+            body: (_) => SizedBox.shrink(),
+          )
         ],
-        child: Slides(
-          slides: [
-            Slide(
-              title: (_) => SizedBox.shrink(),
-              body: (_) => SizedBox.shrink(),
-            )
-          ],
-          child: tester.buildApp(InstallationSlidesPage.create),
-        ),
+        child: tester.buildApp(InstallationSlidesPage.create),
       ),
     );
 
