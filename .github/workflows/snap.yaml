@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,6 +14,7 @@ jobs:
     - uses: snapcore/action-build@v1
       id: snapcraft
     - uses: actions/upload-artifact@v2
+      if: github.event_name == 'workflow_dispatch'
       with:
         name: 'snap'
         path: ${{steps.snapcraft.outputs.snap}}
