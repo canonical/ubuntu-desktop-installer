@@ -138,8 +138,25 @@ parts:
       - zip
     override-prime: ''
 
+  libhandy:
+    source: https://gitlab.gnome.org/GNOME/libhandy.git
+    source-branch: "libhandy-1-2"
+    source-depth: 1
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+      - --buildtype=release
+      - -Dvapi=false
+      - -Dintrospection=disabled
+      - -Dgtk_doc=false
+      - -Dtests=false
+      - -Dexamples=false
+      - -Dglade_catalog=disabled
+    build-packages:
+      - libgtk-3-dev
+
   ubuntu-desktop-installer:
-    after: [flutter-git]
+    after: [flutter-git, libhandy]
     source: .
     source-type: git
     plugin: nil
