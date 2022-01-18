@@ -195,16 +195,13 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
+    registerMockService<SubiquityClient>(client);
+
     final service = MockGeoService();
     when(service.init()).thenAnswer((_) async => null);
+    registerMockService<GeoService>(service);
 
-    await tester.pumpWidget(MultiProvider(
-      providers: [
-        Provider<SubiquityClient>.value(value: client),
-        Provider<GeoService>.value(value: service),
-      ],
-      child: tester.buildApp(WhereAreYouPage.create),
-    ));
+    await tester.pumpWidget(tester.buildApp(WhereAreYouPage.create));
 
     final page = find.byType(WhereAreYouPage);
     expect(page, findsOneWidget);

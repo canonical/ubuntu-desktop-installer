@@ -18,8 +18,8 @@ class WhereAreYouPage extends StatefulWidget {
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => WhereAreYouModel(
-        client: Provider.of<SubiquityClient>(context, listen: false),
-        service: Provider.of<GeoService>(context, listen: false),
+        client: getService<SubiquityClient>(),
+        service: getService<GeoService>(),
       ),
       child: const WhereAreYouPage(),
     );
