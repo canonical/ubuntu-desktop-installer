@@ -20,6 +20,8 @@ dependencies:
   flutter_spinbox: ^0.5.4
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
+  glibc:
+    path: ../glibc
   intl: ^0.17.0
   nm: ^0.4.1
   provider: ^6.0.0
@@ -35,6 +37,10 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_logger
+  ubuntu_widgets:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_widgets
   ubuntu_wizard:
     path: ../ubuntu_wizard
   udev:

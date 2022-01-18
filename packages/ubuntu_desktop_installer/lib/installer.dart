@@ -36,6 +36,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
   registerService(() => JournalService(journalUnit));
   registerService(KeyboardService.new);
   registerService(NetworkService.new);
+  registerService(TelemetryService.new);
   registerService(UdevService.new);
 
   final appStatus = ValueNotifier(AppStatus.loading);
@@ -230,7 +231,7 @@ class _UbuntuDesktopInstallerWizardState
             if (settings.arguments == InstallationType.erase) {
               if (service.hasMultipleDisks) {
                 return Routes.selectGuidedStorage;
-              } else if (model.hasEncryption) {
+              } else if (service.hasEncryption) {
                 return Routes.chooseSecurityKey;
               } else {
                 return Routes.writeChangesToDisk;
@@ -242,7 +243,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
           onNext: (_) =>
-              !model.hasEncryption ? Routes.writeChangesToDisk : null,
+              !service.hasEncryption ? Routes.writeChangesToDisk : null,
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,
@@ -280,7 +281,23 @@ class _UbuntuDesktopInstallerWizardState
           builder: InstallationCompletePage.create,
         ),
       },
+      observers: [
+        _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
+      ],
     );
+  }
+}
+
+class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
+  _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
+
+  final TelemetryService _telemetryService;
+
+  @override
+  void didPush(Route route, Route? previousRoute) {
+    if (route.settings.name != null) {
+      _telemetryService.addStage(route.settings.name!);
+    }
   }
 }
 
@@ -295,8 +312,6 @@ class _UbuntuDesktopInstallerModel extends ChangeNotifier {
   bool get hasBitLocker => _hasBitLocker;
   // TODO: add secure boot support
   bool get hasSecureBoot => false;
-  // TODO: add encryption support
-  bool get hasEncryption => false;
 
   Future<void> init() {
     return Future.wait([
