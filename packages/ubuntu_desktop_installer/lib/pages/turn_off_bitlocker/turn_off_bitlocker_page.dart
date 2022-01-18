@@ -7,11 +7,12 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'turn_off_bitlocker_model.dart';
 
 class TurnOffBitLockerPage extends StatelessWidget {
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return Provider(
       create: (_) => TurnOffBitLockerModel(client),
       child: TurnOffBitLockerPage(),

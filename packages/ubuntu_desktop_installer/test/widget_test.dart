@@ -29,13 +29,15 @@ void main() {
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
     when(client.isOpen).thenAnswer((_) async => true);
+    registerMockService<SubiquityClient>(client);
+    registerMockService<DiskStorageService>(DiskStorageService(client));
+    registerMockService<KeyboardService>(KeyboardService());
+    registerMockService<TelemetryService>(TelemetryService());
 
-    await tester.pumpWidget(MultiProvider(providers: [
-      Provider<SubiquityClient>.value(value: client),
-      Provider(create: (context) => DiskStorageService(client)),
-      Provider(create: (context) => KeyboardService()),
-      ChangeNotifierProvider(create: (_) => Settings(MockGSettings())),
-    ], child: UbuntuDesktopInstallerApp()));
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (_) => Settings(MockGSettings()),
+      child: UbuntuDesktopInstallerApp(),
+    ));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });

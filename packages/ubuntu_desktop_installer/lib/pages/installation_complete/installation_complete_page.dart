@@ -6,6 +6,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'installation_complete_model.dart';
 
 const _kAvatarBorder = Color(0xFFe5e5e5);
@@ -14,7 +15,7 @@ class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({Key? key}) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return Provider(
       create: (_) => InstallationCompleteModel(client),
       child: const InstallationCompletePage(),
@@ -56,7 +57,8 @@ class InstallationCompletePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24),
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      await getService<TelemetryService>().done();
                       Provider.of<InstallationCompleteModel>(context,
                               listen: false)
                           .reboot(immediate: false);
@@ -67,7 +69,8 @@ class InstallationCompletePage extends StatelessWidget {
                   ),
                 ),
                 OutlinedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    await getService<TelemetryService>().done();
                     Provider.of<InstallationCompleteModel>(context,
                             listen: false)
                         .shutdown(immediate: false);

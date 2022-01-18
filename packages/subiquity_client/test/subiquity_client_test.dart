@@ -114,36 +114,6 @@ void main() {
       var gs = await _client.getGuidedStorage();
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
-
-      var gc = GuidedChoice(
-        diskId: 'invalid',
-        useLvm: false,
-        password: '',
-      );
-
-      await expectLater(() => _client.setGuidedStorage(gc),
-          throwsA(predicate((e) {
-        return e is SubiquityException &&
-            e.method.startsWith('setGuidedStorage(') &&
-            e.statusCode == 500;
-      })));
-
-      gc = GuidedChoice(
-        diskId: gs.disks?[0].id,
-        useLvm: false,
-        password: '',
-      );
-
-      var sr = await _client.setGuidedStorage(gc);
-      expect(sr.status, ProbeStatus.DONE);
-
-      await _client.setStorage(sr.config!);
-    });
-
-    test('reset storage', () async {
-      final response = await _client.resetStorage();
-      expect(response.status, ProbeStatus.DONE);
-      expect(response.origConfig, isNotNull);
     });
 
     test('set guided storage v2', () async {

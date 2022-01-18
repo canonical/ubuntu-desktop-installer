@@ -1,6 +1,5 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
@@ -32,7 +31,7 @@ class TryOrInstallModel extends ChangeNotifier {
   void selectOption(Option option) {
     if (_option == option) return;
     _option = option;
-    log.info('Selected ${describeEnum(option)} option');
+    log.info('Selected ${option.name} option');
     notifyListeners();
   }
 

@@ -45,11 +45,10 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any))
         .thenAnswer((_) async => KeyboardStep.pressKey());
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<KeyboardLayoutModel>.value(value: model),
-        Provider<SubiquityClient>.value(value: client),
-      ],
+    registerMockService<SubiquityClient>(client);
+
+    return ChangeNotifierProvider<KeyboardLayoutModel>.value(
+      value: model,
       child: KeyboardLayoutPage(),
     );
   }
@@ -162,19 +161,13 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async => KeyboardSetup());
+    registerMockService<SubiquityClient>(client);
 
     final service = MockKeyboardService();
     when(service.layouts).thenReturn([]);
+    registerMockService<KeyboardService>(service);
 
-    await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          Provider<KeyboardService>.value(value: service),
-          Provider<SubiquityClient>.value(value: client),
-        ],
-        child: tester.buildApp(KeyboardLayoutPage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));
 
     final page = find.byType(KeyboardLayoutPage);
     expect(page, findsOneWidget);

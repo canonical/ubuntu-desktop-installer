@@ -79,12 +79,10 @@ void main() {
     when(sdb.modelName).thenReturn('SDB');
     when(sdb.vendorName).thenReturn('ATA');
     when(udev.bySysname('sdb')).thenReturn(sdb);
+    registerMockService<UdevService>(udev);
 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<WriteChangesToDiskModel>.value(value: model),
-        Provider<UdevService>.value(value: udev),
-      ],
+    return ChangeNotifierProvider<WriteChangesToDiskModel>.value(
+      value: model,
       child: const WriteChangesToDiskPage(),
     );
   }
@@ -118,20 +116,13 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
+    registerMockService<SubiquityClient>(client);
+
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
+    registerMockService<DiskStorageService>(service);
 
-    await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          Provider<SubiquityClient>.value(value: client),
-          Provider<DiskStorageService>.value(
-            value: service,
-          ),
-        ],
-        child: tester.buildApp(WriteChangesToDiskPage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(WriteChangesToDiskPage.create));
 
     final page = find.byType(WriteChangesToDiskPage);
     expect(page, findsOneWidget);

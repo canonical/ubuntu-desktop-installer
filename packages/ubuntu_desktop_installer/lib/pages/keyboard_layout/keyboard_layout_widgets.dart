@@ -25,7 +25,7 @@ class PressKeyView extends StatelessWidget {
           child: Wrap(
             spacing: 24,
             alignment: WrapAlignment.spaceEvenly,
-            children: _pressKey.map((key) => Text(key)).toList(),
+            children: _pressKey.map(Text.new).toList(),
           ),
         ),
       ],
