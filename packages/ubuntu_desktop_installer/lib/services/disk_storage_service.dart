@@ -39,6 +39,9 @@ class DiskStorageService {
   /// Whether the storage configuration is missing a boot partition.
   bool get needBoot => _needBoot ?? true;
 
+  /// Whether FDE (Full Disk Encryption) is enabled.
+  bool get hasEncryption => false; // TODO: add support for it
+
   List<Disk> _updateGuidedStorage(GuidedStorageResponse response) {
     log.debug('Update guided storage: $response');
     guidedStorage = response.disks;
