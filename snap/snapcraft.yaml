@@ -19,7 +19,7 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
-    command-chain: [ bin/launcher ]
+    command-chain: [bin/launcher]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
@@ -87,7 +87,7 @@ parts:
     source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
     requirements: [requirements.txt]
     stage:
-      - "*"
+      - '*'
       - -bin/python3*
 
   subiquitydeps:

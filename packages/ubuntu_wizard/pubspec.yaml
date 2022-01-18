@@ -17,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   form_field_validator: ^1.1.0
+  get_it: ^7.2.0
   gsettings: ^0.2.0
   intl: ^0.17.0
   password_strength: ^0.2.0
@@ -31,7 +32,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_logger
-  wizard_router: ^0.6.0
+  wizard_router: ^0.7.0
   yaru: ^0.2.0
 
 dev_dependencies:
