@@ -35,8 +35,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
-  final appStatus = ValueNotifier(AppStatus.loading);
-
   final geodata = Geodata(
     loadCities: () => rootBundle.loadString('assets/cities15000.txt'),
     loadAdmins: () => rootBundle.loadString('assets/admin1CodesASCII.txt'),
@@ -46,6 +44,16 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   final geoip = GeoIP(url: _kGeoIPUrl, geodata: geodata);
   final geoname = Geoname(url: _kGeonameUrl, geodata: geodata);
+
+  registerService(() => DiskStorageService(subiquityClient));
+  registerService(() => GeoService(geoip, sources: [geodata, geoname]));
+  registerService(() => JournalService(journalUnit));
+  registerService(KeyboardService.new);
+  registerService(NetworkService.new);
+  registerService(TelemetryService.new);
+  registerService(UdevService.new);
+
+  final appStatus = ValueNotifier(AppStatus.loading);
 
   runWizardApp(
     ValueListenableBuilder<AppStatus>(
@@ -74,14 +82,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
       'SNAP_REVISION': '',
       'SNAP_VERSION': '',
     },
-    providers: [
-      Provider(create: (_) => DiskStorageService(subiquityClient)),
-      Provider(create: (_) => GeoService(geoip, sources: [geodata, geoname])),
-      Provider(create: (_) => JournalService(journalUnit)),
-      Provider(create: (_) => KeyboardService()),
-      Provider(create: (_) => NetworkService()),
-      Provider(create: (_) => UdevService()),
-    ],
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
@@ -125,7 +125,10 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         darkTheme: flavor.darkTheme,
         themeMode: Settings.of(context).theme,
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: localizationsDelegates,
+        localizationsDelegates: <LocalizationsDelegate>[
+          ...localizationsDelegates,
+          ...?flavor.localizationsDelegates,
+        ],
         supportedLocales: supportedLocales,
         home: buildApp(context),
       ),
@@ -170,7 +173,7 @@ class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   final String? initialRoute;
 
   static Widget create(BuildContext context, String? initialRoute) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => _UbuntuDesktopInstallerModel(client),
       child: _UbuntuDesktopInstallerWizard(initialRoute: initialRoute),
@@ -195,7 +198,7 @@ class _UbuntuDesktopInstallerWizardState
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
-    final service = Provider.of<DiskStorageService>(context, listen: false);
+    final service = getService<DiskStorageService>();
 
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.initial,
@@ -241,7 +244,7 @@ class _UbuntuDesktopInstallerWizardState
             if (settings.arguments == InstallationType.erase) {
               if (service.hasMultipleDisks) {
                 return Routes.selectGuidedStorage;
-              } else if (model.hasEncryption) {
+              } else if (service.hasEncryption) {
                 return Routes.chooseSecurityKey;
               } else {
                 return Routes.writeChangesToDisk;
@@ -253,7 +256,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
           onNext: (_) =>
-              !model.hasEncryption ? Routes.writeChangesToDisk : null,
+              !service.hasEncryption ? Routes.writeChangesToDisk : null,
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,
@@ -290,7 +293,23 @@ class _UbuntuDesktopInstallerWizardState
           builder: InstallationCompletePage.create,
         ),
       },
+      observers: [
+        _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
+      ],
     );
+  }
+}
+
+class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
+  _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
+
+  final TelemetryService _telemetryService;
+
+  @override
+  void didPush(Route route, Route? previousRoute) {
+    if (route.settings.name != null) {
+      _telemetryService.addStage(route.settings.name!);
+    }
   }
 }
 
@@ -305,8 +324,6 @@ class _UbuntuDesktopInstallerModel extends ChangeNotifier {
   bool get hasBitLocker => _hasBitLocker;
   // TODO: add secure boot support
   bool get hasSecureBoot => false;
-  // TODO: add encryption support
-  bool get hasEncryption => false;
 
   Future<void> init() {
     return Future.wait([

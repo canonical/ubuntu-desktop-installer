@@ -8,6 +8,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'choose_security_key_model.dart';
 
 part 'choose_security_key_widgets.dart';
@@ -25,7 +26,7 @@ class ChooseSecurityKeyPage extends StatefulWidget {
 
   /// Creates an instance with [ChooseSecurityKeyModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => ChooseSecurityKeyModel(client),
       child: const ChooseSecurityKeyPage(),

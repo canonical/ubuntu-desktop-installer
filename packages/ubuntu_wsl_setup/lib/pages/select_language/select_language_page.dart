@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -14,7 +15,7 @@ class SelectLanguagePage extends StatefulWidget {
   }) : super(key: key);
 
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
       create: (_) => SelectLanguageModel(client),
       child: const SelectLanguagePage(),

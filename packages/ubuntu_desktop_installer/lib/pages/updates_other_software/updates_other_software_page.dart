@@ -5,6 +5,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'updates_other_software_model.dart';
 
 class UpdatesOtherSoftwarePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => UpdateOtherSoftwareModel(
-          client: Provider.of<SubiquityClient>(context, listen: false),
+          client: getService<SubiquityClient>(),
           installationMode: InstallationMode.normal),
       child: UpdatesOtherSoftwarePage(),
     );
@@ -74,6 +75,10 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         WizardAction.next(
           context,
           onActivated: () async {
+            final telemetry = getService<TelemetryService>();
+            telemetry.setMinimal(
+                enabled: model.installationMode == InstallationMode.minimal);
+            telemetry.setRestrictedAddons(enabled: model.installThirdParty);
             await model.selectInstallationSource();
             Wizard.of(context).next();
           },

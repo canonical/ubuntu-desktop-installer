@@ -17,8 +17,8 @@ class InstallationSlidesPage extends StatefulWidget {
 
   /// Creates a [InstallationSlidesPage] with [InstallationSlidesModel].
   static Widget create(BuildContext context) {
-    final client = Provider.of<SubiquityClient>(context, listen: false);
-    final journal = Provider.of<JournalService>(context, listen: false);
+    final client = getService<SubiquityClient>();
+    final journal = getService<JournalService>();
     return ChangeNotifierProvider(
       create: (_) => InstallationSlidesModel(client, journal),
       child: const InstallationSlidesPage(),

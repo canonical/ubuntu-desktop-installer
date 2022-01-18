@@ -16,19 +16,19 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Renunță';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Schimbă';
 
   @override
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Nu';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Repornește';
 
   @override
   String get revertButtonText => 'Revert';

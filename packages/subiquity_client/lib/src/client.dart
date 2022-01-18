@@ -220,19 +220,15 @@ class SubiquityClient {
     await _receive("setSsh(${jsonEncode(ssh.toJson())})", response);
   }
 
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
-
   /// Get the installer state.
   Future<ApplicationStatus> status({ApplicationState? current}) async {
     late Map<String, dynamic> statusJson;
-    final currentState = _formatState(current);
 
     if (current != null) {
       final request = Request('GET',
-          Uri.http('localhost', 'meta/status', {'cur': '"$currentState"'}));
+          Uri.http('localhost', 'meta/status', {'cur': '"${current.name}"'}));
       final response = await _send(request);
-      statusJson = await _receiveJson('status("$currentState")', response);
+      statusJson = await _receiveJson('status("${current.name}")', response);
     } else {
       final request = Request('GET', Uri.http('localhost', 'meta/status'));
       final response = await _send(request);
@@ -240,7 +236,7 @@ class SubiquityClient {
     }
 
     final result = ApplicationStatus.fromJson(statusJson);
-    log.info('state: $currentState => ${_formatState(result.state)}');
+    log.info('state: ${current?.name} => ${result.state?.name}');
 
     return result;
   }
@@ -293,19 +289,6 @@ class SubiquityClient {
     return GuidedStorageResponse.fromJson(responseJson);
   }
 
-  /// Set guided disk option.
-  Future<StorageResponse> setGuidedStorage(GuidedChoice choice) async {
-    final request = Request(
-        'POST',
-        Uri.http('localhost', 'storage/guided',
-            {'choice': jsonEncode(choice.toJson())}));
-    final response = await _send(request);
-
-    final responseJson = await _receiveJson(
-        "setGuidedStorage(${jsonEncode(choice.toJson())})", response);
-    return StorageResponse.fromJson(responseJson);
-  }
-
   Future<StorageResponseV2> setGuidedStorageV2(GuidedChoice choice) async {
     final request = Request(
         'POST',
@@ -316,21 +299,6 @@ class SubiquityClient {
     final responseJson = await _receiveJson(
         "setGuidedStorageV2(${jsonEncode(choice.toJson())})", response);
     return StorageResponseV2.fromJson(responseJson);
-  }
-
-  Future<void> setStorage(List<dynamic> config) async {
-    final request = Request('POST', Uri.http('localhost', 'storage'));
-    request.body = jsonEncode(config);
-    final response = await _send(request);
-    await _receive("setStorage(${jsonEncode(config)})", response);
-  }
-
-  Future<StorageResponse> resetStorage() async {
-    final request = Request('POST', Uri.http('localhost', 'storage/reset'));
-    final response = await _send(request);
-
-    final responseJson = await _receiveJson("resetStorage()", response);
-    return StorageResponse.fromJson(responseJson);
   }
 
   Future<StorageResponseV2> getStorageV2() async {

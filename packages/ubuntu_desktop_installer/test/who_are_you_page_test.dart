@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
-import 'package:yaru_icons/widgets/yaru_icons.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 
 import 'who_are_you_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
