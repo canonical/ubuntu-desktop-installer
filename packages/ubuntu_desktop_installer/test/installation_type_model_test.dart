@@ -7,13 +7,14 @@ import 'package:ubuntu_test/mocks.dart';
 
 import 'installation_type_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
   test('init existing OS', () async {
     final client = MockSubiquityClient();
     // when(client.getExistingOS()).thenAnswer((_) async => 'Ubuntu 18.04 LTS');
 
-    final model = InstallationTypeModel(client, MockDiskStorageService());
+    final model = InstallationTypeModel(
+        client, MockDiskStorageService(), MockTelemetryService());
     await model.init();
     // verify(client.getExistingOS()).called(1);
 
@@ -24,6 +25,7 @@ void main() {
     final model = InstallationTypeModel(
       MockSubiquityClient(),
       MockDiskStorageService(),
+      MockTelemetryService(),
     );
 
     var wasNotified = false;
@@ -49,22 +51,75 @@ void main() {
     final model = InstallationTypeModel(
       MockSubiquityClient(),
       MockDiskStorageService(),
+      MockTelemetryService(),
     );
     expect(model.productInfo, isNotEmpty);
   });
 
-  test('save lvm', () {
-    final service = MockDiskStorageService();
-    when(service.hasMultipleDisks).thenReturn(false);
+  test('save talks to telemetry service', () async {
+    final disks = MockDiskStorageService();
+    when(disks.hasMultipleDisks).thenReturn(false);
+    when(disks.hasEncryption).thenReturn(false);
 
-    final model = InstallationTypeModel(MockSubiquityClient(), service);
+    final telemetry = MockTelemetryService();
+    final model =
+        InstallationTypeModel(MockSubiquityClient(), disks, telemetry);
+    verifyNever(telemetry.setPartitionMethod(any));
+
+    model.installationType = InstallationType.erase;
+    await model.save();
+    verify(telemetry.setPartitionMethod('use_device')).called(1);
+    reset(telemetry);
+
+    model.installationType = InstallationType.reinstall;
+    await model.save();
+    verify(telemetry.setPartitionMethod('reinstall_partition')).called(1);
+    reset(telemetry);
+
+    model.installationType = InstallationType.alongside;
+    await model.save();
+    verify(telemetry.setPartitionMethod('resize_use_free')).called(1);
+    reset(telemetry);
+
+    model.installationType = InstallationType.manual;
+    await model.save();
+    verify(telemetry.setPartitionMethod('manual')).called(1);
+    reset(telemetry);
+
+    model.advancedFeature = AdvancedFeature.lvm;
+    await model.save();
+    verify(telemetry.setPartitionMethod('use_lvm')).called(1);
+    reset(telemetry);
+
+    model.advancedFeature = AdvancedFeature.zfs;
+    await model.save();
+    verify(telemetry.setPartitionMethod('use_zfs')).called(1);
+    reset(telemetry);
+
+    when(disks.hasEncryption).thenReturn(true);
+    model.advancedFeature = AdvancedFeature.none;
+    await model.save();
+    verify(telemetry.setPartitionMethod('use_crypto')).called(1);
+    reset(telemetry);
+  });
+
+  test('save lvm', () {
+    final storage = MockDiskStorageService();
+    when(storage.hasMultipleDisks).thenReturn(false);
+    when(storage.hasEncryption).thenReturn(false);
+
+    final model = InstallationTypeModel(
+      MockSubiquityClient(),
+      storage,
+      MockTelemetryService(),
+    );
 
     model.advancedFeature = AdvancedFeature.none;
     model.save();
-    verify(service.useLvm = false).called(1);
+    verify(storage.useLvm = false).called(1);
 
     model.advancedFeature = AdvancedFeature.lvm;
     model.save();
-    verify(service.useLvm = true).called(1);
+    verify(storage.useLvm = true).called(1);
   });
 }

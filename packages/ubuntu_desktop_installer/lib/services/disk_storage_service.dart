@@ -40,6 +40,9 @@ class DiskStorageService {
   /// Whether the storage configuration is missing a boot partition.
   bool get needBoot => _needBoot ?? true;
 
+  /// Whether FDE (Full Disk Encryption) is enabled.
+  bool get hasEncryption => false; // TODO: add support for it
+
   /// Whether the storage configuration should use LVM.
   bool get useLvm => _useLvm ?? false;
   set useLvm(bool useLvm) => _useLvm = useLvm;
