@@ -7,28 +7,28 @@ environment:
   sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  subiquity_client:
-    path: ../subiquity_client
-  ubuntu_wizard:
-    path: ../ubuntu_wizard
   collection: ^1.15.0
   dbus: ^0.6.3
   file: ^6.1.0
   filesize: ^2.0.0
+  flutter:
+    sdk: flutter
   flutter_html: ^2.1.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_markdown: ^0.6.2
   flutter_spinbox: ^0.5.4
   flutter_svg: ^0.22.0
   form_field_validator: ^1.1.0
+  glibc:
+    path: ../glibc
   intl: ^0.17.0
   nm: ^0.4.1
   provider: ^6.0.0
-  flutter_markdown: ^0.6.2
   safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
+  subiquity_client:
+    path: ../subiquity_client
   ubuntu_localizations:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
@@ -37,6 +37,8 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_logger
+  ubuntu_wizard:
+    path: ../ubuntu_wizard
   udev:
     path: ../udev
   url_launcher: ^6.0.3
@@ -44,11 +46,11 @@ dependencies:
   yaru_icons: ^0.1.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner: ^2.0.5
   effective_dart: ^1.3.1
   fake_async: ^1.2.0
+  flutter_test:
+    sdk: flutter
   mockito: 5.0.14
   ubuntu_test:
     path: ../ubuntu_test
