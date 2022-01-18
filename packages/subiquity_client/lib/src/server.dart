@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
+import 'package:package_config/package_config.dart';
 import 'package:path/path.dart' as p;
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
@@ -35,10 +36,41 @@ abstract class SubiquityServer {
   // The name of the server's Python module.
   String get _pythonModule;
 
-  // The path of the socket in live mode.
-  String _getSocketPath(ServerMode mode) => mode == ServerMode.LIVE
-      ? '/run/subiquity/socket'
-      : p.join(Directory.current.path, 'test/socket');
+  // The path of the socket is fixed in live-run mode. In dry-run mode, it needs
+  // to be resolved based on the location of the `subiquity_client` package.
+  Future<String> _getSocketPath(ServerMode mode) async {
+    if (mode == ServerMode.DRY_RUN) {
+      return p.join(await _getSubiquityPath(), '.subiquity/socket');
+    }
+    return '/run/subiquity/socket';
+  }
+
+  String? _subiquityPath;
+
+  // Returns the location of the local subiquity submodule.
+  Future<String> _getSubiquityPath() async {
+    return _subiquityPath ??= await _findSubiquityPath();
+  }
+
+  // Finds local subiquity relative to the `subiquity_client` Dart package.
+  Future<String> _findSubiquityPath() async {
+    Object? error;
+    final config = await findPackageConfig(
+      Directory.current,
+      onError: (e) => error = e,
+    );
+    final package = config?.packages
+        .firstWhere((package) => package.name == 'subiquity_client');
+    if (package == null) {
+      log.warning(
+          'Unable to find the subiquity_client package. '
+          'Falling back to the current working dir: ${Directory.current.path}',
+          error);
+    } else {
+      log.debug('Found subiquity_client in ${package.root.path}');
+    }
+    return p.join(package?.root.path ?? Directory.current.path, 'subiquity');
+  }
 
   // Prefer local curtin and probert python modules that are pinned to the
   // correct versions
@@ -52,7 +84,7 @@ abstract class SubiquityServer {
 
   Future<String> start(ServerMode serverMode,
       {List<String>? args, Map<String, String>? environment}) async {
-    final socketPath = _getSocketPath(serverMode);
+    final socketPath = await _getSocketPath(serverMode);
     if (_shouldStart(serverMode)) {
       var subiquityCmd = <String>[
         '-m',
@@ -71,7 +103,7 @@ abstract class SubiquityServer {
 
   Future<void> _startSubiquity(
       List<String> subiquityCmd, Map<String, String>? environment) async {
-    var subiquityPath = p.join(Directory.current.path, 'subiquity');
+    final subiquityPath = await _getSubiquityPath();
     String? workingDirectory;
     // try using local subiquity
     if (Directory(subiquityPath).existsSync()) {

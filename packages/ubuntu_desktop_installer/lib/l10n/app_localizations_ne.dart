@@ -12,17 +12,17 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE इन्सटल गर्नुहोस्';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'रद्द गर्नुहोस्';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'बदल्नुहोस्';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'हुन्छ';
 
   @override
   String get noButtonText => 'No';
