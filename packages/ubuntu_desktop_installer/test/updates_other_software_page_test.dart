@@ -17,7 +17,7 @@ import 'updates_other_software_model_test.mocks.dart';
 import 'updates_other_software_page_test.mocks.dart';
 import 'widget_tester_extensions.dart';
 
-@GenerateMocks([UpdateOtherSoftwareModel])
+@GenerateMocks([UpdateOtherSoftwareModel, TelemetryService])
 void main() {
   UpdateOtherSoftwareModel buildModel({
     InstallationMode? installationMode,
@@ -34,6 +34,7 @@ void main() {
 
   Widget buildPage(UpdateOtherSoftwareModel model) {
     registerMockService<SubiquityClient>(MockSubiquityClient());
+    registerMockService<TelemetryService>(MockTelemetryService());
 
     return ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(
       value: model,

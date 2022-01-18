@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -7,10 +8,14 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import 'welcome_page_test.mocks.dart';
+
+@GenerateMocks([TelemetryService])
 void main() {
   late MaterialApp app;
 
@@ -19,6 +24,7 @@ void main() {
   });
 
   Future<void> setUpApp(WidgetTester tester) async {
+    registerMockService<TelemetryService>(MockTelemetryService());
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,

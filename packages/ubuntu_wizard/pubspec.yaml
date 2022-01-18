@@ -33,7 +33,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_logger
-  wizard_router: ^0.6.0
+  wizard_router: ^0.7.0
   yaru: ^0.2.0
 
 dev_dependencies:
