@@ -45,6 +45,9 @@ class ValidatedFormField extends StatefulWidget {
   /// Whether this input field should focus itself automatically.
   final bool autofocus;
 
+  /// Defines the keyboard focus for the [TextField].
+  final FocusNode? focusNode;
+
   /// The label above the [TextField]
   final String? labelText;
 
@@ -84,6 +87,7 @@ class ValidatedFormField extends StatefulWidget {
     this.onChanged,
     FieldValidator<String?>? validator,
     bool? autofocus,
+    this.focusNode,
     this.labelText,
     this.helperText,
     bool? obscureText,
@@ -104,13 +108,14 @@ class ValidatedFormField extends StatefulWidget {
 
 class _ValidatedFormFieldState extends State<ValidatedFormField> {
   late final TextEditingController _controller;
-  final _focusNode = FocusNode();
+  late final FocusNode _focusNode;
 
   @override
   void initState() {
     super.initState();
     _controller =
         widget.controller ?? TextEditingController(text: widget.initialValue);
+    _focusNode = widget.focusNode ?? FocusNode();
   }
 
   @override
