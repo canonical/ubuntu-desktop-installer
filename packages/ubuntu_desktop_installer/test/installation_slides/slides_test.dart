@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import 'widget_tester_extensions.dart';
+import '../widget_tester_extensions.dart';
 
 void main() {
   testWidgets('inherited slides', (tester) async {
