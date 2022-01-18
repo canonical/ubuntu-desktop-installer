@@ -2,7 +2,8 @@ name: snap
 
 on:
   pull_request:
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build:
