@@ -7,4 +7,5 @@ export 'src/utils/password.dart';
 export 'src/utils/product_info_extractor.dart';
 export 'src/utils/string.dart';
 export 'src/utils/system_shutdown.dart' hide log;
+export 'src/utils/validated_value.dart';
 export 'src/utils/window.dart' hide log;
