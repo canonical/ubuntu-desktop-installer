@@ -58,14 +58,14 @@ void main() {
   });
 
   testWidgets('initial value and changes', (tester) async {
-    String? value;
+    ValidatedString? string;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
           child: ValidatedFormField(
             autofocus: true,
             initialValue: 'initial',
-            onChanged: (v) => value = v,
+            onChanged: (v) => string = v,
           ),
         ),
       ),
@@ -75,7 +75,9 @@ void main() {
 
     await tester.enterText(find.byType(ValidatedFormField), 'ubuntu');
 
-    expect(value, equals('ubuntu'));
+    expect(string, isNotNull);
+    expect(string!.value, equals('ubuntu'));
+    expect(string!.isValid, isTrue);
     expect(find.text('ubuntu'), findsOneWidget);
   });
 
@@ -315,7 +317,7 @@ void main() {
   });
 
   testWidgets('real name input', (tester) async {
-    String? realName;
+    ValidatedString? realName;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
@@ -329,21 +331,27 @@ void main() {
     );
 
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(realName, isNull);
+    expect(realName, isNotNull);
+    expect(realName!.value, isEmpty);
+    expect(realName!.isValid, isFalse);
 
     await tester.enterText(find.byType(TextField), 'real name');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsOneWidget);
-    expect(realName, equals('real name'));
+    expect(realName, isNotNull);
+    expect(realName!.value, equals('real name'));
+    expect(realName!.isValid, isTrue);
 
     await tester.enterText(find.byType(TextField), '');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(realName, isEmpty);
+    expect(realName, isNotNull);
+    expect(realName!.value, isEmpty);
+    expect(realName!.isValid, isFalse);
   });
 
   testWidgets('username input', (tester) async {
-    String? username;
+    ValidatedString? username;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
@@ -357,26 +365,34 @@ void main() {
     );
 
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(username, isNull);
+    expect(username, isNotNull);
+    expect(username!.value, isEmpty);
+    expect(username!.isValid, isFalse);
 
     await tester.enterText(find.byType(TextField), 'username');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsOneWidget);
-    expect(username, equals('username'));
+    expect(username, isNotNull);
+    expect(username!.value, equals('username'));
+    expect(username!.isValid, isTrue);
 
     await tester.enterText(find.byType(TextField), '1nv@lid!');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(username, equals('1nv@lid!'));
+    expect(username, isNotNull);
+    expect(username!.value, equals('1nv@lid!'));
+    expect(username!.isValid, isFalse);
 
     await tester.enterText(find.byType(TextField), '');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(username, isEmpty);
+    expect(username, isNotNull);
+    expect(username!.value, isEmpty);
+    expect(username!.isValid, isFalse);
   });
 
   testWidgets('hostname input', (tester) async {
-    String? hostname;
+    ValidatedString? hostname;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
@@ -390,26 +406,34 @@ void main() {
     );
 
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(hostname, isNull);
+    expect(hostname, isNotNull);
+    expect(hostname!.value, isEmpty);
+    expect(hostname!.isValid, isFalse);
 
     await tester.enterText(find.byType(TextField), 'hostname');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsOneWidget);
-    expect(hostname, equals('hostname'));
+    expect(hostname, isNotNull);
+    expect(hostname!.value, equals('hostname'));
+    expect(hostname!.isValid, isTrue);
 
     await tester.enterText(find.byType(TextField), '@#%&/!');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(hostname, equals('@#%&/!'));
+    expect(hostname, isNotNull);
+    expect(hostname!.value, equals('@#%&/!'));
+    expect(hostname!.isValid, isFalse);
 
     await tester.enterText(find.byType(TextField), '');
     await tester.pump();
     expect(find.byType(SuccessIcon), findsNothing);
-    expect(hostname, isEmpty);
+    expect(hostname, isNotNull);
+    expect(hostname!.value, isEmpty);
+    expect(hostname!.isValid, isFalse);
   });
 
   testWidgets('password input', (tester) async {
-    String? password;
+    ValidatedString? password;
     await tester.pumpWidget(
       MaterialApp(
         localizationsDelegates: GlobalUbuntuLocalizations.delegates,
@@ -427,18 +451,34 @@ void main() {
     final state =
         tester.state<PasswordFormFieldState>(find.byType(PasswordFormField));
 
+    expect(find.byType(SuccessIcon), findsNothing);
+    expect(password, isNotNull);
+    expect(password!.value, equals('password'));
+    expect(password!.isValid, isTrue);
+
     await tester.enterText(find.byType(TextField), 'drowssap');
     await tester.pump();
     expect(state.obscureText, isTrue);
-    expect(password, equals('drowssap'));
+    expect(password, isNotNull);
+    expect(password!.value, equals('drowssap'));
+    expect(password!.isValid, isTrue);
 
     await tester.tap(find.byType(IconButton));
     await tester.pump();
     expect(state.obscureText, isFalse);
-    expect(password, equals('drowssap'));
+    expect(password, isNotNull);
+    expect(password!.value, equals('drowssap'));
+    expect(password!.isValid, isTrue);
+
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    expect(password, isNotNull);
+    expect(password!.value, isEmpty);
+    expect(password!.isValid, isFalse);
   });
 
   testWidgets('confirmed password input', (tester) async {
+    ValidatedString? confirmedPassword;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
@@ -446,7 +486,7 @@ void main() {
             autofocus: true,
             password: 'password',
             confirmedPassword: 'password',
-            onChanged: (_) {},
+            onChanged: (v) => confirmedPassword = v,
           ),
         ),
       ),
@@ -455,15 +495,25 @@ void main() {
     final state = tester.state<ConfirmPasswordFormFieldState>(
         find.byType(ConfirmPasswordFormField));
 
-    expect(find.byType(SuccessIcon), findsOneWidget);
     expect(state.obscureText, isTrue);
 
     await tester.tap(find.byType(IconButton));
     await tester.pumpAndSettle();
+    expect(find.byType(SuccessIcon), findsOneWidget);
     expect(state.obscureText, isFalse);
+    expect(confirmedPassword, isNotNull);
+    expect(confirmedPassword!.value, 'password');
+    expect(confirmedPassword!.isValid, isTrue);
+
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    expect(confirmedPassword, isNotNull);
+    expect(confirmedPassword!.value, isEmpty);
+    expect(confirmedPassword!.isValid, isFalse);
   });
 
   testWidgets('unconfirmed password input', (tester) async {
+    ValidatedString? confirmedPassword;
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
@@ -471,12 +521,21 @@ void main() {
             autofocus: true,
             password: 'password',
             confirmedPassword: '',
-            onChanged: (_) {},
+            onChanged: (v) => confirmedPassword = v,
           ),
         ),
       ),
     );
 
     expect(find.byType(SuccessIcon), findsNothing);
+    expect(confirmedPassword, isNotNull);
+    expect(confirmedPassword!.value, isEmpty);
+    expect(confirmedPassword!.isValid, isFalse);
+
+    await tester.enterText(find.byType(TextField), 'password');
+    await tester.pump();
+    expect(confirmedPassword, isNotNull);
+    expect(confirmedPassword!.value, equals('password'));
+    expect(confirmedPassword!.isValid, isTrue);
   });
 }

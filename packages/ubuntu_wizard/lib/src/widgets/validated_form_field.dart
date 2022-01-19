@@ -37,7 +37,7 @@ class ValidatedFormField extends StatefulWidget {
   final String? initialValue;
 
   /// Called when the user changes the text in the field.
-  final ValueChanged<String>? onChanged;
+  final ValueChanged<ValidatedString>? onChanged;
 
   /// The validator used to validate the [TextField] value.
   final FieldValidator<String?> validator;
@@ -115,6 +115,11 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
     super.initState();
     _controller =
         widget.controller ?? TextEditingController(text: widget.initialValue);
+    _controller.addListener(() {
+      final value = _controller.text;
+      final isValid = widget.validator.isValid(value);
+      widget.onChanged?.call(ValidatedValue(value, isValid: isValid));
+    });
     _focusNode = widget.focusNode ?? FocusNode();
   }
 
@@ -144,7 +149,6 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       autovalidateMode: widget.autovalidateMode,
       controller: _controller,
       focusNode: _focusNode,
-      onChanged: widget.onChanged,
       validator: widget.validator,
       obscureText: widget.obscureText,
       enabled: widget.enabled,
@@ -205,7 +209,7 @@ class RealNameFormField extends StatelessWidget {
   }) : super(key: key);
 
   final String realName;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<ValidatedString> onChanged;
   final String? labelText;
   final String? helperText;
   final String? requiredText;
@@ -244,7 +248,7 @@ class UsernameFormField extends StatelessWidget {
   }) : super(key: key);
 
   final String username;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<ValidatedString> onChanged;
   final String? labelText;
   final String? helperText;
   final String? requiredText;
@@ -287,7 +291,7 @@ class PasswordFormField extends StatefulWidget {
   final PasswordStrength? passwordStrength;
   final String? labelText;
   final String? requiredText;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<ValidatedString> onChanged;
   final double? fieldWidth;
   final bool? autofocus;
 
@@ -342,7 +346,7 @@ class ConfirmPasswordFormField extends StatefulWidget {
 
   final String password;
   final String confirmedPassword;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<ValidatedString> onChanged;
   final bool? obscureText;
   final String? labelText;
   final String? helperText;
@@ -403,7 +407,7 @@ class HostnameFormField extends StatelessWidget {
   }) : super(key: key);
 
   final String hostname;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<ValidatedString> onChanged;
   final String? labelText;
   final String? helperText;
   final String? requiredText;
