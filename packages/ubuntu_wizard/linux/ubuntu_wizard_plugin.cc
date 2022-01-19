@@ -23,12 +23,10 @@ static GtkWidget* get_header_bar(GtkWindow* window) {
 #ifdef HAVE_LIBHANDY
   if (HDY_IS_WINDOW(window) || HDY_IS_APPLICATION_WINDOW(window)) {
     GtkWidget* deck = gtk_bin_get_child(GTK_BIN(window));
-    GList* content = gtk_container_get_children(GTK_CONTAINER(deck));
-    GList* children = gtk_container_get_children(GTK_CONTAINER(content->data));
-    GtkWidget* header_bar = GTK_WIDGET(children->data);
-    g_list_free(content);
-    g_list_free(children);
-    return header_bar;
+    g_autoptr(GList) content = gtk_container_get_children(GTK_CONTAINER(deck));
+    g_autoptr(GList) children =
+        gtk_container_get_children(GTK_CONTAINER(content->data));
+    return GTK_WIDGET(children->data);
   }
 #endif
   return gtk_window_get_titlebar(window);
