@@ -54,6 +54,7 @@ void runInstallerApp(
         return UbuntuDesktopInstallerApp(
           appStatus: value,
           flavor: flavor,
+          slides: slides,
           initialRoute: options['initial-route'],
         );
       },
