@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+// ignore_for_file: use_setters_to_change_properties
+
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
 /// - may contain lowercase letters, digits, hyphens, and underscores
@@ -21,26 +23,28 @@ class ProfileSetupModel extends ChangeNotifier {
   }
 
   final SubiquityClient _client;
-  final _realname = ValueNotifier<String?>(null);
-  final _username = ValueNotifier<String?>(null);
-  final _password = ValueNotifier('');
-  final _confirmedPassword = ValueNotifier('');
+  final _realname = ValueNotifier<ValidatedString?>(null);
+  final _username = ValueNotifier<ValidatedString?>(null);
+  final _password = ValueNotifier(ValidatedString(''));
+  final _confirmedPassword = ValueNotifier(ValidatedString(''));
 
   /// The real name for the profile.
-  String get realname => _realname.value ?? '';
-  set realname(String realname) => _realname.value = realname;
+  String get realname => _realname.value?.value ?? '';
+  void setRealname(ValidatedString realname) => _realname.value = realname;
 
   /// The current username or a sanitized real name if not set.
-  String get username => _username.value ?? realname.sanitize().toLowerCase();
-  set username(String username) => _username.value = username;
+  String get username =>
+      _username.value?.value ?? realname.sanitize().toLowerCase();
+  void setUsername(ValidatedString username) => _username.value = username;
 
   /// The password for the profile.
-  String get password => _password.value;
-  set password(String password) => _password.value = password;
+  String get password => _password.value.value;
+  void setPassword(ValidatedString password) => _password.value = password;
 
   /// The confirmed password for validation.
-  String get confirmedPassword => _confirmedPassword.value;
-  set confirmedPassword(String password) => _confirmedPassword.value = password;
+  String get confirmedPassword => _confirmedPassword.value.value;
+  void setConfirmedPassword(ValidatedString password) =>
+      _confirmedPassword.value = password;
 
   /// Estimates the strength of the password.
   PasswordStrength get passwordStrength => estimatePasswordStrength(password);
@@ -61,17 +65,22 @@ class ProfileSetupModel extends ChangeNotifier {
 
   /// Whether the current input is valid.
   bool get isValid =>
-      realname.isNotEmpty &&
-      username.isNotEmpty &&
-      RegExp(kValidUsernamePattern).hasMatch(username) &&
-      password.isNotEmpty &&
-      password == confirmedPassword;
+      _realname.value?.isValid == true &&
+      _username.value?.isValid == true &&
+      _password.value.isValid == true &&
+      _confirmedPassword.value.isValid == true;
+
+  void _initIdentity(ValueNotifier<ValidatedString?> identity, String? value) {
+    if (value != null) {
+      identity.value = ValidatedString(value);
+    }
+  }
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
     final identity = await _client.identity();
-    _realname.value = identity.realname?.orIfEmpty(null);
-    _username.value = identity.username?.orIfEmpty(null);
+    _initIdentity(_realname, identity.realname?.orIfEmpty(null));
+    _initIdentity(_username, identity.username?.orIfEmpty(null));
   }
 
   /// Saves the profile setup.

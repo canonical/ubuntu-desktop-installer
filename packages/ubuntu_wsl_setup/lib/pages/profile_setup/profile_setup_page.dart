@@ -69,7 +69,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
                 fieldWidth: fieldWidth,
                 labelText: lang.profileSetupRealnameLabel,
                 realName: model.realname,
-                onChanged: (value) => model.realname = value,
+                onChanged: model.setRealname,
               ),
             ),
             Padding(
@@ -79,7 +79,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
                 labelText: lang.profileSetupUsernameHint,
                 helperText: lang.profileSetupUsernameHelper,
                 username: model.username,
-                onChanged: (value) => model.username = value,
+                onChanged: model.setUsername,
               ),
             ),
             const SizedBox(height: kContentSpacing),
@@ -90,7 +90,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
                 labelText: lang.profileSetupPasswordHint,
                 password: model.password,
                 passwordStrength: model.passwordStrength,
-                onChanged: (value) => model.password = value,
+                onChanged: model.setPassword,
               ),
             ),
             Padding(
@@ -100,7 +100,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
                 labelText: lang.profileSetupConfirmPasswordHint,
                 password: model.password,
                 confirmedPassword: model.confirmedPassword,
-                onChanged: (value) => model.confirmedPassword = value,
+                onChanged: model.setConfirmedPassword,
               ),
             ),
             // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).

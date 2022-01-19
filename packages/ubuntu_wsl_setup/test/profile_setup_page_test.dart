@@ -72,7 +72,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'realname');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.realname = 'ubuntu').called(1);
+    verify(model.setRealname(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('username input', (tester) async {
@@ -82,7 +83,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'username');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.username = 'ubuntu').called(1);
+    verify(model.setUsername(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('password input', (tester) async {
@@ -92,7 +94,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'password');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.password = 'ubuntu').called(1);
+    verify(model.setPassword(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('password confirmation', (tester) async {
@@ -102,9 +105,12 @@ void main() {
     final textField = find.widgetWithText(TextField, 'passwd');
     expect(textField, findsNWidgets(2));
     await tester.enterText(textField.first, 'ubuntu');
-    verify(model.password = 'ubuntu').called(1);
+    verify(model.setPassword(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
     await tester.enterText(textField.last, 'ubuntu');
-    verify(model.confirmedPassword = 'ubuntu').called(1);
+    verify(model
+            .setConfirmedPassword(ValidatedString('ubuntu', isValid: false)))
+        .called(1);
   });
 
   testWidgets('empty password', (tester) async {

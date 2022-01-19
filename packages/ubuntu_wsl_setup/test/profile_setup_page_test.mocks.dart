@@ -31,33 +31,17 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
       (super.noSuchMethod(Invocation.getter(#realname), returnValue: '')
           as String);
   @override
-  set realname(String? realname) =>
-      super.noSuchMethod(Invocation.setter(#realname, realname),
-          returnValueForMissingStub: null);
-  @override
   String get username =>
       (super.noSuchMethod(Invocation.getter(#username), returnValue: '')
           as String);
-  @override
-  set username(String? username) =>
-      super.noSuchMethod(Invocation.setter(#username, username),
-          returnValueForMissingStub: null);
   @override
   String get password =>
       (super.noSuchMethod(Invocation.getter(#password), returnValue: '')
           as String);
   @override
-  set password(String? password) =>
-      super.noSuchMethod(Invocation.setter(#password, password),
-          returnValueForMissingStub: null);
-  @override
   String get confirmedPassword => (super
           .noSuchMethod(Invocation.getter(#confirmedPassword), returnValue: '')
       as String);
-  @override
-  set confirmedPassword(String? password) =>
-      super.noSuchMethod(Invocation.setter(#confirmedPassword, password),
-          returnValueForMissingStub: null);
   @override
   _i3.PasswordStrength get passwordStrength =>
       (super.noSuchMethod(Invocation.getter(#passwordStrength),
@@ -78,6 +62,22 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+  @override
+  void setRealname(_i3.ValidatedValue<String>? realname) =>
+      super.noSuchMethod(Invocation.method(#setRealname, [realname]),
+          returnValueForMissingStub: null);
+  @override
+  void setUsername(_i3.ValidatedValue<String>? username) =>
+      super.noSuchMethod(Invocation.method(#setUsername, [username]),
+          returnValueForMissingStub: null);
+  @override
+  void setPassword(_i3.ValidatedValue<String>? password) =>
+      super.noSuchMethod(Invocation.method(#setPassword, [password]),
+          returnValueForMissingStub: null);
+  @override
+  void setConfirmedPassword(_i3.ValidatedValue<String>? password) =>
+      super.noSuchMethod(Invocation.method(#setConfirmedPassword, [password]),
+          returnValueForMissingStub: null);
   @override
   _i4.Future<void> loadProfileSetup() =>
       (super.noSuchMethod(Invocation.method(#loadProfileSetup, []),

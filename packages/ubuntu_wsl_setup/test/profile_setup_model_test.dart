@@ -23,9 +23,9 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = ProfileSetupModel(client);
-    model.realname = 'Ubuntu';
-    model.username = 'ubuntu';
-    model.password = 'password';
+    model.setRealname(ValidatedString('Ubuntu'));
+    model.setUsername(ValidatedString('ubuntu'));
+    model.setPassword(ValidatedString('password'));
 
     final identity = IdentityData(
       realname: model.realname,
@@ -41,7 +41,7 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = ProfileSetupModel(client);
-    model.realname = 'Ubuntu Impish';
+    model.setRealname(ValidatedString('Ubuntu Impish'));
     expect(model.username, equals('ubuntu-impish'));
   });
 
@@ -50,7 +50,7 @@ void main() {
     final model = ProfileSetupModel(MockSubiquityClient());
 
     void testPasswordStrength(String password, Matcher matcher) {
-      model.password = password;
+      model.setPassword(ValidatedString(password));
       expect(model.passwordStrength, matcher);
     }
 
@@ -68,22 +68,22 @@ void main() {
 
     wasNotified = false;
     expect(model.realname, isEmpty);
-    model.realname = 'Ubuntu Impish';
+    model.setRealname(ValidatedString('Ubuntu Impish'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.username, equals('ubuntu-impish')); // generated
-    model.username = 'ubuntu';
+    model.setUsername(ValidatedString('ubuntu'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.password, isEmpty);
-    model.password = 'password';
+    model.setPassword(ValidatedString('password'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.confirmedPassword, isEmpty);
-    model.confirmedPassword = 'password';
+    model.setConfirmedPassword(ValidatedString('password'));
     expect(wasNotified, isTrue);
 
     // NOTE: The advanced options cannot be skipped for now (#431).
@@ -100,35 +100,56 @@ void main() {
     expect(model.isValid, isFalse);
 
     void testValid(
-      String realname,
-      String username,
-      String password,
-      String confirmedPassword,
+      ValidatedString realname,
+      ValidatedString username,
+      ValidatedString password,
+      ValidatedString confirmedPassword,
       Matcher matcher,
     ) {
-      model.realname = realname;
-      model.username = username;
-      model.password = password;
-      model.confirmedPassword = confirmedPassword;
+      model.setRealname(realname);
+      model.setUsername(username);
+      model.setPassword(password);
+      model.setConfirmedPassword(confirmedPassword);
       expect(model.isValid, matcher);
     }
 
-    // any field missing
-    testValid('', 'username', 'password', 'password', isFalse);
-    testValid('realname', '', 'password', '', isFalse);
-    testValid('realname', '', '', 'password', isFalse);
-    testValid('realname', '', 'password', 'password', isFalse);
-    testValid('realname', 'username', '', '', isFalse);
-    testValid('realname', 'username', 'password', '', isFalse);
-    testValid('realname', 'username', '', 'password', isFalse);
+    // any field invalid
+    testValid(
+      ValidatedString('', isValid: false),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('', isValid: false),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('', isValid: false),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('', isValid: false),
+      isFalse,
+    );
 
-    // password matching
-    testValid('Ubuntu', 'ubuntu', 'password', 'confirmed', isFalse);
-    testValid('Ubuntu', 'ubuntu', 'password', 'password', isTrue);
-
-    // username validation
-    testValid('User', '123', 'password', 'password', isFalse);
-    testValid('User', 'UBUNTU', 'password', 'password', isFalse);
-    testValid('User', 'inv@lid', 'password', 'password', isFalse);
+    // all fields valid
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isTrue,
+    );
   });
 }

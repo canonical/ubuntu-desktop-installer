@@ -23,7 +23,7 @@ class _MountLocationFormField extends StatelessWidget {
       ),
       onChanged: (value) {
         final model = Provider.of<AdvancedSetupModel>(context, listen: false);
-        model.mountLocation = value;
+        model.mountLocation = value.value;
       },
     );
   }
@@ -48,7 +48,7 @@ class _MountOptionFormField extends StatelessWidget {
       initialValue: mountOption,
       onChanged: (value) {
         final model = Provider.of<AdvancedSetupModel>(context, listen: false);
-        model.mountOption = value;
+        model.mountOption = value.value;
       },
     );
   }
