@@ -2,11 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-/// The regular expression pattern for valid usernames:
-/// - must start with a lowercase letter
-/// - may contain lowercase letters, digits, hyphens, and underscores
-const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
-
 /// View model for [ProfileSetupPage].
 class ProfileSetupModel extends ChangeNotifier {
   /// Creates a profile setup model.
