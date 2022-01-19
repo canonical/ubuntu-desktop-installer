@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-// ignore_for_file: use_setters_to_change_properties
-
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
 /// - may contain lowercase letters, digits, hyphens, and underscores

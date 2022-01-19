@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-// ignore_for_file: use_setters_to_change_properties
-
 /// View model for [ChooseSecurityKeyPage].
 class ChooseSecurityKeyModel extends ChangeNotifier {
   /// Creates the model with the given client.

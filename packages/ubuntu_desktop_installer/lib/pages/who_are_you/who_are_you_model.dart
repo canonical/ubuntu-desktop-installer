@@ -7,8 +7,6 @@ import 'package:ubuntu_wizard/utils.dart';
 
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
-// ignore_for_file: use_setters_to_change_properties
-
 /// @internal
 final log = Logger('who_are_you');
 

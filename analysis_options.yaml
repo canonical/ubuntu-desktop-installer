@@ -14,3 +14,4 @@ linter:
     # prefer_const_constructors: true
     public_member_api_docs: false
     sort_pub_dependencies: true
+    use_setters_to_change_properties: false
