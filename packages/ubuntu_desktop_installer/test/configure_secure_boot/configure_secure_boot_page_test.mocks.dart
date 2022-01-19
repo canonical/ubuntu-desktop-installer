@@ -2,11 +2,12 @@
 // in ubuntu_desktop_installer/test/configure_secure_boot/configure_secure_boot_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:ui' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart'
     as _i2;
+import 'package:ubuntu_wizard/utils.dart' as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -46,10 +47,6 @@ class MockConfigureSecureBootModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isFormValid), returnValue: false)
           as bool);
   @override
-  bool get isConfirmationKeyValid =>
-      (super.noSuchMethod(Invocation.getter(#isConfirmationKeyValid),
-          returnValue: false) as bool);
-  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -58,19 +55,19 @@ class MockConfigureSecureBootModel extends _i1.Mock
       super.noSuchMethod(Invocation.method(#setSecureBootMode, [mode]),
           returnValueForMissingStub: null);
   @override
-  void setSecurityKey(String? key) =>
+  void setSecurityKey(_i3.ValidatedValue<String>? key) =>
       super.noSuchMethod(Invocation.method(#setSecurityKey, [key]),
           returnValueForMissingStub: null);
   @override
-  void setConfirmKey(String? key) =>
+  void setConfirmKey(_i3.ValidatedValue<String>? key) =>
       super.noSuchMethod(Invocation.method(#setConfirmKey, [key]),
           returnValueForMissingStub: null);
   @override
-  void addListener(_i3.VoidCallback? listener) =>
+  void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i3.VoidCallback? listener) =>
+  void removeListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override

@@ -8,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_securi
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../widget_tester_extensions.dart';
 import 'choose_security_key_page_test.mocks.dart';
@@ -40,7 +41,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'bar');
-    verify(model.securityKey = 'bar').called(1);
+    verify(model.setSecurityKey(ValidatedString('bar', isValid: true)))
+        .called(1);
   });
 
   testWidgets('security key confirmation', (tester) async {
@@ -50,9 +52,12 @@ void main() {
     final textFields = find.widgetWithText(TextField, 'foo');
     expect(textFields, findsNWidgets(2));
     await tester.enterText(textFields.first, 'bar');
-    verify(model.securityKey = 'bar').called(1);
+    verify(model.setSecurityKey(ValidatedString('bar', isValid: true)))
+        .called(1);
     await tester.enterText(textFields.last, 'bar');
-    verify(model.confirmedSecurityKey = 'bar').called(1);
+    verify(model
+            .setConfirmedSecurityKey(ValidatedString('bar', isValid: false)))
+        .called(1);
   });
 
   testWidgets('valid input', (tester) async {

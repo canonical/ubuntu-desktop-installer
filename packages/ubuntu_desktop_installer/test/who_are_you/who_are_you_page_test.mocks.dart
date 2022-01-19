@@ -31,41 +31,21 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       (super.noSuchMethod(Invocation.getter(#realName), returnValue: '')
           as String);
   @override
-  set realName(String? value) =>
-      super.noSuchMethod(Invocation.setter(#realName, value),
-          returnValueForMissingStub: null);
-  @override
   String get hostname =>
       (super.noSuchMethod(Invocation.getter(#hostname), returnValue: '')
           as String);
-  @override
-  set hostname(String? value) =>
-      super.noSuchMethod(Invocation.setter(#hostname, value),
-          returnValueForMissingStub: null);
   @override
   String get username =>
       (super.noSuchMethod(Invocation.getter(#username), returnValue: '')
           as String);
   @override
-  set username(String? value) =>
-      super.noSuchMethod(Invocation.setter(#username, value),
-          returnValueForMissingStub: null);
-  @override
   String get password =>
       (super.noSuchMethod(Invocation.getter(#password), returnValue: '')
           as String);
   @override
-  set password(String? value) =>
-      super.noSuchMethod(Invocation.setter(#password, value),
-          returnValueForMissingStub: null);
-  @override
   String get confirmedPassword => (super
           .noSuchMethod(Invocation.getter(#confirmedPassword), returnValue: '')
       as String);
-  @override
-  set confirmedPassword(String? value) =>
-      super.noSuchMethod(Invocation.setter(#confirmedPassword, value),
-          returnValueForMissingStub: null);
   @override
   _i3.PasswordStrength get passwordStrength =>
       (super.noSuchMethod(Invocation.getter(#passwordStrength),
@@ -86,6 +66,26 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+  @override
+  void setRealName(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setRealName, [value]),
+          returnValueForMissingStub: null);
+  @override
+  void setHostname(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setHostname, [value]),
+          returnValueForMissingStub: null);
+  @override
+  void setUsername(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setUsername, [value]),
+          returnValueForMissingStub: null);
+  @override
+  void setPassword(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setPassword, [value]),
+          returnValueForMissingStub: null);
+  @override
+  void setConfirmedPassword(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setConfirmedPassword, [value]),
+          returnValueForMissingStub: null);
   @override
   _i4.Future<void> loadIdentity() =>
       (super.noSuchMethod(Invocation.method(#loadIdentity, []),

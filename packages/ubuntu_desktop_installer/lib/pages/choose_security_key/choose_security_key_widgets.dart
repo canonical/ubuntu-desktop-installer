@@ -26,7 +26,7 @@ class _SecurityKeyFormField extends StatelessWidget {
       onChanged: (value) {
         final model =
             Provider.of<ChooseSecurityKeyModel>(context, listen: false);
-        model.securityKey = value;
+        model.setSecurityKey(value);
       },
     );
   }
@@ -63,7 +63,7 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
       onChanged: (value) {
         final model =
             Provider.of<ChooseSecurityKeyModel>(context, listen: false);
-        model.confirmedSecurityKey = value;
+        model.setConfirmedSecurityKey(value);
       },
     );
   }

@@ -80,10 +80,10 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = WhoAreYouModel(client);
-    model.realName = identity.realname!;
-    model.username = identity.username!;
-    model.hostname = identity.hostname!;
-    model.password = 'passwd';
+    model.setRealName(ValidatedString(identity.realname!));
+    model.setUsername(ValidatedString(identity.username!));
+    model.setHostname(ValidatedString(identity.hostname!));
+    model.setPassword(ValidatedString('passwd'));
 
     await model.saveIdentity(salt: 'test');
 
@@ -95,7 +95,7 @@ void main() {
     final model = WhoAreYouModel(MockSubiquityClient());
 
     void testPasswordStrength(String password, Matcher matcher) {
-      model.password = password;
+      model.setPassword(ValidatedString(password));
       expect(model.passwordStrength, matcher);
     }
 
@@ -113,27 +113,27 @@ void main() {
 
     wasNotified = false;
     expect(model.realName, isEmpty);
-    model.realName = 'Ubuntu Impish';
+    model.setRealName(ValidatedString('Ubuntu Impish'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.hostname, isEmpty);
-    model.hostname = 'impish';
+    model.setHostname(ValidatedString('impish'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.username, 'ubuntu-impish');
-    model.username = 'ubuntu';
+    model.setUsername(ValidatedString('ubuntu'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.password, isEmpty);
-    model.password = 'password';
+    model.setPassword(ValidatedString('password'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
     expect(model.confirmedPassword, isEmpty);
-    model.confirmedPassword = 'password';
+    model.setConfirmedPassword(ValidatedString('password'));
     expect(wasNotified, isTrue);
 
     wasNotified = false;
@@ -147,40 +147,71 @@ void main() {
     expect(model.isValid, isFalse);
 
     void testValid(
-      String realName,
-      String hostname,
-      String username,
-      String password,
-      String confirmedPassword,
+      ValidatedString realName,
+      ValidatedString hostname,
+      ValidatedString username,
+      ValidatedString password,
+      ValidatedString confirmedPassword,
       Matcher matcher,
     ) {
-      model.realName = realName;
-      model.hostname = hostname;
-      model.username = username;
-      model.password = password;
-      model.confirmedPassword = confirmedPassword;
+      model.setRealName(realName);
+      model.setHostname(hostname);
+      model.setUsername(username);
+      model.setPassword(password);
+      model.setConfirmedPassword(confirmedPassword);
       expect(model.isValid, matcher);
     }
 
-    // any field missing
-    testValid('', 'host', 'user', 'passwd', 'passwd', isFalse);
-    testValid('real', '', 'user', 'passwd', 'passwd', isFalse);
-    testValid('real', 'host', '', 'passwd', 'passwd', isFalse);
-    testValid('real', 'host', 'user', '', 'passwd', isFalse);
+    // any field invalid
+    testValid(
+      ValidatedString('', isValid: false),
+      ValidatedString('hostname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('', isValid: false),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('hostname', isValid: true),
+      ValidatedString('', isValid: false),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('hostname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('', isValid: false),
+      ValidatedString('confirmed', isValid: true),
+      isFalse,
+    );
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('hostname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('', isValid: false),
+      isFalse,
+    );
 
-    // username validation
-    testValid('real', 'host', '123', 'passwd', 'passwd', isFalse);
-    testValid('real', 'host', 'UBUNTU', 'passwd', 'passwd', isFalse);
-    testValid('real', 'host', 'inv@lid', 'passwd', 'passwd', isFalse);
-
-    // host name validation
-    testValid('real', 'ubuntu-21.10', 'user', 'passwd', 'passwd', isTrue);
-    testValid('real', '.ubuntu', 'user', 'passwd', 'passwd', isFalse);
-    testValid('real', 'ubuntu-', 'user', 'passwd', 'passwd', isFalse);
-    testValid('real', 'inv@lid', 'user', 'passwd', 'passwd', isFalse);
-
-    // password matching
-    testValid('real', 'host', 'user', 'passwd', 'passwd', isTrue);
-    testValid('real', 'host', 'user', 'passwd', 'mismatch', isFalse);
+    // all fields valid
+    testValid(
+      ValidatedString('realname', isValid: true),
+      ValidatedString('hostname', isValid: true),
+      ValidatedString('username', isValid: true),
+      ValidatedString('password', isValid: true),
+      ValidatedString('confirmed', isValid: true),
+      isTrue,
+    );
   });
 }

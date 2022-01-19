@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_page.dart';
 import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../widget_tester_extensions.dart';
@@ -15,7 +16,6 @@ import 'configure_secure_boot_page_test.mocks.dart';
 void main() {
   ConfigureSecureBootModel buildModel({
     bool? isFormValid,
-    bool? isConfirmationKeyValid,
     bool? areTextFieldsEnabled,
     String? securityKey,
     String? confirmKey,
@@ -23,8 +23,6 @@ void main() {
   }) {
     final model = MockConfigureSecureBootModel();
     when(model.isFormValid).thenReturn(isFormValid ?? false);
-    when(model.isConfirmationKeyValid)
-        .thenReturn(isConfirmationKeyValid ?? true);
     when(model.areTextFieldsEnabled).thenReturn(areTextFieldsEnabled ?? true);
     when(model.secureBootMode)
         .thenReturn(secureBootMode ?? SecureBootMode.turnOff);
@@ -64,10 +62,12 @@ void main() {
     expect(find.byType(SuccessIcon), findsNWidgets(2));
 
     await tester.enterText(fields.first, 'ubuntu');
-    verify(model.setSecurityKey('ubuntu')).called(1);
+    verify(model.setSecurityKey(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
 
     await tester.enterText(fields.last, 'ubuntu');
-    verify(model.setConfirmKey('ubuntu')).called(1);
+    verify(model.setConfirmKey(ValidatedString('ubuntu', isValid: false)))
+        .called(1);
   });
 
   testWidgets('disabled input fields', (tester) async {

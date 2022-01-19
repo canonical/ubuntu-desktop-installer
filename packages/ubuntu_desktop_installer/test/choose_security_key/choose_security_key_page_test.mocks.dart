@@ -2,12 +2,13 @@
 // in ubuntu_desktop_installer/test/choose_security_key/choose_security_key_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i3;
-import 'dart:ui' as _i4;
+import 'dart:async' as _i4;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart'
     as _i2;
+import 'package:ubuntu_wizard/utils.dart' as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -31,17 +32,9 @@ class MockChooseSecurityKeyModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#securityKey), returnValue: '')
           as String);
   @override
-  set securityKey(String? value) =>
-      super.noSuchMethod(Invocation.setter(#securityKey, value),
-          returnValueForMissingStub: null);
-  @override
   String get confirmedSecurityKey =>
       (super.noSuchMethod(Invocation.getter(#confirmedSecurityKey),
           returnValue: '') as String);
-  @override
-  set confirmedSecurityKey(String? value) =>
-      super.noSuchMethod(Invocation.setter(#confirmedSecurityKey, value),
-          returnValueForMissingStub: null);
   @override
   bool get isValid =>
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
@@ -51,21 +44,29 @@ class MockChooseSecurityKeyModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i3.Future<void> loadSecurityKey() =>
+  void setSecurityKey(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setSecurityKey, [value]),
+          returnValueForMissingStub: null);
+  @override
+  void setConfirmedSecurityKey(_i3.ValidatedValue<String>? value) =>
+      super.noSuchMethod(Invocation.method(#setConfirmedSecurityKey, [value]),
+          returnValueForMissingStub: null);
+  @override
+  _i4.Future<void> loadSecurityKey() =>
       (super.noSuchMethod(Invocation.method(#loadSecurityKey, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i3.Future<void> saveSecurityKey() =>
+  _i4.Future<void> saveSecurityKey() =>
       (super.noSuchMethod(Invocation.method(#saveSecurityKey, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  void addListener(_i4.VoidCallback? listener) =>
+  void addListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
+  void removeListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override

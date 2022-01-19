@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../widget_tester_extensions.dart';
 import 'who_are_you_page_test.mocks.dart';
@@ -50,7 +51,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'real name');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.realName = 'ubuntu').called(1);
+    verify(model.setRealName(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('host name input', (tester) async {
@@ -60,7 +62,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'host name');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.hostname = 'ubuntu').called(1);
+    verify(model.setHostname(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('username input', (tester) async {
@@ -70,7 +73,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'username');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.username = 'ubuntu').called(1);
+    verify(model.setUsername(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('password input', (tester) async {
@@ -80,7 +84,8 @@ void main() {
     final textField = find.widgetWithText(TextField, 'password');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
-    verify(model.password = 'ubuntu').called(1);
+    verify(model.setPassword(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
   });
 
   testWidgets('password confirmation', (tester) async {
@@ -90,9 +95,12 @@ void main() {
     final textField = find.widgetWithText(TextField, 'passwd');
     expect(textField, findsNWidgets(2));
     await tester.enterText(textField.first, 'ubuntu');
-    verify(model.password = 'ubuntu').called(1);
+    verify(model.setPassword(ValidatedString('ubuntu', isValid: true)))
+        .called(1);
     await tester.enterText(textField.last, 'ubuntu');
-    verify(model.confirmedPassword = 'ubuntu').called(1);
+    verify(model
+            .setConfirmedPassword(ValidatedString('ubuntu', isValid: false)))
+        .called(1);
   });
 
   testWidgets('empty password', (tester) async {

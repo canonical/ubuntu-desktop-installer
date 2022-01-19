@@ -64,7 +64,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 fieldWidth: fieldWidth,
                 labelText: lang.whoAreYouPageRealNameLabel,
                 realName: model.realName,
-                onChanged: (value) => model.realName = value,
+                onChanged: model.setRealName,
               ),
             ),
             Padding(
@@ -74,7 +74,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 labelText: lang.whoAreYouPageComputerNameLabel,
                 helperText: lang.whoAreYouPageComputerNameInfo,
                 hostname: model.hostname,
-                onChanged: (value) => model.hostname = value,
+                onChanged: model.setHostname,
               ),
             ),
             Padding(
@@ -83,7 +83,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 fieldWidth: fieldWidth,
                 labelText: lang.whoAreYouPageUsernameLabel,
                 username: model.username,
-                onChanged: (value) => model.username = value,
+                onChanged: model.setUsername,
               ),
             ),
             Padding(
@@ -93,7 +93,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 labelText: lang.whoAreYouPagePasswordLabel,
                 password: model.password,
                 passwordStrength: model.passwordStrength,
-                onChanged: (value) => model.password = value,
+                onChanged: model.setPassword,
               ),
             ),
             Padding(
@@ -103,7 +103,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
                 labelText: lang.whoAreYouPageConfirmPasswordLabel,
                 password: model.password,
                 confirmedPassword: model.confirmedPassword,
-                onChanged: (value) => model.confirmedPassword = value,
+                onChanged: model.setConfirmedPassword,
               ),
             ),
             // https://github.com/canonical/ubuntu-desktop-installer/issues/373

@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 void main() {
   group('ConfigureSecureBootModel', () {
@@ -52,10 +53,9 @@ void main() {
       final model =
           ConfigureSecureBootModel(secureBootMode: SecureBootMode.turnOff);
 
-      model.setSecurityKey('mykey');
-      model.setConfirmKey('differentkey');
+      model.setSecurityKey(ValidatedString('mykey', isValid: true));
+      model.setConfirmKey(ValidatedString('differentkey', isValid: false));
 
-      expect(model.isConfirmationKeyValid, false);
       expect(model.isFormValid, false);
     });
   });
