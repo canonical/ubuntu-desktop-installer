@@ -4,11 +4,11 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
 import 'network_model.dart';
-import 'property_stream_notifier.dart';
 
 @visibleForTesting
 const kWifiScanInterval = Duration(seconds: 15);
