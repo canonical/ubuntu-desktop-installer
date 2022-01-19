@@ -317,9 +317,13 @@ class PasswordFormFieldState extends State<PasswordFormField> {
           ? PasswordStrengthLabel(strength: widget.passwordStrength!)
           : null,
       suffixIcon: widget.password.isNotEmpty
-          ? IconButton(
-              onPressed: () => setState(() => _obscureText = !_obscureText),
-              icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+          ? Focus(
+              canRequestFocus: false,
+              descendantsAreFocusable: false,
+              child: IconButton(
+                onPressed: () => setState(() => _obscureText = !_obscureText),
+                icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+              ),
             )
           : null,
       initialValue: widget.password,
@@ -376,9 +380,13 @@ class ConfirmPasswordFormFieldState extends State<ConfirmPasswordFormField> {
       fieldWidth: widget.fieldWidth,
       successWidget: widget.password.isNotEmpty ? const SuccessIcon() : null,
       suffixIcon: widget.confirmedPassword.isNotEmpty
-          ? IconButton(
-              onPressed: () => setState(() => _obscureText = !_obscureText),
-              icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+          ? Focus(
+              canRequestFocus: false,
+              descendantsAreFocusable: false,
+              child: IconButton(
+                onPressed: () => setState(() => _obscureText = !_obscureText),
+                icon: Icon(_obscureText ? YaruIcons.hide : YaruIcons.view),
+              ),
             )
           : null,
       initialValue: widget.confirmedPassword,
