@@ -1,6 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
+
+import '../../services.dart';
 
 /// @internal
 final log = Logger('updates_other_software');
@@ -18,17 +20,22 @@ extension _InstallationSource on InstallationMode {
   }
 }
 
-class UpdateOtherSoftwareModel extends ChangeNotifier {
+class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   // ignore: public_member_api_docs
   UpdateOtherSoftwareModel(
       {required SubiquityClient client,
+      required PowerService power,
       required InstallationMode installationMode,
       bool installThirdParty = false})
       : _client = client,
+        _power = power,
         _mode = installationMode,
-        _installThirdParty = installThirdParty;
+        _installThirdParty = installThirdParty {
+    addPropertyListener('OnBattery', notifyListeners);
+  }
 
   final SubiquityClient _client;
+  final PowerService _power;
 
   InstallationMode _mode;
   InstallationMode get installationMode => _mode;
@@ -61,5 +68,16 @@ class UpdateOtherSoftwareModel extends ChangeNotifier {
   Future<void> selectInstallationSource() {
     log.info('Selected ${installationMode.source} installation source');
     return _client.setSource(installationMode.source);
+  }
+
+  /// Returns true if currently powered by battery.
+  bool get onBattery => _power.onBattery;
+
+  /// Initializes the model and connects to the power service.
+  Future<void> init() async {
+    return _power.connect().then((_) {
+      setProperties(_power.propertiesChanged);
+      notifyListeners();
+    });
   }
 }
