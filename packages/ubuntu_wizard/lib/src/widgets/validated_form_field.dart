@@ -108,7 +108,9 @@ class ValidatedFormField extends StatefulWidget {
 
 class _ValidatedFormFieldState extends State<ValidatedFormField> {
   late final TextEditingController _controller;
-  late final FocusNode _focusNode;
+  FocusNode? _focusNode;
+
+  FocusNode get focusNode => widget.focusNode ?? _focusNode!;
 
   @override
   void initState() {
@@ -120,20 +122,22 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       final isValid = widget.validator.isValid(value);
       widget.onChanged?.call(ValidatedValue(value, isValid: isValid));
     });
-    _focusNode = widget.focusNode ?? FocusNode();
+    if (widget.focusNode == null) {
+      _focusNode ??= FocusNode();
+    }
   }
 
   @override
   void dispose() {
     _controller.dispose();
-    _focusNode.dispose();
+    _focusNode?.dispose();
     super.dispose();
   }
 
   @override
   void didUpdateWidget(ValidatedFormField oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!_focusNode.hasFocus &&
+    if (!focusNode.hasFocus &&
         widget.initialValue != null &&
         oldWidget.initialValue != widget.initialValue) {
       scheduleMicrotask(() {
@@ -148,7 +152,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       autofocus: widget.autofocus,
       autovalidateMode: widget.autovalidateMode,
       controller: _controller,
-      focusNode: _focusNode,
+      focusNode: focusNode,
       validator: widget.validator,
       obscureText: widget.obscureText,
       enabled: widget.enabled,
