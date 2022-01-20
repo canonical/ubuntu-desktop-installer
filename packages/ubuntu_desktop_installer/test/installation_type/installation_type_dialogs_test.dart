@@ -14,7 +14,7 @@ import 'installation_type_page_test.mocks.dart';
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
-  testWidgets('select advanced features', (tester) async {
+  testWidgets('select zfs', (tester) async {
     final model = MockInstallationTypeModel();
     when(model.existingOS).thenReturn(null);
     when(model.installationType).thenReturn(InstallationType.erase);
@@ -46,5 +46,34 @@ void main() {
 
     verify(model.advancedFeature = AdvancedFeature.zfs).called(1);
     verify(model.encryption = true).called(1);
+  }, skip: true); // #373
+
+  testWidgets('select lvm', (tester) async {
+    final model = MockInstallationTypeModel();
+    when(model.existingOS).thenReturn(null);
+    when(model.installationType).thenReturn(InstallationType.erase);
+    when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
+    when(model.encryption).thenReturn(false);
+
+    await tester.pumpWidget(
+      ChangeNotifierProvider<InstallationTypeModel>.value(
+        value: model,
+        child: tester.buildApp((_) => InstallationTypePage()),
+      ),
+    );
+
+    final result = showAdvancedFeaturesDialog(
+        tester.element(find.byType(InstallationTypePage)), model);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.widgetWithText(typeOf<RadioButton<AdvancedFeature>>(),
+        tester.lang.installationTypeLVM('Ubuntu')));
+    await tester.pump();
+
+    await tester
+        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+    await result;
+
+    verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
   });
 }

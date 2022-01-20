@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -17,6 +19,7 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (_) => UpdateOtherSoftwareModel(
           client: getService<SubiquityClient>(),
+          power: getService<PowerService>(),
           installationMode: InstallationMode.normal),
       child: UpdatesOtherSoftwarePage(),
     );
@@ -24,6 +27,13 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
 }
 
 class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
+  @override
+  void initState() {
+    super.initState();
+    final model = Provider.of<UpdateOtherSoftwareModel>(context, listen: false);
+    model.init();
+  }
+
   @override
   Widget build(BuildContext context) {
     final model = context.watch<UpdateOtherSoftwareModel>();
@@ -70,6 +80,11 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           // )
         ],
       ),
+      footer: model.onBattery
+          ? Html(
+              data: lang.onBatteryWarning(Theme.of(context).errorColor.toHex()),
+            )
+          : null,
       actions: <WizardAction>[
         WizardAction.back(context),
         WizardAction.next(
