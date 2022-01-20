@@ -154,6 +154,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get selectWifiNetwork => 'Yhdistä Wi-Fi-verkkoon';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'En halua muodostaa yhteyttä internetiin juuri nyt';
 
   @override

@@ -154,6 +154,15 @@ class AppLocalizationsSv extends AppLocalizations {
   String get selectWifiNetwork => 'Anslut till ett Wi-Fi nätverk';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'Jag vill inte ansluta till internet just nu';
 
   @override

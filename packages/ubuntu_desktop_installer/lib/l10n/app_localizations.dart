@@ -501,6 +501,24 @@ abstract class AppLocalizations {
   /// **'Connect to a Wi-Fi network'**
   String get selectWifiNetwork;
 
+  /// No description provided for @hiddenWifiNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to a hidden Wi-Fi network'**
+  String get hiddenWifiNetwork;
+
+  /// No description provided for @hiddenWifiNetworkNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Network name'**
+  String get hiddenWifiNetworkNameLabel;
+
+  /// No description provided for @hiddenWifiNetworkNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A network name is required'**
+  String get hiddenWifiNetworkNameRequired;
+
   /// No description provided for @noInternet.
   ///
   /// In en, this message translates to:
