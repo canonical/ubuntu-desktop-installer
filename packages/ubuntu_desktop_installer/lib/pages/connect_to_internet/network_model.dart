@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
-import 'property_stream_notifier.dart';
 
 abstract class NetworkModel<T extends NetworkDevice>
     extends PropertyStreamNotifier implements ConnectModel {

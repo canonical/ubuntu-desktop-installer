@@ -102,4 +102,24 @@ void main() {
     verify(telemetry.setPartitionMethod('use_crypto')).called(1);
     reset(telemetry);
   });
+
+  test('save lvm', () {
+    final storage = MockDiskStorageService();
+    when(storage.hasMultipleDisks).thenReturn(false);
+    when(storage.hasEncryption).thenReturn(false);
+
+    final model = InstallationTypeModel(
+      MockSubiquityClient(),
+      storage,
+      MockTelemetryService(),
+    );
+
+    model.advancedFeature = AdvancedFeature.none;
+    model.save();
+    verify(storage.useLvm = false).called(1);
+
+    model.advancedFeature = AdvancedFeature.lvm;
+    model.save();
+    verify(storage.useLvm = true).called(1);
+  });
 }
