@@ -202,6 +202,11 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Elektu sekurigan ŝlosilon';
 
   @override

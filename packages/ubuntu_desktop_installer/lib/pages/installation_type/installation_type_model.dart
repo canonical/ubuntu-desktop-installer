@@ -34,11 +34,13 @@ enum AdvancedFeature {
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends ChangeNotifier {
   /// Creates a new model with the given client and service.
-  InstallationTypeModel(this._client, this._service);
+  InstallationTypeModel(
+      this._client, this._diskService, this._telemetryService);
 
   // ignore: unused_field, will be used for querying existing OS installations
   final SubiquityClient _client;
-  final DiskStorageService _service;
+  final DiskStorageService _diskService;
+  final TelemetryService _telemetryService;
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
@@ -86,9 +88,34 @@ class InstallationTypeModel extends ChangeNotifier {
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
-    if (!_service.hasMultipleDisks &&
+    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
+    if (!_diskService.hasMultipleDisks &&
         _installationType == InstallationType.erase) {
-      await _service.setGuidedStorage();
+      await _diskService.setGuidedStorage();
     }
+
+    // All possible values for the partition method
+    // were extracted from Ubiquity's ubi-partman.py
+    // (see PageGtk.get_autopartition_choice()).
+    if (installationType == InstallationType.erase) {
+      _telemetryService.setPartitionMethod('use_device');
+    } else if (installationType == InstallationType.reinstall) {
+      _telemetryService.setPartitionMethod('reinstall_partition');
+    } else if (installationType == InstallationType.alongside) {
+      _telemetryService.setPartitionMethod('resize_use_free');
+    } else if (installationType == InstallationType.manual) {
+      _telemetryService.setPartitionMethod('manual');
+    }
+    if (advancedFeature == AdvancedFeature.lvm) {
+      _telemetryService.setPartitionMethod('use_lvm');
+    } else if (advancedFeature == AdvancedFeature.zfs) {
+      _telemetryService.setPartitionMethod('use_zfs');
+    }
+    if (_diskService.hasEncryption && advancedFeature != AdvancedFeature.zfs) {
+      _telemetryService.setPartitionMethod('use_crypto');
+    }
+    // TODO: map upgrading the current Ubuntu installation without
+    // wiping the user's home directory (not implemented yet)
+    // to the 'reuse_partition' method.
   }
 }

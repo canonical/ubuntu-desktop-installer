@@ -202,6 +202,11 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installThirdPartySubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';
 
   @override

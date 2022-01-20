@@ -22,6 +22,7 @@ dependencies:
   intl: ^0.17.0
   password_strength: ^0.2.0
   provider: ^6.0.0
+  safe_change_notifier: ^0.1.0
   subiquity_client:
     path: ../subiquity_client
   ubuntu_localizations:
@@ -32,7 +33,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_logger
-  wizard_router: ^0.6.0
+  wizard_router: ^0.7.0
   yaru: ^0.2.0
 
 dev_dependencies:

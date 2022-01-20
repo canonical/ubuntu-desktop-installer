@@ -202,6 +202,11 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
 
   @override

@@ -102,6 +102,13 @@
   "otherOptions": "Other options",
   "installThirdPartyTitle": "Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats",
   "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
+  "onBatteryWarning": "<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
   "chooseSecurityKeyTitle": "Choose a security key",
   "chooseSecurityKeyHeader": "Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of {RELEASE} will not be encrypted.",
   "@chooseSecurityKeyHeader": {

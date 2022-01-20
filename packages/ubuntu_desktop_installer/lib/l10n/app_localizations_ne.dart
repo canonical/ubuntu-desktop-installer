@@ -12,17 +12,17 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE इन्सटल गर्नुहोस्';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'रद्द गर्नुहोस्';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'बदल्नुहोस्';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'हुन्छ';
 
   @override
   String get noButtonText => 'No';
@@ -200,6 +200,11 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+  }
 
   @override
   String get chooseSecurityKeyTitle => 'Choose a security key';

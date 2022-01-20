@@ -98,7 +98,9 @@ class _WelcomePageState extends State<WelcomePage> {
         WizardAction.next(
           context,
           onActivated: () {
-            model.applyLocale(model.locale(model.selectedLanguageIndex));
+            final locale = model.locale(model.selectedLanguageIndex);
+            model.applyLocale(locale);
+            getService<TelemetryService>().setLanguage(locale.languageCode);
             Wizard.of(context).next();
           },
         ),
