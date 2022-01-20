@@ -140,9 +140,10 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final lang = AppLocalizations.of(context);
     return WizardPage(
       title: Text(AppLocalizations.of(context).welcome),
-      header: Text(''),
+      header: Text(lang.welcomeHeader),
       content: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -153,7 +154,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           const SizedBox(width: 20),
           Expanded(
             child: SvgPicture.asset('assets/mascot_white.svg',
-                height: height / 4, color: Theme.of(context).disabledColor),
+                height: height / 4, color: Theme.of(context).primaryColor),
           ),
         ],
       ),
