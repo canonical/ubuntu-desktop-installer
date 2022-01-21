@@ -484,5 +484,12 @@
   "newPartitionTableConfirmationTitle": "Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?",
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na zařízení, budou všechny stávající oddíly odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
-  "@newPartitionTableConfirmationMessage": {}
+  "@newPartitionTableConfirmationMessage": {},
+  "onBatteryWarning": "<font color=\"{color}\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  }
 }
