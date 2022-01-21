@@ -77,12 +77,13 @@ class ValidatedFormField extends StatefulWidget {
     this.helperText,
     this.obscureText = false,
     this.successWidget,
-    this.spacing = _kIconSpacing,
+    double? spacing,
     this.fieldWidth,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
     this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
+        spacing = spacing ?? (successWidget != null ? _kIconSpacing : null),
         super(key: key);
 
   @override

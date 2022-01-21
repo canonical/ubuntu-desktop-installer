@@ -112,6 +112,24 @@ void main() {
     expect(tester.getRect(field).width, equals(123 - 45));
   });
 
+  testWidgets('default spacing', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: Center(
+            child: SizedBox(
+              width: 123,
+              child: ValidatedFormField(),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    final field = find.byType(TextFormField);
+    expect(tester.getRect(field).width, equals(123));
+  });
+
   testWidgets('icon baseline alignment', (tester) async {
     Widget buildWithHelperText(String? helperText) {
       return MaterialApp(
