@@ -429,5 +429,12 @@
   "newPartitionTableConfirmationTitle": "Utworzyć nową pustą tablicę partycji na tym urządzeniu?",
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia nowej tabeli partycji na urządzeniu, wszystkie bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
-  "@newPartitionTableConfirmationMessage": {}
+  "@newPartitionTableConfirmationMessage": {},
+  "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  }
 }
