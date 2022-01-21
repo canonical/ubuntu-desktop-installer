@@ -1,3 +1,5 @@
 {
-  "@@locale": "zh"
+  "@@locale": "zh",
+  "appTitle": "Ubuntu 桌面版安装器",
+  "@appTitle": {}
 }
