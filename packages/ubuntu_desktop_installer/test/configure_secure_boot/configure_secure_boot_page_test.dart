@@ -65,8 +65,8 @@ void main() {
     verify(model.setSecurityKey(ValidatedString('ubuntu', isValid: true)))
         .called(1);
 
-    await tester.enterText(fields.last, 'ubuntu');
-    verify(model.setConfirmKey(ValidatedString('ubuntu', isValid: false)))
+    await tester.enterText(fields.last, 'mismatch');
+    verify(model.setConfirmKey(ValidatedString('mismatch', isValid: false)))
         .called(1);
   });
 

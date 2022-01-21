@@ -97,9 +97,9 @@ void main() {
     await tester.enterText(textField.first, 'ubuntu');
     verify(model.setPassword(ValidatedString('ubuntu', isValid: true)))
         .called(1);
-    await tester.enterText(textField.last, 'ubuntu');
+    await tester.enterText(textField.last, 'mismatch');
     verify(model
-            .setConfirmedPassword(ValidatedString('ubuntu', isValid: false)))
+            .setConfirmedPassword(ValidatedString('mismatch', isValid: false)))
         .called(1);
   });
 
