@@ -19,6 +19,23 @@ void main() {
     expect(model.username, equals(identity.username));
   });
 
+  test('does not override profile', () async {
+    const identity = IdentityData(
+      realname: null,
+      username: '',
+    );
+
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => identity);
+
+    final model = ProfileSetupModel(client);
+    model.setRealname(ValidatedString('Ubuntu', isValid: true));
+    model.setUsername(ValidatedString('ubuntu', isValid: true));
+
+    expect(model.realname, equals('Ubuntu')); // retained
+    expect(model.username, equals('ubuntu')); // retained
+  });
+
   test('save profile', () async {
     final client = MockSubiquityClient();
 

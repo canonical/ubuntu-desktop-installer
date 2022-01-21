@@ -40,6 +40,30 @@ void main() {
     expect(model.hostname, equals(identity.hostname));
   });
 
+  test('does not override identity', () async {
+    const identity = IdentityData(
+      realname: null,
+      username: '',
+      hostname: 'impish',
+    );
+
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => identity);
+
+    final model = WhoAreYouModel(client);
+    model.setRealName(ValidatedString('Ubuntu', isValid: true));
+    model.setUsername(ValidatedString('ubuntu', isValid: true));
+
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile('impish'));
+    verify(client.identity()).called(1);
+
+    expect(model.realName, equals('Ubuntu')); // retained
+    expect(model.username, equals('ubuntu')); // retained
+    expect(model.hostname, equals('impish')); // loaded
+  });
+
   test('empty username and hostname', () async {
     const identity = IdentityData(realname: 'Ubuntu');
 

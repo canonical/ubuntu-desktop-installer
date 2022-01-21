@@ -63,8 +63,8 @@ class ProfileSetupModel extends ChangeNotifier {
       _password.value.isValid == true &&
       _confirmedPassword.value.isValid == true;
 
-  void _initIdentity(ValueNotifier<ValidatedString?> identity, String? value) {
-    if (value != null) {
+  void _initProfile(ValueNotifier<ValidatedString?> identity, String? value) {
+    if (value != null && value.isNotEmpty) {
       identity.value = ValidatedString(value);
     }
   }
@@ -72,8 +72,8 @@ class ProfileSetupModel extends ChangeNotifier {
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
     final identity = await _client.identity();
-    _initIdentity(_realname, identity.realname?.orIfEmpty(null));
-    _initIdentity(_username, identity.username?.orIfEmpty(null));
+    _initProfile(_realname, identity.realname);
+    _initProfile(_username, identity.username);
   }
 
   /// Saves the profile setup.

@@ -92,7 +92,7 @@ class WhoAreYouModel extends ChangeNotifier {
   }
 
   void _initIdentity(ValueNotifier<ValidatedString?> identity, String? value) {
-    if (value != null) {
+    if (value != null && value.isNotEmpty) {
       identity.value = ValidatedString(value);
     }
   }
@@ -100,9 +100,9 @@ class WhoAreYouModel extends ChangeNotifier {
   /// Loads the identity data from the server, and resolves the system hostname.
   Future<void> loadIdentity() async {
     final identity = await _client.identity();
-    _initIdentity(_realName, identity.realname?.orIfEmpty(null));
-    _initIdentity(_hostname, identity.hostname?.orIfEmpty(null));
-    _initIdentity(_username, identity.username?.orIfEmpty(null));
+    _initIdentity(_realName, identity.realname);
+    _initIdentity(_hostname, identity.hostname);
+    _initIdentity(_username, identity.username);
     log.info('Loaded identity: ${identity.description}');
     _productName.value = await _readProductName();
     log.info('Read product name: ${_productName.value}');
