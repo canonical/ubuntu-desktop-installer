@@ -8,11 +8,11 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu 桌面版安装器';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '安装';
   }
 
   @override
