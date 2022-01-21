@@ -289,4 +289,23 @@ void main() {
     await tester.pump();
     expect(focusNode.hasFocus, isFalse);
   });
+
+  testWidgets('focus node disposal', (tester) async {
+    final externalFocusNode = FocusNode();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(focusNode: externalFocusNode),
+        ),
+      ),
+    );
+    await tester.pumpWidget(MaterialApp());
+    await tester.pumpAndSettle();
+
+    await expectLater(
+      () => externalFocusNode.addListener(() {}),
+      isNot(throwsAssertionError),
+    );
+  });
 }
