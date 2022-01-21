@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -96,6 +97,30 @@ void main() {
     verify(model.password = 'ubuntu').called(1);
     await tester.enterText(textField.last, 'ubuntu');
     verify(model.confirmedPassword = 'ubuntu').called(1);
+  });
+
+  testWidgets('password tab focus', (tester) async {
+    final model = buildModel(password: 'passwd', confirmedPassword: 'confirm');
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final passwordField = find.widgetWithText(TextField, 'passwd');
+    expect(passwordField, findsOneWidget);
+
+    await tester.tap(passwordField);
+
+    final passwordFocus = tester.widget<TextField>(passwordField).focusNode;
+    expect(passwordFocus?.hasFocus, isTrue);
+
+    final confirmPasswordField = find.widgetWithText(TextField, 'confirm');
+    expect(confirmPasswordField, findsOneWidget);
+
+    final confirmPasswordFocus =
+        tester.widget<TextField>(confirmPasswordField).focusNode;
+    expect(confirmPasswordFocus?.hasFocus, isFalse);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+
+    expect(confirmPasswordFocus?.hasFocus, isTrue);
   });
 
   testWidgets('empty password', (tester) async {
