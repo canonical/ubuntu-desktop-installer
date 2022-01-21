@@ -1,5 +1,12 @@
 {
   "@@locale": "zh",
   "appTitle": "Ubuntu 桌面版安装器",
-  "@appTitle": {}
+  "@appTitle": {},
+  "windowTitle": "安装",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
