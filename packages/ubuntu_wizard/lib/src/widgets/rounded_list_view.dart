@@ -39,13 +39,10 @@ class RoundedListView extends StatelessWidget {
       borderColor: borderColor,
       borderWidth: borderWidth,
       borderRadius: borderRadius,
-      child: Scrollbar(
+      child: ListView.builder(
         controller: controller,
-        child: ListView.builder(
-          controller: controller,
-          itemCount: itemCount,
-          itemBuilder: itemBuilder,
-        ),
+        itemCount: itemCount,
+        itemBuilder: itemBuilder,
       ),
     );
   }
