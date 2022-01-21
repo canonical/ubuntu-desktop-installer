@@ -22,12 +22,6 @@ enum LoginStrategy {
   autoLogin
 }
 
-// extension _ValidatedStringNotifier on ValueNotifier<ValidatedString?> {
-//   bool? get isValid => value?.isValid;
-//   String? get string => value?.value;
-//   set string(String? value) => value = value;
-// }
-
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends ChangeNotifier {
   /// Creates the model with the given client.
