@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
 /// Defines an installation slide.
@@ -30,5 +31,8 @@ class Slides extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(Slides oldWidget) => slides != oldWidget.slides;
+  bool updateShouldNotify(Slides oldWidget) {
+    final listEquals = const ListEquality().equals;
+    return !listEquals(slides, oldWidget.slides);
+  }
 }

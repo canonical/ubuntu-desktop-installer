@@ -8,23 +8,18 @@ import '../widget_tester_extensions.dart';
 
 void main() {
   testWidgets('inherited slides', (tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Slides(
-          slides: [
-            Slide(
-              title: (_) => Text('title1'),
-              body: (_) => Text('body1'),
-            ),
-            Slide(
-              title: (_) => Text('title2'),
-              body: (_) => Text('body2'),
-            ),
-          ],
-          child: Text('page'),
-        ),
-      ),
+    final slide1 = Slide(
+      title: (_) => Text('title1'),
+      body: (_) => Text('body1'),
     );
+
+    final slide2 = Slide(
+      title: (_) => Text('title2'),
+      body: (_) => Text('body2'),
+    );
+
+    final widget = Slides(slides: [slide1, slide2], child: Text('page'));
+    await tester.pumpWidget(MaterialApp(home: widget));
 
     final context = tester.element(find.text('page'));
 
@@ -34,6 +29,19 @@ void main() {
     expect((slides.first.body(context) as Text).data, equals('body1'));
     expect((slides.last.title(context) as Text).data, equals('title2'));
     expect((slides.last.body(context) as Text).data, equals('body2'));
+
+    expect(
+      widget.updateShouldNotify(
+        Slides(slides: [slide1, slide2], child: Text('page')),
+      ),
+      isFalse,
+    );
+    expect(
+      widget.updateShouldNotify(
+        Slides(slides: [slide2, slide1], child: Text('page')),
+      ),
+      isTrue,
+    );
   });
 
   testWidgets('slide layout', (tester) async {
