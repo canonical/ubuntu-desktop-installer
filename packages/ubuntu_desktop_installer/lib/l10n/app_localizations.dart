@@ -591,6 +591,12 @@ abstract class AppLocalizations {
   /// **'This software is subject to license terms included with its documentation. Some are proprietary.'**
   String get installThirdPartySubtitle;
 
+  /// No description provided for @onBatteryWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.'**
+  String onBatteryWarning(Object color);
+
   /// No description provided for @chooseSecurityKeyTitle.
   ///
   /// In en, this message translates to:

@@ -199,6 +199,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installThirdPartySubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => '보안 키 선택';
 
   @override

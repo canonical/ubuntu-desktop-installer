@@ -88,6 +88,7 @@ class InstallationTypeModel extends ChangeNotifier {
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
+    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
     if (!_diskService.hasMultipleDisks &&
         _installationType == InstallationType.erase) {
       await _diskService.setGuidedStorage();

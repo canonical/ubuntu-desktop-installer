@@ -199,6 +199,11 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
 
   @override
