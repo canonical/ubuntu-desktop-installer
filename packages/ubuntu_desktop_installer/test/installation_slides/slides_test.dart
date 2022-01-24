@@ -1,10 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/slides.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
+import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
 
 import '../widget_tester_extensions.dart';
 
@@ -96,64 +94,11 @@ void main() {
     expect(tester.getRect(background), equals(tester.getRect(layout)));
   });
 
-  group('slide image', () {
-    Future<void> testImage(
-      WidgetTester tester, {
-      required String asset,
-      required Widget child,
-    }) async {
-      FlutterError? error;
-      FlutterError.onError = (e) => error = e.exception as FlutterError;
-
-      await runZonedGuarded(() async {
-        await tester.pumpWidget(
-          MaterialApp(
-            home: Flavor(
-              data: FlavorData(name: 'slides_test'),
-              child: Builder(builder: (context) => child),
-            ),
-          ),
-        );
-        await tester.pump();
-      }, (error, stack) {});
-
-      expect(error, isNotNull);
-      expect(error!.message, contains(asset));
-    }
-
-    testWidgets('asset', (tester) async {
-      await testImage(
-        tester,
-        asset: 'assets/slides/foo.png',
-        child: SlideImage.asset('foo.png'),
-      );
-    });
-
-    testWidgets('icon', (tester) async {
-      await testImage(
-        tester,
-        asset: 'assets/slides/icons/foo.png',
-        child: SlideImage.icon('foo.png'),
-      );
-    });
-
-    testWidgets('screenshot', (tester) async {
-      await testImage(
-        tester,
-        asset: 'assets/slides/screenshots/foo.png',
-        child: SlideImage.screenshot('foo.png'),
-      );
-    });
-  });
-
   testWidgets('slide card', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Center(
           child: SlideCard(
-            backgroundColor: Colors.red,
-            borderRadius: BorderRadius.circular(1.234),
-            padding: EdgeInsets.fromLTRB(1, 2, 3, 4),
             width: 123.4,
             child: Text('card'),
           ),
@@ -165,102 +110,21 @@ void main() {
     expect(container, findsOneWidget);
     expect(tester.getSize(container).width, moreOrLessEquals(123.4));
 
+    final context = tester.element(container);
+
     final widget = tester.widget<Container>(container);
-    expect(widget.padding, equals(EdgeInsets.fromLTRB(1, 2, 3, 4)));
+    expect(widget.padding, isNot(equals(EdgeInsets.zero)));
 
     final decoration = widget.decoration as BoxDecoration?;
     expect(decoration, isNotNull);
-    expect(decoration!.color, equals(Colors.red));
-    expect(decoration.borderRadius, equals(BorderRadius.circular(1.234)));
-  });
 
-  group('slide label', () {
-    testWidgets('plain', (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Center(
-            child: SlideLabel(
-              'label',
-              width: 123.4,
-            ),
-          ),
-        ),
-      );
+    final color = decoration!.color as Color;
+    expect(color.alpha, lessThan(255));
+    expect(color.withAlpha(255), equals(Theme.of(context).backgroundColor));
 
-      final label = find.byType(Html);
-      expect(label, findsOneWidget);
-      expect(tester.getSize(label).width, moreOrLessEquals(123.4));
-    });
-
-    testWidgets('plain', (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Center(
-            child: SlideLabel(
-              'label',
-              width: 123.4,
-            ),
-          ),
-        ),
-      );
-
-      final label = find.byType(Html);
-      expect(label, findsOneWidget);
-      expect(tester.getSize(label).width, moreOrLessEquals(123.4));
-      expect(find.byType(Row), findsNothing);
-    });
-
-    testWidgets('icon', (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Center(
-            child: SlideLabel.icon(
-              icon: 'foo.png',
-              text: 'label',
-              width: 432.1,
-            ),
-          ),
-        ),
-      );
-
-      final row = find.byType(Row);
-      final icon = find.byType(Image);
-      final label = find.byType(Text);
-      expect(row, findsOneWidget);
-      expect(icon, findsOneWidget);
-      expect(label, findsOneWidget);
-      expect(tester.getSize(row).width, moreOrLessEquals(432.1));
-      expect(tester.getRect(icon).left, lessThan(tester.getRect(label).left));
-    });
-
-    testWidgets('large', (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Center(
-            child: Column(
-              children: [
-                SlideLabel('small'),
-                SlideLabel.large('large'),
-              ],
-            ),
-          ),
-        ),
-      );
-
-      final small = find.widgetWithText(Html, 'small');
-      expect(small, findsOneWidget);
-
-      final large = find.widgetWithText(Html, 'large');
-      expect(large, findsOneWidget);
-
-      final smallFontSize = tester.widget<Html>(small).style['body']?.fontSize;
-      expect(smallFontSize?.size, isNotNull);
-
-      final largeFontSize = tester.widget<Html>(large).style['body']?.fontSize;
-      expect(largeFontSize?.size, isNotNull);
-
-      expect(largeFontSize!.size, greaterThan(smallFontSize!.size!));
-    });
+    final radius = decoration.borderRadius as BorderRadius;
+    expect(radius.topLeft, isNot(Radius.zero));
+    expect(radius.bottomRight, isNot(Radius.zero));
   });
 
   group('default slide', () {

@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../l10n.dart';
 import 'slide_widgets.dart';
 
 const _kHeaderWidth = 480.0;
+const _kIconSpacing = 8.0;
 const _kCardWidth = 348.0;
 const _kInsets = EdgeInsets.fromLTRB(72, 56, 48, 24);
 const _kSmallSpacing = 8.0;
 const _kLargeSpacing = 16.0;
+
+String _slideAsset(String name) => 'assets/slides/$name.png';
+String _slideIcon(String name) => 'assets/slides/icons/$name.png';
+String _slideScreenshot(String name) => 'assets/slides/screenshots/$name.png';
 
 /// The list of default installation slides.
 final defaultSlides = <Slide>[
@@ -28,8 +34,8 @@ final _welcomeSlide = Slide(
     return SlideLayout(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
-      background: SlideImage.asset('welcome.png'),
-      content: SlideLabel.large(
+      background: FlavorImage.asset(_slideAsset('welcome')),
+      content: _SlideLabel.large(
         context.lang.welcomeSlideDescription(context.flavor.name),
         width: _kHeaderWidth,
       ),
@@ -44,14 +50,14 @@ final _softwareSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: SlideCard(
         width: _kCardWidth,
-        child: SlideLabel(
+        child: _SlideLabel(
           context.lang.softwareSlideDescription(context.flavor.name),
         ),
       ),
-      image: SlideImage.screenshot('software.png'),
+      image: FlavorImage.asset(_slideScreenshot('software')),
     );
   },
 );
@@ -63,13 +69,13 @@ final _musicSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
           SlideCard(
             width: _kCardWidth,
-            child: SlideLabel(
+            child: _SlideLabel(
               context.lang.musicSlideDescription(context.flavor.name),
             ),
           ),
@@ -81,9 +87,9 @@ final _musicSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: <Widget>[
-                    SlideLabel(context.lang.includedSoftware),
-                    SlideLabel.icon(
-                      icon: 'rhythmbox.png',
+                    _SlideLabel(context.lang.includedSoftware),
+                    _SlideLabel.icon(
+                      icon: 'rhythmbox',
                       text: context.lang.musicSlideRhythmbox,
                     ),
                   ],
@@ -91,13 +97,13 @@ final _musicSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: <Widget>[
-                    SlideLabel(context.lang.availableSoftware),
-                    SlideLabel.icon(
-                      icon: 'spotify.png',
+                    _SlideLabel(context.lang.availableSoftware),
+                    _SlideLabel.icon(
+                      icon: 'spotify',
                       text: context.lang.musicSlideSpotify,
                     ),
-                    SlideLabel.icon(
-                      icon: 'vlc.png',
+                    _SlideLabel.icon(
+                      icon: 'vlc',
                       text: context.lang.musicSlideVLC,
                     ),
                   ],
@@ -107,7 +113,7 @@ final _musicSlide = Slide(
           ),
         ],
       ),
-      image: SlideImage.screenshot('music.png'),
+      image: FlavorImage.asset(_slideScreenshot('music')),
     );
   },
 );
@@ -119,13 +125,13 @@ final _photoSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
           SlideCard(
             width: _kCardWidth,
-            child: SlideLabel(context.lang.photoSlideDescription),
+            child: _SlideLabel(context.lang.photoSlideDescription),
           ),
           SlideCard(
             width: _kCardWidth,
@@ -135,9 +141,9 @@ final _photoSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: <Widget>[
-                    SlideLabel(context.lang.includedSoftware),
-                    SlideLabel.icon(
-                      icon: 'shotwell.png',
+                    _SlideLabel(context.lang.includedSoftware),
+                    _SlideLabel.icon(
+                      icon: 'shotwell',
                       text: context.lang.photoSlideShotwell,
                     ),
                   ],
@@ -145,13 +151,13 @@ final _photoSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: <Widget>[
-                    SlideLabel(context.lang.supportedSoftware),
-                    SlideLabel.icon(
-                      icon: 'gimp.png',
+                    _SlideLabel(context.lang.supportedSoftware),
+                    _SlideLabel.icon(
+                      icon: 'gimp',
                       text: context.lang.photoSlideGimp,
                     ),
-                    SlideLabel.icon(
-                      icon: 'shotcut.png',
+                    _SlideLabel.icon(
+                      icon: 'shotcut',
                       text: context.lang.photoSlideShotcut,
                     ),
                   ],
@@ -161,7 +167,7 @@ final _photoSlide = Slide(
           ),
         ],
       ),
-      image: SlideImage.screenshot('photos.png'),
+      image: FlavorImage.asset(_slideScreenshot('photos')),
     );
   },
 );
@@ -173,13 +179,13 @@ final _webSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
           SlideCard(
             width: _kCardWidth,
-            child: SlideLabel(
+            child: _SlideLabel(
               context.lang.webSlideDescription(context.flavor.name),
             ),
           ),
@@ -191,13 +197,13 @@ final _webSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: [
-                    SlideLabel(context.lang.includedSoftware),
-                    SlideLabel.icon(
-                      icon: 'firefox.png',
+                    _SlideLabel(context.lang.includedSoftware),
+                    _SlideLabel.icon(
+                      icon: 'firefox',
                       text: context.lang.webSlideFirefox,
                     ),
-                    SlideLabel.icon(
-                      icon: 'thunderbird.png',
+                    _SlideLabel.icon(
+                      icon: 'thunderbird',
                       text: context.lang.webSlideThunderbird,
                     ),
                   ],
@@ -205,9 +211,9 @@ final _webSlide = Slide(
                 _SlideColumn(
                   spacing: _kSmallSpacing,
                   children: [
-                    SlideLabel(context.lang.supportedSoftware),
-                    SlideLabel.icon(
-                      icon: 'chromium.png',
+                    _SlideLabel(context.lang.supportedSoftware),
+                    _SlideLabel.icon(
+                      icon: 'chromium',
                       text: context.lang.webSlideChromium,
                     ),
                   ],
@@ -217,7 +223,7 @@ final _webSlide = Slide(
           ),
         ],
       ),
-      image: SlideImage.screenshot('web.png'),
+      image: FlavorImage.asset(_slideScreenshot('web')),
     );
   },
 );
@@ -229,30 +235,30 @@ final _officeSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
           SlideCard(
             width: _kCardWidth,
-            child: SlideLabel(context.lang.officeSlideDescription),
+            child: _SlideLabel(context.lang.officeSlideDescription),
           ),
           SlideCard(
             width: _kCardWidth,
             child: _SlideColumn(
               spacing: _kSmallSpacing,
               children: <Widget>[
-                SlideLabel(context.lang.includedSoftware),
-                SlideLabel.icon(
-                  icon: 'libreoffice-writer.png',
+                _SlideLabel(context.lang.includedSoftware),
+                _SlideLabel.icon(
+                  icon: 'libreoffice-writer',
                   text: context.lang.officeSlideWriter,
                 ),
-                SlideLabel.icon(
-                  icon: 'libreoffice-calc.png',
+                _SlideLabel.icon(
+                  icon: 'libreoffice-calc',
                   text: context.lang.officeSlideCalc,
                 ),
-                SlideLabel.icon(
-                  icon: 'libreoffice-impress.png',
+                _SlideLabel.icon(
+                  icon: 'libreoffice-impress',
                   text: context.lang.officeSlideImpress,
                 ),
               ],
@@ -260,7 +266,7 @@ final _officeSlide = Slide(
           ),
         ],
       ),
-      image: SlideImage.screenshot('office.png'),
+      image: FlavorImage.asset(_slideScreenshot('office')),
     );
   },
 );
@@ -272,13 +278,13 @@ final _accessSlide = Slide(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      background: SlideImage.asset('background.png'),
+      background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
           SlideCard(
             width: _kCardWidth,
-            child: SlideLabel(
+            child: _SlideLabel(
               context.lang.accessSlideDescription(context.flavor.name),
             ),
           ),
@@ -287,17 +293,17 @@ final _accessSlide = Slide(
             child: _SlideColumn(
               spacing: _kSmallSpacing,
               children: <Widget>[
-                SlideLabel(context.lang.accessSlideCustomizationOptions),
-                SlideLabel.icon(
-                  icon: 'themes.png',
+                _SlideLabel(context.lang.accessSlideCustomizationOptions),
+                _SlideLabel.icon(
+                  icon: 'themes',
                   text: context.lang.officeSlideWriter,
                 ),
-                SlideLabel.icon(
-                  icon: 'access.png',
+                _SlideLabel.icon(
+                  icon: 'access',
                   text: context.lang.accessSlideAssistiveTechnologies,
                 ),
-                SlideLabel.icon(
-                  icon: 'languages.png',
+                _SlideLabel.icon(
+                  icon: 'languages',
                   text: context.lang.accessSlideLanguageSupport,
                 ),
               ],
@@ -305,7 +311,7 @@ final _accessSlide = Slide(
           ),
         ],
       ),
-      image: SlideImage.screenshot('settings.png'),
+      image: FlavorImage.asset(_slideScreenshot('settings')),
     );
   },
 );
@@ -316,19 +322,19 @@ final _supportSlide = Slide(
     return SlideLayout(
       padding: _kInsets,
       contentAlignment: Alignment.topLeft,
-      background: SlideImage.asset('welcome.png'),
+      background: FlavorImage.asset(_slideAsset('welcome')),
       content: _SlideColumn(
         spacing: _kLargeSpacing,
         children: [
-          SlideLabel.large(
+          _SlideLabel.large(
             context.lang.supportSlideDocumentation(context.flavor.name),
             width: _kHeaderWidth,
           ),
-          SlideLabel.large(
+          _SlideLabel.large(
             context.lang.supportSlideQuestions,
             width: _kHeaderWidth,
           ),
-          SlideLabel.large(
+          _SlideLabel.large(
             context.lang.supportSlideResources,
             width: _kHeaderWidth,
           ),
@@ -362,6 +368,151 @@ class _SlideColumn extends StatelessWidget {
         })
         .skip(1)
         .toList();
+  }
+}
+
+class _SlideLabel extends StatelessWidget {
+  // A text-only label.
+  const _SlideLabel(
+    this.text, {
+    Key? key,
+    double? width,
+  })  : icon = null,
+        _fontSize = FontSize.medium,
+        _width = width,
+        super(key: key);
+
+  // A rich text label with a large font suitable for headers.
+  const _SlideLabel.large(
+    this.text, {
+    Key? key,
+    double? width,
+  })  : icon = null,
+        _fontSize = FontSize.xLarge,
+        _width = width,
+        super(key: key);
+
+  // A plain text label prefixed with an icon.
+  const _SlideLabel.icon({
+    Key? key,
+    required this.text,
+    this.icon,
+    double? width,
+  })  : _fontSize = FontSize.medium,
+        _width = width,
+        super(key: key);
+
+  final String? icon;
+  final String text;
+  final FontSize? _fontSize;
+  final double? _width;
+
+  Widget _buildLabel(BuildContext context) {
+    if (icon == null) {
+      return Html(
+        data: text,
+        style: {'body': Style(fontSize: _fontSize, margin: EdgeInsets.zero)},
+      );
+    }
+
+    return Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      FlavorImage.asset(_slideIcon(icon!)),
+      const SizedBox(width: _kIconSpacing),
+      Text(text),
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final label = _buildLabel(context);
+    return _width == null ? label : SizedBox(width: _width, child: label);
+  }
+}
+
+// A rounded card with a 50% translucent background for labels and lists.
+class SlideCard extends StatelessWidget {
+  const SlideCard({
+    Key? key,
+    this.width,
+    required this.child,
+  }) : super(key: key);
+
+  final double? width;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(4)),
+        color: Theme.of(context).backgroundColor.withAlpha(128),
+      ),
+      child: child,
+    );
+  }
+}
+
+// A common slide layout with background, content, and image. The background
+// fills the entire slide, and the alignment of the content and the image can
+// be specified.
+class SlideLayout extends StatelessWidget {
+  const SlideLayout({
+    Key? key,
+    this.background,
+    this.content,
+    this.contentAlignment,
+    this.image,
+    this.imageAlignment,
+    this.padding,
+  }) : super(key: key);
+
+  final Widget? background;
+  final Widget? content;
+  final AlignmentGeometry? contentAlignment;
+  final Widget? image;
+  final AlignmentGeometry? imageAlignment;
+  final EdgeInsetsGeometry? padding;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        if (background != null) background!,
+        if (content != null)
+          _buildLayout(
+            context,
+            alignment: contentAlignment ?? Alignment.center,
+            child: content!,
+          ),
+        if (image != null)
+          _buildLayout(
+            context,
+            alignment: imageAlignment ?? Alignment.center,
+            child: image!,
+          ),
+      ],
+    );
+  }
+
+  Positioned _buildLayout(
+    BuildContext context, {
+    required Widget child,
+    required AlignmentGeometry alignment,
+  }) {
+    final direction = Directionality.of(context);
+    final insets = padding?.resolve(direction) ?? EdgeInsets.zero;
+    return Positioned(
+      top: insets.top,
+      left: insets.left,
+      right: insets.right,
+      bottom: insets.bottom,
+      child: Align(
+        alignment: alignment.resolve(direction),
+        child: child,
+      ),
+    );
   }
 }
 
