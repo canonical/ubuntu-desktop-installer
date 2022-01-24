@@ -465,5 +465,12 @@
   "noWifiDevicesDetected": "Cap de periferic Wifi pas detectat",
   "@noWifiDevicesDetected": {},
   "wifiMustBeEnabled": "Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat",
-  "@wifiMustBeEnabled": {}
+  "@wifiMustBeEnabled": {},
+  "onBatteryWarning": "<font color=\"{color}\">Avertiment </font>: l’ordenador es pas brancat a una font d’alimentacion.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  }
 }
