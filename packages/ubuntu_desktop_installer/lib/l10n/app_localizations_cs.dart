@@ -200,7 +200,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.';
   }
 
   @override
