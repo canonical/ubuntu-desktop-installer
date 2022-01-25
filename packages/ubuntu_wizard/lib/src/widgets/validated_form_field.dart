@@ -148,10 +148,14 @@ class ValidatedFormFieldState extends State<ValidatedFormField> {
         suffixIcon: widget.suffixIcon != null
             ? widget.suffixIcon
             : widget.obscureText == true && _controller.text.isNotEmpty
-                ? IconButton(
-                    onPressed: () =>
-                        setState(() => _obscureText = !obscureText),
-                    icon: Icon(obscureText ? YaruIcons.hide : YaruIcons.view),
+                ? Focus(
+                    canRequestFocus: false,
+                    descendantsAreFocusable: false,
+                    child: IconButton(
+                      onPressed: () =>
+                          setState(() => _obscureText = !obscureText),
+                      icon: Icon(obscureText ? YaruIcons.hide : YaruIcons.view),
+                    ),
                   )
                 : null,
       ),

@@ -79,6 +79,29 @@ void main() {
     expect(find.text('ubuntu'), findsOneWidget);
   });
 
+  testWidgets('rebuild initial value', (tester) async {
+    final controller = TextEditingController(text: 'initial');
+
+    Widget buildValidatedFormField({String? initialValue}) {
+      return MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            controller: controller,
+            initialValue: initialValue,
+          ),
+        ),
+      );
+    }
+
+    await tester.pumpWidget(buildValidatedFormField(initialValue: null));
+    expect(find.widgetWithText(TextField, 'initial'), findsOneWidget);
+    expect(controller.text, equals('initial'));
+
+    await tester.pumpWidget(buildValidatedFormField(initialValue: 'rebuild'));
+    expect(find.widgetWithText(TextField, 'rebuild'), findsOneWidget);
+    expect(controller.text, equals('rebuild'));
+  });
+
   testWidgets('fixed field width', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
