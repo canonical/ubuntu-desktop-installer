@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinbox/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -7,6 +6,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import 'allocate_disk_space_model.dart';
+import 'storage_size_box.dart';
 
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(
@@ -89,11 +89,20 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
                 children: <Widget>[
                   ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: _PartitionSizeBox(
-                      bytes: partitionSize,
-                      unit: partitionUnit,
-                      freeSpace: disk.freeForPartitions ?? 0,
-                    ),
+                    child: AnimatedBuilder(
+                        animation: Listenable.merge([
+                          partitionSize,
+                          partitionUnit,
+                        ]),
+                        builder: (context, child) {
+                          return StorageSizeBox(
+                            size: partitionSize.value,
+                            unit: partitionUnit.value,
+                            available: disk.freeForPartitions ?? 0,
+                            onSizeChanged: (v) => partitionSize.value = v,
+                            onUnitSelected: (v) => partitionUnit.value = v,
+                          );
+                        }),
                   ),
                   const SizedBox(height: kContentSpacing),
                   ConstrainedBox(
@@ -160,69 +169,6 @@ class _PartitionDialogLabel extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class _PartitionSizeBox extends StatelessWidget {
-  const _PartitionSizeBox({
-    Key? key,
-    required this.bytes,
-    required this.unit,
-    required this.freeSpace,
-  }) : super(key: key);
-
-  final ValueNotifier<int> bytes;
-  final ValueNotifier<DataUnit> unit;
-  final int freeSpace;
-
-  void _setBytes(double value) => bytes.value = toBytes(value, unit.value);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: Listenable.merge([bytes, unit]),
-      builder: (context, snapshot) {
-        return Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Expanded(
-              child: SpinBox(
-                value: fromBytes(bytes.value, unit.value),
-                max: fromBytes(freeSpace, unit.value),
-                onChanged: _setBytes,
-              ),
-            ),
-            const SizedBox(width: kButtonBarSpacing),
-            IntrinsicWidth(
-              child: DropdownBuilder<DataUnit>(
-                values: DataUnit.values,
-                selected: unit.value,
-                onSelected: (value) => unit.value = value!,
-                itemBuilder: (context, unit, _) {
-                  return Text(unit.localize(context), key: ValueKey(unit));
-                },
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
-
-extension _PartitionUnitLang on DataUnit {
-  String localize(BuildContext context) {
-    final lang = AppLocalizations.of(context);
-    switch (this) {
-      case DataUnit.bytes:
-        return lang.partitionUnitB;
-      case DataUnit.kilobytes:
-        return lang.partitionUnitKB;
-      case DataUnit.megabytes:
-        return lang.partitionUnitMB;
-      case DataUnit.gigabytes:
-        return lang.partitionUnitGB;
-    }
   }
 }
 
