@@ -31,6 +31,9 @@ apps:
   probert:
     command: bin/probert
 
+  os-prober:
+    command: usr/bin/os-prober
+
 parts:
   curtin:
     override-pull: |
@@ -268,3 +271,14 @@ parts:
     stage:
       - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
+
+  os-prober:
+    plugin: nil
+    stage-packages: [os-prober]
+    override-stage: |
+      snapcraftctl stage
+      for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
+        sed -i 's, \(/usr\), $SNAP\1,' $file
+      done
+      sed -i 's/mkdir "$tmpmnt"/mkdir -p "$tmpmnt"/' \
+          usr/lib/os-probes/50mounted-tests
