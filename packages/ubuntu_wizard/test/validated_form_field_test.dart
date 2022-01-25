@@ -4,6 +4,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 
 void main() {
   testWidgets('input validation', (tester) async {
@@ -217,6 +218,83 @@ void main() {
 
     expect(find.text('equal'), findsOneWidget);
     expect(find.text('not equal'), findsNothing);
+  });
+
+  testWidgets('toggle obscure text', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            obscureText: true,
+            initialValue: 'password',
+          ),
+        ),
+      ),
+    );
+
+    final viewButton = find.widgetWithIcon(IconButton, YaruIcons.view);
+    final hideButton = find.widgetWithIcon(IconButton, YaruIcons.hide);
+
+    final state =
+        tester.state<ValidatedFormFieldState>(find.byType(ValidatedFormField));
+    expect(state.obscureText, isTrue);
+    expect(viewButton, findsNothing);
+    expect(hideButton, findsOneWidget);
+
+    await tester.tap(hideButton);
+    await tester.pump();
+    expect(state.obscureText, isFalse);
+    expect(viewButton, findsOneWidget);
+    expect(hideButton, findsNothing);
+  });
+
+  testWidgets('no obscure text', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            obscureText: false,
+            initialValue: 'password',
+          ),
+        ),
+      ),
+    );
+
+    expect(find.widgetWithIcon(IconButton, YaruIcons.view), findsNothing);
+    expect(find.widgetWithIcon(IconButton, YaruIcons.hide), findsNothing);
+  });
+
+  testWidgets('empty obscure text', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            obscureText: true,
+            initialValue: '',
+          ),
+        ),
+      ),
+    );
+
+    expect(find.widgetWithIcon(IconButton, YaruIcons.view), findsNothing);
+    expect(find.widgetWithIcon(IconButton, YaruIcons.hide), findsNothing);
+  });
+
+  testWidgets('override obscure button', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            obscureText: true,
+            initialValue: 'password',
+            suffixIcon: SizedBox.shrink(),
+          ),
+        ),
+      ),
+    );
+
+    expect(find.widgetWithIcon(IconButton, YaruIcons.view), findsNothing);
+    expect(find.widgetWithIcon(IconButton, YaruIcons.hide), findsNothing);
   });
 
   testWidgets('focus node is attached', (tester) async {
