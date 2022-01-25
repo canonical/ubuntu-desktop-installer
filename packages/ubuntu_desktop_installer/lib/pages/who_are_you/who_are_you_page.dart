@@ -5,7 +5,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_icons/yaru_icons.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';

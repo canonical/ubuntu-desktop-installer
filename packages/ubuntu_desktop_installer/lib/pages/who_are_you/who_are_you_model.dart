@@ -44,7 +44,6 @@ class WhoAreYouModel extends ChangeNotifier {
       _confirmedPassword,
       _loginStrategy,
       _productName,
-      _obscureText,
     ]).addListener(notifyListeners);
   }
 
@@ -57,7 +56,6 @@ class WhoAreYouModel extends ChangeNotifier {
   final _loginStrategy =
       ValueNotifier<LoginStrategy>(LoginStrategy.requirePassword);
   final _productName = ValueNotifier<String>('');
-  final _obscureText = ValueNotifier<bool>(true);
 
   /// The current real name.
   String get realName => _realName.value ?? '';
@@ -125,10 +123,6 @@ class WhoAreYouModel extends ChangeNotifier {
     log.info('Saved identity: ${identity.description}');
     return _client.setIdentity(identity);
   }
-
-  /// Defines if the password text is obscured
-  bool get obscureText => _obscureText.value;
-  set obscureText(bool value) => _obscureText.value = value;
 }
 
 /// The DMI product name file. Available for testing.
