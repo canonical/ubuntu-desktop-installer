@@ -28,15 +28,15 @@ void main() {
       findsOneWidget,
     );
 
-    // listview inside scrollbar
+    // listview inside rounded container
     expect(
       find.descendant(
-        of: find.byType(Scrollbar),
+        of: find.byType(RoundedContainer),
         matching: find.byType(ListView),
       ),
       findsOneWidget,
     );
-  });
+  }, variant: TargetPlatformVariant.only(TargetPlatform.linux)); // desktop-only
 
   testWidgets('properties are propagated', (tester) async {
     await tester.pumpWidget(

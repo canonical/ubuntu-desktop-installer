@@ -8,42 +8,42 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu 桌面版安装器';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '安装';
   }
 
   @override
   String get cancelButtonText => 'Cancel';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => '更改';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => '好';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => '不';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => '重启';
 
   @override
   String get revertButtonText => 'Revert';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => '是';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => '欢迎';
 
   @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => '尝试或安装';
 
   @override
   String get repairInstallation => 'Repair installation';
@@ -63,7 +63,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '安装 $RELEASE';
   }
 
   @override
@@ -77,7 +77,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => '关闭RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -88,13 +88,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => '键盘布局';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => '选择你的键盘布局：';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => '这里输入测试键盘';
 
   @override
   String get detectLayout => 'Detect Keyboard Layout';
@@ -154,28 +154,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => '链接WiFi';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => '我不想现在联网';
 
   @override
   String get wirelessNetworkingDisabled => 'Wireless networking disabled';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => '找不到WiFi';
 
   @override
   String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => '启用WiFi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => '连接';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => '更新其他软件';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
@@ -184,7 +184,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get normalInstallationTitle => 'Normal installation';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => '浏览器';
 
   @override
   String get minimalInstallationTitle => 'Minimal installation';
