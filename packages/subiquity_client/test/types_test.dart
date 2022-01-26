@@ -115,6 +115,25 @@ void main() {
     expect(ApplicationStatus.fromJson(json), status);
   });
 
+  test('os prober', () {
+    const os = OsProber(
+      long: 'Windows Boot Manager',
+      label: 'Windows',
+      type: 'efi',
+      subpath: '/efi/Microsoft/Boot/bootmgfw.efi',
+      version: '11',
+    );
+    final json = <String, dynamic>{
+      'long': 'Windows Boot Manager',
+      'label': 'Windows',
+      'type': 'efi',
+      'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
+      'version': '11',
+    };
+    expect(os.toJson(), equals(json));
+    expect(OsProber.fromJson(json), os);
+  });
+
   test('partition', () {
     const keyboard = Partition(
       size: 1,
@@ -125,6 +144,13 @@ void main() {
       mount: '/foo',
       format: 'bar',
       grubDevice: false,
+      os: OsProber(
+        long: 'Windows Boot Manager',
+        label: 'Windows',
+        type: 'efi',
+        subpath: '/efi/Microsoft/Boot/bootmgfw.efi',
+        version: '11',
+      ),
     );
     const json = <String, dynamic>{
       'size': 1,
@@ -135,6 +161,13 @@ void main() {
       'mount': '/foo',
       'format': 'bar',
       'grub_device': false,
+      'os': {
+        'long': 'Windows Boot Manager',
+        'label': 'Windows',
+        'type': 'efi',
+        'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
+        'version': '11',
+      },
     };
     expect(keyboard.toJson(), equals(json));
     expect(Partition.fromJson(json), keyboard);

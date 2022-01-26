@@ -196,6 +196,21 @@ enum ProbeStatus { PROBING, FAILED, DONE }
 
 enum Bootloader { NONE, BIOS, UEFI, PREP }
 
+@freezed
+class OsProber with _$OsProber {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  const factory OsProber({
+    required String long,
+    required String label,
+    required String type,
+    String? subpath,
+    String? version,
+  }) = _OsProber;
+
+  factory OsProber.fromJson(Map<String, dynamic> json) =>
+      _$OsProberFromJson(json);
+}
+
 bool? _wipeFromString(String? value) =>
     value == null ? null : value == 'superblock';
 String? _wipeToString(bool? value) =>
@@ -203,7 +218,7 @@ String? _wipeToString(bool? value) =>
 
 @freezed
 class Partition with _$Partition {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Partition({
     int? size,
     int? number,
@@ -213,6 +228,7 @@ class Partition with _$Partition {
     String? mount,
     String? format,
     bool? grubDevice,
+    OsProber? os,
   }) = _Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) =>
