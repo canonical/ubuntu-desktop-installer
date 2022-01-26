@@ -80,6 +80,7 @@ AllocateDiskSpaceModel buildModel({
   when(model.selectedPartitionIndex).thenReturn(selectedPartitionIndex ?? 0);
   when(model.onSelectionChanged).thenAnswer((_) => selection.stream);
   when(model.isStorageSelected(any, any)).thenReturn(false);
+  when(model.canSelectStorage(any, any)).thenReturn(true);
 
   when(model.canAddPartition).thenReturn(canAddPartition ?? false);
   when(model.canRemovePartition).thenReturn(canRemovePartition ?? false);

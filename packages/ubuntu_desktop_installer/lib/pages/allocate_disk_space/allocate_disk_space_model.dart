@@ -200,6 +200,9 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the disk or its partition can be selected.
+  bool canSelectStorage(int diskIndex, [int partitionIndex = -1]) => true;
+
   /// Selects the specified disk or its partition.
   void selectStorage(int diskIndex, [int partitionIndex = -1]) {
     if (isStorageSelected(diskIndex, partitionIndex)) {
