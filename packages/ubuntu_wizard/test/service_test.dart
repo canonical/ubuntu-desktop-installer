@@ -11,14 +11,16 @@ void main() {
   });
 
   test('re-register service', () {
-    expect(() => registerService(Service.new), isNot(throwsAssertionError));
-    expect(() => registerService(Service.new), throwsAssertionError);
+    expect(() => registerService(Service.new), isNot(throwsA(anything)));
+    // re-registration required in integration tests
+    expect(() => registerService(Service.new), isNot(throwsA(anything)));
   });
 
   test('re-register service instance', () {
     final service = Service();
-    expect(() => registerServiceInstance(service), isNot(throwsAssertionError));
-    expect(() => registerServiceInstance(service), throwsAssertionError);
+    expect(() => registerServiceInstance(service), isNot(throwsA(anything)));
+    // re-registration required in integration tests
+    expect(() => registerServiceInstance(service), isNot(throwsA(anything)));
   });
 
   test('locate service', () {
