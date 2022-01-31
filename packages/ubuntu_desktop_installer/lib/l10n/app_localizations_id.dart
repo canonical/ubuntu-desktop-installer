@@ -130,28 +130,28 @@ class AppLocalizationsId extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Kunci keamanan tidak cocok';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Menyambung ke internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Menyambungkan komputer ini ke internet akan membantu Ubuntu memasang perangkat lunak tambahan yang diperlukan dan membantu memilih zona waktu Anda.\n\nSambungkan memakai kabel ethernet, atau pilih suatu jaringan Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Gunakan sambungan kabel';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Tidak ada sambungan kabel yang terdeteksi';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Koneksi lewat kabel dimatikan';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Untuk memakai ethernet pada komputer ini, suatu koneksi lewat kabel mesti difungsikan';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Fungsikan lewat kabel';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Menyambung ke suatu jaringan Wi-Fi';
 
   @override
   String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
@@ -163,22 +163,22 @@ class AppLocalizationsId extends AppLocalizations {
   String get hiddenWifiNetworkNameRequired => 'A network name is required';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Saya tidak ingin tersambung ke internet saat ini';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Jaringan nirkabel dinonaktifkan';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Tidak ada peranti Wi-Fi yang terdeteksi';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Untuk memakai Wi-Fi pada komputer ini, jaringan nirkabel mesti difungsikan';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Fungsikan Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Sambungkan';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Pembaruan dan perangkat lunak lainnya';
@@ -209,7 +209,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Peringatan</font>: Komputer tidak tertancam ke suatu sumber listrik.';
   }
 
   @override
@@ -366,10 +366,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get newPartitionTable => 'Tabel partisi baru';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Buat suatu tabel partisi baru yang kosong pada peranti ini?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Anda telah memilih seluruh peranti untuk dipartisi. Bila Anda melanjutkan membuat suatu tabel partisi baru pada peranti ini, maka semua partisi saat ini akan dihapus.\n\nPerhatikan bahwa Anda akan dapat membatalkan operasi ini nanti bila Anda mau.';
 
   @override
   String get bootLoaderDevice => 'Perangkat untuk instalasi boot loader';

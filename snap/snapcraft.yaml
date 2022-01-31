@@ -31,6 +31,9 @@ apps:
   probert:
     command: bin/probert
 
+  os-prober:
+    command: usr/bin/os-prober
+
 parts:
   curtin:
     override-pull: |
@@ -40,7 +43,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: 36c0035843d6ccf7632735a130bd83a3c464616c
+    source-commit: bfbba202e2cc3b02e4e3953081effb6768da41a8
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -84,7 +87,7 @@ parts:
       - libnl-route-3-dev
     source: https://github.com/canonical/probert.git
     source-type: git
-    source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
+    source-commit: 693cd0040307c1390163c013f22fd82c8b27cd6b
     requirements: [requirements.txt]
     stage:
       - '*'
@@ -140,7 +143,7 @@ parts:
 
   libhandy:
     source: https://gitlab.gnome.org/GNOME/libhandy.git
-    source-branch: "libhandy-1-2"
+    source-branch: libhandy-1-2
     source-depth: 1
     plugin: meson
     meson-parameters:
@@ -268,3 +271,14 @@ parts:
     stage:
       - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
+
+  os-prober:
+    plugin: nil
+    stage-packages: [os-prober]
+    override-stage: |
+      snapcraftctl stage
+      for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
+        sed -i 's, \(/usr\), $SNAP\1,' $file
+      done
+      sed -i 's/mkdir "$tmpmnt"/mkdir -p "$tmpmnt"/' \
+          usr/lib/os-probes/50mounted-tests
