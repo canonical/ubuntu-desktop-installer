@@ -1292,6 +1292,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restart Into Windows'**
   String get restartIntoWindows;
+
+  /// No description provided for @whereAreYouPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Where are you?'**
+  String get whereAreYouPageTitle;
+
+  /// No description provided for @whereAreYouLocationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get whereAreYouLocationLabel;
+
+  /// No description provided for @whereAreYouTimezoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Timezone'**
+  String get whereAreYouTimezoneLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

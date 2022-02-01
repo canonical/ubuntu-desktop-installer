@@ -586,4 +586,13 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Starta om till Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }

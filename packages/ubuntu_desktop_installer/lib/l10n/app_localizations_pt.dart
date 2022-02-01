@@ -586,6 +586,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Reiniciar no Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).

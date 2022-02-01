@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -15,6 +16,8 @@ import 'services.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 
+const _kGeoIPUrl = 'https://geoip.ubuntu.com/lookup';
+const _kGeonameUrl = 'https://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
 enum AppStatus { loading, ready }
@@ -32,7 +35,18 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
+  final geodata = Geodata(
+    loadCities: () => rootBundle.loadString('assets/cities15000.txt'),
+    loadAdmins: () => rootBundle.loadString('assets/admin1CodesASCII.txt'),
+    loadCountries: () => rootBundle.loadString('assets/countryInfo.txt'),
+    loadTimezones: () => rootBundle.loadString('assets/timeZones.txt'),
+  );
+
+  final geoip = GeoIP(url: _kGeoIPUrl, geodata: geodata);
+  final geoname = Geoname(url: _kGeonameUrl, geodata: geodata);
+
   registerService(() => DiskStorageService(subiquityClient));
+  registerService(() => GeoService(geoip, sources: [geodata, geoname]));
   registerService(() => JournalService(journalUnit));
   registerService(KeyboardService.new);
   registerService(NetworkService.new);
@@ -72,7 +86,6 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
-      client.setTimezone('geoip');
     },
   );
 }
@@ -255,15 +268,14 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
-          onNext: (_) => !model.hasBitLocker ? Routes.whoAreYou : null,
+          onNext: (_) => !model.hasBitLocker ? Routes.whereAreYou : null,
         ),
         Routes.turnOffBitlocker: const WizardRoute(
           builder: TurnOffBitLockerPage.create,
         ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/38
-        // Routes.whereAreYou: const WizardRoute(
-        //   builder: WhereAreYouPage.create,
-        // ),
+        Routes.whereAreYou: const WizardRoute(
+          builder: WhereAreYouPage.create,
+        ),
         Routes.whoAreYou: const WizardRoute(
           builder: WhoAreYouPage.create,
         ),
