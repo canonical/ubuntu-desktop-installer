@@ -32,7 +32,7 @@ class ChooseYourLookPage extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: width / 3,
-                      child: ImageTile(
+                      child: YaruImageTile(
                         path: 'assets/Theme_thumbnails-Light.png',
                         currentlySelected:
                             Theme.of(context).brightness == Brightness.light,
@@ -55,7 +55,7 @@ class ChooseYourLookPage extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: width / 3,
-                      child: ImageTile(
+                      child: YaruImageTile(
                         path: 'assets/Theme_thumbnails-Dark.png',
                         currentlySelected:
                             Theme.of(context).brightness == Brightness.dark,
