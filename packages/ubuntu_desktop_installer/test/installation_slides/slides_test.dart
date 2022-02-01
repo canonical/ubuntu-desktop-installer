@@ -118,8 +118,6 @@ void main() {
     expect(container, findsOneWidget);
     expect(tester.getSize(container).width, moreOrLessEquals(123.4));
 
-    final context = tester.element(container);
-
     final widget = tester.widget<Container>(container);
     expect(widget.padding, isNot(equals(EdgeInsets.zero)));
 
@@ -128,7 +126,6 @@ void main() {
 
     final color = decoration!.color as Color;
     expect(color.alpha, lessThan(255));
-    expect(color.withAlpha(255), equals(Theme.of(context).backgroundColor));
 
     final radius = decoration.borderRadius as BorderRadius;
     expect(radius.topLeft, isNot(Radius.zero));

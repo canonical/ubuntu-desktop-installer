@@ -389,14 +389,23 @@ class _SlideLabel extends StatelessWidget {
     if (icon == null) {
       return Html(
         data: text,
-        style: {'body': Style(fontSize: _fontSize, margin: EdgeInsets.zero)},
+        style: {
+          'body': Style(
+            color: Colors.white,
+            fontSize: _fontSize,
+            margin: EdgeInsets.zero,
+          )
+        },
       );
     }
 
     return Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
       FlavorImage.asset(_slideIcon(icon!)),
       const SizedBox(width: _kIconSpacing),
-      Text(text),
+      Text(
+        text,
+        style: TextStyle(color: Colors.white),
+      ),
     ]);
   }
 
@@ -425,7 +434,7 @@ class SlideCard extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(4)),
-        color: Theme.of(context).backgroundColor.withAlpha(128),
+        color: Theme.of(context).shadowColor.withAlpha(64),
       ),
       child: child,
     );
