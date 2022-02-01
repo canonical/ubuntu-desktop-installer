@@ -59,6 +59,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
           Stack(
             children: <Widget>[
               SlideShow(
+                wrap: true,
                 interval: const Duration(hours: 1),
                 slides: Slides.of(context)
                     .map((slide) => _SlidePage(slide: slide))
