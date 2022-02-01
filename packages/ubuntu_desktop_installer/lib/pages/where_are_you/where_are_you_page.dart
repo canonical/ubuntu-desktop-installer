@@ -1,6 +1,8 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -37,6 +39,11 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
 
     final model = Provider.of<WhereAreYouModel>(context, listen: false);
     model.init();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      TimezoneMap.precacheAssets(context);
+    });
   }
 
   String formatLocation(GeoLocation? location) {
@@ -54,63 +61,83 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
 
     return WizardPage(
       title: Text(lang.whereAreYouPageTitle),
+      headerPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
       content: Center(
         child: model.isInitialized
-            ? Row(
+            ? Column(
                 children: <Widget>[
                   Expanded(
-                    child: Autocomplete<GeoLocation>(
-                      initialValue: TextEditingValue(
-                        text: formatLocation(model.selectedLocation),
-                      ),
-                      fieldViewBuilder:
-                          (context, controller, focusNode, onSubmitted) {
-                        if (!focusNode.hasFocus) {
-                          controller.text =
-                              formatLocation(model.selectedLocation);
-                        }
-                        return TextFormField(
-                          focusNode: focusNode,
-                          controller: controller,
-                          decoration: InputDecoration(
-                            labelText: lang.whereAreYouLocationLabel,
-                          ),
-                          onFieldSubmitted: (value) => onSubmitted(),
-                        );
-                      },
-                      displayStringForOption: formatLocation,
-                      optionsBuilder: (value) {
-                        return model.searchLocation(value.text);
-                      },
-                      onSelected: model.selectLocation,
+                    child: TimezoneMap(
+                      offset: model.selectedLocation?.offset,
+                      marker: model.selectedLocation?.coordinates,
+                      onPressed: (coordinates) => model
+                          .searchCoordinates(coordinates)
+                          .then((locations) =>
+                              model.selectLocation(locations.firstOrNull)),
                     ),
                   ),
-                  const SizedBox(width: kContentSpacing),
-                  Expanded(
-                    child: Autocomplete<GeoLocation>(
-                      initialValue: TextEditingValue(
-                        text: formatTimezone(model.selectedLocation),
-                      ),
-                      fieldViewBuilder:
-                          (context, controller, focusNode, onFieldSubmitted) {
-                        if (!focusNode.hasFocus) {
-                          controller.text =
-                              formatTimezone(model.selectedLocation);
-                        }
-                        return TextFormField(
-                          focusNode: focusNode,
-                          controller: controller,
-                          decoration: InputDecoration(
-                            labelText: lang.whereAreYouTimezoneLabel,
+                  const SizedBox(height: kContentSpacing),
+                  Padding(
+                    padding: kContentPadding,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Autocomplete<GeoLocation>(
+                            initialValue: TextEditingValue(
+                              text: formatLocation(model.selectedLocation),
+                            ),
+                            fieldViewBuilder:
+                                (context, controller, focusNode, onSubmitted) {
+                              if (!focusNode.hasFocus) {
+                                controller.text =
+                                    formatLocation(model.selectedLocation);
+                              }
+                              return TextFormField(
+                                focusNode: focusNode,
+                                controller: controller,
+                                decoration: InputDecoration(
+                                  labelText: lang.whereAreYouLocationLabel,
+                                ),
+                                onFieldSubmitted: (value) => onSubmitted(),
+                              );
+                            },
+                            displayStringForOption: formatLocation,
+                            optionsBuilder: (value) {
+                              return model.searchLocation(value.text);
+                            },
+                            onSelected: model.selectLocation,
                           ),
-                          onFieldSubmitted: (value) => onFieldSubmitted(),
-                        );
-                      },
-                      displayStringForOption: formatTimezone,
-                      optionsBuilder: (value) {
-                        return model.searchTimezone(value.text);
-                      },
-                      onSelected: model.selectTimezone,
+                        ),
+                        const SizedBox(width: kContentSpacing),
+                        Expanded(
+                          child: Autocomplete<GeoLocation>(
+                            initialValue: TextEditingValue(
+                              text: formatTimezone(model.selectedLocation),
+                            ),
+                            fieldViewBuilder: (context, controller, focusNode,
+                                onFieldSubmitted) {
+                              if (!focusNode.hasFocus) {
+                                controller.text =
+                                    formatTimezone(model.selectedLocation);
+                              }
+                              return TextFormField(
+                                focusNode: focusNode,
+                                controller: controller,
+                                decoration: InputDecoration(
+                                  labelText: lang.whereAreYouTimezoneLabel,
+                                ),
+                                onFieldSubmitted: (value) => onFieldSubmitted(),
+                              );
+                            },
+                            displayStringForOption: formatTimezone,
+                            optionsBuilder: (value) {
+                              return model.searchTimezone(value.text);
+                            },
+                            onSelected: model.selectTimezone,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

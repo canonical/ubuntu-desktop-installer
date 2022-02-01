@@ -16,6 +16,7 @@ class WhereAreYouModel extends SafeChangeNotifier {
   final SubiquityClient _client;
   final GeoService _service;
 
+  LatLng? _lastCoordinates;
   String? _lastLocation;
   String? _lastTimezone;
   GeoLocation? _selectedLocation;
@@ -80,6 +81,12 @@ class WhereAreYouModel extends SafeChangeNotifier {
     if (_lastLocation == location) return _locations;
     _lastLocation = location;
     return _service.searchLocation(location).then(_updateLocations);
+  }
+
+  Future<Iterable<GeoLocation>> searchCoordinates(LatLng coordinates) async {
+    if (_lastCoordinates == coordinates) return _locations;
+    _lastCoordinates = coordinates;
+    return _service.searchCoordinates(coordinates).then(_updateLocations);
   }
 
   Future<Iterable<GeoLocation>> searchTimezone(String timezone) async {

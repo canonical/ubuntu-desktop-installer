@@ -4,6 +4,7 @@
 
 import 'dart:async' as _i3;
 
+import 'package:latlong2/latlong.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/services/geo_service.dart' as _i2;
 
@@ -36,6 +37,13 @@ class MockGeoService extends _i1.Mock implements _i2.GeoService {
   @override
   _i3.Future<Iterable<_i2.GeoLocation>> searchLocation(String? location) =>
       (super.noSuchMethod(Invocation.method(#searchLocation, [location]),
+              returnValue:
+                  Future<Iterable<_i2.GeoLocation>>.value(<_i2.GeoLocation>[]))
+          as _i3.Future<Iterable<_i2.GeoLocation>>);
+  @override
+  _i3.Future<Iterable<_i2.GeoLocation>> searchCoordinates(
+          _i4.LatLng? coordinates) =>
+      (super.noSuchMethod(Invocation.method(#searchCoordinates, [coordinates]),
               returnValue:
                   Future<Iterable<_i2.GeoLocation>>.value(<_i2.GeoLocation>[]))
           as _i3.Future<Iterable<_i2.GeoLocation>>);

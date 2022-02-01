@@ -4,6 +4,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -15,9 +16,10 @@ import 'where_are_you_page_test.mocks.dart';
 
 @GenerateMocks([WhereAreYouModel])
 void main() {
-  WhereAreYouModel buildModel({
+  MockWhereAreYouModel buildModel({
     bool? isInitialized,
     GeoLocation? selectedLocation,
+    LatLng? selectedCoordinates,
     Iterable<GeoLocation>? locations,
     Iterable<GeoLocation>? timezones,
   }) {
@@ -140,6 +142,24 @@ void main() {
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
     verify(model.selectTimezone(GeoLocation(timezone: 'b'))).called(1);
+  });
+
+  testWidgets('select coordinates', (tester) async {
+    const locations = <GeoLocation>[
+      GeoLocation(name: 'a'),
+      GeoLocation(name: 'b'),
+    ];
+
+    final model = buildModel();
+    when(model.searchCoordinates(any)).thenAnswer((_) async => locations);
+
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(find.byType(TimezoneMap), findsOneWidget);
+    await tester.tap(find.byType(TimezoneMap));
+
+    verify(model.searchCoordinates(any)).called(1);
+    verify(model.selectLocation(locations.first)).called(1);
   });
 
   testWidgets('format location', (tester) async {

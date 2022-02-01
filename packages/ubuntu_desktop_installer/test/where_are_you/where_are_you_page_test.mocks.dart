@@ -71,6 +71,13 @@ class MockWhereAreYouModel extends _i1.Mock implements _i2.WhereAreYouModel {
                   Future<Iterable<_i3.GeoLocation>>.value(<_i3.GeoLocation>[]))
           as _i4.Future<Iterable<_i3.GeoLocation>>);
   @override
+  _i4.Future<Iterable<_i3.GeoLocation>> searchCoordinates(
+          _i3.LatLng? coordinates) =>
+      (super.noSuchMethod(Invocation.method(#searchCoordinates, [coordinates]),
+              returnValue:
+                  Future<Iterable<_i3.GeoLocation>>.value(<_i3.GeoLocation>[]))
+          as _i4.Future<Iterable<_i3.GeoLocation>>);
+  @override
   _i4.Future<Iterable<_i3.GeoLocation>> searchTimezone(String? timezone) =>
       (super.noSuchMethod(Invocation.method(#searchTimezone, [timezone]),
               returnValue:

@@ -137,4 +137,19 @@ void main() {
     expect(model.timezones, equals([location]));
     verifyNever(service.searchTimezone(location.timezone!));
   });
+
+  test('search coordinates', () async {
+    const locations = [
+      GeoLocation(name: 'foo', latitude: 12, longitude: 34),
+      GeoLocation(name: 'bar', latitude: 56, longitude: 78)
+    ];
+
+    final client = MockSubiquityClient();
+    final service = MockGeoService();
+    when(service.searchCoordinates(any)).thenAnswer((_) async => locations);
+
+    final model = WhereAreYouModel(client: client, service: service);
+    expect(await model.searchCoordinates(LatLng(56, 78)), equals(locations));
+    verify(service.searchCoordinates(LatLng(56, 78))).called(1);
+  });
 }

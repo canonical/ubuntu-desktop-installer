@@ -81,6 +81,34 @@ void main() {
     verify(source2.searchTimezone('foo')).called(1);
   });
 
+  test('coordinates', () async {
+    final source1 = MockGeoSource();
+    when(source1.searchCoordinates(LatLng(1, 2)))
+        .thenAnswer((_) async => [copenhagen, gothenburg]);
+
+    final source2 = MockGeoSource();
+    when(source2.searchCoordinates(LatLng(1, 2)))
+        .thenAnswer((_) async => [copenhagen]);
+
+    final service = GeoService();
+    expect(await service.searchCoordinates(LatLng(1, 2)), []);
+    verifyNever(source1.searchCoordinates(LatLng(1, 2)));
+    verifyNever(source2.searchCoordinates(LatLng(1, 2)));
+
+    service.addSource(source1);
+    service.addSource(source2);
+
+    expect(await service.searchCoordinates(LatLng(1, 2)),
+        [copenhagen, gothenburg]);
+    verify(source1.searchCoordinates(LatLng(1, 2))).called(1);
+    verify(source2.searchCoordinates(LatLng(1, 2))).called(1);
+
+    service.removeSource(source1);
+    expect(await service.searchCoordinates(LatLng(1, 2)), [copenhagen]);
+    verifyNever(source1.searchCoordinates(LatLng(1, 2)));
+    verify(source2.searchCoordinates(LatLng(1, 2))).called(1);
+  });
+
   test('geoname search location', () async {
     final dio = MockDio();
     when(dio.get(
@@ -169,6 +197,7 @@ void main() {
       country: gothenburg.country,
       longitude: gothenburg.longitude,
       timezone: gothenburg.timezone,
+      offset: gothenburg.offset,
     );
     expect(copy1.name, copenhagen.name);
     expect(copy1.admin, gothenburg.admin);
@@ -177,6 +206,7 @@ void main() {
     expect(copy1.latitude, copenhagen.latitude);
     expect(copy1.longitude, gothenburg.longitude);
     expect(copy1.timezone, gothenburg.timezone);
+    expect(copy1.offset, gothenburg.offset);
 
     final copy2 = gothenburg.copyWith(
       name: copenhagen.name,
@@ -186,6 +216,7 @@ void main() {
       latitude: copenhagen.latitude,
       longitude: copenhagen.longitude,
       timezone: copenhagen.timezone,
+      offset: copenhagen.offset,
     );
     expect(copy2, copenhagen);
 
@@ -203,6 +234,7 @@ void main() {
     expect(str.contains(copenhagen.latitude!.toString()), isTrue);
     expect(str.contains(copenhagen.longitude!.toString()), isTrue);
     expect(str.contains(copenhagen.timezone!), isTrue);
+    expect(str.contains(copenhagen.offset!.toString()), isTrue);
   });
 
   test('geodata location search', () async {
@@ -295,39 +327,26 @@ void main() {
   });
 
   test('geodata timezone search', () async {
-    final dk = GeoLocation(
-        country: 'Denmark', country2: 'DK', timezone: 'Europe/Copenhagen');
-    final fi = GeoLocation(
-        country: 'Finland', country2: 'FI', timezone: 'Europe/Helsinki');
-    final no =
-        GeoLocation(country: 'Norway', country2: 'NO', timezone: 'Europe/Oslo');
-    final se = GeoLocation(
-        country: 'Sweden', country2: 'SE', timezone: 'Europe/Stockholm');
-
-    await geodata
-        .searchTimezone('')
-        .then((results) => expect(results, equals([dk, fi, no, se])));
-    await geodata
-        .searchTimezone(' ')
-        .then((results) => expect(results, equals([dk, fi, no, se])));
+    await geodata.searchTimezone('').then((results) => expect(
+        results, equals([copenhagen, helsinki, reykjavik, oslo, stockholm])));
+    await geodata.searchTimezone(' ').then((results) => expect(
+        results, equals([copenhagen, helsinki, reykjavik, oslo, stockholm])));
     await geodata
         .searchTimezone('foo')
         .then((results) => expect(results, isEmpty));
-    await geodata
-        .searchTimezone('eu')
-        .then((results) => expect(results, equals([dk, fi, no, se])));
+    await geodata.searchTimezone('eu').then((results) =>
+        expect(results, equals([copenhagen, helsinki, oslo, stockholm])));
     await geodata
         .searchTimezone('ST')
-        .then((results) => expect(results, equals([se])));
-    await geodata
-        .searchTimezone('Europe')
-        .then((results) => expect(results, equals([dk, fi, no, se])));
+        .then((results) => expect(results, equals([stockholm])));
+    await geodata.searchTimezone('Europe').then((results) =>
+        expect(results, equals([copenhagen, helsinki, oslo, stockholm])));
     await geodata
         .searchTimezone(' copenhagen ')
-        .then((results) => expect(results, equals([dk])));
+        .then((results) => expect(results, equals([copenhagen])));
     await geodata
         .searchTimezone('STOCKHOLM')
-        .then((results) => expect(results, equals([se])));
+        .then((results) => expect(results, equals([stockholm])));
   });
 
   test('geodata json', () async {
@@ -354,6 +373,18 @@ void main() {
       ),
     );
   });
+
+  test('search coordinates', () async {
+    await geodata
+        .searchCoordinates(helsinki.coordinates!)
+        .then((results) => expect(results, equals([helsinki])));
+    await geodata
+        .searchCoordinates(oslo.coordinates!)
+        .then((results) => expect(results, equals([oslo])));
+    await geodata
+        .searchCoordinates(LatLng(oslo.latitude! + 0.1, oslo.longitude! - 0.2))
+        .then((results) => expect(results, equals([oslo])));
+  });
 }
 
 const copenhagen = GeoLocation(
@@ -364,6 +395,7 @@ const copenhagen = GeoLocation(
   latitude: 55.67594,
   longitude: 12.56553,
   timezone: 'Europe/Copenhagen',
+  offset: 1.0,
 );
 
 const gothenburg = GeoLocation(
@@ -374,6 +406,51 @@ const gothenburg = GeoLocation(
   latitude: 57.70716,
   longitude: 11.96679,
   timezone: 'Europe/Stockholm',
+  offset: 1.0,
+);
+
+const helsinki = GeoLocation(
+  name: 'Helsinki',
+  admin: 'Uusimaa',
+  country: 'Finland',
+  country2: 'FI',
+  latitude: 60.16952,
+  longitude: 24.93545,
+  timezone: 'Europe/Helsinki',
+  offset: 2.0,
+);
+
+const oslo = GeoLocation(
+  name: 'Oslo',
+  admin: 'Oslo',
+  country: 'Norway',
+  country2: 'NO',
+  latitude: 59.91273,
+  longitude: 10.74609,
+  timezone: 'Europe/Oslo',
+  offset: 1.0,
+);
+
+const stockholm = GeoLocation(
+  name: 'Stockholm',
+  admin: 'Stockholm',
+  country: 'Sweden',
+  country2: 'SE',
+  latitude: 59.32938,
+  longitude: 18.06871,
+  timezone: 'Europe/Stockholm',
+  offset: 1.0,
+);
+
+const reykjavik = GeoLocation(
+  name: 'Reykjavík',
+  admin: 'Capital Region',
+  country: 'Iceland',
+  country2: 'IS',
+  latitude: 64.13548,
+  longitude: -21.89541,
+  timezone: 'Atlantic/Reykjavik',
+  offset: 0.0,
 );
 
 Response jsonResponse(GeoLocation city) {
@@ -451,6 +528,7 @@ const kTimezones = r'''
 CountryCode	TimeZoneId	GMT offset 1. Jan 2021	DST offset 1. Jul 2021	rawOffset (independant of DST)
 DK	Europe/Copenhagen	1.0	2.0	1.0
 FI	Europe/Helsinki	2.0	3.0	2.0
+IS	Atlantic/Reykjavik	0.0	0.0	0.0
 NO	Europe/Oslo	1.0	2.0	1.0
 SE	Europe/Stockholm	1.0	2.0	1.0
 ''';

@@ -11,6 +11,7 @@ import 'package:dio/src/dio_mixin.dart' as _i5;
 import 'package:dio/src/options.dart' as _i2;
 import 'package:dio/src/response.dart' as _i6;
 import 'package:dio/src/transformer.dart' as _i4;
+import 'package:latlong2/latlong.dart' as _i11;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/services/geo_service.dart' as _i10;
 
@@ -392,6 +393,12 @@ class MockGeoSource extends _i1.Mock implements _i10.GeoSource {
   @override
   _i8.Future<Iterable<_i10.GeoLocation>> searchLocation(String? location) =>
       (super.noSuchMethod(Invocation.method(#searchLocation, [location]),
+          returnValue: Future<Iterable<_i10.GeoLocation>>.value(
+              <_i10.GeoLocation>[])) as _i8.Future<Iterable<_i10.GeoLocation>>);
+  @override
+  _i8.Future<Iterable<_i10.GeoLocation>> searchCoordinates(
+          _i11.LatLng? coordinates) =>
+      (super.noSuchMethod(Invocation.method(#searchCoordinates, [coordinates]),
           returnValue: Future<Iterable<_i10.GeoLocation>>.value(
               <_i10.GeoLocation>[])) as _i8.Future<Iterable<_i10.GeoLocation>>);
   @override
