@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_wizard/app.dart';
@@ -142,7 +141,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       case AppStatus.loading:
         return _UbuntuDesktopInstallerLoadingPage();
       case AppStatus.ready:
-        return _UbuntuDesktopInstallerWizard.create(context, initialRoute);
+        return _UbuntuDesktopInstallerWizard(initialRoute: initialRoute);
     }
   }
 }
@@ -180,7 +179,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   }
 }
 
-class _UbuntuDesktopInstallerWizard extends StatefulWidget {
+class _UbuntuDesktopInstallerWizard extends StatelessWidget {
   const _UbuntuDesktopInstallerWizard({
     Key? key,
     this.initialRoute,
@@ -188,40 +187,16 @@ class _UbuntuDesktopInstallerWizard extends StatefulWidget {
 
   final String? initialRoute;
 
-  static Widget create(BuildContext context, String? initialRoute) {
-    final client = getService<SubiquityClient>();
-    return ChangeNotifierProvider(
-      create: (_) => _UbuntuDesktopInstallerModel(client),
-      child: _UbuntuDesktopInstallerWizard(initialRoute: initialRoute),
-    );
-  }
-
-  @override
-  State<_UbuntuDesktopInstallerWizard> createState() =>
-      _UbuntuDesktopInstallerWizardState();
-}
-
-class _UbuntuDesktopInstallerWizardState
-    extends State<_UbuntuDesktopInstallerWizard> {
-  @override
-  void initState() {
-    super.initState();
-    final model =
-        Provider.of<_UbuntuDesktopInstallerModel>(context, listen: false);
-    model.init();
-  }
-
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<_UbuntuDesktopInstallerModel>(context);
     final service = getService<DiskStorageService>();
 
     return Wizard(
-      initialRoute: widget.initialRoute ?? Routes.initial,
+      initialRoute: initialRoute ?? Routes.initial,
       routes: <String, WizardRoute>{
         Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
-          onNext: (_) => !model.hasRst ? Routes.keyboardLayout : null,
+          onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/373
         // Routes.tryOrInstall: WizardRoute(
@@ -249,7 +224,8 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
-          onNext: (_) => !model.hasSecureBoot ? Routes.installationType : null,
+          onNext: (_) =>
+              !service.hasSecureBoot ? Routes.installationType : null,
         ),
         Routes.configureSecureBoot: const WizardRoute(
           builder: ConfigureSecureBootPage.create,
@@ -283,7 +259,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
-          onNext: (_) => !model.hasBitLocker ? Routes.whereAreYou : null,
+          onNext: (_) => !service.hasBitLocker ? Routes.whereAreYou : null,
         ),
         Routes.turnOffBitlocker: const WizardRoute(
           builder: TurnOffBitLockerPage.create,
@@ -326,37 +302,5 @@ class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
     if (route.settings.name != null) {
       _telemetryService.addStage(route.settings.name!);
     }
-  }
-}
-
-class _UbuntuDesktopInstallerModel extends ChangeNotifier {
-  _UbuntuDesktopInstallerModel(this._client);
-
-  final SubiquityClient _client;
-  var _hasRst = false;
-  var _hasBitLocker = false;
-
-  bool get hasRst => _hasRst;
-  bool get hasBitLocker => _hasBitLocker;
-  // TODO: add secure boot support
-  bool get hasSecureBoot => false;
-
-  Future<void> init() {
-    return Future.wait([
-      _client.hasRst().then(_updateHasRst),
-      _client.hasBitLocker().then(_updateHasBitLocker),
-    ]);
-  }
-
-  void _updateHasRst(bool hasRst) {
-    if (_hasRst == hasRst) return;
-    _hasRst = hasRst;
-    notifyListeners();
-  }
-
-  void _updateHasBitLocker(bool hasBitLocker) {
-    if (_hasBitLocker == hasBitLocker) return;
-    _hasBitLocker = hasBitLocker;
-    notifyListeners();
   }
 }
