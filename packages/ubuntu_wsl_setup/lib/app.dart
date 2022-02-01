@@ -26,8 +26,12 @@ class UbuntuWslSetupApp extends StatelessWidget {
         setWindowTitle(lang.windowTitle);
         return lang.appTitle;
       },
-      theme: yaruLight,
-      darkTheme: yaruDark,
+      theme: yaruLight.copyWith(
+        listTileTheme: ListTileThemeData(dense: true),
+      ),
+      darkTheme: yaruDark.copyWith(
+        listTileTheme: ListTileThemeData(dense: true),
+      ),
       themeMode: Settings.of(context).theme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
