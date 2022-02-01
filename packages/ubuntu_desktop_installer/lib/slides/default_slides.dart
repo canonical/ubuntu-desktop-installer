@@ -32,8 +32,6 @@ final _welcomeSlide = Slide(
   title: (context) => Text(context.lang.welcomeSlideTitle(context.flavor.name)),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
       background: FlavorImage.asset(_slideAsset('welcome')),
       content: _SlideLabel.large(
         context.lang.welcomeSlideDescription(context.flavor.name),
@@ -47,9 +45,6 @@ final _softwareSlide = Slide(
   title: (context) => Text(context.lang.softwareSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: SlideCard(
         width: _kCardWidth,
@@ -66,9 +61,6 @@ final _musicSlide = Slide(
   title: (context) => Text(context.lang.musicSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
@@ -122,9 +114,6 @@ final _photoSlide = Slide(
   title: (context) => Text(context.lang.photoSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
@@ -176,9 +165,6 @@ final _webSlide = Slide(
   title: (context) => Text(context.lang.webSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
@@ -232,9 +218,6 @@ final _officeSlide = Slide(
   title: (context) => Text(context.lang.officeSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
@@ -275,9 +258,6 @@ final _accessSlide = Slide(
   title: (context) => Text(context.lang.accessSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
-      imageAlignment: Alignment.bottomRight,
       background: FlavorImage.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
@@ -320,8 +300,6 @@ final _supportSlide = Slide(
   title: (context) => Text(context.lang.supportSlideTitle),
   body: (context) {
     return SlideLayout(
-      padding: _kInsets,
-      contentAlignment: Alignment.topLeft,
       background: FlavorImage.asset(_slideAsset('welcome')),
       content: _SlideColumn(
         spacing: _kLargeSpacing,
@@ -462,10 +440,10 @@ class SlideLayout extends StatelessWidget {
     Key? key,
     this.background,
     this.content,
-    this.contentAlignment,
+    this.contentAlignment = Alignment.topLeft,
     this.image,
-    this.imageAlignment,
-    this.padding,
+    this.imageAlignment = Alignment.bottomRight,
+    this.padding = _kInsets,
   }) : super(key: key);
 
   final Widget? background;
