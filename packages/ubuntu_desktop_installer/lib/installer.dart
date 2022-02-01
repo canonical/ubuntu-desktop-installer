@@ -106,8 +106,12 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   static FlavorData get defaultFlavor {
     return FlavorData(
       name: 'Ubuntu',
-      theme: yaruLight,
-      darkTheme: yaruDark,
+      theme: yaruLight.copyWith(
+        listTileTheme: ListTileThemeData(dense: true),
+      ),
+      darkTheme: yaruDark.copyWith(
+        listTileTheme: ListTileThemeData(dense: true),
+      ),
     );
   }
 

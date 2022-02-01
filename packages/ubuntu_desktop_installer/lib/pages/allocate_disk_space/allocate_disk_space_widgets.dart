@@ -272,6 +272,7 @@ class PartitionTable extends StatelessWidget {
                 showCheckboxColumn: false,
                 headingTextStyle: Theme.of(context).textTheme.subtitle2,
                 dataTextStyle: Theme.of(context).textTheme.bodyText2,
+                dataRowHeight: defaultTileHeight(context),
                 columns: <DataColumn>[
                   DataColumn(label: Text(lang.diskHeadersDevice)),
                   DataColumn(label: Text(lang.diskHeadersType)),
