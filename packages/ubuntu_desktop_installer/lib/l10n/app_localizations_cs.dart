@@ -588,6 +588,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get restartIntoWindows => 'Restartovat do Windows';
 
   @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
+
+  @override
   String welcomeSlideTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

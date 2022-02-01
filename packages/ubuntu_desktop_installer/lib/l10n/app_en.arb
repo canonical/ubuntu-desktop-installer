@@ -343,6 +343,9 @@
     }
   },
   "restartIntoWindows": "Restart Into Windows",
+  "whereAreYouPageTitle": "Where are you?",
+  "whereAreYouLocationLabel": "Location",
+  "whereAreYouTimezoneLabel": "Timezone",
   "welcomeSlideTitle": "Welcome to {RELEASE}",
   "@welcomeSlideTitle": {
     "type": "text",

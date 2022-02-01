@@ -200,7 +200,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Varoitus</font>: Tietokonetta ei ole liitetty virtalähteeseen.';
   }
 
   @override
@@ -586,6 +586,15 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Uudelleenkäynnistä Windowsiin';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {

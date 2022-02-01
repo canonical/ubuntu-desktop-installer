@@ -200,7 +200,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.';
   }
 
   @override
@@ -586,6 +586,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Windows로 다시 시작';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
