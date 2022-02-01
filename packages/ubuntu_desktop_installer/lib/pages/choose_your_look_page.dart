@@ -14,6 +14,7 @@ class ChooseYourLookPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
+    final settings = Settings.of(context, listen: false);
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       actions: <WizardAction>[
@@ -36,7 +37,6 @@ class ChooseYourLookPage extends StatelessWidget {
                         currentlySelected:
                             Theme.of(context).brightness == Brightness.light,
                         onTap: () {
-                          final settings = Settings.of(context, listen: false);
                           settings.applyTheme(Brightness.light);
                         },
                       ),
@@ -60,7 +60,6 @@ class ChooseYourLookPage extends StatelessWidget {
                         currentlySelected:
                             Theme.of(context).brightness == Brightness.dark,
                         onTap: () {
-                          final settings = Settings.of(context, listen: false);
                           settings.applyTheme(Brightness.dark);
                         },
                       ),
