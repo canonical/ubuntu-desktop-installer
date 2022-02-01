@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -158,16 +158,17 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
       title: Text(AppLocalizations.of(context).welcome),
       header: Text(lang.welcomeHeader),
       content: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-              child: RoundedContainer(
-            height: height,
-          )),
+            child: RoundedContainer(height: height),
+          ),
           const SizedBox(width: 20),
           Expanded(
-            child: SvgPicture.asset('assets/mascot_white.svg',
-                height: height / 4, color: Theme.of(context).primaryColor),
+            child: SvgPicture.asset(
+              'assets/mascot_white.svg',
+              height: height / 4,
+              color: Theme.of(context).primaryColor,
+            ),
           ),
         ],
       ),

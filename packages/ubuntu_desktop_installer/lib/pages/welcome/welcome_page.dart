@@ -61,7 +61,6 @@ class _WelcomePageState extends State<WelcomePage> {
       header: Text(lang.welcomeHeader),
       content: FractionallySizedBox(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: RoundedListView.builder(
@@ -87,8 +86,11 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             const SizedBox(width: 20),
             Expanded(
-              child: SvgPicture.asset('assets/mascot_white.svg',
-                  height: height / 4, color: Theme.of(context).primaryColor),
+              child: SvgPicture.asset(
+                'assets/mascot_white.svg',
+                height: height / 4,
+                color: Theme.of(context).primaryColor,
+              ),
             )
           ],
         ),
