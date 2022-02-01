@@ -76,7 +76,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
 
   /// Prefetches slide images into the image cache to avoid flicker while
   /// loading slide images
-  Future<void> precacheSlideImages(BuildContext context, {String? package}) {
+  Future<void> precacheSlideImages(BuildContext context) {
     final assets = _resolveAssetsDirectory();
     return Directory('$assets/assets/slides')
         .list(recursive: true)

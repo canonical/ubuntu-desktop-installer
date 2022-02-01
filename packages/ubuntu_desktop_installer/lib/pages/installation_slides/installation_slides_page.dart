@@ -45,8 +45,8 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     model.init();
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      final package = Flavor.of(context).package;
-      model.precacheSlideImages(context, package: package);
+      if (!mounted) return;
+      model.precacheSlideImages(context);
     });
   }
 
