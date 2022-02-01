@@ -14,6 +14,8 @@ void main() {
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse(disks: testDisks));
+    when(client.hasRst()).thenAnswer((_) async => false);
+    when(client.hasBitLocker()).thenAnswer((_) async => false);
   });
 
   test('get guided storage', () async {
@@ -163,5 +165,33 @@ void main() {
     await service.reformatDisk(disk);
     expect(service.storage, equals(testDisks));
     verify(client.reformatDiskV2(disk)).called(1);
+  });
+
+  test('has RST', () async {
+    final service = DiskStorageService(client);
+
+    when(client.hasRst()).thenAnswer((_) async => true);
+    await untilCalled(client.hasRst());
+    verify(client.hasRst()).called(1);
+    expect(service.hasRst, isTrue);
+
+    when(client.hasRst()).thenAnswer((_) async => false);
+    await service.init();
+    verify(client.hasRst()).called(1);
+    expect(service.hasRst, isFalse);
+  });
+
+  test('has BitLocker', () async {
+    final service = DiskStorageService(client);
+
+    when(client.hasBitLocker()).thenAnswer((_) async => true);
+    await untilCalled(client.hasBitLocker());
+    expect(service.hasBitLocker, isTrue);
+    verify(client.hasBitLocker()).called(1);
+
+    when(client.hasBitLocker()).thenAnswer((_) async => false);
+    await service.init();
+    verify(client.hasBitLocker()).called(1);
+    expect(service.hasBitLocker, isFalse);
   });
 }

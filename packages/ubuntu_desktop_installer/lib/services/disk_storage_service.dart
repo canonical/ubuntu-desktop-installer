@@ -24,11 +24,19 @@ class DiskStorageService {
   List<Disk>? guidedStorage;
 
   /// Initializes the service.
-  Future<void> init() => getGuidedStorage();
+  Future<void> init() {
+    return Future.wait([
+      getGuidedStorage(),
+      _client.hasRst().then((value) => _hasRst = value),
+      _client.hasBitLocker().then((value) => _hasBitLocker = value),
+    ]);
+  }
 
   bool? _needRoot;
   bool? _needBoot;
   bool? _useLvm;
+  bool? _hasRst;
+  bool? _hasBitLocker;
   int get _diskCount => guidedStorage?.length ?? 0;
 
   /// Whether the system has multiple disks available for guided partitioning.
@@ -40,8 +48,15 @@ class DiskStorageService {
   /// Whether the storage configuration is missing a boot partition.
   bool get needBoot => _needBoot ?? true;
 
+  bool get hasRst => _hasRst ?? false;
+
+  bool get hasBitLocker => _hasBitLocker ?? false;
+
   /// Whether FDE (Full Disk Encryption) is enabled.
   bool get hasEncryption => false; // TODO: add support for it
+
+  /// Whether Secure Boot is enabled.
+  bool get hasSecureBoot => false; // TODO: add support for it
 
   /// Whether the storage configuration should use LVM.
   bool get useLvm => _useLvm ?? false;
