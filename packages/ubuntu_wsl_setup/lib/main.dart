@@ -38,6 +38,7 @@ screens, yet allowing user to overwrite any of those during setup.
     subiquityServer: SubiquityServer.wsl(),
     onInitSubiquity: (client) {
       client.variant().then((value) => variant.value = value);
+      client.markConfigured(['filesystem']);
     },
     serverArgs: serverArgs,
     serverEnvironment: {
