@@ -50,6 +50,7 @@ void runInstallerApp(List<String> args, {FlavorData? flavor}) {
   registerService(() => JournalService(journalUnit));
   registerService(KeyboardService.new);
   registerService(NetworkService.new);
+  registerService(PowerService.new);
   registerService(TelemetryService.new);
   registerService(UdevService.new);
 

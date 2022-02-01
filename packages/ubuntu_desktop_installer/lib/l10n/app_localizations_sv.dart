@@ -8,7 +8,7 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu Skrivbordsinstallerare';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -31,7 +31,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get restartButtonText => 'Starta om';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Återställ';
 
   @override
   String get yesButtonText => 'Ja';
@@ -40,22 +40,22 @@ class AppLocalizationsSv extends AppLocalizations {
   String get welcome => 'Välkommen';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Prova eller installera';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Reparera installation';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Reparation kommer att installera om all installerad programvara utan att röra dokument eller inställningar.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Prova $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Du kan prova $RELEASE utan att göra några ändringar till din dator.';
   }
 
   @override
@@ -65,7 +65,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Installera $RELEASE bredvid (eller istället för) ditt nuvarande operativsystem. Det här ska inte ta för lång tid.';
   }
 
   @override
@@ -103,13 +103,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get isKeyPresent => 'Finns följande tangent på ditt tangentbord?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Konfigurera Säker start';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Du har valt att installera drivrutinsprogram från tredje part. Detta kräver att du stänger av Säker Start.\nFör att göra detta måste du välja en säkerhetsnyckel nu och ange den när systemet startar om.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Konfigurera Säker start';
 
   @override
   String get chooseSecurityKey => 'Välj en säkerhetsnyckel';
@@ -118,7 +118,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get confirmSecurityKey => 'Bekräfta säkerhetsnyckeln';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Installera inte drivrutinsprogramvara för tillfället';
 
   @override
   String get dontInstallDriverSoftwareNowDescription => 'Du kan installera det senare från Programvara och uppdateringar.';
@@ -199,11 +199,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installThirdPartySubtitle => 'Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Varning</font>: Datorn är inte ansluten till en strömkälla.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Välj en säkerhetsnyckel';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'Diskkryptering skyddar dina filer om du tappar bort din dator. Det kräver att du anger en säkerhetsnyckel varje gång datorn startar.\n\nAlla filer utanför $RELEASE kommer inte att krypteras.';
   }
 
   @override
@@ -258,7 +263,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return 'Använd LVM med den nya $RELEASE-installationen';
   }
 
   @override
@@ -266,7 +271,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return 'Kryptera den nya $RELEASE-installationen för säkerhet';
   }
 
   @override
@@ -337,7 +342,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get diskHeadersSize => 'Storlek';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Använt';
 
   @override
   String get diskHeadersSystem => 'System';
@@ -355,7 +360,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Skapa en ny tom partitionstabell på den här enheten?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell på enheten kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.';
 
   @override
   String get bootLoaderDevice => 'Enhet för installation av starthanteraren';
@@ -433,7 +438,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionFormatFat32 => 'FAT32 filsystem';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Swap område';
 
   @override
   String get partitionFormatIso9660 => 'ISO 9960 filsystem';
@@ -562,7 +567,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Starta om till $system';
   }
 
   @override
@@ -580,7 +585,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Starta om till Windows';
 
   @override
   String get whereAreYouPageTitle => 'Where are you?';

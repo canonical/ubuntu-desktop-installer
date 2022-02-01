@@ -199,6 +199,11 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installThirdPartySubtitle => 'To oprogramowanie podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'Wybierz klucz bezpieczeństwa';
 
   @override

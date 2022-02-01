@@ -12,32 +12,32 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Įdiegti $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Atsisakyti';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Keisti';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Gerai';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ne';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Paleisti iš naujo';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Sugrąžinti';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Taip';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Sveiki,';
 
   @override
   String get tryOrInstallPageTitle => 'Try or install';
@@ -50,7 +50,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Išbandyti $RELEASE';
   }
 
   @override
@@ -60,7 +60,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Įdiegti $RELEASE';
   }
 
   @override
@@ -74,7 +74,7 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Išjunkite RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -85,22 +85,22 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Klaviatūros išdėstymas';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Pasirinkite klaviatūros išdėstymą:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Rašykite čia, norėdami išbandyti klaviatūrą';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Aptikti klaviatūros išdėstymą';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Ar šis klavišas yra jūsų klaviatūroje?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';
@@ -139,10 +139,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get useWiredConnection => 'Use wired connection';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Neaptikta jokio laidinio ryšio';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Laidinis ryšys yra išjungtas';
 
   @override
   String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
@@ -178,16 +178,16 @@ class AppLocalizationsLt extends AppLocalizations {
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Įprastas programų paketas';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Saityno naršyklė, paslaugų programos, raštinės programinė įranga, žaidimai ir medijos leistuvės.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Minimalus programų paketas';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Saityno naršyklė ir pagrindinės paslaugų programos.';
 
   @override
   String get otherOptions => 'Other options';
@@ -197,6 +197,11 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Įspėjimas</font>: Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.';
+  }
 
   @override
   String get chooseSecurityKeyTitle => 'Choose a security key';

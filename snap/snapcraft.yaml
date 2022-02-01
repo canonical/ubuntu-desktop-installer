@@ -31,6 +31,9 @@ apps:
   probert:
     command: bin/probert
 
+  os-prober:
+    command: usr/bin/os-prober
+
 parts:
   curtin:
     override-pull: |
@@ -40,7 +43,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: ce811db127fe1ce46498b83615f8faed8c7dfeb6
+    source-commit: bfbba202e2cc3b02e4e3953081effb6768da41a8
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -84,7 +87,7 @@ parts:
       - libnl-route-3-dev
     source: https://github.com/canonical/probert.git
     source-type: git
-    source-commit: 2bb505172b5f97372eb1abd12ced4629e852504b
+    source-commit: 693cd0040307c1390163c013f22fd82c8b27cd6b
     requirements: [requirements.txt]
     stage:
       - '*'
@@ -117,15 +120,49 @@ parts:
     prime:
       - -lib/systemd/system/*
 
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-branch: stable
+    source-depth: 1
+    plugin: nil
+    override-build: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - libgtk-3-dev
+      - ninja-build
+      - unzip
+      - xz-utils
+      - zip
+    override-prime: ''
+
+  libhandy:
+    source: https://gitlab.gnome.org/GNOME/libhandy.git
+    source-branch: libhandy-1-2
+    source-depth: 1
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+      - --buildtype=release
+      - -Dvapi=false
+      - -Dintrospection=disabled
+      - -Dgtk_doc=false
+      - -Dtests=false
+      - -Dexamples=false
+      - -Dglade_catalog=disabled
+    build-packages:
+      - libgtk-3-dev
+
   ubuntu-desktop-installer:
+    after: [flutter-git, libhandy]
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
@@ -140,18 +177,12 @@ parts:
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
-    build-snaps:
-      - flutter/latest/stable
 
   ubuntu-wsl-setup:
+    after: [flutter-git]
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
@@ -168,8 +199,6 @@ parts:
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
       mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
-    build-snaps:
-      - flutter/latest/stable
 
   libraries:
     plugin: nil
@@ -242,3 +271,14 @@ parts:
     stage:
       - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
+
+  os-prober:
+    plugin: nil
+    stage-packages: [os-prober]
+    override-stage: |
+      snapcraftctl stage
+      for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
+        sed -i 's, \(/usr\), $SNAP\1,' $file
+      done
+      sed -i 's/mkdir "$tmpmnt"/mkdir -p "$tmpmnt"/' \
+          usr/lib/os-probes/50mounted-tests

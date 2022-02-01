@@ -46,6 +46,7 @@ dependencies:
     path: ../ubuntu_wizard
   udev:
     path: ../udev
+  upower: ^0.6.1
   url_launcher: ^6.0.3
   xml: ^5.3.1
   yaru: ^0.2.0

@@ -1,3 +1,55 @@
 {
-  "@@locale": "zh"
+  "@@locale": "zh",
+  "appTitle": "Ubuntu 桌面版安装器",
+  "@appTitle": {},
+  "windowTitle": "安装",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "connectButtonText": "连接",
+  "@connectButtonText": {},
+  "selectWifiNetwork": "链接WiFi",
+  "@selectWifiNetwork": {},
+  "noInternet": "我不想现在联网",
+  "@noInternet": {},
+  "noWifiDevicesDetected": "找不到WiFi",
+  "@noWifiDevicesDetected": {},
+  "enableWifi": "启用WiFi",
+  "@enableWifi": {},
+  "normalInstallationSubtitle": "浏览器",
+  "@normalInstallationSubtitle": {},
+  "changeButtonText": "更改",
+  "@changeButtonText": {},
+  "okButtonText": "好",
+  "@okButtonText": {},
+  "noButtonText": "不",
+  "@noButtonText": {},
+  "restartButtonText": "重启",
+  "@restartButtonText": {},
+  "yesButtonText": "是",
+  "@yesButtonText": {},
+  "welcome": "欢迎",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "尝试或安装",
+  "@tryOrInstallPageTitle": {},
+  "installUbuntu": "安装 {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffRST": "关闭RST",
+  "@turnOffRST": {},
+  "keyboardLayoutPageTitle": "键盘布局",
+  "@keyboardLayoutPageTitle": {},
+  "typeToTest": "这里输入测试键盘",
+  "@typeToTest": {},
+  "chooseYourKeyboardLayout": "选择你的键盘布局：",
+  "@chooseYourKeyboardLayout": {},
+  "updatesOtherSoftwarePageTitle": "更新其他软件",
+  "@updatesOtherSoftwarePageTitle": {}
 }

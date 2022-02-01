@@ -78,6 +78,29 @@ void main() {
     expect(find.text('ubuntu'), findsOneWidget);
   });
 
+  testWidgets('rebuild initial value', (tester) async {
+    final controller = TextEditingController(text: 'initial');
+
+    Widget buildValidatedFormField({String? initialValue}) {
+      return MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            controller: controller,
+            initialValue: initialValue,
+          ),
+        ),
+      );
+    }
+
+    await tester.pumpWidget(buildValidatedFormField(initialValue: null));
+    expect(find.widgetWithText(TextField, 'initial'), findsOneWidget);
+    expect(controller.text, equals('initial'));
+
+    await tester.pumpWidget(buildValidatedFormField(initialValue: 'rebuild'));
+    expect(find.widgetWithText(TextField, 'rebuild'), findsOneWidget);
+    expect(controller.text, equals('rebuild'));
+  });
+
   testWidgets('fixed field width', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
@@ -110,6 +133,24 @@ void main() {
 
     final field = find.byType(TextFormField);
     expect(tester.getRect(field).width, equals(123 - 45));
+  });
+
+  testWidgets('default spacing', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: Center(
+            child: SizedBox(
+              width: 123,
+              child: ValidatedFormField(),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    final field = find.byType(TextFormField);
+    expect(tester.getRect(field).width, equals(123));
   });
 
   testWidgets('icon baseline alignment', (tester) async {
@@ -288,5 +329,24 @@ void main() {
     focusNode.unfocus();
     await tester.pump();
     expect(focusNode.hasFocus, isFalse);
+  });
+
+  testWidgets('focus node disposal', (tester) async {
+    final externalFocusNode = FocusNode();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(focusNode: externalFocusNode),
+        ),
+      ),
+    );
+    await tester.pumpWidget(MaterialApp());
+    await tester.pumpAndSettle();
+
+    await expectLater(
+      () => externalFocusNode.addListener(() {}),
+      isNot(throwsAssertionError),
+    );
   });
 }

@@ -1,15 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'updates_other_software_model_test.mocks.dart';
+
+@GenerateMocks([PowerService])
 void main() {
   late UpdateOtherSoftwareModel model;
 
   setUp(() {
     model = UpdateOtherSoftwareModel(
-        client: MockSubiquityClient(),
-        installationMode: InstallationMode.normal);
+      client: MockSubiquityClient(),
+      power: MockPowerService(),
+      installationMode: InstallationMode.normal,
+    );
   });
 
   test('init state should be able to set installation mode', () {
@@ -51,7 +60,10 @@ void main() {
   test('set the installation source', () async {
     final client = MockSubiquityClient();
     final model = UpdateOtherSoftwareModel(
-        client: client, installationMode: InstallationMode.normal);
+      client: client,
+      installationMode: InstallationMode.normal,
+      power: MockPowerService(),
+    );
 
     await model.selectInstallationSource();
     verify(client.setSource('ubuntu-desktop')).called(1);
@@ -59,5 +71,37 @@ void main() {
     model.setInstallationMode(InstallationMode.minimal);
     await model.selectInstallationSource();
     verify(client.setSource('ubuntu-desktop-minimal')).called(1);
+  });
+
+  test('on battery', () async {
+    final service = MockPowerService();
+    final propertiesChanged = StreamController<List<String>>(sync: true);
+    when(service.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
+
+    final model = UpdateOtherSoftwareModel(
+      client: MockSubiquityClient(),
+      installationMode: InstallationMode.normal,
+      power: service,
+    );
+    verifyNever(service.propertiesChanged);
+
+    await model.init();
+    verify(service.propertiesChanged).called(1);
+
+    when(service.onBattery).thenReturn(false);
+    expect(model.onBattery, isFalse);
+    verify(service.onBattery).called(1);
+
+    when(service.onBattery).thenReturn(true);
+    expect(model.onBattery, isTrue);
+    verify(service.onBattery).called(1);
+
+    bool? wasNotified;
+    model.addListener(() => wasNotified = true);
+    propertiesChanged.add(['OnBattery']);
+    expect(wasNotified, isTrue);
+    when(service.onBattery).thenReturn(false);
+    expect(model.onBattery, isFalse);
+    verify(service.onBattery).called(1);
   });
 }

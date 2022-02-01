@@ -199,6 +199,11 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installThirdPartySubtitle => 'התכניות האלו כפופות לתנאי אישוי שנכללים בתיעוד שלהן. חלקן קנייניות.';
 
   @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">אזהרה</font>: המחשב לא מחובר למקור חשמל.';
+  }
+
+  @override
   String get chooseSecurityKeyTitle => 'נא לבחור מפתח אבטחה';
 
   @override
