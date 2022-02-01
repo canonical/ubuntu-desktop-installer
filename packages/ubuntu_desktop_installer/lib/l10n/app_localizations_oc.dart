@@ -555,12 +555,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Clar';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Clar e lusent';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Fosc e escur';
-
-  @override
   String get installationCompleteTitle => 'Installacion acabada';
 
   @override

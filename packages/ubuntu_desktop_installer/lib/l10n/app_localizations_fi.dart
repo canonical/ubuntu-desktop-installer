@@ -555,12 +555,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Vaalea';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Kaikki on vaaleaa ja kirkasta';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hei pimeys, vanha ystäväni';
-
-  @override
   String get installationCompleteTitle => 'Asennus on valmis';
 
   @override

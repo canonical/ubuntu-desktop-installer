@@ -555,12 +555,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Hell';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Alles ist hell und freundlich';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hallo Dunkelheit, mein alter Freund';
-
-  @override
   String get installationCompleteTitle => 'Installation abgeschlossen';
 
   @override

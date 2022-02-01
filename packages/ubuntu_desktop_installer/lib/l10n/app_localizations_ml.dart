@@ -555,12 +555,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'വെളിച്ചം';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'എല്ലാം പ്രകാശമാണ്';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'ഹലോ ഡാർക്‌നെസ്സ് മൈ ഓൾഡ് ഫ്രണ്ട്';
-
-  @override
   String get installationCompleteTitle => 'ഇൻസ്റ്റലേഷൻ പൂർത്തിയായി';
 
   @override

@@ -555,12 +555,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Terang';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Semuanya ringan dan terang';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Halo kegelapan, teman lamaku';
-
-  @override
   String get installationCompleteTitle => 'Instalasi selesai';
 
   @override
