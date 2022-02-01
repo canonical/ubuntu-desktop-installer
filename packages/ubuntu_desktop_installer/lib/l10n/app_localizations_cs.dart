@@ -40,6 +40,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get welcome => 'Vítejte';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Vyzkoušet nebo nainstalovat';
 
   @override

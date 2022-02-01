@@ -40,6 +40,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get welcome => 'Witamy';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Wypróbuj lub zainstaluj';
 
   @override

@@ -40,6 +40,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcome => '欢迎';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => '尝试或安装';
 
   @override

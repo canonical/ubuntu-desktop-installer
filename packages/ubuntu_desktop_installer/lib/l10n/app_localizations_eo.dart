@@ -40,6 +40,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get welcome => 'Bonvenon';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Provi aŭ instali';
 
   @override
