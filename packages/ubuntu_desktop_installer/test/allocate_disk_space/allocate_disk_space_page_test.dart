@@ -133,6 +133,7 @@ void main() {
 
     verify(model.selectStorage(0)).called(1);
 
+    await tester.ensureVisible(find.text(testDisks.last.path!));
     await tester.tap(find.text(testDisks.last.path!));
     await tester.pumpAndSettle();
 
