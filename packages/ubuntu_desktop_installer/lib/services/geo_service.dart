@@ -239,9 +239,10 @@ class Geoname implements GeoSource {
 }
 
 /// Performs offline lookups from local geodata from geonames.org:
-/// - `cities15000.txt`
 /// - `admin1CodesASCII.txt`
+/// - `cities15000.txt`
 /// - `countryInfo.txt`
+/// - `timeZones.txt`
 class Geodata implements GeoSource {
   /// Constructs a lazily loaded geodata.
   Geodata({
