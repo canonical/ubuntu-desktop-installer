@@ -8,166 +8,166 @@ class AppLocalizationsMl extends AppLocalizations {
   AppLocalizationsMl([String locale = 'ml']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'ഉബുണ്ടു WSL';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'ഉബുണ്ടു WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'ഉപേക്ഷിക്കുക';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'പൂർത്തിയാക്കുക';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'സേവ് ചെയ്യുക';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'സജ്ജീകരണം';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'പ്രൊഫൈൽ സജ്ജീകരണം';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'ദയവായി ഒരു ഡിഫോൾട്ട് UNIX ഉപയോക്തൃ അക്കൗണ്ട് സൃഷ്‌ടിക്കുക. കൂടുതൽ വിവരങ്ങൾക്ക് <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a> സന്ദർശിക്കുക';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'താങ്കളുടെ പേര്';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'ഒരു പേര് ആവശ്യമാണ്';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'ഒരു ഉപയോക്തൃനാമം തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'ഉപയോക്തൃനാമം നിങ്ങളുടെ വിൻഡോസ് ഉപയോക്തൃനാമവുമായി പൊരുത്തപ്പെടേണ്ടതില്ല.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'ഒരു പാസ്വേഡ് തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'നിങ്ങളുടെ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'അടുത്ത പേജിൽ വിപുലമായ ഓപ്ഷനുകൾ കാണിക്കുക';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'ഒരു ഉപയോക്തൃനാമം ആവശ്യമാണ്';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'ഉപയോക്തൃനാമം അസാധുവാണ്';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'ഒരു പാസ്‌വേഡ് ആവശ്യമാണ്';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'വിപുലമായ സജ്ജീകരണം';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'ഈ പേജിൽ, നിങ്ങളുടെ ആവശ്യങ്ങൾക്ക് ഉബുണ്ടു WSL സജ്ജീകരിക്കാൻ കഴിയും.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'മൗണ്ട് ചെയ്യുന്ന ലൊക്കേഷൻ';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'ഓട്ടോമൗണ്ടിനുള്ള സ്ഥലം';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'ലൊക്കേഷൻ അസാധുവാണ്';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'മൌണ്ട് ഓപ്ഷൻ';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'ഓട്ടോമൗണ്ടിനായി പാസ്സാക്കിയ മൗണ്ട് ഓപ്ഷൻ';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'ഹോസ്റ്റ് ജനറേഷൻ പ്രവർത്തനക്ഷമമാക്കുക';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'തിരഞ്ഞെടുക്കുന്നത് എല്ലാ തുടക്കത്തിലും /etc/hosts റീ-ജനറേഷൻ പ്രവർത്തനക്ഷമമാക്കുന്നു.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'resolv.conf ജനറേഷൻ പ്രവർത്തനക്ഷമമാക്കുക';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'തിരഞ്ഞെടുക്കുന്നത് എല്ലാ തുടക്കത്തിലും /etc/resolv.conf റീ-ജനറേഷൻ പ്രവർത്തനക്ഷമമാക്കുന്നു.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'GUI സംയോജനം';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'തിരഞ്ഞെടുക്കുന്നത് സ്വയമേവയുള്ള DISPLAY പരിസ്ഥിതി സജ്ജീകരണം പ്രവർത്തനക്ഷമമാക്കുന്നു. മൂന്നാം-കക്ഷി X സെർവർ ആവശ്യമാണ്.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'ഉബുണ്ടു WSL കോൺഫിഗറേഷൻ UI (പരീക്ഷണാത്മകം)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'പരസ്പര പ്രവർത്തനക്ഷമത';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
+  String get configurationUILegacyGUIIntegrationTitle => 'ലെഗസി GUI സംയോജനം';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.';
+  String get configurationUILegacyGUIIntegrationSubtitle => 'ഈ ഓപ്‌ഷൻ വിൻഡോസ് 10-ൽ ലെഗസി GUI സംയോജനം പ്രവർത്തനക്ഷമമാക്കുന്നു. മൂന്നാം-കക്ഷി X സെർവർ ആവശ്യമുണ്ട്.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Legacy Audio Integration';
+  String get configurationUILegacyAudioIntegrationTitle => 'ലെഗസി ഓഡിയോ സംയോജനം';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
+  String get configurationUILegacyAudioIntegrationSubtitle => 'ഈ ഓപ്‌ഷൻ വിൻഡോസ് 10-ൽ ലെഗസി ഓഡിയോ സംയോജനം പ്രവർത്തനക്ഷമമാക്കുന്നു. വിന്ഡോസിനു വേണ്ടിയുള്ള PulseAudio ഇൻസ്റ്റാൾ ചെയ്യേണ്ട ആവശ്യമുണ്ട്.';
 
   @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Advanced IP Detection';
+  String get configurationUIAdvancedIPDetectionTitle => 'വിപുലമായ IP കണ്ടെത്തൽ';
 
   @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
+  String get configurationUIAdvancedIPDetectionSubtitle => 'WSL2-നൊപ്പം ഉപയോഗിക്കാൻ കൂടുതൽ വിശ്വസനീയമായ വിൻഡോസ് IPv4 വിലാസം വഴി IP-യുടെ വിപുലമായ കണ്ടെത്തൽ ഈ ഓപ്ഷൻ പ്രാപ്തമാക്കുന്നു.\nWSL പരസ്പര പ്രവർത്തനക്ഷമത പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => 'ഈ ദിവസത്തെ സന്ദേശം (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'WSL വാർത്ത';
 
   @override
-  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+  String get configurationUIWSLNewsSubtitle => 'നിങ്ങളുടെ MOTD വാർത്തകൾ നിയന്ത്രിക്കാൻ ഈ ഓപ്ഷൻ നിങ്ങളെ അനുവദിക്കുന്നു. ഇത് ടോഗിൾ ചെയ്യുന്നത് MOTD കാണാൻ നിങ്ങളെ അനുവദിക്കുന്നു.';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'ഓട്ടോ-മൌണ്ട്';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'പ്രവർത്തനക്ഷമമാക്കി';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'ഓട്ടോ-മൗണ്ട് സവിശേഷത പ്രവർത്തനക്ഷമമാക്കിയിട്ടുണ്ടോ എന്ന്. WSL-ൽ വിൻഡോസ് ഡ്രൈവ് മൗണ്ട് ചെയ്യാൻ ഈ സവിശേഷത നിങ്ങളെ അനുവദിക്കുന്നു.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => '/etc/fstab മൌണ്ട് ചെയ്യുക';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab മൗണ്ട് ചെയ്യുമോ എന്ന്. കോൺഫിഗറേഷൻ ഫയൽ /etc/fstab അടങ്ങിയിരിക്കുന്നു???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'സജ്ജീകരണം പൂർത്തിയായി';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'ഹായ് $user,\nനിങ്ങൾ സജ്ജീകരണം വിജയകരമായി പൂർത്തിയാക്കി.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'ഉബുണ്ടു ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യുന്നതിന് ഇനിപ്പറയുന്ന കമാൻഡ് പ്രവർത്തിപ്പിക്കാൻ നിർദ്ദേശിക്കുന്നു:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => 'നിങ്ങളുടെ WSL ക്രമീകരണങ്ങൾ നിയന്ത്രിക്കുന്നതിന് നിങ്ങൾക്ക് അന്തർനിർമ്മിത ubuntuwsl കമാൻഡ് ഉപയോഗിക്കാം:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* ഉബുണ്ടു പുനരാരംഭിച്ചതിന് ശേഷം എല്ലാ ക്രമീകരണങ്ങളും പ്രാബല്യത്തിൽ വരും.';
 }

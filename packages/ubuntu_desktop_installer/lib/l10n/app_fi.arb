@@ -429,5 +429,12 @@
   "wifiMustBeEnabled": "Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön",
   "@wifiMustBeEnabled": {},
   "enableWifi": "Ota Wi-Fi käyttöön",
-  "@enableWifi": {}
+  "@enableWifi": {},
+  "onBatteryWarning": "<font color=\"{color}\">Varoitus</font>: Tietokonetta ei ole liitetty virtalähteeseen.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  }
 }

@@ -589,4 +589,13 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }

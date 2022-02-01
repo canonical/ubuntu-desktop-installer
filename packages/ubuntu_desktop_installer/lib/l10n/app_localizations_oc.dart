@@ -589,4 +589,13 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Reaviar jos Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }

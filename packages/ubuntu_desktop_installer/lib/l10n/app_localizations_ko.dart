@@ -589,4 +589,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Windows로 다시 시작';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }

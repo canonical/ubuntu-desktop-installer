@@ -589,4 +589,13 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'വിന്ഡോസിലേക്ക് പുനരാരംഭിക്കുക';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }

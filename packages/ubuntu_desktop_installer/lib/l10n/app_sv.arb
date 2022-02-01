@@ -398,5 +398,87 @@
     "placeholders": {
       "RELEASE": {}
     }
+  },
+  "onBatteryWarning": "<font color=\"{color}\">Varning</font>: Datorn är inte ansluten till en strömkälla.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "newPartitionTableConfirmationMessage": "Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell på enheten kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.",
+  "@newPartitionTableConfirmationMessage": {},
+  "restartInto": "Starta om till {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "Diskkryptering skyddar dina filer om du tappar bort din dator. Det kräver att du anger en säkerhetsnyckel varje gång datorn startar.\n\nAlla filer utanför {RELEASE} kommer inte att krypteras.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeLVM": "Använd LVM med den nya {RELEASE}-installationen",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncrypt": "Kryptera den nya {RELEASE}-installationen för säkerhet",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "appTitle": "Ubuntu Skrivbordsinstallerare",
+  "@appTitle": {},
+  "revertButtonText": "Återställ",
+  "@revertButtonText": {},
+  "tryOrInstallPageTitle": "Prova eller installera",
+  "@tryOrInstallPageTitle": {},
+  "repairInstallation": "Reparera installation",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "Reparation kommer att installera om all installerad programvara utan att röra dokument eller inställningar.",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "Prova {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "configureSecureBootTitle": "Konfigurera Säker start",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootOption": "Konfigurera Säker start",
+  "@configureSecureBootOption": {},
+  "dontInstallDriverSoftwareNow": "Installera inte drivrutinsprogramvara för tillfället",
+  "@dontInstallDriverSoftwareNow": {},
+  "configureSecureBootDescription": "Du har valt att installera drivrutinsprogram från tredje part. Detta kräver att du stänger av Säker Start.\nFör att göra detta måste du välja en säkerhetsnyckel nu och ange den när systemet startar om.",
+  "@configureSecureBootDescription": {},
+  "diskHeadersUsed": "Använt",
+  "@diskHeadersUsed": {},
+  "partitionFormatSwap": "Swap område",
+  "@partitionFormatSwap": {},
+  "restartIntoWindows": "Starta om till Windows",
+  "@restartIntoWindows": {},
+  "tryUbuntuDescription": "Du kan prova {RELEASE} utan att göra några ändringar till din dator.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "Installera {RELEASE} bredvid (eller istället för) ditt nuvarande operativsystem. Det här ska inte ta för lång tid.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
   }
 }

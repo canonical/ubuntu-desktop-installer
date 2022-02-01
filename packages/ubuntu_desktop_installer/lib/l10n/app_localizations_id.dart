@@ -589,4 +589,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Mulai Ulang Ke Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
 }
