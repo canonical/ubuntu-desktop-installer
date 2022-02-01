@@ -17,7 +17,7 @@ import 'services.dart';
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 
 const _kGeoIPUrl = 'https://geoip.ubuntu.com/lookup';
-const _kGeonameUrl = 'http://geoname-lookup.ubuntu.com/';
+const _kGeonameUrl = 'https://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
 enum AppStatus { loading, ready }
