@@ -88,21 +88,24 @@ void main() {
         find.widgetWithText(ListTile, 'Français', skipOffstage: false);
     expect(itemFrench, findsOneWidget);
 
-    await tester.scrollUntilVisible(itemItalian, -10);
+    // scroll forward to Italian
+    await tester.scrollUntilVisible(itemItalian, -kMinInteractiveDimension / 2);
     await tester.pump();
     await tester.tap(itemItalian);
     await tester.pump();
     expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
     expect(settings.locale.languageCode, 'it');
 
-    await tester.scrollUntilVisible(itemEnglish, 10);
+    // scroll backward to English
+    await tester.scrollUntilVisible(itemEnglish, kMinInteractiveDimension / 2);
     await tester.pump();
     await tester.tap(itemEnglish);
     await tester.pump();
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
     expect(settings.locale.languageCode, 'en');
 
-    await tester.scrollUntilVisible(itemFrench, -10);
+    // scroll forward to French
+    await tester.scrollUntilVisible(itemFrench, -kMinInteractiveDimension / 2);
     await tester.pump();
     await tester.tap(itemFrench);
     await tester.pump();
