@@ -10,18 +10,13 @@ void main() {
   testWidgets('enter size', (tester) async {
     int? size;
 
-    await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Scaffold(
-          body: StorageSizeBox(
-            unit: DataUnit.megabytes,
-            size: toBytes(123, DataUnit.megabytes),
-            available: toBytes(500, DataUnit.megabytes),
-            onSizeChanged: (value) => size = value,
-            onUnitSelected: (_) {},
-          ),
-        ),
+    await tester.pumpStorageSizeBox(
+      StorageSizeBox(
+        unit: DataUnit.megabytes,
+        size: toBytes(123, DataUnit.megabytes),
+        available: toBytes(500, DataUnit.megabytes),
+        onSizeChanged: (value) => size = value,
+        onUnitSelected: (_) {},
       ),
     );
 
@@ -38,18 +33,13 @@ void main() {
   testWidgets('select unit', (tester) async {
     DataUnit? unit;
 
-    await tester.pumpWidget(
-      MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Scaffold(
-          body: StorageSizeBox(
-            unit: DataUnit.gigabytes,
-            size: toBytes(1, DataUnit.gigabytes),
-            available: toBytes(5, DataUnit.gigabytes),
-            onSizeChanged: (_) {},
-            onUnitSelected: (value) => unit = value,
-          ),
-        ),
+    await tester.pumpStorageSizeBox(
+      StorageSizeBox(
+        unit: DataUnit.gigabytes,
+        size: toBytes(1, DataUnit.gigabytes),
+        available: toBytes(5, DataUnit.gigabytes),
+        onSizeChanged: (_) {},
+        onUnitSelected: (value) => unit = value,
       ),
     );
 
@@ -61,4 +51,60 @@ void main() {
 
     expect(unit, equals(DataUnit.megabytes));
   });
+
+  group('present size', () {
+    final fiveGb = toBytes(5, DataUnit.gigabytes);
+
+    testWidgets('in gigabytes', (tester) async {
+      await tester.pumpStorageSizeBox(
+        StorageSizeBox(
+          unit: DataUnit.gigabytes,
+          size: fiveGb,
+          available: fiveGb,
+          onSizeChanged: (_) {},
+          onUnitSelected: (_) {},
+        ),
+      );
+      expect(find.widgetWithText(SpinBox, '5'), findsOneWidget);
+    });
+
+    testWidgets('in megabytes', (tester) async {
+      await tester.pumpStorageSizeBox(
+        StorageSizeBox(
+          unit: DataUnit.megabytes,
+          size: fiveGb,
+          available: fiveGb,
+          onSizeChanged: (_) {},
+          onUnitSelected: (_) {},
+        ),
+      );
+      expect(
+          find.widgetWithText(SpinBox, (5 * 1024).toString()), findsOneWidget);
+    });
+
+    testWidgets('in kilobytes', (tester) async {
+      await tester.pumpStorageSizeBox(
+        StorageSizeBox(
+          unit: DataUnit.kilobytes,
+          size: fiveGb,
+          available: fiveGb,
+          onSizeChanged: (_) {},
+          onUnitSelected: (_) {},
+        ),
+      );
+      expect(find.widgetWithText(SpinBox, (5 * 1024 * 1024).toString()),
+          findsOneWidget);
+    });
+  });
+}
+
+extension StorageSizeBoxTester on WidgetTester {
+  Future<void> pumpStorageSizeBox(StorageSizeBox widget) {
+    return pumpWidget(
+      MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: Scaffold(body: widget),
+      ),
+    );
+  }
 }
