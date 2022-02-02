@@ -40,6 +40,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get welcome => 'Willkommen';
 
   @override
+  String get welcomeHeader => 'Wählen Sie Ihre Sprache aus:';
+
+  @override
   String get tryOrInstallPageTitle => 'Ausprobieren oder installieren';
 
   @override

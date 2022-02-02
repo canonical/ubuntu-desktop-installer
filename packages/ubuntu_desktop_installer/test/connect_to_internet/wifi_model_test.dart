@@ -347,4 +347,46 @@ void main() {
     model.enable();
     verify(service.setWirelessEnabled(true)).called(1);
   });
+
+  test('cleanup model', () async {
+    when(service.wirelessDevices).thenReturn([device]);
+
+    var wasNotified = false;
+    model.addListener(() => wasNotified = true);
+
+    serviceChanged.add(['Devices']);
+    expect(wasNotified, isTrue);
+
+    wasNotified = false;
+    await model.cleanup();
+
+    serviceChanged.add(['Devices']);
+    expect(wasNotified, isFalse);
+
+    wasNotified = false;
+    await model.init();
+
+    serviceChanged.add(['Devices']);
+    expect(wasNotified, isTrue);
+  });
+
+  test('cleanup access point', () {
+    var wasNotified = false;
+    accessPoint.addListener(() => wasNotified = true);
+
+    accessPointChanged.add(['Strength']);
+    expect(wasNotified, isTrue);
+
+    wasNotified = false;
+    accessPoint.cleanup();
+
+    accessPointChanged.add(['Strength']);
+    expect(wasNotified, isFalse);
+
+    wasNotified = false;
+    accessPoint.init();
+
+    accessPointChanged.add(['Strength']);
+    expect(wasNotified, isTrue);
+  });
 }

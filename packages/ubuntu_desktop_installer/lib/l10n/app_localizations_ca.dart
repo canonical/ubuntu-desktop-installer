@@ -40,6 +40,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get welcome => 'Us donem la benvinguda';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Prova o instal·la';
 
   @override

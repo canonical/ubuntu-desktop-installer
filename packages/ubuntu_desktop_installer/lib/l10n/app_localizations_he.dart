@@ -40,6 +40,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get welcome => 'ברוך בואך';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'לנסות להתקין';
 
   @override

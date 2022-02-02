@@ -40,6 +40,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get welcome => 'Velkomin(n)';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Prófa eða uppsetja';
 
   @override

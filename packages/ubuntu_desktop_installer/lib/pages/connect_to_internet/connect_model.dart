@@ -39,9 +39,11 @@ abstract class ConnectModel extends SafeChangeNotifier {
   /// Called when the connection mode is unselected.
   void onDeselected();
 
-  /// Called once at initialization phase. Use [dispose()] for freeing up
-  /// resources.
+  /// Called at initialization phase when entering the page.
   Future<void> init();
+
+  /// Called at cleanup phase when leaving the page.
+  Future<void> cleanup();
 
   /// Enables the connection mode.
   Future<void> enable();
@@ -81,6 +83,9 @@ class NoConnectModel extends ConnectModel {
 
   @override
   Future<void> init() async {}
+
+  @override
+  Future<void> cleanup() async {}
 
   @override
   Future<void> enable() {

@@ -16,6 +16,7 @@
   "revertButtonText": "Revert",
   "yesButtonText": "Yes",
   "welcome": "Welcome",
+  "welcomeHeader": "Choose your language:",
   "tryOrInstallPageTitle": "Try or install",
   "repairInstallation": "Repair installation",
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",

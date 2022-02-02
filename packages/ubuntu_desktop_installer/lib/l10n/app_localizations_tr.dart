@@ -40,6 +40,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get welcome => 'Hoş Geldiniz';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Dene veya kur';
 
   @override

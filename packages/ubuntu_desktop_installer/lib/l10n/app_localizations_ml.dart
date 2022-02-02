@@ -40,6 +40,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get welcome => 'സ്വാഗതം';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക';
 
   @override

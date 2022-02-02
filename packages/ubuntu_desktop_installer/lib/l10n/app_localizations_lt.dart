@@ -40,6 +40,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get welcome => 'Sveiki,';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Try or install';
 
   @override

@@ -297,6 +297,12 @@ abstract class AppLocalizations {
   /// **'Welcome'**
   String get welcome;
 
+  /// No description provided for @welcomeHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your language:'**
+  String get welcomeHeader;
+
   /// No description provided for @tryOrInstallPageTitle.
   ///
   /// In en, this message translates to:

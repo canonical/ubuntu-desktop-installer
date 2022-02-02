@@ -40,6 +40,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcome => 'Le damos la bienvenida';
 
   @override
+  String get welcomeHeader => 'Choose your language:';
+
+  @override
   String get tryOrInstallPageTitle => 'Probar o instalar';
 
   @override

@@ -49,11 +49,11 @@ abstract class SubiquityServer {
 
   // Returns the location of the local subiquity submodule.
   Future<String> _getSubiquityPath() async {
-    return _subiquityPath ??= await _findSubiquityPath();
+    return _subiquityPath ??= await findSubiquityPath();
   }
 
   // Finds local subiquity relative to the `subiquity_client` Dart package.
-  Future<String> _findSubiquityPath() async {
+  static Future<String> findSubiquityPath() async {
     Object? error;
     final config = await findPackageConfig(
       Directory.current,
