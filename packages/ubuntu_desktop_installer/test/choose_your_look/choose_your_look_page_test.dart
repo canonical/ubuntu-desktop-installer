@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -13,11 +12,6 @@ import 'choose_your_look_page_test.mocks.dart';
 
 @GenerateMocks([Settings])
 void main() {
-  AppLocalizations lang(WidgetTester tester) {
-    final page = tester.element(find.byType(ChooseYourLookPage));
-    return AppLocalizations.of(page);
-  }
-
   testWidgets('ChooseYourLookPage applies theme', (tester) async {
     final Settings settings = MockSettings();
 
