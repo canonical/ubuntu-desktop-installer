@@ -125,7 +125,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flavor(
       data: flavor.copyWith(package: 'ubuntu_desktop_installer'),
-      child: Slides(
+      child: SlidesContext(
         slides: slides,
         child: MaterialApp(
           locale: Settings.of(context).locale,

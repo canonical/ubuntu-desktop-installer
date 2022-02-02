@@ -14,9 +14,9 @@ class Slide {
 }
 
 /// Provides access to the slides in the current context.
-class Slides extends InheritedWidget {
+class SlidesContext extends InheritedWidget {
   /// Creates an inherited slide widget with the specified slides.
-  Slides({
+  SlidesContext({
     Key? key,
     required this.slides,
     required Widget child,
@@ -27,11 +27,11 @@ class Slides extends InheritedWidget {
 
   /// Returns the flavor data for the given context.
   static List<Slide> of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<Slides>()!.slides;
+    return context.dependOnInheritedWidgetOfExactType<SlidesContext>()!.slides;
   }
 
   @override
-  bool updateShouldNotify(Slides oldWidget) {
+  bool updateShouldNotify(SlidesContext oldWidget) {
     final listEquals = const ListEquality().equals;
     return !listEquals(slides, oldWidget.slides);
   }

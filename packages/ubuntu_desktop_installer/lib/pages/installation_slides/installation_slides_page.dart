@@ -61,7 +61,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
               SlideShow(
                 wrap: true,
                 interval: const Duration(hours: 1),
-                slides: Slides.of(context)
+                slides: SlidesContext.of(context)
                     .map((slide) => _SlidePage(slide: slide))
                     .toList(),
               ),

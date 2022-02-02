@@ -43,7 +43,7 @@ void main() {
   Widget buildPage(InstallationSlidesModel model) {
     return ChangeNotifierProvider<InstallationSlidesModel>.value(
       value: model,
-      child: Slides(slides: [
+      child: SlidesContext(slides: [
         Slide(
           title: (context) => Text('title1'),
           body: (context) => Text('body1'),
@@ -127,7 +127,7 @@ void main() {
     registerMockService<JournalService>(service);
 
     await tester.pumpWidget(
-      Slides(
+      SlidesContext(
         slides: [
           Slide(
             title: (_) => SizedBox.shrink(),

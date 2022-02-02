@@ -18,12 +18,12 @@ void main() {
       body: (_) => Text('body2'),
     );
 
-    final widget = Slides(slides: [slide1, slide2], child: Text('page'));
+    final widget = SlidesContext(slides: [slide1, slide2], child: Text('page'));
     await tester.pumpWidget(MaterialApp(home: widget));
 
     final context = tester.element(find.text('page'));
 
-    final slides = Slides.of(context);
+    final slides = SlidesContext.of(context);
     expect(slides, hasLength(2));
     expect((slides.first.title(context) as Text).data, equals('title1'));
     expect((slides.first.body(context) as Text).data, equals('body1'));
@@ -32,13 +32,13 @@ void main() {
 
     expect(
       widget.updateShouldNotify(
-        Slides(slides: [slide1, slide2], child: Text('page')),
+        SlidesContext(slides: [slide1, slide2], child: Text('page')),
       ),
       isFalse,
     );
     expect(
       widget.updateShouldNotify(
-        Slides(slides: [slide2, slide1], child: Text('page')),
+        SlidesContext(slides: [slide2, slide1], child: Text('page')),
       ),
       isTrue,
     );
