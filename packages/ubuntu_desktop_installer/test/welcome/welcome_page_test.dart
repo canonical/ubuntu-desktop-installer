@@ -88,19 +88,25 @@ void main() {
         find.widgetWithText(ListTile, 'Français', skipOffstage: false);
     expect(itemFrench, findsOneWidget);
 
-    await tester.ensureVisible(itemItalian);
+    // scroll forward to Italian
+    await tester.scrollUntilVisible(itemItalian, -kMinInteractiveDimension / 2);
+    await tester.pump();
     await tester.tap(itemItalian);
     await tester.pump();
     expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
     expect(settings.locale.languageCode, 'it');
 
-    await tester.ensureVisible(itemEnglish);
+    // scroll backward to English
+    await tester.scrollUntilVisible(itemEnglish, kMinInteractiveDimension / 2);
+    await tester.pump();
     await tester.tap(itemEnglish);
     await tester.pump();
-    // TODO: why is the english tile not selected? Is the word too short?
-    expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
+    expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
+    expect(settings.locale.languageCode, 'en');
 
-    await tester.ensureVisible(itemFrench);
+    // scroll forward to French
+    await tester.scrollUntilVisible(itemFrench, -kMinInteractiveDimension / 2);
+    await tester.pump();
     await tester.tap(itemFrench);
     await tester.pump();
 
