@@ -76,11 +76,8 @@ class MockInstallationSlidesModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i4.Future<void> precacheSlideImages(_i5.BuildContext? context,
-          {String? package}) =>
-      (super.noSuchMethod(
-          Invocation.method(
-              #precacheSlideImages, [context], {#package: package}),
+  _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
+      (super.noSuchMethod(Invocation.method(#precacheSlideImages, [context]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
