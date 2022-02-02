@@ -135,7 +135,7 @@ void main() {
   });
 
   test('partition', () {
-    const keyboard = Partition(
+    const partition = Partition(
       size: 1,
       number: 2,
       preserve: false,
@@ -169,8 +169,8 @@ void main() {
         'version': '11',
       },
     };
-    expect(keyboard.toJson(), equals(json));
-    expect(Partition.fromJson(json), keyboard);
+    expect(partition.toJson(), equals(json));
+    expect(Partition.fromJson(json), partition);
   });
 
   test('disk', () {
@@ -218,7 +218,7 @@ void main() {
   });
 
   test('guided choice', () {
-    const keyboard = GuidedChoice(
+    const choice = GuidedChoice(
       diskId: '0',
       useLvm: true,
       password: '2',
@@ -228,8 +228,8 @@ void main() {
       'use_lvm': true,
       'password': '2',
     };
-    expect(keyboard.toJson(), equals(json));
-    expect(GuidedChoice.fromJson(json), keyboard);
+    expect(choice.toJson(), equals(json));
+    expect(GuidedChoice.fromJson(json), choice);
   });
 
   test('wsl configuration base data', () {
