@@ -91,7 +91,7 @@ void main() {
     expect(findsSlide('body1'), findsOneWidget);
     expect(findsSlide('title2'), findsNothing);
     expect(findsSlide('body2'), findsNothing);
-    expect(find.byIcon(Icons.chevron_left), findsNothing);
+    expect(find.byIcon(Icons.chevron_left), findsOneWidget);
     expect(find.byIcon(Icons.chevron_right), findsOneWidget);
 
     // go to second slide
@@ -102,16 +102,26 @@ void main() {
     expect(findsSlide('title2'), findsOneWidget);
     expect(findsSlide('body2'), findsOneWidget);
     expect(find.byIcon(Icons.chevron_left), findsOneWidget);
-    expect(find.byIcon(Icons.chevron_right), findsNothing);
+    expect(find.byIcon(Icons.chevron_right), findsOneWidget);
 
-    // back to first slide
-    await tester.tap(find.byIcon(Icons.chevron_left));
+    // wrap to first slide
+    await tester.tap(find.byIcon(Icons.chevron_right));
     await tester.pumpAndSettle();
     expect(findsSlide('title1'), findsOneWidget);
     expect(findsSlide('body1'), findsOneWidget);
     expect(findsSlide('title2'), findsNothing);
     expect(findsSlide('body2'), findsNothing);
-    expect(find.byIcon(Icons.chevron_left), findsNothing);
+    expect(find.byIcon(Icons.chevron_left), findsOneWidget);
+    expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+
+    // wrap back to second slide
+    await tester.tap(find.byIcon(Icons.chevron_left));
+    await tester.pumpAndSettle();
+    expect(findsSlide('title1'), findsNothing);
+    expect(findsSlide('body1'), findsNothing);
+    expect(findsSlide('title2'), findsOneWidget);
+    expect(findsSlide('body2'), findsOneWidget);
+    expect(find.byIcon(Icons.chevron_left), findsOneWidget);
     expect(find.byIcon(Icons.chevron_right), findsOneWidget);
   });
 
