@@ -436,5 +436,13 @@
     "placeholders": {
       "color": {}
     }
-  }
+  },
+  "welcomeHeader": "בחירת השפה שלך:",
+  "@welcomeHeader": {},
+  "whereAreYouTimezoneLabel": "אזור זמן",
+  "@whereAreYouTimezoneLabel": {},
+  "whereAreYouLocationLabel": "מיקום",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouPageTitle": "עם מי יש לי העונג?",
+  "@whereAreYouPageTitle": {}
 }
