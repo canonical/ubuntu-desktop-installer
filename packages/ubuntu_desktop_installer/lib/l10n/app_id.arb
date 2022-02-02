@@ -436,5 +436,13 @@
   "enableWifi": "Fungsikan Wi-Fi",
   "@enableWifi": {},
   "connectButtonText": "Sambungkan",
-  "@connectButtonText": {}
+  "@connectButtonText": {},
+  "welcomeHeader": "Pilih bahasa Anda:",
+  "@welcomeHeader": {},
+  "whereAreYouLocationLabel": "Lokasi",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Zona waktu",
+  "@whereAreYouTimezoneLabel": {},
+  "whereAreYouPageTitle": "Di manakah Anda?",
+  "@whereAreYouPageTitle": {}
 }
