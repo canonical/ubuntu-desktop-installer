@@ -73,7 +73,6 @@ void main() {
 
   test('devices', () async {
     when(service.wirelessDevices).thenReturn([device]);
-    serviceChanged.add(['Devices']);
 
     bool? wasNotified;
     model.addListener(() => wasNotified = true);
@@ -140,6 +139,8 @@ void main() {
     model.setSsid('ssid');
     expect(model.canConnect, isTrue);
     expect(wasNotified, isTrue);
+
+    wasNotified = false;
 
     model.setSsid('');
     expect(model.canConnect, isFalse);
