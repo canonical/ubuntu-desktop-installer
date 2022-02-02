@@ -46,4 +46,27 @@ void main() {
 
     controller.close();
   });
+
+  test('enable and disable listeners', () {
+    final notifier = PropertyStreamNotifier();
+    final controller = StreamController<List<String>>(sync: true);
+    notifier.setProperties(controller.stream);
+
+    var foo = 0;
+    var bar = 0;
+    notifier.addPropertyListener('foo', () => ++foo);
+    notifier.addPropertyListener('bar', () => ++bar);
+
+    notifier.disablePropertyListeners();
+    controller.add(['foo']);
+    expect(foo, isZero);
+    controller.add(['bar']);
+    expect(bar, isZero);
+
+    notifier.enablePropertyListeners();
+    controller.add(['foo']);
+    expect(foo, equals(1));
+    controller.add(['bar']);
+    expect(bar, equals(1));
+  });
 }

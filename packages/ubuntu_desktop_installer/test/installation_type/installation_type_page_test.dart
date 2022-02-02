@@ -108,6 +108,8 @@ void main() {
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
+    when(client.hasRst()).thenAnswer((_) async => false);
+    when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<TelemetryService>(TelemetryService());

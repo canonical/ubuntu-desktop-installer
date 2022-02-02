@@ -18,7 +18,7 @@ void main() {
     verify(service.connect()).called(1);
   });
 
-  test('initializes connect models', () async {
+  test('initializes and cleans up connect models', () async {
     final model = ConnectToInternetModel(MockNetworkService());
 
     final ethernet = MockConnectModel();
@@ -47,6 +47,12 @@ void main() {
     verify(wifi.init()).called(1);
     verify(hiddenWifi.init()).called(1);
     verify(none.init()).called(1);
+
+    await model.cleanup();
+
+    verify(ethernet.cleanup()).called(1);
+    verify(wifi.cleanup()).called(1);
+    verify(none.cleanup()).called(1);
   });
 
   test('no mode selected', () {

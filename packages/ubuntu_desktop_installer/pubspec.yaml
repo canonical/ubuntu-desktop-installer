@@ -9,6 +9,7 @@ environment:
 dependencies:
   collection: ^1.15.0
   dbus: ^0.6.3
+  dio: ^4.0.3
   file: ^6.1.0
   filesize: ^2.0.0
   flutter:
@@ -47,6 +48,7 @@ dependencies:
     path: ../udev
   upower: ^0.6.1
   url_launcher: ^6.0.3
+  xml: ^5.3.1
   yaru: ^0.2.0
   yaru_icons: ^0.1.2
 
@@ -65,3 +67,5 @@ flutter:
   assets:
     - assets/
     - assets/slides/
+    - assets/slides/icons/
+    - assets/slides/screenshots/
