@@ -76,6 +76,14 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
           Invocation.method(#addPropertyListener, [property, onChanged]),
           returnValueForMissingStub: null);
   @override
+  void enablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
+          returnValueForMissingStub: null);
+  @override
+  void disablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
