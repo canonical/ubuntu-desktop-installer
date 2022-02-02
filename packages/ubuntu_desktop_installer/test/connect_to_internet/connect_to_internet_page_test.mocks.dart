@@ -562,6 +562,11 @@ class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<void> cleanup() =>
+      (super.noSuchMethod(Invocation.method(#cleanup, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
@@ -588,6 +593,14 @@ class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
   void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
           Invocation.method(#addPropertyListener, [property, onChanged]),
+          returnValueForMissingStub: null);
+  @override
+  void enablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
+          returnValueForMissingStub: null);
+  @override
+  void disablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
           returnValueForMissingStub: null);
   @override
   void addListener(_i6.VoidCallback? listener) =>
