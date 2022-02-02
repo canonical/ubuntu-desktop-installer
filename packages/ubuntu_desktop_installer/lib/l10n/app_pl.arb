@@ -436,5 +436,13 @@
     "placeholders": {
       "color": {}
     }
-  }
+  },
+  "whereAreYouTimezoneLabel": "Strefa czasowa",
+  "@whereAreYouTimezoneLabel": {},
+  "whereAreYouLocationLabel": "Lokalizacja",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouPageTitle": "Gdzie jesteś?",
+  "@whereAreYouPageTitle": {},
+  "welcomeHeader": "Wybierz swój język:",
+  "@welcomeHeader": {}
 }
