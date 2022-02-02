@@ -1316,6 +1316,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Timezone'**
   String get whereAreYouTimezoneLabel;
+
+  /// No description provided for @welcomeSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to {RELEASE}'**
+  String welcomeSlideTitle(Object RELEASE);
+
+  /// No description provided for @welcomeSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...'**
+  String welcomeSlideDescription(Object RELEASE);
+
+  /// No description provided for @softwareSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find even more software'**
+  String get softwareSlideTitle;
+
+  /// No description provided for @softwareSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.'**
+  String softwareSlideDescription(Object RELEASE);
+
+  /// No description provided for @musicSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your music with you'**
+  String get musicSlideTitle;
+
+  /// No description provided for @musicSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.'**
+  String musicSlideDescription(Object RELEASE);
+
+  /// No description provided for @musicSlideRhythmbox.
+  ///
+  /// In en, this message translates to:
+  /// **'Rhythmbox Music Player'**
+  String get musicSlideRhythmbox;
+
+  /// No description provided for @musicSlideSpotify.
+  ///
+  /// In en, this message translates to:
+  /// **'Spotify'**
+  String get musicSlideSpotify;
+
+  /// No description provided for @musicSlideVLC.
+  ///
+  /// In en, this message translates to:
+  /// **'VLC'**
+  String get musicSlideVLC;
+
+  /// No description provided for @photoSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Have fun with your photos'**
+  String get photoSlideTitle;
+
+  /// No description provided for @photoSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.'**
+  String get photoSlideDescription;
+
+  /// No description provided for @photoSlideShotwell.
+  ///
+  /// In en, this message translates to:
+  /// **'Shotwell Photo Manager'**
+  String get photoSlideShotwell;
+
+  /// No description provided for @photoSlideGimp.
+  ///
+  /// In en, this message translates to:
+  /// **'GIMP Image Editor'**
+  String get photoSlideGimp;
+
+  /// No description provided for @photoSlideShotcut.
+  ///
+  /// In en, this message translates to:
+  /// **'Shotcut Video Editor'**
+  String get photoSlideShotcut;
+
+  /// No description provided for @webSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Make the most of the web'**
+  String get webSlideTitle;
+
+  /// No description provided for @webSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.'**
+  String webSlideDescription(Object RELEASE);
+
+  /// No description provided for @webSlideFirefox.
+  ///
+  /// In en, this message translates to:
+  /// **'Firefox web browser'**
+  String get webSlideFirefox;
+
+  /// No description provided for @webSlideThunderbird.
+  ///
+  /// In en, this message translates to:
+  /// **'Thunderbird'**
+  String get webSlideThunderbird;
+
+  /// No description provided for @webSlideChromium.
+  ///
+  /// In en, this message translates to:
+  /// **'Chromium'**
+  String get webSlideChromium;
+
+  /// No description provided for @officeSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything you need for the office'**
+  String get officeSlideTitle;
+
+  /// No description provided for @officeSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.'**
+  String get officeSlideDescription;
+
+  /// No description provided for @officeSlideWriter.
+  ///
+  /// In en, this message translates to:
+  /// **'LibreOffice Writer'**
+  String get officeSlideWriter;
+
+  /// No description provided for @officeSlideCalc.
+  ///
+  /// In en, this message translates to:
+  /// **'LibreOffice Calc'**
+  String get officeSlideCalc;
+
+  /// No description provided for @officeSlideImpress.
+  ///
+  /// In en, this message translates to:
+  /// **'LibreOffice Impress'**
+  String get officeSlideImpress;
+
+  /// No description provided for @accessSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Access for everyone'**
+  String get accessSlideTitle;
+
+  /// No description provided for @accessSlideDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, {RELEASE} makes computing easy - whoever and wherever you are.'**
+  String accessSlideDescription(Object RELEASE);
+
+  /// No description provided for @accessSlideCustomizationOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Customization options'**
+  String get accessSlideCustomizationOptions;
+
+  /// No description provided for @accessSlideAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get accessSlideAppearance;
+
+  /// No description provided for @accessSlideAssistiveTechnologies.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistive technologies'**
+  String get accessSlideAssistiveTechnologies;
+
+  /// No description provided for @accessSlideLanguageSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Language support'**
+  String get accessSlideLanguageSupport;
+
+  /// No description provided for @supportSlideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help and support'**
+  String get supportSlideTitle;
+
+  /// No description provided for @supportSlideDocumentation.
+  ///
+  /// In en, this message translates to:
+  /// **'The official documentation covers many of the most common areas about {RELEASE}. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.'**
+  String supportSlideDocumentation(Object RELEASE);
+
+  /// No description provided for @supportSlideQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.'**
+  String get supportSlideQuestions;
+
+  /// No description provided for @supportSlideResources.
+  ///
+  /// In en, this message translates to:
+  /// **'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.'**
+  String get supportSlideResources;
+
+  /// No description provided for @includedSoftware.
+  ///
+  /// In en, this message translates to:
+  /// **'Included software'**
+  String get includedSoftware;
+
+  /// No description provided for @availableSoftware.
+  ///
+  /// In en, this message translates to:
+  /// **'Available software'**
+  String get availableSoftware;
+
+  /// No description provided for @supportedSoftware.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported software'**
+  String get supportedSoftware;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

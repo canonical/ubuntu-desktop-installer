@@ -67,3 +67,5 @@ flutter:
   assets:
     - assets/
     - assets/slides/
+    - assets/slides/icons/
+    - assets/slides/screenshots/
