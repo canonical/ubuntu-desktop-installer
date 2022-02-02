@@ -67,25 +67,25 @@ void main() {
       );
     }
 
-    await pumpLayout(tester);
-
-    final layout = find.byType(SlideLayout);
-    final content = find.text('content');
-    final image = find.text('image');
-    final background = find.byType(SizedBox);
-
-    expect(tester.getRect(content), isNot(equals(tester.getRect(layout))));
-    expect(tester.getRect(image), isNot(equals(tester.getRect(layout))));
-    expect(tester.getRect(background), equals(tester.getRect(layout)));
-
     await pumpLayout(
       tester,
       contentAlignment: Alignment.center,
       imageAlignment: Alignment.center,
     );
 
-    expect(tester.getCenter(content), equals(tester.getCenter(layout)));
-    expect(tester.getCenter(image), equals(tester.getCenter(layout)));
+    final layout = find.byType(SlideLayout);
+    final content = find.text('content');
+    final image = find.text('image');
+    final background = find.byType(SizedBox);
+
+    expect(
+      tester.getRect(content).intersect(tester.getRect(layout)),
+      equals(tester.getRect(content)),
+    );
+    expect(
+      tester.getRect(image).intersect(tester.getRect(layout)),
+      equals(tester.getRect(image)),
+    );
     expect(tester.getRect(background), equals(tester.getRect(layout)));
 
     await pumpLayout(
