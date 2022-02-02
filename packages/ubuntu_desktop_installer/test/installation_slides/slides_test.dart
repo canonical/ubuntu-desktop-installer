@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
@@ -251,12 +253,52 @@ void main() {
     });
 
     testWidgets('support', (tester) async {
+      final launches = <MethodCall>[];
+      var channel = const MethodChannel('plugins.flutter.io/url_launcher');
+      channel.setMockMethodCallHandler((methodCall) async {
+        launches.add(methodCall);
+      });
+      addTearDown((() => channel.setMockMethodCallHandler(null)));
+
       await pumpSlide(tester, 7);
       expectSlide(
         title: tester.lang.supportSlideTitle,
         description: tester.lang.supportSlideResources,
         background: 'welcome.png',
       );
+
+      void expectLaunchUrl(String label, String url) {
+        var found = false;
+        expect(find.byWidgetPredicate((widget) {
+          if (widget is RichText) {
+            if (!widget.text.visitChildren((visitor) {
+              if (visitor is TextSpan && visitor.text == label) {
+                if (!found) {
+                  found = true;
+                  (visitor.recognizer as TapGestureRecognizer).onTap!();
+                }
+                return false;
+              }
+              return true;
+            })) {
+              return true;
+            }
+          }
+          return false;
+        }), findsOneWidget);
+
+        expect(launches.length, equals(1));
+        expect(launches.single.method, equals('launch'));
+        expect(launches.single.arguments, contains('url'));
+        expect(launches.single.arguments['url'], equals(url));
+        launches.clear();
+      }
+
+      expectLaunchUrl('Ask Ubuntu', 'https://askubuntu.com');
+      expectLaunchUrl('Local Community Team', 'https://loco.ubuntu.com/teams');
+      expectLaunchUrl('Community support',
+          'https://www.ubuntu.com/support/community-support');
+      expectLaunchUrl('Commercial support', 'https://www.ubuntu.com/support');
     });
   });
 }

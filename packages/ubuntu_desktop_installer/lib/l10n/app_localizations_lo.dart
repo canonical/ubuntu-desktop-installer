@@ -706,14 +706,14 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <strong>online</strong> and via the Help icon in the dock.';
+    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <strong>Ask Ubuntu</strong> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <strong>Local Community Team</strong>.';
+  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <strong>Community support</strong> or <strong>Commercial support</strong>.';
+  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
   String get includedSoftware => 'Included software';

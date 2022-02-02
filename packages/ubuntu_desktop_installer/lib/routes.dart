@@ -1,5 +1,5 @@
 abstract class Routes {
-  static const initial = welcome;
+  static const initial = installationSlides;
   static const welcome = '/welcome';
   static const tryOrInstall = '/tryorinstall';
   static const turnOffRST = '/turnoffrst';

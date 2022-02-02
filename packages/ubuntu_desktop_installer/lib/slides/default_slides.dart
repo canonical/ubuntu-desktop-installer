@@ -395,7 +395,12 @@ class _SlideLabel extends StatelessWidget {
             color: Colors.white,
             fontSize: _fontSize,
             margin: EdgeInsets.zero,
-          )
+          ),
+          'a': Style(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            textDecoration: TextDecoration.none,
+          ),
         },
         onLinkTap: (url, _, __, ___) {
           if (url != null) {
