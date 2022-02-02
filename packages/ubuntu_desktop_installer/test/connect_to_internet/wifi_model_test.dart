@@ -372,7 +372,7 @@ void main() {
 
   test('cleanup access point', () {
     var wasNotified = false;
-    accessPoint.addListener(() => wasNotified = wasNotified = true);
+    accessPoint.addListener(() => wasNotified = true);
 
     accessPointChanged.add(['Strength']);
     expect(wasNotified, isTrue);
