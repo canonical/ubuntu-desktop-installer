@@ -115,8 +115,27 @@ void main() {
     expect(ApplicationStatus.fromJson(json), status);
   });
 
+  test('os prober', () {
+    const os = OsProber(
+      long: 'Windows Boot Manager',
+      label: 'Windows',
+      type: 'efi',
+      subpath: '/efi/Microsoft/Boot/bootmgfw.efi',
+      version: '11',
+    );
+    final json = <String, dynamic>{
+      'long': 'Windows Boot Manager',
+      'label': 'Windows',
+      'type': 'efi',
+      'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
+      'version': '11',
+    };
+    expect(os.toJson(), equals(json));
+    expect(OsProber.fromJson(json), os);
+  });
+
   test('partition', () {
-    const keyboard = Partition(
+    const partition = Partition(
       size: 1,
       number: 2,
       preserve: false,
@@ -125,6 +144,13 @@ void main() {
       mount: '/foo',
       format: 'bar',
       grubDevice: false,
+      os: OsProber(
+        long: 'Windows Boot Manager',
+        label: 'Windows',
+        type: 'efi',
+        subpath: '/efi/Microsoft/Boot/bootmgfw.efi',
+        version: '11',
+      ),
     );
     const json = <String, dynamic>{
       'size': 1,
@@ -135,9 +161,16 @@ void main() {
       'mount': '/foo',
       'format': 'bar',
       'grub_device': false,
+      'os': {
+        'long': 'Windows Boot Manager',
+        'label': 'Windows',
+        'type': 'efi',
+        'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
+        'version': '11',
+      },
     };
-    expect(keyboard.toJson(), equals(json));
-    expect(Partition.fromJson(json), keyboard);
+    expect(partition.toJson(), equals(json));
+    expect(Partition.fromJson(json), partition);
   });
 
   test('disk', () {
@@ -185,7 +218,7 @@ void main() {
   });
 
   test('guided choice', () {
-    const keyboard = GuidedChoice(
+    const choice = GuidedChoice(
       diskId: '0',
       useLvm: true,
       password: '2',
@@ -195,8 +228,8 @@ void main() {
       'use_lvm': true,
       'password': '2',
     };
-    expect(keyboard.toJson(), equals(json));
-    expect(GuidedChoice.fromJson(json), keyboard);
+    expect(choice.toJson(), equals(json));
+    expect(GuidedChoice.fromJson(json), choice);
   });
 
   test('wsl configuration base data', () {

@@ -2403,6 +2403,252 @@ abstract class _ApplicationStatus implements ApplicationStatus {
       throw _privateConstructorUsedError;
 }
 
+OsProber _$OsProberFromJson(Map<String, dynamic> json) {
+  return _OsProber.fromJson(json);
+}
+
+/// @nodoc
+class _$OsProberTearOff {
+  const _$OsProberTearOff();
+
+  _OsProber call(
+      {required String long,
+      required String label,
+      required String type,
+      String? subpath,
+      String? version}) {
+    return _OsProber(
+      long: long,
+      label: label,
+      type: type,
+      subpath: subpath,
+      version: version,
+    );
+  }
+
+  OsProber fromJson(Map<String, Object> json) {
+    return OsProber.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $OsProber = _$OsProberTearOff();
+
+/// @nodoc
+mixin _$OsProber {
+  String get long => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  String? get subpath => throw _privateConstructorUsedError;
+  String? get version => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OsProberCopyWith<OsProber> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OsProberCopyWith<$Res> {
+  factory $OsProberCopyWith(OsProber value, $Res Function(OsProber) then) =
+      _$OsProberCopyWithImpl<$Res>;
+  $Res call(
+      {String long,
+      String label,
+      String type,
+      String? subpath,
+      String? version});
+}
+
+/// @nodoc
+class _$OsProberCopyWithImpl<$Res> implements $OsProberCopyWith<$Res> {
+  _$OsProberCopyWithImpl(this._value, this._then);
+
+  final OsProber _value;
+  // ignore: unused_field
+  final $Res Function(OsProber) _then;
+
+  @override
+  $Res call({
+    Object? long = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? subpath = freezed,
+    Object? version = freezed,
+  }) {
+    return _then(_value.copyWith(
+      long: long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      subpath: subpath == freezed
+          ? _value.subpath
+          : subpath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
+  factory _$OsProberCopyWith(_OsProber value, $Res Function(_OsProber) then) =
+      __$OsProberCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String long,
+      String label,
+      String type,
+      String? subpath,
+      String? version});
+}
+
+/// @nodoc
+class __$OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
+    implements _$OsProberCopyWith<$Res> {
+  __$OsProberCopyWithImpl(_OsProber _value, $Res Function(_OsProber) _then)
+      : super(_value, (v) => _then(v as _OsProber));
+
+  @override
+  _OsProber get _value => super._value as _OsProber;
+
+  @override
+  $Res call({
+    Object? long = freezed,
+    Object? label = freezed,
+    Object? type = freezed,
+    Object? subpath = freezed,
+    Object? version = freezed,
+  }) {
+    return _then(_OsProber(
+      long: long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      subpath: subpath == freezed
+          ? _value.subpath
+          : subpath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _$_OsProber implements _OsProber {
+  const _$_OsProber(
+      {required this.long,
+      required this.label,
+      required this.type,
+      this.subpath,
+      this.version});
+
+  factory _$_OsProber.fromJson(Map<String, dynamic> json) =>
+      _$_$_OsProberFromJson(json);
+
+  @override
+  final String long;
+  @override
+  final String label;
+  @override
+  final String type;
+  @override
+  final String? subpath;
+  @override
+  final String? version;
+
+  @override
+  String toString() {
+    return 'OsProber(long: $long, label: $label, type: $type, subpath: $subpath, version: $version)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _OsProber &&
+            (identical(other.long, long) ||
+                const DeepCollectionEquality().equals(other.long, long)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.subpath, subpath) ||
+                const DeepCollectionEquality()
+                    .equals(other.subpath, subpath)) &&
+            (identical(other.version, version) ||
+                const DeepCollectionEquality().equals(other.version, version)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(long) ^
+      const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(subpath) ^
+      const DeepCollectionEquality().hash(version);
+
+  @JsonKey(ignore: true)
+  @override
+  _$OsProberCopyWith<_OsProber> get copyWith =>
+      __$OsProberCopyWithImpl<_OsProber>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_OsProberToJson(this);
+  }
+}
+
+abstract class _OsProber implements OsProber {
+  const factory _OsProber(
+      {required String long,
+      required String label,
+      required String type,
+      String? subpath,
+      String? version}) = _$_OsProber;
+
+  factory _OsProber.fromJson(Map<String, dynamic> json) = _$_OsProber.fromJson;
+
+  @override
+  String get long => throw _privateConstructorUsedError;
+  @override
+  String get label => throw _privateConstructorUsedError;
+  @override
+  String get type => throw _privateConstructorUsedError;
+  @override
+  String? get subpath => throw _privateConstructorUsedError;
+  @override
+  String? get version => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$OsProberCopyWith<_OsProber> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Partition _$PartitionFromJson(Map<String, dynamic> json) {
   return _Partition.fromJson(json);
 }
@@ -2419,7 +2665,8 @@ class _$PartitionTearOff {
       List<String>? annotations = const [],
       String? mount,
       String? format,
-      bool? grubDevice}) {
+      bool? grubDevice,
+      OsProber? os}) {
     return _Partition(
       size: size,
       number: number,
@@ -2429,6 +2676,7 @@ class _$PartitionTearOff {
       mount: mount,
       format: format,
       grubDevice: grubDevice,
+      os: os,
     );
   }
 
@@ -2451,6 +2699,7 @@ mixin _$Partition {
   String? get mount => throw _privateConstructorUsedError;
   String? get format => throw _privateConstructorUsedError;
   bool? get grubDevice => throw _privateConstructorUsedError;
+  OsProber? get os => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2470,7 +2719,10 @@ abstract class $PartitionCopyWith<$Res> {
       List<String>? annotations,
       String? mount,
       String? format,
-      bool? grubDevice});
+      bool? grubDevice,
+      OsProber? os});
+
+  $OsProberCopyWith<$Res>? get os;
 }
 
 /// @nodoc
@@ -2491,6 +2743,7 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
     Object? mount = freezed,
     Object? format = freezed,
     Object? grubDevice = freezed,
+    Object? os = freezed,
   }) {
     return _then(_value.copyWith(
       size: size == freezed
@@ -2525,7 +2778,22 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
           ? _value.grubDevice
           : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
+      os: os == freezed
+          ? _value.os
+          : os // ignore: cast_nullable_to_non_nullable
+              as OsProber?,
     ));
+  }
+
+  @override
+  $OsProberCopyWith<$Res>? get os {
+    if (_value.os == null) {
+      return null;
+    }
+
+    return $OsProberCopyWith<$Res>(_value.os!, (value) {
+      return _then(_value.copyWith(os: value));
+    });
   }
 }
 
@@ -2543,7 +2811,11 @@ abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
       List<String>? annotations,
       String? mount,
       String? format,
-      bool? grubDevice});
+      bool? grubDevice,
+      OsProber? os});
+
+  @override
+  $OsProberCopyWith<$Res>? get os;
 }
 
 /// @nodoc
@@ -2565,6 +2837,7 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
     Object? mount = freezed,
     Object? format = freezed,
     Object? grubDevice = freezed,
+    Object? os = freezed,
   }) {
     return _then(_Partition(
       size: size == freezed
@@ -2599,13 +2872,17 @@ class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
           ? _value.grubDevice
           : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
+      os: os == freezed
+          ? _value.os
+          : os // ignore: cast_nullable_to_non_nullable
+              as OsProber?,
     ));
   }
 }
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_Partition implements _Partition {
   const _$_Partition(
       {this.size,
@@ -2615,7 +2892,8 @@ class _$_Partition implements _Partition {
       this.annotations = const [],
       this.mount,
       this.format,
-      this.grubDevice});
+      this.grubDevice,
+      this.os});
 
   factory _$_Partition.fromJson(Map<String, dynamic> json) =>
       _$_$_PartitionFromJson(json);
@@ -2638,10 +2916,12 @@ class _$_Partition implements _Partition {
   final String? format;
   @override
   final bool? grubDevice;
+  @override
+  final OsProber? os;
 
   @override
   String toString() {
-    return 'Partition(size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice)';
+    return 'Partition(size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, os: $os)';
   }
 
   @override
@@ -2666,7 +2946,9 @@ class _$_Partition implements _Partition {
                 const DeepCollectionEquality().equals(other.format, format)) &&
             (identical(other.grubDevice, grubDevice) ||
                 const DeepCollectionEquality()
-                    .equals(other.grubDevice, grubDevice)));
+                    .equals(other.grubDevice, grubDevice)) &&
+            (identical(other.os, os) ||
+                const DeepCollectionEquality().equals(other.os, os)));
   }
 
   @override
@@ -2679,7 +2961,8 @@ class _$_Partition implements _Partition {
       const DeepCollectionEquality().hash(annotations) ^
       const DeepCollectionEquality().hash(mount) ^
       const DeepCollectionEquality().hash(format) ^
-      const DeepCollectionEquality().hash(grubDevice);
+      const DeepCollectionEquality().hash(grubDevice) ^
+      const DeepCollectionEquality().hash(os);
 
   @JsonKey(ignore: true)
   @override
@@ -2701,7 +2984,8 @@ abstract class _Partition implements Partition {
       List<String>? annotations,
       String? mount,
       String? format,
-      bool? grubDevice}) = _$_Partition;
+      bool? grubDevice,
+      OsProber? os}) = _$_Partition;
 
   factory _Partition.fromJson(Map<String, dynamic> json) =
       _$_Partition.fromJson;
@@ -2723,6 +3007,8 @@ abstract class _Partition implements Partition {
   String? get format => throw _privateConstructorUsedError;
   @override
   bool? get grubDevice => throw _privateConstructorUsedError;
+  @override
+  OsProber? get os => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PartitionCopyWith<_Partition> get copyWith =>
