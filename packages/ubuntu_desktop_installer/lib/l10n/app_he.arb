@@ -444,5 +444,92 @@
   "whereAreYouLocationLabel": "מיקום",
   "@whereAreYouLocationLabel": {},
   "whereAreYouPageTitle": "עם מי יש לי העונג?",
-  "@whereAreYouPageTitle": {}
+  "@whereAreYouPageTitle": {},
+  "welcomeSlideTitle": "ברוך בואך אל {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideTitle": "המוזיקה שלך הולכת איתך",
+  "@musicSlideTitle": {},
+  "photoSlideShotcut": "עורך הווידאו Shotcut",
+  "@photoSlideShotcut": {},
+  "photoSlideShotwell": "מנהל התמונות Shotwell",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "עורך התמונות GIMP",
+  "@photoSlideGimp": {},
+  "webSlideTitle": "להפיק מהאינטרנט כמה שיותר",
+  "@webSlideTitle": {},
+  "musicSlideRhythmbox": "נגן המוזיקה Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "softwareSlideTitle": "מגוון רחב של תוכנות",
+  "@softwareSlideTitle": {},
+  "musicSlideDescription": "כחלק מההיצע של {RELEASE} ניתן למצוא את נגן המוזיקה Rhythmbox. אפשרויות הנגינה המתקדמות שלו מאפשרות לך להכין רשימות עם השירים הכי מושלמים שיש. הוא עובד נפלא עם תקליטורים ונגני מוזיקה ניידים, כך שכל המוזיקה שלך יכולה ללוות אותך לכל מקום.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideTitle": "להשתולל עם תמונות",
+  "@photoSlideTitle": {},
+  "accessSlideAssistiveTechnologies": "טכנולוגיות מסייעות",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "תמיכה בשפות",
+  "@accessSlideLanguageSupport": {},
+  "accessSlideTitle": "גישה לכולם",
+  "@accessSlideTitle": {},
+  "officeSlideTitle": "כל מה שנחוץ למשרד",
+  "@officeSlideTitle": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {},
+  "supportSlideTitle": "עזרה ותמיכה",
+  "@supportSlideTitle": {},
+  "availableSoftware": "תוכנות זמינות",
+  "@availableSoftware": {},
+  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ב־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "welcomeSlideDescription": "עם מהירות משופרת ומגוון יכולות, המהדורה העדכנית של {RELEASE} מקלה על השימוש במחשב יותר מאי פעם. בהמשך מופיעים מגוון דברים מרתקים ששווה לצפות להם…",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideAppearance": "מראה",
+  "@accessSlideAppearance": {},
+  "webSlideFirefox": "דפדפן האינטרנט Firefox",
+  "@webSlideFirefox": {},
+  "accessSlideCustomizationOptions": "אפשרויות התאמה",
+  "@accessSlideCustomizationOptions": {},
+  "supportedSoftware": "תוכנות נתמכות",
+  "@supportedSoftware": {},
+  "supportSlideResources": "לקבלת הכוונות למשאבים שימושיים נפוצים, מומלץ לפנות ל<a href=\"https://www.ubuntu.com/support/community-support\">תמיכה הקהילתית</a> או ל<a href=\"https://www.ubuntu.com/support\">תמיכה המסחרית</a>.",
+  "@supportSlideResources": {},
+  "includedSoftware": "תוכנות מצורפות",
+  "@includedSoftware": {},
+  "softwareSlideDescription": "לא צריך עוד לחפש תוכנות חדשות באינטרנט. הגישה לחנות Snap ולארכיון התוכנות של {RELEASE} מאפשרת לאתר ולהתקין יישומים חדשים בקלות. יש רק להקליד את מבוקשך או לחקור קטגוריות כגון גרפיקה וצילום, משחקים והפקה, לצד סקירות מועילות של משתמשים אחרים.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "ב־<a href=\"https://askubuntu.com\">Ask Ubuntu</a> אפשר לשאול שאלות ולחפש במאגר מרשים של שאלות שנענו. יתכן ש<a href=\"https://loco.ubuntu.com/teams\">צוות הקהילה המקומית</a> שלך מספק תמיכה בשפה שנוחה לך.",
+  "@supportSlideQuestions": {},
+  "photoSlideDescription": "Shotwell הוא מנהל תמונות שימושי עם הכנה לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנה של אובונטו.",
+  "@photoSlideDescription": {}
 }
