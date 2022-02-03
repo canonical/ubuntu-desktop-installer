@@ -460,7 +460,7 @@
   },
   "musicSlideVLC": "VLC",
   "@musicSlideVLC": {},
-  "photoSlideTitle": "Baw się dobrze ze swoimi zdjęciami",
+  "photoSlideTitle": "Baw się dobrze swoimi zdjęciami",
   "@photoSlideTitle": {},
   "photoSlideDescription": "Shotwell to poręczny menedżer zdjęć, który jest przygotowany na Twoje gadżety. Podłącz aparat lub telefon, aby przesyłać zdjęcia, a następnie łatwo je udostępniać i chronić. A jeśli czujesz się kreatywnie, możesz znaleźć wiele innych aplikacji do zdjęć w Ubuntu Software.",
   "@photoSlideDescription": {},
@@ -525,7 +525,7 @@
   "@musicSlideRhythmbox": {},
   "musicSlideSpotify": "Spotify",
   "@musicSlideSpotify": {},
-  "softwareSlideDescription": "Pożegnaj się z przeszukiwaniem sieci w poszukiwaniu nowego oprogramowania. Dzięki dostępowi do Snap Store i archiwum oprogramowania {RELEASE} możesz z łatwością znajdować i instalować nowe aplikacje. Po prostu wpisz to, czego szukasz, lub przejrzyj kategorie, takie jak Grafika i fotografia, Gry i produktywność, a także pomocne recenzje od innych użytkowników.",
+  "softwareSlideDescription": "Pożegnaj się z przeszukiwaniem sieci w poszukiwaniu nowego oprogramowania. Dzięki dostępowi do Snap Store i archiwum oprogramowania {RELEASE} możesz z łatwością znajdować i instalować nowe aplikacje. Po prostu wpisz, czego szukasz, lub przejrzyj kategorie, takie jak Grafika i fotografia, Gry i produktywność, a także pomocne recenzje od innych użytkowników.",
   "@softwareSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -550,7 +550,7 @@
       "RELEASE": {}
     }
   },
-  "supportSlideQuestions": "W serwisie <a href=\"https://askubuntu.com\">Ask Ubuntu</a> można zadawać pytania i przeszukiwać imponującą kolekcję już udzielonych odpowiedzi. Pomoc techniczna w Twoim języku może być świadczona w wybranym <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.",
+  "supportSlideQuestions": "W anglojęzycznym serwisie <a href=\"https://askubuntu.com\">Ask Ubuntu</a> można zadawać pytania i przeszukiwać imponującą kolekcję już udzielonych odpowiedzi. Wsparcie w Twoim języku może być zapewnione w wybranym <a href=\"https://loco.ubuntu.com/teams\">Zespole lokalnej społeczności</a>.",
   "@supportSlideQuestions": {},
   "includedSoftware": "Dołączone oprogramowanie",
   "@includedSoftware": {}
