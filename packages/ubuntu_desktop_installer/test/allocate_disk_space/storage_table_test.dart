@@ -19,6 +19,15 @@ void main() {
       Partition(number: 2, size: 3322)
     ],
   );
+  const sdd = Disk(
+    path: '/dev/sdd',
+    size: 44,
+    partitions: [
+      Partition(number: 1, size: 4411),
+      Partition(number: 2, size: 4422),
+      Partition(number: 3, size: 4433)
+    ],
+  );
 
   final pathColumn = StorageColumn(
     titleBuilder: (_) => const Text('path'),
@@ -43,7 +52,7 @@ void main() {
     return MaterialApp(
       home: StorageTable(
         columns: columns,
-        storages: [sda, sdb, sdc],
+        storages: [sda, sdb, sdc, sdd],
         canSelect: canSelect,
         isSelected: isSelected,
         onSelected: onSelected,
@@ -55,63 +64,87 @@ void main() {
     await tester.pumpWidget(buildTable([pathColumn, sizeColumn]));
 
     expect(find.text('path'), findsOneWidget);
+    // sda
     expect(find.text('/dev/sda'), findsOneWidget);
+    // sdb
     expect(find.text('/dev/sdb'), findsOneWidget);
     expect(find.text('/dev/sdb1'), findsOneWidget);
+    // sdc
     expect(find.text('/dev/sdc'), findsOneWidget);
     expect(find.text('/dev/sdc1'), findsOneWidget);
     expect(find.text('/dev/sdc2'), findsOneWidget);
+    // sdd
+    expect(find.text('/dev/sdd'), findsOneWidget);
+    expect(find.text('/dev/sdd1'), findsOneWidget);
+    expect(find.text('/dev/sdd2'), findsOneWidget);
+    expect(find.text('/dev/sdd3'), findsOneWidget);
 
     expect(find.text('size'), findsOneWidget);
+    // sda
     expect(find.text('11b'), findsOneWidget);
+    // sdb
     expect(find.text('22b'), findsOneWidget);
     expect(find.text('2211b'), findsOneWidget);
+    // sdc
     expect(find.text('33b'), findsOneWidget);
     expect(find.text('3311b'), findsOneWidget);
     expect(find.text('3322b'), findsOneWidget);
+    // sdd
+    expect(find.text('44b'), findsOneWidget);
+    expect(find.text('4411b'), findsOneWidget);
+    expect(find.text('4422b'), findsOneWidget);
+    expect(find.text('4433b'), findsOneWidget);
   });
 
-  testWidgets('selection', (tester) async {
+  testWidgets('disk selection', (tester) async {
+    int? selectedDisk;
+
+    await tester.pumpWidget(buildTable(
+      [pathColumn, sizeColumn],
+      canSelect: (disk, [partition = -1]) => disk == 1, // sdb
+      isSelected: (disk, [partition = -1]) => disk == 2, // sdc
+      onSelected: (disk, [partition = -1]) => selectedDisk = disk,
+    ));
+
+    // cannot select
+    await tester.tap(find.text('/dev/sda'));
+    await tester.pump();
+    expect(selectedDisk, isNull);
+
+    // can select
+    await tester.tap(find.text('/dev/sdb'));
+    await tester.pump();
+    expect(selectedDisk, equals(1));
+
+    selectedDisk = null;
+
+    // cannot unselect
+    await tester.tap(find.text('/dev/sdc'));
+    await tester.pump();
+    expect(selectedDisk, isNull);
+
+    // cannot select
+    await tester.tap(find.text('/dev/sdd'));
+    await tester.pump();
+    expect(selectedDisk, isNull);
+  });
+
+  testWidgets('partition selection', (tester) async {
     int? selectedDisk;
     int? selectedPartition;
 
     await tester.pumpWidget(buildTable(
       [pathColumn, sizeColumn],
-      canSelect: (disk, [partition = -1]) {
-        return disk == 1 || partition == 1;
-      },
-      isSelected: (disk, [partition = -1]) => disk == 2 || partition == 2,
+      canSelect: (disk, [partition = -1]) =>
+          disk == 1 || partition == 1, // sdb1, sdc2, sdd2
+      isSelected: (disk, [partition = -1]) => partition == 2, // sdd3
       onSelected: (disk, [partition = -1]) {
         selectedDisk = disk;
         selectedPartition = partition;
       },
     ));
 
-    // cannot select disk
-    await tester.tap(find.text('/dev/sda'));
-    await tester.pump();
-    expect(selectedDisk, isNull);
-    expect(selectedPartition, isNull);
-
-    selectedDisk = null;
-    selectedPartition = null;
-
-    // can select disk
-    await tester.tap(find.text('/dev/sdb'));
-    await tester.pump();
-    expect(selectedDisk, equals(1));
-    expect(selectedPartition, equals(-1));
-
-    selectedDisk = null;
-    selectedPartition = null;
-
-    // cannot unselect disk
-    await tester.tap(find.text('/dev/sdc'));
-    await tester.pump();
-    expect(selectedDisk, isNull);
-    expect(selectedPartition, isNull);
-
-    // can select partition
+    // can select
     await tester.tap(find.text('/dev/sdb1'));
     await tester.pump();
     expect(selectedDisk, equals(1));
@@ -120,17 +153,23 @@ void main() {
     selectedDisk = null;
     selectedPartition = null;
 
-    // cannot select partition
+    // cannot select
     await tester.tap(find.text('/dev/sdc1'));
     await tester.pump();
     expect(selectedDisk, isNull);
     expect(selectedPartition, isNull);
 
+    // can select
+    await tester.tap(find.text('/dev/sdc2'));
+    await tester.pump();
+    expect(selectedDisk, equals(2));
+    expect(selectedPartition, equals(1));
+
     selectedDisk = null;
     selectedPartition = null;
 
-    // cannot unselect partition
-    await tester.tap(find.text('/dev/sdc2'));
+    // cannot unselect
+    await tester.tap(find.text('/dev/sdd3'));
     await tester.pump();
     expect(selectedDisk, isNull);
     expect(selectedPartition, isNull);
