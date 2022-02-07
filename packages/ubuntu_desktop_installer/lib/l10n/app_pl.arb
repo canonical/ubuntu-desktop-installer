@@ -553,5 +553,11 @@
   "supportSlideQuestions": "W anglojęzycznym serwisie <a href=\"https://askubuntu.com\">Ask Ubuntu</a> można zadawać pytania i przeszukiwać imponującą kolekcję już udzielonych odpowiedzi. Wsparcie w Twoim języku może być zapewnione w wybranym <a href=\"https://loco.ubuntu.com/teams\">Zespole lokalnej społeczności</a>.",
   "@supportSlideQuestions": {},
   "includedSoftware": "Dołączone oprogramowanie",
-  "@includedSoftware": {}
+  "@includedSoftware": {},
+  "hiddenWifiNetworkNameLabel": "Nazwa sieci",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetwork": "Połącz się z ukrytą siecią Wi-Fi",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameRequired": "Wymagana jest nazwa sieci",
+  "@hiddenWifiNetworkNameRequired": {}
 }
