@@ -40,7 +40,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get welcome => 'Vítejte';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Zvolte svůj jazyk:';
 
   @override
   String get tryOrInstallPageTitle => 'Vyzkoušet nebo nainstalovat';
@@ -591,13 +591,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get restartIntoWindows => 'Restartovat do Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Kde se nacházíte?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Umístění';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Časové pásmo';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
