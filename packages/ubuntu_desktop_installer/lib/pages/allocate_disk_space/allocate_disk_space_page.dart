@@ -81,11 +81,15 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
           const SizedBox(height: kContentSpacing / 2),
           const PartitionButtonRow(),
           const SizedBox(height: kContentSpacing),
-          StorageSelector(
-            title: lang.bootLoaderDevice,
-            storages: model.disks,
-            selected: model.bootDiskIndex,
-            onSelected: (storage) => model.selectBootDisk(storage!),
+          FractionallySizedBox(
+            widthFactor: 0.5,
+            alignment: Alignment.topLeft,
+            child: StorageSelector(
+              title: lang.bootLoaderDevice,
+              storages: model.disks,
+              selected: model.bootDiskIndex,
+              onSelected: (storage) => model.selectBootDisk(storage!),
+            ),
           ),
         ],
       ),
