@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_icons/yaru_icons.dart';
 
 import '../../l10n.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
+import 'storage_columns.dart';
+import 'storage_table.dart';
+import 'storage_types.dart';
 
 class PartitionBar extends StatelessWidget {
   PartitionBar({Key? key}) : super(key: key);
@@ -164,135 +166,27 @@ class PartitionTable extends StatelessWidget {
 
   final AutoScrollController controller;
 
-  List<DataRow> _buildDataRows({
-    required AllocateDiskSpaceModel model,
-    required int diskIndex,
-  }) {
-    final disk = model.disks[diskIndex];
-    return <DataRow>[
-      DataRow.byIndex(
-        index: diskIndex,
-        selected: model.isStorageSelected(diskIndex),
-        onSelectChanged: (selected) {
-          if (selected == true) model.selectStorage(diskIndex);
-        },
-        cells: <DataCell>[
-          DataCell(
-            SizedBox(
-              height: kMinInteractiveDimension,
-              child: AutoScrollTag(
-                controller: controller,
-                index: hashList([diskIndex, -1]),
-                key: ValueKey(hashList([diskIndex, -1])),
-                child: Row(children: [
-                  const Icon(YaruIcons.drive_harddisk_filled),
-                  const SizedBox(width: 16),
-                  Text(disk.path ?? disk.id ?? ''),
-                ]),
-              ),
-            ),
-          ),
-          const DataCell(SizedBox.shrink()),
-          const DataCell(SizedBox.shrink()),
-          DataCell(Text(disk.prettySize)),
-          DataCell(Text(disk.ptable ?? '')),
-          const DataCell(SizedBox.shrink()),
-        ],
-      ),
-      for (var partitionIndex = 0;
-          partitionIndex < (disk.partitions?.length ?? 0);
-          ++partitionIndex)
-        DataRow(
-          key: ValueKey(hashList([diskIndex, partitionIndex])),
-          selected: model.isStorageSelected(diskIndex, partitionIndex),
-          onSelectChanged: (selected) {
-            if (selected == true) {
-              model.selectStorage(diskIndex, partitionIndex);
-            }
-          },
-          cells: <DataCell>[
-            DataCell(
-              SizedBox(
-                height: kMinInteractiveDimension,
-                child: AutoScrollTag(
-                  controller: controller,
-                  index: hashList([diskIndex, partitionIndex]),
-                  key: ValueKey(hashList([diskIndex, partitionIndex])),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 40),
-                    child: Row(
-                      children: [
-                        const Icon(YaruIcons.drive_harddisk),
-                        const SizedBox(width: 16),
-                        Text(
-                            '${disk.path}${disk.partitions![partitionIndex].number}'),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            DataCell(Text(disk.partitions![partitionIndex].format ?? '')),
-            DataCell(Text(disk.partitions![partitionIndex].mount ?? '')),
-            DataCell(Text(disk.partitions![partitionIndex].prettySize)),
-            DataCell(Text(disk.partitions![partitionIndex].grubDevice == true
-                ? 'boot'
-                : '')),
-            DataCell(
-              Checkbox(
-                value: disk.partitions![partitionIndex].wipe == true,
-                onChanged: disk.partitions![partitionIndex].canWipe
-                    ? (v) {
-                        model.editPartition(
-                            disk, disk.partitions![partitionIndex],
-                            wipe: v!);
-                      }
-                    : null,
-              ),
-            ),
-          ],
-        ),
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
-    final lang = AppLocalizations.of(context);
-    return RoundedContainer(
-      child: LayoutBuilder(builder: (context, constraints) {
-        return OverflowBox(
-          maxWidth: double.infinity,
-          alignment: Alignment.topLeft,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minWidth: constraints.minWidth),
-            child: SingleChildScrollView(
-              controller: controller,
-              child: DataTable(
-                showCheckboxColumn: false,
-                headingTextStyle: Theme.of(context).textTheme.subtitle2,
-                dataTextStyle: Theme.of(context).textTheme.bodyText2,
-                columns: <DataColumn>[
-                  DataColumn(label: Text(lang.diskHeadersDevice)),
-                  DataColumn(label: Text(lang.diskHeadersType)),
-                  DataColumn(label: Text(lang.diskHeadersMountPoint)),
-                  DataColumn(label: Text(lang.diskHeadersSize)),
-                  DataColumn(label: Text(lang.diskHeadersSystem)),
-                  DataColumn(label: Text(lang.diskHeadersFormat)),
-                ],
-                rows: List.generate(
-                        model.disks.length,
-                        (index) =>
-                            _buildDataRows(model: model, diskIndex: index))
-                    .fold<List<DataRow>>([], (allRows, diskRows) {
-                  allRows.addAll(diskRows);
-                  return allRows;
-                }).toList(),
-              ),
-            ),
-          ),
-        );
-      }),
+    return StorageTable(
+      columns: [
+        StorageDeviceColumn(),
+        StorageTypeColumn(),
+        StorageMountColumn(),
+        StorageSizeColumn(),
+        StorageSystemColumn(),
+        StorageWipeColumn(
+          onWipe: (disk, partition, wipe) {
+            model.editPartition(disk, partition, wipe: wipe);
+          },
+        ),
+      ],
+      storages: model.disks,
+      controller: controller,
+      canSelect: model.canSelectStorage,
+      isSelected: model.isStorageSelected,
+      onSelected: model.selectStorage,
     );
   }
 }

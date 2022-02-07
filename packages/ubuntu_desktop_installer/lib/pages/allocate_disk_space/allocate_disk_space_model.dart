@@ -1,13 +1,10 @@
 import 'dart:async';
 
-import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
-
-export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 /// The default mount points for auto-completion.
 const kDefaultMountPoints = <String>[
@@ -200,6 +197,9 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the disk or its partition can be selected.
+  bool canSelectStorage(int diskIndex, [int partitionIndex = -1]) => true;
+
   /// Selects the specified disk or its partition.
   void selectStorage(int diskIndex, [int partitionIndex = -1]) {
     if (isStorageSelected(diskIndex, partitionIndex)) {
@@ -259,13 +259,4 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
     _selectionController.close();
     super.dispose();
   }
-}
-
-extension DiskExtension on Disk {
-  String get prettySize => filesize(size ?? 0);
-}
-
-extension PartitionExtension on Partition {
-  bool get canWipe => preserve == true && mount != null;
-  String get prettySize => filesize(size ?? 0);
 }

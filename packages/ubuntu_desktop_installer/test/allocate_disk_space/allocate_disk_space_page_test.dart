@@ -8,6 +8,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
+import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
@@ -80,6 +81,7 @@ AllocateDiskSpaceModel buildModel({
   when(model.selectedPartitionIndex).thenReturn(selectedPartitionIndex ?? 0);
   when(model.onSelectionChanged).thenAnswer((_) => selection.stream);
   when(model.isStorageSelected(any, any)).thenReturn(false);
+  when(model.canSelectStorage(any, any)).thenReturn(true);
 
   when(model.canAddPartition).thenReturn(canAddPartition ?? false);
   when(model.canRemovePartition).thenReturn(canRemovePartition ?? false);
