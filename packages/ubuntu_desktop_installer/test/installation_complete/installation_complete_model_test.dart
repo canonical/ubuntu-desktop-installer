@@ -10,7 +10,7 @@ void main() async {
 
     var windowClosed = false;
     final methodChannel = MethodChannel('ubuntu_wizard');
-    methodChannel.setMockMethodCallHandler((call) {
+    methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;
     });
@@ -28,7 +28,7 @@ void main() async {
 
     var windowClosed = false;
     final methodChannel = MethodChannel('ubuntu_wizard');
-    methodChannel.setMockMethodCallHandler((call) {
+    methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;
     });

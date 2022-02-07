@@ -297,6 +297,7 @@ class Geodata implements GeoSource {
     } on XmlException {
       log.error('Invalid GeoIP data: $xml');
     }
+    return null;
   }
 
   @override
@@ -395,6 +396,7 @@ class GeoIP {
         log.error('GeoIP lookup error: ${e.message}');
       }
     }
+    return null;
   }
 
   /// Cancels an ongoing lookup.
