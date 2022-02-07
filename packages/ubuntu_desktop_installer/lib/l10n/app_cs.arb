@@ -491,5 +491,13 @@
     "placeholders": {
       "color": {}
     }
-  }
+  },
+  "welcomeHeader": "Zvolte svůj jazyk:",
+  "@welcomeHeader": {},
+  "whereAreYouPageTitle": "Kde se nacházíte?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouTimezoneLabel": "Časové pásmo",
+  "@whereAreYouTimezoneLabel": {},
+  "whereAreYouLocationLabel": "Umístění",
+  "@whereAreYouLocationLabel": {}
 }
