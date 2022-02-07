@@ -157,6 +157,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get selectWifiNetwork => 'ഒരു Wi-Fi നെറ്റ്‌വർക്കിലേക്ക് ബന്ധിപ്പിക്കുക';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'എനിക്ക് ഇപ്പോൾ ഇന്റർനെറ്റിലേക്ക് ബന്ധിപ്പിക്കാൻ താൽപ്പര്യമില്ല';
 
   @override

@@ -157,6 +157,15 @@ class AppLocalizationsBn extends AppLocalizations {
   String get selectWifiNetwork => 'Connect to a Wi-Fi network';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'I don\'t want to connect to the internet just now';
 
   @override

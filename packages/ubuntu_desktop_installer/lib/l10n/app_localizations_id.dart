@@ -157,6 +157,15 @@ class AppLocalizationsId extends AppLocalizations {
   String get selectWifiNetwork => 'Menyambung ke suatu jaringan Wi-Fi';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'Saya tidak ingin tersambung ke internet saat ini';
 
   @override

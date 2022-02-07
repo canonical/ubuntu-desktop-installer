@@ -157,6 +157,15 @@ class AppLocalizationsPl extends AppLocalizations {
   String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
 
   @override

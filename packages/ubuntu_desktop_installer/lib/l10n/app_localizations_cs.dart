@@ -157,6 +157,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get selectWifiNetwork => 'Připojit k Wi-Fi síti';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'V tuto chvíli se nechci připojovat k Internetu';
 
   @override

@@ -11,6 +11,8 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_in
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_internet_page.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
+import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_view.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -24,6 +26,7 @@ import 'connect_to_internet_page_test.mocks.dart';
   ConnectToInternetModel,
   EthernetModel,
   EthernetDevice,
+  HiddenWifiModel,
   NetworkService,
   UdevDeviceInfo,
   UdevService,
@@ -75,11 +78,25 @@ void main() {
     when(wifiModel.isConnecting).thenReturn(false);
     when(wifiModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
+    final hiddenWifiModel = MockHiddenWifiModel();
+    when(hiddenWifiModel.connectMode).thenReturn(ConnectMode.hiddenWifi);
+    when(hiddenWifiModel.ssid).thenReturn('ssid');
+    when(hiddenWifiModel.isEnabled).thenReturn(wifi ?? true);
+    when(hiddenWifiModel.devices).thenReturn([wifiDevice]);
+    when(hiddenWifiModel.isSelectedDevice(any)).thenReturn(false);
+    when(hiddenWifiModel.hasActiveConnection).thenReturn(wifi ?? false);
+    when(hiddenWifiModel.canConnect).thenReturn(true);
+    when(hiddenWifiModel.isConnected).thenReturn(true);
+    when(hiddenWifiModel.isConnecting).thenReturn(false);
+    when(hiddenWifiModel.onAvailabilityChanged)
+        .thenAnswer((_) => Stream.empty());
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ConnectToInternetModel>.value(value: model),
         ChangeNotifierProvider<EthernetModel>.value(value: ethernetModel),
         ChangeNotifierProvider<WifiModel>.value(value: wifiModel),
+        ChangeNotifierProvider<HiddenWifiModel>.value(value: hiddenWifiModel),
         ChangeNotifierProvider<NoConnectModel>(create: (_) => NoConnectModel()),
       ],
       child: const ConnectToInternetPage(),
@@ -100,6 +117,11 @@ void main() {
     expect(wifiTile, findsOneWidget);
     await tester.tap(wifiTile);
     expect(model.connectMode, ConnectMode.wifi);
+
+    final hiddenWifiTile = find.byType(HiddenWifiRadioButton);
+    expect(hiddenWifiTile, findsOneWidget);
+    await tester.tap(hiddenWifiTile);
+    expect(model.connectMode, ConnectMode.hiddenWifi);
 
     final noConnectTile = find.byWidgetPredicate((widget) =>
         widget is RadioButton<ConnectMode> && widget.value == ConnectMode.none);
@@ -233,5 +255,6 @@ void main() {
     expect(Provider.of<NoConnectModel>(context, listen: false), isNotNull);
     expect(Provider.of<EthernetModel>(context, listen: false), isNotNull);
     expect(Provider.of<WifiModel>(context, listen: false), isNotNull);
+    expect(Provider.of<HiddenWifiModel>(context, listen: false), isNotNull);
   });
 }

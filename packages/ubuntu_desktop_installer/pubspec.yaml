@@ -24,7 +24,7 @@ dependencies:
   glibc:
     path: ../glibc
   intl: ^0.17.0
-  nm: ^0.4.1
+  nm: ^0.4.3
   provider: ^6.0.0
   safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
