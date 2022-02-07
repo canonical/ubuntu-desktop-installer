@@ -63,6 +63,7 @@ void main() {
     expect(languageList, findsOneWidget);
 
     final settings = Settings.of(tester.element(languageList), listen: false);
+    expect(settings.locale.languageCode, 'en');
 
     final listItems = find.descendant(
         of: languageList, matching: find.byType(ListTile), skipOffstage: false);
@@ -78,17 +79,38 @@ void main() {
     final itemEnglish =
         find.widgetWithText(ListTile, 'English', skipOffstage: false);
     expect(itemEnglish, findsOneWidget);
-    expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
-    expect(settings.locale.languageCode, 'en');
+
+    final itemItalian =
+        find.widgetWithText(ListTile, 'Italiano', skipOffstage: false);
+    expect(itemItalian, findsOneWidget);
 
     final itemFrench =
         find.widgetWithText(ListTile, 'Français', skipOffstage: false);
     expect(itemFrench, findsOneWidget);
-    expect((itemFrench.evaluate().single.widget as ListTile).selected, false);
 
-    await tester.ensureVisible(itemFrench);
+    // scroll forward to Italian
+    await tester.scrollUntilVisible(itemItalian, -kMinInteractiveDimension / 2);
+    await tester.pump();
+    await tester.tap(itemItalian);
+    await tester.pump();
+    expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
+    expect(settings.locale.languageCode, 'it');
+
+    // scroll backward to English
+    await tester.scrollUntilVisible(itemEnglish, kMinInteractiveDimension / 2);
+    await tester.pump();
+    await tester.tap(itemEnglish);
+    await tester.pump();
+    expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
+    expect(settings.locale.languageCode, 'en');
+
+    // scroll forward to French
+    await tester.scrollUntilVisible(itemFrench, -kMinInteractiveDimension / 2);
+    await tester.pump();
     await tester.tap(itemFrench);
     await tester.pump();
+
+    expect((itemItalian.evaluate().single.widget as ListTile).selected, false);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
     expect(settings.locale.languageCode, 'fr');

@@ -33,5 +33,38 @@
   "profileSetupUsernameInvalid": "Ce nom d'utilisateur est invalide",
   "@profileSetupUsernameInvalid": {},
   "profileSetupPasswordRequired": "Un mot de passe est requis",
-  "@profileSetupPasswordRequired": {}
+  "@profileSetupPasswordRequired": {},
+  "advancedSetupTitle": "Installation avancée",
+  "@advancedSetupTitle": {},
+  "advancedSetupMountOptionHint": "Option de montage",
+  "@advancedSetupMountOptionHint": {},
+  "advancedSetupResolvConfGenerationTitle": "Activer la génération de resolv.conf",
+  "@advancedSetupResolvConfGenerationTitle": {},
+  "configurationUIMessageOfTheDayHeader": "Message du jour (MOTD)",
+  "@configurationUIMessageOfTheDayHeader": {},
+  "configurationUIWSLNewsTitle": "Nouvelles de WSL",
+  "@configurationUIWSLNewsTitle": {},
+  "configurationUIAutoMountHeader": "Montage automatique",
+  "@configurationUIAutoMountHeader": {},
+  "configurationUIAutoMountTitle": "Activé",
+  "@configurationUIAutoMountTitle": {},
+  "setupCompleteTitle": "Configuration terminée",
+  "@setupCompleteTitle": {},
+  "setupCompleteHeader": "Salut {user},\nVous avez terminé la configuration avec succès.",
+  "@setupCompleteHeader": {
+    "type": "text",
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "advancedSetupMountLocationHint": "Emplacement de montage",
+  "@advancedSetupMountLocationHint": {},
+  "advancedSetupMountLocationInvalid": "L’emplacement n’est pas valide",
+  "@advancedSetupMountLocationInvalid": {},
+  "configurationUIInteroperabilityHeader": "Interopérabilité",
+  "@configurationUIInteroperabilityHeader": {},
+  "profileSetupUsernameHelper": "Le nom d’utilisateur n’a pas besoin de correspondre à votre nom d’utilisateur Windows.",
+  "@profileSetupUsernameHelper": {},
+  "configurationUIMountFstabTitle": "Monter /etc/fstab",
+  "@configurationUIMountFstabTitle": {}
 }

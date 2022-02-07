@@ -267,6 +267,25 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.ERROR: 'ERROR',
 };
 
+_$_OsProber _$_$_OsProberFromJson(Map<String, dynamic> json) {
+  return _$_OsProber(
+    long: json['long'] as String,
+    label: json['label'] as String,
+    type: json['type'] as String,
+    subpath: json['subpath'] as String?,
+    version: json['version'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_OsProberToJson(_$_OsProber instance) =>
+    <String, dynamic>{
+      'long': instance.long,
+      'label': instance.label,
+      'type': instance.type,
+      'subpath': instance.subpath,
+      'version': instance.version,
+    };
+
 _$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
   return _$_Partition(
     size: json['size'] as int?,
@@ -280,6 +299,9 @@ _$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
     mount: json['mount'] as String?,
     format: json['format'] as String?,
     grubDevice: json['grub_device'] as bool?,
+    os: json['os'] == null
+        ? null
+        : OsProber.fromJson(json['os'] as Map<String, dynamic>),
   );
 }
 
@@ -293,6 +315,7 @@ Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
       'mount': instance.mount,
       'format': instance.format,
       'grub_device': instance.grubDevice,
+      'os': instance.os?.toJson(),
     };
 
 _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {

@@ -40,6 +40,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get welcome => 'Witamy';
 
   @override
+  String get welcomeHeader => 'Wybierz swój język:';
+
+  @override
   String get tryOrInstallPageTitle => 'Wypróbuj lub zainstaluj';
 
   @override
@@ -152,6 +155,15 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
+
+  @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
 
   @override
   String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
@@ -586,4 +598,138 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Uruchom ponownie Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Gdzie jesteś?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Lokalizacja';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Strefa czasowa';
+
+  @override
+  String welcomeSlideTitle(Object RELEASE) {
+    return 'Witaj w $RELEASE';
+  }
+
+  @override
+  String welcomeSlideDescription(Object RELEASE) {
+    return 'Najnowsza wersja $RELEASE, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę...';
+  }
+
+  @override
+  String get softwareSlideTitle => 'Znajdź jeszcze więcej oprogramowania';
+
+  @override
+  String softwareSlideDescription(Object RELEASE) {
+    return 'Pożegnaj się z przeszukiwaniem sieci w poszukiwaniu nowego oprogramowania. Dzięki dostępowi do Snap Store i archiwum oprogramowania $RELEASE możesz z łatwością znajdować i instalować nowe aplikacje. Po prostu wpisz, czego szukasz, lub przejrzyj kategorie, takie jak Grafika i fotografia, Gry i produktywność, a także pomocne recenzje od innych użytkowników.';
+  }
+
+  @override
+  String get musicSlideTitle => 'Zabierz swoją muzykę ze sobą';
+
+  @override
+  String musicSlideDescription(Object RELEASE) {
+    return '$RELEASE zawiera niesamowity odtwarzacz muzyki Rhythmbox. Dzięki zaawansowanym opcjom odtwarzania łatwo jest ustawić w kolejce idealne utwory. Ponadto świetnie współpracuje z płytami CD i przenośnymi odtwarzaczami muzycznymi, dzięki czemu możesz cieszyć się całą swoją muzyką, gdziekolwiek jesteś.';
+  }
+
+  @override
+  String get musicSlideRhythmbox => 'Odtwarzacz muzyki Rhythmbox';
+
+  @override
+  String get musicSlideSpotify => 'Spotify';
+
+  @override
+  String get musicSlideVLC => 'VLC';
+
+  @override
+  String get photoSlideTitle => 'Baw się dobrze swoimi zdjęciami';
+
+  @override
+  String get photoSlideDescription => 'Shotwell to poręczny menedżer zdjęć, który jest przygotowany na Twoje gadżety. Podłącz aparat lub telefon, aby przesyłać zdjęcia, a następnie łatwo je udostępniać i chronić. A jeśli czujesz się kreatywnie, możesz znaleźć wiele innych aplikacji do zdjęć w Ubuntu Software.';
+
+  @override
+  String get photoSlideShotwell => 'Menedżer zdjęć Shotwell';
+
+  @override
+  String get photoSlideGimp => 'Edytor obrazów GIMP';
+
+  @override
+  String get photoSlideShotcut => 'Edytor wideo Shotcut';
+
+  @override
+  String get webSlideTitle => 'Wykorzystaj w pełni sieć';
+
+  @override
+  String webSlideDescription(Object RELEASE) {
+    return '$RELEASE zawiera program Firefox, przeglądarkę internetową używaną przez miliony ludzi na całym świecie. Często używane aplikacje internetowe (na przykład Facebook lub Gmail) można przypiąć do pulpitu, aby uzyskać do nich szybszy dostęp, podobnie jak do aplikacji na komputerze.';
+  }
+
+  @override
+  String get webSlideFirefox => 'Przeglądarka internetowa Firefox';
+
+  @override
+  String get webSlideThunderbird => 'Thunderbird';
+
+  @override
+  String get webSlideChromium => 'Chromium';
+
+  @override
+  String get officeSlideTitle => 'Wszystko, czego potrzebujesz do biura';
+
+  @override
+  String get officeSlideDescription => 'LibreOffice to darmowy pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje bezpłatnie.';
+
+  @override
+  String get officeSlideWriter => 'LibreOffice Writer';
+
+  @override
+  String get officeSlideCalc => 'LibreOffice Calc';
+
+  @override
+  String get officeSlideImpress => 'LibreOffice Impress';
+
+  @override
+  String get accessSlideTitle => 'Dostęp dla wszystkich';
+
+  @override
+  String accessSlideDescription(Object RELEASE) {
+    return 'U podstaw filozofii $RELEASE leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, schematu kolorów i rozmiaru tekstu $RELEASE ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.';
+  }
+
+  @override
+  String get accessSlideCustomizationOptions => 'Opcje dostosowywania';
+
+  @override
+  String get accessSlideAppearance => 'Wygląd';
+
+  @override
+  String get accessSlideAssistiveTechnologies => 'Technologie wspomagające';
+
+  @override
+  String get accessSlideLanguageSupport => 'Obsługa języków';
+
+  @override
+  String get supportSlideTitle => 'Pomoc i wsparcie';
+
+  @override
+  String supportSlideDocumentation(Object RELEASE) {
+    return 'Oficjalna dokumentacja obejmuje wiele najczęstszych obszarów dotyczących $RELEASE. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.';
+  }
+
+  @override
+  String get supportSlideQuestions => 'W anglojęzycznym serwisie <a href=\"https://askubuntu.com\">Ask Ubuntu</a> można zadawać pytania i przeszukiwać imponującą kolekcję już udzielonych odpowiedzi. Wsparcie w Twoim języku może być zapewnione w wybranym <a href=\"https://loco.ubuntu.com/teams\">Zespole lokalnej społeczności</a>.';
+
+  @override
+  String get supportSlideResources => 'Aby uzyskać wskazówki dotyczące innych przydatnych zasobów, odwiedź stronę <a href=\"https://www.ubuntu.com/support/community-support\">Wsparcie społeczności</a> lub <a href=\"https://www.ubuntu.com/support\">Wsparcie komercyjne</a>.';
+
+  @override
+  String get includedSoftware => 'Dołączone oprogramowanie';
+
+  @override
+  String get availableSoftware => 'Dostępne oprogramowanie';
+
+  @override
+  String get supportedSoftware => 'Obsługiwane oprogramowanie';
 }

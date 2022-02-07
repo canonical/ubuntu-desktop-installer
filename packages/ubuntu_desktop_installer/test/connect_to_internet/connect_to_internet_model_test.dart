@@ -18,7 +18,7 @@ void main() {
     verify(service.connect()).called(1);
   });
 
-  test('initializes connect models', () async {
+  test('initializes and cleans up connect models', () async {
     final model = ConnectToInternetModel(MockNetworkService());
 
     final ethernet = MockConnectModel();
@@ -31,6 +31,11 @@ void main() {
     when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
     model.addConnectMode(wifi);
 
+    final hiddenWifi = MockConnectModel();
+    when(hiddenWifi.connectMode).thenReturn(ConnectMode.hiddenWifi);
+    when(hiddenWifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+    model.addConnectMode(hiddenWifi);
+
     final none = MockConnectModel();
     when(none.connectMode).thenReturn(ConnectMode.none);
     when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
@@ -40,7 +45,14 @@ void main() {
 
     verify(ethernet.init()).called(1);
     verify(wifi.init()).called(1);
+    verify(hiddenWifi.init()).called(1);
     verify(none.init()).called(1);
+
+    await model.cleanup();
+
+    verify(ethernet.cleanup()).called(1);
+    verify(wifi.cleanup()).called(1);
+    verify(none.cleanup()).called(1);
   });
 
   test('no mode selected', () {
@@ -112,6 +124,11 @@ void main() {
     when(wifi.connectMode).thenReturn(ConnectMode.wifi);
     when(wifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
+    final hiddenWifi = MockConnectModel();
+    when(hiddenWifi.isEnabled).thenReturn(true);
+    when(hiddenWifi.connectMode).thenReturn(ConnectMode.hiddenWifi);
+    when(hiddenWifi.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+
     final none = MockConnectModel();
     when(none.isEnabled).thenReturn(true);
     when(none.connectMode).thenReturn(ConnectMode.none);
@@ -120,11 +137,13 @@ void main() {
     final model = ConnectToInternetModel(service);
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
+    model.addConnectMode(hiddenWifi);
     model.addConnectMode(none);
     expect(model.connectMode, equals(ConnectMode.none));
 
     when(ethernet.hasActiveConnection).thenReturn(true);
     when(wifi.hasActiveConnection).thenReturn(true);
+    when(hiddenWifi.hasActiveConnection).thenReturn(false);
     when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
@@ -132,6 +151,7 @@ void main() {
 
     when(ethernet.hasActiveConnection).thenReturn(false);
     when(wifi.hasActiveConnection).thenReturn(true);
+    when(hiddenWifi.hasActiveConnection).thenReturn(false);
     when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
@@ -139,6 +159,7 @@ void main() {
 
     when(ethernet.hasActiveConnection).thenReturn(false);
     when(wifi.hasActiveConnection).thenReturn(false);
+    when(hiddenWifi.hasActiveConnection).thenReturn(false);
     when(none.hasActiveConnection).thenReturn(false);
 
     model.selectConnectMode();
@@ -163,6 +184,14 @@ void main() {
     when(wifi.hasActiveConnection).thenReturn(false);
     when(wifi.onAvailabilityChanged).thenAnswer((_) => wifiChanged.stream);
 
+    final hiddenWifi = MockConnectModel();
+    final hiddenWifiChanged = StreamController(sync: true);
+    when(hiddenWifi.connectMode).thenReturn(ConnectMode.hiddenWifi);
+    when(hiddenWifi.isEnabled).thenReturn(true);
+    when(hiddenWifi.hasActiveConnection).thenReturn(false);
+    when(hiddenWifi.onAvailabilityChanged)
+        .thenAnswer((_) => hiddenWifiChanged.stream);
+
     final none = MockConnectModel();
     when(none.connectMode).thenReturn(ConnectMode.none);
     when(none.isEnabled).thenReturn(true);
@@ -172,6 +201,7 @@ void main() {
     final model = ConnectToInternetModel(service);
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
+    model.addConnectMode(hiddenWifi);
     model.addConnectMode(none);
     expect(model.connectMode, equals(ConnectMode.none));
 

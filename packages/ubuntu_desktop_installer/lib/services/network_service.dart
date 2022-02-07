@@ -1,3 +1,4 @@
+import 'package:dbus/dbus.dart';
 import 'package:nm/nm.dart';
 
 export 'package:nm/nm.dart';
@@ -17,5 +18,21 @@ class NetworkService extends NetworkManagerClient {
   /// The list of wireless network devices.
   List<NetworkManagerDevice> get wirelessDevices {
     return devices.where((device) => device.wireless != null).toList();
+  }
+
+  /// Returns Wi-Fi connection settings for the specified attributes.
+  Map<String, Map<String, DBusValue>> getWifiSettings({required String ssid}) {
+    return <String, Map<String, DBusValue>>{
+      'connection': {
+        'id': DBusString(ssid),
+        'type': DBusString('802-11-wireless'),
+      },
+      '802-11-wireless': {
+        'ssid': DBusArray.byte(ssid.codeUnits),
+      },
+      '802-11-wireless-security': {
+        'key-mgmt': DBusString('wpa-psk'),
+      },
+    };
   }
 }

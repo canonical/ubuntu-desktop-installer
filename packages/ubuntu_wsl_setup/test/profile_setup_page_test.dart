@@ -216,7 +216,7 @@ void main() {
 
     var urlLaunched = false;
     final methodChannel = MethodChannel('plugins.flutter.io/url_launcher');
-    methodChannel.setMockMethodCallHandler((call) {
+    methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('launch'));
       expect(call.arguments['url'], equals('https://aka.ms/wslusers'));
       urlLaunched = true;
