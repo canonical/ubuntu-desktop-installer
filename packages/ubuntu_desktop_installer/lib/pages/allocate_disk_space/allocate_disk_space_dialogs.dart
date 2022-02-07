@@ -7,6 +7,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../../l10n.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_size_box.dart';
+import 'storage_types.dart';
 
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(

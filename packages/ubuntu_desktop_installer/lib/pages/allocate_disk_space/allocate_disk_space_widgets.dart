@@ -9,6 +9,7 @@ import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';
 import 'storage_table.dart';
+import 'storage_types.dart';
 
 class PartitionBar extends StatelessWidget {
   PartitionBar({Key? key}) : super(key: key);
@@ -176,8 +177,6 @@ class PartitionTable extends StatelessWidget {
         StorageSizeColumn(),
         StorageSystemColumn(),
         StorageWipeColumn(
-          canWipe: (disk, partition) => partition.canWipe,
-          isWiped: (disk, partition) => partition.wipe == true,
           onWipe: (disk, partition, wipe) {
             model.editPartition(disk, partition, wipe: wipe);
           },

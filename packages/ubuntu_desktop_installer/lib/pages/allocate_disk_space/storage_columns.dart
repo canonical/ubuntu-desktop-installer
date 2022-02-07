@@ -1,9 +1,9 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 
 import '../../l10n.dart';
+import 'storage_types.dart';
 
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
 typedef PartitionBuilder = Widget Function(
@@ -114,11 +114,8 @@ class StorageSystemColumn extends StorageColumn {
 }
 
 class StorageWipeColumn extends StorageColumn {
-  StorageWipeColumn({
-    required this.canWipe,
-    required this.isWiped,
-    required this.onWipe,
-  }) : super(
+  StorageWipeColumn({required this.onWipe})
+      : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
             return Text(lang.diskHeadersFormat);
@@ -128,15 +125,13 @@ class StorageWipeColumn extends StorageColumn {
           },
           partitionBuilder: (context, disk, partition) {
             return Checkbox(
-              value: isWiped(disk, partition),
-              onChanged: canWipe(disk, partition)
+              value: partition.wipe == true,
+              onChanged: partition.canWipe
                   ? (wipe) => onWipe(disk, partition, wipe!)
                   : null,
             );
           },
         );
 
-  final bool Function(Disk disk, Partition partition) canWipe;
-  final bool Function(Disk disk, Partition partition) isWiped;
   final void Function(Disk disk, Partition partition, bool wipe) onWipe;
 }
