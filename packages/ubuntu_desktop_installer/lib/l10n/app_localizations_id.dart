@@ -40,6 +40,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get welcome => 'Selamat Datang';
 
   @override
+  String get welcomeHeader => 'Pilih bahasa Anda:';
+
+  @override
   String get tryOrInstallPageTitle => 'Coba atau pasang';
 
   @override
@@ -586,4 +589,138 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Mulai Ulang Ke Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Di manakah Anda?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Lokasi';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Zona waktu';
+
+  @override
+  String welcomeSlideTitle(Object RELEASE) {
+    return 'Selamat Datang ke $RELEASE';
+  }
+
+  @override
+  String welcomeSlideDescription(Object RELEASE) {
+    return 'Cepat dan penuh dengan fitur baru, versi terakhir $RELEASE membuat komputasi menjadi semakin mudah. Berikut adalah beberapa hal keren baru yang dapat diperhatikan...';
+  }
+
+  @override
+  String get softwareSlideTitle => 'Temukan lebih banyak lagi perangkat lunak';
+
+  @override
+  String softwareSlideDescription(Object RELEASE) {
+    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+  }
+
+  @override
+  String get musicSlideTitle => 'Take your music with you';
+
+  @override
+  String musicSlideDescription(Object RELEASE) {
+    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+  }
+
+  @override
+  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+
+  @override
+  String get musicSlideSpotify => 'Spotify';
+
+  @override
+  String get musicSlideVLC => 'VLC';
+
+  @override
+  String get photoSlideTitle => 'Have fun with your photos';
+
+  @override
+  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+
+  @override
+  String get photoSlideShotwell => 'Shotwell Photo Manager';
+
+  @override
+  String get photoSlideGimp => 'GIMP Image Editor';
+
+  @override
+  String get photoSlideShotcut => 'Shotcut Video Editor';
+
+  @override
+  String get webSlideTitle => 'Make the most of the web';
+
+  @override
+  String webSlideDescription(Object RELEASE) {
+    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+  }
+
+  @override
+  String get webSlideFirefox => 'Firefox web browser';
+
+  @override
+  String get webSlideThunderbird => 'Thunderbird';
+
+  @override
+  String get webSlideChromium => 'Chromium';
+
+  @override
+  String get officeSlideTitle => 'Everything you need for the office';
+
+  @override
+  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+
+  @override
+  String get officeSlideWriter => 'LibreOffice Writer';
+
+  @override
+  String get officeSlideCalc => 'LibreOffice Calc';
+
+  @override
+  String get officeSlideImpress => 'LibreOffice Impress';
+
+  @override
+  String get accessSlideTitle => 'Access for everyone';
+
+  @override
+  String accessSlideDescription(Object RELEASE) {
+    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+  }
+
+  @override
+  String get accessSlideCustomizationOptions => 'Customization options';
+
+  @override
+  String get accessSlideAppearance => 'Appearance';
+
+  @override
+  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+
+  @override
+  String get accessSlideLanguageSupport => 'Language support';
+
+  @override
+  String get supportSlideTitle => 'Help and support';
+
+  @override
+  String supportSlideDocumentation(Object RELEASE) {
+    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+  }
+
+  @override
+  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+
+  @override
+  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+
+  @override
+  String get includedSoftware => 'Included software';
+
+  @override
+  String get availableSoftware => 'Available software';
+
+  @override
+  String get supportedSoftware => 'Supported software';
 }

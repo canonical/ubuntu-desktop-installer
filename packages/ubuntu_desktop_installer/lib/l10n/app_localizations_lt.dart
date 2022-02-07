@@ -12,32 +12,35 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Įdiegti $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Atsisakyti';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Keisti';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Gerai';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ne';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Paleisti iš naujo';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Sugrąžinti';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Taip';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Sveiki,';
+
+  @override
+  String get welcomeHeader => 'Choose your language:';
 
   @override
   String get tryOrInstallPageTitle => 'Try or install';
@@ -50,7 +53,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Išbandyti $RELEASE';
   }
 
   @override
@@ -60,7 +63,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Įdiegti $RELEASE';
   }
 
   @override
@@ -74,7 +77,7 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Išjunkite RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -85,22 +88,22 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Klaviatūros išdėstymas';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Pasirinkite klaviatūros išdėstymą:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Rašykite čia, norėdami išbandyti klaviatūrą';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Aptikti klaviatūros išdėstymą';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Ar šis klavišas yra jūsų klaviatūroje?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';
@@ -139,10 +142,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get useWiredConnection => 'Use wired connection';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Neaptikta jokio laidinio ryšio';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Laidinis ryšys yra išjungtas';
 
   @override
   String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
@@ -178,16 +181,16 @@ class AppLocalizationsLt extends AppLocalizations {
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Įprastas programų paketas';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Saityno naršyklė, paslaugų programos, raštinės programinė įranga, žaidimai ir medijos leistuvės.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Minimalus programų paketas';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Saityno naršyklė ir pagrindinės paslaugų programos.';
 
   @override
   String get otherOptions => 'Other options';
@@ -200,7 +203,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Įspėjimas</font>: Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.';
   }
 
   @override
@@ -586,4 +589,138 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get restartIntoWindows => 'Restart Into Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Where are you?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Location';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Timezone';
+
+  @override
+  String welcomeSlideTitle(Object RELEASE) {
+    return 'Welcome to $RELEASE';
+  }
+
+  @override
+  String welcomeSlideDescription(Object RELEASE) {
+    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+  }
+
+  @override
+  String get softwareSlideTitle => 'Find even more software';
+
+  @override
+  String softwareSlideDescription(Object RELEASE) {
+    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+  }
+
+  @override
+  String get musicSlideTitle => 'Take your music with you';
+
+  @override
+  String musicSlideDescription(Object RELEASE) {
+    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+  }
+
+  @override
+  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+
+  @override
+  String get musicSlideSpotify => 'Spotify';
+
+  @override
+  String get musicSlideVLC => 'VLC';
+
+  @override
+  String get photoSlideTitle => 'Have fun with your photos';
+
+  @override
+  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+
+  @override
+  String get photoSlideShotwell => 'Shotwell Photo Manager';
+
+  @override
+  String get photoSlideGimp => 'GIMP Image Editor';
+
+  @override
+  String get photoSlideShotcut => 'Shotcut Video Editor';
+
+  @override
+  String get webSlideTitle => 'Make the most of the web';
+
+  @override
+  String webSlideDescription(Object RELEASE) {
+    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+  }
+
+  @override
+  String get webSlideFirefox => 'Firefox web browser';
+
+  @override
+  String get webSlideThunderbird => 'Thunderbird';
+
+  @override
+  String get webSlideChromium => 'Chromium';
+
+  @override
+  String get officeSlideTitle => 'Everything you need for the office';
+
+  @override
+  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+
+  @override
+  String get officeSlideWriter => 'LibreOffice Writer';
+
+  @override
+  String get officeSlideCalc => 'LibreOffice Calc';
+
+  @override
+  String get officeSlideImpress => 'LibreOffice Impress';
+
+  @override
+  String get accessSlideTitle => 'Access for everyone';
+
+  @override
+  String accessSlideDescription(Object RELEASE) {
+    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+  }
+
+  @override
+  String get accessSlideCustomizationOptions => 'Customization options';
+
+  @override
+  String get accessSlideAppearance => 'Appearance';
+
+  @override
+  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+
+  @override
+  String get accessSlideLanguageSupport => 'Language support';
+
+  @override
+  String get supportSlideTitle => 'Help and support';
+
+  @override
+  String supportSlideDocumentation(Object RELEASE) {
+    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+  }
+
+  @override
+  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+
+  @override
+  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+
+  @override
+  String get includedSoftware => 'Included software';
+
+  @override
+  String get availableSoftware => 'Available software';
+
+  @override
+  String get supportedSoftware => 'Supported software';
 }

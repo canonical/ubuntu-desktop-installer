@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -54,29 +55,44 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
+    final height = MediaQuery.of(context).size.height;
     return WizardPage(
       title: Text(lang.welcome),
+      header: Text(lang.welcomeHeader),
       content: FractionallySizedBox(
-        widthFactor: 0.5,
-        child: RoundedListView.builder(
-          controller: _languageListScrollController,
-          itemCount: model.languageCount,
-          itemBuilder: (context, index) {
-            return AutoScrollTag(
-              index: index,
-              key: ValueKey(index),
-              controller: _languageListScrollController,
-              child: ListTile(
-                title: Text(model.language(index)),
-                selected: index == model.selectedLanguageIndex,
-                onTap: () {
-                  model.selectedLanguageIndex = index;
-                  final settings = Settings.of(context, listen: false);
-                  settings.applyLocale(model.locale(index));
+        child: Row(
+          children: [
+            Expanded(
+              child: RoundedListView.builder(
+                controller: _languageListScrollController,
+                itemCount: model.languageCount,
+                itemBuilder: (context, index) {
+                  return AutoScrollTag(
+                    index: index,
+                    key: ValueKey(index),
+                    controller: _languageListScrollController,
+                    child: ListTile(
+                      title: Text(model.language(index)),
+                      selected: index == model.selectedLanguageIndex,
+                      onTap: () {
+                        model.selectedLanguageIndex = index;
+                        final settings = Settings.of(context, listen: false);
+                        settings.applyLocale(model.locale(index));
+                      },
+                    ),
+                  );
                 },
               ),
-            );
-          },
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: SvgPicture.asset(
+                'assets/mascot_white.svg',
+                height: height / 4,
+                color: Theme.of(context).primaryColor,
+              ),
+            )
+          ],
         ),
       ),
       actions: <WizardAction>[

@@ -73,6 +73,11 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
+  _i3.Future<void> cleanup() =>
+      (super.noSuchMethod(Invocation.method(#cleanup, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  @override
   _i3.Future<void> enable() =>
       (super.noSuchMethod(Invocation.method(#enable, []),
           returnValue: Future<void>.value(),

@@ -145,11 +145,11 @@ void main() {
     expect(model.connectMode, ConnectMode.wifi);
   });
 
-  testWidgets('initializes the model', (tester) async {
+  testWidgets('initializes and cleans up the model', (tester) async {
     final model = MockConnectToInternetModel();
     when(model.connectMode).thenReturn(ConnectMode.none);
     when(model.isConnecting).thenReturn(false);
-    when(model.canConnect).thenReturn(true);
+    when(model.canConnect).thenReturn(false);
     when(model.isConnected).thenReturn(true);
     when(model.isEnabled).thenReturn(true);
 
@@ -157,6 +157,23 @@ void main() {
     await tester.pumpAndSettle();
 
     verify(model.init()).called(1);
+    verifyNever(model.cleanup());
+
+    final continueButton =
+        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
+    expect(continueButton, findsOneWidget);
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
+
+    verifyNever(model.init());
+    verify(model.cleanup()).called(1);
+
+    final context = tester.element(find.text('Next page'));
+    Wizard.of(context).back();
+    await tester.pumpAndSettle();
+
+    verify(model.init()).called(1);
+    verifyNever(model.cleanup());
   });
 
   testWidgets('pre-selects ethernet', (tester) async {

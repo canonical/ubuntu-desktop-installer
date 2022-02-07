@@ -459,5 +459,12 @@
   "writeChangesFallbackSerial": "디스크",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "onBatteryWarning": "<font color=\"{color}\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
   }
 }

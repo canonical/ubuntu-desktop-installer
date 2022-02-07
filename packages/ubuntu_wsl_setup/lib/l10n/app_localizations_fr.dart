@@ -44,7 +44,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupUsernameHint => 'Choisir un nom d’utilisateur';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Le nom d’utilisateur n’a pas besoin de correspondre à votre nom d’utilisateur Windows.';
 
   @override
   String get profileSetupPasswordHint => 'Choisir un mot de passe';
@@ -68,22 +68,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupPasswordRequired => 'Un mot de passe est requis';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Installation avancée';
 
   @override
   String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Emplacement de montage';
 
   @override
   String get advancedSetupMountLocationHelper => 'Location for the automount';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'L’emplacement n’est pas valide';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Option de montage';
 
   @override
   String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
@@ -95,7 +95,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Activer la génération de resolv.conf';
 
   @override
   String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
@@ -110,7 +110,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Interopérabilité';
 
   @override
   String get configurationUILegacyGUIIntegrationTitle => 'Legacy GUI Integration';
@@ -131,35 +131,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
 
   @override
-  String get configurationUIMessageOfTheDayHeader => 'Message Of The Day (MOTD)';
+  String get configurationUIMessageOfTheDayHeader => 'Message du jour (MOTD)';
 
   @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
+  String get configurationUIWSLNewsTitle => 'Nouvelles de WSL';
 
   @override
   String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Montage automatique';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Activé';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Monter /etc/fstab';
 
   @override
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Configuration terminée';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Salut $user,\nVous avez terminé la configuration avec succès.';
   }
 
   @override

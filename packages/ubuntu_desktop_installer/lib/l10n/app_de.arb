@@ -19,6 +19,7 @@
   "yesButtonText": "Ja",
   "@yesButtonText": {},
   "welcome": "Willkommen",
+  "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
   "@welcome": {},
   "tryOrInstallPageTitle": "Ausprobieren oder installieren",
   "@tryOrInstallPageTitle": {},
@@ -429,5 +430,12 @@
   "enableWifi": "WLAN aktivieren",
   "@enableWifi": {},
   "connectButtonText": "Verbinden",
-  "@connectButtonText": {}
+  "@connectButtonText": {},
+  "onBatteryWarning": "<font color=\"{color}\">Warnung</font>: Der Rechner ist nicht an eine Stromquelle angeschlossen.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  }
 }

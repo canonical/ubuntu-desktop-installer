@@ -80,5 +80,7 @@
   "setupCompleteUpdate": "Det föreslås att du kör följande kommando för att uppdatera Ubuntu till den senaste versionen:",
   "@setupCompleteUpdate": {},
   "setupCompleteManage": "Du kan använda det inbyggda ubuntuwsl kommandot för att hantera dina WSL-inställningar:",
-  "@setupCompleteManage": {}
+  "@setupCompleteManage": {},
+  "advancedSetupMountOptionHint": "Monteringsalternativ",
+  "@advancedSetupMountOptionHint": {}
 }

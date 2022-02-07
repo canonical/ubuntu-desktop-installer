@@ -69,26 +69,22 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
 
   // Resolves the path to the assets in the app bundle so that it works in the
   // snap and development environments.
-  String _resolveSlideDirectory() {
+  String _resolveAssetsDirectory() {
     final appdir = p.dirname(Platform.resolvedExecutable);
-    return p.join(appdir, 'data', 'flutter_assets', 'assets', 'slides');
+    return p.join(appdir, 'data', 'flutter_assets');
   }
 
-  File _resolveSlideFile(String name) {
-    return File(p.join(_resolveSlideDirectory(), '$name.png'));
-  }
-
-  /// Returns the image for the given slide name.
-  ImageProvider slideImage(String name) => FileImage(_resolveSlideFile(name));
-
-  /// Prefetches slide images into the image cache to avoid white screen while
+  /// Prefetches slide images into the image cache to avoid flicker while
   /// loading slide images
-  ///
-  /// It's well noticeable that each slide is white when sliding in for the first time until it gets loaded. I think we can resolve the asset path relative to Platform.resolvedExecutable but I'm still testing to make sure it works in snaps and dev env.
-  ///
   Future<void> precacheSlideImages(BuildContext context) {
-    return Directory(_resolveSlideDirectory()).list().forEach((slide) {
-      precacheImage(FileImage(File(slide.path)), context);
+    final assets = _resolveAssetsDirectory();
+    return Directory('$assets/assets/slides')
+        .list(recursive: true)
+        .forEach((slide) {
+      if (slide is File) {
+        final path = p.relative(slide.path, from: assets);
+        precacheImage(AssetImage(path), context);
+      }
     });
   }
 

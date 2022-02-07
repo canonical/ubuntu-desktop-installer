@@ -16,6 +16,7 @@
   "revertButtonText": "Revert",
   "yesButtonText": "Yes",
   "welcome": "Welcome",
+  "welcomeHeader": "Choose your language:",
   "tryOrInstallPageTitle": "Try or install",
   "repairInstallation": "Repair installation",
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
@@ -342,5 +343,87 @@
       "url": {}
     }
   },
-  "restartIntoWindows": "Restart Into Windows"
+  "restartIntoWindows": "Restart Into Windows",
+  "whereAreYouPageTitle": "Where are you?",
+  "whereAreYouLocationLabel": "Location",
+  "whereAreYouTimezoneLabel": "Timezone",
+  "welcomeSlideTitle": "Welcome to {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "welcomeSlideDescription": "Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "Find even more software",
+  "softwareSlideDescription": "Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you're looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideTitle": "Take your music with you",
+  "musicSlideDescription": "{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it's simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideRhythmbox": "Rhythmbox Music Player",
+  "musicSlideSpotify": "Spotify",
+  "musicSlideVLC": "VLC",
+  "photoSlideTitle": "Have fun with your photos",
+  "photoSlideDescription": "Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it's easy to share them and keep them safe. And if you're feeling creative, you can find many other photo apps in Ubuntu Software.",
+  "photoSlideShotwell": "Shotwell Photo Manager",
+  "photoSlideGimp": "GIMP Image Editor",
+  "photoSlideShotcut": "Shotcut Video Editor",
+  "webSlideTitle": "Make the most of the web",
+  "webSlideDescription": "{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideFirefox": "Firefox web browser",
+  "webSlideThunderbird": "Thunderbird",
+  "webSlideChromium": "Chromium",
+  "officeSlideTitle": "Everything you need for the office",
+  "officeSlideDescription": "LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.",
+  "officeSlideWriter": "LibreOffice Writer",
+  "officeSlideCalc": "LibreOffice Calc",
+  "officeSlideImpress": "LibreOffice Impress",
+  "accessSlideTitle": "Access for everyone",
+  "accessSlideDescription": "At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, {RELEASE} makes computing easy - whoever and wherever you are.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideCustomizationOptions": "Customization options",
+  "accessSlideAppearance": "Appearance",
+  "accessSlideAssistiveTechnologies": "Assistive technologies",
+  "accessSlideLanguageSupport": "Language support",
+  "supportSlideTitle": "Help and support",
+  "supportSlideDocumentation": "The official documentation covers many of the most common areas about {RELEASE}. It's available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.",
+  "supportSlideResources": "For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
+  "includedSoftware": "Included software",
+  "availableSoftware": "Available software",
+  "supportedSoftware": "Supported software"
 }
