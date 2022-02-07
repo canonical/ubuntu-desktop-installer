@@ -47,7 +47,6 @@ void main() {
 
     await tester.tap(find.byType(DropdownButton<int>));
     await tester.pumpAndSettle();
-    await tester.pump();
 
     final dropdownItem = find.descendant(
       of: find.byType(DropdownMenuItem<int>),
