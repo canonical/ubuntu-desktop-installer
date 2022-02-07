@@ -546,5 +546,18 @@
     }
   },
   "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {}
+  "@officeSlideWriter": {},
+  "hiddenWifiNetworkNameRequired": "שם הרשת נחוץ",
+  "@hiddenWifiNetworkNameRequired": {},
+  "hiddenWifiNetwork": "התחברות לרשת אלחוטית נסתרת",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameLabel": "שם הרשת",
+  "@hiddenWifiNetworkNameLabel": {},
+  "webSlideDescription": "למערכת {RELEASE} מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון Facebook או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
