@@ -44,7 +44,7 @@ void main() {
                   case Option.installUbuntu:
                     return Routes.keyboardLayout;
                   default:
-                    break;
+                    return null;
                 }
               },
             ),

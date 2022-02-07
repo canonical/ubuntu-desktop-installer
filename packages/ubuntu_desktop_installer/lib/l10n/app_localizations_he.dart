@@ -40,7 +40,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get welcome => 'ברוך בואך';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'בחירת השפה שלך:';
 
   @override
   String get tryOrInstallPageTitle => 'לנסות להתקין';
@@ -600,42 +600,42 @@ class AppLocalizationsHe extends AppLocalizations {
   String get restartIntoWindows => 'הפעלה מחדש אל Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'עם מי יש לי העונג?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'מיקום';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'אזור זמן';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'ברוך בואך אל $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'עם מהירות משופרת ומגוון יכולות, המהדורה העדכנית של $RELEASE מקלה על השימוש במחשב יותר מאי פעם. בהמשך מופיעים מגוון דברים מרתקים ששווה לצפות להם…';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'מגוון רחב של תוכנות';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'לא צריך עוד לחפש תוכנות חדשות באינטרנט. הגישה לחנות Snap ולארכיון התוכנות של $RELEASE מאפשרת לאתר ולהתקין יישומים חדשים בקלות. יש רק להקליד את מבוקשך או לחקור קטגוריות כגון גרפיקה וצילום, משחקים והפקה, לצד סקירות מועילות של משתמשים אחרים.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'המוזיקה שלך הולכת איתך';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return 'כחלק מההיצע של $RELEASE ניתן למצוא את נגן המוזיקה Rhythmbox. אפשרויות הנגינה המתקדמות שלו מאפשרות לך להכין רשימות עם השירים הכי מושלמים שיש. הוא עובד נפלא עם תקליטורים ונגני מוזיקה ניידים, כך שכל המוזיקה שלך יכולה ללוות אותך לכל מקום.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'נגן המוזיקה Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -644,22 +644,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'להשתולל עם תמונות';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי עם הכנה לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנה של אובונטו.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'מנהל התמונות Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'עורך התמונות GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'עורך הווידאו Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'להפיק מהאינטרנט כמה שיותר';
 
   @override
   String webSlideDescription(Object RELEASE) {
@@ -667,7 +667,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'דפדפן האינטרנט Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -676,7 +676,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'כל מה שנחוץ למשרד';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
@@ -691,7 +691,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'גישה לכולם';
 
   @override
   String accessSlideDescription(Object RELEASE) {
@@ -699,37 +699,37 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'אפשרויות התאמה';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'מראה';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'טכנולוגיות מסייעות';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'תמיכה בשפות';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'עזרה ותמיכה';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ב־$RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'ב־<a href=\"https://askubuntu.com\">Ask Ubuntu</a> אפשר לשאול שאלות ולחפש במאגר מרשים של שאלות שנענו. יתכן ש<a href=\"https://loco.ubuntu.com/teams\">צוות הקהילה המקומית</a> שלך מספק תמיכה בשפה שנוחה לך.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'לקבלת הכוונות למשאבים שימושיים נפוצים, מומלץ לפנות ל<a href=\"https://www.ubuntu.com/support/community-support\">תמיכה הקהילתית</a> או ל<a href=\"https://www.ubuntu.com/support\">תמיכה המסחרית</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'תוכנות מצורפות';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'תוכנות זמינות';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'תוכנות נתמכות';
 }

@@ -40,7 +40,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get welcome => 'Selamat Datang';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Pilih bahasa Anda:';
 
   @override
   String get tryOrInstallPageTitle => 'Coba atau pasang';
@@ -600,26 +600,26 @@ class AppLocalizationsId extends AppLocalizations {
   String get restartIntoWindows => 'Mulai Ulang Ke Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Di manakah Anda?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Lokasi';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Zona waktu';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Selamat Datang ke $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Cepat dan penuh dengan fitur baru, versi terakhir $RELEASE membuat komputasi menjadi semakin mudah. Berikut adalah beberapa hal keren baru yang dapat diperhatikan...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Temukan lebih banyak lagi perangkat lunak';
 
   @override
   String softwareSlideDescription(Object RELEASE) {

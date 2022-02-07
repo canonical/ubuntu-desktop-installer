@@ -40,7 +40,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get welcome => 'Välkommen';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Välj ditt språk:';
 
   @override
   String get tryOrInstallPageTitle => 'Prova eller installera';
@@ -600,17 +600,17 @@ class AppLocalizationsSv extends AppLocalizations {
   String get restartIntoWindows => 'Starta om till Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Var är du?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Plats';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Tidszon';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Välkommen till $RELEASE';
   }
 
   @override
@@ -627,7 +627,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Ta din musik med dig';
 
   @override
   String musicSlideDescription(Object RELEASE) {
@@ -635,7 +635,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rhythmbox Musikspelare';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -659,7 +659,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get photoSlideShotcut => 'Shotcut Video Editor';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Få ut det mesta av webben';
 
   @override
   String webSlideDescription(Object RELEASE) {
@@ -667,7 +667,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox webbläsare';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -676,7 +676,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Allt du behöver för kontoret';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
@@ -699,19 +699,19 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Anpassnings alternativ';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Utseende';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Hjälpmedel';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Språk stöd';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Hjälp och support';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -725,11 +725,11 @@ class AppLocalizationsSv extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Inkluderad programvara';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Tillgänglig programvara';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Programvara som stöds';
 }
