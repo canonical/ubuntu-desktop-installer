@@ -125,6 +125,7 @@ class StorageTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return RoundedContainer(
       child: LayoutBuilder(builder: (context, constraints) {
+        final theme = Theme.of(context);
         return OverflowBox(
           maxWidth: double.infinity,
           alignment: Alignment.topLeft,
@@ -133,9 +134,11 @@ class StorageTable extends StatelessWidget {
             child: SingleChildScrollView(
               controller: controller,
               child: DataTable(
+                dataRowHeight: kMinInteractiveDimension +
+                    theme.visualDensity.baseSizeAdjustment.dy,
                 showCheckboxColumn: false,
-                headingTextStyle: Theme.of(context).textTheme.subtitle2,
-                dataTextStyle: Theme.of(context).textTheme.bodyText2,
+                headingTextStyle: theme.textTheme.subtitle2,
+                dataTextStyle: theme.textTheme.bodyText2,
                 columns: columns
                     .map((column) =>
                         DataColumn(label: column.titleBuilder(context)))
