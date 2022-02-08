@@ -679,7 +679,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get officeSlideTitle => 'כל מה שנחוץ למשרד';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice היא חבילת כלים משרדיים שכוללת בתוכה את כל מה שדרוש כדי ליצור מסמכים, גיליונות נתונים ומצגות. תואם לתצורות הקבצים של Microsoft Office, היא נותנת לך את כל מה שנחוץ לך, בלי שורת המחיר.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -695,7 +695,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'בלבה של הפילוסופיה שמאחורי $RELEASE קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגדלי כתב מקל $RELEASE על השימוש במחשב - ללא תלות בזהות או במיקום שלך.';
   }
 
   @override
