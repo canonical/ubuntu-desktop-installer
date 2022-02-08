@@ -40,7 +40,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get welcome => 'La benvenguda';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Causissètz vòstra lenga :';
 
   @override
   String get tryOrInstallPageTitle => 'Ensajar o installar';
@@ -600,17 +600,17 @@ class AppLocalizationsOc extends AppLocalizations {
   String get restartIntoWindows => 'Reaviar jos Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Ont sètz ?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Localizacion';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Fus orari';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'La benvenguda a $RELEASE';
   }
 
   @override
@@ -619,7 +619,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Obtenètz mai de logicials';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
@@ -627,7 +627,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Emportatz vòstra musica amb vos';
 
   @override
   String musicSlideDescription(Object RELEASE) {
@@ -635,7 +635,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Lector de musica Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -644,22 +644,22 @@ class AppLocalizationsOc extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Divertissètz vos amb vòstras fòtos';
 
   @override
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Gestionari de fòto Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'Editor d’imatge GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Editor de vidèo Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Trapatz çò melhor del Web';
 
   @override
   String webSlideDescription(Object RELEASE) {
@@ -667,7 +667,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Navegador web Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -676,7 +676,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Tot çò que vos fa mestièr pel burèu';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
@@ -691,7 +691,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Accès per totes';
 
   @override
   String accessSlideDescription(Object RELEASE) {
@@ -699,19 +699,19 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Opcions de personalizacion';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Aparéncia';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Accessibilitat';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Presa en carga de las lengas';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ajuda e assisténcia';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -725,11 +725,11 @@ class AppLocalizationsOc extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Logicials incluses';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Logicials disponibles';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Logicials preses en carga';
 }
