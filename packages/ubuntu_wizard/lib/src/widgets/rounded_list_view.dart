@@ -13,6 +13,7 @@ class RoundedListView extends StatelessWidget {
     this.borderColor,
     this.borderWidth,
     this.borderRadius,
+    this.shrinkWrap = false,
   }) : super(key: key);
 
   /// See [ListView.controller]
@@ -33,6 +34,9 @@ class RoundedListView extends StatelessWidget {
   /// See [BoxDecoration.borderRadius]
   final double? borderRadius;
 
+  /// See [ListView.shrinkWrap]
+  final bool shrinkWrap;
+
   @override
   Widget build(BuildContext context) {
     return RoundedContainer(
@@ -43,6 +47,7 @@ class RoundedListView extends StatelessWidget {
         controller: controller,
         itemCount: itemCount,
         itemBuilder: itemBuilder,
+        shrinkWrap: shrinkWrap,
       ),
     );
   }
