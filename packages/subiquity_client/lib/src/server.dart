@@ -40,7 +40,10 @@ abstract class SubiquityServer {
   // to be resolved based on the location of the `subiquity_client` package.
   Future<String> _getSocketPath(ServerMode mode) async {
     if (mode == ServerMode.DRY_RUN) {
-      return p.join(await _getSubiquityPath(), '.subiquity/socket');
+      // Use a relative path to avoid hitting AF_UNIX path length limit because
+      // <path/to/ubuntu-desktop-installer>/packages/subiquity_client/subiquity/.subiquity/socket>
+      // grows easily to more than 108-1 characters (char sockaddr_un::sun_path[108]).
+      return p.relative(p.join(await _getSubiquityPath(), '.subiquity/socket'));
     }
     return '/run/subiquity/socket';
   }

@@ -35,11 +35,8 @@ class SubiquityClient {
   Future<bool> get isOpen => _isOpen.future;
 
   void open(String socketPath) {
-    // Use a relative path to avoid hitting AF_UNIX path length limit because
-    // <path/to/ubuntu-desktop-installer>/packages/subiquity_client/subiquity/.subiquity/socket>
-    // grows easily to more than 108-1 characters (char sockaddr_un::sun_path[108]).
-    log.info('Opening socket $socketPath');
-    _client = HttpUnixClient(p.relative(socketPath));
+    log.info('Opening socket ${p.absolute(socketPath)}');
+    _client = HttpUnixClient(socketPath);
     _isOpen.complete(true);
   }
 
