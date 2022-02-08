@@ -120,24 +120,22 @@ class WifiListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<WifiModel>(context);
-    return RoundedContainer(
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: model.devices.length,
-        itemBuilder: (context, index) {
-          return ChangeNotifierProvider.value(
-            value: model.devices[index],
-            child: WifiListTile(
-              key: ValueKey(index),
-              selected: model.isSelectedDevice(model.devices[index]),
-              onSelected: (device, accessPoint) {
-                model.selectDevice(device);
-                onSelected(device, accessPoint);
-              },
-            ),
-          );
-        },
-      ),
+    return RoundedListView.builder(
+      shrinkWrap: true,
+      itemCount: model.devices.length,
+      itemBuilder: (context, index) {
+        return ChangeNotifierProvider.value(
+          value: model.devices[index],
+          child: WifiListTile(
+            key: ValueKey(index),
+            selected: model.isSelectedDevice(model.devices[index]),
+            onSelected: (device, accessPoint) {
+              model.selectDevice(device);
+              onSelected(device, accessPoint);
+            },
+          ),
+        );
+      },
     );
   }
 }
