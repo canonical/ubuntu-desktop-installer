@@ -14,7 +14,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 Future<String> get subiquityPath async {
   return p.join(
     await SubiquityServer.findSubiquityPath(),
-    'subiquity',
     '.subiquity',
   );
 }
@@ -69,7 +68,7 @@ Future<void> _waitForFile(
   await Future.doWhile(() {
     return Future.delayed(delay).then((_) {
       final file = File(fileName);
-      return file.existsSync() && file.statSync().size > 0;
+      return !file.existsSync() || file.statSync().size <= 0;
     });
   }).timeout(limit);
 
