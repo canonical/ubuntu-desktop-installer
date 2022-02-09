@@ -44,7 +44,7 @@ class InstallationTypeModel extends ChangeNotifier {
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
-  String? _existingOS;
+  List<OsProber>? _existingOS;
 
   /// The selected installation type.
   InstallationType get installationType => _installationType;
@@ -73,16 +73,19 @@ class InstallationTypeModel extends ChangeNotifier {
   /// The version of the OS.
   final productInfo = ProductInfoExtractor().getProductInfo();
 
-  /// An existing OS installation or null if not detected.
-  String? get existingOS => _existingOS;
+  /// A list of existing OS installations or null if not detected.
+  List<OsProber>? get existingOS => _existingOS;
 
   /// Initializes the model and queries the existing OS installation.
   Future<void> init() async {
-    // TODO: Get list of existing OS installations.
-    // _client.getExistingOS().then((os) {
-    //   _existingOS = os;
-    //   notifyListeners();
-    // });
+    _diskService.getGuidedStorage().then((disks) {
+      _existingOS = disks
+          .expand<OsProber>(
+            (d) => d.partitions?.map((p) => p.os).whereType<OsProber>() ?? [],
+          )
+          .toList();
+      notifyListeners();
+    });
   }
 
   /// Saves the installation type selection and applies the guide storage

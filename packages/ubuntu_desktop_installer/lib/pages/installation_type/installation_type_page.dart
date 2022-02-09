@@ -44,6 +44,20 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
     model.init();
   }
 
+  static String _formatHeader(BuildContext context, List<OsProber> os) {
+    final lang = AppLocalizations.of(context);
+    switch (os.length) {
+      case 0:
+        return lang.installationTypeNoOSDetected;
+      case 1:
+        return lang.installationTypeOSDetected(os.single.long);
+      case 2:
+        return lang.installationTypeDualOSDetected(os.first.long, os.last.long);
+      default:
+        return lang.installationTypeMultiOSDetected;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<InstallationTypeModel>(context);
@@ -51,37 +65,34 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
     final flavor = Flavor.of(context);
     return WizardPage(
       title: Text(lang.installationTypeTitle),
-      header: Text(
-        model.existingOS == null
-            ? lang.installationTypeNoOSDetected
-            : lang.installationTypeOSDetected(model.existingOS!),
-      ),
+      header: Text(_formatHeader(context, model.existingOS ?? [])),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (model.existingOS != null)
-            RadioButton<InstallationType>(
-              title: Text(lang.installationTypeReinstall(model.existingOS!)),
-              subtitle: Html(
-                data: lang.installationTypeReinstallWarning(
-                    Theme.of(context).errorColor.toHex(), model.existingOS!),
-                style: {'body': Style(margin: EdgeInsets.zero)},
-              ),
-              value: InstallationType.reinstall,
-              groupValue: model.installationType,
-              onChanged: (v) => model.installationType = v!,
-            ),
-          if (model.existingOS != null) const SizedBox(height: kContentSpacing),
-          if (model.existingOS != null)
-            RadioButton<InstallationType>(
-              title: Text(lang.installationTypeAlongside(
-                  model.productInfo, model.existingOS!)),
-              subtitle: Text(lang.installationTypeAlongsideInfo),
-              value: InstallationType.alongside,
-              groupValue: model.installationType,
-              onChanged: (v) => model.installationType = v!,
-            ),
-          if (model.existingOS != null) const SizedBox(height: kContentSpacing),
+          // TODO: offer "reinstall" and "alongside" options
+          // if (model.existingOS != null)
+          //   RadioButton<InstallationType>(
+          //     title: Text(lang.installationTypeReinstall(model.existingOS!)),
+          //     subtitle: Html(
+          //       data: lang.installationTypeReinstallWarning(
+          //           Theme.of(context).errorColor.toHex(), model.existingOS!),
+          //       style: {'body': Style(margin: EdgeInsets.zero)},
+          //     ),
+          //     value: InstallationType.reinstall,
+          //     groupValue: model.installationType,
+          //     onChanged: (v) => model.installationType = v!,
+          //   ),
+          // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
+          // if (model.existingOS != null)
+          //   RadioButton<InstallationType>(
+          //     title: Text(lang.installationTypeAlongside(
+          //         model.productInfo, model.existingOS!)),
+          //     subtitle: Text(lang.installationTypeAlongsideInfo),
+          //     value: InstallationType.alongside,
+          //     groupValue: model.installationType,
+          //     onChanged: (v) => model.installationType = v!,
+          //   ),
+          // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
           RadioButton<InstallationType>(
             title: Text(lang.installationTypeErase(flavor.name)),
             subtitle: Html(
