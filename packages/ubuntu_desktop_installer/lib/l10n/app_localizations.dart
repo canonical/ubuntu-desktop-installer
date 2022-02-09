@@ -675,6 +675,18 @@ abstract class AppLocalizations {
   /// **'This computer currently has {os} on it. What would you like to do?'**
   String installationTypeOSDetected(Object os);
 
+  /// No description provided for @installationTypeDualOSDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'This computer currently has {os1} and {os2} on it. What would you like to do?'**
+  String installationTypeDualOSDetected(Object os1, Object os2);
+
+  /// No description provided for @installationTypeMultiOSDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'This computer currently has multiple operating systems on it. What would you like to do?'**
+  String get installationTypeMultiOSDetected;
+
   /// No description provided for @installationTypeNoOSDetected.
   ///
   /// In en, this message translates to:

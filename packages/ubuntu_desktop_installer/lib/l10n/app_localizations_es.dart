@@ -249,6 +249,14 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+
+  @override
   String get installationTypeNoOSDetected => 'En el equipo no se ha detectado actualmente ningún sistema operativo. ¿Qué quiere hacer?';
 
   @override
