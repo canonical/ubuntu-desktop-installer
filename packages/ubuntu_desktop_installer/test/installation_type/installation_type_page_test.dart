@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../widget_tester_extensions.dart';
@@ -20,7 +21,7 @@ void main() {
     InstallationType? installationType,
     AdvancedFeature? advancedFeature,
     bool? encryption,
-    String? productInfo,
+    ProductInfo? productInfo,
     List<OsProber>? existingOS,
   }) {
     final model = MockInstallationTypeModel();
@@ -29,7 +30,7 @@ void main() {
     when(model.advancedFeature)
         .thenReturn(advancedFeature ?? AdvancedFeature.none);
     when(model.encryption).thenReturn(encryption ?? false);
-    when(model.productInfo).thenReturn(productInfo ?? '');
+    when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
     when(model.existingOS).thenReturn(existingOS);
     return model;
   }
@@ -61,7 +62,7 @@ void main() {
 
   testWidgets('alongside', (tester) async {
     final model = buildModel(
-      productInfo: 'Ubuntu 21.10',
+      productInfo: ProductInfo(name: 'Ubuntu 21.10'),
       existingOS: [
         OsProber(
           long: 'Ubuntu 18.04 LTS',
