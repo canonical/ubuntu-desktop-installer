@@ -280,6 +280,7 @@
   "whoAreYouPagePasswordRequired": "A password is required",
   "whoAreYouPageConfirmPasswordLabel": "Confirm your password",
   "whoAreYouPagePasswordMismatch": "The passwords do not match",
+  "whoAreYouPageShowPassword": "Show password",
   "writeChangesToDisk": "Write changes to disk",
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
-import 'package:yaru_icons/yaru_icons.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 import '../widget_tester_extensions.dart';
 import 'who_are_you_page_test.mocks.dart';
@@ -23,7 +23,7 @@ void main() {
     String? confirmedPassword,
     PasswordStrength? passwordStrength,
     LoginStrategy? loginStrategy,
-    bool? obscureText,
+    bool? showPassword,
   }) {
     final model = MockWhoAreYouModel();
     when(model.isValid).thenReturn(isValid ?? false);
@@ -36,7 +36,7 @@ void main() {
         .thenReturn(passwordStrength ?? PasswordStrength.weak);
     when(model.loginStrategy)
         .thenReturn(loginStrategy ?? LoginStrategy.autoLogin);
-    when(model.obscureText).thenReturn(obscureText ?? false);
+    when(model.showPassword).thenReturn(showPassword ?? false);
     return model;
   }
 
@@ -243,15 +243,28 @@ void main() {
   //   verify(model.loginStrategy = LoginStrategy.requirePassword).called(1);
   // });
 
-  testWidgets('obscure text', (tester) async {
-    final model = buildModel(obscureText: true);
+  testWidgets('show password', (tester) async {
+    final model = buildModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final obscureTextButton = find.widgetWithIcon(IconButton, YaruIcons.hide);
-    expect(obscureTextButton, findsOneWidget);
+    final showPasswordCheckButton =
+        find.widgetWithText(CheckButton, tester.lang.whoAreYouPageShowPassword);
+    expect(showPasswordCheckButton, findsOneWidget);
 
-    await tester.tap(obscureTextButton);
-    verify(model.obscureText = false).called(1);
+    await tester.tap(showPasswordCheckButton);
+    verify(model.showPassword = true).called(1);
+  });
+
+  testWidgets('hide password', (tester) async {
+    final model = buildModel(showPassword: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final showPasswordCheckButton =
+        find.widgetWithText(CheckButton, tester.lang.whoAreYouPageShowPassword);
+    expect(showPasswordCheckButton, findsOneWidget);
+
+    await tester.tap(showPasswordCheckButton);
+    verify(model.showPassword = false).called(1);
   });
 
   testWidgets('save identity', (tester) async {
