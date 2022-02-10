@@ -522,6 +522,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Les contrasenyes no coincideixen';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override

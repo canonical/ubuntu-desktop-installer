@@ -522,6 +522,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => '디스크에 변경사항 쓰기';
 
   @override

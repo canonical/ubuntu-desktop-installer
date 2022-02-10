@@ -522,6 +522,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Hasła nie są zgodne';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Zapisz zmiany na dysku';
 
   @override

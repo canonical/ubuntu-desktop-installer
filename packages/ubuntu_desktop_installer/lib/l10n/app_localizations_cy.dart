@@ -522,6 +522,9 @@ class AppLocalizationsCy extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override

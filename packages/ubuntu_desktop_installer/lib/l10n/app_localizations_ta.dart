@@ -522,6 +522,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override

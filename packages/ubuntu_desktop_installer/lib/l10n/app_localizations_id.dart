@@ -522,6 +522,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Kata sandi tidak cocok';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Tulis perubahan ke disk';
 
   @override
