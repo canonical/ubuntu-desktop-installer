@@ -42,6 +42,55 @@ void main() {
     );
   }
 
+  testWidgets('no existing OS', (tester) async {
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(buildModel())));
+
+    expect(
+      find.text(tester.lang.installationTypeNoOSDetected),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('one existing OS', (tester) async {
+    final model = buildModel(existingOS: [
+      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
+    ]);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+      find.text(tester.lang.installationTypeOSDetected('Ubuntu 18.04 LTS')),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('two existing OSes', (tester) async {
+    final model = buildModel(existingOS: [
+      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+    ]);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+      find.text(tester.lang.installationTypeDualOSDetected(
+          'Ubuntu 18.04 LTS', 'Ubuntu 20.04 LTS')),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('multiple existing OSes', (tester) async {
+    final model = buildModel(existingOS: [
+      OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+    ]);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+      find.text(tester.lang.installationTypeMultiOSDetected),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: [
       OsProber(
