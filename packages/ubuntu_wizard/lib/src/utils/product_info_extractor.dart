@@ -50,7 +50,7 @@ class ProductInfoExtractor {
 
   static ProductInfo? _extractIsoInfo(File file) {
     // versions on ISO are stored in format - Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)
-    // we want to read system name and version without code name, so we extract them before the second quote
+    // we want to read system name and version without code name, so we extract them before the first quote
     final isoName =
         file.readAsLinesSync().firstWhere((l) => l.trim().isNotEmpty);
     return _parseProductName(isoName.substring(0, isoName.indexOf('"') - 1));
