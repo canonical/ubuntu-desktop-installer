@@ -53,7 +53,7 @@ void main() {
       MockDiskStorageService(),
       MockTelemetryService(),
     );
-    expect(model.productInfo, isNotEmpty);
+    expect(model.productInfo.name, isNotEmpty);
   });
 
   test('save talks to telemetry service', () async {

@@ -4,9 +4,20 @@ import 'package:file/local.dart';
 const String isoPath = '/cdrom/.disk/info';
 const String localPath = '/etc/os-release';
 
-/// A class which reads current system version
+/// A class which contains the system name and version
+class ProductInfo {
+  ProductInfo({required this.name, this.version});
+
+  final String name;
+  final String? version;
+
+  @override
+  String toString() => [name, version].whereType<String>().join(' ');
+}
+
+/// A class which reads current system info
 class ProductInfoExtractor {
-  static String _cachedProductInfo = '';
+  static ProductInfo? _cachedProductInfo;
 
   final FileSystem _fileSystem;
 
@@ -19,50 +30,54 @@ class ProductInfoExtractor {
   ///
   /// Returned value is cached.
   /// Optionally cache can be cleared by specifing `shouldResetCache` to `true`
-  String getProductInfo({bool shouldResetCache = false}) {
+  ProductInfo getProductInfo({bool shouldResetCache = false}) {
     if (shouldResetCache) {
-      _cachedProductInfo = '';
+      _cachedProductInfo = null;
     }
 
-    if (_cachedProductInfo.isNotEmpty) {
-      return _cachedProductInfo;
-    }
+    try {
+      _cachedProductInfo ??= _extractIsoInfo(_fileSystem.file(isoPath));
+    } on Exception {}
 
-    if (_fileSystem.file(isoPath).existsSync()) {
-      try {
-        final content = _fileSystem
-            .file(isoPath)
-            .readAsLinesSync()
-            .firstWhere((line) => line.trim().isNotEmpty);
+    try {
+      _cachedProductInfo ??= _extractLocalInfo(_fileSystem.file(localPath));
+    } on Exception {}
 
-        // versions on ISO are stored in format - Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)
-        // we want to read system name and version without code name, so we extract it before second quote
-        _cachedProductInfo = content.substring(0, content.indexOf('"') - 1);
-      } on Exception {
-        _extractLocalVersion(localPath);
-      }
-    } else {
-      _extractLocalVersion(localPath);
-    }
+    _cachedProductInfo ??= ProductInfo(name: 'Ubuntu');
 
-    return _cachedProductInfo;
+    return _cachedProductInfo!;
   }
 
-  void _extractLocalVersion(String localPath) {
-    if (_fileSystem.file(localPath).existsSync()) {
-      try {
-        final content = _fileSystem
-            .file(localPath)
-            .readAsLinesSync()
-            .firstWhere((line) => line.startsWith('PRETTY_NAME'));
+  static ProductInfo? _extractIsoInfo(File file) {
+    // versions on ISO are stored in format - Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)
+    // we want to read system name and version without code name, so we extract them before the first quote
+    final isoName =
+        file.readAsLinesSync().firstWhere((l) => l.trim().isNotEmpty);
+    return _parseProductName(isoName.substring(0, isoName.indexOf('"') - 1));
+  }
 
-        _cachedProductInfo = content.substring(
-            content.indexOf("\"") + 1, content.lastIndexOf("\""));
-      } on Exception {
-        _cachedProductInfo = 'Ubuntu';
-      }
-    } else {
-      _cachedProductInfo = 'Ubuntu';
-    }
+  static ProductInfo _extractLocalInfo(File file) {
+    // PRETTY_NAME="Ubuntu 20.04.2 LTS"
+    final content = file
+        .readAsLinesSync()
+        .firstWhere((line) => line.startsWith('PRETTY_NAME'));
+    final localName =
+        content.substring(content.indexOf("\"") + 1, content.lastIndexOf("\""));
+    return _parseProductName(localName);
+  }
+
+  static ProductInfo _parseProductName(String info) {
+    // extract an optional version string from the end of "Ubuntu 20.04.2.0 LTS".
+    // the version is expected to be in format "<x>.<y>(.<z>...)" and may be
+    // followed by a textual identifier such as "LTS".
+    final match = RegExp(r'\d+\.\d+(?:\.\d+)*').firstMatch(info);
+
+    // the product name up until the optional version
+    final name = info.substring(0, match?.start ?? info.length);
+
+    return ProductInfo(
+      name: name.trim(),
+      version: match != null ? info.substring(match.start) : null,
+    );
   }
 }
