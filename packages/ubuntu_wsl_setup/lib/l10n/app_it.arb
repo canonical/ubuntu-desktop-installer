@@ -1,3 +1,15 @@
 {
-  "@@locale": "it"
+  "@@locale": "it",
+  "profileSetupRealnameRequired": "Un nome è richiesto",
+  "@profileSetupRealnameRequired": {},
+  "appTitle": "Ubuntu WSL",
+  "@appTitle": {},
+  "windowTitle": "Ubuntu WSL",
+  "@windowTitle": {},
+  "selectLanguageTitle": "Seleziona la tua lingua",
+  "@selectLanguageTitle": {},
+  "profileSetupRealnameLabel": "Il tuo nome",
+  "@profileSetupRealnameLabel": {},
+  "profileSetupUsernameHint": "Scegli uno username",
+  "@profileSetupUsernameHint": {}
 }
