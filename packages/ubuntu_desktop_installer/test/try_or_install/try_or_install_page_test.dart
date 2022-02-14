@@ -80,7 +80,7 @@ void main() {
     expect(label, findsOneWidget);
 
     final launches = <MethodCall>[];
-    var channel = const MethodChannel('plugins.flutter.io/url_launcher');
+    var channel = const MethodChannel('plugins.flutter.io/url_launcher_linux');
     channel.setMockMethodCallHandler((methodCall) async {
       launches.add(methodCall);
     });

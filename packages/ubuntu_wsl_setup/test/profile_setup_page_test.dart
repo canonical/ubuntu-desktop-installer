@@ -215,7 +215,8 @@ void main() {
     await tester.pumpWidget(buildApp(tester, buildModel()));
 
     var urlLaunched = false;
-    final methodChannel = MethodChannel('plugins.flutter.io/url_launcher');
+    final methodChannel =
+        MethodChannel('plugins.flutter.io/url_launcher_linux');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('launch'));
       expect(call.arguments['url'], equals('https://aka.ms/wslusers'));
