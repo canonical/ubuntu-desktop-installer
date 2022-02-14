@@ -139,6 +139,15 @@
       "os": {}
     }
   },
+  "installationTypeDualOSDetected": "This computer currently has {os1} and {os2} on it. What would you like to do?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "This computer currently has multiple operating systems on it. What would you like to do?",
   "installationTypeNoOSDetected": "This computer currently has no detected operating systems. What would you like to do?",
   "installationTypeErase": "Erase disk and install {DISTRO}",
   "@installationTypeErase": {
