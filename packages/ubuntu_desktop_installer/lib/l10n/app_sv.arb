@@ -535,5 +535,66 @@
   "officeSlideWriter": "LibreOffice Writer",
   "@officeSlideWriter": {},
   "accessSlideAppearance": "Utseende",
-  "@accessSlideAppearance": {}
+  "@accessSlideAppearance": {},
+  "hiddenWifiNetworkNameLabel": "Nätverksnamn",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetworkNameRequired": "Ett nätverksnamn krävs",
+  "@hiddenWifiNetworkNameRequired": {},
+  "softwareSlideTitle": "Hitta ännu mer programvara",
+  "@softwareSlideTitle": {},
+  "photoSlideShotcut": "Shotcut videoedigerare",
+  "@photoSlideShotcut": {},
+  "officeSlideDescription": "LibreOffice är en gratis kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver, utan någon hög prislapp.",
+  "@officeSlideDescription": {},
+  "softwareSlideDescription": "Säg adjö till att söka på nätet efter ny programvara. Med åtkomst till Snap butiken och {RELEASE} programvaru arkiv, så kan du kan enkelt hitta och installera nya program. Bara skriv in det du letar efter, eller utforska kategorier som Grafik och Fotografi, Spel och Produktivitet, tillsammans med användbara recensioner från andra användare.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "hiddenWifiNetwork": "Anslut till ett dolt Wi-Fi-nätverk",
+  "@hiddenWifiNetwork": {},
+  "musicSlideDescription": "{RELEASE} kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att ställa de perfekta låtarna i kö. Och det fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideDescription": "{RELEASE} inkluderar Firefox, webbläsaren som används av miljontals människor runt om i världen. Och webbapplikationer som du använder ofta (som Facebook eller Gmail, till exempel) kan fästas på skrivbordet för snabbare åtkomst, precis som program på din dator.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.",
+  "@supportSlideQuestions": {},
+  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste områdena om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideResources": "För tips på andra användbara resurser, besök <a href=\"https://www.ubuntu.com/support/community-support\">Community-support</a> eller <a href=\"https://www.ubuntu. .com/support\">Kommersiell support</a>.",
+  "@supportSlideResources": {},
+  "welcomeSlideDescription": "Snabb och full av nya funktioner, den senaste versionen av {RELEASE} gör datoranvändning enklare än någonsin. Här är bara några coola nya saker att hålla utkik efter...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideTitle": "Ha kul med dina bilder",
+  "@photoSlideTitle": {},
+  "photoSlideDescription": "Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkra. Och om du känner dig kreativ kan du hitta många andra fotoappar i Ubuntu Software.",
+  "@photoSlideDescription": {},
+  "photoSlideGimp": "GIMP bildredigerare",
+  "@photoSlideGimp": {},
+  "photoSlideShotwell": "Shotwell fotohanterare",
+  "@photoSlideShotwell": {},
+  "accessSlideTitle": "Åtkomst för alla",
+  "@accessSlideTitle": {}
 }

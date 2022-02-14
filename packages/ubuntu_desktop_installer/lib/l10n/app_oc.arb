@@ -539,5 +539,11 @@
   "availableSoftware": "Logicials disponibles",
   "@availableSoftware": {},
   "supportedSoftware": "Logicials preses en carga",
-  "@supportedSoftware": {}
+  "@supportedSoftware": {},
+  "hiddenWifiNetworkNameLabel": "Nom de la ret",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameRequired": "Un nom de ret es requerit",
+  "@hiddenWifiNetworkNameRequired": {}
 }
