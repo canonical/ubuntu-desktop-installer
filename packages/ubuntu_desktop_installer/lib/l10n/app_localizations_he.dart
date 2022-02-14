@@ -157,13 +157,13 @@ class AppLocalizationsHe extends AppLocalizations {
   String get selectWifiNetwork => 'התחברות לרשת אלחוטית';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'התחברות לרשת אלחוטית נסתרת';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'שם הרשת';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'שם הרשת נחוץ';
 
   @override
   String get noInternet => 'לא רוצה להתחבר לאינטרנט כרגע';
@@ -674,7 +674,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return 'למערכת $RELEASE מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון Facebook או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.';
   }
 
   @override

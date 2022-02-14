@@ -157,13 +157,13 @@ class AppLocalizationsOc extends AppLocalizations {
   String get selectWifiNetwork => 'Se connectar a un ret Wifi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Se connectar a una ret Wi-Fi amagada';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nom de la ret';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Un nom de ret es requerit';
 
   @override
   String get noInternet => 'Vòli pas me connectar a internet pel moment';
