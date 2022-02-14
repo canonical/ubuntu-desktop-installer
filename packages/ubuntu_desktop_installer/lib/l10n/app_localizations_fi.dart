@@ -522,6 +522,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Tallenna muutokset levylle';
 
   @override

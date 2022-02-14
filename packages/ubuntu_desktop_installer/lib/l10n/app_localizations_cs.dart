@@ -522,6 +522,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Zapsat změny na disk';
 
   @override

@@ -522,6 +522,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Пароли не совпадают';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Записать изменения на диск';
 
   @override

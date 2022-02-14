@@ -522,6 +522,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Die Passwörter stimmen nicht überein';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Änderungen auf die Festplatte schreiben';
 
   @override

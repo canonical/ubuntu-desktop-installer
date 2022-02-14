@@ -522,6 +522,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Skriv ändringar till disk';
 
   @override

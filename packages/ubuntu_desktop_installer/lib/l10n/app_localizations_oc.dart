@@ -522,6 +522,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Los senhals correspondon pas';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Aplicar las modificacions suls disques';
 
   @override
