@@ -100,7 +100,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get detectLayout => 'Détecter la disposition du clavier';
 
   @override
-  String get pressOneKey => 'Veuillez appuyer sur l\'une des touches suivantes :';
+  String get pressOneKey => 'Veuillez appuyer sur l’une des touches suivantes :';
 
   @override
   String get isKeyPresent => 'Cette touche est-elle présente sur votre clavier ?';
@@ -109,7 +109,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configureSecureBootTitle => 'Configurer Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'Vous avez choisi d\'installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l\'entrer quand le système démarrera.';
+  String get configureSecureBootDescription => 'Vous avez choisi d’installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l’entrer quand le système démarrera.';
 
   @override
   String get configureSecureBootOption => 'Configurer Secure Boot';
@@ -124,7 +124,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Ne pas installer le pilote maintenant';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Vous pouvez l\'installer ultérieurement depuis Logiciel & Mises à jour.';
+  String get dontInstallDriverSoftwareNowDescription => 'Vous pouvez l’installer ultérieurement depuis Logiciel & Mises à jour.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'La clé de sécurité est nécessaire';
@@ -136,7 +136,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get connectToInternetPageTitle => 'Se connecter à internet';
 
   @override
-  String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wifi';
+  String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wi-Fi';
 
   @override
   String get useWiredConnection => 'Utiliser une connexion câblée';
@@ -154,31 +154,31 @@ class AppLocalizationsFr extends AppLocalizations {
   String get enableWired => 'Activer une connexion câblée';
 
   @override
-  String get selectWifiNetwork => 'Se connecter à un réseau Wifi';
+  String get selectWifiNetwork => 'Se connecter à un réseau Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Se connecter à un réseau Wi-Fi caché';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nom du réseau';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Un nom de réseau est requis';
 
   @override
-  String get noInternet => 'Je ne souhaite pas me connecter à internet pour l\'instant';
+  String get noInternet => 'Je ne souhaite pas me connecter à internet pour l’instant';
 
   @override
   String get wirelessNetworkingDisabled => 'Le réseau sans fil est désactivé';
 
   @override
-  String get noWifiDevicesDetected => 'Aucun périphérique Wifi détecté';
+  String get noWifiDevicesDetected => 'Aucun périphérique Wi-Fi détecté';
 
   @override
-  String get wifiMustBeEnabled => 'Pour utiliser le Wifi sur cet ordinateur, cette fonctionnalité doit être activée';
+  String get wifiMustBeEnabled => 'Pour utiliser le Wi-Fi sur cet ordinateur, cette fonctionnalité doit être activée';
 
   @override
-  String get enableWifi => 'Activer le Wifi';
+  String get enableWifi => 'Activer le Wi-Fi';
 
   @override
   String get connectButtonText => 'Se connecter';
@@ -220,7 +220,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l\'ordinateur démarre. \n\nTous les fichiers en dehors de $RELEASE ne seront pas chiffrés.';
+    return 'Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l’ordinateur démarre.\n\nTous les fichiers en dehors d’$RELEASE ne seront pas chiffrés.';
   }
 
   @override
@@ -266,11 +266,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d\'exploitation.';
+    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d’exploitation.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Fonctions avancées ...';
+  String get installationTypeAdvancedLabel => 'Fonctions avancées…';
 
   @override
   String get installationTypeAdvancedTitle => 'Fonctions avancées';
@@ -283,7 +283,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Utiliser LVM pour la nouvelle installation $RELEASE';
+    return 'Utiliser LVM pour la nouvelle installation d’$RELEASE';
   }
 
   @override
@@ -291,11 +291,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Chiffrer la nouvelle installation de $RELEASE pour la sécurité';
+    return 'Chiffrer la nouvelle installation d’$RELEASE pour la sécurité';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Vous allez choisir une clé de sécurité à l\'étape suivante.';
+  String get installationTypeEncryptInfo => 'Vous allez choisir une clé de sécurité à l’étape suivante.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL : Effacer le disque et utiliser ZFS';
@@ -383,7 +383,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Vous avez sélectionné un périphérique entier à partitionner. Si vous continuez en créant une nouvelle table de partitions, toutes les partitions actuellement sur ce périphérique seront supprimées.\n\nVous pourrez annuler cette opération plus tard si vous le souhaitez.';
 
   @override
-  String get bootLoaderDevice => 'Périphérique pour installer le chargeur d\'amorçage';
+  String get bootLoaderDevice => 'Périphérique pour installer le chargeur d’amorçage';
 
   @override
   String get partitionCreateTitle => 'Créer une partition';
@@ -503,19 +503,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageComputerNameInfo => 'Le nom qu’il utilise pour communiquer avec d’autres ordinateurs.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Un nom pour l\'ordinateur est requis';
+  String get whoAreYouPageComputerNameRequired => 'Un nom pour l’ordinateur est requis';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Ce nom d\'ordinateur est invalide';
+  String get whoAreYouPageInvalidComputerName => 'Ce nom d’ordinateur est invalide';
 
   @override
   String get whoAreYouPageUsernameLabel => 'Choisir un nom d’utilisateur';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Un nom d\'utilisateur est requis';
+  String get whoAreYouPageUsernameRequired => 'Un nom d’utilisateur est requis';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Ce nom d\'utilisateur est invalide';
+  String get whoAreYouPageInvalidUsername => 'Ce nom d’utilisateur est invalide';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Choisir un mot de passe';
@@ -600,7 +600,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Désactiver BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d\'installer Ubuntu.';
+  String get turnOffBitlockerDescription => 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d’installer Ubuntu.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -626,7 +626,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Rapide et pleine de nouvelles fonctionnalités, la dernière version de $RELEASE rend l\'informatique plus facile que jamais. Voici quelques nouveautés à découvrir…';
+    return 'Rapide et pleine de nouvelles fonctionnalités, la dernière version d’$RELEASE rend l’informatique plus facile que jamais. Voici quelques nouveautés à découvrir…';
   }
 
   @override
@@ -634,7 +634,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Dites au revoir à la recherche de nouveaux logiciels sur le web. Avec l\'accès au Snap Store et aux archives logicielles de $RELEASE, vous pouvez trouver et installer facilement de nouvelles applications. Saisissez juste ce que vous cherchez ou explorez les catégories comme Graphisme & photographie, Jeux ou Productivité accompagnées de commentaires d\'autres utilisateurs.';
+    return 'Dites au revoir à la recherche de nouveaux logiciels sur le web. Avec l’accès au Snap Store et aux archives logicielles d’$RELEASE, vous pouvez trouver et installer facilement de nouvelles applications. Saisissez juste ce que vous cherchez ou explorez les catégories comme Graphisme & photographie, Jeux ou Productivité accompagnées de commentaires d’autres utilisateurs.';
   }
 
   @override
@@ -642,7 +642,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE est livré avec l’excellent lecteur de musique Rhythmbox. Grâce à ses options de lecture avancées, c\'est un jeu d\'enfant de préparer la liste de lecture parfaite. De plus, il gère parfaitement CD et baladeurs numériques, vous pouvez donc profiter de votre musique partout où vous allez.';
+    return '$RELEASE est livré avec l’excellent lecteur de musique Rhythmbox. Grâce à ses options de lecture avancées, c’est un jeu d’enfant de préparer la liste de lecture parfaite. De plus, il gère parfaitement CD et baladeurs numériques, vous pouvez donc profiter de votre musique partout où vous allez.';
   }
 
   @override
@@ -664,7 +664,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get photoSlideShotwell => 'Gestionnaire de photos Shotwell';
 
   @override
-  String get photoSlideGimp => 'Éditeur d\'images GIMP';
+  String get photoSlideGimp => 'Éditeur d’images GIMP';
 
   @override
   String get photoSlideShotcut => 'Éditeur vidéo Shotcut';
@@ -706,7 +706,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Au cœur de la philosophie de $RELEASE se trouve la conviction que l\'informatique doit être accessible à tous. Proposant des outils d\'accessibilité avancés et des options telles que le choix de la langue, du thème de couleurs, de la taille des polices, $RELEASE vous rend l\'informatique facile – qui que vous soyez, où que vous soyez.';
+    return 'Au cœur de la philosophie d’$RELEASE se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, du thème de couleurs, de la taille des polices, $RELEASE vous rend l’informatique facile – qui que vous soyez, où que vous soyez.';
   }
 
   @override
@@ -726,14 +726,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'La documentation officielle couvre les principaux sujets concernant $RELEASE. Elle est disponible à la fois <a href=\"https://help.ubuntu.com\">en ligne</a> et via l\'icône Aide dans le lanceur.';
+    return 'La documentation officielle couvre les principaux sujets concernant $RELEASE. Elle est disponible à la fois <a href=\"https://help.ubuntu.com\">en ligne</a> et via l’icône Aide dans le lanceur.';
   }
 
   @override
-  String get supportSlideQuestions => 'Sur <a href=\"http://forum.ubuntu-fr.org\">forum.ubuntu-fr.org</a>, vous pouvez poser des questions et rechercher dans une collection impressionnante de questions ayant déjà une réponse. Les <a href=\"http://loco.ubuntu.com/teams/\">équipes locales</a> peuvent également vous apporter de l\'aide.';
+  String get supportSlideQuestions => 'Sur <a href=\"http://forum.ubuntu-fr.org\">forum.ubuntu-fr.org</a>, vous pouvez poser des questions et rechercher dans une collection impressionnante de questions ayant déjà une réponse. Les <a href=\"http://loco.ubuntu.com/teams/\">équipes locales</a> peuvent également vous apporter de l’aide.';
 
   @override
-  String get supportSlideResources => 'Pour des renseignements vers d\'autres ressources utiles, veuillez vous référer à l\'<a href=\"https://www.ubuntu.com/support/community-support\">assistance communautaire</a> ou à l\'<a href=\"http://www.ubuntu.com/support\">assistance commerciale</a>.';
+  String get supportSlideResources => 'Pour des renseignements vers d’autres ressources utiles, veuillez vous référer à l’<a href=\"https://www.ubuntu.com/support/community-support\">assistance communautaire</a> ou à l’<a href=\"http://www.ubuntu.com/support\">assistance commerciale</a>.';
 
   @override
   String get includedSoftware => 'Logiciels inclus';
