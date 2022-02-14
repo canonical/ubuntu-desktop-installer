@@ -12,17 +12,17 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Installa Ubuntu';
+    return 'Installa $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Annulla';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Modifica';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Ok';
 
   @override
   String get noButtonText => 'No';
@@ -31,16 +31,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get restartButtonText => 'Riavvia';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Ripristina';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Sì';
 
   @override
   String get welcome => 'Benvenuto';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Scegli la tua lingua:';
 
   @override
   String get tryOrInstallPageTitle => 'Prova o installa';
@@ -53,22 +53,22 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Prova Ubuntu';
+    return 'Prova $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.';
+    return 'Puoi provare $RELEASE senza apportare alcuna modifica al tuo computer.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Installa Ubuntu';
+    return 'Installa $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
+    return 'Installa $RELEASE accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
   }
 
   @override
@@ -88,16 +88,16 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Disposizione della tastiera';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Scegliere la disposizione della tastiera:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Digitare qui per provare la tastiera';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Rileva disposizione tastiera';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
