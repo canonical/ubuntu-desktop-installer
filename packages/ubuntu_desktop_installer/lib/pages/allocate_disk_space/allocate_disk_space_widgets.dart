@@ -9,7 +9,6 @@ import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';
 import 'storage_table.dart';
-import 'storage_types.dart';
 
 class PartitionBar extends StatelessWidget {
   PartitionBar({Key? key}) : super(key: key);
