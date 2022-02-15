@@ -157,6 +157,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get selectWifiNetwork => 'Připojit k Wi-Fi síti';
 
   @override
+  String get hiddenWifiNetwork => 'Připojit ke skryté Wi-Fi síti';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Název sítě';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'Je vyžadován název sítě';
+
+  @override
   String get noInternet => 'V tuto chvíli se nechci připojovat k Internetu';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsCs extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'Na tomto počítači se už nachází $os. Co si přejete udělat?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'Na tomto počítači nyní nebyl zjištěn žádný operační systém. Co si přejete udělat?';
@@ -513,6 +530,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Zapsat změny na disk';
 
   @override
@@ -601,32 +621,32 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Vítejte v $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Rychlá a plná nových funkcí, nejnovější verze $RELEASE usnadňuje používání počítače víc než předtím. Zde je ukázka několika z nových skvělých věcí, na které je možné se těšit…';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Nalezněte ještě více software';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Dejte sbohem únavnému prohledávání webu při získávání nového software. Díky přístupu do Snap Store a archivu softwaru $RELEASE, je snadné najít a nainstalovat nové aplikace. Stačí jen napsat, co hledáte nebo procházet kategoriemi, jako např. Grafika a fotky, Hry a produktivita – vše doprovázeno užitečnými recenzemi ostatních uživatelů.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Vezměte si hudbu s sebou';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE přináší skvělý přehrávač hudby Rhythmbox. S pokročilými funkcemi pro přehrávání je snadné si seřadit skladby, které se vám líbí. A funguje skvěle s CD disky a přenosnými přehrávači hudby, takže si veškerou svou hudbu můžete nosit s sebou.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Přehrávač hudby Rhytmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -635,30 +655,30 @@ class AppLocalizationsCs extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Bavte se svými fotkami';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell je šikovný správce fotek, který je připraven na vaše foto zařízení. Připojte fotoaparát nebo telefon a přeneste své fotky a pak je jednoduše nasdílejte a mějte je v bezpečí před ztrátou. A pokud jste tvořiví, v Ubuntu Software je k dispozici mnoho dalších aplikací pro práci s fotkami.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Správce fotek Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'Editor obrázků GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Editor videa Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Získejte z webu maximum';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE obsahuje Firefox – webový prohlížeč, používaný miliony lidí z celého světa. Webové aplikace, které používáte nejčastěji (jako např. Facebook a Gmail), je možné připnout do vašeho desktopového prostředí a mít je tak více po ruce, úplně jako ostatní aplikace v počítači.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Webový prohlížeč Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -667,10 +687,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Vše co potřebujete pro kancelář';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice je open source sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce a to vše zdarma.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -682,45 +702,45 @@ class AppLocalizationsCs extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Přístupnost pro všechny';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Středobodem filozofie $RELEASE je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, schématu barev a velikosti textu, $RELEASE usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Možnosti přizpůsobení si';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Vzhled';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Technologie pro zpřístupnění';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Podpora jazyků';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Nápověda a podpora';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'Oficiální dokumentace pokrývá mnohé z nejběžnějších oblastí v $RELEASE. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'Na <a href=\"https://askubuntu.com\">Ask Ubuntu</a> je možné pokládat dotazy a hledat v rozsáhlé sbírce těch už zodpovězených. Podpora ve vašem jazyce může být poskytována vaším <a href=\"https://loco.ubuntu.com/teams\">Místním komunitním týmem</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Ohledně ukazatelů na ostatní užitečné zdroje, navštivte <a href=\"https://www.ubuntu.com/support/community-support\">Komunitní podporu</a> nebo <a href=\"https://www.ubuntu.com/support\">Komerční podporu</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Obsažený software';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Software k dispozici';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Podporovaný software';
 }

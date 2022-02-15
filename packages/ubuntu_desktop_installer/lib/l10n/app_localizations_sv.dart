@@ -157,6 +157,15 @@ class AppLocalizationsSv extends AppLocalizations {
   String get selectWifiNetwork => 'Anslut till ett Wi-Fi nätverk';
 
   @override
+  String get hiddenWifiNetwork => 'Anslut till ett dolt Wi-Fi-nätverk';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Nätverksnamn';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'Ett nätverksnamn krävs';
+
+  @override
   String get noInternet => 'Jag vill inte ansluta till internet just nu';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsSv extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'Den här datorn har för närvarande $os på sig. Vad skulle du vilja göra?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'Den här datorn har för närvarande inga upptäckta operativsystem. Vad skulle du vilja göra?';
@@ -513,6 +530,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Skriv ändringar till disk';
 
   @override
@@ -606,15 +626,15 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Snabb och full av nya funktioner, den senaste versionen av $RELEASE gör datoranvändning enklare än någonsin. Här är bara några coola nya saker att hålla utkik efter...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Hitta ännu mer programvara';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Säg adjö till att söka på nätet efter ny programvara. Med åtkomst till Snap butiken och $RELEASE programvaru arkiv, så kan du kan enkelt hitta och installera nya program. Bara skriv in det du letar efter, eller utforska kategorier som Grafik och Fotografi, Spel och Produktivitet, tillsammans med användbara recensioner från andra användare.';
   }
 
   @override
@@ -622,7 +642,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att ställa de perfekta låtarna i kö. Och det fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.';
   }
 
   @override
@@ -635,26 +655,26 @@ class AppLocalizationsSv extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Ha kul med dina bilder';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkra. Och om du känner dig kreativ kan du hitta många andra fotoappar i Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell fotohanterare';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP bildredigerare';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut videoedigerare';
 
   @override
   String get webSlideTitle => 'Få ut det mesta av webben';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE inkluderar Firefox, webbläsaren som används av miljontals människor runt om i världen. Och webbapplikationer som du använder ofta (som Facebook eller Gmail, till exempel) kan fästas på skrivbordet för snabbare åtkomst, precis som program på din dator.';
   }
 
   @override
@@ -670,7 +690,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get officeSlideTitle => 'Allt du behöver för kontoret';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice är en gratis kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver, utan någon hög prislapp.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -682,7 +702,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Åtkomst för alla';
 
   @override
   String accessSlideDescription(Object RELEASE) {
@@ -706,14 +726,14 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'Den officiella dokumentationen täcker många av de vanligaste områdena om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'För tips på andra användbara resurser, besök <a href=\"https://www.ubuntu.com/support/community-support\">Community-support</a> eller <a href=\"https://www.ubuntu. .com/support\">Kommersiell support</a>.';
 
   @override
   String get includedSoftware => 'Inkluderad programvara';

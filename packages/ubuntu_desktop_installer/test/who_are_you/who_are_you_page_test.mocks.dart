@@ -83,12 +83,12 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
-  bool get obscureText =>
-      (super.noSuchMethod(Invocation.getter(#obscureText), returnValue: false)
+  bool get showPassword =>
+      (super.noSuchMethod(Invocation.getter(#showPassword), returnValue: false)
           as bool);
   @override
-  set obscureText(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#obscureText, value),
+  set showPassword(bool? value) =>
+      super.noSuchMethod(Invocation.setter(#showPassword, value),
           returnValueForMissingStub: null);
   @override
   bool get hasListeners =>

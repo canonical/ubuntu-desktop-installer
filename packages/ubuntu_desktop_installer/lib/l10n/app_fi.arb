@@ -436,5 +436,48 @@
     "placeholders": {
       "color": {}
     }
-  }
+  },
+  "hiddenWifiNetworkNameRequired": "Verkon nimi vaaditaan",
+  "@hiddenWifiNetworkNameRequired": {},
+  "welcomeSlideTitle": "Tervetuloa, tämä on {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideRhythmbox": "Rytmilaatikko-musiikkisoitin",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "webSlideFirefox": "Firefox-selain",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {},
+  "whereAreYouPageTitle": "Missä olet?",
+  "@whereAreYouPageTitle": {},
+  "musicSlideTitle": "Ota musiikki mukaasi",
+  "@musicSlideTitle": {},
+  "whereAreYouLocationLabel": "Sijainti",
+  "@whereAreYouLocationLabel": {},
+  "hiddenWifiNetwork": "Yhdistä piilotettuun wifi-verkkoon",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameLabel": "Verkon nimi",
+  "@hiddenWifiNetworkNameLabel": {},
+  "whereAreYouTimezoneLabel": "Aikavyöhyke",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeHeader": "Valitse kieli:",
+  "@welcomeHeader": {},
+  "accessSlideAppearance": "Ulkoasu",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "Avustavat teknologiat",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "Kielituki",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Ohjeet ja tuki",
+  "@supportSlideTitle": {}
 }

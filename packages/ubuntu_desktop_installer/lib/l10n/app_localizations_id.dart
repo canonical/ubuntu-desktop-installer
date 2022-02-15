@@ -157,6 +157,15 @@ class AppLocalizationsId extends AppLocalizations {
   String get selectWifiNetwork => 'Menyambung ke suatu jaringan Wi-Fi';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'Saya tidak ingin tersambung ke internet saat ini';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsId extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'Komputer ini saat ini memiliki $os di dalamnya. Apa yang ingin Anda lakukan?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'Komputer ini saat ini tidak memiliki sistem operasi yang terdeteksi. Apa yang ingin Anda lakukan?';
@@ -511,6 +528,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'Kata sandi tidak cocok';
+
+  @override
+  String get whoAreYouPageShowPassword => 'Show password';
 
   @override
   String get writeChangesToDisk => 'Tulis perubahan ke disk';

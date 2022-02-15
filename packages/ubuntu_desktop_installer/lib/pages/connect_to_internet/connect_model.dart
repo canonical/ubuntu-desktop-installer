@@ -8,6 +8,7 @@ enum ConnectMode {
   none,
   ethernet,
   wifi,
+  hiddenWifi,
 }
 
 /// Holds the state of a connection mode (ethernet, wifi, or none).

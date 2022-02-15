@@ -507,6 +507,24 @@ abstract class AppLocalizations {
   /// **'Connect to a Wi-Fi network'**
   String get selectWifiNetwork;
 
+  /// No description provided for @hiddenWifiNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to a hidden Wi-Fi network'**
+  String get hiddenWifiNetwork;
+
+  /// No description provided for @hiddenWifiNetworkNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Network name'**
+  String get hiddenWifiNetworkNameLabel;
+
+  /// No description provided for @hiddenWifiNetworkNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A network name is required'**
+  String get hiddenWifiNetworkNameRequired;
+
   /// No description provided for @noInternet.
   ///
   /// In en, this message translates to:
@@ -656,6 +674,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This computer currently has {os} on it. What would you like to do?'**
   String installationTypeOSDetected(Object os);
+
+  /// No description provided for @installationTypeDualOSDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'This computer currently has {os1} and {os2} on it. What would you like to do?'**
+  String installationTypeDualOSDetected(Object os1, Object os2);
+
+  /// No description provided for @installationTypeMultiOSDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'This computer currently has multiple operating systems on it. What would you like to do?'**
+  String get installationTypeMultiOSDetected;
 
   /// No description provided for @installationTypeNoOSDetected.
   ///
@@ -1166,6 +1196,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The passwords do not match'**
   String get whoAreYouPagePasswordMismatch;
+
+  /// No description provided for @whoAreYouPageShowPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Show password'**
+  String get whoAreYouPageShowPassword;
 
   /// No description provided for @writeChangesToDisk.
   ///

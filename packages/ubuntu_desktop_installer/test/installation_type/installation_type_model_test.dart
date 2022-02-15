@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -10,15 +11,34 @@ import 'installation_type_model_test.mocks.dart';
 @GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
   test('init existing OS', () async {
-    final client = MockSubiquityClient();
-    // when(client.getExistingOS()).thenAnswer((_) async => 'Ubuntu 18.04 LTS');
+    const ubuntu2110 = OsProber(
+      long: 'Ubuntu 21.10',
+      label: 'Ubuntu',
+      version: '21.10',
+      type: 'linux',
+    );
+    const ubuntu2204 = OsProber(
+      long: 'Ubuntu 22.04 LTS',
+      label: 'Ubuntu',
+      version: '22.04 LTS',
+      type: 'linux',
+    );
+    const existingOS = [
+      Disk(partitions: [
+        Partition(os: ubuntu2110),
+        Partition(os: ubuntu2204),
+      ]),
+    ];
+
+    final service = MockDiskStorageService();
+    when(service.getGuidedStorage()).thenAnswer((_) async => existingOS);
 
     final model = InstallationTypeModel(
-        client, MockDiskStorageService(), MockTelemetryService());
+        MockSubiquityClient(), service, MockTelemetryService());
     await model.init();
-    // verify(client.getExistingOS()).called(1);
+    verify(service.getGuidedStorage()).called(1);
 
-    // expect(model.existingOS, equals('Ubuntu 18.04 LTS'));
+    expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
   test('notify changes', () {
@@ -53,7 +73,7 @@ void main() {
       MockDiskStorageService(),
       MockTelemetryService(),
     );
-    expect(model.productInfo, isNotEmpty);
+    expect(model.productInfo.name, isNotEmpty);
   });
 
   test('save talks to telemetry service', () async {

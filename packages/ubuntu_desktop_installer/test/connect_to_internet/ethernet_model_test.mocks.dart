@@ -419,6 +419,12 @@ class MockNetworkService extends _i1.Mock implements _i5.NetworkService {
               returnValue: _FakeNetworkManagerDnsManager_2())
           as _i2.NetworkManagerDnsManager);
   @override
+  Map<String, Map<String, _i4.DBusValue>> getWifiSettings({String? ssid}) =>
+      (super.noSuchMethod(
+              Invocation.method(#getWifiSettings, [], {#ssid: ssid}),
+              returnValue: <String, Map<String, _i4.DBusValue>>{})
+          as Map<String, Map<String, _i4.DBusValue>>);
+  @override
   _i3.Future<void> connect() =>
       (super.noSuchMethod(Invocation.method(#connect, []),
           returnValue: Future<void>.value(),

@@ -16,7 +16,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => '取消';
 
   @override
   String get changeButtonText => '更改';
@@ -31,7 +31,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get restartButtonText => '重启';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => '回滚';
 
   @override
   String get yesButtonText => '是';
@@ -40,25 +40,25 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcome => '欢迎';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => '选择您的语言：';
 
   @override
   String get tryOrInstallPageTitle => '尝试或安装';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => '修复安装';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => '修复程序将在不接触文档或设置的情况下重新安装所有已安装的软件。';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '试试$RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return '您可以在不对电脑做任何改动的情况下试试$RELEASE。';
   }
 
   @override
@@ -68,23 +68,23 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return '将$RELEASE与当前操作系统一起安装（或代替当前操作系统）。这花不了多长时间。';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return '你可能想阅读<a href=\"$url\">更新日志</a>。';
   }
 
   @override
   String get turnOffRST => '关闭RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，你需要在Windows中关闭RST。';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '有关说明，请在手机或其他设备上打开此页面：<a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -97,76 +97,85 @@ class AppLocalizationsZh extends AppLocalizations {
   String get typeToTest => '这里输入测试键盘';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => '检测键盘布局';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => '请按以下键任意一个键：';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => '你的键盘上是否有以下键？';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => '配置安全引导';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => '您已选择安装第三方驱动。这需要关闭安全引导。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => '配置安全引导';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => '选择一个安全密钥';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => '确认安全密钥';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => '暂时不安装驱动程序';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => '您可以稍后从「软件和更新」中安装它。';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => '需要安全密钥';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => '安全密钥不匹配';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => '连接到互联网';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => '将这台电脑连接到互联网将有助于Ubuntu安装所需的任何额外软件，并有助于选择你的时区。\n\n通过以太网电缆连接，或选择Wi-Fi网络';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => '使用有线连接';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => '未检测到有线连接';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => '有线连接已关闭';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => '要在此电脑上使用以太网，必须启用有线连接';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => '启用有线';
 
   @override
   String get selectWifiNetwork => '链接WiFi';
 
   @override
+  String get hiddenWifiNetwork => '连接到隐藏的Wi-Fi网络';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => '网络名称';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => '需要一个网络名城';
+
+  @override
   String get noInternet => '我不想现在联网';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => '无线网络已禁用';
 
   @override
   String get noWifiDevicesDetected => '找不到WiFi';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => '要在此电脑上使用Wi-Fi，必须启用无线网络';
 
   @override
   String get enableWifi => '启用WiFi';
@@ -178,204 +187,212 @@ class AppLocalizationsZh extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => '更新其他软件';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => '您想先安装哪些应用？';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => '正常安装';
 
   @override
   String get normalInstallationSubtitle => '浏览器';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => '最小化安装';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => '浏览器和基础实用程序。';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => '其他选择';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => '为图形和Wi-Fi硬件以及其他媒体格式安装第三方软件';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => '本软件受其文档中包含的许可条款的约束中有些是专有的。';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">警告</font>：电脑未插入电源。';
   }
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => '选择一个安全密钥';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return '磁盘加密在您丢失电脑的时候会保护您的文件。它要求您在每次计算机启动时输入一个安全密钥。\n\n${RELEASE}之外的任何文件都不会加密。';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => '选择一个安全密钥';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => '确认安全密钥';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => '需要一个安全密钥';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => '安全密钥不匹配';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">警告</font>：如果丢失此安全密钥，所有数据都将丢失。为了以防万一，你可以拿个小本儿本儿记着，并把它放在其他安全的地方。';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => '安装类型';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return '这台电脑上当前安装了$os。你想做什么？';
   }
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+
+  @override
+  String get installationTypeNoOSDetected => '这台电脑目前没有检测到操作系统。你想做什么？';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return '擦除磁盘并安装$DISTRO';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">警告：</font>这将删除整个操作系统中的所有程序、文档、照片、音乐和任何其他文件。';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => '高级功能...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => '高级功能';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => '空';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => '未选择任何选项';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return '在新的$RELEASE安装中使用LVM';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM已选择';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return '为安全起见，对新的$RELEASE安装进行加密';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => '您将在下一步中选择一个安全密钥。';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => '实验性功能：擦除磁盘并使用ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS 已选择';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return '删除$os并重新安装';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">警告：</font>这将删除你的$os中的所有程序、文档、照片、音乐和任何其他文件。';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '在$os中安装$product';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => '文件、音乐和其他个人文件将被保存。每次电脑启动时，您可以选择所需的操作系统。';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => '别的东西';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return '您可以自己创建或调整分区大小，或者为$DISTRO选择多个分区';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return '擦除磁盘并安装$DISTRO';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => '选择驱动器：';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => '整个磁盘将被使用：';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => '立即安装';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => '分配磁盘空间';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => '开始安装';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => '配备';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => '类型';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => '挂载点';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => '尺寸';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => '已使用';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => '系统';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => '格式化';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => '剩余空间';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => '新分区表';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => '是否在此设备上创建新的空白分区表？';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在设备上创建新的分区表，那么所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => '用于安装引导程序的设备';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => '创建分区';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => '编辑分区';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => '大小：';
 
   @override
   String get partitionUnitB => 'B';
@@ -390,139 +407,142 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => '输入新分区：';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => '主要的';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => '必然的';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => '新分区的位置：';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => '这个空间的开始';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => '这个空间的结束';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => '用作：';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4日志文件系统';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3日志文件系统';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2文件系统';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs日志文件系统';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS日志文件系统';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS日志文件系统';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT文件系统';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12文件系统';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16文件系统';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32文件系统';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => '交换分区';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660文件系统';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT文件系统';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS文件系统';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS文件系统';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS根文件系统';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => '格式化分区';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => '挂载点：';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => '你是谁？';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => '自动登录';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => '需要我的密码才能登录';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => '您的姓名';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => '需要一个名字';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => '您的电脑名称';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => '这个名称用于与其他电脑进行通信时使用。';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => '需要一个电脑名称';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => '电脑名无效';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => '选择一个用户名';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => '需要用户名';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => '用户名无效';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => '选择一个密码';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => '需要密码';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => '确认您的密码';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => '密码不匹配';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get whoAreYouPageShowPassword => 'Show password';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesToDisk => '将更改写入磁盘';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesFallbackSerial => '磁盘';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesDescription => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
+
+  @override
+  String get writeChangesPartitionTablesHeader => '以下设备的分区表已更改：';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -530,95 +550,95 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => '以下分区将被格式化：';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return '分区#$disk${partition}作为$format用于$mount';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return '分区#$disk${partition}作为$format';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => '选择您的形象';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => '您可以稍后在“外观设置”中更改此设置。';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => '暗黑';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => '浅色';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => '所有都是浅色和明亮的';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => '暗黑系是我哥们儿';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => '安装完成';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system**已安装完成可以开始使用。';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return '重新进入$system';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => '关闭';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => '关闭BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => '这台电脑使用了Windows BitLocker加密。\n在安装Ubuntu之前，你需要关闭Windows中的BitLocker。';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '有关说明，请在手机或其他设备上打开此页面：<a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => '重启进入Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => '您在哪里？';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => '位置';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => '时区';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '欢迎来到$RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return '最新版本的$RELEASE速度快，功能齐全，使计算变得比以往任何时候都简单。这里有一些很酷的新事物需要注意……';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => '查找更多的软件';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return '告别在网上搜索新软件。通过访问Snap Store和$RELEASE软件存档，您可以轻松找到并安装新的应用程序。只需输入你想要的内容，或探索图形与摄影、游戏和生产力等类别，以及其他用户提供的有用评论。';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => '带上你的音乐';
 
   @override
   String musicSlideDescription(Object RELEASE) {

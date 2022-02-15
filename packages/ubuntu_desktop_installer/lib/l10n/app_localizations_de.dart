@@ -157,6 +157,15 @@ class AppLocalizationsDe extends AppLocalizations {
   String get selectWifiNetwork => 'Mit einem WLAN-Netzwerk verbinden';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'Ich will gerade keine Verbindung zum Internet herstellen';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsDe extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'Auf diesem Rechner befindet sich momentan $os. Wie möchten Sie vorgehen?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'Auf diesem Rechner befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
@@ -511,6 +528,9 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'Die Passwörter stimmen nicht überein';
+
+  @override
+  String get whoAreYouPageShowPassword => 'Show password';
 
   @override
   String get writeChangesToDisk => 'Änderungen auf die Festplatte schreiben';

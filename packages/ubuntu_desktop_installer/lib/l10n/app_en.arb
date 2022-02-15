@@ -87,6 +87,9 @@
   "wiredMustBeEnabled": "To use ethernet on this computer, a wired connection must be enabled",
   "enableWired": "Enable wired",
   "selectWifiNetwork": "Connect to a Wi-Fi network",
+  "hiddenWifiNetwork": "Connect to a hidden Wi-Fi network",
+  "hiddenWifiNetworkNameLabel": "Network name",
+  "hiddenWifiNetworkNameRequired": "A network name is required",
   "noInternet": "I don't want to connect to the internet just now",
   "wirelessNetworkingDisabled": "Wireless networking disabled",
   "noWifiDevicesDetected": "No Wi-Fi devices detected",
@@ -136,6 +139,15 @@
       "os": {}
     }
   },
+  "installationTypeDualOSDetected": "This computer currently has {os1} and {os2} on it. What would you like to do?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "This computer currently has multiple operating systems on it. What would you like to do?",
   "installationTypeNoOSDetected": "This computer currently has no detected operating systems. What would you like to do?",
   "installationTypeErase": "Erase disk and install {DISTRO}",
   "@installationTypeErase": {
@@ -277,6 +289,7 @@
   "whoAreYouPagePasswordRequired": "A password is required",
   "whoAreYouPageConfirmPasswordLabel": "Confirm your password",
   "whoAreYouPagePasswordMismatch": "The passwords do not match",
+  "whoAreYouPageShowPassword": "Show password",
   "writeChangesToDisk": "Write changes to disk",
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {

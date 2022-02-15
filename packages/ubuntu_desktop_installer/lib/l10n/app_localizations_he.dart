@@ -157,6 +157,15 @@ class AppLocalizationsHe extends AppLocalizations {
   String get selectWifiNetwork => 'התחברות לרשת אלחוטית';
 
   @override
+  String get hiddenWifiNetwork => 'התחברות לרשת אלחוטית נסתרת';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'שם הרשת';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'שם הרשת נחוץ';
+
+  @override
   String get noInternet => 'לא רוצה להתחבר לאינטרנט כרגע';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsHe extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'במחשב זה מותקן כרגע $os. מה לעשות?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'לא זוהו מערכות הפעלה כלשהן במחשב זה. מה לעשות?';
@@ -513,6 +530,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'הסיסמאות סותרות זו את זו';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'כתיבת השינויים לכונן';
 
   @override
@@ -654,7 +674,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return 'למערכת $RELEASE מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון Facebook או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.';
   }
 
   @override
@@ -670,7 +690,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get officeSlideTitle => 'כל מה שנחוץ למשרד';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice היא חבילת כלים משרדיים שכוללת בתוכה את כל מה שדרוש כדי ליצור מסמכים, גיליונות נתונים ומצגות. תואם לתצורות הקבצים של Microsoft Office, היא נותנת לך את כל מה שנחוץ לך, בלי שורת המחיר.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -686,7 +706,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'בלבה של הפילוסופיה שמאחורי $RELEASE קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגדלי כתב מקל $RELEASE על השימוש במחשב - ללא תלות בזהות או במיקום שלך.';
   }
 
   @override

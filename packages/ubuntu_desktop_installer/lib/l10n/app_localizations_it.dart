@@ -12,17 +12,17 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Installa Ubuntu';
+    return 'Installa $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Annulla';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Modifica';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Ok';
 
   @override
   String get noButtonText => 'No';
@@ -31,16 +31,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get restartButtonText => 'Riavvia';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Ripristina';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Sì';
 
   @override
   String get welcome => 'Benvenuto';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Scegli la tua lingua:';
 
   @override
   String get tryOrInstallPageTitle => 'Prova o installa';
@@ -53,22 +53,22 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Prova Ubuntu';
+    return 'Prova $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Puoi provare Ubuntu senza apportare alcuna modifica al tuo computer.';
+    return 'Puoi provare $RELEASE senza apportare alcuna modifica al tuo computer.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Installa Ubuntu';
+    return 'Installa $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installa Ubuntu accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
+    return 'Installa $RELEASE accanto (o al posto di) al tuo sistema operativo attuale. Questo non dovrebbe durare molto.';
   }
 
   @override
@@ -88,16 +88,16 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Disposizione della tastiera';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Scegliere la disposizione della tastiera:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Digitare qui per provare la tastiera';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Rileva disposizione tastiera';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -155,6 +155,15 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
 
   @override
   String get noInternet => 'I don\'t want to connect to the internet just now';
@@ -238,6 +247,14 @@ class AppLocalizationsIt extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'This computer currently has $os on it. What would you like to do?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
@@ -511,6 +528,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+
+  @override
+  String get whoAreYouPageShowPassword => 'Show password';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';

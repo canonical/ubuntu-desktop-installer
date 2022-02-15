@@ -40,7 +40,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcome => 'Tervetuloa';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Valitse kieli:';
 
   @override
   String get tryOrInstallPageTitle => 'Kokeile tai asenna';
@@ -157,6 +157,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get selectWifiNetwork => 'Yhdistä Wi-Fi-verkkoon';
 
   @override
+  String get hiddenWifiNetwork => 'Yhdistä piilotettuun wifi-verkkoon';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Verkon nimi';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'Verkon nimi vaaditaan';
+
+  @override
   String get noInternet => 'En halua muodostaa yhteyttä internetiin juuri nyt';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsFi extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'Tässä tietokoneessa on tällä hetkellä asennettuna käyttöjärjestelmä \"$os\". Mitä haluat tehdä?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
@@ -513,6 +530,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => 'Tallenna muutokset levylle';
 
   @override
@@ -591,17 +611,17 @@ class AppLocalizationsFi extends AppLocalizations {
   String get restartIntoWindows => 'Uudelleenkäynnistä Windowsiin';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Missä olet?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Sijainti';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Aikavyöhyke';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Tervetuloa, tämä on $RELEASE';
   }
 
   @override
@@ -618,7 +638,7 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Ota musiikki mukaasi';
 
   @override
   String musicSlideDescription(Object RELEASE) {
@@ -626,7 +646,7 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rytmilaatikko-musiikkisoitin';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -658,7 +678,7 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox-selain';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -693,16 +713,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get accessSlideCustomizationOptions => 'Customization options';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Ulkoasu';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Avustavat teknologiat';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Kielituki';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ohjeet ja tuki';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {

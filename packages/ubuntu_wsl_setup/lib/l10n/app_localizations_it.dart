@@ -26,7 +26,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get setupButton => 'Setup';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Seleziona la tua lingua';
 
   @override
   String get profileSetupTitle => 'Profile setup';
@@ -35,13 +35,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Il tuo nome';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Un nome è richiesto';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Scegli uno username';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';

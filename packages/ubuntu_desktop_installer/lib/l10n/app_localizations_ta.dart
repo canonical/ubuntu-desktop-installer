@@ -157,6 +157,15 @@ class AppLocalizationsTa extends AppLocalizations {
   String get selectWifiNetwork => 'Connect to a Wi-Fi network';
 
   @override
+  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Network name';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+
+  @override
   String get noInternet => 'I don\'t want to connect to the internet just now';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsTa extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return 'This computer currently has $os on it. What would you like to do?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => 'இந்த கணினியில் தற்போது எந்த இயங்கு தளங்களும் கண்டறியப்படவில்லை.என்ன செய்ய விரும்புகிறீர்கள்?';
@@ -511,6 +528,9 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
+
+  @override
+  String get whoAreYouPageShowPassword => 'Show password';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';

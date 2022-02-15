@@ -119,13 +119,13 @@ class _PasswordFormField extends StatelessWidget {
         context.select<WhoAreYouModel, String>((model) => model.password);
     final passwordStrength = context.select<WhoAreYouModel, PasswordStrength>(
         (model) => model.passwordStrength);
-    final obscureText =
-        context.select<WhoAreYouModel, bool>((model) => model.obscureText);
+    final showPassword =
+        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPagePasswordLabel,
-      obscureText: obscureText,
+      obscureText: !showPassword,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
       initialValue: password,
       validator: RequiredValidator(
@@ -135,17 +135,6 @@ class _PasswordFormField extends StatelessWidget {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.password = value;
       },
-      suffixIcon: Focus(
-        canRequestFocus: false,
-        descendantsAreFocusable: false,
-        child: IconButton(
-          onPressed: () {
-            final model = Provider.of<WhoAreYouModel>(context, listen: false);
-            model.obscureText = !model.obscureText;
-          },
-          icon: Icon(obscureText ? YaruIcons.hide : YaruIcons.view),
-        ),
-      ),
     );
   }
 }
@@ -165,11 +154,11 @@ class _ConfirmPasswordFormField extends StatelessWidget {
         context.select<WhoAreYouModel, String>((model) => model.password);
     final confirmedPassword = context
         .select<WhoAreYouModel, String>((model) => model.confirmedPassword);
-    final obscureText =
-        context.select<WhoAreYouModel, bool>((model) => model.obscureText);
+    final showPassword =
+        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
 
     return ValidatedFormField(
-      obscureText: obscureText,
+      obscureText: !showPassword,
       fieldWidth: fieldWidth,
       labelText: lang.whoAreYouPageConfirmPasswordLabel,
       successWidget: password.isNotEmpty ? const SuccessIcon() : null,
@@ -182,6 +171,25 @@ class _ConfirmPasswordFormField extends StatelessWidget {
       onChanged: (value) {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.confirmedPassword = value;
+      },
+    );
+  }
+}
+
+class _ShowPasswordCheckButton extends StatelessWidget {
+  const _ShowPasswordCheckButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final showPassword =
+        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
+
+    return CheckButton(
+      value: showPassword,
+      title: const Text('Show password'),
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.showPassword = value!;
       },
     );
   }

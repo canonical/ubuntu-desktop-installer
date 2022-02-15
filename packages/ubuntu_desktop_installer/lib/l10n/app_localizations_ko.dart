@@ -40,7 +40,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcome => '환영합니다';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => '언어를 선택하십시오:';
 
   @override
   String get tryOrInstallPageTitle => '체험 또는 설치';
@@ -157,6 +157,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectWifiNetwork => 'Wi-Fi 네트워크에 연결';
 
   @override
+  String get hiddenWifiNetwork => '숨겨진 Wi-Fi 네트워크에 연결';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => '네트워크 이름';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => '네트워크 이름이 필요합니다';
+
+  @override
   String get noInternet => '지금은 인터넷에 연결하지 않기';
 
   @override
@@ -238,6 +247,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String installationTypeOSDetected(Object os) {
     return '현재 컴퓨터에 $os(이)가 설치되어 있습니다. 어떻게 하시겠습니까?';
   }
+
+  @override
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
 
   @override
   String get installationTypeNoOSDetected => '현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?';
@@ -513,6 +530,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
+  String get whoAreYouPageShowPassword => 'Show password';
+
+  @override
   String get writeChangesToDisk => '디스크에 변경사항 쓰기';
 
   @override
@@ -591,42 +611,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get restartIntoWindows => 'Windows로 다시 시작';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => '어디에 계시나요?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => '위치';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => '시간대';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '$RELEASE에 오신 것을 환영합니다';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return '빠르고 새로운 기능으로 가득한 최신 버전의 $RELEASE가 그 어느 때 보다 컴퓨팅을 쉽게 해 줄 것입니다. 여기에 몇 가지의 눈 여겨 볼 만한 새로운 기능이 있습니다...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => '더 많은 소프트웨어 찾아보기';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return '더 이상 웹에서 새로운 소프트웨어를 검색하지 않아도 됩니다. Snap 스토어와 $RELEASE 소프트웨어 아카이브를 통해, 새 소프트웨어를 쉽게 찾아 설치할 수 있습니다. 찾고 있는 것을 입력하거나, 다른 사용자의 유용한 후기와 함께 그래픽 및 사진, 게임 및 생산성과 같은 카테고리를 탐색 해 보십시오.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => '항상 음악과 함께 하십시오';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE에는 메우 훌룡한 리듬박스 음악 연주기가 포함되어 있습니다. 고급 재생 옵션으로 완벽한 노래를 간단히 선택할 수 있습니다. 또한 CD와 휴대용 음악 재생기와 잘 작동해서 어디를 가든 항상 음악을 즐길 수 있습니다.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => '리듬박스 음악 연주기';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -635,42 +655,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => '사진과 함께하는 즐거운 시간';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => '샷웰은 당신의 전자기기를 위해 준비된 편리한 사진 관리자 입니다. 카메라나 휴대전화를 연결하여 사진을 옮긴 후, 쉽게 공유하고 안전하게 보관할 수 있습니다. 번뜩이는 아이디어가 있다면 우분투 소프트웨어에서 수많은 사진 프로그램을 찾을 수 있습니다.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => '샷웰 사진 관리자';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => '김프 이미지 편집기';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => '샷컷 동영상 편집기';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => '웹을 최대한 활용하십시오';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE에는 전 세계 수백만 명이 사용하는 웹 브라우저인 파이어폭스가 포함되어 있습니다. 또한 페이스북이나 지메일 같은 웹 응용 프로그램을 데스크탑에 고정하여 컴퓨터에 설치된 프로그램처럼 빠르게 접근할 수 있습니다.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => '파이어폭스 웹 브라우저';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
+  String get webSlideThunderbird => '썬더버드';
 
   @override
-  String get webSlideChromium => 'Chromium';
+  String get webSlideChromium => '크로미움';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => '사무에 필요한 모든 것';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 무료로 제공합니다.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -682,7 +702,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => '누구나 사용할 수 있습니다';
 
   @override
   String accessSlideDescription(Object RELEASE) {

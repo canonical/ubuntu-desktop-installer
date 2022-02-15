@@ -98,6 +98,11 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  bool canSelectStorage(int? diskIndex, [int? partitionIndex = -1]) =>
+      (super.noSuchMethod(
+          Invocation.method(#canSelectStorage, [diskIndex, partitionIndex]),
+          returnValue: false) as bool);
+  @override
   void selectStorage(int? diskIndex, [int? partitionIndex = -1]) =>
       super.noSuchMethod(
           Invocation.method(#selectStorage, [diskIndex, partitionIndex]),
