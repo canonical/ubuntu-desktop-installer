@@ -119,7 +119,10 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
             : const CircularProgressIndicator(),
       ),
       actions: <WizardAction>[
-        WizardAction.back(context),
+        WizardAction.back(
+          context,
+          enabled: false,
+        ),
         WizardAction.next(
           context,
           onActivated: () async {
