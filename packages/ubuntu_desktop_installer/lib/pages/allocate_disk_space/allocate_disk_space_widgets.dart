@@ -9,7 +9,6 @@ import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';
 import 'storage_table.dart';
-import 'storage_types.dart';
 
 class PartitionBar extends StatelessWidget {
   PartitionBar({Key? key}) : super(key: key);
@@ -278,46 +277,5 @@ class PartitionButtonRow extends StatelessWidget {
       if (!confirmed) return;
     }
     model.reformatDisk(disk);
-  }
-}
-
-class BootDiskSelector extends StatelessWidget {
-  const BootDiskSelector({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
-    final lang = AppLocalizations.of(context);
-
-    String prettyFormatDisk(Disk disk) {
-      final fullName = <String?>[
-        disk.model,
-        disk.vendor,
-      ].where((p) => p?.isNotEmpty == true).join(' ');
-      return '${disk.path} $fullName (${disk.prettySize})';
-    }
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(lang.bootLoaderDevice),
-        const SizedBox(height: 8),
-        FractionallySizedBox(
-          widthFactor: 0.5,
-          child: DropdownBuilder<int>(
-            values: List.generate(model.disks.length, (index) => index),
-            selected: model.bootDiskIndex,
-            onSelected: (index) => model.selectBootDisk(index!),
-            itemBuilder: (context, index, _) {
-              return Text(
-                prettyFormatDisk(model.disks[index]),
-                key: ValueKey(index),
-              );
-            },
-          ),
-        )
-      ],
-    );
   }
 }

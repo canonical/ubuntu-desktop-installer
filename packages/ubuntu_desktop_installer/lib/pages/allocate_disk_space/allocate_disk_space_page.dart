@@ -10,6 +10,7 @@ import '../../l10n.dart';
 import '../../services.dart';
 import 'allocate_disk_space_model.dart';
 import 'allocate_disk_space_widgets.dart';
+import 'storage_selector.dart';
 
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
@@ -80,7 +81,16 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
           const SizedBox(height: kContentSpacing / 2),
           const PartitionButtonRow(),
           const SizedBox(height: kContentSpacing),
-          const BootDiskSelector(),
+          FractionallySizedBox(
+            widthFactor: 0.5,
+            alignment: Alignment.topLeft,
+            child: StorageSelector(
+              title: lang.bootLoaderDevice,
+              storages: model.disks,
+              selected: model.bootDiskIndex,
+              onSelected: (storage) => model.selectBootDisk(storage!),
+            ),
+          ),
         ],
       ),
       actions: <WizardAction>[
