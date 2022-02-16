@@ -14,19 +14,19 @@ class AppLocalizationsZh extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => '退出';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => '结束';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => '保存';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => '设置';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => '选择您的语言';
 
   @override
   String get profileSetupTitle => 'Profile setup';
@@ -35,13 +35,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => '您的名字';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => '名字是必须的';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => '起一个用户名';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';

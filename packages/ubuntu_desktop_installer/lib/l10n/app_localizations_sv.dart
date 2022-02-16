@@ -250,11 +250,11 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Den här datorn har för närvarande $os1 och $os2 på sig. Vad skulle du vilja göra?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Den här datorn har för närvarande flera operativsystem på sig. Vad skulle du vilja göra?';
 
   @override
   String get installationTypeNoOSDetected => 'Den här datorn har för närvarande inga upptäckta operativsystem. Vad skulle du vilja göra?';
@@ -530,7 +530,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Visa lösenord';
 
   @override
   String get writeChangesToDisk => 'Skriv ändringar till disk';
@@ -575,7 +575,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Ljus';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'Allt är ljust och lysande';
 
   @override
   String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
