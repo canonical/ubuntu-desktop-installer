@@ -26,6 +26,7 @@ void main() {
     bool? isInstalling,
     int? installationStep,
     int? installationStepCount,
+    bool? isWindowExpanded,
     Stream<String>? journal,
   }) {
     final model = MockInstallationSlidesModel();
@@ -36,6 +37,7 @@ void main() {
     when(model.isInstalling).thenReturn(isInstalling ?? false);
     when(model.installationStep).thenReturn(installationStep ?? 1);
     when(model.installationStepCount).thenReturn(installationStepCount ?? 1);
+    when(model.isWindowExpanded).thenReturn(isWindowExpanded ?? false);
     when(model.journal).thenAnswer((_) => journal ?? Stream<String>.empty());
     return model;
   }
@@ -113,6 +115,44 @@ void main() {
     expect(findsSlide('body2'), findsNothing);
     expect(find.byIcon(Icons.chevron_left), findsNothing);
     expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+  });
+
+  testWidgets('expand log view', (tester) async {
+    final model = buildModel(isWindowExpanded: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(ExpandIcon), findsOneWidget);
+
+    final context = tester.element(find.byType(InstallationSlidesPage));
+    final height =
+        InstallationSlidesPageState.getTextHeight(context, lines: kExpandLines);
+    expect(height, isPositive);
+
+    await tester.tap(find.byType(ExpandIcon));
+    verify(model.expandWindow(height)).called(1);
+
+    await tester.tap(find.ancestor(
+      of: find.byType(ExpandIcon),
+      matching: find.byType(GestureDetector),
+    ));
+    verify(model.expandWindow(height)).called(1);
+  });
+
+  testWidgets('collapse log view', (tester) async {
+    final model = buildModel(isWindowExpanded: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(ExpandIcon), findsOneWidget);
+    await tester.tap(find.byType(ExpandIcon));
+    verify(model.collapseWindow()).called(1);
+
+    await tester.tap(find.ancestor(
+      of: find.byType(ExpandIcon),
+      matching: find.byType(GestureDetector),
+    ));
+    verify(model.collapseWindow()).called(1);
   });
 
   testWidgets('creates a model', (tester) async {

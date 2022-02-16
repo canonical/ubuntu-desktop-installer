@@ -67,6 +67,25 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
     });
   }
 
+  bool? _isWindowExpanded;
+  bool get isWindowExpanded => _isWindowExpanded == true;
+
+  Future<void> collapseWindow() async {
+    return getDefaultWindowSize().then((size) {
+      resizeWindow(size);
+      _isWindowExpanded = false;
+      notifyListeners();
+    });
+  }
+
+  Future<void> expandWindow(double height) async {
+    return getDefaultWindowSize().then((size) {
+      resizeWindow(size + Offset(0, height));
+      _isWindowExpanded = true;
+      notifyListeners();
+    });
+  }
+
   // Resolves the path to the assets in the app bundle so that it works in the
   // snap and development environments.
   String _resolveAssetsDirectory() {

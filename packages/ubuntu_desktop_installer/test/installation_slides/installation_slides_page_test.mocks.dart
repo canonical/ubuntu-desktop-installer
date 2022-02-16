@@ -68,6 +68,10 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#journal),
           returnValue: Stream<String>.empty()) as _i4.Stream<String>);
   @override
+  bool get isWindowExpanded =>
+      (super.noSuchMethod(Invocation.getter(#isWindowExpanded),
+          returnValue: false) as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -75,6 +79,16 @@ class MockInstallationSlidesModel extends _i1.Mock
   _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> collapseWindow() =>
+      (super.noSuchMethod(Invocation.method(#collapseWindow, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> expandWindow(double? height) =>
+      (super.noSuchMethod(Invocation.method(#expandWindow, [height]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
       (super.noSuchMethod(Invocation.method(#precacheSlideImages, [context]),

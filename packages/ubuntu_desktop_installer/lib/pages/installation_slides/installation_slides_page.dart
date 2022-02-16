@@ -9,6 +9,12 @@ import '../../services.dart';
 import '../../slides.dart';
 import 'installation_slides_model.dart';
 
+// The size of the rotating expansion icon.
+const _kExpandIconSize = 24.0;
+
+// The amount of extra lines shown when expanded.
+const kExpandLines = 6;
+
 /// Slideshow during installation.
 class InstallationSlidesPage extends StatefulWidget {
   /// Use [InstallationPage.create] instead.
@@ -28,10 +34,11 @@ class InstallationSlidesPage extends StatefulWidget {
   }
 
   @override
-  _InstallationSlidesPageState createState() => _InstallationSlidesPageState();
+  InstallationSlidesPageState createState() => InstallationSlidesPageState();
 }
 
-class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
+@visibleForTesting
+class InstallationSlidesPageState extends State<InstallationSlidesPage> {
   @override
   void initState() {
     super.initState();
@@ -48,6 +55,40 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
       if (!mounted) return;
       model.precacheSlideImages(context);
     });
+  }
+
+  static TextStyle _getTextStyle(BuildContext context) {
+    return TextStyle(
+      inherit: false,
+      fontSize: Theme.of(context).textTheme.bodyText1!.fontSize,
+      fontFamily: 'Ubuntu Mono',
+      textBaseline: TextBaseline.alphabetic,
+    );
+  }
+
+  static double getTextHeight(BuildContext context, {int lines = 1}) {
+    final painter = TextPainter(
+      text: TextSpan(
+        text: 'X',
+        style: _getTextStyle(context),
+      ),
+      maxLines: lines,
+      locale: Localizations.localeOf(context),
+      textDirection: Directionality.of(context),
+      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+    );
+    painter.layout();
+    return lines * painter.height;
+  }
+
+  // ignore: avoid_positional_boolean_parameters
+  void _expandWindow(bool expand) {
+    final model = Provider.of<InstallationSlidesModel>(context, listen: false);
+    if (expand) {
+      model.expandWindow(getTextHeight(context, lines: kExpandLines));
+    } else {
+      model.collapseWindow();
+    }
   }
 
   @override
@@ -67,23 +108,72 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
               Positioned(
                 left: kContentSpacing,
                 bottom: kContentSpacing / 2,
-                child: Text(
-                  model.hasError
-                      ? 'Something went wrong.\n\nPlease restart the machine.'
-                      : model.isPreparing
-                          ? 'Preparing...'
-                          : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                      color: model.hasError
-                          ? Theme.of(context).errorColor
-                          : Colors.white),
+                child: _ExpandButton(
+                  isExpanded: model.isWindowExpanded,
+                  onExpanded: _expandWindow,
+                  child: Text(
+                    model.hasError
+                        ? 'Something went wrong.\n\nPlease restart the machine.'
+                        : model.isPreparing
+                            ? 'Preparing...'
+                            : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
+                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: model.hasError
+                            ? Theme.of(context).errorColor
+                            : Colors.white),
+                  ),
                 ),
               ),
             ],
           ),
           LinearProgressIndicator(value: model.isInstalling ? null : 0),
-          Expanded(child: _JournalView(journal: model.journal)),
+          Expanded(
+            child: _JournalView(
+              journal: model.journal,
+              style: _getTextStyle(context),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class _ExpandButton extends StatelessWidget {
+  const _ExpandButton({
+    Key? key,
+    required this.isExpanded,
+    required this.onExpanded,
+    required this.child,
+  }) : super(key: key);
+
+  final bool isExpanded;
+  final ValueChanged<bool> onExpanded;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => onExpanded(!isExpanded),
+      child: MouseRegion(
+        cursor: MaterialStateMouseCursor.clickable,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            SizedBox(
+              width: _kExpandIconSize,
+              height: _kExpandIconSize,
+              child: ExpandIcon(
+                color: Colors.white,
+                size: _kExpandIconSize,
+                padding: EdgeInsets.zero,
+                isExpanded: isExpanded,
+                onPressed: (_) => onExpanded(!isExpanded),
+              ),
+            ),
+            child,
+          ],
+        ),
       ),
     );
   }
@@ -115,9 +205,11 @@ class _SlidePage extends StatelessWidget {
 class _JournalView extends StatelessWidget {
   const _JournalView({
     Key? key,
+    required this.style,
     required this.journal,
   }) : super(key: key);
 
+  final TextStyle style;
   final Stream<String> journal;
 
   @override
@@ -125,12 +217,7 @@ class _JournalView extends StatelessWidget {
     return LogView(
       log: journal,
       padding: const EdgeInsets.symmetric(horizontal: kContentSpacing),
-      style: TextStyle(
-        inherit: false,
-        fontSize: Theme.of(context).textTheme.bodyText1!.fontSize,
-        fontFamily: 'Ubuntu Mono',
-        textBaseline: TextBaseline.alphabetic,
-      ),
+      style: style,
       decoration: const InputDecoration(
         border: InputBorder.none,
         contentPadding: EdgeInsets.symmetric(vertical: kContentSpacing / 2),

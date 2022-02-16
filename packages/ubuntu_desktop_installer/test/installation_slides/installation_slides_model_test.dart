@@ -164,6 +164,41 @@ void main() async {
     await expectLater(windowClosable.stream, emits(true));
   });
 
+  test('expand/collapse window', () async {
+    const testWidth = 640;
+    const testHeight = 480;
+
+    final setWindowSize = StreamController<Map>.broadcast();
+    methodChannel.setMockMethodCallHandler((call) async {
+      switch (call.method) {
+        case 'getDefaultWindowSize':
+          return {'width': testWidth, 'height': testHeight};
+        case 'resizeWindow':
+          setWindowSize.add(call.arguments as Map);
+          break;
+      }
+    });
+
+    final model = InstallationSlidesModel(
+      MockSubiquityClient(),
+      MockJournalService(),
+    );
+
+    model.expandWindow(123);
+    await expectLater(
+      setWindowSize.stream,
+      emits({'width': testWidth, 'height': testHeight + 123}),
+    );
+    expect(model.isWindowExpanded, isTrue);
+
+    model.collapseWindow();
+    await expectLater(
+      setWindowSize.stream,
+      emits({'width': testWidth, 'height': testHeight}),
+    );
+    expect(model.isWindowExpanded, isFalse);
+  });
+
   test('installation steps', () async {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current'))).thenAnswer(
