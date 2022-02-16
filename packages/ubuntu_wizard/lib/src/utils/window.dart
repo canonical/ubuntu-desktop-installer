@@ -42,3 +42,18 @@ Future<void> setWindowTitle(String title) {
 Future<void> setWindowClosable(bool closable) {
   return _methodChannel.invokeMethod('setWindowClosable', [closable]);
 }
+
+/// Returns the default window size.
+Future<Size> getDefaultWindowSize() {
+  return _methodChannel.invokeMapMethod('getDefaultWindowSize').then((size) {
+    final width = size?['width'] ?? 0.0;
+    final height = size?['height'] ?? 0.0;
+    return Size(width.toDouble(), height.toDouble());
+  });
+}
+
+/// Requests that the window is resized.
+Future<void> resizeWindow(Size size) {
+  final args = {'width': size.width.round(), 'height': size.height.round()};
+  return _methodChannel.invokeMethod('resizeWindow', args);
+}

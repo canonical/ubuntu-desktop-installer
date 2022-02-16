@@ -82,6 +82,20 @@ static void ubuntu_wizard_plugin_handle_method_call(
       response = FL_METHOD_RESPONSE(fl_method_error_response_new(
           "ubuntu_wizard", "setWindowTitle", nullptr));
     }
+  } else if (strcmp(method, "getDefaultWindowSize") == 0) {
+    int width = 0, height = 0;
+    gtk_window_get_default_size(GTK_WINDOW(window), &width, &height);
+    g_autoptr(FlValue) size = fl_value_new_map();
+    fl_value_set_string_take(size, "width", fl_value_new_int(width));
+    fl_value_set_string_take(size, "height", fl_value_new_int(height));
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(size));
+  } else if (strcmp(method, "resizeWindow") == 0) {
+    FlValue* args = fl_method_call_get_args(method_call);
+    FlValue* width = fl_value_lookup_string(args, "width");
+    FlValue* height = fl_value_lookup_string(args, "height");
+    gtk_window_resize(GTK_WINDOW(window), fl_value_get_int(width),
+                      fl_value_get_int(height));
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
   } else if (strcmp(fl_method_call_get_name(method_call), "closeWindow") == 0) {
     gtk_window_close(GTK_WINDOW(window));
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
