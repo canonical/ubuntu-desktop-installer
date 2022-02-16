@@ -596,5 +596,19 @@
   "photoSlideShotwell": "Shotwell fotohanterare",
   "@photoSlideShotwell": {},
   "accessSlideTitle": "Åtkomst för alla",
-  "@accessSlideTitle": {}
+  "@accessSlideTitle": {},
+  "chooseYourLookPageLightBodyText": "Allt är ljust och lysande",
+  "@chooseYourLookPageLightBodyText": {},
+  "whoAreYouPageShowPassword": "Visa lösenord",
+  "@whoAreYouPageShowPassword": {},
+  "installationTypeMultiOSDetected": "Den här datorn har för närvarande flera operativsystem på sig. Vad skulle du vilja göra?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeDualOSDetected": "Den här datorn har för närvarande {os1} och {os2} på sig. Vad skulle du vilja göra?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  }
 }

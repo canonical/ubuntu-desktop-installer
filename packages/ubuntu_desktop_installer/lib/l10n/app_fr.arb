@@ -547,5 +547,17 @@
   "hiddenWifiNetworkNameRequired": "Un nom de réseau est requis",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Se connecter à un réseau Wi-Fi caché",
-  "@hiddenWifiNetwork": {}
+  "@hiddenWifiNetwork": {},
+  "whoAreYouPageShowPassword": "Afficher le mot de passe",
+  "@whoAreYouPageShowPassword": {},
+  "installationTypeDualOSDetected": "Cet ordinateur est installé avec {os1} et {os2}. Que voulez-vous faire ?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Cet ordinateur est installé avec plusieurs systèmes d’exploitation. Que voulez-vous faire ?",
+  "@installationTypeMultiOSDetected": {}
 }

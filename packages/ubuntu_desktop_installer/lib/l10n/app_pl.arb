@@ -559,5 +559,17 @@
   "hiddenWifiNetwork": "Połącz się z ukrytą siecią Wi-Fi",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "Wymagana jest nazwa sieci",
-  "@hiddenWifiNetworkNameRequired": {}
+  "@hiddenWifiNetworkNameRequired": {},
+  "whoAreYouPageShowPassword": "Pokaż hasło",
+  "@whoAreYouPageShowPassword": {},
+  "installationTypeDualOSDetected": "Na tym komputerze są obecnie zainstalowane systemy {os1} i {os2}. Co chcesz zrobić?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Na tym komputerze jest obecnie zainstalowanych wiele systemów operacyjnych. Co chcesz zrobić?",
+  "@installationTypeMultiOSDetected": {}
 }

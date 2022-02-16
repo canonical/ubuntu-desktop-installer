@@ -559,5 +559,17 @@
     "placeholders": {
       "RELEASE": {}
     }
+  },
+  "installationTypeMultiOSDetected": "במחשב זה מותקנות מספר מערכות הפעלה. מה לעשות?",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "הצגת הסיסמה",
+  "@whoAreYouPageShowPassword": {},
+  "installationTypeDualOSDetected": "במחשב זה מותקנות כרגע {os1} ו־{os2}. מה לעשות?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
   }
 }
