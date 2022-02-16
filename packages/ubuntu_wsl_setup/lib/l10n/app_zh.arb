@@ -1,3 +1,19 @@
 {
-  "@@locale": "zh"
+  "@@locale": "zh",
+  "saveButton": "保存",
+  "@saveButton": {},
+  "exitButton": "退出",
+  "@exitButton": {},
+  "setupButton": "设置",
+  "@setupButton": {},
+  "finishButton": "结束",
+  "@finishButton": {},
+  "profileSetupRealnameLabel": "您的名字",
+  "@profileSetupRealnameLabel": {},
+  "profileSetupRealnameRequired": "名字是必须的",
+  "@profileSetupRealnameRequired": {},
+  "selectLanguageTitle": "选择您的语言",
+  "@selectLanguageTitle": {},
+  "profileSetupUsernameHint": "起一个用户名",
+  "@profileSetupUsernameHint": {}
 }
