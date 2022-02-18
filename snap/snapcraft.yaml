@@ -27,6 +27,7 @@ apps:
       GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
       LIVE_RUN: 1
       LOG_LEVEL: debug
+      SNAP_PYTHON: python3
 
   probert:
     command: bin/probert
