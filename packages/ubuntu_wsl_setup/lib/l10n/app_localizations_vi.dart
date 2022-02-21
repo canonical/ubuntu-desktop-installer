@@ -14,64 +14,64 @@ class AppLocalizationsVi extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Thoát';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Hoàn thành';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'lưu';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'thiết lập';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'chọn ngôn ngữ của bạn';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Thiết lập hồ sơ';
 
   @override
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'tên của bạn';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Một cái tên là bắt buộc';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Chọn một tên người dùng';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Tên người dùng không cần phải khớp với tên người dùng windows của bạn.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Chọn một mật khẩu';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Xác nhận mật khẩu của bạn';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Hiển thị các tùy chọn nâng cao trang tiếp theo';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Mật khẩu không trùng khớp';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Yêu cầu tên người dùng';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Tên người dùng không hợp lệ';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Mật khẩu là bắt buộc';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Cài đặt nâng cao';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'Trong trang này, bạn có thể điều chỉnh Ubuntu WSL theo nhu cầu của mình.';
 
   @override
   String get advancedSetupMountLocationHint => 'Mount location';
@@ -107,7 +107,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL configuration UI (experimental)';
+  String get configurationUITitle => 'Giao diện người dùng cấu hình Ubuntu WSL (thử nghiệm)';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperability';
@@ -143,7 +143,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get configurationUIAutoMountHeader => 'Auto-Mount';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'được kích hoạt';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
@@ -155,19 +155,19 @@ class AppLocalizationsVi extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Cài đặt hoàn tất';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Xin chào${user},\nBạn đã hoàn thành cài đặt thành công.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Bạn nên chạy lệnh sau để cập nhật Ubuntu lên phiên bản mới nhất:';
 
   @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
+  String get setupCompleteManage => 'Bạn có thể sử dụng lệnh wsl trong ubuntu để quản lý cài đặt WSL của mình:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Tất cả các cài đặt sẽ có hiệu lực sau khi khởi động lại Ubuntu.';
 }
