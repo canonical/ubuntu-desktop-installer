@@ -250,11 +250,11 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Ĉi tiu komputilo aktuale portas instalaĵojn de $os1 kaj $os2. Kion vi volas?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?';
 
   @override
   String get installationTypeNoOSDetected => 'Ĉi tiu komputilo aktuale portas neniun troveblan instalaĵon de mastruma sistemo. Kion vi volas?';
@@ -530,7 +530,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'La pasvortoj ne kongruas';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Montri pasvorton';
 
   @override
   String get writeChangesToDisk => 'Skribi ŝanĝojn sur diskon';

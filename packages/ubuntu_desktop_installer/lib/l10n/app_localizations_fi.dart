@@ -250,11 +250,11 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Tässä tietokoneessa on jo käyttöjärjestelmät $os1 ja $os2. Mitä haluat tehdä?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?';
 
   @override
   String get installationTypeNoOSDetected => 'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
@@ -530,7 +530,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Näytä salasana';
 
   @override
   String get writeChangesToDisk => 'Tallenna muutokset levylle';
@@ -664,7 +664,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get photoSlideShotwell => 'Shotwell Photo Manager';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP-kuvankäsittely';
 
   @override
   String get photoSlideShotcut => 'Shotcut Video Editor';
@@ -687,7 +687,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Kaikki mitä tarvitset toimistossa';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
