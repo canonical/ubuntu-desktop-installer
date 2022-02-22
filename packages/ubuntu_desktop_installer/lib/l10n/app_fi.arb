@@ -479,5 +479,21 @@
   "accessSlideLanguageSupport": "Kielituki",
   "@accessSlideLanguageSupport": {},
   "supportSlideTitle": "Ohjeet ja tuki",
-  "@supportSlideTitle": {}
+  "@supportSlideTitle": {},
+  "officeSlideTitle": "Kaikki mitä tarvitset toimistossa",
+  "@officeSlideTitle": {},
+  "photoSlideGimp": "GIMP-kuvankäsittely",
+  "@photoSlideGimp": {},
+  "installationTypeDualOSDetected": "Tässä tietokoneessa on jo käyttöjärjestelmät {os1} ja {os2}. Mitä haluat tehdä?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "Näytä salasana",
+  "@whoAreYouPageShowPassword": {}
 }

@@ -559,5 +559,17 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "installationTypeDualOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de {os1} kaj {os2}. Kion vi volas?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "Montri pasvorton",
+  "@whoAreYouPageShowPassword": {}
 }
