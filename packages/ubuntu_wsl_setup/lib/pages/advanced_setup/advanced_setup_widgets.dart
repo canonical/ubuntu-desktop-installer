@@ -17,7 +17,7 @@ class _MountLocationFormField extends StatelessWidget {
       labelText: lang.advancedSetupMountLocationHint,
       helperText: lang.advancedSetupMountLocationHelper,
       initialValue: mountLocation,
-      validator: _CallbackValidator(
+      validator: CallbackValidator(
         AdvancedSetupModel.isValidMountLocation,
         errorText: lang.advancedSetupMountLocationInvalid,
       ),
