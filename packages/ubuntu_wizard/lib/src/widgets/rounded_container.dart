@@ -11,6 +11,7 @@ class RoundedContainer extends StatelessWidget {
     this.child,
     this.width,
     this.height,
+    this.color,
     this.borderColor,
     this.borderWidth,
     this.borderRadius,
@@ -25,6 +26,9 @@ class RoundedContainer extends StatelessWidget {
 
   /// See [Container.height]
   final double? height;
+
+  /// See [Container.color]
+  final Color? color;
 
   /// See [BoxDecoration.border]
   final Color? borderColor;
@@ -56,7 +60,7 @@ class RoundedContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(_borderRadius),
       ),
       child: ClipRRect(
-        child: Material(child: child),
+        child: Material(child: child, color: color),
         borderRadius: BorderRadius.circular(_borderRadius - _borderWidth / 2),
       ),
     );
