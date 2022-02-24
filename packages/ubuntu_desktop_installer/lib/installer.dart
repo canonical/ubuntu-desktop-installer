@@ -59,6 +59,7 @@ void runInstallerApp(
   registerService(PowerService.new);
   registerService(TelemetryService.new);
   registerService(UdevService.new);
+  registerService(UrlLauncher.new);
 
   final appStatus = ValueNotifier(AppStatus.loading);
 

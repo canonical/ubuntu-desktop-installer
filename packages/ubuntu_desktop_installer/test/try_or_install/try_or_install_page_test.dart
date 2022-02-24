@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -10,12 +9,14 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'try_or_install_page_test.mocks.dart';
 
-@GenerateMocks([Settings])
+@GenerateMocks([Settings, UrlLauncher])
 void main() {
   late MaterialApp app;
   late TryOrInstallModel model;
@@ -79,11 +80,10 @@ void main() {
     final label = find.byType(Html);
     expect(label, findsOneWidget);
 
-    final launches = <MethodCall>[];
-    var channel = const MethodChannel('plugins.flutter.io/url_launcher_linux');
-    channel.setMockMethodCallHandler((methodCall) async {
-      launches.add(methodCall);
-    });
+    final urlLauncher = MockUrlLauncher();
+    when(urlLauncher.launchUrl(any)).thenAnswer((_) async => true);
+    registerMockService<UrlLauncher>(urlLauncher);
+
     var found = false;
     expect(
         find.descendant(
@@ -106,11 +106,8 @@ void main() {
               return false;
             })),
         findsOneWidget);
-    expect(launches.length, 1);
-    expect(launches[0].method, 'launch');
-    expect(launches[0].arguments['url'],
-        matches('https://wiki.ubuntu.com/[A-Za-z]+/ReleaseNotes'));
-    channel.setMockMethodCallHandler(null);
+    const urlPattern = 'https://wiki.ubuntu.com/[A-Za-z]+/ReleaseNotes';
+    verify(urlLauncher.launchUrl(argThat(matches(urlPattern)))).called(1);
   });
 
   testWidgets('selecting an option should enable continuing', (tester) async {

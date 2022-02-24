@@ -2,11 +2,13 @@
 // in ubuntu_desktop_installer/test/try_or_install/try_or_install_page_test.dart.
 // Do not manually edit this file.
 
+import 'dart:async' as _i6;
 import 'dart:ui' as _i2;
 
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_wizard/settings.dart' as _i3;
+import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i5;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -59,6 +61,22 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [UrlLauncher].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUrlLauncher extends _i1.Mock implements _i5.UrlLauncher {
+  MockUrlLauncher() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<bool> launchUrl(String? url) =>
+      (super.noSuchMethod(Invocation.method(#launchUrl, [url]),
+          returnValue: Future<bool>.value(false)) as _i6.Future<bool>);
   @override
   String toString() => super.toString();
 }

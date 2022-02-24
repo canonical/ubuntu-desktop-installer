@@ -106,3 +106,19 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
   @override
   String toString() => super.toString();
 }
+
+/// A class which mocks [UrlLauncher].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUrlLauncher extends _i1.Mock implements _i3.UrlLauncher {
+  MockUrlLauncher() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<bool> launchUrl(String? url) =>
+      (super.noSuchMethod(Invocation.method(#launchUrl, [url]),
+          returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+  @override
+  String toString() => super.toString();
+}
