@@ -610,5 +610,12 @@
       "os1": {},
       "os2": {}
     }
+  },
+  "releaseNotesLabel": "Du kanske vill läsa <a href=\"{url}\">kommentarer till utgåvan</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
   }
 }
