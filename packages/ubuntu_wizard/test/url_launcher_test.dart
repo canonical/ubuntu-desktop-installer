@@ -1,33 +1,82 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart';
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 
 // ignore_for_file: prefer_mixin
 
 void main() {
-  const url = 'https://www.ubuntu.com';
+  const testUrl = 'https://www.ubuntu.com';
 
   test('can launch', () async {
-    final mock = MockUrlLauncherPlatform();
-    when(mock.canLaunch(url)).thenAnswer((_) async => true);
-    when(mock.launch(
-      url,
-      useSafariVC: true,
-      useWebView: false,
-      enableJavaScript: false,
-      enableDomStorage: false,
-      universalLinksOnly: false,
-      headers: {},
-      webOnlyWindowName: null,
-    )).thenAnswer((_) async => true);
-    UrlLauncherPlatform.instance = mock;
+    createPlatformMock(testUrl, canLaunch: true, result: true);
 
     final launcher = UrlLauncher();
-    expect(await launcher.launchUrl(url), isTrue);
+    expect(await launcher.launchUrl(testUrl), isTrue);
 
-    verify(mock.canLaunch(url)).called(1);
+    verifyPlatformMock(url: testUrl, canLaunch: true, result: true);
+  });
+
+  test('cannot launch', () async {
+    createPlatformMock(testUrl, canLaunch: false, result: false);
+
+    final launcher = UrlLauncher();
+    expect(await launcher.launchUrl(testUrl), isFalse);
+
+    verifyPlatformMock(url: testUrl, canLaunch: false, result: false);
+  });
+
+  test('launch fail', () async {
+    createPlatformMock(testUrl, canLaunch: true, result: false);
+
+    final launcher = UrlLauncher();
+    expect(await launcher.launchUrl(testUrl), isFalse);
+
+    verifyPlatformMock(url: testUrl, canLaunch: true, result: false);
+  });
+
+  test('service', () async {
+    createPlatformMock(testUrl, canLaunch: true, result: true);
+
+    registerMockService(UrlLauncher());
+    expect(await launchUrl(testUrl), isTrue);
+
+    verifyPlatformMock(url: testUrl, canLaunch: true, result: true);
+  });
+}
+
+void createPlatformMock(
+  String url, {
+  required bool canLaunch,
+  required bool result,
+}) {
+  final mock = MockUrlLauncherPlatform();
+  when(mock.canLaunch(url)).thenAnswer((_) async => canLaunch);
+  when(mock.launch(
+    url,
+    useSafariVC: true,
+    useWebView: false,
+    enableJavaScript: false,
+    enableDomStorage: false,
+    universalLinksOnly: false,
+    headers: {},
+    webOnlyWindowName: null,
+  )).thenAnswer((_) async => result);
+  UrlLauncherPlatform.instance = mock;
+}
+
+void verifyPlatformMock({
+  required String url,
+  required bool canLaunch,
+  required bool result,
+}) {
+  final mock = UrlLauncherPlatform.instance as MockUrlLauncherPlatform;
+
+  verify(mock.canLaunch(url)).called(1);
+
+  if (canLaunch) {
     verify(mock.launch(
       url,
       useSafariVC: true,
@@ -38,17 +87,7 @@ void main() {
       headers: {},
       webOnlyWindowName: null,
     )).called(1);
-  });
-
-  test('cannot launch', () async {
-    final mock = MockUrlLauncherPlatform();
-    when(mock.canLaunch(url)).thenAnswer((_) async => false);
-    UrlLauncherPlatform.instance = mock;
-
-    final launcher = UrlLauncher();
-    expect(await launcher.launchUrl(url), isFalse);
-
-    verify(mock.canLaunch(url)).called(1);
+  } else {
     verifyNever(mock.launch(
       url,
       useSafariVC: true,
@@ -59,38 +98,7 @@ void main() {
       headers: {},
       webOnlyWindowName: null,
     ));
-  });
-
-  test('launch fail', () async {
-    final mock = MockUrlLauncherPlatform();
-    when(mock.canLaunch(url)).thenAnswer((_) async => true);
-    when(mock.launch(
-      url,
-      useSafariVC: true,
-      useWebView: false,
-      enableJavaScript: false,
-      enableDomStorage: false,
-      universalLinksOnly: false,
-      headers: {},
-      webOnlyWindowName: null,
-    )).thenAnswer((_) async => false);
-    UrlLauncherPlatform.instance = mock;
-
-    final launcher = UrlLauncher();
-    expect(await launcher.launchUrl(url), isFalse);
-
-    verify(mock.canLaunch(url)).called(1);
-    verify(mock.launch(
-      url,
-      useSafariVC: true,
-      useWebView: false,
-      enableJavaScript: false,
-      enableDomStorage: false,
-      universalLinksOnly: false,
-      headers: {},
-      webOnlyWindowName: null,
-    )).called(1);
-  });
+  }
 }
 
 class MockUrlLauncherPlatform extends Mock
