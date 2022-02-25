@@ -73,7 +73,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Du kanske vill läsa <a href=\"$url\">kommentarer till utgåvan</a>.';
   }
 
   @override
