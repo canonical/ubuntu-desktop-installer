@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -9,7 +8,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../../l10n.dart';
 import 'advanced_setup_model.dart';
 
-part 'advanced_setup_utils.dart';
 part 'advanced_setup_widgets.dart';
 
 /// WSL Advanced setup page.

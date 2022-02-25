@@ -184,3 +184,32 @@ class _NoValidator extends FieldValidator<String?> {
   @override
   bool isValid(String? value) => true;
 }
+
+/// Validates that a form field input is valid according to the given callback.
+///
+/// See also:
+///  * [ValidatedFormField]
+class CallbackValidator extends FieldValidator<String?> {
+  /// The callback used to validate the input.
+  CallbackValidator(this._callback, {required String errorText})
+      : super(errorText);
+
+  final bool Function(String?) _callback;
+
+  @override
+  bool isValid(String? value) => _callback(value);
+}
+
+/// Validates that a form field input is equal to the given value.
+///
+/// See also:
+///  * [ValidatedFormField]
+class EqualValidator extends FieldValidator<String?> {
+  /// Creates an equality validator for the given value and error.
+  EqualValidator(this._value, {required String errorText}) : super(errorText);
+
+  final String _value;
+
+  @override
+  bool isValid(String? value) => value == _value;
+}
