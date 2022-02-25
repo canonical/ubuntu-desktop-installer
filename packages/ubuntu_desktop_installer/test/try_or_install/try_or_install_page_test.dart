@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_mod
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -84,28 +84,8 @@ void main() {
     when(urlLauncher.launchUrl(any)).thenAnswer((_) async => true);
     registerMockService<UrlLauncher>(urlLauncher);
 
-    var found = false;
-    expect(
-        find.descendant(
-            of: label,
-            matching: find.byWidgetPredicate((widget) {
-              if (widget is RichText) {
-                if (!widget.text.visitChildren((visitor) {
-                  if (visitor is TextSpan && visitor.text == 'release notes') {
-                    if (!found) {
-                      found = true;
-                      (visitor.recognizer as TapGestureRecognizer).onTap!();
-                    }
-                    return false;
-                  }
-                  return true;
-                })) {
-                  return true;
-                }
-              }
-              return false;
-            })),
-        findsOneWidget);
+    await tester.tapLink('release notes');
+
     const urlPattern = 'https://wiki.ubuntu.com/[A-Za-z]+/ReleaseNotes';
     verify(urlLauncher.launchUrl(argThat(matches(urlPattern)))).called(1);
   });
