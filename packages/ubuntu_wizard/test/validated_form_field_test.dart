@@ -349,4 +349,34 @@ void main() {
       isNot(throwsAssertionError),
     );
   });
+
+  testWidgets('callback validation', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            autofocus: true,
+            validator: CallbackValidator((v) => v == 'ubuntu',
+                errorText: 'not ubuntu'),
+            successWidget: const Text('is ubuntu'),
+          ),
+        ),
+      ),
+    );
+
+    expect(find.text('is ubuntu'), findsNothing);
+    expect(find.text('not ubuntu'), findsNothing);
+
+    await tester.enterText(find.byType(ValidatedFormField), 'ubuntu');
+    await tester.pumpAndSettle();
+
+    expect(find.text('is ubuntu'), findsOneWidget);
+    expect(find.text('not ubuntu'), findsNothing);
+
+    await tester.enterText(find.byType(ValidatedFormField), 'foobar');
+    await tester.pumpAndSettle();
+
+    expect(find.text('is ubuntu'), findsNothing);
+    expect(find.text('not ubuntu'), findsOneWidget);
+  });
 }
