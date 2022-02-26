@@ -555,5 +555,25 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "accessSlideCustomizationOptions": "사용자 정의 옵션",
+  "@accessSlideCustomizationOptions": {},
+  "includedSoftware": "포함된 소프트웨어",
+  "@includedSoftware": {},
+  "installationTypeMultiOSDetected": "이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "암호 보여주기",
+  "@whoAreYouPageShowPassword": {},
+  "accessSlideAppearance": "모습",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "보조 기술",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "언어 지원",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "도움말과 지원",
+  "@supportSlideTitle": {},
+  "availableSoftware": "사용할 수 있는 소프트웨어",
+  "@availableSoftware": {},
+  "supportedSoftware": "지원되는 소프트웨어",
+  "@supportedSoftware": {}
 }
