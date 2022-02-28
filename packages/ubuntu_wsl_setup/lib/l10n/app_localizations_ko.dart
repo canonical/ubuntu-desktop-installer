@@ -152,7 +152,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab 마운트';
 
   @override
-  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. /etc/fstab 설정 파일에 포함되었습니까???';
 
   @override
   String get setupCompleteTitle => '설치 완료';
