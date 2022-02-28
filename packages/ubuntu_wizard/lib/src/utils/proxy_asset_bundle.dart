@@ -21,28 +21,30 @@ class ProxyAssetBundle extends AssetBundle {
 
   @override
   Future<ByteData> load(String key) {
-    return source.load(_findAsset(key, package: package));
+    return _findAsset(key, package: package).then(source.load);
   }
 
   @override
   Future<T> loadStructuredData<T>(String key, StructuredDataParser<T> parser) {
-    return source.loadStructuredData(_findAsset(key, package: package), parser);
+    return _findAsset(key, package: package).then((asset) {
+      return source.loadStructuredData<T>(asset, parser);
+    });
   }
 
-  String _findAsset(String assetName, {String? package}) {
+  Future<String> _findAsset(String assetName, {required String package}) async {
     // <app>/data/flutter_assets/
-    final exePath = File('/proc/self/exe').resolveSymbolicLinksSync();
+    final exePath = await File('/proc/self/exe').resolveSymbolicLinks();
     final bundlePath = p.join(p.dirname(exePath), 'data', 'flutter_assets');
 
     // <bundle>/assets/foo.png
     final appAsset = File(p.join(bundlePath, assetName));
-    if (package == null || appAsset.existsSync()) {
+    if (await appAsset.exists()) {
       return appAsset.path;
     }
 
     // <bundle>/packages/<package>/assets/foo.png
     final pkgAsset = File(p.join(bundlePath, 'packages', package, assetName));
-    if (pkgAsset.existsSync()) {
+    if (await pkgAsset.exists()) {
       return pkgAsset.path;
     }
 
