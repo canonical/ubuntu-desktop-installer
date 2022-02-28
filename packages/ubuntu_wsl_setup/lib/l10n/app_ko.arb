@@ -111,6 +111,6 @@
   "@advancedSetupMountLocationHelper": {},
   "advancedSetupMountOptionHelper": "automount 설정에 전달할 마운트 옵션",
   "@advancedSetupMountOptionHelper": {},
-  "configurationUIMountFstabSubtitle": "/etc/fstab 마운트 여부. The configuration file /etc/fstab contains the???",
+  "configurationUIMountFstabSubtitle": "/etc/fstab 마운트 여부. /etc/fstab 설정 파일에 포함되었습니까???",
   "@configurationUIMountFstabSubtitle": {}
 }
