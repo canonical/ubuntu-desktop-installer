@@ -254,7 +254,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => '이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?';
 
   @override
   String get installationTypeNoOSDetected => '현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?';
@@ -530,7 +530,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => '암호 보여주기';
 
   @override
   String get writeChangesToDisk => '디스크에 변경사항 쓰기';
@@ -710,19 +710,19 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => '사용자 정의 옵션';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => '모습';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => '보조 기술';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => '언어 지원';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => '도움말과 지원';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -736,11 +736,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => '포함된 소프트웨어';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => '사용할 수 있는 소프트웨어';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => '지원되는 소프트웨어';
 }
