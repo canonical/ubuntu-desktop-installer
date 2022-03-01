@@ -126,6 +126,11 @@ abstract class SubiquityServer {
       workingDirectory: workingDirectory,
       environment: {
         ..._pythonPath(subiquityPath),
+        // so subiquity doesn't think it's some other snap (e.g. flutter or vs code)
+        'SNAP': '.',
+        'SNAP_NAME': 'subiquity',
+        'SNAP_REVISION': '',
+        'SNAP_VERSION': '',
         ...?environment,
       },
     ).then((process) {
