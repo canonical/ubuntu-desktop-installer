@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n.dart';
 import 'try_or_install_model.dart';
@@ -71,7 +71,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
       footer: Html(
         data: lang.releaseNotesLabel(
             model.releaseNotesURL(Settings.of(context).locale)),
-        onLinkTap: (url, _, __, ___) => launch(url!),
+        onLinkTap: (url, _, __, ___) => launchUrl(url!),
       ),
       actions: <WizardAction>[
         WizardAction.back(context),

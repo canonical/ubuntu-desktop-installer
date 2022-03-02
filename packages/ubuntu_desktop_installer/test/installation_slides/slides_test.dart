@@ -1,13 +1,18 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
 import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
+import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../widget_tester_extensions.dart';
+import 'slides_test.mocks.dart';
 
+@GenerateMocks([UrlLauncher])
 void main() {
   testWidgets('inherited slides', (tester) async {
     final slide1 = Slide(
@@ -253,13 +258,8 @@ void main() {
     });
 
     testWidgets('support', (tester) async {
-      final launches = <MethodCall>[];
-      var channel =
-          const MethodChannel('plugins.flutter.io/url_launcher_linux');
-      channel.setMockMethodCallHandler((methodCall) async {
-        launches.add(methodCall);
-      });
-      addTearDown((() => channel.setMockMethodCallHandler(null)));
+      final urlLauncher = MockUrlLauncher();
+      registerMockService<UrlLauncher>(urlLauncher);
 
       await pumpSlide(tester, 7);
       expectSlide(
@@ -268,31 +268,10 @@ void main() {
         background: 'welcome.png',
       );
 
-      void expectLaunchUrl(String label, String url) {
-        var found = false;
-        expect(find.byWidgetPredicate((widget) {
-          if (widget is RichText) {
-            if (!widget.text.visitChildren((visitor) {
-              if (visitor is TextSpan && visitor.text == label) {
-                if (!found) {
-                  found = true;
-                  (visitor.recognizer as TapGestureRecognizer).onTap!();
-                }
-                return false;
-              }
-              return true;
-            })) {
-              return true;
-            }
-          }
-          return false;
-        }), findsOneWidget);
-
-        expect(launches.length, equals(1));
-        expect(launches.single.method, equals('launch'));
-        expect(launches.single.arguments, contains('url'));
-        expect(launches.single.arguments['url'], equals(url));
-        launches.clear();
+      Future<void> expectLaunchUrl(String label, String url) async {
+        when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
+        await tester.tapLink(label);
+        verify(urlLauncher.launchUrl(url)).called(1);
       }
 
       expectLaunchUrl('Ask Ubuntu', 'https://askubuntu.com');

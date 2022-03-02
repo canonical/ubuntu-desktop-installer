@@ -22,7 +22,6 @@ dependencies:
       path: packages/ubuntu_logger
   ubuntu_wizard:
     path: ../ubuntu_wizard
-  url_launcher: ^6.0.20
   yaru: ^0.2.0
 
 dev_dependencies:
