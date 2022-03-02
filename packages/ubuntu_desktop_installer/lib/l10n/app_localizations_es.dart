@@ -40,7 +40,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcome => 'Le damos la bienvenida';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Elija su idioma:';
 
   @override
   String get tryOrInstallPageTitle => 'Probar o instalar';
@@ -133,40 +133,40 @@ class AppLocalizationsEs extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claves de seguridad no coinciden';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Conectarse a Internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Entablar una conexión a Internet en el equipo permitirá que Ubuntu instale componentes adicionales necesarios y le permitirá seleccionar su huso horario.\n\nConéctese mediante cable Ethernet o elija una red inalámbrica.';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Utilizar conexión cableada';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'No se detectó ninguna conexión cableada';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'La conexión cableada está desactivada';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Para utilizar Ethernet en el equipo, debe activarse una conexión cableada';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Activar conexión cableada';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Conectar con una red inalámbrica';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Conectar con una red inalámbrica oculta';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nombre de red';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Se necesita un nombre de red';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'No me conectaré a Internet ahora';
 
   @override
   String get wirelessNetworkingDisabled => 'Wireless networking disabled';
@@ -530,7 +530,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Las contraseñas no coinciden';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Mostrar contraseña';
 
   @override
   String get writeChangesToDisk => 'Escribir cambios en el disco';
@@ -611,17 +611,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String get restartIntoWindows => 'Reiniciar en Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => '¿Dónde se encuentra?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Ubicación';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Huso horario';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Le damos la bienvenida a $RELEASE';
   }
 
   @override
@@ -638,7 +638,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Lleve su música consigo';
 
   @override
   String musicSlideDescription(Object RELEASE) {
@@ -646,7 +646,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Reproductor de música Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -655,22 +655,22 @@ class AppLocalizationsEs extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Diviértase con sus fotos';
 
   @override
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Gestor fotográfico Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'Editor de imágenes GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Editor de vídeos Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Saque el máximo partido de la web';
 
   @override
   String webSlideDescription(Object RELEASE) {
@@ -678,7 +678,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Navegador web Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -687,19 +687,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Todo lo que necesita para la oficina';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
 
   @override
-  String get officeSlideWriter => 'LibreOffice Writer';
+  String get officeSlideWriter => 'LibreOffice Writer';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'LibreOffice Calc';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
   String get accessSlideTitle => 'Access for everyone';
@@ -710,19 +710,19 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Opciones de personalización';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Apariencia';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Tecnologías de asistencia';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Compatibilidad lingüística';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ayuda y asistencia';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -736,11 +736,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Programas incluidos';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Programas disponibles';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Programas compatibles';
 }
