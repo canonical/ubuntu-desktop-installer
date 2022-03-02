@@ -15,6 +15,7 @@ class UrlLauncher {
       log.error('Unable to launch $url');
       return false;
     }
+    log.debug('Launching $url');
     return launch(url);
   }
 }
