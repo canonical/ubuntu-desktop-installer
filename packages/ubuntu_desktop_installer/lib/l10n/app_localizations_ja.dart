@@ -8,18 +8,18 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntuデスクトップインストーラー';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE をインストール';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'キャンセル';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => '変更';
 
   @override
   String get okButtonText => 'OK';
@@ -28,220 +28,220 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noButtonText => 'No';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => '再起動';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => '元に戻す';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'はい';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'ようこそ';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => '言語の選択:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => '試すまたはインストール';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'インストールの修復';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => '修復は設定や文書はそのままにしてすべてのソフトウェアを再インストールします。';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE を試す';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'このPCには何の変変更も加えずに $RELEASE を試します。';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE をインストール';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return '現在のOSと並行して（または代わりに） $RELEASE をインストールします。多少時間がかかります。';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'お望みならば <a href=\"$url\">リリースノート</a>をご覧ください。';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RSTを無効にする';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'このコンピューターはIntel RST（ラピッド・ストレージ・テクノロジー）を使用しています。Ubuntuをインストールする前にWindowsでRSTを無効にする必要があります。';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '<a href=\"https://$url\">$url</a> をスマートフォンや他のデバイスで開いて操作方法を確認してください';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'キーボードレイアウト';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'キーボードレイアウトの選択:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'キーボード入力をここで試してください';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'キーボードレイアウトを検出';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => '以下のキーのうち1つを押してください:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => '以下のキーはこのキーボードにありますか？';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'セキュアブートを設定';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'サードパーティのドライバーソフトウェアのインストールを選択しました。セキュアブートの無効化が必要です。\nここでセキュリティキーを設定した上で、システム再起動時にそのキーを入力してください。';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'セキュアブートを設定';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'セキュリティキーを選択';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'セキュリティキーを確認';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => '今はドライバーソフトウェアをインストールしない';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => '「ソフトウェアとアップデート」を使用し、あとからインストーロできます。';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'セキュリティキーが必要です';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'セキュリティキーが一致しません';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'インターネットに接続';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールとタイムゾーン選択の手助けになります。\n\nイーサネットケーブルを接続するか、Wi-Fiネットワークを選択してください';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => '有線接続を使用';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => '有線接続されていません';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => '有線接続がオフになっています';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'このコンピューターでイーサネットを使用するには、有線接続を有効にする必要があります';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => '有線接続有効';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Wi-Fiネットワークに接続';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => '隠しWi-Fiネットワークに接続';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'ネットワーク名';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'ネットワーク名が必要です';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => '今すぐにはインターネットに接続しない';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => '無線ネットワークが無効';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Wi-Fiデバイスが見つかりません';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'このコンピューターでWi-Fiを使用するには。無線ネットワークを有効にする必要があります';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Wi-Fiが有効';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => '接続';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'アップデートと追加のソフトウェア';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'どのアプリを開始時に使用しますか？';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => '通常のインストール';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Webブラウザー、ユーティリティ、オフィスソフトウェア、ゲームとメディアプレイヤー。';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => '最小インストール';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Webブラウザーと基本のユーティリティ。';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'その他のオプション';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'グラフィックスとWi-Fiハードウェアと追加メディアフォーマットのサードパーティ製ソフトウェアをインストールする';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'このソフトウェアはそのドキュメントに含まれるライセンス規約に基づきます。いくつかはプロプライエタリです。';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">注意</font>: このコンピューターは電源に接続されていません。';
   }
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'セキュリティキーを選択';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'ディスク暗号化はあなたがコンピュータを紛失した際、あなたのファイルを守ります。コンピュータを起動するたびにセキュリティキーを入力する必要があります。\n\n${RELEASE} 以外のファイルはどれも暗号化されません。';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'セキュリティキーを選択';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'セキュリティキーを確認';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'セキュリティキーが必要です';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'セキュリティキーが一致しません';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">注意</font>: このセキュリティキーを紛失するとすべてのデータが失われます。必要に応じてキーを書き留めておき、他の安全な場所で保管してください。';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'インストールの種類';
 
   @override
   String installationTypeOSDetected(Object os) {
