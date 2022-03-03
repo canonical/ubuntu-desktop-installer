@@ -24,7 +24,7 @@ class UbuntuProHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SvgPicture.asset(
-              'assets/cof_orange_hex.svg',
+              'assets/ubuntu_pro/logo.svg',
               width: 48,
               height: 48,
             ),
