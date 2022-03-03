@@ -11,19 +11,16 @@ void main() {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      package: 'test_package_1',
     );
     expect(flavor1, equals(flavor1));
     expect(flavor1.toString(), startsWith('FlavorData'));
     expect(flavor1.toString(), contains('Test Flavor 1'));
-    expect(flavor1.toString(), contains('test_package_1'));
 
     final flavor2 = FlavorData(
       name: 'Test Flavor 2',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       localizationsDelegates: GlobalUbuntuLocalizations.delegates,
-      package: 'test_package_2',
     );
     expect(flavor2, isNot(equals(flavor1)));
   });
@@ -36,7 +33,6 @@ void main() {
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
           localizationsDelegates: GlobalUbuntuLocalizations.delegates,
-          package: 'test_package',
         ),
         child: Builder(builder: (_) => MaterialApp()),
       ),
@@ -49,7 +45,6 @@ void main() {
     expect(flavor.darkTheme, equals(ThemeData.dark()));
     expect(flavor.localizationsDelegates,
         equals(GlobalUbuntuLocalizations.delegates));
-    expect(flavor.package, equals('test_package'));
   });
 
   testWidgets('copy flavor data', (tester) async {
@@ -58,7 +53,6 @@ void main() {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      package: 'test_package',
     );
 
     final copy = flavor.copyWith();
@@ -73,7 +67,6 @@ void main() {
     expect(namedFlavor.darkTheme, equals(flavor.darkTheme));
     expect(namedFlavor.localizationsDelegates,
         equals(flavor.localizationsDelegates));
-    expect(namedFlavor.package, equals(flavor.package));
 
     final themedFlavor = flavor.copyWith(
       theme: flavor.darkTheme,
@@ -87,7 +80,6 @@ void main() {
     expect(themedFlavor.darkTheme, equals(flavor.theme));
     expect(themedFlavor.localizationsDelegates,
         equals(flavor.localizationsDelegates));
-    expect(themedFlavor.package, equals(flavor.package));
 
     final localizedFlavor = flavor.copyWith(
       localizationsDelegates: GlobalUbuntuLocalizations.delegates,
@@ -101,6 +93,5 @@ void main() {
     expect(localizedFlavor.darkTheme, equals(flavor.darkTheme));
     expect(localizedFlavor.localizationsDelegates,
         equals(GlobalUbuntuLocalizations.delegates));
-    expect(localizedFlavor.package, equals(flavor.package));
   });
 }

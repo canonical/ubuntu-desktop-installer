@@ -22,6 +22,9 @@ const _kGeoIPUrl = 'https://geoip.ubuntu.com/lookup';
 const _kGeonameUrl = 'https://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
+final assetBundle =
+    ProxyAssetBundle(rootBundle, package: 'ubuntu_desktop_installer');
+
 enum AppStatus { loading, ready }
 
 void runInstallerApp(
@@ -42,10 +45,10 @@ void runInstallerApp(
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
   final geodata = Geodata(
-    loadCities: () => rootBundle.loadString('assets/cities15000.txt'),
-    loadAdmins: () => rootBundle.loadString('assets/admin1CodesASCII.txt'),
-    loadCountries: () => rootBundle.loadString('assets/countryInfo.txt'),
-    loadTimezones: () => rootBundle.loadString('assets/timeZones.txt'),
+    loadCities: () => assetBundle.loadString('assets/cities15000.txt'),
+    loadAdmins: () => assetBundle.loadString('assets/admin1CodesASCII.txt'),
+    loadCountries: () => assetBundle.loadString('assets/countryInfo.txt'),
+    loadTimezones: () => assetBundle.loadString('assets/timeZones.txt'),
   );
 
   final geoip = GeoIP(url: _kGeoIPUrl, geodata: geodata);
@@ -117,27 +120,30 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flavor(
-      data: flavor.copyWith(package: 'ubuntu_desktop_installer'),
-      child: SlidesContext(
-        slides: slides,
-        child: MaterialApp(
-          locale: Settings.of(context).locale,
-          onGenerateTitle: (context) {
-            final lang = AppLocalizations.of(context);
-            setWindowTitle(lang.windowTitle(flavor.name));
-            return lang.appTitle;
-          },
-          theme: flavor.theme,
-          darkTheme: flavor.darkTheme,
-          themeMode: Settings.of(context).theme,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: <LocalizationsDelegate>[
-            ...localizationsDelegates,
-            ...?flavor.localizationsDelegates,
-          ],
-          supportedLocales: supportedLocales,
-          home: buildApp(context),
+    return DefaultAssetBundle(
+      bundle: assetBundle,
+      child: Flavor(
+        data: flavor,
+        child: SlidesContext(
+          slides: slides,
+          child: MaterialApp(
+            locale: Settings.of(context).locale,
+            onGenerateTitle: (context) {
+              final lang = AppLocalizations.of(context);
+              setWindowTitle(lang.windowTitle(flavor.name));
+              return lang.appTitle;
+            },
+            theme: flavor.theme,
+            darkTheme: flavor.darkTheme,
+            themeMode: Settings.of(context).theme,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: <LocalizationsDelegate>[
+              ...localizationsDelegates,
+              ...?flavor.localizationsDelegates,
+            ],
+            supportedLocales: supportedLocales,
+            home: buildApp(context),
+          ),
         ),
       ),
     );

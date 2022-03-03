@@ -78,7 +78,7 @@ class _ThemeOptionCard extends StatelessWidget {
         SizedBox(
           width: width,
           child: YaruSelectableContainer(
-            child: FlavorImage.asset(assetName),
+            child: Image.asset(assetName),
             selected: selected,
             onTap: onTap,
           ),

@@ -34,7 +34,7 @@ final _welcomeSlide = Slide(
   title: (context) => Text(context.lang.welcomeSlideTitle(context.flavor.name)),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('welcome')),
+      background: Image.asset(_slideAsset('welcome')),
       content: _SlideLabel.large(
         context.lang.welcomeSlideDescription(context.flavor.name),
         width: _kHeaderWidth,
@@ -47,14 +47,14 @@ final _softwareSlide = Slide(
   title: (context) => Text(context.lang.softwareSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: SlideCard(
         width: _kCardWidth,
         child: _SlideLabel(
           context.lang.softwareSlideDescription(context.flavor.name),
         ),
       ),
-      image: FlavorImage.asset(_slideScreenshot('software')),
+      image: Image.asset(_slideScreenshot('software')),
     );
   },
 );
@@ -63,7 +63,7 @@ final _musicSlide = Slide(
   title: (context) => Text(context.lang.musicSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
@@ -107,7 +107,7 @@ final _musicSlide = Slide(
           ),
         ],
       ),
-      image: FlavorImage.asset(_slideScreenshot('music')),
+      image: Image.asset(_slideScreenshot('music')),
     );
   },
 );
@@ -116,7 +116,7 @@ final _photoSlide = Slide(
   title: (context) => Text(context.lang.photoSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
@@ -158,7 +158,7 @@ final _photoSlide = Slide(
           ),
         ],
       ),
-      image: FlavorImage.asset(_slideScreenshot('photos')),
+      image: Image.asset(_slideScreenshot('photos')),
     );
   },
 );
@@ -167,7 +167,7 @@ final _webSlide = Slide(
   title: (context) => Text(context.lang.webSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
@@ -211,7 +211,7 @@ final _webSlide = Slide(
           ),
         ],
       ),
-      image: FlavorImage.asset(_slideScreenshot('web')),
+      image: Image.asset(_slideScreenshot('web')),
     );
   },
 );
@@ -220,7 +220,7 @@ final _officeSlide = Slide(
   title: (context) => Text(context.lang.officeSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
@@ -251,7 +251,7 @@ final _officeSlide = Slide(
           ),
         ],
       ),
-      image: FlavorImage.asset(_slideScreenshot('office')),
+      image: Image.asset(_slideScreenshot('office')),
     );
   },
 );
@@ -260,7 +260,7 @@ final _accessSlide = Slide(
   title: (context) => Text(context.lang.accessSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('background')),
+      background: Image.asset(_slideAsset('background')),
       content: _SlideColumn(
         spacing: _kSmallSpacing,
         children: [
@@ -293,7 +293,7 @@ final _accessSlide = Slide(
           ),
         ],
       ),
-      image: FlavorImage.asset(_slideScreenshot('settings')),
+      image: Image.asset(_slideScreenshot('settings')),
     );
   },
 );
@@ -302,7 +302,7 @@ final _supportSlide = Slide(
   title: (context) => Text(context.lang.supportSlideTitle),
   body: (context) {
     return SlideLayout(
-      background: FlavorImage.asset(_slideAsset('welcome')),
+      background: Image.asset(_slideAsset('welcome')),
       content: _SlideColumn(
         spacing: _kLargeSpacing,
         children: [
@@ -412,7 +412,7 @@ class _SlideLabel extends StatelessWidget {
     }
 
     return Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-      FlavorImage.asset(_slideIcon(icon!)),
+      Image.asset(_slideIcon(icon!)),
       const SizedBox(width: _kIconSpacing),
       Text(
         text,
