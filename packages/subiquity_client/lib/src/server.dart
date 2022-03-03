@@ -120,8 +120,11 @@ abstract class SubiquityServer {
       Process.killPid(pid);
     }
 
+    // Use `/usr/bin/python3` over `/snap/flutter/current/usr/bin/python3` when
+    // developing with flutter-snap on the desktop. This ensures that subiquity
+    // has locally installed Python module dependencies available. (#364)
     _serverProcess = await Process.start(
-      'python3',
+      Platform.environment['SNAP_PYTHON'] ?? '/usr/bin/python3',
       subiquityCmd,
       workingDirectory: workingDirectory,
       environment: {
