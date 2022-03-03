@@ -6,7 +6,6 @@ import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:xml/xml.dart';
 
 final log = Logger('geo_service');
 
@@ -116,19 +115,13 @@ class GeoLocation {
   }
 }
 
-/// Provides Geoname and GeoIP lookups.
+/// Provides Geoname lookups.
 class GeoService {
-  /// Constructs a service with the given [geoip] lookup. Optionally, a list
-  /// of [sources] can be provided.
-  GeoService(GeoIP geoip, {List<GeoSource>? sources})
-      : _geoip = geoip,
-        _geosources = sources ?? <GeoSource>[];
+  /// Constructs a service with the given list of Geoname [sources].
+  GeoService({List<GeoSource>? sources})
+      : _geosources = sources ?? <GeoSource>[];
 
-  final GeoIP _geoip;
   final List<GeoSource> _geosources;
-
-  /// Initializes the service and returns the current location.
-  Future<GeoLocation?> init() => _geoip.lookup();
 
   /// Adds a new [source], which is used for searching.
   void addSource(GeoSource source) => _geosources.add(source);
@@ -279,27 +272,6 @@ class Geodata implements GeoSource {
     );
   }
 
-  /// Constructs a [GeoLocation] from [xml] data.
-  Future<GeoLocation?> fromXml(String xml) async {
-    await _ensureInitialized();
-    try {
-      final element = XmlDocument.parse(xml).rootElement;
-      if (element.getTextOrNull('Status') != 'OK') return null;
-      return GeoLocation(
-        name: element.getTextOrNull('City'),
-        admin: element.getTextOrNull('RegionName'),
-        country: element.getTextOrNull('CountryName'),
-        country2: element.getTextOrNull('CountryCode'),
-        latitude: element.getDoubleOrNull('Latitude'),
-        longitude: element.getDoubleOrNull('Longitude'),
-        timezone: element.getTextOrNull('TimeZone'),
-      );
-    } on XmlException {
-      log.error('Invalid GeoIP data: $xml');
-    }
-    return null;
-  }
-
   @override
   Future<Iterable<GeoLocation>> searchLocation(String location) async {
     await _ensureInitialized();
@@ -369,52 +341,6 @@ class Geodata implements GeoSource {
   }
 }
 
-/// Performs lookups from a geo IP online service (geoip.ubuntu.com/lookup).
-class GeoIP {
-  GeoIP({
-    required this.url,
-    required Geodata geodata,
-    @visibleForTesting Dio? dio,
-  })  : _dio = dio ?? Dio(_options),
-        _geodata = geodata;
-
-  /// GeoIP lookup URL.
-  final String url;
-
-  final Dio _dio;
-  CancelToken? _token;
-  final Geodata _geodata;
-
-  /// Looks up the current geographic location.
-  Future<GeoLocation?> lookup() async {
-    await cancel();
-    try {
-      final response = await _sendRequest();
-      return _handleResponse(response);
-    } on DioError catch (e) {
-      if (!CancelToken.isCancel(e)) {
-        log.error('GeoIP lookup error: ${e.message}');
-      }
-    }
-    return null;
-  }
-
-  /// Cancels an ongoing lookup.
-  Future<void> cancel() async => _token?.cancel();
-
-  Future<Response> _sendRequest() {
-    log.info('GeoIP lookup request: $url');
-    return _dio.get(url, cancelToken: _token = CancelToken());
-  }
-
-  Future<GeoLocation?> _handleResponse(Response response) async {
-    if (response.statusCode != 200) log.error(response.statusMessage);
-    final location = await _geodata.fromXml(response.data.toString());
-    log.info('GeoIP lookup response: $location');
-    return location;
-  }
-}
-
 extension _JsonValue on Map<String, dynamic> {
   String? getStringOrNull(String key, [String? fallback]) {
     final value = this[key];
@@ -429,12 +355,6 @@ extension _JsonValue on Map<String, dynamic> {
             ? double.tryParse(value)
             : null;
   }
-}
-
-extension _XmlValue on XmlElement? {
-  String? getTextOrNull(String name) => this?.getElement(name)?.text;
-  double? getDoubleOrNull(String name) =>
-      double.tryParse(getTextOrNull(name) ?? '');
 }
 
 // parses and indexes two columns from tabular data

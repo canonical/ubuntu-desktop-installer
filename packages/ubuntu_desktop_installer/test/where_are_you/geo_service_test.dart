@@ -7,28 +7,9 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'geo_service_test.mocks.dart';
 
 const kGeonameUrl = 'http://lookup.geoname.org';
-const kGeoIPUrl = 'http://lookup.geoip.org';
 
-@GenerateMocks([Dio, GeoIP, GeoSource])
+@GenerateMocks([Dio, GeoSource])
 void main() {
-  test('init service', () async {
-    final geoip = MockGeoIP();
-    when(geoip.lookup()).thenAnswer((_) async => copenhagen);
-
-    final service = GeoService(geoip);
-    expect(await service.init(), copenhagen);
-    verify(geoip.lookup()).called(1);
-  });
-
-  test('null service', () async {
-    final geoip = MockGeoIP();
-    when(geoip.lookup()).thenAnswer((_) async => null);
-
-    final service = GeoService(geoip);
-    expect(await service.init(), isNull);
-    verify(geoip.lookup()).called(1);
-  });
-
   test('service sources', () async {
     final source1 = MockGeoSource();
     when(source1.searchLocation('foo'))
@@ -37,7 +18,7 @@ void main() {
     final source2 = MockGeoSource();
     when(source2.searchLocation('foo')).thenAnswer((_) async => [copenhagen]);
 
-    final service = GeoService(MockGeoIP());
+    final service = GeoService();
     expect(await service.searchLocation('foo'), []);
     verifyNever(source1.searchLocation('foo'));
     verifyNever(source2.searchLocation('foo'));
@@ -64,7 +45,7 @@ void main() {
     when(source2.searchLocation('foo')).thenAnswer((_) async => [gothenburg]);
     when(source2.cancelSearch()).thenAnswer((_) async {});
 
-    final service = GeoService(MockGeoIP());
+    final service = GeoService();
     service.addSource(source1);
     service.addSource(source2);
     service.searchLocation('foo');
@@ -82,7 +63,7 @@ void main() {
     final source2 = MockGeoSource();
     when(source2.searchTimezone('foo')).thenAnswer((_) async => [copenhagen]);
 
-    final service = GeoService(MockGeoIP());
+    final service = GeoService();
     expect(await service.searchTimezone('foo'), []);
     verifyNever(source1.searchTimezone('foo'));
     verifyNever(source2.searchTimezone('foo'));
@@ -98,39 +79,6 @@ void main() {
     expect(await service.searchTimezone('foo'), [copenhagen]);
     verifyNever(source1.searchTimezone('foo'));
     verify(source2.searchTimezone('foo')).called(1);
-  });
-
-  test('geoip lookup', () async {
-    final dio = MockDio();
-    when(dio.get(
-      kGeoIPUrl,
-      cancelToken: anyNamed('cancelToken'),
-    )).thenAnswer((_) async => xmlResponse(copenhagen));
-
-    final geoip = GeoIP(url: kGeoIPUrl, geodata: geodata, dio: dio);
-
-    expect(await geoip.lookup(), copenhagen);
-    verify(dio.get(kGeoIPUrl, cancelToken: anyNamed('cancelToken'))).called(1);
-  });
-
-  test('geoip error', () async {
-    final dio = MockDio();
-    when(dio.get(kGeoIPUrl, cancelToken: anyNamed('cancelToken')))
-        .thenAnswer((_) async => errorResponse);
-
-    final geoip = GeoIP(url: kGeoIPUrl, geodata: geodata, dio: dio);
-
-    expect(await geoip.lookup(), isNull);
-  });
-
-  test('invalid geoip data', () async {
-    final dio = MockDio();
-    when(dio.get(kGeoIPUrl, cancelToken: anyNamed('cancelToken')))
-        .thenAnswer((_) async => invalidResponse);
-
-    final geoip = GeoIP(url: kGeoIPUrl, geodata: geodata, dio: dio);
-
-    expect(await geoip.lookup(), isNull);
   });
 
   test('geoname search location', () async {
@@ -406,66 +354,6 @@ void main() {
       ),
     );
   });
-
-  test('geodata xml', () async {
-    expect(
-      await geodata.fromXml('''
-<Response>
-  <Ip>127.0.0.1</Ip>
-  <Status>OK</Status>
-  <CountryCode>SE</CountryCode>
-  <CountryCode3>SWE</CountryCode3>
-  <CountryName>Sweden</CountryName>
-  <RegionCode>28</RegionCode>
-  <RegionName>Vastra Gotaland</RegionName>
-  <City>Göteborg</City>
-  <ZipPostalCode>416 66</ZipPostalCode>
-  <Latitude>57.70716</Latitude>
-  <Longitude>11.96679</Longitude>
-  <AreaCode>0</AreaCode>
-  <TimeZone>Europe/Stockholm</TimeZone>
-</Response>
-'''),
-      GeoLocation(
-        name: 'Göteborg',
-        admin: 'Vastra Gotaland',
-        country: 'Sweden',
-        country2: 'SE',
-        latitude: 57.70716,
-        longitude: 11.96679,
-        timezone: 'Europe/Stockholm',
-      ),
-    );
-
-    expect(
-      await geodata.fromXml('''
-<Response>
-  <Ip>127.0.0.1</Ip>
-  <Status>OK</Status>
-  <City>Göteborg</City>
-</Response>
-'''),
-      GeoLocation(
-        name: 'Göteborg',
-        admin: null,
-        country: null,
-        country2: null,
-        latitude: null,
-        longitude: null,
-        timezone: null,
-      ),
-    );
-
-    expect(
-      await geodata.fromXml('''
-<Response>
-  <Ip>127.0.0.1</Ip>
-  <Status>ERROR</Status>
-</Response>
-'''),
-      isNull,
-    );
-  });
 }
 
 const copenhagen = GeoLocation(
@@ -502,26 +390,6 @@ Response jsonResponse(GeoLocation city) {
     "timezone": "${city.timezone}"
   }
 ]
-''',
-    statusCode: 200,
-    requestOptions: RequestOptions(path: '/'),
-  );
-}
-
-Response xmlResponse(GeoLocation city) {
-  return Response(
-    data: '''
-<Response>
-  <Ip>127.0.0.1</Ip>
-  <Status>OK</Status>
-  <CountryCode>${city.country2}</CountryCode>
-  <CountryName>${city.country}</CountryName>
-  <RegionName>${city.admin}</RegionName>
-  <City>${city.name}</City>
-  <Latitude>${city.latitude}</Latitude>
-  <Longitude>${city.longitude}</Longitude>
-  <TimeZone>${city.timezone}</TimeZone>
-  </Response>
 ''',
     statusCode: 200,
     requestOptions: RequestOptions(path: '/'),

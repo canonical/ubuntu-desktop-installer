@@ -24,11 +24,6 @@ class MockGeoService extends _i1.Mock implements _i2.GeoService {
   }
 
   @override
-  _i3.Future<_i2.GeoLocation?> init() =>
-      (super.noSuchMethod(Invocation.method(#init, []),
-              returnValue: Future<_i2.GeoLocation?>.value())
-          as _i3.Future<_i2.GeoLocation?>);
-  @override
   void addSource(_i2.GeoSource? source) =>
       super.noSuchMethod(Invocation.method(#addSource, [source]),
           returnValueForMissingStub: null);

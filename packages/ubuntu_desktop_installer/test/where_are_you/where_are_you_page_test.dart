@@ -184,21 +184,13 @@ void main() {
     );
   });
 
-  testWidgets('focus text field', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-
-    final field = find.byType(EditableText);
-    expect(field, findsNWidgets(2));
-    expect(tester.widget<EditableText>(field.first).focusNode.hasFocus, isTrue);
-  });
-
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
+    when(client.timezone()).thenAnswer((_) async => TimezoneData());
     registerMockService<SubiquityClient>(client);
 
     final service = MockGeoService();
-    when(service.init()).thenAnswer((_) async => null);
+    when(service.searchTimezone(any)).thenAnswer((_) async => []);
     registerMockService<GeoService>(service);
 
     await tester.pumpWidget(tester.buildApp(WhereAreYouPage.create));

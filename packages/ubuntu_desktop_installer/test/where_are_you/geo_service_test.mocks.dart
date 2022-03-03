@@ -381,31 +381,6 @@ class MockDio extends _i1.Mock implements _i7.Dio {
   String toString() => super.toString();
 }
 
-/// A class which mocks [GeoIP].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGeoIP extends _i1.Mock implements _i10.GeoIP {
-  MockGeoIP() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get url =>
-      (super.noSuchMethod(Invocation.getter(#url), returnValue: '') as String);
-  @override
-  _i8.Future<_i10.GeoLocation?> lookup() =>
-      (super.noSuchMethod(Invocation.method(#lookup, []),
-              returnValue: Future<_i10.GeoLocation?>.value())
-          as _i8.Future<_i10.GeoLocation?>);
-  @override
-  _i8.Future<void> cancel() =>
-      (super.noSuchMethod(Invocation.method(#cancel, []),
-          returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i8.Future<void>);
-  @override
-  String toString() => super.toString();
-}
-
 /// A class which mocks [GeoSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
