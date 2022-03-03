@@ -142,24 +142,6 @@ class MockFileCreator {
   }
 }
 
-File createMockFiles(String path, Set<String> files) {
-  final file = MockFile(path);
-  switch (path) {
-    case '/proc/self/exe':
-      when(file.resolveSymbolicLinks()).thenAnswer((_) async => '$appPath/exe');
-      break;
-    case appAssetPath:
-      when(file.exists()).thenAnswer((_) async => false);
-      break;
-    case pkgAssetPath:
-      when(file.exists()).thenAnswer((_) async => true);
-      break;
-    default:
-      throw path;
-  }
-  return file;
-}
-
 class MockFile extends Mock implements File {
   MockFile(this.path);
 
