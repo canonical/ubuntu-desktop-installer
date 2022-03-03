@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -17,7 +16,7 @@ import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
-@GenerateMocks([ProfileSetupModel])
+@GenerateMocks([ProfileSetupModel, UrlLauncher])
 void main() {
   LangTester.type = ProfileSetupPage;
 
@@ -212,20 +211,16 @@ void main() {
   });
 
   testWidgets('click link', (tester) async {
-    await tester.pumpWidget(buildApp(tester, buildModel()));
+    const url = 'https://aka.ms/wslusers';
+    final urlLauncher = MockUrlLauncher();
+    when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
+    registerMockService<UrlLauncher>(urlLauncher);
 
-    var urlLaunched = false;
-    final methodChannel =
-        MethodChannel('plugins.flutter.io/url_launcher_linux');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('launch'));
-      expect(call.arguments['url'], equals('https://aka.ms/wslusers'));
-      urlLaunched = true;
-    });
+    await tester.pumpWidget(buildApp(tester, buildModel()));
 
     expect(find.byType(Html), findsOneWidget);
     await tester.tap(find.byType(Html));
-    expect(urlLaunched, isTrue);
+    verify(urlLauncher.launchUrl(url)).called(1);
   });
 
   testWidgets('creates a model', (tester) async {

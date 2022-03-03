@@ -62,6 +62,7 @@ void runInstallerApp(
   registerService(PowerService.new);
   registerService(TelemetryService.new);
   registerService(UdevService.new);
+  registerService(UrlLauncher.new);
 
   final appStatus = ValueNotifier(AppStatus.loading);
 
@@ -86,13 +87,6 @@ void runInstallerApp(
         options['machine-config'],
       ],
     ],
-    serverEnvironment: {
-      // so subiquity doesn't think it's the installer or flutter snap...
-      'SNAP': '.',
-      'SNAP_NAME': 'subiquity',
-      'SNAP_REVISION': '',
-      'SNAP_VERSION': '',
-    },
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
@@ -183,7 +177,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           const SizedBox(width: 20),
           Expanded(
             child: SvgPicture.asset(
-              'assets/mascot_white.svg',
+              'assets/welcome/logo.svg',
               height: height / 4,
               color: Theme.of(context).primaryColor,
             ),

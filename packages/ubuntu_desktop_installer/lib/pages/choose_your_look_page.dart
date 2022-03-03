@@ -29,7 +29,7 @@ class ChooseYourLookPage extends StatelessWidget {
             children: [
               _ThemeOptionCard(
                 width: width / 3,
-                assetName: 'assets/Theme_thumbnails-Light.png',
+                assetName: 'assets/choose_your_look/light-theme.png',
                 selected: Theme.of(context).brightness == Brightness.light,
                 onTap: () {
                   settings.applyTheme(Brightness.light);
@@ -41,7 +41,7 @@ class ChooseYourLookPage extends StatelessWidget {
               ),
               _ThemeOptionCard(
                 width: width / 3,
-                assetName: 'assets/Theme_thumbnails-Dark.png',
+                assetName: 'assets/choose_your_look/dark-theme.png',
                 selected: Theme.of(context).brightness == Brightness.dark,
                 onTap: () {
                   settings.applyTheme(Brightness.dark);

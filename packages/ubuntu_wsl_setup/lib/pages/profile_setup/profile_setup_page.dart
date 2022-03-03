@@ -7,7 +7,6 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n.dart';
 import 'profile_setup_model.dart';
@@ -55,7 +54,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
       header: Html(
         data: lang.profileSetupHeader,
         style: {'body': Style(margin: EdgeInsets.zero)},
-        onLinkTap: (url, _, __, ___) => launch(url!),
+        onLinkTap: (url, _, __, ___) => launchUrl(url!),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldPadding = EdgeInsets.symmetric(

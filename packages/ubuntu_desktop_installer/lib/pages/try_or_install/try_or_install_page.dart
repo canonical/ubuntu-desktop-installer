@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n.dart';
 import 'try_or_install_model.dart';
@@ -40,7 +40,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.repairUbuntu,
-              image: Image.asset('assets/repair-wrench.png'),
+              image: Image.asset('assets/try_or_install/repair-wrench.png'),
               title: Text(lang.repairInstallation),
               body: Text(lang.repairInstallationDescription),
               onSelected: () => model.selectOption(Option.repairUbuntu),
@@ -50,7 +50,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.tryUbuntu,
-              image: Image.asset('assets/steering-wheel.png'),
+              image: Image.asset('assets/try_or_install/steering-wheel.png'),
               title: Text(lang.tryUbuntu(flavor.name)),
               body: Text(lang.tryUbuntuDescription(flavor.name)),
               onSelected: () => model.selectOption(Option.tryUbuntu),
@@ -60,7 +60,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Expanded(
             child: OptionCard(
               selected: model.option == Option.installUbuntu,
-              image: Image.asset('assets/hard-drive.png'),
+              image: Image.asset('assets/try_or_install/hard-drive.png'),
               title: Text(lang.installUbuntu(flavor.name)),
               body: Text(lang.installUbuntuDescription(flavor.name)),
               onSelected: () => model.selectOption(Option.installUbuntu),
@@ -71,7 +71,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
       footer: Html(
         data: lang.releaseNotesLabel(
             model.releaseNotesURL(Settings.of(context).locale)),
-        onLinkTap: (url, _, __, ___) => launch(url!),
+        onLinkTap: (url, _, __, ___) => launchUrl(url!),
       ),
       actions: <WizardAction>[
         WizardAction.back(context),

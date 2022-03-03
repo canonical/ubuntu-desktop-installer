@@ -8,6 +8,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart'
     as _i3;
+import 'package:ubuntu_wizard/utils.dart' as _i5;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -43,4 +44,20 @@ class MockTurnOffRSTModel extends _i1.Mock implements _i3.TurnOffRSTModel {
       Invocation.method(#shutdown, [], {#immediate: immediate}),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+}
+
+/// A class which mocks [UrlLauncher].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUrlLauncher extends _i1.Mock implements _i5.UrlLauncher {
+  MockUrlLauncher() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<bool> launchUrl(String? url) =>
+      (super.noSuchMethod(Invocation.method(#launchUrl, [url]),
+          returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+  @override
+  String toString() => super.toString();
 }

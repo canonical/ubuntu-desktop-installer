@@ -2,6 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_wizard/app.dart';
+import 'package:ubuntu_wizard/services.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import 'app.dart';
 
@@ -23,6 +25,7 @@ screens, yet allowing user to overwrite any of those during setup.
   if (options['prefill'] != null) {
     serverArgs = ['--prefill', options['prefill']];
   }
+  registerService(UrlLauncher.new);
   runWizardApp(
     ValueListenableBuilder<Variant?>(
       valueListenable: variant,

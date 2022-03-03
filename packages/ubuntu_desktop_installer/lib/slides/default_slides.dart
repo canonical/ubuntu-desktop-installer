@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../l10n.dart';
 import 'slide_widgets.dart';
@@ -13,9 +13,10 @@ const _kInsets = EdgeInsets.fromLTRB(72, 56, 48, 24);
 const _kSmallSpacing = 8.0;
 const _kLargeSpacing = 16.0;
 
-String _slideAsset(String name) => 'assets/slides/$name.png';
-String _slideIcon(String name) => 'assets/slides/icons/$name.png';
-String _slideScreenshot(String name) => 'assets/slides/screenshots/$name.png';
+String _slideAsset(String name) => 'assets/installation_slides/$name.png';
+String _slideIcon(String name) => 'assets/installation_slides/icons/$name.png';
+String _slideScreenshot(String name) =>
+    'assets/installation_slides/screenshots/$name.png';
 
 /// The list of default installation slides.
 final defaultSlides = <Slide>[
@@ -404,7 +405,7 @@ class _SlideLabel extends StatelessWidget {
         },
         onLinkTap: (url, _, __, ___) {
           if (url != null) {
-            launch(url);
+            launchUrl(url);
           }
         },
       );
