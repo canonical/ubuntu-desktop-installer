@@ -84,13 +84,6 @@ void runInstallerApp(
         options['machine-config'],
       ],
     ],
-    serverEnvironment: {
-      // so subiquity doesn't think it's the installer or flutter snap...
-      'SNAP': '.',
-      'SNAP_NAME': 'subiquity',
-      'SNAP_REVISION': '',
-      'SNAP_VERSION': '',
-    },
     onInitSubiquity: (client) {
       appStatus.value = AppStatus.ready;
       client.setVariant(Variant.DESKTOP);
