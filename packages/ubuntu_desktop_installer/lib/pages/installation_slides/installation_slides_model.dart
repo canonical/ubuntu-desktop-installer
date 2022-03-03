@@ -78,7 +78,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   /// loading slide images
   Future<void> precacheSlideImages(BuildContext context) {
     final assets = _resolveAssetsDirectory();
-    return Directory('$assets/assets/slides')
+    return Directory('$assets/assets/installation_slides')
         .list(recursive: true)
         .forEach((slide) {
       if (slide is File) {

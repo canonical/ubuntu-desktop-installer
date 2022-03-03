@@ -66,6 +66,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/slides/
-    - assets/slides/icons/
-    - assets/slides/screenshots/
+    - assets/choose_your_look/
+    - assets/installation_complete/
+    - assets/installation_slides/
+    - assets/installation_slides/icons/
+    - assets/installation_slides/screenshots/
+    - assets/select_guided_storage/
+    - assets/try_or_install/
+    - assets/turn_off_bitlocker/
+    - assets/turn_off_rst/
+    - assets/welcome/
