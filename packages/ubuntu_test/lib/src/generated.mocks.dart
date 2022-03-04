@@ -367,11 +367,11 @@ class MockSubiquityServer extends _i1.Mock implements _i7.SubiquityServer {
   }
 
   @override
-  _i5.Future<String> start(_i7.ServerMode? serverMode,
+  _i5.Future<String> start(
           {List<String>? args, Map<String, String>? environment}) =>
       (super.noSuchMethod(
           Invocation.method(
-              #start, [serverMode], {#args: args, #environment: environment}),
+              #start, [], {#args: args, #environment: environment}),
           returnValue: Future<String>.value('')) as _i5.Future<String>);
   @override
   _i5.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),

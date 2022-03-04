@@ -45,7 +45,7 @@ screens, yet allowing user to overwrite any of those during setup.
     },
     serverArgs: serverArgs,
     serverEnvironment: {
-      if (!isLiveRun(options) && options['reconfigure'] == true)
+      if (isDryRun() && options['reconfigure'] == true)
         'DRYRUN_RECONFIG': 'true',
     },
   );

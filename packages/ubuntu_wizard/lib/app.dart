@@ -23,8 +23,8 @@ final log = Logger(_appName);
 /// is called when the server connection has been established.
 typedef SubiquityInitCallback = void Function(SubiquityClient client);
 
-bool isLiveRun(ArgResults? options) {
-  return options != null && options['dry-run'] != true;
+bool isDryRun() {
+  return SubiquityServer.serverMode == ServerMode.DRY_RUN;
 }
 
 /// Initializes and runs the given [app].
@@ -49,10 +49,8 @@ Future<void> runWizardApp(
     );
   }
 
-  final serverMode = isLiveRun(options) ? ServerMode.LIVE : ServerMode.DRY_RUN;
-
   subiquityServer
-      .start(serverMode, args: serverArgs, environment: serverEnvironment)
+      .start(args: serverArgs, environment: serverEnvironment)
       .then((socketPath) {
     subiquityClient.open(socketPath);
 
@@ -119,9 +117,6 @@ ArgResults? parseCommandLine(
 }) {
   final parser = ArgParser();
   parser.addFlag('help', abbr: 'h', negatable: false);
-  parser.addFlag('dry-run',
-      defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
-      help: 'Run Subiquity server in dry-run mode');
   parser.addOption('initial-route', hide: true);
   parser.addOption(
     'log-file',

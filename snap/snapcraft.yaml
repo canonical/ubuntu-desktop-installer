@@ -25,7 +25,7 @@ apps:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
       GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
-      LIVE_RUN: 1
+      SUBIQUITY_MODE: none # the server is already running
       LOG_LEVEL: debug
       SNAP_PYTHON: python3
 

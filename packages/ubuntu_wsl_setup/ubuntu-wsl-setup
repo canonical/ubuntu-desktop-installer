@@ -588,8 +588,8 @@ export PYTHON=$SNAP/usr/bin/python3.8
 export PY3OR2_PYTHON=$PYTHON
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity
-# Needed for flutter
-export LIVE_RUN=1
+# The server should be always started in WSL because there's no systemd
+export SUBIQUITY_MODE=live
 
 BIN=$SNAP/usr/libexec/ubuntu_wsl_setup
 args=""

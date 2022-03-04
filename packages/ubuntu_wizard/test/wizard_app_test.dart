@@ -5,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/services.dart';
@@ -19,7 +18,7 @@ void main() {
   testWidgets('initializes subiquity', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
-    when(server.start(any,
+    when(server.start(
             args: anyNamed('args'), environment: anyNamed('environment')))
         .thenAnswer((_) async => 'socket path');
 
@@ -31,8 +30,8 @@ void main() {
       serverEnvironment: {'baz': 'qux'},
       onInitSubiquity: (client) => client.setVariant(Variant.DESKTOP),
     );
-    verify(server.start(ServerMode.DRY_RUN,
-        args: ['--foo', 'bar'], environment: {'baz': 'qux'})).called(1);
+    verify(server.start(args: ['--foo', 'bar'], environment: {'baz': 'qux'}))
+        .called(1);
     verify(client.open('socket path')).called(1);
     verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
@@ -40,7 +39,7 @@ void main() {
   testWidgets('registers the client', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
-    when(server.start(any,
+    when(server.start(
             args: anyNamed('args'), environment: anyNamed('environment')))
         .thenAnswer((_) async => '');
 
@@ -56,14 +55,6 @@ void main() {
   testWidgets('parse command-line arguments', (tester) async {
     int? didExit;
     final out = MockIOSink();
-
-    final dryRun = parseCommandLine(
-      ['--dry-run'],
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isNull);
-    expect(dryRun, isNotNull);
-    expect(dryRun!['dry-run'], isTrue);
 
     final machineConfig = parseCommandLine(
       ['--machine-config', 'foo.json'],

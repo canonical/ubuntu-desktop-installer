@@ -42,7 +42,7 @@ void runInstallerApp(
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
 
-  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+  final journalUnit = isDryRun() ? null : _kSystemdUnit;
 
   final geodata = Geodata(
     loadCities: () => assetBundle.loadString('assets/cities15000.txt'),

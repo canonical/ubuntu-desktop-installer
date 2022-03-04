@@ -74,7 +74,7 @@ sudo python3 -m subiquity.cmd.server
 In another terminal run:
 ```sh
 cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
-LIVE_RUN=1 flutter run
+SUBIQUITY_MODE=live flutter run
 ```
 
 ## Contributing

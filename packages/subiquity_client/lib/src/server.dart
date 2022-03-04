@@ -8,7 +8,17 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 import 'http_unix_client.dart';
 
-enum ServerMode { LIVE, DRY_RUN }
+/// Whether Subiquity server is automatically started in live or dry-run mode.
+enum ServerMode {
+  /// Start Subiquity in live mode.
+  LIVE,
+
+  /// Start Subiquity in dry-run mode.
+  DRY_RUN,
+
+  /// Do not start Subiquity.
+  NONE,
+}
 
 /// @internal
 final log = Logger('subiquity_server');
@@ -30,8 +40,19 @@ abstract class SubiquityServer {
   @visibleForTesting
   static void Function(String socketPath)? startupCallback;
 
-  // Whether the server process should be started in the specified mode.
-  bool _shouldStart(ServerMode mode);
+  static ServerMode? _serverMode;
+  static ServerMode get serverMode => _serverMode ?? _resolveServerMode();
+
+  static ServerMode _resolveServerMode() {
+    switch (Platform.environment['SUBIQUITY_MODE']) {
+      case 'live':
+        return ServerMode.LIVE;
+      case 'none':
+        return ServerMode.NONE;
+      default:
+        return ServerMode.DRY_RUN;
+    }
+  }
 
   // The name of the server's Python module.
   String get _pythonModule;
@@ -39,6 +60,12 @@ abstract class SubiquityServer {
   // The path of the socket is fixed in live-run mode. In dry-run mode, it needs
   // to be resolved based on the location of the `subiquity_client` package.
   Future<String> _getSocketPath(ServerMode mode) async {
+    final path = Platform.environment['SUBIQUITY_SOCKET_PATH'];
+    if (path != null) {
+      log.debug('SUBIQUITY_SOCKET_PATH: $path');
+      return path;
+    }
+
     if (mode == ServerMode.DRY_RUN) {
       // Use a relative path to avoid hitting AF_UNIX path length limit because
       // <path/to/ubuntu-desktop-installer>/packages/subiquity_client/subiquity/.subiquity/socket>
@@ -57,6 +84,12 @@ abstract class SubiquityServer {
 
   // Finds local subiquity relative to the `subiquity_client` Dart package.
   static Future<String> findSubiquityPath() async {
+    final path = Platform.environment['SUBIQUITY_PATH'];
+    if (path != null) {
+      log.debug('SUBIQUITY_PATH: $path');
+      return path;
+    }
+
     Object? error;
     final config = await findPackageConfig(
       Directory.current,
@@ -85,10 +118,10 @@ abstract class SubiquityServer {
     return {'PYTHONPATH': pythonPath.join(':')};
   }
 
-  Future<String> start(ServerMode serverMode,
+  Future<String> start(
       {List<String>? args, Map<String, String>? environment}) async {
     final socketPath = await _getSocketPath(serverMode);
-    if (_shouldStart(serverMode)) {
+    if (serverMode != ServerMode.NONE) {
       var subiquityCmd = <String>[
         '-m',
         _pythonModule,
@@ -200,11 +233,6 @@ abstract class SubiquityServer {
 class _SubiquityServerImpl extends SubiquityServer {
   _SubiquityServerImpl() : super._();
 
-  // Normally, the server is already running in live mode and thus, only
-  // started in dry-run mode.
-  @override
-  bool _shouldStart(ServerMode mode) => mode == ServerMode.DRY_RUN;
-
   @override
   String get _pythonModule => 'subiquity.cmd.server';
 }
@@ -212,10 +240,6 @@ class _SubiquityServerImpl extends SubiquityServer {
 // A server that runs in a WSL environment.
 class _WslSubiquityServerImpl extends SubiquityServer {
   _WslSubiquityServerImpl() : super._();
-
-  // The server should be always started in WSL because there's no systemd.
-  @override
-  bool _shouldStart(ServerMode mode) => true;
 
   @override
   String get _pythonModule => 'system_setup.cmd.server';

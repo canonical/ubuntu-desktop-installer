@@ -21,7 +21,7 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(ServerMode.DRY_RUN, args: [
+      _socketPath = await _testServer.start(args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -417,7 +417,7 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer.wsl();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(ServerMode.DRY_RUN);
+      _socketPath = await _testServer.start();
       _client.open(_socketPath);
     });
 
