@@ -2,7 +2,7 @@
   "@@locale": "zh",
   "appTitle": "Ubuntu 桌面版安装器",
   "@appTitle": {},
-  "windowTitle": "安装",
+  "windowTitle": "安装{RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
@@ -19,7 +19,7 @@
   "@noWifiDevicesDetected": {},
   "enableWifi": "启用WiFi",
   "@enableWifi": {},
-  "normalInstallationSubtitle": "浏览器",
+  "normalInstallationSubtitle": "Web 浏览器、实用程序、办公软件、游戏和媒体播放器。",
   "@normalInstallationSubtitle": {},
   "changeButtonText": "更改",
   "@changeButtonText": {},
@@ -530,5 +530,32 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "installationTypeMultiOSDetected": "这台计算机已经安装了多个操作系统。您准备怎么做？",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "显示密码",
+  "@whoAreYouPageShowPassword": {},
+  "photoSlideTitle": "享受照片带给你的乐趣",
+  "@photoSlideTitle": {},
+  "musicSlideDescription": "{RELEASE} 带有令人惊叹的 Rhythmbox 音乐播放器。通过高级播放选项，您可以轻松的为这些完美的歌曲排序。它与 CD 和便携式音乐播放器配合得很好，因此您可以随时随地欣赏所有音乐。",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeDualOSDetected": "这台计算机已安装有{os1}与{os2}了。您想要怎么做？",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "musicSlideRhythmbox": "Rhythmbox 音乐播放器",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {}
 }
