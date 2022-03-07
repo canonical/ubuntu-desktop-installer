@@ -24,7 +24,7 @@ void main() {
       type: 'linux',
     );
     const existingOS = [
-      Disk(partitions: [
+      Disk(objects: [
         Partition(os: ubuntu2110),
         Partition(os: ubuntu2204),
       ]),
