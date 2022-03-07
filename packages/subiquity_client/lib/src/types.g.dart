@@ -286,8 +286,8 @@ Map<String, dynamic> _$_$_OsProberToJson(_$_OsProber instance) =>
       'version': instance.version,
     };
 
-_$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
-  return _$_Partition(
+_$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
+  return _$Partition(
     size: json['size'] as int?,
     number: json['number'] as int?,
     wipe: _wipeFromString(json['wipe'] as String?),
@@ -305,7 +305,7 @@ _$_Partition _$_$_PartitionFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
+Map<String, dynamic> _$_$PartitionToJson(_$Partition instance) =>
     <String, dynamic>{
       'size': instance.size,
       'number': instance.number,
@@ -318,6 +318,18 @@ Map<String, dynamic> _$_$_PartitionToJson(_$_Partition instance) =>
       'os': instance.os?.toJson(),
     };
 
+_$Gap _$_$GapFromJson(Map<String, dynamic> json) {
+  return _$Gap(
+    offset: json['offset'] as int?,
+    size: json['size'] as int?,
+  );
+}
+
+Map<String, dynamic> _$_$GapToJson(_$Gap instance) => <String, dynamic>{
+      'offset': instance.offset,
+      'size': instance.size,
+    };
+
 _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
   return _$_Disk(
     id: json['id'] as String?,
@@ -328,8 +340,8 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     usageLabels: (json['usage_labels'] as List<dynamic>?)
         ?.map((e) => e as String)
         .toList(),
-    partitions: (json['partitions'] as List<dynamic>?)
-        ?.map((e) => Partition.fromJson(e as Map<String, dynamic>))
+    objects: (json['partitions'] as List<dynamic>?)
+        ?.map((e) => DiskObject.fromJson(e as Map<String, dynamic>))
         .toList(),
     freeForPartitions: json['free_for_partitions'] as int?,
     okForGuided: json['ok_for_guided'] as bool?,
@@ -348,7 +360,7 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
-      'partitions': instance.partitions?.map((e) => e.toJson()).toList(),
+      'partitions': instance.objects?.map((e) => e.toJson()).toList(),
       'free_for_partitions': instance.freeForPartitions,
       'ok_for_guided': instance.okForGuided,
       'ptable': instance.ptable,
