@@ -12,7 +12,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return '安装';
+    return '安装$RELEASE';
   }
 
   @override
@@ -193,7 +193,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get normalInstallationTitle => '正常安装';
 
   @override
-  String get normalInstallationSubtitle => '浏览器';
+  String get normalInstallationSubtitle => 'Web 浏览器、实用程序、办公软件、游戏和媒体播放器。';
 
   @override
   String get minimalInstallationTitle => '最小化安装';
@@ -250,11 +250,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return '这台计算机已安装有$os1与$os2了。您想要怎么做？';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => '这台计算机已经安装了多个操作系统。您准备怎么做？';
 
   @override
   String get installationTypeNoOSDetected => '这台电脑目前没有检测到操作系统。你想做什么？';
@@ -530,7 +530,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '密码不匹配';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => '显示密码';
 
   @override
   String get writeChangesToDisk => '将更改写入磁盘';
@@ -642,11 +642,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE 带有令人惊叹的 Rhythmbox 音乐播放器。通过高级播放选项，您可以轻松的为这些完美的歌曲排序。它与 CD 和便携式音乐播放器配合得很好，因此您可以随时随地欣赏所有音乐。';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rhythmbox 音乐播放器';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -655,7 +655,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => '享受照片带给你的乐趣';
 
   @override
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
