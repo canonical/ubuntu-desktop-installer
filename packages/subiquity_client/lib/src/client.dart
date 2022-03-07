@@ -291,10 +291,8 @@ class SubiquityClient {
   }
 
   Future<StorageResponseV2> setGuidedStorageV2(GuidedChoice choice) async {
-    final request = Request(
-        'POST',
-        Uri.http('localhost', 'storage/v2/guided',
-            {'choice': jsonEncode(choice.toJson())}));
+    final request = Request('POST', Uri.http('localhost', 'storage/v2/guided'));
+    request.body = jsonEncode(choice.toJson());
     final response = await _send(request);
 
     final responseJson = await _receiveJson(
