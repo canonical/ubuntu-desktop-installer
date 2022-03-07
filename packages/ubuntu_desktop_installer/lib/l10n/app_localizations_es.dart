@@ -169,19 +169,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get noInternet => 'No me conectaré a Internet ahora';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Se desactivó el uso de redes inalámbricas';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'No se detectó ningún dispositivo de wifi';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Para utilizar el wifi en el equipo, debe activarse el uso de redes inalámbricas';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Activar wifi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Conectar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualizaciones y otro software';
@@ -212,7 +212,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Atención</font>: el equipo no se ha enchufado a una fuente de energía.';
   }
 
   @override
@@ -230,7 +230,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get chooseSecurityKeyConfirmHint => 'Confirme la clave de seguridad';
 
   @override
-  String get chooseSecurityKeyRequired => 'Se requiere una clave de seguridad';
+  String get chooseSecurityKeyRequired => 'Se necesita una clave de seguridad';
 
   @override
   String get chooseSecurityKeyMismatch => 'Las claves de seguridad no coinciden';
@@ -250,11 +250,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'El equipo actualmente tiene instalados $os1 y $os2. ¿Qué quiere hacer?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'El equipo actualmente tiene instalados varios sistemas operativos. ¿Qué quiere hacer?';
 
   @override
   String get installationTypeNoOSDetected => 'En el equipo no se ha detectado actualmente ningún sistema operativo. ¿Qué quiere hacer?';
@@ -270,10 +270,10 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Características avanzadas…';
+  String get installationTypeAdvancedLabel => 'Funcionalidades avanzadas…';
 
   @override
-  String get installationTypeAdvancedTitle => 'Características avanzadas';
+  String get installationTypeAdvancedTitle => 'Funcionalidades avanzadas';
 
   @override
   String get installationTypeNone => 'Ninguna';
@@ -377,10 +377,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get newPartitionTable => 'Tabla de particiones nueva';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => '¿Quiere crear una tabla de particiones nueva en este dispositivo?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Ha optado por particionar un dispositivo entero. Si continúa con la creación de la tabla de particiones nueva en el dispositivo, las particiones que haya desaparecerán.\n\nObserve que puede deshacer esta operación más adelante, si lo desea.';
 
   @override
   String get bootLoaderDevice => 'Dispositivo donde instalar el cargador de arranque';
@@ -494,7 +494,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPageRealNameLabel => 'Su nombre';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Se requiere un nombre';
+  String get whoAreYouPageRealNameRequired => 'Se necesita un nombre';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'El nombre del equipo';
@@ -503,7 +503,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPageComputerNameInfo => 'El nombre que utiliza al comunicarse con otros equipos.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Se requiere un nombre de equipo';
+  String get whoAreYouPageComputerNameRequired => 'Se necesita un nombre de equipo';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'El nombre del equipo no es válido';
@@ -512,7 +512,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPageUsernameLabel => 'Elija un nombre de usuario';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Se requiere un nombre de usuario';
+  String get whoAreYouPageUsernameRequired => 'Se necesita un nombre de usuario';
 
   @override
   String get whoAreYouPageInvalidUsername => 'El nombre de usuario no es válido';
@@ -600,7 +600,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Desactivar BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'El equipo utiliza el cifrado BitLocker de Windows.\nDebe desactivar BitLocker en Windows antes de instalar Ubuntu.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -626,15 +626,15 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Rápido y repleto de funcionalidades nuevas, la versión más reciente de $RELEASE hace que la informática sea más fácil que nunca. Echemos un vistazo…';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Encuentre aun más aplicaciones';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Olvídese de buscar programas nuevos en la web. Acceda a la tienda de snaps y al archivo de programas de $RELEASE para instalar aplicaciones nuevas con facilidad. Tan solo escriba un término de búsqueda, o bien, explore las categorías (gráficos y fotografía, juegos, productividad…) y obtenga reseñas valiosas de otros usuarios.';
   }
 
   @override
@@ -642,7 +642,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE incluye el fantástico reproductor de música Rhythmbox. Con sus avanzadas opciones de reproducción, es sencillo programar las canciones perfectas. Además, se integra a la perfección con discos CD y reproductores portátiles, por lo que podrá disfrutar de toda su música dondequiera que vaya.';
   }
 
   @override
@@ -658,7 +658,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get photoSlideTitle => 'Diviértase con sus fotos';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell es un práctico gestor de imágenes que está preparado para sus dispositivos. Conecte una cámara o un teléfono para transferir sus fotos; es fácil compartirlas y mantenerlas seguras. Y, para sacar provecho de su creatividad, hallará otras aplicaciones de retoque fotográfico en Software de Ubuntu.';
 
   @override
   String get photoSlideShotwell => 'Gestor fotográfico Shotwell';
@@ -674,7 +674,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE incluye Firefox, el navegador web que utilizan millones de personas alrededor del mundo. Y las aplicaciones web que usa frecuentemente (como Facebook o Gmail, por ejemplo) pueden anclarse en el escritorio para un acceso rápido, al igual que las aplicaciones en su equipo.';
   }
 
   @override
@@ -690,7 +690,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get officeSlideTitle => 'Todo lo que necesita para la oficina';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice es un paquete ofimático que incluye todo lo necesario para crear documentos, hojas de cálculo y presentaciones. Además de ser compatible con los formatos de archivo de Microsoft Office, le ofrece todas las prestaciones que necesita, y sin tener que pagar nada.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -702,11 +702,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Acceso para toda la gente';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'En el corazón de la filosofía de $RELEASE reside la creencia de que la informática es para todas las personas. Las herramientas avanzadas de accesibilidad y las opciones de lengua, combinación de colores y tamaño del texto hacen que la computación con $RELEASE sea sencilla, sea quien sea y esté donde esté.';
   }
 
   @override
@@ -726,14 +726,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'La documentación oficial abarca muchas de las áreas comunes acerca de $RELEASE. Está disponible <a href=\"https://help.ubuntu.com\">en la web</a> y a través del icono de ayuda en el iniciador.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'En <a href=\"https://askubuntu.com\">Ask Ubuntu</a> puede formular preguntas y explorar una inmensa colección de dudas ya respondidas. Es posible que su <a href=\"https://loco.ubuntu.com/teams\">equipo comunitario regional</a> ofrezca asistencia en su idioma.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Para explorar más recursos, visite las páginas de <a href=\"https://www.ubuntu.com/support/community-support\">asistencia comunitaria</a> y <a href=\"https://www.ubuntu.com/support\">comercial</a>.';
 
   @override
   String get includedSoftware => 'Programas incluidos';

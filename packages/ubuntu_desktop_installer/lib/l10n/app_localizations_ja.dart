@@ -212,7 +212,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">注意</font>: このコンピューターは電源に接続されていません。';
+    return '<font color=\"$color\">警告</font> このコンピューターは電源に接続されていません。';
   }
 
   @override
@@ -237,7 +237,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">注意</font>: このセキュリティキーを紛失するとすべてのデータが失われます。必要に応じてキーを書き留めておき、他の安全な場所で保管してください。';
+    return '<font color=\"$color\">警告</font> このセキュリティキーを紛失するとすべてのデータが失われます。必要に応じてキーを書き留めておき、他の安全な場所で保管してください。';
   }
 
   @override
@@ -245,154 +245,154 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'コンピューターには $os がインストールされています。どのようにしますか？';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'コンピューターには $os1 と $os2 がインストールされています。どのようにしますか？';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'コンピューターには複数のOSがインストールされています。どのようにしますか？';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'コンピューターにインストールされたOSは見つかりませんでした。どのようにしますか？';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'ディスクを削除して$DISTROをインストール';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">警告</font> これにより、すべてのOS上にあるプログラム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => '高度な機能...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => '高度な機能';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'なし';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => '何も選択していません';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return '新しい $RELEASE のインストールにLVMを使用する';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVMを選択しました';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return '安全のため新しい$RELEASEのインストールを暗号化する';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'セキュリティキーは次のステップで選択します。';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => '実験的: ディスクを消去してZFSを使用する';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFSを選択しました';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return '$os を削除して再インストール';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">警告</font> これにより、$os 上にあるプログラム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$product を $os とは別にインストール';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'ドキュメント、音楽、その他の個人ファイルは残されます。コンピュータを起動する際に、どのOSで起動するか選択できます。';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'それ以外';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return '$DISTRO 向けに、自分でパーティションの作成やサイズ変更を行ったり、複数のパーティションを選択することもできます';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'ディスクを削除して$DISTROをインストール';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'ドライブの選択:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'ディスク全体を使用する:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'インストール';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'ディスク領域を割り当て';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'インストールの開始';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'デバイス';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'タイプ';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'マウントポイント';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'サイズ';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => '使用済み';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'システム';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'フォーマット';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => '空き領域';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => '新しいパーティションテーブル';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'このデバイスに新しい空のパーティションテーブルを作成しますか？';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'ドライブ全部のパーティションを選択しています。このデバイスに新しいパーティションテーブルを作成することになり、現在のパーティションはすべて削除されます。\n\nこの操作はあとからやり直すことはできません。';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'ブートローダーをインストールするデバイス';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'パーティションを作成';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'パーティションを編集';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'サイズ:';
 
   @override
   String get partitionUnitB => 'B';
@@ -407,142 +407,142 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => '新しいパーティションのタイプ:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => '基本パーティション';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => '論理パーティション';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => '新しいパーティションの場所:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'この領域の始点';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'この領域の終点';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => '次を使用:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 ジャーナリングファイルシステム';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 ジャーナリングファイルシステム';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2 ファイルシステム';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs ジャーナリングファイルシステム';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS ジャーナリングファイルシステム';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS ジャーナリングファイルシステム';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT ファイルシステム';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12 ファイルシステム';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16 ファイルシステム';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32 ファイルシステム';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'スワップ領域';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660 ファイルシステム';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT ファイルシステム';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS ファイルシステム';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS ファイルシステム';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS ルートファイルシステム';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'パーティションをフォーマット';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'マウントポイント:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'あなたの情報を入力してください';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => '自動的にログインする';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'ログイン時にパスワードを要求する';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'あなたの名前';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => '名前を入力してください';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'コンピューターの名前';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => '他のコンピューターと通信するときに使用する名前です。';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'コンピューターの名前を入力してください';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'このコンピューターの名前は使用できません';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'ユーザー名を入力';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'ユーザー名を入力してください';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'このユーザー名は使用できません';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'パスワードを入力';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'パスワードを入力してください';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'パスワードを確認';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'パスワードが一致しません';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'パスワードを表示';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'ディスクに変更を書き込む';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'ディスク';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => '続けると下記の変更をディスクに書き込みます。追加の変更も手動で行なえます。';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => '次のデバイスのパーティションテーブルを変更:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -550,135 +550,135 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => '次のパーティションをフォーマット:';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return 'パーティション: #$disk${partition}, 種類: $format, 使用: $mount';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return 'パーティション: #$disk${partition}, 種類: $format';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => '見た目を変更';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'あとからでも外観の設定で変更できます。';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => '暗い';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => '明るい';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'すべてが明るい';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => '暗闇よこんにちは';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'インストールが完了しました';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** のインストールは完了し、使用する準備が整いました。';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return '再起動して $system を使用';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'シャットダウン';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLockerをオフ';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'このコンピューターはWindows BitLocker暗号化を使用しています。\nUbuntuをインストールする前にWindowsでBitLockerを無効にしてください。';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return '<a href=\"https://$url\">$url</a> をスマートフォンや他のデバイスで開いて操作方法を確認してください';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => '再起動してWindowsを使用';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'どこに住んでいますか？';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => '現在地';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'タイムゾーン';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'ようこそ $RELEASE へ';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return '高速で新機能が満載されている $RELEASE の最新バージョンでは、これまで以上に簡単にコンピューターが使用できます。今から紹介するのは気の利いた新機能のほんの一部です...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => '追加のソフトウェアを見つけましょう';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return '新しいソフトウェアをWebで探すのにさよならしましょう。Snap Storeや $RELEASE ソフトウェアアーカイブにアクセスすることで簡単に新しいアプリを見つけてインストールすることができます。探したいものをタイプするだけ、あるいは、グラフィックと写真、ゲームと生産性向上アプリといったカテゴリを探すだけで、他のユーザーの便利なレビューも見られます。';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => '音楽を持ち歩こう';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE に素晴らしいRhythmboxミュージックプレイヤーがやってきました。進化した再生オプションは、簡単に理想的な音楽を追加することができます。そしてCDやポータブルミュージックプレイヤーと連携し、あなたがどこにいてもすべての音楽を楽しむことができます。';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rhythmboxミュージックプレイヤー';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
+  String get musicSlideSpotify => '';
 
   @override
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => '写真を楽しもう';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwellはあなたのガジェット向けに用意されたお手軽な写真管理ソフトウェアです。カメラや携帯電話を接続して写真を転送すれば、簡単に写真を共有したり安全に安全に保管したりできます。クリエイティブな気分な方は、その他多くの写真アプリをUbuntu Softwareで見つけることができます。';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell写真管理ツール';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP画像エディター';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcutビデオエディター';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'ウェブを最大限に活用';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE には、世界中の多くの人々に使われているウェブブラウザーであるFirefoxが含まれています。また、頻繁に使用するウェブアプリケーション(例えばFacebookやGmailのような)は、ちょうどコンピューター上のアプリケーションのように、より素早くアクセスするためにデスクトップに留めておくことができます。';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefoxウェブブラウザー';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -687,10 +687,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'オフィスに必要なものをすべてあなたに';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOfficeはフリーのオフィススイートで、ドキュメント、表計算、プレゼンテーションの作成に必要なものをすべて備えています。Microsoft Officeのファイル形式と互換性を持ち、必要な機能をすべて無料で使用できます。';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -702,45 +702,45 @@ class AppLocalizationsJa extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'すべての人へ';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return '$RELEASE の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラースキーム・テキストサイズの変更といったオプションにより、$RELEASE はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'カスタマイズの選択肢';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => '外観';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => '支援技術';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => '言語サポート';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'ヘルプとサポート';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return '公式のドキュメントには $RELEASE に関する多くの情報が記載されています。<a href=\"https://help.ubuntu.com\">インターネット</a>とDock上のヘルプアイコンの両方から閲覧可能です。';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a>では、あなたが質問をしたり、回答済みの素晴らしいコレクションを検索できます。あなた自身の言語によるサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム</a>によって提供されているでしょう。';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'その他の便利なリソースへのポインターは<a href=\"https://www.ubuntu.com/support/community-support\">コミュニティサポート</a>や<a href=\"https://www.ubuntu.com/support\">商用サポート</a>を訪れてください。';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => '含まれるソフトウェア';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => '利用可能なソフトウェア';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'サポートされるソフトウェア';
 }
