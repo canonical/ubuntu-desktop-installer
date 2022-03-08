@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 extension TapTester on WidgetTester {
   Future<void> tapLink(String label) async {
@@ -29,5 +31,18 @@ extension _LinkFinder on RichText {
       return span == null;
     });
     return span;
+  }
+}
+
+/// An extension on [WidgetTester] that exposes [ulang] property.
+///
+/// The additional [ulang] property returns the [UbuntuLocalizations] instance
+/// associated with the current page [context] that defaults to [WizardPage].
+extension UbuntuLangTester on WidgetTester {
+  static Type context = WizardPage;
+
+  UbuntuLocalizations get ulang {
+    final page = element(find.byType(context));
+    return UbuntuLocalizations.of(page);
   }
 }
