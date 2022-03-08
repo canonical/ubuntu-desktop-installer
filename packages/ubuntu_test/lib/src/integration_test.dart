@@ -173,9 +173,4 @@ extension IntegrationTester on WidgetTester {
       await pump();
     }
   }
-
-  /// Selects an option card specified by its [label].
-  Future<void> selectOption(String label) {
-    return tap(find.widgetWithText(OptionCard, label));
-  }
 }
