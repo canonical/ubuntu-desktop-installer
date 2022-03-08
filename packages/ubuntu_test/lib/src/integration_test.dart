@@ -58,7 +58,9 @@ Future<void> verifyConfigFile(String fileName) async {
   return _verifyGoldenFile(await configFile(fileName), fileName);
 }
 
-Future<void> _waitForFile(
+/// Waits until the specified file has been written on the disk, as in, it
+/// exists and is not empty.
+Future<void> waitForFile(
   String fileName, [
   Duration limit = const Duration(seconds: 10),
 ]) async {
@@ -76,7 +78,7 @@ Future<void> _waitForFile(
 }
 
 Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
-  await _waitForFile(fileName);
+  await waitForFile(fileName);
 
   // https://api.flutter.dev/flutter/flutter_test/autoUpdateGoldenFiles.html
   if (autoUpdateGoldenFiles) {
