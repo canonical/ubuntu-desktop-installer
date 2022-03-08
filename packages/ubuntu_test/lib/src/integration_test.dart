@@ -149,6 +149,11 @@ extension IntegrationTester on WidgetTester {
     await pump();
   }
 
+  /// Taps a highlighted button specified by its [label].
+  Future<void> tapHighlightedButton(String label) {
+    return tapButton(label: label, highlighted: true);
+  }
+
   /// Enters a text [value] into a form field specified by its [label], or does
   /// nothing if [value] is `null`.
   Future<void> enterTextValue({
