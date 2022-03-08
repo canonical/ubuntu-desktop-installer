@@ -181,4 +181,20 @@ extension IntegrationTester on WidgetTester {
     }));
     await pump();
   }
+
+  /// Pumps until the specified [finder] is satisfied. This can be used to wait
+  /// until a certain page or widget becomes visible.
+  Future<void> pumpUntil(
+    Finder finder, [
+    Duration timeout = const Duration(seconds: 10),
+  ]) {
+    assert(timeout.inMilliseconds >= 250);
+    final delay = Duration(milliseconds: 250);
+
+    return Future.doWhile(() async {
+      if (any(finder)) return false;
+      await pump(delay);
+      return true;
+    }).timeout(timeout);
+  }
 }
