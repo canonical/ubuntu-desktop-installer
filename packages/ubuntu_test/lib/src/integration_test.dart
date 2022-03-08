@@ -8,6 +8,8 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import 'widget_testers.dart';
+
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
 /// The path to the `.subiquity` directory.
@@ -139,6 +141,12 @@ Future<void> _testCloseWindow() async {
 
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
+  /// Taps a "Go Back" button.
+  Future<void> tapBack() => tapButton(label: ulang.backAction);
+
+  /// Taps a "Continue" button.
+  Future<void> tapContinue() => tapButton(label: ulang.continueAction);
+
   /// Taps a button specified by its [label].
   Future<void> tapButton({
     required String label,
