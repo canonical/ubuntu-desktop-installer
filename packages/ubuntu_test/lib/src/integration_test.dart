@@ -173,4 +173,12 @@ extension IntegrationTester on WidgetTester {
       await pump();
     }
   }
+
+  /// Taps a radio button specified by its [value].
+  Future<void> tapRadioButton<T>(T value) async {
+    await tap(find.byWidgetPredicate((widget) {
+      return widget is RadioButton<T> && widget.value == value;
+    }));
+    await pump();
+  }
 }
