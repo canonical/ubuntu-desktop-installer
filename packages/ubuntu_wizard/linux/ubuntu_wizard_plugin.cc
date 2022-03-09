@@ -46,16 +46,12 @@ static gboolean set_window_title(GtkWindow* window, const gchar* title) {
 }
 
 static gboolean is_window_closable(GtkWindow* window) {
-  GtkWidget* header_bar = get_header_bar(GTK_WINDOW(window));
-#ifdef HAVE_LIBHANDY
-  if (HDY_IS_HEADER_BAR(header_bar)) {
-    return hdy_header_bar_get_show_close_button(HDY_HEADER_BAR(header_bar));
-  }
-#endif
-  return gtk_header_bar_get_show_close_button(GTK_HEADER_BAR(header_bar));
+  return gtk_window_get_deletable(window);
 }
 
 static gboolean set_window_closable(GtkWindow* window, gboolean closable) {
+  gtk_window_set_deletable(window, closable);
+
   GtkWidget* header_bar = get_header_bar(window);
   g_return_val_if_fail(header_bar != nullptr, FALSE);
 #ifdef HAVE_LIBHANDY
