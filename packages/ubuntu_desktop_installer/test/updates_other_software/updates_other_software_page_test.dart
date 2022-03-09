@@ -22,13 +22,13 @@ import 'updates_other_software_page_test.mocks.dart';
 void main() {
   UpdateOtherSoftwareModel buildModel({
     InstallationMode? installationMode,
-    bool? installThirdParty,
+    bool? installDrivers,
     bool? onBattery,
   }) {
     final model = MockUpdateOtherSoftwareModel();
     when(model.installationMode)
         .thenReturn(installationMode ?? InstallationMode.normal);
-    when(model.installThirdParty).thenReturn(installThirdParty ?? false);
+    when(model.installDrivers).thenReturn(installDrivers ?? false);
     when(model.onBattery).thenReturn(onBattery ?? false);
     return model;
   }
@@ -79,25 +79,24 @@ void main() {
     verify(model.setInstallationMode(InstallationMode.minimal)).called(1);
   });
 
-  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-  // testWidgets('install third-party software', (tester) async {
-  //   final model = buildModel(installThirdParty: true);
-  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+  testWidgets('install drivers', (tester) async {
+    final model = buildModel(installDrivers: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-  //   final installThirdPartyTile = find.widgetWithText(
-  //     CheckButton,
-  //     tester.lang.installThirdPartyTitle,
-  //   );
-  //   expect(installThirdPartyTile, findsOneWidget);
+    final installDriversTile = find.widgetWithText(
+      CheckButton,
+      tester.lang.installDriversTitle,
+    );
+    expect(installDriversTile, findsOneWidget);
 
-  //   expect(tester.widget<CheckButton>(installThirdPartyTile).value, isTrue);
+    expect(tester.widget<CheckButton>(installDriversTile).value, isTrue);
 
-  //   when(model.installThirdParty).thenReturn(false);
+    when(model.installDrivers).thenReturn(false);
 
-  //   await tester.tap(installThirdPartyTile);
+    await tester.tap(installDriversTile);
 
-  //   verify(model.setInstallThirdParty(false)).called(1);
-  // });
+    verify(model.setInstallDrivers(false)).called(1);
+  });
 
   testWidgets('on battery', (tester) async {
     final model = buildModel(onBattery: true);
@@ -131,12 +130,15 @@ void main() {
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
 
-    verify(model.selectInstallationSource()).called(1);
+    verify(model.save()).called(1);
     expect(find.text('Next page'), findsOneWidget);
   });
 
   testWidgets('creates a model', (tester) async {
-    registerMockService<SubiquityClient>(MockSubiquityClient());
+    final client = MockSubiquityClient();
+    when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
+        install: true, drivers: [], localOnly: false, searchDrivers: false));
+    registerMockService<SubiquityClient>(client);
 
     final power = MockPowerService();
     when(power.onBattery).thenReturn(false);
