@@ -17,5 +17,9 @@ dependencies:
   mockito: 5.0.14
   subiquity_client:
     path: ../subiquity_client
+  ubuntu_localizations:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_localizations
   ubuntu_wizard:
     path: ../ubuntu_wizard

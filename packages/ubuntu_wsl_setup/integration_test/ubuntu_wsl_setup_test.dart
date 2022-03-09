@@ -246,8 +246,3 @@ void expectPage(
   expect(find.byType(page), findsOneWidget);
   expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
 }
-
-extension IntegrationTester on WidgetTester {
-  Future<void> tapBack() => tapButton(label: ulang.backAction);
-  Future<void> tapContinue() => tapButton(label: ulang.continueAction);
-}

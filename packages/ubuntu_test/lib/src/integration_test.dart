@@ -8,6 +8,8 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import 'widget_testers.dart';
+
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
 /// The path to the `.subiquity` directory.
@@ -58,7 +60,9 @@ Future<void> verifyConfigFile(String fileName) async {
   return _verifyGoldenFile(await configFile(fileName), fileName);
 }
 
-Future<void> _waitForFile(
+/// Waits until the specified file has been written on the disk, as in, it
+/// exists and is not empty.
+Future<void> waitForFile(
   String fileName, [
   Duration limit = const Duration(seconds: 10),
 ]) async {
@@ -76,7 +80,7 @@ Future<void> _waitForFile(
 }
 
 Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
-  await _waitForFile(fileName);
+  await waitForFile(fileName);
 
   // https://api.flutter.dev/flutter/flutter_test/autoUpdateGoldenFiles.html
   if (autoUpdateGoldenFiles) {
@@ -137,6 +141,12 @@ Future<void> _testCloseWindow() async {
 
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
+  /// Taps a "Go Back" button.
+  Future<void> tapBack() => tapButton(label: ulang.backAction);
+
+  /// Taps a "Continue" button.
+  Future<void> tapContinue() => tapButton(label: ulang.continueAction);
+
   /// Taps a button specified by its [label].
   Future<void> tapButton({
     required String label,
@@ -145,6 +155,11 @@ extension IntegrationTester on WidgetTester {
     await tap(find.widgetWithText(
         highlighted ? ElevatedButton : OutlinedButton, label));
     await pump();
+  }
+
+  /// Taps a highlighted button specified by its [label].
+  Future<void> tapHighlightedButton(String label) {
+    return tapButton(label: label, highlighted: true);
   }
 
   /// Enters a text [value] into a form field specified by its [label], or does
@@ -172,8 +187,27 @@ extension IntegrationTester on WidgetTester {
     }
   }
 
-  /// Selects an option card specified by its [label].
-  Future<void> selectOption(String label) {
-    return tap(find.widgetWithText(OptionCard, label));
+  /// Taps a radio button specified by its [value].
+  Future<void> tapRadioButton<T>(T value) async {
+    await tap(find.byWidgetPredicate((widget) {
+      return widget is RadioButton<T> && widget.value == value;
+    }));
+    await pump();
+  }
+
+  /// Pumps until the specified [finder] is satisfied. This can be used to wait
+  /// until a certain page or widget becomes visible.
+  Future<void> pumpUntil(
+    Finder finder, [
+    Duration timeout = const Duration(seconds: 10),
+  ]) {
+    assert(timeout.inMilliseconds >= 250);
+    final delay = Duration(milliseconds: 250);
+
+    return Future.doWhile(() async {
+      if (any(finder)) return false;
+      await pump(delay);
+      return true;
+    }).timeout(timeout);
   }
 }
