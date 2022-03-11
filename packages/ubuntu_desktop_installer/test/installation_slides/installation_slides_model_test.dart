@@ -129,41 +129,6 @@ void main() async {
     expect(windowClosed, isTrue);
   });
 
-  test('non-closable window', () async {
-    final windowClosable = StreamController<bool>.broadcast();
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('setWindowClosable'));
-      windowClosable.add(call.arguments[0] as bool);
-    });
-
-    final client = MockSubiquityClient();
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
-    );
-
-    final journal = MockJournalService();
-    final model = InstallationSlidesModel(client, journal);
-
-    model.init();
-    await expectLater(windowClosable.stream, emits(false));
-
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.ERROR),
-    );
-    await expectLater(windowClosable.stream, emits(true));
-
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
-    );
-    model.init();
-    await expectLater(windowClosable.stream, emits(false));
-
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.DONE),
-    );
-    await expectLater(windowClosable.stream, emits(true));
-  });
-
   test('installation steps', () async {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current'))).thenAnswer(

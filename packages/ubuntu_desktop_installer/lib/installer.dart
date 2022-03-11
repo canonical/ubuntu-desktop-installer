@@ -27,6 +27,12 @@ final assetBundle =
 
 enum AppStatus { loading, ready }
 
+extension BusyState on ApplicationState {
+  bool get isInstalling =>
+      index >= ApplicationState.RUNNING.index &&
+      index < ApplicationState.DONE.index;
+}
+
 void runInstallerApp(
   List<String> args, {
   FlavorData? flavor,
@@ -41,6 +47,11 @@ void runInstallerApp(
 
   final subiquityClient = SubiquityClient();
   final subiquityServer = SubiquityServer();
+
+  final subiquityMonitor = SubiquityStatusMonitor();
+  subiquityMonitor.onStatusChanged.listen((status) {
+    setWindowClosable(status?.state?.isInstalling != true);
+  });
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
 
@@ -81,6 +92,7 @@ void runInstallerApp(
     options: options,
     subiquityClient: subiquityClient,
     subiquityServer: subiquityServer,
+    subiquityMonitor: subiquityMonitor,
     serverArgs: [
       if (options['machine-config'] != null) ...[
         '--machine-config',
