@@ -12,7 +12,7 @@ import 'package:ubuntu_wizard/services.dart';
 
 import 'wizard_app_test.mocks.dart';
 
-@GenerateMocks([IOSink])
+@GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
   tearDown(() => unregisterMockService<SubiquityClient>());
 
@@ -106,5 +106,25 @@ void main() {
       exit: (exitCode) => didExit = exitCode,
     );
     expect(didExit, equals(1));
+  });
+
+  testWidgets('starts and registers the monitor', (tester) async {
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.start('/tmp/subiquity.sock')).thenAnswer((_) async => true);
+
+    final server = MockSubiquityServer();
+    when(server.start(any,
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer((_) async => '/tmp/subiquity.sock');
+
+    await runWizardApp(
+      SizedBox(),
+      subiquityServer: server,
+      subiquityMonitor: monitor,
+      subiquityClient: MockSubiquityClient(),
+    );
+
+    expect(getService<SubiquityStatusMonitor>(), equals(monitor));
+    verify(monitor.start('/tmp/subiquity.sock')).called(1);
   });
 }
