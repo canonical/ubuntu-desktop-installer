@@ -1,12 +1,10 @@
 import 'dart:io';
 
-import 'package:http/http.dart';
 import 'package:meta/meta.dart';
 import 'package:package_config/package_config.dart';
 import 'package:path/path.dart' as p;
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
-import 'http_unix_client.dart';
 
 enum ServerMode { LIVE, DRY_RUN }
 
@@ -151,19 +149,24 @@ abstract class SubiquityServer {
   }
 
   static Future<void> _waitSubiquity(String socketPath) async {
-    final client = HttpUnixClient(socketPath);
-    final request = Request('GET', Uri.http('localhost', 'meta/status'));
+    final client = HttpClient();
+    client.connectionFactory = (uri, proxyHost, proxyPort) async {
+      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
+      return Socket.startConnect(address, 0);
+    };
 
     // allow 10s maximum for the server to start responding
     for (var i = 0; i < 10; ++i) {
       try {
-        await client.send(request);
+        final request =
+            await client.openUrl('GET', Uri.http('localhost', 'meta/status'));
+        await request.close();
         break;
       } on Exception catch (_) {
         await Future.delayed(const Duration(seconds: 1));
       }
     }
-    await client.close();
+    client.close();
   }
 
   static File _pidFile() {
