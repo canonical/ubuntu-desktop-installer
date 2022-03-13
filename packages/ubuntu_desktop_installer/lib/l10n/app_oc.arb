@@ -545,5 +545,17 @@
   "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "Un nom de ret es requerit",
-  "@hiddenWifiNetworkNameRequired": {}
+  "@hiddenWifiNetworkNameRequired": {},
+  "installationTypeMultiOSDetected": "Aqueste ordenador es installat amb mantun sistèma operatiu. De qué volètz far ?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeDualOSDetected": "Aqueste ordenador a {os1} e {os2} d’installats. De qué volètz far ?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "whoAreYouPageShowPassword": "Afichar lo senhal",
+  "@whoAreYouPageShowPassword": {}
 }
