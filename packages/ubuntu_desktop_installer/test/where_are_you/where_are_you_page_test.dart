@@ -210,4 +210,16 @@ void main() {
     final model = Provider.of<WhereAreYouModel>(context, listen: false);
     expect(model, isNotNull);
   });
+
+  testWidgets('back button is disabled', (tester) async {
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final backButton = find.widgetWithText(
+      OutlinedButton,
+      tester.ulang.backAction,
+    );
+    expect(backButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
+  });
 }
