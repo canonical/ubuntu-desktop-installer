@@ -1599,6 +1599,18 @@ abstract class AppLocalizations {
   /// **'To enable Ubuntu Pro, add your token or skip this step.'**
   String get ubuntuProInstructions;
 
+  /// No description provided for @ubuntuProOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently offline. An internet connection is required to enable Ubuntu Pro.'**
+  String get ubuntuProOffline;
+
+  /// No description provided for @ubuntuProInternetRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'An internet connection is required to enable Ubuntu Pro.'**
+  String get ubuntuProInternetRequired;
+
   /// No description provided for @ubuntuProEnable.
   ///
   /// In en, this message translates to:

@@ -757,6 +757,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get ubuntuProInstructions => 'To enable Ubuntu Pro, add your token or skip this step.';
 
   @override
+  String get ubuntuProOffline => 'You are currently offline. An internet connection is required to enable Ubuntu Pro.';
+
+  @override
+  String get ubuntuProInternetRequired => 'An internet connection is required to enable Ubuntu Pro.';
+
+  @override
   String get ubuntuProEnable => 'Enable Ubuntu Pro';
 
   @override
