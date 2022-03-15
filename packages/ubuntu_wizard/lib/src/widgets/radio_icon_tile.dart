@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 
 const _kHorizontalSpacing = 8.0;
-const _kVerticalSpacing = 2.0;
 
 /// List tile with an icon that matches the geometry of [RadioButton]'s radio
 /// indicator.
@@ -39,43 +38,47 @@ class RadioIconTile extends StatelessWidget {
     final textColor = !enabled ? Theme.of(context).disabledColor : null;
     return Padding(
       padding: contentPadding ?? EdgeInsets.zero,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          SizedBox(
-            width: kRadioSize.width,
-            height: kRadioSize.height,
-            child: Center(child: icon),
+      child: Table(
+        columnWidths: const <int, TableColumnWidth>{
+          0: IntrinsicColumnWidth(),
+          1: FixedColumnWidth(_kHorizontalSpacing),
+          2: FlexColumnWidth(),
+        },
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        children: <TableRow>[
+          TableRow(
+            children: <Widget>[
+              SizedBox(
+                width: kRadioSize.width,
+                height: kRadioSize.height,
+                child: Center(child: icon),
+              ),
+              const SizedBox.shrink(),
+              DefaultTextStyle(
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle1!
+                    .copyWith(color: textColor),
+                overflow: TextOverflow.ellipsis,
+                child: title ?? SizedBox.shrink(),
+              ),
+            ],
           ),
-          const SizedBox(width: _kHorizontalSpacing),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          if (subtitle != null)
+            TableRow(
               children: <Widget>[
-                if (title != null)
-                  DefaultTextStyle(
-                    style: Theme.of(context)
-                        .textTheme
-                        .subtitle1!
-                        .copyWith(color: textColor),
-                    overflow: TextOverflow.ellipsis,
-                    child: title!,
-                  ),
-                if (title != null && subtitle != null)
-                  const SizedBox(height: _kVerticalSpacing),
-                if (subtitle != null)
-                  DefaultTextStyle(
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption!
-                        .copyWith(color: textColor),
-                    overflow: TextOverflow.ellipsis,
-                    child: subtitle!,
-                  )
+                const SizedBox.shrink(),
+                const SizedBox.shrink(),
+                DefaultTextStyle(
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption!
+                      .copyWith(color: textColor),
+                  overflow: TextOverflow.ellipsis,
+                  child: subtitle!,
+                ),
               ],
             ),
-          ),
         ],
       ),
     );
