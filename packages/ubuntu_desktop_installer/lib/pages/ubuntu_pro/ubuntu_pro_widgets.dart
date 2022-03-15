@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart';
 
 import '../../l10n.dart';
 import 'ubuntu_pro_model.dart';
@@ -80,46 +81,53 @@ class TokenFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ValidatedFormField(
+          enabled: model.isOnline,
           fieldWidth: fieldWidth,
           focusNode: focusNode,
           labelText: lang.ubuntuProTokenHint,
           initialValue: model.token,
           onChanged: (v) => model.token = v,
-          validator: MultiValidator([
-            RequiredValidator(
-              errorText: lang.ubuntuProTokenRequired,
-            ),
-            CallbackValidator(
-              UbuntuProModel.isValidToken,
-              errorText: lang.ubuntuProTokenInvalid,
-            ),
-          ]),
-          successWidget: model.isAttaching
-              ? SizedBox(
-                  width: IconTheme.of(context).size,
-                  height: IconTheme.of(context).size,
-                  child: CircularProgressIndicator(strokeWidth: 3),
-                )
-              : model.hasError
-                  ? ErrorIcon()
-                  : model.isAttached
-                      ? SuccessIcon()
-                      : const SizedBox.shrink(),
+          validator: model.isOnline
+              ? MultiValidator([
+                  RequiredValidator(
+                    errorText: lang.ubuntuProTokenRequired,
+                  ),
+                  CallbackValidator(
+                    UbuntuProModel.isValidToken,
+                    errorText: lang.ubuntuProTokenInvalid,
+                  ),
+                ])
+              : null,
+          successWidget: !model.isOnline
+              ? Icon(Icons.info_outline, color: YaruColors.blue)
+              : model.isAttaching
+                  ? SizedBox(
+                      width: IconTheme.of(context).size,
+                      height: IconTheme.of(context).size,
+                      child: CircularProgressIndicator(strokeWidth: 3),
+                    )
+                  : model.hasError
+                      ? ErrorIcon()
+                      : model.isAttached
+                          ? SuccessIcon()
+                          : const SizedBox.shrink(),
         ),
         const SizedBox(width: kContentSpacing / 2),
         Expanded(
-          child: Baseline(
-            baseline: 0,
-            baselineType: TextBaseline.alphabetic,
-            child: Text(
-              model.isAttaching
-                  ? lang.ubuntuProTokenVerifying
-                  : model.hasError
-                      ? lang.ubuntuProTokenInvalid
-                      : model.isAttached
-                          ? lang.ubuntuProTokenValid
-                          : '',
-              softWrap: true,
+          child: Text(
+            !model.isOnline
+                ? lang.ubuntuProInternetRequired
+                : model.isAttaching
+                    ? lang.ubuntuProTokenVerifying
+                    : model.hasError
+                        ? lang.ubuntuProTokenInvalid
+                        : model.isAttached
+                            ? lang.ubuntuProTokenValid
+                            : '',
+            softWrap: true,
+            style: TextStyle(
+              color: !model.isOnline ? YaruColors.blue : null,
+              overflow: TextOverflow.visible,
             ),
           ),
         ),

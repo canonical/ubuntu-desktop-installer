@@ -15,8 +15,9 @@ class UbuntuProPage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final client = getService<UbuntuProClient>();
+    final network = getService<NetworkService>();
     return ChangeNotifierProvider(
-      create: (_) => UbuntuProModel(client),
+      create: (_) => UbuntuProModel(client, network),
       child: const UbuntuProPage(),
     );
   }
@@ -63,7 +64,9 @@ class UbuntuProPageState extends State<UbuntuProPage> {
           children: <Widget>[
             const UbuntuProHeader(),
             const SizedBox(height: kContentSpacing),
-            Text(lang.ubuntuProInstructions),
+            Text(model.isOnline
+                ? lang.ubuntuProInstructions
+                : lang.ubuntuProOffline),
             const SizedBox(height: kContentSpacing),
             RadioButton<UbuntuProMode>(
               title: Text(lang.ubuntuProEnable),
@@ -80,7 +83,9 @@ class UbuntuProPageState extends State<UbuntuProPage> {
                         margin: const EdgeInsets.only(top: 8),
                         fontSize: FontSize(
                             Theme.of(context).textTheme.caption!.fontSize),
-                        color: Theme.of(context).textTheme.caption!.color,
+                        color: model.isOnline
+                            ? Theme.of(context).textTheme.caption!.color
+                            : Theme.of(context).disabledColor,
                       ),
                     },
                     onLinkTap: (url, _, __, ___) {
@@ -93,10 +98,12 @@ class UbuntuProPageState extends State<UbuntuProPage> {
               ),
               value: UbuntuProMode.enable,
               groupValue: model.mode,
-              onChanged: (_) {
-                _focusNode.requestFocus();
-                model.mode = UbuntuProMode.enable;
-              },
+              onChanged: model.isOnline
+                  ? (_) {
+                      _focusNode.requestFocus();
+                      model.mode = UbuntuProMode.enable;
+                    }
+                  : null,
             ),
             const SizedBox(height: kContentSpacing),
             RadioButton<UbuntuProMode>(

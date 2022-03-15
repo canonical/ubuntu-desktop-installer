@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
@@ -20,14 +20,19 @@ enum UbuntuProStatus {
   error,
 }
 
-class UbuntuProModel extends ChangeNotifier {
-  UbuntuProModel(this._client);
+class UbuntuProModel extends PropertyStreamNotifier {
+  UbuntuProModel(this._client, this._network) {
+    addPropertyListener('Connectivity', notifyListeners);
+  }
 
   var _token = '';
   var _mode = UbuntuProMode.skip;
   var _status = UbuntuProStatus.init;
   UbuntuProError? _error;
   final UbuntuProClient _client;
+  final NetworkService _network;
+
+  bool get isOnline => _network.isConnected;
 
   bool get isAttached => status == UbuntuProStatus.attached;
   bool get isAttaching => status == UbuntuProStatus.attaching;
@@ -68,12 +73,18 @@ class UbuntuProModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> init() async {
-    return _client.connect().then((_) async {
-      final version = await _client.daemonVersion;
-      log.debug('Connected to daemon v$version');
-      _setStatus(UbuntuProStatus.ready);
-    });
+  Future<void> init() {
+    return Future.wait([
+      _client.connect().then((_) async {
+        final version = await _client.daemonVersion;
+        log.debug('Connected to daemon v$version');
+        _setStatus(UbuntuProStatus.ready);
+      }),
+      _network.connect().then((_) {
+        setProperties(_network.propertiesChanged);
+        notifyListeners();
+      }),
+    ]);
   }
 
   Future<void> save() async {
