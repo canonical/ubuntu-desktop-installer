@@ -10,11 +10,17 @@ void main() {
         home: Scaffold(
           body: Column(
             children: [
-              RadioIconTile(icon: Icon(Icons.close)),
-              RadioListTile<dynamic>(
+              RadioIconTile(
+                icon: Icon(Icons.close),
+                title: Text('title'),
+                subtitle: Text('subtitle'),
+              ),
+              RadioButton<dynamic>(
                 value: 1,
                 groupValue: 1,
                 onChanged: (_) {},
+                title: Text('title'),
+                subtitle: Text('subtitle'),
               ),
             ],
           ),
@@ -22,28 +28,31 @@ void main() {
       ),
     );
 
-    final iconTile = tester.widget<ListTile>(
-      find.descendant(
-        of: find.byType(RadioIconTile),
-        matching: find.byType(ListTile),
-      ),
-    );
+    final iconRect = tester.getRect(find.byIcon(Icons.close));
+    final radioRect = tester.getRect(find.byType(Radio<dynamic>));
 
-    final radioTile = tester.widget<ListTile>(
-      find.descendant(
-        of: find.byType(RadioListTile),
-        matching: find.byType(ListTile),
-      ),
-    );
+    expect(iconRect.center.dx, equals(radioRect.center.dx));
 
-    expect(iconTile.leading, isNotNull);
-    expect(radioTile.leading, isNotNull);
+    final titles = find.text('title');
+    expect(titles, findsNWidgets(2));
+    final title1Rect = tester.getRect(titles.first);
+    final title2Rect = tester.getRect(titles.last);
 
-    final iconRect = tester.getRect(find.byWidget(iconTile.leading!));
-    final radioRect = tester.getRect(find.byWidget(radioTile.leading!));
+    expect(title1Rect.size, equals(title2Rect.size));
+    expect(title1Rect.left, equals(title2Rect.left));
+    expect(title1Rect.right, equals(title2Rect.right));
+    expect(title1Rect.top, isNot(equals(title2Rect.top)));
+    expect(title1Rect.bottom, isNot(equals(title2Rect.bottom)));
 
-    expect(iconRect.size, equals(radioRect.size));
-    expect(iconRect.left, equals(radioRect.left));
-    expect(iconRect.right, equals(radioRect.right));
+    final subtitles = find.text('subtitle');
+    expect(titles, findsNWidgets(2));
+    final subtitle1Rect = tester.getRect(subtitles.first);
+    final subtitle2Rect = tester.getRect(subtitles.last);
+
+    expect(subtitle1Rect.size, equals(subtitle2Rect.size));
+    expect(subtitle1Rect.left, equals(subtitle2Rect.left));
+    expect(subtitle1Rect.right, equals(subtitle2Rect.right));
+    expect(subtitle1Rect.top, isNot(equals(subtitle2Rect.top)));
+    expect(subtitle1Rect.bottom, isNot(equals(subtitle2Rect.bottom)));
   });
 }
