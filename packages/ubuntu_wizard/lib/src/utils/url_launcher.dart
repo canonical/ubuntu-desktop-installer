@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,6 +18,10 @@ class UrlLauncher {
       return false;
     }
     log.debug('Launching $url');
-    return launch(url);
+    // return launch(url);
+    return Process.run('xdg-open', [url]).then((result) {
+      log.debug('xdg-open result: $result');
+      return true;
+    });
   }
 }
