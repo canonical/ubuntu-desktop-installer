@@ -333,12 +333,6 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory WSLConfigurationAdvanced({
-    String? guiTheme,
-    bool? guiFollowwintheme,
-    bool? interopGuiintegration,
-    bool? interopAudiointegration,
-    bool? interopAdvancedipdetection,
-    bool? motdWslnewsenabled,
     bool? automountEnabled,
     bool? automountMountfstab,
     bool? interopEnabled,

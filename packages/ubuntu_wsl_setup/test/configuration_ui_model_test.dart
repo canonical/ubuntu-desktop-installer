@@ -8,10 +8,8 @@ import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.d
 void main() {
   test('load UI configuration', () async {
     const conf = WSLConfigurationAdvanced(
-      interopGuiintegration: true,
-      interopAudiointegration: true,
-      interopAdvancedipdetection: true,
-      motdWslnewsenabled: false,
+      interopEnabled: true,
+      interopAppendwindowspath: true,
       automountEnabled: false,
       automountMountfstab: false,
     );
@@ -23,10 +21,11 @@ void main() {
     await model.loadConfiguration();
     verify(client.wslConfigurationAdvanced()).called(1);
 
-    expect(model.interopGuiintegration, equals(conf.interopGuiintegration));
-    expect(model.interopAudiointegration, equals(conf.interopAudiointegration));
-    expect(model.advancedIPDetection, equals(conf.interopAdvancedipdetection));
-    expect(model.motdWSLnewsenabled, equals(conf.motdWslnewsenabled));
+    expect(model.interopEnabled, equals(conf.interopEnabled));
+    expect(
+        model.interopAppendwindowspath, equals(conf.interopAppendwindowspath));
+    expect(model.automountEnabled, equals(conf.automountEnabled));
+    expect(model.automountMountfstab, equals(conf.automountMountfstab));
   });
 
   test('save UI configuration', () async {
@@ -35,18 +34,14 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = ConfigurationUIModel(client);
-    model.interopGuiintegration = true;
-    model.interopAudiointegration = true;
-    model.advancedIPDetection = true;
-    model.motdWSLnewsenabled = false;
+    model.interopEnabled = true;
+    model.interopAppendwindowspath = true;
     model.automountEnabled = false;
     model.automountMountfstab = false;
 
     final conf = WSLConfigurationAdvanced(
-      interopGuiintegration: true,
-      interopAudiointegration: true,
-      interopAdvancedipdetection: true,
-      motdWslnewsenabled: false,
+      interopEnabled: true,
+      interopAppendwindowspath: true,
       automountEnabled: false,
       automountMountfstab: false,
     );
@@ -70,23 +65,13 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.interopGuiintegration, isFalse);
-    model.interopGuiintegration = true;
+    expect(model.interopEnabled, isTrue);
+    model.interopEnabled = false;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.interopAudiointegration, isFalse);
-    model.interopAudiointegration = true;
-    expect(wasNotified, isTrue);
-
-    wasNotified = false;
-    expect(model.advancedIPDetection, isFalse);
-    model.advancedIPDetection = true;
-    expect(wasNotified, isTrue);
-
-    wasNotified = false;
-    expect(model.motdWSLnewsenabled, isTrue);
-    model.motdWSLnewsenabled = false;
+    expect(model.interopAppendwindowspath, isTrue);
+    model.interopAppendwindowspath = false;
     expect(wasNotified, isTrue);
 
     wasNotified = false;

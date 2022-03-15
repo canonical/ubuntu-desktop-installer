@@ -251,24 +251,12 @@ void main() {
 
   test('wsl configuration advanced', () {
     const conf = WSLConfigurationAdvanced(
-      guiTheme: 'default',
-      guiFollowwintheme: true,
-      interopGuiintegration: false,
-      interopAudiointegration: false,
-      interopAdvancedipdetection: false,
-      motdWslnewsenabled: true,
       automountEnabled: true,
       automountMountfstab: true,
       interopEnabled: true,
       interopAppendwindowspath: true,
     );
     const json = <String, dynamic>{
-      'gui_theme': 'default',
-      'gui_followwintheme': true,
-      'interop_guiintegration': false,
-      'interop_audiointegration': false,
-      'interop_advancedipdetection': false,
-      'motd_wslnewsenabled': true,
       'automount_enabled': true,
       'automount_mountfstab': true,
       'interop_enabled': true,

@@ -86,17 +86,14 @@ void main() {
     await testConfigurationUIPage(
       tester,
       config: const WSLConfigurationAdvanced(
-        interopGuiintegration: true,
-        interopAudiointegration: true,
-        interopAdvancedipdetection: true,
-        motdWslnewsenabled: false,
+        interopEnabled: false,
+        interopAppendwindowspath: false,
         automountEnabled: false,
         automountMountfstab: false,
       ),
     );
     await tester.pumpAndSettle();
 
-    await verifyConfigFile('reconfiguration/ubuntu-wsl.conf');
     await verifyConfigFile('reconfiguration/wsl.conf');
   });
 }
@@ -189,28 +186,20 @@ Future<void> testConfigurationUIPage(
   expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
 
   await tester.toggleCheckbox(
-    label: tester.lang.configurationUILegacyGUIIntegrationTitle,
-    value: config?.interopGuiintegration,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUILegacyAudioIntegrationTitle,
-    value: config?.interopAudiointegration,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAdvancedIPDetectionTitle,
-    value: config?.interopAdvancedipdetection,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIWSLNewsTitle,
-    value: config?.motdWslnewsenabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountTitle,
+    label: tester.lang.configurationUIAutoMountSubtitle,
     value: config?.automountEnabled,
   );
   await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabTitle,
+    label: tester.lang.configurationUIMountFstabSubtitle,
     value: config?.automountMountfstab,
+  );
+  await tester.toggleCheckbox(
+    label: tester.lang.configurationUIInteroperabilitySubtitle,
+    value: config?.interopEnabled,
+  );
+  await tester.toggleCheckbox(
+    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
+    value: config?.interopAppendwindowspath,
   );
   await tester.pumpAndSettle();
 
