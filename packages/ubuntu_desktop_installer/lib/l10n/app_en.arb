@@ -438,5 +438,19 @@
   "supportSlideResources": "For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
   "includedSoftware": "Included software",
   "availableSoftware": "Available software",
-  "supportedSoftware": "Supported software"
+  "supportedSoftware": "Supported software",
+  "ubuntuProPageTitle": "Enable Ubuntu Pro",
+  "ubuntuProPageDescription": "Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.",
+  "ubuntuProPageMoreInformation": "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>",
+  "ubuntuProInstructions": "To enable Ubuntu Pro, add your token or skip this step.",
+  "ubuntuProEnable": "Enable Ubuntu Pro",
+  "ubuntuProTokenHint": "Your token",
+  "ubuntuProTokenRequired": "A token is required",
+  "ubuntuProTokenValid": "Valid token",
+  "ubuntuProTokenInvalid": "Invalid token",
+  "ubuntuProTokenVerifying": "Verifying token",
+  "ubuntuProTokenLabel": "You can go to ubuntu.com/pro to retrieve your token or register a new one.",
+  "ubuntuProSkip": "Skip Ubuntu Pro setup for now",
+  "ubuntuProSkipLabel": "You can always enable Ubuntu Pro later via Settings or the `ua attach` command.",
+  "ubuntuProAttach": "Attach"
 }

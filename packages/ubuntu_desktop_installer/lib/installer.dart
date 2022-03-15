@@ -61,6 +61,7 @@ void runInstallerApp(
   registerService(NetworkService.new);
   registerService(PowerService.new);
   registerService(TelemetryService.new);
+  registerService(UbuntuProClient.new);
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
 
@@ -287,6 +288,9 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         // Routes.configureActiveDirectory: const WizardRoute(
         //   builder: ConfigureActiveDirectoryPage.create,
         // ),
+        Routes.ubuntuPro: const WizardRoute(
+          builder: UbuntuProPage.create,
+        ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/373
         // Routes.chooseYourLook: const WizardRoute(
         //   builder: ChooseYourLookPage.create,

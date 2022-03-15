@@ -1574,6 +1574,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Supported software'**
   String get supportedSoftware;
+
+  /// No description provided for @ubuntuProPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Ubuntu Pro'**
+  String get ubuntuProPageTitle;
+
+  /// No description provided for @ubuntuProPageDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.'**
+  String get ubuntuProPageDescription;
+
+  /// No description provided for @ubuntuProPageMoreInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>'**
+  String get ubuntuProPageMoreInformation;
+
+  /// No description provided for @ubuntuProInstructions.
+  ///
+  /// In en, this message translates to:
+  /// **'To enable Ubuntu Pro, add your token or skip this step.'**
+  String get ubuntuProInstructions;
+
+  /// No description provided for @ubuntuProEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Ubuntu Pro'**
+  String get ubuntuProEnable;
+
+  /// No description provided for @ubuntuProTokenHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your token'**
+  String get ubuntuProTokenHint;
+
+  /// No description provided for @ubuntuProTokenRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A token is required'**
+  String get ubuntuProTokenRequired;
+
+  /// No description provided for @ubuntuProTokenValid.
+  ///
+  /// In en, this message translates to:
+  /// **'Valid token'**
+  String get ubuntuProTokenValid;
+
+  /// No description provided for @ubuntuProTokenInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid token'**
+  String get ubuntuProTokenInvalid;
+
+  /// No description provided for @ubuntuProTokenVerifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying token'**
+  String get ubuntuProTokenVerifying;
+
+  /// No description provided for @ubuntuProTokenLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'You can go to ubuntu.com/pro to retrieve your token or register a new one.'**
+  String get ubuntuProTokenLabel;
+
+  /// No description provided for @ubuntuProSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip Ubuntu Pro setup for now'**
+  String get ubuntuProSkip;
+
+  /// No description provided for @ubuntuProSkipLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'You can always enable Ubuntu Pro later via Settings or the `ua attach` command.'**
+  String get ubuntuProSkipLabel;
+
+  /// No description provided for @ubuntuProAttach.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach'**
+  String get ubuntuProAttach;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

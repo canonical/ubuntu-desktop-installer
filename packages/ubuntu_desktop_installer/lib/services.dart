@@ -7,4 +7,5 @@ export 'services/keyboard_service.dart';
 export 'services/network_service.dart';
 export 'services/power_service.dart';
 export 'services/telemetry_service.dart';
+export 'services/ubuntu_pro_client.dart';
 export 'services/udev_service.dart';

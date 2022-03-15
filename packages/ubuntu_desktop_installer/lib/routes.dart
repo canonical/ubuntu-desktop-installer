@@ -20,4 +20,5 @@ abstract class Routes {
   static const installationType = '/installationtype';
   static const selectGuidedStorage = '/selectguidedstorage';
   static const whereAreYou = '/whereareyou';
+  static const ubuntuPro = '/ubuntupro';
 }

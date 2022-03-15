@@ -743,4 +743,46 @@ class AppLocalizationsDz extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Supported software';
+
+  @override
+  String get ubuntuProPageTitle => 'Enable Ubuntu Pro';
+
+  @override
+  String get ubuntuProPageDescription => 'Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.';
+
+  @override
+  String get ubuntuProPageMoreInformation => 'More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>';
+
+  @override
+  String get ubuntuProInstructions => 'To enable Ubuntu Pro, add your token or skip this step.';
+
+  @override
+  String get ubuntuProEnable => 'Enable Ubuntu Pro';
+
+  @override
+  String get ubuntuProTokenHint => 'Your token';
+
+  @override
+  String get ubuntuProTokenRequired => 'A token is required';
+
+  @override
+  String get ubuntuProTokenValid => 'Valid token';
+
+  @override
+  String get ubuntuProTokenInvalid => 'Invalid token';
+
+  @override
+  String get ubuntuProTokenVerifying => 'Verifying token';
+
+  @override
+  String get ubuntuProTokenLabel => 'You can go to ubuntu.com/pro to retrieve your token or register a new one.';
+
+  @override
+  String get ubuntuProSkip => 'Skip Ubuntu Pro setup for now';
+
+  @override
+  String get ubuntuProSkipLabel => 'You can always enable Ubuntu Pro later via Settings or the `ua attach` command.';
+
+  @override
+  String get ubuntuProAttach => 'Attach';
 }
