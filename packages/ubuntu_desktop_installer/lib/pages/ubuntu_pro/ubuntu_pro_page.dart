@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -65,21 +67,36 @@ class UbuntuProPageState extends State<UbuntuProPage> {
             const SizedBox(height: kContentSpacing),
             RadioButton<UbuntuProMode>(
               title: Text(lang.ubuntuProEnable),
-              subtitle: Text(lang.ubuntuProTokenLabel),
+              subtitle: Column(
+                children: [
+                  TokenFormField(
+                    fieldWidth: fieldWidth,
+                    focusNode: _focusNode,
+                  ),
+                  Html(
+                    data: lang.ubuntuProTokenLabel,
+                    style: {
+                      'body': Style(
+                        margin: const EdgeInsets.only(top: 8),
+                        fontSize: FontSize(
+                            Theme.of(context).textTheme.caption!.fontSize),
+                        color: Theme.of(context).textTheme.caption!.color,
+                      ),
+                    },
+                    onLinkTap: (url, _, __, ___) {
+                      if (url != null) {
+                        launchUrl(url);
+                      }
+                    },
+                  ),
+                ],
+              ),
               value: UbuntuProMode.enable,
               groupValue: model.mode,
               onChanged: (_) {
                 _focusNode.requestFocus();
                 model.mode = UbuntuProMode.enable;
               },
-            ),
-            const SizedBox(height: kContentSpacing / 2),
-            RadioIconTile(
-              contentPadding: EdgeInsets.zero,
-              title: TokenFormField(
-                fieldWidth: fieldWidth,
-                focusNode: _focusNode,
-              ),
             ),
             const SizedBox(height: kContentSpacing),
             RadioButton<UbuntuProMode>(

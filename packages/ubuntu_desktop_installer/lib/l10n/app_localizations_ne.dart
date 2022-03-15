@@ -775,7 +775,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get ubuntuProTokenVerifying => 'Verifying token';
 
   @override
-  String get ubuntuProTokenLabel => 'You can go to ubuntu.com/pro to retrieve your token or register a new one.';
+  String get ubuntuProTokenLabel => 'You can go to <a href=\"https://ubuntu.com/advantage\">ubuntu.com/pro</a> to retrieve your token or register a new one.';
 
   @override
   String get ubuntuProSkip => 'Skip Ubuntu Pro setup for now';

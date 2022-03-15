@@ -1638,7 +1638,7 @@ abstract class AppLocalizations {
   /// No description provided for @ubuntuProTokenLabel.
   ///
   /// In en, this message translates to:
-  /// **'You can go to ubuntu.com/pro to retrieve your token or register a new one.'**
+  /// **'You can go to <a href=\"https://ubuntu.com/advantage\">ubuntu.com/pro</a> to retrieve your token or register a new one.'**
   String get ubuntuProTokenLabel;
 
   /// No description provided for @ubuntuProSkip.

@@ -83,7 +83,6 @@ class TokenFormField extends StatelessWidget {
           fieldWidth: fieldWidth,
           focusNode: focusNode,
           labelText: lang.ubuntuProTokenHint,
-          helperText: lang.ubuntuProTokenLabel,
           initialValue: model.token,
           onChanged: (v) => model.token = v,
           validator: MultiValidator([

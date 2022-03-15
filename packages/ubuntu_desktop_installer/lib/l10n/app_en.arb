@@ -449,7 +449,7 @@
   "ubuntuProTokenValid": "Valid token",
   "ubuntuProTokenInvalid": "Invalid token",
   "ubuntuProTokenVerifying": "Verifying token",
-  "ubuntuProTokenLabel": "You can go to ubuntu.com/pro to retrieve your token or register a new one.",
+  "ubuntuProTokenLabel": "You can go to <a href=\"https://ubuntu.com/advantage\">ubuntu.com/pro</a> to retrieve your token or register a new one.",
   "ubuntuProSkip": "Skip Ubuntu Pro setup for now",
   "ubuntuProSkipLabel": "You can always enable Ubuntu Pro later via Settings or the `ua attach` command.",
   "ubuntuProAttach": "Attach"
