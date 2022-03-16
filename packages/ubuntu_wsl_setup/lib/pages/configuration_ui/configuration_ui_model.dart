@@ -40,6 +40,12 @@ class ConfigurationUIModel extends ChangeNotifier {
     _conf.value = _conf.value.copyWith(automountMountfstab: value);
   }
 
+  /// Whether systemd experimental support is enabled.
+  bool get systemdEnabled => _conf.value.systemdEnabled ?? false;
+  set systemdEnabled(bool value) {
+    _conf.value = _conf.value.copyWith(systemdEnabled: value);
+  }
+
   /// Whether the current input is valid.
   bool get isValid => true;
 

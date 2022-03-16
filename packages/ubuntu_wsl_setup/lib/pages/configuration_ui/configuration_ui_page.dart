@@ -88,6 +88,18 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             value: model.interopAppendwindowspath,
             onChanged: (value) => model.interopAppendwindowspath = value!,
           ),
+          const SizedBox(height: kContentSpacing),
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.configurationUISystemdHeader),
+          ),
+          CheckButton(
+            contentPadding: kContentPadding,
+            title: Text(lang.configurationUISystemdTitle),
+            subtitle: Text(lang.configurationUISystemdSubtitle),
+            value: model.systemdEnabled,
+            onChanged: (value) => model.systemdEnabled = value!,
+          ),
         ],
       ),
       actions: <WizardAction>[

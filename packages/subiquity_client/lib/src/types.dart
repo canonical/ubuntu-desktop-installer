@@ -337,6 +337,7 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
     bool? automountMountfstab,
     bool? interopEnabled,
     bool? interopAppendwindowspath,
+    bool? systemdEnabled,
   }) = _WSLConfigurationAdvanced;
 
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
