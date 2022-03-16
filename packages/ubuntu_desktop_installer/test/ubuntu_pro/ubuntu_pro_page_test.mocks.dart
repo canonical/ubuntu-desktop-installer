@@ -8,7 +8,7 @@ import 'dart:ui' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/ubuntu_pro/ubuntu_pro_model.dart'
     as _i2;
-import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i5;
+import 'package:ubuntu_wizard/utils.dart' as _i5;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -26,6 +26,10 @@ class MockUbuntuProModel extends _i1.Mock implements _i2.UbuntuProModel {
     _i1.throwOnMissingStub(this);
   }
 
+  @override
+  bool get isOnline =>
+      (super.noSuchMethod(Invocation.getter(#isOnline), returnValue: false)
+          as bool);
   @override
   bool get isAttached =>
       (super.noSuchMethod(Invocation.getter(#isAttached), returnValue: false)
@@ -66,6 +70,10 @@ class MockUbuntuProModel extends _i1.Mock implements _i2.UbuntuProModel {
       super.noSuchMethod(Invocation.setter(#token, token),
           returnValueForMissingStub: null);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -91,16 +99,33 @@ class MockUbuntuProModel extends _i1.Mock implements _i2.UbuntuProModel {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
+  void setProperties(_i3.Stream<List<String>>? properties) =>
+      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
+          returnValueForMissingStub: null);
+  @override
+  void addPropertyListener(String? property, _i4.VoidCallback? onChanged) =>
+      super.noSuchMethod(
+          Invocation.method(#addPropertyListener, [property, onChanged]),
+          returnValueForMissingStub: null);
+  @override
+  void enablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
+          returnValueForMissingStub: null);
+  @override
+  void disablePropertyListeners() =>
+      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
+          returnValueForMissingStub: null);
+  @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
   void removeListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
   String toString() => super.toString();

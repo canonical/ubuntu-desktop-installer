@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:collection/collection.dart';
@@ -17,25 +18,31 @@ String generateToken(int length) {
   return String.fromCharCodes(codes);
 }
 
-@GenerateMocks([UbuntuProClient])
+@GenerateMocks([NetworkService, UbuntuProClient])
 void main() {
   test('init', () async {
     final client = MockUbuntuProClient();
     when(client.daemonVersion).thenReturn('');
     when(client.connect()).thenAnswer((_) async => true);
 
-    final model = UbuntuProModel(client);
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(true);
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = UbuntuProModel(client, network);
     expect(model.status, UbuntuProStatus.init);
 
     await model.init();
 
     expect(model.status, UbuntuProStatus.ready);
+    verify(client.connect()).called(1);
+    verify(network.connect()).called(1);
   });
 
   test('save', () async {
     final client = MockUbuntuProClient();
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
 
     await model.save();
 
@@ -45,16 +52,38 @@ void main() {
   test('dispose', () async {
     final client = MockUbuntuProClient();
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
     model.dispose();
 
     verify(client.close()).called(1);
   });
 
+  test('online', () async {
+    final client = MockUbuntuProClient();
+    when(client.daemonVersion).thenReturn('');
+    when(client.connect()).thenAnswer((_) async => true);
+
+    final controller = StreamController<List<String>>();
+
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(false);
+    when(network.propertiesChanged).thenAnswer((_) => controller.stream);
+
+    final model = UbuntuProModel(client, network);
+    expect(model.isOnline, isFalse);
+
+    await model.init();
+    expect(model.isOnline, isFalse);
+
+    when(network.isConnected).thenReturn(true);
+    controller.add(['Connectivity']);
+    expect(model.isOnline, isTrue);
+  });
+
   test('mode', () {
     bool? wasNotified;
 
-    final model = UbuntuProModel(MockUbuntuProClient());
+    final model = UbuntuProModel(MockUbuntuProClient(), MockNetworkService());
     model.addListener(() => wasNotified = true);
     expect(model.mode, UbuntuProMode.skip);
 
@@ -82,7 +111,7 @@ void main() {
   test('token', () {
     bool? wasNotified;
 
-    final model = UbuntuProModel(MockUbuntuProClient());
+    final model = UbuntuProModel(MockUbuntuProClient(), MockNetworkService());
     model.addListener(() => wasNotified = true);
     expect(model.hasValidToken, isFalse);
     expect(model.token, isEmpty);
@@ -107,7 +136,7 @@ void main() {
     when(client.isAttached).thenReturn(false);
     when(client.attach('token1234')).thenAnswer((_) async {});
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
     model.token = 'token1234';
 
     bool? wasAttaching;
@@ -140,7 +169,7 @@ void main() {
     final client = MockUbuntuProClient();
     when(client.detach()).thenAnswer((_) async {});
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
 
     final statusChanges = <UbuntuProStatus>[];
     model.addListener(() {
@@ -163,7 +192,7 @@ void main() {
     when(client.isAttached).thenReturn(false);
     when(client.attach('token1234')).thenThrow(UbuntuProAuthFailedException());
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
     model.token = 'token1234';
 
     final statusChanges = <UbuntuProStatus>[];
@@ -191,7 +220,7 @@ void main() {
     final client = MockUbuntuProClient();
     when(client.detach()).thenThrow(UbuntuProFailedException());
 
-    final model = UbuntuProModel(client);
+    final model = UbuntuProModel(client, MockNetworkService());
 
     final statusChanges = <UbuntuProStatus>[];
     model.addListener(() {

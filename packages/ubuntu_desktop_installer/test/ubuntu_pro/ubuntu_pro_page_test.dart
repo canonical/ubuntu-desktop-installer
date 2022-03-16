@@ -16,6 +16,7 @@ import 'ubuntu_pro_page_test.mocks.dart';
 
 MockUbuntuProModel buildModel({
   UbuntuProMode? mode,
+  bool? isOnline,
   bool? isAttached,
   bool? isAttaching,
   bool? hasError,
@@ -23,6 +24,7 @@ MockUbuntuProModel buildModel({
   String? token,
 }) {
   final model = MockUbuntuProModel();
+  when(model.isOnline).thenReturn(isOnline ?? true);
   when(model.mode).thenReturn(mode ?? UbuntuProMode.skip);
   when(model.isAttached).thenReturn(isAttached ?? false);
   when(model.isAttaching).thenReturn(isAttaching ?? false);
@@ -163,7 +165,8 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(buildModel())));
     await tester.tapLink('ubuntu.com/pro');
 
-    verify(urlLauncher.launchUrl('https://ubuntu.com/pro')).called(1);
+    // TODO: ua -> pro?
+    verify(urlLauncher.launchUrl('https://ubuntu.com/advantage')).called(1);
   });
 
   testWidgets('creates a model', (tester) async {
@@ -171,6 +174,11 @@ void main() {
     when(client.daemonVersion).thenReturn('');
     when(client.connect()).thenAnswer((_) async {});
     registerMockService<UbuntuProClient>(client);
+
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(true);
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    registerMockService<NetworkService>(network);
 
     await tester.pumpWidget(tester.buildApp(UbuntuProPage.create));
 
