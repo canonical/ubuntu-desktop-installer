@@ -231,8 +231,9 @@ void main() {
       expect(partitions, isNotNull);
       expect(partitions, isNotEmpty);
 
-      expect(partitions!.last.grubDevice, isNotNull);
-      expect(partitions.last.grubDevice, isTrue);
+      final last = partitions!.lastWhere((element) => element.number != null);
+      expect(last, isNotNull);
+      expect(last.grubDevice, isTrue);
     });
 
     test('reformat disk v2', () async {
@@ -241,7 +242,7 @@ void main() {
       expect(disks, isNotEmpty);
 
       expect(disks!.first.partitions, isNotNull);
-      expect(disks.first.partitions, isEmpty);
+      expect(disks.first.partitions, hasLength(1)); // just the gap.
 
       var response = await _client.addPartitionV2(
         disks.first,
@@ -259,7 +260,8 @@ void main() {
       expect(response.disks, hasLength(disks.length));
 
       expect(response.disks!.first.partitions, isNotNull);
-      expect(response.disks!.first.partitions, isEmpty);
+      expect(response.disks!.first.partitions,
+          hasLength(1)); // the gap, as before.
     });
 
     test('needs root/boot', () async {
