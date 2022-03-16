@@ -194,7 +194,7 @@ void main() {
 
       final deleted = response.disks!.last.partitions;
       expect(deleted, isNotNull);
-      expect(deleted, hasLength(added.length - 1));
+      expect(deleted, hasLength(added.length));
     });
 
     test('add swap', () async {
