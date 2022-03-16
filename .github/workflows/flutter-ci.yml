@@ -40,6 +40,12 @@ jobs:
     - name: Check subiquity integration
       run: ./scripts/subiquity_integration
 
+    - name: Prepare environment for subiquity
+      run: |
+        sudo loginctl enable-linger $USER
+        sudo systemctl start user@$UID.service
+        echo "XDG_RUNTIME_DIR=/run/user/$UID" >> $GITHUB_ENV
+
     # test all packages
 
     - name: Bootstrap workspace
