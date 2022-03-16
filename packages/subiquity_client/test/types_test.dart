@@ -255,12 +255,14 @@ void main() {
       automountMountfstab: true,
       interopEnabled: true,
       interopAppendwindowspath: true,
+      systemdEnabled: false,
     );
     const json = <String, dynamic>{
       'automount_enabled': true,
       'automount_mountfstab': true,
       'interop_enabled': true,
       'interop_appendwindowspath': true,
+      'systemd_enabled': false,
     };
     expect(conf.toJson(), equals(json));
     expect(WSLConfigurationAdvanced.fromJson(json), conf);

@@ -24,6 +24,7 @@ void main() {
     bool? interopAppendwindowspath,
     bool? automountEnabled,
     bool? automountMountfstab,
+    bool? systemdEnabled,
   }) {
     final model = MockConfigurationUIModel();
     when(model.isValid).thenReturn(isValid ?? false);
@@ -32,6 +33,7 @@ void main() {
         .thenReturn(interopAppendwindowspath ?? false);
     when(model.automountEnabled).thenReturn(automountEnabled ?? true);
     when(model.automountMountfstab).thenReturn(automountMountfstab ?? true);
+    when(model.systemdEnabled).thenReturn(systemdEnabled ?? true);
     return model;
   }
 

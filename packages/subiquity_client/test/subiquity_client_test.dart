@@ -474,6 +474,7 @@ void main() {
         automountMountfstab: true,
         interopEnabled: true,
         interopAppendwindowspath: true,
+        systemdEnabled: false,
       );
 
       await _client.setWslConfigurationAdvanced(newConf);
@@ -483,12 +484,14 @@ void main() {
       expect(conf.automountMountfstab, true);
       expect(conf.interopEnabled, true);
       expect(conf.interopAppendwindowspath, true);
+      expect(conf.systemdEnabled, false);
 
       newConf = WSLConfigurationAdvanced(
         automountEnabled: false,
         automountMountfstab: false,
         interopEnabled: false,
         interopAppendwindowspath: false,
+        systemdEnabled: true,
       );
 
       await _client.setWslConfigurationAdvanced(newConf);
@@ -498,6 +501,7 @@ void main() {
       expect(conf.automountMountfstab, false);
       expect(conf.interopEnabled, false);
       expect(conf.interopAppendwindowspath, false);
+      expect(conf.systemdEnabled, true);
     });
   });
 }
