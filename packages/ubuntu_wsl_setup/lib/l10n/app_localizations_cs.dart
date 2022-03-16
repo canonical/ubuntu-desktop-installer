@@ -140,6 +140,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Zda bude připojeno podle /etc/fstab. Soubor s nastaveními /etc/fstab obsahuje???';
 
   @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+
+  @override
   String get setupCompleteTitle => 'Nastavení dokončena';
 
   @override

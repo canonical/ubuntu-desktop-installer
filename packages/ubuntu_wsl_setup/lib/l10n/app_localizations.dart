@@ -499,6 +499,24 @@ abstract class AppLocalizations {
   /// **'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???'**
   String get configurationUIMountFstabSubtitle;
 
+  /// No description provided for @configurationUISystemdHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'EXPERIMENTAL - Systemd'**
+  String get configurationUISystemdHeader;
+
+  /// No description provided for @configurationUISystemdTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get configurationUISystemdTitle;
+
+  /// No description provided for @configurationUISystemdSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.'**
+  String get configurationUISystemdSubtitle;
+
   /// No description provided for @setupCompleteTitle.
   ///
   /// In en, this message translates to:

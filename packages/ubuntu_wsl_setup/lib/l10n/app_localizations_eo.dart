@@ -140,6 +140,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???';
 
   @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+
+  @override
   String get setupCompleteTitle => 'Instalado finiĝis';
 
   @override

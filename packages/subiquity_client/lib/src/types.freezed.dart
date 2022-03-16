@@ -4695,12 +4695,14 @@ class _$WSLConfigurationAdvancedTearOff {
       {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath}) {
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled}) {
     return _WSLConfigurationAdvanced(
       automountEnabled: automountEnabled,
       automountMountfstab: automountMountfstab,
       interopEnabled: interopEnabled,
       interopAppendwindowspath: interopAppendwindowspath,
+      systemdEnabled: systemdEnabled,
     );
   }
 
@@ -4718,6 +4720,7 @@ mixin _$WSLConfigurationAdvanced {
   bool? get automountMountfstab => throw _privateConstructorUsedError;
   bool? get interopEnabled => throw _privateConstructorUsedError;
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  bool? get systemdEnabled => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4734,7 +4737,8 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
       {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath});
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled});
 }
 
 /// @nodoc
@@ -4752,6 +4756,7 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
+    Object? systemdEnabled = freezed,
   }) {
     return _then(_value.copyWith(
       automountEnabled: automountEnabled == freezed
@@ -4770,6 +4775,10 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool?,
+      systemdEnabled: systemdEnabled == freezed
+          ? _value.systemdEnabled
+          : systemdEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -4785,7 +4794,8 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
       {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath});
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled});
 }
 
 /// @nodoc
@@ -4806,6 +4816,7 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
+    Object? systemdEnabled = freezed,
   }) {
     return _then(_WSLConfigurationAdvanced(
       automountEnabled: automountEnabled == freezed
@@ -4824,6 +4835,10 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool?,
+      systemdEnabled: systemdEnabled == freezed
+          ? _value.systemdEnabled
+          : systemdEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -4836,7 +4851,8 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       {this.automountEnabled,
       this.automountMountfstab,
       this.interopEnabled,
-      this.interopAppendwindowspath});
+      this.interopAppendwindowspath,
+      this.systemdEnabled});
 
   factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationAdvancedFromJson(json);
@@ -4849,10 +4865,12 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   final bool? interopEnabled;
   @override
   final bool? interopAppendwindowspath;
+  @override
+  final bool? systemdEnabled;
 
   @override
   String toString() {
-    return 'WSLConfigurationAdvanced(automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath, systemdEnabled: $systemdEnabled)';
   }
 
   @override
@@ -4871,7 +4889,11 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
             (identical(
                     other.interopAppendwindowspath, interopAppendwindowspath) ||
                 const DeepCollectionEquality().equals(
-                    other.interopAppendwindowspath, interopAppendwindowspath)));
+                    other.interopAppendwindowspath,
+                    interopAppendwindowspath)) &&
+            (identical(other.systemdEnabled, systemdEnabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.systemdEnabled, systemdEnabled)));
   }
 
   @override
@@ -4880,7 +4902,8 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       const DeepCollectionEquality().hash(automountEnabled) ^
       const DeepCollectionEquality().hash(automountMountfstab) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
-      const DeepCollectionEquality().hash(interopAppendwindowspath);
+      const DeepCollectionEquality().hash(interopAppendwindowspath) ^
+      const DeepCollectionEquality().hash(systemdEnabled);
 
   @JsonKey(ignore: true)
   @override
@@ -4899,7 +4922,8 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
       {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath}) = _$_WSLConfigurationAdvanced;
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled}) = _$_WSLConfigurationAdvanced;
 
   factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationAdvanced.fromJson;
@@ -4912,6 +4936,8 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @override
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  @override
+  bool? get systemdEnabled => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>

@@ -140,6 +140,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Indica si se montará /etc/fstab. El archivo de configuración /etc/fstab contiene???';
 
   @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+
+  @override
   String get setupCompleteTitle => 'Puesta en marcha finalizada';
 
   @override

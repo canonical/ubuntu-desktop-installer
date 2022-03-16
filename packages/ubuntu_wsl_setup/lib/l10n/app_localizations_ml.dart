@@ -140,6 +140,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => '/etc/fstab മൗണ്ട് ചെയ്യുമോ എന്ന്. കോൺഫിഗറേഷൻ ഫയൽ /etc/fstab അടങ്ങിയിരിക്കുന്നു???';
 
   @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+
+  @override
   String get setupCompleteTitle => 'സജ്ജീകരണം പൂർത്തിയായി';
 
   @override

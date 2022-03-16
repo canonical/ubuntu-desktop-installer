@@ -480,6 +480,7 @@ _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
     automountMountfstab: json['automount_mountfstab'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
     interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
+    systemdEnabled: json['systemd_enabled'] as bool?,
   );
 }
 
@@ -490,6 +491,7 @@ Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
       'automount_mountfstab': instance.automountMountfstab,
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
+      'systemd_enabled': instance.systemdEnabled,
     };
 
 _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
