@@ -75,7 +75,7 @@
   "@yesButtonText": {},
   "welcome": "ברוך בואך",
   "@welcome": {},
-  "tryOrInstallPageTitle": "לנסות להתקין",
+  "tryOrInstallPageTitle": "להתנסות או להתקין",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "תיקון התקנה",
   "@repairInstallation": {},
@@ -443,7 +443,7 @@
   "@whereAreYouTimezoneLabel": {},
   "whereAreYouLocationLabel": "מיקום",
   "@whereAreYouLocationLabel": {},
-  "whereAreYouPageTitle": "עם מי יש לי העונג?",
+  "whereAreYouPageTitle": "מה מיקומך?",
   "@whereAreYouPageTitle": {},
   "welcomeSlideTitle": "ברוך בואך אל {RELEASE}",
   "@welcomeSlideTitle": {
