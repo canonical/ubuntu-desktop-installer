@@ -44,7 +44,7 @@
   "@advancedSetupResolvConfGenerationTitle": {},
   "advancedSetupResolvConfGenerationSubtitle": "בחירה מפעילה יצירה מחדש של ‎/etc/resolv.conf עם כל הפעלה.",
   "@advancedSetupResolvConfGenerationSubtitle": {},
-  "advancedSetupGUIIntegrationTitle": "שילוב עם מנשק משתמש",
+  "advancedSetupGUIIntegrationTitle": "שילוב עם מנשק המשתמש",
   "@advancedSetupGUIIntegrationTitle": {},
   "advancedSetupGUIIntegrationSubtitle": "בחירה מפעילה הקמת סביבת DISPLAY אוטומטית. דרוש שרת X מגורם צד־שלישי.",
   "@advancedSetupGUIIntegrationSubtitle": {},
@@ -77,7 +77,7 @@
       "user": {}
     }
   },
-  "setupCompleteUpdate": "מומלץ להריץ את הפקודה הבאה כדי לעדכן את אובונטו לגירסה העדכנית ביותר:",
+  "setupCompleteUpdate": "מומלץ להריץ את הפקודה הבאה כדי לעדכן את אובונטו לגרסה העדכנית ביותר:",
   "@setupCompleteUpdate": {},
   "setupCompleteRestart": "* כל ההגדרות יחולו לאחר הפעלת אובונטו מחדש.",
   "@setupCompleteRestart": {},
