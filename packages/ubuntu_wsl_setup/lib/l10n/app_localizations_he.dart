@@ -113,31 +113,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'הדדיות';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'שילוב מיושן למנשק משתמש';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'אפשרות זו מפעילה את השילוב המיושן עם מנשק המשתמש ב־Windows 10. דורש שרת X מגורם צד־שלישי.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'שילוב מיושן עם שמע';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'אפשרות זו מפעילה את שילוב השמע המיושן ב־Windows 10. דורש התקנת PulseAudio ל־Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'זיהוי IP מתקדם';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'אפשרות זו מפעילה זיהוי מתקדם של IP לפי כתובת ה־IPv4 של Windows שהיא יותר אמינה לשימוש עם WSL2.\nדורשת את הפעלת ההדדיות עם WSL.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'הודעת היום (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'חדשות WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'אפשרות זו מאפשרת לך לשלוט בחדשות ב־MOTD שלך. הפעלתה מאפשרת לך לראות את ה־MOTD (ההודעה היומית).';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'עיגון אוטומטי';

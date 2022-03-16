@@ -113,31 +113,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperatividad';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Integración de interfaces gráficas heredadas';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Esta opción activa la integración de IGU heredada en Windows 10. Necesita un servidor X de terceros.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Integración de audio heredado';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Esta opción activa la integración de audio heredado en Windows 10. Necesita PulseAudio para Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Detección avanzada de IP';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Esta opción activa la detección avanzada de IP por dirección IPv4 de Windows, que es más fiable para su uso con WSL2.\nNecesita la interoperatividad de WSL.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Mensaje del día (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Noticias de WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Esta opción le permite controlar las noticias que recibe por MOTD. Activarla le permitirá consultar el MOTD.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Montaje automático';

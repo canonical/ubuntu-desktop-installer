@@ -113,31 +113,16 @@ class AppLocalizationsMl extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'പരസ്പര പ്രവർത്തനക്ഷമത';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'ലെഗസി GUI സംയോജനം';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'ഈ ഓപ്‌ഷൻ വിൻഡോസ് 10-ൽ ലെഗസി GUI സംയോജനം പ്രവർത്തനക്ഷമമാക്കുന്നു. മൂന്നാം-കക്ഷി X സെർവർ ആവശ്യമുണ്ട്.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'ലെഗസി ഓഡിയോ സംയോജനം';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'ഈ ഓപ്‌ഷൻ വിൻഡോസ് 10-ൽ ലെഗസി ഓഡിയോ സംയോജനം പ്രവർത്തനക്ഷമമാക്കുന്നു. വിന്ഡോസിനു വേണ്ടിയുള്ള PulseAudio ഇൻസ്റ്റാൾ ചെയ്യേണ്ട ആവശ്യമുണ്ട്.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'വിപുലമായ IP കണ്ടെത്തൽ';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'WSL2-നൊപ്പം ഉപയോഗിക്കാൻ കൂടുതൽ വിശ്വസനീയമായ വിൻഡോസ് IPv4 വിലാസം വഴി IP-യുടെ വിപുലമായ കണ്ടെത്തൽ ഈ ഓപ്ഷൻ പ്രാപ്തമാക്കുന്നു.\nWSL പരസ്പര പ്രവർത്തനക്ഷമത പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'ഈ ദിവസത്തെ സന്ദേശം (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'WSL വാർത്ത';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'നിങ്ങളുടെ MOTD വാർത്തകൾ നിയന്ത്രിക്കാൻ ഈ ഓപ്ഷൻ നിങ്ങളെ അനുവദിക്കുന്നു. ഇത് ടോഗിൾ ചെയ്യുന്നത് MOTD കാണാൻ നിങ്ങളെ അനുവദിക്കുന്നു.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'ഓട്ടോ-മൌണ്ട്';

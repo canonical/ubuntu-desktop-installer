@@ -113,31 +113,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperabilita';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Původní napojení na grafické uživatelské rozhraní';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Zaškrtnutí této volby zapíná původní napojení na grafické uživatelské rozhraní v systému Windows 10. Pro využití je dále zapotřebí grafického X serveru třetí strany.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Původní napojení na zvuk';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Zaškrtnutí této volby zapíná původní napojení na zvukový systém v systému Windows 10. Pro využití je dále zapotřebí mít nainstalovaný zvukový server PulseAudio pro Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Pokročilé zjišťování IP protokolu';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Zaškrtnutí této volby zapíná pokročilé zjišťování IP adresy podle IPv4 adresy ve Windows, které je pro použití ve WSL2 spolehlivější.\nVyžaduje, aby byla zapnutá interoperabilita WSL.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Zpráva dne (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Novinky ve WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Tato volba vám umožňuje ovládat své novinky v rámci MOTD. Zaškrtnutím vám budou zobrazovány MOTD zprávy.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatické připojování';

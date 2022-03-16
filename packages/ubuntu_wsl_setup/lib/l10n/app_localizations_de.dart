@@ -113,31 +113,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperabilität';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Ältere GUI-Integration';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Diese Option aktiviert die ältere GUI-Integration unter Windows 10. Erfordert einen X-Server eines Drittanbieters.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Ältere Audio-Integration';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Diese Option aktiviert die ältere Audio-Integration unter Windows 10. PulseAudio für Windows muss installiert sein.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Erweiterte IP-Erkennung';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Diese Option aktiviert die erweiterte IP-Erkennung über die Windows IPv4-Adresse, die für die Verwendung mit WSL2 zuverlässiger ist.\nErfordert die Aktivierung der WSL-Interoperabilität.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Nachricht des Tages (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'WSL-Nachrichten';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Mit dieser Option können Sie Ihre MOTD-Nachrichten kontrollieren. Wenn Sie sie einschalten, können Sie die MOTD sehen.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatisches Einhängen';

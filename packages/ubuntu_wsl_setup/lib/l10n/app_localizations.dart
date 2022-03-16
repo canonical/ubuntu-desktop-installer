@@ -436,7 +436,7 @@ abstract class AppLocalizations {
   /// No description provided for @configurationUITitle.
   ///
   /// In en, this message translates to:
-  /// **'Ubuntu WSL configuration UI (experimental)'**
+  /// **'Ubuntu WSL Configuration - Advanced options'**
   String get configurationUITitle;
 
   /// No description provided for @configurationUIInteroperabilityHeader.
@@ -445,59 +445,29 @@ abstract class AppLocalizations {
   /// **'Interoperability'**
   String get configurationUIInteroperabilityHeader;
 
-  /// No description provided for @configurationUILegacyGUIIntegrationTitle.
+  /// No description provided for @configurationUIInteroperabilityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Legacy GUI Integration'**
-  String get configurationUILegacyGUIIntegrationTitle;
+  /// **'Enabled'**
+  String get configurationUIInteroperabilityTitle;
 
-  /// No description provided for @configurationUILegacyGUIIntegrationSubtitle.
+  /// No description provided for @configurationUIInteroperabilitySubtitle.
   ///
   /// In en, this message translates to:
-  /// **'This option enables the Legacy GUI Integration on Windows 10. Requires Third-party X server.'**
-  String get configurationUILegacyGUIIntegrationSubtitle;
+  /// **'Whether the Interoperability is enabled.'**
+  String get configurationUIInteroperabilitySubtitle;
 
-  /// No description provided for @configurationUILegacyAudioIntegrationTitle.
+  /// No description provided for @configurationUIInteropAppendWindowsPathTitle.
   ///
   /// In en, this message translates to:
-  /// **'Legacy Audio Integration'**
-  String get configurationUILegacyAudioIntegrationTitle;
+  /// **'Append Windows Path'**
+  String get configurationUIInteropAppendWindowsPathTitle;
 
-  /// No description provided for @configurationUILegacyAudioIntegrationSubtitle.
+  /// No description provided for @configurationUIInteropAppendWindowsPathSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.'**
-  String get configurationUILegacyAudioIntegrationSubtitle;
-
-  /// No description provided for @configurationUIAdvancedIPDetectionTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Advanced IP Detection'**
-  String get configurationUIAdvancedIPDetectionTitle;
-
-  /// No description provided for @configurationUIAdvancedIPDetectionSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.'**
-  String get configurationUIAdvancedIPDetectionSubtitle;
-
-  /// No description provided for @configurationUIMessageOfTheDayHeader.
-  ///
-  /// In en, this message translates to:
-  /// **'Message Of The Day (MOTD)'**
-  String get configurationUIMessageOfTheDayHeader;
-
-  /// No description provided for @configurationUIWSLNewsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'WSL News'**
-  String get configurationUIWSLNewsTitle;
-
-  /// No description provided for @configurationUIWSLNewsSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.'**
-  String get configurationUIWSLNewsSubtitle;
+  /// **'Whether Windows Path will be append in the PATH environment variable in WSL'**
+  String get configurationUIInteropAppendWindowsPathSubtitle;
 
   /// No description provided for @configurationUIAutoMountHeader.
   ///
