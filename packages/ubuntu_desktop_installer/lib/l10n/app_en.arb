@@ -440,7 +440,7 @@
   "availableSoftware": "Available software",
   "supportedSoftware": "Supported software",
   "ubuntuProPageTitle": "Enable Ubuntu Pro",
-  "ubuntuProPageDescription": "Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.",
+  "ubuntuProPageDescription": "Ubuntu Pro adds multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.",
   "ubuntuProPageMoreInformation": "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>",
   "ubuntuProInstructions": "To enable Ubuntu Pro, add your token or skip this step.",
   "ubuntuProOffline": "You are currently offline. An internet connection is required to enable Ubuntu Pro.",

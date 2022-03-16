@@ -102,8 +102,8 @@ class TokenFormField extends StatelessWidget {
               ? Icon(Icons.info_outline, color: YaruColors.blue)
               : model.isAttaching
                   ? SizedBox(
-                      width: IconTheme.of(context).size,
-                      height: IconTheme.of(context).size,
+                      width: IconTheme.of(context).size! - 6,
+                      height: IconTheme.of(context).size! - 6,
                       child: CircularProgressIndicator(strokeWidth: 3),
                     )
                   : model.hasError
@@ -126,7 +126,11 @@ class TokenFormField extends StatelessWidget {
                             : '',
             softWrap: true,
             style: TextStyle(
-              color: !model.isOnline ? YaruColors.blue : null,
+              color: !model.isOnline
+                  ? YaruColors.blue
+                  : model.hasError
+                      ? Theme.of(context).errorColor
+                      : null,
               overflow: TextOverflow.visible,
             ),
           ),

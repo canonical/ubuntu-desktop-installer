@@ -1584,7 +1584,7 @@ abstract class AppLocalizations {
   /// No description provided for @ubuntuProPageDescription.
   ///
   /// In en, this message translates to:
-  /// **'Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.'**
+  /// **'Ubuntu Pro adds multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.'**
   String get ubuntuProPageDescription;
 
   /// No description provided for @ubuntuProPageMoreInformation.

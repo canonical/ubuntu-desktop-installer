@@ -124,13 +124,13 @@ class UbuntuProPageState extends State<UbuntuProPage> {
         WizardAction(
           label: lang.ubuntuProAttach,
           enabled: !model.isAttaching && model.hasValidToken,
-          visible: model.isEnabled && !model.isAttached,
+          visible: model.isOnline && model.isEnabled && !model.isAttached,
           onActivated: model.attach,
         ),
         WizardAction.next(
           context,
           enabled: !model.isAttaching,
-          visible: !model.isEnabled || model.isAttached,
+          visible: !model.isOnline || !model.isEnabled || model.isAttached,
           onActivated: () async {
             await model.save();
             Wizard.of(context).next();

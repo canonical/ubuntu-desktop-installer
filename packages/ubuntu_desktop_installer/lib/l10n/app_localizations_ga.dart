@@ -748,7 +748,7 @@ class AppLocalizationsGa extends AppLocalizations {
   String get ubuntuProPageTitle => 'Enable Ubuntu Pro';
 
   @override
-  String get ubuntuProPageDescription => 'Ubuntu Pro subscription gives you access to multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.';
+  String get ubuntuProPageDescription => 'Ubuntu Pro adds multiple security & compliance features such as Kernel Livepatch and security updates for over 30,000 deb packages, <strong>free for personal use on up to 3 machines</strong>.';
 
   @override
   String get ubuntuProPageMoreInformation => 'More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>';
