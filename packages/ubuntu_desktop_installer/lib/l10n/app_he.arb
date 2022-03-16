@@ -30,7 +30,7 @@
   "@noButtonText": {},
   "tryUbuntuDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
   "@tryUbuntuDescription": {},
-  "appTitle": "מתקין אובונטו לשולחן עבודה",
+  "appTitle": "אשף התקנת אובונטו לשולחן עבודה",
   "@appTitle": {},
   "windowTitle": "להתקין את {RELEASE}",
   "@windowTitle": {},
@@ -221,7 +221,7 @@
   },
   "installationTypeTitle": "סוג ההתקנה",
   "@installationTypeTitle": {},
-  "installationTypeOSDetected": "במחשב זה מותקן כרגע {os}. מה לעשות?",
+  "installationTypeOSDetected": "במחשב זה מותקנת כרגע {os}. מה לעשות?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -437,7 +437,7 @@
       "color": {}
     }
   },
-  "welcomeHeader": "בחירת השפה שלך:",
+  "welcomeHeader": "נא לבחור שפה:",
   "@welcomeHeader": {},
   "whereAreYouTimezoneLabel": "אזור זמן",
   "@whereAreYouTimezoneLabel": {},
@@ -538,7 +538,7 @@
   "@officeSlideCalc": {},
   "officeSlideImpress": "LibreOffice Impress",
   "@officeSlideImpress": {},
-  "accessSlideDescription": "בלבה של הפילוסופיה שמאחורי {RELEASE} קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגדלי כתב מקל {RELEASE} על השימוש במחשב - ללא תלות בזהות או במיקום שלך.",
+  "accessSlideDescription": "בלב הפילוסופיה שמאחורי {RELEASE} קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגודלי כתב, קל יותר להשתמש במחשב עם {RELEASE} - ללא תלות בזהות או במיקום.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
