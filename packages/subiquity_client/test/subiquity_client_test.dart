@@ -270,7 +270,7 @@ void main() {
       expect(gaps, isNotNull);
       expect(gaps, hasLength(1));
 
-      expect(gaps!.single.offset, isZero);
+      expect(gaps!.single.offset, isNonZero);
       expect(gaps.single.size, isNonZero);
     });
 

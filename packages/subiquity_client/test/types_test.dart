@@ -136,6 +136,7 @@ void main() {
 
   test('partition', () {
     const partition = Partition(
+      offset: 678,
       size: 1,
       number: 2,
       preserve: false,
@@ -153,6 +154,7 @@ void main() {
       ),
     );
     const json = <String, dynamic>{
+      'offset': 678,
       'size': 1,
       'number': 2,
       'preserve': false,

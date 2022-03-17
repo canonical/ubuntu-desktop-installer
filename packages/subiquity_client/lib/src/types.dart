@@ -221,6 +221,7 @@ class DiskObject with _$DiskObject {
   @FreezedUnionValue('Partition')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.partition({
+    int? offset,
     int? size,
     int? number,
     @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,

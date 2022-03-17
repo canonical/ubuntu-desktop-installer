@@ -288,6 +288,7 @@ Map<String, dynamic> _$_$_OsProberToJson(_$_OsProber instance) =>
 
 _$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
   return _$Partition(
+    offset: json['offset'] as int?,
     size: json['size'] as int?,
     number: json['number'] as int?,
     wipe: _wipeFromString(json['wipe'] as String?),
@@ -307,6 +308,7 @@ _$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$PartitionToJson(_$Partition instance) =>
     <String, dynamic>{
+      'offset': instance.offset,
       'size': instance.size,
       'number': instance.number,
       'wipe': _wipeToString(instance.wipe),
