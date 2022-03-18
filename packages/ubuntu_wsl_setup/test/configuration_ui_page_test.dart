@@ -20,23 +20,20 @@ void main() {
 
   ConfigurationUIModel buildModel({
     bool? isValid,
-    bool? interopGuiintegration,
-    bool? interopAudiointegration,
-    bool? advancedIPDetection,
-    bool? motdWSLnewsenabled,
+    bool? interopEnabled,
+    bool? interopAppendwindowspath,
     bool? automountEnabled,
     bool? automountMountfstab,
+    bool? systemdEnabled,
   }) {
     final model = MockConfigurationUIModel();
     when(model.isValid).thenReturn(isValid ?? false);
-    when(model.interopGuiintegration)
-        .thenReturn(interopGuiintegration ?? false);
-    when(model.interopAudiointegration)
-        .thenReturn(interopAudiointegration ?? false);
-    when(model.advancedIPDetection).thenReturn(advancedIPDetection ?? false);
-    when(model.motdWSLnewsenabled).thenReturn(motdWSLnewsenabled ?? true);
+    when(model.interopEnabled).thenReturn(interopEnabled ?? false);
+    when(model.interopAppendwindowspath)
+        .thenReturn(interopAppendwindowspath ?? false);
     when(model.automountEnabled).thenReturn(automountEnabled ?? true);
     when(model.automountMountfstab).thenReturn(automountMountfstab ?? true);
+    when(model.systemdEnabled).thenReturn(systemdEnabled ?? true);
     return model;
   }
 
@@ -63,56 +60,12 @@ void main() {
     );
   }
 
-  testWidgets('legacy GUI input', (tester) async {
-    final model = buildModel(interopGuiintegration: false);
-    await tester.pumpWidget(buildApp(tester, model));
-
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUILegacyGUIIntegrationTitle);
-    expect(checkbox, findsOneWidget);
-    await tester.tap(checkbox);
-    verify(model.interopGuiintegration = true).called(1);
-  });
-
-  testWidgets('legacy audio input', (tester) async {
-    final model = buildModel(interopAudiointegration: false);
-    await tester.pumpWidget(buildApp(tester, model));
-
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUILegacyAudioIntegrationTitle);
-    expect(checkbox, findsOneWidget);
-    await tester.tap(checkbox);
-    verify(model.interopAudiointegration = true).called(1);
-  });
-
-  testWidgets('advanced IP detection input', (tester) async {
-    final model = buildModel(advancedIPDetection: false);
-    await tester.pumpWidget(buildApp(tester, model));
-
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIAdvancedIPDetectionTitle);
-    expect(checkbox, findsOneWidget);
-    await tester.tap(checkbox);
-    verify(model.advancedIPDetection = true).called(1);
-  });
-
-  testWidgets('WSL MOTD news input', (tester) async {
-    final model = buildModel(motdWSLnewsenabled: false);
-    await tester.pumpWidget(buildApp(tester, model));
-
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIWSLNewsTitle);
-    expect(checkbox, findsOneWidget);
-    await tester.tap(checkbox);
-    verify(model.motdWSLnewsenabled = true).called(1);
-  });
-
   testWidgets('automountEnabled input', (tester) async {
     final model = buildModel(automountEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIAutoMountTitle);
+        CheckButton, tester.lang.configurationUIAutoMountSubtitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountEnabled = true).called(1);
@@ -127,6 +80,28 @@ void main() {
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountMountfstab = true).called(1);
+  });
+
+  testWidgets('interopEnabled input', (tester) async {
+    final model = buildModel(interopEnabled: false);
+    await tester.pumpWidget(buildApp(tester, model));
+
+    final checkbox = find.widgetWithText(
+        CheckButton, tester.lang.configurationUIInteroperabilitySubtitle);
+    expect(checkbox, findsOneWidget);
+    await tester.tap(checkbox);
+    verify(model.interopEnabled = true).called(1);
+  });
+
+  testWidgets('interopAppendwindowspath input', (tester) async {
+    final model = buildModel(interopAppendwindowspath: false);
+    await tester.pumpWidget(buildApp(tester, model));
+
+    final checkbox = find.widgetWithText(
+        CheckButton, tester.lang.configurationUIInteropAppendWindowsPathTitle);
+    expect(checkbox, findsOneWidget);
+    await tester.tap(checkbox);
+    verify(model.interopAppendwindowspath = true).called(1);
   });
 
   testWidgets('valid input', (tester) async {

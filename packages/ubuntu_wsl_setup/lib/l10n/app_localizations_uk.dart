@@ -113,31 +113,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Взаємодія';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Успадкована інтеграція GUI';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Цей параметр вмикає інтеграцію успадкованого графічного інтерфейсу у Windows 10. Потрібен сторонній X-сервер.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Успадкована інтеграція аудіо';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Цей параметр вмикає інтеграцію успадкованого аудіо інтерфейсу у Windows 10. Потрібне встановлення PulseAudio для Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Розширене визначення IP';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Цей параметр дозволяє розширити визначення IP-адреси за IPv4-адресою Windows, яка є більш надійною для використання з WSL2.\nПотребує ввімкнення взаємодії WSL.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Повідомлення дня (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Новини WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Ця опція дозволяє вам керувати новинами MOTD. Увімкнувши його, ви зможете побачити повідомлення дня (MOTD).';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Автоматичне монтування';
@@ -153,6 +138,15 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => 'Показує чи буде змонтовано пристрої з /etc/fstab. Чи файл конфігурації /etc/fstab містить їх?';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => 'Встановлення завершено';

@@ -113,31 +113,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperabilidade';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Integration Gráfica Legada';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Esta opção habilita a integração gráfica legada no Windows 10. Requer X server de terceiros.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Integração de Áudio Legada';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Esta opção habilita a integração de áudio legada no Windows 10. Requer PulseAudio para Windows instalado.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Detecção Avançada de IP';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Esta opção habilita detecção avançada de IP pelo endereço IPv4 do Windows que é mais confiável para uso com WSL2.\nRequer Interoperabilidade com WSL habilitada.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Mensagem do Dia (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'WSL News';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Esta opção permite ao usuário controlar seu MOTD News. Selecione para habilitar a exibição do MOTD.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Montagem Automática';
@@ -153,6 +138,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => 'Habilita a montagem do arquivo /etc/fstab. O arquivo de configuração /etc/fstab contém ???';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => 'Configuração concluída';
@@ -280,33 +274,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperabilidade';
-
-  @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Integration Gráfica Legada';
-
-  @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Esta opção habilita a integração gráfica legada no Windows 10. Requer X server de terceiros.';
-
-  @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Integração de Áudio Legada';
-
-  @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Esta opção habilita a integração de áudio legada no Windows 10. Requer PulseAudio para Windows instalado.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Detecção Avançada de IP';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Esta opção habilita detecção avançada de IP pelo endereço IPv4 do Windows que é mais confiável para uso com WSL2.\nRequer Interoperabilidade com WSL habilitada.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Mensagem do Dia (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Novidades WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Esta opção permite ao usuário controlar seu MOTD News. Selecione para habilitar a exibição do MOTD.';
 
   @override
   String get configurationUIAutoMountHeader => 'Montagem Automática';

@@ -113,31 +113,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperabilitet';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Äldre GUI-integration';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Det här alternativet aktiverar äldre GUI-integration på Windows 10. Kräver tredjeparts X-server.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Äldre ljudintegration';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'This option enables the Legacy Audio Integration on Windows 10. Requires PulseAudio for Windows installed.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Avancerad IP-detektion';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'This option enables advanced detection of IP by Windows IPv4 Address which is more reliable to use with WSL2.\nRequires WSL interoperability enabled.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Dagens meddelande (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'WSL nyheter';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'This option allows you to control your MOTD News. Toggling it on allows you to see the MOTD.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Auto-Mount';
@@ -153,6 +138,15 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => 'Installationen är klar';

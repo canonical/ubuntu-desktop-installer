@@ -113,31 +113,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => '상호운용성';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => '레거시 GUI 통합';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => '이 옵션은 Windows 10에서의 레거시 GUI 통합을 활성화 합니다. 서드파티 X 서버를 요구합니다.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => '레거시 오디오 통합';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => '이 옵션은 Windows 10에서의 레거시 오디오 통합을 활성화 합니다. Windows용 PulseAudio 설치를 요구합니다.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => '고급 IP 감지';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => '이 옵션은 WSL2와 사용하기에 더 안정적인 Windows IPv4 주소에 의한 IP의 고급 감지를 활성화 합니다.\nWSL 상호운용성 활성화를 요구합니다.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => '오늘의 메시지 (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'WSL 뉴스';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => '이 옵션은 MOTD 뉴스를 제어할 수 있도록 합니다. 토글을 켜면 MOTD를 볼 수 있게 됩니다.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => '자동 마운트';
@@ -153,6 +138,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. /etc/fstab 설정 파일에 포함되었습니까???';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => '설치 완료';

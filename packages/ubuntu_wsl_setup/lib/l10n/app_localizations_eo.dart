@@ -113,31 +113,16 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Kunfunkciado';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Integrado de malnova grafika fasado';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Ĉi tiu opcio integras malnovajn grafikaj fasadojn sur Windows 10. Postulas triapartian X-servilon.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Integrado de malnova sonsistemo';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Ĉi tiu opcio integras malnovan sonsistemon sur Windows 10. Postulas instalon de PulseAudio por Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Altnivela trovado de IP-adreso';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Ĉi tiu opcio ebligas trovadon de IP-adresoj per Windows IPv4 Address, kiu estas pli fidinda por Windows-Subsistemo por Linux 2.\nPostulas kunfunciadon kun Windows-Subsistemo por Linux.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Mesaĝo de la Tago (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Novaĵoj pri Windows-Subsistemo por Linux';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Ĉi tiu opcio permesas vin agordi viajn novaĵojn en la Mesaĝo de la Tago. Ŝaltinte ĝin, vi vidos la Mesaĝon de la Tago.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Aŭtomata Surmeto';
@@ -153,6 +138,15 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => 'Instalado finiĝis';

@@ -27,36 +27,20 @@ class MockConfigurationUIModel extends _i1.Mock
   }
 
   @override
-  bool get interopGuiintegration =>
-      (super.noSuchMethod(Invocation.getter(#interopGuiintegration),
+  bool get interopAppendwindowspath =>
+      (super.noSuchMethod(Invocation.getter(#interopAppendwindowspath),
           returnValue: false) as bool);
   @override
-  set interopGuiintegration(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#interopGuiintegration, value),
+  set interopAppendwindowspath(bool? value) =>
+      super.noSuchMethod(Invocation.setter(#interopAppendwindowspath, value),
           returnValueForMissingStub: null);
   @override
-  bool get interopAudiointegration =>
-      (super.noSuchMethod(Invocation.getter(#interopAudiointegration),
-          returnValue: false) as bool);
+  bool get interopEnabled => (super
+          .noSuchMethod(Invocation.getter(#interopEnabled), returnValue: false)
+      as bool);
   @override
-  set interopAudiointegration(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#interopAudiointegration, value),
-          returnValueForMissingStub: null);
-  @override
-  bool get advancedIPDetection =>
-      (super.noSuchMethod(Invocation.getter(#advancedIPDetection),
-          returnValue: false) as bool);
-  @override
-  set advancedIPDetection(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#advancedIPDetection, value),
-          returnValueForMissingStub: null);
-  @override
-  bool get motdWSLnewsenabled =>
-      (super.noSuchMethod(Invocation.getter(#motdWSLnewsenabled),
-          returnValue: false) as bool);
-  @override
-  set motdWSLnewsenabled(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#motdWSLnewsenabled, value),
+  set interopEnabled(bool? value) =>
+      super.noSuchMethod(Invocation.setter(#interopEnabled, value),
           returnValueForMissingStub: null);
   @override
   bool get automountEnabled =>
@@ -73,6 +57,14 @@ class MockConfigurationUIModel extends _i1.Mock
   @override
   set automountMountfstab(bool? value) =>
       super.noSuchMethod(Invocation.setter(#automountMountfstab, value),
+          returnValueForMissingStub: null);
+  @override
+  bool get systemdEnabled => (super
+          .noSuchMethod(Invocation.getter(#systemdEnabled), returnValue: false)
+      as bool);
+  @override
+  set systemdEnabled(bool? value) =>
+      super.noSuchMethod(Invocation.setter(#systemdEnabled, value),
           returnValueForMissingStub: null);
   @override
   bool get isValid =>

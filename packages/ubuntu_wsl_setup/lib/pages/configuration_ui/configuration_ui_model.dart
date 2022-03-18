@@ -15,30 +15,17 @@ class ConfigurationUIModel extends ChangeNotifier {
   final SubiquityClient _client;
   final _conf = ValueNotifier(const WSLConfigurationAdvanced());
 
-  /// Whether legacy GUI integration is enabled.
-  bool get interopGuiintegration => _conf.value.interopGuiintegration ?? false;
-  set interopGuiintegration(bool value) {
-    _conf.value = _conf.value.copyWith(interopGuiintegration: value);
+  /// Whether the Windows Path will be appended in the PATH environment in WSL.
+  bool get interopAppendwindowspath =>
+      _conf.value.interopAppendwindowspath ?? true;
+  set interopAppendwindowspath(bool value) {
+    _conf.value = _conf.value.copyWith(interopAppendwindowspath: value);
   }
 
-  /// Whether legacy audio integration is enabled.
-  bool get interopAudiointegration =>
-      _conf.value.interopAudiointegration ?? false;
-  set interopAudiointegration(bool value) {
-    _conf.value = _conf.value.copyWith(interopAudiointegration: value);
-  }
-
-  /// Whether advanced IP detection is enabled.
-  bool get advancedIPDetection =>
-      _conf.value.interopAdvancedipdetection ?? false;
-  set advancedIPDetection(bool value) {
-    _conf.value = _conf.value.copyWith(interopAdvancedipdetection: value);
-  }
-
-  /// Whether WSL MOTD news are enabled.
-  bool get motdWSLnewsenabled => _conf.value.motdWslnewsenabled ?? true;
-  set motdWSLnewsenabled(bool value) {
-    _conf.value = _conf.value.copyWith(motdWslnewsenabled: value);
+  /// Whether the interoperability is enabled.
+  bool get interopEnabled => _conf.value.interopEnabled ?? true;
+  set interopEnabled(bool value) {
+    _conf.value = _conf.value.copyWith(interopEnabled: value);
   }
 
   /// Whether automountEnabled is enabled.
@@ -51,6 +38,12 @@ class ConfigurationUIModel extends ChangeNotifier {
   bool get automountMountfstab => _conf.value.automountMountfstab ?? true;
   set automountMountfstab(bool value) {
     _conf.value = _conf.value.copyWith(automountMountfstab: value);
+  }
+
+  /// Whether systemd experimental support is enabled.
+  bool get systemdEnabled => _conf.value.systemdEnabled ?? false;
+  set systemdEnabled(bool value) {
+    _conf.value = _conf.value.copyWith(systemdEnabled: value);
   }
 
   /// Whether the current input is valid.

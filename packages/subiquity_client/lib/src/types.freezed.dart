@@ -4947,27 +4947,17 @@ class _$WSLConfigurationAdvancedTearOff {
   const _$WSLConfigurationAdvancedTearOff();
 
   _WSLConfigurationAdvanced call(
-      {String? guiTheme,
-      bool? guiFollowwintheme,
-      bool? interopGuiintegration,
-      bool? interopAudiointegration,
-      bool? interopAdvancedipdetection,
-      bool? motdWslnewsenabled,
-      bool? automountEnabled,
+      {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath}) {
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled}) {
     return _WSLConfigurationAdvanced(
-      guiTheme: guiTheme,
-      guiFollowwintheme: guiFollowwintheme,
-      interopGuiintegration: interopGuiintegration,
-      interopAudiointegration: interopAudiointegration,
-      interopAdvancedipdetection: interopAdvancedipdetection,
-      motdWslnewsenabled: motdWslnewsenabled,
       automountEnabled: automountEnabled,
       automountMountfstab: automountMountfstab,
       interopEnabled: interopEnabled,
       interopAppendwindowspath: interopAppendwindowspath,
+      systemdEnabled: systemdEnabled,
     );
   }
 
@@ -4981,16 +4971,11 @@ const $WSLConfigurationAdvanced = _$WSLConfigurationAdvancedTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationAdvanced {
-  String? get guiTheme => throw _privateConstructorUsedError;
-  bool? get guiFollowwintheme => throw _privateConstructorUsedError;
-  bool? get interopGuiintegration => throw _privateConstructorUsedError;
-  bool? get interopAudiointegration => throw _privateConstructorUsedError;
-  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
-  bool? get motdWslnewsenabled => throw _privateConstructorUsedError;
   bool? get automountEnabled => throw _privateConstructorUsedError;
   bool? get automountMountfstab => throw _privateConstructorUsedError;
   bool? get interopEnabled => throw _privateConstructorUsedError;
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  bool? get systemdEnabled => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5004,16 +4989,11 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
           $Res Function(WSLConfigurationAdvanced) then) =
       _$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   $Res call(
-      {String? guiTheme,
-      bool? guiFollowwintheme,
-      bool? interopGuiintegration,
-      bool? interopAudiointegration,
-      bool? interopAdvancedipdetection,
-      bool? motdWslnewsenabled,
-      bool? automountEnabled,
+      {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath});
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled});
 }
 
 /// @nodoc
@@ -5027,42 +5007,13 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? guiTheme = freezed,
-    Object? guiFollowwintheme = freezed,
-    Object? interopGuiintegration = freezed,
-    Object? interopAudiointegration = freezed,
-    Object? interopAdvancedipdetection = freezed,
-    Object? motdWslnewsenabled = freezed,
     Object? automountEnabled = freezed,
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
+    Object? systemdEnabled = freezed,
   }) {
     return _then(_value.copyWith(
-      guiTheme: guiTheme == freezed
-          ? _value.guiTheme
-          : guiTheme // ignore: cast_nullable_to_non_nullable
-              as String?,
-      guiFollowwintheme: guiFollowwintheme == freezed
-          ? _value.guiFollowwintheme
-          : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopGuiintegration: interopGuiintegration == freezed
-          ? _value.interopGuiintegration
-          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopAudiointegration: interopAudiointegration == freezed
-          ? _value.interopAudiointegration
-          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopAdvancedipdetection: interopAdvancedipdetection == freezed
-          ? _value.interopAdvancedipdetection
-          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      motdWslnewsenabled: motdWslnewsenabled == freezed
-          ? _value.motdWslnewsenabled
-          : motdWslnewsenabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
@@ -5079,6 +5030,10 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool?,
+      systemdEnabled: systemdEnabled == freezed
+          ? _value.systemdEnabled
+          : systemdEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -5091,16 +5046,11 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
       __$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? guiTheme,
-      bool? guiFollowwintheme,
-      bool? interopGuiintegration,
-      bool? interopAudiointegration,
-      bool? interopAdvancedipdetection,
-      bool? motdWslnewsenabled,
-      bool? automountEnabled,
+      {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath});
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled});
 }
 
 /// @nodoc
@@ -5117,42 +5067,13 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? guiTheme = freezed,
-    Object? guiFollowwintheme = freezed,
-    Object? interopGuiintegration = freezed,
-    Object? interopAudiointegration = freezed,
-    Object? interopAdvancedipdetection = freezed,
-    Object? motdWslnewsenabled = freezed,
     Object? automountEnabled = freezed,
     Object? automountMountfstab = freezed,
     Object? interopEnabled = freezed,
     Object? interopAppendwindowspath = freezed,
+    Object? systemdEnabled = freezed,
   }) {
     return _then(_WSLConfigurationAdvanced(
-      guiTheme: guiTheme == freezed
-          ? _value.guiTheme
-          : guiTheme // ignore: cast_nullable_to_non_nullable
-              as String?,
-      guiFollowwintheme: guiFollowwintheme == freezed
-          ? _value.guiFollowwintheme
-          : guiFollowwintheme // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopGuiintegration: interopGuiintegration == freezed
-          ? _value.interopGuiintegration
-          : interopGuiintegration // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopAudiointegration: interopAudiointegration == freezed
-          ? _value.interopAudiointegration
-          : interopAudiointegration // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interopAdvancedipdetection: interopAdvancedipdetection == freezed
-          ? _value.interopAdvancedipdetection
-          : interopAdvancedipdetection // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      motdWslnewsenabled: motdWslnewsenabled == freezed
-          ? _value.motdWslnewsenabled
-          : motdWslnewsenabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
@@ -5169,6 +5090,10 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool?,
+      systemdEnabled: systemdEnabled == freezed
+          ? _value.systemdEnabled
+          : systemdEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -5178,32 +5103,15 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   const _$_WSLConfigurationAdvanced(
-      {this.guiTheme,
-      this.guiFollowwintheme,
-      this.interopGuiintegration,
-      this.interopAudiointegration,
-      this.interopAdvancedipdetection,
-      this.motdWslnewsenabled,
-      this.automountEnabled,
+      {this.automountEnabled,
       this.automountMountfstab,
       this.interopEnabled,
-      this.interopAppendwindowspath});
+      this.interopAppendwindowspath,
+      this.systemdEnabled});
 
   factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationAdvancedFromJson(json);
 
-  @override
-  final String? guiTheme;
-  @override
-  final bool? guiFollowwintheme;
-  @override
-  final bool? interopGuiintegration;
-  @override
-  final bool? interopAudiointegration;
-  @override
-  final bool? interopAdvancedipdetection;
-  @override
-  final bool? motdWslnewsenabled;
   @override
   final bool? automountEnabled;
   @override
@@ -5212,37 +5120,18 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   final bool? interopEnabled;
   @override
   final bool? interopAppendwindowspath;
+  @override
+  final bool? systemdEnabled;
 
   @override
   String toString() {
-    return 'WSLConfigurationAdvanced(guiTheme: $guiTheme, guiFollowwintheme: $guiFollowwintheme, interopGuiintegration: $interopGuiintegration, interopAudiointegration: $interopAudiointegration, interopAdvancedipdetection: $interopAdvancedipdetection, motdWslnewsenabled: $motdWslnewsenabled, automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath)';
+    return 'WSLConfigurationAdvanced(automountEnabled: $automountEnabled, automountMountfstab: $automountMountfstab, interopEnabled: $interopEnabled, interopAppendwindowspath: $interopAppendwindowspath, systemdEnabled: $systemdEnabled)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WSLConfigurationAdvanced &&
-            (identical(other.guiTheme, guiTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.guiTheme, guiTheme)) &&
-            (identical(other.guiFollowwintheme, guiFollowwintheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.guiFollowwintheme, guiFollowwintheme)) &&
-            (identical(other.interopGuiintegration, interopGuiintegration) ||
-                const DeepCollectionEquality().equals(
-                    other.interopGuiintegration, interopGuiintegration)) &&
-            (identical(
-                    other.interopAudiointegration, interopAudiointegration) ||
-                const DeepCollectionEquality().equals(
-                    other.interopAudiointegration, interopAudiointegration)) &&
-            (identical(other.interopAdvancedipdetection,
-                    interopAdvancedipdetection) ||
-                const DeepCollectionEquality().equals(
-                    other.interopAdvancedipdetection,
-                    interopAdvancedipdetection)) &&
-            (identical(other.motdWslnewsenabled, motdWslnewsenabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.motdWslnewsenabled, motdWslnewsenabled)) &&
             (identical(other.automountEnabled, automountEnabled) ||
                 const DeepCollectionEquality()
                     .equals(other.automountEnabled, automountEnabled)) &&
@@ -5255,22 +5144,21 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
             (identical(
                     other.interopAppendwindowspath, interopAppendwindowspath) ||
                 const DeepCollectionEquality().equals(
-                    other.interopAppendwindowspath, interopAppendwindowspath)));
+                    other.interopAppendwindowspath,
+                    interopAppendwindowspath)) &&
+            (identical(other.systemdEnabled, systemdEnabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.systemdEnabled, systemdEnabled)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(guiTheme) ^
-      const DeepCollectionEquality().hash(guiFollowwintheme) ^
-      const DeepCollectionEquality().hash(interopGuiintegration) ^
-      const DeepCollectionEquality().hash(interopAudiointegration) ^
-      const DeepCollectionEquality().hash(interopAdvancedipdetection) ^
-      const DeepCollectionEquality().hash(motdWslnewsenabled) ^
       const DeepCollectionEquality().hash(automountEnabled) ^
       const DeepCollectionEquality().hash(automountMountfstab) ^
       const DeepCollectionEquality().hash(interopEnabled) ^
-      const DeepCollectionEquality().hash(interopAppendwindowspath);
+      const DeepCollectionEquality().hash(interopAppendwindowspath) ^
+      const DeepCollectionEquality().hash(systemdEnabled);
 
   @JsonKey(ignore: true)
   @override
@@ -5286,32 +5174,15 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
 
 abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   const factory _WSLConfigurationAdvanced(
-      {String? guiTheme,
-      bool? guiFollowwintheme,
-      bool? interopGuiintegration,
-      bool? interopAudiointegration,
-      bool? interopAdvancedipdetection,
-      bool? motdWslnewsenabled,
-      bool? automountEnabled,
+      {bool? automountEnabled,
       bool? automountMountfstab,
       bool? interopEnabled,
-      bool? interopAppendwindowspath}) = _$_WSLConfigurationAdvanced;
+      bool? interopAppendwindowspath,
+      bool? systemdEnabled}) = _$_WSLConfigurationAdvanced;
 
   factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationAdvanced.fromJson;
 
-  @override
-  String? get guiTheme => throw _privateConstructorUsedError;
-  @override
-  bool? get guiFollowwintheme => throw _privateConstructorUsedError;
-  @override
-  bool? get interopGuiintegration => throw _privateConstructorUsedError;
-  @override
-  bool? get interopAudiointegration => throw _privateConstructorUsedError;
-  @override
-  bool? get interopAdvancedipdetection => throw _privateConstructorUsedError;
-  @override
-  bool? get motdWslnewsenabled => throw _privateConstructorUsedError;
   @override
   bool? get automountEnabled => throw _privateConstructorUsedError;
   @override
@@ -5320,6 +5191,8 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   bool? get interopEnabled => throw _privateConstructorUsedError;
   @override
   bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  @override
+  bool? get systemdEnabled => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>

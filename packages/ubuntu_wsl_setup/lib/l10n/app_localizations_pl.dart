@@ -113,31 +113,16 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperacyjność';
 
   @override
-  String get configurationUILegacyGUIIntegrationTitle => 'Starsza integracja interfejsu graficznego';
+  String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUILegacyGUIIntegrationSubtitle => 'Ta opcja włącza starszą integrację interfejsu graficznego w systemie Windows 10. Wymagny jest serwer X innego dostawcy.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
 
   @override
-  String get configurationUILegacyAudioIntegrationTitle => 'Starsza integracja dźwięku';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUILegacyAudioIntegrationSubtitle => 'Ta opcja włącza starszą integrację dźwięku w systemie Windows 10. Wymagne jest zainstalowanie PulseAudio dla Windows.';
-
-  @override
-  String get configurationUIAdvancedIPDetectionTitle => 'Zaawansowane wykrywanie IP';
-
-  @override
-  String get configurationUIAdvancedIPDetectionSubtitle => 'Ta opcja włącza zaawansowane wykrywanie IP za pośrednictwem adresu IPv4 systemu Windows, który jest bardziej niezawodny w przypadku korzystania z WSL2.\nWymagne jest włączenie interoperacyjności WSL.';
-
-  @override
-  String get configurationUIMessageOfTheDayHeader => 'Wiadomość dnia (MOTD)';
-
-  @override
-  String get configurationUIWSLNewsTitle => 'Aktualności WSL';
-
-  @override
-  String get configurationUIWSLNewsSubtitle => 'Ta opcja włącza kontrolowanie aktualności MOTD. Włączenie jej pozwala zobaczyć MOTD.';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatyczne montowanie';
@@ -153,6 +138,15 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get configurationUIMountFstabSubtitle => 'Określa, czy plik /etc/fstab będzie montowany. Plik konfiguracyjny /etc/fstab zawiera ???';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Enabled';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
   String get setupCompleteTitle => 'Konfiguracja zakończona';

@@ -50,44 +50,6 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
         children: <Widget>[
           Padding(
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-            child: Text(lang.configurationUIInteroperabilityHeader),
-          ),
-          CheckButton(
-            contentPadding: kContentPadding,
-            title: Text(lang.configurationUILegacyGUIIntegrationTitle),
-            subtitle: Text(lang.configurationUILegacyGUIIntegrationSubtitle),
-            value: model.interopGuiintegration,
-            onChanged: (value) => model.interopGuiintegration = value!,
-          ),
-          const SizedBox(height: kContentSpacing),
-          CheckButton(
-            contentPadding: kContentPadding,
-            title: Text(lang.configurationUILegacyAudioIntegrationTitle),
-            subtitle: Text(lang.configurationUILegacyAudioIntegrationSubtitle),
-            value: model.interopAudiointegration,
-            onChanged: (value) => model.interopAudiointegration = value!,
-          ),
-          const SizedBox(height: kContentSpacing),
-          CheckButton(
-            contentPadding: kContentPadding,
-            title: Text(lang.configurationUIAdvancedIPDetectionTitle),
-            subtitle: Text(lang.configurationUIAdvancedIPDetectionSubtitle),
-            value: model.advancedIPDetection,
-            onChanged: (value) => model.advancedIPDetection = value!,
-          ),
-          Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-            child: Text(lang.configurationUIMessageOfTheDayHeader),
-          ),
-          CheckButton(
-            contentPadding: kContentPadding,
-            title: Text(lang.configurationUIWSLNewsTitle),
-            subtitle: Text(lang.configurationUIWSLNewsSubtitle),
-            value: model.motdWSLnewsenabled,
-            onChanged: (value) => model.motdWSLnewsenabled = value!,
-          ),
-          Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.configurationUIAutoMountHeader),
           ),
           CheckButton(
@@ -104,6 +66,39 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             subtitle: Text(lang.configurationUIMountFstabSubtitle),
             value: model.automountMountfstab,
             onChanged: (value) => model.automountMountfstab = value!,
+          ),
+          const SizedBox(height: kContentSpacing),
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.configurationUIInteroperabilityHeader),
+          ),
+          CheckButton(
+            contentPadding: kContentPadding,
+            title: Text(lang.configurationUIInteroperabilityTitle),
+            subtitle: Text(lang.configurationUIInteroperabilitySubtitle),
+            value: model.interopEnabled,
+            onChanged: (value) => model.interopEnabled = value!,
+          ),
+          const SizedBox(height: kContentSpacing),
+          CheckButton(
+            contentPadding: kContentPadding,
+            title: Text(lang.configurationUIInteropAppendWindowsPathTitle),
+            subtitle:
+                Text(lang.configurationUIInteropAppendWindowsPathSubtitle),
+            value: model.interopAppendwindowspath,
+            onChanged: (value) => model.interopAppendwindowspath = value!,
+          ),
+          const SizedBox(height: kContentSpacing),
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.configurationUISystemdHeader),
+          ),
+          CheckButton(
+            contentPadding: kContentPadding,
+            title: Text(lang.configurationUISystemdTitle),
+            subtitle: Text(lang.configurationUISystemdSubtitle),
+            value: model.systemdEnabled,
+            onChanged: (value) => model.systemdEnabled = value!,
           ),
         ],
       ),

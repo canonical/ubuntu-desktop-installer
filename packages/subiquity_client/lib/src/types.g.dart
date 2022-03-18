@@ -490,32 +490,22 @@ Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
 _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
     Map<String, dynamic> json) {
   return _$_WSLConfigurationAdvanced(
-    guiTheme: json['gui_theme'] as String?,
-    guiFollowwintheme: json['gui_followwintheme'] as bool?,
-    interopGuiintegration: json['interop_guiintegration'] as bool?,
-    interopAudiointegration: json['interop_audiointegration'] as bool?,
-    interopAdvancedipdetection: json['interop_advancedipdetection'] as bool?,
-    motdWslnewsenabled: json['motd_wslnewsenabled'] as bool?,
     automountEnabled: json['automount_enabled'] as bool?,
     automountMountfstab: json['automount_mountfstab'] as bool?,
     interopEnabled: json['interop_enabled'] as bool?,
     interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
+    systemdEnabled: json['systemd_enabled'] as bool?,
   );
 }
 
 Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
         _$_WSLConfigurationAdvanced instance) =>
     <String, dynamic>{
-      'gui_theme': instance.guiTheme,
-      'gui_followwintheme': instance.guiFollowwintheme,
-      'interop_guiintegration': instance.interopGuiintegration,
-      'interop_audiointegration': instance.interopAudiointegration,
-      'interop_advancedipdetection': instance.interopAdvancedipdetection,
-      'motd_wslnewsenabled': instance.motdWslnewsenabled,
       'automount_enabled': instance.automountEnabled,
       'automount_mountfstab': instance.automountMountfstab,
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
+      'systemd_enabled': instance.systemdEnabled,
     };
 
 _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
