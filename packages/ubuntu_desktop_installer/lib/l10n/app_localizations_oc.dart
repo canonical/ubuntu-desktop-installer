@@ -626,7 +626,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Rapida e plena de foncionalitats novèlas, la darrièra version d’$RELEASE fa venir l’informatica mai faciala que jamai. Vaquí d’unas novetats de descobrir…';
   }
 
   @override
