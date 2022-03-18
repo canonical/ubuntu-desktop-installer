@@ -35,7 +35,7 @@ class WriteChangesToDiskModel extends ChangeNotifier {
       changes.map((disk) {
         final partitions = disk.partitions?.where((p) => p.preserve == false);
         return MapEntry(
-          disk.copyWith(partitions: partitions?.toList()),
+          disk.copyWith(objects: partitions?.toList()),
           partitions?.toList() ?? [],
         );
       }),

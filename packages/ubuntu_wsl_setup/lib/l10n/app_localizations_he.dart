@@ -101,7 +101,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get advancedSetupResolvConfGenerationSubtitle => 'בחירה מפעילה יצירה מחדש של ‎/etc/resolv.conf עם כל הפעלה.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'שילוב עם מנשק משתמש';
+  String get advancedSetupGUIIntegrationTitle => 'שילוב עם מנשק המשתמש';
 
   @override
   String get advancedSetupGUIIntegrationSubtitle => 'בחירה מפעילה הקמת סביבת DISPLAY אוטומטית. דרוש שרת X מגורם צד־שלישי.';
@@ -157,7 +157,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get setupCompleteUpdate => 'מומלץ להריץ את הפקודה הבאה כדי לעדכן את אובונטו לגירסה העדכנית ביותר:';
+  String get setupCompleteUpdate => 'מומלץ להריץ את הפקודה הבאה כדי לעדכן את אובונטו לגרסה העדכנית ביותר:';
 
   @override
   String get setupCompleteManage => 'אפשר להשתמש בפקודת ה־ubuntuwsl המובנית כדי לנהל את הגדרות ה־WSL שלך:';

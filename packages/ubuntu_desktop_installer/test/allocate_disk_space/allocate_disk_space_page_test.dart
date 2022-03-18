@@ -22,7 +22,7 @@ const testDisks = <Disk>[
   Disk(
     path: '/dev/sda',
     size: 12,
-    partitions: [
+    objects: [
       Partition(
         number: 1,
         size: 11,
@@ -41,7 +41,7 @@ const testDisks = <Disk>[
   Disk(
     path: '/dev/sdb',
     size: 23,
-    partitions: [
+    objects: [
       Partition(
         number: 3,
         size: 33,

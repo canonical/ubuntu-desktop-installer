@@ -262,6 +262,18 @@ void main() {
       expect(response.disks!.first.partitions, isEmpty);
     });
 
+    test('gap', () async {
+      final storage = await _client.getGuidedStorage();
+      expect(storage.disks, isNotEmpty);
+
+      final gaps = storage.disks!.first.objects?.whereType<Gap>();
+      expect(gaps, isNotNull);
+      expect(gaps, hasLength(1));
+
+      expect(gaps!.single.offset, isNonZero);
+      expect(gaps.single.size, isNonZero);
+    });
+
     test('needs root/boot', () async {
       final response = await _client.getStorageV2();
       expect(response.needRoot, isNotNull);

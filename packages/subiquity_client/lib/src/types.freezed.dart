@@ -2649,16 +2649,25 @@ abstract class _OsProber implements OsProber {
       throw _privateConstructorUsedError;
 }
 
-Partition _$PartitionFromJson(Map<String, dynamic> json) {
-  return _Partition.fromJson(json);
+DiskObject _$DiskObjectFromJson(Map<String, dynamic> json) {
+  switch (json['\$type'] as String) {
+    case 'Partition':
+      return Partition.fromJson(json);
+    case 'Gap':
+      return Gap.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
 }
 
 /// @nodoc
-class _$PartitionTearOff {
-  const _$PartitionTearOff();
+class _$DiskObjectTearOff {
+  const _$DiskObjectTearOff();
 
-  _Partition call(
-      {int? size,
+  Partition partition(
+      {int? offset,
+      int? size,
       int? number,
       @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
@@ -2667,7 +2676,8 @@ class _$PartitionTearOff {
       String? format,
       bool? grubDevice,
       OsProber? os}) {
-    return _Partition(
+    return Partition(
+      offset: offset,
       size: size,
       number: number,
       wipe: wipe,
@@ -2680,39 +2690,124 @@ class _$PartitionTearOff {
     );
   }
 
-  Partition fromJson(Map<String, Object> json) {
-    return Partition.fromJson(json);
+  Gap gap({int? offset, int? size}) {
+    return Gap(
+      offset: offset,
+      size: size,
+    );
+  }
+
+  DiskObject fromJson(Map<String, Object> json) {
+    return DiskObject.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Partition = _$PartitionTearOff();
+const $DiskObject = _$DiskObjectTearOff();
 
 /// @nodoc
-mixin _$Partition {
+mixin _$DiskObject {
+  int? get offset => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
-  int? get number => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-  bool? get wipe => throw _privateConstructorUsedError;
-  bool? get preserve => throw _privateConstructorUsedError;
-  List<String>? get annotations => throw _privateConstructorUsedError;
-  String? get mount => throw _privateConstructorUsedError;
-  String? get format => throw _privateConstructorUsedError;
-  bool? get grubDevice => throw _privateConstructorUsedError;
-  OsProber? get os => throw _privateConstructorUsedError;
 
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)
+        partition,
+    required TResult Function(int? offset, int? size) gap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)?
+        partition,
+    TResult Function(int? offset, int? size)? gap,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Partition value) partition,
+    required TResult Function(Gap value) gap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PartitionCopyWith<Partition> get copyWith =>
+  $DiskObjectCopyWith<DiskObject> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PartitionCopyWith<$Res> {
+abstract class $DiskObjectCopyWith<$Res> {
+  factory $DiskObjectCopyWith(
+          DiskObject value, $Res Function(DiskObject) then) =
+      _$DiskObjectCopyWithImpl<$Res>;
+  $Res call({int? offset, int? size});
+}
+
+/// @nodoc
+class _$DiskObjectCopyWithImpl<$Res> implements $DiskObjectCopyWith<$Res> {
+  _$DiskObjectCopyWithImpl(this._value, this._then);
+
+  final DiskObject _value;
+  // ignore: unused_field
+  final $Res Function(DiskObject) _then;
+
+  @override
+  $Res call({
+    Object? offset = freezed,
+    Object? size = freezed,
+  }) {
+    return _then(_value.copyWith(
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $PartitionCopyWith<$Res> implements $DiskObjectCopyWith<$Res> {
   factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
       _$PartitionCopyWithImpl<$Res>;
+  @override
   $Res call(
-      {int? size,
+      {int? offset,
+      int? size,
       int? number,
       @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
@@ -2726,15 +2821,17 @@ abstract class $PartitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
-  _$PartitionCopyWithImpl(this._value, this._then);
+class _$PartitionCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
+    implements $PartitionCopyWith<$Res> {
+  _$PartitionCopyWithImpl(Partition _value, $Res Function(Partition) _then)
+      : super(_value, (v) => _then(v as Partition));
 
-  final Partition _value;
-  // ignore: unused_field
-  final $Res Function(Partition) _then;
+  @override
+  Partition get _value => super._value as Partition;
 
   @override
   $Res call({
+    Object? offset = freezed,
     Object? size = freezed,
     Object? number = freezed,
     Object? wipe = freezed,
@@ -2745,7 +2842,11 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
     Object? grubDevice = freezed,
     Object? os = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(Partition(
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -2798,94 +2899,13 @@ class _$PartitionCopyWithImpl<$Res> implements $PartitionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PartitionCopyWith<$Res> implements $PartitionCopyWith<$Res> {
-  factory _$PartitionCopyWith(
-          _Partition value, $Res Function(_Partition) then) =
-      __$PartitionCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {int? size,
-      int? number,
-      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
-      bool? preserve,
-      List<String>? annotations,
-      String? mount,
-      String? format,
-      bool? grubDevice,
-      OsProber? os});
 
-  @override
-  $OsProberCopyWith<$Res>? get os;
-}
-
-/// @nodoc
-class __$PartitionCopyWithImpl<$Res> extends _$PartitionCopyWithImpl<$Res>
-    implements _$PartitionCopyWith<$Res> {
-  __$PartitionCopyWithImpl(_Partition _value, $Res Function(_Partition) _then)
-      : super(_value, (v) => _then(v as _Partition));
-
-  @override
-  _Partition get _value => super._value as _Partition;
-
-  @override
-  $Res call({
-    Object? size = freezed,
-    Object? number = freezed,
-    Object? wipe = freezed,
-    Object? preserve = freezed,
-    Object? annotations = freezed,
-    Object? mount = freezed,
-    Object? format = freezed,
-    Object? grubDevice = freezed,
-    Object? os = freezed,
-  }) {
-    return _then(_Partition(
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-      number: number == freezed
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      wipe: wipe == freezed
-          ? _value.wipe
-          : wipe // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      preserve: preserve == freezed
-          ? _value.preserve
-          : preserve // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      annotations: annotations == freezed
-          ? _value.annotations
-          : annotations // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mount: mount == freezed
-          ? _value.mount
-          : mount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      format: format == freezed
-          ? _value.format
-          : format // ignore: cast_nullable_to_non_nullable
-              as String?,
-      grubDevice: grubDevice == freezed
-          ? _value.grubDevice
-          : grubDevice // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      os: os == freezed
-          ? _value.os
-          : os // ignore: cast_nullable_to_non_nullable
-              as OsProber?,
-    ));
-  }
-}
-
-/// @nodoc
-
+@FreezedUnionValue('Partition')
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-class _$_Partition implements _Partition {
-  const _$_Partition(
-      {this.size,
+class _$Partition implements Partition {
+  const _$Partition(
+      {this.offset,
+      this.size,
       this.number,
       @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) this.wipe,
       this.preserve,
@@ -2895,9 +2915,11 @@ class _$_Partition implements _Partition {
       this.grubDevice,
       this.os});
 
-  factory _$_Partition.fromJson(Map<String, dynamic> json) =>
-      _$_$_PartitionFromJson(json);
+  factory _$Partition.fromJson(Map<String, dynamic> json) =>
+      _$_$PartitionFromJson(json);
 
+  @override
+  final int? offset;
   @override
   final int? size;
   @override
@@ -2921,13 +2943,15 @@ class _$_Partition implements _Partition {
 
   @override
   String toString() {
-    return 'Partition(size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, os: $os)';
+    return 'DiskObject.partition(offset: $offset, size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, os: $os)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Partition &&
+        (other is Partition &&
+            (identical(other.offset, offset) ||
+                const DeepCollectionEquality().equals(other.offset, offset)) &&
             (identical(other.size, size) ||
                 const DeepCollectionEquality().equals(other.size, size)) &&
             (identical(other.number, number) ||
@@ -2954,6 +2978,7 @@ class _$_Partition implements _Partition {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(offset) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(number) ^
       const DeepCollectionEquality().hash(wipe) ^
@@ -2966,18 +2991,89 @@ class _$_Partition implements _Partition {
 
   @JsonKey(ignore: true)
   @override
-  _$PartitionCopyWith<_Partition> get copyWith =>
-      __$PartitionCopyWithImpl<_Partition>(this, _$identity);
+  $PartitionCopyWith<Partition> get copyWith =>
+      _$PartitionCopyWithImpl<Partition>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)
+        partition,
+    required TResult Function(int? offset, int? size) gap,
+  }) {
+    return partition(offset, size, number, wipe, preserve, annotations, mount,
+        format, grubDevice, os);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)?
+        partition,
+    TResult Function(int? offset, int? size)? gap,
+    required TResult orElse(),
+  }) {
+    if (partition != null) {
+      return partition(offset, size, number, wipe, preserve, annotations, mount,
+          format, grubDevice, os);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Partition value) partition,
+    required TResult Function(Gap value) gap,
+  }) {
+    return partition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+    required TResult orElse(),
+  }) {
+    if (partition != null) {
+      return partition(this);
+    }
+    return orElse();
+  }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PartitionToJson(this);
+    return _$_$PartitionToJson(this)..['\$type'] = 'Partition';
   }
 }
 
-abstract class _Partition implements Partition {
-  const factory _Partition(
-      {int? size,
+abstract class Partition implements DiskObject {
+  const factory Partition(
+      {int? offset,
+      int? size,
       int? number,
       @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
@@ -2985,34 +3081,188 @@ abstract class _Partition implements Partition {
       String? mount,
       String? format,
       bool? grubDevice,
-      OsProber? os}) = _$_Partition;
+      OsProber? os}) = _$Partition;
 
-  factory _Partition.fromJson(Map<String, dynamic> json) =
-      _$_Partition.fromJson;
+  factory Partition.fromJson(Map<String, dynamic> json) = _$Partition.fromJson;
 
+  @override
+  int? get offset => throw _privateConstructorUsedError;
   @override
   int? get size => throw _privateConstructorUsedError;
-  @override
   int? get number => throw _privateConstructorUsedError;
-  @override
   @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
   bool? get wipe => throw _privateConstructorUsedError;
-  @override
   bool? get preserve => throw _privateConstructorUsedError;
-  @override
   List<String>? get annotations => throw _privateConstructorUsedError;
-  @override
   String? get mount => throw _privateConstructorUsedError;
-  @override
   String? get format => throw _privateConstructorUsedError;
-  @override
   bool? get grubDevice => throw _privateConstructorUsedError;
-  @override
   OsProber? get os => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PartitionCopyWith<_Partition> get copyWith =>
+  $PartitionCopyWith<Partition> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GapCopyWith<$Res> implements $DiskObjectCopyWith<$Res> {
+  factory $GapCopyWith(Gap value, $Res Function(Gap) then) =
+      _$GapCopyWithImpl<$Res>;
+  @override
+  $Res call({int? offset, int? size});
+}
+
+/// @nodoc
+class _$GapCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
+    implements $GapCopyWith<$Res> {
+  _$GapCopyWithImpl(Gap _value, $Res Function(Gap) _then)
+      : super(_value, (v) => _then(v as Gap));
+
+  @override
+  Gap get _value => super._value as Gap;
+
+  @override
+  $Res call({
+    Object? offset = freezed,
+    Object? size = freezed,
+  }) {
+    return _then(Gap(
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('Gap')
+class _$Gap implements Gap {
+  const _$Gap({this.offset, this.size});
+
+  factory _$Gap.fromJson(Map<String, dynamic> json) => _$_$GapFromJson(json);
+
+  @override
+  final int? offset;
+  @override
+  final int? size;
+
+  @override
+  String toString() {
+    return 'DiskObject.gap(offset: $offset, size: $size)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is Gap &&
+            (identical(other.offset, offset) ||
+                const DeepCollectionEquality().equals(other.offset, offset)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(offset) ^
+      const DeepCollectionEquality().hash(size);
+
+  @JsonKey(ignore: true)
+  @override
+  $GapCopyWith<Gap> get copyWith => _$GapCopyWithImpl<Gap>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)
+        partition,
+    required TResult Function(int? offset, int? size) gap,
+  }) {
+    return gap(offset, size);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            int? offset,
+            int? size,
+            int? number,
+            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
+                bool? wipe,
+            bool? preserve,
+            List<String>? annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            OsProber? os)?
+        partition,
+    TResult Function(int? offset, int? size)? gap,
+    required TResult orElse(),
+  }) {
+    if (gap != null) {
+      return gap(offset, size);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Partition value) partition,
+    required TResult Function(Gap value) gap,
+  }) {
+    return gap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+    required TResult orElse(),
+  }) {
+    if (gap != null) {
+      return gap(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$GapToJson(this)..['\$type'] = 'Gap';
+  }
+}
+
+abstract class Gap implements DiskObject {
+  const factory Gap({int? offset, int? size}) = _$Gap;
+
+  factory Gap.fromJson(Map<String, dynamic> json) = _$Gap.fromJson;
+
+  @override
+  int? get offset => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $GapCopyWith<Gap> get copyWith => throw _privateConstructorUsedError;
 }
 
 Disk _$DiskFromJson(Map<String, dynamic> json) {
@@ -3030,7 +3280,7 @@ class _$DiskTearOff {
       String? type,
       int? size,
       List<String>? usageLabels,
-      List<Partition>? partitions,
+      @JsonKey(name: 'partitions') List<DiskObject>? objects,
       int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
@@ -3045,7 +3295,7 @@ class _$DiskTearOff {
       type: type,
       size: size,
       usageLabels: usageLabels,
-      partitions: partitions,
+      objects: objects,
       freeForPartitions: freeForPartitions,
       okForGuided: okForGuided,
       ptable: ptable,
@@ -3072,7 +3322,8 @@ mixin _$Disk {
   String? get type => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
   List<String>? get usageLabels => throw _privateConstructorUsedError;
-  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'partitions')
+  List<DiskObject>? get objects => throw _privateConstructorUsedError;
   int? get freeForPartitions => throw _privateConstructorUsedError;
   bool? get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
@@ -3097,7 +3348,7 @@ abstract class $DiskCopyWith<$Res> {
       String? type,
       int? size,
       List<String>? usageLabels,
-      List<Partition>? partitions,
+      @JsonKey(name: 'partitions') List<DiskObject>? objects,
       int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
@@ -3123,7 +3374,7 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
-    Object? partitions = freezed,
+    Object? objects = freezed,
     Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
@@ -3157,10 +3408,10 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      partitions: partitions == freezed
-          ? _value.partitions
-          : partitions // ignore: cast_nullable_to_non_nullable
-              as List<Partition>?,
+      objects: objects == freezed
+          ? _value.objects
+          : objects // ignore: cast_nullable_to_non_nullable
+              as List<DiskObject>?,
       freeForPartitions: freeForPartitions == freezed
           ? _value.freeForPartitions
           : freeForPartitions // ignore: cast_nullable_to_non_nullable
@@ -3205,7 +3456,7 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       String? type,
       int? size,
       List<String>? usageLabels,
-      List<Partition>? partitions,
+      @JsonKey(name: 'partitions') List<DiskObject>? objects,
       int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
@@ -3232,7 +3483,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
-    Object? partitions = freezed,
+    Object? objects = freezed,
     Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
@@ -3266,10 +3517,10 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      partitions: partitions == freezed
-          ? _value.partitions
-          : partitions // ignore: cast_nullable_to_non_nullable
-              as List<Partition>?,
+      objects: objects == freezed
+          ? _value.objects
+          : objects // ignore: cast_nullable_to_non_nullable
+              as List<DiskObject>?,
       freeForPartitions: freeForPartitions == freezed
           ? _value.freeForPartitions
           : freeForPartitions // ignore: cast_nullable_to_non_nullable
@@ -3305,7 +3556,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-class _$_Disk implements _Disk {
+class _$_Disk extends _Disk {
   const _$_Disk(
       {this.id,
       this.label,
@@ -3313,14 +3564,15 @@ class _$_Disk implements _Disk {
       this.type,
       this.size,
       this.usageLabels,
-      this.partitions,
+      @JsonKey(name: 'partitions') this.objects,
       this.freeForPartitions,
       this.okForGuided,
       this.ptable,
       this.preserve,
       this.bootDevice,
       this.model,
-      this.vendor});
+      this.vendor})
+      : super._();
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -3338,7 +3590,8 @@ class _$_Disk implements _Disk {
   @override
   final List<String>? usageLabels;
   @override
-  final List<Partition>? partitions;
+  @JsonKey(name: 'partitions')
+  final List<DiskObject>? objects;
   @override
   final int? freeForPartitions;
   @override
@@ -3356,7 +3609,7 @@ class _$_Disk implements _Disk {
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, objects: $objects, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
   }
 
   @override
@@ -3376,9 +3629,9 @@ class _$_Disk implements _Disk {
             (identical(other.usageLabels, usageLabels) ||
                 const DeepCollectionEquality()
                     .equals(other.usageLabels, usageLabels)) &&
-            (identical(other.partitions, partitions) ||
+            (identical(other.objects, objects) ||
                 const DeepCollectionEquality()
-                    .equals(other.partitions, partitions)) &&
+                    .equals(other.objects, objects)) &&
             (identical(other.freeForPartitions, freeForPartitions) ||
                 const DeepCollectionEquality()
                     .equals(other.freeForPartitions, freeForPartitions)) &&
@@ -3408,7 +3661,7 @@ class _$_Disk implements _Disk {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
-      const DeepCollectionEquality().hash(partitions) ^
+      const DeepCollectionEquality().hash(objects) ^
       const DeepCollectionEquality().hash(freeForPartitions) ^
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
@@ -3428,7 +3681,7 @@ class _$_Disk implements _Disk {
   }
 }
 
-abstract class _Disk implements Disk {
+abstract class _Disk extends Disk {
   const factory _Disk(
       {String? id,
       String? label,
@@ -3436,7 +3689,7 @@ abstract class _Disk implements Disk {
       String? type,
       int? size,
       List<String>? usageLabels,
-      List<Partition>? partitions,
+      @JsonKey(name: 'partitions') List<DiskObject>? objects,
       int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
@@ -3444,6 +3697,7 @@ abstract class _Disk implements Disk {
       bool? bootDevice,
       String? model,
       String? vendor}) = _$_Disk;
+  const _Disk._() : super._();
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -3460,7 +3714,8 @@ abstract class _Disk implements Disk {
   @override
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   @override
-  List<Partition>? get partitions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'partitions')
+  List<DiskObject>? get objects => throw _privateConstructorUsedError;
   @override
   int? get freeForPartitions => throw _privateConstructorUsedError;
   @override
