@@ -8,7 +8,7 @@ class AppLocalizationsHe extends AppLocalizations {
   AppLocalizationsHe([String locale = 'he']) : super(locale);
 
   @override
-  String get appTitle => 'מתקין אובונטו לשולחן עבודה';
+  String get appTitle => 'אשף התקנת אובונטו לשולחן עבודה';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -40,10 +40,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get welcome => 'ברוך בואך';
 
   @override
-  String get welcomeHeader => 'בחירת השפה שלך:';
+  String get welcomeHeader => 'נא לבחור שפה:';
 
   @override
-  String get tryOrInstallPageTitle => 'לנסות להתקין';
+  String get tryOrInstallPageTitle => 'להתנסות או להתקין';
 
   @override
   String get repairInstallation => 'תיקון התקנה';
@@ -245,7 +245,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'במחשב זה מותקן כרגע $os. מה לעשות?';
+    return 'במחשב זה מותקנת כרגע $os. מה לעשות?';
   }
 
   @override
@@ -611,7 +611,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get restartIntoWindows => 'הפעלה מחדש אל Windows';
 
   @override
-  String get whereAreYouPageTitle => 'עם מי יש לי העונג?';
+  String get whereAreYouPageTitle => 'מה מיקומך?';
 
   @override
   String get whereAreYouLocationLabel => 'מיקום';
@@ -706,7 +706,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'בלבה של הפילוסופיה שמאחורי $RELEASE קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגדלי כתב מקל $RELEASE על השימוש במחשב - ללא תלות בזהות או במיקום שלך.';
+    return 'בלב הפילוסופיה שמאחורי $RELEASE קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגודלי כתב, קל יותר להשתמש במחשב עם $RELEASE - ללא תלות בזהות או במיקום.';
   }
 
   @override

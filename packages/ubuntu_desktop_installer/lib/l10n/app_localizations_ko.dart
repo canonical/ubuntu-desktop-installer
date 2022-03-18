@@ -250,7 +250,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return '이 컴퓨터에 이미 $os1 및 $os2이(가) 설치되어 있습니다. 어떻게 하시겠습니까?';
   }
 
   @override
@@ -706,7 +706,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return '$RELEASE의 철학의 중심에는 컴퓨팅은 모두를 위한 것이라는 믿음이 있습니다. 고급 접근성 도구와 언어, 색상 및 글자 크기 변경 옵션으로, $RELEASE는 누구든 어디에서든 컴퓨팅을 쉽게 합니다.';
   }
 
   @override
@@ -726,14 +726,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return '공식 문서에는 $RELEASE에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인</a>과 독에 있는 도움말 아이콘으로 이용하실 수 있습니다.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a>에서 질문을 하거나 이미 답변된 질문 모음에서 검색할 수 있습니다. 모국어 지원은 <a href=\"https://loco.ubuntu.com/teams\">로컬 커뮤니티 팀</a>에서 받아볼 수 있습니다.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => '다른 유용한 리소스를 찾아보려면, <a href=\"https://www.ubuntu.com/support/community-support\">커뮤니티 지원</a> 또는<a href=\"https://www.ubuntu.com/support\">상용 지원</a>을 방문하십시오.';
 
   @override
   String get includedSoftware => '포함된 소프트웨어';
