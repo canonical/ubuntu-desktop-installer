@@ -557,5 +557,12 @@
     }
   },
   "whoAreYouPageShowPassword": "Afichar lo senhal",
-  "@whoAreYouPageShowPassword": {}
+  "@whoAreYouPageShowPassword": {},
+  "welcomeSlideDescription": "Rapida e plena de foncionalitats novèlas, la darrièra version d’{RELEASE} fa venir l’informatica mai faciala que jamai. Vaquí d’unas novetats de descobrir…",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
