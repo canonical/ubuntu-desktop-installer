@@ -216,10 +216,12 @@ bool? _wipeFromString(String? value) =>
 String? _wipeToString(bool? value) =>
     value != null && value == true ? 'superblock' : null;
 
-@freezed
-class Partition with _$Partition {
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class DiskObject with _$DiskObject {
+  @FreezedUnionValue('Partition')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-  const factory Partition({
+  const factory DiskObject.partition({
+    int? offset,
     int? size,
     int? number,
     @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
@@ -229,14 +231,22 @@ class Partition with _$Partition {
     String? format,
     bool? grubDevice,
     OsProber? os,
-  }) = _Partition;
+  }) = Partition;
 
-  factory Partition.fromJson(Map<String, dynamic> json) =>
-      _$PartitionFromJson(json);
+  @FreezedUnionValue('Gap')
+  const factory DiskObject.gap({
+    int? offset,
+    int? size,
+  }) = Gap;
+
+  factory DiskObject.fromJson(Map<String, dynamic> json) =>
+      _$DiskObjectFromJson(json);
 }
 
 @freezed
 class Disk with _$Disk {
+  const Disk._();
+
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Disk({
     String? id,
@@ -245,7 +255,7 @@ class Disk with _$Disk {
     String? type,
     int? size,
     List<String>? usageLabels,
-    List<Partition>? partitions,
+    @JsonKey(name: 'partitions') List<DiskObject>? objects,
     int? freeForPartitions,
     bool? okForGuided,
     String? ptable,
@@ -254,6 +264,8 @@ class Disk with _$Disk {
     String? model,
     String? vendor,
   }) = _Disk;
+
+  List<Partition>? get partitions => objects?.whereType<Partition>().toList();
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
 }

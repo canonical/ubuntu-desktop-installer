@@ -136,6 +136,7 @@ void main() {
 
   test('partition', () {
     const partition = Partition(
+      offset: 678,
       size: 1,
       number: 2,
       preserve: false,
@@ -153,6 +154,7 @@ void main() {
       ),
     );
     const json = <String, dynamic>{
+      'offset': 678,
       'size': 1,
       'number': 2,
       'preserve': false,
@@ -168,9 +170,21 @@ void main() {
         'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
         'version': '11',
       },
+      '\$type': 'Partition',
     };
     expect(partition.toJson(), equals(json));
     expect(Partition.fromJson(json), partition);
+  });
+
+  test('gap', () {
+    const gap = Gap(offset: 123, size: 456);
+    const json = <String, dynamic>{
+      'offset': 123,
+      'size': 456,
+      '\$type': 'Gap',
+    };
+    expect(gap.toJson(), equals(json));
+    expect(Gap.fromJson(json), gap);
   });
 
   test('disk', () {
@@ -183,7 +197,7 @@ void main() {
       type: 'test-type',
       size: 123,
       usageLabels: ['test', 'usage', 'label'],
-      partitions: [p1, p2],
+      objects: [p1, p2],
       freeForPartitions: 456,
       okForGuided: true,
       ptable: 'tst',

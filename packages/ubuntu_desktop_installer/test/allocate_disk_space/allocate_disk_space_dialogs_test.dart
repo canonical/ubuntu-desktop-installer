@@ -72,7 +72,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final testDisk = Disk(freeForPartitions: 1000000, partitions: [
+    final testDisk = Disk(freeForPartitions: 1000000, objects: [
       Partition(
         number: 1,
         format: 'ext4',

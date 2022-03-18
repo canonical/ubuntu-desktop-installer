@@ -10,14 +10,14 @@ import 'allocate_disk_space_model_test.mocks.dart';
 @GenerateMocks([DiskStorageService])
 void main() {
   const testDisks = <Disk>[
-    Disk(id: 'a', partitions: [
+    Disk(id: 'a', objects: [
       Partition(number: 1),
     ]),
     Disk(
       id: 'b',
       bootDevice: true,
       preserve: true,
-      partitions: [
+      objects: [
         Partition(number: 1),
         Partition(number: 2, grubDevice: true),
       ],
@@ -181,14 +181,14 @@ void main() {
   test('can add/remove/edit/wipe/reformat', () async {
     final emptyDisk = Disk(freeForPartitions: 1);
     final fullDisk = Disk(freeForPartitions: 0);
-    final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
+    final normalDisk = emptyDisk.copyWith(objects: [Partition()]);
     final preservedDisk = emptyDisk.copyWith(preserve: true);
     final mountedPartition =
-        emptyDisk.copyWith(partitions: [Partition(mount: '/')]);
+        emptyDisk.copyWith(objects: [Partition(mount: '/')]);
     final preservedPartition =
-        emptyDisk.copyWith(partitions: [Partition(preserve: true)]);
+        emptyDisk.copyWith(objects: [Partition(preserve: true)]);
     final mountedPreservedPartition =
-        emptyDisk.copyWith(partitions: [Partition(preserve: true, mount: '/')]);
+        emptyDisk.copyWith(objects: [Partition(preserve: true, mount: '/')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -314,7 +314,7 @@ void main() {
   test('update selection', () async {
     Disk testDisk(int partitions) {
       return Disk(
-        partitions: List.generate(
+        objects: List.generate(
           partitions,
           (index) => Partition(number: index),
         ),
