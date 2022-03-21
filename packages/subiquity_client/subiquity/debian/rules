@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+export PYBUILD_DISABLE_python2=1
+export PYBUILD_INSTALL_DIR=usr/share/subiquity/
+export PYBUILD_INSTALL_ARGS_python3=--install-lib=usr/share/subiquity/ \
+       --install-data=usr/ \
+       --no-compile -O0
+export PYBUILD_DESTDIR=debian/tmp/
+export PYBUILD_OPTION="-v"
+
+%:
+	dh $@ --with python3,systemd --buildsystem=pybuild
+
+override_dh_auto_clean:
+	rm -f .subiquity/subiquity-debug.log installer/geninstaller.log
+	rm -rf probert/
+	python3 setup.py build_i18n
+	dh_auto_clean
+
+override_dh_install:
+	dh_install
+
+override_dh_python3:
+	dh_python3 --ignore-shebangs usr/share/subiquity/
+
+override_dh_installinit:
+	dh_installsystemd --no-start --name=console-conf@
+	dh_installsystemd --no-start --name=serial-console-conf@
+	mkdir $(CURDIR)/debian/console-conf/lib/systemd/system/getty@.service.d/
+	install -m 0644 $(CURDIR)/debian/console-conf.conf $(CURDIR)/debian/console-conf/lib/systemd/system/getty@.service.d/
+	mkdir $(CURDIR)/debian/console-conf/lib/systemd/system/serial-getty@.service.d/
+	install -m 0644 $(CURDIR)/debian/console-conf-serial.conf $(CURDIR)/debian/console-conf/lib/systemd/system/serial-getty@.service.d/
+
+override_dh_auto_test:
+	@echo "No tests."

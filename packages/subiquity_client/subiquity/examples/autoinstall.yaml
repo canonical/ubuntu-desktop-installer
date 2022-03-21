@@ -1,0 +1,69 @@
+version: 1
+early-commands:
+  - echo a
+  - sleep 1
+  - echo a
+locale: en_GB.UTF-8
+refresh-installer:
+  update: yes
+  channel: edge
+network:
+  version: 2
+  ethernets:
+    all-eth:
+      match:
+        name: "en*"
+      dhcp6: yes
+debconf-selections: eek
+apt:
+  primary:
+    - arches: [default]
+      uri: "http://mymirror.local/repository/Apt/ubuntu/"
+  disable_components:
+    - non-free
+    - restricted
+  preferences:
+    - {package: "python3-*", pin: "origin *ubuntu.com*", pin-priority: 200}
+    - {package: "python-*", pin: "origin *ubuntu.com*", pin-priority: -1}
+packages:
+  - package1
+  - package2
+late-commands:
+  - echo late
+  - sleep 1
+  - echo late
+error-commands:
+  - echo OH NOES
+  - sleep 5
+  - echo OH WELL
+keyboard:
+  layout: gb
+identity:
+  realname: ''
+  username: ubuntu
+  password: '$6$wdAcoXrU039hKYPd$508Qvbe7ObUnxoj15DRCkzC3qO7edjH0VV7BPNRDYK4QR8ofJaEEF2heacn0QgD.f8pO8SNp83XNdWG6tocBM1'
+  hostname: ubuntu
+snaps:
+  - name: etcd
+    channel: 3.2/stable
+updates: all
+timezone: Pacific/Guam
+ubuntu-pro:
+  # Token that passes the basic format checking but is invalid (i.e. contains more than 16 bytes of random data)
+  token: C1NWcZTHLteJXGVMM6YhvHDpGrhyy7
+storage:
+  config:
+  - {type: disk, ptable: gpt, path: /dev/vdb, wipe: superblock, preserve: false, grub_device: true, id: disk-1}
+  - {type: disk, ptable: gpt, path: /dev/vdc, wipe: superblock, preserve: false, grub_device: true, id: disk-2}
+  - {type: partition, device: disk-1, size: 1M, wipe: superblock, flag: bios_grub, number: 1, preserve: false, id: partition-grub-1}
+  - {type: partition, device: disk-2, size: 1M, wipe: superblock, flag: bios_grub, number: 1, preserve: false, id: partition-grub-2}
+  - {type: partition, device: disk-1, size: 1G, wipe: superblock, number: 2, preserve: false, id: partition-boot-1}
+  - {type: partition, device: disk-2, size: 1G, wipe: superblock, number: 2, preserve: false, id: partition-boot-2}
+  - {type: partition, device: disk-1, size: 17%, wipe: superblock, number: 3, preserve: false, id: partition-system-1}
+  - {type: partition, device: disk-2, size: 17%, wipe: superblock, number: 3, preserve: false, id: partition-system-2}
+  - {type: raid, name: md0, raidlevel: raid1, devices: [partition-boot-1, partition-boot-2], preserve: false, id: raid-boot}
+  - {type: raid, name: md1, raidlevel: raid1, devices: [partition-system-1, partition-system-2], preserve: false, id: raid-system}
+  - {type: format, fstype: ext4, volume: raid-boot, preserve: false, id: format-boot}
+  - {type: format, fstype: ext4, volume: raid-system, preserve: false, id: format-system}
+  - {type: mount, device: format-system, path: /, id: mount-system}
+  - {type: mount, device: format-boot, path: /boot, id: mount-boot, options: 'errors=remount-ro'}

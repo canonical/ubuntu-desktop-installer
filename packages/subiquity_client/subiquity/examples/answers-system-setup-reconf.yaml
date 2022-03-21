@@ -1,0 +1,13 @@
+WSLConfigurationBase:
+  automount_root: '/custom_mnt_path'
+  automount_options: 'metadata'
+  network_generatehosts: false
+  network_generateresolvconf: false
+WSLConfigurationAdvanced:
+  interop_enabled: false
+  interop_appendwindowspath: false
+  automount_enabled: false
+  automount_mountfstab: false
+  systemd_enabled: true
+Summary:
+  reboot: yes

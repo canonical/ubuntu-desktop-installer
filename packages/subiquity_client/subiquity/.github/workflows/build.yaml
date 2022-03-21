@@ -1,0 +1,24 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - ubuntu-daily:focal
+          - ubuntu-daily:impish
+          - ubuntu-daily:jammy
+    steps:
+    - uses: actions/checkout@v2
+    - name: run
+      run: sudo ./scripts/test-in-lxd.sh ${{ matrix.image }} "make check"
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: lint
+      run: sudo ./scripts/test-in-lxd.sh ubuntu-daily:focal "make lint"
