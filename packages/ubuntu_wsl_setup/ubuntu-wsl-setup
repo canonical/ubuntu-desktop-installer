@@ -584,6 +584,7 @@ PYTHONPATH=$SNAP/lib/python3.8/site-packages:$PYTHONPATH
 PYTHONPATH=$SNAP/bin/subiquity/:$PYTHONPATH
 export PYTHONPATH
 export PYTHON=$SNAP/usr/bin/python3.8
+export SNAP_PYTHON=$PYTHON
 # ensure curtin points at PYTHON
 export PY3OR2_PYTHON=$PYTHON
 # base directory for subiquity to locate resources
