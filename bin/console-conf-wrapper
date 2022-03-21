@@ -1,0 +1,88 @@
+#!/bin/bash
+set -e
+
+trap true HUP INT QUIT TSTP
+echo_on () { stty echo; }
+trap echo_on EXIT
+
+# agetty only sets ICRNL if it has read the username and seen whether
+# it was terminated by CR or NL. We pass -n to agetty so that hasn't
+# happened and need to force it on. Yay UNIX!
+stty icrnl -echo
+
+if [ -e /run/snapd-recovery-chooser-triggered ]; then
+    # make sure the chooser binary is there to avoid getting into an awkward
+    # state and locking out the user
+    if [ -x /usr/lib/snapd/snap-recovery-chooser ]; then
+        # when recovery chooser is invoked it takes over the terminal
+        exec /usr/lib/snapd/snap-recovery-chooser
+    fi
+    if [ -e /var/lib/console-conf/complete ]; then
+        exit 0
+    fi
+fi
+
+if grep -q 'snapd_recovery_mode=install' /proc/cmdline ; then
+    echo "Installing the system, please wait for reboot"
+    # XXX: replace with something more user friendly after the beta?
+    journalctl -u snapd.service -f
+    sleep infinity
+fi
+
+if [ "$(snap managed)" = "true" ]; then
+    # check if we have extrausers that have no password set
+    if grep -qE '^[-a-z0-9+.-_]+:x:' /var/lib/extrausers/passwd && ! grep -qE '^[-a-z0-9+.-_]+:\$[0-9]+\$.*:' /var/lib/extrausers/shadow; then
+        tty=$(tty)
+        tty=$(echo ${tty#/dev/} | tr '/' '-')
+        readargs=()
+        filepath="/run/console-conf/login-details-${tty}.txt"
+        if [ ! -f ${filepath} ]; then
+            mkdir -p /run/console-conf
+            set +e
+            /usr/share/subiquity/console-conf-write-login-details > ${filepath}.tmp
+            rval=$?
+            set -e
+            # A exit code of 2 from console-conf-write-login-details
+            # means there are no scope global IP addresses. It will
+            # have printed a message saying that you can't log in
+            # until the device gets an IP address so we display that
+            # but check every 5 seconds if an ip address has appeared.
+            if [ $rval -eq 0 ]; then
+                mv ${filepath}.tmp ${filepath}
+            elif [ $rval -eq 2 ]; then
+                mv ${filepath}.tmp ${filepath}.noip
+                filepath=${filepath}.noip
+                readargs=(-t 5)
+            else
+                exit $rval
+            fi
+        fi
+        cat $filepath
+        set +e
+        while :; do
+            read "${readargs[@]}" REPLY
+            if [ $? -le 128 ]; then
+                # If we didn't time out, re-display everything.
+                exit 0
+            fi
+            if ip addr show | grep -qE "scope global"; then
+                # If we timed out, but it appears that we may now have
+                # an IP address, re-display everything.
+                exit 0
+            fi
+        done
+    else
+        touch /var/lib/console-conf/complete
+    fi
+    exit 0
+fi
+
+cat /usr/share/subiquity/console-conf-wait
+read REPLY
+# start the console-conf routine in snapd to delay any new refreshes, and wait
+# for current refreshes to complete, this will print off messages if there are
+# on-going refreshes
+if snap routine console-conf-start --help >/dev/null 2>/dev/null; then
+    snap routine console-conf-start
+fi
+exec console-conf "$@"

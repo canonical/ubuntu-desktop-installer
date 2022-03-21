@@ -1,0 +1,59 @@
+Source: subiquity
+Section: admin
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9.20160709),
+               dh-python,
+               git,
+               iso-codes,
+               python3,
+               python3-attr,
+               python3-distutils-extra,
+               python3-setuptools,
+               python3-yaml
+Standards-Version: 4.3.0
+Homepage: https://github.com/canonical/subiquity
+Vcs-Browser: https://github.com/canonical/subiquity
+Vcs-Git: https://github.com/canonical/subiquity.git
+XS-Ubuntu-Use-Langpack: yes
+
+Package: subiquitycore
+Architecture: all
+Depends: probert-network,
+         python3-urwid (>= 1.2.1),
+         python3-attr,
+         python3-yaml,
+         python3-requests,
+         python3-requests-unixsocket,
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Ubuntu Server Installer - core libraries
+ SUbiquity is an installer system for servers, embedded devices and desktops
+ or laptops meant to build systems as quickly as possible for users to reach
+ a point where their system is usable.
+ .
+ By default, subiquity provides a "first boot" experience that allows users
+ to do initial system configuration such as adding users and login settings,
+ along with doing basic network configuration. It can also be used to build
+ a new system from the ground up, partitioning and copying a disk image to
+ the storage device selected by the user.
+ .
+ This package provides the installer routines for bootstrapping a system
+ with the Subiquity the server installer UI.
+
+Package: console-conf
+Architecture: all
+Depends: python3, subiquitycore, ${misc:Depends}, ${python3:Depends}
+Description: Ubuntu Core Pre-Ownership Configurator
+ SUbiquity is an installer system for servers, embedded devices and desktops
+ or laptops meant to build systems as quickly as possible for users to reach
+ a point where their system is usable.
+ .
+ By default, subiquity provides a "first boot" experience that allows users
+ to do initial system configuration such as adding users and login settings,
+ along with doing basic network configuration. It can also be used to build
+ a new system from the ground up, partitioning and copying a disk image to
+ the storage device selected by the user.
+ .
+ This package provides the setup routines for pre-ownership configuration of
+ a system.

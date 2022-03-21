@@ -1,0 +1,417 @@
+subiquity (20.04.1+git45g5f9fae19) focal; urgency=medium
+
+  * Upload subquity snapshot with reverted consoleconf patch.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 20 Apr 2020 15:31:39 +0100
+
+subiquity (20.03.3+git147gb34aeda0) focal; urgency=medium
+
+  * Upload subiquity snapshot with newer translations and consoleconf.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 09 Apr 2020 14:04:18 +0100
+
+subiquity (20.03.3+git107gb7ae4d06) focal; urgency=medium
+
+  * Upload subiqutiy snapshot with newer translations and consoleconf.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 06 Apr 2020 17:13:49 +0100
+
+subiquity (19.12.2+git106g3d9374ad) focal; urgency=medium
+
+  * Upload subiquity snapshot with newer translations.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 05 Mar 2020 09:49:30 +0000
+
+subiquity (19.12.1.1+git71gea8d463f) focal; urgency=medium
+
+  * Upload subiquity snapshot to unbreak console-conf on core20.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 16 Dec 2019 20:48:25 +0000
+
+subiquity (19.12.1.1) focal; urgency=medium
+
+  * Drop crufty .deb packages from the source package build.  LP: #1855727.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 12 Dec 2019 11:16:22 -0800
+
+subiquity (19.08.1.4) eoan; urgency=medium
+
+  * Bugfixes from master.
+  * Switch dependencies from probert, to probert-storage and
+    probert-network as needed. Reduces dependencies in core20 snap.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 06 Sep 2019 12:18:27 +0100
+
+subiquity (19.08.1.3) eoan; urgency=medium
+
+  * Move python3-attr to subiquitycore package, as it is used by
+    console-conf too.
+  * Unbreak console-conf.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 07 Aug 2019 17:27:04 +0100
+
+subiquity (19.08.1.2) eoan; urgency=medium
+
+  * Allow starting subiquity/console-conf without translations.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 07 Aug 2019 15:58:46 +0100
+
+subiquity (19.08.1) eoan; urgency=medium
+
+  * Fix up debian packaging:
+    - generate .rtupdate in all the required packages
+    - install .egg-info directory for scripts to work
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 06 Aug 2019 13:36:02 +0100
+
+subiquity (19.06.1) eoan; urgency=medium
+
+  * Upgrade consoleconf in Ubuntu archive with i18n support and many other
+    improvements since the last archive upload.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 25 Jun 2019 10:14:53 +0100
+
+subiquity (0.0.29) zesty; urgency=medium
+
+  * Fix a crash when widgets disappear (e.g. when a NIC is unplugged). 
+    (LP: #1667829)
+  * Run subiquity on the serial console. (LP: #1660194)
+  * Various improvements in wording and layout.
+  * Allow a filesytem to be formatted but not mounted.
+  * Rewrite the filesystem model code.
+  * Change the geninstaller script to use netplan for network config.
+  * Actually use the network config the user provides in the installed system.
+  * Allow the gateway to be omitted when manually configuring an interface.
+  * Make sure that timing out when waiting for a default route works properly.
+    (LP: #1672803)
+  * Make sure WPA PSK is between 8 and 63 characters long.
+  * Add a confirmation dialog before writing data to disk.
+  * Fix crash on startup of a configured Ubuntu Core system with no IP address.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Wed, 29 Mar 2017 11:09:03 +1300
+
+subiquity (0.0.28) zesty; urgency=medium
+
+  * Update to cope with changes in probert 0.0.14. 
+  * Rewrite Ubuntu Core login screen after feedback.
+  * Only suggest scope global addresses for logging in via SSH.
+    (LP: #1664371)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 17 Feb 2017 15:14:13 +1300
+
+subiquity (0.0.27) zesty; urgency=medium
+
+  * Many fixes to get subiquity operational again.
+  * Fix header of WIFI config screen (LP: #1651119)
+  * Fix partion size rounding to correctly round to 1M boundaries, not 1G.
+  * Improve widget used to select filesystem type. (LP: #1654387)
+  * Add flag to geninstaller to install local subiquity. (LP: #1654386)
+  * Do not say a netdev is not configured when there is no configuration. 
+    (LP: #1654381)
+  * Make a cleaner separation between console-conf and subiquity code.
+  * Remove lots of unused code.
+  * Make installprogress controller (the code that drives curtin) more event
+    driven, removing polling and the dependency on python3-tornado.
+  * Make the curtin log viewer much more intuitive. (LP: #1654390)
+  * Rearrange subiquity's systemd units to allow running a root shell for
+    debugging on tty's other than tty1. (LP: #1654085)
+  * Do not create an ubuntu user in the installer or in the installed system.
+    (LP: #1659170)
+  * Recommend some common mount points when creating a partition.
+  * Simplify Makefile and README.
+  * Simplify geninstaller script a little.
+  * Add proper support for tab-cycling (i.e. tab when the last selectable
+    widget is selected now selects the first). (LP: #1660193)
+  * Make the way input validation is done more consistent and immediate.
+  * Make shift-tab work (i.e. go backwards, not forwards) in the linux console.
+  * Move help to overlay views triggered by [?] widgets.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 09 Jan 2017 21:59:32 +1300
+
+subiquity (0.0.26) zesty; urgency=medium
+
+  * Disable unit restart rate limiting in console-conf service files.
+    (LP: #1650091) 
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 15 Dec 2016 20:51:21 +1300
+
+subiquity (0.0.25) zesty; urgency=medium
+
+  * Allow manual configuration of IPv6. (LP: #1644232)
+  * Make message after configuration is done friendlier. (LP: #1643930)
+  * Start to repair subiquity-tui.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 15 Dec 2016 14:18:41 +1300
+subiquity (0.0.24.1) zesty; urgency=medium
+
+  * Fix crash when an interface has more than one IP address of the same
+    family.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 11 Nov 2016 11:30:08 +1300
+
+subiquity (0.0.24) zesty; urgency=medium
+
+  * Rework network model and UI significantly, using rtnetlink nl80211 events
+    to provide a live view of the state of the network as it changes. 
+    (LP: #1627031, #1624322, #1637153)
+  * Show friendly message instead of getty when only ssh login is possible.
+    (LP: #1639543)
+  * Hide keypresses while in the "press enter to configure" screen.
+    (LP: #1639917)
+  * Give a hint on how to create a store account. (LP: #1639799)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 07 Nov 2016 16:43:06 +1300
+
+subiquity (0.0.23) zesty; urgency=medium
+
+  * Redact wifi password from log file more thoroughly. (LP: #1636421, again)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 28 Oct 2016 13:32:44 +1300
+
+subiquity (0.0.22) zesty; urgency=medium
+
+  * Allow + and = in email addresses. (LP: #1636891)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 27 Oct 2016 09:51:30 +1300
+
+subiquity (0.0.21) zesty; urgency=medium
+
+  * Remove setting of umask, which broke configuring wifi. (LP: #1636419)
+  * Redact wifi password from log file. (LP: #1636421)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Wed, 26 Oct 2016 11:46:01 +1300
+
+subiquity (0.0.20) zesty; urgency=medium
+
+  [ Michael Vogt ]
+  * Update code to follow latest `snap managed` API.
+
+  [ Michael Hudson-Doyle ]
+  * Render gateway4/gateway6 in network config.
+  * Render nameservers in network config.
+  * Various permission fixes on log and result files.
+  * Do not add empty strings to nameservers or search_domains
+  * Make sure selecting dhcp after manual configuration clears out gateway
+    and nameserver config.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Thu, 20 Oct 2016 18:34:57 -0400
+
+subiquity (0.0.19) yakkety; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Code cleanups and refactoring.
+  * console-conf: do nothing if a snap system is managed.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Wed, 05 Oct 2016 13:45:37 -0400
+
+subiquity (0.0.18) yakkety; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Fix incorrect UI strings and padding.
+  * Enable better timestamps in logging.
+
+  [ Mathieu Trudel-Lapierre ]
+  * Don't render wireless interfaces if they have no DHCP or static addresses
+    configured, otherwise netplan might expect a SSID to go with it.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Fri, 23 Sep 2016 15:46:55 -0400
+
+subiquity (0.0.17~xenial) xenial; urgency=medium
+
+  * Use console-conf on the serial line again, which means that the "Press
+    enter to configure" message actually appears. (LP: #1621142)
+  * Do not write any config for a wlan device that has not been configured
+    with an ESSID.
+  * Avoid a traceback in BackgroundProcess.cancel.
+  * Mark firstboot complete as soon as we've called create-user.
+  * Indicate if a wired connection is connected or not. (LP: #1623897)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 20 Sep 2016 13:14:03 +1200
+
+subiquity (0.0.16~xenial) xenial; urgency=medium
+
+  * Prevent ESC from leaving the final screen. (LP: #1621339)
+  * Enter in the email address widget submits the page. (LP: #1621304)
+  * Add a basic UI for entering WLAN configuration. (LP: #1621147)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 12 Sep 2016 21:19:49 +1200
+
+subiquity (0.0.15~xenial~2) xenial; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Clean up systemd jobs to allow console-conf to restart instantly when killed.
+
+  [ Mathieu Trudel-Lapierre ]
+  * Ignore sit devices.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 01 Sep 2016 22:35:01 +1200
+
+subiquity (0.0.14) yakkety; urgency=medium
+
+  * bin/console-conf-tui: drop requirement for /var/log/syslog to be
+    readable. We don't actually go read it.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Wed, 31 Aug 2016 16:22:36 -0400
+
+subiquity (0.0.13) yakkety; urgency=medium
+
+  [ Mathieu Trudel-Lapierre ]
+  * bin/console-conf-wait: add an issue file that agetty can show on screen
+    while waiting for user input. This is used directly for serial.
+  * debian/console-conf.*.service: configure agetty to wait for user input
+    before running our login program (console-conf), and display our issue
+    file in the meantime. Always clear the screen, so that the issue text
+    isn't obscured by other line noise.
+  * debian/console-conf.serial-console-conf@.service: pass --serial as an
+    explicit login-program option to avoid it being seen as a parameter to
+    agetty.
+  * debian/console-conf-wrapper: display the contents of our issue file
+    instead of a hard-coded string.
+
+  [ Steve Langasek ]
+  * debian/console-conf-wrapper: trap various signals in our shell script,
+    as they should be in console-conf itself.
+
+  [ Michael Hudson-Doyle ]
+  * Prevent C-c, C-\ and C-x from exiting console-conf. 
+  * Hide bonding UI as the version of netplan we are currently using does not
+    support bonds. 
+  * Overwrite the netplan config that snap firstboot creates. 
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Wed, 31 Aug 2016 01:06:40 -0400
+
+subiquity (0.0.12) yakkety; urgency=medium
+
+  [ Mathieu Trudel-Lapierre ]
+  * debian/console-conf.serial-console-conf@.service: start with --serial so
+    we don't spew as many control chars on the serial interface. (LP: #1617231)
+
+  [ Michael Hudson-Doyle ]
+  * spawn a simple shell wrapper around console-conf initially to reduce
+    RAM usage at rest. (LP: #1618239)
+  * create log directory more carefully. (LP: #1617236)
+  * Wait for a default route rather than networkd-wait-online.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 30 Aug 2016 15:57:59 +1200
+
+subiquity (0.0.11) yakkety; urgency=medium
+
+  * debian/console-conf.dirs: add /var/lib/console-conf.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Fri, 26 Aug 2016 16:35:57 -0400
+
+subiquity (0.0.10) yakkety; urgency=medium
+
+  * Release 0.0.10: we want subiquity on all architectures.
+  * debian/control: the packages are Architecture: all.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Thu, 25 Aug 2016 21:57:57 -0400
+
+subiquity (0.0.9) yakkety; urgency=medium
+
+  * Release 0.0.9:
+    - Fix crash on turning on DHCP for an interface that has manual addresses.
+    - Better UI for applying networking changes.
+    - Probe network before showing Login screen.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 23 Aug 2016 16:20:09 -0400
+
+subiquity (0.0.7) yakkety; urgency=medium
+
+  * Release 0.0.7:
+    - Use netplan for network configuration.
+    - console-conf uses snapd for user creation.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Fri, 19 Aug 2016 11:26:01 -0400
+
+subiquity (0.0.7~5~xenial) xenial; urgency=medium
+
+  * Write netplan config:
+    - Basic IPv6 support (DHCP only)
+    - Deal with setting a default route
+    - Initial bonding support.
+    - Various UI tweaks.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Tue, 16 Aug 2016 15:36:46 -0400
+
+subiquity (0.0.7~4~xenial) xenial; urgency=medium
+
+  * Use a drop-in files to run console-conf before getty.
+  * Write stamp file and logs to somewhere more sensible.
+  * Stop all console-conf processes when complete.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 05 Aug 2016 13:53:29 +1200
+
+subiquity (0.0.7~3~xenial) xenial; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Demo-ware.
+  * Install systemd units for console-conf.
+
+  [ Mathieu Trudel-Lapierre ]
+  * Release 0.0.7 snapshot
+  * debian/control: move Depends on curtin from subiquitycore to subiquity.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Thu, 28 Jul 2016 21:03:59 -0400
+
+subiquity (0.0.5) wily; urgency=medium
+
+  * Release 0.0.5
+  * New UX/Models: bcache, lvm, identity
+  * Geninstaller updated to work with latest curtin
+  * Fix button movement when scaling UI
+  * Switch back to async curtin install (two stage)
+  * Fixed issues: #77, #88
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Tue, 05 Jan 2016 20:30:11 -0600
+
+subiquity (0.0.4) wily; urgency=medium
+
+  * Release 0.0.4
+  * Refactor signals for improved navigation (escape always works)
+  * Updated Network model to support manual configuration
+  * Added Bonding UX panels
+  * Fixed issues: #71, #73, #99, #100, #101, #103, #105, #106, #107, #108,
+    #109, #111
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Wed, 11 Nov 2015 09:14:21 -0600
+
+subiquity (0.0.3) wily; urgency=medium
+
+  * Release 0.0.3
+  * Fix RAID install
+  * geninstaller: install curtin as deb
+  * geninstaller: pre-install curtin deps in installer overlay
+  * geninstaller: shrink the size of the rootfs partition
+  * Fixed issues: #63, #64, #67, #69, #70, #72, #74, #75, #76, #77, #78
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Wed, 28 Oct 2015 09:58:39 -0500
+
+subiquity (0.0.2) wily; urgency=medium
+
+  * Release 0.0.2
+  * Network Configuration UX
+  * RAID/mdadm UX
+  * Updated Installer spinner
+  * Detection on failure when running curtin
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Tue, 20 Oct 2015 18:34:20 -0500
+
+subiquity (0.0.1-0ubuntu3) wily; urgency=medium
+
+  * Break subiquity-{gen|run}installer into -tools package (Closes: #80)
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Tue, 20 Oct 2015 17:02:47 -0500
+
+subiquity (0.0.1-0ubuntu2) wily; urgency=medium
+
+  * Add curtin to package deps
+  * Find curtin and install source dynamically (Closes: #64)
+
+ -- Ryan Harper <ryan.harper@canonical.com>  Wed, 07 Oct 2015 08:49:39 -0500
+
+subiquity (0.0.1-0ubuntu1) wily; urgency=medium
+
+  * Initial build.
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Mon, 17 Aug 2015 14:01:12 -0400

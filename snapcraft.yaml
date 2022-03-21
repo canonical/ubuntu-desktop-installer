@@ -1,0 +1,213 @@
+name: subiquity
+base: core20
+version: git
+summary: Ubuntu installer
+description: The Ubuntu server installer
+confinement: classic
+
+apps:
+  subiquity:
+    command: usr/bin/subiquity-cmd
+    environment:
+      PYTHONIOENCODING: utf-8
+      SUBIQUITY_ROOT: $SNAP
+      PYTHON: $SNAP/usr/bin/python3.8
+  probert:
+    command: bin/probert
+  subiquity-server:
+    command: usr/bin/subiquity-server
+    daemon: simple
+    restart-condition: always
+    environment:
+      PYTHONIOENCODING: utf-8
+      SUBIQUITY_ROOT: $SNAP
+      PYTHON: $SNAP/usr/bin/python3.8
+      PY3OR2_PYTHON: $SNAP/usr/bin/python3.8
+      PATH: $PATH:$SNAP/bin
+  subiquity-service:
+    command: usr/bin/subiquity-service
+    daemon: simple
+    restart-condition: always
+    environment:
+      PYTHONIOENCODING: utf-8
+      SUBIQUITY_ROOT: $SNAP
+      PYTHON: $SNAP/usr/bin/python3.8
+  os-prober:
+    command: usr/bin/os-prober
+    environment:
+      OS_PROBER_SHARE: $SNAP/usr/share
+      OS_PROBER_LIB: $SNAP/usr/lib
+
+parts:
+  curtin:
+    override-pull: |
+      snapcraftctl pull
+      PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
+      sed -e "s,@@PACKAGED_VERSION@@,$PACKAGED_VERSION,g" -i curtin/version.py
+    plugin: python
+    source-type: git
+    source: https://git.launchpad.net/curtin
+    source-commit: 8c13139961b9decc23a57f2f515f5248a21e1b06
+    build-packages:
+      - shared-mime-info
+      - zlib1g-dev
+    python-packages:
+      - pyyaml==5.3.1
+      - oauthlib
+      - jsonschema
+      - pyrsistent
+      - wheel
+      - setuptools
+      - pip
+      - urwid
+      - requests
+      - requests-unixsocket
+    organize:
+      'lib/python*/site-packages/usr/lib/curtin': 'usr/lib/'
+    stage:
+     - "*"
+     - "-lib/python*/site-packages/_yaml.*.so"
+     - "-lib/python*/site-packages/setuptools"
+     - "-lib/python*/site-packages/pip"
+     - "-lib/python*/site-packages/pkg_resources"
+     - "-lib/python*/site-packages/jsonschema"
+     - "-lib/python*/site-packages/wheel*"
+     - "-lib/python*/site-packages/probert"
+     - "-bin/activate*"
+     - -bin/python
+     - -bin/python3*
+     - "-lib/python3.8/site-packages/__pycache__/six.cpython*"
+     - "-lib/python3.8/site-packages/pip-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/wheel-*.dist-info/RECORD"
+     - "-lib/python3.8/site-packages/_distutils_hack"
+  subiquity:
+    plugin: python
+    build-packages:
+      - gettext
+      - libsystemd-dev
+      - lsb-release
+      - pkg-config
+      - python3-yaml
+      - python3-attr
+      - python3-systemd
+      - python3-aiohttp
+      - python3-yarl
+      - python3-urwid
+      - python3-bson
+      - python3-requests-unixsocket
+      - python3-requests
+    stage-packages:
+      - cloud-init
+      - libsystemd0
+      - iso-codes
+      - lsb-release
+      - ssh-import-id
+      - libpython3.8-minimal
+      - libpython3.8-stdlib
+      - libpython3-stdlib
+      - python3.8-minimal
+      - python3-minimal
+      - python3-yaml
+      - python3-apport
+      - python3-attr
+      - python3-systemd
+      - python3-aiohttp
+      - python3-yarl
+      - python3-urwid
+      - python3-bson
+      - python3-requests-unixsocket
+      - python3-requests
+      - python3-pyudev
+      - ubuntu-advantage-tools
+    stage:
+      - "*"
+      - -bin/python
+      - -bin/python3
+    source: .
+    source-type: git
+    build-environment:
+      - PATH: "/usr/bin:$PATH"
+    organize:
+      'bin/subiquity-tui': usr/bin/subiquity
+      'bin/subiquity-service': usr/bin/subiquity-service
+      'bin/subiquity-server': usr/bin/subiquity-server
+      'bin/subiquity-cmd': usr/bin/subiquity-cmd
+  users-and-groups:
+    plugin: nil
+    build-packages:
+      - user-setup
+    override-build: |
+      echo "get passwd/user-default-groups" | \
+        debconf-communicate user-setup | \
+        cut -d ' ' -f 2- > $SNAPCRAFT_PART_INSTALL/users-and-groups
+      cp /usr/lib/user-setup/reserved-usernames $SNAPCRAFT_PART_INSTALL/
+    stage:
+      - users-and-groups
+      - reserved-usernames
+  keyboard-data:
+    plugin: nil
+    build-packages:
+      - console-setup
+      - locales
+      - python3-attr
+      - python3-yaml
+    override-build: PYTHONPATH=$SNAPCRAFT_PROJECT_DIR/ $SNAPCRAFT_PROJECT_DIR/scripts/make-kbd-info.py
+    stage:
+      - kbds/
+  font:
+    plugin: dump
+    source: ./
+    source-type: git
+    organize:
+      font/subiquity.psf: subiquity.psf
+    stage:
+      - subiquity.psf
+  languagelists:
+    plugin: nil
+    build-packages:
+      - localechooser-data
+    override-build: |
+      grep '^path-exclude=.*LC_MESSAGES.*' /etc/dpkg/dpkg.cfg.d/excludes && {
+        sed -i 's/^path-exclude.*LC_MESSAGES.*/#\0/g' /etc/dpkg/dpkg.cfg.d/excludes
+        apt-get -y install --reinstall iso-codes
+      } || true
+      $SNAPCRAFT_PROJECT_DIR/scripts/make-language-lists $SNAPCRAFT_PROJECT_DIR/po > $SNAPCRAFT_PART_INSTALL/languagelist
+    stage:
+      - languagelist
+
+  probert:
+    plugin: python
+    build-packages:
+      - python-setuptools
+      - build-essential
+      - libnl-3-dev
+      - libnl-genl-3-dev
+      - libnl-route-3-dev
+    source: https://github.com/canonical/probert.git
+    source-type: git
+    source-commit: e9da1c5958917c6ee39a90230ffc7497c0b8fa68
+    requirements: [requirements.txt]
+    stage:
+      - "*"
+      - -bin/python
+      - -bin/python3*
+      - -bin/activate*
+      - -lib/python3.8/site-packages/_distutils_hack
+      - -lib/python3.8/site-packages/pip*
+      - -lib/python3.8/site-packages/pkg_resources
+      - -lib/python3.8/site-packages/setuptools
+      - -lib/python3.8/site-packages/wheel*
+
+  os-prober:
+    plugin: nil
+    source-type: git
+    source: https://github.com/dbungert/os-prober
+    source-commit: 80d6a3157a814278af4f96da91f9ab7218e20fdc
+    build-packages:
+      - build-essential
+      - debhelper
+      - fakeroot
+    override-build: |
+      ./debian/rules build
+      fakeroot ./debian/rules install
+      cp -a debian/os-prober/{usr,var} $SNAPCRAFT_PART_INSTALL
