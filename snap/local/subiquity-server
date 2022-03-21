@@ -23,7 +23,7 @@ export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
 
-args=()
+args=(--use-os-prober)
 if grep -qv "experimental-autoinstall" /proc/cmdline; then
     # autoinstall is explicitly disabled until UI support is present.
     # Remove this autoinstall argument when that is resolved.
