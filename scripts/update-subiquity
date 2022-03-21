@@ -4,8 +4,11 @@ import subprocess
 from ruamel.yaml import YAML
 
 
-submodule = 'packages/subiquity_client/subiquity'
-cmd = 'git submodule update --init --recursive --remote ' + submodule
+ref = 'main'
+url = 'https://github.com/canonical/subiquity.git'
+subtree = 'packages/subiquity_client/subiquity'
+cmd = 'git subtree pull --prefix {subtree} {url} {ref} --squash'.format(subtree=subtree, url=url, ref=ref)
+print(cmd)
 subprocess.check_call(cmd.split(' '))
 
 yaml = YAML()
