@@ -89,7 +89,6 @@ class _WelcomePageState extends State<WelcomePage> {
               child: SvgPicture.asset(
                 'assets/welcome/logo.svg',
                 height: height / 4,
-                color: Theme.of(context).primaryColor,
               ),
             )
           ],
