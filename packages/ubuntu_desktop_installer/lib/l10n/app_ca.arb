@@ -209,5 +209,64 @@
   "whoAreYouPageUsernameRequired": "Cal un nom d'usuari",
   "@whoAreYouPageUsernameRequired": {},
   "whoAreYouPagePasswordRequired": "Cal una contrasenya",
-  "@whoAreYouPagePasswordRequired": {}
+  "@whoAreYouPagePasswordRequired": {},
+  "welcomeHeader": "Trieu la vostra llengua:",
+  "@welcomeHeader": {},
+  "windowTitle": "Instal·lació {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "repairInstallation": "Reparar la instal·lació",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "Provar {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntuDescription": "Podeu provar {RELEASE} sense fer cap canvi al vostre ordinador.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "Instal·lar {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "Instal·lar {RELEASE} al costat (o en lloc de) del vostre sistema operatiu actual. Això no hauria de trigar massa.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "És possible que vulgueu llegir la <a href=\"{url}\"> nota de llançament</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRSTDescription": "Aquest ordinador utilitza Intel RST (Tecnologia d'emmagatzematge ràpid). Heu de desactivar RST a Windows abans d'instal·lar Ubuntu.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "Per obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "configureSecureBootTitle": "Configura l'arrencada segura",
+  "@configureSecureBootTitle": {}
 }
