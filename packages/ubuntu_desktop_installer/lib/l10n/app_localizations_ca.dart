@@ -12,7 +12,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Instal·lació $RELEASE';
   }
 
   @override
@@ -40,51 +40,51 @@ class AppLocalizationsCa extends AppLocalizations {
   String get welcome => 'Us donem la benvinguda';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Trieu la vostra llengua:';
 
   @override
   String get tryOrInstallPageTitle => 'Prova o instal·la';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Reparar la instal·lació';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Provar $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Podeu provar $RELEASE sense fer cap canvi al vostre ordinador.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Instal·lar $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Instal·lar $RELEASE al costat (o en lloc de) del vostre sistema operatiu actual. Això no hauria de trigar massa.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'És possible que vulgueu llegir la <a href=\"$url\"> nota de llançament</a>.';
   }
 
   @override
   String get turnOffRST => 'Desactiva la RST.';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Aquest ordinador utilitza Intel RST (Tecnologia d\'emmagatzematge ràpid). Heu de desactivar RST a Windows abans d\'instal·lar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Per obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -106,7 +106,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get isKeyPresent => 'Teniu la tecla següent al vostre teclat?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Configura l\'arrencada segura';
 
   @override
   String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
