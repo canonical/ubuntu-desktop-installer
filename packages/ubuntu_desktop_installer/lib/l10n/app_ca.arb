@@ -212,18 +212,18 @@
   "@whoAreYouPagePasswordRequired": {},
   "welcomeHeader": "Trieu la vostra llengua:",
   "@welcomeHeader": {},
-  "windowTitle": "Instal·lació {RELEASE}",
+  "windowTitle": "Instal·lació del sistema {RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "repairInstallation": "Reparar la instal·lació",
+  "repairInstallation": "Repara la instal·lació",
   "@repairInstallation": {},
   "repairInstallationDescription": "La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.",
   "@repairInstallationDescription": {},
-  "tryUbuntu": "Provar {RELEASE}",
+  "tryUbuntu": "Prova el sistema {RELEASE}",
   "@tryUbuntu": {
     "type": "text",
     "placeholders": {
@@ -237,7 +237,7 @@
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Instal·lar {RELEASE}",
+  "installUbuntu": "Instal·la el sistema {RELEASE}",
   "@installUbuntu": {
     "type": "text",
     "placeholders": {
