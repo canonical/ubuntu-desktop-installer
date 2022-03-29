@@ -50,7 +50,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   final _onVariantSelected = StreamController<int>();
 
   /// Selects the keyboard layout at [index].
-  void selectLayout(int index, [int variant = 0]) {
+  Future<void> selectLayout(int index, [int variant = 0]) async {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
@@ -58,19 +58,19 @@ class KeyboardLayoutModel extends ChangeNotifier {
         _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    applyKeyboardSettings();
+    await applyKeyboardSettings();
     notifyListeners();
   }
 
   /// Tries to find and select a keyboard layout and variant.
-  void trySelectLayoutVariant(String? layout, String? variant) {
+  Future<void> trySelectLayoutVariant(String? layout, String? variant) async {
     final layoutIndex =
         _keyboardService.layouts.indexWhere((l) => l.code == layout);
     if (layoutIndex != -1) {
       final variantIndex = _keyboardService.layouts[layoutIndex].variants
               ?.indexWhere((v) => v.code == variant) ??
           -1;
-      selectLayout(layoutIndex, variantIndex);
+      await selectLayout(layoutIndex, variantIndex);
       _onLayoutSelected.add(layoutIndex);
       _onVariantSelected.add(variantIndex);
     }
@@ -95,13 +95,13 @@ class KeyboardLayoutModel extends ChangeNotifier {
       _selectedLayout?.variants?.elementAtOrNull(_selectedVariantIndex);
 
   /// Selects the keyboard layout variant at [index].
-  void selectVariant(int index) {
+  Future<void> selectVariant(int index) async {
     assert(index > -1 && index < variantCount);
     if (_selectedVariantIndex == index) return;
     _selectedVariantIndex = index;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    applyKeyboardSettings();
+    await applyKeyboardSettings();
     notifyListeners();
   }
 
