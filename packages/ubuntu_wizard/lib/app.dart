@@ -66,7 +66,7 @@ Future<void> runWizardApp(
       'network',
       'ssh',
       'snaplist',
-      'ubuntu_advantage',
+      'ubuntu_pro',
     ]);
   });
 
