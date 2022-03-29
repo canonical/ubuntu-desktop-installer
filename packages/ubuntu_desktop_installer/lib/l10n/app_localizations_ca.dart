@@ -12,7 +12,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instal·lació $RELEASE';
+    return 'Instal·lació del sistema $RELEASE';
   }
 
   @override
@@ -46,14 +46,14 @@ class AppLocalizationsCa extends AppLocalizations {
   String get tryOrInstallPageTitle => 'Prova o instal·la';
 
   @override
-  String get repairInstallation => 'Reparar la instal·lació';
+  String get repairInstallation => 'Repara la instal·lació';
 
   @override
   String get repairInstallationDescription => 'La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Provar $RELEASE';
+    return 'Prova el sistema $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instal·lar $RELEASE';
+    return 'Instal·la el sistema $RELEASE';
   }
 
   @override
