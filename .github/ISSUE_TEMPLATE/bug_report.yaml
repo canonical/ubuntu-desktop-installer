@@ -1,0 +1,30 @@
+name: Bug report
+description: Something went wrong.
+labels: bug
+body:
+- type: textarea
+  attributes:
+    label: What happened?
+    description: A concise description of what went wrong.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What was expected?
+    description: A concise description of what was expected to happen.
+- type: textarea
+  attributes:
+    label: Steps to reproduce
+    placeholder: |
+      1. Go to '...'
+      2. Click on '...'
+      3. Scroll down to '...'
+      4. See '...'
+- type: textarea
+  attributes:
+    label: Additional context
+    description: |
+      Logs, links, screenshots, videos, or anything that may help us to resolve the issue.
+    placeholder: |
+      - /var/log/installer/ubuntu_desktop_installer.log
+      - /var/log/installer/subiquity-server-debug.log
