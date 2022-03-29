@@ -10,7 +10,7 @@ import 'types.dart';
 /// @internal
 final log = Logger('subiquity_client');
 
-const _kMaxResponseLogLength = 120;
+const _kMaxResponseLogLength = 1200;
 
 String _formatResponseLog(String method, String response) {
   var formatted = response;
