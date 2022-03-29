@@ -6,7 +6,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../l10n.dart';
 import 'slide_widgets.dart';
 
-const _kHeaderWidth = 480.0;
+const _kHeaderWidth = 420.0;
 const _kIconSpacing = 8.0;
 const _kCardWidth = 348.0;
 const _kInsets = EdgeInsets.fromLTRB(72, 56, 48, 24);

@@ -179,7 +179,6 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
             child: SvgPicture.asset(
               'assets/welcome/logo.svg',
               height: height / 4,
-              color: Theme.of(context).primaryColor,
             ),
           ),
         ],
