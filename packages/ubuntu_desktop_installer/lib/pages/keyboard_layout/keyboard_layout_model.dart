@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -17,14 +16,11 @@ class KeyboardLayoutModel extends ChangeNotifier {
   KeyboardLayoutModel({
     required SubiquityClient client,
     required KeyboardService keyboardService,
-    @visibleForTesting ProcessRunner processRunner = const ProcessRunner(),
   })  : _client = client,
-        _keyboardService = keyboardService,
-        _processRunner = processRunner;
+        _keyboardService = keyboardService;
 
   final SubiquityClient _client;
   final KeyboardService _keyboardService;
-  final ProcessRunner _processRunner;
 
   /// The number of available keyboard layouts.
   int get layoutCount => _keyboardService.layouts.length;
@@ -62,7 +58,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
         _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    _setXkbMap();
+    applyKeyboardSettings();
     notifyListeners();
   }
 
@@ -105,18 +101,8 @@ class KeyboardLayoutModel extends ChangeNotifier {
     _selectedVariantIndex = index;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    _setXkbMap();
+    applyKeyboardSettings();
     notifyListeners();
-  }
-
-  Future<void> _setXkbMap() {
-    final arguments = <String>[
-      '-layout',
-      _selectedLayout!.code!,
-      if (_selectedVariant != null) '-variant',
-      if (_selectedVariant != null) _selectedVariant!.code!,
-    ];
-    return _processRunner.run('setxkbmap', arguments);
   }
 
   /// Whether the layout and variant selections are valid.
@@ -150,17 +136,5 @@ class KeyboardLayoutModel extends ChangeNotifier {
     final keyboard = KeyboardSetting(layout: layout, variant: variant);
     log.info('Set $layout ($variant) as system keyboard layout');
     return _client.setKeyboard(keyboard);
-  }
-}
-
-/// Runs a process in a way that it can be mocked for testing.
-@visibleForTesting
-class ProcessRunner {
-  /// Creates a process runner.
-  const ProcessRunner();
-
-  /// Runs a process. See [Process.run].
-  Future<ProcessResult> run(String executable, List<String> arguments) {
-    return Process.run(executable, arguments);
   }
 }
