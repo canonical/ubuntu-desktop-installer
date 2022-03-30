@@ -187,7 +187,13 @@ void main() {
 
   test('respect existing values', () async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.identity()).thenAnswer((_) async {
+      return IdentityData(
+        realname: 'Default',
+        username: 'default',
+        hostname: 'default',
+      );
+    });
 
     final model = WhoAreYouModel(client);
     model.realName = 'User';

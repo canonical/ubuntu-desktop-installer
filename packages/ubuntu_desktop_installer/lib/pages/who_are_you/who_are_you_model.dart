@@ -106,9 +106,9 @@ class WhoAreYouModel extends ChangeNotifier {
   /// Loads the identity data from the server, and resolves the system hostname.
   Future<void> loadIdentity() async {
     final identity = await _client.identity();
-    _realName.value = identity.realname?.orIfEmpty(_realName.value);
-    _hostname.value = identity.hostname?.orIfEmpty(_hostname.value);
-    _username.value = identity.username?.orIfEmpty(_username.value);
+    _realName.value ??= identity.realname?.orIfEmpty(null);
+    _hostname.value ??= identity.hostname?.orIfEmpty(null);
+    _username.value ??= identity.username?.orIfEmpty(null);
     log.info('Loaded identity: ${identity.description}');
     _productName.value = await _readProductName();
     log.info('Read product name: ${_productName.value}');
