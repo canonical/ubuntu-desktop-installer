@@ -415,6 +415,7 @@ Future<void> testWhoAreYouPage(
 }
 
 Future<void> testInstallationSlidesPage(WidgetTester tester) async {
+  await tester.pumpUntil(find.byType(InstallationSlidesPage));
   expect(find.byType(InstallationSlidesPage), findsOneWidget);
 }
 
