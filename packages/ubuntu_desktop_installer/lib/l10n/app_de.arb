@@ -19,8 +19,9 @@
   "yesButtonText": "Ja",
   "@yesButtonText": {},
   "welcome": "Willkommen",
-  "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
   "@welcome": {},
+  "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
+  "@welcomeHeader": {},
   "tryOrInstallPageTitle": "Ausprobieren oder installieren",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Installation reparieren",
@@ -437,5 +438,25 @@
     "placeholders": {
       "color": {}
     }
-  }
+  },
+  "hiddenWifiNetwork": "Mit einem versteckten WLAN-Netzwerk verbinden",
+  "@hiddenWifiNetwork": {},
+  "installationTypeDualOSDetected": "Auf diesem Computer sind aktuell {os1} und {os2} installiert. Was möchten Sie tun?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "Passwort anzeigen",
+  "@whoAreYouPageShowPassword": {},
+  "hiddenWifiNetworkNameLabel": "Netzwerkname",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetworkNameRequired": "Der Netzwerkname wird benötigt",
+  "@hiddenWifiNetworkNameRequired": {},
+  "enableWired": "Kabelgebundenes Ethernet aktivieren",
+  "@enableWired": {}
 }
