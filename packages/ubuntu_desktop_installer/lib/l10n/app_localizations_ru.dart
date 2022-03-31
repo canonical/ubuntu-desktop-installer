@@ -8,11 +8,11 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'Установка Ubuntu';
+  String get appTitle => 'Установщик Ubuntu Desktop';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Установить Ubuntu';
+    return 'Установить $RELEASE';
   }
 
   @override
@@ -40,7 +40,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcome => 'Добро пожаловать';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Выберите язык:';
 
   @override
   String get tryOrInstallPageTitle => 'Попробовать или установить';
@@ -53,22 +53,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Попробовать Ubuntu';
+    return 'Попробовать $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.';
+    return 'Вы можете попробовать $RELEASE без каких-либо изменений на вашем компьютере.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Установить Ubuntu';
+    return 'Установить $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
+    return 'Установить $RELEASE рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
   }
 
   @override
@@ -115,10 +115,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get configureSecureBootOption => 'Configure Secure Boot';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Выберите ключ безопасности';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Подтвердите ключ безопасности';
 
   @override
   String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
@@ -154,31 +154,31 @@ class AppLocalizationsRu extends AppLocalizations {
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Подключиться сети Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Подключиться к скрытой сети Wi-Fi';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Название сети';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Укажите название сети';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Прямо сейчас я не хочу подключаться к Интернету';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Беспроводная сеть отключена';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Устройства Wi-Fi не обнаружены';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Чтобы использовать на этом компьютере Wi-Fi, необходимо включить беспроводную сеть';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Включить Wi-Fi';
 
   @override
   String get connectButtonText => 'Connect';
@@ -199,10 +199,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get minimalInstallationTitle => 'Минимальная установка';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Веб-браузер и основные утилиты.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Другие опции';
 
   @override
   String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
@@ -216,7 +216,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Выберите ключ безопасности';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -224,7 +224,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Выберите ключ безопасности';
 
   @override
   String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
@@ -261,7 +261,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Стереть диск и установить Ubuntu';
+    return 'Стереть диск и установить $DISTRO';
   }
 
   @override
@@ -270,16 +270,16 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Дополнительные возможности...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Дополнительные возможности';
 
   @override
   String get installationTypeNone => 'None';
 
   @override
-  String get installationTypeNoneSelected => '';
+  String get installationTypeNoneSelected => 'Ничего не выбрано';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -326,12 +326,12 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'Вы можете создать или изменить разделы самостоятельно, или выбрать для Ubuntu несколько разделов';
+    return 'Вы можете создать или изменить разделы самостоятельно, или выбрать для $DISTRO несколько разделов';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Стереть диск и установить Ubuntu';
+    return 'Стереть диск и установить $DISTRO';
   }
 
   @override
@@ -566,19 +566,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseYourLookPageTitle => 'Choose your look';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Тёмный';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Светлый';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'Всё светло и ярко';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => 'Здравствуй, темнота, мой старый друг';
 
   @override
   String get installationCompleteTitle => 'Установка завершена';

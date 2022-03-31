@@ -95,7 +95,6 @@ class WizardPage extends StatelessWidget {
                       padding: const EdgeInsets.only(left: kButtonBarSpacing),
                       child: _createButton(action),
                     ),
-                const SizedBox(width: kButtonBarSpacing),
               ],
             ),
           ],

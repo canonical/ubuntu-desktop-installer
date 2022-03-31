@@ -61,12 +61,13 @@ Future<void> runWizardApp(
     // Use the default values for a number of endpoints
     // for which a UI page isn't implemented yet.
     subiquityClient.markConfigured([
+      'drivers',
       'mirror',
       'proxy',
       'network',
       'ssh',
       'snaplist',
-      'ubuntu_advantage',
+      'ubuntu_pro',
     ]);
   });
 

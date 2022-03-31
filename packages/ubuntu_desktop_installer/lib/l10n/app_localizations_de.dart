@@ -151,19 +151,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get wiredMustBeEnabled => 'Für die Verwendung von Ethernet auf diesem Computer muss eine kabelgebundene Verbindung aktiviert sein';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Kabelgebundenes Ethernet aktivieren';
 
   @override
   String get selectWifiNetwork => 'Mit einem WLAN-Netzwerk verbinden';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Mit einem versteckten WLAN-Netzwerk verbinden';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Netzwerkname';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Der Netzwerkname wird benötigt';
 
   @override
   String get noInternet => 'Ich will gerade keine Verbindung zum Internet herstellen';
@@ -250,11 +250,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Auf diesem Computer sind aktuell $os1 und $os2 installiert. Was möchten Sie tun?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?';
 
   @override
   String get installationTypeNoOSDetected => 'Auf diesem Rechner befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
@@ -530,7 +530,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Die Passwörter stimmen nicht überein';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Passwort anzeigen';
 
   @override
   String get writeChangesToDisk => 'Änderungen auf die Festplatte schreiben';

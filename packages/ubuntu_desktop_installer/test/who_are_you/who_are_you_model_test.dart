@@ -184,4 +184,29 @@ void main() {
     testValid('real', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid('real', 'host', 'user', 'passwd', 'mismatch', isFalse);
   });
+
+  test('respect existing values', () async {
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async {
+      return IdentityData(
+        realname: 'Default',
+        username: 'default',
+        hostname: 'default',
+      );
+    });
+
+    final model = WhoAreYouModel(client);
+    model.realName = 'User';
+    model.username = 'user';
+    model.hostname = 'ubuntu';
+
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile(''));
+    verify(client.identity()).called(1);
+
+    expect(model.realName, equals('User'));
+    expect(model.username, equals('user'));
+    expect(model.hostname, equals('ubuntu'));
+  });
 }
