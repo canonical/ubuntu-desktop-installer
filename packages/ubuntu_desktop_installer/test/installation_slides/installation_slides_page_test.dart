@@ -122,18 +122,18 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    expect(find.byType(ExpandIcon), findsOneWidget);
+    expect(find.byIcon(Icons.arrow_right), findsOneWidget);
 
     final context = tester.element(find.byType(InstallationSlidesPage));
     final height =
-        InstallationSlidesPageState.getTextHeight(context, lines: kExpandLines);
+        InstallationSlidesPageState.getTextHeight(context, lines: kLogLines);
     expect(height, isPositive);
 
-    await tester.tap(find.byType(ExpandIcon));
+    await tester.tap(find.byIcon(Icons.arrow_right));
     verify(model.expandWindow(height)).called(1);
 
     await tester.tap(find.ancestor(
-      of: find.byType(ExpandIcon),
+      of: find.byIcon(Icons.arrow_right),
       matching: find.byType(GestureDetector),
     ));
     verify(model.expandWindow(height)).called(1);
@@ -144,12 +144,12 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    expect(find.byType(ExpandIcon), findsOneWidget);
-    await tester.tap(find.byType(ExpandIcon));
+    expect(find.byIcon(Icons.arrow_right), findsOneWidget);
+    await tester.tap(find.byIcon(Icons.arrow_right));
     verify(model.collapseWindow()).called(1);
 
     await tester.tap(find.ancestor(
-      of: find.byType(ExpandIcon),
+      of: find.byIcon(Icons.arrow_right),
       matching: find.byType(GestureDetector),
     ));
     verify(model.collapseWindow()).called(1);

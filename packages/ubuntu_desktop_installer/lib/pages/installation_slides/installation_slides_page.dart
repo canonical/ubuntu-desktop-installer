@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -5,15 +7,13 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../../l10n.dart';
 import '../../services.dart';
 import '../../slides.dart';
 import 'installation_slides_model.dart';
 
-// The size of the rotating expansion icon.
-const _kExpandIconSize = 24.0;
-
-// The amount of extra lines shown when expanded.
-const kExpandLines = 6;
+// The amount of log lines shown when expanded.
+const kLogLines = 10;
 
 /// Slideshow during installation.
 class InstallationSlidesPage extends StatefulWidget {
@@ -60,7 +60,7 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
   static TextStyle _getTextStyle(BuildContext context) {
     return TextStyle(
       inherit: false,
-      fontSize: Theme.of(context).textTheme.bodyText1!.fontSize,
+      fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
       fontFamily: 'Ubuntu Mono',
       textBaseline: TextBaseline.alphabetic,
     );
@@ -85,7 +85,7 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
   void _expandWindow(bool expand) {
     final model = Provider.of<InstallationSlidesModel>(context, listen: false);
     if (expand) {
-      model.expandWindow(getTextHeight(context, lines: kExpandLines));
+      model.expandWindow(getTextHeight(context, lines: kLogLines));
     } else {
       model.collapseWindow();
     }
@@ -93,44 +93,63 @@ class InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              SlideShow(
-                interval: const Duration(seconds: 50),
-                slides: SlidesContext.of(context)
-                    .map((slide) => _SlidePage(slide: slide))
-                    .toList(),
-              ),
-              Positioned(
-                left: kContentSpacing,
-                bottom: kContentSpacing / 2,
-                child: _ExpandButton(
-                  isExpanded: model.isWindowExpanded,
-                  onExpanded: _expandWindow,
-                  child: Text(
-                    model.hasError
-                        ? 'Something went wrong.\n\nPlease restart the machine.'
-                        : model.isPreparing
-                            ? 'Preparing...'
-                            : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: model.hasError
-                            ? Theme.of(context).errorColor
-                            : Colors.white),
-                  ),
-                ),
-              ),
-            ],
+          SlideShow(
+            interval: const Duration(seconds: 50),
+            slides: SlidesContext.of(context)
+                .map((slide) => _SlidePage(slide: slide))
+                .toList(),
           ),
-          LinearProgressIndicator(value: model.isInstalling ? null : 0),
           Expanded(
-            child: _JournalView(
-              journal: model.journal,
-              style: _getTextStyle(context),
+            child: Padding(
+              padding: EdgeInsets.all(kContentSpacing),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _ExpandButton(
+                        isExpanded: model.isWindowExpanded,
+                        onExpanded: _expandWindow,
+                        child: Text(
+                          model.hasError
+                              ? lang.installationFailed
+                              : lang.copyingFiles,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2!
+                              .copyWith(
+                                  color: model.hasError
+                                      ? Theme.of(context).errorColor
+                                      : null),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: kContentSpacing),
+                  Flexible(
+                    flex: model.isWindowExpanded ? 1 : 0,
+                    child: Visibility(
+                      maintainState: true,
+                      visible: model.isWindowExpanded,
+                      child: _JournalView(
+                        journal: model.journal,
+                        style: _getTextStyle(context),
+                      ),
+                    ),
+                  ),
+                  LinearProgressIndicator(
+                    value: model.isInstalling ? null : 0,
+                    backgroundColor:
+                        Theme.of(context).primaryColor.withAlpha(62),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -160,16 +179,12 @@ class _ExpandButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            SizedBox(
-              width: _kExpandIconSize,
-              height: _kExpandIconSize,
-              child: ExpandIcon(
-                color: Colors.white,
-                size: _kExpandIconSize,
-                padding: EdgeInsets.zero,
-                isExpanded: isExpanded,
-                onPressed: (_) => onExpanded(!isExpanded),
-              ),
+            AnimatedContainer(
+              curve: Curves.fastOutSlowIn,
+              duration: kThemeAnimationDuration,
+              child: Icon(Icons.arrow_right),
+              transform: Matrix4.rotationZ(isExpanded ? math.pi / 2 : 0),
+              transformAlignment: Alignment.center,
             ),
             child,
           ],
