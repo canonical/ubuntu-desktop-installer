@@ -743,4 +743,10 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Subtenataj programoj';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

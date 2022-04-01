@@ -743,4 +743,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Logiciels pris en charge';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

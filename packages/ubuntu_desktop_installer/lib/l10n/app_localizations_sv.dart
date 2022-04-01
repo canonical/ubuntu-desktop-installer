@@ -743,4 +743,10 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Programvara som stöds';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

@@ -743,4 +743,10 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Logicials preses en carga';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }
