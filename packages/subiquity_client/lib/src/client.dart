@@ -335,7 +335,7 @@ class SubiquityClient {
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson('addPartition(${disk.id}, )', response);
+        await _receiveJson('addPartition(${disk.id}, $partition)', response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
@@ -350,7 +350,7 @@ class SubiquityClient {
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson('editPartition(${disk.id}, )', response);
+        await _receiveJson('editPartition(${disk.id}, $partition)', response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
@@ -365,7 +365,7 @@ class SubiquityClient {
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson('editPartition(${partition.number}, )', response);
+        await _receiveJson('deletePartition(${disk.id}, $partition)', response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
@@ -377,7 +377,7 @@ class SubiquityClient {
     final response = await _send(request);
 
     final responseJson =
-        await _receiveJson('addBootPartitionV2(${disk.id}, )', response);
+        await _receiveJson('addBootPartitionV2(${disk.id})', response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
@@ -388,7 +388,8 @@ class SubiquityClient {
             {'disk_id': '"${disk.id}"'}));
     final response = await _send(request);
 
-    final responseJson = await _receiveJson("reformatDiskV2()", response);
+    final responseJson =
+        await _receiveJson("reformatDiskV2(${disk.id})", response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
