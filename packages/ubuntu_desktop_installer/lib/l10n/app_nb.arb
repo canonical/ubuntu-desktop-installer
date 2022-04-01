@@ -1,3 +1,319 @@
 {
-  "@@locale": "nb"
+  "@@locale": "nb",
+  "installThirdPartyTitle": "Installer tredjepartsprogramvare for grafikk og trådløs-maskinvare, samt ytterligere medieformater",
+  "@installThirdPartyTitle": {},
+  "installThirdPartySubtitle": "Denne programvaren er underlagt lisensvilkårene som følger med dokumentasjonen. Noen er proprietære.",
+  "@installThirdPartySubtitle": {},
+  "onBatteryWarning": "<font color=\"{color}\">Advarsel</font>: Datamaskinen er ikke koblet til en strømkilde.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyTitle": "Velg en sikkerhetsnøkkel",
+  "@chooseSecurityKeyTitle": {},
+  "installationTypeManualInfo": "Du kan opprette eller endre størrelse på partisjoner selv, eller velge flere partisjoner for {DISTRO}",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "selectGuidedStoragePageTitle": "Slett disk og installer {DISTRO}",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "allocateDiskSpace": "Tildel diskplass",
+  "@allocateDiskSpace": {},
+  "startInstallingButtonText": "Start Installering",
+  "@startInstallingButtonText": {},
+  "diskHeadersDevice": "Enhet",
+  "@diskHeadersDevice": {},
+  "diskHeadersType": "Type",
+  "@diskHeadersType": {},
+  "diskHeadersMountPoint": "Monteringspunkt",
+  "@diskHeadersMountPoint": {},
+  "diskHeadersSize": "Størrelse",
+  "@diskHeadersSize": {},
+  "chooseSecurityKeyHint": "Velg en sikkerhetsnøkkel",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Bekreft sikkerhetsnøkkel",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyRequired": "En sikkerhetsnøkkel er nødvendig",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyMismatch": "Sikkerhetsnøkkelen stemmer ikke",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advarsel</font>: Hvis du mister denne sikkerhetsnøkkelen, vil alle data gå tapt. Hvis du trenger det, skriv ned nøkkelen og oppbevar den på et trygt sted et annet sted.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeDualOSDetected": "Denne datamaskinen har for øyeblikket {os1} og {os2}. Hva har du lyst til å gjøre?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Denne datamaskinen har for tiden flere operativsystemer. Hva har du lyst til å gjøre?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeEncrypt": "Kryptere nye {RELEASE} installasjon for sikkerhet",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeManual": "Noe annet",
+  "@installationTypeManual": {},
+  "selectGuidedStorageInfoLabel": "Hele disken vil bli brukt:",
+  "@selectGuidedStorageInfoLabel": {},
+  "selectGuidedStorageInstallNow": "Installere nå",
+  "@selectGuidedStorageInstallNow": {},
+  "welcomeHeader": "Velg ditt språk:",
+  "@welcomeHeader": {},
+  "useWiredConnection": "Bruk kablet nettverktilkobling",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Ingen kablet tilkobling er oppdaget",
+  "@noWiredConnection": {},
+  "wiredDisabled": "Kablet tilkobling er slått av",
+  "@wiredDisabled": {},
+  "wiredMustBeEnabled": "For å bruke nettverkkabel på denne pcen, må kablet tilkobling være aktivert",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "Aktivere kablet tilkobling",
+  "@enableWired": {},
+  "selectWifiNetwork": "Koble til et trådløs nettverk",
+  "@selectWifiNetwork": {},
+  "noInternet": "Jeg ønsker ikke å koble til internett nå",
+  "@noInternet": {},
+  "noWifiDevicesDetected": "Ingen trådløs enheter er oppdaget",
+  "@noWifiDevicesDetected": {},
+  "wifiMustBeEnabled": "For å bruke Wi-Fi på denne datamaskinen, må trådløst nettverk være aktivert",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Aktivere trådløs",
+  "@enableWifi": {},
+  "connectButtonText": "Tilkoble",
+  "@connectButtonText": {},
+  "updatesOtherSoftwarePageDescription": "Hvilke apper vil du installere til å begynne med?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "normalInstallationSubtitle": "Nettleser, verktøy, kontorprogramvare, spill og mediespillere.",
+  "@normalInstallationSubtitle": {},
+  "minimalInstallationTitle": "Minimal installasjon",
+  "@minimalInstallationTitle": {},
+  "minimalInstallationSubtitle": "Nettleser og grunnleggende verktøy.",
+  "@minimalInstallationSubtitle": {},
+  "otherOptions": "Andre valg",
+  "@otherOptions": {},
+  "installationTypeErase": "Formatere harddisken og installere {DISTRO}",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "hiddenWifiNetworkNameRequired": "En nettverksnavn er påkrevd",
+  "@hiddenWifiNetworkNameRequired": {},
+  "hiddenWifiNetworkNameLabel": "Nettverknavn",
+  "@hiddenWifiNetworkNameLabel": {},
+  "normalInstallationTitle": "Normal installasjon",
+  "@normalInstallationTitle": {},
+  "configureSecureBootDescription": "Du har valgt å installere tredjeparts driverprogramvare. Dette krever at du slår av sikker oppstart.\nFor å gjøre dette, må du velge en sikkerhetsnøkkel nå, og angi den når systemet starter på nytt.",
+  "@configureSecureBootDescription": {},
+  "connectToInternetPageTitle": "Koble til internett",
+  "@connectToInternetPageTitle": {},
+  "connectToInternetDescription": "Å koble denne datamaskinen til internett vil hjelpe Ubuntu med å installere all ekstra programvare som trengs og hjelpe deg med å velge tidssone.\n\nKoble til med Ethernet-kabel, eller velg et Wi-Fi-nettverk",
+  "@connectToInternetDescription": {},
+  "hiddenWifiNetwork": "Koble til et skjult trådløs nett",
+  "@hiddenWifiNetwork": {},
+  "wirelessNetworkingDisabled": "Trådløs nettverk er deaktivert",
+  "@wirelessNetworkingDisabled": {},
+  "chooseSecurityKeyHeader": "Diskkryptering beskytter filene dine i tilfelle du mister datamaskinen. Det krever at du oppgir en sikkerhetsnøkkel hver gang datamaskinen starter opp.\n\nEventuelle filer utenfor {RELEASE} blir ikke kryptert.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeTitle": "Installasjontype",
+  "@installationTypeTitle": {},
+  "installationTypeOSDetected": "Denne datamaskinen har for øyeblikket {os} på seg. Hva har du lyst til å gjøre?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeLVM": "Bruk LVM med nyeste {RELEASE} installasjon",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Advarsel:</font> Dette vil slette alle dine {os}-programmer, dokumenter, bilder, musikk og andre filer.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "Dokumenter, musikk og andre personlige filer vil bli oppbevart. Du kan velge hvilket operativsystem du vil ha hver gang datamaskinen starter opp.",
+  "@installationTypeAlongsideInfo": {},
+  "diskHeadersUsed": "Brukt",
+  "@diskHeadersUsed": {},
+  "selectGuidedStorageDropdownLabel": "Velg diskstasjon:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "appTitle": "Ubuntu Skrivebord Installering",
+  "@appTitle": {},
+  "cancelButtonText": "Avbryt",
+  "@cancelButtonText": {},
+  "repairInstallation": "Reparere installasjonen",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "Reparasjon vil installere all installert programvare på nytt uten å berøre dokumenter eller innstillinger.",
+  "@repairInstallationDescription": {},
+  "changeButtonText": "Endre",
+  "@changeButtonText": {},
+  "okButtonText": "OK",
+  "@okButtonText": {},
+  "noButtonText": "Nei",
+  "@noButtonText": {},
+  "restartButtonText": "Start på nytt",
+  "@restartButtonText": {},
+  "yesButtonText": "Ja",
+  "@yesButtonText": {},
+  "welcome": "Velkommen",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "Prøv eller Installere",
+  "@tryOrInstallPageTitle": {},
+  "turnOffRST": "Slå av RST",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "Denne datamaskinen bruker Intel RST (Rapid Storage Technology). Du må slå av RST i Windows før du installerer Ubuntu.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "For instruksjoner, åpne denne siden på en telefon eller annen enhet: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "keyboardLayoutPageTitle": "Tastaturoppsett",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "Velg tastaturoppsettet ditt:",
+  "@chooseYourKeyboardLayout": {},
+  "typeToTest": "Skriv her for å teste tastaturet",
+  "@typeToTest": {},
+  "detectLayout": "Finn tastaturoppsett",
+  "@detectLayout": {},
+  "pressOneKey": "Trykk på en av følgende taster:",
+  "@pressOneKey": {},
+  "isKeyPresent": "Finnes følgende tast på tastaturet ditt?",
+  "@isKeyPresent": {},
+  "configureSecureBootOption": "Tilpass sikkeroppstart",
+  "@configureSecureBootOption": {},
+  "chooseSecurityKey": "Velg en sikkerhetnøkkel",
+  "@chooseSecurityKey": {},
+  "confirmSecurityKey": "Bekreft sikkerhetsnøkkel",
+  "@confirmSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "Ikke installere drivere programvare nå",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Du kan installere det senere fra programvare & oppdateringer.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "configureSecureBootSecurityKeyRequired": "Sikkerhetsnøkkel er krevet",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "releaseNotesLabel": "Det kan være lurt å lese <a href=\"{url}\">versjonsnotatene</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "configureSecureBootTitle": "Tilpass Sikkeroppstart",
+  "@configureSecureBootTitle": {},
+  "secureBootSecurityKeysDontMatch": "Sikkerhetsnøkkel stemmer ikke",
+  "@secureBootSecurityKeysDontMatch": {},
+  "updatesOtherSoftwarePageTitle": "Oppdateringer og annet programvare",
+  "@updatesOtherSoftwarePageTitle": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">Advarsel:</font> Dette vil slette alle dine programmer, dokumenter, bilder, musikk og andre filer i alle operativsystemer.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeZFS": "EKSPERIMENTELL: Slett disk og bruk ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeAdvancedLabel": "Avansert funksjoner...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeZFSSelected": "ZFS valgt",
+  "@installationTypeZFSSelected": {},
+  "installationTypeAdvancedTitle": "Avansert funksjoner",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeNone": "Ingen",
+  "@installationTypeNone": {},
+  "installationTypeNoneSelected": "Ingenting valgt",
+  "@installationTypeNoneSelected": {},
+  "installationTypeNoOSDetected": "Denne datamaskinen har for øyeblikket ingen registrerte operativsystemer. Hva har du lyst til å gjøre?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeLVMSelected": "LVM valg",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncryptInfo": "Du velger en sikkerhetsnøkkel i neste trinn.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeAlongside": "Installer {product} ved siden av {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeReinstall": "Slett og formatere {os} og reinstallere",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "windowTitle": "Installere {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntu": "Prøv {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntuDescription": "Du kan prøve {RELEASE} uten å gjøre noen endringer på datamaskinen.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "Installere {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "Installer {RELEASE} ved siden av (eller i stedet for) ditt nåværende operativsystem. Dette bør ikke ta for lang tid.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
