@@ -9,6 +9,6 @@ extension DiskExtension on Disk {
 }
 
 extension PartitionExtension on Partition {
-  bool get canWipe => preserve == true && mount != null;
+  bool get canWipe => mount != null;
   String get prettySize => filesize(size ?? 0);
 }

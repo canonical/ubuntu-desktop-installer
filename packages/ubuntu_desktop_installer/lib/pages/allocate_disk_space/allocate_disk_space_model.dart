@@ -134,17 +134,10 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
   final _selectionController = StreamController();
 
   /// Whether a partition can be added for the currently selected disk.
-  bool get canAddPartition =>
-      selectedDisk != null &&
-      selectedDisk!.preserve != true &&
-      selectedGap != null;
+  bool get canAddPartition => selectedGap != null;
 
   /// Whether the currently selected partition can be removed.
-  bool get canRemovePartition =>
-      selectedDisk != null &&
-      selectedDisk!.preserve != true &&
-      selectedPartition != null &&
-      selectedPartition!.preserve != true;
+  bool get canRemovePartition => selectedPartition != null;
 
   /// Whether the currently selected partition can be edited.
   bool get canEditPartition => selectedPartition != null;

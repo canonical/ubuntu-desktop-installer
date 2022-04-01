@@ -182,13 +182,8 @@ void main() {
     final emptyDisk = Disk(objects: [Gap()]);
     final fullDisk = Disk();
     final normalDisk = emptyDisk.copyWith(objects: [Partition()]);
-    final preservedDisk = emptyDisk.copyWith(preserve: true);
     final mountedPartition =
         emptyDisk.copyWith(objects: [Partition(mount: '/')]);
-    final preservedPartition =
-        emptyDisk.copyWith(objects: [Partition(preserve: true)]);
-    final mountedPreservedPartition =
-        emptyDisk.copyWith(objects: [Partition(preserve: true, mount: '/')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -196,10 +191,7 @@ void main() {
         emptyDisk,
         fullDisk,
         normalDisk,
-        preservedDisk,
         mountedPartition,
-        preservedPartition,
-        mountedPreservedPartition,
       ],
     );
 
@@ -258,42 +250,13 @@ void main() {
     expect(model.canEditPartition, isTrue);
     expect(model.canReformatDisk, isFalse);
 
-    model.selectStorage(3);
-    expect(model.selectedDisk, equals(preservedDisk));
-    expect(model.selectedPartition, isNull);
-    expect(model.selectedGap, isNull);
-    expect(model.canAddPartition, isFalse);
-    expect(model.canRemovePartition, isFalse);
-    expect(model.canEditPartition, isFalse);
-    expect(model.canReformatDisk, isTrue);
-
-    model.selectStorage(4, 0);
+    model.selectStorage(3, 0);
     expect(model.selectedDisk, equals(mountedPartition));
-    expect(model.selectedPartition, isNotNull);
-    expect(model.selectedPartition!.canWipe, isFalse);
-    expect(model.selectedGap, isNull);
-    expect(model.canAddPartition, isFalse);
-    expect(model.canRemovePartition, isTrue);
-    expect(model.canEditPartition, isTrue);
-    expect(model.canReformatDisk, isFalse);
-
-    model.selectStorage(5, 0);
-    expect(model.selectedDisk, equals(preservedPartition));
-    expect(model.selectedPartition, isNotNull);
-    expect(model.selectedPartition!.canWipe, isFalse);
-    expect(model.selectedGap, isNull);
-    expect(model.canAddPartition, isFalse);
-    expect(model.canRemovePartition, isFalse);
-    expect(model.canEditPartition, isTrue);
-    expect(model.canReformatDisk, isFalse);
-
-    model.selectStorage(6, 0);
-    expect(model.selectedDisk, equals(mountedPreservedPartition));
     expect(model.selectedPartition, isNotNull);
     expect(model.selectedPartition!.canWipe, isTrue);
     expect(model.selectedGap, isNull);
     expect(model.canAddPartition, isFalse);
-    expect(model.canRemovePartition, isFalse);
+    expect(model.canRemovePartition, isTrue);
     expect(model.canEditPartition, isTrue);
     expect(model.canReformatDisk, isFalse);
   });
