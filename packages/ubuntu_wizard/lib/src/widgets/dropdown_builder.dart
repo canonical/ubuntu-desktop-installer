@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 ///
 /// See also:
 ///  * [MenuButtonBuilder] - A similar builder widget but for menu buttons.
-class DropdownBuilder<T> extends StatelessWidget {
+class DropdownBuilder<T> extends StatefulWidget {
   /// Creates a dropdown with the given `values`.
   ///
   /// The `onSelected` callback is called when the user selects an item.
@@ -49,22 +49,45 @@ class DropdownBuilder<T> extends StatelessWidget {
   final ValueWidgetBuilder<T> itemBuilder;
 
   @override
+  State<DropdownBuilder<T>> createState() => _DropdownBuilderState<T>();
+}
+
+class _DropdownBuilderState<T> extends State<DropdownBuilder<T>> {
+  final _focusNode = FocusNode();
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ButtonTheme(
       alignedDropdown: true,
       child: DropdownButtonHideUnderline(
-        child: InputDecorator(
-          decoration: const InputDecoration(contentPadding: EdgeInsets.zero)
-              .applyDefaults(Theme.of(context).inputDecorationTheme),
+        child: AnimatedBuilder(
+          animation: _focusNode,
+          builder: (context, child) {
+            return InputDecorator(
+              isFocused: _focusNode.hasFocus,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.zero,
+              ).applyDefaults(Theme.of(context).inputDecorationTheme),
+              child: child,
+            );
+          },
           child: DropdownButton<T>(
-            value: selected,
-            items: values.map((value) {
+            value: widget.selected,
+            items: widget.values.map((value) {
               return DropdownMenuItem<T>(
                 value: value,
-                child: itemBuilder(context, value, null),
+                child: widget.itemBuilder(context, value, null),
               );
             }).toList(),
-            onChanged: onSelected,
+            onChanged: widget.onSelected,
+            focusNode: _focusNode,
+            focusColor: Colors.transparent,
           ),
         ),
       ),
