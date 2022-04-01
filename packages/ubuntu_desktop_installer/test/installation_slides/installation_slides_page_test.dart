@@ -18,7 +18,9 @@ import 'installation_slides_page_test.mocks.dart';
 
 @GenerateMocks([InstallationSlidesModel, JournalService])
 void main() {
-  InstallationSlidesModel buildModel({
+  UbuntuTester.context = InstallationSlidesPage;
+
+  MockInstallationSlidesModel buildModel({
     ApplicationState? state,
     bool? isDone,
     bool? hasError,
@@ -153,6 +155,25 @@ void main() {
       matching: find.byType(GestureDetector),
     ));
     verify(model.collapseWindow()).called(1);
+  });
+
+  testWidgets('installation state', (tester) async {
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(find.text(tester.lang.copyingFiles), findsOneWidget);
+    expect(find.text(tester.lang.installationFailed), findsNothing);
+
+    when(model.hasError).thenReturn(true);
+    await tester.pumpWidget(Container(
+      key: ValueKey('force rebuild for hasError'),
+      child: tester.buildApp((_) => buildPage(model)),
+    ));
+    await tester.pump();
+
+    expect(find.text(tester.lang.installationFailed), findsOneWidget);
+    expect(find.text(tester.lang.copyingFiles), findsNothing);
   });
 
   testWidgets('creates a model', (tester) async {
