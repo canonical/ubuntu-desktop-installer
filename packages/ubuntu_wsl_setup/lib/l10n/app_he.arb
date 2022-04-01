@@ -56,7 +56,7 @@
   "@configurationUILegacyAudioIntegrationSubtitle": {},
   "configurationUIAdvancedIPDetectionTitle": "זיהוי IP מתקדם",
   "@configurationUIAdvancedIPDetectionTitle": {},
-  "configurationUIMessageOfTheDayHeader": "הודעת היום (MOTD)",
+  "configurationUIMessageOfTheDayHeader": "ההודעה היומית (MOTD)",
   "@configurationUIMessageOfTheDayHeader": {},
   "configurationUIWSLNewsTitle": "חדשות WSL",
   "@configurationUIWSLNewsTitle": {},
