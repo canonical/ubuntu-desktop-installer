@@ -107,22 +107,22 @@ class AppLocalizationsPl extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Wybór włącza automatyczną konfigurację środowiska DISPLAY. Wymagany jest serwer X innego dostawcy.';
 
   @override
-  String get configurationUITitle => 'Interfejs konfiguracji Ubuntu WSL (eksperymentalny)';
+  String get configurationUITitle => 'Konfiguracja Ubuntu WSL – Opcje zaawansowane';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperacyjność';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Włączona';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Określa, czy interoperacyjność jest włączona.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Dołącz ścieżkę systemu Windows';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Określa, czy ścieżka systemu Windows zostanie dołączona do zmiennej środowiskowej PATH w WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatyczne montowanie';
@@ -140,13 +140,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Określa, czy plik /etc/fstab będzie montowany. Plik konfiguracyjny /etc/fstab zawiera ???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EKSPERYMENTALNA – Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Włączony';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Określa, czy systemd powinien być uruchamiany podczas rozruchu. UWAGA: jest to funkcja eksperymentalna.';
 
   @override
   String get setupCompleteTitle => 'Konfiguracja zakończona';

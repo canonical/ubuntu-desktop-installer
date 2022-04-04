@@ -14,34 +14,34 @@ class AppLocalizationsNb extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Avslutt';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Finsk';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Lagre';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Innstillinger';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Velg ditt språk';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Profil innstillinger';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Opprett en standard UNIX-brukerkonto. For mer informasjon besøk: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Ditt navn';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Et navn er krevet';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Velg et brukernavn';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';

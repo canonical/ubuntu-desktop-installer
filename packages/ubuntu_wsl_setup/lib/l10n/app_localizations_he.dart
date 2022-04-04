@@ -107,22 +107,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'בחירה מפעילה הקמת סביבת DISPLAY אוטומטית. דרוש שרת X מגורם צד־שלישי.';
 
   @override
-  String get configurationUITitle => 'מנשק משתמש להגדרת אובונטו WSL (ניסיוני)';
+  String get configurationUITitle => 'הגדרות אובונטו WSL - אפשרויות מתקדמות';
 
   @override
   String get configurationUIInteroperabilityHeader => 'הדדיות';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'פעיל';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'האם ההדדיות מופעלת.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'הוספת נתיב Windows';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'האם הנתיב מה־Windows יתווסף למשתנה הסביבה PATH (נתיבי חיפוש קובצי הפעלה) ב־WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'עיגון אוטומטי';
@@ -140,13 +140,13 @@ class AppLocalizationsHe extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'האם ‎/etc/fstab יעוגן. קובץ ההגדרות ‎/etc/fstab מכיל את???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'ניסיוני - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'מופעל';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'האם על systemd לעלות יחד עם המערכת. אזהרה: זאת יכולת נסיונית.';
 
   @override
   String get setupCompleteTitle => 'ההקמה הושלמה';
