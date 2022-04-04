@@ -36,6 +36,7 @@ Future<void> runWizardApp(
   ArgResults? options,
   required SubiquityClient subiquityClient,
   required SubiquityServer subiquityServer,
+  SubiquityStatusMonitor? subiquityMonitor,
   SubiquityInitCallback? onInitSubiquity,
   List<String>? serverArgs,
   Map<String, String>? serverEnvironment,
@@ -55,6 +56,7 @@ Future<void> runWizardApp(
       .start(serverMode, args: serverArgs, environment: serverEnvironment)
       .then((socketPath) {
     subiquityClient.open(socketPath);
+    subiquityMonitor?.start(socketPath);
 
     onInitSubiquity?.call(subiquityClient);
 
@@ -72,12 +74,16 @@ Future<void> runWizardApp(
   });
 
   registerServiceInstance(subiquityClient);
+  if (subiquityMonitor != null) {
+    registerServiceInstance(subiquityMonitor);
+  }
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
     await interfaceSettings.close();
+    await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
   });
