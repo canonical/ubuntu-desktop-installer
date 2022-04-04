@@ -107,22 +107,22 @@ class AppLocalizationsEo extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Ĉi tiu opcio ebligas aŭtomatan agordadon de la medivariablo DISPLAY. Postulas triapartian X-servilon.';
 
   @override
-  String get configurationUITitle => 'Agorda fasado por Ubuntu sur Windows-Subsistemo por Linux (eksperimenta)';
+  String get configurationUITitle => 'Agordado de Ubuntu sur Windows-Subsistemo por Linux – Opcioj por spertuloj';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Kunfunkciado';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Ŝaltita';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Ĉu ŝalti Kunfunkciadon.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Postmeti vojprefikson de Windows';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Ĉu postglui la medivariablon «Path» de Windows al la medivariablo «PATH» de Windows-subsistemo por Linux';
 
   @override
   String get configurationUIAutoMountHeader => 'Aŭtomata Surmeto';
@@ -140,13 +140,13 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EKSPERIMENTA – systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Ŝaltita';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Ĉu aktivigi systemd dum startigo de komputilo. AVERTO: Ĉi tio estas eksperimenta funkcio.';
 
   @override
   String get setupCompleteTitle => 'Instalado finiĝis';
