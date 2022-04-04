@@ -1,3 +1,23 @@
 {
-  "@@locale": "nb"
+  "@@locale": "nb",
+  "exitButton": "Avslutt",
+  "@exitButton": {},
+  "finishButton": "Finsk",
+  "@finishButton": {},
+  "saveButton": "Lagre",
+  "@saveButton": {},
+  "setupButton": "Innstillinger",
+  "@setupButton": {},
+  "selectLanguageTitle": "Velg ditt språk",
+  "@selectLanguageTitle": {},
+  "profileSetupTitle": "Profil innstillinger",
+  "@profileSetupTitle": {},
+  "profileSetupHeader": "Opprett en standard UNIX-brukerkonto. For mer informasjon besøk: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "@profileSetupHeader": {},
+  "profileSetupRealnameLabel": "Ditt navn",
+  "@profileSetupRealnameLabel": {},
+  "profileSetupRealnameRequired": "Et navn er krevet",
+  "@profileSetupRealnameRequired": {},
+  "profileSetupUsernameHint": "Velg et brukernavn",
+  "@profileSetupUsernameHint": {}
 }
