@@ -49,7 +49,6 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
       final partitionSize = ValueNotifier(disk.freeForPartitions ?? 0);
       final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
-      final tileHeight = defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
@@ -60,69 +59,41 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
         actionsPadding: kFooterPadding,
         buttonPadding: EdgeInsets.zero,
         scrollable: true,
-        content: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IntrinsicWidth(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  _PartitionDialogLabel(
-                    lang.partitionSizeLabel,
-                    height: tileHeight,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionFormatLabel,
-                    height: tileHeight,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionMountPointLabel,
-                    height: tileHeight,
-                  ),
-                ],
+        content: FormLayout(
+          rowSpacing: kContentSpacing,
+          columnSpacing: kContentSpacing,
+          rows: [
+            <Widget>[
+              Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
+              AnimatedBuilder(
+                animation: Listenable.merge([
+                  partitionSize,
+                  partitionUnit,
+                ]),
+                builder: (context, child) {
+                  return StorageSizeBox(
+                    size: partitionSize.value,
+                    unit: partitionUnit.value,
+                    available: disk.freeForPartitions ?? 0,
+                    onSizeChanged: (v) => partitionSize.value = v,
+                    onUnitSelected: (v) => partitionUnit.value = v,
+                  );
+                },
+              )
+            ],
+            <Widget>[
+              Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
+              _PartitionFormatSelector(
+                partitionFormat: partitionFormat,
+              )
+            ],
+            <Widget>[
+              Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
+              _PartitionMountField(
+                partitionFormat: partitionFormat,
+                partitionMount: partitionMount,
               ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: AnimatedBuilder(
-                        animation: Listenable.merge([
-                          partitionSize,
-                          partitionUnit,
-                        ]),
-                        builder: (context, child) {
-                          return StorageSizeBox(
-                            size: partitionSize.value,
-                            unit: partitionUnit.value,
-                            available: disk.freeForPartitions ?? 0,
-                            onSizeChanged: (v) => partitionSize.value = v,
-                            onUnitSelected: (v) => partitionUnit.value = v,
-                          );
-                        }),
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: _PartitionFormatSelector(
-                      partitionFormat: partitionFormat,
-                    ),
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: _PartitionMountField(
-                      partitionFormat: partitionFormat,
-                      partitionMount: partitionMount,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            ],
           ],
         ),
         actions: [
@@ -149,28 +120,6 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
       );
     },
   );
-}
-
-class _PartitionDialogLabel extends StatelessWidget {
-  const _PartitionDialogLabel(this.text, {Key? key, this.height})
-      : super(key: key);
-
-  final String text;
-  final double? height;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Padding(
-        padding: kContentPadding,
-        child: Align(
-          alignment: Alignment.centerRight,
-          child: Text(text),
-        ),
-      ),
-    );
-  }
 }
 
 extension _PartitionFormatLang on PartitionFormat {
@@ -226,7 +175,6 @@ Future<void> showEditPartitionDialog(
           ValueNotifier(PartitionFormat.fromPartition(partition));
       final partitionWipe = ValueNotifier(partition.wipe);
       final partitionMount = ValueNotifier(partition.mount);
-      final tileHeight = defaultTileHeight(context);
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
@@ -237,54 +185,29 @@ Future<void> showEditPartitionDialog(
         actionsPadding: kFooterPadding,
         buttonPadding: EdgeInsets.zero,
         scrollable: true,
-        content: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IntrinsicWidth(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  _PartitionDialogLabel(
-                    lang.partitionFormatLabel,
-                    height: tileHeight,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  SizedBox(height: kRadioSize.height),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionDialogLabel(
-                    lang.partitionMountPointLabel,
-                    height: tileHeight,
-                  ),
-                ],
+        content: FormLayout(
+          rowSpacing: kContentSpacing,
+          columnSpacing: kContentSpacing,
+          rows: [
+            <Widget>[
+              Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
+              _PartitionFormatSelector(partitionFormat: partitionFormat),
+            ],
+            <Widget>[
+              const SizedBox.shrink(),
+              _PartitionWipeCheckbox(
+                canWipe: partition.canWipe,
+                wipe: partitionWipe,
               ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: _PartitionFormatSelector(
-                      partitionFormat: partitionFormat,
-                    ),
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  _PartitionWipeCheckbox(
-                    canWipe: partition.canWipe,
-                    wipe: partitionWipe,
-                  ),
-                  const SizedBox(height: kContentSpacing),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: tileHeight),
-                    child: _PartitionMountField(
-                      initialMount: partition.mount,
-                      partitionFormat: partitionFormat,
-                      partitionMount: partitionMount,
-                    ),
-                  ),
-                ],
+            ],
+            <Widget>[
+              Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
+              _PartitionMountField(
+                initialMount: partition.mount,
+                partitionFormat: partitionFormat,
+                partitionMount: partitionMount,
               ),
-            ),
+            ],
           ],
         ),
         actions: [
