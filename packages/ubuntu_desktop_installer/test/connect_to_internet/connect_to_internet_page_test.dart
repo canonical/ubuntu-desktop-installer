@@ -16,6 +16,7 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_v
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../widget_tester_extensions.dart';

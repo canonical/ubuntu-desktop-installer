@@ -7,7 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../widget_tester_extensions.dart';
 import 'ethernet_view_test.mocks.dart';

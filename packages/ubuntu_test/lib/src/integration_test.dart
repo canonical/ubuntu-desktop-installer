@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'widget_testers.dart';
 

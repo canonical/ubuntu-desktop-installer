@@ -10,8 +10,8 @@ import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_ot
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import '../widget_tester_extensions.dart';
 import 'updates_other_software_model_test.mocks.dart';
