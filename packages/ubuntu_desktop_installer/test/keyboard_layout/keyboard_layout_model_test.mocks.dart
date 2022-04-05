@@ -2,14 +2,11 @@
 // in ubuntu_desktop_installer/test/keyboard_layout/keyboard_layout_model_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i5;
-import 'dart:io' as _i2;
+import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i4;
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart'
-    as _i6;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
+import 'package:subiquity_client/subiquity_client.dart' as _i3;
+import 'package:ubuntu_desktop_installer/services/keyboard_service.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -19,48 +16,27 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i3;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-class _FakeProcessResult_0 extends _i1.Fake implements _i2.ProcessResult {}
-
 /// A class which mocks [KeyboardService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockKeyboardService extends _i1.Mock implements _i3.KeyboardService {
+class MockKeyboardService extends _i1.Mock implements _i2.KeyboardService {
   MockKeyboardService() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  List<_i4.KeyboardLayout> get layouts =>
+  List<_i3.KeyboardLayout> get layouts =>
       (super.noSuchMethod(Invocation.getter(#layouts),
-          returnValue: <_i4.KeyboardLayout>[]) as List<_i4.KeyboardLayout>);
+          returnValue: <_i3.KeyboardLayout>[]) as List<_i3.KeyboardLayout>);
   @override
-  set layouts(List<_i4.KeyboardLayout>? _layouts) =>
+  set layouts(List<_i3.KeyboardLayout>? _layouts) =>
       super.noSuchMethod(Invocation.setter(#layouts, _layouts),
           returnValueForMissingStub: null);
   @override
-  _i5.Future<void> load(_i4.SubiquityClient? client) =>
+  _i4.Future<void> load(_i3.SubiquityClient? client) =>
       (super.noSuchMethod(Invocation.method(#load, [client]),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
-  @override
-  String toString() => super.toString();
-}
-
-/// A class which mocks [ProcessRunner].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockProcessRunner extends _i1.Mock implements _i6.ProcessRunner {
-  MockProcessRunner() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i5.Future<_i2.ProcessResult> run(
-          String? executable, List<String>? arguments) =>
-      (super.noSuchMethod(Invocation.method(#run, [executable, arguments]),
-              returnValue:
-                  Future<_i2.ProcessResult>.value(_FakeProcessResult_0()))
-          as _i5.Future<_i2.ProcessResult>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   String toString() => super.toString();
 }

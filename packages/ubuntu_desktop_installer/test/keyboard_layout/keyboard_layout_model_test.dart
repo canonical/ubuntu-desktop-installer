@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -33,16 +31,8 @@ KeyboardSetup testSetup({required String? layout, required String? variant}) {
   return KeyboardSetup(setting: setting);
 }
 
-@GenerateMocks([KeyboardService, ProcessRunner])
+@GenerateMocks([KeyboardService])
 void main() {
-  late MockProcessRunner processRunner;
-  setUp(() {
-    processRunner = MockProcessRunner();
-    when(processRunner.run('setxkbmap', any)).thenAnswer((_) async {
-      return ProcessResult(0, 0, null, null);
-    });
-  });
-
   group('detect layout and variant when', () {
     late MockSubiquityClient client;
     late MockKeyboardService keyboard;
@@ -54,7 +44,6 @@ void main() {
       model = KeyboardLayoutModel(
         client: client,
         keyboardService: keyboard,
-        processRunner: MockProcessRunner(),
       );
     });
 
@@ -194,6 +183,7 @@ void main() {
   group('layout and variant', () {
     late MockKeyboardService keyboard;
     late KeyboardLayoutModel model;
+    late SubiquityClient client;
 
     setUp(() {
       keyboard = MockKeyboardService();
@@ -205,14 +195,15 @@ void main() {
         ]),
       ]);
 
+      client = MockSubiquityClient();
+
       model = KeyboardLayoutModel(
-        client: MockSubiquityClient(),
+        client: client,
         keyboardService: keyboard,
-        processRunner: processRunner,
       );
     });
 
-    test('names are correct', () {
+    test('names are correct', () async {
       expect(model.layoutCount, equals(2));
       expect(model.layoutName(0), equals('Foo'));
       expect(model.layoutName(1), equals('Bar'));
@@ -221,91 +212,92 @@ void main() {
       expect(model.selectedLayoutIndex, equals(-1));
       expect(model.selectedVariantIndex, equals(-1));
 
-      model.selectLayout(1);
+      await model.selectLayout(1);
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(0));
       expect(model.variantCount, equals(2));
       expect(model.variantName(0), equals('Baz'));
       expect(model.variantName(1), equals('Qux'));
 
-      model.selectVariant(1);
+      await model.selectVariant(1);
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(1));
 
-      model.selectLayout(0);
+      await model.selectLayout(0);
       expect(model.selectedLayoutIndex, equals(0));
       expect(model.selectedVariantIndex, equals(-1));
     });
 
-    test('selection changes are notified', () {
+    test('selection changes are notified', () async {
       var wasNotified = false;
       model.addListener(() => wasNotified = true);
 
       // select layout -> notify
       expect(model.selectedLayoutIndex, isNot(equals(1)));
-      model.selectLayout(1);
+      await model.selectLayout(1);
       expect(wasNotified, isTrue);
 
       // no change -> no notification
       wasNotified = false;
       expect(model.selectedLayoutIndex, equals(1));
-      model.selectLayout(1);
+      await model.selectLayout(1);
       expect(wasNotified, isFalse);
 
       // select variant -> notify
       wasNotified = false;
       expect(model.selectedVariantIndex, isNot(equals(1)));
-      model.selectVariant(1);
+      await model.selectVariant(1);
       expect(wasNotified, isTrue);
 
       // no change -> no notification
       wasNotified = false;
       expect(model.selectedVariantIndex, equals(1));
-      model.selectVariant(1);
+      await model.selectVariant(1);
       expect(wasNotified, isFalse);
     });
 
-    test('selection runs setxkbmap', () {
-      model.selectLayout(0);
-      verify(processRunner.run('setxkbmap', ['-layout', 'foo'])).called(1);
+    test('selection applies keyboard settings', () async {
+      await model.selectLayout(0);
+      verify(client.setKeyboard(KeyboardSetting(layout: 'foo'))).called(1);
 
-      model.selectLayout(1);
-      verify(processRunner
-          .run('setxkbmap', ['-layout', 'bar', '-variant', 'baz'])).called(1);
+      await model.selectLayout(1);
+      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'baz')))
+          .called(1);
 
-      model.selectVariant(1);
-      verify(processRunner
-          .run('setxkbmap', ['-layout', 'bar', '-variant', 'qux'])).called(1);
+      await model.selectVariant(1);
+      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
+          .called(1);
     });
 
     test('invalid selection throws', () {
-      expect(() => model.selectLayout(-1), throwsAssertionError);
-      expect(() => model.selectLayout(model.layoutCount), throwsAssertionError);
+      expect(() async => await model.selectLayout(-1), throwsAssertionError);
+      expect(() async => await model.selectLayout(model.layoutCount),
+          throwsAssertionError);
 
-      expect(() => model.selectVariant(-1), throwsAssertionError);
-      expect(
-          () => model.selectVariant(model.variantCount), throwsAssertionError);
+      expect(() async => await model.selectVariant(-1), throwsAssertionError);
+      expect(() async => await model.selectVariant(model.variantCount),
+          throwsAssertionError);
     });
 
-    test('selection is valid', () {
+    test('selection is valid', () async {
       expect(model.isValid, isFalse);
 
-      model.selectLayout(0);
+      await model.selectLayout(0);
       expect(model.isValid, isFalse);
 
-      model.selectLayout(1);
+      await model.selectLayout(1);
       expect(model.isValid, isTrue);
     });
 
     test('try selecting by codes', () async {
-      model.trySelectLayoutVariant('bar', 'qux');
+      await model.trySelectLayoutVariant('bar', 'qux');
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(1));
       await expectLater(model.onLayoutSelected, emits(1));
     });
 
     test('try selecting by invalid codes', () async {
-      model.trySelectLayoutVariant('invalid', 'none');
+      await model.trySelectLayoutVariant('invalid', 'none');
       expect(model.selectedLayoutIndex, equals(-1));
       expect(model.selectedVariantIndex, equals(-1));
     });
@@ -326,11 +318,11 @@ void main() {
     final model = KeyboardLayoutModel(
       client: client,
       keyboardService: keyboard,
-      processRunner: processRunner,
     );
 
-    model.selectLayout(1);
-    model.selectVariant(1);
+    await model.selectLayout(1);
+    await model.selectVariant(1);
+    reset(client);
 
     await model.applyKeyboardSettings();
     verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))

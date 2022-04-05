@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -17,14 +16,11 @@ class KeyboardLayoutModel extends ChangeNotifier {
   KeyboardLayoutModel({
     required SubiquityClient client,
     required KeyboardService keyboardService,
-    @visibleForTesting ProcessRunner processRunner = const ProcessRunner(),
   })  : _client = client,
-        _keyboardService = keyboardService,
-        _processRunner = processRunner;
+        _keyboardService = keyboardService;
 
   final SubiquityClient _client;
   final KeyboardService _keyboardService;
-  final ProcessRunner _processRunner;
 
   /// The number of available keyboard layouts.
   int get layoutCount => _keyboardService.layouts.length;
@@ -54,7 +50,7 @@ class KeyboardLayoutModel extends ChangeNotifier {
   final _onVariantSelected = StreamController<int>();
 
   /// Selects the keyboard layout at [index].
-  void selectLayout(int index, [int variant = 0]) {
+  Future<void> selectLayout(int index, [int variant = 0]) async {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
@@ -62,19 +58,19 @@ class KeyboardLayoutModel extends ChangeNotifier {
         _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    _setXkbMap();
+    await applyKeyboardSettings();
     notifyListeners();
   }
 
   /// Tries to find and select a keyboard layout and variant.
-  void trySelectLayoutVariant(String? layout, String? variant) {
+  Future<void> trySelectLayoutVariant(String? layout, String? variant) async {
     final layoutIndex =
         _keyboardService.layouts.indexWhere((l) => l.code == layout);
     if (layoutIndex != -1) {
       final variantIndex = _keyboardService.layouts[layoutIndex].variants
               ?.indexWhere((v) => v.code == variant) ??
           -1;
-      selectLayout(layoutIndex, variantIndex);
+      await selectLayout(layoutIndex, variantIndex);
       _onLayoutSelected.add(layoutIndex);
       _onVariantSelected.add(variantIndex);
     }
@@ -99,24 +95,14 @@ class KeyboardLayoutModel extends ChangeNotifier {
       _selectedLayout?.variants?.elementAtOrNull(_selectedVariantIndex);
 
   /// Selects the keyboard layout variant at [index].
-  void selectVariant(int index) {
+  Future<void> selectVariant(int index) async {
     assert(index > -1 && index < variantCount);
     if (_selectedVariantIndex == index) return;
     _selectedVariantIndex = index;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    _setXkbMap();
+    await applyKeyboardSettings();
     notifyListeners();
-  }
-
-  Future<void> _setXkbMap() {
-    final arguments = <String>[
-      '-layout',
-      _selectedLayout!.code!,
-      if (_selectedVariant != null) '-variant',
-      if (_selectedVariant != null) _selectedVariant!.code!,
-    ];
-    return _processRunner.run('setxkbmap', arguments);
   }
 
   /// Whether the layout and variant selections are valid.
@@ -150,17 +136,5 @@ class KeyboardLayoutModel extends ChangeNotifier {
     final keyboard = KeyboardSetting(layout: layout, variant: variant);
     log.info('Set $layout ($variant) as system keyboard layout');
     return _client.setKeyboard(keyboard);
-  }
-}
-
-/// Runs a process in a way that it can be mocked for testing.
-@visibleForTesting
-class ProcessRunner {
-  /// Creates a process runner.
-  const ProcessRunner();
-
-  /// Runs a process. See [Process.run].
-  Future<ProcessResult> run(String executable, List<String> arguments) {
-    return Process.run(executable, arguments);
   }
 }

@@ -65,22 +65,25 @@ class MockKeyboardLayoutModel extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#layoutName, [index]),
           returnValue: '') as String);
   @override
-  void selectLayout(int? index, [int? variant = 0]) =>
-      super.noSuchMethod(Invocation.method(#selectLayout, [index, variant]),
-          returnValueForMissingStub: null);
+  _i3.Future<void> selectLayout(int? index, [int? variant = 0]) =>
+      (super.noSuchMethod(Invocation.method(#selectLayout, [index, variant]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
-  void trySelectLayoutVariant(String? layout, String? variant) =>
-      super.noSuchMethod(
+  _i3.Future<void> trySelectLayoutVariant(String? layout, String? variant) =>
+      (super.noSuchMethod(
           Invocation.method(#trySelectLayoutVariant, [layout, variant]),
-          returnValueForMissingStub: null);
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
   String variantName(int? index) =>
       (super.noSuchMethod(Invocation.method(#variantName, [index]),
           returnValue: '') as String);
   @override
-  void selectVariant(int? index) =>
-      super.noSuchMethod(Invocation.method(#selectVariant, [index]),
-          returnValueForMissingStub: null);
+  _i3.Future<void> selectVariant(int? index) =>
+      (super.noSuchMethod(Invocation.method(#selectVariant, [index]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
   _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
