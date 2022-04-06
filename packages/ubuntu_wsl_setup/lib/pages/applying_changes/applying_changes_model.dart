@@ -9,9 +9,9 @@ extension BusyState on ApplicationState {
 /// Implements the business logic of the WSL Applying Changes Page.
 ///
 /// See also:
-///  * [ApplyingChangesPage ]
+///  * [ApplyingChangesPage]
 class ApplyingChangesModel {
-  /// Creates a advanced setup model.
+  /// Creates a model for the 'applying changes' page.
   ApplyingChangesModel(this._monitor) {
     _isInstalling = _monitor.onStatusChanged
         .map((event) => event?.state?.isInstalling == true); // could be null
