@@ -10,7 +10,6 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
 
 import '../widget_tester_extensions.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
@@ -317,12 +316,12 @@ void main() {
     final model = buildModel(disks: testDisks, bootDiskIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byTypeOf<DropdownButton<int>>());
+    await tester.tap(find.byType(DropdownButton<int>));
     await tester.pumpAndSettle();
     await tester.pump();
 
     final dropdownItem = find.descendant(
-      of: find.byTypeOf<DropdownMenuItem<int>>(),
+      of: find.byType(DropdownMenuItem<int>),
       matching: find.byKey(ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);

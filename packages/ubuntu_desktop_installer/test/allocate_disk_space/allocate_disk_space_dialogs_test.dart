@@ -8,7 +8,6 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../widget_tester_extensions.dart';
@@ -35,7 +34,7 @@ void main() {
         tester.element(find.byType(AllocateDiskSpacePage)), testDisk);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byTypeOf<DropdownButton<DataUnit>>());
+    await tester.tap(find.byType(DropdownButton<DataUnit>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(ValueKey(DataUnit.bytes)).last);
@@ -44,7 +43,7 @@ void main() {
     await tester.enterText(find.byType(SpinBox), '123');
     await tester.pump();
 
-    await tester.tap(find.byTypeOf<DropdownButton<PartitionFormat>>());
+    await tester.tap(find.byType(DropdownButton<PartitionFormat>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byWidgetPredicate((widget) {
@@ -53,7 +52,7 @@ void main() {
     }).last);
     await tester.pumpAndSettle();
 
-    await tester.enterText(find.byTypeOf<Autocomplete<String>>(), '/tst');
+    await tester.enterText(find.byType(Autocomplete<String>), '/tst');
     await tester.pump();
 
     await tester
@@ -98,7 +97,7 @@ void main() {
         testDisk.partitions!.first);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byTypeOf<DropdownButton<PartitionFormat>>());
+    await tester.tap(find.byType(DropdownButton<PartitionFormat>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byWidgetPredicate((widget) {
@@ -110,7 +109,7 @@ void main() {
     await tester.tap(find.byType(Checkbox));
     await tester.pump();
 
-    await tester.enterText(find.byTypeOf<Autocomplete<String>>(), '/tst');
+    await tester.enterText(find.byType(Autocomplete<String>), '/tst');
     await tester.pump();
 
     await tester

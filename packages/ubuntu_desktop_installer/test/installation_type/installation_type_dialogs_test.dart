@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../widget_tester_extensions.dart';
@@ -32,8 +31,8 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(typeOf<RadioButton<AdvancedFeature>>(),
-        tester.lang.installationTypeZFS));
+    await tester.tap(find.widgetWithText(
+        RadioButton<AdvancedFeature>, tester.lang.installationTypeZFS));
     await tester.pump();
 
     await tester.tap(find.widgetWithText(
@@ -66,7 +65,7 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(typeOf<RadioButton<AdvancedFeature>>(),
+    await tester.tap(find.widgetWithText(RadioButton<AdvancedFeature>,
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 

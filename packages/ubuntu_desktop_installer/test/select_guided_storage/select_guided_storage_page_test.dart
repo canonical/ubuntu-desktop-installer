@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
 
 import '../widget_tester_extensions.dart';
 import 'select_guided_storage_model_test.mocks.dart';
@@ -43,13 +42,13 @@ void main() {
     final model = buildModel(storages: testStorages);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byTypeOf<DropdownButton<int>>());
+    await tester.tap(find.byType(DropdownButton<int>));
     await tester.pumpAndSettle();
 
     for (final storage in testStorages) {
       expect(
         find.descendant(
-          of: find.byTypeOf<DropdownButton<int>>(),
+          of: find.byType(DropdownButton<int>),
           matching: find.textContaining(storage.path!),
         ),
         findsOneWidget,
@@ -61,12 +60,12 @@ void main() {
     final model = buildModel(storages: testStorages);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byTypeOf<DropdownButton<int>>());
+    await tester.tap(find.byType(DropdownButton<int>));
     await tester.pumpAndSettle();
     await tester.pump();
 
     final dropdownItem = find.descendant(
-      of: find.byTypeOf<DropdownMenuItem<int>>(),
+      of: find.byType(DropdownMenuItem<int>),
       matching: find.byKey(ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);
