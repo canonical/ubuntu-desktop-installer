@@ -21,7 +21,7 @@ class ApplyingChangesPage extends StatefulWidget {
   /// Creates an instance with [AdvancedSetupModel].
   static Widget create(BuildContext context) {
     final monitor = getService<SubiquityStatusMonitor>();
-    return ChangeNotifierProvider(
+    return Provider(
       create: (_) => ApplyingChangesModel(monitor),
       child: const ApplyingChangesPage(),
     );

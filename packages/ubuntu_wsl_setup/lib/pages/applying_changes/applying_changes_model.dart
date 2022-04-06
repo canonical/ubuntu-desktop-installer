@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 extension BusyState on ApplicationState {
@@ -11,7 +10,7 @@ extension BusyState on ApplicationState {
 ///
 /// See also:
 ///  * [ApplyingChangesPage ]
-class ApplyingChangesModel extends ChangeNotifier {
+class ApplyingChangesModel {
   /// Creates a advanced setup model.
   ApplyingChangesModel(this._monitor) {
     _isInstalling = _monitor.onStatusChanged
