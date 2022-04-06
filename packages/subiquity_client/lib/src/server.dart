@@ -95,7 +95,7 @@ abstract class SubiquityServer {
         if (serverMode == ServerMode.DRY_RUN) '--dry-run',
         ...?args,
       ];
-      await _startSubiquity(subiquityCmd, environment);
+      await _startSubiquity(serverMode, subiquityCmd, environment);
     }
 
     return _waitSubiquity(socketPath).then((_) {
@@ -104,8 +104,8 @@ abstract class SubiquityServer {
     });
   }
 
-  Future<void> _startSubiquity(
-      List<String> subiquityCmd, Map<String, String>? environment) async {
+  Future<void> _startSubiquity(ServerMode serverMode, List<String> subiquityCmd,
+      Map<String, String>? environment) async {
     final subiquityPath = await _getSubiquityPath();
     String? workingDirectory;
     // try using local subiquity
