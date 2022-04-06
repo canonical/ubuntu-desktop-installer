@@ -39,6 +39,7 @@ screens, yet allowing user to overwrite any of those during setup.
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
+    subiquityMonitor: SubiquityStatusMonitor(),
     onInitSubiquity: (client) {
       client.variant().then((value) => variant.value = value);
       client.markConfigured(['filesystem']);
