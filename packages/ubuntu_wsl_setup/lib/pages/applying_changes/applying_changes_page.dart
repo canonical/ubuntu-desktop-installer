@@ -11,7 +11,7 @@ import 'applying_changes_model.dart';
 ///
 /// See also:
 /// * [AdvancedSetupModel]
-class ApplyingChangesPage extends StatelessWidget {
+class ApplyingChangesPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const ApplyingChangesPage({
@@ -28,6 +28,12 @@ class ApplyingChangesPage extends StatelessWidget {
   }
 
   @override
+  State<ApplyingChangesPage> createState() => _ApplyingChangesPageState();
+}
+
+class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
+  bool previousData = true;
+  @override
   Widget build(BuildContext context) {
     final model = Provider.of<ApplyingChangesModel>(context, listen: false);
     final lang = AppLocalizations.of(context);
@@ -37,8 +43,11 @@ class ApplyingChangesPage extends StatelessWidget {
       content: StreamBuilder<bool>(
           stream: model.isInstalling(),
           builder: (context, snapshot) {
-            if (snapshot.data == false) {
+            if (snapshot.data == false && previousData == true) {
               WidgetsBinding.instance!.addPostFrameCallback((_) {
+                setState(() {
+                  previousData = false;
+                });
                 Wizard.of(context).next();
               });
             }
