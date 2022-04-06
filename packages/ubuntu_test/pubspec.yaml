@@ -21,5 +21,9 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_localizations
+  ubuntu_widgets:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_widgets
   ubuntu_wizard:
     path: ../ubuntu_wizard
