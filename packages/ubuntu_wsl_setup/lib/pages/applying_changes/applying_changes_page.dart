@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n/app_localizations.dart';
 import 'applying_changes_model.dart';
-
-final logger = Logger("[CN]");
 
 /// WSL Advanced setup page.
 ///
@@ -41,9 +38,7 @@ class ApplyingChangesPage extends StatelessWidget {
           stream: model.isInstalling(),
           builder: (context, snapshot) {
             if (snapshot.data == false) {
-              logger.debug("Scheduling post frame callback");
               WidgetsBinding.instance!.addPostFrameCallback((_) {
-                logger.debug("Running the Post frame callback");
                 Wizard.of(context).next();
               });
             }
