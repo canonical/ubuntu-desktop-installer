@@ -41,27 +41,28 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
     return WizardPage(
       title: Text(lang.setupCompleteTitle),
       content: StreamBuilder<bool>(
-          stream: model.isInstalling(),
-          builder: (context, snapshot) {
-            if (snapshot.data == false && previousData == true) {
-              WidgetsBinding.instance!.addPostFrameCallback((_) {
-                setState(() {
-                  previousData = false;
-                });
-                Wizard.of(context).next();
+        stream: model.isInstalling(),
+        builder: (context, snapshot) {
+          if (snapshot.data == false && previousData == true) {
+            WidgetsBinding.instance!.addPostFrameCallback((_) {
+              setState(() {
+                previousData = false;
               });
-            }
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const CircularProgressIndicator(),
-                Padding(
-                  padding: const EdgeInsets.only(top: kContentSpacing),
-                  child: Text(lang.applyingChanges),
-                ),
-              ],
-            );
-          }),
+              Wizard.of(context).next();
+            });
+          }
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircularProgressIndicator(),
+              Padding(
+                padding: const EdgeInsets.only(top: kContentSpacing),
+                child: Text(lang.applyingChanges),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
