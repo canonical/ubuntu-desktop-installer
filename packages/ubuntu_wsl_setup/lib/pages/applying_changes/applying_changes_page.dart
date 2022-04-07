@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -39,7 +40,6 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: Text(lang.setupCompleteTitle),
-      header: Text("Applying changes..."),
       content: StreamBuilder<bool>(
           stream: model.isInstalling(),
           builder: (context, snapshot) {
@@ -52,9 +52,13 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
               });
             }
             return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                LinearProgressIndicator(),
-                Spacer(),
+                CircularProgressIndicator(),
+                Padding(
+                  padding: EdgeInsets.only(top: kContentSpacing),
+                  child: Text("Applying changes..."),
+                ),
               ],
             );
           }),

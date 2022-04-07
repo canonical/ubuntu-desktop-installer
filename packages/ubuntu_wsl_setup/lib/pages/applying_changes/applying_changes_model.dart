@@ -1,6 +1,7 @@
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
-extension BusyState on ApplicationState {
+extension InstallingState on ApplicationState {
   bool get isInstalling =>
       index > ApplicationState.STARTING_UP.index &&
       index < ApplicationState.DONE.index;
