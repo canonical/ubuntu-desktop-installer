@@ -55,10 +55,8 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircularProgressIndicator(),
-              Padding(
-                padding: const EdgeInsets.only(top: kContentSpacing),
-                child: Text(lang.applyingChanges),
-              ),
+              const SizedBox(height: kContentSpacing),
+              Text(lang.applyingChanges),
             ],
           );
         },
