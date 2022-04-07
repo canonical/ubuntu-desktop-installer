@@ -6,6 +6,7 @@ import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'app.dart';
+import 'installing_state.dart';
 
 void main(List<String> args) {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -25,6 +26,7 @@ screens, yet allowing user to overwrite any of those during setup.
   if (options['prefill'] != null) {
     serverArgs = ['--prefill', options['prefill']];
   }
+  final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
   runWizardApp(
     ValueListenableBuilder<Variant?>(
@@ -39,9 +41,17 @@ screens, yet allowing user to overwrite any of those during setup.
     options: options,
     subiquityClient: SubiquityClient(),
     subiquityServer: SubiquityServer.wsl(),
-    subiquityMonitor: SubiquityStatusMonitor(),
+    subiquityMonitor: subiquityMonitor,
     onInitSubiquity: (client) {
-      client.variant().then((value) => variant.value = value);
+      client.variant().then((value) {
+        variant.value = value;
+        if (value == Variant.WSL_SETUP) {
+          setWindowClosable(false);
+          subiquityMonitor.onStatusChanged.listen((status) {
+            setWindowClosable(status?.state?.isInstalling == false);
+          });
+        }
+      });
       client.markConfigured(['filesystem']);
     },
     serverArgs: serverArgs,
