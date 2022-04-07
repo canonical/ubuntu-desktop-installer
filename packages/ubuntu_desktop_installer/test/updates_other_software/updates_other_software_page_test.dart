@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_ot
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -47,13 +46,13 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final normalInstallationTile = find.widgetWithText(
-      typeOf<RadioButton<InstallationMode>>(),
+      RadioButton<InstallationMode>,
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
     final minimalInstallationTile = find.widgetWithText(
-      typeOf<RadioButton<InstallationMode>>(),
+      RadioButton<InstallationMode>,
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);

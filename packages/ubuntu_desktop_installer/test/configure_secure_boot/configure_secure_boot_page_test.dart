@@ -5,7 +5,6 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_page.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -55,7 +54,7 @@ void main() {
     expect(tester.widget<ValidatedFormField>(fields.first).enabled, isTrue);
     expect(tester.widget<ValidatedFormField>(fields.last).enabled, isTrue);
 
-    final radios = find.byTypeOf<RadioButton<SecureBootMode>>();
+    final radios = find.byType(RadioButton<SecureBootMode>);
     expect(radios, findsNWidgets(2));
     expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.turnOff));
@@ -92,7 +91,7 @@ void main() {
     final model = buildModel(secureBootMode: SecureBootMode.dontInstall);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radios = find.byTypeOf<RadioButton<SecureBootMode>>();
+    final radios = find.byType(RadioButton<SecureBootMode>);
     expect(radios, findsNWidgets(2));
     expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.dontInstall));

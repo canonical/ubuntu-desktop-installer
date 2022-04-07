@@ -216,13 +216,13 @@ void main() {
   //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
   //   final autoLoginTile = find.widgetWithText(
-  //     typeOf<RadioButton<LoginStrategy>>(),
+  //     RadioButton<LoginStrategy>,
   //     tester.lang.whoAreYouPageAutoLogin,
   //   );
   //   expect(autoLoginTile, findsOneWidget);
 
   //   final requirePasswordTile = find.widgetWithText(
-  //     typeOf<RadioButton<LoginStrategy>>(),
+  //     RadioButton<LoginStrategy>,
   //     tester.lang.whoAreYouPageRequirePassword,
   //   );
   //   expect(requirePasswordTile, findsOneWidget);

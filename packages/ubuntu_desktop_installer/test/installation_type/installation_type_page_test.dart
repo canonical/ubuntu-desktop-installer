@@ -8,7 +8,6 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -102,7 +101,7 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
         tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -124,7 +123,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
-        typeOf<RadioButton<InstallationType>>(),
+        RadioButton<InstallationType>,
         tester.lang
             .installationTypeAlongside('Ubuntu 21.10', 'Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
@@ -136,7 +135,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
         tester.lang.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -147,8 +146,8 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(typeOf<RadioButton<InstallationType>>(),
-        tester.lang.installationTypeManual);
+    final radio = find.widgetWithText(
+        RadioButton<InstallationType>, tester.lang.installationTypeManual);
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);
