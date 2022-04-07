@@ -53,11 +53,11 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
             }
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                CircularProgressIndicator(),
+              children: [
+                const CircularProgressIndicator(),
                 Padding(
-                  padding: EdgeInsets.only(top: kContentSpacing),
-                  child: Text("Applying changes..."),
+                  padding: const EdgeInsets.only(top: kContentSpacing),
+                  child: Text(lang.applyingChanges),
                 ),
               ],
             );

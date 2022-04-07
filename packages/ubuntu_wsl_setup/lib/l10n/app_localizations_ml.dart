@@ -149,6 +149,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
+  String get applyingChanges => 'Applying changes...';
+
+  @override
   String get setupCompleteTitle => 'സജ്ജീകരണം പൂർത്തിയായി';
 
   @override

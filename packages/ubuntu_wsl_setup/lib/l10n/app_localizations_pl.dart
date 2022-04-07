@@ -149,6 +149,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Określa, czy systemd powinien być uruchamiany podczas rozruchu. UWAGA: jest to funkcja eksperymentalna.';
 
   @override
+  String get applyingChanges => 'Applying changes...';
+
+  @override
   String get setupCompleteTitle => 'Konfiguracja zakończona';
 
   @override
