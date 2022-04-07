@@ -8,12 +8,10 @@ import '../../installing_state.dart';
 ///  * [ApplyingChangesPage]
 class ApplyingChangesModel {
   /// Creates a model for the 'applying changes' page.
-  ApplyingChangesModel(this._monitor) {
-    _isInstalling = _monitor.onStatusChanged
-        .map((event) => event?.state?.isInstalling == true); // could be null
-  }
+  ApplyingChangesModel(SubiquityStatusMonitor monitor)
+      : _isInstalling = monitor.onStatusChanged.map(
+            (event) => event?.state?.isInstalling == true); // could be null
 
-  final SubiquityStatusMonitor _monitor;
-  late final Stream<bool> _isInstalling;
+  final Stream<bool> _isInstalling;
   Stream<bool> isInstalling() => _isInstalling;
 }
