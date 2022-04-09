@@ -16,14 +16,8 @@ void main() {
   const theEnd = 'The end';
   LangTester.type = ApplyingChangesModel;
 
-  ApplyingChangesModel buildModel(List<bool> events) {
-    final model = MockApplyingChangesModel();
-    when(model.isInstalling()).thenAnswer((_) => Stream.fromIterable(events));
-    return model;
-  }
-
   Widget buildPage(ApplyingChangesModel model) {
-    return Provider<ApplyingChangesModel>.value(
+    return ChangeNotifierProvider<ApplyingChangesModel>.value(
       value: model,
       child: ApplyingChangesPage(),
     );
@@ -50,16 +44,23 @@ void main() {
   }
 
   testWidgets('goes to the next page on false', (tester) async {
-    final model = buildModel([true, true, false]);
+    final model = MockApplyingChangesModel();
+    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
+        .thenAnswer((realInvocation) {
+      WidgetsBinding.instance!.addPostFrameCallback((_) {
+        realInvocation.namedArguments[Symbol('onDoneTransition')]();
+      });
+    });
     await tester.pumpWidget(buildApp(model));
-    expect(find.text(theEnd), findsNothing);
-    await tester.pump(Duration.zero);
     expect(find.text(theEnd), findsNothing);
     await tester.pumpAndSettle();
     expect(find.text(theEnd), findsOneWidget);
   });
+
   testWidgets('won\'t go next while still installing', (tester) async {
-    final model = buildModel([true, true]);
+    final model = MockApplyingChangesModel();
+    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
+        .thenAnswer((realInvocation) {});
     await tester.pumpWidget(buildApp(model));
     expect(find.text(theEnd), findsNothing);
     await tester.pump(Duration.zero);

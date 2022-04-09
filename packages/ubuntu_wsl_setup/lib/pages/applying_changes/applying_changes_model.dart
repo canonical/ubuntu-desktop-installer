@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../installing_state.dart';
@@ -6,12 +9,28 @@ import '../../installing_state.dart';
 ///
 /// See also:
 ///  * [ApplyingChangesPage]
-class ApplyingChangesModel {
+class ApplyingChangesModel extends ChangeNotifier {
   /// Creates a model for the 'applying changes' page.
-  ApplyingChangesModel(SubiquityStatusMonitor monitor)
-      : _isInstalling = monitor.onStatusChanged.map(
-            (event) => event?.state?.isInstalling == true); // could be null
+  ApplyingChangesModel(this._monitor);
 
-  final Stream<bool> _isInstalling;
-  Stream<bool> isInstalling() => _isInstalling;
+  final SubiquityStatusMonitor _monitor;
+  StreamSubscription<ApplicationStatus?>? _sub;
+  bool _previousState = true;
+
+  void init({required VoidCallback onDoneTransition}) {
+    _sub = _monitor.onStatusChanged.listen((status) {
+      if (status?.state?.isInstalling == false && _previousState == true) {
+        _previousState = false;
+        onDoneTransition();
+      } else {
+        notifyListeners();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _sub?.cancel();
+    super.dispose();
+  }
 }

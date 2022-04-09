@@ -2,7 +2,7 @@
 // in ubuntu_wsl_setup/test/applying_changes_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i3;
+import 'dart:ui' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart'
@@ -26,9 +26,28 @@ class MockApplyingChangesModel extends _i1.Mock
   }
 
   @override
-  _i3.Stream<bool> isInstalling() =>
-      (super.noSuchMethod(Invocation.method(#isInstalling, []),
-          returnValue: Stream<bool>.empty()) as _i3.Stream<bool>);
+  bool get hasListeners =>
+      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
+          as bool);
+  @override
+  void init({_i3.VoidCallback? onDoneTransition}) => super.noSuchMethod(
+      Invocation.method(#init, [], {#onDoneTransition: onDoneTransition}),
+      returnValueForMissingStub: null);
+  @override
+  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
+      returnValueForMissingStub: null);
+  @override
+  void addListener(_i3.VoidCallback? listener) =>
+      super.noSuchMethod(Invocation.method(#addListener, [listener]),
+          returnValueForMissingStub: null);
+  @override
+  void removeListener(_i3.VoidCallback? listener) =>
+      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
+          returnValueForMissingStub: null);
+  @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
   @override
   String toString() => super.toString();
 }

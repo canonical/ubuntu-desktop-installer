@@ -10,43 +10,79 @@ import 'applying_changes_model_test.mocks.dart';
 
 @GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
-  test('The happy path', () async {
+  test('The happy path calls back', () async {
+    const last = ApplicationStatus(state: ApplicationState.DONE);
     const statuses = <ApplicationStatus>[
       ApplicationStatus(state: ApplicationState.WAITING),
       ApplicationStatus(state: ApplicationState.RUNNING),
       ApplicationStatus(state: ApplicationState.POST_RUNNING),
-      ApplicationStatus(state: ApplicationState.DONE),
+      last,
     ];
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
     final model = ApplyingChangesModel(monitor);
-    expect(model.isInstalling(), emitsInOrder([true, true, true, false]));
+    var calledBack = false;
+    model.init(onDoneTransition: () => calledBack = true);
+    // Forces the stream to emit.
+    await expectLater(monitor.onStatusChanged, emitsThrough(last));
+    await expectLater(calledBack, isTrue);
   });
-  test('Error should not block', () async {
+  test('Never calls back more than once', () async {
+    const last = ApplicationStatus(state: ApplicationState.DONE);
     const statuses = <ApplicationStatus>[
       ApplicationStatus(state: ApplicationState.WAITING),
       ApplicationStatus(state: ApplicationState.RUNNING),
       ApplicationStatus(state: ApplicationState.POST_RUNNING),
-      ApplicationStatus(state: ApplicationState.ERROR),
+      last,
+      last,
+      last,
     ];
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
     final model = ApplyingChangesModel(monitor);
-    expect(model.isInstalling(), emitsInOrder([true, true, true, false]));
+    var calledBackCount = 0;
+    model.init(onDoneTransition: () => calledBackCount++);
+    // Forces the stream to emit.
+    await expectLater(monitor.onStatusChanged, emitsThrough(last));
+    await expectLater(calledBackCount, 1);
   });
-  test('Would loop forever if subiquity never finish or crash', () async {
+  test('Error should also call back', () async {
+    const last = ApplicationStatus(state: ApplicationState.ERROR);
+    const statuses = <ApplicationStatus>[
+      ApplicationStatus(state: ApplicationState.WAITING),
+      ApplicationStatus(state: ApplicationState.RUNNING),
+      ApplicationStatus(state: ApplicationState.POST_RUNNING),
+      last,
+    ];
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.onStatusChanged)
+        .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
+    final model = ApplyingChangesModel(monitor);
+    var calledBack = false;
+    model.init(onDoneTransition: () => calledBack = true);
+    // Forces the stream to emit.
+    await expectLater(monitor.onStatusChanged, emitsThrough(last));
+    await expectLater(calledBack, isTrue);
+  });
+  test('Would never call back if subiquity never finishes or crashes',
+      () async {
+    const last = ApplicationStatus(state: ApplicationState.POST_RUNNING);
     const statuses = <ApplicationStatus>[
       ApplicationStatus(state: ApplicationState.WAITING),
       ApplicationStatus(state: ApplicationState.POST_WAIT),
       ApplicationStatus(state: ApplicationState.RUNNING),
-      ApplicationStatus(state: ApplicationState.POST_RUNNING),
+      last,
     ];
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
-        .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
+        .thenAnswer((_) => Stream.fromIterable(statuses));
     final model = ApplyingChangesModel(monitor);
-    expect(model.isInstalling(), neverEmits(false));
+    var calledBack = false;
+    model.init(onDoneTransition: () => calledBack = true);
+    // Forces the stream to emit.
+    await expectLater(monitor.onStatusChanged, emitsThrough(last));
+    await expectLater(calledBack, isFalse);
   });
 }
