@@ -107,22 +107,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => '선택하면 DISPLAY 환경변수 자동 설정을 활성화 합니다. 서드파티 X 서버를 요구합니다.';
 
   @override
-  String get configurationUITitle => '우분투 WSL 구성 UI (실험적 기능)';
+  String get configurationUITitle => '우분투 WSL 구성 UI - 고급 옵션';
 
   @override
   String get configurationUIInteroperabilityHeader => '상호운용성';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => '활성화됨';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => '상호운용성 활성화 여부.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Windows 경로 붙이기';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'WSL 에서 PAT 환경 변수의 뒤에 Windows 경로를 붙일지 여부';
 
   @override
   String get configurationUIAutoMountHeader => '자동 마운트';
@@ -140,13 +140,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. /etc/fstab 설정 파일에 포함되었습니까???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => '실험적 기능 - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => '활성화됨';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => '부팅할 때 systemd를 활성화 해야 하는지 여부. 주의: 실험적 기능입니다.';
 
   @override
   String get setupCompleteTitle => '설치 완료';
