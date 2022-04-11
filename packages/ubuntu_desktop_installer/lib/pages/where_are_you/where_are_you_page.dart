@@ -70,7 +70,6 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
                               formatLocation(model.selectedLocation);
                         }
                         return TextFormField(
-                          autofocus: true,
                           focusNode: focusNode,
                           controller: controller,
                           decoration: InputDecoration(

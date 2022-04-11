@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -13,15 +14,18 @@ void main() {
     final location = GeoLocation(name: 'Stockholm');
 
     final client = MockSubiquityClient();
+    when(client.timezone())
+        .thenAnswer((_) async => TimezoneData(timezone: location.name));
     final service = MockGeoService();
-    when(service.init()).thenAnswer((_) async => location);
+    when(service.searchTimezone(location.name))
+        .thenAnswer((_) async => [location]);
 
     final model = WhereAreYouModel(client: client, service: service);
     expect(model.isInitialized, isFalse);
 
     await model.init();
 
-    verify(service.init()).called(1);
+    verify(client.timezone()).called(1);
     expect(model.isInitialized, isTrue);
     expect(model.selectedLocation, equals(location));
   });

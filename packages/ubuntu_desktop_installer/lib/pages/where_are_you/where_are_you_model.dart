@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -25,10 +26,13 @@ class WhereAreYouModel extends ChangeNotifier {
   bool get isInitialized => _initialized;
 
   Future<void> init() async {
-    _service.init().then((location) {
+    return _client.timezone().then((data) async {
+      if (data.timezone != null) {
+        final timezones = await _service.searchTimezone(data.timezone!);
+        _selectedLocation = timezones.firstOrNull;
+      }
       _initialized = true;
-      _selectedLocation = location;
-      log.debug('Initialized $location');
+      log.debug('Initialized $_selectedLocation');
       notifyListeners();
     });
   }

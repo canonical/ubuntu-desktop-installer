@@ -18,7 +18,6 @@ import 'slides.dart';
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
 
-const _kGeoIPUrl = 'https://geoip.ubuntu.com/lookup';
 const _kGeonameUrl = 'https://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
@@ -62,11 +61,10 @@ void runInstallerApp(
     loadTimezones: () => assetBundle.loadString('assets/timeZones.txt'),
   );
 
-  final geoip = GeoIP(url: _kGeoIPUrl, geodata: geodata);
   final geoname = Geoname(url: _kGeonameUrl, geodata: geodata);
 
   registerService(() => DiskStorageService(subiquityClient));
-  registerService(() => GeoService(geoip, sources: [geodata, geoname]));
+  registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(() => JournalService(journalUnit));
   registerService(KeyboardService.new);
   registerService(NetworkService.new);

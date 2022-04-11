@@ -47,7 +47,6 @@ dependencies:
   udev:
     path: ../udev
   upower: ^0.6.1
-  xml: ^5.3.1
   yaru: ^0.2.0
   yaru_icons: ^0.1.2
   yaru_widgets: 1.0.2
