@@ -69,5 +69,207 @@
     "placeholders": {
       "RELEASE": {}
     }
+  },
+  "hiddenWifiNetwork": "Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameRequired": "Reikia nurodyti tinklo pavadinimą",
+  "@hiddenWifiNetworkNameRequired": {},
+  "noInternet": "Aš kol kas nenoriu jungtis prie interneto",
+  "@noInternet": {},
+  "wifiMustBeEnabled": "Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Įjungti belaidį (Wi-Fi)",
+  "@enableWifi": {},
+  "updatesOtherSoftwarePageTitle": "Atnaujinimai ir kita programinė įranga",
+  "@updatesOtherSoftwarePageTitle": {},
+  "otherOptions": "Kitos parinktys",
+  "@otherOptions": {},
+  "installThirdPartyTitle": "Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio (Wi-Fi) ryšio aparatinei įrangai, o taip pat papildomus medijos formatus",
+  "@installThirdPartyTitle": {},
+  "chooseSecurityKeyTitle": "Pasirinkite saugumo raktą",
+  "@chooseSecurityKeyTitle": {},
+  "installationTypeErase": "Ištrinti duomenis diske ir įdiegti {DISTRO}",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "hiddenWifiNetworkNameLabel": "Tinklo pavadinimas",
+  "@hiddenWifiNetworkNameLabel": {},
+  "noWifiDevicesDetected": "Neaptikta jokių belaidžių (Wi-Fi) įrenginių",
+  "@noWifiDevicesDetected": {},
+  "wirelessNetworkingDisabled": "Belaidis darbas tinkle išjungtas",
+  "@wirelessNetworkingDisabled": {},
+  "connectButtonText": "Prisijungti",
+  "@connectButtonText": {},
+  "chooseSecurityKeyHeader": "Diskų šifravimas apsaugo failus tuo atveju, jei prarasite savo kompiuterį. Tai reikalauja įvesti saugumo raktą kiekvieną kartą paleidus kompiuterį.\n\nVisi failai už {RELEASE} ribų nebus šifruoti.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installThirdPartySubtitle": "Šiai programinei įrangai taikomos licencijos sąlygos, kurias rasite jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.",
+  "@installThirdPartySubtitle": {},
+  "installationTypeDualOSDetected": "Šiuo metu šiame kompiuteryje yra įdiegtos {os1} ir {os2}. Ką norėtumėte daryti?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Šiuo metu šiame kompiuteryje yra įdiegtos kelios operacinės sistemos. Ką norėtumėte daryti?",
+  "@installationTypeMultiOSDetected": {},
+  "welcomeHeader": "Pasirinkite kalbą:",
+  "@welcomeHeader": {},
+  "configureSecureBootDescription": "Pasirinkote įdiegti trečiųjų šalių tvarkyklės programinę įrangą. Tai reikalauja, kad būtų išjungtas saugusis paleidimashis.\nNorėdami tai atlikti, dabar turite pasirinkti saugumo raktą, o kai sistema bus paleista iš naujo, turėsite jį įvesti.",
+  "@configureSecureBootDescription": {},
+  "configureSecureBootOption": "Konfigūruoti saugųjį paleidimą",
+  "@configureSecureBootOption": {},
+  "chooseSecurityKey": "Pasirinkite saugumo raktą",
+  "@chooseSecurityKey": {},
+  "confirmSecurityKey": "Patvirtinkite saugumo raktą",
+  "@confirmSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "Kol kas neįdiegti tvarkyklės programinės įrangos",
+  "@dontInstallDriverSoftwareNow": {},
+  "configureSecureBootSecurityKeyRequired": "Reikia nurodyti saugumo raktą",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "Saugumo raktai nesutampa",
+  "@secureBootSecurityKeysDontMatch": {},
+  "connectToInternetDescription": "Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą",
+  "@connectToInternetDescription": {},
+  "wiredMustBeEnabled": "Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "Įjungti laidinį ryšį",
+  "@enableWired": {},
+  "selectWifiNetwork": "Prisijungti prie belaidžio (Wi-Fi) tinklo",
+  "@selectWifiNetwork": {},
+  "connectToInternetPageTitle": "Prisijunkite prie interneto",
+  "@connectToInternetPageTitle": {},
+  "useWiredConnection": "Naudoti laidinį ryšį",
+  "@useWiredConnection": {},
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Įspėjimas:</font> Tai ištrins visas {os} programas, dokumentus, nuotraukas, muziką ir visus kitus failus.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "tryOrInstallPageTitle": "Išbandykite arba įsidiekite",
+  "@tryOrInstallPageTitle": {},
+  "repairInstallation": "Taisyti diegimą",
+  "@repairInstallation": {},
+  "repairInstallationDescription": "Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.",
+  "@repairInstallationDescription": {},
+  "releaseNotesLabel": "Galite pageidauti perskaityti <a href=\"{url}\">laidos informaciją</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRSTDescription": "Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "Norėdami skaityti instrukcijas, atverkite telefone ar kitame įrenginyje šį puslapį: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "configureSecureBootTitle": "Konfigūruoti saugųjį paleidimą",
+  "@configureSecureBootTitle": {},
+  "chooseSecurityKeyHint": "Pasirinkite saugumo raktą",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Patvirtinkite saugumo raktą",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyRequired": "Reikia nurodyti saugumo raktą",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyMismatch": "Saugumo raktai nesutampa",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Įspėjimas</font>: Jei prarasite šį saugumo raktą, visi duomenys bus prarasti. Jei reikia, užsirašykite raktą ir laikykite jį atokiai saugioje vietoje.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeTitle": "Įdiegimo tipas",
+  "@installationTypeTitle": {},
+  "installationTypeOSDetected": "Šiuo metu šiame kompiuteryje yra įdiegta {os}. Ką norėtumėte daryti?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeNoOSDetected": "Šiuo metu šiame kompiuteryje nėra įdiegtų operacinių sistemų. Ką norėtumėte daryti?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">Įspėjimas:</font> Tai ištrins visas jūsų programas, dokumentus, nuotraukas, muziką bei visus failus, esančius kitose operacinėse sistemose.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeAdvancedLabel": "Išplėstinės ypatybės...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "Išplėstinės ypatybės",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeNone": "Nėra",
+  "@installationTypeNone": {},
+  "installationTypeNoneSelected": "Nieko nepasirinkta",
+  "@installationTypeNoneSelected": {},
+  "installationTypeLVMSelected": "LVM pasirinkta",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncryptInfo": "Kitame žingsnyje pasirinksite saugumo raktą.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFSSelected": "ZFS pasirinkta",
+  "@installationTypeZFSSelected": {},
+  "installationTypeReinstall": "Ištrinti {os} ir įdiegti iš naujo",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "Įdiegti {product} šalia {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "tryUbuntuDescription": "Galite išbandyti {RELEASE} neatlikdami kompiuteryje jokių pakeitimų.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "Įsidiekite {RELEASE} šalia savo dabartinės operacinės sistemoje arba vietoje jos. Tai neturėtų ilgai užtrukti.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeLVM": "Naudoti LVM kartu su nauju {RELEASE} diegimu",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncrypt": "Šifruoti naują {RELEASE} diegimą, kad būtų užtikrintas saugumas",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
   }
 }
