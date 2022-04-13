@@ -256,7 +256,6 @@ class Disk with _$Disk {
     int? size,
     List<String>? usageLabels,
     @JsonKey(name: 'partitions') List<DiskObject>? objects,
-    int? freeForPartitions,
     bool? okForGuided,
     String? ptable,
     bool? preserve,
