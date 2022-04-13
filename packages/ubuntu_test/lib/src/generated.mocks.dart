@@ -281,8 +281,9 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       as _i5.Future<_i3.StorageResponseV2>);
   @override
   _i5.Future<_i3.StorageResponseV2> addPartitionV2(
-          _i3.Disk? disk, _i3.Partition? partition) =>
-      (super.noSuchMethod(Invocation.method(#addPartitionV2, [disk, partition]),
+          _i3.Disk? disk, _i3.Gap? gap, _i3.Partition? partition) =>
+      (super.noSuchMethod(
+              Invocation.method(#addPartitionV2, [disk, gap, partition]),
               returnValue: Future<_i3.StorageResponseV2>.value(
                   _FakeStorageResponseV2_8()))
           as _i5.Future<_i3.StorageResponseV2>);
