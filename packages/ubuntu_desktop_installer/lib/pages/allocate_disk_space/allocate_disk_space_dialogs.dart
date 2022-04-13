@@ -40,14 +40,18 @@ Future<bool> showConfirmationDialog(
 }
 
 /// Shows a dialog for creating a new partition for the given [disk].
-Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
+Future<void> showCreatePartitionDialog(
+  BuildContext context,
+  Disk disk,
+  Gap gap,
+) {
   final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
 
   return showDialog(
     context: context,
     builder: (context) {
       final partitionUnit = ValueNotifier(DataUnit.megabytes);
-      final partitionSize = ValueNotifier(disk.freeForPartitions ?? 0);
+      final partitionSize = ValueNotifier(gap.size ?? 0);
       final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
 
@@ -75,7 +79,7 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
                   return StorageSizeBox(
                     size: partitionSize.value,
                     unit: partitionUnit.value,
-                    available: disk.freeForPartitions ?? 0,
+                    available: gap.size ?? 0,
                     onSizeChanged: (v) => partitionSize.value = v,
                     onUnitSelected: (v) => partitionUnit.value = v,
                   );
@@ -104,17 +108,16 @@ Future<void> showCreatePartitionDialog(BuildContext context, Disk disk) {
           ),
           const SizedBox(width: kButtonBarSpacing),
           OutlinedButton(
-            onPressed: model.selectedDisk != null
-                ? () {
-                    model.addPartition(
-                      model.selectedDisk!,
-                      size: partitionSize.value,
-                      format: partitionFormat.value,
-                      mount: partitionMount.value,
-                    );
-                    Navigator.of(context).pop();
-                  }
-                : null,
+            onPressed: () {
+              model.addPartition(
+                disk,
+                gap,
+                size: partitionSize.value,
+                format: partitionFormat.value,
+                mount: partitionMount.value,
+              );
+              Navigator.of(context).pop();
+            },
             child: Text(lang.okButtonText),
           ),
         ],

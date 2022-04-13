@@ -107,15 +107,15 @@ class DiskStorageService {
     return storage ?? const <Disk>[];
   }
 
-  /// Adds a [partition] on the specified [disk] and returns the new storage
-  /// configuration.
+  /// Adds a [partition] in the specified [gap] on the [disk], and returns the
+  /// new storage configuration.
   ///
   /// NOTE: The new partition is allowed to specify the following attributes:
   /// - [Partition.size]
   /// - [Partition.format]
   /// - [Partition.mount]
-  Future<List<Disk>> addPartition(Disk disk, Partition partition) {
-    return _client.addPartitionV2(disk, partition).then(_updateStorage);
+  Future<List<Disk>> addPartition(Disk disk, Gap gap, Partition partition) {
+    return _client.addPartitionV2(disk, gap, partition).then(_updateStorage);
   }
 
   /// Edits a [partition] on the specified [disk] and returns the new storage

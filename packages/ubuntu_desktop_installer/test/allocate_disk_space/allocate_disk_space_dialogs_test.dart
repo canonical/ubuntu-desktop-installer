@@ -18,7 +18,8 @@ void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
-    final testDisk = Disk(freeForPartitions: 1000000);
+    final testDisk = Disk();
+    final testGap = Gap(offset: 0, size: 1000000);
     final model = buildModel(selectedDisk: testDisk);
 
     registerMockService<UdevService>(MockUdevService());
@@ -31,7 +32,7 @@ void main() {
     );
 
     final result = showCreatePartitionDialog(
-        tester.element(find.byType(AllocateDiskSpacePage)), testDisk);
+        tester.element(find.byType(AllocateDiskSpacePage)), testDisk, testGap);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DropdownButton<DataUnit>));
@@ -61,6 +62,7 @@ void main() {
 
     verify(model.addPartition(
       testDisk,
+      testGap,
       size: 123,
       format: PartitionFormat.btrfs,
       mount: '/tst',
@@ -71,14 +73,15 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final testDisk = Disk(freeForPartitions: 1000000, objects: [
+    final testDisk = Disk(objects: [
       Partition(
         number: 1,
         format: 'ext4',
         wipe: true,
         mount: '/tst',
         preserve: true,
-      )
+      ),
+      Gap(offset: 123, size: 1000000),
     ]);
     final model = buildModel(selectedDisk: testDisk);
 

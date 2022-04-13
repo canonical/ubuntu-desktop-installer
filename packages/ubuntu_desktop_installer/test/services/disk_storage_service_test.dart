@@ -118,15 +118,16 @@ void main() {
 
   test('add/edit/remove partition', () async {
     final disk = Disk(id: 'tst');
+    final gap = Gap(offset: 2, size: 3);
     final partition = Partition(number: 1);
     final service = DiskStorageService(client);
 
-    when(client.addPartitionV2(disk, partition))
+    when(client.addPartitionV2(disk, gap, partition))
         .thenAnswer((_) async => StorageResponseV2(disks: testDisks));
 
-    await service.addPartition(disk, partition);
+    await service.addPartition(disk, gap, partition);
     expect(service.storage, equals(testDisks));
-    verify(client.addPartitionV2(disk, partition)).called(1);
+    verify(client.addPartitionV2(disk, gap, partition)).called(1);
 
     when(client.editPartitionV2(disk, partition)).thenAnswer(
         (_) async => StorageResponseV2(disks: testDisks.reversed.toList()));

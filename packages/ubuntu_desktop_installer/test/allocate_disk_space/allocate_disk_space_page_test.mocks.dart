@@ -43,9 +43,9 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#selectedDiskIndex), returnValue: 0)
           as int);
   @override
-  int get selectedPartitionIndex =>
-      (super.noSuchMethod(Invocation.getter(#selectedPartitionIndex),
-          returnValue: 0) as int);
+  int get selectedObjectIndex => (super
+          .noSuchMethod(Invocation.getter(#selectedObjectIndex), returnValue: 0)
+      as int);
   @override
   _i5.Stream<dynamic> get onSelectionChanged =>
       (super.noSuchMethod(Invocation.getter(#onSelectionChanged),
@@ -71,15 +71,15 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  bool isStorageSelected(int? diskIndex, [int? partitionIndex = -1]) =>
+  bool isStorageSelected(int? diskIndex, [int? objectIndex = -1]) =>
       (super.noSuchMethod(
-          Invocation.method(#isStorageSelected, [diskIndex, partitionIndex]),
+          Invocation.method(#isStorageSelected, [diskIndex, objectIndex]),
           returnValue: false) as bool);
   @override
-  _i5.Future<void> addPartition(_i4.Disk? disk,
+  _i5.Future<void> addPartition(_i4.Disk? disk, _i4.Gap? gap,
           {int? size, _i3.PartitionFormat? format, String? mount}) =>
       (super.noSuchMethod(
-          Invocation.method(#addPartition, [disk],
+          Invocation.method(#addPartition, [disk, gap],
               {#size: size, #format: format, #mount: mount}),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
@@ -98,14 +98,13 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  bool canSelectStorage(int? diskIndex, [int? partitionIndex = -1]) =>
+  bool canSelectStorage(int? diskIndex, [int? objectIndex = -1]) =>
       (super.noSuchMethod(
-          Invocation.method(#canSelectStorage, [diskIndex, partitionIndex]),
+          Invocation.method(#canSelectStorage, [diskIndex, objectIndex]),
           returnValue: false) as bool);
   @override
-  void selectStorage(int? diskIndex, [int? partitionIndex = -1]) =>
-      super.noSuchMethod(
-          Invocation.method(#selectStorage, [diskIndex, partitionIndex]),
+  void selectStorage(int? diskIndex, [int? objectIndex = -1]) => super
+      .noSuchMethod(Invocation.method(#selectStorage, [diskIndex, objectIndex]),
           returnValueForMissingStub: null);
   @override
   void selectBootDisk(int? diskIndex) =>
