@@ -93,7 +93,7 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
 
   var _disks = <Disk>[];
   var _selectedDiskIndex = -1;
-  var _selectedPartitionIndex = -1;
+  var _selectedObjectIndex = -1;
   int _bootDiskIndex = -1;
 
   /// Whether the current input is valid.
@@ -110,16 +110,23 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
 
   /// Returns the selected partition, or null if no partition is selected.
   Partition? get selectedPartition =>
-      selectedDisk?.partitions?.elementAtOrNull(_selectedPartitionIndex);
+      selectedObject is Partition ? selectedObject as Partition : null;
 
-  /// The index of the selected disk's selected partition, or -1 if no partition
-  /// is selected.
-  int get selectedPartitionIndex => _selectedPartitionIndex;
+  /// Returns the selected gap, or null if no gap is selected.
+  Gap? get selectedGap => selectedObject is Gap ? selectedObject as Gap : null;
 
-  /// Returns true if the specified disk or its partition is selected.
-  bool isStorageSelected(int diskIndex, [int partitionIndex = -1]) {
+  /// Returns the selected object, or null if no partition or gap is selected.
+  DiskObject? get selectedObject =>
+      selectedDisk?.objects?.elementAtOrNull(_selectedObjectIndex);
+
+  /// The index of the selected disk's selected object, or -1 if no partition
+  /// or gap is selected.
+  int get selectedObjectIndex => _selectedObjectIndex;
+
+  /// Returns true if the specified disk or its object is selected.
+  bool isStorageSelected(int diskIndex, [int objectIndex = -1]) {
     return diskIndex == _selectedDiskIndex &&
-        partitionIndex == _selectedPartitionIndex;
+        objectIndex == _selectedObjectIndex;
   }
 
   /// Notifies selection changes for auto-scrolling.
@@ -127,28 +134,21 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
   final _selectionController = StreamController();
 
   /// Whether a partition can be added for the currently selected disk.
-  bool get canAddPartition =>
-      selectedDisk != null &&
-      selectedDisk!.preserve != true &&
-      (selectedDisk!.freeForPartitions ?? 0) > 0 &&
-      selectedPartition == null;
+  bool get canAddPartition => selectedGap != null;
 
   /// Whether the currently selected partition can be removed.
-  bool get canRemovePartition =>
-      selectedDisk != null &&
-      selectedDisk!.preserve != true &&
-      selectedPartition != null &&
-      selectedPartition!.preserve != true;
+  bool get canRemovePartition => selectedPartition != null;
 
   /// Whether the currently selected partition can be edited.
   bool get canEditPartition => selectedPartition != null;
 
   /// Whether the currently selected disk can be reformatted.
-  bool get canReformatDisk => selectedDisk != null && selectedPartition == null;
+  bool get canReformatDisk => selectedDisk != null && selectedObject == null;
 
   /// Adds a partition.
   Future<void> addPartition(
-    Disk disk, {
+    Disk disk,
+    Gap gap, {
     required int size,
     required PartitionFormat? format,
     required String? mount,
@@ -158,7 +158,7 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
       format: format?.type,
       mount: mount,
     );
-    return _service.addPartition(disk, partition).then((disks) {
+    return _service.addPartition(disk, gap, partition).then((disks) {
       _updateDisks(disks);
       selectStorage(
         _selectedDiskIndex,
@@ -185,29 +185,20 @@ class AllocateDiskSpaceModel extends ChangeNotifier {
 
   /// Deletes a partition.
   Future<void> deletePartition(Disk disk, Partition partition) async {
-    final wasSelected = disk == selectedDisk;
     await _service.deletePartition(disk, partition).then(_updateDisks);
-    if (wasSelected) {
-      var index = _selectedPartitionIndex - 1;
-      if (index < 0 && selectedDisk?.partitions?.isNotEmpty == true) {
-        index = 0;
-      }
-      selectStorage(_selectedDiskIndex, index);
-    }
-    notifyListeners();
   }
 
-  /// Whether the disk or its partition can be selected.
-  bool canSelectStorage(int diskIndex, [int partitionIndex = -1]) => true;
+  /// Whether the disk or its object can be selected.
+  bool canSelectStorage(int diskIndex, [int objectIndex = -1]) => true;
 
-  /// Selects the specified disk or its partition.
-  void selectStorage(int diskIndex, [int partitionIndex = -1]) {
-    if (isStorageSelected(diskIndex, partitionIndex)) {
+  /// Selects the specified disk or its object.
+  void selectStorage(int diskIndex, [int objectIndex = -1]) {
+    if (isStorageSelected(diskIndex, objectIndex)) {
       return;
     }
 
     _selectedDiskIndex = diskIndex;
-    _selectedPartitionIndex = partitionIndex;
+    _selectedObjectIndex = objectIndex;
     _selectionController.add(null);
     notifyListeners();
   }

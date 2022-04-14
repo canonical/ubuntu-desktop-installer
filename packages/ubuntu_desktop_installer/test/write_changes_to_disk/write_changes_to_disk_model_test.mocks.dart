@@ -96,8 +96,9 @@ class MockDiskStorageService extends _i1.Mock
           as _i4.Future<List<_i3.Disk>>);
   @override
   _i4.Future<List<_i3.Disk>> addPartition(
-          _i3.Disk? disk, _i3.Partition? partition) =>
-      (super.noSuchMethod(Invocation.method(#addPartition, [disk, partition]),
+          _i3.Disk? disk, _i3.Gap? gap, _i3.Partition? partition) =>
+      (super.noSuchMethod(
+              Invocation.method(#addPartition, [disk, gap, partition]),
               returnValue: Future<List<_i3.Disk>>.value(<_i3.Disk>[]))
           as _i4.Future<List<_i3.Disk>>);
   @override

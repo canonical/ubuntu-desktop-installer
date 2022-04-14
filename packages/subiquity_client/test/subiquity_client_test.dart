@@ -154,9 +154,13 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
+      expect(disks!.first.objects, isNotNull);
+      expect(disks.first.objects!.whereType<Gap>(), hasLength(1));
+
       // add
       var response = await _client.addPartitionV2(
-        disks!.first,
+        disks.first,
+        disks.first.objects!.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);
@@ -202,9 +206,13 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
+      expect(disks!.first.objects, isNotNull);
+      expect(disks.first.objects!.whereType<Gap>(), hasLength(1));
+
       // add
       var response = await _client.addPartitionV2(
-        disks!.first,
+        disks.first,
+        disks.first.objects!.whereType<Gap>().single,
         Partition(format: 'swap'),
       );
       expect(response.disks, isNotNull);
@@ -240,11 +248,15 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
-      expect(disks!.first.partitions, isNotNull);
+      expect(disks!.first.objects, isNotNull);
+      expect(disks.first.objects!.whereType<Gap>(), hasLength(1));
+
+      expect(disks.first.partitions, isNotNull);
       expect(disks.first.partitions, isEmpty);
 
       var response = await _client.addPartitionV2(
         disks.first,
+        disks.first.objects!.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);

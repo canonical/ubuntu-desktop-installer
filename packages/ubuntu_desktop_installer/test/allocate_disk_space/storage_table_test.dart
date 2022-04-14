@@ -9,14 +9,18 @@ void main() {
   const sdb = Disk(
     path: '/dev/sdb',
     size: 22,
-    objects: [Partition(number: 1, size: 2211)],
+    objects: [
+      Partition(number: 1, size: 2211),
+      Gap(offset: 2211, size: 2222),
+    ],
   );
   const sdc = Disk(
     path: '/dev/sdc',
     size: 33,
     objects: [
       Partition(number: 1, size: 3311),
-      Partition(number: 2, size: 3322)
+      Partition(number: 2, size: 3322),
+      Gap(offset: 3322, size: 3333),
     ],
   );
   const sdd = Disk(
@@ -25,13 +29,15 @@ void main() {
     objects: [
       Partition(number: 1, size: 4411),
       Partition(number: 2, size: 4422),
-      Partition(number: 3, size: 4433)
+      Partition(number: 3, size: 4433),
+      Gap(offset: 4433, size: 4444),
     ],
   );
 
   final pathColumn = StorageColumn(
     titleBuilder: (_) => const Text('path'),
     diskBuilder: (_, disk) => Text(disk.path!),
+    gapBuilder: (_, disk, gap) => SizedBox.shrink(),
     partitionBuilder: (_, disk, partition) {
       return Text('${disk.path}${partition.number}');
     },
@@ -40,6 +46,7 @@ void main() {
   final sizeColumn = StorageColumn(
     titleBuilder: (_) => const Text('size'),
     diskBuilder: (_, disk) => Text('${disk.size}b'),
+    gapBuilder: (_, disk, gap) => Text('${gap.size}b'),
     partitionBuilder: (_, disk, partition) => Text('${partition.size}b'),
   );
 
@@ -85,15 +92,18 @@ void main() {
     // sdb
     expect(find.text('22b'), findsOneWidget);
     expect(find.text('2211b'), findsOneWidget);
+    expect(find.text('2222b'), findsOneWidget);
     // sdc
     expect(find.text('33b'), findsOneWidget);
     expect(find.text('3311b'), findsOneWidget);
     expect(find.text('3322b'), findsOneWidget);
+    expect(find.text('3333b'), findsOneWidget);
     // sdd
     expect(find.text('44b'), findsOneWidget);
     expect(find.text('4411b'), findsOneWidget);
     expect(find.text('4422b'), findsOneWidget);
     expect(find.text('4433b'), findsOneWidget);
+    expect(find.text('4444b'), findsOneWidget);
   });
 
   testWidgets('disk selection', (tester) async {
@@ -145,6 +155,8 @@ void main() {
     ));
 
     // can select
+    await tester.ensureVisible(find.text('/dev/sdb1'));
+    await tester.pump();
     await tester.tap(find.text('/dev/sdb1'));
     await tester.pump();
     expect(selectedDisk, equals(1));
@@ -154,12 +166,16 @@ void main() {
     selectedPartition = null;
 
     // cannot select
+    await tester.ensureVisible(find.text('/dev/sdc1'));
+    await tester.pump();
     await tester.tap(find.text('/dev/sdc1'));
     await tester.pump();
     expect(selectedDisk, isNull);
     expect(selectedPartition, isNull);
 
     // can select
+    await tester.ensureVisible(find.text('/dev/sdc2'));
+    await tester.pump();
     await tester.tap(find.text('/dev/sdc2'));
     await tester.pump();
     expect(selectedDisk, equals(2));
@@ -169,6 +185,8 @@ void main() {
     selectedPartition = null;
 
     // cannot unselect
+    await tester.ensureVisible(find.text('/dev/sdd3'));
+    await tester.pump();
     await tester.tap(find.text('/dev/sdd3'));
     await tester.pump();
     expect(selectedDisk, isNull);

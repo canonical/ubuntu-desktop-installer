@@ -63,7 +63,7 @@ AllocateDiskSpaceModel buildModel({
   Disk? selectedDisk,
   int? selectedDiskIndex,
   Partition? selectedPartition,
-  int? selectedPartitionIndex,
+  int? selectedObjectIndex,
   bool? canAddPartition,
   bool? canRemovePartition,
   bool? canEditPartition,
@@ -77,7 +77,7 @@ AllocateDiskSpaceModel buildModel({
   when(model.selectedDisk).thenReturn(selectedDisk);
   when(model.selectedDiskIndex).thenReturn(selectedDiskIndex ?? 0);
   when(model.selectedPartition).thenReturn(selectedPartition);
-  when(model.selectedPartitionIndex).thenReturn(selectedPartitionIndex ?? 0);
+  when(model.selectedObjectIndex).thenReturn(selectedObjectIndex ?? 0);
   when(model.onSelectionChanged).thenAnswer((_) => selection.stream);
   when(model.isStorageSelected(any, any)).thenReturn(false);
   when(model.canSelectStorage(any, any)).thenReturn(true);

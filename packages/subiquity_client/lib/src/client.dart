@@ -325,11 +325,12 @@ class SubiquityClient {
   }
 
   Future<StorageResponseV2> addPartitionV2(
-      Disk disk, Partition partition) async {
+      Disk disk, Gap gap, Partition partition) async {
     final request =
         Request('POST', Uri.http('localhost', 'storage/v2/add_partition'));
     request.body = jsonEncode(<String, dynamic>{
       'disk_id': disk.id,
+      'gap': gap.toJson(),
       'partition': partition.toJson(),
     });
     final response = await _send(request);

@@ -5,9 +5,9 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'storage_columns.dart';
 import 'storage_types.dart';
 
-typedef CanSelectStorage = bool Function(int disk, [int partition]);
-typedef IsStorageSelected = bool Function(int disk, [int partition]);
-typedef OnStorageSelected = void Function(int disk, [int partition]);
+typedef CanSelectStorage = bool Function(int disk, [int object]);
+typedef IsStorageSelected = bool Function(int disk, [int object]);
+typedef OnStorageSelected = void Function(int disk, [int object]);
 
 class StorageTable extends StatelessWidget {
   const StorageTable({
@@ -37,13 +37,13 @@ class StorageTable extends StatelessWidget {
   Widget _autoScrollTag({
     required Widget child,
     required int disk,
-    int partition = -1,
+    int object = -1,
   }) {
     if (controller == null) {
       return child;
     }
 
-    final index = hashList([disk, partition]);
+    final index = hashList([disk, object]);
     return AutoScrollTag(
       key: ValueKey(index),
       index: index,
@@ -79,16 +79,16 @@ class StorageTable extends StatelessWidget {
             DataCell(column.diskBuilder(context, disk))
         ],
       ),
-      for (var partitionIndex = 0;
-          partitionIndex < (disk.partitions?.length ?? 0);
-          ++partitionIndex)
+      for (var objectIndex = 0;
+          objectIndex < (disk.objects?.length ?? 0);
+          ++objectIndex)
         DataRow(
-          key: ValueKey(hashList([diskIndex, partitionIndex])),
-          selected: isSelected?.call(diskIndex, partitionIndex) ?? false,
-          onSelectChanged: canSelect?.call(diskIndex, partitionIndex) == true
+          key: ValueKey(hashList([diskIndex, objectIndex])),
+          selected: isSelected?.call(diskIndex, objectIndex) ?? false,
+          onSelectChanged: canSelect?.call(diskIndex, objectIndex) == true
               ? (selected) {
                   if (selected == true) {
-                    onSelected?.call(diskIndex, partitionIndex);
+                    onSelected?.call(diskIndex, objectIndex);
                   }
                 }
               : null,
@@ -98,24 +98,38 @@ class StorageTable extends StatelessWidget {
                 height: kMinInteractiveDimension,
                 child: _autoScrollTag(
                   disk: diskIndex,
-                  partition: partitionIndex,
+                  object: objectIndex,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 40),
-                    child: columns.first.partitionBuilder(
-                      context,
-                      disk,
-                      disk.partitions![partitionIndex],
-                    ),
+                    child: disk.objects![objectIndex] is Partition
+                        ? columns.first.partitionBuilder(
+                            context,
+                            disk,
+                            disk.objects![objectIndex] as Partition,
+                          )
+                        : columns.first.gapBuilder(
+                            context,
+                            disk,
+                            disk.objects![objectIndex] as Gap,
+                          ),
                   ),
                 ),
               ),
             ),
             for (final column in columns.skip(1))
-              DataCell(column.partitionBuilder(
-                context,
-                disk,
-                disk.partitions![partitionIndex],
-              ))
+              DataCell(
+                disk.objects![objectIndex] is Partition
+                    ? column.partitionBuilder(
+                        context,
+                        disk,
+                        disk.objects![objectIndex] as Partition,
+                      )
+                    : column.gapBuilder(
+                        context,
+                        disk,
+                        disk.objects![objectIndex] as Gap,
+                      ),
+              )
           ],
         ),
     ];

@@ -3281,7 +3281,6 @@ class _$DiskTearOff {
       int? size,
       List<String>? usageLabels,
       @JsonKey(name: 'partitions') List<DiskObject>? objects,
-      int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3296,7 +3295,6 @@ class _$DiskTearOff {
       size: size,
       usageLabels: usageLabels,
       objects: objects,
-      freeForPartitions: freeForPartitions,
       okForGuided: okForGuided,
       ptable: ptable,
       preserve: preserve,
@@ -3324,7 +3322,6 @@ mixin _$Disk {
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   @JsonKey(name: 'partitions')
   List<DiskObject>? get objects => throw _privateConstructorUsedError;
-  int? get freeForPartitions => throw _privateConstructorUsedError;
   bool? get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
@@ -3349,7 +3346,6 @@ abstract class $DiskCopyWith<$Res> {
       int? size,
       List<String>? usageLabels,
       @JsonKey(name: 'partitions') List<DiskObject>? objects,
-      int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3375,7 +3371,6 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? objects = freezed,
-    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
@@ -3412,10 +3407,6 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.objects
           : objects // ignore: cast_nullable_to_non_nullable
               as List<DiskObject>?,
-      freeForPartitions: freeForPartitions == freezed
-          ? _value.freeForPartitions
-          : freeForPartitions // ignore: cast_nullable_to_non_nullable
-              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
@@ -3457,7 +3448,6 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       int? size,
       List<String>? usageLabels,
       @JsonKey(name: 'partitions') List<DiskObject>? objects,
-      int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3484,7 +3474,6 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? size = freezed,
     Object? usageLabels = freezed,
     Object? objects = freezed,
-    Object? freeForPartitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
@@ -3521,10 +3510,6 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.objects
           : objects // ignore: cast_nullable_to_non_nullable
               as List<DiskObject>?,
-      freeForPartitions: freeForPartitions == freezed
-          ? _value.freeForPartitions
-          : freeForPartitions // ignore: cast_nullable_to_non_nullable
-              as int?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
@@ -3565,7 +3550,6 @@ class _$_Disk extends _Disk {
       this.size,
       this.usageLabels,
       @JsonKey(name: 'partitions') this.objects,
-      this.freeForPartitions,
       this.okForGuided,
       this.ptable,
       this.preserve,
@@ -3593,8 +3577,6 @@ class _$_Disk extends _Disk {
   @JsonKey(name: 'partitions')
   final List<DiskObject>? objects;
   @override
-  final int? freeForPartitions;
-  @override
   final bool? okForGuided;
   @override
   final String? ptable;
@@ -3609,7 +3591,7 @@ class _$_Disk extends _Disk {
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, objects: $objects, freeForPartitions: $freeForPartitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, objects: $objects, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
   }
 
   @override
@@ -3632,9 +3614,6 @@ class _$_Disk extends _Disk {
             (identical(other.objects, objects) ||
                 const DeepCollectionEquality()
                     .equals(other.objects, objects)) &&
-            (identical(other.freeForPartitions, freeForPartitions) ||
-                const DeepCollectionEquality()
-                    .equals(other.freeForPartitions, freeForPartitions)) &&
             (identical(other.okForGuided, okForGuided) ||
                 const DeepCollectionEquality()
                     .equals(other.okForGuided, okForGuided)) &&
@@ -3662,7 +3641,6 @@ class _$_Disk extends _Disk {
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
       const DeepCollectionEquality().hash(objects) ^
-      const DeepCollectionEquality().hash(freeForPartitions) ^
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
       const DeepCollectionEquality().hash(preserve) ^
@@ -3690,7 +3668,6 @@ abstract class _Disk extends Disk {
       int? size,
       List<String>? usageLabels,
       @JsonKey(name: 'partitions') List<DiskObject>? objects,
-      int? freeForPartitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3716,8 +3693,6 @@ abstract class _Disk extends Disk {
   @override
   @JsonKey(name: 'partitions')
   List<DiskObject>? get objects => throw _privateConstructorUsedError;
-  @override
-  int? get freeForPartitions => throw _privateConstructorUsedError;
   @override
   bool? get okForGuided => throw _privateConstructorUsedError;
   @override

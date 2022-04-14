@@ -293,7 +293,8 @@ Future<void> testAllocateDiskSpacePage(
 
   for (final disk in storage ?? []) {
     for (final partition in disk.partitions ?? const <Partition>[]) {
-      await tester.tap(find.text(disk.path));
+      // TODO: find the correct "free space" slot when there are multiple disks
+      await tester.tap(find.text(tester.lang.freeDiskSpace).last);
       await tester.pump();
 
       await tester.tap(find.byIcon(Icons.add));

@@ -6,6 +6,7 @@ import '../../l10n.dart';
 import 'storage_types.dart';
 
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
+typedef GapBuilder = Widget Function(BuildContext context, Disk disk, Gap gap);
 typedef PartitionBuilder = Widget Function(
     BuildContext context, Disk disk, Partition partition);
 
@@ -13,11 +14,13 @@ class StorageColumn {
   const StorageColumn({
     required this.titleBuilder,
     required this.diskBuilder,
+    required this.gapBuilder,
     required this.partitionBuilder,
   });
 
   final WidgetBuilder titleBuilder;
   final DiskBuilder diskBuilder;
+  final GapBuilder gapBuilder;
   final PartitionBuilder partitionBuilder;
 }
 
@@ -34,6 +37,15 @@ class StorageDeviceColumn extends StorageColumn {
                 const Icon(YaruIcons.drive_harddisk_filled),
                 const SizedBox(width: 16),
                 Text(disk.path ?? disk.id ?? ''),
+              ],
+            );
+          },
+          gapBuilder: (context, disk, gap) {
+            return Row(
+              children: [
+                const Icon(YaruIcons.drive_harddisk),
+                const SizedBox(width: 16),
+                Text(AppLocalizations.of(context).freeDiskSpace),
               ],
             );
           },
@@ -59,6 +71,9 @@ class StorageTypeColumn extends StorageColumn {
           diskBuilder: (context, disk) {
             return const SizedBox.shrink();
           },
+          gapBuilder: (context, disk, gap) {
+            return const SizedBox.shrink();
+          },
           partitionBuilder: (context, disk, partition) {
             return Text(partition.format ?? '');
           },
@@ -73,6 +88,9 @@ class StorageMountColumn extends StorageColumn {
             return Text(lang.diskHeadersMountPoint);
           },
           diskBuilder: (context, disk) {
+            return const SizedBox.shrink();
+          },
+          gapBuilder: (context, disk, gap) {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
@@ -91,6 +109,9 @@ class StorageSizeColumn extends StorageColumn {
           diskBuilder: (context, disk) {
             return Text(filesize(disk.size ?? 0));
           },
+          gapBuilder: (context, disk, gap) {
+            return Text(filesize(gap.size ?? 0));
+          },
           partitionBuilder: (context, disk, partition) {
             return Text(filesize(partition.size ?? 0));
           },
@@ -107,6 +128,9 @@ class StorageSystemColumn extends StorageColumn {
           diskBuilder: (context, disk) {
             return Text(disk.ptable ?? '');
           },
+          gapBuilder: (context, disk, gap) {
+            return const SizedBox.shrink();
+          },
           partitionBuilder: (context, disk, partition) {
             return Text(partition.grubDevice == true ? 'boot' : '');
           },
@@ -121,6 +145,9 @@ class StorageWipeColumn extends StorageColumn {
             return Text(lang.diskHeadersFormat);
           },
           diskBuilder: (context, disk) {
+            return const SizedBox.shrink();
+          },
+          gapBuilder: (context, disk, gap) {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {

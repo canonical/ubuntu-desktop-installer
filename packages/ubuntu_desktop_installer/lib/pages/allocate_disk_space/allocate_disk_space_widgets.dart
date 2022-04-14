@@ -2,6 +2,7 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -35,11 +36,11 @@ Color _partitionColor(int index, int count) {
 class _PartitionPainter extends CustomPainter {
   _PartitionPainter(this._model)
       : _selectedDiskIndex = _model.selectedDiskIndex,
-        _selectedPartitionIndex = _model.selectedPartitionIndex;
+        _selectedObjectIndex = _model.selectedObjectIndex;
 
   final AllocateDiskSpaceModel _model;
   final int _selectedDiskIndex;
-  final int _selectedPartitionIndex;
+  final int _selectedObjectIndex;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -47,26 +48,27 @@ class _PartitionPainter extends CustomPainter {
     if (diskSize <= 0) return;
 
     final rect = Offset.zero & size;
-    final partitions = _model.selectedDisk?.partitions;
-    final partitionCount = partitions?.length ?? 0;
-    for (var index = 0; index < partitionCount; ++index) {
-      final partitionSize = partitions![index].size ?? 0;
-      if (partitionSize <= 0) continue;
+    final objects = _model.selectedDisk?.objects;
+    final objectCount = objects?.length ?? 0;
+    for (var index = 0; index < objectCount; ++index) {
+      final object = objects![index];
+      final objectSize = object.size ?? 0;
+      if (object is! Partition || objectSize <= 0) continue;
 
       final paint = Paint();
-      paint.color = _partitionColor(index, partitions.length);
+      paint.color = _partitionColor(index, objects.length);
       paint.style = PaintingStyle.fill;
 
-      final width = rect.width * partitionSize / diskSize;
-      canvas.drawRect(Rect.fromLTWH(0, 0, width, rect.height), paint);
-      canvas.translate(width, 0);
+      final x = (object.offset ?? 0) / diskSize * rect.width;
+      final width = rect.width * objectSize / diskSize;
+      canvas.drawRect(Rect.fromLTWH(x, 0, width, rect.height), paint);
     }
   }
 
   @override
   bool shouldRepaint(covariant _PartitionPainter old) {
     return old._selectedDiskIndex != _selectedDiskIndex ||
-        old._selectedPartitionIndex != _selectedPartitionIndex;
+        old._selectedObjectIndex != _selectedObjectIndex;
   }
 }
 
@@ -78,9 +80,7 @@ class PartitionLegend extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     final lang = AppLocalizations.of(context);
 
-    final partitions = model.selectedDisk?.partitions;
-    final partitionCount = partitions?.length ?? 0;
-    final freeSpace = model.selectedDisk?.freeForPartitions ?? 0;
+    final objects = model.selectedDisk?.objects;
 
     return SizedBox(
       height: 48,
@@ -88,18 +88,19 @@ class PartitionLegend extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(vertical: 8),
-        itemCount: partitionCount + 1,
+        itemCount: objects?.length ?? 0,
         separatorBuilder: (context, index) => const SizedBox(width: 40),
         itemBuilder: (context, index) {
-          if (index >= partitionCount) {
+          final object = objects![index];
+          if (object is Gap) {
             return _PartitionLabel(
-              size: freeSpace,
+              size: object.size ?? 0,
               title: lang.freeDiskSpace,
               borderColor: Theme.of(context).dividerColor,
             );
           }
 
-          final partition = partitions![index];
+          final partition = object as Partition;
 
           return _PartitionLabel(
             // TODO:
@@ -107,7 +108,7 @@ class PartitionLegend extends StatelessWidget {
             // - partition type?
             title: '${model.selectedDisk!.id}${partition.number}',
             size: partition.size ?? 0,
-            color: _partitionColor(index, partitions.length),
+            color: _partitionColor(index, objects.length),
           );
         },
       ),
@@ -213,7 +214,7 @@ class PartitionButtonRow extends StatelessWidget {
                   ),
                   onPressed: model.canAddPartition
                       ? () => showCreatePartitionDialog(
-                          context, model.selectedDisk!)
+                          context, model.selectedDisk!, model.selectedGap!)
                       : null,
                 ),
                 const VerticalDivider(width: 1),
