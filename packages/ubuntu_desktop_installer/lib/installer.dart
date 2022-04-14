@@ -95,6 +95,7 @@ void runInstallerApp(
       if (options['machine-config'] != null) ...[
         '--machine-config',
         options['machine-config'],
+        '--storage-version=2',
       ],
     ],
     onInitSubiquity: (client) {
