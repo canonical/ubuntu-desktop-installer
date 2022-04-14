@@ -126,5 +126,7 @@
   "configurationUIInteroperabilityTitle": "פעיל",
   "@configurationUIInteroperabilityTitle": {},
   "configurationUIInteropAppendWindowsPathTitle": "הוספת נתיב Windows",
-  "@configurationUIInteropAppendWindowsPathTitle": {}
+  "@configurationUIInteropAppendWindowsPathTitle": {},
+  "applyingChanges": "השינויים חלים…",
+  "@applyingChanges": {}
 }
