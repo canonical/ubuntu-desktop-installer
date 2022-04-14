@@ -126,5 +126,7 @@
   "configurationUIInteroperabilityTitle": "Włączona",
   "@configurationUIInteroperabilityTitle": {},
   "configurationUIInteroperabilitySubtitle": "Określa, czy interoperacyjność jest włączona.",
-  "@configurationUIInteroperabilitySubtitle": {}
+  "@configurationUIInteroperabilitySubtitle": {},
+  "applyingChanges": "Stosowanie zmian...",
+  "@applyingChanges": {}
 }
