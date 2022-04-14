@@ -91,7 +91,6 @@ void main() {
         interopAppendwindowspath: false,
         automountEnabled: false,
         automountMountfstab: false,
-        systemdEnabled: true,
       ),
     );
     await tester.pumpAndSettle();
@@ -206,10 +205,6 @@ Future<void> testConfigurationUIPage(
   await tester.toggleCheckbox(
     label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
     value: config?.interopAppendwindowspath,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUISystemdSubtitle,
-    value: config?.systemdEnabled,
   );
   await tester.pumpAndSettle();
 

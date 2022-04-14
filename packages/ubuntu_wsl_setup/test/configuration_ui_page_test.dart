@@ -34,7 +34,6 @@ void main() {
         .thenReturn(interopAppendwindowspath ?? false);
     when(model.automountEnabled).thenReturn(automountEnabled ?? true);
     when(model.automountMountfstab).thenReturn(automountMountfstab ?? true);
-    when(model.systemdEnabled).thenReturn(systemdEnabled ?? true);
     return model;
   }
 

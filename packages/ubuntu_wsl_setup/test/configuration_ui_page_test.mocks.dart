@@ -59,14 +59,6 @@ class MockConfigurationUIModel extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#automountMountfstab, value),
           returnValueForMissingStub: null);
   @override
-  bool get systemdEnabled => (super
-          .noSuchMethod(Invocation.getter(#systemdEnabled), returnValue: false)
-      as bool);
-  @override
-  set systemdEnabled(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#systemdEnabled, value),
-          returnValueForMissingStub: null);
-  @override
   bool get isValid =>
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
