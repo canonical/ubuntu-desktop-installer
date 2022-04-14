@@ -33,6 +33,7 @@ void main() {
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
+    await testApplyingChangesPage(tester);
     await tester.pumpAndSettle();
 
     await testSetupCompletePage(tester, username: 'wsl-user');
@@ -178,6 +179,10 @@ Future<void> testAdvancedSetupPage(
   await tester.pumpAndSettle();
 
   await tester.tapButton(label: tester.lang.setupButton, highlighted: true);
+}
+
+Future<void> testApplyingChangesPage(WidgetTester tester) async {
+  expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 }
 
 Future<void> testConfigurationUIPage(

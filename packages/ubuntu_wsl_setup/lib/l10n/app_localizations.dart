@@ -517,6 +517,12 @@ abstract class AppLocalizations {
   /// **'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.'**
   String get configurationUISystemdSubtitle;
 
+  /// No description provided for @applyingChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Applying changes...'**
+  String get applyingChanges;
+
   /// No description provided for @setupCompleteTitle.
   ///
   /// In en, this message translates to:

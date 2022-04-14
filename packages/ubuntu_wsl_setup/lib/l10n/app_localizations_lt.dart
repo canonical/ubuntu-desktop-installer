@@ -149,6 +149,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Ar paleidimo metu turėtų būti aktyvuota systemd. DĖMESIO: Tai yra eksperimentinė ypatybė.';
 
   @override
+  String get applyingChanges => 'Applying changes...';
+
+  @override
   String get setupCompleteTitle => 'Sąranka baigta';
 
   @override

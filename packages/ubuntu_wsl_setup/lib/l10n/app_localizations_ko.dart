@@ -149,6 +149,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUISystemdSubtitle => '부팅할 때 systemd를 활성화 해야 하는지 여부. 주의: 실험적 기능입니다.';
 
   @override
+  String get applyingChanges => 'Applying changes...';
+
+  @override
   String get setupCompleteTitle => '설치 완료';
 
   @override
