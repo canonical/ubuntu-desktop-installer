@@ -1,3 +1,6 @@
+
+
+
 import 'app_localizations.dart';
 
 /// The translations for Lithuanian (`lt`).
@@ -29,8 +32,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get profileSetupTitle => 'Profilio sąranka';
 
   @override
-  String get profileSetupHeader =>
-      'Susikurkite numatytąją UNIX naudotojo paskyrą. Išsamesnei informacijai, apsilankykite: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Susikurkite numatytąją UNIX naudotojo paskyrą. Išsamesnei informacijai, apsilankykite: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
   String get profileSetupRealnameLabel => 'Jūsų vardas';
@@ -42,8 +44,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get profileSetupUsernameHint => 'Pasirinkite naudotojo vardą';
 
   @override
-  String get profileSetupUsernameHelper =>
-      'Naudotojo vardas gali būti kitoks, nei jūsų „Windows“ naudotojo vardas.';
+  String get profileSetupUsernameHelper => 'Naudotojo vardas gali būti kitoks, nei jūsų „Windows“ naudotojo vardas.';
 
   @override
   String get profileSetupPasswordHint => 'Pasirinkite slaptažodį';
@@ -52,8 +53,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get profileSetupConfirmPasswordHint => 'Pakartokite slaptažodį';
 
   @override
-  String get profileSetupShowAdvancedOptions =>
-      'Rodyti išplėstines parinktis kitame puslapyje';
+  String get profileSetupShowAdvancedOptions => 'Rodyti išplėstines parinktis kitame puslapyje';
 
   @override
   String get profileSetupPasswordMismatch => 'Slaptažodžiai nesutampa';
@@ -71,15 +71,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String get advancedSetupTitle => 'Išplėstinė sąranka';
 
   @override
-  String get advancedSetupHeader =>
-      'Šiame puslapyje galite derinti Ubuntu WSL pagal savo poreikius.';
+  String get advancedSetupHeader => 'Šiame puslapyje galite derinti Ubuntu WSL pagal savo poreikius.';
 
   @override
   String get advancedSetupMountLocationHint => 'Prijungti vietą';
 
   @override
-  String get advancedSetupMountLocationHelper =>
-      'Automatiniam prijungimui skirta vieta';
+  String get advancedSetupMountLocationHelper => 'Automatiniam prijungimui skirta vieta';
 
   @override
   String get advancedSetupMountLocationInvalid => 'Vieta yra netinkama';
@@ -88,35 +86,28 @@ class AppLocalizationsLt extends AppLocalizations {
   String get advancedSetupMountOptionHint => 'Prijungimo parinktis';
 
   @override
-  String get advancedSetupMountOptionHelper =>
-      'Automatiniam prijungimui perduodama prijungimo parinktis';
+  String get advancedSetupMountOptionHelper => 'Automatiniam prijungimui perduodama prijungimo parinktis';
 
   @override
   String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
 
   @override
-  String get advancedSetupHostGenerationSubtitle =>
-      'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle =>
-      'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle =>
-      'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle =>
-      'Grafinės naudotojo sąsajos integracija';
+  String get advancedSetupGUIIntegrationTitle => 'Grafinės naudotojo sąsajos integracija';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle =>
-      'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
-  String get configurationUITitle =>
-      'Ubuntu WSL konfigūracija - Išplėstinės parinktys';
+  String get configurationUITitle => 'Ubuntu WSL konfigūracija - Išplėstinės parinktys';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Sąveikumas';
@@ -125,16 +116,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => 'Įjungtas';
 
   @override
-  String get configurationUIInteroperabilitySubtitle =>
-      'Ar sąveikumas yra įjungtas.';
+  String get configurationUIInteroperabilitySubtitle => 'Ar sąveikumas yra įjungtas.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle =>
-      'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle =>
-      'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatinis prijungimas';
@@ -143,15 +131,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String get configurationUIAutoMountTitle => 'Įjungtas';
 
   @override
-  String get configurationUIAutoMountSubtitle =>
-      'Ar automatinio prijungimo ypatybė yra įjungta. Ši ypatybė leidžia jums prijungti „Windows“ diską WSL posistemėje.';
+  String get configurationUIAutoMountSubtitle => 'Ar automatinio prijungimo ypatybė yra įjungta. Ši ypatybė leidžia jums prijungti „Windows“ diską WSL posistemėje.';
 
   @override
   String get configurationUIMountFstabTitle => 'Prijungti /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle =>
-      'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
   String get configurationUISystemdHeader => 'EKSPERIMENTINIS - Systemd';
@@ -160,8 +146,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get configurationUISystemdTitle => 'Įjungtas';
 
   @override
-  String get configurationUISystemdSubtitle =>
-      'Ar paleidimo metu turėtų būti aktyvuota systemd. DĖMESIO: Tai yra eksperimentinė ypatybė.';
+  String get configurationUISystemdSubtitle => 'Ar paleidimo metu turėtų būti aktyvuota systemd. DĖMESIO: Tai yra eksperimentinė ypatybė.';
+
+  @override
+  String get applyingChanges => 'Applying changes...';
 
   @override
   String get setupCompleteTitle => 'Sąranka baigta';
@@ -172,14 +160,11 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get setupCompleteUpdate =>
-      'Yra rekomenduojama paleisti šią komandą, kad Ubuntu būtų atnaujinta iki naujausios versijos:';
+  String get setupCompleteUpdate => 'Yra rekomenduojama paleisti šią komandą, kad Ubuntu būtų atnaujinta iki naujausios versijos:';
 
   @override
-  String get setupCompleteManage =>
-      'Norėdami tvarkyti savo WSL nustatymus, galite naudoti įtaisytąją ubuntuwsl komandą:';
+  String get setupCompleteManage => 'Norėdami tvarkyti savo WSL nustatymus, galite naudoti įtaisytąją ubuntuwsl komandą:';
 
   @override
-  String get setupCompleteRestart =>
-      '* Visi nustatymai įsigalios po to, kai paleisite Ubuntu iš naujo.';
+  String get setupCompleteRestart => '* Visi nustatymai įsigalios po to, kai paleisite Ubuntu iš naujo.';
 }
