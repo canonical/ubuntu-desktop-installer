@@ -383,10 +383,9 @@ class SubiquityClient {
   }
 
   Future<StorageResponseV2> reformatDiskV2(Disk disk) async {
-    final request = Request(
-        'POST',
-        Uri.http('localhost', 'storage/v2/reformat_disk',
-            {'disk_id': '"${disk.id}"'}));
+    final request =
+        Request('POST', Uri.http('localhost', 'storage/v2/reformat_disk'));
+    request.body = jsonEncode({'disk_id': disk.id});
     final response = await _send(request);
 
     final responseJson =
