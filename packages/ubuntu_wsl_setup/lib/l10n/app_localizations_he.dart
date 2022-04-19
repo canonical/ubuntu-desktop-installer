@@ -149,7 +149,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'האם על systemd לעלות יחד עם המערכת. אזהרה: זאת יכולת נסיונית.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'השינויים חלים…';
 
   @override
   String get setupCompleteTitle => 'ההקמה הושלמה';

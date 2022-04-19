@@ -31,7 +31,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get restartButtonText => 'Start på nytt';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Tilbakefør';
 
   @override
   String get yesButtonText => 'Ja';
@@ -368,16 +368,16 @@ class AppLocalizationsNb extends AppLocalizations {
   String get diskHeadersSystem => 'System';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Formater';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'ledig plass';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Ny partisjonstabell';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Opprett en ny partisjonstabell på enheten?';
 
   @override
   String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
@@ -389,10 +389,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionCreateTitle => 'Create partition';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Rediger partisjon';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Størrelse:';
 
   @override
   String get partitionUnitB => 'B';
@@ -407,25 +407,25 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Type for ny partisjon:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Primær';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Logisk';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Plassering av ny partisjon:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Begynnelsen av plassen';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'På slutten av plassen';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'Brukt som:';
 
   @override
   String get partitionFormatExt4 => 'Ext4 journaling file system';
@@ -434,7 +434,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatExt3 => 'Ext3 journaling file system';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2-filsystem';
 
   @override
   String get partitionFormatBtrfs => 'btrfs journaling file system';
@@ -446,94 +446,94 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT-filsystem';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12-filsystem';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16-filsystem';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32-filsystem';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Sidevekslingsområde';
 
   @override
   String get partitionFormatIso9660 => 'ISO 9660 file system';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT-filsystem';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS-filsystem';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS-filsystem';
 
   @override
   String get partitionFormatZfsroot => 'ZFS root file system';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'Formater partisjonen';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Hvem er du?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Logg inn automatisk';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Krev passord for å logge inn';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Ditt navn';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Navn er påkrevd';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Datamaskinens navn';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'Navn brukt ved kommunikasjon med andre datamaskiner.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'Et datamaskinsnavn er påkrevd';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'Datamaskinsnavnet er ugyldig';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Velg et brukernavn';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Et brukernavn er påkrevd';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'Brukernavnet er ugyldig';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Velg et passord';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Et passord er påkrevd';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Bekreft passordet ditt';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Passordene samsvarer ikke';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Vis passord';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Skriv endringer til disk';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
@@ -569,23 +569,23 @@ class AppLocalizationsNb extends AppLocalizations {
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Mørk';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Lys';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'Alt er lyst og greit';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => 'Hei mørke, min gamle venn';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Installasjon fullført';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** er installert og klart til bruk.';
   }
 
   @override
@@ -594,10 +594,10 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Slå av';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Skru av BitLocker';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -611,17 +611,17 @@ class AppLocalizationsNb extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Hvem er du?';
 
   @override
   String get whereAreYouLocationLabel => 'Location';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Tidssone';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Velkommen til $RELEASE';
   }
 
   @override
@@ -630,7 +630,7 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Finn enda mer programvare';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
@@ -638,7 +638,7 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Ta musikken din med deg';
 
   @override
   String musicSlideDescription(Object RELEASE) {
@@ -687,7 +687,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Alt du trenger til kontoret';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
@@ -710,19 +710,19 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Tilpasningsinnstillinger';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Utseende';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Hjelpeteknologier';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Språkstøtte';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Hjelp og støtte';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -736,11 +736,11 @@ class AppLocalizationsNb extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Inkludert programvare';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Tilgjengelig programvare';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Støttet programvare';
 }
