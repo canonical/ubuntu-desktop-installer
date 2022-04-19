@@ -113,16 +113,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configurationUIInteroperabilityHeader => 'Interoperabilität';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Aktiviert';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Ob die Interoperabilität aktiviert ist.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Windows-Pfad anhängen';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Ob der Windows-Pfad an die Pfads-Umgebungsvariable in der WSL angehängt werden soll';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatisches Einhängen';
@@ -140,16 +140,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Ob /etc/fstab eingehängt werden soll. Die Konfigurationsdatei /etc/fstab enthält die ???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EXPERIMENTELL - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Aktiviert';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Ob systemd beim Booten aktiviert werden soll. ACHTUNG: Dies ist eine experimentelle Funktion.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Änderungen werden angewendet...';
 
   @override
   String get setupCompleteTitle => 'Einrichtung abgeschlossen';

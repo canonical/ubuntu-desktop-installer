@@ -107,22 +107,22 @@ class AppLocalizationsCs extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Zaškrtnutí zapíná automatické nastavení proměnné prostředí DISPLAY. Pro využití je dále zapotřebí grafického X serveru třetí strany.';
 
   @override
-  String get configurationUITitle => 'Uživatelské rozhraní pro nastavování Ubuntu WSL (experimentální)';
+  String get configurationUITitle => 'Nastavování Ubuntu WSL – pokročilé volby';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperabilita';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Zapnuto';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Zda je zapnuta interoperabilita.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Připojit Windows popis umístění';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Zda bude připojen Windows popis umístění do proměnné prostředí PATH ve WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Automatické připojování';
@@ -140,13 +140,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Zda bude připojeno podle /etc/fstab. Soubor s nastaveními /etc/fstab obsahuje???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EXPERIMENTÁLNÍ – Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Zapnuto';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Zda má být systemd spouštěn při startu systému. VÝSTRAHA: Toto je experimentální funkce.';
 
   @override
   String get applyingChanges => 'Applying changes...';

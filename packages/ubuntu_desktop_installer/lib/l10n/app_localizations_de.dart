@@ -611,42 +611,42 @@ class AppLocalizationsDe extends AppLocalizations {
   String get restartIntoWindows => 'Neustart unter Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Wo bist du?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Standort';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Zeitzone';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Willkommen zu $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Schnell und voller neuer Funktionen, die neueste Version von $RELEASE macht Computerarbeit noch einfacher. Hier sind nur ein paar der neuen klasse Sachen nach denen man gucken sollte...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Find sogar mehr Software';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Verabschiede dich von der Softwaresuche im Internet. Dank des Zugriffs auf den Snap Store und dem $RELEASE Software-Archiv können Sie neue Anwendungen ganz einfach finden und installieren. Geben Sie einfach ein, was Sie suchen möchten, oder erkunden Sie Kategorien wie Grafik & Fotografie, Spiele und Produktivität sowie hilfreiche Bewertungen von anderen Nutzern.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Nimm deine Musik mit dir mit';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE wird mit dem fantastischen Rhythmbox-Musikspieler geliefert. Mit den erweiterten Wiedergabeoptionen ist es ganz einfach, die perfekten Lieder in die Warteschlange hinzuzufügen. Und es funktioniert hervorragend mit CDs und tragbaren Musikspielern, so dass Sie Ihre Musik überall genießen können, wo auch immer Sie hingehen.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rhytmbox Musikspieler';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -655,30 +655,30 @@ class AppLocalizationsDe extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Hab Spaß mit deinen Bildern';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell ist ein praktischer Foto-Manager, der für Ihre Geräte bereit ist. Schließen Sie eine Kamera oder ein Telefon an, um Ihre Fotos zu übertragen, dann ist es einfach, sie zu teilen und sie sicher aufzubewahren. Und wenn Sie sich kreativ fühlen, finden Sie in der Ubuntu-Software viele weitere Foto-Apps.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell Bildermanager';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP Bildbearbeitung';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut Videobearbeitung';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Mache das beste aus dem Internet';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE enthält Firefox, den Internetbrowser, der von Millionen von Menschen auf der ganzen Welt genutzt wird. Und Webanwendungen, die Sie häufig nutzen (z. B. Facebook oder Google Mail), können für einen schnelleren Zugriff an Ihren Desktop angeheftet werden, genau wie Anwendungen auf Ihrem Computer.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox Internetbrowser';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -687,60 +687,60 @@ class AppLocalizationsDe extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Alles was du für das Büro brauchst';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie brauchen, ohne die Kosten zu tragen.';
 
   @override
-  String get officeSlideWriter => 'LibreOffice Writer';
+  String get officeSlideWriter => 'LibreOffice Textverarbeitung';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'LibreOffice Tabellenkalkulation';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'LibreOffice Präsentationen';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Zugang für jede:n';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Im Mittelpunkt der $RELEASE Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbschema und Textgröße macht $RELEASE die Computerarbeit einfach - egal wer und wo Sie sind.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Personalisierungsoptionen';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Aussehen';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Unterstützende Funktionen';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Sprachunterstützung';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Hilfe und Unterstützung';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'Die offizielle Dokumentation umfasst viele der gängigsten Bereichen von $RELEASE. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'Auf <a href=\"https://askubuntu.com\">Ask Ubuntu</a> können Sie Fragen stellen und durch eine beeindruckende Sammlung von bereits beantworteten Fragen stöbern. Unterstützung in Ihrer Sprache können Sie in Ihrem <a href=\"https://loco.ubuntu.com/teams\">lokalen Team</a> finden.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Hinweise auf andere nützliche Ressourcen finden Sie unter <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> oder <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Enthaltene Software';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Verfügbare Software';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Unterstützte Software';
 }
