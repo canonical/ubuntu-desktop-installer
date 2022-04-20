@@ -152,6 +152,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Nastavení dokončena';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Doporučujeme spustit následující příkaz a zaktualizovat tak Ubuntu na nejnovější verzi:';
-
-  @override
-  String get setupCompleteManage => 'Svá nastavení WSL můžete spravovat pomocí vestavěného příkazu ubuntuwsl:';
 
   @override
   String get setupCompleteRestart => '* Veškerá nastavení se projeví až po restartu Ubuntu.';

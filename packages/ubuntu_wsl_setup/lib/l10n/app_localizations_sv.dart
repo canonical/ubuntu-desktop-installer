@@ -152,6 +152,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Installationen är klar';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Det föreslås att du kör följande kommando för att uppdatera Ubuntu till den senaste versionen:';
-
-  @override
-  String get setupCompleteManage => 'Du kan använda det inbyggda ubuntuwsl kommandot för att hantera dina WSL-inställningar:';
 
   @override
   String get setupCompleteRestart => '* Alla inställningar träder i kraft efter omstart av Ubuntu.';

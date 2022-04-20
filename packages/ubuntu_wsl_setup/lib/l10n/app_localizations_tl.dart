@@ -152,6 +152,9 @@ class AppLocalizationsTl extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Setup complete';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
-
-  @override
-  String get setupCompleteManage => 'You can use the builtin ubuntuwsl command to manage your WSL settings:';
 
   @override
   String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';

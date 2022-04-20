@@ -152,6 +152,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Puesta en marcha finalizada';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Se sugiere ejecutar esta orden para actualizar Ubuntu a la versión más reciente:';
-
-  @override
-  String get setupCompleteManage => 'Puede emplear la orden «ubuntuwsl» incorporada para gestionar la configuración de WSL:';
 
   @override
   String get setupCompleteRestart => '* Todas las configuraciones surtirán efecto tras reiniciar Ubuntu.';

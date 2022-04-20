@@ -152,6 +152,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Instalado finiĝis';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Ni konsilas vin ruli la jenan komandon por ĝisdatigi Ubuntu al la plej nova versio:';
-
-  @override
-  String get setupCompleteManage => 'Vi povas uzi la komandon «ubuntuwsl» por administri viajn agordojn pri Windows-Subsistemo por Linux:';
 
   @override
   String get setupCompleteRestart => '* Ĉiuj agordoj estos efektivaj post restarto de Ubuntu.';

@@ -152,6 +152,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Sąranka baigta';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Yra rekomenduojama paleisti šią komandą, kad Ubuntu būtų atnaujinta iki naujausios versijos:';
-
-  @override
-  String get setupCompleteManage => 'Norėdami tvarkyti savo WSL nustatymus, galite naudoti įtaisytąją ubuntuwsl komandą:';
 
   @override
   String get setupCompleteRestart => '* Visi nustatymai įsigalios po to, kai paleisite Ubuntu iš naujo.';

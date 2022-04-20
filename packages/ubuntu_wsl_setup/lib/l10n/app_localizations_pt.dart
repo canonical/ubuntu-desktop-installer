@@ -152,6 +152,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Configuração concluída';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Recomendamos rodar os seguintes commandos para atualizar o Ubuntu para a última versão:';
-
-  @override
-  String get setupCompleteManage => 'Você pode usar o comando ubuntuwsl para gerenciar suas configurações do WSL:';
 
   @override
   String get setupCompleteRestart => '* Todas as configurações serão aplicadas após reiniciar o Ubuntu.';
@@ -303,9 +303,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get setupCompleteUpdate => 'Recomendamos rodar os seguintes commandos para atualizar o Ubuntu para a última versão:';
-
-  @override
-  String get setupCompleteManage => 'Você pode usar o comando ubuntuwsl para gerenciar suas configurações do WSL:';
 
   @override
   String get setupCompleteRestart => '* Todas as configurações serão aplicadas após reiniciar o Ubuntu.';

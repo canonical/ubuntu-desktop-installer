@@ -152,6 +152,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get applyingChanges => 'השינויים חלים…';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'ההקמה הושלמה';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'מומלץ להריץ את הפקודה הבאה כדי לעדכן את אובונטו לגרסה העדכנית ביותר:';
-
-  @override
-  String get setupCompleteManage => 'אפשר להשתמש בפקודת ה־ubuntuwsl המובנית כדי לנהל את הגדרות ה־WSL שלך:';
 
   @override
   String get setupCompleteRestart => '* כל ההגדרות יחולו לאחר הפעלת אובונטו מחדש.';

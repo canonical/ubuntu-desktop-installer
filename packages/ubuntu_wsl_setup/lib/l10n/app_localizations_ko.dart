@@ -152,6 +152,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => '설치 완료';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => '아래 명령을 실행하여 우분투를 최신 버전으로 업데이트 하는 것을 제안 드립니다:';
-
-  @override
-  String get setupCompleteManage => '내장된 ubuntuwsl 명령으로 WSL 설정을 관리할 수 있습니다:';
 
   @override
   String get setupCompleteRestart => '* 모든 설정은 우분투를 다시 시작 후 적용됩니다.';
