@@ -55,6 +55,7 @@
   "configurationUISystemdSubtitle": "Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.",
 
   "applyingChanges": "Applying changes...",
+  "applyingChangesDisclaimer": "This may take several minutes depending on your Internet connection.",
 
   "setupCompleteTitle": "Setup complete",
   "setupCompleteHeader": "Hi {user},\nYou have successfully completed the setup.",

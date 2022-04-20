@@ -51,6 +51,11 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
           const CircularProgressIndicator(),
           const SizedBox(height: kContentSpacing),
           Text(lang.applyingChanges),
+          const SizedBox(height: kContentSpacing),
+          Text(
+            lang.applyingChangesDisclaimer,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );
