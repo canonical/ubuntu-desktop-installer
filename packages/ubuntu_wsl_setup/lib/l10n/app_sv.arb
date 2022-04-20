@@ -82,5 +82,7 @@
   "setupCompleteManage": "Du kan använda det inbyggda ubuntuwsl kommandot för att hantera dina WSL-inställningar:",
   "@setupCompleteManage": {},
   "advancedSetupMountOptionHint": "Monteringsalternativ",
-  "@advancedSetupMountOptionHint": {}
+  "@advancedSetupMountOptionHint": {},
+  "applyingChanges": "Tillämpar ändringar...",
+  "@applyingChanges": {}
 }
