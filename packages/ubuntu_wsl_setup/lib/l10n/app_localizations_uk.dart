@@ -152,6 +152,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Встановлення завершено';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Для оновлення Ubuntu до останньої версії рекомендується виконати наступну команду:';
-
-  @override
-  String get setupCompleteManage => 'Ви можете використовувати вбудовану команду ubuntuwsl для керування параметрами WSL:';
 
   @override
   String get setupCompleteRestart => '* Усі налаштування набудуть чинності після перезапуску Ubuntu.';

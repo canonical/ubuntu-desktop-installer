@@ -152,6 +152,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'Cài đặt hoàn tất';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'Bạn nên chạy lệnh sau để cập nhật Ubuntu lên phiên bản mới nhất:';
-
-  @override
-  String get setupCompleteManage => 'Bạn có thể sử dụng lệnh wsl trong ubuntu để quản lý cài đặt WSL của mình:';
 
   @override
   String get setupCompleteRestart => '* Tất cả các cài đặt sẽ có hiệu lực sau khi khởi động lại Ubuntu.';

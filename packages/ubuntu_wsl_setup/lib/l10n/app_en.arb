@@ -55,6 +55,7 @@
   "configurationUISystemdSubtitle": "Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.",
 
   "applyingChanges": "Applying changes...",
+  "applyingChangesDisclaimer": "This may take several minutes depending on your Internet connection.",
 
   "setupCompleteTitle": "Setup complete",
   "setupCompleteHeader": "Hi {user},\nYou have successfully completed the setup.",
@@ -65,6 +66,5 @@
     }
   },
   "setupCompleteUpdate": "It is suggested to run the following command to update Ubuntu to the latest version:",
-  "setupCompleteManage": "You can use the builtin ubuntuwsl command to manage your WSL settings:",
   "setupCompleteRestart": "* All settings will take effect after restarting Ubuntu."
 }

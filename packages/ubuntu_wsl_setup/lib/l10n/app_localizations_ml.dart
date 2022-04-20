@@ -152,6 +152,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get applyingChanges => 'Applying changes...';
 
   @override
+  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+
+  @override
   String get setupCompleteTitle => 'സജ്ജീകരണം പൂർത്തിയായി';
 
   @override
@@ -161,9 +164,6 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get setupCompleteUpdate => 'ഉബുണ്ടു ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യുന്നതിന് ഇനിപ്പറയുന്ന കമാൻഡ് പ്രവർത്തിപ്പിക്കാൻ നിർദ്ദേശിക്കുന്നു:';
-
-  @override
-  String get setupCompleteManage => 'നിങ്ങളുടെ WSL ക്രമീകരണങ്ങൾ നിയന്ത്രിക്കുന്നതിന് നിങ്ങൾക്ക് അന്തർനിർമ്മിത ubuntuwsl കമാൻഡ് ഉപയോഗിക്കാം:';
 
   @override
   String get setupCompleteRestart => '* ഉബുണ്ടു പുനരാരംഭിച്ചതിന് ശേഷം എല്ലാ ക്രമീകരണങ്ങളും പ്രാബല്യത്തിൽ വരും.';

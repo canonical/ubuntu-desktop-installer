@@ -523,6 +523,12 @@ abstract class AppLocalizations {
   /// **'Applying changes...'**
   String get applyingChanges;
 
+  /// No description provided for @applyingChangesDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'This may take several minutes depending on your Internet connection.'**
+  String get applyingChangesDisclaimer;
+
   /// No description provided for @setupCompleteTitle.
   ///
   /// In en, this message translates to:
@@ -540,12 +546,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It is suggested to run the following command to update Ubuntu to the latest version:'**
   String get setupCompleteUpdate;
-
-  /// No description provided for @setupCompleteManage.
-  ///
-  /// In en, this message translates to:
-  /// **'You can use the builtin ubuntuwsl command to manage your WSL settings:'**
-  String get setupCompleteManage;
 
   /// No description provided for @setupCompleteRestart.
   ///
