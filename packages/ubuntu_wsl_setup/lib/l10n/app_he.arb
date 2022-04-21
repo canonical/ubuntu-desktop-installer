@@ -128,5 +128,7 @@
   "configurationUIInteropAppendWindowsPathTitle": "הוספת נתיב Windows",
   "@configurationUIInteropAppendWindowsPathTitle": {},
   "applyingChanges": "השינויים חלים…",
-  "@applyingChanges": {}
+  "@applyingChanges": {},
+  "applyingChangesDisclaimer": "פעולה זו עלולה לארוך מספר דקות כתלות בחיבור האינטרנט שלך.",
+  "@applyingChangesDisclaimer": {}
 }
