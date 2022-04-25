@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart' show WebViewConfiguration;
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 
 // ignore_for_file: prefer_mixin
@@ -47,6 +48,11 @@ void main() {
   });
 }
 
+const expectedUseWebView = true;
+const expectedWebViewConfiguration = WebViewConfiguration();
+const expectedUniversalLinksOnly = false;
+const expectedWebOnlyWindowName = null;
+
 void createPlatformMock(
   String url, {
   required bool canLaunch,
@@ -56,13 +62,13 @@ void createPlatformMock(
   when(mock.canLaunch(url)).thenAnswer((_) async => canLaunch);
   when(mock.launch(
     url,
-    useSafariVC: true,
-    useWebView: false,
-    enableJavaScript: false,
-    enableDomStorage: false,
-    universalLinksOnly: false,
-    headers: {},
-    webOnlyWindowName: null,
+    useSafariVC: expectedUseWebView,
+    useWebView: expectedUseWebView,
+    enableJavaScript: expectedWebViewConfiguration.enableJavaScript,
+    enableDomStorage: expectedWebViewConfiguration.enableDomStorage,
+    universalLinksOnly: expectedUniversalLinksOnly,
+    headers: expectedWebViewConfiguration.headers,
+    webOnlyWindowName: expectedWebOnlyWindowName,
   )).thenAnswer((_) async => result);
   UrlLauncherPlatform.instance = mock;
 }
@@ -79,24 +85,24 @@ void verifyPlatformMock({
   if (canLaunch) {
     verify(mock.launch(
       url,
-      useSafariVC: true,
-      useWebView: false,
-      enableJavaScript: false,
-      enableDomStorage: false,
-      universalLinksOnly: false,
-      headers: {},
-      webOnlyWindowName: null,
+      useSafariVC: expectedUseWebView,
+      useWebView: expectedUseWebView,
+      enableJavaScript: expectedWebViewConfiguration.enableJavaScript,
+      enableDomStorage: expectedWebViewConfiguration.enableDomStorage,
+      universalLinksOnly: expectedUniversalLinksOnly,
+      headers: expectedWebViewConfiguration.headers,
+      webOnlyWindowName: expectedWebOnlyWindowName,
     )).called(1);
   } else {
     verifyNever(mock.launch(
       url,
-      useSafariVC: true,
-      useWebView: false,
-      enableJavaScript: false,
-      enableDomStorage: false,
-      universalLinksOnly: false,
-      headers: {},
-      webOnlyWindowName: null,
+      useSafariVC: expectedUseWebView,
+      useWebView: expectedUseWebView,
+      enableJavaScript: expectedWebViewConfiguration.enableJavaScript,
+      enableDomStorage: expectedWebViewConfiguration.enableDomStorage,
+      universalLinksOnly: expectedUniversalLinksOnly,
+      headers: expectedWebViewConfiguration.headers,
+      webOnlyWindowName: expectedWebOnlyWindowName,
     ));
   }
 }
