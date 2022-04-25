@@ -128,5 +128,7 @@
   "configurationUIInteroperabilitySubtitle": "Określa, czy interoperacyjność jest włączona.",
   "@configurationUIInteroperabilitySubtitle": {},
   "applyingChanges": "Stosowanie zmian...",
-  "@applyingChanges": {}
+  "@applyingChanges": {},
+  "applyingChangesDisclaimer": "Może to potrwać kilka minut w zależności od połączenia internetowego.",
+  "@applyingChangesDisclaimer": {}
 }

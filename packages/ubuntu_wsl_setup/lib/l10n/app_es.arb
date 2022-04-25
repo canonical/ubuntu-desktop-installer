@@ -90,7 +90,7 @@
   "@advancedSetupGUIIntegrationTitle": {},
   "advancedSetupGUIIntegrationSubtitle": "Seleccionar esta opción configurará automáticamente el entorno DISPLAY. Se necesita un servidor X de terceros.",
   "@advancedSetupGUIIntegrationSubtitle": {},
-  "configurationUITitle": "Interfaz de configuración de Ubuntu en WSL (experimental)",
+  "configurationUITitle": "Configuración de Ubuntu en WSL. Opciones avanzadas",
   "@configurationUITitle": {},
   "configurationUILegacyGUIIntegrationTitle": "Integración de interfaces gráficas heredadas",
   "@configurationUILegacyGUIIntegrationTitle": {},
@@ -112,5 +112,23 @@
     }
   },
   "setupCompleteUpdate": "Se sugiere ejecutar esta orden para actualizar Ubuntu a la versión más reciente:",
-  "@setupCompleteUpdate": {}
+  "@setupCompleteUpdate": {},
+  "applyingChangesDisclaimer": "El proceso puede demorar algunos minutos, según la capacidad de la conexión a Internet.",
+  "@applyingChangesDisclaimer": {},
+  "applyingChanges": "Aplicando cambios…",
+  "@applyingChanges": {},
+  "configurationUIInteropAppendWindowsPathSubtitle": "Indica si la ruta de Windows se anexará a la variable de entorno PATH en WSL",
+  "@configurationUIInteropAppendWindowsPathSubtitle": {},
+  "configurationUIInteroperabilitySubtitle": "Indica si se activará la interoperatividad.",
+  "@configurationUIInteroperabilitySubtitle": {},
+  "configurationUISystemdSubtitle": "Indica si se activará systemd al momento de arrancar. PRECAUCIÓN: es una funcionalidad experimental.",
+  "@configurationUISystemdSubtitle": {},
+  "configurationUIInteroperabilityTitle": "Activada",
+  "@configurationUIInteroperabilityTitle": {},
+  "configurationUIInteropAppendWindowsPathTitle": "Anexar ruta de acceso de Windows",
+  "@configurationUIInteropAppendWindowsPathTitle": {},
+  "configurationUISystemdHeader": "EXPERIMENTAL: systemd",
+  "@configurationUISystemdHeader": {},
+  "configurationUISystemdTitle": "Activado",
+  "@configurationUISystemdTitle": {}
 }

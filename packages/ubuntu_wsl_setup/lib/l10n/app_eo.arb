@@ -126,5 +126,9 @@
   "configurationUISystemdHeader": "EKSPERIMENTA – systemd",
   "@configurationUISystemdHeader": {},
   "configurationUISystemdTitle": "Ŝaltita",
-  "@configurationUISystemdTitle": {}
+  "@configurationUISystemdTitle": {},
+  "applyingChangesDisclaimer": "Tio eble daŭros kelkajn minutojn depende de via Interreta konekto.",
+  "@applyingChangesDisclaimer": {},
+  "applyingChanges": "Efektivigante ŝanĝojn…",
+  "@applyingChanges": {}
 }
