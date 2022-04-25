@@ -13,7 +13,7 @@ void main() {
     await tester.pumpWidget(
       tester.buildApp(
         (_) => DetectKeyboardLayoutView(
-          pressKey: ['x', 'y', 'z'],
+          pressKey: const ['x', 'y', 'z'],
           onKeyPress: (code) => keyPress = code,
         ),
       ),

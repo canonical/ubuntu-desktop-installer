@@ -55,7 +55,7 @@ void main() {
 
   test('set locale', () {
     final client = MockSubiquityClient();
-    when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async => null);
+    when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
 
     final model = WelcomeModel(client);
     model.applyLocale(Locale('fr', 'CA'));

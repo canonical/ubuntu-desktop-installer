@@ -1,4 +1,4 @@
-include: package:effective_dart/analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
@@ -11,6 +11,6 @@ linter:
   rules:
     constant_identifier_names: false
     lines_longer_than_80_chars: false
-    # prefer_const_constructors: true
+    prefer_const_constructors: false # TODO: enable
     public_member_api_docs: false
     sort_pub_dependencies: true

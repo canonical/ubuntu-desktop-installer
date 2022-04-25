@@ -32,9 +32,9 @@ void main() {
           header: const Text('header'),
           content: const Text('content'),
           footer: const Text('footer'),
-          actions: <WizardAction>[
-            const WizardAction(label: 'back'),
-            const WizardAction(label: 'next'),
+          actions: const <WizardAction>[
+            WizardAction(label: 'back'),
+            WizardAction(label: 'next'),
           ],
         ),
       ),
@@ -64,8 +64,8 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            const WizardAction(label: 'action', highlighted: false),
+          actions: const <WizardAction>[
+            WizardAction(label: 'action', highlighted: false),
           ],
         ),
       ),
@@ -76,8 +76,8 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            const WizardAction(label: 'action', highlighted: true),
+          actions: const <WizardAction>[
+            WizardAction(label: 'action', highlighted: true),
           ],
         ),
       ),
@@ -114,7 +114,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
+          actions: const <WizardAction>[
             WizardAction(label: 'action', visible: false),
           ],
         ),

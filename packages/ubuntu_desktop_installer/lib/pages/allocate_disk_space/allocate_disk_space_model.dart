@@ -26,6 +26,7 @@ class PartitionFormat {
   /// The type of the partition format (e.g. 'ext4').
   final String type;
 
+  @override
   String toString() => type;
 
   static const btrfs = PartitionFormat._('btrfs');

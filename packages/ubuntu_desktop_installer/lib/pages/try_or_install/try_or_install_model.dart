@@ -47,7 +47,7 @@ class TryOrInstallModel extends ChangeNotifier {
             .readAsLinesSync()
             .firstWhere((line) => line.trim().isNotEmpty);
         return url.replaceAll(r'${LANG}', locale.languageCode);
-        // ignore: avoid_catches_without_on_clauses
+        // ignore: empty_catches
       } catch (e) {}
     }
     try {

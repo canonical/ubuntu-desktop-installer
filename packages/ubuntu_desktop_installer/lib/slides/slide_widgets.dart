@@ -16,7 +16,7 @@ class Slide {
 /// Provides access to the slides in the current context.
 class SlidesContext extends InheritedWidget {
   /// Creates an inherited slide widget with the specified slides.
-  SlidesContext({
+  const SlidesContext({
     Key? key,
     required this.slides,
     required Widget child,

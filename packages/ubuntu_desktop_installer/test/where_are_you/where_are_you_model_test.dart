@@ -34,8 +34,8 @@ void main() {
     final location = GeoLocation(timezone: 'Europe/Oslo');
 
     final client = MockSubiquityClient();
-    when(client.setTimezone('geoip')).thenAnswer((_) async => null);
-    when(client.setTimezone(location.timezone)).thenAnswer((_) async => null);
+    when(client.setTimezone('geoip')).thenAnswer((_) async {});
+    when(client.setTimezone(location.timezone)).thenAnswer((_) async {});
     final service = MockGeoService();
 
     final model = WhereAreYouModel(client: client, service: service);

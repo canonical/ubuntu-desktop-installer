@@ -10,6 +10,7 @@ typedef SystemShutdownTester = Future<void> Function(SystemShutdown system);
 class TestSystemShutdown with SystemShutdown {
   TestSystemShutdown(this.client);
 
+  @override
   final SubiquityClient client;
 }
 

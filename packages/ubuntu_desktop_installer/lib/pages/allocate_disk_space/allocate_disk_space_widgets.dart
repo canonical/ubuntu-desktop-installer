@@ -12,7 +12,7 @@ import 'storage_columns.dart';
 import 'storage_table.dart';
 
 class PartitionBar extends StatelessWidget {
-  PartitionBar({Key? key}) : super(key: key);
+  const PartitionBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

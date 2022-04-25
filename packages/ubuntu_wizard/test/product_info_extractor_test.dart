@@ -15,7 +15,7 @@ void main() {
     });
 
     test('should return product info when iso file exists', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -31,7 +31,7 @@ void main() {
 
     test('should return product info from disk when iso file doesnt exists',
         () async {
-      final localPath = '/etc/os-release';
+      const localPath = '/etc/os-release';
 
       await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
@@ -68,7 +68,7 @@ UBUNTU_CODENAME=hirsute
     });
 
     test('should return product info with LTS when iso file exists', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -84,7 +84,7 @@ UBUNTU_CODENAME=hirsute
 
     test('should return product info LTS from disk when iso file doesnt exists',
         () async {
-      final localPath = '/etc/os-release';
+      const localPath = '/etc/os-release';
 
       await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
@@ -112,7 +112,7 @@ UBUNTU_CODENAME=focal
     });
 
     test('should return product info for kubuntu', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -127,7 +127,7 @@ UBUNTU_CODENAME=focal
     });
 
     test('should return product info for kubuntu', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -142,7 +142,7 @@ UBUNTU_CODENAME=focal
     });
 
     test('should return product info for ubuntu mate', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -157,7 +157,7 @@ UBUNTU_CODENAME=focal
     });
 
     test('should cache product info', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
@@ -179,7 +179,7 @@ UBUNTU_CODENAME=focal
     });
 
     test('should reset cache when paramter is passed', () async {
-      final isoPath = '/cdrom/.disk/info';
+      const isoPath = '/cdrom/.disk/info';
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(

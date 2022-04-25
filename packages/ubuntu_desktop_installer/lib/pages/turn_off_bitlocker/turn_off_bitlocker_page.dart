@@ -11,6 +11,9 @@ import '../../services.dart';
 import 'turn_off_bitlocker_model.dart';
 
 class TurnOffBitLockerPage extends StatelessWidget {
+  @visibleForTesting
+  const TurnOffBitLockerPage({Key? key}) : super(key: key);
+
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
     return Provider(

@@ -118,12 +118,14 @@ class FakeLibudev implements Libudev {
   Pointer<udev>? _udev;
   Pointer<udev_device>? _udev_device;
 
+  @override
   Pointer<udev> udev_new() {
     calls.add('udev_new');
     arguments.add([]);
     return _udev ??= 'udev'.toNativeUtf8().cast();
   }
 
+  @override
   Pointer<udev> udev_unref(Pointer<udev> udev) {
     calls.add('udev_unref');
     arguments.add([udev]);
@@ -131,6 +133,7 @@ class FakeLibudev implements Libudev {
     return nullptr;
   }
 
+  @override
   Pointer<udev_device> udev_device_unref(Pointer<udev_device> udev_device) {
     calls.add('udev_device_unref');
     arguments.add([udev_device]);
@@ -138,6 +141,7 @@ class FakeLibudev implements Libudev {
     return nullptr;
   }
 
+  @override
   Pointer<udev_device> udev_device_new_from_subsystem_sysname(
     Pointer<udev> udev,
     Pointer<Int8> subsystem,
@@ -152,6 +156,7 @@ class FakeLibudev implements Libudev {
     return _udev_device ??= 'udev_device'.toNativeUtf8().cast();
   }
 
+  @override
   Pointer<udev_device> udev_device_new_from_syspath(
     Pointer<udev> udev,
     Pointer<Int8> syspath,
@@ -161,6 +166,7 @@ class FakeLibudev implements Libudev {
     return _udev_device ??= 'udev_device'.toNativeUtf8().cast();
   }
 
+  @override
   Pointer<Int8> udev_device_get_property_value(
     Pointer<udev_device> udev_device,
     Pointer<Int8> key,
