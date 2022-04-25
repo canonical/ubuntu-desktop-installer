@@ -152,7 +152,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get applyingChanges => 'Stosowanie zmian...';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Może to potrwać kilka minut w zależności od połączenia internetowego.';
 
   @override
   String get setupCompleteTitle => 'Konfiguracja zakończona';

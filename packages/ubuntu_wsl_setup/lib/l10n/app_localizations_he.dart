@@ -152,7 +152,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get applyingChanges => 'השינויים חלים…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'פעולה זו עלולה לארוך מספר דקות כתלות בחיבור האינטרנט שלך.';
 
   @override
   String get setupCompleteTitle => 'ההקמה הושלמה';
