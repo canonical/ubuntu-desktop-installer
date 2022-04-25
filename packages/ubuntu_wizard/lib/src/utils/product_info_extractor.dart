@@ -37,10 +37,12 @@ class ProductInfoExtractor {
 
     try {
       _cachedProductInfo ??= _extractIsoInfo(_fileSystem.file(isoPath));
+      // ignore: empty_catches
     } on Exception {}
 
     try {
       _cachedProductInfo ??= _extractLocalInfo(_fileSystem.file(localPath));
+      // ignore: empty_catches
     } on Exception {}
 
     _cachedProductInfo ??= ProductInfo(name: 'Ubuntu');

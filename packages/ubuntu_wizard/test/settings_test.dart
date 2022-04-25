@@ -8,7 +8,7 @@ import 'package:ubuntu_wizard/settings.dart';
 void main() {
   test('set gtk-theme via gsettings', () {
     final gsettings = MockGSettings();
-    when(gsettings.set(any, any)).thenAnswer((_) async => null);
+    when(gsettings.set(any, any)).thenAnswer((_) async {});
 
     final settings = Settings(gsettings);
 

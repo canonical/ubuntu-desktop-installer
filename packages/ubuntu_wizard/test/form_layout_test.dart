@@ -14,7 +14,7 @@ void main() {
         child: FormLayout(
           rowSpacing: 10,
           columnSpacing: 20,
-          rows: [
+          rows: const [
             [
               SizedBox(key: Key('r0c0'), width: 100, height: 10),
               SizedBox(key: Key('r0c1'), width: 200, height: 10),

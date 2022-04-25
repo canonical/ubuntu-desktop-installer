@@ -94,6 +94,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   }
 
   /// Requests an immediate system reboot.
+  @override
   Future<void> reboot({bool immediate = true}) {
     return super.reboot(immediate: immediate);
   }

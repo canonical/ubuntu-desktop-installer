@@ -342,7 +342,7 @@ void main() {
   });
 
   test('enable', () async {
-    when(service.setWirelessEnabled(true)).thenAnswer((_) async => null);
+    when(service.setWirelessEnabled(true)).thenAnswer((_) async {});
 
     model.enable();
     verify(service.setWirelessEnabled(true)).called(1);

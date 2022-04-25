@@ -297,7 +297,7 @@ class WifiDevice extends NetworkDevice {
     _setLastScan(wireless?.lastScan ?? -1);
     _setScanning(false);
     if (_completer?.isCompleted == false) {
-      _completer!.complete(device);
+      _completer!.complete();
     }
     _completer = null;
   }

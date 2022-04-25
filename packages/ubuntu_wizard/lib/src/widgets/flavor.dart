@@ -63,7 +63,7 @@ class FlavorData {
 /// Provides access to the flavor data in the current context.
 class Flavor extends InheritedWidget {
   /// Creates an inherited flavor widget with the specified flavor data.
-  Flavor({
+  const Flavor({
     Key? key,
     required this.data,
     required Widget child,

@@ -7,7 +7,6 @@ import 'package:test/test.dart';
 void main() {
   late SubiquityServer _testServer;
   late SubiquityClient _client;
-  var _socketPath;
 
   test('initialization', () async {
     final client = SubiquityClient();
@@ -21,7 +20,7 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(ServerMode.DRY_RUN, args: [
+      final socketPath = await _testServer.start(ServerMode.DRY_RUN, args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -29,7 +28,7 @@ void main() {
         '--bootloader',
         'uefi',
       ]);
-      _client.open(_socketPath);
+      _client.open(socketPath);
     });
 
     tearDownAll(() async {
@@ -441,8 +440,8 @@ void main() {
     setUpAll(() async {
       _testServer = SubiquityServer.wsl();
       _client = SubiquityClient();
-      _socketPath = await _testServer.start(ServerMode.DRY_RUN);
-      _client.open(_socketPath);
+      final socketPath = await _testServer.start(ServerMode.DRY_RUN);
+      _client.open(socketPath);
     });
 
     tearDownAll(() async {

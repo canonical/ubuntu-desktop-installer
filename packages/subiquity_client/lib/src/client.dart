@@ -25,6 +25,8 @@ class SubiquityException implements Exception {
   final String method;
   final int statusCode;
   final String message;
+
+  @override
   String toString() => '$method returned error $statusCode\n$message';
 }
 

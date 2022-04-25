@@ -90,7 +90,7 @@ void main() {
 
     final model = buildModel();
     when(model.searchLocation('b')).thenAnswer((_) async => locations);
-    when(model.selectLocation(GeoLocation())).thenReturn((_) {});
+    when(model.selectLocation(GeoLocation())).thenAnswer((_) {});
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -120,7 +120,7 @@ void main() {
 
     final model = buildModel();
     when(model.searchTimezone('b')).thenAnswer((_) async => timezones);
-    when(model.selectTimezone(GeoLocation())).thenReturn((_) {});
+    when(model.selectTimezone(GeoLocation())).thenAnswer((_) {});
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 

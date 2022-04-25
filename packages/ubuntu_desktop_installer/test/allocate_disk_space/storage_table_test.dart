@@ -59,7 +59,7 @@ void main() {
     return MaterialApp(
       home: StorageTable(
         columns: columns,
-        storages: [sda, sdb, sdc, sdd],
+        storages: const [sda, sdb, sdc, sdd],
         canSelect: canSelect,
         isSelected: isSelected,
         onSelected: onSelected,
