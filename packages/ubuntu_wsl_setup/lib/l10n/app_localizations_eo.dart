@@ -149,10 +149,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Ĉu aktivigi systemd dum startigo de komputilo. AVERTO: Ĉi tio estas eksperimenta funkcio.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Efektivigante ŝanĝojn…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Tio eble daŭros kelkajn minutojn depende de via Interreta konekto.';
 
   @override
   String get setupCompleteTitle => 'Instalado finiĝis';

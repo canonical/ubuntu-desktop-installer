@@ -14,76 +14,76 @@ class AppLocalizationsTr extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Çıkış';
 
   @override
   String get finishButton => 'Finish';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Kaydet';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Kurulum';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Dil seçiniz';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Profil kurulumu';
 
   @override
   String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Adınız';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'İsim gereklidir';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Kullanıcı adı seç';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Parola seç';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Parolanızı doğrulayın';
 
   @override
   String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Parolalar uyuşmuyor';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Kullanıcı adı gereklidir';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Kullanıcı adı geçersiz';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Parola gereklidir';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Gelişmiş kurulum';
 
   @override
   String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Bağlanma noktası';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Otomatik bağlamanın konumu';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'Konum geçersiz';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Bağlama seçeneği';
 
   @override
   String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
@@ -95,76 +95,76 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'resolv.conf Oluşturmayı Etkinleştir';
 
   @override
   String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'Arayüz Entegrasyonu';
 
   @override
   String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL Configuration - Advanced options';
+  String get configurationUITitle => 'Ubuntu WSL Yapılandırması - Gelişmiş seçenekler';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Birlikte çalışabilirlik';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Etkin';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Birlikte çalışabilirliğin etkin olup olmadığı.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Windows Yolu Ekle';
 
   @override
   String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Otomatik Bağlama';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Etkin';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => '/etc/fstab\'ı bağla';
 
   @override
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'DENEYSEL - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Etkin';
 
   @override
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Değişiklikler uygulanıyor...';
 
   @override
   String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Kurulum tamamlandı';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Merhaba $user,\nKurulumu başarıyla tamamladınız.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Ubuntu\'yu en son sürüme güncellemek için aşağıdaki komutu çalıştırmanız önerilir:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Tüm ayarlar Ubuntu yeniden başlatıldıktan sonra geçerli olacaktır.';
 }
