@@ -6,9 +6,6 @@ packages:
 ignore:
   - synthetic_package
 
-environment:
-  sdk: '>=2.15.0 <3.0.0'
-
 scripts:
   # analyze all packages
   analyze: >
