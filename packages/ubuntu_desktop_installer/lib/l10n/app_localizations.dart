@@ -1574,6 +1574,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Supported software'**
   String get supportedSoftware;
+
+  /// No description provided for @copyingFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Copying files...'**
+  String get copyingFiles;
+
+  /// No description provided for @installationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Installation failed'**
+  String get installationFailed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -70,9 +70,17 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#journal),
           returnValue: Stream<String>.empty()) as _i4.Stream<String>);
   @override
+  bool get isLogVisible =>
+      (super.noSuchMethod(Invocation.getter(#isLogVisible), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+  @override
+  void toggleLogVisibility() =>
+      super.noSuchMethod(Invocation.method(#toggleLogVisibility, []),
+          returnValueForMissingStub: null);
   @override
   _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
