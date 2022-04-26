@@ -8,391 +8,391 @@ class AppLocalizationsHu extends AppLocalizations {
   AppLocalizationsHu([String locale = 'hu']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu asztali telepítő';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Telepítés $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Mégse';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Csere';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Ok';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Nem';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Újraindítás';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Vissza';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Igen';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Üdvözöljük';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Válassza ki a nyelvet:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Próbálja ki vagy telepítse';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Javító telepítés';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'A javítás újratelepíti az összes telepített szoftvert anélkül, hogy a dokumentumokat vagy beállításokat érintené.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Próbálja ki $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Kipróbálhatja a $RELEASE-t anélkül, hogy bármilyen változtatást végezne a számítógépén.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Telepítés $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Telepítse $RELEASE a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Érdemes elolvasni a <a href=\"$url\">kiadási jegyzeteket</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST kikapcsolása';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Az utasításokért nyissa meg ezt az oldalt telefonon vagy más eszközön: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Billentyűzetkiosztás';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Válassza ki a billentyűzetkiosztást:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Írja be ide a billentyűzet teszteléséhez';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Billentyűzetkiosztás észlelése';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Kérjük, nyomja meg az alábbi billentyűk egyikét:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'A következő billentyű jelen van a billentyűzeten?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Biztonságos rendszerindítás konfigurálása';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Ön úgy döntött, hogy harmadik féltől származó illesztőprogramot telepít. Ehhez ki kell kapcsolni a Secure Boot funkciót.\nEhhez most ki kell választania egy biztonsági kulcsot, és azt a rendszer újraindításakor meg kell adnia.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Secure Boot konfigurálása';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Biztonsági kulcs kiválasztása';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Erősítse meg a biztonsági kulcsot';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Egyelőre ne telepítse az illesztőprogramot';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'Később telepítheti a Szoftver & Frissítések menüpontból.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Biztonsági kulcs szükséges';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'A biztonsági kulcsok nem egyeznek';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Csatlakozás az internethez';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Ha csatlakoztatja a számítógépet az internethez, az Ubuntu telepít minden szükséges extra szoftvert, és segít kiválasztani az időzónát.\n\nCsatlakozás ethernet-kábellel, vagy válasszon Wi-Fi hálózatot';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Vezetékes kapcsolat használata';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Nincs vezetékes kapcsolat észlelve';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'A vezetékes kapcsolat ki van kapcsolva';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Az ethernet használatához ezen a számítógépen engedélyezni kell a vezetékes kapcsolatot';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Vezetékes engedélyezése';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Csatlakozás Wi-Fi hálózathoz';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Csatlakozás rejtett Wi-Fi hálózathoz';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Hálózat neve';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Hálózati név szükséges';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Most nem akarok csatlakozni az internethez';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Vezeték nélküli hálózat letiltva';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Nincs észlelt Wi-Fi eszköz';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'A Wi-Fi használatához ezen a számítógépen engedélyezni kell a vezeték nélküli hálózatot';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Wi-Fi engedélyezése';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Csatlakozás';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Frissítések és egyéb szoftverek';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Milyen alkalmazásokat szeretne telepíteni a kezdéshez?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Normál telepítés';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Webböngésző, segédprogramok, irodai szoftverek, játékok és médialejátszók.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Minimális telepítés';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Webböngésző és alapvető segédprogramok.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Egyéb lehetőségek';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi hardverekhez, valamint további médiaformátumokhoz';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'A szoftverre a dokumentációban szereplő licencfeltételek vonatkoznak. Egyesek védettek.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Figyelmeztetés</font>: A számítógép nincs csatlakoztatva áramforráshoz.';
   }
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Biztonsági kulcs kiválasztása';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'A lemez titkosítása megvédi fájljait, ha elveszíti a számítógépét. A számítógép minden egyes indításakor meg kell adnia egy biztonsági kulcsot.\n\nA $RELEASE-n kívüli fájlok nem lesznek titkosítva.';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Biztonsági kulcs kiválasztása';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Erősítse meg a biztonsági kulcsot';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'Biztonsági kulcs szükséges';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'A biztonsági kulcsok nem egyeznek';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">Figyelmeztetés</font>: Ha elveszíti ezt a biztonsági kulcsot, minden adat elveszik. Szükség esetén írja le a kulcsot, és tartsa máshol, biztonságos helyen.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Telepítés típusa';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'Ezen a számítógépen jelenleg $os van. Mit szeretne tenni?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Ezen a számítógépen jelenleg $os1 és $os2 van. Mit szeretne tenni?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Ezen a számítógépen jelenleg több operációs rendszer van. Mit szeretne tenni?';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'Ezen a számítógépen jelenleg nincs észlelt operációs rendszer. Mit szeretne tenni?';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Lemez törlése és $DISTRO telepítése';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">Figyelmeztetés:</font> Ez minden operációs rendszerben törli az összes programot, dokumentumot, fényképet, zenét és minden más fájlt.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Speciális funkciók...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Speciális funkciók';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Nincs';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Nincs kiválasztva';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return 'LVM használata az új $RELEASE telepítéssel';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM kiválasztva';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return 'Az új $RELEASE telepítés titkosítása a biztonság érdekében';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'A biztonsági kulcsot a következő lépésben fogja kiválasztani.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'KÍSÉRLETI: Lemez törlése és ZFS használata';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS kiválasztva';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return 'Törölje a $os és telepítse újra';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">Figyelmeztetés:</font> Ez az összes $os programot, dokumentumot, fényképet, zenét és minden más fájlt törölni fog.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$product telepítése a $os mellett';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'A dokumentumok, zenék és egyéb személyes fájlok megőrzésre kerülnek. A számítógép minden egyes indításakor kiválaszthatja, hogy melyik operációs rendszert szeretné használni.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Valami más';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'A partíciókat létrehozhatja vagy átméretezheti saját maga, vagy több partíciót is választhat $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Lemez törlése és $DISTRO telepítése';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Válassza ki a meghajtót:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'A teljes lemez felhasználásra kerül:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Telepítés most';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Lemezterület kiosztása';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Telepítés megkezdése';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Eszköz';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Típus';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Csatlakoztatási pont';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Méret';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Használt';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Rendszer';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Formátum';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'szabad hely';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Új partíciós tábla';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Új üres partíciós tábla létrehozása ezen az eszközön?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Egy teljes eszközt választott ki a particionáláshoz. Ha új partíciós táblát hoz létre az eszközön, akkor az összes jelenlegi partíciót eltávolítja.\n\nVegye figyelembe, hogy ezt a műveletet később vissza tudja vonni, ha szeretné.';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Eszköz a rendszertöltő telepítéséhez';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Partíció létrehozása';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Partíció szerkesztése';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Méret:';
 
   @override
   String get partitionUnitB => 'B';
@@ -407,142 +407,142 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Az új partíció típusa:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Elsődleges';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Logikai';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Az új partíció helye:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'A hely kezdete';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'A hely vége';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'Használt mint:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 naplózó fájlrendszer';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 naplózó fájlrendszer';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2 fájlrendszer';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs naplózó fájlrendszer';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS naplózó fájlrendszer';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS naplózó fájlrendszer';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT fájlrendszer';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12 fájlrendszer';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16 fájlrendszer';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32 fájlrendszer';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Swap terület';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660 fájlrendszer';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT fájlrendszer';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS fájlrendszer';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS fájlrendszer';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS gyökér fájlrendszer';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'A partíció formázása';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Csatlakoztatási pont:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Ki vagy te?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Automatikus bejelentkezés';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Jelszavam kérése a bejelentkezéshez';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Az Ön neve';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Név megadása kötelező';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Az Ön számítógépének neve';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'A név, amelyet akkor használ, amikor más számítógépekkel beszél.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'A számítógép neve kötelező';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'A számítógép neve érvénytelen';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Válasszon egy felhasználónevet';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Felhasználónév megadása kötelező';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'A felhasználónév érvénytelen';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Jelszó kiválasztása';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Jelszó kötelező';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Jelszó megerősítése';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'A jelszavak nem egyeznek';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Jelszó megjelenítése';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Változások írása a lemezre';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'lemez';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'Ha folytatja, az alább felsorolt módosítások íródnak a lemezekre. A további módosításokat kézzel végezheti el.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'A következő eszközök partíciós táblái módosulnak:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -550,103 +550,103 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partitions are going to be formatted:';
+  String get writeChangesPartitionsHeader => 'A következő partíciókat fogjuk formázni:';
 
   @override
   String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} as $format used for $mount';
+    return '#$disk${partition} partíció, mint $format a $mount esetében';
   }
 
   @override
   String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} as $format';
+    return 'partíció #<$disk${partition} mint $format';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Válassza ki a megjelenést';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításoknál.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Sötét';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Világos';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
+  String get chooseYourLookPageLightBodyText => 'Minden könnyű és világos';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => 'Hello sötétség öreg barátom';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'A telepítés befejeződött';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**<$system** telepítve van és használatra kész.';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Indítsa újra $system';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Leállítás';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Kapcsolja ki a BitLockert';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'Ez a számítógép Windows BitLocker titkosítást használ.\nAz Ubuntu telepítése előtt ki kell kapcsolnia a BitLockert a Windowsban.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Az utasításokért nyissa meg ezt az oldalt telefonon vagy más eszközön: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Indítsa újra a Windows-t';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Hol vagy?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Pozíció';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Időzóna';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Üdvözöljük $RELEASE oldalon.';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'A gyors és új funkciókkal teli $RELEASE legújabb verziója minden eddiginél könnyebbé teszi a számítástechnikát. Íme néhány újdonság, amire érdemes odafigyelni...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Keressen még több szoftvert';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Búcsúzzon el az új szoftverek keresgélésétől a világhálón. A Snap Store és a $RELEASE szoftverarchívum elérésével könnyedén megtalálhatja és telepítheti az új alkalmazásokat. Csak írja be, hogy mit keres, vagy fedezze fel az olyan kategóriákat, mint a Grafika és fényképezés, Játékok és Termelékenység, más felhasználók hasznos véleményei mellett.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Vigye magával a zenét';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE a csodálatos Rhythmbox zenelejátszóval érkezik. A fejlett lejátszási lehetőségekkel egyszerűen sorbarendezheti a tökéletes dalokat. És nagyszerűen működik CD-kkel és hordozható zenelejátszókkal, így bárhol élvezheti a zenét.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rhythmbox zenelejátszó';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -655,30 +655,30 @@ class AppLocalizationsHu extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Jó szórakozást a fotóihoz';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'A Shotwell egy praktikus fotókezelő, amely készen áll a kütyükre. Csatlakoztasson egy fényképezőgépet vagy egy telefont a fényképek átviteléhez, majd könnyen megoszthatja és biztonságban tarthatja őket. Ha pedig kreatívnak érzi magát, az Ubuntu szoftverek között számos más fotóalkalmazást is találhat.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell fotókezelő';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP képszerkesztő';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut videószerkesztő';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Használja ki a webet a lehető legjobban';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE tartalmazza a Firefoxot, a világszerte emberek milliói által használt webböngészőt. A gyakran használt webes alkalmazásokat (például a Facebookot vagy a Gmailt) pedig a gyorsabb elérés érdekében az asztalra teheti, akárcsak a számítógépen lévő alkalmazásokat.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox webböngésző';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -687,10 +687,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Minden, amire az irodában szüksége van';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'A LibreOffice egy ingyenes irodai programcsomag, amely mindent tartalmaz, ami dokumentumok, táblázatok és prezentációk készítéséhez szükséges. Kompatibilis a Microsoft Office fájlformátumokkal, így az összes szükséges funkciót biztosítja, fizetés nélkül.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -702,45 +702,45 @@ class AppLocalizationsHu extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Hozzáférés mindenkinek';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'A $RELEASE filozófia középpontjában az a meggyőződés áll, hogy a számítástechnika mindenkié. A fejlett akadálymentesítési eszközökkel és a nyelv, a színséma és a szövegméret megváltoztatásának lehetőségeivel a $RELEASE megkönnyíti a számítástechnikát - bárki és bárhol is legyen.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Testreszabási lehetőségek';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Megjelenés';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Támogató technológiák';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Nyelvi támogatás';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Segítség és támogatás';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'A hivatalos dokumentáció számos, a $RELEASE-val kapcsolatos leggyakoribb területet lefed. Elérhető mind <a href=\"https://help.ubuntu.com\">online</a>, mind a dokkolóban található Súgó ikonon keresztül.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'A <a href=\"https://askubuntu.com\">Ask Ubuntu</a> oldalon kérdéseket tehet fel, és a már megválaszolt kérdések lenyűgöző gyűjteményében kereshet. A saját nyelvén a <a href=\"https://loco.ubuntu.com/teams\">Lokális közösségi csapat</a> nyújt támogatást.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Egyéb hasznos forrásokra mutató hivatkozásokért látogasson el a <a href=\"https://www.ubuntu.com/support/community-support\">Közösségi támogatás</a> vagy a <a href=\"https://www.ubuntu.com/support\">Kereskedelmi támogatás</a> oldalra.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Mellékelt szoftver';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Elérhető szoftver';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Támogatott szoftver';
 }

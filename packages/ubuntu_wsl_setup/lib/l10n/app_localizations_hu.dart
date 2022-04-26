@@ -14,157 +14,157 @@ class AppLocalizationsHu extends AppLocalizations {
   String get windowTitle => 'Ubuntu WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Kilépés';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Befejezés';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Mentés';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Beállítás';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Válassza ki a nyelvet';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Profil beállítása';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Kérjük, hozzon létre egy alapértelmezett UNIX felhasználói fiókot. További információért látogasson el a következő weboldalra: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Az Ön neve';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Név megadása kötelező';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Válasszon egy felhasználónevet';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'A felhasználónévnek nem kell megegyeznie a Windows felhasználónévvel.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Válasszon jelszót';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Jelszó megerősítése';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Speciális beállítások megjelenítése következő oldalon';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'A jelszavak nem egyeznek';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Felhasználónév megadása kötelező';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'A felhasználónév érvénytelen';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Jelszó szükséges';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Speciális beállítás';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'Ezen az oldalon az Ubuntu WSL-t a saját igényeihez igazíthatja.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Csatlakoztatás helye';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Automatikus csatlakoztatás helye';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'A hely érvénytelen';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Csatlakoztatási lehetőség';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Automatikus csatlakozáshoz átadott csatlakoztatási lehetőség';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Host generálás engedélyezése';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Ha ezt választja, az /etc/hosts állományt minden indításkor újragenerálja.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'A resolv.conf generálás engedélyezése';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Ha ezt választja, az /etc/resolv.conf állományt minden indításkor újragenerálja.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'GUI integráció';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'A kiválasztás lehetővé teszi a DISPLAY környezet automatikus beállítását. Harmadik féltől származó X-kiszolgáló szükséges.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL Configuration - Advanced options';
+  String get configurationUITitle => 'Ubuntu WSL konfiguráció - Speciális beállítások';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Átjárhatóság';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Engedélyezve';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Engedélyezve van-e az átjárhatóság.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Windows elérési útvonal hozzáadása';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'A Windows elérési útvonal hozzá lesz-e csatolva a WSL PATH környezeti változójához';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Automatikus csatlakoztatás';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Engedélyezve';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Az automatikus rögzítés funkció engedélyezve van-e. Ez a funkció lehetővé teszi a Windows-meghajtó csatlakoztatását a WSL-ben.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Csatlakoztatás /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => 'Az /etc/fstab állomány fel lesz csatolva. Az /etc/fstab konfigurációs fájl tartalmazza????';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'KÍSÉRLETI - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Engedélyezve';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'A systemd aktiválódjon-e a rendszerindításkor. FIGYELEM: Ez egy kísérleti funkció.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Módosítások alkalmazása...';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Ez az internetkapcsolattól függően több percet is igénybe vehet.';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Beállítás befejezve';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Üdv $user,\nSikeresen elvégezte a beállítást.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Javasoljuk, hogy az Ubuntu legújabb verzióra való frissítéséhez futtassa a következő parancsot:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Minden beállítás az Ubuntu újraindítása után lép hatályba.';
 }
