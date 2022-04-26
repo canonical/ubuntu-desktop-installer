@@ -743,4 +743,10 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Támogatott szoftver';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }
