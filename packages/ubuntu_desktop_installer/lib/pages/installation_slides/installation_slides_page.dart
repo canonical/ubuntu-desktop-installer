@@ -69,11 +69,17 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                 ),
                 Positioned.fill(
                   top: Theme.of(context).appBarTheme.toolbarHeight,
-                  child: ClipRect(
-                    child: AnimatedSlide(
-                      curve: Curves.easeIn,
-                      duration: const Duration(milliseconds: 150),
-                      offset: Offset(0, model.isLogVisible ? 0 : 1),
+                  child: AnimatedSlide(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 150),
+                    offset: Offset(0, model.isLogVisible ? 0 : 1),
+                    child: Container(
+                      color: Theme.of(context).backgroundColor,
+                      padding: const EdgeInsets.only(
+                        top: kContentSpacing,
+                        left: kContentSpacing,
+                        right: kContentSpacing,
+                      ),
                       child: _JournalView(journal: model.journal),
                     ),
                   ),
@@ -81,8 +87,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(kContentSpacing),
+          Container(
+            color: Theme.of(context).backgroundColor,
+            padding: const EdgeInsets.all(kContentSpacing),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
