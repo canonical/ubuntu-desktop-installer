@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -23,7 +26,7 @@ void main() {
     );
   }
 
-  Widget buildApp(ApplyingChangesModel model) {
+  Widget buildApp(ApplyingChangesModel model, {bool hasNext = false}) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
@@ -32,12 +35,13 @@ void main() {
             builder: (_) => buildPage(model),
             onNext: (settings) => '/end',
           ),
-          '/end': WizardRoute(
-            builder: (_) => Center(
-              child: const Text(theEnd),
+          if (hasNext)
+            '/end': WizardRoute(
+              builder: (_) => Center(
+                child: const Text(theEnd),
+              ),
+              onNext: (settings) => '/end',
             ),
-            onNext: (settings) => '/end',
-          ),
         },
       ),
     );
@@ -51,10 +55,30 @@ void main() {
         realInvocation.namedArguments[Symbol('onDoneTransition')]();
       });
     });
-    await tester.pumpWidget(buildApp(model));
+    await tester.pumpWidget(buildApp(model, hasNext: true));
     expect(find.text(theEnd), findsNothing);
     await tester.pumpAndSettle();
     expect(find.text(theEnd), findsOneWidget);
+  });
+
+  testWidgets('closes the window when last page', (tester) async {
+    final model = MockApplyingChangesModel();
+    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
+        .thenAnswer((realInvocation) {
+      WidgetsBinding.instance!.addPostFrameCallback((_) {
+        realInvocation.namedArguments[Symbol('onDoneTransition')]();
+      });
+    });
+
+    final windowClosed = Completer();
+    final methodChannel = MethodChannel('ubuntu_wizard');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('closeWindow'));
+      windowClosed.complete();
+    });
+
+    await tester.pumpWidget(buildApp(model, hasNext: false));
+    expect(windowClosed.future, completes);
   });
 
   testWidgets('won\'t go next while still installing', (tester) async {

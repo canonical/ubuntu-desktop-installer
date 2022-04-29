@@ -62,6 +62,9 @@ class UbuntuWslReconfigureWizard extends StatelessWidget {
         Routes.configurationUI: WizardRoute(
           builder: ConfigurationUIPage.create,
         ),
+        Routes.applyingChanges: WizardRoute(
+          builder: ApplyingChangesPage.create,
+        ),
       },
     );
   }

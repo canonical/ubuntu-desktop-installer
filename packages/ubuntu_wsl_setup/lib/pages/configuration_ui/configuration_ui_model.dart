@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 /// Implements the business logic of the WSL Configuration UI page.
 ///
@@ -52,8 +51,6 @@ class ConfigurationUIModel extends ChangeNotifier {
 
   /// Saves the UI configuration.
   Future<void> saveConfiguration() async {
-    return _client
-        .setWslConfigurationAdvanced(_conf.value)
-        .then((_) => closeWindow());
+    return _client.setWslConfigurationAdvanced(_conf.value);
   }
 }
