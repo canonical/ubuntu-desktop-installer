@@ -93,7 +93,8 @@ void main() {
         automountMountfstab: false,
       ),
     );
-    await tester.pumpAndSettle();
+
+    await testApplyingChangesPage(tester, expectClose: true);
 
     await verifyConfigFile('reconfiguration/wsl.conf');
   });
@@ -180,8 +181,16 @@ Future<void> testAdvancedSetupPage(
   await tester.tapButton(label: tester.lang.setupButton, highlighted: true);
 }
 
-Future<void> testApplyingChangesPage(WidgetTester tester) async {
+Future<void> testApplyingChangesPage(
+  WidgetTester tester, {
+  bool expectClose = false,
+}) async {
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
+
+  if (expectClose) {
+    final windowClosed = waitForWindowClosed();
+    expect(windowClosed, completion(isTrue));
+  }
 }
 
 Future<void> testConfigurationUIPage(
@@ -208,9 +217,7 @@ Future<void> testConfigurationUIPage(
   );
   await tester.pumpAndSettle();
 
-  final windowClosed = waitForWindowClosed();
   await tester.tapButton(label: tester.lang.saveButton, highlighted: true);
-  expect(windowClosed, completion(isTrue));
 }
 
 Future<void> testSetupCompletePage(

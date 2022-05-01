@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/services.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -37,7 +38,13 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
   void initState() {
     super.initState();
     final model = Provider.of<ApplyingChangesModel>(context, listen: false);
-    model.init(onDoneTransition: Wizard.of(context).next);
+    model.init(onDoneTransition: () {
+      if (Wizard.of(context).hasNext) {
+        Wizard.of(context).next();
+      } else {
+        closeWindow();
+      }
+    });
   }
 
   @override
