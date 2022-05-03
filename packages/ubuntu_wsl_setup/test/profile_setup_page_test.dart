@@ -210,7 +210,7 @@ void main() {
     verify(model.saveProfileSetup()).called(1);
   });
 
-  testWidgets('click link', (tester) async {
+  testWidgets('click link currently disabled', (tester) async {
     const url = 'https://aka.ms/wslusers';
     final urlLauncher = MockUrlLauncher();
     when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
@@ -219,8 +219,8 @@ void main() {
     await tester.pumpWidget(buildApp(tester, buildModel()));
 
     expect(find.byType(Html), findsOneWidget);
-    await tester.tap(find.byType(Html));
-    verify(urlLauncher.launchUrl(url)).called(1);
+    await tester.tap(find.byType(Html), warnIfMissed: false);
+    verifyNever(urlLauncher.launchUrl(url));
   });
 
   testWidgets('creates a model', (tester) async {
