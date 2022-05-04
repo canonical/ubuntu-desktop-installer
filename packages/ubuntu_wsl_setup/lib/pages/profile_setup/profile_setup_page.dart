@@ -48,13 +48,19 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<ProfileSetupModel>(context);
+    final textColor = Theme.of(context).textTheme.bodyText2!.color;
     return WizardPage(
       contentPadding: EdgeInsets.zero,
       title: Text(lang.profileSetupTitle),
-      header: Html(
-        data: lang.profileSetupHeader,
-        style: {'body': Style(margin: EdgeInsets.zero)},
-        onLinkTap: (url, _, __, ___) => launchUrl(url!),
+      header: AbsorbPointer(
+        child: Html(
+          data: lang.profileSetupHeader,
+          style: {
+            'body': Style(margin: EdgeInsets.zero),
+            'a': Style(textDecoration: TextDecoration.none, color: textColor),
+          },
+          onLinkTap: (url, _, __, ___) => launchUrl(url!),
+        ),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldPadding = EdgeInsets.symmetric(
