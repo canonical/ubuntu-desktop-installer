@@ -21,7 +21,7 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
   ApplicationStatus? _status;
 
   /// The current installation state.
-  ApplicationState get state => _status?.state ?? ApplicationState.UNKNOWN;
+  ApplicationState? get state => _status?.state;
 
   /// Whether the installation state is DONE.
   bool get isDone => state == ApplicationState.DONE;
@@ -31,18 +31,20 @@ class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
 
   /// Whether the installation process is being prepared [STARTING_UP,RUNNING).
   bool get isPreparing =>
-      state.index >= ApplicationState.STARTING_UP.index &&
-      state.index < ApplicationState.RUNNING.index;
+      state != null &&
+      state!.index >= ApplicationState.STARTING_UP.index &&
+      state!.index < ApplicationState.RUNNING.index;
 
   /// Whether the installation process is active [RUNNING,DONE).
   bool get isInstalling =>
-      state.index >= ApplicationState.RUNNING.index &&
-      state.index < ApplicationState.DONE.index;
+      state != null &&
+      state!.index >= ApplicationState.RUNNING.index &&
+      state!.index < ApplicationState.DONE.index;
 
   /// The current installation step between [RUNNING,DONE], or -1 if the
   /// installation process is not active.
   int get installationStep =>
-      isInstalling ? state.index - ApplicationState.RUNNING.index : -1;
+      isInstalling ? state!.index - ApplicationState.RUNNING.index : -1;
 
   /// The total number of installation steps between [RUNNING,DONE].
   int get installationStepCount =>

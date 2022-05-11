@@ -38,10 +38,6 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#client),
           returnValue: _FakeSubiquityClient_0()) as _i2.SubiquityClient);
   @override
-  _i2.ApplicationState get state =>
-      (super.noSuchMethod(Invocation.getter(#state),
-          returnValue: _i2.ApplicationState.UNKNOWN) as _i2.ApplicationState);
-  @override
   bool get isDone =>
       (super.noSuchMethod(Invocation.getter(#isDone), returnValue: false)
           as bool);
