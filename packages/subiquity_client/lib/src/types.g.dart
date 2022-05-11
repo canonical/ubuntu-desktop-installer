@@ -76,6 +76,7 @@ const _$ErrorReportKindEnumMap = {
   ErrorReportKind.INSTALL_FAIL: 'INSTALL_FAIL',
   ErrorReportKind.UI: 'UI',
   ErrorReportKind.NETWORK_FAIL: 'NETWORK_FAIL',
+  ErrorReportKind.NETWORK_CLIENT_FAIL: 'NETWORK_CLIENT_FAIL',
   ErrorReportKind.SERVER_REQUEST_FAIL: 'SERVER_REQUEST_FAIL',
   ErrorReportKind.UNKNOWN: 'UNKNOWN',
 };
@@ -109,8 +110,9 @@ Map<String, dynamic> _$_$_ApplicationStatusToJson(
     };
 
 const _$ApplicationStateEnumMap = {
-  ApplicationState.UNKNOWN: 'UNKNOWN',
   ApplicationState.STARTING_UP: 'STARTING_UP',
+  ApplicationState.CLOUD_INIT_WAIT: 'CLOUD_INIT_WAIT',
+  ApplicationState.EARLY_COMMANDS: 'EARLY_COMMANDS',
   ApplicationState.WAITING: 'WAITING',
   ApplicationState.NEEDS_CONFIRMATION: 'NEEDS_CONFIRMATION',
   ApplicationState.RUNNING: 'RUNNING',
@@ -120,6 +122,7 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.UU_CANCELLING: 'UU_CANCELLING',
   ApplicationState.DONE: 'DONE',
   ApplicationState.ERROR: 'ERROR',
+  ApplicationState.EXITED: 'EXITED',
 };
 
 _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {

@@ -50,8 +50,9 @@ class ErrorReportRef with _$ErrorReportRef {
 }
 
 enum ApplicationState {
-  UNKNOWN,
   STARTING_UP,
+  CLOUD_INIT_WAIT,
+  EARLY_COMMANDS,
   WAITING,
   NEEDS_CONFIRMATION,
   RUNNING,
@@ -60,7 +61,8 @@ enum ApplicationState {
   UU_RUNNING,
   UU_CANCELLING,
   DONE,
-  ERROR
+  ERROR,
+  EXITED,
 }
 
 @freezed
