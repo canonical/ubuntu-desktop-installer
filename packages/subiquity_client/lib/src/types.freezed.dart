@@ -12,393 +12,160 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
-  return _SourceSelection.fromJson(json);
+ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
+  return _ErrorReportRef.fromJson(json);
 }
 
 /// @nodoc
-class _$SourceSelectionTearOff {
-  const _$SourceSelectionTearOff();
+class _$ErrorReportRefTearOff {
+  const _$ErrorReportRefTearOff();
 
-  _SourceSelection call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault}) {
-    return _SourceSelection(
-      name: name,
-      description: description,
-      id: id,
-      size: size,
-      variant: variant,
-      isDefault: isDefault,
+  _ErrorReportRef call(
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      String? oopsId}) {
+    return _ErrorReportRef(
+      state: state,
+      base: base,
+      kind: kind,
+      seen: seen,
+      oopsId: oopsId,
     );
   }
 
-  SourceSelection fromJson(Map<String, Object> json) {
-    return SourceSelection.fromJson(json);
+  ErrorReportRef fromJson(Map<String, Object> json) {
+    return ErrorReportRef.fromJson(json);
   }
 }
 
 /// @nodoc
-const $SourceSelection = _$SourceSelectionTearOff();
+const $ErrorReportRef = _$ErrorReportRefTearOff();
 
 /// @nodoc
-mixin _$SourceSelection {
-  String? get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  int? get size => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
-  @JsonKey(name: 'default')
-  bool? get isDefault => throw _privateConstructorUsedError;
+mixin _$ErrorReportRef {
+  ErrorReportState? get state => throw _privateConstructorUsedError;
+  String? get base => throw _privateConstructorUsedError;
+  ErrorReportKind? get kind => throw _privateConstructorUsedError;
+  bool? get seen => throw _privateConstructorUsedError;
+  String? get oopsId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SourceSelectionCopyWith<SourceSelection> get copyWith =>
+  $ErrorReportRefCopyWith<ErrorReportRef> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SourceSelectionCopyWith<$Res> {
-  factory $SourceSelectionCopyWith(
-          SourceSelection value, $Res Function(SourceSelection) then) =
-      _$SourceSelectionCopyWithImpl<$Res>;
+abstract class $ErrorReportRefCopyWith<$Res> {
+  factory $ErrorReportRefCopyWith(
+          ErrorReportRef value, $Res Function(ErrorReportRef) then) =
+      _$ErrorReportRefCopyWithImpl<$Res>;
   $Res call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault});
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      String? oopsId});
 }
 
 /// @nodoc
-class _$SourceSelectionCopyWithImpl<$Res>
-    implements $SourceSelectionCopyWith<$Res> {
-  _$SourceSelectionCopyWithImpl(this._value, this._then);
+class _$ErrorReportRefCopyWithImpl<$Res>
+    implements $ErrorReportRefCopyWith<$Res> {
+  _$ErrorReportRefCopyWithImpl(this._value, this._then);
 
-  final SourceSelection _value;
+  final ErrorReportRef _value;
   // ignore: unused_field
-  final $Res Function(SourceSelection) _then;
+  final $Res Function(ErrorReportRef) _then;
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
+    Object? state = freezed,
+    Object? base = freezed,
+    Object? kind = freezed,
+    Object? seen = freezed,
+    Object? oopsId = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ErrorReportState?,
+      base: base == freezed
+          ? _value.base
+          : base // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: isDefault == freezed
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
+      kind: kind == freezed
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ErrorReportKind?,
+      seen: seen == freezed
+          ? _value.seen
+          : seen // ignore: cast_nullable_to_non_nullable
               as bool?,
+      oopsId: oopsId == freezed
+          ? _value.oopsId
+          : oopsId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$SourceSelectionCopyWith<$Res>
-    implements $SourceSelectionCopyWith<$Res> {
-  factory _$SourceSelectionCopyWith(
-          _SourceSelection value, $Res Function(_SourceSelection) then) =
-      __$SourceSelectionCopyWithImpl<$Res>;
+abstract class _$ErrorReportRefCopyWith<$Res>
+    implements $ErrorReportRefCopyWith<$Res> {
+  factory _$ErrorReportRefCopyWith(
+          _ErrorReportRef value, $Res Function(_ErrorReportRef) then) =
+      __$ErrorReportRefCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault});
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      String? oopsId});
 }
 
 /// @nodoc
-class __$SourceSelectionCopyWithImpl<$Res>
-    extends _$SourceSelectionCopyWithImpl<$Res>
-    implements _$SourceSelectionCopyWith<$Res> {
-  __$SourceSelectionCopyWithImpl(
-      _SourceSelection _value, $Res Function(_SourceSelection) _then)
-      : super(_value, (v) => _then(v as _SourceSelection));
+class __$ErrorReportRefCopyWithImpl<$Res>
+    extends _$ErrorReportRefCopyWithImpl<$Res>
+    implements _$ErrorReportRefCopyWith<$Res> {
+  __$ErrorReportRefCopyWithImpl(
+      _ErrorReportRef _value, $Res Function(_ErrorReportRef) _then)
+      : super(_value, (v) => _then(v as _ErrorReportRef));
 
   @override
-  _SourceSelection get _value => super._value as _SourceSelection;
+  _ErrorReportRef get _value => super._value as _ErrorReportRef;
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
+    Object? state = freezed,
+    Object? base = freezed,
+    Object? kind = freezed,
+    Object? seen = freezed,
+    Object? oopsId = freezed,
   }) {
-    return _then(_SourceSelection(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+    return _then(_ErrorReportRef(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ErrorReportState?,
+      base: base == freezed
+          ? _value.base
+          : base // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: isDefault == freezed
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
+      kind: kind == freezed
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ErrorReportKind?,
+      seen: seen == freezed
+          ? _value.seen
+          : seen // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_SourceSelection implements _SourceSelection {
-  const _$_SourceSelection(
-      {this.name,
-      this.description,
-      this.id,
-      this.size,
-      this.variant,
-      @JsonKey(name: 'default') this.isDefault});
-
-  factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionFromJson(json);
-
-  @override
-  final String? name;
-  @override
-  final String? description;
-  @override
-  final String? id;
-  @override
-  final int? size;
-  @override
-  final String? variant;
-  @override
-  @JsonKey(name: 'default')
-  final bool? isDefault;
-
-  @override
-  String toString() {
-    return 'SourceSelection(name: $name, description: $description, id: $id, size: $size, variant: $variant, isDefault: $isDefault)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SourceSelection &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality()
-                    .equals(other.variant, variant)) &&
-            (identical(other.isDefault, isDefault) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDefault, isDefault)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(variant) ^
-      const DeepCollectionEquality().hash(isDefault);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
-      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionToJson(this);
-  }
-}
-
-abstract class _SourceSelection implements SourceSelection {
-  const factory _SourceSelection(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault}) = _$_SourceSelection;
-
-  factory _SourceSelection.fromJson(Map<String, dynamic> json) =
-      _$_SourceSelection.fromJson;
-
-  @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
-  String? get description => throw _privateConstructorUsedError;
-  @override
-  String? get id => throw _privateConstructorUsedError;
-  @override
-  int? get size => throw _privateConstructorUsedError;
-  @override
-  String? get variant => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'default')
-  bool? get isDefault => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
-    Map<String, dynamic> json) {
-  return _SourceSelectionAndSetting.fromJson(json);
-}
-
-/// @nodoc
-class _$SourceSelectionAndSettingTearOff {
-  const _$SourceSelectionAndSettingTearOff();
-
-  _SourceSelectionAndSetting call(
-      {List<SourceSelection>? sources, String? currentId}) {
-    return _SourceSelectionAndSetting(
-      sources: sources,
-      currentId: currentId,
-    );
-  }
-
-  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
-    return SourceSelectionAndSetting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
-
-/// @nodoc
-mixin _$SourceSelectionAndSetting {
-  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
-  String? get currentId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SourceSelectionAndSettingCopyWith<SourceSelectionAndSetting> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SourceSelectionAndSettingCopyWith<$Res> {
-  factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
-          $Res Function(SourceSelectionAndSetting) then) =
-      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
-  $Res call({List<SourceSelection>? sources, String? currentId});
-}
-
-/// @nodoc
-class _$SourceSelectionAndSettingCopyWithImpl<$Res>
-    implements $SourceSelectionAndSettingCopyWith<$Res> {
-  _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
-
-  final SourceSelectionAndSetting _value;
-  // ignore: unused_field
-  final $Res Function(SourceSelectionAndSetting) _then;
-
-  @override
-  $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      sources: sources == freezed
-          ? _value.sources
-          : sources // ignore: cast_nullable_to_non_nullable
-              as List<SourceSelection>?,
-      currentId: currentId == freezed
-          ? _value.currentId
-          : currentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SourceSelectionAndSettingCopyWith<$Res>
-    implements $SourceSelectionAndSettingCopyWith<$Res> {
-  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
-          $Res Function(_SourceSelectionAndSetting) then) =
-      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
-  @override
-  $Res call({List<SourceSelection>? sources, String? currentId});
-}
-
-/// @nodoc
-class __$SourceSelectionAndSettingCopyWithImpl<$Res>
-    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
-    implements _$SourceSelectionAndSettingCopyWith<$Res> {
-  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
-      $Res Function(_SourceSelectionAndSetting) _then)
-      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
-
-  @override
-  _SourceSelectionAndSetting get _value =>
-      super._value as _SourceSelectionAndSetting;
-
-  @override
-  $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-  }) {
-    return _then(_SourceSelectionAndSetting(
-      sources: sources == freezed
-          ? _value.sources
-          : sources // ignore: cast_nullable_to_non_nullable
-              as List<SourceSelection>?,
-      currentId: currentId == freezed
-          ? _value.currentId
-          : currentId // ignore: cast_nullable_to_non_nullable
+      oopsId: oopsId == freezed
+          ? _value.oopsId
+          : oopsId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -407,69 +174,996 @@ class __$SourceSelectionAndSettingCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
-  const _$_SourceSelectionAndSetting({this.sources, this.currentId});
+class _$_ErrorReportRef implements _ErrorReportRef {
+  const _$_ErrorReportRef(
+      {this.state, this.base, this.kind, this.seen, this.oopsId});
 
-  factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionAndSettingFromJson(json);
+  factory _$_ErrorReportRef.fromJson(Map<String, dynamic> json) =>
+      _$_$_ErrorReportRefFromJson(json);
 
   @override
-  final List<SourceSelection>? sources;
+  final ErrorReportState? state;
   @override
-  final String? currentId;
+  final String? base;
+  @override
+  final ErrorReportKind? kind;
+  @override
+  final bool? seen;
+  @override
+  final String? oopsId;
 
   @override
   String toString() {
-    return 'SourceSelectionAndSetting(sources: $sources, currentId: $currentId)';
+    return 'ErrorReportRef(state: $state, base: $base, kind: $kind, seen: $seen, oopsId: $oopsId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SourceSelectionAndSetting &&
-            (identical(other.sources, sources) ||
-                const DeepCollectionEquality()
-                    .equals(other.sources, sources)) &&
-            (identical(other.currentId, currentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentId, currentId)));
+        (other is _ErrorReportRef &&
+            (identical(other.state, state) ||
+                const DeepCollectionEquality().equals(other.state, state)) &&
+            (identical(other.base, base) ||
+                const DeepCollectionEquality().equals(other.base, base)) &&
+            (identical(other.kind, kind) ||
+                const DeepCollectionEquality().equals(other.kind, kind)) &&
+            (identical(other.seen, seen) ||
+                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.oopsId, oopsId) ||
+                const DeepCollectionEquality().equals(other.oopsId, oopsId)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(currentId);
+      const DeepCollectionEquality().hash(state) ^
+      const DeepCollectionEquality().hash(base) ^
+      const DeepCollectionEquality().hash(kind) ^
+      const DeepCollectionEquality().hash(seen) ^
+      const DeepCollectionEquality().hash(oopsId);
 
   @JsonKey(ignore: true)
   @override
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
-      get copyWith =>
-          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
-              this, _$identity);
+  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
+      __$ErrorReportRefCopyWithImpl<_ErrorReportRef>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionAndSettingToJson(this);
+    return _$_$_ErrorReportRefToJson(this);
   }
 }
 
-abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
-  const factory _SourceSelectionAndSetting(
-      {List<SourceSelection>? sources,
-      String? currentId}) = _$_SourceSelectionAndSetting;
+abstract class _ErrorReportRef implements ErrorReportRef {
+  const factory _ErrorReportRef(
+      {ErrorReportState? state,
+      String? base,
+      ErrorReportKind? kind,
+      bool? seen,
+      String? oopsId}) = _$_ErrorReportRef;
 
-  factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
-      _$_SourceSelectionAndSetting.fromJson;
+  factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
+      _$_ErrorReportRef.fromJson;
 
   @override
-  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  ErrorReportState? get state => throw _privateConstructorUsedError;
   @override
-  String? get currentId => throw _privateConstructorUsedError;
+  String? get base => throw _privateConstructorUsedError;
+  @override
+  ErrorReportKind? get kind => throw _privateConstructorUsedError;
+  @override
+  bool? get seen => throw _privateConstructorUsedError;
+  @override
+  String? get oopsId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
-      get copyWith => throw _privateConstructorUsedError;
+  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ApplicationStatus _$ApplicationStatusFromJson(Map<String, dynamic> json) {
+  return _ApplicationStatus.fromJson(json);
+}
+
+/// @nodoc
+class _$ApplicationStatusTearOff {
+  const _$ApplicationStatusTearOff();
+
+  _ApplicationStatus call(
+      {ApplicationState? state,
+      String? confirmingTty,
+      ErrorReportRef? error,
+      bool? cloudInitOk,
+      bool? interactive,
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId}) {
+    return _ApplicationStatus(
+      state: state,
+      confirmingTty: confirmingTty,
+      error: error,
+      cloudInitOk: cloudInitOk,
+      interactive: interactive,
+      echoSyslogId: echoSyslogId,
+      logSyslogId: logSyslogId,
+      eventSyslogId: eventSyslogId,
+    );
+  }
+
+  ApplicationStatus fromJson(Map<String, Object> json) {
+    return ApplicationStatus.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ApplicationStatus = _$ApplicationStatusTearOff();
+
+/// @nodoc
+mixin _$ApplicationStatus {
+  ApplicationState? get state => throw _privateConstructorUsedError;
+  String? get confirmingTty => throw _privateConstructorUsedError;
+  ErrorReportRef? get error => throw _privateConstructorUsedError;
+  bool? get cloudInitOk => throw _privateConstructorUsedError;
+  bool? get interactive => throw _privateConstructorUsedError;
+  String? get echoSyslogId => throw _privateConstructorUsedError;
+  String? get logSyslogId => throw _privateConstructorUsedError;
+  String? get eventSyslogId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ApplicationStatusCopyWith<ApplicationStatus> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApplicationStatusCopyWith<$Res> {
+  factory $ApplicationStatusCopyWith(
+          ApplicationStatus value, $Res Function(ApplicationStatus) then) =
+      _$ApplicationStatusCopyWithImpl<$Res>;
+  $Res call(
+      {ApplicationState? state,
+      String? confirmingTty,
+      ErrorReportRef? error,
+      bool? cloudInitOk,
+      bool? interactive,
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId});
+
+  $ErrorReportRefCopyWith<$Res>? get error;
+}
+
+/// @nodoc
+class _$ApplicationStatusCopyWithImpl<$Res>
+    implements $ApplicationStatusCopyWith<$Res> {
+  _$ApplicationStatusCopyWithImpl(this._value, this._then);
+
+  final ApplicationStatus _value;
+  // ignore: unused_field
+  final $Res Function(ApplicationStatus) _then;
+
+  @override
+  $Res call({
+    Object? state = freezed,
+    Object? confirmingTty = freezed,
+    Object? error = freezed,
+    Object? cloudInitOk = freezed,
+    Object? interactive = freezed,
+    Object? echoSyslogId = freezed,
+    Object? logSyslogId = freezed,
+    Object? eventSyslogId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApplicationState?,
+      confirmingTty: confirmingTty == freezed
+          ? _value.confirmingTty
+          : confirmingTty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      cloudInitOk: cloudInitOk == freezed
+          ? _value.cloudInitOk
+          : cloudInitOk // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interactive: interactive == freezed
+          ? _value.interactive
+          : interactive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      echoSyslogId: echoSyslogId == freezed
+          ? _value.echoSyslogId
+          : echoSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logSyslogId: logSyslogId == freezed
+          ? _value.logSyslogId
+          : logSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventSyslogId: eventSyslogId == freezed
+          ? _value.eventSyslogId
+          : eventSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$ApplicationStatusCopyWith<$Res>
+    implements $ApplicationStatusCopyWith<$Res> {
+  factory _$ApplicationStatusCopyWith(
+          _ApplicationStatus value, $Res Function(_ApplicationStatus) then) =
+      __$ApplicationStatusCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {ApplicationState? state,
+      String? confirmingTty,
+      ErrorReportRef? error,
+      bool? cloudInitOk,
+      bool? interactive,
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId});
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get error;
+}
+
+/// @nodoc
+class __$ApplicationStatusCopyWithImpl<$Res>
+    extends _$ApplicationStatusCopyWithImpl<$Res>
+    implements _$ApplicationStatusCopyWith<$Res> {
+  __$ApplicationStatusCopyWithImpl(
+      _ApplicationStatus _value, $Res Function(_ApplicationStatus) _then)
+      : super(_value, (v) => _then(v as _ApplicationStatus));
+
+  @override
+  _ApplicationStatus get _value => super._value as _ApplicationStatus;
+
+  @override
+  $Res call({
+    Object? state = freezed,
+    Object? confirmingTty = freezed,
+    Object? error = freezed,
+    Object? cloudInitOk = freezed,
+    Object? interactive = freezed,
+    Object? echoSyslogId = freezed,
+    Object? logSyslogId = freezed,
+    Object? eventSyslogId = freezed,
+  }) {
+    return _then(_ApplicationStatus(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApplicationState?,
+      confirmingTty: confirmingTty == freezed
+          ? _value.confirmingTty
+          : confirmingTty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
+      cloudInitOk: cloudInitOk == freezed
+          ? _value.cloudInitOk
+          : cloudInitOk // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      interactive: interactive == freezed
+          ? _value.interactive
+          : interactive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      echoSyslogId: echoSyslogId == freezed
+          ? _value.echoSyslogId
+          : echoSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logSyslogId: logSyslogId == freezed
+          ? _value.logSyslogId
+          : logSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventSyslogId: eventSyslogId == freezed
+          ? _value.eventSyslogId
+          : eventSyslogId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_ApplicationStatus implements _ApplicationStatus {
+  const _$_ApplicationStatus(
+      {this.state,
+      this.confirmingTty,
+      this.error,
+      this.cloudInitOk,
+      this.interactive,
+      this.echoSyslogId,
+      this.logSyslogId,
+      this.eventSyslogId});
+
+  factory _$_ApplicationStatus.fromJson(Map<String, dynamic> json) =>
+      _$_$_ApplicationStatusFromJson(json);
+
+  @override
+  final ApplicationState? state;
+  @override
+  final String? confirmingTty;
+  @override
+  final ErrorReportRef? error;
+  @override
+  final bool? cloudInitOk;
+  @override
+  final bool? interactive;
+  @override
+  final String? echoSyslogId;
+  @override
+  final String? logSyslogId;
+  @override
+  final String? eventSyslogId;
+
+  @override
+  String toString() {
+    return 'ApplicationStatus(state: $state, confirmingTty: $confirmingTty, error: $error, cloudInitOk: $cloudInitOk, interactive: $interactive, echoSyslogId: $echoSyslogId, logSyslogId: $logSyslogId, eventSyslogId: $eventSyslogId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApplicationStatus &&
+            (identical(other.state, state) ||
+                const DeepCollectionEquality().equals(other.state, state)) &&
+            (identical(other.confirmingTty, confirmingTty) ||
+                const DeepCollectionEquality()
+                    .equals(other.confirmingTty, confirmingTty)) &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.cloudInitOk, cloudInitOk) ||
+                const DeepCollectionEquality()
+                    .equals(other.cloudInitOk, cloudInitOk)) &&
+            (identical(other.interactive, interactive) ||
+                const DeepCollectionEquality()
+                    .equals(other.interactive, interactive)) &&
+            (identical(other.echoSyslogId, echoSyslogId) ||
+                const DeepCollectionEquality()
+                    .equals(other.echoSyslogId, echoSyslogId)) &&
+            (identical(other.logSyslogId, logSyslogId) ||
+                const DeepCollectionEquality()
+                    .equals(other.logSyslogId, logSyslogId)) &&
+            (identical(other.eventSyslogId, eventSyslogId) ||
+                const DeepCollectionEquality()
+                    .equals(other.eventSyslogId, eventSyslogId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(state) ^
+      const DeepCollectionEquality().hash(confirmingTty) ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(cloudInitOk) ^
+      const DeepCollectionEquality().hash(interactive) ^
+      const DeepCollectionEquality().hash(echoSyslogId) ^
+      const DeepCollectionEquality().hash(logSyslogId) ^
+      const DeepCollectionEquality().hash(eventSyslogId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
+      __$ApplicationStatusCopyWithImpl<_ApplicationStatus>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ApplicationStatusToJson(this);
+  }
+}
+
+abstract class _ApplicationStatus implements ApplicationStatus {
+  const factory _ApplicationStatus(
+      {ApplicationState? state,
+      String? confirmingTty,
+      ErrorReportRef? error,
+      bool? cloudInitOk,
+      bool? interactive,
+      String? echoSyslogId,
+      String? logSyslogId,
+      String? eventSyslogId}) = _$_ApplicationStatus;
+
+  factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
+      _$_ApplicationStatus.fromJson;
+
+  @override
+  ApplicationState? get state => throw _privateConstructorUsedError;
+  @override
+  String? get confirmingTty => throw _privateConstructorUsedError;
+  @override
+  ErrorReportRef? get error => throw _privateConstructorUsedError;
+  @override
+  bool? get cloudInitOk => throw _privateConstructorUsedError;
+  @override
+  bool? get interactive => throw _privateConstructorUsedError;
+  @override
+  String? get echoSyslogId => throw _privateConstructorUsedError;
+  @override
+  String? get logSyslogId => throw _privateConstructorUsedError;
+  @override
+  String? get eventSyslogId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
+  switch (json['\$type'] as String) {
+    case 'StepPressKey':
+      return StepPressKey.fromJson(json);
+    case 'StepKeyPresent':
+      return StepKeyPresent.fromJson(json);
+    case 'StepResult':
+      return StepResult.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
+}
+
+/// @nodoc
+class _$KeyboardStepTearOff {
+  const _$KeyboardStepTearOff();
+
+  StepPressKey pressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) {
+    return StepPressKey(
+      symbols: symbols,
+      keycodes: keycodes,
+    );
+  }
+
+  StepKeyPresent keyPresent({String? symbol, String? yes, String? no}) {
+    return StepKeyPresent(
+      symbol: symbol,
+      yes: yes,
+      no: no,
+    );
+  }
+
+  StepResult result({String? layout, String? variant}) {
+    return StepResult(
+      layout: layout,
+      variant: variant,
+    );
+  }
+
+  KeyboardStep fromJson(Map<String, Object> json) {
+    return KeyboardStep.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardStep = _$KeyboardStepTearOff();
+
+/// @nodoc
+mixin _$KeyboardStep {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardStepCopyWith<$Res> {
+  factory $KeyboardStepCopyWith(
+          KeyboardStep value, $Res Function(KeyboardStep) then) =
+      _$KeyboardStepCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$KeyboardStepCopyWithImpl<$Res> implements $KeyboardStepCopyWith<$Res> {
+  _$KeyboardStepCopyWithImpl(this._value, this._then);
+
+  final KeyboardStep _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardStep) _then;
+}
+
+/// @nodoc
+abstract class $StepPressKeyCopyWith<$Res> {
+  factory $StepPressKeyCopyWith(
+          StepPressKey value, $Res Function(StepPressKey) then) =
+      _$StepPressKeyCopyWithImpl<$Res>;
+  $Res call({List<String>? symbols, List<List<dynamic>>? keycodes});
+}
+
+/// @nodoc
+class _$StepPressKeyCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepPressKeyCopyWith<$Res> {
+  _$StepPressKeyCopyWithImpl(
+      StepPressKey _value, $Res Function(StepPressKey) _then)
+      : super(_value, (v) => _then(v as StepPressKey));
+
+  @override
+  StepPressKey get _value => super._value as StepPressKey;
+
+  @override
+  $Res call({
+    Object? symbols = freezed,
+    Object? keycodes = freezed,
+  }) {
+    return _then(StepPressKey(
+      symbols: symbols == freezed
+          ? _value.symbols
+          : symbols // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      keycodes: keycodes == freezed
+          ? _value.keycodes
+          : keycodes // ignore: cast_nullable_to_non_nullable
+              as List<List<dynamic>>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepPressKey')
+class _$StepPressKey implements StepPressKey {
+  const _$StepPressKey({this.symbols, this.keycodes});
+
+  factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
+      _$_$StepPressKeyFromJson(json);
+
+  @override
+  final List<String>? symbols;
+  @override
+  final List<List<dynamic>>? keycodes;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.pressKey(symbols: $symbols, keycodes: $keycodes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepPressKey &&
+            (identical(other.symbols, symbols) ||
+                const DeepCollectionEquality()
+                    .equals(other.symbols, symbols)) &&
+            (identical(other.keycodes, keycodes) ||
+                const DeepCollectionEquality()
+                    .equals(other.keycodes, keycodes)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbols) ^
+      const DeepCollectionEquality().hash(keycodes);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return pressKey(symbols, keycodes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (pressKey != null) {
+      return pressKey(symbols, keycodes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return pressKey(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (pressKey != null) {
+      return pressKey(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
+  }
+}
+
+abstract class StepPressKey implements KeyboardStep {
+  const factory StepPressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
+
+  factory StepPressKey.fromJson(Map<String, dynamic> json) =
+      _$StepPressKey.fromJson;
+
+  List<String>? get symbols => throw _privateConstructorUsedError;
+  List<List<dynamic>>? get keycodes => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepKeyPresentCopyWith<$Res> {
+  factory $StepKeyPresentCopyWith(
+          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
+      _$StepKeyPresentCopyWithImpl<$Res>;
+  $Res call({String? symbol, String? yes, String? no});
+}
+
+/// @nodoc
+class _$StepKeyPresentCopyWithImpl<$Res>
+    extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepKeyPresentCopyWith<$Res> {
+  _$StepKeyPresentCopyWithImpl(
+      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
+      : super(_value, (v) => _then(v as StepKeyPresent));
+
+  @override
+  StepKeyPresent get _value => super._value as StepKeyPresent;
+
+  @override
+  $Res call({
+    Object? symbol = freezed,
+    Object? yes = freezed,
+    Object? no = freezed,
+  }) {
+    return _then(StepKeyPresent(
+      symbol: symbol == freezed
+          ? _value.symbol
+          : symbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+      yes: yes == freezed
+          ? _value.yes
+          : yes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      no: no == freezed
+          ? _value.no
+          : no // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepKeyPresent')
+class _$StepKeyPresent implements StepKeyPresent {
+  const _$StepKeyPresent({this.symbol, this.yes, this.no});
+
+  factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
+      _$_$StepKeyPresentFromJson(json);
+
+  @override
+  final String? symbol;
+  @override
+  final String? yes;
+  @override
+  final String? no;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.keyPresent(symbol: $symbol, yes: $yes, no: $no)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepKeyPresent &&
+            (identical(other.symbol, symbol) ||
+                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
+            (identical(other.yes, yes) ||
+                const DeepCollectionEquality().equals(other.yes, yes)) &&
+            (identical(other.no, no) ||
+                const DeepCollectionEquality().equals(other.no, no)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbol) ^
+      const DeepCollectionEquality().hash(yes) ^
+      const DeepCollectionEquality().hash(no);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return keyPresent(symbol, yes, no);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (keyPresent != null) {
+      return keyPresent(symbol, yes, no);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return keyPresent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (keyPresent != null) {
+      return keyPresent(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
+  }
+}
+
+abstract class StepKeyPresent implements KeyboardStep {
+  const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
+      _$StepKeyPresent;
+
+  factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
+      _$StepKeyPresent.fromJson;
+
+  String? get symbol => throw _privateConstructorUsedError;
+  String? get yes => throw _privateConstructorUsedError;
+  String? get no => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepResultCopyWith<$Res> {
+  factory $StepResultCopyWith(
+          StepResult value, $Res Function(StepResult) then) =
+      _$StepResultCopyWithImpl<$Res>;
+  $Res call({String? layout, String? variant});
+}
+
+/// @nodoc
+class _$StepResultCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+    implements $StepResultCopyWith<$Res> {
+  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
+      : super(_value, (v) => _then(v as StepResult));
+
+  @override
+  StepResult get _value => super._value as StepResult;
+
+  @override
+  $Res call({
+    Object? layout = freezed,
+    Object? variant = freezed,
+  }) {
+    return _then(StepResult(
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('StepResult')
+class _$StepResult implements StepResult {
+  const _$StepResult({this.layout, this.variant});
+
+  factory _$StepResult.fromJson(Map<String, dynamic> json) =>
+      _$_$StepResultFromJson(json);
+
+  @override
+  final String? layout;
+  @override
+  final String? variant;
+
+  @override
+  String toString() {
+    return 'KeyboardStep.result(layout: $layout, variant: $variant)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepResult &&
+            (identical(other.layout, layout) ||
+                const DeepCollectionEquality().equals(other.layout, layout)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality().equals(other.variant, variant)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(layout) ^
+      const DeepCollectionEquality().hash(variant);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepResultCopyWith<StepResult> get copyWith =>
+      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        pressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        keyPresent,
+    required TResult Function(String? layout, String? variant) result,
+  }) {
+    return result(layout, variant);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        pressKey,
+    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
+    TResult Function(String? layout, String? variant)? result,
+    required TResult orElse(),
+  }) {
+    if (result != null) {
+      return result(layout, variant);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) pressKey,
+    required TResult Function(StepKeyPresent value) keyPresent,
+    required TResult Function(StepResult value) result,
+  }) {
+    return result(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? pressKey,
+    TResult Function(StepKeyPresent value)? keyPresent,
+    TResult Function(StepResult value)? result,
+    required TResult orElse(),
+  }) {
+    if (result != null) {
+      return result(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
+  }
+}
+
+abstract class StepResult implements KeyboardStep {
+  const factory StepResult({String? layout, String? variant}) = _$StepResult;
+
+  factory StepResult.fromJson(Map<String, dynamic> json) =
+      _$StepResult.fromJson;
+
+  String? get layout => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepResultCopyWith<StepResult> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
@@ -1214,143 +1908,393 @@ abstract class _KeyboardSetup implements KeyboardSetup {
       throw _privateConstructorUsedError;
 }
 
-IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
-  return _IdentityData.fromJson(json);
+SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _SourceSelection.fromJson(json);
 }
 
 /// @nodoc
-class _$IdentityDataTearOff {
-  const _$IdentityDataTearOff();
+class _$SourceSelectionTearOff {
+  const _$SourceSelectionTearOff();
 
-  _IdentityData call(
-      {String? realname = '',
-      String? username = '',
-      String? cryptedPassword = '',
-      String? hostname = ''}) {
-    return _IdentityData(
-      realname: realname,
-      username: username,
-      cryptedPassword: cryptedPassword,
-      hostname: hostname,
+  _SourceSelection call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) {
+    return _SourceSelection(
+      name: name,
+      description: description,
+      id: id,
+      size: size,
+      variant: variant,
+      isDefault: isDefault,
     );
   }
 
-  IdentityData fromJson(Map<String, Object> json) {
-    return IdentityData.fromJson(json);
+  SourceSelection fromJson(Map<String, Object> json) {
+    return SourceSelection.fromJson(json);
   }
 }
 
 /// @nodoc
-const $IdentityData = _$IdentityDataTearOff();
+const $SourceSelection = _$SourceSelectionTearOff();
 
 /// @nodoc
-mixin _$IdentityData {
-  String? get realname => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  String? get cryptedPassword => throw _privateConstructorUsedError;
-  String? get hostname => throw _privateConstructorUsedError;
+mixin _$SourceSelection {
+  String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $IdentityDataCopyWith<IdentityData> get copyWith =>
+  $SourceSelectionCopyWith<SourceSelection> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $IdentityDataCopyWith<$Res> {
-  factory $IdentityDataCopyWith(
-          IdentityData value, $Res Function(IdentityData) then) =
-      _$IdentityDataCopyWithImpl<$Res>;
+abstract class $SourceSelectionCopyWith<$Res> {
+  factory $SourceSelectionCopyWith(
+          SourceSelection value, $Res Function(SourceSelection) then) =
+      _$SourceSelectionCopyWithImpl<$Res>;
   $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
 }
 
 /// @nodoc
-class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
-  _$IdentityDataCopyWithImpl(this._value, this._then);
+class _$SourceSelectionCopyWithImpl<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  _$SourceSelectionCopyWithImpl(this._value, this._then);
 
-  final IdentityData _value;
+  final SourceSelection _value;
   // ignore: unused_field
-  final $Res Function(IdentityData) _then;
+  final $Res Function(SourceSelection) _then;
 
   @override
   $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
   }) {
     return _then(_value.copyWith(
-      realname: realname == freezed
-          ? _value.realname
-          : realname // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      cryptedPassword: cryptedPassword == freezed
-          ? _value.cryptedPassword
-          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      hostname: hostname == freezed
-          ? _value.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SourceSelectionCopyWith<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  factory _$SourceSelectionCopyWith(
+          _SourceSelection value, $Res Function(_SourceSelection) then) =
+      __$SourceSelectionCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
+}
+
+/// @nodoc
+class __$SourceSelectionCopyWithImpl<$Res>
+    extends _$SourceSelectionCopyWithImpl<$Res>
+    implements _$SourceSelectionCopyWith<$Res> {
+  __$SourceSelectionCopyWithImpl(
+      _SourceSelection _value, $Res Function(_SourceSelection) _then)
+      : super(_value, (v) => _then(v as _SourceSelection));
+
+  @override
+  _SourceSelection get _value => super._value as _SourceSelection;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
+  }) {
+    return _then(_SourceSelection(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SourceSelection implements _SourceSelection {
+  const _$_SourceSelection(
+      {this.name,
+      this.description,
+      this.id,
+      this.size,
+      this.variant,
+      @JsonKey(name: 'default') this.isDefault});
+
+  factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionFromJson(json);
+
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? id;
+  @override
+  final int? size;
+  @override
+  final String? variant;
+  @override
+  @JsonKey(name: 'default')
+  final bool? isDefault;
+
+  @override
+  String toString() {
+    return 'SourceSelection(name: $name, description: $description, id: $id, size: $size, variant: $variant, isDefault: $isDefault)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceSelection &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality()
+                    .equals(other.variant, variant)) &&
+            (identical(other.isDefault, isDefault) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDefault, isDefault)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(variant) ^
+      const DeepCollectionEquality().hash(isDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SourceSelectionToJson(this);
+  }
+}
+
+abstract class _SourceSelection implements SourceSelection {
+  const factory _SourceSelection(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) = _$_SourceSelection;
+
+  factory _SourceSelection.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelection.fromJson;
+
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  String? get description => throw _privateConstructorUsedError;
+  @override
+  String? get id => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  String? get variant => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _SourceSelectionAndSetting.fromJson(json);
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingTearOff {
+  const _$SourceSelectionAndSettingTearOff();
+
+  _SourceSelectionAndSetting call(
+      {List<SourceSelection>? sources, String? currentId}) {
+    return _SourceSelectionAndSetting(
+      sources: sources,
+      currentId: currentId,
+    );
+  }
+
+  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
+    return SourceSelectionAndSetting.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
+
+/// @nodoc
+mixin _$SourceSelectionAndSetting {
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  String? get currentId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SourceSelectionAndSettingCopyWith<SourceSelectionAndSetting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SourceSelectionAndSettingCopyWith<$Res> {
+  factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
+          $Res Function(SourceSelectionAndSetting) then) =
+      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  $Res call({List<SourceSelection>? sources, String? currentId});
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
+
+  final SourceSelectionAndSetting _value;
+  // ignore: unused_field
+  final $Res Function(SourceSelectionAndSetting) _then;
+
+  @override
+  $Res call({
+    Object? sources = freezed,
+    Object? currentId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$IdentityDataCopyWith<$Res>
-    implements $IdentityDataCopyWith<$Res> {
-  factory _$IdentityDataCopyWith(
-          _IdentityData value, $Res Function(_IdentityData) then) =
-      __$IdentityDataCopyWithImpl<$Res>;
+abstract class _$SourceSelectionAndSettingCopyWith<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
+          $Res Function(_SourceSelectionAndSetting) then) =
+      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
+  $Res call({List<SourceSelection>? sources, String? currentId});
 }
 
 /// @nodoc
-class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
-    implements _$IdentityDataCopyWith<$Res> {
-  __$IdentityDataCopyWithImpl(
-      _IdentityData _value, $Res Function(_IdentityData) _then)
-      : super(_value, (v) => _then(v as _IdentityData));
+class __$SourceSelectionAndSettingCopyWithImpl<$Res>
+    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements _$SourceSelectionAndSettingCopyWith<$Res> {
+  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
+      $Res Function(_SourceSelectionAndSetting) _then)
+      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
 
   @override
-  _IdentityData get _value => super._value as _IdentityData;
+  _SourceSelectionAndSetting get _value =>
+      super._value as _SourceSelectionAndSetting;
 
   @override
   $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
+    Object? sources = freezed,
+    Object? currentId = freezed,
   }) {
-    return _then(_IdentityData(
-      realname: realname == freezed
-          ? _value.realname
-          : realname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cryptedPassword: cryptedPassword == freezed
-          ? _value.cryptedPassword
-          : cryptedPassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hostname: hostname == freezed
-          ? _value.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
+    return _then(_SourceSelectionAndSetting(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -1359,1048 +2303,69 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_IdentityData implements _IdentityData {
-  const _$_IdentityData(
-      {this.realname = '',
-      this.username = '',
-      this.cryptedPassword = '',
-      this.hostname = ''});
+class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
+  const _$_SourceSelectionAndSetting({this.sources, this.currentId});
 
-  factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
-      _$_$_IdentityDataFromJson(json);
+  factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionAndSettingFromJson(json);
 
-  @JsonKey(defaultValue: '')
   @override
-  final String? realname;
-  @JsonKey(defaultValue: '')
+  final List<SourceSelection>? sources;
   @override
-  final String? username;
-  @JsonKey(defaultValue: '')
-  @override
-  final String? cryptedPassword;
-  @JsonKey(defaultValue: '')
-  @override
-  final String? hostname;
+  final String? currentId;
 
   @override
   String toString() {
-    return 'IdentityData(realname: $realname, username: $username, cryptedPassword: $cryptedPassword, hostname: $hostname)';
+    return 'SourceSelectionAndSetting(sources: $sources, currentId: $currentId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _IdentityData &&
-            (identical(other.realname, realname) ||
+        (other is _SourceSelectionAndSetting &&
+            (identical(other.sources, sources) ||
                 const DeepCollectionEquality()
-                    .equals(other.realname, realname)) &&
-            (identical(other.username, username) ||
+                    .equals(other.sources, sources)) &&
+            (identical(other.currentId, currentId) ||
                 const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.cryptedPassword, cryptedPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.cryptedPassword, cryptedPassword)) &&
-            (identical(other.hostname, hostname) ||
-                const DeepCollectionEquality()
-                    .equals(other.hostname, hostname)));
+                    .equals(other.currentId, currentId)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(realname) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(cryptedPassword) ^
-      const DeepCollectionEquality().hash(hostname);
+      const DeepCollectionEquality().hash(sources) ^
+      const DeepCollectionEquality().hash(currentId);
 
   @JsonKey(ignore: true)
   @override
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
-      __$IdentityDataCopyWithImpl<_IdentityData>(this, _$identity);
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith =>
+          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_IdentityDataToJson(this);
+    return _$_$_SourceSelectionAndSettingToJson(this);
   }
 }
 
-abstract class _IdentityData implements IdentityData {
-  const factory _IdentityData(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname}) = _$_IdentityData;
+abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
+  const factory _SourceSelectionAndSetting(
+      {List<SourceSelection>? sources,
+      String? currentId}) = _$_SourceSelectionAndSetting;
 
-  factory _IdentityData.fromJson(Map<String, dynamic> json) =
-      _$_IdentityData.fromJson;
+  factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelectionAndSetting.fromJson;
 
   @override
-  String? get realname => throw _privateConstructorUsedError;
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
   @override
-  String? get username => throw _privateConstructorUsedError;
-  @override
-  String? get cryptedPassword => throw _privateConstructorUsedError;
-  @override
-  String? get hostname => throw _privateConstructorUsedError;
+  String? get currentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TimezoneData _$TimezoneDataFromJson(Map<String, dynamic> json) {
-  return _TimezoneData.fromJson(json);
-}
-
-/// @nodoc
-class _$TimezoneDataTearOff {
-  const _$TimezoneDataTearOff();
-
-  _TimezoneData call({String? timezone, bool? fromGeoip}) {
-    return _TimezoneData(
-      timezone: timezone,
-      fromGeoip: fromGeoip,
-    );
-  }
-
-  TimezoneData fromJson(Map<String, Object> json) {
-    return TimezoneData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TimezoneData = _$TimezoneDataTearOff();
-
-/// @nodoc
-mixin _$TimezoneData {
-  String? get timezone => throw _privateConstructorUsedError;
-  bool? get fromGeoip => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimezoneDataCopyWith<TimezoneData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimezoneDataCopyWith<$Res> {
-  factory $TimezoneDataCopyWith(
-          TimezoneData value, $Res Function(TimezoneData) then) =
-      _$TimezoneDataCopyWithImpl<$Res>;
-  $Res call({String? timezone, bool? fromGeoip});
-}
-
-/// @nodoc
-class _$TimezoneDataCopyWithImpl<$Res> implements $TimezoneDataCopyWith<$Res> {
-  _$TimezoneDataCopyWithImpl(this._value, this._then);
-
-  final TimezoneData _value;
-  // ignore: unused_field
-  final $Res Function(TimezoneData) _then;
-
-  @override
-  $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
-  }) {
-    return _then(_value.copyWith(
-      timezone: timezone == freezed
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromGeoip: fromGeoip == freezed
-          ? _value.fromGeoip
-          : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$TimezoneDataCopyWith<$Res>
-    implements $TimezoneDataCopyWith<$Res> {
-  factory _$TimezoneDataCopyWith(
-          _TimezoneData value, $Res Function(_TimezoneData) then) =
-      __$TimezoneDataCopyWithImpl<$Res>;
-  @override
-  $Res call({String? timezone, bool? fromGeoip});
-}
-
-/// @nodoc
-class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
-    implements _$TimezoneDataCopyWith<$Res> {
-  __$TimezoneDataCopyWithImpl(
-      _TimezoneData _value, $Res Function(_TimezoneData) _then)
-      : super(_value, (v) => _then(v as _TimezoneData));
-
-  @override
-  _TimezoneData get _value => super._value as _TimezoneData;
-
-  @override
-  $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
-  }) {
-    return _then(_TimezoneData(
-      timezone: timezone == freezed
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromGeoip: fromGeoip == freezed
-          ? _value.fromGeoip
-          : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_TimezoneData implements _TimezoneData {
-  const _$_TimezoneData({this.timezone, this.fromGeoip});
-
-  factory _$_TimezoneData.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimezoneDataFromJson(json);
-
-  @override
-  final String? timezone;
-  @override
-  final bool? fromGeoip;
-
-  @override
-  String toString() {
-    return 'TimezoneData(timezone: $timezone, fromGeoip: $fromGeoip)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TimezoneData &&
-            (identical(other.timezone, timezone) ||
-                const DeepCollectionEquality()
-                    .equals(other.timezone, timezone)) &&
-            (identical(other.fromGeoip, fromGeoip) ||
-                const DeepCollectionEquality()
-                    .equals(other.fromGeoip, fromGeoip)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(timezone) ^
-      const DeepCollectionEquality().hash(fromGeoip);
-
-  @JsonKey(ignore: true)
-  @override
-  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
-      __$TimezoneDataCopyWithImpl<_TimezoneData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_TimezoneDataToJson(this);
-  }
-}
-
-abstract class _TimezoneData implements TimezoneData {
-  const factory _TimezoneData({String? timezone, bool? fromGeoip}) =
-      _$_TimezoneData;
-
-  factory _TimezoneData.fromJson(Map<String, dynamic> json) =
-      _$_TimezoneData.fromJson;
-
-  @override
-  String? get timezone => throw _privateConstructorUsedError;
-  @override
-  bool? get fromGeoip => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
-  return _SSHData.fromJson(json);
-}
-
-/// @nodoc
-class _$SSHDataTearOff {
-  const _$SSHDataTearOff();
-
-  _SSHData call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys}) {
-    return _SSHData(
-      installServer: installServer,
-      allowPw: allowPw,
-      authorizedKeys: authorizedKeys,
-    );
-  }
-
-  SSHData fromJson(Map<String, Object> json) {
-    return SSHData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SSHData = _$SSHDataTearOff();
-
-/// @nodoc
-mixin _$SSHData {
-  bool? get installServer => throw _privateConstructorUsedError;
-  bool? get allowPw => throw _privateConstructorUsedError;
-  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SSHDataCopyWith<SSHData> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SSHDataCopyWith<$Res> {
-  factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
-      _$SSHDataCopyWithImpl<$Res>;
-  $Res call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
-}
-
-/// @nodoc
-class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
-  _$SSHDataCopyWithImpl(this._value, this._then);
-
-  final SSHData _value;
-  // ignore: unused_field
-  final $Res Function(SSHData) _then;
-
-  @override
-  $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
-  }) {
-    return _then(_value.copyWith(
-      installServer: installServer == freezed
-          ? _value.installServer
-          : installServer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPw: allowPw == freezed
-          ? _value.allowPw
-          : allowPw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      authorizedKeys: authorizedKeys == freezed
-          ? _value.authorizedKeys
-          : authorizedKeys // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
-  factory _$SSHDataCopyWith(_SSHData value, $Res Function(_SSHData) then) =
-      __$SSHDataCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
-}
-
-/// @nodoc
-class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
-    implements _$SSHDataCopyWith<$Res> {
-  __$SSHDataCopyWithImpl(_SSHData _value, $Res Function(_SSHData) _then)
-      : super(_value, (v) => _then(v as _SSHData));
-
-  @override
-  _SSHData get _value => super._value as _SSHData;
-
-  @override
-  $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
-  }) {
-    return _then(_SSHData(
-      installServer: installServer == freezed
-          ? _value.installServer
-          : installServer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPw: allowPw == freezed
-          ? _value.allowPw
-          : allowPw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      authorizedKeys: authorizedKeys == freezed
-          ? _value.authorizedKeys
-          : authorizedKeys // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_SSHData implements _SSHData {
-  const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
-
-  factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
-      _$_$_SSHDataFromJson(json);
-
-  @override
-  final bool? installServer;
-  @override
-  final bool? allowPw;
-  @override
-  final List<dynamic>? authorizedKeys;
-
-  @override
-  String toString() {
-    return 'SSHData(installServer: $installServer, allowPw: $allowPw, authorizedKeys: $authorizedKeys)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SSHData &&
-            (identical(other.installServer, installServer) ||
-                const DeepCollectionEquality()
-                    .equals(other.installServer, installServer)) &&
-            (identical(other.allowPw, allowPw) ||
-                const DeepCollectionEquality()
-                    .equals(other.allowPw, allowPw)) &&
-            (identical(other.authorizedKeys, authorizedKeys) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorizedKeys, authorizedKeys)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(installServer) ^
-      const DeepCollectionEquality().hash(allowPw) ^
-      const DeepCollectionEquality().hash(authorizedKeys);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
-      __$SSHDataCopyWithImpl<_SSHData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SSHDataToJson(this);
-  }
-}
-
-abstract class _SSHData implements SSHData {
-  const factory _SSHData(
-      {bool? installServer,
-      bool? allowPw,
-      List<dynamic>? authorizedKeys}) = _$_SSHData;
-
-  factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
-
-  @override
-  bool? get installServer => throw _privateConstructorUsedError;
-  @override
-  bool? get allowPw => throw _privateConstructorUsedError;
-  @override
-  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
-  return _ErrorReportRef.fromJson(json);
-}
-
-/// @nodoc
-class _$ErrorReportRefTearOff {
-  const _$ErrorReportRefTearOff();
-
-  _ErrorReportRef call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId}) {
-    return _ErrorReportRef(
-      state: state,
-      base: base,
-      kind: kind,
-      seen: seen,
-      oopsId: oopsId,
-    );
-  }
-
-  ErrorReportRef fromJson(Map<String, Object> json) {
-    return ErrorReportRef.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ErrorReportRef = _$ErrorReportRefTearOff();
-
-/// @nodoc
-mixin _$ErrorReportRef {
-  ErrorReportState? get state => throw _privateConstructorUsedError;
-  String? get base => throw _privateConstructorUsedError;
-  ErrorReportKind? get kind => throw _privateConstructorUsedError;
-  bool? get seen => throw _privateConstructorUsedError;
-  String? get oopsId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ErrorReportRefCopyWith<ErrorReportRef> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ErrorReportRefCopyWith<$Res> {
-  factory $ErrorReportRefCopyWith(
-          ErrorReportRef value, $Res Function(ErrorReportRef) then) =
-      _$ErrorReportRefCopyWithImpl<$Res>;
-  $Res call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId});
-}
-
-/// @nodoc
-class _$ErrorReportRefCopyWithImpl<$Res>
-    implements $ErrorReportRefCopyWith<$Res> {
-  _$ErrorReportRefCopyWithImpl(this._value, this._then);
-
-  final ErrorReportRef _value;
-  // ignore: unused_field
-  final $Res Function(ErrorReportRef) _then;
-
-  @override
-  $Res call({
-    Object? state = freezed,
-    Object? base = freezed,
-    Object? kind = freezed,
-    Object? seen = freezed,
-    Object? oopsId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      state: state == freezed
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ErrorReportState?,
-      base: base == freezed
-          ? _value.base
-          : base // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: kind == freezed
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ErrorReportKind?,
-      seen: seen == freezed
-          ? _value.seen
-          : seen // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      oopsId: oopsId == freezed
-          ? _value.oopsId
-          : oopsId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$ErrorReportRefCopyWith<$Res>
-    implements $ErrorReportRefCopyWith<$Res> {
-  factory _$ErrorReportRefCopyWith(
-          _ErrorReportRef value, $Res Function(_ErrorReportRef) then) =
-      __$ErrorReportRefCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId});
-}
-
-/// @nodoc
-class __$ErrorReportRefCopyWithImpl<$Res>
-    extends _$ErrorReportRefCopyWithImpl<$Res>
-    implements _$ErrorReportRefCopyWith<$Res> {
-  __$ErrorReportRefCopyWithImpl(
-      _ErrorReportRef _value, $Res Function(_ErrorReportRef) _then)
-      : super(_value, (v) => _then(v as _ErrorReportRef));
-
-  @override
-  _ErrorReportRef get _value => super._value as _ErrorReportRef;
-
-  @override
-  $Res call({
-    Object? state = freezed,
-    Object? base = freezed,
-    Object? kind = freezed,
-    Object? seen = freezed,
-    Object? oopsId = freezed,
-  }) {
-    return _then(_ErrorReportRef(
-      state: state == freezed
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ErrorReportState?,
-      base: base == freezed
-          ? _value.base
-          : base // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: kind == freezed
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ErrorReportKind?,
-      seen: seen == freezed
-          ? _value.seen
-          : seen // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      oopsId: oopsId == freezed
-          ? _value.oopsId
-          : oopsId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_ErrorReportRef implements _ErrorReportRef {
-  const _$_ErrorReportRef(
-      {this.state, this.base, this.kind, this.seen, this.oopsId});
-
-  factory _$_ErrorReportRef.fromJson(Map<String, dynamic> json) =>
-      _$_$_ErrorReportRefFromJson(json);
-
-  @override
-  final ErrorReportState? state;
-  @override
-  final String? base;
-  @override
-  final ErrorReportKind? kind;
-  @override
-  final bool? seen;
-  @override
-  final String? oopsId;
-
-  @override
-  String toString() {
-    return 'ErrorReportRef(state: $state, base: $base, kind: $kind, seen: $seen, oopsId: $oopsId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ErrorReportRef &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)) &&
-            (identical(other.base, base) ||
-                const DeepCollectionEquality().equals(other.base, base)) &&
-            (identical(other.kind, kind) ||
-                const DeepCollectionEquality().equals(other.kind, kind)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.oopsId, oopsId) ||
-                const DeepCollectionEquality().equals(other.oopsId, oopsId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(state) ^
-      const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(kind) ^
-      const DeepCollectionEquality().hash(seen) ^
-      const DeepCollectionEquality().hash(oopsId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
-      __$ErrorReportRefCopyWithImpl<_ErrorReportRef>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_ErrorReportRefToJson(this);
-  }
-}
-
-abstract class _ErrorReportRef implements ErrorReportRef {
-  const factory _ErrorReportRef(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId}) = _$_ErrorReportRef;
-
-  factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
-      _$_ErrorReportRef.fromJson;
-
-  @override
-  ErrorReportState? get state => throw _privateConstructorUsedError;
-  @override
-  String? get base => throw _privateConstructorUsedError;
-  @override
-  ErrorReportKind? get kind => throw _privateConstructorUsedError;
-  @override
-  bool? get seen => throw _privateConstructorUsedError;
-  @override
-  String? get oopsId => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ApplicationStatus _$ApplicationStatusFromJson(Map<String, dynamic> json) {
-  return _ApplicationStatus.fromJson(json);
-}
-
-/// @nodoc
-class _$ApplicationStatusTearOff {
-  const _$ApplicationStatusTearOff();
-
-  _ApplicationStatus call(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId}) {
-    return _ApplicationStatus(
-      state: state,
-      confirmingTty: confirmingTty,
-      error: error,
-      cloudInitOk: cloudInitOk,
-      interactive: interactive,
-      echoSyslogId: echoSyslogId,
-      logSyslogId: logSyslogId,
-      eventSyslogId: eventSyslogId,
-    );
-  }
-
-  ApplicationStatus fromJson(Map<String, Object> json) {
-    return ApplicationStatus.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ApplicationStatus = _$ApplicationStatusTearOff();
-
-/// @nodoc
-mixin _$ApplicationStatus {
-  ApplicationState? get state => throw _privateConstructorUsedError;
-  String? get confirmingTty => throw _privateConstructorUsedError;
-  ErrorReportRef? get error => throw _privateConstructorUsedError;
-  bool? get cloudInitOk => throw _privateConstructorUsedError;
-  bool? get interactive => throw _privateConstructorUsedError;
-  String? get echoSyslogId => throw _privateConstructorUsedError;
-  String? get logSyslogId => throw _privateConstructorUsedError;
-  String? get eventSyslogId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ApplicationStatusCopyWith<ApplicationStatus> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ApplicationStatusCopyWith<$Res> {
-  factory $ApplicationStatusCopyWith(
-          ApplicationStatus value, $Res Function(ApplicationStatus) then) =
-      _$ApplicationStatusCopyWithImpl<$Res>;
-  $Res call(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId});
-
-  $ErrorReportRefCopyWith<$Res>? get error;
-}
-
-/// @nodoc
-class _$ApplicationStatusCopyWithImpl<$Res>
-    implements $ApplicationStatusCopyWith<$Res> {
-  _$ApplicationStatusCopyWithImpl(this._value, this._then);
-
-  final ApplicationStatus _value;
-  // ignore: unused_field
-  final $Res Function(ApplicationStatus) _then;
-
-  @override
-  $Res call({
-    Object? state = freezed,
-    Object? confirmingTty = freezed,
-    Object? error = freezed,
-    Object? cloudInitOk = freezed,
-    Object? interactive = freezed,
-    Object? echoSyslogId = freezed,
-    Object? logSyslogId = freezed,
-    Object? eventSyslogId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      state: state == freezed
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ApplicationState?,
-      confirmingTty: confirmingTty == freezed
-          ? _value.confirmingTty
-          : confirmingTty // ignore: cast_nullable_to_non_nullable
-              as String?,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as ErrorReportRef?,
-      cloudInitOk: cloudInitOk == freezed
-          ? _value.cloudInitOk
-          : cloudInitOk // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interactive: interactive == freezed
-          ? _value.interactive
-          : interactive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      echoSyslogId: echoSyslogId == freezed
-          ? _value.echoSyslogId
-          : echoSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      logSyslogId: logSyslogId == freezed
-          ? _value.logSyslogId
-          : logSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventSyslogId: eventSyslogId == freezed
-          ? _value.eventSyslogId
-          : eventSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-
-  @override
-  $ErrorReportRefCopyWith<$Res>? get error {
-    if (_value.error == null) {
-      return null;
-    }
-
-    return $ErrorReportRefCopyWith<$Res>(_value.error!, (value) {
-      return _then(_value.copyWith(error: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$ApplicationStatusCopyWith<$Res>
-    implements $ApplicationStatusCopyWith<$Res> {
-  factory _$ApplicationStatusCopyWith(
-          _ApplicationStatus value, $Res Function(_ApplicationStatus) then) =
-      __$ApplicationStatusCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId});
-
-  @override
-  $ErrorReportRefCopyWith<$Res>? get error;
-}
-
-/// @nodoc
-class __$ApplicationStatusCopyWithImpl<$Res>
-    extends _$ApplicationStatusCopyWithImpl<$Res>
-    implements _$ApplicationStatusCopyWith<$Res> {
-  __$ApplicationStatusCopyWithImpl(
-      _ApplicationStatus _value, $Res Function(_ApplicationStatus) _then)
-      : super(_value, (v) => _then(v as _ApplicationStatus));
-
-  @override
-  _ApplicationStatus get _value => super._value as _ApplicationStatus;
-
-  @override
-  $Res call({
-    Object? state = freezed,
-    Object? confirmingTty = freezed,
-    Object? error = freezed,
-    Object? cloudInitOk = freezed,
-    Object? interactive = freezed,
-    Object? echoSyslogId = freezed,
-    Object? logSyslogId = freezed,
-    Object? eventSyslogId = freezed,
-  }) {
-    return _then(_ApplicationStatus(
-      state: state == freezed
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ApplicationState?,
-      confirmingTty: confirmingTty == freezed
-          ? _value.confirmingTty
-          : confirmingTty // ignore: cast_nullable_to_non_nullable
-              as String?,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as ErrorReportRef?,
-      cloudInitOk: cloudInitOk == freezed
-          ? _value.cloudInitOk
-          : cloudInitOk // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interactive: interactive == freezed
-          ? _value.interactive
-          : interactive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      echoSyslogId: echoSyslogId == freezed
-          ? _value.echoSyslogId
-          : echoSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      logSyslogId: logSyslogId == freezed
-          ? _value.logSyslogId
-          : logSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventSyslogId: eventSyslogId == freezed
-          ? _value.eventSyslogId
-          : eventSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-class _$_ApplicationStatus implements _ApplicationStatus {
-  const _$_ApplicationStatus(
-      {this.state,
-      this.confirmingTty,
-      this.error,
-      this.cloudInitOk,
-      this.interactive,
-      this.echoSyslogId,
-      this.logSyslogId,
-      this.eventSyslogId});
-
-  factory _$_ApplicationStatus.fromJson(Map<String, dynamic> json) =>
-      _$_$_ApplicationStatusFromJson(json);
-
-  @override
-  final ApplicationState? state;
-  @override
-  final String? confirmingTty;
-  @override
-  final ErrorReportRef? error;
-  @override
-  final bool? cloudInitOk;
-  @override
-  final bool? interactive;
-  @override
-  final String? echoSyslogId;
-  @override
-  final String? logSyslogId;
-  @override
-  final String? eventSyslogId;
-
-  @override
-  String toString() {
-    return 'ApplicationStatus(state: $state, confirmingTty: $confirmingTty, error: $error, cloudInitOk: $cloudInitOk, interactive: $interactive, echoSyslogId: $echoSyslogId, logSyslogId: $logSyslogId, eventSyslogId: $eventSyslogId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ApplicationStatus &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)) &&
-            (identical(other.confirmingTty, confirmingTty) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmingTty, confirmingTty)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.cloudInitOk, cloudInitOk) ||
-                const DeepCollectionEquality()
-                    .equals(other.cloudInitOk, cloudInitOk)) &&
-            (identical(other.interactive, interactive) ||
-                const DeepCollectionEquality()
-                    .equals(other.interactive, interactive)) &&
-            (identical(other.echoSyslogId, echoSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.echoSyslogId, echoSyslogId)) &&
-            (identical(other.logSyslogId, logSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.logSyslogId, logSyslogId)) &&
-            (identical(other.eventSyslogId, eventSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.eventSyslogId, eventSyslogId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(state) ^
-      const DeepCollectionEquality().hash(confirmingTty) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(cloudInitOk) ^
-      const DeepCollectionEquality().hash(interactive) ^
-      const DeepCollectionEquality().hash(echoSyslogId) ^
-      const DeepCollectionEquality().hash(logSyslogId) ^
-      const DeepCollectionEquality().hash(eventSyslogId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
-      __$ApplicationStatusCopyWithImpl<_ApplicationStatus>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_ApplicationStatusToJson(this);
-  }
-}
-
-abstract class _ApplicationStatus implements ApplicationStatus {
-  const factory _ApplicationStatus(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId}) = _$_ApplicationStatus;
-
-  factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
-      _$_ApplicationStatus.fromJson;
-
-  @override
-  ApplicationState? get state => throw _privateConstructorUsedError;
-  @override
-  String? get confirmingTty => throw _privateConstructorUsedError;
-  @override
-  ErrorReportRef? get error => throw _privateConstructorUsedError;
-  @override
-  bool? get cloudInitOk => throw _privateConstructorUsedError;
-  @override
-  bool? get interactive => throw _privateConstructorUsedError;
-  @override
-  String? get echoSyslogId => throw _privateConstructorUsedError;
-  @override
-  String? get logSyslogId => throw _privateConstructorUsedError;
-  @override
-  String? get eventSyslogId => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 OsProber _$OsProberFromJson(Map<String, dynamic> json) {
@@ -4677,6 +4642,601 @@ abstract class _StorageResponseV2 implements StorageResponseV2 {
       throw _privateConstructorUsedError;
 }
 
+IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
+  return _IdentityData.fromJson(json);
+}
+
+/// @nodoc
+class _$IdentityDataTearOff {
+  const _$IdentityDataTearOff();
+
+  _IdentityData call(
+      {String? realname = '',
+      String? username = '',
+      String? cryptedPassword = '',
+      String? hostname = ''}) {
+    return _IdentityData(
+      realname: realname,
+      username: username,
+      cryptedPassword: cryptedPassword,
+      hostname: hostname,
+    );
+  }
+
+  IdentityData fromJson(Map<String, Object> json) {
+    return IdentityData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $IdentityData = _$IdentityDataTearOff();
+
+/// @nodoc
+mixin _$IdentityData {
+  String? get realname => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
+  String? get cryptedPassword => throw _privateConstructorUsedError;
+  String? get hostname => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IdentityDataCopyWith<IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IdentityDataCopyWith<$Res> {
+  factory $IdentityDataCopyWith(
+          IdentityData value, $Res Function(IdentityData) then) =
+      _$IdentityDataCopyWithImpl<$Res>;
+  $Res call(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname});
+}
+
+/// @nodoc
+class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
+  _$IdentityDataCopyWithImpl(this._value, this._then);
+
+  final IdentityData _value;
+  // ignore: unused_field
+  final $Res Function(IdentityData) _then;
+
+  @override
+  $Res call({
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
+  }) {
+    return _then(_value.copyWith(
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cryptedPassword: cryptedPassword == freezed
+          ? _value.cryptedPassword
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$IdentityDataCopyWith<$Res>
+    implements $IdentityDataCopyWith<$Res> {
+  factory _$IdentityDataCopyWith(
+          _IdentityData value, $Res Function(_IdentityData) then) =
+      __$IdentityDataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname});
+}
+
+/// @nodoc
+class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
+    implements _$IdentityDataCopyWith<$Res> {
+  __$IdentityDataCopyWithImpl(
+      _IdentityData _value, $Res Function(_IdentityData) _then)
+      : super(_value, (v) => _then(v as _IdentityData));
+
+  @override
+  _IdentityData get _value => super._value as _IdentityData;
+
+  @override
+  $Res call({
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
+  }) {
+    return _then(_IdentityData(
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cryptedPassword: cryptedPassword == freezed
+          ? _value.cryptedPassword
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _$_IdentityData implements _IdentityData {
+  const _$_IdentityData(
+      {this.realname = '',
+      this.username = '',
+      this.cryptedPassword = '',
+      this.hostname = ''});
+
+  factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
+      _$_$_IdentityDataFromJson(json);
+
+  @JsonKey(defaultValue: '')
+  @override
+  final String? realname;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? username;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? cryptedPassword;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? hostname;
+
+  @override
+  String toString() {
+    return 'IdentityData(realname: $realname, username: $username, cryptedPassword: $cryptedPassword, hostname: $hostname)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _IdentityData &&
+            (identical(other.realname, realname) ||
+                const DeepCollectionEquality()
+                    .equals(other.realname, realname)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
+            (identical(other.cryptedPassword, cryptedPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.cryptedPassword, cryptedPassword)) &&
+            (identical(other.hostname, hostname) ||
+                const DeepCollectionEquality()
+                    .equals(other.hostname, hostname)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(realname) ^
+      const DeepCollectionEquality().hash(username) ^
+      const DeepCollectionEquality().hash(cryptedPassword) ^
+      const DeepCollectionEquality().hash(hostname);
+
+  @JsonKey(ignore: true)
+  @override
+  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+      __$IdentityDataCopyWithImpl<_IdentityData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_IdentityDataToJson(this);
+  }
+}
+
+abstract class _IdentityData implements IdentityData {
+  const factory _IdentityData(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname}) = _$_IdentityData;
+
+  factory _IdentityData.fromJson(Map<String, dynamic> json) =
+      _$_IdentityData.fromJson;
+
+  @override
+  String? get realname => throw _privateConstructorUsedError;
+  @override
+  String? get username => throw _privateConstructorUsedError;
+  @override
+  String? get cryptedPassword => throw _privateConstructorUsedError;
+  @override
+  String? get hostname => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
+  return _SSHData.fromJson(json);
+}
+
+/// @nodoc
+class _$SSHDataTearOff {
+  const _$SSHDataTearOff();
+
+  _SSHData call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys}) {
+    return _SSHData(
+      installServer: installServer,
+      allowPw: allowPw,
+      authorizedKeys: authorizedKeys,
+    );
+  }
+
+  SSHData fromJson(Map<String, Object> json) {
+    return SSHData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SSHData = _$SSHDataTearOff();
+
+/// @nodoc
+mixin _$SSHData {
+  bool? get installServer => throw _privateConstructorUsedError;
+  bool? get allowPw => throw _privateConstructorUsedError;
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SSHDataCopyWith<SSHData> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SSHDataCopyWith<$Res> {
+  factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
+      _$SSHDataCopyWithImpl<$Res>;
+  $Res call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
+}
+
+/// @nodoc
+class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
+  _$SSHDataCopyWithImpl(this._value, this._then);
+
+  final SSHData _value;
+  // ignore: unused_field
+  final $Res Function(SSHData) _then;
+
+  @override
+  $Res call({
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
+  }) {
+    return _then(_value.copyWith(
+      installServer: installServer == freezed
+          ? _value.installServer
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      authorizedKeys: authorizedKeys == freezed
+          ? _value.authorizedKeys
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
+  factory _$SSHDataCopyWith(_SSHData value, $Res Function(_SSHData) then) =
+      __$SSHDataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
+}
+
+/// @nodoc
+class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
+    implements _$SSHDataCopyWith<$Res> {
+  __$SSHDataCopyWithImpl(_SSHData _value, $Res Function(_SSHData) _then)
+      : super(_value, (v) => _then(v as _SSHData));
+
+  @override
+  _SSHData get _value => super._value as _SSHData;
+
+  @override
+  $Res call({
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
+  }) {
+    return _then(_SSHData(
+      installServer: installServer == freezed
+          ? _value.installServer
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      authorizedKeys: authorizedKeys == freezed
+          ? _value.authorizedKeys
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _$_SSHData implements _SSHData {
+  const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
+
+  factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
+      _$_$_SSHDataFromJson(json);
+
+  @override
+  final bool? installServer;
+  @override
+  final bool? allowPw;
+  @override
+  final List<dynamic>? authorizedKeys;
+
+  @override
+  String toString() {
+    return 'SSHData(installServer: $installServer, allowPw: $allowPw, authorizedKeys: $authorizedKeys)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SSHData &&
+            (identical(other.installServer, installServer) ||
+                const DeepCollectionEquality()
+                    .equals(other.installServer, installServer)) &&
+            (identical(other.allowPw, allowPw) ||
+                const DeepCollectionEquality()
+                    .equals(other.allowPw, allowPw)) &&
+            (identical(other.authorizedKeys, authorizedKeys) ||
+                const DeepCollectionEquality()
+                    .equals(other.authorizedKeys, authorizedKeys)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(installServer) ^
+      const DeepCollectionEquality().hash(allowPw) ^
+      const DeepCollectionEquality().hash(authorizedKeys);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SSHDataCopyWith<_SSHData> get copyWith =>
+      __$SSHDataCopyWithImpl<_SSHData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SSHDataToJson(this);
+  }
+}
+
+abstract class _SSHData implements SSHData {
+  const factory _SSHData(
+      {bool? installServer,
+      bool? allowPw,
+      List<dynamic>? authorizedKeys}) = _$_SSHData;
+
+  factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
+
+  @override
+  bool? get installServer => throw _privateConstructorUsedError;
+  @override
+  bool? get allowPw => throw _privateConstructorUsedError;
+  @override
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SSHDataCopyWith<_SSHData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TimezoneData _$TimezoneDataFromJson(Map<String, dynamic> json) {
+  return _TimezoneData.fromJson(json);
+}
+
+/// @nodoc
+class _$TimezoneDataTearOff {
+  const _$TimezoneDataTearOff();
+
+  _TimezoneData call({String? timezone, bool? fromGeoip}) {
+    return _TimezoneData(
+      timezone: timezone,
+      fromGeoip: fromGeoip,
+    );
+  }
+
+  TimezoneData fromJson(Map<String, Object> json) {
+    return TimezoneData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $TimezoneData = _$TimezoneDataTearOff();
+
+/// @nodoc
+mixin _$TimezoneData {
+  String? get timezone => throw _privateConstructorUsedError;
+  bool? get fromGeoip => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TimezoneDataCopyWith<TimezoneData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimezoneDataCopyWith<$Res> {
+  factory $TimezoneDataCopyWith(
+          TimezoneData value, $Res Function(TimezoneData) then) =
+      _$TimezoneDataCopyWithImpl<$Res>;
+  $Res call({String? timezone, bool? fromGeoip});
+}
+
+/// @nodoc
+class _$TimezoneDataCopyWithImpl<$Res> implements $TimezoneDataCopyWith<$Res> {
+  _$TimezoneDataCopyWithImpl(this._value, this._then);
+
+  final TimezoneData _value;
+  // ignore: unused_field
+  final $Res Function(TimezoneData) _then;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoip = freezed,
+  }) {
+    return _then(_value.copyWith(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TimezoneDataCopyWith<$Res>
+    implements $TimezoneDataCopyWith<$Res> {
+  factory _$TimezoneDataCopyWith(
+          _TimezoneData value, $Res Function(_TimezoneData) then) =
+      __$TimezoneDataCopyWithImpl<$Res>;
+  @override
+  $Res call({String? timezone, bool? fromGeoip});
+}
+
+/// @nodoc
+class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
+    implements _$TimezoneDataCopyWith<$Res> {
+  __$TimezoneDataCopyWithImpl(
+      _TimezoneData _value, $Res Function(_TimezoneData) _then)
+      : super(_value, (v) => _then(v as _TimezoneData));
+
+  @override
+  _TimezoneData get _value => super._value as _TimezoneData;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoip = freezed,
+  }) {
+    return _then(_TimezoneData(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _$_TimezoneData implements _TimezoneData {
+  const _$_TimezoneData({this.timezone, this.fromGeoip});
+
+  factory _$_TimezoneData.fromJson(Map<String, dynamic> json) =>
+      _$_$_TimezoneDataFromJson(json);
+
+  @override
+  final String? timezone;
+  @override
+  final bool? fromGeoip;
+
+  @override
+  String toString() {
+    return 'TimezoneData(timezone: $timezone, fromGeoip: $fromGeoip)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TimezoneData &&
+            (identical(other.timezone, timezone) ||
+                const DeepCollectionEquality()
+                    .equals(other.timezone, timezone)) &&
+            (identical(other.fromGeoip, fromGeoip) ||
+                const DeepCollectionEquality()
+                    .equals(other.fromGeoip, fromGeoip)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(timezone) ^
+      const DeepCollectionEquality().hash(fromGeoip);
+
+  @JsonKey(ignore: true)
+  @override
+  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
+      __$TimezoneDataCopyWithImpl<_TimezoneData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TimezoneDataToJson(this);
+  }
+}
+
+abstract class _TimezoneData implements TimezoneData {
+  const factory _TimezoneData({String? timezone, bool? fromGeoip}) =
+      _$_TimezoneData;
+
+  factory _TimezoneData.fromJson(Map<String, dynamic> json) =
+      _$_TimezoneData.fromJson;
+
+  @override
+  String? get timezone => throw _privateConstructorUsedError;
+  @override
+  bool? get fromGeoip => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 WSLConfigurationBase _$WSLConfigurationBaseFromJson(Map<String, dynamic> json) {
   return _WSLConfigurationBase.fromJson(json);
 }
@@ -5171,565 +5731,5 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
-  switch (json['\$type'] as String) {
-    case 'StepPressKey':
-      return StepPressKey.fromJson(json);
-    case 'StepKeyPresent':
-      return StepKeyPresent.fromJson(json);
-    case 'StepResult':
-      return StepResult.fromJson(json);
-
-    default:
-      throw FallThroughError();
-  }
-}
-
-/// @nodoc
-class _$KeyboardStepTearOff {
-  const _$KeyboardStepTearOff();
-
-  StepPressKey pressKey(
-      {List<String>? symbols, List<List<dynamic>>? keycodes}) {
-    return StepPressKey(
-      symbols: symbols,
-      keycodes: keycodes,
-    );
-  }
-
-  StepKeyPresent keyPresent({String? symbol, String? yes, String? no}) {
-    return StepKeyPresent(
-      symbol: symbol,
-      yes: yes,
-      no: no,
-    );
-  }
-
-  StepResult result({String? layout, String? variant}) {
-    return StepResult(
-      layout: layout,
-      variant: variant,
-    );
-  }
-
-  KeyboardStep fromJson(Map<String, Object> json) {
-    return KeyboardStep.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardStep = _$KeyboardStepTearOff();
-
-/// @nodoc
-mixin _$KeyboardStep {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardStepCopyWith<$Res> {
-  factory $KeyboardStepCopyWith(
-          KeyboardStep value, $Res Function(KeyboardStep) then) =
-      _$KeyboardStepCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$KeyboardStepCopyWithImpl<$Res> implements $KeyboardStepCopyWith<$Res> {
-  _$KeyboardStepCopyWithImpl(this._value, this._then);
-
-  final KeyboardStep _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardStep) _then;
-}
-
-/// @nodoc
-abstract class $StepPressKeyCopyWith<$Res> {
-  factory $StepPressKeyCopyWith(
-          StepPressKey value, $Res Function(StepPressKey) then) =
-      _$StepPressKeyCopyWithImpl<$Res>;
-  $Res call({List<String>? symbols, List<List<dynamic>>? keycodes});
-}
-
-/// @nodoc
-class _$StepPressKeyCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepPressKeyCopyWith<$Res> {
-  _$StepPressKeyCopyWithImpl(
-      StepPressKey _value, $Res Function(StepPressKey) _then)
-      : super(_value, (v) => _then(v as StepPressKey));
-
-  @override
-  StepPressKey get _value => super._value as StepPressKey;
-
-  @override
-  $Res call({
-    Object? symbols = freezed,
-    Object? keycodes = freezed,
-  }) {
-    return _then(StepPressKey(
-      symbols: symbols == freezed
-          ? _value.symbols
-          : symbols // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      keycodes: keycodes == freezed
-          ? _value.keycodes
-          : keycodes // ignore: cast_nullable_to_non_nullable
-              as List<List<dynamic>>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepPressKey')
-class _$StepPressKey implements StepPressKey {
-  const _$StepPressKey({this.symbols, this.keycodes});
-
-  factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
-      _$_$StepPressKeyFromJson(json);
-
-  @override
-  final List<String>? symbols;
-  @override
-  final List<List<dynamic>>? keycodes;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.pressKey(symbols: $symbols, keycodes: $keycodes)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepPressKey &&
-            (identical(other.symbols, symbols) ||
-                const DeepCollectionEquality()
-                    .equals(other.symbols, symbols)) &&
-            (identical(other.keycodes, keycodes) ||
-                const DeepCollectionEquality()
-                    .equals(other.keycodes, keycodes)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbols) ^
-      const DeepCollectionEquality().hash(keycodes);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
-      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return pressKey(symbols, keycodes);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (pressKey != null) {
-      return pressKey(symbols, keycodes);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return pressKey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (pressKey != null) {
-      return pressKey(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
-  }
-}
-
-abstract class StepPressKey implements KeyboardStep {
-  const factory StepPressKey(
-      {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
-
-  factory StepPressKey.fromJson(Map<String, dynamic> json) =
-      _$StepPressKey.fromJson;
-
-  List<String>? get symbols => throw _privateConstructorUsedError;
-  List<List<dynamic>>? get keycodes => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StepKeyPresentCopyWith<$Res> {
-  factory $StepKeyPresentCopyWith(
-          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
-      _$StepKeyPresentCopyWithImpl<$Res>;
-  $Res call({String? symbol, String? yes, String? no});
-}
-
-/// @nodoc
-class _$StepKeyPresentCopyWithImpl<$Res>
-    extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepKeyPresentCopyWith<$Res> {
-  _$StepKeyPresentCopyWithImpl(
-      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
-      : super(_value, (v) => _then(v as StepKeyPresent));
-
-  @override
-  StepKeyPresent get _value => super._value as StepKeyPresent;
-
-  @override
-  $Res call({
-    Object? symbol = freezed,
-    Object? yes = freezed,
-    Object? no = freezed,
-  }) {
-    return _then(StepKeyPresent(
-      symbol: symbol == freezed
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String?,
-      yes: yes == freezed
-          ? _value.yes
-          : yes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      no: no == freezed
-          ? _value.no
-          : no // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepKeyPresent')
-class _$StepKeyPresent implements StepKeyPresent {
-  const _$StepKeyPresent({this.symbol, this.yes, this.no});
-
-  factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
-      _$_$StepKeyPresentFromJson(json);
-
-  @override
-  final String? symbol;
-  @override
-  final String? yes;
-  @override
-  final String? no;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.keyPresent(symbol: $symbol, yes: $yes, no: $no)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepKeyPresent &&
-            (identical(other.symbol, symbol) ||
-                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
-            (identical(other.yes, yes) ||
-                const DeepCollectionEquality().equals(other.yes, yes)) &&
-            (identical(other.no, no) ||
-                const DeepCollectionEquality().equals(other.no, no)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbol) ^
-      const DeepCollectionEquality().hash(yes) ^
-      const DeepCollectionEquality().hash(no);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
-      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return keyPresent(symbol, yes, no);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (keyPresent != null) {
-      return keyPresent(symbol, yes, no);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return keyPresent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (keyPresent != null) {
-      return keyPresent(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
-  }
-}
-
-abstract class StepKeyPresent implements KeyboardStep {
-  const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
-      _$StepKeyPresent;
-
-  factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
-      _$StepKeyPresent.fromJson;
-
-  String? get symbol => throw _privateConstructorUsedError;
-  String? get yes => throw _privateConstructorUsedError;
-  String? get no => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StepResultCopyWith<$Res> {
-  factory $StepResultCopyWith(
-          StepResult value, $Res Function(StepResult) then) =
-      _$StepResultCopyWithImpl<$Res>;
-  $Res call({String? layout, String? variant});
-}
-
-/// @nodoc
-class _$StepResultCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepResultCopyWith<$Res> {
-  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
-      : super(_value, (v) => _then(v as StepResult));
-
-  @override
-  StepResult get _value => super._value as StepResult;
-
-  @override
-  $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
-  }) {
-    return _then(StepResult(
-      layout: layout == freezed
-          ? _value.layout
-          : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepResult')
-class _$StepResult implements StepResult {
-  const _$StepResult({this.layout, this.variant});
-
-  factory _$StepResult.fromJson(Map<String, dynamic> json) =>
-      _$_$StepResultFromJson(json);
-
-  @override
-  final String? layout;
-  @override
-  final String? variant;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.result(layout: $layout, variant: $variant)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepResult &&
-            (identical(other.layout, layout) ||
-                const DeepCollectionEquality().equals(other.layout, layout)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality().equals(other.variant, variant)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(layout) ^
-      const DeepCollectionEquality().hash(variant);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepResultCopyWith<StepResult> get copyWith =>
-      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return result(layout, variant);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (result != null) {
-      return result(layout, variant);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return result(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (result != null) {
-      return result(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
-  }
-}
-
-abstract class StepResult implements KeyboardStep {
-  const factory StepResult({String? layout, String? variant}) = _$StepResult;
-
-  factory StepResult.fromJson(Map<String, dynamic> json) =
-      _$StepResult.fromJson;
-
-  String? get layout => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepResultCopyWith<StepResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
