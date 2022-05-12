@@ -10,7 +10,7 @@ dependencies:
   build_runner: ^2.1.1
   flutter:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
   gsettings: ^0.2.0
