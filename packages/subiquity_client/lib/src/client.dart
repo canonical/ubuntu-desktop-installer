@@ -193,12 +193,12 @@ class SubiquityClient {
     await _receive("setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
-  Future<TimezoneData> timezone() async {
+  Future<TimezoneInfo> timezone() async {
     final request = Request('GET', Uri.http('localhost', 'timezone'));
     final response = await _send(request);
 
     final timezoneJson = await _receiveJson("timezone()", response);
-    return TimezoneData.fromJson(timezoneJson);
+    return TimezoneInfo.fromJson(timezoneJson);
   }
 
   Future<void> setTimezone(String timezone) async {

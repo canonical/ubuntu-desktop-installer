@@ -500,14 +500,14 @@ Map<String, dynamic> _$_$_SSHDataToJson(_$_SSHData instance) =>
       'authorized_keys': instance.authorizedKeys,
     };
 
-_$_TimezoneData _$_$_TimezoneDataFromJson(Map<String, dynamic> json) {
-  return _$_TimezoneData(
+_$_TimezoneInfo _$_$_TimezoneInfoFromJson(Map<String, dynamic> json) {
+  return _$_TimezoneInfo(
     timezone: json['timezone'] as String?,
     fromGeoip: json['from_geoip'] as bool?,
   );
 }
 
-Map<String, dynamic> _$_$_TimezoneDataToJson(_$_TimezoneData instance) =>
+Map<String, dynamic> _$_$_TimezoneInfoToJson(_$_TimezoneInfo instance) =>
     <String, dynamic>{
       'timezone': instance.timezone,
       'from_geoip': instance.fromGeoip,
