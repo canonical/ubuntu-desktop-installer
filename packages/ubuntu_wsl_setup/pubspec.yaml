@@ -3,7 +3,8 @@ description: Ubuntu WSL OOBE Setup Wizard
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
