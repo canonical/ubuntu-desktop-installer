@@ -10,4 +10,4 @@ dependencies:
 
 dev_dependencies:
   ffigen: ^4.1.2
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.0

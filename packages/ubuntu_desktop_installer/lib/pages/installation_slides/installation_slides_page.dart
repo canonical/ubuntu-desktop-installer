@@ -45,7 +45,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     });
     model.init();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       model.precacheSlideImages(context);
     });
