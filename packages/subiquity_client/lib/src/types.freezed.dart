@@ -173,7 +173,7 @@ class __$ErrorReportRefCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_ErrorReportRef implements _ErrorReportRef {
   const _$_ErrorReportRef(
       {this.state, this.base, this.kind, this.seen, this.oopsId});
@@ -746,8 +746,9 @@ class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 @FreezedUnionValue('StepPressKey')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$StepPressKey implements StepPressKey {
   const _$StepPressKey({this.symbols, this.keycodes});
 
@@ -901,8 +902,9 @@ class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 @FreezedUnionValue('StepKeyPresent')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$StepKeyPresent implements StepKeyPresent {
   const _$StepKeyPresent({this.symbol, this.yes, this.no});
 
@@ -1054,8 +1056,9 @@ class _$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 @FreezedUnionValue('StepResult')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$StepResult implements StepResult {
   const _$StepResult({this.layout, this.variant});
 
@@ -1285,7 +1288,8 @@ class __$KeyboardSettingCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardSetting implements _KeyboardSetting {
   const _$_KeyboardSetting({this.layout, this.variant, this.toggle});
 
@@ -1463,7 +1467,8 @@ class __$KeyboardVariantCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardVariant implements _KeyboardVariant {
   const _$_KeyboardVariant({this.code, this.name});
 
@@ -1646,7 +1651,8 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardLayout implements _KeyboardLayout {
   const _$_KeyboardLayout({this.code, this.name, this.variants});
 
@@ -1843,7 +1849,8 @@ class __$KeyboardSetupCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardSetup implements _KeyboardSetup {
   const _$_KeyboardSetup({this.setting, this.layouts});
 
@@ -2082,7 +2089,8 @@ class __$SourceSelectionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_SourceSelection implements _SourceSelection {
   const _$_SourceSelection(
       {this.name,
@@ -2300,7 +2308,7 @@ class __$SourceSelectionAndSettingCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
   const _$_SourceSelectionAndSetting({this.sources, this.currentId});
 
@@ -2521,7 +2529,7 @@ class __$OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_OsProber implements _OsProber {
   const _$_OsProber(
       {required this.long,
@@ -3103,8 +3111,9 @@ class _$GapCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 @FreezedUnionValue('Gap')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$Gap implements Gap {
   const _$Gap({this.offset, this.size});
 
@@ -3793,7 +3802,7 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedChoice implements _GuidedChoice {
   const _$_GuidedChoice({this.diskId, this.useLvm, this.password});
 
@@ -4004,7 +4013,7 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   const _$_GuidedStorageResponse({this.status, this.errorReport, this.disks});
 
@@ -4283,7 +4292,7 @@ class __$StorageResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponse implements _StorageResponse {
   const _$_StorageResponse(
       {this.status,
@@ -4558,7 +4567,7 @@ class __$StorageResponseV2CopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
       {this.disks, this.needRoot, this.needBoot, this.errorReport});
@@ -4784,7 +4793,7 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_IdentityData implements _IdentityData {
   const _$_IdentityData(
       {this.realname = '',
@@ -4992,7 +5001,7 @@ class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_SSHData implements _SSHData {
   const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
 
@@ -5172,7 +5181,7 @@ class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_TimezoneData implements _TimezoneData {
   const _$_TimezoneData({this.timezone, this.fromGeoip});
 
@@ -5381,7 +5390,7 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
       {this.automountRoot,
@@ -5633,7 +5642,7 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   const _$_WSLConfigurationAdvanced(
       {this.automountEnabled,

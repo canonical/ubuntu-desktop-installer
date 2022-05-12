@@ -211,7 +211,7 @@ Map<String, dynamic> _$_$_KeyboardLayoutToJson(_$_KeyboardLayout instance) =>
     <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
-      'variants': instance.variants,
+      'variants': instance.variants?.map((e) => e.toJson()).toList(),
     };
 
 _$_KeyboardSetup _$_$_KeyboardSetupFromJson(Map<String, dynamic> json) {
@@ -227,8 +227,8 @@ _$_KeyboardSetup _$_$_KeyboardSetupFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
     <String, dynamic>{
-      'setting': instance.setting,
-      'layouts': instance.layouts,
+      'setting': instance.setting?.toJson(),
+      'layouts': instance.layouts?.map((e) => e.toJson()).toList(),
     };
 
 _$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
@@ -265,7 +265,7 @@ _$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
 Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
         _$_SourceSelectionAndSetting instance) =>
     <String, dynamic>{
-      'sources': instance.sources,
+      'sources': instance.sources?.map((e) => e.toJson()).toList(),
       'current_id': instance.currentId,
     };
 
@@ -404,8 +404,8 @@ Map<String, dynamic> _$_$_GuidedStorageResponseToJson(
         _$_GuidedStorageResponse instance) =>
     <String, dynamic>{
       'status': _$ProbeStatusEnumMap[instance.status],
-      'error_report': instance.errorReport,
-      'disks': instance.disks,
+      'error_report': instance.errorReport?.toJson(),
+      'disks': instance.disks?.map((e) => e.toJson()).toList(),
     };
 
 const _$ProbeStatusEnumMap = {
@@ -431,7 +431,7 @@ _$_StorageResponse _$_$_StorageResponseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StorageResponseToJson(_$_StorageResponse instance) =>
     <String, dynamic>{
       'status': _$ProbeStatusEnumMap[instance.status],
-      'error_report': instance.errorReport,
+      'error_report': instance.errorReport?.toJson(),
       'bootloader': _$BootloaderEnumMap[instance.bootloader],
       'orig_config': instance.origConfig,
       'config': instance.config,
@@ -462,10 +462,10 @@ _$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StorageResponseV2ToJson(
         _$_StorageResponseV2 instance) =>
     <String, dynamic>{
-      'disks': instance.disks,
+      'disks': instance.disks?.map((e) => e.toJson()).toList(),
       'need_root': instance.needRoot,
       'need_boot': instance.needBoot,
-      'error_report': instance.errorReport,
+      'error_report': instance.errorReport?.toJson(),
     };
 
 _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
