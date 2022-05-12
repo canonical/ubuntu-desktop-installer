@@ -173,7 +173,6 @@ parts:
       cd packages/ubuntu_desktop_installer
       flutter channel stable
       flutter upgrade
-      flutter config --enable-linux-desktop
       flutter doctor
       flutter pub get
       flutter build linux --release -v
@@ -192,7 +191,6 @@ parts:
       cd packages/ubuntu_wsl_setup
       flutter channel stable
       flutter upgrade
-      flutter config --enable-linux-desktop
       flutter doctor
       flutter pub get
       flutter build linux --release -v
