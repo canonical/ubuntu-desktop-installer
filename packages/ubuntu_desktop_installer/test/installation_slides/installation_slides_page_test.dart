@@ -29,7 +29,7 @@ void main() {
     Stream<String>? journal,
   }) {
     final model = MockInstallationSlidesModel();
-    when(model.state).thenReturn(state ?? ApplicationState.UNKNOWN);
+    when(model.state).thenReturn(state);
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
     when(model.isPreparing).thenReturn(isPreparing ?? false);

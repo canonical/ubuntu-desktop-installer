@@ -44,7 +44,7 @@ void main() {
   Widget buildPage(KeyboardLayoutModel model) {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any))
-        .thenAnswer((_) async => KeyboardStep.pressKey());
+        .thenAnswer((_) async => AnyStep.stepPressKey());
     registerMockService<SubiquityClient>(client);
 
     return ChangeNotifierProvider<KeyboardLayoutModel>.value(
@@ -113,7 +113,7 @@ void main() {
 
     final context = tester.element(find.byType(DetectKeyboardLayoutView));
     Navigator.of(context)
-        .pop(KeyboardStep.result(layout: 'layout', variant: 'variant'));
+        .pop(AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });

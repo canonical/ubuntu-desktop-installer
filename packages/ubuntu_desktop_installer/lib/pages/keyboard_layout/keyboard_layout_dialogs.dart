@@ -24,7 +24,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
       detector.init();
 
       final lang = AppLocalizations.of(context);
-      return ValueListenableBuilder<KeyboardStep?>(
+      return ValueListenableBuilder<AnyStep?>(
         valueListenable: detector,
         builder: (context, step, _) {
           final size = MediaQuery.of(context).size;

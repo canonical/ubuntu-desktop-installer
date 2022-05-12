@@ -6,151 +6,6 @@ part of 'types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
-  return _$_SourceSelection(
-    name: json['name'] as String?,
-    description: json['description'] as String?,
-    id: json['id'] as String?,
-    size: json['size'] as int?,
-    variant: json['variant'] as String?,
-    isDefault: json['default'] as bool?,
-  );
-}
-
-Map<String, dynamic> _$_$_SourceSelectionToJson(_$_SourceSelection instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'id': instance.id,
-      'size': instance.size,
-      'variant': instance.variant,
-      'default': instance.isDefault,
-    };
-
-_$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
-    Map<String, dynamic> json) {
-  return _$_SourceSelectionAndSetting(
-    sources: (json['sources'] as List<dynamic>?)
-        ?.map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    currentId: json['current_id'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
-        _$_SourceSelectionAndSetting instance) =>
-    <String, dynamic>{
-      'sources': instance.sources,
-      'current_id': instance.currentId,
-    };
-
-_$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
-  return _$_KeyboardSetting(
-    layout: json['layout'] as String?,
-    variant: json['variant'] as String?,
-    toggle: json['toggle'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$_KeyboardSettingToJson(_$_KeyboardSetting instance) =>
-    <String, dynamic>{
-      'layout': instance.layout,
-      'variant': instance.variant,
-      'toggle': instance.toggle,
-    };
-
-_$_KeyboardVariant _$_$_KeyboardVariantFromJson(Map<String, dynamic> json) {
-  return _$_KeyboardVariant(
-    code: json['code'] as String?,
-    name: json['name'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$_KeyboardVariantToJson(_$_KeyboardVariant instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'name': instance.name,
-    };
-
-_$_KeyboardLayout _$_$_KeyboardLayoutFromJson(Map<String, dynamic> json) {
-  return _$_KeyboardLayout(
-    code: json['code'] as String?,
-    name: json['name'] as String?,
-    variants: (json['variants'] as List<dynamic>?)
-        ?.map((e) => KeyboardVariant.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
-
-Map<String, dynamic> _$_$_KeyboardLayoutToJson(_$_KeyboardLayout instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'name': instance.name,
-      'variants': instance.variants,
-    };
-
-_$_KeyboardSetup _$_$_KeyboardSetupFromJson(Map<String, dynamic> json) {
-  return _$_KeyboardSetup(
-    setting: json['setting'] == null
-        ? null
-        : KeyboardSetting.fromJson(json['setting'] as Map<String, dynamic>),
-    layouts: (json['layouts'] as List<dynamic>?)
-        ?.map((e) => KeyboardLayout.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
-
-Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
-    <String, dynamic>{
-      'setting': instance.setting,
-      'layouts': instance.layouts,
-    };
-
-_$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
-  return _$_IdentityData(
-    realname: json['realname'] as String? ?? '',
-    username: json['username'] as String? ?? '',
-    cryptedPassword: json['crypted_password'] as String? ?? '',
-    hostname: json['hostname'] as String? ?? '',
-  );
-}
-
-Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
-    <String, dynamic>{
-      'realname': instance.realname,
-      'username': instance.username,
-      'crypted_password': instance.cryptedPassword,
-      'hostname': instance.hostname,
-    };
-
-_$_TimezoneData _$_$_TimezoneDataFromJson(Map<String, dynamic> json) {
-  return _$_TimezoneData(
-    timezone: json['timezone'] as String?,
-    fromGeoip: json['from_geoip'] as bool?,
-  );
-}
-
-Map<String, dynamic> _$_$_TimezoneDataToJson(_$_TimezoneData instance) =>
-    <String, dynamic>{
-      'timezone': instance.timezone,
-      'from_geoip': instance.fromGeoip,
-    };
-
-_$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
-  return _$_SSHData(
-    installServer: json['install_server'] as bool?,
-    allowPw: json['allow_pw'] as bool?,
-    authorizedKeys: json['authorized_keys'] as List<dynamic>?,
-  );
-}
-
-Map<String, dynamic> _$_$_SSHDataToJson(_$_SSHData instance) =>
-    <String, dynamic>{
-      'install_server': instance.installServer,
-      'allow_pw': instance.allowPw,
-      'authorized_keys': instance.authorizedKeys,
-    };
-
 _$_ErrorReportRef _$_$_ErrorReportRefFromJson(Map<String, dynamic> json) {
   return _$_ErrorReportRef(
     state: _$enumDecodeNullable(_$ErrorReportStateEnumMap, json['state']),
@@ -221,6 +76,7 @@ const _$ErrorReportKindEnumMap = {
   ErrorReportKind.INSTALL_FAIL: 'INSTALL_FAIL',
   ErrorReportKind.UI: 'UI',
   ErrorReportKind.NETWORK_FAIL: 'NETWORK_FAIL',
+  ErrorReportKind.NETWORK_CLIENT_FAIL: 'NETWORK_CLIENT_FAIL',
   ErrorReportKind.SERVER_REQUEST_FAIL: 'SERVER_REQUEST_FAIL',
   ErrorReportKind.UNKNOWN: 'UNKNOWN',
 };
@@ -254,8 +110,9 @@ Map<String, dynamic> _$_$_ApplicationStatusToJson(
     };
 
 const _$ApplicationStateEnumMap = {
-  ApplicationState.UNKNOWN: 'UNKNOWN',
   ApplicationState.STARTING_UP: 'STARTING_UP',
+  ApplicationState.CLOUD_INIT_WAIT: 'CLOUD_INIT_WAIT',
+  ApplicationState.EARLY_COMMANDS: 'EARLY_COMMANDS',
   ApplicationState.WAITING: 'WAITING',
   ApplicationState.NEEDS_CONFIRMATION: 'NEEDS_CONFIRMATION',
   ApplicationState.RUNNING: 'RUNNING',
@@ -265,7 +122,152 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.UU_CANCELLING: 'UU_CANCELLING',
   ApplicationState.DONE: 'DONE',
   ApplicationState.ERROR: 'ERROR',
+  ApplicationState.EXITED: 'EXITED',
 };
+
+_$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
+  return _$StepPressKey(
+    symbols:
+        (json['symbols'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    keycodes: (json['keycodes'] as List<dynamic>?)
+        ?.map((e) => e as List<dynamic>)
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
+    <String, dynamic>{
+      'symbols': instance.symbols,
+      'keycodes': instance.keycodes,
+    };
+
+_$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {
+  return _$StepKeyPresent(
+    symbol: json['symbol'] as String?,
+    yes: json['yes'] as String?,
+    no: json['no'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$StepKeyPresentToJson(_$StepKeyPresent instance) =>
+    <String, dynamic>{
+      'symbol': instance.symbol,
+      'yes': instance.yes,
+      'no': instance.no,
+    };
+
+_$StepResult _$_$StepResultFromJson(Map<String, dynamic> json) {
+  return _$StepResult(
+    layout: json['layout'] as String?,
+    variant: json['variant'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$StepResultToJson(_$StepResult instance) =>
+    <String, dynamic>{
+      'layout': instance.layout,
+      'variant': instance.variant,
+    };
+
+_$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
+  return _$_KeyboardSetting(
+    layout: json['layout'] as String?,
+    variant: json['variant'] as String?,
+    toggle: json['toggle'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_KeyboardSettingToJson(_$_KeyboardSetting instance) =>
+    <String, dynamic>{
+      'layout': instance.layout,
+      'variant': instance.variant,
+      'toggle': instance.toggle,
+    };
+
+_$_KeyboardVariant _$_$_KeyboardVariantFromJson(Map<String, dynamic> json) {
+  return _$_KeyboardVariant(
+    code: json['code'] as String?,
+    name: json['name'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_KeyboardVariantToJson(_$_KeyboardVariant instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'name': instance.name,
+    };
+
+_$_KeyboardLayout _$_$_KeyboardLayoutFromJson(Map<String, dynamic> json) {
+  return _$_KeyboardLayout(
+    code: json['code'] as String?,
+    name: json['name'] as String?,
+    variants: (json['variants'] as List<dynamic>?)
+        ?.map((e) => KeyboardVariant.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_KeyboardLayoutToJson(_$_KeyboardLayout instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'name': instance.name,
+      'variants': instance.variants?.map((e) => e.toJson()).toList(),
+    };
+
+_$_KeyboardSetup _$_$_KeyboardSetupFromJson(Map<String, dynamic> json) {
+  return _$_KeyboardSetup(
+    setting: json['setting'] == null
+        ? null
+        : KeyboardSetting.fromJson(json['setting'] as Map<String, dynamic>),
+    layouts: (json['layouts'] as List<dynamic>?)
+        ?.map((e) => KeyboardLayout.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
+    <String, dynamic>{
+      'setting': instance.setting?.toJson(),
+      'layouts': instance.layouts?.map((e) => e.toJson()).toList(),
+    };
+
+_$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _$_SourceSelection(
+    name: json['name'] as String?,
+    description: json['description'] as String?,
+    id: json['id'] as String?,
+    size: json['size'] as int?,
+    variant: json['variant'] as String?,
+    isDefault: json['default'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionToJson(_$_SourceSelection instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+      'id': instance.id,
+      'size': instance.size,
+      'variant': instance.variant,
+      'default': instance.isDefault,
+    };
+
+_$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _$_SourceSelectionAndSetting(
+    sources: (json['sources'] as List<dynamic>?)
+        ?.map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    currentId: json['current_id'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
+        _$_SourceSelectionAndSetting instance) =>
+    <String, dynamic>{
+      'sources': instance.sources?.map((e) => e.toJson()).toList(),
+      'current_id': instance.currentId,
+    };
 
 _$_OsProber _$_$_OsProberFromJson(Map<String, dynamic> json) {
   return _$_OsProber(
@@ -402,8 +404,8 @@ Map<String, dynamic> _$_$_GuidedStorageResponseToJson(
         _$_GuidedStorageResponse instance) =>
     <String, dynamic>{
       'status': _$ProbeStatusEnumMap[instance.status],
-      'error_report': instance.errorReport,
-      'disks': instance.disks,
+      'error_report': instance.errorReport?.toJson(),
+      'disks': instance.disks?.map((e) => e.toJson()).toList(),
     };
 
 const _$ProbeStatusEnumMap = {
@@ -429,7 +431,7 @@ _$_StorageResponse _$_$_StorageResponseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StorageResponseToJson(_$_StorageResponse instance) =>
     <String, dynamic>{
       'status': _$ProbeStatusEnumMap[instance.status],
-      'error_report': instance.errorReport,
+      'error_report': instance.errorReport?.toJson(),
       'bootloader': _$BootloaderEnumMap[instance.bootloader],
       'orig_config': instance.origConfig,
       'config': instance.config,
@@ -460,10 +462,55 @@ _$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StorageResponseV2ToJson(
         _$_StorageResponseV2 instance) =>
     <String, dynamic>{
-      'disks': instance.disks,
+      'disks': instance.disks?.map((e) => e.toJson()).toList(),
       'need_root': instance.needRoot,
       'need_boot': instance.needBoot,
-      'error_report': instance.errorReport,
+      'error_report': instance.errorReport?.toJson(),
+    };
+
+_$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
+  return _$_IdentityData(
+    realname: json['realname'] as String? ?? '',
+    username: json['username'] as String? ?? '',
+    cryptedPassword: json['crypted_password'] as String? ?? '',
+    hostname: json['hostname'] as String? ?? '',
+  );
+}
+
+Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
+    <String, dynamic>{
+      'realname': instance.realname,
+      'username': instance.username,
+      'crypted_password': instance.cryptedPassword,
+      'hostname': instance.hostname,
+    };
+
+_$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
+  return _$_SSHData(
+    installServer: json['install_server'] as bool?,
+    allowPw: json['allow_pw'] as bool?,
+    authorizedKeys: json['authorized_keys'] as List<dynamic>?,
+  );
+}
+
+Map<String, dynamic> _$_$_SSHDataToJson(_$_SSHData instance) =>
+    <String, dynamic>{
+      'install_server': instance.installServer,
+      'allow_pw': instance.allowPw,
+      'authorized_keys': instance.authorizedKeys,
+    };
+
+_$_TimezoneInfo _$_$_TimezoneInfoFromJson(Map<String, dynamic> json) {
+  return _$_TimezoneInfo(
+    timezone: json['timezone'] as String?,
+    fromGeoip: json['from_geoip'] as bool?,
+  );
+}
+
+Map<String, dynamic> _$_$_TimezoneInfoToJson(_$_TimezoneInfo instance) =>
+    <String, dynamic>{
+      'timezone': instance.timezone,
+      'from_geoip': instance.fromGeoip,
     };
 
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
@@ -504,48 +551,4 @@ Map<String, dynamic> _$_$_WSLConfigurationAdvancedToJson(
       'interop_enabled': instance.interopEnabled,
       'interop_appendwindowspath': instance.interopAppendwindowspath,
       'systemd_enabled': instance.systemdEnabled,
-    };
-
-_$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
-  return _$StepPressKey(
-    symbols:
-        (json['symbols'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    keycodes: (json['keycodes'] as List<dynamic>?)
-        ?.map((e) => e as List<dynamic>)
-        .toList(),
-  );
-}
-
-Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
-    <String, dynamic>{
-      'symbols': instance.symbols,
-      'keycodes': instance.keycodes,
-    };
-
-_$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {
-  return _$StepKeyPresent(
-    symbol: json['symbol'] as String?,
-    yes: json['yes'] as String?,
-    no: json['no'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$StepKeyPresentToJson(_$StepKeyPresent instance) =>
-    <String, dynamic>{
-      'symbol': instance.symbol,
-      'yes': instance.yes,
-      'no': instance.no,
-    };
-
-_$StepResult _$_$StepResultFromJson(Map<String, dynamic> json) {
-  return _$StepResult(
-    layout: json['layout'] as String?,
-    variant: json['variant'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$StepResultToJson(_$StepResult instance) =>
-    <String, dynamic>{
-      'layout': instance.layout,
-      'variant': instance.variant,
     };

@@ -5,148 +5,12 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
-enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
-
-extension VariantString on Variant {
-  static Variant fromString(String value) {
-    return Variant.values.firstWhere((v) => value == v.toVariantString());
-  }
-
-  String toVariantString() => name.toLowerCase();
-}
-
-@freezed
-class SourceSelection with _$SourceSelection {
-  const factory SourceSelection({
-    String? name,
-    String? description,
-    String? id,
-    int? size,
-    String? variant,
-    @JsonKey(name: 'default') bool? isDefault,
-  }) = _SourceSelection;
-
-  factory SourceSelection.fromJson(Map<String, dynamic> json) =>
-      _$SourceSelectionFromJson(json);
-}
-
-@freezed
-class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory SourceSelectionAndSetting({
-    List<SourceSelection>? sources,
-    String? currentId,
-  }) = _SourceSelectionAndSetting;
-
-  factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
-      _$SourceSelectionAndSettingFromJson(json);
-}
-
-@freezed
-class KeyboardSetting with _$KeyboardSetting {
-  const factory KeyboardSetting({
-    String? layout,
-    String? variant,
-    String? toggle,
-  }) = _KeyboardSetting;
-
-  factory KeyboardSetting.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardSettingFromJson(json);
-}
-
-@freezed
-class KeyboardVariant with _$KeyboardVariant {
-  const factory KeyboardVariant({
-    String? code,
-    String? name,
-  }) = _KeyboardVariant;
-
-  factory KeyboardVariant.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardVariantFromJson(json);
-}
-
-@freezed
-class KeyboardLayout with _$KeyboardLayout {
-  const factory KeyboardLayout({
-    String? code,
-    String? name,
-    List<KeyboardVariant>? variants,
-  }) = _KeyboardLayout;
-
-  factory KeyboardLayout.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardLayoutFromJson(json);
-}
-
-@freezed
-class KeyboardSetup with _$KeyboardSetup {
-  const factory KeyboardSetup({
-    KeyboardSetting? setting,
-    List<KeyboardLayout>? layouts,
-  }) = _KeyboardSetup;
-
-  factory KeyboardSetup.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardSetupFromJson(json);
-}
-
-@freezed
-class IdentityData with _$IdentityData {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory IdentityData({
-    @Default('') String? realname,
-    @Default('') String? username,
-    @Default('') String? cryptedPassword,
-    @Default('') String? hostname,
-  }) = _IdentityData;
-
-  factory IdentityData.fromJson(Map<String, dynamic> json) =>
-      _$IdentityDataFromJson(json);
-}
-
-@freezed
-class TimezoneData with _$TimezoneData {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory TimezoneData({
-    String? timezone,
-    bool? fromGeoip,
-  }) = _TimezoneData;
-
-  factory TimezoneData.fromJson(Map<String, dynamic> json) =>
-      _$TimezoneDataFromJson(json);
-}
-
-@freezed
-class SSHData with _$SSHData {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory SSHData({
-    bool? installServer,
-    bool? allowPw,
-    List<dynamic>? authorizedKeys,
-  }) = _SSHData;
-
-  factory SSHData.fromJson(Map<String, dynamic> json) =>
-      _$SSHDataFromJson(json);
-}
-
-enum ApplicationState {
-  UNKNOWN,
-  STARTING_UP,
-  WAITING,
-  NEEDS_CONFIRMATION,
-  RUNNING,
-  POST_WAIT,
-  POST_RUNNING,
-  UU_RUNNING,
-  UU_CANCELLING,
-  DONE,
-  ERROR
-}
-
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
   DONE,
   ERROR_GENERATING,
-  ERROR_LOADING
+  ERROR_LOADING,
 }
 
 enum ErrorReportKind {
@@ -155,13 +19,14 @@ enum ErrorReportKind {
   INSTALL_FAIL,
   UI,
   NETWORK_FAIL,
+  NETWORK_CLIENT_FAIL,
   SERVER_REQUEST_FAIL,
-  UNKNOWN
+  UNKNOWN,
 }
 
 @freezed
 class ErrorReportRef with _$ErrorReportRef {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ErrorReportRef({
     ErrorReportState? state,
     String? base,
@@ -172,6 +37,22 @@ class ErrorReportRef with _$ErrorReportRef {
 
   factory ErrorReportRef.fromJson(Map<String, dynamic> json) =>
       _$ErrorReportRefFromJson(json);
+}
+
+enum ApplicationState {
+  STARTING_UP,
+  CLOUD_INIT_WAIT,
+  EARLY_COMMANDS,
+  WAITING,
+  NEEDS_CONFIRMATION,
+  RUNNING,
+  POST_WAIT,
+  POST_RUNNING,
+  UU_RUNNING,
+  UU_CANCELLING,
+  DONE,
+  ERROR,
+  EXITED,
 }
 
 @freezed
@@ -192,13 +73,128 @@ class ApplicationStatus with _$ApplicationStatus {
       _$ApplicationStatusFromJson(json);
 }
 
-enum ProbeStatus { PROBING, FAILED, DONE }
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class AnyStep with _$AnyStep {
+  @FreezedUnionValue('StepPressKey')
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory AnyStep.stepPressKey({
+    List<String>? symbols,
+    List<List<dynamic>>? keycodes,
+  }) = StepPressKey;
 
-enum Bootloader { NONE, BIOS, UEFI, PREP }
+  @FreezedUnionValue('StepKeyPresent')
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory AnyStep.stepKeyPresent({
+    String? symbol,
+    String? yes,
+    String? no,
+  }) = StepKeyPresent;
+
+  @FreezedUnionValue('StepResult')
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory AnyStep.stepResult({
+    String? layout,
+    String? variant,
+  }) = StepResult;
+
+  factory AnyStep.fromJson(Map<String, dynamic> json) =>
+      _$AnyStepFromJson(json);
+}
+
+@freezed
+class KeyboardSetting with _$KeyboardSetting {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory KeyboardSetting({
+    String? layout,
+    String? variant,
+    String? toggle,
+  }) = _KeyboardSetting;
+
+  factory KeyboardSetting.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardSettingFromJson(json);
+}
+
+@freezed
+class KeyboardVariant with _$KeyboardVariant {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory KeyboardVariant({
+    String? code,
+    String? name,
+  }) = _KeyboardVariant;
+
+  factory KeyboardVariant.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardVariantFromJson(json);
+}
+
+@freezed
+class KeyboardLayout with _$KeyboardLayout {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory KeyboardLayout({
+    String? code,
+    String? name,
+    List<KeyboardVariant>? variants,
+  }) = _KeyboardLayout;
+
+  factory KeyboardLayout.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardLayoutFromJson(json);
+}
+
+@freezed
+class KeyboardSetup with _$KeyboardSetup {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory KeyboardSetup({
+    KeyboardSetting? setting,
+    List<KeyboardLayout>? layouts,
+  }) = _KeyboardSetup;
+
+  factory KeyboardSetup.fromJson(Map<String, dynamic> json) =>
+      _$KeyboardSetupFromJson(json);
+}
+
+@freezed
+class SourceSelection with _$SourceSelection {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory SourceSelection({
+    String? name,
+    String? description,
+    String? id,
+    int? size,
+    String? variant,
+    @JsonKey(name: 'default') bool? isDefault,
+  }) = _SourceSelection;
+
+  factory SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionFromJson(json);
+}
+
+@freezed
+class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory SourceSelectionAndSetting({
+    List<SourceSelection>? sources,
+    String? currentId,
+  }) = _SourceSelectionAndSetting;
+
+  factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$SourceSelectionAndSettingFromJson(json);
+}
+
+enum ProbeStatus {
+  PROBING,
+  FAILED,
+  DONE,
+}
+
+enum Bootloader {
+  NONE,
+  BIOS,
+  UEFI,
+  PREP,
+}
 
 @freezed
 class OsProber with _$OsProber {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory OsProber({
     required String long,
     required String label,
@@ -234,6 +230,7 @@ class DiskObject with _$DiskObject {
   }) = Partition;
 
   @FreezedUnionValue('Gap')
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.gap({
     int? offset,
     int? size,
@@ -271,7 +268,7 @@ class Disk with _$Disk {
 
 @freezed
 class GuidedChoice with _$GuidedChoice {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedChoice({
     String? diskId,
     bool? useLvm,
@@ -284,7 +281,7 @@ class GuidedChoice with _$GuidedChoice {
 
 @freezed
 class GuidedStorageResponse with _$GuidedStorageResponse {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedStorageResponse({
     ProbeStatus? status,
     ErrorReportRef? errorReport,
@@ -297,7 +294,7 @@ class GuidedStorageResponse with _$GuidedStorageResponse {
 
 @freezed
 class StorageResponse with _$StorageResponse {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponse({
     ProbeStatus? status,
     ErrorReportRef? errorReport,
@@ -314,7 +311,7 @@ class StorageResponse with _$StorageResponse {
 
 @freezed
 class StorageResponseV2 with _$StorageResponseV2 {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponseV2({
     List<Disk>? disks,
     bool? needRoot,
@@ -327,8 +324,47 @@ class StorageResponseV2 with _$StorageResponseV2 {
 }
 
 @freezed
+class IdentityData with _$IdentityData {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory IdentityData({
+    @Default('') String? realname,
+    @Default('') String? username,
+    @Default('') String? cryptedPassword,
+    @Default('') String? hostname,
+  }) = _IdentityData;
+
+  factory IdentityData.fromJson(Map<String, dynamic> json) =>
+      _$IdentityDataFromJson(json);
+}
+
+@freezed
+class SSHData with _$SSHData {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory SSHData({
+    bool? installServer,
+    bool? allowPw,
+    List<dynamic>? authorizedKeys,
+  }) = _SSHData;
+
+  factory SSHData.fromJson(Map<String, dynamic> json) =>
+      _$SSHDataFromJson(json);
+}
+
+@freezed
+class TimezoneInfo with _$TimezoneInfo {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory TimezoneInfo({
+    String? timezone,
+    bool? fromGeoip,
+  }) = _TimezoneInfo;
+
+  factory TimezoneInfo.fromJson(Map<String, dynamic> json) =>
+      _$TimezoneInfoFromJson(json);
+}
+
+@freezed
 class WSLConfigurationBase with _$WSLConfigurationBase {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationBase({
     String? automountRoot,
     String? automountOptions,
@@ -342,7 +378,7 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
 
 @freezed
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationAdvanced({
     bool? automountEnabled,
     bool? automountMountfstab,
@@ -353,29 +389,4 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
 
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$WSLConfigurationAdvancedFromJson(json);
-}
-
-@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
-class KeyboardStep with _$KeyboardStep {
-  @FreezedUnionValue('StepPressKey')
-  const factory KeyboardStep.pressKey({
-    List<String>? symbols,
-    List<List<dynamic>>? keycodes,
-  }) = StepPressKey;
-
-  @FreezedUnionValue('StepKeyPresent')
-  const factory KeyboardStep.keyPresent({
-    String? symbol,
-    String? yes,
-    String? no,
-  }) = StepKeyPresent;
-
-  @FreezedUnionValue('StepResult')
-  const factory KeyboardStep.result({
-    String? layout,
-    String? variant,
-  }) = StepResult;
-
-  factory KeyboardStep.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardStepFromJson(json);
 }

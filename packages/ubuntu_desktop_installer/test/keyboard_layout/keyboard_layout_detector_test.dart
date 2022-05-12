@@ -9,7 +9,7 @@ void main() {
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return KeyboardStep.pressKey(symbols: ['a', 'b', 'c']);
+      return AnyStep.stepPressKey(symbols: ['a', 'b', 'c']);
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -23,7 +23,7 @@ void main() {
   test('key press', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return KeyboardStep.pressKey(
+      return AnyStep.stepPressKey(
         symbols: ['a', 'b', 'c'],
         keycodes: [
           [12, '34']
@@ -31,7 +31,7 @@ void main() {
       );
     });
     when(client.getKeyboardStep('34')).thenAnswer((_) async {
-      return KeyboardStep.keyPresent(symbol: '56');
+      return AnyStep.stepKeyPresent(symbol: '56');
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -53,13 +53,13 @@ void main() {
   test('key present', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep('78')).thenAnswer((_) async {
-      return KeyboardStep.result(layout: 'is', variant: 'present');
+      return AnyStep.stepResult(layout: 'is', variant: 'present');
     });
 
-    late KeyboardStep result;
+    late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: KeyboardStep.keyPresent(symbol: 'y', yes: '78'),
+      value: AnyStep.stepKeyPresent(symbol: 'y', yes: '78'),
       onResult: (value) => result = value,
     );
 
@@ -79,13 +79,13 @@ void main() {
   test('key not present', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep('90')).thenAnswer((_) async {
-      return KeyboardStep.result(layout: 'not', variant: 'present');
+      return AnyStep.stepResult(layout: 'not', variant: 'present');
     });
 
-    late KeyboardStep result;
+    late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: KeyboardStep.keyPresent(symbol: 'n', no: '90'),
+      value: AnyStep.stepKeyPresent(symbol: 'n', no: '90'),
       onResult: (value) => result = value,
     );
 

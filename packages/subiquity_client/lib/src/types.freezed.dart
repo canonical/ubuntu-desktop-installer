@@ -12,1803 +12,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
-  return _SourceSelection.fromJson(json);
-}
-
-/// @nodoc
-class _$SourceSelectionTearOff {
-  const _$SourceSelectionTearOff();
-
-  _SourceSelection call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault}) {
-    return _SourceSelection(
-      name: name,
-      description: description,
-      id: id,
-      size: size,
-      variant: variant,
-      isDefault: isDefault,
-    );
-  }
-
-  SourceSelection fromJson(Map<String, Object> json) {
-    return SourceSelection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SourceSelection = _$SourceSelectionTearOff();
-
-/// @nodoc
-mixin _$SourceSelection {
-  String? get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  int? get size => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
-  @JsonKey(name: 'default')
-  bool? get isDefault => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SourceSelectionCopyWith<SourceSelection> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SourceSelectionCopyWith<$Res> {
-  factory $SourceSelectionCopyWith(
-          SourceSelection value, $Res Function(SourceSelection) then) =
-      _$SourceSelectionCopyWithImpl<$Res>;
-  $Res call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault});
-}
-
-/// @nodoc
-class _$SourceSelectionCopyWithImpl<$Res>
-    implements $SourceSelectionCopyWith<$Res> {
-  _$SourceSelectionCopyWithImpl(this._value, this._then);
-
-  final SourceSelection _value;
-  // ignore: unused_field
-  final $Res Function(SourceSelection) _then;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: isDefault == freezed
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SourceSelectionCopyWith<$Res>
-    implements $SourceSelectionCopyWith<$Res> {
-  factory _$SourceSelectionCopyWith(
-          _SourceSelection value, $Res Function(_SourceSelection) then) =
-      __$SourceSelectionCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault});
-}
-
-/// @nodoc
-class __$SourceSelectionCopyWithImpl<$Res>
-    extends _$SourceSelectionCopyWithImpl<$Res>
-    implements _$SourceSelectionCopyWith<$Res> {
-  __$SourceSelectionCopyWithImpl(
-      _SourceSelection _value, $Res Function(_SourceSelection) _then)
-      : super(_value, (v) => _then(v as _SourceSelection));
-
-  @override
-  _SourceSelection get _value => super._value as _SourceSelection;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
-  }) {
-    return _then(_SourceSelection(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: isDefault == freezed
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_SourceSelection implements _SourceSelection {
-  const _$_SourceSelection(
-      {this.name,
-      this.description,
-      this.id,
-      this.size,
-      this.variant,
-      @JsonKey(name: 'default') this.isDefault});
-
-  factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionFromJson(json);
-
-  @override
-  final String? name;
-  @override
-  final String? description;
-  @override
-  final String? id;
-  @override
-  final int? size;
-  @override
-  final String? variant;
-  @override
-  @JsonKey(name: 'default')
-  final bool? isDefault;
-
-  @override
-  String toString() {
-    return 'SourceSelection(name: $name, description: $description, id: $id, size: $size, variant: $variant, isDefault: $isDefault)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SourceSelection &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality()
-                    .equals(other.variant, variant)) &&
-            (identical(other.isDefault, isDefault) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDefault, isDefault)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(variant) ^
-      const DeepCollectionEquality().hash(isDefault);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
-      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionToJson(this);
-  }
-}
-
-abstract class _SourceSelection implements SourceSelection {
-  const factory _SourceSelection(
-      {String? name,
-      String? description,
-      String? id,
-      int? size,
-      String? variant,
-      @JsonKey(name: 'default') bool? isDefault}) = _$_SourceSelection;
-
-  factory _SourceSelection.fromJson(Map<String, dynamic> json) =
-      _$_SourceSelection.fromJson;
-
-  @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
-  String? get description => throw _privateConstructorUsedError;
-  @override
-  String? get id => throw _privateConstructorUsedError;
-  @override
-  int? get size => throw _privateConstructorUsedError;
-  @override
-  String? get variant => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'default')
-  bool? get isDefault => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
-    Map<String, dynamic> json) {
-  return _SourceSelectionAndSetting.fromJson(json);
-}
-
-/// @nodoc
-class _$SourceSelectionAndSettingTearOff {
-  const _$SourceSelectionAndSettingTearOff();
-
-  _SourceSelectionAndSetting call(
-      {List<SourceSelection>? sources, String? currentId}) {
-    return _SourceSelectionAndSetting(
-      sources: sources,
-      currentId: currentId,
-    );
-  }
-
-  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
-    return SourceSelectionAndSetting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
-
-/// @nodoc
-mixin _$SourceSelectionAndSetting {
-  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
-  String? get currentId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SourceSelectionAndSettingCopyWith<SourceSelectionAndSetting> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SourceSelectionAndSettingCopyWith<$Res> {
-  factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
-          $Res Function(SourceSelectionAndSetting) then) =
-      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
-  $Res call({List<SourceSelection>? sources, String? currentId});
-}
-
-/// @nodoc
-class _$SourceSelectionAndSettingCopyWithImpl<$Res>
-    implements $SourceSelectionAndSettingCopyWith<$Res> {
-  _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
-
-  final SourceSelectionAndSetting _value;
-  // ignore: unused_field
-  final $Res Function(SourceSelectionAndSetting) _then;
-
-  @override
-  $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      sources: sources == freezed
-          ? _value.sources
-          : sources // ignore: cast_nullable_to_non_nullable
-              as List<SourceSelection>?,
-      currentId: currentId == freezed
-          ? _value.currentId
-          : currentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SourceSelectionAndSettingCopyWith<$Res>
-    implements $SourceSelectionAndSettingCopyWith<$Res> {
-  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
-          $Res Function(_SourceSelectionAndSetting) then) =
-      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
-  @override
-  $Res call({List<SourceSelection>? sources, String? currentId});
-}
-
-/// @nodoc
-class __$SourceSelectionAndSettingCopyWithImpl<$Res>
-    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
-    implements _$SourceSelectionAndSettingCopyWith<$Res> {
-  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
-      $Res Function(_SourceSelectionAndSetting) _then)
-      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
-
-  @override
-  _SourceSelectionAndSetting get _value =>
-      super._value as _SourceSelectionAndSetting;
-
-  @override
-  $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-  }) {
-    return _then(_SourceSelectionAndSetting(
-      sources: sources == freezed
-          ? _value.sources
-          : sources // ignore: cast_nullable_to_non_nullable
-              as List<SourceSelection>?,
-      currentId: currentId == freezed
-          ? _value.currentId
-          : currentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
-  const _$_SourceSelectionAndSetting({this.sources, this.currentId});
-
-  factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionAndSettingFromJson(json);
-
-  @override
-  final List<SourceSelection>? sources;
-  @override
-  final String? currentId;
-
-  @override
-  String toString() {
-    return 'SourceSelectionAndSetting(sources: $sources, currentId: $currentId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SourceSelectionAndSetting &&
-            (identical(other.sources, sources) ||
-                const DeepCollectionEquality()
-                    .equals(other.sources, sources)) &&
-            (identical(other.currentId, currentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentId, currentId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(currentId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
-      get copyWith =>
-          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionAndSettingToJson(this);
-  }
-}
-
-abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
-  const factory _SourceSelectionAndSetting(
-      {List<SourceSelection>? sources,
-      String? currentId}) = _$_SourceSelectionAndSetting;
-
-  factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
-      _$_SourceSelectionAndSetting.fromJson;
-
-  @override
-  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
-  @override
-  String? get currentId => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
-  return _KeyboardSetting.fromJson(json);
-}
-
-/// @nodoc
-class _$KeyboardSettingTearOff {
-  const _$KeyboardSettingTearOff();
-
-  _KeyboardSetting call({String? layout, String? variant, String? toggle}) {
-    return _KeyboardSetting(
-      layout: layout,
-      variant: variant,
-      toggle: toggle,
-    );
-  }
-
-  KeyboardSetting fromJson(Map<String, Object> json) {
-    return KeyboardSetting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardSetting = _$KeyboardSettingTearOff();
-
-/// @nodoc
-mixin _$KeyboardSetting {
-  String? get layout => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
-  String? get toggle => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $KeyboardSettingCopyWith<KeyboardSetting> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardSettingCopyWith<$Res> {
-  factory $KeyboardSettingCopyWith(
-          KeyboardSetting value, $Res Function(KeyboardSetting) then) =
-      _$KeyboardSettingCopyWithImpl<$Res>;
-  $Res call({String? layout, String? variant, String? toggle});
-}
-
-/// @nodoc
-class _$KeyboardSettingCopyWithImpl<$Res>
-    implements $KeyboardSettingCopyWith<$Res> {
-  _$KeyboardSettingCopyWithImpl(this._value, this._then);
-
-  final KeyboardSetting _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardSetting) _then;
-
-  @override
-  $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
-    Object? toggle = freezed,
-  }) {
-    return _then(_value.copyWith(
-      layout: layout == freezed
-          ? _value.layout
-          : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toggle: toggle == freezed
-          ? _value.toggle
-          : toggle // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$KeyboardSettingCopyWith<$Res>
-    implements $KeyboardSettingCopyWith<$Res> {
-  factory _$KeyboardSettingCopyWith(
-          _KeyboardSetting value, $Res Function(_KeyboardSetting) then) =
-      __$KeyboardSettingCopyWithImpl<$Res>;
-  @override
-  $Res call({String? layout, String? variant, String? toggle});
-}
-
-/// @nodoc
-class __$KeyboardSettingCopyWithImpl<$Res>
-    extends _$KeyboardSettingCopyWithImpl<$Res>
-    implements _$KeyboardSettingCopyWith<$Res> {
-  __$KeyboardSettingCopyWithImpl(
-      _KeyboardSetting _value, $Res Function(_KeyboardSetting) _then)
-      : super(_value, (v) => _then(v as _KeyboardSetting));
-
-  @override
-  _KeyboardSetting get _value => super._value as _KeyboardSetting;
-
-  @override
-  $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
-    Object? toggle = freezed,
-  }) {
-    return _then(_KeyboardSetting(
-      layout: layout == freezed
-          ? _value.layout
-          : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toggle: toggle == freezed
-          ? _value.toggle
-          : toggle // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_KeyboardSetting implements _KeyboardSetting {
-  const _$_KeyboardSetting({this.layout, this.variant, this.toggle});
-
-  factory _$_KeyboardSetting.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardSettingFromJson(json);
-
-  @override
-  final String? layout;
-  @override
-  final String? variant;
-  @override
-  final String? toggle;
-
-  @override
-  String toString() {
-    return 'KeyboardSetting(layout: $layout, variant: $variant, toggle: $toggle)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _KeyboardSetting &&
-            (identical(other.layout, layout) ||
-                const DeepCollectionEquality().equals(other.layout, layout)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality()
-                    .equals(other.variant, variant)) &&
-            (identical(other.toggle, toggle) ||
-                const DeepCollectionEquality().equals(other.toggle, toggle)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(layout) ^
-      const DeepCollectionEquality().hash(variant) ^
-      const DeepCollectionEquality().hash(toggle);
-
-  @JsonKey(ignore: true)
-  @override
-  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
-      __$KeyboardSettingCopyWithImpl<_KeyboardSetting>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_KeyboardSettingToJson(this);
-  }
-}
-
-abstract class _KeyboardSetting implements KeyboardSetting {
-  const factory _KeyboardSetting(
-      {String? layout, String? variant, String? toggle}) = _$_KeyboardSetting;
-
-  factory _KeyboardSetting.fromJson(Map<String, dynamic> json) =
-      _$_KeyboardSetting.fromJson;
-
-  @override
-  String? get layout => throw _privateConstructorUsedError;
-  @override
-  String? get variant => throw _privateConstructorUsedError;
-  @override
-  String? get toggle => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-KeyboardVariant _$KeyboardVariantFromJson(Map<String, dynamic> json) {
-  return _KeyboardVariant.fromJson(json);
-}
-
-/// @nodoc
-class _$KeyboardVariantTearOff {
-  const _$KeyboardVariantTearOff();
-
-  _KeyboardVariant call({String? code, String? name}) {
-    return _KeyboardVariant(
-      code: code,
-      name: name,
-    );
-  }
-
-  KeyboardVariant fromJson(Map<String, Object> json) {
-    return KeyboardVariant.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardVariant = _$KeyboardVariantTearOff();
-
-/// @nodoc
-mixin _$KeyboardVariant {
-  String? get code => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $KeyboardVariantCopyWith<KeyboardVariant> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardVariantCopyWith<$Res> {
-  factory $KeyboardVariantCopyWith(
-          KeyboardVariant value, $Res Function(KeyboardVariant) then) =
-      _$KeyboardVariantCopyWithImpl<$Res>;
-  $Res call({String? code, String? name});
-}
-
-/// @nodoc
-class _$KeyboardVariantCopyWithImpl<$Res>
-    implements $KeyboardVariantCopyWith<$Res> {
-  _$KeyboardVariantCopyWithImpl(this._value, this._then);
-
-  final KeyboardVariant _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardVariant) _then;
-
-  @override
-  $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$KeyboardVariantCopyWith<$Res>
-    implements $KeyboardVariantCopyWith<$Res> {
-  factory _$KeyboardVariantCopyWith(
-          _KeyboardVariant value, $Res Function(_KeyboardVariant) then) =
-      __$KeyboardVariantCopyWithImpl<$Res>;
-  @override
-  $Res call({String? code, String? name});
-}
-
-/// @nodoc
-class __$KeyboardVariantCopyWithImpl<$Res>
-    extends _$KeyboardVariantCopyWithImpl<$Res>
-    implements _$KeyboardVariantCopyWith<$Res> {
-  __$KeyboardVariantCopyWithImpl(
-      _KeyboardVariant _value, $Res Function(_KeyboardVariant) _then)
-      : super(_value, (v) => _then(v as _KeyboardVariant));
-
-  @override
-  _KeyboardVariant get _value => super._value as _KeyboardVariant;
-
-  @override
-  $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_KeyboardVariant(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_KeyboardVariant implements _KeyboardVariant {
-  const _$_KeyboardVariant({this.code, this.name});
-
-  factory _$_KeyboardVariant.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardVariantFromJson(json);
-
-  @override
-  final String? code;
-  @override
-  final String? name;
-
-  @override
-  String toString() {
-    return 'KeyboardVariant(code: $code, name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _KeyboardVariant &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(name);
-
-  @JsonKey(ignore: true)
-  @override
-  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
-      __$KeyboardVariantCopyWithImpl<_KeyboardVariant>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_KeyboardVariantToJson(this);
-  }
-}
-
-abstract class _KeyboardVariant implements KeyboardVariant {
-  const factory _KeyboardVariant({String? code, String? name}) =
-      _$_KeyboardVariant;
-
-  factory _KeyboardVariant.fromJson(Map<String, dynamic> json) =
-      _$_KeyboardVariant.fromJson;
-
-  @override
-  String? get code => throw _privateConstructorUsedError;
-  @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-KeyboardLayout _$KeyboardLayoutFromJson(Map<String, dynamic> json) {
-  return _KeyboardLayout.fromJson(json);
-}
-
-/// @nodoc
-class _$KeyboardLayoutTearOff {
-  const _$KeyboardLayoutTearOff();
-
-  _KeyboardLayout call(
-      {String? code, String? name, List<KeyboardVariant>? variants}) {
-    return _KeyboardLayout(
-      code: code,
-      name: name,
-      variants: variants,
-    );
-  }
-
-  KeyboardLayout fromJson(Map<String, Object> json) {
-    return KeyboardLayout.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardLayout = _$KeyboardLayoutTearOff();
-
-/// @nodoc
-mixin _$KeyboardLayout {
-  String? get code => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $KeyboardLayoutCopyWith<KeyboardLayout> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardLayoutCopyWith<$Res> {
-  factory $KeyboardLayoutCopyWith(
-          KeyboardLayout value, $Res Function(KeyboardLayout) then) =
-      _$KeyboardLayoutCopyWithImpl<$Res>;
-  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
-}
-
-/// @nodoc
-class _$KeyboardLayoutCopyWithImpl<$Res>
-    implements $KeyboardLayoutCopyWith<$Res> {
-  _$KeyboardLayoutCopyWithImpl(this._value, this._then);
-
-  final KeyboardLayout _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardLayout) _then;
-
-  @override
-  $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-    Object? variants = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variants: variants == freezed
-          ? _value.variants
-          : variants // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardVariant>?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$KeyboardLayoutCopyWith<$Res>
-    implements $KeyboardLayoutCopyWith<$Res> {
-  factory _$KeyboardLayoutCopyWith(
-          _KeyboardLayout value, $Res Function(_KeyboardLayout) then) =
-      __$KeyboardLayoutCopyWithImpl<$Res>;
-  @override
-  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
-}
-
-/// @nodoc
-class __$KeyboardLayoutCopyWithImpl<$Res>
-    extends _$KeyboardLayoutCopyWithImpl<$Res>
-    implements _$KeyboardLayoutCopyWith<$Res> {
-  __$KeyboardLayoutCopyWithImpl(
-      _KeyboardLayout _value, $Res Function(_KeyboardLayout) _then)
-      : super(_value, (v) => _then(v as _KeyboardLayout));
-
-  @override
-  _KeyboardLayout get _value => super._value as _KeyboardLayout;
-
-  @override
-  $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-    Object? variants = freezed,
-  }) {
-    return _then(_KeyboardLayout(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variants: variants == freezed
-          ? _value.variants
-          : variants // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardVariant>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_KeyboardLayout implements _KeyboardLayout {
-  const _$_KeyboardLayout({this.code, this.name, this.variants});
-
-  factory _$_KeyboardLayout.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardLayoutFromJson(json);
-
-  @override
-  final String? code;
-  @override
-  final String? name;
-  @override
-  final List<KeyboardVariant>? variants;
-
-  @override
-  String toString() {
-    return 'KeyboardLayout(code: $code, name: $name, variants: $variants)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _KeyboardLayout &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.variants, variants) ||
-                const DeepCollectionEquality()
-                    .equals(other.variants, variants)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(variants);
-
-  @JsonKey(ignore: true)
-  @override
-  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
-      __$KeyboardLayoutCopyWithImpl<_KeyboardLayout>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_KeyboardLayoutToJson(this);
-  }
-}
-
-abstract class _KeyboardLayout implements KeyboardLayout {
-  const factory _KeyboardLayout(
-      {String? code,
-      String? name,
-      List<KeyboardVariant>? variants}) = _$_KeyboardLayout;
-
-  factory _KeyboardLayout.fromJson(Map<String, dynamic> json) =
-      _$_KeyboardLayout.fromJson;
-
-  @override
-  String? get code => throw _privateConstructorUsedError;
-  @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
-  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-KeyboardSetup _$KeyboardSetupFromJson(Map<String, dynamic> json) {
-  return _KeyboardSetup.fromJson(json);
-}
-
-/// @nodoc
-class _$KeyboardSetupTearOff {
-  const _$KeyboardSetupTearOff();
-
-  _KeyboardSetup call(
-      {KeyboardSetting? setting, List<KeyboardLayout>? layouts}) {
-    return _KeyboardSetup(
-      setting: setting,
-      layouts: layouts,
-    );
-  }
-
-  KeyboardSetup fromJson(Map<String, Object> json) {
-    return KeyboardSetup.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardSetup = _$KeyboardSetupTearOff();
-
-/// @nodoc
-mixin _$KeyboardSetup {
-  KeyboardSetting? get setting => throw _privateConstructorUsedError;
-  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $KeyboardSetupCopyWith<KeyboardSetup> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardSetupCopyWith<$Res> {
-  factory $KeyboardSetupCopyWith(
-          KeyboardSetup value, $Res Function(KeyboardSetup) then) =
-      _$KeyboardSetupCopyWithImpl<$Res>;
-  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
-
-  $KeyboardSettingCopyWith<$Res>? get setting;
-}
-
-/// @nodoc
-class _$KeyboardSetupCopyWithImpl<$Res>
-    implements $KeyboardSetupCopyWith<$Res> {
-  _$KeyboardSetupCopyWithImpl(this._value, this._then);
-
-  final KeyboardSetup _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardSetup) _then;
-
-  @override
-  $Res call({
-    Object? setting = freezed,
-    Object? layouts = freezed,
-  }) {
-    return _then(_value.copyWith(
-      setting: setting == freezed
-          ? _value.setting
-          : setting // ignore: cast_nullable_to_non_nullable
-              as KeyboardSetting?,
-      layouts: layouts == freezed
-          ? _value.layouts
-          : layouts // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardLayout>?,
-    ));
-  }
-
-  @override
-  $KeyboardSettingCopyWith<$Res>? get setting {
-    if (_value.setting == null) {
-      return null;
-    }
-
-    return $KeyboardSettingCopyWith<$Res>(_value.setting!, (value) {
-      return _then(_value.copyWith(setting: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$KeyboardSetupCopyWith<$Res>
-    implements $KeyboardSetupCopyWith<$Res> {
-  factory _$KeyboardSetupCopyWith(
-          _KeyboardSetup value, $Res Function(_KeyboardSetup) then) =
-      __$KeyboardSetupCopyWithImpl<$Res>;
-  @override
-  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
-
-  @override
-  $KeyboardSettingCopyWith<$Res>? get setting;
-}
-
-/// @nodoc
-class __$KeyboardSetupCopyWithImpl<$Res>
-    extends _$KeyboardSetupCopyWithImpl<$Res>
-    implements _$KeyboardSetupCopyWith<$Res> {
-  __$KeyboardSetupCopyWithImpl(
-      _KeyboardSetup _value, $Res Function(_KeyboardSetup) _then)
-      : super(_value, (v) => _then(v as _KeyboardSetup));
-
-  @override
-  _KeyboardSetup get _value => super._value as _KeyboardSetup;
-
-  @override
-  $Res call({
-    Object? setting = freezed,
-    Object? layouts = freezed,
-  }) {
-    return _then(_KeyboardSetup(
-      setting: setting == freezed
-          ? _value.setting
-          : setting // ignore: cast_nullable_to_non_nullable
-              as KeyboardSetting?,
-      layouts: layouts == freezed
-          ? _value.layouts
-          : layouts // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardLayout>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_KeyboardSetup implements _KeyboardSetup {
-  const _$_KeyboardSetup({this.setting, this.layouts});
-
-  factory _$_KeyboardSetup.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardSetupFromJson(json);
-
-  @override
-  final KeyboardSetting? setting;
-  @override
-  final List<KeyboardLayout>? layouts;
-
-  @override
-  String toString() {
-    return 'KeyboardSetup(setting: $setting, layouts: $layouts)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _KeyboardSetup &&
-            (identical(other.setting, setting) ||
-                const DeepCollectionEquality()
-                    .equals(other.setting, setting)) &&
-            (identical(other.layouts, layouts) ||
-                const DeepCollectionEquality().equals(other.layouts, layouts)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(setting) ^
-      const DeepCollectionEquality().hash(layouts);
-
-  @JsonKey(ignore: true)
-  @override
-  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
-      __$KeyboardSetupCopyWithImpl<_KeyboardSetup>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_KeyboardSetupToJson(this);
-  }
-}
-
-abstract class _KeyboardSetup implements KeyboardSetup {
-  const factory _KeyboardSetup(
-      {KeyboardSetting? setting,
-      List<KeyboardLayout>? layouts}) = _$_KeyboardSetup;
-
-  factory _KeyboardSetup.fromJson(Map<String, dynamic> json) =
-      _$_KeyboardSetup.fromJson;
-
-  @override
-  KeyboardSetting? get setting => throw _privateConstructorUsedError;
-  @override
-  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
-  return _IdentityData.fromJson(json);
-}
-
-/// @nodoc
-class _$IdentityDataTearOff {
-  const _$IdentityDataTearOff();
-
-  _IdentityData call(
-      {String? realname = '',
-      String? username = '',
-      String? cryptedPassword = '',
-      String? hostname = ''}) {
-    return _IdentityData(
-      realname: realname,
-      username: username,
-      cryptedPassword: cryptedPassword,
-      hostname: hostname,
-    );
-  }
-
-  IdentityData fromJson(Map<String, Object> json) {
-    return IdentityData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $IdentityData = _$IdentityDataTearOff();
-
-/// @nodoc
-mixin _$IdentityData {
-  String? get realname => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  String? get cryptedPassword => throw _privateConstructorUsedError;
-  String? get hostname => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IdentityDataCopyWith<IdentityData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IdentityDataCopyWith<$Res> {
-  factory $IdentityDataCopyWith(
-          IdentityData value, $Res Function(IdentityData) then) =
-      _$IdentityDataCopyWithImpl<$Res>;
-  $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
-}
-
-/// @nodoc
-class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
-  _$IdentityDataCopyWithImpl(this._value, this._then);
-
-  final IdentityData _value;
-  // ignore: unused_field
-  final $Res Function(IdentityData) _then;
-
-  @override
-  $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
-  }) {
-    return _then(_value.copyWith(
-      realname: realname == freezed
-          ? _value.realname
-          : realname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cryptedPassword: cryptedPassword == freezed
-          ? _value.cryptedPassword
-          : cryptedPassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hostname: hostname == freezed
-          ? _value.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$IdentityDataCopyWith<$Res>
-    implements $IdentityDataCopyWith<$Res> {
-  factory _$IdentityDataCopyWith(
-          _IdentityData value, $Res Function(_IdentityData) then) =
-      __$IdentityDataCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
-}
-
-/// @nodoc
-class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
-    implements _$IdentityDataCopyWith<$Res> {
-  __$IdentityDataCopyWithImpl(
-      _IdentityData _value, $Res Function(_IdentityData) _then)
-      : super(_value, (v) => _then(v as _IdentityData));
-
-  @override
-  _IdentityData get _value => super._value as _IdentityData;
-
-  @override
-  $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
-  }) {
-    return _then(_IdentityData(
-      realname: realname == freezed
-          ? _value.realname
-          : realname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cryptedPassword: cryptedPassword == freezed
-          ? _value.cryptedPassword
-          : cryptedPassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hostname: hostname == freezed
-          ? _value.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_IdentityData implements _IdentityData {
-  const _$_IdentityData(
-      {this.realname = '',
-      this.username = '',
-      this.cryptedPassword = '',
-      this.hostname = ''});
-
-  factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
-      _$_$_IdentityDataFromJson(json);
-
-  @JsonKey(defaultValue: '')
-  @override
-  final String? realname;
-  @JsonKey(defaultValue: '')
-  @override
-  final String? username;
-  @JsonKey(defaultValue: '')
-  @override
-  final String? cryptedPassword;
-  @JsonKey(defaultValue: '')
-  @override
-  final String? hostname;
-
-  @override
-  String toString() {
-    return 'IdentityData(realname: $realname, username: $username, cryptedPassword: $cryptedPassword, hostname: $hostname)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _IdentityData &&
-            (identical(other.realname, realname) ||
-                const DeepCollectionEquality()
-                    .equals(other.realname, realname)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.cryptedPassword, cryptedPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.cryptedPassword, cryptedPassword)) &&
-            (identical(other.hostname, hostname) ||
-                const DeepCollectionEquality()
-                    .equals(other.hostname, hostname)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(realname) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(cryptedPassword) ^
-      const DeepCollectionEquality().hash(hostname);
-
-  @JsonKey(ignore: true)
-  @override
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
-      __$IdentityDataCopyWithImpl<_IdentityData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_IdentityDataToJson(this);
-  }
-}
-
-abstract class _IdentityData implements IdentityData {
-  const factory _IdentityData(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname}) = _$_IdentityData;
-
-  factory _IdentityData.fromJson(Map<String, dynamic> json) =
-      _$_IdentityData.fromJson;
-
-  @override
-  String? get realname => throw _privateConstructorUsedError;
-  @override
-  String? get username => throw _privateConstructorUsedError;
-  @override
-  String? get cryptedPassword => throw _privateConstructorUsedError;
-  @override
-  String? get hostname => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TimezoneData _$TimezoneDataFromJson(Map<String, dynamic> json) {
-  return _TimezoneData.fromJson(json);
-}
-
-/// @nodoc
-class _$TimezoneDataTearOff {
-  const _$TimezoneDataTearOff();
-
-  _TimezoneData call({String? timezone, bool? fromGeoip}) {
-    return _TimezoneData(
-      timezone: timezone,
-      fromGeoip: fromGeoip,
-    );
-  }
-
-  TimezoneData fromJson(Map<String, Object> json) {
-    return TimezoneData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TimezoneData = _$TimezoneDataTearOff();
-
-/// @nodoc
-mixin _$TimezoneData {
-  String? get timezone => throw _privateConstructorUsedError;
-  bool? get fromGeoip => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimezoneDataCopyWith<TimezoneData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimezoneDataCopyWith<$Res> {
-  factory $TimezoneDataCopyWith(
-          TimezoneData value, $Res Function(TimezoneData) then) =
-      _$TimezoneDataCopyWithImpl<$Res>;
-  $Res call({String? timezone, bool? fromGeoip});
-}
-
-/// @nodoc
-class _$TimezoneDataCopyWithImpl<$Res> implements $TimezoneDataCopyWith<$Res> {
-  _$TimezoneDataCopyWithImpl(this._value, this._then);
-
-  final TimezoneData _value;
-  // ignore: unused_field
-  final $Res Function(TimezoneData) _then;
-
-  @override
-  $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
-  }) {
-    return _then(_value.copyWith(
-      timezone: timezone == freezed
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromGeoip: fromGeoip == freezed
-          ? _value.fromGeoip
-          : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$TimezoneDataCopyWith<$Res>
-    implements $TimezoneDataCopyWith<$Res> {
-  factory _$TimezoneDataCopyWith(
-          _TimezoneData value, $Res Function(_TimezoneData) then) =
-      __$TimezoneDataCopyWithImpl<$Res>;
-  @override
-  $Res call({String? timezone, bool? fromGeoip});
-}
-
-/// @nodoc
-class __$TimezoneDataCopyWithImpl<$Res> extends _$TimezoneDataCopyWithImpl<$Res>
-    implements _$TimezoneDataCopyWith<$Res> {
-  __$TimezoneDataCopyWithImpl(
-      _TimezoneData _value, $Res Function(_TimezoneData) _then)
-      : super(_value, (v) => _then(v as _TimezoneData));
-
-  @override
-  _TimezoneData get _value => super._value as _TimezoneData;
-
-  @override
-  $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
-  }) {
-    return _then(_TimezoneData(
-      timezone: timezone == freezed
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromGeoip: fromGeoip == freezed
-          ? _value.fromGeoip
-          : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_TimezoneData implements _TimezoneData {
-  const _$_TimezoneData({this.timezone, this.fromGeoip});
-
-  factory _$_TimezoneData.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimezoneDataFromJson(json);
-
-  @override
-  final String? timezone;
-  @override
-  final bool? fromGeoip;
-
-  @override
-  String toString() {
-    return 'TimezoneData(timezone: $timezone, fromGeoip: $fromGeoip)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TimezoneData &&
-            (identical(other.timezone, timezone) ||
-                const DeepCollectionEquality()
-                    .equals(other.timezone, timezone)) &&
-            (identical(other.fromGeoip, fromGeoip) ||
-                const DeepCollectionEquality()
-                    .equals(other.fromGeoip, fromGeoip)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(timezone) ^
-      const DeepCollectionEquality().hash(fromGeoip);
-
-  @JsonKey(ignore: true)
-  @override
-  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
-      __$TimezoneDataCopyWithImpl<_TimezoneData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_TimezoneDataToJson(this);
-  }
-}
-
-abstract class _TimezoneData implements TimezoneData {
-  const factory _TimezoneData({String? timezone, bool? fromGeoip}) =
-      _$_TimezoneData;
-
-  factory _TimezoneData.fromJson(Map<String, dynamic> json) =
-      _$_TimezoneData.fromJson;
-
-  @override
-  String? get timezone => throw _privateConstructorUsedError;
-  @override
-  bool? get fromGeoip => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$TimezoneDataCopyWith<_TimezoneData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
-  return _SSHData.fromJson(json);
-}
-
-/// @nodoc
-class _$SSHDataTearOff {
-  const _$SSHDataTearOff();
-
-  _SSHData call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys}) {
-    return _SSHData(
-      installServer: installServer,
-      allowPw: allowPw,
-      authorizedKeys: authorizedKeys,
-    );
-  }
-
-  SSHData fromJson(Map<String, Object> json) {
-    return SSHData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SSHData = _$SSHDataTearOff();
-
-/// @nodoc
-mixin _$SSHData {
-  bool? get installServer => throw _privateConstructorUsedError;
-  bool? get allowPw => throw _privateConstructorUsedError;
-  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SSHDataCopyWith<SSHData> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SSHDataCopyWith<$Res> {
-  factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
-      _$SSHDataCopyWithImpl<$Res>;
-  $Res call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
-}
-
-/// @nodoc
-class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
-  _$SSHDataCopyWithImpl(this._value, this._then);
-
-  final SSHData _value;
-  // ignore: unused_field
-  final $Res Function(SSHData) _then;
-
-  @override
-  $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
-  }) {
-    return _then(_value.copyWith(
-      installServer: installServer == freezed
-          ? _value.installServer
-          : installServer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPw: allowPw == freezed
-          ? _value.allowPw
-          : allowPw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      authorizedKeys: authorizedKeys == freezed
-          ? _value.authorizedKeys
-          : authorizedKeys // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
-  factory _$SSHDataCopyWith(_SSHData value, $Res Function(_SSHData) then) =
-      __$SSHDataCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
-}
-
-/// @nodoc
-class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
-    implements _$SSHDataCopyWith<$Res> {
-  __$SSHDataCopyWithImpl(_SSHData _value, $Res Function(_SSHData) _then)
-      : super(_value, (v) => _then(v as _SSHData));
-
-  @override
-  _SSHData get _value => super._value as _SSHData;
-
-  @override
-  $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
-  }) {
-    return _then(_SSHData(
-      installServer: installServer == freezed
-          ? _value.installServer
-          : installServer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPw: allowPw == freezed
-          ? _value.allowPw
-          : allowPw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      authorizedKeys: authorizedKeys == freezed
-          ? _value.authorizedKeys
-          : authorizedKeys // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
-class _$_SSHData implements _SSHData {
-  const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
-
-  factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
-      _$_$_SSHDataFromJson(json);
-
-  @override
-  final bool? installServer;
-  @override
-  final bool? allowPw;
-  @override
-  final List<dynamic>? authorizedKeys;
-
-  @override
-  String toString() {
-    return 'SSHData(installServer: $installServer, allowPw: $allowPw, authorizedKeys: $authorizedKeys)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SSHData &&
-            (identical(other.installServer, installServer) ||
-                const DeepCollectionEquality()
-                    .equals(other.installServer, installServer)) &&
-            (identical(other.allowPw, allowPw) ||
-                const DeepCollectionEquality()
-                    .equals(other.allowPw, allowPw)) &&
-            (identical(other.authorizedKeys, authorizedKeys) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorizedKeys, authorizedKeys)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(installServer) ^
-      const DeepCollectionEquality().hash(allowPw) ^
-      const DeepCollectionEquality().hash(authorizedKeys);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
-      __$SSHDataCopyWithImpl<_SSHData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SSHDataToJson(this);
-  }
-}
-
-abstract class _SSHData implements SSHData {
-  const factory _SSHData(
-      {bool? installServer,
-      bool? allowPw,
-      List<dynamic>? authorizedKeys}) = _$_SSHData;
-
-  factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
-
-  @override
-  bool? get installServer => throw _privateConstructorUsedError;
-  @override
-  bool? get allowPw => throw _privateConstructorUsedError;
-  @override
-  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
   return _ErrorReportRef.fromJson(json);
 }
@@ -1970,7 +173,7 @@ class __$ErrorReportRefCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_ErrorReportRef implements _ErrorReportRef {
   const _$_ErrorReportRef(
       {this.state, this.base, this.kind, this.seen, this.oopsId});
@@ -2403,6 +606,1774 @@ abstract class _ApplicationStatus implements ApplicationStatus {
       throw _privateConstructorUsedError;
 }
 
+AnyStep _$AnyStepFromJson(Map<String, dynamic> json) {
+  switch (json['\$type'] as String) {
+    case 'StepPressKey':
+      return StepPressKey.fromJson(json);
+    case 'StepKeyPresent':
+      return StepKeyPresent.fromJson(json);
+    case 'StepResult':
+      return StepResult.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
+}
+
+/// @nodoc
+class _$AnyStepTearOff {
+  const _$AnyStepTearOff();
+
+  StepPressKey stepPressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) {
+    return StepPressKey(
+      symbols: symbols,
+      keycodes: keycodes,
+    );
+  }
+
+  StepKeyPresent stepKeyPresent({String? symbol, String? yes, String? no}) {
+    return StepKeyPresent(
+      symbol: symbol,
+      yes: yes,
+      no: no,
+    );
+  }
+
+  StepResult stepResult({String? layout, String? variant}) {
+    return StepResult(
+      layout: layout,
+      variant: variant,
+    );
+  }
+
+  AnyStep fromJson(Map<String, Object> json) {
+    return AnyStep.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $AnyStep = _$AnyStepTearOff();
+
+/// @nodoc
+mixin _$AnyStep {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        stepPressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnyStepCopyWith<$Res> {
+  factory $AnyStepCopyWith(AnyStep value, $Res Function(AnyStep) then) =
+      _$AnyStepCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AnyStepCopyWithImpl<$Res> implements $AnyStepCopyWith<$Res> {
+  _$AnyStepCopyWithImpl(this._value, this._then);
+
+  final AnyStep _value;
+  // ignore: unused_field
+  final $Res Function(AnyStep) _then;
+}
+
+/// @nodoc
+abstract class $StepPressKeyCopyWith<$Res> {
+  factory $StepPressKeyCopyWith(
+          StepPressKey value, $Res Function(StepPressKey) then) =
+      _$StepPressKeyCopyWithImpl<$Res>;
+  $Res call({List<String>? symbols, List<List<dynamic>>? keycodes});
+}
+
+/// @nodoc
+class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements $StepPressKeyCopyWith<$Res> {
+  _$StepPressKeyCopyWithImpl(
+      StepPressKey _value, $Res Function(StepPressKey) _then)
+      : super(_value, (v) => _then(v as StepPressKey));
+
+  @override
+  StepPressKey get _value => super._value as StepPressKey;
+
+  @override
+  $Res call({
+    Object? symbols = freezed,
+    Object? keycodes = freezed,
+  }) {
+    return _then(StepPressKey(
+      symbols: symbols == freezed
+          ? _value.symbols
+          : symbols // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      keycodes: keycodes == freezed
+          ? _value.keycodes
+          : keycodes // ignore: cast_nullable_to_non_nullable
+              as List<List<dynamic>>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@FreezedUnionValue('StepPressKey')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$StepPressKey implements StepPressKey {
+  const _$StepPressKey({this.symbols, this.keycodes});
+
+  factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
+      _$_$StepPressKeyFromJson(json);
+
+  @override
+  final List<String>? symbols;
+  @override
+  final List<List<dynamic>>? keycodes;
+
+  @override
+  String toString() {
+    return 'AnyStep.stepPressKey(symbols: $symbols, keycodes: $keycodes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepPressKey &&
+            (identical(other.symbols, symbols) ||
+                const DeepCollectionEquality()
+                    .equals(other.symbols, symbols)) &&
+            (identical(other.keycodes, keycodes) ||
+                const DeepCollectionEquality()
+                    .equals(other.keycodes, keycodes)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbols) ^
+      const DeepCollectionEquality().hash(keycodes);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        stepPressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
+  }) {
+    return stepPressKey(symbols, keycodes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepPressKey != null) {
+      return stepPressKey(symbols, keycodes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
+  }) {
+    return stepPressKey(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepPressKey != null) {
+      return stepPressKey(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
+  }
+}
+
+abstract class StepPressKey implements AnyStep {
+  const factory StepPressKey(
+      {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
+
+  factory StepPressKey.fromJson(Map<String, dynamic> json) =
+      _$StepPressKey.fromJson;
+
+  List<String>? get symbols => throw _privateConstructorUsedError;
+  List<List<dynamic>>? get keycodes => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepKeyPresentCopyWith<$Res> {
+  factory $StepKeyPresentCopyWith(
+          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
+      _$StepKeyPresentCopyWithImpl<$Res>;
+  $Res call({String? symbol, String? yes, String? no});
+}
+
+/// @nodoc
+class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements $StepKeyPresentCopyWith<$Res> {
+  _$StepKeyPresentCopyWithImpl(
+      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
+      : super(_value, (v) => _then(v as StepKeyPresent));
+
+  @override
+  StepKeyPresent get _value => super._value as StepKeyPresent;
+
+  @override
+  $Res call({
+    Object? symbol = freezed,
+    Object? yes = freezed,
+    Object? no = freezed,
+  }) {
+    return _then(StepKeyPresent(
+      symbol: symbol == freezed
+          ? _value.symbol
+          : symbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+      yes: yes == freezed
+          ? _value.yes
+          : yes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      no: no == freezed
+          ? _value.no
+          : no // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@FreezedUnionValue('StepKeyPresent')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$StepKeyPresent implements StepKeyPresent {
+  const _$StepKeyPresent({this.symbol, this.yes, this.no});
+
+  factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
+      _$_$StepKeyPresentFromJson(json);
+
+  @override
+  final String? symbol;
+  @override
+  final String? yes;
+  @override
+  final String? no;
+
+  @override
+  String toString() {
+    return 'AnyStep.stepKeyPresent(symbol: $symbol, yes: $yes, no: $no)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepKeyPresent &&
+            (identical(other.symbol, symbol) ||
+                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
+            (identical(other.yes, yes) ||
+                const DeepCollectionEquality().equals(other.yes, yes)) &&
+            (identical(other.no, no) ||
+                const DeepCollectionEquality().equals(other.no, no)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(symbol) ^
+      const DeepCollectionEquality().hash(yes) ^
+      const DeepCollectionEquality().hash(no);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        stepPressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
+  }) {
+    return stepKeyPresent(symbol, yes, no);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepKeyPresent != null) {
+      return stepKeyPresent(symbol, yes, no);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
+  }) {
+    return stepKeyPresent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepKeyPresent != null) {
+      return stepKeyPresent(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
+  }
+}
+
+abstract class StepKeyPresent implements AnyStep {
+  const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
+      _$StepKeyPresent;
+
+  factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
+      _$StepKeyPresent.fromJson;
+
+  String? get symbol => throw _privateConstructorUsedError;
+  String? get yes => throw _privateConstructorUsedError;
+  String? get no => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepResultCopyWith<$Res> {
+  factory $StepResultCopyWith(
+          StepResult value, $Res Function(StepResult) then) =
+      _$StepResultCopyWithImpl<$Res>;
+  $Res call({String? layout, String? variant});
+}
+
+/// @nodoc
+class _$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements $StepResultCopyWith<$Res> {
+  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
+      : super(_value, (v) => _then(v as StepResult));
+
+  @override
+  StepResult get _value => super._value as StepResult;
+
+  @override
+  $Res call({
+    Object? layout = freezed,
+    Object? variant = freezed,
+  }) {
+    return _then(StepResult(
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@FreezedUnionValue('StepResult')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$StepResult implements StepResult {
+  const _$StepResult({this.layout, this.variant});
+
+  factory _$StepResult.fromJson(Map<String, dynamic> json) =>
+      _$_$StepResultFromJson(json);
+
+  @override
+  final String? layout;
+  @override
+  final String? variant;
+
+  @override
+  String toString() {
+    return 'AnyStep.stepResult(layout: $layout, variant: $variant)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is StepResult &&
+            (identical(other.layout, layout) ||
+                const DeepCollectionEquality().equals(other.layout, layout)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality().equals(other.variant, variant)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(layout) ^
+      const DeepCollectionEquality().hash(variant);
+
+  @JsonKey(ignore: true)
+  @override
+  $StepResultCopyWith<StepResult> get copyWith =>
+      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<String>? symbols, List<List<dynamic>>? keycodes)
+        stepPressKey,
+    required TResult Function(String? symbol, String? yes, String? no)
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
+  }) {
+    return stepResult(layout, variant);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepResult != null) {
+      return stepResult(layout, variant);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
+  }) {
+    return stepResult(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+    required TResult orElse(),
+  }) {
+    if (stepResult != null) {
+      return stepResult(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
+  }
+}
+
+abstract class StepResult implements AnyStep {
+  const factory StepResult({String? layout, String? variant}) = _$StepResult;
+
+  factory StepResult.fromJson(Map<String, dynamic> json) =
+      _$StepResult.fromJson;
+
+  String? get layout => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepResultCopyWith<StepResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
+  return _KeyboardSetting.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardSettingTearOff {
+  const _$KeyboardSettingTearOff();
+
+  _KeyboardSetting call({String? layout, String? variant, String? toggle}) {
+    return _KeyboardSetting(
+      layout: layout,
+      variant: variant,
+      toggle: toggle,
+    );
+  }
+
+  KeyboardSetting fromJson(Map<String, Object> json) {
+    return KeyboardSetting.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardSetting = _$KeyboardSettingTearOff();
+
+/// @nodoc
+mixin _$KeyboardSetting {
+  String? get layout => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  String? get toggle => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardSettingCopyWith<KeyboardSetting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardSettingCopyWith<$Res> {
+  factory $KeyboardSettingCopyWith(
+          KeyboardSetting value, $Res Function(KeyboardSetting) then) =
+      _$KeyboardSettingCopyWithImpl<$Res>;
+  $Res call({String? layout, String? variant, String? toggle});
+}
+
+/// @nodoc
+class _$KeyboardSettingCopyWithImpl<$Res>
+    implements $KeyboardSettingCopyWith<$Res> {
+  _$KeyboardSettingCopyWithImpl(this._value, this._then);
+
+  final KeyboardSetting _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardSetting) _then;
+
+  @override
+  $Res call({
+    Object? layout = freezed,
+    Object? variant = freezed,
+    Object? toggle = freezed,
+  }) {
+    return _then(_value.copyWith(
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toggle: toggle == freezed
+          ? _value.toggle
+          : toggle // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardSettingCopyWith<$Res>
+    implements $KeyboardSettingCopyWith<$Res> {
+  factory _$KeyboardSettingCopyWith(
+          _KeyboardSetting value, $Res Function(_KeyboardSetting) then) =
+      __$KeyboardSettingCopyWithImpl<$Res>;
+  @override
+  $Res call({String? layout, String? variant, String? toggle});
+}
+
+/// @nodoc
+class __$KeyboardSettingCopyWithImpl<$Res>
+    extends _$KeyboardSettingCopyWithImpl<$Res>
+    implements _$KeyboardSettingCopyWith<$Res> {
+  __$KeyboardSettingCopyWithImpl(
+      _KeyboardSetting _value, $Res Function(_KeyboardSetting) _then)
+      : super(_value, (v) => _then(v as _KeyboardSetting));
+
+  @override
+  _KeyboardSetting get _value => super._value as _KeyboardSetting;
+
+  @override
+  $Res call({
+    Object? layout = freezed,
+    Object? variant = freezed,
+    Object? toggle = freezed,
+  }) {
+    return _then(_KeyboardSetting(
+      layout: layout == freezed
+          ? _value.layout
+          : layout // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toggle: toggle == freezed
+          ? _value.toggle
+          : toggle // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_KeyboardSetting implements _KeyboardSetting {
+  const _$_KeyboardSetting({this.layout, this.variant, this.toggle});
+
+  factory _$_KeyboardSetting.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardSettingFromJson(json);
+
+  @override
+  final String? layout;
+  @override
+  final String? variant;
+  @override
+  final String? toggle;
+
+  @override
+  String toString() {
+    return 'KeyboardSetting(layout: $layout, variant: $variant, toggle: $toggle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardSetting &&
+            (identical(other.layout, layout) ||
+                const DeepCollectionEquality().equals(other.layout, layout)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality()
+                    .equals(other.variant, variant)) &&
+            (identical(other.toggle, toggle) ||
+                const DeepCollectionEquality().equals(other.toggle, toggle)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(layout) ^
+      const DeepCollectionEquality().hash(variant) ^
+      const DeepCollectionEquality().hash(toggle);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
+      __$KeyboardSettingCopyWithImpl<_KeyboardSetting>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardSettingToJson(this);
+  }
+}
+
+abstract class _KeyboardSetting implements KeyboardSetting {
+  const factory _KeyboardSetting(
+      {String? layout, String? variant, String? toggle}) = _$_KeyboardSetting;
+
+  factory _KeyboardSetting.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardSetting.fromJson;
+
+  @override
+  String? get layout => throw _privateConstructorUsedError;
+  @override
+  String? get variant => throw _privateConstructorUsedError;
+  @override
+  String? get toggle => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardVariant _$KeyboardVariantFromJson(Map<String, dynamic> json) {
+  return _KeyboardVariant.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardVariantTearOff {
+  const _$KeyboardVariantTearOff();
+
+  _KeyboardVariant call({String? code, String? name}) {
+    return _KeyboardVariant(
+      code: code,
+      name: name,
+    );
+  }
+
+  KeyboardVariant fromJson(Map<String, Object> json) {
+    return KeyboardVariant.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardVariant = _$KeyboardVariantTearOff();
+
+/// @nodoc
+mixin _$KeyboardVariant {
+  String? get code => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardVariantCopyWith<KeyboardVariant> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardVariantCopyWith<$Res> {
+  factory $KeyboardVariantCopyWith(
+          KeyboardVariant value, $Res Function(KeyboardVariant) then) =
+      _$KeyboardVariantCopyWithImpl<$Res>;
+  $Res call({String? code, String? name});
+}
+
+/// @nodoc
+class _$KeyboardVariantCopyWithImpl<$Res>
+    implements $KeyboardVariantCopyWith<$Res> {
+  _$KeyboardVariantCopyWithImpl(this._value, this._then);
+
+  final KeyboardVariant _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardVariant) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardVariantCopyWith<$Res>
+    implements $KeyboardVariantCopyWith<$Res> {
+  factory _$KeyboardVariantCopyWith(
+          _KeyboardVariant value, $Res Function(_KeyboardVariant) then) =
+      __$KeyboardVariantCopyWithImpl<$Res>;
+  @override
+  $Res call({String? code, String? name});
+}
+
+/// @nodoc
+class __$KeyboardVariantCopyWithImpl<$Res>
+    extends _$KeyboardVariantCopyWithImpl<$Res>
+    implements _$KeyboardVariantCopyWith<$Res> {
+  __$KeyboardVariantCopyWithImpl(
+      _KeyboardVariant _value, $Res Function(_KeyboardVariant) _then)
+      : super(_value, (v) => _then(v as _KeyboardVariant));
+
+  @override
+  _KeyboardVariant get _value => super._value as _KeyboardVariant;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_KeyboardVariant(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_KeyboardVariant implements _KeyboardVariant {
+  const _$_KeyboardVariant({this.code, this.name});
+
+  factory _$_KeyboardVariant.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardVariantFromJson(json);
+
+  @override
+  final String? code;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'KeyboardVariant(code: $code, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardVariant &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
+      __$KeyboardVariantCopyWithImpl<_KeyboardVariant>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardVariantToJson(this);
+  }
+}
+
+abstract class _KeyboardVariant implements KeyboardVariant {
+  const factory _KeyboardVariant({String? code, String? name}) =
+      _$_KeyboardVariant;
+
+  factory _KeyboardVariant.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardVariant.fromJson;
+
+  @override
+  String? get code => throw _privateConstructorUsedError;
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardLayout _$KeyboardLayoutFromJson(Map<String, dynamic> json) {
+  return _KeyboardLayout.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardLayoutTearOff {
+  const _$KeyboardLayoutTearOff();
+
+  _KeyboardLayout call(
+      {String? code, String? name, List<KeyboardVariant>? variants}) {
+    return _KeyboardLayout(
+      code: code,
+      name: name,
+      variants: variants,
+    );
+  }
+
+  KeyboardLayout fromJson(Map<String, Object> json) {
+    return KeyboardLayout.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardLayout = _$KeyboardLayoutTearOff();
+
+/// @nodoc
+mixin _$KeyboardLayout {
+  String? get code => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardLayoutCopyWith<KeyboardLayout> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardLayoutCopyWith<$Res> {
+  factory $KeyboardLayoutCopyWith(
+          KeyboardLayout value, $Res Function(KeyboardLayout) then) =
+      _$KeyboardLayoutCopyWithImpl<$Res>;
+  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+}
+
+/// @nodoc
+class _$KeyboardLayoutCopyWithImpl<$Res>
+    implements $KeyboardLayoutCopyWith<$Res> {
+  _$KeyboardLayoutCopyWithImpl(this._value, this._then);
+
+  final KeyboardLayout _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardLayout) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+    Object? variants = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variants: variants == freezed
+          ? _value.variants
+          : variants // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardVariant>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardLayoutCopyWith<$Res>
+    implements $KeyboardLayoutCopyWith<$Res> {
+  factory _$KeyboardLayoutCopyWith(
+          _KeyboardLayout value, $Res Function(_KeyboardLayout) then) =
+      __$KeyboardLayoutCopyWithImpl<$Res>;
+  @override
+  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+}
+
+/// @nodoc
+class __$KeyboardLayoutCopyWithImpl<$Res>
+    extends _$KeyboardLayoutCopyWithImpl<$Res>
+    implements _$KeyboardLayoutCopyWith<$Res> {
+  __$KeyboardLayoutCopyWithImpl(
+      _KeyboardLayout _value, $Res Function(_KeyboardLayout) _then)
+      : super(_value, (v) => _then(v as _KeyboardLayout));
+
+  @override
+  _KeyboardLayout get _value => super._value as _KeyboardLayout;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+    Object? variants = freezed,
+  }) {
+    return _then(_KeyboardLayout(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      variants: variants == freezed
+          ? _value.variants
+          : variants // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardVariant>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_KeyboardLayout implements _KeyboardLayout {
+  const _$_KeyboardLayout({this.code, this.name, this.variants});
+
+  factory _$_KeyboardLayout.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardLayoutFromJson(json);
+
+  @override
+  final String? code;
+  @override
+  final String? name;
+  @override
+  final List<KeyboardVariant>? variants;
+
+  @override
+  String toString() {
+    return 'KeyboardLayout(code: $code, name: $name, variants: $variants)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardLayout &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.variants, variants) ||
+                const DeepCollectionEquality()
+                    .equals(other.variants, variants)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(variants);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
+      __$KeyboardLayoutCopyWithImpl<_KeyboardLayout>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardLayoutToJson(this);
+  }
+}
+
+abstract class _KeyboardLayout implements KeyboardLayout {
+  const factory _KeyboardLayout(
+      {String? code,
+      String? name,
+      List<KeyboardVariant>? variants}) = _$_KeyboardLayout;
+
+  factory _KeyboardLayout.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardLayout.fromJson;
+
+  @override
+  String? get code => throw _privateConstructorUsedError;
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+KeyboardSetup _$KeyboardSetupFromJson(Map<String, dynamic> json) {
+  return _KeyboardSetup.fromJson(json);
+}
+
+/// @nodoc
+class _$KeyboardSetupTearOff {
+  const _$KeyboardSetupTearOff();
+
+  _KeyboardSetup call(
+      {KeyboardSetting? setting, List<KeyboardLayout>? layouts}) {
+    return _KeyboardSetup(
+      setting: setting,
+      layouts: layouts,
+    );
+  }
+
+  KeyboardSetup fromJson(Map<String, Object> json) {
+    return KeyboardSetup.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $KeyboardSetup = _$KeyboardSetupTearOff();
+
+/// @nodoc
+mixin _$KeyboardSetup {
+  KeyboardSetting? get setting => throw _privateConstructorUsedError;
+  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $KeyboardSetupCopyWith<KeyboardSetup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $KeyboardSetupCopyWith<$Res> {
+  factory $KeyboardSetupCopyWith(
+          KeyboardSetup value, $Res Function(KeyboardSetup) then) =
+      _$KeyboardSetupCopyWithImpl<$Res>;
+  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+
+  $KeyboardSettingCopyWith<$Res>? get setting;
+}
+
+/// @nodoc
+class _$KeyboardSetupCopyWithImpl<$Res>
+    implements $KeyboardSetupCopyWith<$Res> {
+  _$KeyboardSetupCopyWithImpl(this._value, this._then);
+
+  final KeyboardSetup _value;
+  // ignore: unused_field
+  final $Res Function(KeyboardSetup) _then;
+
+  @override
+  $Res call({
+    Object? setting = freezed,
+    Object? layouts = freezed,
+  }) {
+    return _then(_value.copyWith(
+      setting: setting == freezed
+          ? _value.setting
+          : setting // ignore: cast_nullable_to_non_nullable
+              as KeyboardSetting?,
+      layouts: layouts == freezed
+          ? _value.layouts
+          : layouts // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardLayout>?,
+    ));
+  }
+
+  @override
+  $KeyboardSettingCopyWith<$Res>? get setting {
+    if (_value.setting == null) {
+      return null;
+    }
+
+    return $KeyboardSettingCopyWith<$Res>(_value.setting!, (value) {
+      return _then(_value.copyWith(setting: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$KeyboardSetupCopyWith<$Res>
+    implements $KeyboardSetupCopyWith<$Res> {
+  factory _$KeyboardSetupCopyWith(
+          _KeyboardSetup value, $Res Function(_KeyboardSetup) then) =
+      __$KeyboardSetupCopyWithImpl<$Res>;
+  @override
+  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+
+  @override
+  $KeyboardSettingCopyWith<$Res>? get setting;
+}
+
+/// @nodoc
+class __$KeyboardSetupCopyWithImpl<$Res>
+    extends _$KeyboardSetupCopyWithImpl<$Res>
+    implements _$KeyboardSetupCopyWith<$Res> {
+  __$KeyboardSetupCopyWithImpl(
+      _KeyboardSetup _value, $Res Function(_KeyboardSetup) _then)
+      : super(_value, (v) => _then(v as _KeyboardSetup));
+
+  @override
+  _KeyboardSetup get _value => super._value as _KeyboardSetup;
+
+  @override
+  $Res call({
+    Object? setting = freezed,
+    Object? layouts = freezed,
+  }) {
+    return _then(_KeyboardSetup(
+      setting: setting == freezed
+          ? _value.setting
+          : setting // ignore: cast_nullable_to_non_nullable
+              as KeyboardSetting?,
+      layouts: layouts == freezed
+          ? _value.layouts
+          : layouts // ignore: cast_nullable_to_non_nullable
+              as List<KeyboardLayout>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_KeyboardSetup implements _KeyboardSetup {
+  const _$_KeyboardSetup({this.setting, this.layouts});
+
+  factory _$_KeyboardSetup.fromJson(Map<String, dynamic> json) =>
+      _$_$_KeyboardSetupFromJson(json);
+
+  @override
+  final KeyboardSetting? setting;
+  @override
+  final List<KeyboardLayout>? layouts;
+
+  @override
+  String toString() {
+    return 'KeyboardSetup(setting: $setting, layouts: $layouts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _KeyboardSetup &&
+            (identical(other.setting, setting) ||
+                const DeepCollectionEquality()
+                    .equals(other.setting, setting)) &&
+            (identical(other.layouts, layouts) ||
+                const DeepCollectionEquality().equals(other.layouts, layouts)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(setting) ^
+      const DeepCollectionEquality().hash(layouts);
+
+  @JsonKey(ignore: true)
+  @override
+  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
+      __$KeyboardSetupCopyWithImpl<_KeyboardSetup>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_KeyboardSetupToJson(this);
+  }
+}
+
+abstract class _KeyboardSetup implements KeyboardSetup {
+  const factory _KeyboardSetup(
+      {KeyboardSetting? setting,
+      List<KeyboardLayout>? layouts}) = _$_KeyboardSetup;
+
+  factory _KeyboardSetup.fromJson(Map<String, dynamic> json) =
+      _$_KeyboardSetup.fromJson;
+
+  @override
+  KeyboardSetting? get setting => throw _privateConstructorUsedError;
+  @override
+  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
+  return _SourceSelection.fromJson(json);
+}
+
+/// @nodoc
+class _$SourceSelectionTearOff {
+  const _$SourceSelectionTearOff();
+
+  _SourceSelection call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) {
+    return _SourceSelection(
+      name: name,
+      description: description,
+      id: id,
+      size: size,
+      variant: variant,
+      isDefault: isDefault,
+    );
+  }
+
+  SourceSelection fromJson(Map<String, Object> json) {
+    return SourceSelection.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SourceSelection = _$SourceSelectionTearOff();
+
+/// @nodoc
+mixin _$SourceSelection {
+  String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
+  String? get variant => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SourceSelectionCopyWith<SourceSelection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SourceSelectionCopyWith<$Res> {
+  factory $SourceSelectionCopyWith(
+          SourceSelection value, $Res Function(SourceSelection) then) =
+      _$SourceSelectionCopyWithImpl<$Res>;
+  $Res call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
+}
+
+/// @nodoc
+class _$SourceSelectionCopyWithImpl<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  _$SourceSelectionCopyWithImpl(this._value, this._then);
+
+  final SourceSelection _value;
+  // ignore: unused_field
+  final $Res Function(SourceSelection) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SourceSelectionCopyWith<$Res>
+    implements $SourceSelectionCopyWith<$Res> {
+  factory _$SourceSelectionCopyWith(
+          _SourceSelection value, $Res Function(_SourceSelection) then) =
+      __$SourceSelectionCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault});
+}
+
+/// @nodoc
+class __$SourceSelectionCopyWithImpl<$Res>
+    extends _$SourceSelectionCopyWithImpl<$Res>
+    implements _$SourceSelectionCopyWith<$Res> {
+  __$SourceSelectionCopyWithImpl(
+      _SourceSelection _value, $Res Function(_SourceSelection) _then)
+      : super(_value, (v) => _then(v as _SourceSelection));
+
+  @override
+  _SourceSelection get _value => super._value as _SourceSelection;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? size = freezed,
+    Object? variant = freezed,
+    Object? isDefault = freezed,
+  }) {
+    return _then(_SourceSelection(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variant: variant == freezed
+          ? _value.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_SourceSelection implements _SourceSelection {
+  const _$_SourceSelection(
+      {this.name,
+      this.description,
+      this.id,
+      this.size,
+      this.variant,
+      @JsonKey(name: 'default') this.isDefault});
+
+  factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionFromJson(json);
+
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? id;
+  @override
+  final int? size;
+  @override
+  final String? variant;
+  @override
+  @JsonKey(name: 'default')
+  final bool? isDefault;
+
+  @override
+  String toString() {
+    return 'SourceSelection(name: $name, description: $description, id: $id, size: $size, variant: $variant, isDefault: $isDefault)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceSelection &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.variant, variant) ||
+                const DeepCollectionEquality()
+                    .equals(other.variant, variant)) &&
+            (identical(other.isDefault, isDefault) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDefault, isDefault)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(variant) ^
+      const DeepCollectionEquality().hash(isDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SourceSelectionToJson(this);
+  }
+}
+
+abstract class _SourceSelection implements SourceSelection {
+  const factory _SourceSelection(
+      {String? name,
+      String? description,
+      String? id,
+      int? size,
+      String? variant,
+      @JsonKey(name: 'default') bool? isDefault}) = _$_SourceSelection;
+
+  factory _SourceSelection.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelection.fromJson;
+
+  @override
+  String? get name => throw _privateConstructorUsedError;
+  @override
+  String? get description => throw _privateConstructorUsedError;
+  @override
+  String? get id => throw _privateConstructorUsedError;
+  @override
+  int? get size => throw _privateConstructorUsedError;
+  @override
+  String? get variant => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'default')
+  bool? get isDefault => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
+    Map<String, dynamic> json) {
+  return _SourceSelectionAndSetting.fromJson(json);
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingTearOff {
+  const _$SourceSelectionAndSettingTearOff();
+
+  _SourceSelectionAndSetting call(
+      {List<SourceSelection>? sources, String? currentId}) {
+    return _SourceSelectionAndSetting(
+      sources: sources,
+      currentId: currentId,
+    );
+  }
+
+  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
+    return SourceSelectionAndSetting.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
+
+/// @nodoc
+mixin _$SourceSelectionAndSetting {
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  String? get currentId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SourceSelectionAndSettingCopyWith<SourceSelectionAndSetting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SourceSelectionAndSettingCopyWith<$Res> {
+  factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
+          $Res Function(SourceSelectionAndSetting) then) =
+      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  $Res call({List<SourceSelection>? sources, String? currentId});
+}
+
+/// @nodoc
+class _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
+
+  final SourceSelectionAndSetting _value;
+  // ignore: unused_field
+  final $Res Function(SourceSelectionAndSetting) _then;
+
+  @override
+  $Res call({
+    Object? sources = freezed,
+    Object? currentId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SourceSelectionAndSettingCopyWith<$Res>
+    implements $SourceSelectionAndSettingCopyWith<$Res> {
+  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
+          $Res Function(_SourceSelectionAndSetting) then) =
+      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  @override
+  $Res call({List<SourceSelection>? sources, String? currentId});
+}
+
+/// @nodoc
+class __$SourceSelectionAndSettingCopyWithImpl<$Res>
+    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    implements _$SourceSelectionAndSettingCopyWith<$Res> {
+  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
+      $Res Function(_SourceSelectionAndSetting) _then)
+      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
+
+  @override
+  _SourceSelectionAndSetting get _value =>
+      super._value as _SourceSelectionAndSetting;
+
+  @override
+  $Res call({
+    Object? sources = freezed,
+    Object? currentId = freezed,
+  }) {
+    return _then(_SourceSelectionAndSetting(
+      sources: sources == freezed
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<SourceSelection>?,
+      currentId: currentId == freezed
+          ? _value.currentId
+          : currentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
+  const _$_SourceSelectionAndSetting({this.sources, this.currentId});
+
+  factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
+      _$_$_SourceSelectionAndSettingFromJson(json);
+
+  @override
+  final List<SourceSelection>? sources;
+  @override
+  final String? currentId;
+
+  @override
+  String toString() {
+    return 'SourceSelectionAndSetting(sources: $sources, currentId: $currentId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SourceSelectionAndSetting &&
+            (identical(other.sources, sources) ||
+                const DeepCollectionEquality()
+                    .equals(other.sources, sources)) &&
+            (identical(other.currentId, currentId) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentId, currentId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(sources) ^
+      const DeepCollectionEquality().hash(currentId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith =>
+          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SourceSelectionAndSettingToJson(this);
+  }
+}
+
+abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
+  const factory _SourceSelectionAndSetting(
+      {List<SourceSelection>? sources,
+      String? currentId}) = _$_SourceSelectionAndSetting;
+
+  factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
+      _$_SourceSelectionAndSetting.fromJson;
+
+  @override
+  List<SourceSelection>? get sources => throw _privateConstructorUsedError;
+  @override
+  String? get currentId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 OsProber _$OsProberFromJson(Map<String, dynamic> json) {
   return _OsProber.fromJson(json);
 }
@@ -2558,7 +2529,7 @@ class __$OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_OsProber implements _OsProber {
   const _$_OsProber(
       {required this.long,
@@ -3140,8 +3111,9 @@ class _$GapCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 @FreezedUnionValue('Gap')
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$Gap implements Gap {
   const _$Gap({this.offset, this.size});
 
@@ -3830,7 +3802,7 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedChoice implements _GuidedChoice {
   const _$_GuidedChoice({this.diskId, this.useLvm, this.password});
 
@@ -4041,7 +4013,7 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   const _$_GuidedStorageResponse({this.status, this.errorReport, this.disks});
 
@@ -4320,7 +4292,7 @@ class __$StorageResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponse implements _StorageResponse {
   const _$_StorageResponse(
       {this.status,
@@ -4595,7 +4567,7 @@ class __$StorageResponseV2CopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
       {this.disks, this.needRoot, this.needBoot, this.errorReport});
@@ -4674,6 +4646,601 @@ abstract class _StorageResponseV2 implements StorageResponseV2 {
   @override
   @JsonKey(ignore: true)
   _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
+  return _IdentityData.fromJson(json);
+}
+
+/// @nodoc
+class _$IdentityDataTearOff {
+  const _$IdentityDataTearOff();
+
+  _IdentityData call(
+      {String? realname = '',
+      String? username = '',
+      String? cryptedPassword = '',
+      String? hostname = ''}) {
+    return _IdentityData(
+      realname: realname,
+      username: username,
+      cryptedPassword: cryptedPassword,
+      hostname: hostname,
+    );
+  }
+
+  IdentityData fromJson(Map<String, Object> json) {
+    return IdentityData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $IdentityData = _$IdentityDataTearOff();
+
+/// @nodoc
+mixin _$IdentityData {
+  String? get realname => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
+  String? get cryptedPassword => throw _privateConstructorUsedError;
+  String? get hostname => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IdentityDataCopyWith<IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IdentityDataCopyWith<$Res> {
+  factory $IdentityDataCopyWith(
+          IdentityData value, $Res Function(IdentityData) then) =
+      _$IdentityDataCopyWithImpl<$Res>;
+  $Res call(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname});
+}
+
+/// @nodoc
+class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
+  _$IdentityDataCopyWithImpl(this._value, this._then);
+
+  final IdentityData _value;
+  // ignore: unused_field
+  final $Res Function(IdentityData) _then;
+
+  @override
+  $Res call({
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
+  }) {
+    return _then(_value.copyWith(
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cryptedPassword: cryptedPassword == freezed
+          ? _value.cryptedPassword
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$IdentityDataCopyWith<$Res>
+    implements $IdentityDataCopyWith<$Res> {
+  factory _$IdentityDataCopyWith(
+          _IdentityData value, $Res Function(_IdentityData) then) =
+      __$IdentityDataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname});
+}
+
+/// @nodoc
+class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
+    implements _$IdentityDataCopyWith<$Res> {
+  __$IdentityDataCopyWithImpl(
+      _IdentityData _value, $Res Function(_IdentityData) _then)
+      : super(_value, (v) => _then(v as _IdentityData));
+
+  @override
+  _IdentityData get _value => super._value as _IdentityData;
+
+  @override
+  $Res call({
+    Object? realname = freezed,
+    Object? username = freezed,
+    Object? cryptedPassword = freezed,
+    Object? hostname = freezed,
+  }) {
+    return _then(_IdentityData(
+      realname: realname == freezed
+          ? _value.realname
+          : realname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cryptedPassword: cryptedPassword == freezed
+          ? _value.cryptedPassword
+          : cryptedPassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hostname: hostname == freezed
+          ? _value.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_IdentityData implements _IdentityData {
+  const _$_IdentityData(
+      {this.realname = '',
+      this.username = '',
+      this.cryptedPassword = '',
+      this.hostname = ''});
+
+  factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
+      _$_$_IdentityDataFromJson(json);
+
+  @JsonKey(defaultValue: '')
+  @override
+  final String? realname;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? username;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? cryptedPassword;
+  @JsonKey(defaultValue: '')
+  @override
+  final String? hostname;
+
+  @override
+  String toString() {
+    return 'IdentityData(realname: $realname, username: $username, cryptedPassword: $cryptedPassword, hostname: $hostname)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _IdentityData &&
+            (identical(other.realname, realname) ||
+                const DeepCollectionEquality()
+                    .equals(other.realname, realname)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
+            (identical(other.cryptedPassword, cryptedPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.cryptedPassword, cryptedPassword)) &&
+            (identical(other.hostname, hostname) ||
+                const DeepCollectionEquality()
+                    .equals(other.hostname, hostname)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(realname) ^
+      const DeepCollectionEquality().hash(username) ^
+      const DeepCollectionEquality().hash(cryptedPassword) ^
+      const DeepCollectionEquality().hash(hostname);
+
+  @JsonKey(ignore: true)
+  @override
+  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+      __$IdentityDataCopyWithImpl<_IdentityData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_IdentityDataToJson(this);
+  }
+}
+
+abstract class _IdentityData implements IdentityData {
+  const factory _IdentityData(
+      {String? realname,
+      String? username,
+      String? cryptedPassword,
+      String? hostname}) = _$_IdentityData;
+
+  factory _IdentityData.fromJson(Map<String, dynamic> json) =
+      _$_IdentityData.fromJson;
+
+  @override
+  String? get realname => throw _privateConstructorUsedError;
+  @override
+  String? get username => throw _privateConstructorUsedError;
+  @override
+  String? get cryptedPassword => throw _privateConstructorUsedError;
+  @override
+  String? get hostname => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
+  return _SSHData.fromJson(json);
+}
+
+/// @nodoc
+class _$SSHDataTearOff {
+  const _$SSHDataTearOff();
+
+  _SSHData call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys}) {
+    return _SSHData(
+      installServer: installServer,
+      allowPw: allowPw,
+      authorizedKeys: authorizedKeys,
+    );
+  }
+
+  SSHData fromJson(Map<String, Object> json) {
+    return SSHData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SSHData = _$SSHDataTearOff();
+
+/// @nodoc
+mixin _$SSHData {
+  bool? get installServer => throw _privateConstructorUsedError;
+  bool? get allowPw => throw _privateConstructorUsedError;
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SSHDataCopyWith<SSHData> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SSHDataCopyWith<$Res> {
+  factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
+      _$SSHDataCopyWithImpl<$Res>;
+  $Res call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
+}
+
+/// @nodoc
+class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
+  _$SSHDataCopyWithImpl(this._value, this._then);
+
+  final SSHData _value;
+  // ignore: unused_field
+  final $Res Function(SSHData) _then;
+
+  @override
+  $Res call({
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
+  }) {
+    return _then(_value.copyWith(
+      installServer: installServer == freezed
+          ? _value.installServer
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      authorizedKeys: authorizedKeys == freezed
+          ? _value.authorizedKeys
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
+  factory _$SSHDataCopyWith(_SSHData value, $Res Function(_SSHData) then) =
+      __$SSHDataCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool? installServer, bool? allowPw, List<dynamic>? authorizedKeys});
+}
+
+/// @nodoc
+class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
+    implements _$SSHDataCopyWith<$Res> {
+  __$SSHDataCopyWithImpl(_SSHData _value, $Res Function(_SSHData) _then)
+      : super(_value, (v) => _then(v as _SSHData));
+
+  @override
+  _SSHData get _value => super._value as _SSHData;
+
+  @override
+  $Res call({
+    Object? installServer = freezed,
+    Object? allowPw = freezed,
+    Object? authorizedKeys = freezed,
+  }) {
+    return _then(_SSHData(
+      installServer: installServer == freezed
+          ? _value.installServer
+          : installServer // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowPw: allowPw == freezed
+          ? _value.allowPw
+          : allowPw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      authorizedKeys: authorizedKeys == freezed
+          ? _value.authorizedKeys
+          : authorizedKeys // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_SSHData implements _SSHData {
+  const _$_SSHData({this.installServer, this.allowPw, this.authorizedKeys});
+
+  factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
+      _$_$_SSHDataFromJson(json);
+
+  @override
+  final bool? installServer;
+  @override
+  final bool? allowPw;
+  @override
+  final List<dynamic>? authorizedKeys;
+
+  @override
+  String toString() {
+    return 'SSHData(installServer: $installServer, allowPw: $allowPw, authorizedKeys: $authorizedKeys)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SSHData &&
+            (identical(other.installServer, installServer) ||
+                const DeepCollectionEquality()
+                    .equals(other.installServer, installServer)) &&
+            (identical(other.allowPw, allowPw) ||
+                const DeepCollectionEquality()
+                    .equals(other.allowPw, allowPw)) &&
+            (identical(other.authorizedKeys, authorizedKeys) ||
+                const DeepCollectionEquality()
+                    .equals(other.authorizedKeys, authorizedKeys)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(installServer) ^
+      const DeepCollectionEquality().hash(allowPw) ^
+      const DeepCollectionEquality().hash(authorizedKeys);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SSHDataCopyWith<_SSHData> get copyWith =>
+      __$SSHDataCopyWithImpl<_SSHData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SSHDataToJson(this);
+  }
+}
+
+abstract class _SSHData implements SSHData {
+  const factory _SSHData(
+      {bool? installServer,
+      bool? allowPw,
+      List<dynamic>? authorizedKeys}) = _$_SSHData;
+
+  factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
+
+  @override
+  bool? get installServer => throw _privateConstructorUsedError;
+  @override
+  bool? get allowPw => throw _privateConstructorUsedError;
+  @override
+  List<dynamic>? get authorizedKeys => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SSHDataCopyWith<_SSHData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TimezoneInfo _$TimezoneInfoFromJson(Map<String, dynamic> json) {
+  return _TimezoneInfo.fromJson(json);
+}
+
+/// @nodoc
+class _$TimezoneInfoTearOff {
+  const _$TimezoneInfoTearOff();
+
+  _TimezoneInfo call({String? timezone, bool? fromGeoip}) {
+    return _TimezoneInfo(
+      timezone: timezone,
+      fromGeoip: fromGeoip,
+    );
+  }
+
+  TimezoneInfo fromJson(Map<String, Object> json) {
+    return TimezoneInfo.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $TimezoneInfo = _$TimezoneInfoTearOff();
+
+/// @nodoc
+mixin _$TimezoneInfo {
+  String? get timezone => throw _privateConstructorUsedError;
+  bool? get fromGeoip => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TimezoneInfoCopyWith<TimezoneInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimezoneInfoCopyWith<$Res> {
+  factory $TimezoneInfoCopyWith(
+          TimezoneInfo value, $Res Function(TimezoneInfo) then) =
+      _$TimezoneInfoCopyWithImpl<$Res>;
+  $Res call({String? timezone, bool? fromGeoip});
+}
+
+/// @nodoc
+class _$TimezoneInfoCopyWithImpl<$Res> implements $TimezoneInfoCopyWith<$Res> {
+  _$TimezoneInfoCopyWithImpl(this._value, this._then);
+
+  final TimezoneInfo _value;
+  // ignore: unused_field
+  final $Res Function(TimezoneInfo) _then;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoip = freezed,
+  }) {
+    return _then(_value.copyWith(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TimezoneInfoCopyWith<$Res>
+    implements $TimezoneInfoCopyWith<$Res> {
+  factory _$TimezoneInfoCopyWith(
+          _TimezoneInfo value, $Res Function(_TimezoneInfo) then) =
+      __$TimezoneInfoCopyWithImpl<$Res>;
+  @override
+  $Res call({String? timezone, bool? fromGeoip});
+}
+
+/// @nodoc
+class __$TimezoneInfoCopyWithImpl<$Res> extends _$TimezoneInfoCopyWithImpl<$Res>
+    implements _$TimezoneInfoCopyWith<$Res> {
+  __$TimezoneInfoCopyWithImpl(
+      _TimezoneInfo _value, $Res Function(_TimezoneInfo) _then)
+      : super(_value, (v) => _then(v as _TimezoneInfo));
+
+  @override
+  _TimezoneInfo get _value => super._value as _TimezoneInfo;
+
+  @override
+  $Res call({
+    Object? timezone = freezed,
+    Object? fromGeoip = freezed,
+  }) {
+    return _then(_TimezoneInfo(
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromGeoip: fromGeoip == freezed
+          ? _value.fromGeoip
+          : fromGeoip // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+class _$_TimezoneInfo implements _TimezoneInfo {
+  const _$_TimezoneInfo({this.timezone, this.fromGeoip});
+
+  factory _$_TimezoneInfo.fromJson(Map<String, dynamic> json) =>
+      _$_$_TimezoneInfoFromJson(json);
+
+  @override
+  final String? timezone;
+  @override
+  final bool? fromGeoip;
+
+  @override
+  String toString() {
+    return 'TimezoneInfo(timezone: $timezone, fromGeoip: $fromGeoip)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TimezoneInfo &&
+            (identical(other.timezone, timezone) ||
+                const DeepCollectionEquality()
+                    .equals(other.timezone, timezone)) &&
+            (identical(other.fromGeoip, fromGeoip) ||
+                const DeepCollectionEquality()
+                    .equals(other.fromGeoip, fromGeoip)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(timezone) ^
+      const DeepCollectionEquality().hash(fromGeoip);
+
+  @JsonKey(ignore: true)
+  @override
+  _$TimezoneInfoCopyWith<_TimezoneInfo> get copyWith =>
+      __$TimezoneInfoCopyWithImpl<_TimezoneInfo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TimezoneInfoToJson(this);
+  }
+}
+
+abstract class _TimezoneInfo implements TimezoneInfo {
+  const factory _TimezoneInfo({String? timezone, bool? fromGeoip}) =
+      _$_TimezoneInfo;
+
+  factory _TimezoneInfo.fromJson(Map<String, dynamic> json) =
+      _$_TimezoneInfo.fromJson;
+
+  @override
+  String? get timezone => throw _privateConstructorUsedError;
+  @override
+  bool? get fromGeoip => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$TimezoneInfoCopyWith<_TimezoneInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4823,7 +5390,7 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
       {this.automountRoot,
@@ -5075,7 +5642,7 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   const _$_WSLConfigurationAdvanced(
       {this.automountEnabled,
@@ -5171,565 +5738,5 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
-  switch (json['\$type'] as String) {
-    case 'StepPressKey':
-      return StepPressKey.fromJson(json);
-    case 'StepKeyPresent':
-      return StepKeyPresent.fromJson(json);
-    case 'StepResult':
-      return StepResult.fromJson(json);
-
-    default:
-      throw FallThroughError();
-  }
-}
-
-/// @nodoc
-class _$KeyboardStepTearOff {
-  const _$KeyboardStepTearOff();
-
-  StepPressKey pressKey(
-      {List<String>? symbols, List<List<dynamic>>? keycodes}) {
-    return StepPressKey(
-      symbols: symbols,
-      keycodes: keycodes,
-    );
-  }
-
-  StepKeyPresent keyPresent({String? symbol, String? yes, String? no}) {
-    return StepKeyPresent(
-      symbol: symbol,
-      yes: yes,
-      no: no,
-    );
-  }
-
-  StepResult result({String? layout, String? variant}) {
-    return StepResult(
-      layout: layout,
-      variant: variant,
-    );
-  }
-
-  KeyboardStep fromJson(Map<String, Object> json) {
-    return KeyboardStep.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardStep = _$KeyboardStepTearOff();
-
-/// @nodoc
-mixin _$KeyboardStep {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KeyboardStepCopyWith<$Res> {
-  factory $KeyboardStepCopyWith(
-          KeyboardStep value, $Res Function(KeyboardStep) then) =
-      _$KeyboardStepCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$KeyboardStepCopyWithImpl<$Res> implements $KeyboardStepCopyWith<$Res> {
-  _$KeyboardStepCopyWithImpl(this._value, this._then);
-
-  final KeyboardStep _value;
-  // ignore: unused_field
-  final $Res Function(KeyboardStep) _then;
-}
-
-/// @nodoc
-abstract class $StepPressKeyCopyWith<$Res> {
-  factory $StepPressKeyCopyWith(
-          StepPressKey value, $Res Function(StepPressKey) then) =
-      _$StepPressKeyCopyWithImpl<$Res>;
-  $Res call({List<String>? symbols, List<List<dynamic>>? keycodes});
-}
-
-/// @nodoc
-class _$StepPressKeyCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepPressKeyCopyWith<$Res> {
-  _$StepPressKeyCopyWithImpl(
-      StepPressKey _value, $Res Function(StepPressKey) _then)
-      : super(_value, (v) => _then(v as StepPressKey));
-
-  @override
-  StepPressKey get _value => super._value as StepPressKey;
-
-  @override
-  $Res call({
-    Object? symbols = freezed,
-    Object? keycodes = freezed,
-  }) {
-    return _then(StepPressKey(
-      symbols: symbols == freezed
-          ? _value.symbols
-          : symbols // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      keycodes: keycodes == freezed
-          ? _value.keycodes
-          : keycodes // ignore: cast_nullable_to_non_nullable
-              as List<List<dynamic>>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepPressKey')
-class _$StepPressKey implements StepPressKey {
-  const _$StepPressKey({this.symbols, this.keycodes});
-
-  factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
-      _$_$StepPressKeyFromJson(json);
-
-  @override
-  final List<String>? symbols;
-  @override
-  final List<List<dynamic>>? keycodes;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.pressKey(symbols: $symbols, keycodes: $keycodes)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepPressKey &&
-            (identical(other.symbols, symbols) ||
-                const DeepCollectionEquality()
-                    .equals(other.symbols, symbols)) &&
-            (identical(other.keycodes, keycodes) ||
-                const DeepCollectionEquality()
-                    .equals(other.keycodes, keycodes)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbols) ^
-      const DeepCollectionEquality().hash(keycodes);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
-      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return pressKey(symbols, keycodes);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (pressKey != null) {
-      return pressKey(symbols, keycodes);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return pressKey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (pressKey != null) {
-      return pressKey(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
-  }
-}
-
-abstract class StepPressKey implements KeyboardStep {
-  const factory StepPressKey(
-      {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
-
-  factory StepPressKey.fromJson(Map<String, dynamic> json) =
-      _$StepPressKey.fromJson;
-
-  List<String>? get symbols => throw _privateConstructorUsedError;
-  List<List<dynamic>>? get keycodes => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StepKeyPresentCopyWith<$Res> {
-  factory $StepKeyPresentCopyWith(
-          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
-      _$StepKeyPresentCopyWithImpl<$Res>;
-  $Res call({String? symbol, String? yes, String? no});
-}
-
-/// @nodoc
-class _$StepKeyPresentCopyWithImpl<$Res>
-    extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepKeyPresentCopyWith<$Res> {
-  _$StepKeyPresentCopyWithImpl(
-      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
-      : super(_value, (v) => _then(v as StepKeyPresent));
-
-  @override
-  StepKeyPresent get _value => super._value as StepKeyPresent;
-
-  @override
-  $Res call({
-    Object? symbol = freezed,
-    Object? yes = freezed,
-    Object? no = freezed,
-  }) {
-    return _then(StepKeyPresent(
-      symbol: symbol == freezed
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String?,
-      yes: yes == freezed
-          ? _value.yes
-          : yes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      no: no == freezed
-          ? _value.no
-          : no // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepKeyPresent')
-class _$StepKeyPresent implements StepKeyPresent {
-  const _$StepKeyPresent({this.symbol, this.yes, this.no});
-
-  factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
-      _$_$StepKeyPresentFromJson(json);
-
-  @override
-  final String? symbol;
-  @override
-  final String? yes;
-  @override
-  final String? no;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.keyPresent(symbol: $symbol, yes: $yes, no: $no)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepKeyPresent &&
-            (identical(other.symbol, symbol) ||
-                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
-            (identical(other.yes, yes) ||
-                const DeepCollectionEquality().equals(other.yes, yes)) &&
-            (identical(other.no, no) ||
-                const DeepCollectionEquality().equals(other.no, no)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbol) ^
-      const DeepCollectionEquality().hash(yes) ^
-      const DeepCollectionEquality().hash(no);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
-      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return keyPresent(symbol, yes, no);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (keyPresent != null) {
-      return keyPresent(symbol, yes, no);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return keyPresent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (keyPresent != null) {
-      return keyPresent(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
-  }
-}
-
-abstract class StepKeyPresent implements KeyboardStep {
-  const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
-      _$StepKeyPresent;
-
-  factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
-      _$StepKeyPresent.fromJson;
-
-  String? get symbol => throw _privateConstructorUsedError;
-  String? get yes => throw _privateConstructorUsedError;
-  String? get no => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StepResultCopyWith<$Res> {
-  factory $StepResultCopyWith(
-          StepResult value, $Res Function(StepResult) then) =
-      _$StepResultCopyWithImpl<$Res>;
-  $Res call({String? layout, String? variant});
-}
-
-/// @nodoc
-class _$StepResultCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
-    implements $StepResultCopyWith<$Res> {
-  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
-      : super(_value, (v) => _then(v as StepResult));
-
-  @override
-  StepResult get _value => super._value as StepResult;
-
-  @override
-  $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
-  }) {
-    return _then(StepResult(
-      layout: layout == freezed
-          ? _value.layout
-          : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variant: variant == freezed
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-@FreezedUnionValue('StepResult')
-class _$StepResult implements StepResult {
-  const _$StepResult({this.layout, this.variant});
-
-  factory _$StepResult.fromJson(Map<String, dynamic> json) =>
-      _$_$StepResultFromJson(json);
-
-  @override
-  final String? layout;
-  @override
-  final String? variant;
-
-  @override
-  String toString() {
-    return 'KeyboardStep.result(layout: $layout, variant: $variant)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is StepResult &&
-            (identical(other.layout, layout) ||
-                const DeepCollectionEquality().equals(other.layout, layout)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality().equals(other.variant, variant)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(layout) ^
-      const DeepCollectionEquality().hash(variant);
-
-  @JsonKey(ignore: true)
-  @override
-  $StepResultCopyWith<StepResult> get copyWith =>
-      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
-    required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
-  }) {
-    return result(layout, variant);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
-    required TResult orElse(),
-  }) {
-    if (result != null) {
-      return result(layout, variant);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
-  }) {
-    return result(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
-    required TResult orElse(),
-  }) {
-    if (result != null) {
-      return result(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
-  }
-}
-
-abstract class StepResult implements KeyboardStep {
-  const factory StepResult({String? layout, String? variant}) = _$StepResult;
-
-  factory StepResult.fromJson(Map<String, dynamic> json) =
-      _$StepResult.fromJson;
-
-  String? get layout => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StepResultCopyWith<StepResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
