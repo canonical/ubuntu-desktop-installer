@@ -35,7 +35,7 @@ class ConnectToInternetPage extends StatefulWidget {
   }
 
   @override
-  _ConnectToInternetPageState createState() => _ConnectToInternetPageState();
+  State<ConnectToInternetPage> createState() => _ConnectToInternetPageState();
 }
 
 class _ConnectToInternetPageState extends State<ConnectToInternetPage> {

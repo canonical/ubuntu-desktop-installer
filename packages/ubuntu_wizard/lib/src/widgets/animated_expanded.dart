@@ -27,7 +27,7 @@ class AnimatedExpanded extends StatefulWidget {
   final Duration duration;
 
   @override
-  _AnimatedExpandedState createState() => _AnimatedExpandedState();
+  State<AnimatedExpanded> createState() => _AnimatedExpandedState();
 }
 
 class _AnimatedExpandedState extends State<AnimatedExpanded>

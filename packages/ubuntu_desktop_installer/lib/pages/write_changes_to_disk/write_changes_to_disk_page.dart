@@ -27,7 +27,7 @@ class WriteChangesToDiskPage extends StatefulWidget {
   }
 
   @override
-  _WriteChangesToDiskPageState createState() => _WriteChangesToDiskPageState();
+  State<WriteChangesToDiskPage> createState() => _WriteChangesToDiskPageState();
 }
 
 class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {

@@ -32,7 +32,7 @@ class ProfileSetupPage extends StatefulWidget {
   }
 
   @override
-  _ProfileSetupPageState createState() => _ProfileSetupPageState();
+  State<ProfileSetupPage> createState() => _ProfileSetupPageState();
 }
 
 class _ProfileSetupPageState extends State<ProfileSetupPage> {

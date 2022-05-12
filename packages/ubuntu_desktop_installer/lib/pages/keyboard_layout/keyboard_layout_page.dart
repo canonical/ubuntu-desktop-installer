@@ -27,7 +27,7 @@ class KeyboardLayoutPage extends StatefulWidget {
   }
 
   @override
-  _KeyboardLayoutPageState createState() => _KeyboardLayoutPageState();
+  State<KeyboardLayoutPage> createState() => _KeyboardLayoutPageState();
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {

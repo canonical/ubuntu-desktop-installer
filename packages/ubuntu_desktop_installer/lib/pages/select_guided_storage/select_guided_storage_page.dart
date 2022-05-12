@@ -26,7 +26,7 @@ class SelectGuidedStoragePage extends StatefulWidget {
   }
 
   @override
-  _SelectGuidedStoragePageState createState() =>
+  State<SelectGuidedStoragePage> createState() =>
       _SelectGuidedStoragePageState();
 }
 
