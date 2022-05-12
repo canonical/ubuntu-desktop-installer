@@ -301,7 +301,7 @@ void main() {
   });
 
   test('keyboard layout key present step', () {
-    const step = KeyboardStep.keyPresent(
+    const step = AnyStep.stepKeyPresent(
       symbol: 'ö',
       yes: '9',
       no: '4',
@@ -313,7 +313,7 @@ void main() {
       '\$type': 'StepKeyPresent',
     };
     expect(step.toJson(), equals(json));
-    expect(KeyboardStep.fromJson(json), step);
+    expect(AnyStep.fromJson(json), step);
   });
 
   test('keyboard layout result step', () {

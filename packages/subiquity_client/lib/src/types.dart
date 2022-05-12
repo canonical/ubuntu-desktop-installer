@@ -84,28 +84,28 @@ class ApplicationStatus with _$ApplicationStatus {
 }
 
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
-class KeyboardStep with _$KeyboardStep {
+class AnyStep with _$AnyStep {
   @FreezedUnionValue('StepPressKey')
-  const factory KeyboardStep.pressKey({
+  const factory AnyStep.stepPressKey({
     List<String>? symbols,
     List<List<dynamic>>? keycodes,
   }) = StepPressKey;
 
   @FreezedUnionValue('StepKeyPresent')
-  const factory KeyboardStep.keyPresent({
+  const factory AnyStep.stepKeyPresent({
     String? symbol,
     String? yes,
     String? no,
   }) = StepKeyPresent;
 
   @FreezedUnionValue('StepResult')
-  const factory KeyboardStep.result({
+  const factory AnyStep.stepResult({
     String? layout,
     String? variant,
   }) = StepResult;
 
-  factory KeyboardStep.fromJson(Map<String, dynamic> json) =>
-      _$KeyboardStepFromJson(json);
+  factory AnyStep.fromJson(Map<String, dynamic> json) =>
+      _$AnyStepFromJson(json);
 }
 
 @freezed

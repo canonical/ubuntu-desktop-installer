@@ -606,7 +606,7 @@ abstract class _ApplicationStatus implements ApplicationStatus {
       throw _privateConstructorUsedError;
 }
 
-KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
+AnyStep _$AnyStepFromJson(Map<String, dynamic> json) {
   switch (json['\$type'] as String) {
     case 'StepPressKey':
       return StepPressKey.fromJson(json);
@@ -621,10 +621,10 @@ KeyboardStep _$KeyboardStepFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$KeyboardStepTearOff {
-  const _$KeyboardStepTearOff();
+class _$AnyStepTearOff {
+  const _$AnyStepTearOff();
 
-  StepPressKey pressKey(
+  StepPressKey stepPressKey(
       {List<String>? symbols, List<List<dynamic>>? keycodes}) {
     return StepPressKey(
       symbols: symbols,
@@ -632,7 +632,7 @@ class _$KeyboardStepTearOff {
     );
   }
 
-  StepKeyPresent keyPresent({String? symbol, String? yes, String? no}) {
+  StepKeyPresent stepKeyPresent({String? symbol, String? yes, String? no}) {
     return StepKeyPresent(
       symbol: symbol,
       yes: yes,
@@ -640,54 +640,54 @@ class _$KeyboardStepTearOff {
     );
   }
 
-  StepResult result({String? layout, String? variant}) {
+  StepResult stepResult({String? layout, String? variant}) {
     return StepResult(
       layout: layout,
       variant: variant,
     );
   }
 
-  KeyboardStep fromJson(Map<String, Object> json) {
-    return KeyboardStep.fromJson(json);
+  AnyStep fromJson(Map<String, Object> json) {
+    return AnyStep.fromJson(json);
   }
 }
 
 /// @nodoc
-const $KeyboardStep = _$KeyboardStepTearOff();
+const $AnyStep = _$AnyStepTearOff();
 
 /// @nodoc
-mixin _$KeyboardStep {
+mixin _$AnyStep {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
+        stepPressKey,
     required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -695,19 +695,18 @@ mixin _$KeyboardStep {
 }
 
 /// @nodoc
-abstract class $KeyboardStepCopyWith<$Res> {
-  factory $KeyboardStepCopyWith(
-          KeyboardStep value, $Res Function(KeyboardStep) then) =
-      _$KeyboardStepCopyWithImpl<$Res>;
+abstract class $AnyStepCopyWith<$Res> {
+  factory $AnyStepCopyWith(AnyStep value, $Res Function(AnyStep) then) =
+      _$AnyStepCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$KeyboardStepCopyWithImpl<$Res> implements $KeyboardStepCopyWith<$Res> {
-  _$KeyboardStepCopyWithImpl(this._value, this._then);
+class _$AnyStepCopyWithImpl<$Res> implements $AnyStepCopyWith<$Res> {
+  _$AnyStepCopyWithImpl(this._value, this._then);
 
-  final KeyboardStep _value;
+  final AnyStep _value;
   // ignore: unused_field
-  final $Res Function(KeyboardStep) _then;
+  final $Res Function(AnyStep) _then;
 }
 
 /// @nodoc
@@ -719,7 +718,7 @@ abstract class $StepPressKeyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StepPressKeyCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
     implements $StepPressKeyCopyWith<$Res> {
   _$StepPressKeyCopyWithImpl(
       StepPressKey _value, $Res Function(StepPressKey) _then)
@@ -762,7 +761,7 @@ class _$StepPressKey implements StepPressKey {
 
   @override
   String toString() {
-    return 'KeyboardStep.pressKey(symbols: $symbols, keycodes: $keycodes)';
+    return 'AnyStep.stepPressKey(symbols: $symbols, keycodes: $keycodes)';
   }
 
   @override
@@ -793,25 +792,25 @@ class _$StepPressKey implements StepPressKey {
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
+        stepPressKey,
     required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
   }) {
-    return pressKey(symbols, keycodes);
+    return stepPressKey(symbols, keycodes);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
     required TResult orElse(),
   }) {
-    if (pressKey != null) {
-      return pressKey(symbols, keycodes);
+    if (stepPressKey != null) {
+      return stepPressKey(symbols, keycodes);
     }
     return orElse();
   }
@@ -819,23 +818,23 @@ class _$StepPressKey implements StepPressKey {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
   }) {
-    return pressKey(this);
+    return stepPressKey(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
     required TResult orElse(),
   }) {
-    if (pressKey != null) {
-      return pressKey(this);
+    if (stepPressKey != null) {
+      return stepPressKey(this);
     }
     return orElse();
   }
@@ -846,7 +845,7 @@ class _$StepPressKey implements StepPressKey {
   }
 }
 
-abstract class StepPressKey implements KeyboardStep {
+abstract class StepPressKey implements AnyStep {
   const factory StepPressKey(
       {List<String>? symbols, List<List<dynamic>>? keycodes}) = _$StepPressKey;
 
@@ -869,8 +868,7 @@ abstract class $StepKeyPresentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StepKeyPresentCopyWithImpl<$Res>
-    extends _$KeyboardStepCopyWithImpl<$Res>
+class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
     implements $StepKeyPresentCopyWith<$Res> {
   _$StepKeyPresentCopyWithImpl(
       StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
@@ -920,7 +918,7 @@ class _$StepKeyPresent implements StepKeyPresent {
 
   @override
   String toString() {
-    return 'KeyboardStep.keyPresent(symbol: $symbol, yes: $yes, no: $no)';
+    return 'AnyStep.stepKeyPresent(symbol: $symbol, yes: $yes, no: $no)';
   }
 
   @override
@@ -952,25 +950,25 @@ class _$StepKeyPresent implements StepKeyPresent {
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
+        stepPressKey,
     required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
   }) {
-    return keyPresent(symbol, yes, no);
+    return stepKeyPresent(symbol, yes, no);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
     required TResult orElse(),
   }) {
-    if (keyPresent != null) {
-      return keyPresent(symbol, yes, no);
+    if (stepKeyPresent != null) {
+      return stepKeyPresent(symbol, yes, no);
     }
     return orElse();
   }
@@ -978,23 +976,23 @@ class _$StepKeyPresent implements StepKeyPresent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
   }) {
-    return keyPresent(this);
+    return stepKeyPresent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
     required TResult orElse(),
   }) {
-    if (keyPresent != null) {
-      return keyPresent(this);
+    if (stepKeyPresent != null) {
+      return stepKeyPresent(this);
     }
     return orElse();
   }
@@ -1005,7 +1003,7 @@ class _$StepKeyPresent implements StepKeyPresent {
   }
 }
 
-abstract class StepKeyPresent implements KeyboardStep {
+abstract class StepKeyPresent implements AnyStep {
   const factory StepKeyPresent({String? symbol, String? yes, String? no}) =
       _$StepKeyPresent;
 
@@ -1029,7 +1027,7 @@ abstract class $StepResultCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StepResultCopyWithImpl<$Res> extends _$KeyboardStepCopyWithImpl<$Res>
+class _$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
     implements $StepResultCopyWith<$Res> {
   _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
       : super(_value, (v) => _then(v as StepResult));
@@ -1071,7 +1069,7 @@ class _$StepResult implements StepResult {
 
   @override
   String toString() {
-    return 'KeyboardStep.result(layout: $layout, variant: $variant)';
+    return 'AnyStep.stepResult(layout: $layout, variant: $variant)';
   }
 
   @override
@@ -1100,25 +1098,25 @@ class _$StepResult implements StepResult {
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<String>? symbols, List<List<dynamic>>? keycodes)
-        pressKey,
+        stepPressKey,
     required TResult Function(String? symbol, String? yes, String? no)
-        keyPresent,
-    required TResult Function(String? layout, String? variant) result,
+        stepKeyPresent,
+    required TResult Function(String? layout, String? variant) stepResult,
   }) {
-    return result(layout, variant);
+    return stepResult(layout, variant);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String>? symbols, List<List<dynamic>>? keycodes)?
-        pressKey,
-    TResult Function(String? symbol, String? yes, String? no)? keyPresent,
-    TResult Function(String? layout, String? variant)? result,
+        stepPressKey,
+    TResult Function(String? symbol, String? yes, String? no)? stepKeyPresent,
+    TResult Function(String? layout, String? variant)? stepResult,
     required TResult orElse(),
   }) {
-    if (result != null) {
-      return result(layout, variant);
+    if (stepResult != null) {
+      return stepResult(layout, variant);
     }
     return orElse();
   }
@@ -1126,23 +1124,23 @@ class _$StepResult implements StepResult {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StepPressKey value) pressKey,
-    required TResult Function(StepKeyPresent value) keyPresent,
-    required TResult Function(StepResult value) result,
+    required TResult Function(StepPressKey value) stepPressKey,
+    required TResult Function(StepKeyPresent value) stepKeyPresent,
+    required TResult Function(StepResult value) stepResult,
   }) {
-    return result(this);
+    return stepResult(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StepPressKey value)? pressKey,
-    TResult Function(StepKeyPresent value)? keyPresent,
-    TResult Function(StepResult value)? result,
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
     required TResult orElse(),
   }) {
-    if (result != null) {
-      return result(this);
+    if (stepResult != null) {
+      return stepResult(this);
     }
     return orElse();
   }
@@ -1153,7 +1151,7 @@ class _$StepResult implements StepResult {
   }
 }
 
-abstract class StepResult implements KeyboardStep {
+abstract class StepResult implements AnyStep {
   const factory StepResult({String? layout, String? variant}) = _$StepResult;
 
   factory StepResult.fromJson(Map<String, dynamic> json) =
