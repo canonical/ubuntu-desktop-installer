@@ -52,7 +52,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
   }
 
   void _scrollToSelection() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
       if (model.selectedDiskIndex != -1) {

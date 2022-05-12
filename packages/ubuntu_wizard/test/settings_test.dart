@@ -30,7 +30,8 @@ void main() {
   });
 
   testWidgets('init locale', (tester) async {
-    tester.binding.window.localeTestValue = const Locale('fr', 'FR');
+    tester.binding.platformDispatcher.localeTestValue =
+        const Locale('fr', 'FR');
     final settings = Settings(MockGSettings());
     expect(settings.locale, equals(Locale('fr', 'FR')));
   });
