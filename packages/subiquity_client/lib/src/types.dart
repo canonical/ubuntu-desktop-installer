@@ -20,7 +20,7 @@ enum ErrorReportState {
   LOADING,
   DONE,
   ERROR_GENERATING,
-  ERROR_LOADING
+  ERROR_LOADING,
 }
 
 enum ErrorReportKind {
@@ -31,7 +31,7 @@ enum ErrorReportKind {
   NETWORK_FAIL,
   NETWORK_CLIENT_FAIL,
   SERVER_REQUEST_FAIL,
-  UNKNOWN
+  UNKNOWN,
 }
 
 @freezed
@@ -181,9 +181,18 @@ class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
       _$SourceSelectionAndSettingFromJson(json);
 }
 
-enum ProbeStatus { PROBING, FAILED, DONE }
+enum ProbeStatus {
+  PROBING,
+  FAILED,
+  DONE,
+}
 
-enum Bootloader { NONE, BIOS, UEFI, PREP }
+enum Bootloader {
+  NONE,
+  BIOS,
+  UEFI,
+  PREP,
+}
 
 @freezed
 class OsProber with _$OsProber {
