@@ -207,7 +207,6 @@ class PartitionButtonRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 OutlinedButton(
-                  child: const Icon(Icons.add),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
                     shape: const RoundedRectangleBorder(),
@@ -216,10 +215,10 @@ class PartitionButtonRow extends StatelessWidget {
                       ? () => showCreatePartitionDialog(
                           context, model.selectedDisk!, model.selectedGap!)
                       : null,
+                  child: const Icon(Icons.add),
                 ),
                 const VerticalDivider(width: 1),
                 OutlinedButton(
-                  child: const Icon(Icons.remove),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
                     shape: const RoundedRectangleBorder(),
@@ -228,10 +227,10 @@ class PartitionButtonRow extends StatelessWidget {
                       ? () => model.deletePartition(
                           model.selectedDisk!, model.selectedPartition!)
                       : null,
+                  child: const Icon(Icons.remove),
                 ),
                 const VerticalDivider(width: 1),
                 OutlinedButton(
-                  child: Text(lang.changeButtonText),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide.none,
                     shape: const RoundedRectangleBorder(),
@@ -240,6 +239,7 @@ class PartitionButtonRow extends StatelessWidget {
                       ? () => showEditPartitionDialog(context,
                           model.selectedDisk!, model.selectedPartition!)
                       : null,
+                  child: Text(lang.changeButtonText),
                 ),
               ],
             ),
@@ -249,16 +249,16 @@ class PartitionButtonRow extends StatelessWidget {
         ButtonBar(
           children: [
             OutlinedButton(
-              child: Text(lang.newPartitionTable),
               onPressed: model.canReformatDisk
                   ? () => _maybeReformatDisk(context)
                   : null,
+              child: Text(lang.newPartitionTable),
             ),
           ],
         ),
         OutlinedButton(
-          child: Text(lang.revertButtonText),
           onPressed: model.resetStorage,
+          child: Text(lang.revertButtonText),
         ),
       ],
     );

@@ -82,6 +82,8 @@ class OptionCardState extends State<OptionCard> {
       child: InkWell(
         hoverColor: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(6),
+        onHover: _setHovered,
+        onTap: widget.onSelected,
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(children: <Widget>[
@@ -107,8 +109,6 @@ class OptionCardState extends State<OptionCard> {
             ),
           ]),
         ),
-        onHover: _setHovered,
-        onTap: widget.onSelected,
       ),
     );
   }
