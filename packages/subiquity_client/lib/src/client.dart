@@ -20,6 +20,16 @@ String _formatResponseLog(String method, String response) {
   return '==> $method $formatted';
 }
 
+enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
+
+extension VariantString on Variant {
+  static Variant fromString(String value) {
+    return Variant.values.firstWhere((v) => value == v.toVariantString());
+  }
+
+  String toVariantString() => name.toLowerCase();
+}
+
 class SubiquityException implements Exception {
   const SubiquityException(this.method, this.statusCode, this.message);
   final String method;

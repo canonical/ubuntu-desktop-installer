@@ -5,16 +5,6 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
-enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
-
-extension VariantString on Variant {
-  static Variant fromString(String value) {
-    return Variant.values.firstWhere((v) => value == v.toVariantString());
-  }
-
-  String toVariantString() => name.toLowerCase();
-}
-
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
