@@ -32,14 +32,6 @@ sudo snap install flutter --classic
 
 Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
 
-### Configure Flutter
-
-NOTE: Notice to enable desktop support for Flutter:
-
-```
-flutter config --enable-linux-desktop
-```
-
 ### Download and build the Ubuntu Desktop installer
 
 Grab the source:

@@ -35,10 +35,8 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
 
-      - name: Configure Flutter
-        run: |
-          flutter config --enable-linux-desktop
-          flutter doctor -v
+      - name: Flutter Doctor
+        run: flutter doctor -v
 
       - name: Prepare environment for subiquity
         run: |

@@ -51,7 +51,7 @@ void main() {
     final model = MockApplyingChangesModel();
     when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
         .thenAnswer((realInvocation) {
-      WidgetsBinding.instance!.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         realInvocation.namedArguments[Symbol('onDoneTransition')]();
       });
     });
@@ -65,7 +65,7 @@ void main() {
     final model = MockApplyingChangesModel();
     when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
         .thenAnswer((realInvocation) {
-      WidgetsBinding.instance!.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         realInvocation.namedArguments[Symbol('onDoneTransition')]();
       });
     });
