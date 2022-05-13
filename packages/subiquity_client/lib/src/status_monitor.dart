@@ -78,12 +78,16 @@ class SubiquityStatusMonitor {
   }
 
   Future<String?> _receive(HttpClientRequest request) async {
-    final response = await request.close();
-    final data = await response.transform(utf8.decoder).join();
-    if (response.statusCode != 200) {
+    try {
+      final response = await request.close();
+      final data = await response.transform(utf8.decoder).join();
+      if (response.statusCode != 200) {
+        return null;
+      }
+      return data;
+    } on HttpException catch (_) {
       return null;
     }
-    return data;
   }
 
   void _updateStatus(ApplicationStatus? status) {
