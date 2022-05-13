@@ -337,8 +337,9 @@ class SubiquityClient {
   }
 
   Future<StorageResponseV2> setGuidedStorageV2(GuidedChoice choice) async {
-    final request = await _openUrl(
-        'POST', Uri.http('localhost', 'storage/v2/guided', choice.toJson()));
+    final request =
+        await _openUrl('POST', Uri.http('localhost', 'storage/v2/guided'));
+    request.write(jsonEncode(choice.toJson()));
     await request.close();
     final response = await request.done;
 
@@ -439,9 +440,8 @@ class SubiquityClient {
 
   Future<StorageResponseV2> reformatDiskV2(Disk disk) async {
     final request = await _openUrl(
-        'POST',
-        Uri.http(
-            'localhost', 'storage/v2/reformat_disk', {'disk_id': disk.id}));
+        'POST', Uri.http('localhost', 'storage/v2/reformat_disk'));
+    request.write(jsonEncode({'disk_id': disk.id}));
     await request.close();
     final response = await request.done;
 
