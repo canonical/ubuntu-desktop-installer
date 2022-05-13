@@ -29,6 +29,12 @@ extension VariantString on Variant {
   String toVariantString() => name.toLowerCase();
 }
 
+extension UVString on UsernameValidation {
+  static UsernameValidation fromString(String value) {
+    return UsernameValidation.values.firstWhere((v) => value == v.name);
+  }
+}
+
 class SubiquityException implements Exception {
   const SubiquityException(this.method, this.statusCode, this.message);
   final String method;
@@ -206,6 +212,21 @@ class SubiquityClient {
     request.write(jsonEncode(identity.toJson()));
     final response = await request.close();
     await _receive("setIdentity(${jsonEncode(identity.toJson())})", response);
+  }
+
+  Future<UsernameValidation> validateUsername(String username) async {
+    final request = await _openUrl(
+      'GET',
+      Uri.http(
+        'localhost',
+        'identity/validate_username',
+        {'username': '"$username"'},
+      ),
+    );
+    final response = await request.close();
+
+    final respStr = await _receive("identity/validate_username()", response);
+    return UVString.fromString(respStr.removePrefix('"').removeSuffix('"'));
   }
 
   Future<TimezoneInfo> timezone() async {

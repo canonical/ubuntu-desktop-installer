@@ -337,6 +337,14 @@ class IdentityData with _$IdentityData {
       _$IdentityDataFromJson(json);
 }
 
+enum UsernameValidation {
+  OK,
+  ALREADY_IN_USE,
+  SYSTEM_RESERVED,
+  INVALID_CHARS,
+  TOO_LONG,
+}
+
 @freezed
 class SSHData with _$SSHData {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
