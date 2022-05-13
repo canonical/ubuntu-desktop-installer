@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../installing_state.dart';
@@ -9,7 +10,7 @@ import '../../installing_state.dart';
 ///
 /// See also:
 ///  * [ApplyingChangesPage]
-class ApplyingChangesModel extends ChangeNotifier {
+class ApplyingChangesModel extends SafeChangeNotifier {
   /// Creates a model for the 'applying changes' page.
   ApplyingChangesModel(this._monitor);
 

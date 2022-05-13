@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 /// Implements the business logic of the WSL Advanced Setup page.
-class AdvancedSetupModel extends ChangeNotifier {
+class AdvancedSetupModel extends SafeChangeNotifier {
   /// Creates an advanced setup model.
   AdvancedSetupModel(this._client) {
     _conf.addListener(notifyListeners);

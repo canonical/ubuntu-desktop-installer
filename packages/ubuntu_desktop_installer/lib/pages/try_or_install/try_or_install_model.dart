@@ -1,6 +1,7 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
@@ -22,7 +23,7 @@ enum Option {
 }
 
 /// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends ChangeNotifier {
+class TryOrInstallModel extends SafeChangeNotifier {
   /// The currently selected option.
   Option get option => _option;
   Option _option = Option.none;

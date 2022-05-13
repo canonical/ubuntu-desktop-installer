@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 import '../../services.dart';
@@ -6,7 +6,7 @@ import '../../services.dart';
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 /// View model for [WriteChangesToDiskPage].
-class WriteChangesToDiskModel extends ChangeNotifier {
+class WriteChangesToDiskModel extends SafeChangeNotifier {
   /// Creates a model with the given client and service.
   WriteChangesToDiskModel(this._client, this._service);
 

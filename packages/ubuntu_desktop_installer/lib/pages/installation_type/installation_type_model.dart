@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -32,7 +32,7 @@ enum AdvancedFeature {
 }
 
 /// View model for [InstallationTypePage].
-class InstallationTypeModel extends ChangeNotifier {
+class InstallationTypeModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
   InstallationTypeModel(
       this._client, this._diskService, this._telemetryService);

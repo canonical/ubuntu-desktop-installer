@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -8,7 +9,7 @@ import 'package:ubuntu_wizard/utils.dart';
 const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 
 /// View model for [ProfileSetupPage].
-class ProfileSetupModel extends ChangeNotifier {
+class ProfileSetupModel extends SafeChangeNotifier {
   /// Creates a profile setup model.
   ProfileSetupModel(this._client) {
     Listenable.merge([

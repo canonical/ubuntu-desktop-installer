@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -11,7 +11,7 @@ import '../../services.dart';
 final log = Logger('keyboard_layout');
 
 /// Implements the business logic of the Keyboard Layout page.
-class KeyboardLayoutModel extends ChangeNotifier {
+class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client] and [keyboardService].
   KeyboardLayoutModel({
     required SubiquityClient client,

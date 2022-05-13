@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -10,7 +11,7 @@ import '../../services.dart';
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
 /// View model for [InstallationSlidesPage].
-class InstallationSlidesModel extends ChangeNotifier with SystemShutdown {
+class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
   /// Creates an instance with the given client.
   InstallationSlidesModel(this.client, this._journal);
 

@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 /// View model for [ChooseSecurityKeyPage].
-class ChooseSecurityKeyModel extends ChangeNotifier {
+class ChooseSecurityKeyModel extends SafeChangeNotifier {
   /// Creates the model with the given client.
   ChooseSecurityKeyModel(this._client) {
     Listenable.merge([
