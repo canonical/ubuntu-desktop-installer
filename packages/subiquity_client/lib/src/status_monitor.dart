@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
-import 'package:http/http.dart';
 import 'package:meta/meta.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
-import 'http_unix_client.dart';
 import 'types.dart';
 
 /// @internal
@@ -13,15 +12,19 @@ final log = Logger('subiquity_status');
 
 /// Background status monitor for subiquity.
 class SubiquityStatusMonitor {
-  SubiquityStatusMonitor([@visibleForTesting this._client]);
+  SubiquityStatusMonitor([@visibleForTesting HttpClient? client])
+      : _client = client ?? HttpClient();
 
-  HttpUnixClient? _client;
+  final HttpClient _client;
   ApplicationStatus? _status;
   StreamController<ApplicationStatus?>? _statusController;
 
   /// Starts monitoring the status using the provided [socketPath].
   Future<bool> start(String socketPath) async {
-    _client ??= HttpUnixClient(socketPath);
+    _client.connectionFactory = (uri, proxyHost, proxyPort) async {
+      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
+      return Socket.startConnect(address, 0);
+    };
     return _fetchStatus().then(_updateStatus).then((_) {
       _listen();
       return _status != null;
@@ -31,7 +34,7 @@ class SubiquityStatusMonitor {
   /// Stops monitoring the status.
   Future<void> stop() {
     _status = null;
-    _client = null;
+    _client.close();
     return _cancel();
   }
 
@@ -56,8 +59,8 @@ class SubiquityStatusMonitor {
   Future<void> _cancel() async => _statusController?.close();
 
   Future<ApplicationStatus?> _fetchStatus() async {
-    final request = _createRequest(_status?.state);
-    final response = await _sendRequest(request);
+    final request = await _openUrl(_status?.state);
+    final response = await _receive(request);
     if (response != null) {
       final json = jsonDecode(response) as Map<String, dynamic>;
       return ApplicationStatus.fromJson(json);
@@ -65,8 +68,8 @@ class SubiquityStatusMonitor {
     return null;
   }
 
-  static Request _createRequest(ApplicationState? state) {
-    return Request(
+  Future<HttpClientRequest> _openUrl(ApplicationState? state) {
+    return _client.openUrl(
       'GET',
       Uri.http('localhost', 'meta/status', {
         if (state != null) 'cur': '"${state.name}"',
@@ -74,13 +77,17 @@ class SubiquityStatusMonitor {
     );
   }
 
-  Future<String?> _sendRequest(Request request) async {
-    final response = await _client?.send(request);
-    final data = await response?.stream.bytesToString();
-    if (response?.statusCode != 200) {
+  Future<String?> _receive(HttpClientRequest request) async {
+    try {
+      final response = await request.close();
+      final data = await response.transform(utf8.decoder).join();
+      if (response.statusCode != 200) {
+        return null;
+      }
+      return data;
+    } on HttpException catch (_) {
       return null;
     }
-    return data;
   }
 
   void _updateStatus(ApplicationStatus? status) {
