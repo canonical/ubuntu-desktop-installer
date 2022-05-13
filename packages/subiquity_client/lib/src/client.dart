@@ -419,7 +419,9 @@ class SubiquityClient {
         'POST',
         Uri.http('localhost', 'shutdown',
             {'mode': '"REBOOT"', 'immediate': '$immediate'}));
-    await request.close();
+    try {
+      await request.close();
+    } on HttpException catch (_) {}
   }
 
   Future<void> shutdown({bool immediate = false}) async {
@@ -427,7 +429,9 @@ class SubiquityClient {
         'POST',
         Uri.http('localhost', 'shutdown',
             {'mode': '"POWEROFF"', 'immediate': '$immediate'}));
-    await request.close();
+    try {
+      await request.close();
+    } on HttpException catch (_) {}
   }
 
   Future<WSLConfigurationBase> wslConfigurationBase() async {
