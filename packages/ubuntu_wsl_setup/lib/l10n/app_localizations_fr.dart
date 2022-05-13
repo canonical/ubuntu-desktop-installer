@@ -65,6 +65,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Ce nom d\'utilisateur est invalide';
 
   @override
+  String get profileSetupUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get profileSetupUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
   String get profileSetupPasswordRequired => 'Un mot de passe est requis';
 
   @override

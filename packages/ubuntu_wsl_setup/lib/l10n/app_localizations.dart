@@ -349,6 +349,30 @@ abstract class AppLocalizations {
   /// **'The username is invalid'**
   String get profileSetupUsernameInvalid;
 
+  /// No description provided for @profileSetupUsernameInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'That user name already exists.'**
+  String get profileSetupUsernameInUse;
+
+  /// No description provided for @profileSetupUsernameSystemReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is reserved for system usage.'**
+  String get profileSetupUsernameSystemReserved;
+
+  /// No description provided for @profileSetupUsernameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is too long.'**
+  String get profileSetupUsernameTooLong;
+
+  /// No description provided for @profileSetupUsernameInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'That name contains invalid characters.'**
+  String get profileSetupUsernameInvalidChars;
+
   /// No description provided for @profileSetupPasswordRequired.
   ///
   /// In en, this message translates to:
