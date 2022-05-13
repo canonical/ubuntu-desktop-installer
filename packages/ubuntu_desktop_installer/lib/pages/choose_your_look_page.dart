@@ -78,9 +78,9 @@ class _ThemeOptionCard extends StatelessWidget {
         SizedBox(
           width: width,
           child: YaruSelectableContainer(
-            child: Image.asset(assetName),
             selected: selected,
             onTap: onTap,
+            child: Image.asset(assetName),
           ),
         ),
         Padding(

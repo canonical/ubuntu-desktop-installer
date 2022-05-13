@@ -60,8 +60,8 @@ class RoundedContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(_borderRadius),
       ),
       child: ClipRRect(
-        child: Material(child: child, color: color),
         borderRadius: BorderRadius.circular(_borderRadius - _borderWidth / 2),
+        child: Material(color: color, child: child),
       ),
     );
   }
