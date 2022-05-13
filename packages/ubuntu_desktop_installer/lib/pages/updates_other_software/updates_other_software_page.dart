@@ -16,7 +16,7 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
   const UpdatesOtherSoftwarePage({Key? key}) : super(key: key);
 
   @override
-  _UpdatesOtherSoftwarePageState createState() =>
+  State<UpdatesOtherSoftwarePage> createState() =>
       _UpdatesOtherSoftwarePageState();
 
   static Widget create(BuildContext context) {

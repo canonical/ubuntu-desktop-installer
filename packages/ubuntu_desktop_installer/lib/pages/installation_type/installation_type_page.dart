@@ -33,7 +33,7 @@ class InstallationTypePage extends StatefulWidget {
   }
 
   @override
-  _InstallationTypePageState createState() => _InstallationTypePageState();
+  State<InstallationTypePage> createState() => _InstallationTypePageState();
 }
 
 class _InstallationTypePageState extends State<InstallationTypePage> {

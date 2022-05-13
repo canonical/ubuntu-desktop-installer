@@ -44,7 +44,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: 8c13139961b9decc23a57f2f515f5248a21e1b06
+    source-commit: b49f5b1505d6597a5c64e3220bb45a291d9a78f7
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -173,7 +173,6 @@ parts:
       cd packages/ubuntu_desktop_installer
       flutter channel stable
       flutter upgrade
-      flutter config --enable-linux-desktop
       flutter doctor
       flutter pub get
       flutter build linux --release -v
@@ -192,7 +191,6 @@ parts:
       cd packages/ubuntu_wsl_setup
       flutter channel stable
       flutter upgrade
-      flutter config --enable-linux-desktop
       flutter doctor
       flutter pub get
       flutter build linux --release -v

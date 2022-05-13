@@ -27,7 +27,7 @@ class ConfigurationUIPage extends StatefulWidget {
   }
 
   @override
-  _ConfigurationUIPageState createState() => _ConfigurationUIPageState();
+  State<ConfigurationUIPage> createState() => _ConfigurationUIPageState();
 }
 
 class _ConfigurationUIPageState extends State<ConfigurationUIPage> {

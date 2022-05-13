@@ -5,11 +5,11 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  late SubiquityServer _testServer;
-  late SubiquityClient _client;
+  late SubiquityServer testServer;
+  late SubiquityClient client;
 
   test('initialization', () async {
-    final client = SubiquityClient();
+    client = SubiquityClient();
     final isOpen = client.isOpen;
     Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
     await expectLater(isOpen, completes);
@@ -18,9 +18,9 @@ void main() {
 
   group('subiquity', () {
     setUpAll(() async {
-      _testServer = SubiquityServer();
-      _client = SubiquityClient();
-      final socketPath = await _testServer.start(ServerMode.DRY_RUN, args: [
+      testServer = SubiquityServer();
+      client = SubiquityClient();
+      final socketPath = await testServer.start(ServerMode.DRY_RUN, args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -28,20 +28,20 @@ void main() {
         '--bootloader',
         'uefi',
       ]);
-      _client.open(socketPath);
+      client.open(socketPath);
     });
 
     tearDownAll(() async {
-      await _client.close();
-      await _testServer.stop();
+      await client.close();
+      await testServer.stop();
     });
 
     test('variant', () async {
-      await _client.setVariant(Variant.SERVER);
-      expect(await _client.variant(), equals(Variant.SERVER));
+      await client.setVariant(Variant.SERVER);
+      expect(await client.variant(), equals(Variant.SERVER));
 
-      await _client.setVariant(Variant.DESKTOP);
-      expect(await _client.variant(), equals(Variant.DESKTOP));
+      await client.setVariant(Variant.DESKTOP);
+      expect(await client.variant(), equals(Variant.DESKTOP));
     });
 
     test('source', () async {
@@ -62,27 +62,27 @@ void main() {
             isDefault: false)
       ], currentId: 'ubuntu-desktop');
 
-      await _client.setVariant(Variant.DESKTOP);
-      var actual = await _client.source();
+      await client.setVariant(Variant.DESKTOP);
+      var actual = await client.source();
       expect(actual.sources, unorderedEquals(expected.sources!));
       expect(actual.currentId, 'synthesized');
 
-      await _client.setSource('ubuntu-desktop-minimal');
-      actual = await _client.source();
+      await client.setSource('ubuntu-desktop-minimal');
+      actual = await client.source();
       expect(actual.currentId, 'ubuntu-desktop-minimal');
 
-      await _client.setSource('ubuntu-desktop');
-      actual = await _client.source();
+      await client.setSource('ubuntu-desktop');
+      actual = await client.source();
       expect(actual.currentId, 'ubuntu-desktop');
 
-      await _client.setVariant(Variant.SERVER);
-      actual = await _client.source();
+      await client.setVariant(Variant.SERVER);
+      actual = await client.source();
       expect(actual.currentId, 'synthesized');
     });
 
     test('locale', () async {
-      await _client.setLocale('en_US.UTF-8');
-      expect(await _client.locale(), 'en_US.UTF-8');
+      await client.setLocale('en_US.UTF-8');
+      expect(await client.locale(), 'en_US.UTF-8');
     });
 
     test('keyboard', () async {
@@ -92,9 +92,9 @@ void main() {
         toggle: null,
       );
 
-      await _client.setKeyboard(ks);
+      await client.setKeyboard(ks);
 
-      var kb = await _client.keyboard();
+      var kb = await client.keyboard();
       expect(kb.setting?.layout, 'us');
       expect(kb.setting?.variant, '');
       expect(kb.setting?.toggle, null);
@@ -102,54 +102,54 @@ void main() {
     });
 
     test('has rst', () async {
-      var rst = await _client.hasRst();
+      var rst = await client.hasRst();
       expect(rst, isFalse);
     });
 
     test('has bitlocker', () async {
-      var bitLocker = await _client.hasBitLocker();
+      var bitLocker = await client.hasBitLocker();
       expect(bitLocker, isFalse);
     });
 
     test('guided storage', () async {
-      var gs = await _client.getGuidedStorage();
+      var gs = await client.getGuidedStorage();
       expect(gs.disks, isNotEmpty);
       expect(gs.disks?[0].size, isNot(0));
     });
 
     test('set guided storage v2', () async {
-      final guided = await _client.getGuidedStorage();
+      final guided = await client.getGuidedStorage();
       expect(guided.disks, isNotEmpty);
 
       final choice = GuidedChoice(
         diskId: guided.disks!.first.id,
         useLvm: false,
       );
-      final response = await _client.setGuidedStorageV2(choice);
+      final response = await client.setGuidedStorageV2(choice);
       expect(response.disks, isNotNull);
       expect(response.disks, isNotEmpty);
     });
 
     test('get storage v2', () async {
-      final response = await _client.getStorageV2();
+      final response = await client.getStorageV2();
       expect(response.disks, isNotNull);
       expect(response.disks, isNotEmpty);
     });
 
     test('set storage v2', () async {
-      final response = await _client.setStorageV2();
+      final response = await client.setStorageV2();
       expect(response.disks, isNotNull);
       expect(response.disks, isNotEmpty);
     });
 
     test('reset storage v2', () async {
-      final response = await _client.resetStorageV2();
+      final response = await client.resetStorageV2();
       expect(response.disks, isNotNull);
       expect(response.disks, isNotEmpty);
     });
 
     test('add/edit/delete partition v2', () async {
-      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      final disks = await client.resetStorageV2().then((r) => r.disks);
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
@@ -157,7 +157,7 @@ void main() {
       expect(disks.first.objects!.whereType<Gap>(), hasLength(1));
 
       // add
-      var response = await _client.addPartitionV2(
+      var response = await client.addPartitionV2(
         disks.first,
         disks.first.objects!.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
@@ -173,7 +173,7 @@ void main() {
       expect(added.last.format, equals('ext2'));
 
       // edit
-      response = await _client.editPartitionV2(
+      response = await client.editPartitionV2(
         disks.first,
         added.last.copyWith(mount: '/bar', format: 'ext3'),
       );
@@ -188,7 +188,7 @@ void main() {
       expect(edited.last.format, equals('ext3'));
 
       // delete
-      response = await _client.deletePartitionV2(
+      response = await client.deletePartitionV2(
         disks.first,
         edited.last,
       );
@@ -201,7 +201,7 @@ void main() {
     });
 
     test('add swap', () async {
-      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      final disks = await client.resetStorageV2().then((r) => r.disks);
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
@@ -209,7 +209,7 @@ void main() {
       expect(disks.first.objects!.whereType<Gap>(), hasLength(1));
 
       // add
-      var response = await _client.addPartitionV2(
+      var response = await client.addPartitionV2(
         disks.first,
         disks.first.objects!.whereType<Gap>().single,
         Partition(format: 'swap'),
@@ -226,11 +226,11 @@ void main() {
     });
 
     test('add boot partition v2', () async {
-      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      final disks = await client.resetStorageV2().then((r) => r.disks);
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
-      final response = await _client.addBootPartitionV2(disks!.first);
+      final response = await client.addBootPartitionV2(disks!.first);
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
@@ -243,7 +243,7 @@ void main() {
     });
 
     test('reformat disk v2', () async {
-      final disks = await _client.resetStorageV2().then((r) => r.disks);
+      final disks = await client.resetStorageV2().then((r) => r.disks);
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
@@ -253,7 +253,7 @@ void main() {
       expect(disks.first.partitions, isNotNull);
       expect(disks.first.partitions, isEmpty);
 
-      var response = await _client.addPartitionV2(
+      var response = await client.addPartitionV2(
         disks.first,
         disks.first.objects!.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
@@ -264,7 +264,7 @@ void main() {
       expect(response.disks!.first.partitions, isNotNull);
       expect(response.disks!.first.partitions, isNotEmpty);
 
-      response = await _client.reformatDiskV2(disks.first);
+      response = await client.reformatDiskV2(disks.first);
 
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
@@ -274,7 +274,7 @@ void main() {
     });
 
     test('gap', () async {
-      final storage = await _client.getGuidedStorage();
+      final storage = await client.getGuidedStorage();
       expect(storage.disks, isNotEmpty);
 
       final gaps = storage.disks!.first.objects?.whereType<Gap>();
@@ -286,23 +286,23 @@ void main() {
     });
 
     test('needs root/boot', () async {
-      final response = await _client.getStorageV2();
+      final response = await client.getStorageV2();
       expect(response.needRoot, isNotNull);
       expect(response.needBoot, isNotNull);
     });
 
     test('proxy', () async {
-      await _client.setProxy('test');
-      expect(await _client.proxy(), 'test');
-      await _client.setProxy('');
-      expect(await _client.proxy(), '');
+      await client.setProxy('test');
+      expect(await client.proxy(), 'test');
+      await client.setProxy('');
+      expect(await client.proxy(), '');
     });
 
     test('mirror', () async {
-      await _client.setMirror('test');
-      expect(await _client.mirror(), endsWith('test'));
-      await _client.setMirror('archive.ubuntu.com/ubuntu');
-      expect(await _client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
+      await client.setMirror('test');
+      expect(await client.mirror(), endsWith('test'));
+      await client.setMirror('archive.ubuntu.com/ubuntu');
+      expect(await client.mirror(), endsWith('archive.ubuntu.com/ubuntu'));
     });
 
     test('identity', () async {
@@ -314,9 +314,9 @@ void main() {
         hostname: 'ubuntu-desktop',
       );
 
-      await _client.setIdentity(newId);
+      await client.setIdentity(newId);
 
-      var id = await _client.identity();
+      var id = await client.identity();
       expect(id.realname, 'ubuntu');
       expect(id.username, 'ubuntu');
       expect(id.cryptedPassword, '');
@@ -325,9 +325,9 @@ void main() {
       // empty defaults for null values
       newId = IdentityData();
 
-      await _client.setIdentity(newId);
+      await client.setIdentity(newId);
 
-      id = await _client.identity();
+      id = await client.identity();
       expect(id.realname, '');
       expect(id.username, '');
       expect(id.cryptedPassword, '');
@@ -335,13 +335,13 @@ void main() {
     });
 
     test('timezone', () async {
-      await _client.setTimezone('Pacific/Guam');
-      var tzdata = await _client.timezone();
+      await client.setTimezone('Pacific/Guam');
+      var tzdata = await client.timezone();
       expect(tzdata.timezone, 'Pacific/Guam');
       expect(tzdata.fromGeoip, isFalse);
 
-      await _client.setTimezone('geoip');
-      tzdata = await _client.timezone();
+      await client.setTimezone('geoip');
+      tzdata = await client.timezone();
       expect(tzdata.timezone, isNotNull);
       expect(tzdata.fromGeoip, isTrue);
     });
@@ -353,9 +353,9 @@ void main() {
         authorizedKeys: [],
       );
 
-      await _client.setSsh(newSsh);
+      await client.setSsh(newSsh);
 
-      var ssh = await _client.ssh();
+      var ssh = await client.ssh();
       expect(ssh.installServer, true);
       expect(ssh.allowPw, false);
       expect(ssh.authorizedKeys, []);
@@ -366,16 +366,16 @@ void main() {
         authorizedKeys: [],
       );
 
-      await _client.setSsh(newSsh);
+      await client.setSsh(newSsh);
 
-      ssh = await _client.ssh();
+      ssh = await client.ssh();
       expect(ssh.installServer, false);
       expect(ssh.allowPw, true);
       expect(ssh.authorizedKeys, []);
     });
 
     test('status', () async {
-      var status = await _client.status();
+      var status = await client.status();
       expect(status.state, ApplicationState.WAITING);
       expect(status.confirmingTty, '');
       expect(status.cloudInitOk, true);
@@ -385,15 +385,15 @@ void main() {
       expect(status.eventSyslogId, startsWith('subiquity_event.'));
 
       // Should not block as the status is currently WAITING
-      status = await _client.status(current: ApplicationState.RUNNING);
+      status = await client.status(current: ApplicationState.RUNNING);
     });
 
     test('markConfigured', () async {
-      await _client.markConfigured(['keyboard']);
+      await client.markConfigured(['keyboard']);
     });
 
     test('confirm', () async {
-      await _client.confirm('1');
+      await client.confirm('1');
     });
 
     test('keyboard detection steps', () async {
@@ -402,7 +402,7 @@ void main() {
       // test all three step types.
 
       // assumes that step 0 is a key press step
-      final step0 = await _client.getKeyboardStep();
+      final step0 = await client.getKeyboardStep();
       expect(step0, isA<StepPressKey>());
       final stepPressKey = step0 as StepPressKey;
       expect(stepPressKey.symbols, isNotEmpty);
@@ -412,14 +412,14 @@ void main() {
       expect(stepPressKey.keycodes!.first.last, isA<String>());
 
       // assumes that step 2 is a result step
-      final step2 = await _client.getKeyboardStep('2');
+      final step2 = await client.getKeyboardStep('2');
       expect(step2, isA<StepResult>());
       final stepResult = step2 as StepResult;
       expect(stepResult.layout, isNotEmpty);
       expect(stepResult.variant, isNotEmpty);
 
       // assumes that step 3 is a result step
-      final step3 = await _client.getKeyboardStep('3');
+      final step3 = await client.getKeyboardStep('3');
       expect(step3, isA<StepKeyPresent>());
       final stepKeyPresent = step3 as StepKeyPresent;
       expect(stepKeyPresent.symbol, isNotEmpty);
@@ -428,33 +428,33 @@ void main() {
     });
 
     test('free_only', () async {
-      await _client.setFreeOnly(true);
-      expect(await _client.freeOnly(), true);
+      await client.setFreeOnly(true);
+      expect(await client.freeOnly(), true);
 
-      await _client.setFreeOnly(false);
-      expect(await _client.freeOnly(), false);
+      await client.setFreeOnly(false);
+      expect(await client.freeOnly(), false);
     });
   });
 
   group('wsl', () {
     setUpAll(() async {
-      _testServer = SubiquityServer.wsl();
-      _client = SubiquityClient();
-      final socketPath = await _testServer.start(ServerMode.DRY_RUN);
-      _client.open(socketPath);
+      testServer = SubiquityServer.wsl();
+      client = SubiquityClient();
+      final socketPath = await testServer.start(ServerMode.DRY_RUN);
+      client.open(socketPath);
     });
 
     tearDownAll(() async {
-      await _client.close();
-      await _testServer.stop();
+      await client.close();
+      await testServer.stop();
     });
 
     test('variant', () async {
-      await _client.setVariant(Variant.WSL_SETUP);
-      expect(await _client.variant(), equals(Variant.WSL_SETUP));
+      await client.setVariant(Variant.WSL_SETUP);
+      expect(await client.variant(), equals(Variant.WSL_SETUP));
 
-      await _client.setVariant(Variant.WSL_CONFIGURATION);
-      expect(await _client.variant(), equals(Variant.WSL_CONFIGURATION));
+      await client.setVariant(Variant.WSL_CONFIGURATION);
+      expect(await client.variant(), equals(Variant.WSL_CONFIGURATION));
     });
 
     test('wslconfbase', () async {
@@ -465,9 +465,9 @@ void main() {
         networkGenerateresolvconf: false,
       );
 
-      await _client.setWslConfigurationBase(newConf);
+      await client.setWslConfigurationBase(newConf);
 
-      var conf = await _client.wslConfigurationBase();
+      var conf = await client.wslConfigurationBase();
       expect(conf.automountRoot, '/mnt/');
       expect(conf.automountOptions, '-f');
       expect(conf.networkGeneratehosts, false);
@@ -480,9 +480,9 @@ void main() {
         networkGenerateresolvconf: true,
       );
 
-      await _client.setWslConfigurationBase(newConf);
+      await client.setWslConfigurationBase(newConf);
 
-      conf = await _client.wslConfigurationBase();
+      conf = await client.wslConfigurationBase();
       expect(conf.automountRoot, '');
       expect(conf.automountOptions, '');
       expect(conf.networkGeneratehosts, true);
@@ -498,9 +498,9 @@ void main() {
         systemdEnabled: false,
       );
 
-      await _client.setWslConfigurationAdvanced(newConf);
+      await client.setWslConfigurationAdvanced(newConf);
 
-      var conf = await _client.wslConfigurationAdvanced();
+      var conf = await client.wslConfigurationAdvanced();
       expect(conf.automountEnabled, true);
       expect(conf.automountMountfstab, true);
       expect(conf.interopEnabled, true);
@@ -515,9 +515,9 @@ void main() {
         systemdEnabled: true,
       );
 
-      await _client.setWslConfigurationAdvanced(newConf);
+      await client.setWslConfigurationAdvanced(newConf);
 
-      conf = await _client.wslConfigurationAdvanced();
+      conf = await client.wslConfigurationAdvanced();
       expect(conf.automountEnabled, false);
       expect(conf.automountMountfstab, false);
       expect(conf.interopEnabled, false);

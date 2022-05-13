@@ -13,7 +13,7 @@ class ConfigureSecureBootPage extends StatefulWidget {
   const ConfigureSecureBootPage({Key? key}) : super(key: key);
 
   @override
-  _ConfigureSecureBootPageState createState() =>
+  State<ConfigureSecureBootPage> createState() =>
       _ConfigureSecureBootPageState();
 
   static Widget create(BuildContext context) {

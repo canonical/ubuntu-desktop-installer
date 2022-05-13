@@ -40,7 +40,7 @@ class Settings extends ChangeNotifier {
 
   /// The current application locale.
   Locale get locale => _locale;
-  Locale _locale = WidgetsBinding.instance!.window.locale;
+  Locale _locale = WidgetsBinding.instance.window.locale;
 
   /// Applies the given [locale].
   void applyLocale(Locale locale) {

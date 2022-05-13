@@ -28,7 +28,7 @@ class InstallationSlidesPage extends StatefulWidget {
   }
 
   @override
-  _InstallationSlidesPageState createState() => _InstallationSlidesPageState();
+  State<InstallationSlidesPage> createState() => _InstallationSlidesPageState();
 }
 
 class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
@@ -44,7 +44,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     });
     model.init();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       model.precacheSlideImages(context);
     });

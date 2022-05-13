@@ -27,14 +27,14 @@ class NetworkTile extends StatelessWidget {
             children: [
               if (title != null)
                 DefaultTextStyle(
-                  child: title!,
                   style: Theme.of(context).textTheme.subtitle1!,
+                  child: title!,
                 ),
               if (title != null && subtitle != null) const SizedBox(height: 2),
               if (subtitle != null)
                 DefaultTextStyle(
-                  child: subtitle!,
                   style: Theme.of(context).textTheme.bodyText2!,
+                  child: subtitle!,
                 ),
             ],
           ),

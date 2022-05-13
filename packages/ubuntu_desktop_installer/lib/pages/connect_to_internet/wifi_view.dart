@@ -62,7 +62,7 @@ class WifiView extends StatefulWidget {
   final OnWifiSelected onSelected;
 
   @override
-  _WifiViewState createState() => _WifiViewState();
+  State<WifiView> createState() => _WifiViewState();
 }
 
 class _WifiViewState extends State<WifiView> {

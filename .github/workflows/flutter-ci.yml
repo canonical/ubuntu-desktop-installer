@@ -22,9 +22,6 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Enable Linux desktop support
-      run: flutter config --enable-linux-desktop
-
     - name: Install Melos
       run: flutter pub global activate melos
 
@@ -71,9 +68,6 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Enable Linux desktop support
-      run: flutter config --enable-linux-desktop
-
     - name: Install Melos
       run: flutter pub global activate melos
 
@@ -97,9 +91,6 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable'
-
-    - name: Enable Linux desktop support
-      run: flutter config --enable-linux-desktop
 
     - name: Install Melos
       run: flutter pub global activate melos

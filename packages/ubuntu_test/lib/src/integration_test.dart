@@ -132,7 +132,7 @@ Future<bool> waitForWindowClosed() {
 // Sends a platform message to simulate the window being closed, to trigger the
 // application exit routine.
 Future<void> _testCloseWindow() async {
-  await ServicesBinding.instance!.defaultBinaryMessenger.handlePlatformMessage(
+  await ServicesBinding.instance.defaultBinaryMessenger.handlePlatformMessage(
     'ubuntu_wizard/events',
     StandardMethodCodec().encodeSuccessEnvelope('deleteEvent'),
     (_) {},

@@ -35,13 +35,13 @@ void main() {
   });
 
   test('timezone data', () {
-    const tzdata = TimezoneData(timezone: 'Europe/Paris', fromGeoip: false);
+    const tzdata = TimezoneInfo(timezone: 'Europe/Paris', fromGeoip: false);
     const json = <String, dynamic>{
       'timezone': 'Europe/Paris',
       'from_geoip': false,
     };
     expect(tzdata.toJson(), equals(json));
-    expect(TimezoneData.fromJson(json), tzdata);
+    expect(TimezoneInfo.fromJson(json), tzdata);
   });
 
   test('ssh data', () {
@@ -301,7 +301,7 @@ void main() {
   });
 
   test('keyboard layout key present step', () {
-    const step = KeyboardStep.keyPresent(
+    const step = AnyStep.stepKeyPresent(
       symbol: 'ö',
       yes: '9',
       no: '4',
@@ -313,7 +313,7 @@ void main() {
       '\$type': 'StepKeyPresent',
     };
     expect(step.toJson(), equals(json));
-    expect(KeyboardStep.fromJson(json), step);
+    expect(AnyStep.fromJson(json), step);
   });
 
   test('keyboard layout result step', () {

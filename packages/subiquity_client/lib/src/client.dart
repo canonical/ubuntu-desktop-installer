@@ -9,7 +9,7 @@ import 'types.dart';
 /// @internal
 final log = Logger('subiquity_client');
 
-const _kMaxResponseLogLength = 120;
+const _kMaxResponseLogLength = 1200;
 
 String _formatResponseLog(String method, String response) {
   var formatted = response;
@@ -17,6 +17,16 @@ String _formatResponseLog(String method, String response) {
     formatted = '${response.substring(0, _kMaxResponseLogLength)}...';
   }
   return '==> $method $formatted';
+}
+
+enum Variant { SERVER, DESKTOP, WSL_SETUP, WSL_CONFIGURATION }
+
+extension VariantString on Variant {
+  static Variant fromString(String value) {
+    return Variant.values.firstWhere((v) => value == v.toVariantString());
+  }
+
+  String toVariantString() => name.toLowerCase();
 }
 
 class SubiquityException implements Exception {
@@ -214,13 +224,13 @@ class SubiquityClient {
     await _receive("setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
-  Future<TimezoneData> timezone() async {
+  Future<TimezoneInfo> timezone() async {
     final request = await _openUrl('GET', Uri.http('localhost', 'timezone'));
     await request.close();
     final response = await request.done;
 
     final timezoneJson = await _receiveJson("timezone()", response);
-    return TimezoneData.fromJson(timezoneJson);
+    return TimezoneInfo.fromJson(timezoneJson);
   }
 
   Future<void> setTimezone(String timezone) async {
@@ -497,13 +507,13 @@ class SubiquityClient {
         "setWslconfadvanced(${jsonEncode(conf.toJson())})", response);
   }
 
-  Future<KeyboardStep> getKeyboardStep([String? step = '0']) async {
+  Future<AnyStep> getKeyboardStep([String? step = '0']) async {
     final request = await _openUrl('GET',
         Uri.http('localhost', 'keyboard/steps', {'index': '"${step ?? 0}"'}));
     await request.close();
     final response = await request.done;
 
     final json = await _receiveJson("getKeyboardStep($step)", response);
-    return KeyboardStep.fromJson(json);
+    return AnyStep.fromJson(json);
   }
 }

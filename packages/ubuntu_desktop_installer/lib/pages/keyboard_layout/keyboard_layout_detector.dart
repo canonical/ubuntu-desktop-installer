@@ -8,12 +8,12 @@ export 'package:subiquity_client/subiquity_client.dart';
 final log = Logger('keyboard_layout');
 
 /// Detects keyboard layout with help of subiquity's keyboard API.
-class KeyboardLayoutDetector extends ValueNotifier<KeyboardStep?> {
+class KeyboardLayoutDetector extends ValueNotifier<AnyStep?> {
   /// Creates a keyboard layout detector with the given client. Optionally, the
   /// initial step and a result listener can be provided.
   KeyboardLayoutDetector(
     this._client, {
-    KeyboardStep? value,
+    AnyStep? value,
     ValueChanged<StepResult>? onResult,
   })  : _onResult = onResult,
         super(value);
@@ -31,7 +31,7 @@ class KeyboardLayoutDetector extends ValueNotifier<KeyboardStep?> {
   StepKeyPresent? get _keyPresentStep =>
       value is StepKeyPresent ? value as StepKeyPresent : null;
 
-  void _updateCurrentStep(KeyboardStep? step) {
+  void _updateCurrentStep(AnyStep? step) {
     if (step is StepResult) {
       log.info('Detected ${step.layout} (${step.variant}) keyboard layout');
       _onResult?.call(step);
