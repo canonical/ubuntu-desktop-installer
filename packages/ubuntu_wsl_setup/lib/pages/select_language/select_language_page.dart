@@ -23,7 +23,7 @@ class SelectLanguagePage extends StatefulWidget {
   }
 
   @override
-  _SelectLanguagePageState createState() => _SelectLanguagePageState();
+  State<SelectLanguagePage> createState() => _SelectLanguagePageState();
 }
 
 class _SelectLanguagePageState extends State<SelectLanguagePage> {

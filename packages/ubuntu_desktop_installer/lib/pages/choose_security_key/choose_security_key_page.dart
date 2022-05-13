@@ -34,7 +34,7 @@ class ChooseSecurityKeyPage extends StatefulWidget {
   }
 
   @override
-  _ChooseSecurityKeyPageState createState() => _ChooseSecurityKeyPageState();
+  State<ChooseSecurityKeyPage> createState() => _ChooseSecurityKeyPageState();
 }
 
 class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {

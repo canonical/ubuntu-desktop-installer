@@ -79,7 +79,7 @@ class DetectKeyboardLayoutView extends StatefulWidget {
   final ValueChanged<int>? _onKeyPress;
 
   @override
-  _DetectKeyboardLayoutViewState createState() =>
+  State<DetectKeyboardLayoutView> createState() =>
       _DetectKeyboardLayoutViewState();
 }
 

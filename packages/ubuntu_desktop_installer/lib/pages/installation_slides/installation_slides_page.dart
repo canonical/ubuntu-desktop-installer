@@ -28,7 +28,7 @@ class InstallationSlidesPage extends StatefulWidget {
   }
 
   @override
-  _InstallationSlidesPageState createState() => _InstallationSlidesPageState();
+  State<InstallationSlidesPage> createState() => _InstallationSlidesPageState();
 }
 
 class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
