@@ -23,6 +23,10 @@
   "profileSetupPasswordMismatch": "The passwords do not match",
   "profileSetupUsernameRequired": "A username is required",
   "profileSetupUsernameInvalid": "The username is invalid",
+  "profileSetupUsernameInUse": "That user name already exists.",
+  "profileSetupUsernameSystemReserved": "That name is reserved for system usage.",
+  "profileSetupUsernameTooLong": "That name is too long.",
+  "profileSetupUsernameInvalidChars": "That name contains invalid characters.",
   "profileSetupPasswordRequired": "A password is required",
 
   "advancedSetupTitle": "Advanced setup",
