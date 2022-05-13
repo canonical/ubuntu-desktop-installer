@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -95,8 +96,57 @@ void main() {
     // expect(wasNotified, isTrue);
   });
 
+  test('server validation', () async {
+    const kRoot = 'root';
+    const kPlugdev = 'plugdev';
+    const kTooLong = 'too_long';
+
+    final client = MockSubiquityClient();
+    when(client.validateUsername(kRoot))
+        .thenAnswer((_) async => UsernameValidation.ALREADY_IN_USE);
+    when(client.validateUsername(kPlugdev))
+        .thenAnswer((_) async => UsernameValidation.SYSTEM_RESERVED);
+    when(client.validateUsername(kTooLong))
+        .thenAnswer((_) async => UsernameValidation.TOO_LONG);
+
+    final model = ProfileSetupModel(client);
+    expect(model.isValid, isFalse);
+
+    model.setUsernameValidators({
+      UsernameValidation.ALREADY_IN_USE: 'A',
+      UsernameValidation.SYSTEM_RESERVED: 'S',
+      UsernameValidation.TOO_LONG: 'T',
+    });
+
+    void testValid(
+      String realname,
+      String username,
+      String password,
+      String confirmedPassword,
+      Matcher matcher,
+      String errorText,
+    ) async {
+      model.realname = realname;
+      model.username = username;
+      model.password = password;
+      model.confirmedPassword = confirmedPassword;
+      await model.validate();
+      expect(model.isValid, matcher);
+
+      final validator = MultiValidator(model.validators);
+      expect(validator(username), errorText);
+    }
+
+    testValid('User', kRoot, 'password', 'password', isFalse, 'A');
+    testValid('User', kPlugdev, 'password', 'password', isFalse, 'S');
+    testValid('User', kTooLong, 'password', 'password', isFalse, 'T');
+  });
+
   test('validation', () {
-    final model = ProfileSetupModel(MockSubiquityClient());
+    final client = MockSubiquityClient();
+    when(client.validateUsername(any))
+        .thenAnswer((_) async => UsernameValidation.OK);
+    final model = ProfileSetupModel(client);
     expect(model.isValid, isFalse);
 
     void testValid(

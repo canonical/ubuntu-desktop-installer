@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -15,6 +17,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
     Listenable.merge([
       _realname,
       _username,
+      _usernameValidation,
       _password,
       _confirmedPassword,
       _showAdvanced,
@@ -24,6 +27,8 @@ class ProfileSetupModel extends SafeChangeNotifier {
   final SubiquityClient _client;
   final _realname = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
+  final _usernameValidation =
+      ValueNotifier<UsernameValidation>(UsernameValidation.OK);
   final _password = ValueNotifier('');
   final _confirmedPassword = ValueNotifier('');
 
@@ -64,9 +69,42 @@ class ProfileSetupModel extends SafeChangeNotifier {
   bool get isValid =>
       realname.isNotEmpty &&
       username.isNotEmpty &&
+      usernameOk &&
       RegExp(kValidUsernamePattern).hasMatch(username) &&
       password.isNotEmpty &&
       password == confirmedPassword;
+
+  /// The server response on whether the desired username is available.
+  UsernameValidation get usernameValidation => _usernameValidation.value;
+  bool get usernameOk => _usernameValidation.value == UsernameValidation.OK;
+
+  Future<void> validate() async {
+    if (username.isNotEmpty &&
+        RegExp(kValidUsernamePattern).hasMatch(username)) {
+      _usernameValidation.value = await _client.validateUsername(username);
+    }
+  }
+
+  final List<FieldValidator<String?>> _validators = [];
+  List<FieldValidator<String?>> get validators => _validators;
+
+  /// Initializes a list of [CallbackValidator]'s for each key-value pair of the
+  /// [errorValueToText] map, in which each value provided as the map key is a
+  /// possible value of [usernameValidation] for which the respective validator
+  /// will return invalid and the mapped value as the validator's error text.
+  void setUsernameValidators(Map<UsernameValidation, String> errorValueToText) {
+    if (_validators.isNotEmpty) {
+      return;
+    }
+    errorValueToText.forEach((key, value) {
+      _validators.add(
+        CallbackValidator(
+          (_) => usernameValidation != key,
+          errorText: value,
+        ),
+      );
+    });
+  }
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {

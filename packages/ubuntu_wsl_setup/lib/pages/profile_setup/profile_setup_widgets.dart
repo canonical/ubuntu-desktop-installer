@@ -41,6 +41,7 @@ class _UsernameFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final model = context.read<ProfileSetupModel>();
     final username =
         context.select<ProfileSetupModel, String>((model) => model.username);
 
@@ -55,11 +56,13 @@ class _UsernameFormField extends StatelessWidget {
         PatternValidator(
           kValidUsernamePattern,
           errorText: lang.profileSetupUsernameInvalid,
-        )
+        ),
+        ...model.validators,
       ]),
-      onChanged: (value) {
+      onChanged: (value) async {
         final model = Provider.of<ProfileSetupModel>(context, listen: false);
         model.username = value;
+        await model.validate();
       },
     );
   }

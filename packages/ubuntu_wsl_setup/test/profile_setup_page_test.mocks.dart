@@ -2,10 +2,12 @@
 // in ubuntu_wsl_setup/test/profile_setup_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i4;
-import 'dart:ui' as _i5;
+import 'dart:async' as _i6;
+import 'dart:ui' as _i7;
 
+import 'package:form_field_validator/form_field_validator.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_wizard/utils.dart' as _i3;
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart'
     as _i2;
@@ -77,6 +79,19 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
+  _i4.UsernameValidation get usernameValidation =>
+      (super.noSuchMethod(Invocation.getter(#usernameValidation),
+          returnValue: _i4.UsernameValidation.OK) as _i4.UsernameValidation);
+  @override
+  bool get usernameOk =>
+      (super.noSuchMethod(Invocation.getter(#usernameOk), returnValue: false)
+          as bool);
+  @override
+  List<_i5.FieldValidator<String?>> get validators =>
+      (super.noSuchMethod(Invocation.getter(#validators),
+              returnValue: <_i5.FieldValidator<String?>>[])
+          as List<_i5.FieldValidator<String?>>);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -85,25 +100,36 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i4.Future<void> loadProfileSetup() =>
+  _i6.Future<void> validate() =>
+      (super.noSuchMethod(Invocation.method(#validate, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i6.Future<void>);
+  @override
+  void setUsernameValidators(
+          Map<_i4.UsernameValidation, String>? errorValueToText) =>
+      super.noSuchMethod(
+          Invocation.method(#setUsernameValidators, [errorValueToText]),
+          returnValueForMissingStub: null);
+  @override
+  _i6.Future<void> loadProfileSetup() =>
       (super.noSuchMethod(Invocation.method(#loadProfileSetup, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i6.Future<void>);
   @override
-  _i4.Future<void> saveProfileSetup({String? salt}) => (super.noSuchMethod(
+  _i6.Future<void> saveProfileSetup({String? salt}) => (super.noSuchMethod(
       Invocation.method(#saveProfileSetup, [], {#salt: salt}),
       returnValue: Future<void>.value(),
-      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+      returnValueForMissingStub: Future<void>.value()) as _i6.Future<void>);
   @override
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
-  void addListener(_i5.VoidCallback? listener) =>
+  void addListener(_i7.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
+  void removeListener(_i7.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override
@@ -120,7 +146,7 @@ class MockUrlLauncher extends _i1.Mock implements _i3.UrlLauncher {
   }
 
   @override
-  _i4.Future<bool> launchUrl(String? url) =>
+  _i6.Future<bool> launchUrl(String? url) =>
       (super.noSuchMethod(Invocation.method(#launchUrl, [url]),
-          returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+          returnValue: Future<bool>.value(false)) as _i6.Future<bool>);
 }
