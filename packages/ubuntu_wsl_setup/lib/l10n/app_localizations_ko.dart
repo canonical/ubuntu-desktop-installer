@@ -149,10 +149,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUISystemdSubtitle => '부팅할 때 systemd를 활성화 해야 하는지 여부. 주의: 실험적 기능입니다.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => '변경사항 적용...';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => '인터넷 연결 상태에 따라 몇 분 정도 걸릴 수 있습니다.';
 
   @override
   String get setupCompleteTitle => '설치 완료';
