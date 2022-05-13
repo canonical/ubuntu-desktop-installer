@@ -45,6 +45,10 @@ class MockSelectLanguageModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#languageCount), returnValue: 0)
           as int);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -80,6 +84,10 @@ class MockSelectLanguageModel extends _i1.Mock
               returnValue: Future<_i2.Locale>.value(_FakeLocale_0()))
           as _i4.Future<_i2.Locale>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i2.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -90,10 +98,6 @@ class MockSelectLanguageModel extends _i1.Mock
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
 }
 
 /// A class which mocks [Settings].
@@ -111,6 +115,10 @@ class MockSettings extends _i1.Mock implements _i5.Settings {
   _i2.Locale get locale => (super.noSuchMethod(Invocation.getter(#locale),
       returnValue: _FakeLocale_0()) as _i2.Locale);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -123,6 +131,10 @@ class MockSettings extends _i1.Mock implements _i5.Settings {
       super.noSuchMethod(Invocation.method(#applyLocale, [locale]),
           returnValueForMissingStub: null);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i2.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -133,8 +145,4 @@ class MockSettings extends _i1.Mock implements _i5.Settings {
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
 }

@@ -49,6 +49,10 @@ class MockChooseSecurityKeyModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -63,6 +67,10 @@ class MockChooseSecurityKeyModel extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -73,8 +81,4 @@ class MockChooseSecurityKeyModel extends _i1.Mock
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
 }
