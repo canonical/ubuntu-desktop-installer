@@ -31,7 +31,7 @@ class SetupCompletePage extends StatefulWidget {
   }
 
   @override
-  _SetupCompletePageState createState() => _SetupCompletePageState();
+  State<SetupCompletePage> createState() => _SetupCompletePageState();
 }
 
 class _SetupCompletePageState extends State<SetupCompletePage> {

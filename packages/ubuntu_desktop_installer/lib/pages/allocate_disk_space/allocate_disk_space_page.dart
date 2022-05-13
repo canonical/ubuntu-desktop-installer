@@ -26,7 +26,7 @@ class AllocateDiskSpacePage extends StatefulWidget {
   }
 
   @override
-  _AllocateDiskSpacePageState createState() => _AllocateDiskSpacePageState();
+  State<AllocateDiskSpacePage> createState() => _AllocateDiskSpacePageState();
 }
 
 class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {

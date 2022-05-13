@@ -32,7 +32,7 @@ class WhoAreYouPage extends StatefulWidget {
   }
 
   @override
-  _WhoAreYouPageState createState() => _WhoAreYouPageState();
+  State<WhoAreYouPage> createState() => _WhoAreYouPageState();
 }
 
 class _WhoAreYouPageState extends State<WhoAreYouPage> {
