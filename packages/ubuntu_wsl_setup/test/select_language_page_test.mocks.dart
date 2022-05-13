@@ -58,6 +58,10 @@ class MockSelectLanguageModel extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#locale, [index]),
           returnValue: _FakeLocale_0()) as _i2.Locale);
   @override
+  _i2.Locale uiLocale(int? index) =>
+      (super.noSuchMethod(Invocation.method(#uiLocale, [index]),
+          returnValue: _FakeLocale_0()) as _i2.Locale);
+  @override
   _i4.Future<void> applyLocale(_i2.Locale? locale) =>
       (super.noSuchMethod(Invocation.method(#applyLocale, [locale]),
           returnValue: Future<void>.value(),

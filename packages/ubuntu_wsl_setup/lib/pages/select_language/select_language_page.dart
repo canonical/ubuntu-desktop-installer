@@ -77,7 +77,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 onTap: () {
                   model.selectedLanguageIndex = index;
                   final settings = Settings.of(context, listen: false);
-                  settings.applyLocale(model.locale(index));
+                  settings.applyLocale(model.uiLocale(index));
                 },
               ),
             );
