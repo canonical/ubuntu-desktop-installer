@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
@@ -10,7 +10,7 @@ import '../../l10n.dart';
 final log = Logger('welcome');
 
 /// Implements the business logic of the welcome page.
-class WelcomeModel extends ChangeNotifier {
+class WelcomeModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client].
   WelcomeModel(this._client);
 

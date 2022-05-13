@@ -12,6 +12,7 @@ dependencies:
   flutter_html: ^2.1.1
   get_it: ^7.2.0
   provider: ^6.0.0
+  safe_change_notifier: ^0.1.0
   scroll_to_index: ^2.0.0
   ubuntu_localizations:
     git:

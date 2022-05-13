@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 
 enum SecureBootMode { turnOff, dontInstall }
 
-class ConfigureSecureBootModel extends ChangeNotifier {
+class ConfigureSecureBootModel extends SafeChangeNotifier {
   ConfigureSecureBootModel({
     required SecureBootMode secureBootMode,
   }) : _mode = secureBootMode;

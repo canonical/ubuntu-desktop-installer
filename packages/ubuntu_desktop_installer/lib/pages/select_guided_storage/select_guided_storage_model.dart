@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -7,7 +7,7 @@ import '../../services.dart';
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 /// View model for [SelectGuidedStoragePage].
-class SelectGuidedStorageModel extends ChangeNotifier {
+class SelectGuidedStorageModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
   SelectGuidedStorageModel(this._service);
 

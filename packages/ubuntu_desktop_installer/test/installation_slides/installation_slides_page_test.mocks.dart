@@ -66,6 +66,10 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#journal),
           returnValue: Stream<String>.empty()) as _i4.Stream<String>);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -84,6 +88,10 @@ class MockInstallationSlidesModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -94,10 +102,6 @@ class MockInstallationSlidesModel extends _i1.Mock
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
   @override
   _i4.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
       Invocation.method(#shutdown, [], {#immediate: immediate}),

@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 /// Implements the business logic of the WSL Configuration UI page.
 ///
 /// See also:
 ///  * [ConfigurationUIPage]
-class ConfigurationUIModel extends ChangeNotifier {
+class ConfigurationUIModel extends SafeChangeNotifier {
   /// Creates a advanced setup model.
   ConfigurationUIModel(this._client) {
     _conf.addListener(notifyListeners);

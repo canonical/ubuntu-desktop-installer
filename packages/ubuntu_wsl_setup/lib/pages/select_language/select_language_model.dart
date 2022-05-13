@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:diacritic/diacritic.dart';
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -54,7 +54,7 @@ extension XDisplayName on LocalizedLanguage {
 }
 
 /// View model for [SelectLanguagePage].
-class SelectLanguageModel extends ChangeNotifier {
+class SelectLanguageModel extends SafeChangeNotifier {
   /// Creates a model with the specified client.
   SelectLanguageModel(this._client);
 

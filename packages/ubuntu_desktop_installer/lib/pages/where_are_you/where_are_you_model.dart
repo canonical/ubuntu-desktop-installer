@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
@@ -7,7 +7,7 @@ import '../../services.dart';
 
 final log = Logger('where_are_you');
 
-class WhereAreYouModel extends ChangeNotifier {
+class WhereAreYouModel extends SafeChangeNotifier {
   WhereAreYouModel(
       {required SubiquityClient client, required GeoService service})
       : _client = client,
