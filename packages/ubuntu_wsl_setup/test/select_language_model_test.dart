@@ -81,25 +81,15 @@ void main() {
     final model = SelectLanguageModel(MockSubiquityClient());
     await model.loadLanguages();
     final languages = List.generate(model.languageCount, model.language);
-    var blacklisted = 'Uyghur';
-    var index = languages.indexOf(blacklisted);
-    var loc = model.uiLocale(index);
-    expect(loc, kDefaultLocale);
-    blacklisted = 'Sinhala';
-    index = languages.indexOf(blacklisted);
-    loc = model.uiLocale(index);
-    expect(loc, kDefaultLocale);
+    expect(model.uiLocale(languages.indexOf('Uyghur')), kDefaultLocale);
+    expect(model.uiLocale(languages.indexOf('Sinhala')), kDefaultLocale);
   });
 
   test('language wont return unsupported chars', () async {
     final model = SelectLanguageModel(MockSubiquityClient());
     await model.loadLanguages();
     final languages = List.generate(model.languageCount, model.language);
-    var blacklisted = '\u{0626}';
-    var index = languages.indexWhere((lang) => lang.contains(blacklisted));
-    expect(index, -1);
-    blacklisted = '\u{0DC3}';
-    index = languages.indexWhere((element) => element.contains(blacklisted));
-    expect(index, -1);
+    expect(languages.any((e) => e.contains('\u{0626}')), isFalse);
+    expect(languages.any((e) => e.contains('\u{0DC3}')), isFalse);
   });
 }
