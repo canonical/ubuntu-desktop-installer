@@ -12,10 +12,9 @@ import 'package:ubuntu_test/mocks.dart';
 import '../widget_tester_extensions.dart';
 import 'installation_complete_page_test.mocks.dart';
 
-@GenerateMocks([InstallationCompleteModel, TelemetryService])
+@GenerateMocks([InstallationCompleteModel])
 void main() {
   Widget buildPage(InstallationCompleteModel model) {
-    registerMockService<TelemetryService>(MockTelemetryService());
     return Provider<InstallationCompleteModel>.value(
       value: model,
       child: InstallationCompletePage(),
