@@ -38,8 +38,6 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
       final settings = Settings.of(context, listen: false);
       model.selectLocale(settings.locale);
       model.getServerLocale().then((loc) {
-        if (loc == settings.locale) return;
-
         model.selectLocale(loc);
         settings.applyLocale(loc);
         _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
