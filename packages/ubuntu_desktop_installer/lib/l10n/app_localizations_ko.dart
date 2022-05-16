@@ -63,7 +63,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return '$RELEASE 설치하기';
+    return '$RELEASE 설치';
   }
 
   @override
