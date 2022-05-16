@@ -28,7 +28,7 @@ dependencies:
   nm: ^0.4.3
   provider: ^6.0.0
   safe_change_notifier: ^0.1.0
-  scroll_to_index: ^2.0.0
+  scroll_to_index: ^3.0.0
   subiquity_client:
     path: ../subiquity_client
   ubuntu_localizations:
