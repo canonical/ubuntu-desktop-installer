@@ -126,5 +126,9 @@
   "configurationUISystemdTitle": "Zapnuto",
   "@configurationUISystemdTitle": {},
   "configurationUIInteroperabilityTitle": "Zapnuto",
-  "@configurationUIInteroperabilityTitle": {}
+  "@configurationUIInteroperabilityTitle": {},
+  "applyingChangesDisclaimer": "Toto může několik minut trvat, v závislosti na rychlosti vašeho připojení k Internetu.",
+  "@applyingChangesDisclaimer": {},
+  "applyingChanges": "Uplatňování změn…",
+  "@applyingChanges": {}
 }
