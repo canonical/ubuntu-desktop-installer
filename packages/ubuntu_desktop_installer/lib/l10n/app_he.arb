@@ -81,7 +81,7 @@
   "@repairInstallation": {},
   "repairInstallationDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
   "@repairInstallationDescription": {},
-  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. עליך לכבות את RST דרך Windows בטרם הסרת אובונטו.",
+  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
   "@turnOffRSTDescription": {},
   "instructionsForRST": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
@@ -495,7 +495,7 @@
   "@supportSlideTitle": {},
   "availableSoftware": "תוכנות זמינות",
   "@availableSoftware": {},
-  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ב־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
+  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ל־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
