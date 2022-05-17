@@ -15,7 +15,7 @@ import 'package:ubuntu_test/mocks.dart';
 import '../widget_tester_extensions.dart';
 import 'keyboard_layout_page_test.mocks.dart';
 
-@GenerateMocks([KeyboardLayoutModel, KeyboardService])
+@GenerateMocks([KeyboardLayoutModel])
 void main() {
   KeyboardLayoutModel buildModel({
     bool? isValid,
@@ -162,10 +162,6 @@ void main() {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async => KeyboardSetup());
     registerMockService<SubiquityClient>(client);
-
-    final service = MockKeyboardService();
-    when(service.layouts).thenReturn([]);
-    registerMockService<KeyboardService>(service);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));
 

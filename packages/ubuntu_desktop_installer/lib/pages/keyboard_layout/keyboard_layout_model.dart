@@ -5,41 +5,34 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../../services.dart';
-
 /// @internal
 final log = Logger('keyboard_layout');
 
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends SafeChangeNotifier {
-  /// Creates a model with the specified [client] and [keyboardService].
-  KeyboardLayoutModel({
-    required SubiquityClient client,
-    required KeyboardService keyboardService,
-  })  : _client = client,
-        _keyboardService = keyboardService;
+  /// Creates a model with the specified client.
+  KeyboardLayoutModel(this._client);
 
   final SubiquityClient _client;
-  final KeyboardService _keyboardService;
+  List<KeyboardLayout> _layouts = [];
 
   /// The number of available keyboard layouts.
-  int get layoutCount => _keyboardService.layouts.length;
+  int get layoutCount => _layouts.length;
 
   /// Returns the name of the keyboard layout at [index].
   ///
   /// Note: the index must be valid.
   String layoutName(int index) {
     assert(index >= 0 && index < layoutCount);
-    return _keyboardService.layouts[index].name!;
+    return _layouts[index].name!;
   }
 
   /// The index of the currently selected layout.
   int get selectedLayoutIndex => _selectedLayoutIndex;
   int _selectedLayoutIndex = -1;
 
-  KeyboardLayout? get _selectedLayout => (_selectedLayoutIndex > -1)
-      ? _keyboardService.layouts[_selectedLayoutIndex]
-      : null;
+  KeyboardLayout? get _selectedLayout =>
+      (_selectedLayoutIndex > -1) ? _layouts[_selectedLayoutIndex] : null;
 
   /// Emits keyboard layout selection changes.
   Stream<int> get onLayoutSelected => _onLayoutSelected.stream;
@@ -64,10 +57,10 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
 
   /// Tries to find and select a keyboard layout and variant.
   Future<void> trySelectLayoutVariant(String? layout, String? variant) async {
-    final layoutIndex =
-        _keyboardService.layouts.indexWhere((l) => l.code == layout);
+    final layoutIndex = _layouts.indexWhere((l) => l.code == layout);
     if (layoutIndex != -1) {
-      final variantIndex = _keyboardService.layouts[layoutIndex].variants
+      final variantIndex = _layouts[layoutIndex]
+              .variants
               ?.indexWhere((v) => v.code == variant) ??
           -1;
       await selectLayout(layoutIndex, variantIndex);
@@ -111,11 +104,10 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    await _keyboardService.load(_client);
-    log.info('Loaded ${_keyboardService.layouts.length} keyboard layouts');
-
+    _layouts = (await _client.keyboard()).layouts ?? [];
+    log.info('Loaded ${_layouts.length} keyboard layouts');
     final keyboard = await _client.keyboard();
-    _selectedLayoutIndex = _keyboardService.layouts.indexWhere((layout) {
+    _selectedLayoutIndex = _layouts.indexWhere((layout) {
       return (layout.code ?? '') == (keyboard.setting?.layout ?? '');
     });
     if (_selectedLayoutIndex > -1) {
