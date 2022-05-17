@@ -47,17 +47,19 @@ class WizardAction {
     bool? highlighted,
     Object? arguments,
     VoidCallback? onNext,
+    VoidCallback? onBack,
   }) {
     return WizardAction(
       label: label ?? UbuntuLocalizations.of(context).continueAction,
       visible: visible,
       enabled: enabled,
       highlighted: highlighted,
-      onActivated: () {
+      onActivated: () async {
         if (onNext != null) {
           onNext();
         } else {
-          Wizard.of(context).next(arguments: arguments);
+          await Wizard.of(context).next(arguments: arguments);
+          onBack?.call();
         }
       },
     );

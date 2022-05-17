@@ -123,13 +123,14 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
           onNext: () async {
             await model.saveGuidedStorage();
             await Wizard.of(context).next();
-
+          },
+          onBack: () async {
             // If the user returns back to select another disk, the previously
             // configured guided storage must be reset to avoid multiple disks
             // being configured for guided partitioning.
             await model.resetGuidedStorage();
           },
-        )
+        ),
       ],
     );
   }

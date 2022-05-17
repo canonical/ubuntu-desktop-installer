@@ -110,6 +110,8 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
             // suspend network activity when proceeding on the next page
             model.cleanup();
             await Wizard.of(context).next();
+          },
+          onBack: () async {
             // resume network activity if/when returning back to this page
             model.init();
           },
