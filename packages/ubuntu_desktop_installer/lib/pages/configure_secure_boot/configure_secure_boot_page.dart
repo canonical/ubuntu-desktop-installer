@@ -69,7 +69,6 @@ class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
         WizardAction.next(
           context,
           enabled: model.isFormValid,
-          onActivated: Wizard.of(context).next,
         ),
       ],
     );
