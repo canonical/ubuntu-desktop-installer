@@ -41,6 +41,7 @@ class WhoAreYouModel extends SafeChangeNotifier {
       _realName,
       _hostname,
       _username,
+      _usernameValidation,
       _password,
       _confirmedPassword,
       _loginStrategy,
@@ -52,6 +53,8 @@ class WhoAreYouModel extends SafeChangeNotifier {
   final SubiquityClient _client;
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
+  final _usernameValidation =
+      ValueNotifier<UsernameValidation>(UsernameValidation.OK);
   final _hostname = ValueNotifier<String?>(null);
   final _password = ValueNotifier<String?>(null);
   final _confirmedPassword = ValueNotifier<String?>(null);
@@ -98,10 +101,22 @@ class WhoAreYouModel extends SafeChangeNotifier {
     return realName.isNotEmpty &&
         hostname.isNotEmpty &&
         username.isNotEmpty &&
+        usernameOk &&
         password.isNotEmpty &&
         password == confirmedPassword &&
         RegExp(kValidUsernamePattern).hasMatch(username) &&
         RegExp(kValidHostnamePattern).hasMatch(hostname);
+  }
+
+  /// The server response on whether the desired username is available.
+  UsernameValidation get usernameValidation => _usernameValidation.value;
+  bool get usernameOk => _usernameValidation.value == UsernameValidation.OK;
+
+  Future<void> validate() async {
+    if (username.isNotEmpty &&
+        RegExp(kValidUsernamePattern).hasMatch(username)) {
+      _usernameValidation.value = await _client.validateUsername(username);
+    }
   }
 
   /// Loads the identity data from the server, and resolves the system hostname.
