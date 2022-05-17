@@ -55,7 +55,7 @@ class TurnOffRSTPage extends StatelessWidget {
             context,
             label: lang.restartButtonText,
             highlighted: true,
-            onActivated: () async {
+            onDone: () async {
               await Wizard.of(context).done();
               model.reboot(immediate: true);
             },

@@ -84,7 +84,7 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
           context,
           enabled: context
               .select<ChooseSecurityKeyModel, bool>((model) => model.isValid),
-          onActivated: () async {
+          onNext: () async {
             final model =
                 Provider.of<ChooseSecurityKeyModel>(context, listen: false);
             await model.saveSecurityKey();

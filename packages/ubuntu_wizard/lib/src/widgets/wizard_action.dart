@@ -22,15 +22,15 @@ class WizardAction {
     BuildContext context, {
     bool? visible,
     bool? enabled,
-    VoidCallback? onActivated,
+    VoidCallback? onBack,
   }) {
     return WizardAction(
       label: UbuntuLocalizations.of(context).backAction,
       visible: visible,
       enabled: enabled ?? Wizard.of(context).hasPrevious,
       onActivated: () {
-        if (onActivated != null) {
-          onActivated();
+        if (onBack != null) {
+          onBack();
         } else {
           Wizard.of(context).back();
         }
@@ -44,15 +44,15 @@ class WizardAction {
     bool? visible,
     bool? enabled,
     Object? arguments,
-    VoidCallback? onActivated,
+    VoidCallback? onNext,
   }) {
     return WizardAction(
       label: UbuntuLocalizations.of(context).continueAction,
       visible: visible,
       enabled: enabled,
       onActivated: () {
-        if (onActivated != null) {
-          onActivated();
+        if (onNext != null) {
+          onNext();
         } else {
           Wizard.of(context).next(arguments: arguments);
         }
@@ -68,7 +68,7 @@ class WizardAction {
     bool? enabled,
     bool? highlighted,
     Object? result,
-    VoidCallback? onActivated,
+    VoidCallback? onDone,
   }) {
     return WizardAction(
       label: label,
@@ -76,8 +76,8 @@ class WizardAction {
       enabled: enabled,
       highlighted: highlighted,
       onActivated: () {
-        if (onActivated != null) {
-          onActivated();
+        if (onDone != null) {
+          onDone();
         } else {
           Wizard.of(context).next(arguments: result);
         }

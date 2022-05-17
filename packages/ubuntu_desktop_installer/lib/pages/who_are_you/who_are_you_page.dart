@@ -102,7 +102,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           context,
           enabled:
               context.select<WhoAreYouModel, bool>((model) => model.isValid),
-          onActivated: () async {
+          onNext: () async {
             final model = Provider.of<WhoAreYouModel>(context, listen: false);
             await model.saveIdentity();
 

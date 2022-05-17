@@ -124,7 +124,7 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
         ),
         WizardAction.next(
           context,
-          onActivated: () async {
+          onNext: () async {
             await model.save();
             await Wizard.of(context).next();
           },

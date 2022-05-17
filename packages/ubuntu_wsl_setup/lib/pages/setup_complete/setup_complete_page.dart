@@ -66,7 +66,7 @@ class _SetupCompletePageState extends State<SetupCompletePage> {
         WizardAction.done(
           context,
           label: lang.finishButton,
-          onActivated: () => model.reboot(immediate: false),
+          onDone: () => model.reboot(immediate: false),
         ),
       ],
     );

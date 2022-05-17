@@ -151,7 +151,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         WizardAction.next(
           context,
           enabled: model.isValid,
-          onActivated: () async {
+          onNext: () async {
             await model.applyKeyboardSettings();
             Wizard.of(context).next();
           },

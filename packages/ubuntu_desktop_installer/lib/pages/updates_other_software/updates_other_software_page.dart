@@ -93,7 +93,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         WizardAction.back(context),
         WizardAction.next(
           context,
-          onActivated: () async {
+          onNext: () async {
             final telemetry = getService<TelemetryService>();
             telemetry.setMinimal(
                 enabled: model.installationMode == InstallationMode.minimal);

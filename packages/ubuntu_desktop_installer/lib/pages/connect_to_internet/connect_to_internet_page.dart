@@ -106,7 +106,7 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
           context,
           enabled: model.isEnabled && !model.isConnecting && model.isConnected,
           visible: !model.isEnabled || !model.canConnect,
-          onActivated: () async {
+          onNext: () async {
             // suspend network activity when proceeding on the next page
             model.cleanup();
             await Wizard.of(context).next();
