@@ -47,7 +47,8 @@ class TurnOffBitLockerPage extends StatelessWidget {
       ),
       actions: [
         WizardAction.back(context),
-        WizardAction(
+        WizardAction.done(
+          context,
           label: lang.restartIntoWindows,
           highlighted: true,
           onActivated: () async {
