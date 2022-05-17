@@ -10,7 +10,7 @@ export 'wizard_action.dart';
 ///
 /// Provides the appropriate layout and the common building blocks for
 /// installation wizard pages.
-class WizardPage extends StatelessWidget {
+class WizardPage extends StatefulWidget {
   /// Creates the wizard page.
   const WizardPage({
     Key? key,
@@ -55,45 +55,51 @@ class WizardPage extends StatelessWidget {
   final List<WizardAction> actions;
 
   @override
+  State<WizardPage> createState() => _WizardPageState();
+}
+
+class _WizardPageState extends State<WizardPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: title, automaticallyImplyLeading: false),
+      appBar: AppBar(title: widget.title, automaticallyImplyLeading: false),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
-            padding: headerPadding,
-            child: header != null
+            padding: widget.headerPadding,
+            child: widget.header != null
                 ? Align(
                     alignment: Alignment.centerLeft,
-                    child: header,
+                    child: widget.header,
                   )
                 : null,
           ),
-          if (header != null) const SizedBox(height: kContentSpacing),
+          if (widget.header != null) const SizedBox(height: kContentSpacing),
           Expanded(
-            child: Padding(padding: contentPadding, child: content),
+            child:
+                Padding(padding: widget.contentPadding, child: widget.content),
           ),
           const SizedBox(height: kContentSpacing),
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: footerPadding,
+        padding: widget.footerPadding,
         child: Row(
-          mainAxisAlignment: footer != null
+          mainAxisAlignment: widget.footer != null
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.end,
           children: <Widget>[
-            if (footer != null) Expanded(child: footer!),
+            if (widget.footer != null) Expanded(child: widget.footer!),
             const SizedBox(width: kContentSpacing),
             ButtonBar(
               buttonPadding: EdgeInsets.zero,
               children: <Widget>[
-                for (final action in actions)
+                for (final action in widget.actions)
                   if (action.visible ?? true)
                     Padding(
                       padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                      child: _createButton(action),
+                      child: _createButton(context, action),
                     ),
               ],
             ),
@@ -103,8 +109,13 @@ class WizardPage extends StatelessWidget {
     );
   }
 
-  Widget _createButton(WizardAction action) {
-    final maybeActivate = action.enabled ?? true ? action.onActivated : null;
+  Widget _createButton(BuildContext context, WizardAction action) {
+    final maybeActivate = action.enabled ?? true
+        ? () async {
+            await action.onActivated?.call();
+            if (mounted) action.execute?.call();
+          }
+        : null;
     return action.highlighted == true
         ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
         : OutlinedButton(onPressed: maybeActivate, child: Text(action.label!));

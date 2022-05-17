@@ -97,11 +97,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           context,
           highlighted: true,
           label: lang.startInstallingButtonText,
-          onNext: () async {
-            await model.startInstallation();
-
-            Wizard.of(context).next();
-          },
+          onNext: model.startInstallation,
         ),
       ],
     );

@@ -81,10 +81,7 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
           highlighted: true,
           label: lang.setupButton,
           enabled: model.isValid,
-          onNext: () {
-            model.saveAdvancedSetup();
-            Wizard.of(context).next();
-          },
+          onNext: model.saveAdvancedSetup,
         ),
       ],
     );

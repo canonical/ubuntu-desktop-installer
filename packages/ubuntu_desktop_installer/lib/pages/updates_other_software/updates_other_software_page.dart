@@ -99,7 +99,6 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
                 enabled: model.installationMode == InstallationMode.minimal);
             telemetry.setRestrictedAddons(enabled: model.installThirdParty);
             await model.selectInstallationSource();
-            Wizard.of(context).next();
           },
         ),
       ],

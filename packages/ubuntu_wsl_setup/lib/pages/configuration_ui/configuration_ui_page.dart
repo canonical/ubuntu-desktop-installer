@@ -98,10 +98,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
           highlighted: true,
           label: lang.saveButton,
           enabled: model.isValid,
-          onNext: () {
-            model.saveConfiguration();
-            Wizard.of(context).next();
-          },
+          onNext: model.saveConfiguration,
         ),
       ],
     );

@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:wizard_router/wizard_router.dart';
+
+/// Wizard activation callback signature.
+typedef WizardCallback = FutureOr<void> Function();
 
 /// Defines a wizard action, such as _Back_ or _Continue_.
 ///
@@ -15,6 +20,7 @@ class WizardAction {
     this.highlighted,
     this.enabled,
     this.onActivated,
+    this.execute,
   });
 
   /// A _Go Back_ action action that returns back to the previous page.
@@ -22,19 +28,14 @@ class WizardAction {
     BuildContext context, {
     bool? visible,
     bool? enabled,
-    VoidCallback? onBack,
+    WizardCallback? onBack,
   }) {
     return WizardAction(
       label: UbuntuLocalizations.of(context).backAction,
       visible: visible,
-      enabled: enabled ?? Wizard.of(context).hasPrevious,
-      onActivated: () {
-        if (onBack != null) {
-          onBack();
-        } else {
-          Wizard.of(context).back();
-        }
-      },
+      enabled: enabled ?? Wizard.maybeOf(context)?.hasPrevious ?? false,
+      onActivated: onBack,
+      execute: () => Wizard.maybeOf(context)?.back(),
     );
   }
 
@@ -46,21 +47,18 @@ class WizardAction {
     bool? enabled,
     bool? highlighted,
     Object? arguments,
-    VoidCallback? onNext,
-    VoidCallback? onBack,
+    WizardCallback? onNext,
+    WizardCallback? onBack,
   }) {
     return WizardAction(
       label: label ?? UbuntuLocalizations.of(context).continueAction,
       visible: visible,
       enabled: enabled,
       highlighted: highlighted,
-      onActivated: () async {
-        if (onNext != null) {
-          onNext();
-        } else {
-          await Wizard.of(context).next(arguments: arguments);
-          onBack?.call();
-        }
+      onActivated: onNext,
+      execute: () async {
+        await Wizard.maybeOf(context)?.next(arguments: arguments);
+        onBack?.call();
       },
     );
   }
@@ -73,20 +71,15 @@ class WizardAction {
     bool? enabled,
     bool? highlighted,
     Object? result,
-    VoidCallback? onDone,
+    WizardCallback? onDone,
   }) {
     return WizardAction(
       label: label,
       visible: visible,
       enabled: enabled,
       highlighted: highlighted,
-      onActivated: () {
-        if (onDone != null) {
-          onDone();
-        } else {
-          Wizard.of(context).next(arguments: result);
-        }
-      },
+      onActivated: onDone,
+      execute: () => Wizard.maybeOf(context)?.done(result: result),
     );
   }
 
@@ -109,8 +102,15 @@ class WizardAction {
   /// disabled if [onActivated] is `null`.
   final bool? enabled;
 
-  /// Called when the action is triggered e.g. by pressing the action button.
+  /// Called when the action is triggered e.g. by pressing the action button,
+  /// _before_ proceeding to the next page or returning to the previous page.
   ///
   /// See also [enabled].
-  final VoidCallback? onActivated;
+  final WizardCallback? onActivated;
+
+  /// Called to execute the action i.e. to proceed to the next page or to return
+  /// to the previous page, _after_ the action was activated.
+  ///
+  /// See also [enabled].
+  final VoidCallback? execute;
 }

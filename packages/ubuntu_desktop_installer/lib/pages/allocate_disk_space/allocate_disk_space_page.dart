@@ -98,10 +98,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
         WizardAction.next(
           context,
           enabled: model.isValid,
-          onNext: () async {
-            await model.setStorage();
-            Wizard.of(context).next();
-          },
+          onNext: model.setStorage,
         ),
       ],
     );
