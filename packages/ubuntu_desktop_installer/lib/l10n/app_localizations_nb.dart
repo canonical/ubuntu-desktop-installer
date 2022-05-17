@@ -743,4 +743,10 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Støttet programvare';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

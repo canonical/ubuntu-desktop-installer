@@ -438,5 +438,7 @@
   "supportSlideResources": "For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
   "includedSoftware": "Included software",
   "availableSoftware": "Available software",
-  "supportedSoftware": "Supported software"
+  "supportedSoftware": "Supported software",
+  "copyingFiles": "Copying files...",
+  "installationFailed": "Installation failed"
 }

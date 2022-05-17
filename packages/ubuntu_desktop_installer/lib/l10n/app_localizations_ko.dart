@@ -743,4 +743,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get supportedSoftware => '지원되는 소프트웨어';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

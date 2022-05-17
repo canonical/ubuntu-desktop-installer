@@ -60,6 +60,17 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
   /// A stream of journal lines.
   Stream<String> get journal => _journal.stream;
 
+  var _logVisible = false;
+
+  /// Whether the log is visible.
+  bool get isLogVisible => _logVisible;
+
+  /// Toggle the log visibility.
+  void toggleLogVisibility() {
+    _logVisible = !_logVisible;
+    notifyListeners();
+  }
+
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
     _journal.start();

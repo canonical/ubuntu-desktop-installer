@@ -18,6 +18,8 @@ import 'installation_slides_page_test.mocks.dart';
 
 @GenerateMocks([InstallationSlidesModel, JournalService])
 void main() {
+  UbuntuTester.context = InstallationSlidesPage;
+
   InstallationSlidesModel buildModel({
     ApplicationState? state,
     bool? isDone,
@@ -27,6 +29,7 @@ void main() {
     int? installationStep,
     int? installationStepCount,
     Stream<String>? journal,
+    bool? isLogVisible,
   }) {
     final model = MockInstallationSlidesModel();
     when(model.state).thenReturn(state);
@@ -37,6 +40,7 @@ void main() {
     when(model.installationStep).thenReturn(installationStep ?? 1);
     when(model.installationStepCount).thenReturn(installationStepCount ?? 1);
     when(model.journal).thenAnswer((_) => journal ?? Stream<String>.empty());
+    when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     return model;
   }
 
@@ -113,6 +117,53 @@ void main() {
     expect(findsSlide('body2'), findsNothing);
     expect(find.byIcon(Icons.chevron_left), findsNothing);
     expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+  });
+
+  double getLogOffset(WidgetTester tester) {
+    final slide = find.byType(AnimatedSlide);
+    expect(slide, findsOneWidget);
+    return tester.widget<AnimatedSlide>(slide).offset.dy;
+  }
+
+  testWidgets('show log', (tester) async {
+    final model = buildModel(isLogVisible: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(getLogOffset(tester), equals(1.0));
+
+    await tester.tap(find.byIcon(Icons.terminal));
+    verify(model.toggleLogVisibility()).called(1);
+  });
+
+  testWidgets('hide log', (tester) async {
+    final model = buildModel(isLogVisible: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(getLogOffset(tester), equals(0.0));
+
+    await tester.tap(find.byIcon(Icons.terminal));
+    verify(model.toggleLogVisibility()).called(1);
+  });
+
+  testWidgets('installation state', (tester) async {
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
+
+    expect(find.text(tester.lang.copyingFiles), findsOneWidget);
+    expect(find.text(tester.lang.installationFailed), findsNothing);
+
+    when(model.hasError).thenReturn(true);
+    await tester.pumpWidget(Container(
+      key: ValueKey('force rebuild for hasError'),
+      child: tester.buildApp((_) => buildPage(model)),
+    ));
+    await tester.pump();
+
+    expect(find.text(tester.lang.installationFailed), findsOneWidget);
+    expect(find.text(tester.lang.copyingFiles), findsNothing);
   });
 
   testWidgets('creates a model', (tester) async {

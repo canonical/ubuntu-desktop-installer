@@ -129,6 +129,25 @@ void main() async {
     expect(windowClosed, isTrue);
   });
 
+  test('log visibility', () async {
+    final model = InstallationSlidesModel(
+      MockSubiquityClient(),
+      MockJournalService(),
+    );
+    expect(model.isLogVisible, isFalse);
+
+    var wasNotified = 0;
+    model.addListener(() => ++wasNotified);
+
+    model.toggleLogVisibility();
+    expect(model.isLogVisible, isTrue);
+    expect(wasNotified, equals(1));
+
+    model.toggleLogVisibility();
+    expect(model.isLogVisible, isFalse);
+    expect(wasNotified, equals(2));
+  });
+
   test('installation steps', () async {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current'))).thenAnswer(

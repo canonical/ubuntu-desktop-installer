@@ -743,4 +743,10 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get supportedSoftware => 'Obsługiwane oprogramowanie';
+
+  @override
+  String get copyingFiles => 'Copying files...';
+
+  @override
+  String get installationFailed => 'Installation failed';
 }

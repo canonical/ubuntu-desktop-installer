@@ -5,6 +5,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../../l10n.dart';
 import '../../services.dart';
 import '../../slides.dart';
 import 'installation_slides_model.dart';
@@ -52,37 +53,76 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              SlideShow(
-                interval: const Duration(seconds: 50),
-                slides: SlidesContext.of(context)
-                    .map((slide) => _SlidePage(slide: slide))
-                    .toList(),
-              ),
-              Positioned(
-                left: kContentSpacing,
-                bottom: kContentSpacing / 2,
-                child: Text(
-                  model.hasError
-                      ? 'Something went wrong.\n\nPlease restart the machine.'
-                      : model.isPreparing
-                          ? 'Preparing...'
-                          : 'Installing... (${model.installationStep + 1}/${model.installationStepCount})',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                      color: model.hasError
-                          ? Theme.of(context).errorColor
-                          : Colors.white),
+          Expanded(
+            child: Stack(
+              children: [
+                SlideShow(
+                  interval: const Duration(seconds: 50),
+                  slides: SlidesContext.of(context)
+                      .map((slide) => _SlidePage(slide: slide))
+                      .toList(),
                 ),
-              ),
-            ],
+                Positioned.fill(
+                  top: Theme.of(context).appBarTheme.toolbarHeight,
+                  child: AnimatedSlide(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 150),
+                    offset: Offset(0, model.isLogVisible ? 0 : 1),
+                    child: Container(
+                      color: Theme.of(context).backgroundColor,
+                      padding: const EdgeInsets.only(
+                        top: kContentSpacing,
+                        left: kContentSpacing,
+                        right: kContentSpacing,
+                      ),
+                      child: _JournalView(journal: model.journal),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-          LinearProgressIndicator(value: model.isInstalling ? null : 0),
-          Expanded(child: _JournalView(journal: model.journal)),
+          Container(
+            color: Theme.of(context).backgroundColor,
+            padding: const EdgeInsets.all(kContentSpacing),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      model.hasError
+                          ? lang.installationFailed
+                          : lang.copyingFiles,
+                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: model.hasError
+                              ? Theme.of(context).errorColor
+                              : null),
+                    ),
+                    Spacer(),
+                    IconButton(
+                      icon: Icon(Icons.terminal),
+                      color: model.isLogVisible
+                          ? Theme.of(context).primaryColor
+                          : null,
+                      splashRadius: 24,
+                      onPressed: model.toggleLogVisibility,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: kContentSpacing),
+                LinearProgressIndicator(
+                  value: model.isInstalling ? null : 0,
+                  backgroundColor: Theme.of(context).primaryColor.withAlpha(62),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
