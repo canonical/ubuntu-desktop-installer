@@ -149,10 +149,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Zda má být systemd spouštěn při startu systému. VÝSTRAHA: Toto je experimentální funkce.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Uplatňování změn…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Toto může několik minut trvat, v závislosti na rychlosti vašeho připojení k Internetu.';
 
   @override
   String get setupCompleteTitle => 'Nastavení dokončena';

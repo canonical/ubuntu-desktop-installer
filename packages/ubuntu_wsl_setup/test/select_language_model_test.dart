@@ -76,4 +76,20 @@ void main() {
     expect(model.selectedLanguageIndex, equals(1));
     expect(wasNotified, isTrue);
   });
+
+  test('uiLocale returns default for unsupported langs', () async {
+    final model = SelectLanguageModel(MockSubiquityClient());
+    await model.loadLanguages();
+    final languages = List.generate(model.languageCount, model.language);
+    expect(model.uiLocale(languages.indexOf('Uyghur')), kDefaultLocale);
+    expect(model.uiLocale(languages.indexOf('Sinhala')), kDefaultLocale);
+  });
+
+  test('language wont return unsupported chars', () async {
+    final model = SelectLanguageModel(MockSubiquityClient());
+    await model.loadLanguages();
+    final languages = List.generate(model.languageCount, model.language);
+    expect(languages.any((e) => e.contains('\u{0626}')), isFalse);
+    expect(languages.any((e) => e.contains('\u{0DC3}')), isFalse);
+  });
 }

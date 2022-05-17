@@ -45,7 +45,7 @@ class HiddenWifiView extends StatefulWidget {
   final bool expanded;
 
   @override
-  _HiddenWifiViewState createState() => _HiddenWifiViewState();
+  State<HiddenWifiView> createState() => _HiddenWifiViewState();
 }
 
 class _HiddenWifiViewState extends State<HiddenWifiView> {

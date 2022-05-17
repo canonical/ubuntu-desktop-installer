@@ -24,7 +24,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
       detector.init();
 
       final lang = AppLocalizations.of(context);
-      return ValueListenableBuilder<KeyboardStep?>(
+      return ValueListenableBuilder<AnyStep?>(
         valueListenable: detector,
         builder: (context, step, _) {
           final size = MediaQuery.of(context).size;
@@ -51,8 +51,8 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
                 child: OutlinedButton(
-                  child: Text(lang.noButtonText),
                   onPressed: step is StepKeyPresent ? detector.no : null,
+                  child: Text(lang.noButtonText),
                 ),
               ),
               const SizedBox(width: kButtonBarSpacing),
@@ -62,8 +62,8 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
                 child: OutlinedButton(
-                  child: Text(lang.yesButtonText),
                   onPressed: step is StepKeyPresent ? detector.yes : null,
+                  child: Text(lang.yesButtonText),
                 ),
               ),
             ],

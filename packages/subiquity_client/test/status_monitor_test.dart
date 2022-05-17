@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
-import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/src/http_unix_client.dart';
 import 'package:subiquity_client/src/status_monitor.dart';
 import 'package:subiquity_client/src/types.dart';
 import 'package:test/test.dart';
@@ -20,7 +19,7 @@ const isWaiting = ApplicationStatus(state: ApplicationState.WAITING);
 const isRunning = ApplicationStatus(state: ApplicationState.RUNNING);
 const isDone = ApplicationStatus(state: ApplicationState.DONE);
 
-@GenerateMocks([HttpUnixClient])
+@GenerateMocks([HttpClient, HttpClientRequest, HttpClientResponse])
 void main() {
   group('start', () {
     test('before listen', () async {
@@ -30,14 +29,14 @@ void main() {
       // start first
       await monitor.start('/tmp/subiquity.sock');
       expect(monitor.status, equals(isWaiting));
-      verify(client.send(argThat(isRequest(noStatus)))).called(1);
+      verify(client.openUrl('GET', noStatus)).called(1);
 
       // then listen
       await expectLater(
           monitor.onStatusChanged, emitsInOrder([isRunning, isDone]));
-      verify(client.send(argThat(isRequest(wasWaiting)))).called(1);
-      verify(client.send(argThat(isRequest(wasRunning)))).called(1);
-      verify(client.send(argThat(isRequest(wasDone)))).called(1);
+      verify(client.openUrl('GET', wasWaiting)).called(1);
+      verify(client.openUrl('GET', wasRunning)).called(1);
+      verify(client.openUrl('GET', wasDone)).called(1);
     });
 
     test('after listen', () async {
@@ -51,13 +50,13 @@ void main() {
       // then start
       await monitor.start('/tmp/subiquity.sock');
       expect(monitor.status, equals(isWaiting));
-      verify(client.send(argThat(isRequest(noStatus)))).called(1);
+      verify(client.openUrl('GET', noStatus)).called(1);
 
       await expectLater(
           monitor.onStatusChanged, emitsInOrder([isRunning, isDone]));
-      verify(client.send(argThat(isRequest(wasWaiting)))).called(1);
-      verify(client.send(argThat(isRequest(wasRunning)))).called(1);
-      verify(client.send(argThat(isRequest(wasDone)))).called(1);
+      verify(client.openUrl('GET', wasWaiting)).called(1);
+      verify(client.openUrl('GET', wasRunning)).called(1);
+      verify(client.openUrl('GET', wasDone)).called(1);
       expect(statuses, equals([isWaiting, isRunning, isDone]));
     });
   });
@@ -69,21 +68,21 @@ void main() {
     await monitor.start('/tmp/subiquity.sock');
     expect(monitor.status, equals(isWaiting));
     await expectLater(monitor.onStatusChanged, emits(isRunning));
-    verify(client.send(any)).called(isPositive);
+    verify(client.openUrl('GET', any)).called(isPositive);
 
     // no changes after stop
     await monitor.stop();
     await expectLater(monitor.onStatusChanged, neverEmits(isDone));
-    verifyNever(client.send(any));
+    verifyNever(client.openUrl('GET', any));
   });
 
   test('error', () async {
-    final client = MockHttpUnixClient();
-    when(client.send(argThat(isRequest(noStatus))))
+    final client = MockHttpClient();
+    when(client.openUrl('GET', noStatus))
         .thenAnswer((_) async => statusResponse(isWaiting));
-    when(client.send(argThat(isRequest(wasWaiting))))
+    when(client.openUrl('GET', wasWaiting))
         .thenAnswer((_) async => statusResponse(isRunning));
-    when(client.send(argThat(isRequest(wasRunning))))
+    when(client.openUrl('GET', wasRunning))
         .thenAnswer((_) async => errorResponse());
 
     final monitor = SubiquityStatusMonitor(client);
@@ -96,39 +95,36 @@ void main() {
 }
 
 // null -> waiting -> running -> done
-MockHttpUnixClient createMockClient() {
-  final client = MockHttpUnixClient();
-  when(client.send(argThat(isRequest(noStatus))))
+MockHttpClient createMockClient() {
+  final client = MockHttpClient();
+  when(client.openUrl('GET', noStatus))
       .thenAnswer((_) async => statusResponse(isWaiting));
-  when(client.send(argThat(isRequest(wasWaiting))))
+  when(client.openUrl('GET', wasWaiting))
       .thenAnswer((_) async => statusResponse(isRunning));
-  when(client.send(argThat(isRequest(wasRunning))))
+  when(client.openUrl('GET', wasRunning))
       .thenAnswer((_) async => statusResponse(isDone));
-  when(client.send(argThat(isRequest(wasDone))))
-      .thenAnswer((_) async => neverResponse());
+  when(client.openUrl('GET', wasDone)).thenAnswer((_) async => neverResponse());
   return client;
 }
 
-StreamedResponse statusResponse(ApplicationStatus status) {
-  final data = jsonEncode(status.toJson()).codeUnits;
-  return StreamedResponse(Stream.value(data), 200);
+HttpClientRequest statusResponse(ApplicationStatus status) {
+  return mockResponse(200, jsonEncode(status.toJson()));
 }
 
-StreamedResponse errorResponse([String error = '']) {
-  return StreamedResponse(Stream.value(error.codeUnits), 500);
+HttpClientRequest errorResponse([String error = '']) {
+  return mockResponse(500, error);
 }
 
-Future<StreamedResponse> neverResponse() {
-  return Completer<StreamedResponse>().future;
+HttpClientRequest mockResponse(int statusCode, String data) {
+  final response = MockHttpClientResponse();
+  when(response.statusCode).thenReturn(statusCode);
+  when(response.transform(utf8.decoder)).thenAnswer((_) => Stream.value(data));
+
+  final request = MockHttpClientRequest();
+  when(request.close()).thenAnswer((_) async => response);
+  return request;
 }
 
-class RequestMatcher extends Matcher {
-  const RequestMatcher(this.url);
-  final Uri url;
-  @override
-  bool matches(covariant Request request, Map matchState) => request.url == url;
-  @override
-  Description describe(Description description) => description.add('$url');
+Future<HttpClientRequest> neverResponse() {
+  return Completer<HttpClientRequest>().future;
 }
-
-Matcher isRequest(Uri expected) => RequestMatcher(expected);

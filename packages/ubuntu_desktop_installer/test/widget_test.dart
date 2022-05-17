@@ -31,7 +31,6 @@ void main() {
     when(client.isOpen).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
-    registerMockService<KeyboardService>(KeyboardService());
     registerMockService<TelemetryService>(TelemetryService());
 
     await tester.pumpWidget(ChangeNotifierProvider(

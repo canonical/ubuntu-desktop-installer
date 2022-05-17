@@ -10,7 +10,6 @@ environment:
 dependencies:
   dartx: ^0.8.0
   freezed_annotation: ^0.14.1
-  http: ^0.13.1
   json_annotation: ^4.0.1
   meta: ^1.3.0
   package_config: ^2.0.2

@@ -30,7 +30,7 @@ class _FakeKeyboardSetup_2 extends _i1.Fake implements _i3.KeyboardSetup {}
 
 class _FakeIdentityData_3 extends _i1.Fake implements _i3.IdentityData {}
 
-class _FakeTimezoneData_4 extends _i1.Fake implements _i3.TimezoneData {}
+class _FakeTimezoneInfo_4 extends _i1.Fake implements _i3.TimezoneInfo {}
 
 class _FakeSSHData_5 extends _i1.Fake implements _i3.SSHData {}
 
@@ -49,7 +49,7 @@ class _FakeWSLConfigurationBase_9 extends _i1.Fake
 class _FakeWSLConfigurationAdvanced_10 extends _i1.Fake
     implements _i3.WSLConfigurationAdvanced {}
 
-class _FakeKeyboardStep_11 extends _i1.Fake implements _i3.KeyboardStep {}
+class _FakeAnyStep_11 extends _i1.Fake implements _i3.AnyStep {}
 
 /// A class which mocks [GSettings].
 ///
@@ -127,12 +127,12 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i5.Future<_i3.Variant> variant() =>
+  _i5.Future<_i6.Variant> variant() =>
       (super.noSuchMethod(Invocation.method(#variant, []),
-              returnValue: Future<_i3.Variant>.value(_i3.Variant.SERVER))
-          as _i5.Future<_i3.Variant>);
+              returnValue: Future<_i6.Variant>.value(_i6.Variant.SERVER))
+          as _i5.Future<_i6.Variant>);
   @override
-  _i5.Future<void> setVariant(_i3.Variant? variant) =>
+  _i5.Future<void> setVariant(_i6.Variant? variant) =>
       (super.noSuchMethod(Invocation.method(#setVariant, [variant]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
@@ -204,10 +204,10 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i5.Future<_i3.TimezoneData> timezone() => (super.noSuchMethod(
+  _i5.Future<_i3.TimezoneInfo> timezone() => (super.noSuchMethod(
           Invocation.method(#timezone, []),
-          returnValue: Future<_i3.TimezoneData>.value(_FakeTimezoneData_4()))
-      as _i5.Future<_i3.TimezoneData>);
+          returnValue: Future<_i3.TimezoneInfo>.value(_FakeTimezoneInfo_4()))
+      as _i5.Future<_i3.TimezoneInfo>);
   @override
   _i5.Future<void> setTimezone(String? timezone) =>
       (super.noSuchMethod(Invocation.method(#setTimezone, [timezone]),
@@ -350,11 +350,10 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i5.Future<_i3.KeyboardStep> getKeyboardStep([String? step = r'0']) =>
+  _i5.Future<_i3.AnyStep> getKeyboardStep([String? step = r'0']) =>
       (super.noSuchMethod(Invocation.method(#getKeyboardStep, [step]),
-              returnValue:
-                  Future<_i3.KeyboardStep>.value(_FakeKeyboardStep_11()))
-          as _i5.Future<_i3.KeyboardStep>);
+              returnValue: Future<_i3.AnyStep>.value(_FakeAnyStep_11()))
+          as _i5.Future<_i3.AnyStep>);
 }
 
 /// A class which mocks [SubiquityServer].

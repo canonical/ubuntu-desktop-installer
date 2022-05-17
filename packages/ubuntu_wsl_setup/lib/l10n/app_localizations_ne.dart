@@ -8,88 +8,88 @@ class AppLocalizationsNe extends AppLocalizations {
   AppLocalizationsNe([String locale = 'ne']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'उबुन्टु WSL';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'उबुन्टु WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'बाहिर निस्कनुहोस्';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'समाप्त गर्नुहोस्';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'बचत गर्नुहोस्';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'सेटअप';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'आफ्नो भाषा चयन गर्नुहोस्';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'प्रोफाइल सेटअप';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'कृपया पूर्वनिर्धारित UNIX प्रयोगकर्ता खाता सिर्जना गर्नुहोस्। थप जानकारीको लागि यहाँ जानुहोस्: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'तपाईंको नाम';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'तपाईको नाम आवश्यक छ';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'प्रयोगकर्ता नाम छान्नुहोस्';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'तपाइँ विन्डो प्रयोगकर्ता नाम भन्दा फरक प्रयोगकर्ता नाम प्रयोग गर्न सक्नुहुन्छ';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'पासवर्ड टाइप गर्नुहोस्';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'आफ्नो पासवर्ड फेरि टाइप गर्नुहोस्';
 
   @override
   String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'पासवर्डहरू मेल खाएनन्';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'एक प्रयोगकर्ता नाम आवश्यक छ';
 
   @override
   String get profileSetupUsernameInvalid => 'The username is invalid';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'पासवर्ड आवश्यक छ';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'उन्नत सेटअप';
 
   @override
   String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'माउन्ट स्थान';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'अटोमाउन्टको लागि स्थान';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'स्थान अमान्य छ';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'माउन्ट विकल्प';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'अटोमाउन्टको लागि माउन्ट विकल्प पारित गरियो';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'होस्ट जेनेरेसन सक्षम गर्नुहोस्';
 
   @override
   String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';

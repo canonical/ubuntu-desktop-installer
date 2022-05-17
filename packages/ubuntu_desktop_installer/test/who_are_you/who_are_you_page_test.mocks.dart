@@ -93,6 +93,10 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       super.noSuchMethod(Invocation.setter(#showPassword, value),
           returnValueForMissingStub: null);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -107,6 +111,10 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -117,8 +125,4 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
 }

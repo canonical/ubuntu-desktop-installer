@@ -187,7 +187,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'アップデートとその他のソフトウェア';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'あらかじめどのアプリケーションをインストールしますか？';
+  String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください:';
 
   @override
   String get normalInstallationTitle => '通常のインストール';

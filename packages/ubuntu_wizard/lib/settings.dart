@@ -2,9 +2,10 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 
 /// Provides access to application-wide settings.
-class Settings extends ChangeNotifier {
+class Settings extends SafeChangeNotifier {
   /// Creates an app settings instance using the given GSettings as a backend
   /// for storing the settings.
   Settings(this._gsettings);

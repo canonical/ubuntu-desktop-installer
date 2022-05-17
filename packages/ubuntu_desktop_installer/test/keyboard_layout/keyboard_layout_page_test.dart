@@ -15,7 +15,7 @@ import 'package:ubuntu_test/mocks.dart';
 import '../widget_tester_extensions.dart';
 import 'keyboard_layout_page_test.mocks.dart';
 
-@GenerateMocks([KeyboardLayoutModel, KeyboardService])
+@GenerateMocks([KeyboardLayoutModel])
 void main() {
   KeyboardLayoutModel buildModel({
     bool? isValid,
@@ -44,7 +44,7 @@ void main() {
   Widget buildPage(KeyboardLayoutModel model) {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any))
-        .thenAnswer((_) async => KeyboardStep.pressKey());
+        .thenAnswer((_) async => AnyStep.stepPressKey());
     registerMockService<SubiquityClient>(client);
 
     return ChangeNotifierProvider<KeyboardLayoutModel>.value(
@@ -113,7 +113,7 @@ void main() {
 
     final context = tester.element(find.byType(DetectKeyboardLayoutView));
     Navigator.of(context)
-        .pop(KeyboardStep.result(layout: 'layout', variant: 'variant'));
+        .pop(AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });
@@ -162,10 +162,6 @@ void main() {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async => KeyboardSetup());
     registerMockService<SubiquityClient>(client);
-
-    final service = MockKeyboardService();
-    when(service.layouts).thenReturn([]);
-    registerMockService<KeyboardService>(service);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));
 

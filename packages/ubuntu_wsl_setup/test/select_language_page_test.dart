@@ -24,10 +24,13 @@ void main() {
     when(model.languageCount).thenReturn(3);
     when(model.language(0)).thenReturn('English');
     when(model.locale(0)).thenReturn(Locale('en_US'));
+    when(model.uiLocale(0)).thenReturn(Locale('en_US'));
     when(model.language(1)).thenReturn('French');
     when(model.locale(1)).thenReturn(Locale('fr_FR'));
+    when(model.uiLocale(1)).thenReturn(Locale('fr_FR'));
     when(model.language(2)).thenReturn('German');
     when(model.locale(2)).thenReturn(Locale('de_DE'));
+    when(model.uiLocale(2)).thenReturn(Locale('de_DE'));
     when(model.selectedLanguageIndex).thenReturn(1);
     when(model.getServerLocale()).thenAnswer((_) async => Locale('fr', 'FR'));
     return model;

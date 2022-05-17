@@ -15,7 +15,7 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.timezone())
-        .thenAnswer((_) async => TimezoneData(timezone: location.name));
+        .thenAnswer((_) async => TimezoneInfo(timezone: location.name));
     final service = MockGeoService();
     when(service.searchTimezone(location.name))
         .thenAnswer((_) async => [location]);

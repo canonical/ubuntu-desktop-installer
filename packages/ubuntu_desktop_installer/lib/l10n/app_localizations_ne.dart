@@ -25,25 +25,25 @@ class AppLocalizationsNe extends AppLocalizations {
   String get okButtonText => 'हुन्छ';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'नगर्नुहोस्';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'फेरि सुरु गर्नुहोस्';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'फिर्ता गर्नुहोस्';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'हो';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'स्वागत छ';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'आफ्नो भाषा छान्नुहोस्:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्';
 
   @override
   String get repairInstallation => 'Repair installation';
@@ -53,31 +53,31 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE प्रयास गर्नुहोस्';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'तपाईंले आफ्नो कम्प्युटरमा कुनै परिवर्तन नगरी $RELEASE प्रयोग गर्न सक्नुहुन्छ।';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE स्थापना गर्नुहोस्';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'आफ्नो अन्य अपरेटिङ सिस्टम संगै $RELEASE स्थापना गर्नुहोस्। यो छिटो हुनेछ।';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'तपाईंले <a href=\"$url\">रिलिज नोटहरू</a> पढ्न आवश्यक हुन सक्छ।';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST बन्द गर्नुहोस्';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';

@@ -66,7 +66,6 @@ void runInstallerApp(
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(() => JournalService(journalUnit));
-  registerService(KeyboardService.new);
   registerService(NetworkService.new);
   registerService(PowerService.new);
   registerService(TelemetryService.new);
@@ -315,15 +314,27 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
   }
 }
 
-class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
+class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
   _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
 
   final TelemetryService _telemetryService;
 
   @override
-  void didPush(Route route, Route? previousRoute) {
+  void onInit(Route route) {
     if (route.settings.name != null) {
       _telemetryService.addStage(route.settings.name!);
     }
+  }
+
+  @override
+  void onNext(Route route, Route previousRoute) {
+    if (route.settings.name != null) {
+      _telemetryService.addStage(route.settings.name!);
+    }
+  }
+
+  @override
+  Future<void> onDone(Route route, Object? result) {
+    return _telemetryService.done();
   }
 }

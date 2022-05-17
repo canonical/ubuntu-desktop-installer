@@ -23,7 +23,7 @@ class SelectLanguagePage extends StatefulWidget {
   }
 
   @override
-  _SelectLanguagePageState createState() => _SelectLanguagePageState();
+  State<SelectLanguagePage> createState() => _SelectLanguagePageState();
 }
 
 class _SelectLanguagePageState extends State<SelectLanguagePage> {
@@ -38,8 +38,6 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
       final settings = Settings.of(context, listen: false);
       model.selectLocale(settings.locale);
       model.getServerLocale().then((loc) {
-        if (loc == settings.locale) return;
-
         model.selectLocale(loc);
         settings.applyLocale(loc);
         _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
@@ -77,7 +75,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 onTap: () {
                   model.selectedLanguageIndex = index;
                   final settings = Settings.of(context, listen: false);
-                  settings.applyLocale(model.locale(index));
+                  settings.applyLocale(model.uiLocale(index));
                 },
               ),
             );

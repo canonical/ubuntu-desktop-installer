@@ -33,7 +33,7 @@ void main() async {
       currentState = nextState;
     }
 
-    final stateChanges = StreamController<ApplicationState>();
+    final stateChanges = StreamController<ApplicationState?>();
     model.addListener(() => stateChanges.add(model.state));
 
     // initializing the model queries the initial client status, and then runs
@@ -42,8 +42,8 @@ void main() async {
     verify(client.status(current: null)).called(1);
 
     final expectedStateChanges = ApplicationState.values.where((state) {
-      return state != ApplicationState.UNKNOWN &&
-          state != ApplicationState.ERROR;
+      return state != ApplicationState.ERROR &&
+          state != ApplicationState.EXITED;
     });
     await expectLater(stateChanges.stream, emitsInOrder(expectedStateChanges));
   });
@@ -61,7 +61,7 @@ void main() async {
     final journal = MockJournalService();
     final model = InstallationSlidesModel(client, journal);
 
-    expect(model.state, equals(ApplicationState.UNKNOWN));
+    expect(model.state, isNull);
     expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);
@@ -78,7 +78,7 @@ void main() async {
 
     await model.init();
 
-    await waitForState(ApplicationState.STARTING_UP);
+    expect(model.state, ApplicationState.STARTING_UP);
     expect(model.isPreparing, isTrue);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);

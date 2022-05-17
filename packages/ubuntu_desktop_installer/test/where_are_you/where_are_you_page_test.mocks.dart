@@ -41,6 +41,10 @@ class MockWhereAreYouModel extends _i1.Mock implements _i2.WhereAreYouModel {
       (super.noSuchMethod(Invocation.getter(#timezones),
           returnValue: <_i3.GeoLocation>[]) as Iterable<_i3.GeoLocation>);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -73,6 +77,10 @@ class MockWhereAreYouModel extends _i1.Mock implements _i2.WhereAreYouModel {
                   Future<Iterable<_i3.GeoLocation>>.value(<_i3.GeoLocation>[]))
           as _i4.Future<Iterable<_i3.GeoLocation>>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i5.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -83,8 +91,4 @@ class MockWhereAreYouModel extends _i1.Mock implements _i2.WhereAreYouModel {
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
 }

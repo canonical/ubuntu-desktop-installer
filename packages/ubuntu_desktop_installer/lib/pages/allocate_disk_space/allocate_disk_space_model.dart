@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -86,7 +86,7 @@ enum PartitionLocation {
 }
 
 /// View model for [AllocateDiskSpacePage].
-class AllocateDiskSpaceModel extends ChangeNotifier {
+class AllocateDiskSpaceModel extends SafeChangeNotifier {
   /// Creates a new model with the given disk storage service.
   AllocateDiskSpaceModel(this._service);
 

@@ -1,12 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-
-import 'keyboard_layout_model_test.mocks.dart';
 
 const testLayouts = <KeyboardLayout>[
   KeyboardLayout(code: 'null-variants', name: 'Null variants', variants: null),
@@ -26,31 +22,28 @@ const testLayouts = <KeyboardLayout>[
   ),
 ];
 
-KeyboardSetup testSetup({required String? layout, required String? variant}) {
+KeyboardSetup testSetup(
+  List<KeyboardLayout>? layouts, {
+  required String? layout,
+  required String? variant,
+}) {
   final setting = KeyboardSetting(layout: layout, variant: variant);
-  return KeyboardSetup(setting: setting);
+  return KeyboardSetup(setting: setting, layouts: layouts);
 }
 
-@GenerateMocks([KeyboardService])
 void main() {
   group('detect layout and variant when', () {
     late MockSubiquityClient client;
-    late MockKeyboardService keyboard;
     late KeyboardLayoutModel model;
 
     setUp(() {
       client = MockSubiquityClient();
-      keyboard = MockKeyboardService();
-      model = KeyboardLayoutModel(
-        client: client,
-        keyboardService: keyboard,
-      );
+      model = KeyboardLayoutModel(client);
     });
 
     test('layouts=[]', () async {
-      when(keyboard.layouts).thenReturn([]);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-variants', variant: 'variant1');
+        return testSetup([], layout: 'with-variants', variant: 'variant1');
       });
 
       await model.init();
@@ -59,9 +52,8 @@ void main() {
     });
 
     test('layout=null and variant=null', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: null, variant: null);
+        return testSetup(testLayouts, layout: null, variant: null);
       });
 
       await model.init();
@@ -70,9 +62,8 @@ void main() {
     });
 
     test('layout=unknown and variant=unknown', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'unknown', variant: 'unknown');
+        return testSetup(testLayouts, layout: 'unknown', variant: 'unknown');
       });
 
       await model.init();
@@ -81,9 +72,8 @@ void main() {
     });
 
     test('variants=null and variant=null', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'null-variants', variant: null);
+        return testSetup(testLayouts, layout: 'null-variants', variant: null);
       });
 
       await model.init();
@@ -93,9 +83,9 @@ void main() {
 
     test('variants=null and variant=unknown', () async {
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'null-variants', variant: 'unknown');
+        return testSetup(testLayouts,
+            layout: 'null-variants', variant: 'unknown');
       });
-      when(keyboard.layouts).thenReturn(testLayouts);
 
       await model.init();
       expect(model.selectedLayoutIndex, equals(0));
@@ -103,9 +93,8 @@ void main() {
     });
 
     test('variants=[] and variant=null', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'empty-variants', variant: null);
+        return testSetup(testLayouts, layout: 'empty-variants', variant: null);
       });
 
       await model.init();
@@ -114,9 +103,9 @@ void main() {
     });
 
     test('variants=[] and variant=unknown', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'empty-variants', variant: 'unknown');
+        return testSetup(testLayouts,
+            layout: 'empty-variants', variant: 'unknown');
       });
 
       await model.init();
@@ -125,9 +114,9 @@ void main() {
     });
 
     test('variants=[null] and variant=null', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-null-variants', variant: null);
+        return testSetup(testLayouts,
+            layout: 'with-null-variants', variant: null);
       });
 
       await model.init();
@@ -136,9 +125,9 @@ void main() {
     });
 
     test('variants=[null] and variant=unknown', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-null-variants', variant: 'unknown');
+        return testSetup(testLayouts,
+            layout: 'with-null-variants', variant: 'unknown');
       });
 
       await model.init();
@@ -147,9 +136,8 @@ void main() {
     });
 
     test('variant=null', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-variants', variant: null);
+        return testSetup(testLayouts, layout: 'with-variants', variant: null);
       });
 
       await model.init();
@@ -158,9 +146,9 @@ void main() {
     });
 
     test('variant=unknown', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-variants', variant: 'unknown');
+        return testSetup(testLayouts,
+            layout: 'with-variants', variant: 'unknown');
       });
 
       await model.init();
@@ -169,9 +157,9 @@ void main() {
     });
 
     test('all ok', () async {
-      when(keyboard.layouts).thenReturn(testLayouts);
       when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(layout: 'with-variants', variant: 'variant2');
+        return testSetup(testLayouts,
+            layout: 'with-variants', variant: 'variant2');
       });
 
       await model.init();
@@ -181,26 +169,23 @@ void main() {
   });
 
   group('layout and variant', () {
-    late MockKeyboardService keyboard;
     late KeyboardLayoutModel model;
     late SubiquityClient client;
 
-    setUp(() {
-      keyboard = MockKeyboardService();
-      when(keyboard.layouts).thenReturn([
-        KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-        KeyboardLayout(code: 'bar', name: 'Bar', variants: [
-          KeyboardVariant(code: 'baz', name: 'Baz'),
-          KeyboardVariant(code: 'qux', name: 'Qux'),
-        ]),
-      ]);
-
+    setUp(() async {
       client = MockSubiquityClient();
+      when(client.keyboard()).thenAnswer((_) async {
+        return testSetup([
+          KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
+          KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+            KeyboardVariant(code: 'baz', name: 'Baz'),
+            KeyboardVariant(code: 'qux', name: 'Qux'),
+          ]),
+        ], layout: null, variant: null);
+      });
 
-      model = KeyboardLayoutModel(
-        client: client,
-        keyboardService: keyboard,
-      );
+      model = KeyboardLayoutModel(client);
+      await model.init();
     });
 
     test('names are correct', () async {
@@ -305,21 +290,19 @@ void main() {
 
   test('apply the system settings', () async {
     final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async {
+      return testSetup([
+        KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
+        KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+          KeyboardVariant(code: 'baz', name: 'Baz'),
+          KeyboardVariant(code: 'qux', name: 'Qux'),
+        ]),
+      ], layout: null, variant: null);
+    });
 
-    final keyboard = MockKeyboardService();
-    when(keyboard.layouts).thenReturn([
-      KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-      KeyboardLayout(code: 'bar', name: 'Bar', variants: [
-        KeyboardVariant(code: 'baz', name: 'Baz'),
-        KeyboardVariant(code: 'qux', name: 'Qux'),
-      ]),
-    ]);
+    final model = KeyboardLayoutModel(client);
 
-    final model = KeyboardLayoutModel(
-      client: client,
-      keyboardService: keyboard,
-    );
-
+    await model.init();
     await model.selectLayout(1);
     await model.selectVariant(1);
     reset(client);

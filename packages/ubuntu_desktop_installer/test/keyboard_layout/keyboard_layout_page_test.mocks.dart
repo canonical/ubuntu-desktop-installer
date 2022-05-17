@@ -6,10 +6,8 @@ import 'dart:async' as _i3;
 import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i6;
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart'
     as _i2;
-import 'package:ubuntu_desktop_installer/services.dart' as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -59,6 +57,10 @@ class MockKeyboardLayoutModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
+  bool get isDisposed =>
+      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
+          as bool);
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
@@ -96,6 +98,10 @@ class MockKeyboardLayoutModel extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
   @override
+  void notifyListeners() =>
+      super.noSuchMethod(Invocation.method(#notifyListeners, []),
+          returnValueForMissingStub: null);
+  @override
   void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
@@ -106,31 +112,4 @@ class MockKeyboardLayoutModel extends _i1.Mock
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
-}
-
-/// A class which mocks [KeyboardService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockKeyboardService extends _i1.Mock implements _i5.KeyboardService {
-  MockKeyboardService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  List<_i6.KeyboardLayout> get layouts =>
-      (super.noSuchMethod(Invocation.getter(#layouts),
-          returnValue: <_i6.KeyboardLayout>[]) as List<_i6.KeyboardLayout>);
-  @override
-  set layouts(List<_i6.KeyboardLayout>? _layouts) =>
-      super.noSuchMethod(Invocation.setter(#layouts, _layouts),
-          returnValueForMissingStub: null);
-  @override
-  _i3.Future<void> load(_i6.SubiquityClient? client) =>
-      (super.noSuchMethod(Invocation.method(#load, [client]),
-          returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
 }

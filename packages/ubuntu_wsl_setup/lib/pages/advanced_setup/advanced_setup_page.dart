@@ -32,7 +32,7 @@ class AdvancedSetupPage extends StatefulWidget {
   }
 
   @override
-  _AdvancedSetupPageState createState() => _AdvancedSetupPageState();
+  State<AdvancedSetupPage> createState() => _AdvancedSetupPageState();
 }
 
 class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
