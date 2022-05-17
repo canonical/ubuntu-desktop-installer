@@ -43,6 +43,7 @@ class WizardAction {
     BuildContext context, {
     bool? visible,
     bool? enabled,
+    Object? arguments,
     VoidCallback? onActivated,
   }) {
     return WizardAction(
@@ -53,7 +54,7 @@ class WizardAction {
         if (onActivated != null) {
           onActivated();
         } else {
-          Wizard.of(context).next();
+          Wizard.of(context).next(arguments: arguments);
         }
       },
     );
