@@ -655,10 +655,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'להשתולל עם תמונות';
+  String get photoSlideTitle => 'להשתולל עם התמונות שלך';
 
   @override
-  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי עם הכנה לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנה של אובונטו.';
+  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר עם לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.';
 
   @override
   String get photoSlideShotwell => 'מנהל התמונות Shotwell';
@@ -670,11 +670,11 @@ class AppLocalizationsHe extends AppLocalizations {
   String get photoSlideShotcut => 'עורך הווידאו Shotcut';
 
   @override
-  String get webSlideTitle => 'להפיק מהאינטרנט כמה שיותר';
+  String get webSlideTitle => 'להפיק את המיטב מהאינטרנט';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return 'למערכת $RELEASE מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון Facebook או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.';
+    return 'למערכת $RELEASE מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון פייסבוק או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.';
   }
 
   @override
