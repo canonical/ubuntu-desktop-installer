@@ -117,9 +117,10 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction(
+        WizardAction.next(
+          context,
           label: lang.selectGuidedStorageInstallNow,
-          onActivated: () async {
+          onNext: () async {
             await model.saveGuidedStorage();
             await Wizard.of(context).next();
 

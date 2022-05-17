@@ -41,15 +41,18 @@ class WizardAction {
   /// A _Continue_ action that advances to the next page.
   factory WizardAction.next(
     BuildContext context, {
+    String? label,
     bool? visible,
     bool? enabled,
+    bool? highlighted,
     Object? arguments,
     VoidCallback? onNext,
   }) {
     return WizardAction(
-      label: UbuntuLocalizations.of(context).continueAction,
+      label: label ?? UbuntuLocalizations.of(context).continueAction,
       visible: visible,
       enabled: enabled,
+      highlighted: highlighted,
       onActivated: () {
         if (onNext != null) {
           onNext();

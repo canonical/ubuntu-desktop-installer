@@ -93,11 +93,12 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction(
+        WizardAction.next(
+          context,
           highlighted: true,
           label: lang.saveButton,
           enabled: model.isValid,
-          onActivated: () {
+          onNext: () {
             model.saveConfiguration();
             Wizard.of(context).next();
           },

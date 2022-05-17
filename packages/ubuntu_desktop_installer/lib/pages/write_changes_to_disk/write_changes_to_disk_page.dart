@@ -93,10 +93,11 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       ]),
       actions: <WizardAction>[
         WizardAction.back(context),
-        WizardAction(
+        WizardAction.next(
+          context,
           highlighted: true,
           label: lang.startInstallingButtonText,
-          onActivated: () async {
+          onNext: () async {
             await model.startInstallation();
 
             Wizard.of(context).next();
