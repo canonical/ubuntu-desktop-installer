@@ -185,6 +185,7 @@ Future<void> testApplyingChangesPage(
   WidgetTester tester, {
   bool expectClose = false,
 }) async {
+  await tester.pumpUntil(find.byType(ApplyingChangesPage));
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 
   if (expectClose) {
