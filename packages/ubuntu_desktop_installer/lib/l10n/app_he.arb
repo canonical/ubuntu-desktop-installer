@@ -571,5 +571,9 @@
       "os1": {},
       "os2": {}
     }
-  }
+  },
+  "copyingFiles": "קבצים מועתקים…",
+  "@copyingFiles": {},
+  "installationFailed": "ההתקנה נכשלה",
+  "@installationFailed": {}
 }
