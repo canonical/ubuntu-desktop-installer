@@ -190,7 +190,7 @@ Future<void> testApplyingChangesPage(
 
   if (expectClose) {
     final windowClosed = waitForWindowClosed();
-    expect(windowClosed, completion(isTrue));
+    await expectLater(windowClosed, completion(isTrue));
   }
 }
 
@@ -236,7 +236,7 @@ Future<void> testSetupCompletePage(
 
   final windowClosed = waitForWindowClosed();
   await tester.tapButton(label: tester.lang.finishButton);
-  expect(windowClosed, completion(isTrue));
+  await expectLater(windowClosed, completion(isTrue));
 }
 
 void expectPage(
