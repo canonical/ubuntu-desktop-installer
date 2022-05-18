@@ -50,7 +50,7 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
   "@updatesOtherSoftwarePageDescription": {},
-  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nעליך לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
+  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
   "@turnOffBitlockerDescription": {},
   "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש.",
   "@readyToUse": {
@@ -302,7 +302,7 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "יצירת מחיצה",
   "@partitionCreateTitle": {},
-  "installationTypeAlongsideInfo": "מסמכים, מוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.",
+  "installationTypeAlongsideInfo": "המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.",
   "@installationTypeAlongsideInfo": {},
   "partitionTypeLabel": "סוג המחיצה החדשה:",
   "@partitionTypeLabel": {},
