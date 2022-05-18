@@ -120,10 +120,11 @@ Future<bool> waitForWindowClosed() {
   final methodChannel = MethodChannel('ubuntu_wizard');
 
   methodChannel.setMockMethodCallHandler((call) async {
-    expect(call.method, equals('closeWindow'));
-    await _testCloseWindow();
-    completer.complete(true);
-    methodChannel.setMockMethodCallHandler(null);
+    if (call.method == 'closeWindow') {
+      await _testCloseWindow();
+      completer.complete(true);
+      methodChannel.setMockMethodCallHandler(null);
+    }
   });
 
   return completer.future;
