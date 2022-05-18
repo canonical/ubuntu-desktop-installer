@@ -337,7 +337,7 @@ Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
 
   final windowClosed = waitForWindowClosed();
   await tester.tapHighlightedButton(tester.lang.restartIntoWindows);
-  expect(windowClosed, completion(isTrue));
+  await expectLater(windowClosed, completion(isTrue));
 }
 
 Future<void> testWhereAreYouPage(
@@ -426,7 +426,7 @@ Future<void> testInstallationCompletePage(WidgetTester tester) async {
 
   final windowClosed = waitForWindowClosed();
   await tester.tapButton(label: tester.lang.shutdown);
-  expect(windowClosed, completion(isTrue));
+  await expectLater(windowClosed, completion(isTrue));
 }
 
 Future<void> expectPage(
