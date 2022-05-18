@@ -325,13 +325,33 @@ void main() {
       // empty defaults for null values
       newId = IdentityData();
 
-      await client.setIdentity(newId);
+      // Server now throws exception if invalid username is POST'ed.
+      expect(() async {
+        await client.setIdentity(newId);
+      }, throwsException);
+    });
 
-      id = await client.identity();
-      expect(id.realname, '');
-      expect(id.username, '');
-      expect(id.cryptedPassword, '');
-      expect(id.hostname, '');
+    test('identity/validate_username', () async {
+      const valid = 'ubuntu';
+      const alreadyUsed = 'root';
+      const systemReserved = 'plugdev';
+      final String tooLong = 'u' * 33;
+      const invalidChars = '123root';
+
+      var validation = await client.validateUsername(valid);
+      expect(validation, UsernameValidation.OK);
+
+      validation = await client.validateUsername(alreadyUsed);
+      expect(validation, UsernameValidation.ALREADY_IN_USE);
+
+      validation = await client.validateUsername(systemReserved);
+      expect(validation, UsernameValidation.SYSTEM_RESERVED);
+
+      validation = await client.validateUsername(tooLong);
+      expect(validation, UsernameValidation.TOO_LONG);
+
+      validation = await client.validateUsername(invalidChars);
+      expect(validation, UsernameValidation.INVALID_CHARS);
     });
 
     test('timezone', () async {

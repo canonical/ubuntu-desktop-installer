@@ -204,6 +204,12 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<_i3.UsernameValidation> validateUsername(String? username) =>
+      (super.noSuchMethod(Invocation.method(#validateUsername, [username]),
+              returnValue: Future<_i3.UsernameValidation>.value(
+                  _i3.UsernameValidation.OK))
+          as _i5.Future<_i3.UsernameValidation>);
+  @override
   _i5.Future<_i3.TimezoneInfo> timezone() => (super.noSuchMethod(
           Invocation.method(#timezone, []),
           returnValue: Future<_i3.TimezoneInfo>.value(_FakeTimezoneInfo_4()))

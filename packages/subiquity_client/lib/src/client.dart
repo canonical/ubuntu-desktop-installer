@@ -208,6 +208,22 @@ class SubiquityClient {
     await _receive("setIdentity(${jsonEncode(identity.toJson())})", response);
   }
 
+  Future<UsernameValidation> validateUsername(String username) async {
+    final request = await _openUrl(
+      'GET',
+      Uri.http(
+        'localhost',
+        'identity/validate_username',
+        {'username': '"$username"'},
+      ),
+    );
+    final response = await request.close();
+
+    final respStr = await _receive("identity/validate_username()", response);
+    return UsernameValidation.values
+        .byName(respStr.removePrefix('"').removeSuffix('"'));
+  }
+
   Future<TimezoneInfo> timezone() async {
     final request = await _openUrl('GET', Uri.http('localhost', 'timezone'));
     final response = await request.close();
