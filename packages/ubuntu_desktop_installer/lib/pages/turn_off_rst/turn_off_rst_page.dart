@@ -51,13 +51,11 @@ class TurnOffRSTPage extends StatelessWidget {
         ),
         actions: <WizardAction>[
           WizardAction.back(context),
-          WizardAction(
+          WizardAction.done(
+            context,
             label: lang.restartButtonText,
             highlighted: true,
-            onActivated: () async {
-              await Wizard.of(context).done();
-              model.reboot(immediate: true);
-            },
+            onDone: () => model.reboot(immediate: true),
           ),
         ],
       ),

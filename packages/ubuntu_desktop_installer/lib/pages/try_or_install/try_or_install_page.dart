@@ -78,7 +78,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
         WizardAction.next(
           context,
           enabled: model.option != Option.none,
-          onActivated: () => Wizard.of(context).next(arguments: model.option),
+          arguments: model.option,
         ),
       ],
     );

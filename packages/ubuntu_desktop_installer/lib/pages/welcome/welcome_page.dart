@@ -98,11 +98,10 @@ class _WelcomePageState extends State<WelcomePage> {
         WizardAction.back(context),
         WizardAction.next(
           context,
-          onActivated: () {
+          onNext: () {
             final locale = model.locale(model.selectedLanguageIndex);
             model.applyLocale(locale);
             getService<TelemetryService>().setLanguage(locale.languageCode);
-            Wizard.of(context).next();
           },
         ),
       ],

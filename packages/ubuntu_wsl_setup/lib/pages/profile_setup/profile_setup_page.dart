@@ -100,10 +100,8 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
         WizardAction.next(
           context,
           enabled: model.isValid,
-          onActivated: () {
-            model.saveProfileSetup();
-            Wizard.of(context).next(arguments: model.showAdvancedOptions);
-          },
+          arguments: model.showAdvancedOptions,
+          onNext: model.saveProfileSetup,
         ),
       ],
     );

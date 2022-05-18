@@ -138,11 +138,8 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
         WizardAction.back(context),
         WizardAction.next(
           context,
-          onActivated: () async {
-            await model.save();
-
-            Wizard.of(context).next(arguments: model.installationType);
-          },
+          arguments: model.installationType,
+          onNext: model.save,
         ),
       ],
     );
