@@ -149,7 +149,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the necessary information to automate the process of mouting partitions.';
+  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The file contains information about the filesystems the system can mount.';
 
   @override
   String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
