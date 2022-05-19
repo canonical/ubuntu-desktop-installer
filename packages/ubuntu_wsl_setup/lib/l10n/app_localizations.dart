@@ -520,7 +520,7 @@ abstract class AppLocalizations {
   /// No description provided for @configurationUIMountFstabSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???'**
+  /// **'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.'**
   String get configurationUIMountFstabSubtitle;
 
   /// No description provided for @configurationUISystemdHeader.

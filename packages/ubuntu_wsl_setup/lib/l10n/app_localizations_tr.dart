@@ -149,7 +149,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab\'ı bağla';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???';
+  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
 
   @override
   String get configurationUISystemdHeader => 'DENEYSEL - Systemd';
