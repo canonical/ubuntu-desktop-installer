@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -83,27 +81,6 @@ class ProfileSetupModel extends SafeChangeNotifier {
         RegExp(kValidUsernamePattern).hasMatch(username)) {
       _usernameValidation.value = await _client.validateUsername(username);
     }
-  }
-
-  final List<FieldValidator<String?>> _validators = [];
-  List<FieldValidator<String?>> get validators => _validators;
-
-  /// Initializes a list of [CallbackValidator]'s for each key-value pair of the
-  /// [errorValueToText] map, in which each value provided as the map key is a
-  /// possible value of [usernameValidation] for which the respective validator
-  /// will return invalid and the mapped value as the validator's error text.
-  void setUsernameValidators(Map<UsernameValidation, String> errorValueToText) {
-    if (_validators.isNotEmpty) {
-      return;
-    }
-    errorValueToText.forEach((key, value) {
-      _validators.add(
-        CallbackValidator(
-          (_) => usernameValidation != key,
-          errorText: value,
-        ),
-      );
-    });
   }
 
   /// Loads the profile setup.

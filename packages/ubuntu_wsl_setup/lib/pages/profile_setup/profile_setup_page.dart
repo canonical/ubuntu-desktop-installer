@@ -42,19 +42,6 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
 
     final model = Provider.of<ProfileSetupModel>(context, listen: false);
     model.loadProfileSetup();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final lang = AppLocalizations.of(context);
-      model.setUsernameValidators(
-        {
-          UsernameValidation.ALREADY_IN_USE: lang.profileSetupUsernameInUse,
-          UsernameValidation.SYSTEM_RESERVED:
-              lang.profileSetupUsernameSystemReserved,
-          UsernameValidation.INVALID_CHARS:
-              lang.profileSetupUsernameInvalidChars,
-          UsernameValidation.TOO_LONG: lang.profileSetupUsernameTooLong,
-        },
-      );
-    });
   }
 
   @override

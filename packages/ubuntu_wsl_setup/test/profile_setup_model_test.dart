@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -112,19 +111,12 @@ void main() {
     final model = ProfileSetupModel(client);
     expect(model.isValid, isFalse);
 
-    model.setUsernameValidators({
-      UsernameValidation.ALREADY_IN_USE: 'A',
-      UsernameValidation.SYSTEM_RESERVED: 'S',
-      UsernameValidation.TOO_LONG: 'T',
-    });
-
     void testValid(
       String realname,
       String username,
       String password,
       String confirmedPassword,
       Matcher matcher,
-      String errorText,
     ) async {
       model.realname = realname;
       model.username = username;
@@ -132,14 +124,11 @@ void main() {
       model.confirmedPassword = confirmedPassword;
       await model.validate();
       expect(model.isValid, matcher);
-
-      final validator = MultiValidator(model.validators);
-      expect(validator(username), errorText);
     }
 
-    testValid('User', kRoot, 'password', 'password', isFalse, 'A');
-    testValid('User', kPlugdev, 'password', 'password', isFalse, 'S');
-    testValid('User', kTooLong, 'password', 'password', isFalse, 'T');
+    testValid('User', kRoot, 'password', 'password', isFalse);
+    testValid('User', kPlugdev, 'password', 'password', isFalse);
+    testValid('User', kTooLong, 'password', 'password', isFalse);
   });
 
   test('validation', () {

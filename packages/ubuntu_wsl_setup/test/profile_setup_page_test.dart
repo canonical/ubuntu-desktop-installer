@@ -38,7 +38,6 @@ void main() {
     when(model.passwordStrength)
         .thenReturn(passwordStrength ?? PasswordStrength.weak);
     when(model.showAdvancedOptions).thenReturn(showAdvancedOptions ?? false);
-    when(model.validators).thenReturn([]);
     return model;
   }
 
