@@ -53,7 +53,7 @@
   "configurationUIAutoMountTitle": "Enabled",
   "configurationUIAutoMountSubtitle": "Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.",
   "configurationUIMountFstabTitle": "Mount /etc/fstab",
-  "configurationUIMountFstabSubtitle": "Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the???",
+  "configurationUIMountFstabSubtitle": "Whether /etc/fstab will be mounted. The configuration file /etc/fstab contains the necessary information to automate the process of mouting partitions.",
   "configurationUISystemdHeader": "EXPERIMENTAL - Systemd",
   "configurationUISystemdTitle": "Enabled",
   "configurationUISystemdSubtitle": "Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.",
