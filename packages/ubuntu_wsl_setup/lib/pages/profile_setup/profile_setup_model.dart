@@ -15,6 +15,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
     Listenable.merge([
       _realname,
       _username,
+      _usernameValidation,
       _password,
       _confirmedPassword,
       _showAdvanced,
@@ -24,6 +25,8 @@ class ProfileSetupModel extends SafeChangeNotifier {
   final SubiquityClient _client;
   final _realname = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
+  final _usernameValidation =
+      ValueNotifier<UsernameValidation>(UsernameValidation.OK);
   final _password = ValueNotifier('');
   final _confirmedPassword = ValueNotifier('');
 
@@ -64,9 +67,21 @@ class ProfileSetupModel extends SafeChangeNotifier {
   bool get isValid =>
       realname.isNotEmpty &&
       username.isNotEmpty &&
+      usernameOk &&
       RegExp(kValidUsernamePattern).hasMatch(username) &&
       password.isNotEmpty &&
       password == confirmedPassword;
+
+  /// The server response on whether the desired username is available.
+  UsernameValidation get usernameValidation => _usernameValidation.value;
+  bool get usernameOk => _usernameValidation.value == UsernameValidation.OK;
+
+  Future<void> validate() async {
+    if (username.isNotEmpty &&
+        RegExp(kValidUsernamePattern).hasMatch(username)) {
+      _usernameValidation.value = await _client.validateUsername(username);
+    }
+  }
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {

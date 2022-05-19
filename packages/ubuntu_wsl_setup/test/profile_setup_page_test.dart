@@ -38,6 +38,8 @@ void main() {
     when(model.passwordStrength)
         .thenReturn(passwordStrength ?? PasswordStrength.weak);
     when(model.showAdvancedOptions).thenReturn(showAdvancedOptions ?? false);
+    when(model.usernameValidation).thenReturn(UsernameValidation.OK);
+    when(model.usernameOk).thenReturn(true);
     return model;
   }
 

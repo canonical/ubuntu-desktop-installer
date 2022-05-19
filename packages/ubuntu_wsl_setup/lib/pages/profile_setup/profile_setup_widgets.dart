@@ -30,6 +30,25 @@ class _RealNameFormField extends StatelessWidget {
   }
 }
 
+extension UsernameValidationL10n on UsernameValidation {
+  String localize(AppLocalizations lang) {
+    switch (this) {
+      case UsernameValidation.OK:
+        return '';
+      case UsernameValidation.ALREADY_IN_USE:
+        return lang.profileSetupUsernameInUse;
+      case UsernameValidation.SYSTEM_RESERVED:
+        return lang.profileSetupUsernameSystemReserved;
+      case UsernameValidation.INVALID_CHARS:
+        return lang.profileSetupUsernameInvalidChars;
+      case UsernameValidation.TOO_LONG:
+        return lang.profileSetupUsernameTooLong;
+      default:
+        throw UnimplementedError(toString());
+    }
+  }
+}
+
 class _UsernameFormField extends StatelessWidget {
   const _UsernameFormField({
     Key? key,
@@ -41,8 +60,11 @@ class _UsernameFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final model = context.read<ProfileSetupModel>();
     final username =
         context.select<ProfileSetupModel, String>((model) => model.username);
+    final validation = context.select<ProfileSetupModel, UsernameValidation>(
+        (model) => model.usernameValidation);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -55,11 +77,14 @@ class _UsernameFormField extends StatelessWidget {
         PatternValidator(
           kValidUsernamePattern,
           errorText: lang.profileSetupUsernameInvalid,
-        )
+        ),
+        CallbackValidator((_) => model.usernameOk,
+            errorText: validation.localize(lang)),
       ]),
-      onChanged: (value) {
+      onChanged: (value) async {
         final model = Provider.of<ProfileSetupModel>(context, listen: false);
         model.username = value;
+        await model.validate();
       },
     );
   }
