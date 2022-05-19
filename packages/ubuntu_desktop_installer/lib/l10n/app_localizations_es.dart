@@ -518,6 +518,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'El nombre de usuario no es válido';
 
   @override
+  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
   String get whoAreYouPagePasswordLabel => 'Elija una contraseña';
 
   @override

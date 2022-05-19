@@ -2,10 +2,11 @@
 // in ubuntu_desktop_installer/test/who_are_you/who_are_you_page_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i4;
-import 'dart:ui' as _i5;
+import 'dart:async' as _i5;
+import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart'
     as _i2;
 import 'package:ubuntu_wizard/utils.dart' as _i3;
@@ -85,6 +86,14 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
   @override
+  _i4.UsernameValidation get usernameValidation =>
+      (super.noSuchMethod(Invocation.getter(#usernameValidation),
+          returnValue: _i4.UsernameValidation.OK) as _i4.UsernameValidation);
+  @override
+  bool get usernameOk =>
+      (super.noSuchMethod(Invocation.getter(#usernameOk), returnValue: false)
+          as bool);
+  @override
   bool get showPassword =>
       (super.noSuchMethod(Invocation.getter(#showPassword), returnValue: false)
           as bool);
@@ -101,25 +110,30 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i4.Future<void> loadIdentity() =>
+  _i5.Future<void> validate() =>
+      (super.noSuchMethod(Invocation.method(#validate, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+  @override
+  _i5.Future<void> loadIdentity() =>
       (super.noSuchMethod(Invocation.method(#loadIdentity, []),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
-  _i4.Future<void> saveIdentity({String? salt}) =>
+  _i5.Future<void> saveIdentity({String? salt}) =>
       (super.noSuchMethod(Invocation.method(#saveIdentity, [], {#salt: salt}),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
   @override
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
-  void addListener(_i5.VoidCallback? listener) =>
+  void addListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
+  void removeListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override

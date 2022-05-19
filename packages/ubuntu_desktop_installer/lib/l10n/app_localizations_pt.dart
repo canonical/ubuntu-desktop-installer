@@ -518,6 +518,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'O nome de utilizador informado é inválido';
 
   @override
+  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
   String get whoAreYouPagePasswordLabel => 'Escolha uma palavra-passe';
 
   @override

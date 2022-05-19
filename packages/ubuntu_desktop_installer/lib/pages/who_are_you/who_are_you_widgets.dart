@@ -68,6 +68,25 @@ class _HostnameFormField extends StatelessWidget {
   }
 }
 
+extension UsernameValidationL10n on UsernameValidation {
+  String localize(AppLocalizations lang) {
+    switch (this) {
+      case UsernameValidation.OK:
+        return '';
+      case UsernameValidation.ALREADY_IN_USE:
+        return lang.whoAreYouPageUsernameInUse;
+      case UsernameValidation.SYSTEM_RESERVED:
+        return lang.whoAreYouPageUsernameSystemReserved;
+      case UsernameValidation.INVALID_CHARS:
+        return lang.whoAreYouPageUsernameInvalidChars;
+      case UsernameValidation.TOO_LONG:
+        return lang.whoAreYouPageUsernameTooLong;
+      default:
+        throw UnimplementedError(toString());
+    }
+  }
+}
+
 class _UsernameFormField extends StatelessWidget {
   const _UsernameFormField({
     Key? key,
@@ -81,6 +100,9 @@ class _UsernameFormField extends StatelessWidget {
     final lang = AppLocalizations.of(context);
     final username =
         context.select<WhoAreYouModel, String>((model) => model.username);
+    final validation = context.select<WhoAreYouModel, UsernameValidation>(
+        (model) => model.usernameValidation);
+    final model = context.read<WhoAreYouModel>();
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -94,11 +116,16 @@ class _UsernameFormField extends StatelessWidget {
         PatternValidator(
           kValidUsernamePattern,
           errorText: lang.whoAreYouPageInvalidUsername,
-        )
+        ),
+        CallbackValidator(
+          (_) => model.usernameOk,
+          errorText: validation.localize(lang),
+        ),
       ]),
-      onChanged: (value) {
+      onChanged: (value) async {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.username = value;
+        await model.validate();
       },
     );
   }

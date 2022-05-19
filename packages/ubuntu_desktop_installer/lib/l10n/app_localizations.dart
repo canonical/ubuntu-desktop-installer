@@ -1173,6 +1173,30 @@ abstract class AppLocalizations {
   /// **'The username is invalid'**
   String get whoAreYouPageInvalidUsername;
 
+  /// No description provided for @whoAreYouPageUsernameInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'That user name already exists.'**
+  String get whoAreYouPageUsernameInUse;
+
+  /// No description provided for @whoAreYouPageUsernameSystemReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is reserved for system usage.'**
+  String get whoAreYouPageUsernameSystemReserved;
+
+  /// No description provided for @whoAreYouPageUsernameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is too long.'**
+  String get whoAreYouPageUsernameTooLong;
+
+  /// No description provided for @whoAreYouPageUsernameInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'That name contains invalid characters.'**
+  String get whoAreYouPageUsernameInvalidChars;
+
   /// No description provided for @whoAreYouPagePasswordLabel.
   ///
   /// In en, this message translates to:

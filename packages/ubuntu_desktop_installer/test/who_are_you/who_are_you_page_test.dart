@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
@@ -37,6 +38,8 @@ void main() {
     when(model.loginStrategy)
         .thenReturn(loginStrategy ?? LoginStrategy.autoLogin);
     when(model.showPassword).thenReturn(showPassword ?? false);
+    when(model.usernameOk).thenReturn(true);
+    when(model.usernameValidation).thenReturn(UsernameValidation.OK);
     return model;
   }
 
