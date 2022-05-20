@@ -427,9 +427,6 @@ void main() {
       final stepPressKey = step0 as StepPressKey;
       expect(stepPressKey.symbols, isNotEmpty);
       expect(stepPressKey.keycodes, isNotEmpty);
-      expect(stepPressKey.keycodes!.first, hasLength(2));
-      expect(stepPressKey.keycodes!.first.first, isA<int>());
-      expect(stepPressKey.keycodes!.first.last, isA<String>());
 
       // assumes that step 2 is a result step
       final step2 = await client.getKeyboardStep('2');

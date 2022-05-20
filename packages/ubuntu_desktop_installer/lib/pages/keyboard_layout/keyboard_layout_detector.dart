@@ -39,24 +39,13 @@ class KeyboardLayoutDetector extends ValueNotifier<AnyStep?> {
     value = step;
   }
 
-  String? _findKeycodeStep(int keycode) {
-    final steps = _pressKeyStep?.keycodes ?? const [];
-    for (final step in steps) {
-      assert(step.length == 2);
-      if (keycode == step.first.toInt()) {
-        return step.last.toString();
-      }
-    }
-    return null;
-  }
-
   /// Initializes the detector.
   Future<void> init() => _getKeyboardStep();
 
   /// Delivers a key press from the user. The detector proceeds to the next step
   /// if possible.
   void press(int keycode) {
-    final step = _findKeycodeStep(keycode);
+    final step = _pressKeyStep?.keycodes[keycode];
     if (step != null) {
       _getKeyboardStep(step);
     }

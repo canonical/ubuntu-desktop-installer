@@ -283,10 +283,10 @@ void main() {
   test('keyboard layout key press step', () {
     const step = StepPressKey(
       symbols: ['z'],
-      keycodes: [
-        [21, '2'],
-        [44, '3']
-      ],
+      keycodes: {
+        21: '2',
+        44: '3',
+      },
     );
     final json = <String, dynamic>{
       'symbols': ['z'],

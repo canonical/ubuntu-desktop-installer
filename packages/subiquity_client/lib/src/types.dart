@@ -73,28 +73,39 @@ class ApplicationStatus with _$ApplicationStatus {
       _$ApplicationStatusFromJson(json);
 }
 
+Map<int, String> _keycodesFromJson(List<dynamic> keycodes) {
+  return {
+    for (final keycode in keycodes) keycode[0] as int: keycode[1] as String,
+  };
+}
+
+List<dynamic> _keycodesToJson(Map<int, String> keycodes) {
+  return keycodes.entries.map((e) => [e.key, e.value]).toList();
+}
+
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
 class AnyStep with _$AnyStep {
   @FreezedUnionValue('StepPressKey')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepPressKey({
-    List<String>? symbols,
-    List<List<dynamic>>? keycodes,
+    required List<String> symbols,
+    @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+        required Map<int, String> keycodes,
   }) = StepPressKey;
 
   @FreezedUnionValue('StepKeyPresent')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepKeyPresent({
-    String? symbol,
-    String? yes,
-    String? no,
+    required String symbol,
+    required String yes,
+    required String no,
   }) = StepKeyPresent;
 
   @FreezedUnionValue('StepResult')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepResult({
-    String? layout,
-    String? variant,
+    required String layout,
+    required String variant,
   }) = StepResult;
 
   factory AnyStep.fromJson(Map<String, dynamic> json) =>

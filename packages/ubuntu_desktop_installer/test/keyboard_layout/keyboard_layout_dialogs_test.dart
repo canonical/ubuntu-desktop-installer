@@ -16,17 +16,13 @@ void main() {
   testWidgets('detect layout', (tester) async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return AnyStep.stepPressKey(symbols: [
-        'a'
-      ], keycodes: [
-        [30, '40']
-      ]);
+      return AnyStep.stepPressKey(symbols: ['a'], keycodes: {30: '40'});
     });
     when(client.getKeyboardStep('40')).thenAnswer((_) async {
-      return AnyStep.stepKeyPresent(symbol: 'b', yes: '50');
+      return AnyStep.stepKeyPresent(symbol: 'b', yes: '50', no: '');
     });
     when(client.getKeyboardStep('50')).thenAnswer((_) async {
-      return AnyStep.stepKeyPresent(symbol: 'c', no: '60');
+      return AnyStep.stepKeyPresent(symbol: 'c', yes: '', no: '60');
     });
     when(client.getKeyboardStep('60')).thenAnswer((_) async {
       return AnyStep.stepResult(layout: 'd', variant: 'e');

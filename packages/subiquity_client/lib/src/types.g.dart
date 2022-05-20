@@ -128,24 +128,22 @@ const _$ApplicationStateEnumMap = {
 _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
   return _$StepPressKey(
     symbols:
-        (json['symbols'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    keycodes: (json['keycodes'] as List<dynamic>?)
-        ?.map((e) => e as List<dynamic>)
-        .toList(),
+        (json['symbols'] as List<dynamic>).map((e) => e as String).toList(),
+    keycodes: _keycodesFromJson(json['keycodes'] as List),
   );
 }
 
 Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
     <String, dynamic>{
       'symbols': instance.symbols,
-      'keycodes': instance.keycodes,
+      'keycodes': _keycodesToJson(instance.keycodes),
     };
 
 _$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {
   return _$StepKeyPresent(
-    symbol: json['symbol'] as String?,
-    yes: json['yes'] as String?,
-    no: json['no'] as String?,
+    symbol: json['symbol'] as String,
+    yes: json['yes'] as String,
+    no: json['no'] as String,
   );
 }
 
@@ -158,8 +156,8 @@ Map<String, dynamic> _$_$StepKeyPresentToJson(_$StepKeyPresent instance) =>
 
 _$StepResult _$_$StepResultFromJson(Map<String, dynamic> json) {
   return _$StepResult(
-    layout: json['layout'] as String?,
-    variant: json['variant'] as String?,
+    layout: json['layout'] as String,
+    variant: json['variant'] as String,
   );
 }
 

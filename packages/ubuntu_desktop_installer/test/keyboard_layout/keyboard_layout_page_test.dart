@@ -43,8 +43,8 @@ void main() {
 
   Widget buildPage(KeyboardLayoutModel model) {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep(any))
-        .thenAnswer((_) async => AnyStep.stepPressKey());
+    when(client.getKeyboardStep(any)).thenAnswer(
+        (_) async => AnyStep.stepPressKey(keycodes: {}, symbols: []));
     registerMockService<SubiquityClient>(client);
 
     return ChangeNotifierProvider<KeyboardLayoutModel>.value(
