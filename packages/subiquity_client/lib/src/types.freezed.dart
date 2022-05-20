@@ -4658,10 +4658,10 @@ class _$IdentityDataTearOff {
   const _$IdentityDataTearOff();
 
   _IdentityData call(
-      {String? realname = '',
-      String? username = '',
-      String? cryptedPassword = '',
-      String? hostname = ''}) {
+      {String realname = '',
+      String username = '',
+      String cryptedPassword = '',
+      String hostname = ''}) {
     return _IdentityData(
       realname: realname,
       username: username,
@@ -4680,10 +4680,10 @@ const $IdentityData = _$IdentityDataTearOff();
 
 /// @nodoc
 mixin _$IdentityData {
-  String? get realname => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  String? get cryptedPassword => throw _privateConstructorUsedError;
-  String? get hostname => throw _privateConstructorUsedError;
+  String get realname => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  String get cryptedPassword => throw _privateConstructorUsedError;
+  String get hostname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4697,10 +4697,10 @@ abstract class $IdentityDataCopyWith<$Res> {
           IdentityData value, $Res Function(IdentityData) then) =
       _$IdentityDataCopyWithImpl<$Res>;
   $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
+      {String realname,
+      String username,
+      String cryptedPassword,
+      String hostname});
 }
 
 /// @nodoc
@@ -4722,19 +4722,19 @@ class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
       realname: realname == freezed
           ? _value.realname
           : realname // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       username: username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       cryptedPassword: cryptedPassword == freezed
           ? _value.cryptedPassword
           : cryptedPassword // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       hostname: hostname == freezed
           ? _value.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -4747,10 +4747,10 @@ abstract class _$IdentityDataCopyWith<$Res>
       __$IdentityDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname});
+      {String realname,
+      String username,
+      String cryptedPassword,
+      String hostname});
 }
 
 /// @nodoc
@@ -4774,19 +4774,19 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
       realname: realname == freezed
           ? _value.realname
           : realname // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       username: username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       cryptedPassword: cryptedPassword == freezed
           ? _value.cryptedPassword
           : cryptedPassword // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       hostname: hostname == freezed
           ? _value.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -4806,16 +4806,16 @@ class _$_IdentityData implements _IdentityData {
 
   @JsonKey(defaultValue: '')
   @override
-  final String? realname;
+  final String realname;
   @JsonKey(defaultValue: '')
   @override
-  final String? username;
+  final String username;
   @JsonKey(defaultValue: '')
   @override
-  final String? cryptedPassword;
+  final String cryptedPassword;
   @JsonKey(defaultValue: '')
   @override
-  final String? hostname;
+  final String hostname;
 
   @override
   String toString() {
@@ -4861,22 +4861,22 @@ class _$_IdentityData implements _IdentityData {
 
 abstract class _IdentityData implements IdentityData {
   const factory _IdentityData(
-      {String? realname,
-      String? username,
-      String? cryptedPassword,
-      String? hostname}) = _$_IdentityData;
+      {String realname,
+      String username,
+      String cryptedPassword,
+      String hostname}) = _$_IdentityData;
 
   factory _IdentityData.fromJson(Map<String, dynamic> json) =
       _$_IdentityData.fromJson;
 
   @override
-  String? get realname => throw _privateConstructorUsedError;
+  String get realname => throw _privateConstructorUsedError;
   @override
-  String? get username => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String? get cryptedPassword => throw _privateConstructorUsedError;
+  String get cryptedPassword => throw _privateConstructorUsedError;
   @override
-  String? get hostname => throw _privateConstructorUsedError;
+  String get hostname => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$IdentityDataCopyWith<_IdentityData> get copyWith =>
