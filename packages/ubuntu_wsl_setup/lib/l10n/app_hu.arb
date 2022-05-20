@@ -13,7 +13,7 @@
   },
   "setupCompleteUpdate": "Javasoljuk, hogy az Ubuntu legújabb verzióra való frissítéséhez futtassa a következő parancsot:",
   "@setupCompleteUpdate": {},
-  "applyingChanges": "Módosítások alkalmazása...",
+  "applyingChanges": "Módosítások alkalmazása…",
   "@applyingChanges": {},
   "setupCompleteRestart": "* Minden beállítás az Ubuntu újraindítása után lép hatályba.",
   "@setupCompleteRestart": {},
