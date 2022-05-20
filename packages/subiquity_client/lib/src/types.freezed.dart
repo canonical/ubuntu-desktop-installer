@@ -1175,7 +1175,8 @@ KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
 class _$KeyboardSettingTearOff {
   const _$KeyboardSettingTearOff();
 
-  _KeyboardSetting call({String? layout, String? variant, String? toggle}) {
+  _KeyboardSetting call(
+      {required String layout, String variant = '', String? toggle}) {
     return _KeyboardSetting(
       layout: layout,
       variant: variant,
@@ -1193,8 +1194,8 @@ const $KeyboardSetting = _$KeyboardSettingTearOff();
 
 /// @nodoc
 mixin _$KeyboardSetting {
-  String? get layout => throw _privateConstructorUsedError;
-  String? get variant => throw _privateConstructorUsedError;
+  String get layout => throw _privateConstructorUsedError;
+  String get variant => throw _privateConstructorUsedError;
   String? get toggle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1208,7 +1209,7 @@ abstract class $KeyboardSettingCopyWith<$Res> {
   factory $KeyboardSettingCopyWith(
           KeyboardSetting value, $Res Function(KeyboardSetting) then) =
       _$KeyboardSettingCopyWithImpl<$Res>;
-  $Res call({String? layout, String? variant, String? toggle});
+  $Res call({String layout, String variant, String? toggle});
 }
 
 /// @nodoc
@@ -1230,11 +1231,11 @@ class _$KeyboardSettingCopyWithImpl<$Res>
       layout: layout == freezed
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       variant: variant == freezed
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       toggle: toggle == freezed
           ? _value.toggle
           : toggle // ignore: cast_nullable_to_non_nullable
@@ -1250,7 +1251,7 @@ abstract class _$KeyboardSettingCopyWith<$Res>
           _KeyboardSetting value, $Res Function(_KeyboardSetting) then) =
       __$KeyboardSettingCopyWithImpl<$Res>;
   @override
-  $Res call({String? layout, String? variant, String? toggle});
+  $Res call({String layout, String variant, String? toggle});
 }
 
 /// @nodoc
@@ -1274,11 +1275,11 @@ class __$KeyboardSettingCopyWithImpl<$Res>
       layout: layout == freezed
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       variant: variant == freezed
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       toggle: toggle == freezed
           ? _value.toggle
           : toggle // ignore: cast_nullable_to_non_nullable
@@ -1291,15 +1292,17 @@ class __$KeyboardSettingCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardSetting implements _KeyboardSetting {
-  const _$_KeyboardSetting({this.layout, this.variant, this.toggle});
+  const _$_KeyboardSetting(
+      {required this.layout, this.variant = '', this.toggle});
 
   factory _$_KeyboardSetting.fromJson(Map<String, dynamic> json) =>
       _$_$_KeyboardSettingFromJson(json);
 
   @override
-  final String? layout;
+  final String layout;
+  @JsonKey(defaultValue: '')
   @override
-  final String? variant;
+  final String variant;
   @override
   final String? toggle;
 
@@ -1341,15 +1344,17 @@ class _$_KeyboardSetting implements _KeyboardSetting {
 
 abstract class _KeyboardSetting implements KeyboardSetting {
   const factory _KeyboardSetting(
-      {String? layout, String? variant, String? toggle}) = _$_KeyboardSetting;
+      {required String layout,
+      String variant,
+      String? toggle}) = _$_KeyboardSetting;
 
   factory _KeyboardSetting.fromJson(Map<String, dynamic> json) =
       _$_KeyboardSetting.fromJson;
 
   @override
-  String? get layout => throw _privateConstructorUsedError;
+  String get layout => throw _privateConstructorUsedError;
   @override
-  String? get variant => throw _privateConstructorUsedError;
+  String get variant => throw _privateConstructorUsedError;
   @override
   String? get toggle => throw _privateConstructorUsedError;
   @override
@@ -1366,7 +1371,7 @@ KeyboardVariant _$KeyboardVariantFromJson(Map<String, dynamic> json) {
 class _$KeyboardVariantTearOff {
   const _$KeyboardVariantTearOff();
 
-  _KeyboardVariant call({String? code, String? name}) {
+  _KeyboardVariant call({required String code, required String name}) {
     return _KeyboardVariant(
       code: code,
       name: name,
@@ -1383,8 +1388,8 @@ const $KeyboardVariant = _$KeyboardVariantTearOff();
 
 /// @nodoc
 mixin _$KeyboardVariant {
-  String? get code => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1397,7 +1402,7 @@ abstract class $KeyboardVariantCopyWith<$Res> {
   factory $KeyboardVariantCopyWith(
           KeyboardVariant value, $Res Function(KeyboardVariant) then) =
       _$KeyboardVariantCopyWithImpl<$Res>;
-  $Res call({String? code, String? name});
+  $Res call({String code, String name});
 }
 
 /// @nodoc
@@ -1418,11 +1423,11 @@ class _$KeyboardVariantCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1434,7 +1439,7 @@ abstract class _$KeyboardVariantCopyWith<$Res>
           _KeyboardVariant value, $Res Function(_KeyboardVariant) then) =
       __$KeyboardVariantCopyWithImpl<$Res>;
   @override
-  $Res call({String? code, String? name});
+  $Res call({String code, String name});
 }
 
 /// @nodoc
@@ -1457,11 +1462,11 @@ class __$KeyboardVariantCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1470,15 +1475,15 @@ class __$KeyboardVariantCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardVariant implements _KeyboardVariant {
-  const _$_KeyboardVariant({this.code, this.name});
+  const _$_KeyboardVariant({required this.code, required this.name});
 
   factory _$_KeyboardVariant.fromJson(Map<String, dynamic> json) =>
       _$_$_KeyboardVariantFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString() {
@@ -1513,16 +1518,16 @@ class _$_KeyboardVariant implements _KeyboardVariant {
 }
 
 abstract class _KeyboardVariant implements KeyboardVariant {
-  const factory _KeyboardVariant({String? code, String? name}) =
+  const factory _KeyboardVariant({required String code, required String name}) =
       _$_KeyboardVariant;
 
   factory _KeyboardVariant.fromJson(Map<String, dynamic> json) =
       _$_KeyboardVariant.fromJson;
 
   @override
-  String? get code => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   @override
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
@@ -1538,7 +1543,9 @@ class _$KeyboardLayoutTearOff {
   const _$KeyboardLayoutTearOff();
 
   _KeyboardLayout call(
-      {String? code, String? name, List<KeyboardVariant>? variants}) {
+      {required String code,
+      required String name,
+      required List<KeyboardVariant> variants}) {
     return _KeyboardLayout(
       code: code,
       name: name,
@@ -1556,9 +1563,9 @@ const $KeyboardLayout = _$KeyboardLayoutTearOff();
 
 /// @nodoc
 mixin _$KeyboardLayout {
-  String? get code => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<KeyboardVariant> get variants => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1571,7 +1578,7 @@ abstract class $KeyboardLayoutCopyWith<$Res> {
   factory $KeyboardLayoutCopyWith(
           KeyboardLayout value, $Res Function(KeyboardLayout) then) =
       _$KeyboardLayoutCopyWithImpl<$Res>;
-  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+  $Res call({String code, String name, List<KeyboardVariant> variants});
 }
 
 /// @nodoc
@@ -1593,15 +1600,15 @@ class _$KeyboardLayoutCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       variants: variants == freezed
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardVariant>?,
+              as List<KeyboardVariant>,
     ));
   }
 }
@@ -1613,7 +1620,7 @@ abstract class _$KeyboardLayoutCopyWith<$Res>
           _KeyboardLayout value, $Res Function(_KeyboardLayout) then) =
       __$KeyboardLayoutCopyWithImpl<$Res>;
   @override
-  $Res call({String? code, String? name, List<KeyboardVariant>? variants});
+  $Res call({String code, String name, List<KeyboardVariant> variants});
 }
 
 /// @nodoc
@@ -1637,15 +1644,15 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       variants: variants == freezed
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardVariant>?,
+              as List<KeyboardVariant>,
     ));
   }
 }
@@ -1654,17 +1661,18 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardLayout implements _KeyboardLayout {
-  const _$_KeyboardLayout({this.code, this.name, this.variants});
+  const _$_KeyboardLayout(
+      {required this.code, required this.name, required this.variants});
 
   factory _$_KeyboardLayout.fromJson(Map<String, dynamic> json) =>
       _$_$_KeyboardLayoutFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final String? name;
+  final String name;
   @override
-  final List<KeyboardVariant>? variants;
+  final List<KeyboardVariant> variants;
 
   @override
   String toString() {
@@ -1704,19 +1712,19 @@ class _$_KeyboardLayout implements _KeyboardLayout {
 
 abstract class _KeyboardLayout implements KeyboardLayout {
   const factory _KeyboardLayout(
-      {String? code,
-      String? name,
-      List<KeyboardVariant>? variants}) = _$_KeyboardLayout;
+      {required String code,
+      required String name,
+      required List<KeyboardVariant> variants}) = _$_KeyboardLayout;
 
   factory _KeyboardLayout.fromJson(Map<String, dynamic> json) =
       _$_KeyboardLayout.fromJson;
 
   @override
-  String? get code => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   @override
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @override
-  List<KeyboardVariant>? get variants => throw _privateConstructorUsedError;
+  List<KeyboardVariant> get variants => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
@@ -1732,7 +1740,8 @@ class _$KeyboardSetupTearOff {
   const _$KeyboardSetupTearOff();
 
   _KeyboardSetup call(
-      {KeyboardSetting? setting, List<KeyboardLayout>? layouts}) {
+      {required KeyboardSetting setting,
+      required List<KeyboardLayout> layouts}) {
     return _KeyboardSetup(
       setting: setting,
       layouts: layouts,
@@ -1749,8 +1758,8 @@ const $KeyboardSetup = _$KeyboardSetupTearOff();
 
 /// @nodoc
 mixin _$KeyboardSetup {
-  KeyboardSetting? get setting => throw _privateConstructorUsedError;
-  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+  KeyboardSetting get setting => throw _privateConstructorUsedError;
+  List<KeyboardLayout> get layouts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1763,9 +1772,9 @@ abstract class $KeyboardSetupCopyWith<$Res> {
   factory $KeyboardSetupCopyWith(
           KeyboardSetup value, $Res Function(KeyboardSetup) then) =
       _$KeyboardSetupCopyWithImpl<$Res>;
-  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+  $Res call({KeyboardSetting setting, List<KeyboardLayout> layouts});
 
-  $KeyboardSettingCopyWith<$Res>? get setting;
+  $KeyboardSettingCopyWith<$Res> get setting;
 }
 
 /// @nodoc
@@ -1786,21 +1795,17 @@ class _$KeyboardSetupCopyWithImpl<$Res>
       setting: setting == freezed
           ? _value.setting
           : setting // ignore: cast_nullable_to_non_nullable
-              as KeyboardSetting?,
+              as KeyboardSetting,
       layouts: layouts == freezed
           ? _value.layouts
           : layouts // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardLayout>?,
+              as List<KeyboardLayout>,
     ));
   }
 
   @override
-  $KeyboardSettingCopyWith<$Res>? get setting {
-    if (_value.setting == null) {
-      return null;
-    }
-
-    return $KeyboardSettingCopyWith<$Res>(_value.setting!, (value) {
+  $KeyboardSettingCopyWith<$Res> get setting {
+    return $KeyboardSettingCopyWith<$Res>(_value.setting, (value) {
       return _then(_value.copyWith(setting: value));
     });
   }
@@ -1813,10 +1818,10 @@ abstract class _$KeyboardSetupCopyWith<$Res>
           _KeyboardSetup value, $Res Function(_KeyboardSetup) then) =
       __$KeyboardSetupCopyWithImpl<$Res>;
   @override
-  $Res call({KeyboardSetting? setting, List<KeyboardLayout>? layouts});
+  $Res call({KeyboardSetting setting, List<KeyboardLayout> layouts});
 
   @override
-  $KeyboardSettingCopyWith<$Res>? get setting;
+  $KeyboardSettingCopyWith<$Res> get setting;
 }
 
 /// @nodoc
@@ -1839,11 +1844,11 @@ class __$KeyboardSetupCopyWithImpl<$Res>
       setting: setting == freezed
           ? _value.setting
           : setting // ignore: cast_nullable_to_non_nullable
-              as KeyboardSetting?,
+              as KeyboardSetting,
       layouts: layouts == freezed
           ? _value.layouts
           : layouts // ignore: cast_nullable_to_non_nullable
-              as List<KeyboardLayout>?,
+              as List<KeyboardLayout>,
     ));
   }
 }
@@ -1852,15 +1857,15 @@ class __$KeyboardSetupCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_KeyboardSetup implements _KeyboardSetup {
-  const _$_KeyboardSetup({this.setting, this.layouts});
+  const _$_KeyboardSetup({required this.setting, required this.layouts});
 
   factory _$_KeyboardSetup.fromJson(Map<String, dynamic> json) =>
       _$_$_KeyboardSetupFromJson(json);
 
   @override
-  final KeyboardSetting? setting;
+  final KeyboardSetting setting;
   @override
-  final List<KeyboardLayout>? layouts;
+  final List<KeyboardLayout> layouts;
 
   @override
   String toString() {
@@ -1897,16 +1902,16 @@ class _$_KeyboardSetup implements _KeyboardSetup {
 
 abstract class _KeyboardSetup implements KeyboardSetup {
   const factory _KeyboardSetup(
-      {KeyboardSetting? setting,
-      List<KeyboardLayout>? layouts}) = _$_KeyboardSetup;
+      {required KeyboardSetting setting,
+      required List<KeyboardLayout> layouts}) = _$_KeyboardSetup;
 
   factory _KeyboardSetup.fromJson(Map<String, dynamic> json) =
       _$_KeyboardSetup.fromJson;
 
   @override
-  KeyboardSetting? get setting => throw _privateConstructorUsedError;
+  KeyboardSetting get setting => throw _privateConstructorUsedError;
   @override
-  List<KeyboardLayout>? get layouts => throw _privateConstructorUsedError;
+  List<KeyboardLayout> get layouts => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>

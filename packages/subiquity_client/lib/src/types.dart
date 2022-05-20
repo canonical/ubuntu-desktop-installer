@@ -105,8 +105,8 @@ class AnyStep with _$AnyStep {
 class KeyboardSetting with _$KeyboardSetting {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardSetting({
-    String? layout,
-    String? variant,
+    required String layout,
+    @Default('') String variant,
     String? toggle,
   }) = _KeyboardSetting;
 
@@ -118,8 +118,8 @@ class KeyboardSetting with _$KeyboardSetting {
 class KeyboardVariant with _$KeyboardVariant {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardVariant({
-    String? code,
-    String? name,
+    required String code,
+    required String name,
   }) = _KeyboardVariant;
 
   factory KeyboardVariant.fromJson(Map<String, dynamic> json) =>
@@ -130,9 +130,9 @@ class KeyboardVariant with _$KeyboardVariant {
 class KeyboardLayout with _$KeyboardLayout {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardLayout({
-    String? code,
-    String? name,
-    List<KeyboardVariant>? variants,
+    required String code,
+    required String name,
+    required List<KeyboardVariant> variants,
   }) = _KeyboardLayout;
 
   factory KeyboardLayout.fromJson(Map<String, dynamic> json) =>
@@ -143,8 +143,8 @@ class KeyboardLayout with _$KeyboardLayout {
 class KeyboardSetup with _$KeyboardSetup {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardSetup({
-    KeyboardSetting? setting,
-    List<KeyboardLayout>? layouts,
+    required KeyboardSetting setting,
+    required List<KeyboardLayout> layouts,
   }) = _KeyboardSetup;
 
   factory KeyboardSetup.fromJson(Map<String, dynamic> json) =>

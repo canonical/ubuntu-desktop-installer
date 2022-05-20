@@ -171,8 +171,8 @@ Map<String, dynamic> _$_$StepResultToJson(_$StepResult instance) =>
 
 _$_KeyboardSetting _$_$_KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _$_KeyboardSetting(
-    layout: json['layout'] as String?,
-    variant: json['variant'] as String?,
+    layout: json['layout'] as String,
+    variant: json['variant'] as String? ?? '',
     toggle: json['toggle'] as String?,
   );
 }
@@ -186,8 +186,8 @@ Map<String, dynamic> _$_$_KeyboardSettingToJson(_$_KeyboardSetting instance) =>
 
 _$_KeyboardVariant _$_$_KeyboardVariantFromJson(Map<String, dynamic> json) {
   return _$_KeyboardVariant(
-    code: json['code'] as String?,
-    name: json['name'] as String?,
+    code: json['code'] as String,
+    name: json['name'] as String,
   );
 }
 
@@ -199,10 +199,10 @@ Map<String, dynamic> _$_$_KeyboardVariantToJson(_$_KeyboardVariant instance) =>
 
 _$_KeyboardLayout _$_$_KeyboardLayoutFromJson(Map<String, dynamic> json) {
   return _$_KeyboardLayout(
-    code: json['code'] as String?,
-    name: json['name'] as String?,
-    variants: (json['variants'] as List<dynamic>?)
-        ?.map((e) => KeyboardVariant.fromJson(e as Map<String, dynamic>))
+    code: json['code'] as String,
+    name: json['name'] as String,
+    variants: (json['variants'] as List<dynamic>)
+        .map((e) => KeyboardVariant.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }
@@ -211,24 +211,22 @@ Map<String, dynamic> _$_$_KeyboardLayoutToJson(_$_KeyboardLayout instance) =>
     <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
-      'variants': instance.variants?.map((e) => e.toJson()).toList(),
+      'variants': instance.variants.map((e) => e.toJson()).toList(),
     };
 
 _$_KeyboardSetup _$_$_KeyboardSetupFromJson(Map<String, dynamic> json) {
   return _$_KeyboardSetup(
-    setting: json['setting'] == null
-        ? null
-        : KeyboardSetting.fromJson(json['setting'] as Map<String, dynamic>),
-    layouts: (json['layouts'] as List<dynamic>?)
-        ?.map((e) => KeyboardLayout.fromJson(e as Map<String, dynamic>))
+    setting: KeyboardSetting.fromJson(json['setting'] as Map<String, dynamic>),
+    layouts: (json['layouts'] as List<dynamic>)
+        .map((e) => KeyboardLayout.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }
 
 Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
     <String, dynamic>{
-      'setting': instance.setting?.toJson(),
-      'layouts': instance.layouts?.map((e) => e.toJson()).toList(),
+      'setting': instance.setting.toJson(),
+      'layouts': instance.layouts.map((e) => e.toJson()).toList(),
     };
 
 _$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
