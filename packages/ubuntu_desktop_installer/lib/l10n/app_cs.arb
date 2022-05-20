@@ -626,5 +626,17 @@
     }
   },
   "installationTypeMultiOSDetected": "Na tomto počítači se v současnosti nachází vícero operačních systémů. Co si přejete udělat?",
-  "@installationTypeMultiOSDetected": {}
+  "@installationTypeMultiOSDetected": {},
+  "copyingFiles": "Kopírování souborů…",
+  "@copyingFiles": {},
+  "installationFailed": "Instalace se nezdařila",
+  "@installationFailed": {},
+  "whoAreYouPageUsernameSystemReserved": "Takové jméno je rezervováno pro využití systémem.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInUse": "Takové uživatelské jméno už existuje.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameTooLong": "Takové jméno je příliš dlouhé.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Takové jméno obsahuje neplatné znaky.",
+  "@whoAreYouPageUsernameInvalidChars": {}
 }
