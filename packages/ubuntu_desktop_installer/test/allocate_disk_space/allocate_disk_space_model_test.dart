@@ -179,7 +179,7 @@ void main() {
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk = Disk(objects: [Gap()]);
+    final emptyDisk = Disk(objects: [Gap(offset: 0, size: 1)]);
     final fullDisk = Disk();
     final normalDisk = emptyDisk.copyWith(objects: [Partition()]);
     final mountedPartition =
@@ -278,9 +278,9 @@ void main() {
 
   test('edit partition', () async {
     const partition =
-        Partition(number: 1, wipe: false, format: 'ext3', mount: '/tst');
+        Partition(number: 1, wipe: null, format: 'ext3', mount: '/tst');
     final edited =
-        partition.copyWith(wipe: true, format: 'ext2', mount: '/tmp');
+        partition.copyWith(wipe: 'superblock', format: 'ext2', mount: '/tmp');
 
     final service = MockDiskStorageService();
     when(service.editPartition(Disk(), edited))

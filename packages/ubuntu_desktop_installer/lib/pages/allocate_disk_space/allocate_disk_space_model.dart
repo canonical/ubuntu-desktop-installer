@@ -179,7 +179,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
     final newPartition = partition.copyWith(
       format: format?.type,
       mount: mount,
-      wipe: wipe,
+      wipe: wipe == true ? 'superblock' : null,
     );
     return _service.editPartition(disk, newPartition).then(_updateDisks);
   }

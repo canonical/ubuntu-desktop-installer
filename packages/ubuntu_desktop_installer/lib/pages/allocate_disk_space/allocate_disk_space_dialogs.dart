@@ -51,7 +51,7 @@ Future<void> showCreatePartitionDialog(
     context: context,
     builder: (context) {
       final partitionUnit = ValueNotifier(DataUnit.megabytes);
-      final partitionSize = ValueNotifier(gap.size ?? 0);
+      final partitionSize = ValueNotifier(gap.size);
       final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
 
@@ -79,7 +79,7 @@ Future<void> showCreatePartitionDialog(
                   return StorageSizeBox(
                     size: partitionSize.value,
                     unit: partitionUnit.value,
-                    available: gap.size ?? 0,
+                    available: gap.size,
                     onSizeChanged: (v) => partitionSize.value = v,
                     onUnitSelected: (v) => partitionUnit.value = v,
                   );
@@ -177,7 +177,7 @@ Future<void> showEditPartitionDialog(
     builder: (context) {
       final partitionFormat =
           ValueNotifier(PartitionFormat.fromPartition(partition));
-      final partitionWipe = ValueNotifier(partition.wipe);
+      final partitionWipe = ValueNotifier(partition.isWiped);
       final partitionMount = ValueNotifier(partition.mount);
 
       final lang = AppLocalizations.of(context);

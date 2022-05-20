@@ -52,8 +52,9 @@ class _PartitionPainter extends CustomPainter {
     final objectCount = objects?.length ?? 0;
     for (var index = 0; index < objectCount; ++index) {
       final object = objects![index];
+      if (object is! Partition) continue;
       final objectSize = object.size ?? 0;
-      if (object is! Partition || objectSize <= 0) continue;
+      if (objectSize <= 0) continue;
 
       final paint = Paint();
       paint.color = _partitionColor(index, objects.length);
@@ -94,7 +95,7 @@ class PartitionLegend extends StatelessWidget {
           final object = objects![index];
           if (object is Gap) {
             return _PartitionLabel(
-              size: object.size ?? 0,
+              size: object.size,
               title: lang.freeDiskSpace,
               borderColor: Theme.of(context).dividerColor,
             );
