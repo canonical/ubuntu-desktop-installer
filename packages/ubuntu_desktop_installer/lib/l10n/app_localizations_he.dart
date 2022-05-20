@@ -80,7 +80,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get turnOffRST => 'כיבוי RST';
 
   @override
-  String get turnOffRSTDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. עליך לכבות את RST דרך Windows בטרם הסרת אובונטו.';
+  String get turnOffRSTDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
 
   @override
   String instructionsForRST(Object url) {
@@ -319,7 +319,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'מסמכים, מוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
+  String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
   String get installationTypeManual => 'משהו אחר';
@@ -612,7 +612,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get turnOffBitlockerTitle => 'כיבוי BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nעליך לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.';
+  String get turnOffBitlockerDescription => 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -670,7 +670,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get photoSlideTitle => 'להשתולל עם התמונות שלך';
 
   @override
-  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר עם לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.';
+  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר מול הגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, אפשר לשתף או להגן עליהן בקלות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.';
 
   @override
   String get photoSlideShotwell => 'מנהל התמונות Shotwell';
@@ -738,7 +738,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ב־$RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
+    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ל־$RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
   }
 
   @override
@@ -757,8 +757,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get supportedSoftware => 'תוכנות נתמכות';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'קבצים מועתקים…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'ההתקנה נכשלה';
 }
