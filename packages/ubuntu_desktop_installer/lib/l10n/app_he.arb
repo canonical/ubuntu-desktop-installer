@@ -50,7 +50,7 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
   "@updatesOtherSoftwarePageDescription": {},
-  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nעליך לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
+  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
   "@turnOffBitlockerDescription": {},
   "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש.",
   "@readyToUse": {
@@ -81,7 +81,7 @@
   "@repairInstallation": {},
   "repairInstallationDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
   "@repairInstallationDescription": {},
-  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. עליך לכבות את RST דרך Windows בטרם הסרת אובונטו.",
+  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
   "@turnOffRSTDescription": {},
   "instructionsForRST": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
@@ -302,7 +302,7 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "יצירת מחיצה",
   "@partitionCreateTitle": {},
-  "installationTypeAlongsideInfo": "מסמכים, מוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.",
+  "installationTypeAlongsideInfo": "המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.",
   "@installationTypeAlongsideInfo": {},
   "partitionTypeLabel": "סוג המחיצה החדשה:",
   "@partitionTypeLabel": {},
@@ -495,7 +495,7 @@
   "@supportSlideTitle": {},
   "availableSoftware": "תוכנות זמינות",
   "@availableSoftware": {},
-  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ב־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
+  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ל־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -530,7 +530,7 @@
   },
   "supportSlideQuestions": "ב־<a href=\"https://askubuntu.com\">Ask Ubuntu</a> אפשר לשאול שאלות ולחפש במאגר מרשים של שאלות שנענו. יתכן ש<a href=\"https://loco.ubuntu.com/teams\">צוות הקהילה המקומית</a> שלך מספק תמיכה בשפה שנוחה לך.",
   "@supportSlideQuestions": {},
-  "photoSlideDescription": "Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר עם לגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, שיתופן וההגנה עליהן הן די פשוטות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.",
+  "photoSlideDescription": "Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר מול הגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, אפשר לשתף או להגן עליהן בקלות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.",
   "@photoSlideDescription": {},
   "officeSlideDescription": "LibreOffice היא חבילת כלים משרדיים שכוללת בתוכה את כל מה שדרוש כדי ליצור מסמכים, גיליונות נתונים ומצגות. תואם לתצורות הקבצים של Microsoft Office, היא נותנת לך את כל מה שנחוץ לך, בלי שורת המחיר.",
   "@officeSlideDescription": {},
@@ -571,5 +571,9 @@
       "os1": {},
       "os2": {}
     }
-  }
+  },
+  "copyingFiles": "קבצים מועתקים…",
+  "@copyingFiles": {},
+  "installationFailed": "ההתקנה נכשלה",
+  "@installationFailed": {}
 }

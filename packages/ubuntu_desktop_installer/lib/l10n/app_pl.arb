@@ -571,5 +571,9 @@
     }
   },
   "installationTypeMultiOSDetected": "Na tym komputerze jest obecnie zainstalowanych wiele systemów operacyjnych. Co chcesz zrobić?",
-  "@installationTypeMultiOSDetected": {}
+  "@installationTypeMultiOSDetected": {},
+  "copyingFiles": "Kopiowanie plików...",
+  "@copyingFiles": {},
+  "installationFailed": "Instalacja nieudana",
+  "@installationFailed": {}
 }
