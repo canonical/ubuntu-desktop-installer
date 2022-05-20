@@ -68,7 +68,7 @@
   "@configurationUIAutoMountSubtitle": {},
   "configurationUIMountFstabTitle": "Montuj /etc/fstab",
   "@configurationUIMountFstabTitle": {},
-  "configurationUIMountFstabSubtitle": "Określa, czy plik /etc/fstab będzie montowany. Plik konfiguracyjny /etc/fstab zawiera ???",
+  "configurationUIMountFstabSubtitle": "Określa, czy /etc/fstab będzie montowany. Ten plik zawiera informacje o systemach plików do zamontowania przez system.",
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "Konfiguracja zakończona",
   "@setupCompleteTitle": {},
@@ -130,5 +130,13 @@
   "applyingChanges": "Stosowanie zmian...",
   "@applyingChanges": {},
   "applyingChangesDisclaimer": "Może to potrwać kilka minut w zależności od połączenia internetowego.",
-  "@applyingChangesDisclaimer": {}
+  "@applyingChangesDisclaimer": {},
+  "profileSetupUsernameSystemReserved": "Ta nazwa jest zarezerwowana na użytek systemu.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameTooLong": "Ta nazwa jest za długa.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInvalidChars": "Ta nazwa zawiera nieprawidłowe znaki.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameInUse": "Ta nazwa użytkownika już istnieje.",
+  "@profileSetupUsernameInUse": {}
 }
