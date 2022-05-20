@@ -757,8 +757,8 @@ class AppLocalizationsPl extends AppLocalizations {
   String get supportedSoftware => 'Obsługiwane oprogramowanie';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Kopiowanie plików...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Instalacja nieudana';
 }
