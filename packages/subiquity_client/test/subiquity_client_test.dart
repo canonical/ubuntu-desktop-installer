@@ -95,9 +95,9 @@ void main() {
       await client.setKeyboard(ks);
 
       var kb = await client.keyboard();
-      expect(kb.setting?.layout, 'us');
-      expect(kb.setting?.variant, '');
-      expect(kb.setting?.toggle, null);
+      expect(kb.setting.layout, 'us');
+      expect(kb.setting.variant, '');
+      expect(kb.setting.toggle, null);
       expect(kb.layouts, isNotEmpty);
     });
 

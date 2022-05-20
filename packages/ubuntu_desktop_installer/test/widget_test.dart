@@ -25,7 +25,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
-    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
+    when(client.keyboard()).thenAnswer((_) async =>
+        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     when(client.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponse());
     when(client.isOpen).thenAnswer((_) async => true);

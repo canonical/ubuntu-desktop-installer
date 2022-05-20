@@ -5,27 +5,21 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_m
 import 'package:ubuntu_test/mocks.dart';
 
 const testLayouts = <KeyboardLayout>[
-  KeyboardLayout(code: 'null-variants', name: 'Null variants', variants: null),
   KeyboardLayout(code: 'empty-variants', name: 'Empty variants', variants: []),
-  KeyboardLayout(
-    code: 'with-null-variants',
-    name: 'With null variants',
-    variants: [KeyboardVariant(code: null)],
-  ),
   KeyboardLayout(
     code: 'with-variants',
     name: 'With variants',
     variants: [
-      KeyboardVariant(code: 'variant1'),
-      KeyboardVariant(code: 'variant2'),
+      KeyboardVariant(code: 'variant1', name: 'V1'),
+      KeyboardVariant(code: 'variant2', name: 'V2'),
     ],
   ),
 ];
 
 KeyboardSetup testSetup(
-  List<KeyboardLayout>? layouts, {
-  required String? layout,
-  required String? variant,
+  List<KeyboardLayout> layouts, {
+  required String layout,
+  required String variant,
 }) {
   final setting = KeyboardSetting(layout: layout, variant: variant);
   return KeyboardSetup(setting: setting, layouts: layouts);
@@ -51,16 +45,6 @@ void main() {
       expect(model.selectedVariantIndex, equals(-1));
     });
 
-    test('layout=null and variant=null', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts, layout: null, variant: null);
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(-1));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
     test('layout=unknown and variant=unknown', () async {
       when(client.keyboard()).thenAnswer((_) async {
         return testSetup(testLayouts, layout: 'unknown', variant: 'unknown');
@@ -71,37 +55,6 @@ void main() {
       expect(model.selectedVariantIndex, equals(-1));
     });
 
-    test('variants=null and variant=null', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts, layout: 'null-variants', variant: null);
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(0));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
-    test('variants=null and variant=unknown', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts,
-            layout: 'null-variants', variant: 'unknown');
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(0));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
-    test('variants=[] and variant=null', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts, layout: 'empty-variants', variant: null);
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(1));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
     test('variants=[] and variant=unknown', () async {
       when(client.keyboard()).thenAnswer((_) async {
         return testSetup(testLayouts,
@@ -109,39 +62,7 @@ void main() {
       });
 
       await model.init();
-      expect(model.selectedLayoutIndex, equals(1));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
-    test('variants=[null] and variant=null', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts,
-            layout: 'with-null-variants', variant: null);
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(2));
-      expect(model.selectedVariantIndex, equals(0));
-    });
-
-    test('variants=[null] and variant=unknown', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts,
-            layout: 'with-null-variants', variant: 'unknown');
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(2));
-      expect(model.selectedVariantIndex, equals(-1));
-    });
-
-    test('variant=null', () async {
-      when(client.keyboard()).thenAnswer((_) async {
-        return testSetup(testLayouts, layout: 'with-variants', variant: null);
-      });
-
-      await model.init();
-      expect(model.selectedLayoutIndex, equals(3));
+      expect(model.selectedLayoutIndex, equals(0));
       expect(model.selectedVariantIndex, equals(-1));
     });
 
@@ -152,7 +73,7 @@ void main() {
       });
 
       await model.init();
-      expect(model.selectedLayoutIndex, equals(3));
+      expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(-1));
     });
 
@@ -163,7 +84,7 @@ void main() {
       });
 
       await model.init();
-      expect(model.selectedLayoutIndex, equals(3));
+      expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(1));
     });
   });
@@ -181,7 +102,7 @@ void main() {
             KeyboardVariant(code: 'baz', name: 'Baz'),
             KeyboardVariant(code: 'qux', name: 'Qux'),
           ]),
-        ], layout: null, variant: null);
+        ], layout: '', variant: '');
       });
 
       model = KeyboardLayoutModel(client);
@@ -297,7 +218,7 @@ void main() {
           KeyboardVariant(code: 'baz', name: 'Baz'),
           KeyboardVariant(code: 'qux', name: 'Qux'),
         ]),
-      ], layout: null, variant: null);
+      ], layout: '', variant: '');
     });
 
     final model = KeyboardLayoutModel(client);

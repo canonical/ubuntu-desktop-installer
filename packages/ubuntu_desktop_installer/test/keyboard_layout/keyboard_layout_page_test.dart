@@ -160,7 +160,8 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup());
+    when(client.keyboard()).thenAnswer((_) async =>
+        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));

@@ -41,7 +41,8 @@ void main() {
       ),
     );
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async => KeyboardSetup(layouts: []));
+    when(client.keyboard()).thenAnswer((_) async =>
+        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
