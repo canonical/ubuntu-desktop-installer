@@ -575,5 +575,13 @@
   "copyingFiles": "Kopiowanie plików...",
   "@copyingFiles": {},
   "installationFailed": "Instalacja nieudana",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "whoAreYouPageUsernameInUse": "Ta nazwa użytkownika już istnieje.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Ta nazwa jest zarezerwowana na użytek systemu.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInvalidChars": "Ta nazwa zawiera nieprawidłowe znaki.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPageUsernameTooLong": "Ta nazwa jest za długa.",
+  "@whoAreYouPageUsernameTooLong": {}
 }
