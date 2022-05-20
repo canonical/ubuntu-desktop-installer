@@ -78,23 +78,23 @@ class AnyStep with _$AnyStep {
   @FreezedUnionValue('StepPressKey')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepPressKey({
-    List<String>? symbols,
-    List<List<dynamic>>? keycodes,
+    required List<String> symbols,
+    required List<List<dynamic>> keycodes,
   }) = StepPressKey;
 
   @FreezedUnionValue('StepKeyPresent')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepKeyPresent({
-    String? symbol,
-    String? yes,
-    String? no,
+    required String symbol,
+    required String yes,
+    required String no,
   }) = StepKeyPresent;
 
   @FreezedUnionValue('StepResult')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepResult({
-    String? layout,
-    String? variant,
+    required String layout,
+    required String variant,
   }) = StepResult;
 
   factory AnyStep.fromJson(Map<String, dynamic> json) =>
