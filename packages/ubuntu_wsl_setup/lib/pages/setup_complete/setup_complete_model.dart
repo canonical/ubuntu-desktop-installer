@@ -16,7 +16,7 @@ class SetupCompleteModel extends SafeChangeNotifier with SystemShutdown {
   final _identity = ValueNotifier(const IdentityData());
 
   /// The username for the profile.
-  String get username => _identity.value.username ?? '';
+  String get username => _identity.value.username;
 
   /// Initializes the model.
   Future<void> init() {

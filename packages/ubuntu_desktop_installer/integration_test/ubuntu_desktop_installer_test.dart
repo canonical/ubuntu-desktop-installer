@@ -460,15 +460,9 @@ Future<void> verifyConfig({
 
   if (identity != null) {
     final actualIdentity = yaml['autoinstall']['identity'];
-    if (identity.hostname != null) {
-      expect(actualIdentity['hostname'], equals(identity.hostname));
-    }
-    if (identity.realname != null) {
-      expect(actualIdentity['realname'], equals(identity.realname));
-    }
-    if (identity.username != null) {
-      expect(actualIdentity['username'], equals(identity.username));
-    }
+    expect(actualIdentity['hostname'], equals(identity.hostname));
+    expect(actualIdentity['realname'], equals(identity.realname));
+    expect(actualIdentity['username'], equals(identity.username));
   }
 
   if (keyboard != null) {

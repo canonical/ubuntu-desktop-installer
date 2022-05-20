@@ -327,10 +327,10 @@ class StorageResponseV2 with _$StorageResponseV2 {
 class IdentityData with _$IdentityData {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory IdentityData({
-    @Default('') String? realname,
-    @Default('') String? username,
-    @Default('') String? cryptedPassword,
-    @Default('') String? hostname,
+    @Default('') String realname,
+    @Default('') String username,
+    @Default('') String cryptedPassword,
+    @Default('') String hostname,
   }) = _IdentityData;
 
   factory IdentityData.fromJson(Map<String, dynamic> json) =>
