@@ -2674,31 +2674,37 @@ class _$DiskObjectTearOff {
   const _$DiskObjectTearOff();
 
   Partition partition(
-      {int? offset,
-      int? size,
+      {int? size,
       int? number,
-      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
+      String? wipe,
       List<String>? annotations = const [],
       String? mount,
       String? format,
       bool? grubDevice,
-      OsProber? os}) {
+      bool? boot,
+      OsProber? os,
+      int? offset,
+      bool? resize,
+      String? path}) {
     return Partition(
-      offset: offset,
       size: size,
       number: number,
-      wipe: wipe,
       preserve: preserve,
+      wipe: wipe,
       annotations: annotations,
       mount: mount,
       format: format,
       grubDevice: grubDevice,
+      boot: boot,
       os: os,
+      offset: offset,
+      resize: resize,
+      path: path,
     );
   }
 
-  Gap gap({int? offset, int? size}) {
+  Gap gap({required int offset, required int size}) {
     return Gap(
       offset: offset,
       size: size,
@@ -2715,43 +2721,44 @@ const $DiskObject = _$DiskObjectTearOff();
 
 /// @nodoc
 mixin _$DiskObject {
-  int? get offset => throw _privateConstructorUsedError;
-  int? get size => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)
         partition,
-    required TResult Function(int? offset, int? size) gap,
+    required TResult Function(int offset, int size) gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)?
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)?
         partition,
-    TResult Function(int? offset, int? size)? gap,
+    TResult Function(int offset, int size)? gap,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2769,9 +2776,6 @@ mixin _$DiskObject {
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DiskObjectCopyWith<DiskObject> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2779,7 +2783,6 @@ abstract class $DiskObjectCopyWith<$Res> {
   factory $DiskObjectCopyWith(
           DiskObject value, $Res Function(DiskObject) then) =
       _$DiskObjectCopyWithImpl<$Res>;
-  $Res call({int? offset, int? size});
 }
 
 /// @nodoc
@@ -2789,41 +2792,26 @@ class _$DiskObjectCopyWithImpl<$Res> implements $DiskObjectCopyWith<$Res> {
   final DiskObject _value;
   // ignore: unused_field
   final $Res Function(DiskObject) _then;
-
-  @override
-  $Res call({
-    Object? offset = freezed,
-    Object? size = freezed,
-  }) {
-    return _then(_value.copyWith(
-      offset: offset == freezed
-          ? _value.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      size: size == freezed
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $PartitionCopyWith<$Res> implements $DiskObjectCopyWith<$Res> {
+abstract class $PartitionCopyWith<$Res> {
   factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
       _$PartitionCopyWithImpl<$Res>;
-  @override
   $Res call(
-      {int? offset,
-      int? size,
+      {int? size,
       int? number,
-      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
+      String? wipe,
       List<String>? annotations,
       String? mount,
       String? format,
       bool? grubDevice,
-      OsProber? os});
+      bool? boot,
+      OsProber? os,
+      int? offset,
+      bool? resize,
+      String? path});
 
   $OsProberCopyWith<$Res>? get os;
 }
@@ -2839,22 +2827,21 @@ class _$PartitionCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? offset = freezed,
     Object? size = freezed,
     Object? number = freezed,
-    Object? wipe = freezed,
     Object? preserve = freezed,
+    Object? wipe = freezed,
     Object? annotations = freezed,
     Object? mount = freezed,
     Object? format = freezed,
     Object? grubDevice = freezed,
+    Object? boot = freezed,
     Object? os = freezed,
+    Object? offset = freezed,
+    Object? resize = freezed,
+    Object? path = freezed,
   }) {
     return _then(Partition(
-      offset: offset == freezed
-          ? _value.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -2863,14 +2850,14 @@ class _$PartitionCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
-      wipe: wipe == freezed
-          ? _value.wipe
-          : wipe // ignore: cast_nullable_to_non_nullable
-              as bool?,
       preserve: preserve == freezed
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool?,
+      wipe: wipe == freezed
+          ? _value.wipe
+          : wipe // ignore: cast_nullable_to_non_nullable
+              as String?,
       annotations: annotations == freezed
           ? _value.annotations
           : annotations // ignore: cast_nullable_to_non_nullable
@@ -2887,10 +2874,26 @@ class _$PartitionCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
           ? _value.grubDevice
           : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
+      boot: boot == freezed
+          ? _value.boot
+          : boot // ignore: cast_nullable_to_non_nullable
+              as bool?,
       os: os == freezed
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as OsProber?,
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      resize: resize == freezed
+          ? _value.resize
+          : resize // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -2912,31 +2915,31 @@ class _$PartitionCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$Partition implements Partition {
   const _$Partition(
-      {this.offset,
-      this.size,
+      {this.size,
       this.number,
-      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) this.wipe,
       this.preserve,
+      this.wipe,
       this.annotations = const [],
       this.mount,
       this.format,
       this.grubDevice,
-      this.os});
+      this.boot,
+      this.os,
+      this.offset,
+      this.resize,
+      this.path});
 
   factory _$Partition.fromJson(Map<String, dynamic> json) =>
       _$_$PartitionFromJson(json);
 
   @override
-  final int? offset;
-  @override
   final int? size;
   @override
   final int? number;
   @override
-  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-  final bool? wipe;
-  @override
   final bool? preserve;
+  @override
+  final String? wipe;
   @JsonKey(defaultValue: const [])
   @override
   final List<String>? annotations;
@@ -2947,28 +2950,34 @@ class _$Partition implements Partition {
   @override
   final bool? grubDevice;
   @override
+  final bool? boot;
+  @override
   final OsProber? os;
+  @override
+  final int? offset;
+  @override
+  final bool? resize;
+  @override
+  final String? path;
 
   @override
   String toString() {
-    return 'DiskObject.partition(offset: $offset, size: $size, number: $number, wipe: $wipe, preserve: $preserve, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, os: $os)';
+    return 'DiskObject.partition(size: $size, number: $number, preserve: $preserve, wipe: $wipe, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, boot: $boot, os: $os, offset: $offset, resize: $resize, path: $path)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Partition &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)) &&
             (identical(other.size, size) ||
                 const DeepCollectionEquality().equals(other.size, size)) &&
             (identical(other.number, number) ||
                 const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.wipe, wipe) ||
-                const DeepCollectionEquality().equals(other.wipe, wipe)) &&
             (identical(other.preserve, preserve) ||
                 const DeepCollectionEquality()
                     .equals(other.preserve, preserve)) &&
+            (identical(other.wipe, wipe) ||
+                const DeepCollectionEquality().equals(other.wipe, wipe)) &&
             (identical(other.annotations, annotations) ||
                 const DeepCollectionEquality()
                     .equals(other.annotations, annotations)) &&
@@ -2979,23 +2988,34 @@ class _$Partition implements Partition {
             (identical(other.grubDevice, grubDevice) ||
                 const DeepCollectionEquality()
                     .equals(other.grubDevice, grubDevice)) &&
+            (identical(other.boot, boot) ||
+                const DeepCollectionEquality().equals(other.boot, boot)) &&
             (identical(other.os, os) ||
-                const DeepCollectionEquality().equals(other.os, os)));
+                const DeepCollectionEquality().equals(other.os, os)) &&
+            (identical(other.offset, offset) ||
+                const DeepCollectionEquality().equals(other.offset, offset)) &&
+            (identical(other.resize, resize) ||
+                const DeepCollectionEquality().equals(other.resize, resize)) &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(offset) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(wipe) ^
       const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(wipe) ^
       const DeepCollectionEquality().hash(annotations) ^
       const DeepCollectionEquality().hash(mount) ^
       const DeepCollectionEquality().hash(format) ^
       const DeepCollectionEquality().hash(grubDevice) ^
-      const DeepCollectionEquality().hash(os);
+      const DeepCollectionEquality().hash(boot) ^
+      const DeepCollectionEquality().hash(os) ^
+      const DeepCollectionEquality().hash(offset) ^
+      const DeepCollectionEquality().hash(resize) ^
+      const DeepCollectionEquality().hash(path);
 
   @JsonKey(ignore: true)
   @override
@@ -3006,46 +3026,50 @@ class _$Partition implements Partition {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)
         partition,
-    required TResult Function(int? offset, int? size) gap,
+    required TResult Function(int offset, int size) gap,
   }) {
-    return partition(offset, size, number, wipe, preserve, annotations, mount,
-        format, grubDevice, os);
+    return partition(size, number, preserve, wipe, annotations, mount, format,
+        grubDevice, boot, os, offset, resize, path);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)?
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)?
         partition,
-    TResult Function(int? offset, int? size)? gap,
+    TResult Function(int offset, int size)? gap,
     required TResult orElse(),
   }) {
     if (partition != null) {
-      return partition(offset, size, number, wipe, preserve, annotations, mount,
-          format, grubDevice, os);
+      return partition(size, number, preserve, wipe, annotations, mount, format,
+          grubDevice, boot, os, offset, resize, path);
     }
     return orElse();
   }
@@ -3080,44 +3104,45 @@ class _$Partition implements Partition {
 
 abstract class Partition implements DiskObject {
   const factory Partition(
-      {int? offset,
-      int? size,
+      {int? size,
       int? number,
-      @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
       bool? preserve,
+      String? wipe,
       List<String>? annotations,
       String? mount,
       String? format,
       bool? grubDevice,
-      OsProber? os}) = _$Partition;
+      bool? boot,
+      OsProber? os,
+      int? offset,
+      bool? resize,
+      String? path}) = _$Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) = _$Partition.fromJson;
 
-  @override
-  int? get offset => throw _privateConstructorUsedError;
-  @override
   int? get size => throw _privateConstructorUsedError;
   int? get number => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-  bool? get wipe => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
+  String? get wipe => throw _privateConstructorUsedError;
   List<String>? get annotations => throw _privateConstructorUsedError;
   String? get mount => throw _privateConstructorUsedError;
   String? get format => throw _privateConstructorUsedError;
   bool? get grubDevice => throw _privateConstructorUsedError;
+  bool? get boot => throw _privateConstructorUsedError;
   OsProber? get os => throw _privateConstructorUsedError;
-  @override
+  int? get offset => throw _privateConstructorUsedError;
+  bool? get resize => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PartitionCopyWith<Partition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GapCopyWith<$Res> implements $DiskObjectCopyWith<$Res> {
+abstract class $GapCopyWith<$Res> {
   factory $GapCopyWith(Gap value, $Res Function(Gap) then) =
       _$GapCopyWithImpl<$Res>;
-  @override
-  $Res call({int? offset, int? size});
+  $Res call({int offset, int size});
 }
 
 /// @nodoc
@@ -3138,11 +3163,11 @@ class _$GapCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
       offset: offset == freezed
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -3152,14 +3177,14 @@ class _$GapCopyWithImpl<$Res> extends _$DiskObjectCopyWithImpl<$Res>
 @FreezedUnionValue('Gap')
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$Gap implements Gap {
-  const _$Gap({this.offset, this.size});
+  const _$Gap({required this.offset, required this.size});
 
   factory _$Gap.fromJson(Map<String, dynamic> json) => _$_$GapFromJson(json);
 
   @override
-  final int? offset;
+  final int offset;
   @override
-  final int? size;
+  final int size;
 
   @override
   String toString() {
@@ -3190,19 +3215,21 @@ class _$Gap implements Gap {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)
         partition,
-    required TResult Function(int? offset, int? size) gap,
+    required TResult Function(int offset, int size) gap,
   }) {
     return gap(offset, size);
   }
@@ -3211,19 +3238,21 @@ class _$Gap implements Gap {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            int? offset,
             int? size,
             int? number,
-            @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString)
-                bool? wipe,
             bool? preserve,
+            String? wipe,
             List<String>? annotations,
             String? mount,
             String? format,
             bool? grubDevice,
-            OsProber? os)?
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            bool? resize,
+            String? path)?
         partition,
-    TResult Function(int? offset, int? size)? gap,
+    TResult Function(int offset, int size)? gap,
     required TResult orElse(),
   }) {
     if (gap != null) {
@@ -3261,15 +3290,12 @@ class _$Gap implements Gap {
 }
 
 abstract class Gap implements DiskObject {
-  const factory Gap({int? offset, int? size}) = _$Gap;
+  const factory Gap({required int offset, required int size}) = _$Gap;
 
   factory Gap.fromJson(Map<String, dynamic> json) = _$Gap.fromJson;
 
-  @override
-  int? get offset => throw _privateConstructorUsedError;
-  @override
-  int? get size => throw _privateConstructorUsedError;
-  @override
+  int get offset => throw _privateConstructorUsedError;
+  int get size => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GapCopyWith<Gap> get copyWith => throw _privateConstructorUsedError;
 }

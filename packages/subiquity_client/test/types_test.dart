@@ -136,13 +136,13 @@ void main() {
 
   test('partition', () {
     const partition = Partition(
-      offset: 678,
       size: 1,
       number: 2,
       preserve: false,
-      wipe: true,
+      wipe: 'superblock',
       annotations: ['3', '4', '5'],
       mount: '/foo',
+      boot: false,
       format: 'bar',
       grubDevice: false,
       os: OsProber(
@@ -152,9 +152,11 @@ void main() {
         subpath: '/efi/Microsoft/Boot/bootmgfw.efi',
         version: '11',
       ),
+      offset: 678,
+      resize: false,
+      path: '/dev/sda2',
     );
     const json = <String, dynamic>{
-      'offset': 678,
       'size': 1,
       'number': 2,
       'preserve': false,
@@ -163,6 +165,7 @@ void main() {
       'mount': '/foo',
       'format': 'bar',
       'grub_device': false,
+      'boot': false,
       'os': {
         'long': 'Windows Boot Manager',
         'label': 'Windows',
@@ -170,6 +173,9 @@ void main() {
         'subpath': '/efi/Microsoft/Boot/bootmgfw.efi',
         'version': '11',
       },
+      'offset': 678,
+      'resize': false,
+      'path': '/dev/sda2',
       '\$type': 'Partition',
     };
     expect(partition.toJson(), equals(json));

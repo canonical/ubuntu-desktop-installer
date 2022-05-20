@@ -218,33 +218,31 @@ class OsProber with _$OsProber {
       _$OsProberFromJson(json);
 }
 
-bool? _wipeFromString(String? value) =>
-    value == null ? null : value == 'superblock';
-String? _wipeToString(bool? value) =>
-    value != null && value == true ? 'superblock' : null;
-
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
 class DiskObject with _$DiskObject {
   @FreezedUnionValue('Partition')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.partition({
-    int? offset,
     int? size,
     int? number,
-    @JsonKey(fromJson: _wipeFromString, toJson: _wipeToString) bool? wipe,
     bool? preserve,
+    String? wipe,
     @Default([]) List<String>? annotations,
     String? mount,
     String? format,
     bool? grubDevice,
+    bool? boot,
     OsProber? os,
+    int? offset,
+    bool? resize,
+    String? path,
   }) = Partition;
 
   @FreezedUnionValue('Gap')
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.gap({
-    int? offset,
-    int? size,
+    required int offset,
+    required int size,
   }) = Gap;
 
   factory DiskObject.fromJson(Map<String, dynamic> json) =>
