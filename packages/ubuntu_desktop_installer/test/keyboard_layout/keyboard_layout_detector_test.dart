@@ -9,7 +9,7 @@ void main() {
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return AnyStep.stepPressKey(symbols: ['a', 'b', 'c']);
+      return AnyStep.stepPressKey(keycodes: [], symbols: ['a', 'b', 'c']);
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -31,7 +31,7 @@ void main() {
       );
     });
     when(client.getKeyboardStep('34')).thenAnswer((_) async {
-      return AnyStep.stepKeyPresent(symbol: '56');
+      return AnyStep.stepKeyPresent(symbol: '56', yes: '', no: '');
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -59,7 +59,7 @@ void main() {
     late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: AnyStep.stepKeyPresent(symbol: 'y', yes: '78'),
+      value: AnyStep.stepKeyPresent(symbol: 'y', yes: '78', no: ''),
       onResult: (value) => result = value,
     );
 
@@ -85,7 +85,7 @@ void main() {
     late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: AnyStep.stepKeyPresent(symbol: 'n', no: '90'),
+      value: AnyStep.stepKeyPresent(symbol: 'n', yes: '', no: '90'),
       onResult: (value) => result = value,
     );
 
