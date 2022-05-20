@@ -6,14 +6,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:path/path.dart' as p;
 
 import 'proxy_asset_bundle_test.mocks.dart';
 
-const appPath = '/path/to/app';
-const assetName = 'assets/foo.txt';
-const bundlePath = '$appPath/data/flutter_assets';
-const appAssetPath = '$bundlePath/$assetName';
-const pkgAssetPath = '$bundlePath/packages/qux/$assetName';
+final appPath = p.dirname(Platform.resolvedExecutable);
+final assetName = p.join('assets', 'foo.txt');
+final bundlePath = p.join(appPath, 'data', 'flutter_assets');
+final appAssetPath = p.join(bundlePath, assetName);
+final pkgAssetPath = p.join(bundlePath, 'packages', 'qux', assetName);
 
 @GenerateMocks([], customMocks: [
   MockSpec<AssetBundle>(
@@ -133,11 +134,7 @@ class MockFileCreator {
   final Set<String> paths;
   File call(String path) {
     final file = MockFile(path);
-    if (path == '/proc/self/exe') {
-      when(file.resolveSymbolicLinks()).thenAnswer((_) async => '$appPath/exe');
-    } else {
-      when(file.exists()).thenAnswer((_) async => paths.contains(path));
-    }
+    when(file.exists()).thenAnswer((_) async => paths.contains(path));
     return file;
   }
 }
