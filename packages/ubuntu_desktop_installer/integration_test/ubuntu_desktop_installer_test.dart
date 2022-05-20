@@ -215,21 +215,23 @@ Future<void> testKeyboardLayoutPage(
 
   await tester.pumpAndSettle(); // auto-scroll
 
-  if (keyboard?.layout != null) {
-    final tile =
-        find.widgetWithText(ListTile, keyboard!.layout!, skipOffstage: false);
-    await tester.ensureVisible(tile.last);
-    await tester.pump();
-    await tester.tap(tile.last);
-    await tester.pump();
-  }
-  if (keyboard?.variant != null) {
-    final tile =
-        find.widgetWithText(ListTile, keyboard!.variant!, skipOffstage: false);
-    await tester.ensureVisible(tile.first);
-    await tester.pump();
-    await tester.tap(tile.first);
-    await tester.pump();
+  if (keyboard != null) {
+    if (keyboard.layout.isNotEmpty) {
+      final tile =
+          find.widgetWithText(ListTile, keyboard.layout, skipOffstage: false);
+      await tester.ensureVisible(tile.last);
+      await tester.pump();
+      await tester.tap(tile.last);
+      await tester.pump();
+    }
+    if (keyboard.variant.isNotEmpty) {
+      final tile =
+          find.widgetWithText(ListTile, keyboard.variant, skipOffstage: false);
+      await tester.ensureVisible(tile.first);
+      await tester.pump();
+      await tester.tap(tile.first);
+      await tester.pump();
+    }
   }
   await tester.pumpAndSettle();
 
@@ -473,10 +475,10 @@ Future<void> verifyConfig({
 
   if (keyboard != null) {
     final actualKeyboard = yaml['autoinstall']['keyboard'];
-    if (keyboard.layout != null) {
+    if (keyboard.layout.isNotEmpty) {
       expect(actualKeyboard['layout'], equals(keyboard.layout));
     }
-    if (keyboard.variant != null) {
+    if (keyboard.variant.isNotEmpty) {
       expect(actualKeyboard['variant'], equals(keyboard.variant));
     }
   }

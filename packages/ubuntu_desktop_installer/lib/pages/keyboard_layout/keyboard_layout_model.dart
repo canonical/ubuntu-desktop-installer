@@ -24,7 +24,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Note: the index must be valid.
   String layoutName(int index) {
     assert(index >= 0 && index < layoutCount);
-    return _layouts[index].name!;
+    return _layouts[index].name;
   }
 
   /// The index of the currently selected layout.
@@ -47,8 +47,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
-    _selectedVariantIndex =
-        _selectedLayout!.variants?.isNotEmpty == true ? variant : -1;
+    _selectedVariantIndex = _selectedLayout!.variants.isNotEmpty ? variant : -1;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     await applyKeyboardSettings();
@@ -59,10 +58,8 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   Future<void> trySelectLayoutVariant(String? layout, String? variant) async {
     final layoutIndex = _layouts.indexWhere((l) => l.code == layout);
     if (layoutIndex != -1) {
-      final variantIndex = _layouts[layoutIndex]
-              .variants
-              ?.indexWhere((v) => v.code == variant) ??
-          -1;
+      final variantIndex =
+          _layouts[layoutIndex].variants.indexWhere((v) => v.code == variant);
       await selectLayout(layoutIndex, variantIndex);
       _onLayoutSelected.add(layoutIndex);
       _onVariantSelected.add(variantIndex);
@@ -70,14 +67,14 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   }
 
   /// The number of available layout variants.
-  int get variantCount => _selectedLayout?.variants?.length ?? 0;
+  int get variantCount => _selectedLayout?.variants.length ?? 0;
 
   /// Returns the name of the layout variant at [index].
   ///
   /// Note: the index must be valid.
   String variantName(int index) {
     assert(index >= 0 && index < variantCount);
-    return _selectedLayout!.variants![index].name!;
+    return _selectedLayout!.variants[index].name;
   }
 
   /// The index of the currently selected layout variant.
@@ -85,7 +82,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   int _selectedVariantIndex = -1;
 
   KeyboardVariant? get _selectedVariant =>
-      _selectedLayout?.variants?.elementAtOrNull(_selectedVariantIndex);
+      _selectedLayout?.variants.elementAtOrNull(_selectedVariantIndex);
 
   /// Selects the keyboard layout variant at [index].
   Future<void> selectVariant(int index) async {
@@ -104,17 +101,16 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    _layouts = (await _client.keyboard()).layouts ?? [];
+    _layouts = (await _client.keyboard()).layouts;
     log.info('Loaded ${_layouts.length} keyboard layouts');
     final keyboard = await _client.keyboard();
     _selectedLayoutIndex = _layouts.indexWhere((layout) {
-      return (layout.code ?? '') == (keyboard.setting?.layout ?? '');
+      return layout.code == keyboard.setting.layout;
     });
     if (_selectedLayoutIndex > -1) {
-      _selectedVariantIndex = _selectedLayout!.variants?.indexWhere((variant) {
-            return (variant.code ?? '') == (keyboard.setting?.variant ?? '');
-          }) ??
-          -1;
+      _selectedVariantIndex = _selectedLayout!.variants.indexWhere((variant) {
+        return (variant.code) == (keyboard.setting.variant);
+      });
     }
     log.info(
         'Initialized ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
@@ -123,9 +119,9 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
 
   /// Applies the selected keyboard layout and variant to the system.
   Future<void> applyKeyboardSettings() {
-    final layout = _selectedLayout!.code!;
+    final layout = _selectedLayout!.code;
     final variant = _selectedVariant?.code;
-    final keyboard = KeyboardSetting(layout: layout, variant: variant);
+    final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Set $layout ($variant) as system keyboard layout');
     return _client.setKeyboard(keyboard);
   }
