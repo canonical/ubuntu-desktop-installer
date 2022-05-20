@@ -113,7 +113,7 @@
   "@setupCompleteManage": {},
   "setupCompleteRestart": "* Alle Einstellungen werden erst nach einem Neustart von Ubuntu wirksam.",
   "@setupCompleteRestart": {},
-  "applyingChanges": "Änderungen werden angewendet...",
+  "applyingChanges": "Änderungen werden angewendet…",
   "@applyingChanges": {},
   "configurationUIInteroperabilityTitle": "Aktiviert",
   "@configurationUIInteroperabilityTitle": {},
