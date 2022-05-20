@@ -81,9 +81,9 @@ void main() {
     final client = MockSubiquityClient();
 
     final model = WhoAreYouModel(client);
-    model.realName = identity.realname!;
-    model.username = identity.username!;
-    model.hostname = identity.hostname!;
+    model.realName = identity.realname;
+    model.username = identity.username;
+    model.hostname = identity.hostname;
     model.password = 'passwd';
 
     await model.saveIdentity(salt: 'test');
