@@ -64,7 +64,7 @@
   "@configurationUIAutoMountTitle": {},
   "configurationUIMountFstabTitle": "Připojit podle /etc/fstab",
   "@configurationUIMountFstabTitle": {},
-  "configurationUIMountFstabSubtitle": "Zda bude připojeno podle /etc/fstab. Soubor s nastaveními /etc/fstab obsahuje???",
+  "configurationUIMountFstabSubtitle": "Zda bude připojeno podle /etc/fstab. Tento soubor obsahuje informace o souborových systémech, které operační systém připojuje.",
   "@configurationUIMountFstabSubtitle": {},
   "configurationUIAutoMountSubtitle": "Zda zapnout funkci automatického připojování. Ta umožňuje do WSL připojit disk z Windows.",
   "@configurationUIAutoMountSubtitle": {},
@@ -130,5 +130,13 @@
   "applyingChangesDisclaimer": "Toto může několik minut trvat, v závislosti na rychlosti vašeho připojení k Internetu.",
   "@applyingChangesDisclaimer": {},
   "applyingChanges": "Uplatňování změn…",
-  "@applyingChanges": {}
+  "@applyingChanges": {},
+  "profileSetupUsernameInvalidChars": "Takové jméno obsahuje neplatné znaky.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameSystemReserved": "Takové jméno je rezervováno pro využití systémem.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameTooLong": "Takové jméno je příliš dlouhé.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInUse": "Takové uživatelské jméno už existuje.",
+  "@profileSetupUsernameInUse": {}
 }
