@@ -625,7 +625,9 @@ class _$AnyStepTearOff {
   const _$AnyStepTearOff();
 
   StepPressKey stepPressKey(
-      {required List<String> symbols, required List<List<dynamic>> keycodes}) {
+      {required List<String> symbols,
+      @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+          required Map<int, String> keycodes}) {
     return StepPressKey(
       symbols: symbols,
       keycodes: keycodes,
@@ -661,7 +663,9 @@ mixin _$AnyStep {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<String> symbols, List<List<dynamic>> keycodes)
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)
         stepPressKey,
     required TResult Function(String symbol, String yes, String no)
         stepKeyPresent,
@@ -670,7 +674,10 @@ mixin _$AnyStep {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> symbols, List<List<dynamic>> keycodes)?
+    TResult Function(
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)?
         stepPressKey,
     TResult Function(String symbol, String yes, String no)? stepKeyPresent,
     TResult Function(String layout, String variant)? stepResult,
@@ -715,7 +722,10 @@ abstract class $StepPressKeyCopyWith<$Res> {
   factory $StepPressKeyCopyWith(
           StepPressKey value, $Res Function(StepPressKey) then) =
       _$StepPressKeyCopyWithImpl<$Res>;
-  $Res call({List<String> symbols, List<List<dynamic>> keycodes});
+  $Res call(
+      {List<String> symbols,
+      @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+          Map<int, String> keycodes});
 }
 
 /// @nodoc
@@ -741,7 +751,7 @@ class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
       keycodes: keycodes == freezed
           ? _value.keycodes
           : keycodes // ignore: cast_nullable_to_non_nullable
-              as List<List<dynamic>>,
+              as Map<int, String>,
     ));
   }
 }
@@ -751,7 +761,10 @@ class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 @FreezedUnionValue('StepPressKey')
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$StepPressKey implements StepPressKey {
-  const _$StepPressKey({required this.symbols, required this.keycodes});
+  const _$StepPressKey(
+      {required this.symbols,
+      @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+          required this.keycodes});
 
   factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
       _$_$StepPressKeyFromJson(json);
@@ -759,7 +772,8 @@ class _$StepPressKey implements StepPressKey {
   @override
   final List<String> symbols;
   @override
-  final List<List<dynamic>> keycodes;
+  @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+  final Map<int, String> keycodes;
 
   @override
   String toString() {
@@ -793,7 +807,9 @@ class _$StepPressKey implements StepPressKey {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<String> symbols, List<List<dynamic>> keycodes)
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)
         stepPressKey,
     required TResult Function(String symbol, String yes, String no)
         stepKeyPresent,
@@ -805,7 +821,10 @@ class _$StepPressKey implements StepPressKey {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> symbols, List<List<dynamic>> keycodes)?
+    TResult Function(
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)?
         stepPressKey,
     TResult Function(String symbol, String yes, String no)? stepKeyPresent,
     TResult Function(String layout, String variant)? stepResult,
@@ -850,13 +869,15 @@ class _$StepPressKey implements StepPressKey {
 abstract class StepPressKey implements AnyStep {
   const factory StepPressKey(
       {required List<String> symbols,
-      required List<List<dynamic>> keycodes}) = _$StepPressKey;
+      @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+          required Map<int, String> keycodes}) = _$StepPressKey;
 
   factory StepPressKey.fromJson(Map<String, dynamic> json) =
       _$StepPressKey.fromJson;
 
   List<String> get symbols => throw _privateConstructorUsedError;
-  List<List<dynamic>> get keycodes => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+  Map<int, String> get keycodes => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $StepPressKeyCopyWith<StepPressKey> get copyWith =>
       throw _privateConstructorUsedError;
@@ -954,7 +975,9 @@ class _$StepKeyPresent implements StepKeyPresent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<String> symbols, List<List<dynamic>> keycodes)
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)
         stepPressKey,
     required TResult Function(String symbol, String yes, String no)
         stepKeyPresent,
@@ -966,7 +989,10 @@ class _$StepKeyPresent implements StepKeyPresent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> symbols, List<List<dynamic>> keycodes)?
+    TResult Function(
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)?
         stepPressKey,
     TResult Function(String symbol, String yes, String no)? stepKeyPresent,
     TResult Function(String layout, String variant)? stepResult,
@@ -1105,7 +1131,9 @@ class _$StepResult implements StepResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<String> symbols, List<List<dynamic>> keycodes)
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)
         stepPressKey,
     required TResult Function(String symbol, String yes, String no)
         stepKeyPresent,
@@ -1117,7 +1145,10 @@ class _$StepResult implements StepResult {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> symbols, List<List<dynamic>> keycodes)?
+    TResult Function(
+            List<String> symbols,
+            @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
+                Map<int, String> keycodes)?
         stepPressKey,
     TResult Function(String symbol, String yes, String no)? stepKeyPresent,
     TResult Function(String layout, String variant)? stepResult,

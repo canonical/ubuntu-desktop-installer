@@ -129,16 +129,14 @@ _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
   return _$StepPressKey(
     symbols:
         (json['symbols'] as List<dynamic>).map((e) => e as String).toList(),
-    keycodes: (json['keycodes'] as List<dynamic>)
-        .map((e) => e as List<dynamic>)
-        .toList(),
+    keycodes: _keycodesFromJson(json['keycodes'] as List),
   );
 }
 
 Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
     <String, dynamic>{
       'symbols': instance.symbols,
-      'keycodes': instance.keycodes,
+      'keycodes': _keycodesToJson(instance.keycodes),
     };
 
 _$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {

@@ -9,7 +9,7 @@ void main() {
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return AnyStep.stepPressKey(keycodes: [], symbols: ['a', 'b', 'c']);
+      return AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -25,9 +25,7 @@ void main() {
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
       return AnyStep.stepPressKey(
         symbols: ['a', 'b', 'c'],
-        keycodes: [
-          [12, '34']
-        ],
+        keycodes: {12: '34'},
       );
     });
     when(client.getKeyboardStep('34')).thenAnswer((_) async {
