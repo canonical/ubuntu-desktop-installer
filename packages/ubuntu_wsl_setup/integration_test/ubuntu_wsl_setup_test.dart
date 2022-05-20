@@ -95,6 +95,7 @@ void main() {
     );
 
     await testApplyingChangesPage(tester, expectClose: true);
+    await tester.pumpAndSettle();
 
     await verifyConfigFile('reconfiguration/wsl.conf');
   });
