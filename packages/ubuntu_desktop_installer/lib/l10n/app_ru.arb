@@ -223,7 +223,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordLabel": "Выберите пароль",
   "@whoAreYouPagePasswordLabel": {},
-  "whoAreYouPagePasswordRequired": "Необходим пароль",
+  "whoAreYouPagePasswordRequired": "Требуется пароль",
   "@whoAreYouPagePasswordRequired": {},
   "installationCompleteTitle": "Установка завершена",
   "@installationCompleteTitle": {},
@@ -250,7 +250,7 @@
   "@wifiMustBeEnabled": {},
   "enableWifi": "Включить Wi-Fi",
   "@enableWifi": {},
-  "selectWifiNetwork": "Подключиться сети Wi-Fi",
+  "selectWifiNetwork": "Подключиться к сети Wi-Fi",
   "@selectWifiNetwork": {},
   "noInternet": "Прямо сейчас я не хочу подключаться к Интернету",
   "@noInternet": {},
@@ -279,5 +279,314 @@
   "chooseYourLookPageLightBodyText": "Всё светло и ярко",
   "@chooseYourLookPageLightBodyText": {},
   "chooseYourLookPageDarkSetting": "Тёмный",
-  "@chooseYourLookPageDarkSetting": {}
+  "@chooseYourLookPageDarkSetting": {},
+  "newPartitionTableConfirmationTitle": "Создать новую пустую таблицу разделов на этом устройстве?",
+  "@newPartitionTableConfirmationTitle": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Предупреждение</font>. Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "chooseSecurityKeyRequired": "Требуется ключ безопасности",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyConfirmHint": "Подтвердить ключ безопасности",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyMismatch": "Ключи безопасности не совпадают",
+  "@chooseSecurityKeyMismatch": {},
+  "whoAreYouPageUsernameTooLong": "Это имя слишком длинное.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Это имя содержит недопустимые символы.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "writeChangesFallbackSerial": "диск",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "chooseYourLookPageTitle": "Выберите свой внешний вид",
+  "@chooseYourLookPageTitle": {},
+  "restartInto": "Перезагрузка в {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "turnOffBitlockerTitle": "Отключить BitLocker",
+  "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.",
+  "@turnOffBitlockerDescription": {},
+  "turnOffBitlockerLinkInstructions": "Чтобы получить инструкции, откройте страницу <a href=\"https://{url}\">{url}</a> на телефоне или другом устройстве",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Перезагрузить в Windows",
+  "@restartIntoWindows": {},
+  "shutdown": "Отключить",
+  "@shutdown": {},
+  "softwareSlideTitle": "Найдите ещё больше программного обеспечения",
+  "@softwareSlideTitle": {},
+  "photoSlideGimp": "Редактор изображений GIMP",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Видеоредактор Shotcut",
+  "@photoSlideShotcut": {},
+  "webSlideTitle": "Получите максимум от интернета",
+  "@webSlideTitle": {},
+  "webSlideFirefox": "Веб-браузер Firefox",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "installationFailed": "Ошибка установки",
+  "@installationFailed": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "webSlideChromium": "Веб-браузер Chromium",
+  "@webSlideChromium": {},
+  "officeSlideTitle": "Всё что нужно для офиса",
+  "@officeSlideTitle": {},
+  "includedSoftware": "Включённое программное обеспечение",
+  "@includedSoftware": {},
+  "copyingFiles": "Копирование файлов...",
+  "@copyingFiles": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "photoSlideShotwell": "Менеджер фотографий Shotwell",
+  "@photoSlideShotwell": {},
+  "photoSlideDescription": "Shotwell — удобный менеджер фотографий, доступный для ваших гаджетов. Подключите камеру или телефон, чтобы загрузить фотографии, после этого вы можете как делиться ими, так и безопасно хранить. А если вы ощущаете себя творческим человеком, то можете найти множество других приложений для работы с фотографиями в Ubuntu Software.",
+  "@photoSlideDescription": {},
+  "photoSlideTitle": "Получайте удовольствие от своих фотографий",
+  "@photoSlideTitle": {},
+  "webSlideDescription": "{RELEASE} включает Firefox, веб-браузер, которым пользуются миллионы людей по всему миру. И, часто используемые вами веб-приложения (например, Facebook или Gmail), могут быть закреплены на рабочем столе для более быстрого доступа, как и приложения на вашем компьютере.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideDescription": "LibreOffice — это бесплатный офисный пакет, в котором есть всё необходимое для создания документов, электронных таблиц и презентаций. Совместимый с форматами файлов Microsoft Office, он предоставляет вам все необходимые функции совершенно бесплатно.",
+  "@officeSlideDescription": {},
+  "supportSlideQuestions": "На странице <a href=\"https://askubuntu.com\">Ask Ubuntu</a> вы можете задавать вопросы и выполнять поиск по внушительной коллекции уже отвеченных вопросов. Поддержка на вашем родном языке может быть предоставлена вашей <a href=\"https://loco.ubuntu.com/teams\">местной командой сообщества</a>.",
+  "@supportSlideQuestions": {},
+  "onBatteryWarning": "<font color=\"{color}\">Внимание</font>. Компьютер не подключен к источнику питания.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "Шифрование диска защищает ваши файлы в случае потери компьютера. Это требует введение ключа безопасности при каждом запуске компьютера.\n\nЛюбые файлы за пределами {RELEASE} не будут зашифрованы.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "whoAreYouPageUsernameInUse": "Это имя пользователя уже существует.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Это имя зарезервировано для использования системой.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "writeChangesDescription": "Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.",
+  "@writeChangesDescription": {},
+  "welcomeSlideDescription": "Быстрая и изобилующая новыми функциями последняя версия {RELEASE} делает работу компьютера проще, чем когда-либо. Вот несколько крутых новинок, на которые стоит обратить внимание...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideDescription": "{RELEASE} поставляется с потрясающим музыкальным проигрывателем Rhythmbox. Благодаря расширенным параметрам воспроизведения легко ставить в очередь любимые песни. Кроме того, он отлично работает с компакт-дисками и портативными музыкальными проигрывателями, поэтому вы можете наслаждаться музыкой, куда бы ни отправились.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "На этом компьютере установлено несколько операционных систем. Что вы хотите сделать?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeDualOSDetected": "На этом компьютере установлены {os1} и {os2}. Что вы хотите сделать?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "newPartitionTableConfirmationMessage": "Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.",
+  "@newPartitionTableConfirmationMessage": {},
+  "whoAreYouPageShowPassword": "Показать пароль",
+  "@whoAreYouPageShowPassword": {},
+  "whereAreYouPageTitle": "Где вы находитесь?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Место нахождения",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Часовой пояс",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeSlideTitle": "Добро пожаловать в {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "раздел #{disk}{partition} как {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionEntryMounted": "раздел #{disk}{partition} как {format} используется для {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "musicSlideTitle": "Возьмите с собой свою музыку",
+  "@musicSlideTitle": {},
+  "softwareSlideDescription": "Попрощайтесь с поиском в интернете нового программного обеспечения. Имея доступ к Snap Store и архиву программного обеспечения {RELEASE}, вы можете легко находить и устанавливать новые приложения. Просто наберите на клавиатуре то, что вы ищете, или просмотрите такие категории, как «Графика и фотография», «Игры» и «Работа», а также отзывы других пользователей.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideAppearance": "Внешний вид",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "Специальные возможности",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideCustomizationOptions": "Параметры настройки",
+  "@accessSlideCustomizationOptions": {},
+  "accessSlideTitle": "Доступ для каждого",
+  "@accessSlideTitle": {},
+  "accessSlideDescription": "В основе философии {RELEASE} лежит убеждение, что компьютеры предназначены для каждого. Благодаря расширенным инструментам специальных возможностей и параметрам изменения языка, цветовой схемы и размера текста {RELEASE} упрощает работу с компьютером, где бы вы ни находились.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideLanguageSupport": "Языковая поддержка",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Помощь и поддержка",
+  "@supportSlideTitle": {},
+  "supportSlideDocumentation": "Официальная документация охватывает многие из наиболее распространенных областей {RELEASE}. Она доступна как <a href=\"https://help.ubuntu.com\">онлайн</a>, так и с помощью значка справки на панели задач.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideResources": "Чтобы получить ссылки на другие полезные ресурсы, посетите <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> или <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
+  "@supportSlideResources": {},
+  "supportedSoftware": "Поддерживаемое программное обеспечение",
+  "@supportedSoftware": {},
+  "availableSoftware": "Доступное программное обеспечение",
+  "@availableSoftware": {},
+  "connectToInternetPageTitle": "Интернет соединение",
+  "@connectToInternetPageTitle": {},
+  "noWiredConnection": "Проводное подключение не обнаружено",
+  "@noWiredConnection": {},
+  "wiredDisabled": "Проводное подключение отключено",
+  "@wiredDisabled": {},
+  "enableWired": "Включить проводное подключение",
+  "@enableWired": {},
+  "connectToInternetDescription": "Соединение данного компьютера с интернетом позволит Ubuntu установить дополнительное программное обеспечение и поможет выбрать ваш часовой пояс.\n\nПрисоедините кабель сети интернет или выберите сеть Wi-Fi",
+  "@connectToInternetDescription": {},
+  "useWiredConnection": "Использовать проводное подключение",
+  "@useWiredConnection": {},
+  "wiredMustBeEnabled": "Чтобы воспользоваться сетью интернет на этом компьютере, должно быть включено проводное соединение",
+  "@wiredMustBeEnabled": {},
+  "connectButtonText": "Соединение",
+  "@connectButtonText": {},
+  "musicSlideRhythmbox": "Аудио проигрыватель Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "revertButtonText": "Вернуть",
+  "@revertButtonText": {},
+  "configureSecureBootOption": "Настроить Secure Boot",
+  "@configureSecureBootOption": {},
+  "configureSecureBootDescription": "Вы выбрали установку стороннего драйвера. Для этого необходимо отключить Secure Boot.\nДля этого вам нужно сейчас выбрать ключ безопасности и ввести его при перезагрузке системы.",
+  "@configureSecureBootDescription": {},
+  "dontInstallDriverSoftwareNow": "Пока не устанавливать драйверы",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Вы можете установить их позже в приложении «Программы и обновления».",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "installThirdPartyTitle": "Установка стороннего программного обеспечения для графики и Wi-Fi, а также дополнительные форматы мультимедиа",
+  "@installThirdPartyTitle": {},
+  "updatesOtherSoftwarePageDescription": "Какие приложения вы хотели бы установить для начала?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installThirdPartySubtitle": "На это программное обеспечение распространяются условиями лицензии, содержащиеся в документации. Часть из них является проприетарной.",
+  "@installThirdPartySubtitle": {},
+  "secureBootSecurityKeysDontMatch": "Ключи безопасности не совпадают",
+  "@secureBootSecurityKeysDontMatch": {},
+  "configureSecureBootSecurityKeyRequired": "Требуется ключ безопасности",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "updatesOtherSoftwarePageTitle": "Обновления и другое программное обеспечение",
+  "@updatesOtherSoftwarePageTitle": {},
+  "installationTypeLVMSelected": "Выбран LVM",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncrypt": "Зашифровать новую установку {RELEASE} для безопасности",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncryptInfo": "На следующем шаге выберите ключ безопасности.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFSSelected": "Выбрана ZFS",
+  "@installationTypeZFSSelected": {},
+  "installationTypeManual": "Другой вариант",
+  "@installationTypeManual": {},
+  "installationTypeNone": "Ничего",
+  "@installationTypeNone": {},
+  "installationTypeLVM": "Использовать LVM с новой установкой {RELEASE}",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "allocateDiskSpace": "Выделить место на диске",
+  "@allocateDiskSpace": {},
+  "diskHeadersFormat": "Формат",
+  "@diskHeadersFormat": {},
+  "newPartitionTable": "Новая таблица разделов",
+  "@newPartitionTable": {},
+  "partitionLocationBeginning": "Начало этого пространства",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "Конец этого пространства",
+  "@partitionLocationEnd": {},
+  "partitionFormatLabel": "Использовано:",
+  "@partitionFormatLabel": {},
+  "partitionFormatZfsroot": "Корневая файловая система ZFS",
+  "@partitionFormatZfsroot": {},
+  "whoAreYouPageComputerNameRequired": "Требуется имя компьютера",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "Недопустимое имя компьютера",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageRealNameRequired": "Укажите имя",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageAutoLogin": "Входить в систему автоматически",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "Требовать пароль для входа в систему",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageComputerNameInfo": "Имя, используемое при общении с другими компьютерами.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageInvalidUsername": "Недопустимое имя пользователя",
+  "@whoAreYouPageInvalidUsername": {}
 }
