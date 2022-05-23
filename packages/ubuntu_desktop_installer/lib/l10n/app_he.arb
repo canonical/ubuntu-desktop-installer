@@ -575,5 +575,13 @@
   "copyingFiles": "קבצים מועתקים…",
   "@copyingFiles": {},
   "installationFailed": "ההתקנה נכשלה",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "whoAreYouPageUsernameTooLong": "השם הזה ארוך מדי.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInUse": "שם משתמש זה כבר קיים.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "שם זה שמור לטובת המערכת.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInvalidChars": "השם הזה מכיל תווים שגויים.",
+  "@whoAreYouPageUsernameInvalidChars": {}
 }
