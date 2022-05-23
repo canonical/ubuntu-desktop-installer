@@ -7,9 +7,6 @@ typedef StructuredDataParser<T> = Future<T> Function(String value);
 
 /// Attempts to locate assets in the app asset bundle, or if not found, falls
 /// back to the specified package's asset bundle.
-///
-/// NOTE: This class works on Linux only. Assets are assumed to be ordinary
-/// files that are resolved relative to `/proc/self/exe`.
 class ProxyAssetBundle extends AssetBundle {
   ProxyAssetBundle(this.source, {required this.package});
 
@@ -33,7 +30,7 @@ class ProxyAssetBundle extends AssetBundle {
 
   Future<String> _findAsset(String assetName, {required String package}) async {
     // <app>/data/flutter_assets/
-    final exePath = await File('/proc/self/exe').resolveSymbolicLinks();
+    final exePath = Platform.resolvedExecutable;
     final bundlePath = p.join(p.dirname(exePath), 'data', 'flutter_assets');
 
     // <bundle>/assets/foo.png
