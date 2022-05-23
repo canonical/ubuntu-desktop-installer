@@ -66,7 +66,7 @@
   "@configurationUIAutoMountTitle": {},
   "configurationUIAutoMountSubtitle": "האם יכולת העיגון האוטומטי פעילה. יכולת זו מאפשרת לך לעגן כונן Windows ב־WSL.",
   "@configurationUIAutoMountSubtitle": {},
-  "configurationUIMountFstabSubtitle": "האם ‎/etc/fstab יעוגן. קובץ ההגדרות ‎/etc/fstab מכיל את???",
+  "configurationUIMountFstabSubtitle": "האם ‎/etc/fstab יעוגן. קובץ זה מכיל מידע על מערכות הקבצים שהמערכת תעגן.",
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "ההקמה הושלמה",
   "@setupCompleteTitle": {},
@@ -130,5 +130,13 @@
   "applyingChanges": "השינויים חלים…",
   "@applyingChanges": {},
   "applyingChangesDisclaimer": "פעולה זו עלולה לארוך מספר דקות כתלות בחיבור האינטרנט שלך.",
-  "@applyingChangesDisclaimer": {}
+  "@applyingChangesDisclaimer": {},
+  "profileSetupUsernameSystemReserved": "שם זה שמור לטובת המערכת.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameTooLong": "השם הזה ארוך מדי.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInvalidChars": "השם הזה מכיל תווים שגויים.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameInUse": "שם משתמש זה כבר קיים.",
+  "@profileSetupUsernameInUse": {}
 }
