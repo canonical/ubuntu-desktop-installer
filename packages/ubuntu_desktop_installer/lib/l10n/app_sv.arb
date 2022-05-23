@@ -617,5 +617,15 @@
     "placeholders": {
       "url": {}
     }
-  }
+  },
+  "whoAreYouPageUsernameSystemReserved": "Det namnet är reserverat för systemanvändning.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Det namnet är för långt.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "copyingFiles": "Kopierar filer...",
+  "@copyingFiles": {},
+  "whoAreYouPageUsernameInUse": "Det användarnamnet existerar redan.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Det namnet innehåller ogiltiga tecken.",
+  "@whoAreYouPageUsernameInvalidChars": {}
 }
