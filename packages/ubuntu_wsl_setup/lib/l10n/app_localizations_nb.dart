@@ -8,10 +8,10 @@ class AppLocalizationsNb extends AppLocalizations {
   AppLocalizationsNb([String locale = 'nb']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'Ubuntu i WSL';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'Ubuntu i WSL';
 
   @override
   String get exitButton => 'Avslutt';
@@ -47,34 +47,34 @@ class AppLocalizationsNb extends AppLocalizations {
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Velg et passord';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Bekreft passordet ditt';
 
   @override
   String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Passordene samsvarer ikke';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Brukernavn kreves';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Brukernavnet er ugyldig';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Navnet er for langt.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Navnet inneholder ugyldige tegn.';
 
   @override
   String get profileSetupPasswordRequired => 'A password is required';
@@ -146,7 +146,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
 
   @override
-  String get configurationUIMountFstabTitle => 'Mount /etc/fstab';
+  String get configurationUIMountFstabTitle => 'Monter /etc/fstab';
 
   @override
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
@@ -161,13 +161,13 @@ class AppLocalizationsNb extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Applying changes…';
 
   @override
   String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Oppsett fullført';
 
   @override
   String setupCompleteHeader(Object user) {
@@ -175,7 +175,7 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Det anbefales å kjøre følgende kommando for å oppgradere Ubuntu til nyeste versjon:';
 
   @override
   String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';

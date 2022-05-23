@@ -65,16 +65,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Dané uživatelské jméno nelze použít (nepovolené znaky)';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'Takové uživatelské jméno už existuje.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Takové jméno je rezervováno pro využití systémem.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Takové jméno je příliš dlouhé.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Takové jméno obsahuje neplatné znaky.';
 
   @override
   String get profileSetupPasswordRequired => 'Je zapotřebí vyplnit heslo';
@@ -149,7 +149,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'Připojit podle /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Zda bude připojeno podle /etc/fstab. Soubor s nastaveními /etc/fstab obsahuje???';
+  String get configurationUIMountFstabSubtitle => 'Zda bude připojeno podle /etc/fstab. Tento soubor obsahuje informace o souborových systémech, které operační systém připojuje.';
 
   @override
   String get configurationUISystemdHeader => 'EXPERIMENTÁLNÍ – Systemd';

@@ -352,7 +352,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileSetupUsernameInUse.
   ///
   /// In en, this message translates to:
-  /// **'That user name already exists.'**
+  /// **'That username already exists.'**
   String get profileSetupUsernameInUse;
 
   /// No description provided for @profileSetupUsernameSystemReserved.
@@ -544,7 +544,7 @@ abstract class AppLocalizations {
   /// No description provided for @applyingChanges.
   ///
   /// In en, this message translates to:
-  /// **'Applying changes...'**
+  /// **'Applying changes…'**
   String get applyingChanges;
 
   /// No description provided for @applyingChangesDisclaimer.

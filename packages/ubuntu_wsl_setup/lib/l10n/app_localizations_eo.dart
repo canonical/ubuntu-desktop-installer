@@ -65,7 +65,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'La salutnomo ne validas';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';

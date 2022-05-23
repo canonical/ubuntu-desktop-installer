@@ -65,7 +65,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'ユーザー名が無効です';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';

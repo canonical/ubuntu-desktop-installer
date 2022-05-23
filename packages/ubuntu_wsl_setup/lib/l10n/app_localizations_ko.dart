@@ -65,7 +65,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get profileSetupUsernameInvalid => '올바른 사용자 이름이 아닙니다';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';

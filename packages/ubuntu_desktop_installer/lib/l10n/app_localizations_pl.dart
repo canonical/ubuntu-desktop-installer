@@ -518,16 +518,16 @@ class AppLocalizationsPl extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Nazwa użytkownika jest nieprawidłowa';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Ta nazwa użytkownika już istnieje.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Ta nazwa jest zarezerwowana na użytek systemu.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Ta nazwa jest za długa.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Ta nazwa zawiera nieprawidłowe znaki.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Wybierz hasło';
