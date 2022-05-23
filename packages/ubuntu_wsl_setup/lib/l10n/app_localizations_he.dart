@@ -65,16 +65,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'שם המשתמש שגוי';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'שם משתמש זה כבר קיים.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'שם זה שמור לטובת המערכת.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'השם הזה ארוך מדי.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'השם הזה מכיל תווים שגויים.';
 
   @override
   String get profileSetupPasswordRequired => 'דרושה סיסמה';
@@ -149,7 +149,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'עיגון ‎/etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'האם ‎/etc/fstab יעוגן. קובץ ההגדרות ‎/etc/fstab מכיל את???';
+  String get configurationUIMountFstabSubtitle => 'האם ‎/etc/fstab יעוגן. קובץ זה מכיל מידע על מערכות הקבצים שהמערכת תעגן.';
 
   @override
   String get configurationUISystemdHeader => 'ניסיוני - Systemd';

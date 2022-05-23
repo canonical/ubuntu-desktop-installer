@@ -518,16 +518,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Dané uživatelské jméno nelze použít (neplatný znak)';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Takové uživatelské jméno už existuje.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Takové jméno je rezervováno pro využití systémem.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Takové jméno je příliš dlouhé.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Takové jméno obsahuje neplatné znaky.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Zvolte si heslo';
@@ -757,8 +757,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get supportedSoftware => 'Podporovaný software';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Kopírování souborů…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Instalace se nezdařila';
 }

@@ -518,16 +518,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'שם המשתמש שגוי';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'שם משתמש זה כבר קיים.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'שם זה שמור לטובת המערכת.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'השם הזה ארוך מדי.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'השם הזה מכיל תווים שגויים.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'נא לבחור סיסמה';

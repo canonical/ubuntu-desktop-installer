@@ -65,16 +65,16 @@ class AppLocalizationsPl extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Nazwa użytkownika jest nieprawidłowa';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'Ta nazwa użytkownika już istnieje.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Ta nazwa jest zarezerwowana na użytek systemu.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Ta nazwa jest za długa.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Ta nazwa zawiera nieprawidłowe znaki.';
 
   @override
   String get profileSetupPasswordRequired => 'Wymagane jest podanie hasła';
@@ -149,7 +149,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'Montuj /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Określa, czy plik /etc/fstab będzie montowany. Plik konfiguracyjny /etc/fstab zawiera ???';
+  String get configurationUIMountFstabSubtitle => 'Określa, czy /etc/fstab będzie montowany. Ten plik zawiera informacje o systemach plików do zamontowania przez system.';
 
   @override
   String get configurationUISystemdHeader => 'EKSPERYMENTALNA – Systemd';
@@ -161,7 +161,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Określa, czy systemd powinien być uruchamiany podczas rozruchu. UWAGA: jest to funkcja eksperymentalna.';
 
   @override
-  String get applyingChanges => 'Stosowanie zmian...';
+  String get applyingChanges => 'Stosowanie zmian…';
 
   @override
   String get applyingChangesDisclaimer => 'Może to potrwać kilka minut w zależności od połączenia internetowego.';

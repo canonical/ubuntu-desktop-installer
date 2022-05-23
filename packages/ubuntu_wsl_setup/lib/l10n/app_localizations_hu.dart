@@ -65,7 +65,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'A felhasználónév érvénytelen';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
@@ -161,7 +161,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'A systemd aktiválódjon-e a rendszerindításkor. FIGYELEM: Ez egy kísérleti funkció.';
 
   @override
-  String get applyingChanges => 'Módosítások alkalmazása...';
+  String get applyingChanges => 'Módosítások alkalmazása…';
 
   @override
   String get applyingChangesDisclaimer => 'Ez az internetkapcsolattól függően több percet is igénybe vehet.';

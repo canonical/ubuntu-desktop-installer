@@ -65,7 +65,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Der Benutzername ist ungültig';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
@@ -161,7 +161,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Ob systemd beim Booten aktiviert werden soll. ACHTUNG: Dies ist eine experimentelle Funktion.';
 
   @override
-  String get applyingChanges => 'Änderungen werden angewendet...';
+  String get applyingChanges => 'Änderungen werden angewendet…';
 
   @override
   String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';

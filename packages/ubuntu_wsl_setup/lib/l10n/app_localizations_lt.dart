@@ -65,7 +65,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Naudotojo vardas yra netinkamas';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
@@ -161,7 +161,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Ar paleidimo metu turėtų būti aktyvuota systemd. DĖMESIO: Tai yra eksperimentinė ypatybė.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Applying changes…';
 
   @override
   String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';

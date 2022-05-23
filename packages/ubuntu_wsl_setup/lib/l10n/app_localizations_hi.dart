@@ -8,40 +8,40 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'उबन्टू लिनक्स विंडोज सबसिस्टम';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'उबन्टू लिनक्स विंडोज सबसिस्टम';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'निकास';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'पूर्ण';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'संचय';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'सेटअप';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'अपनी भाषा का चयन करें';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'प्रोफ़ाइल सेटअप';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'कृपया एक डिफ़ॉल्ट UNIX उपयोगकर्ता खाता बनाएँ। ज्यादा जानकारी के लिये पधारें: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'आपका नाम';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'एक नाम की आवश्यकता है';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'एक उपयोगकर्ता नाम चुनें';
 
   @override
   String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
@@ -65,7 +65,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'The username is invalid';
 
   @override
-  String get profileSetupUsernameInUse => 'That user name already exists.';
+  String get profileSetupUsernameInUse => 'That username already exists.';
 
   @override
   String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
@@ -161,7 +161,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
-  String get applyingChanges => 'Applying changes...';
+  String get applyingChanges => 'Applying changes…';
 
   @override
   String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
