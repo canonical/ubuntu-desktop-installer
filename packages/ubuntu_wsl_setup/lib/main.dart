@@ -47,7 +47,9 @@ screens, yet allowing user to overwrite any of those during setup.
         variant.value = value;
         if (value == Variant.WSL_SETUP) {
           subiquityMonitor.onStatusChanged.listen((status) {
-            setWindowClosable(status?.state?.isInstalling == false);
+            final closable =
+                status == null || status.state?.isInstalling == false;
+            setWindowClosable(closable);
           });
         }
       });
