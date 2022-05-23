@@ -10,5 +10,6 @@ extension DiskExtension on Disk {
 
 extension PartitionExtension on Partition {
   bool get canWipe => mount != null;
+  bool get isWiped => wipe == 'superblock';
   String get prettySize => filesize(size ?? 0);
 }

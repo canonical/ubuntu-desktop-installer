@@ -110,7 +110,7 @@ class StorageSizeColumn extends StorageColumn {
             return Text(filesize(disk.size ?? 0));
           },
           gapBuilder: (context, disk, gap) {
-            return Text(filesize(gap.size ?? 0));
+            return Text(filesize(gap.size));
           },
           partitionBuilder: (context, disk, partition) {
             return Text(filesize(partition.size ?? 0));
@@ -152,7 +152,7 @@ class StorageWipeColumn extends StorageColumn {
           },
           partitionBuilder: (context, disk, partition) {
             return Checkbox(
-              value: partition.wipe == true,
+              value: partition.isWiped,
               onChanged: partition.canWipe
                   ? (wipe) => onWipe(disk, partition, wipe!)
                   : null,

@@ -77,7 +77,7 @@ void main() {
       Partition(
         number: 1,
         format: 'ext4',
-        wipe: true,
+        wipe: 'superblock',
         mount: '/tst',
         preserve: true,
       ),

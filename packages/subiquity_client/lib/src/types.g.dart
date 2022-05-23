@@ -286,11 +286,10 @@ Map<String, dynamic> _$_$_OsProberToJson(_$_OsProber instance) =>
 
 _$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
   return _$Partition(
-    offset: json['offset'] as int?,
     size: json['size'] as int?,
     number: json['number'] as int?,
-    wipe: _wipeFromString(json['wipe'] as String?),
     preserve: json['preserve'] as bool?,
+    wipe: json['wipe'] as String?,
     annotations: (json['annotations'] as List<dynamic>?)
             ?.map((e) => e as String)
             .toList() ??
@@ -298,30 +297,37 @@ _$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
     mount: json['mount'] as String?,
     format: json['format'] as String?,
     grubDevice: json['grub_device'] as bool?,
+    boot: json['boot'] as bool?,
     os: json['os'] == null
         ? null
         : OsProber.fromJson(json['os'] as Map<String, dynamic>),
+    offset: json['offset'] as int?,
+    resize: json['resize'] as bool?,
+    path: json['path'] as String?,
   );
 }
 
 Map<String, dynamic> _$_$PartitionToJson(_$Partition instance) =>
     <String, dynamic>{
-      'offset': instance.offset,
       'size': instance.size,
       'number': instance.number,
-      'wipe': _wipeToString(instance.wipe),
       'preserve': instance.preserve,
+      'wipe': instance.wipe,
       'annotations': instance.annotations,
       'mount': instance.mount,
       'format': instance.format,
       'grub_device': instance.grubDevice,
+      'boot': instance.boot,
       'os': instance.os?.toJson(),
+      'offset': instance.offset,
+      'resize': instance.resize,
+      'path': instance.path,
     };
 
 _$Gap _$_$GapFromJson(Map<String, dynamic> json) {
   return _$Gap(
-    offset: json['offset'] as int?,
-    size: json['size'] as int?,
+    offset: json['offset'] as int,
+    size: json['size'] as int,
   );
 }
 
