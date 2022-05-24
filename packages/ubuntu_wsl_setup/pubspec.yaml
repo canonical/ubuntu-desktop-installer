@@ -28,7 +28,7 @@ dependencies:
       path: packages/ubuntu_widgets
   ubuntu_wizard:
     path: ../ubuntu_wizard
-  yaru: ^0.2.0
+  yaru: ^0.3.2
 
 dev_dependencies:
   build_runner: ^2.1.1
