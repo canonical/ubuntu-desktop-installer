@@ -166,12 +166,12 @@ class KeyboardSetup with _$KeyboardSetup {
 class SourceSelection with _$SourceSelection {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory SourceSelection({
-    String? name,
-    String? description,
-    String? id,
-    int? size,
-    String? variant,
-    @JsonKey(name: 'default') bool? isDefault,
+    required String name,
+    required String description,
+    required String id,
+    required int size,
+    required String variant,
+    @JsonKey(name: 'default') required bool isDefault,
   }) = _SourceSelection;
 
   factory SourceSelection.fromJson(Map<String, dynamic> json) =>
@@ -182,8 +182,9 @@ class SourceSelection with _$SourceSelection {
 class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory SourceSelectionAndSetting({
-    List<SourceSelection>? sources,
-    String? currentId,
+    required List<SourceSelection> sources,
+    required String currentId,
+    required bool searchDrivers,
   }) = _SourceSelectionAndSetting;
 
   factory SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
