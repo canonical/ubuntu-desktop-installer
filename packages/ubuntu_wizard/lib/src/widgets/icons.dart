@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'theme.dart';
+import 'package:yaru/yaru.dart';
 
 /// Presents successful form validation state.
 ///

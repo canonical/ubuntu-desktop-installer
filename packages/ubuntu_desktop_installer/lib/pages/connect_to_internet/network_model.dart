@@ -152,8 +152,8 @@ class NetworkDevice extends PropertyStreamNotifier {
   bool get isConnecting {
     switch (state) {
       case NetworkManagerDeviceState.config:
-      case NetworkManagerDeviceState.ip_check:
-      case NetworkManagerDeviceState.ip_config:
+      case NetworkManagerDeviceState.ipCheck:
+      case NetworkManagerDeviceState.ipConfig:
       case NetworkManagerDeviceState.prepare:
         return true;
       default:

@@ -65,8 +65,8 @@ void main() {
     const connectingStates = {
       NetworkManagerDeviceState.prepare,
       NetworkManagerDeviceState.config,
-      NetworkManagerDeviceState.ip_check,
-      NetworkManagerDeviceState.ip_config,
+      NetworkManagerDeviceState.ipCheck,
+      NetworkManagerDeviceState.ipConfig,
     };
 
     final mock = device.device;
