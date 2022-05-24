@@ -383,10 +383,10 @@ class TimezoneInfo with _$TimezoneInfo {
 class WSLConfigurationBase with _$WSLConfigurationBase {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationBase({
-    String? automountRoot,
-    String? automountOptions,
-    bool? networkGeneratehosts,
-    bool? networkGenerateresolvconf,
+    @Default('/mnt/') String automountRoot,
+    @Default('') String automountOptions,
+    @Default(true) bool networkGeneratehosts,
+    @Default(true) bool networkGenerateresolvconf,
   }) = _WSLConfigurationBase;
 
   factory WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
@@ -397,11 +397,11 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationAdvanced({
-    bool? automountEnabled,
-    bool? automountMountfstab,
-    bool? interopEnabled,
-    bool? interopAppendwindowspath,
-    bool? systemdEnabled,
+    @Default(true) bool automountEnabled,
+    @Default(true) bool automountMountfstab,
+    @Default(true) bool interopEnabled,
+    @Default(true) bool interopAppendwindowspath,
+    @Default(false) bool systemdEnabled,
   }) = _WSLConfigurationAdvanced;
 
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>

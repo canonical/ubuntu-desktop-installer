@@ -518,10 +518,11 @@ Map<String, dynamic> _$_$_TimezoneInfoToJson(_$_TimezoneInfo instance) =>
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {
   return _$_WSLConfigurationBase(
-    automountRoot: json['automount_root'] as String?,
-    automountOptions: json['automount_options'] as String?,
-    networkGeneratehosts: json['network_generatehosts'] as bool?,
-    networkGenerateresolvconf: json['network_generateresolvconf'] as bool?,
+    automountRoot: json['automount_root'] as String? ?? '/mnt/',
+    automountOptions: json['automount_options'] as String? ?? '',
+    networkGeneratehosts: json['network_generatehosts'] as bool? ?? true,
+    networkGenerateresolvconf:
+        json['network_generateresolvconf'] as bool? ?? true,
   );
 }
 
@@ -537,11 +538,12 @@ Map<String, dynamic> _$_$_WSLConfigurationBaseToJson(
 _$_WSLConfigurationAdvanced _$_$_WSLConfigurationAdvancedFromJson(
     Map<String, dynamic> json) {
   return _$_WSLConfigurationAdvanced(
-    automountEnabled: json['automount_enabled'] as bool?,
-    automountMountfstab: json['automount_mountfstab'] as bool?,
-    interopEnabled: json['interop_enabled'] as bool?,
-    interopAppendwindowspath: json['interop_appendwindowspath'] as bool?,
-    systemdEnabled: json['systemd_enabled'] as bool?,
+    automountEnabled: json['automount_enabled'] as bool? ?? true,
+    automountMountfstab: json['automount_mountfstab'] as bool? ?? true,
+    interopEnabled: json['interop_enabled'] as bool? ?? true,
+    interopAppendwindowspath:
+        json['interop_appendwindowspath'] as bool? ?? true,
+    systemdEnabled: json['systemd_enabled'] as bool? ?? false,
   );
 }
 
