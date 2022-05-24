@@ -16,26 +16,25 @@ class ConfigurationUIModel extends SafeChangeNotifier {
   final _conf = ValueNotifier(const WSLConfigurationAdvanced());
 
   /// Whether the Windows Path will be appended in the PATH environment in WSL.
-  bool get interopAppendwindowspath =>
-      _conf.value.interopAppendwindowspath ?? true;
+  bool get interopAppendwindowspath => _conf.value.interopAppendwindowspath;
   set interopAppendwindowspath(bool value) {
     _conf.value = _conf.value.copyWith(interopAppendwindowspath: value);
   }
 
   /// Whether the interoperability is enabled.
-  bool get interopEnabled => _conf.value.interopEnabled ?? true;
+  bool get interopEnabled => _conf.value.interopEnabled;
   set interopEnabled(bool value) {
     _conf.value = _conf.value.copyWith(interopEnabled: value);
   }
 
   /// Whether automountEnabled is enabled.
-  bool get automountEnabled => _conf.value.automountEnabled ?? true;
+  bool get automountEnabled => _conf.value.automountEnabled;
   set automountEnabled(bool value) {
     _conf.value = _conf.value.copyWith(automountEnabled: value);
   }
 
   /// Whether `/etc/fstab` will be mounted.
-  bool get automountMountfstab => _conf.value.automountMountfstab ?? true;
+  bool get automountMountfstab => _conf.value.automountMountfstab;
   set automountMountfstab(bool value) {
     _conf.value = _conf.value.copyWith(automountMountfstab: value);
   }

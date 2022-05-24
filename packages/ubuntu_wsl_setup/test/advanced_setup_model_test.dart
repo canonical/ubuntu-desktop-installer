@@ -54,7 +54,7 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.mountLocation, isEmpty);
+    expect(model.mountLocation, '/mnt/');
     model.mountLocation = 'path';
     expect(wasNotified, isTrue);
 

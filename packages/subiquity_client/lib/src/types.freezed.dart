@@ -5321,10 +5321,10 @@ class _$WSLConfigurationBaseTearOff {
   const _$WSLConfigurationBaseTearOff();
 
   _WSLConfigurationBase call(
-      {String? automountRoot,
-      String? automountOptions,
-      bool? networkGeneratehosts,
-      bool? networkGenerateresolvconf}) {
+      {String automountRoot = '/mnt/',
+      String automountOptions = '',
+      bool networkGeneratehosts = true,
+      bool networkGenerateresolvconf = true}) {
     return _WSLConfigurationBase(
       automountRoot: automountRoot,
       automountOptions: automountOptions,
@@ -5343,10 +5343,10 @@ const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationBase {
-  String? get automountRoot => throw _privateConstructorUsedError;
-  String? get automountOptions => throw _privateConstructorUsedError;
-  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
-  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
+  String get automountRoot => throw _privateConstructorUsedError;
+  String get automountOptions => throw _privateConstructorUsedError;
+  bool get networkGeneratehosts => throw _privateConstructorUsedError;
+  bool get networkGenerateresolvconf => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5360,10 +5360,10 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
           $Res Function(WSLConfigurationBase) then) =
       _$WSLConfigurationBaseCopyWithImpl<$Res>;
   $Res call(
-      {String? automountRoot,
-      String? automountOptions,
-      bool? networkGeneratehosts,
-      bool? networkGenerateresolvconf});
+      {String automountRoot,
+      String automountOptions,
+      bool networkGeneratehosts,
+      bool networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -5386,19 +5386,19 @@ class _$WSLConfigurationBaseCopyWithImpl<$Res>
       automountRoot: automountRoot == freezed
           ? _value.automountRoot
           : automountRoot // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       automountOptions: automountOptions == freezed
           ? _value.automountOptions
           : automountOptions // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       networkGeneratehosts: networkGeneratehosts == freezed
           ? _value.networkGeneratehosts
           : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       networkGenerateresolvconf: networkGenerateresolvconf == freezed
           ? _value.networkGenerateresolvconf
           : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -5411,10 +5411,10 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
       __$WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? automountRoot,
-      String? automountOptions,
-      bool? networkGeneratehosts,
-      bool? networkGenerateresolvconf});
+      {String automountRoot,
+      String automountOptions,
+      bool networkGeneratehosts,
+      bool networkGenerateresolvconf});
 }
 
 /// @nodoc
@@ -5439,19 +5439,19 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
       automountRoot: automountRoot == freezed
           ? _value.automountRoot
           : automountRoot // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       automountOptions: automountOptions == freezed
           ? _value.automountOptions
           : automountOptions // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       networkGeneratehosts: networkGeneratehosts == freezed
           ? _value.networkGeneratehosts
           : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       networkGenerateresolvconf: networkGenerateresolvconf == freezed
           ? _value.networkGenerateresolvconf
           : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -5461,22 +5461,26 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   const _$_WSLConfigurationBase(
-      {this.automountRoot,
-      this.automountOptions,
-      this.networkGeneratehosts,
-      this.networkGenerateresolvconf});
+      {this.automountRoot = '/mnt/',
+      this.automountOptions = '',
+      this.networkGeneratehosts = true,
+      this.networkGenerateresolvconf = true});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationBaseFromJson(json);
 
+  @JsonKey(defaultValue: '/mnt/')
   @override
-  final String? automountRoot;
+  final String automountRoot;
+  @JsonKey(defaultValue: '')
   @override
-  final String? automountOptions;
+  final String automountOptions;
+  @JsonKey(defaultValue: true)
   @override
-  final bool? networkGeneratehosts;
+  final bool networkGeneratehosts;
+  @JsonKey(defaultValue: true)
   @override
-  final bool? networkGenerateresolvconf;
+  final bool networkGenerateresolvconf;
 
   @override
   String toString() {
@@ -5525,22 +5529,22 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
 
 abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   const factory _WSLConfigurationBase(
-      {String? automountRoot,
-      String? automountOptions,
-      bool? networkGeneratehosts,
-      bool? networkGenerateresolvconf}) = _$_WSLConfigurationBase;
+      {String automountRoot,
+      String automountOptions,
+      bool networkGeneratehosts,
+      bool networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationBase.fromJson;
 
   @override
-  String? get automountRoot => throw _privateConstructorUsedError;
+  String get automountRoot => throw _privateConstructorUsedError;
   @override
-  String? get automountOptions => throw _privateConstructorUsedError;
+  String get automountOptions => throw _privateConstructorUsedError;
   @override
-  bool? get networkGeneratehosts => throw _privateConstructorUsedError;
+  bool get networkGeneratehosts => throw _privateConstructorUsedError;
   @override
-  bool? get networkGenerateresolvconf => throw _privateConstructorUsedError;
+  bool get networkGenerateresolvconf => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
@@ -5557,11 +5561,11 @@ class _$WSLConfigurationAdvancedTearOff {
   const _$WSLConfigurationAdvancedTearOff();
 
   _WSLConfigurationAdvanced call(
-      {bool? automountEnabled,
-      bool? automountMountfstab,
-      bool? interopEnabled,
-      bool? interopAppendwindowspath,
-      bool? systemdEnabled}) {
+      {bool automountEnabled = true,
+      bool automountMountfstab = true,
+      bool interopEnabled = true,
+      bool interopAppendwindowspath = true,
+      bool systemdEnabled = false}) {
     return _WSLConfigurationAdvanced(
       automountEnabled: automountEnabled,
       automountMountfstab: automountMountfstab,
@@ -5581,11 +5585,11 @@ const $WSLConfigurationAdvanced = _$WSLConfigurationAdvancedTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationAdvanced {
-  bool? get automountEnabled => throw _privateConstructorUsedError;
-  bool? get automountMountfstab => throw _privateConstructorUsedError;
-  bool? get interopEnabled => throw _privateConstructorUsedError;
-  bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
-  bool? get systemdEnabled => throw _privateConstructorUsedError;
+  bool get automountEnabled => throw _privateConstructorUsedError;
+  bool get automountMountfstab => throw _privateConstructorUsedError;
+  bool get interopEnabled => throw _privateConstructorUsedError;
+  bool get interopAppendwindowspath => throw _privateConstructorUsedError;
+  bool get systemdEnabled => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5599,11 +5603,11 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
           $Res Function(WSLConfigurationAdvanced) then) =
       _$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   $Res call(
-      {bool? automountEnabled,
-      bool? automountMountfstab,
-      bool? interopEnabled,
-      bool? interopAppendwindowspath,
-      bool? systemdEnabled});
+      {bool automountEnabled,
+      bool automountMountfstab,
+      bool interopEnabled,
+      bool interopAppendwindowspath,
+      bool systemdEnabled});
 }
 
 /// @nodoc
@@ -5627,23 +5631,23 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       automountMountfstab: automountMountfstab == freezed
           ? _value.automountMountfstab
           : automountMountfstab // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       interopAppendwindowspath: interopAppendwindowspath == freezed
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       systemdEnabled: systemdEnabled == freezed
           ? _value.systemdEnabled
           : systemdEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -5656,11 +5660,11 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
       __$WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool? automountEnabled,
-      bool? automountMountfstab,
-      bool? interopEnabled,
-      bool? interopAppendwindowspath,
-      bool? systemdEnabled});
+      {bool automountEnabled,
+      bool automountMountfstab,
+      bool interopEnabled,
+      bool interopAppendwindowspath,
+      bool systemdEnabled});
 }
 
 /// @nodoc
@@ -5687,23 +5691,23 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       automountMountfstab: automountMountfstab == freezed
           ? _value.automountMountfstab
           : automountMountfstab // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       interopEnabled: interopEnabled == freezed
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       interopAppendwindowspath: interopAppendwindowspath == freezed
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       systemdEnabled: systemdEnabled == freezed
           ? _value.systemdEnabled
           : systemdEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -5713,25 +5717,30 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   const _$_WSLConfigurationAdvanced(
-      {this.automountEnabled,
-      this.automountMountfstab,
-      this.interopEnabled,
-      this.interopAppendwindowspath,
-      this.systemdEnabled});
+      {this.automountEnabled = true,
+      this.automountMountfstab = true,
+      this.interopEnabled = true,
+      this.interopAppendwindowspath = true,
+      this.systemdEnabled = false});
 
   factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$_$_WSLConfigurationAdvancedFromJson(json);
 
+  @JsonKey(defaultValue: true)
   @override
-  final bool? automountEnabled;
+  final bool automountEnabled;
+  @JsonKey(defaultValue: true)
   @override
-  final bool? automountMountfstab;
+  final bool automountMountfstab;
+  @JsonKey(defaultValue: true)
   @override
-  final bool? interopEnabled;
+  final bool interopEnabled;
+  @JsonKey(defaultValue: true)
   @override
-  final bool? interopAppendwindowspath;
+  final bool interopAppendwindowspath;
+  @JsonKey(defaultValue: false)
   @override
-  final bool? systemdEnabled;
+  final bool systemdEnabled;
 
   @override
   String toString() {
@@ -5784,25 +5793,25 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
 
 abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   const factory _WSLConfigurationAdvanced(
-      {bool? automountEnabled,
-      bool? automountMountfstab,
-      bool? interopEnabled,
-      bool? interopAppendwindowspath,
-      bool? systemdEnabled}) = _$_WSLConfigurationAdvanced;
+      {bool automountEnabled,
+      bool automountMountfstab,
+      bool interopEnabled,
+      bool interopAppendwindowspath,
+      bool systemdEnabled}) = _$_WSLConfigurationAdvanced;
 
   factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationAdvanced.fromJson;
 
   @override
-  bool? get automountEnabled => throw _privateConstructorUsedError;
+  bool get automountEnabled => throw _privateConstructorUsedError;
   @override
-  bool? get automountMountfstab => throw _privateConstructorUsedError;
+  bool get automountMountfstab => throw _privateConstructorUsedError;
   @override
-  bool? get interopEnabled => throw _privateConstructorUsedError;
+  bool get interopEnabled => throw _privateConstructorUsedError;
   @override
-  bool? get interopAppendwindowspath => throw _privateConstructorUsedError;
+  bool get interopAppendwindowspath => throw _privateConstructorUsedError;
   @override
-  bool? get systemdEnabled => throw _privateConstructorUsedError;
+  bool get systemdEnabled => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>

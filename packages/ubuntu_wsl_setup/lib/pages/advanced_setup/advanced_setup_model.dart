@@ -14,26 +14,25 @@ class AdvancedSetupModel extends SafeChangeNotifier {
   final _conf = ValueNotifier(const WSLConfigurationBase());
 
   /// Location for the automount.
-  String get mountLocation => _conf.value.automountRoot ?? '';
+  String get mountLocation => _conf.value.automountRoot;
   set mountLocation(String value) {
     _conf.value = _conf.value.copyWith(automountRoot: value);
   }
 
   /// Option passed for the automount.
-  String get mountOption => _conf.value.automountOptions ?? '';
+  String get mountOption => _conf.value.automountOptions;
   set mountOption(String value) {
     _conf.value = _conf.value.copyWith(automountOptions: value);
   }
 
   /// Whether to enable /etc/hosts re-generation at every start.
-  bool get enableHostGeneration => _conf.value.networkGeneratehosts ?? true;
+  bool get enableHostGeneration => _conf.value.networkGeneratehosts;
   set enableHostGeneration(bool value) {
     _conf.value = _conf.value.copyWith(networkGeneratehosts: value);
   }
 
   /// Whether to enable /etc/resolv.conf re-generation at every start.
-  bool get enableResolvConfGeneration =>
-      _conf.value.networkGenerateresolvconf ?? true;
+  bool get enableResolvConfGeneration => _conf.value.networkGenerateresolvconf;
   set enableResolvConfGeneration(bool value) {
     _conf.value = _conf.value.copyWith(networkGenerateresolvconf: value);
   }
