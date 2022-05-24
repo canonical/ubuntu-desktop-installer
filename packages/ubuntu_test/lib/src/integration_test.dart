@@ -74,7 +74,11 @@ Future<void> waitForFile(
       final file = File(fileName);
       return !file.existsSync() || file.statSync().size <= 0;
     });
-  }).timeout(limit);
+  }).timeout(
+    limit,
+    onTimeout: () => debugPrint(
+        '\nWARNING: A call to waitForFile() with file "$fileName" did not complete within the specified time limit $limit.\n${StackTrace.current}'),
+  );
 
   expect(File(fileName).existsSync(), isTrue);
 }
@@ -209,6 +213,10 @@ extension IntegrationTester on WidgetTester {
       if (any(finder)) return false;
       await pump(delay);
       return true;
-    }).timeout(timeout);
+    }).timeout(
+      timeout,
+      onTimeout: () => debugPrint(
+          '\nWARNING: A call to pumpUntil() with finder "$finder" did not complete within the specified timeout $timeout.\n${StackTrace.current}'),
+    );
   }
 }
