@@ -58,10 +58,9 @@ class InstallationCompletePage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 24),
                   child: ElevatedButton(
                     onPressed: () async {
+                      final model = context.read<InstallationCompleteModel>();
                       await Wizard.of(context).done();
-                      Provider.of<InstallationCompleteModel>(context,
-                              listen: false)
-                          .reboot(immediate: false);
+                      model.reboot(immediate: false);
                     },
                     child: Text(
                       lang.restartInto(ProductInfoExtractor().getProductInfo()),
@@ -70,10 +69,9 @@ class InstallationCompletePage extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () async {
+                    final model = context.read<InstallationCompleteModel>();
                     await Wizard.of(context).done();
-                    Provider.of<InstallationCompleteModel>(context,
-                            listen: false)
-                        .shutdown(immediate: false);
+                    model.shutdown(immediate: false);
                   },
                   child: Text(lang.shutdown),
                 ),
