@@ -205,9 +205,11 @@ extension IntegrationTester on WidgetTester {
   Future<void> pumpUntil(
     Finder finder, [
     Duration timeout = const Duration(seconds: 10),
-  ]) {
+  ]) async {
     assert(timeout.inMilliseconds >= 250);
     final delay = Duration(milliseconds: 250);
+
+    if (any(finder)) return;
 
     return Future.doWhile(() async {
       if (any(finder)) return false;
