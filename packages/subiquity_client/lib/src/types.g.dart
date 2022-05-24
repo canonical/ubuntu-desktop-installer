@@ -229,12 +229,12 @@ Map<String, dynamic> _$_$_KeyboardSetupToJson(_$_KeyboardSetup instance) =>
 
 _$_SourceSelection _$_$_SourceSelectionFromJson(Map<String, dynamic> json) {
   return _$_SourceSelection(
-    name: json['name'] as String?,
-    description: json['description'] as String?,
-    id: json['id'] as String?,
-    size: json['size'] as int?,
-    variant: json['variant'] as String?,
-    isDefault: json['default'] as bool?,
+    name: json['name'] as String,
+    description: json['description'] as String,
+    id: json['id'] as String,
+    size: json['size'] as int,
+    variant: json['variant'] as String,
+    isDefault: json['default'] as bool,
   );
 }
 
@@ -251,18 +251,20 @@ Map<String, dynamic> _$_$_SourceSelectionToJson(_$_SourceSelection instance) =>
 _$_SourceSelectionAndSetting _$_$_SourceSelectionAndSettingFromJson(
     Map<String, dynamic> json) {
   return _$_SourceSelectionAndSetting(
-    sources: (json['sources'] as List<dynamic>?)
-        ?.map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
+    sources: (json['sources'] as List<dynamic>)
+        .map((e) => SourceSelection.fromJson(e as Map<String, dynamic>))
         .toList(),
-    currentId: json['current_id'] as String?,
+    currentId: json['current_id'] as String,
+    searchDrivers: json['search_drivers'] as bool,
   );
 }
 
 Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
         _$_SourceSelectionAndSetting instance) =>
     <String, dynamic>{
-      'sources': instance.sources?.map((e) => e.toJson()).toList(),
+      'sources': instance.sources.map((e) => e.toJson()).toList(),
       'current_id': instance.currentId,
+      'search_drivers': instance.searchDrivers,
     };
 
 _$_OsProber _$_$_OsProberFromJson(Map<String, dynamic> json) {

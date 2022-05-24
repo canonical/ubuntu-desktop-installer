@@ -60,11 +60,11 @@ void main() {
             size: 5,
             variant: 'desktop',
             isDefault: false)
-      ], currentId: 'ubuntu-desktop');
+      ], currentId: 'ubuntu-desktop', searchDrivers: false);
 
       await client.setVariant(Variant.DESKTOP);
       var actual = await client.source();
-      expect(actual.sources, unorderedEquals(expected.sources!));
+      expect(actual.sources, unorderedEquals(expected.sources));
       expect(actual.currentId, 'synthesized');
 
       await client.setSource('ubuntu-desktop-minimal');
