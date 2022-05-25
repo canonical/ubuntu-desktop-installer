@@ -564,5 +564,17 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "copyingFiles": "Còpia dels fichièrs...",
+  "@copyingFiles": {},
+  "installationFailed": "Fracàs de l’installacion",
+  "@installationFailed": {},
+  "whoAreYouPageUsernameSystemReserved": "Aqueste nom es reservat per l’usatge del sistèma.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Aqueste nom es tròp long.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInUse": "Aqueste nom d’utilizaire existís ja.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Aqueste nom conten de caractèrs invalids.",
+  "@whoAreYouPageUsernameInvalidChars": {}
 }
