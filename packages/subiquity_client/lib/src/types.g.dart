@@ -348,7 +348,7 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
     usageLabels: (json['usage_labels'] as List<dynamic>?)
         ?.map((e) => e as String)
         .toList(),
-    objects: (json['partitions'] as List<dynamic>?)
+    partitions: (json['partitions'] as List<dynamic>?)
         ?.map((e) => DiskObject.fromJson(e as Map<String, dynamic>))
         .toList(),
     okForGuided: json['ok_for_guided'] as bool?,
@@ -367,7 +367,7 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
-      'partitions': instance.objects?.map((e) => e.toJson()).toList(),
+      'partitions': instance.partitions?.map((e) => e.toJson()).toList(),
       'ok_for_guided': instance.okForGuided,
       'ptable': instance.ptable,
       'preserve': instance.preserve,

@@ -10,14 +10,14 @@ import 'allocate_disk_space_model_test.mocks.dart';
 @GenerateMocks([DiskStorageService])
 void main() {
   const testDisks = <Disk>[
-    Disk(id: 'a', objects: [
+    Disk(id: 'a', partitions: [
       Partition(number: 1),
     ]),
     Disk(
       id: 'b',
       bootDevice: true,
       preserve: true,
-      objects: [
+      partitions: [
         Partition(number: 1),
         Partition(number: 2, grubDevice: true),
       ],
@@ -179,11 +179,11 @@ void main() {
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk = Disk(objects: [Gap(offset: 0, size: 1)]);
+    final emptyDisk = Disk(partitions: [Gap(offset: 0, size: 1)]);
     final fullDisk = Disk();
-    final normalDisk = emptyDisk.copyWith(objects: [Partition()]);
+    final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final mountedPartition =
-        emptyDisk.copyWith(objects: [Partition(mount: '/')]);
+        emptyDisk.copyWith(partitions: [Partition(mount: '/')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -296,7 +296,7 @@ void main() {
   test('update selection', () async {
     Disk testDisk(int partitions) {
       return Disk(
-        objects: [
+        partitions: [
           for (var i = 0; i < partitions; ++i) Partition(number: i),
           Gap(offset: 123, size: 456),
         ],

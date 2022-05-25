@@ -21,7 +21,7 @@ const testDisks = <Disk>[
   Disk(
     path: '/dev/sda',
     size: 12,
-    objects: [
+    partitions: [
       Partition(
         number: 1,
         size: 11,
@@ -40,7 +40,7 @@ const testDisks = <Disk>[
   Disk(
     path: '/dev/sdb',
     size: 23,
-    objects: [
+    partitions: [
       Partition(
         number: 3,
         size: 33,
@@ -117,7 +117,7 @@ void main() {
       expect(find.text(disk.path!), findsOneWidget);
       expect(find.text(filesize(disk.size!)), findsOneWidget);
 
-      for (final partition in disk.partitions!) {
+      for (final partition in disk.partitions!.whereType<Partition>()) {
         expect(find.text(partition.format!), findsOneWidget);
         expect(find.text(partition.mount!), findsOneWidget);
         expect(find.text(filesize(partition.size!)), findsOneWidget);
@@ -139,7 +139,8 @@ void main() {
 
     verify(model.selectStorage(1)).called(1);
 
-    await tester.tap(find.text(testDisks.first.partitions!.last.mount!));
+    await tester.tap(find
+        .text(testDisks.first.partitions!.whereType<Partition>().last.mount!));
     await tester.pumpAndSettle();
 
     verify(model.selectStorage(0, 1)).called(1);
@@ -209,7 +210,7 @@ void main() {
 
   testWidgets('can format', (tester) async {
     final disk = testDisks.first;
-    final partition = disk.partitions!.first;
+    final partition = disk.partitions!.whereType<Partition>().first;
     final model = buildModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -222,7 +223,7 @@ void main() {
 
   testWidgets('can remove', (tester) async {
     final disk = testDisks.first;
-    final partition = disk.partitions!.first;
+    final partition = disk.partitions!.whereType<Partition>().first;
     final model = buildModel(
       disks: testDisks,
       selectedDisk: disk,

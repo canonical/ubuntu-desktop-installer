@@ -13,12 +13,12 @@ void main() {
     Disk(
       id: 'a',
       preserve: false,
-      objects: [Partition(number: 1, preserve: false)],
+      partitions: [Partition(number: 1, preserve: false)],
     ),
     Disk(
       id: 'b',
       preserve: true,
-      objects: [
+      partitions: [
         Partition(number: 1),
         Partition(number: 2, grubDevice: true),
       ],
@@ -26,7 +26,7 @@ void main() {
     Disk(
       id: 'c',
       preserve: false,
-      objects: [
+      partitions: [
         Partition(number: 3, preserve: false),
         Partition(number: 4, grubDevice: false),
       ],
@@ -37,12 +37,12 @@ void main() {
     Disk(
       id: 'a',
       preserve: false,
-      objects: [Partition(number: 1, preserve: false)],
+      partitions: [Partition(number: 1, preserve: false)],
     ),
     Disk(
       id: 'c',
       preserve: false,
-      objects: [Partition(number: 3, preserve: false)],
+      partitions: [Partition(number: 3, preserve: false)],
     ),
   ];
 

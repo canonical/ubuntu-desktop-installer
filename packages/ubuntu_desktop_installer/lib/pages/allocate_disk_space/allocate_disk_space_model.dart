@@ -118,7 +118,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
 
   /// Returns the selected object, or null if no partition or gap is selected.
   DiskObject? get selectedObject =>
-      selectedDisk?.objects?.elementAtOrNull(_selectedObjectIndex);
+      selectedDisk?.partitions?.elementAtOrNull(_selectedObjectIndex);
 
   /// The index of the selected disk's selected object, or -1 if no partition
   /// or gap is selected.
@@ -163,7 +163,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
       _updateDisks(disks);
       selectStorage(
         _selectedDiskIndex,
-        (selectedDisk?.partitions?.length ?? 0) - 1,
+        (selectedDisk?.partitions?.whereType<Partition>().length ?? 0) - 1,
       );
     });
   }

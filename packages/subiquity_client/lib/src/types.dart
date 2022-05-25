@@ -252,8 +252,6 @@ class DiskObject with _$DiskObject {
 
 @freezed
 class Disk with _$Disk {
-  const Disk._();
-
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Disk({
     String? id,
@@ -262,7 +260,7 @@ class Disk with _$Disk {
     String? type,
     int? size,
     List<String>? usageLabels,
-    @JsonKey(name: 'partitions') List<DiskObject>? objects,
+    List<DiskObject>? partitions,
     bool? okForGuided,
     String? ptable,
     bool? preserve,
@@ -270,8 +268,6 @@ class Disk with _$Disk {
     String? model,
     String? vendor,
   }) = _Disk;
-
-  List<Partition>? get partitions => objects?.whereType<Partition>().toList();
 
   factory Disk.fromJson(Map<String, dynamic> json) => _$DiskFromJson(json);
 }

@@ -91,7 +91,7 @@ void main() {
     final storage = [
       Disk(
         path: '/dev/sda',
-        objects: [
+        partitions: [
           Partition(size: toBytes(6, DataUnit.gigabytes), mount: '/'),
           Partition(size: toBytes(2, DataUnit.gigabytes), mount: '/mnt/test'),
         ],

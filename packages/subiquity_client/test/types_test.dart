@@ -203,7 +203,7 @@ void main() {
       type: 'test-type',
       size: 123,
       usageLabels: ['test', 'usage', 'label'],
-      objects: [p1, p2],
+      partitions: [p1, p2],
       okForGuided: true,
       ptable: 'tst',
       preserve: true,

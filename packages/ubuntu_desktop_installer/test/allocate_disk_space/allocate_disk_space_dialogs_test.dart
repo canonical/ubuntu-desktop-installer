@@ -73,7 +73,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final testDisk = Disk(objects: [
+    final testDisk = Disk(partitions: [
       Partition(
         number: 1,
         format: 'ext4',
@@ -97,7 +97,7 @@ void main() {
     final result = showEditPartitionDialog(
         tester.element(find.byType(AllocateDiskSpacePage)),
         testDisk,
-        testDisk.partitions!.first);
+        testDisk.partitions!.whereType<Partition>().first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DropdownButton<PartitionFormat>));
@@ -121,7 +121,7 @@ void main() {
 
     verify(model.editPartition(
       testDisk,
-      testDisk.partitions!.first,
+      testDisk.partitions!.whereType<Partition>().first,
       format: PartitionFormat.btrfs,
       wipe: false,
       mount: '/tst',

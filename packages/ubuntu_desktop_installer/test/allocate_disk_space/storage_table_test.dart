@@ -9,7 +9,7 @@ void main() {
   const sdb = Disk(
     path: '/dev/sdb',
     size: 22,
-    objects: [
+    partitions: [
       Partition(number: 1, size: 2211),
       Gap(offset: 2211, size: 2222),
     ],
@@ -17,7 +17,7 @@ void main() {
   const sdc = Disk(
     path: '/dev/sdc',
     size: 33,
-    objects: [
+    partitions: [
       Partition(number: 1, size: 3311),
       Partition(number: 2, size: 3322),
       Gap(offset: 3322, size: 3333),
@@ -26,7 +26,7 @@ void main() {
   const sdd = Disk(
     path: '/dev/sdd',
     size: 44,
-    objects: [
+    partitions: [
       Partition(number: 1, size: 4411),
       Partition(number: 2, size: 4422),
       Partition(number: 3, size: 4433),
