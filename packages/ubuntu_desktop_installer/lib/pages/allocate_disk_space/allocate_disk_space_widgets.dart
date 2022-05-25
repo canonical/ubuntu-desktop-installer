@@ -48,7 +48,7 @@ class _PartitionPainter extends CustomPainter {
     if (diskSize <= 0) return;
 
     final rect = Offset.zero & size;
-    final objects = _model.selectedDisk?.objects;
+    final objects = _model.selectedDisk?.partitions;
     final objectCount = objects?.length ?? 0;
     for (var index = 0; index < objectCount; ++index) {
       final object = objects![index];
@@ -81,7 +81,7 @@ class PartitionLegend extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     final lang = AppLocalizations.of(context);
 
-    final objects = model.selectedDisk?.objects;
+    final objects = model.selectedDisk?.partitions;
 
     return SizedBox(
       height: 48,

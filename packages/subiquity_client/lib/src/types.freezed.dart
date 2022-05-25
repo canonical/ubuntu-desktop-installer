@@ -3348,7 +3348,7 @@ class _$DiskTearOff {
       String? type,
       int? size,
       List<String>? usageLabels,
-      @JsonKey(name: 'partitions') List<DiskObject>? objects,
+      List<DiskObject>? partitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3362,7 +3362,7 @@ class _$DiskTearOff {
       type: type,
       size: size,
       usageLabels: usageLabels,
-      objects: objects,
+      partitions: partitions,
       okForGuided: okForGuided,
       ptable: ptable,
       preserve: preserve,
@@ -3388,8 +3388,7 @@ mixin _$Disk {
   String? get type => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
   List<String>? get usageLabels => throw _privateConstructorUsedError;
-  @JsonKey(name: 'partitions')
-  List<DiskObject>? get objects => throw _privateConstructorUsedError;
+  List<DiskObject>? get partitions => throw _privateConstructorUsedError;
   bool? get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
   bool? get preserve => throw _privateConstructorUsedError;
@@ -3413,7 +3412,7 @@ abstract class $DiskCopyWith<$Res> {
       String? type,
       int? size,
       List<String>? usageLabels,
-      @JsonKey(name: 'partitions') List<DiskObject>? objects,
+      List<DiskObject>? partitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3438,7 +3437,7 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
-    Object? objects = freezed,
+    Object? partitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
@@ -3471,9 +3470,9 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      objects: objects == freezed
-          ? _value.objects
-          : objects // ignore: cast_nullable_to_non_nullable
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
               as List<DiskObject>?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
@@ -3515,7 +3514,7 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       String? type,
       int? size,
       List<String>? usageLabels,
-      @JsonKey(name: 'partitions') List<DiskObject>? objects,
+      List<DiskObject>? partitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
@@ -3541,7 +3540,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
-    Object? objects = freezed,
+    Object? partitions = freezed,
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
@@ -3574,9 +3573,9 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      objects: objects == freezed
-          ? _value.objects
-          : objects // ignore: cast_nullable_to_non_nullable
+      partitions: partitions == freezed
+          ? _value.partitions
+          : partitions // ignore: cast_nullable_to_non_nullable
               as List<DiskObject>?,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
@@ -3609,7 +3608,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-class _$_Disk extends _Disk {
+class _$_Disk implements _Disk {
   const _$_Disk(
       {this.id,
       this.label,
@@ -3617,14 +3616,13 @@ class _$_Disk extends _Disk {
       this.type,
       this.size,
       this.usageLabels,
-      @JsonKey(name: 'partitions') this.objects,
+      this.partitions,
       this.okForGuided,
       this.ptable,
       this.preserve,
       this.bootDevice,
       this.model,
-      this.vendor})
-      : super._();
+      this.vendor});
 
   factory _$_Disk.fromJson(Map<String, dynamic> json) =>
       _$_$_DiskFromJson(json);
@@ -3642,8 +3640,7 @@ class _$_Disk extends _Disk {
   @override
   final List<String>? usageLabels;
   @override
-  @JsonKey(name: 'partitions')
-  final List<DiskObject>? objects;
+  final List<DiskObject>? partitions;
   @override
   final bool? okForGuided;
   @override
@@ -3659,7 +3656,7 @@ class _$_Disk extends _Disk {
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, objects: $objects, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
+    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
   }
 
   @override
@@ -3679,9 +3676,9 @@ class _$_Disk extends _Disk {
             (identical(other.usageLabels, usageLabels) ||
                 const DeepCollectionEquality()
                     .equals(other.usageLabels, usageLabels)) &&
-            (identical(other.objects, objects) ||
+            (identical(other.partitions, partitions) ||
                 const DeepCollectionEquality()
-                    .equals(other.objects, objects)) &&
+                    .equals(other.partitions, partitions)) &&
             (identical(other.okForGuided, okForGuided) ||
                 const DeepCollectionEquality()
                     .equals(other.okForGuided, okForGuided)) &&
@@ -3708,7 +3705,7 @@ class _$_Disk extends _Disk {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
-      const DeepCollectionEquality().hash(objects) ^
+      const DeepCollectionEquality().hash(partitions) ^
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
       const DeepCollectionEquality().hash(preserve) ^
@@ -3727,7 +3724,7 @@ class _$_Disk extends _Disk {
   }
 }
 
-abstract class _Disk extends Disk {
+abstract class _Disk implements Disk {
   const factory _Disk(
       {String? id,
       String? label,
@@ -3735,14 +3732,13 @@ abstract class _Disk extends Disk {
       String? type,
       int? size,
       List<String>? usageLabels,
-      @JsonKey(name: 'partitions') List<DiskObject>? objects,
+      List<DiskObject>? partitions,
       bool? okForGuided,
       String? ptable,
       bool? preserve,
       bool? bootDevice,
       String? model,
       String? vendor}) = _$_Disk;
-  const _Disk._() : super._();
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
@@ -3759,8 +3755,7 @@ abstract class _Disk extends Disk {
   @override
   List<String>? get usageLabels => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'partitions')
-  List<DiskObject>? get objects => throw _privateConstructorUsedError;
+  List<DiskObject>? get partitions => throw _privateConstructorUsedError;
   @override
   bool? get okForGuided => throw _privateConstructorUsedError;
   @override

@@ -18,7 +18,7 @@ const testDisks = <Disk>[
     path: '/dev/sda',
     size: 12,
     preserve: false,
-    objects: [
+    partitions: [
       Partition(
         number: 1,
         size: 11,
@@ -39,7 +39,7 @@ const testDisks = <Disk>[
     path: '/dev/sdb',
     size: 23,
     preserve: false,
-    objects: [
+    partitions: [
       Partition(
         number: 3,
         size: 33,
@@ -60,10 +60,10 @@ const testDisks = <Disk>[
 WriteChangesToDiskModel buildModel({List<Disk>? disks}) {
   final model = MockWriteChangesToDiskModel();
   when(model.disks).thenReturn(disks ?? <Disk>[]);
-  when(model.partitions(testDisks.first))
-      .thenReturn(testDisks.first.partitions ?? []);
-  when(model.partitions(testDisks.last))
-      .thenReturn(testDisks.last.partitions ?? []);
+  when(model.partitions(testDisks.first)).thenReturn(
+      testDisks.first.partitions?.whereType<Partition>().toList() ?? []);
+  when(model.partitions(testDisks.last)).thenReturn(
+      testDisks.last.partitions?.whereType<Partition>().toList() ?? []);
   return model;
 }
 
@@ -94,7 +94,7 @@ void main() {
     for (final disk in testDisks) {
       expect(find.byKey(ValueKey(disk)), findsOneWidget);
 
-      for (final partition in disk.partitions!) {
+      for (final partition in disk.partitions!.whereType<Partition>()) {
         expect(find.byKey(ValueKey(partition)), findsOneWidget);
       }
     }

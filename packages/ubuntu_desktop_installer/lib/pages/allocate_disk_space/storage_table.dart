@@ -80,7 +80,7 @@ class StorageTable extends StatelessWidget {
         ],
       ),
       for (var objectIndex = 0;
-          objectIndex < (disk.objects?.length ?? 0);
+          objectIndex < (disk.partitions?.length ?? 0);
           ++objectIndex)
         DataRow(
           key: ValueKey(hashList([diskIndex, objectIndex])),
@@ -101,16 +101,16 @@ class StorageTable extends StatelessWidget {
                   object: objectIndex,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 40),
-                    child: disk.objects![objectIndex] is Partition
+                    child: disk.partitions![objectIndex] is Partition
                         ? columns.first.partitionBuilder(
                             context,
                             disk,
-                            disk.objects![objectIndex] as Partition,
+                            disk.partitions![objectIndex] as Partition,
                           )
                         : columns.first.gapBuilder(
                             context,
                             disk,
-                            disk.objects![objectIndex] as Gap,
+                            disk.partitions![objectIndex] as Gap,
                           ),
                   ),
                 ),
@@ -118,16 +118,16 @@ class StorageTable extends StatelessWidget {
             ),
             for (final column in columns.skip(1))
               DataCell(
-                disk.objects![objectIndex] is Partition
+                disk.partitions![objectIndex] is Partition
                     ? column.partitionBuilder(
                         context,
                         disk,
-                        disk.objects![objectIndex] as Partition,
+                        disk.partitions![objectIndex] as Partition,
                       )
                     : column.gapBuilder(
                         context,
                         disk,
-                        disk.objects![objectIndex] as Gap,
+                        disk.partitions![objectIndex] as Gap,
                       ),
               )
           ],
