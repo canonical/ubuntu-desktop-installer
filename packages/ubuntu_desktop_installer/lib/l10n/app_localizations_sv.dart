@@ -518,16 +518,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Användarnamnet är ogiltigt';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Det användarnamnet existerar redan.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Det namnet är reserverat för systemanvändning.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Det namnet är för långt.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Det namnet innehåller ogiltiga tecken.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Välj ett lösenord';
@@ -757,7 +757,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get supportedSoftware => 'Programvara som stöds';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Kopierar filer...';
 
   @override
   String get installationFailed => 'Installation failed';
