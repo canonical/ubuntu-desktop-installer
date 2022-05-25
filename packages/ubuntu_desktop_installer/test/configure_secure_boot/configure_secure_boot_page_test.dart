@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_s
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'configure_secure_boot_page_test.mocks.dart';
 
 @GenerateMocks([ConfigureSecureBootModel])

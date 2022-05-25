@@ -7,7 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
 void main() {

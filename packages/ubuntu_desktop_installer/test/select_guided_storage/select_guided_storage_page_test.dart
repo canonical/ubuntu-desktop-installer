@@ -8,15 +8,15 @@ import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guid
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 
 @GenerateMocks([SelectGuidedStorageModel])
 void main() {
-  const testStorages = <Disk>[
-    Disk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
-    Disk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
+  final testStorages = <Disk>[
+    testDisk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
+    testDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
   ];
 
   SelectGuidedStorageModel buildModel({

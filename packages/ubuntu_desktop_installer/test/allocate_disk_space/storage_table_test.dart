@@ -4,9 +4,11 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_columns.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_table.dart';
 
+import '../test_utils.dart';
+
 void main() {
-  const sda = Disk(path: '/dev/sda', size: 11);
-  const sdb = Disk(
+  final sda = testDisk(path: '/dev/sda', size: 11);
+  final sdb = testDisk(
     path: '/dev/sdb',
     size: 22,
     partitions: [
@@ -14,7 +16,7 @@ void main() {
       Gap(offset: 2211, size: 2222),
     ],
   );
-  const sdc = Disk(
+  final sdc = testDisk(
     path: '/dev/sdc',
     size: 33,
     partitions: [
@@ -23,7 +25,7 @@ void main() {
       Gap(offset: 3322, size: 3333),
     ],
   );
-  const sdd = Disk(
+  final sdd = testDisk(
     path: '/dev/sdd',
     size: 44,
     partitions: [
@@ -59,7 +61,7 @@ void main() {
     return MaterialApp(
       home: StorageTable(
         columns: columns,
-        storages: const [sda, sdb, sdc, sdd],
+        storages: [sda, sdb, sdc, sdd],
         canSelect: canSelect,
         isSelected: isSelected,
         onSelected: onSelected,

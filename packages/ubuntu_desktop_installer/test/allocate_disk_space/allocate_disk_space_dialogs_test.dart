@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
@@ -18,9 +18,9 @@ void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
-    final testDisk = Disk();
-    final testGap = Gap(offset: 0, size: 1000000);
-    final model = buildModel(selectedDisk: testDisk);
+    final disk = testDisk();
+    final gap = Gap(offset: 0, size: 1000000);
+    final model = buildModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
@@ -32,7 +32,7 @@ void main() {
     );
 
     final result = showCreatePartitionDialog(
-        tester.element(find.byType(AllocateDiskSpacePage)), testDisk, testGap);
+        tester.element(find.byType(AllocateDiskSpacePage)), disk, gap);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DropdownButton<DataUnit>));
@@ -61,8 +61,8 @@ void main() {
     await result;
 
     verify(model.addPartition(
-      testDisk,
-      testGap,
+      disk,
+      gap,
       size: 123,
       format: PartitionFormat.btrfs,
       mount: '/tst',
@@ -73,7 +73,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final testDisk = Disk(partitions: [
+    final disk = testDisk(partitions: [
       Partition(
         number: 1,
         format: 'ext4',
@@ -83,7 +83,7 @@ void main() {
       ),
       Gap(offset: 123, size: 1000000),
     ]);
-    final model = buildModel(selectedDisk: testDisk);
+    final model = buildModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
@@ -96,8 +96,8 @@ void main() {
 
     final result = showEditPartitionDialog(
         tester.element(find.byType(AllocateDiskSpacePage)),
-        testDisk,
-        testDisk.partitions!.whereType<Partition>().first);
+        disk,
+        disk.partitions!.whereType<Partition>().first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DropdownButton<PartitionFormat>));
@@ -120,8 +120,8 @@ void main() {
     await result;
 
     verify(model.editPartition(
-      testDisk,
-      testDisk.partitions!.whereType<Partition>().first,
+      disk,
+      disk.partitions!.whereType<Partition>().first,
       format: PartitionFormat.btrfs,
       wipe: false,
       mount: '/tst',

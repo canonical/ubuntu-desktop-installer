@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_selector.dart';
+
+import '../test_utils.dart';
 
 void main() {
   testWidgets('initial selection', (tester) async {
@@ -12,7 +13,7 @@ void main() {
             title: '',
             storages: [
               for (var i = 0; i < 3; i++)
-                Disk(model: 'model$i', vendor: 'vendor$i'),
+                testDisk(model: 'model$i', vendor: 'vendor$i'),
             ],
             selected: 1,
             onSelected: (_) {},
@@ -37,7 +38,7 @@ void main() {
             title: '',
             storages: [
               for (var i = 0; i < 3; i++)
-                Disk(model: 'model$i', vendor: 'vendor$i'),
+                testDisk(model: 'model$i', vendor: 'vendor$i'),
             ],
             onSelected: (v) => selected = v,
           ),

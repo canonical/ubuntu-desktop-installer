@@ -4,11 +4,12 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  const testStorages = <Disk>[Disk(id: 'a'), Disk(id: 'b')];
+  final testStorages = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
 
   test('load guided storage', () async {
     final service = MockDiskStorageService();

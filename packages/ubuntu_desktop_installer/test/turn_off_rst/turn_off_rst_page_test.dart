@@ -9,7 +9,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'turn_off_rst_page_test.mocks.dart';
 
 @GenerateMocks([TurnOffRSTModel, UrlLauncher])

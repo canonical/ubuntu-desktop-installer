@@ -5,15 +5,16 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  const testDisks = <Disk>[
-    Disk(id: 'a', partitions: [
+  final testDisks = <Disk>[
+    testDisk(id: 'a', partitions: [
       Partition(number: 1),
     ]),
-    Disk(
+    testDisk(
       id: 'b',
       bootDevice: true,
       preserve: true,
@@ -23,7 +24,7 @@ void main() {
       ],
     ),
   ];
-  const changedDisks = <Disk>[Disk(path: '/foo')];
+  final changedDisks = <Disk>[testDisk(path: '/foo')];
 
   test('get storage', () async {
     final service = MockDiskStorageService();
@@ -179,8 +180,8 @@ void main() {
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk = Disk(partitions: [Gap(offset: 0, size: 1)]);
-    final fullDisk = Disk();
+    final emptyDisk = testDisk(partitions: [Gap(offset: 0, size: 1)]);
+    final fullDisk = testDisk();
     final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final mountedPartition =
         emptyDisk.copyWith(partitions: [Partition(mount: '/')]);
@@ -266,14 +267,14 @@ void main() {
     const partition = Partition(size: 123, format: 'ext3', mount: '/tst');
 
     final service = MockDiskStorageService();
-    when(service.addPartition(Disk(), gap, partition))
+    when(service.addPartition(testDisk(), gap, partition))
         .thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
-    await model.addPartition(Disk(), gap,
+    await model.addPartition(testDisk(), gap,
         size: 123, format: PartitionFormat.ext3, mount: '/tst');
     expect(model.disks, equals(changedDisks));
-    verify(service.addPartition(Disk(), gap, partition)).called(1);
+    verify(service.addPartition(testDisk(), gap, partition)).called(1);
   });
 
   test('edit partition', () async {
@@ -283,19 +284,19 @@ void main() {
         partition.copyWith(wipe: 'superblock', format: 'ext2', mount: '/tmp');
 
     final service = MockDiskStorageService();
-    when(service.editPartition(Disk(), edited))
+    when(service.editPartition(testDisk(), edited))
         .thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
-    await model.editPartition(Disk(), partition,
+    await model.editPartition(testDisk(), partition,
         wipe: true, format: PartitionFormat.ext2, mount: '/tmp');
     expect(model.disks, equals(changedDisks));
-    verify(service.editPartition(Disk(), edited)).called(1);
+    verify(service.editPartition(testDisk(), edited)).called(1);
   });
 
   test('update selection', () async {
-    Disk testDisk(int partitions) {
-      return Disk(
+    Disk testPartitions(int partitions) {
+      return testDisk(
         partitions: [
           for (var i = 0; i < partitions; ++i) Partition(number: i),
           Gap(offset: 123, size: 456),
@@ -307,15 +308,15 @@ void main() {
     final model = AllocateDiskSpaceModel(service);
 
     // get partitions -> select first disk
-    when(service.getStorage()).thenAnswer((_) async => [testDisk(2)]);
+    when(service.getStorage()).thenAnswer((_) async => [testPartitions(2)]);
     await model.getStorage();
     expect(model.selectedDiskIndex, equals(0));
     expect(model.selectedObjectIndex, equals(-1));
 
     // add partition -> select added partition
-    when(service.addPartition(testDisk(2), Gap(offset: 123, size: 456),
+    when(service.addPartition(testPartitions(2), Gap(offset: 123, size: 456),
             Partition(size: 123, format: 'ext4', mount: '/tst')))
-        .thenAnswer((_) async => [testDisk(2)]);
+        .thenAnswer((_) async => [testPartitions(2)]);
     await model.addPartition(model.selectedDisk!, Gap(offset: 123, size: 456),
         size: 123, format: PartitionFormat.ext4, mount: '/tst');
     expect(model.selectedDiskIndex, equals(0));

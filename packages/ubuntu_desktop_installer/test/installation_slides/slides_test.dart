@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'slides_test.mocks.dart';
 
 @GenerateMocks([UrlLauncher])

@@ -6,6 +6,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import '../test_utils.dart';
 import 'installation_type_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService, TelemetryService])
@@ -23,8 +24,8 @@ void main() {
       version: '22.04 LTS',
       type: 'linux',
     );
-    const existingOS = [
-      Disk(partitions: [
+    final existingOS = [
+      testDisk(partitions: [
         Partition(os: ubuntu2110),
         Partition(os: ubuntu2204),
       ]),

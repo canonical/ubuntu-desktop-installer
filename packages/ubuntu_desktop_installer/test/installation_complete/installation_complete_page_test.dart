@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_complete/installatio
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'installation_complete_page_test.mocks.dart';
 
 @GenerateMocks([InstallationCompleteModel])
