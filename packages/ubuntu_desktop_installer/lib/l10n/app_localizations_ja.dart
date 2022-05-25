@@ -190,13 +190,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください:';
 
   @override
-  String get normalInstallationTitle => '通常のインストール';
+  String get normalInstallationTitle => 'おすすめのアプリもインストールする';
 
   @override
   String get normalInstallationSubtitle => 'Webブラウザ、ユーティリティ、オフィスソフトウェア、ゲームにメディアプレイヤー。';
 
   @override
-  String get minimalInstallationTitle => '最小限のインストール';
+  String get minimalInstallationTitle => '最小限のアプリだけをインストールする';
 
   @override
   String get minimalInstallationSubtitle => 'Webブラウザと基本的なユーティリティ。';
