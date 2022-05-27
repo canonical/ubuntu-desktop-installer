@@ -89,7 +89,7 @@ void main() {
 
   testWidgets('manual partitioning', (tester) async {
     final storage = [
-      Disk(
+      testDisk(
         path: '/dev/sda',
         partitions: [
           Partition(size: toBytes(6, DataUnit.gigabytes), mount: '/'),
