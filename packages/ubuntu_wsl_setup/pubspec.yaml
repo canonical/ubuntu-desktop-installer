@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_html: ^2.1.1
+  flutter_html: ^3.0.0-0
   get_it: ^7.2.0
   provider: ^6.0.0
   safe_change_notifier: ^0.1.0
