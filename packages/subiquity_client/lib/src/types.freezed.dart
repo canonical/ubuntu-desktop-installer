@@ -3781,7 +3781,8 @@ GuidedChoice _$GuidedChoiceFromJson(Map<String, dynamic> json) {
 class _$GuidedChoiceTearOff {
   const _$GuidedChoiceTearOff();
 
-  _GuidedChoice call({String? diskId, bool? useLvm, String? password}) {
+  _GuidedChoice call(
+      {required String diskId, bool useLvm = false, String? password}) {
     return _GuidedChoice(
       diskId: diskId,
       useLvm: useLvm,
@@ -3799,8 +3800,8 @@ const $GuidedChoice = _$GuidedChoiceTearOff();
 
 /// @nodoc
 mixin _$GuidedChoice {
-  String? get diskId => throw _privateConstructorUsedError;
-  bool? get useLvm => throw _privateConstructorUsedError;
+  String get diskId => throw _privateConstructorUsedError;
+  bool get useLvm => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -3814,7 +3815,7 @@ abstract class $GuidedChoiceCopyWith<$Res> {
   factory $GuidedChoiceCopyWith(
           GuidedChoice value, $Res Function(GuidedChoice) then) =
       _$GuidedChoiceCopyWithImpl<$Res>;
-  $Res call({String? diskId, bool? useLvm, String? password});
+  $Res call({String diskId, bool useLvm, String? password});
 }
 
 /// @nodoc
@@ -3835,11 +3836,11 @@ class _$GuidedChoiceCopyWithImpl<$Res> implements $GuidedChoiceCopyWith<$Res> {
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       useLvm: useLvm == freezed
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -3855,7 +3856,7 @@ abstract class _$GuidedChoiceCopyWith<$Res>
           _GuidedChoice value, $Res Function(_GuidedChoice) then) =
       __$GuidedChoiceCopyWithImpl<$Res>;
   @override
-  $Res call({String? diskId, bool? useLvm, String? password});
+  $Res call({String diskId, bool useLvm, String? password});
 }
 
 /// @nodoc
@@ -3878,11 +3879,11 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       useLvm: useLvm == freezed
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -3895,15 +3896,17 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedChoice implements _GuidedChoice {
-  const _$_GuidedChoice({this.diskId, this.useLvm, this.password});
+  const _$_GuidedChoice(
+      {required this.diskId, this.useLvm = false, this.password});
 
   factory _$_GuidedChoice.fromJson(Map<String, dynamic> json) =>
       _$_$_GuidedChoiceFromJson(json);
 
   @override
-  final String? diskId;
+  final String diskId;
+  @JsonKey(defaultValue: false)
   @override
-  final bool? useLvm;
+  final bool useLvm;
   @override
   final String? password;
 
@@ -3945,15 +3948,17 @@ class _$_GuidedChoice implements _GuidedChoice {
 
 abstract class _GuidedChoice implements GuidedChoice {
   const factory _GuidedChoice(
-      {String? diskId, bool? useLvm, String? password}) = _$_GuidedChoice;
+      {required String diskId,
+      bool useLvm,
+      String? password}) = _$_GuidedChoice;
 
   factory _GuidedChoice.fromJson(Map<String, dynamic> json) =
       _$_GuidedChoice.fromJson;
 
   @override
-  String? get diskId => throw _privateConstructorUsedError;
+  String get diskId => throw _privateConstructorUsedError;
   @override
-  bool? get useLvm => throw _privateConstructorUsedError;
+  bool get useLvm => throw _privateConstructorUsedError;
   @override
   String? get password => throw _privateConstructorUsedError;
   @override
@@ -3972,7 +3977,9 @@ class _$GuidedStorageResponseTearOff {
   const _$GuidedStorageResponseTearOff();
 
   _GuidedStorageResponse call(
-      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks}) {
+      {required ProbeStatus status,
+      ErrorReportRef? errorReport,
+      List<Disk>? disks}) {
     return _GuidedStorageResponse(
       status: status,
       errorReport: errorReport,
@@ -3990,7 +3997,7 @@ const $GuidedStorageResponse = _$GuidedStorageResponseTearOff();
 
 /// @nodoc
 mixin _$GuidedStorageResponse {
-  ProbeStatus? get status => throw _privateConstructorUsedError;
+  ProbeStatus get status => throw _privateConstructorUsedError;
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   List<Disk>? get disks => throw _privateConstructorUsedError;
 
@@ -4006,7 +4013,7 @@ abstract class $GuidedStorageResponseCopyWith<$Res> {
           $Res Function(GuidedStorageResponse) then) =
       _$GuidedStorageResponseCopyWithImpl<$Res>;
   $Res call(
-      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks});
+      {ProbeStatus status, ErrorReportRef? errorReport, List<Disk>? disks});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
 }
@@ -4030,7 +4037,7 @@ class _$GuidedStorageResponseCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ProbeStatus?,
+              as ProbeStatus,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4062,7 +4069,7 @@ abstract class _$GuidedStorageResponseCopyWith<$Res>
       __$GuidedStorageResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProbeStatus? status, ErrorReportRef? errorReport, List<Disk>? disks});
+      {ProbeStatus status, ErrorReportRef? errorReport, List<Disk>? disks});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -4089,7 +4096,7 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ProbeStatus?,
+              as ProbeStatus,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4106,13 +4113,14 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_GuidedStorageResponse implements _GuidedStorageResponse {
-  const _$_GuidedStorageResponse({this.status, this.errorReport, this.disks});
+  const _$_GuidedStorageResponse(
+      {required this.status, this.errorReport, this.disks});
 
   factory _$_GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GuidedStorageResponseFromJson(json);
 
   @override
-  final ProbeStatus? status;
+  final ProbeStatus status;
   @override
   final ErrorReportRef? errorReport;
   @override
@@ -4157,7 +4165,7 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
 
 abstract class _GuidedStorageResponse implements GuidedStorageResponse {
   const factory _GuidedStorageResponse(
-      {ProbeStatus? status,
+      {required ProbeStatus status,
       ErrorReportRef? errorReport,
       List<Disk>? disks}) = _$_GuidedStorageResponse;
 
@@ -4165,7 +4173,7 @@ abstract class _GuidedStorageResponse implements GuidedStorageResponse {
       _$_GuidedStorageResponse.fromJson;
 
   @override
-  ProbeStatus? get status => throw _privateConstructorUsedError;
+  ProbeStatus get status => throw _privateConstructorUsedError;
   @override
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
@@ -4185,13 +4193,14 @@ class _$StorageResponseTearOff {
   const _$StorageResponseTearOff();
 
   _StorageResponse call(
-      {ProbeStatus? status,
+      {required ProbeStatus status,
       ErrorReportRef? errorReport,
       Bootloader? bootloader,
       List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd}) {
+      Map<String, dynamic>? dasd,
+      int storageVersion = 1}) {
     return _StorageResponse(
       status: status,
       errorReport: errorReport,
@@ -4200,6 +4209,7 @@ class _$StorageResponseTearOff {
       config: config,
       blockdev: blockdev,
       dasd: dasd,
+      storageVersion: storageVersion,
     );
   }
 
@@ -4213,13 +4223,14 @@ const $StorageResponse = _$StorageResponseTearOff();
 
 /// @nodoc
 mixin _$StorageResponse {
-  ProbeStatus? get status => throw _privateConstructorUsedError;
+  ProbeStatus get status => throw _privateConstructorUsedError;
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   Bootloader? get bootloader => throw _privateConstructorUsedError;
   List<dynamic>? get origConfig => throw _privateConstructorUsedError;
   List<dynamic>? get config => throw _privateConstructorUsedError;
   Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
   Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+  int get storageVersion => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4233,13 +4244,14 @@ abstract class $StorageResponseCopyWith<$Res> {
           StorageResponse value, $Res Function(StorageResponse) then) =
       _$StorageResponseCopyWithImpl<$Res>;
   $Res call(
-      {ProbeStatus? status,
+      {ProbeStatus status,
       ErrorReportRef? errorReport,
       Bootloader? bootloader,
       List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd});
+      Map<String, dynamic>? dasd,
+      int storageVersion});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
 }
@@ -4262,12 +4274,13 @@ class _$StorageResponseCopyWithImpl<$Res>
     Object? config = freezed,
     Object? blockdev = freezed,
     Object? dasd = freezed,
+    Object? storageVersion = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ProbeStatus?,
+              as ProbeStatus,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4292,6 +4305,10 @@ class _$StorageResponseCopyWithImpl<$Res>
           ? _value.dasd
           : dasd // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      storageVersion: storageVersion == freezed
+          ? _value.storageVersion
+          : storageVersion // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -4315,13 +4332,14 @@ abstract class _$StorageResponseCopyWith<$Res>
       __$StorageResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProbeStatus? status,
+      {ProbeStatus status,
       ErrorReportRef? errorReport,
       Bootloader? bootloader,
       List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd});
+      Map<String, dynamic>? dasd,
+      int storageVersion});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -4347,12 +4365,13 @@ class __$StorageResponseCopyWithImpl<$Res>
     Object? config = freezed,
     Object? blockdev = freezed,
     Object? dasd = freezed,
+    Object? storageVersion = freezed,
   }) {
     return _then(_StorageResponse(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ProbeStatus?,
+              as ProbeStatus,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4377,6 +4396,10 @@ class __$StorageResponseCopyWithImpl<$Res>
           ? _value.dasd
           : dasd // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      storageVersion: storageVersion == freezed
+          ? _value.storageVersion
+          : storageVersion // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4386,19 +4409,20 @@ class __$StorageResponseCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponse implements _StorageResponse {
   const _$_StorageResponse(
-      {this.status,
+      {required this.status,
       this.errorReport,
       this.bootloader,
       this.origConfig,
       this.config,
       this.blockdev,
-      this.dasd});
+      this.dasd,
+      this.storageVersion = 1});
 
   factory _$_StorageResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_StorageResponseFromJson(json);
 
   @override
-  final ProbeStatus? status;
+  final ProbeStatus status;
   @override
   final ErrorReportRef? errorReport;
   @override
@@ -4411,10 +4435,13 @@ class _$_StorageResponse implements _StorageResponse {
   final Map<String, dynamic>? blockdev;
   @override
   final Map<String, dynamic>? dasd;
+  @JsonKey(defaultValue: 1)
+  @override
+  final int storageVersion;
 
   @override
   String toString() {
-    return 'StorageResponse(status: $status, errorReport: $errorReport, bootloader: $bootloader, origConfig: $origConfig, config: $config, blockdev: $blockdev, dasd: $dasd)';
+    return 'StorageResponse(status: $status, errorReport: $errorReport, bootloader: $bootloader, origConfig: $origConfig, config: $config, blockdev: $blockdev, dasd: $dasd, storageVersion: $storageVersion)';
   }
 
   @override
@@ -4438,7 +4465,10 @@ class _$_StorageResponse implements _StorageResponse {
                 const DeepCollectionEquality()
                     .equals(other.blockdev, blockdev)) &&
             (identical(other.dasd, dasd) ||
-                const DeepCollectionEquality().equals(other.dasd, dasd)));
+                const DeepCollectionEquality().equals(other.dasd, dasd)) &&
+            (identical(other.storageVersion, storageVersion) ||
+                const DeepCollectionEquality()
+                    .equals(other.storageVersion, storageVersion)));
   }
 
   @override
@@ -4450,7 +4480,8 @@ class _$_StorageResponse implements _StorageResponse {
       const DeepCollectionEquality().hash(origConfig) ^
       const DeepCollectionEquality().hash(config) ^
       const DeepCollectionEquality().hash(blockdev) ^
-      const DeepCollectionEquality().hash(dasd);
+      const DeepCollectionEquality().hash(dasd) ^
+      const DeepCollectionEquality().hash(storageVersion);
 
   @JsonKey(ignore: true)
   @override
@@ -4465,19 +4496,20 @@ class _$_StorageResponse implements _StorageResponse {
 
 abstract class _StorageResponse implements StorageResponse {
   const factory _StorageResponse(
-      {ProbeStatus? status,
+      {required ProbeStatus status,
       ErrorReportRef? errorReport,
       Bootloader? bootloader,
       List<dynamic>? origConfig,
       List<dynamic>? config,
       Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd}) = _$_StorageResponse;
+      Map<String, dynamic>? dasd,
+      int storageVersion}) = _$_StorageResponse;
 
   factory _StorageResponse.fromJson(Map<String, dynamic> json) =
       _$_StorageResponse.fromJson;
 
   @override
-  ProbeStatus? get status => throw _privateConstructorUsedError;
+  ProbeStatus get status => throw _privateConstructorUsedError;
   @override
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
@@ -4490,6 +4522,8 @@ abstract class _StorageResponse implements StorageResponse {
   Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
   @override
   Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+  @override
+  int get storageVersion => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
@@ -4505,9 +4539,9 @@ class _$StorageResponseV2TearOff {
   const _$StorageResponseV2TearOff();
 
   _StorageResponseV2 call(
-      {List<Disk>? disks,
-      bool? needRoot,
-      bool? needBoot,
+      {required List<Disk> disks,
+      required bool needRoot,
+      required bool needBoot,
       ErrorReportRef? errorReport}) {
     return _StorageResponseV2(
       disks: disks,
@@ -4527,9 +4561,9 @@ const $StorageResponseV2 = _$StorageResponseV2TearOff();
 
 /// @nodoc
 mixin _$StorageResponseV2 {
-  List<Disk>? get disks => throw _privateConstructorUsedError;
-  bool? get needRoot => throw _privateConstructorUsedError;
-  bool? get needBoot => throw _privateConstructorUsedError;
+  List<Disk> get disks => throw _privateConstructorUsedError;
+  bool get needRoot => throw _privateConstructorUsedError;
+  bool get needBoot => throw _privateConstructorUsedError;
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -4544,9 +4578,9 @@ abstract class $StorageResponseV2CopyWith<$Res> {
           StorageResponseV2 value, $Res Function(StorageResponseV2) then) =
       _$StorageResponseV2CopyWithImpl<$Res>;
   $Res call(
-      {List<Disk>? disks,
-      bool? needRoot,
-      bool? needBoot,
+      {List<Disk> disks,
+      bool needRoot,
+      bool needBoot,
       ErrorReportRef? errorReport});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -4572,15 +4606,15 @@ class _$StorageResponseV2CopyWithImpl<$Res>
       disks: disks == freezed
           ? _value.disks
           : disks // ignore: cast_nullable_to_non_nullable
-              as List<Disk>?,
+              as List<Disk>,
       needRoot: needRoot == freezed
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       needBoot: needBoot == freezed
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4608,9 +4642,9 @@ abstract class _$StorageResponseV2CopyWith<$Res>
       __$StorageResponseV2CopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Disk>? disks,
-      bool? needRoot,
-      bool? needBoot,
+      {List<Disk> disks,
+      bool needRoot,
+      bool needBoot,
       ErrorReportRef? errorReport});
 
   @override
@@ -4639,15 +4673,15 @@ class __$StorageResponseV2CopyWithImpl<$Res>
       disks: disks == freezed
           ? _value.disks
           : disks // ignore: cast_nullable_to_non_nullable
-              as List<Disk>?,
+              as List<Disk>,
       needRoot: needRoot == freezed
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       needBoot: needBoot == freezed
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -4661,17 +4695,20 @@ class __$StorageResponseV2CopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
-      {this.disks, this.needRoot, this.needBoot, this.errorReport});
+      {required this.disks,
+      required this.needRoot,
+      required this.needBoot,
+      this.errorReport});
 
   factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$_$_StorageResponseV2FromJson(json);
 
   @override
-  final List<Disk>? disks;
+  final List<Disk> disks;
   @override
-  final bool? needRoot;
+  final bool needRoot;
   @override
-  final bool? needBoot;
+  final bool needBoot;
   @override
   final ErrorReportRef? errorReport;
 
@@ -4718,20 +4755,20 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
 
 abstract class _StorageResponseV2 implements StorageResponseV2 {
   const factory _StorageResponseV2(
-      {List<Disk>? disks,
-      bool? needRoot,
-      bool? needBoot,
+      {required List<Disk> disks,
+      required bool needRoot,
+      required bool needBoot,
       ErrorReportRef? errorReport}) = _$_StorageResponseV2;
 
   factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_StorageResponseV2.fromJson;
 
   @override
-  List<Disk>? get disks => throw _privateConstructorUsedError;
+  List<Disk> get disks => throw _privateConstructorUsedError;
   @override
-  bool? get needRoot => throw _privateConstructorUsedError;
+  bool get needRoot => throw _privateConstructorUsedError;
   @override
-  bool? get needBoot => throw _privateConstructorUsedError;
+  bool get needBoot => throw _privateConstructorUsedError;
   @override
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override

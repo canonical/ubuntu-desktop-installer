@@ -276,8 +276,8 @@ class Disk with _$Disk {
 class GuidedChoice with _$GuidedChoice {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedChoice({
-    String? diskId,
-    bool? useLvm,
+    required String diskId,
+    @Default(false) bool useLvm,
     String? password,
   }) = _GuidedChoice;
 
@@ -289,7 +289,7 @@ class GuidedChoice with _$GuidedChoice {
 class GuidedStorageResponse with _$GuidedStorageResponse {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedStorageResponse({
-    ProbeStatus? status,
+    required ProbeStatus status,
     ErrorReportRef? errorReport,
     List<Disk>? disks,
   }) = _GuidedStorageResponse;
@@ -302,13 +302,14 @@ class GuidedStorageResponse with _$GuidedStorageResponse {
 class StorageResponse with _$StorageResponse {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponse({
-    ProbeStatus? status,
+    required ProbeStatus status,
     ErrorReportRef? errorReport,
     Bootloader? bootloader,
     List<dynamic>? origConfig,
     List<dynamic>? config,
     Map<String, dynamic>? blockdev,
     Map<String, dynamic>? dasd,
+    @Default(1) int storageVersion,
   }) = _StorageResponse;
 
   factory StorageResponse.fromJson(Map<String, dynamic> json) =>
@@ -319,9 +320,9 @@ class StorageResponse with _$StorageResponse {
 class StorageResponseV2 with _$StorageResponseV2 {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponseV2({
-    List<Disk>? disks,
-    bool? needRoot,
-    bool? needBoot,
+    required List<Disk> disks,
+    required bool needRoot,
+    required bool needBoot,
     ErrorReportRef? errorReport,
   }) = _StorageResponseV2;
 

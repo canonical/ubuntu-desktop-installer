@@ -378,8 +378,8 @@ Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
 
 _$_GuidedChoice _$_$_GuidedChoiceFromJson(Map<String, dynamic> json) {
   return _$_GuidedChoice(
-    diskId: json['disk_id'] as String?,
-    useLvm: json['use_lvm'] as bool?,
+    diskId: json['disk_id'] as String,
+    useLvm: json['use_lvm'] as bool? ?? false,
     password: json['password'] as String?,
   );
 }
@@ -394,7 +394,7 @@ Map<String, dynamic> _$_$_GuidedChoiceToJson(_$_GuidedChoice instance) =>
 _$_GuidedStorageResponse _$_$_GuidedStorageResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GuidedStorageResponse(
-    status: _$enumDecodeNullable(_$ProbeStatusEnumMap, json['status']),
+    status: _$enumDecode(_$ProbeStatusEnumMap, json['status']),
     errorReport: json['error_report'] == null
         ? null
         : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
@@ -420,7 +420,7 @@ const _$ProbeStatusEnumMap = {
 
 _$_StorageResponse _$_$_StorageResponseFromJson(Map<String, dynamic> json) {
   return _$_StorageResponse(
-    status: _$enumDecodeNullable(_$ProbeStatusEnumMap, json['status']),
+    status: _$enumDecode(_$ProbeStatusEnumMap, json['status']),
     errorReport: json['error_report'] == null
         ? null
         : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
@@ -429,6 +429,7 @@ _$_StorageResponse _$_$_StorageResponseFromJson(Map<String, dynamic> json) {
     config: json['config'] as List<dynamic>?,
     blockdev: json['blockdev'] as Map<String, dynamic>?,
     dasd: json['dasd'] as Map<String, dynamic>?,
+    storageVersion: json['storage_version'] as int? ?? 1,
   );
 }
 
@@ -441,6 +442,7 @@ Map<String, dynamic> _$_$_StorageResponseToJson(_$_StorageResponse instance) =>
       'config': instance.config,
       'blockdev': instance.blockdev,
       'dasd': instance.dasd,
+      'storage_version': instance.storageVersion,
     };
 
 const _$BootloaderEnumMap = {
@@ -452,11 +454,11 @@ const _$BootloaderEnumMap = {
 
 _$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
   return _$_StorageResponseV2(
-    disks: (json['disks'] as List<dynamic>?)
-        ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
+    disks: (json['disks'] as List<dynamic>)
+        .map((e) => Disk.fromJson(e as Map<String, dynamic>))
         .toList(),
-    needRoot: json['need_root'] as bool?,
-    needBoot: json['need_boot'] as bool?,
+    needRoot: json['need_root'] as bool,
+    needBoot: json['need_boot'] as bool,
     errorReport: json['error_report'] == null
         ? null
         : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
@@ -466,7 +468,7 @@ _$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StorageResponseV2ToJson(
         _$_StorageResponseV2 instance) =>
     <String, dynamic>{
-      'disks': instance.disks?.map((e) => e.toJson()).toList(),
+      'disks': instance.disks.map((e) => e.toJson()).toList(),
       'need_root': instance.needRoot,
       'need_boot': instance.needBoot,
       'error_report': instance.errorReport?.toJson(),
