@@ -4,8 +4,10 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import '../test_utils.dart';
+
 void main() {
-  const testDisks = <Disk>[Disk(id: 'a'), Disk(id: 'b')];
+  final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
 
   late SubiquityClient client;
 
@@ -117,7 +119,7 @@ void main() {
   });
 
   test('add/edit/remove partition', () async {
-    final disk = Disk(id: 'tst');
+    final disk = testDisk(id: 'tst');
     final gap = Gap(offset: 2, size: 3);
     final partition = Partition(number: 1);
     final service = DiskStorageService(client);
@@ -145,7 +147,7 @@ void main() {
   });
 
   test('add boot partition', () async {
-    final disk = Disk(id: 'tst');
+    final disk = testDisk(id: 'tst');
     final service = DiskStorageService(client);
 
     when(client.addBootPartitionV2(disk))
@@ -157,7 +159,7 @@ void main() {
   });
 
   test('reformat disk', () async {
-    final disk = Disk(id: 'tst');
+    final disk = testDisk(id: 'tst');
     final service = DiskStorageService(client);
 
     when(client.reformatDiskV2(disk))

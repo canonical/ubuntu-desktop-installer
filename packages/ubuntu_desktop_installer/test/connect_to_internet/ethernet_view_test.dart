@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_mode
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'ethernet_view_test.mocks.dart';
 
 @GenerateMocks([EthernetModel, EthernetDevice])

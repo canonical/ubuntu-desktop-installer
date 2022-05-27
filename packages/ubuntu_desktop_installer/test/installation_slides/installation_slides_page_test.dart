@@ -13,7 +13,7 @@ import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'installation_slides_page_test.mocks.dart';
 
 @GenerateMocks([InstallationSlidesModel, JournalService])

@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.da
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'wifi_view_test.mocks.dart';
 
 @GenerateMocks([AccessPoint, WifiModel, WifiDevice])

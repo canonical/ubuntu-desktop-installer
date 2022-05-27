@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dar
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'who_are_you_page_test.mocks.dart';
 
 @GenerateMocks([WhoAreYouModel])

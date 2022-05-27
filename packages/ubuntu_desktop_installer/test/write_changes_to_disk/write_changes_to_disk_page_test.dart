@@ -9,12 +9,12 @@ import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_chang
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
 import 'write_changes_to_disk_page_test.mocks.dart';
 
-const testDisks = <Disk>[
-  Disk(
+final testDisks = <Disk>[
+  testDisk(
     path: '/dev/sda',
     size: 12,
     preserve: false,
@@ -35,7 +35,7 @@ const testDisks = <Disk>[
       )
     ],
   ),
-  Disk(
+  testDisk(
     path: '/dev/sdb',
     size: 23,
     preserve: false,

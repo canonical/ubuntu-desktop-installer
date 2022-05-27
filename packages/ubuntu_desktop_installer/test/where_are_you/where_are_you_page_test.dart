@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_page.
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'where_are_you_model_test.mocks.dart';
 import 'where_are_you_page_test.mocks.dart';
 

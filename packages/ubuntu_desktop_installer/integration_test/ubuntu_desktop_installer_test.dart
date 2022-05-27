@@ -18,7 +18,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaml/yaml.dart';
 
-import '../test/widget_tester_extensions.dart';
+import '../test/test_utils.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -89,7 +89,7 @@ void main() {
 
   testWidgets('manual partitioning', (tester) async {
     final storage = [
-      Disk(
+      testDisk(
         path: '/dev/sda',
         partitions: [
           Partition(size: toBytes(6, DataUnit.gigabytes), mount: '/'),

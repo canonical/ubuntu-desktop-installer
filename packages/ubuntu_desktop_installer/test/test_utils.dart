@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -64,4 +65,36 @@ extension UbuntuTester on WidgetTester {
       ),
     );
   }
+}
+
+Disk testDisk({
+  String? id,
+  String? label,
+  String? path,
+  String? type,
+  int? size,
+  List<String>? usageLabels,
+  List<DiskObject>? partitions,
+  bool? okForGuided,
+  String? ptable,
+  bool? preserve,
+  bool? bootDevice,
+  String? model,
+  String? vendor,
+}) {
+  return Disk(
+    id: id,
+    label: label,
+    path: path,
+    type: type,
+    size: size,
+    usageLabels: usageLabels,
+    partitions: partitions,
+    okForGuided: okForGuided,
+    ptable: ptable,
+    preserve: preserve,
+    bootDevice: bootDevice,
+    model: model,
+    vendor: vendor,
+  );
 }

@@ -5,17 +5,18 @@ import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_chang
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import '../test_utils.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  const testDisks = <Disk>[
-    Disk(
+  final testDisks = <Disk>[
+    testDisk(
       id: 'a',
       preserve: false,
       partitions: [Partition(number: 1, preserve: false)],
     ),
-    Disk(
+    testDisk(
       id: 'b',
       preserve: true,
       partitions: [
@@ -23,7 +24,7 @@ void main() {
         Partition(number: 2, grubDevice: true),
       ],
     ),
-    Disk(
+    testDisk(
       id: 'c',
       preserve: false,
       partitions: [
@@ -33,13 +34,13 @@ void main() {
     ),
   ];
 
-  const nonPreservedDisks = <Disk>[
-    Disk(
+  final nonPreservedDisks = <Disk>[
+    testDisk(
       id: 'a',
       preserve: false,
       partitions: [Partition(number: 1, preserve: false)],
     ),
-    Disk(
+    testDisk(
       id: 'c',
       preserve: false,
       partitions: [Partition(number: 3, preserve: false)],

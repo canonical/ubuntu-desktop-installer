@@ -7,7 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
 import 'package:ubuntu_wizard/settings.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'choose_your_look_page_test.mocks.dart';
 
 @GenerateMocks([Settings])

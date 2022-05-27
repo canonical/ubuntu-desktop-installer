@@ -12,7 +12,7 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../widget_tester_extensions.dart';
+import '../test_utils.dart';
 import 'updates_other_software_model_test.mocks.dart';
 import 'updates_other_software_page_test.mocks.dart';
 
