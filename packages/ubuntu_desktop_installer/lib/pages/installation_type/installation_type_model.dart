@@ -81,12 +81,10 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _diskService.getGuidedStorage().then((disks) {
       _existingOS = disks
           .expand<OsProber>(
-            (d) =>
-                d.partitions
-                    ?.whereType<Partition>()
-                    .map((p) => p.os)
-                    .whereType<OsProber>() ??
-                [],
+            (d) => d.partitions
+                .whereType<Partition>()
+                .map((p) => p.os)
+                .whereType<OsProber>(),
           )
           .toList();
       notifyListeners();

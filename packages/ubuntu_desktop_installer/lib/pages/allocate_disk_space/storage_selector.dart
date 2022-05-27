@@ -24,7 +24,7 @@ class StorageSelector extends StatelessWidget {
         storage.model,
         storage.vendor,
       ].where((p) => p?.isNotEmpty == true).join(' ');
-      return '${storage.path} $fullName (${filesize(storage.size ?? 0)})';
+      return '${storage.path} $fullName (${filesize(storage.size)})';
     }
 
     return Column(

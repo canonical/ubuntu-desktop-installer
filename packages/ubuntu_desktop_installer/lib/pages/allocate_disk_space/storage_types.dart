@@ -5,7 +5,7 @@ export 'package:subiquity_client/subiquity_client.dart'
     show Disk, DiskObject, Gap, Partition;
 
 extension DiskExtension on Disk {
-  String get prettySize => filesize(size ?? 0);
+  String get prettySize => filesize(size);
 }
 
 extension PartitionExtension on Partition {

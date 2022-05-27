@@ -97,7 +97,7 @@ void main() {
     final result = showEditPartitionDialog(
         tester.element(find.byType(AllocateDiskSpacePage)),
         disk,
-        disk.partitions!.whereType<Partition>().first);
+        disk.partitions.whereType<Partition>().first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DropdownButton<PartitionFormat>));
@@ -121,7 +121,7 @@ void main() {
 
     verify(model.editPartition(
       disk,
-      disk.partitions!.whereType<Partition>().first,
+      disk.partitions.whereType<Partition>().first,
       format: PartitionFormat.btrfs,
       wipe: false,
       mount: '/tst',
