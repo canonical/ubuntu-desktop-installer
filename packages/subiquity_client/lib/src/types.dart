@@ -28,11 +28,11 @@ enum ErrorReportKind {
 class ErrorReportRef with _$ErrorReportRef {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ErrorReportRef({
-    ErrorReportState? state,
-    String? base,
-    ErrorReportKind? kind,
-    bool? seen,
-    String? oopsId,
+    required ErrorReportState state,
+    required String base,
+    required ErrorReportKind kind,
+    required bool seen,
+    required String? oopsId,
   }) = _ErrorReportRef;
 
   factory ErrorReportRef.fromJson(Map<String, dynamic> json) =>
@@ -59,14 +59,14 @@ enum ApplicationState {
 class ApplicationStatus with _$ApplicationStatus {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ApplicationStatus({
-    ApplicationState? state,
-    String? confirmingTty,
-    ErrorReportRef? error,
-    bool? cloudInitOk,
-    bool? interactive,
-    String? echoSyslogId,
-    String? logSyslogId,
-    String? eventSyslogId,
+    required ApplicationState state,
+    required String confirmingTty,
+    required ErrorReportRef? error,
+    required bool? cloudInitOk,
+    required bool? interactive,
+    required String echoSyslogId,
+    required String logSyslogId,
+    required String eventSyslogId,
   }) = _ApplicationStatus;
 
   factory ApplicationStatus.fromJson(Map<String, dynamic> json) =>

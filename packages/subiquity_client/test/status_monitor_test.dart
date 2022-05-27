@@ -15,9 +15,22 @@ final wasWaiting = Uri.http('localhost', 'meta/status', {'cur': '"WAITING"'});
 final wasRunning = Uri.http('localhost', 'meta/status', {'cur': '"RUNNING"'});
 final wasDone = Uri.http('localhost', 'meta/status', {'cur': '"DONE"'});
 
-const isWaiting = ApplicationStatus(state: ApplicationState.WAITING);
-const isRunning = ApplicationStatus(state: ApplicationState.RUNNING);
-const isDone = ApplicationStatus(state: ApplicationState.DONE);
+ApplicationStatus testStatus(ApplicationState state) {
+  return ApplicationStatus(
+    state: state,
+    cloudInitOk: null,
+    confirmingTty: '',
+    echoSyslogId: '',
+    error: null,
+    eventSyslogId: '',
+    interactive: null,
+    logSyslogId: '',
+  );
+}
+
+final isWaiting = testStatus(ApplicationState.WAITING);
+final isRunning = testStatus(ApplicationState.RUNNING);
+final isDone = testStatus(ApplicationState.DONE);
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpClientResponse])
 void main() {
