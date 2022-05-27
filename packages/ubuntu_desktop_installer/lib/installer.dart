@@ -49,7 +49,7 @@ void runInstallerApp(
 
   final subiquityMonitor = SubiquityStatusMonitor();
   subiquityMonitor.onStatusChanged.listen((status) {
-    setWindowClosable(status?.state?.isInstalling != true);
+    setWindowClosable(status?.state.isInstalling != true);
   });
 
   final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;

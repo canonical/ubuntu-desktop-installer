@@ -28,7 +28,7 @@ void main() async {
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
       when(client.status(current: currentState)).thenAnswer(
-        (_) async => ApplicationStatus(state: nextState),
+        (_) async => testStatus(nextState),
       );
       currentState = nextState;
     }
@@ -53,7 +53,7 @@ void main() async {
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
       when(client.status(current: currentState)).thenAnswer(
-        (_) async => ApplicationStatus(state: nextState),
+        (_) async => testStatus(nextState),
       );
       currentState = nextState;
     }
@@ -97,10 +97,10 @@ void main() async {
   test('error state', () async {
     final client = MockSubiquityClient();
     when(client.status()).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.ERROR),
+      (_) async => testStatus(ApplicationState.ERROR),
     );
     when(client.status(current: ApplicationState.ERROR)).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.ERROR),
+      (_) async => testStatus(ApplicationState.ERROR),
     );
 
     final journal = MockJournalService();
@@ -151,7 +151,7 @@ void main() async {
   test('installation steps', () async {
     final client = MockSubiquityClient();
     when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.RUNNING),
+      (_) async => testStatus(ApplicationState.RUNNING),
     );
 
     final journal = MockJournalService();
@@ -163,10 +163,23 @@ void main() async {
     expect(model.installationStep, equals(0));
 
     when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => ApplicationStatus(state: ApplicationState.POST_RUNNING),
+      (_) async => testStatus(ApplicationState.POST_RUNNING),
     );
 
     await model.init();
     expect(model.installationStep, equals(2));
   });
+}
+
+ApplicationStatus testStatus(ApplicationState state) {
+  return ApplicationStatus(
+    state: state,
+    cloudInitOk: null,
+    confirmingTty: '',
+    echoSyslogId: '',
+    error: null,
+    eventSyslogId: '',
+    interactive: null,
+    logSyslogId: '',
+  );
 }
