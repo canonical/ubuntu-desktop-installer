@@ -495,7 +495,7 @@ Future<void> verifyConfig({
           (d) => d['type'] == 'disk' && d['path'] == disk.path);
       expect(actualDisk, isNotNull);
 
-      for (final partition in disk.partitions ?? []) {
+      for (final partition in disk.partitions.whereType<Partition>()) {
         final actualPartition = actualStorage.firstWhereOrNull(
             (d) => d['type'] == 'partition' && d['size'] == partition.size);
         expect(actualPartition, isNotNull);

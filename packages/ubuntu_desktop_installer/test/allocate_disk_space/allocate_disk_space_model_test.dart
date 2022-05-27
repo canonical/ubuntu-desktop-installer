@@ -119,7 +119,7 @@ void main() {
     expect(model.selectedDiskIndex, equals(1));
     expect(model.selectedObjectIndex, isZero);
     expect(model.selectedDisk, equals(testDisks[1]));
-    expect(model.selectedPartition, equals(testDisks[1].partitions![0]));
+    expect(model.selectedPartition, equals(testDisks[1].partitions[0]));
   });
 
   test('notify selection changes', () {

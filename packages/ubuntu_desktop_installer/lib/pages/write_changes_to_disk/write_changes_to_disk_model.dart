@@ -34,12 +34,12 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
     _partitions = Map.fromEntries(
       changes.map((disk) {
         final partitions = disk.partitions
-            ?.whereType<Partition>()
+            .whereType<Partition>()
             .where((p) => p.preserve == false)
             .toList();
         return MapEntry(
           disk.copyWith(partitions: partitions),
-          partitions ?? [],
+          partitions,
         );
       }),
     );

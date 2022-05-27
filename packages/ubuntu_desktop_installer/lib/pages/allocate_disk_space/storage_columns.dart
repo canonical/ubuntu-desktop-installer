@@ -36,7 +36,7 @@ class StorageDeviceColumn extends StorageColumn {
               children: [
                 const Icon(YaruIcons.drive_harddisk_filled),
                 const SizedBox(width: 16),
-                Text(disk.path ?? disk.id ?? ''),
+                Text(disk.path ?? disk.id),
               ],
             );
           },
@@ -107,7 +107,7 @@ class StorageSizeColumn extends StorageColumn {
             return Text(lang.diskHeadersSize);
           },
           diskBuilder: (context, disk) {
-            return Text(filesize(disk.size ?? 0));
+            return Text(filesize(disk.size));
           },
           gapBuilder: (context, disk, gap) {
             return Text(filesize(gap.size));

@@ -60,10 +60,10 @@ final testDisks = <Disk>[
 WriteChangesToDiskModel buildModel({List<Disk>? disks}) {
   final model = MockWriteChangesToDiskModel();
   when(model.disks).thenReturn(disks ?? <Disk>[]);
-  when(model.partitions(testDisks.first)).thenReturn(
-      testDisks.first.partitions?.whereType<Partition>().toList() ?? []);
-  when(model.partitions(testDisks.last)).thenReturn(
-      testDisks.last.partitions?.whereType<Partition>().toList() ?? []);
+  when(model.partitions(testDisks.first))
+      .thenReturn(testDisks.first.partitions.whereType<Partition>().toList());
+  when(model.partitions(testDisks.last))
+      .thenReturn(testDisks.last.partitions.whereType<Partition>().toList());
   return model;
 }
 
@@ -94,7 +94,7 @@ void main() {
     for (final disk in testDisks) {
       expect(find.byKey(ValueKey(disk)), findsOneWidget);
 
-      for (final partition in disk.partitions!.whereType<Partition>()) {
+      for (final partition in disk.partitions.whereType<Partition>()) {
         expect(find.byKey(ValueKey(partition)), findsOneWidget);
       }
     }
