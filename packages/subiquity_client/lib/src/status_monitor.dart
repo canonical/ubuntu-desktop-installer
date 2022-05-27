@@ -92,7 +92,7 @@ class SubiquityStatusMonitor {
 
   void _updateStatus(ApplicationStatus? status) {
     if (_status == status) return;
-    log.info('${_status?.state?.name} => $status');
+    log.info('${_status?.state.name} => $status');
     _status = status;
     if (_statusController?.isClosed == false) {
       _statusController!.add(status);

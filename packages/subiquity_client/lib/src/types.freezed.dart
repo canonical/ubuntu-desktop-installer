@@ -21,11 +21,11 @@ class _$ErrorReportRefTearOff {
   const _$ErrorReportRefTearOff();
 
   _ErrorReportRef call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId}) {
+      {required ErrorReportState state,
+      required String base,
+      required ErrorReportKind kind,
+      required bool seen,
+      required String? oopsId}) {
     return _ErrorReportRef(
       state: state,
       base: base,
@@ -45,10 +45,10 @@ const $ErrorReportRef = _$ErrorReportRefTearOff();
 
 /// @nodoc
 mixin _$ErrorReportRef {
-  ErrorReportState? get state => throw _privateConstructorUsedError;
-  String? get base => throw _privateConstructorUsedError;
-  ErrorReportKind? get kind => throw _privateConstructorUsedError;
-  bool? get seen => throw _privateConstructorUsedError;
+  ErrorReportState get state => throw _privateConstructorUsedError;
+  String get base => throw _privateConstructorUsedError;
+  ErrorReportKind get kind => throw _privateConstructorUsedError;
+  bool get seen => throw _privateConstructorUsedError;
   String? get oopsId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,10 +63,10 @@ abstract class $ErrorReportRefCopyWith<$Res> {
           ErrorReportRef value, $Res Function(ErrorReportRef) then) =
       _$ErrorReportRefCopyWithImpl<$Res>;
   $Res call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
+      {ErrorReportState state,
+      String base,
+      ErrorReportKind kind,
+      bool seen,
       String? oopsId});
 }
 
@@ -91,19 +91,19 @@ class _$ErrorReportRefCopyWithImpl<$Res>
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ErrorReportState?,
+              as ErrorReportState,
       base: base == freezed
           ? _value.base
           : base // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as ErrorReportKind?,
+              as ErrorReportKind,
       seen: seen == freezed
           ? _value.seen
           : seen // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       oopsId: oopsId == freezed
           ? _value.oopsId
           : oopsId // ignore: cast_nullable_to_non_nullable
@@ -120,10 +120,10 @@ abstract class _$ErrorReportRefCopyWith<$Res>
       __$ErrorReportRefCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
+      {ErrorReportState state,
+      String base,
+      ErrorReportKind kind,
+      bool seen,
       String? oopsId});
 }
 
@@ -150,19 +150,19 @@ class __$ErrorReportRefCopyWithImpl<$Res>
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ErrorReportState?,
+              as ErrorReportState,
       base: base == freezed
           ? _value.base
           : base // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as ErrorReportKind?,
+              as ErrorReportKind,
       seen: seen == freezed
           ? _value.seen
           : seen // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       oopsId: oopsId == freezed
           ? _value.oopsId
           : oopsId // ignore: cast_nullable_to_non_nullable
@@ -176,19 +176,23 @@ class __$ErrorReportRefCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_ErrorReportRef implements _ErrorReportRef {
   const _$_ErrorReportRef(
-      {this.state, this.base, this.kind, this.seen, this.oopsId});
+      {required this.state,
+      required this.base,
+      required this.kind,
+      required this.seen,
+      required this.oopsId});
 
   factory _$_ErrorReportRef.fromJson(Map<String, dynamic> json) =>
       _$_$_ErrorReportRefFromJson(json);
 
   @override
-  final ErrorReportState? state;
+  final ErrorReportState state;
   @override
-  final String? base;
+  final String base;
   @override
-  final ErrorReportKind? kind;
+  final ErrorReportKind kind;
   @override
-  final bool? seen;
+  final bool seen;
   @override
   final String? oopsId;
 
@@ -235,23 +239,23 @@ class _$_ErrorReportRef implements _ErrorReportRef {
 
 abstract class _ErrorReportRef implements ErrorReportRef {
   const factory _ErrorReportRef(
-      {ErrorReportState? state,
-      String? base,
-      ErrorReportKind? kind,
-      bool? seen,
-      String? oopsId}) = _$_ErrorReportRef;
+      {required ErrorReportState state,
+      required String base,
+      required ErrorReportKind kind,
+      required bool seen,
+      required String? oopsId}) = _$_ErrorReportRef;
 
   factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
       _$_ErrorReportRef.fromJson;
 
   @override
-  ErrorReportState? get state => throw _privateConstructorUsedError;
+  ErrorReportState get state => throw _privateConstructorUsedError;
   @override
-  String? get base => throw _privateConstructorUsedError;
+  String get base => throw _privateConstructorUsedError;
   @override
-  ErrorReportKind? get kind => throw _privateConstructorUsedError;
+  ErrorReportKind get kind => throw _privateConstructorUsedError;
   @override
-  bool? get seen => throw _privateConstructorUsedError;
+  bool get seen => throw _privateConstructorUsedError;
   @override
   String? get oopsId => throw _privateConstructorUsedError;
   @override
@@ -269,14 +273,14 @@ class _$ApplicationStatusTearOff {
   const _$ApplicationStatusTearOff();
 
   _ApplicationStatus call(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId}) {
+      {required ApplicationState state,
+      required String confirmingTty,
+      required ErrorReportRef? error,
+      required bool? cloudInitOk,
+      required bool? interactive,
+      required String echoSyslogId,
+      required String logSyslogId,
+      required String eventSyslogId}) {
     return _ApplicationStatus(
       state: state,
       confirmingTty: confirmingTty,
@@ -299,14 +303,14 @@ const $ApplicationStatus = _$ApplicationStatusTearOff();
 
 /// @nodoc
 mixin _$ApplicationStatus {
-  ApplicationState? get state => throw _privateConstructorUsedError;
-  String? get confirmingTty => throw _privateConstructorUsedError;
+  ApplicationState get state => throw _privateConstructorUsedError;
+  String get confirmingTty => throw _privateConstructorUsedError;
   ErrorReportRef? get error => throw _privateConstructorUsedError;
   bool? get cloudInitOk => throw _privateConstructorUsedError;
   bool? get interactive => throw _privateConstructorUsedError;
-  String? get echoSyslogId => throw _privateConstructorUsedError;
-  String? get logSyslogId => throw _privateConstructorUsedError;
-  String? get eventSyslogId => throw _privateConstructorUsedError;
+  String get echoSyslogId => throw _privateConstructorUsedError;
+  String get logSyslogId => throw _privateConstructorUsedError;
+  String get eventSyslogId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -320,14 +324,14 @@ abstract class $ApplicationStatusCopyWith<$Res> {
           ApplicationStatus value, $Res Function(ApplicationStatus) then) =
       _$ApplicationStatusCopyWithImpl<$Res>;
   $Res call(
-      {ApplicationState? state,
-      String? confirmingTty,
+      {ApplicationState state,
+      String confirmingTty,
       ErrorReportRef? error,
       bool? cloudInitOk,
       bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId});
+      String echoSyslogId,
+      String logSyslogId,
+      String eventSyslogId});
 
   $ErrorReportRefCopyWith<$Res>? get error;
 }
@@ -356,11 +360,11 @@ class _$ApplicationStatusCopyWithImpl<$Res>
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ApplicationState?,
+              as ApplicationState,
       confirmingTty: confirmingTty == freezed
           ? _value.confirmingTty
           : confirmingTty // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -376,15 +380,15 @@ class _$ApplicationStatusCopyWithImpl<$Res>
       echoSyslogId: echoSyslogId == freezed
           ? _value.echoSyslogId
           : echoSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       logSyslogId: logSyslogId == freezed
           ? _value.logSyslogId
           : logSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       eventSyslogId: eventSyslogId == freezed
           ? _value.eventSyslogId
           : eventSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 
@@ -408,14 +412,14 @@ abstract class _$ApplicationStatusCopyWith<$Res>
       __$ApplicationStatusCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ApplicationState? state,
-      String? confirmingTty,
+      {ApplicationState state,
+      String confirmingTty,
       ErrorReportRef? error,
       bool? cloudInitOk,
       bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId});
+      String echoSyslogId,
+      String logSyslogId,
+      String eventSyslogId});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get error;
@@ -447,11 +451,11 @@ class __$ApplicationStatusCopyWithImpl<$Res>
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ApplicationState?,
+              as ApplicationState,
       confirmingTty: confirmingTty == freezed
           ? _value.confirmingTty
           : confirmingTty // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -467,15 +471,15 @@ class __$ApplicationStatusCopyWithImpl<$Res>
       echoSyslogId: echoSyslogId == freezed
           ? _value.echoSyslogId
           : echoSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       logSyslogId: logSyslogId == freezed
           ? _value.logSyslogId
           : logSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       eventSyslogId: eventSyslogId == freezed
           ? _value.eventSyslogId
           : eventSyslogId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -485,22 +489,22 @@ class __$ApplicationStatusCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_ApplicationStatus implements _ApplicationStatus {
   const _$_ApplicationStatus(
-      {this.state,
-      this.confirmingTty,
-      this.error,
-      this.cloudInitOk,
-      this.interactive,
-      this.echoSyslogId,
-      this.logSyslogId,
-      this.eventSyslogId});
+      {required this.state,
+      required this.confirmingTty,
+      required this.error,
+      required this.cloudInitOk,
+      required this.interactive,
+      required this.echoSyslogId,
+      required this.logSyslogId,
+      required this.eventSyslogId});
 
   factory _$_ApplicationStatus.fromJson(Map<String, dynamic> json) =>
       _$_$_ApplicationStatusFromJson(json);
 
   @override
-  final ApplicationState? state;
+  final ApplicationState state;
   @override
-  final String? confirmingTty;
+  final String confirmingTty;
   @override
   final ErrorReportRef? error;
   @override
@@ -508,11 +512,11 @@ class _$_ApplicationStatus implements _ApplicationStatus {
   @override
   final bool? interactive;
   @override
-  final String? echoSyslogId;
+  final String echoSyslogId;
   @override
-  final String? logSyslogId;
+  final String logSyslogId;
   @override
-  final String? eventSyslogId;
+  final String eventSyslogId;
 
   @override
   String toString() {
@@ -572,22 +576,22 @@ class _$_ApplicationStatus implements _ApplicationStatus {
 
 abstract class _ApplicationStatus implements ApplicationStatus {
   const factory _ApplicationStatus(
-      {ApplicationState? state,
-      String? confirmingTty,
-      ErrorReportRef? error,
-      bool? cloudInitOk,
-      bool? interactive,
-      String? echoSyslogId,
-      String? logSyslogId,
-      String? eventSyslogId}) = _$_ApplicationStatus;
+      {required ApplicationState state,
+      required String confirmingTty,
+      required ErrorReportRef? error,
+      required bool? cloudInitOk,
+      required bool? interactive,
+      required String echoSyslogId,
+      required String logSyslogId,
+      required String eventSyslogId}) = _$_ApplicationStatus;
 
   factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
       _$_ApplicationStatus.fromJson;
 
   @override
-  ApplicationState? get state => throw _privateConstructorUsedError;
+  ApplicationState get state => throw _privateConstructorUsedError;
   @override
-  String? get confirmingTty => throw _privateConstructorUsedError;
+  String get confirmingTty => throw _privateConstructorUsedError;
   @override
   ErrorReportRef? get error => throw _privateConstructorUsedError;
   @override
@@ -595,11 +599,11 @@ abstract class _ApplicationStatus implements ApplicationStatus {
   @override
   bool? get interactive => throw _privateConstructorUsedError;
   @override
-  String? get echoSyslogId => throw _privateConstructorUsedError;
+  String get echoSyslogId => throw _privateConstructorUsedError;
   @override
-  String? get logSyslogId => throw _privateConstructorUsedError;
+  String get logSyslogId => throw _privateConstructorUsedError;
   @override
-  String? get eventSyslogId => throw _privateConstructorUsedError;
+  String get eventSyslogId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>

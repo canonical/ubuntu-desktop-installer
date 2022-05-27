@@ -8,10 +8,10 @@ part of 'types.dart';
 
 _$_ErrorReportRef _$_$_ErrorReportRefFromJson(Map<String, dynamic> json) {
   return _$_ErrorReportRef(
-    state: _$enumDecodeNullable(_$ErrorReportStateEnumMap, json['state']),
-    base: json['base'] as String?,
-    kind: _$enumDecodeNullable(_$ErrorReportKindEnumMap, json['kind']),
-    seen: json['seen'] as bool?,
+    state: _$enumDecode(_$ErrorReportStateEnumMap, json['state']),
+    base: json['base'] as String,
+    kind: _$enumDecode(_$ErrorReportKindEnumMap, json['kind']),
+    seen: json['seen'] as bool,
     oopsId: json['oops_id'] as String?,
   );
 }
@@ -51,17 +51,6 @@ K _$enumDecode<K, V>(
   ).key;
 }
 
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
 const _$ErrorReportStateEnumMap = {
   ErrorReportState.INCOMPLETE: 'INCOMPLETE',
   ErrorReportState.LOADING: 'LOADING',
@@ -83,16 +72,16 @@ const _$ErrorReportKindEnumMap = {
 
 _$_ApplicationStatus _$_$_ApplicationStatusFromJson(Map<String, dynamic> json) {
   return _$_ApplicationStatus(
-    state: _$enumDecodeNullable(_$ApplicationStateEnumMap, json['state']),
-    confirmingTty: json['confirming_tty'] as String?,
+    state: _$enumDecode(_$ApplicationStateEnumMap, json['state']),
+    confirmingTty: json['confirming_tty'] as String,
     error: json['error'] == null
         ? null
         : ErrorReportRef.fromJson(json['error'] as Map<String, dynamic>),
     cloudInitOk: json['cloud_init_ok'] as bool?,
     interactive: json['interactive'] as bool?,
-    echoSyslogId: json['echo_syslog_id'] as String?,
-    logSyslogId: json['log_syslog_id'] as String?,
-    eventSyslogId: json['event_syslog_id'] as String?,
+    echoSyslogId: json['echo_syslog_id'] as String,
+    logSyslogId: json['log_syslog_id'] as String,
+    eventSyslogId: json['event_syslog_id'] as String,
   );
 }
 
@@ -411,6 +400,17 @@ Map<String, dynamic> _$_$_GuidedStorageResponseToJson(
       'error_report': instance.errorReport?.toJson(),
       'disks': instance.disks?.map((e) => e.toJson()).toList(),
     };
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
 
 const _$ProbeStatusEnumMap = {
   ProbeStatus.PROBING: 'PROBING',

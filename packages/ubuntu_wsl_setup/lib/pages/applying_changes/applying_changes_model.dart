@@ -20,7 +20,7 @@ class ApplyingChangesModel extends SafeChangeNotifier {
 
   void init({required VoidCallback onDoneTransition}) {
     _sub = _monitor.onStatusChanged.listen((status) {
-      if (status?.state?.isInstalling == false && _previousState == true) {
+      if (status?.state.isInstalling == false && _previousState == true) {
         _previousState = false;
         onDoneTransition();
       } else {
