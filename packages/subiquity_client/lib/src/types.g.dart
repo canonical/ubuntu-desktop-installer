@@ -401,17 +401,6 @@ Map<String, dynamic> _$_$_GuidedStorageResponseToJson(
       'disks': instance.disks?.map((e) => e.toJson()).toList(),
     };
 
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
 const _$ProbeStatusEnumMap = {
   ProbeStatus.PROBING: 'PROBING',
   ProbeStatus.FAILED: 'FAILED',
@@ -444,6 +433,17 @@ Map<String, dynamic> _$_$_StorageResponseToJson(_$_StorageResponse instance) =>
       'dasd': instance.dasd,
       'storage_version': instance.storageVersion,
     };
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
 
 const _$BootloaderEnumMap = {
   Bootloader.NONE: 'NONE',
