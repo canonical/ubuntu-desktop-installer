@@ -27,8 +27,8 @@ void main() {
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     when(client.keyboard()).thenAnswer((_) async =>
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
-    when(client.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponse());
+    when(client.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
     when(client.isOpen).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));

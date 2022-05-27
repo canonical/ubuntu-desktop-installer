@@ -169,8 +169,8 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponse());
+    when(client.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);
