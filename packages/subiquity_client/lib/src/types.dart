@@ -254,17 +254,17 @@ class DiskObject with _$DiskObject {
 class Disk with _$Disk {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Disk({
-    String? id,
-    String? label,
-    String? path,
-    String? type,
-    int? size,
-    List<String>? usageLabels,
-    List<DiskObject>? partitions,
-    bool? okForGuided,
-    String? ptable,
-    bool? preserve,
-    bool? bootDevice,
+    required String id,
+    required String label,
+    required String type,
+    required int size,
+    required List<String> usageLabels,
+    required List<DiskObject> partitions,
+    required bool okForGuided,
+    required String? ptable,
+    required bool preserve,
+    required String? path,
+    required bool bootDevice,
     String? model,
     String? vendor,
   }) = _Disk;

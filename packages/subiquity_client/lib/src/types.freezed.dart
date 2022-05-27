@@ -3342,23 +3342,22 @@ class _$DiskTearOff {
   const _$DiskTearOff();
 
   _Disk call(
-      {String? id,
-      String? label,
-      String? path,
-      String? type,
-      int? size,
-      List<String>? usageLabels,
-      List<DiskObject>? partitions,
-      bool? okForGuided,
-      String? ptable,
-      bool? preserve,
-      bool? bootDevice,
+      {required String id,
+      required String label,
+      required String type,
+      required int size,
+      required List<String> usageLabels,
+      required List<DiskObject> partitions,
+      required bool okForGuided,
+      required String? ptable,
+      required bool preserve,
+      required String? path,
+      required bool bootDevice,
       String? model,
       String? vendor}) {
     return _Disk(
       id: id,
       label: label,
-      path: path,
       type: type,
       size: size,
       usageLabels: usageLabels,
@@ -3366,6 +3365,7 @@ class _$DiskTearOff {
       okForGuided: okForGuided,
       ptable: ptable,
       preserve: preserve,
+      path: path,
       bootDevice: bootDevice,
       model: model,
       vendor: vendor,
@@ -3382,17 +3382,17 @@ const $Disk = _$DiskTearOff();
 
 /// @nodoc
 mixin _$Disk {
-  String? get id => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get path => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
-  int? get size => throw _privateConstructorUsedError;
-  List<String>? get usageLabels => throw _privateConstructorUsedError;
-  List<DiskObject>? get partitions => throw _privateConstructorUsedError;
-  bool? get okForGuided => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  int get size => throw _privateConstructorUsedError;
+  List<String> get usageLabels => throw _privateConstructorUsedError;
+  List<DiskObject> get partitions => throw _privateConstructorUsedError;
+  bool get okForGuided => throw _privateConstructorUsedError;
   String? get ptable => throw _privateConstructorUsedError;
-  bool? get preserve => throw _privateConstructorUsedError;
-  bool? get bootDevice => throw _privateConstructorUsedError;
+  bool get preserve => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
+  bool get bootDevice => throw _privateConstructorUsedError;
   String? get model => throw _privateConstructorUsedError;
   String? get vendor => throw _privateConstructorUsedError;
 
@@ -3406,17 +3406,17 @@ abstract class $DiskCopyWith<$Res> {
   factory $DiskCopyWith(Disk value, $Res Function(Disk) then) =
       _$DiskCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
-      String? label,
-      String? path,
-      String? type,
-      int? size,
-      List<String>? usageLabels,
-      List<DiskObject>? partitions,
-      bool? okForGuided,
+      {String id,
+      String label,
+      String type,
+      int size,
+      List<String> usageLabels,
+      List<DiskObject> partitions,
+      bool okForGuided,
       String? ptable,
-      bool? preserve,
-      bool? bootDevice,
+      bool preserve,
+      String? path,
+      bool bootDevice,
       String? model,
       String? vendor});
 }
@@ -3433,7 +3433,6 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
-    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
@@ -3441,6 +3440,7 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
+    Object? path = freezed,
     Object? bootDevice = freezed,
     Object? model = freezed,
     Object? vendor = freezed,
@@ -3449,35 +3449,31 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       usageLabels: usageLabels == freezed
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       partitions: partitions == freezed
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
-              as List<DiskObject>?,
+              as List<DiskObject>,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       ptable: ptable == freezed
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
@@ -3485,11 +3481,15 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
       preserve: preserve == freezed
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
       bootDevice: bootDevice == freezed
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -3508,17 +3508,17 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
       __$DiskCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
-      String? label,
-      String? path,
-      String? type,
-      int? size,
-      List<String>? usageLabels,
-      List<DiskObject>? partitions,
-      bool? okForGuided,
+      {String id,
+      String label,
+      String type,
+      int size,
+      List<String> usageLabels,
+      List<DiskObject> partitions,
+      bool okForGuided,
       String? ptable,
-      bool? preserve,
-      bool? bootDevice,
+      bool preserve,
+      String? path,
+      bool bootDevice,
       String? model,
       String? vendor});
 }
@@ -3536,7 +3536,6 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? label = freezed,
-    Object? path = freezed,
     Object? type = freezed,
     Object? size = freezed,
     Object? usageLabels = freezed,
@@ -3544,6 +3543,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? okForGuided = freezed,
     Object? ptable = freezed,
     Object? preserve = freezed,
+    Object? path = freezed,
     Object? bootDevice = freezed,
     Object? model = freezed,
     Object? vendor = freezed,
@@ -3552,35 +3552,31 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       usageLabels: usageLabels == freezed
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       partitions: partitions == freezed
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
-              as List<DiskObject>?,
+              as List<DiskObject>,
       okForGuided: okForGuided == freezed
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       ptable: ptable == freezed
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
@@ -3588,11 +3584,15 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
       preserve: preserve == freezed
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
       bootDevice: bootDevice == freezed
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -3610,17 +3610,17 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class _$_Disk implements _Disk {
   const _$_Disk(
-      {this.id,
-      this.label,
-      this.path,
-      this.type,
-      this.size,
-      this.usageLabels,
-      this.partitions,
-      this.okForGuided,
-      this.ptable,
-      this.preserve,
-      this.bootDevice,
+      {required this.id,
+      required this.label,
+      required this.type,
+      required this.size,
+      required this.usageLabels,
+      required this.partitions,
+      required this.okForGuided,
+      required this.ptable,
+      required this.preserve,
+      required this.path,
+      required this.bootDevice,
       this.model,
       this.vendor});
 
@@ -3628,27 +3628,27 @@ class _$_Disk implements _Disk {
       _$_$_DiskFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? label;
+  final String label;
   @override
-  final String? path;
+  final String type;
   @override
-  final String? type;
+  final int size;
   @override
-  final int? size;
+  final List<String> usageLabels;
   @override
-  final List<String>? usageLabels;
+  final List<DiskObject> partitions;
   @override
-  final List<DiskObject>? partitions;
-  @override
-  final bool? okForGuided;
+  final bool okForGuided;
   @override
   final String? ptable;
   @override
-  final bool? preserve;
+  final bool preserve;
   @override
-  final bool? bootDevice;
+  final String? path;
+  @override
+  final bool bootDevice;
   @override
   final String? model;
   @override
@@ -3656,7 +3656,7 @@ class _$_Disk implements _Disk {
 
   @override
   String toString() {
-    return 'Disk(id: $id, label: $label, path: $path, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
+    return 'Disk(id: $id, label: $label, type: $type, size: $size, usageLabels: $usageLabels, partitions: $partitions, okForGuided: $okForGuided, ptable: $ptable, preserve: $preserve, path: $path, bootDevice: $bootDevice, model: $model, vendor: $vendor)';
   }
 
   @override
@@ -3667,8 +3667,6 @@ class _$_Disk implements _Disk {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.label, label) ||
                 const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.size, size) ||
@@ -3687,6 +3685,8 @@ class _$_Disk implements _Disk {
             (identical(other.preserve, preserve) ||
                 const DeepCollectionEquality()
                     .equals(other.preserve, preserve)) &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
             (identical(other.bootDevice, bootDevice) ||
                 const DeepCollectionEquality()
                     .equals(other.bootDevice, bootDevice)) &&
@@ -3701,7 +3701,6 @@ class _$_Disk implements _Disk {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(path) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(size) ^
       const DeepCollectionEquality().hash(usageLabels) ^
@@ -3709,6 +3708,7 @@ class _$_Disk implements _Disk {
       const DeepCollectionEquality().hash(okForGuided) ^
       const DeepCollectionEquality().hash(ptable) ^
       const DeepCollectionEquality().hash(preserve) ^
+      const DeepCollectionEquality().hash(path) ^
       const DeepCollectionEquality().hash(bootDevice) ^
       const DeepCollectionEquality().hash(model) ^
       const DeepCollectionEquality().hash(vendor);
@@ -3726,44 +3726,44 @@ class _$_Disk implements _Disk {
 
 abstract class _Disk implements Disk {
   const factory _Disk(
-      {String? id,
-      String? label,
-      String? path,
-      String? type,
-      int? size,
-      List<String>? usageLabels,
-      List<DiskObject>? partitions,
-      bool? okForGuided,
-      String? ptable,
-      bool? preserve,
-      bool? bootDevice,
+      {required String id,
+      required String label,
+      required String type,
+      required int size,
+      required List<String> usageLabels,
+      required List<DiskObject> partitions,
+      required bool okForGuided,
+      required String? ptable,
+      required bool preserve,
+      required String? path,
+      required bool bootDevice,
       String? model,
       String? vendor}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String? get label => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
   @override
-  String? get path => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @override
-  String? get type => throw _privateConstructorUsedError;
+  int get size => throw _privateConstructorUsedError;
   @override
-  int? get size => throw _privateConstructorUsedError;
+  List<String> get usageLabels => throw _privateConstructorUsedError;
   @override
-  List<String>? get usageLabels => throw _privateConstructorUsedError;
+  List<DiskObject> get partitions => throw _privateConstructorUsedError;
   @override
-  List<DiskObject>? get partitions => throw _privateConstructorUsedError;
-  @override
-  bool? get okForGuided => throw _privateConstructorUsedError;
+  bool get okForGuided => throw _privateConstructorUsedError;
   @override
   String? get ptable => throw _privateConstructorUsedError;
   @override
-  bool? get preserve => throw _privateConstructorUsedError;
+  bool get preserve => throw _privateConstructorUsedError;
   @override
-  bool? get bootDevice => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
+  @override
+  bool get bootDevice => throw _privateConstructorUsedError;
   @override
   String? get model => throw _privateConstructorUsedError;
   @override

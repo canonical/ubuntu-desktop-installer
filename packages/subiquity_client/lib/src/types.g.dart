@@ -340,21 +340,21 @@ Map<String, dynamic> _$_$GapToJson(_$Gap instance) => <String, dynamic>{
 
 _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
   return _$_Disk(
-    id: json['id'] as String?,
-    label: json['label'] as String?,
-    path: json['path'] as String?,
-    type: json['type'] as String?,
-    size: json['size'] as int?,
-    usageLabels: (json['usage_labels'] as List<dynamic>?)
-        ?.map((e) => e as String)
+    id: json['id'] as String,
+    label: json['label'] as String,
+    type: json['type'] as String,
+    size: json['size'] as int,
+    usageLabels: (json['usage_labels'] as List<dynamic>)
+        .map((e) => e as String)
         .toList(),
-    partitions: (json['partitions'] as List<dynamic>?)
-        ?.map((e) => DiskObject.fromJson(e as Map<String, dynamic>))
+    partitions: (json['partitions'] as List<dynamic>)
+        .map((e) => DiskObject.fromJson(e as Map<String, dynamic>))
         .toList(),
-    okForGuided: json['ok_for_guided'] as bool?,
+    okForGuided: json['ok_for_guided'] as bool,
     ptable: json['ptable'] as String?,
-    preserve: json['preserve'] as bool?,
-    bootDevice: json['boot_device'] as bool?,
+    preserve: json['preserve'] as bool,
+    path: json['path'] as String?,
+    bootDevice: json['boot_device'] as bool,
     model: json['model'] as String?,
     vendor: json['vendor'] as String?,
   );
@@ -363,14 +363,14 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_DiskToJson(_$_Disk instance) => <String, dynamic>{
       'id': instance.id,
       'label': instance.label,
-      'path': instance.path,
       'type': instance.type,
       'size': instance.size,
       'usage_labels': instance.usageLabels,
-      'partitions': instance.partitions?.map((e) => e.toJson()).toList(),
+      'partitions': instance.partitions.map((e) => e.toJson()).toList(),
       'ok_for_guided': instance.okForGuided,
       'ptable': instance.ptable,
       'preserve': instance.preserve,
+      'path': instance.path,
       'boot_device': instance.bootDevice,
       'model': instance.model,
       'vendor': instance.vendor,

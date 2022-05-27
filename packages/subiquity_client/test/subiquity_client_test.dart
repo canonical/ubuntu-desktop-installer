@@ -153,23 +153,21 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
-      expect(disks!.first.partitions, isNotNull);
-      expect(disks.first.partitions!.whereType<Gap>(), hasLength(1));
+      expect(disks!.first.partitions.whereType<Gap>(), hasLength(1));
 
       // add
       var response = await client.addPartitionV2(
         disks.first,
-        disks.first.partitions!.whereType<Gap>().single,
+        disks.first.partitions.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
-      final added = response.disks!.last.partitions?.whereType<Partition>();
-      expect(added, isNotNull);
+      final added = response.disks!.last.partitions.whereType<Partition>();
       expect(added, isNotEmpty);
 
-      expect(added!.last.mount, equals('/foo'));
+      expect(added.last.mount, equals('/foo'));
       expect(added.last.format, equals('ext2'));
 
       // edit
@@ -180,11 +178,10 @@ void main() {
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
-      final edited = response.disks!.last.partitions?.whereType<Partition>();
-      expect(edited, isNotNull);
+      final edited = response.disks!.last.partitions.whereType<Partition>();
       expect(edited, hasLength(added.length));
 
-      expect(edited!.last.mount, equals('/bar'));
+      expect(edited.last.mount, equals('/bar'));
       expect(edited.last.format, equals('ext3'));
 
       // delete
@@ -195,8 +192,7 @@ void main() {
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
-      final deleted = response.disks!.last.partitions?.whereType<Partition>();
-      expect(deleted, isNotNull);
+      final deleted = response.disks!.last.partitions.whereType<Partition>();
       expect(deleted, hasLength(added.length - 1));
     });
 
@@ -205,23 +201,21 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
-      expect(disks!.first.partitions, isNotNull);
-      expect(disks.first.partitions!.whereType<Gap>(), hasLength(1));
+      expect(disks!.first.partitions.whereType<Gap>(), hasLength(1));
 
       // add
       var response = await client.addPartitionV2(
         disks.first,
-        disks.first.partitions!.whereType<Gap>().single,
+        disks.first.partitions.whereType<Gap>().single,
         Partition(format: 'swap'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
-      final added = response.disks!.last.partitions?.whereType<Partition>();
-      expect(added, isNotNull);
+      final added = response.disks!.last.partitions.whereType<Partition>();
       expect(added, isNotEmpty);
 
-      expect(added!.last.mount, anyOf(isNull, isEmpty));
+      expect(added.last.mount, anyOf(isNull, isEmpty));
       expect(added.last.format, equals('swap'));
     });
 
@@ -235,11 +229,10 @@ void main() {
       expect(response.disks, hasLength(disks.length));
 
       final partitions =
-          response.disks!.first.partitions?.whereType<Partition>();
-      expect(partitions, isNotNull);
+          response.disks!.first.partitions.whereType<Partition>();
       expect(partitions, isNotEmpty);
 
-      expect(partitions!.last.grubDevice, isNotNull);
+      expect(partitions.last.grubDevice, isNotNull);
       expect(partitions.last.grubDevice, isTrue);
     });
 
@@ -248,19 +241,17 @@ void main() {
       expect(disks, isNotNull);
       expect(disks, isNotEmpty);
 
-      expect(disks!.first.partitions, isNotNull);
-      expect(disks.first.partitions!.whereType<Gap>(), hasLength(1));
-      expect(disks.first.partitions!.whereType<Partition>(), isEmpty);
+      expect(disks!.first.partitions.whereType<Gap>(), hasLength(1));
+      expect(disks.first.partitions.whereType<Partition>(), isEmpty);
 
       var response = await client.addPartitionV2(
         disks.first,
-        disks.first.partitions!.whereType<Gap>().single,
+        disks.first.partitions.whereType<Gap>().single,
         Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
 
-      expect(response.disks!.first.partitions, isNotNull);
       expect(response.disks!.first.partitions, isNotEmpty);
 
       response = await client.reformatDiskV2(disks.first);
@@ -269,8 +260,7 @@ void main() {
       expect(response.disks, hasLength(disks.length));
 
       final partitions =
-          response.disks!.first.partitions?.whereType<Partition>();
-      expect(partitions, isNotNull);
+          response.disks!.first.partitions.whereType<Partition>();
       expect(partitions, isEmpty);
     });
 
@@ -278,11 +268,10 @@ void main() {
       final storage = await client.getGuidedStorage();
       expect(storage.disks, isNotEmpty);
 
-      final gaps = storage.disks!.first.partitions?.whereType<Gap>();
-      expect(gaps, isNotNull);
+      final gaps = storage.disks!.first.partitions.whereType<Gap>();
       expect(gaps, hasLength(1));
 
-      expect(gaps!.single.offset, isNonZero);
+      expect(gaps.single.offset, isNonZero);
       expect(gaps.single.size, isNonZero);
     });
 
