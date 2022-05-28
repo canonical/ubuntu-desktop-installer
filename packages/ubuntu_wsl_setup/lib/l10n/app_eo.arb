@@ -85,7 +85,7 @@
   "@profileSetupRealnameLabel": {},
   "profileSetupPasswordHint": "Elektu pasvorton",
   "@profileSetupPasswordHint": {},
-  "configurationUIMountFstabSubtitle": "Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???",
+  "configurationUIMountFstabSubtitle": "Ĉu surmeti /etc/fstab. Ĉi tiu dosiero enhavas informojn pri la surmetotaj dosiersistemoj.",
   "@configurationUIMountFstabSubtitle": {},
   "configurationUIAdvancedIPDetectionTitle": "Altnivela trovado de IP-adreso",
   "@configurationUIAdvancedIPDetectionTitle": {},
@@ -130,5 +130,13 @@
   "applyingChangesDisclaimer": "Tio eble daŭros kelkajn minutojn depende de via Interreta konekto.",
   "@applyingChangesDisclaimer": {},
   "applyingChanges": "Efektivigante ŝanĝojn…",
-  "@applyingChanges": {}
+  "@applyingChanges": {},
+  "profileSetupUsernameTooLong": "Tiu salutnomo estas tro longa.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInvalidChars": "Tiu salutnomo enhavas nevalidajn signojn.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameSystemReserved": "Tiu salutnomo estas rezervita por sistema uzado.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameInUse": "Tiu salutnomo jam ekzistas.",
+  "@profileSetupUsernameInUse": {}
 }
