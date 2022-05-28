@@ -15,7 +15,7 @@
   },
   "setupCompleteRestart": "* すべての設定は Ubuntu を再起動した後に有効になります。",
   "@setupCompleteRestart": {},
-  "applyingChanges": "変更を適用しています...",
+  "applyingChanges": "変更を適用しています…",
   "@applyingChanges": {},
   "appTitle": "Ubuntu WSL",
   "@appTitle": {},
