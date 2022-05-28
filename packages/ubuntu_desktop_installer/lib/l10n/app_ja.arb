@@ -626,5 +626,9 @@
   "officeSlideCalc": "LibreOffice Calc",
   "@officeSlideCalc": {},
   "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {}
+  "@officeSlideImpress": {},
+  "copyingFiles": "ファイルをコピーしています...",
+  "@copyingFiles": {},
+  "installationFailed": "インストールに失敗しました",
+  "@installationFailed": {}
 }
