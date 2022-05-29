@@ -96,7 +96,7 @@
   "@configurationUIAutoMountSubtitle": {},
   "configurationUIMountFstabTitle": "/etc/fstab einhängen",
   "@configurationUIMountFstabTitle": {},
-  "configurationUIMountFstabSubtitle": "Ob /etc/fstab eingehängt werden soll. Die Konfigurationsdatei /etc/fstab enthält die ???",
+  "configurationUIMountFstabSubtitle": "Ob /etc/fstab eingehängt werden soll. Diese Datei enthält Informationen über die Dateisysteme, die das System einhängen wird.",
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "Einrichtung abgeschlossen",
   "@setupCompleteTitle": {},
@@ -128,5 +128,15 @@
   "configurationUISystemdTitle": "Aktiviert",
   "@configurationUISystemdTitle": {},
   "configurationUISystemdSubtitle": "Ob systemd beim Booten aktiviert werden soll. ACHTUNG: Dies ist eine experimentelle Funktion.",
-  "@configurationUISystemdSubtitle": {}
+  "@configurationUISystemdSubtitle": {},
+  "profileSetupUsernameSystemReserved": "Dieser Name ist für die Systemnutzung reserviert.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameTooLong": "Dieser Name ist zu lang.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInvalidChars": "Dieser Name enthält ungültige Zeichen.",
+  "@profileSetupUsernameInvalidChars": {},
+  "applyingChangesDisclaimer": "Dies kann je nach Ihrer Internetverbindung einige Minuten dauern.",
+  "@applyingChangesDisclaimer": {},
+  "profileSetupUsernameInUse": "Dieser Benutzername existiert bereits.",
+  "@profileSetupUsernameInUse": {}
 }
