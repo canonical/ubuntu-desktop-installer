@@ -573,5 +573,17 @@
   "officeSlideCalc": "LibreOffice Tabellenkalkulation",
   "@officeSlideCalc": {},
   "supportedSoftware": "Unterstützte Software",
-  "@supportedSoftware": {}
+  "@supportedSoftware": {},
+  "copyingFiles": "Dateien werden kopiert ...",
+  "@copyingFiles": {},
+  "whoAreYouPageUsernameInUse": "Dieser Benutzername existiert bereits.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Dieser Name ist für die Systemnutzung reserviert.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Dieser Name ist zu lang.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Dieser Name enthält ungültige Zeichen.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installationFailed": "Installation fehlgeschlagen",
+  "@installationFailed": {}
 }
