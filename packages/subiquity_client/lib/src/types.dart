@@ -26,7 +26,6 @@ enum ErrorReportKind {
 
 @freezed
 class ErrorReportRef with _$ErrorReportRef {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ErrorReportRef({
     required ErrorReportState state,
     required String base,
@@ -57,7 +56,6 @@ enum ApplicationState {
 
 @freezed
 class ApplicationStatus with _$ApplicationStatus {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory ApplicationStatus({
     required ApplicationState state,
     required String confirmingTty,
@@ -86,7 +84,6 @@ List<dynamic> _keycodesToJson(Map<int, String> keycodes) {
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
 class AnyStep with _$AnyStep {
   @FreezedUnionValue('StepPressKey')
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepPressKey({
     required List<String> symbols,
     @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
@@ -94,7 +91,6 @@ class AnyStep with _$AnyStep {
   }) = StepPressKey;
 
   @FreezedUnionValue('StepKeyPresent')
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepKeyPresent({
     required String symbol,
     required String yes,
@@ -102,7 +98,6 @@ class AnyStep with _$AnyStep {
   }) = StepKeyPresent;
 
   @FreezedUnionValue('StepResult')
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory AnyStep.stepResult({
     required String layout,
     required String variant,
@@ -114,7 +109,6 @@ class AnyStep with _$AnyStep {
 
 @freezed
 class KeyboardSetting with _$KeyboardSetting {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardSetting({
     required String layout,
     @Default('') String variant,
@@ -127,7 +121,6 @@ class KeyboardSetting with _$KeyboardSetting {
 
 @freezed
 class KeyboardVariant with _$KeyboardVariant {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardVariant({
     required String code,
     required String name,
@@ -139,7 +132,6 @@ class KeyboardVariant with _$KeyboardVariant {
 
 @freezed
 class KeyboardLayout with _$KeyboardLayout {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardLayout({
     required String code,
     required String name,
@@ -152,7 +144,6 @@ class KeyboardLayout with _$KeyboardLayout {
 
 @freezed
 class KeyboardSetup with _$KeyboardSetup {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory KeyboardSetup({
     required KeyboardSetting setting,
     required List<KeyboardLayout> layouts,
@@ -164,7 +155,6 @@ class KeyboardSetup with _$KeyboardSetup {
 
 @freezed
 class SourceSelection with _$SourceSelection {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory SourceSelection({
     required String name,
     required String description,
@@ -180,7 +170,6 @@ class SourceSelection with _$SourceSelection {
 
 @freezed
 class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory SourceSelectionAndSetting({
     required List<SourceSelection> sources,
     required String currentId,
@@ -206,7 +195,6 @@ enum Bootloader {
 
 @freezed
 class OsProber with _$OsProber {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory OsProber({
     required String long,
     required String label,
@@ -222,7 +210,6 @@ class OsProber with _$OsProber {
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
 class DiskObject with _$DiskObject {
   @FreezedUnionValue('Partition')
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.partition({
     int? size,
     int? number,
@@ -240,7 +227,6 @@ class DiskObject with _$DiskObject {
   }) = Partition;
 
   @FreezedUnionValue('Gap')
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory DiskObject.gap({
     required int offset,
     required int size,
@@ -252,7 +238,6 @@ class DiskObject with _$DiskObject {
 
 @freezed
 class Disk with _$Disk {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Disk({
     required String id,
     required String label,
@@ -274,7 +259,6 @@ class Disk with _$Disk {
 
 @freezed
 class GuidedChoice with _$GuidedChoice {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedChoice({
     required String diskId,
     @Default(false) bool useLvm,
@@ -287,7 +271,6 @@ class GuidedChoice with _$GuidedChoice {
 
 @freezed
 class GuidedStorageResponse with _$GuidedStorageResponse {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory GuidedStorageResponse({
     required ProbeStatus status,
     ErrorReportRef? errorReport,
@@ -300,7 +283,6 @@ class GuidedStorageResponse with _$GuidedStorageResponse {
 
 @freezed
 class StorageResponse with _$StorageResponse {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponse({
     required ProbeStatus status,
     ErrorReportRef? errorReport,
@@ -318,7 +300,6 @@ class StorageResponse with _$StorageResponse {
 
 @freezed
 class StorageResponseV2 with _$StorageResponseV2 {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory StorageResponseV2({
     required List<Disk> disks,
     required bool needRoot,
@@ -332,7 +313,6 @@ class StorageResponseV2 with _$StorageResponseV2 {
 
 @freezed
 class IdentityData with _$IdentityData {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory IdentityData({
     @Default('') String realname,
     @Default('') String username,
@@ -354,7 +334,6 @@ enum UsernameValidation {
 
 @freezed
 class SSHData with _$SSHData {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory SSHData({
     bool? installServer,
     bool? allowPw,
@@ -367,7 +346,6 @@ class SSHData with _$SSHData {
 
 @freezed
 class TimeZoneInfo with _$TimeZoneInfo {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory TimeZoneInfo({
     required String timezone,
     required bool fromGeoip,
@@ -379,7 +357,6 @@ class TimeZoneInfo with _$TimeZoneInfo {
 
 @freezed
 class WSLConfigurationBase with _$WSLConfigurationBase {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationBase({
     @Default('/mnt/') String automountRoot,
     @Default('') String automountOptions,
@@ -393,7 +370,6 @@ class WSLConfigurationBase with _$WSLConfigurationBase {
 
 @freezed
 class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory WSLConfigurationAdvanced({
     @Default(true) bool automountEnabled,
     @Default(true) bool automountMountfstab,
