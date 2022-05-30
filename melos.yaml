@@ -36,6 +36,12 @@ scripts:
     melos exec -c 1 --fail-fast --depends-on="build_runner" -- \
       dart run build_runner build --delete-conflicting-outputs
 
+  # generate subiquity_client/type.dart from subiquity/types.py
+  gen-subiquity: |
+    cd packages/subiquity_client && \
+    ./tool/py2freezed.py subiquity/subiquity/common/types.py lib/src/types.dart && \
+    dart format lib/src/types.dart >/dev/null
+
   # run gen-l10n to generate localizations in all packages
   gen-l10n:
     melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" -- \
