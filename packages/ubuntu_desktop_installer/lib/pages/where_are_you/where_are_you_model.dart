@@ -27,8 +27,8 @@ class WhereAreYouModel extends SafeChangeNotifier {
 
   Future<void> init() async {
     return _client.timezone().then((data) async {
-      if (data.timezone != null) {
-        final timezones = await _service.searchTimezone(data.timezone!);
+      if (data.timezone.isNotEmpty) {
+        final timezones = await _service.searchTimezone(data.timezone);
         _selectedLocation = timezones.firstOrNull;
       }
       _initialized = true;

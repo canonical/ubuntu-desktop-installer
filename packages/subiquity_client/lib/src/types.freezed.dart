@@ -5205,55 +5205,55 @@ abstract class _SSHData implements SSHData {
       throw _privateConstructorUsedError;
 }
 
-TimezoneInfo _$TimezoneInfoFromJson(Map<String, dynamic> json) {
-  return _TimezoneInfo.fromJson(json);
+TimeZoneInfo _$TimeZoneInfoFromJson(Map<String, dynamic> json) {
+  return _TimeZoneInfo.fromJson(json);
 }
 
 /// @nodoc
-class _$TimezoneInfoTearOff {
-  const _$TimezoneInfoTearOff();
+class _$TimeZoneInfoTearOff {
+  const _$TimeZoneInfoTearOff();
 
-  _TimezoneInfo call({String? timezone, bool? fromGeoip}) {
-    return _TimezoneInfo(
+  _TimeZoneInfo call({required String timezone, required bool fromGeoip}) {
+    return _TimeZoneInfo(
       timezone: timezone,
       fromGeoip: fromGeoip,
     );
   }
 
-  TimezoneInfo fromJson(Map<String, Object> json) {
-    return TimezoneInfo.fromJson(json);
+  TimeZoneInfo fromJson(Map<String, Object> json) {
+    return TimeZoneInfo.fromJson(json);
   }
 }
 
 /// @nodoc
-const $TimezoneInfo = _$TimezoneInfoTearOff();
+const $TimeZoneInfo = _$TimeZoneInfoTearOff();
 
 /// @nodoc
-mixin _$TimezoneInfo {
-  String? get timezone => throw _privateConstructorUsedError;
-  bool? get fromGeoip => throw _privateConstructorUsedError;
+mixin _$TimeZoneInfo {
+  String get timezone => throw _privateConstructorUsedError;
+  bool get fromGeoip => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TimezoneInfoCopyWith<TimezoneInfo> get copyWith =>
+  $TimeZoneInfoCopyWith<TimeZoneInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TimezoneInfoCopyWith<$Res> {
-  factory $TimezoneInfoCopyWith(
-          TimezoneInfo value, $Res Function(TimezoneInfo) then) =
-      _$TimezoneInfoCopyWithImpl<$Res>;
-  $Res call({String? timezone, bool? fromGeoip});
+abstract class $TimeZoneInfoCopyWith<$Res> {
+  factory $TimeZoneInfoCopyWith(
+          TimeZoneInfo value, $Res Function(TimeZoneInfo) then) =
+      _$TimeZoneInfoCopyWithImpl<$Res>;
+  $Res call({String timezone, bool fromGeoip});
 }
 
 /// @nodoc
-class _$TimezoneInfoCopyWithImpl<$Res> implements $TimezoneInfoCopyWith<$Res> {
-  _$TimezoneInfoCopyWithImpl(this._value, this._then);
+class _$TimeZoneInfoCopyWithImpl<$Res> implements $TimeZoneInfoCopyWith<$Res> {
+  _$TimeZoneInfoCopyWithImpl(this._value, this._then);
 
-  final TimezoneInfo _value;
+  final TimeZoneInfo _value;
   // ignore: unused_field
-  final $Res Function(TimezoneInfo) _then;
+  final $Res Function(TimeZoneInfo) _then;
 
   @override
   $Res call({
@@ -5264,49 +5264,49 @@ class _$TimezoneInfoCopyWithImpl<$Res> implements $TimezoneInfoCopyWith<$Res> {
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fromGeoip: fromGeoip == freezed
           ? _value.fromGeoip
           : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$TimezoneInfoCopyWith<$Res>
-    implements $TimezoneInfoCopyWith<$Res> {
-  factory _$TimezoneInfoCopyWith(
-          _TimezoneInfo value, $Res Function(_TimezoneInfo) then) =
-      __$TimezoneInfoCopyWithImpl<$Res>;
+abstract class _$TimeZoneInfoCopyWith<$Res>
+    implements $TimeZoneInfoCopyWith<$Res> {
+  factory _$TimeZoneInfoCopyWith(
+          _TimeZoneInfo value, $Res Function(_TimeZoneInfo) then) =
+      __$TimeZoneInfoCopyWithImpl<$Res>;
   @override
-  $Res call({String? timezone, bool? fromGeoip});
+  $Res call({String timezone, bool fromGeoip});
 }
 
 /// @nodoc
-class __$TimezoneInfoCopyWithImpl<$Res> extends _$TimezoneInfoCopyWithImpl<$Res>
-    implements _$TimezoneInfoCopyWith<$Res> {
-  __$TimezoneInfoCopyWithImpl(
-      _TimezoneInfo _value, $Res Function(_TimezoneInfo) _then)
-      : super(_value, (v) => _then(v as _TimezoneInfo));
+class __$TimeZoneInfoCopyWithImpl<$Res> extends _$TimeZoneInfoCopyWithImpl<$Res>
+    implements _$TimeZoneInfoCopyWith<$Res> {
+  __$TimeZoneInfoCopyWithImpl(
+      _TimeZoneInfo _value, $Res Function(_TimeZoneInfo) _then)
+      : super(_value, (v) => _then(v as _TimeZoneInfo));
 
   @override
-  _TimezoneInfo get _value => super._value as _TimezoneInfo;
+  _TimeZoneInfo get _value => super._value as _TimeZoneInfo;
 
   @override
   $Res call({
     Object? timezone = freezed,
     Object? fromGeoip = freezed,
   }) {
-    return _then(_TimezoneInfo(
+    return _then(_TimeZoneInfo(
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fromGeoip: fromGeoip == freezed
           ? _value.fromGeoip
           : fromGeoip // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -5314,26 +5314,26 @@ class __$TimezoneInfoCopyWithImpl<$Res> extends _$TimezoneInfoCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-class _$_TimezoneInfo implements _TimezoneInfo {
-  const _$_TimezoneInfo({this.timezone, this.fromGeoip});
+class _$_TimeZoneInfo implements _TimeZoneInfo {
+  const _$_TimeZoneInfo({required this.timezone, required this.fromGeoip});
 
-  factory _$_TimezoneInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimezoneInfoFromJson(json);
+  factory _$_TimeZoneInfo.fromJson(Map<String, dynamic> json) =>
+      _$_$_TimeZoneInfoFromJson(json);
 
   @override
-  final String? timezone;
+  final String timezone;
   @override
-  final bool? fromGeoip;
+  final bool fromGeoip;
 
   @override
   String toString() {
-    return 'TimezoneInfo(timezone: $timezone, fromGeoip: $fromGeoip)';
+    return 'TimeZoneInfo(timezone: $timezone, fromGeoip: $fromGeoip)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TimezoneInfo &&
+        (other is _TimeZoneInfo &&
             (identical(other.timezone, timezone) ||
                 const DeepCollectionEquality()
                     .equals(other.timezone, timezone)) &&
@@ -5350,29 +5350,29 @@ class _$_TimezoneInfo implements _TimezoneInfo {
 
   @JsonKey(ignore: true)
   @override
-  _$TimezoneInfoCopyWith<_TimezoneInfo> get copyWith =>
-      __$TimezoneInfoCopyWithImpl<_TimezoneInfo>(this, _$identity);
+  _$TimeZoneInfoCopyWith<_TimeZoneInfo> get copyWith =>
+      __$TimeZoneInfoCopyWithImpl<_TimeZoneInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TimezoneInfoToJson(this);
+    return _$_$_TimeZoneInfoToJson(this);
   }
 }
 
-abstract class _TimezoneInfo implements TimezoneInfo {
-  const factory _TimezoneInfo({String? timezone, bool? fromGeoip}) =
-      _$_TimezoneInfo;
+abstract class _TimeZoneInfo implements TimeZoneInfo {
+  const factory _TimeZoneInfo(
+      {required String timezone, required bool fromGeoip}) = _$_TimeZoneInfo;
 
-  factory _TimezoneInfo.fromJson(Map<String, dynamic> json) =
-      _$_TimezoneInfo.fromJson;
+  factory _TimeZoneInfo.fromJson(Map<String, dynamic> json) =
+      _$_TimeZoneInfo.fromJson;
 
   @override
-  String? get timezone => throw _privateConstructorUsedError;
+  String get timezone => throw _privateConstructorUsedError;
   @override
-  bool? get fromGeoip => throw _privateConstructorUsedError;
+  bool get fromGeoip => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TimezoneInfoCopyWith<_TimezoneInfo> get copyWith =>
+  _$TimeZoneInfoCopyWith<_TimeZoneInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

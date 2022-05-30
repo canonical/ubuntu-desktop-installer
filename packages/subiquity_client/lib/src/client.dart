@@ -224,12 +224,12 @@ class SubiquityClient {
         .byName(respStr.removePrefix('"').removeSuffix('"'));
   }
 
-  Future<TimezoneInfo> timezone() async {
+  Future<TimeZoneInfo> timezone() async {
     final request = await _openUrl('GET', Uri.http('localhost', 'timezone'));
     final response = await request.close();
 
     final timezoneJson = await _receiveJson("timezone()", response);
-    return TimezoneInfo.fromJson(timezoneJson);
+    return TimeZoneInfo.fromJson(timezoneJson);
   }
 
   Future<void> setTimezone(String timezone) async {

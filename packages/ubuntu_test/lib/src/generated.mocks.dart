@@ -30,7 +30,7 @@ class _FakeKeyboardSetup_2 extends _i1.Fake implements _i3.KeyboardSetup {}
 
 class _FakeIdentityData_3 extends _i1.Fake implements _i3.IdentityData {}
 
-class _FakeTimezoneInfo_4 extends _i1.Fake implements _i3.TimezoneInfo {}
+class _FakeTimeZoneInfo_4 extends _i1.Fake implements _i3.TimeZoneInfo {}
 
 class _FakeSSHData_5 extends _i1.Fake implements _i3.SSHData {}
 
@@ -210,10 +210,10 @@ class MockSubiquityClient extends _i1.Mock implements _i6.SubiquityClient {
                   _i3.UsernameValidation.OK))
           as _i5.Future<_i3.UsernameValidation>);
   @override
-  _i5.Future<_i3.TimezoneInfo> timezone() => (super.noSuchMethod(
+  _i5.Future<_i3.TimeZoneInfo> timezone() => (super.noSuchMethod(
           Invocation.method(#timezone, []),
-          returnValue: Future<_i3.TimezoneInfo>.value(_FakeTimezoneInfo_4()))
-      as _i5.Future<_i3.TimezoneInfo>);
+          returnValue: Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_4()))
+      as _i5.Future<_i3.TimeZoneInfo>);
   @override
   _i5.Future<void> setTimezone(String? timezone) =>
       (super.noSuchMethod(Invocation.method(#setTimezone, [timezone]),
