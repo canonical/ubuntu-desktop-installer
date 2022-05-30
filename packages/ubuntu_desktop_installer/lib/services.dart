@@ -1,4 +1,4 @@
-export 'package:ubuntu_wizard/services.dart';
+export 'package:ubuntu_service/ubuntu_service.dart';
 
 export 'services/disk_storage_service.dart' hide log;
 export 'services/geo_service.dart' hide log;

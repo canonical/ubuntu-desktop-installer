@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'app.dart';
