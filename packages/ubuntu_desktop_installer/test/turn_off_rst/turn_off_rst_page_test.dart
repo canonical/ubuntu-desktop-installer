@@ -5,8 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wizard/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:ubuntu_wizard/services.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart';
 import 'package:url_launcher/url_launcher.dart' show WebViewConfiguration;
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';

@@ -6,9 +6,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/services.dart';
 
 import 'wizard_app_test.mocks.dart';
 
