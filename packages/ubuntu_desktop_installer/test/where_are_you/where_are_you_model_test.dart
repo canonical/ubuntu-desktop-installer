@@ -14,8 +14,8 @@ void main() {
     final location = GeoLocation(name: 'Stockholm');
 
     final client = MockSubiquityClient();
-    when(client.timezone())
-        .thenAnswer((_) async => TimezoneInfo(timezone: location.name));
+    when(client.timezone()).thenAnswer(
+        (_) async => TimeZoneInfo(timezone: location.name!, fromGeoip: false));
     final service = MockGeoService();
     when(service.searchTimezone(location.name))
         .thenAnswer((_) async => [location]);

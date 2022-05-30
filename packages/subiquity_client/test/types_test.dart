@@ -35,13 +35,13 @@ void main() {
   });
 
   test('timezone data', () {
-    const tzdata = TimezoneInfo(timezone: 'Europe/Paris', fromGeoip: false);
+    const tzdata = TimeZoneInfo(timezone: 'Europe/Paris', fromGeoip: false);
     const json = <String, dynamic>{
       'timezone': 'Europe/Paris',
       'from_geoip': false,
     };
     expect(tzdata.toJson(), equals(json));
-    expect(TimezoneInfo.fromJson(json), tzdata);
+    expect(TimeZoneInfo.fromJson(json), tzdata);
   });
 
   test('ssh data', () {

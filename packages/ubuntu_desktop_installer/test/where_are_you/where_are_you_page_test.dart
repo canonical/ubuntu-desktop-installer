@@ -186,7 +186,8 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.timezone()).thenAnswer((_) async => TimezoneInfo());
+    when(client.timezone())
+        .thenAnswer((_) async => TimeZoneInfo(timezone: '', fromGeoip: false));
     registerMockService<SubiquityClient>(client);
 
     final service = MockGeoService();

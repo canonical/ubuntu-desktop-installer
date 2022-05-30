@@ -366,15 +366,15 @@ class SSHData with _$SSHData {
 }
 
 @freezed
-class TimezoneInfo with _$TimezoneInfo {
+class TimeZoneInfo with _$TimeZoneInfo {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
-  const factory TimezoneInfo({
-    String? timezone,
-    bool? fromGeoip,
-  }) = _TimezoneInfo;
+  const factory TimeZoneInfo({
+    required String timezone,
+    required bool fromGeoip,
+  }) = _TimeZoneInfo;
 
-  factory TimezoneInfo.fromJson(Map<String, dynamic> json) =>
-      _$TimezoneInfoFromJson(json);
+  factory TimeZoneInfo.fromJson(Map<String, dynamic> json) =>
+      _$TimeZoneInfoFromJson(json);
 }
 
 @freezed
