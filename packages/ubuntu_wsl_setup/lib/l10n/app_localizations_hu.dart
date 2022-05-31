@@ -65,16 +65,16 @@ class AppLocalizationsHu extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'A felhasználónév érvénytelen';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Ez a felhasználónév már létezik.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Ez a név a rendszer használatára van fenntartva.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Ez a név túl hosszú.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Ez a név érvénytelen karaktereket tartalmaz.';
 
   @override
   String get profileSetupPasswordRequired => 'Jelszó szükséges';
@@ -149,7 +149,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'Csatlakoztatás /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Az /etc/fstab állomány fel lesz csatolva. Az /etc/fstab konfigurációs fájl tartalmazza????';
+  String get configurationUIMountFstabSubtitle => 'Az /etc/fstab állomány fel lesz csatolva. Az /etc/fstab konfigurációs fájl tartalmazza.';
 
   @override
   String get configurationUISystemdHeader => 'KÍSÉRLETI - Systemd';

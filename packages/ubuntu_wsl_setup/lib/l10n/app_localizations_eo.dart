@@ -65,16 +65,16 @@ class AppLocalizationsEo extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'La salutnomo ne validas';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Tiu salutnomo jam ekzistas.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Tiu salutnomo estas tro longa.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
 
   @override
   String get profileSetupPasswordRequired => 'Pasvorto bezoniĝas';
@@ -149,7 +149,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUIMountFstabTitle => 'Surmeti /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. La agorda dosiero /etc/fstab enhavas la ???';
+  String get configurationUIMountFstabSubtitle => 'Ĉu surmeti /etc/fstab. Ĉi tiu dosiero enhavas informojn pri la surmetotaj dosiersistemoj.';
 
   @override
   String get configurationUISystemdHeader => 'EKSPERIMENTA – systemd';
