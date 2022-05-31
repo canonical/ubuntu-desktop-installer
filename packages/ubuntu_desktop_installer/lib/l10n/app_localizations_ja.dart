@@ -757,8 +757,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get supportedSoftware => 'サポートされているソフトウェア';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'ファイルをコピーしています...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'インストールに失敗しました';
 }

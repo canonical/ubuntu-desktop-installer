@@ -518,16 +518,16 @@ class AppLocalizationsEo extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'La salutnomo ne validas';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Tiu salutnomo jam ekzistas.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Tiu salutnomo estas tro longa.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Elektu pasvorton';
@@ -757,8 +757,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get supportedSoftware => 'Subtenataj programoj';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Kopiante dosierojn...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Instalado fiaskis';
 }
