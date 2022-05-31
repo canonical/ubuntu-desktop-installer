@@ -89,7 +89,7 @@
   "@configurationUIAutoMountTitle": {},
   "configurationUIMountFstabTitle": "Csatlakoztatás /etc/fstab",
   "@configurationUIMountFstabTitle": {},
-  "configurationUIMountFstabSubtitle": "Az /etc/fstab állomány fel lesz csatolva. Az /etc/fstab konfigurációs fájl tartalmazza????",
+  "configurationUIMountFstabSubtitle": "Az /etc/fstab állomány fel lesz csatolva. Az /etc/fstab konfigurációs fájl tartalmazza.",
   "@configurationUIMountFstabSubtitle": {},
   "configurationUISystemdHeader": "KÍSÉRLETI - Systemd",
   "@configurationUISystemdHeader": {},
@@ -110,5 +110,13 @@
   "configurationUIAutoMountSubtitle": "Az automatikus rögzítés funkció engedélyezve van-e. Ez a funkció lehetővé teszi a Windows-meghajtó csatlakoztatását a WSL-ben.",
   "@configurationUIAutoMountSubtitle": {},
   "configurationUISystemdSubtitle": "A systemd aktiválódjon-e a rendszerindításkor. FIGYELEM: Ez egy kísérleti funkció.",
-  "@configurationUISystemdSubtitle": {}
+  "@configurationUISystemdSubtitle": {},
+  "profileSetupUsernameTooLong": "Ez a név túl hosszú.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameSystemReserved": "Ez a név a rendszer használatára van fenntartva.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameInvalidChars": "Ez a név érvénytelen karaktereket tartalmaz.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameInUse": "Ez a felhasználónév már létezik.",
+  "@profileSetupUsernameInUse": {}
 }
