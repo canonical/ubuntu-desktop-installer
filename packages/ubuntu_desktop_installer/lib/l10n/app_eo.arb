@@ -571,5 +571,17 @@
   "installationTypeMultiOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?",
   "@installationTypeMultiOSDetected": {},
   "whoAreYouPageShowPassword": "Montri pasvorton",
-  "@whoAreYouPageShowPassword": {}
+  "@whoAreYouPageShowPassword": {},
+  "whoAreYouPageUsernameInvalidChars": "Tiu salutnomo enhavas nevalidajn signojn.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPageUsernameInUse": "Tiu salutnomo jam ekzistas.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Tiu salutnomo estas rezervita por sistema uzado.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Tiu salutnomo estas tro longa.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "copyingFiles": "Kopiante dosierojn...",
+  "@copyingFiles": {},
+  "installationFailed": "Instalado fiaskis",
+  "@installationFailed": {}
 }
