@@ -518,16 +518,16 @@ class AppLocalizationsHu extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'A felhasználónév érvénytelen';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Ez a felhasználónév már létezik.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Ez a név a rendszer használatára van fenntartva.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Ez a név túl hosszú.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Ez a név érvénytelen karaktereket tartalmaz.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Jelszó kiválasztása';
@@ -757,8 +757,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get supportedSoftware => 'Támogatott szoftver';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Fájlok másolása...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'A telepítés sikertelen';
 }
