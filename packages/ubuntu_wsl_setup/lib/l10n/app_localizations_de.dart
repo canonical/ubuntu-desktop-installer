@@ -65,16 +65,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Der Benutzername ist ungültig';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Dieser Benutzername existiert bereits.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Dieser Name ist für die Systemnutzung reserviert.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Dieser Name ist zu lang.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Dieser Name enthält ungültige Zeichen.';
 
   @override
   String get profileSetupPasswordRequired => 'Ein Passwort ist erforderlich';
@@ -149,7 +149,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab einhängen';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Ob /etc/fstab eingehängt werden soll. Die Konfigurationsdatei /etc/fstab enthält die ???';
+  String get configurationUIMountFstabSubtitle => 'Ob /etc/fstab eingehängt werden soll. Diese Datei enthält Informationen über die Dateisysteme, die das System einhängen wird.';
 
   @override
   String get configurationUISystemdHeader => 'EXPERIMENTELL - Systemd';
@@ -164,7 +164,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get applyingChanges => 'Änderungen werden angewendet…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Dies kann je nach Ihrer Internetverbindung einige Minuten dauern.';
 
   @override
   String get setupCompleteTitle => 'Einrichtung abgeschlossen';

@@ -161,7 +161,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configurationUISystemdSubtitle => 'systemd を起動時にアクティブ化する必要があるかどうか。注意: これは試験的な機能です。';
 
   @override
-  String get applyingChanges => '変更を適用しています...';
+  String get applyingChanges => '変更を適用しています…';
 
   @override
   String get applyingChangesDisclaimer => 'インターネットの接続状態によっては、数分かかる場合があります。';
