@@ -14,7 +14,7 @@ import 'installation_slides_model_test.mocks.dart';
 @GenerateMocks([JournalService])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
-  final methodChannel = MethodChannel('ubuntu_wizard');
+  final methodChannel = MethodChannel('window_manager');
 
   setUp(() {
     methodChannel.setMockMethodCallHandler((_) async {});
@@ -116,7 +116,7 @@ void main() async {
   test('reboot', () async {
     var windowClosed = false;
     methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('closeWindow'));
+      expect(call.method, equals('close'));
       windowClosed = true;
     });
 

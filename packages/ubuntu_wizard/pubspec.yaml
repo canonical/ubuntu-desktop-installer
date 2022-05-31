@@ -38,6 +38,9 @@ dependencies:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
   url_launcher: ^6.1.0
+  window_manager: # TODO: ^0.2.4
+    git:
+      url: https://github.com/leanflutter/window_manager.git
   wizard_router: ^0.8.0
   yaru: ^0.3.2
 

@@ -1,44 +1,45 @@
 import 'dart:async';
-import 'dart:ui';
 
-import 'package:flutter/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:window_manager/window_manager.dart';
 
 /// @internal
 final log = Logger('window');
 
-const _methodChannel = MethodChannel('ubuntu_wizard');
-const _eventChannel = EventChannel('ubuntu_wizard/events');
-
-void _listenEvent(String event, VoidCallback callback) {
-  _eventChannel.receiveBroadcastStream().listen((ev) {
-    if (event == ev) callback();
-  });
+class _WindowCloseCompleter extends WindowListener {
+  final Completer<void> _completer = Completer<void>();
+  Future<void> get future => _completer.future;
+  @override
+  void onWindowClose() => _completer.complete();
 }
 
 /// Requests that the window is closed.
 Future<void> closeWindow() {
   log.info('request window close');
-  return _methodChannel.invokeMethod('closeWindow');
+  return windowManager.close();
+}
+
+/// Destroys the window after closing.
+Future<void> destroyWindow() {
+  log.info('window closed');
+  return windowManager.destroy();
 }
 
 /// Completes when the window is closed.
-Future<void> onWindowClosed() {
-  final completer = Completer();
-  _listenEvent('deleteEvent', () {
-    log.info('window closed');
-    completer.complete();
-  });
-  return completer.future;
+Future<void> onWindowClosed() async {
+  final completer = _WindowCloseCompleter();
+  windowManager.setPreventClose(true);
+  windowManager.addListener(completer);
+  return completer.future.then((_) => windowManager.removeListener(completer));
 }
 
 /// Sets the window title.
 Future<void> setWindowTitle(String title) {
-  return _methodChannel.invokeMethod('setWindowTitle', [title]);
+  return windowManager.setTitle(title);
 }
 
 /// Sets whether the window can be closed.
 // ignore: avoid_positional_boolean_parameters
 Future<void> setWindowClosable(bool closable) {
-  return _methodChannel.invokeMethod('setWindowClosable', [closable]);
+  return windowManager.setClosable(closable);
 }

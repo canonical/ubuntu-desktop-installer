@@ -86,6 +86,7 @@ Future<void> runWizardApp(
     await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
+    destroyWindow();
   });
 
   runZonedGuarded(() {
