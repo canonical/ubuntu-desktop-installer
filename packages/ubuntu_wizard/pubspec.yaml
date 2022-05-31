@@ -52,9 +52,3 @@ dev_dependencies:
   mockito: 5.1.0
   ubuntu_test:
     path: ../ubuntu_test
-
-flutter:
-  plugin:
-    platforms:
-      linux:
-        pluginClass: UbuntuWizardPlugin
