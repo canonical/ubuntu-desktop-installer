@@ -4,10 +4,10 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
+import '../../locale.dart';
 import 'select_language_model.dart';
 
 class SelectLanguagePage extends StatefulWidget {
@@ -36,11 +36,11 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
 
     final model = Provider.of<SelectLanguageModel>(context, listen: false);
     model.loadLanguages().then((_) {
-      final settings = Settings.of(context, listen: false);
-      model.selectLocale(settings.locale);
+      final locale = InheritedLocale.of(context);
+      model.selectLocale(locale);
       model.getServerLocale().then((loc) {
         model.selectLocale(loc);
-        settings.applyLocale(loc);
+        InheritedLocale.apply(context, loc);
         _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
             preferPosition: AutoScrollPosition.middle,
             duration: const Duration(milliseconds: 1));
@@ -75,8 +75,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 selected: index == model.selectedLanguageIndex,
                 onTap: () {
                   model.selectedLanguageIndex = index;
-                  final settings = Settings.of(context, listen: false);
-                  settings.applyLocale(model.uiLocale(index));
+                  InheritedLocale.apply(context, model.uiLocale(index));
                 },
               ),
             );

@@ -5,9 +5,7 @@
 import 'dart:async' as _i4;
 import 'dart:ui' as _i2;
 
-import 'package:flutter/material.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_wizard/settings.dart' as _i5;
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart'
     as _i3;
 
@@ -83,53 +81,6 @@ class MockSelectLanguageModel extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#getServerLocale, []),
               returnValue: Future<_i2.Locale>.value(_FakeLocale_0()))
           as _i4.Future<_i2.Locale>);
-  @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
-  @override
-  void addListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
-  @override
-  void removeListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
-  @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
-}
-
-/// A class which mocks [Settings].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockSettings extends _i1.Mock implements _i5.Settings {
-  MockSettings() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i6.ThemeMode get theme => (super.noSuchMethod(Invocation.getter(#theme),
-      returnValue: _i6.ThemeMode.system) as _i6.ThemeMode);
-  @override
-  _i2.Locale get locale => (super.noSuchMethod(Invocation.getter(#locale),
-      returnValue: _FakeLocale_0()) as _i2.Locale);
-  @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
-  @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
-  @override
-  void applyTheme(_i2.Brightness? brightness) =>
-      super.noSuchMethod(Invocation.method(#applyTheme, [brightness]),
-          returnValueForMissingStub: null);
-  @override
-  void applyLocale(_i2.Locale? locale) =>
-      super.noSuchMethod(Invocation.method(#applyLocale, [locale]),
-          returnValueForMissingStub: null);
   @override
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
