@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gsettings/gsettings.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -14,6 +15,7 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
+import 'settings.dart';
 import 'slides.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
@@ -73,17 +75,26 @@ void runInstallerApp(
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
 
+  final interfaceSettings = GSettings('org.gnome.desktop.interface');
+
+  onWindowClosed().then((_) async {
+    await interfaceSettings.close();
+  });
+
   final appStatus = ValueNotifier(AppStatus.loading);
 
   runWizardApp(
     ValueListenableBuilder<AppStatus>(
       valueListenable: appStatus,
       builder: (context, value, child) {
-        return UbuntuDesktopInstallerApp(
-          appStatus: value,
-          flavor: flavor,
-          slides: slides,
-          initialRoute: options['initial-route'],
+        return ChangeNotifierProvider(
+          create: (_) => Settings(interfaceSettings),
+          child: UbuntuDesktopInstallerApp(
+            appStatus: value,
+            flavor: flavor,
+            slides: slides,
+            initialRoute: options['initial-route'],
+          ),
         );
       },
     ),
