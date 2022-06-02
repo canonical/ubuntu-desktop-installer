@@ -6,29 +6,12 @@ import 'package:path/path.dart' as p;
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 
+import 'endpoint.dart';
+
 enum ServerMode { LIVE, DRY_RUN }
 
 /// @internal
 final log = Logger('subiquity_server');
-
-/// Vocabulary type that combines an [InternetAddress] and a [port] number
-class Endpoint {
-  final InternetAddress address;
-  final int port;
-
-  /// Creates an Unix domain socket endpoint.
-  factory Endpoint.unix(String socketPath) => Endpoint(
-        InternetAddress(socketPath, type: InternetAddressType.unix),
-        port: 0,
-      );
-
-  /// Creates a localhost TCP endpoint on port number [port].
-  factory Endpoint.localhost(int port) => Endpoint(
-        InternetAddress("127.0.0.1", type: InternetAddressType.IPv4),
-        port: port,
-      );
-  Endpoint(this.address, {required this.port});
-}
 
 abstract class SubiquityServer {
   Process? _serverProcess;

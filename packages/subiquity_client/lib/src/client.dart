@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:dartx/dartx.dart';
-import 'package:subiquity_client/src/server.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'endpoint.dart';
 import 'types.dart';
 
 /// @internal
@@ -47,7 +47,7 @@ class SubiquityClient {
   Future<bool> get isOpen => _isOpen.future;
 
   void open(Endpoint endpoint) {
-    log.info('Opening socket address ${endpoint.address}');
+    log.info('Opening socket to $endpoint');
     _endpoint = endpoint;
     _client.connectionFactory = (uri, proxyHost, proxyPort) async {
       return Socket.startConnect(endpoint.address, endpoint.port);
@@ -56,7 +56,7 @@ class SubiquityClient {
   }
 
   Future<void> close() async {
-    log.info('Closing socket address ${_endpoint.address}');
+    log.info('Closing socket to $_endpoint');
     _client.close();
   }
 
