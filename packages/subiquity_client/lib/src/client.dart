@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:dartx/dartx.dart';
-import 'package:path/path.dart' as p;
+import 'package:subiquity_client/src/server.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'types.dart';
 
@@ -41,23 +41,22 @@ class SubiquityException implements Exception {
 
 class SubiquityClient {
   final _client = HttpClient();
-  late String _socketPath;
+  late Endpoint _endpoint;
   final _isOpen = Completer<bool>();
 
   Future<bool> get isOpen => _isOpen.future;
 
-  void open(String socketPath) {
-    log.info('Opening socket ${p.absolute(socketPath)}');
-    _socketPath = socketPath;
+  void open(Endpoint endpoint) {
+    log.info('Opening socket address ${endpoint.address}');
+    _endpoint = endpoint;
     _client.connectionFactory = (uri, proxyHost, proxyPort) async {
-      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
-      return Socket.startConnect(address, 0);
+      return Socket.startConnect(endpoint.address, endpoint.port);
     };
     _isOpen.complete(true);
   }
 
   Future<void> close() async {
-    log.info('Closing socket ${p.absolute(_socketPath)}');
+    log.info('Closing socket address ${_endpoint.address}');
     _client.close();
   }
 

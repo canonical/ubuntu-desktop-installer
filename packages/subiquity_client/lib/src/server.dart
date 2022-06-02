@@ -11,6 +11,25 @@ enum ServerMode { LIVE, DRY_RUN }
 /// @internal
 final log = Logger('subiquity_server');
 
+/// Vocabulary type that combines an [InternetAddress] and a [port] number
+class Endpoint {
+  final InternetAddress address;
+  final int port;
+
+  /// Creates an Unix domain socket endpoint.
+  factory Endpoint.unix(String socketPath) => Endpoint(
+        InternetAddress(socketPath, type: InternetAddressType.unix),
+        port: 0,
+      );
+
+  /// Creates a localhost TCP endpoint on port number [port].
+  factory Endpoint.localhost(int port) => Endpoint(
+        InternetAddress("127.0.0.1", type: InternetAddressType.IPv4),
+        port: port,
+      );
+  Endpoint(this.address, {required this.port});
+}
+
 abstract class SubiquityServer {
   Process? _serverProcess;
 
@@ -26,7 +45,7 @@ abstract class SubiquityServer {
   /// the server has been started and thus, the application is ready for
   /// integration testing.
   @visibleForTesting
-  static void Function(String socketPath)? startupCallback;
+  static void Function(Endpoint)? startupCallback;
 
   // Whether the server process should be started in the specified mode.
   bool _shouldStart(ServerMode mode);
@@ -83,9 +102,10 @@ abstract class SubiquityServer {
     return {'PYTHONPATH': pythonPath.join(':')};
   }
 
-  Future<String> start(ServerMode serverMode,
+  Future<Endpoint> start(ServerMode serverMode,
       {List<String>? args, Map<String, String>? environment}) async {
     final socketPath = await _getSocketPath(serverMode);
+    final endpoint = Endpoint.unix(socketPath);
     if (_shouldStart(serverMode)) {
       var subiquityCmd = <String>[
         '-m',
@@ -96,9 +116,9 @@ abstract class SubiquityServer {
       await _startSubiquity(serverMode, subiquityCmd, environment);
     }
 
-    return _waitSubiquity(socketPath).then((_) {
-      startupCallback?.call(socketPath);
-      return socketPath;
+    return _waitSubiquity(endpoint).then((_) {
+      startupCallback?.call(endpoint);
+      return endpoint;
     });
   }
 
@@ -148,11 +168,10 @@ abstract class SubiquityServer {
     await _writePidFile(_serverProcess!.pid);
   }
 
-  static Future<void> _waitSubiquity(String socketPath) async {
+  static Future<void> _waitSubiquity(Endpoint endpoint) async {
     final client = HttpClient();
     client.connectionFactory = (uri, proxyHost, proxyPort) async {
-      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
-      return Socket.startConnect(address, 0);
+      return Socket.startConnect(endpoint.address, endpoint.port);
     };
 
     // allow 10s maximum for the server to start responding
