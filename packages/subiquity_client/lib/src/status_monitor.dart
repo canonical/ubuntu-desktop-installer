@@ -20,10 +20,9 @@ class SubiquityStatusMonitor {
   StreamController<ApplicationStatus?>? _statusController;
 
   /// Starts monitoring the status using the provided [socketPath].
-  Future<bool> start(String socketPath) async {
+  Future<bool> start(InternetAddress address, {int port = 0}) async {
     _client.connectionFactory = (uri, proxyHost, proxyPort) async {
-      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
-      return Socket.startConnect(address, 0);
+      return Socket.startConnect(address, port);
     };
     return _fetchStatus().then(_updateStatus).then((_) {
       _listen();

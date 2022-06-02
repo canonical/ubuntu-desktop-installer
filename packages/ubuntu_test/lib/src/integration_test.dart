@@ -101,7 +101,7 @@ Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
 /// Waits for the subiquity server to be ready for integration testing.
 Future<void> waitForSubiquityServer() async {
   final startup = Completer();
-  callback(String socketPath) => startup.complete();
+  callback(Endpoint endpoint) => startup.complete();
 
   SubiquityServer.startupCallback = callback;
   addTearDown(() => SubiquityServer.startupCallback = null);

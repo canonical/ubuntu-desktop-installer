@@ -49,9 +49,9 @@ Future<void> runWizardApp(
 
   subiquityServer
       .start(serverMode, args: serverArgs, environment: serverEnvironment)
-      .then((socketPath) {
-    subiquityClient.open(socketPath);
-    subiquityMonitor?.start(socketPath);
+      .then((endpoint) {
+    subiquityClient.open(endpoint);
+    subiquityMonitor?.start(endpoint.address, port: endpoint.port);
 
     onInitSubiquity?.call(subiquityClient);
 
