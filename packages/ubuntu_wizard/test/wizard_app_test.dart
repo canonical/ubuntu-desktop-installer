@@ -14,6 +14,7 @@ import 'wizard_app_test.mocks.dart';
 
 @GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
+  final endpoint = Endpoint.unix('socket path');
   tearDown(() => unregisterMockService<SubiquityClient>());
 
   testWidgets('initializes subiquity', (tester) async {
@@ -21,7 +22,7 @@ void main() {
     final server = MockSubiquityServer();
     when(server.start(any,
             args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer((_) async => 'socket path');
+        .thenAnswer((_) async => endpoint);
 
     await runWizardApp(
       Container(),
@@ -33,7 +34,7 @@ void main() {
     );
     verify(server.start(ServerMode.DRY_RUN,
         args: ['--foo', 'bar'], environment: {'baz': 'qux'})).called(1);
-    verify(client.open('socket path')).called(1);
+    verify(client.open(endpoint)).called(1);
     verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
@@ -42,7 +43,9 @@ void main() {
     final server = MockSubiquityServer();
     when(server.start(any,
             args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer((_) async => '');
+        .thenAnswer(
+      (_) async => Endpoint.unix(''),
+    );
 
     await runWizardApp(
       SizedBox(),
@@ -109,13 +112,14 @@ void main() {
   });
 
   testWidgets('starts and registers the monitor', (tester) async {
+    final endpoint = Endpoint.unix('/tmp/subiquity.sock');
     final monitor = MockSubiquityStatusMonitor();
-    when(monitor.start('/tmp/subiquity.sock')).thenAnswer((_) async => true);
+    when(monitor.start(endpoint.address)).thenAnswer((_) async => true);
 
     final server = MockSubiquityServer();
     when(server.start(any,
             args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer((_) async => '/tmp/subiquity.sock');
+        .thenAnswer((_) async => endpoint);
 
     await runWizardApp(
       SizedBox(),
@@ -125,6 +129,6 @@ void main() {
     );
 
     expect(getService<SubiquityStatusMonitor>(), equals(monitor));
-    verify(monitor.start('/tmp/subiquity.sock')).called(1);
+    verify(monitor.start(endpoint.address)).called(1);
   });
 }

@@ -11,7 +11,8 @@ void main() {
   test('initialization', () async {
     client = SubiquityClient();
     final isOpen = client.isOpen;
-    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
+    final address = Endpoint.unix('');
+    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(address));
     await expectLater(isOpen, completes);
     expect(await isOpen, isTrue);
   });
