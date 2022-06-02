@@ -9,8 +9,8 @@ import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_mod
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 

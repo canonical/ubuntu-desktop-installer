@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru/yaru.dart';
 
 import 'l10n.dart';
+import 'locale.dart';
 import 'wizard.dart';
 
 class UbuntuWslSetupApp extends StatelessWidget {
@@ -19,20 +19,23 @@ class UbuntuWslSetupApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Settings.of(context).locale,
-      onGenerateTitle: (context) {
-        final lang = AppLocalizations.of(context);
-        setWindowTitle(lang.windowTitle);
-        return lang.appTitle;
-      },
-      theme: yaruLight,
-      darkTheme: yaruDark,
-      themeMode: Settings.of(context).theme,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
-      home: buildWizard(context),
+    return InheritedLocale(
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          locale: InheritedLocale.of(context),
+          onGenerateTitle: (context) {
+            final lang = AppLocalizations.of(context);
+            setWindowTitle(lang.windowTitle);
+            return lang.appTitle;
+          },
+          theme: yaruLight,
+          darkTheme: yaruDark,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          home: buildWizard(context),
+        );
+      }),
     );
   }
 

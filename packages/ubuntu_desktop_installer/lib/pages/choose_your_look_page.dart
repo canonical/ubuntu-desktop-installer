@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
+import '../../settings.dart';
 
 class ChooseYourLookPage extends StatelessWidget {
   const ChooseYourLookPage({Key? key}) : super(key: key);
