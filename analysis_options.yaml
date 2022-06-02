@@ -14,7 +14,3 @@ linter:
     prefer_const_constructors: false # TODO: enable
     public_member_api_docs: false
     sort_pub_dependencies: true
-
-    # TODO: the following rules were temporarily disabled to make it easier to
-    # transition to flutter_lints 2.0 that has these new rules enabled by default
-    depend_on_referenced_packages: false
