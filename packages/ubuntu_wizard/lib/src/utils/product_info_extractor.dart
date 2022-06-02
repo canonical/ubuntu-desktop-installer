@@ -64,7 +64,7 @@ class ProductInfoExtractor {
         .readAsLinesSync()
         .firstWhere((line) => line.startsWith('PRETTY_NAME'));
     final localName =
-        content.substring(content.indexOf("\"") + 1, content.lastIndexOf("\""));
+        content.substring(content.indexOf('"') + 1, content.lastIndexOf('"'));
     return _parseProductName(localName);
   }
 
