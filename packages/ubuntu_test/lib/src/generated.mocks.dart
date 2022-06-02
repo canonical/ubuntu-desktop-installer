@@ -8,7 +8,8 @@ import 'package:dbus/dbus.dart' as _i2;
 import 'package:gsettings/src/gsettings.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/src/client.dart' as _i7;
-import 'package:subiquity_client/src/server.dart' as _i4;
+import 'package:subiquity_client/src/endpoint.dart' as _i4;
+import 'package:subiquity_client/src/server.dart' as _i8;
 import 'package:subiquity_client/src/types.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -367,13 +368,13 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
 /// A class which mocks [SubiquityServer].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSubiquityServer extends _i1.Mock implements _i4.SubiquityServer {
+class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   MockSubiquityServer() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i6.Future<_i4.Endpoint> start(_i4.ServerMode? serverMode,
+  _i6.Future<_i4.Endpoint> start(_i8.ServerMode? serverMode,
           {List<String>? args, Map<String, String>? environment}) =>
       (super.noSuchMethod(
               Invocation.method(#start, [serverMode],
