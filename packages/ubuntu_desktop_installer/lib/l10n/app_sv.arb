@@ -22,7 +22,7 @@
   "@whoAreYouPageUsernameLabel": {},
   "chooseYourLookPageLightSetting": "Ljus",
   "@chooseYourLookPageLightSetting": {},
-  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
+  "chooseYourLookPageDarkBodyText": "Hej mörkret min gamle vän",
   "@chooseYourLookPageDarkBodyText": {},
   "installationCompleteTitle": "Installationen är klar",
   "@installationCompleteTitle": {},
@@ -436,7 +436,7 @@
       "RELEASE": {}
     }
   },
-  "appTitle": "Ubuntu Skrivbordsinstallerare",
+  "appTitle": "Skrivbordsinstallatören för Ubuntu",
   "@appTitle": {},
   "revertButtonText": "Återställ",
   "@revertButtonText": {},
@@ -627,5 +627,9 @@
   "whoAreYouPageUsernameInUse": "Det användarnamnet existerar redan.",
   "@whoAreYouPageUsernameInUse": {},
   "whoAreYouPageUsernameInvalidChars": "Det namnet innehåller ogiltiga tecken.",
-  "@whoAreYouPageUsernameInvalidChars": {}
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installationFailed": "Installationen misslyckades",
+  "@installationFailed": {},
+  "writeChangesPartitionTablesHeader": "Följande enheters partitionstabeller är ändrade:",
+  "@writeChangesPartitionTablesHeader": {}
 }
