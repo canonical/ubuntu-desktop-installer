@@ -20,7 +20,7 @@ void main() {
     await tester.pumpWidget(
       Provider<TurnOffBitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffBitLockerPage()),
+        child: tester.buildApp((_) => const TurnOffBitLockerPage()),
       ),
     );
 
@@ -45,7 +45,7 @@ void main() {
     await tester.pumpWidget(
       Provider<TurnOffBitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffBitLockerPage()),
+        child: tester.buildApp((_) => const TurnOffBitLockerPage()),
       ),
     );
 

@@ -9,7 +9,7 @@ void main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
-    final methodChannel = MethodChannel('window_manager');
+    const methodChannel = MethodChannel('window_manager');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('close'));
       windowClosed = true;
@@ -27,7 +27,7 @@ void main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
-    final methodChannel = MethodChannel('window_manager');
+    const methodChannel = MethodChannel('window_manager');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('close'));
       windowClosed = true;

@@ -25,7 +25,7 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
           client: getService<SubiquityClient>(),
           power: getService<PowerService>(),
           installationMode: InstallationMode.normal),
-      child: UpdatesOtherSoftwarePage(),
+      child: const UpdatesOtherSoftwarePage(),
     );
   }
 }

@@ -221,7 +221,7 @@ class Geoname implements GeoSource {
     if (response.statusCode != 200) log.error(response.statusMessage);
     try {
       final data = json.decode(response.data.toString());
-      if (data is! Iterable) throw FormatException();
+      if (data is! Iterable) throw const FormatException();
       final locations = data.cast<Map<String, dynamic>>();
       return Future.wait(locations.map(_geodata.fromJson));
     } on FormatException {
