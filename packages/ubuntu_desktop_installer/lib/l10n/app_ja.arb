@@ -416,7 +416,7 @@
       "RELEASE": {}
     }
   },
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> では、あなたが質問をしたり、回答済みの素晴らしい質問と答えを検索できます。\n日本語でのサポートは、<a href=\"https://loco.ubuntu.com/teams/japaneseteam/\">Ubuntu 日本 チーム</a> で提供されており、他の言語でのサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム一覧</a> をご覧ください。",
+  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> では、あなたが質問をしたり、回答済みの素晴らしい質問と答えを検索できます。\n日本語でのサポートは、<a href=\"http://www.ubuntulinux.jp/\">Ubuntu 日本 チーム</a> で提供されており、他の言語でのサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム一覧</a> をご覧ください。",
   "@supportSlideQuestions": {},
   "includedSoftware": "含まれるソフトウェア",
   "@includedSoftware": {},
@@ -630,5 +630,13 @@
   "copyingFiles": "ファイルをコピーしています...",
   "@copyingFiles": {},
   "installationFailed": "インストールに失敗しました",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "whoAreYouPageUsernameInUse": "そのユーザー名は既に存在します。",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "その名前はシステムが使用するため、予約されています。",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "その名前は長すぎます。",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "その名前には無効な文字が含まれています。",
+  "@whoAreYouPageUsernameInvalidChars": {}
 }
