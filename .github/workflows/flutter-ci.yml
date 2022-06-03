@@ -98,9 +98,6 @@ jobs:
     - name: Bootstrap workspace
       run: melos bootstrap
 
-    - name: Generate subiquity tyoes
-      run: melos run gen-subiquity
-
     - name: Generate source code
       run: melos run generate
 
