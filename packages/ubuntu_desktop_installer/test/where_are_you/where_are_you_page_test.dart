@@ -36,7 +36,7 @@ void main() {
   Widget buildPage(WhereAreYouModel model) {
     return ChangeNotifierProvider<WhereAreYouModel>.value(
       value: model,
-      child: const WhereAreYouPage(),
+      child: WhereAreYouPage(),
     );
   }
 
@@ -90,7 +90,7 @@ void main() {
 
     final model = buildModel();
     when(model.searchLocation('b')).thenAnswer((_) async => locations);
-    when(model.selectLocation(const GeoLocation())).thenAnswer((_) {});
+    when(model.selectLocation(GeoLocation())).thenAnswer((_) {});
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -109,7 +109,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(model.selectLocation(const GeoLocation(name: 'b'))).called(1);
+    verify(model.selectLocation(GeoLocation(name: 'b'))).called(1);
   });
 
   testWidgets('select timezone', (tester) async {
@@ -120,7 +120,7 @@ void main() {
 
     final model = buildModel();
     when(model.searchTimezone('b')).thenAnswer((_) async => timezones);
-    when(model.selectTimezone(const GeoLocation())).thenAnswer((_) {});
+    when(model.selectTimezone(GeoLocation())).thenAnswer((_) {});
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -139,7 +139,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(model.selectTimezone(const GeoLocation(timezone: 'b'))).called(1);
+    verify(model.selectTimezone(GeoLocation(timezone: 'b'))).called(1);
   });
 
   testWidgets('format location', (tester) async {
@@ -186,8 +186,8 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.timezone()).thenAnswer(
-        (_) async => const TimeZoneInfo(timezone: '', fromGeoip: false));
+    when(client.timezone())
+        .thenAnswer((_) async => TimeZoneInfo(timezone: '', fromGeoip: false));
     registerMockService<SubiquityClient>(client);
 
     final service = MockGeoService();

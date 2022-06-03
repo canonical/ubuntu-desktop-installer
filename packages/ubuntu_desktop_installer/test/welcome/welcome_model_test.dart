@@ -38,9 +38,9 @@ void main() {
     expect(model.selectedLanguageIndex, equals(0));
 
     // falls back to the base locale (en_US)
-    model.selectLocale(const Locale('foo'));
-    expect(model.locale(model.selectedLanguageIndex),
-        equals(const Locale('en', 'US')));
+    model.selectLocale(Locale('foo'));
+    expect(
+        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -58,7 +58,7 @@ void main() {
     when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
 
     final model = WelcomeModel(client);
-    model.applyLocale(const Locale('fr', 'CA'));
+    model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 

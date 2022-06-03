@@ -65,7 +65,7 @@ void main() {
         GuidedStorageResponse(
             disks: [testDisks.first], status: ProbeStatus.DONE));
     when(client.resetStorageV2()).thenAnswer((_) async =>
-        const StorageResponseV2(disks: [], needBoot: false, needRoot: false));
+        StorageResponseV2(disks: [], needBoot: false, needRoot: false));
 
     await service.resetGuidedStorage();
     expect(service.hasMultipleDisks, isFalse);
@@ -103,7 +103,7 @@ void main() {
 
   test('needs', () async {
     when(client.getStorageV2()).thenAnswer((_) async =>
-        const StorageResponseV2(needRoot: true, needBoot: false, disks: []));
+        StorageResponseV2(needRoot: true, needBoot: false, disks: []));
 
     final service = DiskStorageService(client);
     await service.getStorage();
@@ -112,7 +112,7 @@ void main() {
     expect(service.needBoot, isFalse);
 
     when(client.resetStorageV2()).thenAnswer((_) async =>
-        const StorageResponseV2(needRoot: false, needBoot: true, disks: []));
+        StorageResponseV2(needRoot: false, needBoot: true, disks: []));
 
     await service.resetStorage();
 
@@ -122,8 +122,8 @@ void main() {
 
   test('add/edit/remove partition', () async {
     final disk = testDisk(id: 'tst');
-    const gap = Gap(offset: 2, size: 3);
-    const partition = Partition(number: 1);
+    final gap = Gap(offset: 2, size: 3);
+    final partition = Partition(number: 1);
     final service = DiskStorageService(client);
 
     when(client.addPartitionV2(disk, gap, partition)).thenAnswer((_) async =>

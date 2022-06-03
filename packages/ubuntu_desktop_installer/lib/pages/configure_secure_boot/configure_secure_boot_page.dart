@@ -20,7 +20,7 @@ class ConfigureSecureBootPage extends StatefulWidget {
     return ChangeNotifierProvider(
       create: (context) =>
           ConfigureSecureBootModel(secureBootMode: SecureBootMode.turnOff),
-      child: const ConfigureSecureBootPage(),
+      child: ConfigureSecureBootPage(),
     );
   }
 }

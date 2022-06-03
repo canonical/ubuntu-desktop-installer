@@ -19,7 +19,7 @@ void main() {
 
   testWidgets('create partition', (tester) async {
     final disk = testDisk();
-    const gap = Gap(offset: 0, size: 1000000);
+    final gap = Gap(offset: 0, size: 1000000);
     final model = buildModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
@@ -27,7 +27,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
         value: model,
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );
 
@@ -38,7 +38,7 @@ void main() {
     await tester.tap(find.byType(DropdownButton<DataUnit>));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(const ValueKey(DataUnit.bytes)).last);
+    await tester.tap(find.byKey(ValueKey(DataUnit.bytes)).last);
     await tester.pump();
 
     await tester.enterText(find.byType(SpinBox), '123');
@@ -71,17 +71,17 @@ void main() {
 
   testWidgets('edit partition', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
+    tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
     final disk = testDisk(partitions: [
-      const Partition(
+      Partition(
         number: 1,
         format: 'ext4',
         wipe: 'superblock',
         mount: '/tst',
         preserve: true,
       ),
-      const Gap(offset: 123, size: 1000000),
+      Gap(offset: 123, size: 1000000),
     ]);
     final model = buildModel(selectedDisk: disk);
 
@@ -90,7 +90,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
         value: model,
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
       ),
     );
 

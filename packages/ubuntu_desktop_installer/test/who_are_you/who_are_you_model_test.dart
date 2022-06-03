@@ -224,7 +224,7 @@ void main() {
   test('respect existing values', () async {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async {
-      return const IdentityData(
+      return IdentityData(
         realname: 'Default',
         username: 'default',
         hostname: 'default',

@@ -22,14 +22,14 @@ final testDisks = <Disk>[
     path: '/dev/sda',
     size: 12,
     partitions: [
-      const Partition(
+      Partition(
         number: 1,
         size: 11,
         mount: '/mnt/1',
         format: 'ext',
         preserve: true,
       ),
-      const Partition(
+      Partition(
         number: 2,
         size: 22,
         mount: '/mnt/2',
@@ -41,13 +41,13 @@ final testDisks = <Disk>[
     path: '/dev/sdb',
     size: 23,
     partitions: [
-      const Partition(
+      Partition(
         number: 3,
         size: 33,
         mount: '/mnt/3',
         format: 'ext3',
       ),
-      const Partition(
+      Partition(
         number: 4,
         size: 44,
         mount: '/mnt/4',
@@ -323,7 +323,7 @@ void main() {
 
     final dropdownItem = find.descendant(
       of: find.byType(DropdownMenuItem<int>),
-      matching: find.byKey(const ValueKey(1)),
+      matching: find.byKey(ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);
     await tester.tap(dropdownItem.last);

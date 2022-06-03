@@ -19,14 +19,14 @@ final testDisks = <Disk>[
     size: 12,
     preserve: false,
     partitions: [
-      const Partition(
+      Partition(
         number: 1,
         size: 11,
         mount: '/mnt/1',
         format: 'ext',
         preserve: false,
       ),
-      const Partition(
+      Partition(
         number: 2,
         size: 22,
         mount: '/mnt/2',
@@ -40,14 +40,14 @@ final testDisks = <Disk>[
     size: 23,
     preserve: false,
     partitions: [
-      const Partition(
+      Partition(
         number: 3,
         size: 33,
         mount: '/mnt/3',
         format: 'ext3',
         preserve: false,
       ),
-      const Partition(
+      Partition(
         number: 4,
         size: 44,
         format: 'ext4',

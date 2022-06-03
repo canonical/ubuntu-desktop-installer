@@ -14,7 +14,7 @@ void main() {
 
     settings.applyTheme(Brightness.light);
     verifyInOrder([
-      gsettings.set('gtk-theme', const DBusString('Yaru')),
+      gsettings.set('gtk-theme', DBusString('Yaru')),
     ]);
     expect(settings.theme, equals(ThemeMode.light));
 
@@ -23,7 +23,7 @@ void main() {
 
     settings.applyTheme(Brightness.dark);
     verifyInOrder([
-      gsettings.set('gtk-theme', const DBusString('Yaru-dark')),
+      gsettings.set('gtk-theme', DBusString('Yaru-dark')),
     ]);
     expect(settings.theme, equals(ThemeMode.dark));
     expect(wasNotified, isTrue);
@@ -33,18 +33,18 @@ void main() {
     tester.binding.platformDispatcher.localeTestValue =
         const Locale('fr', 'FR');
     final settings = Settings(MockGSettings());
-    expect(settings.locale, equals(const Locale('fr', 'FR')));
+    expect(settings.locale, equals(Locale('fr', 'FR')));
   });
 
   test('set locale', () {
     final settings = Settings(MockGSettings());
-    settings.applyLocale(const Locale('en', 'US'));
-    expect(settings.locale, equals(const Locale('en', 'US')));
+    settings.applyLocale(Locale('en', 'US'));
+    expect(settings.locale, equals(Locale('en', 'US')));
 
     var wasNotified = false;
     settings.addListener(() => wasNotified = true);
-    settings.applyLocale(const Locale('en', 'UK'));
-    expect(settings.locale, equals(const Locale('en', 'UK')));
+    settings.applyLocale(Locale('en', 'UK'));
+    expect(settings.locale, equals(Locale('en', 'UK')));
     expect(wasNotified, isTrue);
   });
 }

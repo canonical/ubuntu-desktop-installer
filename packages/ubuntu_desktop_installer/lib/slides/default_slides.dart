@@ -416,7 +416,7 @@ class _SlideLabel extends StatelessWidget {
       const SizedBox(width: _kIconSpacing),
       Text(
         text,
-        style: const TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.white),
       ),
     ]);
   }

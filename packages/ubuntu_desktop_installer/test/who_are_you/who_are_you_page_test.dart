@@ -46,7 +46,7 @@ void main() {
   Widget buildPage(WhoAreYouModel model) {
     return ChangeNotifierProvider<WhoAreYouModel>.value(
       value: model,
-      child: const WhoAreYouPage(),
+      child: WhoAreYouPage(),
     );
   }
 
