@@ -23,13 +23,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get saveButton => 'Spara';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Ställ in';
 
   @override
   String get selectLanguageTitle => 'Välj ditt språk';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Ställ in profil';
 
   @override
   String get profileSetupHeader => 'Skapa ett standard UNIX-användarkonto. För mer information besök: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
@@ -65,22 +65,22 @@ class AppLocalizationsSv extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Användarnamnet är ogiltigt';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Det där användarnamnet existerar redan.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Det där namnet är reserverat för system-användning.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Det där namnet är för långt.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Det där namnet innehåller ogiltiga tecken.';
 
   @override
   String get profileSetupPasswordRequired => 'Ett lösenord krävs';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Avancerad inställning';
 
   @override
   String get advancedSetupHeader => 'På den här sidan kan du anpassa Ubuntu WSL efter dina behov.';
@@ -89,7 +89,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get advancedSetupMountLocationHint => 'Monteringsplats';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Plats för den automatiska monteringen';
 
   @override
   String get advancedSetupMountLocationInvalid => 'Platsen är ogiltig';
@@ -107,7 +107,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Aktivera generering av resolv.conf';
 
   @override
   String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
@@ -119,13 +119,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Genom att välja aktiveras automatisk DISPLAY-miljöinställning. Tredjeparts X-server krävs.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL-konfigurationsgränssnitt (experimentellt)';
+  String get configurationUITitle => 'Ubuntu WSL-konfigurationsgränssnitt - Avancerade alternativ';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperabilitet';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Aktiverat';
 
   @override
   String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
@@ -137,7 +137,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
 
   @override
-  String get configurationUIAutoMountHeader => 'Auto-Mount';
+  String get configurationUIAutoMountHeader => 'Montera automatiskt';
 
   @override
   String get configurationUIAutoMountTitle => 'Aktiverad';
@@ -152,10 +152,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EXPERIMENTIELL - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Aktiverad';
 
   @override
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
@@ -164,7 +164,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get applyingChanges => 'Tillämpar ändringar…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Det här kan ta flera minuter beroende på din internetanslutning.';
 
   @override
   String get setupCompleteTitle => 'Installationen är klar';
