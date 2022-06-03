@@ -35,8 +35,6 @@ class NetDevInfo {
 // Union[Partition, Gap]
 typedef DiskObject = PartitionOrGap;
 
-// BEGIN GENERATED CODE - DO NOT MODIFY BY HAND (run melos gen-subiquity)
-
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
@@ -653,5 +651,3 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$WSLConfigurationAdvancedFromJson(json);
 }
-
-// END GENERATED CODE
