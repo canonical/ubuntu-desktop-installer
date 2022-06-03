@@ -39,7 +39,8 @@ void main() {
     when(model.isInstalling).thenReturn(isInstalling ?? false);
     when(model.installationStep).thenReturn(installationStep ?? 1);
     when(model.installationStepCount).thenReturn(installationStepCount ?? 1);
-    when(model.journal).thenAnswer((_) => journal ?? Stream<String>.empty());
+    when(model.journal)
+        .thenAnswer((_) => journal ?? const Stream<String>.empty());
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     return model;
   }
@@ -49,14 +50,14 @@ void main() {
       value: model,
       child: SlidesContext(slides: [
         Slide(
-          title: (context) => Text('title1'),
-          body: (context) => Text('body1'),
+          title: (context) => const Text('title1'),
+          body: (context) => const Text('body1'),
         ),
         Slide(
-          title: (context) => Text('title2'),
-          body: (context) => Text('body2'),
+          title: (context) => const Text('title2'),
+          body: (context) => const Text('body2'),
         ),
-      ], child: InstallationSlidesPage()),
+      ], child: const InstallationSlidesPage()),
     );
   }
 
@@ -157,7 +158,7 @@ void main() {
 
     when(model.hasError).thenReturn(true);
     await tester.pumpWidget(Container(
-      key: ValueKey('force rebuild for hasError'),
+      key: const ValueKey('force rebuild for hasError'),
       child: tester.buildApp((_) => buildPage(model)),
     ));
     await tester.pump();
@@ -174,15 +175,15 @@ void main() {
     registerMockService<SubiquityClient>(client);
 
     final service = MockJournalService();
-    when(service.stream).thenAnswer((_) => Stream<String>.empty());
+    when(service.stream).thenAnswer((_) => const Stream<String>.empty());
     registerMockService<JournalService>(service);
 
     await tester.pumpWidget(
       SlidesContext(
         slides: [
           Slide(
-            title: (_) => SizedBox.shrink(),
-            body: (_) => SizedBox.shrink(),
+            title: (_) => const SizedBox.shrink(),
+            body: (_) => const SizedBox.shrink(),
           )
         ],
         child: tester.buildApp(InstallationSlidesPage.create),

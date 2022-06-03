@@ -37,7 +37,7 @@ void main() {
   Widget buildPage(InstallationTypeModel model) {
     return ChangeNotifierProvider<InstallationTypeModel>.value(
       value: model,
-      child: InstallationTypePage(),
+      child: const InstallationTypePage(),
     );
   }
 
@@ -52,7 +52,7 @@ void main() {
 
   testWidgets('one existing OS', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -64,8 +64,8 @@ void main() {
 
   testWidgets('two existing OSes', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -78,9 +78,9 @@ void main() {
 
   testWidgets('multiple existing OSes', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -92,7 +92,7 @@ void main() {
 
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(
+      const OsProber(
         long: 'Ubuntu 18.04 LTS',
         label: 'Ubuntu',
         version: '18.04 LTS',
@@ -112,7 +112,7 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 21.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 18.04 LTS',
           label: 'Ubuntu',
           version: '18.04 LTS',
@@ -170,7 +170,7 @@ void main() {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
+        (_) async => const GuidedStorageResponse(status: ProbeStatus.DONE));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);

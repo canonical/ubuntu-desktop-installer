@@ -14,22 +14,22 @@ void main() {
     testDisk(
       id: 'a',
       preserve: false,
-      partitions: [Partition(number: 1, preserve: false)],
+      partitions: [const Partition(number: 1, preserve: false)],
     ),
     testDisk(
       id: 'b',
       preserve: true,
       partitions: [
-        Partition(number: 1),
-        Partition(number: 2, grubDevice: true),
+        const Partition(number: 1),
+        const Partition(number: 2, grubDevice: true),
       ],
     ),
     testDisk(
       id: 'c',
       preserve: false,
       partitions: [
-        Partition(number: 3, preserve: false),
-        Partition(number: 4, grubDevice: false),
+        const Partition(number: 3, preserve: false),
+        const Partition(number: 4, grubDevice: false),
       ],
     ),
   ];
@@ -38,12 +38,12 @@ void main() {
     testDisk(
       id: 'a',
       preserve: false,
-      partitions: [Partition(number: 1, preserve: false)],
+      partitions: [const Partition(number: 1, preserve: false)],
     ),
     testDisk(
       id: 'c',
       preserve: false,
-      partitions: [Partition(number: 3, preserve: false)],
+      partitions: [const Partition(number: 3, preserve: false)],
     ),
   ];
 
@@ -58,9 +58,9 @@ void main() {
 
     expect(model.disks, equals(nonPreservedDisks));
     expect(model.partitions(nonPreservedDisks.first),
-        equals([Partition(number: 1, preserve: false)]));
+        equals([const Partition(number: 1, preserve: false)]));
     expect(model.partitions(nonPreservedDisks.last),
-        equals([Partition(number: 3, preserve: false)]));
+        equals([const Partition(number: 3, preserve: false)]));
   });
 
   test('start installation', () async {
