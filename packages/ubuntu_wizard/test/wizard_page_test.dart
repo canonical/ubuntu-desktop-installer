@@ -26,13 +26,13 @@ void main() {
 
   testWidgets('layout', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          title: const Text('title'),
-          header: const Text('header'),
-          content: const Text('content'),
-          footer: const Text('footer'),
-          actions: const <WizardAction>[
+          title: Text('title'),
+          header: Text('header'),
+          content: Text('content'),
+          footer: Text('footer'),
+          actions: <WizardAction>[
             WizardAction(label: 'back'),
             WizardAction(label: 'next'),
           ],
@@ -62,9 +62,9 @@ void main() {
 
   testWidgets('highlighted action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
+          actions: <WizardAction>[
             WizardAction(label: 'action', highlighted: false),
           ],
         ),
@@ -74,9 +74,9 @@ void main() {
     expect(find.widgetWithText(ElevatedButton, 'action'), findsNothing);
 
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
+          actions: <WizardAction>[
             WizardAction(label: 'action', highlighted: true),
           ],
         ),
@@ -112,9 +112,9 @@ void main() {
 
   testWidgets('hidden action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
+          actions: <WizardAction>[
             WizardAction(label: 'action', visible: false),
           ],
         ),

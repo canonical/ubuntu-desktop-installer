@@ -27,13 +27,13 @@ void main() {
   Widget buildPage(SetupCompleteModel model) {
     return ChangeNotifierProvider<SetupCompleteModel>.value(
       value: model,
-      child: SetupCompletePage(),
+      child: const SetupCompletePage(),
     );
   }
 
   Widget buildApp(WidgetTester tester, SetupCompleteModel model) {
     tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
@@ -75,7 +75,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.identity()).thenAnswer((_) async => const IdentityData());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

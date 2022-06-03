@@ -37,7 +37,7 @@ void main() {
 
     return ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(
       value: model,
-      child: UpdatesOtherSoftwarePage(),
+      child: const UpdatesOtherSoftwarePage(),
     );
   }
 
@@ -138,7 +138,7 @@ void main() {
 
     final power = MockPowerService();
     when(power.onBattery).thenReturn(false);
-    when(power.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
     registerMockService<PowerService>(power);
 
     await tester.pumpWidget(tester.buildApp(UpdatesOtherSoftwarePage.create));

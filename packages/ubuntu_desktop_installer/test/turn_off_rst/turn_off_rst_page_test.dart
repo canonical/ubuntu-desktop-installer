@@ -20,7 +20,7 @@ void main() {
     await tester.pumpWidget(
       Provider<TurnOffRSTModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => const TurnOffRSTPage()),
       ),
     );
 
@@ -45,7 +45,7 @@ void main() {
     await tester.pumpWidget(
       Provider<TurnOffRSTModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => const TurnOffRSTPage()),
       ),
     );
 

@@ -36,7 +36,7 @@ void main() {
     model.enableHostGeneration = false;
     model.enableResolvConfGeneration = false;
 
-    final conf = WSLConfigurationBase(
+    const conf = WSLConfigurationBase(
       automountRoot: 'path',
       automountOptions: 'opt',
       networkGeneratehosts: false,

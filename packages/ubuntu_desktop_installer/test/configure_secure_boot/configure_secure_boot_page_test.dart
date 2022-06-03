@@ -36,7 +36,7 @@ void main() {
   Widget buildPage(ConfigureSecureBootModel model) {
     return ChangeNotifierProvider<ConfigureSecureBootModel>.value(
       value: model,
-      child: ConfigureSecureBootPage(),
+      child: const ConfigureSecureBootPage(),
     );
   }
 

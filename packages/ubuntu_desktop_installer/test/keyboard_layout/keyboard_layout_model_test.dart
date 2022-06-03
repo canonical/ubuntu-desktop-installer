@@ -97,8 +97,8 @@ void main() {
       client = MockSubiquityClient();
       when(client.keyboard()).thenAnswer((_) async {
         return testSetup([
-          KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-          KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+          const KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
+          const KeyboardLayout(code: 'bar', name: 'Bar', variants: [
             KeyboardVariant(code: 'baz', name: 'Baz'),
             KeyboardVariant(code: 'qux', name: 'Qux'),
           ]),
@@ -164,14 +164,14 @@ void main() {
 
     test('selection applies keyboard settings', () async {
       await model.selectLayout(0);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'foo'))).called(1);
+      verify(client.setKeyboard(const KeyboardSetting(layout: 'foo'))).called(1);
 
       await model.selectLayout(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'baz')))
+      verify(client.setKeyboard(const KeyboardSetting(layout: 'bar', variant: 'baz')))
           .called(1);
 
       await model.selectVariant(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
+      verify(client.setKeyboard(const KeyboardSetting(layout: 'bar', variant: 'qux')))
           .called(1);
     });
 
@@ -213,8 +213,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async {
       return testSetup([
-        KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-        KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+        const KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
+        const KeyboardLayout(code: 'bar', name: 'Bar', variants: [
           KeyboardVariant(code: 'baz', name: 'Baz'),
           KeyboardVariant(code: 'qux', name: 'Qux'),
         ]),
@@ -229,7 +229,7 @@ void main() {
     reset(client);
 
     await model.applyKeyboardSettings();
-    verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
+    verify(client.setKeyboard(const KeyboardSetting(layout: 'bar', variant: 'qux')))
         .called(1);
   });
 }

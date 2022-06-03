@@ -36,20 +36,20 @@ void main() {
       when(model.variantName(i)).thenReturn(variants![i]);
     }
     when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
-    when(model.onLayoutSelected).thenAnswer((_) => Stream<int>.empty());
-    when(model.onVariantSelected).thenAnswer((_) => Stream<int>.empty());
+    when(model.onLayoutSelected).thenAnswer((_) => const Stream<int>.empty());
+    when(model.onVariantSelected).thenAnswer((_) => const Stream<int>.empty());
     return model;
   }
 
   Widget buildPage(KeyboardLayoutModel model) {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any)).thenAnswer(
-        (_) async => AnyStep.stepPressKey(keycodes: {}, symbols: []));
+        (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
     registerMockService<SubiquityClient>(client);
 
     return ChangeNotifierProvider<KeyboardLayoutModel>.value(
       value: model,
-      child: KeyboardLayoutPage(),
+      child: const KeyboardLayoutPage(),
     );
   }
 
@@ -113,7 +113,7 @@ void main() {
 
     final context = tester.element(find.byType(DetectKeyboardLayoutView));
     Navigator.of(context)
-        .pop(AnyStep.stepResult(layout: 'layout', variant: 'variant'));
+        .pop(const AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });
@@ -161,7 +161,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async =>
-        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));

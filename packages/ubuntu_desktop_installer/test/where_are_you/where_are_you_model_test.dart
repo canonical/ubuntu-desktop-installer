@@ -11,7 +11,7 @@ import 'where_are_you_model_test.mocks.dart';
 @GenerateMocks([GeoService])
 void main() {
   test('init', () async {
-    final location = GeoLocation(name: 'Stockholm');
+    const location = GeoLocation(name: 'Stockholm');
 
     final client = MockSubiquityClient();
     when(client.timezone()).thenAnswer(
@@ -31,7 +31,7 @@ void main() {
   });
 
   test('save', () async {
-    final location = GeoLocation(timezone: 'Europe/Oslo');
+    const location = GeoLocation(timezone: 'Europe/Oslo');
 
     final client = MockSubiquityClient();
     when(client.setTimezone('geoip')).thenAnswer((_) async {});
@@ -52,7 +52,7 @@ void main() {
   });
 
   test('select location', () async {
-    final location = GeoLocation(name: 'Helsinki, Finland');
+    const location = GeoLocation(name: 'Helsinki, Finland');
 
     final client = MockSubiquityClient();
     final service = MockGeoService();
@@ -69,7 +69,7 @@ void main() {
   });
 
   test('select timezone', () async {
-    final location = GeoLocation(name: 'Helsinki, Finland');
+    const location = GeoLocation(name: 'Helsinki, Finland');
 
     final client = MockSubiquityClient();
     final service = MockGeoService();
@@ -86,7 +86,7 @@ void main() {
   });
 
   test('search location', () async {
-    final location = GeoLocation(name: 'Copenhagen', country: 'Denmark');
+    const location = GeoLocation(name: 'Copenhagen', country: 'Denmark');
 
     final client = MockSubiquityClient();
     final service = MockGeoService();
@@ -95,7 +95,7 @@ void main() {
     when(service.searchLocation('Denmark')).thenAnswer((_) async => [location]);
 
     final model = WhereAreYouModel(client: client, service: service);
-    model.selectLocation(GeoLocation());
+    model.selectLocation(const GeoLocation());
     expect(model.selectedLocation, isNotNull);
     expect(model.locations, isEmpty);
 
@@ -112,7 +112,7 @@ void main() {
   });
 
   test('search timezone', () async {
-    final location = GeoLocation(
+    const location = GeoLocation(
       name: 'Copenhagen',
       country: 'Denmark',
       country2: 'DK',
@@ -125,7 +125,7 @@ void main() {
         .thenAnswer((_) async => [location]);
 
     final model = WhereAreYouModel(client: client, service: service);
-    model.selectTimezone(GeoLocation());
+    model.selectTimezone(const GeoLocation());
     expect(model.selectedLocation, isNotNull);
     expect(model.locations, isEmpty);
 

@@ -158,7 +158,7 @@ void main() {
         home: Material(
           child: Center(
             child: ValidatedFormField(
-              successWidget: SuccessIcon(),
+              successWidget: const SuccessIcon(),
               helperText: helperText,
             ),
           ),
@@ -340,7 +340,7 @@ void main() {
         ),
       ),
     );
-    await tester.pumpWidget(MaterialApp());
+    await tester.pumpWidget(const MaterialApp());
     await tester.pumpAndSettle();
 
     await expectLater(

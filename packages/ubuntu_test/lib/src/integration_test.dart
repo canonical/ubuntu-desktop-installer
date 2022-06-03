@@ -67,7 +67,7 @@ Future<void> waitForFile(
   Duration limit = const Duration(seconds: 10),
 ]) async {
   assert(limit.inMilliseconds >= 250);
-  final delay = Duration(milliseconds: 250);
+  const delay = Duration(milliseconds: 250);
 
   await Future.doWhile(() {
     return Future.delayed(delay).then((_) {
@@ -121,7 +121,7 @@ Future<void> cleanUpSubiquity() async {
 /// to proceed to the next test case.
 Future<bool> waitForWindowClosed() {
   final completer = Completer<bool>();
-  final methodChannel = MethodChannel('ubuntu_wizard');
+  const methodChannel = MethodChannel('ubuntu_wizard');
 
   methodChannel.setMockMethodCallHandler((call) async {
     if (call.method == 'closeWindow') {
@@ -139,7 +139,7 @@ Future<bool> waitForWindowClosed() {
 Future<void> _testCloseWindow() async {
   await ServicesBinding.instance.defaultBinaryMessenger.handlePlatformMessage(
     'ubuntu_wizard/events',
-    StandardMethodCodec().encodeSuccessEnvelope('deleteEvent'),
+    const StandardMethodCodec().encodeSuccessEnvelope('deleteEvent'),
     (_) {},
   );
 }
@@ -207,7 +207,7 @@ extension IntegrationTester on WidgetTester {
     Duration timeout = const Duration(seconds: 10),
   ]) async {
     assert(timeout.inMilliseconds >= 250);
-    final delay = Duration(milliseconds: 250);
+    const delay = Duration(milliseconds: 250);
 
     if (any(finder)) return;
 
