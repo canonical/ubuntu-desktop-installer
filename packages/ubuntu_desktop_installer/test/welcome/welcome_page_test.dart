@@ -28,21 +28,21 @@ void main() {
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
-      locale: const Locale('en'),
+      locale: Locale('en'),
       home: Flavor(
         data: const FlavorData(name: 'Ubuntu'),
         child: Wizard(
           routes: <String, WizardRoute>{
-            Routes.welcome: WizardRoute(builder: (_) => const WelcomePage()),
+            Routes.welcome: WizardRoute(builder: (_) => WelcomePage()),
             Routes.tryOrInstall:
-                WizardRoute(builder: (_) => const Text(Routes.tryOrInstall)),
+                WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
           },
         ),
       ),
     );
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async =>
-        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
@@ -73,7 +73,7 @@ void main() {
     for (final language in ['English', 'Français', 'Italiano']) {
       final listItem = find.descendant(
           of: languageList, matching: find.text(language), skipOffstage: false);
-      await tester.dragUntilVisible(listItem, languageList, const Offset(0, -10));
+      await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
       expect(listItem, findsOneWidget);
     }
 

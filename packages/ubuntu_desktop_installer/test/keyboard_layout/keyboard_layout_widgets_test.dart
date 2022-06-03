@@ -34,7 +34,7 @@ void main() {
 
   testWidgets('find key', (tester) async {
     await tester.pumpWidget(
-      tester.buildApp((_) => const DetectKeyboardLayoutView(keyPresent: 'x')),
+      tester.buildApp((_) => DetectKeyboardLayoutView(keyPresent: 'x')),
     );
 
     expect(find.byType(KeyPresentView), findsOneWidget);

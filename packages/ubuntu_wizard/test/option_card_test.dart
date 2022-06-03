@@ -46,7 +46,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: OptionCard(
-          title: const Text('title'),
+          title: Text('title'),
           selected: false,
           onSelected: () {},
         ),

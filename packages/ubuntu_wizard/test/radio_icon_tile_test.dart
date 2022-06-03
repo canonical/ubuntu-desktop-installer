@@ -10,7 +10,7 @@ void main() {
         home: Scaffold(
           body: Column(
             children: [
-              const RadioIconTile(
+              RadioIconTile(
                 icon: Icon(Icons.close),
                 title: Text('title'),
                 subtitle: Text('subtitle'),
@@ -19,8 +19,8 @@ void main() {
                 value: 1,
                 groupValue: 1,
                 onChanged: (_) {},
-                title: const Text('title'),
-                subtitle: const Text('subtitle'),
+                title: Text('title'),
+                subtitle: Text('subtitle'),
               ),
             ],
           ),

@@ -12,15 +12,15 @@ import 'allocate_disk_space_model_test.mocks.dart';
 void main() {
   final testDisks = <Disk>[
     testDisk(id: 'a', partitions: [
-      const Partition(number: 1),
+      Partition(number: 1),
     ]),
     testDisk(
       id: 'b',
       bootDevice: true,
       preserve: true,
       partitions: [
-        const Partition(number: 1),
-        const Partition(number: 2, grubDevice: true),
+        Partition(number: 1),
+        Partition(number: 2, grubDevice: true),
       ],
     ),
   ];
@@ -174,17 +174,17 @@ void main() {
   test('partition formats', () {
     expect(PartitionFormat.defaultValue, equals(PartitionFormat.ext4));
     expect(PartitionFormat.values.contains(PartitionFormat.ext4), isTrue);
-    expect(PartitionFormat.fromPartition(const Partition(format: 'ext4')),
+    expect(PartitionFormat.fromPartition(Partition(format: 'ext4')),
         equals(PartitionFormat.ext4));
-    expect(PartitionFormat.fromPartition(const Partition(format: 'unknown')), isNull);
+    expect(PartitionFormat.fromPartition(Partition(format: 'unknown')), isNull);
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk = testDisk(partitions: [const Gap(offset: 0, size: 1)]);
+    final emptyDisk = testDisk(partitions: [Gap(offset: 0, size: 1)]);
     final fullDisk = testDisk();
-    final normalDisk = emptyDisk.copyWith(partitions: [const Partition()]);
+    final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final mountedPartition =
-        emptyDisk.copyWith(partitions: [const Partition(mount: '/')]);
+        emptyDisk.copyWith(partitions: [Partition(mount: '/')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -299,7 +299,7 @@ void main() {
       return testDisk(
         partitions: [
           for (var i = 0; i < partitions; ++i) Partition(number: i),
-          const Gap(offset: 123, size: 456),
+          Gap(offset: 123, size: 456),
         ],
       );
     }
@@ -314,10 +314,10 @@ void main() {
     expect(model.selectedObjectIndex, equals(-1));
 
     // add partition -> select added partition
-    when(service.addPartition(testPartitions(2), const Gap(offset: 123, size: 456),
-            const Partition(size: 123, format: 'ext4', mount: '/tst')))
+    when(service.addPartition(testPartitions(2), Gap(offset: 123, size: 456),
+            Partition(size: 123, format: 'ext4', mount: '/tst')))
         .thenAnswer((_) async => [testPartitions(2)]);
-    await model.addPartition(model.selectedDisk!, const Gap(offset: 123, size: 456),
+    await model.addPartition(model.selectedDisk!, Gap(offset: 123, size: 456),
         size: 123, format: PartitionFormat.ext4, mount: '/tst');
     expect(model.selectedDiskIndex, equals(0));
     expect(model.selectedObjectIndex, equals(1));

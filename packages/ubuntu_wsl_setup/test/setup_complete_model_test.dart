@@ -23,7 +23,7 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
-    const methodChannel = MethodChannel('ubuntu_wizard');
+    final methodChannel = MethodChannel('ubuntu_wizard');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;

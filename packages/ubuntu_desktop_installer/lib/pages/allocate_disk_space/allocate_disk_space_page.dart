@@ -73,7 +73,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          const PartitionBar(),
+          PartitionBar(),
           const SizedBox(height: kContentSpacing / 2),
           const PartitionLegend(),
           const SizedBox(height: kContentSpacing / 2),

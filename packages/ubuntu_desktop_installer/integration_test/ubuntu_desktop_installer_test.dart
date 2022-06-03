@@ -132,7 +132,7 @@ void main() {
 
     await testWhoAreYouPage(
       tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pump();

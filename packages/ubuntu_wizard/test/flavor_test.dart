@@ -34,7 +34,7 @@ void main() {
           darkTheme: ThemeData.dark(),
           localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         ),
-        child: Builder(builder: (_) => const MaterialApp()),
+        child: Builder(builder: (_) => MaterialApp()),
       ),
     );
 

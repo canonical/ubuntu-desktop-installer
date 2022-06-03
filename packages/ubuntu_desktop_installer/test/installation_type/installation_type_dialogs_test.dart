@@ -23,7 +23,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
         value: model,
-        child: tester.buildApp((_) => const InstallationTypePage()),
+        child: tester.buildApp((_) => InstallationTypePage()),
       ),
     );
 
@@ -57,7 +57,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
         value: model,
-        child: tester.buildApp((_) => const InstallationTypePage()),
+        child: tester.buildApp((_) => InstallationTypePage()),
       ),
     );
 

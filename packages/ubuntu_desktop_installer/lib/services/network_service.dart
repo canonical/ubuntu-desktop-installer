@@ -25,13 +25,13 @@ class NetworkService extends NetworkManagerClient {
     return <String, Map<String, DBusValue>>{
       'connection': {
         'id': DBusString(ssid),
-        'type': const DBusString('802-11-wireless'),
+        'type': DBusString('802-11-wireless'),
       },
       '802-11-wireless': {
         'ssid': DBusArray.byte(ssid.codeUnits),
       },
       '802-11-wireless-security': {
-        'key-mgmt': const DBusString('wpa-psk'),
+        'key-mgmt': DBusString('wpa-psk'),
       },
     };
   }

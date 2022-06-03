@@ -36,7 +36,7 @@ void main() {
     model.automountEnabled = false;
     model.automountMountfstab = false;
 
-    const conf = WSLConfigurationAdvanced(
+    final conf = WSLConfigurationAdvanced(
       interopEnabled: true,
       interopAppendwindowspath: true,
       automountEnabled: false,

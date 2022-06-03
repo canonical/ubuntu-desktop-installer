@@ -18,7 +18,7 @@ class TurnOffBitLockerPage extends StatelessWidget {
     final client = getService<SubiquityClient>();
     return Provider(
       create: (_) => TurnOffBitLockerModel(client),
-      child: const TurnOffBitLockerPage(),
+      child: TurnOffBitLockerPage(),
     );
   }
 

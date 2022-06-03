@@ -11,8 +11,7 @@ void main() {
   test('initialization', () async {
     client = SubiquityClient();
     final isOpen = client.isOpen;
-    Future.delayed(const Duration(milliseconds: 1))
-        .then((_) => client.open(''));
+    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
     await expectLater(isOpen, completes);
     expect(await isOpen, isTrue);
   });
@@ -46,8 +45,7 @@ void main() {
     });
 
     test('source', () async {
-      const expected =
-          SourceSelectionAndSetting(sources: <SourceSelection>[
+      final expected = SourceSelectionAndSetting(sources: <SourceSelection>[
         SourceSelection(
             id: 'ubuntu-desktop',
             name: 'Ubuntu Desktop',
@@ -88,7 +86,7 @@ void main() {
     });
 
     test('keyboard', () async {
-      var ks = const KeyboardSetting(
+      var ks = KeyboardSetting(
         layout: 'us',
         variant: '',
         toggle: null,
@@ -161,7 +159,7 @@ void main() {
       var response = await client.addPartitionV2(
         disks.first,
         disks.first.partitions.whereType<Gap>().single,
-        const Partition(mount: '/foo', format: 'ext2'),
+        Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
@@ -209,7 +207,7 @@ void main() {
       var response = await client.addPartitionV2(
         disks.first,
         disks.first.partitions.whereType<Gap>().single,
-        const Partition(format: 'swap'),
+        Partition(format: 'swap'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
@@ -248,7 +246,7 @@ void main() {
       var response = await client.addPartitionV2(
         disks.first,
         disks.first.partitions.whereType<Gap>().single,
-        const Partition(mount: '/foo', format: 'ext2'),
+        Partition(mount: '/foo', format: 'ext2'),
       );
       expect(response.disks, isNotNull);
       expect(response.disks, hasLength(disks.length));
@@ -296,7 +294,7 @@ void main() {
     });
 
     test('identity', () async {
-      var newId = const IdentityData(
+      var newId = IdentityData(
         realname: 'ubuntu',
         username: 'ubuntu',
         cryptedPassword:
@@ -313,7 +311,7 @@ void main() {
       expect(id.hostname, 'ubuntu-desktop');
 
       // empty defaults for null values
-      newId = const IdentityData();
+      newId = IdentityData();
 
       // Server now throws exception if invalid username is POST'ed.
       expect(() async {
@@ -357,7 +355,7 @@ void main() {
     });
 
     test('ssh', () async {
-      var newSsh = const SSHData(
+      var newSsh = SSHData(
         installServer: true,
         allowPw: false,
         authorizedKeys: [],
@@ -370,7 +368,7 @@ void main() {
       expect(ssh.allowPw, false);
       expect(ssh.authorizedKeys, []);
 
-      newSsh = const SSHData(
+      newSsh = SSHData(
         installServer: false,
         allowPw: true,
         authorizedKeys: [],
@@ -465,7 +463,7 @@ void main() {
     });
 
     test('wslconfbase', () async {
-      var newConf = const WSLConfigurationBase(
+      var newConf = WSLConfigurationBase(
         automountRoot: '/mnt/',
         automountOptions: '-f',
         networkGeneratehosts: false,
@@ -480,7 +478,7 @@ void main() {
       expect(conf.networkGeneratehosts, false);
       expect(conf.networkGenerateresolvconf, false);
 
-      newConf = const WSLConfigurationBase(
+      newConf = WSLConfigurationBase(
         automountRoot: '',
         automountOptions: '',
         networkGeneratehosts: true,
@@ -497,7 +495,7 @@ void main() {
     });
 
     test('wslconfadvanced', () async {
-      var newConf = const WSLConfigurationAdvanced(
+      var newConf = WSLConfigurationAdvanced(
         automountEnabled: true,
         automountMountfstab: true,
         interopEnabled: true,
@@ -514,7 +512,7 @@ void main() {
       expect(conf.interopAppendwindowspath, true);
       expect(conf.systemdEnabled, false);
 
-      newConf = const WSLConfigurationAdvanced(
+      newConf = WSLConfigurationAdvanced(
         automountEnabled: false,
         automountMountfstab: false,
         interopEnabled: false,

@@ -39,7 +39,7 @@ void main() {
   Widget buildPage(AdvancedSetupModel model) {
     return ChangeNotifierProvider<AdvancedSetupModel>.value(
       value: model,
-      child: const AdvancedSetupPage(),
+      child: AdvancedSetupPage(),
     );
   }
 
@@ -139,7 +139,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.wslConfigurationBase())
-        .thenAnswer((_) async => const WSLConfigurationBase());
+        .thenAnswer((_) async => WSLConfigurationBase());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

@@ -22,7 +22,7 @@ void main() {
   Widget buildPage(ApplyingChangesModel model) {
     return ChangeNotifierProvider<ApplyingChangesModel>.value(
       value: model,
-      child: const ApplyingChangesPage(),
+      child: ApplyingChangesPage(),
     );
   }
 
@@ -37,8 +37,8 @@ void main() {
           ),
           if (hasNext)
             '/end': WizardRoute(
-              builder: (_) => const Center(
-                child: Text(theEnd),
+              builder: (_) => Center(
+                child: const Text(theEnd),
               ),
               onNext: (settings) => '/end',
             ),
@@ -52,7 +52,7 @@ void main() {
     when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
         .thenAnswer((realInvocation) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        realInvocation.namedArguments[const Symbol('onDoneTransition')]();
+        realInvocation.namedArguments[Symbol('onDoneTransition')]();
       });
     });
     await tester.pumpWidget(buildApp(model, hasNext: true));
@@ -66,12 +66,12 @@ void main() {
     when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
         .thenAnswer((realInvocation) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        realInvocation.namedArguments[const Symbol('onDoneTransition')]();
+        realInvocation.namedArguments[Symbol('onDoneTransition')]();
       });
     });
 
     final windowClosed = Completer();
-    const methodChannel = MethodChannel('ubuntu_wizard');
+    final methodChannel = MethodChannel('ubuntu_wizard');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('closeWindow'));
       windowClosed.complete();

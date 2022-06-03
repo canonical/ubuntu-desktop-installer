@@ -9,12 +9,12 @@ void main() {
     tester.binding.window.physicalSizeTestValue = const Size(600, 400);
 
     await tester.pumpWidget(
-      const Directionality(
+      Directionality(
         textDirection: TextDirection.ltr,
         child: FormLayout(
           rowSpacing: 10,
           columnSpacing: 20,
-          rows: [
+          rows: const [
             [
               SizedBox(key: Key('r0c0'), width: 100, height: 10),
               SizedBox(key: Key('r0c1'), width: 200, height: 10),
@@ -35,17 +35,17 @@ void main() {
       ),
     );
 
-    final r0c0 = tester.getRect(find.byKey(const Key('r0c0')));
-    final r0c1 = tester.getRect(find.byKey(const Key('r0c1')));
-    final r0c2 = tester.getRect(find.byKey(const Key('r0c2')));
+    final r0c0 = tester.getRect(find.byKey(Key('r0c0')));
+    final r0c1 = tester.getRect(find.byKey(Key('r0c1')));
+    final r0c2 = tester.getRect(find.byKey(Key('r0c2')));
 
-    final r1c0 = tester.getRect(find.byKey(const Key('r1c0')));
-    final r1c1 = tester.getRect(find.byKey(const Key('r1c1')));
-    final r1c2 = tester.getRect(find.byKey(const Key('r1c2')));
+    final r1c0 = tester.getRect(find.byKey(Key('r1c0')));
+    final r1c1 = tester.getRect(find.byKey(Key('r1c1')));
+    final r1c2 = tester.getRect(find.byKey(Key('r1c2')));
 
-    final r2c0 = tester.getRect(find.byKey(const Key('r2c0')));
-    final r2c1 = tester.getRect(find.byKey(const Key('r2c1')));
-    final r2c2 = tester.getRect(find.byKey(const Key('r2c2')));
+    final r2c0 = tester.getRect(find.byKey(Key('r2c0')));
+    final r2c1 = tester.getRect(find.byKey(Key('r2c1')));
+    final r2c2 = tester.getRect(find.byKey(Key('r2c2')));
 
     // rows are spaced and vertically centered
     expect(r0c0.top, isZero);

@@ -15,10 +15,10 @@ void main() {
     expect(
       await loadLocalizedLanguages(testLocales),
       equals([
-        const LocalizedLanguage('English', Locale('en', 'US')),
-        const LocalizedLanguage('Español', Locale('es', 'ES')),
-        const LocalizedLanguage('Français', Locale('fr', 'FR')),
-        const LocalizedLanguage('Русский', Locale('ru', 'RU')),
+        LocalizedLanguage('English', Locale('en', 'US')),
+        LocalizedLanguage('Español', Locale('es', 'ES')),
+        LocalizedLanguage('Français', Locale('fr', 'FR')),
+        LocalizedLanguage('Русский', Locale('ru', 'RU')),
       ]),
     );
   });
@@ -39,11 +39,11 @@ void main() {
     // full match
     expect(
       <LocalizedLanguage>[
-        const LocalizedLanguage('', localeFr),
-        const LocalizedLanguage('', localeEnUS),
-        const LocalizedLanguage('', localeFrFReuro),
-        const LocalizedLanguage('', localeFrCA),
-        const LocalizedLanguage('', localeFrFR),
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEnUS),
+        LocalizedLanguage('', localeFrFReuro),
+        LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
       ].findBestMatch(localeFrFReuro),
       equals(2),
     );
@@ -51,10 +51,10 @@ void main() {
     // matching language and country
     expect(
       <LocalizedLanguage>[
-        const LocalizedLanguage('', localeFr),
-        const LocalizedLanguage('', localeEnUS),
-        const LocalizedLanguage('', localeFrCA),
-        const LocalizedLanguage('', localeFrFR),
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEnUS),
+        LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
       ].findBestMatch(localeFrFReuro),
       equals(3),
     );
@@ -62,9 +62,9 @@ void main() {
     // matching language
     expect(
       <LocalizedLanguage>[
-        const LocalizedLanguage('', localeFr),
-        const LocalizedLanguage('', localeEnUS),
-        const LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEnUS),
+        LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeFrFReuro),
       equals(0),
     );
@@ -72,9 +72,9 @@ void main() {
     // no match -> en
     expect(
       <LocalizedLanguage>[
-        const LocalizedLanguage('', localeFr),
-        const LocalizedLanguage('', localeEnUS),
-        const LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFr),
+        LocalizedLanguage('', localeEnUS),
+        LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeEs),
       equals(1),
     );
@@ -82,9 +82,9 @@ void main() {
     // country mismatch -> en
     expect(
       <LocalizedLanguage>[
-        const LocalizedLanguage('', localeFrFR),
-        const LocalizedLanguage('', localeEnUS),
-        const LocalizedLanguage('', localeFrCA),
+        LocalizedLanguage('', localeFrFR),
+        LocalizedLanguage('', localeEnUS),
+        LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeFrBE),
       equals(1),
     );

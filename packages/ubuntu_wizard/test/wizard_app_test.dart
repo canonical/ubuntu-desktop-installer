@@ -45,7 +45,7 @@ void main() {
         .thenAnswer((_) async => '');
 
     await runWizardApp(
-      const SizedBox(),
+      SizedBox(),
       subiquityClient: client,
       subiquityServer: server,
     );
@@ -118,7 +118,7 @@ void main() {
         .thenAnswer((_) async => '/tmp/subiquity.sock');
 
     await runWizardApp(
-      const SizedBox(),
+      SizedBox(),
       subiquityServer: server,
       subiquityMonitor: monitor,
       subiquityClient: MockSubiquityClient(),

@@ -104,9 +104,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                               ? Theme.of(context).errorColor
                               : null),
                     ),
-                    const Spacer(),
+                    Spacer(),
                     IconButton(
-                      icon: const Icon(Icons.terminal),
+                      icon: Icon(Icons.terminal),
                       color: model.isLogVisible
                           ? Theme.of(context).primaryColor
                           : null,

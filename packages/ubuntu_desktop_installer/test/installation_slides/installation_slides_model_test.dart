@@ -14,7 +14,7 @@ import 'installation_slides_model_test.mocks.dart';
 @GenerateMocks([JournalService])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
-  const methodChannel = MethodChannel('ubuntu_wizard');
+  final methodChannel = MethodChannel('ubuntu_wizard');
 
   setUp(() {
     methodChannel.setMockMethodCallHandler((_) async {});

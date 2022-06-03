@@ -79,7 +79,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               padding: fieldPadding,
               child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
-            const Padding(
+            Padding(
               padding: kContentPadding,
               child: _ShowPasswordCheckButton(),
             ),

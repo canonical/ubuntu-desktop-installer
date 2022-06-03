@@ -17,7 +17,7 @@ void main() {
   Widget buildPage(InstallationCompleteModel model) {
     return Provider<InstallationCompleteModel>.value(
       value: model,
-      child: const InstallationCompletePage(),
+      child: InstallationCompletePage(),
     );
   }
 

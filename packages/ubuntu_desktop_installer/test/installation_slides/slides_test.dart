@@ -16,16 +16,16 @@ import 'slides_test.mocks.dart';
 void main() {
   testWidgets('inherited slides', (tester) async {
     final slide1 = Slide(
-      title: (_) => const Text('title1'),
-      body: (_) => const Text('body1'),
+      title: (_) => Text('title1'),
+      body: (_) => Text('body1'),
     );
 
     final slide2 = Slide(
-      title: (_) => const Text('title2'),
-      body: (_) => const Text('body2'),
+      title: (_) => Text('title2'),
+      body: (_) => Text('body2'),
     );
 
-    final widget = SlidesContext(slides: [slide1, slide2], child: const Text('page'));
+    final widget = SlidesContext(slides: [slide1, slide2], child: Text('page'));
     await tester.pumpWidget(MaterialApp(home: widget));
 
     final context = tester.element(find.text('page'));
@@ -39,13 +39,13 @@ void main() {
 
     expect(
       widget.updateShouldNotify(
-        SlidesContext(slides: [slide1, slide2], child: const Text('page')),
+        SlidesContext(slides: [slide1, slide2], child: Text('page')),
       ),
       isFalse,
     );
     expect(
       widget.updateShouldNotify(
-        SlidesContext(slides: [slide2, slide1], child: const Text('page')),
+        SlidesContext(slides: [slide2, slide1], child: Text('page')),
       ),
       isTrue,
     );
@@ -62,11 +62,11 @@ void main() {
         MaterialApp(
           home: Center(
             child: SlideLayout(
-              content: const Text('content'),
+              content: Text('content'),
               contentAlignment: contentAlignment,
-              image: const Text('image'),
+              image: Text('image'),
               imageAlignment: imageAlignment,
-              background: const SizedBox(width: 200, height: 200),
+              background: SizedBox(width: 200, height: 200),
               padding: padding,
             ),
           ),
@@ -99,19 +99,19 @@ void main() {
       tester,
       contentAlignment: Alignment.topLeft,
       imageAlignment: Alignment.bottomRight,
-      padding: const EdgeInsets.fromLTRB(1, 2, 3, 4),
+      padding: EdgeInsets.fromLTRB(1, 2, 3, 4),
     );
 
     expect(tester.getTopLeft(content),
-        equals(tester.getTopLeft(layout) + const Offset(1, 2)));
+        equals(tester.getTopLeft(layout) + Offset(1, 2)));
     expect(tester.getBottomRight(image),
-        equals(tester.getBottomRight(layout) - const Offset(3, 4)));
+        equals(tester.getBottomRight(layout) - Offset(3, 4)));
     expect(tester.getRect(background), equals(tester.getRect(layout)));
   });
 
   testWidgets('slide card', (tester) async {
     await tester.pumpWidget(
-      const MaterialApp(
+      MaterialApp(
         home: Center(
           child: SlideCard(
             width: 123.4,

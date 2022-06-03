@@ -10,7 +10,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
-        return const PasswordStrengthLabel(strength: PasswordStrength.weak);
+        return PasswordStrengthLabel(strength: PasswordStrength.weak);
       }),
     ));
 
@@ -28,7 +28,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
-        return const PasswordStrengthLabel(strength: PasswordStrength.fair);
+        return PasswordStrengthLabel(strength: PasswordStrength.fair);
       }),
     ));
 
@@ -44,7 +44,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
-        return const PasswordStrengthLabel(strength: PasswordStrength.good);
+        return PasswordStrengthLabel(strength: PasswordStrength.good);
       }),
     ));
 
@@ -60,7 +60,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       home: Builder(builder: (context) {
-        return const PasswordStrengthLabel(strength: PasswordStrength.strong);
+        return PasswordStrengthLabel(strength: PasswordStrength.strong);
       }),
     ));
 

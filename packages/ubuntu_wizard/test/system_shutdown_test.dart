@@ -19,7 +19,7 @@ void main() async {
 
   Future<void> testSystemShutdown(SystemShutdownTester tester) async {
     var windowClosed = false;
-    const methodChannel = MethodChannel('ubuntu_wizard');
+    final methodChannel = MethodChannel('ubuntu_wizard');
     methodChannel.setMockMethodCallHandler((call) async {
       expect(call.method, equals('closeWindow'));
       windowClosed = true;
