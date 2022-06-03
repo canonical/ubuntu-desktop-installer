@@ -12,34 +12,34 @@ void main() {
     path: '/dev/sdb',
     size: 22,
     partitions: [
-      Partition(number: 1, size: 2211),
-      Gap(offset: 2211, size: 2222),
+      const Partition(number: 1, size: 2211),
+      const Gap(offset: 2211, size: 2222),
     ],
   );
   final sdc = testDisk(
     path: '/dev/sdc',
     size: 33,
     partitions: [
-      Partition(number: 1, size: 3311),
-      Partition(number: 2, size: 3322),
-      Gap(offset: 3322, size: 3333),
+      const Partition(number: 1, size: 3311),
+      const Partition(number: 2, size: 3322),
+      const Gap(offset: 3322, size: 3333),
     ],
   );
   final sdd = testDisk(
     path: '/dev/sdd',
     size: 44,
     partitions: [
-      Partition(number: 1, size: 4411),
-      Partition(number: 2, size: 4422),
-      Partition(number: 3, size: 4433),
-      Gap(offset: 4433, size: 4444),
+      const Partition(number: 1, size: 4411),
+      const Partition(number: 2, size: 4422),
+      const Partition(number: 3, size: 4433),
+      const Gap(offset: 4433, size: 4444),
     ],
   );
 
   final pathColumn = StorageColumn(
     titleBuilder: (_) => const Text('path'),
     diskBuilder: (_, disk) => Text(disk.path!),
-    gapBuilder: (_, disk, gap) => SizedBox.shrink(),
+    gapBuilder: (_, disk, gap) => const SizedBox.shrink(),
     partitionBuilder: (_, disk, partition) {
       return Text('${disk.path}${partition.number}');
     },

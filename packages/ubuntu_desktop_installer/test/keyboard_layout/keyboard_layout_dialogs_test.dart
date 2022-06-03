@@ -16,16 +16,16 @@ void main() {
   testWidgets('detect layout', (tester) async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return AnyStep.stepPressKey(symbols: ['a'], keycodes: {30: '40'});
+      return const AnyStep.stepPressKey(symbols: ['a'], keycodes: {30: '40'});
     });
     when(client.getKeyboardStep('40')).thenAnswer((_) async {
-      return AnyStep.stepKeyPresent(symbol: 'b', yes: '50', no: '');
+      return const AnyStep.stepKeyPresent(symbol: 'b', yes: '50', no: '');
     });
     when(client.getKeyboardStep('50')).thenAnswer((_) async {
-      return AnyStep.stepKeyPresent(symbol: 'c', yes: '', no: '60');
+      return const AnyStep.stepKeyPresent(symbol: 'c', yes: '', no: '60');
     });
     when(client.getKeyboardStep('60')).thenAnswer((_) async {
-      return AnyStep.stepResult(layout: 'd', variant: 'e');
+      return const AnyStep.stepResult(layout: 'd', variant: 'e');
     });
     registerMockService<SubiquityClient>(client);
 
@@ -69,6 +69,6 @@ void main() {
     verify(client.getKeyboardStep('60')).called(1);
 
     // result
-    expect(await result, equals(StepResult(layout: 'd', variant: 'e')));
+    expect(await result, equals(const StepResult(layout: 'd', variant: 'e')));
   });
 }

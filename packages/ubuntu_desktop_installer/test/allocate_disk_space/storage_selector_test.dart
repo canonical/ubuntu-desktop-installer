@@ -51,7 +51,7 @@ void main() {
 
     final dropdownItem = find.descendant(
       of: find.byType(DropdownMenuItem<int>),
-      matching: find.byKey(ValueKey(1)),
+      matching: find.byKey(const ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);
     await tester.tap(dropdownItem.last);

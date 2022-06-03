@@ -8,7 +8,7 @@ export 'l10n/app_localizations.dart';
 /// All supported locales for the Ubuntu Desktop Installer.
 final List<Locale> supportedLocales = {
   const Locale('en'), // make sure 'en' comes first (#512)
-  ...List.of(AppLocalizations.supportedLocales)..remove(Locale('en')),
+  ...List.of(AppLocalizations.supportedLocales)..remove(const Locale('en')),
 }.toList();
 
 /// All localization delegates for the Ubuntu Desktop Installer.
