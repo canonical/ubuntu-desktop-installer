@@ -6,6 +6,8 @@ import 'package:path/path.dart' as p;
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:xdg_directories/xdg_directories.dart' as xdg;
 
+import 'endpoint.dart';
+
 enum ServerMode { LIVE, DRY_RUN }
 
 /// @internal
@@ -26,7 +28,7 @@ abstract class SubiquityServer {
   /// the server has been started and thus, the application is ready for
   /// integration testing.
   @visibleForTesting
-  static void Function(String socketPath)? startupCallback;
+  static void Function(Endpoint)? startupCallback;
 
   // Whether the server process should be started in the specified mode.
   bool _shouldStart(ServerMode mode);
@@ -83,9 +85,10 @@ abstract class SubiquityServer {
     return {'PYTHONPATH': pythonPath.join(':')};
   }
 
-  Future<String> start(ServerMode serverMode,
+  Future<Endpoint> start(ServerMode serverMode,
       {List<String>? args, Map<String, String>? environment}) async {
     final socketPath = await _getSocketPath(serverMode);
+    final endpoint = Endpoint.unix(socketPath);
     if (_shouldStart(serverMode)) {
       var subiquityCmd = <String>[
         '-m',
@@ -96,9 +99,9 @@ abstract class SubiquityServer {
       await _startSubiquity(serverMode, subiquityCmd, environment);
     }
 
-    return _waitSubiquity(socketPath).then((_) {
-      startupCallback?.call(socketPath);
-      return socketPath;
+    return _waitSubiquity(endpoint).then((_) {
+      startupCallback?.call(endpoint);
+      return endpoint;
     });
   }
 
@@ -148,11 +151,10 @@ abstract class SubiquityServer {
     await _writePidFile(_serverProcess!.pid);
   }
 
-  static Future<void> _waitSubiquity(String socketPath) async {
+  static Future<void> _waitSubiquity(Endpoint endpoint) async {
     final client = HttpClient();
     client.connectionFactory = (uri, proxyHost, proxyPort) async {
-      var address = InternetAddress(socketPath, type: InternetAddressType.unix);
-      return Socket.startConnect(address, 0);
+      return Socket.startConnect(endpoint.address, endpoint.port);
     };
 
     // allow 10s maximum for the server to start responding

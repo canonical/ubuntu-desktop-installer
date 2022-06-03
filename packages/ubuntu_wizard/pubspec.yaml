@@ -37,6 +37,7 @@ dependencies:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
   url_launcher: ^6.1.0
+  window_manager: ^0.2.5
   wizard_router: ^0.8.0
   yaru: ^0.3.2
 
@@ -50,9 +51,3 @@ dev_dependencies:
   ubuntu_test:
     path: ../ubuntu_test
   url_launcher_platform_interface: ^2.0.5
-
-flutter:
-  plugin:
-    platforms:
-      linux:
-        pluginClass: UbuntuWizardPlugin

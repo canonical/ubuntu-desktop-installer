@@ -93,8 +93,8 @@ class MockSubiquityStatusMonitor extends _i1.Mock
               returnValue: Stream<_i6.ApplicationStatus?>.empty())
           as _i4.Stream<_i6.ApplicationStatus?>);
   @override
-  _i4.Future<bool> start(String? socketPath) =>
-      (super.noSuchMethod(Invocation.method(#start, [socketPath]),
+  _i4.Future<bool> start(_i3.InternetAddress? address, {int? port = 0}) =>
+      (super.noSuchMethod(Invocation.method(#start, [address], {#port: port}),
           returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
   @override
   _i4.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),

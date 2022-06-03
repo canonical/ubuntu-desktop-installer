@@ -101,7 +101,7 @@ Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
 /// Waits for the subiquity server to be ready for integration testing.
 Future<void> waitForSubiquityServer() async {
   final startup = Completer();
-  callback(String socketPath) => startup.complete();
+  callback(Endpoint endpoint) => startup.complete();
 
   SubiquityServer.startupCallback = callback;
   addTearDown(() => SubiquityServer.startupCallback = null);
@@ -121,13 +121,16 @@ Future<void> cleanUpSubiquity() async {
 /// to proceed to the next test case.
 Future<bool> waitForWindowClosed() {
   final completer = Completer<bool>();
-  final methodChannel = MethodChannel('ubuntu_wizard');
-
+  final methodChannel = MethodChannel('window_manager');
   methodChannel.setMockMethodCallHandler((call) async {
-    if (call.method == 'closeWindow') {
-      await _testCloseWindow();
-      completer.complete(true);
-      methodChannel.setMockMethodCallHandler(null);
+    switch (call.method) {
+      case 'close':
+        await _testCloseWindow();
+        break;
+      case 'destroy':
+        completer.complete(true);
+        methodChannel.setMockMethodCallHandler(null);
+        break;
     }
   });
 
@@ -137,9 +140,10 @@ Future<bool> waitForWindowClosed() {
 // Sends a platform message to simulate the window being closed, to trigger the
 // application exit routine.
 Future<void> _testCloseWindow() async {
+  final call = MethodCall('onEvent', const {'eventName': 'close'});
   await ServicesBinding.instance.defaultBinaryMessenger.handlePlatformMessage(
-    'ubuntu_wizard/events',
-    StandardMethodCodec().encodeSuccessEnvelope('deleteEvent'),
+    'window_manager',
+    StandardMethodCodec().encodeMethodCall(call),
     (_) {},
   );
 }
