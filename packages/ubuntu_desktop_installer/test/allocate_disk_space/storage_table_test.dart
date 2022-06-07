@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_table
 import '../test_utils.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   final sda = testDisk(path: '/dev/sda', size: 11);
   final sdb = testDisk(
     path: '/dev/sdb',

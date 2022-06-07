@@ -6,6 +6,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_d
 import 'package:ubuntu_test/mocks.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {

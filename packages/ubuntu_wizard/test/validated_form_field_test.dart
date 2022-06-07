@@ -5,6 +5,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('input validation', (tester) async {
     await tester.pumpWidget(
       MaterialApp(

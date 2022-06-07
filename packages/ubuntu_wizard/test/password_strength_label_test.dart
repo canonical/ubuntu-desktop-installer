@@ -6,6 +6,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('weak password', (tester) async {
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,

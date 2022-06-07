@@ -14,6 +14,7 @@ import 'wizard_app_test.mocks.dart';
 
 @GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
+  // ignore_for_file: type=lint
   final endpoint = Endpoint.unix('socket path');
   tearDown(() => unregisterMockService<SubiquityClient>());
 

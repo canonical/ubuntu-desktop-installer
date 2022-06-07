@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('layout', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = const Size(600, 400);

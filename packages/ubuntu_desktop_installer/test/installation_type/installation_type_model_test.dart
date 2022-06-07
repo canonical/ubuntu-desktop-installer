@@ -11,6 +11,7 @@ import 'installation_type_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
+  // ignore_for_file: type=lint
   test('init existing OS', () async {
     const ubuntu2110 = OsProber(
       long: 'Ubuntu 21.10',

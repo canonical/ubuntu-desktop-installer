@@ -6,6 +6,7 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/setup_complete/setup_complete_model.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   test('init model', () async {
     const identity = IdentityData(username: 'ubuntu');
 

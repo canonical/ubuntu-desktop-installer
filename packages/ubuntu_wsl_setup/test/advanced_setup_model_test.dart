@@ -5,6 +5,7 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   test('load advanced setup', () async {
     const conf = WSLConfigurationBase(
       automountRoot: 'path',

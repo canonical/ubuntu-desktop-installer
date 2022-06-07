@@ -35,6 +35,7 @@ import 'connect_to_internet_page_test.mocks.dart';
   WifiDevice,
 ])
 void main() {
+  // ignore_for_file: type=lint
   setUpAll(() async {
     await setupAppLocalizations();
   });

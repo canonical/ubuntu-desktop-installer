@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   TestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('reacts to tap', (tester) async {

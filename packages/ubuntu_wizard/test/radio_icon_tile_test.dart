@@ -4,6 +4,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('icon & radio geometries match ', (tester) async {
     await tester.pumpWidget(
       MaterialApp(

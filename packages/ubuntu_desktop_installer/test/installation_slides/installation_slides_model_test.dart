@@ -13,6 +13,7 @@ import 'installation_slides_model_test.mocks.dart';
 
 @GenerateMocks([JournalService])
 void main() async {
+  // ignore_for_file: type=lint
   TestWidgetsFlutterBinding.ensureInitialized();
   final methodChannel = MethodChannel('window_manager');
 

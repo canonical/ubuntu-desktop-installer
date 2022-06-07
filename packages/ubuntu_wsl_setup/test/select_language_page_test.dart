@@ -17,6 +17,7 @@ import 'test_utils.dart';
 
 @GenerateMocks([SelectLanguageModel])
 void main() {
+  // ignore_for_file: type=lint
   LangTester.type = SelectLanguagePage;
 
   SelectLanguageModel buildModel() {

@@ -15,6 +15,7 @@ class TestSystemShutdown with SystemShutdown {
 }
 
 void main() async {
+  // ignore_for_file: type=lint
   setUpAll(TestWidgetsFlutterBinding.ensureInitialized);
 
   Future<void> testSystemShutdown(SystemShutdownTester tester) async {

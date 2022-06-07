@@ -11,6 +11,7 @@ import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('select zfs', (tester) async {

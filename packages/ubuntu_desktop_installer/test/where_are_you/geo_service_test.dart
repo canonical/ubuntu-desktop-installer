@@ -10,6 +10,7 @@ const kGeonameUrl = 'http://lookup.geoname.org';
 
 @GenerateMocks([Dio, GeoSource])
 void main() {
+  // ignore_for_file: type=lint
   test('service sources', () async {
     final source1 = MockGeoSource();
     when(source1.searchLocation('foo'))

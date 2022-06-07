@@ -14,6 +14,7 @@ import 'select_guided_storage_page_test.mocks.dart';
 
 @GenerateMocks([SelectGuidedStorageModel])
 void main() {
+  // ignore_for_file: type=lint
   final testStorages = <Disk>[
     testDisk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
     testDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),

@@ -16,6 +16,7 @@ import 'test_utils.dart';
 
 @GenerateMocks([SetupCompleteModel])
 void main() {
+  // ignore_for_file: type=lint
   LangTester.type = SetupCompletePage;
 
   SetupCompleteModel buildModel({String? username}) {

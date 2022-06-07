@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   group('parseLocale', () {
     test('empty and C locales', () {
       expect(parseLocale(''), Locale('C'));

@@ -14,6 +14,7 @@ import 'turn_off_rst_page_test.mocks.dart';
 
 @GenerateMocks([TurnOffRSTModel, UrlLauncher])
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('restart', (tester) async {
     final model = MockTurnOffRSTModel();
 

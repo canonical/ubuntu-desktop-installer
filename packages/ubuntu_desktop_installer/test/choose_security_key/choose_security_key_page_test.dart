@@ -14,6 +14,7 @@ import 'choose_security_key_page_test.mocks.dart';
 
 @GenerateMocks([ChooseSecurityKeyModel])
 void main() {
+  // ignore_for_file: type=lint
   ChooseSecurityKeyModel buildModel({
     bool? isValid,
     String? securityKey,

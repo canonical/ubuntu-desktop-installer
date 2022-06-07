@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_w
 import '../test_utils.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 
   testWidgets('press key', (tester) async {

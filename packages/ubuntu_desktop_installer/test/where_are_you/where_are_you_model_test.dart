@@ -10,6 +10,7 @@ import 'where_are_you_model_test.mocks.dart';
 
 @GenerateMocks([GeoService])
 void main() {
+  // ignore_for_file: type=lint
   test('init', () async {
     final location = GeoLocation(name: 'Stockholm');
 

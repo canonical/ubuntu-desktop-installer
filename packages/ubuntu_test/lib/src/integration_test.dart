@@ -9,7 +9,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'widget_testers.dart';
-
+// ignore_for_file: type=lint
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
 /// The path to the `.subiquity` directory.

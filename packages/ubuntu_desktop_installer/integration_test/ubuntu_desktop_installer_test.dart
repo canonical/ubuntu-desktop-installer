@@ -21,6 +21,7 @@ import 'package:yaml/yaml.dart';
 import '../test/test_utils.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async => await cleanUpSubiquity());

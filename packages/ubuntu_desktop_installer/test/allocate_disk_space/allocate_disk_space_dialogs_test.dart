@@ -15,6 +15,7 @@ import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {

@@ -5,6 +5,7 @@ import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('data class', (tester) async {
     final flavor1 = FlavorData(
       name: 'Test Flavor 1',

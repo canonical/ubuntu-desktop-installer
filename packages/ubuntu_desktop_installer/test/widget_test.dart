@@ -17,6 +17,7 @@ import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
     // Build our app and trigger a frame.
     TestWidgetsFlutterBinding.ensureInitialized();

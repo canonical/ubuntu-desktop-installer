@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_selec
 import '../test_utils.dart';
 
 void main() {
+  // ignore_for_file: type=lint
   testWidgets('initial selection', (tester) async {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
