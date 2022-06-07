@@ -23,12 +23,14 @@ class HiddenWifiRadioButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<HiddenWifiModel>(context);
-    if (!model.isEnabled || model.devices.isEmpty) return SizedBox.shrink();
+    if (!model.isEnabled || model.devices.isEmpty) {
+      return const SizedBox.shrink();
+    }
 
     final lang = AppLocalizations.of(context);
     return RadioButton<ConnectMode>(
       title: Text(lang.hiddenWifiNetwork),
-      contentPadding: EdgeInsets.only(top: 8),
+      contentPadding: const EdgeInsets.only(top: 8),
       value: ConnectMode.hiddenWifi,
       groupValue: value,
       onChanged: onChanged,
@@ -74,7 +76,9 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<HiddenWifiModel>(context);
-    if (!model.isEnabled || model.devices.isEmpty) return SizedBox.shrink();
+    if (!model.isEnabled || model.devices.isEmpty) {
+      return const SizedBox.shrink();
+    }
 
     return AnimatedExpanded(
       expanded: widget.expanded,

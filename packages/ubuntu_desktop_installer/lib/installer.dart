@@ -174,7 +174,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget buildApp(BuildContext context) {
     switch (appStatus) {
       case AppStatus.loading:
-        return _UbuntuDesktopInstallerLoadingPage();
+        return const _UbuntuDesktopInstallerLoadingPage();
       case AppStatus.ready:
         return _UbuntuDesktopInstallerWizard(initialRoute: initialRoute);
     }
