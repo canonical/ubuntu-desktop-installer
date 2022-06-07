@@ -18,7 +18,6 @@ import 'try_or_install_page_test.mocks.dart';
 
 @GenerateMocks([Settings, UrlLauncher])
 void main() {
-  // ignore_for_file: type=lint
   late MaterialApp app;
   late TryOrInstallModel model;
 

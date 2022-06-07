@@ -13,7 +13,6 @@ import 'configure_secure_boot_page_test.mocks.dart';
 
 @GenerateMocks([ConfigureSecureBootModel])
 void main() {
-  // ignore_for_file: type=lint
   ConfigureSecureBootModel buildModel({
     bool? isFormValid,
     bool? isConfirmationKeyValid,

@@ -10,7 +10,6 @@ import 'write_changes_to_disk_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  // ignore_for_file: type=lint
   final testDisks = <Disk>[
     testDisk(
       id: 'a',

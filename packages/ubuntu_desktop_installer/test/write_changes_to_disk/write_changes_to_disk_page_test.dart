@@ -14,7 +14,6 @@ import 'write_changes_to_disk_model_test.mocks.dart';
 import 'write_changes_to_disk_page_test.mocks.dart';
 
 final testDisks = <Disk>[
-  // ignore_for_file: type=lint
   testDisk(
     path: '/dev/sda',
     size: 12,

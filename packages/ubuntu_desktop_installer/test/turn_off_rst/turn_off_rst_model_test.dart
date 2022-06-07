@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.d
 import 'package:ubuntu_test/mocks.dart';
 
 void main() async {
-  // ignore_for_file: type=lint
   test('reboot', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 

@@ -60,7 +60,7 @@ class RadioIconTile extends StatelessWidget {
                     .subtitle1!
                     .copyWith(color: textColor),
                 overflow: TextOverflow.ellipsis,
-                child: title ?? const SizedBox.shrink(),
+                child: title ?? SizedBox.shrink(),
               ),
             ],
           ),

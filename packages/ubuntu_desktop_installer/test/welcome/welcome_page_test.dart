@@ -17,7 +17,6 @@ import 'welcome_page_test.mocks.dart';
 
 @GenerateMocks([TelemetryService])
 void main() {
-  // ignore_for_file: type=lint
   late MaterialApp app;
 
   setUpAll(() async {

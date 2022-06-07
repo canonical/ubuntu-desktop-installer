@@ -15,7 +15,6 @@ import 'who_are_you_page_test.mocks.dart';
 
 @GenerateMocks([WhoAreYouModel])
 void main() {
-  // ignore_for_file: type=lint
   WhoAreYouModel buildModel({
     bool? isValid,
     String? realName,

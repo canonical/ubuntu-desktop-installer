@@ -18,7 +18,6 @@ import 'test_utils.dart';
 
 @GenerateMocks([ProfileSetupModel, UrlLauncher])
 void main() {
-  // ignore_for_file: type=lint
   LangTester.type = ProfileSetupPage;
 
   ProfileSetupModel buildModel({

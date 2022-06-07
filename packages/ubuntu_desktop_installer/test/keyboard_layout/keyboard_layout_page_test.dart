@@ -17,7 +17,6 @@ import 'keyboard_layout_page_test.mocks.dart';
 
 @GenerateMocks([KeyboardLayoutModel])
 void main() {
-  // ignore_for_file: type=lint
   KeyboardLayoutModel buildModel({
     bool? isValid,
     List<String>? layouts,

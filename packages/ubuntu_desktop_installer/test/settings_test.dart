@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 void main() {
-  // ignore_for_file: type=lint
   test('set gtk-theme via gsettings', () {
     final gsettings = MockGSettings();
     when(gsettings.set(any, any)).thenAnswer((_) async {});

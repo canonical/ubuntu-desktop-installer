@@ -14,7 +14,6 @@ import 'slides_test.mocks.dart';
 
 @GenerateMocks([UrlLauncher])
 void main() {
-  // ignore_for_file: type=lint
   testWidgets('inherited slides', (tester) async {
     final slide1 = Slide(
       title: (_) => Text('title1'),

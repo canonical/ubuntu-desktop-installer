@@ -10,7 +10,6 @@ import 'allocate_disk_space_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  // ignore_for_file: type=lint
   final testDisks = <Disk>[
     testDisk(id: 'a', partitions: [
       Partition(number: 1),

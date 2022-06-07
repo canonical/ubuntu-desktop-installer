@@ -14,7 +14,6 @@ import 'turn_off_bitlocker_page_test.mocks.dart';
 
 @GenerateMocks([TurnOffBitLockerModel, UrlLauncher])
 void main() {
-  // ignore_for_file: type=lint
   testWidgets('restart', (tester) async {
     final model = MockTurnOffBitLockerModel();
 

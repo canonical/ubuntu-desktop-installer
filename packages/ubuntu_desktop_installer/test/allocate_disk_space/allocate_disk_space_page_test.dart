@@ -16,7 +16,7 @@ import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 final selection = StreamController.broadcast();
-// ignore_for_file: type=lint
+
 final testDisks = <Disk>[
   testDisk(
     path: '/dev/sda',

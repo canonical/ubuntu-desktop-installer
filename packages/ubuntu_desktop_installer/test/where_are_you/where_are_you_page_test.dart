@@ -15,7 +15,6 @@ import 'where_are_you_page_test.mocks.dart';
 
 @GenerateMocks([WhereAreYouModel])
 void main() {
-  // ignore_for_file: type=lint
   WhereAreYouModel buildModel({
     bool? isInitialized,
     GeoLocation? selectedLocation,

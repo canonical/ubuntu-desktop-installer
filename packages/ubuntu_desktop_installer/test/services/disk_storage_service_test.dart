@@ -7,7 +7,6 @@ import 'package:ubuntu_test/mocks.dart';
 import '../test_utils.dart';
 
 void main() {
-  // ignore_for_file: type=lint
   final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
 
   late SubiquityClient client;

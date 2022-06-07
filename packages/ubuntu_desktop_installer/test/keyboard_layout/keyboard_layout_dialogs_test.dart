@@ -11,7 +11,6 @@ import 'package:ubuntu_test/mocks.dart';
 import '../test_utils.dart';
 
 void main() {
-  // ignore_for_file: type=lint
   setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 
   testWidgets('detect layout', (tester) async {

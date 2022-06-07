@@ -5,7 +5,6 @@ import 'package:ubuntu_desktop_installer/pages/installation_complete/installatio
 import 'package:ubuntu_test/mocks.dart';
 
 void main() async {
-  // ignore_for_file: type=lint
   test('reboot', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 

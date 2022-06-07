@@ -5,7 +5,6 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  // ignore_for_file: type=lint
   late SubiquityServer testServer;
   late SubiquityClient client;
 

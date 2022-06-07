@@ -26,7 +26,7 @@ class FormLayout extends StatelessWidget {
         .separated(rowSpacer);
 
     return Table(
-      defaultColumnWidth: const IntrinsicColumnWidth(),
+      defaultColumnWidth: IntrinsicColumnWidth(),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: children.toList(),
     );

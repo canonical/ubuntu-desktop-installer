@@ -11,7 +11,6 @@ import 'connect_to_internet_page_test.mocks.dart';
 
 @GenerateMocks([ConnectModel])
 void main() {
-  // ignore_for_file: type=lint
   test('connects the service', () async {
     final service = MockNetworkService();
     final model = ConnectToInternetModel(service);

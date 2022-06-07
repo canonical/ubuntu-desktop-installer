@@ -15,7 +15,6 @@ import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
 @GenerateMocks([AdvancedSetupModel])
 void main() {
   LangTester.type = AdvancedSetupPage;

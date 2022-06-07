@@ -16,7 +16,6 @@ class MockProductNameFile extends Mock implements File {
 }
 
 void main() {
-  // ignore_for_file: type=lint
   test('load identity', () async {
     const identity = IdentityData(
       realname: 'Ubuntu',

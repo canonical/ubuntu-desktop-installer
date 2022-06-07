@@ -26,7 +26,6 @@ KeyboardSetup testSetup(
 }
 
 void main() {
-  // ignore_for_file: type=lint
   group('detect layout and variant when', () {
     late MockSubiquityClient client;
     late KeyboardLayoutModel model;

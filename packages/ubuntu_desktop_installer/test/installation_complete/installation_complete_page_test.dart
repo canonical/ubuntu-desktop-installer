@@ -14,7 +14,6 @@ import 'installation_complete_page_test.mocks.dart';
 
 @GenerateMocks([InstallationCompleteModel])
 void main() {
-  // ignore_for_file: type=lint
   Widget buildPage(InstallationCompleteModel model) {
     return Provider<InstallationCompleteModel>.value(
       value: model,
