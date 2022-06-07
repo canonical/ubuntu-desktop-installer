@@ -28,7 +28,8 @@ class JsonMapConverter
 // subiquitycore.models.network
 class NetDevInfo {
   const NetDevInfo._();
-  factory NetDevInfo.fromJson(Map<String, dynamic> json) => NetDevInfo._();
+  factory NetDevInfo.fromJson(Map<String, dynamic> json) =>
+      const NetDevInfo._();
   Map<String, dynamic> toJson() => {};
 }
 
