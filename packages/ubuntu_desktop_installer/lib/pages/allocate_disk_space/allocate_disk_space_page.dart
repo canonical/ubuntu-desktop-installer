@@ -57,7 +57,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
       final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
       if (model.selectedDiskIndex != -1) {
         _scrollController.scrollToIndex(
-          hashList([model.selectedDiskIndex, model.selectedObjectIndex]),
+          Object.hashAll([model.selectedDiskIndex, model.selectedObjectIndex]),
         );
       }
     });
