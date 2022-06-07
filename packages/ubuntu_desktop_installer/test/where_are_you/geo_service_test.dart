@@ -295,13 +295,13 @@ void main() {
   });
 
   test('geodata timezone search', () async {
-    const dk = GeoLocation(
+    final dk = GeoLocation(
         country: 'Denmark', country2: 'DK', timezone: 'Europe/Copenhagen');
-    const fi = GeoLocation(
+    final fi = GeoLocation(
         country: 'Finland', country2: 'FI', timezone: 'Europe/Helsinki');
-    const no =
+    final no =
         GeoLocation(country: 'Norway', country2: 'NO', timezone: 'Europe/Oslo');
-    const se = GeoLocation(
+    final se = GeoLocation(
         country: 'Sweden', country2: 'SE', timezone: 'Europe/Stockholm');
 
     await geodata

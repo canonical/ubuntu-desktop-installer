@@ -24,18 +24,18 @@ void main() {
   Future<void> setUpApp(WidgetTester tester) async {
     model = TryOrInstallModel();
     final settings = MockSettings();
-    when(settings.locale).thenReturn(const Locale('en'));
+    when(settings.locale).thenReturn(Locale('en'));
 
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
-      locale: const Locale('en'),
+      locale: Locale('en'),
       home: Flavor(
         data: const FlavorData(name: 'Ubuntu'),
         child: Wizard(
           routes: {
             Routes.tryOrInstall: WizardRoute(
-              builder: (_) => const TryOrInstallPage(),
+              builder: (_) => TryOrInstallPage(),
               onNext: (settings) {
                 switch (model.option) {
                   case Option.repairUbuntu:
@@ -50,13 +50,13 @@ void main() {
               },
             ),
             Routes.repairUbuntu: WizardRoute(
-              builder: (context) => const Text(Routes.repairUbuntu),
+              builder: (context) => Text(Routes.repairUbuntu),
             ),
             Routes.tryUbuntu: WizardRoute(
-              builder: (context) => const Text(Routes.tryUbuntu),
+              builder: (context) => Text(Routes.tryUbuntu),
             ),
             Routes.keyboardLayout: WizardRoute(
-              builder: (context) => const Text(Routes.keyboardLayout),
+              builder: (context) => Text(Routes.keyboardLayout),
             ),
           },
         ),

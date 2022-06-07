@@ -46,7 +46,7 @@ void main() {
     await tester.tap(find.byType(DropdownButton<DataUnit>));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(const ValueKey(DataUnit.megabytes)).last);
+    await tester.tap(find.byKey(ValueKey(DataUnit.megabytes)).last);
     await tester.pump();
 
     expect(unit, equals(DataUnit.megabytes));

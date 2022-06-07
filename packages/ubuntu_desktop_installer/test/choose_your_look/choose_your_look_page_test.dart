@@ -24,7 +24,7 @@ void main() {
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      const AssetImage('assets/choose_your_look/light-theme.png'),
+      AssetImage('assets/choose_your_look/light-theme.png'),
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
@@ -32,7 +32,7 @@ void main() {
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      const AssetImage('assets/choose_your_look/dark-theme.png'),
+      AssetImage('assets/choose_your_look/dark-theme.png'),
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);

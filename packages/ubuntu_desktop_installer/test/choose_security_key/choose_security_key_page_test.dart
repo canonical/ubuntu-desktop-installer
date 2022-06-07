@@ -29,7 +29,7 @@ void main() {
   Widget buildPage(ChooseSecurityKeyModel model) {
     return ChangeNotifierProvider<ChooseSecurityKeyModel>.value(
       value: model,
-      child: const ChooseSecurityKeyPage(),
+      child: ChooseSecurityKeyPage(),
     );
   }
 
@@ -96,7 +96,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => const IdentityData());
+    when(client.identity()).thenAnswer((_) async => IdentityData());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(tester.buildApp(ChooseSecurityKeyPage.create));

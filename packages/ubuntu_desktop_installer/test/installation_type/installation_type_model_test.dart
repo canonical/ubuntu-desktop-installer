@@ -26,8 +26,8 @@ void main() {
     );
     final existingOS = [
       testDisk(partitions: [
-        const Partition(os: ubuntu2110),
-        const Partition(os: ubuntu2204),
+        Partition(os: ubuntu2110),
+        Partition(os: ubuntu2204),
       ]),
     ];
 

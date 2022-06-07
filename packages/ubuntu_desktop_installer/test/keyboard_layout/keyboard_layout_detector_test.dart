@@ -9,7 +9,7 @@ void main() {
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return const AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
+      return AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -23,13 +23,13 @@ void main() {
   test('key press', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(null)).thenAnswer((_) async {
-      return const AnyStep.stepPressKey(
+      return AnyStep.stepPressKey(
         symbols: ['a', 'b', 'c'],
         keycodes: {12: '34'},
       );
     });
     when(client.getKeyboardStep('34')).thenAnswer((_) async {
-      return const AnyStep.stepKeyPresent(symbol: '56', yes: '', no: '');
+      return AnyStep.stepKeyPresent(symbol: '56', yes: '', no: '');
     });
 
     final detector = KeyboardLayoutDetector(client);
@@ -51,13 +51,13 @@ void main() {
   test('key present', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep('78')).thenAnswer((_) async {
-      return const AnyStep.stepResult(layout: 'is', variant: 'present');
+      return AnyStep.stepResult(layout: 'is', variant: 'present');
     });
 
     late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: const AnyStep.stepKeyPresent(symbol: 'y', yes: '78', no: ''),
+      value: AnyStep.stepKeyPresent(symbol: 'y', yes: '78', no: ''),
       onResult: (value) => result = value,
     );
 
@@ -71,19 +71,19 @@ void main() {
     detector.removeListener(waitNotify.complete);
 
     expect(detector.value, isA<StepResult>());
-    expect(result, equals(const StepResult(layout: 'is', variant: 'present')));
+    expect(result, equals(StepResult(layout: 'is', variant: 'present')));
   });
 
   test('key not present', () async {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep('90')).thenAnswer((_) async {
-      return const AnyStep.stepResult(layout: 'not', variant: 'present');
+      return AnyStep.stepResult(layout: 'not', variant: 'present');
     });
 
     late AnyStep result;
     final detector = KeyboardLayoutDetector(
       client,
-      value: const AnyStep.stepKeyPresent(symbol: 'n', yes: '', no: '90'),
+      value: AnyStep.stepKeyPresent(symbol: 'n', yes: '', no: '90'),
       onResult: (value) => result = value,
     );
 
@@ -97,6 +97,6 @@ void main() {
     detector.removeListener(waitNotify.complete);
 
     expect(detector.value, isA<StepResult>());
-    expect(result, equals(const StepResult(layout: 'not', variant: 'present')));
+    expect(result, equals(StepResult(layout: 'not', variant: 'present')));
   });
 }

@@ -31,7 +31,7 @@ void main() {
 https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
     ''');
 
-    final url = model.releaseNotesURL(const Locale('fr'), fs: fs);
+    final url = model.releaseNotesURL(Locale('fr'), fs: fs);
     expect(url, equals('https://wiki.ubuntu.com/IntrepidReleaseNotes/fr'));
   });
 
@@ -47,7 +47,7 @@ version,codename,series,created,release,eol,eol-server,eol-esm
 5.04,Hoary Hedgehog,hoary,2004-10-20,2005-04-08,2006-10-31
     ''');
 
-    final url = model.releaseNotesURL(const Locale('en'), fs: fs);
+    final url = model.releaseNotesURL(Locale('en'), fs: fs);
     expect(url, equals('https://wiki.ubuntu.com/HoaryHedgehog/ReleaseNotes'));
   });
 
@@ -55,7 +55,7 @@ version,codename,series,created,release,eol,eol-server,eol-esm
     final model = TryOrInstallModel();
 
     final fs = MemoryFileSystem.test();
-    final url = model.releaseNotesURL(const Locale('en'), fs: fs);
+    final url = model.releaseNotesURL(Locale('en'), fs: fs);
     expect(url, equals('https://ubuntu.com/download/desktop'));
   });
 }
