@@ -114,18 +114,89 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.EXITED: 'EXITED',
 };
 
+_$_KeyFingerprint _$_$_KeyFingerprintFromJson(Map<String, dynamic> json) {
+  return _$_KeyFingerprint(
+    keytype: json['keytype'] as String,
+    fingerprint: json['fingerprint'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_KeyFingerprintToJson(_$_KeyFingerprint instance) =>
+    <String, dynamic>{
+      'keytype': instance.keytype,
+      'fingerprint': instance.fingerprint,
+    };
+
+_$_LiveSessionSSHInfo _$_$_LiveSessionSSHInfoFromJson(
+    Map<String, dynamic> json) {
+  return _$_LiveSessionSSHInfo(
+    username: json['username'] as String,
+    passwordKind: _$enumDecode(_$PasswordKindEnumMap, json['password_kind']),
+    password: json['password'] as String?,
+    authorizedKeyFingerprints:
+        (json['authorized_key_fingerprints'] as List<dynamic>)
+            .map((e) => KeyFingerprint.fromJson(e as Map<String, dynamic>))
+            .toList(),
+    ips: (json['ips'] as List<dynamic>).map((e) => e as String).toList(),
+    hostKeyFingerprints: (json['host_key_fingerprints'] as List<dynamic>)
+        .map((e) => KeyFingerprint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_LiveSessionSSHInfoToJson(
+        _$_LiveSessionSSHInfo instance) =>
+    <String, dynamic>{
+      'username': instance.username,
+      'password_kind': _$PasswordKindEnumMap[instance.passwordKind],
+      'password': instance.password,
+      'authorized_key_fingerprints':
+          instance.authorizedKeyFingerprints.map((e) => e.toJson()).toList(),
+      'ips': instance.ips,
+      'host_key_fingerprints':
+          instance.hostKeyFingerprints.map((e) => e.toJson()).toList(),
+    };
+
+const _$PasswordKindEnumMap = {
+  PasswordKind.NONE: 'NONE',
+  PasswordKind.KNOWN: 'KNOWN',
+  PasswordKind.UNKNOWN: 'UNKNOWN',
+};
+
+_$_RefreshStatus _$_$_RefreshStatusFromJson(Map<String, dynamic> json) {
+  return _$_RefreshStatus(
+    availability:
+        _$enumDecode(_$RefreshCheckStateEnumMap, json['availability']),
+    currentSnapVersion: json['current_snap_version'] as String? ?? '',
+    newSnapVersion: json['new_snap_version'] as String? ?? '',
+  );
+}
+
+Map<String, dynamic> _$_$_RefreshStatusToJson(_$_RefreshStatus instance) =>
+    <String, dynamic>{
+      'availability': _$RefreshCheckStateEnumMap[instance.availability],
+      'current_snap_version': instance.currentSnapVersion,
+      'new_snap_version': instance.newSnapVersion,
+    };
+
+const _$RefreshCheckStateEnumMap = {
+  RefreshCheckState.UNKNOWN: 'UNKNOWN',
+  RefreshCheckState.AVAILABLE: 'AVAILABLE',
+  RefreshCheckState.UNAVAILABLE: 'UNAVAILABLE',
+};
+
 _$StepPressKey _$_$StepPressKeyFromJson(Map<String, dynamic> json) {
   return _$StepPressKey(
     symbols:
         (json['symbols'] as List<dynamic>).map((e) => e as String).toList(),
-    keycodes: _keycodesFromJson(json['keycodes'] as List),
+    keycodes: const JsonMapConverter().fromJson(json['keycodes'] as List),
   );
 }
 
 Map<String, dynamic> _$_$StepPressKeyToJson(_$StepPressKey instance) =>
     <String, dynamic>{
       'symbols': instance.symbols,
-      'keycodes': _keycodesToJson(instance.keycodes),
+      'keycodes': const JsonMapConverter().toJson(instance.keycodes),
     };
 
 _$StepKeyPresent _$_$StepKeyPresentFromJson(Map<String, dynamic> json) {
@@ -256,6 +327,56 @@ Map<String, dynamic> _$_$_SourceSelectionAndSettingToJson(
       'search_drivers': instance.searchDrivers,
     };
 
+_$_ZdevInfo _$_$_ZdevInfoFromJson(Map<String, dynamic> json) {
+  return _$_ZdevInfo(
+    id: json['id'] as String,
+    type: json['type'] as String,
+    on: json['on'] as bool,
+    exists: json['exists'] as bool,
+    pers: json['pers'] as bool,
+    auto: json['auto'] as bool,
+    failed: json['failed'] as bool,
+    names: json['names'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_ZdevInfoToJson(_$_ZdevInfo instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': instance.type,
+      'on': instance.on,
+      'exists': instance.exists,
+      'pers': instance.pers,
+      'auto': instance.auto,
+      'failed': instance.failed,
+      'names': instance.names,
+    };
+
+_$_NetworkStatus _$_$_NetworkStatusFromJson(Map<String, dynamic> json) {
+  return _$_NetworkStatus(
+    devices: (json['devices'] as List<dynamic>)
+        .map((e) => NetDevInfo.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    wlanSupportInstallState: _$enumDecode(
+        _$WLANSupportInstallStateEnumMap, json['wlan_support_install_state']),
+  );
+}
+
+Map<String, dynamic> _$_$_NetworkStatusToJson(_$_NetworkStatus instance) =>
+    <String, dynamic>{
+      'devices': instance.devices.map((e) => e.toJson()).toList(),
+      'wlan_support_install_state':
+          _$WLANSupportInstallStateEnumMap[instance.wlanSupportInstallState],
+    };
+
+const _$WLANSupportInstallStateEnumMap = {
+  WLANSupportInstallState.NOT_NEEDED: 'NOT_NEEDED',
+  WLANSupportInstallState.NOT_AVAILABLE: 'NOT_AVAILABLE',
+  WLANSupportInstallState.INSTALLING: 'INSTALLING',
+  WLANSupportInstallState.FAILED: 'FAILED',
+  WLANSupportInstallState.DONE: 'DONE',
+};
+
 _$_OsProber _$_$_OsProberFromJson(Map<String, dynamic> json) {
   return _$_OsProber(
     long: json['long'] as String,
@@ -337,7 +458,7 @@ _$_Disk _$_$_DiskFromJson(Map<String, dynamic> json) {
         .map((e) => e as String)
         .toList(),
     partitions: (json['partitions'] as List<dynamic>)
-        .map((e) => DiskObject.fromJson(e as Map<String, dynamic>))
+        .map((e) => PartitionOrGap.fromJson(e as Map<String, dynamic>))
         .toList(),
     okForGuided: json['ok_for_guided'] as bool,
     ptable: json['ptable'] as String?,
@@ -474,6 +595,48 @@ Map<String, dynamic> _$_$_StorageResponseV2ToJson(
       'error_report': instance.errorReport?.toJson(),
     };
 
+_$_AddPartitionV2 _$_$_AddPartitionV2FromJson(Map<String, dynamic> json) {
+  return _$_AddPartitionV2(
+    diskId: json['disk_id'] as String,
+    partition: Partition.fromJson(json['partition'] as Map<String, dynamic>),
+    gap: Gap.fromJson(json['gap'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$_AddPartitionV2ToJson(_$_AddPartitionV2 instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'partition': instance.partition.toJson(),
+      'gap': instance.gap.toJson(),
+    };
+
+_$_ModifyPartitionV2 _$_$_ModifyPartitionV2FromJson(Map<String, dynamic> json) {
+  return _$_ModifyPartitionV2(
+    diskId: json['disk_id'] as String,
+    partition: Partition.fromJson(json['partition'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$_ModifyPartitionV2ToJson(
+        _$_ModifyPartitionV2 instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'partition': instance.partition.toJson(),
+    };
+
+_$_ReformatDisk _$_$_ReformatDiskFromJson(Map<String, dynamic> json) {
+  return _$_ReformatDisk(
+    diskId: json['disk_id'] as String,
+    ptable: json['ptable'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_ReformatDiskToJson(_$_ReformatDisk instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'ptable': instance.ptable,
+    };
+
 _$_IdentityData _$_$_IdentityDataFromJson(Map<String, dynamic> json) {
   return _$_IdentityData(
     realname: json['realname'] as String? ?? '',
@@ -493,9 +656,12 @@ Map<String, dynamic> _$_$_IdentityDataToJson(_$_IdentityData instance) =>
 
 _$_SSHData _$_$_SSHDataFromJson(Map<String, dynamic> json) {
   return _$_SSHData(
-    installServer: json['install_server'] as bool?,
-    allowPw: json['allow_pw'] as bool?,
-    authorizedKeys: json['authorized_keys'] as List<dynamic>?,
+    installServer: json['install_server'] as bool,
+    allowPw: json['allow_pw'] as bool,
+    authorizedKeys: (json['authorized_keys'] as List<dynamic>?)
+            ?.map((e) => e as String)
+            .toList() ??
+        [],
   );
 }
 
@@ -505,6 +671,129 @@ Map<String, dynamic> _$_$_SSHDataToJson(_$_SSHData instance) =>
       'allow_pw': instance.allowPw,
       'authorized_keys': instance.authorizedKeys,
     };
+
+_$_ChannelSnapInfo _$_$_ChannelSnapInfoFromJson(Map<String, dynamic> json) {
+  return _$_ChannelSnapInfo(
+    channelName: json['channel_name'] as String,
+    revision: json['revision'] as String,
+    confinement: json['confinement'] as String,
+    version: json['version'] as String,
+    size: json['size'] as int,
+    releasedAt: DateTime.parse(json['released_at'] as String),
+  );
+}
+
+Map<String, dynamic> _$_$_ChannelSnapInfoToJson(_$_ChannelSnapInfo instance) =>
+    <String, dynamic>{
+      'channel_name': instance.channelName,
+      'revision': instance.revision,
+      'confinement': instance.confinement,
+      'version': instance.version,
+      'size': instance.size,
+      'released_at': instance.releasedAt.toIso8601String(),
+    };
+
+_$_SnapInfo _$_$_SnapInfoFromJson(Map<String, dynamic> json) {
+  return _$_SnapInfo(
+    name: json['name'] as String,
+    summary: json['summary'] as String? ?? '',
+    publisher: json['publisher'] as String? ?? '',
+    verified: json['verified'] as bool? ?? false,
+    starred: json['starred'] as bool? ?? false,
+    description: json['description'] as String? ?? '',
+    confinement: json['confinement'] as String? ?? '',
+    license: json['license'] as String? ?? '',
+    channels: (json['channels'] as List<dynamic>?)
+            ?.map((e) => ChannelSnapInfo.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+  );
+}
+
+Map<String, dynamic> _$_$_SnapInfoToJson(_$_SnapInfo instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'summary': instance.summary,
+      'publisher': instance.publisher,
+      'verified': instance.verified,
+      'starred': instance.starred,
+      'description': instance.description,
+      'confinement': instance.confinement,
+      'license': instance.license,
+      'channels': instance.channels.map((e) => e.toJson()).toList(),
+    };
+
+_$_DriversResponse _$_$_DriversResponseFromJson(Map<String, dynamic> json) {
+  return _$_DriversResponse(
+    install: json['install'] as bool,
+    drivers:
+        (json['drivers'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    localOnly: json['local_only'] as bool,
+    searchDrivers: json['search_drivers'] as bool,
+  );
+}
+
+Map<String, dynamic> _$_$_DriversResponseToJson(_$_DriversResponse instance) =>
+    <String, dynamic>{
+      'install': instance.install,
+      'drivers': instance.drivers,
+      'local_only': instance.localOnly,
+      'search_drivers': instance.searchDrivers,
+    };
+
+_$_DriversPayload _$_$_DriversPayloadFromJson(Map<String, dynamic> json) {
+  return _$_DriversPayload(
+    install: json['install'] as bool,
+  );
+}
+
+Map<String, dynamic> _$_$_DriversPayloadToJson(_$_DriversPayload instance) =>
+    <String, dynamic>{
+      'install': instance.install,
+    };
+
+_$_SnapSelection _$_$_SnapSelectionFromJson(Map<String, dynamic> json) {
+  return _$_SnapSelection(
+    name: json['name'] as String,
+    channel: json['channel'] as String,
+    classic: json['classic'] as bool? ?? false,
+  );
+}
+
+Map<String, dynamic> _$_$_SnapSelectionToJson(_$_SnapSelection instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'channel': instance.channel,
+      'classic': instance.classic,
+    };
+
+_$_SnapListResponse _$_$_SnapListResponseFromJson(Map<String, dynamic> json) {
+  return _$_SnapListResponse(
+    status: _$enumDecode(_$SnapCheckStateEnumMap, json['status']),
+    snaps: (json['snaps'] as List<dynamic>?)
+            ?.map((e) => SnapInfo.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+    selections: (json['selections'] as List<dynamic>?)
+            ?.map((e) => SnapSelection.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+  );
+}
+
+Map<String, dynamic> _$_$_SnapListResponseToJson(
+        _$_SnapListResponse instance) =>
+    <String, dynamic>{
+      'status': _$SnapCheckStateEnumMap[instance.status],
+      'snaps': instance.snaps.map((e) => e.toJson()).toList(),
+      'selections': instance.selections.map((e) => e.toJson()).toList(),
+    };
+
+const _$SnapCheckStateEnumMap = {
+  SnapCheckState.FAILED: 'FAILED',
+  SnapCheckState.LOADING: 'LOADING',
+  SnapCheckState.DONE: 'DONE',
+};
 
 _$_TimeZoneInfo _$_$_TimeZoneInfoFromJson(Map<String, dynamic> json) {
   return _$_TimeZoneInfo(
@@ -518,6 +807,55 @@ Map<String, dynamic> _$_$_TimeZoneInfoToJson(_$_TimeZoneInfo instance) =>
       'timezone': instance.timezone,
       'from_geoip': instance.fromGeoip,
     };
+
+_$_UbuntuProInfo _$_$_UbuntuProInfoFromJson(Map<String, dynamic> json) {
+  return _$_UbuntuProInfo(
+    token: json['token'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_UbuntuProInfoToJson(_$_UbuntuProInfo instance) =>
+    <String, dynamic>{
+      'token': instance.token,
+    };
+
+_$_UbuntuProService _$_$_UbuntuProServiceFromJson(Map<String, dynamic> json) {
+  return _$_UbuntuProService(
+    name: json['name'] as String,
+    description: json['description'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_UbuntuProServiceToJson(
+        _$_UbuntuProService instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+    };
+
+_$_UbuntuProCheckTokenAnswer _$_$_UbuntuProCheckTokenAnswerFromJson(
+    Map<String, dynamic> json) {
+  return _$_UbuntuProCheckTokenAnswer(
+    status: _$enumDecode(_$UbuntuProCheckTokenStatusEnumMap, json['status']),
+    services: (json['services'] as List<dynamic>?)
+        ?.map((e) => UbuntuProService.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_UbuntuProCheckTokenAnswerToJson(
+        _$_UbuntuProCheckTokenAnswer instance) =>
+    <String, dynamic>{
+      'status': _$UbuntuProCheckTokenStatusEnumMap[instance.status],
+      'services': instance.services?.map((e) => e.toJson()).toList(),
+    };
+
+const _$UbuntuProCheckTokenStatusEnumMap = {
+  UbuntuProCheckTokenStatus.VALID_TOKEN: 'VALID_TOKEN',
+  UbuntuProCheckTokenStatus.INVALID_TOKEN: 'INVALID_TOKEN',
+  UbuntuProCheckTokenStatus.EXPIRED_TOKEN: 'EXPIRED_TOKEN',
+  UbuntuProCheckTokenStatus.UNKNOWN_ERROR: 'UNKNOWN_ERROR',
+};
 
 _$_WSLConfigurationBase _$_$_WSLConfigurationBaseFromJson(
     Map<String, dynamic> json) {

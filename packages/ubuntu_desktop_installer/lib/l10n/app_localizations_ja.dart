@@ -518,16 +518,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'このユーザー名は使用できません';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'そのユーザー名は既に存在します。';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'その名前はシステムが使用するため、予約されています。';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'その名前は長すぎます。';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'その名前には無効な文字が含まれています。';
 
   @override
   String get whoAreYouPagePasswordLabel => 'パスワードを決めて下さい';
@@ -742,7 +742,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a> では、あなたが質問をしたり、回答済みの素晴らしい質問と答えを検索できます。\n日本語でのサポートは、<a href=\"https://loco.ubuntu.com/teams/japaneseteam/\">Ubuntu 日本 チーム</a> で提供されており、他の言語でのサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム一覧</a> をご覧ください。';
+  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a> では、あなたが質問をしたり、回答済みの素晴らしい質問と答えを検索できます。\n日本語でのサポートは、<a href=\"http://www.ubuntulinux.jp/\">Ubuntu 日本 チーム</a> で提供されており、他の言語でのサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム一覧</a> をご覧ください。';
 
   @override
   String get supportSlideResources => 'その他の役立つリソースへのポインタについては、<a href=\"https://www.ubuntu.com/support/community-support\">コミュニティサポート</a> や <a href=\"https://www.ubuntu.com/support\">商用サポート</a> をご覧ください。';

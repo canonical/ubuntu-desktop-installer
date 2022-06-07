@@ -32,7 +32,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupTitle => 'Configuration du profil';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Veuillez créer un compte utilisateur par défaut. Pour plus d\'informations rendez vous sur <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
   String get profileSetupRealnameLabel => 'Votre nom';
@@ -53,7 +53,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupConfirmPasswordHint => 'Confirmez votre mot de passe';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Voir les options avancées';
 
   @override
   String get profileSetupPasswordMismatch => 'Les mots de passe ne correspondent pas';
@@ -65,16 +65,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Ce nom d\'utilisateur est invalide';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Ce nom d\'utilisateur existe déjà.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Ce nom d\'utilisateur est réservé pour le système.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Ce nom est trop long.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Ce nom contient des caractères invalides.';
 
   @override
   String get profileSetupPasswordRequired => 'Un mot de passe est requis';
@@ -83,13 +83,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get advancedSetupTitle => 'Installation avancée';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'Sur cette page, vous pouvez configurer Ubuntu WSL selon vos souhaits.';
 
   @override
   String get advancedSetupMountLocationHint => 'Emplacement de montage';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Point de montage pour le montage automatique';
 
   @override
   String get advancedSetupMountLocationInvalid => 'L’emplacement n’est pas valide';
@@ -98,43 +98,43 @@ class AppLocalizationsFr extends AppLocalizations {
   String get advancedSetupMountOptionHint => 'Option de montage';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Options pour le montage automatique';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Activer la génération du fichier hosts';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Choisir cette option génère le fichier /etc/hosts à chaque démarrage.';
 
   @override
   String get advancedSetupResolvConfGenerationTitle => 'Activer la génération de resolv.conf';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Choisir cette option génère le fichier /etc/resolv.conf à chaque démarrage.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'Intégration avec l\'interface graphique';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Cette option définit la variable DISPLAY dans l\'environnement. Un serveur X tiers est requis.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL Configuration - Advanced options';
+  String get configurationUITitle => 'Configuration d\'Ubuntu WSL - Options avancées';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interopérabilité';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Activé';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Activer l\'interopérabilité.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Ajouter au PATH Windows';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Cette option ajoute le chemin d\'exécution Windows au chemin d\'exécution de WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Montage automatique';
@@ -143,28 +143,28 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configurationUIAutoMountTitle => 'Activé';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Active le montage automatique. Cette fonctionnalité permet de monter le disque Windows dans WSL.';
 
   @override
   String get configurationUIMountFstabTitle => 'Monter /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
+  String get configurationUIMountFstabSubtitle => 'Active le montage de /etc/fstab. Ce fichier contient les informations sur le montage des systèmes de fichier.';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EXPÉRIMENTAL - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Activé';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Activer systemd au démarrage. ATTENTION : C\'est une fonctionnalité expérimentale.';
 
   @override
-  String get applyingChanges => 'Applying changes…';
+  String get applyingChanges => 'Application des changements…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Cela peut prendre plusieurs minutes en fonction de votre connection internet.';
 
   @override
   String get setupCompleteTitle => 'Configuration terminée';
@@ -175,8 +175,8 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Il est conseillé d\'exécuter les commandes suivantes afin de conserver Ubuntu à jour :';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Les changements prendront effet après le redémarrage d\'Ubuntu.';
 }
