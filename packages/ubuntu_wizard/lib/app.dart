@@ -51,7 +51,7 @@ Future<void> runWizardApp(
       .start(serverMode, args: serverArgs, environment: serverEnvironment)
       .then((endpoint) {
     subiquityClient.open(endpoint);
-    subiquityMonitor?.start(endpoint.address, port: endpoint.port);
+    subiquityMonitor?.start(endpoint);
 
     onInitSubiquity?.call(subiquityClient);
 

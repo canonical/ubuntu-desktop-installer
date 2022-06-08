@@ -22,4 +22,8 @@ class Endpoint {
   @override
   String toString() =>
       'Endpoint(${address.address} ${port != 0 ? ', port: $port' : ''})';
+
+  String get authority => address.type == InternetAddressType.unix
+      ? 'localhost'
+      : '${address.host}${port != 0 ? ':$port' : ''}';
 }
