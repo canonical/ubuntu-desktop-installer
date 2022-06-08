@@ -8,6 +8,7 @@ import 'package:ubuntu_test/mocks.dart';
 
 import 'where_are_you_model_test.mocks.dart';
 
+// ignore_for_file: type=lint
 @GenerateMocks([GeoService])
 void main() {
   test('init', () async {

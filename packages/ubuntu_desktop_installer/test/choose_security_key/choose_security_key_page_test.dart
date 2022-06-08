@@ -12,6 +12,7 @@ import 'package:ubuntu_test/mocks.dart';
 import '../test_utils.dart';
 import 'choose_security_key_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
 @GenerateMocks([ChooseSecurityKeyModel])
 void main() {
   ChooseSecurityKeyModel buildModel({
