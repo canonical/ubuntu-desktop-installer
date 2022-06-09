@@ -7,6 +7,7 @@ import 'dart:convert' as _i2;
 import 'dart:io' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/src/endpoint.dart' as _i7;
 import 'package:subiquity_client/src/status_monitor.dart' as _i5;
 import 'package:subiquity_client/src/types.dart' as _i6;
 
@@ -93,8 +94,8 @@ class MockSubiquityStatusMonitor extends _i1.Mock
               returnValue: Stream<_i6.ApplicationStatus?>.empty())
           as _i4.Stream<_i6.ApplicationStatus?>);
   @override
-  _i4.Future<bool> start(_i3.InternetAddress? address, {int? port = 0}) =>
-      (super.noSuchMethod(Invocation.method(#start, [address], {#port: port}),
+  _i4.Future<bool> start(_i7.Endpoint? endpoint) =>
+      (super.noSuchMethod(Invocation.method(#start, [endpoint]),
           returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
   @override
   _i4.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
