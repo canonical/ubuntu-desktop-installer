@@ -559,5 +559,17 @@
     }
   },
   "installationTypeMultiOSDetected": "Cet ordinateur est installé avec plusieurs systèmes d’exploitation. Que voulez-vous faire ?",
-  "@installationTypeMultiOSDetected": {}
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageUsernameInUse": "Ce nom d'utilisateur existe déjà.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Ce nom est réservé pour le système.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Ce nom est trop long.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Ce nom contient des caractères invalides.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installationFailed": "Échec de l'installation",
+  "@installationFailed": {},
+  "copyingFiles": "Copie des fichiers...",
+  "@copyingFiles": {}
 }
