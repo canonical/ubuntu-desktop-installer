@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_m
 import 'package:ubuntu_test/mocks.dart';
 
 // ignore_for_file: type=lint
+
 const testLayouts = <KeyboardLayout>[
   KeyboardLayout(code: 'empty-variants', name: 'Empty variants', variants: []),
   KeyboardLayout(

@@ -16,6 +16,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([TelemetryService])
 void main() {
   late MaterialApp app;

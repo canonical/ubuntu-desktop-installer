@@ -13,6 +13,7 @@ import '../test_utils.dart';
 import 'turn_off_rst_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([TurnOffRSTModel, UrlLauncher])
 void main() {
   testWidgets('restart', (tester) async {

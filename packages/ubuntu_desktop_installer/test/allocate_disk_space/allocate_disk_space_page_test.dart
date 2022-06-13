@@ -16,6 +16,7 @@ import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 final selection = StreamController.broadcast();
 
 final testDisks = <Disk>[

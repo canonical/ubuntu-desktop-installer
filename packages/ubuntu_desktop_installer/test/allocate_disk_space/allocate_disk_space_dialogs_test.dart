@@ -15,6 +15,7 @@ import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 

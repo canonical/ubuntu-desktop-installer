@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 // ignore_for_file: type=lint
+
 void main() {
   test('load languages', () async {
     final client = MockSubiquityClient();

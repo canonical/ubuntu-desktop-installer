@@ -9,6 +9,7 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 // ignore_for_file: type=lint
+
 class MockProductNameFile extends Mock implements File {
   MockProductNameFile(this._product);
   final String _product;

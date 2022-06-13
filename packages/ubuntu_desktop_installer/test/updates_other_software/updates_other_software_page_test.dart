@@ -17,6 +17,7 @@ import 'updates_other_software_model_test.mocks.dart';
 import 'updates_other_software_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([UpdateOtherSoftwareModel, TelemetryService])
 void main() {
   UpdateOtherSoftwareModel buildModel({

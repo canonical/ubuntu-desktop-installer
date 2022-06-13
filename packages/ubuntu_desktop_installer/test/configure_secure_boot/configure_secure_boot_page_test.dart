@@ -12,6 +12,7 @@ import '../test_utils.dart';
 import 'configure_secure_boot_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([ConfigureSecureBootModel])
 void main() {
   ConfigureSecureBootModel buildModel({

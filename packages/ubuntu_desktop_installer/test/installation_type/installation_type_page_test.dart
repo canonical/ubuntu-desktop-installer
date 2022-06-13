@@ -15,6 +15,7 @@ import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([InstallationTypeModel])
 void main() {
   InstallationTypeModel buildModel({

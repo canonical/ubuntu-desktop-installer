@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 
 // ignore_for_file: type=lint
+
 void main() {
   test('selected option', () {
     final model = TryOrInstallModel();

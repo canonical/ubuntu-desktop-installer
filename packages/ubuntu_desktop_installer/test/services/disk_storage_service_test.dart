@@ -7,6 +7,7 @@ import 'package:ubuntu_test/mocks.dart';
 import '../test_utils.dart';
 
 // ignore_for_file: type=lint
+
 void main() {
   final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
 

@@ -14,6 +14,7 @@ import 'where_are_you_model_test.mocks.dart';
 import 'where_are_you_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([WhereAreYouModel])
 void main() {
   WhereAreYouModel buildModel({

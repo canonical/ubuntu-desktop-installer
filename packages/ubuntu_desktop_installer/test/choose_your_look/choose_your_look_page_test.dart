@@ -11,6 +11,7 @@ import '../test_utils.dart';
 import 'choose_your_look_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([Settings])
 void main() {
   testWidgets('ChooseYourLookPage applies theme', (tester) async {

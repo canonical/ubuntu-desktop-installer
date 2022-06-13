@@ -13,6 +13,7 @@ import '../test_utils.dart';
 import 'installation_complete_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
+
 @GenerateMocks([InstallationCompleteModel])
 void main() {
   Widget buildPage(InstallationCompleteModel model) {
