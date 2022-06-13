@@ -160,8 +160,10 @@ abstract class SubiquityServer {
     // allow 10s maximum for the server to start responding
     for (var i = 0; i < 10; ++i) {
       try {
-        final request =
-            await client.openUrl('GET', Uri.http('localhost', 'meta/status'));
+        final request = await client.openUrl(
+          'GET',
+          Uri.http(endpoint.authority, 'meta/status'),
+        );
         await request.close();
         break;
       } on Exception catch (_) {

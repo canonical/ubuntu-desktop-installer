@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:meta/meta.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
+import 'endpoint.dart';
 import 'types.dart';
 
 /// @internal
@@ -18,12 +19,14 @@ class SubiquityStatusMonitor {
   final HttpClient _client;
   ApplicationStatus? _status;
   StreamController<ApplicationStatus?>? _statusController;
+  late final String _host;
 
   /// Starts monitoring the status using the provided [socketPath].
-  Future<bool> start(InternetAddress address, {int port = 0}) async {
+  Future<bool> start(Endpoint endpoint) async {
     _client.connectionFactory = (uri, proxyHost, proxyPort) async {
-      return Socket.startConnect(address, port);
+      return Socket.startConnect(endpoint.address, endpoint.port);
     };
+    _host = endpoint.authority;
     return _fetchStatus().then(_updateStatus).then((_) {
       _listen();
       return _status != null;
@@ -70,7 +73,7 @@ class SubiquityStatusMonitor {
   Future<HttpClientRequest> _openUrl(ApplicationState? state) {
     return _client.openUrl(
       'GET',
-      Uri.http('localhost', 'meta/status', {
+      Uri.http(_host, 'meta/status', {
         if (state != null) 'cur': '"${state.name}"',
       }),
     );

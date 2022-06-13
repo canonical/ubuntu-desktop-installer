@@ -24,35 +24,37 @@ import 'package:subiquity_client/src/types.dart' as _i3;
 
 class _FakeDBusValue_0 extends _i1.Fake implements _i2.DBusValue {}
 
-class _FakeSourceSelectionAndSetting_1 extends _i1.Fake
+class _FakeUri_1 extends _i1.Fake implements Uri {}
+
+class _FakeSourceSelectionAndSetting_2 extends _i1.Fake
     implements _i3.SourceSelectionAndSetting {}
 
-class _FakeKeyboardSetup_2 extends _i1.Fake implements _i3.KeyboardSetup {}
+class _FakeKeyboardSetup_3 extends _i1.Fake implements _i3.KeyboardSetup {}
 
-class _FakeIdentityData_3 extends _i1.Fake implements _i3.IdentityData {}
+class _FakeIdentityData_4 extends _i1.Fake implements _i3.IdentityData {}
 
-class _FakeTimeZoneInfo_4 extends _i1.Fake implements _i3.TimeZoneInfo {}
+class _FakeTimeZoneInfo_5 extends _i1.Fake implements _i3.TimeZoneInfo {}
 
-class _FakeSSHData_5 extends _i1.Fake implements _i3.SSHData {}
+class _FakeSSHData_6 extends _i1.Fake implements _i3.SSHData {}
 
-class _FakeApplicationStatus_6 extends _i1.Fake
+class _FakeApplicationStatus_7 extends _i1.Fake
     implements _i3.ApplicationStatus {}
 
-class _FakeGuidedStorageResponse_7 extends _i1.Fake
+class _FakeGuidedStorageResponse_8 extends _i1.Fake
     implements _i3.GuidedStorageResponse {}
 
-class _FakeStorageResponseV2_8 extends _i1.Fake
+class _FakeStorageResponseV2_9 extends _i1.Fake
     implements _i3.StorageResponseV2 {}
 
-class _FakeWSLConfigurationBase_9 extends _i1.Fake
+class _FakeWSLConfigurationBase_10 extends _i1.Fake
     implements _i3.WSLConfigurationBase {}
 
-class _FakeWSLConfigurationAdvanced_10 extends _i1.Fake
+class _FakeWSLConfigurationAdvanced_11 extends _i1.Fake
     implements _i3.WSLConfigurationAdvanced {}
 
-class _FakeAnyStep_11 extends _i1.Fake implements _i3.AnyStep {}
+class _FakeAnyStep_12 extends _i1.Fake implements _i3.AnyStep {}
 
-class _FakeEndpoint_12 extends _i1.Fake implements _i4.Endpoint {}
+class _FakeEndpoint_13 extends _i1.Fake implements _i4.Endpoint {}
 
 /// A class which mocks [GSettings].
 ///
@@ -122,6 +124,11 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<bool> get isOpen => (super.noSuchMethod(Invocation.getter(#isOpen),
       returnValue: Future<bool>.value(false)) as _i6.Future<bool>);
   @override
+  Uri url(String? unencodedPath, [Map<String, dynamic>? queryParameters]) =>
+      (super.noSuchMethod(
+          Invocation.method(#url, [unencodedPath, queryParameters]),
+          returnValue: _FakeUri_1()) as Uri);
+  @override
   void open(_i4.Endpoint? endpoint) =>
       super.noSuchMethod(Invocation.method(#open, [endpoint]),
           returnValueForMissingStub: null);
@@ -143,7 +150,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.SourceSelectionAndSetting> source() =>
       (super.noSuchMethod(Invocation.method(#source, []),
               returnValue: Future<_i3.SourceSelectionAndSetting>.value(
-                  _FakeSourceSelectionAndSetting_1()))
+                  _FakeSourceSelectionAndSetting_2()))
           as _i6.Future<_i3.SourceSelectionAndSetting>);
   @override
   _i6.Future<void> setSource(String? sourceId) =>
@@ -162,7 +169,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.KeyboardSetup> keyboard() => (super.noSuchMethod(
           Invocation.method(#keyboard, []),
-          returnValue: Future<_i3.KeyboardSetup>.value(_FakeKeyboardSetup_2()))
+          returnValue: Future<_i3.KeyboardSetup>.value(_FakeKeyboardSetup_3()))
       as _i6.Future<_i3.KeyboardSetup>);
   @override
   _i6.Future<void> setKeyboard(_i3.KeyboardSetting? setting) =>
@@ -199,7 +206,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.IdentityData> identity() => (super.noSuchMethod(
           Invocation.method(#identity, []),
-          returnValue: Future<_i3.IdentityData>.value(_FakeIdentityData_3()))
+          returnValue: Future<_i3.IdentityData>.value(_FakeIdentityData_4()))
       as _i6.Future<_i3.IdentityData>);
   @override
   _i6.Future<void> setIdentity(_i3.IdentityData? identity) =>
@@ -215,7 +222,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.TimeZoneInfo> timezone() => (super.noSuchMethod(
           Invocation.method(#timezone, []),
-          returnValue: Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_4()))
+          returnValue: Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_5()))
       as _i6.Future<_i3.TimeZoneInfo>);
   @override
   _i6.Future<void> setTimezone(String? timezone) =>
@@ -225,7 +232,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.SSHData> ssh() =>
       (super.noSuchMethod(Invocation.method(#ssh, []),
-              returnValue: Future<_i3.SSHData>.value(_FakeSSHData_5()))
+              returnValue: Future<_i3.SSHData>.value(_FakeSSHData_6()))
           as _i6.Future<_i3.SSHData>);
   @override
   _i6.Future<void> setSsh(_i3.SSHData? ssh) =>
@@ -236,7 +243,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.ApplicationStatus> status({_i3.ApplicationState? current}) =>
       (super.noSuchMethod(Invocation.method(#status, [], {#current: current}),
               returnValue: Future<_i3.ApplicationStatus>.value(
-                  _FakeApplicationStatus_6()))
+                  _FakeApplicationStatus_7()))
           as _i6.Future<_i3.ApplicationStatus>);
   @override
   _i6.Future<void> markConfigured(List<String>? endpointNames) =>
@@ -261,32 +268,32 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       (super.noSuchMethod(
               Invocation.method(#getGuidedStorage, [], {#wait: wait}),
               returnValue: Future<_i3.GuidedStorageResponse>.value(
-                  _FakeGuidedStorageResponse_7()))
+                  _FakeGuidedStorageResponse_8()))
           as _i6.Future<_i3.GuidedStorageResponse>);
   @override
   _i6.Future<_i3.StorageResponseV2> setGuidedStorageV2(
           _i3.GuidedChoice? choice) =>
       (super.noSuchMethod(Invocation.method(#setGuidedStorageV2, [choice]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> getStorageV2() => (super.noSuchMethod(
           Invocation.method(#getStorageV2, []),
           returnValue:
-              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8()))
+              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9()))
       as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> setStorageV2() => (super.noSuchMethod(
           Invocation.method(#setStorageV2, []),
           returnValue:
-              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8()))
+              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9()))
       as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> resetStorageV2() => (super.noSuchMethod(
           Invocation.method(#resetStorageV2, []),
           returnValue:
-              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8()))
+              Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9()))
       as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> addPartitionV2(
@@ -294,7 +301,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       (super.noSuchMethod(
               Invocation.method(#addPartitionV2, [disk, gap, partition]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> editPartitionV2(
@@ -302,7 +309,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       (super.noSuchMethod(
               Invocation.method(#editPartitionV2, [disk, partition]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> deletePartitionV2(
@@ -310,19 +317,19 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       (super.noSuchMethod(
               Invocation.method(#deletePartitionV2, [disk, partition]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> addBootPartitionV2(_i3.Disk? disk) =>
       (super.noSuchMethod(Invocation.method(#addBootPartitionV2, [disk]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> reformatDiskV2(_i3.Disk? disk) =>
       (super.noSuchMethod(Invocation.method(#reformatDiskV2, [disk]),
               returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_8()))
+                  _FakeStorageResponseV2_9()))
           as _i6.Future<_i3.StorageResponseV2>);
   @override
   _i6.Future<void> reboot({bool? immediate = false}) => (super.noSuchMethod(
@@ -338,7 +345,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.WSLConfigurationBase> wslConfigurationBase() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationBase, []),
               returnValue: Future<_i3.WSLConfigurationBase>.value(
-                  _FakeWSLConfigurationBase_9()))
+                  _FakeWSLConfigurationBase_10()))
           as _i6.Future<_i3.WSLConfigurationBase>);
   @override
   _i6.Future<void> setWslConfigurationBase(_i3.WSLConfigurationBase? conf) =>
@@ -349,7 +356,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.WSLConfigurationAdvanced> wslConfigurationAdvanced() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationAdvanced, []),
               returnValue: Future<_i3.WSLConfigurationAdvanced>.value(
-                  _FakeWSLConfigurationAdvanced_10()))
+                  _FakeWSLConfigurationAdvanced_11()))
           as _i6.Future<_i3.WSLConfigurationAdvanced>);
   @override
   _i6.Future<void> setWslConfigurationAdvanced(
@@ -361,7 +368,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.AnyStep> getKeyboardStep([String? step = r'0']) =>
       (super.noSuchMethod(Invocation.method(#getKeyboardStep, [step]),
-              returnValue: Future<_i3.AnyStep>.value(_FakeAnyStep_11()))
+              returnValue: Future<_i3.AnyStep>.value(_FakeAnyStep_12()))
           as _i6.Future<_i3.AnyStep>);
 }
 
@@ -379,7 +386,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
       (super.noSuchMethod(
               Invocation.method(#start, [serverMode],
                   {#args: args, #environment: environment}),
-              returnValue: Future<_i4.Endpoint>.value(_FakeEndpoint_12()))
+              returnValue: Future<_i4.Endpoint>.value(_FakeEndpoint_13()))
           as _i6.Future<_i4.Endpoint>);
   @override
   _i6.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),

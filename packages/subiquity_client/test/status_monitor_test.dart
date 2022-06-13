@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/src/endpoint.dart';
 import 'package:subiquity_client/src/status_monitor.dart';
 import 'package:subiquity_client/src/types.dart';
 import 'package:test/test.dart';
@@ -34,10 +35,7 @@ final isDone = testStatus(ApplicationState.DONE);
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpClientResponse])
 void main() {
-  final addr = InternetAddress(
-    '/tmp/subiquity.sock',
-    type: InternetAddressType.unix,
-  );
+  final addr = Endpoint.unix('/tmp/subiquity.sock');
   group('start', () {
     test('before listen', () async {
       final client = createMockClient();
