@@ -6,6 +6,8 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'geo_service_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 const kGeonameUrl = 'http://lookup.geoname.org';
 
 @GenerateMocks([Dio, GeoSource])

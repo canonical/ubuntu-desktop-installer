@@ -9,6 +9,8 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_in
 import 'connect_to_internet_model_test.mocks.dart';
 import 'connect_to_internet_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([ConnectModel])
 void main() {
   test('connects the service', () async {

@@ -5,6 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('set gtk-theme via gsettings', () {
     final gsettings = MockGSettings();

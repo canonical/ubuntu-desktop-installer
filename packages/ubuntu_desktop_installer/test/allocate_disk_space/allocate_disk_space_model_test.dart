@@ -8,6 +8,8 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import '../test_utils.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([DiskStorageService])
 void main() {
   final testDisks = <Disk>[

@@ -6,6 +6,8 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_size_box.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('enter size', (tester) async {
     int? size;

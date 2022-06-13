@@ -22,6 +22,8 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../test_utils.dart';
 import 'connect_to_internet_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([
   AccessPoint,
   ConnectToInternetModel,

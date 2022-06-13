@@ -13,6 +13,8 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import '../test_utils.dart';
 import 'who_are_you_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([WhoAreYouModel])
 void main() {
   WhoAreYouModel buildModel({

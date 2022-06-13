@@ -5,6 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_detector.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('init', () async {
     final client = MockSubiquityClient();

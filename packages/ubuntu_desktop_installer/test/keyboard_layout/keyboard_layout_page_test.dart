@@ -15,6 +15,8 @@ import 'package:ubuntu_test/mocks.dart';
 import '../test_utils.dart';
 import 'keyboard_layout_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([KeyboardLayoutModel])
 void main() {
   KeyboardLayoutModel buildModel({

@@ -11,6 +11,8 @@ import 'package:ubuntu_test/mocks.dart';
 
 import 'installation_slides_model_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([JournalService])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();

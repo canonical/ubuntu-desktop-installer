@@ -16,6 +16,8 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import 'try_or_install_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([Settings, UrlLauncher])
 void main() {
   late MaterialApp app;

@@ -10,6 +10,8 @@ import 'package:ubuntu_test/mocks.dart';
 
 import '../test_utils.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 
