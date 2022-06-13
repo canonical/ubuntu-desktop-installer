@@ -10,6 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/src/client.dart' as _i7;
 import 'package:subiquity_client/src/endpoint.dart' as _i4;
 import 'package:subiquity_client/src/server.dart' as _i8;
+import 'package:subiquity_client/src/server/common.dart' as _i9;
 import 'package:subiquity_client/src/types.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -381,7 +382,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   }
 
   @override
-  _i6.Future<_i4.Endpoint> start(_i8.ServerMode? serverMode,
+  _i6.Future<_i4.Endpoint> start(_i9.ServerMode? serverMode,
           {List<String>? args, Map<String, String>? environment}) =>
       (super.noSuchMethod(
               Invocation.method(#start, [serverMode],
