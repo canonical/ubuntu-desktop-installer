@@ -3844,6 +3844,7 @@ class _$PartitionOrGapTearOff {
       bool? boot,
       OsProber? os,
       int? offset,
+      int? estimatedMinSize = -1,
       bool? resize,
       String? path}) {
     return Partition(
@@ -3858,6 +3859,7 @@ class _$PartitionOrGapTearOff {
       boot: boot,
       os: os,
       offset: offset,
+      estimatedMinSize: estimatedMinSize,
       resize: resize,
       path: path,
     );
@@ -3894,6 +3896,7 @@ mixin _$PartitionOrGap {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)
         partition,
@@ -3914,6 +3917,7 @@ mixin _$PartitionOrGap {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)?
         partition,
@@ -3970,6 +3974,7 @@ abstract class $PartitionCopyWith<$Res> {
       bool? boot,
       OsProber? os,
       int? offset,
+      int? estimatedMinSize,
       bool? resize,
       String? path});
 
@@ -3998,6 +4003,7 @@ class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
     Object? boot = freezed,
     Object? os = freezed,
     Object? offset = freezed,
+    Object? estimatedMinSize = freezed,
     Object? resize = freezed,
     Object? path = freezed,
   }) {
@@ -4046,6 +4052,10 @@ class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
+      estimatedMinSize: estimatedMinSize == freezed
+          ? _value.estimatedMinSize
+          : estimatedMinSize // ignore: cast_nullable_to_non_nullable
+              as int?,
       resize: resize == freezed
           ? _value.resize
           : resize // ignore: cast_nullable_to_non_nullable
@@ -4085,6 +4095,7 @@ class _$Partition implements Partition {
       this.boot,
       this.os,
       this.offset,
+      this.estimatedMinSize = -1,
       this.resize,
       this.path});
 
@@ -4114,6 +4125,9 @@ class _$Partition implements Partition {
   final OsProber? os;
   @override
   final int? offset;
+  @JsonKey(defaultValue: -1)
+  @override
+  final int? estimatedMinSize;
   @override
   final bool? resize;
   @override
@@ -4121,7 +4135,7 @@ class _$Partition implements Partition {
 
   @override
   String toString() {
-    return 'PartitionOrGap.partition(size: $size, number: $number, preserve: $preserve, wipe: $wipe, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, boot: $boot, os: $os, offset: $offset, resize: $resize, path: $path)';
+    return 'PartitionOrGap.partition(size: $size, number: $number, preserve: $preserve, wipe: $wipe, annotations: $annotations, mount: $mount, format: $format, grubDevice: $grubDevice, boot: $boot, os: $os, offset: $offset, estimatedMinSize: $estimatedMinSize, resize: $resize, path: $path)';
   }
 
   @override
@@ -4153,6 +4167,9 @@ class _$Partition implements Partition {
                 const DeepCollectionEquality().equals(other.os, os)) &&
             (identical(other.offset, offset) ||
                 const DeepCollectionEquality().equals(other.offset, offset)) &&
+            (identical(other.estimatedMinSize, estimatedMinSize) ||
+                const DeepCollectionEquality()
+                    .equals(other.estimatedMinSize, estimatedMinSize)) &&
             (identical(other.resize, resize) ||
                 const DeepCollectionEquality().equals(other.resize, resize)) &&
             (identical(other.path, path) ||
@@ -4173,6 +4190,7 @@ class _$Partition implements Partition {
       const DeepCollectionEquality().hash(boot) ^
       const DeepCollectionEquality().hash(os) ^
       const DeepCollectionEquality().hash(offset) ^
+      const DeepCollectionEquality().hash(estimatedMinSize) ^
       const DeepCollectionEquality().hash(resize) ^
       const DeepCollectionEquality().hash(path);
 
@@ -4196,13 +4214,14 @@ class _$Partition implements Partition {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)
         partition,
     required TResult Function(int offset, int size) gap,
   }) {
     return partition(size, number, preserve, wipe, annotations, mount, format,
-        grubDevice, boot, os, offset, resize, path);
+        grubDevice, boot, os, offset, estimatedMinSize, resize, path);
   }
 
   @override
@@ -4220,6 +4239,7 @@ class _$Partition implements Partition {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)?
         partition,
@@ -4228,7 +4248,7 @@ class _$Partition implements Partition {
   }) {
     if (partition != null) {
       return partition(size, number, preserve, wipe, annotations, mount, format,
-          grubDevice, boot, os, offset, resize, path);
+          grubDevice, boot, os, offset, estimatedMinSize, resize, path);
     }
     return orElse();
   }
@@ -4274,6 +4294,7 @@ abstract class Partition implements PartitionOrGap {
       bool? boot,
       OsProber? os,
       int? offset,
+      int? estimatedMinSize,
       bool? resize,
       String? path}) = _$Partition;
 
@@ -4290,6 +4311,7 @@ abstract class Partition implements PartitionOrGap {
   bool? get boot => throw _privateConstructorUsedError;
   OsProber? get os => throw _privateConstructorUsedError;
   int? get offset => throw _privateConstructorUsedError;
+  int? get estimatedMinSize => throw _privateConstructorUsedError;
   bool? get resize => throw _privateConstructorUsedError;
   String? get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4384,6 +4406,7 @@ class _$Gap implements Gap {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)
         partition,
@@ -4407,6 +4430,7 @@ class _$Gap implements Gap {
             bool? boot,
             OsProber? os,
             int? offset,
+            int? estimatedMinSize,
             bool? resize,
             String? path)?
         partition,
@@ -8604,10 +8628,14 @@ UbuntuProService _$UbuntuProServiceFromJson(Map<String, dynamic> json) {
 class _$UbuntuProServiceTearOff {
   const _$UbuntuProServiceTearOff();
 
-  _UbuntuProService call({required String name, required String description}) {
+  _UbuntuProService call(
+      {required String name,
+      required String description,
+      required bool autoEnabled}) {
     return _UbuntuProService(
       name: name,
       description: description,
+      autoEnabled: autoEnabled,
     );
   }
 
@@ -8623,6 +8651,7 @@ const $UbuntuProService = _$UbuntuProServiceTearOff();
 mixin _$UbuntuProService {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  bool get autoEnabled => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -8635,7 +8664,7 @@ abstract class $UbuntuProServiceCopyWith<$Res> {
   factory $UbuntuProServiceCopyWith(
           UbuntuProService value, $Res Function(UbuntuProService) then) =
       _$UbuntuProServiceCopyWithImpl<$Res>;
-  $Res call({String name, String description});
+  $Res call({String name, String description, bool autoEnabled});
 }
 
 /// @nodoc
@@ -8651,6 +8680,7 @@ class _$UbuntuProServiceCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
+    Object? autoEnabled = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -8661,6 +8691,10 @@ class _$UbuntuProServiceCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      autoEnabled: autoEnabled == freezed
+          ? _value.autoEnabled
+          : autoEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -8672,7 +8706,7 @@ abstract class _$UbuntuProServiceCopyWith<$Res>
           _UbuntuProService value, $Res Function(_UbuntuProService) then) =
       __$UbuntuProServiceCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String description});
+  $Res call({String name, String description, bool autoEnabled});
 }
 
 /// @nodoc
@@ -8690,6 +8724,7 @@ class __$UbuntuProServiceCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
+    Object? autoEnabled = freezed,
   }) {
     return _then(_UbuntuProService(
       name: name == freezed
@@ -8700,6 +8735,10 @@ class __$UbuntuProServiceCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      autoEnabled: autoEnabled == freezed
+          ? _value.autoEnabled
+          : autoEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -8707,7 +8746,10 @@ class __$UbuntuProServiceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UbuntuProService implements _UbuntuProService {
-  const _$_UbuntuProService({required this.name, required this.description});
+  const _$_UbuntuProService(
+      {required this.name,
+      required this.description,
+      required this.autoEnabled});
 
   factory _$_UbuntuProService.fromJson(Map<String, dynamic> json) =>
       _$_$_UbuntuProServiceFromJson(json);
@@ -8716,10 +8758,12 @@ class _$_UbuntuProService implements _UbuntuProService {
   final String name;
   @override
   final String description;
+  @override
+  final bool autoEnabled;
 
   @override
   String toString() {
-    return 'UbuntuProService(name: $name, description: $description)';
+    return 'UbuntuProService(name: $name, description: $description, autoEnabled: $autoEnabled)';
   }
 
   @override
@@ -8730,14 +8774,18 @@ class _$_UbuntuProService implements _UbuntuProService {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                    .equals(other.description, description)) &&
+            (identical(other.autoEnabled, autoEnabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.autoEnabled, autoEnabled)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description);
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(autoEnabled);
 
   @JsonKey(ignore: true)
   @override
@@ -8753,7 +8801,8 @@ class _$_UbuntuProService implements _UbuntuProService {
 abstract class _UbuntuProService implements UbuntuProService {
   const factory _UbuntuProService(
       {required String name,
-      required String description}) = _$_UbuntuProService;
+      required String description,
+      required bool autoEnabled}) = _$_UbuntuProService;
 
   factory _UbuntuProService.fromJson(Map<String, dynamic> json) =
       _$_UbuntuProService.fromJson;
@@ -8762,6 +8811,8 @@ abstract class _UbuntuProService implements UbuntuProService {
   String get name => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
+  @override
+  bool get autoEnabled => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UbuntuProServiceCopyWith<_UbuntuProService> get copyWith =>
