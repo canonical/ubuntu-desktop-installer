@@ -14,7 +14,6 @@ import 'widget_testers.dart';
 // ignore_for_file: type=lint
 
 /// The path to the `.subiquity` directory.
-
 Future<String> get subiquityPath async {
   return p.join(
     await getSubiquityPath(),
