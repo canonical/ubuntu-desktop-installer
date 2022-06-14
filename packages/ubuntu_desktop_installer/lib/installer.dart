@@ -35,11 +35,11 @@ extension BusyState on ApplicationState {
       index < ApplicationState.DONE.index;
 }
 
-void runInstallerApp(
+Future<void> runInstallerApp(
   List<String> args, {
   FlavorData? flavor,
   List<Slide>? slides,
-}) {
+}) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
         valueHelp: 'path',
@@ -48,14 +48,29 @@ void runInstallerApp(
   })!;
 
   final subiquityClient = SubiquityClient();
-  final subiquityServer = SubiquityServer();
+  final bool liveRun = isLiveRun(options);
+  final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
+  final subiquityPath = await getSubiquityPath();
+  final endpoint = await defaultEndpoint(serverMode);
+
+  final launcher = liveRun
+      ? null
+      : SubiquityProcess.python(
+          'subiquity.cmd.server',
+          serverMode: ServerMode.DRY_RUN,
+          subiquityPath: subiquityPath,
+        );
+  final subiquityServer = SubiquityServer(
+    launcher: launcher,
+    endpoint: endpoint,
+  );
 
   final subiquityMonitor = SubiquityStatusMonitor();
   subiquityMonitor.onStatusChanged.listen((status) {
     setWindowClosable(status?.state.isInstalling != true);
   });
 
-  final journalUnit = isLiveRun(options) ? _kSystemdUnit : null;
+  final journalUnit = liveRun ? _kSystemdUnit : null;
 
   final geodata = Geodata(
     loadCities: () => assetBundle.loadString('assets/cities15000.txt'),
