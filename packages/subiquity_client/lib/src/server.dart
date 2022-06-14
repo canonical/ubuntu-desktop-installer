@@ -43,7 +43,7 @@ abstract class SubiquityServer {
 
   Future<Endpoint> start(ServerMode serverMode,
       {List<String>? args, Map<String, String>? environment}) async {
-    final socketPath = await SubiquityPaths.getSocketPath(serverMode);
+    final socketPath = await getSocketPath(serverMode);
     final endpoint = Endpoint.unix(socketPath);
     if (_shouldStart(serverMode)) {
       var subiquityCmd = <String>[
@@ -63,7 +63,7 @@ abstract class SubiquityServer {
 
   Future<void> _startSubiquity(ServerMode serverMode, List<String> subiquityCmd,
       Map<String, String>? environment) async {
-    final subiquityPath = await SubiquityPaths.getSubiquityPath();
+    final subiquityPath = await getSubiquityPath();
     String? workingDirectory;
     // try using local subiquity
     if (Directory(subiquityPath).existsSync()) {
