@@ -36,6 +36,8 @@ class NetDevInfo {
 // Union[Partition, Gap]
 typedef DiskObject = PartitionOrGap;
 
+// BEGIN GENERATED CODE - DO NOT MODIFY BY HAND - RUN `make` in `packages/subiquity_client/generator`
+
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
