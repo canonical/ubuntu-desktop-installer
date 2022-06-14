@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('hex string', () {
     expect(Color(0x01020304).toHex(), equals('#01020304'));
