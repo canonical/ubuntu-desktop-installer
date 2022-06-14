@@ -20,6 +20,8 @@ import 'package:yaml/yaml.dart';
 
 import '../test/test_utils.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
