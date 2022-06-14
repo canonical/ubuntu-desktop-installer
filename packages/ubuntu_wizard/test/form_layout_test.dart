@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('layout', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;

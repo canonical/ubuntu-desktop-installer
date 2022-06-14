@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('icon & radio geometries match ', (tester) async {
     await tester.pumpWidget(

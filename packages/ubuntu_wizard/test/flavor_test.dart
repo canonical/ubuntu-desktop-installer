@@ -4,6 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('data class', (tester) async {
     final flavor1 = FlavorData(

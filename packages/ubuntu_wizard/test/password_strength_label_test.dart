@@ -5,6 +5,8 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('weak password', (tester) async {
     await tester.pumpWidget(MaterialApp(

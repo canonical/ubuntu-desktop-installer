@@ -4,6 +4,8 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   testWidgets('input validation', (tester) async {
     await tester.pumpWidget(
