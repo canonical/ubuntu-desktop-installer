@@ -5,6 +5,8 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/setup_complete/setup_complete_model.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('init model', () async {
     const identity = IdentityData(username: 'ubuntu');

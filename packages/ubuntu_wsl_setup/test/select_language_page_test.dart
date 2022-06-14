@@ -15,6 +15,8 @@ import 'package:ubuntu_wsl_setup/pages/select_language/select_language_page.dart
 import 'select_language_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([SelectLanguageModel])
 void main() {
   LangTester.type = SelectLanguagePage;

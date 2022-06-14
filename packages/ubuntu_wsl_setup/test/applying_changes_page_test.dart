@@ -14,6 +14,8 @@ import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.d
 import 'applying_changes_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([ApplyingChangesModel])
 void main() {
   const theEnd = 'The end';
