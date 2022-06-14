@@ -8,7 +8,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'app.dart';
 import 'installing_state.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addFlag('reconfigure');
     parser.addOption(
@@ -22,6 +22,15 @@ screens, yet allowing user to overwrite any of those during setup.
     );
   })!;
   final variant = ValueNotifier<Variant?>(null);
+  final liveRun = isLiveRun(options);
+  final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
+  final subiquityPath = await getSubiquityPath();
+  final endpoint = await defaultEndpoint(serverMode);
+  final launcher = SubiquityProcess.python(
+    'system_setup.cmd.server',
+    serverMode: serverMode,
+    subiquityPath: subiquityPath,
+  );
   List<String>? serverArgs;
   if (options['prefill'] != null) {
     serverArgs = ['--prefill', options['prefill']];
@@ -40,7 +49,7 @@ screens, yet allowing user to overwrite any of those during setup.
     ),
     options: options,
     subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer.wsl(),
+    subiquityServer: SubiquityServer(launcher: launcher, endpoint: endpoint),
     subiquityMonitor: subiquityMonitor,
     onInitSubiquity: (client) {
       client.variant().then((value) {
@@ -55,8 +64,7 @@ screens, yet allowing user to overwrite any of those during setup.
     },
     serverArgs: serverArgs,
     serverEnvironment: {
-      if (!isLiveRun(options) && options['reconfigure'] == true)
-        'DRYRUN_RECONFIG': 'true',
+      if (!liveRun && options['reconfigure'] == true) 'DRYRUN_RECONFIG': 'true',
     },
   );
 }
