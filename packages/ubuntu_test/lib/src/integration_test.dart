@@ -10,6 +10,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'widget_testers.dart';
 
+// ignore_for_file: invalid_use_of_visible_for_testing_member
 // ignore_for_file: type=lint
 
 /// The path to the `.subiquity` directory.
