@@ -12,6 +12,8 @@ import 'package:ubuntu_wizard/app.dart';
 
 import 'wizard_app_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
   final endpoint = Endpoint.unix('socket path');
