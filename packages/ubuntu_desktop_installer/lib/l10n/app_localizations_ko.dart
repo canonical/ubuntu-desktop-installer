@@ -518,13 +518,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => '올바르지 않은 사용자 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 있습니다.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => '사용자 이름이 너무 깁니다.';
 
   @override
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
