@@ -14,6 +14,8 @@ import 'package:ubuntu_wsl_setup/pages/setup_complete/setup_complete_page.dart';
 import 'setup_complete_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([SetupCompleteModel])
 void main() {
   LangTester.type = SetupCompletePage;
