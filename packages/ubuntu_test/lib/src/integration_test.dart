@@ -15,7 +15,7 @@ import 'widget_testers.dart';
 /// The path to the `.subiquity` directory.
 Future<String> get subiquityPath async {
   return p.join(
-    await SubiquityServer.findSubiquityPath(),
+    await getSubiquityPath(),
     '.subiquity',
   );
 }
