@@ -77,6 +77,7 @@ void runInstallerApp(
 
   final interfaceSettings = GSettings('org.gnome.desktop.interface');
 
+  WidgetsFlutterBinding.ensureInitialized();
   onWindowClosed().then((_) async {
     await interfaceSettings.close();
   });
