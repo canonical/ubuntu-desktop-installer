@@ -230,23 +230,25 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
       routes: <String, WizardRoute>{
         Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
-          onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
+          // skip Routes.tryOrInstall (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
+          // onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
+          onNext: (_) =>
+              !service.hasRst ? Routes.keyboardLayout : Routes.turnOffRST,
         ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.tryOrInstall: WizardRoute(
-        //   builder: TryOrInstallPage.create,
-        //   onNext: (settings) {
-        //     switch (settings.arguments as Option?) {
-        //       case Option.repairUbuntu:
-        //         return Routes.repairUbuntu;
-        //       case Option.tryUbuntu:
-        //         return Routes.tryUbuntu;
-        //       default:
-        //         if (model.hasRst) return Routes.turnOffRST;
-        //         return Routes.keyboardLayout;
-        //     }
-        //   },
-        // ),
+        Routes.tryOrInstall: WizardRoute(
+          builder: TryOrInstallPage.create,
+          onNext: (settings) {
+            switch (settings.arguments as Option?) {
+              case Option.repairUbuntu:
+                return Routes.repairUbuntu;
+              case Option.tryUbuntu:
+                return Routes.tryUbuntu;
+              default:
+                if (service.hasRst) return Routes.turnOffRST;
+                return Routes.keyboardLayout;
+            }
+          },
+        ),
         Routes.turnOffRST: const WizardRoute(
           builder: TurnOffRSTPage.create,
         ),
@@ -301,17 +303,18 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.whereAreYou: const WizardRoute(
           builder: WhereAreYouPage.create,
         ),
-        Routes.whoAreYou: const WizardRoute(
+        Routes.whoAreYou: WizardRoute(
           builder: WhoAreYouPage.create,
+          // skip Routes.chooseYourLook (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
+          onNext: (_) => Routes.installationSlides,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/41
         // Routes.configureActiveDirectory: const WizardRoute(
         //   builder: ConfigureActiveDirectoryPage.create,
         // ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.chooseYourLook: const WizardRoute(
-        //   builder: ChooseYourLookPage.create,
-        // ),
+        Routes.chooseYourLook: const WizardRoute(
+          builder: ChooseYourLookPage.create,
+        ),
         Routes.installationSlides: const WizardRoute(
           builder: InstallationSlidesPage.create,
         ),
