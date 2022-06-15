@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
-import 'package:xdg_directories/xdg_directories.dart' as xdg;
 
 import 'endpoint.dart';
 import 'server/common.dart';
 import 'server/paths.dart';
+import 'server/pidfile.dart';
 
 abstract class SubiquityServer {
   Process? _serverProcess;
@@ -72,7 +72,7 @@ abstract class SubiquityServer {
 
     // kill the existing test server if it's already running, so they don't pile
     // up on hot restarts
-    final pid = await _readPidFile();
+    final pid = await readPidFile();
     if (pid != null) {
       Process.killPid(pid);
     }
@@ -104,7 +104,7 @@ abstract class SubiquityServer {
       'Starting server (PID: ${_serverProcess!.pid}) with args: $subiquityCmd',
     );
 
-    await _writePidFile(_serverProcess!.pid);
+    await writePidFile(_serverProcess!.pid);
   }
 
   static Future<void> _waitSubiquity(Endpoint endpoint) async {
@@ -129,33 +129,9 @@ abstract class SubiquityServer {
     client.close();
   }
 
-  static File _pidFile() {
-    return File('${xdg.runtimeDir?.path}/subiquity-test-server.pid');
-  }
-
-  static Future<int?> _readPidFile() async {
-    final file = _pidFile();
-    if (!await file.exists()) {
-      return null;
-    }
-    final content = await file.readAsString();
-    return int.tryParse(content.trim());
-  }
-
-  static Future<void> _writePidFile(int pid) async {
-    final file = _pidFile();
-    try {
-      await file.create(recursive: true);
-      await file.writeAsString(pid.toString());
-    } on FileSystemException catch (e) {
-      log.warning('Error writing ${file.path} (${e.message}). '
-          'Hot restarts may cause multiple Subiquity test servers to run.');
-    }
-  }
-
   Future<void> stop() async {
     try {
-      await _pidFile().delete();
+      await pidFile().delete();
     } on FileSystemException catch (_) {}
     _serverProcess?.kill();
     await _serverProcess?.exitCode;
