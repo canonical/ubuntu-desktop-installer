@@ -186,7 +186,7 @@ Future<void> testApplyingChangesPage(
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 
   if (expectClose) {
-    expect(await waitForWindowClosed(), isTrue);
+    expectSync(await waitForWindowClosed(), isTrue);
   }
 }
 
