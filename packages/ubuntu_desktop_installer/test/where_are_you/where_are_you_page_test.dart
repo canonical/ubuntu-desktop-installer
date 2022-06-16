@@ -11,79 +11,97 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import '../test_utils.dart';
-import 'where_are_you_model_test.mocks.dart';
 import 'where_are_you_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([WhereAreYouModel])
+@GenerateMocks([GeoService, TimezoneController, WhereAreYouModel])
 void main() {
-  MockWhereAreYouModel buildModel({
-    bool? isInitialized,
+  MockTimezoneController buildController({
     GeoLocation? selectedLocation,
     LatLng? selectedCoordinates,
     Iterable<GeoLocation>? locations,
     Iterable<GeoLocation>? timezones,
   }) {
+    final controller = MockTimezoneController();
+    when(controller.selectedLocation).thenReturn(selectedLocation);
+    when(controller.locations).thenReturn(locations ?? const <GeoLocation>[]);
+    when(controller.timezones).thenReturn(timezones ?? const <GeoLocation>[]);
+    when(controller.searchLocation(''))
+        .thenAnswer((_) async => const <GeoLocation>[]);
+    when(controller.searchTimezone(''))
+        .thenAnswer((_) async => const <GeoLocation>[]);
+    return controller;
+  }
+
+  MockWhereAreYouModel buildModel({String? timezone}) {
     final model = MockWhereAreYouModel();
-    when(model.isInitialized).thenReturn(isInitialized ?? true);
-    when(model.selectedLocation).thenReturn(selectedLocation);
-    when(model.locations).thenReturn(locations ?? const <GeoLocation>[]);
-    when(model.timezones).thenReturn(timezones ?? const <GeoLocation>[]);
-    when(model.searchLocation(''))
-        .thenAnswer((_) async => const <GeoLocation>[]);
-    when(model.searchTimezone(''))
-        .thenAnswer((_) async => const <GeoLocation>[]);
+    when(model.init()).thenAnswer((_) async => timezone ?? '');
     return model;
   }
 
-  Widget buildPage(WhereAreYouModel model) {
-    return ChangeNotifierProvider<WhereAreYouModel>.value(
-      value: model,
-      child: WhereAreYouPage(),
+  Widget buildPage(
+    WhereAreYouModel model,
+    TimezoneController controller,
+  ) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<TimezoneController>.value(value: controller),
+        ChangeNotifierProvider<WhereAreYouModel>.value(value: model),
+      ],
+      child: const WhereAreYouPage(),
     );
   }
 
   testWidgets('initializes the model', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final controller = buildController();
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
     verify(model.init()).called(1);
   });
 
   testWidgets('saves the location', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final controller = buildController();
+    when(model.init()).thenAnswer((_) async => '');
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
       tester.ulang.continueAction,
     );
     await tester.tap(continueButton);
-    verify(model.save()).called(1);
+    verify(model.save(null)).called(1);
   });
 
   testWidgets('search location', (tester) async {
     final model = buildModel();
-    when(model.searchLocation('test'))
+    final controller = buildController();
+    when(controller.searchLocation('test'))
         .thenAnswer((_) async => const <GeoLocation>[]);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     await tester.enterText(find.byType(EditableText).first, 'test');
     await tester.pump();
-    verify(model.searchLocation('test')).called(1);
+    verify(controller.searchLocation('test')).called(1);
   });
 
   testWidgets('search timezone', (tester) async {
     final model = buildModel();
-    when(model.searchTimezone('test'))
+    final controller = buildController();
+    when(controller.searchTimezone('test'))
         .thenAnswer((_) async => const <GeoLocation>[]);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     await tester.enterText(find.byType(EditableText).last, 'test');
     await tester.pump();
-    verify(model.searchTimezone('test')).called(1);
+    verify(controller.searchTimezone('test')).called(1);
   });
 
   testWidgets('select location', (tester) async {
@@ -93,10 +111,12 @@ void main() {
     ];
 
     final model = buildModel();
-    when(model.searchLocation('b')).thenAnswer((_) async => locations);
-    when(model.selectLocation(GeoLocation())).thenAnswer((_) {});
+    final controller = buildController();
+    when(controller.searchLocation('b')).thenAnswer((_) async => locations);
+    when(controller.selectLocation(GeoLocation())).thenAnswer((_) {});
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     expect(find.byType(ListView), findsNothing);
     expect(find.text('b'), findsNothing);
@@ -113,7 +133,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(model.selectLocation(GeoLocation(name: 'b'))).called(1);
+    verify(controller.selectLocation(GeoLocation(name: 'b'))).called(1);
   });
 
   testWidgets('select timezone', (tester) async {
@@ -123,10 +143,12 @@ void main() {
     ];
 
     final model = buildModel();
-    when(model.searchTimezone('b')).thenAnswer((_) async => timezones);
-    when(model.selectTimezone(GeoLocation())).thenAnswer((_) {});
+    final controller = buildController();
+    when(controller.searchTimezone('b')).thenAnswer((_) async => timezones);
+    when(controller.selectTimezone(GeoLocation())).thenAnswer((_) {});
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     expect(find.byType(ListView), findsNothing);
     expect(find.text('b'), findsNothing);
@@ -143,7 +165,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(model.selectTimezone(GeoLocation(timezone: 'b'))).called(1);
+    verify(controller.selectTimezone(GeoLocation(timezone: 'b'))).called(1);
   });
 
   testWidgets('select coordinates', (tester) async {
@@ -153,20 +175,24 @@ void main() {
     ];
 
     final model = buildModel();
-    when(model.searchCoordinates(any)).thenAnswer((_) async => locations);
+    final controller = buildController();
+    when(controller.searchCoordinates(any)).thenAnswer((_) async => locations);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     expect(find.byType(TimezoneMap), findsOneWidget);
     await tester.tap(find.byType(TimezoneMap));
 
-    verify(model.searchCoordinates(any)).called(1);
-    verify(model.selectLocation(locations.first)).called(1);
+    verify(controller.searchCoordinates(any)).called(1);
+    verify(controller.selectLocation(locations.first)).called(1);
   });
 
   testWidgets('format location', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final controller = buildController();
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final page = find.byType(WhereAreYouPage);
     expect(page, findsOneWidget);
@@ -192,7 +218,9 @@ void main() {
 
   testWidgets('format timezone', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final controller = buildController();
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final page = find.byType(WhereAreYouPage);
     expect(page, findsOneWidget);
@@ -206,7 +234,7 @@ void main() {
     );
   });
 
-  testWidgets('creates a model', (tester) async {
+  testWidgets('creates a model and controller', (tester) async {
     final client = MockSubiquityClient();
     when(client.timezone())
         .thenAnswer((_) async => TimeZoneInfo(timezone: '', fromGeoip: false));
@@ -224,11 +252,15 @@ void main() {
     final context = tester.element(page);
     final model = Provider.of<WhereAreYouModel>(context, listen: false);
     expect(model, isNotNull);
+    final controller = Provider.of<TimezoneController>(context, listen: false);
+    expect(controller, isNotNull);
   });
 
   testWidgets('back button is disabled', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final controller = buildController();
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final backButton = find.widgetWithText(
       OutlinedButton,
