@@ -155,6 +155,7 @@ void main() {
       offset: 678,
       resize: false,
       path: '/dev/sda2',
+      estimatedMinSize: 123,
     );
     const json = <String, dynamic>{
       'size': 1,
@@ -176,6 +177,7 @@ void main() {
       'offset': 678,
       'resize': false,
       'path': '/dev/sda2',
+      'estimated_min_size': 123,
       '\$type': 'Partition',
     };
     expect(partition.toJson(), equals(json));

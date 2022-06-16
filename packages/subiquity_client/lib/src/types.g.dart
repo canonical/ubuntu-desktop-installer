@@ -414,6 +414,7 @@ _$Partition _$_$PartitionFromJson(Map<String, dynamic> json) {
         ? null
         : OsProber.fromJson(json['os'] as Map<String, dynamic>),
     offset: json['offset'] as int?,
+    estimatedMinSize: json['estimated_min_size'] as int? ?? -1,
     resize: json['resize'] as bool?,
     path: json['path'] as String?,
   );
@@ -432,6 +433,7 @@ Map<String, dynamic> _$_$PartitionToJson(_$Partition instance) =>
       'boot': instance.boot,
       'os': instance.os?.toJson(),
       'offset': instance.offset,
+      'estimated_min_size': instance.estimatedMinSize,
       'resize': instance.resize,
       'path': instance.path,
     };
@@ -823,6 +825,7 @@ _$_UbuntuProService _$_$_UbuntuProServiceFromJson(Map<String, dynamic> json) {
   return _$_UbuntuProService(
     name: json['name'] as String,
     description: json['description'] as String,
+    autoEnabled: json['auto_enabled'] as bool,
   );
 }
 
@@ -831,6 +834,7 @@ Map<String, dynamic> _$_$_UbuntuProServiceToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
+      'auto_enabled': instance.autoEnabled,
     };
 
 _$_UbuntuProCheckTokenAnswer _$_$_UbuntuProCheckTokenAnswerFromJson(

@@ -329,6 +329,7 @@ class PartitionOrGap with _$PartitionOrGap {
     bool? boot,
     OsProber? os,
     int? offset,
+    @Default(-1) int? estimatedMinSize,
     bool? resize,
     String? path,
   }) = Partition;
@@ -604,6 +605,7 @@ class UbuntuProService with _$UbuntuProService {
   const factory UbuntuProService({
     required String name,
     required String description,
+    required bool autoEnabled,
   }) = _UbuntuProService;
 
   factory UbuntuProService.fromJson(Map<String, dynamic> json) =>
