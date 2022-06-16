@@ -8,7 +8,7 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Skrivbordsinstallerare';
+  String get appTitle => 'Skrivbordsinstallatören för Ubuntu';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -554,7 +554,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get writeChangesDescription => 'Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'Följande enheters partitionstabeller är ändrade:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -590,7 +590,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get chooseYourLookPageLightBodyText => 'Allt är ljust och lysande';
 
   @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
+  String get chooseYourLookPageDarkBodyText => 'Hej mörkret min gamle vän';
 
   @override
   String get installationCompleteTitle => 'Installationen är klar';
@@ -760,5 +760,5 @@ class AppLocalizationsSv extends AppLocalizations {
   String get copyingFiles => 'Kopierar filer...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Installationen misslyckades';
 }

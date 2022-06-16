@@ -14,6 +14,8 @@ import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.d
 import 'applying_changes_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([ApplyingChangesModel])
 void main() {
   const theEnd = 'The end';
@@ -71,9 +73,9 @@ void main() {
     });
 
     final windowClosed = Completer();
-    final methodChannel = MethodChannel('ubuntu_wizard');
+    final methodChannel = MethodChannel('window_manager');
     methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('closeWindow'));
+      expect(call.method, equals('close'));
       windowClosed.complete();
     });
 

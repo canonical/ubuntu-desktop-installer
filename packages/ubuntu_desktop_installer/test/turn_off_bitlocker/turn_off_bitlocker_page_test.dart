@@ -12,6 +12,8 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../test_utils.dart';
 import 'turn_off_bitlocker_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([TurnOffBitLockerModel, UrlLauncher])
 void main() {
   testWidgets('restart', (tester) async {

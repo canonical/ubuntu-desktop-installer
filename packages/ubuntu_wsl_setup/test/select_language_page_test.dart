@@ -6,16 +6,18 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
+import 'package:ubuntu_wsl_setup/locale.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_page.dart';
 
 import 'select_language_page_test.mocks.dart';
 import 'test_utils.dart';
 
-@GenerateMocks([SelectLanguageModel, Settings])
+// ignore_for_file: type=lint
+
+@GenerateMocks([SelectLanguageModel])
 void main() {
   LangTester.type = SelectLanguagePage;
 
@@ -36,24 +38,23 @@ void main() {
     return model;
   }
 
-  Widget buildPage(SelectLanguageModel model, Settings settings) {
+  Widget buildPage(SelectLanguageModel model, [Locale? locale]) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<SelectLanguageModel>.value(value: model),
-        ChangeNotifierProvider<Settings>.value(value: settings),
       ],
-      child: SelectLanguagePage(),
+      child: InheritedLocale(value: locale, child: SelectLanguagePage()),
     );
   }
 
-  Widget buildApp(
-      WidgetTester tester, SelectLanguageModel model, Settings settings) {
+  Widget buildApp(WidgetTester tester, SelectLanguageModel model,
+      [Locale? locale]) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
         routes: {
           '/': WizardRoute(
-            builder: (_) => buildPage(model, settings),
+            builder: (_) => buildPage(model, locale),
             onNext: (settings) => '/',
           ),
         },
@@ -63,10 +64,7 @@ void main() {
 
   testWidgets('select and apply locale', (tester) async {
     final model = buildModel();
-    final settings = MockSettings();
-    when(settings.locale).thenReturn(Locale('fr_FR'));
-
-    await tester.pumpWidget(buildApp(tester, model, settings));
+    await tester.pumpWidget(buildApp(tester, model, Locale('fr_FR')));
 
     verify(model.loadLanguages()).called(1);
     verify(model.selectLocale(Locale('fr_FR'))).called(1);
@@ -75,15 +73,14 @@ void main() {
     expect(listTile, findsOneWidget);
     await tester.tap(listTile);
     verify(model.selectedLanguageIndex = 2).called(1);
-    verify(settings.applyLocale(Locale('de_DE'))).called(1);
+
+    final context = tester.element(find.byType(SelectLanguagePage));
+    expect(InheritedLocale.of(context), Locale('de_DE'));
   });
 
   testWidgets('load and apply locale', (tester) async {
     final model = buildModel();
-    final settings = MockSettings();
-    when(settings.locale).thenReturn(Locale('fr_FR'));
-
-    await tester.pumpWidget(buildApp(tester, model, settings));
+    await tester.pumpWidget(buildApp(tester, model, Locale('fr_FR')));
 
     verify(model.loadLanguages()).called(1);
     verify(model.getServerLocale()).called(1);
@@ -102,13 +99,9 @@ void main() {
     when(client.locale()).thenAnswer((_) async => 'en_US.UTF-8');
     registerMockService<SubiquityClient>(client);
 
-    final settings = MockSettings();
-    when(settings.locale).thenReturn(Locale('en_US'));
-
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,
-      home: ChangeNotifierProvider<Settings>.value(
-        value: settings,
+      home: InheritedLocale(
         child: Wizard(
           routes: {
             '/': WizardRoute(

@@ -4,6 +4,8 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:test/test.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   late SubiquityServer testServer;
   late SubiquityClient client;
@@ -11,7 +13,8 @@ void main() {
   test('initialization', () async {
     client = SubiquityClient();
     final isOpen = client.isOpen;
-    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(''));
+    final address = Endpoint.unix('');
+    Future.delayed(Duration(milliseconds: 1)).then((_) => client.open(address));
     await expectLater(isOpen, completes);
     expect(await isOpen, isTrue);
   });

@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/src/endpoint.dart';
 import 'package:subiquity_client/src/status_monitor.dart';
 import 'package:subiquity_client/src/types.dart';
 import 'package:test/test.dart';
@@ -34,13 +35,14 @@ final isDone = testStatus(ApplicationState.DONE);
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpClientResponse])
 void main() {
+  final addr = Endpoint.unix('/tmp/subiquity.sock');
   group('start', () {
     test('before listen', () async {
       final client = createMockClient();
       final monitor = SubiquityStatusMonitor(client);
 
       // start first
-      await monitor.start('/tmp/subiquity.sock');
+      await monitor.start(addr);
       expect(monitor.status, equals(isWaiting));
       verify(client.openUrl('GET', noStatus)).called(1);
 
@@ -61,7 +63,7 @@ void main() {
       monitor.onStatusChanged.listen(statuses.add);
 
       // then start
-      await monitor.start('/tmp/subiquity.sock');
+      await monitor.start(addr);
       expect(monitor.status, equals(isWaiting));
       verify(client.openUrl('GET', noStatus)).called(1);
 
@@ -78,7 +80,7 @@ void main() {
     final client = createMockClient();
     final monitor = SubiquityStatusMonitor(client);
 
-    await monitor.start('/tmp/subiquity.sock');
+    await monitor.start(addr);
     expect(monitor.status, equals(isWaiting));
     await expectLater(monitor.onStatusChanged, emits(isRunning));
     verify(client.openUrl('GET', any)).called(isPositive);
@@ -100,7 +102,7 @@ void main() {
 
     final monitor = SubiquityStatusMonitor(client);
 
-    await monitor.start('/tmp/subiquity.sock');
+    await monitor.start(addr);
     expect(monitor.status, equals(isWaiting));
     await expectLater(
         monitor.onStatusChanged, emitsInOrder([isRunning, isNull]));

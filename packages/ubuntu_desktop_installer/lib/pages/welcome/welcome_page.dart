@@ -4,11 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../settings.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {

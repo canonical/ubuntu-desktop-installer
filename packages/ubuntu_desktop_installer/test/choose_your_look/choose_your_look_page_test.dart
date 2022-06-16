@@ -4,11 +4,13 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
-import 'package:ubuntu_wizard/settings.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'choose_your_look_page_test.mocks.dart';
+
+// ignore_for_file: type=lint
 
 @GenerateMocks([Settings])
 void main() {

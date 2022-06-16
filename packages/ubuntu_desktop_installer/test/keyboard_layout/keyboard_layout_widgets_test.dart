@@ -4,6 +4,8 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_w
 
 import '../test_utils.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
 

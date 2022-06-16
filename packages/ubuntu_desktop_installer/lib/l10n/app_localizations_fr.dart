@@ -518,16 +518,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Ce nom d’utilisateur est invalide';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Ce nom d\'utilisateur existe déjà.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Ce nom est réservé pour le système.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Ce nom est trop long.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Ce nom contient des caractères invalides.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Choisir un mot de passe';
@@ -757,8 +757,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get supportedSoftware => 'Logiciels pris en charge';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Copie des fichiers...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Échec de l\'installation';
 }

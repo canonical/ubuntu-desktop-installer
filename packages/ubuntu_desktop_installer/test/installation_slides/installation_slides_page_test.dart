@@ -16,6 +16,8 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import '../test_utils.dart';
 import 'installation_slides_page_test.mocks.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([InstallationSlidesModel, JournalService])
 void main() {
   UbuntuTester.context = InstallationSlidesPage;

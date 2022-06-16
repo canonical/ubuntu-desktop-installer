@@ -15,6 +15,8 @@ import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_page.da
 import 'configuration_ui_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([ConfigurationUIModel])
 void main() {
   LangTester.type = ConfigurationUIPage;

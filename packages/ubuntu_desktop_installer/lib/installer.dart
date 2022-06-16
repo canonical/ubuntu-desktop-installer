@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gsettings/gsettings.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/settings.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -14,6 +15,7 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
+import 'settings.dart';
 import 'slides.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
@@ -73,17 +75,27 @@ void runInstallerApp(
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
 
+  final interfaceSettings = GSettings('org.gnome.desktop.interface');
+
+  WidgetsFlutterBinding.ensureInitialized();
+  onWindowClosed().then((_) async {
+    await interfaceSettings.close();
+  });
+
   final appStatus = ValueNotifier(AppStatus.loading);
 
   runWizardApp(
     ValueListenableBuilder<AppStatus>(
       valueListenable: appStatus,
       builder: (context, value, child) {
-        return UbuntuDesktopInstallerApp(
-          appStatus: value,
-          flavor: flavor,
-          slides: slides,
-          initialRoute: options['initial-route'],
+        return ChangeNotifierProvider(
+          create: (_) => Settings(interfaceSettings),
+          child: UbuntuDesktopInstallerApp(
+            appStatus: value,
+            flavor: flavor,
+            slides: slides,
+            initialRoute: options['initial-route'],
+          ),
         );
       },
     ),
@@ -163,7 +175,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   Widget buildApp(BuildContext context) {
     switch (appStatus) {
       case AppStatus.loading:
-        return _UbuntuDesktopInstallerLoadingPage();
+        return const _UbuntuDesktopInstallerLoadingPage();
       case AppStatus.ready:
         return _UbuntuDesktopInstallerWizard(initialRoute: initialRoute);
     }
@@ -219,23 +231,25 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
       routes: <String, WizardRoute>{
         Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
-          onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
+          // skip Routes.tryOrInstall (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
+          // onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
+          onNext: (_) =>
+              !service.hasRst ? Routes.keyboardLayout : Routes.turnOffRST,
         ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.tryOrInstall: WizardRoute(
-        //   builder: TryOrInstallPage.create,
-        //   onNext: (settings) {
-        //     switch (settings.arguments as Option?) {
-        //       case Option.repairUbuntu:
-        //         return Routes.repairUbuntu;
-        //       case Option.tryUbuntu:
-        //         return Routes.tryUbuntu;
-        //       default:
-        //         if (model.hasRst) return Routes.turnOffRST;
-        //         return Routes.keyboardLayout;
-        //     }
-        //   },
-        // ),
+        Routes.tryOrInstall: WizardRoute(
+          builder: TryOrInstallPage.create,
+          onNext: (settings) {
+            switch (settings.arguments as Option?) {
+              case Option.repairUbuntu:
+                return Routes.repairUbuntu;
+              case Option.tryUbuntu:
+                return Routes.tryUbuntu;
+              default:
+                if (service.hasRst) return Routes.turnOffRST;
+                return Routes.keyboardLayout;
+            }
+          },
+        ),
         Routes.turnOffRST: const WizardRoute(
           builder: TurnOffRSTPage.create,
         ),
@@ -290,17 +304,18 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.whereAreYou: const WizardRoute(
           builder: WhereAreYouPage.create,
         ),
-        Routes.whoAreYou: const WizardRoute(
+        Routes.whoAreYou: WizardRoute(
           builder: WhoAreYouPage.create,
+          // skip Routes.chooseYourLook (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
+          onNext: (_) => Routes.installationSlides,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/41
         // Routes.configureActiveDirectory: const WizardRoute(
         //   builder: ConfigureActiveDirectoryPage.create,
         // ),
-        // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-        // Routes.chooseYourLook: const WizardRoute(
-        //   builder: ChooseYourLookPage.create,
-        // ),
+        Routes.chooseYourLook: const WizardRoute(
+          builder: ChooseYourLookPage.create,
+        ),
         Routes.installationSlides: const WizardRoute(
           builder: InstallationSlidesPage.create,
         ),

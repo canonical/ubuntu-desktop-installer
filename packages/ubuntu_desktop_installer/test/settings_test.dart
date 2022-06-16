@@ -2,8 +2,10 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/settings.dart';
+
+// ignore_for_file: type=lint
 
 void main() {
   test('set gtk-theme via gsettings', () {

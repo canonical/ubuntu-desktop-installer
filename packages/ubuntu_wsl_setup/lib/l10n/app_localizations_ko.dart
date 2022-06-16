@@ -65,16 +65,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get profileSetupUsernameInvalid => '올바른 사용자 이름이 아닙니다';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => '사용자 이름이 이미 존재합니다.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => '사용자 이름이 너무 깁니다.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => '사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.';
 
   @override
   String get profileSetupPasswordRequired => '암호가 필요합니다';

@@ -16,6 +16,8 @@ import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
+// ignore_for_file: type=lint
+
 @GenerateMocks([ProfileSetupModel, UrlLauncher])
 void main() {
   LangTester.type = ProfileSetupPage;

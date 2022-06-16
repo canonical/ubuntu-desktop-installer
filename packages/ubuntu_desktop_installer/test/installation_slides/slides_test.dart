@@ -12,6 +12,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../test_utils.dart';
 import 'slides_test.mocks.dart';
 
+// ignore_for_file: type=lint
 @GenerateMocks([UrlLauncher])
 void main() {
   testWidgets('inherited slides', (tester) async {

@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('load localized languages', () async {
     const testLocales = [

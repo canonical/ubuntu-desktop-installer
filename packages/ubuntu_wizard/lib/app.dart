@@ -4,16 +4,13 @@ import 'dart:io' as io;
 import 'package:args/args.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 
-import 'settings.dart';
 import 'utils.dart';
 
 /// @internal
@@ -41,8 +38,6 @@ Future<void> runWizardApp(
   List<String>? serverArgs,
   Map<String, String>? serverEnvironment,
 }) async {
-  final interfaceSettings = GSettings('org.gnome.desktop.interface');
-
   if (options != null) {
     Logger.setup(
       path: _resolveLogPath(options['log-file']),
@@ -54,9 +49,9 @@ Future<void> runWizardApp(
 
   subiquityServer
       .start(serverMode, args: serverArgs, environment: serverEnvironment)
-      .then((socketPath) {
-    subiquityClient.open(socketPath);
-    subiquityMonitor?.start(socketPath);
+      .then((endpoint) {
+    subiquityClient.open(endpoint);
+    subiquityMonitor?.start(endpoint);
 
     onInitSubiquity?.call(subiquityClient);
 
@@ -82,10 +77,10 @@ Future<void> runWizardApp(
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
-    await interfaceSettings.close();
     await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
+    destroyWindow();
   });
 
   runZonedGuarded(() {
@@ -93,10 +88,7 @@ Future<void> runWizardApp(
       log.error('Unhandled exception', error.exception, error.stack);
     };
 
-    return runApp(ChangeNotifierProvider(
-      create: (_) => Settings(interfaceSettings),
-      child: app,
-    ));
+    return runApp(app);
   }, (error, stack) => log.error('Unhandled exception', error, stack));
 }
 

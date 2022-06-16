@@ -601,5 +601,11 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "whoAreYouPageUsernameInUse": "해당 사용자 이름이 이미 있습니다.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "시스템 사용을 위해 예약된 사용자 이름입니다.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "사용자 이름이 너무 깁니다.",
+  "@whoAreYouPageUsernameTooLong": {}
 }

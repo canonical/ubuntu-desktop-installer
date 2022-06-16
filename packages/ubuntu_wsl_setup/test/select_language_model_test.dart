@@ -6,6 +6,8 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 
+// ignore_for_file: type=lint
+
 void main() {
   test('load languages', () async {
     final model = SelectLanguageModel(MockSubiquityClient());

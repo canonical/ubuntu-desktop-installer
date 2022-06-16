@@ -243,6 +243,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get profileSetupUsernameInvalid => 'O nome de usuário é inválido';
 
   @override
+  String get profileSetupUsernameInUse => 'Esse nome de usuário já existe.';
+
+  @override
+  String get profileSetupUsernameSystemReserved => 'Esse nome de usuário é reservadopara uso do sistema.';
+
+  @override
+  String get profileSetupUsernameTooLong => 'Esse nome de usuário é muito longo.';
+
+  @override
+  String get profileSetupUsernameInvalidChars => 'Esse nome de usuário contém caracteres inválidos.';
+
+  @override
   String get profileSetupPasswordRequired => 'Senha é obrigatória';
 
   @override
@@ -285,10 +297,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get advancedSetupGUIIntegrationSubtitle => 'Selecione para habilitar configuração automática do DISPLAY. É necessário X server de terceiros.';
 
   @override
-  String get configurationUITitle => 'UI de Configuração do Ubuntu WSL (experimental)';
+  String get configurationUITitle => 'Configuração Avançada do Ubuntu WSL';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperabilidade';
+
+  @override
+  String get configurationUIInteroperabilityTitle => 'Habilitado';
+
+  @override
+  String get configurationUIInteroperabilitySubtitle => 'Habilitar interoperabilidade.';
+
+  @override
+  String get configurationUIInteropAppendWindowsPathTitle => 'Adicionar Windows \"Path\"';
+
+  @override
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Adicionar o conteúdo da variável de ambiente \"Path\" do Windows à PATH no WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Montagem Automática';
@@ -303,7 +327,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get configurationUIMountFstabTitle => 'Montar /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Habilita a montagem do arquivo /etc/fstab. O arquivo de configuração /etc/fstab contém ???';
+  String get configurationUIMountFstabSubtitle => 'Habilita a montagem do arquivo /etc/fstab. Esse arquivo contém informações sobre os sistemas de arquivos que o sistema irá montar.';
+
+  @override
+  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+
+  @override
+  String get configurationUISystemdTitle => 'Habilitado';
+
+  @override
+  String get configurationUISystemdSubtitle => 'Ativar o systemd durante o boot. ATENÇÃO: Esse recurso é experimental.';
+
+  @override
+  String get applyingChanges => 'Aplicando as alterações…';
+
+  @override
+  String get applyingChangesDisclaimer => 'Isso pode levar vários minutos dependendo da sua conexão com a Internet.';
 
   @override
   String get setupCompleteTitle => 'Configuração concluída';

@@ -5,14 +5,16 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+// ignore_for_file: type=lint
+
 void main() async {
   test('reboot', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
-    final methodChannel = MethodChannel('ubuntu_wizard');
+    final methodChannel = MethodChannel('window_manager');
     methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('closeWindow'));
+      expect(call.method, equals('close'));
       windowClosed = true;
     });
 

@@ -43,7 +43,7 @@ class StorageTable extends StatelessWidget {
       return child;
     }
 
-    final index = hashList([disk, object]);
+    final index = Object.hashAll([disk, object]);
     return AutoScrollTag(
       key: ValueKey(index),
       index: index,
@@ -83,7 +83,7 @@ class StorageTable extends StatelessWidget {
           objectIndex < disk.partitions.length;
           ++objectIndex)
         DataRow(
-          key: ValueKey(hashList([diskIndex, objectIndex])),
+          key: ValueKey(Object.hashAll([diskIndex, objectIndex])),
           selected: isSelected?.call(diskIndex, objectIndex) ?? false,
           onSelectChanged: canSelect?.call(diskIndex, objectIndex) == true
               ? (selected) {

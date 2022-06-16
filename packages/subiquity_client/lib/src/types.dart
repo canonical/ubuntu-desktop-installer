@@ -5,6 +5,37 @@ part 'types.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
+// subiquity serializes `Dict[int, Any]` as `List[List[int, Any]]`
+class JsonMapConverter
+    implements JsonConverter<Map<int, String>, List<dynamic>> {
+  const JsonMapConverter();
+
+  @override
+  Map<int, String> fromJson(List<dynamic> json) {
+    return {
+      for (final entry in json) entry[0] as int: entry[1] as String,
+    };
+  }
+
+  @override
+  List<dynamic> toJson(Map<int, String> values) {
+    return [
+      for (final entry in values.entries) [entry.key, entry.value],
+    ];
+  }
+}
+
+// subiquitycore.models.network
+class NetDevInfo {
+  const NetDevInfo._();
+  factory NetDevInfo.fromJson(Map<String, dynamic> json) =>
+      const NetDevInfo._();
+  Map<String, dynamic> toJson() => {};
+}
+
+// Union[Partition, Gap]
+typedef DiskObject = PartitionOrGap;
+
 enum ErrorReportState {
   INCOMPLETE,
   LOADING,
@@ -71,23 +102,63 @@ class ApplicationStatus with _$ApplicationStatus {
       _$ApplicationStatusFromJson(json);
 }
 
-Map<int, String> _keycodesFromJson(List<dynamic> keycodes) {
-  return {
-    for (final keycode in keycodes) keycode[0] as int: keycode[1] as String,
-  };
+enum PasswordKind {
+  NONE,
+  KNOWN,
+  UNKNOWN,
 }
 
-List<dynamic> _keycodesToJson(Map<int, String> keycodes) {
-  return keycodes.entries.map((e) => [e.key, e.value]).toList();
+@freezed
+class KeyFingerprint with _$KeyFingerprint {
+  const factory KeyFingerprint({
+    required String keytype,
+    required String fingerprint,
+  }) = _KeyFingerprint;
+
+  factory KeyFingerprint.fromJson(Map<String, dynamic> json) =>
+      _$KeyFingerprintFromJson(json);
+}
+
+@freezed
+class LiveSessionSSHInfo with _$LiveSessionSSHInfo {
+  const factory LiveSessionSSHInfo({
+    required String username,
+    required PasswordKind passwordKind,
+    required String? password,
+    required List<KeyFingerprint> authorizedKeyFingerprints,
+    required List<String> ips,
+    required List<KeyFingerprint> hostKeyFingerprints,
+  }) = _LiveSessionSSHInfo;
+
+  factory LiveSessionSSHInfo.fromJson(Map<String, dynamic> json) =>
+      _$LiveSessionSSHInfoFromJson(json);
+}
+
+enum RefreshCheckState {
+  UNKNOWN,
+  AVAILABLE,
+  UNAVAILABLE,
+}
+
+@freezed
+class RefreshStatus with _$RefreshStatus {
+  const factory RefreshStatus({
+    required RefreshCheckState availability,
+    @Default('') String currentSnapVersion,
+    @Default('') String newSnapVersion,
+  }) = _RefreshStatus;
+
+  factory RefreshStatus.fromJson(Map<String, dynamic> json) =>
+      _$RefreshStatusFromJson(json);
 }
 
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
 class AnyStep with _$AnyStep {
   @FreezedUnionValue('StepPressKey')
+  @JsonMapConverter()
   const factory AnyStep.stepPressKey({
     required List<String> symbols,
-    @JsonKey(fromJson: _keycodesFromJson, toJson: _keycodesToJson)
-        required Map<int, String> keycodes,
+    required Map<int, String> keycodes,
   }) = StepPressKey;
 
   @FreezedUnionValue('StepKeyPresent')
@@ -180,6 +251,42 @@ class SourceSelectionAndSetting with _$SourceSelectionAndSetting {
       _$SourceSelectionAndSettingFromJson(json);
 }
 
+@freezed
+class ZdevInfo with _$ZdevInfo {
+  const factory ZdevInfo({
+    required String id,
+    required String type,
+    required bool on,
+    required bool exists,
+    required bool pers,
+    required bool auto,
+    required bool failed,
+    required String names,
+  }) = _ZdevInfo;
+
+  factory ZdevInfo.fromJson(Map<String, dynamic> json) =>
+      _$ZdevInfoFromJson(json);
+}
+
+enum WLANSupportInstallState {
+  NOT_NEEDED,
+  NOT_AVAILABLE,
+  INSTALLING,
+  FAILED,
+  DONE,
+}
+
+@freezed
+class NetworkStatus with _$NetworkStatus {
+  const factory NetworkStatus({
+    required List<NetDevInfo> devices,
+    required WLANSupportInstallState wlanSupportInstallState,
+  }) = _NetworkStatus;
+
+  factory NetworkStatus.fromJson(Map<String, dynamic> json) =>
+      _$NetworkStatusFromJson(json);
+}
+
 enum ProbeStatus {
   PROBING,
   FAILED,
@@ -208,14 +315,14 @@ class OsProber with _$OsProber {
 }
 
 @Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
-class DiskObject with _$DiskObject {
+class PartitionOrGap with _$PartitionOrGap {
   @FreezedUnionValue('Partition')
-  const factory DiskObject.partition({
+  const factory PartitionOrGap.partition({
     int? size,
     int? number,
     bool? preserve,
     String? wipe,
-    @Default([]) List<String>? annotations,
+    @Default([]) List<String> annotations,
     String? mount,
     String? format,
     bool? grubDevice,
@@ -227,13 +334,13 @@ class DiskObject with _$DiskObject {
   }) = Partition;
 
   @FreezedUnionValue('Gap')
-  const factory DiskObject.gap({
+  const factory PartitionOrGap.gap({
     required int offset,
     required int size,
   }) = Gap;
 
-  factory DiskObject.fromJson(Map<String, dynamic> json) =>
-      _$DiskObjectFromJson(json);
+  factory PartitionOrGap.fromJson(Map<String, dynamic> json) =>
+      _$PartitionOrGapFromJson(json);
 }
 
 @freezed
@@ -244,7 +351,7 @@ class Disk with _$Disk {
     required String type,
     required int size,
     required List<String> usageLabels,
-    required List<DiskObject> partitions,
+    required List<PartitionOrGap> partitions,
     required bool okForGuided,
     required String? ptable,
     required bool preserve,
@@ -312,6 +419,40 @@ class StorageResponseV2 with _$StorageResponseV2 {
 }
 
 @freezed
+class AddPartitionV2 with _$AddPartitionV2 {
+  const factory AddPartitionV2({
+    required String diskId,
+    required Partition partition,
+    required Gap gap,
+  }) = _AddPartitionV2;
+
+  factory AddPartitionV2.fromJson(Map<String, dynamic> json) =>
+      _$AddPartitionV2FromJson(json);
+}
+
+@freezed
+class ModifyPartitionV2 with _$ModifyPartitionV2 {
+  const factory ModifyPartitionV2({
+    required String diskId,
+    required Partition partition,
+  }) = _ModifyPartitionV2;
+
+  factory ModifyPartitionV2.fromJson(Map<String, dynamic> json) =>
+      _$ModifyPartitionV2FromJson(json);
+}
+
+@freezed
+class ReformatDisk with _$ReformatDisk {
+  const factory ReformatDisk({
+    required String diskId,
+    String? ptable,
+  }) = _ReformatDisk;
+
+  factory ReformatDisk.fromJson(Map<String, dynamic> json) =>
+      _$ReformatDiskFromJson(json);
+}
+
+@freezed
 class IdentityData with _$IdentityData {
   const factory IdentityData({
     @Default('') String realname,
@@ -335,13 +476,99 @@ enum UsernameValidation {
 @freezed
 class SSHData with _$SSHData {
   const factory SSHData({
-    bool? installServer,
-    bool? allowPw,
-    List<dynamic>? authorizedKeys,
+    required bool installServer,
+    required bool allowPw,
+    @Default([]) List<String> authorizedKeys,
   }) = _SSHData;
 
   factory SSHData.fromJson(Map<String, dynamic> json) =>
       _$SSHDataFromJson(json);
+}
+
+enum SnapCheckState {
+  FAILED,
+  LOADING,
+  DONE,
+}
+
+@freezed
+class ChannelSnapInfo with _$ChannelSnapInfo {
+  const factory ChannelSnapInfo({
+    required String channelName,
+    required String revision,
+    required String confinement,
+    required String version,
+    required int size,
+    required DateTime releasedAt,
+  }) = _ChannelSnapInfo;
+
+  factory ChannelSnapInfo.fromJson(Map<String, dynamic> json) =>
+      _$ChannelSnapInfoFromJson(json);
+}
+
+@freezed
+class SnapInfo with _$SnapInfo {
+  const factory SnapInfo({
+    required String name,
+    @Default('') String summary,
+    @Default('') String publisher,
+    @Default(false) bool verified,
+    @Default(false) bool starred,
+    @Default('') String description,
+    @Default('') String confinement,
+    @Default('') String license,
+    @Default([]) List<ChannelSnapInfo> channels,
+  }) = _SnapInfo;
+
+  factory SnapInfo.fromJson(Map<String, dynamic> json) =>
+      _$SnapInfoFromJson(json);
+}
+
+@freezed
+class DriversResponse with _$DriversResponse {
+  const factory DriversResponse({
+    required bool install,
+    required List<String>? drivers,
+    required bool localOnly,
+    required bool searchDrivers,
+  }) = _DriversResponse;
+
+  factory DriversResponse.fromJson(Map<String, dynamic> json) =>
+      _$DriversResponseFromJson(json);
+}
+
+@freezed
+class DriversPayload with _$DriversPayload {
+  const factory DriversPayload({
+    required bool install,
+  }) = _DriversPayload;
+
+  factory DriversPayload.fromJson(Map<String, dynamic> json) =>
+      _$DriversPayloadFromJson(json);
+}
+
+@freezed
+class SnapSelection with _$SnapSelection {
+  const factory SnapSelection({
+    required String name,
+    required String channel,
+    @Default(false) bool classic,
+  }) = _SnapSelection;
+
+  factory SnapSelection.fromJson(Map<String, dynamic> json) =>
+      _$SnapSelectionFromJson(json);
+}
+
+@freezed
+class SnapListResponse with _$SnapListResponse {
+  const factory SnapListResponse({
+    required SnapCheckState status,
+    @Default([]) List<SnapInfo> snaps,
+    @Default([]) List<SnapSelection> selections,
+  }) = _SnapListResponse;
+
+  factory SnapListResponse.fromJson(Map<String, dynamic> json) =>
+      _$SnapListResponseFromJson(json);
 }
 
 @freezed
@@ -353,6 +580,50 @@ class TimeZoneInfo with _$TimeZoneInfo {
 
   factory TimeZoneInfo.fromJson(Map<String, dynamic> json) =>
       _$TimeZoneInfoFromJson(json);
+}
+
+@freezed
+class UbuntuProInfo with _$UbuntuProInfo {
+  const factory UbuntuProInfo({
+    required String token,
+  }) = _UbuntuProInfo;
+
+  factory UbuntuProInfo.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProInfoFromJson(json);
+}
+
+enum UbuntuProCheckTokenStatus {
+  VALID_TOKEN,
+  INVALID_TOKEN,
+  EXPIRED_TOKEN,
+  UNKNOWN_ERROR,
+}
+
+@freezed
+class UbuntuProService with _$UbuntuProService {
+  const factory UbuntuProService({
+    required String name,
+    required String description,
+  }) = _UbuntuProService;
+
+  factory UbuntuProService.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProServiceFromJson(json);
+}
+
+@freezed
+class UbuntuProCheckTokenAnswer with _$UbuntuProCheckTokenAnswer {
+  const factory UbuntuProCheckTokenAnswer({
+    required UbuntuProCheckTokenStatus status,
+    required List<UbuntuProService>? services,
+  }) = _UbuntuProCheckTokenAnswer;
+
+  factory UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProCheckTokenAnswerFromJson(json);
+}
+
+enum ShutdownMode {
+  REBOOT,
+  POWEROFF,
 }
 
 @freezed
