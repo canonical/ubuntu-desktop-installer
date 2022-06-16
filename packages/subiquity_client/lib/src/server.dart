@@ -7,11 +7,17 @@ import 'server/common.dart';
 import 'server/process.dart';
 import 'server/paths.dart';
 
+Future<Endpoint> defaultEndpoint(ServerMode serverMode) async {
+  final socketPath = await getSocketPath(serverMode);
+  return Endpoint.unix(socketPath);
+}
+
 class SubiquityServer {
   /// An optional server launcher, should we need to start the server.
   SubiquityProcess? launcher;
+  final Endpoint endpoint;
 
-  SubiquityServer({this.launcher});
+  SubiquityServer({this.launcher, required this.endpoint});
 
   /// A callback for integration testing purposes. The callback is called when
   /// the server has been started and thus, the application is ready for
@@ -19,10 +25,10 @@ class SubiquityServer {
   @visibleForTesting
   static void Function(Endpoint)? startupCallback;
 
-  Future<Endpoint> start(ServerMode serverMode,
-      {List<String>? args, Map<String, String>? environment}) async {
-    final socketPath = await getSocketPath(serverMode);
-    final endpoint = Endpoint.unix(socketPath);
+  Future<Endpoint> start({
+    List<String>? args,
+    Map<String, String>? environment,
+  }) async {
     if (launcher != null) {
       await launcher!.start(additionalArgs: args, additionalEnv: environment);
     }
