@@ -30,7 +30,6 @@ void main() {
       await process.start(additionalEnv: env);
       addTearDown(process.stop);
       expect(await process.exitCode, int.parse(foo));
-      await process.stop();
     });
 
     test('call back on process start', () async {
@@ -43,7 +42,6 @@ void main() {
       await process.start();
       addTearDown(process.stop);
       expect(cbCalled, isTrue);
-      await process.stop();
     });
 
     test('defer launch', () async {
@@ -54,7 +52,6 @@ void main() {
       await process.start();
       addTearDown(process.stop);
       expect(futAwaited, isTrue);
-      await process.stop();
     });
   });
 
