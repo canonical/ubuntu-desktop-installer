@@ -19,6 +19,42 @@ void main() {
     expect(await isOpen, isTrue);
   });
 
+  group('subiquity process', () {
+    test('set additional environment before starting the process', () async {
+      const foo = '42';
+      final env = {'TEST_VAR': foo};
+      final process = SubiquityProcess(
+        'bash',
+        ['-c', 'exit \$TEST_VAR'],
+      );
+      await process.start(additionalEnv: env);
+      expect(await process.exitCode, int.parse(foo));
+      await process.stop();
+    });
+
+    test('call back on process start', () async {
+      bool cbCalled = false;
+      final process = SubiquityProcess(
+        'bash',
+        ['-c', 'exit 0'],
+        onProcessStart: () async => cbCalled = true,
+      );
+      await process.start();
+      expect(cbCalled, isTrue);
+      await process.stop();
+    });
+
+    test('defer launch', () async {
+      final fut = Future.delayed(const Duration(milliseconds: 50));
+      bool futAwaited = false;
+      final process = SubiquityProcess('bash', ['-c', 'exit 0'],
+          deferStart: fut.then((_) => futAwaited = true));
+      await process.start();
+      expect(futAwaited, isTrue);
+      await process.stop();
+    });
+  });
+
   group('subiquity', () {
     setUpAll(() async {
       final subiquityPath = await getSubiquityPath();
