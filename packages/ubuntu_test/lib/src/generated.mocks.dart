@@ -382,8 +382,8 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   }
 
   @override
-  set launcher(_i9.SubiquityProcess? _launcher) =>
-      super.noSuchMethod(Invocation.setter(#launcher, _launcher),
+  set process(_i9.SubiquityProcess? _process) =>
+      super.noSuchMethod(Invocation.setter(#process, _process),
           returnValueForMissingStub: null);
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(Invocation.getter(#endpoint),
