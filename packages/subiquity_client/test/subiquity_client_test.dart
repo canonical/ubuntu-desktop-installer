@@ -21,9 +21,19 @@ void main() {
 
   group('subiquity', () {
     setUpAll(() async {
-      testServer = SubiquityServer();
+      final subiquityPath = await getSubiquityPath();
+      final endpoint = await defaultEndpoint(ServerMode.DRY_RUN);
+      final process = SubiquityProcess.python(
+        'subiquity.cmd.server',
+        serverMode: ServerMode.DRY_RUN,
+        subiquityPath: subiquityPath,
+      );
+      testServer = SubiquityServer(
+        launcher: process,
+        endpoint: endpoint,
+      );
       client = SubiquityClient();
-      final socketPath = await testServer.start(ServerMode.DRY_RUN, args: [
+      final socketPath = await testServer.start(args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -446,9 +456,19 @@ void main() {
 
   group('wsl', () {
     setUpAll(() async {
-      testServer = SubiquityServer.wsl();
+      final endpoint = await defaultEndpoint(ServerMode.DRY_RUN);
+      final subiquityPath = await getSubiquityPath();
+      final process = SubiquityProcess.python(
+        'system_setup.cmd.server',
+        serverMode: ServerMode.DRY_RUN,
+        subiquityPath: subiquityPath,
+      );
+      testServer = SubiquityServer(
+        launcher: process,
+        endpoint: endpoint,
+      );
       client = SubiquityClient();
-      final socketPath = await testServer.start(ServerMode.DRY_RUN);
+      final socketPath = await testServer.start();
       client.open(socketPath);
     });
 
