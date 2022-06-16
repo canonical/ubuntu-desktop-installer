@@ -82,15 +82,12 @@ class SubiquityProcess {
   /// The process created by the [start] method.
   Process? _serverProcess;
 
-  // TODO: remove this ignore lint clauses at next.
   SubiquityProcess(
     this.command,
     this.args, {
     this.workingDirectory,
     this.environment,
-    // ignore: unused_element
     this.deferStart,
-    // ignore: unused_element
     this.onProcessStart,
   });
 
