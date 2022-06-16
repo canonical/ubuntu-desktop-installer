@@ -61,5 +61,5 @@ class SubiquityServer {
     client.close();
   }
 
-  Future<void> stop() async => await process?.stop();
+  Future<void> stop() async => process?.stop();
 }
