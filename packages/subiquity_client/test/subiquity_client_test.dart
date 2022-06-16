@@ -23,7 +23,7 @@ void main() {
     test('set additional environment before starting the process', () async {
       const foo = '42';
       final env = {'TEST_VAR': foo};
-      final process = SubiquityProcess(
+      final process = SubiquityProcess.command(
         'bash',
         ['-c', 'exit \$TEST_VAR'],
       );
