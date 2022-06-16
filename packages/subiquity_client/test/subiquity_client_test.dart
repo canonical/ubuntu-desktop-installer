@@ -28,6 +28,7 @@ void main() {
         ['-c', 'exit \$TEST_VAR'],
       );
       await process.start(additionalEnv: env);
+      addTearDown(process.stop);
       expect(await process.exitCode, int.parse(foo));
       await process.stop();
     });
@@ -40,6 +41,7 @@ void main() {
         onProcessStart: () async => cbCalled = true,
       );
       await process.start();
+      addTearDown(process.stop);
       expect(cbCalled, isTrue);
       await process.stop();
     });
@@ -50,6 +52,7 @@ void main() {
       final process = SubiquityProcess('bash', ['-c', 'exit 0'],
           deferStart: fut.then((_) => futAwaited = true));
       await process.start();
+      addTearDown(process.stop);
       expect(futAwaited, isTrue);
       await process.stop();
     });
