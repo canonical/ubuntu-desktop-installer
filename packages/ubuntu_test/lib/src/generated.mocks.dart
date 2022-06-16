@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/src/client.dart' as _i7;
 import 'package:subiquity_client/src/endpoint.dart' as _i4;
 import 'package:subiquity_client/src/server.dart' as _i8;
-import 'package:subiquity_client/src/server/common.dart' as _i9;
+import 'package:subiquity_client/src/server/process.dart' as _i9;
 import 'package:subiquity_client/src/types.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -382,11 +382,18 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   }
 
   @override
-  _i6.Future<_i4.Endpoint> start(_i9.ServerMode? serverMode,
+  set launcher(_i9.SubiquityProcess? _launcher) =>
+      super.noSuchMethod(Invocation.setter(#launcher, _launcher),
+          returnValueForMissingStub: null);
+  @override
+  _i4.Endpoint get endpoint => (super.noSuchMethod(Invocation.getter(#endpoint),
+      returnValue: _FakeEndpoint_13()) as _i4.Endpoint);
+  @override
+  _i6.Future<_i4.Endpoint> start(
           {List<String>? args, Map<String, String>? environment}) =>
       (super.noSuchMethod(
-              Invocation.method(#start, [serverMode],
-                  {#args: args, #environment: environment}),
+              Invocation.method(
+                  #start, [], {#args: args, #environment: environment}),
               returnValue: Future<_i4.Endpoint>.value(_FakeEndpoint_13()))
           as _i6.Future<_i4.Endpoint>);
   @override
