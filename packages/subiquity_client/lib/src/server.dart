@@ -14,10 +14,10 @@ Future<Endpoint> defaultEndpoint(ServerMode serverMode) async {
 
 class SubiquityServer {
   /// An optional server launcher, should we need to start the server.
-  SubiquityProcess? launcher;
+  SubiquityProcess? process;
   final Endpoint endpoint;
 
-  SubiquityServer({this.launcher, required this.endpoint});
+  SubiquityServer({this.process, required this.endpoint});
 
   /// A callback for integration testing purposes. The callback is called when
   /// the server has been started and thus, the application is ready for
@@ -29,8 +29,8 @@ class SubiquityServer {
     List<String>? args,
     Map<String, String>? environment,
   }) async {
-    if (launcher != null) {
-      await launcher!.start(additionalArgs: args, additionalEnv: environment);
+    if (process != null) {
+      await process!.start(additionalArgs: args, additionalEnv: environment);
     }
 
     return _waitSubiquity(endpoint).then((_) {
@@ -61,5 +61,5 @@ class SubiquityServer {
     client.close();
   }
 
-  Future<void> stop() async => await launcher?.stop();
+  Future<void> stop() async => await process?.stop();
 }

@@ -65,7 +65,7 @@ void main() {
         subiquityPath: subiquityPath,
       );
       testServer = SubiquityServer(
-        launcher: process,
+        process: process,
         endpoint: endpoint,
       );
       client = SubiquityClient();
@@ -500,7 +500,7 @@ void main() {
         subiquityPath: subiquityPath,
       );
       testServer = SubiquityServer(
-        launcher: process,
+        process: process,
         endpoint: endpoint,
       );
       client = SubiquityClient();

@@ -53,7 +53,7 @@ Future<void> runInstallerApp(
   final subiquityPath = await getSubiquityPath();
   final endpoint = await defaultEndpoint(serverMode);
 
-  final launcher = liveRun
+  final process = liveRun
       ? null
       : SubiquityProcess.python(
           'subiquity.cmd.server',
@@ -61,7 +61,7 @@ Future<void> runInstallerApp(
           subiquityPath: subiquityPath,
         );
   final subiquityServer = SubiquityServer(
-    launcher: launcher,
+    process: process,
     endpoint: endpoint,
   );
 

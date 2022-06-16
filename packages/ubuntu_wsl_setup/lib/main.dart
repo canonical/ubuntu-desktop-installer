@@ -26,7 +26,7 @@ screens, yet allowing user to overwrite any of those during setup.
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath();
   final endpoint = await defaultEndpoint(serverMode);
-  final launcher = SubiquityProcess.python(
+  final procecss = SubiquityProcess.python(
     'system_setup.cmd.server',
     serverMode: serverMode,
     subiquityPath: subiquityPath,
@@ -49,7 +49,7 @@ screens, yet allowing user to overwrite any of those during setup.
     ),
     options: options,
     subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer(launcher: launcher, endpoint: endpoint),
+    subiquityServer: SubiquityServer(process: procecss, endpoint: endpoint),
     subiquityMonitor: subiquityMonitor,
     onInitSubiquity: (client) {
       client.variant().then((value) {
