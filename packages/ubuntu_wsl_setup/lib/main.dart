@@ -8,7 +8,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'app.dart';
 import 'installing_state.dart';
 
-void main(List<String> args) async {
+Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addFlag('reconfigure');
     parser.addOption(
