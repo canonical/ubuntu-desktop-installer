@@ -18,9 +18,7 @@ Map<String, String> _pythonPath(String subiquityPath) {
 /// This class knows the many ways with which we may want to start Subiquity.
 /// Starting the server builds on top of [Process.start], so this launcher
 /// can be customized by implementing factory constructors that adjust the
-/// [command] and [args] (and possibly some factories to enable enhancing the
-/// command line arguments, working directory and environment with the results
-/// of asynchronous computations).
+/// [command] and [args].
 /// The example below would allow starting subiquity inside a WSL2 distro
 /// while the GUI client is running on the Windows host.
 ///
@@ -30,12 +28,11 @@ Map<String, String> _pythonPath(String subiquityPath) {
 ///     {List<String>? args,
 ///     Future<void>? defer,
 ///     Future<void> Function()? onProcessStart,
-///     Future<List<String>> Function()? argumentsFactory}) {
+///     }) {
 ///   return SubiquityProcess._(
 ///     'wsl',
 ///     args: ['-d', distroName, command, ...?args],
 ///     deferStart: defer,
-///     argsFactory: argumentsFactory,
 ///     onProcessStart: onProcessStart,
 ///   );
 /// }
