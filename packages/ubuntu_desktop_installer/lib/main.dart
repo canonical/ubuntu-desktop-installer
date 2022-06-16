@@ -1,3 +1,3 @@
 import 'installer.dart';
 
-void main(List<String> args) => runInstallerApp(args);
+Future<void> main(List<String> args) async => runInstallerApp(args);

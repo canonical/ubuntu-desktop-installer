@@ -45,10 +45,8 @@ Future<void> runWizardApp(
     );
   }
 
-  final serverMode = isLiveRun(options) ? ServerMode.LIVE : ServerMode.DRY_RUN;
-
   subiquityServer
-      .start(serverMode, args: serverArgs, environment: serverEnvironment)
+      .start(args: serverArgs, environment: serverEnvironment)
       .then((endpoint) {
     subiquityClient.open(endpoint);
     subiquityMonitor?.start(endpoint);

@@ -19,11 +19,57 @@ void main() {
     expect(await isOpen, isTrue);
   });
 
+  group('subiquity process', () {
+    test('set additional environment before starting the process', () async {
+      const foo = '42';
+      final env = {'TEST_VAR': foo};
+      final process = SubiquityProcess.command(
+        'bash',
+        ['-c', 'exit \$TEST_VAR'],
+      );
+      await process.start(additionalEnv: env);
+      addTearDown(process.stop);
+      expect(await process.exitCode, int.parse(foo));
+    });
+
+    test('call back on process start', () async {
+      bool cbCalled = false;
+      final process = SubiquityProcess(
+        'bash',
+        ['-c', 'exit 0'],
+        onProcessStart: () async => cbCalled = true,
+      );
+      await process.start();
+      addTearDown(process.stop);
+      expect(cbCalled, isTrue);
+    });
+
+    test('defer launch', () async {
+      final fut = Future.delayed(const Duration(milliseconds: 50));
+      bool futAwaited = false;
+      final process = SubiquityProcess('bash', ['-c', 'exit 0'],
+          deferStart: fut.then((_) => futAwaited = true));
+      await process.start();
+      addTearDown(process.stop);
+      expect(futAwaited, isTrue);
+    });
+  });
+
   group('subiquity', () {
     setUpAll(() async {
-      testServer = SubiquityServer();
+      final subiquityPath = await getSubiquityPath();
+      final endpoint = await defaultEndpoint(ServerMode.DRY_RUN);
+      final process = SubiquityProcess.python(
+        'subiquity.cmd.server',
+        serverMode: ServerMode.DRY_RUN,
+        subiquityPath: subiquityPath,
+      );
+      testServer = SubiquityServer(
+        process: process,
+        endpoint: endpoint,
+      );
       client = SubiquityClient();
-      final socketPath = await testServer.start(ServerMode.DRY_RUN, args: [
+      final socketPath = await testServer.start(args: [
         '--machine-config',
         'examples/simple.json',
         '--source-catalog',
@@ -446,9 +492,19 @@ void main() {
 
   group('wsl', () {
     setUpAll(() async {
-      testServer = SubiquityServer.wsl();
+      final endpoint = await defaultEndpoint(ServerMode.DRY_RUN);
+      final subiquityPath = await getSubiquityPath();
+      final process = SubiquityProcess.python(
+        'system_setup.cmd.server',
+        serverMode: ServerMode.DRY_RUN,
+        subiquityPath: subiquityPath,
+      );
+      testServer = SubiquityServer(
+        process: process,
+        endpoint: endpoint,
+      );
       client = SubiquityClient();
-      final socketPath = await testServer.start(ServerMode.DRY_RUN);
+      final socketPath = await testServer.start();
       client.open(socketPath);
     });
 
