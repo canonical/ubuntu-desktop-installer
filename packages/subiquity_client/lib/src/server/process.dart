@@ -82,15 +82,12 @@ class SubiquityProcess {
   /// The process created by the [start] method.
   Process? _serverProcess;
 
-  // TODO: remove this ignore lint clauses at next.
   SubiquityProcess(
     this.command,
     this.args, {
     this.workingDirectory,
     this.environment,
-    // ignore: unused_element
     this.deferStart,
-    // ignore: unused_element
     this.onProcessStart,
   });
 
@@ -133,6 +130,54 @@ class SubiquityProcess {
       // will try using local subiquity
       workingDirectory: subiquityPath,
       environment: env,
+    );
+  }
+
+  /// Able to start the server inside [distroName] on WSL from the Windows host
+  /// by running [command] with [args] as [user].
+  ///
+  /// The environment variables map [env] in set on the host side, thus
+  /// affecting the environment of the wsl.exe program. To share host
+  /// environment variables with the distro by listing their names to [wslenv]
+  /// (with their applicable flags), whether they are part of [env] or not.
+  /// The list will be appended to $env:WSLENV.
+  ///
+  /// To know more about sharing env vars to WSL see:
+  /// https://devblogs.microsoft.com/commandline/share-environment-vars-between-wsl-and-windows/
+  factory SubiquityProcess.wsl(
+    String distroName,
+    String command, {
+    List<String>? args,
+    String? user,
+    Map<String, String>? env,
+    String? wslenv,
+    ServerMode? serverMode,
+    Future<void>? defer,
+    Future<void> Function()? onProcessStart,
+  }) {
+    final environment = {
+      ...?env,
+      // WSL interoperability has its environment variable sharing mechanism.
+      if (wslenv != null) ...{
+        'WSLENV': '${Platform.environment['WSLENV']}:$wslenv',
+      }
+    };
+
+    final arguments = [
+      '-d',
+      distroName,
+      if (user != null) ...['-u', user],
+      command,
+      ...?args,
+      if (serverMode == ServerMode.DRY_RUN) ...['--dry-run'],
+    ];
+
+    return SubiquityProcess(
+      'wsl',
+      arguments,
+      environment: environment,
+      deferStart: defer,
+      onProcessStart: onProcessStart,
     );
   }
 
