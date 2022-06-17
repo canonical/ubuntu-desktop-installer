@@ -15,62 +15,62 @@ void main() {
 
   setUp(() async => await cleanUpSubiquity());
 
-  // Select language and setup profile
-  testWidgets('basic setup', (tester) async {
-    await app.main(<String>[]);
-    await tester.pumpAndSettle();
+  // // Select language and setup profile
+  // testWidgets('basic setup', (tester) async {
+  //   await app.main(<String>[]);
+  //   await tester.pumpAndSettle();
 
-    await testSelectYourLanguagePage(tester, language: 'Français');
-    await tester.pumpAndSettle();
+  //   await testSelectYourLanguagePage(tester, language: 'Français');
+  //   await tester.pumpAndSettle();
 
-    await testProfileSetupPage(
-      tester,
-      profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
-      password: 'password123',
-      confirmedPassword: 'password123',
-    );
-    await tester.pumpAndSettle();
+  //   await testProfileSetupPage(
+  //     tester,
+  //     profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
+  //     password: 'password123',
+  //     confirmedPassword: 'password123',
+  //   );
+  //   await tester.pumpAndSettle();
 
-    await testAdvancedSetupPage(tester);
-    await testApplyingChangesPage(tester);
-    await tester.pumpAndSettle();
+  //   await testAdvancedSetupPage(tester);
+  //   await testApplyingChangesPage(tester);
+  //   await tester.pumpAndSettle();
 
-    await testSetupCompletePage(tester, username: 'wsl-user');
-    await tester.pumpAndSettle();
+  //   await testSetupCompletePage(tester, username: 'wsl-user');
+  //   await tester.pumpAndSettle();
 
-    await verifyStateFile('basic-setup/WSLLocale');
-  });
+  //   await verifyStateFile('basic-setup/WSLLocale');
+  // });
 
-  // enter all WSLConfigurationBase values
-  testWidgets('advanced setup', (tester) async {
-    await app.main(<String>['--initial-route', Routes.profileSetup]);
-    await tester.pumpAndSettle();
+  // // enter all WSLConfigurationBase values
+  // testWidgets('advanced setup', (tester) async {
+  //   await app.main(<String>['--initial-route', Routes.profileSetup]);
+  //   await tester.pumpAndSettle();
 
-    await testProfileSetupPage(
-      tester,
-      profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
-      password: 'password123',
-      confirmedPassword: 'password123',
-    );
-    await tester.pumpAndSettle();
+  //   await testProfileSetupPage(
+  //     tester,
+  //     profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
+  //     password: 'password123',
+  //     confirmedPassword: 'password123',
+  //   );
+  //   await tester.pumpAndSettle();
 
-    // NOTE: opposites of the default values to force writing the config
-    await testAdvancedSetupPage(
-      tester,
-      config: const WSLConfigurationBase(
-        automountRoot: '/tst/wsl',
-        automountOptions: '--test-wsl',
-        networkGeneratehosts: false,
-        networkGenerateresolvconf: false,
-      ),
-    );
-    await tester.pumpAndSettle();
+  //   // NOTE: opposites of the default values to force writing the config
+  //   await testAdvancedSetupPage(
+  //     tester,
+  //     config: const WSLConfigurationBase(
+  //       automountRoot: '/tst/wsl',
+  //       automountOptions: '--test-wsl',
+  //       networkGeneratehosts: false,
+  //       networkGenerateresolvconf: false,
+  //     ),
+  //   );
+  //   await tester.pumpAndSettle();
 
-    await testSetupCompletePage(tester, username: 'wsl-user');
-    await tester.pumpAndSettle();
+  //   await testSetupCompletePage(tester, username: 'wsl-user');
+  //   await tester.pumpAndSettle();
 
-    await verifyConfigFile('advanced-setup/wsl.conf');
-  });
+  //   await verifyConfigFile('advanced-setup/wsl.conf');
+  // });
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
