@@ -495,7 +495,7 @@
   "@supportSlideTitle": {},
   "availableSoftware": "תוכנות זמינות",
   "@availableSoftware": {},
-  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ל־{RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
+  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים בנושא {RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
