@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
-import 'package:glibc/glibc.dart';
+import 'package:stdlibc/stdlibc.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 class TelemetryService {
