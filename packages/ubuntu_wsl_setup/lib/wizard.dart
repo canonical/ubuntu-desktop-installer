@@ -54,15 +54,15 @@ class UbuntuWslReconfigureWizard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wizard(
-      initialRoute: initialRoute ?? Routes.advancedSetup,
+      initialRoute: initialRoute ?? Routes.advancedReconfig,
       routes: const <String, WizardRoute>{
-        Routes.advancedSetup: WizardRoute(
+        Routes.advancedReconfig: WizardRoute(
           builder: AdvancedSetupPage.create,
         ),
         Routes.configurationUI: WizardRoute(
           builder: ConfigurationUIPage.create,
         ),
-        Routes.applyingChanges: WizardRoute(
+        Routes.applyingChangesReconfig: WizardRoute(
           builder: ApplyingChangesPage.create,
         ),
       },
