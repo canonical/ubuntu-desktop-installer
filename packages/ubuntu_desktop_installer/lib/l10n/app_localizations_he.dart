@@ -646,7 +646,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'לא צריך עוד לחפש תוכנות חדשות באינטרנט. הגישה לחנות Snap ולארכיון התוכנות של $RELEASE מאפשרת לאתר ולהתקין יישומים חדשים בקלות. יש רק להקליד את מבוקשך או לחקור קטגוריות כגון גרפיקה וצילום, משחקים והפקה, לצד סקירות מועילות של משתמשים אחרים.';
+    return 'חסל סדר חיפוש אחר תוכנות חדשות באינטרנט. עם גישה לחנות Snap ולארכיון התוכנה של $RELEASE, ניתן למצוא ולהתקין יישומים חדשים בקלות. פשוט יש להקליד את מה שמעניין אותך או לעיין בקטגוריות כגון גרפיקה וצילום, משחקים וכלי משרד, לצד ביקורות מועילות מצד משתמשים אחרים.';
   }
 
   @override
@@ -738,7 +738,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים שקשורים ל־$RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
+    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים בנושא $RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
   }
 
   @override

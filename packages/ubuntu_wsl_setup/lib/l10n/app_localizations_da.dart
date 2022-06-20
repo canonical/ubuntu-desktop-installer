@@ -17,82 +17,82 @@ class AppLocalizationsDa extends AppLocalizations {
   String get exitButton => 'Exit';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Færdiggør';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Gem';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Opret';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Vælg dit sprog';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Profil setup';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Lav venligst en default UNIX bruger konto. For mere information besøg: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Dit navn';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Et navn er påkrævet';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Vælg et brugernavn';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Brugernavnet behøver ikke at matche dit Windows-brugernavn.';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Vælg en adgangskode';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Bekræft din adgangskode';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Vis avanceret valgmuligheder næste side';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Adgangskoden matcher ikke';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Et brugernavn er påkrævet';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Brugernavnet er ugyldigt';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Brugernavnet eksisterer allerede.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Dette navn er reserveret for systembrug.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Dette navn er for langt.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Dette navn indeholder ugyldige tegn.';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'En adgangskode er påkrævet';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Avanceret setup';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'På denne side, kan du tilpasse Ubuntu WSL til dine behov.';
 
   @override
-  String get advancedSetupMountLocationHint => 'Mount location';
+  String get advancedSetupMountLocationHint => 'Montering lokation';
 
   @override
-  String get advancedSetupMountLocationHelper => 'Location for the automount';
+  String get advancedSetupMountLocationHelper => 'Lokation for automontering';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'Lokationen er ugyldig';
 
   @override
   String get advancedSetupMountOptionHint => 'Mount option';
