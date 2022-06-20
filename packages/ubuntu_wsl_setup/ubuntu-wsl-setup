@@ -595,11 +595,14 @@ export LIVE_RUN=1
 BIN=$SNAP/usr/libexec/ubuntu_wsl_setup
 args=""
 for arg in $@; do
+  if [ ${arg} = "--server-only" ]; then
+    BIN="$PYTHON -m system_setup.cmd.server"
+    continue
+  fi
   if [ ${arg} = "-t" -o ${arg} = "--text" ]; then
     BIN="$PYTHON -m system_setup.cmd.tui"
     continue
   fi
-
   args="$args $arg"
 done
 
