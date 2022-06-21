@@ -8,7 +8,7 @@ void main() {
     // The broader the range, more quickly we should exit the loop.
     final lower = Platform.isWindows ? 49152 : 32768;
     const higher = 60000;
-    final socket = await getSocketHolder(lower: lower, higher: higher);
+    final socket = await getRandomPortSocket(lower: lower, higher: higher);
     addTearDown(socket!.close);
     expect(socket.port, inExclusiveRange(lower, higher));
   });
@@ -17,7 +17,7 @@ void main() {
     // The range below is forbidden (outside of the ephemeral port range).
     const lower = 80;
     const higher = 88;
-    final socket = await getSocketHolder(
+    final socket = await getRandomPortSocket(
       lower: lower,
       higher: higher,
       maxAttempts: 3,

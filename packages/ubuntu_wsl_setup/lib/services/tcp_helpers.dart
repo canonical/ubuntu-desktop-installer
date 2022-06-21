@@ -15,22 +15,22 @@ FutureOr<ServerSocket?> _tryBindUnsafe({
     final socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, port);
     return socket;
   } on SocketException {
-  return null;
+    return null;
   }
 }
 
-/// Returns a RawServerSocket already binded to a port in the open interval
-/// [lower]-[higher] of the loopback interface where the referred range is
-/// a subset of the platform ephemeral port range.
+/// Returns a ServerSocket already binded to a randomly-selected port in the
+/// open interval [lower]-[higher] of the loopback interface where the referred
+/// range is a subset of the platform ephemeral port range.
 /// On failure returns null. [maxAttempts] limits the amount of asynchronous
 /// iterations performed.
-Future<RawServerSocket?> getSocketHolder({
+Future<ServerSocket?> getRandomPortSocket({
   required int lower,
   required int higher,
   int maxAttempts = 10,
 }) async {
   assert(maxAttempts > 0, 'At least one attempt will be done anyway.');
-  RawServerSocket? value;
+  ServerSocket? value;
   int attemptsCount = 0;
   await Future.doWhile(() async {
     attemptsCount++;
