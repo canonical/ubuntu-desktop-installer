@@ -1,19 +1,22 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math';
 
 // This is inherently a race condition on its own, because in between finding an
 // available port and using it, the system may have binded other socket.
-FutureOr<RawServerSocket?> _tryBindUnsafe({
+// Thus, the solution is to hold the socket binded.
+FutureOr<ServerSocket?> _tryBindUnsafe({
   required int lower,
   required int higher,
 }) async {
-  final socket = await RawServerSocket.bind(InternetAddress.loopbackIPv4, 0);
-  final port = socket.port;
-  if (port > lower && port < higher) {
+  var rand = Random.secure();
+  var port = lower + rand.nextInt(higher - lower);
+  try {
+    final socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, port);
     return socket;
-  }
-  socket.close();
+  } on SocketException {
   return null;
+  }
 }
 
 /// Returns a RawServerSocket already binded to a port in the open interval
