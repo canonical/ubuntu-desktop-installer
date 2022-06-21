@@ -20,17 +20,34 @@ FutureOr<ServerSocket?> _tryBindUnsafe({
 }
 
 class TcpHelperService {
+  /// Ephemeral port ranges (* chart is not on scale)
+  ///
+  /// ```
+  /// <Linux 2.4+>           <Windows 8+>           </Linux 2.4+> </Windows 8+>
+  ///       |----------------------|--------------------|-------------|
+  ///     32768                  49152                60999         65535
+  ///                        [kMinPortNo]           [kMaxPortNo]
+  /// ```
+  static const kMinPortNo = 49152;
+  static const kMaxPortNo = 60999;
+
   /// Returns a ServerSocket already binded to a randomly-selected port in the
-  /// open interval [lower]-[higher] of the loopback interface where the referred
-  /// range is a subset of the platform ephemeral port range.
-  /// On failure returns null. [maxAttempts] limits the amount of asynchronous
-  /// iterations performed.
+  /// open interval [lower]-[higher] of the loopback interface where the range
+  /// is a subset of the platform ephemeral port range, limited by [kMinPortNo]
+  /// and [kMaxPortNo]. [maxAttempts] limits the amount of asynchronous
+  /// iterations performed. On failure returns null.
   static Future<ServerSocket?> getRandomPortSocket({
-    required int lower,
-    required int higher,
+    int lower = kMinPortNo,
+    int higher = kMaxPortNo,
     int maxAttempts = 10,
   }) async {
     assert(maxAttempts > 0, 'At least one attempt will be done anyway.');
+    assert(higher > lower, '$higher must be greater than $lower.');
+    assert(lower > 0, 'Port numbers must be positive.');
+    assert(
+      lower >= kMinPortNo && higher <= kMaxPortNo,
+      'Ports must be in between $kMinPortNo and $kMaxPortNo',
+    );
     ServerSocket? value;
     int attemptsCount = 0;
     await Future.doWhile(() async {
