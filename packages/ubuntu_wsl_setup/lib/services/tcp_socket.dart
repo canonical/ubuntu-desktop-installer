@@ -19,7 +19,7 @@ FutureOr<ServerSocket?> _tryBindUnsafe({
   }
 }
 
-class TcpHelperService {
+class TcpSocketService {
   /// Ephemeral port ranges (* chart is not on scale)
   ///
   /// ```
@@ -36,7 +36,7 @@ class TcpHelperService {
   /// is a subset of the platform ephemeral port range, limited by [kMinPortNo]
   /// and [kMaxPortNo]. [maxAttempts] limits the amount of asynchronous
   /// iterations performed. On failure returns null.
-  static Future<ServerSocket?> getRandomPortSocket({
+  Future<ServerSocket?> getRandomPortSocket({
     int lower = kMinPortNo,
     int higher = kMaxPortNo,
     int maxAttempts = 10,

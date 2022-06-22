@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:ubuntu_wsl_setup/services/tcp_helpers.dart';
+import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -8,7 +8,8 @@ void main() {
     // The broader the range, more quickly we should exit the loop.
     const lower = 50000;
     const higher = 60000;
-    final socket = await TcpHelperService.getRandomPortSocket(
+    final service = TcpSocketService();
+    final socket = await service.getRandomPortSocket(
       lower: lower,
       higher: higher,
     );
@@ -21,7 +22,8 @@ void main() {
       () async {
         const lower = 50000;
         const higher = 51000;
-        final socket = await TcpHelperService.getRandomPortSocket(
+        final service = TcpSocketService();
+        final socket = await service.getRandomPortSocket(
           lower: lower,
           higher: higher,
           maxAttempts: 3,
@@ -42,7 +44,8 @@ void main() {
     const higher = 88;
     ServerSocket? socket;
     Future<void> closure() async {
-      socket = await TcpHelperService.getRandomPortSocket(
+      final service = TcpSocketService();
+      socket = await service.getRandomPortSocket(
         lower: lower,
         higher: higher,
         maxAttempts: 3,
