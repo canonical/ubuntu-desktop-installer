@@ -38,31 +38,13 @@ class UbuntuWslSetupWizard extends StatelessWidget {
         Routes.setupComplete: const WizardRoute(
           builder: SetupCompletePage.create,
         ),
-      },
-    );
-  }
-}
-
-class UbuntuWslReconfigureWizard extends StatelessWidget {
-  const UbuntuWslReconfigureWizard({
-    Key? key,
-    this.initialRoute,
-  }) : super(key: key);
-
-  final String? initialRoute;
-
-  @override
-  Widget build(BuildContext context) {
-    return Wizard(
-      initialRoute: initialRoute ?? Routes.advancedSetup,
-      routes: const <String, WizardRoute>{
-        Routes.advancedSetup: WizardRoute(
+        Routes.advancedReconfig: const WizardRoute(
           builder: AdvancedSetupPage.create,
         ),
-        Routes.configurationUI: WizardRoute(
+        Routes.configurationUI: const WizardRoute(
           builder: ConfigurationUIPage.create,
         ),
-        Routes.applyingChanges: WizardRoute(
+        Routes.applyingChangesReconfig: const WizardRoute(
           builder: ApplyingChangesPage.create,
         ),
       },

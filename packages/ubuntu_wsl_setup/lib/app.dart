@@ -6,6 +6,7 @@ import 'package:yaru/yaru.dart';
 import 'l10n.dart';
 import 'locale.dart';
 import 'wizard.dart';
+import 'routes.dart';
 
 class UbuntuWslSetupApp extends StatelessWidget {
   const UbuntuWslSetupApp({
@@ -40,13 +41,21 @@ class UbuntuWslSetupApp extends StatelessWidget {
   }
 
   Widget buildWizard(BuildContext context) {
-    switch (variant) {
+    if (variant == null) {
+      return const SizedBox.shrink();
+    }
+
+    return UbuntuWslSetupWizard(
+      initialRoute: initialRoute ?? routeForVariant(variant!),
+    );
+  }
+
+  String routeForVariant(Variant value) {
+    switch (value) {
       case Variant.WSL_SETUP:
-        return UbuntuWslSetupWizard(initialRoute: initialRoute);
+        return Routes.selectLanguage;
       case Variant.WSL_CONFIGURATION:
-        return UbuntuWslReconfigureWizard(initialRoute: initialRoute);
-      case null:
-        return const SizedBox.shrink();
+        return Routes.advancedReconfig;
       default:
         throw UnsupportedError('Unsupported WSL variant: $variant');
     }
