@@ -8,7 +8,7 @@ import 'package:ubuntu_test/mocks.dart';
 // ignore_for_file: type=lint
 
 void main() {
-  test('set gtk-theme via gsettings', () {
+  test('set color-scheme via gsettings', () {
     final gsettings = MockGSettings();
     when(gsettings.set(any, any)).thenAnswer((_) async {});
 
@@ -16,19 +16,13 @@ void main() {
 
     settings.applyTheme(Brightness.light);
     verifyInOrder([
-      gsettings.set('gtk-theme', DBusString('Yaru')),
+      gsettings.set('color-scheme', DBusString('prefer-light')),
     ]);
-    expect(settings.theme, equals(ThemeMode.light));
-
-    var wasNotified = false;
-    settings.addListener(() => wasNotified = true);
 
     settings.applyTheme(Brightness.dark);
     verifyInOrder([
-      gsettings.set('gtk-theme', DBusString('Yaru-dark')),
+      gsettings.set('color-scheme', DBusString('prefer-dark')),
     ]);
-    expect(settings.theme, equals(ThemeMode.dark));
-    expect(wasNotified, isTrue);
   });
 
   testWidgets('init locale', (tester) async {

@@ -149,11 +149,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   final AppStatus appStatus;
 
   static FlavorData get defaultFlavor {
-    return FlavorData(
-      name: 'Ubuntu',
-      theme: yaruLight,
-      darkTheme: yaruDark,
-    );
+    return const FlavorData(name: 'Ubuntu');
   }
 
   @override
@@ -164,23 +160,27 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         data: flavor,
         child: SlidesContext(
           slides: slides,
-          child: MaterialApp(
-            locale: Settings.of(context).locale,
-            onGenerateTitle: (context) {
-              final lang = AppLocalizations.of(context);
-              setWindowTitle(lang.windowTitle(flavor.name));
-              return lang.appTitle;
+          child: YaruTheme(
+            builder: (context, yaru, child) {
+              return MaterialApp(
+                locale: Settings.of(context).locale,
+                onGenerateTitle: (context) {
+                  final lang = AppLocalizations.of(context);
+                  setWindowTitle(lang.windowTitle(flavor.name));
+                  return lang.appTitle;
+                },
+                theme: flavor.theme ?? yaru.variant?.theme ?? yaruLight,
+                darkTheme:
+                    flavor.darkTheme ?? yaru.variant?.darkTheme ?? yaruDark,
+                debugShowCheckedModeBanner: false,
+                localizationsDelegates: <LocalizationsDelegate>[
+                  ...localizationsDelegates,
+                  ...?flavor.localizationsDelegates,
+                ],
+                supportedLocales: supportedLocales,
+                home: buildApp(context),
+              );
             },
-            theme: flavor.theme,
-            darkTheme: flavor.darkTheme,
-            themeMode: Settings.of(context).theme,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: <LocalizationsDelegate>[
-              ...localizationsDelegates,
-              ...?flavor.localizationsDelegates,
-            ],
-            supportedLocales: supportedLocales,
-            home: buildApp(context),
           ),
         ),
       ),

@@ -20,23 +20,16 @@ class Settings extends SafeChangeNotifier {
     return Provider.of<Settings>(context, listen: listen);
   }
 
-  /// The current application theme.
-  ThemeMode get theme => _theme;
-  ThemeMode _theme = ThemeMode.system;
-
   /// Applies a theme matching the given [brightness].
   void applyTheme(Brightness brightness) {
     switch (brightness) {
       case Brightness.dark:
-        _theme = ThemeMode.dark;
-        _gsettings.set('gtk-theme', const DBusString('Yaru-dark'));
+        _gsettings.set('color-scheme', const DBusString('prefer-dark'));
         break;
       case Brightness.light:
-        _theme = ThemeMode.light;
-        _gsettings.set('gtk-theme', const DBusString('Yaru'));
+        _gsettings.set('color-scheme', const DBusString('prefer-light'));
         break;
     }
-    notifyListeners();
   }
 
   /// The current application locale.

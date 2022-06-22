@@ -4,7 +4,6 @@
 
 import 'dart:ui' as _i2;
 
-import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/settings.dart' as _i3;
 
@@ -28,9 +27,6 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
     _i1.throwOnMissingStub(this);
   }
 
-  @override
-  _i4.ThemeMode get theme => (super.noSuchMethod(Invocation.getter(#theme),
-      returnValue: _i4.ThemeMode.system) as _i4.ThemeMode);
   @override
   _i2.Locale get locale => (super.noSuchMethod(Invocation.getter(#locale),
       returnValue: _FakeLocale_0()) as _i2.Locale);
