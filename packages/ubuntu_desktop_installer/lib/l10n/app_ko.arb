@@ -608,6 +608,6 @@
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameTooLong": "사용자 이름이 너무 깁니다.",
   "@whoAreYouPageUsernameTooLong": {},
-  "whoAreYouPageUsernameInvalidChars": "사용자 이름에 허용되지 않은 문자가 포함되어 있습니다",
+  "whoAreYouPageUsernameInvalidChars": "사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.",
   "@whoAreYouPageUsernameInvalidChars": {}
 }
