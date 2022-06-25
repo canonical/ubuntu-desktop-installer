@@ -580,5 +580,17 @@
   "connectButtonText": "Conectar",
   "@connectButtonText": {},
   "wirelessNetworkingDisabled": "Se desactivó el uso de redes inalámbricas",
-  "@wirelessNetworkingDisabled": {}
+  "@wirelessNetworkingDisabled": {},
+  "whoAreYouPageUsernameInUse": "Ese nombre de usuario ya existe.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Ese nombre contiene caracteres no válidos.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPageUsernameTooLong": "Ese nombre es demasiado extenso.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameSystemReserved": "Ese nombre está reservado para que el sistema lo use.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "copyingFiles": "Copiando archivos…",
+  "@copyingFiles": {},
+  "installationFailed": "Falló la instalación",
+  "@installationFailed": {}
 }
