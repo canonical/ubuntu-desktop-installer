@@ -149,7 +149,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab 마운트';
 
   @override
-  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. /etc/fstab 설정 파일에 포함되었습니까???';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. 이 파일은 시스템이 마운트 될 파일시스템에 관한 정보를 담고 있습니다.';
 
   @override
   String get configurationUISystemdHeader => '실험적 기능 - Systemd';
@@ -161,7 +161,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUISystemdSubtitle => '부팅할 때 systemd를 활성화 해야 하는지 여부. 주의: 실험적 기능입니다.';
 
   @override
-  String get applyingChanges => '변경사항 적용...';
+  String get applyingChanges => '변경사항 적용…';
 
   @override
   String get applyingChangesDisclaimer => '인터넷 연결 상태에 따라 몇 분 정도 걸릴 수 있습니다.';

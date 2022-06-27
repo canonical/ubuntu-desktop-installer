@@ -527,7 +527,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageUsernameTooLong => '사용자 이름이 너무 깁니다.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => '사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.';
 
   @override
   String get whoAreYouPagePasswordLabel => '암호 선택';
