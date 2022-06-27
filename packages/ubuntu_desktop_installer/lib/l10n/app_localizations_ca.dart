@@ -160,7 +160,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nom a la xarxa';
 
   @override
   String get hiddenWifiNetworkNameRequired => 'A network name is required';
@@ -181,7 +181,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get enableWifi => 'Enable Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Connecta';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';

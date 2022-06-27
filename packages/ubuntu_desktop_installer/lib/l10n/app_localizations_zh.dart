@@ -673,13 +673,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell 图片管理器';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP 图像处理程序';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut 视频编辑器';
 
   @override
   String get webSlideTitle => 'Make the most of the web';
@@ -690,13 +690,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox 浏览器';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
 
   @override
-  String get webSlideChromium => 'Chromium';
+  String get webSlideChromium => 'Chromium浏览器';
 
   @override
   String get officeSlideTitle => 'Everything you need for the office';
