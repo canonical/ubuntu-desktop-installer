@@ -29,7 +29,7 @@ screens, yet allowing user to overwrite any of those during setup.
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
-  final procecss = SubiquityProcess.python(
+  final process = SubiquityProcess.python(
     'system_setup.cmd.server',
     serverMode: serverMode,
     subiquityPath: subiquityPath,
@@ -52,7 +52,7 @@ screens, yet allowing user to overwrite any of those during setup.
     ),
     options: options,
     subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer(process: procecss, endpoint: endpoint),
+    subiquityServer: SubiquityServer(process: process, endpoint: endpoint),
     subiquityMonitor: subiquityMonitor,
     onInitSubiquity: (client) {
       client.variant().then((value) {
