@@ -268,5 +268,9 @@
     }
   },
   "configureSecureBootTitle": "Configura l'arrencada segura",
-  "@configureSecureBootTitle": {}
+  "@configureSecureBootTitle": {},
+  "hiddenWifiNetworkNameLabel": "Nom a la xarxa",
+  "@hiddenWifiNetworkNameLabel": {},
+  "connectButtonText": "Connecta",
+  "@connectButtonText": {}
 }

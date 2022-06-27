@@ -557,5 +557,19 @@
   "musicSlideRhythmbox": "Rhythmbox 音乐播放器",
   "@musicSlideRhythmbox": {},
   "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {}
+  "@musicSlideSpotify": {},
+  "webSlideFirefox": "Firefox 浏览器",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium浏览器",
+  "@webSlideChromium": {},
+  "photoSlideShotwell": "Shotwell 图片管理器",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "GIMP 图像处理程序",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Shotcut 视频编辑器",
+  "@photoSlideShotcut": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {}
 }
