@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,7 +52,8 @@ Future<void> runInstallerApp(
   final subiquityClient = SubiquityClient();
   final bool liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
-  final subiquityPath = await getSubiquityPath();
+  final subiquityPath = await getSubiquityPath()
+      .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
 
   final process = liveRun

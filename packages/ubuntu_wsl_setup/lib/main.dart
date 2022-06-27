@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -24,9 +26,10 @@ screens, yet allowing user to overwrite any of those during setup.
   final variant = ValueNotifier<Variant?>(null);
   final liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
-  final subiquityPath = await getSubiquityPath();
+  final subiquityPath = await getSubiquityPath()
+      .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
-  final procecss = SubiquityProcess.python(
+  final process = SubiquityProcess.python(
     'system_setup.cmd.server',
     serverMode: serverMode,
     subiquityPath: subiquityPath,
@@ -49,7 +52,7 @@ screens, yet allowing user to overwrite any of those during setup.
     ),
     options: options,
     subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer(process: procecss, endpoint: endpoint),
+    subiquityServer: SubiquityServer(process: process, endpoint: endpoint),
     subiquityMonitor: subiquityMonitor,
     onInitSubiquity: (client) {
       client.variant().then((value) {
