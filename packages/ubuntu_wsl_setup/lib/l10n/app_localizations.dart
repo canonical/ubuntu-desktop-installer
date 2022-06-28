@@ -576,6 +576,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'* All settings will take effect after restarting Ubuntu.'**
   String get setupCompleteRestart;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Ubuntu WSL'**
+  String get welcome;
+
+  /// No description provided for @initializing.
+  ///
+  /// In en, this message translates to:
+  /// **'Initializing...'**
+  String get initializing;
+
+  /// No description provided for @unpacking.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpacking the distro'**
+  String get unpacking;
+
+  /// No description provided for @installing.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost done. The installer will require your attention soon.'**
+  String get installing;
+
+  /// No description provided for @launching.
+  ///
+  /// In en, this message translates to:
+  /// **'Launching distro...'**
+  String get launching;
+
+  /// No description provided for @errorMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong.'**
+  String get errorMsg;
+
+  /// No description provided for @errorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get errorTitle;
+
+  /// No description provided for @errorSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME'**
+  String get errorSub;
+
+  /// No description provided for @errorText.
+  ///
+  /// In en, this message translates to:
+  /// **'\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n'**
+  String get errorText;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'All set. Enjoy using Ubuntu on WSL'**
+  String get done;
+
+  /// No description provided for @exitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to leave?'**
+  String get exitTitle;
+
+  /// No description provided for @exitContents.
+  ///
+  /// In en, this message translates to:
+  /// **'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.'**
+  String get exitContents;
+
+  /// No description provided for @customExitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We are almost done'**
+  String get customExitTitle;
+
+  /// No description provided for @customExitContents.
+  ///
+  /// In en, this message translates to:
+  /// **'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?'**
+  String get customExitContents;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'Ok'**
+  String get ok;
+
+  /// No description provided for @leave.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get leave;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @ubuntuOnWsl.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu on WSL'**
+  String get ubuntuOnWsl;
+
+  /// No description provided for @ubuntuOnWslText.
+  ///
+  /// In en, this message translates to:
+  /// **'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!'**
+  String get ubuntuOnWslText;
+
+  /// No description provided for @ubuntuWslWebDev.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu WSL for\nWeb Development'**
+  String get ubuntuWslWebDev;
+
+  /// No description provided for @ubuntuWslWebDevText.
+  ///
+  /// In en, this message translates to:
+  /// **'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.'**
+  String get ubuntuWslWebDevText;
+
+  /// No description provided for @ubuntuWslDataScience.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu WSL for Data Science'**
+  String get ubuntuWslDataScience;
+
+  /// No description provided for @ubuntuWslDataScienceText.
+  ///
+  /// In en, this message translates to:
+  /// **'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.'**
+  String get ubuntuWslDataScienceText;
+
+  /// No description provided for @ubuntuWslGuiApps.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu WSL for\nGraphical Apps'**
+  String get ubuntuWslGuiApps;
+
+  /// No description provided for @ubuntuWslGuiAppsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.'**
+  String get ubuntuWslGuiAppsText;
+
+  /// No description provided for @ubuntuWslDevOps.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu WSL for DevOps'**
+  String get ubuntuWslDevOps;
+
+  /// No description provided for @ubuntuWslDevOpsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment'**
+  String get ubuntuWslDevOpsText;
+
+  /// No description provided for @ubuntuWslEnterprises.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu WSL for Enterprises'**
+  String get ubuntuWslEnterprises;
+
+  /// No description provided for @ubuntuWslEnterprisesText.
+  ///
+  /// In en, this message translates to:
+  /// **'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.'**
+  String get ubuntuWslEnterprisesText;
+
+  /// No description provided for @findOutMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Find out more'**
+  String get findOutMore;
+
+  /// No description provided for @findOutMoreVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit '**
+  String get findOutMoreVisit;
+
+  /// No description provided for @findOutMoreLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Ubuntu.com/wsl'**
+  String get findOutMoreLink;
+
+  /// No description provided for @findOutMoreText.
+  ///
+  /// In en, this message translates to:
+  /// **' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.'**
+  String get findOutMoreText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
