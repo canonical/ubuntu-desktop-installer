@@ -179,3 +179,9 @@ TextStyle _bodyTextStyle(BuildContext context) {
       .headline6!
       .copyWith(color: Colors.white70, fontWeight: FontWeight.normal);
 }
+
+class SlidesProvider {
+  final List<Widget> slides;
+
+  const SlidesProvider(this.slides);
+}
