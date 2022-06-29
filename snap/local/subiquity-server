@@ -15,7 +15,8 @@ export PYTHON=$SNAP/usr/bin/python3.8
 export PY3OR2_PYTHON=$PYTHON
 
 # set the PATH so subiquity finds curtin
-export PATH=$SNAP/bin:$PATH
+# sbin for bundled tools such as ntfsresize
+export PATH=$SNAP/bin:$SNAP/sbin:$PATH
 
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity
