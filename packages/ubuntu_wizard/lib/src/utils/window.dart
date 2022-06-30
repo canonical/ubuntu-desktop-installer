@@ -28,7 +28,7 @@ Future<void> destroyWindow() {
 /// Completes when the window is closed.
 Future<void> onWindowClosed() async {
   final completer = _WindowCloseCompleter();
-  windowManager.setPreventClose(true);
+  await windowManager.setPreventClose(true);
   windowManager.addListener(completer);
   return completer.future.then((_) => windowManager.removeListener(completer));
 }

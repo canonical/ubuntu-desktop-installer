@@ -71,12 +71,12 @@ Future<bool?> runWizardApp(
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
 
-  onWindowClosed().then((_) async {
+  unawaited(onWindowClosed().then((_) async {
     await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
-    destroyWindow();
-  });
+    return destroyWindow();
+  }));
 
   return runZonedGuarded<Future<bool?>>(() {
     FlutterError.onError = (error) {
