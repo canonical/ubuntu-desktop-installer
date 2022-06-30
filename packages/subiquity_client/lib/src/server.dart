@@ -1,7 +1,5 @@
 import 'dart:io';
 
-import 'package:meta/meta.dart';
-
 import 'endpoint.dart';
 import 'server/common.dart';
 import 'server/process.dart';
@@ -19,12 +17,6 @@ class SubiquityServer {
 
   SubiquityServer({this.process, required this.endpoint});
 
-  /// A callback for integration testing purposes. The callback is called when
-  /// the server has been started and thus, the application is ready for
-  /// integration testing.
-  @visibleForTesting
-  static void Function(Endpoint)? startupCallback;
-
   Future<Endpoint> start({
     List<String>? args,
     Map<String, String>? environment,
@@ -33,10 +25,7 @@ class SubiquityServer {
       await process!.start(additionalArgs: args, additionalEnv: environment);
     }
 
-    return _waitSubiquity(endpoint).then((_) {
-      startupCallback?.call(endpoint);
-      return endpoint;
-    });
+    return _waitSubiquity(endpoint).then((_) => endpoint);
   }
 
   static Future<void> _waitSubiquity(Endpoint endpoint) async {
