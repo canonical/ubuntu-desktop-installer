@@ -99,16 +99,6 @@ Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
   );
 }
 
-/// Waits for the subiquity server to be ready for integration testing.
-Future<void> waitForSubiquityServer() async {
-  final startup = Completer();
-  callback(Endpoint endpoint) => startup.complete();
-
-  SubiquityServer.startupCallback = callback;
-  addTearDown(() => SubiquityServer.startupCallback = null);
-  return startup.future;
-}
-
 /// Cleans up the .subiquity directory to ensure a clean test environment for
 /// integration test cases.
 Future<void> cleanUpSubiquity() async {

@@ -31,12 +31,10 @@ void main() {
       subiquityServer: server,
       serverArgs: ['--foo', 'bar'],
       serverEnvironment: {'baz': 'qux'},
-      onInitSubiquity: (client) => client.setVariant(Variant.DESKTOP),
     );
     verify(server.start(args: ['--foo', 'bar'], environment: {'baz': 'qux'}))
         .called(1);
     verify(client.open(endpoint)).called(1);
-    verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
   testWidgets('registers the client', (tester) async {

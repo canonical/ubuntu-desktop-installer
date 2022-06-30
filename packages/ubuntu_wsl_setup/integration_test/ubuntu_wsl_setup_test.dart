@@ -17,8 +17,7 @@ void main() {
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -44,8 +43,7 @@ void main() {
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    app.main(<String>['--initial-route', Routes.profileSetup]);
-    await waitForSubiquityServer();
+    await app.main(<String>['--initial-route', Routes.profileSetup]);
     await tester.pumpAndSettle();
 
     await testProfileSetupPage(
@@ -76,8 +74,7 @@ void main() {
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    app.main(<String>['--reconfigure']);
-    await waitForSubiquityServer();
+    await app.main(<String>['--reconfigure']);
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);

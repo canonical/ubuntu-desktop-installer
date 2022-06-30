@@ -38,9 +38,10 @@ screens, yet allowing user to overwrite any of those during setup.
   if (options['prefill'] != null) {
     serverArgs = ['--prefill', options['prefill']];
   }
+  final subiquityClient = SubiquityClient();
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
-  runWizardApp(
+  await runWizardApp(
     ValueListenableBuilder<Variant?>(
       valueListenable: variant,
       builder: (context, value, child) {
@@ -51,23 +52,21 @@ screens, yet allowing user to overwrite any of those during setup.
       },
     ),
     options: options,
-    subiquityClient: SubiquityClient(),
+    subiquityClient: subiquityClient,
     subiquityServer: SubiquityServer(process: process, endpoint: endpoint),
     subiquityMonitor: subiquityMonitor,
-    onInitSubiquity: (client) {
-      client.variant().then((value) {
-        variant.value = value;
-        if (value == Variant.WSL_SETUP) {
-          subiquityMonitor.onStatusChanged.listen((status) {
-            setWindowClosable(status?.state.isInstalling != true);
-          });
-        }
-      });
-      client.markConfigured(['filesystem']);
-    },
     serverArgs: serverArgs,
     serverEnvironment: {
       if (!liveRun && options['reconfigure'] == true) 'DRYRUN_RECONFIG': 'true',
     },
   );
+  await subiquityClient.variant().then((value) {
+    variant.value = value;
+    if (value == Variant.WSL_SETUP) {
+      subiquityMonitor.onStatusChanged.listen((status) {
+        setWindowClosable(status?.state.isInstalling != true);
+      });
+    }
+  });
+  await subiquityClient.markConfigured(['filesystem']);
 }

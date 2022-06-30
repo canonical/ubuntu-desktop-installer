@@ -39,8 +39,7 @@ void main() {
       username: 'user',
     );
 
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester, language: language);
@@ -100,8 +99,7 @@ void main() {
       ),
     ];
 
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester);
@@ -149,13 +147,12 @@ void main() {
   });
 
   testWidgets('turn off bitlocker', (tester) async {
-    app.main(<String>[
+    await app.main(<String>[
       '--machine-config',
       'examples/win10.json',
       '--initial-route',
       Routes.writeChangesToDisk,
     ]);
-    await waitForSubiquityServer();
     await tester.pumpAndSettle();
 
     await testWriteChangesToDiskPage(tester);
