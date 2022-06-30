@@ -102,7 +102,7 @@ Future<void> runInstallerApp(
 
   final appStatus = ValueNotifier(AppStatus.loading);
 
-  runWizardApp(
+  await runWizardApp(
     ValueListenableBuilder<AppStatus>(
       valueListenable: appStatus,
       builder: (context, value, child) {
@@ -128,11 +128,10 @@ Future<void> runInstallerApp(
         '--storage-version=2',
       ],
     ],
-    onInitSubiquity: (client) {
-      appStatus.value = AppStatus.ready;
-      client.setVariant(Variant.DESKTOP);
-    },
   );
+
+  appStatus.value = AppStatus.ready;
+  return subiquityClient.setVariant(Variant.DESKTOP);
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
