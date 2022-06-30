@@ -102,6 +102,7 @@ parts:
       - iso-codes
       - lsb-release
       - ssh-import-id
+      - ntfs-3g
       - python3-aiohttp
       - python3-bson
       - python3-minimal
