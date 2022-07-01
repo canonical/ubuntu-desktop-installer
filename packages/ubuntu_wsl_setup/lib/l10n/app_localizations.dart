@@ -577,203 +577,203 @@ abstract class AppLocalizations {
   /// **'* All settings will take effect after restarting Ubuntu.'**
   String get setupCompleteRestart;
 
-  /// No description provided for @welcome.
+  /// No description provided for @installationSlidesWelcome.
   ///
   /// In en, this message translates to:
   /// **'Welcome to Ubuntu WSL'**
-  String get welcome;
+  String get installationSlidesWelcome;
 
-  /// No description provided for @initializing.
+  /// No description provided for @installationSlidesInitializing.
   ///
   /// In en, this message translates to:
   /// **'Initializing...'**
-  String get initializing;
+  String get installationSlidesInitializing;
 
-  /// No description provided for @unpacking.
+  /// No description provided for @installationSlidesUnpacking.
   ///
   /// In en, this message translates to:
   /// **'Unpacking the distro'**
-  String get unpacking;
+  String get installationSlidesUnpacking;
 
-  /// No description provided for @installing.
+  /// No description provided for @installationSlidesInstalling.
   ///
   /// In en, this message translates to:
   /// **'Almost done. The installer will require your attention soon.'**
-  String get installing;
+  String get installationSlidesInstalling;
 
-  /// No description provided for @launching.
+  /// No description provided for @installationSlidesLaunching.
   ///
   /// In en, this message translates to:
   /// **'Launching distro...'**
-  String get launching;
+  String get installationSlidesLaunching;
 
-  /// No description provided for @errorMsg.
+  /// No description provided for @installationSlidesErrorMsg.
   ///
   /// In en, this message translates to:
   /// **'Something went wrong.'**
-  String get errorMsg;
+  String get installationSlidesErrorMsg;
 
-  /// No description provided for @errorTitle.
+  /// No description provided for @installationSlidesErrorTitle.
   ///
   /// In en, this message translates to:
   /// **'Something went wrong'**
-  String get errorTitle;
+  String get installationSlidesErrorTitle;
 
-  /// No description provided for @errorSub.
+  /// No description provided for @installationSlidesErrorSub.
   ///
   /// In en, this message translates to:
   /// **'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME'**
-  String get errorSub;
+  String get installationSlidesErrorSub;
 
-  /// No description provided for @errorText.
+  /// No description provided for @installationSlidesErrorText.
   ///
   /// In en, this message translates to:
   /// **'\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n'**
-  String get errorText;
+  String get installationSlidesErrorText;
 
-  /// No description provided for @done.
+  /// No description provided for @installationSlidesDone.
   ///
   /// In en, this message translates to:
   /// **'All set. Enjoy using Ubuntu on WSL'**
-  String get done;
+  String get installationSlidesDone;
 
-  /// No description provided for @exitTitle.
+  /// No description provided for @installationSlidesExitTitle.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to leave?'**
-  String get exitTitle;
+  String get installationSlidesExitTitle;
 
-  /// No description provided for @exitContents.
+  /// No description provided for @installationSlidesExitContents.
   ///
   /// In en, this message translates to:
   /// **'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.'**
-  String get exitContents;
+  String get installationSlidesExitContents;
 
-  /// No description provided for @customExitTitle.
+  /// No description provided for @installationSlidesCustomExitTitle.
   ///
   /// In en, this message translates to:
   /// **'We are almost done'**
-  String get customExitTitle;
+  String get installationSlidesCustomExitTitle;
 
-  /// No description provided for @customExitContents.
+  /// No description provided for @installationSlidesCustomExitContents.
   ///
   /// In en, this message translates to:
   /// **'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?'**
-  String get customExitContents;
+  String get installationSlidesCustomExitContents;
 
-  /// No description provided for @ok.
+  /// No description provided for @installationSlidesOk.
   ///
   /// In en, this message translates to:
   /// **'Ok'**
-  String get ok;
+  String get installationSlidesOk;
 
-  /// No description provided for @leave.
+  /// No description provided for @installationSlidesLeave.
   ///
   /// In en, this message translates to:
   /// **'Leave'**
-  String get leave;
+  String get installationSlidesLeave;
 
-  /// No description provided for @cancel.
+  /// No description provided for @installationSlidesCancel.
   ///
   /// In en, this message translates to:
   /// **'Cancel'**
-  String get cancel;
+  String get installationSlidesCancel;
 
-  /// No description provided for @ubuntuOnWsl.
+  /// No description provided for @installationSlidesUbuntuOnWsl.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu on WSL'**
-  String get ubuntuOnWsl;
+  String get installationSlidesUbuntuOnWsl;
 
-  /// No description provided for @ubuntuOnWslText.
+  /// No description provided for @installationSlidesUbuntuOnWslText.
   ///
   /// In en, this message translates to:
   /// **'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!'**
-  String get ubuntuOnWslText;
+  String get installationSlidesUbuntuOnWslText;
 
-  /// No description provided for @ubuntuWslWebDev.
+  /// No description provided for @installationSlidesUbuntuWslWebDev.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu WSL for\nWeb Development'**
-  String get ubuntuWslWebDev;
+  String get installationSlidesUbuntuWslWebDev;
 
-  /// No description provided for @ubuntuWslWebDevText.
+  /// No description provided for @installationSlidesUbuntuWslWebDevText.
   ///
   /// In en, this message translates to:
   /// **'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.'**
-  String get ubuntuWslWebDevText;
+  String get installationSlidesUbuntuWslWebDevText;
 
-  /// No description provided for @ubuntuWslDataScience.
+  /// No description provided for @installationSlidesUbuntuWslDataScience.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu WSL for Data Science'**
-  String get ubuntuWslDataScience;
+  String get installationSlidesUbuntuWslDataScience;
 
-  /// No description provided for @ubuntuWslDataScienceText.
+  /// No description provided for @installationSlidesUbuntuWslDataScienceText.
   ///
   /// In en, this message translates to:
   /// **'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.'**
-  String get ubuntuWslDataScienceText;
+  String get installationSlidesUbuntuWslDataScienceText;
 
-  /// No description provided for @ubuntuWslGuiApps.
+  /// No description provided for @installationSlidesUbuntuWslGuiApps.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu WSL for\nGraphical Apps'**
-  String get ubuntuWslGuiApps;
+  String get installationSlidesUbuntuWslGuiApps;
 
-  /// No description provided for @ubuntuWslGuiAppsText.
+  /// No description provided for @installationSlidesUbuntuWslGuiAppsText.
   ///
   /// In en, this message translates to:
   /// **'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.'**
-  String get ubuntuWslGuiAppsText;
+  String get installationSlidesUbuntuWslGuiAppsText;
 
-  /// No description provided for @ubuntuWslDevOps.
+  /// No description provided for @installationSlidesUbuntuWslDevOps.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu WSL for DevOps'**
-  String get ubuntuWslDevOps;
+  String get installationSlidesUbuntuWslDevOps;
 
-  /// No description provided for @ubuntuWslDevOpsText.
+  /// No description provided for @installationSlidesUbuntuWslDevOpsText.
   ///
   /// In en, this message translates to:
   /// **'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment'**
-  String get ubuntuWslDevOpsText;
+  String get installationSlidesUbuntuWslDevOpsText;
 
-  /// No description provided for @ubuntuWslEnterprises.
+  /// No description provided for @installationSlidesUbuntuWslEnterprises.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu WSL for Enterprises'**
-  String get ubuntuWslEnterprises;
+  String get installationSlidesUbuntuWslEnterprises;
 
-  /// No description provided for @ubuntuWslEnterprisesText.
+  /// No description provided for @installationSlidesUbuntuWslEnterprisesText.
   ///
   /// In en, this message translates to:
   /// **'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.'**
-  String get ubuntuWslEnterprisesText;
+  String get installationSlidesUbuntuWslEnterprisesText;
 
-  /// No description provided for @findOutMore.
+  /// No description provided for @installationSlidesFindOutMore.
   ///
   /// In en, this message translates to:
   /// **'Find out more'**
-  String get findOutMore;
+  String get installationSlidesFindOutMore;
 
-  /// No description provided for @findOutMoreVisit.
+  /// No description provided for @installationSlidesFindOutMoreVisit.
   ///
   /// In en, this message translates to:
   /// **'Visit '**
-  String get findOutMoreVisit;
+  String get installationSlidesFindOutMoreVisit;
 
-  /// No description provided for @findOutMoreLink.
+  /// No description provided for @installationSlidesFindOutMoreLink.
   ///
   /// In en, this message translates to:
   /// **'Ubuntu.com/wsl'**
-  String get findOutMoreLink;
+  String get installationSlidesFindOutMoreLink;
 
-  /// No description provided for @findOutMoreText.
+  /// No description provided for @installationSlidesFindOutMoreText.
   ///
   /// In en, this message translates to:
   /// **' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.'**
-  String get findOutMoreText;
+  String get installationSlidesFindOutMoreText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -181,101 +181,101 @@ class AppLocalizationsKk extends AppLocalizations {
   String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
 
   @override
-  String get welcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
 
   @override
-  String get initializing => 'Initializing...';
+  String get installationSlidesInitializing => 'Initializing...';
 
   @override
-  String get unpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'Unpacking the distro';
 
   @override
-  String get installing => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
 
   @override
-  String get launching => 'Launching distro...';
+  String get installationSlidesLaunching => 'Launching distro...';
 
   @override
-  String get errorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => 'Something went wrong.';
 
   @override
-  String get errorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => 'Something went wrong';
 
   @override
-  String get errorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
 
   @override
-  String get errorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
+  String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
 
   @override
-  String get done => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
 
   @override
-  String get exitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
 
   @override
-  String get exitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
+  String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
 
   @override
-  String get customExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'We are almost done';
 
   @override
-  String get customExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get ok => 'Ok';
+  String get installationSlidesOk => 'Ok';
 
   @override
-  String get leave => 'Leave';
+  String get installationSlidesLeave => 'Leave';
 
   @override
-  String get cancel => 'Cancel';
+  String get installationSlidesCancel => 'Cancel';
 
   @override
-  String get ubuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
 
   @override
-  String get ubuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
 
   @override
-  String get ubuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
 
   @override
-  String get ubuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
 
   @override
-  String get ubuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
 
   @override
-  String get ubuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
 
   @override
-  String get ubuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
 
   @override
-  String get ubuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
 
   @override
-  String get ubuntuWslDevOps => 'Ubuntu WSL for DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
 
   @override
-  String get ubuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
 
   @override
-  String get ubuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
 
   @override
-  String get ubuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
 
   @override
-  String get findOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Find out more';
 
   @override
-  String get findOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => 'Visit ';
 
   @override
-  String get findOutMoreLink => 'Ubuntu.com/wsl';
+  String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
 
   @override
-  String get findOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
+  String get installationSlidesFindOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
 }
