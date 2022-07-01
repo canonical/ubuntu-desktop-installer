@@ -22,6 +22,15 @@ feeds the installer with partial information to prefill the
 screens, yet allowing user to overwrite any of those during setup.
   ''',
     );
+    parser.addOption(
+      'distro-name',
+      valueHelp: 'distro name',
+      help: '''
+  The name under which the distribution this application will setup or
+  configure is registered in WSL.
+  ''',
+      defaultsTo: const String.fromEnvironment('DISTRONAME'),
+    );
   })!;
   final variant = ValueNotifier<Variant?>(null);
   final liveRun = isLiveRun(options);
