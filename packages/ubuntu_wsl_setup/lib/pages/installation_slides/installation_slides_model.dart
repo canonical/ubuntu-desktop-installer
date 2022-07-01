@@ -30,12 +30,10 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   InstallationSlidesModel({
     required Stream<String> journal,
     required this.monitor,
-    InstallationState initial = InstallationState.registering,
   })  : _journal = journal,
-        _state = initial,
         super();
 
-  InstallationState _state;
+  InstallationState _state = InstallationState.registering;
   InstallationState get state => _state;
 
   final Stream<String> _journal;
@@ -55,7 +53,6 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   /// [notifyListeners] due the server up state transition.
   void init({required void Function() onServerUp}) {
     _onServerUp = onServerUp;
-    addListener(_listen);
     // We may be requested after the server is ready.
     if (isServerUp) {
       _setState(InstallationState.serverUp);
@@ -77,18 +74,18 @@ class InstallationSlidesModel extends SafeChangeNotifier {
     }
   }
 
-  void _listen() {
+  void _setState(InstallationState value) {
+    if (_state == value) {
+      return;
+    }
+    _state = value;
     if (_state == InstallationState.serverUp) {
       _state = InstallationState.proceedToSetup;
       _journalSubs?.cancel();
       _journalSubs = null;
-      removeListener(_listen);
       _onServerUp();
     }
-  }
 
-  void _setState(InstallationState value) {
-    _state = value;
     notifyListeners();
   }
 
