@@ -23,12 +23,12 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
+import 'package:ubuntu_wizard/constants.dart';
 
-import '../../constants.dart';
 import '../../l10n/app_localizations.dart';
 import '../../services/journal.dart';
-import 'slides.dart';
 import 'installation_slides_model.dart';
+import 'slides.dart';
 
 /// Implements a slide show in which all slides have a common background image,
 /// meant to only exist while Subiquity server is not up and running, (like

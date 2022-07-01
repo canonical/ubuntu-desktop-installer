@@ -19,8 +19,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/constants.dart';
 
-import '../../constants.dart';
 import '../../l10n/app_localizations.dart';
 
 /// Implements the look of a single slide presented by WSL splash screen.
