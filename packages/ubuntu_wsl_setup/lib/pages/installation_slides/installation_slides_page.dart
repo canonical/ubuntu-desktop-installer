@@ -64,7 +64,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.read<InstallationSlidesModel>();
+    final model = context.watch<InstallationSlidesModel>();
     final slides = context.read<SlidesProvider>().slides;
     return model.isServerUp
         // Avoids glitching if the server is already up, since the wizard will
