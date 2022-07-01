@@ -149,8 +149,8 @@ void main() {
     when(monitor.onStatusChanged).thenAnswer(
       (realInvocation) => Stream.empty(),
     );
-    registerService<JournalService>(() => journal);
-    registerService<SubiquityStatusMonitor>(() => monitor);
+    registerMockService<JournalService>(journal);
+    registerMockService<SubiquityStatusMonitor>(monitor);
     await tester.pumpWidget(buildApp(InstallationSlidesPage.create));
     final page = find.byType(InstallationSlidesPage);
     expect(page, findsOneWidget);
@@ -170,8 +170,8 @@ void main() {
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
       when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
-      registerService<JournalService>(() => journal);
-      registerService<SubiquityStatusMonitor>(() => monitor);
+      registerMockService<JournalService>(journal);
+      registerMockService<SubiquityStatusMonitor>(monitor);
 
       await tester.pumpWidget(buildApp(InstallationSlidesPage.create));
       await tester.pump();
@@ -197,8 +197,8 @@ void main() {
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
       when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
-      registerService<JournalService>(() => journal);
-      registerService<SubiquityStatusMonitor>(() => monitor);
+      registerMockService<JournalService>(journal);
+      registerMockService<SubiquityStatusMonitor>(monitor);
       await tester.pumpWidget(buildApp(InstallationSlidesPage.create));
       await tester.pump();
 
