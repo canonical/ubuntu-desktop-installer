@@ -137,7 +137,9 @@ class _SlidesPage extends StatelessWidget {
                   ),
                   const SizedBox(width: kContentSpacing),
                   Text(
-                    model.hasError ? lang.errorMsg : lang.unpacking,
+                    model.hasError
+                        ? lang.installationSlidesErrorMsg
+                        : lang.installationSlidesUnpacking,
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                         color: model.hasError
                             ? Theme.of(context).errorColor
@@ -219,12 +221,12 @@ class _ErrorScreen extends StatelessWidget {
       color: Colors.white,
       child: Slide.withRichText(
         image: const Icon(YaruIcons.emote_sick, size: 192),
-        title: lang.errorTitle,
+        title: lang.installationSlidesErrorTitle,
         subtitle: 'Oh, no!',
         span: [
           TextSpan(
             style: Theme.of(context).textTheme.bodyText1,
-            text: lang.errorText,
+            text: lang.installationSlidesErrorText,
           ),
           const TextSpan(text: '\n'),
           const WidgetSpan(

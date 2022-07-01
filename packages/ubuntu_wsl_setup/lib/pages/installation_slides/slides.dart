@@ -114,50 +114,51 @@ List<Slide> theSlides(BuildContext context) {
   return [
     Slide(
       image: SvgPicture.asset('assets/1-Ubuntu_on_WSL.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuOnWsl,
-      text: lang.ubuntuOnWslText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuOnWsl,
+      text: lang.installationSlidesUbuntuOnWslText,
     ),
     Slide(
       image: SvgPicture.asset('assets/2-Ubuntu_WSL_for_Web_Dev.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuWslWebDev,
-      text: lang.ubuntuWslWebDevText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuWslWebDev,
+      text: lang.installationSlidesUbuntuWslWebDevText,
     ),
     Slide(
       image: SvgPicture.asset('assets/3-Ubuntu_WSL_for_Data_Science.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuWslDataScience,
-      text: lang.ubuntuWslDataScienceText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuWslDataScience,
+      text: lang.installationSlidesUbuntuWslDataScienceText,
     ),
     Slide(
       image: SvgPicture.asset('assets/4-Ubuntu_WSL_for_Graphical_Apps.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuWslGuiApps,
-      text: lang.ubuntuWslGuiAppsText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuWslGuiApps,
+      text: lang.installationSlidesUbuntuWslGuiAppsText,
     ),
     Slide(
       image: SvgPicture.asset('assets/5-Ubuntu_WSL_for_DevOps.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuWslDevOps,
-      text: lang.ubuntuWslDevOpsText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuWslDevOps,
+      text: lang.installationSlidesUbuntuWslDevOpsText,
     ),
     Slide(
       image: SvgPicture.asset('assets/6-Ubuntu_WSL_for_Enterprises.svg'),
-      title: lang.welcome,
-      subtitle: lang.ubuntuWslEnterprises,
-      text: lang.ubuntuWslEnterprisesText,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesUbuntuWslEnterprises,
+      text: lang.installationSlidesUbuntuWslEnterprisesText,
     ),
     Slide.withRichText(
       image: SvgPicture.asset('assets/7-Ubuntu_Logo_TAG.svg'),
-      title: lang.welcome,
-      subtitle: lang.findOutMore,
+      title: lang.installationSlidesWelcome,
+      subtitle: lang.installationSlidesFindOutMore,
       span: [
-        TextSpan(text: lang.findOutMoreVisit, style: bodyStyle),
+        TextSpan(
+            text: lang.installationSlidesFindOutMoreVisit, style: bodyStyle),
         WidgetSpan(
           child: Text.rich(
             TextSpan(
-              text: lang.findOutMoreLink,
+              text: lang.installationSlidesFindOutMoreLink,
               style: linkStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () => launchUrl('https://ubuntu.com/wsl'),
@@ -165,7 +166,7 @@ List<Slide> theSlides(BuildContext context) {
           ),
         ),
         TextSpan(
-          text: lang.findOutMoreText,
+          text: lang.installationSlidesFindOutMoreText,
           style: bodyStyle,
         ),
       ],

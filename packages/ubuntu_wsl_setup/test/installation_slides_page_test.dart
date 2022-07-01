@@ -96,7 +96,7 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    expect(find.text(tester.lang.unpacking), findsOneWidget);
+    expect(find.text(tester.lang.installationSlidesUnpacking), findsOneWidget);
   });
 
   testWidgets('display error status', (tester) async {
@@ -106,8 +106,8 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
     expect(find.byType(CircularProgressIndicator), findsNothing);
-    expect(find.text(tester.lang.errorTitle), findsOneWidget);
-    expect(find.text(tester.lang.errorMsg), findsOneWidget);
+    expect(find.text(tester.lang.installationSlidesErrorTitle), findsOneWidget);
+    expect(find.text(tester.lang.installationSlidesErrorMsg), findsOneWidget);
   });
 
   testWidgets('display log', (tester) async {
