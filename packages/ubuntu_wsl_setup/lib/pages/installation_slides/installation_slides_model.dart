@@ -75,7 +75,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   }
 
   void _setState(InstallationState value) {
-    if (_state == value) {
+    if (_state == InstallationState.proceedToSetup || _state == value) {
       return;
     }
     _state = value;
