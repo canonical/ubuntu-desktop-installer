@@ -6,22 +6,14 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wsl_setup/main_common.dart';
 
 import 'app.dart';
 import 'installing_state.dart';
 
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
-    parser.addFlag('reconfigure');
-    parser.addOption(
-      'prefill',
-      valueHelp: 'prefill',
-      help: '''
-Path of the YAML file containing prefill information, which
-feeds the installer with partial information to prefill the
-screens, yet allowing user to overwrite any of those during setup.
-  ''',
-    );
+    addCommonCliOptions(parser);
   })!;
   final variant = ValueNotifier<Variant?>(null);
   final liveRun = isLiveRun(options);
@@ -34,10 +26,8 @@ screens, yet allowing user to overwrite any of those during setup.
     serverMode: serverMode,
     subiquityPath: subiquityPath,
   );
-  List<String>? serverArgs;
-  if (options['prefill'] != null) {
-    serverArgs = ['--prefill', options['prefill']];
-  }
+  final serverArgs = serverArgsFromOptions(options);
+
   final subiquityClient = SubiquityClient();
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
