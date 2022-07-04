@@ -45,5 +45,8 @@ Future<String> _findSubiquityPath() async {
   } else {
     log.debug('Found subiquity_client in ${package.root.path}');
   }
-  return p.join(package?.root.path ?? Directory.current.path, 'subiquity');
+  return p.join(
+    package?.root.toFilePath() ?? Directory.current.path,
+    'subiquity',
+  );
 }
