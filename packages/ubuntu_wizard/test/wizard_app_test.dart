@@ -130,4 +130,22 @@ void main() {
     expect(getService<SubiquityStatusMonitor>(), equals(monitor));
     verify(monitor.start(endpoint)).called(1);
   });
+
+  testWidgets('does not mark UI-specific pages configured', (tester) async {
+    final client = MockSubiquityClient();
+    final server = MockSubiquityServer();
+    when(server.start(
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer(
+      (_) async => Endpoint.unix(''),
+    );
+
+    await runWizardApp(
+      SizedBox(),
+      subiquityClient: client,
+      subiquityServer: server,
+    );
+
+    verifyNever(client.markConfigured(any));
+  });
 }
