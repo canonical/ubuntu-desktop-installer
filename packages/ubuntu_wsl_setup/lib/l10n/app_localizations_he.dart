@@ -181,25 +181,25 @@ class AppLocalizationsHe extends AppLocalizations {
   String get setupCompleteRestart => '* כל ההגדרות יחולו לאחר הפעלת אובונטו מחדש.';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'ברוך בואך לאובונטו WSL';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => 'מופעל…';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'ההפצה נפרסת';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'כמעט סיימנו. תוכנית ההתקנה תדרוש את תשומת לבך בקרוב.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => 'ההפצה נטענת…';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => 'משהו השתבש.';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => 'משהו השתבש';
 
   @override
   String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
@@ -208,31 +208,31 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => 'הכול מוכן. מאחלים לך ליהנות מאובונטו על WSL';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => 'לעזוב?';
 
   @override
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'כמעט סיימנו';
 
   @override
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'בסדר';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => 'לעזוב';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'לבטל';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'אובונטו על WSL';
 
   @override
   String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
