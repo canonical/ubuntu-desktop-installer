@@ -47,19 +47,6 @@ Future<bool?> runWizardApp(
       .start(args: serverArgs, environment: serverEnvironment)
       .then((endpoint) async {
     subiquityClient.open(endpoint);
-
-    // Use the default values for a number of endpoints
-    // for which a UI page isn't implemented yet.
-    await subiquityClient.markConfigured([
-      'drivers',
-      'mirror',
-      'proxy',
-      'network',
-      'ssh',
-      'snaplist',
-      'ubuntu_pro',
-    ]);
-
     return subiquityMonitor?.start(endpoint);
   });
 

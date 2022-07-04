@@ -131,7 +131,19 @@ Future<void> runInstallerApp(
   );
 
   appStatus.value = AppStatus.ready;
-  return subiquityClient.setVariant(Variant.DESKTOP);
+  await subiquityClient.setVariant(Variant.DESKTOP);
+
+  // Use the default values for a number of endpoints
+  // for which a UI page isn't implemented yet.
+  return subiquityClient.markConfigured([
+    'drivers',
+    'mirror',
+    'proxy',
+    'network',
+    'ssh',
+    'snaplist',
+    'ubuntu_pro',
+  ]);
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
