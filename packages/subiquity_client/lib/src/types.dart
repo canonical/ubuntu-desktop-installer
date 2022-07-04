@@ -412,11 +412,24 @@ class StorageResponseV2 with _$StorageResponseV2 {
     required List<Disk> disks,
     required bool needRoot,
     required bool needBoot,
+    required int installMinimumSize,
     ErrorReportRef? errorReport,
   }) = _StorageResponseV2;
 
   factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$StorageResponseV2FromJson(json);
+}
+
+@freezed
+class GuidedResizeValues with _$GuidedResizeValues {
+  const factory GuidedResizeValues({
+    required int minimum,
+    required int recommended,
+    required int maximum,
+  }) = _GuidedResizeValues;
+
+  factory GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
+      _$GuidedResizeValuesFromJson(json);
 }
 
 @freezed
@@ -613,10 +626,22 @@ class UbuntuProService with _$UbuntuProService {
 }
 
 @freezed
+class UbuntuProSubscription with _$UbuntuProSubscription {
+  const factory UbuntuProSubscription({
+    required String contractName,
+    required String accountName,
+    required List<UbuntuProService> services,
+  }) = _UbuntuProSubscription;
+
+  factory UbuntuProSubscription.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProSubscriptionFromJson(json);
+}
+
+@freezed
 class UbuntuProCheckTokenAnswer with _$UbuntuProCheckTokenAnswer {
   const factory UbuntuProCheckTokenAnswer({
     required UbuntuProCheckTokenStatus status,
-    required List<UbuntuProService>? services,
+    required UbuntuProSubscription? subscription,
   }) = _UbuntuProCheckTokenAnswer;
 
   factory UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =>

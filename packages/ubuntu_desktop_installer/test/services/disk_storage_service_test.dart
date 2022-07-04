@@ -33,8 +33,8 @@ void main() {
 
   test('set guided storage', () async {
     final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: false);
-    when(client.setGuidedStorageV2(choice)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     await service.setGuidedStorage(testDisks.last);
@@ -44,8 +44,8 @@ void main() {
 
   test('use LVM', () async {
     final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: true);
-    when(client.setGuidedStorageV2(choice)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     service.useLvm = true;
@@ -66,16 +66,16 @@ void main() {
     when(client.getGuidedStorage()).thenAnswer((_) async =>
         GuidedStorageResponse(
             disks: [testDisks.first], status: ProbeStatus.DONE));
-    when(client.resetStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(disks: [], needBoot: false, needRoot: false));
+    when(client.resetStorageV2())
+        .thenAnswer((_) async => testStorageResponse(disks: []));
 
     await service.resetGuidedStorage();
     expect(service.hasMultipleDisks, isFalse);
   });
 
   test('get storage', () async {
-    when(client.getStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.getStorageV2())
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     expect(await service.getStorage(), equals(testDisks));
@@ -84,8 +84,8 @@ void main() {
   });
 
   test('set storage', () async {
-    when(client.setStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.setStorageV2())
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     expect(await service.setStorage(testDisks), equals(testDisks));
@@ -94,8 +94,8 @@ void main() {
   });
 
   test('reset storage', () async {
-    when(client.resetStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.resetStorageV2())
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     expect(await service.resetStorage(), equals(testDisks));
@@ -104,8 +104,8 @@ void main() {
   });
 
   test('needs', () async {
-    when(client.getStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(needRoot: true, needBoot: false, disks: []));
+    when(client.getStorageV2())
+        .thenAnswer((_) async => testStorageResponse(needRoot: true));
 
     final service = DiskStorageService(client);
     await service.getStorage();
@@ -113,8 +113,8 @@ void main() {
     expect(service.needRoot, isTrue);
     expect(service.needBoot, isFalse);
 
-    when(client.resetStorageV2()).thenAnswer((_) async =>
-        StorageResponseV2(needRoot: false, needBoot: true, disks: []));
+    when(client.resetStorageV2()).thenAnswer((_) async => testStorageResponse(
+        needRoot: false, needBoot: true, disks: [], installMinimumSize: 0));
 
     await service.resetStorage();
 
@@ -128,25 +128,22 @@ void main() {
     final partition = Partition(number: 1);
     final service = DiskStorageService(client);
 
-    when(client.addPartitionV2(disk, gap, partition)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.addPartitionV2(disk, gap, partition))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     await service.addPartition(disk, gap, partition);
     expect(service.storage, equals(testDisks));
     verify(client.addPartitionV2(disk, gap, partition)).called(1);
 
-    when(client.editPartitionV2(disk, partition)).thenAnswer((_) async =>
-        StorageResponseV2(
-            disks: testDisks.reversed.toList(),
-            needBoot: false,
-            needRoot: false));
+    when(client.editPartitionV2(disk, partition)).thenAnswer(
+        (_) async => testStorageResponse(disks: testDisks.reversed.toList()));
 
     await service.editPartition(disk, partition);
     expect(service.storage, equals(testDisks.reversed.toList()));
     verify(client.editPartitionV2(disk, partition)).called(1);
 
-    when(client.deletePartitionV2(disk, partition)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.deletePartitionV2(disk, partition))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     await service.deletePartition(disk, partition);
     expect(service.storage, equals(testDisks));
@@ -157,8 +154,8 @@ void main() {
     final disk = testDisk(id: 'tst');
     final service = DiskStorageService(client);
 
-    when(client.addBootPartitionV2(disk)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.addBootPartitionV2(disk))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     await service.addBootPartition(disk);
     expect(service.storage, equals(testDisks));
@@ -169,8 +166,8 @@ void main() {
     final disk = testDisk(id: 'tst');
     final service = DiskStorageService(client);
 
-    when(client.reformatDiskV2(disk)).thenAnswer((_) async =>
-        StorageResponseV2(disks: testDisks, needBoot: false, needRoot: false));
+    when(client.reformatDiskV2(disk))
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     await service.reformatDisk(disk);
     expect(service.storage, equals(testDisks));
@@ -204,4 +201,18 @@ void main() {
     verify(client.hasBitLocker()).called(1);
     expect(service.hasBitLocker, isFalse);
   });
+}
+
+StorageResponseV2 testStorageResponse({
+  List<Disk> disks = const [],
+  bool needBoot = false,
+  bool needRoot = false,
+  int installMinimumSize = 0,
+}) {
+  return StorageResponseV2(
+    disks: disks,
+    needBoot: needBoot,
+    needRoot: needRoot,
+    installMinimumSize: installMinimumSize,
+  );
 }

@@ -5687,11 +5687,13 @@ class _$StorageResponseV2TearOff {
       {required List<Disk> disks,
       required bool needRoot,
       required bool needBoot,
+      required int installMinimumSize,
       ErrorReportRef? errorReport}) {
     return _StorageResponseV2(
       disks: disks,
       needRoot: needRoot,
       needBoot: needBoot,
+      installMinimumSize: installMinimumSize,
       errorReport: errorReport,
     );
   }
@@ -5709,6 +5711,7 @@ mixin _$StorageResponseV2 {
   List<Disk> get disks => throw _privateConstructorUsedError;
   bool get needRoot => throw _privateConstructorUsedError;
   bool get needBoot => throw _privateConstructorUsedError;
+  int get installMinimumSize => throw _privateConstructorUsedError;
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5726,6 +5729,7 @@ abstract class $StorageResponseV2CopyWith<$Res> {
       {List<Disk> disks,
       bool needRoot,
       bool needBoot,
+      int installMinimumSize,
       ErrorReportRef? errorReport});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -5745,6 +5749,7 @@ class _$StorageResponseV2CopyWithImpl<$Res>
     Object? disks = freezed,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
+    Object? installMinimumSize = freezed,
     Object? errorReport = freezed,
   }) {
     return _then(_value.copyWith(
@@ -5760,6 +5765,10 @@ class _$StorageResponseV2CopyWithImpl<$Res>
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
               as bool,
+      installMinimumSize: installMinimumSize == freezed
+          ? _value.installMinimumSize
+          : installMinimumSize // ignore: cast_nullable_to_non_nullable
+              as int,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -5790,6 +5799,7 @@ abstract class _$StorageResponseV2CopyWith<$Res>
       {List<Disk> disks,
       bool needRoot,
       bool needBoot,
+      int installMinimumSize,
       ErrorReportRef? errorReport});
 
   @override
@@ -5812,6 +5822,7 @@ class __$StorageResponseV2CopyWithImpl<$Res>
     Object? disks = freezed,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
+    Object? installMinimumSize = freezed,
     Object? errorReport = freezed,
   }) {
     return _then(_StorageResponseV2(
@@ -5827,6 +5838,10 @@ class __$StorageResponseV2CopyWithImpl<$Res>
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
               as bool,
+      installMinimumSize: installMinimumSize == freezed
+          ? _value.installMinimumSize
+          : installMinimumSize // ignore: cast_nullable_to_non_nullable
+              as int,
       errorReport: errorReport == freezed
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
@@ -5842,6 +5857,7 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
       {required this.disks,
       required this.needRoot,
       required this.needBoot,
+      required this.installMinimumSize,
       this.errorReport});
 
   factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
@@ -5854,11 +5870,13 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
   @override
   final bool needBoot;
   @override
+  final int installMinimumSize;
+  @override
   final ErrorReportRef? errorReport;
 
   @override
   String toString() {
-    return 'StorageResponseV2(disks: $disks, needRoot: $needRoot, needBoot: $needBoot, errorReport: $errorReport)';
+    return 'StorageResponseV2(disks: $disks, needRoot: $needRoot, needBoot: $needBoot, installMinimumSize: $installMinimumSize, errorReport: $errorReport)';
   }
 
   @override
@@ -5873,6 +5891,9 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
             (identical(other.needBoot, needBoot) ||
                 const DeepCollectionEquality()
                     .equals(other.needBoot, needBoot)) &&
+            (identical(other.installMinimumSize, installMinimumSize) ||
+                const DeepCollectionEquality()
+                    .equals(other.installMinimumSize, installMinimumSize)) &&
             (identical(other.errorReport, errorReport) ||
                 const DeepCollectionEquality()
                     .equals(other.errorReport, errorReport)));
@@ -5884,6 +5905,7 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
       const DeepCollectionEquality().hash(disks) ^
       const DeepCollectionEquality().hash(needRoot) ^
       const DeepCollectionEquality().hash(needBoot) ^
+      const DeepCollectionEquality().hash(installMinimumSize) ^
       const DeepCollectionEquality().hash(errorReport);
 
   @JsonKey(ignore: true)
@@ -5902,6 +5924,7 @@ abstract class _StorageResponseV2 implements StorageResponseV2 {
       {required List<Disk> disks,
       required bool needRoot,
       required bool needBoot,
+      required int installMinimumSize,
       ErrorReportRef? errorReport}) = _$_StorageResponseV2;
 
   factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
@@ -5914,10 +5937,209 @@ abstract class _StorageResponseV2 implements StorageResponseV2 {
   @override
   bool get needBoot => throw _privateConstructorUsedError;
   @override
+  int get installMinimumSize => throw _privateConstructorUsedError;
+  @override
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GuidedResizeValues _$GuidedResizeValuesFromJson(Map<String, dynamic> json) {
+  return _GuidedResizeValues.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedResizeValuesTearOff {
+  const _$GuidedResizeValuesTearOff();
+
+  _GuidedResizeValues call(
+      {required int minimum, required int recommended, required int maximum}) {
+    return _GuidedResizeValues(
+      minimum: minimum,
+      recommended: recommended,
+      maximum: maximum,
+    );
+  }
+
+  GuidedResizeValues fromJson(Map<String, Object> json) {
+    return GuidedResizeValues.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedResizeValues = _$GuidedResizeValuesTearOff();
+
+/// @nodoc
+mixin _$GuidedResizeValues {
+  int get minimum => throw _privateConstructorUsedError;
+  int get recommended => throw _privateConstructorUsedError;
+  int get maximum => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedResizeValuesCopyWith<GuidedResizeValues> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedResizeValuesCopyWith<$Res> {
+  factory $GuidedResizeValuesCopyWith(
+          GuidedResizeValues value, $Res Function(GuidedResizeValues) then) =
+      _$GuidedResizeValuesCopyWithImpl<$Res>;
+  $Res call({int minimum, int recommended, int maximum});
+}
+
+/// @nodoc
+class _$GuidedResizeValuesCopyWithImpl<$Res>
+    implements $GuidedResizeValuesCopyWith<$Res> {
+  _$GuidedResizeValuesCopyWithImpl(this._value, this._then);
+
+  final GuidedResizeValues _value;
+  // ignore: unused_field
+  final $Res Function(GuidedResizeValues) _then;
+
+  @override
+  $Res call({
+    Object? minimum = freezed,
+    Object? recommended = freezed,
+    Object? maximum = freezed,
+  }) {
+    return _then(_value.copyWith(
+      minimum: minimum == freezed
+          ? _value.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as int,
+      recommended: recommended == freezed
+          ? _value.recommended
+          : recommended // ignore: cast_nullable_to_non_nullable
+              as int,
+      maximum: maximum == freezed
+          ? _value.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedResizeValuesCopyWith<$Res>
+    implements $GuidedResizeValuesCopyWith<$Res> {
+  factory _$GuidedResizeValuesCopyWith(
+          _GuidedResizeValues value, $Res Function(_GuidedResizeValues) then) =
+      __$GuidedResizeValuesCopyWithImpl<$Res>;
+  @override
+  $Res call({int minimum, int recommended, int maximum});
+}
+
+/// @nodoc
+class __$GuidedResizeValuesCopyWithImpl<$Res>
+    extends _$GuidedResizeValuesCopyWithImpl<$Res>
+    implements _$GuidedResizeValuesCopyWith<$Res> {
+  __$GuidedResizeValuesCopyWithImpl(
+      _GuidedResizeValues _value, $Res Function(_GuidedResizeValues) _then)
+      : super(_value, (v) => _then(v as _GuidedResizeValues));
+
+  @override
+  _GuidedResizeValues get _value => super._value as _GuidedResizeValues;
+
+  @override
+  $Res call({
+    Object? minimum = freezed,
+    Object? recommended = freezed,
+    Object? maximum = freezed,
+  }) {
+    return _then(_GuidedResizeValues(
+      minimum: minimum == freezed
+          ? _value.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as int,
+      recommended: recommended == freezed
+          ? _value.recommended
+          : recommended // ignore: cast_nullable_to_non_nullable
+              as int,
+      maximum: maximum == freezed
+          ? _value.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedResizeValues implements _GuidedResizeValues {
+  const _$_GuidedResizeValues(
+      {required this.minimum,
+      required this.recommended,
+      required this.maximum});
+
+  factory _$_GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedResizeValuesFromJson(json);
+
+  @override
+  final int minimum;
+  @override
+  final int recommended;
+  @override
+  final int maximum;
+
+  @override
+  String toString() {
+    return 'GuidedResizeValues(minimum: $minimum, recommended: $recommended, maximum: $maximum)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedResizeValues &&
+            (identical(other.minimum, minimum) ||
+                const DeepCollectionEquality()
+                    .equals(other.minimum, minimum)) &&
+            (identical(other.recommended, recommended) ||
+                const DeepCollectionEquality()
+                    .equals(other.recommended, recommended)) &&
+            (identical(other.maximum, maximum) ||
+                const DeepCollectionEquality().equals(other.maximum, maximum)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(minimum) ^
+      const DeepCollectionEquality().hash(recommended) ^
+      const DeepCollectionEquality().hash(maximum);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedResizeValuesCopyWith<_GuidedResizeValues> get copyWith =>
+      __$GuidedResizeValuesCopyWithImpl<_GuidedResizeValues>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedResizeValuesToJson(this);
+  }
+}
+
+abstract class _GuidedResizeValues implements GuidedResizeValues {
+  const factory _GuidedResizeValues(
+      {required int minimum,
+      required int recommended,
+      required int maximum}) = _$_GuidedResizeValues;
+
+  factory _GuidedResizeValues.fromJson(Map<String, dynamic> json) =
+      _$_GuidedResizeValues.fromJson;
+
+  @override
+  int get minimum => throw _privateConstructorUsedError;
+  @override
+  int get recommended => throw _privateConstructorUsedError;
+  @override
+  int get maximum => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedResizeValuesCopyWith<_GuidedResizeValues> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -8819,6 +9041,214 @@ abstract class _UbuntuProService implements UbuntuProService {
       throw _privateConstructorUsedError;
 }
 
+UbuntuProSubscription _$UbuntuProSubscriptionFromJson(
+    Map<String, dynamic> json) {
+  return _UbuntuProSubscription.fromJson(json);
+}
+
+/// @nodoc
+class _$UbuntuProSubscriptionTearOff {
+  const _$UbuntuProSubscriptionTearOff();
+
+  _UbuntuProSubscription call(
+      {required String contractName,
+      required String accountName,
+      required List<UbuntuProService> services}) {
+    return _UbuntuProSubscription(
+      contractName: contractName,
+      accountName: accountName,
+      services: services,
+    );
+  }
+
+  UbuntuProSubscription fromJson(Map<String, Object> json) {
+    return UbuntuProSubscription.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $UbuntuProSubscription = _$UbuntuProSubscriptionTearOff();
+
+/// @nodoc
+mixin _$UbuntuProSubscription {
+  String get contractName => throw _privateConstructorUsedError;
+  String get accountName => throw _privateConstructorUsedError;
+  List<UbuntuProService> get services => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UbuntuProSubscriptionCopyWith<UbuntuProSubscription> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UbuntuProSubscriptionCopyWith<$Res> {
+  factory $UbuntuProSubscriptionCopyWith(UbuntuProSubscription value,
+          $Res Function(UbuntuProSubscription) then) =
+      _$UbuntuProSubscriptionCopyWithImpl<$Res>;
+  $Res call(
+      {String contractName,
+      String accountName,
+      List<UbuntuProService> services});
+}
+
+/// @nodoc
+class _$UbuntuProSubscriptionCopyWithImpl<$Res>
+    implements $UbuntuProSubscriptionCopyWith<$Res> {
+  _$UbuntuProSubscriptionCopyWithImpl(this._value, this._then);
+
+  final UbuntuProSubscription _value;
+  // ignore: unused_field
+  final $Res Function(UbuntuProSubscription) _then;
+
+  @override
+  $Res call({
+    Object? contractName = freezed,
+    Object? accountName = freezed,
+    Object? services = freezed,
+  }) {
+    return _then(_value.copyWith(
+      contractName: contractName == freezed
+          ? _value.contractName
+          : contractName // ignore: cast_nullable_to_non_nullable
+              as String,
+      accountName: accountName == freezed
+          ? _value.accountName
+          : accountName // ignore: cast_nullable_to_non_nullable
+              as String,
+      services: services == freezed
+          ? _value.services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<UbuntuProService>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$UbuntuProSubscriptionCopyWith<$Res>
+    implements $UbuntuProSubscriptionCopyWith<$Res> {
+  factory _$UbuntuProSubscriptionCopyWith(_UbuntuProSubscription value,
+          $Res Function(_UbuntuProSubscription) then) =
+      __$UbuntuProSubscriptionCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String contractName,
+      String accountName,
+      List<UbuntuProService> services});
+}
+
+/// @nodoc
+class __$UbuntuProSubscriptionCopyWithImpl<$Res>
+    extends _$UbuntuProSubscriptionCopyWithImpl<$Res>
+    implements _$UbuntuProSubscriptionCopyWith<$Res> {
+  __$UbuntuProSubscriptionCopyWithImpl(_UbuntuProSubscription _value,
+      $Res Function(_UbuntuProSubscription) _then)
+      : super(_value, (v) => _then(v as _UbuntuProSubscription));
+
+  @override
+  _UbuntuProSubscription get _value => super._value as _UbuntuProSubscription;
+
+  @override
+  $Res call({
+    Object? contractName = freezed,
+    Object? accountName = freezed,
+    Object? services = freezed,
+  }) {
+    return _then(_UbuntuProSubscription(
+      contractName: contractName == freezed
+          ? _value.contractName
+          : contractName // ignore: cast_nullable_to_non_nullable
+              as String,
+      accountName: accountName == freezed
+          ? _value.accountName
+          : accountName // ignore: cast_nullable_to_non_nullable
+              as String,
+      services: services == freezed
+          ? _value.services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<UbuntuProService>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UbuntuProSubscription implements _UbuntuProSubscription {
+  const _$_UbuntuProSubscription(
+      {required this.contractName,
+      required this.accountName,
+      required this.services});
+
+  factory _$_UbuntuProSubscription.fromJson(Map<String, dynamic> json) =>
+      _$_$_UbuntuProSubscriptionFromJson(json);
+
+  @override
+  final String contractName;
+  @override
+  final String accountName;
+  @override
+  final List<UbuntuProService> services;
+
+  @override
+  String toString() {
+    return 'UbuntuProSubscription(contractName: $contractName, accountName: $accountName, services: $services)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UbuntuProSubscription &&
+            (identical(other.contractName, contractName) ||
+                const DeepCollectionEquality()
+                    .equals(other.contractName, contractName)) &&
+            (identical(other.accountName, accountName) ||
+                const DeepCollectionEquality()
+                    .equals(other.accountName, accountName)) &&
+            (identical(other.services, services) ||
+                const DeepCollectionEquality()
+                    .equals(other.services, services)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(contractName) ^
+      const DeepCollectionEquality().hash(accountName) ^
+      const DeepCollectionEquality().hash(services);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UbuntuProSubscriptionCopyWith<_UbuntuProSubscription> get copyWith =>
+      __$UbuntuProSubscriptionCopyWithImpl<_UbuntuProSubscription>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UbuntuProSubscriptionToJson(this);
+  }
+}
+
+abstract class _UbuntuProSubscription implements UbuntuProSubscription {
+  const factory _UbuntuProSubscription(
+      {required String contractName,
+      required String accountName,
+      required List<UbuntuProService> services}) = _$_UbuntuProSubscription;
+
+  factory _UbuntuProSubscription.fromJson(Map<String, dynamic> json) =
+      _$_UbuntuProSubscription.fromJson;
+
+  @override
+  String get contractName => throw _privateConstructorUsedError;
+  @override
+  String get accountName => throw _privateConstructorUsedError;
+  @override
+  List<UbuntuProService> get services => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$UbuntuProSubscriptionCopyWith<_UbuntuProSubscription> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 UbuntuProCheckTokenAnswer _$UbuntuProCheckTokenAnswerFromJson(
     Map<String, dynamic> json) {
   return _UbuntuProCheckTokenAnswer.fromJson(json);
@@ -8830,10 +9260,10 @@ class _$UbuntuProCheckTokenAnswerTearOff {
 
   _UbuntuProCheckTokenAnswer call(
       {required UbuntuProCheckTokenStatus status,
-      required List<UbuntuProService>? services}) {
+      required UbuntuProSubscription? subscription}) {
     return _UbuntuProCheckTokenAnswer(
       status: status,
-      services: services,
+      subscription: subscription,
     );
   }
 
@@ -8848,7 +9278,7 @@ const $UbuntuProCheckTokenAnswer = _$UbuntuProCheckTokenAnswerTearOff();
 /// @nodoc
 mixin _$UbuntuProCheckTokenAnswer {
   UbuntuProCheckTokenStatus get status => throw _privateConstructorUsedError;
-  List<UbuntuProService>? get services => throw _privateConstructorUsedError;
+  UbuntuProSubscription? get subscription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -8862,7 +9292,9 @@ abstract class $UbuntuProCheckTokenAnswerCopyWith<$Res> {
           $Res Function(UbuntuProCheckTokenAnswer) then) =
       _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
   $Res call(
-      {UbuntuProCheckTokenStatus status, List<UbuntuProService>? services});
+      {UbuntuProCheckTokenStatus status, UbuntuProSubscription? subscription});
+
+  $UbuntuProSubscriptionCopyWith<$Res>? get subscription;
 }
 
 /// @nodoc
@@ -8877,18 +9309,29 @@ class _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
-    Object? services = freezed,
+    Object? subscription = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UbuntuProCheckTokenStatus,
-      services: services == freezed
-          ? _value.services
-          : services // ignore: cast_nullable_to_non_nullable
-              as List<UbuntuProService>?,
+      subscription: subscription == freezed
+          ? _value.subscription
+          : subscription // ignore: cast_nullable_to_non_nullable
+              as UbuntuProSubscription?,
     ));
+  }
+
+  @override
+  $UbuntuProSubscriptionCopyWith<$Res>? get subscription {
+    if (_value.subscription == null) {
+      return null;
+    }
+
+    return $UbuntuProSubscriptionCopyWith<$Res>(_value.subscription!, (value) {
+      return _then(_value.copyWith(subscription: value));
+    });
   }
 }
 
@@ -8900,7 +9343,10 @@ abstract class _$UbuntuProCheckTokenAnswerCopyWith<$Res>
       __$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UbuntuProCheckTokenStatus status, List<UbuntuProService>? services});
+      {UbuntuProCheckTokenStatus status, UbuntuProSubscription? subscription});
+
+  @override
+  $UbuntuProSubscriptionCopyWith<$Res>? get subscription;
 }
 
 /// @nodoc
@@ -8918,17 +9364,17 @@ class __$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
-    Object? services = freezed,
+    Object? subscription = freezed,
   }) {
     return _then(_UbuntuProCheckTokenAnswer(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UbuntuProCheckTokenStatus,
-      services: services == freezed
-          ? _value.services
-          : services // ignore: cast_nullable_to_non_nullable
-              as List<UbuntuProService>?,
+      subscription: subscription == freezed
+          ? _value.subscription
+          : subscription // ignore: cast_nullable_to_non_nullable
+              as UbuntuProSubscription?,
     ));
   }
 }
@@ -8937,7 +9383,7 @@ class __$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
   const _$_UbuntuProCheckTokenAnswer(
-      {required this.status, required this.services});
+      {required this.status, required this.subscription});
 
   factory _$_UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =>
       _$_$_UbuntuProCheckTokenAnswerFromJson(json);
@@ -8945,11 +9391,11 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
   @override
   final UbuntuProCheckTokenStatus status;
   @override
-  final List<UbuntuProService>? services;
+  final UbuntuProSubscription? subscription;
 
   @override
   String toString() {
-    return 'UbuntuProCheckTokenAnswer(status: $status, services: $services)';
+    return 'UbuntuProCheckTokenAnswer(status: $status, subscription: $subscription)';
   }
 
   @override
@@ -8958,16 +9404,16 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
         (other is _UbuntuProCheckTokenAnswer &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.services, services) ||
+            (identical(other.subscription, subscription) ||
                 const DeepCollectionEquality()
-                    .equals(other.services, services)));
+                    .equals(other.subscription, subscription)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(services);
+      const DeepCollectionEquality().hash(subscription);
 
   @JsonKey(ignore: true)
   @override
@@ -8985,7 +9431,7 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
 abstract class _UbuntuProCheckTokenAnswer implements UbuntuProCheckTokenAnswer {
   const factory _UbuntuProCheckTokenAnswer(
           {required UbuntuProCheckTokenStatus status,
-          required List<UbuntuProService>? services}) =
+          required UbuntuProSubscription? subscription}) =
       _$_UbuntuProCheckTokenAnswer;
 
   factory _UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =
@@ -8994,7 +9440,7 @@ abstract class _UbuntuProCheckTokenAnswer implements UbuntuProCheckTokenAnswer {
   @override
   UbuntuProCheckTokenStatus get status => throw _privateConstructorUsedError;
   @override
-  List<UbuntuProService>? get services => throw _privateConstructorUsedError;
+  UbuntuProSubscription? get subscription => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UbuntuProCheckTokenAnswerCopyWith<_UbuntuProCheckTokenAnswer>

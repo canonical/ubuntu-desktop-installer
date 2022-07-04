@@ -582,6 +582,7 @@ _$_StorageResponseV2 _$_$_StorageResponseV2FromJson(Map<String, dynamic> json) {
         .toList(),
     needRoot: json['need_root'] as bool,
     needBoot: json['need_boot'] as bool,
+    installMinimumSize: json['install_minimum_size'] as int,
     errorReport: json['error_report'] == null
         ? null
         : ErrorReportRef.fromJson(json['error_report'] as Map<String, dynamic>),
@@ -594,7 +595,25 @@ Map<String, dynamic> _$_$_StorageResponseV2ToJson(
       'disks': instance.disks.map((e) => e.toJson()).toList(),
       'need_root': instance.needRoot,
       'need_boot': instance.needBoot,
+      'install_minimum_size': instance.installMinimumSize,
       'error_report': instance.errorReport?.toJson(),
+    };
+
+_$_GuidedResizeValues _$_$_GuidedResizeValuesFromJson(
+    Map<String, dynamic> json) {
+  return _$_GuidedResizeValues(
+    minimum: json['minimum'] as int,
+    recommended: json['recommended'] as int,
+    maximum: json['maximum'] as int,
+  );
+}
+
+Map<String, dynamic> _$_$_GuidedResizeValuesToJson(
+        _$_GuidedResizeValues instance) =>
+    <String, dynamic>{
+      'minimum': instance.minimum,
+      'recommended': instance.recommended,
+      'maximum': instance.maximum,
     };
 
 _$_AddPartitionV2 _$_$_AddPartitionV2FromJson(Map<String, dynamic> json) {
@@ -837,13 +856,33 @@ Map<String, dynamic> _$_$_UbuntuProServiceToJson(
       'auto_enabled': instance.autoEnabled,
     };
 
+_$_UbuntuProSubscription _$_$_UbuntuProSubscriptionFromJson(
+    Map<String, dynamic> json) {
+  return _$_UbuntuProSubscription(
+    contractName: json['contract_name'] as String,
+    accountName: json['account_name'] as String,
+    services: (json['services'] as List<dynamic>)
+        .map((e) => UbuntuProService.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_UbuntuProSubscriptionToJson(
+        _$_UbuntuProSubscription instance) =>
+    <String, dynamic>{
+      'contract_name': instance.contractName,
+      'account_name': instance.accountName,
+      'services': instance.services.map((e) => e.toJson()).toList(),
+    };
+
 _$_UbuntuProCheckTokenAnswer _$_$_UbuntuProCheckTokenAnswerFromJson(
     Map<String, dynamic> json) {
   return _$_UbuntuProCheckTokenAnswer(
     status: _$enumDecode(_$UbuntuProCheckTokenStatusEnumMap, json['status']),
-    services: (json['services'] as List<dynamic>?)
-        ?.map((e) => UbuntuProService.fromJson(e as Map<String, dynamic>))
-        .toList(),
+    subscription: json['subscription'] == null
+        ? null
+        : UbuntuProSubscription.fromJson(
+            json['subscription'] as Map<String, dynamic>),
   );
 }
 
@@ -851,7 +890,7 @@ Map<String, dynamic> _$_$_UbuntuProCheckTokenAnswerToJson(
         _$_UbuntuProCheckTokenAnswer instance) =>
     <String, dynamic>{
       'status': _$UbuntuProCheckTokenStatusEnumMap[instance.status],
-      'services': instance.services?.map((e) => e.toJson()).toList(),
+      'subscription': instance.subscription?.toJson(),
     };
 
 const _$UbuntuProCheckTokenStatusEnumMap = {
