@@ -6,10 +6,10 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wsl_setup/main_common.dart';
 import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 
 import 'app.dart';
+import 'args_common.dart';
 import 'installing_state.dart';
 import 'routes.dart';
 import 'services/journal.dart';
