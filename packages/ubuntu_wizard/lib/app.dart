@@ -55,7 +55,7 @@ Future<bool?> runWizardApp(
     registerServiceInstance(subiquityMonitor);
   }
 
-  WidgetsFlutterBinding.ensureInitialized();
+  ensureInitialized();
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {

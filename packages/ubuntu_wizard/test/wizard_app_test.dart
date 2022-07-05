@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -147,5 +148,31 @@ void main() {
     );
 
     verifyNever(client.markConfigured(any));
+  });
+
+  testWidgets('ensure initialized', (tester) async {
+    var wmInit = false;
+    final methodChannel = MethodChannel('window_manager');
+    methodChannel.setMockMethodCallHandler((call) async {
+      if (call.method == 'ensureInitialized') {
+        wmInit = true;
+      }
+      if (call.method == 'close') {}
+    });
+    final client = MockSubiquityClient();
+    final server = MockSubiquityServer();
+    when(server.start(
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer(
+      (_) async => Endpoint.unix(''),
+    );
+
+    await runWizardApp(
+      SizedBox(),
+      subiquityClient: client,
+      subiquityServer: server,
+    );
+
+    expect(wmInit, isTrue);
   });
 }
