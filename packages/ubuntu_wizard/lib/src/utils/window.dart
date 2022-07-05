@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:window_manager/window_manager.dart';
 
