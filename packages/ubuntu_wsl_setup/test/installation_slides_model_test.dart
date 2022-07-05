@@ -77,6 +77,27 @@ void main() {
     expect(neverCall, isFalse);
     await expectLater(model.hasError, isTrue);
   });
+  test('proceedToSetup is terminal', () async {
+    var mustCallOnce = 0;
+    const journal = Stream<String>.empty();
+    final monitor = MockSubiquityStatusMonitor();
+    final status = testStatus(ApplicationState.WAITING);
+    when(monitor.status).thenAnswer((_) => null);
+    when(monitor.onStatusChanged).thenAnswer(
+      (_) => Stream.fromIterable([
+        null,
+        testStatus(ApplicationState.DONE),
+        null,
+        status,
+      ]),
+    );
+    final model = InstallationSlidesModel(journal: journal, monitor: monitor);
+    addTearDown(model.dispose);
+    model.init(onServerUp: () => mustCallOnce++);
+    await expectLater(monitor.onStatusChanged, emitsThrough(status));
+    verify(monitor.status);
+    expect(mustCallOnce, equals(1));
+  });
   test('is registering', () async {
     var neverCalls = false;
     final journal = Stream.fromIterable(stdinMsg).asBroadcastStream();
