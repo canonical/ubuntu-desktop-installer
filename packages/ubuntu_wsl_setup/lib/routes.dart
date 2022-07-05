@@ -1,4 +1,5 @@
 abstract class Routes {
+  static const installationSlides = '/installation-slides';
   static const selectLanguage = '/select-language';
   static const profileSetup = '/profile-setup';
   static const advancedSetup = '/advanced-setup';
