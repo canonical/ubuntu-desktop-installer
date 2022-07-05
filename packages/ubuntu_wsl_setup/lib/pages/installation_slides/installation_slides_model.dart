@@ -62,7 +62,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
         if (status?.state == ApplicationState.ERROR) {
           _setState(InstallationState.serverStartupError);
         }
-        if (isServerUp) {
+        if (status != null && status.state != ApplicationState.ERROR) {
           _setState(InstallationState.serverUp);
         }
       });
@@ -75,7 +75,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   }
 
   void _setState(InstallationState value) {
-    if (_state == value) {
+    if (_state == InstallationState.proceedToSetup || _state == value) {
       return;
     }
     _state = value;
