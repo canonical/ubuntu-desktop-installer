@@ -13,12 +13,10 @@ class UbuntuWslSetupApp extends StatelessWidget {
     Key? key,
     this.variant,
     this.initialRoute,
-    this.withSlides = false,
   }) : super(key: key);
 
   final Variant? variant;
   final String? initialRoute;
-  final bool withSlides;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,7 @@ class UbuntuWslSetupApp extends StatelessWidget {
   }
 
   Widget buildWizard(BuildContext context) {
-    if (variant == null && withSlides == false) {
+    if (variant == null && initialRoute != Routes.installationSlides) {
       return const SizedBox.shrink();
     }
 

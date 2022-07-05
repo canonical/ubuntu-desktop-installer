@@ -73,7 +73,6 @@ Future<void> main(List<String> args) async {
         return UbuntuWslSetupApp(
           variant: value,
           initialRoute: initialRoute,
-          withSlides: true,
         );
       },
     ),
