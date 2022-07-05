@@ -33,7 +33,7 @@ Future<void> main(List<String> args) async {
   final tcpService = TcpSocketService();
   final socketHolder = await tcpService.getRandomPortSocket();
   // TODO: Handle the null case.
-  // That would mean port exaustion and the simplest way to solve it is by
+  // That would mean port exhaustion and the simplest way to solve it is by
   // rebooting the Windows machine. Since at this point we would have a blank
   // window in front of the user, we should develop a 1-screen app advising the
   // user to reboot. Design team review is required for that and will be handled
