@@ -55,7 +55,7 @@ Future<bool?> runWizardApp(
     registerServiceInstance(subiquityMonitor);
   }
 
-  await ensureInitialized();
+  ensureInitialized();
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
