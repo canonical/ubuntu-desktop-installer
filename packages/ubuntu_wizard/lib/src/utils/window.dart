@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -42,4 +43,10 @@ Future<void> setWindowTitle(String title) {
 // ignore: avoid_positional_boolean_parameters
 Future<void> setWindowClosable(bool closable) {
   return windowManager.setClosable(closable);
+}
+
+/// Ensures initialization of the plugin(s) related to managing windows.
+Future<void> ensureInitialized() {
+  WidgetsFlutterBinding.ensureInitialized();
+  return windowManager.ensureInitialized();
 }
