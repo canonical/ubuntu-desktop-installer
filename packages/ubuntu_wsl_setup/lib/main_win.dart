@@ -13,8 +13,10 @@ import 'args_common.dart';
 import 'installing_state.dart';
 import 'routes.dart';
 import 'services/journal.dart';
+import 'services/named_event.dart';
 
 Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
     parser.addOption(
@@ -32,6 +34,10 @@ Future<void> main(List<String> args) async {
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final tcpService = TcpSocketService();
   final socketHolder = await tcpService.getRandomPortSocket();
+  final registrationEvent = NamedEvent(
+    'Local\\${options["distro-name"]}-registered',
+  );
+
   // TODO: Handle the null case.
   // That would mean port exhaustion and the simplest way to solve it is by
   // rebooting the Windows machine. Since at this point we would have a blank
@@ -50,8 +56,7 @@ Future<void> main(List<String> args) async {
       '--server-only',
       '--tcp-port=${socketHolder.port}'
     ],
-    // TODO: Replace by a real future completed when distro is registered.
-    defer: Future.delayed(const Duration(seconds: 80)),
+    defer: registrationEvent.future,
     onProcessStart: socketHolder.close,
   );
 
