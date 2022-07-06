@@ -33,18 +33,18 @@ void main() {
 
   test('set guided storage', () async {
     final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: false);
-    when(client.setGuidedStorageV2(choice))
+    when(client.setGuidedStorage(choice))
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     await service.setGuidedStorage(testDisks.last);
     expect(service.storage, equals(testDisks));
-    verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setGuidedStorage(choice)).called(1);
   });
 
   test('use LVM', () async {
     final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: true);
-    when(client.setGuidedStorageV2(choice))
+    when(client.setGuidedStorage(choice))
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
@@ -52,7 +52,7 @@ void main() {
 
     await service.setGuidedStorage(testDisks.last);
     expect(service.storage, equals(testDisks));
-    verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setGuidedStorage(choice)).called(1);
   });
 
   test('reset guided storage', () async {
