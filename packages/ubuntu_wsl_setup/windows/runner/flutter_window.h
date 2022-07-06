@@ -3,11 +3,14 @@
 
 #include <flutter/dart_project.h>
 #include <flutter/flutter_view_controller.h>
+#include <flutter/method_channel.h>
 
 #include <memory>
+#include <vector>
 
 #include "win32_window.h"
 
+class NamedEvent;
 // A window that does nothing but host a Flutter view.
 class FlutterWindow : public Win32Window {
  public:
@@ -28,6 +31,39 @@ class FlutterWindow : public Win32Window {
 
   // The Flutter instance hosted by this window.
   std::unique_ptr<flutter::FlutterViewController> flutter_controller_;
+
+  // Method channel to notify Dart code of interesting native events.
+  std::unique_ptr<flutter::MethodChannel<flutter::EncodableValue>>
+      ubuntuWslSetupChannel;
+
+  // a collection of native named events we listen due request from Dart land.
+  std::vector<NamedEvent> events;
+
+  // Callback executed when a [NamedEvent] is fired to notify the Dart land that
+  // the [eventNamed] fired.RegisterWaitForSingleObject
+  void onEventSet(const std::string& eventName);
+
+  // Handles the method calls coming from the Dart land.
+  void handleMethodCall(
+      const flutter::MethodCall<flutter::EncodableValue>& call,
+      std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
 };
 
+// A wrapper around the OpenEvent/RegisterWait Win32 API's setup for triggering
+// only once which waits on another thread and executes the supplied [callback]
+// once the event is first set.
+class NamedEvent {
+ private:
+  std::function<void()> callback;
+  HANDLE event = nullptr;
+  HANDLE waitHandle = nullptr;
+  static VOID CALLBACK CallbackForWait(PVOID context, BOOLEAN);
+
+ public:
+  NamedEvent(std::string name, std::function<void()> callback);
+  NamedEvent(const NamedEvent& other) = delete;
+  NamedEvent(NamedEvent&& other) noexcept;
+  NamedEvent operator=(const NamedEvent& other) = delete;
+  ~NamedEvent() noexcept;
+};
 #endif  // RUNNER_FLUTTER_WINDOW_H_
