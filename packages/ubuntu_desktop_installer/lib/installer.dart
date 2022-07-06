@@ -300,16 +300,18 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.installationType: WizardRoute(
           builder: InstallationTypePage.create,
           onNext: (settings) {
-            if (settings.arguments == InstallationType.erase) {
-              if (service.hasMultipleDisks) {
+            if (settings.arguments == InstallationType.manual) {
+              return Routes.allocateDiskSpace;
+            } else if (!service.hasGuidedChoice) {
+              if (settings.arguments == InstallationType.erase) {
                 return Routes.selectGuidedStorage;
-              } else if (service.hasEncryption) {
-                return Routes.chooseSecurityKey;
-              } else {
-                return Routes.writeChangesToDisk;
+              } else if (settings.arguments == InstallationType.alongside) {
+                return Routes.installAlongside;
               }
+            } else if (service.hasEncryption) {
+              return Routes.chooseSecurityKey;
             }
-            return Routes.allocateDiskSpace;
+            return Routes.writeChangesToDisk;
           },
         ),
         Routes.installAlongside: WizardRoute(
@@ -321,8 +323,9 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
-          onNext: (_) =>
-              !service.hasEncryption ? Routes.writeChangesToDisk : null,
+          onNext: (_) => service.hasEncryption
+              ? Routes.chooseSecurityKey
+              : Routes.writeChangesToDisk,
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,

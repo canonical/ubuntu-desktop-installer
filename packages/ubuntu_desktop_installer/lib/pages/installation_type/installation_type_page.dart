@@ -57,6 +57,22 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
     }
   }
 
+  static String _formatAlongside(
+      AppLocalizations lang, ProductInfo info, List<OsProber> os) {
+    final product = [info.name, info.version].whereType<String>().join(' ');
+    switch (os.length) {
+      case 0:
+        return lang.installationTypeAlongsideUnknown(product);
+      case 1:
+        return lang.installationTypeAlongside(product, os.single.long);
+      case 2:
+        return lang.installationTypeAlongsideDual(
+            product, os.first.long, os.last.long);
+      default:
+        return lang.installationTypeAlongsideMulti(product);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<InstallationTypeModel>(context);
@@ -68,7 +84,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TODO: offer "reinstall" and "alongside" options
+          // TODO: offer "reinstall" when subiquity has support for it
           // if (model.existingOS != null)
           //   RadioButton<InstallationType>(
           //     title: Text(lang.installationTypeReinstall(model.existingOS!)),
@@ -82,16 +98,18 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           //     onChanged: (v) => model.installationType = v!,
           //   ),
           // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
-          // if (model.existingOS != null)
-          //   RadioButton<InstallationType>(
-          //     title: Text(lang.installationTypeAlongside(
-          //         model.productInfo, model.existingOS!)),
-          //     subtitle: Text(lang.installationTypeAlongsideInfo),
-          //     value: InstallationType.alongside,
-          //     groupValue: model.installationType,
-          //     onChanged: (v) => model.installationType = v!,
-          //   ),
-          // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
+          if (model.canInstallAlongside)
+            Padding(
+              padding: const EdgeInsets.only(bottom: kContentSpacing),
+              child: RadioButton<InstallationType>(
+                title: Text(_formatAlongside(
+                    lang, model.productInfo, model.existingOS ?? [])),
+                subtitle: Text(lang.installationTypeAlongsideInfo),
+                value: InstallationType.alongside,
+                groupValue: model.installationType,
+                onChanged: (v) => model.installationType = v!,
+              ),
+            ),
           RadioButton<InstallationType>(
             title: Text(lang.installationTypeErase(flavor.name)),
             subtitle: Html(
@@ -138,6 +156,10 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           context,
           arguments: model.installationType,
           onNext: model.save,
+          // If the user returns back to select another installation type, the
+          // previously configured storage must be reset to make all guided
+          // partitioning targets available.
+          onBack: model.resetStorage,
         ),
       ],
     );
