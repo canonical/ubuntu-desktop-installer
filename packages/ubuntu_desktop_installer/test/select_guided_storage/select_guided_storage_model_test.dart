@@ -62,11 +62,11 @@ void main() {
 
   test('reset guided storage', () async {
     final service = MockDiskStorageService();
-    when(service.resetGuidedStorage()).thenAnswer((_) async => testStorages);
+    when(service.resetStorage()).thenAnswer((_) async => testStorages);
 
     final model = SelectGuidedStorageModel(service);
     await model.resetGuidedStorage();
-    verify(service.resetGuidedStorage()).called(1);
+    verify(service.resetStorage()).called(1);
   });
 
   test('notify changes', () {
