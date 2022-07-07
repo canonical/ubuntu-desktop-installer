@@ -197,6 +197,53 @@ void main() {
     verify(client.hasBitLocker()).called(1);
     expect(service.hasBitLocker, isFalse);
   });
+
+  test('existing OS', () async {
+    const win10 = OsProber(
+      long: 'Windows 10',
+      label: 'Windows',
+      version: '10',
+      type: 'windows',
+    );
+    const ubuntu2110 = OsProber(
+      long: 'Ubuntu 21.10',
+      label: 'Ubuntu',
+      version: '21.10',
+      type: 'linux',
+    );
+    const ubuntu2204 = OsProber(
+      long: 'Ubuntu 22.04 LTS',
+      label: 'Ubuntu',
+      version: '22.04 LTS',
+      type: 'linux',
+    );
+
+    when(client.getStorageV2()).thenAnswer(
+      (_) async => StorageResponseV2(
+        disks: [
+          testDisk(
+            partitions: [
+              Partition(os: win10),
+            ],
+          ),
+          testDisk(
+            partitions: [
+              Partition(os: ubuntu2110),
+              Partition(os: ubuntu2204),
+            ],
+          ),
+        ],
+        needRoot: false,
+        needBoot: false,
+        installMinimumSize: 0,
+      ),
+    );
+
+    final service = DiskStorageService(client);
+
+    await service.init();
+    expect(service.existingOS, equals([win10, ubuntu2110, ubuntu2204]));
+  });
 }
 
 StorageResponseV2 testStorageResponse({

@@ -6,14 +6,13 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import '../test_utils.dart';
 import 'installation_type_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
 @GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
-  test('init existing OS', () async {
+  test('existing OS', () async {
     const ubuntu2110 = OsProber(
       long: 'Ubuntu 21.10',
       label: 'Ubuntu',
@@ -26,21 +25,12 @@ void main() {
       version: '22.04 LTS',
       type: 'linux',
     );
-    final existingOS = [
-      testDisk(partitions: [
-        Partition(os: ubuntu2110),
-        Partition(os: ubuntu2204),
-      ]),
-    ];
 
     final service = MockDiskStorageService();
-    when(service.getGuidedStorage()).thenAnswer((_) async => existingOS);
+    when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
     final model = InstallationTypeModel(
         MockSubiquityClient(), service, MockTelemetryService());
-    await model.init();
-    verify(service.getGuidedStorage()).called(1);
-
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 

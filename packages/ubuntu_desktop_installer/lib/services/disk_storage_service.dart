@@ -29,6 +29,7 @@ class DiskStorageService {
   bool? _hasRst;
   bool? _hasBitLocker;
   bool? _hasMultipleDisks;
+  List<OsProber>? _existingOS;
 
   /// Whether the system has multiple disks available for guided partitioning.
   bool get hasMultipleDisks => _hasMultipleDisks ?? false;
@@ -53,6 +54,9 @@ class DiskStorageService {
   bool get useLvm => _useLvm ?? false;
   set useLvm(bool useLvm) => _useLvm = useLvm;
 
+  /// A list of existing OS installations or null if not detected.
+  List<OsProber>? get existingOS => _existingOS;
+
   /// Fetches the current guided storage configuration.
   Future<List<Disk>> getGuidedStorage() {
     return _client.getGuidedStorage().then((response) => response.disks ?? []);
@@ -73,6 +77,12 @@ class DiskStorageService {
     _needRoot = response.needRoot;
     _needBoot = response.needBoot;
     _hasMultipleDisks = response.disks.length > 1;
+    _existingOS = response.disks
+        .expand((d) => d.partitions
+            .whereType<Partition>()
+            .map((p) => p.os)
+            .whereType<OsProber>())
+        .toList();
     return response.disks;
   }
 
