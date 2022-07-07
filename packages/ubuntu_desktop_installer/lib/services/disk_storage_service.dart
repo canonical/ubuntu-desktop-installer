@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -15,18 +14,10 @@ class DiskStorageService {
 
   final SubiquityClient _client;
 
-  /// The list of disks for partitioning, only available for testing.
-  @visibleForTesting
-  List<Disk>? storage;
-
-  /// The list of disks for guided partitioning, only available for testing.
-  @visibleForTesting
-  List<Disk>? guidedStorage;
-
   /// Initializes the service.
   Future<void> init() {
     return Future.wait([
-      getGuidedStorage(),
+      _client.getStorageV2().then(_updateStorage),
       _client.hasRst().then((value) => _hasRst = value),
       _client.hasBitLocker().then((value) => _hasBitLocker = value),
     ]);
@@ -37,10 +28,10 @@ class DiskStorageService {
   bool? _useLvm;
   bool? _hasRst;
   bool? _hasBitLocker;
-  int get _diskCount => guidedStorage?.length ?? 0;
+  bool? _hasMultipleDisks;
 
   /// Whether the system has multiple disks available for guided partitioning.
-  bool get hasMultipleDisks => _diskCount > 1;
+  bool get hasMultipleDisks => _hasMultipleDisks ?? false;
 
   /// Whether the storage configuration is missing a root partition.
   bool get needRoot => _needRoot ?? true;
@@ -62,49 +53,32 @@ class DiskStorageService {
   bool get useLvm => _useLvm ?? false;
   set useLvm(bool useLvm) => _useLvm = useLvm;
 
-  List<Disk> _updateGuidedStorage(GuidedStorageResponse response) {
-    log.debug('Update guided storage: $response');
-    guidedStorage = response.disks;
-    return guidedStorage ?? const <Disk>[];
-  }
-
   /// Fetches the current guided storage configuration.
-  Future<List<Disk>> getGuidedStorage() async {
-    if (guidedStorage == null) {
-      await _client.getGuidedStorage().then(_updateGuidedStorage);
-    }
-    return guidedStorage ?? const <Disk>[];
+  Future<List<Disk>> getGuidedStorage() {
+    return _client.getGuidedStorage().then((response) => response.disks ?? []);
   }
 
   /// Selects the specified disk for guided partitioning.
-  Future<void> setGuidedStorage([Disk? disk]) {
+  Future<void> setGuidedStorage([Disk? disk]) async {
+    final response = await _client.getGuidedStorage();
     final choice = GuidedChoice(
-      diskId: disk?.id ?? guidedStorage![0].id,
+      diskId: disk?.id ?? response.disks![0].id,
       useLvm: useLvm,
     );
     return _client.setGuidedStorage(choice).then(_updateStorage);
   }
 
-  /// Resets current guided storage configuration.
-  Future<void> resetGuidedStorage() {
-    guidedStorage = null;
-    return _client.resetStorageV2().then(_updateStorage);
-  }
-
   List<Disk> _updateStorage(StorageResponseV2 response) {
     log.debug('Update storage: $response');
-    storage = response.disks;
     _needRoot = response.needRoot;
     _needBoot = response.needBoot;
-    return storage ?? const <Disk>[];
+    _hasMultipleDisks = response.disks.length > 1;
+    return response.disks;
   }
 
   /// Fetches the current storage configuration.
-  Future<List<Disk>> getStorage() async {
-    if (storage == null) {
-      await _client.getStorageV2().then(_updateStorage);
-    }
-    return storage ?? const <Disk>[];
+  Future<List<Disk>> getStorage() {
+    return _client.getStorageV2().then(_updateStorage);
   }
 
   /// Adds a [partition] in the specified [gap] on the [disk], and returns the
@@ -143,7 +117,6 @@ class DiskStorageService {
   /// Resets the current storage configuration to allow reverting back to the
   /// original configuration.
   Future<List<Disk>> resetStorage() {
-    storage = null;
     return _client.resetStorageV2().then(_updateStorage);
   }
 

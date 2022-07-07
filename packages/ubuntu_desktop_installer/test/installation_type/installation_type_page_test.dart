@@ -173,6 +173,8 @@ void main() {
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorage()).thenAnswer(
         (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
+    when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
+        disks: [], installMinimumSize: 0, needBoot: false, needRoot: false));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);
