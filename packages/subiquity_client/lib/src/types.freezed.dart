@@ -5955,8 +5955,12 @@ class _$GuidedResizeValuesTearOff {
   const _$GuidedResizeValuesTearOff();
 
   _GuidedResizeValues call(
-      {required int minimum, required int recommended, required int maximum}) {
+      {required int installMax,
+      required int minimum,
+      required int recommended,
+      required int maximum}) {
     return _GuidedResizeValues(
+      installMax: installMax,
       minimum: minimum,
       recommended: recommended,
       maximum: maximum,
@@ -5973,6 +5977,7 @@ const $GuidedResizeValues = _$GuidedResizeValuesTearOff();
 
 /// @nodoc
 mixin _$GuidedResizeValues {
+  int get installMax => throw _privateConstructorUsedError;
   int get minimum => throw _privateConstructorUsedError;
   int get recommended => throw _privateConstructorUsedError;
   int get maximum => throw _privateConstructorUsedError;
@@ -5988,7 +5993,7 @@ abstract class $GuidedResizeValuesCopyWith<$Res> {
   factory $GuidedResizeValuesCopyWith(
           GuidedResizeValues value, $Res Function(GuidedResizeValues) then) =
       _$GuidedResizeValuesCopyWithImpl<$Res>;
-  $Res call({int minimum, int recommended, int maximum});
+  $Res call({int installMax, int minimum, int recommended, int maximum});
 }
 
 /// @nodoc
@@ -6002,11 +6007,16 @@ class _$GuidedResizeValuesCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? installMax = freezed,
     Object? minimum = freezed,
     Object? recommended = freezed,
     Object? maximum = freezed,
   }) {
     return _then(_value.copyWith(
+      installMax: installMax == freezed
+          ? _value.installMax
+          : installMax // ignore: cast_nullable_to_non_nullable
+              as int,
       minimum: minimum == freezed
           ? _value.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
@@ -6030,7 +6040,7 @@ abstract class _$GuidedResizeValuesCopyWith<$Res>
           _GuidedResizeValues value, $Res Function(_GuidedResizeValues) then) =
       __$GuidedResizeValuesCopyWithImpl<$Res>;
   @override
-  $Res call({int minimum, int recommended, int maximum});
+  $Res call({int installMax, int minimum, int recommended, int maximum});
 }
 
 /// @nodoc
@@ -6046,11 +6056,16 @@ class __$GuidedResizeValuesCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? installMax = freezed,
     Object? minimum = freezed,
     Object? recommended = freezed,
     Object? maximum = freezed,
   }) {
     return _then(_GuidedResizeValues(
+      installMax: installMax == freezed
+          ? _value.installMax
+          : installMax // ignore: cast_nullable_to_non_nullable
+              as int,
       minimum: minimum == freezed
           ? _value.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
@@ -6071,13 +6086,16 @@ class __$GuidedResizeValuesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GuidedResizeValues implements _GuidedResizeValues {
   const _$_GuidedResizeValues(
-      {required this.minimum,
+      {required this.installMax,
+      required this.minimum,
       required this.recommended,
       required this.maximum});
 
   factory _$_GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
       _$_$_GuidedResizeValuesFromJson(json);
 
+  @override
+  final int installMax;
   @override
   final int minimum;
   @override
@@ -6087,13 +6105,16 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
 
   @override
   String toString() {
-    return 'GuidedResizeValues(minimum: $minimum, recommended: $recommended, maximum: $maximum)';
+    return 'GuidedResizeValues(installMax: $installMax, minimum: $minimum, recommended: $recommended, maximum: $maximum)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GuidedResizeValues &&
+            (identical(other.installMax, installMax) ||
+                const DeepCollectionEquality()
+                    .equals(other.installMax, installMax)) &&
             (identical(other.minimum, minimum) ||
                 const DeepCollectionEquality()
                     .equals(other.minimum, minimum)) &&
@@ -6107,6 +6128,7 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(installMax) ^
       const DeepCollectionEquality().hash(minimum) ^
       const DeepCollectionEquality().hash(recommended) ^
       const DeepCollectionEquality().hash(maximum);
@@ -6124,13 +6146,16 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
 
 abstract class _GuidedResizeValues implements GuidedResizeValues {
   const factory _GuidedResizeValues(
-      {required int minimum,
+      {required int installMax,
+      required int minimum,
       required int recommended,
       required int maximum}) = _$_GuidedResizeValues;
 
   factory _GuidedResizeValues.fromJson(Map<String, dynamic> json) =
       _$_GuidedResizeValues.fromJson;
 
+  @override
+  int get installMax => throw _privateConstructorUsedError;
   @override
   int get minimum => throw _privateConstructorUsedError;
   @override
@@ -6140,6 +6165,1064 @@ abstract class _GuidedResizeValues implements GuidedResizeValues {
   @override
   @JsonKey(ignore: true)
   _$GuidedResizeValuesCopyWith<_GuidedResizeValues> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GuidedStorageTarget _$GuidedStorageTargetFromJson(Map<String, dynamic> json) {
+  switch (json['\$type'] as String) {
+    case 'GuidedStorageTargetReformat':
+      return GuidedStorageTargetReformat.fromJson(json);
+    case 'GuidedStorageTargetResize':
+      return GuidedStorageTargetResize.fromJson(json);
+    case 'GuidedStorageTargetUseGap':
+      return GuidedStorageTargetUseGap.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
+}
+
+/// @nodoc
+class _$GuidedStorageTargetTearOff {
+  const _$GuidedStorageTargetTearOff();
+
+  GuidedStorageTargetReformat reformat({required String diskId}) {
+    return GuidedStorageTargetReformat(
+      diskId: diskId,
+    );
+  }
+
+  GuidedStorageTargetResize resize(
+      {required String diskId,
+      required int partitionNumber,
+      required int newSize,
+      required int? minimum,
+      required int? recommended,
+      required int? maximum}) {
+    return GuidedStorageTargetResize(
+      diskId: diskId,
+      partitionNumber: partitionNumber,
+      newSize: newSize,
+      minimum: minimum,
+      recommended: recommended,
+      maximum: maximum,
+    );
+  }
+
+  GuidedStorageTargetUseGap useGap({required String diskId, required Gap gap}) {
+    return GuidedStorageTargetUseGap(
+      diskId: diskId,
+      gap: gap,
+    );
+  }
+
+  GuidedStorageTarget fromJson(Map<String, Object> json) {
+    return GuidedStorageTarget.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedStorageTarget = _$GuidedStorageTargetTearOff();
+
+/// @nodoc
+mixin _$GuidedStorageTarget {
+  String get diskId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String diskId) reformat,
+    required TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)
+        resize,
+    required TResult Function(String diskId, Gap gap) useGap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GuidedStorageTargetReformat value) reformat,
+    required TResult Function(GuidedStorageTargetResize value) resize,
+    required TResult Function(GuidedStorageTargetUseGap value) useGap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedStorageTargetCopyWith<GuidedStorageTarget> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageTargetCopyWith<$Res> {
+  factory $GuidedStorageTargetCopyWith(
+          GuidedStorageTarget value, $Res Function(GuidedStorageTarget) then) =
+      _$GuidedStorageTargetCopyWithImpl<$Res>;
+  $Res call({String diskId});
+}
+
+/// @nodoc
+class _$GuidedStorageTargetCopyWithImpl<$Res>
+    implements $GuidedStorageTargetCopyWith<$Res> {
+  _$GuidedStorageTargetCopyWithImpl(this._value, this._then);
+
+  final GuidedStorageTarget _value;
+  // ignore: unused_field
+  final $Res Function(GuidedStorageTarget) _then;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $GuidedStorageTargetReformatCopyWith<$Res>
+    implements $GuidedStorageTargetCopyWith<$Res> {
+  factory $GuidedStorageTargetReformatCopyWith(
+          GuidedStorageTargetReformat value,
+          $Res Function(GuidedStorageTargetReformat) then) =
+      _$GuidedStorageTargetReformatCopyWithImpl<$Res>;
+  @override
+  $Res call({String diskId});
+}
+
+/// @nodoc
+class _$GuidedStorageTargetReformatCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    implements $GuidedStorageTargetReformatCopyWith<$Res> {
+  _$GuidedStorageTargetReformatCopyWithImpl(GuidedStorageTargetReformat _value,
+      $Res Function(GuidedStorageTargetReformat) _then)
+      : super(_value, (v) => _then(v as GuidedStorageTargetReformat));
+
+  @override
+  GuidedStorageTargetReformat get _value =>
+      super._value as GuidedStorageTargetReformat;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+  }) {
+    return _then(GuidedStorageTargetReformat(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('GuidedStorageTargetReformat')
+class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
+  const _$GuidedStorageTargetReformat({required this.diskId});
+
+  factory _$GuidedStorageTargetReformat.fromJson(Map<String, dynamic> json) =>
+      _$_$GuidedStorageTargetReformatFromJson(json);
+
+  @override
+  final String diskId;
+
+  @override
+  String toString() {
+    return 'GuidedStorageTarget.reformat(diskId: $diskId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GuidedStorageTargetReformat &&
+            (identical(other.diskId, diskId) ||
+                const DeepCollectionEquality().equals(other.diskId, diskId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(diskId);
+
+  @JsonKey(ignore: true)
+  @override
+  $GuidedStorageTargetReformatCopyWith<GuidedStorageTargetReformat>
+      get copyWith => _$GuidedStorageTargetReformatCopyWithImpl<
+          GuidedStorageTargetReformat>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String diskId) reformat,
+    required TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)
+        resize,
+    required TResult Function(String diskId, Gap gap) useGap,
+  }) {
+    return reformat(diskId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+    required TResult orElse(),
+  }) {
+    if (reformat != null) {
+      return reformat(diskId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GuidedStorageTargetReformat value) reformat,
+    required TResult Function(GuidedStorageTargetResize value) resize,
+    required TResult Function(GuidedStorageTargetUseGap value) useGap,
+  }) {
+    return reformat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    required TResult orElse(),
+  }) {
+    if (reformat != null) {
+      return reformat(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$GuidedStorageTargetReformatToJson(this)
+      ..['\$type'] = 'GuidedStorageTargetReformat';
+  }
+}
+
+abstract class GuidedStorageTargetReformat implements GuidedStorageTarget {
+  const factory GuidedStorageTargetReformat({required String diskId}) =
+      _$GuidedStorageTargetReformat;
+
+  factory GuidedStorageTargetReformat.fromJson(Map<String, dynamic> json) =
+      _$GuidedStorageTargetReformat.fromJson;
+
+  @override
+  String get diskId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $GuidedStorageTargetReformatCopyWith<GuidedStorageTargetReformat>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageTargetResizeCopyWith<$Res>
+    implements $GuidedStorageTargetCopyWith<$Res> {
+  factory $GuidedStorageTargetResizeCopyWith(GuidedStorageTargetResize value,
+          $Res Function(GuidedStorageTargetResize) then) =
+      _$GuidedStorageTargetResizeCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String diskId,
+      int partitionNumber,
+      int newSize,
+      int? minimum,
+      int? recommended,
+      int? maximum});
+}
+
+/// @nodoc
+class _$GuidedStorageTargetResizeCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    implements $GuidedStorageTargetResizeCopyWith<$Res> {
+  _$GuidedStorageTargetResizeCopyWithImpl(GuidedStorageTargetResize _value,
+      $Res Function(GuidedStorageTargetResize) _then)
+      : super(_value, (v) => _then(v as GuidedStorageTargetResize));
+
+  @override
+  GuidedStorageTargetResize get _value =>
+      super._value as GuidedStorageTargetResize;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? partitionNumber = freezed,
+    Object? newSize = freezed,
+    Object? minimum = freezed,
+    Object? recommended = freezed,
+    Object? maximum = freezed,
+  }) {
+    return _then(GuidedStorageTargetResize(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      partitionNumber: partitionNumber == freezed
+          ? _value.partitionNumber
+          : partitionNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      newSize: newSize == freezed
+          ? _value.newSize
+          : newSize // ignore: cast_nullable_to_non_nullable
+              as int,
+      minimum: minimum == freezed
+          ? _value.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as int?,
+      recommended: recommended == freezed
+          ? _value.recommended
+          : recommended // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximum: maximum == freezed
+          ? _value.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('GuidedStorageTargetResize')
+class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
+  const _$GuidedStorageTargetResize(
+      {required this.diskId,
+      required this.partitionNumber,
+      required this.newSize,
+      required this.minimum,
+      required this.recommended,
+      required this.maximum});
+
+  factory _$GuidedStorageTargetResize.fromJson(Map<String, dynamic> json) =>
+      _$_$GuidedStorageTargetResizeFromJson(json);
+
+  @override
+  final String diskId;
+  @override
+  final int partitionNumber;
+  @override
+  final int newSize;
+  @override
+  final int? minimum;
+  @override
+  final int? recommended;
+  @override
+  final int? maximum;
+
+  @override
+  String toString() {
+    return 'GuidedStorageTarget.resize(diskId: $diskId, partitionNumber: $partitionNumber, newSize: $newSize, minimum: $minimum, recommended: $recommended, maximum: $maximum)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GuidedStorageTargetResize &&
+            (identical(other.diskId, diskId) ||
+                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
+            (identical(other.partitionNumber, partitionNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.partitionNumber, partitionNumber)) &&
+            (identical(other.newSize, newSize) ||
+                const DeepCollectionEquality()
+                    .equals(other.newSize, newSize)) &&
+            (identical(other.minimum, minimum) ||
+                const DeepCollectionEquality()
+                    .equals(other.minimum, minimum)) &&
+            (identical(other.recommended, recommended) ||
+                const DeepCollectionEquality()
+                    .equals(other.recommended, recommended)) &&
+            (identical(other.maximum, maximum) ||
+                const DeepCollectionEquality().equals(other.maximum, maximum)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(diskId) ^
+      const DeepCollectionEquality().hash(partitionNumber) ^
+      const DeepCollectionEquality().hash(newSize) ^
+      const DeepCollectionEquality().hash(minimum) ^
+      const DeepCollectionEquality().hash(recommended) ^
+      const DeepCollectionEquality().hash(maximum);
+
+  @JsonKey(ignore: true)
+  @override
+  $GuidedStorageTargetResizeCopyWith<GuidedStorageTargetResize> get copyWith =>
+      _$GuidedStorageTargetResizeCopyWithImpl<GuidedStorageTargetResize>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String diskId) reformat,
+    required TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)
+        resize,
+    required TResult Function(String diskId, Gap gap) useGap,
+  }) {
+    return resize(
+        diskId, partitionNumber, newSize, minimum, recommended, maximum);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+    required TResult orElse(),
+  }) {
+    if (resize != null) {
+      return resize(
+          diskId, partitionNumber, newSize, minimum, recommended, maximum);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GuidedStorageTargetReformat value) reformat,
+    required TResult Function(GuidedStorageTargetResize value) resize,
+    required TResult Function(GuidedStorageTargetUseGap value) useGap,
+  }) {
+    return resize(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    required TResult orElse(),
+  }) {
+    if (resize != null) {
+      return resize(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$GuidedStorageTargetResizeToJson(this)
+      ..['\$type'] = 'GuidedStorageTargetResize';
+  }
+}
+
+abstract class GuidedStorageTargetResize implements GuidedStorageTarget {
+  const factory GuidedStorageTargetResize(
+      {required String diskId,
+      required int partitionNumber,
+      required int newSize,
+      required int? minimum,
+      required int? recommended,
+      required int? maximum}) = _$GuidedStorageTargetResize;
+
+  factory GuidedStorageTargetResize.fromJson(Map<String, dynamic> json) =
+      _$GuidedStorageTargetResize.fromJson;
+
+  @override
+  String get diskId => throw _privateConstructorUsedError;
+  int get partitionNumber => throw _privateConstructorUsedError;
+  int get newSize => throw _privateConstructorUsedError;
+  int? get minimum => throw _privateConstructorUsedError;
+  int? get recommended => throw _privateConstructorUsedError;
+  int? get maximum => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $GuidedStorageTargetResizeCopyWith<GuidedStorageTargetResize> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageTargetUseGapCopyWith<$Res>
+    implements $GuidedStorageTargetCopyWith<$Res> {
+  factory $GuidedStorageTargetUseGapCopyWith(GuidedStorageTargetUseGap value,
+          $Res Function(GuidedStorageTargetUseGap) then) =
+      _$GuidedStorageTargetUseGapCopyWithImpl<$Res>;
+  @override
+  $Res call({String diskId, Gap gap});
+}
+
+/// @nodoc
+class _$GuidedStorageTargetUseGapCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    implements $GuidedStorageTargetUseGapCopyWith<$Res> {
+  _$GuidedStorageTargetUseGapCopyWithImpl(GuidedStorageTargetUseGap _value,
+      $Res Function(GuidedStorageTargetUseGap) _then)
+      : super(_value, (v) => _then(v as GuidedStorageTargetUseGap));
+
+  @override
+  GuidedStorageTargetUseGap get _value =>
+      super._value as GuidedStorageTargetUseGap;
+
+  @override
+  $Res call({
+    Object? diskId = freezed,
+    Object? gap = freezed,
+  }) {
+    return _then(GuidedStorageTargetUseGap(
+      diskId: diskId == freezed
+          ? _value.diskId
+          : diskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      gap: gap == freezed
+          ? _value.gap
+          : gap // ignore: cast_nullable_to_non_nullable
+              as Gap,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('GuidedStorageTargetUseGap')
+class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
+  const _$GuidedStorageTargetUseGap({required this.diskId, required this.gap});
+
+  factory _$GuidedStorageTargetUseGap.fromJson(Map<String, dynamic> json) =>
+      _$_$GuidedStorageTargetUseGapFromJson(json);
+
+  @override
+  final String diskId;
+  @override
+  final Gap gap;
+
+  @override
+  String toString() {
+    return 'GuidedStorageTarget.useGap(diskId: $diskId, gap: $gap)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GuidedStorageTargetUseGap &&
+            (identical(other.diskId, diskId) ||
+                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
+            (identical(other.gap, gap) ||
+                const DeepCollectionEquality().equals(other.gap, gap)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(diskId) ^
+      const DeepCollectionEquality().hash(gap);
+
+  @JsonKey(ignore: true)
+  @override
+  $GuidedStorageTargetUseGapCopyWith<GuidedStorageTargetUseGap> get copyWith =>
+      _$GuidedStorageTargetUseGapCopyWithImpl<GuidedStorageTargetUseGap>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String diskId) reformat,
+    required TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)
+        resize,
+    required TResult Function(String diskId, Gap gap) useGap,
+  }) {
+    return useGap(diskId, gap);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+    required TResult orElse(),
+  }) {
+    if (useGap != null) {
+      return useGap(diskId, gap);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GuidedStorageTargetReformat value) reformat,
+    required TResult Function(GuidedStorageTargetResize value) resize,
+    required TResult Function(GuidedStorageTargetUseGap value) useGap,
+  }) {
+    return useGap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    required TResult orElse(),
+  }) {
+    if (useGap != null) {
+      return useGap(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$GuidedStorageTargetUseGapToJson(this)
+      ..['\$type'] = 'GuidedStorageTargetUseGap';
+  }
+}
+
+abstract class GuidedStorageTargetUseGap implements GuidedStorageTarget {
+  const factory GuidedStorageTargetUseGap(
+      {required String diskId, required Gap gap}) = _$GuidedStorageTargetUseGap;
+
+  factory GuidedStorageTargetUseGap.fromJson(Map<String, dynamic> json) =
+      _$GuidedStorageTargetUseGap.fromJson;
+
+  @override
+  String get diskId => throw _privateConstructorUsedError;
+  Gap get gap => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $GuidedStorageTargetUseGapCopyWith<GuidedStorageTargetUseGap> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GuidedChoiceV2 _$GuidedChoiceV2FromJson(Map<String, dynamic> json) {
+  return _GuidedChoiceV2.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedChoiceV2TearOff {
+  const _$GuidedChoiceV2TearOff();
+
+  _GuidedChoiceV2 call(
+      {required GuidedStorageTarget target,
+      bool useLvm = false,
+      String? password}) {
+    return _GuidedChoiceV2(
+      target: target,
+      useLvm: useLvm,
+      password: password,
+    );
+  }
+
+  GuidedChoiceV2 fromJson(Map<String, Object> json) {
+    return GuidedChoiceV2.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedChoiceV2 = _$GuidedChoiceV2TearOff();
+
+/// @nodoc
+mixin _$GuidedChoiceV2 {
+  GuidedStorageTarget get target => throw _privateConstructorUsedError;
+  bool get useLvm => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedChoiceV2CopyWith<GuidedChoiceV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedChoiceV2CopyWith<$Res> {
+  factory $GuidedChoiceV2CopyWith(
+          GuidedChoiceV2 value, $Res Function(GuidedChoiceV2) then) =
+      _$GuidedChoiceV2CopyWithImpl<$Res>;
+  $Res call({GuidedStorageTarget target, bool useLvm, String? password});
+
+  $GuidedStorageTargetCopyWith<$Res> get target;
+}
+
+/// @nodoc
+class _$GuidedChoiceV2CopyWithImpl<$Res>
+    implements $GuidedChoiceV2CopyWith<$Res> {
+  _$GuidedChoiceV2CopyWithImpl(this._value, this._then);
+
+  final GuidedChoiceV2 _value;
+  // ignore: unused_field
+  final $Res Function(GuidedChoiceV2) _then;
+
+  @override
+  $Res call({
+    Object? target = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as GuidedStorageTarget,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  @override
+  $GuidedStorageTargetCopyWith<$Res> get target {
+    return $GuidedStorageTargetCopyWith<$Res>(_value.target, (value) {
+      return _then(_value.copyWith(target: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedChoiceV2CopyWith<$Res>
+    implements $GuidedChoiceV2CopyWith<$Res> {
+  factory _$GuidedChoiceV2CopyWith(
+          _GuidedChoiceV2 value, $Res Function(_GuidedChoiceV2) then) =
+      __$GuidedChoiceV2CopyWithImpl<$Res>;
+  @override
+  $Res call({GuidedStorageTarget target, bool useLvm, String? password});
+
+  @override
+  $GuidedStorageTargetCopyWith<$Res> get target;
+}
+
+/// @nodoc
+class __$GuidedChoiceV2CopyWithImpl<$Res>
+    extends _$GuidedChoiceV2CopyWithImpl<$Res>
+    implements _$GuidedChoiceV2CopyWith<$Res> {
+  __$GuidedChoiceV2CopyWithImpl(
+      _GuidedChoiceV2 _value, $Res Function(_GuidedChoiceV2) _then)
+      : super(_value, (v) => _then(v as _GuidedChoiceV2));
+
+  @override
+  _GuidedChoiceV2 get _value => super._value as _GuidedChoiceV2;
+
+  @override
+  $Res call({
+    Object? target = freezed,
+    Object? useLvm = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_GuidedChoiceV2(
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as GuidedStorageTarget,
+      useLvm: useLvm == freezed
+          ? _value.useLvm
+          : useLvm // ignore: cast_nullable_to_non_nullable
+              as bool,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedChoiceV2 implements _GuidedChoiceV2 {
+  const _$_GuidedChoiceV2(
+      {required this.target, this.useLvm = false, this.password});
+
+  factory _$_GuidedChoiceV2.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedChoiceV2FromJson(json);
+
+  @override
+  final GuidedStorageTarget target;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool useLvm;
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'GuidedChoiceV2(target: $target, useLvm: $useLvm, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedChoiceV2 &&
+            (identical(other.target, target) ||
+                const DeepCollectionEquality().equals(other.target, target)) &&
+            (identical(other.useLvm, useLvm) ||
+                const DeepCollectionEquality().equals(other.useLvm, useLvm)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(target) ^
+      const DeepCollectionEquality().hash(useLvm) ^
+      const DeepCollectionEquality().hash(password);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedChoiceV2CopyWith<_GuidedChoiceV2> get copyWith =>
+      __$GuidedChoiceV2CopyWithImpl<_GuidedChoiceV2>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedChoiceV2ToJson(this);
+  }
+}
+
+abstract class _GuidedChoiceV2 implements GuidedChoiceV2 {
+  const factory _GuidedChoiceV2(
+      {required GuidedStorageTarget target,
+      bool useLvm,
+      String? password}) = _$_GuidedChoiceV2;
+
+  factory _GuidedChoiceV2.fromJson(Map<String, dynamic> json) =
+      _$_GuidedChoiceV2.fromJson;
+
+  @override
+  GuidedStorageTarget get target => throw _privateConstructorUsedError;
+  @override
+  bool get useLvm => throw _privateConstructorUsedError;
+  @override
+  String? get password => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedChoiceV2CopyWith<_GuidedChoiceV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GuidedStorageResponseV2 _$GuidedStorageResponseV2FromJson(
+    Map<String, dynamic> json) {
+  return _GuidedStorageResponseV2.fromJson(json);
+}
+
+/// @nodoc
+class _$GuidedStorageResponseV2TearOff {
+  const _$GuidedStorageResponseV2TearOff();
+
+  _GuidedStorageResponseV2 call(
+      {GuidedChoiceV2? configured,
+      List<GuidedStorageTarget> possible = const []}) {
+    return _GuidedStorageResponseV2(
+      configured: configured,
+      possible: possible,
+    );
+  }
+
+  GuidedStorageResponseV2 fromJson(Map<String, Object> json) {
+    return GuidedStorageResponseV2.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $GuidedStorageResponseV2 = _$GuidedStorageResponseV2TearOff();
+
+/// @nodoc
+mixin _$GuidedStorageResponseV2 {
+  GuidedChoiceV2? get configured => throw _privateConstructorUsedError;
+  List<GuidedStorageTarget> get possible => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GuidedStorageResponseV2CopyWith<GuidedStorageResponseV2> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuidedStorageResponseV2CopyWith<$Res> {
+  factory $GuidedStorageResponseV2CopyWith(GuidedStorageResponseV2 value,
+          $Res Function(GuidedStorageResponseV2) then) =
+      _$GuidedStorageResponseV2CopyWithImpl<$Res>;
+  $Res call({GuidedChoiceV2? configured, List<GuidedStorageTarget> possible});
+
+  $GuidedChoiceV2CopyWith<$Res>? get configured;
+}
+
+/// @nodoc
+class _$GuidedStorageResponseV2CopyWithImpl<$Res>
+    implements $GuidedStorageResponseV2CopyWith<$Res> {
+  _$GuidedStorageResponseV2CopyWithImpl(this._value, this._then);
+
+  final GuidedStorageResponseV2 _value;
+  // ignore: unused_field
+  final $Res Function(GuidedStorageResponseV2) _then;
+
+  @override
+  $Res call({
+    Object? configured = freezed,
+    Object? possible = freezed,
+  }) {
+    return _then(_value.copyWith(
+      configured: configured == freezed
+          ? _value.configured
+          : configured // ignore: cast_nullable_to_non_nullable
+              as GuidedChoiceV2?,
+      possible: possible == freezed
+          ? _value.possible
+          : possible // ignore: cast_nullable_to_non_nullable
+              as List<GuidedStorageTarget>,
+    ));
+  }
+
+  @override
+  $GuidedChoiceV2CopyWith<$Res>? get configured {
+    if (_value.configured == null) {
+      return null;
+    }
+
+    return $GuidedChoiceV2CopyWith<$Res>(_value.configured!, (value) {
+      return _then(_value.copyWith(configured: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$GuidedStorageResponseV2CopyWith<$Res>
+    implements $GuidedStorageResponseV2CopyWith<$Res> {
+  factory _$GuidedStorageResponseV2CopyWith(_GuidedStorageResponseV2 value,
+          $Res Function(_GuidedStorageResponseV2) then) =
+      __$GuidedStorageResponseV2CopyWithImpl<$Res>;
+  @override
+  $Res call({GuidedChoiceV2? configured, List<GuidedStorageTarget> possible});
+
+  @override
+  $GuidedChoiceV2CopyWith<$Res>? get configured;
+}
+
+/// @nodoc
+class __$GuidedStorageResponseV2CopyWithImpl<$Res>
+    extends _$GuidedStorageResponseV2CopyWithImpl<$Res>
+    implements _$GuidedStorageResponseV2CopyWith<$Res> {
+  __$GuidedStorageResponseV2CopyWithImpl(_GuidedStorageResponseV2 _value,
+      $Res Function(_GuidedStorageResponseV2) _then)
+      : super(_value, (v) => _then(v as _GuidedStorageResponseV2));
+
+  @override
+  _GuidedStorageResponseV2 get _value =>
+      super._value as _GuidedStorageResponseV2;
+
+  @override
+  $Res call({
+    Object? configured = freezed,
+    Object? possible = freezed,
+  }) {
+    return _then(_GuidedStorageResponseV2(
+      configured: configured == freezed
+          ? _value.configured
+          : configured // ignore: cast_nullable_to_non_nullable
+              as GuidedChoiceV2?,
+      possible: possible == freezed
+          ? _value.possible
+          : possible // ignore: cast_nullable_to_non_nullable
+              as List<GuidedStorageTarget>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
+  const _$_GuidedStorageResponseV2({this.configured, this.possible = const []});
+
+  factory _$_GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidedStorageResponseV2FromJson(json);
+
+  @override
+  final GuidedChoiceV2? configured;
+  @JsonKey(defaultValue: const [])
+  @override
+  final List<GuidedStorageTarget> possible;
+
+  @override
+  String toString() {
+    return 'GuidedStorageResponseV2(configured: $configured, possible: $possible)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GuidedStorageResponseV2 &&
+            (identical(other.configured, configured) ||
+                const DeepCollectionEquality()
+                    .equals(other.configured, configured)) &&
+            (identical(other.possible, possible) ||
+                const DeepCollectionEquality()
+                    .equals(other.possible, possible)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(configured) ^
+      const DeepCollectionEquality().hash(possible);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GuidedStorageResponseV2CopyWith<_GuidedStorageResponseV2> get copyWith =>
+      __$GuidedStorageResponseV2CopyWithImpl<_GuidedStorageResponseV2>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidedStorageResponseV2ToJson(this);
+  }
+}
+
+abstract class _GuidedStorageResponseV2 implements GuidedStorageResponseV2 {
+  const factory _GuidedStorageResponseV2(
+      {GuidedChoiceV2? configured,
+      List<GuidedStorageTarget> possible}) = _$_GuidedStorageResponseV2;
+
+  factory _GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =
+      _$_GuidedStorageResponseV2.fromJson;
+
+  @override
+  GuidedChoiceV2? get configured => throw _privateConstructorUsedError;
+  @override
+  List<GuidedStorageTarget> get possible => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GuidedStorageResponseV2CopyWith<_GuidedStorageResponseV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

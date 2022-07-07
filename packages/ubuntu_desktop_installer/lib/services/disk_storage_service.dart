@@ -82,7 +82,7 @@ class DiskStorageService {
       diskId: disk?.id ?? guidedStorage![0].id,
       useLvm: useLvm,
     );
-    return _client.setGuidedStorageV2(choice).then(_updateStorage);
+    return _client.setGuidedStorage(choice).then(_updateStorage);
   }
 
   /// Resets current guided storage configuration.

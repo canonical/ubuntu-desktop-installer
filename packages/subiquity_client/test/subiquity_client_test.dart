@@ -166,7 +166,7 @@ void main() {
       expect(gs.disks?[0].size, isNot(0));
     });
 
-    test('set guided storage v2', () async {
+    test('deprecated guided storage', () async {
       final guided = await client.getGuidedStorage();
       expect(guided.disks, isNotEmpty);
 
@@ -174,9 +174,19 @@ void main() {
         diskId: guided.disks!.first.id,
         useLvm: false,
       );
-      final response = await client.setGuidedStorageV2(choice);
+      final response = await client.setGuidedStorage(choice);
       expect(response.disks, isNotNull);
       expect(response.disks, isNotEmpty);
+    });
+
+    test('guided storage v2', () async {
+      final guided = await client.getGuidedStorageV2();
+      expect(guided.possible, isNotEmpty);
+
+      final choice = GuidedChoiceV2(target: guided.possible.last);
+      final response = await client.setGuidedStorageV2(choice);
+      expect(response.configured, isNotNull);
+      expect(response.possible, isNotEmpty);
     });
 
     test('get storage v2', () async {

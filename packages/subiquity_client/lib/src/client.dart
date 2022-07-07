@@ -322,18 +322,39 @@ class SubiquityClient {
     return GuidedStorageResponse.fromJson(responseJson);
   }
 
-  Future<StorageResponseV2> setGuidedStorageV2(GuidedChoice choice) async {
+  Future<StorageResponseV2> setGuidedStorage(GuidedChoice choice) async {
+    final request = await _openUrl('POST', url('storage/v2/deprecated/guided'));
+    request.write(jsonEncode(choice.toJson()));
+    final response = await request.close();
+
+    final responseJson = await _receiveJson(
+        'setGuidedStorageDeprecated(${jsonEncode(choice.toJson())})', response);
+    return StorageResponseV2.fromJson(responseJson);
+  }
+
+  Future<GuidedStorageResponseV2> getGuidedStorageV2({bool wait = true}) async {
+    final request =
+        await _openUrl('GET', url('storage/v2/guided', {'wait': '$wait'}));
+    final response = await request.close();
+
+    final responseJson =
+        await _receiveJson("getGuidedStorageV2('$wait')", response);
+    return GuidedStorageResponseV2.fromJson(responseJson);
+  }
+
+  Future<GuidedStorageResponseV2> setGuidedStorageV2(
+      GuidedChoiceV2 choice) async {
     final request = await _openUrl('POST', url('storage/v2/guided'));
     request.write(jsonEncode(choice.toJson()));
     final response = await request.close();
 
     final responseJson = await _receiveJson(
         'setGuidedStorageV2(${jsonEncode(choice.toJson())})', response);
-    return StorageResponseV2.fromJson(responseJson);
+    return GuidedStorageResponseV2.fromJson(responseJson);
   }
 
-  Future<StorageResponseV2> getStorageV2() async {
-    final request = await _openUrl('GET', url('storage/v2'));
+  Future<StorageResponseV2> getStorageV2({bool wait = true}) async {
+    final request = await _openUrl('GET', url('storage/v2', {'wait': '$wait'}));
     final response = await request.close();
 
     final responseJson = await _receiveJson('getStorageV2()', response);

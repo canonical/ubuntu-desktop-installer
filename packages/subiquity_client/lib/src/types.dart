@@ -423,6 +423,7 @@ class StorageResponseV2 with _$StorageResponseV2 {
 @freezed
 class GuidedResizeValues with _$GuidedResizeValues {
   const factory GuidedResizeValues({
+    required int installMax,
     required int minimum,
     required int recommended,
     required int maximum,
@@ -430,6 +431,56 @@ class GuidedResizeValues with _$GuidedResizeValues {
 
   factory GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
       _$GuidedResizeValuesFromJson(json);
+}
+
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class GuidedStorageTarget with _$GuidedStorageTarget {
+  @FreezedUnionValue('GuidedStorageTargetReformat')
+  const factory GuidedStorageTarget.reformat({
+    required String diskId,
+  }) = GuidedStorageTargetReformat;
+
+  @FreezedUnionValue('GuidedStorageTargetResize')
+  const factory GuidedStorageTarget.resize({
+    required String diskId,
+    required int partitionNumber,
+    required int newSize,
+    required int? minimum,
+    required int? recommended,
+    required int? maximum,
+  }) = GuidedStorageTargetResize;
+
+  @FreezedUnionValue('GuidedStorageTargetUseGap')
+  const factory GuidedStorageTarget.useGap({
+    required String diskId,
+    required Gap gap,
+  }) = GuidedStorageTargetUseGap;
+
+  factory GuidedStorageTarget.fromJson(Map<String, dynamic> json) =>
+      _$GuidedStorageTargetFromJson(json);
+}
+
+@freezed
+class GuidedChoiceV2 with _$GuidedChoiceV2 {
+  const factory GuidedChoiceV2({
+    required GuidedStorageTarget target,
+    @Default(false) bool useLvm,
+    String? password,
+  }) = _GuidedChoiceV2;
+
+  factory GuidedChoiceV2.fromJson(Map<String, dynamic> json) =>
+      _$GuidedChoiceV2FromJson(json);
+}
+
+@freezed
+class GuidedStorageResponseV2 with _$GuidedStorageResponseV2 {
+  const factory GuidedStorageResponseV2({
+    GuidedChoiceV2? configured,
+    @Default([]) List<GuidedStorageTarget> possible,
+  }) = _GuidedStorageResponseV2;
+
+  factory GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$GuidedStorageResponseV2FromJson(json);
 }
 
 @freezed

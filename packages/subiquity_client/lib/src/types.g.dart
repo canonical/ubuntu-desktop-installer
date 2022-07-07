@@ -602,6 +602,7 @@ Map<String, dynamic> _$_$_StorageResponseV2ToJson(
 _$_GuidedResizeValues _$_$_GuidedResizeValuesFromJson(
     Map<String, dynamic> json) {
   return _$_GuidedResizeValues(
+    installMax: json['install_max'] as int,
     minimum: json['minimum'] as int,
     recommended: json['recommended'] as int,
     maximum: json['maximum'] as int,
@@ -611,9 +612,98 @@ _$_GuidedResizeValues _$_$_GuidedResizeValuesFromJson(
 Map<String, dynamic> _$_$_GuidedResizeValuesToJson(
         _$_GuidedResizeValues instance) =>
     <String, dynamic>{
+      'install_max': instance.installMax,
       'minimum': instance.minimum,
       'recommended': instance.recommended,
       'maximum': instance.maximum,
+    };
+
+_$GuidedStorageTargetReformat _$_$GuidedStorageTargetReformatFromJson(
+    Map<String, dynamic> json) {
+  return _$GuidedStorageTargetReformat(
+    diskId: json['disk_id'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$GuidedStorageTargetReformatToJson(
+        _$GuidedStorageTargetReformat instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+    };
+
+_$GuidedStorageTargetResize _$_$GuidedStorageTargetResizeFromJson(
+    Map<String, dynamic> json) {
+  return _$GuidedStorageTargetResize(
+    diskId: json['disk_id'] as String,
+    partitionNumber: json['partition_number'] as int,
+    newSize: json['new_size'] as int,
+    minimum: json['minimum'] as int?,
+    recommended: json['recommended'] as int?,
+    maximum: json['maximum'] as int?,
+  );
+}
+
+Map<String, dynamic> _$_$GuidedStorageTargetResizeToJson(
+        _$GuidedStorageTargetResize instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'partition_number': instance.partitionNumber,
+      'new_size': instance.newSize,
+      'minimum': instance.minimum,
+      'recommended': instance.recommended,
+      'maximum': instance.maximum,
+    };
+
+_$GuidedStorageTargetUseGap _$_$GuidedStorageTargetUseGapFromJson(
+    Map<String, dynamic> json) {
+  return _$GuidedStorageTargetUseGap(
+    diskId: json['disk_id'] as String,
+    gap: Gap.fromJson(json['gap'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$GuidedStorageTargetUseGapToJson(
+        _$GuidedStorageTargetUseGap instance) =>
+    <String, dynamic>{
+      'disk_id': instance.diskId,
+      'gap': instance.gap.toJson(),
+    };
+
+_$_GuidedChoiceV2 _$_$_GuidedChoiceV2FromJson(Map<String, dynamic> json) {
+  return _$_GuidedChoiceV2(
+    target:
+        GuidedStorageTarget.fromJson(json['target'] as Map<String, dynamic>),
+    useLvm: json['use_lvm'] as bool? ?? false,
+    password: json['password'] as String?,
+  );
+}
+
+Map<String, dynamic> _$_$_GuidedChoiceV2ToJson(_$_GuidedChoiceV2 instance) =>
+    <String, dynamic>{
+      'target': instance.target.toJson(),
+      'use_lvm': instance.useLvm,
+      'password': instance.password,
+    };
+
+_$_GuidedStorageResponseV2 _$_$_GuidedStorageResponseV2FromJson(
+    Map<String, dynamic> json) {
+  return _$_GuidedStorageResponseV2(
+    configured: json['configured'] == null
+        ? null
+        : GuidedChoiceV2.fromJson(json['configured'] as Map<String, dynamic>),
+    possible: (json['possible'] as List<dynamic>?)
+            ?.map(
+                (e) => GuidedStorageTarget.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+  );
+}
+
+Map<String, dynamic> _$_$_GuidedStorageResponseV2ToJson(
+        _$_GuidedStorageResponseV2 instance) =>
+    <String, dynamic>{
+      'configured': instance.configured?.toJson(),
+      'possible': instance.possible.map((e) => e.toJson()).toList(),
     };
 
 _$_AddPartitionV2 _$_$_AddPartitionV2FromJson(Map<String, dynamic> json) {
