@@ -14,20 +14,20 @@ import 'write_changes_to_disk_model_test.mocks.dart';
 void main() {
   final testDisks = <Disk>[
     testDisk(
-      id: 'a',
+      path: '/dev/sda',
       preserve: false,
       partitions: [Partition(number: 1, preserve: false)],
     ),
     testDisk(
-      id: 'b',
+      path: '/dev/sdb',
       preserve: true,
       partitions: [
         Partition(number: 1),
-        Partition(number: 2, grubDevice: true),
+        Partition(number: 2, preserve: false),
       ],
     ),
     testDisk(
-      id: 'c',
+      path: '/dev/sdc',
       preserve: false,
       partitions: [
         Partition(number: 3, preserve: false),
@@ -36,18 +36,7 @@ void main() {
     ),
   ];
 
-  final nonPreservedDisks = <Disk>[
-    testDisk(
-      id: 'a',
-      preserve: false,
-      partitions: [Partition(number: 1, preserve: false)],
-    ),
-    testDisk(
-      id: 'c',
-      preserve: false,
-      partitions: [Partition(number: 3, preserve: false)],
-    ),
-  ];
+  final nonPreservedDisks = <Disk>[testDisks.first, testDisks.last];
 
   test('get storage', () async {
     final client = MockSubiquityClient();
@@ -59,10 +48,14 @@ void main() {
     verify(service.getStorage()).called(1);
 
     expect(model.disks, equals(nonPreservedDisks));
-    expect(model.partitions(nonPreservedDisks.first),
-        equals([Partition(number: 1, preserve: false)]));
-    expect(model.partitions(nonPreservedDisks.last),
-        equals([Partition(number: 3, preserve: false)]));
+    expect(
+      model.partitions,
+      equals({
+        'sda': [Partition(number: 1, preserve: false)],
+        'sdb': [Partition(number: 2, preserve: false)],
+        'sdc': [Partition(number: 3, preserve: false)],
+      }),
+    );
   });
 
   test('start installation', () async {

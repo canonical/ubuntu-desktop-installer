@@ -59,13 +59,13 @@ final testDisks = <Disk>[
   ),
 ];
 
-WriteChangesToDiskModel buildModel({List<Disk>? disks}) {
+WriteChangesToDiskModel buildModel({
+  List<Disk>? disks,
+  Map<String, List<Partition>>? partitions,
+}) {
   final model = MockWriteChangesToDiskModel();
   when(model.disks).thenReturn(disks ?? <Disk>[]);
-  when(model.partitions(testDisks.first))
-      .thenReturn(testDisks.first.partitions.whereType<Partition>().toList());
-  when(model.partitions(testDisks.last))
-      .thenReturn(testDisks.last.partitions.whereType<Partition>().toList());
+  when(model.partitions).thenReturn(partitions ?? <String, List<Partition>>{});
   return model;
 }
 
@@ -90,7 +90,10 @@ void main() {
   }
 
   testWidgets('list of disks and partitions', (tester) async {
-    final model = buildModel(disks: testDisks);
+    final model = buildModel(disks: testDisks, partitions: {
+      testDisks.first.sysname: testDisks.first.partitions.cast<Partition>(),
+      testDisks.last.sysname: testDisks.last.partitions.cast<Partition>(),
+    });
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
