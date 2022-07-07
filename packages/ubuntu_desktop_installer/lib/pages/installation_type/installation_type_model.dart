@@ -44,7 +44,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
-  List<OsProber>? _existingOS;
 
   /// The selected installation type.
   InstallationType get installationType => _installationType;
@@ -74,22 +73,10 @@ class InstallationTypeModel extends SafeChangeNotifier {
   final productInfo = ProductInfoExtractor().getProductInfo();
 
   /// A list of existing OS installations or null if not detected.
-  List<OsProber>? get existingOS => _existingOS;
+  List<OsProber>? get existingOS => _diskService.existingOS;
 
-  /// Initializes the model and queries the existing OS installation.
-  Future<void> init() async {
-    _diskService.getGuidedStorage().then((disks) {
-      _existingOS = disks
-          .expand<OsProber>(
-            (d) => d.partitions
-                .whereType<Partition>()
-                .map((p) => p.os)
-                .whereType<OsProber>(),
-          )
-          .toList();
-      notifyListeners();
-    });
-  }
+  /// Initializes the model.
+  Future<void> init() async {}
 
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
