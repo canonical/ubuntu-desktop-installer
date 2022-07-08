@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    
+
     - uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -32,18 +32,8 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Install Melos
-      run: flutter pub global activate melos
-
-    - name: Bootstrap workspace
-      shell: powershell
-      run: |
-# Bootstrapping is a file system intensive operation, which seems to recycle
-# some temporary file names. Windows is known for file system race conditions
-# when deleting or renaming files, so running melos just once will likely fail.
-        Invoke-Command -ErrorAction 'Ignore' -ScriptBlock {melos bootstrap}
-        melos bootstrap
-
     - name: Build Windows Target
       working-directory: packages\ubuntu_wsl_setup\
-      run: flutter build -t .\lib\main_win.dart
+      run: |
+        flutter pub get
+        flutter build windows -t .\lib\main_win.dart
