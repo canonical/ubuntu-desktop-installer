@@ -1,8 +1,18 @@
 #include "flutter_window.h"
 
+#include <flutter/standard_method_codec.h>
+
 #include <optional>
 
 #include "flutter/generated_plugin_registrant.h"
+#include "named_event.h"
+#include "utils.h"
+
+namespace ChannelConstants {
+const char* channel = "ubuntuWslSetupChannel";
+const char* onEventSet = "onEventSet";
+const char* addListenerFor = "addListenerFor";
+};  // namespace NamedEventConstants
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
     : project_(project) {}
@@ -26,7 +36,67 @@ bool FlutterWindow::OnCreate() {
   }
   RegisterPlugins(flutter_controller_->engine());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
+
+  // method channel setup
+  ubuntuWslSetupChannel =
+      std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
+          flutter_controller_->engine()->messenger(),
+          ChannelConstants::channel,
+          &flutter::StandardMethodCodec::GetInstance());
+
+  ubuntuWslSetupChannel->SetMethodCallHandler(
+      [self = this](const auto& call, auto result) {
+        self->handleMethodCall(call, std::move(result));
+      });
+
   return true;
+}
+
+void FlutterWindow::onEventSet(const std::string& eventName) {
+  if (ubuntuWslSetupChannel == nullptr) {
+    return;
+  }
+  ubuntuWslSetupChannel->InvokeMethod(
+      ChannelConstants::onEventSet,
+      std::make_unique<flutter::EncodableValue>(eventName));
+}
+
+void FlutterWindow::handleMethodCall(
+    const flutter::MethodCall<flutter::EncodableValue>& call,
+    std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
+  if (call.method_name().compare(ChannelConstants::addListenerFor) == 0) {
+    auto* arg = call.arguments();
+    if (arg == nullptr) {
+      result->Error(ChannelConstants::channel, "The event name is required");
+      return;
+    }
+    auto* eventNamePtr = std::get_if<std::string>(arg);
+    if (eventNamePtr == nullptr) {
+      result->Error(ChannelConstants::channel,
+                    "The event name is the only argument accepted.");
+      return;
+    }
+
+    try {
+      // emplace_back promises to preserve the vector as is if an exception is
+      // thrown during object in-place construction. Here it means platform or
+      // argument failure.
+      events.emplace_back(*eventNamePtr,
+                          [self = this, eventName = *eventNamePtr]() {
+                            self->onEventSet(eventName);
+                          });
+    } catch (const std::runtime_error& e) {
+      result->Error(ChannelConstants::channel, e.what());
+    } catch (const std::invalid_argument& e) {
+      std::string msg{e.what()};
+      msg.append(". Wass the event ever created?");
+      result->Error(ChannelConstants::channel, msg);
+    }
+
+    result->Success();
+  } else {
+    result->NotImplemented();
+  }
 }
 
 void FlutterWindow::OnDestroy() {
