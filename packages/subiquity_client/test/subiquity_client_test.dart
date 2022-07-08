@@ -160,25 +160,6 @@ void main() {
       expect(bitLocker, isFalse);
     });
 
-    test('guided storage', () async {
-      var gs = await client.getGuidedStorage();
-      expect(gs.disks, isNotEmpty);
-      expect(gs.disks?[0].size, isNot(0));
-    });
-
-    test('deprecated guided storage', () async {
-      final guided = await client.getGuidedStorage();
-      expect(guided.disks, isNotEmpty);
-
-      final choice = GuidedChoice(
-        diskId: guided.disks!.first.id,
-        useLvm: false,
-      );
-      final response = await client.setGuidedStorage(choice);
-      expect(response.disks, isNotNull);
-      expect(response.disks, isNotEmpty);
-    });
-
     test('guided storage v2', () async {
       final guided = await client.getGuidedStorageV2();
       expect(guided.possible, isNotEmpty);
@@ -322,10 +303,10 @@ void main() {
     });
 
     test('gap', () async {
-      final storage = await client.getGuidedStorage();
+      final storage = await client.getStorageV2();
       expect(storage.disks, isNotEmpty);
 
-      final gaps = storage.disks!.first.partitions.whereType<Gap>();
+      final gaps = storage.disks.first.partitions.whereType<Gap>();
       expect(gaps, hasLength(1));
 
       expect(gaps.single.offset, isNonZero);
