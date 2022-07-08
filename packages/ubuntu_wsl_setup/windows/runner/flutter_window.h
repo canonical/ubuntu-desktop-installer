@@ -53,17 +53,17 @@ class FlutterWindow : public Win32Window {
 // only once which waits on another thread and executes the supplied [callback]
 // once the event is first set.
 class NamedEvent {
- private:
-  std::function<void()> callback;
-  HANDLE event = nullptr;
-  HANDLE waitHandle = nullptr;
-  static VOID CALLBACK CallbackForWait(PVOID context, BOOLEAN);
-
  public:
   NamedEvent(std::string name, std::function<void()> callback);
   NamedEvent(const NamedEvent& other) = delete;
   NamedEvent(NamedEvent&& other) noexcept;
   NamedEvent operator=(const NamedEvent& other) = delete;
   ~NamedEvent() noexcept;
+
+ private:
+  std::function<void()> callback;
+  HANDLE event = nullptr;
+  HANDLE waitHandle = nullptr;
+  static VOID CALLBACK CallbackForWait(PVOID context, BOOLEAN);
 };
 #endif  // RUNNER_FLUTTER_WINDOW_H_
