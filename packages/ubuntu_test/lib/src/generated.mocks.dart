@@ -41,24 +41,21 @@ class _FakeSSHData_6 extends _i1.Fake implements _i3.SSHData {}
 class _FakeApplicationStatus_7 extends _i1.Fake
     implements _i3.ApplicationStatus {}
 
-class _FakeGuidedStorageResponse_8 extends _i1.Fake
-    implements _i3.GuidedStorageResponse {}
+class _FakeGuidedStorageResponseV2_8 extends _i1.Fake
+    implements _i3.GuidedStorageResponseV2 {}
 
 class _FakeStorageResponseV2_9 extends _i1.Fake
     implements _i3.StorageResponseV2 {}
 
-class _FakeGuidedStorageResponseV2_10 extends _i1.Fake
-    implements _i3.GuidedStorageResponseV2 {}
-
-class _FakeWSLConfigurationBase_11 extends _i1.Fake
+class _FakeWSLConfigurationBase_10 extends _i1.Fake
     implements _i3.WSLConfigurationBase {}
 
-class _FakeWSLConfigurationAdvanced_12 extends _i1.Fake
+class _FakeWSLConfigurationAdvanced_11 extends _i1.Fake
     implements _i3.WSLConfigurationAdvanced {}
 
-class _FakeAnyStep_13 extends _i1.Fake implements _i3.AnyStep {}
+class _FakeAnyStep_12 extends _i1.Fake implements _i3.AnyStep {}
 
-class _FakeEndpoint_14 extends _i1.Fake implements _i4.Endpoint {}
+class _FakeEndpoint_13 extends _i1.Fake implements _i4.Endpoint {}
 
 /// A class which mocks [GSettings].
 ///
@@ -268,33 +265,19 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       (super.noSuchMethod(Invocation.method(#hasBitLocker, []),
           returnValue: Future<bool>.value(false)) as _i6.Future<bool>);
   @override
-  _i6.Future<_i3.GuidedStorageResponse> getGuidedStorage({bool? wait = true}) =>
-      (super.noSuchMethod(
-              Invocation.method(#getGuidedStorage, [], {#wait: wait}),
-              returnValue: Future<_i3.GuidedStorageResponse>.value(
-                  _FakeGuidedStorageResponse_8()))
-          as _i6.Future<_i3.GuidedStorageResponse>);
-  @override
-  _i6.Future<_i3.StorageResponseV2> setGuidedStorage(
-          _i3.GuidedChoice? choice) =>
-      (super.noSuchMethod(Invocation.method(#setGuidedStorage, [choice]),
-              returnValue: Future<_i3.StorageResponseV2>.value(
-                  _FakeStorageResponseV2_9()))
-          as _i6.Future<_i3.StorageResponseV2>);
-  @override
   _i6.Future<_i3.GuidedStorageResponseV2> getGuidedStorageV2(
           {bool? wait = true}) =>
       (super.noSuchMethod(
               Invocation.method(#getGuidedStorageV2, [], {#wait: wait}),
               returnValue: Future<_i3.GuidedStorageResponseV2>.value(
-                  _FakeGuidedStorageResponseV2_10()))
+                  _FakeGuidedStorageResponseV2_8()))
           as _i6.Future<_i3.GuidedStorageResponseV2>);
   @override
   _i6.Future<_i3.GuidedStorageResponseV2> setGuidedStorageV2(
           _i3.GuidedChoiceV2? choice) =>
       (super.noSuchMethod(Invocation.method(#setGuidedStorageV2, [choice]),
               returnValue: Future<_i3.GuidedStorageResponseV2>.value(
-                  _FakeGuidedStorageResponseV2_10()))
+                  _FakeGuidedStorageResponseV2_8()))
           as _i6.Future<_i3.GuidedStorageResponseV2>);
   @override
   _i6.Future<_i3.StorageResponseV2> getStorageV2({bool? wait = true}) =>
@@ -364,7 +347,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.WSLConfigurationBase> wslConfigurationBase() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationBase, []),
               returnValue: Future<_i3.WSLConfigurationBase>.value(
-                  _FakeWSLConfigurationBase_11()))
+                  _FakeWSLConfigurationBase_10()))
           as _i6.Future<_i3.WSLConfigurationBase>);
   @override
   _i6.Future<void> setWslConfigurationBase(_i3.WSLConfigurationBase? conf) =>
@@ -375,7 +358,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.WSLConfigurationAdvanced> wslConfigurationAdvanced() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationAdvanced, []),
               returnValue: Future<_i3.WSLConfigurationAdvanced>.value(
-                  _FakeWSLConfigurationAdvanced_12()))
+                  _FakeWSLConfigurationAdvanced_11()))
           as _i6.Future<_i3.WSLConfigurationAdvanced>);
   @override
   _i6.Future<void> setWslConfigurationAdvanced(
@@ -387,7 +370,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.AnyStep> getKeyboardStep([String? step = r'0']) =>
       (super.noSuchMethod(Invocation.method(#getKeyboardStep, [step]),
-              returnValue: Future<_i3.AnyStep>.value(_FakeAnyStep_13()))
+              returnValue: Future<_i3.AnyStep>.value(_FakeAnyStep_12()))
           as _i6.Future<_i3.AnyStep>);
 }
 
@@ -405,14 +388,14 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
           returnValueForMissingStub: null);
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(Invocation.getter(#endpoint),
-      returnValue: _FakeEndpoint_14()) as _i4.Endpoint);
+      returnValue: _FakeEndpoint_13()) as _i4.Endpoint);
   @override
   _i6.Future<_i4.Endpoint> start(
           {List<String>? args, Map<String, String>? environment}) =>
       (super.noSuchMethod(
               Invocation.method(
                   #start, [], {#args: args, #environment: environment}),
-              returnValue: Future<_i4.Endpoint>.value(_FakeEndpoint_14()))
+              returnValue: Future<_i4.Endpoint>.value(_FakeEndpoint_13()))
           as _i6.Future<_i4.Endpoint>);
   @override
   _i6.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),

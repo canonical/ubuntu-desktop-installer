@@ -311,27 +311,6 @@ class SubiquityClient {
     return (jsonDecode(responseStr) as List).isNotEmpty;
   }
 
-  /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage({bool wait = true}) async {
-    final request =
-        await _openUrl('GET', url('storage/guided', {'wait': '$wait'}));
-    final response = await request.close();
-
-    final responseJson =
-        await _receiveJson("getGuidedStorage('$wait')", response);
-    return GuidedStorageResponse.fromJson(responseJson);
-  }
-
-  Future<StorageResponseV2> setGuidedStorage(GuidedChoice choice) async {
-    final request = await _openUrl('POST', url('storage/v2/deprecated/guided'));
-    request.write(jsonEncode(choice.toJson()));
-    final response = await request.close();
-
-    final responseJson = await _receiveJson(
-        'setGuidedStorageDeprecated(${jsonEncode(choice.toJson())})', response);
-    return StorageResponseV2.fromJson(responseJson);
-  }
-
   Future<GuidedStorageResponseV2> getGuidedStorageV2({bool wait = true}) async {
     final request =
         await _openUrl('GET', url('storage/v2/guided', {'wait': '$wait'}));
