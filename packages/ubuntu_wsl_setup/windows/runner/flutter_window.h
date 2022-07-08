@@ -49,21 +49,4 @@ class FlutterWindow : public Win32Window {
       std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
 };
 
-// A wrapper around the OpenEvent/RegisterWait Win32 API's setup for triggering
-// only once which waits on another thread and executes the supplied [callback]
-// once the event is first set.
-class NamedEvent {
- public:
-  NamedEvent(std::string name, std::function<void()> callback);
-  NamedEvent(const NamedEvent& other) = delete;
-  NamedEvent(NamedEvent&& other) noexcept;
-  NamedEvent operator=(const NamedEvent& other) = delete;
-  ~NamedEvent() noexcept;
-
- private:
-  std::function<void()> callback;
-  HANDLE event = nullptr;
-  HANDLE waitHandle = nullptr;
-  static VOID CALLBACK CallbackForWait(PVOID context, BOOLEAN);
-};
 #endif  // RUNNER_FLUTTER_WINDOW_H_
