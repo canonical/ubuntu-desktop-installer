@@ -152,8 +152,8 @@ NamedEvent::NamedEvent(NamedEvent&& other) noexcept
     [[maybe_unused]] auto res = UnregisterWait(other.waitHandle);
     other.waitHandle = nullptr;
   }
-  RegisterWaitForSingleObject(&waitHandle, event, &CallbackForWait,
-                              reinterpret_cast<void*>(this), INFINITE,
+  RegisterWaitForSingleObject(&waitHandle, event, &CallbackForWait, this,
+                              INFINITE,
                               WT_EXECUTEONLYONCE | WT_EXECUTEINWAITTHREAD);
 }
 
@@ -171,8 +171,7 @@ NamedEvent::NamedEvent(std::string name, std::function<void()> callback)
     }
   }
   if (FALSE == RegisterWaitForSingleObject(
-                   &waitHandle, event, &CallbackForWait,
-                   reinterpret_cast<void*>(this), INFINITE,
+                   &waitHandle, event, &CallbackForWait, this, INFINITE,
                    WT_EXECUTEONLYONCE | WT_EXECUTEINWAITTHREAD)) {
     // rollback
     CloseHandle(event);
