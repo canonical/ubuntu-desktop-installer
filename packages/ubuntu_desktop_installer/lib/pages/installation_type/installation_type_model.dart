@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -34,16 +35,14 @@ enum AdvancedFeature {
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
-  InstallationTypeModel(
-      this._client, this._diskService, this._telemetryService);
+  InstallationTypeModel(this._diskService, this._telemetryService);
 
-  // ignore: unused_field, will be used for querying existing OS installations
-  final SubiquityClient _client;
   final DiskStorageService _diskService;
   final TelemetryService _telemetryService;
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
+  List<GuidedStorageTarget>? _storages;
 
   /// The selected installation type.
   InstallationType get installationType => _installationType;
@@ -75,16 +74,28 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _diskService.existingOS;
 
+  /// A list of guided storage targets or null if not detected.
+  List<GuidedStorageTarget>? get storages => _storages;
+
   /// Initializes the model.
-  Future<void> init() async {}
+  Future<void> init() async {
+    await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
+    // TODO: determine the preferred installation type from the available targets
+    notifyListeners();
+  }
 
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
-    if (!_diskService.hasMultipleDisks &&
-        _installationType == InstallationType.erase) {
-      await _diskService.setGuidedStorage();
+
+    // select the appropriate target right away when there's only one option
+    if (_installationType == InstallationType.erase) {
+      final reformat =
+          storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
+      if (reformat != null) {
+        await _diskService.setGuidedStorage(reformat);
+      }
     }
 
     // All possible values for the partition method

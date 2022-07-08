@@ -58,18 +58,17 @@ class DiskStorageService {
   List<OsProber>? get existingOS => _existingOS;
 
   /// Fetches the current guided storage configuration.
-  Future<List<Disk>> getGuidedStorage() {
-    return _client.getGuidedStorage().then((response) => response.disks ?? []);
+  Future<GuidedStorageResponseV2> getGuidedStorage() async {
+    return _client.getGuidedStorageV2();
   }
 
-  /// Selects the specified disk for guided partitioning.
-  Future<void> setGuidedStorage([Disk? disk]) async {
-    final response = await _client.getGuidedStorage();
-    final choice = GuidedChoice(
-      diskId: disk?.id ?? response.disks![0].id,
-      useLvm: useLvm,
-    );
-    return _client.setGuidedStorage(choice).then(_updateStorage);
+  /// Selects the specified target for guided partitioning.
+  Future<GuidedStorageResponseV2> setGuidedStorage(
+      GuidedStorageTarget target) async {
+    final response = await _client.getGuidedStorageV2();
+    final choice = response.configured?.copyWith(target: target) ??
+        GuidedChoiceV2(target: target);
+    return _client.setGuidedStorageV2(choice.copyWith(useLvm: useLvm));
   }
 
   List<Disk> _updateStorage(StorageResponseV2 response) {

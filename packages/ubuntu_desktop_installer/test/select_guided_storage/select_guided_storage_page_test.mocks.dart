@@ -30,9 +30,10 @@ class MockSelectGuidedStorageModel extends _i1.Mock
   }
 
   @override
-  List<_i3.Disk> get storages => (super
-          .noSuchMethod(Invocation.getter(#storages), returnValue: <_i3.Disk>[])
-      as List<_i3.Disk>);
+  List<_i3.GuidedStorageTarget> get storages =>
+      (super.noSuchMethod(Invocation.getter(#storages),
+              returnValue: <_i3.GuidedStorageTarget>[])
+          as List<_i3.GuidedStorageTarget>);
   @override
   int get selectedIndex =>
       (super.noSuchMethod(Invocation.getter(#selectedIndex), returnValue: 0)
@@ -45,6 +46,13 @@ class MockSelectGuidedStorageModel extends _i1.Mock
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+  @override
+  _i3.GuidedStorageTargetReformat? getStorage(int? index) =>
+      (super.noSuchMethod(Invocation.method(#getStorage, [index]))
+          as _i3.GuidedStorageTargetReformat?);
+  @override
+  _i3.Disk? getDisk(int? index) =>
+      (super.noSuchMethod(Invocation.method(#getDisk, [index])) as _i3.Disk?);
   @override
   void selectStorage(int? index) =>
       super.noSuchMethod(Invocation.method(#selectStorage, [index]),
