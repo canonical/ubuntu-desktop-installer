@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 /// Exposes a [future] that completes when a platform event named [name] is set.
 class NamedEvent {
   /// The event name as known by the platform, UTF-8 encoded.
-  String name;
+  final String name;
   final _completer = Completer<void>();
 
   /// Completes when the platform event is set.
