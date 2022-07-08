@@ -11,6 +11,7 @@ class NamedEvent {
 
   /// Completes when the platform event is set.
   Future<void> get future => _completer.future;
+
   NamedEvent(this.name) {
     _NamedEventSingleton.instance.addListenerFor(
       name: name,
