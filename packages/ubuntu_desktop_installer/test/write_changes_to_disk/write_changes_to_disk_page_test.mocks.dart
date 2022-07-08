@@ -72,6 +72,11 @@ class MockWriteChangesToDiskModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#disks), returnValue: <_i4.Disk>[])
           as List<_i4.Disk>);
   @override
+  Map<String, List<_i4.Partition>> get partitions =>
+      (super.noSuchMethod(Invocation.getter(#partitions),
+              returnValue: <String, List<_i4.Partition>>{})
+          as Map<String, List<_i4.Partition>>);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -79,10 +84,6 @@ class MockWriteChangesToDiskModel extends _i1.Mock
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
-  @override
-  List<_i4.Partition> partitions(_i4.Disk? disk) =>
-      (super.noSuchMethod(Invocation.method(#partitions, [disk]),
-          returnValue: <_i4.Partition>[]) as List<_i4.Partition>);
   @override
   _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
