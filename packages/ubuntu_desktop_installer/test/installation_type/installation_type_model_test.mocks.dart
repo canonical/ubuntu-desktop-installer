@@ -2,14 +2,14 @@
 // in ubuntu_desktop_installer/test/installation_type/installation_type_model_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i3;
+import 'dart:async' as _i4;
 
 import 'package:file/file.dart' as _i6;
 import 'package:file/local.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i4;
+import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart'
-    as _i2;
+    as _i3;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
     as _i5;
 
@@ -23,11 +23,14 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
+class _FakeGuidedStorageResponseV2_0 extends _i1.Fake
+    implements _i2.GuidedStorageResponseV2 {}
+
 /// A class which mocks [DiskStorageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDiskStorageService extends _i1.Mock
-    implements _i2.DiskStorageService {
+    implements _i3.DiskStorageService {
   MockDiskStorageService() {
     _i1.throwOnMissingStub(this);
   }
@@ -69,64 +72,67 @@ class MockDiskStorageService extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#useLvm, useLvm),
           returnValueForMissingStub: null);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
+  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
-      returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+      returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
-  _i3.Future<List<_i4.Disk>> getGuidedStorage() =>
+  _i4.Future<_i2.GuidedStorageResponseV2> getGuidedStorage() =>
       (super.noSuchMethod(Invocation.method(#getGuidedStorage, []),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<_i2.GuidedStorageResponseV2>.value(
+                  _FakeGuidedStorageResponseV2_0()))
+          as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i3.Future<void> setGuidedStorage([_i4.Disk? disk]) =>
-      (super.noSuchMethod(Invocation.method(#setGuidedStorage, [disk]),
-          returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  _i4.Future<_i2.GuidedStorageResponseV2> setGuidedStorage(
+          _i2.GuidedStorageTarget? target) =>
+      (super.noSuchMethod(Invocation.method(#setGuidedStorage, [target]),
+              returnValue: Future<_i2.GuidedStorageResponseV2>.value(
+                  _FakeGuidedStorageResponseV2_0()))
+          as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i3.Future<List<_i4.Disk>> getStorage() =>
+  _i4.Future<List<_i2.Disk>> getStorage() =>
       (super.noSuchMethod(Invocation.method(#getStorage, []),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> addPartition(
-          _i4.Disk? disk, _i4.Gap? gap, _i4.Partition? partition) =>
+  _i4.Future<List<_i2.Disk>> addPartition(
+          _i2.Disk? disk, _i2.Gap? gap, _i2.Partition? partition) =>
       (super.noSuchMethod(
               Invocation.method(#addPartition, [disk, gap, partition]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> editPartition(
-          _i4.Disk? disk, _i4.Partition? partition) =>
+  _i4.Future<List<_i2.Disk>> editPartition(
+          _i2.Disk? disk, _i2.Partition? partition) =>
       (super.noSuchMethod(Invocation.method(#editPartition, [disk, partition]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> deletePartition(
-          _i4.Disk? disk, _i4.Partition? partition) =>
+  _i4.Future<List<_i2.Disk>> deletePartition(
+          _i2.Disk? disk, _i2.Partition? partition) =>
       (super.noSuchMethod(
               Invocation.method(#deletePartition, [disk, partition]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> setStorage(List<_i4.Disk>? disks) =>
+  _i4.Future<List<_i2.Disk>> setStorage(List<_i2.Disk>? disks) =>
       (super.noSuchMethod(Invocation.method(#setStorage, [disks]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> resetStorage() =>
+  _i4.Future<List<_i2.Disk>> resetStorage() =>
       (super.noSuchMethod(Invocation.method(#resetStorage, []),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> addBootPartition(_i4.Disk? disk) =>
+  _i4.Future<List<_i2.Disk>> addBootPartition(_i2.Disk? disk) =>
       (super.noSuchMethod(Invocation.method(#addBootPartition, [disk]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
   @override
-  _i3.Future<List<_i4.Disk>> reformatDisk(_i4.Disk? disk) =>
+  _i4.Future<List<_i2.Disk>> reformatDisk(_i2.Disk? disk) =>
       (super.noSuchMethod(Invocation.method(#reformatDisk, [disk]),
-              returnValue: Future<List<_i4.Disk>>.value(<_i4.Disk>[]))
-          as _i3.Future<List<_i4.Disk>>);
+              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+          as _i4.Future<List<_i2.Disk>>);
 }
 
 /// A class which mocks [TelemetryService].
@@ -158,8 +164,8 @@ class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
       super.noSuchMethod(Invocation.method(#setPartitionMethod, [method]),
           returnValueForMissingStub: null);
   @override
-  _i3.Future<void> done({_i6.FileSystem? fs = const _i7.LocalFileSystem()}) =>
+  _i4.Future<void> done({_i6.FileSystem? fs = const _i7.LocalFileSystem()}) =>
       (super.noSuchMethod(Invocation.method(#done, [], {#fs: fs}),
           returnValue: Future<void>.value(),
-          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
 }

@@ -10,14 +10,17 @@ import '../test_utils.dart';
 
 void main() {
   final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
+  final testTargets = testDisks
+      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
+      .toList();
 
   late SubiquityClient client;
 
   setUp(() {
     client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage()).thenAnswer((_) async =>
-        GuidedStorageResponse(disks: testDisks, status: ProbeStatus.DONE));
+    when(client.getGuidedStorageV2()).thenAnswer(
+        (_) async => GuidedStorageResponseV2(possible: testTargets));
     when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
         disks: testDisks,
         needBoot: false,
@@ -29,30 +32,33 @@ void main() {
 
   test('get guided storage', () async {
     final service = DiskStorageService(client);
-    expect(await service.getGuidedStorage(), equals(testDisks));
-    verify(client.getGuidedStorage()).called(1);
+    expect(await service.getGuidedStorage(),
+        equals(GuidedStorageResponseV2(possible: testTargets)));
+    verify(client.getGuidedStorageV2()).called(1);
   });
 
   test('set guided storage', () async {
-    final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: false);
-    when(client.setGuidedStorage(choice))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+    final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
+    final choice = GuidedChoiceV2(target: target, useLvm: false);
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
 
     final service = DiskStorageService(client);
-    await service.setGuidedStorage(testDisks.last);
-    verify(client.setGuidedStorage(choice)).called(1);
+    await service.setGuidedStorage(target);
+    verify(client.setGuidedStorageV2(choice)).called(1);
   });
 
   test('use LVM', () async {
-    final choice = GuidedChoice(diskId: testDisks.last.id, useLvm: true);
-    when(client.setGuidedStorage(choice))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+    final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
+    final choice = GuidedChoiceV2(target: target, useLvm: true);
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
 
     final service = DiskStorageService(client);
     service.useLvm = true;
 
-    await service.setGuidedStorage(testDisks.last);
-    verify(client.setGuidedStorage(choice)).called(1);
+    await service.setGuidedStorage(target);
+    verify(client.setGuidedStorageV2(choice)).called(1);
   });
 
   test('reset guided storage', () async {
@@ -63,9 +69,6 @@ void main() {
     await service.getGuidedStorage();
     expect(service.hasMultipleDisks, isTrue);
 
-    when(client.getGuidedStorage()).thenAnswer((_) async =>
-        GuidedStorageResponse(
-            disks: [testDisks.first], status: ProbeStatus.DONE));
     when(client.resetStorageV2())
         .thenAnswer((_) async => testStorageResponse(disks: []));
 

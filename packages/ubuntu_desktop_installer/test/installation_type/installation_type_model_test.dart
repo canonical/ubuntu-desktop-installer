@@ -4,7 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 
 import 'installation_type_model_test.mocks.dart';
 
@@ -29,14 +28,12 @@ void main() {
     final service = MockDiskStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallationTypeModel(
-        MockSubiquityClient(), service, MockTelemetryService());
+    final model = InstallationTypeModel(service, MockTelemetryService());
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
   test('notify changes', () {
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       MockDiskStorageService(),
       MockTelemetryService(),
     );
@@ -62,7 +59,6 @@ void main() {
 
   test('product info', () {
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       MockDiskStorageService(),
       MockTelemetryService(),
     );
@@ -75,8 +71,7 @@ void main() {
     when(disks.hasEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
-    final model =
-        InstallationTypeModel(MockSubiquityClient(), disks, telemetry);
+    final model = InstallationTypeModel(disks, telemetry);
     verifyNever(telemetry.setPartitionMethod(any));
 
     model.installationType = InstallationType.erase;
@@ -122,7 +117,6 @@ void main() {
     when(storage.hasEncryption).thenReturn(false);
 
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       storage,
       MockTelemetryService(),
     );

@@ -171,8 +171,8 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
+    when(client.getGuidedStorageV2())
+        .thenAnswer((_) async => GuidedStorageResponseV2());
     when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
         disks: [], installMinimumSize: 0, needBoot: false, needRoot: false));
     when(client.hasRst()).thenAnswer((_) async => false);
