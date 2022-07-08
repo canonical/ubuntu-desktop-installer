@@ -1,7 +1,5 @@
 #include "named_event.h"
 
-#include <flutter/standard_method_codec.h>
-
 #include <stdexcept>
 
 #include "utils.h"

@@ -1,12 +1,10 @@
 #ifndef RUNNER_NAMED_EVENT_H_
 #define RUNNER_NAMED_EVENT_H_
 
-#include <flutter/method_channel.h>
-#include <flutter_windows.h>
 #include <windows.h>
 
-#include <memory>
-#include <vector>
+#include <functional>
+
 // A wrapper around the OpenEvent/RegisterWait Win32 API's setup for triggering
 // only once which waits on another thread and executes the supplied [callback]
 // once the event is first set.
