@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:collection';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -57,5 +56,5 @@ class _NamedEventSingleton {
     _listeners[name] = listener;
   }
 
-  final _listeners = HashMap<String, void Function()>();
+  final _listeners = <String, void Function()>{};
 }
