@@ -8,7 +8,7 @@
 #include "named_event.h"
 #include "utils.h"
 
-namespace NamedEventConstants {
+namespace ChannelConstants {
 const char* channel = "ubuntuWslSetupChannel";
 const char* onEventSet = "onEventSet";
 const char* addListenerFor = "addListenerFor";
@@ -41,7 +41,7 @@ bool FlutterWindow::OnCreate() {
   ubuntuWslSetupChannel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
           flutter_controller_->engine()->messenger(),
-          NamedEventConstants::channel,
+          ChannelConstants::channel,
           &flutter::StandardMethodCodec::GetInstance());
 
   ubuntuWslSetupChannel->SetMethodCallHandler(
@@ -57,22 +57,22 @@ void FlutterWindow::onEventSet(const std::string& eventName) {
     return;
   }
   ubuntuWslSetupChannel->InvokeMethod(
-      NamedEventConstants::onEventSet,
+      ChannelConstants::onEventSet,
       std::make_unique<flutter::EncodableValue>(eventName));
 }
 
 void FlutterWindow::handleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue>& call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
-  if (call.method_name().compare(NamedEventConstants::addListenerFor) == 0) {
+  if (call.method_name().compare(ChannelConstants::addListenerFor) == 0) {
     auto* arg = call.arguments();
     if (arg == nullptr) {
-      result->Error(NamedEventConstants::channel, "The event name is required");
+      result->Error(ChannelConstants::channel, "The event name is required");
       return;
     }
     auto* eventNamePtr = std::get_if<std::string>(arg);
     if (eventNamePtr == nullptr) {
-      result->Error(NamedEventConstants::channel,
+      result->Error(ChannelConstants::channel,
                     "The event name is the only argument accepted.");
       return;
     }
@@ -86,11 +86,11 @@ void FlutterWindow::handleMethodCall(
                             self->onEventSet(eventName);
                           });
     } catch (const std::runtime_error& e) {
-      result->Error(NamedEventConstants::channel, e.what());
+      result->Error(ChannelConstants::channel, e.what());
     } catch (const std::invalid_argument& e) {
       std::string msg{e.what()};
       msg.append(". Wass the event ever created?");
-      result->Error(NamedEventConstants::channel, msg);
+      result->Error(ChannelConstants::channel, msg);
     }
 
     result->Success();
