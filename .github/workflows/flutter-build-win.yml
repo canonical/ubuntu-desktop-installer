@@ -1,0 +1,43 @@
+name: Windows WSL Setup CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/subiquity_client/**
+      - packages/ubuntu_wizard/**
+      - packages/ubuntu_wsl_setup/**
+      - .github/workflows/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/subiquity_client/**
+      - packages/ubuntu_wizard/**
+      - packages/ubuntu_wsl_setup/**
+      - .github/workflows/**      
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Install Melos
+      run: flutter pub global activate melos
+
+    - name: Bootstrap workspace
+      run: melos bootstrap
+
+    - name: Build Windows Target
+      working-directory: packages\ubuntu_wsl_setup\
+      run: flutter build -t .\lib\main_win.dart
