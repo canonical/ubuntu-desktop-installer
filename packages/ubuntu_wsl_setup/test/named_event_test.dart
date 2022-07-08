@@ -4,13 +4,12 @@ import 'package:ubuntu_wsl_setup/services/named_event.dart';
 
 void main() {
   const methodChannel = MethodChannel(NamedEventConstants.channel);
-  TestWidgetsFlutterBinding.ensureInitialized();
-  final binding =
-      TestDefaultBinaryMessengerBinding.instance!.defaultBinaryMessenger;
+  final messenger =
+      TestWidgetsFlutterBinding.ensureInitialized().defaultBinaryMessenger;
 
   test('cannot listen twice', () async {
     const name = 'event';
-    binding.setMockMethodCallHandler(methodChannel, (call) async {
+    messenger.setMockMethodCallHandler(methodChannel, (call) async {
       if (call.method == NamedEventConstants.addListenerFor) {}
       return null;
     });
@@ -25,14 +24,14 @@ void main() {
 
   test('completion', () async {
     const name = 'completion';
-    binding.setMockMethodCallHandler(methodChannel, (call) async {
+    messenger.setMockMethodCallHandler(methodChannel, (call) async {
       if (call.method == NamedEventConstants.addListenerFor) {}
       return null;
     });
     const call = MethodCall(NamedEventConstants.onEventSet, name);
 
     final event = NamedEvent(name);
-    await binding.handlePlatformMessage(
+    await messenger.handlePlatformMessage(
       NamedEventConstants.channel,
       const StandardMethodCodec().encodeMethodCall(call),
       (_) {},
