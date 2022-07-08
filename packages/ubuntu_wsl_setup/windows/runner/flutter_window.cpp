@@ -11,7 +11,6 @@ namespace NamedEventConstants {
 const char* channel = "ubuntuWslSetupChannel";
 const char* onEventSet = "onEventSet";
 const char* addListenerFor = "addListenerFor";
-const char* argKey = "eventName";
 };  // namespace NamedEventConstants
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
@@ -56,11 +55,9 @@ void FlutterWindow::onEventSet(const std::string& eventName) {
   if (ubuntuWslSetupChannel == nullptr) {
     return;
   }
-  flutter::EncodableMap args = flutter::EncodableMap();
-  args[std::string(NamedEventConstants::argKey)] = eventName;
   ubuntuWslSetupChannel->InvokeMethod(
       NamedEventConstants::onEventSet,
-      std::make_unique<flutter::EncodableValue>(args));
+      std::make_unique<flutter::EncodableValue>(eventName));
 }
 
 void FlutterWindow::handleMethodCall(

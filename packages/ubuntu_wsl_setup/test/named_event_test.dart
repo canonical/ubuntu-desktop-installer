@@ -29,9 +29,7 @@ void main() {
       if (call.method == NamedEventConstants.addListenerFor) {}
       return null;
     });
-    const call = MethodCall(NamedEventConstants.onEventSet, {
-      NamedEventConstants.argKey: name,
-    });
+    const call = MethodCall(NamedEventConstants.onEventSet, name);
 
     final event = NamedEvent(name);
     await binding.handlePlatformMessage(

@@ -24,7 +24,6 @@ class NamedEventConstants {
   static const channel = 'ubuntuWslSetupChannel';
   static const onEventSet = 'onEventSet';
   static const addListenerFor = 'addListenerFor';
-  static const argKey = 'eventName';
 }
 
 class _NamedEventSingleton {
@@ -40,8 +39,7 @@ class _NamedEventSingleton {
 
   Future<void> _methodCallHandler(MethodCall call) async {
     if (call.method == NamedEventConstants.onEventSet) {
-      String eventName = call.arguments[NamedEventConstants.argKey];
-      _listeners[eventName]?.call();
+      _listeners[call.arguments]?.call();
     } else {
       throw UnimplementedError();
     }
