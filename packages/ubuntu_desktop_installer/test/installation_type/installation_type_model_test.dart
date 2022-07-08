@@ -129,4 +129,23 @@ void main() {
     model.save();
     verify(storage.useLvm = true).called(1);
   });
+
+  testWidgets('single reformat target', (tester) async {
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    final choice = GuidedChoiceV2(target: reformat);
+
+    final service = MockDiskStorageService();
+    when(service.hasEncryption).thenReturn(false);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    when(service.setGuidedStorage(reformat))
+        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    await model.init();
+
+    await model.save();
+    verify(service.setGuidedStorage(reformat)).called(1);
+  });
 }

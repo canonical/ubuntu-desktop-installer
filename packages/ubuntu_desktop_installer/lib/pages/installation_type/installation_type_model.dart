@@ -89,6 +89,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   Future<void> save() async {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
 
+    // select the appropriate target right away when there's only one option
     if (_installationType == InstallationType.erase) {
       final reformat =
           storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
