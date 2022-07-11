@@ -76,7 +76,7 @@
   "@confirmSecurityKey": {},
   "dontInstallDriverSoftwareNow": "Não instalar os drivers agora",
   "@dontInstallDriverSoftwareNow": {},
-  "dontInstallDriverSoftwareNowDescription": "Você pode instalar depois pelo Programas & Atualizações.",
+  "dontInstallDriverSoftwareNowDescription": "Você pode instalar depois usando Programas e Atualizações.",
   "@dontInstallDriverSoftwareNowDescription": {},
   "configureSecureBootSecurityKeyRequired": "Chave de segurança é obrigatória",
   "@configureSecureBootSecurityKeyRequired": {},
@@ -88,17 +88,17 @@
   "@updatesOtherSoftwarePageDescription": {},
   "normalInstallationTitle": "Instalação normal",
   "@normalInstallationTitle": {},
-  "normalInstallationSubtitle": "Web browser, utilidades, pacote office, games and players de mídia.",
+  "normalInstallationSubtitle": "Navegador web, utilitários, pacote office, jogos e reprodutores de mídia.",
   "@normalInstallationSubtitle": {},
   "minimalInstallationTitle": "Instalação mínima",
   "@minimalInstallationTitle": {},
-  "minimalInstallationSubtitle": "Web browser utilidades básicas.",
+  "minimalInstallationSubtitle": "Navegador web e utilitários básicos.",
   "@minimalInstallationSubtitle": {},
   "otherOptions": "Outras opções",
   "@otherOptions": {},
   "installThirdPartyTitle": "Instalar software de terceiros para hardware gráfico e de Wi-Fi, bem como formatos de mídia adicionais",
   "@installThirdPartyTitle": {},
-  "installThirdPartySubtitle": "Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.",
+  "installThirdPartySubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
   "@installThirdPartySubtitle": {},
   "installationTypeTitle": "Tipo de installation",
   "@installationTypeTitle": {},
@@ -109,18 +109,18 @@
       "os": {}
     }
   },
-  "installationTypeNoOSDetected": "Este computador não possui sistemas operacionais detectados atualmente. O que você deseja fazer?",
+  "installationTypeNoOSDetected": "Este computador não possui atualmente nenhum sistema operacional detectado. O que você deseja fazer?",
   "@installationTypeNoOSDetected": {},
   "installationTypeErase": "Apagar o disco e instalar o {DISTRO}",
   "@installationTypeErase": {},
-  "installationTypeEraseWarning": "<font color=\"{color}\">Aviso:</font> Isso vai apagar todos os seus programas, documentos, fotos, músicas, e quaisquer outrso arquivos em todos os sistemas operacionais existentes.",
+  "installationTypeEraseWarning": "<font color=\"{color}\">Atenção:</font> Isso vai apagar todos os seus programas, documentos, fotos, músicas, e quaisquer outros arquivos em todos os sistemas operacionais existentes.",
   "@installationTypeEraseWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "installationTypeAdvancedLabel": "Recursos Avançados...",
+  "installationTypeAdvancedLabel": "Recursos avançados...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Recursos avançados",
   "@installationTypeAdvancedTitle": {},
@@ -147,7 +147,7 @@
       "os": {}
     }
   },
-  "installationTypeReinstallWarning": "<font color=\"{color}\">Aviso:</font> Isso vai apagar todos os programas do {os}, documentos, fotos, músicas e quaisquer outros arquivos.",
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Atenção:</font> Isso vai apagar todos os programas do {os}, documentos, fotos, músicas e quaisquer outros arquivos.",
   "@installationTypeReinstallWarning": {
     "type": "text",
     "placeholders": {
@@ -215,7 +215,7 @@
   "@partitionUnitMB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionTypeLabel": "Tipo para a nova partiçaõ:",
+  "partitionTypeLabel": "Tipo da nova partição:",
   "@partitionTypeLabel": {},
   "partitionTypePrimary": "Primária",
   "@partitionTypePrimary": {},
@@ -243,13 +243,13 @@
   "@partitionFormatXfs": {},
   "partitionFormatFat": "Sistema de arquivos FAT",
   "@partitionFormatFat": {},
-  "partitionFormatFat12": "Sistema de arquivos FA12",
+  "partitionFormatFat12": "Sistema de arquivos FAT12",
   "@partitionFormatFat12": {},
-  "partitionFormatFat16": "Sistema de arquivos FA16",
+  "partitionFormatFat16": "Sistema de arquivos FAT16",
   "@partitionFormatFat16": {},
   "partitionFormatFat32": "Sistema de arquivos FAT32",
   "@partitionFormatFat32": {},
-  "partitionFormatSwap": "Swap area",
+  "partitionFormatSwap": "Espaço de Swap",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Sistema de arquivos ISO 9660",
   "@partitionFormatIso9660": {},
@@ -336,7 +336,7 @@
       "format": {}
     }
   },
-  "chooseYourLookPageTitle": "Escolha seu visual",
+  "chooseYourLookPageTitle": "Escolha seu estilo",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
   "@chooseYourLookPageHeader": {},
@@ -389,7 +389,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "As chaves de segurança não conferem",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se você precisar, escreva sua chave em um papel e coloque em um local seguro.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se precisar, anote sua chave no papel e coloque-a em um local seguro.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -402,5 +402,191 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "hiddenWifiNetworkNameLabel": "Nome da rede",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetworkNameRequired": "É necessário um nome de rede",
+  "@hiddenWifiNetworkNameRequired": {},
+  "wirelessNetworkingDisabled": "Rede WiFi está desabilitada",
+  "@wirelessNetworkingDisabled": {},
+  "enableWifi": "Habilitar WiFi",
+  "@enableWifi": {},
+  "connectButtonText": "Conectar",
+  "@connectButtonText": {},
+  "welcomeHeader": "Escolha seu idioma:",
+  "@welcomeHeader": {},
+  "wifiMustBeEnabled": "Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada",
+  "@wifiMustBeEnabled": {},
+  "hiddenWifiNetwork": "Conectar-se a uma rede Wi-Fi oculta",
+  "@hiddenWifiNetwork": {},
+  "noInternet": "Não quero conectar à internet neste momento",
+  "@noInternet": {},
+  "onBatteryWarning": "<font color=\"{color}\">Atenção</font>: O computador não está conectado a uma fonte de energia.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "whoAreYouPageUsernameInUse": "Esse nome de usuário já existe.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Esse nome contém caracteres inválidos.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "welcomeSlideDescription": "Rápida e cheia de novas funcionalidades, a última versão do {RELEASE} torna a computação mais fácil, como nunca antes. Aqui estão apenas algumas novidades legais para levar em conta...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideDescription": "LibreOffice é um pacote de escritório gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo desnecessário.",
+  "@officeSlideDescription": {},
+  "softwareSlideDescription": "Diga adeus à busca de novos softwares na internet. Com acesso à Loja Snap e ao arquivos de software do {RELEASE}, você pode encontrar e instalar novos aplicativos com facilidade. Basta digitar o que você está procurando ou explorar nas categorias como Gráfica e Fotografia, Jogos e Produtividade, junto com avaliações úteis de outros usuários.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideDescription": "{RELEASE} inclui o Firefox, um navegador usado por milhões de pessoas em todo o mundo. E os aplicativos que você usa com frequência (como por exemplo Facebook ou Gmail) podem ser colocados na sua área de trabalho para acesso mais rápido, de mesma forma como os aplicativos no seu computador.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideTitle": "Acesso para todos",
+  "@accessSlideTitle": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "accessSlideDescription": "No coração da filosofia do {RELEASE} está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, {RELEASE} torna a computação fácil - quem quer que você seja e onde quer que você esteja.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideDocumentation": "A documentação oficial cobre muitas áreas mais comuns sobre {RELEASE}. Está disponível tanto <a href=\"https://help.ubuntu.com\">online</a> como através do ícone de Ajuda no dock.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> você pode fazer perguntas e pesquisar numa coleção impressionante de perguntas já respondidas. O suporte em sua própria língua pode ser fornecido via <a href=\"https://loco.ubuntu.com/teams\">Equipe da comunidade local</a>.",
+  "@supportSlideQuestions": {},
+  "supportSlideResources": "Para obter dicas de outros recursos úteis, por favor, visite <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.",
+  "@supportSlideResources": {},
+  "supportedSoftware": "Software suportado",
+  "@supportedSoftware": {},
+  "whoAreYouPageUsernameSystemReserved": "Esse nome é reservado para uso do sistema.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Esse nome é muito comprido.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "webSlideFirefox": "Navegador Firefox",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "officeSlideTitle": "Tudo o que você precisa para o escritório",
+  "@officeSlideTitle": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "accessSlideCustomizationOptions": "Opções de personalização",
+  "@accessSlideCustomizationOptions": {},
+  "accessSlideAppearance": "Aparência",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "Tecnologias assistivas",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "Suporte de idiomas",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Ajuda e suporte",
+  "@supportSlideTitle": {},
+  "includedSoftware": "Software incluído",
+  "@includedSoftware": {},
+  "availableSoftware": "Software disponível",
+  "@availableSoftware": {},
+  "copyingFiles": "Copiando arquivos...",
+  "@copyingFiles": {},
+  "installationFailed": "Instalação falhou",
+  "@installationFailed": {},
+  "installationTypeDualOSDetected": "Este computador tem atualmente {os1} e {os2} instalados. O que você gostaria de fazer?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Este computador possui atualmente múltiplos sistemas operacionais. O que você gostaria de fazer?",
+  "@installationTypeMultiOSDetected": {},
+  "newPartitionTableConfirmationTitle": "Criar uma nova tabela de partições vazia neste dispositivo?",
+  "@newPartitionTableConfirmationTitle": {},
+  "newPartitionTableConfirmationMessage": "Você selecionou dispositivo inteiro para particionar. Se prosseguir com a criação de uma nova tabela de partições no dispositivo, como resultado serão removidas todas as partições atuais.\n\nObserve que você poderá desfazer esta operação mais tarde, se desejar.",
+  "@newPartitionTableConfirmationMessage": {},
+  "whoAreYouPageShowPassword": "Mostrar senha",
+  "@whoAreYouPageShowPassword": {},
+  "whereAreYouPageTitle": "Onde você está?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Localização",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Fuso horário",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeSlideTitle": "Bem-vindo ao {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "Encontre ainda mais software",
+  "@softwareSlideTitle": {},
+  "musicSlideTitle": "Leve sua música com você",
+  "@musicSlideTitle": {},
+  "musicSlideDescription": "{RELEASE} vem com o incrível reprodutor de música Rhythmbox. Com opções avançadas de reprodução, é modo simples de colocar na lista as músicas perfeitas. Funciona muito bem com CDs e dispositivos portáteis, para que você possa desfrutar de todas as suas músicas aonde você for.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideRhythmbox": "Reprodutor de música Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "photoSlideTitle": "Divirta-se com suas fotos",
+  "@photoSlideTitle": {},
+  "photoSlideDescription": "Shotwell é um prático gerenciador de fotos que é compatível com seus gadgets. Conecte uma câmera ou um celular para transferir suas fotos, compartilhá-las de forma fácil e mantê-las seguras. E se você sente-se criativo, pode encontrar muitos outros aplicativos da fotografia no Ubuntu Software.",
+  "@photoSlideDescription": {},
+  "photoSlideShotwell": "Gerenciador de fotos Shotwell",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "Editor de imagens GIMP",
+  "@photoSlideGimp": {},
+  "webSlideTitle": "Tire o máximo proveito da internet",
+  "@webSlideTitle": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {},
+  "connectToInternetPageTitle": "Conecte-se à internet",
+  "@connectToInternetPageTitle": {},
+  "connectToInternetDescription": "Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo ethernet ou escolha uma rede Wi-Fi",
+  "@connectToInternetDescription": {},
+  "useWiredConnection": "Usar conexão via cabo",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Nenhuma conexão a cabo detectada",
+  "@noWiredConnection": {},
+  "wiredMustBeEnabled": "Para utilizar a ethernet neste computador, uma conexão a cabo deve ser habilitada",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "Habilitar conexão a cabo",
+  "@enableWired": {},
+  "selectWifiNetwork": "Conectar-se a uma rede Wi-Fi",
+  "@selectWifiNetwork": {},
+  "noWifiDevicesDetected": "Nenhum dispositivo WiFi detectado",
+  "@noWifiDevicesDetected": {},
+  "wiredDisabled": "Conexão a cabo está desligada",
+  "@wiredDisabled": {},
+  "photoSlideShotcut": "Editor de vídeo Shotcut",
+  "@photoSlideShotcut": {}
 }
