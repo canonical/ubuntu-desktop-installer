@@ -181,46 +181,46 @@ class AppLocalizationsRu extends AppLocalizations {
   String get setupCompleteRestart => '* Все настройки вступят в силу после перезапуска Ubuntu.';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'Добро пожаловать в Ubuntu WSL';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => 'Инициализация...';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'Распаковка дистрибутива';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'Почти готово. Установщик скоро потребует вашего внимания.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => 'Запуск дистрибутива...';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => 'Что-то пошло не так.';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => 'Что-то пошло не так';
 
   @override
-  String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => 'Перезапустите WSL с помощью следующей команды и повторите попытку:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
 
   @override
-  String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
+  String get installationSlidesErrorText => '\nПроизошла непоправимая ошибка.\n\nПожалуйста, закройте это приложение, откройте Powershell или командную строку и выполните следующие команды:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => 'Всё установлено. Наслаждайтесь использованием Ubuntu WSL';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => 'Вы уверены, что хотите выйти?';
 
   @override
-  String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
+  String get installationSlidesExitContents => 'Закрытие этого окна не помешает продолжить установку в фоновом режиме.\n\nКроме того, вы можете продолжить изучать возможности Ubuntu WSL.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'Мы почти закончили';
 
   @override
-  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => 'Ещё несколько шагов нужно выполнить в главном окне установщика.\nМы можем ли мы закончить с этим и перейти туда?';
 
   @override
   String get installationSlidesOk => 'Ok';
@@ -229,7 +229,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesLeave => 'Leave';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'Отмена';
 
   @override
   String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
@@ -271,11 +271,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesFindOutMore => 'Find out more';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => 'Посетите ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
 
   @override
-  String get installationSlidesFindOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
+  String get installationSlidesFindOutMoreText => ' чтобы узнать больше об Ubuntu WSL и о том, как Canonical поддерживает разработчиков и организации.';
 }
