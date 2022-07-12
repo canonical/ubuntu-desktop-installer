@@ -30,9 +30,13 @@ class DiskStorageService {
   bool? _hasBitLocker;
   bool? _hasMultipleDisks;
   List<OsProber>? _existingOS;
+  GuidedChoiceV2? _guidedChoice;
 
   /// Whether the system has multiple disks available for guided partitioning.
   bool get hasMultipleDisks => _hasMultipleDisks ?? false;
+
+  /// Whether a guided storage target was chosen.
+  bool get hasGuidedChoice => _guidedChoice != null;
 
   /// Whether the storage configuration is missing a root partition.
   bool get needRoot => _needRoot ?? true;
@@ -66,9 +70,9 @@ class DiskStorageService {
   Future<GuidedStorageResponseV2> setGuidedStorage(
       GuidedStorageTarget target) async {
     final response = await _client.getGuidedStorageV2();
-    final choice = response.configured?.copyWith(target: target) ??
+    _guidedChoice = response.configured?.copyWith(target: target) ??
         GuidedChoiceV2(target: target);
-    return _client.setGuidedStorageV2(choice.copyWith(useLvm: useLvm));
+    return _client.setGuidedStorageV2(_guidedChoice!.copyWith(useLvm: useLvm));
   }
 
   List<Disk> _updateStorage(StorageResponseV2 response) {
@@ -126,6 +130,7 @@ class DiskStorageService {
   /// Resets the current storage configuration to allow reverting back to the
   /// original configuration.
   Future<List<Disk>> resetStorage() {
+    _guidedChoice = null;
     return _client.resetStorageV2().then(_updateStorage);
   }
 

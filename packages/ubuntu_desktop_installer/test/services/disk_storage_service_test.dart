@@ -247,6 +247,24 @@ void main() {
     await service.init();
     expect(service.existingOS, equals([win10, ubuntu2110, ubuntu2204]));
   });
+
+  test('guided choice', () async {
+    final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
+    final choice = GuidedChoiceV2(target: target, useLvm: false);
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+    when(client.resetStorageV2())
+        .thenAnswer((_) async => testStorageResponse());
+
+    final service = DiskStorageService(client);
+    expect(service.hasGuidedChoice, isFalse);
+
+    await service.setGuidedStorage(target);
+    expect(service.hasGuidedChoice, isTrue);
+
+    await service.resetStorage();
+    expect(service.hasGuidedChoice, isFalse);
+  });
 }
 
 StorageResponseV2 testStorageResponse({

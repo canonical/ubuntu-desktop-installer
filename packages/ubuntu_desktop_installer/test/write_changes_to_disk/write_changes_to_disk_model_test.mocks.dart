@@ -36,6 +36,10 @@ class MockDiskStorageService extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasMultipleDisks),
           returnValue: false) as bool);
   @override
+  bool get hasGuidedChoice => (super
+          .noSuchMethod(Invocation.getter(#hasGuidedChoice), returnValue: false)
+      as bool);
+  @override
   bool get needRoot =>
       (super.noSuchMethod(Invocation.getter(#needRoot), returnValue: false)
           as bool);
