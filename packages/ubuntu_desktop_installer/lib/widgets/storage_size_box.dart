@@ -12,7 +12,8 @@ class StorageSizeBox extends StatelessWidget {
     Key? key,
     required this.size,
     required this.unit,
-    required this.available,
+    this.minimum = 0,
+    required this.maximum,
     required this.onSizeChanged,
     required this.onUnitSelected,
   }) : super(key: key);
@@ -23,8 +24,11 @@ class StorageSizeBox extends StatelessWidget {
   /// The unit for visualization.
   final DataUnit unit;
 
+  /// The minimum value in bytes.
+  final int minimum;
+
   /// The maximum value in bytes.
-  final int available;
+  final int maximum;
 
   final ValueChanged<int> onSizeChanged;
   final ValueChanged<DataUnit> onUnitSelected;
@@ -37,7 +41,8 @@ class StorageSizeBox extends StatelessWidget {
         Expanded(
           child: SpinBox(
             value: fromBytes(size, unit),
-            max: fromBytes(available, unit),
+            min: fromBytes(minimum, unit),
+            max: fromBytes(maximum, unit),
             onChanged: (value) => onSizeChanged(toBytes(value, unit)),
           ),
         ),

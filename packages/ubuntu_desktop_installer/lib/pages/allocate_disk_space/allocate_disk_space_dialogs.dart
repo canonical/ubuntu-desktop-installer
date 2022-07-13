@@ -78,7 +78,7 @@ Future<void> showCreatePartitionDialog(
                   return StorageSizeBox(
                     size: partitionSize.value,
                     unit: partitionUnit.value,
-                    available: gap.size,
+                    maximum: gap.size,
                     onSizeChanged: (v) => partitionSize.value = v,
                     onUnitSelected: (v) => partitionUnit.value = v,
                   );
