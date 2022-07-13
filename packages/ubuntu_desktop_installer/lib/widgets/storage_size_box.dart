@@ -4,7 +4,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../../l10n.dart';
+import '../l10n.dart';
 
 /// Storage size entry with a spinbox and a data size unit dropdown.
 class StorageSizeBox extends StatelessWidget {
@@ -12,9 +12,12 @@ class StorageSizeBox extends StatelessWidget {
     Key? key,
     required this.size,
     required this.unit,
-    required this.available,
+    this.minimum = 0,
+    required this.maximum,
     required this.onSizeChanged,
     required this.onUnitSelected,
+    this.autofocus = false,
+    this.spacing = kButtonBarSpacing,
   }) : super(key: key);
 
   /// The current value in bytes.
@@ -23,11 +26,25 @@ class StorageSizeBox extends StatelessWidget {
   /// The unit for visualization.
   final DataUnit unit;
 
-  /// The maximum value in bytes.
-  final int available;
+  /// The minimum value in bytes.
+  final int minimum;
 
+  /// The maximum value in bytes.
+  final int maximum;
+
+  /// The callback called whenever the size changes.
   final ValueChanged<int> onSizeChanged;
+
+  /// The callback called whenever the user selects a size unit.
   final ValueChanged<DataUnit> onUnitSelected;
+
+  /// Whether the widget should automatically gain focus if nothing else is
+  /// already focused.
+  final bool autofocus;
+
+  /// The spacing between the value spinbox and the unit dropdown. Defaults to
+  /// `kButtonBarSpacing`.
+  final double spacing;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +54,13 @@ class StorageSizeBox extends StatelessWidget {
         Expanded(
           child: SpinBox(
             value: fromBytes(size, unit),
-            max: fromBytes(available, unit),
+            min: fromBytes(minimum, unit),
+            max: fromBytes(maximum, unit),
             onChanged: (value) => onSizeChanged(toBytes(value, unit)),
+            autofocus: autofocus,
           ),
         ),
-        const SizedBox(width: kButtonBarSpacing),
+        SizedBox(width: spacing),
         IntrinsicWidth(
           child: DropdownBuilder<DataUnit>(
             values: DataUnit.values,

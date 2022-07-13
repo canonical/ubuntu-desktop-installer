@@ -5,8 +5,8 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
+import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
-import 'storage_size_box.dart';
 import 'storage_types.dart';
 
 /// Shows a confirmation dialog with the given title and message.
@@ -78,7 +78,7 @@ Future<void> showCreatePartitionDialog(
                   return StorageSizeBox(
                     size: partitionSize.value,
                     unit: partitionUnit.value,
-                    available: gap.size,
+                    maximum: gap.size,
                     onSizeChanged: (v) => partitionSize.value = v,
                     onUnitSelected: (v) => partitionUnit.value = v,
                   );
