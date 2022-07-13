@@ -5,8 +5,8 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
+import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
-import 'storage_size_box.dart';
 import 'storage_types.dart';
 
 /// Shows a confirmation dialog with the given title and message.
