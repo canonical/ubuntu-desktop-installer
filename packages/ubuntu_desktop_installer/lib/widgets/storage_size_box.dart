@@ -16,6 +16,7 @@ class StorageSizeBox extends StatelessWidget {
     required this.maximum,
     required this.onSizeChanged,
     required this.onUnitSelected,
+    this.autofocus = false,
   }) : super(key: key);
 
   /// The current value in bytes.
@@ -33,6 +34,10 @@ class StorageSizeBox extends StatelessWidget {
   final ValueChanged<int> onSizeChanged;
   final ValueChanged<DataUnit> onUnitSelected;
 
+  /// Whether the widget should automatically gain focus if nothing else is
+  /// already focused.
+  final bool autofocus;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -44,6 +49,7 @@ class StorageSizeBox extends StatelessWidget {
             min: fromBytes(minimum, unit),
             max: fromBytes(maximum, unit),
             onChanged: (value) => onSizeChanged(toBytes(value, unit)),
+            autofocus: autofocus,
           ),
         ),
         const SizedBox(width: kButtonBarSpacing),

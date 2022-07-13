@@ -106,6 +106,7 @@ void main() {
 
     await tester.pumpStorageSizeBox(
       StorageSizeBox(
+        autofocus: true,
         unit: DataUnit.bytes,
         size: 1,
         minimum: 1,
@@ -114,8 +115,6 @@ void main() {
         onUnitSelected: (_) {},
       ),
     );
-
-    await tester.tap(find.byType(StorageSizeBox));
 
     // up until max
     for (var i = 2; i <= 10; ++i) {
