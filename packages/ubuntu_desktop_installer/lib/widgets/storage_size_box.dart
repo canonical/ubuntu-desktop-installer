@@ -31,7 +31,10 @@ class StorageSizeBox extends StatelessWidget {
   /// The maximum value in bytes.
   final int maximum;
 
+  /// The callback called whenever the size changes.
   final ValueChanged<int> onSizeChanged;
+
+  /// The callback called whenever the user selects a size unit.
   final ValueChanged<DataUnit> onUnitSelected;
 
   /// Whether the widget should automatically gain focus if nothing else is
