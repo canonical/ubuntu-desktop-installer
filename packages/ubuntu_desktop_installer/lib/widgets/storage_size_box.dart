@@ -17,6 +17,7 @@ class StorageSizeBox extends StatelessWidget {
     required this.onSizeChanged,
     required this.onUnitSelected,
     this.autofocus = false,
+    this.spacing = kButtonBarSpacing,
   }) : super(key: key);
 
   /// The current value in bytes.
@@ -41,6 +42,10 @@ class StorageSizeBox extends StatelessWidget {
   /// already focused.
   final bool autofocus;
 
+  /// The spacing between the value spinbox and the unit dropdown. Defaults to
+  /// `kButtonBarSpacing`.
+  final double spacing;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -55,7 +60,7 @@ class StorageSizeBox extends StatelessWidget {
             autofocus: autofocus,
           ),
         ),
-        const SizedBox(width: kButtonBarSpacing),
+        SizedBox(width: spacing),
         IntrinsicWidth(
           child: DropdownBuilder<DataUnit>(
             values: DataUnit.values,
