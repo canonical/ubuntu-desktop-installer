@@ -22,7 +22,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get changeButtonText => 'Alterar';
 
   @override
-  String get okButtonText => 'Ok';
+  String get okButtonText => 'OK';
 
   @override
   String get noButtonText => 'Não';
@@ -40,7 +40,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get welcome => 'Bem-vindo';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Escolha o seu idioma:';
 
   @override
   String get tryOrInstallPageTitle => 'Experimentar ou instalar';
