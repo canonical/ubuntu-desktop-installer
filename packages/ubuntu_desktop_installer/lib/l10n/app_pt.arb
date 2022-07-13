@@ -6,7 +6,7 @@
   "@cancelButtonText": {},
   "changeButtonText": "Alterar",
   "@changeButtonText": {},
-  "okButtonText": "Ok",
+  "okButtonText": "OK",
   "@okButtonText": {},
   "noButtonText": "Não",
   "@noButtonText": {},
@@ -407,5 +407,7 @@
   "whoAreYouPageInvalidComputerName": "O nome do computador não é válido",
   "@whoAreYouPageInvalidComputerName": {},
   "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
-  "@turnOffBitlockerDescription": {}
+  "@turnOffBitlockerDescription": {},
+  "welcomeHeader": "Escolha o seu idioma:",
+  "@welcomeHeader": {}
 }
