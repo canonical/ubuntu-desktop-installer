@@ -344,6 +344,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'インストール';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'ディスク領域の割り当て';
 
   @override

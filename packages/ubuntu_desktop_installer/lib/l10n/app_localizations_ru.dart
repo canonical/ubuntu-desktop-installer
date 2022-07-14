@@ -344,6 +344,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Установить сейчас';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Выделить место на диске';
 
   @override

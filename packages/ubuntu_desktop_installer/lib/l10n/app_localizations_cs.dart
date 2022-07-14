@@ -344,6 +344,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Nainstalovat nyní';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Přidělit prostor na disku';
 
   @override

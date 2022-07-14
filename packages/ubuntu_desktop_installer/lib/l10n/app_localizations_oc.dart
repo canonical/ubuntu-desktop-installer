@@ -344,6 +344,15 @@ class AppLocalizationsOc extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installar ara';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Atribuir l’espaci disc';
 
   @override

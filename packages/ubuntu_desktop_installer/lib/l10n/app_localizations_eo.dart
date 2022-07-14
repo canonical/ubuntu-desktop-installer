@@ -344,6 +344,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Ekinstali';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Asigni diskospacon';
 
   @override
