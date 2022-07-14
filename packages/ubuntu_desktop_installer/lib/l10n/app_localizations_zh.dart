@@ -344,6 +344,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectGuidedStorageInstallNow => '立即安装';
 
   @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
