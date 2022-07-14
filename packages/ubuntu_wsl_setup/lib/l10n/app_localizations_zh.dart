@@ -181,7 +181,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get setupCompleteRestart => '所有设置将在Ubuntu重新启动后生效。';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => '欢迎来到Ubuntu WSL';
 
   @override
   String get installationSlidesInitializing => 'Initializing...';
@@ -202,16 +202,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesErrorTitle => 'Something went wrong';
 
   @override
-  String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => '请选择命令重试并重启WSL：\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
 
   @override
   String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => '完成。在WSL享受Ubuntu';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => '你确定要离开？';
 
   @override
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
@@ -223,16 +223,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => '确定';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => '离开';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => '取消';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'WSL上的Ubuntu';
 
   @override
   String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
@@ -271,7 +271,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesFindOutMore => 'Find out more';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => '查看 ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
