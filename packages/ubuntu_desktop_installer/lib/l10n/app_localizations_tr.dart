@@ -344,6 +344,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Şimdi Kur';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Disk alanı ayır';
 
   @override

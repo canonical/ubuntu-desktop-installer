@@ -344,6 +344,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Asenna nyt';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Varaa levytilaa';
 
   @override

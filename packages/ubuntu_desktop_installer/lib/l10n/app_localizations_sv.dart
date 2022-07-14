@@ -344,6 +344,15 @@ class AppLocalizationsSv extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installera nu';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Tilldela diskutrymme';
 
   @override

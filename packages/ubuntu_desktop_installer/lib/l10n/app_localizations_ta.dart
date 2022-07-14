@@ -344,6 +344,15 @@ class AppLocalizationsTa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'இப்போது நிறுவு';
 
   @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
+
+  @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
