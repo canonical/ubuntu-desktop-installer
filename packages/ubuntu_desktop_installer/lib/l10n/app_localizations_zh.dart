@@ -524,7 +524,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => '名字过长.';
 
   @override
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
@@ -708,10 +708,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get officeSlideWriter => 'LibreOffice Writer';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'LibreOffice 表格';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'LibreOffice 演示';
 
   @override
   String get accessSlideTitle => 'Access for everyone';
@@ -731,10 +731,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get accessSlideAssistiveTechnologies => 'Assistive technologies';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => '语言支持';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => '帮助和支持';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -742,7 +742,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>你可以问问题并搜索令人印象深刻的已回答问题。你的<a href=\"https://loco.ubuntu.com/teams\">社区团队</a>可能会为你的语言提供支持.';
 
   @override
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
@@ -754,10 +754,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get availableSoftware => 'Available software';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => '支持软件';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => '复制文件……';
 
   @override
   String get installationFailed => 'Installation failed';
