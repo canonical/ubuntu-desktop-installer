@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -97,4 +99,32 @@ Disk testDisk({
     model: model,
     vendor: vendor,
   );
+}
+
+extension UbuntuFinders on CommonFinders {
+  Finder asset(String assetName) {
+    return find.byWidgetPredicate((widget) {
+      bool hasAssetImage(Widget widget) {
+        return widget is Image &&
+            widget.image is AssetImage &&
+            (widget.image as AssetImage).assetName.endsWith(assetName);
+      }
+
+      bool hasAssetPicture(Widget widget) {
+        return widget is SvgPicture &&
+            widget.pictureProvider is ExactAssetPicture &&
+            (widget.pictureProvider as ExactAssetPicture)
+                .assetName
+                .endsWith(assetName);
+      }
+
+      return hasAssetImage(widget) || hasAssetPicture(widget);
+    });
+  }
+
+  Finder html(String html) {
+    return find.byWidgetPredicate((widget) {
+      return widget is Html && widget.data == html;
+    });
+  }
 }

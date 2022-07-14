@@ -143,20 +143,6 @@ void main() {
   group('default slide', () {
     setUp(() => UbuntuTester.context = Scaffold);
 
-    Finder findAsset(String assetName) {
-      return find.byWidgetPredicate((widget) {
-        return widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName.endsWith(assetName);
-      });
-    }
-
-    Finder findHtml(String html) {
-      return find.byWidgetPredicate((widget) {
-        return widget is Html && widget.data == html;
-      });
-    }
-
     Future<void> pumpSlide(WidgetTester tester, int index) {
       return tester.pumpWidget(
         tester.buildApp(
@@ -184,9 +170,9 @@ void main() {
     }) async {
       if (title != null) expect(find.text(title), findsOneWidget);
       if (text != null) expect(find.text(text), findsOneWidget);
-      if (description != null) expect(findHtml(description), findsOneWidget);
-      if (background != null) expect(findAsset(background), findsOneWidget);
-      if (screenshot != null) expect(findAsset(screenshot), findsOneWidget);
+      if (description != null) expect(find.html(description), findsOneWidget);
+      if (background != null) expect(find.asset(background), findsOneWidget);
+      if (screenshot != null) expect(find.asset(screenshot), findsOneWidget);
     }
 
     testWidgets('welcome', (tester) async {
