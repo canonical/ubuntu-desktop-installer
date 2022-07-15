@@ -197,9 +197,10 @@ class SubiquityProcess {
       await deferStart;
     }
 
+    final allArgs = [...args, ...?additionalArgs];
     _serverProcess = await Process.start(
       command,
-      [...args, ...?additionalArgs],
+      allArgs,
       workingDirectory: workingDirectory,
       environment: {...?environment, ...?additionalEnv},
     ).then((process) {
@@ -207,7 +208,8 @@ class SubiquityProcess {
       stderr.addStream(process.stderr);
       return process;
     });
-    log.info('Starting server (PID: ${_serverProcess!.pid}) with args: $args');
+    log.info(
+        'Starting server (PID: ${_serverProcess!.pid}) with args: $allArgs');
 
     await onProcessStart?.call();
     await writePidFile(_serverProcess!.pid);
