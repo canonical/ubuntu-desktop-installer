@@ -825,6 +825,24 @@ abstract class AppLocalizations {
   /// **'Install Now'**
   String get selectGuidedStorageInstallNow;
 
+  /// No description provided for @installAlongsideResizePartition.
+  ///
+  /// In en, this message translates to:
+  /// **'Resize partition'**
+  String get installAlongsideResizePartition;
+
+  /// No description provided for @installAlongsideAllocateSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Allocate space'**
+  String get installAlongsideAllocateSpace;
+
+  /// No description provided for @installAlongsideFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Files'**
+  String get installAlongsideFiles;
+
   /// No description provided for @installAlongsidePartition.
   ///
   /// In en, this message translates to:

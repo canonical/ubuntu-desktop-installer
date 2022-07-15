@@ -344,6 +344,15 @@ class AppLocalizationsCa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Instal·la ara';
 
   @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
