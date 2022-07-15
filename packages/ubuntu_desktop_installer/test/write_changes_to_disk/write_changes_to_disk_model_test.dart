@@ -34,9 +34,14 @@ void main() {
         Partition(number: 4, grubDevice: false),
       ],
     ),
+    testDisk(
+      path: '/dev/sdd',
+      preserve: true,
+      partitions: [Partition(number: 1, preserve: true)],
+    ),
   ];
 
-  final nonPreservedDisks = <Disk>[testDisks.first, testDisks.last];
+  final nonPreservedDisks = <Disk>[testDisks[0], testDisks[1], testDisks[2]];
 
   test('get storage', () async {
     final client = MockSubiquityClient();

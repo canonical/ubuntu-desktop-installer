@@ -15,7 +15,8 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
   List<Disk>? _disks;
   Map<String, List<Partition>>? _partitions;
 
-  /// The list of non-preserved disks.
+  /// The list of non-preserved disks, and preserved disks with any non-preserved
+  /// partitions.
   List<Disk> get disks => _disks ?? [];
 
   /// A map of non-preserved partitions per each disk (sysname).
@@ -31,7 +32,11 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
   }
 
   void _updateDisks(List<Disk> disks) {
-    _disks = disks.where((d) => d.preserve == false).toList();
+    _disks = disks
+        .where((d) =>
+            d.preserve == false ||
+            d.partitions.whereType<Partition>().any((p) => p.preserve == false))
+        .toList();
     _partitions = Map.fromEntries(
       disks.map((disk) {
         final partitions = disk.partitions
