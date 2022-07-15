@@ -319,6 +319,21 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Rechners auswählen, welches Betriebssystem Sie verwenden möchten.';
 
   @override
@@ -342,6 +357,14 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Jetzt installieren';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
 
   @override
   String get installAlongsideResizePartition => 'Resize partition';

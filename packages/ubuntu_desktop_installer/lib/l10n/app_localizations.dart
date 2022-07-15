@@ -783,6 +783,24 @@ abstract class AppLocalizations {
   /// **'Install {product} alongside {os}'**
   String installationTypeAlongside(Object product, Object os);
 
+  /// No description provided for @installationTypeAlongsideDual.
+  ///
+  /// In en, this message translates to:
+  /// **'Install {product} alongside {os1} and {os2}'**
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2);
+
+  /// No description provided for @installationTypeAlongsideMulti.
+  ///
+  /// In en, this message translates to:
+  /// **'Install {product} alongside them'**
+  String installationTypeAlongsideMulti(Object product);
+
+  /// No description provided for @installationTypeAlongsideUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Install {product} alongside other partitions'**
+  String installationTypeAlongsideUnknown(Object product);
+
   /// No description provided for @installationTypeAlongsideInfo.
   ///
   /// In en, this message translates to:
@@ -824,6 +842,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Install Now'**
   String get selectGuidedStorageInstallNow;
+
+  /// No description provided for @installAlongsideSpaceDivider.
+  ///
+  /// In en, this message translates to:
+  /// **'Allocate drive space by dragging the divider below:'**
+  String get installAlongsideSpaceDivider;
+
+  /// No description provided for @installAlongsideHiddenPartitions.
+  ///
+  /// In en, this message translates to:
+  /// **'{num} smaller partitions are hidden, use the <a href=\"{url}\">advanced partitioning tool</a> for more control'**
+  String installAlongsideHiddenPartitions(Object num, Object url);
 
   /// No description provided for @installAlongsideResizePartition.
   ///

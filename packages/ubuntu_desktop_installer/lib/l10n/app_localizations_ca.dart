@@ -319,6 +319,21 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Els documents, la música i la resta de fitxers personals es conservaran. Podreu triar quin sistema operatiu voleu utilitzar cada cop que engegueu l\'ordinador.';
 
   @override
@@ -342,6 +357,14 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Instal·la ara';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
 
   @override
   String get installAlongsideResizePartition => 'Resize partition';

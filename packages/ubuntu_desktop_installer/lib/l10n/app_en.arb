@@ -208,6 +208,29 @@
       "os": {}
     }
   },
+  "installationTypeAlongsideDual": "Install {product} alongside {os1} and {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Install {product} alongside them",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Install {product} alongside other partitions",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
   "installationTypeAlongsideInfo": "Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.",
   "installationTypeManual": "Something else",
   "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for {DISTRO}",
@@ -227,6 +250,15 @@
   "selectGuidedStorageDropdownLabel": "Select drive:",
   "selectGuidedStorageInfoLabel": "The entire disk will be used:",
   "selectGuidedStorageInstallNow": "Install Now",
+  "installAlongsideSpaceDivider": "Allocate drive space by dragging the divider below:",
+  "installAlongsideHiddenPartitions": "{num} smaller partitions are hidden, use the <a href=\"{url}\">advanced partitioning tool</a> for more control",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
   "installAlongsideResizePartition": "Resize partition",
   "installAlongsideAllocateSpace": "Allocate space",
   "installAlongsideFiles": "Files",

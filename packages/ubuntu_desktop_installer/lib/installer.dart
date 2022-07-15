@@ -311,6 +311,13 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
             return Routes.allocateDiskSpace;
           },
         ),
+        Routes.installAlongside: WizardRoute(
+          builder: InstallAlongsidePage.create,
+          onReplace: (_) => Routes.allocateDiskSpace,
+          onNext: (_) => service.hasEncryption
+              ? Routes.chooseSecurityKey
+              : Routes.writeChangesToDisk,
+        ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
           onNext: (_) =>
