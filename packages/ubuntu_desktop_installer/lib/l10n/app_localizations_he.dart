@@ -319,6 +319,21 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
@@ -342,6 +357,14 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'להתקין כעת';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
 
   @override
   String get installAlongsideResizePartition => 'Resize partition';

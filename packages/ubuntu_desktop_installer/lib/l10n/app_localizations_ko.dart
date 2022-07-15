@@ -319,6 +319,21 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
@@ -342,6 +357,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => '지금 설치';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
 
   @override
   String get installAlongsideResizePartition => 'Resize partition';
