@@ -22,7 +22,7 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   /// Detailed info of the product being installed.
   final productInfo = ProductInfoExtractor().getProductInfo();
 
-  /// A list of existing OS installations or null if not detected.
+  /// A list of existing OS installations or empty if not detected.
   List<OsProber> get existingOS => _service.existingOS ?? [];
 
   /// Number of storages available for guided partitioning.
@@ -82,6 +82,7 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   /// Returns the partition of the guided storage at the given index.
   Partition? getPartition(int index) {
     final number = getStorage(index)?.partitionNumber;
+    if (number == null) return null;
     return getAllPartitions(index)?.firstOrNullWhere((p) => p.number == number);
   }
 
