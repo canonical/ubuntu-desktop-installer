@@ -583,5 +583,50 @@
   "whoAreYouPageUsernameSystemReserved": "שם זה שמור לטובת המערכת.",
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameInvalidChars": "השם הזה מכיל תווים שגויים.",
-  "@whoAreYouPageUsernameInvalidChars": {}
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installAlongsideFiles": "קבצים",
+  "@installAlongsideFiles": {},
+  "installationTypeAlongsideDual": "להתקין את {product} לצד {os1} ו־{os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsidePartition": "מחיצה:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "גודל:",
+  "@installAlongsideSize": {},
+  "installationTypeAlongsideUnknown": "להתקין את {product} לצד מחיצות אחרות",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideResizePartition": "שינוי גודל מחיצה",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "הקצאת מקום",
+  "@installAlongsideAllocateSpace": {},
+  "installationTypeAlongsideMulti": "להתקין את {product} לצדם",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "גרירת החוצץ שלהלן תגדיר את הקצאת המקום בכונן:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideHiddenPartitions": "{num} מחיצות קטנות יותר מוסתרות, יש להשתמש ב<a href=\"{url}\">כלי המתקדם לחלוקה למחיצות</a> לשליטה טובה יותר",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAvailable": "זמין:",
+  "@installAlongsideAvailable": {}
 }
