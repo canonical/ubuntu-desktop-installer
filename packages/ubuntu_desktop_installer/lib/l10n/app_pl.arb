@@ -91,7 +91,7 @@
   "@installationTypeZFSSelected": {},
   "selectGuidedStoragePageTitle": "Wymaż dysk i zainstaluj {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
-  "allocateDiskSpace": "Przydziel miejsce na dysku",
+  "allocateDiskSpace": "Przydziel przestrzeń dyskową",
   "@allocateDiskSpace": {},
   "diskHeadersType": "Typ",
   "@diskHeadersType": {},
@@ -583,5 +583,50 @@
   "whoAreYouPageUsernameInvalidChars": "Ta nazwa zawiera nieprawidłowe znaki.",
   "@whoAreYouPageUsernameInvalidChars": {},
   "whoAreYouPageUsernameTooLong": "Ta nazwa jest za długa.",
-  "@whoAreYouPageUsernameTooLong": {}
+  "@whoAreYouPageUsernameTooLong": {},
+  "installationTypeAlongsideMulti": "Zainstaluj {product} obok nich",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Przydziel przestrzeń dyskową, przesuwając poniższą podziałkę:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideResizePartition": "Zmień rozmiar partycji",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Przydziel przestrzeń",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Pliki",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Partycja:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAvailable": "Dostępne:",
+  "@installAlongsideAvailable": {},
+  "installationTypeAlongsideDual": "Zainstaluj {product} obok {os1} i {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Zainstaluj {product} obok innych partycji",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} mniejsze partycje są ukryte, użyj <a href=\"{url}\">zaawansowanego narzędzia do partycjonowania</a>, aby uzyskać większą kontrolę",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideSize": "Rozmiar:",
+  "@installAlongsideSize": {}
 }
