@@ -638,5 +638,15 @@
   "whoAreYouPageUsernameTooLong": "その名前は長すぎます。",
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "その名前には無効な文字が含まれています。",
-  "@whoAreYouPageUsernameInvalidChars": {}
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installAlongsidePartition": "パーティション:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "サイズ:",
+  "@installAlongsideSize": {},
+  "installAlongsideFiles": "ファイル",
+  "@installAlongsideFiles": {},
+  "installAlongsideAllocateSpace": "ディスク領域の割り当て",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideAvailable": "利用可能:",
+  "@installAlongsideAvailable": {}
 }
