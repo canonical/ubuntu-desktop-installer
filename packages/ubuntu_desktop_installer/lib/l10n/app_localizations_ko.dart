@@ -559,7 +559,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => '올바르지 않은 사용자 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 있습니다.';
+  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 존재합니다.';
 
   @override
   String get whoAreYouPageUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
@@ -798,8 +798,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get supportedSoftware => '지원되는 소프트웨어';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => '파일 복사 중...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => '설치 실패';
 }
