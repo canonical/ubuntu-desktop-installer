@@ -130,7 +130,7 @@ void main() {
     verify(storage.useLvm = true).called(1);
   });
 
-  testWidgets('single reformat target', (tester) async {
+  test('single reformat target', () async {
     final reformat = GuidedStorageTargetReformat(diskId: '');
     final choice = GuidedChoiceV2(target: reformat);
 
@@ -147,5 +147,141 @@ void main() {
 
     await model.save();
     verify(service.setGuidedStorage(reformat)).called(1);
+  });
+
+  test('can install alongside', () async {
+    final service = MockDiskStorageService();
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    // none
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+    await model.init();
+    expect(model.canInstallAlongside, isFalse);
+
+    // reformat
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    await model.init();
+    expect(model.canInstallAlongside, isFalse);
+
+    // resize
+    final resize = GuidedStorageTargetResize(
+        diskId: '',
+        partitionNumber: 0,
+        newSize: 0,
+        maximum: 0,
+        minimum: 0,
+        recommended: 0);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+
+    // gap
+    final gap =
+        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 0));
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+
+    // all
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+  });
+
+  test('pre-select target', () async {
+    final service = MockDiskStorageService();
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    // none
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // reformat
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), reformat);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // multiple reformats
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponseV2(possible: [reformat, reformat]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // resize
+    final resize = GuidedStorageTargetResize(
+        diskId: '',
+        partitionNumber: 0,
+        newSize: 0,
+        maximum: 0,
+        minimum: 0,
+        recommended: 0);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // gap
+    final gap =
+        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 1));
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), gap);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // multiple gaps
+    final gap2 =
+        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 2));
+    final gap3 =
+        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 3));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponseV2(possible: [gap, gap3, gap2]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), gap3);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // all
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), reformat);
+    expect(model.preselectTarget(InstallationType.alongside), gap);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+  });
+
+  test('reset storage', () async {
+    final service = MockDiskStorageService();
+    when(service.resetStorage()).thenAnswer((_) async => []);
+
+    final model = InstallationTypeModel(service, MockTelemetryService());
+    await model.resetStorage();
+    verify(service.resetStorage()).called(1);
   });
 }

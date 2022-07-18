@@ -3,9 +3,10 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i4;
-import 'dart:ui' as _i5;
+import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i5;
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart'
     as _i3;
 import 'package:ubuntu_wizard/utils.dart' as _i2;
@@ -60,6 +61,10 @@ class MockInstallationTypeModel extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#encryption, encryption),
           returnValueForMissingStub: null);
   @override
+  bool get canInstallAlongside =>
+      (super.noSuchMethod(Invocation.getter(#canInstallAlongside),
+          returnValue: false) as bool);
+  @override
   bool get isDisposed =>
       (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
           as bool);
@@ -72,19 +77,28 @@ class MockInstallationTypeModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  _i5.GuidedStorageTarget? preselectTarget(_i3.InstallationType? type) =>
+      (super.noSuchMethod(Invocation.method(#preselectTarget, [type]))
+          as _i5.GuidedStorageTarget?);
+  @override
   _i4.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> resetStorage() =>
+      (super.noSuchMethod(Invocation.method(#resetStorage, []),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
   void notifyListeners() =>
       super.noSuchMethod(Invocation.method(#notifyListeners, []),
           returnValueForMissingStub: null);
   @override
-  void addListener(_i5.VoidCallback? listener) =>
+  void addListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
+  void removeListener(_i6.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override

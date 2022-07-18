@@ -74,14 +74,48 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _diskService.existingOS;
 
-  /// A list of guided storage targets or null if not detected.
-  List<GuidedStorageTarget>? get storages => _storages;
+  /// Whether installation alongside an existing OS is possible.
+  ///
+  /// That is, whether a) an existing partition can be safely resized smaller to
+  /// make room for the installation, or b) there is a large enough unused gap.
+  bool get canInstallAlongside {
+    return _storages?.any((target) =>
+            target is GuidedStorageTargetResize ||
+            target is GuidedStorageTargetUseGap) ??
+        false;
+  }
 
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
-    // TODO: determine the preferred installation type from the available targets
+    _installationType = canInstallAlongside
+        ? InstallationType.alongside
+        : InstallationType.erase;
     notifyListeners();
+  }
+
+  /// Resolves the automatic guided storage target selection for the given
+  /// installation type.
+  ///
+  /// Automatic cases:
+  /// - when erasing the disk and there's only one reformat target
+  /// - when installing alongside an existing OS and there's a large enough gap
+  ///
+  /// For all other cases, the user is prompted to select or resize a target.
+  GuidedStorageTarget? preselectTarget(InstallationType type) {
+    switch (type) {
+      case InstallationType.erase:
+        return _storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
+
+      case InstallationType.alongside:
+        return _storages
+            ?.whereType<GuidedStorageTargetUseGap>()
+            .sorted((a, b) => a.gap.size.compareTo(b.gap.size))
+            .lastOrNull;
+
+      default:
+        return null;
+    }
   }
 
   /// Saves the installation type selection and applies the guide storage
@@ -89,13 +123,10 @@ class InstallationTypeModel extends SafeChangeNotifier {
   Future<void> save() async {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
 
-    // select the appropriate target right away when there's only one option
-    if (_installationType == InstallationType.erase) {
-      final reformat =
-          storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
-      if (reformat != null) {
-        await _diskService.setGuidedStorage(reformat);
-      }
+    // automatically pre-select a guided storage target if possible
+    final target = preselectTarget(installationType);
+    if (target != null) {
+      await _diskService.setGuidedStorage(target);
     }
 
     // All possible values for the partition method
@@ -122,4 +153,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
     // wiping the user's home directory (not implemented yet)
     // to the 'reuse_partition' method.
   }
+
+  Future<void> resetStorage() => _diskService.resetStorage();
 }
