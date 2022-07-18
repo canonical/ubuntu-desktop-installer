@@ -47,6 +47,7 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
+    parser.addOption('bootloader', hide: true);
   })!;
 
   final subiquityClient = SubiquityClient();
@@ -122,11 +123,11 @@ Future<void> runInstallerApp(
     subiquityServer: subiquityServer,
     subiquityMonitor: subiquityMonitor,
     serverArgs: [
-      if (options['machine-config'] != null) ...[
-        '--machine-config',
-        options['machine-config'],
-        '--storage-version=2',
-      ],
+      if (options['machine-config'] != null)
+        '--machine-config=${options['machine-config']}',
+      if (options['bootloader'] != null)
+        '--bootloader=${options['bootloader']}',
+      '--storage-version=2',
     ],
   );
 
