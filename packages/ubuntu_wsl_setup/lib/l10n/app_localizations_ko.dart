@@ -134,7 +134,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIInteropAppendWindowsPathTitle => 'Windows 경로 붙이기';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'WSL 에서 PAT 환경 변수의 뒤에 Windows 경로를 붙일지 여부';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'WSL 에서 PATH 환경 변수의 뒤에 Windows 경로를 붙일지 여부';
 
   @override
   String get configurationUIAutoMountHeader => '자동 마운트';
@@ -149,7 +149,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab 마운트';
 
   @override
-  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. 이 파일은 시스템이 마운트 될 파일시스템에 관한 정보를 담고 있습니다.';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. 이 파일은 시스템이 마운트 할 파일시스템에 관한 정보를 담고 있습니다.';
 
   @override
   String get configurationUISystemdHeader => '실험적 기능 - Systemd';
@@ -181,101 +181,101 @@ class AppLocalizationsKo extends AppLocalizations {
   String get setupCompleteRestart => '* 모든 설정은 우분투를 다시 시작 후 적용됩니다.';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => '우분투 WSL에 오신것을 환영합니다';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => '초기화 중...';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => '배포판 푸는 중';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => '거의 다 되었습니다. 곧 설치 마법사에 주의가 필요할 것입니다.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => '배포판 실행 중...';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => '무엇인가 잘못되었습니다.';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => '무엇인가 잘못되었습니다';
 
   @override
-  String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => '아래 명령으로 WSL 다시 시작하고 다시 시도 해 주십시오:\n\twsl --shutdown\n\twsl --unregister 배포판_이름';
 
   @override
-  String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
+  String get installationSlidesErrorText => '\n복구 불가능한 오류가 발생했습니다.\n\n이 애플리케이션을 닫고, Powershell이나 명령 프롬프트를 열어 아래 명령을 실행하십히오:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => '모두 설정되었습니다. 우분투 WSL 사용을 즐겨주세요';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => '정말로 떠나시겠습니까?';
 
   @override
-  String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
+  String get installationSlidesExitContents => '이 창을 닫아도 설치는 백그라운드에서 계속 진행됩니다.\n\n또한 우분투 WSl로 할 수 있는 작업을 계속 탐색해 보실 수 있습니다.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => '거의 다 되었습니다';
 
   @override
-  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => '주 설치 프로그램 창에서 완료할 몇 가지 단계가 있습니다.\n이 창을 닫고 이동하시겠습니까?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => '예';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => '떠나기';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => '취소';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => '우분투 WSL';
 
   @override
-  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+  String get installationSlidesUbuntuOnWslText => '리눅스 애플리케이션 개발 및 실행을 위해 Windows와 긴밀하게 통합된 완전한 우분투 환경. 클라우드, 웹, 데이터 과학, IOT 및 재미에 최적화 되었습니다!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => '웹 개발을 위한\n우분투 WSL';
 
   @override
-  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+  String get installationSlidesUbuntuWslWebDevText => 'VS Code와 IntelliJ 를 포함한 네이티브 Windows IDE를 사용하여 WSL에서 개발하고 완전한 NodeJS 및 Ruby 지원의 이점을 누리십시오.';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => '데이터 과학을 위한 우분투 WSL';
 
   @override
-  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack은 네이티브 Windows NVIDIA 드라이버를 기반으로 데이터 과학과 기계 학습 프로젝트 성능을 극대화 할 수 있도록 해 줍니다.';
 
   @override
-  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+  String get installationSlidesUbuntuWslGuiApps => 'GUI 앱을 위한\n우분투 WSl';
 
   @override
-  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+  String get installationSlidesUbuntuWslGuiAppsText => '다중 플랫폼 개발을 위해 WSLg를 사용하여 Linux에서 웹 및 GUI 애플리케이션을 개발하고 미리 봅니다.';
 
   @override
-  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'DevOps를 위한 우분투 WSL';
 
   @override
-  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+  String get installationSlidesUbuntuWslDevOpsText => '우분투 프로덕션 환경에 게시하기 전에 우분투 WSL로 로컬에서 개발하여 CI/CD 파이프라인 호환성을 확실히 합니다';
 
   @override
-  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => '기업용 우분투 WSL';
 
   @override
-  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => '인증된 우분투 LTS로\n기업용 Windows 생태계\n개발자들에게 힘을 실어주십시오.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => '더 알아보기';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => '웹사이트 ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
 
   @override
-  String get installationSlidesFindOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
+  String get installationSlidesFindOutMoreText => ' 을 방문하여 우분투 WSL과 캐노니컬에서 어떻게 개발자와 조직을 지원하는지 알아 보십시오.';
 }
