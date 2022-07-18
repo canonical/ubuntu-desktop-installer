@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_button.dart';
 import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_split_view.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
@@ -112,5 +114,83 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(size, equals(toBytes(75, DataUnit.megabytes)));
+  });
+
+  testWidgets('rebuild on storage change', (tester) async {
+    int? size;
+
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: Scaffold(
+          body: StorageSplitView(
+            currentSize: 55,
+            minimumSize: 20,
+            maximumSize: 75,
+            totalSize: 100,
+            partition: const Partition(number: 1),
+            existingOS: const OsProber(long: 'Windows', label: '', type: ''),
+            productInfo: ProductInfo(name: 'Ubuntu'),
+            onResize: (v) => size = v,
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final controller1 =
+        tester.widget<SplitView>(find.byType(SplitView)).controller;
+    expect(controller1, isNotNull);
+    expect(
+      controller1!.weights,
+      orderedEquals([moreOrLessEquals(55 / 100), moreOrLessEquals(45 / 100)]),
+    );
+
+    final indicator = find.ancestor(
+      of: find.byKey(const Key('indicator')),
+      matching: find.byType(Container),
+    );
+    expect(indicator, findsOneWidget);
+
+    final windowWidth = tester.binding.window.physicalSize.width;
+    await tester.drag(indicator, Offset(windowWidth, 0));
+    expect(size, 75);
+
+    await tester.drag(indicator, Offset(-windowWidth, 0));
+    expect(size, 20);
+
+    // rebuild with different size and limits
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: Scaffold(
+          body: StorageSplitView(
+            currentSize: 35,
+            minimumSize: 30,
+            maximumSize: 50,
+            totalSize: 60,
+            partition: const Partition(number: 2),
+            existingOS: const OsProber(long: 'Windows', label: '', type: ''),
+            productInfo: ProductInfo(name: 'Ubuntu'),
+            onResize: (v) => size = v,
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final controller2 =
+        tester.widget<SplitView>(find.byType(SplitView)).controller;
+    expect(controller2, isNotNull);
+    expect(
+      controller2!.weights,
+      orderedEquals([moreOrLessEquals(35 / 60), moreOrLessEquals(25 / 60)]),
+    );
+
+    await tester.drag(indicator, Offset(windowWidth, 0));
+    expect(size, 50);
+
+    await tester.drag(indicator, Offset(-windowWidth, 0));
+    expect(size, 30);
   });
 }

@@ -36,12 +36,26 @@ class StorageSplitView extends StatefulWidget {
 }
 
 class _StorageSplitViewState extends State<StorageSplitView> {
-  late final SplitViewController _controller;
+  SplitViewController? _controller;
 
   @override
   void initState() {
     super.initState();
+    _initController();
+  }
 
+  @override
+  void didUpdateWidget(covariant StorageSplitView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.minimumSize != oldWidget.minimumSize ||
+        widget.maximumSize != oldWidget.maximumSize ||
+        widget.totalSize != oldWidget.totalSize) {
+      _initController();
+    }
+  }
+
+  void _initController() {
+    _controller?.dispose();
     _controller = SplitViewController(
       weights: [widget.currentSize / widget.totalSize, null],
       limits: [
@@ -52,8 +66,8 @@ class _StorageSplitViewState extends State<StorageSplitView> {
         null,
       ],
     );
-    _controller.addListener(() {
-      final weight = _controller.weights.firstOrNull;
+    _controller!.addListener(() {
+      final weight = _controller!.weights.firstOrNull;
       if (weight != null) {
         final size = weight * widget.totalSize;
         widget.onResize(size.round());
@@ -62,12 +76,12 @@ class _StorageSplitViewState extends State<StorageSplitView> {
   }
 
   void _updateController(int size) {
-    _controller.weights = [size / widget.totalSize, null];
+    _controller?.weights = [size / widget.totalSize, null];
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller?.dispose();
     super.dispose();
   }
 
@@ -75,7 +89,7 @@ class _StorageSplitViewState extends State<StorageSplitView> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return SplitView(
-      key: ValueKey(widget.partition.number),
+      key: ObjectKey(_controller),
       indicator: const SizedBox.shrink(key: Key('indicator')),
       gripSize: kContentSpacing / 2,
       gripColor: Colors.transparent,
