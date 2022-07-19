@@ -1,10 +1,7 @@
 part of 'profile_setup_page.dart';
 
 class _RealNameFormField extends StatelessWidget {
-  const _RealNameFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _RealNameFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -50,10 +47,7 @@ extension UsernameValidationL10n on UsernameValidation {
 }
 
 class _UsernameFormField extends StatelessWidget {
-  const _UsernameFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _UsernameFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -91,10 +85,7 @@ class _UsernameFormField extends StatelessWidget {
 }
 
 class _PasswordFormField extends StatelessWidget {
-  const _PasswordFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _PasswordFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -125,10 +116,7 @@ class _PasswordFormField extends StatelessWidget {
 }
 
 class _ConfirmPasswordFormField extends StatelessWidget {
-  const _ConfirmPasswordFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _ConfirmPasswordFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -163,9 +151,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 //       See [ProfileSetupModel.showAdvancedOptions] for more details.
 //
 // class _ShowAdvancedOptionsCheckButton extends StatelessWidget {
-//   const _ShowAdvancedOptionsCheckButton({
-//     Key? key,
-//   }) : super(key: key);
+//   const _ShowAdvancedOptionsCheckButton();
 
 //   @override
 //   Widget build(BuildContext context) {

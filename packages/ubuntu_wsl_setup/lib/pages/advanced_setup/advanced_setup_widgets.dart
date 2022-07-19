@@ -1,8 +1,7 @@
 part of 'advanced_setup_page.dart';
 
 class _MountLocationFormField extends StatelessWidget {
-  const _MountLocationFormField({Key? key, required this.fieldWidth})
-      : super(key: key);
+  const _MountLocationFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -30,8 +29,7 @@ class _MountLocationFormField extends StatelessWidget {
 }
 
 class _MountOptionFormField extends StatelessWidget {
-  const _MountOptionFormField({Key? key, required this.fieldWidth})
-      : super(key: key);
+  const _MountOptionFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -55,7 +53,7 @@ class _MountOptionFormField extends StatelessWidget {
 }
 
 class _HostGenerationCheckButton extends StatelessWidget {
-  const _HostGenerationCheckButton({Key? key}) : super(key: key);
+  const _HostGenerationCheckButton();
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +81,7 @@ class _HostGenerationCheckButton extends StatelessWidget {
 }
 
 class _ResolvConfGenerationCheckButton extends StatelessWidget {
-  const _ResolvConfGenerationCheckButton({
-    Key? key,
-  }) : super(key: key);
+  const _ResolvConfGenerationCheckButton();
 
   @override
   Widget build(BuildContext context) {

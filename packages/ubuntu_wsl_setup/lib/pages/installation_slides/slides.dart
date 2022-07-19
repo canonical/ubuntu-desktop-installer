@@ -28,22 +28,22 @@ class Slide extends StatelessWidget {
   static const kInSlideLeftSpacing = 1 * kContentSpacing;
   static const kInSlideSpacing = 6 * kContentSpacing;
   const Slide({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.subtitle,
     this.text,
     this.span,
-  }) : super(key: key);
+  });
 
   const Slide.withRichText({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.subtitle,
     required this.span,
     this.text,
-  }) : super(key: key);
+  });
 
   final Widget image;
   final String title;

@@ -1,7 +1,7 @@
 part of 'setup_complete_page.dart';
 
 class _CodeLabel extends StatelessWidget {
-  const _CodeLabel(this.code, {Key? key}) : super(key: key);
+  const _CodeLabel(this.code);
 
   final String code;
 

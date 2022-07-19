@@ -17,8 +17,8 @@ class ApplyingChangesPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const ApplyingChangesPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates an instance with [AdvancedSetupModel].
   static Widget create(BuildContext context) {

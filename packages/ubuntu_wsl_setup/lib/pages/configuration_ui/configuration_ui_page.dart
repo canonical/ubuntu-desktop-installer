@@ -14,8 +14,8 @@ class ConfigurationUIPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const ConfigurationUIPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates an instance with [ConfigurationUIModel].
   static Widget create(BuildContext context) {

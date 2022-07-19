@@ -12,8 +12,8 @@ import 'select_language_model.dart';
 
 class SelectLanguagePage extends StatefulWidget {
   const SelectLanguagePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();

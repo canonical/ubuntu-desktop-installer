@@ -35,7 +35,7 @@ import 'slides.dart';
 /// when WSL is still registering the distro).
 /// Control comes from the SlideShow widget from ubuntu_widgets package.
 class InstallationSlidesPage extends StatefulWidget {
-  const InstallationSlidesPage({Key? key}) : super(key: key);
+  const InstallationSlidesPage({super.key});
 
   @override
   State<InstallationSlidesPage> createState() => _InstallationSlidesPageState();
@@ -77,7 +77,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 class _SlidesPage extends StatelessWidget {
   final List<Widget> slides;
 
-  const _SlidesPage(this.slides, {Key? key}) : super(key: key);
+  const _SlidesPage(this.slides);
 
   @override
   Widget build(BuildContext context) {
@@ -184,10 +184,7 @@ class _SlidesPage extends StatelessWidget {
 }
 
 class _JournalView extends StatelessWidget {
-  const _JournalView({
-    Key? key,
-    required this.journal,
-  }) : super(key: key);
+  const _JournalView({required this.journal});
   final Stream<String> journal;
   @override
   Widget build(BuildContext context) {
@@ -212,7 +209,7 @@ class _JournalView extends StatelessWidget {
 // TODO: Invest a new PR on more capable error handling and discrimination.
 // TODO: Work with design team on the real error screens design.
 class _ErrorScreen extends StatelessWidget {
-  const _ErrorScreen({Key? key}) : super(key: key);
+  const _ErrorScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -244,7 +241,7 @@ class _ErrorScreen extends StatelessWidget {
 
 // TODO: Promote this widget to avoid code duplication.
 class _CodeLabel extends StatelessWidget {
-  const _CodeLabel(this.code, {Key? key}) : super(key: key);
+  const _CodeLabel(this.code);
 
   final String code;
 

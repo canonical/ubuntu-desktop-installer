@@ -20,7 +20,7 @@ part 'profile_setup_widgets.dart';
 class ProfileSetupPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
-  const ProfileSetupPage({Key? key}) : super(key: key);
+  const ProfileSetupPage({super.key});
 
   /// Creates an instance with [ProfileSetupModel].
   static Widget create(BuildContext context) {

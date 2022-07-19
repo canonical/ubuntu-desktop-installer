@@ -6,9 +6,9 @@ import 'routes.dart';
 
 class UbuntuWslSetupWizard extends StatelessWidget {
   const UbuntuWslSetupWizard({
-    Key? key,
+    super.key,
     this.initialRoute,
-  }) : super(key: key);
+  });
 
   final String? initialRoute;
 
