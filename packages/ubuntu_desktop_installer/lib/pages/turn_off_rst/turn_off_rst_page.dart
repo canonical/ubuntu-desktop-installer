@@ -12,8 +12,8 @@ import 'turn_off_rst_model.dart';
 
 class TurnOffRSTPage extends StatelessWidget {
   const TurnOffRSTPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();

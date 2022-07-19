@@ -1,10 +1,7 @@
 part of 'choose_security_key_page.dart';
 
 class _SecurityKeyFormField extends StatelessWidget {
-  const _SecurityKeyFormField({
-    Key? key,
-    this.fieldWidth,
-  }) : super(key: key);
+  const _SecurityKeyFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -33,10 +30,7 @@ class _SecurityKeyFormField extends StatelessWidget {
 }
 
 class _ConfirmSecurityKeyFormField extends StatelessWidget {
-  const _ConfirmSecurityKeyFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _ConfirmSecurityKeyFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 

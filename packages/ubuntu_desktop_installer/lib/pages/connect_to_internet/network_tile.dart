@@ -3,8 +3,7 @@ import 'package:ubuntu_wizard/constants.dart';
 
 class NetworkTile extends StatelessWidget {
   const NetworkTile(
-      {Key? key, this.leading, this.title, this.subtitle, this.trailing})
-      : super(key: key);
+      {super.key, this.leading, this.title, this.subtitle, this.trailing});
 
   final Widget? leading;
   final Widget? title;

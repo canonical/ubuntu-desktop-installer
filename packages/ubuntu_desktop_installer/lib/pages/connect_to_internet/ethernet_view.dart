@@ -10,10 +10,10 @@ import 'network_tile.dart';
 
 class EthernetRadioButton extends StatelessWidget {
   const EthernetRadioButton({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final ConnectMode? value;
   final ValueChanged<ConnectMode?> onChanged;
@@ -43,10 +43,10 @@ class EthernetRadioButton extends StatelessWidget {
 
 class EthernetView extends StatelessWidget {
   const EthernetView({
-    Key? key,
+    super.key,
     required this.expanded,
     required this.onEnabled,
-  }) : super(key: key);
+  });
 
   final bool expanded;
   final VoidCallback onEnabled;

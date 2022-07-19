@@ -12,7 +12,7 @@ import 'where_are_you_model.dart';
 class WhereAreYouPage extends StatefulWidget {
   /// Use [WhereAreYouPage.create] instead.
   @visibleForTesting
-  const WhereAreYouPage({Key? key}) : super(key: key);
+  const WhereAreYouPage({super.key});
 
   /// Creates a [WhereAreYouPage] with [WhereAreYouModel].
   static Widget create(BuildContext context) {

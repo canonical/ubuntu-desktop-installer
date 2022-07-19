@@ -240,11 +240,10 @@ Future<void> showEditPartitionDialog(
 
 class _PartitionMountField extends StatelessWidget {
   const _PartitionMountField({
-    Key? key,
     this.initialMount,
     required this.partitionFormat,
     required this.partitionMount,
-  }) : super(key: key);
+  });
 
   final String? initialMount;
   final ValueNotifier<PartitionFormat?> partitionFormat;
@@ -280,10 +279,9 @@ class _PartitionMountField extends StatelessWidget {
 
 class _PartitionWipeCheckbox extends StatelessWidget {
   const _PartitionWipeCheckbox({
-    Key? key,
     required this.canWipe,
     required this.wipe,
-  }) : super(key: key);
+  });
 
   final bool canWipe;
   final ValueNotifier<bool?> wipe;
@@ -306,9 +304,8 @@ class _PartitionWipeCheckbox extends StatelessWidget {
 
 class _PartitionFormatSelector extends StatelessWidget {
   const _PartitionFormatSelector({
-    Key? key,
     required this.partitionFormat,
-  }) : super(key: key);
+  });
 
   final ValueNotifier<PartitionFormat?> partitionFormat;
 

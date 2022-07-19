@@ -14,8 +14,8 @@ import 'storage_selector.dart';
 
 class AllocateDiskSpacePage extends StatefulWidget {
   const AllocateDiskSpacePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final service = getService<DiskStorageService>();

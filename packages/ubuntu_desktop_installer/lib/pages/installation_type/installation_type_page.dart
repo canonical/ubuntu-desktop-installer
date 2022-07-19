@@ -18,7 +18,7 @@ export 'installation_type_model.dart' show InstallationType;
 class InstallationTypePage extends StatefulWidget {
   /// Use [InstallationTypePage.create] instead.
   @visibleForTesting
-  const InstallationTypePage({Key? key}) : super(key: key);
+  const InstallationTypePage({super.key});
 
   /// Creates a [InstallationTypePage] with [InstallationTypeModel].
   static Widget create(BuildContext context) {

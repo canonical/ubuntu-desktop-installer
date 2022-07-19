@@ -12,8 +12,8 @@ export 'try_or_install_model.dart' show Option;
 
 class TryOrInstallPage extends StatefulWidget {
   const TryOrInstallPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(

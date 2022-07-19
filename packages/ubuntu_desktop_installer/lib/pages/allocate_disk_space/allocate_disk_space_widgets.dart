@@ -13,7 +13,7 @@ import 'storage_columns.dart';
 import 'storage_table.dart';
 
 class PartitionBar extends StatelessWidget {
-  const PartitionBar({Key? key}) : super(key: key);
+  const PartitionBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _PartitionPainter extends CustomPainter {
 }
 
 class PartitionLegend extends StatelessWidget {
-  const PartitionLegend({Key? key}) : super(key: key);
+  const PartitionLegend({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -116,12 +116,11 @@ class PartitionLegend extends StatelessWidget {
 
 class _PartitionLabel extends StatelessWidget {
   const _PartitionLabel({
-    Key? key,
     required this.title,
     required this.size,
     this.color = Colors.transparent,
     this.borderColor = Colors.transparent,
-  }) : super(key: key);
+  });
 
   final String title;
   final int size;
@@ -160,7 +159,7 @@ class _PartitionLabel extends StatelessWidget {
 }
 
 class PartitionTable extends StatelessWidget {
-  const PartitionTable({Key? key, required this.controller}) : super(key: key);
+  const PartitionTable({super.key, required this.controller});
 
   final AutoScrollController controller;
 
@@ -190,7 +189,7 @@ class PartitionTable extends StatelessWidget {
 }
 
 class PartitionButtonRow extends StatelessWidget {
-  const PartitionButtonRow({Key? key}) : super(key: key);
+  const PartitionButtonRow({super.key});
 
   @override
   Widget build(BuildContext context) {

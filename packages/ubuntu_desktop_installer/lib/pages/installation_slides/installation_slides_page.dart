@@ -15,8 +15,8 @@ class InstallationSlidesPage extends StatefulWidget {
   /// Use [InstallationPage.create] instead.
   @visibleForTesting
   const InstallationSlidesPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates a [InstallationSlidesPage] with [InstallationSlidesModel].
   static Widget create(BuildContext context) {
@@ -130,10 +130,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 }
 
 class _SlidePage extends StatelessWidget {
-  const _SlidePage({
-    Key? key,
-    required this.slide,
-  }) : super(key: key);
+  const _SlidePage({required this.slide});
 
   final Slide slide;
 
@@ -153,10 +150,7 @@ class _SlidePage extends StatelessWidget {
 }
 
 class _JournalView extends StatelessWidget {
-  const _JournalView({
-    Key? key,
-    required this.journal,
-  }) : super(key: key);
+  const _JournalView({required this.journal});
 
   final Stream<String> journal;
 

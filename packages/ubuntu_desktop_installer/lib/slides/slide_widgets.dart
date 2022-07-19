@@ -17,10 +17,10 @@ class Slide {
 class SlidesContext extends InheritedWidget {
   /// Creates an inherited slide widget with the specified slides.
   const SlidesContext({
-    Key? key,
+    super.key,
     required this.slides,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   /// The installation slides.
   final List<Slide> slides;

@@ -10,7 +10,7 @@ import 'configure_secure_boot_widgets.dart';
 
 class ConfigureSecureBootPage extends StatefulWidget {
   @visibleForTesting
-  const ConfigureSecureBootPage({Key? key}) : super(key: key);
+  const ConfigureSecureBootPage({super.key});
 
   @override
   State<ConfigureSecureBootPage> createState() =>

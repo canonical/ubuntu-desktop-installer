@@ -14,7 +14,7 @@ import 'select_guided_storage_model.dart';
 class SelectGuidedStoragePage extends StatefulWidget {
   /// Use [SelectGuidedStoragePage.create] instead.
   @visibleForTesting
-  const SelectGuidedStoragePage({Key? key}) : super(key: key);
+  const SelectGuidedStoragePage({super.key});
 
   /// Creates a [SelectGuidedStoragePage] with [SelectGuidedStorageModel].
   static Widget create(BuildContext context) {

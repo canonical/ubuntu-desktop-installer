@@ -14,8 +14,8 @@ final log = Logger('write_changes_to_disk');
 
 class WriteChangesToDiskPage extends StatefulWidget {
   const WriteChangesToDiskPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();

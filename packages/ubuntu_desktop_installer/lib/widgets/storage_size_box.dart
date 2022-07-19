@@ -9,7 +9,7 @@ import '../l10n.dart';
 /// Storage size entry with a spinbox and a data size unit dropdown.
 class StorageSizeBox extends StatelessWidget {
   const StorageSizeBox({
-    Key? key,
+    super.key,
     required this.size,
     required this.unit,
     this.minimum = 0,
@@ -18,7 +18,7 @@ class StorageSizeBox extends StatelessWidget {
     required this.onUnitSelected,
     this.autofocus = false,
     this.spacing = kButtonBarSpacing,
-  }) : super(key: key);
+  });
 
   /// The current value in bytes.
   final int size;

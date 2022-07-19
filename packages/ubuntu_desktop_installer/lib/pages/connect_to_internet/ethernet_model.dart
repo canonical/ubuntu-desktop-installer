@@ -6,8 +6,7 @@ import 'network_model.dart';
 
 /// "Use wired connection"
 class EthernetModel extends NetworkModel<EthernetDevice> {
-  EthernetModel(NetworkService service, [UdevService? udev])
-      : super(service, udev);
+  EthernetModel(super.service, [super.udev]);
 
   @override
   bool get canConnect => false;
@@ -65,6 +64,5 @@ class EthernetModel extends NetworkModel<EthernetDevice> {
 }
 
 class EthernetDevice extends NetworkDevice {
-  EthernetDevice(NetworkManagerDevice device, UdevService? udev)
-      : super(device, udev);
+  EthernetDevice(super.device, super.udev);
 }
