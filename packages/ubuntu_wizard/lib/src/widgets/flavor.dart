@@ -64,10 +64,10 @@ class FlavorData {
 class Flavor extends InheritedWidget {
   /// Creates an inherited flavor widget with the specified flavor data.
   const Flavor({
-    Key? key,
+    super.key,
     required this.data,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   /// The flavor configuration.
   final FlavorData data;

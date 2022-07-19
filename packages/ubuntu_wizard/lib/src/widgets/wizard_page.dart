@@ -13,7 +13,7 @@ export 'wizard_action.dart';
 class WizardPage extends StatefulWidget {
   /// Creates the wizard page.
   const WizardPage({
-    Key? key,
+    super.key,
     this.title,
     this.header,
     this.headerPadding = kHeaderPadding,
@@ -22,7 +22,7 @@ class WizardPage extends StatefulWidget {
     this.footer,
     this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
-  }) : super(key: key);
+  });
 
   /// The title widget in the app bar.
   final Widget? title;

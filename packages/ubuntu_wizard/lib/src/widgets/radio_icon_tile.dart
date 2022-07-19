@@ -9,13 +9,13 @@ const _kHorizontalSpacing = 8.0;
 class RadioIconTile extends StatelessWidget {
   /// Creates a radio icon tile.
   const RadioIconTile({
-    Key? key,
+    super.key,
     this.icon,
     this.title,
     this.subtitle,
     this.contentPadding,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   /// An icon shown centered within the bounding box of [RadioButton]'s radio
   /// indicator.

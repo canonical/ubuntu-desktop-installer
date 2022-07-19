@@ -8,9 +8,9 @@ import '../../utils.dart';
 class PasswordStrengthLabel extends StatelessWidget {
   /// Creates a new label with the given [strength].
   const PasswordStrengthLabel({
-    Key? key,
+    super.key,
     required this.strength,
-  }) : super(key: key);
+  });
 
   /// The strength of the password.
   final PasswordStrength strength;
