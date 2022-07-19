@@ -681,6 +681,7 @@ class UbuntuProSubscription with _$UbuntuProSubscription {
   const factory UbuntuProSubscription({
     required String contractName,
     required String accountName,
+    required String contractToken,
     required List<UbuntuProService> services,
   }) = _UbuntuProSubscription;
 
