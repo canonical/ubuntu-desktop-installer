@@ -332,6 +332,14 @@ class SubiquityClient {
     return GuidedStorageResponseV2.fromJson(responseJson);
   }
 
+  Future<StorageResponseV2> getOriginalStorageV2() async {
+    final request = await _openUrl('GET', url('storage/v2/orig_config'));
+    final response = await request.close();
+
+    final responseJson = await _receiveJson('getOriginalStorageV2()', response);
+    return StorageResponseV2.fromJson(responseJson);
+  }
+
   Future<StorageResponseV2> getStorageV2({bool wait = true}) async {
     final request = await _openUrl('GET', url('storage/v2', {'wait': '$wait'}));
     final response = await request.close();

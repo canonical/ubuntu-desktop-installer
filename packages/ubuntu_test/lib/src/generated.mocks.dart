@@ -280,6 +280,12 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
                   _FakeGuidedStorageResponseV2_8()))
           as _i6.Future<_i3.GuidedStorageResponseV2>);
   @override
+  _i6.Future<_i3.StorageResponseV2> getOriginalStorageV2() =>
+      (super.noSuchMethod(Invocation.method(#getOriginalStorageV2, []),
+              returnValue: Future<_i3.StorageResponseV2>.value(
+                  _FakeStorageResponseV2_9()))
+          as _i6.Future<_i3.StorageResponseV2>);
+  @override
   _i6.Future<_i3.StorageResponseV2> getStorageV2({bool? wait = true}) =>
       (super.noSuchMethod(Invocation.method(#getStorageV2, [], {#wait: wait}),
               returnValue: Future<_i3.StorageResponseV2>.value(

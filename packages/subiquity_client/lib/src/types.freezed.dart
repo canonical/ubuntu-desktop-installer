@@ -10136,10 +10136,12 @@ class _$UbuntuProSubscriptionTearOff {
   _UbuntuProSubscription call(
       {required String contractName,
       required String accountName,
+      required String contractToken,
       required List<UbuntuProService> services}) {
     return _UbuntuProSubscription(
       contractName: contractName,
       accountName: accountName,
+      contractToken: contractToken,
       services: services,
     );
   }
@@ -10156,6 +10158,7 @@ const $UbuntuProSubscription = _$UbuntuProSubscriptionTearOff();
 mixin _$UbuntuProSubscription {
   String get contractName => throw _privateConstructorUsedError;
   String get accountName => throw _privateConstructorUsedError;
+  String get contractToken => throw _privateConstructorUsedError;
   List<UbuntuProService> get services => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -10172,6 +10175,7 @@ abstract class $UbuntuProSubscriptionCopyWith<$Res> {
   $Res call(
       {String contractName,
       String accountName,
+      String contractToken,
       List<UbuntuProService> services});
 }
 
@@ -10188,6 +10192,7 @@ class _$UbuntuProSubscriptionCopyWithImpl<$Res>
   $Res call({
     Object? contractName = freezed,
     Object? accountName = freezed,
+    Object? contractToken = freezed,
     Object? services = freezed,
   }) {
     return _then(_value.copyWith(
@@ -10198,6 +10203,10 @@ class _$UbuntuProSubscriptionCopyWithImpl<$Res>
       accountName: accountName == freezed
           ? _value.accountName
           : accountName // ignore: cast_nullable_to_non_nullable
+              as String,
+      contractToken: contractToken == freezed
+          ? _value.contractToken
+          : contractToken // ignore: cast_nullable_to_non_nullable
               as String,
       services: services == freezed
           ? _value.services
@@ -10217,6 +10226,7 @@ abstract class _$UbuntuProSubscriptionCopyWith<$Res>
   $Res call(
       {String contractName,
       String accountName,
+      String contractToken,
       List<UbuntuProService> services});
 }
 
@@ -10235,6 +10245,7 @@ class __$UbuntuProSubscriptionCopyWithImpl<$Res>
   $Res call({
     Object? contractName = freezed,
     Object? accountName = freezed,
+    Object? contractToken = freezed,
     Object? services = freezed,
   }) {
     return _then(_UbuntuProSubscription(
@@ -10245,6 +10256,10 @@ class __$UbuntuProSubscriptionCopyWithImpl<$Res>
       accountName: accountName == freezed
           ? _value.accountName
           : accountName // ignore: cast_nullable_to_non_nullable
+              as String,
+      contractToken: contractToken == freezed
+          ? _value.contractToken
+          : contractToken // ignore: cast_nullable_to_non_nullable
               as String,
       services: services == freezed
           ? _value.services
@@ -10260,6 +10275,7 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
   const _$_UbuntuProSubscription(
       {required this.contractName,
       required this.accountName,
+      required this.contractToken,
       required this.services});
 
   factory _$_UbuntuProSubscription.fromJson(Map<String, dynamic> json) =>
@@ -10270,11 +10286,13 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
   @override
   final String accountName;
   @override
+  final String contractToken;
+  @override
   final List<UbuntuProService> services;
 
   @override
   String toString() {
-    return 'UbuntuProSubscription(contractName: $contractName, accountName: $accountName, services: $services)';
+    return 'UbuntuProSubscription(contractName: $contractName, accountName: $accountName, contractToken: $contractToken, services: $services)';
   }
 
   @override
@@ -10287,6 +10305,9 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
             (identical(other.accountName, accountName) ||
                 const DeepCollectionEquality()
                     .equals(other.accountName, accountName)) &&
+            (identical(other.contractToken, contractToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.contractToken, contractToken)) &&
             (identical(other.services, services) ||
                 const DeepCollectionEquality()
                     .equals(other.services, services)));
@@ -10297,6 +10318,7 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(contractName) ^
       const DeepCollectionEquality().hash(accountName) ^
+      const DeepCollectionEquality().hash(contractToken) ^
       const DeepCollectionEquality().hash(services);
 
   @JsonKey(ignore: true)
@@ -10315,6 +10337,7 @@ abstract class _UbuntuProSubscription implements UbuntuProSubscription {
   const factory _UbuntuProSubscription(
       {required String contractName,
       required String accountName,
+      required String contractToken,
       required List<UbuntuProService> services}) = _$_UbuntuProSubscription;
 
   factory _UbuntuProSubscription.fromJson(Map<String, dynamic> json) =
@@ -10324,6 +10347,8 @@ abstract class _UbuntuProSubscription implements UbuntuProSubscription {
   String get contractName => throw _privateConstructorUsedError;
   @override
   String get accountName => throw _privateConstructorUsedError;
+  @override
+  String get contractToken => throw _privateConstructorUsedError;
   @override
   List<UbuntuProService> get services => throw _privateConstructorUsedError;
   @override

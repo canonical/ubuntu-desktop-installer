@@ -176,6 +176,12 @@ void main() {
       expect(response.disks, isNotEmpty);
     });
 
+    test('get original storage v2', () async {
+      final response = await client.getOriginalStorageV2();
+      expect(response.disks, isNotNull);
+      expect(response.disks, isNotEmpty);
+    });
+
     test('set storage v2', () async {
       final response = await client.setStorageV2();
       expect(response.disks, isNotNull);

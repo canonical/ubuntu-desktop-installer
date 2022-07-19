@@ -951,6 +951,7 @@ _$_UbuntuProSubscription _$_$_UbuntuProSubscriptionFromJson(
   return _$_UbuntuProSubscription(
     contractName: json['contract_name'] as String,
     accountName: json['account_name'] as String,
+    contractToken: json['contract_token'] as String,
     services: (json['services'] as List<dynamic>)
         .map((e) => UbuntuProService.fromJson(e as Map<String, dynamic>))
         .toList(),
@@ -962,6 +963,7 @@ Map<String, dynamic> _$_$_UbuntuProSubscriptionToJson(
     <String, dynamic>{
       'contract_name': instance.contractName,
       'account_name': instance.accountName,
+      'contract_token': instance.contractToken,
       'services': instance.services.map((e) => e.toJson()).toList(),
     };
 
