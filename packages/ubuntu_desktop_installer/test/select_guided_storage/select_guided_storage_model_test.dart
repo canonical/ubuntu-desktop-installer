@@ -48,6 +48,38 @@ void main() {
     verify(service.setGuidedStorage(testTargets[1])).called(1);
   });
 
+  test('get storage', () async {
+    const sda1 = Partition(number: 1, size: 1);
+    const sda2 = Partition(number: 2, size: 2);
+    final sda = testDisk(id: 'sda', partitions: [sda1, sda2]);
+
+    const sdb1 = Partition(number: 1, size: 3);
+    final sdb = testDisk(id: 'sdb', partitions: [sdb1]);
+
+    const storage0 = GuidedStorageTargetReformat(diskId: 'sda');
+    const storage1 = GuidedStorageTargetReformat(diskId: 'sdb');
+
+    final service = MockDiskStorageService();
+    when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        const GuidedStorageResponseV2(possible: [storage0, storage1]));
+
+    final model = SelectGuidedStorageModel(service);
+    expect(model.getStorage(0), isNull);
+    expect(model.getStorage(1), isNull);
+    expect(model.getDisk(0), isNull);
+    expect(model.getDisk(1), isNull);
+
+    await model.loadGuidedStorage();
+    expect(model.getStorage(0), storage0);
+    expect(model.getStorage(1), storage1);
+    expect(model.getDisk(0), equals(sda));
+    expect(model.getDisk(1), equals(sdb));
+
+    expect(model.getStorage(-1), isNull);
+    expect(model.getStorage(123), isNull);
+  });
+
   test('select guided storage', () async {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);

@@ -34,7 +34,7 @@ class SelectGuidedStorageModel extends SafeChangeNotifier {
       _storages.elementAtOrNull(index);
 
   /// Returns the disk of the guided storage target at the given index.
-  Disk? getDisk(int index) => _disks[selectedStorage?.diskId ?? ''];
+  Disk? getDisk(int index) => _disks[getStorage(index)?.diskId ?? ''];
 
   /// Selects a guided storage.
   void selectStorage(int index) {
