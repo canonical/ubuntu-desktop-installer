@@ -8,9 +8,9 @@ import 'configure_secure_boot_model.dart';
 
 class SecurityKeyFormField extends StatelessWidget {
   const SecurityKeyFormField({
-    Key? key,
+    super.key,
     required this.fieldWidth,
-  }) : super(key: key);
+  });
 
   final double? fieldWidth;
 
@@ -38,9 +38,9 @@ class SecurityKeyFormField extends StatelessWidget {
 
 class SecurityKeyConfirmFormField extends StatelessWidget {
   const SecurityKeyConfirmFormField({
-    Key? key,
+    super.key,
     required this.fieldWidth,
-  }) : super(key: key);
+  });
 
   final double? fieldWidth;
 

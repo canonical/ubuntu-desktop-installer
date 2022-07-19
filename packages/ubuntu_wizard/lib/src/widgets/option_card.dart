@@ -26,13 +26,13 @@ import 'package:flutter/material.dart';
 class OptionCard extends StatefulWidget {
   /// Creates an option card with the given properties.
   const OptionCard({
-    Key? key,
+    super.key,
     this.image,
     this.title,
     this.body,
     required this.selected,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   /// An image asset that illustrates the option.
   final Widget? image;

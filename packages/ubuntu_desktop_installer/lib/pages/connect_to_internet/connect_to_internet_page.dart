@@ -17,7 +17,7 @@ import 'wifi_view.dart';
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/30
 class ConnectToInternetPage extends StatefulWidget {
   @visibleForTesting
-  const ConnectToInternetPage({Key? key}) : super(key: key);
+  const ConnectToInternetPage({super.key});
 
   static Widget create(BuildContext context) {
     final udev = getService<UdevService>();

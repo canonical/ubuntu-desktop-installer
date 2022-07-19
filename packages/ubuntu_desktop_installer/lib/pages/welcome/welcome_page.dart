@@ -13,8 +13,8 @@ import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();

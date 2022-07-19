@@ -12,10 +12,10 @@ import 'wifi_model.dart';
 
 class HiddenWifiRadioButton extends StatelessWidget {
   const HiddenWifiRadioButton({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final ConnectMode? value;
   final ValueChanged<ConnectMode?> onChanged;
@@ -40,9 +40,9 @@ class HiddenWifiRadioButton extends StatelessWidget {
 
 class HiddenWifiView extends StatefulWidget {
   const HiddenWifiView({
-    Key? key,
+    super.key,
     required this.expanded,
-  }) : super(key: key);
+  });
 
   final bool expanded;
 

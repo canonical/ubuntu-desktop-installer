@@ -149,14 +149,13 @@ Future<void> runInstallerApp(
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   UbuntuDesktopInstallerApp({
-    Key? key,
+    super.key,
     this.initialRoute,
     FlavorData? flavor,
     List<Slide>? slides,
     this.appStatus = AppStatus.ready,
   })  : flavor = flavor ?? defaultFlavor,
-        slides = slides ?? defaultSlides,
-        super(key: key);
+        slides = slides ?? defaultSlides;
 
   final String? initialRoute;
   final FlavorData flavor;
@@ -213,7 +212,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
-  const _UbuntuDesktopInstallerLoadingPage({Key? key}) : super(key: key);
+  const _UbuntuDesktopInstallerLoadingPage();
 
   @override
   Widget build(BuildContext context) {
@@ -245,10 +244,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerWizard extends StatelessWidget {
-  const _UbuntuDesktopInstallerWizard({
-    Key? key,
-    this.initialRoute,
-  }) : super(key: key);
+  const _UbuntuDesktopInstallerWizard({this.initialRoute});
 
   final String? initialRoute;
 

@@ -7,12 +7,12 @@ const _kDefaultDuration = Duration(milliseconds: 200);
 class AnimatedExpanded extends StatefulWidget {
   /// Control whether the given [child] is [expanded].
   const AnimatedExpanded({
-    Key? key,
+    super.key,
     required this.child,
     required this.expanded,
     this.curve = _kDefaultCurve,
     this.duration = _kDefaultDuration,
-  }) : super(key: key);
+  });
 
   /// The child that expands or collapses.
   final Widget child;

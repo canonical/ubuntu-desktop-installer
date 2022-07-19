@@ -21,8 +21,8 @@ class ChooseSecurityKeyPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const ChooseSecurityKeyPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates an instance with [ChooseSecurityKeyModel].
   static Widget create(BuildContext context) {

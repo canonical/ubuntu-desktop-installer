@@ -14,8 +14,8 @@ const _kScrollDuration = Duration(milliseconds: 1);
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(

@@ -18,7 +18,7 @@ const kWifiScanTimeout = Duration(seconds: 3);
 
 /// "Connect to Wi-Fi network"
 class WifiModel extends NetworkModel<WifiDevice> {
-  WifiModel(NetworkService service, [UdevService? udev]) : super(service, udev);
+  WifiModel(super.service, [super.udev]);
 
   @override
   bool get canConnect => selectedDevice?._isConnected == false;

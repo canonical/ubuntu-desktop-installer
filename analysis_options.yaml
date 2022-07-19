@@ -14,3 +14,4 @@ linter:
     public_member_api_docs: false
     sort_pub_dependencies: true
     prefer_single_quotes: true
+    use_super_parameters: true

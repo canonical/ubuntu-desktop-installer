@@ -6,7 +6,7 @@ import '../../l10n.dart';
 import '../../settings.dart';
 
 class ChooseYourLookPage extends StatelessWidget {
-  const ChooseYourLookPage({Key? key}) : super(key: key);
+  const ChooseYourLookPage({super.key});
 
   static Widget create(BuildContext context) => const ChooseYourLookPage();
 
@@ -56,13 +56,12 @@ class ChooseYourLookPage extends StatelessWidget {
 
 class _ThemeOptionCard extends StatelessWidget {
   const _ThemeOptionCard({
-    Key? key,
     required this.width,
     required this.assetName,
     required this.selected,
     required this.onTap,
     required this.preferenceName,
-  }) : super(key: key);
+  });
 
   final double width;
   final String assetName;

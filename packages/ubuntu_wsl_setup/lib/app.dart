@@ -10,10 +10,10 @@ import 'routes.dart';
 
 class UbuntuWslSetupApp extends StatelessWidget {
   const UbuntuWslSetupApp({
-    Key? key,
+    super.key,
     this.variant,
     this.initialRoute,
-  }) : super(key: key);
+  });
 
   final Variant? variant;
   final String? initialRoute;

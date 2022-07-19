@@ -1,10 +1,7 @@
 part of 'who_are_you_page.dart';
 
 class _RealNameFormField extends StatelessWidget {
-  const _RealNameFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _RealNameFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -32,10 +29,7 @@ class _RealNameFormField extends StatelessWidget {
 }
 
 class _HostnameFormField extends StatelessWidget {
-  const _HostnameFormField({
-    Key? key,
-    this.fieldWidth,
-  }) : super(key: key);
+  const _HostnameFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -88,10 +82,7 @@ extension UsernameValidationL10n on UsernameValidation {
 }
 
 class _UsernameFormField extends StatelessWidget {
-  const _UsernameFormField({
-    Key? key,
-    this.fieldWidth,
-  }) : super(key: key);
+  const _UsernameFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -132,10 +123,7 @@ class _UsernameFormField extends StatelessWidget {
 }
 
 class _PasswordFormField extends StatelessWidget {
-  const _PasswordFormField({
-    Key? key,
-    this.fieldWidth,
-  }) : super(key: key);
+  const _PasswordFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -167,10 +155,7 @@ class _PasswordFormField extends StatelessWidget {
 }
 
 class _ConfirmPasswordFormField extends StatelessWidget {
-  const _ConfirmPasswordFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+  const _ConfirmPasswordFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -204,7 +189,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 }
 
 class _ShowPasswordCheckButton extends StatelessWidget {
-  const _ShowPasswordCheckButton({Key? key}) : super(key: key);
+  const _ShowPasswordCheckButton();
 
   @override
   Widget build(BuildContext context) {

@@ -17,10 +17,10 @@ typedef OnWifiSelected = void Function(
 
 class WifiRadioButton extends StatelessWidget {
   const WifiRadioButton({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final ConnectMode? value;
   final ValueChanged<ConnectMode?>? onChanged;
@@ -51,11 +51,11 @@ class WifiRadioButton extends StatelessWidget {
 
 class WifiView extends StatefulWidget {
   const WifiView({
-    Key? key,
+    super.key,
     required this.expanded,
     required this.onEnabled,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   final bool expanded;
   final VoidCallback onEnabled;
@@ -112,9 +112,9 @@ class _WifiViewState extends State<WifiView> {
 
 class WifiListView extends StatelessWidget {
   const WifiListView({
-    Key? key,
+    super.key,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   final OnWifiSelected onSelected;
 
@@ -143,10 +143,10 @@ class WifiListView extends StatelessWidget {
 
 class WifiListTile extends StatelessWidget {
   const WifiListTile({
-    Key? key,
+    super.key,
     required this.selected,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   final bool selected;
   final OnWifiSelected onSelected;
