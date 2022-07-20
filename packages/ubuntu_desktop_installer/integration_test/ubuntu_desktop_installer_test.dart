@@ -14,6 +14,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -27,6 +28,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async => await cleanUpSubiquity());
+  tearDown(() async => await resetAllServices());
 
   testWidgets('minimal installation', (tester) async {
     const language = 'Français';
