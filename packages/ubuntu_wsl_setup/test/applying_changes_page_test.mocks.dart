@@ -73,3 +73,27 @@ class MockApplyingChangesModel extends _i1.Mock
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
 }
+
+/// A class which mocks [SubiquityStatusMonitor].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSubiquityStatusMonitor extends _i1.Mock
+    implements _i2.SubiquityStatusMonitor {
+  MockSubiquityStatusMonitor() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Stream<_i2.ApplicationStatus?> get onStatusChanged =>
+      (super.noSuchMethod(Invocation.getter(#onStatusChanged),
+              returnValue: Stream<_i2.ApplicationStatus?>.empty())
+          as _i5.Stream<_i2.ApplicationStatus?>);
+  @override
+  _i5.Future<bool> start(_i2.Endpoint? endpoint) =>
+      (super.noSuchMethod(Invocation.method(#start, [endpoint]),
+          returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
+  @override
+  _i5.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);
+}
