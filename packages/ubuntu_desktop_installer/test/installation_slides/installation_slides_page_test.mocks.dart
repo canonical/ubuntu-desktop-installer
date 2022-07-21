@@ -46,21 +46,9 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasError), returnValue: false)
           as bool);
   @override
-  bool get isPreparing =>
-      (super.noSuchMethod(Invocation.getter(#isPreparing), returnValue: false)
-          as bool);
-  @override
   bool get isInstalling =>
       (super.noSuchMethod(Invocation.getter(#isInstalling), returnValue: false)
           as bool);
-  @override
-  int get installationStep =>
-      (super.noSuchMethod(Invocation.getter(#installationStep), returnValue: 0)
-          as int);
-  @override
-  int get installationStepCount =>
-      (super.noSuchMethod(Invocation.getter(#installationStepCount),
-          returnValue: 0) as int);
   @override
   _i4.Stream<String> get journal =>
       (super.noSuchMethod(Invocation.getter(#journal),
