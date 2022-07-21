@@ -72,15 +72,8 @@ void main() {
       });
     });
 
-    final windowClosed = Completer();
-    final methodChannel = MethodChannel('window_manager');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed.complete();
-    });
-
     await tester.pumpWidget(buildApp(model, hasNext: false));
-    expect(windowClosed.future, completes);
+    verify(model.reboot(immediate: false)).called(1);
   });
 
   testWidgets('won\'t go next while still installing', (tester) async {

@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart';
 
 import 'applying_changes_model_test.mocks.dart';
@@ -18,10 +19,11 @@ void main() {
       testStatus(ApplicationState.POST_RUNNING),
       last,
     ];
+    final client = MockSubiquityClient();
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
-    final model = ApplyingChangesModel(monitor);
+    final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
     model.init(onDoneTransition: () => calledBack = true);
     // Forces the stream to emit.
@@ -38,10 +40,11 @@ void main() {
       last,
       last,
     ];
+    final client = MockSubiquityClient();
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
-    final model = ApplyingChangesModel(monitor);
+    final model = ApplyingChangesModel(client, monitor);
     var calledBackCount = 0;
     model.init(onDoneTransition: () => calledBackCount++);
     // Forces the stream to emit.
@@ -59,7 +62,8 @@ void main() {
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
-    final model = ApplyingChangesModel(monitor);
+    final client = MockSubiquityClient();
+    final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
     model.init(onDoneTransition: () => calledBack = true);
     // Forces the stream to emit.
@@ -75,10 +79,11 @@ void main() {
       testStatus(ApplicationState.RUNNING),
       last,
     ];
+    final client = MockSubiquityClient();
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((_) => Stream.fromIterable(statuses));
-    final model = ApplyingChangesModel(monitor);
+    final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
     model.init(onDoneTransition: () => calledBack = true);
     // Forces the stream to emit.
