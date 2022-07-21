@@ -320,17 +320,17 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'להתקין את $product לצד $os1 ו־$os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'להתקין את $product לצדם';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'להתקין את $product לצד מחיצות אחרות';
   }
 
   @override
@@ -359,30 +359,30 @@ class AppLocalizationsHe extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'להתקין כעת';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'גרירת החוצץ שלהלן תגדיר את הקצאת המקום בכונן:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num מחיצות קטנות יותר מוסתרות, יש להשתמש ב<a href=\"$url\">כלי המתקדם לחלוקה למחיצות</a> לשליטה טובה יותר';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'שינוי גודל מחיצה';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'הקצאת מקום';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'קבצים';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'מחיצה:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'גודל:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'זמין:';
 
   @override
   String get allocateDiskSpace => 'הקצאת מקום בכונן';

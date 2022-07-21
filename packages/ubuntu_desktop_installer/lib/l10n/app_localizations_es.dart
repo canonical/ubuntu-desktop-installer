@@ -320,17 +320,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Instalar $product junto a $os1 y $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Instalar $product junto a ellos';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Instalar $product junto a otras particiones';
   }
 
   @override
@@ -359,30 +359,30 @@ class AppLocalizationsEs extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Instalar ahora';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Asigne el espacio en disco arrastrando el divisor siguiente:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return 'Se ocultaron $num particiones más pequeñas. Para mayor control, utilice la <a href=\"$url\">herramienta de particionado avanzada</a>';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Redimensionar partición';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Asignar espacio';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Archivos';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partición:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Tamaño:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Disponible:';
 
   @override
   String get allocateDiskSpace => 'Asignar espacio de disco';
