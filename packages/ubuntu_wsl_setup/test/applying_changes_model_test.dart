@@ -15,7 +15,6 @@ void main() {
     final statuses = <ApplicationStatus>[
       testStatus(ApplicationState.WAITING),
       testStatus(ApplicationState.RUNNING),
-      testStatus(ApplicationState.POST_RUNNING),
       last,
     ];
     final monitor = MockSubiquityStatusMonitor();
@@ -33,7 +32,6 @@ void main() {
     final statuses = <ApplicationStatus>[
       testStatus(ApplicationState.WAITING),
       testStatus(ApplicationState.RUNNING),
-      testStatus(ApplicationState.POST_RUNNING),
       last,
       last,
       last,
@@ -53,7 +51,6 @@ void main() {
     final statuses = <ApplicationStatus>[
       testStatus(ApplicationState.WAITING),
       testStatus(ApplicationState.RUNNING),
-      testStatus(ApplicationState.POST_RUNNING),
       last,
     ];
     final monitor = MockSubiquityStatusMonitor();
@@ -68,10 +65,9 @@ void main() {
   });
   test('Would never call back if subiquity never finishes or crashes',
       () async {
-    final last = testStatus(ApplicationState.POST_RUNNING);
+    final last = testStatus(ApplicationState.RUNNING);
     final statuses = <ApplicationStatus>[
       testStatus(ApplicationState.WAITING),
-      testStatus(ApplicationState.POST_WAIT),
       testStatus(ApplicationState.RUNNING),
       last,
     ];
