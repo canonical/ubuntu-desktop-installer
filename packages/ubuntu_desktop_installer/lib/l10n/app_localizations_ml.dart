@@ -606,13 +606,28 @@ class AppLocalizationsMl extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'ഇനിപ്പറയുന്ന പാർട്ടീഷനുകൾ ഫോർമാറ്റ് ചെയ്യാൻ പോകുന്നു:';
 
   @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'പാർട്ടീഷൻ #$disk${partition} $format ആയി $mount ഉപയോഗിച്ചു';
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
+    return 'partition #$disk${partition} resized from $oldsize to $newsize';
   }
 
   @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'പാർട്ടീഷൻ #$disk${partition} $format ആയി';
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} formatted as $format used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} formatted as $format';
+  }
+
+  @override
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
+    return 'partition #$disk${partition} used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionCreated(Object disk, Object partition) {
+    return 'partition #$disk${partition} created';
   }
 
   @override

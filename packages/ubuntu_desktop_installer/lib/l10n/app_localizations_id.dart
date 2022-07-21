@@ -606,13 +606,28 @@ class AppLocalizationsId extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Partisi berikut akan diformat:';
 
   @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partisi #$disk${partition} sebagai $format dipakai untuk $mount';
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
+    return 'partition #$disk${partition} resized from $oldsize to $newsize';
   }
 
   @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partisi #$disk${partition} sebagai $format';
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} formatted as $format used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} formatted as $format';
+  }
+
+  @override
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
+    return 'partition #$disk${partition} used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionCreated(Object disk, Object partition) {
+    return 'partition #$disk${partition} created';
   }
 
   @override
