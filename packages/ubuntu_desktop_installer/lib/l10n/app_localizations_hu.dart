@@ -320,17 +320,17 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Telepítse a $product oldalt a $os1 és $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Telepítse melléjük a $product';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Telepítse a $product oldalt más partíciók mellé';
   }
 
   @override
@@ -359,30 +359,30 @@ class AppLocalizationsHu extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Telepítés most';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Ossza ki a meghajtóterületet az alábbi osztóvonal húzásával:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num a kisebb partíciók el vannak rejtve, használja a <a href=\"$url\">speciális partícionáló eszközt</a> a nagyobb ellenőrzésért';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Partíció átméretezése';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Hely kiosztása';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Fájlok';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partíció:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Méret:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Elérhető:';
 
   @override
   String get allocateDiskSpace => 'Lemezterület kiosztása';

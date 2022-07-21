@@ -370,19 +370,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installAlongsideResizePartition => 'Resize partition';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'ディスク領域の割り当て';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'ファイル';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'パーティション:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'サイズ:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => '利用可能:';
 
   @override
   String get allocateDiskSpace => 'ディスク領域の割り当て';

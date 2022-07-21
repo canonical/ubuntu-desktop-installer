@@ -84,7 +84,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Per obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://$url\">$url</a>';
+    return 'Per a obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -163,10 +163,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get hiddenWifiNetworkNameLabel => 'Nom a la xarxa';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Cal un nom de xarxa';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Ara mateix no vull connectar-me a Internet';
 
   @override
   String get wirelessNetworkingDisabled => 'Wireless networking disabled';
@@ -254,7 +254,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Aquest ordinador duu diversos sistemes operatius. Què voleu fer?';
 
   @override
   String get installationTypeNoOSDetected => 'Aquest ordinador no duu cap sistema operatiu que s\'hagi detectat. Què voleu fer?';
@@ -359,7 +359,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Instal·la ara';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Reserveu espai de disc arrossegant el divisor de més avall:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -373,16 +373,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get installAlongsideAllocateSpace => 'Allocate space';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Fitxers';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partició:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Mida:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Disponible:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
@@ -622,10 +622,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Fosc';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Clar';
 
   @override
   String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
@@ -664,13 +664,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'On sou?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Ubicació';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Fus horari';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -775,7 +775,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get accessSlideLanguageSupport => 'Language support';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ajuda i assistència';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -798,8 +798,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get supportedSoftware => 'Supported software';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'S’estan copiant els fitxers…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Ha fallat la instal·lació';
 }
