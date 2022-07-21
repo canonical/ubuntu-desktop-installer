@@ -85,6 +85,11 @@ class MockWriteChangesToDiskModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
+  _i4.Partition? getOriginalPartition(String? sysname, int? number) =>
+      (super.noSuchMethod(
+              Invocation.method(#getOriginalPartition, [sysname, number]))
+          as _i4.Partition?);
+  @override
   _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i5.Future<void>);

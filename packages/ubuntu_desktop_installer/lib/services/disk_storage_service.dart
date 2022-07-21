@@ -94,6 +94,11 @@ class DiskStorageService {
     return _client.getStorageV2().then(_updateStorage);
   }
 
+  /// Fetches the original storage configuration.
+  Future<List<Disk>> getOriginalStorage() {
+    return _client.getOriginalStorageV2().then((r) => r.disks);
+  }
+
   /// Adds a [partition] in the specified [gap] on the [disk], and returns the
   /// new storage configuration.
   ///

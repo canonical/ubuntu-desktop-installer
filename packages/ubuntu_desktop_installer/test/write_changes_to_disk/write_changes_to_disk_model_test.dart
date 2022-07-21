@@ -37,7 +37,12 @@ void main() {
     testDisk(
       path: '/dev/sdd',
       preserve: true,
-      partitions: [Partition(number: 1, preserve: true)],
+      partitions: [
+        Partition(number: 1, preserve: true),
+        Partition(number: 2, mount: '/mnt'),
+        Partition(number: 3, wipe: 'superblock'),
+        Partition(number: 4, resize: true),
+      ],
     ),
   ];
 
@@ -47,10 +52,12 @@ void main() {
     final client = MockSubiquityClient();
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
+    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();
     verify(service.getStorage()).called(1);
+    verify(service.getOriginalStorage()).called(1);
 
     expect(model.disks, equals(nonPreservedDisks));
     expect(
@@ -59,7 +66,16 @@ void main() {
         'sda': [Partition(number: 1, preserve: false)],
         'sdb': [Partition(number: 2, preserve: false)],
         'sdc': [Partition(number: 3, preserve: false)],
+        'sdd': [
+          Partition(number: 2, mount: '/mnt'),
+          Partition(number: 3, wipe: 'superblock'),
+          Partition(number: 4, resize: true),
+        ],
       }),
+    );
+    expect(
+      model.getOriginalPartition('sdd', 3),
+      Partition(number: 3, wipe: 'superblock'),
     );
   });
 
@@ -67,6 +83,7 @@ void main() {
     final client = MockSubiquityClient();
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
+    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     when(service.setStorage(any)).thenAnswer((_) async => nonPreservedDisks);
 
     final model = WriteChangesToDiskModel(client, service);

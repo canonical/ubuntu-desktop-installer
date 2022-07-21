@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -45,16 +47,30 @@ final testDisks = <Disk>[
       Partition(
         number: 3,
         size: 33,
+        wipe: 'superblock',
         mount: '/mnt/3',
         format: 'ext3',
-        preserve: false,
       ),
       Partition(
         number: 4,
         size: 44,
+        wipe: 'superblock',
         format: 'ext4',
+      ),
+      Partition(
+        number: 5,
+        size: 55,
+        mount: '/mnt/5',
+      ),
+      Partition(
+        number: 6,
+        size: 66,
+        resize: true,
+      ),
+      Partition(
+        number: 7,
         preserve: false,
-      )
+      ),
     ],
   ),
 ];
@@ -62,10 +78,14 @@ final testDisks = <Disk>[
 WriteChangesToDiskModel buildModel({
   List<Disk>? disks,
   Map<String, List<Partition>>? partitions,
+  Map<String, List<Partition>>? originals,
 }) {
   final model = MockWriteChangesToDiskModel();
   when(model.disks).thenReturn(disks ?? <Disk>[]);
   when(model.partitions).thenReturn(partitions ?? <String, List<Partition>>{});
+  when(model.getOriginalPartition(any, any)).thenAnswer((i) =>
+      originals?[i.positionalArguments.first]?.firstWhereOrNull(
+          (p) => p.number == i.positionalArguments.last as int));
   return model;
 }
 
@@ -105,6 +125,36 @@ void main() {
     }
   });
 
+  testWidgets('partition change summary', (tester) async {
+    final model = buildModel(disks: testDisks, partitions: {
+      testDisks.first.sysname: testDisks.first.partitions.cast<Partition>(),
+      testDisks.last.sysname: testDisks.last.partitions.cast<Partition>(),
+    }, originals: {
+      'sdb': [Partition(number: 6, size: 123)],
+    });
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+        find.textContaining(tester.lang
+            .writeChangesPartitionFormattedMounted('sdb', 3, 'ext3', '/mnt/3')),
+        findsOneWidget);
+    expect(
+        find.textContaining(
+            tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
+        findsOneWidget);
+    expect(
+        find.textContaining(
+            tester.lang.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
+        findsOneWidget);
+    expect(
+        find.textContaining(tester.lang.writeChangesPartitionResized(
+            'sdb', 6, filesize(123), filesize(66))),
+        findsOneWidget);
+    expect(
+        find.textContaining(tester.lang.writeChangesPartitionCreated('sdb', 7)),
+        findsOneWidget);
+  });
+
   testWidgets('starts installation', (tester) async {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
@@ -125,6 +175,7 @@ void main() {
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
+    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     registerMockService<DiskStorageService>(service);
 
     await tester.pumpWidget(tester.buildApp(WriteChangesToDiskPage.create));
