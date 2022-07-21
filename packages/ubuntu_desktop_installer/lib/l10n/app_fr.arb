@@ -571,5 +571,50 @@
   "installationFailed": "Échec de l'installation",
   "@installationFailed": {},
   "copyingFiles": "Copie des fichiers...",
-  "@copyingFiles": {}
+  "@copyingFiles": {},
+  "installAlongsideAllocateSpace": "Allouer de l'espace",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideSize": "Taille :",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Disponible :",
+  "@installAlongsideAvailable": {},
+  "installationTypeAlongsideMulti": "Installer {product} à côté d'eux",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Installer {product} à côté des autres partitions",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Allouez de l’espace disque en déplaçant le séparateur ci-dessous :",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsidePartition": "Partition :",
+  "@installAlongsidePartition": {},
+  "installAlongsideResizePartition": "Redimensionner la partition",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideFiles": "Fichiers",
+  "@installAlongsideFiles": {},
+  "installationTypeAlongsideDual": "Installer {product} à côté de {os1} et {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} partitions plus petites sont masquées, utilisez <a href=\"{url}\">l'outil de partitionnement avancé</a> pour plus de contrôle",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  }
 }

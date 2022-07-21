@@ -588,5 +588,41 @@
   "whoAreYouPageComputerNameInfo": "Имя, используемое при общении с другими компьютерами.",
   "@whoAreYouPageComputerNameInfo": {},
   "whoAreYouPageInvalidUsername": "Недопустимое имя пользователя",
-  "@whoAreYouPageInvalidUsername": {}
+  "@whoAreYouPageInvalidUsername": {},
+  "installAlongsideFiles": "Файлы",
+  "@installAlongsideFiles": {},
+  "installAlongsideResizePartition": "Изменить размер раздела",
+  "@installAlongsideResizePartition": {},
+  "installAlongsidePartition": "Раздел:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAllocateSpace": "Выделить место",
+  "@installAlongsideAllocateSpace": {},
+  "installationTypeAlongsideUnknown": "Установите {product} рядом с другими разделами",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Выделите место на диске, переместив разделитель:",
+  "@installAlongsideSpaceDivider": {},
+  "installationTypeAlongsideDual": "Установить {product} вместе с {os1} и {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideSize": "Размер:",
+  "@installAlongsideSize": {},
+  "installAlongsideHiddenPartitions": "{num} более мелких разделов скрыто, для большего контроля используйте <a href=\"{url}\">расширенный инструмент для разбиения на разделы</a>",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  }
 }
