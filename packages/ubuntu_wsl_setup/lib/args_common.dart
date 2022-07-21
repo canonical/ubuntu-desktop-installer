@@ -14,9 +14,8 @@ screens, yet allowing user to overwrite any of those during setup.
 }
 
 List<String>? serverArgsFromOptions(ArgResults options) {
-  if (options['prefill'] == null) {
-    return null;
-  }
-
-  return ['--prefill', options['prefill']];
+  return <String>[
+    if (options['prefill'] != null) ...['--prefill', options['prefill']],
+    if (options['reconfigure'] != null) '--autoinstall=',
+  ];
 }
