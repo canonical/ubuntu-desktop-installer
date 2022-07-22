@@ -26,10 +26,7 @@ void main() {
     ApplicationState? state,
     bool? isDone,
     bool? hasError,
-    bool? isPreparing,
     bool? isInstalling,
-    int? installationStep,
-    int? installationStepCount,
     Stream<String>? journal,
     bool? isLogVisible,
   }) {
@@ -37,10 +34,7 @@ void main() {
     when(model.state).thenReturn(state);
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
-    when(model.isPreparing).thenReturn(isPreparing ?? false);
     when(model.isInstalling).thenReturn(isInstalling ?? false);
-    when(model.installationStep).thenReturn(installationStep ?? 1);
-    when(model.installationStepCount).thenReturn(installationStepCount ?? 1);
     when(model.journal).thenAnswer((_) => journal ?? Stream<String>.empty());
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     return model;
