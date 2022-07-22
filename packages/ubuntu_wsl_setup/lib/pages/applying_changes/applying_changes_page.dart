@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -23,8 +22,9 @@ class ApplyingChangesPage extends StatefulWidget {
   /// Creates an instance with [AdvancedSetupModel].
   static Widget create(BuildContext context) {
     final monitor = getService<SubiquityStatusMonitor>();
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
-      create: (_) => ApplyingChangesModel(monitor),
+      create: (_) => ApplyingChangesModel(client, monitor),
       child: const ApplyingChangesPage(),
     );
   }
@@ -42,7 +42,7 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
       if (Wizard.of(context).hasNext) {
         Wizard.of(context).next();
       } else {
-        closeWindow();
+        model.reboot(immediate: false);
       }
     });
   }

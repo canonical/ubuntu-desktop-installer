@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../installing_state.dart';
 
@@ -10,11 +11,14 @@ import '../../installing_state.dart';
 ///
 /// See also:
 ///  * [ApplyingChangesPage]
-class ApplyingChangesModel extends SafeChangeNotifier {
+class ApplyingChangesModel extends SafeChangeNotifier with SystemShutdown {
   /// Creates a model for the 'applying changes' page.
-  ApplyingChangesModel(this._monitor);
+  ApplyingChangesModel(this.client, this._monitor);
 
   final SubiquityStatusMonitor _monitor;
+
+  @override
+  final SubiquityClient client;
   StreamSubscription<ApplicationStatus?>? _sub;
   bool _previousState = true;
 
