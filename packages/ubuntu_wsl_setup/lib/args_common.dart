@@ -14,9 +14,10 @@ screens, yet allowing user to overwrite any of those during setup.
 }
 
 List<String>? serverArgsFromOptions(ArgResults options) {
-  if (options['prefill'] == null) {
-    return null;
-  }
-
-  return ['--prefill', options['prefill']];
+  return <String>[
+    if (options['prefill'] != null) ...['--prefill', options['prefill']],
+    // Prevents the server to go autoinstall if a previous run was.
+    // See https://github.com/canonical/ubuntu-desktop-installer/pull/1026
+    if (options['reconfigure'] != null) '--autoinstall=',
+  ];
 }
