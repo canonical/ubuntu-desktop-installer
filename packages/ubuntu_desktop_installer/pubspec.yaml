@@ -33,9 +33,9 @@ dependencies:
   provider: ^6.0.0
   safe_change_notifier: ^0.1.0
   scroll_to_index: ^3.0.0
-  split_view: # TODO: ^3.2.0
+  split_view: # TODO: ^3.2.x
     git:
-      # https://github.com/toshiaki-h/split_view/pull/18
+      # https://github.com/canonical/ubuntu-desktop-installer/issues/1031
       url: https://github.com/jpnurmi/split_view.git
       ref: controller-weights
   stdlibc: ^0.0.1
