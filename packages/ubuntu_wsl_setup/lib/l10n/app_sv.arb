@@ -162,5 +162,9 @@
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
   "@installationSlidesFindOutMoreLink": {},
   "installationSlidesFindOutMoreText": " för att ta reda på mer om Ubuntu på WSL och hur Canonical stödjer utvecklare och organisationer.",
-  "@installationSlidesFindOutMoreText": {}
+  "@installationSlidesFindOutMoreText": {},
+  "configurationUIInteroperabilitySubtitle": "Huruvida interoperabiliteten är aktiverad eller inte.",
+  "@configurationUIInteroperabilitySubtitle": {},
+  "advancedSetupHostGenerationTitle": "Aktivera värdgenerering",
+  "@advancedSetupHostGenerationTitle": {}
 }
