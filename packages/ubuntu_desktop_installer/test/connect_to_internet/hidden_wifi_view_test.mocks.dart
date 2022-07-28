@@ -2,6 +2,7 @@
 // in ubuntu_desktop_installer/test/connect_to_internet/hidden_wifi_view_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i6;
 import 'dart:ui' as _i7;
 

@@ -2,6 +2,7 @@
 // in ubuntu_wsl_setup/test/installation_slides_model_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;

@@ -2,6 +2,7 @@
 // in ubuntu_desktop_installer/test/choose_your_look/choose_your_look_page_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:ui' as _i2;
 
 import 'package:mockito/mockito.dart' as _i1;

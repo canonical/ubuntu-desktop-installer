@@ -2,6 +2,7 @@
 // in ubuntu_desktop_installer/test/configure_secure_boot/configure_secure_boot_page_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:ui' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;

@@ -2,6 +2,7 @@
 // in subiquity_client/test/status_monitor_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 import 'dart:convert' as _i3;
 import 'dart:io' as _i2;
