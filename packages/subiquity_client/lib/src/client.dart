@@ -41,14 +41,14 @@ class SubiquityException implements Exception {
 
 class SubiquityClient {
   final _client = HttpClient();
-  late Endpoint _endpoint;
-  late String _host;
+  Endpoint? _endpoint;
+  String? _host;
   final _isOpen = Completer<bool>();
 
   Future<bool> get isOpen => _isOpen.future;
 
   Uri url(String unencodedPath, [Map<String, dynamic>? queryParameters]) =>
-      Uri.http(_host, unencodedPath, queryParameters);
+      Uri.http(_host!, unencodedPath, queryParameters);
 
   void open(Endpoint endpoint) {
     log.info('Opening socket to $endpoint');
