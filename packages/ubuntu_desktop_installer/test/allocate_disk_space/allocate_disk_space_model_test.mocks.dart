@@ -2,6 +2,7 @@
 // in ubuntu_desktop_installer/test/allocate_disk_space/allocate_disk_space_model_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;

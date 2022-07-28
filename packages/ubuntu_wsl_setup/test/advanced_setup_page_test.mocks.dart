@@ -2,6 +2,7 @@
 // in ubuntu_wsl_setup/test/advanced_setup_page_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 import 'dart:ui' as _i4;
 
