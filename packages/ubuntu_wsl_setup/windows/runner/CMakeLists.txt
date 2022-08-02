@@ -24,6 +24,9 @@ apply_standard_settings(${BINARY_NAME})
 # Disable Windows macros that collide with C++ standard library functions.
 target_compile_definitions(${BINARY_NAME} PRIVATE "NOMINMAX")
 
+# Enable full PDB generation
+target_link_options(${BINARY_NAME} PUBLIC /DEBUG:FULL)
+
 # Add dependency libraries and include directories. Add any application-specific
 # dependencies here.
 target_link_libraries(${BINARY_NAME} PRIVATE flutter flutter_wrapper_app)
