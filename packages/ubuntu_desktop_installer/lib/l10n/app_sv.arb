@@ -674,5 +674,12 @@
   "installAlongsidePartition": "Partition:",
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Storlek:",
-  "@installAlongsideSize": {}
+  "@installAlongsideSize": {},
+  "accessSlideDescription": "Hjärtat i {RELEASE}-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färgschema och textstorlek, gör {RELEASE} datoranvändning enkel - vem du än är och var du än är.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
