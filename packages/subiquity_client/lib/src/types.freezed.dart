@@ -3610,7 +3610,7 @@ mixin _$PartitionOrGap {
             bool? resize,
             String? path)
         partition,
-    required TResult Function(int offset, int size) gap,
+    required TResult Function(int offset, int size, GapUsable usable) gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3631,7 +3631,7 @@ mixin _$PartitionOrGap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3652,7 +3652,7 @@ mixin _$PartitionOrGap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3954,7 +3954,7 @@ class _$Partition implements Partition {
             bool? resize,
             String? path)
         partition,
-    required TResult Function(int offset, int size) gap,
+    required TResult Function(int offset, int size, GapUsable usable) gap,
   }) {
     return partition(size, number, preserve, wipe, annotations, mount, format,
         grubDevice, boot, os, offset, estimatedMinSize, resize, path);
@@ -3979,7 +3979,7 @@ class _$Partition implements Partition {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
   }) {
     return partition?.call(size, number, preserve, wipe, annotations, mount,
         format, grubDevice, boot, os, offset, estimatedMinSize, resize, path);
@@ -4004,7 +4004,7 @@ class _$Partition implements Partition {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
     required TResult orElse(),
   }) {
     if (partition != null) {
@@ -4095,7 +4095,7 @@ abstract class Partition implements PartitionOrGap {
 abstract class _$$GapCopyWith<$Res> {
   factory _$$GapCopyWith(_$Gap value, $Res Function(_$Gap) then) =
       __$$GapCopyWithImpl<$Res>;
-  $Res call({int offset, int size});
+  $Res call({int offset, int size, GapUsable usable});
 }
 
 /// @nodoc
@@ -4111,6 +4111,7 @@ class __$$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
   $Res call({
     Object? offset = freezed,
     Object? size = freezed,
+    Object? usable = freezed,
   }) {
     return _then(_$Gap(
       offset: offset == freezed
@@ -4121,6 +4122,10 @@ class __$$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
+      usable: usable == freezed
+          ? _value.usable
+          : usable // ignore: cast_nullable_to_non_nullable
+              as GapUsable,
     ));
   }
 }
@@ -4128,7 +4133,11 @@ class __$$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$Gap implements Gap {
-  const _$Gap({required this.offset, required this.size, final String? $type})
+  const _$Gap(
+      {required this.offset,
+      required this.size,
+      required this.usable,
+      final String? $type})
       : $type = $type ?? 'Gap';
 
   factory _$Gap.fromJson(Map<String, dynamic> json) => _$$GapFromJson(json);
@@ -4137,13 +4146,15 @@ class _$Gap implements Gap {
   final int offset;
   @override
   final int size;
+  @override
+  final GapUsable usable;
 
   @JsonKey(name: '\$type')
   final String $type;
 
   @override
   String toString() {
-    return 'PartitionOrGap.gap(offset: $offset, size: $size)';
+    return 'PartitionOrGap.gap(offset: $offset, size: $size, usable: $usable)';
   }
 
   @override
@@ -4152,7 +4163,8 @@ class _$Gap implements Gap {
         (other.runtimeType == runtimeType &&
             other is _$Gap &&
             const DeepCollectionEquality().equals(other.offset, offset) &&
-            const DeepCollectionEquality().equals(other.size, size));
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.usable, usable));
   }
 
   @JsonKey(ignore: true)
@@ -4160,7 +4172,8 @@ class _$Gap implements Gap {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(offset),
-      const DeepCollectionEquality().hash(size));
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(usable));
 
   @JsonKey(ignore: true)
   @override
@@ -4186,9 +4199,9 @@ class _$Gap implements Gap {
             bool? resize,
             String? path)
         partition,
-    required TResult Function(int offset, int size) gap,
+    required TResult Function(int offset, int size, GapUsable usable) gap,
   }) {
-    return gap(offset, size);
+    return gap(offset, size, usable);
   }
 
   @override
@@ -4210,9 +4223,9 @@ class _$Gap implements Gap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
   }) {
-    return gap?.call(offset, size);
+    return gap?.call(offset, size, usable);
   }
 
   @override
@@ -4234,11 +4247,11 @@ class _$Gap implements Gap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size)? gap,
+    TResult Function(int offset, int size, GapUsable usable)? gap,
     required TResult orElse(),
   }) {
     if (gap != null) {
-      return gap(offset, size);
+      return gap(offset, size, usable);
     }
     return orElse();
   }
@@ -4283,13 +4296,16 @@ class _$Gap implements Gap {
 }
 
 abstract class Gap implements PartitionOrGap {
-  const factory Gap({required final int offset, required final int size}) =
-      _$Gap;
+  const factory Gap(
+      {required final int offset,
+      required final int size,
+      required final GapUsable usable}) = _$Gap;
 
   factory Gap.fromJson(Map<String, dynamic> json) = _$Gap.fromJson;
 
   int get offset;
   int get size;
+  GapUsable get usable;
   @JsonKey(ignore: true)
   _$$GapCopyWith<_$Gap> get copyWith => throw _privateConstructorUsedError;
 }

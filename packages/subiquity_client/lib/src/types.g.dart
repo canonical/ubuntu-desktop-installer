@@ -74,11 +74,9 @@ const _$ApplicationStateEnumMap = {
   ApplicationState.STARTING_UP: 'STARTING_UP',
   ApplicationState.CLOUD_INIT_WAIT: 'CLOUD_INIT_WAIT',
   ApplicationState.EARLY_COMMANDS: 'EARLY_COMMANDS',
-  ApplicationState.WAITING: 'WAITING',
   ApplicationState.NEEDS_CONFIRMATION: 'NEEDS_CONFIRMATION',
+  ApplicationState.WAITING: 'WAITING',
   ApplicationState.RUNNING: 'RUNNING',
-  ApplicationState.POST_WAIT: 'POST_WAIT',
-  ApplicationState.POST_RUNNING: 'POST_RUNNING',
   ApplicationState.UU_RUNNING: 'UU_RUNNING',
   ApplicationState.UU_CANCELLING: 'UU_CANCELLING',
   ApplicationState.DONE: 'DONE',
@@ -402,14 +400,21 @@ Map<String, dynamic> _$$PartitionToJson(_$Partition instance) =>
 _$Gap _$$GapFromJson(Map<String, dynamic> json) => _$Gap(
       offset: json['offset'] as int,
       size: json['size'] as int,
+      usable: $enumDecode(_$GapUsableEnumMap, json['usable']),
       $type: json[r'$type'] as String?,
     );
 
 Map<String, dynamic> _$$GapToJson(_$Gap instance) => <String, dynamic>{
       'offset': instance.offset,
       'size': instance.size,
+      'usable': _$GapUsableEnumMap[instance.usable]!,
       r'$type': instance.$type,
     };
+
+const _$GapUsableEnumMap = {
+  GapUsable.YES: 'YES',
+  GapUsable.TOO_MANY_PRIMARY_PARTS: 'TOO_MANY_PRIMARY_PARTS',
+};
 
 _$_Disk _$$_DiskFromJson(Map<String, dynamic> json) => _$_Disk(
       id: json['id'] as String,
