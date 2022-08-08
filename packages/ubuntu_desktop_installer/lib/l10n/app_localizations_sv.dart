@@ -320,17 +320,17 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Installera $product bredvid $os1 och $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Installera $product bredvid dem';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Installera $product bredvid andra partitioner';
   }
 
   @override
@@ -363,26 +363,26 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num mindre partitioner är dolda, använd det <a href=\"$url\">avancerade partitionsverktyget</a> för mer kontroll';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Ändra storlek på partition';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Tilldela utrymme';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Filer';
 
   @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Storlek:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Tillgängligt:';
 
   @override
   String get allocateDiskSpace => 'Tilldela diskutrymme';
