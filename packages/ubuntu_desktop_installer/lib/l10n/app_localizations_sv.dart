@@ -759,7 +759,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Hjärtat i $RELEASE-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färgschema och textstorlek, gör $RELEASE datoranvändning enkel - vem du än är och var du än är.';
   }
 
   @override
