@@ -37,6 +37,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get yesButtonText => 'Jes';
 
   @override
+  String get quitButtonText => 'Quit Installation';
+
+  @override
   String get welcome => 'Bonvenon';
 
   @override
@@ -802,4 +805,22 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get installationFailed => 'Instalado fiaskis';
+
+  @override
+  String get notEnoughDiskSpaceTitle => 'Sorry';
+
+  @override
+  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
+    return 'You need at least $SIZE disk space to install $RELEASE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceHasOnly(Object SIZE) {
+    return 'This computer has only $SIZE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
+    return 'The biggest disk on this computer is only $SIZE.';
+  }
 }
