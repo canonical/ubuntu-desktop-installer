@@ -37,6 +37,10 @@ Future<void> main(List<String> args) async {
   final registrationEvent = NamedEvent(
     'Local\\${options["distro-name"]}-registered',
   );
+  final closeOobeEvent = NamedEvent(
+    'Local\\${options["distro-name"]}-close-oobe',
+  );
+  closeOobeEvent.future.then((_) => closeWindow());
 
   // TODO: Handle the null case.
   // That would mean port exhaustion and the simplest way to solve it is by
