@@ -21,4 +21,5 @@ abstract class Routes {
   static const selectGuidedStorage = '/selectguidedstorage';
   static const installAlongside = '/installalongside';
   static const whereAreYou = '/whereareyou';
+  static const notEnoughDiskSpace = '/notenoughdiskspace';
 }

@@ -282,8 +282,13 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.keyboardLayout: const WizardRoute(
           builder: KeyboardLayoutPage.create,
         ),
-        Routes.connectToInternet: const WizardRoute(
+        Routes.connectToInternet: WizardRoute(
           builder: ConnectToInternetPage.create,
+          onNext: (_) =>
+              service.hasEnoughDiskSpace ? Routes.updatesOtherSoftware : null,
+        ),
+        Routes.notEnoughDiskSpace: const WizardRoute(
+          builder: NotEnoughDiskSpacePage.create,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,

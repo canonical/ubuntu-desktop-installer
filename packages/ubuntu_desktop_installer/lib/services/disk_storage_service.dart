@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -29,6 +31,8 @@ class DiskStorageService {
   bool? _hasRst;
   bool? _hasBitLocker;
   bool? _hasMultipleDisks;
+  int? _installMinimumSize;
+  int? _largestDiskSize;
   List<OsProber>? _existingOS;
   GuidedChoiceV2? _guidedChoice;
 
@@ -61,6 +65,15 @@ class DiskStorageService {
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _existingOS;
 
+  /// The minimum size required for the installation.
+  int get installMinimumSize => _installMinimumSize ?? 0;
+
+  /// The size of the largest disk.
+  int get largestDiskSize => _largestDiskSize ?? 0;
+
+  /// Returns whether the system has enough disk space to install.
+  bool get hasEnoughDiskSpace => installMinimumSize <= largestDiskSize;
+
   /// Fetches the current guided storage configuration.
   Future<GuidedStorageResponseV2> getGuidedStorage() async {
     return _client.getGuidedStorageV2();
@@ -80,6 +93,8 @@ class DiskStorageService {
     _needRoot = response.needRoot;
     _needBoot = response.needBoot;
     _hasMultipleDisks = response.disks.length > 1;
+    _installMinimumSize = response.installMinimumSize;
+    _largestDiskSize = response.disks.map((d) => d.size).fold<int>(0, math.max);
     _existingOS = response.disks
         .expand((d) => d.partitions
             .whereType<Partition>()
