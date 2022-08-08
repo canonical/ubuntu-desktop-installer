@@ -185,9 +185,6 @@ class MockUdevService extends _i1.Mock implements _i2.UdevService {
   }
 
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
-  @override
   _i2.UdevDeviceInfo bySysname(String? sysname) =>
       (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
               returnValue: _FakeUdevDeviceInfo_0(

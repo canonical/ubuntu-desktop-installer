@@ -4,12 +4,9 @@ import 'package:udev/udev.dart';
 /// Provides pretty disk names (e.g. 'sda' -> 'SanDisk UltraFit').
 class UdevService {
   /// Creates the service.
-  UdevService([@visibleForTesting Udev? udev]) : _udev = udev ?? Udev();
+  UdevService([@visibleForTesting this._udev]);
 
-  final Udev _udev;
-
-  /// Releases the resources used by udev.
-  void dispose() => _udev.dispose();
+  final UdevContext? _udev;
 
   /// Returns [UdevDeviceInfo] for a device specified by its [sysname].
   UdevDeviceInfo bySysname(String sysname) =>
@@ -46,21 +43,31 @@ abstract class UdevDeviceInfo {
 class _UdevSyspathDeviceInfo extends UdevDeviceInfo {
   _UdevSyspathDeviceInfo(this._udev, String syspath) : super._(syspath);
 
-  final Udev _udev;
+  final UdevContext? _udev;
 
   @override
   UdevDevice? _getDevice(String sysinfo) {
-    return UdevDevice.fromSyspath(_udev, syspath: sysinfo);
+    return UdevDevice.fromSyspath(sysinfo, context: _udev);
   }
 }
 
 class _UdevSysnameDeviceInfo extends UdevDeviceInfo {
   _UdevSysnameDeviceInfo(this._udev, String sysname) : super._(sysname);
 
-  final Udev _udev;
+  final UdevContext? _udev;
 
   @override
   UdevDevice? _getDevice(String sysinfo) {
-    return UdevDevice.fromSysname(_udev, subsystem: 'block', sysname: sysinfo);
+    return UdevDevice.fromSubsystemSysname('block', sysinfo, context: _udev);
   }
+}
+
+extension _UdevDeviceX on UdevDevice {
+  /// Model name (`ID_MODEL` or `ID_MODEL_FROM_DATABASE`).
+  String get model =>
+      properties['ID_MODEL_FROM_DATABASE'] ?? properties['ID_MODEL'] ?? '';
+
+  /// Vendor name (`ID_VENDOR` or `ID_VENDOR_FROM_DATABASE`).
+  String get vendor =>
+      properties['ID_VENDOR_FROM_DATABASE'] ?? properties['ID_VENDOR'] ?? '';
 }
