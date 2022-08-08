@@ -631,5 +631,48 @@
   "installationFailed": "Installationen misslyckades",
   "@installationFailed": {},
   "writeChangesPartitionTablesHeader": "Följande enheters partitionstabeller är ändrade:",
-  "@writeChangesPartitionTablesHeader": {}
+  "@writeChangesPartitionTablesHeader": {},
+  "installAlongsideFiles": "Filer",
+  "@installAlongsideFiles": {},
+  "installAlongsideAllocateSpace": "Tilldela utrymme",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideAvailable": "Tillgängligt:",
+  "@installAlongsideAvailable": {},
+  "installationTypeAlongsideDual": "Installera {product} bredvid {os1} och {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Installera {product} bredvid dem",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Installera {product} bredvid andra partitioner",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} mindre partitioner är dolda, använd det <a href=\"{url}\">avancerade partitionsverktyget</a> för mer kontroll",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideResizePartition": "Ändra storlek på partition",
+  "@installAlongsideResizePartition": {},
+  "installAlongsidePartition": "Partition:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "Storlek:",
+  "@installAlongsideSize": {}
 }

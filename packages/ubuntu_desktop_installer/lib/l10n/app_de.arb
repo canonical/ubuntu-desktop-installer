@@ -585,5 +585,50 @@
   "whoAreYouPageUsernameInvalidChars": "Dieser Name enthält ungültige Zeichen.",
   "@whoAreYouPageUsernameInvalidChars": {},
   "installationFailed": "Installation fehlgeschlagen",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "installationTypeAlongsideUnknown": "{product} neben anderen Partitionen installieren",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideDual": "{product} neben {os1} und {os2} installieren",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "{product} neben diesen installieren",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Weisen Sie dem Laufwerk Speicherplatz zu, indem Sie die Trennlinie darunter ziehen:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideHiddenPartitions": "{num} kleinere Partitionen werden ausgeblendet, verwenden Sie das <a href=\"{url}\">erweiterte Partitionierungswerkzeug⁣</a> für mehr Kontrolle",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideResizePartition": "Größe der Partition ändern",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Speicherplatz zuweisen",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Dateien",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Partition:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "Größe:",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Verfügbar:",
+  "@installAlongsideAvailable": {}
 }
