@@ -73,11 +73,9 @@ enum ApplicationState {
   STARTING_UP,
   CLOUD_INIT_WAIT,
   EARLY_COMMANDS,
-  WAITING,
   NEEDS_CONFIRMATION,
+  WAITING,
   RUNNING,
-  POST_WAIT,
-  POST_RUNNING,
   UU_RUNNING,
   UU_CANCELLING,
   DONE,
@@ -338,10 +336,16 @@ class PartitionOrGap with _$PartitionOrGap {
   const factory PartitionOrGap.gap({
     required int offset,
     required int size,
+    required GapUsable usable,
   }) = Gap;
 
   factory PartitionOrGap.fromJson(Map<String, dynamic> json) =>
       _$PartitionOrGapFromJson(json);
+}
+
+enum GapUsable {
+  YES,
+  TOO_MANY_PRIMARY_PARTS,
 }
 
 @freezed
