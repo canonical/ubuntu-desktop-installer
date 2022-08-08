@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'types.dart';
 
@@ -10,38 +12,11 @@ part of 'types.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ErrorReportRef _$ErrorReportRefFromJson(Map<String, dynamic> json) {
   return _ErrorReportRef.fromJson(json);
 }
-
-/// @nodoc
-class _$ErrorReportRefTearOff {
-  const _$ErrorReportRefTearOff();
-
-  _ErrorReportRef call(
-      {required ErrorReportState state,
-      required String base,
-      required ErrorReportKind kind,
-      required bool seen,
-      required String? oopsId}) {
-    return _ErrorReportRef(
-      state: state,
-      base: base,
-      kind: kind,
-      seen: seen,
-      oopsId: oopsId,
-    );
-  }
-
-  ErrorReportRef fromJson(Map<String, Object> json) {
-    return ErrorReportRef.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ErrorReportRef = _$ErrorReportRefTearOff();
 
 /// @nodoc
 mixin _$ErrorReportRef {
@@ -113,11 +88,11 @@ class _$ErrorReportRefCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ErrorReportRefCopyWith<$Res>
+abstract class _$$_ErrorReportRefCopyWith<$Res>
     implements $ErrorReportRefCopyWith<$Res> {
-  factory _$ErrorReportRefCopyWith(
-          _ErrorReportRef value, $Res Function(_ErrorReportRef) then) =
-      __$ErrorReportRefCopyWithImpl<$Res>;
+  factory _$$_ErrorReportRefCopyWith(
+          _$_ErrorReportRef value, $Res Function(_$_ErrorReportRef) then) =
+      __$$_ErrorReportRefCopyWithImpl<$Res>;
   @override
   $Res call(
       {ErrorReportState state,
@@ -128,15 +103,15 @@ abstract class _$ErrorReportRefCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ErrorReportRefCopyWithImpl<$Res>
+class __$$_ErrorReportRefCopyWithImpl<$Res>
     extends _$ErrorReportRefCopyWithImpl<$Res>
-    implements _$ErrorReportRefCopyWith<$Res> {
-  __$ErrorReportRefCopyWithImpl(
-      _ErrorReportRef _value, $Res Function(_ErrorReportRef) _then)
-      : super(_value, (v) => _then(v as _ErrorReportRef));
+    implements _$$_ErrorReportRefCopyWith<$Res> {
+  __$$_ErrorReportRefCopyWithImpl(
+      _$_ErrorReportRef _value, $Res Function(_$_ErrorReportRef) _then)
+      : super(_value, (v) => _then(v as _$_ErrorReportRef));
 
   @override
-  _ErrorReportRef get _value => super._value as _ErrorReportRef;
+  _$_ErrorReportRef get _value => super._value as _$_ErrorReportRef;
 
   @override
   $Res call({
@@ -146,7 +121,7 @@ class __$ErrorReportRefCopyWithImpl<$Res>
     Object? seen = freezed,
     Object? oopsId = freezed,
   }) {
-    return _then(_ErrorReportRef(
+    return _then(_$_ErrorReportRef(
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
@@ -182,7 +157,7 @@ class _$_ErrorReportRef implements _ErrorReportRef {
       required this.oopsId});
 
   factory _$_ErrorReportRef.fromJson(Map<String, dynamic> json) =>
-      _$_$_ErrorReportRefFromJson(json);
+      _$$_ErrorReportRefFromJson(json);
 
   @override
   final ErrorReportState state;
@@ -203,102 +178,68 @@ class _$_ErrorReportRef implements _ErrorReportRef {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ErrorReportRef &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)) &&
-            (identical(other.base, base) ||
-                const DeepCollectionEquality().equals(other.base, base)) &&
-            (identical(other.kind, kind) ||
-                const DeepCollectionEquality().equals(other.kind, kind)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.oopsId, oopsId) ||
-                const DeepCollectionEquality().equals(other.oopsId, oopsId)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ErrorReportRef &&
+            const DeepCollectionEquality().equals(other.state, state) &&
+            const DeepCollectionEquality().equals(other.base, base) &&
+            const DeepCollectionEquality().equals(other.kind, kind) &&
+            const DeepCollectionEquality().equals(other.seen, seen) &&
+            const DeepCollectionEquality().equals(other.oopsId, oopsId));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(state) ^
-      const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(kind) ^
-      const DeepCollectionEquality().hash(seen) ^
-      const DeepCollectionEquality().hash(oopsId);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
-      __$ErrorReportRefCopyWithImpl<_ErrorReportRef>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(state),
+      const DeepCollectionEquality().hash(base),
+      const DeepCollectionEquality().hash(kind),
+      const DeepCollectionEquality().hash(seen),
+      const DeepCollectionEquality().hash(oopsId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ErrorReportRefCopyWith<_$_ErrorReportRef> get copyWith =>
+      __$$_ErrorReportRefCopyWithImpl<_$_ErrorReportRef>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ErrorReportRefToJson(this);
+    return _$$_ErrorReportRefToJson(
+      this,
+    );
   }
 }
 
 abstract class _ErrorReportRef implements ErrorReportRef {
   const factory _ErrorReportRef(
-      {required ErrorReportState state,
-      required String base,
-      required ErrorReportKind kind,
-      required bool seen,
-      required String? oopsId}) = _$_ErrorReportRef;
+      {required final ErrorReportState state,
+      required final String base,
+      required final ErrorReportKind kind,
+      required final bool seen,
+      required final String? oopsId}) = _$_ErrorReportRef;
 
   factory _ErrorReportRef.fromJson(Map<String, dynamic> json) =
       _$_ErrorReportRef.fromJson;
 
   @override
-  ErrorReportState get state => throw _privateConstructorUsedError;
+  ErrorReportState get state;
   @override
-  String get base => throw _privateConstructorUsedError;
+  String get base;
   @override
-  ErrorReportKind get kind => throw _privateConstructorUsedError;
+  ErrorReportKind get kind;
   @override
-  bool get seen => throw _privateConstructorUsedError;
+  bool get seen;
   @override
-  String? get oopsId => throw _privateConstructorUsedError;
+  String? get oopsId;
   @override
   @JsonKey(ignore: true)
-  _$ErrorReportRefCopyWith<_ErrorReportRef> get copyWith =>
+  _$$_ErrorReportRefCopyWith<_$_ErrorReportRef> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ApplicationStatus _$ApplicationStatusFromJson(Map<String, dynamic> json) {
   return _ApplicationStatus.fromJson(json);
 }
-
-/// @nodoc
-class _$ApplicationStatusTearOff {
-  const _$ApplicationStatusTearOff();
-
-  _ApplicationStatus call(
-      {required ApplicationState state,
-      required String confirmingTty,
-      required ErrorReportRef? error,
-      required bool? cloudInitOk,
-      required bool? interactive,
-      required String echoSyslogId,
-      required String logSyslogId,
-      required String eventSyslogId}) {
-    return _ApplicationStatus(
-      state: state,
-      confirmingTty: confirmingTty,
-      error: error,
-      cloudInitOk: cloudInitOk,
-      interactive: interactive,
-      echoSyslogId: echoSyslogId,
-      logSyslogId: logSyslogId,
-      eventSyslogId: eventSyslogId,
-    );
-  }
-
-  ApplicationStatus fromJson(Map<String, Object> json) {
-    return ApplicationStatus.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ApplicationStatus = _$ApplicationStatusTearOff();
 
 /// @nodoc
 mixin _$ApplicationStatus {
@@ -404,11 +345,11 @@ class _$ApplicationStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ApplicationStatusCopyWith<$Res>
+abstract class _$$_ApplicationStatusCopyWith<$Res>
     implements $ApplicationStatusCopyWith<$Res> {
-  factory _$ApplicationStatusCopyWith(
-          _ApplicationStatus value, $Res Function(_ApplicationStatus) then) =
-      __$ApplicationStatusCopyWithImpl<$Res>;
+  factory _$$_ApplicationStatusCopyWith(_$_ApplicationStatus value,
+          $Res Function(_$_ApplicationStatus) then) =
+      __$$_ApplicationStatusCopyWithImpl<$Res>;
   @override
   $Res call(
       {ApplicationState state,
@@ -425,15 +366,15 @@ abstract class _$ApplicationStatusCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ApplicationStatusCopyWithImpl<$Res>
+class __$$_ApplicationStatusCopyWithImpl<$Res>
     extends _$ApplicationStatusCopyWithImpl<$Res>
-    implements _$ApplicationStatusCopyWith<$Res> {
-  __$ApplicationStatusCopyWithImpl(
-      _ApplicationStatus _value, $Res Function(_ApplicationStatus) _then)
-      : super(_value, (v) => _then(v as _ApplicationStatus));
+    implements _$$_ApplicationStatusCopyWith<$Res> {
+  __$$_ApplicationStatusCopyWithImpl(
+      _$_ApplicationStatus _value, $Res Function(_$_ApplicationStatus) _then)
+      : super(_value, (v) => _then(v as _$_ApplicationStatus));
 
   @override
-  _ApplicationStatus get _value => super._value as _ApplicationStatus;
+  _$_ApplicationStatus get _value => super._value as _$_ApplicationStatus;
 
   @override
   $Res call({
@@ -446,7 +387,7 @@ class __$ApplicationStatusCopyWithImpl<$Res>
     Object? logSyslogId = freezed,
     Object? eventSyslogId = freezed,
   }) {
-    return _then(_ApplicationStatus(
+    return _then(_$_ApplicationStatus(
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
@@ -497,7 +438,7 @@ class _$_ApplicationStatus implements _ApplicationStatus {
       required this.eventSyslogId});
 
   factory _$_ApplicationStatus.fromJson(Map<String, dynamic> json) =>
-      _$_$_ApplicationStatusFromJson(json);
+      _$$_ApplicationStatusFromJson(json);
 
   @override
   final ApplicationState state;
@@ -524,112 +465,90 @@ class _$_ApplicationStatus implements _ApplicationStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ApplicationStatus &&
-            (identical(other.state, state) ||
-                const DeepCollectionEquality().equals(other.state, state)) &&
-            (identical(other.confirmingTty, confirmingTty) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmingTty, confirmingTty)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.cloudInitOk, cloudInitOk) ||
-                const DeepCollectionEquality()
-                    .equals(other.cloudInitOk, cloudInitOk)) &&
-            (identical(other.interactive, interactive) ||
-                const DeepCollectionEquality()
-                    .equals(other.interactive, interactive)) &&
-            (identical(other.echoSyslogId, echoSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.echoSyslogId, echoSyslogId)) &&
-            (identical(other.logSyslogId, logSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.logSyslogId, logSyslogId)) &&
-            (identical(other.eventSyslogId, eventSyslogId) ||
-                const DeepCollectionEquality()
-                    .equals(other.eventSyslogId, eventSyslogId)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ApplicationStatus &&
+            const DeepCollectionEquality().equals(other.state, state) &&
+            const DeepCollectionEquality()
+                .equals(other.confirmingTty, confirmingTty) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other.cloudInitOk, cloudInitOk) &&
+            const DeepCollectionEquality()
+                .equals(other.interactive, interactive) &&
+            const DeepCollectionEquality()
+                .equals(other.echoSyslogId, echoSyslogId) &&
+            const DeepCollectionEquality()
+                .equals(other.logSyslogId, logSyslogId) &&
+            const DeepCollectionEquality()
+                .equals(other.eventSyslogId, eventSyslogId));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(state) ^
-      const DeepCollectionEquality().hash(confirmingTty) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(cloudInitOk) ^
-      const DeepCollectionEquality().hash(interactive) ^
-      const DeepCollectionEquality().hash(echoSyslogId) ^
-      const DeepCollectionEquality().hash(logSyslogId) ^
-      const DeepCollectionEquality().hash(eventSyslogId);
 
   @JsonKey(ignore: true)
   @override
-  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
-      __$ApplicationStatusCopyWithImpl<_ApplicationStatus>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(state),
+      const DeepCollectionEquality().hash(confirmingTty),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(cloudInitOk),
+      const DeepCollectionEquality().hash(interactive),
+      const DeepCollectionEquality().hash(echoSyslogId),
+      const DeepCollectionEquality().hash(logSyslogId),
+      const DeepCollectionEquality().hash(eventSyslogId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ApplicationStatusCopyWith<_$_ApplicationStatus> get copyWith =>
+      __$$_ApplicationStatusCopyWithImpl<_$_ApplicationStatus>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ApplicationStatusToJson(this);
+    return _$$_ApplicationStatusToJson(
+      this,
+    );
   }
 }
 
 abstract class _ApplicationStatus implements ApplicationStatus {
   const factory _ApplicationStatus(
-      {required ApplicationState state,
-      required String confirmingTty,
-      required ErrorReportRef? error,
-      required bool? cloudInitOk,
-      required bool? interactive,
-      required String echoSyslogId,
-      required String logSyslogId,
-      required String eventSyslogId}) = _$_ApplicationStatus;
+      {required final ApplicationState state,
+      required final String confirmingTty,
+      required final ErrorReportRef? error,
+      required final bool? cloudInitOk,
+      required final bool? interactive,
+      required final String echoSyslogId,
+      required final String logSyslogId,
+      required final String eventSyslogId}) = _$_ApplicationStatus;
 
   factory _ApplicationStatus.fromJson(Map<String, dynamic> json) =
       _$_ApplicationStatus.fromJson;
 
   @override
-  ApplicationState get state => throw _privateConstructorUsedError;
+  ApplicationState get state;
   @override
-  String get confirmingTty => throw _privateConstructorUsedError;
+  String get confirmingTty;
   @override
-  ErrorReportRef? get error => throw _privateConstructorUsedError;
+  ErrorReportRef? get error;
   @override
-  bool? get cloudInitOk => throw _privateConstructorUsedError;
+  bool? get cloudInitOk;
   @override
-  bool? get interactive => throw _privateConstructorUsedError;
+  bool? get interactive;
   @override
-  String get echoSyslogId => throw _privateConstructorUsedError;
+  String get echoSyslogId;
   @override
-  String get logSyslogId => throw _privateConstructorUsedError;
+  String get logSyslogId;
   @override
-  String get eventSyslogId => throw _privateConstructorUsedError;
+  String get eventSyslogId;
   @override
   @JsonKey(ignore: true)
-  _$ApplicationStatusCopyWith<_ApplicationStatus> get copyWith =>
+  _$$_ApplicationStatusCopyWith<_$_ApplicationStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 KeyFingerprint _$KeyFingerprintFromJson(Map<String, dynamic> json) {
   return _KeyFingerprint.fromJson(json);
 }
-
-/// @nodoc
-class _$KeyFingerprintTearOff {
-  const _$KeyFingerprintTearOff();
-
-  _KeyFingerprint call({required String keytype, required String fingerprint}) {
-    return _KeyFingerprint(
-      keytype: keytype,
-      fingerprint: fingerprint,
-    );
-  }
-
-  KeyFingerprint fromJson(Map<String, Object> json) {
-    return KeyFingerprint.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyFingerprint = _$KeyFingerprintTearOff();
 
 /// @nodoc
 mixin _$KeyFingerprint {
@@ -678,32 +597,32 @@ class _$KeyFingerprintCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$KeyFingerprintCopyWith<$Res>
+abstract class _$$_KeyFingerprintCopyWith<$Res>
     implements $KeyFingerprintCopyWith<$Res> {
-  factory _$KeyFingerprintCopyWith(
-          _KeyFingerprint value, $Res Function(_KeyFingerprint) then) =
-      __$KeyFingerprintCopyWithImpl<$Res>;
+  factory _$$_KeyFingerprintCopyWith(
+          _$_KeyFingerprint value, $Res Function(_$_KeyFingerprint) then) =
+      __$$_KeyFingerprintCopyWithImpl<$Res>;
   @override
   $Res call({String keytype, String fingerprint});
 }
 
 /// @nodoc
-class __$KeyFingerprintCopyWithImpl<$Res>
+class __$$_KeyFingerprintCopyWithImpl<$Res>
     extends _$KeyFingerprintCopyWithImpl<$Res>
-    implements _$KeyFingerprintCopyWith<$Res> {
-  __$KeyFingerprintCopyWithImpl(
-      _KeyFingerprint _value, $Res Function(_KeyFingerprint) _then)
-      : super(_value, (v) => _then(v as _KeyFingerprint));
+    implements _$$_KeyFingerprintCopyWith<$Res> {
+  __$$_KeyFingerprintCopyWithImpl(
+      _$_KeyFingerprint _value, $Res Function(_$_KeyFingerprint) _then)
+      : super(_value, (v) => _then(v as _$_KeyFingerprint));
 
   @override
-  _KeyFingerprint get _value => super._value as _KeyFingerprint;
+  _$_KeyFingerprint get _value => super._value as _$_KeyFingerprint;
 
   @override
   $Res call({
     Object? keytype = freezed,
     Object? fingerprint = freezed,
   }) {
-    return _then(_KeyFingerprint(
+    return _then(_$_KeyFingerprint(
       keytype: keytype == freezed
           ? _value.keytype
           : keytype // ignore: cast_nullable_to_non_nullable
@@ -722,7 +641,7 @@ class _$_KeyFingerprint implements _KeyFingerprint {
   const _$_KeyFingerprint({required this.keytype, required this.fingerprint});
 
   factory _$_KeyFingerprint.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyFingerprintFromJson(json);
+      _$$_KeyFingerprintFromJson(json);
 
   @override
   final String keytype;
@@ -737,82 +656,54 @@ class _$_KeyFingerprint implements _KeyFingerprint {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KeyFingerprint &&
-            (identical(other.keytype, keytype) ||
-                const DeepCollectionEquality()
-                    .equals(other.keytype, keytype)) &&
-            (identical(other.fingerprint, fingerprint) ||
-                const DeepCollectionEquality()
-                    .equals(other.fingerprint, fingerprint)));
+        (other.runtimeType == runtimeType &&
+            other is _$_KeyFingerprint &&
+            const DeepCollectionEquality().equals(other.keytype, keytype) &&
+            const DeepCollectionEquality()
+                .equals(other.fingerprint, fingerprint));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(keytype) ^
-      const DeepCollectionEquality().hash(fingerprint);
 
   @JsonKey(ignore: true)
   @override
-  _$KeyFingerprintCopyWith<_KeyFingerprint> get copyWith =>
-      __$KeyFingerprintCopyWithImpl<_KeyFingerprint>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(keytype),
+      const DeepCollectionEquality().hash(fingerprint));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_KeyFingerprintCopyWith<_$_KeyFingerprint> get copyWith =>
+      __$$_KeyFingerprintCopyWithImpl<_$_KeyFingerprint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KeyFingerprintToJson(this);
+    return _$$_KeyFingerprintToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeyFingerprint implements KeyFingerprint {
   const factory _KeyFingerprint(
-      {required String keytype,
-      required String fingerprint}) = _$_KeyFingerprint;
+      {required final String keytype,
+      required final String fingerprint}) = _$_KeyFingerprint;
 
   factory _KeyFingerprint.fromJson(Map<String, dynamic> json) =
       _$_KeyFingerprint.fromJson;
 
   @override
-  String get keytype => throw _privateConstructorUsedError;
+  String get keytype;
   @override
-  String get fingerprint => throw _privateConstructorUsedError;
+  String get fingerprint;
   @override
   @JsonKey(ignore: true)
-  _$KeyFingerprintCopyWith<_KeyFingerprint> get copyWith =>
+  _$$_KeyFingerprintCopyWith<_$_KeyFingerprint> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 LiveSessionSSHInfo _$LiveSessionSSHInfoFromJson(Map<String, dynamic> json) {
   return _LiveSessionSSHInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$LiveSessionSSHInfoTearOff {
-  const _$LiveSessionSSHInfoTearOff();
-
-  _LiveSessionSSHInfo call(
-      {required String username,
-      required PasswordKind passwordKind,
-      required String? password,
-      required List<KeyFingerprint> authorizedKeyFingerprints,
-      required List<String> ips,
-      required List<KeyFingerprint> hostKeyFingerprints}) {
-    return _LiveSessionSSHInfo(
-      username: username,
-      passwordKind: passwordKind,
-      password: password,
-      authorizedKeyFingerprints: authorizedKeyFingerprints,
-      ips: ips,
-      hostKeyFingerprints: hostKeyFingerprints,
-    );
-  }
-
-  LiveSessionSSHInfo fromJson(Map<String, Object> json) {
-    return LiveSessionSSHInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $LiveSessionSSHInfo = _$LiveSessionSSHInfoTearOff();
 
 /// @nodoc
 mixin _$LiveSessionSSHInfo {
@@ -893,11 +784,11 @@ class _$LiveSessionSSHInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LiveSessionSSHInfoCopyWith<$Res>
+abstract class _$$_LiveSessionSSHInfoCopyWith<$Res>
     implements $LiveSessionSSHInfoCopyWith<$Res> {
-  factory _$LiveSessionSSHInfoCopyWith(
-          _LiveSessionSSHInfo value, $Res Function(_LiveSessionSSHInfo) then) =
-      __$LiveSessionSSHInfoCopyWithImpl<$Res>;
+  factory _$$_LiveSessionSSHInfoCopyWith(_$_LiveSessionSSHInfo value,
+          $Res Function(_$_LiveSessionSSHInfo) then) =
+      __$$_LiveSessionSSHInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String username,
@@ -909,15 +800,15 @@ abstract class _$LiveSessionSSHInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LiveSessionSSHInfoCopyWithImpl<$Res>
+class __$$_LiveSessionSSHInfoCopyWithImpl<$Res>
     extends _$LiveSessionSSHInfoCopyWithImpl<$Res>
-    implements _$LiveSessionSSHInfoCopyWith<$Res> {
-  __$LiveSessionSSHInfoCopyWithImpl(
-      _LiveSessionSSHInfo _value, $Res Function(_LiveSessionSSHInfo) _then)
-      : super(_value, (v) => _then(v as _LiveSessionSSHInfo));
+    implements _$$_LiveSessionSSHInfoCopyWith<$Res> {
+  __$$_LiveSessionSSHInfoCopyWithImpl(
+      _$_LiveSessionSSHInfo _value, $Res Function(_$_LiveSessionSSHInfo) _then)
+      : super(_value, (v) => _then(v as _$_LiveSessionSSHInfo));
 
   @override
-  _LiveSessionSSHInfo get _value => super._value as _LiveSessionSSHInfo;
+  _$_LiveSessionSSHInfo get _value => super._value as _$_LiveSessionSSHInfo;
 
   @override
   $Res call({
@@ -928,7 +819,7 @@ class __$LiveSessionSSHInfoCopyWithImpl<$Res>
     Object? ips = freezed,
     Object? hostKeyFingerprints = freezed,
   }) {
-    return _then(_LiveSessionSSHInfo(
+    return _then(_$_LiveSessionSSHInfo(
       username: username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -942,15 +833,15 @@ class __$LiveSessionSSHInfoCopyWithImpl<$Res>
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
       authorizedKeyFingerprints: authorizedKeyFingerprints == freezed
-          ? _value.authorizedKeyFingerprints
+          ? _value._authorizedKeyFingerprints
           : authorizedKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
       ips: ips == freezed
-          ? _value.ips
+          ? _value._ips
           : ips // ignore: cast_nullable_to_non_nullable
               as List<String>,
       hostKeyFingerprints: hostKeyFingerprints == freezed
-          ? _value.hostKeyFingerprints
+          ? _value._hostKeyFingerprints
           : hostKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
     ));
@@ -964,12 +855,15 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
       {required this.username,
       required this.passwordKind,
       required this.password,
-      required this.authorizedKeyFingerprints,
-      required this.ips,
-      required this.hostKeyFingerprints});
+      required final List<KeyFingerprint> authorizedKeyFingerprints,
+      required final List<String> ips,
+      required final List<KeyFingerprint> hostKeyFingerprints})
+      : _authorizedKeyFingerprints = authorizedKeyFingerprints,
+        _ips = ips,
+        _hostKeyFingerprints = hostKeyFingerprints;
 
   factory _$_LiveSessionSSHInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_LiveSessionSSHInfoFromJson(json);
+      _$$_LiveSessionSSHInfoFromJson(json);
 
   @override
   final String username;
@@ -977,12 +871,26 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   final PasswordKind passwordKind;
   @override
   final String? password;
+  final List<KeyFingerprint> _authorizedKeyFingerprints;
   @override
-  final List<KeyFingerprint> authorizedKeyFingerprints;
+  List<KeyFingerprint> get authorizedKeyFingerprints {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_authorizedKeyFingerprints);
+  }
+
+  final List<String> _ips;
   @override
-  final List<String> ips;
+  List<String> get ips {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_ips);
+  }
+
+  final List<KeyFingerprint> _hostKeyFingerprints;
   @override
-  final List<KeyFingerprint> hostKeyFingerprints;
+  List<KeyFingerprint> get hostKeyFingerprints {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_hostKeyFingerprints);
+  }
 
   @override
   String toString() {
@@ -992,108 +900,78 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LiveSessionSSHInfo &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.passwordKind, passwordKind) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordKind, passwordKind)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.authorizedKeyFingerprints,
-                    authorizedKeyFingerprints) ||
-                const DeepCollectionEquality().equals(
-                    other.authorizedKeyFingerprints,
-                    authorizedKeyFingerprints)) &&
-            (identical(other.ips, ips) ||
-                const DeepCollectionEquality().equals(other.ips, ips)) &&
-            (identical(other.hostKeyFingerprints, hostKeyFingerprints) ||
-                const DeepCollectionEquality()
-                    .equals(other.hostKeyFingerprints, hostKeyFingerprints)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LiveSessionSSHInfo &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordKind, passwordKind) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality().equals(
+                other._authorizedKeyFingerprints, _authorizedKeyFingerprints) &&
+            const DeepCollectionEquality().equals(other._ips, _ips) &&
+            const DeepCollectionEquality()
+                .equals(other._hostKeyFingerprints, _hostKeyFingerprints));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(passwordKind) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(authorizedKeyFingerprints) ^
-      const DeepCollectionEquality().hash(ips) ^
-      const DeepCollectionEquality().hash(hostKeyFingerprints);
 
   @JsonKey(ignore: true)
   @override
-  _$LiveSessionSSHInfoCopyWith<_LiveSessionSSHInfo> get copyWith =>
-      __$LiveSessionSSHInfoCopyWithImpl<_LiveSessionSSHInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(passwordKind),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(_authorizedKeyFingerprints),
+      const DeepCollectionEquality().hash(_ips),
+      const DeepCollectionEquality().hash(_hostKeyFingerprints));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LiveSessionSSHInfoCopyWith<_$_LiveSessionSSHInfo> get copyWith =>
+      __$$_LiveSessionSSHInfoCopyWithImpl<_$_LiveSessionSSHInfo>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LiveSessionSSHInfoToJson(this);
+    return _$$_LiveSessionSSHInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _LiveSessionSSHInfo implements LiveSessionSSHInfo {
   const factory _LiveSessionSSHInfo(
-          {required String username,
-          required PasswordKind passwordKind,
-          required String? password,
-          required List<KeyFingerprint> authorizedKeyFingerprints,
-          required List<String> ips,
-          required List<KeyFingerprint> hostKeyFingerprints}) =
+          {required final String username,
+          required final PasswordKind passwordKind,
+          required final String? password,
+          required final List<KeyFingerprint> authorizedKeyFingerprints,
+          required final List<String> ips,
+          required final List<KeyFingerprint> hostKeyFingerprints}) =
       _$_LiveSessionSSHInfo;
 
   factory _LiveSessionSSHInfo.fromJson(Map<String, dynamic> json) =
       _$_LiveSessionSSHInfo.fromJson;
 
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  PasswordKind get passwordKind => throw _privateConstructorUsedError;
+  PasswordKind get passwordKind;
   @override
-  String? get password => throw _privateConstructorUsedError;
+  String? get password;
   @override
-  List<KeyFingerprint> get authorizedKeyFingerprints =>
-      throw _privateConstructorUsedError;
+  List<KeyFingerprint> get authorizedKeyFingerprints;
   @override
-  List<String> get ips => throw _privateConstructorUsedError;
+  List<String> get ips;
   @override
-  List<KeyFingerprint> get hostKeyFingerprints =>
-      throw _privateConstructorUsedError;
+  List<KeyFingerprint> get hostKeyFingerprints;
   @override
   @JsonKey(ignore: true)
-  _$LiveSessionSSHInfoCopyWith<_LiveSessionSSHInfo> get copyWith =>
+  _$$_LiveSessionSSHInfoCopyWith<_$_LiveSessionSSHInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 RefreshStatus _$RefreshStatusFromJson(Map<String, dynamic> json) {
   return _RefreshStatus.fromJson(json);
 }
-
-/// @nodoc
-class _$RefreshStatusTearOff {
-  const _$RefreshStatusTearOff();
-
-  _RefreshStatus call(
-      {required RefreshCheckState availability,
-      String currentSnapVersion = '',
-      String newSnapVersion = ''}) {
-    return _RefreshStatus(
-      availability: availability,
-      currentSnapVersion: currentSnapVersion,
-      newSnapVersion: newSnapVersion,
-    );
-  }
-
-  RefreshStatus fromJson(Map<String, Object> json) {
-    return RefreshStatus.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RefreshStatus = _$RefreshStatusTearOff();
 
 /// @nodoc
 mixin _$RefreshStatus {
@@ -1151,11 +1029,11 @@ class _$RefreshStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RefreshStatusCopyWith<$Res>
+abstract class _$$_RefreshStatusCopyWith<$Res>
     implements $RefreshStatusCopyWith<$Res> {
-  factory _$RefreshStatusCopyWith(
-          _RefreshStatus value, $Res Function(_RefreshStatus) then) =
-      __$RefreshStatusCopyWithImpl<$Res>;
+  factory _$$_RefreshStatusCopyWith(
+          _$_RefreshStatus value, $Res Function(_$_RefreshStatus) then) =
+      __$$_RefreshStatusCopyWithImpl<$Res>;
   @override
   $Res call(
       {RefreshCheckState availability,
@@ -1164,15 +1042,15 @@ abstract class _$RefreshStatusCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RefreshStatusCopyWithImpl<$Res>
+class __$$_RefreshStatusCopyWithImpl<$Res>
     extends _$RefreshStatusCopyWithImpl<$Res>
-    implements _$RefreshStatusCopyWith<$Res> {
-  __$RefreshStatusCopyWithImpl(
-      _RefreshStatus _value, $Res Function(_RefreshStatus) _then)
-      : super(_value, (v) => _then(v as _RefreshStatus));
+    implements _$$_RefreshStatusCopyWith<$Res> {
+  __$$_RefreshStatusCopyWithImpl(
+      _$_RefreshStatus _value, $Res Function(_$_RefreshStatus) _then)
+      : super(_value, (v) => _then(v as _$_RefreshStatus));
 
   @override
-  _RefreshStatus get _value => super._value as _RefreshStatus;
+  _$_RefreshStatus get _value => super._value as _$_RefreshStatus;
 
   @override
   $Res call({
@@ -1180,7 +1058,7 @@ class __$RefreshStatusCopyWithImpl<$Res>
     Object? currentSnapVersion = freezed,
     Object? newSnapVersion = freezed,
   }) {
-    return _then(_RefreshStatus(
+    return _then(_$_RefreshStatus(
       availability: availability == freezed
           ? _value.availability
           : availability // ignore: cast_nullable_to_non_nullable
@@ -1206,15 +1084,15 @@ class _$_RefreshStatus implements _RefreshStatus {
       this.newSnapVersion = ''});
 
   factory _$_RefreshStatus.fromJson(Map<String, dynamic> json) =>
-      _$_$_RefreshStatusFromJson(json);
+      _$$_RefreshStatusFromJson(json);
 
   @override
   final RefreshCheckState availability;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String currentSnapVersion;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String newSnapVersion;
 
   @override
@@ -1225,59 +1103,60 @@ class _$_RefreshStatus implements _RefreshStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RefreshStatus &&
-            (identical(other.availability, availability) ||
-                const DeepCollectionEquality()
-                    .equals(other.availability, availability)) &&
-            (identical(other.currentSnapVersion, currentSnapVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentSnapVersion, currentSnapVersion)) &&
-            (identical(other.newSnapVersion, newSnapVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.newSnapVersion, newSnapVersion)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RefreshStatus &&
+            const DeepCollectionEquality()
+                .equals(other.availability, availability) &&
+            const DeepCollectionEquality()
+                .equals(other.currentSnapVersion, currentSnapVersion) &&
+            const DeepCollectionEquality()
+                .equals(other.newSnapVersion, newSnapVersion));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(availability) ^
-      const DeepCollectionEquality().hash(currentSnapVersion) ^
-      const DeepCollectionEquality().hash(newSnapVersion);
 
   @JsonKey(ignore: true)
   @override
-  _$RefreshStatusCopyWith<_RefreshStatus> get copyWith =>
-      __$RefreshStatusCopyWithImpl<_RefreshStatus>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(availability),
+      const DeepCollectionEquality().hash(currentSnapVersion),
+      const DeepCollectionEquality().hash(newSnapVersion));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RefreshStatusCopyWith<_$_RefreshStatus> get copyWith =>
+      __$$_RefreshStatusCopyWithImpl<_$_RefreshStatus>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RefreshStatusToJson(this);
+    return _$$_RefreshStatusToJson(
+      this,
+    );
   }
 }
 
 abstract class _RefreshStatus implements RefreshStatus {
   const factory _RefreshStatus(
-      {required RefreshCheckState availability,
-      String currentSnapVersion,
-      String newSnapVersion}) = _$_RefreshStatus;
+      {required final RefreshCheckState availability,
+      final String currentSnapVersion,
+      final String newSnapVersion}) = _$_RefreshStatus;
 
   factory _RefreshStatus.fromJson(Map<String, dynamic> json) =
       _$_RefreshStatus.fromJson;
 
   @override
-  RefreshCheckState get availability => throw _privateConstructorUsedError;
+  RefreshCheckState get availability;
   @override
-  String get currentSnapVersion => throw _privateConstructorUsedError;
+  String get currentSnapVersion;
   @override
-  String get newSnapVersion => throw _privateConstructorUsedError;
+  String get newSnapVersion;
   @override
   @JsonKey(ignore: true)
-  _$RefreshStatusCopyWith<_RefreshStatus> get copyWith =>
+  _$$_RefreshStatusCopyWith<_$_RefreshStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 AnyStep _$AnyStepFromJson(Map<String, dynamic> json) {
-  switch (json['\$type'] as String) {
+  switch (json['\$type']) {
     case 'StepPressKey':
       return StepPressKey.fromJson(json);
     case 'StepKeyPresent':
@@ -1286,45 +1165,10 @@ AnyStep _$AnyStepFromJson(Map<String, dynamic> json) {
       return StepResult.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(
+          json, '\$type', 'AnyStep', 'Invalid union type "${json['\$type']}"!');
   }
 }
-
-/// @nodoc
-class _$AnyStepTearOff {
-  const _$AnyStepTearOff();
-
-  StepPressKey stepPressKey(
-      {required List<String> symbols, required Map<int, String> keycodes}) {
-    return StepPressKey(
-      symbols: symbols,
-      keycodes: keycodes,
-    );
-  }
-
-  StepKeyPresent stepKeyPresent(
-      {required String symbol, required String yes, required String no}) {
-    return StepKeyPresent(
-      symbol: symbol,
-      yes: yes,
-      no: no,
-    );
-  }
-
-  StepResult stepResult({required String layout, required String variant}) {
-    return StepResult(
-      layout: layout,
-      variant: variant,
-    );
-  }
-
-  AnyStep fromJson(Map<String, Object> json) {
-    return AnyStep.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AnyStep = _$AnyStepTearOff();
 
 /// @nodoc
 mixin _$AnyStep {
@@ -1335,6 +1179,14 @@ mixin _$AnyStep {
     required TResult Function(String symbol, String yes, String no)
         stepKeyPresent,
     required TResult Function(String layout, String variant) stepResult,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+        stepPressKey,
+    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult Function(String layout, String variant)? stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1351,6 +1203,13 @@ mixin _$AnyStep {
     required TResult Function(StepPressKey value) stepPressKey,
     required TResult Function(StepKeyPresent value) stepKeyPresent,
     required TResult Function(StepResult value) stepResult,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1380,35 +1239,35 @@ class _$AnyStepCopyWithImpl<$Res> implements $AnyStepCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $StepPressKeyCopyWith<$Res> {
-  factory $StepPressKeyCopyWith(
-          StepPressKey value, $Res Function(StepPressKey) then) =
-      _$StepPressKeyCopyWithImpl<$Res>;
+abstract class _$$StepPressKeyCopyWith<$Res> {
+  factory _$$StepPressKeyCopyWith(
+          _$StepPressKey value, $Res Function(_$StepPressKey) then) =
+      __$$StepPressKeyCopyWithImpl<$Res>;
   $Res call({List<String> symbols, Map<int, String> keycodes});
 }
 
 /// @nodoc
-class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
-    implements $StepPressKeyCopyWith<$Res> {
-  _$StepPressKeyCopyWithImpl(
-      StepPressKey _value, $Res Function(StepPressKey) _then)
-      : super(_value, (v) => _then(v as StepPressKey));
+class __$$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements _$$StepPressKeyCopyWith<$Res> {
+  __$$StepPressKeyCopyWithImpl(
+      _$StepPressKey _value, $Res Function(_$StepPressKey) _then)
+      : super(_value, (v) => _then(v as _$StepPressKey));
 
   @override
-  StepPressKey get _value => super._value as StepPressKey;
+  _$StepPressKey get _value => super._value as _$StepPressKey;
 
   @override
   $Res call({
     Object? symbols = freezed,
     Object? keycodes = freezed,
   }) {
-    return _then(StepPressKey(
+    return _then(_$StepPressKey(
       symbols: symbols == freezed
-          ? _value.symbols
+          ? _value._symbols
           : symbols // ignore: cast_nullable_to_non_nullable
               as List<String>,
       keycodes: keycodes == freezed
-          ? _value.keycodes
+          ? _value._keycodes
           : keycodes // ignore: cast_nullable_to_non_nullable
               as Map<int, String>,
     ));
@@ -1417,18 +1276,35 @@ class _$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('StepPressKey')
 @JsonMapConverter()
 class _$StepPressKey implements StepPressKey {
-  const _$StepPressKey({required this.symbols, required this.keycodes});
+  const _$StepPressKey(
+      {required final List<String> symbols,
+      required final Map<int, String> keycodes,
+      final String? $type})
+      : _symbols = symbols,
+        _keycodes = keycodes,
+        $type = $type ?? 'StepPressKey';
 
   factory _$StepPressKey.fromJson(Map<String, dynamic> json) =>
-      _$_$StepPressKeyFromJson(json);
+      _$$StepPressKeyFromJson(json);
 
+  final List<String> _symbols;
   @override
-  final List<String> symbols;
+  List<String> get symbols {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_symbols);
+  }
+
+  final Map<int, String> _keycodes;
   @override
-  final Map<int, String> keycodes;
+  Map<int, String> get keycodes {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_keycodes);
+  }
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -1438,25 +1314,23 @@ class _$StepPressKey implements StepPressKey {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StepPressKey &&
-            (identical(other.symbols, symbols) ||
-                const DeepCollectionEquality()
-                    .equals(other.symbols, symbols)) &&
-            (identical(other.keycodes, keycodes) ||
-                const DeepCollectionEquality()
-                    .equals(other.keycodes, keycodes)));
+        (other.runtimeType == runtimeType &&
+            other is _$StepPressKey &&
+            const DeepCollectionEquality().equals(other._symbols, _symbols) &&
+            const DeepCollectionEquality().equals(other._keycodes, _keycodes));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbols) ^
-      const DeepCollectionEquality().hash(keycodes);
 
   @JsonKey(ignore: true)
   @override
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
-      _$StepPressKeyCopyWithImpl<StepPressKey>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_symbols),
+      const DeepCollectionEquality().hash(_keycodes));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StepPressKeyCopyWith<_$StepPressKey> get copyWith =>
+      __$$StepPressKeyCopyWithImpl<_$StepPressKey>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1468,6 +1342,17 @@ class _$StepPressKey implements StepPressKey {
     required TResult Function(String layout, String variant) stepResult,
   }) {
     return stepPressKey(symbols, keycodes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+        stepPressKey,
+    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult Function(String layout, String variant)? stepResult,
+  }) {
+    return stepPressKey?.call(symbols, keycodes);
   }
 
   @override
@@ -1497,6 +1382,16 @@ class _$StepPressKey implements StepPressKey {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+  }) {
+    return stepPressKey?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StepPressKey value)? stepPressKey,
     TResult Function(StepKeyPresent value)? stepKeyPresent,
@@ -1511,42 +1406,44 @@ class _$StepPressKey implements StepPressKey {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$StepPressKeyToJson(this)..['\$type'] = 'StepPressKey';
+    return _$$StepPressKeyToJson(
+      this,
+    );
   }
 }
 
 abstract class StepPressKey implements AnyStep {
   const factory StepPressKey(
-      {required List<String> symbols,
-      required Map<int, String> keycodes}) = _$StepPressKey;
+      {required final List<String> symbols,
+      required final Map<int, String> keycodes}) = _$StepPressKey;
 
   factory StepPressKey.fromJson(Map<String, dynamic> json) =
       _$StepPressKey.fromJson;
 
-  List<String> get symbols => throw _privateConstructorUsedError;
-  Map<int, String> get keycodes => throw _privateConstructorUsedError;
+  List<String> get symbols;
+  Map<int, String> get keycodes;
   @JsonKey(ignore: true)
-  $StepPressKeyCopyWith<StepPressKey> get copyWith =>
+  _$$StepPressKeyCopyWith<_$StepPressKey> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StepKeyPresentCopyWith<$Res> {
-  factory $StepKeyPresentCopyWith(
-          StepKeyPresent value, $Res Function(StepKeyPresent) then) =
-      _$StepKeyPresentCopyWithImpl<$Res>;
+abstract class _$$StepKeyPresentCopyWith<$Res> {
+  factory _$$StepKeyPresentCopyWith(
+          _$StepKeyPresent value, $Res Function(_$StepKeyPresent) then) =
+      __$$StepKeyPresentCopyWithImpl<$Res>;
   $Res call({String symbol, String yes, String no});
 }
 
 /// @nodoc
-class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
-    implements $StepKeyPresentCopyWith<$Res> {
-  _$StepKeyPresentCopyWithImpl(
-      StepKeyPresent _value, $Res Function(StepKeyPresent) _then)
-      : super(_value, (v) => _then(v as StepKeyPresent));
+class __$$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements _$$StepKeyPresentCopyWith<$Res> {
+  __$$StepKeyPresentCopyWithImpl(
+      _$StepKeyPresent _value, $Res Function(_$StepKeyPresent) _then)
+      : super(_value, (v) => _then(v as _$StepKeyPresent));
 
   @override
-  StepKeyPresent get _value => super._value as StepKeyPresent;
+  _$StepKeyPresent get _value => super._value as _$StepKeyPresent;
 
   @override
   $Res call({
@@ -1554,7 +1451,7 @@ class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
     Object? yes = freezed,
     Object? no = freezed,
   }) {
-    return _then(StepKeyPresent(
+    return _then(_$StepKeyPresent(
       symbol: symbol == freezed
           ? _value.symbol
           : symbol // ignore: cast_nullable_to_non_nullable
@@ -1573,13 +1470,16 @@ class _$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('StepKeyPresent')
 class _$StepKeyPresent implements StepKeyPresent {
   const _$StepKeyPresent(
-      {required this.symbol, required this.yes, required this.no});
+      {required this.symbol,
+      required this.yes,
+      required this.no,
+      final String? $type})
+      : $type = $type ?? 'StepKeyPresent';
 
   factory _$StepKeyPresent.fromJson(Map<String, dynamic> json) =>
-      _$_$StepKeyPresentFromJson(json);
+      _$$StepKeyPresentFromJson(json);
 
   @override
   final String symbol;
@@ -1587,6 +1487,9 @@ class _$StepKeyPresent implements StepKeyPresent {
   final String yes;
   @override
   final String no;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -1596,26 +1499,25 @@ class _$StepKeyPresent implements StepKeyPresent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StepKeyPresent &&
-            (identical(other.symbol, symbol) ||
-                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
-            (identical(other.yes, yes) ||
-                const DeepCollectionEquality().equals(other.yes, yes)) &&
-            (identical(other.no, no) ||
-                const DeepCollectionEquality().equals(other.no, no)));
+        (other.runtimeType == runtimeType &&
+            other is _$StepKeyPresent &&
+            const DeepCollectionEquality().equals(other.symbol, symbol) &&
+            const DeepCollectionEquality().equals(other.yes, yes) &&
+            const DeepCollectionEquality().equals(other.no, no));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(symbol) ^
-      const DeepCollectionEquality().hash(yes) ^
-      const DeepCollectionEquality().hash(no);
 
   @JsonKey(ignore: true)
   @override
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
-      _$StepKeyPresentCopyWithImpl<StepKeyPresent>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(symbol),
+      const DeepCollectionEquality().hash(yes),
+      const DeepCollectionEquality().hash(no));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StepKeyPresentCopyWith<_$StepKeyPresent> get copyWith =>
+      __$$StepKeyPresentCopyWithImpl<_$StepKeyPresent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1627,6 +1529,17 @@ class _$StepKeyPresent implements StepKeyPresent {
     required TResult Function(String layout, String variant) stepResult,
   }) {
     return stepKeyPresent(symbol, yes, no);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+        stepPressKey,
+    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult Function(String layout, String variant)? stepResult,
+  }) {
+    return stepKeyPresent?.call(symbol, yes, no);
   }
 
   @override
@@ -1656,6 +1569,16 @@ class _$StepKeyPresent implements StepKeyPresent {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+  }) {
+    return stepKeyPresent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StepPressKey value)? stepPressKey,
     TResult Function(StepKeyPresent value)? stepKeyPresent,
@@ -1670,50 +1593,53 @@ class _$StepKeyPresent implements StepKeyPresent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$StepKeyPresentToJson(this)..['\$type'] = 'StepKeyPresent';
+    return _$$StepKeyPresentToJson(
+      this,
+    );
   }
 }
 
 abstract class StepKeyPresent implements AnyStep {
   const factory StepKeyPresent(
-      {required String symbol,
-      required String yes,
-      required String no}) = _$StepKeyPresent;
+      {required final String symbol,
+      required final String yes,
+      required final String no}) = _$StepKeyPresent;
 
   factory StepKeyPresent.fromJson(Map<String, dynamic> json) =
       _$StepKeyPresent.fromJson;
 
-  String get symbol => throw _privateConstructorUsedError;
-  String get yes => throw _privateConstructorUsedError;
-  String get no => throw _privateConstructorUsedError;
+  String get symbol;
+  String get yes;
+  String get no;
   @JsonKey(ignore: true)
-  $StepKeyPresentCopyWith<StepKeyPresent> get copyWith =>
+  _$$StepKeyPresentCopyWith<_$StepKeyPresent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StepResultCopyWith<$Res> {
-  factory $StepResultCopyWith(
-          StepResult value, $Res Function(StepResult) then) =
-      _$StepResultCopyWithImpl<$Res>;
+abstract class _$$StepResultCopyWith<$Res> {
+  factory _$$StepResultCopyWith(
+          _$StepResult value, $Res Function(_$StepResult) then) =
+      __$$StepResultCopyWithImpl<$Res>;
   $Res call({String layout, String variant});
 }
 
 /// @nodoc
-class _$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
-    implements $StepResultCopyWith<$Res> {
-  _$StepResultCopyWithImpl(StepResult _value, $Res Function(StepResult) _then)
-      : super(_value, (v) => _then(v as StepResult));
+class __$$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+    implements _$$StepResultCopyWith<$Res> {
+  __$$StepResultCopyWithImpl(
+      _$StepResult _value, $Res Function(_$StepResult) _then)
+      : super(_value, (v) => _then(v as _$StepResult));
 
   @override
-  StepResult get _value => super._value as StepResult;
+  _$StepResult get _value => super._value as _$StepResult;
 
   @override
   $Res call({
     Object? layout = freezed,
     Object? variant = freezed,
   }) {
-    return _then(StepResult(
+    return _then(_$StepResult(
       layout: layout == freezed
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
@@ -1728,17 +1654,21 @@ class _$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('StepResult')
 class _$StepResult implements StepResult {
-  const _$StepResult({required this.layout, required this.variant});
+  const _$StepResult(
+      {required this.layout, required this.variant, final String? $type})
+      : $type = $type ?? 'StepResult';
 
   factory _$StepResult.fromJson(Map<String, dynamic> json) =>
-      _$_$StepResultFromJson(json);
+      _$$StepResultFromJson(json);
 
   @override
   final String layout;
   @override
   final String variant;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -1748,23 +1678,23 @@ class _$StepResult implements StepResult {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StepResult &&
-            (identical(other.layout, layout) ||
-                const DeepCollectionEquality().equals(other.layout, layout)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality().equals(other.variant, variant)));
+        (other.runtimeType == runtimeType &&
+            other is _$StepResult &&
+            const DeepCollectionEquality().equals(other.layout, layout) &&
+            const DeepCollectionEquality().equals(other.variant, variant));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(layout) ^
-      const DeepCollectionEquality().hash(variant);
 
   @JsonKey(ignore: true)
   @override
-  $StepResultCopyWith<StepResult> get copyWith =>
-      _$StepResultCopyWithImpl<StepResult>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(layout),
+      const DeepCollectionEquality().hash(variant));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StepResultCopyWith<_$StepResult> get copyWith =>
+      __$$StepResultCopyWithImpl<_$StepResult>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1776,6 +1706,17 @@ class _$StepResult implements StepResult {
     required TResult Function(String layout, String variant) stepResult,
   }) {
     return stepResult(layout, variant);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+        stepPressKey,
+    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult Function(String layout, String variant)? stepResult,
+  }) {
+    return stepResult?.call(layout, variant);
   }
 
   @override
@@ -1805,6 +1746,16 @@ class _$StepResult implements StepResult {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StepPressKey value)? stepPressKey,
+    TResult Function(StepKeyPresent value)? stepKeyPresent,
+    TResult Function(StepResult value)? stepResult,
+  }) {
+    return stepResult?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StepPressKey value)? stepPressKey,
     TResult Function(StepKeyPresent value)? stepKeyPresent,
@@ -1819,48 +1770,30 @@ class _$StepResult implements StepResult {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$StepResultToJson(this)..['\$type'] = 'StepResult';
+    return _$$StepResultToJson(
+      this,
+    );
   }
 }
 
 abstract class StepResult implements AnyStep {
-  const factory StepResult({required String layout, required String variant}) =
-      _$StepResult;
+  const factory StepResult(
+      {required final String layout,
+      required final String variant}) = _$StepResult;
 
   factory StepResult.fromJson(Map<String, dynamic> json) =
       _$StepResult.fromJson;
 
-  String get layout => throw _privateConstructorUsedError;
-  String get variant => throw _privateConstructorUsedError;
+  String get layout;
+  String get variant;
   @JsonKey(ignore: true)
-  $StepResultCopyWith<StepResult> get copyWith =>
+  _$$StepResultCopyWith<_$StepResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 KeyboardSetting _$KeyboardSettingFromJson(Map<String, dynamic> json) {
   return _KeyboardSetting.fromJson(json);
 }
-
-/// @nodoc
-class _$KeyboardSettingTearOff {
-  const _$KeyboardSettingTearOff();
-
-  _KeyboardSetting call(
-      {required String layout, String variant = '', String? toggle}) {
-    return _KeyboardSetting(
-      layout: layout,
-      variant: variant,
-      toggle: toggle,
-    );
-  }
-
-  KeyboardSetting fromJson(Map<String, Object> json) {
-    return KeyboardSetting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardSetting = _$KeyboardSettingTearOff();
 
 /// @nodoc
 mixin _$KeyboardSetting {
@@ -1915,25 +1848,25 @@ class _$KeyboardSettingCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$KeyboardSettingCopyWith<$Res>
+abstract class _$$_KeyboardSettingCopyWith<$Res>
     implements $KeyboardSettingCopyWith<$Res> {
-  factory _$KeyboardSettingCopyWith(
-          _KeyboardSetting value, $Res Function(_KeyboardSetting) then) =
-      __$KeyboardSettingCopyWithImpl<$Res>;
+  factory _$$_KeyboardSettingCopyWith(
+          _$_KeyboardSetting value, $Res Function(_$_KeyboardSetting) then) =
+      __$$_KeyboardSettingCopyWithImpl<$Res>;
   @override
   $Res call({String layout, String variant, String? toggle});
 }
 
 /// @nodoc
-class __$KeyboardSettingCopyWithImpl<$Res>
+class __$$_KeyboardSettingCopyWithImpl<$Res>
     extends _$KeyboardSettingCopyWithImpl<$Res>
-    implements _$KeyboardSettingCopyWith<$Res> {
-  __$KeyboardSettingCopyWithImpl(
-      _KeyboardSetting _value, $Res Function(_KeyboardSetting) _then)
-      : super(_value, (v) => _then(v as _KeyboardSetting));
+    implements _$$_KeyboardSettingCopyWith<$Res> {
+  __$$_KeyboardSettingCopyWithImpl(
+      _$_KeyboardSetting _value, $Res Function(_$_KeyboardSetting) _then)
+      : super(_value, (v) => _then(v as _$_KeyboardSetting));
 
   @override
-  _KeyboardSetting get _value => super._value as _KeyboardSetting;
+  _$_KeyboardSetting get _value => super._value as _$_KeyboardSetting;
 
   @override
   $Res call({
@@ -1941,7 +1874,7 @@ class __$KeyboardSettingCopyWithImpl<$Res>
     Object? variant = freezed,
     Object? toggle = freezed,
   }) {
-    return _then(_KeyboardSetting(
+    return _then(_$_KeyboardSetting(
       layout: layout == freezed
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
@@ -1965,12 +1898,12 @@ class _$_KeyboardSetting implements _KeyboardSetting {
       {required this.layout, this.variant = '', this.toggle});
 
   factory _$_KeyboardSetting.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardSettingFromJson(json);
+      _$$_KeyboardSettingFromJson(json);
 
   @override
   final String layout;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String variant;
   @override
   final String? toggle;
@@ -1983,77 +1916,58 @@ class _$_KeyboardSetting implements _KeyboardSetting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KeyboardSetting &&
-            (identical(other.layout, layout) ||
-                const DeepCollectionEquality().equals(other.layout, layout)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality()
-                    .equals(other.variant, variant)) &&
-            (identical(other.toggle, toggle) ||
-                const DeepCollectionEquality().equals(other.toggle, toggle)));
+        (other.runtimeType == runtimeType &&
+            other is _$_KeyboardSetting &&
+            const DeepCollectionEquality().equals(other.layout, layout) &&
+            const DeepCollectionEquality().equals(other.variant, variant) &&
+            const DeepCollectionEquality().equals(other.toggle, toggle));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(layout) ^
-      const DeepCollectionEquality().hash(variant) ^
-      const DeepCollectionEquality().hash(toggle);
 
   @JsonKey(ignore: true)
   @override
-  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
-      __$KeyboardSettingCopyWithImpl<_KeyboardSetting>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(layout),
+      const DeepCollectionEquality().hash(variant),
+      const DeepCollectionEquality().hash(toggle));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_KeyboardSettingCopyWith<_$_KeyboardSetting> get copyWith =>
+      __$$_KeyboardSettingCopyWithImpl<_$_KeyboardSetting>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KeyboardSettingToJson(this);
+    return _$$_KeyboardSettingToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeyboardSetting implements KeyboardSetting {
   const factory _KeyboardSetting(
-      {required String layout,
-      String variant,
-      String? toggle}) = _$_KeyboardSetting;
+      {required final String layout,
+      final String variant,
+      final String? toggle}) = _$_KeyboardSetting;
 
   factory _KeyboardSetting.fromJson(Map<String, dynamic> json) =
       _$_KeyboardSetting.fromJson;
 
   @override
-  String get layout => throw _privateConstructorUsedError;
+  String get layout;
   @override
-  String get variant => throw _privateConstructorUsedError;
+  String get variant;
   @override
-  String? get toggle => throw _privateConstructorUsedError;
+  String? get toggle;
   @override
   @JsonKey(ignore: true)
-  _$KeyboardSettingCopyWith<_KeyboardSetting> get copyWith =>
+  _$$_KeyboardSettingCopyWith<_$_KeyboardSetting> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 KeyboardVariant _$KeyboardVariantFromJson(Map<String, dynamic> json) {
   return _KeyboardVariant.fromJson(json);
 }
-
-/// @nodoc
-class _$KeyboardVariantTearOff {
-  const _$KeyboardVariantTearOff();
-
-  _KeyboardVariant call({required String code, required String name}) {
-    return _KeyboardVariant(
-      code: code,
-      name: name,
-    );
-  }
-
-  KeyboardVariant fromJson(Map<String, Object> json) {
-    return KeyboardVariant.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardVariant = _$KeyboardVariantTearOff();
 
 /// @nodoc
 mixin _$KeyboardVariant {
@@ -2102,32 +2016,32 @@ class _$KeyboardVariantCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$KeyboardVariantCopyWith<$Res>
+abstract class _$$_KeyboardVariantCopyWith<$Res>
     implements $KeyboardVariantCopyWith<$Res> {
-  factory _$KeyboardVariantCopyWith(
-          _KeyboardVariant value, $Res Function(_KeyboardVariant) then) =
-      __$KeyboardVariantCopyWithImpl<$Res>;
+  factory _$$_KeyboardVariantCopyWith(
+          _$_KeyboardVariant value, $Res Function(_$_KeyboardVariant) then) =
+      __$$_KeyboardVariantCopyWithImpl<$Res>;
   @override
   $Res call({String code, String name});
 }
 
 /// @nodoc
-class __$KeyboardVariantCopyWithImpl<$Res>
+class __$$_KeyboardVariantCopyWithImpl<$Res>
     extends _$KeyboardVariantCopyWithImpl<$Res>
-    implements _$KeyboardVariantCopyWith<$Res> {
-  __$KeyboardVariantCopyWithImpl(
-      _KeyboardVariant _value, $Res Function(_KeyboardVariant) _then)
-      : super(_value, (v) => _then(v as _KeyboardVariant));
+    implements _$$_KeyboardVariantCopyWith<$Res> {
+  __$$_KeyboardVariantCopyWithImpl(
+      _$_KeyboardVariant _value, $Res Function(_$_KeyboardVariant) _then)
+      : super(_value, (v) => _then(v as _$_KeyboardVariant));
 
   @override
-  _KeyboardVariant get _value => super._value as _KeyboardVariant;
+  _$_KeyboardVariant get _value => super._value as _$_KeyboardVariant;
 
   @override
   $Res call({
     Object? code = freezed,
     Object? name = freezed,
   }) {
-    return _then(_KeyboardVariant(
+    return _then(_$_KeyboardVariant(
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -2146,7 +2060,7 @@ class _$_KeyboardVariant implements _KeyboardVariant {
   const _$_KeyboardVariant({required this.code, required this.name});
 
   factory _$_KeyboardVariant.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardVariantFromJson(json);
+      _$$_KeyboardVariantFromJson(json);
 
   @override
   final String code;
@@ -2161,73 +2075,53 @@ class _$_KeyboardVariant implements _KeyboardVariant {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KeyboardVariant &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+        (other.runtimeType == runtimeType &&
+            other is _$_KeyboardVariant &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
-  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
-      __$KeyboardVariantCopyWithImpl<_KeyboardVariant>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_KeyboardVariantCopyWith<_$_KeyboardVariant> get copyWith =>
+      __$$_KeyboardVariantCopyWithImpl<_$_KeyboardVariant>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KeyboardVariantToJson(this);
+    return _$$_KeyboardVariantToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeyboardVariant implements KeyboardVariant {
-  const factory _KeyboardVariant({required String code, required String name}) =
-      _$_KeyboardVariant;
+  const factory _KeyboardVariant(
+      {required final String code,
+      required final String name}) = _$_KeyboardVariant;
 
   factory _KeyboardVariant.fromJson(Map<String, dynamic> json) =
       _$_KeyboardVariant.fromJson;
 
   @override
-  String get code => throw _privateConstructorUsedError;
+  String get code;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
   @JsonKey(ignore: true)
-  _$KeyboardVariantCopyWith<_KeyboardVariant> get copyWith =>
+  _$$_KeyboardVariantCopyWith<_$_KeyboardVariant> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 KeyboardLayout _$KeyboardLayoutFromJson(Map<String, dynamic> json) {
   return _KeyboardLayout.fromJson(json);
 }
-
-/// @nodoc
-class _$KeyboardLayoutTearOff {
-  const _$KeyboardLayoutTearOff();
-
-  _KeyboardLayout call(
-      {required String code,
-      required String name,
-      required List<KeyboardVariant> variants}) {
-    return _KeyboardLayout(
-      code: code,
-      name: name,
-      variants: variants,
-    );
-  }
-
-  KeyboardLayout fromJson(Map<String, Object> json) {
-    return KeyboardLayout.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardLayout = _$KeyboardLayoutTearOff();
 
 /// @nodoc
 mixin _$KeyboardLayout {
@@ -2282,25 +2176,25 @@ class _$KeyboardLayoutCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$KeyboardLayoutCopyWith<$Res>
+abstract class _$$_KeyboardLayoutCopyWith<$Res>
     implements $KeyboardLayoutCopyWith<$Res> {
-  factory _$KeyboardLayoutCopyWith(
-          _KeyboardLayout value, $Res Function(_KeyboardLayout) then) =
-      __$KeyboardLayoutCopyWithImpl<$Res>;
+  factory _$$_KeyboardLayoutCopyWith(
+          _$_KeyboardLayout value, $Res Function(_$_KeyboardLayout) then) =
+      __$$_KeyboardLayoutCopyWithImpl<$Res>;
   @override
   $Res call({String code, String name, List<KeyboardVariant> variants});
 }
 
 /// @nodoc
-class __$KeyboardLayoutCopyWithImpl<$Res>
+class __$$_KeyboardLayoutCopyWithImpl<$Res>
     extends _$KeyboardLayoutCopyWithImpl<$Res>
-    implements _$KeyboardLayoutCopyWith<$Res> {
-  __$KeyboardLayoutCopyWithImpl(
-      _KeyboardLayout _value, $Res Function(_KeyboardLayout) _then)
-      : super(_value, (v) => _then(v as _KeyboardLayout));
+    implements _$$_KeyboardLayoutCopyWith<$Res> {
+  __$$_KeyboardLayoutCopyWithImpl(
+      _$_KeyboardLayout _value, $Res Function(_$_KeyboardLayout) _then)
+      : super(_value, (v) => _then(v as _$_KeyboardLayout));
 
   @override
-  _KeyboardLayout get _value => super._value as _KeyboardLayout;
+  _$_KeyboardLayout get _value => super._value as _$_KeyboardLayout;
 
   @override
   $Res call({
@@ -2308,7 +2202,7 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
     Object? name = freezed,
     Object? variants = freezed,
   }) {
-    return _then(_KeyboardLayout(
+    return _then(_$_KeyboardLayout(
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -2318,7 +2212,7 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       variants: variants == freezed
-          ? _value.variants
+          ? _value._variants
           : variants // ignore: cast_nullable_to_non_nullable
               as List<KeyboardVariant>,
     ));
@@ -2329,17 +2223,24 @@ class __$KeyboardLayoutCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_KeyboardLayout implements _KeyboardLayout {
   const _$_KeyboardLayout(
-      {required this.code, required this.name, required this.variants});
+      {required this.code,
+      required this.name,
+      required final List<KeyboardVariant> variants})
+      : _variants = variants;
 
   factory _$_KeyboardLayout.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardLayoutFromJson(json);
+      _$$_KeyboardLayoutFromJson(json);
 
   @override
   final String code;
   @override
   final String name;
+  final List<KeyboardVariant> _variants;
   @override
-  final List<KeyboardVariant> variants;
+  List<KeyboardVariant> get variants {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_variants);
+  }
 
   @override
   String toString() {
@@ -2349,79 +2250,58 @@ class _$_KeyboardLayout implements _KeyboardLayout {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KeyboardLayout &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.variants, variants) ||
-                const DeepCollectionEquality()
-                    .equals(other.variants, variants)));
+        (other.runtimeType == runtimeType &&
+            other is _$_KeyboardLayout &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other._variants, _variants));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(variants);
 
   @JsonKey(ignore: true)
   @override
-  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
-      __$KeyboardLayoutCopyWithImpl<_KeyboardLayout>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(_variants));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_KeyboardLayoutCopyWith<_$_KeyboardLayout> get copyWith =>
+      __$$_KeyboardLayoutCopyWithImpl<_$_KeyboardLayout>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KeyboardLayoutToJson(this);
+    return _$$_KeyboardLayoutToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeyboardLayout implements KeyboardLayout {
   const factory _KeyboardLayout(
-      {required String code,
-      required String name,
-      required List<KeyboardVariant> variants}) = _$_KeyboardLayout;
+      {required final String code,
+      required final String name,
+      required final List<KeyboardVariant> variants}) = _$_KeyboardLayout;
 
   factory _KeyboardLayout.fromJson(Map<String, dynamic> json) =
       _$_KeyboardLayout.fromJson;
 
   @override
-  String get code => throw _privateConstructorUsedError;
+  String get code;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  List<KeyboardVariant> get variants => throw _privateConstructorUsedError;
+  List<KeyboardVariant> get variants;
   @override
   @JsonKey(ignore: true)
-  _$KeyboardLayoutCopyWith<_KeyboardLayout> get copyWith =>
+  _$$_KeyboardLayoutCopyWith<_$_KeyboardLayout> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 KeyboardSetup _$KeyboardSetupFromJson(Map<String, dynamic> json) {
   return _KeyboardSetup.fromJson(json);
 }
-
-/// @nodoc
-class _$KeyboardSetupTearOff {
-  const _$KeyboardSetupTearOff();
-
-  _KeyboardSetup call(
-      {required KeyboardSetting setting,
-      required List<KeyboardLayout> layouts}) {
-    return _KeyboardSetup(
-      setting: setting,
-      layouts: layouts,
-    );
-  }
-
-  KeyboardSetup fromJson(Map<String, Object> json) {
-    return KeyboardSetup.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeyboardSetup = _$KeyboardSetupTearOff();
 
 /// @nodoc
 mixin _$KeyboardSetup {
@@ -2479,11 +2359,11 @@ class _$KeyboardSetupCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$KeyboardSetupCopyWith<$Res>
+abstract class _$$_KeyboardSetupCopyWith<$Res>
     implements $KeyboardSetupCopyWith<$Res> {
-  factory _$KeyboardSetupCopyWith(
-          _KeyboardSetup value, $Res Function(_KeyboardSetup) then) =
-      __$KeyboardSetupCopyWithImpl<$Res>;
+  factory _$$_KeyboardSetupCopyWith(
+          _$_KeyboardSetup value, $Res Function(_$_KeyboardSetup) then) =
+      __$$_KeyboardSetupCopyWithImpl<$Res>;
   @override
   $Res call({KeyboardSetting setting, List<KeyboardLayout> layouts});
 
@@ -2492,28 +2372,28 @@ abstract class _$KeyboardSetupCopyWith<$Res>
 }
 
 /// @nodoc
-class __$KeyboardSetupCopyWithImpl<$Res>
+class __$$_KeyboardSetupCopyWithImpl<$Res>
     extends _$KeyboardSetupCopyWithImpl<$Res>
-    implements _$KeyboardSetupCopyWith<$Res> {
-  __$KeyboardSetupCopyWithImpl(
-      _KeyboardSetup _value, $Res Function(_KeyboardSetup) _then)
-      : super(_value, (v) => _then(v as _KeyboardSetup));
+    implements _$$_KeyboardSetupCopyWith<$Res> {
+  __$$_KeyboardSetupCopyWithImpl(
+      _$_KeyboardSetup _value, $Res Function(_$_KeyboardSetup) _then)
+      : super(_value, (v) => _then(v as _$_KeyboardSetup));
 
   @override
-  _KeyboardSetup get _value => super._value as _KeyboardSetup;
+  _$_KeyboardSetup get _value => super._value as _$_KeyboardSetup;
 
   @override
   $Res call({
     Object? setting = freezed,
     Object? layouts = freezed,
   }) {
-    return _then(_KeyboardSetup(
+    return _then(_$_KeyboardSetup(
       setting: setting == freezed
           ? _value.setting
           : setting // ignore: cast_nullable_to_non_nullable
               as KeyboardSetting,
       layouts: layouts == freezed
-          ? _value.layouts
+          ? _value._layouts
           : layouts // ignore: cast_nullable_to_non_nullable
               as List<KeyboardLayout>,
     ));
@@ -2523,15 +2403,21 @@ class __$KeyboardSetupCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_KeyboardSetup implements _KeyboardSetup {
-  const _$_KeyboardSetup({required this.setting, required this.layouts});
+  const _$_KeyboardSetup(
+      {required this.setting, required final List<KeyboardLayout> layouts})
+      : _layouts = layouts;
 
   factory _$_KeyboardSetup.fromJson(Map<String, dynamic> json) =>
-      _$_$_KeyboardSetupFromJson(json);
+      _$$_KeyboardSetupFromJson(json);
 
   @override
   final KeyboardSetting setting;
+  final List<KeyboardLayout> _layouts;
   @override
-  final List<KeyboardLayout> layouts;
+  List<KeyboardLayout> get layouts {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_layouts);
+  }
 
   @override
   String toString() {
@@ -2541,81 +2427,53 @@ class _$_KeyboardSetup implements _KeyboardSetup {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KeyboardSetup &&
-            (identical(other.setting, setting) ||
-                const DeepCollectionEquality()
-                    .equals(other.setting, setting)) &&
-            (identical(other.layouts, layouts) ||
-                const DeepCollectionEquality().equals(other.layouts, layouts)));
+        (other.runtimeType == runtimeType &&
+            other is _$_KeyboardSetup &&
+            const DeepCollectionEquality().equals(other.setting, setting) &&
+            const DeepCollectionEquality().equals(other._layouts, _layouts));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(setting) ^
-      const DeepCollectionEquality().hash(layouts);
 
   @JsonKey(ignore: true)
   @override
-  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
-      __$KeyboardSetupCopyWithImpl<_KeyboardSetup>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(setting),
+      const DeepCollectionEquality().hash(_layouts));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_KeyboardSetupCopyWith<_$_KeyboardSetup> get copyWith =>
+      __$$_KeyboardSetupCopyWithImpl<_$_KeyboardSetup>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KeyboardSetupToJson(this);
+    return _$$_KeyboardSetupToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeyboardSetup implements KeyboardSetup {
   const factory _KeyboardSetup(
-      {required KeyboardSetting setting,
-      required List<KeyboardLayout> layouts}) = _$_KeyboardSetup;
+      {required final KeyboardSetting setting,
+      required final List<KeyboardLayout> layouts}) = _$_KeyboardSetup;
 
   factory _KeyboardSetup.fromJson(Map<String, dynamic> json) =
       _$_KeyboardSetup.fromJson;
 
   @override
-  KeyboardSetting get setting => throw _privateConstructorUsedError;
+  KeyboardSetting get setting;
   @override
-  List<KeyboardLayout> get layouts => throw _privateConstructorUsedError;
+  List<KeyboardLayout> get layouts;
   @override
   @JsonKey(ignore: true)
-  _$KeyboardSetupCopyWith<_KeyboardSetup> get copyWith =>
+  _$$_KeyboardSetupCopyWith<_$_KeyboardSetup> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SourceSelection _$SourceSelectionFromJson(Map<String, dynamic> json) {
   return _SourceSelection.fromJson(json);
 }
-
-/// @nodoc
-class _$SourceSelectionTearOff {
-  const _$SourceSelectionTearOff();
-
-  _SourceSelection call(
-      {required String name,
-      required String description,
-      required String id,
-      required int size,
-      required String variant,
-      @JsonKey(name: 'default') required bool isDefault}) {
-    return _SourceSelection(
-      name: name,
-      description: description,
-      id: id,
-      size: size,
-      variant: variant,
-      isDefault: isDefault,
-    );
-  }
-
-  SourceSelection fromJson(Map<String, Object> json) {
-    return SourceSelection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SourceSelection = _$SourceSelectionTearOff();
 
 /// @nodoc
 mixin _$SourceSelection {
@@ -2695,11 +2553,11 @@ class _$SourceSelectionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SourceSelectionCopyWith<$Res>
+abstract class _$$_SourceSelectionCopyWith<$Res>
     implements $SourceSelectionCopyWith<$Res> {
-  factory _$SourceSelectionCopyWith(
-          _SourceSelection value, $Res Function(_SourceSelection) then) =
-      __$SourceSelectionCopyWithImpl<$Res>;
+  factory _$$_SourceSelectionCopyWith(
+          _$_SourceSelection value, $Res Function(_$_SourceSelection) then) =
+      __$$_SourceSelectionCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -2711,15 +2569,15 @@ abstract class _$SourceSelectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SourceSelectionCopyWithImpl<$Res>
+class __$$_SourceSelectionCopyWithImpl<$Res>
     extends _$SourceSelectionCopyWithImpl<$Res>
-    implements _$SourceSelectionCopyWith<$Res> {
-  __$SourceSelectionCopyWithImpl(
-      _SourceSelection _value, $Res Function(_SourceSelection) _then)
-      : super(_value, (v) => _then(v as _SourceSelection));
+    implements _$$_SourceSelectionCopyWith<$Res> {
+  __$$_SourceSelectionCopyWithImpl(
+      _$_SourceSelection _value, $Res Function(_$_SourceSelection) _then)
+      : super(_value, (v) => _then(v as _$_SourceSelection));
 
   @override
-  _SourceSelection get _value => super._value as _SourceSelection;
+  _$_SourceSelection get _value => super._value as _$_SourceSelection;
 
   @override
   $Res call({
@@ -2730,7 +2588,7 @@ class __$SourceSelectionCopyWithImpl<$Res>
     Object? variant = freezed,
     Object? isDefault = freezed,
   }) {
-    return _then(_SourceSelection(
+    return _then(_$_SourceSelection(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -2771,7 +2629,7 @@ class _$_SourceSelection implements _SourceSelection {
       @JsonKey(name: 'default') required this.isDefault});
 
   factory _$_SourceSelection.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionFromJson(json);
+      _$$_SourceSelectionFromJson(json);
 
   @override
   final String name;
@@ -2795,73 +2653,70 @@ class _$_SourceSelection implements _SourceSelection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SourceSelection &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.variant, variant) ||
-                const DeepCollectionEquality()
-                    .equals(other.variant, variant)) &&
-            (identical(other.isDefault, isDefault) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDefault, isDefault)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SourceSelection &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.variant, variant) &&
+            const DeepCollectionEquality().equals(other.isDefault, isDefault));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(variant) ^
-      const DeepCollectionEquality().hash(isDefault);
 
   @JsonKey(ignore: true)
   @override
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
-      __$SourceSelectionCopyWithImpl<_SourceSelection>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(variant),
+      const DeepCollectionEquality().hash(isDefault));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SourceSelectionCopyWith<_$_SourceSelection> get copyWith =>
+      __$$_SourceSelectionCopyWithImpl<_$_SourceSelection>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionToJson(this);
+    return _$$_SourceSelectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _SourceSelection implements SourceSelection {
   const factory _SourceSelection(
-      {required String name,
-      required String description,
-      required String id,
-      required int size,
-      required String variant,
-      @JsonKey(name: 'default') required bool isDefault}) = _$_SourceSelection;
+          {required final String name,
+          required final String description,
+          required final String id,
+          required final int size,
+          required final String variant,
+          @JsonKey(name: 'default') required final bool isDefault}) =
+      _$_SourceSelection;
 
   factory _SourceSelection.fromJson(Map<String, dynamic> json) =
       _$_SourceSelection.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get size => throw _privateConstructorUsedError;
+  int get size;
   @override
-  String get variant => throw _privateConstructorUsedError;
+  String get variant;
   @override
   @JsonKey(name: 'default')
-  bool get isDefault => throw _privateConstructorUsedError;
+  bool get isDefault;
   @override
   @JsonKey(ignore: true)
-  _$SourceSelectionCopyWith<_SourceSelection> get copyWith =>
+  _$$_SourceSelectionCopyWith<_$_SourceSelection> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2869,29 +2724,6 @@ SourceSelectionAndSetting _$SourceSelectionAndSettingFromJson(
     Map<String, dynamic> json) {
   return _SourceSelectionAndSetting.fromJson(json);
 }
-
-/// @nodoc
-class _$SourceSelectionAndSettingTearOff {
-  const _$SourceSelectionAndSettingTearOff();
-
-  _SourceSelectionAndSetting call(
-      {required List<SourceSelection> sources,
-      required String currentId,
-      required bool searchDrivers}) {
-    return _SourceSelectionAndSetting(
-      sources: sources,
-      currentId: currentId,
-      searchDrivers: searchDrivers,
-    );
-  }
-
-  SourceSelectionAndSetting fromJson(Map<String, Object> json) {
-    return SourceSelectionAndSetting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SourceSelectionAndSetting = _$SourceSelectionAndSettingTearOff();
 
 /// @nodoc
 mixin _$SourceSelectionAndSetting {
@@ -2947,27 +2779,29 @@ class _$SourceSelectionAndSettingCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SourceSelectionAndSettingCopyWith<$Res>
+abstract class _$$_SourceSelectionAndSettingCopyWith<$Res>
     implements $SourceSelectionAndSettingCopyWith<$Res> {
-  factory _$SourceSelectionAndSettingCopyWith(_SourceSelectionAndSetting value,
-          $Res Function(_SourceSelectionAndSetting) then) =
-      __$SourceSelectionAndSettingCopyWithImpl<$Res>;
+  factory _$$_SourceSelectionAndSettingCopyWith(
+          _$_SourceSelectionAndSetting value,
+          $Res Function(_$_SourceSelectionAndSetting) then) =
+      __$$_SourceSelectionAndSettingCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<SourceSelection> sources, String currentId, bool searchDrivers});
 }
 
 /// @nodoc
-class __$SourceSelectionAndSettingCopyWithImpl<$Res>
+class __$$_SourceSelectionAndSettingCopyWithImpl<$Res>
     extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
-    implements _$SourceSelectionAndSettingCopyWith<$Res> {
-  __$SourceSelectionAndSettingCopyWithImpl(_SourceSelectionAndSetting _value,
-      $Res Function(_SourceSelectionAndSetting) _then)
-      : super(_value, (v) => _then(v as _SourceSelectionAndSetting));
+    implements _$$_SourceSelectionAndSettingCopyWith<$Res> {
+  __$$_SourceSelectionAndSettingCopyWithImpl(
+      _$_SourceSelectionAndSetting _value,
+      $Res Function(_$_SourceSelectionAndSetting) _then)
+      : super(_value, (v) => _then(v as _$_SourceSelectionAndSetting));
 
   @override
-  _SourceSelectionAndSetting get _value =>
-      super._value as _SourceSelectionAndSetting;
+  _$_SourceSelectionAndSetting get _value =>
+      super._value as _$_SourceSelectionAndSetting;
 
   @override
   $Res call({
@@ -2975,9 +2809,9 @@ class __$SourceSelectionAndSettingCopyWithImpl<$Res>
     Object? currentId = freezed,
     Object? searchDrivers = freezed,
   }) {
-    return _then(_SourceSelectionAndSetting(
+    return _then(_$_SourceSelectionAndSetting(
       sources: sources == freezed
-          ? _value.sources
+          ? _value._sources
           : sources // ignore: cast_nullable_to_non_nullable
               as List<SourceSelection>,
       currentId: currentId == freezed
@@ -2996,15 +2830,21 @@ class __$SourceSelectionAndSettingCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
   const _$_SourceSelectionAndSetting(
-      {required this.sources,
+      {required final List<SourceSelection> sources,
       required this.currentId,
-      required this.searchDrivers});
+      required this.searchDrivers})
+      : _sources = sources;
 
   factory _$_SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =>
-      _$_$_SourceSelectionAndSettingFromJson(json);
+      _$$_SourceSelectionAndSettingFromJson(json);
 
+  final List<SourceSelection> _sources;
   @override
-  final List<SourceSelection> sources;
+  List<SourceSelection> get sources {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sources);
+  }
+
   @override
   final String currentId;
   @override
@@ -3018,95 +2858,60 @@ class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SourceSelectionAndSetting &&
-            (identical(other.sources, sources) ||
-                const DeepCollectionEquality()
-                    .equals(other.sources, sources)) &&
-            (identical(other.currentId, currentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentId, currentId)) &&
-            (identical(other.searchDrivers, searchDrivers) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchDrivers, searchDrivers)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SourceSelectionAndSetting &&
+            const DeepCollectionEquality().equals(other._sources, _sources) &&
+            const DeepCollectionEquality().equals(other.currentId, currentId) &&
+            const DeepCollectionEquality()
+                .equals(other.searchDrivers, searchDrivers));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sources) ^
-      const DeepCollectionEquality().hash(currentId) ^
-      const DeepCollectionEquality().hash(searchDrivers);
 
   @JsonKey(ignore: true)
   @override
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
-      get copyWith =>
-          __$SourceSelectionAndSettingCopyWithImpl<_SourceSelectionAndSetting>(
-              this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_sources),
+      const DeepCollectionEquality().hash(currentId),
+      const DeepCollectionEquality().hash(searchDrivers));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SourceSelectionAndSettingCopyWith<_$_SourceSelectionAndSetting>
+      get copyWith => __$$_SourceSelectionAndSettingCopyWithImpl<
+          _$_SourceSelectionAndSetting>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SourceSelectionAndSettingToJson(this);
+    return _$$_SourceSelectionAndSettingToJson(
+      this,
+    );
   }
 }
 
 abstract class _SourceSelectionAndSetting implements SourceSelectionAndSetting {
   const factory _SourceSelectionAndSetting(
-      {required List<SourceSelection> sources,
-      required String currentId,
-      required bool searchDrivers}) = _$_SourceSelectionAndSetting;
+      {required final List<SourceSelection> sources,
+      required final String currentId,
+      required final bool searchDrivers}) = _$_SourceSelectionAndSetting;
 
   factory _SourceSelectionAndSetting.fromJson(Map<String, dynamic> json) =
       _$_SourceSelectionAndSetting.fromJson;
 
   @override
-  List<SourceSelection> get sources => throw _privateConstructorUsedError;
+  List<SourceSelection> get sources;
   @override
-  String get currentId => throw _privateConstructorUsedError;
+  String get currentId;
   @override
-  bool get searchDrivers => throw _privateConstructorUsedError;
+  bool get searchDrivers;
   @override
   @JsonKey(ignore: true)
-  _$SourceSelectionAndSettingCopyWith<_SourceSelectionAndSetting>
+  _$$_SourceSelectionAndSettingCopyWith<_$_SourceSelectionAndSetting>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 ZdevInfo _$ZdevInfoFromJson(Map<String, dynamic> json) {
   return _ZdevInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$ZdevInfoTearOff {
-  const _$ZdevInfoTearOff();
-
-  _ZdevInfo call(
-      {required String id,
-      required String type,
-      required bool on,
-      required bool exists,
-      required bool pers,
-      required bool auto,
-      required bool failed,
-      required String names}) {
-    return _ZdevInfo(
-      id: id,
-      type: type,
-      on: on,
-      exists: exists,
-      pers: pers,
-      auto: auto,
-      failed: failed,
-      names: names,
-    );
-  }
-
-  ZdevInfo fromJson(Map<String, Object> json) {
-    return ZdevInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ZdevInfo = _$ZdevInfoTearOff();
 
 /// @nodoc
 mixin _$ZdevInfo {
@@ -3197,9 +3002,10 @@ class _$ZdevInfoCopyWithImpl<$Res> implements $ZdevInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ZdevInfoCopyWith<$Res> implements $ZdevInfoCopyWith<$Res> {
-  factory _$ZdevInfoCopyWith(_ZdevInfo value, $Res Function(_ZdevInfo) then) =
-      __$ZdevInfoCopyWithImpl<$Res>;
+abstract class _$$_ZdevInfoCopyWith<$Res> implements $ZdevInfoCopyWith<$Res> {
+  factory _$$_ZdevInfoCopyWith(
+          _$_ZdevInfo value, $Res Function(_$_ZdevInfo) then) =
+      __$$_ZdevInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -3213,13 +3019,14 @@ abstract class _$ZdevInfoCopyWith<$Res> implements $ZdevInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ZdevInfoCopyWithImpl<$Res> extends _$ZdevInfoCopyWithImpl<$Res>
-    implements _$ZdevInfoCopyWith<$Res> {
-  __$ZdevInfoCopyWithImpl(_ZdevInfo _value, $Res Function(_ZdevInfo) _then)
-      : super(_value, (v) => _then(v as _ZdevInfo));
+class __$$_ZdevInfoCopyWithImpl<$Res> extends _$ZdevInfoCopyWithImpl<$Res>
+    implements _$$_ZdevInfoCopyWith<$Res> {
+  __$$_ZdevInfoCopyWithImpl(
+      _$_ZdevInfo _value, $Res Function(_$_ZdevInfo) _then)
+      : super(_value, (v) => _then(v as _$_ZdevInfo));
 
   @override
-  _ZdevInfo get _value => super._value as _ZdevInfo;
+  _$_ZdevInfo get _value => super._value as _$_ZdevInfo;
 
   @override
   $Res call({
@@ -3232,7 +3039,7 @@ class __$ZdevInfoCopyWithImpl<$Res> extends _$ZdevInfoCopyWithImpl<$Res>
     Object? failed = freezed,
     Object? names = freezed,
   }) {
-    return _then(_ZdevInfo(
+    return _then(_$_ZdevInfo(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -3283,7 +3090,7 @@ class _$_ZdevInfo implements _ZdevInfo {
       required this.names});
 
   factory _$_ZdevInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_ZdevInfoFromJson(json);
+      _$$_ZdevInfoFromJson(json);
 
   @override
   final String id;
@@ -3310,107 +3117,82 @@ class _$_ZdevInfo implements _ZdevInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ZdevInfo &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.on, on) ||
-                const DeepCollectionEquality().equals(other.on, on)) &&
-            (identical(other.exists, exists) ||
-                const DeepCollectionEquality().equals(other.exists, exists)) &&
-            (identical(other.pers, pers) ||
-                const DeepCollectionEquality().equals(other.pers, pers)) &&
-            (identical(other.auto, auto) ||
-                const DeepCollectionEquality().equals(other.auto, auto)) &&
-            (identical(other.failed, failed) ||
-                const DeepCollectionEquality().equals(other.failed, failed)) &&
-            (identical(other.names, names) ||
-                const DeepCollectionEquality().equals(other.names, names)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ZdevInfo &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.on, on) &&
+            const DeepCollectionEquality().equals(other.exists, exists) &&
+            const DeepCollectionEquality().equals(other.pers, pers) &&
+            const DeepCollectionEquality().equals(other.auto, auto) &&
+            const DeepCollectionEquality().equals(other.failed, failed) &&
+            const DeepCollectionEquality().equals(other.names, names));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(on) ^
-      const DeepCollectionEquality().hash(exists) ^
-      const DeepCollectionEquality().hash(pers) ^
-      const DeepCollectionEquality().hash(auto) ^
-      const DeepCollectionEquality().hash(failed) ^
-      const DeepCollectionEquality().hash(names);
 
   @JsonKey(ignore: true)
   @override
-  _$ZdevInfoCopyWith<_ZdevInfo> get copyWith =>
-      __$ZdevInfoCopyWithImpl<_ZdevInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(on),
+      const DeepCollectionEquality().hash(exists),
+      const DeepCollectionEquality().hash(pers),
+      const DeepCollectionEquality().hash(auto),
+      const DeepCollectionEquality().hash(failed),
+      const DeepCollectionEquality().hash(names));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ZdevInfoCopyWith<_$_ZdevInfo> get copyWith =>
+      __$$_ZdevInfoCopyWithImpl<_$_ZdevInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ZdevInfoToJson(this);
+    return _$$_ZdevInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _ZdevInfo implements ZdevInfo {
   const factory _ZdevInfo(
-      {required String id,
-      required String type,
-      required bool on,
-      required bool exists,
-      required bool pers,
-      required bool auto,
-      required bool failed,
-      required String names}) = _$_ZdevInfo;
+      {required final String id,
+      required final String type,
+      required final bool on,
+      required final bool exists,
+      required final bool pers,
+      required final bool auto,
+      required final bool failed,
+      required final String names}) = _$_ZdevInfo;
 
   factory _ZdevInfo.fromJson(Map<String, dynamic> json) = _$_ZdevInfo.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  bool get on => throw _privateConstructorUsedError;
+  bool get on;
   @override
-  bool get exists => throw _privateConstructorUsedError;
+  bool get exists;
   @override
-  bool get pers => throw _privateConstructorUsedError;
+  bool get pers;
   @override
-  bool get auto => throw _privateConstructorUsedError;
+  bool get auto;
   @override
-  bool get failed => throw _privateConstructorUsedError;
+  bool get failed;
   @override
-  String get names => throw _privateConstructorUsedError;
+  String get names;
   @override
   @JsonKey(ignore: true)
-  _$ZdevInfoCopyWith<_ZdevInfo> get copyWith =>
+  _$$_ZdevInfoCopyWith<_$_ZdevInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 NetworkStatus _$NetworkStatusFromJson(Map<String, dynamic> json) {
   return _NetworkStatus.fromJson(json);
 }
-
-/// @nodoc
-class _$NetworkStatusTearOff {
-  const _$NetworkStatusTearOff();
-
-  _NetworkStatus call(
-      {required List<NetDevInfo> devices,
-      required WLANSupportInstallState wlanSupportInstallState}) {
-    return _NetworkStatus(
-      devices: devices,
-      wlanSupportInstallState: wlanSupportInstallState,
-    );
-  }
-
-  NetworkStatus fromJson(Map<String, Object> json) {
-    return NetworkStatus.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NetworkStatus = _$NetworkStatusTearOff();
 
 /// @nodoc
 mixin _$NetworkStatus {
@@ -3462,11 +3244,11 @@ class _$NetworkStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NetworkStatusCopyWith<$Res>
+abstract class _$$_NetworkStatusCopyWith<$Res>
     implements $NetworkStatusCopyWith<$Res> {
-  factory _$NetworkStatusCopyWith(
-          _NetworkStatus value, $Res Function(_NetworkStatus) then) =
-      __$NetworkStatusCopyWithImpl<$Res>;
+  factory _$$_NetworkStatusCopyWith(
+          _$_NetworkStatus value, $Res Function(_$_NetworkStatus) then) =
+      __$$_NetworkStatusCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<NetDevInfo> devices,
@@ -3474,24 +3256,24 @@ abstract class _$NetworkStatusCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NetworkStatusCopyWithImpl<$Res>
+class __$$_NetworkStatusCopyWithImpl<$Res>
     extends _$NetworkStatusCopyWithImpl<$Res>
-    implements _$NetworkStatusCopyWith<$Res> {
-  __$NetworkStatusCopyWithImpl(
-      _NetworkStatus _value, $Res Function(_NetworkStatus) _then)
-      : super(_value, (v) => _then(v as _NetworkStatus));
+    implements _$$_NetworkStatusCopyWith<$Res> {
+  __$$_NetworkStatusCopyWithImpl(
+      _$_NetworkStatus _value, $Res Function(_$_NetworkStatus) _then)
+      : super(_value, (v) => _then(v as _$_NetworkStatus));
 
   @override
-  _NetworkStatus get _value => super._value as _NetworkStatus;
+  _$_NetworkStatus get _value => super._value as _$_NetworkStatus;
 
   @override
   $Res call({
     Object? devices = freezed,
     Object? wlanSupportInstallState = freezed,
   }) {
-    return _then(_NetworkStatus(
+    return _then(_$_NetworkStatus(
       devices: devices == freezed
-          ? _value.devices
+          ? _value._devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<NetDevInfo>,
       wlanSupportInstallState: wlanSupportInstallState == freezed
@@ -3506,13 +3288,20 @@ class __$NetworkStatusCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_NetworkStatus implements _NetworkStatus {
   const _$_NetworkStatus(
-      {required this.devices, required this.wlanSupportInstallState});
+      {required final List<NetDevInfo> devices,
+      required this.wlanSupportInstallState})
+      : _devices = devices;
 
   factory _$_NetworkStatus.fromJson(Map<String, dynamic> json) =>
-      _$_$_NetworkStatusFromJson(json);
+      _$$_NetworkStatusFromJson(json);
 
+  final List<NetDevInfo> _devices;
   @override
-  final List<NetDevInfo> devices;
+  List<NetDevInfo> get devices {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_devices);
+  }
+
   @override
   final WLANSupportInstallState wlanSupportInstallState;
 
@@ -3524,83 +3313,55 @@ class _$_NetworkStatus implements _NetworkStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NetworkStatus &&
-            (identical(other.devices, devices) ||
-                const DeepCollectionEquality()
-                    .equals(other.devices, devices)) &&
-            (identical(
-                    other.wlanSupportInstallState, wlanSupportInstallState) ||
-                const DeepCollectionEquality().equals(
-                    other.wlanSupportInstallState, wlanSupportInstallState)));
+        (other.runtimeType == runtimeType &&
+            other is _$_NetworkStatus &&
+            const DeepCollectionEquality().equals(other._devices, _devices) &&
+            const DeepCollectionEquality().equals(
+                other.wlanSupportInstallState, wlanSupportInstallState));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(wlanSupportInstallState);
 
   @JsonKey(ignore: true)
   @override
-  _$NetworkStatusCopyWith<_NetworkStatus> get copyWith =>
-      __$NetworkStatusCopyWithImpl<_NetworkStatus>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_devices),
+      const DeepCollectionEquality().hash(wlanSupportInstallState));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_NetworkStatusCopyWith<_$_NetworkStatus> get copyWith =>
+      __$$_NetworkStatusCopyWithImpl<_$_NetworkStatus>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_NetworkStatusToJson(this);
+    return _$$_NetworkStatusToJson(
+      this,
+    );
   }
 }
 
 abstract class _NetworkStatus implements NetworkStatus {
   const factory _NetworkStatus(
-          {required List<NetDevInfo> devices,
-          required WLANSupportInstallState wlanSupportInstallState}) =
+          {required final List<NetDevInfo> devices,
+          required final WLANSupportInstallState wlanSupportInstallState}) =
       _$_NetworkStatus;
 
   factory _NetworkStatus.fromJson(Map<String, dynamic> json) =
       _$_NetworkStatus.fromJson;
 
   @override
-  List<NetDevInfo> get devices => throw _privateConstructorUsedError;
+  List<NetDevInfo> get devices;
   @override
-  WLANSupportInstallState get wlanSupportInstallState =>
-      throw _privateConstructorUsedError;
+  WLANSupportInstallState get wlanSupportInstallState;
   @override
   @JsonKey(ignore: true)
-  _$NetworkStatusCopyWith<_NetworkStatus> get copyWith =>
+  _$$_NetworkStatusCopyWith<_$_NetworkStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 OsProber _$OsProberFromJson(Map<String, dynamic> json) {
   return _OsProber.fromJson(json);
 }
-
-/// @nodoc
-class _$OsProberTearOff {
-  const _$OsProberTearOff();
-
-  _OsProber call(
-      {required String long,
-      required String label,
-      required String type,
-      String? subpath,
-      String? version}) {
-    return _OsProber(
-      long: long,
-      label: label,
-      type: type,
-      subpath: subpath,
-      version: version,
-    );
-  }
-
-  OsProber fromJson(Map<String, Object> json) {
-    return OsProber.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OsProber = _$OsProberTearOff();
 
 /// @nodoc
 mixin _$OsProber {
@@ -3670,9 +3431,10 @@ class _$OsProberCopyWithImpl<$Res> implements $OsProberCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
-  factory _$OsProberCopyWith(_OsProber value, $Res Function(_OsProber) then) =
-      __$OsProberCopyWithImpl<$Res>;
+abstract class _$$_OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
+  factory _$$_OsProberCopyWith(
+          _$_OsProber value, $Res Function(_$_OsProber) then) =
+      __$$_OsProberCopyWithImpl<$Res>;
   @override
   $Res call(
       {String long,
@@ -3683,13 +3445,14 @@ abstract class _$OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
-    implements _$OsProberCopyWith<$Res> {
-  __$OsProberCopyWithImpl(_OsProber _value, $Res Function(_OsProber) _then)
-      : super(_value, (v) => _then(v as _OsProber));
+class __$$_OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
+    implements _$$_OsProberCopyWith<$Res> {
+  __$$_OsProberCopyWithImpl(
+      _$_OsProber _value, $Res Function(_$_OsProber) _then)
+      : super(_value, (v) => _then(v as _$_OsProber));
 
   @override
-  _OsProber get _value => super._value as _OsProber;
+  _$_OsProber get _value => super._value as _$_OsProber;
 
   @override
   $Res call({
@@ -3699,7 +3462,7 @@ class __$OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
     Object? subpath = freezed,
     Object? version = freezed,
   }) {
-    return _then(_OsProber(
+    return _then(_$_OsProber(
       long: long == freezed
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
@@ -3735,7 +3498,7 @@ class _$_OsProber implements _OsProber {
       this.version});
 
   factory _$_OsProber.fromJson(Map<String, dynamic> json) =>
-      _$_$_OsProberFromJson(json);
+      _$$_OsProberFromJson(json);
 
   @override
   final String long;
@@ -3756,129 +3519,76 @@ class _$_OsProber implements _OsProber {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OsProber &&
-            (identical(other.long, long) ||
-                const DeepCollectionEquality().equals(other.long, long)) &&
-            (identical(other.label, label) ||
-                const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.subpath, subpath) ||
-                const DeepCollectionEquality()
-                    .equals(other.subpath, subpath)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality().equals(other.version, version)));
+        (other.runtimeType == runtimeType &&
+            other is _$_OsProber &&
+            const DeepCollectionEquality().equals(other.long, long) &&
+            const DeepCollectionEquality().equals(other.label, label) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.subpath, subpath) &&
+            const DeepCollectionEquality().equals(other.version, version));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(long) ^
-      const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(subpath) ^
-      const DeepCollectionEquality().hash(version);
 
   @JsonKey(ignore: true)
   @override
-  _$OsProberCopyWith<_OsProber> get copyWith =>
-      __$OsProberCopyWithImpl<_OsProber>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(long),
+      const DeepCollectionEquality().hash(label),
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(subpath),
+      const DeepCollectionEquality().hash(version));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_OsProberCopyWith<_$_OsProber> get copyWith =>
+      __$$_OsProberCopyWithImpl<_$_OsProber>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_OsProberToJson(this);
+    return _$$_OsProberToJson(
+      this,
+    );
   }
 }
 
 abstract class _OsProber implements OsProber {
   const factory _OsProber(
-      {required String long,
-      required String label,
-      required String type,
-      String? subpath,
-      String? version}) = _$_OsProber;
+      {required final String long,
+      required final String label,
+      required final String type,
+      final String? subpath,
+      final String? version}) = _$_OsProber;
 
   factory _OsProber.fromJson(Map<String, dynamic> json) = _$_OsProber.fromJson;
 
   @override
-  String get long => throw _privateConstructorUsedError;
+  String get long;
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  String? get subpath => throw _privateConstructorUsedError;
+  String? get subpath;
   @override
-  String? get version => throw _privateConstructorUsedError;
+  String? get version;
   @override
   @JsonKey(ignore: true)
-  _$OsProberCopyWith<_OsProber> get copyWith =>
+  _$$_OsProberCopyWith<_$_OsProber> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PartitionOrGap _$PartitionOrGapFromJson(Map<String, dynamic> json) {
-  switch (json['\$type'] as String) {
+  switch (json['\$type']) {
     case 'Partition':
       return Partition.fromJson(json);
     case 'Gap':
       return Gap.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(json, '\$type', 'PartitionOrGap',
+          'Invalid union type "${json['\$type']}"!');
   }
 }
-
-/// @nodoc
-class _$PartitionOrGapTearOff {
-  const _$PartitionOrGapTearOff();
-
-  Partition partition(
-      {int? size,
-      int? number,
-      bool? preserve,
-      String? wipe,
-      List<String> annotations = const [],
-      String? mount,
-      String? format,
-      bool? grubDevice,
-      bool? boot,
-      OsProber? os,
-      int? offset,
-      int? estimatedMinSize = -1,
-      bool? resize,
-      String? path}) {
-    return Partition(
-      size: size,
-      number: number,
-      preserve: preserve,
-      wipe: wipe,
-      annotations: annotations,
-      mount: mount,
-      format: format,
-      grubDevice: grubDevice,
-      boot: boot,
-      os: os,
-      offset: offset,
-      estimatedMinSize: estimatedMinSize,
-      resize: resize,
-      path: path,
-    );
-  }
-
-  Gap gap({required int offset, required int size}) {
-    return Gap(
-      offset: offset,
-      size: size,
-    );
-  }
-
-  PartitionOrGap fromJson(Map<String, Object> json) {
-    return PartitionOrGap.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PartitionOrGap = _$PartitionOrGapTearOff();
 
 /// @nodoc
 mixin _$PartitionOrGap {
@@ -3901,6 +3611,27 @@ mixin _$PartitionOrGap {
             String? path)
         partition,
     required TResult Function(int offset, int size) gap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            int? size,
+            int? number,
+            bool? preserve,
+            String? wipe,
+            List<String> annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            int? estimatedMinSize,
+            bool? resize,
+            String? path)?
+        partition,
+    TResult Function(int offset, int size)? gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3932,6 +3663,12 @@ mixin _$PartitionOrGap {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Partition value)? partition,
     TResult Function(Gap value)? gap,
@@ -3959,9 +3696,10 @@ class _$PartitionOrGapCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $PartitionCopyWith<$Res> {
-  factory $PartitionCopyWith(Partition value, $Res Function(Partition) then) =
-      _$PartitionCopyWithImpl<$Res>;
+abstract class _$$PartitionCopyWith<$Res> {
+  factory _$$PartitionCopyWith(
+          _$Partition value, $Res Function(_$Partition) then) =
+      __$$PartitionCopyWithImpl<$Res>;
   $Res call(
       {int? size,
       int? number,
@@ -3982,13 +3720,14 @@ abstract class $PartitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
-    implements $PartitionCopyWith<$Res> {
-  _$PartitionCopyWithImpl(Partition _value, $Res Function(Partition) _then)
-      : super(_value, (v) => _then(v as Partition));
+class __$$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
+    implements _$$PartitionCopyWith<$Res> {
+  __$$PartitionCopyWithImpl(
+      _$Partition _value, $Res Function(_$Partition) _then)
+      : super(_value, (v) => _then(v as _$Partition));
 
   @override
-  Partition get _value => super._value as Partition;
+  _$Partition get _value => super._value as _$Partition;
 
   @override
   $Res call({
@@ -4007,7 +3746,7 @@ class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
     Object? resize = freezed,
     Object? path = freezed,
   }) {
-    return _then(Partition(
+    return _then(_$Partition(
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -4025,7 +3764,7 @@ class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
           : wipe // ignore: cast_nullable_to_non_nullable
               as String?,
       annotations: annotations == freezed
-          ? _value.annotations
+          ? _value._annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>,
       mount: mount == freezed
@@ -4081,14 +3820,13 @@ class _$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('Partition')
 class _$Partition implements Partition {
   const _$Partition(
       {this.size,
       this.number,
       this.preserve,
       this.wipe,
-      this.annotations = const [],
+      final List<String> annotations = const [],
       this.mount,
       this.format,
       this.grubDevice,
@@ -4097,10 +3835,13 @@ class _$Partition implements Partition {
       this.offset,
       this.estimatedMinSize = -1,
       this.resize,
-      this.path});
+      this.path,
+      final String? $type})
+      : _annotations = annotations,
+        $type = $type ?? 'Partition';
 
   factory _$Partition.fromJson(Map<String, dynamic> json) =>
-      _$_$PartitionFromJson(json);
+      _$$PartitionFromJson(json);
 
   @override
   final int? size;
@@ -4110,9 +3851,14 @@ class _$Partition implements Partition {
   final bool? preserve;
   @override
   final String? wipe;
-  @JsonKey(defaultValue: const [])
+  final List<String> _annotations;
   @override
-  final List<String> annotations;
+  @JsonKey()
+  List<String> get annotations {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_annotations);
+  }
+
   @override
   final String? mount;
   @override
@@ -4125,13 +3871,16 @@ class _$Partition implements Partition {
   final OsProber? os;
   @override
   final int? offset;
-  @JsonKey(defaultValue: -1)
   @override
+  @JsonKey()
   final int? estimatedMinSize;
   @override
   final bool? resize;
   @override
   final String? path;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -4141,63 +3890,50 @@ class _$Partition implements Partition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Partition &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.preserve, preserve) ||
-                const DeepCollectionEquality()
-                    .equals(other.preserve, preserve)) &&
-            (identical(other.wipe, wipe) ||
-                const DeepCollectionEquality().equals(other.wipe, wipe)) &&
-            (identical(other.annotations, annotations) ||
-                const DeepCollectionEquality()
-                    .equals(other.annotations, annotations)) &&
-            (identical(other.mount, mount) ||
-                const DeepCollectionEquality().equals(other.mount, mount)) &&
-            (identical(other.format, format) ||
-                const DeepCollectionEquality().equals(other.format, format)) &&
-            (identical(other.grubDevice, grubDevice) ||
-                const DeepCollectionEquality()
-                    .equals(other.grubDevice, grubDevice)) &&
-            (identical(other.boot, boot) ||
-                const DeepCollectionEquality().equals(other.boot, boot)) &&
-            (identical(other.os, os) ||
-                const DeepCollectionEquality().equals(other.os, os)) &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.estimatedMinSize, estimatedMinSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.estimatedMinSize, estimatedMinSize)) &&
-            (identical(other.resize, resize) ||
-                const DeepCollectionEquality().equals(other.resize, resize)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)));
+        (other.runtimeType == runtimeType &&
+            other is _$Partition &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.preserve, preserve) &&
+            const DeepCollectionEquality().equals(other.wipe, wipe) &&
+            const DeepCollectionEquality()
+                .equals(other._annotations, _annotations) &&
+            const DeepCollectionEquality().equals(other.mount, mount) &&
+            const DeepCollectionEquality().equals(other.format, format) &&
+            const DeepCollectionEquality()
+                .equals(other.grubDevice, grubDevice) &&
+            const DeepCollectionEquality().equals(other.boot, boot) &&
+            const DeepCollectionEquality().equals(other.os, os) &&
+            const DeepCollectionEquality().equals(other.offset, offset) &&
+            const DeepCollectionEquality()
+                .equals(other.estimatedMinSize, estimatedMinSize) &&
+            const DeepCollectionEquality().equals(other.resize, resize) &&
+            const DeepCollectionEquality().equals(other.path, path));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(preserve) ^
-      const DeepCollectionEquality().hash(wipe) ^
-      const DeepCollectionEquality().hash(annotations) ^
-      const DeepCollectionEquality().hash(mount) ^
-      const DeepCollectionEquality().hash(format) ^
-      const DeepCollectionEquality().hash(grubDevice) ^
-      const DeepCollectionEquality().hash(boot) ^
-      const DeepCollectionEquality().hash(os) ^
-      const DeepCollectionEquality().hash(offset) ^
-      const DeepCollectionEquality().hash(estimatedMinSize) ^
-      const DeepCollectionEquality().hash(resize) ^
-      const DeepCollectionEquality().hash(path);
 
   @JsonKey(ignore: true)
   @override
-  $PartitionCopyWith<Partition> get copyWith =>
-      _$PartitionCopyWithImpl<Partition>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(number),
+      const DeepCollectionEquality().hash(preserve),
+      const DeepCollectionEquality().hash(wipe),
+      const DeepCollectionEquality().hash(_annotations),
+      const DeepCollectionEquality().hash(mount),
+      const DeepCollectionEquality().hash(format),
+      const DeepCollectionEquality().hash(grubDevice),
+      const DeepCollectionEquality().hash(boot),
+      const DeepCollectionEquality().hash(os),
+      const DeepCollectionEquality().hash(offset),
+      const DeepCollectionEquality().hash(estimatedMinSize),
+      const DeepCollectionEquality().hash(resize),
+      const DeepCollectionEquality().hash(path));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$PartitionCopyWith<_$Partition> get copyWith =>
+      __$$PartitionCopyWithImpl<_$Partition>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4222,6 +3958,31 @@ class _$Partition implements Partition {
   }) {
     return partition(size, number, preserve, wipe, annotations, mount, format,
         grubDevice, boot, os, offset, estimatedMinSize, resize, path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            int? size,
+            int? number,
+            bool? preserve,
+            String? wipe,
+            List<String> annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            int? estimatedMinSize,
+            bool? resize,
+            String? path)?
+        partition,
+    TResult Function(int offset, int size)? gap,
+  }) {
+    return partition?.call(size, number, preserve, wipe, annotations, mount,
+        format, grubDevice, boot, os, offset, estimatedMinSize, resize, path);
   }
 
   @override
@@ -4264,6 +4025,15 @@ class _$Partition implements Partition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+  }) {
+    return partition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Partition value)? partition,
     TResult Function(Gap value)? gap,
@@ -4277,70 +4047,72 @@ class _$Partition implements Partition {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$PartitionToJson(this)..['\$type'] = 'Partition';
+    return _$$PartitionToJson(
+      this,
+    );
   }
 }
 
 abstract class Partition implements PartitionOrGap {
   const factory Partition(
-      {int? size,
-      int? number,
-      bool? preserve,
-      String? wipe,
-      List<String> annotations,
-      String? mount,
-      String? format,
-      bool? grubDevice,
-      bool? boot,
-      OsProber? os,
-      int? offset,
-      int? estimatedMinSize,
-      bool? resize,
-      String? path}) = _$Partition;
+      {final int? size,
+      final int? number,
+      final bool? preserve,
+      final String? wipe,
+      final List<String> annotations,
+      final String? mount,
+      final String? format,
+      final bool? grubDevice,
+      final bool? boot,
+      final OsProber? os,
+      final int? offset,
+      final int? estimatedMinSize,
+      final bool? resize,
+      final String? path}) = _$Partition;
 
   factory Partition.fromJson(Map<String, dynamic> json) = _$Partition.fromJson;
 
-  int? get size => throw _privateConstructorUsedError;
-  int? get number => throw _privateConstructorUsedError;
-  bool? get preserve => throw _privateConstructorUsedError;
-  String? get wipe => throw _privateConstructorUsedError;
-  List<String> get annotations => throw _privateConstructorUsedError;
-  String? get mount => throw _privateConstructorUsedError;
-  String? get format => throw _privateConstructorUsedError;
-  bool? get grubDevice => throw _privateConstructorUsedError;
-  bool? get boot => throw _privateConstructorUsedError;
-  OsProber? get os => throw _privateConstructorUsedError;
-  int? get offset => throw _privateConstructorUsedError;
-  int? get estimatedMinSize => throw _privateConstructorUsedError;
-  bool? get resize => throw _privateConstructorUsedError;
-  String? get path => throw _privateConstructorUsedError;
+  int? get size;
+  int? get number;
+  bool? get preserve;
+  String? get wipe;
+  List<String> get annotations;
+  String? get mount;
+  String? get format;
+  bool? get grubDevice;
+  bool? get boot;
+  OsProber? get os;
+  int? get offset;
+  int? get estimatedMinSize;
+  bool? get resize;
+  String? get path;
   @JsonKey(ignore: true)
-  $PartitionCopyWith<Partition> get copyWith =>
+  _$$PartitionCopyWith<_$Partition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GapCopyWith<$Res> {
-  factory $GapCopyWith(Gap value, $Res Function(Gap) then) =
-      _$GapCopyWithImpl<$Res>;
+abstract class _$$GapCopyWith<$Res> {
+  factory _$$GapCopyWith(_$Gap value, $Res Function(_$Gap) then) =
+      __$$GapCopyWithImpl<$Res>;
   $Res call({int offset, int size});
 }
 
 /// @nodoc
-class _$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
-    implements $GapCopyWith<$Res> {
-  _$GapCopyWithImpl(Gap _value, $Res Function(Gap) _then)
-      : super(_value, (v) => _then(v as Gap));
+class __$$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
+    implements _$$GapCopyWith<$Res> {
+  __$$GapCopyWithImpl(_$Gap _value, $Res Function(_$Gap) _then)
+      : super(_value, (v) => _then(v as _$Gap));
 
   @override
-  Gap get _value => super._value as Gap;
+  _$Gap get _value => super._value as _$Gap;
 
   @override
   $Res call({
     Object? offset = freezed,
     Object? size = freezed,
   }) {
-    return _then(Gap(
+    return _then(_$Gap(
       offset: offset == freezed
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
@@ -4355,16 +4127,19 @@ class _$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('Gap')
 class _$Gap implements Gap {
-  const _$Gap({required this.offset, required this.size});
+  const _$Gap({required this.offset, required this.size, final String? $type})
+      : $type = $type ?? 'Gap';
 
-  factory _$Gap.fromJson(Map<String, dynamic> json) => _$_$GapFromJson(json);
+  factory _$Gap.fromJson(Map<String, dynamic> json) => _$$GapFromJson(json);
 
   @override
   final int offset;
   @override
   final int size;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -4374,22 +4149,23 @@ class _$Gap implements Gap {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Gap &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)));
+        (other.runtimeType == runtimeType &&
+            other is _$Gap &&
+            const DeepCollectionEquality().equals(other.offset, offset) &&
+            const DeepCollectionEquality().equals(other.size, size));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(offset) ^
-      const DeepCollectionEquality().hash(size);
 
   @JsonKey(ignore: true)
   @override
-  $GapCopyWith<Gap> get copyWith => _$GapCopyWithImpl<Gap>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(offset),
+      const DeepCollectionEquality().hash(size));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GapCopyWith<_$Gap> get copyWith =>
+      __$$GapCopyWithImpl<_$Gap>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4413,6 +4189,30 @@ class _$Gap implements Gap {
     required TResult Function(int offset, int size) gap,
   }) {
     return gap(offset, size);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            int? size,
+            int? number,
+            bool? preserve,
+            String? wipe,
+            List<String> annotations,
+            String? mount,
+            String? format,
+            bool? grubDevice,
+            bool? boot,
+            OsProber? os,
+            int? offset,
+            int? estimatedMinSize,
+            bool? resize,
+            String? path)?
+        partition,
+    TResult Function(int offset, int size)? gap,
+  }) {
+    return gap?.call(offset, size);
   }
 
   @override
@@ -4454,6 +4254,15 @@ class _$Gap implements Gap {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Partition value)? partition,
+    TResult Function(Gap value)? gap,
+  }) {
+    return gap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Partition value)? partition,
     TResult Function(Gap value)? gap,
@@ -4467,67 +4276,27 @@ class _$Gap implements Gap {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GapToJson(this)..['\$type'] = 'Gap';
+    return _$$GapToJson(
+      this,
+    );
   }
 }
 
 abstract class Gap implements PartitionOrGap {
-  const factory Gap({required int offset, required int size}) = _$Gap;
+  const factory Gap({required final int offset, required final int size}) =
+      _$Gap;
 
   factory Gap.fromJson(Map<String, dynamic> json) = _$Gap.fromJson;
 
-  int get offset => throw _privateConstructorUsedError;
-  int get size => throw _privateConstructorUsedError;
+  int get offset;
+  int get size;
   @JsonKey(ignore: true)
-  $GapCopyWith<Gap> get copyWith => throw _privateConstructorUsedError;
+  _$$GapCopyWith<_$Gap> get copyWith => throw _privateConstructorUsedError;
 }
 
 Disk _$DiskFromJson(Map<String, dynamic> json) {
   return _Disk.fromJson(json);
 }
-
-/// @nodoc
-class _$DiskTearOff {
-  const _$DiskTearOff();
-
-  _Disk call(
-      {required String id,
-      required String label,
-      required String type,
-      required int size,
-      required List<String> usageLabels,
-      required List<PartitionOrGap> partitions,
-      required bool okForGuided,
-      required String? ptable,
-      required bool preserve,
-      required String? path,
-      required bool bootDevice,
-      String? model,
-      String? vendor}) {
-    return _Disk(
-      id: id,
-      label: label,
-      type: type,
-      size: size,
-      usageLabels: usageLabels,
-      partitions: partitions,
-      okForGuided: okForGuided,
-      ptable: ptable,
-      preserve: preserve,
-      path: path,
-      bootDevice: bootDevice,
-      model: model,
-      vendor: vendor,
-    );
-  }
-
-  Disk fromJson(Map<String, Object> json) {
-    return Disk.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Disk = _$DiskTearOff();
 
 /// @nodoc
 mixin _$Disk {
@@ -4652,9 +4421,9 @@ class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
-  factory _$DiskCopyWith(_Disk value, $Res Function(_Disk) then) =
-      __$DiskCopyWithImpl<$Res>;
+abstract class _$$_DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
+  factory _$$_DiskCopyWith(_$_Disk value, $Res Function(_$_Disk) then) =
+      __$$_DiskCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -4673,13 +4442,13 @@ abstract class _$DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
-    implements _$DiskCopyWith<$Res> {
-  __$DiskCopyWithImpl(_Disk _value, $Res Function(_Disk) _then)
-      : super(_value, (v) => _then(v as _Disk));
+class __$$_DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
+    implements _$$_DiskCopyWith<$Res> {
+  __$$_DiskCopyWithImpl(_$_Disk _value, $Res Function(_$_Disk) _then)
+      : super(_value, (v) => _then(v as _$_Disk));
 
   @override
-  _Disk get _value => super._value as _Disk;
+  _$_Disk get _value => super._value as _$_Disk;
 
   @override
   $Res call({
@@ -4697,7 +4466,7 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
     Object? model = freezed,
     Object? vendor = freezed,
   }) {
-    return _then(_Disk(
+    return _then(_$_Disk(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -4715,11 +4484,11 @@ class __$DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
           : size // ignore: cast_nullable_to_non_nullable
               as int,
       usageLabels: usageLabels == freezed
-          ? _value.usageLabels
+          ? _value._usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>,
       partitions: partitions == freezed
-          ? _value.partitions
+          ? _value._partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<PartitionOrGap>,
       okForGuided: okForGuided == freezed
@@ -4762,18 +4531,19 @@ class _$_Disk implements _Disk {
       required this.label,
       required this.type,
       required this.size,
-      required this.usageLabels,
-      required this.partitions,
+      required final List<String> usageLabels,
+      required final List<PartitionOrGap> partitions,
       required this.okForGuided,
       required this.ptable,
       required this.preserve,
       required this.path,
       required this.bootDevice,
       this.model,
-      this.vendor});
+      this.vendor})
+      : _usageLabels = usageLabels,
+        _partitions = partitions;
 
-  factory _$_Disk.fromJson(Map<String, dynamic> json) =>
-      _$_$_DiskFromJson(json);
+  factory _$_Disk.fromJson(Map<String, dynamic> json) => _$$_DiskFromJson(json);
 
   @override
   final String id;
@@ -4783,10 +4553,20 @@ class _$_Disk implements _Disk {
   final String type;
   @override
   final int size;
+  final List<String> _usageLabels;
   @override
-  final List<String> usageLabels;
+  List<String> get usageLabels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_usageLabels);
+  }
+
+  final List<PartitionOrGap> _partitions;
   @override
-  final List<PartitionOrGap> partitions;
+  List<PartitionOrGap> get partitions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_partitions);
+  }
+
   @override
   final bool okForGuided;
   @override
@@ -4810,141 +4590,110 @@ class _$_Disk implements _Disk {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Disk &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.label, label) ||
-                const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.usageLabels, usageLabels) ||
-                const DeepCollectionEquality()
-                    .equals(other.usageLabels, usageLabels)) &&
-            (identical(other.partitions, partitions) ||
-                const DeepCollectionEquality()
-                    .equals(other.partitions, partitions)) &&
-            (identical(other.okForGuided, okForGuided) ||
-                const DeepCollectionEquality()
-                    .equals(other.okForGuided, okForGuided)) &&
-            (identical(other.ptable, ptable) ||
-                const DeepCollectionEquality().equals(other.ptable, ptable)) &&
-            (identical(other.preserve, preserve) ||
-                const DeepCollectionEquality()
-                    .equals(other.preserve, preserve)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.bootDevice, bootDevice) ||
-                const DeepCollectionEquality()
-                    .equals(other.bootDevice, bootDevice)) &&
-            (identical(other.model, model) ||
-                const DeepCollectionEquality().equals(other.model, model)) &&
-            (identical(other.vendor, vendor) ||
-                const DeepCollectionEquality().equals(other.vendor, vendor)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Disk &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.label, label) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality()
+                .equals(other._usageLabels, _usageLabels) &&
+            const DeepCollectionEquality()
+                .equals(other._partitions, _partitions) &&
+            const DeepCollectionEquality()
+                .equals(other.okForGuided, okForGuided) &&
+            const DeepCollectionEquality().equals(other.ptable, ptable) &&
+            const DeepCollectionEquality().equals(other.preserve, preserve) &&
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality()
+                .equals(other.bootDevice, bootDevice) &&
+            const DeepCollectionEquality().equals(other.model, model) &&
+            const DeepCollectionEquality().equals(other.vendor, vendor));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(usageLabels) ^
-      const DeepCollectionEquality().hash(partitions) ^
-      const DeepCollectionEquality().hash(okForGuided) ^
-      const DeepCollectionEquality().hash(ptable) ^
-      const DeepCollectionEquality().hash(preserve) ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(bootDevice) ^
-      const DeepCollectionEquality().hash(model) ^
-      const DeepCollectionEquality().hash(vendor);
 
   @JsonKey(ignore: true)
   @override
-  _$DiskCopyWith<_Disk> get copyWith =>
-      __$DiskCopyWithImpl<_Disk>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(label),
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(_usageLabels),
+      const DeepCollectionEquality().hash(_partitions),
+      const DeepCollectionEquality().hash(okForGuided),
+      const DeepCollectionEquality().hash(ptable),
+      const DeepCollectionEquality().hash(preserve),
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(bootDevice),
+      const DeepCollectionEquality().hash(model),
+      const DeepCollectionEquality().hash(vendor));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DiskCopyWith<_$_Disk> get copyWith =>
+      __$$_DiskCopyWithImpl<_$_Disk>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DiskToJson(this);
+    return _$$_DiskToJson(
+      this,
+    );
   }
 }
 
 abstract class _Disk implements Disk {
   const factory _Disk(
-      {required String id,
-      required String label,
-      required String type,
-      required int size,
-      required List<String> usageLabels,
-      required List<PartitionOrGap> partitions,
-      required bool okForGuided,
-      required String? ptable,
-      required bool preserve,
-      required String? path,
-      required bool bootDevice,
-      String? model,
-      String? vendor}) = _$_Disk;
+      {required final String id,
+      required final String label,
+      required final String type,
+      required final int size,
+      required final List<String> usageLabels,
+      required final List<PartitionOrGap> partitions,
+      required final bool okForGuided,
+      required final String? ptable,
+      required final bool preserve,
+      required final String? path,
+      required final bool bootDevice,
+      final String? model,
+      final String? vendor}) = _$_Disk;
 
   factory _Disk.fromJson(Map<String, dynamic> json) = _$_Disk.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  int get size => throw _privateConstructorUsedError;
+  int get size;
   @override
-  List<String> get usageLabels => throw _privateConstructorUsedError;
+  List<String> get usageLabels;
   @override
-  List<PartitionOrGap> get partitions => throw _privateConstructorUsedError;
+  List<PartitionOrGap> get partitions;
   @override
-  bool get okForGuided => throw _privateConstructorUsedError;
+  bool get okForGuided;
   @override
-  String? get ptable => throw _privateConstructorUsedError;
+  String? get ptable;
   @override
-  bool get preserve => throw _privateConstructorUsedError;
+  bool get preserve;
   @override
-  String? get path => throw _privateConstructorUsedError;
+  String? get path;
   @override
-  bool get bootDevice => throw _privateConstructorUsedError;
+  bool get bootDevice;
   @override
-  String? get model => throw _privateConstructorUsedError;
+  String? get model;
   @override
-  String? get vendor => throw _privateConstructorUsedError;
+  String? get vendor;
   @override
   @JsonKey(ignore: true)
-  _$DiskCopyWith<_Disk> get copyWith => throw _privateConstructorUsedError;
+  _$$_DiskCopyWith<_$_Disk> get copyWith => throw _privateConstructorUsedError;
 }
 
 GuidedChoice _$GuidedChoiceFromJson(Map<String, dynamic> json) {
   return _GuidedChoice.fromJson(json);
 }
-
-/// @nodoc
-class _$GuidedChoiceTearOff {
-  const _$GuidedChoiceTearOff();
-
-  _GuidedChoice call(
-      {required String diskId, bool useLvm = false, String? password}) {
-    return _GuidedChoice(
-      diskId: diskId,
-      useLvm: useLvm,
-      password: password,
-    );
-  }
-
-  GuidedChoice fromJson(Map<String, Object> json) {
-    return GuidedChoice.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedChoice = _$GuidedChoiceTearOff();
 
 /// @nodoc
 mixin _$GuidedChoice {
@@ -4998,24 +4747,25 @@ class _$GuidedChoiceCopyWithImpl<$Res> implements $GuidedChoiceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GuidedChoiceCopyWith<$Res>
+abstract class _$$_GuidedChoiceCopyWith<$Res>
     implements $GuidedChoiceCopyWith<$Res> {
-  factory _$GuidedChoiceCopyWith(
-          _GuidedChoice value, $Res Function(_GuidedChoice) then) =
-      __$GuidedChoiceCopyWithImpl<$Res>;
+  factory _$$_GuidedChoiceCopyWith(
+          _$_GuidedChoice value, $Res Function(_$_GuidedChoice) then) =
+      __$$_GuidedChoiceCopyWithImpl<$Res>;
   @override
   $Res call({String diskId, bool useLvm, String? password});
 }
 
 /// @nodoc
-class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
-    implements _$GuidedChoiceCopyWith<$Res> {
-  __$GuidedChoiceCopyWithImpl(
-      _GuidedChoice _value, $Res Function(_GuidedChoice) _then)
-      : super(_value, (v) => _then(v as _GuidedChoice));
+class __$$_GuidedChoiceCopyWithImpl<$Res>
+    extends _$GuidedChoiceCopyWithImpl<$Res>
+    implements _$$_GuidedChoiceCopyWith<$Res> {
+  __$$_GuidedChoiceCopyWithImpl(
+      _$_GuidedChoice _value, $Res Function(_$_GuidedChoice) _then)
+      : super(_value, (v) => _then(v as _$_GuidedChoice));
 
   @override
-  _GuidedChoice get _value => super._value as _GuidedChoice;
+  _$_GuidedChoice get _value => super._value as _$_GuidedChoice;
 
   @override
   $Res call({
@@ -5023,7 +4773,7 @@ class __$GuidedChoiceCopyWithImpl<$Res> extends _$GuidedChoiceCopyWithImpl<$Res>
     Object? useLvm = freezed,
     Object? password = freezed,
   }) {
-    return _then(_GuidedChoice(
+    return _then(_$_GuidedChoice(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -5047,12 +4797,12 @@ class _$_GuidedChoice implements _GuidedChoice {
       {required this.diskId, this.useLvm = false, this.password});
 
   factory _$_GuidedChoice.fromJson(Map<String, dynamic> json) =>
-      _$_$_GuidedChoiceFromJson(json);
+      _$$_GuidedChoiceFromJson(json);
 
   @override
   final String diskId;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool useLvm;
   @override
   final String? password;
@@ -5065,52 +4815,52 @@ class _$_GuidedChoice implements _GuidedChoice {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuidedChoice &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.useLvm, useLvm) ||
-                const DeepCollectionEquality().equals(other.useLvm, useLvm)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+        (other.runtimeType == runtimeType &&
+            other is _$_GuidedChoice &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality().equals(other.useLvm, useLvm) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(useLvm) ^
-      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
-  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
-      __$GuidedChoiceCopyWithImpl<_GuidedChoice>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(useLvm),
+      const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuidedChoiceCopyWith<_$_GuidedChoice> get copyWith =>
+      __$$_GuidedChoiceCopyWithImpl<_$_GuidedChoice>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GuidedChoiceToJson(this);
+    return _$$_GuidedChoiceToJson(
+      this,
+    );
   }
 }
 
 abstract class _GuidedChoice implements GuidedChoice {
   const factory _GuidedChoice(
-      {required String diskId,
-      bool useLvm,
-      String? password}) = _$_GuidedChoice;
+      {required final String diskId,
+      final bool useLvm,
+      final String? password}) = _$_GuidedChoice;
 
   factory _GuidedChoice.fromJson(Map<String, dynamic> json) =
       _$_GuidedChoice.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
+  String get diskId;
   @override
-  bool get useLvm => throw _privateConstructorUsedError;
+  bool get useLvm;
   @override
-  String? get password => throw _privateConstructorUsedError;
+  String? get password;
   @override
   @JsonKey(ignore: true)
-  _$GuidedChoiceCopyWith<_GuidedChoice> get copyWith =>
+  _$$_GuidedChoiceCopyWith<_$_GuidedChoice> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -5118,29 +4868,6 @@ GuidedStorageResponse _$GuidedStorageResponseFromJson(
     Map<String, dynamic> json) {
   return _GuidedStorageResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$GuidedStorageResponseTearOff {
-  const _$GuidedStorageResponseTearOff();
-
-  _GuidedStorageResponse call(
-      {required ProbeStatus status,
-      ErrorReportRef? errorReport,
-      List<Disk>? disks}) {
-    return _GuidedStorageResponse(
-      status: status,
-      errorReport: errorReport,
-      disks: disks,
-    );
-  }
-
-  GuidedStorageResponse fromJson(Map<String, Object> json) {
-    return GuidedStorageResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedStorageResponse = _$GuidedStorageResponseTearOff();
 
 /// @nodoc
 mixin _$GuidedStorageResponse {
@@ -5209,11 +4936,11 @@ class _$GuidedStorageResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GuidedStorageResponseCopyWith<$Res>
+abstract class _$$_GuidedStorageResponseCopyWith<$Res>
     implements $GuidedStorageResponseCopyWith<$Res> {
-  factory _$GuidedStorageResponseCopyWith(_GuidedStorageResponse value,
-          $Res Function(_GuidedStorageResponse) then) =
-      __$GuidedStorageResponseCopyWithImpl<$Res>;
+  factory _$$_GuidedStorageResponseCopyWith(_$_GuidedStorageResponse value,
+          $Res Function(_$_GuidedStorageResponse) then) =
+      __$$_GuidedStorageResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {ProbeStatus status, ErrorReportRef? errorReport, List<Disk>? disks});
@@ -5223,15 +4950,16 @@ abstract class _$GuidedStorageResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$GuidedStorageResponseCopyWithImpl<$Res>
+class __$$_GuidedStorageResponseCopyWithImpl<$Res>
     extends _$GuidedStorageResponseCopyWithImpl<$Res>
-    implements _$GuidedStorageResponseCopyWith<$Res> {
-  __$GuidedStorageResponseCopyWithImpl(_GuidedStorageResponse _value,
-      $Res Function(_GuidedStorageResponse) _then)
-      : super(_value, (v) => _then(v as _GuidedStorageResponse));
+    implements _$$_GuidedStorageResponseCopyWith<$Res> {
+  __$$_GuidedStorageResponseCopyWithImpl(_$_GuidedStorageResponse _value,
+      $Res Function(_$_GuidedStorageResponse) _then)
+      : super(_value, (v) => _then(v as _$_GuidedStorageResponse));
 
   @override
-  _GuidedStorageResponse get _value => super._value as _GuidedStorageResponse;
+  _$_GuidedStorageResponse get _value =>
+      super._value as _$_GuidedStorageResponse;
 
   @override
   $Res call({
@@ -5239,7 +4967,7 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
     Object? errorReport = freezed,
     Object? disks = freezed,
   }) {
-    return _then(_GuidedStorageResponse(
+    return _then(_$_GuidedStorageResponse(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -5249,7 +4977,7 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
       disks: disks == freezed
-          ? _value.disks
+          ? _value._disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>?,
     ));
@@ -5260,17 +4988,24 @@ class __$GuidedStorageResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   const _$_GuidedStorageResponse(
-      {required this.status, this.errorReport, this.disks});
+      {required this.status, this.errorReport, final List<Disk>? disks})
+      : _disks = disks;
 
   factory _$_GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_GuidedStorageResponseFromJson(json);
+      _$$_GuidedStorageResponseFromJson(json);
 
   @override
   final ProbeStatus status;
   @override
   final ErrorReportRef? errorReport;
+  final List<Disk>? _disks;
   @override
-  final List<Disk>? disks;
+  List<Disk>? get disks {
+    final value = _disks;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -5280,92 +5015,60 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuidedStorageResponse &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.errorReport, errorReport) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorReport, errorReport)) &&
-            (identical(other.disks, disks) ||
-                const DeepCollectionEquality().equals(other.disks, disks)));
+        (other.runtimeType == runtimeType &&
+            other is _$_GuidedStorageResponse &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.errorReport, errorReport) &&
+            const DeepCollectionEquality().equals(other._disks, _disks));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(errorReport) ^
-      const DeepCollectionEquality().hash(disks);
 
   @JsonKey(ignore: true)
   @override
-  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
-      __$GuidedStorageResponseCopyWithImpl<_GuidedStorageResponse>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(errorReport),
+      const DeepCollectionEquality().hash(_disks));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuidedStorageResponseCopyWith<_$_GuidedStorageResponse> get copyWith =>
+      __$$_GuidedStorageResponseCopyWithImpl<_$_GuidedStorageResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GuidedStorageResponseToJson(this);
+    return _$$_GuidedStorageResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _GuidedStorageResponse implements GuidedStorageResponse {
   const factory _GuidedStorageResponse(
-      {required ProbeStatus status,
-      ErrorReportRef? errorReport,
-      List<Disk>? disks}) = _$_GuidedStorageResponse;
+      {required final ProbeStatus status,
+      final ErrorReportRef? errorReport,
+      final List<Disk>? disks}) = _$_GuidedStorageResponse;
 
   factory _GuidedStorageResponse.fromJson(Map<String, dynamic> json) =
       _$_GuidedStorageResponse.fromJson;
 
   @override
-  ProbeStatus get status => throw _privateConstructorUsedError;
+  ProbeStatus get status;
   @override
-  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  ErrorReportRef? get errorReport;
   @override
-  List<Disk>? get disks => throw _privateConstructorUsedError;
+  List<Disk>? get disks;
   @override
   @JsonKey(ignore: true)
-  _$GuidedStorageResponseCopyWith<_GuidedStorageResponse> get copyWith =>
+  _$$_GuidedStorageResponseCopyWith<_$_GuidedStorageResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 StorageResponse _$StorageResponseFromJson(Map<String, dynamic> json) {
   return _StorageResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$StorageResponseTearOff {
-  const _$StorageResponseTearOff();
-
-  _StorageResponse call(
-      {required ProbeStatus status,
-      ErrorReportRef? errorReport,
-      Bootloader? bootloader,
-      List<dynamic>? origConfig,
-      List<dynamic>? config,
-      Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd,
-      int storageVersion = 1}) {
-    return _StorageResponse(
-      status: status,
-      errorReport: errorReport,
-      bootloader: bootloader,
-      origConfig: origConfig,
-      config: config,
-      blockdev: blockdev,
-      dasd: dasd,
-      storageVersion: storageVersion,
-    );
-  }
-
-  StorageResponse fromJson(Map<String, Object> json) {
-    return StorageResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $StorageResponse = _$StorageResponseTearOff();
 
 /// @nodoc
 mixin _$StorageResponse {
@@ -5471,11 +5174,11 @@ class _$StorageResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$StorageResponseCopyWith<$Res>
+abstract class _$$_StorageResponseCopyWith<$Res>
     implements $StorageResponseCopyWith<$Res> {
-  factory _$StorageResponseCopyWith(
-          _StorageResponse value, $Res Function(_StorageResponse) then) =
-      __$StorageResponseCopyWithImpl<$Res>;
+  factory _$$_StorageResponseCopyWith(
+          _$_StorageResponse value, $Res Function(_$_StorageResponse) then) =
+      __$$_StorageResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {ProbeStatus status,
@@ -5492,15 +5195,15 @@ abstract class _$StorageResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$StorageResponseCopyWithImpl<$Res>
+class __$$_StorageResponseCopyWithImpl<$Res>
     extends _$StorageResponseCopyWithImpl<$Res>
-    implements _$StorageResponseCopyWith<$Res> {
-  __$StorageResponseCopyWithImpl(
-      _StorageResponse _value, $Res Function(_StorageResponse) _then)
-      : super(_value, (v) => _then(v as _StorageResponse));
+    implements _$$_StorageResponseCopyWith<$Res> {
+  __$$_StorageResponseCopyWithImpl(
+      _$_StorageResponse _value, $Res Function(_$_StorageResponse) _then)
+      : super(_value, (v) => _then(v as _$_StorageResponse));
 
   @override
-  _StorageResponse get _value => super._value as _StorageResponse;
+  _$_StorageResponse get _value => super._value as _$_StorageResponse;
 
   @override
   $Res call({
@@ -5513,7 +5216,7 @@ class __$StorageResponseCopyWithImpl<$Res>
     Object? dasd = freezed,
     Object? storageVersion = freezed,
   }) {
-    return _then(_StorageResponse(
+    return _then(_$_StorageResponse(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -5527,19 +5230,19 @@ class __$StorageResponseCopyWithImpl<$Res>
           : bootloader // ignore: cast_nullable_to_non_nullable
               as Bootloader?,
       origConfig: origConfig == freezed
-          ? _value.origConfig
+          ? _value._origConfig
           : origConfig // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
       config: config == freezed
-          ? _value.config
+          ? _value._config
           : config // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
       blockdev: blockdev == freezed
-          ? _value.blockdev
+          ? _value._blockdev
           : blockdev // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       dasd: dasd == freezed
-          ? _value.dasd
+          ? _value._dasd
           : dasd // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       storageVersion: storageVersion == freezed
@@ -5557,14 +5260,18 @@ class _$_StorageResponse implements _StorageResponse {
       {required this.status,
       this.errorReport,
       this.bootloader,
-      this.origConfig,
-      this.config,
-      this.blockdev,
-      this.dasd,
-      this.storageVersion = 1});
+      final List<dynamic>? origConfig,
+      final List<dynamic>? config,
+      final Map<String, dynamic>? blockdev,
+      final Map<String, dynamic>? dasd,
+      this.storageVersion = 1})
+      : _origConfig = origConfig,
+        _config = config,
+        _blockdev = blockdev,
+        _dasd = dasd;
 
   factory _$_StorageResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_StorageResponseFromJson(json);
+      _$$_StorageResponseFromJson(json);
 
   @override
   final ProbeStatus status;
@@ -5572,16 +5279,44 @@ class _$_StorageResponse implements _StorageResponse {
   final ErrorReportRef? errorReport;
   @override
   final Bootloader? bootloader;
+  final List<dynamic>? _origConfig;
   @override
-  final List<dynamic>? origConfig;
+  List<dynamic>? get origConfig {
+    final value = _origConfig;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<dynamic>? _config;
   @override
-  final List<dynamic>? config;
+  List<dynamic>? get config {
+    final value = _config;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final Map<String, dynamic>? _blockdev;
   @override
-  final Map<String, dynamic>? blockdev;
+  Map<String, dynamic>? get blockdev {
+    final value = _blockdev;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _dasd;
   @override
-  final Map<String, dynamic>? dasd;
-  @JsonKey(defaultValue: 1)
+  Map<String, dynamic>? get dasd {
+    final value = _dasd;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
+  @JsonKey()
   final int storageVersion;
 
   @override
@@ -5592,119 +5327,87 @@ class _$_StorageResponse implements _StorageResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StorageResponse &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.errorReport, errorReport) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorReport, errorReport)) &&
-            (identical(other.bootloader, bootloader) ||
-                const DeepCollectionEquality()
-                    .equals(other.bootloader, bootloader)) &&
-            (identical(other.origConfig, origConfig) ||
-                const DeepCollectionEquality()
-                    .equals(other.origConfig, origConfig)) &&
-            (identical(other.config, config) ||
-                const DeepCollectionEquality().equals(other.config, config)) &&
-            (identical(other.blockdev, blockdev) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockdev, blockdev)) &&
-            (identical(other.dasd, dasd) ||
-                const DeepCollectionEquality().equals(other.dasd, dasd)) &&
-            (identical(other.storageVersion, storageVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.storageVersion, storageVersion)));
+        (other.runtimeType == runtimeType &&
+            other is _$_StorageResponse &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.errorReport, errorReport) &&
+            const DeepCollectionEquality()
+                .equals(other.bootloader, bootloader) &&
+            const DeepCollectionEquality()
+                .equals(other._origConfig, _origConfig) &&
+            const DeepCollectionEquality().equals(other._config, _config) &&
+            const DeepCollectionEquality().equals(other._blockdev, _blockdev) &&
+            const DeepCollectionEquality().equals(other._dasd, _dasd) &&
+            const DeepCollectionEquality()
+                .equals(other.storageVersion, storageVersion));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(errorReport) ^
-      const DeepCollectionEquality().hash(bootloader) ^
-      const DeepCollectionEquality().hash(origConfig) ^
-      const DeepCollectionEquality().hash(config) ^
-      const DeepCollectionEquality().hash(blockdev) ^
-      const DeepCollectionEquality().hash(dasd) ^
-      const DeepCollectionEquality().hash(storageVersion);
 
   @JsonKey(ignore: true)
   @override
-  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
-      __$StorageResponseCopyWithImpl<_StorageResponse>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(errorReport),
+      const DeepCollectionEquality().hash(bootloader),
+      const DeepCollectionEquality().hash(_origConfig),
+      const DeepCollectionEquality().hash(_config),
+      const DeepCollectionEquality().hash(_blockdev),
+      const DeepCollectionEquality().hash(_dasd),
+      const DeepCollectionEquality().hash(storageVersion));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_StorageResponseCopyWith<_$_StorageResponse> get copyWith =>
+      __$$_StorageResponseCopyWithImpl<_$_StorageResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StorageResponseToJson(this);
+    return _$$_StorageResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _StorageResponse implements StorageResponse {
   const factory _StorageResponse(
-      {required ProbeStatus status,
-      ErrorReportRef? errorReport,
-      Bootloader? bootloader,
-      List<dynamic>? origConfig,
-      List<dynamic>? config,
-      Map<String, dynamic>? blockdev,
-      Map<String, dynamic>? dasd,
-      int storageVersion}) = _$_StorageResponse;
+      {required final ProbeStatus status,
+      final ErrorReportRef? errorReport,
+      final Bootloader? bootloader,
+      final List<dynamic>? origConfig,
+      final List<dynamic>? config,
+      final Map<String, dynamic>? blockdev,
+      final Map<String, dynamic>? dasd,
+      final int storageVersion}) = _$_StorageResponse;
 
   factory _StorageResponse.fromJson(Map<String, dynamic> json) =
       _$_StorageResponse.fromJson;
 
   @override
-  ProbeStatus get status => throw _privateConstructorUsedError;
+  ProbeStatus get status;
   @override
-  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  ErrorReportRef? get errorReport;
   @override
-  Bootloader? get bootloader => throw _privateConstructorUsedError;
+  Bootloader? get bootloader;
   @override
-  List<dynamic>? get origConfig => throw _privateConstructorUsedError;
+  List<dynamic>? get origConfig;
   @override
-  List<dynamic>? get config => throw _privateConstructorUsedError;
+  List<dynamic>? get config;
   @override
-  Map<String, dynamic>? get blockdev => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get blockdev;
   @override
-  Map<String, dynamic>? get dasd => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get dasd;
   @override
-  int get storageVersion => throw _privateConstructorUsedError;
+  int get storageVersion;
   @override
   @JsonKey(ignore: true)
-  _$StorageResponseCopyWith<_StorageResponse> get copyWith =>
+  _$$_StorageResponseCopyWith<_$_StorageResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 StorageResponseV2 _$StorageResponseV2FromJson(Map<String, dynamic> json) {
   return _StorageResponseV2.fromJson(json);
 }
-
-/// @nodoc
-class _$StorageResponseV2TearOff {
-  const _$StorageResponseV2TearOff();
-
-  _StorageResponseV2 call(
-      {required List<Disk> disks,
-      required bool needRoot,
-      required bool needBoot,
-      required int installMinimumSize,
-      ErrorReportRef? errorReport}) {
-    return _StorageResponseV2(
-      disks: disks,
-      needRoot: needRoot,
-      needBoot: needBoot,
-      installMinimumSize: installMinimumSize,
-      errorReport: errorReport,
-    );
-  }
-
-  StorageResponseV2 fromJson(Map<String, Object> json) {
-    return StorageResponseV2.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $StorageResponseV2 = _$StorageResponseV2TearOff();
 
 /// @nodoc
 mixin _$StorageResponseV2 {
@@ -5789,11 +5492,11 @@ class _$StorageResponseV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$StorageResponseV2CopyWith<$Res>
+abstract class _$$_StorageResponseV2CopyWith<$Res>
     implements $StorageResponseV2CopyWith<$Res> {
-  factory _$StorageResponseV2CopyWith(
-          _StorageResponseV2 value, $Res Function(_StorageResponseV2) then) =
-      __$StorageResponseV2CopyWithImpl<$Res>;
+  factory _$$_StorageResponseV2CopyWith(_$_StorageResponseV2 value,
+          $Res Function(_$_StorageResponseV2) then) =
+      __$$_StorageResponseV2CopyWithImpl<$Res>;
   @override
   $Res call(
       {List<Disk> disks,
@@ -5807,15 +5510,15 @@ abstract class _$StorageResponseV2CopyWith<$Res>
 }
 
 /// @nodoc
-class __$StorageResponseV2CopyWithImpl<$Res>
+class __$$_StorageResponseV2CopyWithImpl<$Res>
     extends _$StorageResponseV2CopyWithImpl<$Res>
-    implements _$StorageResponseV2CopyWith<$Res> {
-  __$StorageResponseV2CopyWithImpl(
-      _StorageResponseV2 _value, $Res Function(_StorageResponseV2) _then)
-      : super(_value, (v) => _then(v as _StorageResponseV2));
+    implements _$$_StorageResponseV2CopyWith<$Res> {
+  __$$_StorageResponseV2CopyWithImpl(
+      _$_StorageResponseV2 _value, $Res Function(_$_StorageResponseV2) _then)
+      : super(_value, (v) => _then(v as _$_StorageResponseV2));
 
   @override
-  _StorageResponseV2 get _value => super._value as _StorageResponseV2;
+  _$_StorageResponseV2 get _value => super._value as _$_StorageResponseV2;
 
   @override
   $Res call({
@@ -5825,9 +5528,9 @@ class __$StorageResponseV2CopyWithImpl<$Res>
     Object? installMinimumSize = freezed,
     Object? errorReport = freezed,
   }) {
-    return _then(_StorageResponseV2(
+    return _then(_$_StorageResponseV2(
       disks: disks == freezed
-          ? _value.disks
+          ? _value._disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>,
       needRoot: needRoot == freezed
@@ -5854,17 +5557,23 @@ class __$StorageResponseV2CopyWithImpl<$Res>
 @JsonSerializable()
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
-      {required this.disks,
+      {required final List<Disk> disks,
       required this.needRoot,
       required this.needBoot,
       required this.installMinimumSize,
-      this.errorReport});
+      this.errorReport})
+      : _disks = disks;
 
   factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
-      _$_$_StorageResponseV2FromJson(json);
+      _$$_StorageResponseV2FromJson(json);
 
+  final List<Disk> _disks;
   @override
-  final List<Disk> disks;
+  List<Disk> get disks {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_disks);
+  }
+
   @override
   final bool needRoot;
   @override
@@ -5882,98 +5591,71 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StorageResponseV2 &&
-            (identical(other.disks, disks) ||
-                const DeepCollectionEquality().equals(other.disks, disks)) &&
-            (identical(other.needRoot, needRoot) ||
-                const DeepCollectionEquality()
-                    .equals(other.needRoot, needRoot)) &&
-            (identical(other.needBoot, needBoot) ||
-                const DeepCollectionEquality()
-                    .equals(other.needBoot, needBoot)) &&
-            (identical(other.installMinimumSize, installMinimumSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.installMinimumSize, installMinimumSize)) &&
-            (identical(other.errorReport, errorReport) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorReport, errorReport)));
+        (other.runtimeType == runtimeType &&
+            other is _$_StorageResponseV2 &&
+            const DeepCollectionEquality().equals(other._disks, _disks) &&
+            const DeepCollectionEquality().equals(other.needRoot, needRoot) &&
+            const DeepCollectionEquality().equals(other.needBoot, needBoot) &&
+            const DeepCollectionEquality()
+                .equals(other.installMinimumSize, installMinimumSize) &&
+            const DeepCollectionEquality()
+                .equals(other.errorReport, errorReport));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(disks) ^
-      const DeepCollectionEquality().hash(needRoot) ^
-      const DeepCollectionEquality().hash(needBoot) ^
-      const DeepCollectionEquality().hash(installMinimumSize) ^
-      const DeepCollectionEquality().hash(errorReport);
 
   @JsonKey(ignore: true)
   @override
-  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
-      __$StorageResponseV2CopyWithImpl<_StorageResponseV2>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_disks),
+      const DeepCollectionEquality().hash(needRoot),
+      const DeepCollectionEquality().hash(needBoot),
+      const DeepCollectionEquality().hash(installMinimumSize),
+      const DeepCollectionEquality().hash(errorReport));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_StorageResponseV2CopyWith<_$_StorageResponseV2> get copyWith =>
+      __$$_StorageResponseV2CopyWithImpl<_$_StorageResponseV2>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StorageResponseV2ToJson(this);
+    return _$$_StorageResponseV2ToJson(
+      this,
+    );
   }
 }
 
 abstract class _StorageResponseV2 implements StorageResponseV2 {
   const factory _StorageResponseV2(
-      {required List<Disk> disks,
-      required bool needRoot,
-      required bool needBoot,
-      required int installMinimumSize,
-      ErrorReportRef? errorReport}) = _$_StorageResponseV2;
+      {required final List<Disk> disks,
+      required final bool needRoot,
+      required final bool needBoot,
+      required final int installMinimumSize,
+      final ErrorReportRef? errorReport}) = _$_StorageResponseV2;
 
   factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_StorageResponseV2.fromJson;
 
   @override
-  List<Disk> get disks => throw _privateConstructorUsedError;
+  List<Disk> get disks;
   @override
-  bool get needRoot => throw _privateConstructorUsedError;
+  bool get needRoot;
   @override
-  bool get needBoot => throw _privateConstructorUsedError;
+  bool get needBoot;
   @override
-  int get installMinimumSize => throw _privateConstructorUsedError;
+  int get installMinimumSize;
   @override
-  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  ErrorReportRef? get errorReport;
   @override
   @JsonKey(ignore: true)
-  _$StorageResponseV2CopyWith<_StorageResponseV2> get copyWith =>
+  _$$_StorageResponseV2CopyWith<_$_StorageResponseV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 GuidedResizeValues _$GuidedResizeValuesFromJson(Map<String, dynamic> json) {
   return _GuidedResizeValues.fromJson(json);
 }
-
-/// @nodoc
-class _$GuidedResizeValuesTearOff {
-  const _$GuidedResizeValuesTearOff();
-
-  _GuidedResizeValues call(
-      {required int installMax,
-      required int minimum,
-      required int recommended,
-      required int maximum}) {
-    return _GuidedResizeValues(
-      installMax: installMax,
-      minimum: minimum,
-      recommended: recommended,
-      maximum: maximum,
-    );
-  }
-
-  GuidedResizeValues fromJson(Map<String, Object> json) {
-    return GuidedResizeValues.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedResizeValues = _$GuidedResizeValuesTearOff();
 
 /// @nodoc
 mixin _$GuidedResizeValues {
@@ -6034,25 +5716,25 @@ class _$GuidedResizeValuesCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GuidedResizeValuesCopyWith<$Res>
+abstract class _$$_GuidedResizeValuesCopyWith<$Res>
     implements $GuidedResizeValuesCopyWith<$Res> {
-  factory _$GuidedResizeValuesCopyWith(
-          _GuidedResizeValues value, $Res Function(_GuidedResizeValues) then) =
-      __$GuidedResizeValuesCopyWithImpl<$Res>;
+  factory _$$_GuidedResizeValuesCopyWith(_$_GuidedResizeValues value,
+          $Res Function(_$_GuidedResizeValues) then) =
+      __$$_GuidedResizeValuesCopyWithImpl<$Res>;
   @override
   $Res call({int installMax, int minimum, int recommended, int maximum});
 }
 
 /// @nodoc
-class __$GuidedResizeValuesCopyWithImpl<$Res>
+class __$$_GuidedResizeValuesCopyWithImpl<$Res>
     extends _$GuidedResizeValuesCopyWithImpl<$Res>
-    implements _$GuidedResizeValuesCopyWith<$Res> {
-  __$GuidedResizeValuesCopyWithImpl(
-      _GuidedResizeValues _value, $Res Function(_GuidedResizeValues) _then)
-      : super(_value, (v) => _then(v as _GuidedResizeValues));
+    implements _$$_GuidedResizeValuesCopyWith<$Res> {
+  __$$_GuidedResizeValuesCopyWithImpl(
+      _$_GuidedResizeValues _value, $Res Function(_$_GuidedResizeValues) _then)
+      : super(_value, (v) => _then(v as _$_GuidedResizeValues));
 
   @override
-  _GuidedResizeValues get _value => super._value as _GuidedResizeValues;
+  _$_GuidedResizeValues get _value => super._value as _$_GuidedResizeValues;
 
   @override
   $Res call({
@@ -6061,7 +5743,7 @@ class __$GuidedResizeValuesCopyWithImpl<$Res>
     Object? recommended = freezed,
     Object? maximum = freezed,
   }) {
-    return _then(_GuidedResizeValues(
+    return _then(_$_GuidedResizeValues(
       installMax: installMax == freezed
           ? _value.installMax
           : installMax // ignore: cast_nullable_to_non_nullable
@@ -6092,7 +5774,7 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
       required this.maximum});
 
   factory _$_GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
-      _$_$_GuidedResizeValuesFromJson(json);
+      _$$_GuidedResizeValuesFromJson(json);
 
   @override
   final int installMax;
@@ -6111,65 +5793,65 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuidedResizeValues &&
-            (identical(other.installMax, installMax) ||
-                const DeepCollectionEquality()
-                    .equals(other.installMax, installMax)) &&
-            (identical(other.minimum, minimum) ||
-                const DeepCollectionEquality()
-                    .equals(other.minimum, minimum)) &&
-            (identical(other.recommended, recommended) ||
-                const DeepCollectionEquality()
-                    .equals(other.recommended, recommended)) &&
-            (identical(other.maximum, maximum) ||
-                const DeepCollectionEquality().equals(other.maximum, maximum)));
+        (other.runtimeType == runtimeType &&
+            other is _$_GuidedResizeValues &&
+            const DeepCollectionEquality()
+                .equals(other.installMax, installMax) &&
+            const DeepCollectionEquality().equals(other.minimum, minimum) &&
+            const DeepCollectionEquality()
+                .equals(other.recommended, recommended) &&
+            const DeepCollectionEquality().equals(other.maximum, maximum));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(installMax) ^
-      const DeepCollectionEquality().hash(minimum) ^
-      const DeepCollectionEquality().hash(recommended) ^
-      const DeepCollectionEquality().hash(maximum);
 
   @JsonKey(ignore: true)
   @override
-  _$GuidedResizeValuesCopyWith<_GuidedResizeValues> get copyWith =>
-      __$GuidedResizeValuesCopyWithImpl<_GuidedResizeValues>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(installMax),
+      const DeepCollectionEquality().hash(minimum),
+      const DeepCollectionEquality().hash(recommended),
+      const DeepCollectionEquality().hash(maximum));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuidedResizeValuesCopyWith<_$_GuidedResizeValues> get copyWith =>
+      __$$_GuidedResizeValuesCopyWithImpl<_$_GuidedResizeValues>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GuidedResizeValuesToJson(this);
+    return _$$_GuidedResizeValuesToJson(
+      this,
+    );
   }
 }
 
 abstract class _GuidedResizeValues implements GuidedResizeValues {
   const factory _GuidedResizeValues(
-      {required int installMax,
-      required int minimum,
-      required int recommended,
-      required int maximum}) = _$_GuidedResizeValues;
+      {required final int installMax,
+      required final int minimum,
+      required final int recommended,
+      required final int maximum}) = _$_GuidedResizeValues;
 
   factory _GuidedResizeValues.fromJson(Map<String, dynamic> json) =
       _$_GuidedResizeValues.fromJson;
 
   @override
-  int get installMax => throw _privateConstructorUsedError;
+  int get installMax;
   @override
-  int get minimum => throw _privateConstructorUsedError;
+  int get minimum;
   @override
-  int get recommended => throw _privateConstructorUsedError;
+  int get recommended;
   @override
-  int get maximum => throw _privateConstructorUsedError;
+  int get maximum;
   @override
   @JsonKey(ignore: true)
-  _$GuidedResizeValuesCopyWith<_GuidedResizeValues> get copyWith =>
+  _$$_GuidedResizeValuesCopyWith<_$_GuidedResizeValues> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 GuidedStorageTarget _$GuidedStorageTargetFromJson(Map<String, dynamic> json) {
-  switch (json['\$type'] as String) {
+  switch (json['\$type']) {
     case 'GuidedStorageTargetReformat':
       return GuidedStorageTargetReformat.fromJson(json);
     case 'GuidedStorageTargetResize':
@@ -6178,56 +5860,14 @@ GuidedStorageTarget _$GuidedStorageTargetFromJson(Map<String, dynamic> json) {
       return GuidedStorageTargetUseGap.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(json, '\$type', 'GuidedStorageTarget',
+          'Invalid union type "${json['\$type']}"!');
   }
 }
-
-/// @nodoc
-class _$GuidedStorageTargetTearOff {
-  const _$GuidedStorageTargetTearOff();
-
-  GuidedStorageTargetReformat reformat({required String diskId}) {
-    return GuidedStorageTargetReformat(
-      diskId: diskId,
-    );
-  }
-
-  GuidedStorageTargetResize resize(
-      {required String diskId,
-      required int partitionNumber,
-      required int newSize,
-      required int? minimum,
-      required int? recommended,
-      required int? maximum}) {
-    return GuidedStorageTargetResize(
-      diskId: diskId,
-      partitionNumber: partitionNumber,
-      newSize: newSize,
-      minimum: minimum,
-      recommended: recommended,
-      maximum: maximum,
-    );
-  }
-
-  GuidedStorageTargetUseGap useGap({required String diskId, required Gap gap}) {
-    return GuidedStorageTargetUseGap(
-      diskId: diskId,
-      gap: gap,
-    );
-  }
-
-  GuidedStorageTarget fromJson(Map<String, Object> json) {
-    return GuidedStorageTarget.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedStorageTarget = _$GuidedStorageTargetTearOff();
 
 /// @nodoc
 mixin _$GuidedStorageTarget {
   String get diskId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String diskId) reformat,
@@ -6235,6 +5875,15 @@ mixin _$GuidedStorageTarget {
             int? minimum, int? recommended, int? maximum)
         resize,
     required TResult Function(String diskId, Gap gap) useGap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -6252,6 +5901,13 @@ mixin _$GuidedStorageTarget {
     required TResult Function(GuidedStorageTargetReformat value) reformat,
     required TResult Function(GuidedStorageTargetResize value) resize,
     required TResult Function(GuidedStorageTargetUseGap value) useGap,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -6299,33 +5955,34 @@ class _$GuidedStorageTargetCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $GuidedStorageTargetReformatCopyWith<$Res>
+abstract class _$$GuidedStorageTargetReformatCopyWith<$Res>
     implements $GuidedStorageTargetCopyWith<$Res> {
-  factory $GuidedStorageTargetReformatCopyWith(
-          GuidedStorageTargetReformat value,
-          $Res Function(GuidedStorageTargetReformat) then) =
-      _$GuidedStorageTargetReformatCopyWithImpl<$Res>;
+  factory _$$GuidedStorageTargetReformatCopyWith(
+          _$GuidedStorageTargetReformat value,
+          $Res Function(_$GuidedStorageTargetReformat) then) =
+      __$$GuidedStorageTargetReformatCopyWithImpl<$Res>;
   @override
   $Res call({String diskId});
 }
 
 /// @nodoc
-class _$GuidedStorageTargetReformatCopyWithImpl<$Res>
+class __$$GuidedStorageTargetReformatCopyWithImpl<$Res>
     extends _$GuidedStorageTargetCopyWithImpl<$Res>
-    implements $GuidedStorageTargetReformatCopyWith<$Res> {
-  _$GuidedStorageTargetReformatCopyWithImpl(GuidedStorageTargetReformat _value,
-      $Res Function(GuidedStorageTargetReformat) _then)
-      : super(_value, (v) => _then(v as GuidedStorageTargetReformat));
+    implements _$$GuidedStorageTargetReformatCopyWith<$Res> {
+  __$$GuidedStorageTargetReformatCopyWithImpl(
+      _$GuidedStorageTargetReformat _value,
+      $Res Function(_$GuidedStorageTargetReformat) _then)
+      : super(_value, (v) => _then(v as _$GuidedStorageTargetReformat));
 
   @override
-  GuidedStorageTargetReformat get _value =>
-      super._value as GuidedStorageTargetReformat;
+  _$GuidedStorageTargetReformat get _value =>
+      super._value as _$GuidedStorageTargetReformat;
 
   @override
   $Res call({
     Object? diskId = freezed,
   }) {
-    return _then(GuidedStorageTargetReformat(
+    return _then(_$GuidedStorageTargetReformat(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -6336,15 +5993,19 @@ class _$GuidedStorageTargetReformatCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('GuidedStorageTargetReformat')
 class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
-  const _$GuidedStorageTargetReformat({required this.diskId});
+  const _$GuidedStorageTargetReformat(
+      {required this.diskId, final String? $type})
+      : $type = $type ?? 'GuidedStorageTargetReformat';
 
   factory _$GuidedStorageTargetReformat.fromJson(Map<String, dynamic> json) =>
-      _$_$GuidedStorageTargetReformatFromJson(json);
+      _$$GuidedStorageTargetReformatFromJson(json);
 
   @override
   final String diskId;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -6354,20 +6015,21 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GuidedStorageTargetReformat &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)));
+        (other.runtimeType == runtimeType &&
+            other is _$GuidedStorageTargetReformat &&
+            const DeepCollectionEquality().equals(other.diskId, diskId));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(diskId);
 
   @JsonKey(ignore: true)
   @override
-  $GuidedStorageTargetReformatCopyWith<GuidedStorageTargetReformat>
-      get copyWith => _$GuidedStorageTargetReformatCopyWithImpl<
-          GuidedStorageTargetReformat>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(diskId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GuidedStorageTargetReformatCopyWith<_$GuidedStorageTargetReformat>
+      get copyWith => __$$GuidedStorageTargetReformatCopyWithImpl<
+          _$GuidedStorageTargetReformat>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6379,6 +6041,18 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
     required TResult Function(String diskId, Gap gap) useGap,
   }) {
     return reformat(diskId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+  }) {
+    return reformat?.call(diskId);
   }
 
   @override
@@ -6409,6 +6083,16 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+  }) {
+    return reformat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GuidedStorageTargetReformat value)? reformat,
     TResult Function(GuidedStorageTargetResize value)? resize,
@@ -6423,32 +6107,34 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GuidedStorageTargetReformatToJson(this)
-      ..['\$type'] = 'GuidedStorageTargetReformat';
+    return _$$GuidedStorageTargetReformatToJson(
+      this,
+    );
   }
 }
 
 abstract class GuidedStorageTargetReformat implements GuidedStorageTarget {
-  const factory GuidedStorageTargetReformat({required String diskId}) =
+  const factory GuidedStorageTargetReformat({required final String diskId}) =
       _$GuidedStorageTargetReformat;
 
   factory GuidedStorageTargetReformat.fromJson(Map<String, dynamic> json) =
       _$GuidedStorageTargetReformat.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
+  String get diskId;
   @override
   @JsonKey(ignore: true)
-  $GuidedStorageTargetReformatCopyWith<GuidedStorageTargetReformat>
+  _$$GuidedStorageTargetReformatCopyWith<_$GuidedStorageTargetReformat>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GuidedStorageTargetResizeCopyWith<$Res>
+abstract class _$$GuidedStorageTargetResizeCopyWith<$Res>
     implements $GuidedStorageTargetCopyWith<$Res> {
-  factory $GuidedStorageTargetResizeCopyWith(GuidedStorageTargetResize value,
-          $Res Function(GuidedStorageTargetResize) then) =
-      _$GuidedStorageTargetResizeCopyWithImpl<$Res>;
+  factory _$$GuidedStorageTargetResizeCopyWith(
+          _$GuidedStorageTargetResize value,
+          $Res Function(_$GuidedStorageTargetResize) then) =
+      __$$GuidedStorageTargetResizeCopyWithImpl<$Res>;
   @override
   $Res call(
       {String diskId,
@@ -6460,16 +6146,16 @@ abstract class $GuidedStorageTargetResizeCopyWith<$Res>
 }
 
 /// @nodoc
-class _$GuidedStorageTargetResizeCopyWithImpl<$Res>
+class __$$GuidedStorageTargetResizeCopyWithImpl<$Res>
     extends _$GuidedStorageTargetCopyWithImpl<$Res>
-    implements $GuidedStorageTargetResizeCopyWith<$Res> {
-  _$GuidedStorageTargetResizeCopyWithImpl(GuidedStorageTargetResize _value,
-      $Res Function(GuidedStorageTargetResize) _then)
-      : super(_value, (v) => _then(v as GuidedStorageTargetResize));
+    implements _$$GuidedStorageTargetResizeCopyWith<$Res> {
+  __$$GuidedStorageTargetResizeCopyWithImpl(_$GuidedStorageTargetResize _value,
+      $Res Function(_$GuidedStorageTargetResize) _then)
+      : super(_value, (v) => _then(v as _$GuidedStorageTargetResize));
 
   @override
-  GuidedStorageTargetResize get _value =>
-      super._value as GuidedStorageTargetResize;
+  _$GuidedStorageTargetResize get _value =>
+      super._value as _$GuidedStorageTargetResize;
 
   @override
   $Res call({
@@ -6480,7 +6166,7 @@ class _$GuidedStorageTargetResizeCopyWithImpl<$Res>
     Object? recommended = freezed,
     Object? maximum = freezed,
   }) {
-    return _then(GuidedStorageTargetResize(
+    return _then(_$GuidedStorageTargetResize(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -6511,7 +6197,6 @@ class _$GuidedStorageTargetResizeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('GuidedStorageTargetResize')
 class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
   const _$GuidedStorageTargetResize(
       {required this.diskId,
@@ -6519,10 +6204,12 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
       required this.newSize,
       required this.minimum,
       required this.recommended,
-      required this.maximum});
+      required this.maximum,
+      final String? $type})
+      : $type = $type ?? 'GuidedStorageTargetResize';
 
   factory _$GuidedStorageTargetResize.fromJson(Map<String, dynamic> json) =>
-      _$_$GuidedStorageTargetResizeFromJson(json);
+      _$$GuidedStorageTargetResizeFromJson(json);
 
   @override
   final String diskId;
@@ -6537,6 +6224,9 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
   @override
   final int? maximum;
 
+  @JsonKey(name: '\$type')
+  final String $type;
+
   @override
   String toString() {
     return 'GuidedStorageTarget.resize(diskId: $diskId, partitionNumber: $partitionNumber, newSize: $newSize, minimum: $minimum, recommended: $recommended, maximum: $maximum)';
@@ -6545,40 +6235,34 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GuidedStorageTargetResize &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.partitionNumber, partitionNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.partitionNumber, partitionNumber)) &&
-            (identical(other.newSize, newSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.newSize, newSize)) &&
-            (identical(other.minimum, minimum) ||
-                const DeepCollectionEquality()
-                    .equals(other.minimum, minimum)) &&
-            (identical(other.recommended, recommended) ||
-                const DeepCollectionEquality()
-                    .equals(other.recommended, recommended)) &&
-            (identical(other.maximum, maximum) ||
-                const DeepCollectionEquality().equals(other.maximum, maximum)));
+        (other.runtimeType == runtimeType &&
+            other is _$GuidedStorageTargetResize &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality()
+                .equals(other.partitionNumber, partitionNumber) &&
+            const DeepCollectionEquality().equals(other.newSize, newSize) &&
+            const DeepCollectionEquality().equals(other.minimum, minimum) &&
+            const DeepCollectionEquality()
+                .equals(other.recommended, recommended) &&
+            const DeepCollectionEquality().equals(other.maximum, maximum));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(partitionNumber) ^
-      const DeepCollectionEquality().hash(newSize) ^
-      const DeepCollectionEquality().hash(minimum) ^
-      const DeepCollectionEquality().hash(recommended) ^
-      const DeepCollectionEquality().hash(maximum);
 
   @JsonKey(ignore: true)
   @override
-  $GuidedStorageTargetResizeCopyWith<GuidedStorageTargetResize> get copyWith =>
-      _$GuidedStorageTargetResizeCopyWithImpl<GuidedStorageTargetResize>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(partitionNumber),
+      const DeepCollectionEquality().hash(newSize),
+      const DeepCollectionEquality().hash(minimum),
+      const DeepCollectionEquality().hash(recommended),
+      const DeepCollectionEquality().hash(maximum));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GuidedStorageTargetResizeCopyWith<_$GuidedStorageTargetResize>
+      get copyWith => __$$GuidedStorageTargetResizeCopyWithImpl<
+          _$GuidedStorageTargetResize>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6590,6 +6274,19 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
     required TResult Function(String diskId, Gap gap) useGap,
   }) {
     return resize(
+        diskId, partitionNumber, newSize, minimum, recommended, maximum);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+  }) {
+    return resize?.call(
         diskId, partitionNumber, newSize, minimum, recommended, maximum);
   }
 
@@ -6622,6 +6319,16 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+  }) {
+    return resize?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GuidedStorageTargetReformat value)? reformat,
     TResult Function(GuidedStorageTargetResize value)? resize,
@@ -6636,64 +6343,66 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GuidedStorageTargetResizeToJson(this)
-      ..['\$type'] = 'GuidedStorageTargetResize';
+    return _$$GuidedStorageTargetResizeToJson(
+      this,
+    );
   }
 }
 
 abstract class GuidedStorageTargetResize implements GuidedStorageTarget {
   const factory GuidedStorageTargetResize(
-      {required String diskId,
-      required int partitionNumber,
-      required int newSize,
-      required int? minimum,
-      required int? recommended,
-      required int? maximum}) = _$GuidedStorageTargetResize;
+      {required final String diskId,
+      required final int partitionNumber,
+      required final int newSize,
+      required final int? minimum,
+      required final int? recommended,
+      required final int? maximum}) = _$GuidedStorageTargetResize;
 
   factory GuidedStorageTargetResize.fromJson(Map<String, dynamic> json) =
       _$GuidedStorageTargetResize.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
-  int get partitionNumber => throw _privateConstructorUsedError;
-  int get newSize => throw _privateConstructorUsedError;
-  int? get minimum => throw _privateConstructorUsedError;
-  int? get recommended => throw _privateConstructorUsedError;
-  int? get maximum => throw _privateConstructorUsedError;
+  String get diskId;
+  int get partitionNumber;
+  int get newSize;
+  int? get minimum;
+  int? get recommended;
+  int? get maximum;
   @override
   @JsonKey(ignore: true)
-  $GuidedStorageTargetResizeCopyWith<GuidedStorageTargetResize> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GuidedStorageTargetResizeCopyWith<_$GuidedStorageTargetResize>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GuidedStorageTargetUseGapCopyWith<$Res>
+abstract class _$$GuidedStorageTargetUseGapCopyWith<$Res>
     implements $GuidedStorageTargetCopyWith<$Res> {
-  factory $GuidedStorageTargetUseGapCopyWith(GuidedStorageTargetUseGap value,
-          $Res Function(GuidedStorageTargetUseGap) then) =
-      _$GuidedStorageTargetUseGapCopyWithImpl<$Res>;
+  factory _$$GuidedStorageTargetUseGapCopyWith(
+          _$GuidedStorageTargetUseGap value,
+          $Res Function(_$GuidedStorageTargetUseGap) then) =
+      __$$GuidedStorageTargetUseGapCopyWithImpl<$Res>;
   @override
   $Res call({String diskId, Gap gap});
 }
 
 /// @nodoc
-class _$GuidedStorageTargetUseGapCopyWithImpl<$Res>
+class __$$GuidedStorageTargetUseGapCopyWithImpl<$Res>
     extends _$GuidedStorageTargetCopyWithImpl<$Res>
-    implements $GuidedStorageTargetUseGapCopyWith<$Res> {
-  _$GuidedStorageTargetUseGapCopyWithImpl(GuidedStorageTargetUseGap _value,
-      $Res Function(GuidedStorageTargetUseGap) _then)
-      : super(_value, (v) => _then(v as GuidedStorageTargetUseGap));
+    implements _$$GuidedStorageTargetUseGapCopyWith<$Res> {
+  __$$GuidedStorageTargetUseGapCopyWithImpl(_$GuidedStorageTargetUseGap _value,
+      $Res Function(_$GuidedStorageTargetUseGap) _then)
+      : super(_value, (v) => _then(v as _$GuidedStorageTargetUseGap));
 
   @override
-  GuidedStorageTargetUseGap get _value =>
-      super._value as GuidedStorageTargetUseGap;
+  _$GuidedStorageTargetUseGap get _value =>
+      super._value as _$GuidedStorageTargetUseGap;
 
   @override
   $Res call({
     Object? diskId = freezed,
     Object? gap = freezed,
   }) {
-    return _then(GuidedStorageTargetUseGap(
+    return _then(_$GuidedStorageTargetUseGap(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -6708,17 +6417,21 @@ class _$GuidedStorageTargetUseGapCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('GuidedStorageTargetUseGap')
 class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
-  const _$GuidedStorageTargetUseGap({required this.diskId, required this.gap});
+  const _$GuidedStorageTargetUseGap(
+      {required this.diskId, required this.gap, final String? $type})
+      : $type = $type ?? 'GuidedStorageTargetUseGap';
 
   factory _$GuidedStorageTargetUseGap.fromJson(Map<String, dynamic> json) =>
-      _$_$GuidedStorageTargetUseGapFromJson(json);
+      _$$GuidedStorageTargetUseGapFromJson(json);
 
   @override
   final String diskId;
   @override
   final Gap gap;
+
+  @JsonKey(name: '\$type')
+  final String $type;
 
   @override
   String toString() {
@@ -6728,24 +6441,24 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GuidedStorageTargetUseGap &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.gap, gap) ||
-                const DeepCollectionEquality().equals(other.gap, gap)));
+        (other.runtimeType == runtimeType &&
+            other is _$GuidedStorageTargetUseGap &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality().equals(other.gap, gap));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(gap);
 
   @JsonKey(ignore: true)
   @override
-  $GuidedStorageTargetUseGapCopyWith<GuidedStorageTargetUseGap> get copyWith =>
-      _$GuidedStorageTargetUseGapCopyWithImpl<GuidedStorageTargetUseGap>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(gap));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GuidedStorageTargetUseGapCopyWith<_$GuidedStorageTargetUseGap>
+      get copyWith => __$$GuidedStorageTargetUseGapCopyWithImpl<
+          _$GuidedStorageTargetUseGap>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6757,6 +6470,18 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
     required TResult Function(String diskId, Gap gap) useGap,
   }) {
     return useGap(diskId, gap);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String diskId)? reformat,
+    TResult Function(String diskId, int partitionNumber, int newSize,
+            int? minimum, int? recommended, int? maximum)?
+        resize,
+    TResult Function(String diskId, Gap gap)? useGap,
+  }) {
+    return useGap?.call(diskId, gap);
   }
 
   @override
@@ -6787,6 +6512,16 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GuidedStorageTargetReformat value)? reformat,
+    TResult Function(GuidedStorageTargetResize value)? resize,
+    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+  }) {
+    return useGap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GuidedStorageTargetReformat value)? reformat,
     TResult Function(GuidedStorageTargetResize value)? resize,
@@ -6801,53 +6536,32 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GuidedStorageTargetUseGapToJson(this)
-      ..['\$type'] = 'GuidedStorageTargetUseGap';
+    return _$$GuidedStorageTargetUseGapToJson(
+      this,
+    );
   }
 }
 
 abstract class GuidedStorageTargetUseGap implements GuidedStorageTarget {
   const factory GuidedStorageTargetUseGap(
-      {required String diskId, required Gap gap}) = _$GuidedStorageTargetUseGap;
+      {required final String diskId,
+      required final Gap gap}) = _$GuidedStorageTargetUseGap;
 
   factory GuidedStorageTargetUseGap.fromJson(Map<String, dynamic> json) =
       _$GuidedStorageTargetUseGap.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
-  Gap get gap => throw _privateConstructorUsedError;
+  String get diskId;
+  Gap get gap;
   @override
   @JsonKey(ignore: true)
-  $GuidedStorageTargetUseGapCopyWith<GuidedStorageTargetUseGap> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GuidedStorageTargetUseGapCopyWith<_$GuidedStorageTargetUseGap>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 GuidedChoiceV2 _$GuidedChoiceV2FromJson(Map<String, dynamic> json) {
   return _GuidedChoiceV2.fromJson(json);
 }
-
-/// @nodoc
-class _$GuidedChoiceV2TearOff {
-  const _$GuidedChoiceV2TearOff();
-
-  _GuidedChoiceV2 call(
-      {required GuidedStorageTarget target,
-      bool useLvm = false,
-      String? password}) {
-    return _GuidedChoiceV2(
-      target: target,
-      useLvm: useLvm,
-      password: password,
-    );
-  }
-
-  GuidedChoiceV2 fromJson(Map<String, Object> json) {
-    return GuidedChoiceV2.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedChoiceV2 = _$GuidedChoiceV2TearOff();
 
 /// @nodoc
 mixin _$GuidedChoiceV2 {
@@ -6911,11 +6625,11 @@ class _$GuidedChoiceV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GuidedChoiceV2CopyWith<$Res>
+abstract class _$$_GuidedChoiceV2CopyWith<$Res>
     implements $GuidedChoiceV2CopyWith<$Res> {
-  factory _$GuidedChoiceV2CopyWith(
-          _GuidedChoiceV2 value, $Res Function(_GuidedChoiceV2) then) =
-      __$GuidedChoiceV2CopyWithImpl<$Res>;
+  factory _$$_GuidedChoiceV2CopyWith(
+          _$_GuidedChoiceV2 value, $Res Function(_$_GuidedChoiceV2) then) =
+      __$$_GuidedChoiceV2CopyWithImpl<$Res>;
   @override
   $Res call({GuidedStorageTarget target, bool useLvm, String? password});
 
@@ -6924,15 +6638,15 @@ abstract class _$GuidedChoiceV2CopyWith<$Res>
 }
 
 /// @nodoc
-class __$GuidedChoiceV2CopyWithImpl<$Res>
+class __$$_GuidedChoiceV2CopyWithImpl<$Res>
     extends _$GuidedChoiceV2CopyWithImpl<$Res>
-    implements _$GuidedChoiceV2CopyWith<$Res> {
-  __$GuidedChoiceV2CopyWithImpl(
-      _GuidedChoiceV2 _value, $Res Function(_GuidedChoiceV2) _then)
-      : super(_value, (v) => _then(v as _GuidedChoiceV2));
+    implements _$$_GuidedChoiceV2CopyWith<$Res> {
+  __$$_GuidedChoiceV2CopyWithImpl(
+      _$_GuidedChoiceV2 _value, $Res Function(_$_GuidedChoiceV2) _then)
+      : super(_value, (v) => _then(v as _$_GuidedChoiceV2));
 
   @override
-  _GuidedChoiceV2 get _value => super._value as _GuidedChoiceV2;
+  _$_GuidedChoiceV2 get _value => super._value as _$_GuidedChoiceV2;
 
   @override
   $Res call({
@@ -6940,7 +6654,7 @@ class __$GuidedChoiceV2CopyWithImpl<$Res>
     Object? useLvm = freezed,
     Object? password = freezed,
   }) {
-    return _then(_GuidedChoiceV2(
+    return _then(_$_GuidedChoiceV2(
       target: target == freezed
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
@@ -6964,12 +6678,12 @@ class _$_GuidedChoiceV2 implements _GuidedChoiceV2 {
       {required this.target, this.useLvm = false, this.password});
 
   factory _$_GuidedChoiceV2.fromJson(Map<String, dynamic> json) =>
-      _$_$_GuidedChoiceV2FromJson(json);
+      _$$_GuidedChoiceV2FromJson(json);
 
   @override
   final GuidedStorageTarget target;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool useLvm;
   @override
   final String? password;
@@ -6982,52 +6696,52 @@ class _$_GuidedChoiceV2 implements _GuidedChoiceV2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuidedChoiceV2 &&
-            (identical(other.target, target) ||
-                const DeepCollectionEquality().equals(other.target, target)) &&
-            (identical(other.useLvm, useLvm) ||
-                const DeepCollectionEquality().equals(other.useLvm, useLvm)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+        (other.runtimeType == runtimeType &&
+            other is _$_GuidedChoiceV2 &&
+            const DeepCollectionEquality().equals(other.target, target) &&
+            const DeepCollectionEquality().equals(other.useLvm, useLvm) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(target) ^
-      const DeepCollectionEquality().hash(useLvm) ^
-      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
-  _$GuidedChoiceV2CopyWith<_GuidedChoiceV2> get copyWith =>
-      __$GuidedChoiceV2CopyWithImpl<_GuidedChoiceV2>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(target),
+      const DeepCollectionEquality().hash(useLvm),
+      const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuidedChoiceV2CopyWith<_$_GuidedChoiceV2> get copyWith =>
+      __$$_GuidedChoiceV2CopyWithImpl<_$_GuidedChoiceV2>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GuidedChoiceV2ToJson(this);
+    return _$$_GuidedChoiceV2ToJson(
+      this,
+    );
   }
 }
 
 abstract class _GuidedChoiceV2 implements GuidedChoiceV2 {
   const factory _GuidedChoiceV2(
-      {required GuidedStorageTarget target,
-      bool useLvm,
-      String? password}) = _$_GuidedChoiceV2;
+      {required final GuidedStorageTarget target,
+      final bool useLvm,
+      final String? password}) = _$_GuidedChoiceV2;
 
   factory _GuidedChoiceV2.fromJson(Map<String, dynamic> json) =
       _$_GuidedChoiceV2.fromJson;
 
   @override
-  GuidedStorageTarget get target => throw _privateConstructorUsedError;
+  GuidedStorageTarget get target;
   @override
-  bool get useLvm => throw _privateConstructorUsedError;
+  bool get useLvm;
   @override
-  String? get password => throw _privateConstructorUsedError;
+  String? get password;
   @override
   @JsonKey(ignore: true)
-  _$GuidedChoiceV2CopyWith<_GuidedChoiceV2> get copyWith =>
+  _$$_GuidedChoiceV2CopyWith<_$_GuidedChoiceV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -7035,27 +6749,6 @@ GuidedStorageResponseV2 _$GuidedStorageResponseV2FromJson(
     Map<String, dynamic> json) {
   return _GuidedStorageResponseV2.fromJson(json);
 }
-
-/// @nodoc
-class _$GuidedStorageResponseV2TearOff {
-  const _$GuidedStorageResponseV2TearOff();
-
-  _GuidedStorageResponseV2 call(
-      {GuidedChoiceV2? configured,
-      List<GuidedStorageTarget> possible = const []}) {
-    return _GuidedStorageResponseV2(
-      configured: configured,
-      possible: possible,
-    );
-  }
-
-  GuidedStorageResponseV2 fromJson(Map<String, Object> json) {
-    return GuidedStorageResponseV2.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GuidedStorageResponseV2 = _$GuidedStorageResponseV2TearOff();
 
 /// @nodoc
 mixin _$GuidedStorageResponseV2 {
@@ -7117,11 +6810,11 @@ class _$GuidedStorageResponseV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GuidedStorageResponseV2CopyWith<$Res>
+abstract class _$$_GuidedStorageResponseV2CopyWith<$Res>
     implements $GuidedStorageResponseV2CopyWith<$Res> {
-  factory _$GuidedStorageResponseV2CopyWith(_GuidedStorageResponseV2 value,
-          $Res Function(_GuidedStorageResponseV2) then) =
-      __$GuidedStorageResponseV2CopyWithImpl<$Res>;
+  factory _$$_GuidedStorageResponseV2CopyWith(_$_GuidedStorageResponseV2 value,
+          $Res Function(_$_GuidedStorageResponseV2) then) =
+      __$$_GuidedStorageResponseV2CopyWithImpl<$Res>;
   @override
   $Res call({GuidedChoiceV2? configured, List<GuidedStorageTarget> possible});
 
@@ -7130,29 +6823,29 @@ abstract class _$GuidedStorageResponseV2CopyWith<$Res>
 }
 
 /// @nodoc
-class __$GuidedStorageResponseV2CopyWithImpl<$Res>
+class __$$_GuidedStorageResponseV2CopyWithImpl<$Res>
     extends _$GuidedStorageResponseV2CopyWithImpl<$Res>
-    implements _$GuidedStorageResponseV2CopyWith<$Res> {
-  __$GuidedStorageResponseV2CopyWithImpl(_GuidedStorageResponseV2 _value,
-      $Res Function(_GuidedStorageResponseV2) _then)
-      : super(_value, (v) => _then(v as _GuidedStorageResponseV2));
+    implements _$$_GuidedStorageResponseV2CopyWith<$Res> {
+  __$$_GuidedStorageResponseV2CopyWithImpl(_$_GuidedStorageResponseV2 _value,
+      $Res Function(_$_GuidedStorageResponseV2) _then)
+      : super(_value, (v) => _then(v as _$_GuidedStorageResponseV2));
 
   @override
-  _GuidedStorageResponseV2 get _value =>
-      super._value as _GuidedStorageResponseV2;
+  _$_GuidedStorageResponseV2 get _value =>
+      super._value as _$_GuidedStorageResponseV2;
 
   @override
   $Res call({
     Object? configured = freezed,
     Object? possible = freezed,
   }) {
-    return _then(_GuidedStorageResponseV2(
+    return _then(_$_GuidedStorageResponseV2(
       configured: configured == freezed
           ? _value.configured
           : configured // ignore: cast_nullable_to_non_nullable
               as GuidedChoiceV2?,
       possible: possible == freezed
-          ? _value.possible
+          ? _value._possible
           : possible // ignore: cast_nullable_to_non_nullable
               as List<GuidedStorageTarget>,
     ));
@@ -7162,16 +6855,22 @@ class __$GuidedStorageResponseV2CopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
-  const _$_GuidedStorageResponseV2({this.configured, this.possible = const []});
+  const _$_GuidedStorageResponseV2(
+      {this.configured, final List<GuidedStorageTarget> possible = const []})
+      : _possible = possible;
 
   factory _$_GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =>
-      _$_$_GuidedStorageResponseV2FromJson(json);
+      _$$_GuidedStorageResponseV2FromJson(json);
 
   @override
   final GuidedChoiceV2? configured;
-  @JsonKey(defaultValue: const [])
+  final List<GuidedStorageTarget> _possible;
   @override
-  final List<GuidedStorageTarget> possible;
+  @JsonKey()
+  List<GuidedStorageTarget> get possible {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_possible);
+  }
 
   @override
   String toString() {
@@ -7181,77 +6880,56 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuidedStorageResponseV2 &&
-            (identical(other.configured, configured) ||
-                const DeepCollectionEquality()
-                    .equals(other.configured, configured)) &&
-            (identical(other.possible, possible) ||
-                const DeepCollectionEquality()
-                    .equals(other.possible, possible)));
+        (other.runtimeType == runtimeType &&
+            other is _$_GuidedStorageResponseV2 &&
+            const DeepCollectionEquality()
+                .equals(other.configured, configured) &&
+            const DeepCollectionEquality().equals(other._possible, _possible));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(configured) ^
-      const DeepCollectionEquality().hash(possible);
 
   @JsonKey(ignore: true)
   @override
-  _$GuidedStorageResponseV2CopyWith<_GuidedStorageResponseV2> get copyWith =>
-      __$GuidedStorageResponseV2CopyWithImpl<_GuidedStorageResponseV2>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(configured),
+      const DeepCollectionEquality().hash(_possible));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuidedStorageResponseV2CopyWith<_$_GuidedStorageResponseV2>
+      get copyWith =>
+          __$$_GuidedStorageResponseV2CopyWithImpl<_$_GuidedStorageResponseV2>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GuidedStorageResponseV2ToJson(this);
+    return _$$_GuidedStorageResponseV2ToJson(
+      this,
+    );
   }
 }
 
 abstract class _GuidedStorageResponseV2 implements GuidedStorageResponseV2 {
   const factory _GuidedStorageResponseV2(
-      {GuidedChoiceV2? configured,
-      List<GuidedStorageTarget> possible}) = _$_GuidedStorageResponseV2;
+      {final GuidedChoiceV2? configured,
+      final List<GuidedStorageTarget> possible}) = _$_GuidedStorageResponseV2;
 
   factory _GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_GuidedStorageResponseV2.fromJson;
 
   @override
-  GuidedChoiceV2? get configured => throw _privateConstructorUsedError;
+  GuidedChoiceV2? get configured;
   @override
-  List<GuidedStorageTarget> get possible => throw _privateConstructorUsedError;
+  List<GuidedStorageTarget> get possible;
   @override
   @JsonKey(ignore: true)
-  _$GuidedStorageResponseV2CopyWith<_GuidedStorageResponseV2> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_GuidedStorageResponseV2CopyWith<_$_GuidedStorageResponseV2>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 AddPartitionV2 _$AddPartitionV2FromJson(Map<String, dynamic> json) {
   return _AddPartitionV2.fromJson(json);
 }
-
-/// @nodoc
-class _$AddPartitionV2TearOff {
-  const _$AddPartitionV2TearOff();
-
-  _AddPartitionV2 call(
-      {required String diskId,
-      required Partition partition,
-      required Gap gap}) {
-    return _AddPartitionV2(
-      diskId: diskId,
-      partition: partition,
-      gap: gap,
-    );
-  }
-
-  AddPartitionV2 fromJson(Map<String, Object> json) {
-    return AddPartitionV2.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AddPartitionV2 = _$AddPartitionV2TearOff();
 
 /// @nodoc
 mixin _$AddPartitionV2 {
@@ -7306,25 +6984,25 @@ class _$AddPartitionV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddPartitionV2CopyWith<$Res>
+abstract class _$$_AddPartitionV2CopyWith<$Res>
     implements $AddPartitionV2CopyWith<$Res> {
-  factory _$AddPartitionV2CopyWith(
-          _AddPartitionV2 value, $Res Function(_AddPartitionV2) then) =
-      __$AddPartitionV2CopyWithImpl<$Res>;
+  factory _$$_AddPartitionV2CopyWith(
+          _$_AddPartitionV2 value, $Res Function(_$_AddPartitionV2) then) =
+      __$$_AddPartitionV2CopyWithImpl<$Res>;
   @override
   $Res call({String diskId, Partition partition, Gap gap});
 }
 
 /// @nodoc
-class __$AddPartitionV2CopyWithImpl<$Res>
+class __$$_AddPartitionV2CopyWithImpl<$Res>
     extends _$AddPartitionV2CopyWithImpl<$Res>
-    implements _$AddPartitionV2CopyWith<$Res> {
-  __$AddPartitionV2CopyWithImpl(
-      _AddPartitionV2 _value, $Res Function(_AddPartitionV2) _then)
-      : super(_value, (v) => _then(v as _AddPartitionV2));
+    implements _$$_AddPartitionV2CopyWith<$Res> {
+  __$$_AddPartitionV2CopyWithImpl(
+      _$_AddPartitionV2 _value, $Res Function(_$_AddPartitionV2) _then)
+      : super(_value, (v) => _then(v as _$_AddPartitionV2));
 
   @override
-  _AddPartitionV2 get _value => super._value as _AddPartitionV2;
+  _$_AddPartitionV2 get _value => super._value as _$_AddPartitionV2;
 
   @override
   $Res call({
@@ -7332,7 +7010,7 @@ class __$AddPartitionV2CopyWithImpl<$Res>
     Object? partition = freezed,
     Object? gap = freezed,
   }) {
-    return _then(_AddPartitionV2(
+    return _then(_$_AddPartitionV2(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -7356,7 +7034,7 @@ class _$_AddPartitionV2 implements _AddPartitionV2 {
       {required this.diskId, required this.partition, required this.gap});
 
   factory _$_AddPartitionV2.fromJson(Map<String, dynamic> json) =>
-      _$_$_AddPartitionV2FromJson(json);
+      _$$_AddPartitionV2FromJson(json);
 
   @override
   final String diskId;
@@ -7373,78 +7051,58 @@ class _$_AddPartitionV2 implements _AddPartitionV2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddPartitionV2 &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.partition, partition) ||
-                const DeepCollectionEquality()
-                    .equals(other.partition, partition)) &&
-            (identical(other.gap, gap) ||
-                const DeepCollectionEquality().equals(other.gap, gap)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AddPartitionV2 &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality().equals(other.partition, partition) &&
+            const DeepCollectionEquality().equals(other.gap, gap));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(partition) ^
-      const DeepCollectionEquality().hash(gap);
 
   @JsonKey(ignore: true)
   @override
-  _$AddPartitionV2CopyWith<_AddPartitionV2> get copyWith =>
-      __$AddPartitionV2CopyWithImpl<_AddPartitionV2>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(partition),
+      const DeepCollectionEquality().hash(gap));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AddPartitionV2CopyWith<_$_AddPartitionV2> get copyWith =>
+      __$$_AddPartitionV2CopyWithImpl<_$_AddPartitionV2>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AddPartitionV2ToJson(this);
+    return _$$_AddPartitionV2ToJson(
+      this,
+    );
   }
 }
 
 abstract class _AddPartitionV2 implements AddPartitionV2 {
   const factory _AddPartitionV2(
-      {required String diskId,
-      required Partition partition,
-      required Gap gap}) = _$_AddPartitionV2;
+      {required final String diskId,
+      required final Partition partition,
+      required final Gap gap}) = _$_AddPartitionV2;
 
   factory _AddPartitionV2.fromJson(Map<String, dynamic> json) =
       _$_AddPartitionV2.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
+  String get diskId;
   @override
-  Partition get partition => throw _privateConstructorUsedError;
+  Partition get partition;
   @override
-  Gap get gap => throw _privateConstructorUsedError;
+  Gap get gap;
   @override
   @JsonKey(ignore: true)
-  _$AddPartitionV2CopyWith<_AddPartitionV2> get copyWith =>
+  _$$_AddPartitionV2CopyWith<_$_AddPartitionV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ModifyPartitionV2 _$ModifyPartitionV2FromJson(Map<String, dynamic> json) {
   return _ModifyPartitionV2.fromJson(json);
 }
-
-/// @nodoc
-class _$ModifyPartitionV2TearOff {
-  const _$ModifyPartitionV2TearOff();
-
-  _ModifyPartitionV2 call(
-      {required String diskId, required Partition partition}) {
-    return _ModifyPartitionV2(
-      diskId: diskId,
-      partition: partition,
-    );
-  }
-
-  ModifyPartitionV2 fromJson(Map<String, Object> json) {
-    return ModifyPartitionV2.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ModifyPartitionV2 = _$ModifyPartitionV2TearOff();
 
 /// @nodoc
 mixin _$ModifyPartitionV2 {
@@ -7493,32 +7151,32 @@ class _$ModifyPartitionV2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ModifyPartitionV2CopyWith<$Res>
+abstract class _$$_ModifyPartitionV2CopyWith<$Res>
     implements $ModifyPartitionV2CopyWith<$Res> {
-  factory _$ModifyPartitionV2CopyWith(
-          _ModifyPartitionV2 value, $Res Function(_ModifyPartitionV2) then) =
-      __$ModifyPartitionV2CopyWithImpl<$Res>;
+  factory _$$_ModifyPartitionV2CopyWith(_$_ModifyPartitionV2 value,
+          $Res Function(_$_ModifyPartitionV2) then) =
+      __$$_ModifyPartitionV2CopyWithImpl<$Res>;
   @override
   $Res call({String diskId, Partition partition});
 }
 
 /// @nodoc
-class __$ModifyPartitionV2CopyWithImpl<$Res>
+class __$$_ModifyPartitionV2CopyWithImpl<$Res>
     extends _$ModifyPartitionV2CopyWithImpl<$Res>
-    implements _$ModifyPartitionV2CopyWith<$Res> {
-  __$ModifyPartitionV2CopyWithImpl(
-      _ModifyPartitionV2 _value, $Res Function(_ModifyPartitionV2) _then)
-      : super(_value, (v) => _then(v as _ModifyPartitionV2));
+    implements _$$_ModifyPartitionV2CopyWith<$Res> {
+  __$$_ModifyPartitionV2CopyWithImpl(
+      _$_ModifyPartitionV2 _value, $Res Function(_$_ModifyPartitionV2) _then)
+      : super(_value, (v) => _then(v as _$_ModifyPartitionV2));
 
   @override
-  _ModifyPartitionV2 get _value => super._value as _ModifyPartitionV2;
+  _$_ModifyPartitionV2 get _value => super._value as _$_ModifyPartitionV2;
 
   @override
   $Res call({
     Object? diskId = freezed,
     Object? partition = freezed,
   }) {
-    return _then(_ModifyPartitionV2(
+    return _then(_$_ModifyPartitionV2(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -7537,7 +7195,7 @@ class _$_ModifyPartitionV2 implements _ModifyPartitionV2 {
   const _$_ModifyPartitionV2({required this.diskId, required this.partition});
 
   factory _$_ModifyPartitionV2.fromJson(Map<String, dynamic> json) =>
-      _$_$_ModifyPartitionV2FromJson(json);
+      _$$_ModifyPartitionV2FromJson(json);
 
   @override
   final String diskId;
@@ -7552,71 +7210,54 @@ class _$_ModifyPartitionV2 implements _ModifyPartitionV2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ModifyPartitionV2 &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.partition, partition) ||
-                const DeepCollectionEquality()
-                    .equals(other.partition, partition)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ModifyPartitionV2 &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality().equals(other.partition, partition));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(partition);
 
   @JsonKey(ignore: true)
   @override
-  _$ModifyPartitionV2CopyWith<_ModifyPartitionV2> get copyWith =>
-      __$ModifyPartitionV2CopyWithImpl<_ModifyPartitionV2>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(partition));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ModifyPartitionV2CopyWith<_$_ModifyPartitionV2> get copyWith =>
+      __$$_ModifyPartitionV2CopyWithImpl<_$_ModifyPartitionV2>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ModifyPartitionV2ToJson(this);
+    return _$$_ModifyPartitionV2ToJson(
+      this,
+    );
   }
 }
 
 abstract class _ModifyPartitionV2 implements ModifyPartitionV2 {
   const factory _ModifyPartitionV2(
-      {required String diskId,
-      required Partition partition}) = _$_ModifyPartitionV2;
+      {required final String diskId,
+      required final Partition partition}) = _$_ModifyPartitionV2;
 
   factory _ModifyPartitionV2.fromJson(Map<String, dynamic> json) =
       _$_ModifyPartitionV2.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
+  String get diskId;
   @override
-  Partition get partition => throw _privateConstructorUsedError;
+  Partition get partition;
   @override
   @JsonKey(ignore: true)
-  _$ModifyPartitionV2CopyWith<_ModifyPartitionV2> get copyWith =>
+  _$$_ModifyPartitionV2CopyWith<_$_ModifyPartitionV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ReformatDisk _$ReformatDiskFromJson(Map<String, dynamic> json) {
   return _ReformatDisk.fromJson(json);
 }
-
-/// @nodoc
-class _$ReformatDiskTearOff {
-  const _$ReformatDiskTearOff();
-
-  _ReformatDisk call({required String diskId, String? ptable}) {
-    return _ReformatDisk(
-      diskId: diskId,
-      ptable: ptable,
-    );
-  }
-
-  ReformatDisk fromJson(Map<String, Object> json) {
-    return ReformatDisk.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ReformatDisk = _$ReformatDiskTearOff();
 
 /// @nodoc
 mixin _$ReformatDisk {
@@ -7664,31 +7305,32 @@ class _$ReformatDiskCopyWithImpl<$Res> implements $ReformatDiskCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ReformatDiskCopyWith<$Res>
+abstract class _$$_ReformatDiskCopyWith<$Res>
     implements $ReformatDiskCopyWith<$Res> {
-  factory _$ReformatDiskCopyWith(
-          _ReformatDisk value, $Res Function(_ReformatDisk) then) =
-      __$ReformatDiskCopyWithImpl<$Res>;
+  factory _$$_ReformatDiskCopyWith(
+          _$_ReformatDisk value, $Res Function(_$_ReformatDisk) then) =
+      __$$_ReformatDiskCopyWithImpl<$Res>;
   @override
   $Res call({String diskId, String? ptable});
 }
 
 /// @nodoc
-class __$ReformatDiskCopyWithImpl<$Res> extends _$ReformatDiskCopyWithImpl<$Res>
-    implements _$ReformatDiskCopyWith<$Res> {
-  __$ReformatDiskCopyWithImpl(
-      _ReformatDisk _value, $Res Function(_ReformatDisk) _then)
-      : super(_value, (v) => _then(v as _ReformatDisk));
+class __$$_ReformatDiskCopyWithImpl<$Res>
+    extends _$ReformatDiskCopyWithImpl<$Res>
+    implements _$$_ReformatDiskCopyWith<$Res> {
+  __$$_ReformatDiskCopyWithImpl(
+      _$_ReformatDisk _value, $Res Function(_$_ReformatDisk) _then)
+      : super(_value, (v) => _then(v as _$_ReformatDisk));
 
   @override
-  _ReformatDisk get _value => super._value as _ReformatDisk;
+  _$_ReformatDisk get _value => super._value as _$_ReformatDisk;
 
   @override
   $Res call({
     Object? diskId = freezed,
     Object? ptable = freezed,
   }) {
-    return _then(_ReformatDisk(
+    return _then(_$_ReformatDisk(
       diskId: diskId == freezed
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
@@ -7707,7 +7349,7 @@ class _$_ReformatDisk implements _ReformatDisk {
   const _$_ReformatDisk({required this.diskId, this.ptable});
 
   factory _$_ReformatDisk.fromJson(Map<String, dynamic> json) =>
-      _$_$_ReformatDiskFromJson(json);
+      _$$_ReformatDiskFromJson(json);
 
   @override
   final String diskId;
@@ -7722,75 +7364,52 @@ class _$_ReformatDisk implements _ReformatDisk {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReformatDisk &&
-            (identical(other.diskId, diskId) ||
-                const DeepCollectionEquality().equals(other.diskId, diskId)) &&
-            (identical(other.ptable, ptable) ||
-                const DeepCollectionEquality().equals(other.ptable, ptable)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ReformatDisk &&
+            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            const DeepCollectionEquality().equals(other.ptable, ptable));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(diskId) ^
-      const DeepCollectionEquality().hash(ptable);
 
   @JsonKey(ignore: true)
   @override
-  _$ReformatDiskCopyWith<_ReformatDisk> get copyWith =>
-      __$ReformatDiskCopyWithImpl<_ReformatDisk>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(diskId),
+      const DeepCollectionEquality().hash(ptable));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ReformatDiskCopyWith<_$_ReformatDisk> get copyWith =>
+      __$$_ReformatDiskCopyWithImpl<_$_ReformatDisk>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ReformatDiskToJson(this);
+    return _$$_ReformatDiskToJson(
+      this,
+    );
   }
 }
 
 abstract class _ReformatDisk implements ReformatDisk {
-  const factory _ReformatDisk({required String diskId, String? ptable}) =
-      _$_ReformatDisk;
+  const factory _ReformatDisk(
+      {required final String diskId, final String? ptable}) = _$_ReformatDisk;
 
   factory _ReformatDisk.fromJson(Map<String, dynamic> json) =
       _$_ReformatDisk.fromJson;
 
   @override
-  String get diskId => throw _privateConstructorUsedError;
+  String get diskId;
   @override
-  String? get ptable => throw _privateConstructorUsedError;
+  String? get ptable;
   @override
   @JsonKey(ignore: true)
-  _$ReformatDiskCopyWith<_ReformatDisk> get copyWith =>
+  _$$_ReformatDiskCopyWith<_$_ReformatDisk> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 IdentityData _$IdentityDataFromJson(Map<String, dynamic> json) {
   return _IdentityData.fromJson(json);
 }
-
-/// @nodoc
-class _$IdentityDataTearOff {
-  const _$IdentityDataTearOff();
-
-  _IdentityData call(
-      {String realname = '',
-      String username = '',
-      String cryptedPassword = '',
-      String hostname = ''}) {
-    return _IdentityData(
-      realname: realname,
-      username: username,
-      cryptedPassword: cryptedPassword,
-      hostname: hostname,
-    );
-  }
-
-  IdentityData fromJson(Map<String, Object> json) {
-    return IdentityData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $IdentityData = _$IdentityDataTearOff();
 
 /// @nodoc
 mixin _$IdentityData {
@@ -7854,11 +7473,11 @@ class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$IdentityDataCopyWith<$Res>
+abstract class _$$_IdentityDataCopyWith<$Res>
     implements $IdentityDataCopyWith<$Res> {
-  factory _$IdentityDataCopyWith(
-          _IdentityData value, $Res Function(_IdentityData) then) =
-      __$IdentityDataCopyWithImpl<$Res>;
+  factory _$$_IdentityDataCopyWith(
+          _$_IdentityData value, $Res Function(_$_IdentityData) then) =
+      __$$_IdentityDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {String realname,
@@ -7868,14 +7487,15 @@ abstract class _$IdentityDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
-    implements _$IdentityDataCopyWith<$Res> {
-  __$IdentityDataCopyWithImpl(
-      _IdentityData _value, $Res Function(_IdentityData) _then)
-      : super(_value, (v) => _then(v as _IdentityData));
+class __$$_IdentityDataCopyWithImpl<$Res>
+    extends _$IdentityDataCopyWithImpl<$Res>
+    implements _$$_IdentityDataCopyWith<$Res> {
+  __$$_IdentityDataCopyWithImpl(
+      _$_IdentityData _value, $Res Function(_$_IdentityData) _then)
+      : super(_value, (v) => _then(v as _$_IdentityData));
 
   @override
-  _IdentityData get _value => super._value as _IdentityData;
+  _$_IdentityData get _value => super._value as _$_IdentityData;
 
   @override
   $Res call({
@@ -7884,7 +7504,7 @@ class __$IdentityDataCopyWithImpl<$Res> extends _$IdentityDataCopyWithImpl<$Res>
     Object? cryptedPassword = freezed,
     Object? hostname = freezed,
   }) {
-    return _then(_IdentityData(
+    return _then(_$_IdentityData(
       realname: realname == freezed
           ? _value.realname
           : realname // ignore: cast_nullable_to_non_nullable
@@ -7915,19 +7535,19 @@ class _$_IdentityData implements _IdentityData {
       this.hostname = ''});
 
   factory _$_IdentityData.fromJson(Map<String, dynamic> json) =>
-      _$_$_IdentityDataFromJson(json);
+      _$$_IdentityDataFromJson(json);
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String realname;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String username;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String cryptedPassword;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String hostname;
 
   @override
@@ -7938,90 +7558,64 @@ class _$_IdentityData implements _IdentityData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _IdentityData &&
-            (identical(other.realname, realname) ||
-                const DeepCollectionEquality()
-                    .equals(other.realname, realname)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.cryptedPassword, cryptedPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.cryptedPassword, cryptedPassword)) &&
-            (identical(other.hostname, hostname) ||
-                const DeepCollectionEquality()
-                    .equals(other.hostname, hostname)));
+        (other.runtimeType == runtimeType &&
+            other is _$_IdentityData &&
+            const DeepCollectionEquality().equals(other.realname, realname) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality()
+                .equals(other.cryptedPassword, cryptedPassword) &&
+            const DeepCollectionEquality().equals(other.hostname, hostname));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(realname) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(cryptedPassword) ^
-      const DeepCollectionEquality().hash(hostname);
 
   @JsonKey(ignore: true)
   @override
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
-      __$IdentityDataCopyWithImpl<_IdentityData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(realname),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(cryptedPassword),
+      const DeepCollectionEquality().hash(hostname));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_IdentityDataCopyWith<_$_IdentityData> get copyWith =>
+      __$$_IdentityDataCopyWithImpl<_$_IdentityData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_IdentityDataToJson(this);
+    return _$$_IdentityDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _IdentityData implements IdentityData {
   const factory _IdentityData(
-      {String realname,
-      String username,
-      String cryptedPassword,
-      String hostname}) = _$_IdentityData;
+      {final String realname,
+      final String username,
+      final String cryptedPassword,
+      final String hostname}) = _$_IdentityData;
 
   factory _IdentityData.fromJson(Map<String, dynamic> json) =
       _$_IdentityData.fromJson;
 
   @override
-  String get realname => throw _privateConstructorUsedError;
+  String get realname;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get cryptedPassword => throw _privateConstructorUsedError;
+  String get cryptedPassword;
   @override
-  String get hostname => throw _privateConstructorUsedError;
+  String get hostname;
   @override
   @JsonKey(ignore: true)
-  _$IdentityDataCopyWith<_IdentityData> get copyWith =>
+  _$$_IdentityDataCopyWith<_$_IdentityData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SSHData _$SSHDataFromJson(Map<String, dynamic> json) {
   return _SSHData.fromJson(json);
 }
-
-/// @nodoc
-class _$SSHDataTearOff {
-  const _$SSHDataTearOff();
-
-  _SSHData call(
-      {required bool installServer,
-      required bool allowPw,
-      List<String> authorizedKeys = const []}) {
-    return _SSHData(
-      installServer: installServer,
-      allowPw: allowPw,
-      authorizedKeys: authorizedKeys,
-    );
-  }
-
-  SSHData fromJson(Map<String, Object> json) {
-    return SSHData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SSHData = _$SSHDataTearOff();
 
 /// @nodoc
 mixin _$SSHData {
@@ -8073,21 +7667,22 @@ class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
-  factory _$SSHDataCopyWith(_SSHData value, $Res Function(_SSHData) then) =
-      __$SSHDataCopyWithImpl<$Res>;
+abstract class _$$_SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
+  factory _$$_SSHDataCopyWith(
+          _$_SSHData value, $Res Function(_$_SSHData) then) =
+      __$$_SSHDataCopyWithImpl<$Res>;
   @override
   $Res call({bool installServer, bool allowPw, List<String> authorizedKeys});
 }
 
 /// @nodoc
-class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
-    implements _$SSHDataCopyWith<$Res> {
-  __$SSHDataCopyWithImpl(_SSHData _value, $Res Function(_SSHData) _then)
-      : super(_value, (v) => _then(v as _SSHData));
+class __$$_SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
+    implements _$$_SSHDataCopyWith<$Res> {
+  __$$_SSHDataCopyWithImpl(_$_SSHData _value, $Res Function(_$_SSHData) _then)
+      : super(_value, (v) => _then(v as _$_SSHData));
 
   @override
-  _SSHData get _value => super._value as _SSHData;
+  _$_SSHData get _value => super._value as _$_SSHData;
 
   @override
   $Res call({
@@ -8095,7 +7690,7 @@ class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
     Object? allowPw = freezed,
     Object? authorizedKeys = freezed,
   }) {
-    return _then(_SSHData(
+    return _then(_$_SSHData(
       installServer: installServer == freezed
           ? _value.installServer
           : installServer // ignore: cast_nullable_to_non_nullable
@@ -8105,7 +7700,7 @@ class __$SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
           : allowPw // ignore: cast_nullable_to_non_nullable
               as bool,
       authorizedKeys: authorizedKeys == freezed
-          ? _value.authorizedKeys
+          ? _value._authorizedKeys
           : authorizedKeys // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -8118,18 +7713,23 @@ class _$_SSHData implements _SSHData {
   const _$_SSHData(
       {required this.installServer,
       required this.allowPw,
-      this.authorizedKeys = const []});
+      final List<String> authorizedKeys = const []})
+      : _authorizedKeys = authorizedKeys;
 
   factory _$_SSHData.fromJson(Map<String, dynamic> json) =>
-      _$_$_SSHDataFromJson(json);
+      _$$_SSHDataFromJson(json);
 
   @override
   final bool installServer;
   @override
   final bool allowPw;
-  @JsonKey(defaultValue: const [])
+  final List<String> _authorizedKeys;
   @override
-  final List<String> authorizedKeys;
+  @JsonKey()
+  List<String> get authorizedKeys {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_authorizedKeys);
+  }
 
   @override
   String toString() {
@@ -8139,88 +7739,59 @@ class _$_SSHData implements _SSHData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SSHData &&
-            (identical(other.installServer, installServer) ||
-                const DeepCollectionEquality()
-                    .equals(other.installServer, installServer)) &&
-            (identical(other.allowPw, allowPw) ||
-                const DeepCollectionEquality()
-                    .equals(other.allowPw, allowPw)) &&
-            (identical(other.authorizedKeys, authorizedKeys) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorizedKeys, authorizedKeys)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SSHData &&
+            const DeepCollectionEquality()
+                .equals(other.installServer, installServer) &&
+            const DeepCollectionEquality().equals(other.allowPw, allowPw) &&
+            const DeepCollectionEquality()
+                .equals(other._authorizedKeys, _authorizedKeys));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(installServer) ^
-      const DeepCollectionEquality().hash(allowPw) ^
-      const DeepCollectionEquality().hash(authorizedKeys);
 
   @JsonKey(ignore: true)
   @override
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
-      __$SSHDataCopyWithImpl<_SSHData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(installServer),
+      const DeepCollectionEquality().hash(allowPw),
+      const DeepCollectionEquality().hash(_authorizedKeys));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SSHDataCopyWith<_$_SSHData> get copyWith =>
+      __$$_SSHDataCopyWithImpl<_$_SSHData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SSHDataToJson(this);
+    return _$$_SSHDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _SSHData implements SSHData {
   const factory _SSHData(
-      {required bool installServer,
-      required bool allowPw,
-      List<String> authorizedKeys}) = _$_SSHData;
+      {required final bool installServer,
+      required final bool allowPw,
+      final List<String> authorizedKeys}) = _$_SSHData;
 
   factory _SSHData.fromJson(Map<String, dynamic> json) = _$_SSHData.fromJson;
 
   @override
-  bool get installServer => throw _privateConstructorUsedError;
+  bool get installServer;
   @override
-  bool get allowPw => throw _privateConstructorUsedError;
+  bool get allowPw;
   @override
-  List<String> get authorizedKeys => throw _privateConstructorUsedError;
+  List<String> get authorizedKeys;
   @override
   @JsonKey(ignore: true)
-  _$SSHDataCopyWith<_SSHData> get copyWith =>
+  _$$_SSHDataCopyWith<_$_SSHData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ChannelSnapInfo _$ChannelSnapInfoFromJson(Map<String, dynamic> json) {
   return _ChannelSnapInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$ChannelSnapInfoTearOff {
-  const _$ChannelSnapInfoTearOff();
-
-  _ChannelSnapInfo call(
-      {required String channelName,
-      required String revision,
-      required String confinement,
-      required String version,
-      required int size,
-      required DateTime releasedAt}) {
-    return _ChannelSnapInfo(
-      channelName: channelName,
-      revision: revision,
-      confinement: confinement,
-      version: version,
-      size: size,
-      releasedAt: releasedAt,
-    );
-  }
-
-  ChannelSnapInfo fromJson(Map<String, Object> json) {
-    return ChannelSnapInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ChannelSnapInfo = _$ChannelSnapInfoTearOff();
 
 /// @nodoc
 mixin _$ChannelSnapInfo {
@@ -8299,11 +7870,11 @@ class _$ChannelSnapInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ChannelSnapInfoCopyWith<$Res>
+abstract class _$$_ChannelSnapInfoCopyWith<$Res>
     implements $ChannelSnapInfoCopyWith<$Res> {
-  factory _$ChannelSnapInfoCopyWith(
-          _ChannelSnapInfo value, $Res Function(_ChannelSnapInfo) then) =
-      __$ChannelSnapInfoCopyWithImpl<$Res>;
+  factory _$$_ChannelSnapInfoCopyWith(
+          _$_ChannelSnapInfo value, $Res Function(_$_ChannelSnapInfo) then) =
+      __$$_ChannelSnapInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String channelName,
@@ -8315,15 +7886,15 @@ abstract class _$ChannelSnapInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ChannelSnapInfoCopyWithImpl<$Res>
+class __$$_ChannelSnapInfoCopyWithImpl<$Res>
     extends _$ChannelSnapInfoCopyWithImpl<$Res>
-    implements _$ChannelSnapInfoCopyWith<$Res> {
-  __$ChannelSnapInfoCopyWithImpl(
-      _ChannelSnapInfo _value, $Res Function(_ChannelSnapInfo) _then)
-      : super(_value, (v) => _then(v as _ChannelSnapInfo));
+    implements _$$_ChannelSnapInfoCopyWith<$Res> {
+  __$$_ChannelSnapInfoCopyWithImpl(
+      _$_ChannelSnapInfo _value, $Res Function(_$_ChannelSnapInfo) _then)
+      : super(_value, (v) => _then(v as _$_ChannelSnapInfo));
 
   @override
-  _ChannelSnapInfo get _value => super._value as _ChannelSnapInfo;
+  _$_ChannelSnapInfo get _value => super._value as _$_ChannelSnapInfo;
 
   @override
   $Res call({
@@ -8334,7 +7905,7 @@ class __$ChannelSnapInfoCopyWithImpl<$Res>
     Object? size = freezed,
     Object? releasedAt = freezed,
   }) {
-    return _then(_ChannelSnapInfo(
+    return _then(_$_ChannelSnapInfo(
       channelName: channelName == freezed
           ? _value.channelName
           : channelName // ignore: cast_nullable_to_non_nullable
@@ -8375,7 +7946,7 @@ class _$_ChannelSnapInfo implements _ChannelSnapInfo {
       required this.releasedAt});
 
   factory _$_ChannelSnapInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_ChannelSnapInfoFromJson(json);
+      _$$_ChannelSnapInfoFromJson(json);
 
   @override
   final String channelName;
@@ -8398,115 +7969,76 @@ class _$_ChannelSnapInfo implements _ChannelSnapInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChannelSnapInfo &&
-            (identical(other.channelName, channelName) ||
-                const DeepCollectionEquality()
-                    .equals(other.channelName, channelName)) &&
-            (identical(other.revision, revision) ||
-                const DeepCollectionEquality()
-                    .equals(other.revision, revision)) &&
-            (identical(other.confinement, confinement) ||
-                const DeepCollectionEquality()
-                    .equals(other.confinement, confinement)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.releasedAt, releasedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.releasedAt, releasedAt)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ChannelSnapInfo &&
+            const DeepCollectionEquality()
+                .equals(other.channelName, channelName) &&
+            const DeepCollectionEquality().equals(other.revision, revision) &&
+            const DeepCollectionEquality()
+                .equals(other.confinement, confinement) &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality()
+                .equals(other.releasedAt, releasedAt));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(channelName) ^
-      const DeepCollectionEquality().hash(revision) ^
-      const DeepCollectionEquality().hash(confinement) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(releasedAt);
 
   @JsonKey(ignore: true)
   @override
-  _$ChannelSnapInfoCopyWith<_ChannelSnapInfo> get copyWith =>
-      __$ChannelSnapInfoCopyWithImpl<_ChannelSnapInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(channelName),
+      const DeepCollectionEquality().hash(revision),
+      const DeepCollectionEquality().hash(confinement),
+      const DeepCollectionEquality().hash(version),
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(releasedAt));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ChannelSnapInfoCopyWith<_$_ChannelSnapInfo> get copyWith =>
+      __$$_ChannelSnapInfoCopyWithImpl<_$_ChannelSnapInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ChannelSnapInfoToJson(this);
+    return _$$_ChannelSnapInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _ChannelSnapInfo implements ChannelSnapInfo {
   const factory _ChannelSnapInfo(
-      {required String channelName,
-      required String revision,
-      required String confinement,
-      required String version,
-      required int size,
-      required DateTime releasedAt}) = _$_ChannelSnapInfo;
+      {required final String channelName,
+      required final String revision,
+      required final String confinement,
+      required final String version,
+      required final int size,
+      required final DateTime releasedAt}) = _$_ChannelSnapInfo;
 
   factory _ChannelSnapInfo.fromJson(Map<String, dynamic> json) =
       _$_ChannelSnapInfo.fromJson;
 
   @override
-  String get channelName => throw _privateConstructorUsedError;
+  String get channelName;
   @override
-  String get revision => throw _privateConstructorUsedError;
+  String get revision;
   @override
-  String get confinement => throw _privateConstructorUsedError;
+  String get confinement;
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  int get size => throw _privateConstructorUsedError;
+  int get size;
   @override
-  DateTime get releasedAt => throw _privateConstructorUsedError;
+  DateTime get releasedAt;
   @override
   @JsonKey(ignore: true)
-  _$ChannelSnapInfoCopyWith<_ChannelSnapInfo> get copyWith =>
+  _$$_ChannelSnapInfoCopyWith<_$_ChannelSnapInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SnapInfo _$SnapInfoFromJson(Map<String, dynamic> json) {
   return _SnapInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$SnapInfoTearOff {
-  const _$SnapInfoTearOff();
-
-  _SnapInfo call(
-      {required String name,
-      String summary = '',
-      String publisher = '',
-      bool verified = false,
-      bool starred = false,
-      String description = '',
-      String confinement = '',
-      String license = '',
-      List<ChannelSnapInfo> channels = const []}) {
-    return _SnapInfo(
-      name: name,
-      summary: summary,
-      publisher: publisher,
-      verified: verified,
-      starred: starred,
-      description: description,
-      confinement: confinement,
-      license: license,
-      channels: channels,
-    );
-  }
-
-  SnapInfo fromJson(Map<String, Object> json) {
-    return SnapInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SnapInfo = _$SnapInfoTearOff();
 
 /// @nodoc
 mixin _$SnapInfo {
@@ -8604,9 +8136,10 @@ class _$SnapInfoCopyWithImpl<$Res> implements $SnapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SnapInfoCopyWith<$Res> implements $SnapInfoCopyWith<$Res> {
-  factory _$SnapInfoCopyWith(_SnapInfo value, $Res Function(_SnapInfo) then) =
-      __$SnapInfoCopyWithImpl<$Res>;
+abstract class _$$_SnapInfoCopyWith<$Res> implements $SnapInfoCopyWith<$Res> {
+  factory _$$_SnapInfoCopyWith(
+          _$_SnapInfo value, $Res Function(_$_SnapInfo) then) =
+      __$$_SnapInfoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -8621,13 +8154,14 @@ abstract class _$SnapInfoCopyWith<$Res> implements $SnapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SnapInfoCopyWithImpl<$Res> extends _$SnapInfoCopyWithImpl<$Res>
-    implements _$SnapInfoCopyWith<$Res> {
-  __$SnapInfoCopyWithImpl(_SnapInfo _value, $Res Function(_SnapInfo) _then)
-      : super(_value, (v) => _then(v as _SnapInfo));
+class __$$_SnapInfoCopyWithImpl<$Res> extends _$SnapInfoCopyWithImpl<$Res>
+    implements _$$_SnapInfoCopyWith<$Res> {
+  __$$_SnapInfoCopyWithImpl(
+      _$_SnapInfo _value, $Res Function(_$_SnapInfo) _then)
+      : super(_value, (v) => _then(v as _$_SnapInfo));
 
   @override
-  _SnapInfo get _value => super._value as _SnapInfo;
+  _$_SnapInfo get _value => super._value as _$_SnapInfo;
 
   @override
   $Res call({
@@ -8641,7 +8175,7 @@ class __$SnapInfoCopyWithImpl<$Res> extends _$SnapInfoCopyWithImpl<$Res>
     Object? license = freezed,
     Object? channels = freezed,
   }) {
-    return _then(_SnapInfo(
+    return _then(_$_SnapInfo(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -8675,7 +8209,7 @@ class __$SnapInfoCopyWithImpl<$Res> extends _$SnapInfoCopyWithImpl<$Res>
           : license // ignore: cast_nullable_to_non_nullable
               as String,
       channels: channels == freezed
-          ? _value.channels
+          ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
               as List<ChannelSnapInfo>,
     ));
@@ -8694,37 +8228,42 @@ class _$_SnapInfo implements _SnapInfo {
       this.description = '',
       this.confinement = '',
       this.license = '',
-      this.channels = const []});
+      final List<ChannelSnapInfo> channels = const []})
+      : _channels = channels;
 
   factory _$_SnapInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_SnapInfoFromJson(json);
+      _$$_SnapInfoFromJson(json);
 
   @override
   final String name;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String summary;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String publisher;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool verified;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool starred;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String description;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String confinement;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String license;
-  @JsonKey(defaultValue: const [])
+  final List<ChannelSnapInfo> _channels;
   @override
-  final List<ChannelSnapInfo> channels;
+  @JsonKey()
+  List<ChannelSnapInfo> get channels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_channels);
+  }
 
   @override
   String toString() {
@@ -8734,125 +8273,89 @@ class _$_SnapInfo implements _SnapInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SnapInfo &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.summary, summary) ||
-                const DeepCollectionEquality()
-                    .equals(other.summary, summary)) &&
-            (identical(other.publisher, publisher) ||
-                const DeepCollectionEquality()
-                    .equals(other.publisher, publisher)) &&
-            (identical(other.verified, verified) ||
-                const DeepCollectionEquality()
-                    .equals(other.verified, verified)) &&
-            (identical(other.starred, starred) ||
-                const DeepCollectionEquality()
-                    .equals(other.starred, starred)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.confinement, confinement) ||
-                const DeepCollectionEquality()
-                    .equals(other.confinement, confinement)) &&
-            (identical(other.license, license) ||
-                const DeepCollectionEquality()
-                    .equals(other.license, license)) &&
-            (identical(other.channels, channels) ||
-                const DeepCollectionEquality()
-                    .equals(other.channels, channels)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SnapInfo &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality().equals(other.publisher, publisher) &&
+            const DeepCollectionEquality().equals(other.verified, verified) &&
+            const DeepCollectionEquality().equals(other.starred, starred) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.confinement, confinement) &&
+            const DeepCollectionEquality().equals(other.license, license) &&
+            const DeepCollectionEquality().equals(other._channels, _channels));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(summary) ^
-      const DeepCollectionEquality().hash(publisher) ^
-      const DeepCollectionEquality().hash(verified) ^
-      const DeepCollectionEquality().hash(starred) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(confinement) ^
-      const DeepCollectionEquality().hash(license) ^
-      const DeepCollectionEquality().hash(channels);
 
   @JsonKey(ignore: true)
   @override
-  _$SnapInfoCopyWith<_SnapInfo> get copyWith =>
-      __$SnapInfoCopyWithImpl<_SnapInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(summary),
+      const DeepCollectionEquality().hash(publisher),
+      const DeepCollectionEquality().hash(verified),
+      const DeepCollectionEquality().hash(starred),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(confinement),
+      const DeepCollectionEquality().hash(license),
+      const DeepCollectionEquality().hash(_channels));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SnapInfoCopyWith<_$_SnapInfo> get copyWith =>
+      __$$_SnapInfoCopyWithImpl<_$_SnapInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SnapInfoToJson(this);
+    return _$$_SnapInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _SnapInfo implements SnapInfo {
   const factory _SnapInfo(
-      {required String name,
-      String summary,
-      String publisher,
-      bool verified,
-      bool starred,
-      String description,
-      String confinement,
-      String license,
-      List<ChannelSnapInfo> channels}) = _$_SnapInfo;
+      {required final String name,
+      final String summary,
+      final String publisher,
+      final bool verified,
+      final bool starred,
+      final String description,
+      final String confinement,
+      final String license,
+      final List<ChannelSnapInfo> channels}) = _$_SnapInfo;
 
   factory _SnapInfo.fromJson(Map<String, dynamic> json) = _$_SnapInfo.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get summary => throw _privateConstructorUsedError;
+  String get summary;
   @override
-  String get publisher => throw _privateConstructorUsedError;
+  String get publisher;
   @override
-  bool get verified => throw _privateConstructorUsedError;
+  bool get verified;
   @override
-  bool get starred => throw _privateConstructorUsedError;
+  bool get starred;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get confinement => throw _privateConstructorUsedError;
+  String get confinement;
   @override
-  String get license => throw _privateConstructorUsedError;
+  String get license;
   @override
-  List<ChannelSnapInfo> get channels => throw _privateConstructorUsedError;
+  List<ChannelSnapInfo> get channels;
   @override
   @JsonKey(ignore: true)
-  _$SnapInfoCopyWith<_SnapInfo> get copyWith =>
+  _$$_SnapInfoCopyWith<_$_SnapInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 DriversResponse _$DriversResponseFromJson(Map<String, dynamic> json) {
   return _DriversResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$DriversResponseTearOff {
-  const _$DriversResponseTearOff();
-
-  _DriversResponse call(
-      {required bool install,
-      required List<String>? drivers,
-      required bool localOnly,
-      required bool searchDrivers}) {
-    return _DriversResponse(
-      install: install,
-      drivers: drivers,
-      localOnly: localOnly,
-      searchDrivers: searchDrivers,
-    );
-  }
-
-  DriversResponse fromJson(Map<String, Object> json) {
-    return DriversResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DriversResponse = _$DriversResponseTearOff();
 
 /// @nodoc
 mixin _$DriversResponse {
@@ -8917,11 +8420,11 @@ class _$DriversResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DriversResponseCopyWith<$Res>
+abstract class _$$_DriversResponseCopyWith<$Res>
     implements $DriversResponseCopyWith<$Res> {
-  factory _$DriversResponseCopyWith(
-          _DriversResponse value, $Res Function(_DriversResponse) then) =
-      __$DriversResponseCopyWithImpl<$Res>;
+  factory _$$_DriversResponseCopyWith(
+          _$_DriversResponse value, $Res Function(_$_DriversResponse) then) =
+      __$$_DriversResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool install,
@@ -8931,15 +8434,15 @@ abstract class _$DriversResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DriversResponseCopyWithImpl<$Res>
+class __$$_DriversResponseCopyWithImpl<$Res>
     extends _$DriversResponseCopyWithImpl<$Res>
-    implements _$DriversResponseCopyWith<$Res> {
-  __$DriversResponseCopyWithImpl(
-      _DriversResponse _value, $Res Function(_DriversResponse) _then)
-      : super(_value, (v) => _then(v as _DriversResponse));
+    implements _$$_DriversResponseCopyWith<$Res> {
+  __$$_DriversResponseCopyWithImpl(
+      _$_DriversResponse _value, $Res Function(_$_DriversResponse) _then)
+      : super(_value, (v) => _then(v as _$_DriversResponse));
 
   @override
-  _DriversResponse get _value => super._value as _DriversResponse;
+  _$_DriversResponse get _value => super._value as _$_DriversResponse;
 
   @override
   $Res call({
@@ -8948,13 +8451,13 @@ class __$DriversResponseCopyWithImpl<$Res>
     Object? localOnly = freezed,
     Object? searchDrivers = freezed,
   }) {
-    return _then(_DriversResponse(
+    return _then(_$_DriversResponse(
       install: install == freezed
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
               as bool,
       drivers: drivers == freezed
-          ? _value.drivers
+          ? _value._drivers
           : drivers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       localOnly: localOnly == freezed
@@ -8974,17 +8477,25 @@ class __$DriversResponseCopyWithImpl<$Res>
 class _$_DriversResponse implements _DriversResponse {
   const _$_DriversResponse(
       {required this.install,
-      required this.drivers,
+      required final List<String>? drivers,
       required this.localOnly,
-      required this.searchDrivers});
+      required this.searchDrivers})
+      : _drivers = drivers;
 
   factory _$_DriversResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_DriversResponseFromJson(json);
+      _$$_DriversResponseFromJson(json);
 
   @override
   final bool install;
+  final List<String>? _drivers;
   @override
-  final List<String>? drivers;
+  List<String>? get drivers {
+    final value = _drivers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final bool localOnly;
   @override
@@ -8998,85 +8509,64 @@ class _$_DriversResponse implements _DriversResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DriversResponse &&
-            (identical(other.install, install) ||
-                const DeepCollectionEquality()
-                    .equals(other.install, install)) &&
-            (identical(other.drivers, drivers) ||
-                const DeepCollectionEquality()
-                    .equals(other.drivers, drivers)) &&
-            (identical(other.localOnly, localOnly) ||
-                const DeepCollectionEquality()
-                    .equals(other.localOnly, localOnly)) &&
-            (identical(other.searchDrivers, searchDrivers) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchDrivers, searchDrivers)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DriversResponse &&
+            const DeepCollectionEquality().equals(other.install, install) &&
+            const DeepCollectionEquality().equals(other._drivers, _drivers) &&
+            const DeepCollectionEquality().equals(other.localOnly, localOnly) &&
+            const DeepCollectionEquality()
+                .equals(other.searchDrivers, searchDrivers));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(install) ^
-      const DeepCollectionEquality().hash(drivers) ^
-      const DeepCollectionEquality().hash(localOnly) ^
-      const DeepCollectionEquality().hash(searchDrivers);
 
   @JsonKey(ignore: true)
   @override
-  _$DriversResponseCopyWith<_DriversResponse> get copyWith =>
-      __$DriversResponseCopyWithImpl<_DriversResponse>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(install),
+      const DeepCollectionEquality().hash(_drivers),
+      const DeepCollectionEquality().hash(localOnly),
+      const DeepCollectionEquality().hash(searchDrivers));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DriversResponseCopyWith<_$_DriversResponse> get copyWith =>
+      __$$_DriversResponseCopyWithImpl<_$_DriversResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DriversResponseToJson(this);
+    return _$$_DriversResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _DriversResponse implements DriversResponse {
   const factory _DriversResponse(
-      {required bool install,
-      required List<String>? drivers,
-      required bool localOnly,
-      required bool searchDrivers}) = _$_DriversResponse;
+      {required final bool install,
+      required final List<String>? drivers,
+      required final bool localOnly,
+      required final bool searchDrivers}) = _$_DriversResponse;
 
   factory _DriversResponse.fromJson(Map<String, dynamic> json) =
       _$_DriversResponse.fromJson;
 
   @override
-  bool get install => throw _privateConstructorUsedError;
+  bool get install;
   @override
-  List<String>? get drivers => throw _privateConstructorUsedError;
+  List<String>? get drivers;
   @override
-  bool get localOnly => throw _privateConstructorUsedError;
+  bool get localOnly;
   @override
-  bool get searchDrivers => throw _privateConstructorUsedError;
+  bool get searchDrivers;
   @override
   @JsonKey(ignore: true)
-  _$DriversResponseCopyWith<_DriversResponse> get copyWith =>
+  _$$_DriversResponseCopyWith<_$_DriversResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 DriversPayload _$DriversPayloadFromJson(Map<String, dynamic> json) {
   return _DriversPayload.fromJson(json);
 }
-
-/// @nodoc
-class _$DriversPayloadTearOff {
-  const _$DriversPayloadTearOff();
-
-  _DriversPayload call({required bool install}) {
-    return _DriversPayload(
-      install: install,
-    );
-  }
-
-  DriversPayload fromJson(Map<String, Object> json) {
-    return DriversPayload.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DriversPayload = _$DriversPayloadTearOff();
 
 /// @nodoc
 mixin _$DriversPayload {
@@ -9119,31 +8609,31 @@ class _$DriversPayloadCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DriversPayloadCopyWith<$Res>
+abstract class _$$_DriversPayloadCopyWith<$Res>
     implements $DriversPayloadCopyWith<$Res> {
-  factory _$DriversPayloadCopyWith(
-          _DriversPayload value, $Res Function(_DriversPayload) then) =
-      __$DriversPayloadCopyWithImpl<$Res>;
+  factory _$$_DriversPayloadCopyWith(
+          _$_DriversPayload value, $Res Function(_$_DriversPayload) then) =
+      __$$_DriversPayloadCopyWithImpl<$Res>;
   @override
   $Res call({bool install});
 }
 
 /// @nodoc
-class __$DriversPayloadCopyWithImpl<$Res>
+class __$$_DriversPayloadCopyWithImpl<$Res>
     extends _$DriversPayloadCopyWithImpl<$Res>
-    implements _$DriversPayloadCopyWith<$Res> {
-  __$DriversPayloadCopyWithImpl(
-      _DriversPayload _value, $Res Function(_DriversPayload) _then)
-      : super(_value, (v) => _then(v as _DriversPayload));
+    implements _$$_DriversPayloadCopyWith<$Res> {
+  __$$_DriversPayloadCopyWithImpl(
+      _$_DriversPayload _value, $Res Function(_$_DriversPayload) _then)
+      : super(_value, (v) => _then(v as _$_DriversPayload));
 
   @override
-  _DriversPayload get _value => super._value as _DriversPayload;
+  _$_DriversPayload get _value => super._value as _$_DriversPayload;
 
   @override
   $Res call({
     Object? install = freezed,
   }) {
-    return _then(_DriversPayload(
+    return _then(_$_DriversPayload(
       install: install == freezed
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
@@ -9158,7 +8648,7 @@ class _$_DriversPayload implements _DriversPayload {
   const _$_DriversPayload({required this.install});
 
   factory _$_DriversPayload.fromJson(Map<String, dynamic> json) =>
-      _$_$_DriversPayloadFromJson(json);
+      _$$_DriversPayloadFromJson(json);
 
   @override
   final bool install;
@@ -9171,64 +8661,47 @@ class _$_DriversPayload implements _DriversPayload {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DriversPayload &&
-            (identical(other.install, install) ||
-                const DeepCollectionEquality().equals(other.install, install)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DriversPayload &&
+            const DeepCollectionEquality().equals(other.install, install));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(install);
 
   @JsonKey(ignore: true)
   @override
-  _$DriversPayloadCopyWith<_DriversPayload> get copyWith =>
-      __$DriversPayloadCopyWithImpl<_DriversPayload>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(install));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DriversPayloadCopyWith<_$_DriversPayload> get copyWith =>
+      __$$_DriversPayloadCopyWithImpl<_$_DriversPayload>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DriversPayloadToJson(this);
+    return _$$_DriversPayloadToJson(
+      this,
+    );
   }
 }
 
 abstract class _DriversPayload implements DriversPayload {
-  const factory _DriversPayload({required bool install}) = _$_DriversPayload;
+  const factory _DriversPayload({required final bool install}) =
+      _$_DriversPayload;
 
   factory _DriversPayload.fromJson(Map<String, dynamic> json) =
       _$_DriversPayload.fromJson;
 
   @override
-  bool get install => throw _privateConstructorUsedError;
+  bool get install;
   @override
   @JsonKey(ignore: true)
-  _$DriversPayloadCopyWith<_DriversPayload> get copyWith =>
+  _$$_DriversPayloadCopyWith<_$_DriversPayload> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SnapSelection _$SnapSelectionFromJson(Map<String, dynamic> json) {
   return _SnapSelection.fromJson(json);
 }
-
-/// @nodoc
-class _$SnapSelectionTearOff {
-  const _$SnapSelectionTearOff();
-
-  _SnapSelection call(
-      {required String name, required String channel, bool classic = false}) {
-    return _SnapSelection(
-      name: name,
-      channel: channel,
-      classic: classic,
-    );
-  }
-
-  SnapSelection fromJson(Map<String, Object> json) {
-    return SnapSelection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SnapSelection = _$SnapSelectionTearOff();
 
 /// @nodoc
 mixin _$SnapSelection {
@@ -9283,25 +8756,25 @@ class _$SnapSelectionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SnapSelectionCopyWith<$Res>
+abstract class _$$_SnapSelectionCopyWith<$Res>
     implements $SnapSelectionCopyWith<$Res> {
-  factory _$SnapSelectionCopyWith(
-          _SnapSelection value, $Res Function(_SnapSelection) then) =
-      __$SnapSelectionCopyWithImpl<$Res>;
+  factory _$$_SnapSelectionCopyWith(
+          _$_SnapSelection value, $Res Function(_$_SnapSelection) then) =
+      __$$_SnapSelectionCopyWithImpl<$Res>;
   @override
   $Res call({String name, String channel, bool classic});
 }
 
 /// @nodoc
-class __$SnapSelectionCopyWithImpl<$Res>
+class __$$_SnapSelectionCopyWithImpl<$Res>
     extends _$SnapSelectionCopyWithImpl<$Res>
-    implements _$SnapSelectionCopyWith<$Res> {
-  __$SnapSelectionCopyWithImpl(
-      _SnapSelection _value, $Res Function(_SnapSelection) _then)
-      : super(_value, (v) => _then(v as _SnapSelection));
+    implements _$$_SnapSelectionCopyWith<$Res> {
+  __$$_SnapSelectionCopyWithImpl(
+      _$_SnapSelection _value, $Res Function(_$_SnapSelection) _then)
+      : super(_value, (v) => _then(v as _$_SnapSelection));
 
   @override
-  _SnapSelection get _value => super._value as _SnapSelection;
+  _$_SnapSelection get _value => super._value as _$_SnapSelection;
 
   @override
   $Res call({
@@ -9309,7 +8782,7 @@ class __$SnapSelectionCopyWithImpl<$Res>
     Object? channel = freezed,
     Object? classic = freezed,
   }) {
-    return _then(_SnapSelection(
+    return _then(_$_SnapSelection(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -9333,14 +8806,14 @@ class _$_SnapSelection implements _SnapSelection {
       {required this.name, required this.channel, this.classic = false});
 
   factory _$_SnapSelection.fromJson(Map<String, dynamic> json) =>
-      _$_$_SnapSelectionFromJson(json);
+      _$$_SnapSelectionFromJson(json);
 
   @override
   final String name;
   @override
   final String channel;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool classic;
 
   @override
@@ -9351,81 +8824,58 @@ class _$_SnapSelection implements _SnapSelection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SnapSelection &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.channel, channel) ||
-                const DeepCollectionEquality()
-                    .equals(other.channel, channel)) &&
-            (identical(other.classic, classic) ||
-                const DeepCollectionEquality().equals(other.classic, classic)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SnapSelection &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.channel, channel) &&
+            const DeepCollectionEquality().equals(other.classic, classic));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(channel) ^
-      const DeepCollectionEquality().hash(classic);
 
   @JsonKey(ignore: true)
   @override
-  _$SnapSelectionCopyWith<_SnapSelection> get copyWith =>
-      __$SnapSelectionCopyWithImpl<_SnapSelection>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(channel),
+      const DeepCollectionEquality().hash(classic));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SnapSelectionCopyWith<_$_SnapSelection> get copyWith =>
+      __$$_SnapSelectionCopyWithImpl<_$_SnapSelection>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SnapSelectionToJson(this);
+    return _$$_SnapSelectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _SnapSelection implements SnapSelection {
   const factory _SnapSelection(
-      {required String name,
-      required String channel,
-      bool classic}) = _$_SnapSelection;
+      {required final String name,
+      required final String channel,
+      final bool classic}) = _$_SnapSelection;
 
   factory _SnapSelection.fromJson(Map<String, dynamic> json) =
       _$_SnapSelection.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get channel => throw _privateConstructorUsedError;
+  String get channel;
   @override
-  bool get classic => throw _privateConstructorUsedError;
+  bool get classic;
   @override
   @JsonKey(ignore: true)
-  _$SnapSelectionCopyWith<_SnapSelection> get copyWith =>
+  _$$_SnapSelectionCopyWith<_$_SnapSelection> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SnapListResponse _$SnapListResponseFromJson(Map<String, dynamic> json) {
   return _SnapListResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$SnapListResponseTearOff {
-  const _$SnapListResponseTearOff();
-
-  _SnapListResponse call(
-      {required SnapCheckState status,
-      List<SnapInfo> snaps = const [],
-      List<SnapSelection> selections = const []}) {
-    return _SnapListResponse(
-      status: status,
-      snaps: snaps,
-      selections: selections,
-    );
-  }
-
-  SnapListResponse fromJson(Map<String, Object> json) {
-    return SnapListResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SnapListResponse = _$SnapListResponseTearOff();
 
 /// @nodoc
 mixin _$SnapListResponse {
@@ -9483,11 +8933,11 @@ class _$SnapListResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SnapListResponseCopyWith<$Res>
+abstract class _$$_SnapListResponseCopyWith<$Res>
     implements $SnapListResponseCopyWith<$Res> {
-  factory _$SnapListResponseCopyWith(
-          _SnapListResponse value, $Res Function(_SnapListResponse) then) =
-      __$SnapListResponseCopyWithImpl<$Res>;
+  factory _$$_SnapListResponseCopyWith(
+          _$_SnapListResponse value, $Res Function(_$_SnapListResponse) then) =
+      __$$_SnapListResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {SnapCheckState status,
@@ -9496,15 +8946,15 @@ abstract class _$SnapListResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SnapListResponseCopyWithImpl<$Res>
+class __$$_SnapListResponseCopyWithImpl<$Res>
     extends _$SnapListResponseCopyWithImpl<$Res>
-    implements _$SnapListResponseCopyWith<$Res> {
-  __$SnapListResponseCopyWithImpl(
-      _SnapListResponse _value, $Res Function(_SnapListResponse) _then)
-      : super(_value, (v) => _then(v as _SnapListResponse));
+    implements _$$_SnapListResponseCopyWith<$Res> {
+  __$$_SnapListResponseCopyWithImpl(
+      _$_SnapListResponse _value, $Res Function(_$_SnapListResponse) _then)
+      : super(_value, (v) => _then(v as _$_SnapListResponse));
 
   @override
-  _SnapListResponse get _value => super._value as _SnapListResponse;
+  _$_SnapListResponse get _value => super._value as _$_SnapListResponse;
 
   @override
   $Res call({
@@ -9512,17 +8962,17 @@ class __$SnapListResponseCopyWithImpl<$Res>
     Object? snaps = freezed,
     Object? selections = freezed,
   }) {
-    return _then(_SnapListResponse(
+    return _then(_$_SnapListResponse(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SnapCheckState,
       snaps: snaps == freezed
-          ? _value.snaps
+          ? _value._snaps
           : snaps // ignore: cast_nullable_to_non_nullable
               as List<SnapInfo>,
       selections: selections == freezed
-          ? _value.selections
+          ? _value._selections
           : selections // ignore: cast_nullable_to_non_nullable
               as List<SnapSelection>,
     ));
@@ -9534,20 +8984,31 @@ class __$SnapListResponseCopyWithImpl<$Res>
 class _$_SnapListResponse implements _SnapListResponse {
   const _$_SnapListResponse(
       {required this.status,
-      this.snaps = const [],
-      this.selections = const []});
+      final List<SnapInfo> snaps = const [],
+      final List<SnapSelection> selections = const []})
+      : _snaps = snaps,
+        _selections = selections;
 
   factory _$_SnapListResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_SnapListResponseFromJson(json);
+      _$$_SnapListResponseFromJson(json);
 
   @override
   final SnapCheckState status;
-  @JsonKey(defaultValue: const [])
+  final List<SnapInfo> _snaps;
   @override
-  final List<SnapInfo> snaps;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
+  List<SnapInfo> get snaps {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_snaps);
+  }
+
+  final List<SnapSelection> _selections;
   @override
-  final List<SnapSelection> selections;
+  @JsonKey()
+  List<SnapSelection> get selections {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_selections);
+  }
 
   @override
   String toString() {
@@ -9557,77 +9018,59 @@ class _$_SnapListResponse implements _SnapListResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SnapListResponse &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.snaps, snaps) ||
-                const DeepCollectionEquality().equals(other.snaps, snaps)) &&
-            (identical(other.selections, selections) ||
-                const DeepCollectionEquality()
-                    .equals(other.selections, selections)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SnapListResponse &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other._snaps, _snaps) &&
+            const DeepCollectionEquality()
+                .equals(other._selections, _selections));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(snaps) ^
-      const DeepCollectionEquality().hash(selections);
 
   @JsonKey(ignore: true)
   @override
-  _$SnapListResponseCopyWith<_SnapListResponse> get copyWith =>
-      __$SnapListResponseCopyWithImpl<_SnapListResponse>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(_snaps),
+      const DeepCollectionEquality().hash(_selections));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SnapListResponseCopyWith<_$_SnapListResponse> get copyWith =>
+      __$$_SnapListResponseCopyWithImpl<_$_SnapListResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SnapListResponseToJson(this);
+    return _$$_SnapListResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _SnapListResponse implements SnapListResponse {
   const factory _SnapListResponse(
-      {required SnapCheckState status,
-      List<SnapInfo> snaps,
-      List<SnapSelection> selections}) = _$_SnapListResponse;
+      {required final SnapCheckState status,
+      final List<SnapInfo> snaps,
+      final List<SnapSelection> selections}) = _$_SnapListResponse;
 
   factory _SnapListResponse.fromJson(Map<String, dynamic> json) =
       _$_SnapListResponse.fromJson;
 
   @override
-  SnapCheckState get status => throw _privateConstructorUsedError;
+  SnapCheckState get status;
   @override
-  List<SnapInfo> get snaps => throw _privateConstructorUsedError;
+  List<SnapInfo> get snaps;
   @override
-  List<SnapSelection> get selections => throw _privateConstructorUsedError;
+  List<SnapSelection> get selections;
   @override
   @JsonKey(ignore: true)
-  _$SnapListResponseCopyWith<_SnapListResponse> get copyWith =>
+  _$$_SnapListResponseCopyWith<_$_SnapListResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 TimeZoneInfo _$TimeZoneInfoFromJson(Map<String, dynamic> json) {
   return _TimeZoneInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$TimeZoneInfoTearOff {
-  const _$TimeZoneInfoTearOff();
-
-  _TimeZoneInfo call({required String timezone, required bool fromGeoip}) {
-    return _TimeZoneInfo(
-      timezone: timezone,
-      fromGeoip: fromGeoip,
-    );
-  }
-
-  TimeZoneInfo fromJson(Map<String, Object> json) {
-    return TimeZoneInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TimeZoneInfo = _$TimeZoneInfoTearOff();
 
 /// @nodoc
 mixin _$TimeZoneInfo {
@@ -9675,31 +9118,32 @@ class _$TimeZoneInfoCopyWithImpl<$Res> implements $TimeZoneInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TimeZoneInfoCopyWith<$Res>
+abstract class _$$_TimeZoneInfoCopyWith<$Res>
     implements $TimeZoneInfoCopyWith<$Res> {
-  factory _$TimeZoneInfoCopyWith(
-          _TimeZoneInfo value, $Res Function(_TimeZoneInfo) then) =
-      __$TimeZoneInfoCopyWithImpl<$Res>;
+  factory _$$_TimeZoneInfoCopyWith(
+          _$_TimeZoneInfo value, $Res Function(_$_TimeZoneInfo) then) =
+      __$$_TimeZoneInfoCopyWithImpl<$Res>;
   @override
   $Res call({String timezone, bool fromGeoip});
 }
 
 /// @nodoc
-class __$TimeZoneInfoCopyWithImpl<$Res> extends _$TimeZoneInfoCopyWithImpl<$Res>
-    implements _$TimeZoneInfoCopyWith<$Res> {
-  __$TimeZoneInfoCopyWithImpl(
-      _TimeZoneInfo _value, $Res Function(_TimeZoneInfo) _then)
-      : super(_value, (v) => _then(v as _TimeZoneInfo));
+class __$$_TimeZoneInfoCopyWithImpl<$Res>
+    extends _$TimeZoneInfoCopyWithImpl<$Res>
+    implements _$$_TimeZoneInfoCopyWith<$Res> {
+  __$$_TimeZoneInfoCopyWithImpl(
+      _$_TimeZoneInfo _value, $Res Function(_$_TimeZoneInfo) _then)
+      : super(_value, (v) => _then(v as _$_TimeZoneInfo));
 
   @override
-  _TimeZoneInfo get _value => super._value as _TimeZoneInfo;
+  _$_TimeZoneInfo get _value => super._value as _$_TimeZoneInfo;
 
   @override
   $Res call({
     Object? timezone = freezed,
     Object? fromGeoip = freezed,
   }) {
-    return _then(_TimeZoneInfo(
+    return _then(_$_TimeZoneInfo(
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
@@ -9718,7 +9162,7 @@ class _$_TimeZoneInfo implements _TimeZoneInfo {
   const _$_TimeZoneInfo({required this.timezone, required this.fromGeoip});
 
   factory _$_TimeZoneInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimeZoneInfoFromJson(json);
+      _$$_TimeZoneInfoFromJson(json);
 
   @override
   final String timezone;
@@ -9733,70 +9177,53 @@ class _$_TimeZoneInfo implements _TimeZoneInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TimeZoneInfo &&
-            (identical(other.timezone, timezone) ||
-                const DeepCollectionEquality()
-                    .equals(other.timezone, timezone)) &&
-            (identical(other.fromGeoip, fromGeoip) ||
-                const DeepCollectionEquality()
-                    .equals(other.fromGeoip, fromGeoip)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TimeZoneInfo &&
+            const DeepCollectionEquality().equals(other.timezone, timezone) &&
+            const DeepCollectionEquality().equals(other.fromGeoip, fromGeoip));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(timezone) ^
-      const DeepCollectionEquality().hash(fromGeoip);
 
   @JsonKey(ignore: true)
   @override
-  _$TimeZoneInfoCopyWith<_TimeZoneInfo> get copyWith =>
-      __$TimeZoneInfoCopyWithImpl<_TimeZoneInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(timezone),
+      const DeepCollectionEquality().hash(fromGeoip));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_TimeZoneInfoCopyWith<_$_TimeZoneInfo> get copyWith =>
+      __$$_TimeZoneInfoCopyWithImpl<_$_TimeZoneInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TimeZoneInfoToJson(this);
+    return _$$_TimeZoneInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _TimeZoneInfo implements TimeZoneInfo {
   const factory _TimeZoneInfo(
-      {required String timezone, required bool fromGeoip}) = _$_TimeZoneInfo;
+      {required final String timezone,
+      required final bool fromGeoip}) = _$_TimeZoneInfo;
 
   factory _TimeZoneInfo.fromJson(Map<String, dynamic> json) =
       _$_TimeZoneInfo.fromJson;
 
   @override
-  String get timezone => throw _privateConstructorUsedError;
+  String get timezone;
   @override
-  bool get fromGeoip => throw _privateConstructorUsedError;
+  bool get fromGeoip;
   @override
   @JsonKey(ignore: true)
-  _$TimeZoneInfoCopyWith<_TimeZoneInfo> get copyWith =>
+  _$$_TimeZoneInfoCopyWith<_$_TimeZoneInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 UbuntuProInfo _$UbuntuProInfoFromJson(Map<String, dynamic> json) {
   return _UbuntuProInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$UbuntuProInfoTearOff {
-  const _$UbuntuProInfoTearOff();
-
-  _UbuntuProInfo call({required String token}) {
-    return _UbuntuProInfo(
-      token: token,
-    );
-  }
-
-  UbuntuProInfo fromJson(Map<String, Object> json) {
-    return UbuntuProInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UbuntuProInfo = _$UbuntuProInfoTearOff();
 
 /// @nodoc
 mixin _$UbuntuProInfo {
@@ -9839,31 +9266,31 @@ class _$UbuntuProInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UbuntuProInfoCopyWith<$Res>
+abstract class _$$_UbuntuProInfoCopyWith<$Res>
     implements $UbuntuProInfoCopyWith<$Res> {
-  factory _$UbuntuProInfoCopyWith(
-          _UbuntuProInfo value, $Res Function(_UbuntuProInfo) then) =
-      __$UbuntuProInfoCopyWithImpl<$Res>;
+  factory _$$_UbuntuProInfoCopyWith(
+          _$_UbuntuProInfo value, $Res Function(_$_UbuntuProInfo) then) =
+      __$$_UbuntuProInfoCopyWithImpl<$Res>;
   @override
   $Res call({String token});
 }
 
 /// @nodoc
-class __$UbuntuProInfoCopyWithImpl<$Res>
+class __$$_UbuntuProInfoCopyWithImpl<$Res>
     extends _$UbuntuProInfoCopyWithImpl<$Res>
-    implements _$UbuntuProInfoCopyWith<$Res> {
-  __$UbuntuProInfoCopyWithImpl(
-      _UbuntuProInfo _value, $Res Function(_UbuntuProInfo) _then)
-      : super(_value, (v) => _then(v as _UbuntuProInfo));
+    implements _$$_UbuntuProInfoCopyWith<$Res> {
+  __$$_UbuntuProInfoCopyWithImpl(
+      _$_UbuntuProInfo _value, $Res Function(_$_UbuntuProInfo) _then)
+      : super(_value, (v) => _then(v as _$_UbuntuProInfo));
 
   @override
-  _UbuntuProInfo get _value => super._value as _UbuntuProInfo;
+  _$_UbuntuProInfo get _value => super._value as _$_UbuntuProInfo;
 
   @override
   $Res call({
     Object? token = freezed,
   }) {
-    return _then(_UbuntuProInfo(
+    return _then(_$_UbuntuProInfo(
       token: token == freezed
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -9878,7 +9305,7 @@ class _$_UbuntuProInfo implements _UbuntuProInfo {
   const _$_UbuntuProInfo({required this.token});
 
   factory _$_UbuntuProInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_UbuntuProInfoFromJson(json);
+      _$$_UbuntuProInfoFromJson(json);
 
   @override
   final String token;
@@ -9891,66 +9318,47 @@ class _$_UbuntuProInfo implements _UbuntuProInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UbuntuProInfo &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UbuntuProInfo &&
+            const DeepCollectionEquality().equals(other.token, token));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(token);
 
   @JsonKey(ignore: true)
   @override
-  _$UbuntuProInfoCopyWith<_UbuntuProInfo> get copyWith =>
-      __$UbuntuProInfoCopyWithImpl<_UbuntuProInfo>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(token));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UbuntuProInfoCopyWith<_$_UbuntuProInfo> get copyWith =>
+      __$$_UbuntuProInfoCopyWithImpl<_$_UbuntuProInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UbuntuProInfoToJson(this);
+    return _$$_UbuntuProInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _UbuntuProInfo implements UbuntuProInfo {
-  const factory _UbuntuProInfo({required String token}) = _$_UbuntuProInfo;
+  const factory _UbuntuProInfo({required final String token}) =
+      _$_UbuntuProInfo;
 
   factory _UbuntuProInfo.fromJson(Map<String, dynamic> json) =
       _$_UbuntuProInfo.fromJson;
 
   @override
-  String get token => throw _privateConstructorUsedError;
+  String get token;
   @override
   @JsonKey(ignore: true)
-  _$UbuntuProInfoCopyWith<_UbuntuProInfo> get copyWith =>
+  _$$_UbuntuProInfoCopyWith<_$_UbuntuProInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 UbuntuProService _$UbuntuProServiceFromJson(Map<String, dynamic> json) {
   return _UbuntuProService.fromJson(json);
 }
-
-/// @nodoc
-class _$UbuntuProServiceTearOff {
-  const _$UbuntuProServiceTearOff();
-
-  _UbuntuProService call(
-      {required String name,
-      required String description,
-      required bool autoEnabled}) {
-    return _UbuntuProService(
-      name: name,
-      description: description,
-      autoEnabled: autoEnabled,
-    );
-  }
-
-  UbuntuProService fromJson(Map<String, Object> json) {
-    return UbuntuProService.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UbuntuProService = _$UbuntuProServiceTearOff();
 
 /// @nodoc
 mixin _$UbuntuProService {
@@ -10005,25 +9413,25 @@ class _$UbuntuProServiceCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UbuntuProServiceCopyWith<$Res>
+abstract class _$$_UbuntuProServiceCopyWith<$Res>
     implements $UbuntuProServiceCopyWith<$Res> {
-  factory _$UbuntuProServiceCopyWith(
-          _UbuntuProService value, $Res Function(_UbuntuProService) then) =
-      __$UbuntuProServiceCopyWithImpl<$Res>;
+  factory _$$_UbuntuProServiceCopyWith(
+          _$_UbuntuProService value, $Res Function(_$_UbuntuProService) then) =
+      __$$_UbuntuProServiceCopyWithImpl<$Res>;
   @override
   $Res call({String name, String description, bool autoEnabled});
 }
 
 /// @nodoc
-class __$UbuntuProServiceCopyWithImpl<$Res>
+class __$$_UbuntuProServiceCopyWithImpl<$Res>
     extends _$UbuntuProServiceCopyWithImpl<$Res>
-    implements _$UbuntuProServiceCopyWith<$Res> {
-  __$UbuntuProServiceCopyWithImpl(
-      _UbuntuProService _value, $Res Function(_UbuntuProService) _then)
-      : super(_value, (v) => _then(v as _UbuntuProService));
+    implements _$$_UbuntuProServiceCopyWith<$Res> {
+  __$$_UbuntuProServiceCopyWithImpl(
+      _$_UbuntuProService _value, $Res Function(_$_UbuntuProService) _then)
+      : super(_value, (v) => _then(v as _$_UbuntuProService));
 
   @override
-  _UbuntuProService get _value => super._value as _UbuntuProService;
+  _$_UbuntuProService get _value => super._value as _$_UbuntuProService;
 
   @override
   $Res call({
@@ -10031,7 +9439,7 @@ class __$UbuntuProServiceCopyWithImpl<$Res>
     Object? description = freezed,
     Object? autoEnabled = freezed,
   }) {
-    return _then(_UbuntuProService(
+    return _then(_$_UbuntuProService(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -10057,7 +9465,7 @@ class _$_UbuntuProService implements _UbuntuProService {
       required this.autoEnabled});
 
   factory _$_UbuntuProService.fromJson(Map<String, dynamic> json) =>
-      _$_$_UbuntuProServiceFromJson(json);
+      _$$_UbuntuProServiceFromJson(json);
 
   @override
   final String name;
@@ -10074,53 +9482,54 @@ class _$_UbuntuProService implements _UbuntuProService {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UbuntuProService &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.autoEnabled, autoEnabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.autoEnabled, autoEnabled)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UbuntuProService &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.autoEnabled, autoEnabled));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(autoEnabled);
 
   @JsonKey(ignore: true)
   @override
-  _$UbuntuProServiceCopyWith<_UbuntuProService> get copyWith =>
-      __$UbuntuProServiceCopyWithImpl<_UbuntuProService>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(autoEnabled));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UbuntuProServiceCopyWith<_$_UbuntuProService> get copyWith =>
+      __$$_UbuntuProServiceCopyWithImpl<_$_UbuntuProService>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UbuntuProServiceToJson(this);
+    return _$$_UbuntuProServiceToJson(
+      this,
+    );
   }
 }
 
 abstract class _UbuntuProService implements UbuntuProService {
   const factory _UbuntuProService(
-      {required String name,
-      required String description,
-      required bool autoEnabled}) = _$_UbuntuProService;
+      {required final String name,
+      required final String description,
+      required final bool autoEnabled}) = _$_UbuntuProService;
 
   factory _UbuntuProService.fromJson(Map<String, dynamic> json) =
       _$_UbuntuProService.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  bool get autoEnabled => throw _privateConstructorUsedError;
+  bool get autoEnabled;
   @override
   @JsonKey(ignore: true)
-  _$UbuntuProServiceCopyWith<_UbuntuProService> get copyWith =>
+  _$$_UbuntuProServiceCopyWith<_$_UbuntuProService> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -10128,31 +9537,6 @@ UbuntuProSubscription _$UbuntuProSubscriptionFromJson(
     Map<String, dynamic> json) {
   return _UbuntuProSubscription.fromJson(json);
 }
-
-/// @nodoc
-class _$UbuntuProSubscriptionTearOff {
-  const _$UbuntuProSubscriptionTearOff();
-
-  _UbuntuProSubscription call(
-      {required String contractName,
-      required String accountName,
-      required String contractToken,
-      required List<UbuntuProService> services}) {
-    return _UbuntuProSubscription(
-      contractName: contractName,
-      accountName: accountName,
-      contractToken: contractToken,
-      services: services,
-    );
-  }
-
-  UbuntuProSubscription fromJson(Map<String, Object> json) {
-    return UbuntuProSubscription.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UbuntuProSubscription = _$UbuntuProSubscriptionTearOff();
 
 /// @nodoc
 mixin _$UbuntuProSubscription {
@@ -10217,11 +9601,11 @@ class _$UbuntuProSubscriptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UbuntuProSubscriptionCopyWith<$Res>
+abstract class _$$_UbuntuProSubscriptionCopyWith<$Res>
     implements $UbuntuProSubscriptionCopyWith<$Res> {
-  factory _$UbuntuProSubscriptionCopyWith(_UbuntuProSubscription value,
-          $Res Function(_UbuntuProSubscription) then) =
-      __$UbuntuProSubscriptionCopyWithImpl<$Res>;
+  factory _$$_UbuntuProSubscriptionCopyWith(_$_UbuntuProSubscription value,
+          $Res Function(_$_UbuntuProSubscription) then) =
+      __$$_UbuntuProSubscriptionCopyWithImpl<$Res>;
   @override
   $Res call(
       {String contractName,
@@ -10231,15 +9615,16 @@ abstract class _$UbuntuProSubscriptionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UbuntuProSubscriptionCopyWithImpl<$Res>
+class __$$_UbuntuProSubscriptionCopyWithImpl<$Res>
     extends _$UbuntuProSubscriptionCopyWithImpl<$Res>
-    implements _$UbuntuProSubscriptionCopyWith<$Res> {
-  __$UbuntuProSubscriptionCopyWithImpl(_UbuntuProSubscription _value,
-      $Res Function(_UbuntuProSubscription) _then)
-      : super(_value, (v) => _then(v as _UbuntuProSubscription));
+    implements _$$_UbuntuProSubscriptionCopyWith<$Res> {
+  __$$_UbuntuProSubscriptionCopyWithImpl(_$_UbuntuProSubscription _value,
+      $Res Function(_$_UbuntuProSubscription) _then)
+      : super(_value, (v) => _then(v as _$_UbuntuProSubscription));
 
   @override
-  _UbuntuProSubscription get _value => super._value as _UbuntuProSubscription;
+  _$_UbuntuProSubscription get _value =>
+      super._value as _$_UbuntuProSubscription;
 
   @override
   $Res call({
@@ -10248,7 +9633,7 @@ class __$UbuntuProSubscriptionCopyWithImpl<$Res>
     Object? contractToken = freezed,
     Object? services = freezed,
   }) {
-    return _then(_UbuntuProSubscription(
+    return _then(_$_UbuntuProSubscription(
       contractName: contractName == freezed
           ? _value.contractName
           : contractName // ignore: cast_nullable_to_non_nullable
@@ -10262,7 +9647,7 @@ class __$UbuntuProSubscriptionCopyWithImpl<$Res>
           : contractToken // ignore: cast_nullable_to_non_nullable
               as String,
       services: services == freezed
-          ? _value.services
+          ? _value._services
           : services // ignore: cast_nullable_to_non_nullable
               as List<UbuntuProService>,
     ));
@@ -10276,10 +9661,11 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
       {required this.contractName,
       required this.accountName,
       required this.contractToken,
-      required this.services});
+      required final List<UbuntuProService> services})
+      : _services = services;
 
   factory _$_UbuntuProSubscription.fromJson(Map<String, dynamic> json) =>
-      _$_$_UbuntuProSubscriptionFromJson(json);
+      _$$_UbuntuProSubscriptionFromJson(json);
 
   @override
   final String contractName;
@@ -10287,8 +9673,12 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
   final String accountName;
   @override
   final String contractToken;
+  final List<UbuntuProService> _services;
   @override
-  final List<UbuntuProService> services;
+  List<UbuntuProService> get services {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_services);
+  }
 
   @override
   String toString() {
@@ -10298,62 +9688,62 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UbuntuProSubscription &&
-            (identical(other.contractName, contractName) ||
-                const DeepCollectionEquality()
-                    .equals(other.contractName, contractName)) &&
-            (identical(other.accountName, accountName) ||
-                const DeepCollectionEquality()
-                    .equals(other.accountName, accountName)) &&
-            (identical(other.contractToken, contractToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.contractToken, contractToken)) &&
-            (identical(other.services, services) ||
-                const DeepCollectionEquality()
-                    .equals(other.services, services)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UbuntuProSubscription &&
+            const DeepCollectionEquality()
+                .equals(other.contractName, contractName) &&
+            const DeepCollectionEquality()
+                .equals(other.accountName, accountName) &&
+            const DeepCollectionEquality()
+                .equals(other.contractToken, contractToken) &&
+            const DeepCollectionEquality().equals(other._services, _services));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(contractName) ^
-      const DeepCollectionEquality().hash(accountName) ^
-      const DeepCollectionEquality().hash(contractToken) ^
-      const DeepCollectionEquality().hash(services);
 
   @JsonKey(ignore: true)
   @override
-  _$UbuntuProSubscriptionCopyWith<_UbuntuProSubscription> get copyWith =>
-      __$UbuntuProSubscriptionCopyWithImpl<_UbuntuProSubscription>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(contractName),
+      const DeepCollectionEquality().hash(accountName),
+      const DeepCollectionEquality().hash(contractToken),
+      const DeepCollectionEquality().hash(_services));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UbuntuProSubscriptionCopyWith<_$_UbuntuProSubscription> get copyWith =>
+      __$$_UbuntuProSubscriptionCopyWithImpl<_$_UbuntuProSubscription>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UbuntuProSubscriptionToJson(this);
+    return _$$_UbuntuProSubscriptionToJson(
+      this,
+    );
   }
 }
 
 abstract class _UbuntuProSubscription implements UbuntuProSubscription {
   const factory _UbuntuProSubscription(
-      {required String contractName,
-      required String accountName,
-      required String contractToken,
-      required List<UbuntuProService> services}) = _$_UbuntuProSubscription;
+          {required final String contractName,
+          required final String accountName,
+          required final String contractToken,
+          required final List<UbuntuProService> services}) =
+      _$_UbuntuProSubscription;
 
   factory _UbuntuProSubscription.fromJson(Map<String, dynamic> json) =
       _$_UbuntuProSubscription.fromJson;
 
   @override
-  String get contractName => throw _privateConstructorUsedError;
+  String get contractName;
   @override
-  String get accountName => throw _privateConstructorUsedError;
+  String get accountName;
   @override
-  String get contractToken => throw _privateConstructorUsedError;
+  String get contractToken;
   @override
-  List<UbuntuProService> get services => throw _privateConstructorUsedError;
+  List<UbuntuProService> get services;
   @override
   @JsonKey(ignore: true)
-  _$UbuntuProSubscriptionCopyWith<_UbuntuProSubscription> get copyWith =>
+  _$$_UbuntuProSubscriptionCopyWith<_$_UbuntuProSubscription> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -10361,27 +9751,6 @@ UbuntuProCheckTokenAnswer _$UbuntuProCheckTokenAnswerFromJson(
     Map<String, dynamic> json) {
   return _UbuntuProCheckTokenAnswer.fromJson(json);
 }
-
-/// @nodoc
-class _$UbuntuProCheckTokenAnswerTearOff {
-  const _$UbuntuProCheckTokenAnswerTearOff();
-
-  _UbuntuProCheckTokenAnswer call(
-      {required UbuntuProCheckTokenStatus status,
-      required UbuntuProSubscription? subscription}) {
-    return _UbuntuProCheckTokenAnswer(
-      status: status,
-      subscription: subscription,
-    );
-  }
-
-  UbuntuProCheckTokenAnswer fromJson(Map<String, Object> json) {
-    return UbuntuProCheckTokenAnswer.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UbuntuProCheckTokenAnswer = _$UbuntuProCheckTokenAnswerTearOff();
 
 /// @nodoc
 mixin _$UbuntuProCheckTokenAnswer {
@@ -10444,11 +9813,12 @@ class _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UbuntuProCheckTokenAnswerCopyWith<$Res>
+abstract class _$$_UbuntuProCheckTokenAnswerCopyWith<$Res>
     implements $UbuntuProCheckTokenAnswerCopyWith<$Res> {
-  factory _$UbuntuProCheckTokenAnswerCopyWith(_UbuntuProCheckTokenAnswer value,
-          $Res Function(_UbuntuProCheckTokenAnswer) then) =
-      __$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
+  factory _$$_UbuntuProCheckTokenAnswerCopyWith(
+          _$_UbuntuProCheckTokenAnswer value,
+          $Res Function(_$_UbuntuProCheckTokenAnswer) then) =
+      __$$_UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
   @override
   $Res call(
       {UbuntuProCheckTokenStatus status, UbuntuProSubscription? subscription});
@@ -10458,23 +9828,24 @@ abstract class _$UbuntuProCheckTokenAnswerCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
+class __$$_UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
     extends _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
-    implements _$UbuntuProCheckTokenAnswerCopyWith<$Res> {
-  __$UbuntuProCheckTokenAnswerCopyWithImpl(_UbuntuProCheckTokenAnswer _value,
-      $Res Function(_UbuntuProCheckTokenAnswer) _then)
-      : super(_value, (v) => _then(v as _UbuntuProCheckTokenAnswer));
+    implements _$$_UbuntuProCheckTokenAnswerCopyWith<$Res> {
+  __$$_UbuntuProCheckTokenAnswerCopyWithImpl(
+      _$_UbuntuProCheckTokenAnswer _value,
+      $Res Function(_$_UbuntuProCheckTokenAnswer) _then)
+      : super(_value, (v) => _then(v as _$_UbuntuProCheckTokenAnswer));
 
   @override
-  _UbuntuProCheckTokenAnswer get _value =>
-      super._value as _UbuntuProCheckTokenAnswer;
+  _$_UbuntuProCheckTokenAnswer get _value =>
+      super._value as _$_UbuntuProCheckTokenAnswer;
 
   @override
   $Res call({
     Object? status = freezed,
     Object? subscription = freezed,
   }) {
-    return _then(_UbuntuProCheckTokenAnswer(
+    return _then(_$_UbuntuProCheckTokenAnswer(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -10494,7 +9865,7 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
       {required this.status, required this.subscription});
 
   factory _$_UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =>
-      _$_$_UbuntuProCheckTokenAnswerFromJson(json);
+      _$$_UbuntuProCheckTokenAnswerFromJson(json);
 
   @override
   final UbuntuProCheckTokenStatus status;
@@ -10509,80 +9880,56 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UbuntuProCheckTokenAnswer &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.subscription, subscription) ||
-                const DeepCollectionEquality()
-                    .equals(other.subscription, subscription)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UbuntuProCheckTokenAnswer &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.subscription, subscription));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(subscription);
 
   @JsonKey(ignore: true)
   @override
-  _$UbuntuProCheckTokenAnswerCopyWith<_UbuntuProCheckTokenAnswer>
-      get copyWith =>
-          __$UbuntuProCheckTokenAnswerCopyWithImpl<_UbuntuProCheckTokenAnswer>(
-              this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(subscription));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UbuntuProCheckTokenAnswerCopyWith<_$_UbuntuProCheckTokenAnswer>
+      get copyWith => __$$_UbuntuProCheckTokenAnswerCopyWithImpl<
+          _$_UbuntuProCheckTokenAnswer>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UbuntuProCheckTokenAnswerToJson(this);
+    return _$$_UbuntuProCheckTokenAnswerToJson(
+      this,
+    );
   }
 }
 
 abstract class _UbuntuProCheckTokenAnswer implements UbuntuProCheckTokenAnswer {
   const factory _UbuntuProCheckTokenAnswer(
-          {required UbuntuProCheckTokenStatus status,
-          required UbuntuProSubscription? subscription}) =
+          {required final UbuntuProCheckTokenStatus status,
+          required final UbuntuProSubscription? subscription}) =
       _$_UbuntuProCheckTokenAnswer;
 
   factory _UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =
       _$_UbuntuProCheckTokenAnswer.fromJson;
 
   @override
-  UbuntuProCheckTokenStatus get status => throw _privateConstructorUsedError;
+  UbuntuProCheckTokenStatus get status;
   @override
-  UbuntuProSubscription? get subscription => throw _privateConstructorUsedError;
+  UbuntuProSubscription? get subscription;
   @override
   @JsonKey(ignore: true)
-  _$UbuntuProCheckTokenAnswerCopyWith<_UbuntuProCheckTokenAnswer>
+  _$$_UbuntuProCheckTokenAnswerCopyWith<_$_UbuntuProCheckTokenAnswer>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 WSLConfigurationBase _$WSLConfigurationBaseFromJson(Map<String, dynamic> json) {
   return _WSLConfigurationBase.fromJson(json);
 }
-
-/// @nodoc
-class _$WSLConfigurationBaseTearOff {
-  const _$WSLConfigurationBaseTearOff();
-
-  _WSLConfigurationBase call(
-      {String automountRoot = '/mnt/',
-      String automountOptions = '',
-      bool networkGeneratehosts = true,
-      bool networkGenerateresolvconf = true}) {
-    return _WSLConfigurationBase(
-      automountRoot: automountRoot,
-      automountOptions: automountOptions,
-      networkGeneratehosts: networkGeneratehosts,
-      networkGenerateresolvconf: networkGenerateresolvconf,
-    );
-  }
-
-  WSLConfigurationBase fromJson(Map<String, Object> json) {
-    return WSLConfigurationBase.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $WSLConfigurationBase = _$WSLConfigurationBaseTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationBase {
@@ -10647,11 +9994,11 @@ class _$WSLConfigurationBaseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$WSLConfigurationBaseCopyWith<$Res>
+abstract class _$$_WSLConfigurationBaseCopyWith<$Res>
     implements $WSLConfigurationBaseCopyWith<$Res> {
-  factory _$WSLConfigurationBaseCopyWith(_WSLConfigurationBase value,
-          $Res Function(_WSLConfigurationBase) then) =
-      __$WSLConfigurationBaseCopyWithImpl<$Res>;
+  factory _$$_WSLConfigurationBaseCopyWith(_$_WSLConfigurationBase value,
+          $Res Function(_$_WSLConfigurationBase) then) =
+      __$$_WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
   $Res call(
       {String automountRoot,
@@ -10661,15 +10008,15 @@ abstract class _$WSLConfigurationBaseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$WSLConfigurationBaseCopyWithImpl<$Res>
+class __$$_WSLConfigurationBaseCopyWithImpl<$Res>
     extends _$WSLConfigurationBaseCopyWithImpl<$Res>
-    implements _$WSLConfigurationBaseCopyWith<$Res> {
-  __$WSLConfigurationBaseCopyWithImpl(
-      _WSLConfigurationBase _value, $Res Function(_WSLConfigurationBase) _then)
-      : super(_value, (v) => _then(v as _WSLConfigurationBase));
+    implements _$$_WSLConfigurationBaseCopyWith<$Res> {
+  __$$_WSLConfigurationBaseCopyWithImpl(_$_WSLConfigurationBase _value,
+      $Res Function(_$_WSLConfigurationBase) _then)
+      : super(_value, (v) => _then(v as _$_WSLConfigurationBase));
 
   @override
-  _WSLConfigurationBase get _value => super._value as _WSLConfigurationBase;
+  _$_WSLConfigurationBase get _value => super._value as _$_WSLConfigurationBase;
 
   @override
   $Res call({
@@ -10678,7 +10025,7 @@ class __$WSLConfigurationBaseCopyWithImpl<$Res>
     Object? networkGeneratehosts = freezed,
     Object? networkGenerateresolvconf = freezed,
   }) {
-    return _then(_WSLConfigurationBase(
+    return _then(_$_WSLConfigurationBase(
       automountRoot: automountRoot == freezed
           ? _value.automountRoot
           : automountRoot // ignore: cast_nullable_to_non_nullable
@@ -10709,19 +10056,19 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
       this.networkGenerateresolvconf = true});
 
   factory _$_WSLConfigurationBase.fromJson(Map<String, dynamic> json) =>
-      _$_$_WSLConfigurationBaseFromJson(json);
+      _$$_WSLConfigurationBaseFromJson(json);
 
-  @JsonKey(defaultValue: '/mnt/')
   @override
+  @JsonKey()
   final String automountRoot;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String automountOptions;
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool networkGeneratehosts;
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool networkGenerateresolvconf;
 
   @override
@@ -10732,64 +10079,62 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WSLConfigurationBase &&
-            (identical(other.automountRoot, automountRoot) ||
-                const DeepCollectionEquality()
-                    .equals(other.automountRoot, automountRoot)) &&
-            (identical(other.automountOptions, automountOptions) ||
-                const DeepCollectionEquality()
-                    .equals(other.automountOptions, automountOptions)) &&
-            (identical(other.networkGeneratehosts, networkGeneratehosts) ||
-                const DeepCollectionEquality().equals(
-                    other.networkGeneratehosts, networkGeneratehosts)) &&
-            (identical(other.networkGenerateresolvconf,
-                    networkGenerateresolvconf) ||
-                const DeepCollectionEquality().equals(
-                    other.networkGenerateresolvconf,
-                    networkGenerateresolvconf)));
+        (other.runtimeType == runtimeType &&
+            other is _$_WSLConfigurationBase &&
+            const DeepCollectionEquality()
+                .equals(other.automountRoot, automountRoot) &&
+            const DeepCollectionEquality()
+                .equals(other.automountOptions, automountOptions) &&
+            const DeepCollectionEquality()
+                .equals(other.networkGeneratehosts, networkGeneratehosts) &&
+            const DeepCollectionEquality().equals(
+                other.networkGenerateresolvconf, networkGenerateresolvconf));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(automountRoot) ^
-      const DeepCollectionEquality().hash(automountOptions) ^
-      const DeepCollectionEquality().hash(networkGeneratehosts) ^
-      const DeepCollectionEquality().hash(networkGenerateresolvconf);
 
   @JsonKey(ignore: true)
   @override
-  _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
-      __$WSLConfigurationBaseCopyWithImpl<_WSLConfigurationBase>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(automountRoot),
+      const DeepCollectionEquality().hash(automountOptions),
+      const DeepCollectionEquality().hash(networkGeneratehosts),
+      const DeepCollectionEquality().hash(networkGenerateresolvconf));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_WSLConfigurationBaseCopyWith<_$_WSLConfigurationBase> get copyWith =>
+      __$$_WSLConfigurationBaseCopyWithImpl<_$_WSLConfigurationBase>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WSLConfigurationBaseToJson(this);
+    return _$$_WSLConfigurationBaseToJson(
+      this,
+    );
   }
 }
 
 abstract class _WSLConfigurationBase implements WSLConfigurationBase {
   const factory _WSLConfigurationBase(
-      {String automountRoot,
-      String automountOptions,
-      bool networkGeneratehosts,
-      bool networkGenerateresolvconf}) = _$_WSLConfigurationBase;
+      {final String automountRoot,
+      final String automountOptions,
+      final bool networkGeneratehosts,
+      final bool networkGenerateresolvconf}) = _$_WSLConfigurationBase;
 
   factory _WSLConfigurationBase.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationBase.fromJson;
 
   @override
-  String get automountRoot => throw _privateConstructorUsedError;
+  String get automountRoot;
   @override
-  String get automountOptions => throw _privateConstructorUsedError;
+  String get automountOptions;
   @override
-  bool get networkGeneratehosts => throw _privateConstructorUsedError;
+  bool get networkGeneratehosts;
   @override
-  bool get networkGenerateresolvconf => throw _privateConstructorUsedError;
+  bool get networkGenerateresolvconf;
   @override
   @JsonKey(ignore: true)
-  _$WSLConfigurationBaseCopyWith<_WSLConfigurationBase> get copyWith =>
+  _$$_WSLConfigurationBaseCopyWith<_$_WSLConfigurationBase> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -10797,33 +10142,6 @@ WSLConfigurationAdvanced _$WSLConfigurationAdvancedFromJson(
     Map<String, dynamic> json) {
   return _WSLConfigurationAdvanced.fromJson(json);
 }
-
-/// @nodoc
-class _$WSLConfigurationAdvancedTearOff {
-  const _$WSLConfigurationAdvancedTearOff();
-
-  _WSLConfigurationAdvanced call(
-      {bool automountEnabled = true,
-      bool automountMountfstab = true,
-      bool interopEnabled = true,
-      bool interopAppendwindowspath = true,
-      bool systemdEnabled = false}) {
-    return _WSLConfigurationAdvanced(
-      automountEnabled: automountEnabled,
-      automountMountfstab: automountMountfstab,
-      interopEnabled: interopEnabled,
-      interopAppendwindowspath: interopAppendwindowspath,
-      systemdEnabled: systemdEnabled,
-    );
-  }
-
-  WSLConfigurationAdvanced fromJson(Map<String, Object> json) {
-    return WSLConfigurationAdvanced.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $WSLConfigurationAdvanced = _$WSLConfigurationAdvancedTearOff();
 
 /// @nodoc
 mixin _$WSLConfigurationAdvanced {
@@ -10895,11 +10213,12 @@ class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
+abstract class _$$_WSLConfigurationAdvancedCopyWith<$Res>
     implements $WSLConfigurationAdvancedCopyWith<$Res> {
-  factory _$WSLConfigurationAdvancedCopyWith(_WSLConfigurationAdvanced value,
-          $Res Function(_WSLConfigurationAdvanced) then) =
-      __$WSLConfigurationAdvancedCopyWithImpl<$Res>;
+  factory _$$_WSLConfigurationAdvancedCopyWith(
+          _$_WSLConfigurationAdvanced value,
+          $Res Function(_$_WSLConfigurationAdvanced) then) =
+      __$$_WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool automountEnabled,
@@ -10910,16 +10229,16 @@ abstract class _$WSLConfigurationAdvancedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
+class __$$_WSLConfigurationAdvancedCopyWithImpl<$Res>
     extends _$WSLConfigurationAdvancedCopyWithImpl<$Res>
-    implements _$WSLConfigurationAdvancedCopyWith<$Res> {
-  __$WSLConfigurationAdvancedCopyWithImpl(_WSLConfigurationAdvanced _value,
-      $Res Function(_WSLConfigurationAdvanced) _then)
-      : super(_value, (v) => _then(v as _WSLConfigurationAdvanced));
+    implements _$$_WSLConfigurationAdvancedCopyWith<$Res> {
+  __$$_WSLConfigurationAdvancedCopyWithImpl(_$_WSLConfigurationAdvanced _value,
+      $Res Function(_$_WSLConfigurationAdvanced) _then)
+      : super(_value, (v) => _then(v as _$_WSLConfigurationAdvanced));
 
   @override
-  _WSLConfigurationAdvanced get _value =>
-      super._value as _WSLConfigurationAdvanced;
+  _$_WSLConfigurationAdvanced get _value =>
+      super._value as _$_WSLConfigurationAdvanced;
 
   @override
   $Res call({
@@ -10929,7 +10248,7 @@ class __$WSLConfigurationAdvancedCopyWithImpl<$Res>
     Object? interopAppendwindowspath = freezed,
     Object? systemdEnabled = freezed,
   }) {
-    return _then(_WSLConfigurationAdvanced(
+    return _then(_$_WSLConfigurationAdvanced(
       automountEnabled: automountEnabled == freezed
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
@@ -10965,22 +10284,22 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
       this.systemdEnabled = false});
 
   factory _$_WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
-      _$_$_WSLConfigurationAdvancedFromJson(json);
+      _$$_WSLConfigurationAdvancedFromJson(json);
 
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool automountEnabled;
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool automountMountfstab;
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool interopEnabled;
-  @JsonKey(defaultValue: true)
   @override
+  @JsonKey()
   final bool interopAppendwindowspath;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool systemdEnabled;
 
   @override
@@ -10991,70 +10310,67 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WSLConfigurationAdvanced &&
-            (identical(other.automountEnabled, automountEnabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.automountEnabled, automountEnabled)) &&
-            (identical(other.automountMountfstab, automountMountfstab) ||
-                const DeepCollectionEquality()
-                    .equals(other.automountMountfstab, automountMountfstab)) &&
-            (identical(other.interopEnabled, interopEnabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.interopEnabled, interopEnabled)) &&
-            (identical(
-                    other.interopAppendwindowspath, interopAppendwindowspath) ||
-                const DeepCollectionEquality().equals(
-                    other.interopAppendwindowspath,
-                    interopAppendwindowspath)) &&
-            (identical(other.systemdEnabled, systemdEnabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.systemdEnabled, systemdEnabled)));
+        (other.runtimeType == runtimeType &&
+            other is _$_WSLConfigurationAdvanced &&
+            const DeepCollectionEquality()
+                .equals(other.automountEnabled, automountEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.automountMountfstab, automountMountfstab) &&
+            const DeepCollectionEquality()
+                .equals(other.interopEnabled, interopEnabled) &&
+            const DeepCollectionEquality().equals(
+                other.interopAppendwindowspath, interopAppendwindowspath) &&
+            const DeepCollectionEquality()
+                .equals(other.systemdEnabled, systemdEnabled));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(automountEnabled) ^
-      const DeepCollectionEquality().hash(automountMountfstab) ^
-      const DeepCollectionEquality().hash(interopEnabled) ^
-      const DeepCollectionEquality().hash(interopAppendwindowspath) ^
-      const DeepCollectionEquality().hash(systemdEnabled);
 
   @JsonKey(ignore: true)
   @override
-  _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
-      __$WSLConfigurationAdvancedCopyWithImpl<_WSLConfigurationAdvanced>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(automountEnabled),
+      const DeepCollectionEquality().hash(automountMountfstab),
+      const DeepCollectionEquality().hash(interopEnabled),
+      const DeepCollectionEquality().hash(interopAppendwindowspath),
+      const DeepCollectionEquality().hash(systemdEnabled));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_WSLConfigurationAdvancedCopyWith<_$_WSLConfigurationAdvanced>
+      get copyWith => __$$_WSLConfigurationAdvancedCopyWithImpl<
+          _$_WSLConfigurationAdvanced>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WSLConfigurationAdvancedToJson(this);
+    return _$$_WSLConfigurationAdvancedToJson(
+      this,
+    );
   }
 }
 
 abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   const factory _WSLConfigurationAdvanced(
-      {bool automountEnabled,
-      bool automountMountfstab,
-      bool interopEnabled,
-      bool interopAppendwindowspath,
-      bool systemdEnabled}) = _$_WSLConfigurationAdvanced;
+      {final bool automountEnabled,
+      final bool automountMountfstab,
+      final bool interopEnabled,
+      final bool interopAppendwindowspath,
+      final bool systemdEnabled}) = _$_WSLConfigurationAdvanced;
 
   factory _WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =
       _$_WSLConfigurationAdvanced.fromJson;
 
   @override
-  bool get automountEnabled => throw _privateConstructorUsedError;
+  bool get automountEnabled;
   @override
-  bool get automountMountfstab => throw _privateConstructorUsedError;
+  bool get automountMountfstab;
   @override
-  bool get interopEnabled => throw _privateConstructorUsedError;
+  bool get interopEnabled;
   @override
-  bool get interopAppendwindowspath => throw _privateConstructorUsedError;
+  bool get interopAppendwindowspath;
   @override
-  bool get systemdEnabled => throw _privateConstructorUsedError;
+  bool get systemdEnabled;
   @override
   @JsonKey(ignore: true)
-  _$WSLConfigurationAdvancedCopyWith<_WSLConfigurationAdvanced> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_WSLConfigurationAdvancedCopyWith<_$_WSLConfigurationAdvanced>
+      get copyWith => throw _privateConstructorUsedError;
 }
