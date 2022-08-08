@@ -56,7 +56,7 @@ Future<void> main(List<String> args) async {
       '--server-only',
       '--tcp-port=${socketHolder.port}'
     ],
-    defer: options['reconfigure'] ? null : registrationEvent.future,
+    defer: options['reconfigure'] == true ? null : registrationEvent.future,
     onProcessStart: socketHolder.close,
   );
 
