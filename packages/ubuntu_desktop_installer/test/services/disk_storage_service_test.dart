@@ -265,6 +265,39 @@ void main() {
     await service.resetStorage();
     expect(service.hasGuidedChoice, isFalse);
   });
+
+  test('has enough disk space', () async {
+    final service = DiskStorageService(client);
+    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse(
+          installMinimumSize: 123,
+          disks: [
+            testDisk(size: 123),
+            testDisk(size: 789),
+            testDisk(size: 456),
+          ],
+        ));
+
+    await service.init();
+    expect(service.installMinimumSize, 123);
+    expect(service.largestDiskSize, 789);
+    expect(service.hasEnoughDiskSpace, isTrue);
+  });
+
+  test('does not have enough disk space', () async {
+    final service = DiskStorageService(client);
+    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse(
+          installMinimumSize: 789,
+          disks: [
+            testDisk(size: 456),
+            testDisk(size: 123),
+          ],
+        ));
+
+    await service.init();
+    expect(service.installMinimumSize, 789);
+    expect(service.largestDiskSize, 456);
+    expect(service.hasEnoughDiskSpace, isFalse);
+  });
 }
 
 StorageResponseV2 testStorageResponse({

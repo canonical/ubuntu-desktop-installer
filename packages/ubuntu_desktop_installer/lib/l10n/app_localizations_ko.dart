@@ -37,6 +37,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get yesButtonText => '예';
 
   @override
+  String get quitButtonText => 'Quit Installation';
+
+  @override
   String get welcome => '환영합니다';
 
   @override
@@ -802,4 +805,22 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get installationFailed => '설치 실패';
+
+  @override
+  String get notEnoughDiskSpaceTitle => 'Sorry';
+
+  @override
+  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
+    return 'You need at least $SIZE disk space to install $RELEASE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceHasOnly(Object SIZE) {
+    return 'This computer has only $SIZE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
+    return 'The biggest disk on this computer is only $SIZE.';
+  }
 }

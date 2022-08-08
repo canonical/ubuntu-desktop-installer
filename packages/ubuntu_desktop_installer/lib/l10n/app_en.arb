@@ -15,6 +15,7 @@
   "restartButtonText": "Restart",
   "revertButtonText": "Revert",
   "yesButtonText": "Yes",
+  "quitButtonText": "Quit Installation",
   "welcome": "Welcome",
   "welcomeHeader": "Choose your language:",
   "tryOrInstallPageTitle": "Try or install",
@@ -482,5 +483,28 @@
   "availableSoftware": "Available software",
   "supportedSoftware": "Supported software",
   "copyingFiles": "Copying files...",
-  "installationFailed": "Installation failed"
+  "installationFailed": "Installation failed",
+  "notEnoughDiskSpaceTitle": "Sorry",
+  "notEnoughDiskSpaceHeader": "You need at least {SIZE} disk space to install {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "This computer has only {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "The biggest disk on this computer is only {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }

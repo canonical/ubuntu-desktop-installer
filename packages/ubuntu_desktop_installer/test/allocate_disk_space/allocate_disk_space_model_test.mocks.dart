@@ -77,6 +77,18 @@ class MockDiskStorageService extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#useLvm, useLvm),
           returnValueForMissingStub: null);
   @override
+  int get installMinimumSize => (super
+          .noSuchMethod(Invocation.getter(#installMinimumSize), returnValue: 0)
+      as int);
+  @override
+  int get largestDiskSize =>
+      (super.noSuchMethod(Invocation.getter(#largestDiskSize), returnValue: 0)
+          as int);
+  @override
+  bool get hasEnoughDiskSpace =>
+      (super.noSuchMethod(Invocation.getter(#hasEnoughDiskSpace),
+          returnValue: false) as bool);
+  @override
   _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
       returnValue: _i4.Future<void>.value(),
       returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);

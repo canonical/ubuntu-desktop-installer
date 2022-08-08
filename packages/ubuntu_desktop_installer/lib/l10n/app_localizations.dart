@@ -291,6 +291,12 @@ abstract class AppLocalizations {
   /// **'Yes'**
   String get yesButtonText;
 
+  /// No description provided for @quitButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Quit Installation'**
+  String get quitButtonText;
+
   /// No description provided for @welcome.
   ///
   /// In en, this message translates to:
@@ -1676,6 +1682,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Installation failed'**
   String get installationFailed;
+
+  /// No description provided for @notEnoughDiskSpaceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry'**
+  String get notEnoughDiskSpaceTitle;
+
+  /// No description provided for @notEnoughDiskSpaceHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'You need at least {SIZE} disk space to install {RELEASE}.'**
+  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE);
+
+  /// No description provided for @notEnoughDiskSpaceHasOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'This computer has only {SIZE}.'**
+  String notEnoughDiskSpaceHasOnly(Object SIZE);
+
+  /// No description provided for @notEnoughDiskSpaceBiggestDisk.
+  ///
+  /// In en, this message translates to:
+  /// **'The biggest disk on this computer is only {SIZE}.'**
+  String notEnoughDiskSpaceBiggestDisk(Object SIZE);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
