@@ -56,8 +56,7 @@ dependencies:
       path: packages/ubuntu_widgets
   ubuntu_wizard:
     path: ../ubuntu_wizard
-  udev:
-    path: ../udev
+  udev: ^0.0.1
   upower: ^0.7.0
   yaru: ^0.3.3
   yaru_icons: ^0.2.1
