@@ -319,6 +319,21 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Telepítse a $product oldalt a $os1 és $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Telepítse melléjük a $product';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Telepítse a $product oldalt más partíciók mellé';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'A dokumentumok, zenék és egyéb személyes fájlok megőrzésre kerülnek. A számítógép minden egyes indításakor kiválaszthatja, hogy melyik operációs rendszert szeretné használni.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Telepítés most';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Ossza ki a meghajtóterületet az alábbi osztóvonal húzásával:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num a kisebb partíciók el vannak rejtve, használja a <a href=\"$url\">speciális partícionáló eszközt</a> a nagyobb ellenőrzésért';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Partíció átméretezése';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Hely kiosztása';
+
+  @override
+  String get installAlongsideFiles => 'Fájlok';
+
+  @override
+  String get installAlongsidePartition => 'Partíció:';
+
+  @override
+  String get installAlongsideSize => 'Méret:';
+
+  @override
+  String get installAlongsideAvailable => 'Elérhető:';
 
   @override
   String get allocateDiskSpace => 'Lemezterület kiosztása';

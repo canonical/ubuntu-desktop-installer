@@ -55,6 +55,7 @@ void main() {
     when(model.installationType).thenReturn(InstallationType.erase);
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
+    when(model.canInstallAlongside).thenReturn(false);
 
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(

@@ -7,7 +7,7 @@ import '../../l10n.dart';
 /// Asks the user to press one of keys.
 class PressKeyView extends StatelessWidget {
   /// Creates a view.
-  const PressKeyView(this._pressKey, {Key? key}) : super(key: key);
+  const PressKeyView(this._pressKey, {super.key});
 
   final List<String> _pressKey;
 
@@ -36,7 +36,7 @@ class PressKeyView extends StatelessWidget {
 /// Asks the user to confirm whether a key is present.
 class KeyPresentView extends StatelessWidget {
   /// Creates a view.
-  const KeyPresentView(this._keyPresent, {Key? key}) : super(key: key);
+  const KeyPresentView(this._keyPresent, {super.key});
 
   final String _keyPresent;
 
@@ -65,14 +65,13 @@ class KeyPresentView extends StatelessWidget {
 class DetectKeyboardLayoutView extends StatefulWidget {
   /// Creates a keyboard layout detection view.
   const DetectKeyboardLayoutView({
-    Key? key,
+    super.key,
     String? keyPresent,
     List<String>? pressKey,
     ValueChanged<int>? onKeyPress,
   })  : _keyPresent = keyPresent,
         _pressKey = pressKey,
-        _onKeyPress = onKeyPress,
-        super(key: key);
+        _onKeyPress = onKeyPress;
 
   final String? _keyPresent;
   final List<String>? _pressKey;

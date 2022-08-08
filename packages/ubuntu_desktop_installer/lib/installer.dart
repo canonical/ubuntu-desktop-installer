@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -45,12 +47,14 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
+    parser.addOption('bootloader', hide: true);
   })!;
 
   final subiquityClient = SubiquityClient();
   final bool liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
-  final subiquityPath = await getSubiquityPath();
+  final subiquityPath = await getSubiquityPath()
+      .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
 
   final process = liveRun
@@ -93,7 +97,7 @@ Future<void> runInstallerApp(
 
   final appStatus = ValueNotifier(AppStatus.loading);
 
-  runWizardApp(
+  await runWizardApp(
     ValueListenableBuilder<AppStatus>(
       valueListenable: appStatus,
       builder: (context, value, child) {
@@ -113,29 +117,39 @@ Future<void> runInstallerApp(
     subiquityServer: subiquityServer,
     subiquityMonitor: subiquityMonitor,
     serverArgs: [
-      if (options['machine-config'] != null) ...[
-        '--machine-config',
-        options['machine-config'],
-        '--storage-version=2',
-      ],
+      if (options['machine-config'] != null)
+        '--machine-config=${options['machine-config']}',
+      if (options['bootloader'] != null)
+        '--bootloader=${options['bootloader']}',
+      '--storage-version=2',
     ],
-    onInitSubiquity: (client) {
-      appStatus.value = AppStatus.ready;
-      client.setVariant(Variant.DESKTOP);
-    },
   );
+
+  appStatus.value = AppStatus.ready;
+  await subiquityClient.setVariant(Variant.DESKTOP);
+
+  // Use the default values for a number of endpoints
+  // for which a UI page isn't implemented yet.
+  return subiquityClient.markConfigured([
+    'drivers',
+    'mirror',
+    'proxy',
+    'network',
+    'ssh',
+    'snaplist',
+    'ubuntu_pro',
+  ]);
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
   UbuntuDesktopInstallerApp({
-    Key? key,
+    super.key,
     this.initialRoute,
     FlavorData? flavor,
     List<Slide>? slides,
     this.appStatus = AppStatus.ready,
   })  : flavor = flavor ?? defaultFlavor,
-        slides = slides ?? defaultSlides,
-        super(key: key);
+        slides = slides ?? defaultSlides;
 
   final String? initialRoute;
   final FlavorData flavor;
@@ -143,11 +157,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   final AppStatus appStatus;
 
   static FlavorData get defaultFlavor {
-    return FlavorData(
-      name: 'Ubuntu',
-      theme: yaruLight,
-      darkTheme: yaruDark,
-    );
+    return const FlavorData(name: 'Ubuntu');
   }
 
   @override
@@ -158,23 +168,27 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         data: flavor,
         child: SlidesContext(
           slides: slides,
-          child: MaterialApp(
-            locale: Settings.of(context).locale,
-            onGenerateTitle: (context) {
-              final lang = AppLocalizations.of(context);
-              setWindowTitle(lang.windowTitle(flavor.name));
-              return lang.appTitle;
+          child: YaruTheme(
+            builder: (context, yaru, child) {
+              return MaterialApp(
+                locale: Settings.of(context).locale,
+                onGenerateTitle: (context) {
+                  final lang = AppLocalizations.of(context);
+                  setWindowTitle(lang.windowTitle(flavor.name));
+                  return lang.appTitle;
+                },
+                theme: flavor.theme ?? yaru.variant?.theme ?? yaruLight,
+                darkTheme:
+                    flavor.darkTheme ?? yaru.variant?.darkTheme ?? yaruDark,
+                debugShowCheckedModeBanner: false,
+                localizationsDelegates: <LocalizationsDelegate>[
+                  ...localizationsDelegates,
+                  ...?flavor.localizationsDelegates,
+                ],
+                supportedLocales: supportedLocales,
+                home: buildApp(context),
+              );
             },
-            theme: flavor.theme,
-            darkTheme: flavor.darkTheme,
-            themeMode: Settings.of(context).theme,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: <LocalizationsDelegate>[
-              ...localizationsDelegates,
-              ...?flavor.localizationsDelegates,
-            ],
-            supportedLocales: supportedLocales,
-            home: buildApp(context),
           ),
         ),
       ),
@@ -192,7 +206,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
-  const _UbuntuDesktopInstallerLoadingPage({Key? key}) : super(key: key);
+  const _UbuntuDesktopInstallerLoadingPage();
 
   @override
   Widget build(BuildContext context) {
@@ -224,10 +238,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerWizard extends StatelessWidget {
-  const _UbuntuDesktopInstallerWizard({
-    Key? key,
-    this.initialRoute,
-  }) : super(key: key);
+  const _UbuntuDesktopInstallerWizard({this.initialRoute});
 
   final String? initialRoute;
 
@@ -279,22 +290,32 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.installationType: WizardRoute(
           builder: InstallationTypePage.create,
           onNext: (settings) {
-            if (settings.arguments == InstallationType.erase) {
-              if (service.hasMultipleDisks) {
+            if (settings.arguments == InstallationType.manual) {
+              return Routes.allocateDiskSpace;
+            } else if (!service.hasGuidedChoice) {
+              if (settings.arguments == InstallationType.erase) {
                 return Routes.selectGuidedStorage;
-              } else if (service.hasEncryption) {
-                return Routes.chooseSecurityKey;
-              } else {
-                return Routes.writeChangesToDisk;
+              } else if (settings.arguments == InstallationType.alongside) {
+                return Routes.installAlongside;
               }
+            } else if (service.hasEncryption) {
+              return Routes.chooseSecurityKey;
             }
-            return Routes.allocateDiskSpace;
+            return Routes.writeChangesToDisk;
           },
+        ),
+        Routes.installAlongside: WizardRoute(
+          builder: InstallAlongsidePage.create,
+          onReplace: (_) => Routes.allocateDiskSpace,
+          onNext: (_) => service.hasEncryption
+              ? Routes.chooseSecurityKey
+              : Routes.writeChangesToDisk,
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
-          onNext: (_) =>
-              !service.hasEncryption ? Routes.writeChangesToDisk : null,
+          onNext: (_) => service.hasEncryption
+              ? Routes.chooseSecurityKey
+              : Routes.writeChangesToDisk,
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,

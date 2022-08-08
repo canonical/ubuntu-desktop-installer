@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,7 @@ import 'storage_columns.dart';
 import 'storage_table.dart';
 
 class PartitionBar extends StatelessWidget {
-  const PartitionBar({Key? key}) : super(key: key);
+  const PartitionBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,44 +75,40 @@ class _PartitionPainter extends CustomPainter {
 }
 
 class PartitionLegend extends StatelessWidget {
-  const PartitionLegend({Key? key}) : super(key: key);
+  const PartitionLegend({super.key});
 
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     final lang = AppLocalizations.of(context);
 
-    final objects = model.selectedDisk?.partitions;
+    final objects = model.selectedDisk?.partitions ?? [];
 
-    return SizedBox(
-      height: 48,
-      child: ListView.separated(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        itemCount: objects?.length ?? 0,
-        separatorBuilder: (context, index) => const SizedBox(width: 40),
-        itemBuilder: (context, index) {
-          final object = objects![index];
-          if (object is Gap) {
-            return _PartitionLabel(
-              size: object.size,
-              title: lang.freeDiskSpace,
-              borderColor: Theme.of(context).dividerColor,
-            );
-          }
-
-          final partition = object as Partition;
-
-          return _PartitionLabel(
-            // TODO:
-            // - localize?
-            // - partition type?
-            title: '${model.selectedDisk!.id}${partition.number}',
-            size: partition.size ?? 0,
-            color: _partitionColor(index, objects.length),
-          );
-        },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: objects
+            .mapIndexed((index, object) => Padding(
+                  padding:
+                      EdgeInsetsDirectional.only(start: index > 0 ? 40 : 0),
+                  child: object.map(
+                    partition: (partition) => _PartitionLabel(
+                      // TODO:
+                      // - localize?
+                      // - partition type?
+                      title: '${model.selectedDisk!.id}${partition.number}',
+                      size: partition.size ?? 0,
+                      color: _partitionColor(index, objects.length),
+                    ),
+                    gap: (gap) => _PartitionLabel(
+                      size: gap.size,
+                      title: lang.freeDiskSpace,
+                      borderColor: Theme.of(context).dividerColor,
+                    ),
+                  ),
+                ))
+            .toList(),
       ),
     );
   }
@@ -119,12 +116,11 @@ class PartitionLegend extends StatelessWidget {
 
 class _PartitionLabel extends StatelessWidget {
   const _PartitionLabel({
-    Key? key,
     required this.title,
     required this.size,
     this.color = Colors.transparent,
     this.borderColor = Colors.transparent,
-  }) : super(key: key);
+  });
 
   final String title;
   final int size;
@@ -163,7 +159,7 @@ class _PartitionLabel extends StatelessWidget {
 }
 
 class PartitionTable extends StatelessWidget {
-  const PartitionTable({Key? key, required this.controller}) : super(key: key);
+  const PartitionTable({super.key, required this.controller});
 
   final AutoScrollController controller;
 
@@ -193,7 +189,7 @@ class PartitionTable extends StatelessWidget {
 }
 
 class PartitionButtonRow extends StatelessWidget {
-  const PartitionButtonRow({Key? key}) : super(key: key);
+  const PartitionButtonRow({super.key});
 
   @override
   Widget build(BuildContext context) {

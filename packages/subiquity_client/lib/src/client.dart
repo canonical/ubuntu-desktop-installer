@@ -41,19 +41,17 @@ class SubiquityException implements Exception {
 
 class SubiquityClient {
   final _client = HttpClient();
-  late Endpoint _endpoint;
-  late String _host;
+  Endpoint? _endpoint;
   final _isOpen = Completer<bool>();
 
   Future<bool> get isOpen => _isOpen.future;
 
   Uri url(String unencodedPath, [Map<String, dynamic>? queryParameters]) =>
-      Uri.http(_host, unencodedPath, queryParameters);
+      Uri.http(_endpoint!.authority, unencodedPath, queryParameters);
 
   void open(Endpoint endpoint) {
     log.info('Opening socket to $endpoint');
     _endpoint = endpoint;
-    _host = endpoint.authority;
     _client.connectionFactory = (uri, proxyHost, proxyPort) async {
       return Socket.startConnect(endpoint.address, endpoint.port);
     };
@@ -311,29 +309,37 @@ class SubiquityClient {
     return (jsonDecode(responseStr) as List).isNotEmpty;
   }
 
-  /// Get guided disk options.
-  Future<GuidedStorageResponse> getGuidedStorage({bool wait = true}) async {
+  Future<GuidedStorageResponseV2> getGuidedStorageV2({bool wait = true}) async {
     final request =
-        await _openUrl('GET', url('storage/guided', {'wait': '$wait'}));
+        await _openUrl('GET', url('storage/v2/guided', {'wait': '$wait'}));
     final response = await request.close();
 
     final responseJson =
-        await _receiveJson("getGuidedStorage('$wait')", response);
-    return GuidedStorageResponse.fromJson(responseJson);
+        await _receiveJson("getGuidedStorageV2('$wait')", response);
+    return GuidedStorageResponseV2.fromJson(responseJson);
   }
 
-  Future<StorageResponseV2> setGuidedStorageV2(GuidedChoice choice) async {
+  Future<GuidedStorageResponseV2> setGuidedStorageV2(
+      GuidedChoiceV2 choice) async {
     final request = await _openUrl('POST', url('storage/v2/guided'));
     request.write(jsonEncode(choice.toJson()));
     final response = await request.close();
 
     final responseJson = await _receiveJson(
         'setGuidedStorageV2(${jsonEncode(choice.toJson())})', response);
+    return GuidedStorageResponseV2.fromJson(responseJson);
+  }
+
+  Future<StorageResponseV2> getOriginalStorageV2() async {
+    final request = await _openUrl('GET', url('storage/v2/orig_config'));
+    final response = await request.close();
+
+    final responseJson = await _receiveJson('getOriginalStorageV2()', response);
     return StorageResponseV2.fromJson(responseJson);
   }
 
-  Future<StorageResponseV2> getStorageV2() async {
-    final request = await _openUrl('GET', url('storage/v2'));
+  Future<StorageResponseV2> getStorageV2({bool wait = true}) async {
+    final request = await _openUrl('GET', url('storage/v2', {'wait': '$wait'}));
     final response = await request.close();
 
     final responseJson = await _receiveJson('getStorageV2()', response);

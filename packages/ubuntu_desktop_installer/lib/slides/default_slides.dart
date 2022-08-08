@@ -325,8 +325,7 @@ final _supportSlide = Slide(
 );
 
 class _SlideColumn extends StatelessWidget {
-  const _SlideColumn({Key? key, required this.children, required this.spacing})
-      : super(key: key);
+  const _SlideColumn({required this.children, required this.spacing});
 
   final List<Widget> children;
   final double? spacing;
@@ -355,32 +354,26 @@ class _SlideLabel extends StatelessWidget {
   // A text-only label.
   const _SlideLabel(
     this.text, {
-    Key? key,
     double? width,
   })  : icon = null,
         _fontSize = FontSize.medium,
-        _width = width,
-        super(key: key);
+        _width = width;
 
   // A rich text label with a large font suitable for headers.
   const _SlideLabel.large(
     this.text, {
-    Key? key,
     double? width,
   })  : icon = null,
         _fontSize = FontSize.xLarge,
-        _width = width,
-        super(key: key);
+        _width = width;
 
   // A plain text label prefixed with an icon.
   const _SlideLabel.icon({
-    Key? key,
     required this.text,
     this.icon,
     double? width,
   })  : _fontSize = FontSize.medium,
-        _width = width,
-        super(key: key);
+        _width = width;
 
   final String? icon;
   final String text;
@@ -431,10 +424,10 @@ class _SlideLabel extends StatelessWidget {
 // A rounded card with a 50% translucent background for labels and lists.
 class SlideCard extends StatelessWidget {
   const SlideCard({
-    Key? key,
+    super.key,
     this.width,
     required this.child,
-  }) : super(key: key);
+  });
 
   final double? width;
   final Widget child;
@@ -458,14 +451,14 @@ class SlideCard extends StatelessWidget {
 // be specified.
 class SlideLayout extends StatelessWidget {
   const SlideLayout({
-    Key? key,
+    super.key,
     this.background,
     this.content,
     this.contentAlignment = Alignment.topLeft,
     this.image,
     this.imageAlignment = Alignment.bottomRight,
     this.padding = _kInsets,
-  }) : super(key: key);
+  });
 
   final Widget? background;
   final Widget? content;

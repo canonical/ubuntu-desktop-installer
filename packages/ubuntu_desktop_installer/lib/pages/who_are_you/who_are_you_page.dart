@@ -20,7 +20,7 @@ part 'who_are_you_widgets.dart';
 /// It uses [WizardPage] and [WizardAction] to create an installer page.
 class WhoAreYouPage extends StatefulWidget {
   /// Creates a the installer page for setting up the user data.
-  const WhoAreYouPage({Key? key}) : super(key: key);
+  const WhoAreYouPage({super.key});
 
   /// Creates an instance with [WhoAreYouModel].
   static Widget create(BuildContext context) {

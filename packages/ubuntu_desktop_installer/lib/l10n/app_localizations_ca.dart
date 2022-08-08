@@ -84,7 +84,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Per obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://$url\">$url</a>';
+    return 'Per a obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -160,13 +160,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nom a la xarxa';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Cal un nom de xarxa';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Ara mateix no vull connectar-me a Internet';
 
   @override
   String get wirelessNetworkingDisabled => 'Wireless networking disabled';
@@ -181,7 +181,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get enableWifi => 'Enable Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Connecta';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';
@@ -254,7 +254,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Aquest ordinador duu diversos sistemes operatius. Què voleu fer?';
 
   @override
   String get installationTypeNoOSDetected => 'Aquest ordinador no duu cap sistema operatiu que s\'hagi detectat. Què voleu fer?';
@@ -319,6 +319,21 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Els documents, la música i la resta de fitxers personals es conservaran. Podreu triar quin sistema operatiu voleu utilitzar cada cop que engegueu l\'ordinador.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Instal·la ara';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Reserveu espai de disc arrossegant el divisor de més avall:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Fitxers';
+
+  @override
+  String get installAlongsidePartition => 'Partició:';
+
+  @override
+  String get installAlongsideSize => 'Mida:';
+
+  @override
+  String get installAlongsideAvailable => 'Disponible:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
@@ -581,10 +622,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Fosc';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Clar';
 
   @override
   String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
@@ -623,13 +664,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'On sou?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Ubicació';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Fus horari';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -734,7 +775,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get accessSlideLanguageSupport => 'Language support';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ajuda i assistència';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -757,8 +798,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get supportedSoftware => 'Supported software';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'S’estan copiant els fitxers…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Ha fallat la instal·lació';
 }

@@ -100,127 +100,127 @@ class AppLocalizationsIt extends AppLocalizations {
   String get detectLayout => 'Rileva disposizione tastiera';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Prego premere uno dei seguenti tasti:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Il seguente tasto è presente sulla propria tastiera?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Configura Avvio Sicuro';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Hai scelto di installare driver software di terze parti. Questo richiede lo spegnimento dell\'Avvio Sicuro.\nPer farlo, devi scegliere una chiave di sicurezza, e digitarla al riavvio del sistema.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Configura Avvio Sicuro';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Scegli una chiave di sicurezza';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Conferma la chiave di sicurezza';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Non installare il software dei driver per il momento';
 
   @override
   String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'È richiesta la chiave di sicurezza';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'Le chiavi di sicurezza non corrispondono';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Connetti alla rete';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Connettere questo computer alla rete permetterà a Ubuntu l\'installazione di software aggiuntivo necessario e a scegliere il tuo fuso orario.\n\nConnetti il computer via cavo ethernet, o scegli una Rete Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Usa connessione cablata';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Nessuna connessione cablata rilevata';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'La connessione cablata è disattivata';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Per usufruire della connessione ethernet in questo computer, una connessione cablata deve essere attiva';
 
   @override
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Connetti a una rete Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Connetti a una rete Wi-Fi nascosta';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nome della Rete';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'È richiesto il nome della rete';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Non voglio connettermi alla rete in questo momento';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Connessione senza fili disattivata';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Nessun dispositivo Wi-Fi rilevato';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Per usufruire della Wi-Fi in questo computer, la rete wireless deve essere abilitata';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Abilita Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Connetti';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Aggiornamenti e altro software';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Installazione normale';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Browser web, utilità, programmi di ufficio, giochi e lettori multimediali.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Installazione minima';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Browser web e strumenti di base.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Altre opzioni';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Installa software di terze parti per hardware grafico e Wi-Fi, e altri formati multimediali';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'Questo software è soggetto ai termini di licenza inclusi nella documentazione. Alcuni sono proprietari.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Attenzione</font>: Il computer non è connesso a una fonte di alimentazione.';
   }
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Scegli una chiave di sicurezza';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'La crittografia del disco protegge i tuoi file in caso di perdita del computer. Ad ogni avvio del computer sarà necessario inserire la chiave di sicurezza.\n\nQualsiasi file esterno a $RELEASE non verrà criptato.';
   }
 
   @override
@@ -319,6 +319,21 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Install Now';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';

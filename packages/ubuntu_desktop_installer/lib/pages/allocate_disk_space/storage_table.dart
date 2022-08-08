@@ -11,14 +11,14 @@ typedef OnStorageSelected = void Function(int disk, [int object]);
 
 class StorageTable extends StatelessWidget {
   const StorageTable({
-    Key? key,
+    super.key,
     required this.storages,
     required this.columns,
     this.controller,
     this.canSelect,
     this.isSelected,
     this.onSelected,
-  }) : super(key: key);
+  });
 
   final List<Disk> storages;
   final List<StorageColumn> columns;

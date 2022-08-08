@@ -13,7 +13,7 @@ import 'updates_other_software_model.dart';
 
 class UpdatesOtherSoftwarePage extends StatefulWidget {
   @visibleForTesting
-  const UpdatesOtherSoftwarePage({Key? key}) : super(key: key);
+  const UpdatesOtherSoftwarePage({super.key});
 
   @override
   State<UpdatesOtherSoftwarePage> createState() =>

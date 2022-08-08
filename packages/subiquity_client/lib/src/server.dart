@@ -1,11 +1,12 @@
 import 'dart:io';
 
-import 'package:meta/meta.dart';
-
 import 'endpoint.dart';
 import 'server/common.dart';
 import 'server/process.dart';
 import 'server/paths.dart';
+
+const _kWaitTimes = 30;
+const _kWaitDuration = Duration(seconds: 1);
 
 Future<Endpoint> defaultEndpoint(ServerMode serverMode) async {
   final socketPath = await getSocketPath(serverMode);
@@ -19,12 +20,6 @@ class SubiquityServer {
 
   SubiquityServer({this.process, required this.endpoint});
 
-  /// A callback for integration testing purposes. The callback is called when
-  /// the server has been started and thus, the application is ready for
-  /// integration testing.
-  @visibleForTesting
-  static void Function(Endpoint)? startupCallback;
-
   Future<Endpoint> start({
     List<String>? args,
     Map<String, String>? environment,
@@ -33,10 +28,7 @@ class SubiquityServer {
       await process!.start(additionalArgs: args, additionalEnv: environment);
     }
 
-    return _waitSubiquity(endpoint).then((_) {
-      startupCallback?.call(endpoint);
-      return endpoint;
-    });
+    return _waitSubiquity(endpoint).then((_) => endpoint);
   }
 
   static Future<void> _waitSubiquity(Endpoint endpoint) async {
@@ -45,8 +37,10 @@ class SubiquityServer {
       return Socket.startConnect(endpoint.address, endpoint.port);
     };
 
-    // allow 10s maximum for the server to start responding
-    for (var i = 0; i < 10; ++i) {
+    // allow some time for the server to start responding
+    log.info(
+        'Waiting server up to ${(_kWaitDuration * _kWaitTimes).inSeconds} seconds');
+    for (var i = 0; i < _kWaitTimes; ++i) {
       try {
         final request = await client.openUrl(
           'GET',
@@ -54,8 +48,13 @@ class SubiquityServer {
         );
         await request.close();
         break;
-      } on Exception catch (_) {
-        await Future.delayed(const Duration(seconds: 1));
+      } on Exception catch (e) {
+        if (i < _kWaitTimes - 1) {
+          log.error(e);
+          await Future.delayed(_kWaitDuration);
+        } else {
+          rethrow;
+        }
       }
     }
     client.close();

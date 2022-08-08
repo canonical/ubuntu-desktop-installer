@@ -179,4 +179,103 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get setupCompleteRestart => '* כל ההגדרות יחולו לאחר הפעלת אובונטו מחדש.';
+
+  @override
+  String get installationSlidesWelcome => 'ברוך בואך לאובונטו WSL';
+
+  @override
+  String get installationSlidesInitializing => 'מופעל…';
+
+  @override
+  String get installationSlidesUnpacking => 'ההפצה נפרסת';
+
+  @override
+  String get installationSlidesInstalling => 'כמעט סיימנו. תוכנית ההתקנה תדרוש את תשומת לבך בקרוב.';
+
+  @override
+  String get installationSlidesLaunching => 'ההפצה נטענת…';
+
+  @override
+  String get installationSlidesErrorMsg => 'משהו השתבש.';
+
+  @override
+  String get installationSlidesErrorTitle => 'משהו השתבש';
+
+  @override
+  String get installationSlidesErrorSub => 'נא להפעיל את WSL מחדש בעזרת הפקודות האלו ולנסות שוב:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+
+  @override
+  String get installationSlidesErrorText => '\nאירעה שגיאה שלא ניתן להשתקם ממנה.\n\nנא לסגור את היישום הזה, לפתוח Powershell או את שורת הפקודה ולהריץ את הפקודות הבאות:\n';
+
+  @override
+  String get installationSlidesDone => 'הכול מוכן. מאחלים לך ליהנות מאובונטו על WSL';
+
+  @override
+  String get installationSlidesExitTitle => 'לעזוב?';
+
+  @override
+  String get installationSlidesExitContents => 'סגירת החלון הזה לא תמנע מההתקנה להמשיך לפעול ברקע.\n\nמלבד זאת, אפשר להמשיך ולחקור מה אפשר לעשות עם אובונטו על WSL.';
+
+  @override
+  String get installationSlidesCustomExitTitle => 'כמעט סיימנו';
+
+  @override
+  String get installationSlidesCustomExitContents => 'יש להשלים עוד כמה צעדים פשוטים בחלון ההתקנה הראשי.\nאפשר לצאת מהחלון הזה ולעבור לשם?';
+
+  @override
+  String get installationSlidesOk => 'בסדר';
+
+  @override
+  String get installationSlidesLeave => 'לעזוב';
+
+  @override
+  String get installationSlidesCancel => 'לבטל';
+
+  @override
+  String get installationSlidesUbuntuOnWsl => 'אובונטו על WSL';
+
+  @override
+  String get installationSlidesUbuntuOnWslText => 'סביבת אובונטו מלאה, עם שילוב אדוק בתוך Windows, לפיתוח והפעלה של יישומי לינוקס. מותאמת לענן, לאינטרנט, מדעי נתונים, מכשירים קטנים ולעשות כיף!';
+
+  @override
+  String get installationSlidesUbuntuWslWebDev => 'אובונטו WSL\nלפיתוח אתרים';
+
+  @override
+  String get installationSlidesUbuntuWslWebDevText => 'ניתן לפתח ב־WSL באמצעות סביבות פיתוח ל־Windows כולל VS Code ו־IntelliJ וליהנות מתמיכה מלאה ב־NodeJS וב־Ruby.';
+
+  @override
+  String get installationSlidesUbuntuWslDataScience => 'אובונטו WSL למדעי נתונים';
+
+  @override
+  String get installationSlidesUbuntuWslDataScienceText => 'חבילת מדעי הנתונים של NVIDIA מעניקה לך להוציא את הביצועים המיטביים במיזמים מתחומי מדעי הנתונים ולמידת מכונה על גבי מנהלי התקנים שמותאמים לסביבת Windows.';
+
+  @override
+  String get installationSlidesUbuntuWslGuiApps => 'אובונטו WSL\nליישומים גרפיים';
+
+  @override
+  String get installationSlidesUbuntuWslGuiAppsText => 'ניתן לפתח ולהציג בתצוגה מקדימה אתרים ויישומים גרפיים בלינוקס בעזרת WSLg לפיתוח למספר פלטפורמות.';
+
+  @override
+  String get installationSlidesUbuntuWslDevOps => 'אובונטו WSL ל־DevOps';
+
+  @override
+  String get installationSlidesUbuntuWslDevOpsText => 'בדיקת תאימות של תהליכי CI/CD על ידי פיתוח על אובונטו WSL מקומית בטרם פרסום לסביבה מבצעית עם אובונטו';
+
+  @override
+  String get installationSlidesUbuntuWslEnterprises => 'אובונטו WSL לתאגידים';
+
+  @override
+  String get installationSlidesUbuntuWslEnterprisesText => 'הענקת יכולות למפתחים בסביבות\nפיתוח תאגידיות מבוססות Windows\nבעזרת אובונטו עם תמיכה לטווח ארוך.';
+
+  @override
+  String get installationSlidesFindOutMore => 'למידע נוסף';
+
+  @override
+  String get installationSlidesFindOutMoreVisit => 'ניתן לבקר באתר ';
+
+  @override
+  String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
+
+  @override
+  String get installationSlidesFindOutMoreText => ' כדי ללמוד עוד בנוגע לאובונטו על WSL ואיך Canonical תומכת במפתחים ובארגונים.';
 }

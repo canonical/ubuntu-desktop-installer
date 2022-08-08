@@ -18,8 +18,8 @@ class SetupCompletePage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const SetupCompletePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates an instance with [SetupCompleteModel].
   static Widget create(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
@@ -14,11 +15,11 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async => await cleanUpSubiquity());
+  tearDown(() async => await resetAllServices());
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -44,8 +45,7 @@ void main() {
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    app.main(<String>['--initial-route', Routes.profileSetup]);
-    await waitForSubiquityServer();
+    await app.main(<String>['--initial-route', Routes.profileSetup]);
     await tester.pumpAndSettle();
 
     await testProfileSetupPage(
@@ -76,8 +76,7 @@ void main() {
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    app.main(<String>['--reconfigure']);
-    await waitForSubiquityServer();
+    await app.main(<String>['--reconfigure']);
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);

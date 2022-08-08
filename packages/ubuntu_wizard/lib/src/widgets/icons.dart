@@ -7,7 +7,7 @@ import 'package:yaru/yaru.dart';
 ///  * [ValidatedFormField]
 class SuccessIcon extends StatelessWidget {
   /// Creates the icon.
-  const SuccessIcon({Key? key}) : super(key: key);
+  const SuccessIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class SuccessIcon extends StatelessWidget {
 /// See also:
 ///  * [ValidatedFormField]
 class ErrorIcon extends StatelessWidget {
-  const ErrorIcon({Key? key}) : super(key: key);
+  const ErrorIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -319,6 +319,21 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Instalar $product junto a $os1 y $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Instalar $product junto a ellos';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Instalar $product junto a otras particiones';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Se conservarán los documentos, la música y los demás archivos personales. Podrá elegir el sistema operativo que quiere utilizar cada vez que arranca el equipo.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Instalar ahora';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Asigne el espacio en disco arrastrando el divisor siguiente:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return 'Se ocultaron $num particiones más pequeñas. Para mayor control, utilice la <a href=\"$url\">herramienta de particionado avanzada</a>';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Redimensionar partición';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Asignar espacio';
+
+  @override
+  String get installAlongsideFiles => 'Archivos';
+
+  @override
+  String get installAlongsidePartition => 'Partición:';
+
+  @override
+  String get installAlongsideSize => 'Tamaño:';
+
+  @override
+  String get installAlongsideAvailable => 'Disponible:';
 
   @override
   String get allocateDiskSpace => 'Asignar espacio de disco';
@@ -518,16 +559,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'El nombre de usuario no es válido';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Ese nombre de usuario ya existe.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Ese nombre está reservado para que el sistema lo use.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Ese nombre es demasiado extenso.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Ese nombre contiene caracteres no válidos.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Elija una contraseña';
@@ -757,8 +798,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get supportedSoftware => 'Programas compatibles';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Copiando archivos…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Falló la instalación';
 }

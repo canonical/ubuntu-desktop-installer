@@ -583,5 +583,50 @@
   "copyingFiles": "Kopiante dosierojn...",
   "@copyingFiles": {},
   "installationFailed": "Instalado fiaskis",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "installAlongsideHiddenPartitions": "{num} etaj subdiskoj estas kaŝitaj; uzu la <a href=\"{url}\">altnivelan subdiskilon</a> por agordi tiujn",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Asignu diskospacon ŝovante la jenan dividilon:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideSize": "Grando:",
+  "@installAlongsideSize": {},
+  "installAlongsideResizePartition": "Ŝanĝi grandon de subdisko",
+  "@installAlongsideResizePartition": {},
+  "installAlongsidePartition": "Subdisko:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAllocateSpace": "Asigni spacon",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideAvailable": "Disponebla:",
+  "@installAlongsideAvailable": {},
+  "installAlongsideFiles": "Dosieroj",
+  "@installAlongsideFiles": {},
+  "installationTypeAlongsideMulti": "Instali {product} apud ili",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideDual": "Instali {product} apud {os1} kaj {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Instali {product} apud aliaj subdiskoj",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  }
 }

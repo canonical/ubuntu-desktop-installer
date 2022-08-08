@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -31,12 +32,10 @@ void main() {
       subiquityServer: server,
       serverArgs: ['--foo', 'bar'],
       serverEnvironment: {'baz': 'qux'},
-      onInitSubiquity: (client) => client.setVariant(Variant.DESKTOP),
     );
     verify(server.start(args: ['--foo', 'bar'], environment: {'baz': 'qux'}))
         .called(1);
     verify(client.open(endpoint)).called(1);
-    verify(client.setVariant(Variant.DESKTOP)).called(1);
   });
 
   testWidgets('registers the client', (tester) async {
@@ -131,5 +130,49 @@ void main() {
 
     expect(getService<SubiquityStatusMonitor>(), equals(monitor));
     verify(monitor.start(endpoint)).called(1);
+  });
+
+  testWidgets('does not mark UI-specific pages configured', (tester) async {
+    final client = MockSubiquityClient();
+    final server = MockSubiquityServer();
+    when(server.start(
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer(
+      (_) async => Endpoint.unix(''),
+    );
+
+    await runWizardApp(
+      SizedBox(),
+      subiquityClient: client,
+      subiquityServer: server,
+    );
+
+    verifyNever(client.markConfigured(any));
+  });
+
+  testWidgets('ensure initialized', (tester) async {
+    var wmInit = false;
+    final methodChannel = MethodChannel('window_manager');
+    methodChannel.setMockMethodCallHandler((call) async {
+      if (call.method == 'ensureInitialized') {
+        wmInit = true;
+      }
+      if (call.method == 'close') {}
+    });
+    final client = MockSubiquityClient();
+    final server = MockSubiquityServer();
+    when(server.start(
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer(
+      (_) async => Endpoint.unix(''),
+    );
+
+    await runWizardApp(
+      SizedBox(),
+      subiquityClient: client,
+      subiquityServer: server,
+    );
+
+    expect(wmInit, isTrue);
   });
 }

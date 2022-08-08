@@ -319,6 +319,21 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => '文件、音乐和其他个人文件将被保存。每次电脑启动时，您可以选择所需的操作系统。';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => '立即安装';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
 
   @override
   String get allocateDiskSpace => '分配磁盘空间';
@@ -524,7 +565,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => '名字过长.';
 
   @override
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
@@ -673,13 +714,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell 图片管理器';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP 图像处理程序';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut 视频编辑器';
 
   @override
   String get webSlideTitle => 'Make the most of the web';
@@ -690,13 +731,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox 浏览器';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
 
   @override
-  String get webSlideChromium => 'Chromium';
+  String get webSlideChromium => 'Chromium浏览器';
 
   @override
   String get officeSlideTitle => 'Everything you need for the office';
@@ -708,10 +749,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get officeSlideWriter => 'LibreOffice Writer';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'LibreOffice 表格';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'LibreOffice 演示';
 
   @override
   String get accessSlideTitle => 'Access for everyone';
@@ -731,10 +772,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get accessSlideAssistiveTechnologies => 'Assistive technologies';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => '语言支持';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => '帮助和支持';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -742,7 +783,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>你可以问问题并搜索令人印象深刻的已回答问题。你的<a href=\"https://loco.ubuntu.com/teams\">社区团队</a>可能会为你的语言提供支持.';
 
   @override
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
@@ -754,10 +795,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get availableSoftware => 'Available software';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => '支持软件';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => '复制文件……';
 
   @override
   String get installationFailed => 'Installation failed';

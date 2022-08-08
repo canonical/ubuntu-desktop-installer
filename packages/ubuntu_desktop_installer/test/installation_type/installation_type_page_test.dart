@@ -24,6 +24,7 @@ void main() {
     bool? encryption,
     ProductInfo? productInfo,
     List<OsProber>? existingOS,
+    bool? canInstallAlongside,
   }) {
     final model = MockInstallationTypeModel();
     when(model.installationType)
@@ -33,6 +34,7 @@ void main() {
     when(model.encryption).thenReturn(encryption ?? false);
     when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
     when(model.existingOS).thenReturn(existingOS);
+    when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
     return model;
   }
 
@@ -110,28 +112,129 @@ void main() {
     verify(model.installationType = InstallationType.reinstall).called(1);
   }, skip: true);
 
-  testWidgets('alongside', (tester) async {
+  testWidgets('alongside windows', (tester) async {
     final model = buildModel(
-      productInfo: ProductInfo(name: 'Ubuntu 21.10'),
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Windows 10',
+          label: 'WIN10',
+          version: '10',
+          type: 'ntfs',
+        ),
+      ],
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
+  testWidgets('alongside ubuntu', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         OsProber(
           long: 'Ubuntu 18.04 LTS',
           label: 'Ubuntu',
           version: '18.04 LTS',
           type: 'ext4',
-        )
+        ),
       ],
+      canInstallAlongside: true,
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
         RadioButton<InstallationType>,
         tester.lang
-            .installationTypeAlongside('Ubuntu 21.10', 'Ubuntu 18.04 LTS'));
+            .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
-  }, skip: true);
+  });
+
+  testWidgets('alongside unknown', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
+  testWidgets('alongside dual os', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Windows 10',
+          label: 'WIN10',
+          version: '10',
+          type: 'ntfs',
+        ),
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+      ],
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(
+        RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongsideDual(
+            'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
+  testWidgets('alongside multi os', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Windows 10',
+          label: 'WIN10',
+          version: '10',
+          type: 'ntfs',
+        ),
+        OsProber(
+          long: 'Ubuntu 18.04 LTS',
+          label: 'Ubuntu',
+          version: '18.04 LTS',
+          type: 'ext4',
+        ),
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+      ],
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
 
   testWidgets('erase', (tester) async {
     final model = buildModel();
@@ -171,8 +274,10 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
-    when(client.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponse(status: ProbeStatus.DONE));
+    when(client.getGuidedStorageV2())
+        .thenAnswer((_) async => GuidedStorageResponseV2());
+    when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
+        disks: [], installMinimumSize: 0, needBoot: false, needRoot: false));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);

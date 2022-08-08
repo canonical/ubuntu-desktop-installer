@@ -7,14 +7,14 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  build_runner: ^2.1.1
+  build_runner: ^2.2.0
   flutter:
     sdk: flutter
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
   gsettings: ^0.2.5
-  mockito: 5.1.0
+  mockito: 5.3.0
   path: ^1.8.0
   subiquity_client:
     path: ../subiquity_client

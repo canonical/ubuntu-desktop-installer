@@ -319,6 +319,21 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => '지금 설치';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
 
   @override
   String get allocateDiskSpace => '디스크 공간 할당';
@@ -518,7 +559,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => '올바르지 않은 사용자 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 있습니다.';
+  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 존재합니다.';
 
   @override
   String get whoAreYouPageUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
@@ -527,7 +568,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageUsernameTooLong => '사용자 이름이 너무 깁니다.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => '사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.';
 
   @override
   String get whoAreYouPagePasswordLabel => '암호 선택';
@@ -757,8 +798,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get supportedSoftware => '지원되는 소프트웨어';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => '파일 복사 중...';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => '설치 실패';
 }

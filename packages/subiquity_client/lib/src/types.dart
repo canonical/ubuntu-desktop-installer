@@ -73,11 +73,9 @@ enum ApplicationState {
   STARTING_UP,
   CLOUD_INIT_WAIT,
   EARLY_COMMANDS,
-  WAITING,
   NEEDS_CONFIRMATION,
+  WAITING,
   RUNNING,
-  POST_WAIT,
-  POST_RUNNING,
   UU_RUNNING,
   UU_CANCELLING,
   DONE,
@@ -338,10 +336,16 @@ class PartitionOrGap with _$PartitionOrGap {
   const factory PartitionOrGap.gap({
     required int offset,
     required int size,
+    required GapUsable usable,
   }) = Gap;
 
   factory PartitionOrGap.fromJson(Map<String, dynamic> json) =>
       _$PartitionOrGapFromJson(json);
+}
+
+enum GapUsable {
+  YES,
+  TOO_MANY_PRIMARY_PARTS,
 }
 
 @freezed
@@ -412,11 +416,75 @@ class StorageResponseV2 with _$StorageResponseV2 {
     required List<Disk> disks,
     required bool needRoot,
     required bool needBoot,
+    required int installMinimumSize,
     ErrorReportRef? errorReport,
   }) = _StorageResponseV2;
 
   factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$StorageResponseV2FromJson(json);
+}
+
+@freezed
+class GuidedResizeValues with _$GuidedResizeValues {
+  const factory GuidedResizeValues({
+    required int installMax,
+    required int minimum,
+    required int recommended,
+    required int maximum,
+  }) = _GuidedResizeValues;
+
+  factory GuidedResizeValues.fromJson(Map<String, dynamic> json) =>
+      _$GuidedResizeValuesFromJson(json);
+}
+
+@Freezed(unionKey: '\$type', unionValueCase: FreezedUnionCase.pascal)
+class GuidedStorageTarget with _$GuidedStorageTarget {
+  @FreezedUnionValue('GuidedStorageTargetReformat')
+  const factory GuidedStorageTarget.reformat({
+    required String diskId,
+  }) = GuidedStorageTargetReformat;
+
+  @FreezedUnionValue('GuidedStorageTargetResize')
+  const factory GuidedStorageTarget.resize({
+    required String diskId,
+    required int partitionNumber,
+    required int newSize,
+    required int? minimum,
+    required int? recommended,
+    required int? maximum,
+  }) = GuidedStorageTargetResize;
+
+  @FreezedUnionValue('GuidedStorageTargetUseGap')
+  const factory GuidedStorageTarget.useGap({
+    required String diskId,
+    required Gap gap,
+  }) = GuidedStorageTargetUseGap;
+
+  factory GuidedStorageTarget.fromJson(Map<String, dynamic> json) =>
+      _$GuidedStorageTargetFromJson(json);
+}
+
+@freezed
+class GuidedChoiceV2 with _$GuidedChoiceV2 {
+  const factory GuidedChoiceV2({
+    required GuidedStorageTarget target,
+    @Default(false) bool useLvm,
+    String? password,
+  }) = _GuidedChoiceV2;
+
+  factory GuidedChoiceV2.fromJson(Map<String, dynamic> json) =>
+      _$GuidedChoiceV2FromJson(json);
+}
+
+@freezed
+class GuidedStorageResponseV2 with _$GuidedStorageResponseV2 {
+  const factory GuidedStorageResponseV2({
+    GuidedChoiceV2? configured,
+    @Default([]) List<GuidedStorageTarget> possible,
+  }) = _GuidedStorageResponseV2;
+
+  factory GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =>
+      _$GuidedStorageResponseV2FromJson(json);
 }
 
 @freezed
@@ -613,10 +681,23 @@ class UbuntuProService with _$UbuntuProService {
 }
 
 @freezed
+class UbuntuProSubscription with _$UbuntuProSubscription {
+  const factory UbuntuProSubscription({
+    required String contractName,
+    required String accountName,
+    required String contractToken,
+    required List<UbuntuProService> services,
+  }) = _UbuntuProSubscription;
+
+  factory UbuntuProSubscription.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProSubscriptionFromJson(json);
+}
+
+@freezed
 class UbuntuProCheckTokenAnswer with _$UbuntuProCheckTokenAnswer {
   const factory UbuntuProCheckTokenAnswer({
     required UbuntuProCheckTokenStatus status,
-    required List<UbuntuProService>? services,
+    required UbuntuProSubscription? subscription,
   }) = _UbuntuProCheckTokenAnswer;
 
   factory UbuntuProCheckTokenAnswer.fromJson(Map<String, dynamic> json) =>

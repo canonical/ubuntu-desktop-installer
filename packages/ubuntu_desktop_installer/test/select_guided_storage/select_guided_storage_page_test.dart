@@ -1,9 +1,11 @@
+import 'package:dartx/dartx.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -16,20 +18,31 @@ import 'select_guided_storage_page_test.mocks.dart';
 
 @GenerateMocks([SelectGuidedStorageModel])
 void main() {
-  final testStorages = <Disk>[
+  final testDisks = <Disk>[
     testDisk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
     testDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
   ];
+  final testStorages = testDisks
+      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
+      .toList();
 
   SelectGuidedStorageModel buildModel({
-    List<Disk>? storages,
+    List<Disk>? disks,
+    List<GuidedStorageTargetReformat>? storages,
     int? selectedIndex,
-    Disk? selectedStorage,
+    Disk? selectedDisk,
+    GuidedStorageTargetReformat? selectedStorage,
   }) {
     final model = MockSelectGuidedStorageModel();
-    when(model.storages).thenReturn(storages ?? <Disk>[]);
+    when(model.storages)
+        .thenReturn(storages ?? <GuidedStorageTargetReformat>[]);
     when(model.selectedIndex).thenReturn(selectedIndex ?? 0);
+    when(model.selectedDisk).thenReturn(selectedDisk);
     when(model.selectedStorage).thenReturn(selectedStorage);
+    when(model.getDisk(any))
+        .thenAnswer((i) => disks?.elementAtOrNull(i.positionalArguments.first));
+    when(model.getStorage(any)).thenAnswer(
+        (i) => storages?.elementAtOrNull(i.positionalArguments.first));
     return model;
   }
 
@@ -41,17 +54,17 @@ void main() {
   }
 
   testWidgets('list of guided storages', (tester) async {
-    final model = buildModel(storages: testStorages);
+    final model = buildModel(storages: testStorages, disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byType(DropdownButton<int>));
     await tester.pumpAndSettle();
 
-    for (final storage in testStorages) {
+    for (final disk in testDisks) {
       expect(
         find.descendant(
           of: find.byType(DropdownButton<int>),
-          matching: find.textContaining(storage.path!),
+          matching: find.textContaining(disk.path!),
         ),
         findsOneWidget,
       );
@@ -59,7 +72,7 @@ void main() {
   });
 
   testWidgets('select a guided storage', (tester) async {
-    final model = buildModel(storages: testStorages);
+    final model = buildModel(storages: testStorages, disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byType(DropdownButton<int>));
@@ -76,18 +89,24 @@ void main() {
   });
 
   testWidgets('selected guided storage', (tester) async {
+    final selectedDisk = testDisks.last;
     final selectedStorage = testStorages.last;
     final model = buildModel(
+      disks: testDisks,
       storages: testStorages,
+      selectedDisk: selectedDisk,
       selectedStorage: selectedStorage,
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    expect(find.text(selectedStorage.path!), findsOneWidget);
-    expect(find.text(filesize(selectedStorage.size)), findsOneWidget);
+    expect(find.text(selectedDisk.path!), findsOneWidget);
+    expect(find.text(filesize(selectedDisk.size)), findsOneWidget);
   });
 
   testWidgets('loads and saves guided storages', (tester) async {
-    final model = buildModel(storages: testStorages);
+    final model = buildModel(
+        storages: testStorages,
+        disks: testDisks,
+        selectedStorage: testStorages.first);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     verify(model.loadGuidedStorage()).called(1);
@@ -103,7 +122,9 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final service = MockDiskStorageService();
-    when(service.getGuidedStorage()).thenAnswer((_) async => testStorages);
+    when(service.getStorage()).thenAnswer((_) async => []);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2());
     registerMockService<DiskStorageService>(service);
 
     await tester.pumpWidget(tester.buildApp(SelectGuidedStoragePage.create));

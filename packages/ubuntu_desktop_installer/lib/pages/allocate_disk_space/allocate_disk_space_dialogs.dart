@@ -5,8 +5,8 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
+import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
-import 'storage_size_box.dart';
 import 'storage_types.dart';
 
 /// Shows a confirmation dialog with the given title and message.
@@ -78,7 +78,7 @@ Future<void> showCreatePartitionDialog(
                   return StorageSizeBox(
                     size: partitionSize.value,
                     unit: partitionUnit.value,
-                    available: gap.size,
+                    maximum: gap.size,
                     onSizeChanged: (v) => partitionSize.value = v,
                     onUnitSelected: (v) => partitionUnit.value = v,
                   );
@@ -240,11 +240,10 @@ Future<void> showEditPartitionDialog(
 
 class _PartitionMountField extends StatelessWidget {
   const _PartitionMountField({
-    Key? key,
     this.initialMount,
     required this.partitionFormat,
     required this.partitionMount,
-  }) : super(key: key);
+  });
 
   final String? initialMount;
   final ValueNotifier<PartitionFormat?> partitionFormat;
@@ -280,10 +279,9 @@ class _PartitionMountField extends StatelessWidget {
 
 class _PartitionWipeCheckbox extends StatelessWidget {
   const _PartitionWipeCheckbox({
-    Key? key,
     required this.canWipe,
     required this.wipe,
-  }) : super(key: key);
+  });
 
   final bool canWipe;
   final ValueNotifier<bool?> wipe;
@@ -306,9 +304,8 @@ class _PartitionWipeCheckbox extends StatelessWidget {
 
 class _PartitionFormatSelector extends StatelessWidget {
   const _PartitionFormatSelector({
-    Key? key,
     required this.partitionFormat,
-  }) : super(key: key);
+  });
 
   final ValueNotifier<PartitionFormat?> partitionFormat;
 

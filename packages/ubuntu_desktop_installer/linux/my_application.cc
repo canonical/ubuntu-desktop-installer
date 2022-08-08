@@ -1,9 +1,6 @@
 #include "my_application.h"
 
 #include <flutter_linux/flutter_linux.h>
-#ifdef HAVE_LIBHANDY
-#include <handy.h>
-#endif
 
 #include "flutter/generated_plugin_registrant.h"
 
@@ -53,18 +50,6 @@ static void my_application_activate(GApplication* application) {
   }
 #endif
 
-#ifdef HAVE_LIBHANDY
-  GtkWindow* window = GTK_WINDOW(hdy_application_window_new());
-  gtk_window_set_application(window, GTK_APPLICATION(application));
-  GtkBox* box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-  gtk_widget_show(GTK_WIDGET(box));
-  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(box));
-  HdyHeaderBar* header_bar = HDY_HEADER_BAR(hdy_header_bar_new());
-  gtk_widget_show(GTK_WIDGET(header_bar));
-  hdy_header_bar_set_show_close_button(header_bar, TRUE);
-  hdy_header_bar_set_decoration_layout(header_bar, ":close");
-  gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(header_bar), false, true, 0);
-#else
   GtkWindow* window =
       GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
   GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
@@ -72,9 +57,17 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_show_close_button(header_bar, TRUE);
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
-#endif
-
   gtk_window_set_default_size(window, 960, 680);
+
+  g_autoptr(FlDartProject) project = fl_dart_project_new();
+  fl_dart_project_set_dart_entrypoint_arguments(
+      project, self->dart_entrypoint_arguments);
+
+  FlView* view = fl_view_new(project);
+  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
+
+  fl_register_plugins(FL_PLUGIN_REGISTRY(view));
+
   gtk_widget_realize(GTK_WIDGET(window));
 
   if (my_application_fit_to_workarea(window)) {
@@ -87,20 +80,7 @@ static void my_application_activate(GApplication* application) {
   }
   gtk_widget_show(GTK_WIDGET(window));
 
-  g_autoptr(FlDartProject) project = fl_dart_project_new();
-  fl_dart_project_set_dart_entrypoint_arguments(
-      project, self->dart_entrypoint_arguments);
-
-  FlView* view = fl_view_new(project);
   gtk_widget_show(GTK_WIDGET(view));
-#ifdef HAVE_LIBHANDY
-  gtk_box_pack_end(GTK_BOX(box), GTK_WIDGET(view), true, true, 0);
-#else
-  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
-#endif
-
-  fl_register_plugins(FL_PLUGIN_REGISTRY(view));
-
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
 
@@ -118,10 +98,6 @@ static gboolean my_application_local_command_line(GApplication* application,
     *exit_status = 1;
     return TRUE;
   }
-
-#ifdef HAVE_LIBHANDY
-  hdy_init();
-#endif
 
   g_application_activate(application);
   *exit_status = 0;

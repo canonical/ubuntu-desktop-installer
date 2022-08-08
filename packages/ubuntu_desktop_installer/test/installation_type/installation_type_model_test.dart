@@ -4,16 +4,14 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 
-import '../test_utils.dart';
 import 'installation_type_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
 @GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
-  test('init existing OS', () async {
+  test('existing OS', () async {
     const ubuntu2110 = OsProber(
       long: 'Ubuntu 21.10',
       label: 'Ubuntu',
@@ -26,27 +24,16 @@ void main() {
       version: '22.04 LTS',
       type: 'linux',
     );
-    final existingOS = [
-      testDisk(partitions: [
-        Partition(os: ubuntu2110),
-        Partition(os: ubuntu2204),
-      ]),
-    ];
 
     final service = MockDiskStorageService();
-    when(service.getGuidedStorage()).thenAnswer((_) async => existingOS);
+    when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallationTypeModel(
-        MockSubiquityClient(), service, MockTelemetryService());
-    await model.init();
-    verify(service.getGuidedStorage()).called(1);
-
+    final model = InstallationTypeModel(service, MockTelemetryService());
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
   test('notify changes', () {
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       MockDiskStorageService(),
       MockTelemetryService(),
     );
@@ -72,7 +59,6 @@ void main() {
 
   test('product info', () {
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       MockDiskStorageService(),
       MockTelemetryService(),
     );
@@ -85,8 +71,7 @@ void main() {
     when(disks.hasEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
-    final model =
-        InstallationTypeModel(MockSubiquityClient(), disks, telemetry);
+    final model = InstallationTypeModel(disks, telemetry);
     verifyNever(telemetry.setPartitionMethod(any));
 
     model.installationType = InstallationType.erase;
@@ -132,7 +117,6 @@ void main() {
     when(storage.hasEncryption).thenReturn(false);
 
     final model = InstallationTypeModel(
-      MockSubiquityClient(),
       storage,
       MockTelemetryService(),
     );
@@ -144,5 +128,160 @@ void main() {
     model.advancedFeature = AdvancedFeature.lvm;
     model.save();
     verify(storage.useLvm = true).called(1);
+  });
+
+  test('single reformat target', () async {
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    final choice = GuidedChoiceV2(target: reformat);
+
+    final service = MockDiskStorageService();
+    when(service.hasEncryption).thenReturn(false);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    when(service.setGuidedStorage(reformat))
+        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    await model.init();
+
+    await model.save();
+    verify(service.setGuidedStorage(reformat)).called(1);
+  });
+
+  test('can install alongside', () async {
+    final service = MockDiskStorageService();
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    // none
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+    await model.init();
+    expect(model.canInstallAlongside, isFalse);
+
+    // reformat
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    await model.init();
+    expect(model.canInstallAlongside, isFalse);
+
+    // resize
+    final resize = GuidedStorageTargetResize(
+        diskId: '',
+        partitionNumber: 0,
+        newSize: 0,
+        maximum: 0,
+        minimum: 0,
+        recommended: 0);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+
+    // gap
+    final gap = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 0, usable: GapUsable.YES));
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+
+    // all
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+    await model.init();
+    expect(model.canInstallAlongside, isTrue);
+  });
+
+  test('pre-select target', () async {
+    final service = MockDiskStorageService();
+    final model = InstallationTypeModel(service, MockTelemetryService());
+
+    // none
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // reformat
+    final reformat = GuidedStorageTargetReformat(diskId: '');
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), reformat);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // multiple reformats
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponseV2(possible: [reformat, reformat]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // resize
+    final resize = GuidedStorageTargetResize(
+        diskId: '',
+        partitionNumber: 0,
+        newSize: 0,
+        maximum: 0,
+        minimum: 0,
+        recommended: 0);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), isNull);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // gap
+    final gap = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 1, usable: GapUsable.YES));
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), gap);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // multiple gaps
+    final gap2 = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 2, usable: GapUsable.YES));
+    final gap3 = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 3, usable: GapUsable.YES));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => GuidedStorageResponseV2(possible: [gap, gap3, gap2]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), isNull);
+    expect(model.preselectTarget(InstallationType.alongside), gap3);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+
+    // all
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+    await model.init();
+    expect(model.preselectTarget(InstallationType.erase), reformat);
+    expect(model.preselectTarget(InstallationType.alongside), gap);
+    expect(model.preselectTarget(InstallationType.reinstall), isNull);
+    expect(model.preselectTarget(InstallationType.manual), isNull);
+  });
+
+  test('reset storage', () async {
+    final service = MockDiskStorageService();
+    when(service.resetStorage()).thenAnswer((_) async => []);
+
+    final model = InstallationTypeModel(service, MockTelemetryService());
+    await model.resetStorage();
+    verify(service.resetStorage()).called(1);
   });
 }

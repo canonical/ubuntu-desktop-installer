@@ -14,8 +14,8 @@ final log = Logger('write_changes_to_disk');
 
 class WriteChangesToDiskPage extends StatefulWidget {
   const WriteChangesToDiskPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
@@ -80,13 +80,13 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           child: Text(lang.writeChangesPartitionsHeader),
         ),
         const SizedBox(height: 10),
-        for (final disk in model.disks)
-          for (final partition in model.partitions(disk))
+        for (final entry in model.partitions.entries)
+          for (final partition in entry.value)
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _PartitionLabel(disk, partition),
+                _PartitionLabel(entry.key, partition),
                 const SizedBox(height: kContentSpacing / 2),
               ],
             ),
@@ -105,22 +105,23 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
 }
 
 class _PartitionLabel extends StatelessWidget {
-  _PartitionLabel(this.disk, this.partition) : super(key: ValueKey(partition));
+  _PartitionLabel(this.sysname, this.partition)
+      : super(key: ValueKey(partition));
 
-  final Disk disk;
+  final String sysname;
   final Partition partition;
 
   String formatPartition(AppLocalizations lang) {
     if (partition.mount?.isNotEmpty == true) {
       return lang.writeChangesPartitionEntryMounted(
-        disk.sysname,
+        sysname,
         partition.number ?? 0,
         partition.format ?? '',
         partition.mount ?? '',
       );
     } else {
       return lang.writeChangesPartitionEntryUnmounted(
-        disk.sysname,
+        sysname,
         partition.number ?? 0,
         partition.format ?? '',
       );

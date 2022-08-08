@@ -12,7 +12,7 @@ import 'installation_complete_model.dart';
 const _kAvatarBorder = Color(0xFFe5e5e5);
 
 class InstallationCompletePage extends StatelessWidget {
-  const InstallationCompletePage({Key? key}) : super(key: key);
+  const InstallationCompletePage({super.key});
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();

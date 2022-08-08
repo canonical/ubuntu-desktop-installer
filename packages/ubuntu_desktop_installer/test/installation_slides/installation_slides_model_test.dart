@@ -64,7 +64,6 @@ void main() async {
     final model = InstallationSlidesModel(client, journal);
 
     expect(model.state, isNull);
-    expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);
 
@@ -81,17 +80,14 @@ void main() async {
     await model.init();
 
     expect(model.state, ApplicationState.STARTING_UP);
-    expect(model.isPreparing, isTrue);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);
 
     await waitForState(ApplicationState.RUNNING);
-    expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isTrue);
     expect(model.isDone, isFalse);
 
     await waitForState(ApplicationState.DONE);
-    expect(model.isPreparing, isFalse);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isTrue);
   });
@@ -148,28 +144,6 @@ void main() async {
     model.toggleLogVisibility();
     expect(model.isLogVisible, isFalse);
     expect(wasNotified, equals(2));
-  });
-
-  test('installation steps', () async {
-    final client = MockSubiquityClient();
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => testStatus(ApplicationState.RUNNING),
-    );
-
-    final journal = MockJournalService();
-    final model = InstallationSlidesModel(client, journal);
-    expect(model.installationStep, equals(-1));
-    expect(model.installationStepCount, equals(5));
-
-    await model.init();
-    expect(model.installationStep, equals(0));
-
-    when(client.status(current: anyNamed('current'))).thenAnswer(
-      (_) async => testStatus(ApplicationState.POST_RUNNING),
-    );
-
-    await model.init();
-    expect(model.installationStep, equals(2));
   });
 }
 

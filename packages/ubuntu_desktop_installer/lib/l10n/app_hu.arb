@@ -638,5 +638,50 @@
   "whoAreYouPageUsernameInvalidChars": "Ez a név érvénytelen karaktereket tartalmaz.",
   "@whoAreYouPageUsernameInvalidChars": {},
   "copyingFiles": "Fájlok másolása...",
-  "@copyingFiles": {}
+  "@copyingFiles": {},
+  "installationTypeAlongsideDual": "Telepítse a {product} oldalt a {os1} és {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Telepítse melléjük a {product}",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Telepítse a {product} oldalt más partíciók mellé",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Ossza ki a meghajtóterületet az alábbi osztóvonal húzásával:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideResizePartition": "Partíció átméretezése",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Hely kiosztása",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Fájlok",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Partíció:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAvailable": "Elérhető:",
+  "@installAlongsideAvailable": {},
+  "installAlongsideHiddenPartitions": "{num} a kisebb partíciók el vannak rejtve, használja a <a href=\"{url}\">speciális partícionáló eszközt</a> a nagyobb ellenőrzésért",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideSize": "Méret:",
+  "@installAlongsideSize": {}
 }

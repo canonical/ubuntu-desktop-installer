@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -13,6 +14,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -26,6 +28,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async => await cleanUpSubiquity());
+  tearDown(() async => await resetAllServices());
 
   testWidgets('minimal installation', (tester) async {
     const language = 'Français';
@@ -39,8 +42,7 @@ void main() {
       username: 'user',
     );
 
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester, language: language);
@@ -100,8 +102,7 @@ void main() {
       ),
     ];
 
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await app.main(<String>[]);
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester);
@@ -148,14 +149,72 @@ void main() {
     await verifyConfig(storage: storage);
   });
 
+  testWidgets('alongside windows', (tester) async {
+    await app.main(<String>[
+      '--machine-config=examples/win10-along-ubuntu.json',
+      '--bootloader=uefi',
+    ]);
+    await tester.pumpAndSettle();
+
+    await testWelcomePage(tester);
+    await tester.pumpAndSettle();
+
+    // https://github.com/canonical/ubuntu-desktop-installer/issues/373
+    // await testTryOrInstallPage(tester, option: Option.installUbuntu);
+    // await tester.pumpAndSettle();
+
+    await testKeyboardLayoutPage(tester);
+    await tester.pumpAndSettle();
+
+    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await tester.pumpAndSettle();
+
+    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await tester.pumpAndSettle();
+
+    await testInstallationTypePage(tester, type: InstallationType.alongside);
+    await tester.pumpAndSettle();
+
+    await testInstallAlongsidePage(tester, sizes: {'/dev/sda3 (ntfs)': 40000});
+    await tester.pumpAndSettle();
+
+    await testWriteChangesToDiskPage(tester);
+    await tester.pumpAndSettle();
+
+    await testWhereAreYouPage(tester);
+    await tester.pump();
+
+    await testWhoAreYouPage(
+      tester,
+      identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      password: 'password',
+    );
+    await tester.pump();
+
+    await testInstallationSlidesPage(tester);
+    await tester.pumpAndSettle();
+
+    await testInstallationCompletePage(tester);
+    await tester.pumpAndSettle();
+
+    await verifyConfig(storage: [
+      testDisk(
+        path: '/dev/sda',
+        partitions: [
+          Partition(number: 3, size: toBytes(40000, DataUnit.megabytes)),
+          Partition(number: 6, size: 43298848768, mount: '/'),
+        ],
+      ),
+    ]);
+  });
+
   testWidgets('turn off bitlocker', (tester) async {
-    app.main(<String>[
+    await app.main(<String>[
       '--machine-config',
       'examples/win10.json',
       '--initial-route',
       Routes.writeChangesToDisk,
     ]);
-    await waitForSubiquityServer();
     await tester.pumpAndSettle();
 
     await testWriteChangesToDiskPage(tester);
@@ -326,6 +385,31 @@ Future<void> testAllocateDiskSpacePage(
   }
 
   await tester.tapContinue();
+}
+
+Future<void> testInstallAlongsidePage(
+  WidgetTester tester, {
+  Map<String, int> sizes = const {},
+}) async {
+  final productInfo = ProductInfoExtractor().getProductInfo();
+  await expectPage(tester, InstallAlongsidePage,
+      (lang) => lang.installationTypeAlongsideUnknown(productInfo));
+
+  for (final entry in sizes.entries) {
+    await tester.tap(find.ancestor(
+      of: find.textContaining(entry.key),
+      matching: find.byType(OutlinedButton),
+    ));
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(SpinBox), entry.value.toString());
+    await tester.pump();
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
+  }
+
+  await tester.tapButton(label: tester.lang.selectGuidedStorageInstallNow);
 }
 
 Future<void> testWriteChangesToDiskPage(WidgetTester tester) async {

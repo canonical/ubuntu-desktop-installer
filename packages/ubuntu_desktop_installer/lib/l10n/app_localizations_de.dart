@@ -319,6 +319,21 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return '$product neben $os1 und $os2 installieren';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return '$product neben diesen installieren';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return '$product neben anderen Partitionen installieren';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Rechners auswählen, welches Betriebssystem Sie verwenden möchten.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Jetzt installieren';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Weisen Sie dem Laufwerk Speicherplatz zu, indem Sie die Trennlinie darunter ziehen:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num kleinere Partitionen werden ausgeblendet, verwenden Sie das <a href=\"$url\">erweiterte Partitionierungswerkzeug⁣</a> für mehr Kontrolle';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Größe der Partition ändern';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Speicherplatz zuweisen';
+
+  @override
+  String get installAlongsideFiles => 'Dateien';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Größe:';
+
+  @override
+  String get installAlongsideAvailable => 'Verfügbar:';
 
   @override
   String get allocateDiskSpace => 'Festplattenspeicher zuweisen';

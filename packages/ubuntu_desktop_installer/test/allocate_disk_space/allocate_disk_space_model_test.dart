@@ -182,7 +182,8 @@ void main() {
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk = testDisk(partitions: [Gap(offset: 0, size: 1)]);
+    final emptyDisk =
+        testDisk(partitions: [Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
     final fullDisk = testDisk();
     final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final mountedPartition =
@@ -265,7 +266,7 @@ void main() {
   });
 
   test('add partition', () async {
-    const gap = Gap(offset: 123, size: 456);
+    const gap = Gap(offset: 123, size: 456, usable: GapUsable.YES);
     const partition = Partition(size: 123, format: 'ext3', mount: '/tst');
 
     final service = MockDiskStorageService();
@@ -301,7 +302,7 @@ void main() {
       return testDisk(
         partitions: [
           for (var i = 0; i < partitions; ++i) Partition(number: i),
-          Gap(offset: 123, size: 456),
+          Gap(offset: 123, size: 456, usable: GapUsable.YES),
         ],
       );
     }
@@ -316,10 +317,13 @@ void main() {
     expect(model.selectedObjectIndex, equals(-1));
 
     // add partition -> select added partition
-    when(service.addPartition(testPartitions(2), Gap(offset: 123, size: 456),
+    when(service.addPartition(
+            testPartitions(2),
+            Gap(offset: 123, size: 456, usable: GapUsable.YES),
             Partition(size: 123, format: 'ext4', mount: '/tst')))
         .thenAnswer((_) async => [testPartitions(2)]);
-    await model.addPartition(model.selectedDisk!, Gap(offset: 123, size: 456),
+    await model.addPartition(
+        model.selectedDisk!, Gap(offset: 123, size: 456, usable: GapUsable.YES),
         size: 123, format: PartitionFormat.ext4, mount: '/tst');
     expect(model.selectedDiskIndex, equals(0));
     expect(model.selectedObjectIndex, equals(1));

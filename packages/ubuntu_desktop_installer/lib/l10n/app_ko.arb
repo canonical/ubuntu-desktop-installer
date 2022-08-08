@@ -602,10 +602,16 @@
       "RELEASE": {}
     }
   },
-  "whoAreYouPageUsernameInUse": "해당 사용자 이름이 이미 있습니다.",
+  "whoAreYouPageUsernameInUse": "해당 사용자 이름이 이미 존재합니다.",
   "@whoAreYouPageUsernameInUse": {},
   "whoAreYouPageUsernameSystemReserved": "시스템 사용을 위해 예약된 사용자 이름입니다.",
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameTooLong": "사용자 이름이 너무 깁니다.",
-  "@whoAreYouPageUsernameTooLong": {}
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "copyingFiles": "파일 복사 중...",
+  "@copyingFiles": {},
+  "installationFailed": "설치 실패",
+  "@installationFailed": {}
 }

@@ -319,6 +319,21 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Instali $product apud $os1 kaj $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Instali $product apud ili';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Instali $product apud aliaj subdiskoj';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Dokumentoj, muziko kaj aliaj personaj dosieroj estas konservotaj. Vi povos elekti tiun mastruman sistemon, kiun vi volas, kiam la komputilo startas.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Ekinstali';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Asignu diskospacon ŝovante la jenan dividilon:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num etaj subdiskoj estas kaŝitaj; uzu la <a href=\"$url\">altnivelan subdiskilon</a> por agordi tiujn';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Ŝanĝi grandon de subdisko';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Asigni spacon';
+
+  @override
+  String get installAlongsideFiles => 'Dosieroj';
+
+  @override
+  String get installAlongsidePartition => 'Subdisko:';
+
+  @override
+  String get installAlongsideSize => 'Grando:';
+
+  @override
+  String get installAlongsideAvailable => 'Disponebla:';
 
   @override
   String get allocateDiskSpace => 'Asigni diskospacon';

@@ -5,12 +5,12 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 class StorageSelector extends StatelessWidget {
   const StorageSelector({
-    Key? key,
+    super.key,
     this.title,
     this.selected,
     required this.storages,
     required this.onSelected,
-  }) : super(key: key);
+  });
 
   final String? title;
   final int? selected;

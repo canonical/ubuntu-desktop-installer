@@ -319,6 +319,21 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'להתקין את $product לצד $os1 ו־$os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'להתקין את $product לצדם';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'להתקין את $product לצד מחיצות אחרות';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'להתקין כעת';
+
+  @override
+  String get installAlongsideSpaceDivider => 'גרירת החוצץ שלהלן תגדיר את הקצאת המקום בכונן:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num מחיצות קטנות יותר מוסתרות, יש להשתמש ב<a href=\"$url\">כלי המתקדם לחלוקה למחיצות</a> לשליטה טובה יותר';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'שינוי גודל מחיצה';
+
+  @override
+  String get installAlongsideAllocateSpace => 'הקצאת מקום';
+
+  @override
+  String get installAlongsideFiles => 'קבצים';
+
+  @override
+  String get installAlongsidePartition => 'מחיצה:';
+
+  @override
+  String get installAlongsideSize => 'גודל:';
+
+  @override
+  String get installAlongsideAvailable => 'זמין:';
 
   @override
   String get allocateDiskSpace => 'הקצאת מקום בכונן';

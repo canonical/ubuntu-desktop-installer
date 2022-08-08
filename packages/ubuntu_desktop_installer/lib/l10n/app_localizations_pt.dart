@@ -22,7 +22,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get changeButtonText => 'Alterar';
 
   @override
-  String get okButtonText => 'Ok';
+  String get okButtonText => 'OK';
 
   @override
   String get noButtonText => 'Não';
@@ -40,7 +40,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get welcome => 'Bem-vindo';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Escolha o seu idioma:';
 
   @override
   String get tryOrInstallPageTitle => 'Experimentar ou instalar';
@@ -319,6 +319,21 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Install $product alongside $os1 and $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Install $product alongside them';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Install $product alongside other partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Documentos, músicas e outros ficheiros pessoais serão mantidos. Poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Instalar agora';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Resize partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allocate space';
+
+  @override
+  String get installAlongsideFiles => 'Files';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Size:';
+
+  @override
+  String get installAlongsideAvailable => 'Available:';
 
   @override
   String get allocateDiskSpace => 'Alocar espaço em disco';
@@ -800,6 +841,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get welcome => 'Bem-vindo';
 
   @override
+  String get welcomeHeader => 'Escolha seu idioma:';
+
+  @override
   String get tryOrInstallPageTitle => 'Experimentar ou instalar';
 
   @override
@@ -881,13 +925,64 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get dontInstallDriverSoftwareNow => 'Não instalar os drivers agora';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Você pode instalar depois pelo Programas & Atualizações.';
+  String get dontInstallDriverSoftwareNowDescription => 'Você pode instalar depois usando Programas e Atualizações.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'Chave de segurança é obrigatória';
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Chaves de segurança não correspondem';
+
+  @override
+  String get connectToInternetPageTitle => 'Conecte-se à internet';
+
+  @override
+  String get connectToInternetDescription => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo ethernet ou escolha uma rede Wi-Fi';
+
+  @override
+  String get useWiredConnection => 'Usar conexão via cabo';
+
+  @override
+  String get noWiredConnection => 'Nenhuma conexão a cabo detectada';
+
+  @override
+  String get wiredDisabled => 'Conexão a cabo está desligada';
+
+  @override
+  String get wiredMustBeEnabled => 'Para utilizar a ethernet neste computador, uma conexão a cabo deve ser habilitada';
+
+  @override
+  String get enableWired => 'Habilitar conexão a cabo';
+
+  @override
+  String get selectWifiNetwork => 'Conectar-se a uma rede Wi-Fi';
+
+  @override
+  String get hiddenWifiNetwork => 'Conectar-se a uma rede Wi-Fi oculta';
+
+  @override
+  String get hiddenWifiNetworkNameLabel => 'Nome da rede';
+
+  @override
+  String get hiddenWifiNetworkNameRequired => 'É necessário um nome de rede';
+
+  @override
+  String get noInternet => 'Não quero conectar à internet neste momento';
+
+  @override
+  String get wirelessNetworkingDisabled => 'Rede WiFi está desabilitada';
+
+  @override
+  String get noWifiDevicesDetected => 'Nenhum dispositivo WiFi detectado';
+
+  @override
+  String get wifiMustBeEnabled => 'Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada';
+
+  @override
+  String get enableWifi => 'Habilitar WiFi';
+
+  @override
+  String get connectButtonText => 'Conectar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
@@ -899,13 +994,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get normalInstallationTitle => 'Instalação normal';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilidades, pacote office, games and players de mídia.';
+  String get normalInstallationSubtitle => 'Navegador web, utilitários, pacote office, jogos e reprodutores de mídia.';
 
   @override
   String get minimalInstallationTitle => 'Instalação mínima';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser utilidades básicas.';
+  String get minimalInstallationSubtitle => 'Navegador web e utilitários básicos.';
 
   @override
   String get otherOptions => 'Outras opções';
@@ -914,7 +1009,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installThirdPartyTitle => 'Instalar software de terceiros para hardware gráfico e de Wi-Fi, bem como formatos de mídia adicionais';
 
   @override
-  String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.';
+  String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.';
+
+  @override
+  String onBatteryWarning(Object color) {
+    return '<font color=\"$color\">Atenção</font>: O computador não está conectado a uma fonte de energia.';
+  }
 
   @override
   String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
@@ -938,7 +1038,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se você precisar, escreva sua chave em um papel e coloque em um local seguro.';
+    return '<font color=\"$color\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se precisar, anote sua chave no papel e coloque-a em um local seguro.';
   }
 
   @override
@@ -950,7 +1050,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get installationTypeNoOSDetected => 'Este computador não possui sistemas operacionais detectados atualmente. O que você deseja fazer?';
+  String installationTypeDualOSDetected(Object os1, Object os2) {
+    return 'Este computador tem atualmente $os1 e $os2 instalados. O que você gostaria de fazer?';
+  }
+
+  @override
+  String get installationTypeMultiOSDetected => 'Este computador possui atualmente múltiplos sistemas operacionais. O que você gostaria de fazer?';
+
+  @override
+  String get installationTypeNoOSDetected => 'Este computador não possui atualmente nenhum sistema operacional detectado. O que você deseja fazer?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -959,11 +1067,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Aviso:</font> Isso vai apagar todos os seus programas, documentos, fotos, músicas, e quaisquer outrso arquivos em todos os sistemas operacionais existentes.';
+    return '<font color=\"$color\">Atenção:</font> Isso vai apagar todos os seus programas, documentos, fotos, músicas, e quaisquer outros arquivos em todos os sistemas operacionais existentes.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Recursos Avançados...';
+  String get installationTypeAdvancedLabel => 'Recursos avançados...';
 
   @override
   String get installationTypeAdvancedTitle => 'Recursos avançados';
@@ -1003,7 +1111,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Aviso:</font> Isso vai apagar todos os programas do $os, documentos, fotos, músicas e quaisquer outros arquivos.';
+    return '<font color=\"$color\">Atenção:</font> Isso vai apagar todos os programas do $os, documentos, fotos, músicas e quaisquer outros arquivos.';
   }
 
   @override
@@ -1070,6 +1178,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get newPartitionTable => 'Nova tabela de partições';
 
   @override
+  String get newPartitionTableConfirmationTitle => 'Criar uma nova tabela de partições vazia neste dispositivo?';
+
+  @override
+  String get newPartitionTableConfirmationMessage => 'Você selecionou dispositivo inteiro para particionar. Se prosseguir com a criação de uma nova tabela de partições no dispositivo, como resultado serão removidas todas as partições atuais.\n\nObserve que você poderá desfazer esta operação mais tarde, se desejar.';
+
+  @override
   String get bootLoaderDevice => 'Dispositivo para instalação do boot loader';
 
   @override
@@ -1094,7 +1208,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Tipo para a nova partiçaõ:';
+  String get partitionTypeLabel => 'Tipo da nova partição:';
 
   @override
   String get partitionTypePrimary => 'Primária';
@@ -1136,16 +1250,16 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partitionFormatFat => 'Sistema de arquivos FAT';
 
   @override
-  String get partitionFormatFat12 => 'Sistema de arquivos FA12';
+  String get partitionFormatFat12 => 'Sistema de arquivos FAT12';
 
   @override
-  String get partitionFormatFat16 => 'Sistema de arquivos FA16';
+  String get partitionFormatFat16 => 'Sistema de arquivos FAT16';
 
   @override
   String get partitionFormatFat32 => 'Sistema de arquivos FAT32';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Espaço de Swap';
 
   @override
   String get partitionFormatIso9660 => 'Sistema de arquivos ISO 9660';
@@ -1205,6 +1319,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get whoAreYouPageInvalidUsername => 'O nome de usuário informado é inválido';
 
   @override
+  String get whoAreYouPageUsernameInUse => 'Esse nome de usuário já existe.';
+
+  @override
+  String get whoAreYouPageUsernameSystemReserved => 'Esse nome é reservado para uso do sistema.';
+
+  @override
+  String get whoAreYouPageUsernameTooLong => 'Esse nome é muito comprido.';
+
+  @override
+  String get whoAreYouPageUsernameInvalidChars => 'Esse nome contém caracteres inválidos.';
+
+  @override
   String get whoAreYouPagePasswordLabel => 'Escolha uma senha';
 
   @override
@@ -1215,6 +1341,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'As senhas não correspondem';
+
+  @override
+  String get whoAreYouPageShowPassword => 'Mostrar senha';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';
@@ -1247,7 +1376,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Escolha seu visual';
+  String get chooseYourLookPageTitle => 'Escolha seu estilo';
 
   @override
   String get chooseYourLookPageHeader => 'Você pode sempre alterar isso depois nas configurações de aparência.';
@@ -1293,4 +1422,144 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get restartIntoWindows => 'Reiniciar no Windows';
+
+  @override
+  String get whereAreYouPageTitle => 'Onde você está?';
+
+  @override
+  String get whereAreYouLocationLabel => 'Localização';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Fuso horário';
+
+  @override
+  String welcomeSlideTitle(Object RELEASE) {
+    return 'Bem-vindo ao $RELEASE';
+  }
+
+  @override
+  String welcomeSlideDescription(Object RELEASE) {
+    return 'Rápida e cheia de novas funcionalidades, a última versão do $RELEASE torna a computação mais fácil, como nunca antes. Aqui estão apenas algumas novidades legais para levar em conta...';
+  }
+
+  @override
+  String get softwareSlideTitle => 'Encontre ainda mais software';
+
+  @override
+  String softwareSlideDescription(Object RELEASE) {
+    return 'Diga adeus à busca de novos softwares na internet. Com acesso à Loja Snap e ao arquivos de software do $RELEASE, você pode encontrar e instalar novos aplicativos com facilidade. Basta digitar o que você está procurando ou explorar nas categorias como Gráfica e Fotografia, Jogos e Produtividade, junto com avaliações úteis de outros usuários.';
+  }
+
+  @override
+  String get musicSlideTitle => 'Leve sua música com você';
+
+  @override
+  String musicSlideDescription(Object RELEASE) {
+    return '$RELEASE vem com o incrível reprodutor de música Rhythmbox. Com opções avançadas de reprodução, é modo simples de colocar na lista as músicas perfeitas. Funciona muito bem com CDs e dispositivos portáteis, para que você possa desfrutar de todas as suas músicas aonde você for.';
+  }
+
+  @override
+  String get musicSlideRhythmbox => 'Reprodutor de música Rhythmbox';
+
+  @override
+  String get musicSlideSpotify => 'Spotify';
+
+  @override
+  String get musicSlideVLC => 'VLC';
+
+  @override
+  String get photoSlideTitle => 'Divirta-se com suas fotos';
+
+  @override
+  String get photoSlideDescription => 'Shotwell é um prático gerenciador de fotos que é compatível com seus gadgets. Conecte uma câmera ou um celular para transferir suas fotos, compartilhá-las de forma fácil e mantê-las seguras. E se você sente-se criativo, pode encontrar muitos outros aplicativos da fotografia no Ubuntu Software.';
+
+  @override
+  String get photoSlideShotwell => 'Gerenciador de fotos Shotwell';
+
+  @override
+  String get photoSlideGimp => 'Editor de imagens GIMP';
+
+  @override
+  String get photoSlideShotcut => 'Editor de vídeo Shotcut';
+
+  @override
+  String get webSlideTitle => 'Tire o máximo proveito da internet';
+
+  @override
+  String webSlideDescription(Object RELEASE) {
+    return '$RELEASE inclui o Firefox, um navegador usado por milhões de pessoas em todo o mundo. E os aplicativos que você usa com frequência (como por exemplo Facebook ou Gmail) podem ser colocados na sua área de trabalho para acesso mais rápido, de mesma forma como os aplicativos no seu computador.';
+  }
+
+  @override
+  String get webSlideFirefox => 'Navegador Firefox';
+
+  @override
+  String get webSlideThunderbird => 'Thunderbird';
+
+  @override
+  String get webSlideChromium => 'Chromium';
+
+  @override
+  String get officeSlideTitle => 'Tudo o que você precisa para o escritório';
+
+  @override
+  String get officeSlideDescription => 'LibreOffice é um pacote de escritório gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo desnecessário.';
+
+  @override
+  String get officeSlideWriter => 'LibreOffice Writer';
+
+  @override
+  String get officeSlideCalc => 'LibreOffice Calc';
+
+  @override
+  String get officeSlideImpress => 'LibreOffice Impress';
+
+  @override
+  String get accessSlideTitle => 'Acesso para todos';
+
+  @override
+  String accessSlideDescription(Object RELEASE) {
+    return 'No coração da filosofia do $RELEASE está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, $RELEASE torna a computação fácil - quem quer que você seja e onde quer que você esteja.';
+  }
+
+  @override
+  String get accessSlideCustomizationOptions => 'Opções de personalização';
+
+  @override
+  String get accessSlideAppearance => 'Aparência';
+
+  @override
+  String get accessSlideAssistiveTechnologies => 'Tecnologias assistivas';
+
+  @override
+  String get accessSlideLanguageSupport => 'Suporte de idiomas';
+
+  @override
+  String get supportSlideTitle => 'Ajuda e suporte';
+
+  @override
+  String supportSlideDocumentation(Object RELEASE) {
+    return 'A documentação oficial cobre muitas áreas mais comuns sobre $RELEASE. Está disponível tanto <a href=\"https://help.ubuntu.com\">online</a> como através do ícone de Ajuda no dock.';
+  }
+
+  @override
+  String get supportSlideQuestions => 'No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> você pode fazer perguntas e pesquisar numa coleção impressionante de perguntas já respondidas. O suporte em sua própria língua pode ser fornecido via <a href=\"https://loco.ubuntu.com/teams\">Equipe da comunidade local</a>.';
+
+  @override
+  String get supportSlideResources => 'Para obter dicas de outros recursos úteis, por favor, visite <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.';
+
+  @override
+  String get includedSoftware => 'Software incluído';
+
+  @override
+  String get availableSoftware => 'Software disponível';
+
+  @override
+  String get supportedSoftware => 'Software suportado';
+
+  @override
+  String get copyingFiles => 'Copiando arquivos...';
+
+  @override
+  String get installationFailed => 'Instalação falhou';
 }

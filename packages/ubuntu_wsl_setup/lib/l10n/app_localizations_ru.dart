@@ -179,4 +179,103 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get setupCompleteRestart => '* Все настройки вступят в силу после перезапуска Ubuntu.';
+
+  @override
+  String get installationSlidesWelcome => 'Добро пожаловать в Ubuntu WSL';
+
+  @override
+  String get installationSlidesInitializing => 'Инициализация...';
+
+  @override
+  String get installationSlidesUnpacking => 'Распаковка дистрибутива';
+
+  @override
+  String get installationSlidesInstalling => 'Почти готово. Установщик скоро потребует вашего внимания.';
+
+  @override
+  String get installationSlidesLaunching => 'Запуск дистрибутива...';
+
+  @override
+  String get installationSlidesErrorMsg => 'Что-то пошло не так.';
+
+  @override
+  String get installationSlidesErrorTitle => 'Что-то пошло не так';
+
+  @override
+  String get installationSlidesErrorSub => 'Перезапустите WSL с помощью следующей команды и повторите попытку:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+
+  @override
+  String get installationSlidesErrorText => '\nПроизошла непоправимая ошибка.\n\nПожалуйста, закройте это приложение, откройте Powershell или командную строку и выполните следующие команды:\n';
+
+  @override
+  String get installationSlidesDone => 'Всё установлено. Наслаждайтесь использованием Ubuntu WSL';
+
+  @override
+  String get installationSlidesExitTitle => 'Вы уверены, что хотите выйти?';
+
+  @override
+  String get installationSlidesExitContents => 'Закрытие этого окна не помешает продолжить установку в фоновом режиме.\n\nКроме того, вы можете продолжить изучать возможности Ubuntu WSL.';
+
+  @override
+  String get installationSlidesCustomExitTitle => 'Мы почти закончили';
+
+  @override
+  String get installationSlidesCustomExitContents => 'Ещё несколько шагов нужно выполнить в главном окне установщика.\nМы можем ли мы закончить с этим и перейти туда?';
+
+  @override
+  String get installationSlidesOk => 'Ok';
+
+  @override
+  String get installationSlidesLeave => 'Leave';
+
+  @override
+  String get installationSlidesCancel => 'Отмена';
+
+  @override
+  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+
+  @override
+  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+
+  @override
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+
+  @override
+  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+
+  @override
+  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+
+  @override
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+
+  @override
+  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+
+  @override
+  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+
+  @override
+  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
+
+  @override
+  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+
+  @override
+  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+
+  @override
+  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+
+  @override
+  String get installationSlidesFindOutMore => 'Find out more';
+
+  @override
+  String get installationSlidesFindOutMoreVisit => 'Посетите ';
+
+  @override
+  String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
+
+  @override
+  String get installationSlidesFindOutMoreText => ' чтобы узнать больше об Ubuntu WSL и о том, как Canonical поддерживает разработчиков и организации.';
 }

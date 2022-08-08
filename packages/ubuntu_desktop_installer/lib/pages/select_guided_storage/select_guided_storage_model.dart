@@ -12,17 +12,29 @@ class SelectGuidedStorageModel extends SafeChangeNotifier {
   SelectGuidedStorageModel(this._service);
 
   final DiskStorageService _service;
-  var _storages = <Disk>[];
+  var _storages = <GuidedStorageTargetReformat>[];
+  var _disks = <String, Disk>{};
   var _selectedIndex = 0;
 
   /// Available storages for guided partitioning.
-  List<Disk> get storages => _storages;
+  List<GuidedStorageTarget> get storages => _storages;
 
   /// The index of the currently selected storage.
   int get selectedIndex => _selectedIndex;
 
   /// The currently selected storage.
-  Disk? get selectedStorage => _storages.elementAtOrNull(_selectedIndex);
+  GuidedStorageTargetReformat? get selectedStorage =>
+      getStorage(_selectedIndex);
+
+  /// The disk of the currently selected guided storage target.
+  Disk? get selectedDisk => getDisk(_selectedIndex);
+
+  /// Returns the guided storage target at the given index.
+  GuidedStorageTargetReformat? getStorage(int index) =>
+      _storages.elementAtOrNull(index);
+
+  /// Returns the disk of the guided storage target at the given index.
+  Disk? getDisk(int index) => _disks[getStorage(index)?.diskId ?? ''];
 
   /// Selects a guided storage.
   void selectStorage(int index) {
@@ -32,20 +44,28 @@ class SelectGuidedStorageModel extends SafeChangeNotifier {
   }
 
   /// Loads the storages available for guided partitioning.
-  Future<void> loadGuidedStorage() {
-    return _service.getGuidedStorage().then((storages) {
-      _storages = storages;
-      notifyListeners();
+  Future<void> loadGuidedStorage() async {
+    await _service.getStorage().then((disks) {
+      _disks = Map.fromIterable(disks, key: (d) => d.id);
     });
+    return _service.getGuidedStorage().then(_updateGuidedStorage);
+  }
+
+  void _updateGuidedStorage(GuidedStorageResponseV2 response) {
+    _storages =
+        response.possible.whereType<GuidedStorageTargetReformat>().toList();
+    notifyListeners();
   }
 
   /// Saves the guided storage selection.
-  Future<void> saveGuidedStorage() {
-    return _service.setGuidedStorage(selectedStorage);
+  Future<void> saveGuidedStorage() async {
+    return _service
+        .setGuidedStorage(selectedStorage!)
+        .then(_updateGuidedStorage);
   }
 
   /// Resets the guided storage selection.
   Future<void> resetGuidedStorage() {
-    return _service.resetGuidedStorage();
+    return _service.resetStorage();
   }
 }

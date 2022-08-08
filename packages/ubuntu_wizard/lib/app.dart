@@ -16,25 +16,23 @@ import 'utils.dart';
 /// @internal
 final log = Logger(_appName);
 
-/// The signature of a callback for initializing the Subiquity [client], which
-/// is called when the server connection has been established.
-typedef SubiquityInitCallback = void Function(SubiquityClient client);
-
 bool isLiveRun(ArgResults? options) {
   return options != null && options['dry-run'] != true;
 }
 
 /// Initializes and runs the given [app].
 ///
-/// Optionally, the Subiquity client] and server may be overridden for building
+/// Optionally, the Subiquity client and server may be overridden for building
 /// wizard variants and for testing purposes.
-Future<void> runWizardApp(
+///
+/// Returns a future that completes when the Subiquity server is ready to
+/// receive requests.
+Future<bool?> runWizardApp(
   Widget app, {
   ArgResults? options,
   required SubiquityClient subiquityClient,
   required SubiquityServer subiquityServer,
   SubiquityStatusMonitor? subiquityMonitor,
-  SubiquityInitCallback? onInitSubiquity,
   List<String>? serverArgs,
   Map<String, String>? serverEnvironment,
 }) async {
@@ -45,25 +43,11 @@ Future<void> runWizardApp(
     );
   }
 
-  subiquityServer
+  final subiquityReady = subiquityServer
       .start(args: serverArgs, environment: serverEnvironment)
-      .then((endpoint) {
+      .then((endpoint) async {
     subiquityClient.open(endpoint);
-    subiquityMonitor?.start(endpoint);
-
-    onInitSubiquity?.call(subiquityClient);
-
-    // Use the default values for a number of endpoints
-    // for which a UI page isn't implemented yet.
-    subiquityClient.markConfigured([
-      'drivers',
-      'mirror',
-      'proxy',
-      'network',
-      'ssh',
-      'snaplist',
-      'ubuntu_pro',
-    ]);
+    return subiquityMonitor?.start(endpoint);
   });
 
   registerServiceInstance(subiquityClient);
@@ -71,7 +55,7 @@ Future<void> runWizardApp(
     registerServiceInstance(subiquityMonitor);
   }
 
-  WidgetsFlutterBinding.ensureInitialized();
+  ensureInitialized();
   await setupAppLocalizations();
 
   onWindowClosed().then((_) async {
@@ -81,12 +65,14 @@ Future<void> runWizardApp(
     destroyWindow();
   });
 
-  runZonedGuarded(() {
+  return runZonedGuarded<Future<bool?>>(() {
     FlutterError.onError = (error) {
       log.error('Unhandled exception', error.exception, error.stack);
     };
 
-    return runApp(app);
+    runApp(app);
+
+    return subiquityReady;
   }, (error, stack) => log.error('Unhandled exception', error, stack));
 }
 

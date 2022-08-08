@@ -66,7 +66,7 @@ class ValidatedFormField extends StatefulWidget {
   ///
   /// The `validator' helps to decide when to show the check mark.
   ValidatedFormField({
-    Key? key,
+    super.key,
     this.controller,
     this.initialValue,
     this.onChanged,
@@ -83,8 +83,7 @@ class ValidatedFormField extends StatefulWidget {
     this.enabled = true,
     this.suffixIcon,
   })  : validator = validator ?? _NoValidator(),
-        spacing = spacing ?? (successWidget != null ? _kIconSpacing : null),
-        super(key: key);
+        spacing = spacing ?? (successWidget != null ? _kIconSpacing : null);
 
   @override
   State<ValidatedFormField> createState() => _ValidatedFormFieldState();

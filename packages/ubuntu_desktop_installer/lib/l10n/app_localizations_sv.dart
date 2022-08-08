@@ -319,6 +319,21 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Installera $product bredvid $os1 och $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Installera $product bredvid dem';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Installera $product bredvid andra partitioner';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Dokument, musik och andra personliga filer kommer att sparas. Du kan välja vilket operativsystem du vill ha varje gång datorn startar.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Installera nu';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num mindre partitioner är dolda, använd det <a href=\"$url\">avancerade partitionsverktyget</a> för mer kontroll';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Ändra storlek på partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Tilldela utrymme';
+
+  @override
+  String get installAlongsideFiles => 'Filer';
+
+  @override
+  String get installAlongsidePartition => 'Partition:';
+
+  @override
+  String get installAlongsideSize => 'Storlek:';
+
+  @override
+  String get installAlongsideAvailable => 'Tillgängligt:';
 
   @override
   String get allocateDiskSpace => 'Tilldela diskutrymme';
@@ -718,7 +759,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Hjärtat i $RELEASE-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färgschema och textstorlek, gör $RELEASE datoranvändning enkel - vem du än är och var du än är.';
   }
 
   @override

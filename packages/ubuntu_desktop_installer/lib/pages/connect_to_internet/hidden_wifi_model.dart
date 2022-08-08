@@ -6,8 +6,7 @@ import 'network_model.dart';
 import 'wifi_model.dart';
 
 class HiddenWifiModel extends NetworkModel<WifiDevice> {
-  HiddenWifiModel(NetworkService service, [UdevService? udev])
-      : super(service, udev);
+  HiddenWifiModel(super.service, [super.udev]);
 
   @override
   bool get canConnect => _ssid.isNotEmpty && !isConnected;

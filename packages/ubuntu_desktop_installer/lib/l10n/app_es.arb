@@ -580,5 +580,62 @@
   "connectButtonText": "Conectar",
   "@connectButtonText": {},
   "wirelessNetworkingDisabled": "Se desactivó el uso de redes inalámbricas",
-  "@wirelessNetworkingDisabled": {}
+  "@wirelessNetworkingDisabled": {},
+  "whoAreYouPageUsernameInUse": "Ese nombre de usuario ya existe.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Ese nombre contiene caracteres no válidos.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPageUsernameTooLong": "Ese nombre es demasiado extenso.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameSystemReserved": "Ese nombre está reservado para que el sistema lo use.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "copyingFiles": "Copiando archivos…",
+  "@copyingFiles": {},
+  "installationFailed": "Falló la instalación",
+  "@installationFailed": {},
+  "installAlongsidePartition": "Partición:",
+  "@installAlongsidePartition": {},
+  "installationTypeAlongsideDual": "Instalar {product} junto a {os1} y {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "Se ocultaron {num} particiones más pequeñas. Para mayor control, utilice la <a href=\"{url}\">herramienta de particionado avanzada</a>",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Instalar {product} junto a ellos",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSize": "Tamaño:",
+  "@installAlongsideSize": {},
+  "installAlongsideSpaceDivider": "Asigne el espacio en disco arrastrando el divisor siguiente:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideResizePartition": "Redimensionar partición",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Asignar espacio",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Archivos",
+  "@installAlongsideFiles": {},
+  "installAlongsideAvailable": "Disponible:",
+  "@installAlongsideAvailable": {},
+  "installationTypeAlongsideUnknown": "Instalar {product} junto a otras particiones",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  }
 }

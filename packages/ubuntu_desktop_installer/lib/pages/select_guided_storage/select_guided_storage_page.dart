@@ -14,7 +14,7 @@ import 'select_guided_storage_model.dart';
 class SelectGuidedStoragePage extends StatefulWidget {
   /// Use [SelectGuidedStoragePage.create] instead.
   @visibleForTesting
-  const SelectGuidedStoragePage({Key? key}) : super(key: key);
+  const SelectGuidedStoragePage({super.key});
 
   /// Creates a [SelectGuidedStoragePage] with [SelectGuidedStorageModel].
   static Widget create(BuildContext context) {
@@ -44,7 +44,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
   }
 
   /// Formats a disk in a pretty way e.g. "/dev/sda ATA Maxtor (123 GB)"
-  String prettyFormatStorage(Disk disk) {
+  String prettyFormatDisk(Disk disk) {
     final fullName = <String?>[
       disk.model,
       disk.vendor,
@@ -74,9 +74,9 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                   selected: model.selectedIndex,
                   onSelected: (i) => model.selectStorage(i!),
                   itemBuilder: (context, index, child) {
-                    final storage = model.storages[index];
+                    final disk = model.getDisk(index)!;
                     return Text(
-                      prettyFormatStorage(storage),
+                      prettyFormatDisk(disk),
                       key: ValueKey(index),
                     );
                   },
@@ -88,7 +88,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
           if (model.selectedStorage != null)
             Text(lang.selectGuidedStorageInfoLabel),
           const SizedBox(height: kContentSpacing * 2),
-          if (model.selectedStorage != null)
+          if (model.selectedDisk != null)
             Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -104,10 +104,10 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   const SizedBox(height: kContentSpacing / 2),
-                  Text(model.selectedStorage?.path ?? ''),
+                  Text(model.selectedDisk?.path ?? ''),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
-                    filesize(model.selectedStorage?.size ?? 0),
+                    filesize(model.selectedDisk?.size ?? 0),
                     style: Theme.of(context).textTheme.headline5,
                   ),
                 ],

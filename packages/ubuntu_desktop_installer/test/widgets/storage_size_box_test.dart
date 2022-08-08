@@ -1,9 +1,11 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_size_box.dart';
+import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 // ignore_for_file: type=lint
@@ -16,7 +18,7 @@ void main() {
       StorageSizeBox(
         unit: DataUnit.megabytes,
         size: toBytes(123, DataUnit.megabytes),
-        available: toBytes(500, DataUnit.megabytes),
+        maximum: toBytes(500, DataUnit.megabytes),
         onSizeChanged: (value) => size = value,
         onUnitSelected: (_) {},
       ),
@@ -39,7 +41,7 @@ void main() {
       StorageSizeBox(
         unit: DataUnit.gigabytes,
         size: toBytes(1, DataUnit.gigabytes),
-        available: toBytes(5, DataUnit.gigabytes),
+        maximum: toBytes(5, DataUnit.gigabytes),
         onSizeChanged: (_) {},
         onUnitSelected: (value) => unit = value,
       ),
@@ -62,7 +64,7 @@ void main() {
         StorageSizeBox(
           unit: DataUnit.gigabytes,
           size: fiveGb,
-          available: fiveGb,
+          maximum: fiveGb,
           onSizeChanged: (_) {},
           onUnitSelected: (_) {},
         ),
@@ -75,7 +77,7 @@ void main() {
         StorageSizeBox(
           unit: DataUnit.megabytes,
           size: fiveGb,
-          available: fiveGb,
+          maximum: fiveGb,
           onSizeChanged: (_) {},
           onUnitSelected: (_) {},
         ),
@@ -89,7 +91,7 @@ void main() {
         StorageSizeBox(
           unit: DataUnit.kilobytes,
           size: fiveGb,
-          available: fiveGb,
+          maximum: fiveGb,
           onSizeChanged: (_) {},
           onUnitSelected: (_) {},
         ),
@@ -97,6 +99,36 @@ void main() {
       expect(find.widgetWithText(SpinBox, (5 * 1024 * 1024).toString()),
           findsOneWidget);
     });
+  });
+
+  testWidgets('range', (tester) async {
+    int? size;
+
+    await tester.pumpStorageSizeBox(
+      StorageSizeBox(
+        autofocus: true,
+        unit: DataUnit.bytes,
+        size: 1,
+        minimum: 1,
+        maximum: 9,
+        onSizeChanged: (value) => size = value,
+        onUnitSelected: (_) {},
+      ),
+    );
+
+    // up until max
+    for (var i = 2; i <= 10; ++i) {
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+      await tester.pump();
+      expect(size, equals(math.min(i, 9)));
+    }
+
+    // down until min
+    for (var i = 8; i >= 0; --i) {
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.pump();
+      expect(size, equals(math.max(1, i)));
+    }
   });
 }
 

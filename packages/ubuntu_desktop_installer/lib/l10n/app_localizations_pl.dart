@@ -319,6 +319,21 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Zainstaluj $product obok $os1 i $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Zainstaluj $product obok nich';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Zainstaluj $product obok innych partycji';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Dokumenty, muzyka i inne pliki osobiste zostaną zachowane. Przy każdym uruchomieniu komputera można wybrać system operacyjny, który ma być używany.';
 
   @override
@@ -344,7 +359,33 @@ class AppLocalizationsPl extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Zainstaluj teraz';
 
   @override
-  String get allocateDiskSpace => 'Przydziel miejsce na dysku';
+  String get installAlongsideSpaceDivider => 'Przydziel przestrzeń dyskową, przesuwając poniższą podziałkę:';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num mniejsze partycje są ukryte, użyj <a href=\"$url\">zaawansowanego narzędzia do partycjonowania</a>, aby uzyskać większą kontrolę';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Zmień rozmiar partycji';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Przydziel przestrzeń';
+
+  @override
+  String get installAlongsideFiles => 'Pliki';
+
+  @override
+  String get installAlongsidePartition => 'Partycja:';
+
+  @override
+  String get installAlongsideSize => 'Rozmiar:';
+
+  @override
+  String get installAlongsideAvailable => 'Dostępne:';
+
+  @override
+  String get allocateDiskSpace => 'Przydziel przestrzeń dyskową';
 
   @override
   String get startInstallingButtonText => 'Rozpocznij instalację';

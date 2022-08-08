@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -34,17 +35,14 @@ enum AdvancedFeature {
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
-  InstallationTypeModel(
-      this._client, this._diskService, this._telemetryService);
+  InstallationTypeModel(this._diskService, this._telemetryService);
 
-  // ignore: unused_field, will be used for querying existing OS installations
-  final SubiquityClient _client;
   final DiskStorageService _diskService;
   final TelemetryService _telemetryService;
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
-  List<OsProber>? _existingOS;
+  List<GuidedStorageTarget>? _storages;
 
   /// The selected installation type.
   InstallationType get installationType => _installationType;
@@ -74,30 +72,61 @@ class InstallationTypeModel extends SafeChangeNotifier {
   final productInfo = ProductInfoExtractor().getProductInfo();
 
   /// A list of existing OS installations or null if not detected.
-  List<OsProber>? get existingOS => _existingOS;
+  List<OsProber>? get existingOS => _diskService.existingOS;
 
-  /// Initializes the model and queries the existing OS installation.
+  /// Whether installation alongside an existing OS is possible.
+  ///
+  /// That is, whether a) an existing partition can be safely resized smaller to
+  /// make room for the installation, or b) there is a large enough unused gap.
+  bool get canInstallAlongside {
+    return _storages?.any((target) =>
+            target is GuidedStorageTargetResize ||
+            target is GuidedStorageTargetUseGap) ??
+        false;
+  }
+
+  /// Initializes the model.
   Future<void> init() async {
-    _diskService.getGuidedStorage().then((disks) {
-      _existingOS = disks
-          .expand<OsProber>(
-            (d) => d.partitions
-                .whereType<Partition>()
-                .map((p) => p.os)
-                .whereType<OsProber>(),
-          )
-          .toList();
-      notifyListeners();
-    });
+    await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
+    _installationType = canInstallAlongside
+        ? InstallationType.alongside
+        : InstallationType.erase;
+    notifyListeners();
+  }
+
+  /// Resolves the automatic guided storage target selection for the given
+  /// installation type.
+  ///
+  /// Automatic cases:
+  /// - when erasing the disk and there's only one reformat target
+  /// - when installing alongside an existing OS and there's a large enough gap
+  ///
+  /// For all other cases, the user is prompted to select or resize a target.
+  GuidedStorageTarget? preselectTarget(InstallationType type) {
+    switch (type) {
+      case InstallationType.erase:
+        return _storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
+
+      case InstallationType.alongside:
+        return _storages
+            ?.whereType<GuidedStorageTargetUseGap>()
+            .sorted((a, b) => a.gap.size.compareTo(b.gap.size))
+            .lastOrNull;
+
+      default:
+        return null;
+    }
   }
 
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
-    if (!_diskService.hasMultipleDisks &&
-        _installationType == InstallationType.erase) {
-      await _diskService.setGuidedStorage();
+
+    // automatically pre-select a guided storage target if possible
+    final target = preselectTarget(installationType);
+    if (target != null) {
+      await _diskService.setGuidedStorage(target);
     }
 
     // All possible values for the partition method
@@ -124,4 +153,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
     // wiping the user's home directory (not implemented yet)
     // to the 'reuse_partition' method.
   }
+
+  Future<void> resetStorage() => _diskService.resetStorage();
 }

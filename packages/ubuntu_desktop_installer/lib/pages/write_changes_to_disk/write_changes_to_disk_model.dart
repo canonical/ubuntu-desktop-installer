@@ -12,13 +12,15 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
 
   final SubiquityClient _client;
   final DiskStorageService _service;
-  Map<Disk, List<Partition>>? _partitions;
+  List<Disk>? _disks;
+  Map<String, List<Partition>>? _partitions;
 
-  /// The list of non-preserved disks.
-  List<Disk> get disks => _partitions?.keys.toList() ?? [];
+  /// The list of non-preserved disks, and preserved disks with any non-preserved
+  /// partitions.
+  List<Disk> get disks => _disks ?? [];
 
-  /// Returns the list of non-preserved partitions fro the given disk.
-  List<Partition> partitions(Disk disk) => _partitions?[disk] ?? [];
+  /// A map of non-preserved partitions per each disk (sysname).
+  Map<String, List<Partition>> get partitions => _partitions ?? {};
 
   /// Initializes the model.
   Future<void> init() => _service.getStorage().then(_updateDisks);
@@ -30,18 +32,19 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
   }
 
   void _updateDisks(List<Disk> disks) {
-    final changes = disks.where((d) => d.preserve == false);
+    _disks = disks
+        .where((d) =>
+            d.preserve == false ||
+            d.partitions.whereType<Partition>().any((p) => p.preserve == false))
+        .toList();
     _partitions = Map.fromEntries(
-      changes.map((disk) {
+      disks.map((disk) {
         final partitions = disk.partitions
             .whereType<Partition>()
             .where((p) => p.preserve == false)
             .toList();
-        return MapEntry(
-          disk.copyWith(partitions: partitions),
-          partitions,
-        );
-      }),
+        return MapEntry(disk.sysname, partitions);
+      }).where((entry) => entry.value.isNotEmpty),
     );
     notifyListeners();
   }

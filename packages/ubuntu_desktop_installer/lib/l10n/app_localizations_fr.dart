@@ -319,6 +319,21 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Installer $product à côté de $os1 et $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Installer $product à côté d\'eux';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Installer $product à côté des autres partitions';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Les documents, musiques et autres fichiers personnels seront conservés. Vous pouvez choisir le système d’exploitation à lancer au moment du démarrage de l’ordinateur.';
 
   @override
@@ -342,6 +357,32 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get selectGuidedStorageInstallNow => 'Installer maintenant';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Allouez de l’espace disque en déplaçant le séparateur ci-dessous :';
+
+  @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num partitions plus petites sont masquées, utilisez <a href=\"$url\">l\'outil de partitionnement avancé</a> pour plus de contrôle';
+  }
+
+  @override
+  String get installAlongsideResizePartition => 'Redimensionner la partition';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Allouer de l\'espace';
+
+  @override
+  String get installAlongsideFiles => 'Fichiers';
+
+  @override
+  String get installAlongsidePartition => 'Partition :';
+
+  @override
+  String get installAlongsideSize => 'Taille :';
+
+  @override
+  String get installAlongsideAvailable => 'Disponible :';
 
   @override
   String get allocateDiskSpace => 'Allouer de l’espace disque';
