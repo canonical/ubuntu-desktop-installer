@@ -127,7 +127,7 @@ void main() {
 
   test('add/edit/remove partition', () async {
     final disk = testDisk(id: 'tst');
-    final gap = Gap(offset: 2, size: 3);
+    final gap = Gap(offset: 2, size: 3, usable: GapUsable.YES);
     final partition = Partition(number: 1);
     final service = DiskStorageService(client);
 

@@ -21,7 +21,7 @@ void main() {
 
   testWidgets('create partition', (tester) async {
     final disk = testDisk();
-    final gap = Gap(offset: 0, size: 1000000);
+    final gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
     final model = buildModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
@@ -83,7 +83,7 @@ void main() {
         mount: '/tst',
         preserve: true,
       ),
-      Gap(offset: 123, size: 1000000),
+      Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
     ]);
     final model = buildModel(selectedDisk: disk);
 

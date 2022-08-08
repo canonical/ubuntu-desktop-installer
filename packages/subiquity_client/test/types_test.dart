@@ -185,10 +185,11 @@ void main() {
   });
 
   test('gap', () {
-    const gap = Gap(offset: 123, size: 456);
+    const gap = Gap(offset: 123, size: 456, usable: GapUsable.YES);
     const json = <String, dynamic>{
       'offset': 123,
       'size': 456,
+      'usable': 'YES',
       '\$type': 'Gap',
     };
     expect(gap.toJson(), equals(json));

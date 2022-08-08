@@ -180,8 +180,8 @@ void main() {
     expect(model.canInstallAlongside, isTrue);
 
     // gap
-    final gap =
-        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 0));
+    final gap = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 0, usable: GapUsable.YES));
     when(service.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
     await model.init();
@@ -243,8 +243,8 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // gap
-    final gap =
-        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 1));
+    final gap = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 1, usable: GapUsable.YES));
     when(service.getGuidedStorage())
         .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
     await model.init();
@@ -254,10 +254,10 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // multiple gaps
-    final gap2 =
-        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 2));
-    final gap3 =
-        GuidedStorageTargetUseGap(diskId: '', gap: Gap(offset: 0, size: 3));
+    final gap2 = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 2, usable: GapUsable.YES));
+    final gap3 = GuidedStorageTargetUseGap(
+        diskId: '', gap: Gap(offset: 0, size: 3, usable: GapUsable.YES));
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => GuidedStorageResponseV2(possible: [gap, gap3, gap2]));
     await model.init();

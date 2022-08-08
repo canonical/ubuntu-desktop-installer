@@ -2,7 +2,7 @@ import 'package:filesize/filesize.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart'
-    show Disk, DiskObject, Gap, Partition;
+    show Disk, DiskObject, Gap, GapUsable, Partition;
 
 extension DiskExtension on Disk {
   String get prettySize => filesize(size);
