@@ -215,6 +215,34 @@ void main() {
     verify(model.installationType = InstallationType.alongside).called(1);
   });
 
+  testWidgets('alongside duplicate os', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu1',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu2',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+      ],
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
   testWidgets('alongside multi os', (tester) async {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
