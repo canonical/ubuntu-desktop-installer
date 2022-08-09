@@ -119,7 +119,7 @@ class MockDiskStorageService extends _i1.Mock
   @override
   _i4.Future<List<_i2.Disk>> getOriginalStorage() =>
       (super.noSuchMethod(Invocation.method(#getOriginalStorage, []),
-              returnValue: Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
+              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
           as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> addPartition(
