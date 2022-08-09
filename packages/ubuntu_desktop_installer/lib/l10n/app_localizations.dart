@@ -1332,20 +1332,38 @@ abstract class AppLocalizations {
   /// No description provided for @writeChangesPartitionsHeader.
   ///
   /// In en, this message translates to:
-  /// **'The following partitions are going to be formatted:'**
+  /// **'The following partition changes are going to be applied:'**
   String get writeChangesPartitionsHeader;
+
+  /// A resized partition entry
+  ///
+  /// In en, this message translates to:
+  /// **'partition #{disk}{partition} resized from {oldsize} to {newsize}'**
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize);
+
+  /// A formatted and mounted partition entry
+  ///
+  /// In en, this message translates to:
+  /// **'partition #{disk}{partition} formatted as {format} used for {mount}'**
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount);
+
+  /// A formatted partition entry
+  ///
+  /// In en, this message translates to:
+  /// **'partition #{disk}{partition} formatted as {format}'**
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format);
 
   /// A mounted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} as {format} used for {mount}'**
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount);
+  /// **'partition #{disk}{partition} used for {mount}'**
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount);
 
-  /// An unmounted partition entry
+  /// A created partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} as {format}'**
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format);
+  /// **'partition #{disk}{partition} created'**
+  String writeChangesPartitionCreated(Object disk, Object partition);
 
   /// No description provided for @chooseYourLookPageTitle.
   ///

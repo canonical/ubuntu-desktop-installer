@@ -79,6 +79,8 @@ void main() {
   test('get storage', () async {
     when(client.getStorageV2())
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+    when(client.getOriginalStorageV2()).thenAnswer(
+        (_) async => testStorageResponse(disks: testDisks.reversed.toList()));
 
     final service = DiskStorageService(client);
     await untilCalled(client.getStorageV2());
@@ -86,6 +88,9 @@ void main() {
 
     expect(await service.getStorage(), equals(testDisks));
     verify(client.getStorageV2()).called(1);
+
+    expect(await service.getOriginalStorage(), equals(testDisks.reversed));
+    verify(client.getOriginalStorageV2()).called(1);
   });
 
   test('set storage', () async {

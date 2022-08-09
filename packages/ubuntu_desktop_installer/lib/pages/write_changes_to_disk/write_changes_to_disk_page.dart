@@ -1,3 +1,4 @@
+import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -66,7 +67,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  prettyFormatDisk(disk),
+                  '\u2022 ${prettyFormatDisk(disk)}',
                   style: const TextStyle(fontWeight: FontWeight.bold),
                   key: ValueKey(disk),
                 ),
@@ -86,7 +87,11 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _PartitionLabel(entry.key, partition),
+                _PartitionLabel(
+                  entry.key,
+                  partition,
+                  model.getOriginalPartition(entry.key, partition.number ?? -1),
+                ),
                 const SizedBox(height: kContentSpacing / 2),
               ],
             ),
@@ -105,25 +110,45 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
 }
 
 class _PartitionLabel extends StatelessWidget {
-  _PartitionLabel(this.sysname, this.partition)
+  _PartitionLabel(this.sysname, this.partition, this.original)
       : super(key: ValueKey(partition));
 
   final String sysname;
   final Partition partition;
+  final Partition? original;
 
   String formatPartition(AppLocalizations lang) {
-    if (partition.mount?.isNotEmpty == true) {
-      return lang.writeChangesPartitionEntryMounted(
+    if (partition.resize == true) {
+      return lang.writeChangesPartitionResized(
+        sysname,
+        partition.number ?? 0,
+        filesize(original?.size ?? 0),
+        filesize(partition.size ?? 0),
+      );
+    } else if (partition.wipe != null && partition.mount?.isNotEmpty == true) {
+      return lang.writeChangesPartitionFormattedMounted(
         sysname,
         partition.number ?? 0,
         partition.format ?? '',
         partition.mount ?? '',
       );
-    } else {
-      return lang.writeChangesPartitionEntryUnmounted(
+    } else if (partition.wipe != null) {
+      return lang.writeChangesPartitionFormatted(
         sysname,
         partition.number ?? 0,
         partition.format ?? '',
+      );
+    } else if (partition.mount?.isNotEmpty == true) {
+      return lang.writeChangesPartitionMounted(
+        sysname,
+        partition.number ?? 0,
+        partition.mount ?? '',
+      );
+    } else {
+      assert(partition.preserve == false);
+      return lang.writeChangesPartitionCreated(
+        sysname,
+        partition.number ?? 0,
       );
     }
   }
@@ -131,6 +156,6 @@ class _PartitionLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    return Text(formatPartition(lang));
+    return Text('\u2022 ${formatPartition(lang)}');
   }
 }

@@ -609,13 +609,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get writeChangesPartitionsHeader => '以下分区将被格式化：';
 
   @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return '分区#$disk${partition}作为$format用于$mount';
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
+    return 'partition #$disk${partition} resized from $oldsize to $newsize';
   }
 
   @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return '分区#$disk${partition}作为$format';
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} formatted as $format used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} formatted as $format';
+  }
+
+  @override
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
+    return 'partition #$disk${partition} used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionCreated(Object disk, Object partition) {
+    return 'partition #$disk${partition} created';
   }
 
   @override

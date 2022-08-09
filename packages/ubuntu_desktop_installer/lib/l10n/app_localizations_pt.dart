@@ -609,13 +609,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
 
   @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partição #$disk${partition} como $format usada para $mount';
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
+    return 'partition #$disk${partition} resized from $oldsize to $newsize';
   }
 
   @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partição #$disk${partition} como $format';
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partition #$disk${partition} formatted as $format used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
+    return 'partition #$disk${partition} formatted as $format';
+  }
+
+  @override
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
+    return 'partition #$disk${partition} used for $mount';
+  }
+
+  @override
+  String writeChangesPartitionCreated(Object disk, Object partition) {
+    return 'partition #$disk${partition} created';
   }
 
   @override
@@ -1385,16 +1400,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
-
-  @override
-  String writeChangesPartitionEntryMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partição #$disk${partition} como $format usada para $mount';
-  }
-
-  @override
-  String writeChangesPartitionEntryUnmounted(Object disk, Object partition, Object format) {
-    return 'partição #$disk${partition} como $format';
-  }
 
   @override
   String get chooseYourLookPageTitle => 'Escolha seu estilo';

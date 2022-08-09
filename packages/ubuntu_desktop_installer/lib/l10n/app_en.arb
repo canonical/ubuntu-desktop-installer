@@ -348,10 +348,20 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "The following partitions are going to be formatted:",
-  "writeChangesPartitionEntryMounted": "partition #{disk}{partition} as {format} used for {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
+  "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
+  "writeChangesPartitionResized": "partition #{disk}{partition} resized from {oldsize} to {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partition #{disk}{partition} formatted as {format} used for {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
     "placeholders": {
       "disk": {},
       "partition": {},
@@ -359,13 +369,30 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "partition #{disk}{partition} as {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
+  "writeChangesPartitionFormatted": "partition #{disk}{partition} formatted as {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
     "placeholders": {
       "disk": {},
       "partition": {},
       "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partition #{disk}{partition} used for {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "partition #{disk}{partition} created",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
     }
   },
   "chooseYourLookPageTitle": "Choose your look",
