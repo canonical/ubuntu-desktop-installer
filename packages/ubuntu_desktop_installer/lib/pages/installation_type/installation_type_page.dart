@@ -51,9 +51,9 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       case 1:
         return lang.installationTypeOSDetected(os.single.long);
       case 2:
-        if (os.hasDuplicates) continue duplicates;
-        return lang.installationTypeDualOSDetected(os.first.long, os.last.long);
-      duplicates:
+        return os.hasDuplicates
+            ? lang.installationTypeMultiOSDetected
+            : lang.installationTypeDualOSDetected(os.first.long, os.last.long);
       default:
         return lang.installationTypeMultiOSDetected;
     }
@@ -68,10 +68,10 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       case 1:
         return lang.installationTypeAlongside(product, os.single.long);
       case 2:
-        if (os.hasDuplicates) continue duplicates;
-        return lang.installationTypeAlongsideDual(
-            product, os.first.long, os.last.long);
-      duplicates:
+        return os.hasDuplicates
+            ? lang.installationTypeAlongsideMulti(product)
+            : lang.installationTypeAlongsideDual(
+                product, os.first.long, os.last.long);
       default:
         return lang.installationTypeAlongsideMulti(product);
     }
