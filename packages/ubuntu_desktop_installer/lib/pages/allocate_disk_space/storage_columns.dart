@@ -126,13 +126,13 @@ class StorageSystemColumn extends StorageColumn {
             return Text(lang.diskHeadersSystem);
           },
           diskBuilder: (context, disk) {
-            return Text(disk.ptable ?? '');
+            return const SizedBox.shrink();
           },
           gapBuilder: (context, disk, gap) {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(partition.grubDevice == true ? 'boot' : '');
+            return Text(partition.os?.long ?? '');
           },
         );
 }

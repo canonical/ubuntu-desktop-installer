@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_columns.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_table.dart';
 
@@ -14,7 +15,11 @@ void main() {
     path: '/dev/sdb',
     size: 22,
     partitions: [
-      Partition(number: 1, size: 2211),
+      Partition(
+        number: 1,
+        size: 2211,
+        os: OsProber(long: 'Ubuntu 18.04', label: '', type: ''),
+      ),
       Gap(offset: 2211, size: 2222, usable: GapUsable.YES),
     ],
   );
@@ -61,6 +66,7 @@ void main() {
     OnStorageSelected? onSelected,
   }) {
     return MaterialApp(
+      localizationsDelegates: localizationsDelegates,
       home: StorageTable(
         columns: columns,
         storages: [sda, sdb, sdc, sdd],
@@ -195,5 +201,11 @@ void main() {
     await tester.pump();
     expect(selectedDisk, isNull);
     expect(selectedPartition, isNull);
+  });
+
+  testWidgets('existing os', (tester) async {
+    await tester.pumpWidget(buildTable([StorageSystemColumn()]));
+
+    expect(find.text('Ubuntu 18.04'), findsOneWidget);
   });
 }
