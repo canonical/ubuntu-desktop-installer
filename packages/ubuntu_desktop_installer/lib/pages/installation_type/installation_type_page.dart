@@ -51,7 +51,9 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       case 1:
         return lang.installationTypeOSDetected(os.single.long);
       case 2:
-        return lang.installationTypeDualOSDetected(os.first.long, os.last.long);
+        return os.hasDuplicates
+            ? lang.installationTypeMultiOSDetected
+            : lang.installationTypeDualOSDetected(os.first.long, os.last.long);
       default:
         return lang.installationTypeMultiOSDetected;
     }
@@ -66,8 +68,10 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       case 1:
         return lang.installationTypeAlongside(product, os.single.long);
       case 2:
-        return lang.installationTypeAlongsideDual(
-            product, os.first.long, os.last.long);
+        return os.hasDuplicates
+            ? lang.installationTypeAlongsideMulti(product)
+            : lang.installationTypeAlongsideDual(
+                product, os.first.long, os.last.long);
       default:
         return lang.installationTypeAlongsideMulti(product);
     }
@@ -164,4 +168,10 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
       ],
     );
   }
+}
+
+extension _OsProberList on List<OsProber> {
+  /// Whether the system has any OS installed multiple times.
+  bool get hasDuplicates =>
+      length > 1 && length != map((os) => os.long).toSet().length;
 }

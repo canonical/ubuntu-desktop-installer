@@ -94,6 +94,19 @@ void main() {
     );
   });
 
+  testWidgets('duplicate existing OSes', (tester) async {
+    final model = buildModel(existingOS: [
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+    ]);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+      find.text(tester.lang.installationTypeMultiOSDetected),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: [
       OsProber(
@@ -197,6 +210,34 @@ void main() {
         RadioButton<InstallationType>,
         tester.lang.installationTypeAlongsideDual(
             'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
+    expect(radio, findsOneWidget);
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
+  testWidgets('alongside duplicate os', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu1',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+        OsProber(
+          long: 'Ubuntu 20.04 LTS',
+          label: 'Ubuntu2',
+          version: '20.04 LTS',
+          type: 'ext4',
+        ),
+      ],
+      canInstallAlongside: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(RadioButton<InstallationType>,
+        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
