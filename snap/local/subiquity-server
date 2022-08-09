@@ -18,6 +18,9 @@ export PY3OR2_PYTHON=$PYTHON
 # sbin for bundled tools such as ntfsresize
 export PATH=$SNAP/bin:$SNAP/sbin:$PATH
 
+# allow subiquity to run setxkbmap
+export DISPLAY=:0
+
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
