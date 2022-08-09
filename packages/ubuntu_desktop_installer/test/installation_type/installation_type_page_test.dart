@@ -94,6 +94,19 @@ void main() {
     );
   });
 
+  testWidgets('duplicate existing OSes', (tester) async {
+    final model = buildModel(existingOS: [
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+    ]);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    expect(
+      find.text(tester.lang.installationTypeMultiOSDetected),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: [
       OsProber(
