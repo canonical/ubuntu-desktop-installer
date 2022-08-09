@@ -1,6 +1,8 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -16,11 +18,15 @@ class WhereAreYouPage extends StatefulWidget {
 
   /// Creates a [WhereAreYouPage] with [WhereAreYouModel].
   static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => WhereAreYouModel(
-        client: getService<SubiquityClient>(),
-        service: getService<GeoService>(),
-      ),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => WhereAreYouModel(getService<SubiquityClient>()),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => TimezoneController(service: getService<GeoService>()),
+        ),
+      ],
       child: const WhereAreYouPage(),
     );
   }
@@ -36,7 +42,17 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
     super.initState();
 
     final model = Provider.of<WhereAreYouModel>(context, listen: false);
-    model.init();
+    final controller = Provider.of<TimezoneController>(context, listen: false);
+    model.init().then((timezone) {
+      controller.searchTimezone(timezone).then((timezones) {
+        controller.selectTimezone(timezones.firstOrNull);
+      });
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      TimezoneMap.precacheAssets(context);
+    });
   }
 
   String formatLocation(GeoLocation? location) {
@@ -49,73 +65,89 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<WhereAreYouModel>(context);
+    final controller = Provider.of<TimezoneController>(context);
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
       title: Text(lang.whereAreYouPageTitle),
-      content: Center(
-        child: model.isInitialized
-            ? Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Autocomplete<GeoLocation>(
-                      initialValue: TextEditingValue(
-                        text: formatLocation(model.selectedLocation),
-                      ),
-                      fieldViewBuilder:
-                          (context, controller, focusNode, onSubmitted) {
-                        if (!focusNode.hasFocus) {
-                          controller.text =
-                              formatLocation(model.selectedLocation);
-                        }
-                        return TextFormField(
-                          focusNode: focusNode,
-                          controller: controller,
-                          decoration: InputDecoration(
-                            labelText: lang.whereAreYouLocationLabel,
-                          ),
-                          onFieldSubmitted: (value) => onSubmitted(),
-                        );
-                      },
-                      displayStringForOption: formatLocation,
-                      optionsBuilder: (value) {
-                        return model.searchLocation(value.text);
-                      },
-                      onSelected: model.selectLocation,
+      headerPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
+      content: Column(
+        children: <Widget>[
+          Expanded(
+            child: TimezoneMap(
+              offset: controller.selectedLocation?.offset,
+              marker: controller.selectedLocation?.coordinates,
+              onPressed: (coordinates) => controller
+                  .searchCoordinates(coordinates)
+                  .then((locations) =>
+                      controller.selectLocation(locations.firstOrNull)),
+            ),
+          ),
+          const SizedBox(height: kContentSpacing),
+          Padding(
+            padding: kContentPadding,
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Autocomplete<GeoLocation>(
+                    initialValue: TextEditingValue(
+                      text: formatLocation(controller.selectedLocation),
                     ),
+                    fieldViewBuilder:
+                        (context, editor, focusNode, onSubmitted) {
+                      if (!focusNode.hasFocus) {
+                        editor.text =
+                            formatLocation(controller.selectedLocation);
+                      }
+                      return TextFormField(
+                        focusNode: focusNode,
+                        controller: editor,
+                        decoration: InputDecoration(
+                          labelText: lang.whereAreYouLocationLabel,
+                        ),
+                        onFieldSubmitted: (value) => onSubmitted(),
+                      );
+                    },
+                    displayStringForOption: formatLocation,
+                    optionsBuilder: (value) {
+                      return controller.searchLocation(value.text);
+                    },
+                    onSelected: controller.selectLocation,
                   ),
-                  const SizedBox(width: kContentSpacing),
-                  Expanded(
-                    child: Autocomplete<GeoLocation>(
-                      initialValue: TextEditingValue(
-                        text: formatTimezone(model.selectedLocation),
-                      ),
-                      fieldViewBuilder:
-                          (context, controller, focusNode, onFieldSubmitted) {
-                        if (!focusNode.hasFocus) {
-                          controller.text =
-                              formatTimezone(model.selectedLocation);
-                        }
-                        return TextFormField(
-                          focusNode: focusNode,
-                          controller: controller,
-                          decoration: InputDecoration(
-                            labelText: lang.whereAreYouTimezoneLabel,
-                          ),
-                          onFieldSubmitted: (value) => onFieldSubmitted(),
-                        );
-                      },
-                      displayStringForOption: formatTimezone,
-                      optionsBuilder: (value) {
-                        return model.searchTimezone(value.text);
-                      },
-                      onSelected: model.selectTimezone,
+                ),
+                const SizedBox(width: kContentSpacing),
+                Expanded(
+                  child: Autocomplete<GeoLocation>(
+                    initialValue: TextEditingValue(
+                      text: formatTimezone(controller.selectedLocation),
                     ),
+                    fieldViewBuilder:
+                        (context, editor, focusNode, onFieldSubmitted) {
+                      if (!focusNode.hasFocus) {
+                        editor.text =
+                            formatTimezone(controller.selectedLocation);
+                      }
+                      return TextFormField(
+                        focusNode: focusNode,
+                        controller: editor,
+                        decoration: InputDecoration(
+                          labelText: lang.whereAreYouTimezoneLabel,
+                        ),
+                        onFieldSubmitted: (value) => onFieldSubmitted(),
+                      );
+                    },
+                    displayStringForOption: formatTimezone,
+                    optionsBuilder: (value) {
+                      return controller.searchTimezone(value.text);
+                    },
+                    onSelected: controller.selectTimezone,
                   ),
-                ],
-              )
-            : const CircularProgressIndicator(),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       actions: <WizardAction>[
         WizardAction.back(
@@ -124,8 +156,11 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
         ),
         WizardAction.next(
           context,
-          onNext: model.save,
-        )
+          onNext: () {
+            final model = Provider.of<WhereAreYouModel>(context, listen: false);
+            return model.save(controller.selectedLocation?.timezone);
+          },
+        ),
       ],
     );
   }

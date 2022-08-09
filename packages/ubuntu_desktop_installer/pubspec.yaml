@@ -41,6 +41,10 @@ dependencies:
   stdlibc: ^0.0.1
   subiquity_client:
     path: ../subiquity_client
+  timezone_map:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/timezone_map
   ubuntu_localizations:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git

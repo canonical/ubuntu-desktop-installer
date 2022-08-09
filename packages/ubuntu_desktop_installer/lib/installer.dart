@@ -7,6 +7,7 @@ import 'package:gsettings/gsettings.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -23,7 +24,6 @@ import 'slides.dart';
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
 
-const _kGeonameUrl = 'https://geoname-lookup.ubuntu.com/';
 const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
 
 final assetBundle =
@@ -76,14 +76,8 @@ Future<void> runInstallerApp(
 
   final journalUnit = liveRun ? _kSystemdUnit : null;
 
-  final geodata = Geodata(
-    loadCities: () => assetBundle.loadString('assets/cities15000.txt'),
-    loadAdmins: () => assetBundle.loadString('assets/admin1CodesASCII.txt'),
-    loadCountries: () => assetBundle.loadString('assets/countryInfo.txt'),
-    loadTimezones: () => assetBundle.loadString('assets/timeZones.txt'),
-  );
-
-  final geoname = Geoname(url: _kGeonameUrl, geodata: geodata);
+  final geodata = Geodata.asset();
+  final geoname = Geoname.ubuntu(geodata: geodata);
 
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
