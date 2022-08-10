@@ -4,6 +4,11 @@ import 'package:subiquity_client/subiquity_client.dart';
 export 'package:subiquity_client/subiquity_client.dart'
     show Disk, DiskObject, Gap, GapUsable, Partition;
 
+extension GapExtension on Gap {
+  bool get tooManyPrimaryPartitions =>
+      usable == GapUsable.TOO_MANY_PRIMARY_PARTS;
+}
+
 extension DiskExtension on Disk {
   String get prettySize => filesize(size);
 }

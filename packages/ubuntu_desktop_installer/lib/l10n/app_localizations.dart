@@ -1010,6 +1010,18 @@ abstract class AppLocalizations {
   /// **'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.'**
   String get newPartitionTableConfirmationMessage;
 
+  /// No description provided for @tooManyPrimaryPartitions.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many primary partitions'**
+  String get tooManyPrimaryPartitions;
+
+  /// No description provided for @partitionLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'limit reached'**
+  String get partitionLimitReached;
+
   /// No description provided for @bootLoaderDevice.
   ///
   /// In en, this message translates to:

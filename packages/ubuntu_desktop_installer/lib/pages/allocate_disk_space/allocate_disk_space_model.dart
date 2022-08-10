@@ -86,7 +86,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
   final _selectionController = StreamController();
 
   /// Whether a partition can be added for the currently selected disk.
-  bool get canAddPartition => selectedGap != null;
+  bool get canAddPartition => selectedGap?.usable == GapUsable.YES;
 
   /// Whether the currently selected partition can be removed.
   bool get canRemovePartition => selectedPartition != null;

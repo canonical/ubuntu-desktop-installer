@@ -42,12 +42,31 @@ class StorageDeviceColumn extends StorageColumn {
             );
           },
           gapBuilder: (context, disk, gap) {
-            return Row(
-              children: [
-                const Icon(YaruIcons.drive_harddisk),
-                const SizedBox(width: 16),
-                Text(AppLocalizations.of(context).freeDiskSpace),
-              ],
+            final lang = AppLocalizations.of(context);
+            final color = gap.tooManyPrimaryPartitions
+                ? Theme.of(context).disabledColor
+                : null;
+            return Tooltip(
+              message: gap.tooManyPrimaryPartitions
+                  ? lang.tooManyPrimaryPartitions
+                  : '',
+              child: Row(
+                children: [
+                  Icon(
+                    gap.tooManyPrimaryPartitions
+                        ? YaruIcons.drive_harddisk_error
+                        : YaruIcons.drive_harddisk,
+                    color: color,
+                  ),
+                  const SizedBox(width: 16),
+                  Text(
+                    gap.tooManyPrimaryPartitions
+                        ? lang.partitionLimitReached
+                        : lang.freeDiskSpace,
+                    style: TextStyle(color: color),
+                  )
+                ],
+              ),
             );
           },
           partitionBuilder: (context, disk, partition) {
@@ -111,7 +130,19 @@ class StorageSizeColumn extends StorageColumn {
             return Text(filesize(disk.size));
           },
           gapBuilder: (context, disk, gap) {
-            return Text(filesize(gap.size));
+            final lang = AppLocalizations.of(context);
+            final color = gap.tooManyPrimaryPartitions
+                ? Theme.of(context).disabledColor
+                : null;
+            return Tooltip(
+              message: gap.tooManyPrimaryPartitions
+                  ? lang.tooManyPrimaryPartitions
+                  : '',
+              child: Text(
+                filesize(gap.size),
+                style: TextStyle(color: color),
+              ),
+            );
           },
           partitionBuilder: (context, disk, partition) {
             return Text(filesize(partition.size ?? 0));

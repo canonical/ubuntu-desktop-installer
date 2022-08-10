@@ -63,6 +63,7 @@ final testDisks = <Disk>[
 AllocateDiskSpaceModel buildModel({
   bool? isValid,
   List<Disk>? disks,
+  Gap? selectedGap,
   Disk? selectedDisk,
   int? selectedDiskIndex,
   Partition? selectedPartition,
@@ -77,6 +78,7 @@ AllocateDiskSpaceModel buildModel({
   when(model.isValid).thenReturn(isValid ?? false);
   when(model.disks).thenReturn(disks ?? <Disk>[]);
 
+  when(model.selectedGap).thenReturn(selectedGap);
   when(model.selectedDisk).thenReturn(selectedDisk);
   when(model.selectedDiskIndex).thenReturn(selectedDiskIndex ?? 0);
   when(model.selectedPartition).thenReturn(selectedPartition);
@@ -357,6 +359,31 @@ void main() {
     );
     expect(continueButton, findsOneWidget);
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+  });
+
+  testWidgets('too many primary partitions', (tester) async {
+    final unusableGap = Gap(
+      offset: 0,
+      size: 1,
+      usable: GapUsable.TOO_MANY_PRIMARY_PARTS,
+    );
+    final model = buildModel(selectedGap: unusableGap);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final addButton = find.ancestor(
+      of: find.byIcon(Icons.add),
+      matching: find.byType(OutlinedButton),
+    );
+    expect(tester.widget<OutlinedButton>(addButton).enabled, isFalse);
+    expect(
+      find.ancestor(
+        of: addButton,
+        matching: find.byWidgetPredicate((widget) =>
+            widget is Tooltip &&
+            widget.message == tester.lang.tooManyPrimaryPartitions),
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets('creates a model', (tester) async {
