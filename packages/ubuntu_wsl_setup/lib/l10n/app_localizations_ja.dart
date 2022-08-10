@@ -65,16 +65,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'ユーザー名が無効です';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'そのユーザー名は既に存在します。';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'その名前はシステムに予約されています。';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'その名前は長すぎます。';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'その名前は使用不可能な文字が含まれています。';
 
   @override
   String get profileSetupPasswordRequired => 'パスワードが必要です';
@@ -149,7 +149,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configurationUIMountFstabTitle => '/etc/fstab をマウント';
 
   @override
-  String get configurationUIMountFstabSubtitle => '/et/fstab をマウントするかどうか。構成ファイル、/etc/fstab には ??? が含まれています';
+  String get configurationUIMountFstabSubtitle => '/etc/fstab をマウントするかどうか。このファイルにはファイルシステムのマウントに関する情報が含まれています。';
 
   @override
   String get configurationUISystemdHeader => '試験的 - Systemd';
@@ -181,34 +181,34 @@ class AppLocalizationsJa extends AppLocalizations {
   String get setupCompleteRestart => '* すべての設定は Ubuntu を再起動した後に有効になります。';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'Ubuntu WSLへようこそ';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => '初期化中…';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'ディストロを解凍しています';
 
   @override
   String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => 'ディストロを実行しています…';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => '何かの問題が発生しました。';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => '何かの問題が発生しました';
 
   @override
-  String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => 'これらのコマンドでWSLを再起動させてからもう一度試してください：\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
 
   @override
-  String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
+  String get installationSlidesErrorText => '\n回復不可能なエラーが発生しました。\n\nアプリケーションを閉じて、パワーシェルかコマンドプロンプトでこれらのコマンドを実行してください：\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => '全て終わりました。Ubuntu WSLをご使用いただけます';
 
   @override
   String get installationSlidesExitTitle => 'Are you sure you want to leave?';
@@ -217,34 +217,34 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'もうすぐ終わります';
 
   @override
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'OK';
 
   @override
   String get installationSlidesLeave => 'Leave';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'キャンセル';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'WSLにUbuntu';
 
   @override
   String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'ウェブ開発に\nUbuntu WLS';
 
   @override
   String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => 'データサイエンスにUbuntu WSL';
 
   @override
   String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
