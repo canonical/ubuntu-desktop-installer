@@ -442,6 +442,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Устройство для установки загрузчика';
 
   @override

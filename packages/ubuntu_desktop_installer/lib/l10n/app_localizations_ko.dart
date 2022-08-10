@@ -442,6 +442,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => '장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
 
   @override

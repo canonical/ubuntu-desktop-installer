@@ -442,6 +442,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Önyükleyici kurulumu yapılacak cihaz';
 
   @override
