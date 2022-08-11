@@ -99,8 +99,8 @@ void main() {
       client = MockSubiquityClient();
       when(client.keyboard()).thenAnswer((_) async {
         return testSetup([
-          KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-          KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+          KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+          KeyboardLayout(code: 'foo', name: 'Foo', variants: [
             KeyboardVariant(code: 'baz', name: 'Baz'),
             KeyboardVariant(code: 'qux', name: 'Qux'),
           ]),
@@ -113,8 +113,8 @@ void main() {
 
     test('names are correct', () async {
       expect(model.layoutCount, equals(2));
-      expect(model.layoutName(0), equals('Foo'));
-      expect(model.layoutName(1), equals('Bar'));
+      expect(model.layoutName(0), equals('Bar'));
+      expect(model.layoutName(1), equals('Foo'));
       expect(model.variantCount, equals(0));
 
       expect(model.selectedLayoutIndex, equals(-1));
@@ -166,14 +166,14 @@ void main() {
 
     test('selection applies keyboard settings', () async {
       await model.selectLayout(0);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'foo'))).called(1);
+      verify(client.setKeyboard(KeyboardSetting(layout: 'bar'))).called(1);
 
       await model.selectLayout(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'baz')))
+      verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'baz')))
           .called(1);
 
       await model.selectVariant(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
+      verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'qux')))
           .called(1);
     });
 
@@ -198,7 +198,7 @@ void main() {
     });
 
     test('try selecting by codes', () async {
-      await model.trySelectLayoutVariant('bar', 'qux');
+      await model.trySelectLayoutVariant('foo', 'qux');
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(1));
       await expectLater(model.onLayoutSelected, emits(1));
@@ -215,8 +215,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async {
       return testSetup([
-        KeyboardLayout(code: 'foo', name: 'Foo', variants: []),
-        KeyboardLayout(code: 'bar', name: 'Bar', variants: [
+        KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+        KeyboardLayout(code: 'foo', name: 'Foo', variants: [
           KeyboardVariant(code: 'baz', name: 'Baz'),
           KeyboardVariant(code: 'qux', name: 'Qux'),
         ]),
@@ -231,7 +231,26 @@ void main() {
     reset(client);
 
     await model.applyKeyboardSettings();
-    verify(client.setKeyboard(KeyboardSetting(layout: 'bar', variant: 'qux')))
+    verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'qux')))
         .called(1);
+  });
+
+  test('sort layouts', () async {
+    final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async {
+      return testSetup([
+        KeyboardLayout(code: 'bbb', name: 'BBB', variants: []),
+        KeyboardLayout(code: 'aaa', name: 'AAA', variants: []),
+        KeyboardLayout(code: 'äää', name: 'ÄÄÄ', variants: []),
+      ], layout: '', variant: '');
+    });
+
+    final model = KeyboardLayoutModel(client);
+
+    await model.init();
+    expect(model.layoutCount, equals(3));
+    expect(model.layoutName(0), equals('AAA'));
+    expect(model.layoutName(1), equals('ÄÄÄ'));
+    expect(model.layoutName(2), equals('BBB'));
   });
 }
