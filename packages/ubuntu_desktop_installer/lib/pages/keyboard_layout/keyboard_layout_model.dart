@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dartx/dartx.dart';
+import 'package:diacritic/diacritic.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -101,7 +102,9 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    _layouts = (await _client.keyboard()).layouts;
+    _layouts = await _client.keyboard().then((keyboard) {
+      return keyboard.layouts.sortedBy((a) => removeDiacritics(a.name));
+    });
     log.info('Loaded ${_layouts.length} keyboard layouts');
     final keyboard = await _client.keyboard();
     _selectedLayoutIndex = _layouts.indexWhere((layout) {
