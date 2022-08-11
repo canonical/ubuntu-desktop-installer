@@ -1,15 +1,25 @@
+import 'dart:io';
 import 'dart:convert';
 
 import 'package:file/file.dart';
 import 'package:file/local.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
+import 'package:path/path.dart' as p;
 import 'package:stdlibc/stdlibc.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+
+final log = Logger('telemetry');
 
 class TelemetryService {
   TelemetryService() : _startTime = _uptime();
 
-  static const reportLocation = '/target/var/log/installer/telemetry';
+  static String get reportLocation {
+    if (kDebugMode) {
+      final exe = Platform.resolvedExecutable;
+      return '${p.dirname(exe)}/.${p.basename(exe)}/telemetry';
+    }
+    return '/var/log/installer/telemetry';
+  }
 
   final int _startTime;
   final Map<String, dynamic> _metrics = {};
@@ -57,9 +67,9 @@ class TelemetryService {
     try {
       await file.parent.create(recursive: true);
       await file.writeAsString(json.encode(_metrics), flush: true);
-    } on FileSystemException {
-      Logger('telemetry')
-          .error('Failed to write telemetry report to $reportLocation');
+      log.debug('Wrote report to $reportLocation');
+    } on FileSystemException catch (e) {
+      log.error('Failed to write report to $reportLocation (${e.message})');
     }
   }
 }
