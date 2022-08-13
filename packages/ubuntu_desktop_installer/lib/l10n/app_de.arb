@@ -336,7 +336,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Die folgenden Partitionen werden formatiert:",
+  "writeChangesPartitionsHeader": "Die folgenden Partitionsänderungen werden vorgenommen:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryMounted": "Partition #{disk}{partition} als {format} benutzt für {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -630,5 +630,77 @@
   "installAlongsideSize": "Größe:",
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Verfügbar:",
-  "@installAlongsideAvailable": {}
+  "@installAlongsideAvailable": {},
+  "quitButtonText": "Installation beenden",
+  "@quitButtonText": {},
+  "writeChangesPartitionFormattedMounted": "Partition #{disk}{partition} formatiert als {format} verwendet für {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "Partition #{disk}{partition} erstellt",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Dieser Computer hat nur {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Die größte Festplatte in diesem Computer hat nur {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "Partition #{disk}{partition} formatiert als {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionResized": "Größe der Partition #{disk}{partition} von {oldsize} auf {newsize} geändert",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionMounted": "Partition #{disk}{partition} verwendet für {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Entschuldigung",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "Sie benötigen mindestens {SIZE} Festplattenspeicher für die Installation von {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  }
 }
