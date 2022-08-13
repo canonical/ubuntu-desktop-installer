@@ -137,7 +137,7 @@
   "@whoAreYouPageUsernameRequired": {},
   "whoAreYouPageInvalidUsername": "Nazwa użytkownika jest nieprawidłowa",
   "@whoAreYouPageInvalidUsername": {},
-  "writeChangesPartitionsHeader": "Sformatowane zostaną następujące partycje:",
+  "writeChangesPartitionsHeader": "Zostaną zastosowane następujące zmiany partycji:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryUnmounted": "partycja #{disk}{partition} jako {format}",
   "@writeChangesPartitionEntryUnmounted": {
@@ -628,5 +628,77 @@
     }
   },
   "installAlongsideSize": "Rozmiar:",
-  "@installAlongsideSize": {}
+  "@installAlongsideSize": {},
+  "writeChangesPartitionFormattedMounted": "partycja #{disk}{partition} sformatowana jako {format} używana do {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Przepraszamy",
+  "@notEnoughDiskSpaceTitle": {},
+  "quitButtonText": "Zakończ instalację",
+  "@quitButtonText": {},
+  "writeChangesPartitionMounted": "partycja #{disk}{partition} używana do {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionResized": "partycja #{disk}{partition} zmieniła rozmiar z {oldsize} na {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partycja #{disk}{partition} sformatowana jako {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionCreated": "utworzona partycja #{disk}{partition}",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceHeader": "Potrzebujesz co najmniej {SIZE} przestrzeni dyskowej, aby zainstalować {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Ten komputer ma tylko {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Największy dysk na tym komputerze ma tylko {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }
