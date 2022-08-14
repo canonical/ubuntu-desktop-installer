@@ -387,7 +387,7 @@
   "@writeChangesDescription": {},
   "writeChangesPartitionTablesHeader": "以下设备的分区表已更改：",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionsHeader": "以下分区将被格式化：",
+  "writeChangesPartitionsHeader": "以下分区更改将被应用：",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
   "@writeChangesPartitionTablesEntry": {
@@ -682,6 +682,78 @@
     "type": "text",
     "placeholders": {
       "RELEASE": {}
+    }
+  },
+  "quitButtonText": "退出安装",
+  "@quitButtonText": {},
+  "writeChangesPartitionFormatted": "分区 #{disk}{partition} 格式化为 {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "分区 #{disk}{partition} 挂载到 {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "分区 #{disk}{partition} 已创建",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "对不起",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "你至少需要 {SIZE} 的磁盘空间来安装 {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "分区 #{disk}{partition} 从 {oldsize} 调整大小到 {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "分区 #{disk}{partition} 格式化为 {format} 并挂载到 {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "本机上只有 {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "本机上最大的硬盘只有 {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
     }
   }
 }
