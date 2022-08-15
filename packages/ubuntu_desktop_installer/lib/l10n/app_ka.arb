@@ -1,3 +1,36 @@
 {
-  "@@locale": "ka"
+  "@@locale": "ka",
+  "appTitle": "Ubuntu Desktop Installer",
+  "@appTitle": {},
+  "cancelButtonText": "გაუქმება",
+  "@cancelButtonText": {},
+  "okButtonText": "დიახ",
+  "@okButtonText": {},
+  "quitButtonText": "დაყენებიდან გასვლა",
+  "@quitButtonText": {},
+  "welcomeHeader": "აირჩიეთ თქვენი ენა:",
+  "@welcomeHeader": {},
+  "tryOrInstallPageTitle": "ცდა ან დაყენება",
+  "@tryOrInstallPageTitle": {},
+  "windowTitle": "{RELEASE}-ის დაყენება",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "restartButtonText": "გადატვირთვა",
+  "@restartButtonText": {},
+  "changeButtonText": "შეცვლა",
+  "@changeButtonText": {},
+  "noButtonText": "არა",
+  "@noButtonText": {},
+  "revertButtonText": "აღდგენა",
+  "@revertButtonText": {},
+  "yesButtonText": "დიახ",
+  "@yesButtonText": {},
+  "repairInstallation": "დაყენებული ვერსიის შეკეთება",
+  "@repairInstallation": {},
+  "welcome": "მოგესალმებით",
+  "@welcome": {}
 }
