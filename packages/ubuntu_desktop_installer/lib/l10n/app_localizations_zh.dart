@@ -12,7 +12,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return '安装$RELEASE';
+    return '安装 $RELEASE';
   }
 
   @override
@@ -323,17 +323,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return '安装 $product 并与 $os1 和 $os2 共存';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return '安装 $product 并与它们共存';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return '安装 $product 并与其它分区共存';
   }
 
   @override
@@ -362,30 +362,30 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectGuidedStorageInstallNow => '立即安装';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => '拖曳下面的分隔符分配磁盘空间：';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '有 $num 个小分区被隐藏 , 使用 <a href=\"$url\">高级分区工具</a> 获得更多控制';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => '调整分区大小';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => '分配空间';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => '文件';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => '分区：';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => '大小：';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => '可用的：';
 
   @override
   String get allocateDiskSpace => '分配磁盘空间';
@@ -562,16 +562,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => '用户名无效';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => '这个用户名已经存在。';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => '这个名称保留给系统使用。';
 
   @override
   String get whoAreYouPageUsernameTooLong => '名字过长.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => '这个名称包含非法字符。';
 
   @override
   String get whoAreYouPagePasswordLabel => '选择一个密码';
@@ -729,7 +729,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get photoSlideTitle => '享受照片带给你的乐趣';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell 是一个在您的小工具中的精巧照片管理器。 可通过连接相机或手机来传输图片， 以便于分享和安全地存储。 如果你想有新点子， 你可以在 Ubuntu Software 中找到更多照片应用。';
 
   @override
   String get photoSlideShotwell => 'Shotwell 图片管理器';
@@ -741,11 +741,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get photoSlideShotcut => 'Shotcut 视频编辑器';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => '充分发挥网络的潜能';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE 包括了 Firefox —在世界上有数百万人使用的网络浏览器，并且，为了更快地访问，一些您经常使用的网站（像是 Facebook 或者 Gmail）可以固定到您的桌面上，就像是您本机上的应用程序。';
   }
 
   @override
@@ -758,10 +758,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get webSlideChromium => 'Chromium浏览器';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => '您在办公中所需的一切';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及演示文档所需的工具。同时全功能兼容 Microsoft Office 的文件格式，无需额外费用。';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -773,21 +773,21 @@ class AppLocalizationsZh extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice 演示';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => '每个人都可轻松使用';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return '$RELEASE 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，$RELEASE 都可凭先进的无障碍工具和更改语言、配色方案、字体大小的选项，为您随时随地地轻松访问计算服务。';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => '个性化选项';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => '外观';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => '协助技术';
 
   @override
   String get accessSlideLanguageSupport => '语言支持';
@@ -797,20 +797,20 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return '官方文档覆盖了 $RELEASE 的常见领域，可通过 <a href=\"https://help.ubuntu.com\">线上</a> 和应用坞（dock）上的帮助图标进行访问。';
   }
 
   @override
   String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>你可以问问题并搜索令人印象深刻的已回答问题。你的<a href=\"https://loco.ubuntu.com/teams\">社区团队</a>可能会为你的语言提供支持.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => '要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => '包含软件';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => '可用软件';
 
   @override
   String get supportedSoftware => '支持软件';
@@ -819,7 +819,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get copyingFiles => '复制文件……';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => '安装失败';
 
   @override
   String get notEnoughDiskSpaceTitle => 'Sorry';
