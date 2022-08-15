@@ -2,7 +2,7 @@
   "@@locale": "zh",
   "appTitle": "Ubuntu 桌面版安装器",
   "@appTitle": {},
-  "windowTitle": "安装{RELEASE}",
+  "windowTitle": "安装 {RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
@@ -587,5 +587,101 @@
   "copyingFiles": "复制文件……",
   "@copyingFiles": {},
   "supportedSoftware": "支持软件",
-  "@supportedSoftware": {}
+  "@supportedSoftware": {},
+  "accessSlideAssistiveTechnologies": "协助技术",
+  "@accessSlideAssistiveTechnologies": {},
+  "photoSlideDescription": "Shotwell 是一个在您的小工具中的精巧照片管理器。 可通过连接相机或手机来传输图片， 以便于分享和安全地存储。 如果你想有新点子， 你可以在 Ubuntu Software 中找到更多照片应用。",
+  "@photoSlideDescription": {},
+  "webSlideDescription": "{RELEASE} 包括了 Firefox —在世界上有数百万人使用的网络浏览器，并且，为了更快地访问，一些您经常使用的网站（像是 Facebook 或者 Gmail）可以固定到您的桌面上，就像是您本机上的应用程序。",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideTitle": "充分发挥网络的潜能",
+  "@webSlideTitle": {},
+  "officeSlideDescription": "LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及演示文档所需的工具。同时全功能兼容 Microsoft Office 的文件格式，无需额外费用。",
+  "@officeSlideDescription": {},
+  "accessSlideDescription": "{RELEASE} 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，{RELEASE} 都可凭先进的无障碍工具和更改语言、配色方案、字体大小的选项，为您随时随地地轻松访问计算服务。",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "includedSoftware": "包含软件",
+  "@includedSoftware": {},
+  "availableSoftware": "可用软件",
+  "@availableSoftware": {},
+  "supportSlideResources": "要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.",
+  "@supportSlideResources": {},
+  "accessSlideCustomizationOptions": "个性化选项",
+  "@accessSlideCustomizationOptions": {},
+  "installationTypeAlongsideMulti": "安装 {product} 并与它们共存",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "安装 {product} 并与其它分区共存",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "有 {num} 个小分区被隐藏 , 使用 <a href=\"{url}\">高级分区工具</a> 获得更多控制",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAllocateSpace": "分配空间",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "文件",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "分区：",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "大小：",
+  "@installAlongsideSize": {},
+  "whoAreYouPageUsernameSystemReserved": "这个名称保留给系统使用。",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInvalidChars": "这个名称包含非法字符。",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "officeSlideTitle": "您在办公中所需的一切",
+  "@officeSlideTitle": {},
+  "accessSlideTitle": "每个人都可轻松使用",
+  "@accessSlideTitle": {},
+  "accessSlideAppearance": "外观",
+  "@accessSlideAppearance": {},
+  "installationFailed": "安装失败",
+  "@installationFailed": {},
+  "installAlongsideAvailable": "可用的：",
+  "@installAlongsideAvailable": {},
+  "installAlongsideSpaceDivider": "拖曳下面的分隔符分配磁盘空间：",
+  "@installAlongsideSpaceDivider": {},
+  "installationTypeAlongsideDual": "安装 {product} 并与 {os1} 和 {os2} 共存",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideResizePartition": "调整分区大小",
+  "@installAlongsideResizePartition": {},
+  "whoAreYouPageUsernameInUse": "这个用户名已经存在。",
+  "@whoAreYouPageUsernameInUse": {},
+  "supportSlideDocumentation": "官方文档覆盖了 {RELEASE} 的常见领域，可通过 <a href=\"https://help.ubuntu.com\">线上</a> 和应用坞（dock）上的帮助图标进行访问。",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
