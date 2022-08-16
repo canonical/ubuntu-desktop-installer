@@ -396,7 +396,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "המחיצות הבאות מועמדות לפרמוט:",
+  "writeChangesPartitionsHeader": "השינויים הבאים יחולו על המחיצות:",
   "@writeChangesPartitionsHeader": {},
   "connectToInternetPageTitle": "התחברות לאינטרנט",
   "@connectToInternetPageTitle": {},
@@ -628,5 +628,77 @@
     }
   },
   "installAlongsideAvailable": "זמין:",
-  "@installAlongsideAvailable": {}
+  "@installAlongsideAvailable": {},
+  "writeChangesPartitionFormattedMounted": "מחיצה מס׳ {disk}{partition} תפורמט כ־{format} ותשמש עבור {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "מחילה",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "נדרשים {SIZE} לפחות של מקום פנוי כדי להתקין את {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "הגודל של מחיצה מס׳ {disk}{partition} ישתנה מ־{oldsize} ל־{newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "quitButtonText": "יציאה מההתקנה",
+  "@quitButtonText": {},
+  "writeChangesPartitionCreated": "מחיצה מס׳ {disk}{partition} נוצרה",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "במחשב זה יש רק {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "מחיצה מס׳ {disk}{partition} תפורמט בתור {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "מחיצה מס׳ {disk}{partition} תשמש עבור {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "גודל הכונן הגדול ביותר במחשב הזה הוא {SIZE} בלבד.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }

@@ -351,7 +351,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Följande partitioner kommer att formateras:",
+  "writeChangesPartitionsHeader": "Följande partitionsändringar kommer att tillämpas:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryMounted": "partition #{disk}{partition} som {format} används för {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -681,5 +681,79 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "writeChangesPartitionFormatted": "partition #{disk}{partition} formaterad som {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partition #{disk}{partition} används för {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "partition #{disk}{partition} skapad",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Förlåt",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "Du behöver minst {SIZE} diskutrymme för att installera {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Den här datorn har bara {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Den största disken på den här datorn är bara {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "quitButtonText": "Avbryt installation",
+  "@quitButtonText": {},
+  "writeChangesPartitionFormattedMounted": "partition #{disk}{partition} formaterad som {format} används för {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionResized": "partition #{disk}{partition} storleksändrad från {oldsize} till {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Tilldela enhetsutrymme genom att dra i spaken nedan:",
+  "@installAlongsideSpaceDivider": {}
 }

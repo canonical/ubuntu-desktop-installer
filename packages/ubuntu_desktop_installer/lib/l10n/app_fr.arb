@@ -84,7 +84,7 @@
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
   "@writeChangesPartitionTablesEntry": {},
-  "writeChangesPartitionsHeader": "Les partitions suivantes seront formattées :",
+  "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
   "@writeChangesPartitionEntryPrimaryFull": {},
@@ -615,6 +615,78 @@
     "placeholders": {
       "num": {},
       "url": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "la partition #{disk}{partition} formatée en {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Le plus grand disque sur cet ordinateur n'a que {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceHeader": "Vous avec besoin d'au moins {SIZE} d'espace disque pour installer {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionCreated": "la partition #{disk}{partition} créée",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Cet ordinateur n'a que {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "quitButtonText": "Quitter l'installation",
+  "@quitButtonText": {},
+  "notEnoughDiskSpaceTitle": "Désolé",
+  "@notEnoughDiskSpaceTitle": {},
+  "writeChangesPartitionResized": "la partition #{disk}{partition} redimensionnée de {oldsize} à {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "la partition #{disk}{partition} formatée en {format} utilisée pour {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionMounted": "la partition #{disk}{partition} utilisée pour {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
     }
   }
 }
