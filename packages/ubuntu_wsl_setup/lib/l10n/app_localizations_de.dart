@@ -247,7 +247,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL für Datenwissenschaft';
 
   @override
-  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'Mit dem NVIDIA Data Science Stack können Sie die Leistung von Datenanalyse- und Machine-Learning-Projekten auf der Grundlage nativer Windows NVIDIA-Treiber maximieren.';
 
   @override
   String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL für\nGrafische Anwendungen';

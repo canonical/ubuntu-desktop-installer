@@ -184,28 +184,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesWelcome => '欢迎来到Ubuntu WSL';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => '初始化…';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => '解包发行版';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => '即将就绪。需要留意安装器。';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => '启动发行版…';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => '有哪里出了问题。';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => '有哪里出了问题';
 
   @override
   String get installationSlidesErrorSub => '请选择命令重试并重启WSL：\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
 
   @override
-  String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
+  String get installationSlidesErrorText => '\n一个不可恢复的错误发生了。\n\n请关闭这个程序，打开 Powershell 或者命令提示符运行以下命令：\n';
 
   @override
   String get installationSlidesDone => '完成。在WSL享受Ubuntu';
@@ -214,13 +214,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesExitTitle => '你确定要离开？';
 
   @override
-  String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
+  String get installationSlidesExitContents => '关闭这个窗口不会停止在后台运行的安装程序。\n\n同时，您可以继续探索您能在 Ubuntu on WSL 里做什么。';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => '即将完成';
 
   @override
-  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => '主安装器窗口只剩几步就可以完成。\n我们可以退出这个窗口然后转到那里吗？';
 
   @override
   String get installationSlidesOk => '确定';
@@ -235,47 +235,47 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesUbuntuOnWsl => 'WSL上的Ubuntu';
 
   @override
-  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+  String get installationSlidesUbuntuOnWslText => '为 Linux 应用开发和运行设计的完整 Ubuntu 环境，深度融入 Windows，针对云、网站、数据科学和物联网进行了优化。更重要的是，玩得愉快！';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL\n网络开发用';
 
   @override
-  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+  String get installationSlidesUbuntuWslWebDevText => '在 WSL 中使用 VS Code和IntelliJ等原生 Windows IDE进行开发并从全特性 NodeJS 和 Ruby 支持中获益。';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => '数据科学用 Ubuntu WSL';
 
   @override
-  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDA Data Science Stack 让你得以利用原生 Windows NVIDIA 驱动最大化数据科学和机器学习项目的性能。';
 
   @override
-  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL\n图形程序用';
 
   @override
-  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+  String get installationSlidesUbuntuWslGuiAppsText => '在 Linux 上使用 WSLg 开发和预览多平台支持的网站和图形应用程序。';
 
   @override
-  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'DevOps 用 Ubuntu WSL';
 
   @override
-  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+  String get installationSlidesUbuntuWslDevOpsText => '在本地的 Ubuntu WSL 上开发，以确保 CI/CD 管线在 Ubuntu 生产环境中的兼容性';
 
   @override
-  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => '企业用 Ubuntu WSL';
 
   @override
-  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => '经过认证的 Ubuntu LTS\n在 Windows 企业生态中\n助力开发者。';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => '探索更多';
 
   @override
-  String get installationSlidesFindOutMoreVisit => '查看 ';
+  String get installationSlidesFindOutMoreVisit => '访问 ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
 
   @override
-  String get installationSlidesFindOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
+  String get installationSlidesFindOutMoreText => ' 探索更多关于 WSL 上的 Ubuntu 以及 Canonical 如何支持开发者和组织。';
 }

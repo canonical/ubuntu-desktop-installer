@@ -37,7 +37,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get yesButtonText => '是';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => '退出安装';
 
   @override
   String get welcome => '欢迎';
@@ -606,31 +606,31 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => '以下分区将被格式化：';
+  String get writeChangesPartitionsHeader => '以下分区更改将被应用：';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return '分区 #$disk${partition} 从 $oldsize 调整大小到 $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return '分区 #$disk${partition} 格式化为 $format 并挂载到 $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return '分区 #$disk${partition} 格式化为 $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return '分区 #$disk${partition} 挂载到 $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return '分区 #$disk${partition} 已创建';
   }
 
   @override
@@ -822,20 +822,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationFailed => '安装失败';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => '对不起';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return '你至少需要 $SIZE 的磁盘空间来安装 $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return '本机上只有 $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return '本机上最大的硬盘只有 $SIZE.';
   }
 }

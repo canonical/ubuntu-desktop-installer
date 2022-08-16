@@ -37,7 +37,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get yesButtonText => 'Ja';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Avbryt installation';
 
   @override
   String get welcome => 'Välkommen';
@@ -362,7 +362,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installera nu';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Tilldela enhetsutrymme genom att dra i spaken nedan:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -606,31 +606,31 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Följande partitioner kommer att formateras:';
+  String get writeChangesPartitionsHeader => 'Följande partitionsändringar kommer att tillämpas:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'partition #$disk${partition} storleksändrad från $oldsize till $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partition #$disk${partition} formaterad som $format används för $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partition #$disk${partition} formaterad som $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partition #$disk${partition} används för $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partition #$disk${partition} skapad';
   }
 
   @override
@@ -822,20 +822,20 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationFailed => 'Installationen misslyckades';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Förlåt';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Du behöver minst $SIZE diskutrymme för att installera $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Den här datorn har bara $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Den största disken på den här datorn är bara $SIZE.';
   }
 }

@@ -37,7 +37,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get yesButtonText => 'כן';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'יציאה מההתקנה';
 
   @override
   String get welcome => 'ברוך בואך';
@@ -606,31 +606,31 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'המחיצות הבאות מועמדות לפרמוט:';
+  String get writeChangesPartitionsHeader => 'השינויים הבאים יחולו על המחיצות:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'הגודל של מחיצה מס׳ $disk${partition} ישתנה מ־$oldsize ל־$newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'מחיצה מס׳ $disk${partition} תפורמט כ־$format ותשמש עבור $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'מחיצה מס׳ $disk${partition} תפורמט בתור $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'מחיצה מס׳ $disk${partition} תשמש עבור $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'מחיצה מס׳ $disk${partition} נוצרה';
   }
 
   @override
@@ -822,20 +822,20 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationFailed => 'ההתקנה נכשלה';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'מחילה';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'נדרשים $SIZE לפחות של מקום פנוי כדי להתקין את $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'במחשב זה יש רק $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'גודל הכונן הגדול ביותר במחשב הזה הוא $SIZE בלבד.';
   }
 }

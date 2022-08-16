@@ -37,7 +37,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get yesButtonText => 'Ja';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Installation beenden';
 
   @override
   String get welcome => 'Willkommen';
@@ -606,31 +606,31 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Die folgenden Partitionen werden formatiert:';
+  String get writeChangesPartitionsHeader => 'Die folgenden Partitionsänderungen werden vorgenommen:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'Größe der Partition #$disk${partition} von $oldsize auf $newsize geändert';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'Partition #$disk${partition} formatiert als $format verwendet für $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'Partition #$disk${partition} formatiert als $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'Partition #$disk${partition} verwendet für $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'Partition #$disk${partition} erstellt';
   }
 
   @override
@@ -822,20 +822,20 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationFailed => 'Installation fehlgeschlagen';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Entschuldigung';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Sie benötigen mindestens $SIZE Festplattenspeicher für die Installation von $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Dieser Computer hat nur $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Die größte Festplatte in diesem Computer hat nur $SIZE.';
   }
 }
