@@ -12,44 +12,44 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE-ის დაყენება';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'გაუქმება';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'შეცვლა';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'დიახ';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'არა';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'გადატვირთვა';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'აღდგენა';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'დიახ';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'დაყენებიდან გასვლა';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'მოგესალმებით';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'აირჩიეთ თქვენი ენა:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'ცდა ან დაყენება';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'დაყენებული ვერსიის შეკეთება';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
