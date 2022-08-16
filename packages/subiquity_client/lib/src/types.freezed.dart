@@ -5427,11 +5427,12 @@ StorageResponseV2 _$StorageResponseV2FromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StorageResponseV2 {
-  List<Disk> get disks => throw _privateConstructorUsedError;
-  bool get needRoot => throw _privateConstructorUsedError;
-  bool get needBoot => throw _privateConstructorUsedError;
-  int get installMinimumSize => throw _privateConstructorUsedError;
+  ProbeStatus get status => throw _privateConstructorUsedError;
   ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
+  List<Disk> get disks => throw _privateConstructorUsedError;
+  bool? get needRoot => throw _privateConstructorUsedError;
+  bool? get needBoot => throw _privateConstructorUsedError;
+  int? get installMinimumSize => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5445,11 +5446,12 @@ abstract class $StorageResponseV2CopyWith<$Res> {
           StorageResponseV2 value, $Res Function(StorageResponseV2) then) =
       _$StorageResponseV2CopyWithImpl<$Res>;
   $Res call(
-      {List<Disk> disks,
-      bool needRoot,
-      bool needBoot,
-      int installMinimumSize,
-      ErrorReportRef? errorReport});
+      {ProbeStatus status,
+      ErrorReportRef? errorReport,
+      List<Disk> disks,
+      bool? needRoot,
+      bool? needBoot,
+      int? installMinimumSize});
 
   $ErrorReportRefCopyWith<$Res>? get errorReport;
 }
@@ -5465,13 +5467,22 @@ class _$StorageResponseV2CopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
     Object? disks = freezed,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
     Object? installMinimumSize = freezed,
-    Object? errorReport = freezed,
   }) {
     return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
       disks: disks == freezed
           ? _value.disks
           : disks // ignore: cast_nullable_to_non_nullable
@@ -5479,19 +5490,15 @@ class _$StorageResponseV2CopyWithImpl<$Res>
       needRoot: needRoot == freezed
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       needBoot: needBoot == freezed
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       installMinimumSize: installMinimumSize == freezed
           ? _value.installMinimumSize
           : installMinimumSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorReport: errorReport == freezed
-          ? _value.errorReport
-          : errorReport // ignore: cast_nullable_to_non_nullable
-              as ErrorReportRef?,
+              as int?,
     ));
   }
 
@@ -5515,11 +5522,12 @@ abstract class _$$_StorageResponseV2CopyWith<$Res>
       __$$_StorageResponseV2CopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Disk> disks,
-      bool needRoot,
-      bool needBoot,
-      int installMinimumSize,
-      ErrorReportRef? errorReport});
+      {ProbeStatus status,
+      ErrorReportRef? errorReport,
+      List<Disk> disks,
+      bool? needRoot,
+      bool? needBoot,
+      int? installMinimumSize});
 
   @override
   $ErrorReportRefCopyWith<$Res>? get errorReport;
@@ -5538,13 +5546,22 @@ class __$$_StorageResponseV2CopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
     Object? disks = freezed,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
     Object? installMinimumSize = freezed,
-    Object? errorReport = freezed,
   }) {
     return _then(_$_StorageResponseV2(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
       disks: disks == freezed
           ? _value._disks
           : disks // ignore: cast_nullable_to_non_nullable
@@ -5552,19 +5569,15 @@ class __$$_StorageResponseV2CopyWithImpl<$Res>
       needRoot: needRoot == freezed
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       needBoot: needBoot == freezed
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       installMinimumSize: installMinimumSize == freezed
           ? _value.installMinimumSize
           : installMinimumSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorReport: errorReport == freezed
-          ? _value.errorReport
-          : errorReport // ignore: cast_nullable_to_non_nullable
-              as ErrorReportRef?,
+              as int?,
     ));
   }
 }
@@ -5573,35 +5586,39 @@ class __$$_StorageResponseV2CopyWithImpl<$Res>
 @JsonSerializable()
 class _$_StorageResponseV2 implements _StorageResponseV2 {
   const _$_StorageResponseV2(
-      {required final List<Disk> disks,
-      required this.needRoot,
-      required this.needBoot,
-      required this.installMinimumSize,
-      this.errorReport})
+      {required this.status,
+      this.errorReport,
+      final List<Disk> disks = const [],
+      this.needRoot,
+      this.needBoot,
+      this.installMinimumSize})
       : _disks = disks;
 
   factory _$_StorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$$_StorageResponseV2FromJson(json);
 
+  @override
+  final ProbeStatus status;
+  @override
+  final ErrorReportRef? errorReport;
   final List<Disk> _disks;
   @override
+  @JsonKey()
   List<Disk> get disks {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_disks);
   }
 
   @override
-  final bool needRoot;
+  final bool? needRoot;
   @override
-  final bool needBoot;
+  final bool? needBoot;
   @override
-  final int installMinimumSize;
-  @override
-  final ErrorReportRef? errorReport;
+  final int? installMinimumSize;
 
   @override
   String toString() {
-    return 'StorageResponseV2(disks: $disks, needRoot: $needRoot, needBoot: $needBoot, installMinimumSize: $installMinimumSize, errorReport: $errorReport)';
+    return 'StorageResponseV2(status: $status, errorReport: $errorReport, disks: $disks, needRoot: $needRoot, needBoot: $needBoot, installMinimumSize: $installMinimumSize)';
   }
 
   @override
@@ -5609,24 +5626,26 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StorageResponseV2 &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.errorReport, errorReport) &&
             const DeepCollectionEquality().equals(other._disks, _disks) &&
             const DeepCollectionEquality().equals(other.needRoot, needRoot) &&
             const DeepCollectionEquality().equals(other.needBoot, needBoot) &&
             const DeepCollectionEquality()
-                .equals(other.installMinimumSize, installMinimumSize) &&
-            const DeepCollectionEquality()
-                .equals(other.errorReport, errorReport));
+                .equals(other.installMinimumSize, installMinimumSize));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(errorReport),
       const DeepCollectionEquality().hash(_disks),
       const DeepCollectionEquality().hash(needRoot),
       const DeepCollectionEquality().hash(needBoot),
-      const DeepCollectionEquality().hash(installMinimumSize),
-      const DeepCollectionEquality().hash(errorReport));
+      const DeepCollectionEquality().hash(installMinimumSize));
 
   @JsonKey(ignore: true)
   @override
@@ -5644,25 +5663,28 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
 
 abstract class _StorageResponseV2 implements StorageResponseV2 {
   const factory _StorageResponseV2(
-      {required final List<Disk> disks,
-      required final bool needRoot,
-      required final bool needBoot,
-      required final int installMinimumSize,
-      final ErrorReportRef? errorReport}) = _$_StorageResponseV2;
+      {required final ProbeStatus status,
+      final ErrorReportRef? errorReport,
+      final List<Disk> disks,
+      final bool? needRoot,
+      final bool? needBoot,
+      final int? installMinimumSize}) = _$_StorageResponseV2;
 
   factory _StorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_StorageResponseV2.fromJson;
 
   @override
-  List<Disk> get disks;
-  @override
-  bool get needRoot;
-  @override
-  bool get needBoot;
-  @override
-  int get installMinimumSize;
+  ProbeStatus get status;
   @override
   ErrorReportRef? get errorReport;
+  @override
+  List<Disk> get disks;
+  @override
+  bool? get needRoot;
+  @override
+  bool? get needBoot;
+  @override
+  int? get installMinimumSize;
   @override
   @JsonKey(ignore: true)
   _$$_StorageResponseV2CopyWith<_$_StorageResponseV2> get copyWith =>
@@ -6768,6 +6790,8 @@ GuidedStorageResponseV2 _$GuidedStorageResponseV2FromJson(
 
 /// @nodoc
 mixin _$GuidedStorageResponseV2 {
+  ProbeStatus get status => throw _privateConstructorUsedError;
+  ErrorReportRef? get errorReport => throw _privateConstructorUsedError;
   GuidedChoiceV2? get configured => throw _privateConstructorUsedError;
   List<GuidedStorageTarget> get possible => throw _privateConstructorUsedError;
 
@@ -6782,8 +6806,13 @@ abstract class $GuidedStorageResponseV2CopyWith<$Res> {
   factory $GuidedStorageResponseV2CopyWith(GuidedStorageResponseV2 value,
           $Res Function(GuidedStorageResponseV2) then) =
       _$GuidedStorageResponseV2CopyWithImpl<$Res>;
-  $Res call({GuidedChoiceV2? configured, List<GuidedStorageTarget> possible});
+  $Res call(
+      {ProbeStatus status,
+      ErrorReportRef? errorReport,
+      GuidedChoiceV2? configured,
+      List<GuidedStorageTarget> possible});
 
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
   $GuidedChoiceV2CopyWith<$Res>? get configured;
 }
 
@@ -6798,10 +6827,20 @@ class _$GuidedStorageResponseV2CopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
     Object? configured = freezed,
     Object? possible = freezed,
   }) {
     return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
       configured: configured == freezed
           ? _value.configured
           : configured // ignore: cast_nullable_to_non_nullable
@@ -6811,6 +6850,17 @@ class _$GuidedStorageResponseV2CopyWithImpl<$Res>
           : possible // ignore: cast_nullable_to_non_nullable
               as List<GuidedStorageTarget>,
     ));
+  }
+
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport {
+    if (_value.errorReport == null) {
+      return null;
+    }
+
+    return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
+      return _then(_value.copyWith(errorReport: value));
+    });
   }
 
   @override
@@ -6832,8 +6882,14 @@ abstract class _$$_GuidedStorageResponseV2CopyWith<$Res>
           $Res Function(_$_GuidedStorageResponseV2) then) =
       __$$_GuidedStorageResponseV2CopyWithImpl<$Res>;
   @override
-  $Res call({GuidedChoiceV2? configured, List<GuidedStorageTarget> possible});
+  $Res call(
+      {ProbeStatus status,
+      ErrorReportRef? errorReport,
+      GuidedChoiceV2? configured,
+      List<GuidedStorageTarget> possible});
 
+  @override
+  $ErrorReportRefCopyWith<$Res>? get errorReport;
   @override
   $GuidedChoiceV2CopyWith<$Res>? get configured;
 }
@@ -6852,10 +6908,20 @@ class __$$_GuidedStorageResponseV2CopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? status = freezed,
+    Object? errorReport = freezed,
     Object? configured = freezed,
     Object? possible = freezed,
   }) {
     return _then(_$_GuidedStorageResponseV2(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProbeStatus,
+      errorReport: errorReport == freezed
+          ? _value.errorReport
+          : errorReport // ignore: cast_nullable_to_non_nullable
+              as ErrorReportRef?,
       configured: configured == freezed
           ? _value.configured
           : configured // ignore: cast_nullable_to_non_nullable
@@ -6872,12 +6938,19 @@ class __$$_GuidedStorageResponseV2CopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
   const _$_GuidedStorageResponseV2(
-      {this.configured, final List<GuidedStorageTarget> possible = const []})
+      {required this.status,
+      this.errorReport,
+      this.configured,
+      final List<GuidedStorageTarget> possible = const []})
       : _possible = possible;
 
   factory _$_GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =>
       _$$_GuidedStorageResponseV2FromJson(json);
 
+  @override
+  final ProbeStatus status;
+  @override
+  final ErrorReportRef? errorReport;
   @override
   final GuidedChoiceV2? configured;
   final List<GuidedStorageTarget> _possible;
@@ -6890,7 +6963,7 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
 
   @override
   String toString() {
-    return 'GuidedStorageResponseV2(configured: $configured, possible: $possible)';
+    return 'GuidedStorageResponseV2(status: $status, errorReport: $errorReport, configured: $configured, possible: $possible)';
   }
 
   @override
@@ -6898,6 +6971,9 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedStorageResponseV2 &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.errorReport, errorReport) &&
             const DeepCollectionEquality()
                 .equals(other.configured, configured) &&
             const DeepCollectionEquality().equals(other._possible, _possible));
@@ -6907,6 +6983,8 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(errorReport),
       const DeepCollectionEquality().hash(configured),
       const DeepCollectionEquality().hash(_possible));
 
@@ -6927,12 +7005,18 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
 
 abstract class _GuidedStorageResponseV2 implements GuidedStorageResponseV2 {
   const factory _GuidedStorageResponseV2(
-      {final GuidedChoiceV2? configured,
+      {required final ProbeStatus status,
+      final ErrorReportRef? errorReport,
+      final GuidedChoiceV2? configured,
       final List<GuidedStorageTarget> possible}) = _$_GuidedStorageResponseV2;
 
   factory _GuidedStorageResponseV2.fromJson(Map<String, dynamic> json) =
       _$_GuidedStorageResponseV2.fromJson;
 
+  @override
+  ProbeStatus get status;
+  @override
+  ErrorReportRef? get errorReport;
   @override
   GuidedChoiceV2? get configured;
   @override

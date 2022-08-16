@@ -529,26 +529,29 @@ const _$BootloaderEnumMap = {
 
 _$_StorageResponseV2 _$$_StorageResponseV2FromJson(Map<String, dynamic> json) =>
     _$_StorageResponseV2(
-      disks: (json['disks'] as List<dynamic>)
-          .map((e) => Disk.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      needRoot: json['need_root'] as bool,
-      needBoot: json['need_boot'] as bool,
-      installMinimumSize: json['install_minimum_size'] as int,
+      status: $enumDecode(_$ProbeStatusEnumMap, json['status']),
       errorReport: json['error_report'] == null
           ? null
           : ErrorReportRef.fromJson(
               json['error_report'] as Map<String, dynamic>),
+      disks: (json['disks'] as List<dynamic>?)
+              ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      needRoot: json['need_root'] as bool?,
+      needBoot: json['need_boot'] as bool?,
+      installMinimumSize: json['install_minimum_size'] as int?,
     );
 
 Map<String, dynamic> _$$_StorageResponseV2ToJson(
         _$_StorageResponseV2 instance) =>
     <String, dynamic>{
+      'status': _$ProbeStatusEnumMap[instance.status]!,
+      'error_report': instance.errorReport?.toJson(),
       'disks': instance.disks.map((e) => e.toJson()).toList(),
       'need_root': instance.needRoot,
       'need_boot': instance.needBoot,
       'install_minimum_size': instance.installMinimumSize,
-      'error_report': instance.errorReport?.toJson(),
     };
 
 _$_GuidedResizeValues _$$_GuidedResizeValuesFromJson(
@@ -641,6 +644,11 @@ Map<String, dynamic> _$$_GuidedChoiceV2ToJson(_$_GuidedChoiceV2 instance) =>
 _$_GuidedStorageResponseV2 _$$_GuidedStorageResponseV2FromJson(
         Map<String, dynamic> json) =>
     _$_GuidedStorageResponseV2(
+      status: $enumDecode(_$ProbeStatusEnumMap, json['status']),
+      errorReport: json['error_report'] == null
+          ? null
+          : ErrorReportRef.fromJson(
+              json['error_report'] as Map<String, dynamic>),
       configured: json['configured'] == null
           ? null
           : GuidedChoiceV2.fromJson(json['configured'] as Map<String, dynamic>),
@@ -654,6 +662,8 @@ _$_GuidedStorageResponseV2 _$$_GuidedStorageResponseV2FromJson(
 Map<String, dynamic> _$$_GuidedStorageResponseV2ToJson(
         _$_GuidedStorageResponseV2 instance) =>
     <String, dynamic>{
+      'status': _$ProbeStatusEnumMap[instance.status]!,
+      'error_report': instance.errorReport?.toJson(),
       'configured': instance.configured?.toJson(),
       'possible': instance.possible.map((e) => e.toJson()).toList(),
     };
