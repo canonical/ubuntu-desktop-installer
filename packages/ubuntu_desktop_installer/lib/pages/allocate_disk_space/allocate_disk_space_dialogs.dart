@@ -316,7 +316,7 @@ class _PartitionFormatSelector extends StatelessWidget {
       valueListenable: partitionFormat,
       builder: (context, type, child) {
         return DropdownBuilder<PartitionFormat>(
-          selected: type ?? PartitionFormat.defaultValue,
+          selected: type,
           values: PartitionFormat.values,
           itemBuilder: (context, format, _) {
             return Text(
