@@ -5,6 +5,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'installation_type_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -136,10 +137,10 @@ void main() {
 
     final service = MockDiskStorageService();
     when(service.hasEncryption).thenReturn(false);
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => testGuidedStorageResponse(possible: [reformat]));
     when(service.setGuidedStorage(reformat))
-        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final model = InstallationTypeModel(service, MockTelemetryService());
 
@@ -155,14 +156,14 @@ void main() {
 
     // none
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+        .thenAnswer((_) async => testGuidedStorageResponse());
     await model.init();
     expect(model.canInstallAlongside, isFalse);
 
     // reformat
     final reformat = GuidedStorageTargetReformat(diskId: '');
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => testGuidedStorageResponse(possible: [reformat]));
     await model.init();
     expect(model.canInstallAlongside, isFalse);
 
@@ -175,7 +176,7 @@ void main() {
         minimum: 0,
         recommended: 0);
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+        .thenAnswer((_) async => testGuidedStorageResponse(possible: [resize]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
 
@@ -183,13 +184,13 @@ void main() {
     final gap = GuidedStorageTargetUseGap(
         diskId: '', gap: Gap(offset: 0, size: 0, usable: GapUsable.YES));
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+        .thenAnswer((_) async => testGuidedStorageResponse(possible: [gap]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
 
     // all
     when(service.getGuidedStorage()).thenAnswer((_) async =>
-        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+        testGuidedStorageResponse(possible: [reformat, resize, gap]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
   });
@@ -200,7 +201,7 @@ void main() {
 
     // none
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: []));
+        .thenAnswer((_) async => testGuidedStorageResponse());
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
@@ -209,8 +210,8 @@ void main() {
 
     // reformat
     final reformat = GuidedStorageTargetReformat(diskId: '');
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [reformat]));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => testGuidedStorageResponse(possible: [reformat]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), reformat);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
@@ -219,7 +220,7 @@ void main() {
 
     // multiple reformats
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: [reformat, reformat]));
+        (_) async => testGuidedStorageResponse(possible: [reformat, reformat]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
@@ -235,7 +236,7 @@ void main() {
         minimum: 0,
         recommended: 0);
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [resize]));
+        .thenAnswer((_) async => testGuidedStorageResponse(possible: [resize]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
@@ -246,7 +247,7 @@ void main() {
     final gap = GuidedStorageTargetUseGap(
         diskId: '', gap: Gap(offset: 0, size: 1, usable: GapUsable.YES));
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2(possible: [gap]));
+        .thenAnswer((_) async => testGuidedStorageResponse(possible: [gap]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), gap);
@@ -259,7 +260,7 @@ void main() {
     final gap3 = GuidedStorageTargetUseGap(
         diskId: '', gap: Gap(offset: 0, size: 3, usable: GapUsable.YES));
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: [gap, gap3, gap2]));
+        (_) async => testGuidedStorageResponse(possible: [gap, gap3, gap2]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), gap3);
@@ -268,7 +269,7 @@ void main() {
 
     // all
     when(service.getGuidedStorage()).thenAnswer((_) async =>
-        GuidedStorageResponseV2(possible: [reformat, resize, gap]));
+        testGuidedStorageResponse(possible: [reformat, resize, gap]));
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), reformat);
     expect(model.preselectTarget(InstallationType.alongside), gap);

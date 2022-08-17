@@ -20,12 +20,9 @@ void main() {
     client = MockSubiquityClient();
     when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorageV2()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: testTargets));
-    when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
-        disks: testDisks,
-        needBoot: false,
-        needRoot: false,
-        installMinimumSize: 0));
+        (_) async => testGuidedStorageResponse(possible: testTargets));
+    when(client.getStorageV2())
+        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
   });
@@ -33,7 +30,7 @@ void main() {
   test('get guided storage', () async {
     final service = DiskStorageService(client);
     expect(await service.getGuidedStorage(),
-        equals(GuidedStorageResponseV2(possible: testTargets)));
+        equals(testGuidedStorageResponse(possible: testTargets)));
     verify(client.getGuidedStorageV2()).called(1);
   });
 
@@ -41,7 +38,7 @@ void main() {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
     final choice = GuidedChoiceV2(target: target, useLvm: false);
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final service = DiskStorageService(client);
     await service.setGuidedStorage(target);
@@ -52,7 +49,7 @@ void main() {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
     final choice = GuidedChoiceV2(target: target, useLvm: true);
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final service = DiskStorageService(client);
     service.useLvm = true;
@@ -227,7 +224,7 @@ void main() {
     );
 
     when(client.getStorageV2()).thenAnswer(
-      (_) async => StorageResponseV2(
+      (_) async => testStorageResponse(
         disks: [
           testDisk(
             partitions: [
@@ -241,9 +238,6 @@ void main() {
             ],
           ),
         ],
-        needRoot: false,
-        needBoot: false,
-        installMinimumSize: 0,
       ),
     );
 
@@ -257,7 +251,7 @@ void main() {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
     final choice = GuidedChoiceV2(target: target, useLvm: false);
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => GuidedStorageResponseV2(configured: choice));
+        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
     when(client.resetStorageV2())
         .thenAnswer((_) async => testStorageResponse());
 
@@ -303,18 +297,4 @@ void main() {
     expect(service.largestDiskSize, 456);
     expect(service.hasEnoughDiskSpace, isFalse);
   });
-}
-
-StorageResponseV2 testStorageResponse({
-  List<Disk> disks = const [],
-  bool needBoot = false,
-  bool needRoot = false,
-  int installMinimumSize = 0,
-}) {
-  return StorageResponseV2(
-    disks: disks,
-    needBoot: needBoot,
-    needRoot: needRoot,
-    installMinimumSize: installMinimumSize,
-  );
 }
