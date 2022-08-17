@@ -576,5 +576,68 @@
   "whoAreYouPageUsernameInUse": "Aqueste nom d’utilizaire existís ja.",
   "@whoAreYouPageUsernameInUse": {},
   "whoAreYouPageUsernameInvalidChars": "Aqueste nom conten de caractèrs invalids.",
-  "@whoAreYouPageUsernameInvalidChars": {}
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installAlongsidePartition": "Particion :",
+  "@installAlongsidePartition": {},
+  "installationTypeAlongsideMulti": "Installar {product} a lor costat",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideFiles": "Fichièrs",
+  "@installAlongsideFiles": {},
+  "installationTypeAlongsideDual": "Installar {product} a costat de {os1} e {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "quitButtonText": "Quitar l’installacion",
+  "@quitButtonText": {},
+  "installationTypeAlongsideUnknown": "Installar {product} a costat de las autras particions",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Alogatz l’espaci disc en desplaçant lo separador çai-jos :",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideAllocateSpace": "Alogar l’espaci",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideResizePartition": "Redimensionar la particion",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideSize": "Talha :",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Disponible :",
+  "@installAlongsideAvailable": {},
+  "notEnoughDiskSpaceHeader": "Vos cal almens {SIZE} d’espaci disc per installar {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Desolat",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHasOnly": "Aqueste ordenador a sonque {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Lo disc mai grand d’aqueste ordenador a sonque {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }
