@@ -27,7 +27,8 @@ void main() {
     bool? isDone,
     bool? hasError,
     bool? isInstalling,
-    Stream<String>? journal,
+    Stream<String>? log,
+    InstallationEvent? event,
     bool? isLogVisible,
   }) {
     final model = MockInstallationSlidesModel();
@@ -35,7 +36,8 @@ void main() {
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
     when(model.isInstalling).thenReturn(isInstalling ?? false);
-    when(model.journal).thenAnswer((_) => journal ?? Stream<String>.empty());
+    when(model.log).thenAnswer((_) => log ?? Stream<String>.empty());
+    when(model.event).thenReturn(event);
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     return model;
   }
@@ -149,6 +151,33 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(tester.lang.copyingFiles), findsOneWidget);
+    expect(find.text(tester.lang.installingSystem), findsNothing);
+    expect(find.text(tester.lang.configuringSystem), findsNothing);
+    expect(find.text(tester.lang.installationFailed), findsNothing);
+
+    when(model.event).thenReturn(InstallationEvent('installing system'));
+    await tester.pumpWidget(Container(
+      key: ValueKey('force rebuild for installing system'),
+      child: tester.buildApp((_) => buildPage(model)),
+    ));
+    await tester.pump();
+
+    expect(find.text(tester.lang.installingSystem), findsOneWidget);
+    expect(find.text(tester.lang.copyingFiles), findsNothing);
+    expect(find.text(tester.lang.configuringSystem), findsNothing);
+    expect(find.text(tester.lang.installationFailed), findsNothing);
+
+    when(model.event)
+        .thenReturn(InstallationEvent('final system configuration'));
+    await tester.pumpWidget(Container(
+      key: ValueKey('force rebuild for configuring system'),
+      child: tester.buildApp((_) => buildPage(model)),
+    ));
+    await tester.pump();
+
+    expect(find.text(tester.lang.configuringSystem), findsOneWidget);
+    expect(find.text(tester.lang.copyingFiles), findsNothing);
+    expect(find.text(tester.lang.installingSystem), findsNothing);
     expect(find.text(tester.lang.installationFailed), findsNothing);
 
     when(model.hasError).thenReturn(true);
@@ -160,6 +189,8 @@ void main() {
 
     expect(find.text(tester.lang.installationFailed), findsOneWidget);
     expect(find.text(tester.lang.copyingFiles), findsNothing);
+    expect(find.text(tester.lang.installingSystem), findsNothing);
+    expect(find.text(tester.lang.configuringSystem), findsNothing);
   });
 
   testWidgets('creates a model', (tester) async {
@@ -170,7 +201,6 @@ void main() {
     registerMockService<SubiquityClient>(client);
 
     final service = MockJournalService();
-    when(service.stream).thenAnswer((_) => Stream<String>.empty());
     registerMockService<JournalService>(service);
 
     await tester.pumpWidget(

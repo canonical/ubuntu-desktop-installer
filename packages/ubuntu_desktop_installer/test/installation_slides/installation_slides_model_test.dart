@@ -25,6 +25,10 @@ void main() async {
   test('client status query loop', () async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
+    when(journal.start('log', output: JournalOutput.short))
+        .thenAnswer((_) => Stream.empty());
+    when(journal.start('event', output: JournalOutput.cat))
+        .thenAnswer((_) => Stream.empty());
     final model = InstallationSlidesModel(client, journal);
 
     ApplicationState? currentState;
@@ -61,6 +65,11 @@ void main() async {
     }
 
     final journal = MockJournalService();
+    when(journal.start('log', output: JournalOutput.short))
+        .thenAnswer((_) => Stream.empty());
+    when(journal.start('event', output: JournalOutput.cat))
+        .thenAnswer((_) => Stream.empty());
+
     final model = InstallationSlidesModel(client, journal);
 
     expect(model.state, isNull);
@@ -102,6 +111,11 @@ void main() async {
     );
 
     final journal = MockJournalService();
+    when(journal.start('log', output: JournalOutput.short))
+        .thenAnswer((_) => Stream.empty());
+    when(journal.start('event', output: JournalOutput.cat))
+        .thenAnswer((_) => Stream.empty());
+
     final model = InstallationSlidesModel(client, journal);
 
     expect(model.hasError, isFalse);
@@ -145,6 +159,50 @@ void main() async {
     expect(model.isLogVisible, isFalse);
     expect(wasNotified, equals(2));
   });
+
+  test('events', () async {
+    final events = StreamController<String>(sync: true);
+
+    final journal = MockJournalService();
+    when(journal.start('log', output: JournalOutput.short))
+        .thenAnswer((_) => Stream.empty());
+    when(journal.start('event', output: JournalOutput.cat))
+        .thenAnswer((_) => events.stream);
+
+    final client = MockSubiquityClient();
+    when(client.status()).thenAnswer(
+      (_) async => testStatus(ApplicationState.RUNNING),
+    );
+    when(client.status(current: ApplicationState.RUNNING)).thenAnswer(
+      (_) async => testStatus(ApplicationState.RUNNING),
+    );
+
+    final model = InstallationSlidesModel(client, journal);
+
+    expect(model.event, isNull);
+
+    await model.init();
+
+    events.add('installing system');
+    expect(model.event, isNotNull);
+    expect(model.event!.action, 'installing system');
+    expect(model.event!.description, isNull);
+
+    events.add('  installing some package');
+    expect(model.event, isNotNull);
+    expect(model.event!.action, 'installing system');
+    expect(model.event!.description, 'installing some package');
+
+    events.add('  doing something else');
+    expect(model.event, isNotNull);
+    expect(model.event!.action, 'installing system');
+    expect(model.event!.description, 'doing something else');
+
+    events.add('configuring system');
+    expect(model.event, isNotNull);
+    expect(model.event!.action, 'configuring system');
+    expect(model.event!.description, isNull);
+  });
 }
 
 ApplicationStatus testStatus(ApplicationState state) {
@@ -154,8 +212,8 @@ ApplicationStatus testStatus(ApplicationState state) {
     confirmingTty: '',
     echoSyslogId: '',
     error: null,
-    eventSyslogId: '',
+    eventSyslogId: 'event',
     interactive: null,
-    logSyslogId: '',
+    logSyslogId: 'log',
   );
 }
