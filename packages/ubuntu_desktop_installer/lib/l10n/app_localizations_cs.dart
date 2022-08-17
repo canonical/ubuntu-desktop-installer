@@ -819,6 +819,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get copyingFiles => 'Kopírování souborů…';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Instalace se nezdařila';
 
   @override

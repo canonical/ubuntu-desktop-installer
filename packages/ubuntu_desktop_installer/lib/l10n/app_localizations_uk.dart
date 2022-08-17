@@ -819,6 +819,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get copyingFiles => 'Copying files...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Installation failed';
 
   @override

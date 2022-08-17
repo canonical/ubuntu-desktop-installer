@@ -2,45 +2,47 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:async/async.dart';
+
+enum JournalOutput {
+  /// The default and generates an output that is mostly identical to the
+  /// formatting of classic syslog files, showing one line per journal entry.
+  short,
+
+  /// A very terse output, only showing the actual message of each journal entry
+  /// with no metadata, not even a timestamp
+  cat,
+}
+
 /// Provides `journalctl` output.
 class JournalService {
-  /// Creates the service. Optionally, the output can be limited to a specific
-  /// systemd unit.
-  JournalService(this._unit);
-
-  Process? _process;
-  final _controller = StreamController<String>.broadcast();
-  final String? _unit;
-
-  /// The output stream of lines from the `journalctl` command.
-  Stream<String> get stream => _controller.stream;
-
   /// Starts a `journalctl` process.
-  Future<void> start() async {
-    if (_process != null) return;
-    _process = await Process.start(
+  Stream<String> start(
+    String id, {
+    JournalOutput output = JournalOutput.short,
+  }) async* {
+    final process = await Process.start(
       'journalctl',
       [
         '--follow',
         '--no-pager',
-        if (_unit != null) ...['--no-tail', '--unit', _unit!],
+        '--no-tail',
+        '--identifier=$id',
+        '--output=${output.name}'
       ],
       environment: {'SYSTEMD_COLORS': '0'},
     );
-    _process!.stdout
-        .transform<String>(utf8.decoder)
-        .transform<String>(const LineSplitter())
-        .listen(_controller.add);
-    _process!.stderr
-        .transform<String>(utf8.decoder)
-        .transform<String>(const LineSplitter())
-        .listen(_controller.add);
-  }
-
-  /// Kills the `journalctl` process.
-  void stop() {
-    _controller.close();
-    _process?.kill();
-    _process = null;
+    try {
+      yield* StreamGroup.mergeBroadcast([
+        process.stdout
+            .transform<String>(utf8.decoder)
+            .transform<String>(const LineSplitter()),
+        process.stderr
+            .transform<String>(utf8.decoder)
+            .transform<String>(const LineSplitter()),
+      ]);
+    } finally {
+      process.kill();
+    }
   }
 }

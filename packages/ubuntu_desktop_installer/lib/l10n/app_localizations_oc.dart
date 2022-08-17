@@ -819,6 +819,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get copyingFiles => 'Còpia dels fichièrs...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Fracàs de l’installacion';
 
   @override

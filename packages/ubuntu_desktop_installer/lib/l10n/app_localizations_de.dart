@@ -819,6 +819,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get copyingFiles => 'Dateien werden kopiert ...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Installation fehlgeschlagen';
 
   @override

@@ -24,8 +24,6 @@ import 'slides.dart';
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
 
-const _kSystemdUnit = 'snap.ubuntu-desktop-installer.subiquity-server.service';
-
 final assetBundle =
     ProxyAssetBundle(rootBundle, package: 'ubuntu_desktop_installer');
 
@@ -74,14 +72,12 @@ Future<void> runInstallerApp(
     setWindowClosable(status?.state.isInstalling != true);
   });
 
-  final journalUnit = liveRun ? _kSystemdUnit : null;
-
   final geodata = Geodata.asset();
   final geoname = Geoname.ubuntu(geodata: geodata);
 
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
-  registerService(() => JournalService(journalUnit));
+  registerService(JournalService.new);
   registerService(NetworkService.new);
   registerService(PowerService.new);
   registerService(TelemetryService.new);

@@ -819,6 +819,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get copyingFiles => 'Kopiante dosierojn...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Instalado fiaskis';
 
   @override

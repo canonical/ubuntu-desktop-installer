@@ -819,6 +819,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get copyingFiles => '复制文件……';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => '安装失败';
 
   @override

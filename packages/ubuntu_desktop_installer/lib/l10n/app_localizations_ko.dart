@@ -819,6 +819,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get copyingFiles => '파일 복사 중...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => '설치 실패';
 
   @override

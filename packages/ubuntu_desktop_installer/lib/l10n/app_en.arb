@@ -510,6 +510,8 @@
   "availableSoftware": "Available software",
   "supportedSoftware": "Supported software",
   "copyingFiles": "Copying files...",
+  "installingSystem": "Installing system...",
+  "configuringSystem": "Configuring system...",
   "installationFailed": "Installation failed",
   "notEnoughDiskSpaceTitle": "Sorry",
   "notEnoughDiskSpaceHeader": "You need at least {SIZE} disk space to install {RELEASE}.",

@@ -819,6 +819,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get copyingFiles => 'S’estan copiant els fitxers…';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Ha fallat la instal·lació';
 
   @override

@@ -51,6 +51,18 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     });
   }
 
+  String _formatEvent(InstallationEvent? event) {
+    final lang = AppLocalizations.of(context);
+    switch (event?.action) {
+      case 'installing system':
+        return lang.installingSystem;
+      case 'final system configuration':
+        return lang.configuringSystem;
+      default:
+        return lang.copyingFiles;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
@@ -80,7 +92,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                         left: kContentSpacing,
                         right: kContentSpacing,
                       ),
-                      child: _JournalView(journal: model.journal),
+                      child: _JournalView(journal: model.log),
                     ),
                   ),
                 )
@@ -98,7 +110,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     Text(
                       model.hasError
                           ? lang.installationFailed
-                          : lang.copyingFiles,
+                          : _formatEvent(model.event),
                       style: Theme.of(context).textTheme.bodyText2!.copyWith(
                           color: model.hasError
                               ? Theme.of(context).errorColor
