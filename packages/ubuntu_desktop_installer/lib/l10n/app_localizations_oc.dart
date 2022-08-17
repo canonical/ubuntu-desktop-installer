@@ -37,7 +37,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get yesButtonText => 'Òc';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quitar l’installacion';
 
   @override
   String get welcome => 'La benvenguda';
@@ -323,17 +323,17 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Installar $product a costat de $os1 e $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Installar $product a lor costat';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Installar $product a costat de las autras particions';
   }
 
   @override
@@ -362,7 +362,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installar ara';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Alogatz l’espaci disc en desplaçant lo separador çai-jos :';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -370,22 +370,22 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Redimensionar la particion';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Alogar l’espaci';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Fichièrs';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Particion :';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Talha :';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Disponible :';
 
   @override
   String get allocateDiskSpace => 'Atribuir l’espaci disc';
@@ -828,20 +828,20 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationFailed => 'Fracàs de l’installacion';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Desolat';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Vos cal almens $SIZE d’espaci disc per installar $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Aqueste ordenador a sonque $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Lo disc mai grand d’aqueste ordenador a sonque $SIZE.';
   }
 }
