@@ -71,7 +71,9 @@ Future<void> main(List<String> args) async {
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
   registerService(LanguageFallbackService.win);
-  registerService(() => JournalService(source: decode(stdin)));
+  if (!isReconf) {
+    registerService(() => JournalService(source: decode(stdin)));
+  }
 
   String? initialRoute;
   if (!isReconf && options['initial-route'] == null) {
@@ -85,6 +87,7 @@ Future<void> main(List<String> args) async {
         return UbuntuWslSetupApp(
           variant: value,
           initialRoute: initialRoute,
+          showSplashScreen: isReconf,
         );
       },
     ),
