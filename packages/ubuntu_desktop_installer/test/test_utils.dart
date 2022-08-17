@@ -101,6 +101,34 @@ Disk testDisk({
   );
 }
 
+GuidedStorageResponseV2 testGuidedStorageResponse({
+  ProbeStatus status = ProbeStatus.DONE,
+  GuidedChoiceV2? configured,
+  List<GuidedStorageTarget> possible = const [],
+}) {
+  return GuidedStorageResponseV2(
+    status: status,
+    configured: configured,
+    possible: possible,
+  );
+}
+
+StorageResponseV2 testStorageResponse({
+  ProbeStatus status = ProbeStatus.DONE,
+  List<Disk> disks = const [],
+  bool needBoot = false,
+  bool needRoot = false,
+  int installMinimumSize = 0,
+}) {
+  return StorageResponseV2(
+    status: status,
+    disks: disks,
+    needBoot: needBoot,
+    needRoot: needRoot,
+    installMinimumSize: installMinimumSize,
+  );
+}
+
 extension UbuntuFinders on CommonFinders {
   Finder asset(String assetName) {
     return find.byWidgetPredicate((widget) {

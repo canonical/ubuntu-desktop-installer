@@ -124,7 +124,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => []);
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => GuidedStorageResponseV2());
+        .thenAnswer((_) async => testGuidedStorageResponse());
     registerMockService<DiskStorageService>(service);
 
     await tester.pumpWidget(tester.buildApp(SelectGuidedStoragePage.create));

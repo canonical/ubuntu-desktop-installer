@@ -205,7 +205,7 @@ void main() {
     when(storage.existingOS).thenReturn([]);
     when(storage.getStorage()).thenAnswer((_) async => []);
     when(storage.getGuidedStorage())
-        .thenAnswer((_) async => const GuidedStorageResponseV2());
+        .thenAnswer((_) async => testGuidedStorageResponse());
     registerMockService<DiskStorageService>(storage);
 
     await tester.pumpWidget(tester.buildApp(InstallAlongsidePage.create));

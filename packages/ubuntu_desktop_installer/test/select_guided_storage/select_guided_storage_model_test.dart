@@ -19,7 +19,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: testTargets));
+        (_) async => testGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     await model.loadGuidedStorage();
@@ -32,9 +32,9 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: testTargets));
+        (_) async => testGuidedStorageResponse(possible: testTargets));
     when(service.setGuidedStorage(any)).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: testTargets));
+        (_) async => testGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     await model.loadGuidedStorage();
@@ -61,8 +61,8 @@ void main() {
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
-    when(service.getGuidedStorage()).thenAnswer((_) async =>
-        const GuidedStorageResponseV2(possible: [storage0, storage1]));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => testGuidedStorageResponse(possible: [storage0, storage1]));
 
     final model = SelectGuidedStorageModel(service);
     expect(model.getStorage(0), isNull);
@@ -84,7 +84,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => GuidedStorageResponseV2(possible: testTargets));
+        (_) async => testGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     expect(model.selectedIndex, isZero);

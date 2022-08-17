@@ -413,11 +413,12 @@ class StorageResponse with _$StorageResponse {
 @freezed
 class StorageResponseV2 with _$StorageResponseV2 {
   const factory StorageResponseV2({
-    required List<Disk> disks,
-    required bool needRoot,
-    required bool needBoot,
-    required int installMinimumSize,
+    required ProbeStatus status,
     ErrorReportRef? errorReport,
+    @Default([]) List<Disk> disks,
+    bool? needRoot,
+    bool? needBoot,
+    int? installMinimumSize,
   }) = _StorageResponseV2;
 
   factory StorageResponseV2.fromJson(Map<String, dynamic> json) =>
@@ -479,6 +480,8 @@ class GuidedChoiceV2 with _$GuidedChoiceV2 {
 @freezed
 class GuidedStorageResponseV2 with _$GuidedStorageResponseV2 {
   const factory GuidedStorageResponseV2({
+    required ProbeStatus status,
+    ErrorReportRef? errorReport,
     GuidedChoiceV2? configured,
     @Default([]) List<GuidedStorageTarget> possible,
   }) = _GuidedStorageResponseV2;

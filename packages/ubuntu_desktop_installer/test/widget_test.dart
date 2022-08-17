@@ -16,6 +16,8 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'test_utils.dart';
+
 // ignore_for_file: type=lint
 
 void main() {
@@ -29,8 +31,7 @@ void main() {
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     when(client.keyboard()).thenAnswer((_) async =>
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
-    when(client.getStorageV2()).thenAnswer((_) async => StorageResponseV2(
-        disks: [], installMinimumSize: 0, needBoot: false, needRoot: false));
+    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
     when(client.isOpen).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
