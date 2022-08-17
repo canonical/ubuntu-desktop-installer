@@ -10,6 +10,20 @@ import '../../services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
+class InstallationEvent {
+  const InstallationEvent(this.action, {this.description});
+
+  final String action;
+  final String? description;
+
+  InstallationEvent copyWith({String? action, String? description}) {
+    return InstallationEvent(
+      action ?? this.action,
+      description: description ?? this.description,
+    );
+  }
+}
+
 /// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
   /// Creates an instance with the given client.
@@ -19,10 +33,15 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
   final SubiquityClient client;
   final JournalService _journal;
 
+  Stream<String>? _log;
   ApplicationStatus? _status;
+  InstallationEvent? _event;
 
   /// The current installation state.
   ApplicationState? get state => _status?.state;
+
+  /// The current installation event.
+  InstallationEvent? get event => _event;
 
   /// Whether the installation state is DONE.
   bool get isDone => state == ApplicationState.DONE;
@@ -42,8 +61,29 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
     notifyListeners();
   }
 
-  /// A stream of journal lines.
-  Stream<String> get journal => _journal.stream;
+  // Process syslog events of unindented "actions" and indented "descriptions".
+  // ```
+  // installing system
+  //   configuring apt
+  //   installing kernel
+  //   ...
+  // final system configuration
+  //   configuring cloud-init
+  //   ...
+  //   downloading and installing security updates
+  // ```
+  void _processEvent(String syslog) {
+    final trimmed = syslog.trimLeft();
+    if (trimmed == syslog) {
+      _event = InstallationEvent(syslog);
+    } else {
+      _event = _event!.copyWith(description: trimmed);
+    }
+    notifyListeners();
+  }
+
+  /// A stream of journal log lines.
+  Stream<String> get log => _log ?? const Stream.empty();
 
   var _logVisible = false;
 
@@ -58,10 +98,10 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
 
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
-    _journal.start();
     return client.status().then((status) {
+      _log = _journal.start(status.logSyslogId);
       _updateStatus(status);
-      _monitorStatus();
+      _monitorStatus(status.eventSyslogId);
     });
   }
 
@@ -86,10 +126,13 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
     });
   }
 
-  Future<void> _monitorStatus() async {
+  Future<void> _monitorStatus(String syslogId) async {
+    final events = _journal.start(syslogId, output: JournalOutput.cat);
+    final subscription = events.listen(_processEvent);
     while (!isDone && !hasError) {
       await client.status(current: state).then(_updateStatus);
     }
+    subscription.cancel();
   }
 
   /// Requests an immediate system reboot.

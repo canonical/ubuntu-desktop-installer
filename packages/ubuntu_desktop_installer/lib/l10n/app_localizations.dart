@@ -1695,6 +1695,18 @@ abstract class AppLocalizations {
   /// **'Copying files...'**
   String get copyingFiles;
 
+  /// No description provided for @installingSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Installing system...'**
+  String get installingSystem;
+
+  /// No description provided for @configuringSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuring system...'**
+  String get configuringSystem;
+
   /// No description provided for @installationFailed.
   ///
   /// In en, this message translates to:
