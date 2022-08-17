@@ -15,6 +15,16 @@ class SelectLanguageModel extends SafeChangeNotifier {
 
   final SubiquityClient _client;
   final LanguageFallbackService _languageFallback;
+  bool _installLangPacks = true;
+  bool get installLanguagePacks => _installLangPacks;
+
+  void setInstallLanguagePacks(bool value) {
+    if (value == _installLangPacks) {
+      return;
+    }
+    _installLangPacks = value;
+    notifyListeners();
+  }
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -23,6 +33,21 @@ class SelectLanguageModel extends SafeChangeNotifier {
     if (_selectedLanguageIndex == index) return;
     _selectedLanguageIndex = index;
     notifyListeners();
+  }
+
+  /// Fetches the install language support packages from the server.
+  Future<void> getInstallLanguagePacks() {
+    return _client.wslSetupOptions().then((options) {
+      _installLangPacks = options.installLanguageSupportPackages;
+      notifyListeners();
+    });
+  }
+
+  /// Commits the currrent setup options to the server.
+  Future<void> applyInstallLanguagePacks() {
+    return _client.setWslSetupOptions(
+      WSLSetupOptions(installLanguageSupportPackages: _installLangPacks),
+    );
   }
 
   var _languages = <LocalizedLanguage>[];

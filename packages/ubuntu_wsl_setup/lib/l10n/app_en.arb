@@ -14,6 +14,16 @@
   "@setupButton": {},
   "selectLanguageTitle": "Select your language",
   "@selectLanguageTitle": {},
+  "installLangPacksTitle": "Install packages for better {lang} language support",
+  "@installLangPacksTitle": {
+      "type": "text",
+      "placeholders": {
+          "lang": {
+            "type": "String"
+          }
+      }
+  },
+  "installLangPacksSubtitle": "Not recommended for slow connections.",
   "profileSetupTitle": "Profile setup",
   "@profileSetupTitle": {},
   "profileSetupHeader": "Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
