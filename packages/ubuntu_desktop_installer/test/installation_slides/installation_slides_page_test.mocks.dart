@@ -57,9 +57,8 @@ class MockInstallationSlidesModel extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#isInstalling), returnValue: false)
           as bool);
   @override
-  _i4.Stream<String> get journal =>
-      (super.noSuchMethod(Invocation.getter(#journal),
-          returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
+  _i4.Stream<String> get log => (super.noSuchMethod(Invocation.getter(#log),
+      returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
   @override
   bool get isLogVisible =>
       (super.noSuchMethod(Invocation.getter(#isLogVisible), returnValue: false)
@@ -122,14 +121,8 @@ class MockJournalService extends _i1.Mock implements _i7.JournalService {
   }
 
   @override
-  _i4.Stream<String> get stream =>
-      (super.noSuchMethod(Invocation.getter(#stream),
+  _i4.Stream<String> start(String? id,
+          {_i7.JournalOutput? output = _i7.JournalOutput.short}) =>
+      (super.noSuchMethod(Invocation.method(#start, [id], {#output: output}),
           returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
-  @override
-  _i4.Future<void> start() => (super.noSuchMethod(Invocation.method(#start, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
-  @override
-  void stop() => super.noSuchMethod(Invocation.method(#stop, []),
-      returnValueForMissingStub: null);
 }

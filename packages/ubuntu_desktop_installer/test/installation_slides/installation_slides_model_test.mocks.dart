@@ -28,14 +28,8 @@ class MockJournalService extends _i1.Mock implements _i2.JournalService {
   }
 
   @override
-  _i3.Stream<String> get stream =>
-      (super.noSuchMethod(Invocation.getter(#stream),
+  _i3.Stream<String> start(String? id,
+          {_i2.JournalOutput? output = _i2.JournalOutput.short}) =>
+      (super.noSuchMethod(Invocation.method(#start, [id], {#output: output}),
           returnValue: _i3.Stream<String>.empty()) as _i3.Stream<String>);
-  @override
-  _i3.Future<void> start() => (super.noSuchMethod(Invocation.method(#start, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
-  @override
-  void stop() => super.noSuchMethod(Invocation.method(#stop, []),
-      returnValueForMissingStub: null);
 }
