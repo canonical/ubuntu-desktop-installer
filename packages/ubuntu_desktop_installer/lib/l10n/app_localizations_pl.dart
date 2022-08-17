@@ -819,6 +819,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get copyingFiles => 'Kopiowanie plików...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'Instalacja nieudana';
 
   @override

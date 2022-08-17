@@ -819,6 +819,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get copyingFiles => 'Fájlok másolása...';
 
   @override
+  String get installingSystem => 'Installing system...';
+
+  @override
+  String get configuringSystem => 'Configuring system...';
+
+  @override
   String get installationFailed => 'A telepítés sikertelen';
 
   @override
