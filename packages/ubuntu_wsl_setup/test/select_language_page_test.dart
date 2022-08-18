@@ -11,6 +11,7 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/locale.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_page.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 import 'select_language_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -98,6 +99,7 @@ void main() {
     final client = MockSubiquityClient();
     when(client.locale()).thenAnswer((_) async => 'en_US.UTF-8');
     registerMockService<SubiquityClient>(client);
+    registerService(LanguageFallbackService.linux);
 
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: localizationsDelegates,

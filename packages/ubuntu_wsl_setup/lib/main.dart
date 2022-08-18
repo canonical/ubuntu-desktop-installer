@@ -10,6 +10,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'app.dart';
 import 'args_common.dart';
 import 'installing_state.dart';
+import 'services/language_fallback.dart';
 
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -31,6 +32,7 @@ Future<void> main(List<String> args) async {
   final subiquityClient = SubiquityClient();
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
+  registerService(LanguageFallbackService.linux);
   await runWizardApp(
     ValueListenableBuilder<Variant?>(
       valueListenable: variant,

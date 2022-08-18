@@ -5,18 +5,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 // ignore_for_file: type=lint
 
 void main() {
   test('load languages', () async {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService({}),
+    );
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService({}),
+    );
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -28,7 +35,10 @@ void main() {
   });
 
   test('select locale', () async {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService({}),
+    );
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -50,7 +60,7 @@ void main() {
     final client = MockSubiquityClient();
     when(client.locale()).thenAnswer((_) async => 'fr_FR.UTF-8');
 
-    final model = SelectLanguageModel(client);
+    final model = SelectLanguageModel(client, LanguageFallbackService({}));
     final locale = await model.getServerLocale();
     verify(client.locale()).called(1);
     expect(locale, equals(Locale('fr', 'FR')));
@@ -58,13 +68,16 @@ void main() {
 
   test('set locale', () {
     final client = MockSubiquityClient();
-    final model = SelectLanguageModel(client);
+    final model = SelectLanguageModel(client, LanguageFallbackService({}));
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService({}),
+    );
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -80,7 +93,10 @@ void main() {
   });
 
   test('uiLocale returns default for unsupported langs', () async {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService.linux(),
+    );
     await model.loadLanguages();
     final languages = List.generate(model.languageCount, model.language);
     expect(model.uiLocale(languages.indexOf('Uyghur')), kDefaultLocale);
@@ -88,7 +104,10 @@ void main() {
   });
 
   test('language wont return unsupported chars', () async {
-    final model = SelectLanguageModel(MockSubiquityClient());
+    final model = SelectLanguageModel(
+      MockSubiquityClient(),
+      LanguageFallbackService.linux(),
+    );
     await model.loadLanguages();
     final languages = List.generate(model.languageCount, model.language);
     expect(languages.any((e) => e.contains('\u{0626}')), isFalse);

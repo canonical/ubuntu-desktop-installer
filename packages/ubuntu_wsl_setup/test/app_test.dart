@@ -5,12 +5,14 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 void main() {
   testWidgets('create an app instance', (tester) async {
     final client = MockSubiquityClient();
     when(client.locale()).thenAnswer((_) async => 'en');
     registerMockService<SubiquityClient>(client);
+    registerService(LanguageFallbackService.linux);
 
     await tester.pumpWidget(
       const UbuntuWslSetupApp(variant: Variant.WSL_SETUP),
