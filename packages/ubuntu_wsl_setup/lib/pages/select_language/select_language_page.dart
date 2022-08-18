@@ -5,6 +5,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 import '../../l10n.dart';
 import '../../locale.dart';
@@ -17,8 +18,9 @@ class SelectLanguagePage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final languageFallbackService = getService<LanguageFallbackService>();
     return ChangeNotifierProvider(
-      create: (_) => SelectLanguageModel(client),
+      create: (_) => SelectLanguageModel(client, languageFallbackService),
       child: const SelectLanguagePage(),
     );
   }
