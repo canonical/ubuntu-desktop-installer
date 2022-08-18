@@ -6,6 +6,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 
 import 'app.dart';
@@ -68,6 +69,7 @@ Future<void> main(List<String> args) async {
   final subiquityClient = SubiquityClient();
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
+  registerService(LanguageFallbackService.win);
   registerService(() => JournalService(source: decode(stdin)));
 
   String? initialRoute;
