@@ -17,7 +17,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get exitButton => 'Çıkış';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Bitir';
 
   @override
   String get saveButton => 'Kaydet';
@@ -44,7 +44,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get profileSetupUsernameHint => 'Kullanıcı adı seç';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Kullanıcı adının Windows kullanıcı adınızla eşleşmesi gerekmez.';
 
   @override
   String get profileSetupPasswordHint => 'Parola seç';
@@ -53,7 +53,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get profileSetupConfirmPasswordHint => 'Parolanızı doğrulayın';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Gelişmiş seçenekleri sonraki sayfada göster';
 
   @override
   String get profileSetupPasswordMismatch => 'Parolalar uyuşmuyor';
@@ -65,16 +65,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Kullanıcı adı geçersiz';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Bu kullanıcı adı zaten var.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Bu ad, sistem kullanımı için ayrılmıştır.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'Bu ad çok uzun.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'Bu ad geçersiz karakterler içeriyor.';
 
   @override
   String get profileSetupPasswordRequired => 'Parola gereklidir';
@@ -83,7 +83,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedSetupTitle => 'Gelişmiş kurulum';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'Bu sayfada Ubuntu WSL\'i ihtiyaçlarınıza göre ayarlayabilirsiniz.';
 
   @override
   String get advancedSetupMountLocationHint => 'Bağlanma noktası';
@@ -101,16 +101,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Host Oluşturmayı Etkinleştir';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Seçildiğinde her başlangıçta /etc/hosts yeniden oluşturulur.';
 
   @override
   String get advancedSetupResolvConfGenerationTitle => 'resolv.conf Oluşturmayı Etkinleştir';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Seçildiğinde /etc/resolv.conf her başlangıçta yeniden oluşturulur.';
 
   @override
   String get advancedSetupGUIIntegrationTitle => 'Arayüz Entegrasyonu';
@@ -143,13 +143,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configurationUIAutoMountTitle => 'Etkin';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Otomatik Bağlama özelliğinin etkin olup olmadığı. Bu özellik WSL\'de Windows sürücüsünü bağlamanızı sağlar.';
 
   @override
   String get configurationUIMountFstabTitle => '/etc/fstab\'ı bağla';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
+  String get configurationUIMountFstabSubtitle => 'etc/fstab dosyasının bağlanıp bağlanmayacağı. Bu dosya, sistemin bağlayacağı dosya sistemleri hakkında bilgi içerir.';
 
   @override
   String get configurationUISystemdHeader => 'DENEYSEL - Systemd';
@@ -158,13 +158,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configurationUISystemdTitle => 'Etkin';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'systemd\'nin önyükleme sırasında etkinleştirilip etkinleştirilmeyeceği. DİKKAT: Bu deneysel bir özelliktir.';
 
   @override
   String get applyingChanges => 'Değişiklikler uygulanıyor…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Bu işlem İnternet bağlantınıza bağlı olarak birkaç dakika sürebilir.';
 
   @override
   String get setupCompleteTitle => 'Kurulum tamamlandı';
@@ -181,25 +181,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get setupCompleteRestart => '* Tüm ayarlar Ubuntu yeniden başlatıldıktan sonra geçerli olacaktır.';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'Ubuntu WSL\'e Hoş Geldiniz';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => 'Başlatılıyor...';
 
   @override
   String get installationSlidesUnpacking => 'Unpacking the distro';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'Neredeyse bitti. Yükleyici yakında ilgilenmenizi gerektirecek.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => 'Dağıtım başlatılıyor...';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => 'Bir şeyler yanlış gitti.';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => 'Bir şeyler yanlış gitti';
 
   @override
   String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
@@ -208,74 +208,74 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => 'Her şey hazır. WSL\'de Ubuntu kullanmanın keyfini çıkarın';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => 'Ayrılmak istediğinden emin misin?';
 
   @override
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'İşimiz neredeyse bitti';
 
   @override
-  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => 'Ana yükleyici penceresinde tamamlanması gereken sadece birkaç adım var.\nBunu bırakıp oraya gidebilir miyiz?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'Tamam';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => 'Ayrıl';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'İptal Et';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'WSL\'de Ubuntu';
 
   @override
-  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+  String get installationSlidesUbuntuOnWslText => 'Linux uygulama geliştirme ve yürütme için Windows ile derinlemesine entegre edilmiş eksiksiz bir Ubuntu ortamı. Bulut, web, veri bilimi, IOT ve eğlence için optimize edilmiştir!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'Web Geliştirme için\nUbuntu WSL';
 
   @override
   String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => 'Veri Bilimi için Ubuntu WSL';
 
   @override
   String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
 
   @override
-  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+  String get installationSlidesUbuntuWslGuiApps => 'Grafik Uygulamaları için\nUbuntu WSL';
 
   @override
   String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
 
   @override
-  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'DevOps için Ubuntu WSL';
 
   @override
   String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
 
   @override
-  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => 'İşletmeler için Ubuntu WSL';
 
   @override
-  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => 'Sertifikalı bir Ubuntu LTS ile \ngeliştiricileri Windows kurumsal \nekosisteminde güçlendirin.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Daha fazlasını öğren';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => 'Ziyaret et ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';
 
   @override
-  String get installationSlidesFindOutMoreText => ' to find out more about Ubuntu on WSL and how Canonical supports developers and organisations.';
+  String get installationSlidesFindOutMoreText => ' WSL\'de Ubuntu ve Canonical\'in geliştiricileri ve kuruluşları nasıl desteklediği hakkında daha fazla bilgi edinmek için.';
 }
