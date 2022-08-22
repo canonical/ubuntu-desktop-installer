@@ -36,6 +36,10 @@ class MockSelectLanguageModel extends _i1.Mock
   }
 
   @override
+  bool get installLanguagePacks =>
+      (super.noSuchMethod(Invocation.getter(#installLanguagePacks),
+          returnValue: false) as bool);
+  @override
   int get selectedLanguageIndex =>
       (super.noSuchMethod(Invocation.getter(#selectedLanguageIndex),
           returnValue: 0) as int);
@@ -55,6 +59,20 @@ class MockSelectLanguageModel extends _i1.Mock
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+  @override
+  void setInstallLanguagePacks(bool? value) =>
+      super.noSuchMethod(Invocation.method(#setInstallLanguagePacks, [value]),
+          returnValueForMissingStub: null);
+  @override
+  _i4.Future<void> getInstallLanguagePacks() => (super.noSuchMethod(
+      Invocation.method(#getInstallLanguagePacks, []),
+      returnValue: _i4.Future<void>.value(),
+      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> applyInstallLanguagePacks() => (super.noSuchMethod(
+      Invocation.method(#applyInstallLanguagePacks, []),
+      returnValue: _i4.Future<void>.value(),
+      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
   @override
   _i4.Future<void> loadLanguages() => (super.noSuchMethod(
       Invocation.method(#loadLanguages, []),

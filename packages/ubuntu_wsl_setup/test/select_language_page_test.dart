@@ -36,6 +36,7 @@ void main() {
     when(model.uiLocale(2)).thenReturn(Locale('de_DE'));
     when(model.selectedLanguageIndex).thenReturn(1);
     when(model.getServerLocale()).thenAnswer((_) async => Locale('fr', 'FR'));
+    when(model.installLanguagePacks).thenReturn(true);
     return model;
   }
 
@@ -98,6 +99,9 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.locale()).thenAnswer((_) async => 'en_US.UTF-8');
+    when(client.wslSetupOptions()).thenAnswer(
+      (_) async => WSLSetupOptions(installLanguageSupportPackages: true),
+    );
     registerMockService<SubiquityClient>(client);
     registerService(LanguageFallbackService.linux);
 
