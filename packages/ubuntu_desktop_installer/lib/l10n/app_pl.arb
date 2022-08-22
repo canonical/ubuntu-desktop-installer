@@ -700,5 +700,9 @@
     "placeholders": {
       "SIZE": {}
     }
-  }
+  },
+  "configuringSystem": "Konfigurowanie systemu...",
+  "@configuringSystem": {},
+  "installingSystem": "Instalowanie systemu...",
+  "@installingSystem": {}
 }

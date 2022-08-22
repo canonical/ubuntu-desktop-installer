@@ -193,7 +193,7 @@
       "RELEASE": {}
     }
   },
-  "installationTypeOSDetected": "L'ordinador actualment duu el sistema {os}. Què voleu fer?",
+  "installationTypeOSDetected": "L’ordinador actualment duu el sistema {os}. Què voleu fer?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -308,5 +308,19 @@
   "installAlongsideSize": "Mida:",
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponible:",
-  "@installAlongsideAvailable": {}
+  "@installAlongsideAvailable": {},
+  "chooseYourLookPageTitle": "Trieu l’aspecte",
+  "@chooseYourLookPageTitle": {},
+  "writeChangesPartitionsHeader": "S’aplicaran els canvis següents a les particions:",
+  "@writeChangesPartitionsHeader": {},
+  "installationTypeDualOSDetected": "L’ordinador actualment duu els sistemes {os1} i {os2}. Què voleu fer?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "quitButtonText": "Surt de la instal·lació",
+  "@quitButtonText": {}
 }

@@ -102,7 +102,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Las particiones siguientes se van a formatear:",
+  "writeChangesPartitionsHeader": "Se aplicarán los cambios siguientes a las particiones:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryPrimaryFull": "partición #{partitionNumber} de {diskSerial} ({diskPath}) como {fstype} usada para {mountPath}",
   "@writeChangesPartitionEntryPrimaryFull": {
@@ -637,5 +637,31 @@
     "placeholders": {
       "product": {}
     }
-  }
+  },
+  "notEnoughDiskSpaceHeader": "Por lo menos necesita {SIZE} en disco para instalar {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "El equipo solo tiene {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "El disco más grande del equipo es de solo {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "quitButtonText": "Salir de la instalación",
+  "@quitButtonText": {},
+  "notEnoughDiskSpaceTitle": "Disculpe",
+  "@notEnoughDiskSpaceTitle": {}
 }
