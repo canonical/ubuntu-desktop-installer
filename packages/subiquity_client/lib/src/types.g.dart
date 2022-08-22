@@ -1017,3 +1017,15 @@ Map<String, dynamic> _$$_WSLConfigurationAdvancedToJson(
       'interop_appendwindowspath': instance.interopAppendwindowspath,
       'systemd_enabled': instance.systemdEnabled,
     };
+
+_$_WSLSetupOptions _$$_WSLSetupOptionsFromJson(Map<String, dynamic> json) =>
+    _$_WSLSetupOptions(
+      installLanguageSupportPackages:
+          json['install_language_support_packages'] as bool? ?? true,
+    );
+
+Map<String, dynamic> _$$_WSLSetupOptionsToJson(_$_WSLSetupOptions instance) =>
+    <String, dynamic>{
+      'install_language_support_packages':
+          instance.installLanguageSupportPackages,
+    };

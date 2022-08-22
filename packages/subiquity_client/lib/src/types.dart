@@ -776,3 +776,13 @@ class WSLConfigurationAdvanced with _$WSLConfigurationAdvanced {
   factory WSLConfigurationAdvanced.fromJson(Map<String, dynamic> json) =>
       _$WSLConfigurationAdvancedFromJson(json);
 }
+
+@freezed
+class WSLSetupOptions with _$WSLSetupOptions {
+  const factory WSLSetupOptions({
+    @Default(true) bool installLanguageSupportPackages,
+  }) = _WSLSetupOptions;
+
+  factory WSLSetupOptions.fromJson(Map<String, dynamic> json) =>
+      _$WSLSetupOptionsFromJson(json);
+}

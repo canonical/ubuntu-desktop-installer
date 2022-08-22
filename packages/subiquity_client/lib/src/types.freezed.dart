@@ -10943,3 +10943,141 @@ abstract class _WSLConfigurationAdvanced implements WSLConfigurationAdvanced {
   _$$_WSLConfigurationAdvancedCopyWith<_$_WSLConfigurationAdvanced>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+WSLSetupOptions _$WSLSetupOptionsFromJson(Map<String, dynamic> json) {
+  return _WSLSetupOptions.fromJson(json);
+}
+
+/// @nodoc
+mixin _$WSLSetupOptions {
+  bool get installLanguageSupportPackages => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WSLSetupOptionsCopyWith<WSLSetupOptions> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WSLSetupOptionsCopyWith<$Res> {
+  factory $WSLSetupOptionsCopyWith(
+          WSLSetupOptions value, $Res Function(WSLSetupOptions) then) =
+      _$WSLSetupOptionsCopyWithImpl<$Res>;
+  $Res call({bool installLanguageSupportPackages});
+}
+
+/// @nodoc
+class _$WSLSetupOptionsCopyWithImpl<$Res>
+    implements $WSLSetupOptionsCopyWith<$Res> {
+  _$WSLSetupOptionsCopyWithImpl(this._value, this._then);
+
+  final WSLSetupOptions _value;
+  // ignore: unused_field
+  final $Res Function(WSLSetupOptions) _then;
+
+  @override
+  $Res call({
+    Object? installLanguageSupportPackages = freezed,
+  }) {
+    return _then(_value.copyWith(
+      installLanguageSupportPackages: installLanguageSupportPackages == freezed
+          ? _value.installLanguageSupportPackages
+          : installLanguageSupportPackages // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_WSLSetupOptionsCopyWith<$Res>
+    implements $WSLSetupOptionsCopyWith<$Res> {
+  factory _$$_WSLSetupOptionsCopyWith(
+          _$_WSLSetupOptions value, $Res Function(_$_WSLSetupOptions) then) =
+      __$$_WSLSetupOptionsCopyWithImpl<$Res>;
+  @override
+  $Res call({bool installLanguageSupportPackages});
+}
+
+/// @nodoc
+class __$$_WSLSetupOptionsCopyWithImpl<$Res>
+    extends _$WSLSetupOptionsCopyWithImpl<$Res>
+    implements _$$_WSLSetupOptionsCopyWith<$Res> {
+  __$$_WSLSetupOptionsCopyWithImpl(
+      _$_WSLSetupOptions _value, $Res Function(_$_WSLSetupOptions) _then)
+      : super(_value, (v) => _then(v as _$_WSLSetupOptions));
+
+  @override
+  _$_WSLSetupOptions get _value => super._value as _$_WSLSetupOptions;
+
+  @override
+  $Res call({
+    Object? installLanguageSupportPackages = freezed,
+  }) {
+    return _then(_$_WSLSetupOptions(
+      installLanguageSupportPackages: installLanguageSupportPackages == freezed
+          ? _value.installLanguageSupportPackages
+          : installLanguageSupportPackages // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_WSLSetupOptions implements _WSLSetupOptions {
+  const _$_WSLSetupOptions({this.installLanguageSupportPackages = true});
+
+  factory _$_WSLSetupOptions.fromJson(Map<String, dynamic> json) =>
+      _$$_WSLSetupOptionsFromJson(json);
+
+  @override
+  @JsonKey()
+  final bool installLanguageSupportPackages;
+
+  @override
+  String toString() {
+    return 'WSLSetupOptions(installLanguageSupportPackages: $installLanguageSupportPackages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_WSLSetupOptions &&
+            const DeepCollectionEquality().equals(
+                other.installLanguageSupportPackages,
+                installLanguageSupportPackages));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(installLanguageSupportPackages));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_WSLSetupOptionsCopyWith<_$_WSLSetupOptions> get copyWith =>
+      __$$_WSLSetupOptionsCopyWithImpl<_$_WSLSetupOptions>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_WSLSetupOptionsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _WSLSetupOptions implements WSLSetupOptions {
+  const factory _WSLSetupOptions({final bool installLanguageSupportPackages}) =
+      _$_WSLSetupOptions;
+
+  factory _WSLSetupOptions.fromJson(Map<String, dynamic> json) =
+      _$_WSLSetupOptions.fromJson;
+
+  @override
+  bool get installLanguageSupportPackages;
+  @override
+  @JsonKey(ignore: true)
+  _$$_WSLSetupOptionsCopyWith<_$_WSLSetupOptions> get copyWith =>
+      throw _privateConstructorUsedError;
+}
