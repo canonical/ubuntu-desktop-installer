@@ -448,6 +448,22 @@ class SubiquityClient {
     } on HttpException catch (_) {}
   }
 
+  Future<WSLSetupOptions> wslSetupOptions() async {
+    final request = await _openUrl('GET', url('wslsetupoptions'));
+    final response = await request.close();
+
+    final json = await _receiveJson('wslsetupoptions()', response);
+    return WSLSetupOptions.fromJson(json);
+  }
+
+  Future<void> setWslSetupOptions(WSLSetupOptions options) async {
+    final request = await _openUrl('POST', url('wslsetupoptions'));
+    request.write(jsonEncode(options.toJson()));
+    final response = await request.close();
+    await _receive(
+        'setWslSetupOptions(${jsonEncode(options.toJson())})', response);
+  }
+
   Future<WSLConfigurationBase> wslConfigurationBase() async {
     final request = await _openUrl('GET', url('wslconfbase'));
     final response = await request.close();
