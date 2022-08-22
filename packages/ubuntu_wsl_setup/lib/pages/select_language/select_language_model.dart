@@ -85,8 +85,12 @@ class SelectLanguageModel extends SafeChangeNotifier {
   /// Returns the name of the language at the given [index].
   /// To avoid issues with the UI in WSL, the international name of
   /// the language is returned in case it's blacklisted.
-  String language(int index) =>
-      _languageFallback.displayNameFor(_languages[index]);
+  String language(int index) {
+    if (_languages.isEmpty) {
+      return '';
+    }
+    return _languageFallback.displayNameFor(_languages[index]);
+  }
 
   /// Selects the given [locale].
   void selectLocale(Locale locale) {
