@@ -37,7 +37,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get yesButtonText => 'Sí';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Salir de la instalación';
 
   @override
   String get welcome => 'Le damos la bienvenida';
@@ -606,7 +606,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Las particiones siguientes se van a formatear:';
+  String get writeChangesPartitionsHeader => 'Se aplicarán los cambios siguientes a las particiones:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
@@ -828,20 +828,20 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationFailed => 'Falló la instalación';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Disculpe';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Por lo menos necesita $SIZE en disco para instalar $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'El equipo solo tiene $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'El disco más grande del equipo es de solo $SIZE.';
   }
 }

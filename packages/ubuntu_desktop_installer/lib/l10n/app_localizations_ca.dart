@@ -37,7 +37,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get yesButtonText => 'Sí';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Surt de la instal·lació';
 
   @override
   String get welcome => 'Us donem la benvinguda';
@@ -248,12 +248,12 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'L\'ordinador actualment duu el sistema $os. Què voleu fer?';
+    return 'L’ordinador actualment duu el sistema $os. Què voleu fer?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'L’ordinador actualment duu els sistemes $os1 i $os2. Què voleu fer?';
   }
 
   @override
@@ -606,7 +606,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partition changes are going to be applied:';
+  String get writeChangesPartitionsHeader => 'S’aplicaran els canvis següents a les particions:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
@@ -634,7 +634,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Trieu l’aspecte';
 
   @override
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
