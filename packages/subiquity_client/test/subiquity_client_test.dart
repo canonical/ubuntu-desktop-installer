@@ -523,6 +523,26 @@ void main() {
       expect(await client.variant(), equals(Variant.WSL_CONFIGURATION));
     });
 
+    test('wslsetupoptions', () async {
+      var newConf = WSLSetupOptions(
+        installLanguageSupportPackages: false,
+      );
+
+      await client.setWslSetupOptions(newConf);
+
+      var conf = await client.wslSetupOptions();
+      expect(conf.installLanguageSupportPackages, false);
+
+      newConf = WSLSetupOptions(
+        installLanguageSupportPackages: true,
+      );
+
+      await client.setWslSetupOptions(newConf);
+
+      conf = await client.wslSetupOptions();
+      expect(conf.installLanguageSupportPackages, true);
+    });
+
     test('wslconfbase', () async {
       var newConf = WSLConfigurationBase(
         automountRoot: '/mnt/',
