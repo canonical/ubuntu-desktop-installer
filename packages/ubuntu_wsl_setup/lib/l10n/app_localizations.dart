@@ -277,6 +277,18 @@ abstract class AppLocalizations {
   /// **'Select your language'**
   String get selectLanguageTitle;
 
+  /// No description provided for @installLangPacksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Install packages for better {lang} language support'**
+  String installLangPacksTitle(String lang);
+
+  /// No description provided for @installLangPacksSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Not recommended for slow connections.'**
+  String get installLangPacksSubtitle;
+
   /// No description provided for @profileSetupTitle.
   ///
   /// In en, this message translates to:

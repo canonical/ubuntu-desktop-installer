@@ -29,6 +29,14 @@ class AppLocalizationsFr extends AppLocalizations {
   String get selectLanguageTitle => 'Sélectionnez votre langue';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Install packages for better $lang language support';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+
+  @override
   String get profileSetupTitle => 'Configuration du profil';
 
   @override

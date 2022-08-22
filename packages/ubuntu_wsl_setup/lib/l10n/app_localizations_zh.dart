@@ -29,6 +29,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectLanguageTitle => '选择您的语言';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Install packages for better $lang language support';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+
+  @override
   String get profileSetupTitle => '配置文件设置';
 
   @override

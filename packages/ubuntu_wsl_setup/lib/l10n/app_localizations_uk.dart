@@ -29,6 +29,14 @@ class AppLocalizationsUk extends AppLocalizations {
   String get selectLanguageTitle => 'Оберіть мову';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Install packages for better $lang language support';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+
+  @override
   String get profileSetupTitle => 'Налаштування профілю';
 
   @override

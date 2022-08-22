@@ -29,6 +29,14 @@ class AppLocalizationsEo extends AppLocalizations {
   String get selectLanguageTitle => 'Elektu vian lingvon';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Install packages for better $lang language support';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+
+  @override
   String get profileSetupTitle => 'Agordi profilon';
 
   @override
