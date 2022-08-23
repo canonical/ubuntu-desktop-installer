@@ -40,6 +40,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     model.init().then((_) {
       _scrollToLayout(model.selectedLayoutIndex);
       _scrollToVariant(model.selectedVariantIndex);
+      model.updateInputSource();
     });
 
     model.onLayoutSelected.listen(_scrollToLayout);
@@ -152,7 +153,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
         WizardAction.next(
           context,
           enabled: model.isValid,
-          onNext: model.applyKeyboardSettings,
+          onNext: model.save,
         ),
       ],
     );

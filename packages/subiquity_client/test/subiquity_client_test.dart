@@ -150,6 +150,11 @@ void main() {
       expect(kb.layouts, isNotEmpty);
     });
 
+    test('input source', () async {
+      const ks = KeyboardSetting(layout: 'fr', variant: 'latin9');
+      await expectLater(client.setInputSource(ks), completes);
+    });
+
     test('has rst', () async {
       var rst = await client.hasRst();
       expect(rst, isFalse);

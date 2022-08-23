@@ -97,8 +97,12 @@ class MockKeyboardLayoutModel extends _i1.Mock
       returnValue: _i3.Future<void>.value(),
       returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
   @override
-  _i3.Future<void> applyKeyboardSettings() => (super.noSuchMethod(
-      Invocation.method(#applyKeyboardSettings, []),
+  _i3.Future<void> updateInputSource() => (super.noSuchMethod(
+      Invocation.method(#updateInputSource, []),
+      returnValue: _i3.Future<void>.value(),
+      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  @override
+  _i3.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
       returnValue: _i3.Future<void>.value(),
       returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
   @override

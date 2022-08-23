@@ -232,6 +232,12 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
               returnValueForMissingStub: _i6.Future<void>.value())
           as _i6.Future<void>);
   @override
+  _i6.Future<void> setInputSource(_i3.KeyboardSetting? setting) =>
+      (super.noSuchMethod(Invocation.method(#setInputSource, [setting]),
+              returnValue: _i6.Future<void>.value(),
+              returnValueForMissingStub: _i6.Future<void>.value())
+          as _i6.Future<void>);
+  @override
   _i6.Future<String> proxy() =>
       (super.noSuchMethod(Invocation.method(#proxy, []),
           returnValue: _i6.Future<String>.value('')) as _i6.Future<String>);
