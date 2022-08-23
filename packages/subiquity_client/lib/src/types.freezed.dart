@@ -9456,6 +9456,475 @@ abstract class _UbuntuProInfo implements UbuntuProInfo {
       throw _privateConstructorUsedError;
 }
 
+UbuntuProResponse _$UbuntuProResponseFromJson(Map<String, dynamic> json) {
+  return _UbuntuProResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UbuntuProResponse {
+  String get token => throw _privateConstructorUsedError;
+  bool get hasNetwork => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UbuntuProResponseCopyWith<UbuntuProResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UbuntuProResponseCopyWith<$Res> {
+  factory $UbuntuProResponseCopyWith(
+          UbuntuProResponse value, $Res Function(UbuntuProResponse) then) =
+      _$UbuntuProResponseCopyWithImpl<$Res>;
+  $Res call({String token, bool hasNetwork});
+}
+
+/// @nodoc
+class _$UbuntuProResponseCopyWithImpl<$Res>
+    implements $UbuntuProResponseCopyWith<$Res> {
+  _$UbuntuProResponseCopyWithImpl(this._value, this._then);
+
+  final UbuntuProResponse _value;
+  // ignore: unused_field
+  final $Res Function(UbuntuProResponse) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? hasNetwork = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNetwork: hasNetwork == freezed
+          ? _value.hasNetwork
+          : hasNetwork // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_UbuntuProResponseCopyWith<$Res>
+    implements $UbuntuProResponseCopyWith<$Res> {
+  factory _$$_UbuntuProResponseCopyWith(_$_UbuntuProResponse value,
+          $Res Function(_$_UbuntuProResponse) then) =
+      __$$_UbuntuProResponseCopyWithImpl<$Res>;
+  @override
+  $Res call({String token, bool hasNetwork});
+}
+
+/// @nodoc
+class __$$_UbuntuProResponseCopyWithImpl<$Res>
+    extends _$UbuntuProResponseCopyWithImpl<$Res>
+    implements _$$_UbuntuProResponseCopyWith<$Res> {
+  __$$_UbuntuProResponseCopyWithImpl(
+      _$_UbuntuProResponse _value, $Res Function(_$_UbuntuProResponse) _then)
+      : super(_value, (v) => _then(v as _$_UbuntuProResponse));
+
+  @override
+  _$_UbuntuProResponse get _value => super._value as _$_UbuntuProResponse;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? hasNetwork = freezed,
+  }) {
+    return _then(_$_UbuntuProResponse(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNetwork: hasNetwork == freezed
+          ? _value.hasNetwork
+          : hasNetwork // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UbuntuProResponse implements _UbuntuProResponse {
+  const _$_UbuntuProResponse({required this.token, required this.hasNetwork});
+
+  factory _$_UbuntuProResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_UbuntuProResponseFromJson(json);
+
+  @override
+  final String token;
+  @override
+  final bool hasNetwork;
+
+  @override
+  String toString() {
+    return 'UbuntuProResponse(token: $token, hasNetwork: $hasNetwork)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UbuntuProResponse &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.hasNetwork, hasNetwork));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(hasNetwork));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UbuntuProResponseCopyWith<_$_UbuntuProResponse> get copyWith =>
+      __$$_UbuntuProResponseCopyWithImpl<_$_UbuntuProResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UbuntuProResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UbuntuProResponse implements UbuntuProResponse {
+  const factory _UbuntuProResponse(
+      {required final String token,
+      required final bool hasNetwork}) = _$_UbuntuProResponse;
+
+  factory _UbuntuProResponse.fromJson(Map<String, dynamic> json) =
+      _$_UbuntuProResponse.fromJson;
+
+  @override
+  String get token;
+  @override
+  bool get hasNetwork;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UbuntuProResponseCopyWith<_$_UbuntuProResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UPCSInitiateResponse _$UPCSInitiateResponseFromJson(Map<String, dynamic> json) {
+  return _UPCSInitiateResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UPCSInitiateResponse {
+  String get userCode => throw _privateConstructorUsedError;
+  int get validitySeconds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UPCSInitiateResponseCopyWith<UPCSInitiateResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UPCSInitiateResponseCopyWith<$Res> {
+  factory $UPCSInitiateResponseCopyWith(UPCSInitiateResponse value,
+          $Res Function(UPCSInitiateResponse) then) =
+      _$UPCSInitiateResponseCopyWithImpl<$Res>;
+  $Res call({String userCode, int validitySeconds});
+}
+
+/// @nodoc
+class _$UPCSInitiateResponseCopyWithImpl<$Res>
+    implements $UPCSInitiateResponseCopyWith<$Res> {
+  _$UPCSInitiateResponseCopyWithImpl(this._value, this._then);
+
+  final UPCSInitiateResponse _value;
+  // ignore: unused_field
+  final $Res Function(UPCSInitiateResponse) _then;
+
+  @override
+  $Res call({
+    Object? userCode = freezed,
+    Object? validitySeconds = freezed,
+  }) {
+    return _then(_value.copyWith(
+      userCode: userCode == freezed
+          ? _value.userCode
+          : userCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      validitySeconds: validitySeconds == freezed
+          ? _value.validitySeconds
+          : validitySeconds // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_UPCSInitiateResponseCopyWith<$Res>
+    implements $UPCSInitiateResponseCopyWith<$Res> {
+  factory _$$_UPCSInitiateResponseCopyWith(_$_UPCSInitiateResponse value,
+          $Res Function(_$_UPCSInitiateResponse) then) =
+      __$$_UPCSInitiateResponseCopyWithImpl<$Res>;
+  @override
+  $Res call({String userCode, int validitySeconds});
+}
+
+/// @nodoc
+class __$$_UPCSInitiateResponseCopyWithImpl<$Res>
+    extends _$UPCSInitiateResponseCopyWithImpl<$Res>
+    implements _$$_UPCSInitiateResponseCopyWith<$Res> {
+  __$$_UPCSInitiateResponseCopyWithImpl(_$_UPCSInitiateResponse _value,
+      $Res Function(_$_UPCSInitiateResponse) _then)
+      : super(_value, (v) => _then(v as _$_UPCSInitiateResponse));
+
+  @override
+  _$_UPCSInitiateResponse get _value => super._value as _$_UPCSInitiateResponse;
+
+  @override
+  $Res call({
+    Object? userCode = freezed,
+    Object? validitySeconds = freezed,
+  }) {
+    return _then(_$_UPCSInitiateResponse(
+      userCode: userCode == freezed
+          ? _value.userCode
+          : userCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      validitySeconds: validitySeconds == freezed
+          ? _value.validitySeconds
+          : validitySeconds // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UPCSInitiateResponse implements _UPCSInitiateResponse {
+  const _$_UPCSInitiateResponse(
+      {required this.userCode, required this.validitySeconds});
+
+  factory _$_UPCSInitiateResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_UPCSInitiateResponseFromJson(json);
+
+  @override
+  final String userCode;
+  @override
+  final int validitySeconds;
+
+  @override
+  String toString() {
+    return 'UPCSInitiateResponse(userCode: $userCode, validitySeconds: $validitySeconds)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UPCSInitiateResponse &&
+            const DeepCollectionEquality().equals(other.userCode, userCode) &&
+            const DeepCollectionEquality()
+                .equals(other.validitySeconds, validitySeconds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userCode),
+      const DeepCollectionEquality().hash(validitySeconds));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UPCSInitiateResponseCopyWith<_$_UPCSInitiateResponse> get copyWith =>
+      __$$_UPCSInitiateResponseCopyWithImpl<_$_UPCSInitiateResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UPCSInitiateResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UPCSInitiateResponse implements UPCSInitiateResponse {
+  const factory _UPCSInitiateResponse(
+      {required final String userCode,
+      required final int validitySeconds}) = _$_UPCSInitiateResponse;
+
+  factory _UPCSInitiateResponse.fromJson(Map<String, dynamic> json) =
+      _$_UPCSInitiateResponse.fromJson;
+
+  @override
+  String get userCode;
+  @override
+  int get validitySeconds;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UPCSInitiateResponseCopyWith<_$_UPCSInitiateResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UPCSWaitResponse _$UPCSWaitResponseFromJson(Map<String, dynamic> json) {
+  return _UPCSWaitResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UPCSWaitResponse {
+  UPCSWaitStatus get status => throw _privateConstructorUsedError;
+  String? get contractToken => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UPCSWaitResponseCopyWith<UPCSWaitResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UPCSWaitResponseCopyWith<$Res> {
+  factory $UPCSWaitResponseCopyWith(
+          UPCSWaitResponse value, $Res Function(UPCSWaitResponse) then) =
+      _$UPCSWaitResponseCopyWithImpl<$Res>;
+  $Res call({UPCSWaitStatus status, String? contractToken});
+}
+
+/// @nodoc
+class _$UPCSWaitResponseCopyWithImpl<$Res>
+    implements $UPCSWaitResponseCopyWith<$Res> {
+  _$UPCSWaitResponseCopyWithImpl(this._value, this._then);
+
+  final UPCSWaitResponse _value;
+  // ignore: unused_field
+  final $Res Function(UPCSWaitResponse) _then;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? contractToken = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UPCSWaitStatus,
+      contractToken: contractToken == freezed
+          ? _value.contractToken
+          : contractToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_UPCSWaitResponseCopyWith<$Res>
+    implements $UPCSWaitResponseCopyWith<$Res> {
+  factory _$$_UPCSWaitResponseCopyWith(
+          _$_UPCSWaitResponse value, $Res Function(_$_UPCSWaitResponse) then) =
+      __$$_UPCSWaitResponseCopyWithImpl<$Res>;
+  @override
+  $Res call({UPCSWaitStatus status, String? contractToken});
+}
+
+/// @nodoc
+class __$$_UPCSWaitResponseCopyWithImpl<$Res>
+    extends _$UPCSWaitResponseCopyWithImpl<$Res>
+    implements _$$_UPCSWaitResponseCopyWith<$Res> {
+  __$$_UPCSWaitResponseCopyWithImpl(
+      _$_UPCSWaitResponse _value, $Res Function(_$_UPCSWaitResponse) _then)
+      : super(_value, (v) => _then(v as _$_UPCSWaitResponse));
+
+  @override
+  _$_UPCSWaitResponse get _value => super._value as _$_UPCSWaitResponse;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? contractToken = freezed,
+  }) {
+    return _then(_$_UPCSWaitResponse(
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UPCSWaitStatus,
+      contractToken: contractToken == freezed
+          ? _value.contractToken
+          : contractToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UPCSWaitResponse implements _UPCSWaitResponse {
+  const _$_UPCSWaitResponse(
+      {required this.status, required this.contractToken});
+
+  factory _$_UPCSWaitResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_UPCSWaitResponseFromJson(json);
+
+  @override
+  final UPCSWaitStatus status;
+  @override
+  final String? contractToken;
+
+  @override
+  String toString() {
+    return 'UPCSWaitResponse(status: $status, contractToken: $contractToken)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UPCSWaitResponse &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.contractToken, contractToken));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(contractToken));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UPCSWaitResponseCopyWith<_$_UPCSWaitResponse> get copyWith =>
+      __$$_UPCSWaitResponseCopyWithImpl<_$_UPCSWaitResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UPCSWaitResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UPCSWaitResponse implements UPCSWaitResponse {
+  const factory _UPCSWaitResponse(
+      {required final UPCSWaitStatus status,
+      required final String? contractToken}) = _$_UPCSWaitResponse;
+
+  factory _UPCSWaitResponse.fromJson(Map<String, dynamic> json) =
+      _$_UPCSWaitResponse.fromJson;
+
+  @override
+  UPCSWaitStatus get status;
+  @override
+  String? get contractToken;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UPCSWaitResponseCopyWith<_$_UPCSWaitResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 UbuntuProService _$UbuntuProServiceFromJson(Map<String, dynamic> json) {
   return _UbuntuProService.fromJson(json);
 }

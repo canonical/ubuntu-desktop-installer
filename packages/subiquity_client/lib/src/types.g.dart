@@ -876,6 +876,50 @@ Map<String, dynamic> _$$_UbuntuProInfoToJson(_$_UbuntuProInfo instance) =>
       'token': instance.token,
     };
 
+_$_UbuntuProResponse _$$_UbuntuProResponseFromJson(Map<String, dynamic> json) =>
+    _$_UbuntuProResponse(
+      token: json['token'] as String,
+      hasNetwork: json['has_network'] as bool,
+    );
+
+Map<String, dynamic> _$$_UbuntuProResponseToJson(
+        _$_UbuntuProResponse instance) =>
+    <String, dynamic>{
+      'token': instance.token,
+      'has_network': instance.hasNetwork,
+    };
+
+_$_UPCSInitiateResponse _$$_UPCSInitiateResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$_UPCSInitiateResponse(
+      userCode: json['user_code'] as String,
+      validitySeconds: json['validity_seconds'] as int,
+    );
+
+Map<String, dynamic> _$$_UPCSInitiateResponseToJson(
+        _$_UPCSInitiateResponse instance) =>
+    <String, dynamic>{
+      'user_code': instance.userCode,
+      'validity_seconds': instance.validitySeconds,
+    };
+
+_$_UPCSWaitResponse _$$_UPCSWaitResponseFromJson(Map<String, dynamic> json) =>
+    _$_UPCSWaitResponse(
+      status: $enumDecode(_$UPCSWaitStatusEnumMap, json['status']),
+      contractToken: json['contract_token'] as String?,
+    );
+
+Map<String, dynamic> _$$_UPCSWaitResponseToJson(_$_UPCSWaitResponse instance) =>
+    <String, dynamic>{
+      'status': _$UPCSWaitStatusEnumMap[instance.status]!,
+      'contract_token': instance.contractToken,
+    };
+
+const _$UPCSWaitStatusEnumMap = {
+  UPCSWaitStatus.SUCCESS: 'SUCCESS',
+  UPCSWaitStatus.TIMEOUT: 'TIMEOUT',
+};
+
 _$_UbuntuProService _$$_UbuntuProServiceFromJson(Map<String, dynamic> json) =>
     _$_UbuntuProService(
       name: json['name'] as String,
