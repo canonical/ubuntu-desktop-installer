@@ -55,10 +55,11 @@ void main() {
     );
   }
 
-  testWidgets('initializes the model', (tester) async {
+  testWidgets('initializes the model & input source', (tester) async {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     verify(model.init()).called(1);
+    verify(model.updateInputSource()).called(1);
   });
 
   testWidgets('select keyboard layout', (tester) async {
@@ -156,7 +157,7 @@ void main() {
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
 
-    verify(model.applyKeyboardSettings()).called(1);
+    verify(model.updateInputSource()).called(1);
     expect(find.text('Next page'), findsOneWidget);
   });
 
@@ -164,6 +165,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.keyboard()).thenAnswer((_) async =>
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+    when(client.setInputSource(KeyboardSetting(layout: '')))
+        .thenAnswer((_) async {});
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));

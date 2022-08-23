@@ -164,16 +164,18 @@ void main() {
       expect(wasNotified, isFalse);
     });
 
-    test('selection applies keyboard settings', () async {
+    test('selection updates input source', () async {
       await model.selectLayout(0);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'bar'))).called(1);
+      verify(client.setInputSource(KeyboardSetting(layout: 'bar'))).called(1);
 
       await model.selectLayout(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'baz')))
+      verify(client
+              .setInputSource(KeyboardSetting(layout: 'foo', variant: 'baz')))
           .called(1);
 
       await model.selectVariant(1);
-      verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'qux')))
+      verify(client
+              .setInputSource(KeyboardSetting(layout: 'foo', variant: 'qux')))
           .called(1);
     });
 
@@ -230,7 +232,7 @@ void main() {
     await model.selectVariant(1);
     reset(client);
 
-    await model.applyKeyboardSettings();
+    await model.save();
     verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'qux')))
         .called(1);
   });

@@ -51,7 +51,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     _selectedVariantIndex = _selectedLayout!.variants.isNotEmpty ? variant : -1;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    await applyKeyboardSettings();
+    await updateInputSource();
     notifyListeners();
   }
 
@@ -92,7 +92,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     _selectedVariantIndex = index;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    await applyKeyboardSettings();
+    await updateInputSource();
     notifyListeners();
   }
 
@@ -120,12 +120,23 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
-  /// Applies the selected keyboard layout and variant to the system.
-  Future<void> applyKeyboardSettings() {
+  /// Updates the system's input source to match the selected keyboard layout
+  /// and variant.
+  Future<void> updateInputSource() async {
+    if (_selectedLayout == null) return;
     final layout = _selectedLayout!.code;
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
-    log.info('Set $layout ($variant) as system keyboard layout');
+    log.info('Updated $layout ($variant) input source');
+    return _client.setInputSource(keyboard);
+  }
+
+  /// Saves the selected keyboard layout and variant.
+  Future<void> save() {
+    final layout = _selectedLayout!.code;
+    final variant = _selectedVariant?.code;
+    final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
+    log.info('Saved $layout ($variant) keyboard layout');
     return _client.setKeyboard(keyboard);
   }
 }
