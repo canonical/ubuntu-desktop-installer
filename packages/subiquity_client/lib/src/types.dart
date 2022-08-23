@@ -664,11 +664,49 @@ class UbuntuProInfo with _$UbuntuProInfo {
       _$UbuntuProInfoFromJson(json);
 }
 
+@freezed
+class UbuntuProResponse with _$UbuntuProResponse {
+  const factory UbuntuProResponse({
+    required String token,
+    required bool hasNetwork,
+  }) = _UbuntuProResponse;
+
+  factory UbuntuProResponse.fromJson(Map<String, dynamic> json) =>
+      _$UbuntuProResponseFromJson(json);
+}
+
 enum UbuntuProCheckTokenStatus {
   VALID_TOKEN,
   INVALID_TOKEN,
   EXPIRED_TOKEN,
   UNKNOWN_ERROR,
+}
+
+@freezed
+class UPCSInitiateResponse with _$UPCSInitiateResponse {
+  const factory UPCSInitiateResponse({
+    required String userCode,
+    required int validitySeconds,
+  }) = _UPCSInitiateResponse;
+
+  factory UPCSInitiateResponse.fromJson(Map<String, dynamic> json) =>
+      _$UPCSInitiateResponseFromJson(json);
+}
+
+enum UPCSWaitStatus {
+  SUCCESS,
+  TIMEOUT,
+}
+
+@freezed
+class UPCSWaitResponse with _$UPCSWaitResponse {
+  const factory UPCSWaitResponse({
+    required UPCSWaitStatus status,
+    required String? contractToken,
+  }) = _UPCSWaitResponse;
+
+  factory UPCSWaitResponse.fromJson(Map<String, dynamic> json) =>
+      _$UPCSWaitResponseFromJson(json);
 }
 
 @freezed
