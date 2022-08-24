@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+target=/target
+source_nm=/etc/NetworkManager/system-connections
+target_nm=$target/$source_nm
+
+if [ -d $source_nm ] && [ -d $target_nm ]; then
+    cp -anr $source_nm/. $target_nm
+fi

@@ -154,6 +154,8 @@ parts:
       cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
+      mkdir -p $SNAPCRAFT_PART_INSTALL/etc/subiquity
+      cp -r snap/local/postinst.d $SNAPCRAFT_PART_INSTALL/etc/subiquity
       cd packages/ubuntu_desktop_installer
       flutter channel stable
       flutter upgrade
