@@ -18,5 +18,9 @@ const kFooterPadding = EdgeInsets.fromLTRB(24, 0, 24, 24);
 /// The fraction of content width in relation to the page.
 const kContentWidthFraction = 0.7;
 
+/// The indentation to align with radio indicators etc.
+const kContentIndentation =
+    EdgeInsetsDirectional.only(start: kMinInteractiveDimension);
+
 /// The size of a radio indicator.
 const kRadioSize = Size.square(kMinInteractiveDimension - 8);

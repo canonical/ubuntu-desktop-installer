@@ -101,9 +101,9 @@ class _WifiViewState extends State<WifiView> {
       child: FractionallySizedBox(
         alignment: Alignment.centerLeft,
         widthFactor: kContentWidthFraction,
-        child: RadioIconTile(
-          contentPadding: EdgeInsets.zero,
-          title: WifiListView(onSelected: widget.onSelected),
+        child: Padding(
+          padding: kContentIndentation,
+          child: WifiListView(onSelected: widget.onSelected),
         ),
       ),
     );

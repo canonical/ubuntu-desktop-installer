@@ -87,9 +87,9 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
         child: FractionallySizedBox(
           alignment: Alignment.centerLeft,
           widthFactor: kContentWidthFraction,
-          child: RadioIconTile(
-            contentPadding: EdgeInsets.zero,
-            title: Column(
+          child: Padding(
+            padding: kContentIndentation,
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 if (model.devices.length > 1)
