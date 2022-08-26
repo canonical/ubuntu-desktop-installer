@@ -32,6 +32,7 @@ Future<void> main(List<String> args) async {
   })!;
   final variant = ValueNotifier<Variant?>(null);
   final liveRun = isLiveRun(options);
+  final isReconf = options['reconfigure'] == true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final tcpService = TcpSocketService();
   final socketHolder = await tcpService.getRandomPortSocket();
@@ -61,7 +62,7 @@ Future<void> main(List<String> args) async {
       '--server-only',
       '--tcp-port=${socketHolder.port}'
     ],
-    defer: options['reconfigure'] == true ? null : registrationEvent.future,
+    defer: isReconf ? null : registrationEvent.future,
     onProcessStart: socketHolder.close,
   );
 
@@ -70,10 +71,12 @@ Future<void> main(List<String> args) async {
   final subiquityMonitor = SubiquityStatusMonitor();
   registerService(UrlLauncher.new);
   registerService(LanguageFallbackService.win);
-  registerService(() => JournalService(source: decode(stdin)));
+  if (!isReconf) {
+    registerService(() => JournalService(source: decode(stdin)));
+  }
 
   String? initialRoute;
-  if (options['reconfigure'] == false && options['initial-route'] == null) {
+  if (!isReconf && options['initial-route'] == null) {
     initialRoute = Routes.installationSlides;
   }
 
@@ -84,6 +87,7 @@ Future<void> main(List<String> args) async {
         return UbuntuWslSetupApp(
           variant: value,
           initialRoute: initialRoute,
+          showSplashScreen: isReconf,
         );
       },
     ),
@@ -93,7 +97,7 @@ Future<void> main(List<String> args) async {
     subiquityMonitor: subiquityMonitor,
     serverArgs: serverArgs,
     serverEnvironment: {
-      if (!liveRun && options['reconfigure'] == true) 'DRYRUN_RECONFIG': 'true',
+      if (!liveRun && isReconf) 'DRYRUN_RECONFIG': 'true',
     },
   );
   await subiquityClient.variant().then((value) {

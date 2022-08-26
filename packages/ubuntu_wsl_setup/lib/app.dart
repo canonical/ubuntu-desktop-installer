@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:yaru/yaru.dart';
 
 import 'l10n.dart';
@@ -13,10 +14,12 @@ class UbuntuWslSetupApp extends StatelessWidget {
     super.key,
     this.variant,
     this.initialRoute,
+    this.showSplashScreen = false,
   });
 
   final Variant? variant;
   final String? initialRoute;
+  final bool showSplashScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +37,20 @@ class UbuntuWslSetupApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           localizationsDelegates: localizationsDelegates,
           supportedLocales: supportedLocales,
-          home: buildWizard(context),
+          home: showSplashScreen == false
+              ? buildWizard(context)
+              : SplashScreen(
+                  animationDuration: const Duration(seconds: 6),
+                  builder: buildWizard,
+                ),
         );
       }),
     );
   }
 
-  Widget buildWizard(BuildContext context) {
+  Widget? buildWizard(BuildContext context) {
     if (variant == null && initialRoute != Routes.installationSlides) {
-      return const SizedBox.shrink();
+      return showSplashScreen ? null : const SizedBox.shrink();
     }
 
     return UbuntuWslSetupWizard(
