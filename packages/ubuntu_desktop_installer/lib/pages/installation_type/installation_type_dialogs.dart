@@ -45,9 +45,9 @@ Future<void> showAdvancedFeaturesDialog(
                   onChanged: (v) => advancedFeature.value = v!,
                 ),
                 // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-                // RadioIconTile(
-                //   contentPadding: EdgeInsets.zero,
-                //   title: CheckButton(
+                // Padding(
+                //   padding: kContentIndentation,
+                //   child: CheckButton(
                 //     title: Text(lang.installationTypeEncrypt('Ubuntu')),
                 //     subtitle: Text(lang.installationTypeEncrypt(flavor.name)),
                 //     value: encryption.value,

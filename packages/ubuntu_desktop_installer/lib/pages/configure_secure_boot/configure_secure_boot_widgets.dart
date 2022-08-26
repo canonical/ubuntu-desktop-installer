@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
@@ -18,9 +19,9 @@ class SecurityKeyFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
-    return RadioIconTile(
-      contentPadding: EdgeInsets.zero,
-      title: ValidatedFormField(
+    return Padding(
+      padding: kContentIndentation,
+      child: ValidatedFormField(
         obscureText: true,
         fieldWidth: fieldWidth,
         labelText: lang.chooseSecurityKey,
@@ -48,9 +49,9 @@ class SecurityKeyConfirmFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
-    return RadioIconTile(
-      contentPadding: EdgeInsets.zero,
-      title: ValidatedFormField(
+    return Padding(
+      padding: kContentIndentation,
+      child: ValidatedFormField(
         obscureText: true,
         fieldWidth: fieldWidth,
         labelText: lang.confirmSecurityKey,

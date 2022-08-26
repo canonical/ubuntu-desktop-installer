@@ -126,9 +126,9 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             onChanged: (value) => model.installationType = value!,
           ),
           const SizedBox(height: kContentSpacing),
-          RadioIconTile(
-            contentPadding: EdgeInsets.zero,
-            title: Row(
+          Padding(
+            padding: kContentIndentation,
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 OutlinedButton(
