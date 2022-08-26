@@ -68,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
 class DefaultSplashWidget extends StatelessWidget {
   const DefaultSplashWidget({super.key});
 
-  static const duration = Duration(seconds: 6);
+  static const duration = Duration(milliseconds: 5300);
 
   @override
   Widget build(BuildContext context) {
