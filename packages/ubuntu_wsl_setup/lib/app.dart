@@ -23,31 +23,28 @@ class UbuntuWslSetupApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: Colors.white,
-      child: InheritedLocale(
-        child: Builder(builder: (context) {
-          return MaterialApp(
-            locale: InheritedLocale.of(context),
-            onGenerateTitle: (context) {
-              final lang = AppLocalizations.of(context);
-              setWindowTitle(lang.windowTitle);
-              return lang.appTitle;
-            },
-            theme: yaruLight,
-            darkTheme: yaruDark,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: localizationsDelegates,
-            supportedLocales: supportedLocales,
-            home: showSplashScreen == false
-                ? buildWizard(context)
-                : SplashScreen(
-                    animationDuration: const Duration(seconds: 6),
-                    builder: buildWizard,
-                  ),
-          );
-        }),
-      ),
+    return InheritedLocale(
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          locale: InheritedLocale.of(context),
+          onGenerateTitle: (context) {
+            final lang = AppLocalizations.of(context);
+            setWindowTitle(lang.windowTitle);
+            return lang.appTitle;
+          },
+          theme: yaruLight,
+          darkTheme: yaruDark,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          home: showSplashScreen == false
+              ? buildWizard(context)
+              : SplashScreen(
+                  animationDuration: const Duration(seconds: 6),
+                  builder: buildWizard,
+                ),
+        );
+      }),
     );
   }
 
