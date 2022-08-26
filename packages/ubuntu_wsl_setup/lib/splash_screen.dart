@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// A widget that smoothly transitions from the [animation] widget to the result
 /// of the [builder]'s invocation, but not before [animationDuration] (or as
@@ -10,6 +10,7 @@ class SplashScreen extends StatefulWidget {
     this.animationDuration = DefaultSplashWidget.duration,
     this.transitionDuration = const Duration(seconds: 1),
     this.animation = const DefaultSplashWidget(),
+    this.background = DefaultSplashWidget.mainColor,
     required this.builder,
   });
 
@@ -18,6 +19,9 @@ class SplashScreen extends StatefulWidget {
 
   /// The [animation] duration.
   final Duration animationDuration;
+
+  /// The [background] behind the animation.
+  final Color background;
 
   /// Builder invoked when it's allowed to replace the splash animation.
   final Widget? Function(BuildContext) builder;
@@ -44,9 +48,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: widget.transitionDuration,
-      child: selectChild(context),
+    return ColoredBox(
+      color: widget.background,
+      child: AnimatedSwitcher(
+        duration: widget.transitionDuration,
+        child: selectChild(context),
+      ),
     );
   }
 
@@ -70,6 +77,8 @@ class DefaultSplashWidget extends StatefulWidget {
 
   static const duration = Duration(milliseconds: 5300);
   static const asset = AssetImage('assets/splash_animation.gif');
+  // Average color computed from the GIF's first frame.
+  static const mainColor = Color(0xfffcfcfc);
 
   @override
   State<DefaultSplashWidget> createState() => _DefaultSplashWidgetState();
