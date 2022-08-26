@@ -5,7 +5,6 @@ abstract class Routes {
   static const turnOffRST = '/turnoffrst';
   static const keyboardLayout = '/keyboardlayout';
   static const repairUbuntu = '/repairubuntu';
-  static const tryUbuntu = '/tryubuntu';
   static const connectToInternet = '/connecttointernet';
   static const allocateDiskSpace = '/allocatediskspace';
   static const configureSecureBoot = '/configuresecureboot';

@@ -3,6 +3,7 @@ import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
 final log = Logger('try_or_install');
@@ -65,4 +66,7 @@ class TryOrInstallModel extends SafeChangeNotifier {
       return 'https://ubuntu.com/download/desktop';
     }
   }
+
+  /// Lets the user try the Ubuntu desktop by closing the installer window.
+  Future<void> tryUbuntu() => closeWindow();
 }
