@@ -242,4 +242,11 @@ void main() {
     model.selectConnectMode();
     expect(model.connectMode, equals(ConnectMode.wifi));
   });
+
+  test('mark network configured', () async {
+    final service = MockNetworkService();
+    final model = ConnectToInternetModel(service);
+    await model.markConfigured();
+    verify(service.markConfigured()).called(1);
+  });
 }

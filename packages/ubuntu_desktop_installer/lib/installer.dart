@@ -78,7 +78,7 @@ Future<void> runInstallerApp(
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(JournalService.new);
-  registerService(NetworkService.new);
+  registerService(() => NetworkService(subiquityClient));
   registerService(PowerService.new);
   registerService(TelemetryService.new);
   registerService(UdevService.new);
@@ -130,7 +130,6 @@ Future<void> runInstallerApp(
     'drivers',
     'mirror',
     'proxy',
-    'network',
     'ssh',
     'snaplist',
     'ubuntu_pro',

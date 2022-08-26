@@ -230,6 +230,11 @@ class MockConnectToInternetModel extends _i1.Mock
       returnValue: _i5.Future<void>.value(),
       returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
   @override
+  _i5.Future<void> markConfigured() => (super.noSuchMethod(
+      Invocation.method(#markConfigured, []),
+      returnValue: _i5.Future<void>.value(),
+      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  @override
   _i5.Future<void> cleanup() => (super.noSuchMethod(
       Invocation.method(#cleanup, []),
       returnValue: _i5.Future<void>.value(),
@@ -788,6 +793,11 @@ class MockNetworkService extends _i1.Mock implements _i2.NetworkService {
               Invocation.method(#getWifiSettings, [], {#ssid: ssid}),
               returnValue: <String, Map<String, _i10.DBusValue>>{})
           as Map<String, Map<String, _i10.DBusValue>>);
+  @override
+  _i5.Future<void> markConfigured() => (super.noSuchMethod(
+      Invocation.method(#markConfigured, []),
+      returnValue: _i5.Future<void>.value(),
+      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
   @override
   _i5.Future<void> connect() => (super.noSuchMethod(
       Invocation.method(#connect, []),

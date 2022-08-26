@@ -1,10 +1,15 @@
 import 'package:dbus/dbus.dart';
 import 'package:nm/nm.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:nm/nm.dart';
 
 /// Extends [NetworkManagerClient] with convenience properties and methods.
 class NetworkService extends NetworkManagerClient {
+  NetworkService(this._subiquity);
+
+  final SubiquityClient _subiquity;
+
   /// `true` if there is a full network connection.
   bool get isConnected {
     return connectivity == NetworkManagerConnectivityState.full;
@@ -35,4 +40,7 @@ class NetworkService extends NetworkManagerClient {
       },
     };
   }
+
+  /// Marks network configured.
+  Future<void> markConfigured() => _subiquity.markConfigured(['network']);
 }
