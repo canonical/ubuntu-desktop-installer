@@ -38,7 +38,7 @@ void main() {
     expect(find.byWidget(kAnimation), findsOneWidget);
     expect(find.byWidget(kChild), findsNothing);
   });
-  testWidgets('correct transition', (tester) async {
+  testWidgets('correct transition with default widget', (tester) async {
     final runOnce = ValueNotifier<bool>(false);
 
     final app = MaterialApp(
@@ -47,7 +47,6 @@ void main() {
         builder: (context, value, _) => SplashScreen(
           animationDuration: kDuration,
           transitionDuration: kDuration,
-          animation: kAnimation,
           builder: (BuildContext context) {
             if (value) {
               return kChild;
@@ -59,7 +58,7 @@ void main() {
     );
     await tester.pumpWidget(app);
     await tester.pumpAndSettle(kDuration);
-    expect(find.byWidget(kAnimation), findsOneWidget);
+    expect(find.byType(DefaultSplashWidget), findsOneWidget);
     expect(find.byWidget(kChild), findsNothing);
     runOnce.value = true;
     await tester.pumpAndSettle();
