@@ -65,15 +65,30 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 // The widget presented as the default animation.
-class DefaultSplashWidget extends StatelessWidget {
+class DefaultSplashWidget extends StatefulWidget {
   const DefaultSplashWidget({super.key});
 
   static const duration = Duration(milliseconds: 5300);
+  static const asset = AssetImage('assets/splash_animation.gif');
+
+  @override
+  State<DefaultSplashWidget> createState() => _DefaultSplashWidgetState();
+}
+
+class _DefaultSplashWidgetState extends State<DefaultSplashWidget> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      precacheImage(DefaultSplashWidget.asset, context);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'assets/splash_animation.gif',
+    return Image(
+      image: DefaultSplashWidget.asset,
       fit: BoxFit.cover,
       width: MediaQuery.of(context).size.width,
     );
