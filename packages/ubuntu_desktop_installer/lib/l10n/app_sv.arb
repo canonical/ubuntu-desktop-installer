@@ -755,5 +755,9 @@
     }
   },
   "installAlongsideSpaceDivider": "Tilldela enhetsutrymme genom att dra i spaken nedan:",
-  "@installAlongsideSpaceDivider": {}
+  "@installAlongsideSpaceDivider": {},
+  "installingSystem": "Installerar system...",
+  "@installingSystem": {},
+  "configuringSystem": "Konfigurerar system...",
+  "@configuringSystem": {}
 }
