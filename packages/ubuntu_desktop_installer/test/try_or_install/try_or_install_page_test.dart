@@ -14,6 +14,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../test_utils.dart';
 import 'try_or_install_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -42,8 +43,6 @@ void main() {
                 switch (model.option) {
                   case Option.repairUbuntu:
                     return Routes.repairUbuntu;
-                  case Option.tryUbuntu:
-                    return Routes.tryUbuntu;
                   case Option.installUbuntu:
                     return Routes.keyboardLayout;
                   default:
@@ -53,9 +52,6 @@ void main() {
             ),
             Routes.repairUbuntu: WizardRoute(
               builder: (context) => Text(Routes.repairUbuntu),
-            ),
-            Routes.tryUbuntu: WizardRoute(
-              builder: (context) => Text(Routes.tryUbuntu),
             ),
             Routes.keyboardLayout: WizardRoute(
               builder: (context) => Text(Routes.keyboardLayout),
@@ -110,29 +106,40 @@ void main() {
         true);
   });
 
-  final options = {
-    Routes.repairUbuntu: 'Repair installation',
-    Routes.tryUbuntu: 'Try Ubuntu',
-    Routes.keyboardLayout: 'Install Ubuntu'
-  };
-  options.forEach((key, value) {
-    testWidgets('selecting option "$value"', (tester) async {
-      await setUpApp(tester);
+  testWidgets('install ubuntu', (tester) async {
+    await setUpApp(tester);
 
-      final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
-      expect(continueButton, findsOneWidget);
+    final option =
+        find.widgetWithText(OptionCard, tester.lang.installUbuntu('Ubuntu'));
+    expect(option, findsOneWidget);
 
-      final option = find.widgetWithText(OptionCard, value);
-      expect(option, findsOneWidget);
+    await tester.tap(option);
+    await tester.pump();
 
-      await tester.tap(option);
-      await tester.pump();
+    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    expect(continueButton, findsOneWidget);
 
-      await tester.tap(continueButton);
-      await tester.pumpAndSettle();
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
 
-      expect(find.byType(TryOrInstallPage), findsNothing);
-      expect(find.text(key), findsOneWidget);
-    });
+    expect(find.byType(TryOrInstallPage), findsNothing);
+    expect(find.text(Routes.keyboardLayout), findsOneWidget);
+  });
+
+  testWidgets('try ubuntu', (tester) async {
+    await setUpApp(tester);
+
+    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    expect(continueButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+
+    final option =
+        find.widgetWithText(OptionCard, tester.lang.tryUbuntu('Ubuntu'));
+    expect(option, findsOneWidget);
+
+    await tester.tap(option);
+    await tester.pump();
+
+    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
   });
 }

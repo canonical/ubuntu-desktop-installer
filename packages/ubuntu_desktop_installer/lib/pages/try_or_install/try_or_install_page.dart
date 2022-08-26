@@ -34,20 +34,22 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     final flavor = Flavor.of(context);
     return WizardPage(
       title: Text(lang.tryOrInstallPageTitle),
-      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 150),
+      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 100),
       content: Row(
         children: [
+          // Expanded(
+          //   child: OptionCard(
+          //     selected: model.option == Option.repairUbuntu,
+          //     image: Image.asset('assets/try_or_install/repair-wrench.png'),
+          //     title: Text(lang.repairInstallation),
+          //     body: Text(lang.repairInstallationDescription),
+          //     onSelected: () => model.selectOption(Option.repairUbuntu),
+          //   ),
+          // ),
+          // const SizedBox(width: 20),
+          const Spacer(),
           Expanded(
-            child: OptionCard(
-              selected: model.option == Option.repairUbuntu,
-              image: Image.asset('assets/try_or_install/repair-wrench.png'),
-              title: Text(lang.repairInstallation),
-              body: Text(lang.repairInstallationDescription),
-              onSelected: () => model.selectOption(Option.repairUbuntu),
-            ),
-          ),
-          const SizedBox(width: 20),
-          Expanded(
+            flex: 2,
             child: OptionCard(
               selected: model.option == Option.tryUbuntu,
               image: Image.asset('assets/try_or_install/steering-wheel.png'),
@@ -58,6 +60,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           ),
           const SizedBox(width: 20),
           Expanded(
+            flex: 2,
             child: OptionCard(
               selected: model.option == Option.installUbuntu,
               image: Image.asset('assets/try_or_install/hard-drive.png'),
@@ -66,6 +69,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
               onSelected: () => model.selectOption(Option.installUbuntu),
             ),
           ),
+          const Spacer(),
         ],
       ),
       footer: Html(
@@ -75,8 +79,15 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
+        WizardAction.done(
+          context,
+          label: UbuntuLocalizations.of(context).continueAction,
+          visible: model.option == Option.tryUbuntu,
+          onDone: model.tryUbuntu,
+        ),
         WizardAction.next(
           context,
+          visible: model.option != Option.tryUbuntu,
           enabled: model.option != Option.none,
           arguments: model.option,
         ),

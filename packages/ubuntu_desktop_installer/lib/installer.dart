@@ -244,12 +244,8 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
     return Wizard(
       initialRoute: initialRoute ?? Routes.initial,
       routes: <String, WizardRoute>{
-        Routes.welcome: WizardRoute(
+        Routes.welcome: const WizardRoute(
           builder: WelcomePage.create,
-          // skip Routes.tryOrInstall (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
-          // onNext: (_) => !service.hasRst ? Routes.keyboardLayout : null,
-          onNext: (_) =>
-              !service.hasRst ? Routes.keyboardLayout : Routes.turnOffRST,
         ),
         Routes.tryOrInstall: WizardRoute(
           builder: TryOrInstallPage.create,
@@ -257,8 +253,6 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
             switch (settings.arguments as Option?) {
               case Option.repairUbuntu:
                 return Routes.repairUbuntu;
-              case Option.tryUbuntu:
-                return Routes.tryUbuntu;
               default:
                 if (service.hasRst) return Routes.turnOffRST;
                 return Routes.keyboardLayout;
