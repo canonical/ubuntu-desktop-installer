@@ -352,7 +352,7 @@
   "@partitionMountPointLabel": {},
   "writeChangesToDisk": "Skribi ŝanĝojn sur diskon",
   "@writeChangesToDisk": {},
-  "writeChangesPartitionsHeader": "La jenaj subdiskoj estas repreparigotaj:",
+  "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryMounted": "subdisko #{disk}{partition} kiel {format} ĉe {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -627,6 +627,82 @@
     "type": "text",
     "placeholders": {
       "product": {}
+    }
+  },
+  "installingSystem": "Instalante sistemon…",
+  "@installingSystem": {},
+  "configuringSystem": "Agordante sistemon…",
+  "@configuringSystem": {},
+  "notEnoughDiskSpaceBiggestDisk": "La plej granda disko en ĉi tiu komputilo havas nur {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Ĉi tiu komputilo disponas nur ${SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "quitButtonText": "Ĉesi instaladon",
+  "@quitButtonText": {},
+  "writeChangesPartitionCreated": "krei la subdiskon #{disk}{partition}",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "la subdisko #{disk}{partition} strukturota laŭ {format} kaj uzota por {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Pardonu",
+  "@notEnoughDiskSpaceTitle": {},
+  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko #{disk}{partition} de {oldsize} al {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionMounted": "la subdisko #{disk}{partition} uzota por {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceHeader": "Oni bezonas almenaŭ ${SIZE} da diskspaco por instali ${RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "la subdisko #{disk}{partition} strukturota laŭ {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
     }
   }
 }
