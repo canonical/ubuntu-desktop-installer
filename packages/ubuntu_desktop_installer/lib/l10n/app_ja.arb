@@ -648,5 +648,25 @@
   "installAlongsideAllocateSpace": "ディスク領域の割り当て",
   "@installAlongsideAllocateSpace": {},
   "installAlongsideAvailable": "利用可能:",
-  "@installAlongsideAvailable": {}
+  "@installAlongsideAvailable": {},
+  "installationTypeAlongsideMulti": "それと並んで{product}をインストールする",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "申し訳ありません",
+  "@notEnoughDiskSpaceTitle": {},
+  "installationTypeAlongsideDual": "{os1}と{os2}と並んで{product}をインストールする",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます:",
+  "@installAlongsideSpaceDivider": {}
 }
