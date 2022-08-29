@@ -323,12 +323,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return '$os1と$os2と並んで$productをインストールする';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'それと並んで$productをインストールする';
   }
 
   @override
@@ -362,7 +362,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'インストール';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => '境界をドラッグしてディスク領域を割り当てます:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -828,7 +828,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationFailed => 'インストールに失敗しました';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => '申し訳ありません';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {

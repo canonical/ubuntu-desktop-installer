@@ -37,7 +37,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get yesButtonText => 'Jes';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Ĉesi instaladon';
 
   @override
   String get welcome => 'Bonvenon';
@@ -606,31 +606,31 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'La jenaj subdiskoj estas repreparigotaj:';
+  String get writeChangesPartitionsHeader => 'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'ŝanĝi la grandon de la subdisko #$disk${partition} de $oldsize al $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'la subdisko #$disk${partition} strukturota laŭ $format kaj uzota por $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'la subdisko #$disk${partition} strukturota laŭ $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'la subdisko #$disk${partition} uzota por $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'krei la subdiskon #$disk${partition}';
   }
 
   @override
@@ -819,29 +819,29 @@ class AppLocalizationsEo extends AppLocalizations {
   String get copyingFiles => 'Kopiante dosierojn...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Instalante sistemon…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Agordante sistemon…';
 
   @override
   String get installationFailed => 'Instalado fiaskis';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Pardonu';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Oni bezonas almenaŭ \$$SIZE da diskspaco por instali \$$RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Ĉi tiu komputilo disponas nur \$$SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'La plej granda disko en ĉi tiu komputilo havas nur $SIZE.';
   }
 }
