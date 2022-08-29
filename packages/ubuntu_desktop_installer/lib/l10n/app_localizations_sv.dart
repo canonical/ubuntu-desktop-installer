@@ -819,10 +819,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get copyingFiles => 'Kopierar filer...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installerar system...';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Konfigurerar system...';
 
   @override
   String get installationFailed => 'Installationen misslyckades';
