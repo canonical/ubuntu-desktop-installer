@@ -116,6 +116,12 @@ Future<void> testSelectYourLanguagePage(
   }
   await tester.pumpAndSettle();
 
+  // For now toggling this check box won't cause any noticeable behavior change in dry-run.
+  await tester.toggleCheckbox(
+    label: tester.lang.installLangPacksTitle(language ?? ''),
+    value: false,
+  );
+
   await tester.tapContinue();
 }
 
