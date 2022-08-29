@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'endpoint.dart';
 import 'server/common.dart';
 import 'server/process.dart';
 import 'server/paths.dart';
+import 'types.dart';
 
 const _kWaitTimes = 30;
 const _kWaitDuration = Duration(seconds: 1);
@@ -46,7 +48,16 @@ class SubiquityServer {
           'GET',
           Uri.http(endpoint.authority, 'meta/status'),
         );
-        await request.close();
+        final response = await request.close();
+        final json = jsonDecode(await response.transform(utf8.decoder).join());
+        final status = ApplicationStatus.fromJson(json);
+        log.info(status.state);
+        if (status.state == ApplicationState.STARTING_UP ||
+            status.state == ApplicationState.CLOUD_INIT_WAIT ||
+            status.state == ApplicationState.EARLY_COMMANDS) {
+          await Future.delayed(_kWaitDuration);
+          continue;
+        }
         break;
       } on Exception catch (e) {
         if (i < _kWaitTimes - 1) {
