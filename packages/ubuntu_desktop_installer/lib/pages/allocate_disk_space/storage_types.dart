@@ -9,7 +9,7 @@ extension DiskExtension on Disk {
 }
 
 extension PartitionExtension on Partition {
-  bool get canWipe => mount != null;
+  bool get canWipe => PartitionFormat.fromPartition(this)?.canWipe == true;
   bool get isWiped => wipe == 'superblock';
   String get prettySize => filesize(size ?? 0);
 }
@@ -20,6 +20,9 @@ class PartitionFormat {
 
   /// The type of the partition format (e.g. 'ext4').
   final String type;
+
+  /// Whether a partition with this format can be wiped.
+  bool get canWipe => type != 'swap';
 
   @override
   String toString() => type;
