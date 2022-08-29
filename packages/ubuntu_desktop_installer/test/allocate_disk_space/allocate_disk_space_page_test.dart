@@ -28,7 +28,7 @@ final testDisks = <Disk>[
         number: 1,
         size: 11,
         mount: '/mnt/1',
-        format: 'ext',
+        format: 'btrfs',
         preserve: true,
       ),
       Partition(
