@@ -663,5 +663,9 @@
   "quitButtonText": "Salir de la instalación",
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Disculpe",
-  "@notEnoughDiskSpaceTitle": {}
+  "@notEnoughDiskSpaceTitle": {},
+  "installingSystem": "Instalando el sistema…",
+  "@installingSystem": {},
+  "configuringSystem": "Configurando el sistema…",
+  "@configuringSystem": {}
 }
