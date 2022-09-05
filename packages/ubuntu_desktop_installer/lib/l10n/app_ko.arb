@@ -423,10 +423,6 @@
   "@chooseYourLookPageDarkSetting": {},
   "chooseYourLookPageLightSetting": "밝음",
   "@chooseYourLookPageLightSetting": {},
-  "chooseYourLookPageLightBodyText": "모든 것이 밝고 선명해요",
-  "@chooseYourLookPageLightBodyText": {},
-  "chooseYourLookPageDarkBodyText": "안녕 내 오랜 친구 어둠이여",
-  "@chooseYourLookPageDarkBodyText": {},
   "writeChangesPartitionEntryMounted": "{mount} 로 사용되는 {format} 포맷의 #{disk}{partition} 파티션",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",

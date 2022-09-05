@@ -304,8 +304,6 @@
   "@whoAreYouPageComputerNameLabel": {},
   "shutdown": "Vypnout",
   "@shutdown": {},
-  "chooseYourLookPageLightBodyText": "Vše je světlé a svítivé",
-  "@chooseYourLookPageLightBodyText": {},
   "restartInto": "Restartovat do {system}",
   "@restartInto": {
     "type": "text",
@@ -335,8 +333,6 @@
   "@chooseYourLookPageDarkSetting": {},
   "chooseYourLookPageLightSetting": "Světlý",
   "@chooseYourLookPageLightSetting": {},
-  "chooseYourLookPageDarkBodyText": "Ahoj temnoto, můj starý příteli",
-  "@chooseYourLookPageDarkBodyText": {},
   "chooseYourLookPageHeader": "Toto je možné později kdykoli změnit v nastavení vzhledu.",
   "@chooseYourLookPageHeader": {},
   "chooseYourLookPageTitle": "Zvolte si vzhled pro své prostředí",

@@ -399,8 +399,6 @@
   "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
   "chooseYourLookPageDarkSetting": "Dark",
   "chooseYourLookPageLightSetting": "Light",
-  "chooseYourLookPageLightBodyText": "Everything is light and bright",
-  "chooseYourLookPageDarkBodyText": "Hello darkness my old friend",
   "installationCompleteTitle": "Installation complete",
   "readyToUse": "**{system}** is installed and ready to use.",
   "@readyToUse": {
