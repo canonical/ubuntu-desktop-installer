@@ -28,9 +28,10 @@ jobs:
       with:
         submodules: recursive
 
-    - uses: subosito/flutter-action@v1
+    - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.0.x'
 
     - name: Build Windows Target
       working-directory: packages\ubuntu_wsl_setup\

@@ -18,9 +18,10 @@ jobs:
       with:
         submodules: recursive
 
-    - uses: subosito/flutter-action@v1
+    - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.0.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
@@ -64,9 +65,10 @@ jobs:
       with:
         submodules: recursive
 
-    - uses: subosito/flutter-action@v1
+    - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.0.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
@@ -88,9 +90,10 @@ jobs:
       with:
         submodules: recursive
 
-    - uses: subosito/flutter-action@v1
+    - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.0.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
