@@ -198,9 +198,14 @@ Future<void> showEditPartitionDialog(
             ],
             <Widget>[
               const SizedBox.shrink(),
-              _PartitionWipeCheckbox(
-                canWipe: partition.canWipe,
-                wipe: partitionWipe,
+              ValueListenableBuilder(
+                valueListenable: partitionFormat,
+                builder: (context, value, child) {
+                  return _PartitionWipeCheckbox(
+                    canWipe: partitionFormat.value?.canWipe == true,
+                    wipe: partitionWipe,
+                  );
+                },
               ),
             ],
             <Widget>[

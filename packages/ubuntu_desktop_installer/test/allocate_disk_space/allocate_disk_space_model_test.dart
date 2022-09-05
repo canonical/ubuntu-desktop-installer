@@ -186,8 +186,8 @@ void main() {
         testDisk(partitions: [Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
     final fullDisk = testDisk();
     final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
-    final mountedPartition =
-        emptyDisk.copyWith(partitions: [Partition(mount: '/')]);
+    final formattedPartition =
+        emptyDisk.copyWith(partitions: [Partition(format: 'ext4')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -195,7 +195,7 @@ void main() {
         emptyDisk,
         fullDisk,
         normalDisk,
-        mountedPartition,
+        formattedPartition,
       ],
     );
 
@@ -255,7 +255,7 @@ void main() {
     expect(model.canReformatDisk, isFalse);
 
     model.selectStorage(3, 0);
-    expect(model.selectedDisk, equals(mountedPartition));
+    expect(model.selectedDisk, equals(formattedPartition));
     expect(model.selectedPartition, isNotNull);
     expect(model.selectedPartition!.canWipe, isTrue);
     expect(model.selectedGap, isNull);
