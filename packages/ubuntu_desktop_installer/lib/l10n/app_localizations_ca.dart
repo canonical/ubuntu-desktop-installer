@@ -568,7 +568,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Aquest nom és massa llarg.';
 
   @override
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
@@ -586,7 +586,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Les contrasenyes no coincideixen';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Mostra la contrasenya';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
@@ -717,7 +717,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Reproductor de música Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -732,16 +732,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Gestor de fotos Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'Editor d’imatges GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Editor de vídeos Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Aprofiteu al màxim la web';
 
   @override
   String webSlideDescription(Object RELEASE) {
@@ -749,7 +749,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Navegador web Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -773,7 +773,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Accés per a tothom';
 
   @override
   String accessSlideDescription(Object RELEASE) {
@@ -781,13 +781,13 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Opcions de personalització';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Aspecte';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Tecnologies d’assistència';
 
   @override
   String get accessSlideLanguageSupport => 'Language support';
@@ -807,22 +807,22 @@ class AppLocalizationsCa extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Programari inclòs';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Programari disponible';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Programari admès';
 
   @override
   String get copyingFiles => 'S’estan copiant els fitxers…';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'S’està instal·lant el sistema…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'S’està configurant el sistema…';
 
   @override
   String get installationFailed => 'Ha fallat la instal·lació';
