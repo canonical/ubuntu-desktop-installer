@@ -213,7 +213,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Следующие разделы будут отформатированы:",
+  "writeChangesPartitionsHeader": "Будут применены следующие изменения разделов:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesToDisk": "Записать изменения на диск",
   "@writeChangesToDisk": {},
@@ -623,6 +623,91 @@
     "placeholders": {
       "num": {},
       "url": {}
+    }
+  },
+  "installAlongsideAvailable": "Доступно:",
+  "@installAlongsideAvailable": {},
+  "writeChangesPartitionMounted": "раздел #{disk}{partition} использован для {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "quitButtonText": "Отменить установку",
+  "@quitButtonText": {},
+  "writeChangesPartitionResized": "размер раздела #{disk}{partition} изменен с {oldsize} на {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Установить {product} вместе с ними",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installingSystem": "Установка системы...",
+  "@installingSystem": {},
+  "configuringSystem": "Настройка системы...",
+  "@configuringSystem": {},
+  "notEnoughDiskSpaceHeader": "Вам потребуется как минимум {SIZE} дискового пространства для установки {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Извините",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHasOnly": "На этом компьютере имеется только {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Самый большой диск на этом компьютере имеет всего {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "раздел #{disk}{partition} отформатирован как {format} и использован для {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "раздел #{disk}{partition} отформатирован как {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionCreated": "раздел #{disk}{partition} создан",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
     }
   }
 }
