@@ -32,5 +32,25 @@
   "repairInstallation": "დაყენებული ვერსიის შეკეთება",
   "@repairInstallation": {},
   "welcome": "მოგესალმებით",
-  "@welcome": {}
+  "@welcome": {},
+  "tryUbuntu": "{RELEASE}-ის ცდა",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "{RELEASE}-ის დაყენება",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffRST": "RST-ის გამორთვა",
+  "@turnOffRST": {},
+  "keyboardLayoutPageTitle": "კლავიატური განლაგება",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "აირჩიეთ თქვენი კლავიატურის განლაგება:",
+  "@chooseYourKeyboardLayout": {}
 }
