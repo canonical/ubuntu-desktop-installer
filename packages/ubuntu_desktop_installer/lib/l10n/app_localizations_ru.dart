@@ -37,7 +37,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get yesButtonText => 'Да';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Отменить установку';
 
   @override
   String get welcome => 'Добро пожаловать';
@@ -328,7 +328,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Установить $product вместе с ними';
   }
 
   @override
@@ -385,7 +385,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installAlongsideSize => 'Размер:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Доступно:';
 
   @override
   String get allocateDiskSpace => 'Выделить место на диске';
@@ -606,31 +606,31 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Следующие разделы будут отформатированы:';
+  String get writeChangesPartitionsHeader => 'Будут применены следующие изменения разделов:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'размер раздела #$disk${partition} изменен с $oldsize на $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'раздел #$disk${partition} отформатирован как $format и использован для $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'раздел #$disk${partition} отформатирован как $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'раздел #$disk${partition} использован для $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'раздел #$disk${partition} создан';
   }
 
   @override
@@ -819,29 +819,29 @@ class AppLocalizationsRu extends AppLocalizations {
   String get copyingFiles => 'Копирование файлов...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Установка системы...';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Настройка системы...';
 
   @override
   String get installationFailed => 'Ошибка установки';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Извините';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Вам потребуется как минимум $SIZE дискового пространства для установки $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'На этом компьютере имеется только $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Самый большой диск на этом компьютере имеет всего $SIZE.';
   }
 }
