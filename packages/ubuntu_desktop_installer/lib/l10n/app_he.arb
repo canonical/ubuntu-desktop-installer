@@ -1,7 +1,5 @@
 {
   "@@locale": "he",
-  "chooseYourLookPageLightBodyText": "הכול בהיר ומואר",
-  "@chooseYourLookPageLightBodyText": {},
   "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
@@ -120,8 +118,6 @@
   "@otherOptions": {},
   "turnOffBitlockerTitle": "כיבוי BitLocker",
   "@turnOffBitlockerTitle": {},
-  "chooseYourLookPageDarkBodyText": "אפלה, ידידתי משכבר הימים",
-  "@chooseYourLookPageDarkBodyText": {},
   "installationCompleteTitle": "ההתקנה הושלמה",
   "@installationCompleteTitle": {},
   "restartInto": "הפעלה מחדש אל {system}",

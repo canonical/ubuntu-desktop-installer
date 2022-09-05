@@ -48,8 +48,6 @@
   "@partitionUnitMB": {},
   "partitionTypePrimary": "Unuagrada",
   "@partitionTypePrimary": {},
-  "chooseYourLookPageDarkBodyText": "Saluton, malhelo, mia longatempa amiko",
-  "@chooseYourLookPageDarkBodyText": {},
   "restartInto": "Restartigi al {system}",
   "@restartInto": {
     "type": "text",
@@ -387,8 +385,6 @@
   "@shutdown": {},
   "restartIntoWindows": "Restartigi al Windows",
   "@restartIntoWindows": {},
-  "chooseYourLookPageLightBodyText": "Ĉio helas kaj brilas",
-  "@chooseYourLookPageLightBodyText": {},
   "turnOffBitlockerDescription": "Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.",
   "@turnOffBitlockerDescription": {},
   "turnOffBitlockerLinkInstructions": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",

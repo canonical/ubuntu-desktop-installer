@@ -646,12 +646,6 @@ class AppLocalizationsNb extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Lys';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Alt er lyst og greit';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hei mørke, min gamle venn';
-
-  @override
   String get installationCompleteTitle => 'Installasjon fullført';
 
   @override

@@ -646,12 +646,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Светлый';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Всё светло и ярко';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Здравствуй, темнота, мой старый друг';
-
-  @override
   String get installationCompleteTitle => 'Установка завершена';
 
   @override

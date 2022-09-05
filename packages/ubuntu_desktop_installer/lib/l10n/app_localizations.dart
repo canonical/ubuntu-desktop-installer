@@ -1389,18 +1389,6 @@ abstract class AppLocalizations {
   /// **'Light'**
   String get chooseYourLookPageLightSetting;
 
-  /// No description provided for @chooseYourLookPageLightBodyText.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything is light and bright'**
-  String get chooseYourLookPageLightBodyText;
-
-  /// No description provided for @chooseYourLookPageDarkBodyText.
-  ///
-  /// In en, this message translates to:
-  /// **'Hello darkness my old friend'**
-  String get chooseYourLookPageDarkBodyText;
-
   /// No description provided for @installationCompleteTitle.
   ///
   /// In en, this message translates to:

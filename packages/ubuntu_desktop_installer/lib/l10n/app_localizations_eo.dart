@@ -646,12 +646,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Hela';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Ĉio helas kaj brilas';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Saluton, malhelo, mia longatempa amiko';
-
-  @override
   String get installationCompleteTitle => 'Instalado finiĝis';
 
   @override

@@ -646,12 +646,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Ljus';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Allt är ljust och lysande';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hej mörkret min gamle vän';
-
-  @override
   String get installationCompleteTitle => 'Installationen är klar';
 
   @override

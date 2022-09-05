@@ -646,12 +646,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Claro';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Tudo está claro e brilhante';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Olá, escuridão, minha velha amiga';
-
-  @override
   String get installationCompleteTitle => 'Instalação concluída';
 
   @override
@@ -1418,12 +1412,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get chooseYourLookPageLightSetting => 'Claro';
-
-  @override
-  String get chooseYourLookPageLightBodyText => 'Tudo está claro e brilhante';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Olá, escuridão, minha velha amiga';
 
   @override
   String get installationCompleteTitle => 'Instalação concluída';

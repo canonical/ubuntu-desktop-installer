@@ -646,12 +646,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Clair';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Clair et brillant';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Sombre et foncé';
-
-  @override
   String get installationCompleteTitle => 'Installation terminée';
 
   @override

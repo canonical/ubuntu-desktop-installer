@@ -646,12 +646,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'בהיר';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'הכול בהיר ומואר';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'אפלה, ידידתי משכבר הימים';
-
-  @override
   String get installationCompleteTitle => 'ההתקנה הושלמה';
 
   @override
