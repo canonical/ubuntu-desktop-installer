@@ -232,19 +232,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesCancel => 'Отмена';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'Ubuntu на WSL';
 
   @override
-  String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
+  String get installationSlidesUbuntuOnWslText => 'Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, научных данных, интернета вещей и развлечений!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL для\nWeb-разработки';
 
   @override
   String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL for Data Science';
+  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL для научных данных';
 
   @override
   String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
@@ -265,10 +265,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
 
   @override
-  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => 'Расширение возможностей разработчиков\nв корпоративной экосистеме Windows с\nсертифицированной Ubuntu LTS.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Узнать больше';
 
   @override
   String get installationSlidesFindOutMoreVisit => 'Посетите ';
