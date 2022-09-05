@@ -646,12 +646,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Jasny';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Wszystko jest lekkie i jasne';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Witaj, ciemności, moja stara przyjaciółko';
-
-  @override
   String get installationCompleteTitle => 'Instalacja zakończona';
 
   @override

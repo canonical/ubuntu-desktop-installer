@@ -646,12 +646,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Açık';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Herşey açık ve parlak';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Merhaba eski arkadaşım karanlık';
-
-  @override
   String get installationCompleteTitle => 'Kurulum tamamlandı';
 
   @override

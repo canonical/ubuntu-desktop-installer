@@ -646,12 +646,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseYourLookPageLightSetting => '밝음';
 
   @override
-  String get chooseYourLookPageLightBodyText => '모든 것이 밝고 선명해요';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => '안녕 내 오랜 친구 어둠이여';
-
-  @override
   String get installationCompleteTitle => '설치 완료';
 
   @override

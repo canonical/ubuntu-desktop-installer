@@ -646,12 +646,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chooseYourLookPageLightSetting => '浅色';
 
   @override
-  String get chooseYourLookPageLightBodyText => '所有都是浅色和明亮的';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => '暗黑系是我哥们儿';
-
-  @override
   String get installationCompleteTitle => '安装完成';
 
   @override

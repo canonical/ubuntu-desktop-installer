@@ -646,12 +646,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Light';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Everything is light and bright';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness my old friend';
-
-  @override
   String get installationCompleteTitle => 'நிறுவல் முடிவுற்றது';
 
   @override

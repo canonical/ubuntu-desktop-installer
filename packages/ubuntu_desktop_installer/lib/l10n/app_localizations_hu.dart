@@ -646,12 +646,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Világos';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Minden könnyű és világos';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hello sötétség öreg barátom';
-
-  @override
   String get installationCompleteTitle => 'A telepítés befejeződött';
 
   @override

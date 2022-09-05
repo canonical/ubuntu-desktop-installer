@@ -646,12 +646,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chooseYourLookPageLightSetting => '明るい';
 
   @override
-  String get chooseYourLookPageLightBodyText => '真っ白';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Hello darkness, my old friend 〜♪♪';
-
-  @override
   String get installationCompleteTitle => 'インストールが完了しました';
 
   @override

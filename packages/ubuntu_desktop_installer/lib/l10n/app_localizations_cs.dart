@@ -646,12 +646,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Světlý';
 
   @override
-  String get chooseYourLookPageLightBodyText => 'Vše je světlé a svítivé';
-
-  @override
-  String get chooseYourLookPageDarkBodyText => 'Ahoj temnoto, můj starý příteli';
-
-  @override
   String get installationCompleteTitle => 'Instalace dokončena';
 
   @override
