@@ -156,5 +156,17 @@
   "installationSlidesCustomExitTitle": "Мы почти закончили",
   "@installationSlidesCustomExitTitle": {},
   "installationSlidesCustomExitContents": "Ещё несколько шагов нужно выполнить в главном окне установщика.\nМы можем ли мы закончить с этим и перейти туда?",
-  "@installationSlidesCustomExitContents": {}
+  "@installationSlidesCustomExitContents": {},
+  "installationSlidesUbuntuWslEnterprisesText": "Расширение возможностей разработчиков\nв корпоративной экосистеме Windows с\nсертифицированной Ubuntu LTS.",
+  "@installationSlidesUbuntuWslEnterprisesText": {},
+  "installationSlidesUbuntuOnWslText": "Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, научных данных, интернета вещей и развлечений!",
+  "@installationSlidesUbuntuOnWslText": {},
+  "installationSlidesUbuntuWslWebDev": "Ubuntu WSL для\nWeb-разработки",
+  "@installationSlidesUbuntuWslWebDev": {},
+  "installationSlidesUbuntuWslDataScience": "Ubuntu WSL для научных данных",
+  "@installationSlidesUbuntuWslDataScience": {},
+  "installationSlidesFindOutMore": "Узнать больше",
+  "@installationSlidesFindOutMore": {},
+  "installationSlidesUbuntuOnWsl": "Ubuntu на WSL",
+  "@installationSlidesUbuntuOnWsl": {}
 }
