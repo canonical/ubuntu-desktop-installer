@@ -174,6 +174,7 @@ void main() {
     registerMockService<SubiquityClient>(client);
 
     final service = MockDiskStorageService();
+    when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     registerMockService<DiskStorageService>(service);

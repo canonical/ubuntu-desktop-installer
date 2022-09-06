@@ -59,8 +59,6 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [resize1, resize2]));
-    when(service.setGuidedStorage(any)).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [resize1, resize2]));
 
     final model = InstallAlongsideModel(service);
     await model.init();
@@ -70,7 +68,8 @@ void main() {
     expect(model.selectedIndex, 1);
 
     await model.save();
-    verify(service.setGuidedStorage(resize2.copyWith(newSize: 200))).called(1);
+    verify(service.guidedTarget = resize2.copyWith(newSize: 200)).called(1);
+    verifyNever(service.setGuidedStorage());
   });
 
   test('reset storage', () async {

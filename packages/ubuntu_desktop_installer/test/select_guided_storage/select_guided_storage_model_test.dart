@@ -33,19 +33,19 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: testTargets));
-    when(service.setGuidedStorage(any)).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     await model.loadGuidedStorage();
 
     model.selectStorage(0);
     await model.saveGuidedStorage();
-    verify(service.setGuidedStorage(testTargets[0])).called(1);
+    verify(service.guidedTarget = testTargets[0]).called(1);
+    verifyNever(service.setGuidedStorage());
 
     model.selectStorage(1);
     await model.saveGuidedStorage();
-    verify(service.setGuidedStorage(testTargets[1])).called(1);
+    verify(service.guidedTarget = testTargets[1]).called(1);
+    verifyNever(service.setGuidedStorage());
   });
 
   test('get storage', () async {

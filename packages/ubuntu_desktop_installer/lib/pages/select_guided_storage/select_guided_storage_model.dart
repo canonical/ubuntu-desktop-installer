@@ -59,9 +59,7 @@ class SelectGuidedStorageModel extends SafeChangeNotifier {
 
   /// Saves the guided storage selection.
   Future<void> saveGuidedStorage() async {
-    return _service
-        .setGuidedStorage(selectedStorage!)
-        .then(_updateGuidedStorage);
+    _service.guidedTarget = selectedStorage;
   }
 
   /// Resets the guided storage selection.

@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_detector.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -51,6 +52,7 @@ void main() {
   test('get storage', () async {
     final client = MockSubiquityClient();
     final service = MockDiskStorageService();
+    when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
 
@@ -58,6 +60,7 @@ void main() {
     await model.init();
     verify(service.getStorage()).called(1);
     verify(service.getOriginalStorage()).called(1);
+    verifyNever(service.setGuidedStorage());
 
     expect(model.disks, equals(nonPreservedDisks));
     expect(
@@ -79,9 +82,26 @@ void main() {
     );
   });
 
+  test('set guided storage', () async {
+    final target = GuidedStorageTarget.reformat(diskId: 'sda');
+
+    final client = MockSubiquityClient();
+    final service = MockDiskStorageService();
+    when(service.guidedTarget).thenReturn(target);
+    when(service.getStorage()).thenAnswer((_) async => testDisks);
+    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
+    when(service.setGuidedStorage())
+        .thenAnswer((_) async => testGuidedStorageResponse());
+
+    final model = WriteChangesToDiskModel(client, service);
+    await model.init();
+    verify(service.setGuidedStorage()).called(1);
+  });
+
   test('start installation', () async {
     final client = MockSubiquityClient();
     final service = MockDiskStorageService();
+    when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     when(service.setStorage(any)).thenAnswer((_) async => nonPreservedDisks);

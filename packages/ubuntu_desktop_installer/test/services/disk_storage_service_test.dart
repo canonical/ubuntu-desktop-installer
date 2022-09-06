@@ -41,7 +41,8 @@ void main() {
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final service = DiskStorageService(client);
-    await service.setGuidedStorage(target);
+    service.guidedTarget = target;
+    await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
   });
 
@@ -54,7 +55,8 @@ void main() {
     final service = DiskStorageService(client);
     service.useLvm = true;
 
-    await service.setGuidedStorage(target);
+    service.guidedTarget = target;
+    await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
   });
 
@@ -247,7 +249,7 @@ void main() {
     expect(service.existingOS, equals([win10, ubuntu2110, ubuntu2204]));
   });
 
-  test('guided choice', () async {
+  test('guided target', () async {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
     final choice = GuidedChoiceV2(target: target, useLvm: false);
     when(client.setGuidedStorageV2(choice))
@@ -256,13 +258,14 @@ void main() {
         .thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
-    expect(service.hasGuidedChoice, isFalse);
+    expect(service.guidedTarget, isNull);
 
-    await service.setGuidedStorage(target);
-    expect(service.hasGuidedChoice, isTrue);
+    service.guidedTarget = target;
+    expect(service.guidedTarget, target);
+    await service.setGuidedStorage();
 
     await service.resetStorage();
-    expect(service.hasGuidedChoice, isFalse);
+    expect(service.guidedTarget, isNull);
   });
 
   test('has enough disk space', () async {

@@ -124,9 +124,9 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   }
 
   /// Saves the guided storage selection.
-  Future<void> save() {
+  Future<void> save() async {
     final storage = selectedStorage!.copyWith(newSize: currentSize);
-    return _service.setGuidedStorage(storage).then(_updateStorage);
+    _service.guidedTarget = storage;
   }
 
   /// Resets the guided storage selection.
