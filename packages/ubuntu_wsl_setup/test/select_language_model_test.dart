@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
@@ -112,5 +113,27 @@ void main() {
     final languages = List.generate(model.languageCount, model.language);
     expect(languages.any((e) => e.contains('\u{0626}')), isFalse);
     expect(languages.any((e) => e.contains('\u{0DC3}')), isFalse);
+  });
+
+  test('get install lang packs option', () async {
+    final client = MockSubiquityClient();
+    when(client.wslSetupOptions()).thenAnswer(
+      (_) async => WSLSetupOptions(installLanguageSupportPackages: false),
+    );
+
+    final model = SelectLanguageModel(client, LanguageFallbackService({}));
+    await model.getInstallLanguagePacks();
+    verify(client.wslSetupOptions()).called(1);
+    expect(model.installLanguagePacks, isFalse);
+  });
+
+  test('set install lang packs option', () {
+    final client = MockSubiquityClient();
+    final model = SelectLanguageModel(client, LanguageFallbackService({}));
+    model.setInstallLanguagePacks(false);
+    model.applyInstallLanguagePacks();
+    verify(client.setWslSetupOptions(
+      WSLSetupOptions(installLanguageSupportPackages: false),
+    )).called(1);
   });
 }

@@ -15,6 +15,16 @@ class SelectLanguageModel extends SafeChangeNotifier {
 
   final SubiquityClient _client;
   final LanguageFallbackService _languageFallback;
+  bool _installLangPacks = true;
+  bool get installLanguagePacks => _installLangPacks;
+
+  void setInstallLanguagePacks(bool value) {
+    if (value == _installLangPacks) {
+      return;
+    }
+    _installLangPacks = value;
+    notifyListeners();
+  }
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -23,6 +33,21 @@ class SelectLanguageModel extends SafeChangeNotifier {
     if (_selectedLanguageIndex == index) return;
     _selectedLanguageIndex = index;
     notifyListeners();
+  }
+
+  /// Fetches the install language support packages from the server.
+  Future<void> getInstallLanguagePacks() {
+    return _client.wslSetupOptions().then((options) {
+      _installLangPacks = options.installLanguageSupportPackages;
+      notifyListeners();
+    });
+  }
+
+  /// Commits the currrent setup options to the server.
+  Future<void> applyInstallLanguagePacks() {
+    return _client.setWslSetupOptions(
+      WSLSetupOptions(installLanguageSupportPackages: _installLangPacks),
+    );
   }
 
   var _languages = <LocalizedLanguage>[];
@@ -60,8 +85,12 @@ class SelectLanguageModel extends SafeChangeNotifier {
   /// Returns the name of the language at the given [index].
   /// To avoid issues with the UI in WSL, the international name of
   /// the language is returned in case it's blacklisted.
-  String language(int index) =>
-      _languageFallback.displayNameFor(_languages[index]);
+  String language(int index) {
+    if (_languages.isEmpty) {
+      return '';
+    }
+    return _languageFallback.displayNameFor(_languages[index]);
+  }
 
   /// Selects the given [locale].
   void selectLocale(Locale locale) {

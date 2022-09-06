@@ -29,6 +29,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectLanguageTitle => '언어를 선택하십시오';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Install packages for better $lang language support';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+
+  @override
   String get profileSetupTitle => '프로필 구성';
 
   @override

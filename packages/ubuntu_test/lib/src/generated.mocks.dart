@@ -79,25 +79,31 @@ class _FakeStorageResponseV2_9 extends _i1.SmartFake
       : super(parent, parentInvocation);
 }
 
-class _FakeWSLConfigurationBase_10 extends _i1.SmartFake
+class _FakeWSLSetupOptions_10 extends _i1.SmartFake
+    implements _i3.WSLSetupOptions {
+  _FakeWSLSetupOptions_10(Object parent, Invocation parentInvocation)
+      : super(parent, parentInvocation);
+}
+
+class _FakeWSLConfigurationBase_11 extends _i1.SmartFake
     implements _i3.WSLConfigurationBase {
-  _FakeWSLConfigurationBase_10(Object parent, Invocation parentInvocation)
+  _FakeWSLConfigurationBase_11(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
-class _FakeWSLConfigurationAdvanced_11 extends _i1.SmartFake
+class _FakeWSLConfigurationAdvanced_12 extends _i1.SmartFake
     implements _i3.WSLConfigurationAdvanced {
-  _FakeWSLConfigurationAdvanced_11(Object parent, Invocation parentInvocation)
+  _FakeWSLConfigurationAdvanced_12(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
-class _FakeAnyStep_12 extends _i1.SmartFake implements _i3.AnyStep {
-  _FakeAnyStep_12(Object parent, Invocation parentInvocation)
+class _FakeAnyStep_13 extends _i1.SmartFake implements _i3.AnyStep {
+  _FakeAnyStep_13(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
-class _FakeEndpoint_13 extends _i1.SmartFake implements _i4.Endpoint {
-  _FakeEndpoint_13(Object parent, Invocation parentInvocation)
+class _FakeEndpoint_14 extends _i1.SmartFake implements _i4.Endpoint {
+  _FakeEndpoint_14(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
@@ -433,10 +439,23 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
       returnValue: _i6.Future<void>.value(),
       returnValueForMissingStub: _i6.Future<void>.value()) as _i6.Future<void>);
   @override
+  _i6.Future<_i3.WSLSetupOptions> wslSetupOptions() =>
+      (super.noSuchMethod(Invocation.method(#wslSetupOptions, []),
+              returnValue: _i6.Future<_i3.WSLSetupOptions>.value(
+                  _FakeWSLSetupOptions_10(
+                      this, Invocation.method(#wslSetupOptions, []))))
+          as _i6.Future<_i3.WSLSetupOptions>);
+  @override
+  _i6.Future<void> setWslSetupOptions(_i3.WSLSetupOptions? options) =>
+      (super.noSuchMethod(Invocation.method(#setWslSetupOptions, [options]),
+              returnValue: _i6.Future<void>.value(),
+              returnValueForMissingStub: _i6.Future<void>.value())
+          as _i6.Future<void>);
+  @override
   _i6.Future<_i3.WSLConfigurationBase> wslConfigurationBase() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationBase, []),
               returnValue: _i6.Future<_i3.WSLConfigurationBase>.value(
-                  _FakeWSLConfigurationBase_10(
+                  _FakeWSLConfigurationBase_11(
                       this, Invocation.method(#wslConfigurationBase, []))))
           as _i6.Future<_i3.WSLConfigurationBase>);
   @override
@@ -449,7 +468,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   _i6.Future<_i3.WSLConfigurationAdvanced> wslConfigurationAdvanced() =>
       (super.noSuchMethod(Invocation.method(#wslConfigurationAdvanced, []),
               returnValue: _i6.Future<_i3.WSLConfigurationAdvanced>.value(
-                  _FakeWSLConfigurationAdvanced_11(
+                  _FakeWSLConfigurationAdvanced_12(
                       this, Invocation.method(#wslConfigurationAdvanced, []))))
           as _i6.Future<_i3.WSLConfigurationAdvanced>);
   @override
@@ -463,7 +482,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   @override
   _i6.Future<_i3.AnyStep> getKeyboardStep([String? step = r'0']) =>
       (super.noSuchMethod(Invocation.method(#getKeyboardStep, [step]),
-              returnValue: _i6.Future<_i3.AnyStep>.value(_FakeAnyStep_12(
+              returnValue: _i6.Future<_i3.AnyStep>.value(_FakeAnyStep_13(
                   this, Invocation.method(#getKeyboardStep, [step]))))
           as _i6.Future<_i3.AnyStep>);
 }
@@ -482,7 +501,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
           returnValueForMissingStub: null);
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(Invocation.getter(#endpoint),
-          returnValue: _FakeEndpoint_13(this, Invocation.getter(#endpoint)))
+          returnValue: _FakeEndpoint_14(this, Invocation.getter(#endpoint)))
       as _i4.Endpoint);
   @override
   _i6.Future<_i4.Endpoint> start(
@@ -490,7 +509,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
       (super.noSuchMethod(
               Invocation.method(
                   #start, [], {#args: args, #environment: environment}),
-              returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_13(this,
+              returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_14(this,
                   Invocation.method(#start, [], {#args: args, #environment: environment}))))
           as _i6.Future<_i4.Endpoint>);
   @override
