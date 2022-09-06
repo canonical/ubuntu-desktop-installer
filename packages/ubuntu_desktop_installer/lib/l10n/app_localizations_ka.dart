@@ -56,7 +56,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE-ის ცდა';
   }
 
   @override
@@ -66,7 +66,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE-ის დაყენება';
   }
 
   @override
@@ -80,7 +80,7 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST-ის გამორთვა';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -91,10 +91,10 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'კლავიატური განლაგება';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'აირჩიეთ თქვენი კლავიატურის განლაგება:';
 
   @override
   String get typeToTest => 'Type here to test your keyboard';

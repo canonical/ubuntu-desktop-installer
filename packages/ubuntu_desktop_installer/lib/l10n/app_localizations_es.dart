@@ -8,11 +8,11 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Instalador de Ubuntu para escritorio';
+  String get appTitle => 'Instalador de escritorio de Ubuntu';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar $RELEASE';
+    return 'Instalar la versión $RELEASE';
   }
 
   @override
@@ -139,7 +139,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Conectarse a Internet';
 
   @override
-  String get connectToInternetDescription => 'Entablar una conexión a Internet en el equipo permitirá que Ubuntu instale componentes adicionales necesarios y le permitirá seleccionar su huso horario.\n\nConéctese mediante cable Ethernet o elija una red inalámbrica.';
+  String get connectToInternetDescription => 'Conectar este ordenador a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y a elegir su zona horaria.\n\nConéctate por cable ethernet, o elige una red Wi-Fi';
 
   @override
   String get useWiredConnection => 'Utilizar conexión cableada';
@@ -610,27 +610,27 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'Partición #$disk${partition} redimensionada de $oldsize a $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partición #$disk${partition} formateada como $format utilizada para $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partición #$disk${partition} formateada como $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partición #$disk${partition} utilizada para $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partición #$disk${partition} creada';
   }
 
   @override
