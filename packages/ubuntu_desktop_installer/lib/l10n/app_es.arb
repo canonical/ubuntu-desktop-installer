@@ -1,8 +1,8 @@
 {
   "@@locale": "es",
-  "appTitle": "Instalador de Ubuntu para escritorio",
+  "appTitle": "Instalador de escritorio de Ubuntu",
   "@appTitle": {},
-  "windowTitle": "Instalar {RELEASE}",
+  "windowTitle": "Instalar la versión {RELEASE}",
   "@windowTitle": {},
   "restartButtonText": "Reiniciar",
   "@restartButtonText": {},
@@ -425,7 +425,7 @@
   "@supportSlideTitle": {},
   "whoAreYouPageShowPassword": "Mostrar contraseña",
   "@whoAreYouPageShowPassword": {},
-  "connectToInternetDescription": "Entablar una conexión a Internet en el equipo permitirá que Ubuntu instale componentes adicionales necesarios y le permitirá seleccionar su huso horario.\n\nConéctese mediante cable Ethernet o elija una red inalámbrica.",
+  "connectToInternetDescription": "Conectar este ordenador a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y a elegir su zona horaria.\n\nConéctate por cable ethernet, o elige una red Wi-Fi",
   "@connectToInternetDescription": {},
   "hiddenWifiNetworkNameLabel": "Nombre de red",
   "@hiddenWifiNetworkNameLabel": {},
@@ -663,5 +663,51 @@
   "installingSystem": "Instalando el sistema…",
   "@installingSystem": {},
   "configuringSystem": "Configurando el sistema…",
-  "@configuringSystem": {}
+  "@configuringSystem": {},
+  "writeChangesPartitionResized": "Partición #{disk}{partition} redimensionada de {oldsize} a {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partición #{disk}{partition} formateada como {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partición #{disk}{partition} formateada como {format} utilizada para {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partición #{disk}{partition} utilizada para {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "partición #{disk}{partition} creada",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  }
 }
