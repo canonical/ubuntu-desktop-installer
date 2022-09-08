@@ -124,10 +124,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
 
     // automatically pre-select a guided storage target if possible
-    final target = preselectTarget(installationType);
-    if (target != null) {
-      await _diskService.setGuidedStorage(target);
-    }
+    _diskService.guidedTarget = preselectTarget(installationType);
 
     // All possible values for the partition method
     // were extracted from Ubiquity's ubi-partman.py

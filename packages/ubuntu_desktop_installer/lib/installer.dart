@@ -286,7 +286,7 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
           onNext: (settings) {
             if (settings.arguments == InstallationType.manual) {
               return Routes.allocateDiskSpace;
-            } else if (!service.hasGuidedChoice) {
+            } else if (service.guidedTarget == null) {
               if (settings.arguments == InstallationType.erase) {
                 return Routes.selectGuidedStorage;
               } else if (settings.arguments == InstallationType.alongside) {

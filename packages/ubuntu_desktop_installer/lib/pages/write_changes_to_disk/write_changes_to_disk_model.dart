@@ -31,6 +31,9 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
 
   /// Initializes the model.
   Future<void> init() async {
+    if (_service.guidedTarget != null) {
+      await _service.setGuidedStorage();
+    }
     _originals = await _service.getOriginalStorage().then((disks) =>
         Map.fromEntries(disks.map((d) => MapEntry(
             d.sysname, d.partitions.whereType<Partition>().toList()))));

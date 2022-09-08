@@ -133,21 +133,19 @@ void main() {
 
   test('single reformat target', () async {
     final reformat = GuidedStorageTargetReformat(diskId: '');
-    final choice = GuidedChoiceV2(target: reformat);
 
     final service = MockDiskStorageService();
     when(service.hasEncryption).thenReturn(false);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
-    when(service.setGuidedStorage(reformat))
-        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final model = InstallationTypeModel(service, MockTelemetryService());
 
     await model.init();
 
     await model.save();
-    verify(service.setGuidedStorage(reformat)).called(1);
+    verify(service.guidedTarget = reformat).called(1);
+    verifyNever(service.setGuidedStorage());
   });
 
   test('can install alongside', () async {

@@ -34,13 +34,10 @@ class DiskStorageService {
   int? _installMinimumSize;
   int? _largestDiskSize;
   List<OsProber>? _existingOS;
-  GuidedChoiceV2? _guidedChoice;
+  GuidedStorageTarget? _guidedTarget;
 
   /// Whether the system has multiple disks available for guided partitioning.
   bool get hasMultipleDisks => _hasMultipleDisks ?? false;
-
-  /// Whether a guided storage target was chosen.
-  bool get hasGuidedChoice => _guidedChoice != null;
 
   /// Whether the storage configuration is missing a root partition.
   bool get needRoot => _needRoot ?? true;
@@ -60,7 +57,17 @@ class DiskStorageService {
 
   /// Whether the storage configuration should use LVM.
   bool get useLvm => _useLvm ?? false;
-  set useLvm(bool useLvm) => _useLvm = useLvm;
+  set useLvm(bool useLvm) {
+    log.debug('use LVM: $useLvm');
+    _useLvm = useLvm;
+  }
+
+  /// A guided storage target.
+  GuidedStorageTarget? get guidedTarget => _guidedTarget;
+  set guidedTarget(GuidedStorageTarget? target) {
+    log.debug('select guided target: $target');
+    _guidedTarget = target;
+  }
 
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _existingOS;
@@ -79,13 +86,14 @@ class DiskStorageService {
     return _client.getGuidedStorageV2();
   }
 
-  /// Selects the specified target for guided partitioning.
-  Future<GuidedStorageResponseV2> setGuidedStorage(
-      GuidedStorageTarget target) async {
-    final response = await _client.getGuidedStorageV2();
-    _guidedChoice = response.configured?.copyWith(target: target) ??
-        GuidedChoiceV2(target: target);
-    return _client.setGuidedStorageV2(_guidedChoice!.copyWith(useLvm: useLvm));
+  /// Sets the selected target for guided partitioning.
+  Future<GuidedStorageResponseV2> setGuidedStorage() async {
+    return _client.setGuidedStorageV2(
+      GuidedChoiceV2(
+        target: guidedTarget!,
+        useLvm: useLvm,
+      ),
+    );
   }
 
   List<Disk> _updateStorage(StorageResponseV2 response) {
@@ -150,7 +158,7 @@ class DiskStorageService {
   /// Resets the current storage configuration to allow reverting back to the
   /// original configuration.
   Future<List<Disk>> resetStorage() {
-    _guidedChoice = null;
+    _guidedTarget = null;
     return _client.resetStorageV2().then(_updateStorage);
   }
 

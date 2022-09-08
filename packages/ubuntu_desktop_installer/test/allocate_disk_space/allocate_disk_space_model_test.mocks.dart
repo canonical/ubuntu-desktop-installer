@@ -41,10 +41,6 @@ class MockDiskStorageService extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasMultipleDisks),
           returnValue: false) as bool);
   @override
-  bool get hasGuidedChoice => (super
-          .noSuchMethod(Invocation.getter(#hasGuidedChoice), returnValue: false)
-      as bool);
-  @override
   bool get needRoot =>
       (super.noSuchMethod(Invocation.getter(#needRoot), returnValue: false)
           as bool);
@@ -77,6 +73,10 @@ class MockDiskStorageService extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#useLvm, useLvm),
           returnValueForMissingStub: null);
   @override
+  set guidedTarget(_i2.GuidedStorageTarget? target) =>
+      super.noSuchMethod(Invocation.setter(#guidedTarget, target),
+          returnValueForMissingStub: null);
+  @override
   int get installMinimumSize => (super
           .noSuchMethod(Invocation.getter(#installMinimumSize), returnValue: 0)
       as int);
@@ -100,12 +100,11 @@ class MockDiskStorageService extends _i1.Mock
                       this, Invocation.method(#getGuidedStorage, []))))
           as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i4.Future<_i2.GuidedStorageResponseV2> setGuidedStorage(
-          _i2.GuidedStorageTarget? target) =>
-      (super.noSuchMethod(Invocation.method(#setGuidedStorage, [target]),
+  _i4.Future<_i2.GuidedStorageResponseV2> setGuidedStorage() =>
+      (super.noSuchMethod(Invocation.method(#setGuidedStorage, []),
               returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
                   _FakeGuidedStorageResponseV2_0(
-                      this, Invocation.method(#setGuidedStorage, [target]))))
+                      this, Invocation.method(#setGuidedStorage, []))))
           as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
   _i4.Future<List<_i2.Disk>> getStorage() =>
