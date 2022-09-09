@@ -80,6 +80,7 @@
   "dontInstallDriverSoftwareNowDescription": "You can install it later from Software & Updates.",
   "configureSecureBootSecurityKeyRequired": "Security key is required",
   "secureBootSecurityKeysDontMatch": "Security keys do not match",
+  "showSecurityKey": "Show security key",
   "connectToInternetPageTitle": "Connect to internet",
   "connectToInternetDescription": "Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network",
   "useWiredConnection": "Use wired connection",
@@ -176,6 +177,7 @@
     }
   },
   "installationTypeLVMSelected": "LVM selected",
+  "installationTypeLVMEncryptionSelected": "LVM and encryption selected",
   "installationTypeEncrypt": "Encrypt the new {RELEASE} installation for security",
   "@installationTypeEncrypt": {
     "type": "text",

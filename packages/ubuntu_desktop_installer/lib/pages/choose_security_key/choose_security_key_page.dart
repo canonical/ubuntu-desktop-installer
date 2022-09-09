@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -26,9 +26,9 @@ class ChooseSecurityKeyPage extends StatefulWidget {
 
   /// Creates an instance with [ChooseSecurityKeyModel].
   static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
+    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
-      create: (_) => ChooseSecurityKeyModel(client),
+      create: (_) => ChooseSecurityKeyModel(service),
       child: const ChooseSecurityKeyPage(),
     );
   }
@@ -41,9 +41,10 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
   @override
   void initState() {
     super.initState();
-
     final model = Provider.of<ChooseSecurityKeyModel>(context, listen: false);
-    model.loadSecurityKey();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      model.loadSecurityKey();
+    });
   }
 
   @override
@@ -63,6 +64,8 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
             _SecurityKeyFormField(fieldWidth: fieldWidth),
             const SizedBox(height: kContentSpacing),
             _ConfirmSecurityKeyFormField(fieldWidth: fieldWidth),
+            const SizedBox(height: kContentSpacing / 2),
+            const _SecurityKeyShowButton(),
             const SizedBox(height: kContentSpacing),
             Align(
               alignment: Alignment.centerLeft,

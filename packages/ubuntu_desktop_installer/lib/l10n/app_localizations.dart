@@ -465,6 +465,12 @@ abstract class AppLocalizations {
   /// **'Security keys do not match'**
   String get secureBootSecurityKeysDontMatch;
 
+  /// No description provided for @showSecurityKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Show security key'**
+  String get showSecurityKey;
+
   /// No description provided for @connectToInternetPageTitle.
   ///
   /// In en, this message translates to:
@@ -746,6 +752,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'LVM selected'**
   String get installationTypeLVMSelected;
+
+  /// No description provided for @installationTypeLVMEncryptionSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'LVM and encryption selected'**
+  String get installationTypeLVMEncryptionSelected;
 
   /// No description provided for @installationTypeEncrypt.
   ///
