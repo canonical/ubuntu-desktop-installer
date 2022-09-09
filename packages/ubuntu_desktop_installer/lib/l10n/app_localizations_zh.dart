@@ -136,6 +136,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => '安全密钥不匹配';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => '连接到互联网';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM已选择';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

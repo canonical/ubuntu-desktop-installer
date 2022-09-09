@@ -136,6 +136,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'La sekurigaj ŝlosiloj ne kongruas';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Konekti al Interreto';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM elektita';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

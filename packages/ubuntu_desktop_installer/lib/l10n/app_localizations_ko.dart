@@ -136,6 +136,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => '보안 키가 일치하지 않습니다';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => '인터넷에 연결하기';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM 선택됨';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

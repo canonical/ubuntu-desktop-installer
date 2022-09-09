@@ -136,6 +136,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Connect to internet';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'Seleccionat LVM';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

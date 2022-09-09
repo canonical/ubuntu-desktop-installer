@@ -136,6 +136,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'מפתחות האבטחה סותרים זה את זה';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'התחברות לאינטרנט';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'נבחר מנהל כרכים לוגי';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
