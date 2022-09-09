@@ -751,5 +751,9 @@
     "placeholders": {
       "SIZE": {}
     }
-  }
+  },
+  "configuringSystem": "正在配置系统……",
+  "@configuringSystem": {},
+  "installingSystem": "正在安装系统……",
+  "@installingSystem": {}
 }
