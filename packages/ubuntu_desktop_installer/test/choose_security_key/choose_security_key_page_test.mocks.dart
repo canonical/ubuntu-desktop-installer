@@ -47,6 +47,14 @@ class MockChooseSecurityKeyModel extends _i1.Mock
       super.noSuchMethod(Invocation.setter(#confirmedSecurityKey, value),
           returnValueForMissingStub: null);
   @override
+  bool get showSecurityKey => (super
+          .noSuchMethod(Invocation.getter(#showSecurityKey), returnValue: false)
+      as bool);
+  @override
+  set showSecurityKey(bool? value) =>
+      super.noSuchMethod(Invocation.setter(#showSecurityKey, value),
+          returnValueForMissingStub: null);
+  @override
   bool get isValid =>
       (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
           as bool);
