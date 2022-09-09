@@ -26,11 +26,11 @@
   "@repairInstallationDescription": {},
   "tryUbuntu": "Experimentar {RELEASE}",
   "@tryUbuntu": {},
-  "tryUbuntuDescription": "Pode experimentar o {RELEASE} sem precisar fazer qualquer alteração no seu computador.",
+  "tryUbuntuDescription": "Pode experimentar o {RELEASE} sem precisar de fazer qualquer alteração no seu computador.",
   "@tryUbuntuDescription": {},
   "installUbuntu": "Instalar {RELEASE}",
   "@installUbuntu": {},
-  "installUbuntuDescription": "Instalar o {RELEASE} ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.",
+  "installUbuntuDescription": "Instalar o {RELEASE} ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.",
   "@installUbuntuDescription": {},
   "releaseNotesLabel": "Talvez queira ler as <a href=\"{url}\">notas de lançamento</a>.",
   "@releaseNotesLabel": {
@@ -41,7 +41,7 @@
   },
   "turnOffRST": "Desligue a RST",
   "@turnOffRST": {},
-  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Precisa desligar a RST no Windows antes de instalar o Ubuntu.",
+  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.",
   "@turnOffRSTDescription": {},
   "instructionsForRST": "Abra esta página num telemóvel ou outro aparelho para encontrar instruções: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
@@ -50,23 +50,23 @@
       "url": {}
     }
   },
-  "keyboardLayoutPageTitle": "Layout do teclado",
+  "keyboardLayoutPageTitle": "Disposição do teclado",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Escolha o layout do seu teclado:",
+  "chooseYourKeyboardLayout": "Escolha a disposição do seu teclado:",
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "Digite aqui para testar o seu teclado",
   "@typeToTest": {},
-  "detectLayout": "Detetar o layout do teclado",
+  "detectLayout": "Detetar a disposição do teclado",
   "@detectLayout": {},
   "pressOneKey": "Por favor pressione uma das seguintes teclas:",
   "@pressOneKey": {},
   "isKeyPresent": "A seguinte tecla está presente no seu teclado?",
   "@isKeyPresent": {},
-  "configureSecureBootTitle": "Configurar Secure Boot",
+  "configureSecureBootTitle": "Configurar o Secure Boot",
   "@configureSecureBootTitle": {},
-  "configureSecureBootDescription": "Optou por instalar drivers de terceiros. Isso requer desativar o Secure Boot.\nPara isso, precisa escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.",
+  "configureSecureBootDescription": "Optou por instalar drivers de terceiros. Isso requer desativar o Secure Boot.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.",
   "@configureSecureBootDescription": {},
-  "configureSecureBootOption": "Configurar Secure Boot",
+  "configureSecureBootOption": "Configurar o Secure Boot",
   "@configureSecureBootOption": {},
   "chooseSecurityKey": "Escolha uma chave de segurança",
   "@chooseSecurityKey": {},
@@ -405,5 +405,194 @@
   "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
   "@turnOffBitlockerDescription": {},
   "welcomeHeader": "Escolha o seu idioma:",
-  "@welcomeHeader": {}
+  "@welcomeHeader": {},
+  "hiddenWifiNetwork": "Ligar a uma rede Wi-Fi oculta",
+  "@hiddenWifiNetwork": {},
+  "connectButtonText": "Ligar",
+  "@connectButtonText": {},
+  "whoAreYouPageUsernameSystemReserved": "Esse nome é reservado para utilização do sistema.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInUse": "Esse nome de utilizador já existe.",
+  "@whoAreYouPageUsernameInUse": {},
+  "welcomeSlideDescription": "Rápido e cheio de novas funcionalidades, a última versão {RELEASE} torna a computação mais fácil do que nunca. Aqui estão algumas novidades para dar uma vista de olhos...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideDescription": "Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software {RELEASE}, você pode encontrar e instalar novas apps facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeDualOSDetected": "Este computador ter {os1} e {os2}. O que pretende fazer?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "Este computador tem múltiplos sistemas operativos nele. O que pretende fazer?",
+  "@installationTypeMultiOSDetected": {},
+  "newPartitionTableConfirmationMessage": "Você selecionou uma partição inteira. Se proceder com a criação de uma nova tabela de partição neste dispositivo, todas as partições atuais serão removidas.\n\nPoderá desfazer esta operação mais tarde se desejar.",
+  "@newPartitionTableConfirmationMessage": {},
+  "connectToInternetPageTitle": "Ligar à Internet",
+  "@connectToInternetPageTitle": {},
+  "whoAreYouPageUsernameInvalidChars": "Esse nome contém caracteres inválidos.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "welcomeSlideTitle": "Bem-vindo ao {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "Encontrar ainda mais software",
+  "@softwareSlideTitle": {},
+  "quitButtonText": "Sair da Instalação",
+  "@quitButtonText": {},
+  "connectToInternetDescription": "Ligar este computador à internet vai ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigue à por cabo ethernet, ou escolha uma rede Wi-Fi",
+  "@connectToInternetDescription": {},
+  "useWiredConnection": "Usar uma ligação por cabo",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Ligação por cabo detetada",
+  "@noWiredConnection": {},
+  "wiredDisabled": "Ligação por cabo está desligada",
+  "@wiredDisabled": {},
+  "wiredMustBeEnabled": "Para usar ethernet neste computador, uma ligação por cabo deve ser ativada",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "Ligação por cabo ativada",
+  "@enableWired": {},
+  "selectWifiNetwork": "Ligar a uma rede Wi-Fi",
+  "@selectWifiNetwork": {},
+  "wifiMustBeEnabled": "Para usar Wi-Fi neste computador, uma rede sem fios deve ser ativada",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Ativar Wi-Fi",
+  "@enableWifi": {},
+  "installationTypeAlongsideDual": "Instalar {product} ao lado de {os1} e {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Instalar {product} ao lado deles",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Alocar espaço no disco ao arrastar o divisor abaixo:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsidePartition": "Partição:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "Tamanho:",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Disponível:",
+  "@installAlongsideAvailable": {},
+  "newPartitionTableConfirmationTitle": "Criar uma nova tabela de partições neste dispositivo?",
+  "@newPartitionTableConfirmationTitle": {},
+  "whoAreYouPageUsernameTooLong": "Esse nome é demasiado longo.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageShowPassword": "Mostrar palavra-passe",
+  "@whoAreYouPageShowPassword": {},
+  "writeChangesPartitionResized": "partição #{disk}{partition} redimensionada de {oldsize} para {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionCreated": "partição #{disk}{partition} criada",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "whereAreYouPageTitle": "Onde está?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Localização",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Fuso horário",
+  "@whereAreYouTimezoneLabel": {},
+  "musicSlideTitle": "Leve a sua música consigo",
+  "@musicSlideTitle": {},
+  "installAlongsideFiles": "Ficheiros",
+  "@installAlongsideFiles": {},
+  "noWifiDevicesDetected": "Sem dispositivos Wi-Fi detetados",
+  "@noWifiDevicesDetected": {},
+  "hiddenWifiNetworkNameRequired": "Um nome de rede é necessário",
+  "@hiddenWifiNetworkNameRequired": {},
+  "noInternet": "Não pretendo ligar à internet por agora",
+  "@noInternet": {},
+  "installAlongsideAllocateSpace": "Alocar espaço",
+  "@installAlongsideAllocateSpace": {},
+  "hiddenWifiNetworkNameLabel": "Nome da rede",
+  "@hiddenWifiNetworkNameLabel": {},
+  "installationTypeAlongsideUnknown": "Instalar {product} ao lado de outras partições",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideResizePartition": "Redimensionar partição",
+  "@installAlongsideResizePartition": {},
+  "wirelessNetworkingDisabled": "Rede sem fios desativada",
+  "@wirelessNetworkingDisabled": {},
+  "onBatteryWarning": "<font color=\"{color}\">Aviso</font>: O computador não está ligado a uma fonte de energia.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} pequenas partições estão ocultas, utilize a <a href=\"{url}\"> ferramenta de particionamento avançado</a> para mais controlo",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partição #{disk}{partition} formatada como {format} usada para {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partição #{disk}{partition} formatada como {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partição #{disk}{partition} usada para {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  }
 }
