@@ -692,5 +692,7 @@
     "placeholders": {
       "SIZE": {}
     }
-  }
+  },
+  "installAlongsideResizePartition": "パーティションのサイズを変更する",
+  "@installAlongsideResizePartition": {}
 }
