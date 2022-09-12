@@ -698,5 +698,9 @@
       "SIZE": {},
       "RELEASE": {}
     }
-  }
+  },
+  "installingSystem": "System wird installiert …",
+  "@installingSystem": {},
+  "configuringSystem": "System wird konfiguriert …",
+  "@configuringSystem": {}
 }
