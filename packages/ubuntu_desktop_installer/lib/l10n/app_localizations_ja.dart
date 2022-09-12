@@ -37,7 +37,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get yesButtonText => 'はい';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'インストールを終了';
 
   @override
   String get welcome => 'ようこそ';
@@ -87,7 +87,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return '手順は、携帯電話などで <a href=\"https://$url\">$url</a> をご確認ください。';
+    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください。';
   }
 
   @override
@@ -196,7 +196,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get normalInstallationTitle => 'おすすめのアプリもインストールする';
 
   @override
-  String get normalInstallationSubtitle => 'Webブラウザ、ユーティリティ、オフィスソフトウェア、ゲームにメディアプレイヤー。';
+  String get normalInstallationSubtitle => 'Webブラウザ、ユーティリティ、オフィスソフトウェア、ゲーム、メディアプレイヤー。';
 
   @override
   String get minimalInstallationTitle => '最小限のアプリだけをインストールする';
@@ -370,7 +370,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'パーティションのサイズを変更する';
 
   @override
   String get installAlongsideAllocateSpace => 'ディスク領域の割り当て';
@@ -669,7 +669,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '手順は、携帯電話などで <a href=\"https://$url\">$url</a> をご確認ください';
+    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください';
   }
 
   @override
@@ -813,10 +813,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get copyingFiles => 'ファイルをコピーしています...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'システムをインストールしています...';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'システムを設定しています...';
 
   @override
   String get installationFailed => 'インストールに失敗しました';
@@ -826,16 +826,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return '$RELEASE をインストールするには、最低でも$SIZEのディスク容量が必要です。';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'このコンピュータは$SIZEしかありません。';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'このコンピューターに搭載されているディスクの中で、一番容量が大きいものは$SIZEです。';
   }
 }
