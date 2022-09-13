@@ -32,8 +32,8 @@ class UbuntuWslSetupApp extends StatelessWidget {
             setWindowTitle(lang.windowTitle);
             return lang.appTitle;
           },
-          theme: yaruLight,
-          darkTheme: yaruDark,
+          theme: yaruLight.withConsistentPageTransitions(),
+          darkTheme: yaruDark.withConsistentPageTransitions(),
           debugShowCheckedModeBanner: false,
           localizationsDelegates: localizationsDelegates,
           supportedLocales: supportedLocales,
@@ -67,5 +67,24 @@ class UbuntuWslSetupApp extends StatelessWidget {
       default:
         throw UnsupportedError('Unsupported WSL variant: $variant');
     }
+  }
+}
+
+extension _ConsistentPageTransitions on ThemeData {
+  ThemeData withConsistentPageTransitions() {
+    // Yaru only supports Linux, thus running the Windows entry point applies
+    // Flutter default page transitions. This ensures consistency between both
+    // platforms by using the first builder (the only one Yaru offers, actually.
+    // It happens to be [CupertinoPageTransitionsBuilder] now, but
+    // could be something else in the future).
+    final builder = pageTransitionsTheme.builders.entries.first.value;
+    return copyWith(
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          TargetPlatform.linux: builder,
+          TargetPlatform.windows: builder,
+        },
+      ),
+    );
   }
 }
