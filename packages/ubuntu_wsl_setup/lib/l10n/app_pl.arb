@@ -72,7 +72,7 @@
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "Konfiguracja zakończona",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Cześć, {user}!\nPomyślnie zakończono konfigurację.",
+  "setupCompleteHeader": "Cześć, {user}!\nKonfiguracja została zakończona.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -204,5 +204,16 @@
   "installationSlidesUbuntuWslEnterprisesText": "Wzmocnij programistów w ekosystemie\nkorporacyjnym Windows dzięki\ncertyfikowanemu Ubuntu LTS.",
   "@installationSlidesUbuntuWslEnterprisesText": {},
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl,",
-  "@installationSlidesFindOutMoreLink": {}
+  "@installationSlidesFindOutMoreLink": {},
+  "installLangPacksTitle": "Zainstaluj pakiety, aby uzyskać lepszą obsługę języka {lang}",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Niezalecane przy wolnych połączeniach.",
+  "@installLangPacksSubtitle": {}
 }
