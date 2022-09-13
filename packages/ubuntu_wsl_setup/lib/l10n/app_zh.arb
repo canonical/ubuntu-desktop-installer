@@ -18,7 +18,7 @@
   "@profileSetupUsernameHint": {},
   "advancedSetupTitle": "进阶设置",
   "@advancedSetupTitle": {},
-  "profileSetupUsernameHelper": "这个用户名不一定需要和您Windows的用户名匹配。",
+  "profileSetupUsernameHelper": "用户名不需要与 Windows 用户名匹配。",
   "@profileSetupUsernameHelper": {},
   "profileSetupPasswordHint": "挑选一个密码",
   "@profileSetupPasswordHint": {},
@@ -68,7 +68,7 @@
   "@configurationUITitle": {},
   "configurationUIInteroperabilityTitle": "开启",
   "@configurationUIInteroperabilityTitle": {},
-  "configurationUIInteroperabilitySubtitle": "是否启用互操作性。",
+  "configurationUIInteroperabilitySubtitle": "是否启用了互操作性。",
   "@configurationUIInteroperabilitySubtitle": {},
   "configurationUIInteropAppendWindowsPathTitle": "附加Windows路径",
   "@configurationUIInteropAppendWindowsPathTitle": {},
@@ -184,5 +184,16 @@
   "installationSlidesUbuntuWslEnterprisesText": "经过认证的 Ubuntu LTS\n在 Windows 企业生态中\n助力开发者。",
   "@installationSlidesUbuntuWslEnterprisesText": {},
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
-  "@installationSlidesFindOutMoreLink": {}
+  "@installationSlidesFindOutMoreLink": {},
+  "installLangPacksTitle": "安装软件包以更好地支持 {lang} 语",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "不推荐网速慢的用户安装。",
+  "@installLangPacksSubtitle": {}
 }
