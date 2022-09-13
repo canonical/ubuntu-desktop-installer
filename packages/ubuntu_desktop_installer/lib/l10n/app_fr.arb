@@ -684,5 +684,9 @@
       "partition": {},
       "mount": {}
     }
-  }
+  },
+  "installingSystem": "Installation du système...",
+  "@installingSystem": {},
+  "configuringSystem": "Configuration du système...",
+  "@configuringSystem": {}
 }
