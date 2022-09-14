@@ -1,3 +1,108 @@
 {
-  "@@locale": "fa"
+  "@@locale": "fa",
+  "chooseSecurityKey": "انتخاب یک کلید امنیتی",
+  "@chooseSecurityKey": {},
+  "confirmSecurityKey": "تأیید کلید امنیتی",
+  "@confirmSecurityKey": {},
+  "configureSecureBootOption": "پیکربندی راه‌اندازی ایمن",
+  "@configureSecureBootOption": {},
+  "repairInstallation": "تعمیر نصب",
+  "@repairInstallation": {},
+  "cancelButtonText": "لغو",
+  "@cancelButtonText": {},
+  "okButtonText": "باشه",
+  "@okButtonText": {},
+  "repairInstallationDescription": "تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.",
+  "@repairInstallationDescription": {},
+  "noButtonText": "خیر",
+  "@noButtonText": {},
+  "quitButtonText": "خروج از نصب",
+  "@quitButtonText": {},
+  "detectLayout": "تشخیص چیدمان صفحه‌کلید",
+  "@detectLayout": {},
+  "installUbuntu": "نصب {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffRSTDescription": "این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.",
+  "@turnOffRSTDescription": {},
+  "chooseYourKeyboardLayout": "گزینش چیدمان صفحه‌کلیدتان:",
+  "@chooseYourKeyboardLayout": {},
+  "typeToTest": "برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید",
+  "@typeToTest": {},
+  "instructionsForRST": "برای دستورالعمل‌ها، این صفحه را در تلفن یا دستگاه دیگری باز کنید: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "configureSecureBootTitle": "پیکربندی راه‌اندازی ایمن",
+  "@configureSecureBootTitle": {},
+  "pressOneKey": "لطفاً یکی از کلیدهای زیر را فشار دهید:",
+  "@pressOneKey": {},
+  "isKeyPresent": "آیا این کلید در صفحه‌کلیدتان وجود دارد؟",
+  "@isKeyPresent": {},
+  "dontInstallDriverSoftwareNow": "فعلاً نرم‌افزار درایور را نصب نکن",
+  "@dontInstallDriverSoftwareNow": {},
+  "configureSecureBootDescription": "شما نصب نرم‌افزار درایور شخص ثالث را انتخاب کرده‌اید. برای این کار باید راه‌اندازی ایمن را خاموش کنید.\nبرای انجام این کار، اکنون باید یک کلید امنیتی را انتخاب کنید و پس از راه اندازی دوبارهٔ سامانه، آن را وارد کنید.",
+  "@configureSecureBootDescription": {},
+  "welcomeHeader": "زبانتان را برگزینید:",
+  "@welcomeHeader": {},
+  "appTitle": "نصب کنندهٔ میزکار اوبونتو",
+  "@appTitle": {},
+  "changeButtonText": "تغییر",
+  "@changeButtonText": {},
+  "restartButtonText": "شروع دوباره",
+  "@restartButtonText": {},
+  "revertButtonText": "بازگردانی",
+  "@revertButtonText": {},
+  "yesButtonText": "بله",
+  "@yesButtonText": {},
+  "welcome": "خوش آمدید",
+  "@welcome": {},
+  "windowTitle": "نصب {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryOrInstallPageTitle": "امتحان کردن یا نصب",
+  "@tryOrInstallPageTitle": {},
+  "tryUbuntuDescription": "شما می‌توانید {RELEASE} را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "{RELEASE} را در کنار (یا به جای) سیستم‌عامل کنونی شما نصب می‌کنید. این نباید خیلی طول بکشد.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntu": "امتحان {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "ممکن است بخواهید <a href=\"{url}\">یادداشت‌های انتشار</a> را بخوانید.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRST": "خاموش کردن RST",
+  "@turnOffRST": {},
+  "keyboardLayoutPageTitle": "چیدمان صفحه‌کلید",
+  "@keyboardLayoutPageTitle": {}
 }
