@@ -124,7 +124,7 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-tag: 3.0.5
+    source-branch: stable
     source-depth: 1
     plugin: nil
     override-build: |
@@ -157,6 +157,8 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/etc/subiquity
       cp -r snap/local/postinst.d $SNAPCRAFT_PART_INSTALL/etc/subiquity
       cd packages/ubuntu_desktop_installer
+      flutter channel stable
+      flutter upgrade
       flutter doctor
       flutter pub get
       flutter build linux --release -v
@@ -173,6 +175,8 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
+      flutter channel stable
+      flutter upgrade
       flutter doctor
       flutter pub get
       flutter build linux --release -v
