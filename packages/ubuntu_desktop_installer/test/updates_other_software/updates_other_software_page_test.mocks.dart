@@ -34,74 +34,136 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
   }
 
   @override
-  _i2.InstallationMode get installationMode =>
-      (super.noSuchMethod(Invocation.getter(#installationMode),
-          returnValue: _i2.InstallationMode.normal) as _i2.InstallationMode);
+  _i2.InstallationMode get installationMode => (super.noSuchMethod(
+        Invocation.getter(#installationMode),
+        returnValue: _i2.InstallationMode.normal,
+      ) as _i2.InstallationMode);
   @override
-  bool get installThirdParty =>
-      (super.noSuchMethod(Invocation.getter(#installThirdParty),
-          returnValue: false) as bool);
+  bool get installThirdParty => (super.noSuchMethod(
+        Invocation.getter(#installThirdParty),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get onBattery =>
-      (super.noSuchMethod(Invocation.getter(#onBattery), returnValue: false)
-          as bool);
+  bool get onBattery => (super.noSuchMethod(
+        Invocation.getter(#onBattery),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void setInstallationMode(_i2.InstallationMode? mode) =>
-      super.noSuchMethod(Invocation.method(#setInstallationMode, [mode]),
-          returnValueForMissingStub: null);
+  void setInstallationMode(_i2.InstallationMode? mode) => super.noSuchMethod(
+        Invocation.method(
+          #setInstallationMode,
+          [mode],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setInstallThirdParty(bool? installThirdParty) => super.noSuchMethod(
-      Invocation.method(#setInstallThirdParty, [installThirdParty]),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #setInstallThirdParty,
+          [installThirdParty],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i3.Future<void> selectInstallationSource() => (super.noSuchMethod(
-      Invocation.method(#selectInstallationSource, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #selectInstallationSource,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   void setProperties(_i3.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i4.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i4.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [TelemetryService].
@@ -113,29 +175,56 @@ class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
   }
 
   @override
-  void addStage(String? name) =>
-      super.noSuchMethod(Invocation.method(#addStage, [name]),
-          returnValueForMissingStub: null);
+  void addStage(String? name) => super.noSuchMethod(
+        Invocation.method(
+          #addStage,
+          [name],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void setLanguage(String? language) =>
-      super.noSuchMethod(Invocation.method(#setLanguage, [language]),
-          returnValueForMissingStub: null);
+  void setLanguage(String? language) => super.noSuchMethod(
+        Invocation.method(
+          #setLanguage,
+          [language],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setMinimal({bool? enabled}) => super.noSuchMethod(
-      Invocation.method(#setMinimal, [], {#enabled: enabled}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #setMinimal,
+          [],
+          {#enabled: enabled},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setRestrictedAddons({bool? enabled}) => super.noSuchMethod(
-      Invocation.method(#setRestrictedAddons, [], {#enabled: enabled}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #setRestrictedAddons,
+          [],
+          {#enabled: enabled},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void setPartitionMethod(String? method) =>
-      super.noSuchMethod(Invocation.method(#setPartitionMethod, [method]),
-          returnValueForMissingStub: null);
+  void setPartitionMethod(String? method) => super.noSuchMethod(
+        Invocation.method(
+          #setPartitionMethod,
+          [method],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i3.Future<void> done({_i6.FileSystem? fs = const _i7.LocalFileSystem()}) =>
-      (super.noSuchMethod(Invocation.method(#done, [], {#fs: fs}),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #done,
+          [],
+          {#fs: fs},
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

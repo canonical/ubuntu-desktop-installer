@@ -24,8 +24,13 @@ import 'package:subiquity_client/src/types.dart' as _i6;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeEncoding_0 extends _i1.SmartFake implements _i2.Encoding {
-  _FakeEncoding_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeEncoding_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [IOSink].
@@ -37,52 +42,113 @@ class MockIOSink extends _i1.Mock implements _i3.IOSink {
   }
 
   @override
-  _i2.Encoding get encoding => (super.noSuchMethod(Invocation.getter(#encoding),
-          returnValue: _FakeEncoding_0(this, Invocation.getter(#encoding)))
-      as _i2.Encoding);
+  _i2.Encoding get encoding => (super.noSuchMethod(
+        Invocation.getter(#encoding),
+        returnValue: _FakeEncoding_0(
+          this,
+          Invocation.getter(#encoding),
+        ),
+      ) as _i2.Encoding);
   @override
-  set encoding(_i2.Encoding? _encoding) =>
-      super.noSuchMethod(Invocation.setter(#encoding, _encoding),
-          returnValueForMissingStub: null);
+  set encoding(_i2.Encoding? _encoding) => super.noSuchMethod(
+        Invocation.setter(
+          #encoding,
+          _encoding,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i4.Future<dynamic> get done => (super.noSuchMethod(Invocation.getter(#done),
-      returnValue: _i4.Future<dynamic>.value()) as _i4.Future<dynamic>);
+  _i4.Future<dynamic> get done => (super.noSuchMethod(
+        Invocation.getter(#done),
+        returnValue: _i4.Future<dynamic>.value(),
+      ) as _i4.Future<dynamic>);
   @override
-  void add(List<int>? data) =>
-      super.noSuchMethod(Invocation.method(#add, [data]),
-          returnValueForMissingStub: null);
+  void add(List<int>? data) => super.noSuchMethod(
+        Invocation.method(
+          #add,
+          [data],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void write(Object? object) =>
-      super.noSuchMethod(Invocation.method(#write, [object]),
-          returnValueForMissingStub: null);
+  void write(Object? object) => super.noSuchMethod(
+        Invocation.method(
+          #write,
+          [object],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void writeAll(Iterable<dynamic>? objects, [String? separator = r'']) =>
-      super.noSuchMethod(Invocation.method(#writeAll, [objects, separator]),
-          returnValueForMissingStub: null);
+  void writeAll(
+    Iterable<dynamic>? objects, [
+    String? separator = r'',
+  ]) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #writeAll,
+          [
+            objects,
+            separator,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void writeln([Object? object = r'']) =>
-      super.noSuchMethod(Invocation.method(#writeln, [object]),
-          returnValueForMissingStub: null);
+  void writeln([Object? object = r'']) => super.noSuchMethod(
+        Invocation.method(
+          #writeln,
+          [object],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void writeCharCode(int? charCode) =>
-      super.noSuchMethod(Invocation.method(#writeCharCode, [charCode]),
-          returnValueForMissingStub: null);
+  void writeCharCode(int? charCode) => super.noSuchMethod(
+        Invocation.method(
+          #writeCharCode,
+          [charCode],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addError(Object? error, [StackTrace? stackTrace]) =>
-      super.noSuchMethod(Invocation.method(#addError, [error, stackTrace]),
-          returnValueForMissingStub: null);
+  void addError(
+    Object? error, [
+    StackTrace? stackTrace,
+  ]) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addError,
+          [
+            error,
+            stackTrace,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i4.Future<dynamic> addStream(_i4.Stream<List<int>>? stream) =>
-      (super.noSuchMethod(Invocation.method(#addStream, [stream]),
-          returnValue: _i4.Future<dynamic>.value()) as _i4.Future<dynamic>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #addStream,
+          [stream],
+        ),
+        returnValue: _i4.Future<dynamic>.value(),
+      ) as _i4.Future<dynamic>);
   @override
-  _i4.Future<dynamic> flush() =>
-      (super.noSuchMethod(Invocation.method(#flush, []),
-          returnValue: _i4.Future<dynamic>.value()) as _i4.Future<dynamic>);
+  _i4.Future<dynamic> flush() => (super.noSuchMethod(
+        Invocation.method(
+          #flush,
+          [],
+        ),
+        returnValue: _i4.Future<dynamic>.value(),
+      ) as _i4.Future<dynamic>);
   @override
-  _i4.Future<dynamic> close() =>
-      (super.noSuchMethod(Invocation.method(#close, []),
-          returnValue: _i4.Future<dynamic>.value()) as _i4.Future<dynamic>);
+  _i4.Future<dynamic> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i4.Future<dynamic>.value(),
+      ) as _i4.Future<dynamic>);
 }
 
 /// A class which mocks [SubiquityStatusMonitor].
@@ -95,16 +161,25 @@ class MockSubiquityStatusMonitor extends _i1.Mock
   }
 
   @override
-  _i4.Stream<_i6.ApplicationStatus?> get onStatusChanged =>
-      (super.noSuchMethod(Invocation.getter(#onStatusChanged),
-              returnValue: _i4.Stream<_i6.ApplicationStatus?>.empty())
-          as _i4.Stream<_i6.ApplicationStatus?>);
+  _i4.Stream<_i6.ApplicationStatus?> get onStatusChanged => (super.noSuchMethod(
+        Invocation.getter(#onStatusChanged),
+        returnValue: _i4.Stream<_i6.ApplicationStatus?>.empty(),
+      ) as _i4.Stream<_i6.ApplicationStatus?>);
   @override
-  _i4.Future<bool> start(_i7.Endpoint? endpoint) =>
-      (super.noSuchMethod(Invocation.method(#start, [endpoint]),
-          returnValue: _i4.Future<bool>.value(false)) as _i4.Future<bool>);
+  _i4.Future<bool> start(_i7.Endpoint? endpoint) => (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [endpoint],
+        ),
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i4.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> stop() => (super.noSuchMethod(
+        Invocation.method(
+          #stop,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }

@@ -24,27 +24,45 @@ import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i5;
 class _FakeNetworkManagerDeviceStateAndReason_0 extends _i1.SmartFake
     implements _i2.NetworkManagerDeviceStateAndReason {
   _FakeNetworkManagerDeviceStateAndReason_0(
-      Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerSettings_1 extends _i1.SmartFake
     implements _i2.NetworkManagerSettings {
-  _FakeNetworkManagerSettings_1(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerSettings_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerDnsManager_2 extends _i1.SmartFake
     implements _i2.NetworkManagerDnsManager {
-  _FakeNetworkManagerDnsManager_2(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerDnsManager_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerActiveConnection_3 extends _i1.SmartFake
     implements _i2.NetworkManagerActiveConnection {
   _FakeNetworkManagerActiveConnection_3(
-      Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [NetworkManagerAccessPoint].
@@ -57,52 +75,62 @@ class MockNetworkManagerAccessPoint extends _i1.Mock
   }
 
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  List<_i2.NetworkManagerWifiAccessPointFlag> get flags =>
-      (super.noSuchMethod(Invocation.getter(#flags),
-              returnValue: <_i2.NetworkManagerWifiAccessPointFlag>[])
-          as List<_i2.NetworkManagerWifiAccessPointFlag>);
+  List<_i2.NetworkManagerWifiAccessPointFlag> get flags => (super.noSuchMethod(
+        Invocation.getter(#flags),
+        returnValue: <_i2.NetworkManagerWifiAccessPointFlag>[],
+      ) as List<_i2.NetworkManagerWifiAccessPointFlag>);
   @override
   List<_i2.NetworkManagerWifiAccessPointSecurityFlag> get wpaFlags =>
-      (super.noSuchMethod(Invocation.getter(#wpaFlags),
-              returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[])
-          as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
+      (super.noSuchMethod(
+        Invocation.getter(#wpaFlags),
+        returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[],
+      ) as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
   @override
   List<_i2.NetworkManagerWifiAccessPointSecurityFlag> get rsnFlags =>
-      (super.noSuchMethod(Invocation.getter(#rsnFlags),
-              returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[])
-          as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
+      (super.noSuchMethod(
+        Invocation.getter(#rsnFlags),
+        returnValue: <_i2.NetworkManagerWifiAccessPointSecurityFlag>[],
+      ) as List<_i2.NetworkManagerWifiAccessPointSecurityFlag>);
   @override
-  List<int> get ssid =>
-      (super.noSuchMethod(Invocation.getter(#ssid), returnValue: <int>[])
-          as List<int>);
+  List<int> get ssid => (super.noSuchMethod(
+        Invocation.getter(#ssid),
+        returnValue: <int>[],
+      ) as List<int>);
   @override
-  int get frequency =>
-      (super.noSuchMethod(Invocation.getter(#frequency), returnValue: 0)
-          as int);
+  int get frequency => (super.noSuchMethod(
+        Invocation.getter(#frequency),
+        returnValue: 0,
+      ) as int);
   @override
-  String get hwAddress =>
-      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
-          as String);
+  String get hwAddress => (super.noSuchMethod(
+        Invocation.getter(#hwAddress),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerWifiMode get mode =>
-      (super.noSuchMethod(Invocation.getter(#mode),
-              returnValue: _i2.NetworkManagerWifiMode.unknown)
-          as _i2.NetworkManagerWifiMode);
+  _i2.NetworkManagerWifiMode get mode => (super.noSuchMethod(
+        Invocation.getter(#mode),
+        returnValue: _i2.NetworkManagerWifiMode.unknown,
+      ) as _i2.NetworkManagerWifiMode);
   @override
-  int get maxBitrate =>
-      (super.noSuchMethod(Invocation.getter(#maxBitrate), returnValue: 0)
-          as int);
+  int get maxBitrate => (super.noSuchMethod(
+        Invocation.getter(#maxBitrate),
+        returnValue: 0,
+      ) as int);
   @override
-  int get strength =>
-      (super.noSuchMethod(Invocation.getter(#strength), returnValue: 0) as int);
+  int get strength => (super.noSuchMethod(
+        Invocation.getter(#strength),
+        returnValue: 0,
+      ) as int);
   @override
-  int get lastSeen =>
-      (super.noSuchMethod(Invocation.getter(#lastSeen), returnValue: 0) as int);
+  int get lastSeen => (super.noSuchMethod(
+        Invocation.getter(#lastSeen),
+        returnValue: 0,
+      ) as int);
 }
 
 /// A class which mocks [NetworkManagerActiveConnection].
@@ -115,45 +143,56 @@ class MockNetworkManagerActiveConnection extends _i1.Mock
   }
 
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  String get id =>
-      (super.noSuchMethod(Invocation.getter(#id), returnValue: '') as String);
+  String get id => (super.noSuchMethod(
+        Invocation.getter(#id),
+        returnValue: '',
+      ) as String);
   @override
-  String get uuid =>
-      (super.noSuchMethod(Invocation.getter(#uuid), returnValue: '') as String);
+  String get uuid => (super.noSuchMethod(
+        Invocation.getter(#uuid),
+        returnValue: '',
+      ) as String);
   @override
-  String get type =>
-      (super.noSuchMethod(Invocation.getter(#type), returnValue: '') as String);
+  String get type => (super.noSuchMethod(
+        Invocation.getter(#type),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerActiveConnectionState get state =>
-      (super.noSuchMethod(Invocation.getter(#state),
-              returnValue: _i2.NetworkManagerActiveConnectionState.unknown)
-          as _i2.NetworkManagerActiveConnectionState);
+  _i2.NetworkManagerActiveConnectionState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerActiveConnectionState.unknown,
+      ) as _i2.NetworkManagerActiveConnectionState);
   @override
   List<_i2.NetworkManagerActivationStateFlag> get stateFlags =>
-      (super.noSuchMethod(Invocation.getter(#stateFlags),
-              returnValue: <_i2.NetworkManagerActivationStateFlag>[])
-          as List<_i2.NetworkManagerActivationStateFlag>);
+      (super.noSuchMethod(
+        Invocation.getter(#stateFlags),
+        returnValue: <_i2.NetworkManagerActivationStateFlag>[],
+      ) as List<_i2.NetworkManagerActivationStateFlag>);
   @override
-  bool get default4 =>
-      (super.noSuchMethod(Invocation.getter(#default4), returnValue: false)
-          as bool);
+  bool get default4 => (super.noSuchMethod(
+        Invocation.getter(#default4),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get default6 =>
-      (super.noSuchMethod(Invocation.getter(#default6), returnValue: false)
-          as bool);
+  bool get default6 => (super.noSuchMethod(
+        Invocation.getter(#default6),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get vpn =>
-      (super.noSuchMethod(Invocation.getter(#vpn), returnValue: false) as bool);
+  bool get vpn => (super.noSuchMethod(
+        Invocation.getter(#vpn),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i2.NetworkManagerDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
 }
 
 /// A class which mocks [NetworkManagerDevice].
@@ -166,133 +205,174 @@ class MockNetworkManagerDevice extends _i1.Mock
   }
 
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  String get udi =>
-      (super.noSuchMethod(Invocation.getter(#udi), returnValue: '') as String);
+  String get udi => (super.noSuchMethod(
+        Invocation.getter(#udi),
+        returnValue: '',
+      ) as String);
   @override
-  String get path =>
-      (super.noSuchMethod(Invocation.getter(#path), returnValue: '') as String);
+  String get path => (super.noSuchMethod(
+        Invocation.getter(#path),
+        returnValue: '',
+      ) as String);
   @override
-  String get interface =>
-      (super.noSuchMethod(Invocation.getter(#interface), returnValue: '')
-          as String);
+  String get interface => (super.noSuchMethod(
+        Invocation.getter(#interface),
+        returnValue: '',
+      ) as String);
   @override
-  String get ipInterface =>
-      (super.noSuchMethod(Invocation.getter(#ipInterface), returnValue: '')
-          as String);
+  String get ipInterface => (super.noSuchMethod(
+        Invocation.getter(#ipInterface),
+        returnValue: '',
+      ) as String);
   @override
-  String get driver =>
-      (super.noSuchMethod(Invocation.getter(#driver), returnValue: '')
-          as String);
+  String get driver => (super.noSuchMethod(
+        Invocation.getter(#driver),
+        returnValue: '',
+      ) as String);
   @override
-  String get driverVersion =>
-      (super.noSuchMethod(Invocation.getter(#driverVersion), returnValue: '')
-          as String);
+  String get driverVersion => (super.noSuchMethod(
+        Invocation.getter(#driverVersion),
+        returnValue: '',
+      ) as String);
   @override
-  String get firmwareVersion =>
-      (super.noSuchMethod(Invocation.getter(#firmwareVersion), returnValue: '')
-          as String);
+  String get firmwareVersion => (super.noSuchMethod(
+        Invocation.getter(#firmwareVersion),
+        returnValue: '',
+      ) as String);
   @override
   List<_i2.NetworkManagerDeviceCapability> get capabilities =>
-      (super.noSuchMethod(Invocation.getter(#capabilities),
-              returnValue: <_i2.NetworkManagerDeviceCapability>[])
-          as List<_i2.NetworkManagerDeviceCapability>);
+      (super.noSuchMethod(
+        Invocation.getter(#capabilities),
+        returnValue: <_i2.NetworkManagerDeviceCapability>[],
+      ) as List<_i2.NetworkManagerDeviceCapability>);
   @override
-  _i2.NetworkManagerDeviceState get state =>
-      (super.noSuchMethod(Invocation.getter(#state),
-              returnValue: _i2.NetworkManagerDeviceState.unknown)
-          as _i2.NetworkManagerDeviceState);
+  _i2.NetworkManagerDeviceState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerDeviceState.unknown,
+      ) as _i2.NetworkManagerDeviceState);
   @override
-  _i2.NetworkManagerDeviceStateAndReason get stateReason =>
-      (super.noSuchMethod(Invocation.getter(#stateReason),
-              returnValue: _FakeNetworkManagerDeviceStateAndReason_0(
-                  this, Invocation.getter(#stateReason)))
-          as _i2.NetworkManagerDeviceStateAndReason);
+  _i2.NetworkManagerDeviceStateAndReason get stateReason => (super.noSuchMethod(
+        Invocation.getter(#stateReason),
+        returnValue: _FakeNetworkManagerDeviceStateAndReason_0(
+          this,
+          Invocation.getter(#stateReason),
+        ),
+      ) as _i2.NetworkManagerDeviceStateAndReason);
   @override
-  bool get managed =>
-      (super.noSuchMethod(Invocation.getter(#managed), returnValue: false)
-          as bool);
+  bool get managed => (super.noSuchMethod(
+        Invocation.getter(#managed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get autoconnect =>
-      (super.noSuchMethod(Invocation.getter(#autoconnect), returnValue: false)
-          as bool);
+  bool get autoconnect => (super.noSuchMethod(
+        Invocation.getter(#autoconnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get firmwareMissing => (super
-          .noSuchMethod(Invocation.getter(#firmwareMissing), returnValue: false)
-      as bool);
+  bool get firmwareMissing => (super.noSuchMethod(
+        Invocation.getter(#firmwareMissing),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get nmPluginMissing => (super
-          .noSuchMethod(Invocation.getter(#nmPluginMissing), returnValue: false)
-      as bool);
+  bool get nmPluginMissing => (super.noSuchMethod(
+        Invocation.getter(#nmPluginMissing),
+        returnValue: false,
+      ) as bool);
   @override
-  _i2.NetworkManagerDeviceType get deviceType =>
-      (super.noSuchMethod(Invocation.getter(#deviceType),
-              returnValue: _i2.NetworkManagerDeviceType.unknown)
-          as _i2.NetworkManagerDeviceType);
+  _i2.NetworkManagerDeviceType get deviceType => (super.noSuchMethod(
+        Invocation.getter(#deviceType),
+        returnValue: _i2.NetworkManagerDeviceType.unknown,
+      ) as _i2.NetworkManagerDeviceType);
   @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
-      (super.noSuchMethod(Invocation.getter(#availableConnections),
-              returnValue: <_i2.NetworkManagerSettingsConnection>[])
-          as List<_i2.NetworkManagerSettingsConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#availableConnections),
+        returnValue: <_i2.NetworkManagerSettingsConnection>[],
+      ) as List<_i2.NetworkManagerSettingsConnection>);
   @override
-  String get physicalPortId =>
-      (super.noSuchMethod(Invocation.getter(#physicalPortId), returnValue: '')
-          as String);
+  String get physicalPortId => (super.noSuchMethod(
+        Invocation.getter(#physicalPortId),
+        returnValue: '',
+      ) as String);
   @override
-  int get mtu =>
-      (super.noSuchMethod(Invocation.getter(#mtu), returnValue: 0) as int);
+  int get mtu => (super.noSuchMethod(
+        Invocation.getter(#mtu),
+        returnValue: 0,
+      ) as int);
   @override
-  _i2.NetworkManagerMetered get metered =>
-      (super.noSuchMethod(Invocation.getter(#metered),
-              returnValue: _i2.NetworkManagerMetered.unknown)
-          as _i2.NetworkManagerMetered);
+  _i2.NetworkManagerMetered get metered => (super.noSuchMethod(
+        Invocation.getter(#metered),
+        returnValue: _i2.NetworkManagerMetered.unknown,
+      ) as _i2.NetworkManagerMetered);
   @override
-  bool get real =>
-      (super.noSuchMethod(Invocation.getter(#real), returnValue: false)
-          as bool);
+  bool get real => (super.noSuchMethod(
+        Invocation.getter(#real),
+        returnValue: false,
+      ) as bool);
   @override
   _i2.NetworkManagerConnectivityState get ip4Connectivity =>
-      (super.noSuchMethod(Invocation.getter(#ip4Connectivity),
-              returnValue: _i2.NetworkManagerConnectivityState.unknown)
-          as _i2.NetworkManagerConnectivityState);
+      (super.noSuchMethod(
+        Invocation.getter(#ip4Connectivity),
+        returnValue: _i2.NetworkManagerConnectivityState.unknown,
+      ) as _i2.NetworkManagerConnectivityState);
   @override
   _i2.NetworkManagerConnectivityState get ip6Connectivity =>
-      (super.noSuchMethod(Invocation.getter(#ip6Connectivity),
-              returnValue: _i2.NetworkManagerConnectivityState.unknown)
-          as _i2.NetworkManagerConnectivityState);
+      (super.noSuchMethod(
+        Invocation.getter(#ip6Connectivity),
+        returnValue: _i2.NetworkManagerConnectivityState.unknown,
+      ) as _i2.NetworkManagerConnectivityState);
   @override
   List<_i2.NetworkManagerDeviceInterfaceFlag> get interfaceFlags =>
-      (super.noSuchMethod(Invocation.getter(#interfaceFlags),
-              returnValue: <_i2.NetworkManagerDeviceInterfaceFlag>[])
-          as List<_i2.NetworkManagerDeviceInterfaceFlag>);
+      (super.noSuchMethod(
+        Invocation.getter(#interfaceFlags),
+        returnValue: <_i2.NetworkManagerDeviceInterfaceFlag>[],
+      ) as List<_i2.NetworkManagerDeviceInterfaceFlag>);
   @override
-  String get hwAddress =>
-      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
-          as String);
+  String get hwAddress => (super.noSuchMethod(
+        Invocation.getter(#hwAddress),
+        returnValue: '',
+      ) as String);
   @override
   _i3.Future<void> disconnect() => (super.noSuchMethod(
-      Invocation.method(#disconnect, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #disconnect,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> delete() => (super.noSuchMethod(
-      Invocation.method(#delete, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #delete,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> setManaged(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setManaged, [value]),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #setManaged,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> setAutoconnect(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setAutoconnect, [value]),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #setAutoconnect,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
 
 /// A class which mocks [NetworkManagerDeviceWireless].
@@ -305,39 +385,51 @@ class MockNetworkManagerDeviceWireless extends _i1.Mock
   }
 
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  String get permHwAddress =>
-      (super.noSuchMethod(Invocation.getter(#permHwAddress), returnValue: '')
-          as String);
+  String get permHwAddress => (super.noSuchMethod(
+        Invocation.getter(#permHwAddress),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerWifiMode get mode =>
-      (super.noSuchMethod(Invocation.getter(#mode),
-              returnValue: _i2.NetworkManagerWifiMode.unknown)
-          as _i2.NetworkManagerWifiMode);
+  _i2.NetworkManagerWifiMode get mode => (super.noSuchMethod(
+        Invocation.getter(#mode),
+        returnValue: _i2.NetworkManagerWifiMode.unknown,
+      ) as _i2.NetworkManagerWifiMode);
   @override
-  int get bitrate =>
-      (super.noSuchMethod(Invocation.getter(#bitrate), returnValue: 0) as int);
+  int get bitrate => (super.noSuchMethod(
+        Invocation.getter(#bitrate),
+        returnValue: 0,
+      ) as int);
   @override
-  List<_i2.NetworkManagerAccessPoint> get accessPoints =>
-      (super.noSuchMethod(Invocation.getter(#accessPoints),
-              returnValue: <_i2.NetworkManagerAccessPoint>[])
-          as List<_i2.NetworkManagerAccessPoint>);
+  List<_i2.NetworkManagerAccessPoint> get accessPoints => (super.noSuchMethod(
+        Invocation.getter(#accessPoints),
+        returnValue: <_i2.NetworkManagerAccessPoint>[],
+      ) as List<_i2.NetworkManagerAccessPoint>);
   @override
   List<_i2.NetworkManagerDeviceWifiCapability> get wirelessCapabilities =>
-      (super.noSuchMethod(Invocation.getter(#wirelessCapabilities),
-              returnValue: <_i2.NetworkManagerDeviceWifiCapability>[])
-          as List<_i2.NetworkManagerDeviceWifiCapability>);
+      (super.noSuchMethod(
+        Invocation.getter(#wirelessCapabilities),
+        returnValue: <_i2.NetworkManagerDeviceWifiCapability>[],
+      ) as List<_i2.NetworkManagerDeviceWifiCapability>);
   @override
-  int get lastScan =>
-      (super.noSuchMethod(Invocation.getter(#lastScan), returnValue: 0) as int);
+  int get lastScan => (super.noSuchMethod(
+        Invocation.getter(#lastScan),
+        returnValue: 0,
+      ) as int);
   @override
   _i3.Future<dynamic> requestScan({List<List<int>>? ssids}) =>
-      (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssids: ssids}),
-          returnValue: _i3.Future<dynamic>.value()) as _i3.Future<dynamic>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #requestScan,
+          [],
+          {#ssids: ssids},
+        ),
+        returnValue: _i3.Future<dynamic>.value(),
+      ) as _i3.Future<dynamic>);
 }
 
 /// A class which mocks [NetworkManagerSettingsConnection].
@@ -350,66 +442,95 @@ class MockNetworkManagerSettingsConnection extends _i1.Mock
   }
 
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  bool get unsaved =>
-      (super.noSuchMethod(Invocation.getter(#unsaved), returnValue: false)
-          as bool);
+  bool get unsaved => (super.noSuchMethod(
+        Invocation.getter(#unsaved),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i2.NetworkManagerConnectionFlag> get flags =>
-      (super.noSuchMethod(Invocation.getter(#flags),
-              returnValue: <_i2.NetworkManagerConnectionFlag>[])
-          as List<_i2.NetworkManagerConnectionFlag>);
+  List<_i2.NetworkManagerConnectionFlag> get flags => (super.noSuchMethod(
+        Invocation.getter(#flags),
+        returnValue: <_i2.NetworkManagerConnectionFlag>[],
+      ) as List<_i2.NetworkManagerConnectionFlag>);
   @override
-  String get filename =>
-      (super.noSuchMethod(Invocation.getter(#filename), returnValue: '')
-          as String);
+  String get filename => (super.noSuchMethod(
+        Invocation.getter(#filename),
+        returnValue: '',
+      ) as String);
   @override
   _i3.Future<void> update(
           Map<String, Map<String, _i4.DBusValue>>? properties) =>
-      (super.noSuchMethod(Invocation.method(#update, [properties]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #update,
+          [properties],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> updateUnsaved(
           Map<String, Map<String, _i4.DBusValue>>? properties) =>
-      (super.noSuchMethod(Invocation.method(#updateUnsaved, [properties]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateUnsaved,
+          [properties],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> delete() => (super.noSuchMethod(
-      Invocation.method(#delete, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #delete,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<Map<String, Map<String, _i4.DBusValue>>> getSettings() =>
-      (super.noSuchMethod(Invocation.method(#getSettings, []),
-              returnValue:
-                  _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
-                      <String, Map<String, _i4.DBusValue>>{}))
-          as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSettings,
+          [],
+        ),
+        returnValue: _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
+            <String, Map<String, _i4.DBusValue>>{}),
+      ) as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
   @override
   _i3.Future<Map<String, Map<String, _i4.DBusValue>>> getSecrets(
           [String? settingName = r'']) =>
-      (super.noSuchMethod(Invocation.method(#getSecrets, [settingName]),
-              returnValue:
-                  _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
-                      <String, Map<String, _i4.DBusValue>>{}))
-          as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSecrets,
+          [settingName],
+        ),
+        returnValue: _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
+            <String, Map<String, _i4.DBusValue>>{}),
+      ) as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
   @override
   _i3.Future<void> clearSecrets() => (super.noSuchMethod(
-      Invocation.method(#clearSecrets, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #clearSecrets,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> save() => (super.noSuchMethod(
+        Invocation.method(
+          #save,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
 
 /// A class which mocks [NetworkService].
@@ -421,202 +542,283 @@ class MockNetworkService extends _i1.Mock implements _i5.NetworkService {
   }
 
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i2.NetworkManagerDevice> get wiredDevices =>
-      (super.noSuchMethod(Invocation.getter(#wiredDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get wiredDevices => (super.noSuchMethod(
+        Invocation.getter(#wiredDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  List<_i2.NetworkManagerDevice> get wirelessDevices =>
-      (super.noSuchMethod(Invocation.getter(#wirelessDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get wirelessDevices => (super.noSuchMethod(
+        Invocation.getter(#wirelessDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  _i3.Stream<_i2.NetworkManagerDevice> get deviceAdded =>
-      (super.noSuchMethod(Invocation.getter(#deviceAdded),
-              returnValue: _i3.Stream<_i2.NetworkManagerDevice>.empty())
-          as _i3.Stream<_i2.NetworkManagerDevice>);
+  _i3.Stream<_i2.NetworkManagerDevice> get deviceAdded => (super.noSuchMethod(
+        Invocation.getter(#deviceAdded),
+        returnValue: _i3.Stream<_i2.NetworkManagerDevice>.empty(),
+      ) as _i3.Stream<_i2.NetworkManagerDevice>);
   @override
-  _i3.Stream<_i2.NetworkManagerDevice> get deviceRemoved =>
-      (super.noSuchMethod(Invocation.getter(#deviceRemoved),
-              returnValue: _i3.Stream<_i2.NetworkManagerDevice>.empty())
-          as _i3.Stream<_i2.NetworkManagerDevice>);
+  _i3.Stream<_i2.NetworkManagerDevice> get deviceRemoved => (super.noSuchMethod(
+        Invocation.getter(#deviceRemoved),
+        returnValue: _i3.Stream<_i2.NetworkManagerDevice>.empty(),
+      ) as _i3.Stream<_i2.NetworkManagerDevice>);
   @override
   _i3.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionAdded =>
-      (super.noSuchMethod(Invocation.getter(#activeConnectionAdded),
-              returnValue:
-                  _i3.Stream<_i2.NetworkManagerActiveConnection>.empty())
-          as _i3.Stream<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnectionAdded),
+        returnValue: _i3.Stream<_i2.NetworkManagerActiveConnection>.empty(),
+      ) as _i3.Stream<_i2.NetworkManagerActiveConnection>);
   @override
   _i3.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionRemoved =>
-      (super.noSuchMethod(Invocation.getter(#activeConnectionRemoved),
-              returnValue:
-                  _i3.Stream<_i2.NetworkManagerActiveConnection>.empty())
-          as _i3.Stream<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnectionRemoved),
+        returnValue: _i3.Stream<_i2.NetworkManagerActiveConnection>.empty(),
+      ) as _i3.Stream<_i2.NetworkManagerActiveConnection>);
   @override
-  _i3.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i3.Stream<List<String>>.empty())
-          as _i3.Stream<List<String>>);
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
-  List<_i2.NetworkManagerDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  List<_i2.NetworkManagerDevice> get allDevices =>
-      (super.noSuchMethod(Invocation.getter(#allDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get allDevices => (super.noSuchMethod(
+        Invocation.getter(#allDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  bool get networkingEnabled =>
-      (super.noSuchMethod(Invocation.getter(#networkingEnabled),
-          returnValue: false) as bool);
+  bool get networkingEnabled => (super.noSuchMethod(
+        Invocation.getter(#networkingEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wirelessEnabled => (super
-          .noSuchMethod(Invocation.getter(#wirelessEnabled), returnValue: false)
-      as bool);
+  bool get wirelessEnabled => (super.noSuchMethod(
+        Invocation.getter(#wirelessEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wirelessHardwareEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wirelessHardwareEnabled),
-          returnValue: false) as bool);
+  bool get wirelessHardwareEnabled => (super.noSuchMethod(
+        Invocation.getter(#wirelessHardwareEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wwanEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wwanEnabled), returnValue: false)
-          as bool);
+  bool get wwanEnabled => (super.noSuchMethod(
+        Invocation.getter(#wwanEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wwanHardwareEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wwanHardwareEnabled),
-          returnValue: false) as bool);
+  bool get wwanHardwareEnabled => (super.noSuchMethod(
+        Invocation.getter(#wwanHardwareEnabled),
+        returnValue: false,
+      ) as bool);
   @override
   List<_i2.NetworkManagerActiveConnection> get activeConnections =>
-      (super.noSuchMethod(Invocation.getter(#activeConnections),
-              returnValue: <_i2.NetworkManagerActiveConnection>[])
-          as List<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnections),
+        returnValue: <_i2.NetworkManagerActiveConnection>[],
+      ) as List<_i2.NetworkManagerActiveConnection>);
   @override
-  String get primaryConnectionType =>
-      (super.noSuchMethod(Invocation.getter(#primaryConnectionType),
-          returnValue: '') as String);
+  String get primaryConnectionType => (super.noSuchMethod(
+        Invocation.getter(#primaryConnectionType),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerMetered get metered =>
-      (super.noSuchMethod(Invocation.getter(#metered),
-              returnValue: _i2.NetworkManagerMetered.unknown)
-          as _i2.NetworkManagerMetered);
+  _i2.NetworkManagerMetered get metered => (super.noSuchMethod(
+        Invocation.getter(#metered),
+        returnValue: _i2.NetworkManagerMetered.unknown,
+      ) as _i2.NetworkManagerMetered);
   @override
-  bool get startup =>
-      (super.noSuchMethod(Invocation.getter(#startup), returnValue: false)
-          as bool);
+  bool get startup => (super.noSuchMethod(
+        Invocation.getter(#startup),
+        returnValue: false,
+      ) as bool);
   @override
-  String get version =>
-      (super.noSuchMethod(Invocation.getter(#version), returnValue: '')
-          as String);
+  String get version => (super.noSuchMethod(
+        Invocation.getter(#version),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerConnectivityState get connectivity =>
-      (super.noSuchMethod(Invocation.getter(#connectivity),
-              returnValue: _i2.NetworkManagerConnectivityState.unknown)
-          as _i2.NetworkManagerConnectivityState);
+  _i2.NetworkManagerConnectivityState get connectivity => (super.noSuchMethod(
+        Invocation.getter(#connectivity),
+        returnValue: _i2.NetworkManagerConnectivityState.unknown,
+      ) as _i2.NetworkManagerConnectivityState);
   @override
-  bool get connectivityCheckAvailable =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckAvailable),
-          returnValue: false) as bool);
+  bool get connectivityCheckAvailable => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckAvailable),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get connectivityCheckEnabled =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckEnabled),
-          returnValue: false) as bool);
+  bool get connectivityCheckEnabled => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  String get connectivityCheckUri =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckUri),
-          returnValue: '') as String);
+  String get connectivityCheckUri => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckUri),
+        returnValue: '',
+      ) as String);
   @override
   _i2.NetworkManagerState get state => (super.noSuchMethod(
-      Invocation.getter(#state),
-      returnValue: _i2.NetworkManagerState.unknown) as _i2.NetworkManagerState);
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerState.unknown,
+      ) as _i2.NetworkManagerState);
   @override
   _i2.NetworkManagerSettings get settings => (super.noSuchMethod(
+        Invocation.getter(#settings),
+        returnValue: _FakeNetworkManagerSettings_1(
+          this,
           Invocation.getter(#settings),
-          returnValue:
-              _FakeNetworkManagerSettings_1(this, Invocation.getter(#settings)))
-      as _i2.NetworkManagerSettings);
+        ),
+      ) as _i2.NetworkManagerSettings);
   @override
-  _i2.NetworkManagerDnsManager get dnsManager =>
-      (super.noSuchMethod(Invocation.getter(#dnsManager),
-              returnValue: _FakeNetworkManagerDnsManager_2(
-                  this, Invocation.getter(#dnsManager)))
-          as _i2.NetworkManagerDnsManager);
+  _i2.NetworkManagerDnsManager get dnsManager => (super.noSuchMethod(
+        Invocation.getter(#dnsManager),
+        returnValue: _FakeNetworkManagerDnsManager_2(
+          this,
+          Invocation.getter(#dnsManager),
+        ),
+      ) as _i2.NetworkManagerDnsManager);
   @override
   Map<String, Map<String, _i4.DBusValue>> getWifiSettings({String? ssid}) =>
       (super.noSuchMethod(
-              Invocation.method(#getWifiSettings, [], {#ssid: ssid}),
-              returnValue: <String, Map<String, _i4.DBusValue>>{})
-          as Map<String, Map<String, _i4.DBusValue>>);
+        Invocation.method(
+          #getWifiSettings,
+          [],
+          {#ssid: ssid},
+        ),
+        returnValue: <String, Map<String, _i4.DBusValue>>{},
+      ) as Map<String, Map<String, _i4.DBusValue>>);
   @override
   _i3.Future<void> markConfigured() => (super.noSuchMethod(
-      Invocation.method(#markConfigured, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #markConfigured,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> setWirelessEnabled(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setWirelessEnabled, [value]),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #setWirelessEnabled,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> setWwanEnabled(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setWwanEnabled, [value]),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #setWwanEnabled,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> setConnectivityCheckEnabled(bool? value) =>
       (super.noSuchMethod(
-              Invocation.method(#setConnectivityCheckEnabled, [value]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+        Invocation.method(
+          #setConnectivityCheckEnabled,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<_i2.NetworkManagerActiveConnection> addAndActivateConnection(
-          {Map<String, Map<String, _i4.DBusValue>>? connection = const {},
-          _i2.NetworkManagerDevice? device,
-          _i2.NetworkManagerAccessPoint? accessPoint}) =>
-      (super.noSuchMethod(Invocation.method(#addAndActivateConnection, [], {#connection: connection, #device: device, #accessPoint: accessPoint}),
-          returnValue: _i3.Future<_i2.NetworkManagerActiveConnection>.value(
-              _FakeNetworkManagerActiveConnection_3(
-                  this,
-                  Invocation.method(#addAndActivateConnection, [], {
-                    #connection: connection,
-                    #device: device,
-                    #accessPoint: accessPoint
-                  })))) as _i3.Future<_i2.NetworkManagerActiveConnection>);
+  _i3.Future<_i2.NetworkManagerActiveConnection> addAndActivateConnection({
+    Map<String, Map<String, _i4.DBusValue>>? connection = const {},
+    _i2.NetworkManagerDevice? device,
+    _i2.NetworkManagerAccessPoint? accessPoint,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addAndActivateConnection,
+          [],
+          {
+            #connection: connection,
+            #device: device,
+            #accessPoint: accessPoint,
+          },
+        ),
+        returnValue: _i3.Future<_i2.NetworkManagerActiveConnection>.value(
+            _FakeNetworkManagerActiveConnection_3(
+          this,
+          Invocation.method(
+            #addAndActivateConnection,
+            [],
+            {
+              #connection: connection,
+              #device: device,
+              #accessPoint: accessPoint,
+            },
+          ),
+        )),
+      ) as _i3.Future<_i2.NetworkManagerActiveConnection>);
   @override
-  _i3.Future<_i2.NetworkManagerActiveConnection> activateConnection(
-          {_i2.NetworkManagerDevice? device,
-          _i2.NetworkManagerSettingsConnection? connection,
-          _i2.NetworkManagerAccessPoint? accessPoint}) =>
-      (super.noSuchMethod(Invocation.method(#activateConnection, [], {#device: device, #connection: connection, #accessPoint: accessPoint}),
-          returnValue: _i3.Future<_i2.NetworkManagerActiveConnection>.value(
-              _FakeNetworkManagerActiveConnection_3(
-                  this,
-                  Invocation.method(#activateConnection, [], {
-                    #device: device,
-                    #connection: connection,
-                    #accessPoint: accessPoint
-                  })))) as _i3.Future<_i2.NetworkManagerActiveConnection>);
+  _i3.Future<_i2.NetworkManagerActiveConnection> activateConnection({
+    _i2.NetworkManagerDevice? device,
+    _i2.NetworkManagerSettingsConnection? connection,
+    _i2.NetworkManagerAccessPoint? accessPoint,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #activateConnection,
+          [],
+          {
+            #device: device,
+            #connection: connection,
+            #accessPoint: accessPoint,
+          },
+        ),
+        returnValue: _i3.Future<_i2.NetworkManagerActiveConnection>.value(
+            _FakeNetworkManagerActiveConnection_3(
+          this,
+          Invocation.method(
+            #activateConnection,
+            [],
+            {
+              #device: device,
+              #connection: connection,
+              #accessPoint: accessPoint,
+            },
+          ),
+        )),
+      ) as _i3.Future<_i2.NetworkManagerActiveConnection>);
   @override
   _i3.Future<void> deactivateConnection(
           _i2.NetworkManagerActiveConnection? connection) =>
       (super.noSuchMethod(
-              Invocation.method(#deactivateConnection, [connection]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+        Invocation.method(
+          #deactivateConnection,
+          [connection],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

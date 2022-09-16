@@ -25,8 +25,13 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 class _FakeUdevDeviceInfo_0 extends _i1.SmartFake
     implements _i2.UdevDeviceInfo {
-  _FakeUdevDeviceInfo_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeUdevDeviceInfo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [UdevDeviceInfo].
@@ -38,9 +43,10 @@ class MockUdevDeviceInfo extends _i1.Mock implements _i2.UdevDeviceInfo {
   }
 
   @override
-  String get fullName =>
-      (super.noSuchMethod(Invocation.getter(#fullName), returnValue: '')
-          as String);
+  String get fullName => (super.noSuchMethod(
+        Invocation.getter(#fullName),
+        returnValue: '',
+      ) as String);
 }
 
 /// A class which mocks [UdevService].
@@ -52,17 +58,33 @@ class MockUdevService extends _i1.Mock implements _i2.UdevService {
   }
 
   @override
-  _i2.UdevDeviceInfo bySysname(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
-              returnValue: _FakeUdevDeviceInfo_0(
-                  this, Invocation.method(#bySysname, [sysname])))
-          as _i2.UdevDeviceInfo);
+  _i2.UdevDeviceInfo bySysname(String? sysname) => (super.noSuchMethod(
+        Invocation.method(
+          #bySysname,
+          [sysname],
+        ),
+        returnValue: _FakeUdevDeviceInfo_0(
+          this,
+          Invocation.method(
+            #bySysname,
+            [sysname],
+          ),
+        ),
+      ) as _i2.UdevDeviceInfo);
   @override
-  _i2.UdevDeviceInfo bySyspath(String? syspath) =>
-      (super.noSuchMethod(Invocation.method(#bySyspath, [syspath]),
-              returnValue: _FakeUdevDeviceInfo_0(
-                  this, Invocation.method(#bySyspath, [syspath])))
-          as _i2.UdevDeviceInfo);
+  _i2.UdevDeviceInfo bySyspath(String? syspath) => (super.noSuchMethod(
+        Invocation.method(
+          #bySyspath,
+          [syspath],
+        ),
+        returnValue: _FakeUdevDeviceInfo_0(
+          this,
+          Invocation.method(
+            #bySyspath,
+            [syspath],
+          ),
+        ),
+      ) as _i2.UdevDeviceInfo);
 }
 
 /// A class which mocks [WriteChangesToDiskModel].
@@ -75,49 +97,85 @@ class MockWriteChangesToDiskModel extends _i1.Mock
   }
 
   @override
-  List<_i4.Disk> get disks =>
-      (super.noSuchMethod(Invocation.getter(#disks), returnValue: <_i4.Disk>[])
-          as List<_i4.Disk>);
+  List<_i4.Disk> get disks => (super.noSuchMethod(
+        Invocation.getter(#disks),
+        returnValue: <_i4.Disk>[],
+      ) as List<_i4.Disk>);
   @override
-  Map<String, List<_i4.Partition>> get partitions =>
-      (super.noSuchMethod(Invocation.getter(#partitions),
-              returnValue: <String, List<_i4.Partition>>{})
-          as Map<String, List<_i4.Partition>>);
+  Map<String, List<_i4.Partition>> get partitions => (super.noSuchMethod(
+        Invocation.getter(#partitions),
+        returnValue: <String, List<_i4.Partition>>{},
+      ) as Map<String, List<_i4.Partition>>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  _i4.Partition? getOriginalPartition(String? sysname, int? number) =>
-      (super.noSuchMethod(
-              Invocation.method(#getOriginalPartition, [sysname, number]))
-          as _i4.Partition?);
+  _i4.Partition? getOriginalPartition(
+    String? sysname,
+    int? number,
+  ) =>
+      (super.noSuchMethod(Invocation.method(
+        #getOriginalPartition,
+        [
+          sysname,
+          number,
+        ],
+      )) as _i4.Partition?);
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> startInstallation() => (super.noSuchMethod(
-      Invocation.method(#startInstallation, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #startInstallation,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

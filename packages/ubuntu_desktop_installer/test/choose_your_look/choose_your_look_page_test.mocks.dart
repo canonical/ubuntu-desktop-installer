@@ -20,8 +20,13 @@ import 'package:ubuntu_desktop_installer/settings.dart' as _i3;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeLocale_0 extends _i1.SmartFake implements _i2.Locale {
-  _FakeLocale_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeLocale_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [Settings].
@@ -33,38 +38,69 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
   }
 
   @override
-  _i2.Locale get locale => (super.noSuchMethod(Invocation.getter(#locale),
-          returnValue: _FakeLocale_0(this, Invocation.getter(#locale)))
-      as _i2.Locale);
+  _i2.Locale get locale => (super.noSuchMethod(
+        Invocation.getter(#locale),
+        returnValue: _FakeLocale_0(
+          this,
+          Invocation.getter(#locale),
+        ),
+      ) as _i2.Locale);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void applyTheme(_i2.Brightness? brightness) =>
-      super.noSuchMethod(Invocation.method(#applyTheme, [brightness]),
-          returnValueForMissingStub: null);
+  void applyTheme(_i2.Brightness? brightness) => super.noSuchMethod(
+        Invocation.method(
+          #applyTheme,
+          [brightness],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void applyLocale(_i2.Locale? locale) =>
-      super.noSuchMethod(Invocation.method(#applyLocale, [locale]),
-          returnValueForMissingStub: null);
+  void applyLocale(_i2.Locale? locale) => super.noSuchMethod(
+        Invocation.method(
+          #applyLocale,
+          [locale],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

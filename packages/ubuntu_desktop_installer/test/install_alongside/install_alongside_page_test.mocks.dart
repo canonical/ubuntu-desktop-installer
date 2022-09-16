@@ -24,8 +24,13 @@ import 'package:ubuntu_wizard/utils.dart' as _i2;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeProductInfo_0 extends _i1.SmartFake implements _i2.ProductInfo {
-  _FakeProductInfo_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeProductInfo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InstallAlongsideModel].
@@ -38,94 +43,154 @@ class MockInstallAlongsideModel extends _i1.Mock
   }
 
   @override
-  _i2.ProductInfo get productInfo =>
-      (super.noSuchMethod(Invocation.getter(#productInfo),
-              returnValue:
-                  _FakeProductInfo_0(this, Invocation.getter(#productInfo)))
-          as _i2.ProductInfo);
+  _i2.ProductInfo get productInfo => (super.noSuchMethod(
+        Invocation.getter(#productInfo),
+        returnValue: _FakeProductInfo_0(
+          this,
+          Invocation.getter(#productInfo),
+        ),
+      ) as _i2.ProductInfo);
   @override
-  List<_i4.OsProber> get existingOS =>
-      (super.noSuchMethod(Invocation.getter(#existingOS),
-          returnValue: <_i4.OsProber>[]) as List<_i4.OsProber>);
+  List<_i4.OsProber> get existingOS => (super.noSuchMethod(
+        Invocation.getter(#existingOS),
+        returnValue: <_i4.OsProber>[],
+      ) as List<_i4.OsProber>);
   @override
-  int get storageCount =>
-      (super.noSuchMethod(Invocation.getter(#storageCount), returnValue: 0)
-          as int);
+  int get storageCount => (super.noSuchMethod(
+        Invocation.getter(#storageCount),
+        returnValue: 0,
+      ) as int);
   @override
-  int get currentSize =>
-      (super.noSuchMethod(Invocation.getter(#currentSize), returnValue: 0)
-          as int);
+  int get currentSize => (super.noSuchMethod(
+        Invocation.getter(#currentSize),
+        returnValue: 0,
+      ) as int);
   @override
-  int get minimumSize =>
-      (super.noSuchMethod(Invocation.getter(#minimumSize), returnValue: 0)
-          as int);
+  int get minimumSize => (super.noSuchMethod(
+        Invocation.getter(#minimumSize),
+        returnValue: 0,
+      ) as int);
   @override
-  int get maximumSize =>
-      (super.noSuchMethod(Invocation.getter(#maximumSize), returnValue: 0)
-          as int);
+  int get maximumSize => (super.noSuchMethod(
+        Invocation.getter(#maximumSize),
+        returnValue: 0,
+      ) as int);
   @override
-  int get totalSize =>
-      (super.noSuchMethod(Invocation.getter(#totalSize), returnValue: 0)
-          as int);
+  int get totalSize => (super.noSuchMethod(
+        Invocation.getter(#totalSize),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   _i4.GuidedStorageTargetResize? getStorage(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getStorage, [index]))
-          as _i4.GuidedStorageTargetResize?);
+      (super.noSuchMethod(Invocation.method(
+        #getStorage,
+        [index],
+      )) as _i4.GuidedStorageTargetResize?);
   @override
-  _i4.Disk? getDisk(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getDisk, [index])) as _i4.Disk?);
+  _i4.Disk? getDisk(int? index) => (super.noSuchMethod(Invocation.method(
+        #getDisk,
+        [index],
+      )) as _i4.Disk?);
   @override
-  _i4.OsProber? getOS(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getOS, [index])) as _i4.OsProber?);
+  _i4.OsProber? getOS(int? index) => (super.noSuchMethod(Invocation.method(
+        #getOS,
+        [index],
+      )) as _i4.OsProber?);
   @override
   _i4.Partition? getPartition(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getPartition, [index]))
-          as _i4.Partition?);
+      (super.noSuchMethod(Invocation.method(
+        #getPartition,
+        [index],
+      )) as _i4.Partition?);
   @override
   List<_i4.Partition>? getAllPartitions(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getAllPartitions, [index]))
-          as List<_i4.Partition>?);
+      (super.noSuchMethod(Invocation.method(
+        #getAllPartitions,
+        [index],
+      )) as List<_i4.Partition>?);
   @override
-  void selectStorage(int? index) =>
-      super.noSuchMethod(Invocation.method(#selectStorage, [index]),
-          returnValueForMissingStub: null);
+  void selectStorage(int? index) => super.noSuchMethod(
+        Invocation.method(
+          #selectStorage,
+          [index],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void resizeStorage(int? size) =>
-      super.noSuchMethod(Invocation.method(#resizeStorage, [size]),
-          returnValueForMissingStub: null);
+  void resizeStorage(int? size) => super.noSuchMethod(
+        Invocation.method(
+          #resizeStorage,
+          [size],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i5.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> save() => (super.noSuchMethod(
+        Invocation.method(
+          #save,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i5.Future<void> reset() => (super.noSuchMethod(Invocation.method(#reset, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> reset() => (super.noSuchMethod(
+        Invocation.method(
+          #reset,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

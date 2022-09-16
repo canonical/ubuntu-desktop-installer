@@ -22,8 +22,13 @@ import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dar
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeLocale_0 extends _i1.SmartFake implements _i2.Locale {
-  _FakeLocale_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeLocale_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [SelectLanguageModel].
@@ -36,91 +41,170 @@ class MockSelectLanguageModel extends _i1.Mock
   }
 
   @override
-  bool get installLanguagePacks =>
-      (super.noSuchMethod(Invocation.getter(#installLanguagePacks),
-          returnValue: false) as bool);
+  bool get installLanguagePacks => (super.noSuchMethod(
+        Invocation.getter(#installLanguagePacks),
+        returnValue: false,
+      ) as bool);
   @override
-  int get selectedLanguageIndex =>
-      (super.noSuchMethod(Invocation.getter(#selectedLanguageIndex),
-          returnValue: 0) as int);
+  int get selectedLanguageIndex => (super.noSuchMethod(
+        Invocation.getter(#selectedLanguageIndex),
+        returnValue: 0,
+      ) as int);
   @override
-  set selectedLanguageIndex(int? index) =>
-      super.noSuchMethod(Invocation.setter(#selectedLanguageIndex, index),
-          returnValueForMissingStub: null);
+  set selectedLanguageIndex(int? index) => super.noSuchMethod(
+        Invocation.setter(
+          #selectedLanguageIndex,
+          index,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  int get languageCount =>
-      (super.noSuchMethod(Invocation.getter(#languageCount), returnValue: 0)
-          as int);
+  int get languageCount => (super.noSuchMethod(
+        Invocation.getter(#languageCount),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void setInstallLanguagePacks(bool? value) =>
-      super.noSuchMethod(Invocation.method(#setInstallLanguagePacks, [value]),
-          returnValueForMissingStub: null);
+  void setInstallLanguagePacks(bool? value) => super.noSuchMethod(
+        Invocation.method(
+          #setInstallLanguagePacks,
+          [value],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i4.Future<void> getInstallLanguagePacks() => (super.noSuchMethod(
-      Invocation.method(#getInstallLanguagePacks, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #getInstallLanguagePacks,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> applyInstallLanguagePacks() => (super.noSuchMethod(
-      Invocation.method(#applyInstallLanguagePacks, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #applyInstallLanguagePacks,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> loadLanguages() => (super.noSuchMethod(
-      Invocation.method(#loadLanguages, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #loadLanguages,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i2.Locale locale(int? index) => (super.noSuchMethod(
-          Invocation.method(#locale, [index]),
-          returnValue: _FakeLocale_0(this, Invocation.method(#locale, [index])))
-      as _i2.Locale);
+        Invocation.method(
+          #locale,
+          [index],
+        ),
+        returnValue: _FakeLocale_0(
+          this,
+          Invocation.method(
+            #locale,
+            [index],
+          ),
+        ),
+      ) as _i2.Locale);
   @override
-  _i2.Locale uiLocale(int? index) =>
-      (super.noSuchMethod(Invocation.method(#uiLocale, [index]),
-              returnValue:
-                  _FakeLocale_0(this, Invocation.method(#uiLocale, [index])))
-          as _i2.Locale);
+  _i2.Locale uiLocale(int? index) => (super.noSuchMethod(
+        Invocation.method(
+          #uiLocale,
+          [index],
+        ),
+        returnValue: _FakeLocale_0(
+          this,
+          Invocation.method(
+            #uiLocale,
+            [index],
+          ),
+        ),
+      ) as _i2.Locale);
   @override
   _i4.Future<void> applyLocale(_i2.Locale? locale) => (super.noSuchMethod(
-      Invocation.method(#applyLocale, [locale]),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #applyLocale,
+          [locale],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  String language(int? index) => (super
-          .noSuchMethod(Invocation.method(#language, [index]), returnValue: '')
-      as String);
+  String language(int? index) => (super.noSuchMethod(
+        Invocation.method(
+          #language,
+          [index],
+        ),
+        returnValue: '',
+      ) as String);
   @override
-  void selectLocale(_i2.Locale? locale) =>
-      super.noSuchMethod(Invocation.method(#selectLocale, [locale]),
-          returnValueForMissingStub: null);
+  void selectLocale(_i2.Locale? locale) => super.noSuchMethod(
+        Invocation.method(
+          #selectLocale,
+          [locale],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i4.Future<_i2.Locale> getServerLocale() =>
-      (super.noSuchMethod(Invocation.method(#getServerLocale, []),
-              returnValue: _i4.Future<_i2.Locale>.value(
-                  _FakeLocale_0(this, Invocation.method(#getServerLocale, []))))
-          as _i4.Future<_i2.Locale>);
+  _i4.Future<_i2.Locale> getServerLocale() => (super.noSuchMethod(
+        Invocation.method(
+          #getServerLocale,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.Locale>.value(_FakeLocale_0(
+          this,
+          Invocation.method(
+            #getServerLocale,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Locale>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i2.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

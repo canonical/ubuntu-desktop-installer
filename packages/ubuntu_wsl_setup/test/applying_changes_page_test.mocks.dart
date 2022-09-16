@@ -24,8 +24,13 @@ import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.d
 
 class _FakeSubiquityClient_0 extends _i1.SmartFake
     implements _i2.SubiquityClient {
-  _FakeSubiquityClient_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeSubiquityClient_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [ApplyingChangesModel].
@@ -39,46 +44,83 @@ class MockApplyingChangesModel extends _i1.Mock
 
   @override
   _i2.SubiquityClient get client => (super.noSuchMethod(
+        Invocation.getter(#client),
+        returnValue: _FakeSubiquityClient_0(
+          this,
           Invocation.getter(#client),
-          returnValue: _FakeSubiquityClient_0(this, Invocation.getter(#client)))
-      as _i2.SubiquityClient);
+        ),
+      ) as _i2.SubiquityClient);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   void init({_i4.VoidCallback? onDoneTransition}) => super.noSuchMethod(
-      Invocation.method(#init, [], {#onDoneTransition: onDoneTransition}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #init,
+          [],
+          {#onDoneTransition: onDoneTransition},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> reboot({bool? immediate}) => (super.noSuchMethod(
-      Invocation.method(#reboot, [], {#immediate: immediate}),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #reboot,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
-      Invocation.method(#shutdown, [], {#immediate: immediate}),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #shutdown,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }
 
 /// A class which mocks [SubiquityStatusMonitor].
@@ -91,16 +133,25 @@ class MockSubiquityStatusMonitor extends _i1.Mock
   }
 
   @override
-  _i5.Stream<_i2.ApplicationStatus?> get onStatusChanged =>
-      (super.noSuchMethod(Invocation.getter(#onStatusChanged),
-              returnValue: _i5.Stream<_i2.ApplicationStatus?>.empty())
-          as _i5.Stream<_i2.ApplicationStatus?>);
+  _i5.Stream<_i2.ApplicationStatus?> get onStatusChanged => (super.noSuchMethod(
+        Invocation.getter(#onStatusChanged),
+        returnValue: _i5.Stream<_i2.ApplicationStatus?>.empty(),
+      ) as _i5.Stream<_i2.ApplicationStatus?>);
   @override
-  _i5.Future<bool> start(_i2.Endpoint? endpoint) =>
-      (super.noSuchMethod(Invocation.method(#start, [endpoint]),
-          returnValue: _i5.Future<bool>.value(false)) as _i5.Future<bool>);
+  _i5.Future<bool> start(_i2.Endpoint? endpoint) => (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [endpoint],
+        ),
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
-  _i5.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> stop() => (super.noSuchMethod(
+        Invocation.method(
+          #stop,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }

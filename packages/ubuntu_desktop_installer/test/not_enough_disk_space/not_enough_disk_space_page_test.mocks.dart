@@ -30,41 +30,68 @@ class MockNotEnoughDiskSpaceModel extends _i1.Mock
   }
 
   @override
-  int get largestDiskSize =>
-      (super.noSuchMethod(Invocation.getter(#largestDiskSize), returnValue: 0)
-          as int);
+  int get largestDiskSize => (super.noSuchMethod(
+        Invocation.getter(#largestDiskSize),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get hasMultipleDisks =>
-      (super.noSuchMethod(Invocation.getter(#hasMultipleDisks),
-          returnValue: false) as bool);
+  bool get hasMultipleDisks => (super.noSuchMethod(
+        Invocation.getter(#hasMultipleDisks),
+        returnValue: false,
+      ) as bool);
   @override
-  int get installMinimumSize => (super
-          .noSuchMethod(Invocation.getter(#installMinimumSize), returnValue: 0)
-      as int);
+  int get installMinimumSize => (super.noSuchMethod(
+        Invocation.getter(#installMinimumSize),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void quit() => super.noSuchMethod(Invocation.method(#quit, []),
-      returnValueForMissingStub: null);
+  void quit() => super.noSuchMethod(
+        Invocation.method(
+          #quit,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i3.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i3.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i3.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i3.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

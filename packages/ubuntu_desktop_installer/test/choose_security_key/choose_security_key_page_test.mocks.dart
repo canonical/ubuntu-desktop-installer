@@ -31,56 +31,94 @@ class MockChooseSecurityKeyModel extends _i1.Mock
   }
 
   @override
-  String get securityKey =>
-      (super.noSuchMethod(Invocation.getter(#securityKey), returnValue: '')
-          as String);
+  String get securityKey => (super.noSuchMethod(
+        Invocation.getter(#securityKey),
+        returnValue: '',
+      ) as String);
   @override
-  set securityKey(String? value) =>
-      super.noSuchMethod(Invocation.setter(#securityKey, value),
-          returnValueForMissingStub: null);
+  set securityKey(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #securityKey,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get confirmedSecurityKey =>
-      (super.noSuchMethod(Invocation.getter(#confirmedSecurityKey),
-          returnValue: '') as String);
+  String get confirmedSecurityKey => (super.noSuchMethod(
+        Invocation.getter(#confirmedSecurityKey),
+        returnValue: '',
+      ) as String);
   @override
-  set confirmedSecurityKey(String? value) =>
-      super.noSuchMethod(Invocation.setter(#confirmedSecurityKey, value),
-          returnValueForMissingStub: null);
+  set confirmedSecurityKey(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #confirmedSecurityKey,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get isValid =>
-      (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
-          as bool);
+  bool get isValid => (super.noSuchMethod(
+        Invocation.getter(#isValid),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   _i3.Future<void> loadSecurityKey() => (super.noSuchMethod(
-      Invocation.method(#loadSecurityKey, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #loadSecurityKey,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> saveSecurityKey() => (super.noSuchMethod(
-      Invocation.method(#saveSecurityKey, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #saveSecurityKey,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

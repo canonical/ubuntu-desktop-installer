@@ -31,29 +31,56 @@ class MockTelemetryService extends _i1.Mock implements _i2.TelemetryService {
   }
 
   @override
-  void addStage(String? name) =>
-      super.noSuchMethod(Invocation.method(#addStage, [name]),
-          returnValueForMissingStub: null);
+  void addStage(String? name) => super.noSuchMethod(
+        Invocation.method(
+          #addStage,
+          [name],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void setLanguage(String? language) =>
-      super.noSuchMethod(Invocation.method(#setLanguage, [language]),
-          returnValueForMissingStub: null);
+  void setLanguage(String? language) => super.noSuchMethod(
+        Invocation.method(
+          #setLanguage,
+          [language],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setMinimal({bool? enabled}) => super.noSuchMethod(
-      Invocation.method(#setMinimal, [], {#enabled: enabled}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #setMinimal,
+          [],
+          {#enabled: enabled},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setRestrictedAddons({bool? enabled}) => super.noSuchMethod(
-      Invocation.method(#setRestrictedAddons, [], {#enabled: enabled}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #setRestrictedAddons,
+          [],
+          {#enabled: enabled},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void setPartitionMethod(String? method) =>
-      super.noSuchMethod(Invocation.method(#setPartitionMethod, [method]),
-          returnValueForMissingStub: null);
+  void setPartitionMethod(String? method) => super.noSuchMethod(
+        Invocation.method(
+          #setPartitionMethod,
+          [method],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i3.Future<void> done({_i4.FileSystem? fs = const _i5.LocalFileSystem()}) =>
-      (super.noSuchMethod(Invocation.method(#done, [], {#fs: fs}),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #done,
+          [],
+          {#fs: fs},
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
