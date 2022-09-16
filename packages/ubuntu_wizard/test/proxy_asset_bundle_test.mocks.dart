@@ -3,13 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 import 'dart:typed_data' as _i2;
+import 'dart:ui' as _i3;
 
-import 'package:flutter/src/services/asset_bundle.dart' as _i3;
+import 'package:flutter/src/services/asset_bundle.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
-import 'proxy_asset_bundle_test.dart' as _i5;
+import 'proxy_asset_bundle_test.dart' as _i6;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,38 +24,109 @@ import 'proxy_asset_bundle_test.dart' as _i5;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeByteData_0 extends _i1.SmartFake implements _i2.ByteData {
-  _FakeByteData_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeByteData_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeImmutableBuffer_1 extends _i1.SmartFake
+    implements _i3.ImmutableBuffer {
+  _FakeImmutableBuffer_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [AssetBundle].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAssetBundle extends _i1.Mock implements _i3.AssetBundle {
+class MockAssetBundle extends _i1.Mock implements _i4.AssetBundle {
   MockAssetBundle() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.ByteData> load(String? key) =>
-      (super.noSuchMethod(Invocation.method(#load, [key]),
-              returnValue: _i4.Future<_i2.ByteData>.value(
-                  _FakeByteData_0(this, Invocation.method(#load, [key]))))
-          as _i4.Future<_i2.ByteData>);
+  _i5.Future<_i2.ByteData> load(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #load,
+          [key],
+        ),
+        returnValue: _i5.Future<_i2.ByteData>.value(_FakeByteData_0(
+          this,
+          Invocation.method(
+            #load,
+            [key],
+          ),
+        )),
+      ) as _i5.Future<_i2.ByteData>);
   @override
-  _i4.Future<String> loadString(String? key, {bool? cache = true}) => (super
-      .noSuchMethod(Invocation.method(#loadString, [key], {#cache: cache}),
-          returnValue: _i4.Future<String>.value('')) as _i4.Future<String>);
+  _i5.Future<_i3.ImmutableBuffer> loadBuffer(String? key) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #loadBuffer,
+          [key],
+        ),
+        returnValue:
+            _i5.Future<_i3.ImmutableBuffer>.value(_FakeImmutableBuffer_1(
+          this,
+          Invocation.method(
+            #loadBuffer,
+            [key],
+          ),
+        )),
+      ) as _i5.Future<_i3.ImmutableBuffer>);
   @override
-  _i4.Future<T> loadStructuredData<T>(
-          String? key, _i4.Future<T> Function(String)? parser) =>
-      (super.noSuchMethod(Invocation.method(#loadStructuredData, [key, parser]),
-          returnValue: _i5.loadMockData<T>(key, parser)) as _i4.Future<T>);
+  _i5.Future<String> loadString(
+    String? key, {
+    bool? cache = true,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #loadString,
+          [key],
+          {#cache: cache},
+        ),
+        returnValue: _i5.Future<String>.value(''),
+      ) as _i5.Future<String>);
   @override
-  void evict(String? key) =>
-      super.noSuchMethod(Invocation.method(#evict, [key]),
-          returnValueForMissingStub: null);
+  _i5.Future<T> loadStructuredData<T>(
+    String? key,
+    _i5.Future<T> Function(String)? parser,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #loadStructuredData,
+          [
+            key,
+            parser,
+          ],
+        ),
+        returnValue: _i6.loadMockData<T>(
+          key,
+          parser,
+        ),
+      ) as _i5.Future<T>);
   @override
-  void clear() => super.noSuchMethod(Invocation.method(#clear, []),
-      returnValueForMissingStub: null);
+  void evict(String? key) => super.noSuchMethod(
+        Invocation.method(
+          #evict,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void clear() => super.noSuchMethod(
+        Invocation.method(
+          #clear,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

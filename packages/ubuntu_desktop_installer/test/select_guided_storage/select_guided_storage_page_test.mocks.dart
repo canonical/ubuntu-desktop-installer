@@ -32,61 +32,101 @@ class MockSelectGuidedStorageModel extends _i1.Mock
   }
 
   @override
-  List<_i3.GuidedStorageTarget> get storages =>
-      (super.noSuchMethod(Invocation.getter(#storages),
-              returnValue: <_i3.GuidedStorageTarget>[])
-          as List<_i3.GuidedStorageTarget>);
+  List<_i3.GuidedStorageTarget> get storages => (super.noSuchMethod(
+        Invocation.getter(#storages),
+        returnValue: <_i3.GuidedStorageTarget>[],
+      ) as List<_i3.GuidedStorageTarget>);
   @override
-  int get selectedIndex =>
-      (super.noSuchMethod(Invocation.getter(#selectedIndex), returnValue: 0)
-          as int);
+  int get selectedIndex => (super.noSuchMethod(
+        Invocation.getter(#selectedIndex),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   _i3.GuidedStorageTargetReformat? getStorage(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getStorage, [index]))
-          as _i3.GuidedStorageTargetReformat?);
+      (super.noSuchMethod(Invocation.method(
+        #getStorage,
+        [index],
+      )) as _i3.GuidedStorageTargetReformat?);
   @override
-  _i3.Disk? getDisk(int? index) =>
-      (super.noSuchMethod(Invocation.method(#getDisk, [index])) as _i3.Disk?);
+  _i3.Disk? getDisk(int? index) => (super.noSuchMethod(Invocation.method(
+        #getDisk,
+        [index],
+      )) as _i3.Disk?);
   @override
-  void selectStorage(int? index) =>
-      super.noSuchMethod(Invocation.method(#selectStorage, [index]),
-          returnValueForMissingStub: null);
+  void selectStorage(int? index) => super.noSuchMethod(
+        Invocation.method(
+          #selectStorage,
+          [index],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i4.Future<void> loadGuidedStorage() => (super.noSuchMethod(
-      Invocation.method(#loadGuidedStorage, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #loadGuidedStorage,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> saveGuidedStorage() => (super.noSuchMethod(
-      Invocation.method(#saveGuidedStorage, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #saveGuidedStorage,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> resetGuidedStorage() => (super.noSuchMethod(
-      Invocation.method(#resetGuidedStorage, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #resetGuidedStorage,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i5.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

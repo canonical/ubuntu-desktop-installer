@@ -31,72 +31,120 @@ class MockConfigurationUIModel extends _i1.Mock
   }
 
   @override
-  bool get interopAppendwindowspath =>
-      (super.noSuchMethod(Invocation.getter(#interopAppendwindowspath),
-          returnValue: false) as bool);
+  bool get interopAppendwindowspath => (super.noSuchMethod(
+        Invocation.getter(#interopAppendwindowspath),
+        returnValue: false,
+      ) as bool);
   @override
-  set interopAppendwindowspath(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#interopAppendwindowspath, value),
-          returnValueForMissingStub: null);
+  set interopAppendwindowspath(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #interopAppendwindowspath,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get interopEnabled => (super
-          .noSuchMethod(Invocation.getter(#interopEnabled), returnValue: false)
-      as bool);
+  bool get interopEnabled => (super.noSuchMethod(
+        Invocation.getter(#interopEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  set interopEnabled(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#interopEnabled, value),
-          returnValueForMissingStub: null);
+  set interopEnabled(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #interopEnabled,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get automountEnabled =>
-      (super.noSuchMethod(Invocation.getter(#automountEnabled),
-          returnValue: false) as bool);
+  bool get automountEnabled => (super.noSuchMethod(
+        Invocation.getter(#automountEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  set automountEnabled(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#automountEnabled, value),
-          returnValueForMissingStub: null);
+  set automountEnabled(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #automountEnabled,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get automountMountfstab =>
-      (super.noSuchMethod(Invocation.getter(#automountMountfstab),
-          returnValue: false) as bool);
+  bool get automountMountfstab => (super.noSuchMethod(
+        Invocation.getter(#automountMountfstab),
+        returnValue: false,
+      ) as bool);
   @override
-  set automountMountfstab(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#automountMountfstab, value),
-          returnValueForMissingStub: null);
+  set automountMountfstab(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #automountMountfstab,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get isValid =>
-      (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
-          as bool);
+  bool get isValid => (super.noSuchMethod(
+        Invocation.getter(#isValid),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   _i3.Future<void> loadConfiguration() => (super.noSuchMethod(
-      Invocation.method(#loadConfiguration, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #loadConfiguration,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> saveConfiguration() => (super.noSuchMethod(
-      Invocation.method(#saveConfiguration, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #saveConfiguration,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

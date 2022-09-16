@@ -32,113 +32,184 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
   }
 
   @override
-  String get realName =>
-      (super.noSuchMethod(Invocation.getter(#realName), returnValue: '')
-          as String);
+  String get realName => (super.noSuchMethod(
+        Invocation.getter(#realName),
+        returnValue: '',
+      ) as String);
   @override
-  set realName(String? value) =>
-      super.noSuchMethod(Invocation.setter(#realName, value),
-          returnValueForMissingStub: null);
+  set realName(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #realName,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get hostname =>
-      (super.noSuchMethod(Invocation.getter(#hostname), returnValue: '')
-          as String);
+  String get hostname => (super.noSuchMethod(
+        Invocation.getter(#hostname),
+        returnValue: '',
+      ) as String);
   @override
-  set hostname(String? value) =>
-      super.noSuchMethod(Invocation.setter(#hostname, value),
-          returnValueForMissingStub: null);
+  set hostname(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #hostname,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get username =>
-      (super.noSuchMethod(Invocation.getter(#username), returnValue: '')
-          as String);
+  String get username => (super.noSuchMethod(
+        Invocation.getter(#username),
+        returnValue: '',
+      ) as String);
   @override
-  set username(String? value) =>
-      super.noSuchMethod(Invocation.setter(#username, value),
-          returnValueForMissingStub: null);
+  set username(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #username,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get password =>
-      (super.noSuchMethod(Invocation.getter(#password), returnValue: '')
-          as String);
+  String get password => (super.noSuchMethod(
+        Invocation.getter(#password),
+        returnValue: '',
+      ) as String);
   @override
-  set password(String? value) =>
-      super.noSuchMethod(Invocation.setter(#password, value),
-          returnValueForMissingStub: null);
+  set password(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #password,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get confirmedPassword => (super
-          .noSuchMethod(Invocation.getter(#confirmedPassword), returnValue: '')
-      as String);
+  String get confirmedPassword => (super.noSuchMethod(
+        Invocation.getter(#confirmedPassword),
+        returnValue: '',
+      ) as String);
   @override
-  set confirmedPassword(String? value) =>
-      super.noSuchMethod(Invocation.setter(#confirmedPassword, value),
-          returnValueForMissingStub: null);
+  set confirmedPassword(String? value) => super.noSuchMethod(
+        Invocation.setter(
+          #confirmedPassword,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i3.PasswordStrength get passwordStrength =>
-      (super.noSuchMethod(Invocation.getter(#passwordStrength),
-          returnValue: _i3.PasswordStrength.weak) as _i3.PasswordStrength);
+  _i3.PasswordStrength get passwordStrength => (super.noSuchMethod(
+        Invocation.getter(#passwordStrength),
+        returnValue: _i3.PasswordStrength.weak,
+      ) as _i3.PasswordStrength);
   @override
-  _i2.LoginStrategy get loginStrategy =>
-      (super.noSuchMethod(Invocation.getter(#loginStrategy),
-          returnValue: _i2.LoginStrategy.requirePassword) as _i2.LoginStrategy);
+  _i2.LoginStrategy get loginStrategy => (super.noSuchMethod(
+        Invocation.getter(#loginStrategy),
+        returnValue: _i2.LoginStrategy.requirePassword,
+      ) as _i2.LoginStrategy);
   @override
-  set loginStrategy(_i2.LoginStrategy? value) =>
-      super.noSuchMethod(Invocation.setter(#loginStrategy, value),
-          returnValueForMissingStub: null);
+  set loginStrategy(_i2.LoginStrategy? value) => super.noSuchMethod(
+        Invocation.setter(
+          #loginStrategy,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get isValid =>
-      (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
-          as bool);
+  bool get isValid => (super.noSuchMethod(
+        Invocation.getter(#isValid),
+        returnValue: false,
+      ) as bool);
   @override
-  _i4.UsernameValidation get usernameValidation =>
-      (super.noSuchMethod(Invocation.getter(#usernameValidation),
-          returnValue: _i4.UsernameValidation.OK) as _i4.UsernameValidation);
+  _i4.UsernameValidation get usernameValidation => (super.noSuchMethod(
+        Invocation.getter(#usernameValidation),
+        returnValue: _i4.UsernameValidation.OK,
+      ) as _i4.UsernameValidation);
   @override
-  bool get usernameOk =>
-      (super.noSuchMethod(Invocation.getter(#usernameOk), returnValue: false)
-          as bool);
+  bool get usernameOk => (super.noSuchMethod(
+        Invocation.getter(#usernameOk),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get showPassword =>
-      (super.noSuchMethod(Invocation.getter(#showPassword), returnValue: false)
-          as bool);
+  bool get showPassword => (super.noSuchMethod(
+        Invocation.getter(#showPassword),
+        returnValue: false,
+      ) as bool);
   @override
-  set showPassword(bool? value) =>
-      super.noSuchMethod(Invocation.setter(#showPassword, value),
-          returnValueForMissingStub: null);
+  set showPassword(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #showPassword,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   _i5.Future<void> validate() => (super.noSuchMethod(
-      Invocation.method(#validate, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #validate,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> loadIdentity() => (super.noSuchMethod(
-      Invocation.method(#loadIdentity, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #loadIdentity,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> saveIdentity({String? salt}) => (super.noSuchMethod(
-      Invocation.method(#saveIdentity, [], {#salt: salt}),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #saveIdentity,
+          [],
+          {#salt: salt},
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

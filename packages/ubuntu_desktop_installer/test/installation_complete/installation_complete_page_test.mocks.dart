@@ -23,8 +23,13 @@ import 'package:ubuntu_desktop_installer/pages/installation_complete/installatio
 
 class _FakeSubiquityClient_0 extends _i1.SmartFake
     implements _i2.SubiquityClient {
-  _FakeSubiquityClient_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeSubiquityClient_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InstallationCompleteModel].
@@ -38,17 +43,30 @@ class MockInstallationCompleteModel extends _i1.Mock
 
   @override
   _i2.SubiquityClient get client => (super.noSuchMethod(
+        Invocation.getter(#client),
+        returnValue: _FakeSubiquityClient_0(
+          this,
           Invocation.getter(#client),
-          returnValue: _FakeSubiquityClient_0(this, Invocation.getter(#client)))
-      as _i2.SubiquityClient);
+        ),
+      ) as _i2.SubiquityClient);
   @override
   _i4.Future<void> reboot({bool? immediate}) => (super.noSuchMethod(
-      Invocation.method(#reboot, [], {#immediate: immediate}),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #reboot,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
-      Invocation.method(#shutdown, [], {#immediate: immediate}),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #shutdown,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }

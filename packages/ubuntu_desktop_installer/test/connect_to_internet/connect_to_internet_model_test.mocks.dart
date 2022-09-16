@@ -30,80 +30,132 @@ class MockConnectModel extends _i1.Mock implements _i2.ConnectModel {
   }
 
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
+  bool get canConnect => (super.noSuchMethod(
+        Invocation.getter(#canConnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasActiveConnection =>
-      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
-          returnValue: false) as bool);
+  bool get hasActiveConnection => (super.noSuchMethod(
+        Invocation.getter(#hasActiveConnection),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isEnabled =>
-      (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
-          as bool);
+  bool get isEnabled => (super.noSuchMethod(
+        Invocation.getter(#isEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  _i3.Stream<dynamic> get onAvailabilityChanged =>
-      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
-          returnValue: _i3.Stream<dynamic>.empty()) as _i3.Stream<dynamic>);
+  _i3.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+        Invocation.getter(#onAvailabilityChanged),
+        returnValue: _i3.Stream<dynamic>.empty(),
+      ) as _i3.Stream<dynamic>);
   @override
-  _i2.ConnectMode get connectMode =>
-      (super.noSuchMethod(Invocation.getter(#connectMode),
-          returnValue: _i2.ConnectMode.none) as _i2.ConnectMode);
+  _i2.ConnectMode get connectMode => (super.noSuchMethod(
+        Invocation.getter(#connectMode),
+        returnValue: _i2.ConnectMode.none,
+      ) as _i2.ConnectMode);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
-      returnValueForMissingStub: null);
+  void onSelected() => super.noSuchMethod(
+        Invocation.method(
+          #onSelected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onDeselected() =>
-      super.noSuchMethod(Invocation.method(#onDeselected, []),
-          returnValueForMissingStub: null);
+  void onDeselected() => super.noSuchMethod(
+        Invocation.method(
+          #onDeselected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> cleanup() => (super.noSuchMethod(
-      Invocation.method(#cleanup, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> enable() => (super.noSuchMethod(
-      Invocation.method(#enable, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #enable,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

@@ -26,8 +26,13 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i7;
 
 class _FakeSubiquityClient_0 extends _i1.SmartFake
     implements _i2.SubiquityClient {
-  _FakeSubiquityClient_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeSubiquityClient_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InstallationSlidesModel].
@@ -41,75 +46,126 @@ class MockInstallationSlidesModel extends _i1.Mock
 
   @override
   _i2.SubiquityClient get client => (super.noSuchMethod(
+        Invocation.getter(#client),
+        returnValue: _FakeSubiquityClient_0(
+          this,
           Invocation.getter(#client),
-          returnValue: _FakeSubiquityClient_0(this, Invocation.getter(#client)))
-      as _i2.SubiquityClient);
+        ),
+      ) as _i2.SubiquityClient);
   @override
-  bool get isDone =>
-      (super.noSuchMethod(Invocation.getter(#isDone), returnValue: false)
-          as bool);
+  bool get isDone => (super.noSuchMethod(
+        Invocation.getter(#isDone),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasError =>
-      (super.noSuchMethod(Invocation.getter(#hasError), returnValue: false)
-          as bool);
+  bool get hasError => (super.noSuchMethod(
+        Invocation.getter(#hasError),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isInstalling =>
-      (super.noSuchMethod(Invocation.getter(#isInstalling), returnValue: false)
-          as bool);
+  bool get isInstalling => (super.noSuchMethod(
+        Invocation.getter(#isInstalling),
+        returnValue: false,
+      ) as bool);
   @override
-  _i4.Stream<String> get log => (super.noSuchMethod(Invocation.getter(#log),
-      returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
+  _i4.Stream<String> get log => (super.noSuchMethod(
+        Invocation.getter(#log),
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
   @override
-  bool get isLogVisible =>
-      (super.noSuchMethod(Invocation.getter(#isLogVisible), returnValue: false)
-          as bool);
+  bool get isLogVisible => (super.noSuchMethod(
+        Invocation.getter(#isLogVisible),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void toggleLogVisibility() =>
-      super.noSuchMethod(Invocation.method(#toggleLogVisibility, []),
-          returnValueForMissingStub: null);
+  void toggleLogVisibility() => super.noSuchMethod(
+        Invocation.method(
+          #toggleLogVisibility,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
-      (super.noSuchMethod(Invocation.method(#precacheSlideImages, [context]),
-              returnValue: _i4.Future<void>.value(),
-              returnValueForMissingStub: _i4.Future<void>.value())
-          as _i4.Future<void>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #precacheSlideImages,
+          [context],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> reboot({bool? immediate = true}) => (super.noSuchMethod(
-      Invocation.method(#reboot, [], {#immediate: immediate}),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #reboot,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i4.Future<void> shutdown({bool? immediate}) => (super.noSuchMethod(
-      Invocation.method(#shutdown, [], {#immediate: immediate}),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #shutdown,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }
 
 /// A class which mocks [JournalService].
@@ -121,8 +177,16 @@ class MockJournalService extends _i1.Mock implements _i7.JournalService {
   }
 
   @override
-  _i4.Stream<String> start(String? id,
-          {_i7.JournalOutput? output = _i7.JournalOutput.short}) =>
-      (super.noSuchMethod(Invocation.method(#start, [id], {#output: output}),
-          returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
+  _i4.Stream<String> start(
+    String? id, {
+    _i7.JournalOutput? output = _i7.JournalOutput.short,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [id],
+          {#output: output},
+        ),
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
 }

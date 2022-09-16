@@ -24,8 +24,13 @@ import 'package:ubuntu_wizard/utils.dart' as _i2;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeProductInfo_0 extends _i1.SmartFake implements _i2.ProductInfo {
-  _FakeProductInfo_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeProductInfo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InstallationTypeModel].
@@ -38,77 +43,130 @@ class MockInstallationTypeModel extends _i1.Mock
   }
 
   @override
-  _i2.ProductInfo get productInfo =>
-      (super.noSuchMethod(Invocation.getter(#productInfo),
-              returnValue:
-                  _FakeProductInfo_0(this, Invocation.getter(#productInfo)))
-          as _i2.ProductInfo);
+  _i2.ProductInfo get productInfo => (super.noSuchMethod(
+        Invocation.getter(#productInfo),
+        returnValue: _FakeProductInfo_0(
+          this,
+          Invocation.getter(#productInfo),
+        ),
+      ) as _i2.ProductInfo);
   @override
-  _i3.InstallationType get installationType =>
-      (super.noSuchMethod(Invocation.getter(#installationType),
-          returnValue: _i3.InstallationType.erase) as _i3.InstallationType);
+  _i3.InstallationType get installationType => (super.noSuchMethod(
+        Invocation.getter(#installationType),
+        returnValue: _i3.InstallationType.erase,
+      ) as _i3.InstallationType);
   @override
-  set installationType(_i3.InstallationType? type) =>
-      super.noSuchMethod(Invocation.setter(#installationType, type),
-          returnValueForMissingStub: null);
+  set installationType(_i3.InstallationType? type) => super.noSuchMethod(
+        Invocation.setter(
+          #installationType,
+          type,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i3.AdvancedFeature get advancedFeature =>
-      (super.noSuchMethod(Invocation.getter(#advancedFeature),
-          returnValue: _i3.AdvancedFeature.none) as _i3.AdvancedFeature);
+  _i3.AdvancedFeature get advancedFeature => (super.noSuchMethod(
+        Invocation.getter(#advancedFeature),
+        returnValue: _i3.AdvancedFeature.none,
+      ) as _i3.AdvancedFeature);
   @override
-  set advancedFeature(_i3.AdvancedFeature? feature) =>
-      super.noSuchMethod(Invocation.setter(#advancedFeature, feature),
-          returnValueForMissingStub: null);
+  set advancedFeature(_i3.AdvancedFeature? feature) => super.noSuchMethod(
+        Invocation.setter(
+          #advancedFeature,
+          feature,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get encryption =>
-      (super.noSuchMethod(Invocation.getter(#encryption), returnValue: false)
-          as bool);
+  bool get encryption => (super.noSuchMethod(
+        Invocation.getter(#encryption),
+        returnValue: false,
+      ) as bool);
   @override
-  set encryption(bool? encryption) =>
-      super.noSuchMethod(Invocation.setter(#encryption, encryption),
-          returnValueForMissingStub: null);
+  set encryption(bool? encryption) => super.noSuchMethod(
+        Invocation.setter(
+          #encryption,
+          encryption,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool get canInstallAlongside =>
-      (super.noSuchMethod(Invocation.getter(#canInstallAlongside),
-          returnValue: false) as bool);
+  bool get canInstallAlongside => (super.noSuchMethod(
+        Invocation.getter(#canInstallAlongside),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i5.GuidedStorageTarget? preselectTarget(_i3.InstallationType? type) =>
-      (super.noSuchMethod(Invocation.method(#preselectTarget, [type]))
-          as _i5.GuidedStorageTarget?);
+      (super.noSuchMethod(Invocation.method(
+        #preselectTarget,
+        [type],
+      )) as _i5.GuidedStorageTarget?);
   @override
-  _i4.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> save() => (super.noSuchMethod(
+        Invocation.method(
+          #save,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<void> resetStorage() => (super.noSuchMethod(
-      Invocation.method(#resetStorage, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #resetStorage,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

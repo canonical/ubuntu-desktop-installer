@@ -25,8 +25,13 @@ import 'package:ubuntu_wsl_setup/services/journal.dart' as _i6;
 
 class _FakeSubiquityStatusMonitor_0 extends _i1.SmartFake
     implements _i2.SubiquityStatusMonitor {
-  _FakeSubiquityStatusMonitor_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeSubiquityStatusMonitor_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InstallationSlidesModel].
@@ -40,65 +45,101 @@ class MockInstallationSlidesModel extends _i1.Mock
 
   @override
   _i2.SubiquityStatusMonitor get monitor => (super.noSuchMethod(
+        Invocation.getter(#monitor),
+        returnValue: _FakeSubiquityStatusMonitor_0(
+          this,
           Invocation.getter(#monitor),
-          returnValue:
-              _FakeSubiquityStatusMonitor_0(this, Invocation.getter(#monitor)))
-      as _i2.SubiquityStatusMonitor);
+        ),
+      ) as _i2.SubiquityStatusMonitor);
   @override
   _i3.InstallationState get state => (super.noSuchMethod(
-      Invocation.getter(#state),
-      returnValue: _i3.InstallationState.registering) as _i3.InstallationState);
+        Invocation.getter(#state),
+        returnValue: _i3.InstallationState.registering,
+      ) as _i3.InstallationState);
   @override
-  _i4.Stream<String> get journal =>
-      (super.noSuchMethod(Invocation.getter(#journal),
-          returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
+  _i4.Stream<String> get journal => (super.noSuchMethod(
+        Invocation.getter(#journal),
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
   @override
-  bool get hasError =>
-      (super.noSuchMethod(Invocation.getter(#hasError), returnValue: false)
-          as bool);
+  bool get hasError => (super.noSuchMethod(
+        Invocation.getter(#hasError),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isRegistering =>
-      (super.noSuchMethod(Invocation.getter(#isRegistering), returnValue: false)
-          as bool);
+  bool get isRegistering => (super.noSuchMethod(
+        Invocation.getter(#isRegistering),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isLogVisible =>
-      (super.noSuchMethod(Invocation.getter(#isLogVisible), returnValue: false)
-          as bool);
+  bool get isLogVisible => (super.noSuchMethod(
+        Invocation.getter(#isLogVisible),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isServerUp =>
-      (super.noSuchMethod(Invocation.getter(#isServerUp), returnValue: false)
-          as bool);
+  bool get isServerUp => (super.noSuchMethod(
+        Invocation.getter(#isServerUp),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
   void init({void Function()? onServerUp}) => super.noSuchMethod(
-      Invocation.method(#init, [], {#onServerUp: onServerUp}),
-      returnValueForMissingStub: null);
+        Invocation.method(
+          #init,
+          [],
+          {#onServerUp: onServerUp},
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void toggleLogVisibility() =>
-      super.noSuchMethod(Invocation.method(#toggleLogVisibility, []),
-          returnValueForMissingStub: null);
+  void toggleLogVisibility() => super.noSuchMethod(
+        Invocation.method(
+          #toggleLogVisibility,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i5.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i5.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [JournalService].
@@ -110,11 +151,17 @@ class MockJournalService extends _i1.Mock implements _i6.JournalService {
   }
 
   @override
-  _i4.Stream<String> get stream =>
-      (super.noSuchMethod(Invocation.getter(#stream),
-          returnValue: _i4.Stream<String>.empty()) as _i4.Stream<String>);
+  _i4.Stream<String> get stream => (super.noSuchMethod(
+        Invocation.getter(#stream),
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
   @override
-  _i4.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }
