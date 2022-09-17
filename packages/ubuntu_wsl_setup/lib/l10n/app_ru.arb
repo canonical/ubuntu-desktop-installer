@@ -50,7 +50,7 @@
   "@applyingChanges": {},
   "setupCompleteTitle": "Настройка завершена",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Привет {user},\nВы успешно завершили настройку.",
+  "setupCompleteHeader": "Привет, {user},\nВы завершили настройку.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -87,7 +87,7 @@
   "@profileSetupRealnameRequired": {},
   "profileSetupUsernameHint": "Выберите имя пользователя",
   "@profileSetupUsernameHint": {},
-  "profileSetupUsernameHelper": "Имя пользователя необязательно должно совпадать с именем пользователя Windows.",
+  "profileSetupUsernameHelper": "Имя пользователя не обязательно должно совпадать с именем пользователя Windows.",
   "@profileSetupUsernameHelper": {},
   "profileSetupShowAdvancedOptions": "Показать дополнительные параметры на следующей странице",
   "@profileSetupShowAdvancedOptions": {},
@@ -109,7 +109,7 @@
   "@advancedSetupMountLocationHelper": {},
   "advancedSetupMountLocationInvalid": "Недопустимое местоположение",
   "@advancedSetupMountLocationInvalid": {},
-  "finishButton": "Закончить",
+  "finishButton": "Завершить",
   "@finishButton": {},
   "advancedSetupHostGenerationTitle": "Включить создание хоста",
   "@advancedSetupHostGenerationTitle": {},
@@ -147,7 +147,7 @@
   "@installationSlidesErrorTitle": {},
   "installationSlidesInitializing": "Инициализация...",
   "@installationSlidesInitializing": {},
-  "installationSlidesOk": "OK",
+  "installationSlidesOk": "ОК",
   "@installationSlidesOk": {},
   "installationSlidesFindOutMoreVisit": "Посетите ",
   "@installationSlidesFindOutMoreVisit": {},
@@ -159,14 +159,41 @@
   "@installationSlidesCustomExitContents": {},
   "installationSlidesUbuntuWslEnterprisesText": "Расширение возможностей разработчиков\nв корпоративной экосистеме Windows с\nсертифицированной Ubuntu LTS.",
   "@installationSlidesUbuntuWslEnterprisesText": {},
-  "installationSlidesUbuntuOnWslText": "Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, научных данных, интернета вещей и развлечений!",
+  "installationSlidesUbuntuOnWslText": "Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, наука о данных, интернета вещей и развлечений!",
   "@installationSlidesUbuntuOnWslText": {},
-  "installationSlidesUbuntuWslWebDev": "Ubuntu WSL для\nWeb-разработки",
+  "installationSlidesUbuntuWslWebDev": "Ubuntu WSL для\nВеб-разработки",
   "@installationSlidesUbuntuWslWebDev": {},
-  "installationSlidesUbuntuWslDataScience": "Ubuntu WSL для научных данных",
+  "installationSlidesUbuntuWslDataScience": "Ubuntu WSL для Науки о данных",
   "@installationSlidesUbuntuWslDataScience": {},
   "installationSlidesFindOutMore": "Узнать больше",
   "@installationSlidesFindOutMore": {},
   "installationSlidesUbuntuOnWsl": "Ubuntu на WSL",
-  "@installationSlidesUbuntuOnWsl": {}
+  "@installationSlidesUbuntuOnWsl": {},
+  "installationSlidesLeave": "Покинуть",
+  "@installationSlidesLeave": {},
+  "installationSlidesUbuntuWslWebDevText": "Разрабатывайте в WSL, используя нативные IDE Windows, включая VS Code и IntelliJ, и пользуйтесь полной поддержкой NodeJS и Ruby.",
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "installationSlidesUbuntuWslGuiApps": "Ubuntu WSL для\nГрафических приложений",
+  "@installationSlidesUbuntuWslGuiApps": {},
+  "installationSlidesUbuntuWslGuiAppsText": "Разрабатывайте и просматривайте веб-приложения и графические приложения в Linux с помощью WSLg для кроссплатформенной разработки.",
+  "@installationSlidesUbuntuWslGuiAppsText": {},
+  "installationSlidesUbuntuWslDevOps": "Ubuntu WSL для DevOps",
+  "@installationSlidesUbuntuWslDevOps": {},
+  "installationSlidesUbuntuWslEnterprises": "Ubuntu WSL для Предприятий",
+  "@installationSlidesUbuntuWslEnterprises": {},
+  "installationSlidesUbuntuWslDevOpsText": "Обеспечьте совместимость процессов CI/CD, разрабатывая в Ubuntu WSL локально перед публикацией в рабочей среде Ubuntu.",
+  "@installationSlidesUbuntuWslDevOpsText": {},
+  "installLangPacksTitle": "Установите пакеты для лучшей поддержки {lang} языка",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Не рекомендуется для медленных соединений.",
+  "@installLangPacksSubtitle": {},
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack позволяет увеличить производительность проектов науки о данных и машинному обучению поверх нативных драйверов Windows NVIDIA.",
+  "@installationSlidesUbuntuWslDataScienceText": {}
 }
