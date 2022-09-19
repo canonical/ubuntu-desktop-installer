@@ -27,11 +27,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Instalar paquetes para mejor compatibilidad con el $lang';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'No recomendable para conexiones lentas.';
 
   @override
   String get profileSetupTitle => 'Preparación del perfil';
@@ -176,7 +176,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hola, $user:\nHa finalizado con éxito la configuración.';
+    return 'Hola, $user:\nHa finalizado la configuración.';
   }
 
   @override
@@ -198,40 +198,40 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesInstalling => 'Casi listo. El instalador requerirá su atención pronto.';
 
   @override
-  String get installationSlidesLaunching => 'Lanzar la distro...';
+  String get installationSlidesLaunching => 'Iniciando la distribución…';
 
   @override
-  String get installationSlidesErrorMsg => 'Algo ha salido mal.';
+  String get installationSlidesErrorMsg => 'Se ha producido un problema.';
 
   @override
   String get installationSlidesErrorTitle => 'Algo salió mal';
 
   @override
-  String get installationSlidesErrorSub => 'Por favor, reinicie WSL con el siguiente comando y vuelva a intentarlo:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
+  String get installationSlidesErrorSub => 'Reinicie WSL con la orden siguiente y vuelva a intentarlo:\n\twsl --shutdown\n\twsl --unregister NOMBRE_DISTRO';
 
   @override
-  String get installationSlidesErrorText => '\nSe ha producido un error irrecuperable.\n\nPor favor, cierre esta aplicación, abra Powershell o el símbolo del sistema y emita los siguientes comandos:\n';
+  String get installationSlidesErrorText => '\nSe ha producido un error irrecuperable.\n\nCierre esta aplicación, abra PowerShell o el símbolo del sistema y ejecute las órdenes siguientes:\n';
 
   @override
-  String get installationSlidesDone => 'Todo listo. Disfruta usando Ubuntu en WSL';
+  String get installationSlidesDone => 'Todo listo. Disfrute usando Ubuntu en WSL';
 
   @override
-  String get installationSlidesExitTitle => '¿Seguro que quieres marcharte?';
+  String get installationSlidesExitTitle => '¿Confirma que quiere abandonar?';
 
   @override
-  String get installationSlidesExitContents => 'Cerrar esta ventana no impedirá que la instalación continúe en segundo plano.\n\nAdemás, puedes seguir explorando lo que puedes hacer con Ubuntu en WSL.';
+  String get installationSlidesExitContents => 'Cerrar esta ventana no impedirá que la instalación continúe en segundo plano.\n\nAdemás, puede seguir explorando lo que puede hacer con Ubuntu en WSL.';
 
   @override
   String get installationSlidesCustomExitTitle => 'Ya casi hemos terminado';
 
   @override
-  String get installationSlidesCustomExitContents => 'Sólo hay que completar algunos pasos en la ventana principal del instalador.\n¿Podemos salir de ésta e ir allí?';
+  String get installationSlidesCustomExitContents => 'Solo hay que completar algunos pasos en la ventana principal del instalador.\n¿Quiere salir de esta e ir allí?';
 
   @override
-  String get installationSlidesOk => 'De acuerdo';
+  String get installationSlidesOk => 'Aceptar';
 
   @override
-  String get installationSlidesLeave => 'Dejar';
+  String get installationSlidesLeave => 'Abandonar';
 
   @override
   String get installationSlidesCancel => 'Cancelar';
@@ -240,7 +240,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesUbuntuOnWsl => 'Ubuntu en WSL';
 
   @override
-  String get installationSlidesUbuntuOnWslText => '¡Un entorno completo de Ubuntu, profundamente integrado con Windows, para el desarrollo y ejecución de aplicaciones Linux. Optimizado para la nube, la web, la ciencia de los datos, el IOT y la diversión!';
+  String get installationSlidesUbuntuOnWslText => 'Un entorno completo de Ubuntu, profundamente integrado con Windows, para el desarrollo y ejecución de aplicaciones Linux. Optimizado para la nube, la web, la ciencia de los datos, el IoT y la diversión.';
 
   @override
   String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL para\nDesarrollo web';
@@ -255,16 +255,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack permite maximizar el rendimiento de los proyectos de ciencia de datos y aprendizaje automático sobre los controladores NVIDIA nativos de Windows.';
 
   @override
-  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL para\nAplicaciones gráficas';
+  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu en WSL para\naplicaciones gráficas';
 
   @override
   String get installationSlidesUbuntuWslGuiAppsText => 'Desarrolle y previsualice aplicaciones web y gráficas en Linux utilizando WSLg para el desarrollo multiplataforma.';
 
   @override
-  String get installationSlidesUbuntuWslDevOps => 'WSL de Ubuntu para DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'Ubuntu en WSL para DevOps';
 
   @override
-  String get installationSlidesUbuntuWslDevOpsText => 'Asegurar la compatibilidad de la tubería CI/CD desarrollando en Ubuntu WSL localmente antes de publicar en un entorno de producción de Ubuntu';
+  String get installationSlidesUbuntuWslDevOpsText => 'Garantice la compatibilidad de las canalizaciones de integración y entrega continuas desarrollando en Ubuntu en WSL antes de publicar en un entorno de producción Ubuntu.';
 
   @override
   String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL para las empresas';
@@ -276,7 +276,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesFindOutMore => 'Más información';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visita ';
+  String get installationSlidesFindOutMoreVisit => 'Visite ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';

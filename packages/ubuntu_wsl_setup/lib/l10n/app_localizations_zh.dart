@@ -27,11 +27,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return '安装软件包以更好地支持 $lang 语';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => '不推荐网速慢的用户安装。';
 
   @override
   String get profileSetupTitle => '配置文件设置';
@@ -49,7 +49,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get profileSetupUsernameHint => '起一个用户名';
 
   @override
-  String get profileSetupUsernameHelper => '这个用户名不一定需要和您Windows的用户名匹配。';
+  String get profileSetupUsernameHelper => '用户名不需要与 Windows 用户名匹配。';
 
   @override
   String get profileSetupPasswordHint => '挑选一个密码';
@@ -133,7 +133,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => '开启';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => '是否启用互操作性。';
+  String get configurationUIInteroperabilitySubtitle => '是否启用了互操作性。';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => '附加Windows路径';

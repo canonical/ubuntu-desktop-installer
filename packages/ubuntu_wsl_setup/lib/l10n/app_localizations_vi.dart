@@ -49,7 +49,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get profileSetupUsernameHint => 'Chọn một tên người dùng';
 
   @override
-  String get profileSetupUsernameHelper => 'Tên người dùng không cần phải khớp với tên người dùng windows của bạn.';
+  String get profileSetupUsernameHelper => 'Tên người dùng không cần phải khớp với tên người dùng Windows của bạn.';
 
   @override
   String get profileSetupPasswordHint => 'Chọn một mật khẩu';
@@ -133,7 +133,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the interoperability is enabled.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
@@ -228,7 +228,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'OK';
 
   @override
   String get installationSlidesLeave => 'Leave';
