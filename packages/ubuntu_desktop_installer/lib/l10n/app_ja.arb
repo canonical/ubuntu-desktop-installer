@@ -694,5 +694,20 @@
     }
   },
   "installAlongsideResizePartition": "パーティションのサイズを変更する",
-  "@installAlongsideResizePartition": {}
+  "@installAlongsideResizePartition": {},
+  "installAlongsideHiddenPartitions": "{num}の小さなパーティションは非表示になっています、<a href=\"{url}\">高度なパーティションツール</a>で更に多くの機能を使ってください",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "{product}を他のパーティションと並べてインストールする",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  }
 }

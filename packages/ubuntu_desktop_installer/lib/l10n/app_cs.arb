@@ -634,5 +634,7 @@
   "whoAreYouPageUsernameTooLong": "Takové jméno je příliš dlouhé.",
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "Takové jméno obsahuje neplatné znaky.",
-  "@whoAreYouPageUsernameInvalidChars": {}
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "quitButtonText": "Opustit instalaci",
+  "@quitButtonText": {}
 }
