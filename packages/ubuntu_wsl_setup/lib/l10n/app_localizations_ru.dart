@@ -14,7 +14,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get exitButton => 'Выход';
 
   @override
-  String get finishButton => 'Закончить';
+  String get finishButton => 'Завершить';
 
   @override
   String get saveButton => 'Сохранить';
@@ -27,11 +27,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Установите пакеты для лучшей поддержки $lang языка';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Не рекомендуется для медленных соединений.';
 
   @override
   String get profileSetupTitle => 'Настройка профиля';
@@ -49,7 +49,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profileSetupUsernameHint => 'Выберите имя пользователя';
 
   @override
-  String get profileSetupUsernameHelper => 'Имя пользователя необязательно должно совпадать с именем пользователя Windows.';
+  String get profileSetupUsernameHelper => 'Имя пользователя не обязательно должно совпадать с именем пользователя Windows.';
 
   @override
   String get profileSetupPasswordHint => 'Выберите пароль';
@@ -176,7 +176,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Привет $user,\nВы успешно завершили настройку.';
+    return 'Привет, $user,\nВы завершили настройку.';
   }
 
   @override
@@ -228,10 +228,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesCustomExitContents => 'Ещё несколько шагов нужно выполнить в главном окне установщика.\nМы можем ли мы закончить с этим и перейти туда?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'ОК';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => 'Покинуть';
 
   @override
   String get installationSlidesCancel => 'Отмена';
@@ -240,34 +240,34 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesUbuntuOnWsl => 'Ubuntu на WSL';
 
   @override
-  String get installationSlidesUbuntuOnWslText => 'Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, научных данных, интернета вещей и развлечений!';
+  String get installationSlidesUbuntuOnWslText => 'Полноценная среда Ubuntu, глубоко интегрированная с Windows, предназначенная для разработки и выполнения приложений Linux. Оптимизирована для облака, интернета, наука о данных, интернета вещей и развлечений!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL для\nWeb-разработки';
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL для\nВеб-разработки';
 
   @override
-  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+  String get installationSlidesUbuntuWslWebDevText => 'Разрабатывайте в WSL, используя нативные IDE Windows, включая VS Code и IntelliJ, и пользуйтесь полной поддержкой NodeJS и Ruby.';
 
   @override
-  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL для научных данных';
+  String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL для Науки о данных';
 
   @override
-  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack позволяет увеличить производительность проектов науки о данных и машинному обучению поверх нативных драйверов Windows NVIDIA.';
 
   @override
-  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL for\nGraphical Apps';
+  String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL для\nГрафических приложений';
 
   @override
-  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+  String get installationSlidesUbuntuWslGuiAppsText => 'Разрабатывайте и просматривайте веб-приложения и графические приложения в Linux с помощью WSLg для кроссплатформенной разработки.';
 
   @override
-  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL for DevOps';
+  String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL для DevOps';
 
   @override
-  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+  String get installationSlidesUbuntuWslDevOpsText => 'Обеспечьте совместимость процессов CI/CD, разрабатывая в Ubuntu WSL локально перед публикацией в рабочей среде Ubuntu.';
 
   @override
-  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL для Предприятий';
 
   @override
   String get installationSlidesUbuntuWslEnterprisesText => 'Расширение возможностей разработчиков\nв корпоративной экосистеме Windows с\nсертифицированной Ubuntu LTS.';

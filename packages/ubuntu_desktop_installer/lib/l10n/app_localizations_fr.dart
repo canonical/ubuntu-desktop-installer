@@ -810,10 +810,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get copyingFiles => 'Copie des fichiers...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installation du système...';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Configuration du système...';
 
   @override
   String get installationFailed => 'Échec de l\'installation';

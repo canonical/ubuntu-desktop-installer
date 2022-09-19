@@ -321,7 +321,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileSetupUsernameHelper.
   ///
   /// In en, this message translates to:
-  /// **'The username does not need to match your windows username.'**
+  /// **'The username does not need to match your Windows username.'**
   String get profileSetupUsernameHelper;
 
   /// No description provided for @profileSetupPasswordHint.
@@ -489,7 +489,7 @@ abstract class AppLocalizations {
   /// No description provided for @configurationUIInteroperabilitySubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Whether the Interoperability is enabled.'**
+  /// **'Whether the interoperability is enabled.'**
   String get configurationUIInteroperabilitySubtitle;
 
   /// No description provided for @configurationUIInteropAppendWindowsPathTitle.
@@ -573,7 +573,7 @@ abstract class AppLocalizations {
   /// No description provided for @setupCompleteHeader.
   ///
   /// In en, this message translates to:
-  /// **'Hi {user},\nYou have successfully completed the setup.'**
+  /// **'Hi {user},\nYou have completed the setup.'**
   String setupCompleteHeader(Object user);
 
   /// No description provided for @setupCompleteUpdate.
@@ -675,7 +675,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationSlidesOk.
   ///
   /// In en, this message translates to:
-  /// **'Ok'**
+  /// **'OK'**
   String get installationSlidesOk;
 
   /// No description provided for @installationSlidesLeave.

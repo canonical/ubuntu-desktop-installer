@@ -330,7 +330,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return '$productを他のパーティションと並べてインストールする';
   }
 
   @override
@@ -363,7 +363,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$numの小さなパーティションは非表示になっています、<a href=\"$url\">高度なパーティションツール</a>で更に多くの機能を使ってください';
   }
 
   @override
