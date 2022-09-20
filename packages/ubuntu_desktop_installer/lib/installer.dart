@@ -172,9 +172,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
                   setWindowTitle(lang.windowTitle(flavor.name));
                   return lang.appTitle;
                 },
-                theme: flavor.theme ?? yaru.variant?.theme ?? yaruLight,
-                darkTheme:
-                    flavor.darkTheme ?? yaru.variant?.darkTheme ?? yaruDark,
+                theme: flavor.theme ?? yaru.theme,
+                darkTheme: flavor.darkTheme ?? yaru.darkTheme,
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: <LocalizationsDelegate>[
                   ...localizationsDelegates,
