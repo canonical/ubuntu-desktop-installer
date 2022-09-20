@@ -327,10 +327,8 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.whereAreYou: const WizardRoute(
           builder: WhereAreYouPage.create,
         ),
-        Routes.whoAreYou: WizardRoute(
+        Routes.whoAreYou: const WizardRoute(
           builder: WhoAreYouPage.create,
-          // skip Routes.chooseYourLook (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
-          onNext: (_) => Routes.installationSlides,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/41
         // Routes.configureActiveDirectory: const WizardRoute(

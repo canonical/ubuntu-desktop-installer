@@ -24,9 +24,11 @@ class Settings extends SafeChangeNotifier {
   void applyTheme(Brightness brightness) {
     switch (brightness) {
       case Brightness.dark:
+        _gsettings.set('gtk-theme', const DBusString('Yaru-dark'));
         _gsettings.set('color-scheme', const DBusString('prefer-dark'));
         break;
       case Brightness.light:
+        _gsettings.set('gtk-theme', const DBusString('Yaru'));
         _gsettings.set('color-scheme', const DBusString('prefer-light'));
         break;
     }
