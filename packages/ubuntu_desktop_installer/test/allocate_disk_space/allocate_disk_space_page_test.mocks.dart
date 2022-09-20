@@ -142,6 +142,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
   _i5.Future<void> editPartition(
     _i4.Disk? disk,
     _i4.Partition? partition, {
+    int? size,
     _i4.PartitionFormat? format,
     bool? wipe,
     String? mount,
@@ -154,6 +155,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
             partition,
           ],
           {
+            #size: size,
             #format: format,
             #wipe: wipe,
             #mount: mount,

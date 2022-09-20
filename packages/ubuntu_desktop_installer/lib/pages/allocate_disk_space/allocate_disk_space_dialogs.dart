@@ -168,12 +168,14 @@ extension _PartitionFormatLang on PartitionFormat {
 
 /// Shows a dialog for editing an existing partition on the given [disk].
 Future<void> showEditPartitionDialog(
-    BuildContext context, Disk disk, Partition partition) {
+    BuildContext context, Disk disk, Partition partition, Gap? gap) {
   final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
 
   return showDialog(
     context: context,
     builder: (context) {
+      final partitionSize = ValueNotifier(partition.size ?? 0);
+      final partitionUnit = ValueNotifier(DataUnit.megabytes);
       final partitionFormat =
           ValueNotifier(PartitionFormat.fromPartition(partition));
       final partitionWipe = ValueNotifier(partition.isWiped);
@@ -192,6 +194,25 @@ Future<void> showEditPartitionDialog(
           rowSpacing: kContentSpacing,
           columnSpacing: kContentSpacing,
           rows: [
+            <Widget>[
+              Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
+              AnimatedBuilder(
+                animation: Listenable.merge([
+                  partitionSize,
+                  partitionUnit,
+                ]),
+                builder: (context, child) {
+                  return StorageSizeBox(
+                    size: partitionSize.value,
+                    unit: partitionUnit.value,
+                    minimum: partition.estimatedMinSize ?? 0,
+                    maximum: (partition.size ?? 0) + (gap?.size ?? 0),
+                    onSizeChanged: (v) => partitionSize.value = v,
+                    onUnitSelected: (v) => partitionUnit.value = v,
+                  );
+                },
+              )
+            ],
             <Widget>[
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
               _PartitionFormatSelector(partitionFormat: partitionFormat),
@@ -229,6 +250,7 @@ Future<void> showEditPartitionDialog(
               model.editPartition(
                 disk,
                 partition,
+                size: partitionSize.value,
                 format: partitionFormat.value,
                 mount: partitionMount.value,
                 wipe: partitionWipe.value,
