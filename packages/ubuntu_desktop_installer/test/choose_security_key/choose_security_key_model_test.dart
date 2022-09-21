@@ -49,14 +49,24 @@ void main() {
     testValid('foo', 'bar', isFalse);
   });
 
-  test('save security key', () async {
+  test('save, clear and load security key', () async {
     final service = MockDiskStorageService();
 
     final model = ChooseSecurityKeyModel(service);
     model.securityKey = 'foo123';
+    model.confirmedSecurityKey = 'foo123';
 
     await model.saveSecurityKey();
+    expect(model.securityKey, isEmpty);
+    expect(model.confirmedSecurityKey, isEmpty);
+
     verify(service.securityKey = 'foo123').called(1);
     verifyNever(service.setGuidedStorage());
+    when(service.securityKey).thenReturn('bar456');
+
+    await model.loadSecurityKey();
+    verify(service.securityKey).called(1);
+    expect(model.securityKey, 'bar456');
+    expect(model.confirmedSecurityKey, 'bar456');
   });
 }

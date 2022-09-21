@@ -36,14 +36,16 @@ class ChooseSecurityKeyModel extends SafeChangeNotifier {
   bool get isValid =>
       securityKey.isNotEmpty && securityKey == confirmedSecurityKey;
 
-  /// Loads the security key.
+  /// Loads the security key from the service.
   Future<void> loadSecurityKey() async {
     _securityKey.value =
         _confirmedSecurityKey.value = _service.securityKey ?? '';
   }
 
-  /// Saves the security key.
+  /// Saves the security key to the service and clears the local values.
   Future<void> saveSecurityKey() async {
     _service.securityKey = securityKey;
+    _securityKey.value = '';
+    _confirmedSecurityKey.value = '';
   }
 }
