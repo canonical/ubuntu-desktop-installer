@@ -23,8 +23,13 @@ import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart'
 
 class _FakeGuidedStorageResponseV2_0 extends _i1.SmartFake
     implements _i2.GuidedStorageResponseV2 {
-  _FakeGuidedStorageResponseV2_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeGuidedStorageResponseV2_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [DiskStorageService].
@@ -37,127 +42,221 @@ class MockDiskStorageService extends _i1.Mock
   }
 
   @override
-  bool get hasMultipleDisks =>
-      (super.noSuchMethod(Invocation.getter(#hasMultipleDisks),
-          returnValue: false) as bool);
+  bool get hasMultipleDisks => (super.noSuchMethod(
+        Invocation.getter(#hasMultipleDisks),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get needRoot =>
-      (super.noSuchMethod(Invocation.getter(#needRoot), returnValue: false)
-          as bool);
+  bool get needRoot => (super.noSuchMethod(
+        Invocation.getter(#needRoot),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get needBoot =>
-      (super.noSuchMethod(Invocation.getter(#needBoot), returnValue: false)
-          as bool);
+  bool get needBoot => (super.noSuchMethod(
+        Invocation.getter(#needBoot),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasRst =>
-      (super.noSuchMethod(Invocation.getter(#hasRst), returnValue: false)
-          as bool);
+  bool get hasRst => (super.noSuchMethod(
+        Invocation.getter(#hasRst),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasBitLocker =>
-      (super.noSuchMethod(Invocation.getter(#hasBitLocker), returnValue: false)
-          as bool);
+  bool get hasBitLocker => (super.noSuchMethod(
+        Invocation.getter(#hasBitLocker),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasEncryption =>
-      (super.noSuchMethod(Invocation.getter(#hasEncryption), returnValue: false)
-          as bool);
+  bool get hasEncryption => (super.noSuchMethod(
+        Invocation.getter(#hasEncryption),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasSecureBoot =>
-      (super.noSuchMethod(Invocation.getter(#hasSecureBoot), returnValue: false)
-          as bool);
+  bool get hasSecureBoot => (super.noSuchMethod(
+        Invocation.getter(#hasSecureBoot),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get useLvm =>
-      (super.noSuchMethod(Invocation.getter(#useLvm), returnValue: false)
-          as bool);
+  bool get useLvm => (super.noSuchMethod(
+        Invocation.getter(#useLvm),
+        returnValue: false,
+      ) as bool);
   @override
-  set useLvm(bool? useLvm) =>
-      super.noSuchMethod(Invocation.setter(#useLvm, useLvm),
-          returnValueForMissingStub: null);
+  set useLvm(bool? useLvm) => super.noSuchMethod(
+        Invocation.setter(
+          #useLvm,
+          useLvm,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  set securityKey(String? securityKey) =>
-      super.noSuchMethod(Invocation.setter(#securityKey, securityKey),
-          returnValueForMissingStub: null);
+  set securityKey(String? securityKey) => super.noSuchMethod(
+        Invocation.setter(
+          #securityKey,
+          securityKey,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  set guidedTarget(_i2.GuidedStorageTarget? target) =>
-      super.noSuchMethod(Invocation.setter(#guidedTarget, target),
-          returnValueForMissingStub: null);
+  set guidedTarget(_i2.GuidedStorageTarget? target) => super.noSuchMethod(
+        Invocation.setter(
+          #guidedTarget,
+          target,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  int get installMinimumSize => (super
-          .noSuchMethod(Invocation.getter(#installMinimumSize), returnValue: 0)
-      as int);
+  int get installMinimumSize => (super.noSuchMethod(
+        Invocation.getter(#installMinimumSize),
+        returnValue: 0,
+      ) as int);
   @override
-  int get largestDiskSize =>
-      (super.noSuchMethod(Invocation.getter(#largestDiskSize), returnValue: 0)
-          as int);
+  int get largestDiskSize => (super.noSuchMethod(
+        Invocation.getter(#largestDiskSize),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get hasEnoughDiskSpace =>
-      (super.noSuchMethod(Invocation.getter(#hasEnoughDiskSpace),
-          returnValue: false) as bool);
+  bool get hasEnoughDiskSpace => (super.noSuchMethod(
+        Invocation.getter(#hasEnoughDiskSpace),
+        returnValue: false,
+      ) as bool);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<_i2.GuidedStorageResponseV2> getGuidedStorage() =>
-      (super.noSuchMethod(Invocation.method(#getGuidedStorage, []),
-              returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
-                  _FakeGuidedStorageResponseV2_0(
-                      this, Invocation.method(#getGuidedStorage, []))))
-          as _i4.Future<_i2.GuidedStorageResponseV2>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #getGuidedStorage,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
+            _FakeGuidedStorageResponseV2_0(
+          this,
+          Invocation.method(
+            #getGuidedStorage,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
   _i4.Future<_i2.GuidedStorageResponseV2> setGuidedStorage() =>
-      (super.noSuchMethod(Invocation.method(#setGuidedStorage, []),
-              returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
-                  _FakeGuidedStorageResponseV2_0(
-                      this, Invocation.method(#setGuidedStorage, []))))
-          as _i4.Future<_i2.GuidedStorageResponseV2>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #setGuidedStorage,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
+            _FakeGuidedStorageResponseV2_0(
+          this,
+          Invocation.method(
+            #setGuidedStorage,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i4.Future<List<_i2.Disk>> getStorage() =>
-      (super.noSuchMethod(Invocation.method(#getStorage, []),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+  _i4.Future<List<_i2.Disk>> getStorage() => (super.noSuchMethod(
+        Invocation.method(
+          #getStorage,
+          [],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
-  _i4.Future<List<_i2.Disk>> getOriginalStorage() =>
-      (super.noSuchMethod(Invocation.method(#getOriginalStorage, []),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+  _i4.Future<List<_i2.Disk>> getOriginalStorage() => (super.noSuchMethod(
+        Invocation.method(
+          #getOriginalStorage,
+          [],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> addPartition(
-          _i2.Disk? disk, _i2.Gap? gap, _i2.Partition? partition) =>
+    _i2.Disk? disk,
+    _i2.Gap? gap,
+    _i2.Partition? partition,
+  ) =>
       (super.noSuchMethod(
-              Invocation.method(#addPartition, [disk, gap, partition]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+        Invocation.method(
+          #addPartition,
+          [
+            disk,
+            gap,
+            partition,
+          ],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> editPartition(
-          _i2.Disk? disk, _i2.Partition? partition) =>
-      (super.noSuchMethod(Invocation.method(#editPartition, [disk, partition]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+    _i2.Disk? disk,
+    _i2.Partition? partition,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #editPartition,
+          [
+            disk,
+            partition,
+          ],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> deletePartition(
-          _i2.Disk? disk, _i2.Partition? partition) =>
+    _i2.Disk? disk,
+    _i2.Partition? partition,
+  ) =>
       (super.noSuchMethod(
-              Invocation.method(#deletePartition, [disk, partition]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+        Invocation.method(
+          #deletePartition,
+          [
+            disk,
+            partition,
+          ],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> setStorage(List<_i2.Disk>? disks) =>
-      (super.noSuchMethod(Invocation.method(#setStorage, [disks]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #setStorage,
+          [disks],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
-  _i4.Future<List<_i2.Disk>> resetStorage() =>
-      (super.noSuchMethod(Invocation.method(#resetStorage, []),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+  _i4.Future<List<_i2.Disk>> resetStorage() => (super.noSuchMethod(
+        Invocation.method(
+          #resetStorage,
+          [],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> addBootPartition(_i2.Disk? disk) =>
-      (super.noSuchMethod(Invocation.method(#addBootPartition, [disk]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #addBootPartition,
+          [disk],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
   @override
   _i4.Future<List<_i2.Disk>> reformatDisk(_i2.Disk? disk) =>
-      (super.noSuchMethod(Invocation.method(#reformatDisk, [disk]),
-              returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]))
-          as _i4.Future<List<_i2.Disk>>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #reformatDisk,
+          [disk],
+        ),
+        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
+      ) as _i4.Future<List<_i2.Disk>>);
 }

@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Portuguese (`pt`).
@@ -37,7 +34,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get yesButtonText => 'Sim';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Sair da Instalação';
 
   @override
   String get welcome => 'Bem-vindo';
@@ -61,7 +58,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Pode experimentar o $RELEASE sem precisar fazer qualquer alteração no seu computador.';
+    return 'Pode experimentar o $RELEASE sem precisar de fazer qualquer alteração no seu computador.';
   }
 
   @override
@@ -71,7 +68,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
+    return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.';
   }
 
   @override
@@ -83,7 +80,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get turnOffRST => 'Desligue a RST';
 
   @override
-  String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Precisa desligar a RST no Windows antes de instalar o Ubuntu.';
+  String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
@@ -91,16 +88,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Layout do teclado';
+  String get keyboardLayoutPageTitle => 'Disposição do teclado';
 
   @override
-  String get chooseYourKeyboardLayout => 'Escolha o layout do seu teclado:';
+  String get chooseYourKeyboardLayout => 'Escolha a disposição do seu teclado:';
 
   @override
   String get typeToTest => 'Digite aqui para testar o seu teclado';
 
   @override
-  String get detectLayout => 'Detetar o layout do teclado';
+  String get detectLayout => 'Detetar a disposição do teclado';
 
   @override
   String get pressOneKey => 'Por favor pressione uma das seguintes teclas:';
@@ -109,13 +106,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get isKeyPresent => 'A seguinte tecla está presente no seu teclado?';
 
   @override
-  String get configureSecureBootTitle => 'Configurar Secure Boot';
+  String get configureSecureBootTitle => 'Configurar o Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'Optou por instalar drivers de terceiros. Isso requer desativar o Secure Boot.\nPara isso, precisa escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
+  String get configureSecureBootDescription => 'Optou por instalar drivers de terceiros. Isso requer desativar o Secure Boot.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
 
   @override
-  String get configureSecureBootOption => 'Configurar Secure Boot';
+  String get configureSecureBootOption => 'Configurar o Secure Boot';
 
   @override
   String get chooseSecurityKey => 'Escolha uma chave de segurança';
@@ -139,55 +136,55 @@ class AppLocalizationsPt extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Ligar à Internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Ligar este computador à internet vai ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigue à por cabo ethernet, ou escolha uma rede Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Usar uma ligação por cabo';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Ligação por cabo detetada';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Ligação por cabo está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Para usar ethernet neste computador, uma ligação por cabo deve ser ativada';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Ligação por cabo ativada';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Ligar a uma rede Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Ligar a uma rede Wi-Fi oculta';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Nome da rede';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Um nome de rede é necessário';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Não pretendo ligar à internet por agora';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Rede sem fios desativada';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Sem dispositivos Wi-Fi detetados';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Para usar Wi-Fi neste computador, uma rede sem fios deve ser ativada';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Ativar Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Ligar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
@@ -218,7 +215,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Aviso</font>: O computador não está ligado a uma fonte de energia.';
   }
 
   @override
@@ -256,11 +253,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Este computador ter $os1 e $os2. O que pretende fazer?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Este computador tem múltiplos sistemas operativos nele. O que pretende fazer?';
 
   @override
   String get installationTypeNoOSDetected => 'Este computador não possui sistemas operacionais detectados atualmente. O que deseja fazer?';
@@ -329,17 +326,17 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Instalar $product ao lado de $os1 e $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Instalar $product ao lado deles';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Instalar $product ao lado de outras partições';
   }
 
   @override
@@ -368,30 +365,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Instalar agora';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Alocar espaço no disco ao arrastar o divisor abaixo:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num pequenas partições estão ocultas, utilize a <a href=\"$url\"> ferramenta de particionamento avançado</a> para mais controlo';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Redimensionar partição';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Alocar espaço';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Ficheiros';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partição:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Tamanho:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Disponível:';
 
   @override
   String get allocateDiskSpace => 'Alocar espaço em disco';
@@ -427,10 +424,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newPartitionTable => 'Nova tabela de partições';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Criar uma nova tabela de partições neste dispositivo?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Você selecionou uma partição inteira. Se proceder com a criação de uma nova tabela de partição neste dispositivo, todas as partições atuais serão removidas.\n\nPoderá desfazer esta operação mais tarde se desejar.';
 
   @override
   String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
@@ -568,16 +565,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'O nome de utilizador informado é inválido';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Esse nome de utilizador já existe.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Esse nome é reservado para utilização do sistema.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Esse nome é demasiado longo.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Esse nome contém caracteres inválidos.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Escolha uma palavra-passe';
@@ -592,7 +589,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'As palavras-passe não correspondem';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Mostrar palavra-passe';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';
@@ -616,27 +613,27 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'partição #$disk${partition} redimensionada de $oldsize para $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partição #$disk${partition} formatada como $format usada para $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partição #$disk${partition} formatada como $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partição #$disk${partition} usada para $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partição #$disk${partition} criada';
   }
 
   @override
@@ -682,34 +679,34 @@ class AppLocalizationsPt extends AppLocalizations {
   String get restartIntoWindows => 'Reiniciar no Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Onde está?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Localização';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Fuso horário';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Bem-vindo ao $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Rápido e cheio de novas funcionalidades, a última versão $RELEASE torna a computação mais fácil do que nunca. Aqui estão algumas novidades para dar uma vista de olhos...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Encontrar ainda mais software';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software $RELEASE, você pode encontrar e instalar novas apps facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'Leve a sua música consigo';
 
   @override
   String musicSlideDescription(Object RELEASE) {

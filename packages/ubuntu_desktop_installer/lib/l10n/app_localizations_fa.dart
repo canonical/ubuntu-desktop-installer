@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Persian (`fa`).
@@ -8,210 +5,210 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'نصب کنندهٔ میزکار اوبونتو';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'نصب $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'لغو';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'تغییر';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'باشه';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'خیر';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'شروع دوباره';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'بازگردانی';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'بله';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'خروج از نصب';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'خوش آمدید';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'زبانتان را برگزینید:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'امتحان کردن یا نصب';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'تعمیر نصب';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'امتحان $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'شما می‌توانید $RELEASE را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'نصب $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return '$RELEASE را در کنار (یا به جای) سیستم‌عامل کنونی شما نصب می‌کنید. این نباید خیلی طول بکشد.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'ممکن است بخواهید <a href=\"$url\">یادداشت‌های انتشار</a> را بخوانید.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'خاموش کردن RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'برای دستورالعمل‌ها، این صفحه را در تلفن یا دستگاه دیگری باز کنید: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'چیدمان صفحه‌کلید';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'گزینش چیدمان صفحه‌کلیدتان:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'تشخیص چیدمان صفحه‌کلید';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'لطفاً یکی از کلیدهای زیر را فشار دهید:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'آیا این کلید در صفحه‌کلیدتان وجود دارد؟';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'پیکربندی راه‌اندازی ایمن';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'شما نصب نرم‌افزار درایور شخص ثالث را انتخاب کرده‌اید. برای این کار باید راه‌اندازی ایمن را خاموش کنید.\nبرای انجام این کار، اکنون باید یک کلید امنیتی را انتخاب کنید و پس از راه اندازی دوبارهٔ سامانه، آن را وارد کنید.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'پیکربندی راه‌اندازی ایمن';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'انتخاب یک کلید امنیتی';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'تأیید کلید امنیتی';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'فعلاً نرم‌افزار درایور را نصب نکن';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'شما می‌توانید آن را بعداً از نرم‌افزارها و به‌روز رسانی‌ها نصب کنید.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'کلید امنیتی مورد نیاز است';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'کلیدهای امنیتی مطابقت ندارند';
 
   @override
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'اتّصال به اینترنت';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'اتّصال این رایانه به اینترنت به اوبونتو کمک می‌کند تا هر نرم‌افزار اضافی مورد نیاز را نصب کند و به انتخاب منطقهٔ زمانی شما کمک کند.\n\nبا کابل اترنت متّصل شوید یا یک شبکهٔ وای‌فای را انتخاب کنید';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'استفاده از اتّصال سیمی';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'اتّصال سیمی شناسایی نشد';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'اتّصال سیمی خاموش است';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'برای استفاده از اترنت در این رایانه، اتّصال سیمی باید به کار انداخته شود';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'به کار انداختن اتّصال سیمی';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای مخفی';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'نام شبکه';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'یک نام برای شبکه مورد نیاز است';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'من نمی‌خواهم همین حالا به اینترنت متّصل شوم';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'شبکهٔ بی‌سیم از کار افتاده است';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'هیچ افزارهٔ وای‌فای شناسایی نشد';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'به کار انداختن وای‌فای';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'اتّصال';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'به‌روز رسانی‌ها و دیگر نرم‌افزارها';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'برای شروع چه برنامه‌هایی را می‌خواهید نصب کنید؟';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'نصب معمولی';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'مرورگر وب، برنامه‌های کاربردی، نرم‌افزار آفیس، بازی‌ها و پخش‌کننده‌های رسانه‌ای.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'نصب کمینه';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'مرورگر وب و ابزارهای پایه.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'دیگر گزینه‌ها';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'نرم‌افزارهای شخص ثالث را برای سخت‌افزارهای گرافیکی و وای‌فای و همچنین قالب‌های رسانه‌ای اضافی نصب کنید';
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';

@@ -204,5 +204,16 @@
   "installationSlidesUbuntuWslGuiApps": "אובונטו WSL\nליישומים גרפיים",
   "@installationSlidesUbuntuWslGuiApps": {},
   "installationSlidesUbuntuWslDataScienceText": "חבילת מדעי הנתונים של NVIDIA מעניקה לך להוציא את הביצועים המיטביים במיזמים מתחומי מדעי הנתונים ולמידת מכונה על גבי מנהלי התקנים שמותאמים לסביבת Windows.",
-  "@installationSlidesUbuntuWslDataScienceText": {}
+  "@installationSlidesUbuntuWslDataScienceText": {},
+  "installLangPacksTitle": "יש להתקין חבילות לשיפור התמיכה ב{lang}",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "לא מומלץ לחיבורים אטיים.",
+  "@installLangPacksSubtitle": {}
 }

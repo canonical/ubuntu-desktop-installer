@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Czech (`cs`).
@@ -37,7 +34,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get yesButtonText => 'Ano';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Opustit instalaci';
 
   @override
   String get welcome => 'Vítejte';

@@ -22,13 +22,23 @@ import 'package:upower/upower.dart' as _i2;
 
 class _FakeUPowerKbdBacklight_0 extends _i1.SmartFake
     implements _i2.UPowerKbdBacklight {
-  _FakeUPowerKbdBacklight_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeUPowerKbdBacklight_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeUPowerDevice_1 extends _i1.SmartFake implements _i2.UPowerDevice {
-  _FakeUPowerDevice_1(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeUPowerDevice_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [PowerService].
@@ -41,66 +51,92 @@ class MockPowerService extends _i1.Mock implements _i3.PowerService {
 
   @override
   _i2.UPowerKbdBacklight get kbdBacklight => (super.noSuchMethod(
+        Invocation.getter(#kbdBacklight),
+        returnValue: _FakeUPowerKbdBacklight_0(
+          this,
           Invocation.getter(#kbdBacklight),
-          returnValue:
-              _FakeUPowerKbdBacklight_0(this, Invocation.getter(#kbdBacklight)))
-      as _i2.UPowerKbdBacklight);
+        ),
+      ) as _i2.UPowerKbdBacklight);
   @override
-  set kbdBacklight(_i2.UPowerKbdBacklight? _kbdBacklight) =>
-      super.noSuchMethod(Invocation.setter(#kbdBacklight, _kbdBacklight),
-          returnValueForMissingStub: null);
+  set kbdBacklight(_i2.UPowerKbdBacklight? _kbdBacklight) => super.noSuchMethod(
+        Invocation.setter(
+          #kbdBacklight,
+          _kbdBacklight,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  String get daemonVersion =>
-      (super.noSuchMethod(Invocation.getter(#daemonVersion), returnValue: '')
-          as String);
+  String get daemonVersion => (super.noSuchMethod(
+        Invocation.getter(#daemonVersion),
+        returnValue: '',
+      ) as String);
   @override
-  bool get onBattery =>
-      (super.noSuchMethod(Invocation.getter(#onBattery), returnValue: false)
-          as bool);
+  bool get onBattery => (super.noSuchMethod(
+        Invocation.getter(#onBattery),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get lidIsPresent =>
-      (super.noSuchMethod(Invocation.getter(#lidIsPresent), returnValue: false)
-          as bool);
+  bool get lidIsPresent => (super.noSuchMethod(
+        Invocation.getter(#lidIsPresent),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get lidIsClosed =>
-      (super.noSuchMethod(Invocation.getter(#lidIsClosed), returnValue: false)
-          as bool);
+  bool get lidIsClosed => (super.noSuchMethod(
+        Invocation.getter(#lidIsClosed),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i2.UPowerDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-          returnValue: <_i2.UPowerDevice>[]) as List<_i2.UPowerDevice>);
+  List<_i2.UPowerDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i2.UPowerDevice>[],
+      ) as List<_i2.UPowerDevice>);
   @override
-  _i2.UPowerDevice get displayDevice =>
-      (super.noSuchMethod(Invocation.getter(#displayDevice),
-              returnValue:
-                  _FakeUPowerDevice_1(this, Invocation.getter(#displayDevice)))
-          as _i2.UPowerDevice);
+  _i2.UPowerDevice get displayDevice => (super.noSuchMethod(
+        Invocation.getter(#displayDevice),
+        returnValue: _FakeUPowerDevice_1(
+          this,
+          Invocation.getter(#displayDevice),
+        ),
+      ) as _i2.UPowerDevice);
   @override
-  _i4.Stream<_i2.UPowerDevice> get deviceAdded =>
-      (super.noSuchMethod(Invocation.getter(#deviceAdded),
-              returnValue: _i4.Stream<_i2.UPowerDevice>.empty())
-          as _i4.Stream<_i2.UPowerDevice>);
+  _i4.Stream<_i2.UPowerDevice> get deviceAdded => (super.noSuchMethod(
+        Invocation.getter(#deviceAdded),
+        returnValue: _i4.Stream<_i2.UPowerDevice>.empty(),
+      ) as _i4.Stream<_i2.UPowerDevice>);
   @override
-  _i4.Stream<_i2.UPowerDevice> get deviceRemoved =>
-      (super.noSuchMethod(Invocation.getter(#deviceRemoved),
-              returnValue: _i4.Stream<_i2.UPowerDevice>.empty())
-          as _i4.Stream<_i2.UPowerDevice>);
+  _i4.Stream<_i2.UPowerDevice> get deviceRemoved => (super.noSuchMethod(
+        Invocation.getter(#deviceRemoved),
+        returnValue: _i4.Stream<_i2.UPowerDevice>.empty(),
+      ) as _i4.Stream<_i2.UPowerDevice>);
   @override
-  _i4.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i4.Stream<List<String>>.empty())
-          as _i4.Stream<List<String>>);
+  _i4.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i4.Stream<List<String>>.empty(),
+      ) as _i4.Stream<List<String>>);
   @override
   _i4.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i4.Future<String> getCriticalAction() =>
-      (super.noSuchMethod(Invocation.method(#getCriticalAction, []),
-          returnValue: _i4.Future<String>.value('')) as _i4.Future<String>);
+  _i4.Future<String> getCriticalAction() => (super.noSuchMethod(
+        Invocation.method(
+          #getCriticalAction,
+          [],
+        ),
+        returnValue: _i4.Future<String>.value(''),
+      ) as _i4.Future<String>);
   @override
-  _i4.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
-      returnValue: _i4.Future<void>.value(),
-      returnValueForMissingStub: _i4.Future<void>.value()) as _i4.Future<void>);
+  _i4.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }

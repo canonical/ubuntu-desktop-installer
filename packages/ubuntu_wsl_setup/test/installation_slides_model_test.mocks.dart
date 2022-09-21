@@ -31,16 +31,25 @@ class MockSubiquityStatusMonitor extends _i1.Mock
   }
 
   @override
-  _i3.Stream<_i4.ApplicationStatus?> get onStatusChanged =>
-      (super.noSuchMethod(Invocation.getter(#onStatusChanged),
-              returnValue: _i3.Stream<_i4.ApplicationStatus?>.empty())
-          as _i3.Stream<_i4.ApplicationStatus?>);
+  _i3.Stream<_i4.ApplicationStatus?> get onStatusChanged => (super.noSuchMethod(
+        Invocation.getter(#onStatusChanged),
+        returnValue: _i3.Stream<_i4.ApplicationStatus?>.empty(),
+      ) as _i3.Stream<_i4.ApplicationStatus?>);
   @override
-  _i3.Future<bool> start(_i5.Endpoint? endpoint) =>
-      (super.noSuchMethod(Invocation.method(#start, [endpoint]),
-          returnValue: _i3.Future<bool>.value(false)) as _i3.Future<bool>);
+  _i3.Future<bool> start(_i5.Endpoint? endpoint) => (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [endpoint],
+        ),
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
   @override
-  _i3.Future<void> stop() => (super.noSuchMethod(Invocation.method(#stop, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> stop() => (super.noSuchMethod(
+        Invocation.method(
+          #stop,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

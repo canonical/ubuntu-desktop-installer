@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Slovenian (`sl`).
@@ -52,7 +49,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get profileSetupUsernameHint => 'Pick a username';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'The username does not need to match your Windows username.';
 
   @override
   String get profileSetupPasswordHint => 'Choose a password';
@@ -136,7 +133,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => 'Enabled';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Whether the interoperability is enabled.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
@@ -179,7 +176,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Hi $user,\nYou have completed the setup.';
   }
 
   @override
@@ -231,7 +228,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'OK';
 
   @override
   String get installationSlidesLeave => 'Leave';

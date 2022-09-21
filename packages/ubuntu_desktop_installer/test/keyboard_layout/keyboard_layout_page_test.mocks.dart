@@ -31,93 +31,164 @@ class MockKeyboardLayoutModel extends _i1.Mock
   }
 
   @override
-  int get layoutCount =>
-      (super.noSuchMethod(Invocation.getter(#layoutCount), returnValue: 0)
-          as int);
+  int get layoutCount => (super.noSuchMethod(
+        Invocation.getter(#layoutCount),
+        returnValue: 0,
+      ) as int);
   @override
-  int get selectedLayoutIndex => (super
-          .noSuchMethod(Invocation.getter(#selectedLayoutIndex), returnValue: 0)
-      as int);
+  int get selectedLayoutIndex => (super.noSuchMethod(
+        Invocation.getter(#selectedLayoutIndex),
+        returnValue: 0,
+      ) as int);
   @override
-  _i3.Stream<int> get onLayoutSelected =>
-      (super.noSuchMethod(Invocation.getter(#onLayoutSelected),
-          returnValue: _i3.Stream<int>.empty()) as _i3.Stream<int>);
+  _i3.Stream<int> get onLayoutSelected => (super.noSuchMethod(
+        Invocation.getter(#onLayoutSelected),
+        returnValue: _i3.Stream<int>.empty(),
+      ) as _i3.Stream<int>);
   @override
-  _i3.Stream<int> get onVariantSelected =>
-      (super.noSuchMethod(Invocation.getter(#onVariantSelected),
-          returnValue: _i3.Stream<int>.empty()) as _i3.Stream<int>);
+  _i3.Stream<int> get onVariantSelected => (super.noSuchMethod(
+        Invocation.getter(#onVariantSelected),
+        returnValue: _i3.Stream<int>.empty(),
+      ) as _i3.Stream<int>);
   @override
-  int get variantCount =>
-      (super.noSuchMethod(Invocation.getter(#variantCount), returnValue: 0)
-          as int);
+  int get variantCount => (super.noSuchMethod(
+        Invocation.getter(#variantCount),
+        returnValue: 0,
+      ) as int);
   @override
-  int get selectedVariantIndex =>
-      (super.noSuchMethod(Invocation.getter(#selectedVariantIndex),
-          returnValue: 0) as int);
+  int get selectedVariantIndex => (super.noSuchMethod(
+        Invocation.getter(#selectedVariantIndex),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isValid =>
-      (super.noSuchMethod(Invocation.getter(#isValid), returnValue: false)
-          as bool);
+  bool get isValid => (super.noSuchMethod(
+        Invocation.getter(#isValid),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  String layoutName(int? index) =>
-      (super.noSuchMethod(Invocation.method(#layoutName, [index]),
-          returnValue: '') as String);
+  String layoutName(int? index) => (super.noSuchMethod(
+        Invocation.method(
+          #layoutName,
+          [index],
+        ),
+        returnValue: '',
+      ) as String);
   @override
-  _i3.Future<void> selectLayout(int? index, [int? variant = 0]) =>
-      (super.noSuchMethod(Invocation.method(#selectLayout, [index, variant]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
-  @override
-  _i3.Future<void> trySelectLayoutVariant(String? layout, String? variant) =>
+  _i3.Future<void> selectLayout(
+    int? index, [
+    int? variant = 0,
+  ]) =>
       (super.noSuchMethod(
-              Invocation.method(#trySelectLayoutVariant, [layout, variant]),
-              returnValue: _i3.Future<void>.value(),
-              returnValueForMissingStub: _i3.Future<void>.value())
-          as _i3.Future<void>);
+        Invocation.method(
+          #selectLayout,
+          [
+            index,
+            variant,
+          ],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  String variantName(int? index) =>
-      (super.noSuchMethod(Invocation.method(#variantName, [index]),
-          returnValue: '') as String);
+  _i3.Future<void> trySelectLayoutVariant(
+    String? layout,
+    String? variant,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #trySelectLayoutVariant,
+          [
+            layout,
+            variant,
+          ],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+  @override
+  String variantName(int? index) => (super.noSuchMethod(
+        Invocation.method(
+          #variantName,
+          [index],
+        ),
+        returnValue: '',
+      ) as String);
   @override
   _i3.Future<void> selectVariant(int? index) => (super.noSuchMethod(
-      Invocation.method(#selectVariant, [index]),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #selectVariant,
+          [index],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> updateInputSource() => (super.noSuchMethod(
-      Invocation.method(#updateInputSource, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+        Invocation.method(
+          #updateInputSource,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i3.Future<void> save() => (super.noSuchMethod(Invocation.method(#save, []),
-      returnValue: _i3.Future<void>.value(),
-      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
+  _i3.Future<void> save() => (super.noSuchMethod(
+        Invocation.method(
+          #save,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i4.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

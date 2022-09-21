@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Polish (`pl`).
@@ -30,11 +27,11 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Zainstaluj pakiety, aby uzyskać lepszą obsługę języka $lang';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Niezalecane przy wolnych połączeniach.';
 
   @override
   String get profileSetupTitle => 'Konfiguracja profilu';
@@ -179,7 +176,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Cześć, $user!\nPomyślnie zakończono konfigurację.';
+    return 'Cześć, $user!\nKonfiguracja została zakończona.';
   }
 
   @override

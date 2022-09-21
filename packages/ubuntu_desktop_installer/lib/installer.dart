@@ -172,9 +172,8 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
                   setWindowTitle(lang.windowTitle(flavor.name));
                   return lang.appTitle;
                 },
-                theme: flavor.theme ?? yaru.variant?.theme ?? yaruLight,
-                darkTheme:
-                    flavor.darkTheme ?? yaru.variant?.darkTheme ?? yaruDark,
+                theme: flavor.theme ?? yaru.theme,
+                darkTheme: flavor.darkTheme ?? yaru.darkTheme,
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: <LocalizationsDelegate>[
                   ...localizationsDelegates,
@@ -328,10 +327,8 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.whereAreYou: const WizardRoute(
           builder: WhereAreYouPage.create,
         ),
-        Routes.whoAreYou: WizardRoute(
+        Routes.whoAreYou: const WizardRoute(
           builder: WhoAreYouPage.create,
-          // skip Routes.chooseYourLook (https://github.com/canonical/ubuntu-desktop-installer/issues/373)
-          onNext: (_) => Routes.installationSlides,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/41
         // Routes.configureActiveDirectory: const WizardRoute(

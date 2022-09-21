@@ -74,6 +74,9 @@ void main() {
       identity: identity,
       password: 'password',
     );
+    await tester.pumpAndSettle();
+
+    await testChooseYourLookPage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -136,6 +139,9 @@ void main() {
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
+    await tester.pumpAndSettle();
+
+    await testChooseYourLookPage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -186,6 +192,9 @@ void main() {
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
+    await tester.pumpAndSettle();
+
+    await testChooseYourLookPage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -494,6 +503,23 @@ Future<void> testWhoAreYouPage(
       label: tester.lang.whoAreYouPageConfirmPasswordLabel,
       value: password,
     );
+  }
+  await tester.pumpAndSettle();
+
+  await tester.tapContinue();
+}
+
+Future<void> testChooseYourLookPage(
+  WidgetTester tester, {
+  Brightness? theme,
+}) async {
+  await expectPage(
+      tester, ChooseYourLookPage, (lang) => lang.chooseYourLookPageTitle);
+
+  if (theme != null) {
+    final asset = find.asset('assets/choose_your_look/${theme.name}-theme.png');
+    expect(asset, findsOneWidget);
+    await tester.tap(asset);
   }
   await tester.pumpAndSettle();
 

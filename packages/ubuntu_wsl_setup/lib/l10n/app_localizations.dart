@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -79,14 +78,14 @@ import 'app_localizations_uk.dart';
 import 'app_localizations_vi.dart';
 import 'app_localizations_zh.dart';
 
-/// Callers can lookup localized strings with an instance of AppLocalizations returned
-/// by `AppLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of AppLocalizations
+/// returned by `AppLocalizations.of(context)`.
 ///
 /// Applications need to include `AppLocalizations.delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import 'l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
@@ -101,14 +100,14 @@ import 'app_localizations_zh.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -322,7 +321,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileSetupUsernameHelper.
   ///
   /// In en, this message translates to:
-  /// **'The username does not need to match your windows username.'**
+  /// **'The username does not need to match your Windows username.'**
   String get profileSetupUsernameHelper;
 
   /// No description provided for @profileSetupPasswordHint.
@@ -490,7 +489,7 @@ abstract class AppLocalizations {
   /// No description provided for @configurationUIInteroperabilitySubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Whether the Interoperability is enabled.'**
+  /// **'Whether the interoperability is enabled.'**
   String get configurationUIInteroperabilitySubtitle;
 
   /// No description provided for @configurationUIInteropAppendWindowsPathTitle.
@@ -574,7 +573,7 @@ abstract class AppLocalizations {
   /// No description provided for @setupCompleteHeader.
   ///
   /// In en, this message translates to:
-  /// **'Hi {user},\nYou have successfully completed the setup.'**
+  /// **'Hi {user},\nYou have completed the setup.'**
   String setupCompleteHeader(Object user);
 
   /// No description provided for @setupCompleteUpdate.
@@ -676,7 +675,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationSlidesOk.
   ///
   /// In en, this message translates to:
-  /// **'Ok'**
+  /// **'OK'**
   String get installationSlidesOk;
 
   /// No description provided for @installationSlidesLeave.

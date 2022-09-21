@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Norwegian Bokmål (`nb`).
@@ -30,11 +27,11 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Installer pakker for bedre $lang-språkstøtte';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Ikke anbefalt for trege tilkoblinger.';
 
   @override
   String get profileSetupTitle => 'Profil innstillinger';
@@ -52,7 +49,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get profileSetupUsernameHint => 'Velg et brukernavn';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your windows username.';
+  String get profileSetupUsernameHelper => 'Brukernavnet trenger ikke å samsvare med ditt Windows-brukernavn.';
 
   @override
   String get profileSetupPasswordHint => 'Velg et passord';
@@ -61,7 +58,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get profileSetupConfirmPasswordHint => 'Bekreft passordet ditt';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Vis avanserte alternativer på neste side';
 
   @override
   String get profileSetupPasswordMismatch => 'Passordene samsvarer ikke';
@@ -73,10 +70,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get profileSetupUsernameInvalid => 'Brukernavnet er ugyldig';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Dette brukernavnet finnes allerede.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'Dette navnet er reservert for systembruk.';
 
   @override
   String get profileSetupUsernameTooLong => 'Navnet er for langt.';
@@ -85,13 +82,13 @@ class AppLocalizationsNb extends AppLocalizations {
   String get profileSetupUsernameInvalidChars => 'Navnet inneholder ugyldige tegn.';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Et passord kreves';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Avansert oppsett';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'På denne siden kan du tilpasse Ubuntu WSL til ditt bruk.';
 
   @override
   String get advancedSetupMountLocationHint => 'Mount location';
@@ -103,25 +100,25 @@ class AppLocalizationsNb extends AppLocalizations {
   String get advancedSetupMountLocationInvalid => 'The location is invalid';
 
   @override
-  String get advancedSetupMountOptionHint => 'Mount option';
+  String get advancedSetupMountOptionHint => 'Monteringsvalg';
 
   @override
   String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
 
   @override
-  String get advancedSetupHostGenerationTitle => 'Enable Host Generation';
+  String get advancedSetupHostGenerationTitle => 'Skru på vertsgenerering';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Skrur på re-generering av /etc/hosts for hver oppstart.';
 
   @override
-  String get advancedSetupResolvConfGenerationTitle => 'Enable resolv.conf Generation';
+  String get advancedSetupResolvConfGenerationTitle => 'Skru på resolv.conf-generering';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Skrur på re-generering av /etc/resolv.conf for hver oppstart.';
 
   @override
-  String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
+  String get advancedSetupGUIIntegrationTitle => 'Grensesnittsintegrasjon';
 
   @override
   String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
@@ -130,13 +127,13 @@ class AppLocalizationsNb extends AppLocalizations {
   String get configurationUITitle => 'Ubuntu WSL Configuration - Advanced options';
 
   @override
-  String get configurationUIInteroperabilityHeader => 'Interoperability';
+  String get configurationUIInteroperabilityHeader => 'Interoperabilitet';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Påskrudd';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Whether the Interoperability is enabled.';
+  String get configurationUIInteroperabilitySubtitle => 'Hvorvidt interoperabilitet er påskrudd.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
@@ -148,7 +145,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get configurationUIAutoMountHeader => 'Auto-Mount';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Påskrudd';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
@@ -160,26 +157,26 @@ class AppLocalizationsNb extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'EKSPERIMENTELT - Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Påskrudd';
 
   @override
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
-  String get applyingChanges => 'Applying changes…';
+  String get applyingChanges => 'Utfører endringer …';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Dette kan ta flere minutter, avhengig av din tilkobling til Internett.';
 
   @override
   String get setupCompleteTitle => 'Oppsett fullført';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have successfully completed the setup.';
+    return 'Hei $user,\nDu har fullført oppsettet.';
   }
 
   @override
@@ -195,19 +192,19 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationSlidesInitializing => 'Initializing...';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'Utpakking av distribusjonen';
 
   @override
   String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
 
   @override
-  String get installationSlidesLaunching => 'Launching distro...';
+  String get installationSlidesLaunching => 'Starter distribusjonen …';
 
   @override
-  String get installationSlidesErrorMsg => 'Something went wrong.';
+  String get installationSlidesErrorMsg => 'Noe gikk galt.';
 
   @override
-  String get installationSlidesErrorTitle => 'Something went wrong';
+  String get installationSlidesErrorTitle => 'Noe gikk galt.';
 
   @override
   String get installationSlidesErrorSub => 'Please restart WSL with the following command and try again:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME';
@@ -216,10 +213,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationSlidesErrorText => '\nAn irrecoverable error happened.\n\nPlease close this application, open Powershell or the command prompt and issue the following commands:\n';
 
   @override
-  String get installationSlidesDone => 'All set. Enjoy using Ubuntu on WSL';
+  String get installationSlidesDone => 'Alt i orden. Nyt Ubuntu på WSL';
 
   @override
-  String get installationSlidesExitTitle => 'Are you sure you want to leave?';
+  String get installationSlidesExitTitle => 'Er du sikker på at du vil forlate?';
 
   @override
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
@@ -231,22 +228,22 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'OK';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => 'Forlat';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'Avbryt';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'Ubuntu på WSL';
 
   @override
   String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
 
   @override
-  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nWeb Development';
+  String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL for\nvev-utvikling';
 
   @override
   String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
@@ -276,10 +273,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Finn ut mer';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => 'Besøk ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';

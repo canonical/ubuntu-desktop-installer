@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Hebrew (`he`).
@@ -30,11 +27,11 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'יש להתקין חבילות לשיפור התמיכה ב$lang';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'לא מומלץ לחיבורים אטיים.';
 
   @override
   String get profileSetupTitle => 'הקמת פרופיל';

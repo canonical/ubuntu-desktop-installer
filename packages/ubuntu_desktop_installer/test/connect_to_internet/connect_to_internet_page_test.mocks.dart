@@ -33,56 +33,100 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 class _FakeNetworkManagerAccessPoint_0 extends _i1.SmartFake
     implements _i2.NetworkManagerAccessPoint {
-  _FakeNetworkManagerAccessPoint_0(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerAccessPoint_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkService_1 extends _i1.SmartFake
     implements _i2.NetworkService {
-  _FakeNetworkService_1(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkService_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeEthernetDevice_2 extends _i1.SmartFake
     implements _i3.EthernetDevice {
-  _FakeEthernetDevice_2(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeEthernetDevice_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerDevice_3 extends _i1.SmartFake
     implements _i2.NetworkManagerDevice {
-  _FakeNetworkManagerDevice_3(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerDevice_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeWifiDevice_4 extends _i1.SmartFake implements _i4.WifiDevice {
-  _FakeWifiDevice_4(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeWifiDevice_4(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerSettings_5 extends _i1.SmartFake
     implements _i2.NetworkManagerSettings {
-  _FakeNetworkManagerSettings_5(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerSettings_5(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerDnsManager_6 extends _i1.SmartFake
     implements _i2.NetworkManagerDnsManager {
-  _FakeNetworkManagerDnsManager_6(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeNetworkManagerDnsManager_6(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeNetworkManagerActiveConnection_7 extends _i1.SmartFake
     implements _i2.NetworkManagerActiveConnection {
   _FakeNetworkManagerActiveConnection_7(
-      Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeUdevDeviceInfo_8 extends _i1.SmartFake
     implements _i2.UdevDeviceInfo {
-  _FakeUdevDeviceInfo_8(Object parent, Invocation parentInvocation)
-      : super(parent, parentInvocation);
+  _FakeUdevDeviceInfo_8(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [AccessPoint].
@@ -94,75 +138,136 @@ class MockAccessPoint extends _i1.Mock implements _i4.AccessPoint {
   }
 
   @override
-  _i2.NetworkManagerAccessPoint get accessPoint =>
-      (super.noSuchMethod(Invocation.getter(#accessPoint),
-              returnValue: _FakeNetworkManagerAccessPoint_0(
-                  this, Invocation.getter(#accessPoint)))
-          as _i2.NetworkManagerAccessPoint);
+  _i2.NetworkManagerAccessPoint get accessPoint => (super.noSuchMethod(
+        Invocation.getter(#accessPoint),
+        returnValue: _FakeNetworkManagerAccessPoint_0(
+          this,
+          Invocation.getter(#accessPoint),
+        ),
+      ) as _i2.NetworkManagerAccessPoint);
   @override
-  List<int> get ssid =>
-      (super.noSuchMethod(Invocation.getter(#ssid), returnValue: <int>[])
-          as List<int>);
+  List<int> get ssid => (super.noSuchMethod(
+        Invocation.getter(#ssid),
+        returnValue: <int>[],
+      ) as List<int>);
   @override
-  String get hwAddress =>
-      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
-          as String);
+  String get hwAddress => (super.noSuchMethod(
+        Invocation.getter(#hwAddress),
+        returnValue: '',
+      ) as String);
   @override
-  String get name =>
-      (super.noSuchMethod(Invocation.getter(#name), returnValue: '') as String);
+  String get name => (super.noSuchMethod(
+        Invocation.getter(#name),
+        returnValue: '',
+      ) as String);
   @override
-  int get strength =>
-      (super.noSuchMethod(Invocation.getter(#strength), returnValue: 0) as int);
+  int get strength => (super.noSuchMethod(
+        Invocation.getter(#strength),
+        returnValue: 0,
+      ) as int);
   @override
-  bool get isOpen =>
-      (super.noSuchMethod(Invocation.getter(#isOpen), returnValue: false)
-          as bool);
+  bool get isOpen => (super.noSuchMethod(
+        Invocation.getter(#isOpen),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
-      returnValueForMissingStub: null);
+  void init() => super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void cleanup() => super.noSuchMethod(
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [ConnectToInternetModel].
@@ -175,95 +280,159 @@ class MockConnectToInternetModel extends _i1.Mock
   }
 
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
+  bool get canConnect => (super.noSuchMethod(
+        Invocation.getter(#canConnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasActiveConnection =>
-      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
-          returnValue: false) as bool);
+  bool get hasActiveConnection => (super.noSuchMethod(
+        Invocation.getter(#hasActiveConnection),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isEnabled =>
-      (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
-          as bool);
+  bool get isEnabled => (super.noSuchMethod(
+        Invocation.getter(#isEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  _i5.Stream<dynamic> get onAvailabilityChanged =>
-      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
-          returnValue: _i5.Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
+  _i5.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+        Invocation.getter(#onAvailabilityChanged),
+        returnValue: _i5.Stream<dynamic>.empty(),
+      ) as _i5.Stream<dynamic>);
   @override
-  _i8.ConnectMode get connectMode =>
-      (super.noSuchMethod(Invocation.getter(#connectMode),
-          returnValue: _i8.ConnectMode.none) as _i8.ConnectMode);
+  _i8.ConnectMode get connectMode => (super.noSuchMethod(
+        Invocation.getter(#connectMode),
+        returnValue: _i8.ConnectMode.none,
+      ) as _i8.ConnectMode);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void addConnectMode(_i8.ConnectModel? model) =>
-      super.noSuchMethod(Invocation.method(#addConnectMode, [model]),
-          returnValueForMissingStub: null);
+  void addConnectMode(_i8.ConnectModel? model) => super.noSuchMethod(
+        Invocation.method(
+          #addConnectMode,
+          [model],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void selectConnectMode([_i8.ConnectMode? mode]) =>
-      super.noSuchMethod(Invocation.method(#selectConnectMode, [mode]),
-          returnValueForMissingStub: null);
+  void selectConnectMode([_i8.ConnectMode? mode]) => super.noSuchMethod(
+        Invocation.method(
+          #selectConnectMode,
+          [mode],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
-      returnValueForMissingStub: null);
+  void onSelected() => super.noSuchMethod(
+        Invocation.method(
+          #onSelected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onDeselected() =>
-      super.noSuchMethod(Invocation.method(#onDeselected, []),
-          returnValueForMissingStub: null);
+  void onDeselected() => super.noSuchMethod(
+        Invocation.method(
+          #onDeselected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> markConfigured() => (super.noSuchMethod(
-      Invocation.method(#markConfigured, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #markConfigured,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> cleanup() => (super.noSuchMethod(
-      Invocation.method(#cleanup, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> enable() => (super.noSuchMethod(
-      Invocation.method(#enable, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #enable,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [EthernetModel].
@@ -275,131 +444,234 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
   }
 
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
+  bool get canConnect => (super.noSuchMethod(
+        Invocation.getter(#canConnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasActiveConnection =>
-      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
-          returnValue: false) as bool);
+  bool get hasActiveConnection => (super.noSuchMethod(
+        Invocation.getter(#hasActiveConnection),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isEnabled =>
-      (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
-          as bool);
+  bool get isEnabled => (super.noSuchMethod(
+        Invocation.getter(#isEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  _i8.ConnectMode get connectMode =>
-      (super.noSuchMethod(Invocation.getter(#connectMode),
-          returnValue: _i8.ConnectMode.none) as _i8.ConnectMode);
+  _i8.ConnectMode get connectMode => (super.noSuchMethod(
+        Invocation.getter(#connectMode),
+        returnValue: _i8.ConnectMode.none,
+      ) as _i8.ConnectMode);
   @override
   _i2.NetworkService get service => (super.noSuchMethod(
+        Invocation.getter(#service),
+        returnValue: _FakeNetworkService_1(
+          this,
           Invocation.getter(#service),
-          returnValue: _FakeNetworkService_1(this, Invocation.getter(#service)))
-      as _i2.NetworkService);
+        ),
+      ) as _i2.NetworkService);
   @override
-  List<_i3.EthernetDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-          returnValue: <_i3.EthernetDevice>[]) as List<_i3.EthernetDevice>);
+  List<_i3.EthernetDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i3.EthernetDevice>[],
+      ) as List<_i3.EthernetDevice>);
   @override
-  _i5.Stream<dynamic> get onAvailabilityChanged =>
-      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
-          returnValue: _i5.Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
+  _i5.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+        Invocation.getter(#onAvailabilityChanged),
+        returnValue: _i5.Stream<dynamic>.empty(),
+      ) as _i5.Stream<dynamic>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
-      returnValueForMissingStub: null);
+  void onSelected() => super.noSuchMethod(
+        Invocation.method(
+          #onSelected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onDeselected() =>
-      super.noSuchMethod(Invocation.method(#onDeselected, []),
-          returnValueForMissingStub: null);
+  void onDeselected() => super.noSuchMethod(
+        Invocation.method(
+          #onDeselected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> enable() => (super.noSuchMethod(
-      Invocation.method(#enable, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #enable,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  List<_i2.NetworkManagerDevice> getDevices() =>
-      (super.noSuchMethod(Invocation.method(#getDevices, []),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> getDevices() => (super.noSuchMethod(
+        Invocation.method(
+          #getDevices,
+          [],
+        ),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
   _i3.EthernetDevice createDevice(_i2.NetworkManagerDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#createDevice, [device]),
-              returnValue: _FakeEthernetDevice_2(
-                  this, Invocation.method(#createDevice, [device])))
-          as _i3.EthernetDevice);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createDevice,
+          [device],
+        ),
+        returnValue: _FakeEthernetDevice_2(
+          this,
+          Invocation.method(
+            #createDevice,
+            [device],
+          ),
+        ),
+      ) as _i3.EthernetDevice);
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> cleanup() => (super.noSuchMethod(
-      Invocation.method(#cleanup, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void updateDevices() =>
-      super.noSuchMethod(Invocation.method(#updateDevices, []),
-          returnValueForMissingStub: null);
+  void updateDevices() => super.noSuchMethod(
+        Invocation.method(
+          #updateDevices,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool isSelectedDevice(_i3.EthernetDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
-          returnValue: false) as bool);
+  bool isSelectedDevice(_i3.EthernetDevice? device) => (super.noSuchMethod(
+        Invocation.method(
+          #isSelectedDevice,
+          [device],
+        ),
+        returnValue: false,
+      ) as bool);
   @override
-  void selectDevice(_i3.EthernetDevice? device) =>
-      super.noSuchMethod(Invocation.method(#selectDevice, [device]),
-          returnValueForMissingStub: null);
+  void selectDevice(_i3.EthernetDevice? device) => super.noSuchMethod(
+        Invocation.method(
+          #selectDevice,
+          [device],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [EthernetDevice].
@@ -411,104 +683,174 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
   }
 
   @override
-  _i2.NetworkManagerDevice get device =>
-      (super.noSuchMethod(Invocation.getter(#device),
-              returnValue:
-                  _FakeNetworkManagerDevice_3(this, Invocation.getter(#device)))
-          as _i2.NetworkManagerDevice);
+  _i2.NetworkManagerDevice get device => (super.noSuchMethod(
+        Invocation.getter(#device),
+        returnValue: _FakeNetworkManagerDevice_3(
+          this,
+          Invocation.getter(#device),
+        ),
+      ) as _i2.NetworkManagerDevice);
   @override
-  String get interface =>
-      (super.noSuchMethod(Invocation.getter(#interface), returnValue: '')
-          as String);
+  String get interface => (super.noSuchMethod(
+        Invocation.getter(#interface),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerDeviceState get state =>
-      (super.noSuchMethod(Invocation.getter(#state),
-              returnValue: _i2.NetworkManagerDeviceState.unknown)
-          as _i2.NetworkManagerDeviceState);
+  _i2.NetworkManagerDeviceState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerDeviceState.unknown,
+      ) as _i2.NetworkManagerDeviceState);
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get isActive => (super.noSuchMethod(
+        Invocation.getter(#isActive),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isAvailable =>
-      (super.noSuchMethod(Invocation.getter(#isAvailable), returnValue: false)
-          as bool);
+  bool get isAvailable => (super.noSuchMethod(
+        Invocation.getter(#isAvailable),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisconnected => (super
-          .noSuchMethod(Invocation.getter(#isDisconnected), returnValue: false)
-      as bool);
+  bool get isDisconnected => (super.noSuchMethod(
+        Invocation.getter(#isDisconnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isUnmanaged =>
-      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
-          as bool);
+  bool get isUnmanaged => (super.noSuchMethod(
+        Invocation.getter(#isUnmanaged),
+        returnValue: false,
+      ) as bool);
   @override
-  String get hwAddress =>
-      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
-          as String);
+  String get hwAddress => (super.noSuchMethod(
+        Invocation.getter(#hwAddress),
+        returnValue: '',
+      ) as String);
   @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
-      (super.noSuchMethod(Invocation.getter(#availableConnections),
-              returnValue: <_i2.NetworkManagerSettingsConnection>[])
-          as List<_i2.NetworkManagerSettingsConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#availableConnections),
+        returnValue: <_i2.NetworkManagerSettingsConnection>[],
+      ) as List<_i2.NetworkManagerSettingsConnection>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
-      returnValueForMissingStub: null);
+  void init() => super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void cleanup() => super.noSuchMethod(
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void updateDevice(_i2.NetworkManagerDevice? device) =>
-      super.noSuchMethod(Invocation.method(#updateDevice, [device]),
-          returnValueForMissingStub: null);
+  void updateDevice(_i2.NetworkManagerDevice? device) => super.noSuchMethod(
+        Invocation.method(
+          #updateDevice,
+          [device],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> disconnect() => (super.noSuchMethod(
-      Invocation.method(#disconnect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #disconnect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [HiddenWifiModel].
@@ -520,137 +862,246 @@ class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
   }
 
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
+  bool get canConnect => (super.noSuchMethod(
+        Invocation.getter(#canConnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasActiveConnection =>
-      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
-          returnValue: false) as bool);
+  bool get hasActiveConnection => (super.noSuchMethod(
+        Invocation.getter(#hasActiveConnection),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isEnabled =>
-      (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
-          as bool);
+  bool get isEnabled => (super.noSuchMethod(
+        Invocation.getter(#isEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  _i8.ConnectMode get connectMode =>
-      (super.noSuchMethod(Invocation.getter(#connectMode),
-          returnValue: _i8.ConnectMode.none) as _i8.ConnectMode);
+  _i8.ConnectMode get connectMode => (super.noSuchMethod(
+        Invocation.getter(#connectMode),
+        returnValue: _i8.ConnectMode.none,
+      ) as _i8.ConnectMode);
   @override
-  String get ssid =>
-      (super.noSuchMethod(Invocation.getter(#ssid), returnValue: '') as String);
+  String get ssid => (super.noSuchMethod(
+        Invocation.getter(#ssid),
+        returnValue: '',
+      ) as String);
   @override
   _i2.NetworkService get service => (super.noSuchMethod(
+        Invocation.getter(#service),
+        returnValue: _FakeNetworkService_1(
+          this,
           Invocation.getter(#service),
-          returnValue: _FakeNetworkService_1(this, Invocation.getter(#service)))
-      as _i2.NetworkService);
+        ),
+      ) as _i2.NetworkService);
   @override
-  List<_i4.WifiDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-          returnValue: <_i4.WifiDevice>[]) as List<_i4.WifiDevice>);
+  List<_i4.WifiDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i4.WifiDevice>[],
+      ) as List<_i4.WifiDevice>);
   @override
-  _i5.Stream<dynamic> get onAvailabilityChanged =>
-      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
-          returnValue: _i5.Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
+  _i5.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+        Invocation.getter(#onAvailabilityChanged),
+        returnValue: _i5.Stream<dynamic>.empty(),
+      ) as _i5.Stream<dynamic>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  _i5.Future<dynamic> connect() =>
-      (super.noSuchMethod(Invocation.method(#connect, []),
-          returnValue: _i5.Future<dynamic>.value()) as _i5.Future<dynamic>);
+  _i5.Future<dynamic> connect() => (super.noSuchMethod(
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i5.Future<dynamic>.value(),
+      ) as _i5.Future<dynamic>);
   @override
-  void setSsid(String? ssid) =>
-      super.noSuchMethod(Invocation.method(#setSsid, [ssid]),
-          returnValueForMissingStub: null);
+  void setSsid(String? ssid) => super.noSuchMethod(
+        Invocation.method(
+          #setSsid,
+          [ssid],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> enable() => (super.noSuchMethod(
-      Invocation.method(#enable, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #enable,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void onDeselected() =>
-      super.noSuchMethod(Invocation.method(#onDeselected, []),
-          returnValueForMissingStub: null);
+  void onDeselected() => super.noSuchMethod(
+        Invocation.method(
+          #onDeselected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
-      returnValueForMissingStub: null);
+  void onSelected() => super.noSuchMethod(
+        Invocation.method(
+          #onSelected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  List<_i2.NetworkManagerDevice> getDevices() =>
-      (super.noSuchMethod(Invocation.method(#getDevices, []),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> getDevices() => (super.noSuchMethod(
+        Invocation.method(
+          #getDevices,
+          [],
+        ),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
   _i4.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#createDevice, [device]),
-              returnValue: _FakeWifiDevice_4(
-                  this, Invocation.method(#createDevice, [device])))
-          as _i4.WifiDevice);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createDevice,
+          [device],
+        ),
+        returnValue: _FakeWifiDevice_4(
+          this,
+          Invocation.method(
+            #createDevice,
+            [device],
+          ),
+        ),
+      ) as _i4.WifiDevice);
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> cleanup() => (super.noSuchMethod(
-      Invocation.method(#cleanup, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void updateDevices() =>
-      super.noSuchMethod(Invocation.method(#updateDevices, []),
-          returnValueForMissingStub: null);
+  void updateDevices() => super.noSuchMethod(
+        Invocation.method(
+          #updateDevices,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool isSelectedDevice(_i4.WifiDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
-          returnValue: false) as bool);
+  bool isSelectedDevice(_i4.WifiDevice? device) => (super.noSuchMethod(
+        Invocation.method(
+          #isSelectedDevice,
+          [device],
+        ),
+        returnValue: false,
+      ) as bool);
   @override
-  void selectDevice(_i4.WifiDevice? device) =>
-      super.noSuchMethod(Invocation.method(#selectDevice, [device]),
-          returnValueForMissingStub: null);
+  void selectDevice(_i4.WifiDevice? device) => super.noSuchMethod(
+        Invocation.method(
+          #selectDevice,
+          [device],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [NetworkService].
@@ -662,204 +1113,285 @@ class MockNetworkService extends _i1.Mock implements _i2.NetworkService {
   }
 
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i2.NetworkManagerDevice> get wiredDevices =>
-      (super.noSuchMethod(Invocation.getter(#wiredDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get wiredDevices => (super.noSuchMethod(
+        Invocation.getter(#wiredDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  List<_i2.NetworkManagerDevice> get wirelessDevices =>
-      (super.noSuchMethod(Invocation.getter(#wirelessDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get wirelessDevices => (super.noSuchMethod(
+        Invocation.getter(#wirelessDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  _i5.Stream<_i2.NetworkManagerDevice> get deviceAdded =>
-      (super.noSuchMethod(Invocation.getter(#deviceAdded),
-              returnValue: _i5.Stream<_i2.NetworkManagerDevice>.empty())
-          as _i5.Stream<_i2.NetworkManagerDevice>);
+  _i5.Stream<_i2.NetworkManagerDevice> get deviceAdded => (super.noSuchMethod(
+        Invocation.getter(#deviceAdded),
+        returnValue: _i5.Stream<_i2.NetworkManagerDevice>.empty(),
+      ) as _i5.Stream<_i2.NetworkManagerDevice>);
   @override
-  _i5.Stream<_i2.NetworkManagerDevice> get deviceRemoved =>
-      (super.noSuchMethod(Invocation.getter(#deviceRemoved),
-              returnValue: _i5.Stream<_i2.NetworkManagerDevice>.empty())
-          as _i5.Stream<_i2.NetworkManagerDevice>);
+  _i5.Stream<_i2.NetworkManagerDevice> get deviceRemoved => (super.noSuchMethod(
+        Invocation.getter(#deviceRemoved),
+        returnValue: _i5.Stream<_i2.NetworkManagerDevice>.empty(),
+      ) as _i5.Stream<_i2.NetworkManagerDevice>);
   @override
   _i5.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionAdded =>
-      (super.noSuchMethod(Invocation.getter(#activeConnectionAdded),
-              returnValue:
-                  _i5.Stream<_i2.NetworkManagerActiveConnection>.empty())
-          as _i5.Stream<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnectionAdded),
+        returnValue: _i5.Stream<_i2.NetworkManagerActiveConnection>.empty(),
+      ) as _i5.Stream<_i2.NetworkManagerActiveConnection>);
   @override
   _i5.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionRemoved =>
-      (super.noSuchMethod(Invocation.getter(#activeConnectionRemoved),
-              returnValue:
-                  _i5.Stream<_i2.NetworkManagerActiveConnection>.empty())
-          as _i5.Stream<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnectionRemoved),
+        returnValue: _i5.Stream<_i2.NetworkManagerActiveConnection>.empty(),
+      ) as _i5.Stream<_i2.NetworkManagerActiveConnection>);
   @override
-  _i5.Stream<List<String>> get propertiesChanged =>
-      (super.noSuchMethod(Invocation.getter(#propertiesChanged),
-              returnValue: _i5.Stream<List<String>>.empty())
-          as _i5.Stream<List<String>>);
+  _i5.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i5.Stream<List<String>>.empty(),
+      ) as _i5.Stream<List<String>>);
   @override
-  List<_i2.NetworkManagerDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  List<_i2.NetworkManagerDevice> get allDevices =>
-      (super.noSuchMethod(Invocation.getter(#allDevices),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> get allDevices => (super.noSuchMethod(
+        Invocation.getter(#allDevices),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
-  bool get networkingEnabled =>
-      (super.noSuchMethod(Invocation.getter(#networkingEnabled),
-          returnValue: false) as bool);
+  bool get networkingEnabled => (super.noSuchMethod(
+        Invocation.getter(#networkingEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wirelessEnabled => (super
-          .noSuchMethod(Invocation.getter(#wirelessEnabled), returnValue: false)
-      as bool);
+  bool get wirelessEnabled => (super.noSuchMethod(
+        Invocation.getter(#wirelessEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wirelessHardwareEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wirelessHardwareEnabled),
-          returnValue: false) as bool);
+  bool get wirelessHardwareEnabled => (super.noSuchMethod(
+        Invocation.getter(#wirelessHardwareEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wwanEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wwanEnabled), returnValue: false)
-          as bool);
+  bool get wwanEnabled => (super.noSuchMethod(
+        Invocation.getter(#wwanEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get wwanHardwareEnabled =>
-      (super.noSuchMethod(Invocation.getter(#wwanHardwareEnabled),
-          returnValue: false) as bool);
+  bool get wwanHardwareEnabled => (super.noSuchMethod(
+        Invocation.getter(#wwanHardwareEnabled),
+        returnValue: false,
+      ) as bool);
   @override
   List<_i2.NetworkManagerActiveConnection> get activeConnections =>
-      (super.noSuchMethod(Invocation.getter(#activeConnections),
-              returnValue: <_i2.NetworkManagerActiveConnection>[])
-          as List<_i2.NetworkManagerActiveConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#activeConnections),
+        returnValue: <_i2.NetworkManagerActiveConnection>[],
+      ) as List<_i2.NetworkManagerActiveConnection>);
   @override
-  String get primaryConnectionType =>
-      (super.noSuchMethod(Invocation.getter(#primaryConnectionType),
-          returnValue: '') as String);
+  String get primaryConnectionType => (super.noSuchMethod(
+        Invocation.getter(#primaryConnectionType),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerMetered get metered =>
-      (super.noSuchMethod(Invocation.getter(#metered),
-              returnValue: _i2.NetworkManagerMetered.unknown)
-          as _i2.NetworkManagerMetered);
+  _i2.NetworkManagerMetered get metered => (super.noSuchMethod(
+        Invocation.getter(#metered),
+        returnValue: _i2.NetworkManagerMetered.unknown,
+      ) as _i2.NetworkManagerMetered);
   @override
-  bool get startup =>
-      (super.noSuchMethod(Invocation.getter(#startup), returnValue: false)
-          as bool);
+  bool get startup => (super.noSuchMethod(
+        Invocation.getter(#startup),
+        returnValue: false,
+      ) as bool);
   @override
-  String get version =>
-      (super.noSuchMethod(Invocation.getter(#version), returnValue: '')
-          as String);
+  String get version => (super.noSuchMethod(
+        Invocation.getter(#version),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerConnectivityState get connectivity =>
-      (super.noSuchMethod(Invocation.getter(#connectivity),
-              returnValue: _i2.NetworkManagerConnectivityState.unknown)
-          as _i2.NetworkManagerConnectivityState);
+  _i2.NetworkManagerConnectivityState get connectivity => (super.noSuchMethod(
+        Invocation.getter(#connectivity),
+        returnValue: _i2.NetworkManagerConnectivityState.unknown,
+      ) as _i2.NetworkManagerConnectivityState);
   @override
-  bool get connectivityCheckAvailable =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckAvailable),
-          returnValue: false) as bool);
+  bool get connectivityCheckAvailable => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckAvailable),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get connectivityCheckEnabled =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckEnabled),
-          returnValue: false) as bool);
+  bool get connectivityCheckEnabled => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  String get connectivityCheckUri =>
-      (super.noSuchMethod(Invocation.getter(#connectivityCheckUri),
-          returnValue: '') as String);
+  String get connectivityCheckUri => (super.noSuchMethod(
+        Invocation.getter(#connectivityCheckUri),
+        returnValue: '',
+      ) as String);
   @override
   _i2.NetworkManagerState get state => (super.noSuchMethod(
-      Invocation.getter(#state),
-      returnValue: _i2.NetworkManagerState.unknown) as _i2.NetworkManagerState);
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerState.unknown,
+      ) as _i2.NetworkManagerState);
   @override
   _i2.NetworkManagerSettings get settings => (super.noSuchMethod(
+        Invocation.getter(#settings),
+        returnValue: _FakeNetworkManagerSettings_5(
+          this,
           Invocation.getter(#settings),
-          returnValue:
-              _FakeNetworkManagerSettings_5(this, Invocation.getter(#settings)))
-      as _i2.NetworkManagerSettings);
+        ),
+      ) as _i2.NetworkManagerSettings);
   @override
-  _i2.NetworkManagerDnsManager get dnsManager =>
-      (super.noSuchMethod(Invocation.getter(#dnsManager),
-              returnValue: _FakeNetworkManagerDnsManager_6(
-                  this, Invocation.getter(#dnsManager)))
-          as _i2.NetworkManagerDnsManager);
+  _i2.NetworkManagerDnsManager get dnsManager => (super.noSuchMethod(
+        Invocation.getter(#dnsManager),
+        returnValue: _FakeNetworkManagerDnsManager_6(
+          this,
+          Invocation.getter(#dnsManager),
+        ),
+      ) as _i2.NetworkManagerDnsManager);
   @override
   Map<String, Map<String, _i10.DBusValue>> getWifiSettings({String? ssid}) =>
       (super.noSuchMethod(
-              Invocation.method(#getWifiSettings, [], {#ssid: ssid}),
-              returnValue: <String, Map<String, _i10.DBusValue>>{})
-          as Map<String, Map<String, _i10.DBusValue>>);
+        Invocation.method(
+          #getWifiSettings,
+          [],
+          {#ssid: ssid},
+        ),
+        returnValue: <String, Map<String, _i10.DBusValue>>{},
+      ) as Map<String, Map<String, _i10.DBusValue>>);
   @override
   _i5.Future<void> markConfigured() => (super.noSuchMethod(
-      Invocation.method(#markConfigured, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #markConfigured,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> setWirelessEnabled(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setWirelessEnabled, [value]),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #setWirelessEnabled,
+          [value],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> setWwanEnabled(bool? value) => (super.noSuchMethod(
-      Invocation.method(#setWwanEnabled, [value]),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #setWwanEnabled,
+          [value],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> setConnectivityCheckEnabled(bool? value) =>
       (super.noSuchMethod(
-              Invocation.method(#setConnectivityCheckEnabled, [value]),
-              returnValue: _i5.Future<void>.value(),
-              returnValueForMissingStub: _i5.Future<void>.value())
-          as _i5.Future<void>);
+        Invocation.method(
+          #setConnectivityCheckEnabled,
+          [value],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i5.Future<_i2.NetworkManagerActiveConnection> addAndActivateConnection(
-          {Map<String, Map<String, _i10.DBusValue>>? connection = const {},
-          _i2.NetworkManagerDevice? device,
-          _i2.NetworkManagerAccessPoint? accessPoint}) =>
-      (super.noSuchMethod(Invocation.method(#addAndActivateConnection, [], {#connection: connection, #device: device, #accessPoint: accessPoint}),
-          returnValue: _i5.Future<_i2.NetworkManagerActiveConnection>.value(
-              _FakeNetworkManagerActiveConnection_7(
-                  this,
-                  Invocation.method(#addAndActivateConnection, [], {
-                    #connection: connection,
-                    #device: device,
-                    #accessPoint: accessPoint
-                  })))) as _i5.Future<_i2.NetworkManagerActiveConnection>);
+  _i5.Future<_i2.NetworkManagerActiveConnection> addAndActivateConnection({
+    Map<String, Map<String, _i10.DBusValue>>? connection = const {},
+    _i2.NetworkManagerDevice? device,
+    _i2.NetworkManagerAccessPoint? accessPoint,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addAndActivateConnection,
+          [],
+          {
+            #connection: connection,
+            #device: device,
+            #accessPoint: accessPoint,
+          },
+        ),
+        returnValue: _i5.Future<_i2.NetworkManagerActiveConnection>.value(
+            _FakeNetworkManagerActiveConnection_7(
+          this,
+          Invocation.method(
+            #addAndActivateConnection,
+            [],
+            {
+              #connection: connection,
+              #device: device,
+              #accessPoint: accessPoint,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i2.NetworkManagerActiveConnection>);
   @override
-  _i5.Future<_i2.NetworkManagerActiveConnection> activateConnection(
-          {_i2.NetworkManagerDevice? device,
-          _i2.NetworkManagerSettingsConnection? connection,
-          _i2.NetworkManagerAccessPoint? accessPoint}) =>
-      (super.noSuchMethod(Invocation.method(#activateConnection, [], {#device: device, #connection: connection, #accessPoint: accessPoint}),
-          returnValue: _i5.Future<_i2.NetworkManagerActiveConnection>.value(
-              _FakeNetworkManagerActiveConnection_7(
-                  this,
-                  Invocation.method(#activateConnection, [], {
-                    #device: device,
-                    #connection: connection,
-                    #accessPoint: accessPoint
-                  })))) as _i5.Future<_i2.NetworkManagerActiveConnection>);
+  _i5.Future<_i2.NetworkManagerActiveConnection> activateConnection({
+    _i2.NetworkManagerDevice? device,
+    _i2.NetworkManagerSettingsConnection? connection,
+    _i2.NetworkManagerAccessPoint? accessPoint,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #activateConnection,
+          [],
+          {
+            #device: device,
+            #connection: connection,
+            #accessPoint: accessPoint,
+          },
+        ),
+        returnValue: _i5.Future<_i2.NetworkManagerActiveConnection>.value(
+            _FakeNetworkManagerActiveConnection_7(
+          this,
+          Invocation.method(
+            #activateConnection,
+            [],
+            {
+              #device: device,
+              #connection: connection,
+              #accessPoint: accessPoint,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i2.NetworkManagerActiveConnection>);
   @override
   _i5.Future<void> deactivateConnection(
           _i2.NetworkManagerActiveConnection? connection) =>
       (super.noSuchMethod(
-              Invocation.method(#deactivateConnection, [connection]),
-              returnValue: _i5.Future<void>.value(),
-              returnValueForMissingStub: _i5.Future<void>.value())
-          as _i5.Future<void>);
+        Invocation.method(
+          #deactivateConnection,
+          [connection],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i5.Future<void> close() => (super.noSuchMethod(Invocation.method(#close, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }
 
 /// A class which mocks [UdevDeviceInfo].
@@ -871,9 +1403,10 @@ class MockUdevDeviceInfo extends _i1.Mock implements _i2.UdevDeviceInfo {
   }
 
   @override
-  String get fullName =>
-      (super.noSuchMethod(Invocation.getter(#fullName), returnValue: '')
-          as String);
+  String get fullName => (super.noSuchMethod(
+        Invocation.getter(#fullName),
+        returnValue: '',
+      ) as String);
 }
 
 /// A class which mocks [UdevService].
@@ -885,17 +1418,33 @@ class MockUdevService extends _i1.Mock implements _i2.UdevService {
   }
 
   @override
-  _i2.UdevDeviceInfo bySysname(String? sysname) =>
-      (super.noSuchMethod(Invocation.method(#bySysname, [sysname]),
-              returnValue: _FakeUdevDeviceInfo_8(
-                  this, Invocation.method(#bySysname, [sysname])))
-          as _i2.UdevDeviceInfo);
+  _i2.UdevDeviceInfo bySysname(String? sysname) => (super.noSuchMethod(
+        Invocation.method(
+          #bySysname,
+          [sysname],
+        ),
+        returnValue: _FakeUdevDeviceInfo_8(
+          this,
+          Invocation.method(
+            #bySysname,
+            [sysname],
+          ),
+        ),
+      ) as _i2.UdevDeviceInfo);
   @override
-  _i2.UdevDeviceInfo bySyspath(String? syspath) =>
-      (super.noSuchMethod(Invocation.method(#bySyspath, [syspath]),
-              returnValue: _FakeUdevDeviceInfo_8(
-                  this, Invocation.method(#bySyspath, [syspath])))
-          as _i2.UdevDeviceInfo);
+  _i2.UdevDeviceInfo bySyspath(String? syspath) => (super.noSuchMethod(
+        Invocation.method(
+          #bySyspath,
+          [syspath],
+        ),
+        returnValue: _FakeUdevDeviceInfo_8(
+          this,
+          Invocation.method(
+            #bySyspath,
+            [syspath],
+          ),
+        ),
+      ) as _i2.UdevDeviceInfo);
 }
 
 /// A class which mocks [WifiModel].
@@ -907,143 +1456,259 @@ class MockWifiModel extends _i1.Mock implements _i4.WifiModel {
   }
 
   @override
-  bool get canConnect =>
-      (super.noSuchMethod(Invocation.getter(#canConnect), returnValue: false)
-          as bool);
+  bool get canConnect => (super.noSuchMethod(
+        Invocation.getter(#canConnect),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnected =>
-      (super.noSuchMethod(Invocation.getter(#isConnected), returnValue: false)
-          as bool);
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasActiveConnection =>
-      (super.noSuchMethod(Invocation.getter(#hasActiveConnection),
-          returnValue: false) as bool);
+  bool get hasActiveConnection => (super.noSuchMethod(
+        Invocation.getter(#hasActiveConnection),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isEnabled =>
-      (super.noSuchMethod(Invocation.getter(#isEnabled), returnValue: false)
-          as bool);
+  bool get isEnabled => (super.noSuchMethod(
+        Invocation.getter(#isEnabled),
+        returnValue: false,
+      ) as bool);
   @override
-  _i8.ConnectMode get connectMode =>
-      (super.noSuchMethod(Invocation.getter(#connectMode),
-          returnValue: _i8.ConnectMode.none) as _i8.ConnectMode);
+  _i8.ConnectMode get connectMode => (super.noSuchMethod(
+        Invocation.getter(#connectMode),
+        returnValue: _i8.ConnectMode.none,
+      ) as _i8.ConnectMode);
   @override
   _i2.NetworkService get service => (super.noSuchMethod(
+        Invocation.getter(#service),
+        returnValue: _FakeNetworkService_1(
+          this,
           Invocation.getter(#service),
-          returnValue: _FakeNetworkService_1(this, Invocation.getter(#service)))
-      as _i2.NetworkService);
+        ),
+      ) as _i2.NetworkService);
   @override
-  List<_i4.WifiDevice> get devices =>
-      (super.noSuchMethod(Invocation.getter(#devices),
-          returnValue: <_i4.WifiDevice>[]) as List<_i4.WifiDevice>);
+  List<_i4.WifiDevice> get devices => (super.noSuchMethod(
+        Invocation.getter(#devices),
+        returnValue: <_i4.WifiDevice>[],
+      ) as List<_i4.WifiDevice>);
   @override
-  _i5.Stream<dynamic> get onAvailabilityChanged =>
-      (super.noSuchMethod(Invocation.getter(#onAvailabilityChanged),
-          returnValue: _i5.Stream<dynamic>.empty()) as _i5.Stream<dynamic>);
+  _i5.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+        Invocation.getter(#onAvailabilityChanged),
+        returnValue: _i5.Stream<dynamic>.empty(),
+      ) as _i5.Stream<dynamic>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void onSelected() => super.noSuchMethod(Invocation.method(#onSelected, []),
-      returnValueForMissingStub: null);
+  void onSelected() => super.noSuchMethod(
+        Invocation.method(
+          #onSelected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void onDeselected() =>
-      super.noSuchMethod(Invocation.method(#onDeselected, []),
-          returnValueForMissingStub: null);
+  void onDeselected() => super.noSuchMethod(
+        Invocation.method(
+          #onDeselected,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(Invocation.method(#init, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> cleanup() => (super.noSuchMethod(
-      Invocation.method(#cleanup, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> enable() => (super.noSuchMethod(
-      Invocation.method(#enable, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #enable,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<void> connect() => (super.noSuchMethod(
-      Invocation.method(#connect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  List<_i2.NetworkManagerDevice> getDevices() =>
-      (super.noSuchMethod(Invocation.method(#getDevices, []),
-              returnValue: <_i2.NetworkManagerDevice>[])
-          as List<_i2.NetworkManagerDevice>);
+  List<_i2.NetworkManagerDevice> getDevices() => (super.noSuchMethod(
+        Invocation.method(
+          #getDevices,
+          [],
+        ),
+        returnValue: <_i2.NetworkManagerDevice>[],
+      ) as List<_i2.NetworkManagerDevice>);
   @override
   _i4.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#createDevice, [device]),
-              returnValue: _FakeWifiDevice_4(
-                  this, Invocation.method(#createDevice, [device])))
-          as _i4.WifiDevice);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createDevice,
+          [device],
+        ),
+        returnValue: _FakeWifiDevice_4(
+          this,
+          Invocation.method(
+            #createDevice,
+            [device],
+          ),
+        ),
+      ) as _i4.WifiDevice);
   @override
-  void startPeriodicScanning() =>
-      super.noSuchMethod(Invocation.method(#startPeriodicScanning, []),
-          returnValueForMissingStub: null);
+  void startPeriodicScanning() => super.noSuchMethod(
+        Invocation.method(
+          #startPeriodicScanning,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void stopPeriodicScanning() =>
-      super.noSuchMethod(Invocation.method(#stopPeriodicScanning, []),
-          returnValueForMissingStub: null);
+  void stopPeriodicScanning() => super.noSuchMethod(
+        Invocation.method(
+          #stopPeriodicScanning,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  _i5.Future<dynamic> requestScan({String? ssid}) =>
-      (super.noSuchMethod(Invocation.method(#requestScan, [], {#ssid: ssid}),
-          returnValue: _i5.Future<dynamic>.value()) as _i5.Future<dynamic>);
+  _i5.Future<dynamic> requestScan({String? ssid}) => (super.noSuchMethod(
+        Invocation.method(
+          #requestScan,
+          [],
+          {#ssid: ssid},
+        ),
+        returnValue: _i5.Future<dynamic>.value(),
+      ) as _i5.Future<dynamic>);
   @override
-  void updateDevices() =>
-      super.noSuchMethod(Invocation.method(#updateDevices, []),
-          returnValueForMissingStub: null);
+  void updateDevices() => super.noSuchMethod(
+        Invocation.method(
+          #updateDevices,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  bool isSelectedDevice(_i4.WifiDevice? device) =>
-      (super.noSuchMethod(Invocation.method(#isSelectedDevice, [device]),
-          returnValue: false) as bool);
+  bool isSelectedDevice(_i4.WifiDevice? device) => (super.noSuchMethod(
+        Invocation.method(
+          #isSelectedDevice,
+          [device],
+        ),
+        returnValue: false,
+      ) as bool);
   @override
-  void selectDevice(_i4.WifiDevice? device) =>
-      super.noSuchMethod(Invocation.method(#selectDevice, [device]),
-          returnValueForMissingStub: null);
+  void selectDevice(_i4.WifiDevice? device) => super.noSuchMethod(
+        Invocation.method(
+          #selectDevice,
+          [device],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [WifiDevice].
@@ -1055,134 +1720,228 @@ class MockWifiDevice extends _i1.Mock implements _i4.WifiDevice {
   }
 
   @override
-  bool get isActive =>
-      (super.noSuchMethod(Invocation.getter(#isActive), returnValue: false)
-          as bool);
+  bool get isActive => (super.noSuchMethod(
+        Invocation.getter(#isActive),
+        returnValue: false,
+      ) as bool);
   @override
-  List<_i4.AccessPoint> get accessPoints =>
-      (super.noSuchMethod(Invocation.getter(#accessPoints),
-          returnValue: <_i4.AccessPoint>[]) as List<_i4.AccessPoint>);
+  List<_i4.AccessPoint> get accessPoints => (super.noSuchMethod(
+        Invocation.getter(#accessPoints),
+        returnValue: <_i4.AccessPoint>[],
+      ) as List<_i4.AccessPoint>);
   @override
-  bool get scanning =>
-      (super.noSuchMethod(Invocation.getter(#scanning), returnValue: false)
-          as bool);
+  bool get scanning => (super.noSuchMethod(
+        Invocation.getter(#scanning),
+        returnValue: false,
+      ) as bool);
   @override
-  int get lastScan =>
-      (super.noSuchMethod(Invocation.getter(#lastScan), returnValue: 0) as int);
+  int get lastScan => (super.noSuchMethod(
+        Invocation.getter(#lastScan),
+        returnValue: 0,
+      ) as int);
   @override
-  _i2.NetworkManagerDevice get device =>
-      (super.noSuchMethod(Invocation.getter(#device),
-              returnValue:
-                  _FakeNetworkManagerDevice_3(this, Invocation.getter(#device)))
-          as _i2.NetworkManagerDevice);
+  _i2.NetworkManagerDevice get device => (super.noSuchMethod(
+        Invocation.getter(#device),
+        returnValue: _FakeNetworkManagerDevice_3(
+          this,
+          Invocation.getter(#device),
+        ),
+      ) as _i2.NetworkManagerDevice);
   @override
-  String get interface =>
-      (super.noSuchMethod(Invocation.getter(#interface), returnValue: '')
-          as String);
+  String get interface => (super.noSuchMethod(
+        Invocation.getter(#interface),
+        returnValue: '',
+      ) as String);
   @override
-  _i2.NetworkManagerDeviceState get state =>
-      (super.noSuchMethod(Invocation.getter(#state),
-              returnValue: _i2.NetworkManagerDeviceState.unknown)
-          as _i2.NetworkManagerDeviceState);
+  _i2.NetworkManagerDeviceState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i2.NetworkManagerDeviceState.unknown,
+      ) as _i2.NetworkManagerDeviceState);
   @override
-  bool get isConnecting =>
-      (super.noSuchMethod(Invocation.getter(#isConnecting), returnValue: false)
-          as bool);
+  bool get isConnecting => (super.noSuchMethod(
+        Invocation.getter(#isConnecting),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isAvailable =>
-      (super.noSuchMethod(Invocation.getter(#isAvailable), returnValue: false)
-          as bool);
+  bool get isAvailable => (super.noSuchMethod(
+        Invocation.getter(#isAvailable),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isDisconnected => (super
-          .noSuchMethod(Invocation.getter(#isDisconnected), returnValue: false)
-      as bool);
+  bool get isDisconnected => (super.noSuchMethod(
+        Invocation.getter(#isDisconnected),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get isUnmanaged =>
-      (super.noSuchMethod(Invocation.getter(#isUnmanaged), returnValue: false)
-          as bool);
+  bool get isUnmanaged => (super.noSuchMethod(
+        Invocation.getter(#isUnmanaged),
+        returnValue: false,
+      ) as bool);
   @override
-  String get hwAddress =>
-      (super.noSuchMethod(Invocation.getter(#hwAddress), returnValue: '')
-          as String);
+  String get hwAddress => (super.noSuchMethod(
+        Invocation.getter(#hwAddress),
+        returnValue: '',
+      ) as String);
   @override
   List<_i2.NetworkManagerSettingsConnection> get availableConnections =>
-      (super.noSuchMethod(Invocation.getter(#availableConnections),
-              returnValue: <_i2.NetworkManagerSettingsConnection>[])
-          as List<_i2.NetworkManagerSettingsConnection>);
+      (super.noSuchMethod(
+        Invocation.getter(#availableConnections),
+        returnValue: <_i2.NetworkManagerSettingsConnection>[],
+      ) as List<_i2.NetworkManagerSettingsConnection>);
   @override
-  bool get isDisposed =>
-      (super.noSuchMethod(Invocation.getter(#isDisposed), returnValue: false)
-          as bool);
+  bool get isDisposed => (super.noSuchMethod(
+        Invocation.getter(#isDisposed),
+        returnValue: false,
+      ) as bool);
   @override
-  bool get hasListeners =>
-      (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
-          as bool);
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
   @override
-  void init() => super.noSuchMethod(Invocation.method(#init, []),
-      returnValueForMissingStub: null);
+  void init() => super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void cleanup() => super.noSuchMethod(Invocation.method(#cleanup, []),
-      returnValueForMissingStub: null);
+  void cleanup() => super.noSuchMethod(
+        Invocation.method(
+          #cleanup,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
-      returnValueForMissingStub: null);
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void updateDevice(_i2.NetworkManagerDevice? device) =>
-      super.noSuchMethod(Invocation.method(#updateDevice, [device]),
-          returnValueForMissingStub: null);
+  void updateDevice(_i2.NetworkManagerDevice? device) => super.noSuchMethod(
+        Invocation.method(
+          #updateDevice,
+          [device],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   bool isActiveAccessPoint(_i4.AccessPoint? accessPoint) => (super.noSuchMethod(
-      Invocation.method(#isActiveAccessPoint, [accessPoint]),
-      returnValue: false) as bool);
+        Invocation.method(
+          #isActiveAccessPoint,
+          [accessPoint],
+        ),
+        returnValue: false,
+      ) as bool);
   @override
-  bool isSelectedAccessPoint(_i4.AccessPoint? accessPoint) => (super
-      .noSuchMethod(Invocation.method(#isSelectedAccessPoint, [accessPoint]),
-          returnValue: false) as bool);
+  bool isSelectedAccessPoint(_i4.AccessPoint? accessPoint) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isSelectedAccessPoint,
+          [accessPoint],
+        ),
+        returnValue: false,
+      ) as bool);
   @override
-  void selectAccessPoint(_i4.AccessPoint? accessPoint) =>
-      super.noSuchMethod(Invocation.method(#selectAccessPoint, [accessPoint]),
-          returnValueForMissingStub: null);
+  void selectAccessPoint(_i4.AccessPoint? accessPoint) => super.noSuchMethod(
+        Invocation.method(
+          #selectAccessPoint,
+          [accessPoint],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   _i5.Future<void> requestScan({String? ssid}) => (super.noSuchMethod(
-      Invocation.method(#requestScan, [], {#ssid: ssid}),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #requestScan,
+          [],
+          {#ssid: ssid},
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i4.AccessPoint? findAccessPoint(String? ssid) =>
-      (super.noSuchMethod(Invocation.method(#findAccessPoint, [ssid]))
-          as _i4.AccessPoint?);
+      (super.noSuchMethod(Invocation.method(
+        #findAccessPoint,
+        [ssid],
+      )) as _i4.AccessPoint?);
   @override
   _i5.Future<void> disconnect() => (super.noSuchMethod(
-      Invocation.method(#disconnect, []),
-      returnValue: _i5.Future<void>.value(),
-      returnValueForMissingStub: _i5.Future<void>.value()) as _i5.Future<void>);
+        Invocation.method(
+          #disconnect,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   void setProperties(_i5.Stream<List<String>>? properties) =>
-      super.noSuchMethod(Invocation.method(#setProperties, [properties]),
-          returnValueForMissingStub: null);
-  @override
-  void addPropertyListener(String? property, _i6.VoidCallback? onChanged) =>
       super.noSuchMethod(
-          Invocation.method(#addPropertyListener, [property, onChanged]),
-          returnValueForMissingStub: null);
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void enablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#enablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void disablePropertyListeners() =>
-      super.noSuchMethod(Invocation.method(#disablePropertyListeners, []),
-          returnValueForMissingStub: null);
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void notifyListeners() =>
-      super.noSuchMethod(Invocation.method(#notifyListeners, []),
-          returnValueForMissingStub: null);
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void addListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#addListener, [listener]),
-          returnValueForMissingStub: null);
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
-  void removeListener(_i6.VoidCallback? listener) =>
-      super.noSuchMethod(Invocation.method(#removeListener, [listener]),
-          returnValueForMissingStub: null);
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

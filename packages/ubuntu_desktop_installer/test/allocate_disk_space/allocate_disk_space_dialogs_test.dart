@@ -78,6 +78,7 @@ void main() {
     final disk = testDisk(partitions: [
       Partition(
         number: 1,
+        size: 1234567,
         format: 'ext4',
         wipe: 'superblock',
         mount: '/tst',
@@ -97,10 +98,21 @@ void main() {
     );
 
     final result = showEditPartitionDialog(
-        tester.element(find.byType(AllocateDiskSpacePage)),
-        disk,
-        disk.partitions.whereType<Partition>().first);
+      tester.element(find.byType(AllocateDiskSpacePage)),
+      disk,
+      disk.partitions.whereType<Partition>().first,
+      disk.partitions.whereType<Gap>().first,
+    );
     await tester.pumpAndSettle();
+
+    await tester.tap(find.byType(DropdownButton<DataUnit>));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(ValueKey(DataUnit.bytes)).last);
+    await tester.pump();
+
+    await tester.enterText(find.byType(SpinBox), '123');
+    await tester.pump();
 
     await tester.tap(find.byType(DropdownButton<PartitionFormat>));
     await tester.pumpAndSettle();
@@ -124,6 +136,7 @@ void main() {
     verify(model.editPartition(
       disk,
       disk.partitions.whereType<Partition>().first,
+      size: 123,
       format: PartitionFormat.btrfs,
       wipe: false,
       mount: '/tst',

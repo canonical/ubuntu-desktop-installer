@@ -59,6 +59,14 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
   /// Returns the selected gap, or null if no gap is selected.
   Gap? get selectedGap => selectedObject is Gap ? selectedObject as Gap : null;
 
+  /// Returns the trailing gap after the selected partition, or null if not
+  /// applicable.
+  Gap? get trailingGap {
+    final object =
+        selectedDisk?.partitions.elementAtOrNull(_selectedObjectIndex + 1);
+    return object is Gap && object.usable == GapUsable.YES ? object : null;
+  }
+
   /// Returns the selected object, or null if no partition or gap is selected.
   DiskObject? get selectedObject =>
       selectedDisk?.partitions.elementAtOrNull(_selectedObjectIndex);
@@ -115,11 +123,13 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
   Future<void> editPartition(
     Disk disk,
     Partition partition, {
+    int? size,
     PartitionFormat? format,
     bool? wipe,
     String? mount,
   }) {
     final newPartition = partition.copyWith(
+      size: size,
       format: format?.type,
       mount: mount,
       wipe: wipe == true ? 'superblock' : null,
