@@ -12,6 +12,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -90,6 +91,71 @@ void main() {
       keyboard: keyboardSetting,
       locale: locale,
       timezone: timezone,
+    );
+  });
+
+  testWidgets('guided lvm + encryption', (tester) async {
+    const identity = IdentityData(
+      realname: 'User',
+      hostname: 'ubuntu',
+      username: 'user',
+    );
+
+    await app.main(<String>[]);
+    await tester.pumpAndSettle();
+
+    await testWelcomePage(tester);
+    await tester.pumpAndSettle();
+
+    await testTryOrInstallPage(tester, option: Option.installUbuntu);
+    await tester.pumpAndSettle();
+
+    await testKeyboardLayoutPage(tester);
+    await tester.pumpAndSettle();
+
+    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await tester.pumpAndSettle();
+
+    await testUpdatesOtherSoftwarePage(tester);
+    await tester.pumpAndSettle();
+
+    await testInstallationTypePage(
+      tester,
+      type: InstallationType.erase,
+      advancedFeature: AdvancedFeature.lvm,
+      useEncryption: true,
+    );
+    await tester.pumpAndSettle();
+
+    await testChooseSecurityKeyPage(tester, securityKey: 'password');
+    await tester.pumpAndSettle();
+
+    await testWriteChangesToDiskPage(tester);
+    await tester.pumpAndSettle();
+
+    await testWhereAreYouPage(tester);
+    await tester.pump();
+
+    await testWhoAreYouPage(
+      tester,
+      identity: identity,
+      password: 'password',
+    );
+    await tester.pump();
+
+    await testChooseYourLookPage(tester);
+    await tester.pump();
+
+    await testInstallationSlidesPage(tester);
+    await tester.pumpAndSettle();
+
+    await testInstallationCompletePage(tester);
+    await tester.pumpAndSettle();
+
+    await verifyConfig(
+      identity: identity,
+      useLvm: true,
+      useEncryption: true,
     );
   });
 
@@ -338,6 +404,8 @@ Future<void> testUpdatesOtherSoftwarePage(
 Future<void> testInstallationTypePage(
   WidgetTester tester, {
   InstallationType? type,
+  AdvancedFeature? advancedFeature,
+  bool? useEncryption,
 }) async {
   await expectPage(
       tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
@@ -345,6 +413,44 @@ Future<void> testInstallationTypePage(
   if (type != null) {
     await tester.tapRadioButton<InstallationType>(type);
   }
+  if (advancedFeature != null) {
+    await tester.tapButton(label: tester.lang.installationTypeAdvancedLabel);
+    await tester.pumpAndSettle();
+
+    await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
+    await tester.pump();
+
+    if (useEncryption != null) {
+      await tester.toggleCheckbox(
+        label: tester.lang.installationTypeEncrypt('Ubuntu'),
+        value: true,
+      );
+    }
+
+    await tester.tapButton(label: tester.lang.okButtonText);
+  }
+
+  await tester.pumpAndSettle();
+
+  await tester.tapContinue();
+}
+
+Future<void> testChooseSecurityKeyPage(
+  WidgetTester tester, {
+  required String securityKey,
+}) async {
+  await expectPage(
+      tester, ChooseSecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
+
+  await tester.enterTextValue(
+    label: tester.lang.chooseSecurityKey,
+    value: securityKey,
+  );
+  await tester.enterTextValue(
+    label: tester.lang.confirmSecurityKey,
+    value: securityKey,
+  );
+
   await tester.pumpAndSettle();
 
   await tester.tapContinue();
@@ -556,6 +662,8 @@ Future<void> verifyConfig({
   String? locale,
   String? timezone,
   List<Disk>? storage,
+  bool? useLvm,
+  bool? useEncryption,
 }) async {
   final path = p.join(
     await subiquityPath,
@@ -596,9 +704,9 @@ Future<void> verifyConfig({
     expect(actualTimezone, equals(timezone));
   }
 
-  if (storage != null) {
-    final actualStorage = yaml['autoinstall']['storage']['config'] as YamlList;
+  final actualStorage = yaml['autoinstall']['storage']['config'] as YamlList;
 
+  if (storage != null) {
     for (final disk in storage) {
       final actualDisk = actualStorage.firstWhereOrNull(
           (d) => d['type'] == 'disk' && d['path'] == disk.path);
@@ -616,5 +724,21 @@ Future<void> verifyConfig({
         }
       }
     }
+  }
+
+  if (useLvm != null) {
+    expect(
+        actualStorage
+            .where((config) => config['type'] == 'lvm_volgroup')
+            .isNotEmpty,
+        useLvm);
+  }
+
+  if (useEncryption != null) {
+    expect(
+        actualStorage
+            .where((config) => config['type'] == 'dm_crypt')
+            .isNotEmpty,
+        useEncryption);
   }
 }

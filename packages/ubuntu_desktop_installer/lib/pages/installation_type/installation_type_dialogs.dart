@@ -44,18 +44,17 @@ Future<void> showAdvancedFeaturesDialog(
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
                 ),
-                // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-                // Padding(
-                //   padding: kContentIndentation,
-                //   child: CheckButton(
-                //     title: Text(lang.installationTypeEncrypt('Ubuntu')),
-                //     subtitle: Text(lang.installationTypeEncrypt(flavor.name)),
-                //     value: encryption.value,
-                //     onChanged: model.advancedFeature == AdvancedFeature.lvm
-                //         ? (v) => encryption.value = v!
-                //         : null,
-                //   ),
-                // ),
+                Padding(
+                  padding: kContentIndentation,
+                  child: CheckButton(
+                    title: Text(lang.installationTypeEncrypt(flavor.name)),
+                    subtitle: Text(lang.installationTypeEncryptInfo),
+                    value: encryption.value,
+                    onChanged: advancedFeature.value == AdvancedFeature.lvm
+                        ? (v) => encryption.value = v!
+                        : null,
+                  ),
+                ),
                 const SizedBox(height: kContentSpacing),
                 // https://github.com/canonical/ubuntu-desktop-installer/issues/373
                 // RadioButton<AdvancedFeature>(

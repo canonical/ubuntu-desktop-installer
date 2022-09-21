@@ -122,6 +122,8 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// if appropriate (single guided storage).
   Future<void> save() async {
     _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
+    _diskService.useEncryption =
+        encryption && advancedFeature == AdvancedFeature.lvm;
 
     // automatically pre-select a guided storage target if possible
     _diskService.guidedTarget = preselectTarget(installationType);

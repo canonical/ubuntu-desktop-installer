@@ -299,17 +299,44 @@ void main() {
     verify(model.installationType = InstallationType.manual).called(1);
   });
 
-  testWidgets('advanced features', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+  group('advanced features', () {
+    testWidgets('dialog', (tester) async {
+      final model = buildModel();
+      await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final button = find.widgetWithText(
-        OutlinedButton, tester.lang.installationTypeAdvancedLabel);
-    expect(button, findsOneWidget);
-    await tester.tap(button);
-    await tester.pumpAndSettle();
+      final button = find.widgetWithText(
+          OutlinedButton, tester.lang.installationTypeAdvancedLabel);
+      expect(button, findsOneWidget);
+      await tester.tap(button);
+      await tester.pumpAndSettle();
 
-    expect(find.byType(AlertDialog), findsOneWidget);
+      expect(find.byType(AlertDialog), findsOneWidget);
+    });
+
+    testWidgets('none selected', (tester) async {
+      final model = buildModel(advancedFeature: AdvancedFeature.none);
+      await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+      expect(
+          find.text(tester.lang.installationTypeNoneSelected), findsOneWidget);
+    });
+
+    testWidgets('lvm selected', (tester) async {
+      final model = buildModel(advancedFeature: AdvancedFeature.lvm);
+      await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+      expect(
+          find.text(tester.lang.installationTypeLVMSelected), findsOneWidget);
+    });
+
+    testWidgets('encrypted lvm selected', (tester) async {
+      final model =
+          buildModel(advancedFeature: AdvancedFeature.lvm, encryption: true);
+      await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+      expect(find.text(tester.lang.installationTypeLVMEncryptionSelected),
+          findsOneWidget);
+    });
   });
 
   testWidgets('creates a model', (tester) async {

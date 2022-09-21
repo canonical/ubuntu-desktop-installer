@@ -282,37 +282,20 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.installationType: WizardRoute(
           builder: InstallationTypePage.create,
-          onNext: (settings) {
-            if (settings.arguments == InstallationType.manual) {
-              return Routes.allocateDiskSpace;
-            } else if (service.guidedTarget == null) {
-              if (settings.arguments == InstallationType.erase) {
-                return Routes.selectGuidedStorage;
-              } else if (settings.arguments == InstallationType.alongside) {
-                return Routes.installAlongside;
-              }
-            } else if (service.useEncryption) {
-              return Routes.chooseSecurityKey;
-            }
-            return Routes.writeChangesToDisk;
-          },
+          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
           onReplace: (_) => Routes.allocateDiskSpace,
-          onNext: (_) => service.useEncryption
-              ? Routes.chooseSecurityKey
-              : Routes.writeChangesToDisk,
+          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
-          onNext: (_) => service.useEncryption
-              ? Routes.chooseSecurityKey
-              : Routes.writeChangesToDisk,
+          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,
-          onNext: (_) => Routes.writeChangesToDisk,
+          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.allocateDiskSpace: const WizardRoute(
           builder: AllocateDiskSpacePage.create,
@@ -348,6 +331,21 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
       ],
     );
+  }
+
+  String? _nextStorageRoute(DiskStorageService service, dynamic arguments) {
+    if (arguments == InstallationType.manual) {
+      return Routes.allocateDiskSpace;
+    } else if (service.guidedTarget == null) {
+      if (arguments == InstallationType.erase) {
+        return Routes.selectGuidedStorage;
+      } else if (arguments == InstallationType.alongside) {
+        return Routes.installAlongside;
+      }
+    } else if (service.useEncryption && service.securityKey == null) {
+      return Routes.chooseSecurityKey;
+    }
+    return Routes.writeChangesToDisk;
   }
 }
 
