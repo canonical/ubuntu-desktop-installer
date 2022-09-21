@@ -281,10 +281,10 @@ void main() {
   });
 
   test('edit partition', () async {
-    const partition =
-        Partition(number: 1, wipe: null, format: 'ext3', mount: '/tst');
-    final edited =
-        partition.copyWith(wipe: 'superblock', format: 'ext2', mount: '/tmp');
+    const partition = Partition(
+        number: 1, size: 123, wipe: null, format: 'ext3', mount: '/tst');
+    final edited = partition.copyWith(
+        size: 456, wipe: 'superblock', format: 'ext2', mount: '/tmp');
 
     final service = MockDiskStorageService();
     when(service.editPartition(testDisk(), edited))
@@ -292,7 +292,7 @@ void main() {
 
     final model = AllocateDiskSpaceModel(service);
     await model.editPartition(testDisk(), partition,
-        wipe: true, format: PartitionFormat.ext2, mount: '/tmp');
+        size: 456, wipe: true, format: PartitionFormat.ext2, mount: '/tmp');
     expect(model.disks, equals(changedDisks));
     verify(service.editPartition(testDisk(), edited)).called(1);
   });
@@ -354,5 +354,32 @@ void main() {
     when(service.needRoot).thenReturn(false);
     when(service.needBoot).thenReturn(false);
     expect(model.isValid, isTrue);
+  });
+
+  test('trailing gap', () async {
+    final disk = testDisk(id: 'a', partitions: [
+      Partition(number: 11, size: 1),
+      Gap(offset: 1, size: 1, usable: GapUsable.YES),
+      Partition(number: 2, size: 22),
+      Gap(offset: 2, size: 2, usable: GapUsable.TOO_MANY_PRIMARY_PARTS),
+      Partition(number: 3, size: 33),
+    ]);
+
+    final service = MockDiskStorageService();
+    when(service.getStorage()).thenAnswer((_) async => [disk]);
+
+    final model = AllocateDiskSpaceModel(service);
+    await model.getStorage();
+
+    model.selectStorage(0, 0);
+    expect(model.trailingGap, disk.partitions[1]);
+
+    // unusable
+    model.selectStorage(0, 2);
+    expect(model.trailingGap, isNull);
+
+    // no trailing gap
+    model.selectStorage(0, 4);
+    expect(model.trailingGap, isNull);
   });
 }

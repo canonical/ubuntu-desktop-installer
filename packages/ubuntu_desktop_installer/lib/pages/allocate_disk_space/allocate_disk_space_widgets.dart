@@ -233,8 +233,11 @@ class PartitionButtonRow extends StatelessWidget {
                     shape: const RoundedRectangleBorder(),
                   ),
                   onPressed: model.canEditPartition
-                      ? () => showEditPartitionDialog(context,
-                          model.selectedDisk!, model.selectedPartition!)
+                      ? () => showEditPartitionDialog(
+                          context,
+                          model.selectedDisk!,
+                          model.selectedPartition!,
+                          model.trailingGap)
                       : null,
                   child: Text(lang.changeButtonText),
                 ),
