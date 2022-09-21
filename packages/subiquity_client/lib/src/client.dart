@@ -63,18 +63,25 @@ class SubiquityClient {
     _client.close();
   }
 
-  Future<String> _receive(String method, HttpClientResponse response) async {
+  Future<String> _receive(
+    String method,
+    HttpClientResponse response, [
+    String Function(String, String) formatResponseLog = _formatResponseLog,
+  ]) async {
     final responseStr = await response.transform(utf8.decoder).join();
     if (response.statusCode != 200) {
       throw SubiquityException(method, response.statusCode, responseStr);
     }
-    log.debug(() => _formatResponseLog(method, responseStr));
+    log.debug(() => formatResponseLog(method, responseStr));
     return responseStr;
   }
 
   Future<Map<String, dynamic>> _receiveJson(
-      String method, HttpClientResponse response) async {
-    final responseStr = await _receive(method, response);
+    String method,
+    HttpClientResponse response, [
+    String Function(String, String) formatResponseLog = _formatResponseLog,
+  ]) async {
+    final responseStr = await _receive(method, response, formatResponseLog);
     return jsonDecode(responseStr) as Map<String, dynamic>;
   }
 
@@ -332,8 +339,31 @@ class SubiquityClient {
     request.write(jsonEncode(choice.toJson()));
     final response = await request.close();
 
+    String? hidePassword(String? password) {
+      return password == null ? null : '*' * password.length;
+    }
+
+    String hidePasswordRequest(GuidedChoiceV2 choice) {
+      return jsonEncode(
+        choice.copyWith(password: hidePassword(choice.password)).toJson(),
+      );
+    }
+
+    String hidePasswordResponse(String method, String response) {
+      final guided = GuidedStorageResponseV2.fromJson(jsonDecode(response));
+      final json = jsonEncode(guided.copyWith(
+        configured: guided.configured?.copyWith(
+          password: hidePassword(guided.configured?.password),
+        ),
+      ));
+      return _formatResponseLog(method, json);
+    }
+
     final responseJson = await _receiveJson(
-        'setGuidedStorageV2(${jsonEncode(choice.toJson())})', response);
+      'setGuidedStorageV2(${hidePasswordRequest(choice)})',
+      response,
+      hidePasswordResponse,
+    );
     return GuidedStorageResponseV2.fromJson(responseJson);
   }
 
