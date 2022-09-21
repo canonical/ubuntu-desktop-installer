@@ -28,6 +28,7 @@ class DiskStorageService {
   bool? _needRoot;
   bool? _needBoot;
   bool? _useLvm;
+  bool? _useEncryption;
   bool? _hasRst;
   bool? _hasBitLocker;
   bool? _hasMultipleDisks;
@@ -50,8 +51,12 @@ class DiskStorageService {
 
   bool get hasBitLocker => _hasBitLocker ?? false;
 
-  /// Whether FDE (Full Disk Encryption) is enabled.
-  bool get hasEncryption => false; // TODO: add support for it
+  /// Whether FDE (Full Disk Encryption) should be used.
+  bool get useEncryption => _useEncryption ?? false;
+  set useEncryption(bool useEncryption) {
+    log.debug('use encryption: $useEncryption');
+    _useEncryption = useEncryption;
+  }
 
   /// Whether Secure Boot is enabled.
   bool get hasSecureBoot => false; // TODO: add support for it

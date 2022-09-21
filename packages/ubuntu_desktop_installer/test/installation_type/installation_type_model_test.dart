@@ -69,7 +69,7 @@ void main() {
   test('save talks to telemetry service', () async {
     final disks = MockDiskStorageService();
     when(disks.hasMultipleDisks).thenReturn(false);
-    when(disks.hasEncryption).thenReturn(false);
+    when(disks.useEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
     final model = InstallationTypeModel(disks, telemetry);
@@ -105,7 +105,7 @@ void main() {
     verify(telemetry.setPartitionMethod('use_zfs')).called(1);
     reset(telemetry);
 
-    when(disks.hasEncryption).thenReturn(true);
+    when(disks.useEncryption).thenReturn(true);
     model.advancedFeature = AdvancedFeature.none;
     await model.save();
     verify(telemetry.setPartitionMethod('use_crypto')).called(1);
@@ -115,7 +115,7 @@ void main() {
   test('save lvm', () {
     final storage = MockDiskStorageService();
     when(storage.hasMultipleDisks).thenReturn(false);
-    when(storage.hasEncryption).thenReturn(false);
+    when(storage.useEncryption).thenReturn(false);
 
     final model = InstallationTypeModel(
       storage,
@@ -135,7 +135,7 @@ void main() {
     final reformat = GuidedStorageTargetReformat(diskId: '');
 
     final service = MockDiskStorageService();
-    when(service.hasEncryption).thenReturn(false);
+    when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
 

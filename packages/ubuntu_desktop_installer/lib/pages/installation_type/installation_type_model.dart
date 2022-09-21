@@ -143,7 +143,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
     } else if (advancedFeature == AdvancedFeature.zfs) {
       _telemetryService.setPartitionMethod('use_zfs');
     }
-    if (_diskService.hasEncryption && advancedFeature != AdvancedFeature.zfs) {
+    if (_diskService.useEncryption && advancedFeature != AdvancedFeature.zfs) {
       _telemetryService.setPartitionMethod('use_crypto');
     }
     // TODO: map upgrading the current Ubuntu installation without
