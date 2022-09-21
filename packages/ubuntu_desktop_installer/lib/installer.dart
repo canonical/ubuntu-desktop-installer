@@ -291,7 +291,7 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
               } else if (settings.arguments == InstallationType.alongside) {
                 return Routes.installAlongside;
               }
-            } else if (service.hasEncryption) {
+            } else if (service.useEncryption) {
               return Routes.chooseSecurityKey;
             }
             return Routes.writeChangesToDisk;
@@ -300,13 +300,13 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
           onReplace: (_) => Routes.allocateDiskSpace,
-          onNext: (_) => service.hasEncryption
+          onNext: (_) => service.useEncryption
               ? Routes.chooseSecurityKey
               : Routes.writeChangesToDisk,
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
-          onNext: (_) => service.hasEncryption
+          onNext: (_) => service.useEncryption
               ? Routes.chooseSecurityKey
               : Routes.writeChangesToDisk,
         ),

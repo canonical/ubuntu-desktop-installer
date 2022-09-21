@@ -67,10 +67,18 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  bool get hasEncryption => (super.noSuchMethod(
-        Invocation.getter(#hasEncryption),
+  bool get useEncryption => (super.noSuchMethod(
+        Invocation.getter(#useEncryption),
         returnValue: false,
       ) as bool);
+  @override
+  set useEncryption(bool? useEncryption) => super.noSuchMethod(
+        Invocation.setter(
+          #useEncryption,
+          useEncryption,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   bool get hasSecureBoot => (super.noSuchMethod(
         Invocation.getter(#hasSecureBoot),
