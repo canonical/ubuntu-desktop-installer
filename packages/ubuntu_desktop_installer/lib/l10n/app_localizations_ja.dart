@@ -133,6 +133,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'セキュリティキーが一致しません';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'インターネットに接続';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM を選択しました';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

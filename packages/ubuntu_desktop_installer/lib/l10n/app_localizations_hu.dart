@@ -133,6 +133,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'A biztonsági kulcsok nem egyeznek';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Csatlakozás az internethez';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM kiválasztva';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

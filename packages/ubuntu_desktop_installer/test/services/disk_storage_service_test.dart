@@ -268,6 +268,23 @@ void main() {
     expect(service.guidedTarget, isNull);
   });
 
+  test('set security key', () async {
+    final target = GuidedStorageTargetReformat(diskId: testDisks.first.id);
+    final choice = GuidedChoiceV2(target: target, password: 'foo123');
+    when(client.setGuidedStorageV2(choice))
+        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+
+    final service = DiskStorageService(client);
+    await untilCalled(client.getStorageV2());
+
+    service.securityKey = 'foo123';
+    expect(service.securityKey, equals('foo123'));
+
+    service.guidedTarget = target;
+    await service.setGuidedStorage();
+    verify(client.setGuidedStorageV2(choice)).called(1);
+  });
+
   test('has enough disk space', () async {
     final service = DiskStorageService(client);
     when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse(

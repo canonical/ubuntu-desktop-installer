@@ -133,6 +133,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'کلیدهای امنیتی مطابقت ندارند';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'اتّصال به اینترنت';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM selected';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

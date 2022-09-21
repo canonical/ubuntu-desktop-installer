@@ -3,13 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
+import 'choose_security_key_model_test.mocks.dart';
 import 'choose_security_key_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -20,11 +20,13 @@ void main() {
     bool? isValid,
     String? securityKey,
     String? confirmedSecurityKey,
+    bool? showSecurityKey,
   }) {
     final model = MockChooseSecurityKeyModel();
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.securityKey).thenReturn(securityKey ?? '');
     when(model.confirmedSecurityKey).thenReturn(confirmedSecurityKey ?? '');
+    when(model.showSecurityKey).thenReturn(showSecurityKey ?? false);
     return model;
   }
 
@@ -79,12 +81,21 @@ void main() {
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
 
-  testWidgets('load and save security key', (tester) async {
-    final model = buildModel(isValid: true);
+  testWidgets('show security key', (tester) async {
+    final model = buildModel(showSecurityKey: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    verify(model.loadSecurityKey()).called(1);
-    verifyNever(model.saveSecurityKey());
+    final showSecurityKeyButton =
+        find.widgetWithText(CheckButton, tester.lang.showSecurityKey);
+    expect(showSecurityKeyButton, findsOneWidget);
+
+    await tester.tap(showSecurityKeyButton);
+    verify(model.showSecurityKey = true).called(1);
+  });
+
+  testWidgets('save security key', (tester) async {
+    final model = buildModel(isValid: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
       OutlinedButton,
@@ -97,9 +108,9 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
-    registerMockService<SubiquityClient>(client);
+    final service = MockDiskStorageService();
+    when(service.securityKey).thenReturn(null);
+    registerMockService<DiskStorageService>(service);
 
     await tester.pumpWidget(tester.buildApp(ChooseSecurityKeyPage.create));
 

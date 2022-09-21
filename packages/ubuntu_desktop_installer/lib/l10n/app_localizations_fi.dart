@@ -133,6 +133,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Salausavaimet eivät täsmää';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Yhdistä internetiin';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM valittu';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

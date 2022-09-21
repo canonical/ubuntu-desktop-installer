@@ -10,11 +10,13 @@ class _SecurityKeyFormField extends StatelessWidget {
     final lang = AppLocalizations.of(context);
     final securityKey = context
         .select<ChooseSecurityKeyModel, String>((model) => model.securityKey);
+    final showSecurityKey = context
+        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
       labelText: lang.chooseSecurityKeyHint,
-      obscureText: true,
+      obscureText: !showSecurityKey,
       successWidget: securityKey.isNotEmpty ? const SuccessIcon() : null,
       initialValue: securityKey,
       validator: RequiredValidator(
@@ -41,11 +43,13 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
         .select<ChooseSecurityKeyModel, String>((model) => model.securityKey);
     final confirmedSecurityKey = context.select<ChooseSecurityKeyModel, String>(
         (model) => model.confirmedSecurityKey);
+    final showSecurityKey = context
+        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
       labelText: lang.chooseSecurityKeyConfirmHint,
-      obscureText: true,
+      obscureText: !showSecurityKey,
       successWidget:
           confirmedSecurityKey.isNotEmpty ? const SuccessIcon() : null,
       initialValue: confirmedSecurityKey,
@@ -58,6 +62,25 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
         final model =
             Provider.of<ChooseSecurityKeyModel>(context, listen: false);
         model.confirmedSecurityKey = value;
+      },
+    );
+  }
+}
+
+class _SecurityKeyShowButton extends StatelessWidget {
+  const _SecurityKeyShowButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
+    final showSecurityKey = context
+        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
+
+    return CheckButton(
+      value: showSecurityKey,
+      title: Text(lang.showSecurityKey),
+      onChanged: (value) {
+        context.read<ChooseSecurityKeyModel>().showSecurityKey = value!;
       },
     );
   }

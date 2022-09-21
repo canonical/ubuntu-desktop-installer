@@ -133,6 +133,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Do každé z kolonek pro klíč zabezpečení jste napsali něco jiného';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Připojit k Internetu';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'Vybráno LVM';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

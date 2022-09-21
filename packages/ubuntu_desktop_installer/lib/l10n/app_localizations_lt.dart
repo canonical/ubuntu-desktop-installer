@@ -133,6 +133,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Saugumo raktai nesutampa';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Prisijunkite prie interneto';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM pasirinkta';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

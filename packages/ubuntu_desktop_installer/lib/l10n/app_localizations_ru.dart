@@ -133,6 +133,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Ключи безопасности не совпадают';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Интернет соединение';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'Выбран LVM';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

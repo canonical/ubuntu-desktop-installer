@@ -133,6 +133,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Les codes de sécurité ne correspondent pas';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Se connecter à internet';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM sélectionné';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

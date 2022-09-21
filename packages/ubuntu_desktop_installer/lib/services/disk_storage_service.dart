@@ -35,6 +35,7 @@ class DiskStorageService {
   int? _largestDiskSize;
   List<OsProber>? _existingOS;
   GuidedStorageTarget? _guidedTarget;
+  String? _securityKey;
 
   /// Whether the system has multiple disks available for guided partitioning.
   bool get hasMultipleDisks => _hasMultipleDisks ?? false;
@@ -60,6 +61,14 @@ class DiskStorageService {
   set useLvm(bool useLvm) {
     log.debug('use LVM: $useLvm');
     _useLvm = useLvm;
+  }
+
+  /// A security key for full disk encryption.
+  String? get securityKey => _securityKey;
+  set securityKey(String? securityKey) {
+    final hiddenKey = securityKey == null ? null : '*' * securityKey.length;
+    log.debug('set security key: $hiddenKey');
+    _securityKey = securityKey;
   }
 
   /// A guided storage target.
@@ -92,6 +101,7 @@ class DiskStorageService {
       GuidedChoiceV2(
         target: guidedTarget!,
         useLvm: useLvm,
+        password: securityKey,
       ),
     );
   }

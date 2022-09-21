@@ -133,6 +133,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Kunci keamanan tidak cocok';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'Menyambung ke internet';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM dipilih';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

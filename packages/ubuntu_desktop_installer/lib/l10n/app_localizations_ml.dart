@@ -133,6 +133,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'സുരക്ഷാ കീകൾ പൊരുത്തപ്പെടുന്നില്ല';
 
   @override
+  String get showSecurityKey => 'Show security key';
+
+  @override
   String get connectToInternetPageTitle => 'ഇന്റർനെറ്റ് ആയിട്ട് ബന്ധിപ്പിക്കുക';
 
   @override
@@ -288,6 +291,9 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get installationTypeLVMSelected => 'LVM തിരഞ്ഞെടുത്തു';
+
+  @override
+  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

@@ -90,6 +90,14 @@ class MockDiskStorageService extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
+  set securityKey(String? securityKey) => super.noSuchMethod(
+        Invocation.setter(
+          #securityKey,
+          securityKey,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   set guidedTarget(_i2.GuidedStorageTarget? target) => super.noSuchMethod(
         Invocation.setter(
           #guidedTarget,
