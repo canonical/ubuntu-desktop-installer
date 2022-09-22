@@ -136,11 +136,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
                   child: Text(lang.installationTypeAdvancedLabel),
                 ),
                 const SizedBox(width: kContentSpacing),
-                Text(model.advancedFeature == AdvancedFeature.lvm
-                    ? lang.installationTypeLVMSelected
-                    : model.advancedFeature == AdvancedFeature.zfs
-                        ? lang.installationTypeZFSSelected
-                        : lang.installationTypeNoneSelected),
+                Text(model.advancedFeature.localize(lang, model.encryption)),
               ],
             ),
           ),
@@ -167,6 +163,21 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
         ),
       ],
     );
+  }
+}
+
+extension _AdvancedFeatureL10n on AdvancedFeature {
+  String localize(AppLocalizations lang, bool encryption) {
+    switch (this) {
+      case AdvancedFeature.none:
+        return lang.installationTypeNoneSelected;
+      case AdvancedFeature.lvm:
+        return encryption
+            ? lang.installationTypeLVMEncryptionSelected
+            : lang.installationTypeLVMSelected;
+      case AdvancedFeature.zfs:
+        return lang.installationTypeZFSSelected;
+    }
   }
 }
 

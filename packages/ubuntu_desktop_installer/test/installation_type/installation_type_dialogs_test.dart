@@ -77,5 +77,41 @@ void main() {
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
+    verifyNever(model.encryption = true);
+  });
+
+  testWidgets('select encrypted lvm', (tester) async {
+    final model = MockInstallationTypeModel();
+    when(model.existingOS).thenReturn(null);
+    when(model.installationType).thenReturn(InstallationType.erase);
+    when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
+    when(model.encryption).thenReturn(false);
+    when(model.canInstallAlongside).thenReturn(false);
+
+    await tester.pumpWidget(
+      ChangeNotifierProvider<InstallationTypeModel>.value(
+        value: model,
+        child: tester.buildApp((_) => InstallationTypePage()),
+      ),
+    );
+
+    final result = showAdvancedFeaturesDialog(
+        tester.element(find.byType(InstallationTypePage)), model);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.widgetWithText(RadioButton<AdvancedFeature>,
+        tester.lang.installationTypeLVM('Ubuntu')));
+    await tester.pump();
+
+    await tester.tap(find.widgetWithText(
+        CheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester.pump();
+
+    await tester
+        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+    await result;
+
+    verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
+    verify(model.encryption = true).called(1);
   });
 }
