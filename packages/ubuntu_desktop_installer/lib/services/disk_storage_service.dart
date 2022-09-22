@@ -71,8 +71,10 @@ class DiskStorageService {
   /// A security key for full disk encryption.
   String? get securityKey => _securityKey;
   set securityKey(String? securityKey) {
-    final hiddenKey = securityKey == null ? null : '*' * securityKey.length;
-    log.debug('set security key: $hiddenKey');
+    if (securityKey != null) {
+      final hiddenKey = '*' * securityKey.length;
+      log.debug('set security key: $hiddenKey');
+    }
     _securityKey = securityKey;
   }
 

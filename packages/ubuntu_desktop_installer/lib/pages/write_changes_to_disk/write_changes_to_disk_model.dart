@@ -43,6 +43,7 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
   /// Starts the installation process.
   Future<void> startInstallation() async {
     await _service.setStorage(disks.toList());
+    _service.securityKey = null; // no longer needed
     await _client.confirm('/dev/tty1');
   }
 
