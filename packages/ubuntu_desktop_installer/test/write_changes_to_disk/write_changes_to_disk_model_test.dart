@@ -111,6 +111,7 @@ void main() {
     await model.startInstallation();
 
     verify(service.setStorage(nonPreservedDisks)).called(1);
+    verify(service.securityKey = null).called(1);
     verify(client.confirm('/dev/tty1')).called(1);
   });
 }
