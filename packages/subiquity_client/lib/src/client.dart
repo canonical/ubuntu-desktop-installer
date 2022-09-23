@@ -85,9 +85,12 @@ class SubiquityClient {
     return jsonDecode(responseStr) as Map<String, dynamic>;
   }
 
-  Future<HttpClientRequest> _openUrl(String method, Uri url) {
+  Future<HttpClientRequest> _openUrl(String method, Uri url) async {
     log.debug('$method $url');
-    return _client.openUrl(method, url);
+    final request = await _client.openUrl(method, url);
+    request.headers.contentType =
+        ContentType('application', 'json', charset: 'utf-8');
+    return request;
   }
 
   Future<Variant> variant() async {
