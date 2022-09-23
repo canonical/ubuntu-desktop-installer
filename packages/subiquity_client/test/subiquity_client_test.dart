@@ -346,7 +346,7 @@ void main() {
 
     test('identity', () async {
       var newId = IdentityData(
-        realname: 'ubuntu',
+        realname: 'übuntù', // utf-8
         username: 'ubuntu',
         cryptedPassword:
             r'$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0',
@@ -356,7 +356,7 @@ void main() {
       await client.setIdentity(newId);
 
       var id = await client.identity();
-      expect(id.realname, 'ubuntu');
+      expect(id.realname, 'übuntù');
       expect(id.username, 'ubuntu');
       expect(id.cryptedPassword, '');
       expect(id.hostname, 'ubuntu-desktop');
