@@ -27,11 +27,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Pakete für bessere $lang Sprachunterstützung installieren';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Für langsame Verbindungen nicht empfohlen.';
 
   @override
   String get profileSetupTitle => 'Profileinrichtung';

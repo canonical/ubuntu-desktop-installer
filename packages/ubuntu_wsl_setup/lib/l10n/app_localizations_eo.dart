@@ -27,11 +27,11 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Instali pakojn por pli bona subteno de la lingvo $lang';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Ne rekomendita por malrapidaj konektoj.';
 
   @override
   String get profileSetupTitle => 'Agordi profilon';
@@ -133,7 +133,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => 'Ŝaltita';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Ĉu ŝalti Kunfunkciadon.';
+  String get configurationUIInteroperabilitySubtitle => 'Ĉu ŝalti kunfunkciadon.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Postmeti vojprefikson de Windows';
@@ -176,7 +176,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Saluton $user,\nVi sukcese finis la instaladon.';
+    return 'Saluton $user,\nVi kompletigis la instaladon.';
   }
 
   @override
