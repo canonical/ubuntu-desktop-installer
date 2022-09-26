@@ -50,7 +50,7 @@
   "@configurationUIWSLNewsTitle": {},
   "setupCompleteTitle": "Instalado finiĝis",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Saluton {user},\nVi sukcese finis la instaladon.",
+  "setupCompleteHeader": "Saluton {user},\nVi kompletigis la instaladon.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -115,7 +115,7 @@
   "@configurationUILegacyAudioIntegrationTitle": {},
   "configurationUIInteroperabilityTitle": "Ŝaltita",
   "@configurationUIInteroperabilityTitle": {},
-  "configurationUIInteroperabilitySubtitle": "Ĉu ŝalti Kunfunkciadon.",
+  "configurationUIInteroperabilitySubtitle": "Ĉu ŝalti kunfunkciadon.",
   "@configurationUIInteroperabilitySubtitle": {},
   "configurationUIInteropAppendWindowsPathTitle": "Postmeti vojprefikson de Windows",
   "@configurationUIInteropAppendWindowsPathTitle": {},
@@ -204,5 +204,16 @@
   "installationSlidesUbuntuWslGuiAppsText": "Programu kaj antaŭrigardu retajn kaj grafikajn programojn sur Linux uzante WSLg por plurplatforma programado.",
   "@installationSlidesUbuntuWslGuiAppsText": {},
   "installationSlidesUbuntuOnWslText": "Plena medio de Ubuntu, profunde integrita kun Windows, por programado kaj rulado de programoj por Linux. Optimumigita por nubo, reto, datenscienco, Interreto de Aĵoj kaj amuzo!",
-  "@installationSlidesUbuntuOnWslText": {}
+  "@installationSlidesUbuntuOnWslText": {},
+  "installLangPacksSubtitle": "Ne rekomendita por malrapidaj konektoj.",
+  "@installLangPacksSubtitle": {},
+  "installLangPacksTitle": "Instali pakojn por pli bona subteno de la lingvo {lang}",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  }
 }
