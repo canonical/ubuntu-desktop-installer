@@ -176,7 +176,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hallo $user,\nSie haben die Einrichtung erfolgreich abgeschlossen.';
+    return 'Hallo $user,\nSie haben die Einrichtung abgeschlossen.';
   }
 
   @override
