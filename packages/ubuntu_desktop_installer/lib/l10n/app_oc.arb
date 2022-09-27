@@ -214,7 +214,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Las particions seguentas seràn formatadas :",
+  "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryPrimaryFull": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) de tipe {fstype} coma {mountPath}",
   "@writeChangesPartitionEntryPrimaryFull": {
@@ -634,6 +634,66 @@
     "type": "text",
     "placeholders": {
       "SIZE": {}
+    }
+  },
+  "installingSystem": "Installacion del sistèma…",
+  "@installingSystem": {},
+  "configuringSystem": "Configuracion del sistèma…",
+  "@configuringSystem": {},
+  "writeChangesPartitionResized": "la particion #{disk}{partition} redimensionada de {oldsize} a {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} particions mai pichonas son rescondudas, utilizatz <a href=\"{url}\">l’aisinas de particionament avançat</a> per mai de contròla",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "supportSlideResources": "Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.",
+  "@supportSlideResources": {},
+  "writeChangesPartitionCreated": "particion #{disk}{partition} creada",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "writeChangesPartitionMounted": "la particion #{disk}{partition} utilizada per {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "la particion #{disk}{partition} formatada en {format} utilizada per {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "la particion #{disk}{partition} formatada en {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
     }
   }
 }
