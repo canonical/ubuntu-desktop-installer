@@ -369,7 +369,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num particions mai pichonas son rescondudas, utilizatz <a href=\"$url\">l’aisinas de particionament avançat</a> per mai de contròla';
   }
 
   @override
@@ -609,31 +609,31 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Las particions seguentas seràn formatadas :';
+  String get writeChangesPartitionsHeader => 'Las modificacions seguenta seràn aplicadas a las particions :';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'la particion #$disk${partition} redimensionada de $oldsize a $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'la particion #$disk${partition} formatada en $format utilizada per $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'la particion #$disk${partition} formatada en $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'la particion #$disk${partition} utilizada per $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'particion #$disk${partition} creada';
   }
 
   @override
@@ -801,7 +801,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.';
 
   @override
   String get includedSoftware => 'Logicials incluses';
@@ -816,10 +816,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get copyingFiles => 'Còpia dels fichièrs...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installacion del sistèma…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Configuracion del sistèma…';
 
   @override
   String get installationFailed => 'Fracàs de l’installacion';
