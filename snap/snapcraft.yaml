@@ -132,6 +132,7 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
       ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/dart $SNAPCRAFT_PART_INSTALL/usr/bin/dart
     build-packages:
       - clang
       - cmake
@@ -160,7 +161,7 @@ parts:
       flutter channel stable
       flutter upgrade
       flutter doctor
-      flutter pub get
+      dart pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
 
@@ -178,7 +179,7 @@ parts:
       flutter channel stable
       flutter upgrade
       flutter doctor
-      flutter pub get
+      dart pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
