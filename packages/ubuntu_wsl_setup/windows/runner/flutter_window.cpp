@@ -89,7 +89,8 @@ void FlutterWindow::handleMethodCall(
       result->Error(ChannelConstants::channel, e.what());
     } catch (const std::invalid_argument& e) {
       std::string msg{e.what()};
-      msg.append(". Wass the event ever created?");
+      msg.append(": ");
+      msg.append(*eventNamePtr);
       result->Error(ChannelConstants::channel, msg);
     }
 
