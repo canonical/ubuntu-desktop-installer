@@ -98,7 +98,7 @@
   "@minimalInstallationSubtitle": {},
   "otherOptions": "Weitere Optionen",
   "@otherOptions": {},
-  "installThirdPartyTitle": "Installieren Sie Software von Drittanbietern für Grafik- und Wi-Fi-Hardware sowie für zusätzliche Medienformate",
+  "installThirdPartyTitle": "Software von Drittanbietern für Grafik- und WLAN-Hardware sowie zusätzliche Medienformate installieren",
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Diese Software unterliegt den Lizenzbedingungen, die in der Dokumentation enthalten sind. Ein Teil davon ist proprietär.",
   "@installThirdPartySubtitle": {},
@@ -702,5 +702,9 @@
   "installingSystem": "System wird installiert …",
   "@installingSystem": {},
   "configuringSystem": "System wird konfiguriert …",
-  "@configuringSystem": {}
+  "@configuringSystem": {},
+  "showSecurityKey": "Sicherheitsschlüssel anzeigen",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM und Verschlüsselung ausgewählt",
+  "@installationTypeLVMEncryptionSelected": {}
 }
