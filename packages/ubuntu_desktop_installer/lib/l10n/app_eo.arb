@@ -700,5 +700,9 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "showSecurityKey": "Montri sekurecŝlosilon",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM kaj ĉifrado elektitaj",
+  "@installationTypeLVMEncryptionSelected": {}
 }

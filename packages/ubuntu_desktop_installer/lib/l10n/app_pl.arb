@@ -700,5 +700,9 @@
   "configuringSystem": "Konfigurowanie systemu...",
   "@configuringSystem": {},
   "installingSystem": "Instalowanie systemu...",
-  "@installingSystem": {}
+  "@installingSystem": {},
+  "showSecurityKey": "Pokaż klucz bezpieczeństwa",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "Wybrano LVM i szyfrowanie",
+  "@installationTypeLVMEncryptionSelected": {}
 }

@@ -709,5 +709,9 @@
       "disk": {},
       "partition": {}
     }
-  }
+  },
+  "showSecurityKey": "Mostrar clave de seguridad",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM y cifrado seleccionados",
+  "@installationTypeLVMEncryptionSelected": {}
 }
