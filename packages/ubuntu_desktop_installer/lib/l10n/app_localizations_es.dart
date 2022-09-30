@@ -133,7 +133,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claves de seguridad no coinciden';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Mostrar clave de seguridad';
 
   @override
   String get connectToInternetPageTitle => 'Conectarse a Internet';
@@ -293,7 +293,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationTypeLVMSelected => 'Se seleccionó LVM';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM y cifrado seleccionados';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
