@@ -12,7 +12,7 @@ namespace ChannelConstants {
 const char* channel = "ubuntuWslSetupChannel";
 const char* onEventSet = "onEventSet";
 const char* addListenerFor = "addListenerFor";
-};  // namespace NamedEventConstants
+};  // namespace ChannelConstants
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
     : project_(project) {}
@@ -40,8 +40,7 @@ bool FlutterWindow::OnCreate() {
   // method channel setup
   ubuntuWslSetupChannel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          flutter_controller_->engine()->messenger(),
-          ChannelConstants::channel,
+          flutter_controller_->engine()->messenger(), ChannelConstants::channel,
           &flutter::StandardMethodCodec::GetInstance());
 
   ubuntuWslSetupChannel->SetMethodCallHandler(
@@ -85,15 +84,16 @@ void FlutterWindow::handleMethodCall(
                           [self = this, eventName = *eventNamePtr]() {
                             self->onEventSet(eventName);
                           });
+      result->Success();
     } catch (const std::runtime_error& e) {
       result->Error(ChannelConstants::channel, e.what());
     } catch (const std::invalid_argument& e) {
       std::string msg{e.what()};
-      msg.append(". Wass the event ever created?");
+      msg.append(": ");
+      msg.append(*eventNamePtr);
       result->Error(ChannelConstants::channel, msg);
     }
 
-    result->Success();
   } else {
     result->NotImplemented();
   }
