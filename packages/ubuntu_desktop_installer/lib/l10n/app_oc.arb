@@ -695,5 +695,9 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "showSecurityKey": "Mostrar la clau de seguretat",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM e chiframent seleccionats",
+  "@installationTypeLVMEncryptionSelected": {}
 }
