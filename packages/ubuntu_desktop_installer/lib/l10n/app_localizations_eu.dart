@@ -5,210 +5,210 @@ class AppLocalizationsEu extends AppLocalizations {
   AppLocalizationsEu([String locale = 'eu']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Mahaigainerako Ubuntu instalatzailea';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE instalatu';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Utzi';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Aldatu';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Ondo';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Ez';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Berrabiarazi';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Berrezarri';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Bai';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Irten instalaziotik';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Ongi etorri';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Aukeratu zure hizkuntza:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Probatu edo instalatu';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Konpondu instalazioa';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Konponketak instalatutako software guztia berrinstalatuko du dokumentuak edo ezarpenak ukitu gabe.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE probatu';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return '$RELEASE probatu dezakezu zure ordenagailuan aldaketarik egin gabe.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE instalatu';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return '$RELEASE instalatu zure sistemaren ondoan (edo ordez). Ez du asko iraungo.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return '<a href=\"$url\">kaleratze oharrak</a> irakurri ditzakezu.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Itzali RST';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Argibideetarako, ireki orri hau telefono edo beste gailu batean: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Teklatuaren diseinua';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Aukeratu zure teklatuaren diseinua:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Idatzi hemen zure teklatua probatzeko';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Detektatu teklatuaren diseinua';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Mesedez, sakatu hurrengo tekletariko bat:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Hurrengo tekla zure teklatuan al dago?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Konfiguratu abio segurua';
 
   @override
   String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Konfiguratu abio segurua';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Aukeratu segurtasun gako bat';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Berretsi segurtasun gakoa';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'Ez instalatu driver softwarea oraingoz';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'Gero instalatu dezakezu Software eta Eguneratzeetatik.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Segurtasun gakoa beharrezkoa da';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'Segurtasun gakoak ez datoz bat';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Erakutsi segurtasun gakoa';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Konektatu internetera';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'Erabili kable bidezko konexioa';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'Ez da kable bidezko konexiorik hauteman';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'Kable bidezko konexioa desaktibatuta dago';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Ordenagailu honetan ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'Gaitu kable bidezko konexioa';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Konektatu Wi-Fi sare batera';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Konektatu ezkutuko Wi-Fi sare batera';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'Sarearen izena';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'Sare-izena behar da';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'Ez dut internetera konektatu nahi oraingoz';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Haririk habeko sarea desgaituta dago';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'Ez da Wi-Fi gailurik hauteman';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'Ordenagailu honetan Wi-Fia erabiltzeko, haririk gabeko sareak gaitu behar dira';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Gaitu Wi-Fia';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Konektatu';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Eguneraketak eta beste softwarea';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Zeintzuk aplikazio instalatu nahi zenituzke hasteko?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Instalazio normala';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Web nabigatzailea, utilitateak, bulegotika softwarea, jokoak eta multimedia-erreproduzitzaileak.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Instalazio minimoa';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Web nabigatzailea eta oinarrizko utilitateak.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Beste aukera batzuk';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Instalatu hirugarreneko softwarea grafiko eta Wi-Fi hardwarearentzako, batia multimedia formatu gehigarrientzako euskarria';
 
   @override
   String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';

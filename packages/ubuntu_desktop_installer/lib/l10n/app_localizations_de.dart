@@ -133,7 +133,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Die Sicherheitsschlüssel stimmen nicht überein';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Sicherheitsschlüssel anzeigen';
 
   @override
   String get connectToInternetPageTitle => 'Mit dem Internet verbinden';
@@ -208,7 +208,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get otherOptions => 'Weitere Optionen';
 
   @override
-  String get installThirdPartyTitle => 'Installieren Sie Software von Drittanbietern für Grafik- und Wi-Fi-Hardware sowie für zusätzliche Medienformate';
+  String get installThirdPartyTitle => 'Software von Drittanbietern für Grafik- und WLAN-Hardware sowie zusätzliche Medienformate installieren';
 
   @override
   String get installThirdPartySubtitle => 'Diese Software unterliegt den Lizenzbedingungen, die in der Dokumentation enthalten sind. Ein Teil davon ist proprietär.';
@@ -293,7 +293,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM ausgewählt';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM und Verschlüsselung ausgewählt';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
