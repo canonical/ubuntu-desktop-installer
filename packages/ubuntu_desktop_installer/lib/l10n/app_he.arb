@@ -700,5 +700,9 @@
   "installingSystem": "המערכת מותקנת…",
   "@installingSystem": {},
   "configuringSystem": "המערכת מוגדרת…",
-  "@configuringSystem": {}
+  "@configuringSystem": {},
+  "installationTypeLVMEncryptionSelected": "נבחרו LVM והצפנה",
+  "@installationTypeLVMEncryptionSelected": {},
+  "showSecurityKey": "הצגת מפתח אבטחה",
+  "@showSecurityKey": {}
 }
