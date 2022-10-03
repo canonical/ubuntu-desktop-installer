@@ -71,9 +71,9 @@ class _HiddenPartitionLabel extends StatelessWidget {
       data: lang.installAlongsideHiddenPartitions(hidden, ''),
       style: {
         'body': Style(
-          margin: EdgeInsets.zero,
+          margin: Margins.zero,
           fontSize: FontSize(
-            Theme.of(context).textTheme.bodySmall!.fontSize,
+            Theme.of(context).textTheme.bodySmall!.fontSize!,
           ),
         )
       },

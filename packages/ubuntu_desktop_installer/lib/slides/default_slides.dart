@@ -352,7 +352,7 @@ class _SlideColumn extends StatelessWidget {
 
 class _SlideLabel extends StatelessWidget {
   // A text-only label.
-  const _SlideLabel(
+  _SlideLabel(
     this.text, {
     double? width,
   })  : icon = null,
@@ -360,7 +360,7 @@ class _SlideLabel extends StatelessWidget {
         _width = width;
 
   // A rich text label with a large font suitable for headers.
-  const _SlideLabel.large(
+  _SlideLabel.large(
     this.text, {
     double? width,
   })  : icon = null,
@@ -368,7 +368,7 @@ class _SlideLabel extends StatelessWidget {
         _width = width;
 
   // A plain text label prefixed with an icon.
-  const _SlideLabel.icon({
+  _SlideLabel.icon({
     required this.text,
     this.icon,
     double? width,
@@ -388,7 +388,7 @@ class _SlideLabel extends StatelessWidget {
           'body': Style(
             color: Colors.white,
             fontSize: _fontSize,
-            margin: EdgeInsets.zero,
+            margin: Margins.zero,
           ),
           'a': Style(
             color: Colors.white,

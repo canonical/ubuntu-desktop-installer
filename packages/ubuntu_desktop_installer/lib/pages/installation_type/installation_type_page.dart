@@ -121,7 +121,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
                   Theme.of(context).colorScheme.error.toHex()),
-              style: {'body': Style(margin: EdgeInsets.zero)},
+              style: {'body': Style(margin: Margins.zero)},
             ),
             value: InstallationType.erase,
             groupValue: model.installationType,
