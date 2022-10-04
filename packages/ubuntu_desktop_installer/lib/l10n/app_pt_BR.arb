@@ -584,5 +584,40 @@
   "wiredDisabled": "Conexão a cabo está desligada",
   "@wiredDisabled": {},
   "photoSlideShotcut": "Editor de vídeo Shotcut",
-  "@photoSlideShotcut": {}
+  "@photoSlideShotcut": {},
+  "installationTypeAlongsideMulti": "Instale {product} junto com eles",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideDual": "Instale {product} junto com {os1} e {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Instale {product} junto com outras partições",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "showSecurityKey": "Mostrar chave de segurança",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM e criptografia selecionados",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installAlongsideSpaceDivider": "Aloque espaço em disco arrastando o divisor abaixo:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideResizePartition": "Redimensionar partição",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Alocar espaço",
+  "@installAlongsideAllocateSpace": {},
+  "quitButtonText": "Sair da instalação",
+  "@quitButtonText": {}
 }
