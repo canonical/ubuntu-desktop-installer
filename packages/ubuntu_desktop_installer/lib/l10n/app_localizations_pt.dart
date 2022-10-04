@@ -877,6 +877,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get yesButtonText => 'Sim';
 
   @override
+  String get quitButtonText => 'Sair da instalação';
+
+  @override
   String get welcome => 'Bem-vindo';
 
   @override
@@ -971,6 +974,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Chaves de segurança não correspondem';
+
+  @override
+  String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
   String get connectToInternetPageTitle => 'Conecte-se à internet';
@@ -1130,6 +1136,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeLVMSelected => 'LVM selecionado';
 
   @override
+  String get installationTypeLVMEncryptionSelected => 'LVM e criptografia selecionados';
+
+  @override
   String installationTypeEncrypt(Object RELEASE) {
     return 'Criptografar a nova instalação do $RELEASE para maior segurança';
   }
@@ -1159,6 +1168,21 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
+  String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
+    return 'Instale $product junto com $os1 e $os2';
+  }
+
+  @override
+  String installationTypeAlongsideMulti(Object product) {
+    return 'Instale $product junto com eles';
+  }
+
+  @override
+  String installationTypeAlongsideUnknown(Object product) {
+    return 'Instale $product junto com outras partições';
+  }
+
+  @override
   String get installationTypeAlongsideInfo => 'Documentos, músicas, e outros arquivos pessoais serão mantidos. Você poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.';
 
   @override
@@ -1182,6 +1206,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get selectGuidedStorageInstallNow => 'Instalar agora';
+
+  @override
+  String get installAlongsideSpaceDivider => 'Aloque espaço em disco arrastando o divisor abaixo:';
+
+  @override
+  String get installAlongsideResizePartition => 'Redimensionar partição';
+
+  @override
+  String get installAlongsideAllocateSpace => 'Alocar espaço';
 
   @override
   String get allocateDiskSpace => 'Alocar espaço em disco';
