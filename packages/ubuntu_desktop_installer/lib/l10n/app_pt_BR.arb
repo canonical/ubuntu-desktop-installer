@@ -619,5 +619,13 @@
   "installAlongsideAllocateSpace": "Alocar espaço",
   "@installAlongsideAllocateSpace": {},
   "quitButtonText": "Sair da instalação",
-  "@quitButtonText": {}
+  "@quitButtonText": {},
+  "installAlongsideFiles": "Arquivos",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Partição:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "Tamanho:",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Disponível:",
+  "@installAlongsideAvailable": {}
 }
