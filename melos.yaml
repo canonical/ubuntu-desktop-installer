@@ -50,3 +50,8 @@ scripts:
   test: >
     melos exec -c 1 --fail-fast --dir-exists=test -- \
       flutter test
+
+  # runs pub upgrade in all packages
+  upgrade: >
+    melos exec -c 1 -- \
+      flutter pub upgrade
