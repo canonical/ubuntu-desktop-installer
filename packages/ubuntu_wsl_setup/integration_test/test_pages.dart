@@ -4,8 +4,19 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
+import 'package:ubuntu_wsl_setup/splash_screen.dart';
+import 'package:ubuntu_wsl_setup/wizard.dart';
 
 import '../test/test_utils.dart';
+
+Future<void> testSplashPage(
+  WidgetTester tester, {
+  bool expectClose = false,
+}) async {
+  await tester.pumpUntil(find.byType(SplashScreen));
+  expect(find.byType(AnimatedSwitcher), findsOneWidget);
+  await tester.pumpUntil(find.byType(UbuntuWslSetupWizard));
+}
 
 Future<void> testSelectYourLanguagePage(
   WidgetTester tester, {
