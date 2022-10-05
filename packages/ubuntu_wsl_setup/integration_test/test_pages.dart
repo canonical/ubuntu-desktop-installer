@@ -158,5 +158,5 @@ void expectPage(
 ) {
   LangTester.type = page;
   expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
+  expect(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
 }
