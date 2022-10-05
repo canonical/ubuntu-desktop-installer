@@ -18,6 +18,20 @@ Future<void> testSplashPage(
   await tester.pumpUntil(find.byType(UbuntuWslSetupWizard));
 }
 
+Future<void> testInstallationSlidesPage(WidgetTester tester) async {
+  await tester.pumpUntil(find.byType(InstallationSlidesPage));
+  await tester.pump();
+  expectPage(
+    tester,
+    InstallationSlidesPage,
+    (lang) => lang.installationSlidesWelcome,
+  );
+  final rightIcon = find.byIcon(Icons.chevron_right);
+  expect(rightIcon, findsOneWidget);
+  await tester.tap(rightIcon);
+  await tester.pump();
+}
+
 Future<void> testSelectYourLanguagePage(
   WidgetTester tester, {
   String? language,
