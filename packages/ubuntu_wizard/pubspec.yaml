@@ -20,7 +20,7 @@ dependencies:
   intl: ^0.17.0
   password_strength: ^0.2.0
   path: ^1.8.0
-  safe_change_notifier: ^0.1.0
+  safe_change_notifier: ^0.2.0
   subiquity_client:
     path: ../subiquity_client
   ubuntu_localizations:
