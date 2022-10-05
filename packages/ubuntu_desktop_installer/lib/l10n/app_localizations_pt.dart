@@ -1217,6 +1217,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installAlongsideAllocateSpace => 'Alocar espaço';
 
   @override
+  String get installAlongsideFiles => 'Arquivos';
+
+  @override
+  String get installAlongsidePartition => 'Partição:';
+
+  @override
+  String get installAlongsideSize => 'Tamanho:';
+
+  @override
+  String get installAlongsideAvailable => 'Disponível:';
+
+  @override
   String get allocateDiskSpace => 'Alocar espaço em disco';
 
   @override
