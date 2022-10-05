@@ -35,7 +35,7 @@ dependencies:
   safe_change_notifier: ^0.2.0
   scroll_to_index: ^3.0.0
   split_view: ^3.2.1
-  stdlibc: ^0.0.1
+  stdlibc: ^0.1.0
   subiquity_client:
     path: ../subiquity_client
   timezone_map:
