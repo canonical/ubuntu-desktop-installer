@@ -27,7 +27,7 @@ class TelemetryService {
   bool _done = false;
 
   static int _uptime() {
-    return sysinfo().uptime.inSeconds;
+    return sysinfo()?.uptime.inSeconds ?? 0;
   }
 
   int _timestamp() {
