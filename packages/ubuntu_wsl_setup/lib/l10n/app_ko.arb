@@ -92,7 +92,7 @@
   "@configurationUIMountFstabTitle": {},
   "setupCompleteTitle": "설치 완료",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "{user}님 안녕하세요,\n설치가 성공적으로 완료되었습니다.",
+  "setupCompleteHeader": "{user}님 안녕하세요,\n설치가 완료되었습니다.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -204,5 +204,16 @@
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
   "@installationSlidesFindOutMoreLink": {},
   "installationSlidesFindOutMoreText": " 을 방문하여 우분투 WSL과 캐노니컬에서 어떻게 개발자와 조직을 지원하는지 알아 보십시오.",
-  "@installationSlidesFindOutMoreText": {}
+  "@installationSlidesFindOutMoreText": {},
+  "installLangPacksTitle": "더 나은 {lang} 언어 지원을 위한 패키지 설치",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "느린 연결에서 권장하지 않음.",
+  "@installLangPacksSubtitle": {}
 }
