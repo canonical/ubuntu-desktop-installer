@@ -133,7 +133,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Ключи безопасности не совпадают';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Показать ключ безопасности';
 
   @override
   String get connectToInternetPageTitle => 'Интернет соединение';
@@ -293,7 +293,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeLVMSelected => 'Выбран LVM';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM и шифрование выбраны';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
