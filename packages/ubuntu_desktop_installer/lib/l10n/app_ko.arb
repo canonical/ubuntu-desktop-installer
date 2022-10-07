@@ -609,5 +609,48 @@
   "copyingFiles": "파일 복사 중...",
   "@copyingFiles": {},
   "installationFailed": "설치 실패",
-  "@installationFailed": {}
+  "@installationFailed": {},
+  "showSecurityKey": "보안 키 보이기",
+  "@showSecurityKey": {},
+  "installationTypeAlongsideUnknown": "{product}을(를) 다른 파티션과 나란히 설치",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "아래 구분선을 움직여 드라이브 공간을 할당하십시오:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideFiles": "파일",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "파티션:",
+  "@installAlongsidePartition": {},
+  "installAlongsideResizePartition": "파티션 조정",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "공간 할당",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideAvailable": "이용 가능:",
+  "@installAlongsideAvailable": {},
+  "installAlongsideSize": "크기:",
+  "@installAlongsideSize": {},
+  "installationTypeLVMEncryptionSelected": "LVM및 암호화 선택됨",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installationTypeAlongsideMulti": "{product}을(를) 나란히 설치",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideDual": "{product}을(를) {os1}및 {os2}와 나란히 설치",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "quitButtonText": "인스톨러 닫기",
+  "@quitButtonText": {}
 }
