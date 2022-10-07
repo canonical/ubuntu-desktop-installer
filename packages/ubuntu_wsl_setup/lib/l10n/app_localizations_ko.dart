@@ -27,11 +27,11 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return '더 나은 $lang 언어 지원을 위한 패키지 설치';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => '느린 연결에서 권장하지 않음.';
 
   @override
   String get profileSetupTitle => '프로필 구성';
@@ -176,7 +176,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return '$user님 안녕하세요,\n설치가 성공적으로 완료되었습니다.';
+    return '$user님 안녕하세요,\n설치가 완료되었습니다.';
   }
 
   @override

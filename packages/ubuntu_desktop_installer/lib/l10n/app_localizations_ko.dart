@@ -34,7 +34,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get yesButtonText => '예';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => '인스톨러 닫기';
 
   @override
   String get welcome => '환영합니다';
@@ -133,7 +133,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => '보안 키가 일치하지 않습니다';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => '보안 키 보이기';
 
   @override
   String get connectToInternetPageTitle => '인터넷에 연결하기';
@@ -293,7 +293,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM 선택됨';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM및 암호화 선택됨';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -326,17 +326,17 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return '$product을(를) $os1및 $os2와 나란히 설치';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return '$product을(를) 나란히 설치';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return '$product을(를) 다른 파티션과 나란히 설치';
   }
 
   @override
@@ -365,7 +365,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectGuidedStorageInstallNow => '지금 설치';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => '아래 구분선을 움직여 드라이브 공간을 할당하십시오:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -373,22 +373,22 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => '파티션 조정';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => '공간 할당';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => '파일';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => '파티션:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => '크기:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => '이용 가능:';
 
   @override
   String get allocateDiskSpace => '디스크 공간 할당';
