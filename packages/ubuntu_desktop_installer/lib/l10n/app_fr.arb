@@ -688,5 +688,9 @@
   "installingSystem": "Installation du système...",
   "@installingSystem": {},
   "configuringSystem": "Configuration du système...",
-  "@configuringSystem": {}
+  "@configuringSystem": {},
+  "showSecurityKey": "Montrer la clé de sécurité",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM et chiffrement sélectionnés",
+  "@installationTypeLVMEncryptionSelected": {}
 }
