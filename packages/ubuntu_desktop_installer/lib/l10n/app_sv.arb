@@ -755,5 +755,9 @@
   "installingSystem": "Installerar system...",
   "@installingSystem": {},
   "configuringSystem": "Konfigurerar system...",
-  "@configuringSystem": {}
+  "@configuringSystem": {},
+  "showSecurityKey": "Visa säkerhetsnyckel",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM och kryptering vald",
+  "@installationTypeLVMEncryptionSelected": {}
 }
