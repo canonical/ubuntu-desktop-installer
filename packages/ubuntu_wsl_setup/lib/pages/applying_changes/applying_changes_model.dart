@@ -23,6 +23,11 @@ class ApplyingChangesModel extends SafeChangeNotifier with SystemShutdown {
   bool _previousState = true;
 
   void init({required VoidCallback onDoneTransition}) {
+    if (null != _monitor.status && !_monitor.status!.state.isInstalling) {
+      _previousState = false;
+      onDoneTransition();
+      return;
+    }
     _sub = _monitor.onStatusChanged.listen((status) {
       if (status?.state.isInstalling == false && _previousState == true) {
         _previousState = false;
