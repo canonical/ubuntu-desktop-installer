@@ -77,7 +77,7 @@
   "@configurationUITitle": {},
   "configurationUIInteroperabilityTitle": "Engedélyezve",
   "@configurationUIInteroperabilityTitle": {},
-  "configurationUIInteroperabilitySubtitle": "Engedélyezve van-e az átjárhatóság.",
+  "configurationUIInteroperabilitySubtitle": "Az átjárhatóság engedélyezve van-e.",
   "@configurationUIInteroperabilitySubtitle": {},
   "configurationUIInteropAppendWindowsPathTitle": "Windows elérési útvonal hozzáadása",
   "@configurationUIInteropAppendWindowsPathTitle": {},
@@ -184,5 +184,16 @@
   "installationSlidesUbuntuOnWslText": "Teljes Ubuntu környezet, amely mélyen integrálódik a Windowshoz, Linux alkalmazások fejlesztéséhez és futtatásához. Felhőre, webre, adattudományra, IOT-ra és szórakozásra optimalizálva!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesFindOutMore": "Tudjon meg többet",
-  "@installationSlidesFindOutMore": {}
+  "@installationSlidesFindOutMore": {},
+  "installLangPacksTitle": "Telepítsen csomagokat a jobb {lang} nyelvi támogatáshoz",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Lassú kapcsolatok esetén nem ajánlott.",
+  "@installLangPacksSubtitle": {}
 }
