@@ -27,11 +27,11 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Telepítsen csomagokat a jobb $lang nyelvi támogatáshoz';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Lassú kapcsolatok esetén nem ajánlott.';
 
   @override
   String get profileSetupTitle => 'Profil beállítása';
@@ -133,7 +133,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get configurationUIInteroperabilityTitle => 'Engedélyezve';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Engedélyezve van-e az átjárhatóság.';
+  String get configurationUIInteroperabilitySubtitle => 'Az átjárhatóság engedélyezve van-e.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Windows elérési útvonal hozzáadása';
