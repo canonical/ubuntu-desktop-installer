@@ -104,6 +104,7 @@ void main() {
     final client = MockSubiquityClient();
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged).thenAnswer((_) => Stream.value(null));
+    when(monitor.status).thenAnswer((_) => null);
     registerMockService<SubiquityClient>(client);
     registerMockService<SubiquityStatusMonitor>(monitor);
     await tester.pumpWidget(buildApp(
