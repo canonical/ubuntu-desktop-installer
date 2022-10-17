@@ -73,20 +73,9 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
       title: YaruWindowTitleBar(
         title: Text(lang.whereAreYouPageTitle),
       ),
-      headerPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       content: Column(
         children: <Widget>[
-          Expanded(
-            child: TimezoneMap(
-              offset: controller.selectedLocation?.offset,
-              marker: controller.selectedLocation?.coordinates,
-              onPressed: (coordinates) => controller
-                  .searchMap(coordinates)
-                  .then(controller.selectLocation),
-            ),
-          ),
-          const SizedBox(height: kContentSpacing),
           Padding(
             padding: kContentPadding,
             child: Row(
@@ -147,6 +136,16 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
                   ),
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: kContentSpacing),
+          Expanded(
+            child: TimezoneMap(
+              offset: controller.selectedLocation?.offset,
+              marker: controller.selectedLocation?.coordinates,
+              onPressed: (coordinates) => controller
+                  .searchMap(coordinates)
+                  .then(controller.selectLocation),
             ),
           ),
         ],
