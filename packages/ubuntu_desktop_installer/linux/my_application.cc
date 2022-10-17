@@ -20,6 +20,21 @@ static void my_application_get_workarea(GtkWindow* window,
   gdk_monitor_get_workarea(monitor, workarea);
 }
 
+static gboolean my_application_fit_to_workarea(GtkWindow* window) {
+  GtkAllocation allocation;
+  gtk_widget_get_allocation(GTK_WIDGET(window), &allocation);
+
+  GdkRectangle workarea;
+  my_application_get_workarea(window, &workarea);
+
+  gboolean fits_workarea =
+      allocation.width < workarea.width || allocation.height < workarea.height;
+  if (!fits_workarea) {
+    gtk_window_maximize(window);
+  }
+  return fits_workarea;
+}
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
@@ -42,44 +57,26 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_show_close_button(header_bar, TRUE);
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
+  gtk_window_set_default_size(window, 960, 680);
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
   fl_dart_project_set_dart_entrypoint_arguments(
       project, self->dart_entrypoint_arguments);
 
   FlView* view = fl_view_new(project);
-  gtk_widget_set_size_request(GTK_WIDGET(view), 960, 680);
   gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
 
   gtk_widget_realize(GTK_WIDGET(window));
 
-  GtkRequisition minimum;
-  gtk_widget_get_preferred_size(GTK_WIDGET(window), &minimum, nullptr);
-
-  GdkRectangle workarea;
-  my_application_get_workarea(window, &workarea);
-
-  if (minimum.width < workarea.width || minimum.height < workarea.height) {
+  if (my_application_fit_to_workarea(window)) {
 #ifdef NDEBUG
     // The window has a fixed size in production/release mode, but resizing
     // the window is allowed in debug mode for testing purposes, or if it
     // doesn't fit the available workarea.
     gtk_window_set_resizable(window, FALSE);
 #endif
-  } else {
-    // The window doesn't fit into the available workarea, so reset the (too
-    // large) size request and maximize the window to make it as large as
-    // possible.
-    gtk_widget_set_size_request(GTK_WIDGET(view), -1, -1);
-    gtk_window_maximize(window);
-
-    GdkGeometry geometry;
-    geometry.min_width = MIN(workarea.width, minimum.width);
-    geometry.min_height = MIN(workarea.height, minimum.height);
-    gtk_window_set_geometry_hints(window, nullptr, &geometry,
-                                  GDK_HINT_MIN_SIZE);
   }
   gtk_widget_show(GTK_WIDGET(window));
 
