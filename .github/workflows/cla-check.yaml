@@ -6,7 +6,5 @@ jobs:
     if: github.event.pull_request.user.login != 'weblate'
     runs-on: ubuntu-20.04
     steps:
-      - name: Dump GitHub context
-        run: echo '${{ toJSON(github) }}'
       - name: Check if CLA signed
         uses: canonical/has-signed-canonical-cla@v1
