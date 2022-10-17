@@ -5,6 +5,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -25,8 +26,9 @@ class WhoAreYouPage extends StatefulWidget {
   /// Creates an instance with [WhoAreYouModel].
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final config = getService<ConfigService>();
     return ChangeNotifierProvider(
-      create: (_) => WhoAreYouModel(client),
+      create: (_) => WhoAreYouModel(client, config),
       child: const WhoAreYouPage(),
     );
   }
@@ -83,16 +85,8 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               padding: kContentPadding,
               child: _ShowPasswordCheckButton(),
             ),
-            // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-            // const SizedBox(height: kContentSpacing),
-            // _LoginStrategyTile(
-            //   value: LoginStrategy.autoLogin,
-            //   label: lang.whoAreYouPageAutoLogin,
-            // ),
-            // _LoginStrategyTile(
-            //   value: LoginStrategy.requirePassword,
-            //   label: lang.whoAreYouPageRequirePassword,
-            // ),
+            const SizedBox(height: kContentSpacing),
+            const _AutoLoginSwitch(),
           ],
         );
       }),

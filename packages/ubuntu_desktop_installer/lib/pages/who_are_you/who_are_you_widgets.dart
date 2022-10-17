@@ -208,30 +208,23 @@ class _ShowPasswordCheckButton extends StatelessWidget {
   }
 }
 
-// class _LoginStrategyTile extends StatelessWidget {
-//   const _LoginStrategyTile({
-//     Key? key,
-//     required this.value,
-//     required this.label,
-//   }) : super(key: key);
+class _AutoLoginSwitch extends StatelessWidget {
+  const _AutoLoginSwitch();
 
-//   final LoginStrategy value;
-//   final String label;
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
+    final autoLogin =
+        context.select<WhoAreYouModel, bool>((model) => model.autoLogin);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final loginStrategy = context
-//         .select<WhoAreYouModel, LoginStrategy>((model) => model.loginStrategy);
-
-//     return RadioButton<LoginStrategy>(
-//       title: Text(label),
-//       contentPadding: EdgeInsets.only(left: _kRadioButtonIndentation),
-//       value: value,
-//       groupValue: loginStrategy,
-//       onChanged: (value) {
-//         final model = Provider.of<WhoAreYouModel>(context, listen: false);
-//         model.loginStrategy = value!;
-//       },
-//     );
-//   }
-// }
+    return YaruSwitchButton(
+      title: Text(lang.whoAreYouPageRequirePassword),
+      contentPadding: kContentPadding,
+      value: !autoLogin,
+      onChanged: (value) {
+        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        model.autoLogin = !value;
+      },
+    );
+  }
+}
