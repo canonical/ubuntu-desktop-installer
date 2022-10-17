@@ -36,7 +36,8 @@ mixin _$ErrorReportRef {
 abstract class $ErrorReportRefCopyWith<$Res> {
   factory $ErrorReportRefCopyWith(
           ErrorReportRef value, $Res Function(ErrorReportRef) then) =
-      _$ErrorReportRefCopyWithImpl<$Res>;
+      _$ErrorReportRefCopyWithImpl<$Res, ErrorReportRef>;
+  @useResult
   $Res call(
       {ErrorReportState state,
       String base,
@@ -46,44 +47,46 @@ abstract class $ErrorReportRefCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ErrorReportRefCopyWithImpl<$Res>
+class _$ErrorReportRefCopyWithImpl<$Res, $Val extends ErrorReportRef>
     implements $ErrorReportRefCopyWith<$Res> {
   _$ErrorReportRefCopyWithImpl(this._value, this._then);
 
-  final ErrorReportRef _value;
   // ignore: unused_field
-  final $Res Function(ErrorReportRef) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
-    Object? base = freezed,
-    Object? kind = freezed,
-    Object? seen = freezed,
+    Object? state = null,
+    Object? base = null,
+    Object? kind = null,
+    Object? seen = null,
     Object? oopsId = freezed,
   }) {
     return _then(_value.copyWith(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ErrorReportState,
-      base: base == freezed
+      base: null == base
           ? _value.base
           : base // ignore: cast_nullable_to_non_nullable
               as String,
-      kind: kind == freezed
+      kind: null == kind
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as ErrorReportKind,
-      seen: seen == freezed
+      seen: null == seen
           ? _value.seen
           : seen // ignore: cast_nullable_to_non_nullable
               as bool,
-      oopsId: oopsId == freezed
+      oopsId: freezed == oopsId
           ? _value.oopsId
           : oopsId // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -94,6 +97,7 @@ abstract class _$$_ErrorReportRefCopyWith<$Res>
           _$_ErrorReportRef value, $Res Function(_$_ErrorReportRef) then) =
       __$$_ErrorReportRefCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ErrorReportState state,
       String base,
@@ -104,41 +108,39 @@ abstract class _$$_ErrorReportRefCopyWith<$Res>
 
 /// @nodoc
 class __$$_ErrorReportRefCopyWithImpl<$Res>
-    extends _$ErrorReportRefCopyWithImpl<$Res>
+    extends _$ErrorReportRefCopyWithImpl<$Res, _$_ErrorReportRef>
     implements _$$_ErrorReportRefCopyWith<$Res> {
   __$$_ErrorReportRefCopyWithImpl(
       _$_ErrorReportRef _value, $Res Function(_$_ErrorReportRef) _then)
-      : super(_value, (v) => _then(v as _$_ErrorReportRef));
+      : super(_value, _then);
 
-  @override
-  _$_ErrorReportRef get _value => super._value as _$_ErrorReportRef;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
-    Object? base = freezed,
-    Object? kind = freezed,
-    Object? seen = freezed,
+    Object? state = null,
+    Object? base = null,
+    Object? kind = null,
+    Object? seen = null,
     Object? oopsId = freezed,
   }) {
     return _then(_$_ErrorReportRef(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ErrorReportState,
-      base: base == freezed
+      base: null == base
           ? _value.base
           : base // ignore: cast_nullable_to_non_nullable
               as String,
-      kind: kind == freezed
+      kind: null == kind
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as ErrorReportKind,
-      seen: seen == freezed
+      seen: null == seen
           ? _value.seen
           : seen // ignore: cast_nullable_to_non_nullable
               as bool,
-      oopsId: oopsId == freezed
+      oopsId: freezed == oopsId
           ? _value.oopsId
           : oopsId // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -180,25 +182,20 @@ class _$_ErrorReportRef implements _ErrorReportRef {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ErrorReportRef &&
-            const DeepCollectionEquality().equals(other.state, state) &&
-            const DeepCollectionEquality().equals(other.base, base) &&
-            const DeepCollectionEquality().equals(other.kind, kind) &&
-            const DeepCollectionEquality().equals(other.seen, seen) &&
-            const DeepCollectionEquality().equals(other.oopsId, oopsId));
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.base, base) || other.base == base) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.seen, seen) || other.seen == seen) &&
+            (identical(other.oopsId, oopsId) || other.oopsId == oopsId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(state),
-      const DeepCollectionEquality().hash(base),
-      const DeepCollectionEquality().hash(kind),
-      const DeepCollectionEquality().hash(seen),
-      const DeepCollectionEquality().hash(oopsId));
+  int get hashCode => Object.hash(runtimeType, state, base, kind, seen, oopsId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ErrorReportRefCopyWith<_$_ErrorReportRef> get copyWith =>
       __$$_ErrorReportRefCopyWithImpl<_$_ErrorReportRef>(this, _$identity);
 
@@ -262,7 +259,8 @@ mixin _$ApplicationStatus {
 abstract class $ApplicationStatusCopyWith<$Res> {
   factory $ApplicationStatusCopyWith(
           ApplicationStatus value, $Res Function(ApplicationStatus) then) =
-      _$ApplicationStatusCopyWithImpl<$Res>;
+      _$ApplicationStatusCopyWithImpl<$Res, ApplicationStatus>;
+  @useResult
   $Res call(
       {ApplicationState state,
       String confirmingTty,
@@ -277,69 +275,72 @@ abstract class $ApplicationStatusCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApplicationStatusCopyWithImpl<$Res>
+class _$ApplicationStatusCopyWithImpl<$Res, $Val extends ApplicationStatus>
     implements $ApplicationStatusCopyWith<$Res> {
   _$ApplicationStatusCopyWithImpl(this._value, this._then);
 
-  final ApplicationStatus _value;
   // ignore: unused_field
-  final $Res Function(ApplicationStatus) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
-    Object? confirmingTty = freezed,
+    Object? state = null,
+    Object? confirmingTty = null,
     Object? error = freezed,
     Object? cloudInitOk = freezed,
     Object? interactive = freezed,
-    Object? echoSyslogId = freezed,
-    Object? logSyslogId = freezed,
-    Object? eventSyslogId = freezed,
+    Object? echoSyslogId = null,
+    Object? logSyslogId = null,
+    Object? eventSyslogId = null,
   }) {
     return _then(_value.copyWith(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ApplicationState,
-      confirmingTty: confirmingTty == freezed
+      confirmingTty: null == confirmingTty
           ? _value.confirmingTty
           : confirmingTty // ignore: cast_nullable_to_non_nullable
               as String,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      cloudInitOk: cloudInitOk == freezed
+      cloudInitOk: freezed == cloudInitOk
           ? _value.cloudInitOk
           : cloudInitOk // ignore: cast_nullable_to_non_nullable
               as bool?,
-      interactive: interactive == freezed
+      interactive: freezed == interactive
           ? _value.interactive
           : interactive // ignore: cast_nullable_to_non_nullable
               as bool?,
-      echoSyslogId: echoSyslogId == freezed
+      echoSyslogId: null == echoSyslogId
           ? _value.echoSyslogId
           : echoSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
-      logSyslogId: logSyslogId == freezed
+      logSyslogId: null == logSyslogId
           ? _value.logSyslogId
           : logSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
-      eventSyslogId: eventSyslogId == freezed
+      eventSyslogId: null == eventSyslogId
           ? _value.eventSyslogId
           : eventSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ErrorReportRefCopyWith<$Res>? get error {
     if (_value.error == null) {
       return null;
     }
 
     return $ErrorReportRefCopyWith<$Res>(_value.error!, (value) {
-      return _then(_value.copyWith(error: value));
+      return _then(_value.copyWith(error: value) as $Val);
     });
   }
 }
@@ -351,6 +352,7 @@ abstract class _$$_ApplicationStatusCopyWith<$Res>
           $Res Function(_$_ApplicationStatus) then) =
       __$$_ApplicationStatusCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ApplicationState state,
       String confirmingTty,
@@ -367,56 +369,54 @@ abstract class _$$_ApplicationStatusCopyWith<$Res>
 
 /// @nodoc
 class __$$_ApplicationStatusCopyWithImpl<$Res>
-    extends _$ApplicationStatusCopyWithImpl<$Res>
+    extends _$ApplicationStatusCopyWithImpl<$Res, _$_ApplicationStatus>
     implements _$$_ApplicationStatusCopyWith<$Res> {
   __$$_ApplicationStatusCopyWithImpl(
       _$_ApplicationStatus _value, $Res Function(_$_ApplicationStatus) _then)
-      : super(_value, (v) => _then(v as _$_ApplicationStatus));
+      : super(_value, _then);
 
-  @override
-  _$_ApplicationStatus get _value => super._value as _$_ApplicationStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
-    Object? confirmingTty = freezed,
+    Object? state = null,
+    Object? confirmingTty = null,
     Object? error = freezed,
     Object? cloudInitOk = freezed,
     Object? interactive = freezed,
-    Object? echoSyslogId = freezed,
-    Object? logSyslogId = freezed,
-    Object? eventSyslogId = freezed,
+    Object? echoSyslogId = null,
+    Object? logSyslogId = null,
+    Object? eventSyslogId = null,
   }) {
     return _then(_$_ApplicationStatus(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ApplicationState,
-      confirmingTty: confirmingTty == freezed
+      confirmingTty: null == confirmingTty
           ? _value.confirmingTty
           : confirmingTty // ignore: cast_nullable_to_non_nullable
               as String,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      cloudInitOk: cloudInitOk == freezed
+      cloudInitOk: freezed == cloudInitOk
           ? _value.cloudInitOk
           : cloudInitOk // ignore: cast_nullable_to_non_nullable
               as bool?,
-      interactive: interactive == freezed
+      interactive: freezed == interactive
           ? _value.interactive
           : interactive // ignore: cast_nullable_to_non_nullable
               as bool?,
-      echoSyslogId: echoSyslogId == freezed
+      echoSyslogId: null == echoSyslogId
           ? _value.echoSyslogId
           : echoSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
-      logSyslogId: logSyslogId == freezed
+      logSyslogId: null == logSyslogId
           ? _value.logSyslogId
           : logSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
-      eventSyslogId: eventSyslogId == freezed
+      eventSyslogId: null == eventSyslogId
           ? _value.eventSyslogId
           : eventSyslogId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -467,37 +467,30 @@ class _$_ApplicationStatus implements _ApplicationStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ApplicationStatus &&
-            const DeepCollectionEquality().equals(other.state, state) &&
-            const DeepCollectionEquality()
-                .equals(other.confirmingTty, confirmingTty) &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.cloudInitOk, cloudInitOk) &&
-            const DeepCollectionEquality()
-                .equals(other.interactive, interactive) &&
-            const DeepCollectionEquality()
-                .equals(other.echoSyslogId, echoSyslogId) &&
-            const DeepCollectionEquality()
-                .equals(other.logSyslogId, logSyslogId) &&
-            const DeepCollectionEquality()
-                .equals(other.eventSyslogId, eventSyslogId));
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.confirmingTty, confirmingTty) ||
+                other.confirmingTty == confirmingTty) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.cloudInitOk, cloudInitOk) ||
+                other.cloudInitOk == cloudInitOk) &&
+            (identical(other.interactive, interactive) ||
+                other.interactive == interactive) &&
+            (identical(other.echoSyslogId, echoSyslogId) ||
+                other.echoSyslogId == echoSyslogId) &&
+            (identical(other.logSyslogId, logSyslogId) ||
+                other.logSyslogId == logSyslogId) &&
+            (identical(other.eventSyslogId, eventSyslogId) ||
+                other.eventSyslogId == eventSyslogId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(state),
-      const DeepCollectionEquality().hash(confirmingTty),
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(cloudInitOk),
-      const DeepCollectionEquality().hash(interactive),
-      const DeepCollectionEquality().hash(echoSyslogId),
-      const DeepCollectionEquality().hash(logSyslogId),
-      const DeepCollectionEquality().hash(eventSyslogId));
+  int get hashCode => Object.hash(runtimeType, state, confirmingTty, error,
+      cloudInitOk, interactive, echoSyslogId, logSyslogId, eventSyslogId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ApplicationStatusCopyWith<_$_ApplicationStatus> get copyWith =>
       __$$_ApplicationStatusCopyWithImpl<_$_ApplicationStatus>(
           this, _$identity);
@@ -565,34 +558,37 @@ mixin _$KeyFingerprint {
 abstract class $KeyFingerprintCopyWith<$Res> {
   factory $KeyFingerprintCopyWith(
           KeyFingerprint value, $Res Function(KeyFingerprint) then) =
-      _$KeyFingerprintCopyWithImpl<$Res>;
+      _$KeyFingerprintCopyWithImpl<$Res, KeyFingerprint>;
+  @useResult
   $Res call({String keytype, String fingerprint});
 }
 
 /// @nodoc
-class _$KeyFingerprintCopyWithImpl<$Res>
+class _$KeyFingerprintCopyWithImpl<$Res, $Val extends KeyFingerprint>
     implements $KeyFingerprintCopyWith<$Res> {
   _$KeyFingerprintCopyWithImpl(this._value, this._then);
 
-  final KeyFingerprint _value;
   // ignore: unused_field
-  final $Res Function(KeyFingerprint) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? keytype = freezed,
-    Object? fingerprint = freezed,
+    Object? keytype = null,
+    Object? fingerprint = null,
   }) {
     return _then(_value.copyWith(
-      keytype: keytype == freezed
+      keytype: null == keytype
           ? _value.keytype
           : keytype // ignore: cast_nullable_to_non_nullable
               as String,
-      fingerprint: fingerprint == freezed
+      fingerprint: null == fingerprint
           ? _value.fingerprint
           : fingerprint // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -603,31 +599,30 @@ abstract class _$$_KeyFingerprintCopyWith<$Res>
           _$_KeyFingerprint value, $Res Function(_$_KeyFingerprint) then) =
       __$$_KeyFingerprintCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String keytype, String fingerprint});
 }
 
 /// @nodoc
 class __$$_KeyFingerprintCopyWithImpl<$Res>
-    extends _$KeyFingerprintCopyWithImpl<$Res>
+    extends _$KeyFingerprintCopyWithImpl<$Res, _$_KeyFingerprint>
     implements _$$_KeyFingerprintCopyWith<$Res> {
   __$$_KeyFingerprintCopyWithImpl(
       _$_KeyFingerprint _value, $Res Function(_$_KeyFingerprint) _then)
-      : super(_value, (v) => _then(v as _$_KeyFingerprint));
+      : super(_value, _then);
 
-  @override
-  _$_KeyFingerprint get _value => super._value as _$_KeyFingerprint;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? keytype = freezed,
-    Object? fingerprint = freezed,
+    Object? keytype = null,
+    Object? fingerprint = null,
   }) {
     return _then(_$_KeyFingerprint(
-      keytype: keytype == freezed
+      keytype: null == keytype
           ? _value.keytype
           : keytype // ignore: cast_nullable_to_non_nullable
               as String,
-      fingerprint: fingerprint == freezed
+      fingerprint: null == fingerprint
           ? _value.fingerprint
           : fingerprint // ignore: cast_nullable_to_non_nullable
               as String,
@@ -658,20 +653,18 @@ class _$_KeyFingerprint implements _KeyFingerprint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_KeyFingerprint &&
-            const DeepCollectionEquality().equals(other.keytype, keytype) &&
-            const DeepCollectionEquality()
-                .equals(other.fingerprint, fingerprint));
+            (identical(other.keytype, keytype) || other.keytype == keytype) &&
+            (identical(other.fingerprint, fingerprint) ||
+                other.fingerprint == fingerprint));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(keytype),
-      const DeepCollectionEquality().hash(fingerprint));
+  int get hashCode => Object.hash(runtimeType, keytype, fingerprint);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_KeyFingerprintCopyWith<_$_KeyFingerprint> get copyWith =>
       __$$_KeyFingerprintCopyWithImpl<_$_KeyFingerprint>(this, _$identity);
 
@@ -726,7 +719,8 @@ mixin _$LiveSessionSSHInfo {
 abstract class $LiveSessionSSHInfoCopyWith<$Res> {
   factory $LiveSessionSSHInfoCopyWith(
           LiveSessionSSHInfo value, $Res Function(LiveSessionSSHInfo) then) =
-      _$LiveSessionSSHInfoCopyWithImpl<$Res>;
+      _$LiveSessionSSHInfoCopyWithImpl<$Res, LiveSessionSSHInfo>;
+  @useResult
   $Res call(
       {String username,
       PasswordKind passwordKind,
@@ -737,49 +731,51 @@ abstract class $LiveSessionSSHInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LiveSessionSSHInfoCopyWithImpl<$Res>
+class _$LiveSessionSSHInfoCopyWithImpl<$Res, $Val extends LiveSessionSSHInfo>
     implements $LiveSessionSSHInfoCopyWith<$Res> {
   _$LiveSessionSSHInfoCopyWithImpl(this._value, this._then);
 
-  final LiveSessionSSHInfo _value;
   // ignore: unused_field
-  final $Res Function(LiveSessionSSHInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = freezed,
-    Object? passwordKind = freezed,
+    Object? username = null,
+    Object? passwordKind = null,
     Object? password = freezed,
-    Object? authorizedKeyFingerprints = freezed,
-    Object? ips = freezed,
-    Object? hostKeyFingerprints = freezed,
+    Object? authorizedKeyFingerprints = null,
+    Object? ips = null,
+    Object? hostKeyFingerprints = null,
   }) {
     return _then(_value.copyWith(
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordKind: passwordKind == freezed
+      passwordKind: null == passwordKind
           ? _value.passwordKind
           : passwordKind // ignore: cast_nullable_to_non_nullable
               as PasswordKind,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorizedKeyFingerprints: authorizedKeyFingerprints == freezed
+      authorizedKeyFingerprints: null == authorizedKeyFingerprints
           ? _value.authorizedKeyFingerprints
           : authorizedKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
-      ips: ips == freezed
+      ips: null == ips
           ? _value.ips
           : ips // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      hostKeyFingerprints: hostKeyFingerprints == freezed
+      hostKeyFingerprints: null == hostKeyFingerprints
           ? _value.hostKeyFingerprints
           : hostKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -790,6 +786,7 @@ abstract class _$$_LiveSessionSSHInfoCopyWith<$Res>
           $Res Function(_$_LiveSessionSSHInfo) then) =
       __$$_LiveSessionSSHInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String username,
       PasswordKind passwordKind,
@@ -801,46 +798,44 @@ abstract class _$$_LiveSessionSSHInfoCopyWith<$Res>
 
 /// @nodoc
 class __$$_LiveSessionSSHInfoCopyWithImpl<$Res>
-    extends _$LiveSessionSSHInfoCopyWithImpl<$Res>
+    extends _$LiveSessionSSHInfoCopyWithImpl<$Res, _$_LiveSessionSSHInfo>
     implements _$$_LiveSessionSSHInfoCopyWith<$Res> {
   __$$_LiveSessionSSHInfoCopyWithImpl(
       _$_LiveSessionSSHInfo _value, $Res Function(_$_LiveSessionSSHInfo) _then)
-      : super(_value, (v) => _then(v as _$_LiveSessionSSHInfo));
+      : super(_value, _then);
 
-  @override
-  _$_LiveSessionSSHInfo get _value => super._value as _$_LiveSessionSSHInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = freezed,
-    Object? passwordKind = freezed,
+    Object? username = null,
+    Object? passwordKind = null,
     Object? password = freezed,
-    Object? authorizedKeyFingerprints = freezed,
-    Object? ips = freezed,
-    Object? hostKeyFingerprints = freezed,
+    Object? authorizedKeyFingerprints = null,
+    Object? ips = null,
+    Object? hostKeyFingerprints = null,
   }) {
     return _then(_$_LiveSessionSSHInfo(
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordKind: passwordKind == freezed
+      passwordKind: null == passwordKind
           ? _value.passwordKind
           : passwordKind // ignore: cast_nullable_to_non_nullable
               as PasswordKind,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorizedKeyFingerprints: authorizedKeyFingerprints == freezed
+      authorizedKeyFingerprints: null == authorizedKeyFingerprints
           ? _value._authorizedKeyFingerprints
           : authorizedKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
-      ips: ips == freezed
+      ips: null == ips
           ? _value._ips
           : ips // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      hostKeyFingerprints: hostKeyFingerprints == freezed
+      hostKeyFingerprints: null == hostKeyFingerprints
           ? _value._hostKeyFingerprints
           : hostKeyFingerprints // ignore: cast_nullable_to_non_nullable
               as List<KeyFingerprint>,
@@ -902,10 +897,12 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LiveSessionSSHInfo &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordKind, passwordKind) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.passwordKind, passwordKind) ||
+                other.passwordKind == passwordKind) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
             const DeepCollectionEquality().equals(
                 other._authorizedKeyFingerprints, _authorizedKeyFingerprints) &&
             const DeepCollectionEquality().equals(other._ips, _ips) &&
@@ -917,15 +914,16 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(passwordKind),
-      const DeepCollectionEquality().hash(password),
+      username,
+      passwordKind,
+      password,
       const DeepCollectionEquality().hash(_authorizedKeyFingerprints),
       const DeepCollectionEquality().hash(_ips),
       const DeepCollectionEquality().hash(_hostKeyFingerprints));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LiveSessionSSHInfoCopyWith<_$_LiveSessionSSHInfo> get copyWith =>
       __$$_LiveSessionSSHInfoCopyWithImpl<_$_LiveSessionSSHInfo>(
           this, _$identity);
@@ -989,7 +987,8 @@ mixin _$RefreshStatus {
 abstract class $RefreshStatusCopyWith<$Res> {
   factory $RefreshStatusCopyWith(
           RefreshStatus value, $Res Function(RefreshStatus) then) =
-      _$RefreshStatusCopyWithImpl<$Res>;
+      _$RefreshStatusCopyWithImpl<$Res, RefreshStatus>;
+  @useResult
   $Res call(
       {RefreshCheckState availability,
       String currentSnapVersion,
@@ -997,34 +996,36 @@ abstract class $RefreshStatusCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RefreshStatusCopyWithImpl<$Res>
+class _$RefreshStatusCopyWithImpl<$Res, $Val extends RefreshStatus>
     implements $RefreshStatusCopyWith<$Res> {
   _$RefreshStatusCopyWithImpl(this._value, this._then);
 
-  final RefreshStatus _value;
   // ignore: unused_field
-  final $Res Function(RefreshStatus) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? availability = freezed,
-    Object? currentSnapVersion = freezed,
-    Object? newSnapVersion = freezed,
+    Object? availability = null,
+    Object? currentSnapVersion = null,
+    Object? newSnapVersion = null,
   }) {
     return _then(_value.copyWith(
-      availability: availability == freezed
+      availability: null == availability
           ? _value.availability
           : availability // ignore: cast_nullable_to_non_nullable
               as RefreshCheckState,
-      currentSnapVersion: currentSnapVersion == freezed
+      currentSnapVersion: null == currentSnapVersion
           ? _value.currentSnapVersion
           : currentSnapVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      newSnapVersion: newSnapVersion == freezed
+      newSnapVersion: null == newSnapVersion
           ? _value.newSnapVersion
           : newSnapVersion // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1035,6 +1036,7 @@ abstract class _$$_RefreshStatusCopyWith<$Res>
           _$_RefreshStatus value, $Res Function(_$_RefreshStatus) then) =
       __$$_RefreshStatusCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {RefreshCheckState availability,
       String currentSnapVersion,
@@ -1043,31 +1045,29 @@ abstract class _$$_RefreshStatusCopyWith<$Res>
 
 /// @nodoc
 class __$$_RefreshStatusCopyWithImpl<$Res>
-    extends _$RefreshStatusCopyWithImpl<$Res>
+    extends _$RefreshStatusCopyWithImpl<$Res, _$_RefreshStatus>
     implements _$$_RefreshStatusCopyWith<$Res> {
   __$$_RefreshStatusCopyWithImpl(
       _$_RefreshStatus _value, $Res Function(_$_RefreshStatus) _then)
-      : super(_value, (v) => _then(v as _$_RefreshStatus));
+      : super(_value, _then);
 
-  @override
-  _$_RefreshStatus get _value => super._value as _$_RefreshStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? availability = freezed,
-    Object? currentSnapVersion = freezed,
-    Object? newSnapVersion = freezed,
+    Object? availability = null,
+    Object? currentSnapVersion = null,
+    Object? newSnapVersion = null,
   }) {
     return _then(_$_RefreshStatus(
-      availability: availability == freezed
+      availability: null == availability
           ? _value.availability
           : availability // ignore: cast_nullable_to_non_nullable
               as RefreshCheckState,
-      currentSnapVersion: currentSnapVersion == freezed
+      currentSnapVersion: null == currentSnapVersion
           ? _value.currentSnapVersion
           : currentSnapVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      newSnapVersion: newSnapVersion == freezed
+      newSnapVersion: null == newSnapVersion
           ? _value.newSnapVersion
           : newSnapVersion // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1105,24 +1105,22 @@ class _$_RefreshStatus implements _RefreshStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RefreshStatus &&
-            const DeepCollectionEquality()
-                .equals(other.availability, availability) &&
-            const DeepCollectionEquality()
-                .equals(other.currentSnapVersion, currentSnapVersion) &&
-            const DeepCollectionEquality()
-                .equals(other.newSnapVersion, newSnapVersion));
+            (identical(other.availability, availability) ||
+                other.availability == availability) &&
+            (identical(other.currentSnapVersion, currentSnapVersion) ||
+                other.currentSnapVersion == currentSnapVersion) &&
+            (identical(other.newSnapVersion, newSnapVersion) ||
+                other.newSnapVersion == newSnapVersion));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(availability),
-      const DeepCollectionEquality().hash(currentSnapVersion),
-      const DeepCollectionEquality().hash(newSnapVersion));
+      runtimeType, availability, currentSnapVersion, newSnapVersion);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RefreshStatusCopyWith<_$_RefreshStatus> get copyWith =>
       __$$_RefreshStatusCopyWithImpl<_$_RefreshStatus>(this, _$identity);
 
@@ -1183,10 +1181,10 @@ mixin _$AnyStep {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+    TResult? Function(List<String> symbols, Map<int, String> keycodes)?
         stepPressKey,
-    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
-    TResult Function(String layout, String variant)? stepResult,
+    TResult? Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult? Function(String layout, String variant)? stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1207,9 +1205,9 @@ mixin _$AnyStep {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StepPressKey value)? stepPressKey,
-    TResult Function(StepKeyPresent value)? stepKeyPresent,
-    TResult Function(StepResult value)? stepResult,
+    TResult? Function(StepPressKey value)? stepPressKey,
+    TResult? Function(StepKeyPresent value)? stepKeyPresent,
+    TResult? Function(StepResult value)? stepResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1226,16 +1224,18 @@ mixin _$AnyStep {
 /// @nodoc
 abstract class $AnyStepCopyWith<$Res> {
   factory $AnyStepCopyWith(AnyStep value, $Res Function(AnyStep) then) =
-      _$AnyStepCopyWithImpl<$Res>;
+      _$AnyStepCopyWithImpl<$Res, AnyStep>;
 }
 
 /// @nodoc
-class _$AnyStepCopyWithImpl<$Res> implements $AnyStepCopyWith<$Res> {
+class _$AnyStepCopyWithImpl<$Res, $Val extends AnyStep>
+    implements $AnyStepCopyWith<$Res> {
   _$AnyStepCopyWithImpl(this._value, this._then);
 
-  final AnyStep _value;
   // ignore: unused_field
-  final $Res Function(AnyStep) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -1243,30 +1243,30 @@ abstract class _$$StepPressKeyCopyWith<$Res> {
   factory _$$StepPressKeyCopyWith(
           _$StepPressKey value, $Res Function(_$StepPressKey) then) =
       __$$StepPressKeyCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<String> symbols, Map<int, String> keycodes});
 }
 
 /// @nodoc
-class __$$StepPressKeyCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+class __$$StepPressKeyCopyWithImpl<$Res>
+    extends _$AnyStepCopyWithImpl<$Res, _$StepPressKey>
     implements _$$StepPressKeyCopyWith<$Res> {
   __$$StepPressKeyCopyWithImpl(
       _$StepPressKey _value, $Res Function(_$StepPressKey) _then)
-      : super(_value, (v) => _then(v as _$StepPressKey));
+      : super(_value, _then);
 
-  @override
-  _$StepPressKey get _value => super._value as _$StepPressKey;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? symbols = freezed,
-    Object? keycodes = freezed,
+    Object? symbols = null,
+    Object? keycodes = null,
   }) {
     return _then(_$StepPressKey(
-      symbols: symbols == freezed
+      symbols: null == symbols
           ? _value._symbols
           : symbols // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      keycodes: keycodes == freezed
+      keycodes: null == keycodes
           ? _value._keycodes
           : keycodes // ignore: cast_nullable_to_non_nullable
               as Map<int, String>,
@@ -1329,6 +1329,7 @@ class _$StepPressKey implements StepPressKey {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StepPressKeyCopyWith<_$StepPressKey> get copyWith =>
       __$$StepPressKeyCopyWithImpl<_$StepPressKey>(this, _$identity);
 
@@ -1347,10 +1348,10 @@ class _$StepPressKey implements StepPressKey {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+    TResult? Function(List<String> symbols, Map<int, String> keycodes)?
         stepPressKey,
-    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
-    TResult Function(String layout, String variant)? stepResult,
+    TResult? Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult? Function(String layout, String variant)? stepResult,
   }) {
     return stepPressKey?.call(symbols, keycodes);
   }
@@ -1383,9 +1384,9 @@ class _$StepPressKey implements StepPressKey {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StepPressKey value)? stepPressKey,
-    TResult Function(StepKeyPresent value)? stepKeyPresent,
-    TResult Function(StepResult value)? stepResult,
+    TResult? Function(StepPressKey value)? stepPressKey,
+    TResult? Function(StepKeyPresent value)? stepKeyPresent,
+    TResult? Function(StepResult value)? stepResult,
   }) {
     return stepPressKey?.call(this);
   }
@@ -1432,35 +1433,35 @@ abstract class _$$StepKeyPresentCopyWith<$Res> {
   factory _$$StepKeyPresentCopyWith(
           _$StepKeyPresent value, $Res Function(_$StepKeyPresent) then) =
       __$$StepKeyPresentCopyWithImpl<$Res>;
+  @useResult
   $Res call({String symbol, String yes, String no});
 }
 
 /// @nodoc
-class __$$StepKeyPresentCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+class __$$StepKeyPresentCopyWithImpl<$Res>
+    extends _$AnyStepCopyWithImpl<$Res, _$StepKeyPresent>
     implements _$$StepKeyPresentCopyWith<$Res> {
   __$$StepKeyPresentCopyWithImpl(
       _$StepKeyPresent _value, $Res Function(_$StepKeyPresent) _then)
-      : super(_value, (v) => _then(v as _$StepKeyPresent));
+      : super(_value, _then);
 
-  @override
-  _$StepKeyPresent get _value => super._value as _$StepKeyPresent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? symbol = freezed,
-    Object? yes = freezed,
-    Object? no = freezed,
+    Object? symbol = null,
+    Object? yes = null,
+    Object? no = null,
   }) {
     return _then(_$StepKeyPresent(
-      symbol: symbol == freezed
+      symbol: null == symbol
           ? _value.symbol
           : symbol // ignore: cast_nullable_to_non_nullable
               as String,
-      yes: yes == freezed
+      yes: null == yes
           ? _value.yes
           : yes // ignore: cast_nullable_to_non_nullable
               as String,
-      no: no == freezed
+      no: null == no
           ? _value.no
           : no // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1501,21 +1502,18 @@ class _$StepKeyPresent implements StepKeyPresent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StepKeyPresent &&
-            const DeepCollectionEquality().equals(other.symbol, symbol) &&
-            const DeepCollectionEquality().equals(other.yes, yes) &&
-            const DeepCollectionEquality().equals(other.no, no));
+            (identical(other.symbol, symbol) || other.symbol == symbol) &&
+            (identical(other.yes, yes) || other.yes == yes) &&
+            (identical(other.no, no) || other.no == no));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(symbol),
-      const DeepCollectionEquality().hash(yes),
-      const DeepCollectionEquality().hash(no));
+  int get hashCode => Object.hash(runtimeType, symbol, yes, no);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StepKeyPresentCopyWith<_$StepKeyPresent> get copyWith =>
       __$$StepKeyPresentCopyWithImpl<_$StepKeyPresent>(this, _$identity);
 
@@ -1534,10 +1532,10 @@ class _$StepKeyPresent implements StepKeyPresent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+    TResult? Function(List<String> symbols, Map<int, String> keycodes)?
         stepPressKey,
-    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
-    TResult Function(String layout, String variant)? stepResult,
+    TResult? Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult? Function(String layout, String variant)? stepResult,
   }) {
     return stepKeyPresent?.call(symbol, yes, no);
   }
@@ -1570,9 +1568,9 @@ class _$StepKeyPresent implements StepKeyPresent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StepPressKey value)? stepPressKey,
-    TResult Function(StepKeyPresent value)? stepKeyPresent,
-    TResult Function(StepResult value)? stepResult,
+    TResult? Function(StepPressKey value)? stepPressKey,
+    TResult? Function(StepKeyPresent value)? stepKeyPresent,
+    TResult? Function(StepResult value)? stepResult,
   }) {
     return stepKeyPresent?.call(this);
   }
@@ -1621,30 +1619,30 @@ abstract class _$$StepResultCopyWith<$Res> {
   factory _$$StepResultCopyWith(
           _$StepResult value, $Res Function(_$StepResult) then) =
       __$$StepResultCopyWithImpl<$Res>;
+  @useResult
   $Res call({String layout, String variant});
 }
 
 /// @nodoc
-class __$$StepResultCopyWithImpl<$Res> extends _$AnyStepCopyWithImpl<$Res>
+class __$$StepResultCopyWithImpl<$Res>
+    extends _$AnyStepCopyWithImpl<$Res, _$StepResult>
     implements _$$StepResultCopyWith<$Res> {
   __$$StepResultCopyWithImpl(
       _$StepResult _value, $Res Function(_$StepResult) _then)
-      : super(_value, (v) => _then(v as _$StepResult));
+      : super(_value, _then);
 
-  @override
-  _$StepResult get _value => super._value as _$StepResult;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
+    Object? layout = null,
+    Object? variant = null,
   }) {
     return _then(_$StepResult(
-      layout: layout == freezed
+      layout: null == layout
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
               as String,
-      variant: variant == freezed
+      variant: null == variant
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1680,19 +1678,17 @@ class _$StepResult implements StepResult {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StepResult &&
-            const DeepCollectionEquality().equals(other.layout, layout) &&
-            const DeepCollectionEquality().equals(other.variant, variant));
+            (identical(other.layout, layout) || other.layout == layout) &&
+            (identical(other.variant, variant) || other.variant == variant));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(layout),
-      const DeepCollectionEquality().hash(variant));
+  int get hashCode => Object.hash(runtimeType, layout, variant);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StepResultCopyWith<_$StepResult> get copyWith =>
       __$$StepResultCopyWithImpl<_$StepResult>(this, _$identity);
 
@@ -1711,10 +1707,10 @@ class _$StepResult implements StepResult {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> symbols, Map<int, String> keycodes)?
+    TResult? Function(List<String> symbols, Map<int, String> keycodes)?
         stepPressKey,
-    TResult Function(String symbol, String yes, String no)? stepKeyPresent,
-    TResult Function(String layout, String variant)? stepResult,
+    TResult? Function(String symbol, String yes, String no)? stepKeyPresent,
+    TResult? Function(String layout, String variant)? stepResult,
   }) {
     return stepResult?.call(layout, variant);
   }
@@ -1747,9 +1743,9 @@ class _$StepResult implements StepResult {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StepPressKey value)? stepPressKey,
-    TResult Function(StepKeyPresent value)? stepKeyPresent,
-    TResult Function(StepResult value)? stepResult,
+    TResult? Function(StepPressKey value)? stepPressKey,
+    TResult? Function(StepKeyPresent value)? stepKeyPresent,
+    TResult? Function(StepResult value)? stepResult,
   }) {
     return stepResult?.call(this);
   }
@@ -1811,39 +1807,42 @@ mixin _$KeyboardSetting {
 abstract class $KeyboardSettingCopyWith<$Res> {
   factory $KeyboardSettingCopyWith(
           KeyboardSetting value, $Res Function(KeyboardSetting) then) =
-      _$KeyboardSettingCopyWithImpl<$Res>;
+      _$KeyboardSettingCopyWithImpl<$Res, KeyboardSetting>;
+  @useResult
   $Res call({String layout, String variant, String? toggle});
 }
 
 /// @nodoc
-class _$KeyboardSettingCopyWithImpl<$Res>
+class _$KeyboardSettingCopyWithImpl<$Res, $Val extends KeyboardSetting>
     implements $KeyboardSettingCopyWith<$Res> {
   _$KeyboardSettingCopyWithImpl(this._value, this._then);
 
-  final KeyboardSetting _value;
   // ignore: unused_field
-  final $Res Function(KeyboardSetting) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
+    Object? layout = null,
+    Object? variant = null,
     Object? toggle = freezed,
   }) {
     return _then(_value.copyWith(
-      layout: layout == freezed
+      layout: null == layout
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
               as String,
-      variant: variant == freezed
+      variant: null == variant
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as String,
-      toggle: toggle == freezed
+      toggle: freezed == toggle
           ? _value.toggle
           : toggle // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1854,36 +1853,35 @@ abstract class _$$_KeyboardSettingCopyWith<$Res>
           _$_KeyboardSetting value, $Res Function(_$_KeyboardSetting) then) =
       __$$_KeyboardSettingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String layout, String variant, String? toggle});
 }
 
 /// @nodoc
 class __$$_KeyboardSettingCopyWithImpl<$Res>
-    extends _$KeyboardSettingCopyWithImpl<$Res>
+    extends _$KeyboardSettingCopyWithImpl<$Res, _$_KeyboardSetting>
     implements _$$_KeyboardSettingCopyWith<$Res> {
   __$$_KeyboardSettingCopyWithImpl(
       _$_KeyboardSetting _value, $Res Function(_$_KeyboardSetting) _then)
-      : super(_value, (v) => _then(v as _$_KeyboardSetting));
+      : super(_value, _then);
 
-  @override
-  _$_KeyboardSetting get _value => super._value as _$_KeyboardSetting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? layout = freezed,
-    Object? variant = freezed,
+    Object? layout = null,
+    Object? variant = null,
     Object? toggle = freezed,
   }) {
     return _then(_$_KeyboardSetting(
-      layout: layout == freezed
+      layout: null == layout
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
               as String,
-      variant: variant == freezed
+      variant: null == variant
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as String,
-      toggle: toggle == freezed
+      toggle: freezed == toggle
           ? _value.toggle
           : toggle // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1918,21 +1916,18 @@ class _$_KeyboardSetting implements _KeyboardSetting {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_KeyboardSetting &&
-            const DeepCollectionEquality().equals(other.layout, layout) &&
-            const DeepCollectionEquality().equals(other.variant, variant) &&
-            const DeepCollectionEquality().equals(other.toggle, toggle));
+            (identical(other.layout, layout) || other.layout == layout) &&
+            (identical(other.variant, variant) || other.variant == variant) &&
+            (identical(other.toggle, toggle) || other.toggle == toggle));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(layout),
-      const DeepCollectionEquality().hash(variant),
-      const DeepCollectionEquality().hash(toggle));
+  int get hashCode => Object.hash(runtimeType, layout, variant, toggle);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_KeyboardSettingCopyWith<_$_KeyboardSetting> get copyWith =>
       __$$_KeyboardSettingCopyWithImpl<_$_KeyboardSetting>(this, _$identity);
 
@@ -1984,34 +1979,37 @@ mixin _$KeyboardVariant {
 abstract class $KeyboardVariantCopyWith<$Res> {
   factory $KeyboardVariantCopyWith(
           KeyboardVariant value, $Res Function(KeyboardVariant) then) =
-      _$KeyboardVariantCopyWithImpl<$Res>;
+      _$KeyboardVariantCopyWithImpl<$Res, KeyboardVariant>;
+  @useResult
   $Res call({String code, String name});
 }
 
 /// @nodoc
-class _$KeyboardVariantCopyWithImpl<$Res>
+class _$KeyboardVariantCopyWithImpl<$Res, $Val extends KeyboardVariant>
     implements $KeyboardVariantCopyWith<$Res> {
   _$KeyboardVariantCopyWithImpl(this._value, this._then);
 
-  final KeyboardVariant _value;
   // ignore: unused_field
-  final $Res Function(KeyboardVariant) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
+    Object? code = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -2022,31 +2020,30 @@ abstract class _$$_KeyboardVariantCopyWith<$Res>
           _$_KeyboardVariant value, $Res Function(_$_KeyboardVariant) then) =
       __$$_KeyboardVariantCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String code, String name});
 }
 
 /// @nodoc
 class __$$_KeyboardVariantCopyWithImpl<$Res>
-    extends _$KeyboardVariantCopyWithImpl<$Res>
+    extends _$KeyboardVariantCopyWithImpl<$Res, _$_KeyboardVariant>
     implements _$$_KeyboardVariantCopyWith<$Res> {
   __$$_KeyboardVariantCopyWithImpl(
       _$_KeyboardVariant _value, $Res Function(_$_KeyboardVariant) _then)
-      : super(_value, (v) => _then(v as _$_KeyboardVariant));
+      : super(_value, _then);
 
-  @override
-  _$_KeyboardVariant get _value => super._value as _$_KeyboardVariant;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
+    Object? code = null,
+    Object? name = null,
   }) {
     return _then(_$_KeyboardVariant(
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2077,19 +2074,17 @@ class _$_KeyboardVariant implements _KeyboardVariant {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_KeyboardVariant &&
-            const DeepCollectionEquality().equals(other.code, code) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(code),
-      const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, code, name);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_KeyboardVariantCopyWith<_$_KeyboardVariant> get copyWith =>
       __$$_KeyboardVariantCopyWithImpl<_$_KeyboardVariant>(this, _$identity);
 
@@ -2139,39 +2134,42 @@ mixin _$KeyboardLayout {
 abstract class $KeyboardLayoutCopyWith<$Res> {
   factory $KeyboardLayoutCopyWith(
           KeyboardLayout value, $Res Function(KeyboardLayout) then) =
-      _$KeyboardLayoutCopyWithImpl<$Res>;
+      _$KeyboardLayoutCopyWithImpl<$Res, KeyboardLayout>;
+  @useResult
   $Res call({String code, String name, List<KeyboardVariant> variants});
 }
 
 /// @nodoc
-class _$KeyboardLayoutCopyWithImpl<$Res>
+class _$KeyboardLayoutCopyWithImpl<$Res, $Val extends KeyboardLayout>
     implements $KeyboardLayoutCopyWith<$Res> {
   _$KeyboardLayoutCopyWithImpl(this._value, this._then);
 
-  final KeyboardLayout _value;
   // ignore: unused_field
-  final $Res Function(KeyboardLayout) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-    Object? variants = freezed,
+    Object? code = null,
+    Object? name = null,
+    Object? variants = null,
   }) {
     return _then(_value.copyWith(
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      variants: variants == freezed
+      variants: null == variants
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
               as List<KeyboardVariant>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -2182,36 +2180,35 @@ abstract class _$$_KeyboardLayoutCopyWith<$Res>
           _$_KeyboardLayout value, $Res Function(_$_KeyboardLayout) then) =
       __$$_KeyboardLayoutCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String code, String name, List<KeyboardVariant> variants});
 }
 
 /// @nodoc
 class __$$_KeyboardLayoutCopyWithImpl<$Res>
-    extends _$KeyboardLayoutCopyWithImpl<$Res>
+    extends _$KeyboardLayoutCopyWithImpl<$Res, _$_KeyboardLayout>
     implements _$$_KeyboardLayoutCopyWith<$Res> {
   __$$_KeyboardLayoutCopyWithImpl(
       _$_KeyboardLayout _value, $Res Function(_$_KeyboardLayout) _then)
-      : super(_value, (v) => _then(v as _$_KeyboardLayout));
+      : super(_value, _then);
 
-  @override
-  _$_KeyboardLayout get _value => super._value as _$_KeyboardLayout;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? name = freezed,
-    Object? variants = freezed,
+    Object? code = null,
+    Object? name = null,
+    Object? variants = null,
   }) {
     return _then(_$_KeyboardLayout(
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      variants: variants == freezed
+      variants: null == variants
           ? _value._variants
           : variants // ignore: cast_nullable_to_non_nullable
               as List<KeyboardVariant>,
@@ -2252,21 +2249,19 @@ class _$_KeyboardLayout implements _KeyboardLayout {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_KeyboardLayout &&
-            const DeepCollectionEquality().equals(other.code, code) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._variants, _variants));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(code),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(_variants));
+      runtimeType, code, name, const DeepCollectionEquality().hash(_variants));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_KeyboardLayoutCopyWith<_$_KeyboardLayout> get copyWith =>
       __$$_KeyboardLayoutCopyWithImpl<_$_KeyboardLayout>(this, _$identity);
 
@@ -2318,42 +2313,46 @@ mixin _$KeyboardSetup {
 abstract class $KeyboardSetupCopyWith<$Res> {
   factory $KeyboardSetupCopyWith(
           KeyboardSetup value, $Res Function(KeyboardSetup) then) =
-      _$KeyboardSetupCopyWithImpl<$Res>;
+      _$KeyboardSetupCopyWithImpl<$Res, KeyboardSetup>;
+  @useResult
   $Res call({KeyboardSetting setting, List<KeyboardLayout> layouts});
 
   $KeyboardSettingCopyWith<$Res> get setting;
 }
 
 /// @nodoc
-class _$KeyboardSetupCopyWithImpl<$Res>
+class _$KeyboardSetupCopyWithImpl<$Res, $Val extends KeyboardSetup>
     implements $KeyboardSetupCopyWith<$Res> {
   _$KeyboardSetupCopyWithImpl(this._value, this._then);
 
-  final KeyboardSetup _value;
   // ignore: unused_field
-  final $Res Function(KeyboardSetup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? setting = freezed,
-    Object? layouts = freezed,
+    Object? setting = null,
+    Object? layouts = null,
   }) {
     return _then(_value.copyWith(
-      setting: setting == freezed
+      setting: null == setting
           ? _value.setting
           : setting // ignore: cast_nullable_to_non_nullable
               as KeyboardSetting,
-      layouts: layouts == freezed
+      layouts: null == layouts
           ? _value.layouts
           : layouts // ignore: cast_nullable_to_non_nullable
               as List<KeyboardLayout>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $KeyboardSettingCopyWith<$Res> get setting {
     return $KeyboardSettingCopyWith<$Res>(_value.setting, (value) {
-      return _then(_value.copyWith(setting: value));
+      return _then(_value.copyWith(setting: value) as $Val);
     });
   }
 }
@@ -2365,6 +2364,7 @@ abstract class _$$_KeyboardSetupCopyWith<$Res>
           _$_KeyboardSetup value, $Res Function(_$_KeyboardSetup) then) =
       __$$_KeyboardSetupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({KeyboardSetting setting, List<KeyboardLayout> layouts});
 
   @override
@@ -2373,26 +2373,24 @@ abstract class _$$_KeyboardSetupCopyWith<$Res>
 
 /// @nodoc
 class __$$_KeyboardSetupCopyWithImpl<$Res>
-    extends _$KeyboardSetupCopyWithImpl<$Res>
+    extends _$KeyboardSetupCopyWithImpl<$Res, _$_KeyboardSetup>
     implements _$$_KeyboardSetupCopyWith<$Res> {
   __$$_KeyboardSetupCopyWithImpl(
       _$_KeyboardSetup _value, $Res Function(_$_KeyboardSetup) _then)
-      : super(_value, (v) => _then(v as _$_KeyboardSetup));
+      : super(_value, _then);
 
-  @override
-  _$_KeyboardSetup get _value => super._value as _$_KeyboardSetup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? setting = freezed,
-    Object? layouts = freezed,
+    Object? setting = null,
+    Object? layouts = null,
   }) {
     return _then(_$_KeyboardSetup(
-      setting: setting == freezed
+      setting: null == setting
           ? _value.setting
           : setting // ignore: cast_nullable_to_non_nullable
               as KeyboardSetting,
-      layouts: layouts == freezed
+      layouts: null == layouts
           ? _value._layouts
           : layouts // ignore: cast_nullable_to_non_nullable
               as List<KeyboardLayout>,
@@ -2429,19 +2427,18 @@ class _$_KeyboardSetup implements _KeyboardSetup {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_KeyboardSetup &&
-            const DeepCollectionEquality().equals(other.setting, setting) &&
+            (identical(other.setting, setting) || other.setting == setting) &&
             const DeepCollectionEquality().equals(other._layouts, _layouts));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(setting),
-      const DeepCollectionEquality().hash(_layouts));
+      runtimeType, setting, const DeepCollectionEquality().hash(_layouts));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_KeyboardSetupCopyWith<_$_KeyboardSetup> get copyWith =>
       __$$_KeyboardSetupCopyWithImpl<_$_KeyboardSetup>(this, _$identity);
 
@@ -2495,7 +2492,8 @@ mixin _$SourceSelection {
 abstract class $SourceSelectionCopyWith<$Res> {
   factory $SourceSelectionCopyWith(
           SourceSelection value, $Res Function(SourceSelection) then) =
-      _$SourceSelectionCopyWithImpl<$Res>;
+      _$SourceSelectionCopyWithImpl<$Res, SourceSelection>;
+  @useResult
   $Res call(
       {String name,
       String description,
@@ -2506,49 +2504,51 @@ abstract class $SourceSelectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SourceSelectionCopyWithImpl<$Res>
+class _$SourceSelectionCopyWithImpl<$Res, $Val extends SourceSelection>
     implements $SourceSelectionCopyWith<$Res> {
   _$SourceSelectionCopyWithImpl(this._value, this._then);
 
-  final SourceSelection _value;
   // ignore: unused_field
-  final $Res Function(SourceSelection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? id = null,
+    Object? size = null,
+    Object? variant = null,
+    Object? isDefault = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      variant: variant == freezed
+      variant: null == variant
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as String,
-      isDefault: isDefault == freezed
+      isDefault: null == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -2559,6 +2559,7 @@ abstract class _$$_SourceSelectionCopyWith<$Res>
           _$_SourceSelection value, $Res Function(_$_SourceSelection) then) =
       __$$_SourceSelectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String description,
@@ -2570,46 +2571,44 @@ abstract class _$$_SourceSelectionCopyWith<$Res>
 
 /// @nodoc
 class __$$_SourceSelectionCopyWithImpl<$Res>
-    extends _$SourceSelectionCopyWithImpl<$Res>
+    extends _$SourceSelectionCopyWithImpl<$Res, _$_SourceSelection>
     implements _$$_SourceSelectionCopyWith<$Res> {
   __$$_SourceSelectionCopyWithImpl(
       _$_SourceSelection _value, $Res Function(_$_SourceSelection) _then)
-      : super(_value, (v) => _then(v as _$_SourceSelection));
+      : super(_value, _then);
 
-  @override
-  _$_SourceSelection get _value => super._value as _$_SourceSelection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? size = freezed,
-    Object? variant = freezed,
-    Object? isDefault = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? id = null,
+    Object? size = null,
+    Object? variant = null,
+    Object? isDefault = null,
   }) {
     return _then(_$_SourceSelection(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      variant: variant == freezed
+      variant: null == variant
           ? _value.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as String,
-      isDefault: isDefault == freezed
+      isDefault: null == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2655,28 +2654,24 @@ class _$_SourceSelection implements _SourceSelection {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SourceSelection &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.variant, variant) &&
-            const DeepCollectionEquality().equals(other.isDefault, isDefault));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.variant, variant) || other.variant == variant) &&
+            (identical(other.isDefault, isDefault) ||
+                other.isDefault == isDefault));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(variant),
-      const DeepCollectionEquality().hash(isDefault));
+  int get hashCode =>
+      Object.hash(runtimeType, name, description, id, size, variant, isDefault);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SourceSelectionCopyWith<_$_SourceSelection> get copyWith =>
       __$$_SourceSelectionCopyWithImpl<_$_SourceSelection>(this, _$identity);
 
@@ -2741,40 +2736,44 @@ mixin _$SourceSelectionAndSetting {
 abstract class $SourceSelectionAndSettingCopyWith<$Res> {
   factory $SourceSelectionAndSettingCopyWith(SourceSelectionAndSetting value,
           $Res Function(SourceSelectionAndSetting) then) =
-      _$SourceSelectionAndSettingCopyWithImpl<$Res>;
+      _$SourceSelectionAndSettingCopyWithImpl<$Res, SourceSelectionAndSetting>;
+  @useResult
   $Res call(
       {List<SourceSelection> sources, String currentId, bool searchDrivers});
 }
 
 /// @nodoc
-class _$SourceSelectionAndSettingCopyWithImpl<$Res>
+class _$SourceSelectionAndSettingCopyWithImpl<$Res,
+        $Val extends SourceSelectionAndSetting>
     implements $SourceSelectionAndSettingCopyWith<$Res> {
   _$SourceSelectionAndSettingCopyWithImpl(this._value, this._then);
 
-  final SourceSelectionAndSetting _value;
   // ignore: unused_field
-  final $Res Function(SourceSelectionAndSetting) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-    Object? searchDrivers = freezed,
+    Object? sources = null,
+    Object? currentId = null,
+    Object? searchDrivers = null,
   }) {
     return _then(_value.copyWith(
-      sources: sources == freezed
+      sources: null == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
               as List<SourceSelection>,
-      currentId: currentId == freezed
+      currentId: null == currentId
           ? _value.currentId
           : currentId // ignore: cast_nullable_to_non_nullable
               as String,
-      searchDrivers: searchDrivers == freezed
+      searchDrivers: null == searchDrivers
           ? _value.searchDrivers
           : searchDrivers // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -2786,39 +2785,38 @@ abstract class _$$_SourceSelectionAndSettingCopyWith<$Res>
           $Res Function(_$_SourceSelectionAndSetting) then) =
       __$$_SourceSelectionAndSettingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<SourceSelection> sources, String currentId, bool searchDrivers});
 }
 
 /// @nodoc
 class __$$_SourceSelectionAndSettingCopyWithImpl<$Res>
-    extends _$SourceSelectionAndSettingCopyWithImpl<$Res>
+    extends _$SourceSelectionAndSettingCopyWithImpl<$Res,
+        _$_SourceSelectionAndSetting>
     implements _$$_SourceSelectionAndSettingCopyWith<$Res> {
   __$$_SourceSelectionAndSettingCopyWithImpl(
       _$_SourceSelectionAndSetting _value,
       $Res Function(_$_SourceSelectionAndSetting) _then)
-      : super(_value, (v) => _then(v as _$_SourceSelectionAndSetting));
+      : super(_value, _then);
 
-  @override
-  _$_SourceSelectionAndSetting get _value =>
-      super._value as _$_SourceSelectionAndSetting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sources = freezed,
-    Object? currentId = freezed,
-    Object? searchDrivers = freezed,
+    Object? sources = null,
+    Object? currentId = null,
+    Object? searchDrivers = null,
   }) {
     return _then(_$_SourceSelectionAndSetting(
-      sources: sources == freezed
+      sources: null == sources
           ? _value._sources
           : sources // ignore: cast_nullable_to_non_nullable
               as List<SourceSelection>,
-      currentId: currentId == freezed
+      currentId: null == currentId
           ? _value.currentId
           : currentId // ignore: cast_nullable_to_non_nullable
               as String,
-      searchDrivers: searchDrivers == freezed
+      searchDrivers: null == searchDrivers
           ? _value.searchDrivers
           : searchDrivers // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2861,21 +2859,20 @@ class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
         (other.runtimeType == runtimeType &&
             other is _$_SourceSelectionAndSetting &&
             const DeepCollectionEquality().equals(other._sources, _sources) &&
-            const DeepCollectionEquality().equals(other.currentId, currentId) &&
-            const DeepCollectionEquality()
-                .equals(other.searchDrivers, searchDrivers));
+            (identical(other.currentId, currentId) ||
+                other.currentId == currentId) &&
+            (identical(other.searchDrivers, searchDrivers) ||
+                other.searchDrivers == searchDrivers));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_sources),
-      const DeepCollectionEquality().hash(currentId),
-      const DeepCollectionEquality().hash(searchDrivers));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_sources), currentId, searchDrivers);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SourceSelectionAndSettingCopyWith<_$_SourceSelectionAndSetting>
       get copyWith => __$$_SourceSelectionAndSettingCopyWithImpl<
           _$_SourceSelectionAndSetting>(this, _$identity);
@@ -2933,7 +2930,8 @@ mixin _$ZdevInfo {
 /// @nodoc
 abstract class $ZdevInfoCopyWith<$Res> {
   factory $ZdevInfoCopyWith(ZdevInfo value, $Res Function(ZdevInfo) then) =
-      _$ZdevInfoCopyWithImpl<$Res>;
+      _$ZdevInfoCopyWithImpl<$Res, ZdevInfo>;
+  @useResult
   $Res call(
       {String id,
       String type,
@@ -2946,58 +2944,61 @@ abstract class $ZdevInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ZdevInfoCopyWithImpl<$Res> implements $ZdevInfoCopyWith<$Res> {
+class _$ZdevInfoCopyWithImpl<$Res, $Val extends ZdevInfo>
+    implements $ZdevInfoCopyWith<$Res> {
   _$ZdevInfoCopyWithImpl(this._value, this._then);
 
-  final ZdevInfo _value;
   // ignore: unused_field
-  final $Res Function(ZdevInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? on = freezed,
-    Object? exists = freezed,
-    Object? pers = freezed,
-    Object? auto = freezed,
-    Object? failed = freezed,
-    Object? names = freezed,
+    Object? id = null,
+    Object? type = null,
+    Object? on = null,
+    Object? exists = null,
+    Object? pers = null,
+    Object? auto = null,
+    Object? failed = null,
+    Object? names = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      on: on == freezed
+      on: null == on
           ? _value.on
           : on // ignore: cast_nullable_to_non_nullable
               as bool,
-      exists: exists == freezed
+      exists: null == exists
           ? _value.exists
           : exists // ignore: cast_nullable_to_non_nullable
               as bool,
-      pers: pers == freezed
+      pers: null == pers
           ? _value.pers
           : pers // ignore: cast_nullable_to_non_nullable
               as bool,
-      auto: auto == freezed
+      auto: null == auto
           ? _value.auto
           : auto // ignore: cast_nullable_to_non_nullable
               as bool,
-      failed: failed == freezed
+      failed: null == failed
           ? _value.failed
           : failed // ignore: cast_nullable_to_non_nullable
               as bool,
-      names: names == freezed
+      names: null == names
           ? _value.names
           : names // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -3007,6 +3008,7 @@ abstract class _$$_ZdevInfoCopyWith<$Res> implements $ZdevInfoCopyWith<$Res> {
           _$_ZdevInfo value, $Res Function(_$_ZdevInfo) then) =
       __$$_ZdevInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String type,
@@ -3019,56 +3021,55 @@ abstract class _$$_ZdevInfoCopyWith<$Res> implements $ZdevInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ZdevInfoCopyWithImpl<$Res> extends _$ZdevInfoCopyWithImpl<$Res>
+class __$$_ZdevInfoCopyWithImpl<$Res>
+    extends _$ZdevInfoCopyWithImpl<$Res, _$_ZdevInfo>
     implements _$$_ZdevInfoCopyWith<$Res> {
   __$$_ZdevInfoCopyWithImpl(
       _$_ZdevInfo _value, $Res Function(_$_ZdevInfo) _then)
-      : super(_value, (v) => _then(v as _$_ZdevInfo));
+      : super(_value, _then);
 
-  @override
-  _$_ZdevInfo get _value => super._value as _$_ZdevInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? on = freezed,
-    Object? exists = freezed,
-    Object? pers = freezed,
-    Object? auto = freezed,
-    Object? failed = freezed,
-    Object? names = freezed,
+    Object? id = null,
+    Object? type = null,
+    Object? on = null,
+    Object? exists = null,
+    Object? pers = null,
+    Object? auto = null,
+    Object? failed = null,
+    Object? names = null,
   }) {
     return _then(_$_ZdevInfo(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      on: on == freezed
+      on: null == on
           ? _value.on
           : on // ignore: cast_nullable_to_non_nullable
               as bool,
-      exists: exists == freezed
+      exists: null == exists
           ? _value.exists
           : exists // ignore: cast_nullable_to_non_nullable
               as bool,
-      pers: pers == freezed
+      pers: null == pers
           ? _value.pers
           : pers // ignore: cast_nullable_to_non_nullable
               as bool,
-      auto: auto == freezed
+      auto: null == auto
           ? _value.auto
           : auto // ignore: cast_nullable_to_non_nullable
               as bool,
-      failed: failed == freezed
+      failed: null == failed
           ? _value.failed
           : failed // ignore: cast_nullable_to_non_nullable
               as bool,
-      names: names == freezed
+      names: null == names
           ? _value.names
           : names // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3119,31 +3120,24 @@ class _$_ZdevInfo implements _ZdevInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ZdevInfo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.on, on) &&
-            const DeepCollectionEquality().equals(other.exists, exists) &&
-            const DeepCollectionEquality().equals(other.pers, pers) &&
-            const DeepCollectionEquality().equals(other.auto, auto) &&
-            const DeepCollectionEquality().equals(other.failed, failed) &&
-            const DeepCollectionEquality().equals(other.names, names));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.on, on) || other.on == on) &&
+            (identical(other.exists, exists) || other.exists == exists) &&
+            (identical(other.pers, pers) || other.pers == pers) &&
+            (identical(other.auto, auto) || other.auto == auto) &&
+            (identical(other.failed, failed) || other.failed == failed) &&
+            (identical(other.names, names) || other.names == names));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(on),
-      const DeepCollectionEquality().hash(exists),
-      const DeepCollectionEquality().hash(pers),
-      const DeepCollectionEquality().hash(auto),
-      const DeepCollectionEquality().hash(failed),
-      const DeepCollectionEquality().hash(names));
+  int get hashCode =>
+      Object.hash(runtimeType, id, type, on, exists, pers, auto, failed, names);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ZdevInfoCopyWith<_$_ZdevInfo> get copyWith =>
       __$$_ZdevInfoCopyWithImpl<_$_ZdevInfo>(this, _$identity);
 
@@ -3210,36 +3204,39 @@ mixin _$NetworkStatus {
 abstract class $NetworkStatusCopyWith<$Res> {
   factory $NetworkStatusCopyWith(
           NetworkStatus value, $Res Function(NetworkStatus) then) =
-      _$NetworkStatusCopyWithImpl<$Res>;
+      _$NetworkStatusCopyWithImpl<$Res, NetworkStatus>;
+  @useResult
   $Res call(
       {List<NetDevInfo> devices,
       WLANSupportInstallState wlanSupportInstallState});
 }
 
 /// @nodoc
-class _$NetworkStatusCopyWithImpl<$Res>
+class _$NetworkStatusCopyWithImpl<$Res, $Val extends NetworkStatus>
     implements $NetworkStatusCopyWith<$Res> {
   _$NetworkStatusCopyWithImpl(this._value, this._then);
 
-  final NetworkStatus _value;
   // ignore: unused_field
-  final $Res Function(NetworkStatus) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? devices = freezed,
-    Object? wlanSupportInstallState = freezed,
+    Object? devices = null,
+    Object? wlanSupportInstallState = null,
   }) {
     return _then(_value.copyWith(
-      devices: devices == freezed
+      devices: null == devices
           ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<NetDevInfo>,
-      wlanSupportInstallState: wlanSupportInstallState == freezed
+      wlanSupportInstallState: null == wlanSupportInstallState
           ? _value.wlanSupportInstallState
           : wlanSupportInstallState // ignore: cast_nullable_to_non_nullable
               as WLANSupportInstallState,
-    ));
+    ) as $Val);
   }
 }
 
@@ -3250,6 +3247,7 @@ abstract class _$$_NetworkStatusCopyWith<$Res>
           _$_NetworkStatus value, $Res Function(_$_NetworkStatus) then) =
       __$$_NetworkStatusCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<NetDevInfo> devices,
       WLANSupportInstallState wlanSupportInstallState});
@@ -3257,26 +3255,24 @@ abstract class _$$_NetworkStatusCopyWith<$Res>
 
 /// @nodoc
 class __$$_NetworkStatusCopyWithImpl<$Res>
-    extends _$NetworkStatusCopyWithImpl<$Res>
+    extends _$NetworkStatusCopyWithImpl<$Res, _$_NetworkStatus>
     implements _$$_NetworkStatusCopyWith<$Res> {
   __$$_NetworkStatusCopyWithImpl(
       _$_NetworkStatus _value, $Res Function(_$_NetworkStatus) _then)
-      : super(_value, (v) => _then(v as _$_NetworkStatus));
+      : super(_value, _then);
 
-  @override
-  _$_NetworkStatus get _value => super._value as _$_NetworkStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? devices = freezed,
-    Object? wlanSupportInstallState = freezed,
+    Object? devices = null,
+    Object? wlanSupportInstallState = null,
   }) {
     return _then(_$_NetworkStatus(
-      devices: devices == freezed
+      devices: null == devices
           ? _value._devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<NetDevInfo>,
-      wlanSupportInstallState: wlanSupportInstallState == freezed
+      wlanSupportInstallState: null == wlanSupportInstallState
           ? _value.wlanSupportInstallState
           : wlanSupportInstallState // ignore: cast_nullable_to_non_nullable
               as WLANSupportInstallState,
@@ -3316,19 +3312,19 @@ class _$_NetworkStatus implements _NetworkStatus {
         (other.runtimeType == runtimeType &&
             other is _$_NetworkStatus &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
-            const DeepCollectionEquality().equals(
-                other.wlanSupportInstallState, wlanSupportInstallState));
+            (identical(
+                    other.wlanSupportInstallState, wlanSupportInstallState) ||
+                other.wlanSupportInstallState == wlanSupportInstallState));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_devices),
-      const DeepCollectionEquality().hash(wlanSupportInstallState));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_devices), wlanSupportInstallState);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NetworkStatusCopyWith<_$_NetworkStatus> get copyWith =>
       __$$_NetworkStatusCopyWithImpl<_$_NetworkStatus>(this, _$identity);
 
@@ -3380,7 +3376,8 @@ mixin _$OsProber {
 /// @nodoc
 abstract class $OsProberCopyWith<$Res> {
   factory $OsProberCopyWith(OsProber value, $Res Function(OsProber) then) =
-      _$OsProberCopyWithImpl<$Res>;
+      _$OsProberCopyWithImpl<$Res, OsProber>;
+  @useResult
   $Res call(
       {String long,
       String label,
@@ -3390,43 +3387,46 @@ abstract class $OsProberCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OsProberCopyWithImpl<$Res> implements $OsProberCopyWith<$Res> {
+class _$OsProberCopyWithImpl<$Res, $Val extends OsProber>
+    implements $OsProberCopyWith<$Res> {
   _$OsProberCopyWithImpl(this._value, this._then);
 
-  final OsProber _value;
   // ignore: unused_field
-  final $Res Function(OsProber) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? long = freezed,
-    Object? label = freezed,
-    Object? type = freezed,
+    Object? long = null,
+    Object? label = null,
+    Object? type = null,
     Object? subpath = freezed,
     Object? version = freezed,
   }) {
     return _then(_value.copyWith(
-      long: long == freezed
+      long: null == long
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      subpath: subpath == freezed
+      subpath: freezed == subpath
           ? _value.subpath
           : subpath // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -3436,6 +3436,7 @@ abstract class _$$_OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
           _$_OsProber value, $Res Function(_$_OsProber) then) =
       __$$_OsProberCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String long,
       String label,
@@ -3445,41 +3446,40 @@ abstract class _$$_OsProberCopyWith<$Res> implements $OsProberCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_OsProberCopyWithImpl<$Res> extends _$OsProberCopyWithImpl<$Res>
+class __$$_OsProberCopyWithImpl<$Res>
+    extends _$OsProberCopyWithImpl<$Res, _$_OsProber>
     implements _$$_OsProberCopyWith<$Res> {
   __$$_OsProberCopyWithImpl(
       _$_OsProber _value, $Res Function(_$_OsProber) _then)
-      : super(_value, (v) => _then(v as _$_OsProber));
+      : super(_value, _then);
 
-  @override
-  _$_OsProber get _value => super._value as _$_OsProber;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? long = freezed,
-    Object? label = freezed,
-    Object? type = freezed,
+    Object? long = null,
+    Object? label = null,
+    Object? type = null,
     Object? subpath = freezed,
     Object? version = freezed,
   }) {
     return _then(_$_OsProber(
-      long: long == freezed
+      long: null == long
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      subpath: subpath == freezed
+      subpath: freezed == subpath
           ? _value.subpath
           : subpath // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3521,25 +3521,21 @@ class _$_OsProber implements _OsProber {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OsProber &&
-            const DeepCollectionEquality().equals(other.long, long) &&
-            const DeepCollectionEquality().equals(other.label, label) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.subpath, subpath) &&
-            const DeepCollectionEquality().equals(other.version, version));
+            (identical(other.long, long) || other.long == long) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.subpath, subpath) || other.subpath == subpath) &&
+            (identical(other.version, version) || other.version == version));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(long),
-      const DeepCollectionEquality().hash(label),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(subpath),
-      const DeepCollectionEquality().hash(version));
+  int get hashCode =>
+      Object.hash(runtimeType, long, label, type, subpath, version);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OsProberCopyWith<_$_OsProber> get copyWith =>
       __$$_OsProberCopyWithImpl<_$_OsProber>(this, _$identity);
 
@@ -3615,7 +3611,7 @@ mixin _$PartitionOrGap {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             int? size,
             int? number,
             bool? preserve,
@@ -3631,7 +3627,7 @@ mixin _$PartitionOrGap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size, GapUsable usable)? gap,
+    TResult? Function(int offset, int size, GapUsable usable)? gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3664,8 +3660,8 @@ mixin _$PartitionOrGap {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Partition value)? partition,
-    TResult Function(Gap value)? gap,
+    TResult? Function(Partition value)? partition,
+    TResult? Function(Gap value)? gap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3682,17 +3678,18 @@ mixin _$PartitionOrGap {
 abstract class $PartitionOrGapCopyWith<$Res> {
   factory $PartitionOrGapCopyWith(
           PartitionOrGap value, $Res Function(PartitionOrGap) then) =
-      _$PartitionOrGapCopyWithImpl<$Res>;
+      _$PartitionOrGapCopyWithImpl<$Res, PartitionOrGap>;
 }
 
 /// @nodoc
-class _$PartitionOrGapCopyWithImpl<$Res>
+class _$PartitionOrGapCopyWithImpl<$Res, $Val extends PartitionOrGap>
     implements $PartitionOrGapCopyWith<$Res> {
   _$PartitionOrGapCopyWithImpl(this._value, this._then);
 
-  final PartitionOrGap _value;
   // ignore: unused_field
-  final $Res Function(PartitionOrGap) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -3700,6 +3697,7 @@ abstract class _$$PartitionCopyWith<$Res> {
   factory _$$PartitionCopyWith(
           _$Partition value, $Res Function(_$Partition) then) =
       __$$PartitionCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {int? size,
       int? number,
@@ -3720,22 +3718,21 @@ abstract class _$$PartitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
+class __$$PartitionCopyWithImpl<$Res>
+    extends _$PartitionOrGapCopyWithImpl<$Res, _$Partition>
     implements _$$PartitionCopyWith<$Res> {
   __$$PartitionCopyWithImpl(
       _$Partition _value, $Res Function(_$Partition) _then)
-      : super(_value, (v) => _then(v as _$Partition));
+      : super(_value, _then);
 
-  @override
-  _$Partition get _value => super._value as _$Partition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? size = freezed,
     Object? number = freezed,
     Object? preserve = freezed,
     Object? wipe = freezed,
-    Object? annotations = freezed,
+    Object? annotations = null,
     Object? mount = freezed,
     Object? format = freezed,
     Object? grubDevice = freezed,
@@ -3747,59 +3744,59 @@ class __$$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
     Object? path = freezed,
   }) {
     return _then(_$Partition(
-      size: size == freezed
+      size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
-      preserve: preserve == freezed
+      preserve: freezed == preserve
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool?,
-      wipe: wipe == freezed
+      wipe: freezed == wipe
           ? _value.wipe
           : wipe // ignore: cast_nullable_to_non_nullable
               as String?,
-      annotations: annotations == freezed
+      annotations: null == annotations
           ? _value._annotations
           : annotations // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      mount: mount == freezed
+      mount: freezed == mount
           ? _value.mount
           : mount // ignore: cast_nullable_to_non_nullable
               as String?,
-      format: format == freezed
+      format: freezed == format
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
               as String?,
-      grubDevice: grubDevice == freezed
+      grubDevice: freezed == grubDevice
           ? _value.grubDevice
           : grubDevice // ignore: cast_nullable_to_non_nullable
               as bool?,
-      boot: boot == freezed
+      boot: freezed == boot
           ? _value.boot
           : boot // ignore: cast_nullable_to_non_nullable
               as bool?,
-      os: os == freezed
+      os: freezed == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as OsProber?,
-      offset: offset == freezed
+      offset: freezed == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
-      estimatedMinSize: estimatedMinSize == freezed
+      estimatedMinSize: freezed == estimatedMinSize
           ? _value.estimatedMinSize
           : estimatedMinSize // ignore: cast_nullable_to_non_nullable
               as int?,
-      resize: resize == freezed
+      resize: freezed == resize
           ? _value.resize
           : resize // ignore: cast_nullable_to_non_nullable
               as bool?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3807,6 +3804,7 @@ class __$$PartitionCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $OsProberCopyWith<$Res>? get os {
     if (_value.os == null) {
       return null;
@@ -3892,46 +3890,48 @@ class _$Partition implements Partition {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Partition &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.preserve, preserve) &&
-            const DeepCollectionEquality().equals(other.wipe, wipe) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.preserve, preserve) ||
+                other.preserve == preserve) &&
+            (identical(other.wipe, wipe) || other.wipe == wipe) &&
             const DeepCollectionEquality()
                 .equals(other._annotations, _annotations) &&
-            const DeepCollectionEquality().equals(other.mount, mount) &&
-            const DeepCollectionEquality().equals(other.format, format) &&
-            const DeepCollectionEquality()
-                .equals(other.grubDevice, grubDevice) &&
-            const DeepCollectionEquality().equals(other.boot, boot) &&
-            const DeepCollectionEquality().equals(other.os, os) &&
-            const DeepCollectionEquality().equals(other.offset, offset) &&
-            const DeepCollectionEquality()
-                .equals(other.estimatedMinSize, estimatedMinSize) &&
-            const DeepCollectionEquality().equals(other.resize, resize) &&
-            const DeepCollectionEquality().equals(other.path, path));
+            (identical(other.mount, mount) || other.mount == mount) &&
+            (identical(other.format, format) || other.format == format) &&
+            (identical(other.grubDevice, grubDevice) ||
+                other.grubDevice == grubDevice) &&
+            (identical(other.boot, boot) || other.boot == boot) &&
+            (identical(other.os, os) || other.os == os) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.estimatedMinSize, estimatedMinSize) ||
+                other.estimatedMinSize == estimatedMinSize) &&
+            (identical(other.resize, resize) || other.resize == resize) &&
+            (identical(other.path, path) || other.path == path));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(preserve),
-      const DeepCollectionEquality().hash(wipe),
+      size,
+      number,
+      preserve,
+      wipe,
       const DeepCollectionEquality().hash(_annotations),
-      const DeepCollectionEquality().hash(mount),
-      const DeepCollectionEquality().hash(format),
-      const DeepCollectionEquality().hash(grubDevice),
-      const DeepCollectionEquality().hash(boot),
-      const DeepCollectionEquality().hash(os),
-      const DeepCollectionEquality().hash(offset),
-      const DeepCollectionEquality().hash(estimatedMinSize),
-      const DeepCollectionEquality().hash(resize),
-      const DeepCollectionEquality().hash(path));
+      mount,
+      format,
+      grubDevice,
+      boot,
+      os,
+      offset,
+      estimatedMinSize,
+      resize,
+      path);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PartitionCopyWith<_$Partition> get copyWith =>
       __$$PartitionCopyWithImpl<_$Partition>(this, _$identity);
 
@@ -3963,7 +3963,7 @@ class _$Partition implements Partition {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             int? size,
             int? number,
             bool? preserve,
@@ -3979,7 +3979,7 @@ class _$Partition implements Partition {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size, GapUsable usable)? gap,
+    TResult? Function(int offset, int size, GapUsable usable)? gap,
   }) {
     return partition?.call(size, number, preserve, wipe, annotations, mount,
         format, grubDevice, boot, os, offset, estimatedMinSize, resize, path);
@@ -4026,8 +4026,8 @@ class _$Partition implements Partition {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Partition value)? partition,
-    TResult Function(Gap value)? gap,
+    TResult? Function(Partition value)? partition,
+    TResult? Function(Gap value)? gap,
   }) {
     return partition?.call(this);
   }
@@ -4095,34 +4095,34 @@ abstract class Partition implements PartitionOrGap {
 abstract class _$$GapCopyWith<$Res> {
   factory _$$GapCopyWith(_$Gap value, $Res Function(_$Gap) then) =
       __$$GapCopyWithImpl<$Res>;
+  @useResult
   $Res call({int offset, int size, GapUsable usable});
 }
 
 /// @nodoc
-class __$$GapCopyWithImpl<$Res> extends _$PartitionOrGapCopyWithImpl<$Res>
+class __$$GapCopyWithImpl<$Res>
+    extends _$PartitionOrGapCopyWithImpl<$Res, _$Gap>
     implements _$$GapCopyWith<$Res> {
   __$$GapCopyWithImpl(_$Gap _value, $Res Function(_$Gap) _then)
-      : super(_value, (v) => _then(v as _$Gap));
+      : super(_value, _then);
 
-  @override
-  _$Gap get _value => super._value as _$Gap;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offset = freezed,
-    Object? size = freezed,
-    Object? usable = freezed,
+    Object? offset = null,
+    Object? size = null,
+    Object? usable = null,
   }) {
     return _then(_$Gap(
-      offset: offset == freezed
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      usable: usable == freezed
+      usable: null == usable
           ? _value.usable
           : usable // ignore: cast_nullable_to_non_nullable
               as GapUsable,
@@ -4162,21 +4162,18 @@ class _$Gap implements Gap {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Gap &&
-            const DeepCollectionEquality().equals(other.offset, offset) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.usable, usable));
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.usable, usable) || other.usable == usable));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(offset),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(usable));
+  int get hashCode => Object.hash(runtimeType, offset, size, usable);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GapCopyWith<_$Gap> get copyWith =>
       __$$GapCopyWithImpl<_$Gap>(this, _$identity);
 
@@ -4207,7 +4204,7 @@ class _$Gap implements Gap {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             int? size,
             int? number,
             bool? preserve,
@@ -4223,7 +4220,7 @@ class _$Gap implements Gap {
             bool? resize,
             String? path)?
         partition,
-    TResult Function(int offset, int size, GapUsable usable)? gap,
+    TResult? Function(int offset, int size, GapUsable usable)? gap,
   }) {
     return gap?.call(offset, size, usable);
   }
@@ -4268,8 +4265,8 @@ class _$Gap implements Gap {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Partition value)? partition,
-    TResult Function(Gap value)? gap,
+    TResult? Function(Partition value)? partition,
+    TResult? Function(Gap value)? gap,
   }) {
     return gap?.call(this);
   }
@@ -4338,7 +4335,8 @@ mixin _$Disk {
 /// @nodoc
 abstract class $DiskCopyWith<$Res> {
   factory $DiskCopyWith(Disk value, $Res Function(Disk) then) =
-      _$DiskCopyWithImpl<$Res>;
+      _$DiskCopyWithImpl<$Res, Disk>;
+  @useResult
   $Res call(
       {String id,
       String label,
@@ -4356,83 +4354,86 @@ abstract class $DiskCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DiskCopyWithImpl<$Res> implements $DiskCopyWith<$Res> {
+class _$DiskCopyWithImpl<$Res, $Val extends Disk>
+    implements $DiskCopyWith<$Res> {
   _$DiskCopyWithImpl(this._value, this._then);
 
-  final Disk _value;
   // ignore: unused_field
-  final $Res Function(Disk) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? label = freezed,
-    Object? type = freezed,
-    Object? size = freezed,
-    Object? usageLabels = freezed,
-    Object? partitions = freezed,
-    Object? okForGuided = freezed,
+    Object? id = null,
+    Object? label = null,
+    Object? type = null,
+    Object? size = null,
+    Object? usageLabels = null,
+    Object? partitions = null,
+    Object? okForGuided = null,
     Object? ptable = freezed,
-    Object? preserve = freezed,
+    Object? preserve = null,
     Object? path = freezed,
-    Object? bootDevice = freezed,
+    Object? bootDevice = null,
     Object? model = freezed,
     Object? vendor = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      usageLabels: usageLabels == freezed
+      usageLabels: null == usageLabels
           ? _value.usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      partitions: partitions == freezed
+      partitions: null == partitions
           ? _value.partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<PartitionOrGap>,
-      okForGuided: okForGuided == freezed
+      okForGuided: null == okForGuided
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
               as bool,
-      ptable: ptable == freezed
+      ptable: freezed == ptable
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
               as String?,
-      preserve: preserve == freezed
+      preserve: null == preserve
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      bootDevice: bootDevice == freezed
+      bootDevice: null == bootDevice
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool,
-      model: model == freezed
+      model: freezed == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as String?,
-      vendor: vendor == freezed
+      vendor: freezed == vendor
           ? _value.vendor
           : vendor // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -4441,6 +4442,7 @@ abstract class _$$_DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
   factory _$$_DiskCopyWith(_$_Disk value, $Res Function(_$_Disk) then) =
       __$$_DiskCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String label,
@@ -4458,80 +4460,78 @@ abstract class _$$_DiskCopyWith<$Res> implements $DiskCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res>
+class __$$_DiskCopyWithImpl<$Res> extends _$DiskCopyWithImpl<$Res, _$_Disk>
     implements _$$_DiskCopyWith<$Res> {
   __$$_DiskCopyWithImpl(_$_Disk _value, $Res Function(_$_Disk) _then)
-      : super(_value, (v) => _then(v as _$_Disk));
+      : super(_value, _then);
 
-  @override
-  _$_Disk get _value => super._value as _$_Disk;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? label = freezed,
-    Object? type = freezed,
-    Object? size = freezed,
-    Object? usageLabels = freezed,
-    Object? partitions = freezed,
-    Object? okForGuided = freezed,
+    Object? id = null,
+    Object? label = null,
+    Object? type = null,
+    Object? size = null,
+    Object? usageLabels = null,
+    Object? partitions = null,
+    Object? okForGuided = null,
     Object? ptable = freezed,
-    Object? preserve = freezed,
+    Object? preserve = null,
     Object? path = freezed,
-    Object? bootDevice = freezed,
+    Object? bootDevice = null,
     Object? model = freezed,
     Object? vendor = freezed,
   }) {
     return _then(_$_Disk(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      usageLabels: usageLabels == freezed
+      usageLabels: null == usageLabels
           ? _value._usageLabels
           : usageLabels // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      partitions: partitions == freezed
+      partitions: null == partitions
           ? _value._partitions
           : partitions // ignore: cast_nullable_to_non_nullable
               as List<PartitionOrGap>,
-      okForGuided: okForGuided == freezed
+      okForGuided: null == okForGuided
           ? _value.okForGuided
           : okForGuided // ignore: cast_nullable_to_non_nullable
               as bool,
-      ptable: ptable == freezed
+      ptable: freezed == ptable
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
               as String?,
-      preserve: preserve == freezed
+      preserve: null == preserve
           ? _value.preserve
           : preserve // ignore: cast_nullable_to_non_nullable
               as bool,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      bootDevice: bootDevice == freezed
+      bootDevice: null == bootDevice
           ? _value.bootDevice
           : bootDevice // ignore: cast_nullable_to_non_nullable
               as bool,
-      model: model == freezed
+      model: freezed == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as String?,
-      vendor: vendor == freezed
+      vendor: freezed == vendor
           ? _value.vendor
           : vendor // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -4608,45 +4608,47 @@ class _$_Disk implements _Disk {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Disk &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.label, label) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.size, size) || other.size == size) &&
             const DeepCollectionEquality()
                 .equals(other._usageLabels, _usageLabels) &&
             const DeepCollectionEquality()
                 .equals(other._partitions, _partitions) &&
-            const DeepCollectionEquality()
-                .equals(other.okForGuided, okForGuided) &&
-            const DeepCollectionEquality().equals(other.ptable, ptable) &&
-            const DeepCollectionEquality().equals(other.preserve, preserve) &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.bootDevice, bootDevice) &&
-            const DeepCollectionEquality().equals(other.model, model) &&
-            const DeepCollectionEquality().equals(other.vendor, vendor));
+            (identical(other.okForGuided, okForGuided) ||
+                other.okForGuided == okForGuided) &&
+            (identical(other.ptable, ptable) || other.ptable == ptable) &&
+            (identical(other.preserve, preserve) ||
+                other.preserve == preserve) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.bootDevice, bootDevice) ||
+                other.bootDevice == bootDevice) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.vendor, vendor) || other.vendor == vendor));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(label),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(size),
+      id,
+      label,
+      type,
+      size,
       const DeepCollectionEquality().hash(_usageLabels),
       const DeepCollectionEquality().hash(_partitions),
-      const DeepCollectionEquality().hash(okForGuided),
-      const DeepCollectionEquality().hash(ptable),
-      const DeepCollectionEquality().hash(preserve),
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(bootDevice),
-      const DeepCollectionEquality().hash(model),
-      const DeepCollectionEquality().hash(vendor));
+      okForGuided,
+      ptable,
+      preserve,
+      path,
+      bootDevice,
+      model,
+      vendor);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DiskCopyWith<_$_Disk> get copyWith =>
       __$$_DiskCopyWithImpl<_$_Disk>(this, _$identity);
 
@@ -4727,38 +4729,42 @@ mixin _$GuidedChoice {
 abstract class $GuidedChoiceCopyWith<$Res> {
   factory $GuidedChoiceCopyWith(
           GuidedChoice value, $Res Function(GuidedChoice) then) =
-      _$GuidedChoiceCopyWithImpl<$Res>;
+      _$GuidedChoiceCopyWithImpl<$Res, GuidedChoice>;
+  @useResult
   $Res call({String diskId, bool useLvm, String? password});
 }
 
 /// @nodoc
-class _$GuidedChoiceCopyWithImpl<$Res> implements $GuidedChoiceCopyWith<$Res> {
+class _$GuidedChoiceCopyWithImpl<$Res, $Val extends GuidedChoice>
+    implements $GuidedChoiceCopyWith<$Res> {
   _$GuidedChoiceCopyWithImpl(this._value, this._then);
 
-  final GuidedChoice _value;
   // ignore: unused_field
-  final $Res Function(GuidedChoice) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? useLvm = freezed,
+    Object? diskId = null,
+    Object? useLvm = null,
     Object? password = freezed,
   }) {
     return _then(_value.copyWith(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      useLvm: useLvm == freezed
+      useLvm: null == useLvm
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -4769,36 +4775,35 @@ abstract class _$$_GuidedChoiceCopyWith<$Res>
           _$_GuidedChoice value, $Res Function(_$_GuidedChoice) then) =
       __$$_GuidedChoiceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId, bool useLvm, String? password});
 }
 
 /// @nodoc
 class __$$_GuidedChoiceCopyWithImpl<$Res>
-    extends _$GuidedChoiceCopyWithImpl<$Res>
+    extends _$GuidedChoiceCopyWithImpl<$Res, _$_GuidedChoice>
     implements _$$_GuidedChoiceCopyWith<$Res> {
   __$$_GuidedChoiceCopyWithImpl(
       _$_GuidedChoice _value, $Res Function(_$_GuidedChoice) _then)
-      : super(_value, (v) => _then(v as _$_GuidedChoice));
+      : super(_value, _then);
 
-  @override
-  _$_GuidedChoice get _value => super._value as _$_GuidedChoice;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? useLvm = freezed,
+    Object? diskId = null,
+    Object? useLvm = null,
     Object? password = freezed,
   }) {
     return _then(_$_GuidedChoice(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      useLvm: useLvm == freezed
+      useLvm: null == useLvm
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -4833,21 +4838,19 @@ class _$_GuidedChoice implements _GuidedChoice {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedChoice &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
-            const DeepCollectionEquality().equals(other.useLvm, useLvm) &&
-            const DeepCollectionEquality().equals(other.password, password));
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
+            (identical(other.useLvm, useLvm) || other.useLvm == useLvm) &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(diskId),
-      const DeepCollectionEquality().hash(useLvm),
-      const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, diskId, useLvm, password);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuidedChoiceCopyWith<_$_GuidedChoice> get copyWith =>
       __$$_GuidedChoiceCopyWithImpl<_$_GuidedChoice>(this, _$identity);
 
@@ -4901,7 +4904,8 @@ mixin _$GuidedStorageResponse {
 abstract class $GuidedStorageResponseCopyWith<$Res> {
   factory $GuidedStorageResponseCopyWith(GuidedStorageResponse value,
           $Res Function(GuidedStorageResponse) then) =
-      _$GuidedStorageResponseCopyWithImpl<$Res>;
+      _$GuidedStorageResponseCopyWithImpl<$Res, GuidedStorageResponse>;
+  @useResult
   $Res call(
       {ProbeStatus status, ErrorReportRef? errorReport, List<Disk>? disks});
 
@@ -4909,44 +4913,48 @@ abstract class $GuidedStorageResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GuidedStorageResponseCopyWithImpl<$Res>
+class _$GuidedStorageResponseCopyWithImpl<$Res,
+        $Val extends GuidedStorageResponse>
     implements $GuidedStorageResponseCopyWith<$Res> {
   _$GuidedStorageResponseCopyWithImpl(this._value, this._then);
 
-  final GuidedStorageResponse _value;
   // ignore: unused_field
-  final $Res Function(GuidedStorageResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? disks = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      disks: disks == freezed
+      disks: freezed == disks
           ? _value.disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ErrorReportRefCopyWith<$Res>? get errorReport {
     if (_value.errorReport == null) {
       return null;
     }
 
     return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
-      return _then(_value.copyWith(errorReport: value));
+      return _then(_value.copyWith(errorReport: value) as $Val);
     });
   }
 }
@@ -4958,6 +4966,7 @@ abstract class _$$_GuidedStorageResponseCopyWith<$Res>
           $Res Function(_$_GuidedStorageResponse) then) =
       __$$_GuidedStorageResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ProbeStatus status, ErrorReportRef? errorReport, List<Disk>? disks});
 
@@ -4967,32 +4976,29 @@ abstract class _$$_GuidedStorageResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_GuidedStorageResponseCopyWithImpl<$Res>
-    extends _$GuidedStorageResponseCopyWithImpl<$Res>
+    extends _$GuidedStorageResponseCopyWithImpl<$Res, _$_GuidedStorageResponse>
     implements _$$_GuidedStorageResponseCopyWith<$Res> {
   __$$_GuidedStorageResponseCopyWithImpl(_$_GuidedStorageResponse _value,
       $Res Function(_$_GuidedStorageResponse) _then)
-      : super(_value, (v) => _then(v as _$_GuidedStorageResponse));
+      : super(_value, _then);
 
-  @override
-  _$_GuidedStorageResponse get _value =>
-      super._value as _$_GuidedStorageResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? disks = freezed,
   }) {
     return _then(_$_GuidedStorageResponse(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      disks: disks == freezed
+      disks: freezed == disks
           ? _value._disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>?,
@@ -5033,22 +5039,20 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedStorageResponse &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.errorReport, errorReport) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.errorReport, errorReport) ||
+                other.errorReport == errorReport) &&
             const DeepCollectionEquality().equals(other._disks, _disks));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(errorReport),
+  int get hashCode => Object.hash(runtimeType, status, errorReport,
       const DeepCollectionEquality().hash(_disks));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuidedStorageResponseCopyWith<_$_GuidedStorageResponse> get copyWith =>
       __$$_GuidedStorageResponseCopyWithImpl<_$_GuidedStorageResponse>(
           this, _$identity);
@@ -5107,7 +5111,8 @@ mixin _$StorageResponse {
 abstract class $StorageResponseCopyWith<$Res> {
   factory $StorageResponseCopyWith(
           StorageResponse value, $Res Function(StorageResponse) then) =
-      _$StorageResponseCopyWithImpl<$Res>;
+      _$StorageResponseCopyWithImpl<$Res, StorageResponse>;
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -5122,69 +5127,72 @@ abstract class $StorageResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StorageResponseCopyWithImpl<$Res>
+class _$StorageResponseCopyWithImpl<$Res, $Val extends StorageResponse>
     implements $StorageResponseCopyWith<$Res> {
   _$StorageResponseCopyWithImpl(this._value, this._then);
 
-  final StorageResponse _value;
   // ignore: unused_field
-  final $Res Function(StorageResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? bootloader = freezed,
     Object? origConfig = freezed,
     Object? config = freezed,
     Object? blockdev = freezed,
     Object? dasd = freezed,
-    Object? storageVersion = freezed,
+    Object? storageVersion = null,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      bootloader: bootloader == freezed
+      bootloader: freezed == bootloader
           ? _value.bootloader
           : bootloader // ignore: cast_nullable_to_non_nullable
               as Bootloader?,
-      origConfig: origConfig == freezed
+      origConfig: freezed == origConfig
           ? _value.origConfig
           : origConfig // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
-      config: config == freezed
+      config: freezed == config
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
-      blockdev: blockdev == freezed
+      blockdev: freezed == blockdev
           ? _value.blockdev
           : blockdev // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      dasd: dasd == freezed
+      dasd: freezed == dasd
           ? _value.dasd
           : dasd // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      storageVersion: storageVersion == freezed
+      storageVersion: null == storageVersion
           ? _value.storageVersion
           : storageVersion // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ErrorReportRefCopyWith<$Res>? get errorReport {
     if (_value.errorReport == null) {
       return null;
     }
 
     return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
-      return _then(_value.copyWith(errorReport: value));
+      return _then(_value.copyWith(errorReport: value) as $Val);
     });
   }
 }
@@ -5196,6 +5204,7 @@ abstract class _$$_StorageResponseCopyWith<$Res>
           _$_StorageResponse value, $Res Function(_$_StorageResponse) then) =
       __$$_StorageResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -5212,56 +5221,54 @@ abstract class _$$_StorageResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_StorageResponseCopyWithImpl<$Res>
-    extends _$StorageResponseCopyWithImpl<$Res>
+    extends _$StorageResponseCopyWithImpl<$Res, _$_StorageResponse>
     implements _$$_StorageResponseCopyWith<$Res> {
   __$$_StorageResponseCopyWithImpl(
       _$_StorageResponse _value, $Res Function(_$_StorageResponse) _then)
-      : super(_value, (v) => _then(v as _$_StorageResponse));
+      : super(_value, _then);
 
-  @override
-  _$_StorageResponse get _value => super._value as _$_StorageResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? bootloader = freezed,
     Object? origConfig = freezed,
     Object? config = freezed,
     Object? blockdev = freezed,
     Object? dasd = freezed,
-    Object? storageVersion = freezed,
+    Object? storageVersion = null,
   }) {
     return _then(_$_StorageResponse(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      bootloader: bootloader == freezed
+      bootloader: freezed == bootloader
           ? _value.bootloader
           : bootloader // ignore: cast_nullable_to_non_nullable
               as Bootloader?,
-      origConfig: origConfig == freezed
+      origConfig: freezed == origConfig
           ? _value._origConfig
           : origConfig // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
-      config: config == freezed
+      config: freezed == config
           ? _value._config
           : config // ignore: cast_nullable_to_non_nullable
               as List<dynamic>?,
-      blockdev: blockdev == freezed
+      blockdev: freezed == blockdev
           ? _value._blockdev
           : blockdev // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      dasd: dasd == freezed
+      dasd: freezed == dasd
           ? _value._dasd
           : dasd // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      storageVersion: storageVersion == freezed
+      storageVersion: null == storageVersion
           ? _value.storageVersion
           : storageVersion // ignore: cast_nullable_to_non_nullable
               as int,
@@ -5345,35 +5352,36 @@ class _$_StorageResponse implements _StorageResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StorageResponse &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.errorReport, errorReport) &&
-            const DeepCollectionEquality()
-                .equals(other.bootloader, bootloader) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.errorReport, errorReport) ||
+                other.errorReport == errorReport) &&
+            (identical(other.bootloader, bootloader) ||
+                other.bootloader == bootloader) &&
             const DeepCollectionEquality()
                 .equals(other._origConfig, _origConfig) &&
             const DeepCollectionEquality().equals(other._config, _config) &&
             const DeepCollectionEquality().equals(other._blockdev, _blockdev) &&
             const DeepCollectionEquality().equals(other._dasd, _dasd) &&
-            const DeepCollectionEquality()
-                .equals(other.storageVersion, storageVersion));
+            (identical(other.storageVersion, storageVersion) ||
+                other.storageVersion == storageVersion));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(errorReport),
-      const DeepCollectionEquality().hash(bootloader),
+      status,
+      errorReport,
+      bootloader,
       const DeepCollectionEquality().hash(_origConfig),
       const DeepCollectionEquality().hash(_config),
       const DeepCollectionEquality().hash(_blockdev),
       const DeepCollectionEquality().hash(_dasd),
-      const DeepCollectionEquality().hash(storageVersion));
+      storageVersion);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_StorageResponseCopyWith<_$_StorageResponse> get copyWith =>
       __$$_StorageResponseCopyWithImpl<_$_StorageResponse>(this, _$identity);
 
@@ -5444,7 +5452,8 @@ mixin _$StorageResponseV2 {
 abstract class $StorageResponseV2CopyWith<$Res> {
   factory $StorageResponseV2CopyWith(
           StorageResponseV2 value, $Res Function(StorageResponseV2) then) =
-      _$StorageResponseV2CopyWithImpl<$Res>;
+      _$StorageResponseV2CopyWithImpl<$Res, StorageResponseV2>;
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -5457,59 +5466,62 @@ abstract class $StorageResponseV2CopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StorageResponseV2CopyWithImpl<$Res>
+class _$StorageResponseV2CopyWithImpl<$Res, $Val extends StorageResponseV2>
     implements $StorageResponseV2CopyWith<$Res> {
   _$StorageResponseV2CopyWithImpl(this._value, this._then);
 
-  final StorageResponseV2 _value;
   // ignore: unused_field
-  final $Res Function(StorageResponseV2) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
-    Object? disks = freezed,
+    Object? disks = null,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
     Object? installMinimumSize = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      disks: disks == freezed
+      disks: null == disks
           ? _value.disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>,
-      needRoot: needRoot == freezed
+      needRoot: freezed == needRoot
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
               as bool?,
-      needBoot: needBoot == freezed
+      needBoot: freezed == needBoot
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
               as bool?,
-      installMinimumSize: installMinimumSize == freezed
+      installMinimumSize: freezed == installMinimumSize
           ? _value.installMinimumSize
           : installMinimumSize // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ErrorReportRefCopyWith<$Res>? get errorReport {
     if (_value.errorReport == null) {
       return null;
     }
 
     return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
-      return _then(_value.copyWith(errorReport: value));
+      return _then(_value.copyWith(errorReport: value) as $Val);
     });
   }
 }
@@ -5521,6 +5533,7 @@ abstract class _$$_StorageResponseV2CopyWith<$Res>
           $Res Function(_$_StorageResponseV2) then) =
       __$$_StorageResponseV2CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -5535,46 +5548,44 @@ abstract class _$$_StorageResponseV2CopyWith<$Res>
 
 /// @nodoc
 class __$$_StorageResponseV2CopyWithImpl<$Res>
-    extends _$StorageResponseV2CopyWithImpl<$Res>
+    extends _$StorageResponseV2CopyWithImpl<$Res, _$_StorageResponseV2>
     implements _$$_StorageResponseV2CopyWith<$Res> {
   __$$_StorageResponseV2CopyWithImpl(
       _$_StorageResponseV2 _value, $Res Function(_$_StorageResponseV2) _then)
-      : super(_value, (v) => _then(v as _$_StorageResponseV2));
+      : super(_value, _then);
 
-  @override
-  _$_StorageResponseV2 get _value => super._value as _$_StorageResponseV2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
-    Object? disks = freezed,
+    Object? disks = null,
     Object? needRoot = freezed,
     Object? needBoot = freezed,
     Object? installMinimumSize = freezed,
   }) {
     return _then(_$_StorageResponseV2(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      disks: disks == freezed
+      disks: null == disks
           ? _value._disks
           : disks // ignore: cast_nullable_to_non_nullable
               as List<Disk>,
-      needRoot: needRoot == freezed
+      needRoot: freezed == needRoot
           ? _value.needRoot
           : needRoot // ignore: cast_nullable_to_non_nullable
               as bool?,
-      needBoot: needBoot == freezed
+      needBoot: freezed == needBoot
           ? _value.needBoot
           : needBoot // ignore: cast_nullable_to_non_nullable
               as bool?,
-      installMinimumSize: installMinimumSize == freezed
+      installMinimumSize: freezed == installMinimumSize
           ? _value.installMinimumSize
           : installMinimumSize // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -5626,29 +5637,32 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StorageResponseV2 &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.errorReport, errorReport) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.errorReport, errorReport) ||
+                other.errorReport == errorReport) &&
             const DeepCollectionEquality().equals(other._disks, _disks) &&
-            const DeepCollectionEquality().equals(other.needRoot, needRoot) &&
-            const DeepCollectionEquality().equals(other.needBoot, needBoot) &&
-            const DeepCollectionEquality()
-                .equals(other.installMinimumSize, installMinimumSize));
+            (identical(other.needRoot, needRoot) ||
+                other.needRoot == needRoot) &&
+            (identical(other.needBoot, needBoot) ||
+                other.needBoot == needBoot) &&
+            (identical(other.installMinimumSize, installMinimumSize) ||
+                other.installMinimumSize == installMinimumSize));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(errorReport),
+      status,
+      errorReport,
       const DeepCollectionEquality().hash(_disks),
-      const DeepCollectionEquality().hash(needRoot),
-      const DeepCollectionEquality().hash(needBoot),
-      const DeepCollectionEquality().hash(installMinimumSize));
+      needRoot,
+      needBoot,
+      installMinimumSize);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_StorageResponseV2CopyWith<_$_StorageResponseV2> get copyWith =>
       __$$_StorageResponseV2CopyWithImpl<_$_StorageResponseV2>(
           this, _$identity);
@@ -5712,44 +5726,47 @@ mixin _$GuidedResizeValues {
 abstract class $GuidedResizeValuesCopyWith<$Res> {
   factory $GuidedResizeValuesCopyWith(
           GuidedResizeValues value, $Res Function(GuidedResizeValues) then) =
-      _$GuidedResizeValuesCopyWithImpl<$Res>;
+      _$GuidedResizeValuesCopyWithImpl<$Res, GuidedResizeValues>;
+  @useResult
   $Res call({int installMax, int minimum, int recommended, int maximum});
 }
 
 /// @nodoc
-class _$GuidedResizeValuesCopyWithImpl<$Res>
+class _$GuidedResizeValuesCopyWithImpl<$Res, $Val extends GuidedResizeValues>
     implements $GuidedResizeValuesCopyWith<$Res> {
   _$GuidedResizeValuesCopyWithImpl(this._value, this._then);
 
-  final GuidedResizeValues _value;
   // ignore: unused_field
-  final $Res Function(GuidedResizeValues) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installMax = freezed,
-    Object? minimum = freezed,
-    Object? recommended = freezed,
-    Object? maximum = freezed,
+    Object? installMax = null,
+    Object? minimum = null,
+    Object? recommended = null,
+    Object? maximum = null,
   }) {
     return _then(_value.copyWith(
-      installMax: installMax == freezed
+      installMax: null == installMax
           ? _value.installMax
           : installMax // ignore: cast_nullable_to_non_nullable
               as int,
-      minimum: minimum == freezed
+      minimum: null == minimum
           ? _value.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
               as int,
-      recommended: recommended == freezed
+      recommended: null == recommended
           ? _value.recommended
           : recommended // ignore: cast_nullable_to_non_nullable
               as int,
-      maximum: maximum == freezed
+      maximum: null == maximum
           ? _value.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -5760,41 +5777,40 @@ abstract class _$$_GuidedResizeValuesCopyWith<$Res>
           $Res Function(_$_GuidedResizeValues) then) =
       __$$_GuidedResizeValuesCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int installMax, int minimum, int recommended, int maximum});
 }
 
 /// @nodoc
 class __$$_GuidedResizeValuesCopyWithImpl<$Res>
-    extends _$GuidedResizeValuesCopyWithImpl<$Res>
+    extends _$GuidedResizeValuesCopyWithImpl<$Res, _$_GuidedResizeValues>
     implements _$$_GuidedResizeValuesCopyWith<$Res> {
   __$$_GuidedResizeValuesCopyWithImpl(
       _$_GuidedResizeValues _value, $Res Function(_$_GuidedResizeValues) _then)
-      : super(_value, (v) => _then(v as _$_GuidedResizeValues));
+      : super(_value, _then);
 
-  @override
-  _$_GuidedResizeValues get _value => super._value as _$_GuidedResizeValues;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installMax = freezed,
-    Object? minimum = freezed,
-    Object? recommended = freezed,
-    Object? maximum = freezed,
+    Object? installMax = null,
+    Object? minimum = null,
+    Object? recommended = null,
+    Object? maximum = null,
   }) {
     return _then(_$_GuidedResizeValues(
-      installMax: installMax == freezed
+      installMax: null == installMax
           ? _value.installMax
           : installMax // ignore: cast_nullable_to_non_nullable
               as int,
-      minimum: minimum == freezed
+      minimum: null == minimum
           ? _value.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
               as int,
-      recommended: recommended == freezed
+      recommended: null == recommended
           ? _value.recommended
           : recommended // ignore: cast_nullable_to_non_nullable
               as int,
-      maximum: maximum == freezed
+      maximum: null == maximum
           ? _value.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as int,
@@ -5833,25 +5849,22 @@ class _$_GuidedResizeValues implements _GuidedResizeValues {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedResizeValues &&
-            const DeepCollectionEquality()
-                .equals(other.installMax, installMax) &&
-            const DeepCollectionEquality().equals(other.minimum, minimum) &&
-            const DeepCollectionEquality()
-                .equals(other.recommended, recommended) &&
-            const DeepCollectionEquality().equals(other.maximum, maximum));
+            (identical(other.installMax, installMax) ||
+                other.installMax == installMax) &&
+            (identical(other.minimum, minimum) || other.minimum == minimum) &&
+            (identical(other.recommended, recommended) ||
+                other.recommended == recommended) &&
+            (identical(other.maximum, maximum) || other.maximum == maximum));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(installMax),
-      const DeepCollectionEquality().hash(minimum),
-      const DeepCollectionEquality().hash(recommended),
-      const DeepCollectionEquality().hash(maximum));
+  int get hashCode =>
+      Object.hash(runtimeType, installMax, minimum, recommended, maximum);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuidedResizeValuesCopyWith<_$_GuidedResizeValues> get copyWith =>
       __$$_GuidedResizeValuesCopyWithImpl<_$_GuidedResizeValues>(
           this, _$identity);
@@ -5917,11 +5930,11 @@ mixin _$GuidedStorageTarget {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String diskId)? reformat,
-    TResult Function(String diskId, int partitionNumber, int newSize,
+    TResult? Function(String diskId)? reformat,
+    TResult? Function(String diskId, int partitionNumber, int newSize,
             int? minimum, int? recommended, int? maximum)?
         resize,
-    TResult Function(String diskId, Gap gap)? useGap,
+    TResult? Function(String diskId, Gap gap)? useGap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5943,9 +5956,9 @@ mixin _$GuidedStorageTarget {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GuidedStorageTargetReformat value)? reformat,
-    TResult Function(GuidedStorageTargetResize value)? resize,
-    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    TResult? Function(GuidedStorageTargetReformat value)? reformat,
+    TResult? Function(GuidedStorageTargetResize value)? resize,
+    TResult? Function(GuidedStorageTargetUseGap value)? useGap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5966,29 +5979,32 @@ mixin _$GuidedStorageTarget {
 abstract class $GuidedStorageTargetCopyWith<$Res> {
   factory $GuidedStorageTargetCopyWith(
           GuidedStorageTarget value, $Res Function(GuidedStorageTarget) then) =
-      _$GuidedStorageTargetCopyWithImpl<$Res>;
+      _$GuidedStorageTargetCopyWithImpl<$Res, GuidedStorageTarget>;
+  @useResult
   $Res call({String diskId});
 }
 
 /// @nodoc
-class _$GuidedStorageTargetCopyWithImpl<$Res>
+class _$GuidedStorageTargetCopyWithImpl<$Res, $Val extends GuidedStorageTarget>
     implements $GuidedStorageTargetCopyWith<$Res> {
   _$GuidedStorageTargetCopyWithImpl(this._value, this._then);
 
-  final GuidedStorageTarget _value;
   // ignore: unused_field
-  final $Res Function(GuidedStorageTarget) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
+    Object? diskId = null,
   }) {
     return _then(_value.copyWith(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -6000,28 +6016,27 @@ abstract class _$$GuidedStorageTargetReformatCopyWith<$Res>
           $Res Function(_$GuidedStorageTargetReformat) then) =
       __$$GuidedStorageTargetReformatCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId});
 }
 
 /// @nodoc
 class __$$GuidedStorageTargetReformatCopyWithImpl<$Res>
-    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res,
+        _$GuidedStorageTargetReformat>
     implements _$$GuidedStorageTargetReformatCopyWith<$Res> {
   __$$GuidedStorageTargetReformatCopyWithImpl(
       _$GuidedStorageTargetReformat _value,
       $Res Function(_$GuidedStorageTargetReformat) _then)
-      : super(_value, (v) => _then(v as _$GuidedStorageTargetReformat));
+      : super(_value, _then);
 
-  @override
-  _$GuidedStorageTargetReformat get _value =>
-      super._value as _$GuidedStorageTargetReformat;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
+    Object? diskId = null,
   }) {
     return _then(_$GuidedStorageTargetReformat(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -6055,16 +6070,16 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GuidedStorageTargetReformat &&
-            const DeepCollectionEquality().equals(other.diskId, diskId));
+            (identical(other.diskId, diskId) || other.diskId == diskId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(diskId));
+  int get hashCode => Object.hash(runtimeType, diskId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GuidedStorageTargetReformatCopyWith<_$GuidedStorageTargetReformat>
       get copyWith => __$$GuidedStorageTargetReformatCopyWithImpl<
           _$GuidedStorageTargetReformat>(this, _$identity);
@@ -6084,11 +6099,11 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String diskId)? reformat,
-    TResult Function(String diskId, int partitionNumber, int newSize,
+    TResult? Function(String diskId)? reformat,
+    TResult? Function(String diskId, int partitionNumber, int newSize,
             int? minimum, int? recommended, int? maximum)?
         resize,
-    TResult Function(String diskId, Gap gap)? useGap,
+    TResult? Function(String diskId, Gap gap)? useGap,
   }) {
     return reformat?.call(diskId);
   }
@@ -6122,9 +6137,9 @@ class _$GuidedStorageTargetReformat implements GuidedStorageTargetReformat {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GuidedStorageTargetReformat value)? reformat,
-    TResult Function(GuidedStorageTargetResize value)? resize,
-    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    TResult? Function(GuidedStorageTargetReformat value)? reformat,
+    TResult? Function(GuidedStorageTargetResize value)? resize,
+    TResult? Function(GuidedStorageTargetUseGap value)? useGap,
   }) {
     return reformat?.call(this);
   }
@@ -6174,6 +6189,7 @@ abstract class _$$GuidedStorageTargetResizeCopyWith<$Res>
           $Res Function(_$GuidedStorageTargetResize) then) =
       __$$GuidedStorageTargetResizeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String diskId,
       int partitionNumber,
@@ -6185,47 +6201,44 @@ abstract class _$$GuidedStorageTargetResizeCopyWith<$Res>
 
 /// @nodoc
 class __$$GuidedStorageTargetResizeCopyWithImpl<$Res>
-    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res, _$GuidedStorageTargetResize>
     implements _$$GuidedStorageTargetResizeCopyWith<$Res> {
   __$$GuidedStorageTargetResizeCopyWithImpl(_$GuidedStorageTargetResize _value,
       $Res Function(_$GuidedStorageTargetResize) _then)
-      : super(_value, (v) => _then(v as _$GuidedStorageTargetResize));
+      : super(_value, _then);
 
-  @override
-  _$GuidedStorageTargetResize get _value =>
-      super._value as _$GuidedStorageTargetResize;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? partitionNumber = freezed,
-    Object? newSize = freezed,
+    Object? diskId = null,
+    Object? partitionNumber = null,
+    Object? newSize = null,
     Object? minimum = freezed,
     Object? recommended = freezed,
     Object? maximum = freezed,
   }) {
     return _then(_$GuidedStorageTargetResize(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partitionNumber: partitionNumber == freezed
+      partitionNumber: null == partitionNumber
           ? _value.partitionNumber
           : partitionNumber // ignore: cast_nullable_to_non_nullable
               as int,
-      newSize: newSize == freezed
+      newSize: null == newSize
           ? _value.newSize
           : newSize // ignore: cast_nullable_to_non_nullable
               as int,
-      minimum: minimum == freezed
+      minimum: freezed == minimum
           ? _value.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
               as int?,
-      recommended: recommended == freezed
+      recommended: freezed == recommended
           ? _value.recommended
           : recommended // ignore: cast_nullable_to_non_nullable
               as int?,
-      maximum: maximum == freezed
+      maximum: freezed == maximum
           ? _value.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -6275,29 +6288,24 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GuidedStorageTargetResize &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
-            const DeepCollectionEquality()
-                .equals(other.partitionNumber, partitionNumber) &&
-            const DeepCollectionEquality().equals(other.newSize, newSize) &&
-            const DeepCollectionEquality().equals(other.minimum, minimum) &&
-            const DeepCollectionEquality()
-                .equals(other.recommended, recommended) &&
-            const DeepCollectionEquality().equals(other.maximum, maximum));
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
+            (identical(other.partitionNumber, partitionNumber) ||
+                other.partitionNumber == partitionNumber) &&
+            (identical(other.newSize, newSize) || other.newSize == newSize) &&
+            (identical(other.minimum, minimum) || other.minimum == minimum) &&
+            (identical(other.recommended, recommended) ||
+                other.recommended == recommended) &&
+            (identical(other.maximum, maximum) || other.maximum == maximum));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(diskId),
-      const DeepCollectionEquality().hash(partitionNumber),
-      const DeepCollectionEquality().hash(newSize),
-      const DeepCollectionEquality().hash(minimum),
-      const DeepCollectionEquality().hash(recommended),
-      const DeepCollectionEquality().hash(maximum));
+  int get hashCode => Object.hash(runtimeType, diskId, partitionNumber, newSize,
+      minimum, recommended, maximum);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GuidedStorageTargetResizeCopyWith<_$GuidedStorageTargetResize>
       get copyWith => __$$GuidedStorageTargetResizeCopyWithImpl<
           _$GuidedStorageTargetResize>(this, _$identity);
@@ -6318,11 +6326,11 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String diskId)? reformat,
-    TResult Function(String diskId, int partitionNumber, int newSize,
+    TResult? Function(String diskId)? reformat,
+    TResult? Function(String diskId, int partitionNumber, int newSize,
             int? minimum, int? recommended, int? maximum)?
         resize,
-    TResult Function(String diskId, Gap gap)? useGap,
+    TResult? Function(String diskId, Gap gap)? useGap,
   }) {
     return resize?.call(
         diskId, partitionNumber, newSize, minimum, recommended, maximum);
@@ -6358,9 +6366,9 @@ class _$GuidedStorageTargetResize implements GuidedStorageTargetResize {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GuidedStorageTargetReformat value)? reformat,
-    TResult Function(GuidedStorageTargetResize value)? resize,
-    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    TResult? Function(GuidedStorageTargetReformat value)? reformat,
+    TResult? Function(GuidedStorageTargetResize value)? resize,
+    TResult? Function(GuidedStorageTargetUseGap value)? useGap,
   }) {
     return resize?.call(this);
   }
@@ -6420,32 +6428,30 @@ abstract class _$$GuidedStorageTargetUseGapCopyWith<$Res>
           $Res Function(_$GuidedStorageTargetUseGap) then) =
       __$$GuidedStorageTargetUseGapCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId, Gap gap});
 }
 
 /// @nodoc
 class __$$GuidedStorageTargetUseGapCopyWithImpl<$Res>
-    extends _$GuidedStorageTargetCopyWithImpl<$Res>
+    extends _$GuidedStorageTargetCopyWithImpl<$Res, _$GuidedStorageTargetUseGap>
     implements _$$GuidedStorageTargetUseGapCopyWith<$Res> {
   __$$GuidedStorageTargetUseGapCopyWithImpl(_$GuidedStorageTargetUseGap _value,
       $Res Function(_$GuidedStorageTargetUseGap) _then)
-      : super(_value, (v) => _then(v as _$GuidedStorageTargetUseGap));
+      : super(_value, _then);
 
-  @override
-  _$GuidedStorageTargetUseGap get _value =>
-      super._value as _$GuidedStorageTargetUseGap;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? gap = freezed,
+    Object? diskId = null,
+    Object? gap = null,
   }) {
     return _then(_$GuidedStorageTargetUseGap(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      gap: gap == freezed
+      gap: null == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
@@ -6481,19 +6487,18 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GuidedStorageTargetUseGap &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
             const DeepCollectionEquality().equals(other.gap, gap));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(diskId),
-      const DeepCollectionEquality().hash(gap));
+      runtimeType, diskId, const DeepCollectionEquality().hash(gap));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GuidedStorageTargetUseGapCopyWith<_$GuidedStorageTargetUseGap>
       get copyWith => __$$GuidedStorageTargetUseGapCopyWithImpl<
           _$GuidedStorageTargetUseGap>(this, _$identity);
@@ -6513,11 +6518,11 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String diskId)? reformat,
-    TResult Function(String diskId, int partitionNumber, int newSize,
+    TResult? Function(String diskId)? reformat,
+    TResult? Function(String diskId, int partitionNumber, int newSize,
             int? minimum, int? recommended, int? maximum)?
         resize,
-    TResult Function(String diskId, Gap gap)? useGap,
+    TResult? Function(String diskId, Gap gap)? useGap,
   }) {
     return useGap?.call(diskId, gap);
   }
@@ -6551,9 +6556,9 @@ class _$GuidedStorageTargetUseGap implements GuidedStorageTargetUseGap {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GuidedStorageTargetReformat value)? reformat,
-    TResult Function(GuidedStorageTargetResize value)? resize,
-    TResult Function(GuidedStorageTargetUseGap value)? useGap,
+    TResult? Function(GuidedStorageTargetReformat value)? reformat,
+    TResult? Function(GuidedStorageTargetResize value)? resize,
+    TResult? Function(GuidedStorageTargetUseGap value)? useGap,
   }) {
     return useGap?.call(this);
   }
@@ -6617,47 +6622,51 @@ mixin _$GuidedChoiceV2 {
 abstract class $GuidedChoiceV2CopyWith<$Res> {
   factory $GuidedChoiceV2CopyWith(
           GuidedChoiceV2 value, $Res Function(GuidedChoiceV2) then) =
-      _$GuidedChoiceV2CopyWithImpl<$Res>;
+      _$GuidedChoiceV2CopyWithImpl<$Res, GuidedChoiceV2>;
+  @useResult
   $Res call({GuidedStorageTarget target, bool useLvm, String? password});
 
   $GuidedStorageTargetCopyWith<$Res> get target;
 }
 
 /// @nodoc
-class _$GuidedChoiceV2CopyWithImpl<$Res>
+class _$GuidedChoiceV2CopyWithImpl<$Res, $Val extends GuidedChoiceV2>
     implements $GuidedChoiceV2CopyWith<$Res> {
   _$GuidedChoiceV2CopyWithImpl(this._value, this._then);
 
-  final GuidedChoiceV2 _value;
   // ignore: unused_field
-  final $Res Function(GuidedChoiceV2) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? target = freezed,
-    Object? useLvm = freezed,
+    Object? target = null,
+    Object? useLvm = null,
     Object? password = freezed,
   }) {
     return _then(_value.copyWith(
-      target: target == freezed
+      target: null == target
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
               as GuidedStorageTarget,
-      useLvm: useLvm == freezed
+      useLvm: null == useLvm
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GuidedStorageTargetCopyWith<$Res> get target {
     return $GuidedStorageTargetCopyWith<$Res>(_value.target, (value) {
-      return _then(_value.copyWith(target: value));
+      return _then(_value.copyWith(target: value) as $Val);
     });
   }
 }
@@ -6669,6 +6678,7 @@ abstract class _$$_GuidedChoiceV2CopyWith<$Res>
           _$_GuidedChoiceV2 value, $Res Function(_$_GuidedChoiceV2) then) =
       __$$_GuidedChoiceV2CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({GuidedStorageTarget target, bool useLvm, String? password});
 
   @override
@@ -6677,31 +6687,29 @@ abstract class _$$_GuidedChoiceV2CopyWith<$Res>
 
 /// @nodoc
 class __$$_GuidedChoiceV2CopyWithImpl<$Res>
-    extends _$GuidedChoiceV2CopyWithImpl<$Res>
+    extends _$GuidedChoiceV2CopyWithImpl<$Res, _$_GuidedChoiceV2>
     implements _$$_GuidedChoiceV2CopyWith<$Res> {
   __$$_GuidedChoiceV2CopyWithImpl(
       _$_GuidedChoiceV2 _value, $Res Function(_$_GuidedChoiceV2) _then)
-      : super(_value, (v) => _then(v as _$_GuidedChoiceV2));
+      : super(_value, _then);
 
-  @override
-  _$_GuidedChoiceV2 get _value => super._value as _$_GuidedChoiceV2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? target = freezed,
-    Object? useLvm = freezed,
+    Object? target = null,
+    Object? useLvm = null,
     Object? password = freezed,
   }) {
     return _then(_$_GuidedChoiceV2(
-      target: target == freezed
+      target: null == target
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
               as GuidedStorageTarget,
-      useLvm: useLvm == freezed
+      useLvm: null == useLvm
           ? _value.useLvm
           : useLvm // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -6736,21 +6744,19 @@ class _$_GuidedChoiceV2 implements _GuidedChoiceV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedChoiceV2 &&
-            const DeepCollectionEquality().equals(other.target, target) &&
-            const DeepCollectionEquality().equals(other.useLvm, useLvm) &&
-            const DeepCollectionEquality().equals(other.password, password));
+            (identical(other.target, target) || other.target == target) &&
+            (identical(other.useLvm, useLvm) || other.useLvm == useLvm) &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(target),
-      const DeepCollectionEquality().hash(useLvm),
-      const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, target, useLvm, password);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuidedChoiceV2CopyWith<_$_GuidedChoiceV2> get copyWith =>
       __$$_GuidedChoiceV2CopyWithImpl<_$_GuidedChoiceV2>(this, _$identity);
 
@@ -6805,7 +6811,8 @@ mixin _$GuidedStorageResponseV2 {
 abstract class $GuidedStorageResponseV2CopyWith<$Res> {
   factory $GuidedStorageResponseV2CopyWith(GuidedStorageResponseV2 value,
           $Res Function(GuidedStorageResponseV2) then) =
-      _$GuidedStorageResponseV2CopyWithImpl<$Res>;
+      _$GuidedStorageResponseV2CopyWithImpl<$Res, GuidedStorageResponseV2>;
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -6817,60 +6824,65 @@ abstract class $GuidedStorageResponseV2CopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GuidedStorageResponseV2CopyWithImpl<$Res>
+class _$GuidedStorageResponseV2CopyWithImpl<$Res,
+        $Val extends GuidedStorageResponseV2>
     implements $GuidedStorageResponseV2CopyWith<$Res> {
   _$GuidedStorageResponseV2CopyWithImpl(this._value, this._then);
 
-  final GuidedStorageResponseV2 _value;
   // ignore: unused_field
-  final $Res Function(GuidedStorageResponseV2) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? configured = freezed,
-    Object? possible = freezed,
+    Object? possible = null,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      configured: configured == freezed
+      configured: freezed == configured
           ? _value.configured
           : configured // ignore: cast_nullable_to_non_nullable
               as GuidedChoiceV2?,
-      possible: possible == freezed
+      possible: null == possible
           ? _value.possible
           : possible // ignore: cast_nullable_to_non_nullable
               as List<GuidedStorageTarget>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ErrorReportRefCopyWith<$Res>? get errorReport {
     if (_value.errorReport == null) {
       return null;
     }
 
     return $ErrorReportRefCopyWith<$Res>(_value.errorReport!, (value) {
-      return _then(_value.copyWith(errorReport: value));
+      return _then(_value.copyWith(errorReport: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GuidedChoiceV2CopyWith<$Res>? get configured {
     if (_value.configured == null) {
       return null;
     }
 
     return $GuidedChoiceV2CopyWith<$Res>(_value.configured!, (value) {
-      return _then(_value.copyWith(configured: value));
+      return _then(_value.copyWith(configured: value) as $Val);
     });
   }
 }
@@ -6882,6 +6894,7 @@ abstract class _$$_GuidedStorageResponseV2CopyWith<$Res>
           $Res Function(_$_GuidedStorageResponseV2) then) =
       __$$_GuidedStorageResponseV2CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ProbeStatus status,
       ErrorReportRef? errorReport,
@@ -6896,37 +6909,35 @@ abstract class _$$_GuidedStorageResponseV2CopyWith<$Res>
 
 /// @nodoc
 class __$$_GuidedStorageResponseV2CopyWithImpl<$Res>
-    extends _$GuidedStorageResponseV2CopyWithImpl<$Res>
+    extends _$GuidedStorageResponseV2CopyWithImpl<$Res,
+        _$_GuidedStorageResponseV2>
     implements _$$_GuidedStorageResponseV2CopyWith<$Res> {
   __$$_GuidedStorageResponseV2CopyWithImpl(_$_GuidedStorageResponseV2 _value,
       $Res Function(_$_GuidedStorageResponseV2) _then)
-      : super(_value, (v) => _then(v as _$_GuidedStorageResponseV2));
+      : super(_value, _then);
 
-  @override
-  _$_GuidedStorageResponseV2 get _value =>
-      super._value as _$_GuidedStorageResponseV2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? errorReport = freezed,
     Object? configured = freezed,
-    Object? possible = freezed,
+    Object? possible = null,
   }) {
     return _then(_$_GuidedStorageResponseV2(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProbeStatus,
-      errorReport: errorReport == freezed
+      errorReport: freezed == errorReport
           ? _value.errorReport
           : errorReport // ignore: cast_nullable_to_non_nullable
               as ErrorReportRef?,
-      configured: configured == freezed
+      configured: freezed == configured
           ? _value.configured
           : configured // ignore: cast_nullable_to_non_nullable
               as GuidedChoiceV2?,
-      possible: possible == freezed
+      possible: null == possible
           ? _value._possible
           : possible // ignore: cast_nullable_to_non_nullable
               as List<GuidedStorageTarget>,
@@ -6971,25 +6982,22 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuidedStorageResponseV2 &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.errorReport, errorReport) &&
-            const DeepCollectionEquality()
-                .equals(other.configured, configured) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.errorReport, errorReport) ||
+                other.errorReport == errorReport) &&
+            (identical(other.configured, configured) ||
+                other.configured == configured) &&
             const DeepCollectionEquality().equals(other._possible, _possible));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(errorReport),
-      const DeepCollectionEquality().hash(configured),
+  int get hashCode => Object.hash(runtimeType, status, errorReport, configured,
       const DeepCollectionEquality().hash(_possible));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuidedStorageResponseV2CopyWith<_$_GuidedStorageResponseV2>
       get copyWith =>
           __$$_GuidedStorageResponseV2CopyWithImpl<_$_GuidedStorageResponseV2>(
@@ -7047,39 +7055,42 @@ mixin _$AddPartitionV2 {
 abstract class $AddPartitionV2CopyWith<$Res> {
   factory $AddPartitionV2CopyWith(
           AddPartitionV2 value, $Res Function(AddPartitionV2) then) =
-      _$AddPartitionV2CopyWithImpl<$Res>;
+      _$AddPartitionV2CopyWithImpl<$Res, AddPartitionV2>;
+  @useResult
   $Res call({String diskId, Partition partition, Gap gap});
 }
 
 /// @nodoc
-class _$AddPartitionV2CopyWithImpl<$Res>
+class _$AddPartitionV2CopyWithImpl<$Res, $Val extends AddPartitionV2>
     implements $AddPartitionV2CopyWith<$Res> {
   _$AddPartitionV2CopyWithImpl(this._value, this._then);
 
-  final AddPartitionV2 _value;
   // ignore: unused_field
-  final $Res Function(AddPartitionV2) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? partition = freezed,
-    Object? gap = freezed,
+    Object? diskId = null,
+    Object? partition = null,
+    Object? gap = null,
   }) {
     return _then(_value.copyWith(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: partition == freezed
+      partition: null == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
-      gap: gap == freezed
+      gap: null == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7090,36 +7101,35 @@ abstract class _$$_AddPartitionV2CopyWith<$Res>
           _$_AddPartitionV2 value, $Res Function(_$_AddPartitionV2) then) =
       __$$_AddPartitionV2CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId, Partition partition, Gap gap});
 }
 
 /// @nodoc
 class __$$_AddPartitionV2CopyWithImpl<$Res>
-    extends _$AddPartitionV2CopyWithImpl<$Res>
+    extends _$AddPartitionV2CopyWithImpl<$Res, _$_AddPartitionV2>
     implements _$$_AddPartitionV2CopyWith<$Res> {
   __$$_AddPartitionV2CopyWithImpl(
       _$_AddPartitionV2 _value, $Res Function(_$_AddPartitionV2) _then)
-      : super(_value, (v) => _then(v as _$_AddPartitionV2));
+      : super(_value, _then);
 
-  @override
-  _$_AddPartitionV2 get _value => super._value as _$_AddPartitionV2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? partition = freezed,
-    Object? gap = freezed,
+    Object? diskId = null,
+    Object? partition = null,
+    Object? gap = null,
   }) {
     return _then(_$_AddPartitionV2(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: partition == freezed
+      partition: null == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
-      gap: gap == freezed
+      gap: null == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
@@ -7153,7 +7163,7 @@ class _$_AddPartitionV2 implements _AddPartitionV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddPartitionV2 &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
             const DeepCollectionEquality().equals(other.partition, partition) &&
             const DeepCollectionEquality().equals(other.gap, gap));
   }
@@ -7162,12 +7172,13 @@ class _$_AddPartitionV2 implements _AddPartitionV2 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(diskId),
+      diskId,
       const DeepCollectionEquality().hash(partition),
       const DeepCollectionEquality().hash(gap));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddPartitionV2CopyWith<_$_AddPartitionV2> get copyWith =>
       __$$_AddPartitionV2CopyWithImpl<_$_AddPartitionV2>(this, _$identity);
 
@@ -7219,34 +7230,37 @@ mixin _$ModifyPartitionV2 {
 abstract class $ModifyPartitionV2CopyWith<$Res> {
   factory $ModifyPartitionV2CopyWith(
           ModifyPartitionV2 value, $Res Function(ModifyPartitionV2) then) =
-      _$ModifyPartitionV2CopyWithImpl<$Res>;
+      _$ModifyPartitionV2CopyWithImpl<$Res, ModifyPartitionV2>;
+  @useResult
   $Res call({String diskId, Partition partition});
 }
 
 /// @nodoc
-class _$ModifyPartitionV2CopyWithImpl<$Res>
+class _$ModifyPartitionV2CopyWithImpl<$Res, $Val extends ModifyPartitionV2>
     implements $ModifyPartitionV2CopyWith<$Res> {
   _$ModifyPartitionV2CopyWithImpl(this._value, this._then);
 
-  final ModifyPartitionV2 _value;
   // ignore: unused_field
-  final $Res Function(ModifyPartitionV2) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? partition = freezed,
+    Object? diskId = null,
+    Object? partition = null,
   }) {
     return _then(_value.copyWith(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: partition == freezed
+      partition: null == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7257,31 +7271,30 @@ abstract class _$$_ModifyPartitionV2CopyWith<$Res>
           $Res Function(_$_ModifyPartitionV2) then) =
       __$$_ModifyPartitionV2CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId, Partition partition});
 }
 
 /// @nodoc
 class __$$_ModifyPartitionV2CopyWithImpl<$Res>
-    extends _$ModifyPartitionV2CopyWithImpl<$Res>
+    extends _$ModifyPartitionV2CopyWithImpl<$Res, _$_ModifyPartitionV2>
     implements _$$_ModifyPartitionV2CopyWith<$Res> {
   __$$_ModifyPartitionV2CopyWithImpl(
       _$_ModifyPartitionV2 _value, $Res Function(_$_ModifyPartitionV2) _then)
-      : super(_value, (v) => _then(v as _$_ModifyPartitionV2));
+      : super(_value, _then);
 
-  @override
-  _$_ModifyPartitionV2 get _value => super._value as _$_ModifyPartitionV2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
-    Object? partition = freezed,
+    Object? diskId = null,
+    Object? partition = null,
   }) {
     return _then(_$_ModifyPartitionV2(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: partition == freezed
+      partition: null == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
@@ -7312,19 +7325,18 @@ class _$_ModifyPartitionV2 implements _ModifyPartitionV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ModifyPartitionV2 &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
             const DeepCollectionEquality().equals(other.partition, partition));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(diskId),
-      const DeepCollectionEquality().hash(partition));
+      runtimeType, diskId, const DeepCollectionEquality().hash(partition));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ModifyPartitionV2CopyWith<_$_ModifyPartitionV2> get copyWith =>
       __$$_ModifyPartitionV2CopyWithImpl<_$_ModifyPartitionV2>(
           this, _$identity);
@@ -7374,33 +7386,37 @@ mixin _$ReformatDisk {
 abstract class $ReformatDiskCopyWith<$Res> {
   factory $ReformatDiskCopyWith(
           ReformatDisk value, $Res Function(ReformatDisk) then) =
-      _$ReformatDiskCopyWithImpl<$Res>;
+      _$ReformatDiskCopyWithImpl<$Res, ReformatDisk>;
+  @useResult
   $Res call({String diskId, String? ptable});
 }
 
 /// @nodoc
-class _$ReformatDiskCopyWithImpl<$Res> implements $ReformatDiskCopyWith<$Res> {
+class _$ReformatDiskCopyWithImpl<$Res, $Val extends ReformatDisk>
+    implements $ReformatDiskCopyWith<$Res> {
   _$ReformatDiskCopyWithImpl(this._value, this._then);
 
-  final ReformatDisk _value;
   // ignore: unused_field
-  final $Res Function(ReformatDisk) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
+    Object? diskId = null,
     Object? ptable = freezed,
   }) {
     return _then(_value.copyWith(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      ptable: ptable == freezed
+      ptable: freezed == ptable
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7411,31 +7427,30 @@ abstract class _$$_ReformatDiskCopyWith<$Res>
           _$_ReformatDisk value, $Res Function(_$_ReformatDisk) then) =
       __$$_ReformatDiskCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String diskId, String? ptable});
 }
 
 /// @nodoc
 class __$$_ReformatDiskCopyWithImpl<$Res>
-    extends _$ReformatDiskCopyWithImpl<$Res>
+    extends _$ReformatDiskCopyWithImpl<$Res, _$_ReformatDisk>
     implements _$$_ReformatDiskCopyWith<$Res> {
   __$$_ReformatDiskCopyWithImpl(
       _$_ReformatDisk _value, $Res Function(_$_ReformatDisk) _then)
-      : super(_value, (v) => _then(v as _$_ReformatDisk));
+      : super(_value, _then);
 
-  @override
-  _$_ReformatDisk get _value => super._value as _$_ReformatDisk;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? diskId = freezed,
+    Object? diskId = null,
     Object? ptable = freezed,
   }) {
     return _then(_$_ReformatDisk(
-      diskId: diskId == freezed
+      diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      ptable: ptable == freezed
+      ptable: freezed == ptable
           ? _value.ptable
           : ptable // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -7466,19 +7481,17 @@ class _$_ReformatDisk implements _ReformatDisk {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ReformatDisk &&
-            const DeepCollectionEquality().equals(other.diskId, diskId) &&
-            const DeepCollectionEquality().equals(other.ptable, ptable));
+            (identical(other.diskId, diskId) || other.diskId == diskId) &&
+            (identical(other.ptable, ptable) || other.ptable == ptable));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(diskId),
-      const DeepCollectionEquality().hash(ptable));
+  int get hashCode => Object.hash(runtimeType, diskId, ptable);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ReformatDiskCopyWith<_$_ReformatDisk> get copyWith =>
       __$$_ReformatDiskCopyWithImpl<_$_ReformatDisk>(this, _$identity);
 
@@ -7528,7 +7541,8 @@ mixin _$IdentityData {
 abstract class $IdentityDataCopyWith<$Res> {
   factory $IdentityDataCopyWith(
           IdentityData value, $Res Function(IdentityData) then) =
-      _$IdentityDataCopyWithImpl<$Res>;
+      _$IdentityDataCopyWithImpl<$Res, IdentityData>;
+  @useResult
   $Res call(
       {String realname,
       String username,
@@ -7537,38 +7551,41 @@ abstract class $IdentityDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IdentityDataCopyWithImpl<$Res> implements $IdentityDataCopyWith<$Res> {
+class _$IdentityDataCopyWithImpl<$Res, $Val extends IdentityData>
+    implements $IdentityDataCopyWith<$Res> {
   _$IdentityDataCopyWithImpl(this._value, this._then);
 
-  final IdentityData _value;
   // ignore: unused_field
-  final $Res Function(IdentityData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
+    Object? realname = null,
+    Object? username = null,
+    Object? cryptedPassword = null,
+    Object? hostname = null,
   }) {
     return _then(_value.copyWith(
-      realname: realname == freezed
+      realname: null == realname
           ? _value.realname
           : realname // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      cryptedPassword: cryptedPassword == freezed
+      cryptedPassword: null == cryptedPassword
           ? _value.cryptedPassword
           : cryptedPassword // ignore: cast_nullable_to_non_nullable
               as String,
-      hostname: hostname == freezed
+      hostname: null == hostname
           ? _value.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7579,6 +7596,7 @@ abstract class _$$_IdentityDataCopyWith<$Res>
           _$_IdentityData value, $Res Function(_$_IdentityData) then) =
       __$$_IdentityDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String realname,
       String username,
@@ -7588,36 +7606,34 @@ abstract class _$$_IdentityDataCopyWith<$Res>
 
 /// @nodoc
 class __$$_IdentityDataCopyWithImpl<$Res>
-    extends _$IdentityDataCopyWithImpl<$Res>
+    extends _$IdentityDataCopyWithImpl<$Res, _$_IdentityData>
     implements _$$_IdentityDataCopyWith<$Res> {
   __$$_IdentityDataCopyWithImpl(
       _$_IdentityData _value, $Res Function(_$_IdentityData) _then)
-      : super(_value, (v) => _then(v as _$_IdentityData));
+      : super(_value, _then);
 
-  @override
-  _$_IdentityData get _value => super._value as _$_IdentityData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? realname = freezed,
-    Object? username = freezed,
-    Object? cryptedPassword = freezed,
-    Object? hostname = freezed,
+    Object? realname = null,
+    Object? username = null,
+    Object? cryptedPassword = null,
+    Object? hostname = null,
   }) {
     return _then(_$_IdentityData(
-      realname: realname == freezed
+      realname: null == realname
           ? _value.realname
           : realname // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      cryptedPassword: cryptedPassword == freezed
+      cryptedPassword: null == cryptedPassword
           ? _value.cryptedPassword
           : cryptedPassword // ignore: cast_nullable_to_non_nullable
               as String,
-      hostname: hostname == freezed
+      hostname: null == hostname
           ? _value.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
               as String,
@@ -7660,24 +7676,24 @@ class _$_IdentityData implements _IdentityData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IdentityData &&
-            const DeepCollectionEquality().equals(other.realname, realname) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality()
-                .equals(other.cryptedPassword, cryptedPassword) &&
-            const DeepCollectionEquality().equals(other.hostname, hostname));
+            (identical(other.realname, realname) ||
+                other.realname == realname) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.cryptedPassword, cryptedPassword) ||
+                other.cryptedPassword == cryptedPassword) &&
+            (identical(other.hostname, hostname) ||
+                other.hostname == hostname));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(realname),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(cryptedPassword),
-      const DeepCollectionEquality().hash(hostname));
+  int get hashCode =>
+      Object.hash(runtimeType, realname, username, cryptedPassword, hostname);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IdentityDataCopyWith<_$_IdentityData> get copyWith =>
       __$$_IdentityDataCopyWithImpl<_$_IdentityData>(this, _$identity);
 
@@ -7731,38 +7747,42 @@ mixin _$SSHData {
 /// @nodoc
 abstract class $SSHDataCopyWith<$Res> {
   factory $SSHDataCopyWith(SSHData value, $Res Function(SSHData) then) =
-      _$SSHDataCopyWithImpl<$Res>;
+      _$SSHDataCopyWithImpl<$Res, SSHData>;
+  @useResult
   $Res call({bool installServer, bool allowPw, List<String> authorizedKeys});
 }
 
 /// @nodoc
-class _$SSHDataCopyWithImpl<$Res> implements $SSHDataCopyWith<$Res> {
+class _$SSHDataCopyWithImpl<$Res, $Val extends SSHData>
+    implements $SSHDataCopyWith<$Res> {
   _$SSHDataCopyWithImpl(this._value, this._then);
 
-  final SSHData _value;
   // ignore: unused_field
-  final $Res Function(SSHData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
+    Object? installServer = null,
+    Object? allowPw = null,
+    Object? authorizedKeys = null,
   }) {
     return _then(_value.copyWith(
-      installServer: installServer == freezed
+      installServer: null == installServer
           ? _value.installServer
           : installServer // ignore: cast_nullable_to_non_nullable
               as bool,
-      allowPw: allowPw == freezed
+      allowPw: null == allowPw
           ? _value.allowPw
           : allowPw // ignore: cast_nullable_to_non_nullable
               as bool,
-      authorizedKeys: authorizedKeys == freezed
+      authorizedKeys: null == authorizedKeys
           ? _value.authorizedKeys
           : authorizedKeys // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7772,34 +7792,34 @@ abstract class _$$_SSHDataCopyWith<$Res> implements $SSHDataCopyWith<$Res> {
           _$_SSHData value, $Res Function(_$_SSHData) then) =
       __$$_SSHDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool installServer, bool allowPw, List<String> authorizedKeys});
 }
 
 /// @nodoc
-class __$$_SSHDataCopyWithImpl<$Res> extends _$SSHDataCopyWithImpl<$Res>
+class __$$_SSHDataCopyWithImpl<$Res>
+    extends _$SSHDataCopyWithImpl<$Res, _$_SSHData>
     implements _$$_SSHDataCopyWith<$Res> {
   __$$_SSHDataCopyWithImpl(_$_SSHData _value, $Res Function(_$_SSHData) _then)
-      : super(_value, (v) => _then(v as _$_SSHData));
+      : super(_value, _then);
 
-  @override
-  _$_SSHData get _value => super._value as _$_SSHData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installServer = freezed,
-    Object? allowPw = freezed,
-    Object? authorizedKeys = freezed,
+    Object? installServer = null,
+    Object? allowPw = null,
+    Object? authorizedKeys = null,
   }) {
     return _then(_$_SSHData(
-      installServer: installServer == freezed
+      installServer: null == installServer
           ? _value.installServer
           : installServer // ignore: cast_nullable_to_non_nullable
               as bool,
-      allowPw: allowPw == freezed
+      allowPw: null == allowPw
           ? _value.allowPw
           : allowPw // ignore: cast_nullable_to_non_nullable
               as bool,
-      authorizedKeys: authorizedKeys == freezed
+      authorizedKeys: null == authorizedKeys
           ? _value._authorizedKeys
           : authorizedKeys // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -7841,23 +7861,21 @@ class _$_SSHData implements _SSHData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SSHData &&
-            const DeepCollectionEquality()
-                .equals(other.installServer, installServer) &&
-            const DeepCollectionEquality().equals(other.allowPw, allowPw) &&
+            (identical(other.installServer, installServer) ||
+                other.installServer == installServer) &&
+            (identical(other.allowPw, allowPw) || other.allowPw == allowPw) &&
             const DeepCollectionEquality()
                 .equals(other._authorizedKeys, _authorizedKeys));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(installServer),
-      const DeepCollectionEquality().hash(allowPw),
+  int get hashCode => Object.hash(runtimeType, installServer, allowPw,
       const DeepCollectionEquality().hash(_authorizedKeys));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SSHDataCopyWith<_$_SSHData> get copyWith =>
       __$$_SSHDataCopyWithImpl<_$_SSHData>(this, _$identity);
 
@@ -7912,7 +7930,8 @@ mixin _$ChannelSnapInfo {
 abstract class $ChannelSnapInfoCopyWith<$Res> {
   factory $ChannelSnapInfoCopyWith(
           ChannelSnapInfo value, $Res Function(ChannelSnapInfo) then) =
-      _$ChannelSnapInfoCopyWithImpl<$Res>;
+      _$ChannelSnapInfoCopyWithImpl<$Res, ChannelSnapInfo>;
+  @useResult
   $Res call(
       {String channelName,
       String revision,
@@ -7923,49 +7942,51 @@ abstract class $ChannelSnapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChannelSnapInfoCopyWithImpl<$Res>
+class _$ChannelSnapInfoCopyWithImpl<$Res, $Val extends ChannelSnapInfo>
     implements $ChannelSnapInfoCopyWith<$Res> {
   _$ChannelSnapInfoCopyWithImpl(this._value, this._then);
 
-  final ChannelSnapInfo _value;
   // ignore: unused_field
-  final $Res Function(ChannelSnapInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelName = freezed,
-    Object? revision = freezed,
-    Object? confinement = freezed,
-    Object? version = freezed,
-    Object? size = freezed,
-    Object? releasedAt = freezed,
+    Object? channelName = null,
+    Object? revision = null,
+    Object? confinement = null,
+    Object? version = null,
+    Object? size = null,
+    Object? releasedAt = null,
   }) {
     return _then(_value.copyWith(
-      channelName: channelName == freezed
+      channelName: null == channelName
           ? _value.channelName
           : channelName // ignore: cast_nullable_to_non_nullable
               as String,
-      revision: revision == freezed
+      revision: null == revision
           ? _value.revision
           : revision // ignore: cast_nullable_to_non_nullable
               as String,
-      confinement: confinement == freezed
+      confinement: null == confinement
           ? _value.confinement
           : confinement // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      releasedAt: releasedAt == freezed
+      releasedAt: null == releasedAt
           ? _value.releasedAt
           : releasedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
@@ -7976,6 +7997,7 @@ abstract class _$$_ChannelSnapInfoCopyWith<$Res>
           _$_ChannelSnapInfo value, $Res Function(_$_ChannelSnapInfo) then) =
       __$$_ChannelSnapInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String channelName,
       String revision,
@@ -7987,46 +8009,44 @@ abstract class _$$_ChannelSnapInfoCopyWith<$Res>
 
 /// @nodoc
 class __$$_ChannelSnapInfoCopyWithImpl<$Res>
-    extends _$ChannelSnapInfoCopyWithImpl<$Res>
+    extends _$ChannelSnapInfoCopyWithImpl<$Res, _$_ChannelSnapInfo>
     implements _$$_ChannelSnapInfoCopyWith<$Res> {
   __$$_ChannelSnapInfoCopyWithImpl(
       _$_ChannelSnapInfo _value, $Res Function(_$_ChannelSnapInfo) _then)
-      : super(_value, (v) => _then(v as _$_ChannelSnapInfo));
+      : super(_value, _then);
 
-  @override
-  _$_ChannelSnapInfo get _value => super._value as _$_ChannelSnapInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelName = freezed,
-    Object? revision = freezed,
-    Object? confinement = freezed,
-    Object? version = freezed,
-    Object? size = freezed,
-    Object? releasedAt = freezed,
+    Object? channelName = null,
+    Object? revision = null,
+    Object? confinement = null,
+    Object? version = null,
+    Object? size = null,
+    Object? releasedAt = null,
   }) {
     return _then(_$_ChannelSnapInfo(
-      channelName: channelName == freezed
+      channelName: null == channelName
           ? _value.channelName
           : channelName // ignore: cast_nullable_to_non_nullable
               as String,
-      revision: revision == freezed
+      revision: null == revision
           ? _value.revision
           : revision // ignore: cast_nullable_to_non_nullable
               as String,
-      confinement: confinement == freezed
+      confinement: null == confinement
           ? _value.confinement
           : confinement // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-      releasedAt: releasedAt == freezed
+      releasedAt: null == releasedAt
           ? _value.releasedAt
           : releasedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -8071,30 +8091,26 @@ class _$_ChannelSnapInfo implements _ChannelSnapInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChannelSnapInfo &&
-            const DeepCollectionEquality()
-                .equals(other.channelName, channelName) &&
-            const DeepCollectionEquality().equals(other.revision, revision) &&
-            const DeepCollectionEquality()
-                .equals(other.confinement, confinement) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality()
-                .equals(other.releasedAt, releasedAt));
+            (identical(other.channelName, channelName) ||
+                other.channelName == channelName) &&
+            (identical(other.revision, revision) ||
+                other.revision == revision) &&
+            (identical(other.confinement, confinement) ||
+                other.confinement == confinement) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.releasedAt, releasedAt) ||
+                other.releasedAt == releasedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(channelName),
-      const DeepCollectionEquality().hash(revision),
-      const DeepCollectionEquality().hash(confinement),
-      const DeepCollectionEquality().hash(version),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(releasedAt));
+  int get hashCode => Object.hash(runtimeType, channelName, revision,
+      confinement, version, size, releasedAt);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChannelSnapInfoCopyWith<_$_ChannelSnapInfo> get copyWith =>
       __$$_ChannelSnapInfoCopyWithImpl<_$_ChannelSnapInfo>(this, _$identity);
 
@@ -8161,7 +8177,8 @@ mixin _$SnapInfo {
 /// @nodoc
 abstract class $SnapInfoCopyWith<$Res> {
   factory $SnapInfoCopyWith(SnapInfo value, $Res Function(SnapInfo) then) =
-      _$SnapInfoCopyWithImpl<$Res>;
+      _$SnapInfoCopyWithImpl<$Res, SnapInfo>;
+  @useResult
   $Res call(
       {String name,
       String summary,
@@ -8175,63 +8192,66 @@ abstract class $SnapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SnapInfoCopyWithImpl<$Res> implements $SnapInfoCopyWith<$Res> {
+class _$SnapInfoCopyWithImpl<$Res, $Val extends SnapInfo>
+    implements $SnapInfoCopyWith<$Res> {
   _$SnapInfoCopyWithImpl(this._value, this._then);
 
-  final SnapInfo _value;
   // ignore: unused_field
-  final $Res Function(SnapInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? summary = freezed,
-    Object? publisher = freezed,
-    Object? verified = freezed,
-    Object? starred = freezed,
-    Object? description = freezed,
-    Object? confinement = freezed,
-    Object? license = freezed,
-    Object? channels = freezed,
+    Object? name = null,
+    Object? summary = null,
+    Object? publisher = null,
+    Object? verified = null,
+    Object? starred = null,
+    Object? description = null,
+    Object? confinement = null,
+    Object? license = null,
+    Object? channels = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      summary: summary == freezed
+      summary: null == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String,
-      publisher: publisher == freezed
+      publisher: null == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
               as String,
-      verified: verified == freezed
+      verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
               as bool,
-      starred: starred == freezed
+      starred: null == starred
           ? _value.starred
           : starred // ignore: cast_nullable_to_non_nullable
               as bool,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      confinement: confinement == freezed
+      confinement: null == confinement
           ? _value.confinement
           : confinement // ignore: cast_nullable_to_non_nullable
               as String,
-      license: license == freezed
+      license: null == license
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as String,
-      channels: channels == freezed
+      channels: null == channels
           ? _value.channels
           : channels // ignore: cast_nullable_to_non_nullable
               as List<ChannelSnapInfo>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -8241,6 +8261,7 @@ abstract class _$$_SnapInfoCopyWith<$Res> implements $SnapInfoCopyWith<$Res> {
           _$_SnapInfo value, $Res Function(_$_SnapInfo) then) =
       __$$_SnapInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String summary,
@@ -8254,61 +8275,60 @@ abstract class _$$_SnapInfoCopyWith<$Res> implements $SnapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SnapInfoCopyWithImpl<$Res> extends _$SnapInfoCopyWithImpl<$Res>
+class __$$_SnapInfoCopyWithImpl<$Res>
+    extends _$SnapInfoCopyWithImpl<$Res, _$_SnapInfo>
     implements _$$_SnapInfoCopyWith<$Res> {
   __$$_SnapInfoCopyWithImpl(
       _$_SnapInfo _value, $Res Function(_$_SnapInfo) _then)
-      : super(_value, (v) => _then(v as _$_SnapInfo));
+      : super(_value, _then);
 
-  @override
-  _$_SnapInfo get _value => super._value as _$_SnapInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? summary = freezed,
-    Object? publisher = freezed,
-    Object? verified = freezed,
-    Object? starred = freezed,
-    Object? description = freezed,
-    Object? confinement = freezed,
-    Object? license = freezed,
-    Object? channels = freezed,
+    Object? name = null,
+    Object? summary = null,
+    Object? publisher = null,
+    Object? verified = null,
+    Object? starred = null,
+    Object? description = null,
+    Object? confinement = null,
+    Object? license = null,
+    Object? channels = null,
   }) {
     return _then(_$_SnapInfo(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      summary: summary == freezed
+      summary: null == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String,
-      publisher: publisher == freezed
+      publisher: null == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
               as String,
-      verified: verified == freezed
+      verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
               as bool,
-      starred: starred == freezed
+      starred: null == starred
           ? _value.starred
           : starred // ignore: cast_nullable_to_non_nullable
               as bool,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      confinement: confinement == freezed
+      confinement: null == confinement
           ? _value.confinement
           : confinement // ignore: cast_nullable_to_non_nullable
               as String,
-      license: license == freezed
+      license: null == license
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as String,
-      channels: channels == freezed
+      channels: null == channels
           ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
               as List<ChannelSnapInfo>,
@@ -8375,16 +8395,18 @@ class _$_SnapInfo implements _SnapInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SnapInfo &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.summary, summary) &&
-            const DeepCollectionEquality().equals(other.publisher, publisher) &&
-            const DeepCollectionEquality().equals(other.verified, verified) &&
-            const DeepCollectionEquality().equals(other.starred, starred) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality()
-                .equals(other.confinement, confinement) &&
-            const DeepCollectionEquality().equals(other.license, license) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.summary, summary) || other.summary == summary) &&
+            (identical(other.publisher, publisher) ||
+                other.publisher == publisher) &&
+            (identical(other.verified, verified) ||
+                other.verified == verified) &&
+            (identical(other.starred, starred) || other.starred == starred) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.confinement, confinement) ||
+                other.confinement == confinement) &&
+            (identical(other.license, license) || other.license == license) &&
             const DeepCollectionEquality().equals(other._channels, _channels));
   }
 
@@ -8392,18 +8414,19 @@ class _$_SnapInfo implements _SnapInfo {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(summary),
-      const DeepCollectionEquality().hash(publisher),
-      const DeepCollectionEquality().hash(verified),
-      const DeepCollectionEquality().hash(starred),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(confinement),
-      const DeepCollectionEquality().hash(license),
+      name,
+      summary,
+      publisher,
+      verified,
+      starred,
+      description,
+      confinement,
+      license,
       const DeepCollectionEquality().hash(_channels));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SnapInfoCopyWith<_$_SnapInfo> get copyWith =>
       __$$_SnapInfoCopyWithImpl<_$_SnapInfo>(this, _$identity);
 
@@ -8474,7 +8497,8 @@ mixin _$DriversResponse {
 abstract class $DriversResponseCopyWith<$Res> {
   factory $DriversResponseCopyWith(
           DriversResponse value, $Res Function(DriversResponse) then) =
-      _$DriversResponseCopyWithImpl<$Res>;
+      _$DriversResponseCopyWithImpl<$Res, DriversResponse>;
+  @useResult
   $Res call(
       {bool install,
       List<String>? drivers,
@@ -8483,39 +8507,41 @@ abstract class $DriversResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DriversResponseCopyWithImpl<$Res>
+class _$DriversResponseCopyWithImpl<$Res, $Val extends DriversResponse>
     implements $DriversResponseCopyWith<$Res> {
   _$DriversResponseCopyWithImpl(this._value, this._then);
 
-  final DriversResponse _value;
   // ignore: unused_field
-  final $Res Function(DriversResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? install = freezed,
+    Object? install = null,
     Object? drivers = freezed,
-    Object? localOnly = freezed,
-    Object? searchDrivers = freezed,
+    Object? localOnly = null,
+    Object? searchDrivers = null,
   }) {
     return _then(_value.copyWith(
-      install: install == freezed
+      install: null == install
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
               as bool,
-      drivers: drivers == freezed
+      drivers: freezed == drivers
           ? _value.drivers
           : drivers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      localOnly: localOnly == freezed
+      localOnly: null == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchDrivers: searchDrivers == freezed
+      searchDrivers: null == searchDrivers
           ? _value.searchDrivers
           : searchDrivers // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -8526,6 +8552,7 @@ abstract class _$$_DriversResponseCopyWith<$Res>
           _$_DriversResponse value, $Res Function(_$_DriversResponse) then) =
       __$$_DriversResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool install,
       List<String>? drivers,
@@ -8535,36 +8562,34 @@ abstract class _$$_DriversResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_DriversResponseCopyWithImpl<$Res>
-    extends _$DriversResponseCopyWithImpl<$Res>
+    extends _$DriversResponseCopyWithImpl<$Res, _$_DriversResponse>
     implements _$$_DriversResponseCopyWith<$Res> {
   __$$_DriversResponseCopyWithImpl(
       _$_DriversResponse _value, $Res Function(_$_DriversResponse) _then)
-      : super(_value, (v) => _then(v as _$_DriversResponse));
+      : super(_value, _then);
 
-  @override
-  _$_DriversResponse get _value => super._value as _$_DriversResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? install = freezed,
+    Object? install = null,
     Object? drivers = freezed,
-    Object? localOnly = freezed,
-    Object? searchDrivers = freezed,
+    Object? localOnly = null,
+    Object? searchDrivers = null,
   }) {
     return _then(_$_DriversResponse(
-      install: install == freezed
+      install: null == install
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
               as bool,
-      drivers: drivers == freezed
+      drivers: freezed == drivers
           ? _value._drivers
           : drivers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      localOnly: localOnly == freezed
+      localOnly: null == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchDrivers: searchDrivers == freezed
+      searchDrivers: null == searchDrivers
           ? _value.searchDrivers
           : searchDrivers // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -8611,24 +8636,22 @@ class _$_DriversResponse implements _DriversResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DriversResponse &&
-            const DeepCollectionEquality().equals(other.install, install) &&
+            (identical(other.install, install) || other.install == install) &&
             const DeepCollectionEquality().equals(other._drivers, _drivers) &&
-            const DeepCollectionEquality().equals(other.localOnly, localOnly) &&
-            const DeepCollectionEquality()
-                .equals(other.searchDrivers, searchDrivers));
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
+            (identical(other.searchDrivers, searchDrivers) ||
+                other.searchDrivers == searchDrivers));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(install),
-      const DeepCollectionEquality().hash(_drivers),
-      const DeepCollectionEquality().hash(localOnly),
-      const DeepCollectionEquality().hash(searchDrivers));
+  int get hashCode => Object.hash(runtimeType, install,
+      const DeepCollectionEquality().hash(_drivers), localOnly, searchDrivers);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DriversResponseCopyWith<_$_DriversResponse> get copyWith =>
       __$$_DriversResponseCopyWithImpl<_$_DriversResponse>(this, _$identity);
 
@@ -8682,29 +8705,32 @@ mixin _$DriversPayload {
 abstract class $DriversPayloadCopyWith<$Res> {
   factory $DriversPayloadCopyWith(
           DriversPayload value, $Res Function(DriversPayload) then) =
-      _$DriversPayloadCopyWithImpl<$Res>;
+      _$DriversPayloadCopyWithImpl<$Res, DriversPayload>;
+  @useResult
   $Res call({bool install});
 }
 
 /// @nodoc
-class _$DriversPayloadCopyWithImpl<$Res>
+class _$DriversPayloadCopyWithImpl<$Res, $Val extends DriversPayload>
     implements $DriversPayloadCopyWith<$Res> {
   _$DriversPayloadCopyWithImpl(this._value, this._then);
 
-  final DriversPayload _value;
   // ignore: unused_field
-  final $Res Function(DriversPayload) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? install = freezed,
+    Object? install = null,
   }) {
     return _then(_value.copyWith(
-      install: install == freezed
+      install: null == install
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -8715,26 +8741,25 @@ abstract class _$$_DriversPayloadCopyWith<$Res>
           _$_DriversPayload value, $Res Function(_$_DriversPayload) then) =
       __$$_DriversPayloadCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool install});
 }
 
 /// @nodoc
 class __$$_DriversPayloadCopyWithImpl<$Res>
-    extends _$DriversPayloadCopyWithImpl<$Res>
+    extends _$DriversPayloadCopyWithImpl<$Res, _$_DriversPayload>
     implements _$$_DriversPayloadCopyWith<$Res> {
   __$$_DriversPayloadCopyWithImpl(
       _$_DriversPayload _value, $Res Function(_$_DriversPayload) _then)
-      : super(_value, (v) => _then(v as _$_DriversPayload));
+      : super(_value, _then);
 
-  @override
-  _$_DriversPayload get _value => super._value as _$_DriversPayload;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? install = freezed,
+    Object? install = null,
   }) {
     return _then(_$_DriversPayload(
-      install: install == freezed
+      install: null == install
           ? _value.install
           : install // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -8763,16 +8788,16 @@ class _$_DriversPayload implements _DriversPayload {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DriversPayload &&
-            const DeepCollectionEquality().equals(other.install, install));
+            (identical(other.install, install) || other.install == install));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(install));
+  int get hashCode => Object.hash(runtimeType, install);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DriversPayloadCopyWith<_$_DriversPayload> get copyWith =>
       __$$_DriversPayloadCopyWithImpl<_$_DriversPayload>(this, _$identity);
 
@@ -8819,39 +8844,42 @@ mixin _$SnapSelection {
 abstract class $SnapSelectionCopyWith<$Res> {
   factory $SnapSelectionCopyWith(
           SnapSelection value, $Res Function(SnapSelection) then) =
-      _$SnapSelectionCopyWithImpl<$Res>;
+      _$SnapSelectionCopyWithImpl<$Res, SnapSelection>;
+  @useResult
   $Res call({String name, String channel, bool classic});
 }
 
 /// @nodoc
-class _$SnapSelectionCopyWithImpl<$Res>
+class _$SnapSelectionCopyWithImpl<$Res, $Val extends SnapSelection>
     implements $SnapSelectionCopyWith<$Res> {
   _$SnapSelectionCopyWithImpl(this._value, this._then);
 
-  final SnapSelection _value;
   // ignore: unused_field
-  final $Res Function(SnapSelection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? channel = freezed,
-    Object? classic = freezed,
+    Object? name = null,
+    Object? channel = null,
+    Object? classic = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      channel: channel == freezed
+      channel: null == channel
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as String,
-      classic: classic == freezed
+      classic: null == classic
           ? _value.classic
           : classic // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -8862,36 +8890,35 @@ abstract class _$$_SnapSelectionCopyWith<$Res>
           _$_SnapSelection value, $Res Function(_$_SnapSelection) then) =
       __$$_SnapSelectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String name, String channel, bool classic});
 }
 
 /// @nodoc
 class __$$_SnapSelectionCopyWithImpl<$Res>
-    extends _$SnapSelectionCopyWithImpl<$Res>
+    extends _$SnapSelectionCopyWithImpl<$Res, _$_SnapSelection>
     implements _$$_SnapSelectionCopyWith<$Res> {
   __$$_SnapSelectionCopyWithImpl(
       _$_SnapSelection _value, $Res Function(_$_SnapSelection) _then)
-      : super(_value, (v) => _then(v as _$_SnapSelection));
+      : super(_value, _then);
 
-  @override
-  _$_SnapSelection get _value => super._value as _$_SnapSelection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? channel = freezed,
-    Object? classic = freezed,
+    Object? name = null,
+    Object? channel = null,
+    Object? classic = null,
   }) {
     return _then(_$_SnapSelection(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      channel: channel == freezed
+      channel: null == channel
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as String,
-      classic: classic == freezed
+      classic: null == classic
           ? _value.classic
           : classic // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -8926,21 +8953,18 @@ class _$_SnapSelection implements _SnapSelection {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SnapSelection &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.channel, channel) &&
-            const DeepCollectionEquality().equals(other.classic, classic));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.channel, channel) || other.channel == channel) &&
+            (identical(other.classic, classic) || other.classic == classic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(channel),
-      const DeepCollectionEquality().hash(classic));
+  int get hashCode => Object.hash(runtimeType, name, channel, classic);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SnapSelectionCopyWith<_$_SnapSelection> get copyWith =>
       __$$_SnapSelectionCopyWithImpl<_$_SnapSelection>(this, _$identity);
 
@@ -8993,7 +9017,8 @@ mixin _$SnapListResponse {
 abstract class $SnapListResponseCopyWith<$Res> {
   factory $SnapListResponseCopyWith(
           SnapListResponse value, $Res Function(SnapListResponse) then) =
-      _$SnapListResponseCopyWithImpl<$Res>;
+      _$SnapListResponseCopyWithImpl<$Res, SnapListResponse>;
+  @useResult
   $Res call(
       {SnapCheckState status,
       List<SnapInfo> snaps,
@@ -9001,34 +9026,36 @@ abstract class $SnapListResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SnapListResponseCopyWithImpl<$Res>
+class _$SnapListResponseCopyWithImpl<$Res, $Val extends SnapListResponse>
     implements $SnapListResponseCopyWith<$Res> {
   _$SnapListResponseCopyWithImpl(this._value, this._then);
 
-  final SnapListResponse _value;
   // ignore: unused_field
-  final $Res Function(SnapListResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? snaps = freezed,
-    Object? selections = freezed,
+    Object? status = null,
+    Object? snaps = null,
+    Object? selections = null,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SnapCheckState,
-      snaps: snaps == freezed
+      snaps: null == snaps
           ? _value.snaps
           : snaps // ignore: cast_nullable_to_non_nullable
               as List<SnapInfo>,
-      selections: selections == freezed
+      selections: null == selections
           ? _value.selections
           : selections // ignore: cast_nullable_to_non_nullable
               as List<SnapSelection>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9039,6 +9066,7 @@ abstract class _$$_SnapListResponseCopyWith<$Res>
           _$_SnapListResponse value, $Res Function(_$_SnapListResponse) then) =
       __$$_SnapListResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {SnapCheckState status,
       List<SnapInfo> snaps,
@@ -9047,31 +9075,29 @@ abstract class _$$_SnapListResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_SnapListResponseCopyWithImpl<$Res>
-    extends _$SnapListResponseCopyWithImpl<$Res>
+    extends _$SnapListResponseCopyWithImpl<$Res, _$_SnapListResponse>
     implements _$$_SnapListResponseCopyWith<$Res> {
   __$$_SnapListResponseCopyWithImpl(
       _$_SnapListResponse _value, $Res Function(_$_SnapListResponse) _then)
-      : super(_value, (v) => _then(v as _$_SnapListResponse));
+      : super(_value, _then);
 
-  @override
-  _$_SnapListResponse get _value => super._value as _$_SnapListResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? snaps = freezed,
-    Object? selections = freezed,
+    Object? status = null,
+    Object? snaps = null,
+    Object? selections = null,
   }) {
     return _then(_$_SnapListResponse(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SnapCheckState,
-      snaps: snaps == freezed
+      snaps: null == snaps
           ? _value._snaps
           : snaps // ignore: cast_nullable_to_non_nullable
               as List<SnapInfo>,
-      selections: selections == freezed
+      selections: null == selections
           ? _value._selections
           : selections // ignore: cast_nullable_to_non_nullable
               as List<SnapSelection>,
@@ -9120,7 +9146,7 @@ class _$_SnapListResponse implements _SnapListResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SnapListResponse &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._snaps, _snaps) &&
             const DeepCollectionEquality()
                 .equals(other._selections, _selections));
@@ -9130,12 +9156,13 @@ class _$_SnapListResponse implements _SnapListResponse {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(status),
+      status,
       const DeepCollectionEquality().hash(_snaps),
       const DeepCollectionEquality().hash(_selections));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SnapListResponseCopyWith<_$_SnapListResponse> get copyWith =>
       __$$_SnapListResponseCopyWithImpl<_$_SnapListResponse>(this, _$identity);
 
@@ -9187,33 +9214,37 @@ mixin _$TimeZoneInfo {
 abstract class $TimeZoneInfoCopyWith<$Res> {
   factory $TimeZoneInfoCopyWith(
           TimeZoneInfo value, $Res Function(TimeZoneInfo) then) =
-      _$TimeZoneInfoCopyWithImpl<$Res>;
+      _$TimeZoneInfoCopyWithImpl<$Res, TimeZoneInfo>;
+  @useResult
   $Res call({String timezone, bool fromGeoip});
 }
 
 /// @nodoc
-class _$TimeZoneInfoCopyWithImpl<$Res> implements $TimeZoneInfoCopyWith<$Res> {
+class _$TimeZoneInfoCopyWithImpl<$Res, $Val extends TimeZoneInfo>
+    implements $TimeZoneInfoCopyWith<$Res> {
   _$TimeZoneInfoCopyWithImpl(this._value, this._then);
 
-  final TimeZoneInfo _value;
   // ignore: unused_field
-  final $Res Function(TimeZoneInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
+    Object? timezone = null,
+    Object? fromGeoip = null,
   }) {
     return _then(_value.copyWith(
-      timezone: timezone == freezed
+      timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
-      fromGeoip: fromGeoip == freezed
+      fromGeoip: null == fromGeoip
           ? _value.fromGeoip
           : fromGeoip // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9224,31 +9255,30 @@ abstract class _$$_TimeZoneInfoCopyWith<$Res>
           _$_TimeZoneInfo value, $Res Function(_$_TimeZoneInfo) then) =
       __$$_TimeZoneInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String timezone, bool fromGeoip});
 }
 
 /// @nodoc
 class __$$_TimeZoneInfoCopyWithImpl<$Res>
-    extends _$TimeZoneInfoCopyWithImpl<$Res>
+    extends _$TimeZoneInfoCopyWithImpl<$Res, _$_TimeZoneInfo>
     implements _$$_TimeZoneInfoCopyWith<$Res> {
   __$$_TimeZoneInfoCopyWithImpl(
       _$_TimeZoneInfo _value, $Res Function(_$_TimeZoneInfo) _then)
-      : super(_value, (v) => _then(v as _$_TimeZoneInfo));
+      : super(_value, _then);
 
-  @override
-  _$_TimeZoneInfo get _value => super._value as _$_TimeZoneInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timezone = freezed,
-    Object? fromGeoip = freezed,
+    Object? timezone = null,
+    Object? fromGeoip = null,
   }) {
     return _then(_$_TimeZoneInfo(
-      timezone: timezone == freezed
+      timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
-      fromGeoip: fromGeoip == freezed
+      fromGeoip: null == fromGeoip
           ? _value.fromGeoip
           : fromGeoip // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -9279,19 +9309,19 @@ class _$_TimeZoneInfo implements _TimeZoneInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TimeZoneInfo &&
-            const DeepCollectionEquality().equals(other.timezone, timezone) &&
-            const DeepCollectionEquality().equals(other.fromGeoip, fromGeoip));
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.fromGeoip, fromGeoip) ||
+                other.fromGeoip == fromGeoip));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(timezone),
-      const DeepCollectionEquality().hash(fromGeoip));
+  int get hashCode => Object.hash(runtimeType, timezone, fromGeoip);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TimeZoneInfoCopyWith<_$_TimeZoneInfo> get copyWith =>
       __$$_TimeZoneInfoCopyWithImpl<_$_TimeZoneInfo>(this, _$identity);
 
@@ -9339,29 +9369,32 @@ mixin _$UbuntuProInfo {
 abstract class $UbuntuProInfoCopyWith<$Res> {
   factory $UbuntuProInfoCopyWith(
           UbuntuProInfo value, $Res Function(UbuntuProInfo) then) =
-      _$UbuntuProInfoCopyWithImpl<$Res>;
+      _$UbuntuProInfoCopyWithImpl<$Res, UbuntuProInfo>;
+  @useResult
   $Res call({String token});
 }
 
 /// @nodoc
-class _$UbuntuProInfoCopyWithImpl<$Res>
+class _$UbuntuProInfoCopyWithImpl<$Res, $Val extends UbuntuProInfo>
     implements $UbuntuProInfoCopyWith<$Res> {
   _$UbuntuProInfoCopyWithImpl(this._value, this._then);
 
-  final UbuntuProInfo _value;
   // ignore: unused_field
-  final $Res Function(UbuntuProInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
+    Object? token = null,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9372,26 +9405,25 @@ abstract class _$$_UbuntuProInfoCopyWith<$Res>
           _$_UbuntuProInfo value, $Res Function(_$_UbuntuProInfo) then) =
       __$$_UbuntuProInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String token});
 }
 
 /// @nodoc
 class __$$_UbuntuProInfoCopyWithImpl<$Res>
-    extends _$UbuntuProInfoCopyWithImpl<$Res>
+    extends _$UbuntuProInfoCopyWithImpl<$Res, _$_UbuntuProInfo>
     implements _$$_UbuntuProInfoCopyWith<$Res> {
   __$$_UbuntuProInfoCopyWithImpl(
       _$_UbuntuProInfo _value, $Res Function(_$_UbuntuProInfo) _then)
-      : super(_value, (v) => _then(v as _$_UbuntuProInfo));
+      : super(_value, _then);
 
-  @override
-  _$_UbuntuProInfo get _value => super._value as _$_UbuntuProInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
+    Object? token = null,
   }) {
     return _then(_$_UbuntuProInfo(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
@@ -9420,16 +9452,16 @@ class _$_UbuntuProInfo implements _UbuntuProInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UbuntuProInfo &&
-            const DeepCollectionEquality().equals(other.token, token));
+            (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(token));
+  int get hashCode => Object.hash(runtimeType, token);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UbuntuProInfoCopyWith<_$_UbuntuProInfo> get copyWith =>
       __$$_UbuntuProInfoCopyWithImpl<_$_UbuntuProInfo>(this, _$identity);
 
@@ -9475,34 +9507,37 @@ mixin _$UbuntuProResponse {
 abstract class $UbuntuProResponseCopyWith<$Res> {
   factory $UbuntuProResponseCopyWith(
           UbuntuProResponse value, $Res Function(UbuntuProResponse) then) =
-      _$UbuntuProResponseCopyWithImpl<$Res>;
+      _$UbuntuProResponseCopyWithImpl<$Res, UbuntuProResponse>;
+  @useResult
   $Res call({String token, bool hasNetwork});
 }
 
 /// @nodoc
-class _$UbuntuProResponseCopyWithImpl<$Res>
+class _$UbuntuProResponseCopyWithImpl<$Res, $Val extends UbuntuProResponse>
     implements $UbuntuProResponseCopyWith<$Res> {
   _$UbuntuProResponseCopyWithImpl(this._value, this._then);
 
-  final UbuntuProResponse _value;
   // ignore: unused_field
-  final $Res Function(UbuntuProResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? hasNetwork = freezed,
+    Object? token = null,
+    Object? hasNetwork = null,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      hasNetwork: hasNetwork == freezed
+      hasNetwork: null == hasNetwork
           ? _value.hasNetwork
           : hasNetwork // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9513,31 +9548,30 @@ abstract class _$$_UbuntuProResponseCopyWith<$Res>
           $Res Function(_$_UbuntuProResponse) then) =
       __$$_UbuntuProResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String token, bool hasNetwork});
 }
 
 /// @nodoc
 class __$$_UbuntuProResponseCopyWithImpl<$Res>
-    extends _$UbuntuProResponseCopyWithImpl<$Res>
+    extends _$UbuntuProResponseCopyWithImpl<$Res, _$_UbuntuProResponse>
     implements _$$_UbuntuProResponseCopyWith<$Res> {
   __$$_UbuntuProResponseCopyWithImpl(
       _$_UbuntuProResponse _value, $Res Function(_$_UbuntuProResponse) _then)
-      : super(_value, (v) => _then(v as _$_UbuntuProResponse));
+      : super(_value, _then);
 
-  @override
-  _$_UbuntuProResponse get _value => super._value as _$_UbuntuProResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? hasNetwork = freezed,
+    Object? token = null,
+    Object? hasNetwork = null,
   }) {
     return _then(_$_UbuntuProResponse(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      hasNetwork: hasNetwork == freezed
+      hasNetwork: null == hasNetwork
           ? _value.hasNetwork
           : hasNetwork // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -9568,20 +9602,18 @@ class _$_UbuntuProResponse implements _UbuntuProResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UbuntuProResponse &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality()
-                .equals(other.hasNetwork, hasNetwork));
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.hasNetwork, hasNetwork) ||
+                other.hasNetwork == hasNetwork));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(hasNetwork));
+  int get hashCode => Object.hash(runtimeType, token, hasNetwork);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UbuntuProResponseCopyWith<_$_UbuntuProResponse> get copyWith =>
       __$$_UbuntuProResponseCopyWithImpl<_$_UbuntuProResponse>(
           this, _$identity);
@@ -9631,34 +9663,38 @@ mixin _$UPCSInitiateResponse {
 abstract class $UPCSInitiateResponseCopyWith<$Res> {
   factory $UPCSInitiateResponseCopyWith(UPCSInitiateResponse value,
           $Res Function(UPCSInitiateResponse) then) =
-      _$UPCSInitiateResponseCopyWithImpl<$Res>;
+      _$UPCSInitiateResponseCopyWithImpl<$Res, UPCSInitiateResponse>;
+  @useResult
   $Res call({String userCode, int validitySeconds});
 }
 
 /// @nodoc
-class _$UPCSInitiateResponseCopyWithImpl<$Res>
+class _$UPCSInitiateResponseCopyWithImpl<$Res,
+        $Val extends UPCSInitiateResponse>
     implements $UPCSInitiateResponseCopyWith<$Res> {
   _$UPCSInitiateResponseCopyWithImpl(this._value, this._then);
 
-  final UPCSInitiateResponse _value;
   // ignore: unused_field
-  final $Res Function(UPCSInitiateResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userCode = freezed,
-    Object? validitySeconds = freezed,
+    Object? userCode = null,
+    Object? validitySeconds = null,
   }) {
     return _then(_value.copyWith(
-      userCode: userCode == freezed
+      userCode: null == userCode
           ? _value.userCode
           : userCode // ignore: cast_nullable_to_non_nullable
               as String,
-      validitySeconds: validitySeconds == freezed
+      validitySeconds: null == validitySeconds
           ? _value.validitySeconds
           : validitySeconds // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9669,31 +9705,30 @@ abstract class _$$_UPCSInitiateResponseCopyWith<$Res>
           $Res Function(_$_UPCSInitiateResponse) then) =
       __$$_UPCSInitiateResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String userCode, int validitySeconds});
 }
 
 /// @nodoc
 class __$$_UPCSInitiateResponseCopyWithImpl<$Res>
-    extends _$UPCSInitiateResponseCopyWithImpl<$Res>
+    extends _$UPCSInitiateResponseCopyWithImpl<$Res, _$_UPCSInitiateResponse>
     implements _$$_UPCSInitiateResponseCopyWith<$Res> {
   __$$_UPCSInitiateResponseCopyWithImpl(_$_UPCSInitiateResponse _value,
       $Res Function(_$_UPCSInitiateResponse) _then)
-      : super(_value, (v) => _then(v as _$_UPCSInitiateResponse));
+      : super(_value, _then);
 
-  @override
-  _$_UPCSInitiateResponse get _value => super._value as _$_UPCSInitiateResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userCode = freezed,
-    Object? validitySeconds = freezed,
+    Object? userCode = null,
+    Object? validitySeconds = null,
   }) {
     return _then(_$_UPCSInitiateResponse(
-      userCode: userCode == freezed
+      userCode: null == userCode
           ? _value.userCode
           : userCode // ignore: cast_nullable_to_non_nullable
               as String,
-      validitySeconds: validitySeconds == freezed
+      validitySeconds: null == validitySeconds
           ? _value.validitySeconds
           : validitySeconds // ignore: cast_nullable_to_non_nullable
               as int,
@@ -9725,20 +9760,19 @@ class _$_UPCSInitiateResponse implements _UPCSInitiateResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UPCSInitiateResponse &&
-            const DeepCollectionEquality().equals(other.userCode, userCode) &&
-            const DeepCollectionEquality()
-                .equals(other.validitySeconds, validitySeconds));
+            (identical(other.userCode, userCode) ||
+                other.userCode == userCode) &&
+            (identical(other.validitySeconds, validitySeconds) ||
+                other.validitySeconds == validitySeconds));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(userCode),
-      const DeepCollectionEquality().hash(validitySeconds));
+  int get hashCode => Object.hash(runtimeType, userCode, validitySeconds);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UPCSInitiateResponseCopyWith<_$_UPCSInitiateResponse> get copyWith =>
       __$$_UPCSInitiateResponseCopyWithImpl<_$_UPCSInitiateResponse>(
           this, _$identity);
@@ -9788,34 +9822,37 @@ mixin _$UPCSWaitResponse {
 abstract class $UPCSWaitResponseCopyWith<$Res> {
   factory $UPCSWaitResponseCopyWith(
           UPCSWaitResponse value, $Res Function(UPCSWaitResponse) then) =
-      _$UPCSWaitResponseCopyWithImpl<$Res>;
+      _$UPCSWaitResponseCopyWithImpl<$Res, UPCSWaitResponse>;
+  @useResult
   $Res call({UPCSWaitStatus status, String? contractToken});
 }
 
 /// @nodoc
-class _$UPCSWaitResponseCopyWithImpl<$Res>
+class _$UPCSWaitResponseCopyWithImpl<$Res, $Val extends UPCSWaitResponse>
     implements $UPCSWaitResponseCopyWith<$Res> {
   _$UPCSWaitResponseCopyWithImpl(this._value, this._then);
 
-  final UPCSWaitResponse _value;
   // ignore: unused_field
-  final $Res Function(UPCSWaitResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? contractToken = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UPCSWaitStatus,
-      contractToken: contractToken == freezed
+      contractToken: freezed == contractToken
           ? _value.contractToken
           : contractToken // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9826,31 +9863,30 @@ abstract class _$$_UPCSWaitResponseCopyWith<$Res>
           _$_UPCSWaitResponse value, $Res Function(_$_UPCSWaitResponse) then) =
       __$$_UPCSWaitResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({UPCSWaitStatus status, String? contractToken});
 }
 
 /// @nodoc
 class __$$_UPCSWaitResponseCopyWithImpl<$Res>
-    extends _$UPCSWaitResponseCopyWithImpl<$Res>
+    extends _$UPCSWaitResponseCopyWithImpl<$Res, _$_UPCSWaitResponse>
     implements _$$_UPCSWaitResponseCopyWith<$Res> {
   __$$_UPCSWaitResponseCopyWithImpl(
       _$_UPCSWaitResponse _value, $Res Function(_$_UPCSWaitResponse) _then)
-      : super(_value, (v) => _then(v as _$_UPCSWaitResponse));
+      : super(_value, _then);
 
-  @override
-  _$_UPCSWaitResponse get _value => super._value as _$_UPCSWaitResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? contractToken = freezed,
   }) {
     return _then(_$_UPCSWaitResponse(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UPCSWaitStatus,
-      contractToken: contractToken == freezed
+      contractToken: freezed == contractToken
           ? _value.contractToken
           : contractToken // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -9882,20 +9918,18 @@ class _$_UPCSWaitResponse implements _UPCSWaitResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UPCSWaitResponse &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.contractToken, contractToken));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.contractToken, contractToken) ||
+                other.contractToken == contractToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(contractToken));
+  int get hashCode => Object.hash(runtimeType, status, contractToken);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UPCSWaitResponseCopyWith<_$_UPCSWaitResponse> get copyWith =>
       __$$_UPCSWaitResponseCopyWithImpl<_$_UPCSWaitResponse>(this, _$identity);
 
@@ -9945,39 +9979,42 @@ mixin _$UbuntuProService {
 abstract class $UbuntuProServiceCopyWith<$Res> {
   factory $UbuntuProServiceCopyWith(
           UbuntuProService value, $Res Function(UbuntuProService) then) =
-      _$UbuntuProServiceCopyWithImpl<$Res>;
+      _$UbuntuProServiceCopyWithImpl<$Res, UbuntuProService>;
+  @useResult
   $Res call({String name, String description, bool autoEnabled});
 }
 
 /// @nodoc
-class _$UbuntuProServiceCopyWithImpl<$Res>
+class _$UbuntuProServiceCopyWithImpl<$Res, $Val extends UbuntuProService>
     implements $UbuntuProServiceCopyWith<$Res> {
   _$UbuntuProServiceCopyWithImpl(this._value, this._then);
 
-  final UbuntuProService _value;
   // ignore: unused_field
-  final $Res Function(UbuntuProService) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? autoEnabled = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? autoEnabled = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      autoEnabled: autoEnabled == freezed
+      autoEnabled: null == autoEnabled
           ? _value.autoEnabled
           : autoEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -9988,36 +10025,35 @@ abstract class _$$_UbuntuProServiceCopyWith<$Res>
           _$_UbuntuProService value, $Res Function(_$_UbuntuProService) then) =
       __$$_UbuntuProServiceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String name, String description, bool autoEnabled});
 }
 
 /// @nodoc
 class __$$_UbuntuProServiceCopyWithImpl<$Res>
-    extends _$UbuntuProServiceCopyWithImpl<$Res>
+    extends _$UbuntuProServiceCopyWithImpl<$Res, _$_UbuntuProService>
     implements _$$_UbuntuProServiceCopyWith<$Res> {
   __$$_UbuntuProServiceCopyWithImpl(
       _$_UbuntuProService _value, $Res Function(_$_UbuntuProService) _then)
-      : super(_value, (v) => _then(v as _$_UbuntuProService));
+      : super(_value, _then);
 
-  @override
-  _$_UbuntuProService get _value => super._value as _$_UbuntuProService;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? autoEnabled = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? autoEnabled = null,
   }) {
     return _then(_$_UbuntuProService(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      autoEnabled: autoEnabled == freezed
+      autoEnabled: null == autoEnabled
           ? _value.autoEnabled
           : autoEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -10053,23 +10089,20 @@ class _$_UbuntuProService implements _UbuntuProService {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UbuntuProService &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality()
-                .equals(other.autoEnabled, autoEnabled));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.autoEnabled, autoEnabled) ||
+                other.autoEnabled == autoEnabled));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(autoEnabled));
+  int get hashCode => Object.hash(runtimeType, name, description, autoEnabled);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UbuntuProServiceCopyWith<_$_UbuntuProService> get copyWith =>
       __$$_UbuntuProServiceCopyWithImpl<_$_UbuntuProService>(this, _$identity);
 
@@ -10124,7 +10157,8 @@ mixin _$UbuntuProSubscription {
 abstract class $UbuntuProSubscriptionCopyWith<$Res> {
   factory $UbuntuProSubscriptionCopyWith(UbuntuProSubscription value,
           $Res Function(UbuntuProSubscription) then) =
-      _$UbuntuProSubscriptionCopyWithImpl<$Res>;
+      _$UbuntuProSubscriptionCopyWithImpl<$Res, UbuntuProSubscription>;
+  @useResult
   $Res call(
       {String contractName,
       String accountName,
@@ -10133,39 +10167,42 @@ abstract class $UbuntuProSubscriptionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UbuntuProSubscriptionCopyWithImpl<$Res>
+class _$UbuntuProSubscriptionCopyWithImpl<$Res,
+        $Val extends UbuntuProSubscription>
     implements $UbuntuProSubscriptionCopyWith<$Res> {
   _$UbuntuProSubscriptionCopyWithImpl(this._value, this._then);
 
-  final UbuntuProSubscription _value;
   // ignore: unused_field
-  final $Res Function(UbuntuProSubscription) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contractName = freezed,
-    Object? accountName = freezed,
-    Object? contractToken = freezed,
-    Object? services = freezed,
+    Object? contractName = null,
+    Object? accountName = null,
+    Object? contractToken = null,
+    Object? services = null,
   }) {
     return _then(_value.copyWith(
-      contractName: contractName == freezed
+      contractName: null == contractName
           ? _value.contractName
           : contractName // ignore: cast_nullable_to_non_nullable
               as String,
-      accountName: accountName == freezed
+      accountName: null == accountName
           ? _value.accountName
           : accountName // ignore: cast_nullable_to_non_nullable
               as String,
-      contractToken: contractToken == freezed
+      contractToken: null == contractToken
           ? _value.contractToken
           : contractToken // ignore: cast_nullable_to_non_nullable
               as String,
-      services: services == freezed
+      services: null == services
           ? _value.services
           : services // ignore: cast_nullable_to_non_nullable
               as List<UbuntuProService>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -10176,6 +10213,7 @@ abstract class _$$_UbuntuProSubscriptionCopyWith<$Res>
           $Res Function(_$_UbuntuProSubscription) then) =
       __$$_UbuntuProSubscriptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String contractName,
       String accountName,
@@ -10185,37 +10223,34 @@ abstract class _$$_UbuntuProSubscriptionCopyWith<$Res>
 
 /// @nodoc
 class __$$_UbuntuProSubscriptionCopyWithImpl<$Res>
-    extends _$UbuntuProSubscriptionCopyWithImpl<$Res>
+    extends _$UbuntuProSubscriptionCopyWithImpl<$Res, _$_UbuntuProSubscription>
     implements _$$_UbuntuProSubscriptionCopyWith<$Res> {
   __$$_UbuntuProSubscriptionCopyWithImpl(_$_UbuntuProSubscription _value,
       $Res Function(_$_UbuntuProSubscription) _then)
-      : super(_value, (v) => _then(v as _$_UbuntuProSubscription));
+      : super(_value, _then);
 
-  @override
-  _$_UbuntuProSubscription get _value =>
-      super._value as _$_UbuntuProSubscription;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? contractName = freezed,
-    Object? accountName = freezed,
-    Object? contractToken = freezed,
-    Object? services = freezed,
+    Object? contractName = null,
+    Object? accountName = null,
+    Object? contractToken = null,
+    Object? services = null,
   }) {
     return _then(_$_UbuntuProSubscription(
-      contractName: contractName == freezed
+      contractName: null == contractName
           ? _value.contractName
           : contractName // ignore: cast_nullable_to_non_nullable
               as String,
-      accountName: accountName == freezed
+      accountName: null == accountName
           ? _value.accountName
           : accountName // ignore: cast_nullable_to_non_nullable
               as String,
-      contractToken: contractToken == freezed
+      contractToken: null == contractToken
           ? _value.contractToken
           : contractToken // ignore: cast_nullable_to_non_nullable
               as String,
-      services: services == freezed
+      services: null == services
           ? _value._services
           : services // ignore: cast_nullable_to_non_nullable
               as List<UbuntuProService>,
@@ -10259,26 +10294,23 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UbuntuProSubscription &&
-            const DeepCollectionEquality()
-                .equals(other.contractName, contractName) &&
-            const DeepCollectionEquality()
-                .equals(other.accountName, accountName) &&
-            const DeepCollectionEquality()
-                .equals(other.contractToken, contractToken) &&
+            (identical(other.contractName, contractName) ||
+                other.contractName == contractName) &&
+            (identical(other.accountName, accountName) ||
+                other.accountName == accountName) &&
+            (identical(other.contractToken, contractToken) ||
+                other.contractToken == contractToken) &&
             const DeepCollectionEquality().equals(other._services, _services));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(contractName),
-      const DeepCollectionEquality().hash(accountName),
-      const DeepCollectionEquality().hash(contractToken),
-      const DeepCollectionEquality().hash(_services));
+  int get hashCode => Object.hash(runtimeType, contractName, accountName,
+      contractToken, const DeepCollectionEquality().hash(_services));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UbuntuProSubscriptionCopyWith<_$_UbuntuProSubscription> get copyWith =>
       __$$_UbuntuProSubscriptionCopyWithImpl<_$_UbuntuProSubscription>(
           this, _$identity);
@@ -10336,7 +10368,8 @@ mixin _$UbuntuProCheckTokenAnswer {
 abstract class $UbuntuProCheckTokenAnswerCopyWith<$Res> {
   factory $UbuntuProCheckTokenAnswerCopyWith(UbuntuProCheckTokenAnswer value,
           $Res Function(UbuntuProCheckTokenAnswer) then) =
-      _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
+      _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res, UbuntuProCheckTokenAnswer>;
+  @useResult
   $Res call(
       {UbuntuProCheckTokenStatus status, UbuntuProSubscription? subscription});
 
@@ -10344,39 +10377,43 @@ abstract class $UbuntuProCheckTokenAnswerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
+class _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res,
+        $Val extends UbuntuProCheckTokenAnswer>
     implements $UbuntuProCheckTokenAnswerCopyWith<$Res> {
   _$UbuntuProCheckTokenAnswerCopyWithImpl(this._value, this._then);
 
-  final UbuntuProCheckTokenAnswer _value;
   // ignore: unused_field
-  final $Res Function(UbuntuProCheckTokenAnswer) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? subscription = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UbuntuProCheckTokenStatus,
-      subscription: subscription == freezed
+      subscription: freezed == subscription
           ? _value.subscription
           : subscription // ignore: cast_nullable_to_non_nullable
               as UbuntuProSubscription?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UbuntuProSubscriptionCopyWith<$Res>? get subscription {
     if (_value.subscription == null) {
       return null;
     }
 
     return $UbuntuProSubscriptionCopyWith<$Res>(_value.subscription!, (value) {
-      return _then(_value.copyWith(subscription: value));
+      return _then(_value.copyWith(subscription: value) as $Val);
     });
   }
 }
@@ -10389,6 +10426,7 @@ abstract class _$$_UbuntuProCheckTokenAnswerCopyWith<$Res>
           $Res Function(_$_UbuntuProCheckTokenAnswer) then) =
       __$$_UbuntuProCheckTokenAnswerCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UbuntuProCheckTokenStatus status, UbuntuProSubscription? subscription});
 
@@ -10398,28 +10436,26 @@ abstract class _$$_UbuntuProCheckTokenAnswerCopyWith<$Res>
 
 /// @nodoc
 class __$$_UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
-    extends _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res>
+    extends _$UbuntuProCheckTokenAnswerCopyWithImpl<$Res,
+        _$_UbuntuProCheckTokenAnswer>
     implements _$$_UbuntuProCheckTokenAnswerCopyWith<$Res> {
   __$$_UbuntuProCheckTokenAnswerCopyWithImpl(
       _$_UbuntuProCheckTokenAnswer _value,
       $Res Function(_$_UbuntuProCheckTokenAnswer) _then)
-      : super(_value, (v) => _then(v as _$_UbuntuProCheckTokenAnswer));
+      : super(_value, _then);
 
-  @override
-  _$_UbuntuProCheckTokenAnswer get _value =>
-      super._value as _$_UbuntuProCheckTokenAnswer;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? subscription = freezed,
   }) {
     return _then(_$_UbuntuProCheckTokenAnswer(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UbuntuProCheckTokenStatus,
-      subscription: subscription == freezed
+      subscription: freezed == subscription
           ? _value.subscription
           : subscription // ignore: cast_nullable_to_non_nullable
               as UbuntuProSubscription?,
@@ -10451,20 +10487,18 @@ class _$_UbuntuProCheckTokenAnswer implements _UbuntuProCheckTokenAnswer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UbuntuProCheckTokenAnswer &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.subscription, subscription));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.subscription, subscription) ||
+                other.subscription == subscription));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(subscription));
+  int get hashCode => Object.hash(runtimeType, status, subscription);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UbuntuProCheckTokenAnswerCopyWith<_$_UbuntuProCheckTokenAnswer>
       get copyWith => __$$_UbuntuProCheckTokenAnswerCopyWithImpl<
           _$_UbuntuProCheckTokenAnswer>(this, _$identity);
@@ -10517,7 +10551,8 @@ mixin _$WSLConfigurationBase {
 abstract class $WSLConfigurationBaseCopyWith<$Res> {
   factory $WSLConfigurationBaseCopyWith(WSLConfigurationBase value,
           $Res Function(WSLConfigurationBase) then) =
-      _$WSLConfigurationBaseCopyWithImpl<$Res>;
+      _$WSLConfigurationBaseCopyWithImpl<$Res, WSLConfigurationBase>;
+  @useResult
   $Res call(
       {String automountRoot,
       String automountOptions,
@@ -10526,39 +10561,42 @@ abstract class $WSLConfigurationBaseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WSLConfigurationBaseCopyWithImpl<$Res>
+class _$WSLConfigurationBaseCopyWithImpl<$Res,
+        $Val extends WSLConfigurationBase>
     implements $WSLConfigurationBaseCopyWith<$Res> {
   _$WSLConfigurationBaseCopyWithImpl(this._value, this._then);
 
-  final WSLConfigurationBase _value;
   // ignore: unused_field
-  final $Res Function(WSLConfigurationBase) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? automountRoot = freezed,
-    Object? automountOptions = freezed,
-    Object? networkGeneratehosts = freezed,
-    Object? networkGenerateresolvconf = freezed,
+    Object? automountRoot = null,
+    Object? automountOptions = null,
+    Object? networkGeneratehosts = null,
+    Object? networkGenerateresolvconf = null,
   }) {
     return _then(_value.copyWith(
-      automountRoot: automountRoot == freezed
+      automountRoot: null == automountRoot
           ? _value.automountRoot
           : automountRoot // ignore: cast_nullable_to_non_nullable
               as String,
-      automountOptions: automountOptions == freezed
+      automountOptions: null == automountOptions
           ? _value.automountOptions
           : automountOptions // ignore: cast_nullable_to_non_nullable
               as String,
-      networkGeneratehosts: networkGeneratehosts == freezed
+      networkGeneratehosts: null == networkGeneratehosts
           ? _value.networkGeneratehosts
           : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool,
-      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+      networkGenerateresolvconf: null == networkGenerateresolvconf
           ? _value.networkGenerateresolvconf
           : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -10569,6 +10607,7 @@ abstract class _$$_WSLConfigurationBaseCopyWith<$Res>
           $Res Function(_$_WSLConfigurationBase) then) =
       __$$_WSLConfigurationBaseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String automountRoot,
       String automountOptions,
@@ -10578,36 +10617,34 @@ abstract class _$$_WSLConfigurationBaseCopyWith<$Res>
 
 /// @nodoc
 class __$$_WSLConfigurationBaseCopyWithImpl<$Res>
-    extends _$WSLConfigurationBaseCopyWithImpl<$Res>
+    extends _$WSLConfigurationBaseCopyWithImpl<$Res, _$_WSLConfigurationBase>
     implements _$$_WSLConfigurationBaseCopyWith<$Res> {
   __$$_WSLConfigurationBaseCopyWithImpl(_$_WSLConfigurationBase _value,
       $Res Function(_$_WSLConfigurationBase) _then)
-      : super(_value, (v) => _then(v as _$_WSLConfigurationBase));
+      : super(_value, _then);
 
-  @override
-  _$_WSLConfigurationBase get _value => super._value as _$_WSLConfigurationBase;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? automountRoot = freezed,
-    Object? automountOptions = freezed,
-    Object? networkGeneratehosts = freezed,
-    Object? networkGenerateresolvconf = freezed,
+    Object? automountRoot = null,
+    Object? automountOptions = null,
+    Object? networkGeneratehosts = null,
+    Object? networkGenerateresolvconf = null,
   }) {
     return _then(_$_WSLConfigurationBase(
-      automountRoot: automountRoot == freezed
+      automountRoot: null == automountRoot
           ? _value.automountRoot
           : automountRoot // ignore: cast_nullable_to_non_nullable
               as String,
-      automountOptions: automountOptions == freezed
+      automountOptions: null == automountOptions
           ? _value.automountOptions
           : automountOptions // ignore: cast_nullable_to_non_nullable
               as String,
-      networkGeneratehosts: networkGeneratehosts == freezed
+      networkGeneratehosts: null == networkGeneratehosts
           ? _value.networkGeneratehosts
           : networkGeneratehosts // ignore: cast_nullable_to_non_nullable
               as bool,
-      networkGenerateresolvconf: networkGenerateresolvconf == freezed
+      networkGenerateresolvconf: null == networkGenerateresolvconf
           ? _value.networkGenerateresolvconf
           : networkGenerateresolvconf // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -10650,27 +10687,25 @@ class _$_WSLConfigurationBase implements _WSLConfigurationBase {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WSLConfigurationBase &&
-            const DeepCollectionEquality()
-                .equals(other.automountRoot, automountRoot) &&
-            const DeepCollectionEquality()
-                .equals(other.automountOptions, automountOptions) &&
-            const DeepCollectionEquality()
-                .equals(other.networkGeneratehosts, networkGeneratehosts) &&
-            const DeepCollectionEquality().equals(
-                other.networkGenerateresolvconf, networkGenerateresolvconf));
+            (identical(other.automountRoot, automountRoot) ||
+                other.automountRoot == automountRoot) &&
+            (identical(other.automountOptions, automountOptions) ||
+                other.automountOptions == automountOptions) &&
+            (identical(other.networkGeneratehosts, networkGeneratehosts) ||
+                other.networkGeneratehosts == networkGeneratehosts) &&
+            (identical(other.networkGenerateresolvconf,
+                    networkGenerateresolvconf) ||
+                other.networkGenerateresolvconf == networkGenerateresolvconf));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(automountRoot),
-      const DeepCollectionEquality().hash(automountOptions),
-      const DeepCollectionEquality().hash(networkGeneratehosts),
-      const DeepCollectionEquality().hash(networkGenerateresolvconf));
+  int get hashCode => Object.hash(runtimeType, automountRoot, automountOptions,
+      networkGeneratehosts, networkGenerateresolvconf);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WSLConfigurationBaseCopyWith<_$_WSLConfigurationBase> get copyWith =>
       __$$_WSLConfigurationBaseCopyWithImpl<_$_WSLConfigurationBase>(
           this, _$identity);
@@ -10730,7 +10765,8 @@ mixin _$WSLConfigurationAdvanced {
 abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
   factory $WSLConfigurationAdvancedCopyWith(WSLConfigurationAdvanced value,
           $Res Function(WSLConfigurationAdvanced) then) =
-      _$WSLConfigurationAdvancedCopyWithImpl<$Res>;
+      _$WSLConfigurationAdvancedCopyWithImpl<$Res, WSLConfigurationAdvanced>;
+  @useResult
   $Res call(
       {bool automountEnabled,
       bool automountMountfstab,
@@ -10740,44 +10776,47 @@ abstract class $WSLConfigurationAdvancedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WSLConfigurationAdvancedCopyWithImpl<$Res>
+class _$WSLConfigurationAdvancedCopyWithImpl<$Res,
+        $Val extends WSLConfigurationAdvanced>
     implements $WSLConfigurationAdvancedCopyWith<$Res> {
   _$WSLConfigurationAdvancedCopyWithImpl(this._value, this._then);
 
-  final WSLConfigurationAdvanced _value;
   // ignore: unused_field
-  final $Res Function(WSLConfigurationAdvanced) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? automountEnabled = freezed,
-    Object? automountMountfstab = freezed,
-    Object? interopEnabled = freezed,
-    Object? interopAppendwindowspath = freezed,
-    Object? systemdEnabled = freezed,
+    Object? automountEnabled = null,
+    Object? automountMountfstab = null,
+    Object? interopEnabled = null,
+    Object? interopAppendwindowspath = null,
+    Object? systemdEnabled = null,
   }) {
     return _then(_value.copyWith(
-      automountEnabled: automountEnabled == freezed
+      automountEnabled: null == automountEnabled
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      automountMountfstab: automountMountfstab == freezed
+      automountMountfstab: null == automountMountfstab
           ? _value.automountMountfstab
           : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool,
-      interopEnabled: interopEnabled == freezed
+      interopEnabled: null == interopEnabled
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      interopAppendwindowspath: interopAppendwindowspath == freezed
+      interopAppendwindowspath: null == interopAppendwindowspath
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemdEnabled: systemdEnabled == freezed
+      systemdEnabled: null == systemdEnabled
           ? _value.systemdEnabled
           : systemdEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -10789,6 +10828,7 @@ abstract class _$$_WSLConfigurationAdvancedCopyWith<$Res>
           $Res Function(_$_WSLConfigurationAdvanced) then) =
       __$$_WSLConfigurationAdvancedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool automountEnabled,
       bool automountMountfstab,
@@ -10799,42 +10839,40 @@ abstract class _$$_WSLConfigurationAdvancedCopyWith<$Res>
 
 /// @nodoc
 class __$$_WSLConfigurationAdvancedCopyWithImpl<$Res>
-    extends _$WSLConfigurationAdvancedCopyWithImpl<$Res>
+    extends _$WSLConfigurationAdvancedCopyWithImpl<$Res,
+        _$_WSLConfigurationAdvanced>
     implements _$$_WSLConfigurationAdvancedCopyWith<$Res> {
   __$$_WSLConfigurationAdvancedCopyWithImpl(_$_WSLConfigurationAdvanced _value,
       $Res Function(_$_WSLConfigurationAdvanced) _then)
-      : super(_value, (v) => _then(v as _$_WSLConfigurationAdvanced));
+      : super(_value, _then);
 
-  @override
-  _$_WSLConfigurationAdvanced get _value =>
-      super._value as _$_WSLConfigurationAdvanced;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? automountEnabled = freezed,
-    Object? automountMountfstab = freezed,
-    Object? interopEnabled = freezed,
-    Object? interopAppendwindowspath = freezed,
-    Object? systemdEnabled = freezed,
+    Object? automountEnabled = null,
+    Object? automountMountfstab = null,
+    Object? interopEnabled = null,
+    Object? interopAppendwindowspath = null,
+    Object? systemdEnabled = null,
   }) {
     return _then(_$_WSLConfigurationAdvanced(
-      automountEnabled: automountEnabled == freezed
+      automountEnabled: null == automountEnabled
           ? _value.automountEnabled
           : automountEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      automountMountfstab: automountMountfstab == freezed
+      automountMountfstab: null == automountMountfstab
           ? _value.automountMountfstab
           : automountMountfstab // ignore: cast_nullable_to_non_nullable
               as bool,
-      interopEnabled: interopEnabled == freezed
+      interopEnabled: null == interopEnabled
           ? _value.interopEnabled
           : interopEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      interopAppendwindowspath: interopAppendwindowspath == freezed
+      interopAppendwindowspath: null == interopAppendwindowspath
           ? _value.interopAppendwindowspath
           : interopAppendwindowspath // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemdEnabled: systemdEnabled == freezed
+      systemdEnabled: null == systemdEnabled
           ? _value.systemdEnabled
           : systemdEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -10881,30 +10919,32 @@ class _$_WSLConfigurationAdvanced implements _WSLConfigurationAdvanced {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WSLConfigurationAdvanced &&
-            const DeepCollectionEquality()
-                .equals(other.automountEnabled, automountEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other.automountMountfstab, automountMountfstab) &&
-            const DeepCollectionEquality()
-                .equals(other.interopEnabled, interopEnabled) &&
-            const DeepCollectionEquality().equals(
-                other.interopAppendwindowspath, interopAppendwindowspath) &&
-            const DeepCollectionEquality()
-                .equals(other.systemdEnabled, systemdEnabled));
+            (identical(other.automountEnabled, automountEnabled) ||
+                other.automountEnabled == automountEnabled) &&
+            (identical(other.automountMountfstab, automountMountfstab) ||
+                other.automountMountfstab == automountMountfstab) &&
+            (identical(other.interopEnabled, interopEnabled) ||
+                other.interopEnabled == interopEnabled) &&
+            (identical(
+                    other.interopAppendwindowspath, interopAppendwindowspath) ||
+                other.interopAppendwindowspath == interopAppendwindowspath) &&
+            (identical(other.systemdEnabled, systemdEnabled) ||
+                other.systemdEnabled == systemdEnabled));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(automountEnabled),
-      const DeepCollectionEquality().hash(automountMountfstab),
-      const DeepCollectionEquality().hash(interopEnabled),
-      const DeepCollectionEquality().hash(interopAppendwindowspath),
-      const DeepCollectionEquality().hash(systemdEnabled));
+      automountEnabled,
+      automountMountfstab,
+      interopEnabled,
+      interopAppendwindowspath,
+      systemdEnabled);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WSLConfigurationAdvancedCopyWith<_$_WSLConfigurationAdvanced>
       get copyWith => __$$_WSLConfigurationAdvancedCopyWithImpl<
           _$_WSLConfigurationAdvanced>(this, _$identity);
@@ -10962,29 +11002,32 @@ mixin _$WSLSetupOptions {
 abstract class $WSLSetupOptionsCopyWith<$Res> {
   factory $WSLSetupOptionsCopyWith(
           WSLSetupOptions value, $Res Function(WSLSetupOptions) then) =
-      _$WSLSetupOptionsCopyWithImpl<$Res>;
+      _$WSLSetupOptionsCopyWithImpl<$Res, WSLSetupOptions>;
+  @useResult
   $Res call({bool installLanguageSupportPackages});
 }
 
 /// @nodoc
-class _$WSLSetupOptionsCopyWithImpl<$Res>
+class _$WSLSetupOptionsCopyWithImpl<$Res, $Val extends WSLSetupOptions>
     implements $WSLSetupOptionsCopyWith<$Res> {
   _$WSLSetupOptionsCopyWithImpl(this._value, this._then);
 
-  final WSLSetupOptions _value;
   // ignore: unused_field
-  final $Res Function(WSLSetupOptions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installLanguageSupportPackages = freezed,
+    Object? installLanguageSupportPackages = null,
   }) {
     return _then(_value.copyWith(
-      installLanguageSupportPackages: installLanguageSupportPackages == freezed
+      installLanguageSupportPackages: null == installLanguageSupportPackages
           ? _value.installLanguageSupportPackages
           : installLanguageSupportPackages // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -10995,26 +11038,25 @@ abstract class _$$_WSLSetupOptionsCopyWith<$Res>
           _$_WSLSetupOptions value, $Res Function(_$_WSLSetupOptions) then) =
       __$$_WSLSetupOptionsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool installLanguageSupportPackages});
 }
 
 /// @nodoc
 class __$$_WSLSetupOptionsCopyWithImpl<$Res>
-    extends _$WSLSetupOptionsCopyWithImpl<$Res>
+    extends _$WSLSetupOptionsCopyWithImpl<$Res, _$_WSLSetupOptions>
     implements _$$_WSLSetupOptionsCopyWith<$Res> {
   __$$_WSLSetupOptionsCopyWithImpl(
       _$_WSLSetupOptions _value, $Res Function(_$_WSLSetupOptions) _then)
-      : super(_value, (v) => _then(v as _$_WSLSetupOptions));
+      : super(_value, _then);
 
-  @override
-  _$_WSLSetupOptions get _value => super._value as _$_WSLSetupOptions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? installLanguageSupportPackages = freezed,
+    Object? installLanguageSupportPackages = null,
   }) {
     return _then(_$_WSLSetupOptions(
-      installLanguageSupportPackages: installLanguageSupportPackages == freezed
+      installLanguageSupportPackages: null == installLanguageSupportPackages
           ? _value.installLanguageSupportPackages
           : installLanguageSupportPackages // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -11044,18 +11086,19 @@ class _$_WSLSetupOptions implements _WSLSetupOptions {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WSLSetupOptions &&
-            const DeepCollectionEquality().equals(
-                other.installLanguageSupportPackages,
-                installLanguageSupportPackages));
+            (identical(other.installLanguageSupportPackages,
+                    installLanguageSupportPackages) ||
+                other.installLanguageSupportPackages ==
+                    installLanguageSupportPackages));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(installLanguageSupportPackages));
+  int get hashCode => Object.hash(runtimeType, installLanguageSupportPackages);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WSLSetupOptionsCopyWith<_$_WSLSetupOptions> get copyWith =>
       __$$_WSLSetupOptionsCopyWithImpl<_$_WSLSetupOptions>(this, _$identity);
 
