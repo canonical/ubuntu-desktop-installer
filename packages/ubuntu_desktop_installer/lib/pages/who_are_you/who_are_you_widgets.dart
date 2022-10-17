@@ -193,12 +193,13 @@ class _ShowPasswordCheckButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     final showPassword =
         context.select<WhoAreYouModel, bool>((model) => model.showPassword);
 
     return CheckButton(
       value: showPassword,
-      title: const Text('Show password'),
+      title: Text(lang.whoAreYouPageShowPassword),
       onChanged: (value) {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.showPassword = value!;

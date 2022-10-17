@@ -132,6 +132,7 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
       ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+      $SNAPCRAFT_PART_INSTALL/usr/bin/flutter doctor
     build-packages:
       - clang
       - cmake
@@ -156,10 +157,9 @@ parts:
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
       mkdir -p $SNAPCRAFT_PART_INSTALL/etc/subiquity
       cp -r snap/local/postinst.d $SNAPCRAFT_PART_INSTALL/etc/subiquity
+      # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
+      (cd packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
-      flutter channel stable
-      flutter upgrade
-      flutter doctor
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
@@ -175,9 +175,6 @@ parts:
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
-      flutter channel stable
-      flutter upgrade
-      flutter doctor
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec

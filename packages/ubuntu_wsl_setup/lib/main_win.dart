@@ -36,13 +36,17 @@ Future<void> main(List<String> args) async {
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final tcpService = TcpSocketService();
   final socketHolder = await tcpService.getRandomPortSocket();
-  final registrationEvent = NamedEvent(
-    'Local\\${options["distro-name"]}-registered',
-  );
-  final closeOobeEvent = NamedEvent(
-    'Local\\${options["distro-name"]}-close-oobe',
-  );
-  closeOobeEvent.future.then((_) => closeWindow());
+
+  final events = isReconf
+      ? null
+      : WslSetupEvents(
+          registration: NamedEvent(
+            'Local\\${options["distro-name"]}-registered',
+          ),
+          closeOobe: NamedEvent(
+            'Local\\${options["distro-name"]}-close-oobe',
+          ),
+        );
 
   // TODO: Handle the null case.
   // That would mean port exhaustion and the simplest way to solve it is by
@@ -62,7 +66,7 @@ Future<void> main(List<String> args) async {
       '--server-only',
       '--tcp-port=${socketHolder.port}'
     ],
-    defer: isReconf ? null : registrationEvent.future,
+    defer: events?.registration.future,
     onProcessStart: socketHolder.close,
   );
 
@@ -108,4 +112,13 @@ Future<void> main(List<String> args) async {
       });
     }
   });
+}
+
+class WslSetupEvents {
+  final NamedEvent registration;
+  final NamedEvent closeOobe;
+
+  WslSetupEvents({required this.registration, required this.closeOobe}) {
+    closeOobe.future.then((_) => closeWindow());
+  }
 }

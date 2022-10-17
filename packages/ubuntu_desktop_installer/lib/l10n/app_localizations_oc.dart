@@ -133,7 +133,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Las claus de seguretat correspondon pas';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Mostrar la clau de seguretat';
 
   @override
   String get connectToInternetPageTitle => 'Se connectar a internet';
@@ -293,7 +293,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM seleccionat';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM e chiframent seleccionats';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -369,7 +369,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num particions mai pichonas son rescondudas, utilizatz <a href=\"$url\">l’aisinas de particionament avançat</a> per mai de contròla';
   }
 
   @override
@@ -609,31 +609,31 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Las particions seguentas seràn formatadas :';
+  String get writeChangesPartitionsHeader => 'Las modificacions seguenta seràn aplicadas a las particions :';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'la particion #$disk${partition} redimensionada de $oldsize a $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'la particion #$disk${partition} formatada en $format utilizada per $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'la particion #$disk${partition} formatada en $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'la particion #$disk${partition} utilizada per $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'particion #$disk${partition} creada';
   }
 
   @override
@@ -702,7 +702,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Acabada la recèrca de novèls logicials sul Web. Amb las logitècas Snap Store e los archius logicials d’ $RELEASE , podètz trobar e installar aisidament d\'aplicacions novèlas. Picatz juste çò que cercatz o exploratz las categorias coma grafismes e fotografia, jòcs o productivitat, acompanhadas de comentaris utils d’autres utilizaires.';
   }
 
   @override
@@ -710,7 +710,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE es liurat amb l’excellent lector de musica Rhythmbox. Gràcias a sas opcions de lectura avançadas, es un jòc d\'enfant de preparar la playlist perfièita. Amai, gerís perfèitament CD e lectors numerics portables, doncas, podètz profeitar de vòstra musica pertot ont anatz.';
   }
 
   @override
@@ -726,7 +726,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get photoSlideTitle => 'Divertissètz vos amb vòstras fòtos';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell es un gestionari de fòtos practic que pòt connectar vòstres periferics. Connectatz un aparelh de fòto o un telefòn per transferir vòstras fòtos, partejatz-las e salvagardatz-las facilament. E se vos sentissètz creatiu, trobaretz un molon d’autras aplicacions per retocar de fòto dins la logitècas Ubuntu.';
 
   @override
   String get photoSlideShotwell => 'Gestionari de fòto Shotwell';
@@ -742,7 +742,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE inclutz Firefox, lo navegador Web utilizat per de milions de personas dins lo monde entièr. E, per un accès mai rapid, podètz penjar sus vòstre burèu las aplicacions Web qu\'utilizatz lo mai sovent (coma Facebook o Gmail per exemple), exactament coma d\'aplicacions sus vòstre ordenador.';
   }
 
   @override
@@ -758,7 +758,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get officeSlideTitle => 'Tot çò que vos fa mestièr pel burèu';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice es una seguida burotica liura liurada amb tot çò que n\'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n\'avètz besonh, sens aver de ne pagar lo prètz.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -774,7 +774,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Al còs de la filosofia d’ $RELEASE se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, los esquèmas de colors e la talha de tèxt, $RELEASE fa venir l’informatica simpla, qual e ont que siatz.';
   }
 
   @override
@@ -794,14 +794,14 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'La documentacion oficiala cobrís los tèmas màgers a prepaus de $RELEASE. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'Sus <a href=\"https://askubuntu.com\">Ask Ubuntu</a>, podètz pausar de questions e recercar dins una colleccion impressionanta de questions qu\'an ja una responsa. L\'assisténcia dins vòstra pròpria lenga pòt èsser provesida per vòstra <a href=\"https://loco.ubuntu.com/teams/\">Equipa comunautària locala</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.';
 
   @override
   String get includedSoftware => 'Logicials incluses';
@@ -816,10 +816,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get copyingFiles => 'Còpia dels fichièrs...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installacion del sistèma…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Configuracion del sistèma…';
 
   @override
   String get installationFailed => 'Fracàs de l’installacion';

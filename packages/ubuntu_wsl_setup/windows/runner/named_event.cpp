@@ -37,7 +37,7 @@ NamedEvent::NamedEvent(std::string name, std::function<void()> callback)
   if (event == nullptr || event == INVALID_HANDLE_VALUE) {
     // the most likely error
     if (GetLastError() == ERROR_FILE_NOT_FOUND) {
-      throw std::invalid_argument(name);
+      throw std::invalid_argument("Event never created");
     } else {
       throw std::runtime_error("Cannot open event");
     }

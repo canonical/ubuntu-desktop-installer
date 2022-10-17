@@ -705,5 +705,9 @@
       "disk": {},
       "partition": {}
     }
-  }
+  },
+  "installationTypeLVMEncryptionSelected": "LVM и шифрование выбраны",
+  "@installationTypeLVMEncryptionSelected": {},
+  "showSecurityKey": "Показать ключ безопасности",
+  "@showSecurityKey": {}
 }

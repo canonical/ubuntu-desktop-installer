@@ -22,6 +22,7 @@ void main() {
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
+    when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
     model.init(onDoneTransition: () => calledBack = true);
@@ -42,6 +43,7 @@ void main() {
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
+    when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
     var calledBackCount = 0;
     model.init(onDoneTransition: () => calledBackCount++);
@@ -59,6 +61,7 @@ void main() {
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
+    when(monitor.status).thenAnswer((_) => statuses[0]);
     final client = MockSubiquityClient();
     final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
@@ -79,12 +82,26 @@ void main() {
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.onStatusChanged)
         .thenAnswer((_) => Stream.fromIterable(statuses));
+    when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
     var calledBack = false;
     model.init(onDoneTransition: () => calledBack = true);
     // Forces the stream to emit.
     await expectLater(monitor.onStatusChanged, emitsThrough(last));
     await expectLater(calledBack, isFalse);
+  });
+  test('skip listening if already DONE', () async {
+    final done = testStatus(ApplicationState.DONE);
+    final client = MockSubiquityClient();
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.status).thenAnswer((_) => done);
+    when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
+    final model = ApplyingChangesModel(client, monitor);
+    var calledBack = false;
+    model.init(onDoneTransition: () => calledBack = true);
+
+    expect(calledBack, isTrue);
+    verifyNever(monitor.onStatusChanged);
   });
 }
 

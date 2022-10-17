@@ -100,7 +100,7 @@
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "Einrichtung abgeschlossen",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Hallo {user},\nSie haben die Einrichtung erfolgreich abgeschlossen.",
+  "setupCompleteHeader": "Hallo {user},\nSie haben die Einrichtung abgeschlossen.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -204,5 +204,16 @@
   "installationSlidesFindOutMoreText": " um mehr über Ubuntu auf WSL zu erfahren und darüber, wie Canonical Entwickler und Organisationen unterstützt.",
   "@installationSlidesFindOutMoreText": {},
   "installationSlidesUbuntuWslDataScienceText": "Mit dem NVIDIA Data Science Stack können Sie die Leistung von Datenanalyse- und Machine-Learning-Projekten auf der Grundlage nativer Windows NVIDIA-Treiber maximieren.",
-  "@installationSlidesUbuntuWslDataScienceText": {}
+  "@installationSlidesUbuntuWslDataScienceText": {},
+  "installLangPacksTitle": "Pakete für bessere {lang} Sprachunterstützung installieren",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Für langsame Verbindungen nicht empfohlen.",
+  "@installLangPacksSubtitle": {}
 }
