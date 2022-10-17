@@ -39,11 +39,13 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
     super.initState();
     final model = Provider.of<ApplyingChangesModel>(context, listen: false);
     model.init(onDoneTransition: () {
-      if (Wizard.of(context).hasNext) {
-        Wizard.of(context).next();
-      } else {
-        model.reboot(immediate: false);
-      }
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && Wizard.of(context).hasNext) {
+          Wizard.of(context).next();
+        } else {
+          model.reboot(immediate: false);
+        }
+      });
     });
   }
 
