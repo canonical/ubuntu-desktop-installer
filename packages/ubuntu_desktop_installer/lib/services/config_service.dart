@@ -45,8 +45,8 @@ extension _KeyValueList on List<String> {
   Map<String, String?> toKeyValueMap() {
     return Map.fromEntries(
       map((line) => line.split('='))
-          .where((parts) => parts.length == 2)
-          .map((parts) => MapEntry(parts.first, parts.last.unquote())),
+          .where((e) => e.length == 2)
+          .map((e) => MapEntry(e.first.trim(), e.last.trim().unquote())),
     );
   }
 }
@@ -54,7 +54,7 @@ extension _KeyValueList on List<String> {
 extension _KeyValueMap on Map<String, String?> {
   List<String> toKeyValueList() {
     return entries
-        .map((entry) => '${entry.key}=${entry.value?.maybeQuote() ?? ''}')
+        .map((e) => '${e.key}=${e.value?.trim().maybeQuote() ?? ''}')
         .toList();
   }
 }

@@ -12,6 +12,7 @@ void main() {
 Num=1
 Empty=
 Str="foo bar"
+Trim=  baz
 ''');
 
     final config = ConfigService(file.path, fs: fs);
@@ -19,6 +20,7 @@ Str="foo bar"
       'Num': '1',
       'Empty': '',
       'Str': 'foo bar',
+      'Trim': 'baz',
     });
   });
 
@@ -39,6 +41,7 @@ Str="foo bar"
       'Num': '1',
       'Empty': '',
       'Str': 'foo bar',
+      'Trim': '  baz  ',
     });
 
     expect(file.existsSync(), isTrue);
@@ -46,6 +49,7 @@ Str="foo bar"
 Num=1
 Empty=
 Str="foo bar"
+Trim=baz
 ''');
   });
 }
