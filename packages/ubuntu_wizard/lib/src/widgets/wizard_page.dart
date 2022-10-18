@@ -19,6 +19,7 @@ class WizardPage extends StatefulWidget {
     this.headerPadding = kHeaderPadding,
     this.content,
     this.contentPadding = kContentPadding,
+    this.contentSpacing = kContentSpacing,
     this.footer,
     this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
@@ -42,6 +43,11 @@ class WizardPage extends StatefulWidget {
   ///
   /// The default value is `kContentPadding`.
   final EdgeInsetsGeometry contentPadding;
+
+  /// The spacing between the content and the header and footer.
+  ///
+  /// The default value is `kContentSpacing`.
+  final double contentSpacing;
 
   /// A footer widget on the side of the buttons.
   final Widget? footer;
@@ -75,12 +81,12 @@ class _WizardPageState extends State<WizardPage> {
                   )
                 : null,
           ),
-          if (widget.header != null) const SizedBox(height: kContentSpacing),
+          if (widget.header != null) SizedBox(height: widget.contentSpacing),
           Expanded(
             child:
                 Padding(padding: widget.contentPadding, child: widget.content),
           ),
-          const SizedBox(height: kContentSpacing),
+          SizedBox(height: widget.contentSpacing),
         ],
       ),
       bottomNavigationBar: Padding(
