@@ -44,8 +44,7 @@ class ConfigService {
 extension _KeyValueList on List<String> {
   Map<String, String?> toKeyValueMap() {
     return Map.fromEntries(
-      where((line) => !line.startsWith('#'))
-          .map((line) => line.split('='))
+      map((line) => line.split('='))
           .where((parts) => parts.length == 2)
           .map((parts) => MapEntry(parts.first, parts.last.unquote())),
     );
