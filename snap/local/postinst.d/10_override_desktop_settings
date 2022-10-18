@@ -6,7 +6,7 @@ target=/target
 source_schemas=/usr/share/glib-2.0/schemas
 target_schemas=$target/$source_schemas
 
-if [ ! -d $source_schemas ] || [ ! -d $target_schemas ] || ! id $user >/dev/null 2>&1; then
+if ! test -d $source_schemas || ! test -d $target_schemas || ! id $user >/dev/null 2>&1; then
     exit
 fi
 
@@ -17,7 +17,7 @@ dconf_dump() {
     sed -i -E "s/^\[([^/]*)\]/\[org.gnome.desktop.$1.\1\]/g" $target_schema
     # - [/] -> [org.gnome.desktop.$1]
     sed -i -E "s/^\[\/\]$/\[org.gnome.desktop.$1\]/g" $target_schema
-    [ -s $target_schema ] || rm $target_schema
+    test -s $target_schema || rm $target_schema
 }
 
 dconf_dump a11y

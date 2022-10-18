@@ -18,3 +18,9 @@ jobs:
       with:
         name: 'snap'
         path: ${{steps.snapcraft.outputs.snap}}
+
+  postinst:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: ./snap/local/postinst.d/test/run_tests.sh
