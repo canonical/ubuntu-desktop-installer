@@ -57,7 +57,11 @@ static void my_application_activate(GApplication* application) {
   gtk_header_bar_set_show_close_button(header_bar, TRUE);
   gtk_header_bar_set_decoration_layout(header_bar, ":close");
   gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
-  gtk_window_set_default_size(window, 960, 680);
+
+  gint header_bar_height = 0;
+  gtk_widget_get_preferred_height(GTK_WIDGET(header_bar), &header_bar_height,
+                                  nullptr);
+  gtk_window_set_default_size(window, 960, 680 + header_bar_height);
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
   fl_dart_project_set_dart_entrypoint_arguments(
