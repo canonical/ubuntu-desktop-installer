@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gsettings/gsettings.dart';
+import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -75,6 +76,9 @@ Future<void> runInstallerApp(
   final geodata = Geodata.asset();
   final geoname = Geoname.ubuntu(geodata: geodata);
 
+  final baseName = p.basename(Platform.resolvedExecutable);
+
+  registerService(() => ConfigService('/tmp/$baseName.conf'));
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(JournalService.new);
