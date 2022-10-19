@@ -34,7 +34,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get yesButtonText => 'Igen';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Kilépés a telepítésből';
 
   @override
   String get welcome => 'Üdvözöljük';
@@ -133,7 +133,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'A biztonsági kulcsok nem egyeznek';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Biztonsági kulcs megjelenítése';
 
   @override
   String get connectToInternetPageTitle => 'Csatlakozás az internethez';
@@ -293,7 +293,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM kiválasztva';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM és titkosítás kiválasztva';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -609,31 +609,31 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'A következő partíciókat fogjuk formázni:';
+  String get writeChangesPartitionsHeader => 'A következő partícióváltozásokat kell alkalmazni:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'partíció #$disk${partition} átméretezve $oldsize -ről $newsize -ra.';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partíció #$disk${partition} formázott $format, amelyet a következő célokra használnak $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partíció #$disk${partition} formázva mint $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partíció #$disk${partition} használt $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partíció #$disk${partition} létrehozott';
   }
 
   @override
@@ -816,29 +816,29 @@ class AppLocalizationsHu extends AppLocalizations {
   String get copyingFiles => 'Fájlok másolása...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Rendszer telepítése...';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Rendszer konfigurálása...';
 
   @override
   String get installationFailed => 'A telepítés sikertelen';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Sajnálom';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'A $RELEASE telepítéséhez legalább $SIZE lemezterületre van szüksége.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Ez a számítógép csak $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'A legnagyobb lemez ezen a számítógépen csak $SIZE.';
   }
 }
