@@ -133,7 +133,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Do každé z kolonek pro klíč zabezpečení jste napsali něco jiného';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Zobrazit klíč zabezpečení';
 
   @override
   String get connectToInternetPageTitle => 'Připojit k Internetu';
@@ -293,7 +293,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationTypeLVMSelected => 'Vybráno LVM';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'Vybráno LVM a šifrování';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -326,17 +326,17 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Nainstalovat $product vedle $os1 a $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Nainstalovat $product vedle nich';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Nainstalovat $product vedle ostatních oddílů';
   }
 
   @override
@@ -365,30 +365,30 @@ class AppLocalizationsCs extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Nainstalovat nyní';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Přidělte prostor na jednotce posunutím dělítka níže:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num menších oddílů skryto. Pokud potřebujete mít nad procesem více kontroly, použijte <a href=\"$url\">nástroj pro pokročilou správu oddílů</a>';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Změnit velikost oddílu';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Přidělit prostor';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Soubory';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Oddíl:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Velikost:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'K dispozici:';
 
   @override
   String get allocateDiskSpace => 'Přidělit prostor na disku';
@@ -609,31 +609,31 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Následující oddíly budou zformátovány:';
+  String get writeChangesPartitionsHeader => 'Budou provedeny následující změny na oddílech:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'velikost oddílu #$disk${partition} změněna z $oldsize na $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'oddíl #$disk${partition} naformátován jako $format použit pro $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'oddíl #$disk${partition} naformátován jako $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'oddíl #$disk${partition} použit pro $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'oddíl #$disk${partition} vytvořen';
   }
 
   @override
@@ -816,29 +816,29 @@ class AppLocalizationsCs extends AppLocalizations {
   String get copyingFiles => 'Kopírování souborů…';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Instalace systému…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Nastavování systému…';
 
   @override
   String get installationFailed => 'Instalace se nezdařila';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Omlouváme se';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Aby bylo možné nainstalovat $RELEASE, je zapotřebí alespoň $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Tento počítač disponuje pouze $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Největší disk v tomto počítači má velikost pouze $SIZE.';
   }
 }
