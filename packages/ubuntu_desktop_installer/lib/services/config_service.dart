@@ -13,6 +13,22 @@ class ConfigService {
   final String _path;
   final FileSystem _fs;
 
+  Future<String?> get(String key) async {
+    return load().then((config) => config[key]);
+  }
+
+  Future<void> set(String key, String? value) {
+    return load().then((config) {
+      if (value == null) {
+        config.remove(key);
+      } else {
+        config[key] = value;
+      }
+      return save(config);
+    });
+  }
+
+  @visibleForTesting
   Future<Map<String, String?>> load() async {
     final file = _fs.file(_path);
     try {
@@ -28,6 +44,7 @@ class ConfigService {
     }
   }
 
+  @visibleForTesting
   Future<void> save(Map<String, String?> config) async {
     try {
       final file = _fs.file(_path);
