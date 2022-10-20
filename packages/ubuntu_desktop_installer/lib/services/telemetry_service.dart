@@ -41,6 +41,7 @@ class TelemetryService {
     } else {
       await file.parent.create(recursive: true);
     }
+    log.debug('Writing report to $reportLocation');
     return _writeMetrics(metrics);
   }
 
@@ -78,7 +79,6 @@ class TelemetryService {
     try {
       final file = _fs.file(reportLocation);
       await file.writeAsString(json.encode(metrics), flush: true);
-      log.debug('Wrote report to $reportLocation');
     } on FileSystemException catch (e) {
       log.error('Failed to write report to $reportLocation (${e.message})');
     }
