@@ -37,7 +37,7 @@ fi
 
 if $chroot $ROOT [ -f /etc/kde4/kdm/kdmrc ]; then
     # Configure KDM autologin
-    $log $chroot $ROOT sed -i$BACKUP -r \
+    $chroot $ROOT sed -i$BACKUP -r \
         -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USER/" \
         -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
@@ -46,7 +46,7 @@ fi
 
 if $chroot $ROOT [ -f /etc/lxdm/lxdm.conf ]; then
         # Configure LXDM autologin with LXDE session
-    $log $chroot $ROOT sed -i$BACKUP -r \
+    $chroot $ROOT sed -i$BACKUP -r \
             -e "s/^# autologin=dgod/autologin=$USER/" \
             -e "s/^# session/session/" \
             /etc/lxdm/lxdm.conf
@@ -54,7 +54,7 @@ fi
 
 if $chroot $ROOT [ -f /etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
         # Configure LXDM autologin with Lubuntu session
-    $log $chroot $ROOT sed -i$BACKUP -r \
+    $chroot $ROOT sed -i$BACKUP -r \
             -e "s/^# autologin=dgod/autologin=$USER/" \
             -e "s/^# session/session/" \
             -e "s/startlxde/startlubuntu/" \
@@ -63,7 +63,7 @@ fi
 
 if $chroot $ROOT [ -f /usr/bin/sddm ]; then
     # Configure SDDM autologin with an appropiate session
-    $log $chroot $ROOT /bin/sh -c "cat > /etc/sddm.conf" << EOF
+    $chroot $ROOT /bin/sh -c "cat > /etc/sddm.conf" << EOF
 [Autologin]
 User=$USER
 Session=PLACEHOLDER
