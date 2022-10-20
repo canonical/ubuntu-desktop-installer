@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -368,14 +369,14 @@ class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
   @override
   void onInit(Route route) {
     if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!);
+      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
   }
 
   @override
   void onNext(Route route, Route previousRoute) {
     if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!);
+      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
   }
 }
