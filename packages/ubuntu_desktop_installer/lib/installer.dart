@@ -222,7 +222,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           Expanded(
             child: SvgPicture.asset(
               'assets/welcome/logo.svg',
-              height: height / 4,
+              height: height / 2,
             ),
           ),
         ],
