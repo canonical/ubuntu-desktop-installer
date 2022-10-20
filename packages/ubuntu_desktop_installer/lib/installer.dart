@@ -78,13 +78,20 @@ Future<void> runInstallerApp(
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
+  final telemetry = TelemetryService();
+  await telemetry.init({
+    'Type': 'Flutter',
+    'OEM': false,
+    'Media': ProductInfoExtractor().getProductInfo().toString(),
+  });
+
   registerService(() => ConfigService('/tmp/$baseName.conf'));
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(JournalService.new);
   registerService(() => NetworkService(subiquityClient));
   registerService(PowerService.new);
-  registerService(TelemetryService.new);
+  registerServiceInstance(telemetry);
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
 
@@ -370,10 +377,5 @@ class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
     if (route.settings.name != null) {
       _telemetryService.addStage(route.settings.name!);
     }
-  }
-
-  @override
-  Future<void> onDone(Route route, Object? result) {
-    return _telemetryService.done();
   }
 }

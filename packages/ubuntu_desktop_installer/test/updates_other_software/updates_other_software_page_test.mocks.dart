@@ -6,8 +6,6 @@
 import 'dart:async' as _i3;
 import 'dart:ui' as _i4;
 
-import 'package:file/file.dart' as _i6;
-import 'package:file/local.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart'
     as _i2;
@@ -175,54 +173,46 @@ class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
   }
 
   @override
-  void addStage(String? name) => super.noSuchMethod(
+  _i3.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [metrics],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+  @override
+  _i3.Future<void> addStage(String? name) => (super.noSuchMethod(
         Invocation.method(
           #addStage,
           [name],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void setLanguage(String? language) => super.noSuchMethod(
-        Invocation.method(
-          #setLanguage,
-          [language],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void setMinimal({required bool? enabled}) => super.noSuchMethod(
-        Invocation.method(
-          #setMinimal,
-          [],
-          {#enabled: enabled},
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void setRestrictedAddons({required bool? enabled}) => super.noSuchMethod(
-        Invocation.method(
-          #setRestrictedAddons,
-          [],
-          {#enabled: enabled},
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void setPartitionMethod(String? method) => super.noSuchMethod(
-        Invocation.method(
-          #setPartitionMethod,
-          [method],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  _i3.Future<void> done({_i6.FileSystem? fs = const _i7.LocalFileSystem()}) =>
+  _i3.Future<void> addMetric(
+    String? key,
+    dynamic value,
+  ) =>
       (super.noSuchMethod(
         Invocation.method(
-          #done,
-          [],
-          {#fs: fs},
+          #addMetric,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+  @override
+  _i3.Future<void> addMetrics(Map<String, dynamic>? entries) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addMetrics,
+          [entries],
         ),
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),

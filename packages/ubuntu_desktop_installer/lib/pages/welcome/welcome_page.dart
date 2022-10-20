@@ -102,7 +102,8 @@ class _WelcomePageState extends State<WelcomePage> {
           onNext: () {
             final locale = model.locale(model.selectedLanguageIndex);
             model.applyLocale(locale);
-            getService<TelemetryService>().setLanguage(locale.languageCode);
+            getService<TelemetryService>()
+                .addMetric('Language', locale.languageCode);
           },
         ),
       ],
