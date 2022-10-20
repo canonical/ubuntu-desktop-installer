@@ -1,3 +1,12 @@
 {
-  "@@locale": "si"
+  "@@locale": "si",
+  "windowTitle": "ස්ථාපනය {යෙදුම් අංකය}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "appTitle": "උබුන්ටු ඩෙස්ක්ටොප් ධාවකය",
+  "@appTitle": {}
 }
