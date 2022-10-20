@@ -12,6 +12,8 @@ ROOT=/target
 chroot=chroot
 BACKUP=
 
+# Adapted from https://git.launchpad.net/ubiquity/tree/d-i/source/user-setup/user-setup-apply
+
 if [ -d "$ROOT/etc/gdm3" ]; then
     # Configure GDM autologin
     GDMCustomFile=$ROOT/etc/gdm3/custom.conf
