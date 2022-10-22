@@ -34,7 +34,7 @@
   "@profileSetupRealnameRequired": {},
   "profileSetupUsernameHint": "Välj ett användarnamn",
   "@profileSetupUsernameHint": {},
-  "profileSetupUsernameHelper": "Användarnamnet behöver inte matcha ditt Windows-användarnamn.",
+  "profileSetupUsernameHelper": "Användarnamnet behöver inte vara samma som ditt Windows-användarnamn.",
   "@profileSetupUsernameHelper": {},
   "profileSetupPasswordHint": "Välj ett lösenord",
   "@profileSetupPasswordHint": {},
@@ -70,7 +70,7 @@
   "@configurationUIAutoMountTitle": {},
   "setupCompleteTitle": "Installationen är klar",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Hej {user},\nDu har slutfört installationen.",
+  "setupCompleteHeader": "Hej {user},\nDu har framgångsrikt slutfört installationen.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -166,5 +166,38 @@
   "configurationUIInteroperabilitySubtitle": "Huruvida interoperabiliteten är aktiverad eller inte.",
   "@configurationUIInteroperabilitySubtitle": {},
   "advancedSetupHostGenerationTitle": "Aktivera värdgenerering",
-  "@advancedSetupHostGenerationTitle": {}
+  "@advancedSetupHostGenerationTitle": {},
+  "installationSlidesCustomExitContents": "Bara ett fåtal steg kvar att slutföra i installationens huvudfönster.\nKan vi avsluta denna dialog och gå till den?",
+  "@installationSlidesCustomExitContents": {},
+  "installLangPacksTitle": "Installera paket för bättre {lang} språkstöd",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Rekommenderas inte för långsamma anslutningar.",
+  "@installLangPacksSubtitle": {},
+  "advancedSetupMountOptionHelper": "Monteringsalternativ används för den automatiska monteringen",
+  "@advancedSetupMountOptionHelper": {},
+  "configurationUISystemdSubtitle": "Huruvida systemd ska aktiveras vid uppstart. VARNING: Detta är en experimentell funktion.",
+  "@configurationUISystemdSubtitle": {},
+  "advancedSetupHostGenerationSubtitle": "Valet innebär att /etc/hosts skapas om vid varje uppstart.",
+  "@advancedSetupHostGenerationSubtitle": {},
+  "advancedSetupResolvConfGenerationSubtitle": "Valet innebär att /etc/resolv.conf skapas om vid varje uppstart.",
+  "@advancedSetupResolvConfGenerationSubtitle": {},
+  "configurationUIInteropAppendWindowsPathTitle": "Lägg till sökväg för Windows",
+  "@configurationUIInteropAppendWindowsPathTitle": {},
+  "configurationUIMountFstabSubtitle": "Huruvida /etc/fstab kommer att monteras. Denna fil innehåller uppgifter för filsystemen som systemet kommer montera.",
+  "@configurationUIMountFstabSubtitle": {},
+  "installationSlidesInstalling": "Snart klar. Installationen kommer snart kräva din uppmärksamhet.",
+  "@installationSlidesInstalling": {},
+  "installationSlidesUbuntuWslWebDevText": "Utveckla i WSL genom användning av inbyggda Windows IDE inklusive VS Code och IntelliJ, dra nytta av fullständig NodeJS och Ruby-stöd.",
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "configurationUIInteropAppendWindowsPathSubtitle": "Huruvida sökväg för Windows kommer att läggas till i PATH-miljövariablen i WSL",
+  "@configurationUIInteropAppendWindowsPathSubtitle": {},
+  "configurationUIAutoMountSubtitle": "Huruvida funktion för automatisk montering är aktiverad. Denna funktion låter dig montera lagringsenheten för Windows i WSL.",
+  "@configurationUIAutoMountSubtitle": {}
 }
