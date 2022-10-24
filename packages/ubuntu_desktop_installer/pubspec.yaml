@@ -46,10 +46,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_localizations
-  ubuntu_logger:
-    git:
-      url: https://github.com/canonical/ubuntu-flutter-plugins.git
-      path: packages/ubuntu_logger
+  ubuntu_logger: ^0.0.1
   ubuntu_service: ^0.2.0
   ubuntu_widgets:
     git:
