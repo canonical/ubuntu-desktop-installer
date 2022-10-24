@@ -18,10 +18,7 @@ dependencies:
   path: ^1.8.0
   subiquity_client:
     path: ../subiquity_client
-  ubuntu_localizations:
-    git:
-      url: https://github.com/canonical/ubuntu-flutter-plugins.git
-      path: packages/ubuntu_localizations
+  ubuntu_localizations: ^0.0.1
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
