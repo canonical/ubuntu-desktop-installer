@@ -27,11 +27,11 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Installera paket för bättre $lang språkstöd';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Rekommenderas inte för långsamma anslutningar.';
 
   @override
   String get profileSetupTitle => 'Ställ in profil';
@@ -49,7 +49,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get profileSetupUsernameHint => 'Välj ett användarnamn';
 
   @override
-  String get profileSetupUsernameHelper => 'Användarnamnet behöver inte matcha ditt Windows-användarnamn.';
+  String get profileSetupUsernameHelper => 'Användarnamnet behöver inte vara samma som ditt Windows-användarnamn.';
 
   @override
   String get profileSetupPasswordHint => 'Välj ett lösenord';
@@ -103,19 +103,19 @@ class AppLocalizationsSv extends AppLocalizations {
   String get advancedSetupMountOptionHint => 'Monteringsalternativ';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Monteringsalternativ används för den automatiska monteringen';
 
   @override
   String get advancedSetupHostGenerationTitle => 'Aktivera värdgenerering';
 
   @override
-  String get advancedSetupHostGenerationSubtitle => 'Selecting enables /etc/hosts re-generation at every start.';
+  String get advancedSetupHostGenerationSubtitle => 'Valet innebär att /etc/hosts skapas om vid varje uppstart.';
 
   @override
   String get advancedSetupResolvConfGenerationTitle => 'Aktivera generering av resolv.conf';
 
   @override
-  String get advancedSetupResolvConfGenerationSubtitle => 'Selecting enables /etc/resolv.conf re-generation at every start.';
+  String get advancedSetupResolvConfGenerationSubtitle => 'Valet innebär att /etc/resolv.conf skapas om vid varje uppstart.';
 
   @override
   String get advancedSetupGUIIntegrationTitle => 'GUI Integration';
@@ -136,10 +136,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIInteroperabilitySubtitle => 'Huruvida interoperabiliteten är aktiverad eller inte.';
 
   @override
-  String get configurationUIInteropAppendWindowsPathTitle => 'Append Windows Path';
+  String get configurationUIInteropAppendWindowsPathTitle => 'Lägg till sökväg för Windows';
 
   @override
-  String get configurationUIInteropAppendWindowsPathSubtitle => 'Whether Windows Path will be append in the PATH environment variable in WSL';
+  String get configurationUIInteropAppendWindowsPathSubtitle => 'Huruvida sökväg för Windows kommer att läggas till i PATH-miljövariablen i WSL';
 
   @override
   String get configurationUIAutoMountHeader => 'Montera automatiskt';
@@ -148,13 +148,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUIAutoMountTitle => 'Aktiverad';
 
   @override
-  String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
+  String get configurationUIAutoMountSubtitle => 'Huruvida funktion för automatisk montering är aktiverad. Denna funktion låter dig montera lagringsenheten för Windows i WSL.';
 
   @override
   String get configurationUIMountFstabTitle => 'Montera /etc/fstab';
 
   @override
-  String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
+  String get configurationUIMountFstabSubtitle => 'Huruvida /etc/fstab kommer att monteras. Denna fil innehåller uppgifter för filsystemen som systemet kommer montera.';
 
   @override
   String get configurationUISystemdHeader => 'EXPERIMENTIELL - Systemd';
@@ -163,7 +163,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get configurationUISystemdTitle => 'Aktiverad';
 
   @override
-  String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
+  String get configurationUISystemdSubtitle => 'Huruvida systemd ska aktiveras vid uppstart. VARNING: Detta är en experimentell funktion.';
 
   @override
   String get applyingChanges => 'Tillämpar ändringar…';
@@ -176,7 +176,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hej $user,\nDu har slutfört installationen.';
+    return 'Hej $user,\nDu har framgångsrikt slutfört installationen.';
   }
 
   @override
@@ -195,7 +195,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesUnpacking => 'Packar upp distron';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'Snart klar. Installationen kommer snart kräva din uppmärksamhet.';
 
   @override
   String get installationSlidesLaunching => 'Startar distro...';
@@ -225,7 +225,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesCustomExitTitle => 'Vi är nästan klara';
 
   @override
-  String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
+  String get installationSlidesCustomExitContents => 'Bara ett fåtal steg kvar att slutföra i installationens huvudfönster.\nKan vi avsluta denna dialog och gå till den?';
 
   @override
   String get installationSlidesOk => 'OK';
@@ -246,7 +246,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesUbuntuWslWebDev => 'Ubuntu WSL för\nWebbutveckling';
 
   @override
-  String get installationSlidesUbuntuWslWebDevText => 'Develop in WSL using native Windows IDEs including VS Code and IntelliJ and benefit from full NodeJS and Ruby support.';
+  String get installationSlidesUbuntuWslWebDevText => 'Utveckla i WSL genom användning av inbyggda Windows IDE inklusive VS Code och IntelliJ, dra nytta av fullständig NodeJS och Ruby-stöd.';
 
   @override
   String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL för datavetenskap';
