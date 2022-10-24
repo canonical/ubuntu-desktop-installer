@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,13 +79,20 @@ Future<void> runInstallerApp(
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
+  final telemetry = TelemetryService();
+  await telemetry.init({
+    'Type': 'Flutter',
+    'OEM': false,
+    'Media': ProductInfoExtractor().getProductInfo().toString(),
+  });
+
   registerService(() => ConfigService('/tmp/$baseName.conf'));
   registerService(() => DiskStorageService(subiquityClient));
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(JournalService.new);
   registerService(() => NetworkService(subiquityClient));
   registerService(PowerService.new);
-  registerService(TelemetryService.new);
+  registerServiceInstance(telemetry);
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
 
@@ -361,19 +369,14 @@ class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
   @override
   void onInit(Route route) {
     if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!);
+      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
   }
 
   @override
   void onNext(Route route, Route previousRoute) {
     if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!);
+      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
-  }
-
-  @override
-  Future<void> onDone(Route route, Object? result) {
-    return _telemetryService.done();
   }
 }

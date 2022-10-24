@@ -5,44 +5,66 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart';
 
 void main() {
-  test('done cannot be called twice', () async {
-    final telemetry = TelemetryService();
-    await telemetry.done(fs: MemoryFileSystem.test());
-    expect(telemetry.done(), throwsAssertionError);
-  });
-
-  test('report written to disk', () async {
-    final telemetry = TelemetryService();
+  test('report is created on disk when initialized', () async {
     final fs = MemoryFileSystem.test();
+    final telemetry = TelemetryService(fs: fs);
     final report = fs.file(TelemetryService.reportLocation);
     expect(report.existsSync(), isFalse);
-    await telemetry.done(fs: fs);
+    await telemetry.init({'foo': 'bar'});
     expect(report.existsSync(), isTrue);
     final data = json.decode(report.readAsStringSync());
-    expect(data.containsKey('Type'), isTrue);
-    expect(data['Type'], 'Flutter');
-    expect(data.containsKey('Stages'), isTrue);
-    expect(data['Stages'].containsValue('done'), isTrue);
+    expect(data['foo'], 'bar');
   });
 
-  test('specific metrics', () async {
-    final telemetry = TelemetryService();
-    telemetry.setLanguage('fr');
-    telemetry.setMinimal(enabled: true);
-    telemetry.setRestrictedAddons(enabled: false);
-    telemetry.setPartitionMethod('reinstall_partition');
+  test('add stages', () async {
     final fs = MemoryFileSystem.test();
-    await telemetry.done(fs: fs);
+    final telemetry = TelemetryService(fs: fs);
+
+    await telemetry.init({'foo': 'bar'});
+    await telemetry.addStage('qux');
 
     final report = fs.file(TelemetryService.reportLocation);
+    expect(report.existsSync(), isTrue);
+
     final data = json.decode(report.readAsStringSync());
-    expect(data.containsKey('Language'), isTrue);
-    expect(data['Language'], 'fr');
-    expect(data.containsKey('Minimal'), isTrue);
-    expect(data['Minimal'], isTrue);
-    expect(data.containsKey('RestrictedAddons'), isTrue);
-    expect(data['RestrictedAddons'], isFalse);
-    expect(data.containsKey('PartitionMethod'), isTrue);
-    expect(data['PartitionMethod'], 'reinstall_partition');
+    expect(data['foo'], 'bar');
+
+    final stages = data['Stages'] as Map<String, dynamic>;
+    expect(stages.length, 1);
+    expect(int.tryParse(stages.keys.single), isNonNegative);
+    expect(stages.values.single, 'qux');
+  });
+
+  test('add metrics', () async {
+    final fs = MemoryFileSystem.test();
+    final report = fs.file(TelemetryService.reportLocation);
+
+    final telemetry = TelemetryService(fs: fs);
+    await telemetry.init({'baz': 'qux'});
+
+    await telemetry.addMetric('Language', 'fr');
+    expect(json.decode(report.readAsStringSync()), {
+      'baz': 'qux',
+      'Language': 'fr',
+    });
+
+    await telemetry.addMetric('Minimal', true);
+    expect(json.decode(report.readAsStringSync()), {
+      'baz': 'qux',
+      'Language': 'fr',
+      'Minimal': true,
+    });
+
+    await telemetry.addMetrics({
+      'RestrictedAddons': false,
+      'PartitionMethod': 'reinstall_partition',
+    });
+    expect(json.decode(report.readAsStringSync()), {
+      'baz': 'qux',
+      'Language': 'fr',
+      'Minimal': true,
+      'RestrictedAddons': false,
+      'PartitionMethod': 'reinstall_partition'
+    });
   });
 }
