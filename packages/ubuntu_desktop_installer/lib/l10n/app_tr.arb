@@ -716,5 +716,9 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "showSecurityKey": "Güvenlik anahtarını göster",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",
+  "@installationTypeLVMEncryptionSelected": {}
 }
