@@ -133,7 +133,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Güvenlik anahtarları uyuşmamaktadır';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Güvenlik anahtarını göster';
 
   @override
   String get connectToInternetPageTitle => 'İnternete bağlan';
@@ -293,7 +293,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM seçildi';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM ve şifreleme seçildi';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
