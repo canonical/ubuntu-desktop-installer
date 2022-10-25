@@ -199,5 +199,7 @@
   "configurationUIInteropAppendWindowsPathSubtitle": "Huruvida sökväg för Windows kommer att läggas till i PATH-miljövariablen i WSL",
   "@configurationUIInteropAppendWindowsPathSubtitle": {},
   "configurationUIAutoMountSubtitle": "Huruvida funktion för automatisk montering är aktiverad. Denna funktion låter dig montera lagringsenheten för Windows i WSL.",
-  "@configurationUIAutoMountSubtitle": {}
+  "@configurationUIAutoMountSubtitle": {},
+  "installationSlidesFindOutMore": "Få reda på mer",
+  "@installationSlidesFindOutMore": {}
 }
