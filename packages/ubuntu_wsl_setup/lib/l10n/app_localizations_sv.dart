@@ -273,7 +273,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Få reda på mer';
 
   @override
   String get installationSlidesFindOutMoreVisit => 'Besök ';
