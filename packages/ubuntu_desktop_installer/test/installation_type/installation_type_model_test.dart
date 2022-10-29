@@ -73,42 +73,43 @@ void main() {
 
     final telemetry = MockTelemetryService();
     final model = InstallationTypeModel(disks, telemetry);
-    verifyNever(telemetry.setPartitionMethod(any));
+    verifyNever(telemetry.addMetric('PartitionMethod', any));
 
     model.installationType = InstallationType.erase;
     await model.save();
-    verify(telemetry.setPartitionMethod('use_device')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'use_device')).called(1);
     reset(telemetry);
 
     model.installationType = InstallationType.reinstall;
     await model.save();
-    verify(telemetry.setPartitionMethod('reinstall_partition')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'reinstall_partition'))
+        .called(1);
     reset(telemetry);
 
     model.installationType = InstallationType.alongside;
     await model.save();
-    verify(telemetry.setPartitionMethod('resize_use_free')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'resize_use_free')).called(1);
     reset(telemetry);
 
     model.installationType = InstallationType.manual;
     await model.save();
-    verify(telemetry.setPartitionMethod('manual')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'manual')).called(1);
     reset(telemetry);
 
     model.advancedFeature = AdvancedFeature.lvm;
     await model.save();
-    verify(telemetry.setPartitionMethod('use_lvm')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'use_lvm')).called(1);
     reset(telemetry);
 
     model.advancedFeature = AdvancedFeature.zfs;
     await model.save();
-    verify(telemetry.setPartitionMethod('use_zfs')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'use_zfs')).called(1);
     reset(telemetry);
 
     when(disks.useEncryption).thenReturn(true);
     model.advancedFeature = AdvancedFeature.none;
     await model.save();
-    verify(telemetry.setPartitionMethod('use_crypto')).called(1);
+    verify(telemetry.addMetric('PartitionMethod', 'use_crypto')).called(1);
     reset(telemetry);
   });
 

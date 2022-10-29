@@ -15,10 +15,7 @@ dependencies:
   package_config: ^2.0.2
   path: ^1.8.0
   synchronized: ^3.0.0
-  ubuntu_logger:
-    git:
-      url: https://github.com/canonical/ubuntu-flutter-plugins.git
-      path: packages/ubuntu_logger
+  ubuntu_logger: ^0.0.1
   xdg_directories: ^0.2.0
 
 dev_dependencies:

@@ -1,3 +1,5 @@
 {
-  "@@locale": "si"
+  "@@locale": "si",
+  "appTitle": "උබුන්ටු WSL",
+  "@appTitle": {}
 }

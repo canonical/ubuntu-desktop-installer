@@ -89,7 +89,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Expanded(
               child: SvgPicture.asset(
                 'assets/welcome/logo.svg',
-                height: height / 4,
+                height: height / 2,
               ),
             )
           ],
@@ -102,7 +102,8 @@ class _WelcomePageState extends State<WelcomePage> {
           onNext: () {
             final locale = model.locale(model.selectedLanguageIndex);
             model.applyLocale(locale);
-            getService<TelemetryService>().setLanguage(locale.languageCode);
+            getService<TelemetryService>()
+                .addMetric('Language', locale.languageCode);
           },
         ),
       ],

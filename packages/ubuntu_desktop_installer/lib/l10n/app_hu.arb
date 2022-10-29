@@ -127,7 +127,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "A következő partíciókat fogjuk formázni:",
+  "writeChangesPartitionsHeader": "A következő partícióváltozásokat kell alkalmazni:",
   "@writeChangesPartitionsHeader": {},
   "whereAreYouPageTitle": "Hol vagy?",
   "@whereAreYouPageTitle": {},
@@ -679,5 +679,85 @@
     }
   },
   "installAlongsideSize": "Méret:",
-  "@installAlongsideSize": {}
+  "@installAlongsideSize": {},
+  "installingSystem": "Rendszer telepítése...",
+  "@installingSystem": {},
+  "configuringSystem": "Rendszer konfigurálása...",
+  "@configuringSystem": {},
+  "notEnoughDiskSpaceTitle": "Sajnálom",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "A {RELEASE} telepítéséhez legalább {SIZE} lemezterületre van szüksége.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "A legnagyobb lemez ezen a számítógépen csak {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "showSecurityKey": "Biztonsági kulcs megjelenítése",
+  "@showSecurityKey": {},
+  "writeChangesPartitionCreated": "partíció #{disk}{partition} létrehozott",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "installationTypeLVMEncryptionSelected": "LVM és titkosítás kiválasztva",
+  "@installationTypeLVMEncryptionSelected": {},
+  "writeChangesPartitionResized": "partíció #{disk}{partition} átméretezve {oldsize} -ről {newsize} -ra.",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partíció #{disk}{partition} formázva mint {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partíció #{disk}{partition} formázott {format}, amelyet a következő célokra használnak {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partíció #{disk}{partition} használt {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "quitButtonText": "Kilépés a telepítésből",
+  "@quitButtonText": {},
+  "notEnoughDiskSpaceHasOnly": "Ez a számítógép csak {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }

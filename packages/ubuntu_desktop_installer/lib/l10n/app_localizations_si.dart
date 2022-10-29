@@ -5,11 +5,11 @@ class AppLocalizationsSi extends AppLocalizations {
   AppLocalizationsSi([String locale = 'si']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'උබුන්ටු ඩෙස්ක්ටොප් ධාවකය';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'ස්ථාපනය {යෙදුම් අංකය}';
   }
 
   @override

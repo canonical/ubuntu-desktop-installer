@@ -128,29 +128,36 @@ class InstallationTypeModel extends SafeChangeNotifier {
     // automatically pre-select a guided storage target if possible
     _diskService.guidedTarget = preselectTarget(installationType);
 
+    final partitionMethod = _resolvePartitionMethod();
+    if (partitionMethod != null) {
+      await _telemetryService.addMetric('PartitionMethod', partitionMethod);
+    }
+  }
+
+  String? _resolvePartitionMethod() {
     // All possible values for the partition method
     // were extracted from Ubiquity's ubi-partman.py
     // (see PageGtk.get_autopartition_choice()).
-    if (installationType == InstallationType.erase) {
-      _telemetryService.setPartitionMethod('use_device');
-    } else if (installationType == InstallationType.reinstall) {
-      _telemetryService.setPartitionMethod('reinstall_partition');
-    } else if (installationType == InstallationType.alongside) {
-      _telemetryService.setPartitionMethod('resize_use_free');
-    } else if (installationType == InstallationType.manual) {
-      _telemetryService.setPartitionMethod('manual');
-    }
     if (advancedFeature == AdvancedFeature.lvm) {
-      _telemetryService.setPartitionMethod('use_lvm');
+      return 'use_lvm';
     } else if (advancedFeature == AdvancedFeature.zfs) {
-      _telemetryService.setPartitionMethod('use_zfs');
-    }
-    if (_diskService.useEncryption && advancedFeature != AdvancedFeature.zfs) {
-      _telemetryService.setPartitionMethod('use_crypto');
+      return 'use_zfs';
+    } else if (_diskService.useEncryption &&
+        advancedFeature != AdvancedFeature.zfs) {
+      return 'use_crypto';
+    } else if (installationType == InstallationType.erase) {
+      return 'use_device';
+    } else if (installationType == InstallationType.reinstall) {
+      return 'reinstall_partition';
+    } else if (installationType == InstallationType.alongside) {
+      return 'resize_use_free';
+    } else if (installationType == InstallationType.manual) {
+      return 'manual';
     }
     // TODO: map upgrading the current Ubuntu installation without
     // wiping the user's home directory (not implemented yet)
     // to the 'reuse_partition' method.
+    return null;
   }
 
   Future<void> resetStorage() => _diskService.resetStorage();

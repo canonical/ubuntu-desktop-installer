@@ -95,9 +95,10 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           context,
           onNext: () async {
             final telemetry = getService<TelemetryService>();
-            telemetry.setMinimal(
-                enabled: model.installationMode == InstallationMode.minimal);
-            telemetry.setRestrictedAddons(enabled: model.installThirdParty);
+            await telemetry.addMetrics({
+              'Minimal': model.installationMode == InstallationMode.minimal,
+              'RestrictedAddons': model.installThirdParty,
+            });
             await model.selectInstallationSource();
           },
         ),

@@ -133,7 +133,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Säkerhetsnycklarna matchar inte';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Visa säkerhetsnyckel';
 
   @override
   String get connectToInternetPageTitle => 'Anslut till internet';
@@ -293,7 +293,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM valt';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM och kryptering vald';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {

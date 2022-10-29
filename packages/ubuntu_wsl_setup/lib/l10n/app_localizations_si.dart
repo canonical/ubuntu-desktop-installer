@@ -5,7 +5,7 @@ class AppLocalizationsSi extends AppLocalizations {
   AppLocalizationsSi([String locale = 'si']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'උබුන්ටු WSL';
 
   @override
   String get windowTitle => 'Ubuntu WSL';
