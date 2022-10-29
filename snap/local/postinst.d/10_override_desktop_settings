@@ -12,7 +12,7 @@ fi
 
 dconf_dump() {
     target_schema=$target_schemas/20_ubuntu-desktop-installer-$1.gschema.override
-    sudo -u $user dconf dump /org/gnome/desktop/$1/ > $target_schema
+    sudo -u $user dconf dump /org/gnome/desktop/$1/ | tee $target_schema
     # - [foo] -> [org.gnome.desktop.$1.foo]
     sed -i -E "s/^\[([^/]*)\]/\[org.gnome.desktop.$1.\1\]/g" $target_schema
     # - [/] -> [org.gnome.desktop.$1]
