@@ -121,7 +121,7 @@
   "@configurationUIInteropAppendWindowsPathTitle": {},
   "configurationUIInteropAppendWindowsPathSubtitle": "WSL 에서 PATH 환경 변수의 뒤에 Windows 경로를 붙일지 여부",
   "@configurationUIInteropAppendWindowsPathSubtitle": {},
-  "configurationUISystemdHeader": "실험적 기능 - Systemd",
+  "configurationUISystemdHeader": "실험용 기능 - Systemd",
   "@configurationUISystemdHeader": {},
   "configurationUISystemdTitle": "활성화됨",
   "@configurationUISystemdTitle": {},
