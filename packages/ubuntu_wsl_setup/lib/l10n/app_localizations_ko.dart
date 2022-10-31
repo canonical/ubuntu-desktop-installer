@@ -157,7 +157,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => '/etc/fstab 마운트 여부. 이 파일은 시스템이 마운트 할 파일시스템에 관한 정보를 담고 있습니다.';
 
   @override
-  String get configurationUISystemdHeader => '실험적 기능 - Systemd';
+  String get configurationUISystemdHeader => '실험용 기능 - Systemd';
 
   @override
   String get configurationUISystemdTitle => '활성화됨';
