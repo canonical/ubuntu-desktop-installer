@@ -307,7 +307,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "As seguintes partições serão formatadas:",
+  "writeChangesPartitionsHeader": "As seguintes alterações às partições serão aplicadas:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryMounted": "partição #{disk}{partition} como {format} usada para {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -594,5 +594,29 @@
       "partition": {},
       "mount": {}
     }
-  }
+  },
+  "photoSlideShotwell": "Gestor de fotos Shotwell",
+  "@photoSlideShotwell": {},
+  "showSecurityKey": "Mostrar chave de segurança",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM e encriptação selecionado",
+  "@installationTypeLVMEncryptionSelected": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideRhythmbox": "Leitor de música Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "photoSlideTitle": "Divirta-se com as suas fotos",
+  "@photoSlideTitle": {},
+  "photoSlideGimp": "Editor de imagens GIMP",
+  "@photoSlideGimp": {},
+  "webSlideFirefox": "Navegador web Firefox",
+  "@webSlideFirefox": {},
+  "photoSlideShotcut": "Editor de vídeos Shotcut",
+  "@photoSlideShotcut": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {}
 }
