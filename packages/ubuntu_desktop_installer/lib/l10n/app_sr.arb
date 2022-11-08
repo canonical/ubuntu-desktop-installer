@@ -1,3 +1,45 @@
 {
-  "@@locale": "sr"
+  "@@locale": "sr",
+  "tryOrInstallPageTitle": "Испробајте или инсталирајте",
+  "@tryOrInstallPageTitle": {},
+  "welcomeHeader": "Изаберите ваш језик:",
+  "@welcomeHeader": {},
+  "repairInstallation": "Поправи инсталацију",
+  "@repairInstallation": {},
+  "appTitle": "Убунту Десктоп Инсталација",
+  "@appTitle": {},
+  "cancelButtonText": "Одустани",
+  "@cancelButtonText": {},
+  "changeButtonText": "Измени",
+  "@changeButtonText": {},
+  "okButtonText": "ОК",
+  "@okButtonText": {},
+  "noButtonText": "Не",
+  "@noButtonText": {},
+  "restartButtonText": "Рестартуј",
+  "@restartButtonText": {},
+  "revertButtonText": "Поврати",
+  "@revertButtonText": {},
+  "yesButtonText": "Да",
+  "@yesButtonText": {},
+  "welcome": "Добродошли",
+  "@welcome": {},
+  "repairInstallationDescription": "Поправка ће поново инсталирати све програме без дирања докумената или подешавања.",
+  "@repairInstallationDescription": {},
+  "windowTitle": "Инсталирај {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "quitButtonText": "Напусти инсталацију",
+  "@quitButtonText": {},
+  "tryUbuntu": "Испробај {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
