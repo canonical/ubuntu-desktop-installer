@@ -375,10 +375,44 @@ class GuidedChoice with _$GuidedChoice {
     required String diskId,
     @Default(false) bool useLvm,
     String? password,
+    @Default(false) bool useTpm,
   }) = _GuidedChoice;
 
   factory GuidedChoice.fromJson(Map<String, dynamic> json) =>
       _$GuidedChoiceFromJson(json);
+}
+
+enum StorageEncryptionSupport {
+  DISABLED,
+  AVAILABLE,
+  UNAVAILABLE,
+  DEFECTIVE,
+}
+
+enum StorageSafety {
+  UNSET,
+  ENCRYPTED,
+  PREFER_ENCRYPTED,
+  PREFER_UNENCRYPTED,
+}
+
+enum EncryptionType {
+  NONE,
+  CRYPTSETUP,
+  DEVICE_SETUP_HOOK,
+}
+
+@freezed
+class StorageEncryption with _$StorageEncryption {
+  const factory StorageEncryption({
+    required StorageEncryptionSupport support,
+    required StorageSafety storageSafety,
+    required EncryptionType encryptionType,
+    required String unavailableReason,
+  }) = _StorageEncryption;
+
+  factory StorageEncryption.fromJson(Map<String, dynamic> json) =>
+      _$StorageEncryptionFromJson(json);
 }
 
 @freezed
@@ -387,6 +421,8 @@ class GuidedStorageResponse with _$GuidedStorageResponse {
     required ProbeStatus status,
     ErrorReportRef? errorReport,
     List<Disk>? disks,
+    @Default('') String coreBootClassicError,
+    StorageEncryption? storageEncryption,
   }) = _GuidedStorageResponse;
 
   factory GuidedStorageResponse.fromJson(Map<String, dynamic> json) =>
@@ -610,6 +646,16 @@ class DriversResponse with _$DriversResponse {
 }
 
 @freezed
+class CodecsData with _$CodecsData {
+  const factory CodecsData({
+    required bool install,
+  }) = _CodecsData;
+
+  factory CodecsData.fromJson(Map<String, dynamic> json) =>
+      _$CodecsDataFromJson(json);
+}
+
+@freezed
 class DriversPayload with _$DriversPayload {
   const factory DriversPayload({
     required bool install,
@@ -785,4 +831,56 @@ class WSLSetupOptions with _$WSLSetupOptions {
 
   factory WSLSetupOptions.fromJson(Map<String, dynamic> json) =>
       _$WSLSetupOptionsFromJson(json);
+}
+
+enum TaskStatus {
+  DO,
+  DOING,
+  DONE,
+  ABORT,
+  UNDO,
+  UNDOING,
+  HOLD,
+  ERROR,
+}
+
+@freezed
+class TaskProgress with _$TaskProgress {
+  const factory TaskProgress({
+    @Default('') String label,
+    @Default(0) int done,
+    @Default(0) int total,
+  }) = _TaskProgress;
+
+  factory TaskProgress.fromJson(Map<String, dynamic> json) =>
+      _$TaskProgressFromJson(json);
+}
+
+@freezed
+class Task with _$Task {
+  const factory Task({
+    required String id,
+    required String kind,
+    required String summary,
+    required TaskStatus status,
+    required TaskProgress progress,
+  }) = _Task;
+
+  factory Task.fromJson(Map<String, dynamic> json) => _$TaskFromJson(json);
+}
+
+@freezed
+class Change with _$Change {
+  const factory Change({
+    required String id,
+    required String kind,
+    required String summary,
+    required TaskStatus status,
+    required List<Task> tasks,
+    required bool ready,
+    String? err,
+    dynamic data,
+  }) = _Change;
+
+  factory Change.fromJson(Map<String, dynamic> json) => _$ChangeFromJson(json);
 }

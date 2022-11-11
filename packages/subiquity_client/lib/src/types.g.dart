@@ -457,6 +457,7 @@ _$_GuidedChoice _$$_GuidedChoiceFromJson(Map<String, dynamic> json) =>
       diskId: json['disk_id'] as String,
       useLvm: json['use_lvm'] as bool? ?? false,
       password: json['password'] as String?,
+      useTpm: json['use_tpm'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_GuidedChoiceToJson(_$_GuidedChoice instance) =>
@@ -464,7 +465,47 @@ Map<String, dynamic> _$$_GuidedChoiceToJson(_$_GuidedChoice instance) =>
       'disk_id': instance.diskId,
       'use_lvm': instance.useLvm,
       'password': instance.password,
+      'use_tpm': instance.useTpm,
     };
+
+_$_StorageEncryption _$$_StorageEncryptionFromJson(Map<String, dynamic> json) =>
+    _$_StorageEncryption(
+      support: $enumDecode(_$StorageEncryptionSupportEnumMap, json['support']),
+      storageSafety:
+          $enumDecode(_$StorageSafetyEnumMap, json['storage_safety']),
+      encryptionType:
+          $enumDecode(_$EncryptionTypeEnumMap, json['encryption_type']),
+      unavailableReason: json['unavailable_reason'] as String,
+    );
+
+Map<String, dynamic> _$$_StorageEncryptionToJson(
+        _$_StorageEncryption instance) =>
+    <String, dynamic>{
+      'support': _$StorageEncryptionSupportEnumMap[instance.support]!,
+      'storage_safety': _$StorageSafetyEnumMap[instance.storageSafety]!,
+      'encryption_type': _$EncryptionTypeEnumMap[instance.encryptionType]!,
+      'unavailable_reason': instance.unavailableReason,
+    };
+
+const _$StorageEncryptionSupportEnumMap = {
+  StorageEncryptionSupport.DISABLED: 'DISABLED',
+  StorageEncryptionSupport.AVAILABLE: 'AVAILABLE',
+  StorageEncryptionSupport.UNAVAILABLE: 'UNAVAILABLE',
+  StorageEncryptionSupport.DEFECTIVE: 'DEFECTIVE',
+};
+
+const _$StorageSafetyEnumMap = {
+  StorageSafety.UNSET: 'UNSET',
+  StorageSafety.ENCRYPTED: 'ENCRYPTED',
+  StorageSafety.PREFER_ENCRYPTED: 'PREFER_ENCRYPTED',
+  StorageSafety.PREFER_UNENCRYPTED: 'PREFER_UNENCRYPTED',
+};
+
+const _$EncryptionTypeEnumMap = {
+  EncryptionType.NONE: 'NONE',
+  EncryptionType.CRYPTSETUP: 'CRYPTSETUP',
+  EncryptionType.DEVICE_SETUP_HOOK: 'DEVICE_SETUP_HOOK',
+};
 
 _$_GuidedStorageResponse _$$_GuidedStorageResponseFromJson(
         Map<String, dynamic> json) =>
@@ -477,6 +518,11 @@ _$_GuidedStorageResponse _$$_GuidedStorageResponseFromJson(
       disks: (json['disks'] as List<dynamic>?)
           ?.map((e) => Disk.fromJson(e as Map<String, dynamic>))
           .toList(),
+      coreBootClassicError: json['core_boot_classic_error'] as String? ?? '',
+      storageEncryption: json['storage_encryption'] == null
+          ? null
+          : StorageEncryption.fromJson(
+              json['storage_encryption'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_GuidedStorageResponseToJson(
@@ -485,6 +531,8 @@ Map<String, dynamic> _$$_GuidedStorageResponseToJson(
       'status': _$ProbeStatusEnumMap[instance.status]!,
       'error_report': instance.errorReport?.toJson(),
       'disks': instance.disks?.map((e) => e.toJson()).toList(),
+      'core_boot_classic_error': instance.coreBootClassicError,
+      'storage_encryption': instance.storageEncryption?.toJson(),
     };
 
 const _$ProbeStatusEnumMap = {
@@ -804,6 +852,16 @@ Map<String, dynamic> _$$_DriversResponseToJson(_$_DriversResponse instance) =>
       'search_drivers': instance.searchDrivers,
     };
 
+_$_CodecsData _$$_CodecsDataFromJson(Map<String, dynamic> json) =>
+    _$_CodecsData(
+      install: json['install'] as bool,
+    );
+
+Map<String, dynamic> _$$_CodecsDataToJson(_$_CodecsData instance) =>
+    <String, dynamic>{
+      'install': instance.install,
+    };
+
 _$_DriversPayload _$$_DriversPayloadFromJson(Map<String, dynamic> json) =>
     _$_DriversPayload(
       install: json['install'] as bool,
@@ -1028,4 +1086,69 @@ Map<String, dynamic> _$$_WSLSetupOptionsToJson(_$_WSLSetupOptions instance) =>
     <String, dynamic>{
       'install_language_support_packages':
           instance.installLanguageSupportPackages,
+    };
+
+_$_TaskProgress _$$_TaskProgressFromJson(Map<String, dynamic> json) =>
+    _$_TaskProgress(
+      label: json['label'] as String? ?? '',
+      done: json['done'] as int? ?? 0,
+      total: json['total'] as int? ?? 0,
+    );
+
+Map<String, dynamic> _$$_TaskProgressToJson(_$_TaskProgress instance) =>
+    <String, dynamic>{
+      'label': instance.label,
+      'done': instance.done,
+      'total': instance.total,
+    };
+
+_$_Task _$$_TaskFromJson(Map<String, dynamic> json) => _$_Task(
+      id: json['id'] as String,
+      kind: json['kind'] as String,
+      summary: json['summary'] as String,
+      status: $enumDecode(_$TaskStatusEnumMap, json['status']),
+      progress: TaskProgress.fromJson(json['progress'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_TaskToJson(_$_Task instance) => <String, dynamic>{
+      'id': instance.id,
+      'kind': instance.kind,
+      'summary': instance.summary,
+      'status': _$TaskStatusEnumMap[instance.status]!,
+      'progress': instance.progress.toJson(),
+    };
+
+const _$TaskStatusEnumMap = {
+  TaskStatus.DO: 'DO',
+  TaskStatus.DOING: 'DOING',
+  TaskStatus.DONE: 'DONE',
+  TaskStatus.ABORT: 'ABORT',
+  TaskStatus.UNDO: 'UNDO',
+  TaskStatus.UNDOING: 'UNDOING',
+  TaskStatus.HOLD: 'HOLD',
+  TaskStatus.ERROR: 'ERROR',
+};
+
+_$_Change _$$_ChangeFromJson(Map<String, dynamic> json) => _$_Change(
+      id: json['id'] as String,
+      kind: json['kind'] as String,
+      summary: json['summary'] as String,
+      status: $enumDecode(_$TaskStatusEnumMap, json['status']),
+      tasks: (json['tasks'] as List<dynamic>)
+          .map((e) => Task.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      ready: json['ready'] as bool,
+      err: json['err'] as String?,
+      data: json['data'],
+    );
+
+Map<String, dynamic> _$$_ChangeToJson(_$_Change instance) => <String, dynamic>{
+      'id': instance.id,
+      'kind': instance.kind,
+      'summary': instance.summary,
+      'status': _$TaskStatusEnumMap[instance.status]!,
+      'tasks': instance.tasks.map((e) => e.toJson()).toList(),
+      'ready': instance.ready,
+      'err': instance.err,
+      'data': instance.data,
     };
