@@ -22,7 +22,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.6.2
-  flutter_spinbox: ^0.10.0
+  flutter_spinbox: ^0.11.0
   flutter_svg: ^1.1.0
   form_field_validator: ^1.1.0
   gsettings: ^0.2.5
