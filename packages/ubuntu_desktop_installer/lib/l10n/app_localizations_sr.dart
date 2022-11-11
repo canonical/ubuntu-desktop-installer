@@ -5,70 +5,70 @@ class AppLocalizationsSr extends AppLocalizations {
   AppLocalizationsSr([String locale = 'sr']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Убунту Десктоп Инсталација';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Инсталирај $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Одустани';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Измени';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'ОК';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Не';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Рестартуј';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Поврати';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Да';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Напусти инсталацију';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Добродошли';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Изаберите ваш језик:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Испробајте или инсталирајте';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Поправи инсталацију';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Поправка ће поново инсталирати све програме без дирања докумената или подешавања.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Испробај $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Можете испробати $RELEASE без прављења измена на вашем рачунару.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Инсталирај $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Инсталирај $RELEASE поред (или уместо) вашег тренутног оперативног система. За ово неће требати пуно времена.';
   }
 
   @override
@@ -77,33 +77,33 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Искључи RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'За инструкције, отворите ову страницу на телефону или другом уређају: <a href=\"https://$url\"></a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Распоред тастатуре';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Изаберите ваш распоред тастатуре:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Куцајте овде како би испробали вашу тастатуру';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Откриј распоред тастатуре';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Молимо притисните један од следећих тастера:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Да ли следећи тастер постоји на вашој тастатури?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

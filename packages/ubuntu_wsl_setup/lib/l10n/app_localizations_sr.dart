@@ -5,90 +5,90 @@ class AppLocalizationsSr extends AppLocalizations {
   AppLocalizationsSr([String locale = 'sr']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu WSL';
+  String get appTitle => 'Убунту WSL';
 
   @override
-  String get windowTitle => 'Ubuntu WSL';
+  String get windowTitle => 'Убунту WSL';
 
   @override
-  String get exitButton => 'Exit';
+  String get exitButton => 'Излаз';
 
   @override
-  String get finishButton => 'Finish';
+  String get finishButton => 'Заврши';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButton => 'Сачувај';
 
   @override
-  String get setupButton => 'Setup';
+  String get setupButton => 'Инсталација';
 
   @override
-  String get selectLanguageTitle => 'Select your language';
+  String get selectLanguageTitle => 'Изабери свој језик';
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Инсталирај пакете за бољу подршку језика $lang';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Није препоручено за споре везе.';
 
   @override
-  String get profileSetupTitle => 'Profile setup';
+  String get profileSetupTitle => 'Подешавања профила';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Молимо направите подразумевани UNIX налог. За више информација посетите: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
-  String get profileSetupRealnameLabel => 'Your name';
+  String get profileSetupRealnameLabel => 'Ваше име';
 
   @override
-  String get profileSetupRealnameRequired => 'A name is required';
+  String get profileSetupRealnameRequired => 'Име је неопходно';
 
   @override
-  String get profileSetupUsernameHint => 'Pick a username';
+  String get profileSetupUsernameHint => 'Изаберите корисничко име';
 
   @override
-  String get profileSetupUsernameHelper => 'The username does not need to match your Windows username.';
+  String get profileSetupUsernameHelper => 'Корисничко име не мора бити исто као ваше Windows корисничко име';
 
   @override
-  String get profileSetupPasswordHint => 'Choose a password';
+  String get profileSetupPasswordHint => 'Изаберите лозинку';
 
   @override
-  String get profileSetupConfirmPasswordHint => 'Confirm your password';
+  String get profileSetupConfirmPasswordHint => 'Потврдите вашу лозинку';
 
   @override
-  String get profileSetupShowAdvancedOptions => 'Show advanced options next page';
+  String get profileSetupShowAdvancedOptions => 'Прикажи следећу страну напредних подешавања';
 
   @override
-  String get profileSetupPasswordMismatch => 'The passwords do not match';
+  String get profileSetupPasswordMismatch => 'Лозинке се не подударају';
 
   @override
-  String get profileSetupUsernameRequired => 'A username is required';
+  String get profileSetupUsernameRequired => 'Корисничко име је неопходно';
 
   @override
-  String get profileSetupUsernameInvalid => 'The username is invalid';
+  String get profileSetupUsernameInvalid => 'Корисничко име је погрешно';
 
   @override
-  String get profileSetupUsernameInUse => 'That username already exists.';
+  String get profileSetupUsernameInUse => 'Корисничко име већ постоји.';
 
   @override
-  String get profileSetupUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get profileSetupUsernameSystemReserved => 'То име је већ резервисано систему.';
 
   @override
-  String get profileSetupUsernameTooLong => 'That name is too long.';
+  String get profileSetupUsernameTooLong => 'То име је предугачко.';
 
   @override
-  String get profileSetupUsernameInvalidChars => 'That name contains invalid characters.';
+  String get profileSetupUsernameInvalidChars => 'То име садржи невалидне карактере.';
 
   @override
-  String get profileSetupPasswordRequired => 'A password is required';
+  String get profileSetupPasswordRequired => 'Лозинка је неопходна';
 
   @override
-  String get advancedSetupTitle => 'Advanced setup';
+  String get advancedSetupTitle => 'Напредна подешавања';
 
   @override
-  String get advancedSetupHeader => 'In this page, you can tweak Ubuntu WSL to your needs.';
+  String get advancedSetupHeader => 'На овој страници можете прилагодити Убунту WSL вашим потребама.';
 
   @override
   String get advancedSetupMountLocationHint => 'Mount location';
@@ -97,7 +97,7 @@ class AppLocalizationsSr extends AppLocalizations {
   String get advancedSetupMountLocationHelper => 'Location for the automount';
 
   @override
-  String get advancedSetupMountLocationInvalid => 'The location is invalid';
+  String get advancedSetupMountLocationInvalid => 'Локација није валидна';
 
   @override
   String get advancedSetupMountOptionHint => 'Mount option';
@@ -124,13 +124,13 @@ class AppLocalizationsSr extends AppLocalizations {
   String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
 
   @override
-  String get configurationUITitle => 'Ubuntu WSL Configuration - Advanced options';
+  String get configurationUITitle => 'Убунту WSL конфигурација ‐ Напредна подешавања';
 
   @override
   String get configurationUIInteroperabilityHeader => 'Interoperability';
 
   @override
-  String get configurationUIInteroperabilityTitle => 'Enabled';
+  String get configurationUIInteroperabilityTitle => 'Укључено';
 
   @override
   String get configurationUIInteroperabilitySubtitle => 'Whether the interoperability is enabled.';
@@ -145,7 +145,7 @@ class AppLocalizationsSr extends AppLocalizations {
   String get configurationUIAutoMountHeader => 'Auto-Mount';
 
   @override
-  String get configurationUIAutoMountTitle => 'Enabled';
+  String get configurationUIAutoMountTitle => 'Укључено';
 
   @override
   String get configurationUIAutoMountSubtitle => 'Whether the Auto-Mount feature is enabled. This feature allows you to mount Windows drive in WSL.';
@@ -157,45 +157,45 @@ class AppLocalizationsSr extends AppLocalizations {
   String get configurationUIMountFstabSubtitle => 'Whether /etc/fstab will be mounted. This file contains information about the filesystems the system will mount.';
 
   @override
-  String get configurationUISystemdHeader => 'EXPERIMENTAL - Systemd';
+  String get configurationUISystemdHeader => 'ЕКСПЕРИМЕНТАЛНО ‐ Systemd';
 
   @override
-  String get configurationUISystemdTitle => 'Enabled';
+  String get configurationUISystemdTitle => 'Укључено';
 
   @override
   String get configurationUISystemdSubtitle => 'Whether systemd should be activated at boot time. CAUTION: This is an experimental feature.';
 
   @override
-  String get applyingChanges => 'Applying changes…';
+  String get applyingChanges => 'Примењује промене…';
 
   @override
-  String get applyingChangesDisclaimer => 'This may take several minutes depending on your Internet connection.';
+  String get applyingChangesDisclaimer => 'Можда ће бити неопходно неколико минута у зависности од ваше интернет конекције.';
 
   @override
-  String get setupCompleteTitle => 'Setup complete';
+  String get setupCompleteTitle => 'Инсталација завршена';
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Hi $user,\nYou have completed the setup.';
+    return 'Здраво $user, \nЗавршили сте инсталацију.';
   }
 
   @override
-  String get setupCompleteUpdate => 'It is suggested to run the following command to update Ubuntu to the latest version:';
+  String get setupCompleteUpdate => 'Препоручено је покренути следећу команду како би ажурирали Убунту на најновију верзију:';
 
   @override
-  String get setupCompleteRestart => '* All settings will take effect after restarting Ubuntu.';
+  String get setupCompleteRestart => '* Сва подешавања ће бити ефективна након поновног покретања Убунтуа.';
 
   @override
-  String get installationSlidesWelcome => 'Welcome to Ubuntu WSL';
+  String get installationSlidesWelcome => 'Добродошли у Убунту WSL';
 
   @override
-  String get installationSlidesInitializing => 'Initializing...';
+  String get installationSlidesInitializing => 'Иницијализација...';
 
   @override
   String get installationSlidesUnpacking => 'Unpacking the distro';
 
   @override
-  String get installationSlidesInstalling => 'Almost done. The installer will require your attention soon.';
+  String get installationSlidesInstalling => 'Скоро завршено. Инсталацији ће ускоро бити потребна ваша пажња.';
 
   @override
   String get installationSlidesLaunching => 'Launching distro...';
@@ -222,22 +222,22 @@ class AppLocalizationsSr extends AppLocalizations {
   String get installationSlidesExitContents => 'Closing this window will not prevent the installation from continuing in the background.\n\nBesides, you can continue exploring what you can do with Ubuntu on WSL.';
 
   @override
-  String get installationSlidesCustomExitTitle => 'We are almost done';
+  String get installationSlidesCustomExitTitle => 'Скоро смо готови';
 
   @override
   String get installationSlidesCustomExitContents => 'Just a few steps to be completed in the main installer window.\nCan we quit this one and go there?';
 
   @override
-  String get installationSlidesOk => 'OK';
+  String get installationSlidesOk => 'ОК';
 
   @override
-  String get installationSlidesLeave => 'Leave';
+  String get installationSlidesLeave => 'Изађи';
 
   @override
-  String get installationSlidesCancel => 'Cancel';
+  String get installationSlidesCancel => 'Одустани';
 
   @override
-  String get installationSlidesUbuntuOnWsl => 'Ubuntu on WSL';
+  String get installationSlidesUbuntuOnWsl => 'Убунту на WSL';
 
   @override
   String get installationSlidesUbuntuOnWslText => 'A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!';
@@ -267,16 +267,16 @@ class AppLocalizationsSr extends AppLocalizations {
   String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
 
   @override
-  String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL for Enterprises';
+  String get installationSlidesUbuntuWslEnterprises => 'Убунту WSL за предузећа';
 
   @override
   String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
 
   @override
-  String get installationSlidesFindOutMore => 'Find out more';
+  String get installationSlidesFindOutMore => 'Сазнајте више';
 
   @override
-  String get installationSlidesFindOutMoreVisit => 'Visit ';
+  String get installationSlidesFindOutMoreVisit => 'Посетите ';
 
   @override
   String get installationSlidesFindOutMoreLink => 'Ubuntu.com/wsl';

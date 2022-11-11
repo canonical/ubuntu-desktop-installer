@@ -133,7 +133,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Chaves de segurança não correspondem';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
   String get connectToInternetPageTitle => 'Ligar à Internet';
@@ -293,7 +293,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM selecionado';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM e encriptação selecionado';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -609,7 +609,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
+  String get writeChangesPartitionsHeader => 'As seguintes alterações às partições serão aplicadas:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
@@ -714,7 +714,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Leitor de música Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -723,19 +723,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Divirta-se com as suas fotos';
 
   @override
   String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Gestor de fotos Shotwell';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'Editor de imagens GIMP';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Editor de vídeos Shotcut';
 
   @override
   String get webSlideTitle => 'Make the most of the web';
@@ -746,7 +746,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Navegador web Firefox';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
