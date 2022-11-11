@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'wifi_view_test.mocks.dart';
@@ -121,7 +121,7 @@ void main() {
     );
 
     expect(find.byType(WifiListView), findsNothing);
-    expect(find.byType(RadioButton<ConnectMode>), findsNothing);
+    expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
     expect(find.text(tester.lang.wirelessNetworkingDisabled), findsOneWidget);
     expect(find.text(tester.lang.wifiMustBeEnabled), findsOneWidget);
@@ -160,7 +160,7 @@ void main() {
     );
 
     expect(find.byType(WifiListView), findsNothing);
-    expect(find.byType(RadioButton<ConnectMode>), findsNothing);
+    expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
     expect(find.text(tester.lang.noWifiDevicesDetected), findsOneWidget);
   });
 

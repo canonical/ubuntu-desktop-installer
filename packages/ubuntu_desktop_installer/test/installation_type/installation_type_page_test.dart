@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
@@ -118,7 +118,7 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -140,7 +140,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -163,7 +163,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
-        RadioButton<InstallationType>,
+        YaruRadioButton<InstallationType>,
         tester.lang
             .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
@@ -178,7 +178,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -207,7 +207,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
-        RadioButton<InstallationType>,
+        YaruRadioButton<InstallationType>,
         tester.lang.installationTypeAlongsideDual(
             'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
     expect(radio, findsOneWidget);
@@ -236,7 +236,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -270,7 +270,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -281,7 +281,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(RadioButton<InstallationType>,
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
         tester.lang.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -293,7 +293,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
-        RadioButton<InstallationType>, tester.lang.installationTypeManual);
+        YaruRadioButton<InstallationType>, tester.lang.installationTypeManual);
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);

@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'widget_testers.dart';
 
@@ -180,8 +180,8 @@ extension IntegrationTester on WidgetTester {
     required bool? value,
   }) async {
     if (value == null) return;
-    final checkbox = find.widgetWithText(CheckButton, label);
-    if (widget<CheckButton>(checkbox).value != value) {
+    final checkbox = find.widgetWithText(YaruCheckButton, label);
+    if (widget<YaruCheckButton>(checkbox).value != value) {
       await tap(checkbox);
       await pump();
     }
@@ -190,7 +190,7 @@ extension IntegrationTester on WidgetTester {
   /// Taps a radio button specified by its [value].
   Future<void> tapRadioButton<T>(T value) async {
     await tap(find.byWidgetPredicate((widget) {
-      return widget is RadioButton<T> && widget.value == value;
+      return widget is YaruRadioButton<T> && widget.value == value;
     }));
     await pump();
   }

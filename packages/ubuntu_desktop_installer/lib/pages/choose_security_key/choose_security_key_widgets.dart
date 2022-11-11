@@ -76,7 +76,7 @@ class _SecurityKeyShowButton extends StatelessWidget {
     final showSecurityKey = context
         .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
 
-    return CheckButton(
+    return YaruCheckButton(
       value: showSecurityKey,
       title: Text(lang.showSecurityKey),
       onChanged: (value) {

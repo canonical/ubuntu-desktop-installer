@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'connect_model.dart';
@@ -28,7 +29,7 @@ class HiddenWifiRadioButton extends StatelessWidget {
     }
 
     final lang = AppLocalizations.of(context);
-    return RadioButton<ConnectMode>(
+    return YaruRadioButton<ConnectMode>(
       title: Text(lang.hiddenWifiNetwork),
       contentPadding: const EdgeInsets.only(top: 8),
       value: ConnectMode.hiddenWifi,

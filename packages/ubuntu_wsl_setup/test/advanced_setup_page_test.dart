@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -86,7 +86,7 @@ void main() {
     await tester.pumpWidget(buildApp(model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.advancedSetupHostGenerationTitle);
+        YaruCheckButton, tester.lang.advancedSetupHostGenerationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableHostGeneration = true).called(1);
@@ -97,7 +97,7 @@ void main() {
     await tester.pumpWidget(buildApp(model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.advancedSetupResolvConfGenerationTitle);
+        YaruCheckButton, tester.lang.advancedSetupResolvConfGenerationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableResolvConfGeneration = true).called(1);

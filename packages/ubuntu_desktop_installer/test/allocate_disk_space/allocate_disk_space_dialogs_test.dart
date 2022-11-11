@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'allocate_disk_space_page_test.dart';
@@ -123,7 +124,7 @@ void main() {
     }).last);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(Checkbox));
+    await tester.tap(find.byType(YaruCheckbox));
     await tester.pump();
 
     await tester.enterText(find.byType(Autocomplete<String>), '/tst');

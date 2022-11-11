@@ -5,8 +5,8 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_page.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'configure_secure_boot_page_test.mocks.dart';
@@ -56,11 +56,13 @@ void main() {
     expect(tester.widget<ValidatedFormField>(fields.first).enabled, isTrue);
     expect(tester.widget<ValidatedFormField>(fields.last).enabled, isTrue);
 
-    final radios = find.byType(RadioButton<SecureBootMode>);
+    final radios = find.byType(YaruRadioButton<SecureBootMode>);
     expect(radios, findsNWidgets(2));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
+    expect(
+        tester.widget<YaruRadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.turnOff));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.last).groupValue,
+    expect(
+        tester.widget<YaruRadioButton<SecureBootMode>>(radios.last).groupValue,
         equals(SecureBootMode.turnOff));
 
     expect(find.byType(SuccessIcon), findsNWidgets(2));
@@ -93,11 +95,13 @@ void main() {
     final model = buildModel(secureBootMode: SecureBootMode.dontInstall);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radios = find.byType(RadioButton<SecureBootMode>);
+    final radios = find.byType(YaruRadioButton<SecureBootMode>);
     expect(radios, findsNWidgets(2));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.first).groupValue,
+    expect(
+        tester.widget<YaruRadioButton<SecureBootMode>>(radios.first).groupValue,
         equals(SecureBootMode.dontInstall));
-    expect(tester.widget<RadioButton<SecureBootMode>>(radios.last).groupValue,
+    expect(
+        tester.widget<YaruRadioButton<SecureBootMode>>(radios.last).groupValue,
         equals(SecureBootMode.dontInstall));
   });
 

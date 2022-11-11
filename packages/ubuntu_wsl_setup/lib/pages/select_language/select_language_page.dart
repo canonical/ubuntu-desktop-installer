@@ -7,6 +7,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../locale.dart';
@@ -91,7 +92,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
             ),
           ),
           const SizedBox(height: kContentSpacing),
-          CheckButton(
+          YaruCheckButton(
             contentPadding: kContentPadding,
             title: Text(lang.installLangPacksTitle(
                 model.language(model.selectedLanguageIndex))),

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'choose_security_key_model_test.mocks.dart';
@@ -86,7 +86,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final showSecurityKeyButton =
-        find.widgetWithText(CheckButton, tester.lang.showSecurityKey);
+        find.widgetWithText(YaruCheckButton, tester.lang.showSecurityKey);
     expect(showSecurityKeyButton, findsOneWidget);
 
     await tester.tap(showSecurityKeyButton);

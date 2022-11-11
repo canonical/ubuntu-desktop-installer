@@ -1,6 +1,7 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:yaru_icons/yaru_icons.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'storage_types.dart';
@@ -151,7 +152,7 @@ class StorageWipeColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            return Checkbox(
+            return YaruCheckbox(
               value: partition.isWiped,
               onChanged: partition.canWipe
                   ? (wipe) => onWipe(disk, partition, wipe!)

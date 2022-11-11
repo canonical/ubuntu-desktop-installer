@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'configure_secure_boot_model.dart';
@@ -43,7 +43,7 @@ class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              RadioButton<SecureBootMode>(
+              YaruRadioButton<SecureBootMode>(
                 title: Text(lang.configureSecureBootOption),
                 value: SecureBootMode.turnOff,
                 groupValue: model.secureBootMode,
@@ -53,7 +53,7 @@ class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
               const SizedBox(height: kContentSpacing),
               SecurityKeyConfirmFormField(fieldWidth: fieldWidth),
               const SizedBox(height: kContentSpacing),
-              RadioButton<SecureBootMode>(
+              YaruRadioButton<SecureBootMode>(
                 title: Text(lang.dontInstallDriverSoftwareNow),
                 subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),
                 value: SecureBootMode.dontInstall,

@@ -16,8 +16,8 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_v
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'connect_to_internet_page_test.mocks.dart';
@@ -127,7 +127,8 @@ void main() {
     expect(model.connectMode, ConnectMode.hiddenWifi);
 
     final noConnectTile = find.byWidgetPredicate((widget) =>
-        widget is RadioButton<ConnectMode> && widget.value == ConnectMode.none);
+        widget is YaruRadioButton<ConnectMode> &&
+        widget.value == ConnectMode.none);
     expect(noConnectTile, findsOneWidget);
     await tester.tap(noConnectTile);
     expect(model.connectMode, ConnectMode.none);
@@ -232,7 +233,8 @@ void main() {
     await tester.pumpAndSettle();
 
     final noConnectTile = find.byWidgetPredicate((widget) =>
-        widget is RadioButton<ConnectMode> && widget.value == ConnectMode.none);
+        widget is YaruRadioButton<ConnectMode> &&
+        widget.value == ConnectMode.none);
     expect(noConnectTile, findsOneWidget);
     expect(model.connectMode, ConnectMode.none);
   });

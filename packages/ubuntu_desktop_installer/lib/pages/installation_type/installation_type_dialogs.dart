@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'installation_type_model.dart';
@@ -31,14 +31,14 @@ Future<void> showAdvancedFeaturesDialog(
           builder: (context, child) {
             return Column(
               children: <Widget>[
-                RadioButton<AdvancedFeature>(
+                YaruRadioButton<AdvancedFeature>(
                   title: Text(lang.installationTypeNone),
                   value: AdvancedFeature.none,
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
                 ),
                 const SizedBox(height: kContentSpacing),
-                RadioButton<AdvancedFeature>(
+                YaruRadioButton<AdvancedFeature>(
                   title: Text(lang.installationTypeLVM(flavor.name)),
                   value: AdvancedFeature.lvm,
                   groupValue: advancedFeature.value,
@@ -46,7 +46,7 @@ Future<void> showAdvancedFeaturesDialog(
                 ),
                 Padding(
                   padding: kContentIndentation,
-                  child: CheckButton(
+                  child: YaruCheckButton(
                     title: Text(lang.installationTypeEncrypt(flavor.name)),
                     subtitle: Text(lang.installationTypeEncryptInfo),
                     value: encryption.value,
@@ -57,7 +57,7 @@ Future<void> showAdvancedFeaturesDialog(
                 ),
                 const SizedBox(height: kContentSpacing),
                 // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-                // RadioButton<AdvancedFeature>(
+                // YaruRadioButton<AdvancedFeature>(
                 //   title: Text(lang.installationTypeZFS),
                 //   value: AdvancedFeature.zfs,
                 //   groupValue: advancedFeature.value,

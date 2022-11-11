@@ -197,7 +197,7 @@ class _ShowPasswordCheckButton extends StatelessWidget {
     final showPassword =
         context.select<WhoAreYouModel, bool>((model) => model.showPassword);
 
-    return CheckButton(
+    return YaruCheckButton(
       value: showPassword,
       title: Text(lang.whoAreYouPageShowPassword),
       onChanged: (value) {
