@@ -154,6 +154,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
         WizardAction.back(context),
         WizardAction.next(
           context,
+          enabled: model.hasStorage,
           arguments: model.installationType,
           onNext: model.save,
           // If the user returns back to select another installation type, the

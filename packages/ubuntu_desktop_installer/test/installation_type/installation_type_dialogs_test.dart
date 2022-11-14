@@ -56,6 +56,7 @@ void main() {
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
+    when(model.hasStorage).thenReturn(true);
 
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
@@ -87,6 +88,7 @@ void main() {
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
+    when(model.hasStorage).thenReturn(true);
 
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
