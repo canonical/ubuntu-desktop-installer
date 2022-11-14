@@ -214,6 +214,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installThirdPartySubtitle => 'A szoftverre a dokumentációban szereplő licencfeltételek vonatkoznak. Egyesek védettek.';
 
   @override
+  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+
+  @override
+  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Figyelmeztetés</font>: A számítógép nincs csatlakoztatva áramforráshoz.';
   }

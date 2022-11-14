@@ -214,6 +214,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installThirdPartySubtitle => 'התכניות האלו כפופות לתנאי אישוי שנכללים בתיעוד שלהן. חלקן קנייניות.';
 
   @override
+  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+
+  @override
+  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">אזהרה</font>: המחשב לא מחובר למקור חשמל.';
   }

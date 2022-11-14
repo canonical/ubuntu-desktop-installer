@@ -214,6 +214,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installThirdPartySubtitle => 'Näihin ohjelmistoihin kohdistuvat dokumentaation mukana olevat lisenssiehdot. Jotkin voivat olla suljetun lähdekoodin ohjelmistoja.';
 
   @override
+  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+
+  @override
+  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Varoitus</font>: Tietokonetta ei ole liitetty virtalähteeseen.';
   }

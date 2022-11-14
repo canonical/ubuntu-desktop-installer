@@ -214,6 +214,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
+  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+
+  @override
+  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Averto</font>: La komputilo ne estas konektita al energifonto.';
   }

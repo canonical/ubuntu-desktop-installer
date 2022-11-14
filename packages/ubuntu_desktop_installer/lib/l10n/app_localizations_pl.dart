@@ -214,6 +214,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installThirdPartySubtitle => 'To oprogramowanie podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.';
 
   @override
+  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+
+  @override
+  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.';
   }
