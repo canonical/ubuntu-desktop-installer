@@ -90,6 +90,11 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
+  bool get hasStorage => (super.noSuchMethod(
+        Invocation.getter(#hasStorage),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get canInstallAlongside => (super.noSuchMethod(
         Invocation.getter(#canInstallAlongside),
         returnValue: false,

@@ -74,6 +74,9 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _diskService.existingOS;
 
+  /// Whether storage information has been queried and installation can proceed.
+  bool get hasStorage => _storages != null;
+
   /// Whether installation alongside an existing OS is possible.
   ///
   /// That is, whether a) an existing partition can be safely resized smaller to

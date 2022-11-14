@@ -25,6 +25,7 @@ void main() {
     ProductInfo? productInfo,
     List<OsProber>? existingOS,
     bool? canInstallAlongside,
+    bool? hasStorage,
   }) {
     final model = MockInstallationTypeModel();
     when(model.installationType)
@@ -35,6 +36,7 @@ void main() {
     when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
     when(model.existingOS).thenReturn(existingOS);
     when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
+    when(model.hasStorage).thenReturn(hasStorage ?? true);
     return model;
   }
 
@@ -337,6 +339,35 @@ void main() {
       expect(find.text(tester.lang.installationTypeLVMEncryptionSelected),
           findsOneWidget);
     });
+  });
+
+  testWidgets('no storage', (tester) async {
+    final model = buildModel(hasStorage: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final continueButton = find.widgetWithText(
+      OutlinedButton,
+      tester.ulang.continueAction,
+    );
+    expect(continueButton, findsOneWidget);
+    expect(tester.widget<OutlinedButton>(continueButton).enabled, false);
+
+    await tester.tap(continueButton);
+    verifyNever(model.save());
+  });
+
+  testWidgets('continue', (tester) async {
+    final model = buildModel(hasStorage: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final continueButton = find.widgetWithText(
+      OutlinedButton,
+      tester.ulang.continueAction,
+    );
+    expect(continueButton, findsOneWidget);
+
+    await tester.tap(continueButton);
+    verify(model.save()).called(1);
   });
 
   testWidgets('creates a model', (tester) async {
