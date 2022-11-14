@@ -252,25 +252,25 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesUbuntuWslDataScience => 'Ubuntu WSL för datavetenskap';
 
   @override
-  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack lets you maximize the performance of Data Science and Machine Learning projects on top of native Windows NVIDIA drivers.';
+  String get installationSlidesUbuntuWslDataScienceText => 'NVIDIA Data Science Stack låter dig maximera prestandan för datavetenskap och maskininlärningsprojekt ovanpå vanliga Windows NVIDIA drivrutiner.';
 
   @override
   String get installationSlidesUbuntuWslGuiApps => 'Ubuntu WSL för\nGrafiska program';
 
   @override
-  String get installationSlidesUbuntuWslGuiAppsText => 'Develop and preview web and graphical applications on Linux using WSLg for multi-platform development.';
+  String get installationSlidesUbuntuWslGuiAppsText => 'Utveckla och förhandsgranska webb och grafiska program på Linux genom att använda WSLg för multiplattformsutveckling.';
 
   @override
   String get installationSlidesUbuntuWslDevOps => 'Ubuntu WSL för DevOps';
 
   @override
-  String get installationSlidesUbuntuWslDevOpsText => 'Ensure CI/CD pipeline compatibility by developing on Ubuntu WSL locally before publishing to an Ubuntu production environment';
+  String get installationSlidesUbuntuWslDevOpsText => 'Säkerställ CI/CD pipelinekompatibilitet genom att utveckla på Ubuntu WSL lokalt innan du publicerar till en Ubuntu produktionsmiljö';
 
   @override
   String get installationSlidesUbuntuWslEnterprises => 'Ubuntu WSL för företag';
 
   @override
-  String get installationSlidesUbuntuWslEnterprisesText => 'Empower developers in a Windows\nenterprise ecosystem with a certified\nUbuntu LTS.';
+  String get installationSlidesUbuntuWslEnterprisesText => 'Styrka utvecklare i ett Windows\nföretagsekosystem med ett certifierat\nUbuntu LTS.';
 
   @override
   String get installationSlidesFindOutMore => 'Få reda på mer';
