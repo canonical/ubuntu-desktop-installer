@@ -537,4 +537,32 @@ class SubiquityClient {
     final json = await _receiveJson('getKeyboardStep($step)', response);
     return AnyStep.fromJson(json);
   }
+
+  Future<DriversResponse> getDrivers() async {
+    final request = await _openUrl('GET', url('drivers'));
+    final response = await request.close();
+    final json = await _receiveJson('getDrivers()', response);
+    return DriversResponse.fromJson(json);
+  }
+
+  Future<void> setDrivers({required bool install}) async {
+    final request = await _openUrl('POST', url('drivers'));
+    request.write(jsonEncode(<String, dynamic>{'install': install}));
+    final response = await request.close();
+    await _receive('setDrivers($install)', response);
+  }
+
+  Future<CodecsData> getCodecs() async {
+    final request = await _openUrl('GET', url('codecs'));
+    final response = await request.close();
+    final json = await _receiveJson('getCodecs()', response);
+    return CodecsData.fromJson(json);
+  }
+
+  Future<void> setCodecs({required bool install}) async {
+    final request = await _openUrl('POST', url('codecs'));
+    request.write(jsonEncode(<String, dynamic>{'install': install}));
+    final response = await request.close();
+    await _receive('setCodecs($install)', response);
+  }
 }

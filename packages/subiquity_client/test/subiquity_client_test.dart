@@ -490,6 +490,26 @@ void main() {
       await client.setFreeOnly(false);
       expect(await client.freeOnly(), false);
     });
+
+    test('drivers', () async {
+      await client.setDrivers(install: true);
+      final response1 = await client.getDrivers();
+      expect(response1.install, isTrue);
+
+      await client.setDrivers(install: false);
+      final response2 = await client.getDrivers();
+      expect(response2.install, isFalse);
+    });
+
+    test('codecs', () async {
+      await client.setCodecs(install: true);
+      final response1 = await client.getCodecs();
+      expect(response1.install, isTrue);
+
+      await client.setCodecs(install: false);
+      final response2 = await client.getCodecs();
+      expect(response2.install, isFalse);
+    });
   });
 
   group('wsl', () {
