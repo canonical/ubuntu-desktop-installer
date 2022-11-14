@@ -5,8 +5,8 @@ source "bach.sh"
 src=$(realpath "$(dirname $0)/..")
 
 test-copy-network-config() {
-    @mocktrue test -d /etc/NetworkManager/system-connections
-    @mocktrue test -d /target//etc/NetworkManager/system-connections
+    @mocktrue [ -d /etc/NetworkManager/system-connections ]
+    @mocktrue [ -d /target//etc/NetworkManager/system-connections ]
 
     @run "$src/10_copy_network_config"
 }
@@ -16,8 +16,8 @@ test-copy-network-config-assert() {
 }
 
 test-missing-network-source-config() {
-    @mockfalse test -d /etc/NetworkManager/system-connections
-    @mocktrue test -d /target//etc/NetworkManager/system-connections
+    @mockfalse [ -d /etc/NetworkManager/system-connections ]
+    @mocktrue [ -d /target//etc/NetworkManager/system-connections ]
 
     @run "$src/10_copy_network_config"
 }
@@ -27,8 +27,8 @@ test-missing-network-source-config-assert() {
 }
 
 test-missing-network-target-config() {
-    @mocktrue test -d /etc/NetworkManager/system-connections
-    @mockfalse test -d /target//etc/NetworkManager/system-connections
+    @mocktrue [ -d /etc/NetworkManager/system-connections ]
+    @mockfalse [ -d /target//etc/NetworkManager/system-connections ]
 
     @run "$src/10_copy_network_config"
 }

@@ -5,7 +5,7 @@ source "bach.sh"
 src=$(realpath "$(dirname $0)/..")
 
 test-copy-bluetooth-config() {
-    @mocktrue test -d /var/lib/bluetooth
+    @mocktrue [ -d /var/lib/bluetooth ]
 
     @run "$src/10_copy_bluetooth_config"
 }
@@ -16,7 +16,7 @@ test-copy-bluetooth-config-assert() {
 }
 
 test-missing-bluetooth-config() {
-    @mockfalse test -d /var/lib/bluetooth
+    @mockfalse [ -d /var/lib/bluetooth ]
 
     @run "$src/10_copy_bluetooth_config"
 }
