@@ -5,7 +5,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Instalador de Escritorio de Ubuntu';
+  String get appTitle => 'Instalador de Ubuntu para el escritorio';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -139,7 +139,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Conectarse a Internet';
 
   @override
-  String get connectToInternetDescription => 'Conectar este ordenador a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y a elegir su zona horaria.\n\nConéctate por cable ethernet, o elige una red Wi-Fi';
+  String get connectToInternetDescription => 'Entablar una conexión a Internet en el equipo permitirá que Ubuntu instale componentes adicionales necesarios y le permitirá seleccionar su huso horario.\n\nConéctese mediante cable Ethernet o elija una red inalámbrica.';
 
   @override
   String get useWiredConnection => 'Utilizar conexión cableada';
