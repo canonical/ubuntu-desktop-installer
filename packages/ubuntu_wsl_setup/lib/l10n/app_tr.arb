@@ -160,5 +160,24 @@
   "installationSlidesFindOutMoreText": " WSL'de Ubuntu ve Canonical'in geliştiricileri ve kuruluşları nasıl desteklediği hakkında daha fazla bilgi edinmek için.",
   "@installationSlidesFindOutMoreText": {},
   "configurationUISystemdSubtitle": "systemd'nin önyükleme sırasında etkinleştirilip etkinleştirilmeyeceği. DİKKAT: Bu deneysel bir özelliktir.",
-  "@configurationUISystemdSubtitle": {}
+  "@configurationUISystemdSubtitle": {},
+  "installLangPacksTitle": "Daha iyi {lang} dil desteği için paketleri kurun",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Yavaş bağlantılar için önerilmiyor.",
+  "@installLangPacksSubtitle": {},
+  "installationSlidesUnpacking": "Dağıtım paketten çıkarılıyor",
+  "@installationSlidesUnpacking": {},
+  "profileSetupHeader": "Lütfen varsayılan bir UNIX kullanıcı hesabı oluşturun. Daha fazla bilgi için bu siteyi ziyaret edin: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "@profileSetupHeader": {},
+  "advancedSetupMountOptionHelper": "Oto-yerleştirme için yerleştirme seçeneği atlandı",
+  "@advancedSetupMountOptionHelper": {},
+  "advancedSetupGUIIntegrationSubtitle": "Bu seçenek otomatik GÖRÜNTÜ ortamı kurulumuna izin verir. Üçüncü parti X sunucusu gerektirir.",
+  "@advancedSetupGUIIntegrationSubtitle": {}
 }
