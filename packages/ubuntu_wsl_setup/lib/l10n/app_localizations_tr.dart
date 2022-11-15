@@ -27,17 +27,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String installLangPacksTitle(String lang) {
-    return 'Install packages for better $lang language support';
+    return 'Daha iyi $lang dil desteği için paketleri kurun';
   }
 
   @override
-  String get installLangPacksSubtitle => 'Not recommended for slow connections.';
+  String get installLangPacksSubtitle => 'Yavaş bağlantılar için önerilmiyor.';
 
   @override
   String get profileSetupTitle => 'Profil kurulumu';
 
   @override
-  String get profileSetupHeader => 'Please create a default UNIX user account. For more information visit: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
+  String get profileSetupHeader => 'Lütfen varsayılan bir UNIX kullanıcı hesabı oluşturun. Daha fazla bilgi için bu siteyi ziyaret edin: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>';
 
   @override
   String get profileSetupRealnameLabel => 'Adınız';
@@ -103,7 +103,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedSetupMountOptionHint => 'Bağlama seçeneği';
 
   @override
-  String get advancedSetupMountOptionHelper => 'Mount option passed for the automount';
+  String get advancedSetupMountOptionHelper => 'Oto-yerleştirme için yerleştirme seçeneği atlandı';
 
   @override
   String get advancedSetupHostGenerationTitle => 'Host Oluşturmayı Etkinleştir';
@@ -121,7 +121,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedSetupGUIIntegrationTitle => 'Arayüz Entegrasyonu';
 
   @override
-  String get advancedSetupGUIIntegrationSubtitle => 'Selecting enables automatic DISPLAY environment set-up. Third-party X server required.';
+  String get advancedSetupGUIIntegrationSubtitle => 'Bu seçenek otomatik GÖRÜNTÜ ortamı kurulumuna izin verir. Üçüncü parti X sunucusu gerektirir.';
 
   @override
   String get configurationUITitle => 'Ubuntu WSL Yapılandırması - Gelişmiş seçenekler';
@@ -192,7 +192,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationSlidesInitializing => 'Başlatılıyor...';
 
   @override
-  String get installationSlidesUnpacking => 'Unpacking the distro';
+  String get installationSlidesUnpacking => 'Dağıtım paketten çıkarılıyor';
 
   @override
   String get installationSlidesInstalling => 'Neredeyse bitti. Yükleyici yakında ilgilenmenizi gerektirecek.';
