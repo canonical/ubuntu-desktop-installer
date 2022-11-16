@@ -5,11 +5,11 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Instalador de escritorio de Ubuntu';
+  String get appTitle => 'Instalador de Ubuntu para ordenadores';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar${RELEASE}';
+    return 'Instalar $RELEASE';
   }
 
   @override
