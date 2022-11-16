@@ -7,6 +7,8 @@ description: |
 grade: stable
 confinement: classic
 base: core20
+issues: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
+contact: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 
 apps:
   subiquity-server:
