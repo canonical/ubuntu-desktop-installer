@@ -1,8 +1,8 @@
 {
   "@@locale": "es",
-  "appTitle": "Instalador de escritorio de Ubuntu",
+  "appTitle": "Instalador de Ubuntu para ordenadores",
   "@appTitle": {},
-  "windowTitle": "Instalar{RELEASE}",
+  "windowTitle": "Instalar {RELEASE}",
   "@windowTitle": {},
   "restartButtonText": "Reiniciar",
   "@restartButtonText": {},
