@@ -42,6 +42,11 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
+  bool get installCodecs => (super.noSuchMethod(
+        Invocation.getter(#installCodecs),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get onBattery => (super.noSuchMethod(
         Invocation.getter(#onBattery),
         returnValue: false,
@@ -69,6 +74,14 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         Invocation.method(
           #setInstallDrivers,
           [installDrivers],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void setInstallCodecs(bool? installCodecs) => super.noSuchMethod(
+        Invocation.method(
+          #setInstallCodecs,
+          [installCodecs],
         ),
         returnValueForMissingStub: null,
       );

@@ -26,11 +26,13 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       {required SubiquityClient client,
       required PowerService power,
       required InstallationMode installationMode,
-      bool installDrivers = false})
+      bool installDrivers = false,
+      bool installCodecs = false})
       : _client = client,
         _power = power,
         _mode = installationMode,
-        _installDrivers = installDrivers {
+        _installDrivers = installDrivers,
+        _installCodecs = installCodecs {
     addPropertyListener('OnBattery', notifyListeners);
   }
 
@@ -42,6 +44,9 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
 
   bool _installDrivers;
   bool get installDrivers => _installDrivers;
+
+  bool _installCodecs;
+  bool get installCodecs => _installCodecs;
 
   void setInstallationMode(InstallationMode? mode) {
     if (mode == null || _mode == mode) {
@@ -64,12 +69,24 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
     notifyListeners();
   }
 
+  // ignore: avoid_positional_boolean_parameters
+  void setInstallCodecs(bool? installCodecs) {
+    if (installCodecs == null || _installCodecs == installCodecs) {
+      return;
+    }
+
+    _installCodecs = installCodecs;
+    log.info('Install codecs: $installCodecs');
+    notifyListeners();
+  }
+
   /// Select the source corresponding to the selected installation mode, and
   /// save the selected installation options.
   Future<void> save() {
     return Future.wait([
       _client.setSource(installationMode.source),
       _client.setDrivers(install: installDrivers),
+      _client.setCodecs(install: installCodecs),
     ]);
   }
 
@@ -81,6 +98,9 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
     return Future.wait([
       _client.getDrivers().then((response) {
         _installDrivers = response.install;
+      }),
+      _client.getCodecs().then((data) {
+        _installCodecs = data.install;
       }),
       _power.connect().then((_) {
         setProperties(_power.propertiesChanged);

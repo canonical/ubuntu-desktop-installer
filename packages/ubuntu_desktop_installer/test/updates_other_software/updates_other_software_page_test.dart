@@ -23,12 +23,14 @@ void main() {
   UpdateOtherSoftwareModel buildModel({
     InstallationMode? installationMode,
     bool? installDrivers,
+    bool? installCodecs,
     bool? onBattery,
   }) {
     final model = MockUpdateOtherSoftwareModel();
     when(model.installationMode)
         .thenReturn(installationMode ?? InstallationMode.normal);
     when(model.installDrivers).thenReturn(installDrivers ?? false);
+    when(model.installCodecs).thenReturn(installCodecs ?? false);
     when(model.onBattery).thenReturn(onBattery ?? false);
     return model;
   }
@@ -98,6 +100,25 @@ void main() {
     verify(model.setInstallDrivers(false)).called(1);
   });
 
+  testWidgets('install codecs', (tester) async {
+    final model = buildModel(installCodecs: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final installCodecsTile = find.widgetWithText(
+      CheckButton,
+      tester.lang.installCodecsTitle,
+    );
+    expect(installCodecsTile, findsOneWidget);
+
+    expect(tester.widget<CheckButton>(installCodecsTile).value, isTrue);
+
+    when(model.installCodecs).thenReturn(false);
+
+    await tester.tap(installCodecsTile);
+
+    verify(model.setInstallCodecs(false)).called(1);
+  });
+
   testWidgets('on battery', (tester) async {
     final model = buildModel(onBattery: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
@@ -138,6 +159,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
+    when(client.getCodecs())
+        .thenAnswer((_) async => const CodecsData(install: true));
     registerMockService<SubiquityClient>(client);
 
     final power = MockPowerService();

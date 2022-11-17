@@ -638,6 +638,18 @@ abstract class AppLocalizations {
   /// **'These drivers are subject to license terms included with their documentation. They are proprietary.'**
   String get installDriversSubtitle;
 
+  /// No description provided for @installCodecsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Install support for additional media formats'**
+  String get installCodecsTitle;
+
+  /// No description provided for @installCodecsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This software is subject to license terms included with its documentation. Some are proprietary.'**
+  String get installCodecsSubtitle;
+
   /// No description provided for @onBatteryWarning.
   ///
   /// In en, this message translates to:

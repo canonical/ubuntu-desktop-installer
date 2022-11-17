@@ -81,6 +81,14 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             value: model.installDrivers,
             onChanged: model.setInstallDrivers,
           ),
+          const SizedBox(height: kContentSpacing),
+          CheckButton(
+            title: Text(lang.installCodecsTitle),
+            subtitle: Text(lang.installCodecsSubtitle),
+            contentPadding: kContentPadding,
+            value: model.installCodecs,
+            onChanged: model.setInstallCodecs,
+          ),
         ],
       ),
       footer: model.onBattery
@@ -96,7 +104,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             final telemetry = getService<TelemetryService>();
             await telemetry.addMetrics({
               'Minimal': model.installationMode == InstallationMode.minimal,
-              // TODO: 'RestrictedAddons': model.installCodecs,
+              'RestrictedAddons': model.installCodecs,
             });
             await model.save();
           },
