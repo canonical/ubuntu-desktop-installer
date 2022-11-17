@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -32,15 +33,15 @@ void main() {
     expect(mode, InstallationMode.minimal);
   });
 
-  test('should have third party option set to false by default', () {
-    expect(model.installThirdParty, isFalse);
+  test('should have drivers option set to false by default', () {
+    expect(model.installDrivers, isFalse);
   });
 
-  test('should be able to set third party', () {
-    bool? shouldInstallThirdParty;
-    model.addListener(() => shouldInstallThirdParty = model.installThirdParty);
-    model.setInstallThirdParty(true);
-    expect(shouldInstallThirdParty, isTrue);
+  test('should be able to install drivers', () {
+    bool? shouldInstallDrivers;
+    model.addListener(() => shouldInstallDrivers = model.installDrivers);
+    model.setInstallDrivers(true);
+    expect(shouldInstallDrivers, isTrue);
   });
 
   test('should not notify installation mode when passed null', () {
@@ -50,27 +51,53 @@ void main() {
     expect(mode, isNull);
   });
 
-  test('should not notify third party when passed null', () {
-    bool? shouldInstallThirdParty;
-    model.addListener(() => shouldInstallThirdParty = model.installThirdParty);
-    model.setInstallThirdParty(null);
-    expect(shouldInstallThirdParty, isNull);
+  test('should not notify drivers when passed null', () {
+    bool? shouldInstallDrivers;
+    model.addListener(() => shouldInstallDrivers = model.installDrivers);
+    model.setInstallDrivers(null);
+    expect(shouldInstallDrivers, isNull);
   });
 
-  test('set the installation source', () async {
+  test('init the installation options', () async {
     final client = MockSubiquityClient();
+    when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
+        install: true, drivers: [], localOnly: false, searchDrivers: false));
+
+    final service = MockPowerService();
+    final propertiesChanged = StreamController<List<String>>(sync: true);
+    when(service.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
+
     final model = UpdateOtherSoftwareModel(
       client: client,
       installationMode: InstallationMode.normal,
+      installDrivers: false,
+      power: service,
+    );
+
+    await model.init();
+    expect(model.installDrivers, isTrue);
+    verify(client.getDrivers()).called(1);
+  });
+
+  test('save the installation options', () async {
+    final client = MockSubiquityClient();
+
+    final model = UpdateOtherSoftwareModel(
+      client: client,
+      installationMode: InstallationMode.normal,
+      installDrivers: false,
       power: MockPowerService(),
     );
 
-    await model.selectInstallationSource();
+    await model.save();
     verify(client.setSource('ubuntu-desktop')).called(1);
+    verify(client.setDrivers(install: false)).called(1);
 
     model.setInstallationMode(InstallationMode.minimal);
-    await model.selectInstallationSource();
+    model.setInstallDrivers(true);
+    await model.save();
     verify(client.setSource('ubuntu-desktop-minimal')).called(1);
+    verify(client.setDrivers(install: true)).called(1);
   });
 
   test('on battery', () async {
@@ -78,8 +105,12 @@ void main() {
     final propertiesChanged = StreamController<List<String>>(sync: true);
     when(service.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
 
+    final client = MockSubiquityClient();
+    when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
+        install: true, drivers: [], localOnly: false, searchDrivers: false));
+
     final model = UpdateOtherSoftwareModel(
-      client: MockSubiquityClient(),
+      client: client,
       installationMode: InstallationMode.normal,
       power: service,
     );

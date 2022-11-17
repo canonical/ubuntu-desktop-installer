@@ -626,6 +626,18 @@ abstract class AppLocalizations {
   /// **'This software is subject to license terms included with its documentation. Some are proprietary.'**
   String get installThirdPartySubtitle;
 
+  /// No description provided for @installDriversTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Install third-party software for graphics and Wi-Fi hardware'**
+  String get installDriversTitle;
+
+  /// No description provided for @installDriversSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'These drivers are subject to license terms included with their documentation. They are proprietary.'**
+  String get installDriversSubtitle;
+
   /// No description provided for @onBatteryWarning.
   ///
   /// In en, this message translates to:

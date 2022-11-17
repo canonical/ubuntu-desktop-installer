@@ -26,11 +26,11 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       {required SubiquityClient client,
       required PowerService power,
       required InstallationMode installationMode,
-      bool installThirdParty = false})
+      bool installDrivers = false})
       : _client = client,
         _power = power,
         _mode = installationMode,
-        _installThirdParty = installThirdParty {
+        _installDrivers = installDrivers {
     addPropertyListener('OnBattery', notifyListeners);
   }
 
@@ -40,8 +40,8 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   InstallationMode _mode;
   InstallationMode get installationMode => _mode;
 
-  bool _installThirdParty;
-  bool get installThirdParty => _installThirdParty;
+  bool _installDrivers;
+  bool get installDrivers => _installDrivers;
 
   void setInstallationMode(InstallationMode? mode) {
     if (mode == null || _mode == mode) {
@@ -54,30 +54,37 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   }
 
   // ignore: avoid_positional_boolean_parameters
-  void setInstallThirdParty(bool? installThirdParty) {
-    if (installThirdParty == null || _installThirdParty == installThirdParty) {
+  void setInstallDrivers(bool? installDrivers) {
+    if (installDrivers == null || _installDrivers == installDrivers) {
       return;
     }
 
-    _installThirdParty = installThirdParty;
-    log.info('Install 3rd-party software: $installThirdParty');
+    _installDrivers = installDrivers;
+    log.info('Install drivers: $installDrivers');
     notifyListeners();
   }
 
-  /// Select the source corresponding to the selected installation mode.
-  Future<void> selectInstallationSource() {
-    log.info('Selected ${installationMode.source} installation source');
-    return _client.setSource(installationMode.source);
+  /// Select the source corresponding to the selected installation mode, and
+  /// save the selected installation options.
+  Future<void> save() {
+    return Future.wait([
+      _client.setSource(installationMode.source),
+      _client.setDrivers(install: installDrivers),
+    ]);
   }
 
   /// Returns true if currently powered by battery.
   bool get onBattery => _power.onBattery;
 
   /// Initializes the model and connects to the power service.
-  Future<void> init() async {
-    return _power.connect().then((_) {
-      setProperties(_power.propertiesChanged);
-      notifyListeners();
-    });
+  Future<void> init() {
+    return Future.wait([
+      _client.getDrivers().then((response) {
+        _installDrivers = response.install;
+      }),
+      _power.connect().then((_) {
+        setProperties(_power.propertiesChanged);
+      })
+    ]).then((_) => notifyListeners());
   }
 }

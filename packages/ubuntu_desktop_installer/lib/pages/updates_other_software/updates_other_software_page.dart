@@ -70,18 +70,17 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             groupValue: model.installationMode,
             onChanged: model.setInstallationMode,
           ),
-          // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-          // Padding(
-          //   padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-          //   child: Text(lang.otherOptions),
-          // ),
-          // CheckButton(
-          //   title: Text(lang.installThirdPartyTitle),
-          //   subtitle: Text(lang.installThirdPartySubtitle),
-          //   contentPadding: kContentPadding,
-          //   value: model.installThirdParty,
-          //   onChanged: model.setInstallThirdParty,
-          // )
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.otherOptions),
+          ),
+          CheckButton(
+            title: Text(lang.installDriversTitle),
+            subtitle: Text(lang.installDriversSubtitle),
+            contentPadding: kContentPadding,
+            value: model.installDrivers,
+            onChanged: model.setInstallDrivers,
+          ),
         ],
       ),
       footer: model.onBattery
@@ -97,9 +96,9 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             final telemetry = getService<TelemetryService>();
             await telemetry.addMetrics({
               'Minimal': model.installationMode == InstallationMode.minimal,
-              'RestrictedAddons': model.installThirdParty,
+              // TODO: 'RestrictedAddons': model.installCodecs,
             });
-            await model.selectInstallationSource();
+            await model.save();
           },
         ),
       ],

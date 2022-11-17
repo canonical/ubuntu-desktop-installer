@@ -37,8 +37,8 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValue: _i2.InstallationMode.normal,
       ) as _i2.InstallationMode);
   @override
-  bool get installThirdParty => (super.noSuchMethod(
-        Invocation.getter(#installThirdParty),
+  bool get installDrivers => (super.noSuchMethod(
+        Invocation.getter(#installDrivers),
         returnValue: false,
       ) as bool);
   @override
@@ -65,17 +65,17 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void setInstallThirdParty(bool? installThirdParty) => super.noSuchMethod(
+  void setInstallDrivers(bool? installDrivers) => super.noSuchMethod(
         Invocation.method(
-          #setInstallThirdParty,
-          [installThirdParty],
+          #setInstallDrivers,
+          [installDrivers],
         ),
         returnValueForMissingStub: null,
       );
   @override
-  _i3.Future<void> selectInstallationSource() => (super.noSuchMethod(
+  _i3.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
-          #selectInstallationSource,
+          #save,
           [],
         ),
         returnValue: _i3.Future<void>.value(),
