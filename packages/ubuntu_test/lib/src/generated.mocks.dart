@@ -172,8 +172,29 @@ class _FakeAnyStep_13 extends _i1.SmartFake implements _i3.AnyStep {
         );
 }
 
-class _FakeEndpoint_14 extends _i1.SmartFake implements _i4.Endpoint {
-  _FakeEndpoint_14(
+class _FakeDriversResponse_14 extends _i1.SmartFake
+    implements _i3.DriversResponse {
+  _FakeDriversResponse_14(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeCodecsData_15 extends _i1.SmartFake implements _i3.CodecsData {
+  _FakeCodecsData_15(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeEndpoint_16 extends _i1.SmartFake implements _i4.Endpoint {
+  _FakeEndpoint_16(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -943,6 +964,55 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           ),
         )),
       ) as _i6.Future<_i3.AnyStep>);
+  @override
+  _i6.Future<_i3.DriversResponse> getDrivers() => (super.noSuchMethod(
+        Invocation.method(
+          #getDrivers,
+          [],
+        ),
+        returnValue:
+            _i6.Future<_i3.DriversResponse>.value(_FakeDriversResponse_14(
+          this,
+          Invocation.method(
+            #getDrivers,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.DriversResponse>);
+  @override
+  _i6.Future<void> setDrivers({required bool? install}) => (super.noSuchMethod(
+        Invocation.method(
+          #setDrivers,
+          [],
+          {#install: install},
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<_i3.CodecsData> getCodecs() => (super.noSuchMethod(
+        Invocation.method(
+          #getCodecs,
+          [],
+        ),
+        returnValue: _i6.Future<_i3.CodecsData>.value(_FakeCodecsData_15(
+          this,
+          Invocation.method(
+            #getCodecs,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.CodecsData>);
+  @override
+  _i6.Future<void> setCodecs({required bool? install}) => (super.noSuchMethod(
+        Invocation.method(
+          #setCodecs,
+          [],
+          {#install: install},
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
 }
 
 /// A class which mocks [SubiquityServer].
@@ -964,7 +1034,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(
         Invocation.getter(#endpoint),
-        returnValue: _FakeEndpoint_14(
+        returnValue: _FakeEndpoint_16(
           this,
           Invocation.getter(#endpoint),
         ),
@@ -983,7 +1053,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
             #environment: environment,
           },
         ),
-        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_14(
+        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_16(
           this,
           Invocation.method(
             #start,
