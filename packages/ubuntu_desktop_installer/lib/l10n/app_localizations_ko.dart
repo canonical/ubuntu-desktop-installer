@@ -220,6 +220,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
 
   @override
+  String get installCodecsTitle => 'Install support for additional media formats';
+
+  @override
+  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.';
   }
