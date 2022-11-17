@@ -139,6 +139,7 @@ Future<void> runInstallerApp(
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
   return subiquityClient.markConfigured([
+    'codecs',
     'drivers',
     'mirror',
     'proxy',
