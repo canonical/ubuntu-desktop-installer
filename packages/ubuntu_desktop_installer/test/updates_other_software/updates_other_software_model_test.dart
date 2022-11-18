@@ -33,8 +33,9 @@ void main() {
     expect(mode, InstallationMode.minimal);
   });
 
-  test('should have drivers option set to false by default', () {
+  test('should have drivers and codecs set to false by default', () {
     expect(model.installDrivers, isFalse);
+    expect(model.installCodecs, isFalse);
   });
 
   test('should be able to install drivers', () {
@@ -42,6 +43,13 @@ void main() {
     model.addListener(() => shouldInstallDrivers = model.installDrivers);
     model.setInstallDrivers(true);
     expect(shouldInstallDrivers, isTrue);
+  });
+
+  test('should be able to install codecs', () {
+    bool? shouldInstallCodecs;
+    model.addListener(() => shouldInstallCodecs = model.installCodecs);
+    model.setInstallCodecs(true);
+    expect(shouldInstallCodecs, isTrue);
   });
 
   test('should not notify installation mode when passed null', () {
@@ -58,10 +66,19 @@ void main() {
     expect(shouldInstallDrivers, isNull);
   });
 
+  test('should not notify codecs when passed null', () {
+    bool? shouldInstallCodecs;
+    model.addListener(() => shouldInstallCodecs = model.installCodecs);
+    model.setInstallCodecs(null);
+    expect(shouldInstallCodecs, isNull);
+  });
+
   test('init the installation options', () async {
     final client = MockSubiquityClient();
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
+    when(client.getCodecs())
+        .thenAnswer((_) async => const CodecsData(install: true));
 
     final service = MockPowerService();
     final propertiesChanged = StreamController<List<String>>(sync: true);
@@ -71,12 +88,15 @@ void main() {
       client: client,
       installationMode: InstallationMode.normal,
       installDrivers: false,
+      installCodecs: false,
       power: service,
     );
 
     await model.init();
     expect(model.installDrivers, isTrue);
     verify(client.getDrivers()).called(1);
+    expect(model.installCodecs, isTrue);
+    verify(client.getCodecs()).called(1);
   });
 
   test('save the installation options', () async {
@@ -86,18 +106,22 @@ void main() {
       client: client,
       installationMode: InstallationMode.normal,
       installDrivers: false,
+      installCodecs: false,
       power: MockPowerService(),
     );
 
     await model.save();
     verify(client.setSource('ubuntu-desktop')).called(1);
     verify(client.setDrivers(install: false)).called(1);
+    verify(client.setCodecs(install: false)).called(1);
 
     model.setInstallationMode(InstallationMode.minimal);
     model.setInstallDrivers(true);
+    model.setInstallCodecs(true);
     await model.save();
     verify(client.setSource('ubuntu-desktop-minimal')).called(1);
     verify(client.setDrivers(install: true)).called(1);
+    verify(client.setCodecs(install: true)).called(1);
   });
 
   test('on battery', () async {
@@ -108,6 +132,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
+    when(client.getCodecs())
+        .thenAnswer((_) async => const CodecsData(install: true));
 
     final model = UpdateOtherSoftwareModel(
       client: client,

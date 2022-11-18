@@ -109,6 +109,8 @@
   "installThirdPartySubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
   "installDriversTitle": "Install third-party software for graphics and Wi-Fi hardware",
   "installDriversSubtitle": "These drivers are subject to license terms included with their documentation. They are proprietary.",
+  "installCodecsTitle": "Install support for additional media formats",
+  "installCodecsSubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
   "onBatteryWarning": "<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.",
   "@onBatteryWarning": {
     "type": "text",

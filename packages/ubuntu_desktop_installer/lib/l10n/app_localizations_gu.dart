@@ -220,6 +220,12 @@ class AppLocalizationsGu extends AppLocalizations {
   String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
 
   @override
+  String get installCodecsTitle => 'Install support for additional media formats';
+
+  @override
+  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
   }
