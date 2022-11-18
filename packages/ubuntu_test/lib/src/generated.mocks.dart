@@ -183,8 +183,28 @@ class _FakeCodecsData_14 extends _i1.SmartFake implements _i3.CodecsData {
         );
 }
 
-class _FakeEndpoint_15 extends _i1.SmartFake implements _i4.Endpoint {
-  _FakeEndpoint_15(
+class _FakeRefreshStatus_15 extends _i1.SmartFake implements _i3.RefreshStatus {
+  _FakeRefreshStatus_15(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeChange_16 extends _i1.SmartFake implements _i3.Change {
+  _FakeChange_16(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeEndpoint_17 extends _i1.SmartFake implements _i4.Endpoint {
+  _FakeEndpoint_17(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -980,6 +1000,46 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         returnValue: _i6.Future<void>.value(),
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
+  @override
+  _i6.Future<_i3.RefreshStatus> checkRefresh({bool? wait = true}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #checkRefresh,
+          [],
+          {#wait: wait},
+        ),
+        returnValue: _i6.Future<_i3.RefreshStatus>.value(_FakeRefreshStatus_15(
+          this,
+          Invocation.method(
+            #checkRefresh,
+            [],
+            {#wait: wait},
+          ),
+        )),
+      ) as _i6.Future<_i3.RefreshStatus>);
+  @override
+  _i6.Future<String> startRefresh() => (super.noSuchMethod(
+        Invocation.method(
+          #startRefresh,
+          [],
+        ),
+        returnValue: _i6.Future<String>.value(''),
+      ) as _i6.Future<String>);
+  @override
+  _i6.Future<_i3.Change> getRefreshProgress(String? changeId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getRefreshProgress,
+          [changeId],
+        ),
+        returnValue: _i6.Future<_i3.Change>.value(_FakeChange_16(
+          this,
+          Invocation.method(
+            #getRefreshProgress,
+            [changeId],
+          ),
+        )),
+      ) as _i6.Future<_i3.Change>);
 }
 
 /// A class which mocks [SubiquityServer].
@@ -1001,7 +1061,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(
         Invocation.getter(#endpoint),
-        returnValue: _FakeEndpoint_15(
+        returnValue: _FakeEndpoint_17(
           this,
           Invocation.getter(#endpoint),
         ),
@@ -1020,7 +1080,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
             #environment: environment,
           },
         ),
-        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_15(
+        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_17(
           this,
           Invocation.method(
             #start,
