@@ -477,6 +477,20 @@ void main() {
       final response2 = await client.getCodecs();
       expect(response2.install, isFalse);
     });
+
+    test('refresh', () async {
+      final status = await client.checkRefresh(wait: true);
+      expect(status.availability, isNot(RefreshCheckState.UNKNOWN));
+
+      final id = await client.startRefresh();
+      expect(id, isNotEmpty);
+
+      final change = await client.getRefreshProgress(id);
+      expect(change.status, isNot(TaskStatus.ERROR));
+      expect(change.tasks, isNotEmpty);
+      expect(change.ready, isFalse);
+      expect(change.err, isNull);
+    });
   });
 
   group('wsl', () {

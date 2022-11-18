@@ -550,4 +550,25 @@ class SubiquityClient {
     final response = await request.close();
     await _receive('setCodecs($install)', response);
   }
+
+  Future<RefreshStatus> checkRefresh({bool wait = true}) async {
+    final request = await _openUrl('GET', url('refresh', {'wait': '$wait'}));
+    final response = await request.close();
+    final json = await _receiveJson('checkRefresh()', response);
+    return RefreshStatus.fromJson(json);
+  }
+
+  Future<String> startRefresh() async {
+    final request = await _openUrl('POST', url('refresh'));
+    final response = await request.close();
+    return _receive('startRefresh()', response);
+  }
+
+  Future<Change> getRefreshProgress(String changeId) async {
+    final request =
+        await _openUrl('GET', url('refresh/progress', {'change_id': changeId}));
+    final response = await request.close();
+    final json = await _receiveJson('getRefreshProgress($changeId)', response);
+    return Change.fromJson(json);
+  }
 }
