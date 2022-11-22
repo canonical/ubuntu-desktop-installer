@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'who_are_you_page_test.mocks.dart';
@@ -25,7 +26,7 @@ void main() {
     String? password,
     String? confirmedPassword,
     PasswordStrength? passwordStrength,
-    LoginStrategy? loginStrategy,
+    bool? autoLogin,
     bool? showPassword,
   }) {
     final model = MockWhoAreYouModel();
@@ -37,8 +38,7 @@ void main() {
     when(model.confirmedPassword).thenReturn(confirmedPassword ?? '');
     when(model.passwordStrength)
         .thenReturn(passwordStrength ?? PasswordStrength.weak);
-    when(model.loginStrategy)
-        .thenReturn(loginStrategy ?? LoginStrategy.autoLogin);
+    when(model.autoLogin).thenReturn(autoLogin ?? false);
     when(model.showPassword).thenReturn(showPassword ?? false);
     when(model.usernameOk).thenReturn(true);
     when(model.usernameValidation).thenReturn(UsernameValidation.OK);
@@ -215,38 +215,21 @@ void main() {
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
   });
 
-  // https://github.com/canonical/ubuntu-desktop-installer/issues/373
-  // testWidgets('login strategy', (tester) async {
-  //   final model = buildModel(loginStrategy: LoginStrategy.autoLogin);
-  //   await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+  testWidgets('auto-login', (tester) async {
+    final model = buildModel(autoLogin: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-  //   final autoLoginTile = find.widgetWithText(
-  //     RadioButton<LoginStrategy>,
-  //     tester.lang.whoAreYouPageAutoLogin,
-  //   );
-  //   expect(autoLoginTile, findsOneWidget);
+    final requiredPasswordSwitch = find.widgetWithText(
+      YaruSwitchButton,
+      tester.lang.whoAreYouPageRequirePassword,
+    );
+    expect(requiredPasswordSwitch, findsOneWidget);
+    expect(
+        tester.widget<YaruSwitchButton>(requiredPasswordSwitch).value, isFalse);
 
-  //   final requirePasswordTile = find.widgetWithText(
-  //     RadioButton<LoginStrategy>,
-  //     tester.lang.whoAreYouPageRequirePassword,
-  //   );
-  //   expect(requirePasswordTile, findsOneWidget);
-
-  //   expect(
-  //     tester.widget<RadioButton<LoginStrategy>>(autoLoginTile).groupValue,
-  //     LoginStrategy.autoLogin,
-  //   );
-  //   expect(
-  //     tester.widget<RadioButton<LoginStrategy>>(requirePasswordTile).groupValue,
-  //     LoginStrategy.autoLogin,
-  //   );
-
-  //   when(model.loginStrategy).thenReturn(LoginStrategy.requirePassword);
-
-  //   await tester.tap(requirePasswordTile);
-
-  //   verify(model.loginStrategy = LoginStrategy.requirePassword).called(1);
-  // });
+    await tester.tap(requiredPasswordSwitch);
+    verify(model.autoLogin = false).called(1);
+  });
 
   testWidgets('show password', (tester) async {
     final model = buildModel(showPassword: false);

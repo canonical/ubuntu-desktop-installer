@@ -2,11 +2,15 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
+
+import 'who_are_you_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -17,6 +21,7 @@ class MockProductNameFile extends Mock implements File {
   Future<String> readAsString({Encoding encoding = utf8}) async => _product;
 }
 
+@GenerateMocks([ConfigService])
 void main() {
   test('load identity', () async {
     const identity = IdentityData(
@@ -29,7 +34,11 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final model = WhoAreYouModel(client);
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
 
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
@@ -41,6 +50,24 @@ void main() {
     expect(model.password, isEmpty); // not loaded
     expect(model.hostname, equals(identity.hostname));
     expect(model.showPassword, false);
+    expect(model.autoLogin, false);
+  });
+
+  test('load auto-login', () async {
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => IdentityData());
+
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => 'someone');
+
+    final model = WhoAreYouModel(client, config);
+
+    await IOOverrides.runZoned(() async {
+      await model.loadIdentity();
+    }, createFile: (path) => MockProductNameFile('impish'));
+
+    expect(model.autoLogin, true);
   });
 
   test('empty username and hostname', () async {
@@ -49,7 +76,11 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final model = WhoAreYouModel(client);
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
     }, createFile: (path) => MockProductNameFile('impish'));
@@ -64,7 +95,11 @@ void main() {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
 
-    final model = WhoAreYouModel(client);
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
     }, createFile: (path) => MockProductNameFile('impish'));
@@ -82,20 +117,46 @@ void main() {
 
     final client = MockSubiquityClient();
 
-    final model = WhoAreYouModel(client);
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
     model.realName = identity.realname;
     model.username = identity.username;
     model.hostname = identity.hostname;
     model.password = 'passwd';
+
+    model.autoLogin = false;
 
     await model.saveIdentity(salt: 'test');
 
     verify(client.setIdentity(identity)).called(1);
   });
 
+  test('save auto-login', () async {
+    final client = MockSubiquityClient();
+
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
+    model.username = 'someone';
+    model.password = 'not-empty';
+
+    model.autoLogin = true;
+    await model.saveIdentity();
+    verify(config.set(WhoAreYouModel.kAutoLoginUser, model.username)).called(1);
+
+    model.autoLogin = false;
+    await model.saveIdentity();
+    verify(config.set(WhoAreYouModel.kAutoLoginUser, null)).called(1);
+  });
+
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
 
     void testPasswordStrength(String password, Matcher matcher) {
       model.password = password;
@@ -109,7 +170,7 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -140,13 +201,13 @@ void main() {
     expect(wasNotified, isTrue);
 
     wasNotified = false;
-    expect(model.loginStrategy, LoginStrategy.requirePassword);
-    model.loginStrategy = LoginStrategy.autoLogin;
+    expect(model.autoLogin, false);
+    model.autoLogin = true;
     expect(wasNotified, isTrue);
   });
 
   test('validation', () {
-    final model = WhoAreYouModel(MockSubiquityClient());
+    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
     expect(model.isValid, isFalse);
 
     void testValid(
@@ -200,7 +261,7 @@ void main() {
     when(client.validateUsername(kTooLong))
         .thenAnswer((_) async => UsernameValidation.TOO_LONG);
 
-    final model = WhoAreYouModel(client);
+    final model = WhoAreYouModel(client, MockConfigService());
     expect(model.isValid, isFalse);
 
     void testValid(
@@ -233,7 +294,11 @@ void main() {
       );
     });
 
-    final model = WhoAreYouModel(client);
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final model = WhoAreYouModel(client, config);
     model.realName = 'User';
     model.username = 'user';
     model.hostname = 'ubuntu';

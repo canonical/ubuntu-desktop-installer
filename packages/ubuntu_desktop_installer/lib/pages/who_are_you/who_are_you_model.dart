@@ -6,6 +6,8 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
+import '../../services.dart';
+
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
 /// @internal
@@ -21,22 +23,10 @@ const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 /// - may contain letters, digits, hyphens, and dots
 const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
-/// An enum for storing the login strategy.
-enum LoginStrategy {
-  /// If selected can be used for the representation
-  /// of the user preference to always entering the password
-  /// at login.
-  requirePassword,
-
-  /// If selected can be used for the representation
-  /// of the user preference to log in without a password.
-  autoLogin
-}
-
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends SafeChangeNotifier {
   /// Creates the model with the given client.
-  WhoAreYouModel(this._client) {
+  WhoAreYouModel(this._client, this._config) {
     Listenable.merge([
       _realName,
       _hostname,
@@ -44,13 +34,14 @@ class WhoAreYouModel extends SafeChangeNotifier {
       _usernameValidation,
       _password,
       _confirmedPassword,
-      _loginStrategy,
+      _autoLogin,
       _productName,
       _showPassword,
     ]).addListener(notifyListeners);
   }
 
   final SubiquityClient _client;
+  final ConfigService _config;
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
   final _usernameValidation =
@@ -58,8 +49,7 @@ class WhoAreYouModel extends SafeChangeNotifier {
   final _hostname = ValueNotifier<String?>(null);
   final _password = ValueNotifier<String?>(null);
   final _confirmedPassword = ValueNotifier<String?>(null);
-  final _loginStrategy =
-      ValueNotifier<LoginStrategy>(LoginStrategy.requirePassword);
+  final _autoLogin = ValueNotifier<bool>(false);
   final _productName = ValueNotifier<String>('');
   final _showPassword = ValueNotifier<bool>(false);
 
@@ -92,9 +82,9 @@ class WhoAreYouModel extends SafeChangeNotifier {
   /// Estimates the strength of the password.
   PasswordStrength get passwordStrength => estimatePasswordStrength(password);
 
-  /// The current login strategy.
-  LoginStrategy get loginStrategy => _loginStrategy.value;
-  set loginStrategy(LoginStrategy value) => _loginStrategy.value = value;
+  /// Whether to enable automatic login, or require password.
+  bool get autoLogin => _autoLogin.value;
+  set autoLogin(bool value) => _autoLogin.value = value;
 
   /// Whether the current input is valid.
   bool get isValid {
@@ -128,7 +118,13 @@ class WhoAreYouModel extends SafeChangeNotifier {
     log.info('Loaded identity: ${identity.description}');
     _productName.value = await _readProductName();
     log.info('Read product name: ${_productName.value}');
+
+    _autoLogin.value = await _config.get(kAutoLoginUser) != null;
   }
+
+  /// The auto-login user config key for testing purposes.
+  @visibleForTesting
+  static const kAutoLoginUser = 'AutoLoginUser';
 
   /// Saves the identity data to the server.
   Future<void> saveIdentity({@visibleForTesting String? salt}) async {
@@ -139,6 +135,15 @@ class WhoAreYouModel extends SafeChangeNotifier {
       cryptedPassword: encryptPassword(password, salt: salt),
     );
     log.info('Saved identity: ${identity.description}');
+
+    if (autoLogin) {
+      log.info('Enabled auto-login');
+      await _config.set(kAutoLoginUser, username);
+    } else {
+      log.info('Disabled auto-login');
+      await _config.set(kAutoLoginUser, null);
+    }
+
     return _client.setIdentity(identity);
   }
 

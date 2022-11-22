@@ -102,14 +102,14 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         returnValue: _i3.PasswordStrength.weak,
       ) as _i3.PasswordStrength);
   @override
-  _i2.LoginStrategy get loginStrategy => (super.noSuchMethod(
-        Invocation.getter(#loginStrategy),
-        returnValue: _i2.LoginStrategy.requirePassword,
-      ) as _i2.LoginStrategy);
+  bool get autoLogin => (super.noSuchMethod(
+        Invocation.getter(#autoLogin),
+        returnValue: false,
+      ) as bool);
   @override
-  set loginStrategy(_i2.LoginStrategy? value) => super.noSuchMethod(
+  set autoLogin(bool? value) => super.noSuchMethod(
         Invocation.setter(
-          #loginStrategy,
+          #autoLogin,
           value,
         ),
         returnValueForMissingStub: null,
