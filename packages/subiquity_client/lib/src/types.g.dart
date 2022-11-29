@@ -787,6 +787,46 @@ Map<String, dynamic> _$$_SSHDataToJson(_$_SSHData instance) =>
       'authorized_keys': instance.authorizedKeys,
     };
 
+_$_SSHIdentity _$$_SSHIdentityFromJson(Map<String, dynamic> json) =>
+    _$_SSHIdentity(
+      keyType: json['key_type'] as String,
+      key: json['key'] as String,
+      keyComment: json['key_comment'] as String,
+      keyFingerprint: json['key_fingerprint'] as String,
+    );
+
+Map<String, dynamic> _$$_SSHIdentityToJson(_$_SSHIdentity instance) =>
+    <String, dynamic>{
+      'key_type': instance.keyType,
+      'key': instance.key,
+      'key_comment': instance.keyComment,
+      'key_fingerprint': instance.keyFingerprint,
+    };
+
+_$_SSHFetchIdResponse _$$_SSHFetchIdResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$_SSHFetchIdResponse(
+      status: $enumDecode(_$SSHFetchIdStatusEnumMap, json['status']),
+      identities: (json['identities'] as List<dynamic>?)
+          ?.map((e) => SSHIdentity.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      error: json['error'] as String?,
+    );
+
+Map<String, dynamic> _$$_SSHFetchIdResponseToJson(
+        _$_SSHFetchIdResponse instance) =>
+    <String, dynamic>{
+      'status': _$SSHFetchIdStatusEnumMap[instance.status]!,
+      'identities': instance.identities?.map((e) => e.toJson()).toList(),
+      'error': instance.error,
+    };
+
+const _$SSHFetchIdStatusEnumMap = {
+  SSHFetchIdStatus.OK: 'OK',
+  SSHFetchIdStatus.IMPORT_ERROR: 'IMPORT_ERROR',
+  SSHFetchIdStatus.FINGERPRINT_ERROR: 'FINGERPRINT_ERROR',
+};
+
 _$_ChannelSnapInfo _$$_ChannelSnapInfoFromJson(Map<String, dynamic> json) =>
     _$_ChannelSnapInfo(
       channelName: json['channel_name'] as String,
