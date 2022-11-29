@@ -13,7 +13,6 @@ import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
-import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';

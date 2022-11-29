@@ -9,7 +9,7 @@ final log = Logger('updates_other_software');
 
 enum InstallationMode { normal, minimal }
 
-extension _InstallationSource on InstallationMode {
+extension InstallationSource on InstallationMode {
   String get source {
     switch (this) {
       case InstallationMode.normal:

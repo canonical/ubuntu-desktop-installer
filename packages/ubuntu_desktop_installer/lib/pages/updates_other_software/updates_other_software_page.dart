@@ -11,6 +11,9 @@ import '../../l10n.dart';
 import '../../services.dart';
 import 'updates_other_software_model.dart';
 
+export 'updates_other_software_model.dart'
+    show InstallationMode, InstallationSource;
+
 class UpdatesOtherSoftwarePage extends StatefulWidget {
   @visibleForTesting
   const UpdatesOtherSoftwarePage({super.key});
