@@ -135,6 +135,7 @@ Future<void> runInstallerApp(
 
   appStatus.value = AppStatus.ready;
   await subiquityClient.setVariant(Variant.DESKTOP);
+  await subiquityClient.setSource(InstallationMode.normal.source);
 
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.

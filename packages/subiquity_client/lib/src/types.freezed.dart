@@ -8205,6 +8205,390 @@ abstract class _SSHData implements SSHData {
       throw _privateConstructorUsedError;
 }
 
+SSHIdentity _$SSHIdentityFromJson(Map<String, dynamic> json) {
+  return _SSHIdentity.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SSHIdentity {
+  String get keyType => throw _privateConstructorUsedError;
+  String get key => throw _privateConstructorUsedError;
+  String get keyComment => throw _privateConstructorUsedError;
+  String get keyFingerprint => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SSHIdentityCopyWith<SSHIdentity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SSHIdentityCopyWith<$Res> {
+  factory $SSHIdentityCopyWith(
+          SSHIdentity value, $Res Function(SSHIdentity) then) =
+      _$SSHIdentityCopyWithImpl<$Res, SSHIdentity>;
+  @useResult
+  $Res call(
+      {String keyType, String key, String keyComment, String keyFingerprint});
+}
+
+/// @nodoc
+class _$SSHIdentityCopyWithImpl<$Res, $Val extends SSHIdentity>
+    implements $SSHIdentityCopyWith<$Res> {
+  _$SSHIdentityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyType = null,
+    Object? key = null,
+    Object? keyComment = null,
+    Object? keyFingerprint = null,
+  }) {
+    return _then(_value.copyWith(
+      keyType: null == keyType
+          ? _value.keyType
+          : keyType // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      keyComment: null == keyComment
+          ? _value.keyComment
+          : keyComment // ignore: cast_nullable_to_non_nullable
+              as String,
+      keyFingerprint: null == keyFingerprint
+          ? _value.keyFingerprint
+          : keyFingerprint // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_SSHIdentityCopyWith<$Res>
+    implements $SSHIdentityCopyWith<$Res> {
+  factory _$$_SSHIdentityCopyWith(
+          _$_SSHIdentity value, $Res Function(_$_SSHIdentity) then) =
+      __$$_SSHIdentityCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String keyType, String key, String keyComment, String keyFingerprint});
+}
+
+/// @nodoc
+class __$$_SSHIdentityCopyWithImpl<$Res>
+    extends _$SSHIdentityCopyWithImpl<$Res, _$_SSHIdentity>
+    implements _$$_SSHIdentityCopyWith<$Res> {
+  __$$_SSHIdentityCopyWithImpl(
+      _$_SSHIdentity _value, $Res Function(_$_SSHIdentity) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyType = null,
+    Object? key = null,
+    Object? keyComment = null,
+    Object? keyFingerprint = null,
+  }) {
+    return _then(_$_SSHIdentity(
+      keyType: null == keyType
+          ? _value.keyType
+          : keyType // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      keyComment: null == keyComment
+          ? _value.keyComment
+          : keyComment // ignore: cast_nullable_to_non_nullable
+              as String,
+      keyFingerprint: null == keyFingerprint
+          ? _value.keyFingerprint
+          : keyFingerprint // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SSHIdentity implements _SSHIdentity {
+  const _$_SSHIdentity(
+      {required this.keyType,
+      required this.key,
+      required this.keyComment,
+      required this.keyFingerprint});
+
+  factory _$_SSHIdentity.fromJson(Map<String, dynamic> json) =>
+      _$$_SSHIdentityFromJson(json);
+
+  @override
+  final String keyType;
+  @override
+  final String key;
+  @override
+  final String keyComment;
+  @override
+  final String keyFingerprint;
+
+  @override
+  String toString() {
+    return 'SSHIdentity(keyType: $keyType, key: $key, keyComment: $keyComment, keyFingerprint: $keyFingerprint)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SSHIdentity &&
+            (identical(other.keyType, keyType) || other.keyType == keyType) &&
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.keyComment, keyComment) ||
+                other.keyComment == keyComment) &&
+            (identical(other.keyFingerprint, keyFingerprint) ||
+                other.keyFingerprint == keyFingerprint));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, keyType, key, keyComment, keyFingerprint);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SSHIdentityCopyWith<_$_SSHIdentity> get copyWith =>
+      __$$_SSHIdentityCopyWithImpl<_$_SSHIdentity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SSHIdentityToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SSHIdentity implements SSHIdentity {
+  const factory _SSHIdentity(
+      {required final String keyType,
+      required final String key,
+      required final String keyComment,
+      required final String keyFingerprint}) = _$_SSHIdentity;
+
+  factory _SSHIdentity.fromJson(Map<String, dynamic> json) =
+      _$_SSHIdentity.fromJson;
+
+  @override
+  String get keyType;
+  @override
+  String get key;
+  @override
+  String get keyComment;
+  @override
+  String get keyFingerprint;
+  @override
+  @JsonKey(ignore: true)
+  _$$_SSHIdentityCopyWith<_$_SSHIdentity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SSHFetchIdResponse _$SSHFetchIdResponseFromJson(Map<String, dynamic> json) {
+  return _SSHFetchIdResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SSHFetchIdResponse {
+  SSHFetchIdStatus get status => throw _privateConstructorUsedError;
+  List<SSHIdentity>? get identities => throw _privateConstructorUsedError;
+  String? get error => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SSHFetchIdResponseCopyWith<SSHFetchIdResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SSHFetchIdResponseCopyWith<$Res> {
+  factory $SSHFetchIdResponseCopyWith(
+          SSHFetchIdResponse value, $Res Function(SSHFetchIdResponse) then) =
+      _$SSHFetchIdResponseCopyWithImpl<$Res, SSHFetchIdResponse>;
+  @useResult
+  $Res call(
+      {SSHFetchIdStatus status, List<SSHIdentity>? identities, String? error});
+}
+
+/// @nodoc
+class _$SSHFetchIdResponseCopyWithImpl<$Res, $Val extends SSHFetchIdResponse>
+    implements $SSHFetchIdResponseCopyWith<$Res> {
+  _$SSHFetchIdResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? identities = freezed,
+    Object? error = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as SSHFetchIdStatus,
+      identities: freezed == identities
+          ? _value.identities
+          : identities // ignore: cast_nullable_to_non_nullable
+              as List<SSHIdentity>?,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_SSHFetchIdResponseCopyWith<$Res>
+    implements $SSHFetchIdResponseCopyWith<$Res> {
+  factory _$$_SSHFetchIdResponseCopyWith(_$_SSHFetchIdResponse value,
+          $Res Function(_$_SSHFetchIdResponse) then) =
+      __$$_SSHFetchIdResponseCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {SSHFetchIdStatus status, List<SSHIdentity>? identities, String? error});
+}
+
+/// @nodoc
+class __$$_SSHFetchIdResponseCopyWithImpl<$Res>
+    extends _$SSHFetchIdResponseCopyWithImpl<$Res, _$_SSHFetchIdResponse>
+    implements _$$_SSHFetchIdResponseCopyWith<$Res> {
+  __$$_SSHFetchIdResponseCopyWithImpl(
+      _$_SSHFetchIdResponse _value, $Res Function(_$_SSHFetchIdResponse) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? identities = freezed,
+    Object? error = freezed,
+  }) {
+    return _then(_$_SSHFetchIdResponse(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as SSHFetchIdStatus,
+      identities: freezed == identities
+          ? _value._identities
+          : identities // ignore: cast_nullable_to_non_nullable
+              as List<SSHIdentity>?,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SSHFetchIdResponse implements _SSHFetchIdResponse {
+  const _$_SSHFetchIdResponse(
+      {required this.status,
+      required final List<SSHIdentity>? identities,
+      required this.error})
+      : _identities = identities;
+
+  factory _$_SSHFetchIdResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_SSHFetchIdResponseFromJson(json);
+
+  @override
+  final SSHFetchIdStatus status;
+  final List<SSHIdentity>? _identities;
+  @override
+  List<SSHIdentity>? get identities {
+    final value = _identities;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? error;
+
+  @override
+  String toString() {
+    return 'SSHFetchIdResponse(status: $status, identities: $identities, error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SSHFetchIdResponse &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other._identities, _identities) &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, status,
+      const DeepCollectionEquality().hash(_identities), error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SSHFetchIdResponseCopyWith<_$_SSHFetchIdResponse> get copyWith =>
+      __$$_SSHFetchIdResponseCopyWithImpl<_$_SSHFetchIdResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SSHFetchIdResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SSHFetchIdResponse implements SSHFetchIdResponse {
+  const factory _SSHFetchIdResponse(
+      {required final SSHFetchIdStatus status,
+      required final List<SSHIdentity>? identities,
+      required final String? error}) = _$_SSHFetchIdResponse;
+
+  factory _SSHFetchIdResponse.fromJson(Map<String, dynamic> json) =
+      _$_SSHFetchIdResponse.fromJson;
+
+  @override
+  SSHFetchIdStatus get status;
+  @override
+  List<SSHIdentity>? get identities;
+  @override
+  String? get error;
+  @override
+  @JsonKey(ignore: true)
+  _$$_SSHFetchIdResponseCopyWith<_$_SSHFetchIdResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ChannelSnapInfo _$ChannelSnapInfoFromJson(Map<String, dynamic> json) {
   return _ChannelSnapInfo.fromJson(json);
 }

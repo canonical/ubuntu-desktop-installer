@@ -593,6 +593,37 @@ class SSHData with _$SSHData {
       _$SSHDataFromJson(json);
 }
 
+@freezed
+class SSHIdentity with _$SSHIdentity {
+  const factory SSHIdentity({
+    required String keyType,
+    required String key,
+    required String keyComment,
+    required String keyFingerprint,
+  }) = _SSHIdentity;
+
+  factory SSHIdentity.fromJson(Map<String, dynamic> json) =>
+      _$SSHIdentityFromJson(json);
+}
+
+enum SSHFetchIdStatus {
+  OK,
+  IMPORT_ERROR,
+  FINGERPRINT_ERROR,
+}
+
+@freezed
+class SSHFetchIdResponse with _$SSHFetchIdResponse {
+  const factory SSHFetchIdResponse({
+    required SSHFetchIdStatus status,
+    required List<SSHIdentity>? identities,
+    required String? error,
+  }) = _SSHFetchIdResponse;
+
+  factory SSHFetchIdResponse.fromJson(Map<String, dynamic> json) =>
+      _$SSHFetchIdResponseFromJson(json);
+}
+
 enum SnapCheckState {
   FAILED,
   LOADING,

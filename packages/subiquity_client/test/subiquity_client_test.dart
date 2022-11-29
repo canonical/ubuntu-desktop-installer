@@ -114,7 +114,6 @@ void main() {
       await client.setVariant(Variant.DESKTOP);
       var actual = await client.source();
       expect(actual.sources, unorderedEquals(expected.sources));
-      expect(actual.currentId, 'synthesized');
 
       await client.setSource('ubuntu-desktop-minimal');
       actual = await client.source();
@@ -123,10 +122,6 @@ void main() {
       await client.setSource('ubuntu-desktop');
       actual = await client.source();
       expect(actual.currentId, 'ubuntu-desktop');
-
-      await client.setVariant(Variant.SERVER);
-      actual = await client.source();
-      expect(actual.currentId, 'synthesized');
     });
 
     test('locale', () async {
