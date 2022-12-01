@@ -294,7 +294,7 @@
   "@partitionUnitGB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
