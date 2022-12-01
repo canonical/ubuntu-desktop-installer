@@ -54,7 +54,7 @@
   "@partitionUnitMB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionTypeLabel": "Typ för den nya partitionen:",
   "@partitionTypeLabel": {},
