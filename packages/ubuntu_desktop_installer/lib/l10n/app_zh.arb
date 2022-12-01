@@ -397,7 +397,7 @@
   "@welcomeHeader": {},
   "connectToInternetDescription": "将这台电脑连接到互联网将有助于Ubuntu安装所需的任何额外软件，并有助于选择你的时区。\n\n通过以太网电缆连接，或选择Wi-Fi网络",
   "@connectToInternetDescription": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "connectToInternetPageTitle": "连接到互联网",
   "@connectToInternetPageTitle": {},
