@@ -677,5 +677,7 @@
       "oldsize": {},
       "newsize": {}
     }
-  }
+  },
+  "installDriversTitle": "Instalar drives de terceiros de wifi e gráficos",
+  "@installDriversTitle": {}
 }
