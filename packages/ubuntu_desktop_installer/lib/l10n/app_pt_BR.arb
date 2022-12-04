@@ -100,7 +100,7 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
   "@installThirdPartySubtitle": {},
-  "installationTypeTitle": "Tipo de installation",
+  "installationTypeTitle": "Tipo de instalação",
   "@installationTypeTitle": {},
   "installationTypeOSDetected": "Este computador possui {os} atualmente instalado. O que você deseja fazer?",
   "@installationTypeOSDetected": {
@@ -124,9 +124,9 @@
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Recursos avançados",
   "@installationTypeAdvancedTitle": {},
-  "installationTypeNone": "Nenhum",
+  "installationTypeNone": "Nada",
   "@installationTypeNone": {},
-  "installationTypeNoneSelected": "Nenhum selecionado",
+  "installationTypeNoneSelected": "Nada selecionado",
   "@installationTypeNoneSelected": {},
   "installationTypeLVM": "Usar LVM com a nova instalação do {RELEASE}",
   "@installationTypeLVM": {},
@@ -215,7 +215,7 @@
   "@partitionUnitMB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionTypeLabel": "Tipo da nova partição:",
+  "partitionTypeLabel": "Tipo para a nova partição:",
   "@partitionTypeLabel": {},
   "partitionTypePrimary": "Primária",
   "@partitionTypePrimary": {},
@@ -392,7 +392,7 @@
       "color": {}
     }
   },
-  "chooseSecurityKeyHeader": "Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer arquivos fora de {RELEASE} não serão criptografados.",
+  "chooseSecurityKeyHeader": "A criptografia de disco protege seus arquivos caso você perca seu computador. Ele exige que você insira uma chave de segurança toda vez que o computador for inicializado.\n\nQuaisquer arquivos fora de {RELEASE} não serão criptografados.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
     "placeholders": {
@@ -627,5 +627,55 @@
   "installAlongsideSize": "Tamanho:",
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponível:",
-  "@installAlongsideAvailable": {}
+  "@installAlongsideAvailable": {},
+  "installCodecsTitle": "Instalar suporte para formatos de mídia adicionais",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
+  "@installCodecsSubtitle": {},
+  "writeChangesPartitionCreated": "partição #{disk}{partition} criada",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partição #{disk}{partition} formatada usando {format} para {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partição #{disk}{partition} formatada usando: {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partição #{disk}{partition} usado para {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionResized": "Partição #{disk}{partition} alterado de {oldsize} para {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  }
 }
