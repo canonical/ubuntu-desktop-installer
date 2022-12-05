@@ -254,21 +254,6 @@ class SubiquityClient {
     await _receive('setTimezone("$timezone")', response);
   }
 
-  Future<SSHData> ssh() async {
-    final request = await _openUrl('GET', url('ssh'));
-    final response = await request.close();
-
-    final sshJson = await _receiveJson('ssh()', response);
-    return SSHData.fromJson(sshJson);
-  }
-
-  Future<void> setSsh(SSHData ssh) async {
-    final request = await _openUrl('POST', url('ssh'));
-    request.write(jsonEncode(ssh.toJson()));
-    final response = await request.close();
-    await _receive('setSsh(${jsonEncode(ssh.toJson())})', response);
-  }
-
   /// Get the installer state.
   Future<ApplicationStatus> status({ApplicationState? current}) async {
     late Map<String, dynamic> statusJson;
