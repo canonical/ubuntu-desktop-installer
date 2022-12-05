@@ -4,6 +4,7 @@
 #include <windows.h>
 
 #include <functional>
+#include <string>
 
 // A wrapper around the OpenEvent/RegisterWait Win32 API's setup for triggering
 // only once which waits on another thread and executes the supplied [callback]
