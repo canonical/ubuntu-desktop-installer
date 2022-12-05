@@ -214,16 +214,16 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Ili estas neliberaj.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Instali programojn por kromaj videaj dosierformoj';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur la aparaton, ĉiuj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.';
+  String get newPartitionTableConfirmationMessage => 'Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur ĝin, ĉiuj ĝiaj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.';
 
   @override
   String get bootLoaderDevice => 'Aparato, sur kiun instaliĝos la praŝargilo';
@@ -770,7 +770,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get officeSlideTitle => 'Ĉio bezonata por la oficejo';
 
   @override
-  String get officeSlideDescription => 'LibreOffice estas senpaga oficeja programaro plenplena de ĉio bezonata por verki dokumentojn, kalkultabelojn kaj prezentojn. Kongruante kun la dosierformoj de Microsoft Office, ĝi donas al vi ĉiujn funkciojn, kiujn vi bezonas, sen la prezetikedo.';
+  String get officeSlideDescription => 'LibreOffice estas libera oficeja programaro plenplena de ĉio bezonata por verki dokumentojn, kalkultabelojn kaj prezentojn. Kongruante kun la dosierformoj de Microsoft Office, ĝi donas al vi ĉiujn funkciojn, kiujn vi bezonas.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Ĉe la koro de la filozofio de $RELEASE estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorskemon kaj tekstograndon, $RELEASE faciligas komputadon – por ĉiuj ajn, ĉie ajn.';
+    return 'Ĉe la koro de la filozofio de $RELEASE estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorojn kaj tekstograndon, $RELEASE faciligas komputadon – por ĉiuj ajn, ĉie ajn.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsEo extends AppLocalizations {
   String get supportedSoftware => 'Subtenataj programoj';
 
   @override
-  String get copyingFiles => 'Kopiante dosierojn...';
+  String get copyingFiles => 'Kopiante dosierojn…';
 
   @override
-  String get installingSystem => 'Instalante sistemon…';
+  String get installingSystem => 'Instalante la sistemon…';
 
   @override
-  String get configuringSystem => 'Agordante sistemon…';
+  String get configuringSystem => 'Agordante la sistemon…';
 
   @override
   String get installationFailed => 'Instalado fiaskis';

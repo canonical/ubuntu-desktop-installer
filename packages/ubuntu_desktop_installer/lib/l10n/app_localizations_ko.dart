@@ -457,7 +457,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -828,10 +828,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get copyingFiles => '파일 복사 중...';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installing the system…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Setting up the system…';
 
   @override
   String get installationFailed => '설치 실패';

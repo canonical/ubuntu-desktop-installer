@@ -457,7 +457,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';

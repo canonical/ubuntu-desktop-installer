@@ -214,16 +214,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installThirdPartySubtitle => 'Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Nainstalovat ovladače od třetích stran pro grafické čipy a Wi-Fi síťová rozhraní';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Nainstalovat podporu pro další formáty médií';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na zařízení, budou všechny stávající oddíly odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.';
+  String get newPartitionTableConfirmationMessage => 'Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.';
 
   @override
   String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
@@ -457,7 +457,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -770,7 +770,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get officeSlideTitle => 'Vše co potřebujete pro kancelář';
 
   @override
-  String get officeSlideDescription => 'LibreOffice je open source sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce a to vše zdarma.';
+  String get officeSlideDescription => 'LibreOffice je svobodná sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Středobodem filozofie $RELEASE je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, schématu barev a velikosti textu, $RELEASE usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.';
+    return 'Středobodem filozofie $RELEASE je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, barev a velikosti textu, $RELEASE usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Oficiální dokumentace pokrývá mnohé z nejběžnějších oblastí v $RELEASE. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.';
+    return 'Oficiální dokumentace pokrývá mnohé z nejběžnějších aspektů $RELEASE. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.';
   }
 
   @override
