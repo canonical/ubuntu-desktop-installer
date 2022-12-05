@@ -473,5 +473,280 @@
   "shutdown": "Slå av",
   "@shutdown": {},
   "turnOffBitlockerTitle": "Skru av BitLocker",
-  "@turnOffBitlockerTitle": {}
+  "@turnOffBitlockerTitle": {},
+  "partitionCreateTitle": "Opprett partisjon",
+  "@partitionCreateTitle": {},
+  "installingSystem": "Installerer systemet …",
+  "@installingSystem": {},
+  "webSlideDescription": "{RELEASE} kommer med Firefox, som er en nettleser noen millioner mennesker bruker. Med nett-programmer du ofte bruker (som f.eks. sosiale media eller e-post i nettleseren) kan du ha disse festet på skrivebordet for raskere tilgang, akkurat som programmer på datamaskinen.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "copyingFiles": "Kopierer filer …",
+  "@copyingFiles": {},
+  "accessSlideTitle": "Tilgang for alle",
+  "@accessSlideTitle": {},
+  "installDriversTitle": "Installer tredjepartsprogramvare for grafikk- og Wi-Fi-maskinvare",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Disse driverrutinene har lisensvilkår som er å finne i dokumentasjonen av dem. De er ufrie.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Installer støtte for ytterligere mediaformater",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Denne programvaren har lisensvilkår som er å finnen i dokumentasjonen av den. Noen av dem er ufrie.",
+  "@installCodecsSubtitle": {},
+  "installAlongsideResizePartition": "Endre størrelse på partisjon",
+  "@installAlongsideResizePartition": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "whoAreYouPageUsernameInUse": "Brukernavnet finnes allerede.",
+  "@whoAreYouPageUsernameInUse": {},
+  "partitionFormatExt4": "Ext4-journalfilsystem",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt3": "Ext3-journalfilsystem",
+  "@partitionFormatExt3": {},
+  "writeChangesDescription": "Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.",
+  "@writeChangesDescription": {},
+  "writeChangesPartitionTablesHeader": "Partisjonstabellen for følgende enheter har blitt endret:",
+  "@writeChangesPartitionTablesHeader": {},
+  "turnOffBitlockerDescription": "Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.",
+  "@turnOffBitlockerDescription": {},
+  "whereAreYouLocationLabel": "Sted",
+  "@whereAreYouLocationLabel": {},
+  "photoSlideTitle": "Kos deg med bildene dine",
+  "@photoSlideTitle": {},
+  "musicSlideRhythmbox": "Rythmbox-musikkspilleren",
+  "@musicSlideRhythmbox": {},
+  "photoSlideGimp": "GIMP-bilderedigerer",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Shortcut-videoredigerer",
+  "@photoSlideShotcut": {},
+  "webSlideTitle": "Få mer ut av nettet",
+  "@webSlideTitle": {},
+  "photoSlideShotwell": "Shotwell-bildeorganisereren",
+  "@photoSlideShotwell": {},
+  "installationFailed": "Installasjonen mislyktes",
+  "@installationFailed": {},
+  "configuringSystem": "Setter opp systemet …",
+  "@configuringSystem": {},
+  "installationTypeLVMEncryptionSelected": "LVM og kryptering valgt",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installationTypeAlongsideDual": "Installer {product} ved siden av {os1} og {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Installer {product} ved siden av dem",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Installer {product} ved siden av andre partisjoner",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "whoAreYouPageUsernameTooLong": "Navnet er for langt.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "installAlongsideAllocateSpace": "Tildel plass",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsidePartition": "Partisjon:",
+  "@installAlongsidePartition": {},
+  "installAlongsideFiles": "Filer",
+  "@installAlongsideFiles": {},
+  "partitionUnitMB": "MB",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "GB",
+  "@partitionUnitGB": {},
+  "installAlongsideSize": "Størrelse:",
+  "@installAlongsideSize": {},
+  "writeChangesPartitionsHeader": "Følgende partisjonsendringer vil bli utført:",
+  "@writeChangesPartitionsHeader": {},
+  "restartInto": "Start om igjen til {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "whoAreYouPageUsernameSystemReserved": "Navnet er reservert for systembruk.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "notEnoughDiskSpaceBiggestDisk": "Den største lagringsenheten på datamaskinen er kun {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "turnOffBitlockerLinkInstructions": "Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://{url}\"></a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "bootLoaderDevice": "Enhet å installere oppstartslaster på",
+  "@bootLoaderDevice": {},
+  "writeChangesPartitionMounted": "partisjon #{disk}{partition} brukt til {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "welcomeSlideDescription": "For rask og fullstendig oversikt over nye funksjoner, gjør {RELEASE} databruk enklere enn noensinne. Her er noen av de kule tingene å sjekke ut …",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "endret størrelse fra {oldsize} til {newsize} for #{disk}{partition}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partisjon #{disk}{partition} formatert som {format} og brukt til {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "partisjon #{disk}{partition} opprettet",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partisjon #{disk}{partition} formatert som {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "softwareSlideDescription": "Ta farvel med å søke på nettet etter ny programvare. Med tilgang til Snap-butikken og {RELEASE}-pakkebrønnen finner du nye programmer uten. Skriv inn det du leter etter, eller utforsk kategorier som f.eks. grafikk og fotografi, spill og produktivitet, sammen med nyttige vurderinger fra andre brukere.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideDescription": "{RELEASE} kommer med den fantastiske Rhythmbox-musikkspilleren. Med avanserte avspillingsvalg er det enkelt å lage en spilleliste av de perfekte sporene. Det fungerer flott med CD-er og portable musikkspillere, så du kan ta med deg musikken din uansett hvor du drar.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideDescription": "Shotwell er et hendig verktøy for organisering av bilder som er klar for enheten dine. Koble til et kamera eller en telefon for å overføre bildene dine, deretter er det enkelt å dele dem og holde dem trygge. Hvis du føler deg kreativ kan du finne mange andre bildeprogrammer i utvalget av Ubuntu-programvare.",
+  "@photoSlideDescription": {},
+  "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Ask Ubuntu</a> kan du stille spørsmål og søke i en imponerende samling allerede besvarte spørsmål. Støtte på ditt eget språk får du fra <a href=\"https://loco.ubuntu.com/teams\">ditt lokale gemenskapslag</a>.",
+  "@supportSlideQuestions": {},
+  "supportSlideResources": "For veiledning til andre nyttige ressurser kan du besøke <a href=\"https://www.ubuntu.com/support/community-support\">gemenskapsportalen</a> eller nytte <a href=\"https://www.ubuntu.com/support\">kommersiell støtte.",
+  "@supportSlideResources": {},
+  "newPartitionTableConfirmationMessage": "Du har valgt en hel enhet å partisjonere. Hvis du fortsetter med opprettelse av en ny partisjonstabell på enheten vil alle nåværende partisjoner på den fjernes.\n\nMerk at du også vil kunne angre operasjonen senere hvis du ønsker det.",
+  "@newPartitionTableConfirmationMessage": {},
+  "officeSlideDescription": "LibreOffice er en fri kontorpakke med alt du trenger for å lage dokumenter, regneark, og presentasjoner. Det er kompatibelt med Microsoft Office-filformatene, og gir deg alle funksjonene du trenger.",
+  "@officeSlideDescription": {},
+  "accessSlideDescription": "Hjertet i {RELEASE}-filosofien er troen på at databruk er for alle. Med avanserte tilgjengelighetsverktøy og alternativer for endring av språk, fargedrakt, og tekststørrelse gjør {RELEASE} databruk enkelt for alle — uansett hvor og hvem de er.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideDocumentation": "Den offisielle dokumentasjonen dekker mange av de vanligste aspektene ved {RELEASE}. Den er tilgjengelig både <a href=\"https://help.ubuntu.com\">på nett</a> og via «Hjelp»-ikonet i dokken.{RELEASE}",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "showSecurityKey": "Vis sikkerhetsnøkkel",
+  "@showSecurityKey": {},
+  "installAlongsideSpaceDivider": "Tildel lagringsplass ved å dra inndeleren nedenfor:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideHiddenPartitions": "{num} mindre partisjoner er skjult, bruk <a href=\"{url}\">avansert partisjoneringsverktøy</a> for mer kontroll",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAvailable": "Tilgjengelig:",
+  "@installAlongsideAvailable": {},
+  "partitionFormatZfsroot": "ZFS-rotfilsystem",
+  "@partitionFormatZfsroot": {},
+  "partitionFormatBtrfs": "btrfs-journalfilsystem",
+  "@partitionFormatBtrfs": {},
+  "partitionFormatJfs": "JFS-journalfilsystem",
+  "@partitionFormatJfs": {},
+  "whoAreYouPageUsernameInvalidChars": "Navnet inneholder ugyldige tegn.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "restartIntoWindows": "Omstart til Windows",
+  "@restartIntoWindows": {},
+  "partitionFormatIso9660": "ISO 9660-filsystem",
+  "@partitionFormatIso9660": {},
+  "partitionFormatXfs": "XFS-journalfilsystem",
+  "@partitionFormatXfs": {},
+  "chooseYourLookPageTitle": "Velg utseende",
+  "@chooseYourLookPageTitle": {},
+  "chooseYourLookPageHeader": "Du kan alltid endre dette senere i utseende-innstillingene.",
+  "@chooseYourLookPageHeader": {},
+  "webSlideFirefox": "Firefox-nettleseren",
+  "@webSlideFirefox": {},
+  "quitButtonText": "Avslutt installasjon",
+  "@quitButtonText": {},
+  "notEnoughDiskSpaceTitle": "Beklager",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "Du trenger minst {SIZE} lagringsplass for å installere {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Denne datamaskinen har kun {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  }
 }

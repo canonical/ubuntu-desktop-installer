@@ -294,7 +294,7 @@
   "@partitionUnitGB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
@@ -479,7 +479,7 @@
   "@noInternet": {},
   "newPartitionTableConfirmationTitle": "Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na zařízení, budou všechny stávající oddíly odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
+  "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
   "@newPartitionTableConfirmationMessage": {},
   "onBatteryWarning": "<font color=\"{color}\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.",
   "@onBatteryWarning": {
@@ -546,7 +546,7 @@
   "@accessSlideAppearance": {},
   "webSlideFirefox": "Webový prohlížeč Firefox",
   "@webSlideFirefox": {},
-  "supportSlideDocumentation": "Oficiální dokumentace pokrývá mnohé z nejběžnějších oblastí v {RELEASE}. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.",
+  "supportSlideDocumentation": "Oficiální dokumentace pokrývá mnohé z nejběžnějších aspektů {RELEASE}. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -567,7 +567,7 @@
   "@supportSlideResources": {},
   "supportSlideQuestions": "Na <a href=\"https://askubuntu.com\">Ask Ubuntu</a> je možné pokládat dotazy a hledat v rozsáhlé sbírce těch už zodpovězených. Podpora ve vašem jazyce může být poskytována vaším <a href=\"https://loco.ubuntu.com/teams\">Místním komunitním týmem</a>.",
   "@supportSlideQuestions": {},
-  "accessSlideDescription": "Středobodem filozofie {RELEASE} je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, schématu barev a velikosti textu, {RELEASE} usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.",
+  "accessSlideDescription": "Středobodem filozofie {RELEASE} je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, barev a velikosti textu, {RELEASE} usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -588,7 +588,7 @@
       "RELEASE": {}
     }
   },
-  "officeSlideDescription": "LibreOffice je open source sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce a to vše zdarma.",
+  "officeSlideDescription": "LibreOffice je svobodná sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce.",
   "@officeSlideDescription": {},
   "webSlideTitle": "Získejte z webu maximum",
   "@webSlideTitle": {},
@@ -759,5 +759,13 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "installDriversTitle": "Nainstalovat ovladače od třetích stran pro grafické čipy a Wi-Fi síťová rozhraní",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Nainstalovat podporu pro další formáty médií",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.",
+  "@installDriversSubtitle": {}
 }

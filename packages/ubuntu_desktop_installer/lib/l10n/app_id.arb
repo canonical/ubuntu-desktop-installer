@@ -87,7 +87,7 @@
   "@diskHeadersFormat": {},
   "partitionSizeLabel": "Ukuran:",
   "@partitionSizeLabel": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},

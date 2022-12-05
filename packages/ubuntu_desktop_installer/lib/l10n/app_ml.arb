@@ -26,7 +26,7 @@
   },
   "installationTypeAlongsideInfo": "പ്രമാണങ്ങളും സംഗീതവും മറ്റ് സ്വകാര്യ ഫയലുകളും സൂക്ഷിക്കും. ഓരോ തവണ കമ്പ്യൂട്ടർ ഓണാകുമ്പോഴും ഏത് ഓപ്പറേറ്റിംഗ് സിസ്റ്റം വേണമെന്ന് നിങ്ങൾക്ക് തിരഞ്ഞെടുക്കാം.",
   "@installationTypeAlongsideInfo": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "newPartitionTableConfirmationTitle": "ഈ ഉപകരണത്തിൽ ഒരു പുതിയ ശൂന്യമായ പാർട്ടീഷൻ ടേബിൾ സൃഷ്ടിക്കണോ?",
   "@newPartitionTableConfirmationTitle": {},

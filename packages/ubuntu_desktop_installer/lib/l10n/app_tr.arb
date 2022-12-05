@@ -346,7 +346,7 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},

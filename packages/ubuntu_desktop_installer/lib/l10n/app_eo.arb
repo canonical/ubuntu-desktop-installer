@@ -422,7 +422,7 @@
   "@wiredDisabled": {},
   "wiredMustBeEnabled": "Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn",
   "@wiredMustBeEnabled": {},
-  "newPartitionTableConfirmationMessage": "Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur la aparaton, ĉiuj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.",
+  "newPartitionTableConfirmationMessage": "Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur ĝin, ĉiuj ĝiaj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.",
   "@newPartitionTableConfirmationMessage": {},
   "newPartitionTableConfirmationTitle": "Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?",
   "@newPartitionTableConfirmationTitle": {},
@@ -468,7 +468,7 @@
   "@accessSlideTitle": {},
   "accessSlideCustomizationOptions": "Opcioj pri adaptado",
   "@accessSlideCustomizationOptions": {},
-  "accessSlideDescription": "Ĉe la koro de la filozofio de {RELEASE} estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorskemon kaj tekstograndon, {RELEASE} faciligas komputadon – por ĉiuj ajn, ĉie ajn.",
+  "accessSlideDescription": "Ĉe la koro de la filozofio de {RELEASE} estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorojn kaj tekstograndon, {RELEASE} faciligas komputadon – por ĉiuj ajn, ĉie ajn.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -514,7 +514,7 @@
   },
   "supportSlideResources": "Por aliaj utilaj rimedoj, bonvolu viziti <a href=\"https://www.ubuntu.com/support/community-support\">la paĝojn pri Komunuma subtenado</a> aŭ <a href=\"https://www.ubuntu.com/support\">pri Entreprena subtenado</a>.",
   "@supportSlideResources": {},
-  "officeSlideDescription": "LibreOffice estas senpaga oficeja programaro plenplena de ĉio bezonata por verki dokumentojn, kalkultabelojn kaj prezentojn. Kongruante kun la dosierformoj de Microsoft Office, ĝi donas al vi ĉiujn funkciojn, kiujn vi bezonas, sen la prezetikedo.",
+  "officeSlideDescription": "LibreOffice estas libera oficeja programaro plenplena de ĉio bezonata por verki dokumentojn, kalkultabelojn kaj prezentojn. Kongruante kun la dosierformoj de Microsoft Office, ĝi donas al vi ĉiujn funkciojn, kiujn vi bezonas.",
   "@officeSlideDescription": {},
   "supportSlideDocumentation": "La oficiala dokumentaro prezentas multajn el la plej oftaj temoj pri {RELEASE}. Ĝi estas disponebla kaj <a href=\"https://help.ubuntu.com\">Interrete</a> kaj per la Helpo-piktogramo en la doko.",
   "@supportSlideDocumentation": {
@@ -576,7 +576,7 @@
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameTooLong": "Tiu salutnomo estas tro longa.",
   "@whoAreYouPageUsernameTooLong": {},
-  "copyingFiles": "Kopiante dosierojn...",
+  "copyingFiles": "Kopiante dosierojn…",
   "@copyingFiles": {},
   "installationFailed": "Instalado fiaskis",
   "@installationFailed": {},
@@ -625,9 +625,9 @@
       "product": {}
     }
   },
-  "installingSystem": "Instalante sistemon…",
+  "installingSystem": "Instalante la sistemon…",
   "@installingSystem": {},
-  "configuringSystem": "Agordante sistemon…",
+  "configuringSystem": "Agordante la sistemon…",
   "@configuringSystem": {},
   "notEnoughDiskSpaceBiggestDisk": "La plej granda disko en ĉi tiu komputilo havas nur {SIZE}.",
   "@notEnoughDiskSpaceBiggestDisk": {
@@ -704,5 +704,13 @@
   "showSecurityKey": "Montri sekurecŝlosilon",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM kaj ĉifrado elektitaj",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversSubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Ili estas neliberaj.",
+  "@installDriversSubtitle": {},
+  "installDriversTitle": "Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Instali programojn por kromaj videaj dosierformoj",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
+  "@installCodecsSubtitle": {}
 }

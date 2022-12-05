@@ -12,7 +12,7 @@
   "@repairInstallationDescription": {},
   "appTitle": "Instalator Ubuntu Desktop",
   "@appTitle": {},
-  "installThirdPartySubtitle": "To oprogramowanie podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.",
+  "installThirdPartySubtitle": "Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.",
   "@installThirdPartySubtitle": {},
   "changeButtonText": "Zmień",
   "@changeButtonText": {},
@@ -227,7 +227,7 @@
   },
   "installationTypeNoOSDetected": "Na tym komputerze nie ma obecnie wykrytych systemów operacyjnych. Co chcesz zrobić?",
   "@installationTypeNoOSDetected": {},
-  "installationTypeAdvancedLabel": "Zaawansowane funkcje...",
+  "installationTypeAdvancedLabel": "Zaawansowane funkcje…",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Zaawansowane funkcje",
   "@installationTypeAdvancedTitle": {},
@@ -257,7 +257,7 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionUnitKB": "KB",
+  "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
@@ -424,7 +424,7 @@
   "@enableWired": {},
   "newPartitionTableConfirmationTitle": "Utworzyć nową pustą tablicę partycji na tym urządzeniu?",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia nowej tabeli partycji na urządzeniu, wszystkie bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
+  "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
   "@newPartitionTableConfirmationMessage": {},
   "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.",
   "@onBatteryWarning": {
@@ -443,7 +443,7 @@
   "@welcomeHeader": {},
   "softwareSlideTitle": "Znajdź jeszcze więcej oprogramowania",
   "@softwareSlideTitle": {},
-  "officeSlideDescription": "LibreOffice to darmowy pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje bezpłatnie.",
+  "officeSlideDescription": "LibreOffice to wolny pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje.",
   "@officeSlideDescription": {},
   "musicSlideTitle": "Zabierz swoją muzykę ze sobą",
   "@musicSlideTitle": {},
@@ -490,7 +490,7 @@
   "@accessSlideLanguageSupport": {},
   "supportSlideTitle": "Pomoc i wsparcie",
   "@supportSlideTitle": {},
-  "supportSlideDocumentation": "Oficjalna dokumentacja obejmuje wiele najczęstszych obszarów dotyczących {RELEASE}. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.",
+  "supportSlideDocumentation": "Oficjalna dokumentacja obejmuje wiele najczęstszych aspektów dotyczących {RELEASE}. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -510,7 +510,7 @@
       "RELEASE": {}
     }
   },
-  "welcomeSlideDescription": "Najnowsza wersja {RELEASE}, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę...",
+  "welcomeSlideDescription": "Najnowsza wersja {RELEASE}, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę…",
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -539,7 +539,7 @@
   "@officeSlideWriter": {},
   "accessSlideAssistiveTechnologies": "Technologie wspomagające",
   "@accessSlideAssistiveTechnologies": {},
-  "accessSlideDescription": "U podstaw filozofii {RELEASE} leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, schematu kolorów i rozmiaru tekstu {RELEASE} ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.",
+  "accessSlideDescription": "U podstaw filozofii {RELEASE} leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, kolorów i rozmiaru tekstu {RELEASE} ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -568,7 +568,7 @@
   },
   "installationTypeMultiOSDetected": "Na tym komputerze jest obecnie zainstalowanych wiele systemów operacyjnych. Co chcesz zrobić?",
   "@installationTypeMultiOSDetected": {},
-  "copyingFiles": "Kopiowanie plików...",
+  "copyingFiles": "Kopiowanie plików…",
   "@copyingFiles": {},
   "installationFailed": "Instalacja nieudana",
   "@installationFailed": {},
@@ -697,12 +697,20 @@
       "SIZE": {}
     }
   },
-  "configuringSystem": "Konfigurowanie systemu...",
+  "configuringSystem": "Konfigurowanie systemu…",
   "@configuringSystem": {},
-  "installingSystem": "Instalowanie systemu...",
+  "installingSystem": "Instalowanie systemu…",
   "@installingSystem": {},
   "showSecurityKey": "Pokaż klucz bezpieczeństwa",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "Wybrano LVM i szyfrowanie",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Zainstaluj oprogramowanie innego dostawcy do sprzętu graficznego i Wi-Fi",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Zainstaluj obsługę dodatkowych formatów multimediów",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre jest własnościowe.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "Sterowniki te podlegają warunkom licencyjnym dołączonym do ich dokumentacji. Są one własnościowe.",
+  "@installDriversSubtitle": {}
 }
