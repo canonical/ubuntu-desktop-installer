@@ -34,7 +34,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get yesButtonText => 'Ja';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Avslutt installasjon';
 
   @override
   String get welcome => 'Velkommen';
@@ -133,7 +133,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Sikkerhetsnøkkel stemmer ikke';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Vis sikkerhetsnøkkel';
 
   @override
   String get connectToInternetPageTitle => 'Koble til internett';
@@ -214,16 +214,16 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installThirdPartySubtitle => 'Denne programvaren er underlagt lisensvilkårene som følger med dokumentasjonen. Noen er proprietære.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Installer tredjepartsprogramvare for grafikk- og Wi-Fi-maskinvare';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Disse driverrutinene har lisensvilkår som er å finne i dokumentasjonen av dem. De er ufrie.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Installer støtte for ytterligere mediaformater';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Denne programvaren har lisensvilkår som er å finnen i dokumentasjonen av den. Noen av dem er ufrie.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -305,7 +305,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM valg';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM og kryptering valgt';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -338,17 +338,17 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Installer $product ved siden av $os1 og $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Installer $product ved siden av dem';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Installer $product ved siden av andre partisjoner';
   }
 
   @override
@@ -377,30 +377,30 @@ class AppLocalizationsNb extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installere nå';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Tildel lagringsplass ved å dra inndeleren nedenfor:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num mindre partisjoner er skjult, bruk <a href=\"$url\">avansert partisjoneringsverktøy</a> for mer kontroll';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Endre størrelse på partisjon';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Tildel plass';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Filer';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partisjon:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Størrelse:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Tilgjengelig:';
 
   @override
   String get allocateDiskSpace => 'Tildel diskplass';
@@ -439,13 +439,13 @@ class AppLocalizationsNb extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Opprett en ny partisjonstabell på enheten?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Du har valgt en hel enhet å partisjonere. Hvis du fortsetter med opprettelse av en ny partisjonstabell på enheten vil alle nåværende partisjoner på den fjernes.\n\nMerk at du også vil kunne angre operasjonen senere hvis du ønsker det.';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Enhet å installere oppstartslaster på';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Opprett partisjon';
 
   @override
   String get partitionEditTitle => 'Rediger partisjon';
@@ -457,7 +457,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -487,22 +487,22 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatLabel => 'Brukt som:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4-journalfilsystem';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3-journalfilsystem';
 
   @override
   String get partitionFormatExt2 => 'Ext2-filsystem';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs-journalfilsystem';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS-journalfilsystem';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS-journalfilsystem';
 
   @override
   String get partitionFormatFat => 'FAT-filsystem';
@@ -520,7 +520,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatSwap => 'Sidevekslingsområde';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660-filsystem';
 
   @override
   String get partitionFormatVfat => 'VFAT-filsystem';
@@ -532,7 +532,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatReiserFS => 'ReiserFS-filsystem';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS-rotfilsystem';
 
   @override
   String get partitionErase => 'Formater partisjonen';
@@ -577,16 +577,16 @@ class AppLocalizationsNb extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Brukernavnet er ugyldig';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Brukernavnet finnes allerede.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Navnet er reservert for systembruk.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Navnet er for langt.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Navnet inneholder ugyldige tegn.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Velg et passord';
@@ -610,10 +610,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get writeChangesFallbackSerial => 'disk';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'Partisjonstabellen for følgende enheter har blitt endret:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -621,38 +621,38 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partition changes are going to be applied:';
+  String get writeChangesPartitionsHeader => 'Følgende partisjonsendringer vil bli utført:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'endret størrelse fra $oldsize til $newsize for #$disk${partition}';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partisjon #$disk${partition} formatert som $format og brukt til $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partisjon #$disk${partition} formatert som $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partisjon #$disk${partition} brukt til $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partisjon #$disk${partition} opprettet';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Velg utseende';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Du kan alltid endre dette senere i utseende-innstillingene.';
 
   @override
   String get chooseYourLookPageDarkSetting => 'Mørk';
@@ -670,7 +670,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Start om igjen til $system';
   }
 
   @override
@@ -680,21 +680,21 @@ class AppLocalizationsNb extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Skru av BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://$url\"></a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Omstart til Windows';
 
   @override
   String get whereAreYouPageTitle => 'Hvem er du?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Sted';
 
   @override
   String get whereAreYouTimezoneLabel => 'Tidssone';
@@ -706,7 +706,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'For rask og fullstendig oversikt over nye funksjoner, gjør $RELEASE databruk enklere enn noensinne. Her er noen av de kule tingene å sjekke ut …';
   }
 
   @override
@@ -714,7 +714,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Ta farvel med å søke på nettet etter ny programvare. Med tilgang til Snap-butikken og $RELEASE-pakkebrønnen finner du nye programmer uten. Skriv inn det du leter etter, eller utforsk kategorier som f.eks. grafikk og fotografi, spill og produktivitet, sammen med nyttige vurderinger fra andre brukere.';
   }
 
   @override
@@ -722,11 +722,11 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE kommer med den fantastiske Rhythmbox-musikkspilleren. Med avanserte avspillingsvalg er det enkelt å lage en spilleliste av de perfekte sporene. Det fungerer flott med CD-er og portable musikkspillere, så du kan ta med deg musikken din uansett hvor du drar.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'Rythmbox-musikkspilleren';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -735,30 +735,30 @@ class AppLocalizationsNb extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Kos deg med bildene dine';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell er et hendig verktøy for organisering av bilder som er klar for enheten dine. Koble til et kamera eller en telefon for å overføre bildene dine, deretter er det enkelt å dele dem og holde dem trygge. Hvis du føler deg kreativ kan du finne mange andre bildeprogrammer i utvalget av Ubuntu-programvare.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell-bildeorganisereren';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'GIMP-bilderedigerer';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shortcut-videoredigerer';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Få mer ut av nettet';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE kommer med Firefox, som er en nettleser noen millioner mennesker bruker. Med nett-programmer du ofte bruker (som f.eks. sosiale media eller e-post i nettleseren) kan du ha disse festet på skrivebordet for raskere tilgang, akkurat som programmer på datamaskinen.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'Firefox-nettleseren';
 
   @override
   String get webSlideThunderbird => 'Thunderbird';
@@ -770,7 +770,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get officeSlideTitle => 'Alt du trenger til kontoret';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice er en fri kontorpakke med alt du trenger for å lage dokumenter, regneark, og presentasjoner. Det er kompatibelt med Microsoft Office-filformatene, og gir deg alle funksjonene du trenger.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -782,11 +782,11 @@ class AppLocalizationsNb extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Tilgang for alle';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'Hjertet i $RELEASE-filosofien er troen på at databruk er for alle. Med avanserte tilgjengelighetsverktøy og alternativer for endring av språk, fargedrakt, og tekststørrelse gjør $RELEASE databruk enkelt for alle — uansett hvor og hvem de er.';
   }
 
   @override
@@ -806,14 +806,14 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'Den offisielle dokumentasjonen dekker mange av de vanligste aspektene ved $RELEASE. Den er tilgjengelig både <a href=\"https://help.ubuntu.com\">på nett</a> og via «Hjelp»-ikonet i dokken.$RELEASE';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'På <a href=\"https://askubuntu.com\">Ask Ubuntu</a> kan du stille spørsmål og søke i en imponerende samling allerede besvarte spørsmål. Støtte på ditt eget språk får du fra <a href=\"https://loco.ubuntu.com/teams\">ditt lokale gemenskapslag</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'For veiledning til andre nyttige ressurser kan du besøke <a href=\"https://www.ubuntu.com/support/community-support\">gemenskapsportalen</a> eller nytte <a href=\"https://www.ubuntu.com/support\">kommersiell støtte.';
 
   @override
   String get includedSoftware => 'Inkludert programvare';
@@ -825,32 +825,32 @@ class AppLocalizationsNb extends AppLocalizations {
   String get supportedSoftware => 'Støttet programvare';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Kopierer filer …';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installerer systemet …';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Setter opp systemet …';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Installasjonen mislyktes';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Beklager';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Du trenger minst $SIZE lagringsplass for å installere $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Denne datamaskinen har kun $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Den største lagringsenheten på datamaskinen er kun $SIZE.';
   }
 }

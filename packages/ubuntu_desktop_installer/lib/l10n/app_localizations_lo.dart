@@ -439,7 +439,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
@@ -457,7 +457,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -770,7 +770,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get officeSlideTitle => 'Everything you need for the office';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.';
+  String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, $RELEASE makes computing easy - whoever and wherever you are.';
+    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, $RELEASE makes computing easy — whoever and wherever you are.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common areas about $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'The official documentation covers many of the most common aspects of $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsLo extends AppLocalizations {
   String get supportedSoftware => 'Supported software';
 
   @override
-  String get copyingFiles => 'Copying files...';
+  String get copyingFiles => 'Copying files…';
 
   @override
-  String get installingSystem => 'Installing system...';
+  String get installingSystem => 'Installing the system…';
 
   @override
-  String get configuringSystem => 'Configuring system...';
+  String get configuringSystem => 'Setting up the system…';
 
   @override
   String get installationFailed => 'Installation failed';

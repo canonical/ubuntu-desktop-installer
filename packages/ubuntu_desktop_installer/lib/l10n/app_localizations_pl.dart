@@ -211,19 +211,19 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installThirdPartyTitle => 'Zainstaluj oprogramowanie innych dostawców do obsługi sprzętu graficznego i Wi-Fi, a także dodatkowe formaty multimedialne';
 
   @override
-  String get installThirdPartySubtitle => 'To oprogramowanie podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.';
+  String get installThirdPartySubtitle => 'Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre z nich są własnościowe.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Zainstaluj oprogramowanie innego dostawcy do sprzętu graficznego i Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Sterowniki te podlegają warunkom licencyjnym dołączonym do ich dokumentacji. Są one własnościowe.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Zainstaluj obsługę dodatkowych formatów multimediów';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre jest własnościowe.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -285,7 +285,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Zaawansowane funkcje...';
+  String get installationTypeAdvancedLabel => 'Zaawansowane funkcje…';
 
   @override
   String get installationTypeAdvancedTitle => 'Zaawansowane funkcje';
@@ -439,7 +439,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Utworzyć nową pustą tablicę partycji na tym urządzeniu?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia nowej tabeli partycji na urządzeniu, wszystkie bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
+  String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
 
   @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';
@@ -457,7 +457,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get partitionUnitB => 'B';
 
   @override
-  String get partitionUnitKB => 'KB';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'MB';
@@ -706,7 +706,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Najnowsza wersja $RELEASE, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę...';
+    return 'Najnowsza wersja $RELEASE, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę…';
   }
 
   @override
@@ -770,7 +770,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get officeSlideTitle => 'Wszystko, czego potrzebujesz do biura';
 
   @override
-  String get officeSlideDescription => 'LibreOffice to darmowy pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje bezpłatnie.';
+  String get officeSlideDescription => 'LibreOffice to wolny pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'U podstaw filozofii $RELEASE leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, schematu kolorów i rozmiaru tekstu $RELEASE ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.';
+    return 'U podstaw filozofii $RELEASE leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, kolorów i rozmiaru tekstu $RELEASE ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Oficjalna dokumentacja obejmuje wiele najczęstszych obszarów dotyczących $RELEASE. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.';
+    return 'Oficjalna dokumentacja obejmuje wiele najczęstszych aspektów dotyczących $RELEASE. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String get supportedSoftware => 'Obsługiwane oprogramowanie';
 
   @override
-  String get copyingFiles => 'Kopiowanie plików...';
+  String get copyingFiles => 'Kopiowanie plików…';
 
   @override
-  String get installingSystem => 'Instalowanie systemu...';
+  String get installingSystem => 'Instalowanie systemu…';
 
   @override
-  String get configuringSystem => 'Konfigurowanie systemu...';
+  String get configuringSystem => 'Konfigurowanie systemu…';
 
   @override
   String get installationFailed => 'Instalacja nieudana';

@@ -1007,7 +1007,7 @@ abstract class AppLocalizations {
   /// No description provided for @newPartitionTableConfirmationMessage.
   ///
   /// In en, this message translates to:
-  /// **'You have selected an entire device to partition. If you proceed with creating a new partition table on the device, then all current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.'**
+  /// **'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.'**
   String get newPartitionTableConfirmationMessage;
 
   /// No description provided for @bootLoaderDevice.
@@ -1043,7 +1043,7 @@ abstract class AppLocalizations {
   /// No description provided for @partitionUnitKB.
   ///
   /// In en, this message translates to:
-  /// **'KB'**
+  /// **'kB'**
   String get partitionUnitKB;
 
   /// No description provided for @partitionUnitMB.
@@ -1613,7 +1613,7 @@ abstract class AppLocalizations {
   /// No description provided for @officeSlideDescription.
   ///
   /// In en, this message translates to:
-  /// **'LibreOffice is a free office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need, without the price tag.'**
+  /// **'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.'**
   String get officeSlideDescription;
 
   /// No description provided for @officeSlideWriter.
@@ -1643,7 +1643,7 @@ abstract class AppLocalizations {
   /// No description provided for @accessSlideDescription.
   ///
   /// In en, this message translates to:
-  /// **'At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, color schome and text size, {RELEASE} makes computing easy - whoever and wherever you are.'**
+  /// **'At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, {RELEASE} makes computing easy — whoever and wherever you are.'**
   String accessSlideDescription(Object RELEASE);
 
   /// No description provided for @accessSlideCustomizationOptions.
@@ -1679,7 +1679,7 @@ abstract class AppLocalizations {
   /// No description provided for @supportSlideDocumentation.
   ///
   /// In en, this message translates to:
-  /// **'The official documentation covers many of the most common areas about {RELEASE}. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.'**
+  /// **'The official documentation covers many of the most common aspects of {RELEASE}. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.'**
   String supportSlideDocumentation(Object RELEASE);
 
   /// No description provided for @supportSlideQuestions.
@@ -1715,19 +1715,19 @@ abstract class AppLocalizations {
   /// No description provided for @copyingFiles.
   ///
   /// In en, this message translates to:
-  /// **'Copying files...'**
+  /// **'Copying files…'**
   String get copyingFiles;
 
   /// No description provided for @installingSystem.
   ///
   /// In en, this message translates to:
-  /// **'Installing system...'**
+  /// **'Installing the system…'**
   String get installingSystem;
 
   /// No description provided for @configuringSystem.
   ///
   /// In en, this message translates to:
-  /// **'Configuring system...'**
+  /// **'Setting up the system…'**
   String get configuringSystem;
 
   /// No description provided for @installationFailed.
