@@ -162,7 +162,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 //     return Align(
 //       alignment: Alignment.topLeft,
 //       child: IntrinsicWidth(
-//         child: CheckButton(
+//         child: YaruCheckButton(
 //           contentPadding: kContentPadding,
 //           title: Text(lang.profileSetupShowAdvancedOptions),
 //           value: showAdvancedOptions,

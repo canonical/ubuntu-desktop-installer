@@ -64,7 +64,7 @@ class _HostGenerationCheckButton extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
-        child: CheckButton(
+        child: YaruCheckButton(
           contentPadding: kContentPadding,
           title: Text(lang.advancedSetupHostGenerationTitle),
           subtitle: Text(lang.advancedSetupHostGenerationSubtitle),
@@ -92,7 +92,7 @@ class _ResolvConfGenerationCheckButton extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
-        child: CheckButton(
+        child: YaruCheckButton(
           contentPadding: kContentPadding,
           title: Text(lang.advancedSetupResolvConfGenerationTitle),
           subtitle: Text(lang.advancedSetupResolvConfGenerationSubtitle),

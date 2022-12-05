@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'configuration_ui_model.dart';
@@ -53,7 +53,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.configurationUIAutoMountHeader),
           ),
-          CheckButton(
+          YaruCheckButton(
             contentPadding: kContentPadding,
             title: Text(lang.configurationUIAutoMountTitle),
             subtitle: Text(lang.configurationUIAutoMountSubtitle),
@@ -61,7 +61,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             onChanged: (value) => model.automountEnabled = value!,
           ),
           const SizedBox(height: kContentSpacing),
-          CheckButton(
+          YaruCheckButton(
             contentPadding: kContentPadding,
             title: Text(lang.configurationUIMountFstabTitle),
             subtitle: Text(lang.configurationUIMountFstabSubtitle),
@@ -73,7 +73,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.configurationUIInteroperabilityHeader),
           ),
-          CheckButton(
+          YaruCheckButton(
             contentPadding: kContentPadding,
             title: Text(lang.configurationUIInteroperabilityTitle),
             subtitle: Text(lang.configurationUIInteroperabilitySubtitle),
@@ -81,7 +81,7 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
             onChanged: (value) => model.interopEnabled = value!,
           ),
           const SizedBox(height: kContentSpacing),
-          CheckButton(
+          YaruCheckButton(
             contentPadding: kContentPadding,
             title: Text(lang.configurationUIInteropAppendWindowsPathTitle),
             subtitle:

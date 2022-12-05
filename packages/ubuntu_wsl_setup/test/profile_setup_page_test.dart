@@ -188,15 +188,15 @@ void main() {
   //   await tester.pumpWidget(buildApp(tester, model));
 
   //   final checkbox = find.widgetWithText(
-  //       CheckButton, tester.lang.profileSetupShowAdvancedOptions);
+  //       YaruCheckButton, tester.lang.profileSetupShowAdvancedOptions);
   //   expect(checkbox, findsOneWidget);
-  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   expect(tester.widget<YaruCheckButton>(checkbox).value, isTrue);
 
   //   when(model.showAdvancedOptions).thenReturn(true);
 
   //   await tester.tap(checkbox);
   //   verify(model.showAdvancedOptions = false).called(1);
-  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   expect(tester.widget<YaruCheckButton>(checkbox).value, isTrue);
   // });
 
   testWidgets('load and save profile setup', (tester) async {

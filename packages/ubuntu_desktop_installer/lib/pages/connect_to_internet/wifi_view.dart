@@ -4,6 +4,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'connect_model.dart';
@@ -39,7 +40,7 @@ class WifiRadioButton extends StatelessWidget {
                   ? Text(lang.wirelessNetworkingDisabled)
                   : Text(lang.noWifiDevicesDetected),
             )
-          : RadioButton<ConnectMode>(
+          : YaruRadioButton<ConnectMode>(
               title: Text(lang.selectWifiNetwork),
               value: ConnectMode.wifi,
               groupValue: value,

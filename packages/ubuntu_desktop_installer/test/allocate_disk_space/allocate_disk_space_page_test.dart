@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
@@ -216,7 +217,7 @@ void main() {
     final model = buildModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.byType(Checkbox);
+    final checkbox = find.byType(YaruCheckbox);
     expect(checkbox, findsWidgets);
 
     await tester.tap(checkbox.first);

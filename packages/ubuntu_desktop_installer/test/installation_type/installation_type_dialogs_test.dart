@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
@@ -34,11 +34,11 @@ void main() {
     await tester.pumpAndSettle();
 
     await tester.tap(find.widgetWithText(
-        RadioButton<AdvancedFeature>, tester.lang.installationTypeZFS));
+        YaruRadioButton<AdvancedFeature>, tester.lang.installationTypeZFS));
     await tester.pump();
 
     await tester.tap(find.widgetWithText(
-        CheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
+        YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester
@@ -68,7 +68,7 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(RadioButton<AdvancedFeature>,
+    await tester.tap(find.widgetWithText(YaruRadioButton<AdvancedFeature>,
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
@@ -99,12 +99,12 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(RadioButton<AdvancedFeature>,
+    await tester.tap(find.widgetWithText(YaruRadioButton<AdvancedFeature>,
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
     await tester.tap(find.widgetWithText(
-        CheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
+        YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester

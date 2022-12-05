@@ -9,8 +9,8 @@ import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_ot
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'updates_other_software_model_test.mocks.dart';
@@ -50,26 +50,26 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final normalInstallationTile = find.widgetWithText(
-      RadioButton<InstallationMode>,
+      YaruRadioButton<InstallationMode>,
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
     final minimalInstallationTile = find.widgetWithText(
-      RadioButton<InstallationMode>,
+      YaruRadioButton<InstallationMode>,
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);
 
     expect(
       tester
-          .widget<RadioButton<InstallationMode>>(normalInstallationTile)
+          .widget<YaruRadioButton<InstallationMode>>(normalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
     expect(
       tester
-          .widget<RadioButton<InstallationMode>>(minimalInstallationTile)
+          .widget<YaruRadioButton<InstallationMode>>(minimalInstallationTile)
           .groupValue,
       InstallationMode.normal,
     );
@@ -86,12 +86,12 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final installDriversTile = find.widgetWithText(
-      CheckButton,
+      YaruCheckButton,
       tester.lang.installDriversTitle,
     );
     expect(installDriversTile, findsOneWidget);
 
-    expect(tester.widget<CheckButton>(installDriversTile).value, isTrue);
+    expect(tester.widget<YaruCheckButton>(installDriversTile).value, isTrue);
 
     when(model.installDrivers).thenReturn(false);
 
@@ -105,12 +105,12 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final installCodecsTile = find.widgetWithText(
-      CheckButton,
+      YaruCheckButton,
       tester.lang.installCodecsTitle,
     );
     expect(installCodecsTile, findsOneWidget);
 
-    expect(tester.widget<CheckButton>(installCodecsTile).value, isTrue);
+    expect(tester.widget<YaruCheckButton>(installCodecsTile).value, isTrue);
 
     when(model.installCodecs).thenReturn(false);
 

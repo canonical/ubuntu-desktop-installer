@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_page.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'configuration_ui_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -67,7 +67,7 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIAutoMountSubtitle);
+        YaruCheckButton, tester.lang.configurationUIAutoMountSubtitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountEnabled = true).called(1);
@@ -78,7 +78,7 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIMountFstabTitle);
+        YaruCheckButton, tester.lang.configurationUIMountFstabTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountMountfstab = true).called(1);
@@ -89,7 +89,7 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIInteroperabilitySubtitle);
+        YaruCheckButton, tester.lang.configurationUIInteroperabilitySubtitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopEnabled = true).called(1);
@@ -99,8 +99,8 @@ void main() {
     final model = buildModel(interopAppendwindowspath: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIInteropAppendWindowsPathTitle);
+    final checkbox = find.widgetWithText(YaruCheckButton,
+        tester.lang.configurationUIInteropAppendWindowsPathTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopAppendwindowspath = true).called(1);

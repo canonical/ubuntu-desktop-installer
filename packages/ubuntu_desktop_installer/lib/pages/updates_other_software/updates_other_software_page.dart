@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -56,7 +56,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.updatesOtherSoftwarePageDescription),
           ),
-          RadioButton<InstallationMode>(
+          YaruRadioButton<InstallationMode>(
             title: Text(lang.normalInstallationTitle),
             subtitle: Text(lang.normalInstallationSubtitle),
             contentPadding: kContentPadding,
@@ -65,7 +65,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             onChanged: model.setInstallationMode,
           ),
           const SizedBox(height: kContentSpacing),
-          RadioButton<InstallationMode>(
+          YaruRadioButton<InstallationMode>(
             title: Text(lang.minimalInstallationTitle),
             subtitle: Text(lang.minimalInstallationSubtitle),
             value: InstallationMode.minimal,
@@ -77,7 +77,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.otherOptions),
           ),
-          CheckButton(
+          YaruCheckButton(
             title: Text(lang.installDriversTitle),
             subtitle: Text(lang.installDriversSubtitle),
             contentPadding: kContentPadding,
@@ -85,7 +85,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             onChanged: model.setInstallDrivers,
           ),
           const SizedBox(height: kContentSpacing),
-          CheckButton(
+          YaruCheckButton(
             title: Text(lang.installCodecsTitle),
             subtitle: Text(lang.installCodecsSubtitle),
             contentPadding: kContentPadding,

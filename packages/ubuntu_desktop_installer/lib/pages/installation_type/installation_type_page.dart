@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -90,7 +90,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
         children: [
           // TODO: offer "reinstall" when subiquity has support for it
           // if (model.existingOS != null)
-          //   RadioButton<InstallationType>(
+          //   YaruRadioButton<InstallationType>(
           //     title: Text(lang.installationTypeReinstall(model.existingOS!)),
           //     subtitle: Html(
           //       data: lang.installationTypeReinstallWarning(
@@ -105,7 +105,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           if (model.canInstallAlongside)
             Padding(
               padding: const EdgeInsets.only(bottom: kContentSpacing),
-              child: RadioButton<InstallationType>(
+              child: YaruRadioButton<InstallationType>(
                 title: Text(_formatAlongside(
                     lang, model.productInfo, model.existingOS ?? [])),
                 subtitle: Text(lang.installationTypeAlongsideInfo),
@@ -114,7 +114,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
                 onChanged: (v) => model.installationType = v!,
               ),
             ),
-          RadioButton<InstallationType>(
+          YaruRadioButton<InstallationType>(
             title: Text(lang.installationTypeErase(flavor.name)),
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
@@ -141,7 +141,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
             ),
           ),
           const SizedBox(height: kContentSpacing),
-          RadioButton<InstallationType>(
+          YaruRadioButton<InstallationType>(
             title: Text(lang.installationTypeManual),
             subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
             value: InstallationType.manual,

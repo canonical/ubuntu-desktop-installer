@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -85,7 +85,7 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
           HiddenWifiView(
             expanded: model.connectMode == ConnectMode.hiddenWifi,
           ),
-          RadioButton<ConnectMode>(
+          YaruRadioButton<ConnectMode>(
             title: Text(lang.noInternet),
             value: ConnectMode.none,
             contentPadding: const EdgeInsets.only(top: 8),

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../widgets.dart';
@@ -319,7 +320,7 @@ class _PartitionWipeCheckbox extends StatelessWidget {
     return ValueListenableBuilder<bool?>(
       valueListenable: wipe,
       builder: (context, value, child) {
-        return CheckButton(
+        return YaruCheckButton(
           title: Text(lang.partitionErase),
           value: value ?? false,
           onChanged: canWipe ? (v) => wipe.value = v! : null,

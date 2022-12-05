@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'ethernet_view_test.mocks.dart';
@@ -69,7 +69,7 @@ void main() {
       ),
     );
 
-    expect(find.byType(RadioButton<ConnectMode>), findsNothing);
+    expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
     expect(find.text(tester.lang.wiredDisabled), findsOneWidget);
     expect(find.text(tester.lang.wiredMustBeEnabled), findsOneWidget);
@@ -106,7 +106,7 @@ void main() {
     );
 
     expect(find.byType(OutlinedButton), findsNothing);
-    expect(find.byType(RadioButton<ConnectMode>), findsNothing);
+    expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
     expect(find.text(tester.lang.noWiredConnection), findsOneWidget);
   });
 }

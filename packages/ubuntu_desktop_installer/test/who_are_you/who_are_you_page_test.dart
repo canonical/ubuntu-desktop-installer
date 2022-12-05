@@ -8,7 +8,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
 import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -235,8 +234,8 @@ void main() {
     final model = buildModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordCheckButton =
-        find.widgetWithText(CheckButton, tester.lang.whoAreYouPageShowPassword);
+    final showPasswordCheckButton = find.widgetWithText(
+        YaruCheckButton, tester.lang.whoAreYouPageShowPassword);
     expect(showPasswordCheckButton, findsOneWidget);
 
     await tester.tap(showPasswordCheckButton);
@@ -247,8 +246,8 @@ void main() {
     final model = buildModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordCheckButton =
-        find.widgetWithText(CheckButton, tester.lang.whoAreYouPageShowPassword);
+    final showPasswordCheckButton = find.widgetWithText(
+        YaruCheckButton, tester.lang.whoAreYouPageShowPassword);
     expect(showPasswordCheckButton, findsOneWidget);
 
     await tester.tap(showPasswordCheckButton);

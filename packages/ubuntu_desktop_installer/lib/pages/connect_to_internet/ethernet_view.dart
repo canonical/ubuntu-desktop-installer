@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'connect_model.dart';
@@ -32,7 +32,7 @@ class EthernetRadioButton extends StatelessWidget {
       );
     }
 
-    return RadioButton<ConnectMode>(
+    return YaruRadioButton<ConnectMode>(
       title: Text(lang.useWiredConnection),
       value: ConnectMode.ethernet,
       groupValue: value,
