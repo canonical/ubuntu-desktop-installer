@@ -400,34 +400,6 @@ void main() {
       expect(tzdata.fromGeoip, isTrue);
     });
 
-    test('ssh', () async {
-      var newSsh = SSHData(
-        installServer: true,
-        allowPw: false,
-        authorizedKeys: [],
-      );
-
-      await client.setSsh(newSsh);
-
-      var ssh = await client.ssh();
-      expect(ssh.installServer, true);
-      expect(ssh.allowPw, false);
-      expect(ssh.authorizedKeys, []);
-
-      newSsh = SSHData(
-        installServer: false,
-        allowPw: true,
-        authorizedKeys: [],
-      );
-
-      await client.setSsh(newSsh);
-
-      ssh = await client.ssh();
-      expect(ssh.installServer, false);
-      expect(ssh.allowPw, true);
-      expect(ssh.authorizedKeys, []);
-    });
-
     test('status', () async {
       var status = await client.status();
       expect(status.state, ApplicationState.WAITING);
