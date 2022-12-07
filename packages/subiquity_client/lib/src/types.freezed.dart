@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'types.dart';
 
@@ -869,6 +869,8 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   final List<KeyFingerprint> _authorizedKeyFingerprints;
   @override
   List<KeyFingerprint> get authorizedKeyFingerprints {
+    if (_authorizedKeyFingerprints is EqualUnmodifiableListView)
+      return _authorizedKeyFingerprints;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_authorizedKeyFingerprints);
   }
@@ -876,6 +878,7 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   final List<String> _ips;
   @override
   List<String> get ips {
+    if (_ips is EqualUnmodifiableListView) return _ips;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ips);
   }
@@ -883,6 +886,8 @@ class _$_LiveSessionSSHInfo implements _LiveSessionSSHInfo {
   final List<KeyFingerprint> _hostKeyFingerprints;
   @override
   List<KeyFingerprint> get hostKeyFingerprints {
+    if (_hostKeyFingerprints is EqualUnmodifiableListView)
+      return _hostKeyFingerprints;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_hostKeyFingerprints);
   }
@@ -1292,6 +1297,7 @@ class _$StepPressKey implements StepPressKey {
   final List<String> _symbols;
   @override
   List<String> get symbols {
+    if (_symbols is EqualUnmodifiableListView) return _symbols;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_symbols);
   }
@@ -1299,6 +1305,7 @@ class _$StepPressKey implements StepPressKey {
   final Map<int, String> _keycodes;
   @override
   Map<int, String> get keycodes {
+    if (_keycodes is EqualUnmodifiableMapView) return _keycodes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_keycodes);
   }
@@ -2235,6 +2242,7 @@ class _$_KeyboardLayout implements _KeyboardLayout {
   final List<KeyboardVariant> _variants;
   @override
   List<KeyboardVariant> get variants {
+    if (_variants is EqualUnmodifiableListView) return _variants;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_variants);
   }
@@ -2413,6 +2421,7 @@ class _$_KeyboardSetup implements _KeyboardSetup {
   final List<KeyboardLayout> _layouts;
   @override
   List<KeyboardLayout> get layouts {
+    if (_layouts is EqualUnmodifiableListView) return _layouts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_layouts);
   }
@@ -2839,6 +2848,7 @@ class _$_SourceSelectionAndSetting implements _SourceSelectionAndSetting {
   final List<SourceSelection> _sources;
   @override
   List<SourceSelection> get sources {
+    if (_sources is EqualUnmodifiableListView) return _sources;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_sources);
   }
@@ -3294,6 +3304,7 @@ class _$_NetworkStatus implements _NetworkStatus {
   final List<NetDevInfo> _devices;
   @override
   List<NetDevInfo> get devices {
+    if (_devices is EqualUnmodifiableListView) return _devices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_devices);
   }
@@ -3588,6 +3599,8 @@ PartitionOrGap _$PartitionOrGapFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PartitionOrGap {
+  int? get size => throw _privateConstructorUsedError;
+  int? get offset => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -3672,6 +3685,9 @@ mixin _$PartitionOrGap {
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PartitionOrGapCopyWith<PartitionOrGap> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3679,6 +3695,8 @@ abstract class $PartitionOrGapCopyWith<$Res> {
   factory $PartitionOrGapCopyWith(
           PartitionOrGap value, $Res Function(PartitionOrGap) then) =
       _$PartitionOrGapCopyWithImpl<$Res, PartitionOrGap>;
+  @useResult
+  $Res call({int? size, int? offset});
 }
 
 /// @nodoc
@@ -3690,13 +3708,33 @@ class _$PartitionOrGapCopyWithImpl<$Res, $Val extends PartitionOrGap>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? offset = freezed,
+  }) {
+    return _then(_value.copyWith(
+      size: freezed == size
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$PartitionCopyWith<$Res> {
+abstract class _$$PartitionCopyWith<$Res>
+    implements $PartitionOrGapCopyWith<$Res> {
   factory _$$PartitionCopyWith(
           _$Partition value, $Res Function(_$Partition) then) =
       __$$PartitionCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call(
       {int? size,
@@ -3853,6 +3891,7 @@ class _$Partition implements Partition {
   @override
   @JsonKey()
   List<String> get annotations {
+    if (_annotations is EqualUnmodifiableListView) return _annotations;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_annotations);
   }
@@ -4072,6 +4111,7 @@ abstract class Partition implements PartitionOrGap {
 
   factory Partition.fromJson(Map<String, dynamic> json) = _$Partition.fromJson;
 
+  @override
   int? get size;
   int? get number;
   bool? get preserve;
@@ -4082,19 +4122,22 @@ abstract class Partition implements PartitionOrGap {
   bool? get grubDevice;
   bool? get boot;
   OsProber? get os;
+  @override
   int? get offset;
   int? get estimatedMinSize;
   bool? get resize;
   String? get path;
+  @override
   @JsonKey(ignore: true)
   _$$PartitionCopyWith<_$Partition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GapCopyWith<$Res> {
+abstract class _$$GapCopyWith<$Res> implements $PartitionOrGapCopyWith<$Res> {
   factory _$$GapCopyWith(_$Gap value, $Res Function(_$Gap) then) =
       __$$GapCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({int offset, int size, GapUsable usable});
 }
@@ -4300,9 +4343,12 @@ abstract class Gap implements PartitionOrGap {
 
   factory Gap.fromJson(Map<String, dynamic> json) = _$Gap.fromJson;
 
+  @override
   int get offset;
+  @override
   int get size;
   GapUsable get usable;
+  @override
   @JsonKey(ignore: true)
   _$$GapCopyWith<_$Gap> get copyWith => throw _privateConstructorUsedError;
 }
@@ -4572,6 +4618,7 @@ class _$_Disk implements _Disk {
   final List<String> _usageLabels;
   @override
   List<String> get usageLabels {
+    if (_usageLabels is EqualUnmodifiableListView) return _usageLabels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_usageLabels);
   }
@@ -4579,6 +4626,7 @@ class _$_Disk implements _Disk {
   final List<PartitionOrGap> _partitions;
   @override
   List<PartitionOrGap> get partitions {
+    if (_partitions is EqualUnmodifiableListView) return _partitions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_partitions);
   }
@@ -5302,6 +5350,7 @@ class _$_GuidedStorageResponse implements _GuidedStorageResponse {
   List<Disk>? get disks {
     final value = _disks;
     if (value == null) return null;
+    if (_disks is EqualUnmodifiableListView) return _disks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -5605,6 +5654,7 @@ class _$_StorageResponse implements _StorageResponse {
   List<dynamic>? get origConfig {
     final value = _origConfig;
     if (value == null) return null;
+    if (_origConfig is EqualUnmodifiableListView) return _origConfig;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -5614,6 +5664,7 @@ class _$_StorageResponse implements _StorageResponse {
   List<dynamic>? get config {
     final value = _config;
     if (value == null) return null;
+    if (_config is EqualUnmodifiableListView) return _config;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -5623,6 +5674,7 @@ class _$_StorageResponse implements _StorageResponse {
   Map<String, dynamic>? get blockdev {
     final value = _blockdev;
     if (value == null) return null;
+    if (_blockdev is EqualUnmodifiableMapView) return _blockdev;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -5632,6 +5684,7 @@ class _$_StorageResponse implements _StorageResponse {
   Map<String, dynamic>? get dasd {
     final value = _dasd;
     if (value == null) return null;
+    if (_dasd is EqualUnmodifiableMapView) return _dasd;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -5914,6 +5967,7 @@ class _$_StorageResponseV2 implements _StorageResponseV2 {
   @override
   @JsonKey()
   List<Disk> get disks {
+    if (_disks is EqualUnmodifiableListView) return _disks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_disks);
   }
@@ -6742,14 +6796,14 @@ class __$$GuidedStorageTargetUseGapCopyWithImpl<$Res>
   @override
   $Res call({
     Object? diskId = null,
-    Object? gap = null,
+    Object? gap = freezed,
   }) {
     return _then(_$GuidedStorageTargetUseGap(
       diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      gap: null == gap
+      gap: freezed == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
@@ -7266,6 +7320,7 @@ class _$_GuidedStorageResponseV2 implements _GuidedStorageResponseV2 {
   @override
   @JsonKey()
   List<GuidedStorageTarget> get possible {
+    if (_possible is EqualUnmodifiableListView) return _possible;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_possible);
   }
@@ -7372,19 +7427,19 @@ class _$AddPartitionV2CopyWithImpl<$Res, $Val extends AddPartitionV2>
   @override
   $Res call({
     Object? diskId = null,
-    Object? partition = null,
-    Object? gap = null,
+    Object? partition = freezed,
+    Object? gap = freezed,
   }) {
     return _then(_value.copyWith(
       diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: null == partition
+      partition: freezed == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
-      gap: null == gap
+      gap: freezed == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
@@ -7415,19 +7470,19 @@ class __$$_AddPartitionV2CopyWithImpl<$Res>
   @override
   $Res call({
     Object? diskId = null,
-    Object? partition = null,
-    Object? gap = null,
+    Object? partition = freezed,
+    Object? gap = freezed,
   }) {
     return _then(_$_AddPartitionV2(
       diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: null == partition
+      partition: freezed == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
-      gap: null == gap
+      gap: freezed == gap
           ? _value.gap
           : gap // ignore: cast_nullable_to_non_nullable
               as Gap,
@@ -7547,14 +7602,14 @@ class _$ModifyPartitionV2CopyWithImpl<$Res, $Val extends ModifyPartitionV2>
   @override
   $Res call({
     Object? diskId = null,
-    Object? partition = null,
+    Object? partition = freezed,
   }) {
     return _then(_value.copyWith(
       diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: null == partition
+      partition: freezed == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
@@ -7585,14 +7640,14 @@ class __$$_ModifyPartitionV2CopyWithImpl<$Res>
   @override
   $Res call({
     Object? diskId = null,
-    Object? partition = null,
+    Object? partition = freezed,
   }) {
     return _then(_$_ModifyPartitionV2(
       diskId: null == diskId
           ? _value.diskId
           : diskId // ignore: cast_nullable_to_non_nullable
               as String,
-      partition: null == partition
+      partition: freezed == partition
           ? _value.partition
           : partition // ignore: cast_nullable_to_non_nullable
               as Partition,
@@ -8145,6 +8200,7 @@ class _$_SSHData implements _SSHData {
   @override
   @JsonKey()
   List<String> get authorizedKeys {
+    if (_authorizedKeys is EqualUnmodifiableListView) return _authorizedKeys;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_authorizedKeys);
   }
@@ -8525,6 +8581,7 @@ class _$_SSHFetchIdResponse implements _SSHFetchIdResponse {
   List<SSHIdentity>? get identities {
     final value = _identities;
     if (value == null) return null;
+    if (_identities is EqualUnmodifiableListView) return _identities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -9063,6 +9120,7 @@ class _$_SnapInfo implements _SnapInfo {
   @override
   @JsonKey()
   List<ChannelSnapInfo> get channels {
+    if (_channels is EqualUnmodifiableListView) return _channels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_channels);
   }
@@ -9299,6 +9357,7 @@ class _$_DriversResponse implements _DriversResponse {
   List<String>? get drivers {
     final value = _drivers;
     if (value == null) return null;
+    if (_drivers is EqualUnmodifiableListView) return _drivers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -9942,6 +10001,7 @@ class _$_SnapListResponse implements _SnapListResponse {
   @override
   @JsonKey()
   List<SnapInfo> get snaps {
+    if (_snaps is EqualUnmodifiableListView) return _snaps;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_snaps);
   }
@@ -9950,6 +10010,7 @@ class _$_SnapListResponse implements _SnapListResponse {
   @override
   @JsonKey()
   List<SnapSelection> get selections {
+    if (_selections is EqualUnmodifiableListView) return _selections;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_selections);
   }
@@ -11098,6 +11159,7 @@ class _$_UbuntuProSubscription implements _UbuntuProSubscription {
   final List<UbuntuProService> _services;
   @override
   List<UbuntuProService> get services {
+    if (_services is EqualUnmodifiableListView) return _services;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_services);
   }
@@ -12397,7 +12459,7 @@ class _$ChangeCopyWithImpl<$Res, $Val extends Change>
     Object? tasks = null,
     Object? ready = null,
     Object? err = freezed,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -12428,7 +12490,7 @@ class _$ChangeCopyWithImpl<$Res, $Val extends Change>
           ? _value.err
           : err // ignore: cast_nullable_to_non_nullable
               as String?,
-      data: null == data
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -12470,7 +12532,7 @@ class __$$_ChangeCopyWithImpl<$Res>
     Object? tasks = null,
     Object? ready = null,
     Object? err = freezed,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_$_Change(
       id: null == id
@@ -12501,7 +12563,7 @@ class __$$_ChangeCopyWithImpl<$Res>
           ? _value.err
           : err // ignore: cast_nullable_to_non_nullable
               as String?,
-      data: null == data
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -12537,6 +12599,7 @@ class _$_Change implements _Change {
   final List<Task> _tasks;
   @override
   List<Task> get tasks {
+    if (_tasks is EqualUnmodifiableListView) return _tasks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tasks);
   }
