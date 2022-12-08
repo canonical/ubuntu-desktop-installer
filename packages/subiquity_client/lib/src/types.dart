@@ -915,3 +915,10 @@ class Change with _$Change {
 
   factory Change.fromJson(Map<String, dynamic> json) => _$ChangeFromJson(json);
 }
+
+enum CasperMd5Results {
+  UNKNOWN,
+  FAIL,
+  PASS,
+  SKIP,
+}
