@@ -704,5 +704,13 @@
   "installationTypeLVMEncryptionSelected": "נבחרו LVM והצפנה",
   "@installationTypeLVMEncryptionSelected": {},
   "showSecurityKey": "הצגת מפתח אבטחה",
-  "@showSecurityKey": {}
+  "@showSecurityKey": {},
+  "installCodecsTitle": "התקנת תמיכה בתצורות מדיה נוספות",
+  "@installCodecsTitle": {},
+  "installDriversTitle": "התקנת תוכנת צד־שלישי לחומרת גרפיקה ותקשורת אלחוטית",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.",
+  "@installCodecsSubtitle": {}
 }
