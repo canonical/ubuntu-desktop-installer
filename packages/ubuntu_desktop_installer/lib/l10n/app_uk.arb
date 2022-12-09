@@ -1,6 +1,6 @@
 {
   "@@locale": "uk",
-  "appTitle": "Встановлювач стільниці Ubuntu",
+  "appTitle": "Встановлювач Ubuntu Desktop",
   "@appTitle": {},
   "windowTitle": "Встановити {RELEASE}",
   "@windowTitle": {
@@ -23,7 +23,7 @@
   "@revertButtonText": {},
   "yesButtonText": "Так",
   "@yesButtonText": {},
-  "welcome": "Вітаємо",
+  "welcome": "Ласкаво просимо",
   "@welcome": {},
   "tryOrInstallPageTitle": "Спробувати або встановити",
   "@tryOrInstallPageTitle": {},
@@ -69,5 +69,9 @@
   "turnOffRST": "Вимкнути RST",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.",
-  "@turnOffRSTDescription": {}
+  "@turnOffRSTDescription": {},
+  "welcomeHeader": "Оберіть мову:",
+  "@welcomeHeader": {},
+  "quitButtonText": "Скасувати встановлення",
+  "@quitButtonText": {}
 }
