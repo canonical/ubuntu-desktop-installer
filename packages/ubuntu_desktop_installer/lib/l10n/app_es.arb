@@ -1,8 +1,8 @@
 {
   "@@locale": "es",
-  "appTitle": "Instalador de Ubuntu para ordenadores",
+  "appTitle": "Instalador de Ubuntu para sobremesas",
   "@appTitle": {},
-  "windowTitle": "Instalar {RELEASE}",
+  "windowTitle": "Instalar la {RELEASE}",
   "@windowTitle": {},
   "restartButtonText": "Reiniciar",
   "@restartButtonText": {},
@@ -713,5 +713,13 @@
   "showSecurityKey": "Mostrar clave de seguridad",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM y cifrado seleccionados",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Instale software de terceros para gráficos y hardware Wi-Fi",
+  "@installDriversTitle": {},
+  "installCodecsSubtitle": "Este software está sujeto a los términos de licencia incluidos con su documentación. Algunos son propietarios.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "Estos drivers están sujetos a los términos de la licencia incluidos en su documentación. Son propietarios.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Instalar soporte para formatos de medios adicionales",
+  "@installCodecsTitle": {}
 }
