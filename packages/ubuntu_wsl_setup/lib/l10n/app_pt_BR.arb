@@ -100,7 +100,7 @@
   "@configurationUIMountFstabSubtitle": {},
   "setupCompleteTitle": "Configuração concluída",
   "@setupCompleteTitle": {},
-  "setupCompleteHeader": "Olá {user},\nVocê concluiu a configuração com sucesso.",
+  "setupCompleteHeader": "Olá {user},\nVocê completou a configuração com sucesso.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -121,7 +121,7 @@
   "@profileSetupUsernameInvalidChars": {},
   "configurationUIInteroperabilityTitle": "Habilitado",
   "@configurationUIInteroperabilityTitle": {},
-  "configurationUIInteroperabilitySubtitle": "Habilitar interoperabilidade.",
+  "configurationUIInteroperabilitySubtitle": "a interoperabilidade está habilitada.",
   "@configurationUIInteroperabilitySubtitle": {},
   "configurationUIInteropAppendWindowsPathTitle": "Adicionar Windows \"Path\"",
   "@configurationUIInteropAppendWindowsPathTitle": {},
@@ -173,7 +173,7 @@
   "@installationSlidesCustomExitTitle": {},
   "installationSlidesCustomExitContents": "Faltam apenas algumas etapas para concluir na janela principal do instalador.\nPodemos sair daqui e ir até lá?",
   "@installationSlidesCustomExitContents": {},
-  "installationSlidesOk": "Ok",
+  "installationSlidesOk": "OK",
   "@installationSlidesOk": {},
   "installationSlidesLeave": "Sair",
   "@installationSlidesLeave": {},
@@ -204,5 +204,16 @@
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
   "@installationSlidesFindOutMoreLink": {},
   "installationSlidesFindOutMoreText": " para saber mais sobre Ubuntu no WSL e como o Canonical apóia desenvolvedores e organizações.",
-  "@installationSlidesFindOutMoreText": {}
+  "@installationSlidesFindOutMoreText": {},
+  "installLangPacksSubtitle": "não recomendado para conexões lentas.",
+  "@installLangPacksSubtitle": {},
+  "installLangPacksTitle": "Instalando pacotes para melhor {lang} suporte de linguagem",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  }
 }
