@@ -303,7 +303,7 @@
   "@writeChangesFallbackSerial": {
     "description": "Nome de exibição padrão para um disco sem o serial (improvável)"
   },
-  "writeChangesDescription": "Se você prosseguir, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.",
+  "writeChangesDescription": "Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.",
   "@writeChangesDescription": {},
   "writeChangesPartitionTablesHeader": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
   "@writeChangesPartitionTablesHeader": {},
@@ -435,7 +435,7 @@
       "RELEASE": {}
     }
   },
-  "officeSlideDescription": "LibreOffice é um pacote de escritório gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo desnecessário.",
+  "officeSlideDescription": "LibreOffice é um pacote de office gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo.",
   "@officeSlideDescription": {},
   "softwareSlideDescription": "Diga adeus à busca de novos softwares na internet. Com acesso à Loja Snap e ao arquivos de software do {RELEASE}, você pode encontrar e instalar novos aplicativos com facilidade. Basta digitar o que você está procurando ou explorar nas categorias como Gráfica e Fotografia, Jogos e Produtividade, junto com avaliações úteis de outros usuários.",
   "@softwareSlideDescription": {
@@ -455,7 +455,7 @@
   "@accessSlideTitle": {},
   "officeSlideImpress": "LibreOffice Impress",
   "@officeSlideImpress": {},
-  "accessSlideDescription": "No coração da filosofia do {RELEASE} está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, {RELEASE} torna a computação fácil - quem quer que você seja e onde quer que você esteja.",
+  "accessSlideDescription": "No coração da filosofia do {RELEASE} está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, {RELEASE} torna a computação fácil — quem quer que você seja e onde quer que você esteja.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -503,7 +503,7 @@
   "@includedSoftware": {},
   "availableSoftware": "Software disponível",
   "@availableSoftware": {},
-  "copyingFiles": "Copiando arquivos...",
+  "copyingFiles": "Copiando arquivos…",
   "@copyingFiles": {},
   "installationFailed": "Instalação falhou",
   "@installationFailed": {},
@@ -679,5 +679,43 @@
     }
   },
   "installDriversTitle": "Instalar drives de terceiros de wifi e gráficos",
-  "@installDriversTitle": {}
+  "@installDriversTitle": {},
+  "installingSystem": "Instalando o sistema…",
+  "@installingSystem": {},
+  "notEnoughDiskSpaceHeader": "Você precisa de {SIZE} de espaço no disco para instalar o {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "O maior disco neste computador é de apenas {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.",
+  "@installDriversSubtitle": {},
+  "notEnoughDiskSpaceTitle": "Desculpa",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHasOnly": "Esse computador tem apenas {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "configuringSystem": "Iniciando o sistema…",
+  "@configuringSystem": {},
+  "installAlongsideHiddenPartitions": "{num} partições menores estão ocultas, use a <a href=\"{url}\">ferramenta de particionamento avançada</a> para obter mais controle",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  }
 }
