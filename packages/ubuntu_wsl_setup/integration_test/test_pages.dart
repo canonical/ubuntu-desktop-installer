@@ -158,24 +158,6 @@ Future<void> testConfigurationUIPage(
   await tester.tapButton(label: tester.lang.saveButton, highlighted: true);
 }
 
-Future<void> testSetupCompletePage(
-  WidgetTester tester, {
-  String? username,
-}) async {
-  expectPage(tester, SetupCompletePage, (lang) => lang.setupCompleteTitle);
-
-  if (username != null) {
-    expect(
-      find.text(tester.lang.setupCompleteHeader(username)),
-      findsOneWidget,
-    );
-  }
-
-  final windowClosed = waitForWindowClosed();
-  await tester.tapButton(label: tester.lang.finishButton);
-  await expectLater(windowClosed, completion(isTrue));
-}
-
 void expectPage(
   WidgetTester tester,
   Type page,

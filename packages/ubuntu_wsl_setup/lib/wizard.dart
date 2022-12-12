@@ -29,7 +29,7 @@ class UbuntuWslSetupWizard extends StatelessWidget {
             if ((settings.arguments as bool?) == true) {
               return Routes.advancedSetup;
             }
-            return Routes.setupComplete;
+            return Routes.applyingChanges;
           },
         ),
         Routes.advancedSetup: const WizardRoute(
