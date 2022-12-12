@@ -38,9 +38,6 @@ class UbuntuWslSetupWizard extends StatelessWidget {
         Routes.applyingChanges: const WizardRoute(
           builder: ApplyingChangesPage.create,
         ),
-        Routes.setupComplete: const WizardRoute(
-          builder: SetupCompletePage.create,
-        ),
         Routes.advancedReconfig: const WizardRoute(
           builder: AdvancedSetupPage.create,
         ),
