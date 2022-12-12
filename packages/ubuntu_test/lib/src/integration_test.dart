@@ -124,7 +124,6 @@ Future<bool> waitForWindowClosed() {
         break;
     }
   });
-
   return completer.future;
 }
 

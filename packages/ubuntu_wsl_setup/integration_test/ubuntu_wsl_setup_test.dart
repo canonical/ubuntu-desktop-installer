@@ -31,11 +31,7 @@ void main() {
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
-    await testApplyingChangesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testSetupCompletePage(tester, username: 'wsl-user');
-    await tester.pumpAndSettle();
+    await testApplyingChangesPage(tester, expectClose: true);
 
     await verifyStateFile('basic-setup/WSLLocale');
   });
@@ -63,10 +59,7 @@ void main() {
         networkGenerateresolvconf: false,
       ),
     );
-    await tester.pumpAndSettle();
-
-    await testSetupCompletePage(tester, username: 'wsl-user');
-    await tester.pumpAndSettle();
+    await testApplyingChangesPage(tester, expectClose: true);
 
     await verifyConfigFile('advanced-setup/wsl.conf');
   });
