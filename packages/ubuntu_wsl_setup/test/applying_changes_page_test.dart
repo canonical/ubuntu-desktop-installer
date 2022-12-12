@@ -52,21 +52,6 @@ void main() {
     );
   }
 
-  testWidgets('goes to the next page on false', (tester) async {
-    final model = MockApplyingChangesModel();
-    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
-        .thenAnswer((realInvocation) {
-      realInvocation.namedArguments[Symbol('onDoneTransition')]();
-    });
-    await tester.pumpWidget(buildApp(
-      builder: (_) => buildPage(model),
-      hasNext: true,
-    ));
-    expect(find.text(theEnd), findsNothing);
-    await tester.pumpAndSettle();
-    expect(find.text(theEnd), findsOneWidget);
-  });
-
   testWidgets('closes the window when last page', (tester) async {
     final model = MockApplyingChangesModel();
     when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
