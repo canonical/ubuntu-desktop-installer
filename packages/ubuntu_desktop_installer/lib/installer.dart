@@ -10,11 +10,11 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'l10n.dart';
 import 'pages.dart';
@@ -224,7 +224,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
       content: Row(
         children: [
           Expanded(
-            child: RoundedContainer(height: height),
+            child: YaruBorderContainer(height: height),
           ),
           const SizedBox(width: 20),
           Expanded(

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -87,41 +87,47 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 Expanded(
                   child: FocusTraversalGroup(
                     policy: WidgetOrderTraversalPolicy(),
-                    child: RoundedListView.builder(
-                      controller: _layoutListScrollController,
-                      itemCount: model.layoutCount,
-                      itemBuilder: (context, index) {
-                        return AutoScrollTag(
-                          index: index,
-                          key: ValueKey(index),
-                          controller: _layoutListScrollController,
-                          child: ListTile(
-                            title: Text(model.layoutName(index)),
-                            selected: index == model.selectedLayoutIndex,
-                            onTap: () => model.selectLayout(index),
-                          ),
-                        );
-                      },
+                    child: YaruBorderContainer(
+                      clipBehavior: Clip.antiAlias,
+                      child: ListView.builder(
+                        controller: _layoutListScrollController,
+                        itemCount: model.layoutCount,
+                        itemBuilder: (context, index) {
+                          return AutoScrollTag(
+                            index: index,
+                            key: ValueKey(index),
+                            controller: _layoutListScrollController,
+                            child: ListTile(
+                              title: Text(model.layoutName(index)),
+                              selected: index == model.selectedLayoutIndex,
+                              onTap: () => model.selectLayout(index),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(width: 20),
                 Expanded(
-                  child: RoundedListView.builder(
-                    controller: _keyboardVariantListScrollController,
-                    itemCount: model.variantCount,
-                    itemBuilder: (context, index) {
-                      return AutoScrollTag(
-                        index: index,
-                        key: ValueKey(index),
-                        controller: _keyboardVariantListScrollController,
-                        child: ListTile(
-                          title: Text(model.variantName(index)),
-                          selected: index == model.selectedVariantIndex,
-                          onTap: () => model.selectVariant(index),
-                        ),
-                      );
-                    },
+                  child: YaruBorderContainer(
+                    clipBehavior: Clip.antiAlias,
+                    child: ListView.builder(
+                      controller: _keyboardVariantListScrollController,
+                      itemCount: model.variantCount,
+                      itemBuilder: (context, index) {
+                        return AutoScrollTag(
+                          index: index,
+                          key: ValueKey(index),
+                          controller: _keyboardVariantListScrollController,
+                          child: ListTile(
+                            title: Text(model.variantName(index)),
+                            selected: index == model.selectedVariantIndex,
+                            onTap: () => model.selectVariant(index),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],

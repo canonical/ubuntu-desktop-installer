@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'allocate_disk_space_dialogs.dart';
@@ -18,7 +18,9 @@ class PartitionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
-    return RoundedContainer(
+    return YaruBorderContainer(
+      borderRadius: BorderRadius.circular(kYaruButtonRadius),
+      clipBehavior: Clip.antiAlias,
       child: CustomPaint(
         size: const Size(double.infinity, 24),
         painter: _PartitionPainter(model),
@@ -198,7 +200,9 @@ class PartitionButtonRow extends StatelessWidget {
 
     return Row(
       children: <Widget>[
-        RoundedContainer(
+        YaruBorderContainer(
+          borderRadius: BorderRadius.circular(kYaruButtonRadius),
+          clipBehavior: Clip.antiAlias,
           child: IntrinsicHeight(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
