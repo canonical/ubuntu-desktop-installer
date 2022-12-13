@@ -1,5 +1,7 @@
 # Project-level configuration.
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.15)
+# Enable statically linking the VC Runtime
+cmake_policy(SET CMP0091 NEW)
 project(ubuntu_wsl_setup LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
@@ -38,6 +40,8 @@ add_definitions(-DUNICODE -D_UNICODE)
 # default. In most cases, you should add new options to specific targets instead
 # of modifying this function.
 function(APPLY_STANDARD_SETTINGS TARGET)
+  # Enables statically linking the VC Runtime in Release only - such as done with the distro launcher
+  set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:DebugDLL>")
   target_compile_features(${TARGET} PUBLIC cxx_std_17)
   target_compile_options(${TARGET} PRIVATE /W4 /WX /wd"4100")
   target_compile_options(${TARGET} PRIVATE /EHsc)
