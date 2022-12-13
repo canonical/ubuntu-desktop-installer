@@ -87,6 +87,7 @@ void main() {
 
     // no changes after stop
     await monitor.stop();
+    verify(client.close(force: true)).called(1);
     await expectLater(monitor.onStatusChanged, neverEmits(isDone));
     verifyNever(client.openUrl('GET', any));
   });
