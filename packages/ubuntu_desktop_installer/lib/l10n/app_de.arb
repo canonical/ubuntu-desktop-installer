@@ -406,7 +406,7 @@
   "@selectWifiNetwork": {},
   "noInternet": "Ich will gerade keine Verbindung zum Internet herstellen",
   "@noInternet": {},
-  "newPartitionTableConfirmationMessage": "Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle auf dem Gerät fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.",
+  "newPartitionTableConfirmationMessage": "Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.",
   "@newPartitionTableConfirmationMessage": {},
   "newPartitionTableConfirmationTitle": "Eine neue leere Partitionstabelle auf diesem Gerät erstellen?",
   "@newPartitionTableConfirmationTitle": {},
@@ -467,7 +467,7 @@
   "@accessSlideTitle": {},
   "musicSlideTitle": "Nimm deine Musik mit dir mit",
   "@musicSlideTitle": {},
-  "supportSlideDocumentation": "Die offizielle Dokumentation umfasst viele der gängigsten Bereichen von {RELEASE}. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.",
+  "supportSlideDocumentation": "Die offizielle Dokumentation umfasst viele der gängigsten Aspekte von {RELEASE}. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -480,7 +480,7 @@
   "@photoSlideGimp": {},
   "supportSlideTitle": "Hilfe und Unterstützung",
   "@supportSlideTitle": {},
-  "officeSlideDescription": "LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie brauchen, ohne die Kosten zu tragen.",
+  "officeSlideDescription": "LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie benötigen.",
   "@officeSlideDescription": {},
   "webSlideTitle": "Mache das beste aus dem Internet",
   "@webSlideTitle": {},
@@ -503,7 +503,7 @@
       "RELEASE": {}
     }
   },
-  "accessSlideDescription": "Im Mittelpunkt der {RELEASE} Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbschema und Textgröße macht {RELEASE} die Computerarbeit einfach - egal wer und wo Sie sind.",
+  "accessSlideDescription": "Im Mittelpunkt der {RELEASE}-Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbe und Textgröße macht {RELEASE} die Computerarbeit einfach — egal wer und wo Sie sind.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -570,7 +570,7 @@
   "@officeSlideCalc": {},
   "supportedSoftware": "Unterstützte Software",
   "@supportedSoftware": {},
-  "copyingFiles": "Dateien werden kopiert ...",
+  "copyingFiles": "Dateien werden kopiert …",
   "@copyingFiles": {},
   "whoAreYouPageUsernameInUse": "Dieser Benutzername existiert bereits.",
   "@whoAreYouPageUsernameInUse": {},
@@ -701,10 +701,18 @@
   },
   "installingSystem": "System wird installiert …",
   "@installingSystem": {},
-  "configuringSystem": "System wird konfiguriert …",
+  "configuringSystem": "System wird eingerichtet …",
   "@configuringSystem": {},
   "showSecurityKey": "Sicherheitsschlüssel anzeigen",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM und Verschlüsselung ausgewählt",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installCodecsTitle": "Unterstützung für zusätzliche Medienformate installieren",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Diese Software unterliegt den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Einige sind proprietär.",
+  "@installCodecsSubtitle": {},
+  "installDriversTitle": "Software von Drittanbietern für Grafik- und WLAN-Hardware installieren",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Diese Treiber unterliegen den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Sie sind proprietär.",
+  "@installDriversSubtitle": {}
 }

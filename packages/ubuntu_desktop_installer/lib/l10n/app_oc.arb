@@ -448,7 +448,7 @@
   "@enableWifi": {},
   "connectButtonText": "Se connectar",
   "@connectButtonText": {},
-  "newPartitionTableConfirmationMessage": "Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla, totas las particions actualament sus aqueste periferics seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s'o volètz.",
+  "newPartitionTableConfirmationMessage": "Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s'o volètz.",
   "@newPartitionTableConfirmationMessage": {},
   "useWiredConnection": "Utilizar una connexion filara",
   "@useWiredConnection": {},
@@ -732,13 +732,21 @@
       "RELEASE": {}
     }
   },
-  "officeSlideDescription": "LibreOffice es una seguida burotica liura liurada amb tot çò que n'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n'avètz besonh, sens aver de ne pagar lo prètz.",
+  "officeSlideDescription": "LibreOffice es una seguida burotica liura liurada amb tot çò que n'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n'avètz besonh.",
   "@officeSlideDescription": {},
-  "accessSlideDescription": "Al còs de la filosofia d’ {RELEASE} se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, los esquèmas de colors e la talha de tèxt, {RELEASE} fa venir l’informatica simpla, qual e ont que siatz.",
+  "accessSlideDescription": "Al còs de la filosofia d’ {RELEASE} se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, las colors e la talha de tèxt, {RELEASE} fa venir l’informatica simpla, qual e ont que siatz.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "installDriversTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Installar la presa en carga addicionala pels format multimèdia",
+  "@installCodecsTitle": {},
+  "installDriversSubtitle": "Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
+  "@installCodecsSubtitle": {}
 }

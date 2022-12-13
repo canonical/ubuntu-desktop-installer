@@ -421,7 +421,7 @@
       "RELEASE": {}
     }
   },
-  "softwareSlideDescription": "Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software {RELEASE}, você pode encontrar e instalar novas apps facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.",
+  "softwareSlideDescription": "Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software {RELEASE}, você pode encontrar e instalar novos aplicativos facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.",
   "@softwareSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -438,7 +438,7 @@
   },
   "installationTypeMultiOSDetected": "Este computador tem múltiplos sistemas operativos nele. O que pretende fazer?",
   "@installationTypeMultiOSDetected": {},
-  "newPartitionTableConfirmationMessage": "Você selecionou uma partição inteira. Se proceder com a criação de uma nova tabela de partição neste dispositivo, todas as partições atuais serão removidas.\n\nPoderá desfazer esta operação mais tarde se desejar.",
+  "newPartitionTableConfirmationMessage": "Você selecionou um dispositivo inteiro para particionar. se prosseguir com a criação de uma nova tabela de partições nele, todas as suas partições serão removidas\n\nNote que você poderá desfazer essa operação depois se desejar.",
   "@newPartitionTableConfirmationMessage": {},
   "connectToInternetPageTitle": "Ligar à Internet",
   "@connectToInternetPageTitle": {},
@@ -595,7 +595,7 @@
       "mount": {}
     }
   },
-  "photoSlideShotwell": "Gestor de fotos Shotwell",
+  "photoSlideShotwell": "Gerenciador de fotos Shotwell",
   "@photoSlideShotwell": {},
   "showSecurityKey": "Mostrar chave de segurança",
   "@showSecurityKey": {},
@@ -603,7 +603,7 @@
   "@installationTypeLVMEncryptionSelected": {},
   "musicSlideSpotify": "Spotify",
   "@musicSlideSpotify": {},
-  "musicSlideRhythmbox": "Leitor de música Rhythmbox",
+  "musicSlideRhythmbox": "Player de música Rhythmbox",
   "@musicSlideRhythmbox": {},
   "musicSlideVLC": "VLC",
   "@musicSlideVLC": {},
@@ -618,5 +618,33 @@
   "webSlideThunderbird": "Thunderbird",
   "@webSlideThunderbird": {},
   "webSlideChromium": "Chromium",
-  "@webSlideChromium": {}
+  "@webSlideChromium": {},
+  "webSlideTitle": "Aproveite ao máximo a web",
+  "@webSlideTitle": {},
+  "officeSlideTitle": "Tudo que você precisa no seu escritório",
+  "@officeSlideTitle": {},
+  "installDriversTitle": "instalar drivers de gráficos e Wi-Fi de terceiros",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "esse drives são subjetivos aos termos de licença incluídos com sua documentação. eles são proprietários.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "instalar suporte para formatos de media adicionais",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "esse programa é subjetivo aos termos de licença incluídos com a sua documentação. alguns são proprietários.",
+  "@installCodecsSubtitle": {},
+  "musicSlideDescription": "{RELEASE} vem com o incrível player de media Rhythmbox. com avançadas opções de reprodução de media, é simples de sequenciar os sons perfeitos. e funciona perfeitamente com CDs,tocadores de musica portáteis então você pode aproveitar todas as suas musicas aonde quiser.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideDescription": "Shotwell é um pratico gerenciador de fotos que está pronto para seus dispositivos. Conecte sua câmera ou celular para transferir suas fotos, então é fácil de compartilha-las e manter elas seguras. e se você está se sentindo criativo, você pode encontrar muitos outros aplicativos de fotos na Ubuntu Software.",
+  "@photoSlideDescription": {},
+  "webSlideDescription": "{RELEASE} incluí Firefox,o navegador web usado por milhões de pessoas pelo mundo.e aplicativos web que você usa frequentemente (como Facebook ou Gmail, por exemplo) podem ser fixados na sua área de trabalho para acessa-lo mais rápido,assim como aplicativos no seu computador.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
