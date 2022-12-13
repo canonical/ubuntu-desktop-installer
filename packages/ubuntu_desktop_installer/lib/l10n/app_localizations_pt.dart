@@ -214,16 +214,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'instalar drivers de gráficos e Wi-Fi de terceiros';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'esse drives são subjetivos aos termos de licença incluídos com sua documentação. eles são proprietários.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'instalar suporte para formatos de media adicionais';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'esse programa é subjetivo aos termos de licença incluídos com a sua documentação. alguns são proprietários.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Criar uma nova tabela de partições neste dispositivo?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Você selecionou uma partição inteira. Se proceder com a criação de uma nova tabela de partição neste dispositivo, todas as partições atuais serão removidas.\n\nPoderá desfazer esta operação mais tarde se desejar.';
+  String get newPartitionTableConfirmationMessage => 'Você selecionou um dispositivo inteiro para particionar. se prosseguir com a criação de uma nova tabela de partições nele, todas as suas partições serão removidas\n\nNote que você poderá desfazer essa operação depois se desejar.';
 
   @override
   String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
@@ -714,7 +714,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software $RELEASE, você pode encontrar e instalar novas apps facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.';
+    return 'Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software $RELEASE, você pode encontrar e instalar novos aplicativos facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.';
   }
 
   @override
@@ -722,11 +722,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '$RELEASE vem com o incrível player de media Rhythmbox. com avançadas opções de reprodução de media, é simples de sequenciar os sons perfeitos. e funciona perfeitamente com CDs,tocadores de musica portáteis então você pode aproveitar todas as suas musicas aonde quiser.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Leitor de música Rhythmbox';
+  String get musicSlideRhythmbox => 'Player de música Rhythmbox';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -738,10 +738,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get photoSlideTitle => 'Divirta-se com as suas fotos';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell é um pratico gerenciador de fotos que está pronto para seus dispositivos. Conecte sua câmera ou celular para transferir suas fotos, então é fácil de compartilha-las e manter elas seguras. e se você está se sentindo criativo, você pode encontrar muitos outros aplicativos de fotos na Ubuntu Software.';
 
   @override
-  String get photoSlideShotwell => 'Gestor de fotos Shotwell';
+  String get photoSlideShotwell => 'Gerenciador de fotos Shotwell';
 
   @override
   String get photoSlideGimp => 'Editor de imagens GIMP';
@@ -750,11 +750,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get photoSlideShotcut => 'Editor de vídeos Shotcut';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Aproveite ao máximo a web';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE incluí Firefox,o navegador web usado por milhões de pessoas pelo mundo.e aplicativos web que você usa frequentemente (como Facebook ou Gmail, por exemplo) podem ser fixados na sua área de trabalho para acessa-lo mais rápido,assim como aplicativos no seu computador.';
   }
 
   @override
@@ -767,7 +767,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get webSlideChromium => 'Chromium';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'Tudo que você precisa no seu escritório';
 
   @override
   String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
@@ -1069,6 +1069,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.';
 
   @override
+  String get installDriversTitle => 'Instalar drives de terceiros de wifi e gráficos';
+
+  @override
+  String get installDriversSubtitle => 'Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.';
+
+  @override
+  String get installCodecsTitle => 'Instalar suporte para formatos de mídia adicionais';
+
+  @override
+  String get installCodecsSubtitle => 'Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.';
+
+  @override
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Atenção</font>: O computador não está conectado a uma fonte de energia.';
   }
@@ -1078,7 +1090,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Encriptação de disco protege seus arquivos em caso de perda do seu computador. Isso requer que você digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer arquivos fora de $RELEASE não serão criptografados.';
+    return 'A criptografia de disco protege seus arquivos caso você perca seu computador. Ele exige que você insira uma chave de segurança toda vez que o computador for inicializado.\n\nQuaisquer arquivos fora de $RELEASE não serão criptografados.';
   }
 
   @override
@@ -1099,7 +1111,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get installationTypeTitle => 'Tipo de installation';
+  String get installationTypeTitle => 'Tipo de instalação';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -1134,10 +1146,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeAdvancedTitle => 'Recursos avançados';
 
   @override
-  String get installationTypeNone => 'Nenhum';
+  String get installationTypeNone => 'Nada';
 
   @override
-  String get installationTypeNoneSelected => 'Nenhum selecionado';
+  String get installationTypeNoneSelected => 'Nada selecionado';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -1223,6 +1235,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installAlongsideSpaceDivider => 'Aloque espaço em disco arrastando o divisor abaixo:';
 
   @override
+  String installAlongsideHiddenPartitions(Object num, Object url) {
+    return '$num partições menores estão ocultas, use a <a href=\"$url\">ferramenta de particionamento avançada</a> para obter mais controle';
+  }
+
+  @override
   String get installAlongsideResizePartition => 'Redimensionar partição';
 
   @override
@@ -1304,7 +1321,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Tipo da nova partição:';
+  String get partitionTypeLabel => 'Tipo para a nova partição:';
 
   @override
   String get partitionTypePrimary => 'Primária';
@@ -1448,7 +1465,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get writeChangesFallbackSerial => 'disco';
 
   @override
-  String get writeChangesDescription => 'Se você prosseguir, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
+  String get writeChangesDescription => 'Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
 
   @override
   String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
@@ -1460,6 +1477,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
+
+  @override
+  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
+    return 'Partição #$disk${partition} alterado de $oldsize para $newsize';
+  }
+
+  @override
+  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
+    return 'partição #$disk${partition} formatada usando $format para $mount';
+  }
+
+  @override
+  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
+    return 'partição #$disk${partition} formatada usando: $format';
+  }
+
+  @override
+  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
+    return 'partição #$disk${partition} usado para $mount';
+  }
+
+  @override
+  String writeChangesPartitionCreated(Object disk, Object partition) {
+    return 'partição #$disk${partition} criada';
+  }
 
   @override
   String get chooseYourLookPageTitle => 'Escolha seu estilo';
@@ -1583,7 +1625,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get officeSlideTitle => 'Tudo o que você precisa para o escritório';
 
   @override
-  String get officeSlideDescription => 'LibreOffice é um pacote de escritório gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo desnecessário.';
+  String get officeSlideDescription => 'LibreOffice é um pacote de office gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -1599,7 +1641,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'No coração da filosofia do $RELEASE está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, $RELEASE torna a computação fácil - quem quer que você seja e onde quer que você esteja.';
+    return 'No coração da filosofia do $RELEASE está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, $RELEASE torna a computação fácil — quem quer que você seja e onde quer que você esteja.';
   }
 
   @override
@@ -1638,8 +1680,32 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get supportedSoftware => 'Software suportado';
 
   @override
-  String get copyingFiles => 'Copiando arquivos...';
+  String get copyingFiles => 'Copiando arquivos…';
+
+  @override
+  String get installingSystem => 'Instalando o sistema…';
+
+  @override
+  String get configuringSystem => 'Iniciando o sistema…';
 
   @override
   String get installationFailed => 'Instalação falhou';
+
+  @override
+  String get notEnoughDiskSpaceTitle => 'Desculpa';
+
+  @override
+  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
+    return 'Você precisa de $SIZE de espaço no disco para instalar o $RELEASE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceHasOnly(Object SIZE) {
+    return 'Esse computador tem apenas $SIZE.';
+  }
+
+  @override
+  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
+    return 'O maior disco neste computador é de apenas $SIZE.';
+  }
 }

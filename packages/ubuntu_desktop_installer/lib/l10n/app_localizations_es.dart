@@ -5,11 +5,11 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Instalador de Ubuntu para ordenadores';
+  String get appTitle => 'Instalador de Ubuntu para sobremesas';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar $RELEASE';
+    return 'Instalar la $RELEASE';
   }
 
   @override
@@ -214,16 +214,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installThirdPartySubtitle => 'Estos programas están disponibles en virtud de los términos incluidos en su documentación. Algunos son privativos.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Instale software de terceros para gráficos y hardware Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Estos drivers están sujetos a los términos de la licencia incluidos en su documentación. Son propietarios.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Instalar soporte para formatos de medios adicionales';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Este software está sujeto a los términos de licencia incluidos con su documentación. Algunos son propietarios.';
 
   @override
   String onBatteryWarning(Object color) {
