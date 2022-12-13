@@ -214,16 +214,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installThirdPartySubtitle => 'Diese Software unterliegt den Lizenzbedingungen, die in der Dokumentation enthalten sind. Ein Teil davon ist proprietär.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Software von Drittanbietern für Grafik- und WLAN-Hardware installieren';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Diese Treiber unterliegen den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Sie sind proprietär.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Unterstützung für zusätzliche Medienformate installieren';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Diese Software unterliegt den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Einige sind proprietär.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Eine neue leere Partitionstabelle auf diesem Gerät erstellen?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle auf dem Gerät fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
+  String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
 
   @override
   String get bootLoaderDevice => 'Laufwerk zur Installation des Bootloaders';
@@ -770,7 +770,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get officeSlideTitle => 'Alles was du für das Büro brauchst';
 
   @override
-  String get officeSlideDescription => 'LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie brauchen, ohne die Kosten zu tragen.';
+  String get officeSlideDescription => 'LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie benötigen.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Textverarbeitung';
@@ -786,7 +786,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Im Mittelpunkt der $RELEASE Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbschema und Textgröße macht $RELEASE die Computerarbeit einfach - egal wer und wo Sie sind.';
+    return 'Im Mittelpunkt der $RELEASE-Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbe und Textgröße macht $RELEASE die Computerarbeit einfach — egal wer und wo Sie sind.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Die offizielle Dokumentation umfasst viele der gängigsten Bereichen von $RELEASE. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.';
+    return 'Die offizielle Dokumentation umfasst viele der gängigsten Aspekte von $RELEASE. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get supportedSoftware => 'Unterstützte Software';
 
   @override
-  String get copyingFiles => 'Dateien werden kopiert ...';
+  String get copyingFiles => 'Dateien werden kopiert …';
 
   @override
   String get installingSystem => 'System wird installiert …';
 
   @override
-  String get configuringSystem => 'System wird konfiguriert …';
+  String get configuringSystem => 'System wird eingerichtet …';
 
   @override
   String get installationFailed => 'Installation fehlgeschlagen';

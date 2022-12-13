@@ -311,6 +311,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get selectLanguageTitle => 'Selecione seu idioma';
 
   @override
+  String installLangPacksTitle(String lang) {
+    return 'Instalando pacotes para melhor $lang suporte de linguagem';
+  }
+
+  @override
+  String get installLangPacksSubtitle => 'não recomendado para conexões lentas.';
+
+  @override
   String get profileSetupTitle => 'Configurar perfil';
 
   @override
@@ -410,7 +418,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get configurationUIInteroperabilityTitle => 'Habilitado';
 
   @override
-  String get configurationUIInteroperabilitySubtitle => 'Habilitar interoperabilidade.';
+  String get configurationUIInteroperabilitySubtitle => 'a interoperabilidade está habilitada.';
 
   @override
   String get configurationUIInteropAppendWindowsPathTitle => 'Adicionar Windows \"Path\"';
@@ -453,7 +461,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String setupCompleteHeader(Object user) {
-    return 'Olá $user,\nVocê concluiu a configuração com sucesso.';
+    return 'Olá $user,\nVocê completou a configuração com sucesso.';
   }
 
   @override
@@ -505,7 +513,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationSlidesCustomExitContents => 'Faltam apenas algumas etapas para concluir na janela principal do instalador.\nPodemos sair daqui e ir até lá?';
 
   @override
-  String get installationSlidesOk => 'Ok';
+  String get installationSlidesOk => 'OK';
 
   @override
   String get installationSlidesLeave => 'Sair';

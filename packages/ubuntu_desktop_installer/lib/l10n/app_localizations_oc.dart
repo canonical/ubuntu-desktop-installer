@@ -214,16 +214,16 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installThirdPartySubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Installar de logicials tèrces pel material grafic e Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Installar la presa en carga addicionala pels format multimèdia';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla, totas las particions actualament sus aqueste periferics seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
+  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
@@ -770,7 +770,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get officeSlideTitle => 'Tot çò que vos fa mestièr pel burèu';
 
   @override
-  String get officeSlideDescription => 'LibreOffice es una seguida burotica liura liurada amb tot çò que n\'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n\'avètz besonh, sens aver de ne pagar lo prètz.';
+  String get officeSlideDescription => 'LibreOffice es una seguida burotica liura liurada amb tot çò que n\'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n\'avètz besonh.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Al còs de la filosofia d’ $RELEASE se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, los esquèmas de colors e la talha de tèxt, $RELEASE fa venir l’informatica simpla, qual e ont que siatz.';
+    return 'Al còs de la filosofia d’ $RELEASE se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, las colors e la talha de tèxt, $RELEASE fa venir l’informatica simpla, qual e ont que siatz.';
   }
 
   @override
