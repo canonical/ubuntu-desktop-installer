@@ -36,7 +36,7 @@ class SubiquityStatusMonitor {
   /// Stops monitoring the status.
   Future<void> stop() {
     _status = null;
-    _client.close();
+    _client.close(force: true);
     return _cancel();
   }
 
@@ -88,8 +88,8 @@ class SubiquityStatusMonitor {
       }
       return data;
     } on HttpException catch (_) {
-      return null;
-    }
+    } on SocketException catch (_) {}
+    return null;
   }
 
   void _updateStatus(ApplicationStatus? status) {
