@@ -99,5 +99,9 @@ class SubiquityStatusMonitor {
     if (_statusController?.isClosed == false) {
       _statusController!.add(status);
     }
+    if (_status?.state == ApplicationState.DONE ||
+        _status?.state == ApplicationState.EXITED) {
+      stop();
+    }
   }
 }

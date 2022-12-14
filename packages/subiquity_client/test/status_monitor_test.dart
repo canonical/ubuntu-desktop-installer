@@ -32,6 +32,7 @@ ApplicationStatus testStatus(ApplicationState state) {
 final isWaiting = testStatus(ApplicationState.WAITING);
 final isRunning = testStatus(ApplicationState.RUNNING);
 final isDone = testStatus(ApplicationState.DONE);
+final isCancelling = testStatus(ApplicationState.UU_CANCELLING);
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpClientResponse])
 void main() {
@@ -51,7 +52,6 @@ void main() {
           monitor.onStatusChanged, emitsInOrder([isRunning, isDone]));
       verify(client.openUrl('GET', wasWaiting)).called(1);
       verify(client.openUrl('GET', wasRunning)).called(1);
-      verify(client.openUrl('GET', wasDone)).called(1);
     });
 
     test('after listen', () async {
@@ -71,7 +71,6 @@ void main() {
           monitor.onStatusChanged, emitsInOrder([isRunning, isDone]));
       verify(client.openUrl('GET', wasWaiting)).called(1);
       verify(client.openUrl('GET', wasRunning)).called(1);
-      verify(client.openUrl('GET', wasDone)).called(1);
       expect(statuses, equals([isWaiting, isRunning, isDone]));
     });
   });
@@ -87,9 +86,29 @@ void main() {
 
     // no changes after stop
     await monitor.stop();
-    verify(client.close(force: true)).called(1);
+    verify(client.close(force: true)).called(isPositive);
     await expectLater(monitor.onStatusChanged, neverEmits(isDone));
     verifyNever(client.openUrl('GET', any));
+  });
+
+  test('stop on done', () async {
+    final client = MockHttpClient();
+    when(client.openUrl('GET', noStatus))
+        .thenAnswer((_) async => statusResponse(isWaiting));
+    when(client.openUrl('GET', wasWaiting))
+        .thenAnswer((_) async => statusResponse(isRunning));
+    when(client.openUrl('GET', wasRunning))
+        .thenAnswer((_) async => statusResponse(isDone));
+    when(client.openUrl('GET', wasDone))
+        .thenAnswer((_) async => statusResponse(isCancelling));
+
+    final monitor = SubiquityStatusMonitor(client);
+
+    await monitor.start(addr);
+    expect(monitor.status, equals(isWaiting));
+    await expectLater(
+        monitor.onStatusChanged, emitsInOrder([isRunning, isDone]));
+    await expectLater(monitor.onStatusChanged, neverEmits(isCancelling));
   });
 
   test('error', () async {
