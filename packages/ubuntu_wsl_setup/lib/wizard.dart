@@ -7,15 +7,15 @@ import 'routes.dart';
 class UbuntuWslSetupWizard extends StatelessWidget {
   const UbuntuWslSetupWizard({
     super.key,
-    this.initialRoute,
+    required this.initialRoute,
   });
 
-  final String? initialRoute;
+  final String initialRoute;
 
   @override
   Widget build(BuildContext context) {
     return Wizard(
-      initialRoute: initialRoute ?? Routes.selectLanguage,
+      initialRoute: initialRoute,
       routes: <String, WizardRoute>{
         Routes.installationSlides: const WizardRoute(
           builder: InstallationSlidesPage.create,
