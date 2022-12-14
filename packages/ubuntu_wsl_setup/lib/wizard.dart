@@ -29,7 +29,7 @@ class UbuntuWslSetupWizard extends StatelessWidget {
             if ((settings.arguments as bool?) == true) {
               return Routes.advancedSetup;
             }
-            return Routes.setupComplete;
+            return Routes.applyingChanges;
           },
         ),
         Routes.advancedSetup: const WizardRoute(
@@ -37,9 +37,6 @@ class UbuntuWslSetupWizard extends StatelessWidget {
         ),
         Routes.applyingChanges: const WizardRoute(
           builder: ApplyingChangesPage.create,
-        ),
-        Routes.setupComplete: const WizardRoute(
-          builder: SetupCompletePage.create,
         ),
         Routes.advancedReconfig: const WizardRoute(
           builder: AdvancedSetupPage.create,

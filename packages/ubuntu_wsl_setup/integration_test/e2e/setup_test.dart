@@ -27,10 +27,7 @@ void main() {
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
-    await testApplyingChangesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testSetupCompletePage(tester, username: 'ubuntu');
+    await testApplyingChangesPage(tester, expectClose: true);
     await tester.pumpAndSettle();
   });
 }

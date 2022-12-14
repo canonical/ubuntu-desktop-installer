@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -22,16 +21,16 @@ class ApplyingChangesModel extends SafeChangeNotifier with SystemShutdown {
   StreamSubscription<ApplicationStatus?>? _sub;
   bool _previousState = true;
 
-  void init({required VoidCallback onDoneTransition}) {
+  void init() {
     if (null != _monitor.status && !_monitor.status!.state.isInstalling) {
       _previousState = false;
-      onDoneTransition();
+      reboot(immediate: false);
       return;
     }
     _sub = _monitor.onStatusChanged.listen((status) {
       if (status?.state.isInstalling == false && _previousState == true) {
         _previousState = false;
-        onDoneTransition();
+        reboot(immediate: false);
       } else {
         notifyListeners();
       }
