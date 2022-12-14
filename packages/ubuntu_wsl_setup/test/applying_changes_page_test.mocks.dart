@@ -61,12 +61,10 @@ class MockApplyingChangesModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  void init({required _i4.VoidCallback? onDoneTransition}) =>
-      super.noSuchMethod(
+  void init() => super.noSuchMethod(
         Invocation.method(
           #init,
           [],
-          {#onDoneTransition: onDoneTransition},
         ),
         returnValueForMissingStub: null,
       );
