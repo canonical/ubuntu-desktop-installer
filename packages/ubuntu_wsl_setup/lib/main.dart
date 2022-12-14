@@ -8,6 +8,7 @@ import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'app.dart';
+import 'app_model.dart';
 import 'args_common.dart';
 import 'installing_state.dart';
 import 'services/language_fallback.dart';
@@ -16,7 +17,9 @@ Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
   })!;
-  final variant = ValueNotifier<Variant?>(null);
+  final appModel = ValueNotifier<AppModel>(
+    AppModel(routeFromOptions: options['initial-route']),
+  );
   final liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
@@ -34,14 +37,9 @@ Future<void> main(List<String> args) async {
   registerService(UrlLauncher.new);
   registerService(LanguageFallbackService.linux);
   await runWizardApp(
-    ValueListenableBuilder<Variant?>(
-      valueListenable: variant,
-      builder: (context, value, child) {
-        return UbuntuWslSetupApp(
-          variant: value,
-          initialRoute: options['initial-route'],
-        );
-      },
+    ValueListenableBuilder<AppModel>(
+      valueListenable: appModel,
+      builder: (context, model, child) => UbuntuWslSetupApp(model: model),
     ),
     options: options,
     subiquityClient: subiquityClient,
@@ -53,7 +51,7 @@ Future<void> main(List<String> args) async {
     },
   );
   await subiquityClient.variant().then((value) {
-    variant.value = value;
+    appModel.value = appModel.value.copyWith(variant: value);
     if (value == Variant.WSL_SETUP) {
       subiquityMonitor.onStatusChanged.listen((status) {
         setWindowClosable(status?.state.isInstalling != true);

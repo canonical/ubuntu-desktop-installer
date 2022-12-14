@@ -10,6 +10,7 @@ import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 
 import 'app.dart';
+import 'app_model.dart';
 import 'args_common.dart';
 import 'installing_state.dart';
 import 'routes.dart';
@@ -30,7 +31,6 @@ Future<void> main(List<String> args) async {
       ),
     );
   })!;
-  final variant = ValueNotifier<Variant?>(null);
   final liveRun = isLiveRun(options);
   final isReconf = options['reconfigure'] == true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
@@ -83,16 +83,15 @@ Future<void> main(List<String> args) async {
   if (!isReconf && options['initial-route'] == null) {
     initialRoute = Routes.installationSlides;
   }
+  final appModel = ValueNotifier<AppModel>(
+    AppModel(routeFromOptions: initialRoute, showSplashScreen: isReconf),
+  );
 
   await runWizardApp(
-    ValueListenableBuilder<Variant?>(
-      valueListenable: variant,
-      builder: (context, value, child) {
-        return UbuntuWslSetupApp(
-          variant: value,
-          initialRoute: initialRoute,
-          showSplashScreen: isReconf,
-        );
+    ValueListenableBuilder<AppModel>(
+      valueListenable: appModel,
+      builder: (context, model, child) {
+        return UbuntuWslSetupApp(model: model);
       },
     ),
     options: options,
@@ -105,7 +104,7 @@ Future<void> main(List<String> args) async {
     },
   );
   await subiquityClient.variant().then((value) {
-    variant.value = value;
+    appModel.value = appModel.value.copyWith(variant: value);
     if (value == Variant.WSL_SETUP) {
       subiquityMonitor.onStatusChanged.listen((status) {
         setWindowClosable(status?.state.isInstalling != true);

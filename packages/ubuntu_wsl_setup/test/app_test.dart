@@ -5,6 +5,7 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app.dart';
+import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 void main() {
@@ -18,7 +19,9 @@ void main() {
     registerService(LanguageFallbackService.linux);
 
     await tester.pumpWidget(
-      const UbuntuWslSetupApp(variant: Variant.WSL_SETUP),
+      const UbuntuWslSetupApp(
+        model: AppModel(variant: Variant.WSL_SETUP),
+      ),
     );
 
     expect(find.byType(Wizard), findsOneWidget);
