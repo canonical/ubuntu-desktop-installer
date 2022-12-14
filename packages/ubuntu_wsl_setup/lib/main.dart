@@ -11,6 +11,7 @@ import 'app.dart';
 import 'app_model.dart';
 import 'args_common.dart';
 import 'installing_state.dart';
+import 'is_locale_set.dart';
 import 'services/language_fallback.dart';
 
 Future<void> main(List<String> args) async {
@@ -51,11 +52,16 @@ Future<void> main(List<String> args) async {
     },
   );
   await subiquityClient.variant().then((value) {
-    appModel.value = appModel.value.copyWith(variant: value);
     if (value == Variant.WSL_SETUP) {
+      isLocaleSet(subiquityClient).then(
+        (isSet) => appModel.value =
+            appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
+      );
       subiquityMonitor.onStatusChanged.listen((status) {
         setWindowClosable(status?.state.isInstalling != true);
       });
+    } else {
+      appModel.value = appModel.value.copyWith(variant: value);
     }
   });
 }
