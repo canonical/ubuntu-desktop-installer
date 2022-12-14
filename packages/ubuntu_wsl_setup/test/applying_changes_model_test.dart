@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -11,6 +12,10 @@ import 'applying_changes_model_test.mocks.dart';
 
 @GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  const methodChannel = MethodChannel('window_manager');
+  setUpAll(() => methodChannel.setMockMethodCallHandler((_) async {}));
+  tearDownAll(() => methodChannel.setMockMethodCallHandler(null));
   test('The happy path calls back', () async {
     final last = testStatus(ApplicationState.DONE);
     final statuses = <ApplicationStatus>[
@@ -24,11 +29,10 @@ void main() {
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
     when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
-    var calledBack = false;
-    model.init(onDoneTransition: () => calledBack = true);
+    model.init();
     // Forces the stream to emit.
     await expectLater(monitor.onStatusChanged, emitsThrough(last));
-    await expectLater(calledBack, isTrue);
+    verify(client.reboot(immediate: false)).called(greaterThanOrEqualTo(1));
   });
   test('Never calls back more than once', () async {
     final last = testStatus(ApplicationState.DONE);
@@ -45,11 +49,10 @@ void main() {
         .thenAnswer((realInvocation) => Stream.fromIterable(statuses));
     when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
-    var calledBackCount = 0;
-    model.init(onDoneTransition: () => calledBackCount++);
+    model.init();
     // Forces the stream to emit.
     await expectLater(monitor.onStatusChanged, emitsThrough(last));
-    await expectLater(calledBackCount, 1);
+    verify(client.reboot(immediate: false)).called(1);
   });
   test('Error should also call back', () async {
     final last = testStatus(ApplicationState.ERROR);
@@ -64,11 +67,11 @@ void main() {
     when(monitor.status).thenAnswer((_) => statuses[0]);
     final client = MockSubiquityClient();
     final model = ApplyingChangesModel(client, monitor);
-    var calledBack = false;
-    model.init(onDoneTransition: () => calledBack = true);
+
+    model.init();
     // Forces the stream to emit.
     await expectLater(monitor.onStatusChanged, emitsThrough(last));
-    await expectLater(calledBack, isTrue);
+    verify(client.reboot(immediate: false)).called(1);
   });
   test('Would never call back if subiquity never finishes or crashes',
       () async {
@@ -84,11 +87,10 @@ void main() {
         .thenAnswer((_) => Stream.fromIterable(statuses));
     when(monitor.status).thenAnswer((_) => statuses[0]);
     final model = ApplyingChangesModel(client, monitor);
-    var calledBack = false;
-    model.init(onDoneTransition: () => calledBack = true);
+    model.init();
     // Forces the stream to emit.
     await expectLater(monitor.onStatusChanged, emitsThrough(last));
-    await expectLater(calledBack, isFalse);
+    verifyNever(client.reboot(immediate: false));
   });
   test('skip listening if already DONE', () async {
     final done = testStatus(ApplicationState.DONE);
@@ -97,10 +99,9 @@ void main() {
     when(monitor.status).thenAnswer((_) => done);
     when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
     final model = ApplyingChangesModel(client, monitor);
-    var calledBack = false;
-    model.init(onDoneTransition: () => calledBack = true);
+    model.init();
 
-    expect(calledBack, isTrue);
+    verify(client.reboot(immediate: false)).called(1);
     verifyNever(monitor.onStatusChanged);
   });
 }

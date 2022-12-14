@@ -38,7 +38,7 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
   void initState() {
     super.initState();
     final model = Provider.of<ApplyingChangesModel>(context, listen: false);
-    model.init(onDoneTransition: () => model.reboot(immediate: false));
+    model.init();
   }
 
   @override

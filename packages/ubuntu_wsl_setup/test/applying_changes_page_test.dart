@@ -52,12 +52,9 @@ void main() {
     );
   }
 
-  testWidgets('closes the window when last page', (tester) async {
+  testWidgets('closes the window', (tester) async {
     final model = MockApplyingChangesModel();
-    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
-        .thenAnswer((realInvocation) {
-      realInvocation.namedArguments[Symbol('onDoneTransition')]();
-    });
+    when(model.init()).thenAnswer((_) => model.reboot(immediate: false));
 
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
@@ -68,8 +65,7 @@ void main() {
 
   testWidgets('won\'t go next while still installing', (tester) async {
     final model = MockApplyingChangesModel();
-    when(model.init(onDoneTransition: captureAnyNamed('onDoneTransition')))
-        .thenAnswer((realInvocation) {});
+    when(model.init()).thenAnswer((realInvocation) {});
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
       hasNext: true,
