@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
@@ -70,24 +69,27 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
           Flexible(
             child: FractionallySizedBox(
               widthFactor: 0.5,
-              child: RoundedListView.builder(
-                controller: _languageListScrollController,
-                itemCount: model.languageCount,
-                itemBuilder: (context, index) {
-                  return AutoScrollTag(
-                    index: index,
-                    key: ValueKey(index),
-                    controller: _languageListScrollController,
-                    child: ListTile(
-                      title: Text(model.language(index)),
-                      selected: index == model.selectedLanguageIndex,
-                      onTap: () {
-                        model.selectedLanguageIndex = index;
-                        InheritedLocale.apply(context, model.uiLocale(index));
-                      },
-                    ),
-                  );
-                },
+              child: YaruBorderContainer(
+                clipBehavior: Clip.antiAlias,
+                child: ListView.builder(
+                  controller: _languageListScrollController,
+                  itemCount: model.languageCount,
+                  itemBuilder: (context, index) {
+                    return AutoScrollTag(
+                      index: index,
+                      key: ValueKey(index),
+                      controller: _languageListScrollController,
+                      child: ListTile(
+                        title: Text(model.language(index)),
+                        selected: index == model.selectedLanguageIndex,
+                        onTap: () {
+                          model.selectedLanguageIndex = index;
+                          InheritedLocale.apply(context, model.uiLocale(index));
+                        },
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'storage_columns.dart';
 import 'storage_types.dart';
@@ -137,7 +137,7 @@ class StorageTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RoundedContainer(
+    return YaruBorderContainer(
       child: LayoutBuilder(builder: (context, constraints) {
         final theme = Theme.of(context);
         return OverflowBox(

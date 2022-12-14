@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
@@ -122,22 +121,25 @@ class WifiListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<WifiModel>(context);
-    return RoundedListView.builder(
-      shrinkWrap: true,
-      itemCount: model.devices.length,
-      itemBuilder: (context, index) {
-        return ChangeNotifierProvider.value(
-          value: model.devices[index],
-          child: WifiListTile(
-            key: ValueKey(index),
-            selected: model.isSelectedDevice(model.devices[index]),
-            onSelected: (device, accessPoint) {
-              model.selectDevice(device);
-              onSelected(device, accessPoint);
-            },
-          ),
-        );
-      },
+    return YaruBorderContainer(
+      clipBehavior: Clip.antiAlias,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: model.devices.length,
+        itemBuilder: (context, index) {
+          return ChangeNotifierProvider.value(
+            value: model.devices[index],
+            child: WifiListTile(
+              key: ValueKey(index),
+              selected: model.isSelectedDevice(model.devices[index]),
+              onSelected: (device, accessPoint) {
+                model.selectDevice(device);
+                onSelected(device, accessPoint);
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }

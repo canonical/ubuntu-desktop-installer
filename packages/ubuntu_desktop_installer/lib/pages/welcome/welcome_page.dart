@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -64,25 +64,28 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Row(
           children: [
             Expanded(
-              child: RoundedListView.builder(
-                controller: _languageListScrollController,
-                itemCount: model.languageCount,
-                itemBuilder: (context, index) {
-                  return AutoScrollTag(
-                    index: index,
-                    key: ValueKey(index),
-                    controller: _languageListScrollController,
-                    child: ListTile(
-                      title: Text(model.language(index)),
-                      selected: index == model.selectedLanguageIndex,
-                      onTap: () {
-                        model.selectedLanguageIndex = index;
-                        final settings = Settings.of(context, listen: false);
-                        settings.applyLocale(model.locale(index));
-                      },
-                    ),
-                  );
-                },
+              child: YaruBorderContainer(
+                clipBehavior: Clip.antiAlias,
+                child: ListView.builder(
+                  controller: _languageListScrollController,
+                  itemCount: model.languageCount,
+                  itemBuilder: (context, index) {
+                    return AutoScrollTag(
+                      index: index,
+                      key: ValueKey(index),
+                      controller: _languageListScrollController,
+                      child: ListTile(
+                        title: Text(model.language(index)),
+                        selected: index == model.selectedLanguageIndex,
+                        onTap: () {
+                          model.selectedLanguageIndex = index;
+                          final settings = Settings.of(context, listen: false);
+                          settings.applyLocale(model.locale(index));
+                        },
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(width: 20),
