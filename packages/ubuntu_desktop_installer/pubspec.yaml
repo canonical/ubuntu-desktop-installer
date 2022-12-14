@@ -27,7 +27,7 @@ dependencies:
   form_field_validator: ^1.1.0
   gsettings: ^0.2.5
   handy_window: ^0.1.6
-  intl: ^0.17.0
+  intl: ^0.18.0
   meta: ^1.7.0
   nm: ^0.5.0
   path: ^1.8.0

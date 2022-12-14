@@ -17,7 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   form_field_validator: ^1.1.0
-  intl: ^0.17.0
+  intl: ^0.18.0
   password_strength: ^0.2.0
   path: ^1.8.0
   safe_change_notifier: ^0.2.0
