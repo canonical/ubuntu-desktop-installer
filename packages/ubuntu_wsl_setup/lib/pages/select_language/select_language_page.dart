@@ -41,13 +41,9 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     model.loadLanguages().then((_) {
       final locale = InheritedLocale.of(context);
       model.selectLocale(locale);
-      model.getServerLocale().then((loc) {
-        model.selectLocale(loc);
-        InheritedLocale.apply(context, loc);
-        _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
-            preferPosition: AutoScrollPosition.middle,
-            duration: const Duration(milliseconds: 1));
-      });
+      _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
+          preferPosition: AutoScrollPosition.middle,
+          duration: const Duration(milliseconds: 1));
     });
     model.getInstallLanguagePacks();
   }

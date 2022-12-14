@@ -85,7 +85,7 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model, Locale('fr_FR')));
 
     verify(model.loadLanguages()).called(1);
-    verify(model.getServerLocale()).called(1);
+    verifyNever(model.getServerLocale());
     verify(model.selectLocale(Locale('fr_FR'))).called(1);
 
     final continueButton =
