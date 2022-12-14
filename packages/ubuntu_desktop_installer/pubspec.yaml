@@ -54,7 +54,7 @@ dependencies:
   udev: ^0.0.2
   upower: ^0.7.0
   yaru: ^0.4.1
-  yaru_icons: ^0.2.1
+  yaru_icons: ^1.0.0
   yaru_widgets: ^2.0.0-0
 
 dev_dependencies:

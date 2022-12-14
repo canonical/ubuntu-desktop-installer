@@ -30,7 +30,7 @@ dependencies:
   ubuntu_wizard:
     path: ../ubuntu_wizard
   yaru: ^0.4.1
-  yaru_icons: ^0.2.1
+  yaru_icons: ^1.0.0
   yaru_widgets: ^2.0.0-0
 
 dev_dependencies:
