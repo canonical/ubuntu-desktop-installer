@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -89,11 +90,9 @@ Future<void> main(List<String> args) async {
   );
 
   await runWizardApp(
-    ValueListenableBuilder<AppModel>(
-      valueListenable: appModel,
-      builder: (context, model, child) {
-        return UbuntuWslSetupApp(model: model);
-      },
+    ValueListenableProvider<AppModel>.value(
+      value: appModel,
+      child: const UbuntuWslSetupApp(),
     ),
     options: options,
     subiquityClient: subiquityClient,
