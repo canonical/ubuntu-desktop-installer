@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
+import '../../app_model.dart';
+
 enum InstallationState {
   /// WSL is registering the distro.
   registering,
@@ -44,27 +46,44 @@ class InstallationSlidesModel extends SafeChangeNotifier {
 
   StreamSubscription? _journalSubs;
 
-  late void Function() _onServerUp;
+  void Function()? _onServerUp;
 
   var _logVisible = false;
+
+  AppModel? _appModel;
+  set appModel(AppModel? details) {
+    _appModel = details;
+    _checkServerUp(monitor.status);
+  }
+
+  bool get skipLanguageSelection => _appModel?.languageAlreadySet == true;
+
+  bool _checkServerUp(ApplicationStatus? status) {
+    if (status != null &&
+        status.state != ApplicationState.ERROR &&
+        _appModel?.variant != null) {
+      _setState(InstallationState.serverUp);
+      return true;
+    }
+    return false;
+  }
 
   /// Initializes the model interconnections. [onServerUp] callback is a special
   /// listener that will be triggered once (and only once) the model
   /// [notifyListeners] due the server up state transition.
-  void init({required void Function() onServerUp}) {
+  void init({AppModel? current, required void Function() onServerUp}) {
     _onServerUp = onServerUp;
+    if (current != null) {
+      _appModel = current;
+    }
     // We may be requested after the server is ready.
-    if (isServerUp) {
-      _setState(InstallationState.serverUp);
-    } else {
+    if (!_checkServerUp(monitor.status)) {
       // Otherwise let's monitor its readiness.
       _monitorSubs = monitor.onStatusChanged.listen((status) {
         if (status?.state == ApplicationState.ERROR) {
           _setState(InstallationState.serverStartupError);
         }
-        if (status != null && status.state != ApplicationState.ERROR) {
-          _setState(InstallationState.serverUp);
-        }
+        _checkServerUp(status);
       });
       _journalSubs = _journal.listen((event) {
         if (event.startsWith('Error:') || event.startsWith('ERROR:')) {
@@ -83,7 +102,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
       _state = InstallationState.proceedToSetup;
       _journalSubs?.cancel();
       _journalSubs = null;
-      _onServerUp();
+      _onServerUp?.call();
     }
 
     notifyListeners();
@@ -102,8 +121,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
-  bool get isServerUp =>
-      monitor.status != null && monitor.status!.state != ApplicationState.ERROR;
+  bool get isServerUp => _state == InstallationState.serverUp;
 
   @override
   void dispose() {
