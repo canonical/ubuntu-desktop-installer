@@ -10,6 +10,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_model.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_page.dart';
@@ -65,20 +66,23 @@ void main() {
   }
 
   Widget buildApp(Widget Function(BuildContext) builder) {
-    return MaterialApp(
-      localizationsDelegates: localizationsDelegates,
-      home: Wizard(routes: {
-        '/': WizardRoute(
-          builder: builder,
-          onNext: (settings) => '/end',
-        ),
-        '/end': WizardRoute(
-          builder: (_) => Center(
-            child: const Text(theEnd),
+    return Provider<AppModel>(
+      create: (_) => AppModel(),
+      child: MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        home: Wizard(routes: {
+          '/': WizardRoute(
+            builder: builder,
+            onNext: (settings) => '/end',
           ),
-          onNext: (settings) => '/end',
-        ),
-      }),
+          '/end': WizardRoute(
+            builder: (_) => Center(
+              child: const Text(theEnd),
+            ),
+            onNext: (settings) => '/end',
+          ),
+        }),
+      ),
     );
   }
 

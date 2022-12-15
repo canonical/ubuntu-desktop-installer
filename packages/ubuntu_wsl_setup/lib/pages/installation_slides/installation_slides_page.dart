@@ -21,6 +21,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -42,11 +43,15 @@ class InstallationSlidesPage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final slides = theSlides(context);
-    return ChangeNotifierProvider(
+    return ChangeNotifierProxyProvider<AppModel, InstallationSlidesModel?>(
       create: (_) => InstallationSlidesModel(
         journal: getService<JournalService>().stream,
         monitor: getService<SubiquityStatusMonitor>(),
       ),
+      update: (_, value, model) {
+        model?.appModel = value;
+        return model;
+      },
       child: Provider<SlidesProvider>(
           create: (context) => SlidesProvider(slides),
           child: const InstallationSlidesPage()),
@@ -59,7 +64,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
   void initState() {
     super.initState();
     final model = context.read<InstallationSlidesModel>();
-    model.init(onServerUp: Wizard.of(context).next);
+    model.init(onServerUp: replaceThisPage);
   }
 
   @override
@@ -71,6 +76,13 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
         // just push the next route anyway.
         ? const SizedBox.shrink()
         : _SlidesPage(slides);
+  }
+
+  void replaceThisPage() {
+    final model = context.read<InstallationSlidesModel>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Wizard.of(context).replace(arguments: model.skipLanguageSelection);
+    });
   }
 }
 

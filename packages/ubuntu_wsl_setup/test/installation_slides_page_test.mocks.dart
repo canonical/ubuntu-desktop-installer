@@ -71,6 +71,11 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
+  bool get skipLanguageSelection => (super.noSuchMethod(
+        Invocation.getter(#skipLanguageSelection),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get hasError => (super.noSuchMethod(
         Invocation.getter(#hasError),
         returnValue: false,
@@ -101,11 +106,18 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  void init({required void Function()? onServerUp}) => super.noSuchMethod(
+  void init({
+    _i5.AppModel? current,
+    required void Function()? onServerUp,
+  }) =>
+      super.noSuchMethod(
         Invocation.method(
           #init,
           [],
-          {#onServerUp: onServerUp},
+          {
+            #current: current,
+            #onServerUp: onServerUp,
+          },
         ),
         returnValueForMissingStub: null,
       );

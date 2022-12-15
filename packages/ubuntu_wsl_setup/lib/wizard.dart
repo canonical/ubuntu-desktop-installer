@@ -17,8 +17,14 @@ class UbuntuWslSetupWizard extends StatelessWidget {
     return Wizard(
       initialRoute: initialRoute,
       routes: <String, WizardRoute>{
-        Routes.installationSlides: const WizardRoute(
+        Routes.installationSlides: WizardRoute(
           builder: InstallationSlidesPage.create,
+          onReplace: (settings) {
+            if ((settings.arguments as bool) == true) {
+              return Routes.profileSetup;
+            }
+            return Routes.selectLanguage;
+          },
         ),
         Routes.selectLanguage: const WizardRoute(
           builder: SelectLanguagePage.create,
