@@ -19,7 +19,7 @@
   "@noButtonText": {},
   "restartButtonText": "Перезавантажити",
   "@restartButtonText": {},
-  "revertButtonText": "Повернутися",
+  "revertButtonText": "Відбій",
   "@revertButtonText": {},
   "yesButtonText": "Так",
   "@yesButtonText": {},
@@ -38,7 +38,7 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Ви можете спробувати {RELEASE} без виконання жодних змін у вашому комп’ютері.",
+  "tryUbuntuDescription": "Ви можете спробувати {RELEASE}, не роблячи ніяких змін на вашому комп'ютері.",
   "@tryUbuntuDescription": {
     "type": "text",
     "placeholders": {
@@ -59,7 +59,7 @@
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Ви можете прочитати <a href=\"{url}\">примітки до випуску</a>.",
+  "releaseNotesLabel": "Можливо, ви захочете прочитати <a href=\"{url}\">примітки до випуску</a>.",
   "@releaseNotesLabel": {
     "type": "text",
     "placeholders": {
@@ -80,7 +80,7 @@
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Ви вирішили встановити стороннє програмне забезпечення для драйверів. Для цього необхідно вимкнути безпечне завантаження.\nДля цього потрібно вибрати ключ безпеки зараз, та ввести його після перезавантаженні системи.",
   "@configureSecureBootDescription": {},
-  "pressOneKey": "Будь ласка, натисніть одну з вказаних кнопок:",
+  "pressOneKey": "Будь ласка, натисніть одну з цих клавiш:",
   "@pressOneKey": {},
   "keyboardLayoutPageTitle": "Розкладка клавіатури",
   "@keyboardLayoutPageTitle": {},
