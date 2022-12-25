@@ -720,5 +720,9 @@
   "showSecurityKey": "Güvenlik anahtarını göster",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları yükle",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.",
+  "@installDriversSubtitle": {}
 }
