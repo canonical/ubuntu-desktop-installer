@@ -813,7 +813,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get supportSlideQuestions => 'På <a href=\"https://askubuntu.com\">Ask Ubuntu</a> kan du stille spørsmål og søke i en imponerende samling allerede besvarte spørsmål. Støtte på ditt eget språk får du fra <a href=\"https://loco.ubuntu.com/teams\">ditt lokale gemenskapslag</a>.';
 
   @override
-  String get supportSlideResources => 'For veiledning til andre nyttige ressurser kan du besøke <a href=\"https://www.ubuntu.com/support/community-support\">gemenskapsportalen</a> eller nytte <a href=\"https://www.ubuntu.com/support\">kommersiell støtte.';
+  String get supportSlideResources => 'For veiledning til andre nyttige ressurser kan du besøke <a href=\"https://www.ubuntu.com/support/community-support\">gemenskapsportalen</a> eller nytte <a href=\"https://www.ubuntu.com/support\">kommersiell støtte</a>.';
 
   @override
   String get includedSoftware => 'Inkludert programvare';

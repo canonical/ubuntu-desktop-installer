@@ -28,7 +28,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get restartButtonText => 'Перезавантажити';
 
   @override
-  String get revertButtonText => 'Повернутися';
+  String get revertButtonText => 'Відбій';
 
   @override
   String get yesButtonText => 'Так';
@@ -58,7 +58,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'Ви можете спробувати $RELEASE без виконання жодних змін у вашому комп’ютері.';
+    return 'Ви можете спробувати $RELEASE, не роблячи ніяких змін на вашому комп\'ютері.';
   }
 
   @override
@@ -73,7 +73,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'Ви можете прочитати <a href=\"$url\">примітки до випуску</a>.';
+    return 'Можливо, ви захочете прочитати <a href=\"$url\">примітки до випуску</a>.';
   }
 
   @override
@@ -100,7 +100,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get detectLayout => 'Визначити розкладку клавіатури';
 
   @override
-  String get pressOneKey => 'Будь ласка, натисніть одну з вказаних кнопок:';
+  String get pressOneKey => 'Будь ласка, натисніть одну з цих клавiш:';
 
   @override
   String get isKeyPresent => 'Чи присутня ця клавіша на клавіатурі?';

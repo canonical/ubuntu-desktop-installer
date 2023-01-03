@@ -214,16 +214,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installThirdPartySubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => '그래픽과 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어 설치';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => '이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => '추가 미디어 포맷 지원 설치';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -381,7 +381,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num의 작은 파티션이 숨겨져 있음, <a href=\"$url\">고급 파티션 도구</a>에서 더 많은 기능을 사용하십시오';
   }
 
   @override
@@ -621,7 +621,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => '다음과 같은 파티션이 포맷됩니다:';
+  String get writeChangesPartitionsHeader => '다음과 같은 파티션 변경사항이 적용됩니다:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {

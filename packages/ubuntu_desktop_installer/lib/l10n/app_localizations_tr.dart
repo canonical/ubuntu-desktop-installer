@@ -214,16 +214,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installThirdPartySubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları tescillidir.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları yükle';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Ek ortam biçimleri desteğini yükle';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -770,7 +770,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get officeSlideTitle => 'Ofis için ihtiyacınız olan her şey';
 
   @override
-  String get officeSlideDescription => 'LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren ücretsiz bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri ücretsiz olarak size sunar.';
+  String get officeSlideDescription => 'LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren özgür bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri size sunar.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -825,13 +825,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get supportedSoftware => 'Desteklenen yazılım';
 
   @override
-  String get copyingFiles => 'Dosyalar kopyalanıyor...';
+  String get copyingFiles => 'Dosyalar kopyalanıyor…';
 
   @override
-  String get installingSystem => 'Sistem kuruluyor...';
+  String get installingSystem => 'Sistem kuruluyor…';
 
   @override
-  String get configuringSystem => 'Sistem yapılandırılıyor...';
+  String get configuringSystem => 'Sistem yapılandırılıyor…';
 
   @override
   String get installationFailed => 'Kurulum başarısız oldu';

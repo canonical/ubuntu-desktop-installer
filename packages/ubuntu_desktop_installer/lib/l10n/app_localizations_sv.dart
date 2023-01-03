@@ -214,16 +214,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installThirdPartySubtitle => 'Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Installera programvara från tredje part för grafik och Wi-Fi-hårdvara';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Dessa drivrutiner är föremål för licensvillkor som ingår i deras dokumentation. De är proprietära.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Installera stöd för ytterligare medieformat';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -439,7 +439,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Skapa en ny tom partitionstabell på den här enheten?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell på enheten kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.';
+  String get newPartitionTableConfirmationMessage => 'Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell så kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.';
 
   @override
   String get bootLoaderDevice => 'Enhet för installation av starthanteraren';
@@ -770,7 +770,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get officeSlideTitle => 'Allt du behöver för kontoret';
 
   @override
-  String get officeSlideDescription => 'LibreOffice är en gratis kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver, utan någon hög prislapp.';
+  String get officeSlideDescription => 'LibreOffice är en libre kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Hjärtat i $RELEASE-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färgschema och textstorlek, gör $RELEASE datoranvändning enkel - vem du än är och var du än är.';
+    return 'Hjärtat i $RELEASE-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek, gör $RELEASE datoranvändning enkel — vem du än är och var du än är.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Den officiella dokumentationen täcker många av de vanligaste områdena om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
+    return 'Den officiella dokumentationen täcker många av de vanligaste aspekter om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get supportedSoftware => 'Programvara som stöds';
 
   @override
-  String get copyingFiles => 'Kopierar filer...';
+  String get copyingFiles => 'Kopierar filer…';
 
   @override
-  String get installingSystem => 'Installerar system...';
+  String get installingSystem => 'Installerar ditt system…';
 
   @override
-  String get configuringSystem => 'Konfigurerar system...';
+  String get configuringSystem => 'Ställer in ditt system…';
 
   @override
   String get installationFailed => 'Installationen misslyckades';
