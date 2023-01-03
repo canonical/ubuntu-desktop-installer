@@ -193,7 +193,7 @@
   "@partitionFormatZfsroot": {},
   "partitionErase": "파티션 포맷",
   "@partitionErase": {},
-  "writeChangesPartitionsHeader": "다음과 같은 파티션이 포맷됩니다:",
+  "writeChangesPartitionsHeader": "다음과 같은 파티션 변경사항이 적용됩니다:",
   "@writeChangesPartitionsHeader": {},
   "whoAreYouPagePasswordRequired": "암호가 필요합니다",
   "@whoAreYouPagePasswordRequired": {},
@@ -652,5 +652,21 @@
     }
   },
   "quitButtonText": "인스톨러 닫기",
-  "@quitButtonText": {}
+  "@quitButtonText": {},
+  "installDriversTitle": "그래픽과 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어 설치",
+  "@installDriversTitle": {},
+  "installCodecsSubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
+  "@installCodecsSubtitle": {},
+  "installCodecsTitle": "추가 미디어 포맷 지원 설치",
+  "@installCodecsTitle": {},
+  "installDriversSubtitle": "이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.",
+  "@installDriversSubtitle": {},
+  "installAlongsideHiddenPartitions": "{num}의 작은 파티션이 숨겨져 있음, <a href=\"{url}\">고급 파티션 도구</a>에서 더 많은 기능을 사용하십시오",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  }
 }

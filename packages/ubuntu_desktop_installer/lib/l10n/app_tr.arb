@@ -457,9 +457,9 @@
   },
   "webSlideTitle": "İnternetten en iyi şekilde yararlanın",
   "@webSlideTitle": {},
-  "installingSystem": "Sistem kuruluyor...",
+  "installingSystem": "Sistem kuruluyor…",
   "@installingSystem": {},
-  "configuringSystem": "Sistem yapılandırılıyor...",
+  "configuringSystem": "Sistem yapılandırılıyor…",
   "@configuringSystem": {},
   "installationFailed": "Kurulum başarısız oldu",
   "@installationFailed": {},
@@ -472,7 +472,7 @@
       "RELEASE": {}
     }
   },
-  "officeSlideDescription": "LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren ücretsiz bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri ücretsiz olarak size sunar.",
+  "officeSlideDescription": "LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren özgür bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri size sunar.",
   "@officeSlideDescription": {},
   "accessSlideTitle": "Herkes için erişim",
   "@accessSlideTitle": {},
@@ -585,7 +585,7 @@
   "@supportSlideQuestions": {},
   "supportSlideResources": "Diğer faydalı kaynaklara yönlendirmeler için lütfen <a href=\"https://www.ubuntu.com/support/community-support\">Topluluk desteği</a> ya da <a href=\"https://www.ubuntu.com/support\">Kurumsal destek</a> adreslerini ziyaret edin.",
   "@supportSlideResources": {},
-  "copyingFiles": "Dosyalar kopyalanıyor...",
+  "copyingFiles": "Dosyalar kopyalanıyor…",
   "@copyingFiles": {},
   "installAlongsideFiles": "Dosyalar",
   "@installAlongsideFiles": {},
@@ -720,5 +720,13 @@
   "showSecurityKey": "Güvenlik anahtarını göster",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları yükle",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Ek ortam biçimleri desteğini yükle",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
+  "@installCodecsSubtitle": {}
 }

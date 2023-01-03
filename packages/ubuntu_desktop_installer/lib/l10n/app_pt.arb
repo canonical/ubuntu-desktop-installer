@@ -365,7 +365,7 @@
   },
   "restartIntoWindows": "Reiniciar no Windows",
   "@restartIntoWindows": {},
-  "windowTitle": "Instalar {RELEASE}",
+  "windowTitle": "Instalar o {RELEASE}",
   "@windowTitle": {},
   "whoAreYouPageTitle": "Quem é?",
   "@whoAreYouPageTitle": {},
@@ -645,6 +645,82 @@
     "type": "text",
     "placeholders": {
       "RELEASE": {}
+    }
+  },
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "accessSlideTitle": "Acesso para todos",
+  "@accessSlideTitle": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "accessSlideCustomizationOptions": "Opções de personalização",
+  "@accessSlideCustomizationOptions": {},
+  "supportSlideResources": "Para indicações de outros recursos úteis, visite o <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou o <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.",
+  "@supportSlideResources": {},
+  "includedSoftware": "Software incluído",
+  "@includedSoftware": {},
+  "availableSoftware": "Software disponível",
+  "@availableSoftware": {},
+  "notEnoughDiskSpaceBiggestDisk": "O maior disco deste computador é de apenas {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "installingSystem": "A instalar o sistema…",
+  "@installingSystem": {},
+  "accessSlideAssistiveTechnologies": "Tecnologias de assistência",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "Suporte de idioma",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Ajuda e suporte",
+  "@supportSlideTitle": {},
+  "notEnoughDiskSpaceTitle": "Lamentamos",
+  "@notEnoughDiskSpaceTitle": {},
+  "copyingFiles": "A copiar ficheiros…",
+  "@copyingFiles": {},
+  "configuringSystem": "A configurar o sistema…",
+  "@configuringSystem": {},
+  "installationFailed": "Falha ao instalar",
+  "@installationFailed": {},
+  "officeSlideDescription": "O LibreOffice é uma suite de escritório livre com tudo o que precisa para criar documentos, folhas de cálculo e apresentações. Compatível com formatos de ficheiros Microsoft Office, dá-lhe todas as funcionalidades de que necessita.",
+  "@officeSlideDescription": {},
+  "supportedSoftware": "Software suportado",
+  "@supportedSoftware": {},
+  "accessSlideDescription": "No centro da filosofia {RELEASE} está a crença de que a informática é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, cores e tamanho do texto, o {RELEASE} torna a computação fácil - quem quer que seja e onde quer que esteja.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideAppearance": "Aparência",
+  "@accessSlideAppearance": {},
+  "supportSlideDocumentation": "A documentação oficial abrange muitos dos aspetos mais comuns do {RELEASE}. Está disponível <a href=\"https://help.ubuntu.com\">online</a> e por meio do ícone de Ajuda no doca.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> pode fazer perguntas e pesquisar uma coleção impressionante de perguntas já respondidas. O suporte no seu próprio idioma pode ser fornecido na sua <a href=\"https://loco.ubuntu.com/teams\">equipa da comunidade local</a>.",
+  "@supportSlideQuestions": {},
+  "notEnoughDiskSpaceHeader": "É necessário pelo menos {SIZE} de espaço em disco para instalar o {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Este computador tem apenas {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
     }
   }
 }

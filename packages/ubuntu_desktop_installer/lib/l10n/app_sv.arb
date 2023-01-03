@@ -404,7 +404,7 @@
       "color": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell på enheten kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.",
+  "newPartitionTableConfirmationMessage": "Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell så kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.",
   "@newPartitionTableConfirmationMessage": {},
   "restartInto": "Starta om till {system}",
   "@restartInto": {
@@ -542,7 +542,7 @@
   "@softwareSlideTitle": {},
   "photoSlideShotcut": "Shotcut videoedigerare",
   "@photoSlideShotcut": {},
-  "officeSlideDescription": "LibreOffice är en gratis kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver, utan någon hög prislapp.",
+  "officeSlideDescription": "LibreOffice är en libre kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver",
   "@officeSlideDescription": {},
   "softwareSlideDescription": "Säg adjö till att söka på nätet efter ny programvara. Med åtkomst till Snap butiken och {RELEASE} programvaru arkiv, så kan du kan enkelt hitta och installera nya program. Bara skriv in det du letar efter, eller utforska kategorier som Grafik och Fotografi, Spel och Produktivitet, tillsammans med användbara recensioner från andra användare.",
   "@softwareSlideDescription": {
@@ -569,7 +569,7 @@
   },
   "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.",
   "@supportSlideQuestions": {},
-  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste områdena om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
+  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste aspekter om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -618,7 +618,7 @@
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameTooLong": "Det namnet är för långt.",
   "@whoAreYouPageUsernameTooLong": {},
-  "copyingFiles": "Kopierar filer...",
+  "copyingFiles": "Kopierar filer…",
   "@copyingFiles": {},
   "whoAreYouPageUsernameInUse": "Det användarnamnet existerar redan.",
   "@whoAreYouPageUsernameInUse": {},
@@ -671,7 +671,7 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Storlek:",
   "@installAlongsideSize": {},
-  "accessSlideDescription": "Hjärtat i {RELEASE}-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färgschema och textstorlek, gör {RELEASE} datoranvändning enkel - vem du än är och var du än är.",
+  "accessSlideDescription": "Hjärtat i {RELEASE}-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek, gör {RELEASE} datoranvändning enkel — vem du än är och var du än är.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -752,12 +752,20 @@
   },
   "installAlongsideSpaceDivider": "Tilldela enhetsutrymme genom att dra i spaken nedan:",
   "@installAlongsideSpaceDivider": {},
-  "installingSystem": "Installerar system...",
+  "installingSystem": "Installerar ditt system…",
   "@installingSystem": {},
-  "configuringSystem": "Konfigurerar system...",
+  "configuringSystem": "Ställer in ditt system…",
   "@configuringSystem": {},
   "showSecurityKey": "Visa säkerhetsnyckel",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM och kryptering vald",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Installera programvara från tredje part för grafik och Wi-Fi-hårdvara",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Installera stöd för ytterligare medieformat",
+  "@installCodecsTitle": {},
+  "installDriversSubtitle": "Dessa drivrutiner är föremål för licensvillkor som ingår i deras dokumentation. De är proprietära.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.",
+  "@installCodecsSubtitle": {}
 }
