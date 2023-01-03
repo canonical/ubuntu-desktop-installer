@@ -133,7 +133,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => '安全密钥不匹配';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => '显示安全密钥';
 
   @override
   String get connectToInternetPageTitle => '连接到互联网';
@@ -214,16 +214,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installThirdPartySubtitle => '本软件受其文档中包含的许可条款的约束中有些是专有的。';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => '为图形和Wi-Fi硬件安装第三方软件';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => '这些驱动受它们文档中的许可条款约束。它们是专有的。';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => '为其他媒体格式提供支持';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => '本软件受其文档中包含的许可条款的约束，其中有些是专有的。';
 
   @override
   String onBatteryWarning(Object color) {
@@ -305,7 +305,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM已选择';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM 和加密已选中';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -439,7 +439,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => '是否在此设备上创建新的空白分区表？';
 
   @override
-  String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在设备上创建新的分区表，那么所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
+  String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
 
   @override
   String get bootLoaderDevice => '用于安装引导程序的设备';
@@ -770,7 +770,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get officeSlideTitle => '您在办公中所需的一切';
 
   @override
-  String get officeSlideDescription => 'LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及演示文档所需的工具。同时全功能兼容 Microsoft Office 的文件格式，无需额外费用。';
+  String get officeSlideDescription => 'LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及演示文档所需的工具。同时全功能兼容 Microsoft Office 的文件格式。';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，$RELEASE 都可凭先进的无障碍工具和更改语言、配色方案、字体大小的选项，为您随时随地地轻松访问计算服务。';
+    return '$RELEASE 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，$RELEASE 都可凭先进的无障碍工具和更改语言、色彩、字体大小的选项，为您随时随地地轻松访问计算服务。';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return '官方文档覆盖了 $RELEASE 的常见领域，可通过 <a href=\"https://help.ubuntu.com\">线上</a> 和应用坞（dock）上的帮助图标进行访问。';
+    return '官方文档覆盖了 $RELEASE 的常见方面，可通过 <a href=\"https://help.ubuntu.com\">线上</a> 和应用坞（dock）上的帮助图标进行访问。';
   }
 
   @override

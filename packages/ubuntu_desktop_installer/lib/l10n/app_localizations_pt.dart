@@ -9,7 +9,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Instalar $RELEASE';
+    return 'Instalar o $RELEASE';
   }
 
   @override
@@ -770,7 +770,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get officeSlideTitle => 'Tudo que você precisa no seu escritório';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
+  String get officeSlideDescription => 'O LibreOffice é uma suite de escritório livre com tudo o que precisa para criar documentos, folhas de cálculo e apresentações. Compatível com formatos de ficheiros Microsoft Office, dá-lhe todas as funcionalidades de que necessita.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -782,76 +782,76 @@ class AppLocalizationsPt extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Acesso para todos';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, $RELEASE makes computing easy — whoever and wherever you are.';
+    return 'No centro da filosofia $RELEASE está a crença de que a informática é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, cores e tamanho do texto, o $RELEASE torna a computação fácil - quem quer que seja e onde quer que esteja.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Opções de personalização';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Aparência';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Tecnologias de assistência';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Suporte de idioma';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ajuda e suporte';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common aspects of $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'A documentação oficial abrange muitos dos aspetos mais comuns do $RELEASE. Está disponível <a href=\"https://help.ubuntu.com\">online</a> e por meio do ícone de Ajuda no doca.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => 'No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> pode fazer perguntas e pesquisar uma coleção impressionante de perguntas já respondidas. O suporte no seu próprio idioma pode ser fornecido na sua <a href=\"https://loco.ubuntu.com/teams\">equipa da comunidade local</a>.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Para indicações de outros recursos úteis, visite o <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou o <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Software incluído';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Software disponível';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Software suportado';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'A copiar ficheiros…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'A instalar o sistema…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'A configurar o sistema…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Falha ao instalar';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Lamentamos';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'É necessário pelo menos $SIZE de espaço em disco para instalar o $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Este computador tem apenas $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'O maior disco deste computador é de apenas $SIZE.';
   }
 }
 
