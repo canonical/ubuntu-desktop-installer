@@ -148,7 +148,7 @@
   "@turnOffRSTDescription": {},
   "dontInstallDriverSoftwareNow": "지금은 드라이버 소프트웨어 설치하지 않기",
   "@dontInstallDriverSoftwareNow": {},
-  "dontInstallDriverSoftwareNowDescription": "Software & Updates 에서 나중에 설치하실 수 있습니다.",
+  "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.",
   "@dontInstallDriverSoftwareNowDescription": {},
   "updatesOtherSoftwarePageTitle": "업데이트 및 다른 소프트웨어",
   "@updatesOtherSoftwarePageTitle": {},
@@ -498,7 +498,7 @@
   "@webSlideChromium": {},
   "officeSlideTitle": "사무에 필요한 모든 것",
   "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 무료로 제공합니다.",
+  "officeSlideDescription": "LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 제공합니다.",
   "@officeSlideDescription": {},
   "accessSlideTitle": "누구나 사용할 수 있습니다",
   "@accessSlideTitle": {},
@@ -591,7 +591,7 @@
       "RELEASE": {}
     }
   },
-  "supportSlideDocumentation": "공식 문서에는 {RELEASE}에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인</a>과 독에 있는 도움말 아이콘으로 이용하실 수 있습니다.",
+  "supportSlideDocumentation": "공식 문서에는 {RELEASE}에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인 도움말</a>과 독에 있는 도움말 아이콘으로 확인하실 수 있습니다.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -606,7 +606,7 @@
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.",
   "@whoAreYouPageUsernameInvalidChars": {},
-  "copyingFiles": "파일 복사 중...",
+  "copyingFiles": "파일 복사 중…",
   "@copyingFiles": {},
   "installationFailed": "설치 실패",
   "@installationFailed": {},
@@ -667,6 +667,51 @@
     "placeholders": {
       "num": {},
       "url": {}
+    }
+  },
+  "configuringSystem": "시스템 설정 중…",
+  "@configuringSystem": {},
+  "installingSystem": "시스템 설치 중…",
+  "@installingSystem": {},
+  "writeChangesPartitionCreated": "파티션 #{disk}{partition} 생성됨",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceHeader": "{RELEASE} 을(를) 설치하려면 적어도 {SIZE}의 디스크 공간이 필요합니다.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "이 컴퓨터는 {SIZE}밖에 없습니다.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "죄송합니다",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceBiggestDisk": "이 컴퓨터의 가장 큰 디스크는 {SIZE}밖에 되지 않습니다.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "파티션 #{disk}{partition} 을(를) {format} (으)로 포맷함",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
     }
   }
 }
