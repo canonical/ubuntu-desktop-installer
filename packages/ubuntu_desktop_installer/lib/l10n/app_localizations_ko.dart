@@ -124,7 +124,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => '지금은 드라이버 소프트웨어 설치하지 않기';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Software & Updates 에서 나중에 설치하실 수 있습니다.';
+  String get dontInstallDriverSoftwareNowDescription => '소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => '보안 키가 필요합니다';
@@ -635,7 +635,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return '파티션 #$disk${partition} 을(를) $format (으)로 포맷함';
   }
 
   @override
@@ -645,7 +645,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return '파티션 #$disk${partition} 생성됨';
   }
 
   @override
@@ -770,7 +770,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get officeSlideTitle => '사무에 필요한 모든 것';
 
   @override
-  String get officeSlideDescription => 'LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 무료로 제공합니다.';
+  String get officeSlideDescription => 'LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 제공합니다.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -806,7 +806,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return '공식 문서에는 $RELEASE에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인</a>과 독에 있는 도움말 아이콘으로 이용하실 수 있습니다.';
+    return '공식 문서에는 $RELEASE에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인 도움말</a>과 독에 있는 도움말 아이콘으로 확인하실 수 있습니다.';
   }
 
   @override
@@ -825,32 +825,32 @@ class AppLocalizationsKo extends AppLocalizations {
   String get supportedSoftware => '지원되는 소프트웨어';
 
   @override
-  String get copyingFiles => '파일 복사 중...';
+  String get copyingFiles => '파일 복사 중…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => '시스템 설치 중…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => '시스템 설정 중…';
 
   @override
   String get installationFailed => '설치 실패';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => '죄송합니다';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return '$RELEASE 을(를) 설치하려면 적어도 $SIZE의 디스크 공간이 필요합니다.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return '이 컴퓨터는 $SIZE밖에 없습니다.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return '이 컴퓨터의 가장 큰 디스크는 $SIZE밖에 되지 않습니다.';
   }
 }
