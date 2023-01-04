@@ -1,3 +1,4 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -8,8 +9,9 @@ import 'storage_types.dart';
 typedef CanSelectStorage = bool Function(int disk, [int object]);
 typedef IsStorageSelected = bool Function(int disk, [int object]);
 typedef OnStorageSelected = void Function(int disk, [int object]);
+typedef OnStorageDoubleTap = void Function(int disk, [int object]);
 
-class StorageTable extends StatelessWidget {
+class StorageTable extends StatefulWidget {
   const StorageTable({
     super.key,
     required this.storages,
@@ -18,6 +20,7 @@ class StorageTable extends StatelessWidget {
     this.canSelect,
     this.isSelected,
     this.onSelected,
+    this.onDoubleTap,
   });
 
   final List<Disk> storages;
@@ -34,12 +37,26 @@ class StorageTable extends StatelessWidget {
   /// Called when the user selects a storage device.
   final OnStorageSelected? onSelected;
 
+  /// Callend when the user double taps a storage device.
+  final OnStorageDoubleTap? onDoubleTap;
+
+  @override
+  State<StorageTable> createState() => _StorageTableState();
+}
+
+class _StorageTableState extends State<StorageTable> {
+  @override
+  void initState() {
+    super.initState();
+    dataTableShowLogs = false;
+  }
+
   Widget _autoScrollTag({
     required Widget child,
     required int disk,
     int object = -1,
   }) {
-    if (controller == null) {
+    if (widget.controller == null) {
       return child;
     }
 
@@ -47,51 +64,58 @@ class StorageTable extends StatelessWidget {
     return AutoScrollTag(
       key: ValueKey(index),
       index: index,
-      controller: controller!,
+      controller: widget.controller!,
       child: child,
     );
   }
 
   List<DataRow> _buildDataRows(BuildContext context, {required int diskIndex}) {
-    final disk = storages[diskIndex];
+    final disk = widget.storages[diskIndex];
     return <DataRow>[
-      DataRow.byIndex(
+      DataRow2.byIndex(
         index: diskIndex,
-        selected: isSelected?.call(diskIndex) ?? false,
-        onSelectChanged: canSelect?.call(diskIndex) == true
-            ? (selected) {
-                if (selected == true) {
-                  onSelected?.call(diskIndex);
-                }
-              }
+        onDoubleTap: widget.onDoubleTap != null
+            ? () => widget.onDoubleTap!(diskIndex)
             : null,
+        selected: widget.isSelected?.call(diskIndex) ?? false,
+        onSelectChanged: (selected) {
+          if (widget.canSelect?.call(diskIndex) == true) {
+            if (selected == true) {
+              widget.onSelected?.call(diskIndex);
+            }
+          }
+        },
         cells: <DataCell>[
           DataCell(
             SizedBox(
               height: kMinInteractiveDimension,
               child: _autoScrollTag(
                 disk: diskIndex,
-                child: columns.first.diskBuilder(context, disk),
+                child: widget.columns.first.diskBuilder(context, disk),
               ),
             ),
           ),
-          for (final column in columns.skip(1))
+          for (final column in widget.columns.skip(1))
             DataCell(column.diskBuilder(context, disk))
         ],
       ),
       for (var objectIndex = 0;
           objectIndex < disk.partitions.length;
           ++objectIndex)
-        DataRow(
+        DataRow2(
           key: ValueKey(Object.hashAll([diskIndex, objectIndex])),
-          selected: isSelected?.call(diskIndex, objectIndex) ?? false,
-          onSelectChanged: canSelect?.call(diskIndex, objectIndex) == true
-              ? (selected) {
-                  if (selected == true) {
-                    onSelected?.call(diskIndex, objectIndex);
-                  }
-                }
+          onDoubleTap: widget.onDoubleTap != null
+              ? () => widget.onDoubleTap!(diskIndex, objectIndex)
               : null,
+          selected: widget.isSelected?.call(diskIndex, objectIndex) ?? false,
+          onSelectChanged:
+              widget.canSelect?.call(diskIndex, objectIndex) == true
+                  ? (selected) {
+                      if (selected == true) {
+                        widget.onSelected?.call(diskIndex, objectIndex);
+                      }
+                    }
+                  : null,
           cells: <DataCell>[
             DataCell(
               SizedBox(
@@ -102,12 +126,12 @@ class StorageTable extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 40),
                     child: disk.partitions[objectIndex] is Partition
-                        ? columns.first.partitionBuilder(
+                        ? widget.columns.first.partitionBuilder(
                             context,
                             disk,
                             disk.partitions[objectIndex] as Partition,
                           )
-                        : columns.first.gapBuilder(
+                        : widget.columns.first.gapBuilder(
                             context,
                             disk,
                             disk.partitions[objectIndex] as Gap,
@@ -116,7 +140,7 @@ class StorageTable extends StatelessWidget {
                 ),
               ),
             ),
-            for (final column in columns.skip(1))
+            for (final column in widget.columns.skip(1))
               DataCell(
                 disk.partitions[objectIndex] is Partition
                     ? column.partitionBuilder(
@@ -137,37 +161,25 @@ class StorageTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return YaruBorderContainer(
-      child: LayoutBuilder(builder: (context, constraints) {
-        final theme = Theme.of(context);
-        return OverflowBox(
-          maxWidth: double.infinity,
-          alignment: Alignment.topLeft,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minWidth: constraints.minWidth),
-            child: SingleChildScrollView(
-              controller: controller,
-              child: DataTable(
-                dataRowHeight: kMinInteractiveDimension +
-                    theme.visualDensity.baseSizeAdjustment.dy,
-                showCheckboxColumn: false,
-                headingTextStyle: theme.textTheme.subtitle2,
-                dataTextStyle: theme.textTheme.bodyText2,
-                columns: columns
-                    .map((column) =>
-                        DataColumn(label: column.titleBuilder(context)))
-                    .toList(),
-                rows: List.generate(storages.length, (index) {
-                  return _buildDataRows(context, diskIndex: index);
-                }).fold<List<DataRow>>([], (allRows, diskRows) {
-                  allRows.addAll(diskRows);
-                  return allRows;
-                }).toList(),
-              ),
-            ),
-          ),
-        );
-      }),
+      child: DataTable2(
+        dataRowHeight: kMinInteractiveDimension +
+            theme.visualDensity.baseSizeAdjustment.dy,
+        showCheckboxColumn: false,
+        headingTextStyle: theme.textTheme.subtitle2,
+        dataTextStyle: theme.textTheme.bodyText2,
+        columns: widget.columns
+            .map((column) => DataColumn2(
+                label: column.titleBuilder(context), size: column.size))
+            .toList(),
+        rows: List.generate(widget.storages.length, (index) {
+          return _buildDataRows(context, diskIndex: index);
+        }).fold<List<DataRow>>([], (allRows, diskRows) {
+          allRows.addAll(diskRows);
+          return allRows;
+        }).toList(),
+      ),
     );
   }
 }

@@ -170,12 +170,13 @@ class PartitionTable extends StatelessWidget {
     final model = Provider.of<AllocateDiskSpaceModel>(context);
     return StorageTable(
       columns: [
-        StorageDeviceColumn(),
-        StorageTypeColumn(),
-        StorageMountColumn(),
-        StorageSizeColumn(),
-        StorageSystemColumn(),
+        StorageDeviceColumn(size: ColumnSize.L),
+        StorageTypeColumn(size: ColumnSize.S),
+        StorageMountColumn(size: ColumnSize.M),
+        StorageSizeColumn(size: ColumnSize.S),
+        StorageSystemColumn(size: ColumnSize.M),
         StorageWipeColumn(
+          size: ColumnSize.S,
           onWipe: (disk, partition, wipe) {
             model.editPartition(disk, partition, wipe: wipe);
           },
@@ -186,6 +187,16 @@ class PartitionTable extends StatelessWidget {
       canSelect: model.canSelectStorage,
       isSelected: model.isStorageSelected,
       onSelected: model.selectStorage,
+      onDoubleTap: (disk, [object = -1]) {
+        model.selectStorage(disk, object);
+        if (model.canAddPartition) {
+          showCreatePartitionDialog(
+              context, model.selectedDisk!, model.selectedGap!);
+        } else if (model.canEditPartition) {
+          showEditPartitionDialog(context, model.selectedDisk!,
+              model.selectedPartition!, model.trailingGap);
+        }
+      },
     );
   }
 }

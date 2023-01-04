@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
@@ -468,10 +469,10 @@ Future<void> testAllocateDiskSpacePage(
   for (final disk in storage ?? []) {
     for (final partition in disk.partitions ?? const <Partition>[]) {
       // TODO: find the correct "free space" slot when there are multiple disks
-      await tester.tap(find.text(tester.lang.freeDiskSpace).last);
-      await tester.pump();
-
-      await tester.tap(find.byIcon(Icons.add));
+      final freeSpace = find.text(tester.lang.freeDiskSpace).last;
+      await tester.tap(freeSpace);
+      await tester.pump(kDoubleTapMinTime);
+      await tester.tap(freeSpace);
       await tester.pumpAndSettle();
 
       if (partition.size != null) {

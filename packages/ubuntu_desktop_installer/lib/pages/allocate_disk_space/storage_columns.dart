@@ -1,3 +1,4 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:yaru_icons/yaru_icons.dart';
@@ -6,6 +7,8 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import 'storage_types.dart';
 
+export 'package:data_table_2/data_table_2.dart' show ColumnSize;
+
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
 typedef GapBuilder = Widget Function(BuildContext context, Disk disk, Gap gap);
 typedef PartitionBuilder = Widget Function(
@@ -13,12 +16,14 @@ typedef PartitionBuilder = Widget Function(
 
 class StorageColumn {
   const StorageColumn({
+    required this.size,
     required this.titleBuilder,
     required this.diskBuilder,
     required this.gapBuilder,
     required this.partitionBuilder,
   });
 
+  final ColumnSize size;
   final WidgetBuilder titleBuilder;
   final DiskBuilder diskBuilder;
   final GapBuilder gapBuilder;
@@ -26,7 +31,7 @@ class StorageColumn {
 }
 
 class StorageDeviceColumn extends StorageColumn {
-  StorageDeviceColumn()
+  StorageDeviceColumn({required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
@@ -34,28 +39,46 @@ class StorageDeviceColumn extends StorageColumn {
           },
           diskBuilder: (context, disk) {
             return Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(YaruIcons.drive_harddisk_filled),
                 const SizedBox(width: 16),
-                Text(disk.path ?? disk.id),
+                Expanded(
+                  child: Text(
+                    disk.path ?? disk.id,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             );
           },
           gapBuilder: (context, disk, gap) {
             return Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(YaruIcons.drive_harddisk),
                 const SizedBox(width: 16),
-                Text(AppLocalizations.of(context).freeDiskSpace),
+                Expanded(
+                  child: Text(
+                    AppLocalizations.of(context).freeDiskSpace,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             );
           },
           partitionBuilder: (context, disk, partition) {
             return Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(YaruIcons.drive_harddisk),
                 const SizedBox(width: 16),
-                Text('${disk.path}${partition.number}'),
+                Expanded(
+                  child: Text(
+                    '${disk.path}${partition.number}',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             );
           },
@@ -63,11 +86,11 @@ class StorageDeviceColumn extends StorageColumn {
 }
 
 class StorageTypeColumn extends StorageColumn {
-  StorageTypeColumn()
+  StorageTypeColumn({required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
-            return Text(lang.diskHeadersType);
+            return Text(lang.diskHeadersType, overflow: TextOverflow.ellipsis);
           },
           diskBuilder: (context, disk) {
             return const SizedBox.shrink();
@@ -76,17 +99,23 @@ class StorageTypeColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(partition.format ?? '');
+            return Text(
+              partition.format ?? '',
+              overflow: TextOverflow.ellipsis,
+            );
           },
         );
 }
 
 class StorageMountColumn extends StorageColumn {
-  StorageMountColumn()
+  StorageMountColumn({required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
-            return Text(lang.diskHeadersMountPoint);
+            return Text(
+              lang.diskHeadersMountPoint,
+              overflow: TextOverflow.ellipsis,
+            );
           },
           diskBuilder: (context, disk) {
             return const SizedBox.shrink();
@@ -95,36 +124,42 @@ class StorageMountColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(partition.mount ?? '');
+            return Text(partition.mount ?? '', overflow: TextOverflow.ellipsis);
           },
         );
 }
 
 class StorageSizeColumn extends StorageColumn {
-  StorageSizeColumn()
+  StorageSizeColumn({required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
-            return Text(lang.diskHeadersSize);
+            return Text(lang.diskHeadersSize, overflow: TextOverflow.ellipsis);
           },
           diskBuilder: (context, disk) {
-            return Text(filesize(disk.size));
+            return Text(filesize(disk.size), overflow: TextOverflow.ellipsis);
           },
           gapBuilder: (context, disk, gap) {
-            return Text(filesize(gap.size));
+            return Text(filesize(gap.size), overflow: TextOverflow.ellipsis);
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(filesize(partition.size ?? 0));
+            return Text(
+              filesize(partition.size ?? 0),
+              overflow: TextOverflow.ellipsis,
+            );
           },
         );
 }
 
 class StorageSystemColumn extends StorageColumn {
-  StorageSystemColumn()
+  StorageSystemColumn({required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
-            return Text(lang.diskHeadersSystem);
+            return Text(
+              lang.diskHeadersSystem,
+              overflow: TextOverflow.ellipsis,
+            );
           },
           diskBuilder: (context, disk) {
             return const SizedBox.shrink();
@@ -133,17 +168,23 @@ class StorageSystemColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(partition.os?.long ?? '');
+            return Text(
+              partition.os?.long ?? '',
+              overflow: TextOverflow.ellipsis,
+            );
           },
         );
 }
 
 class StorageWipeColumn extends StorageColumn {
-  StorageWipeColumn({required this.onWipe})
+  StorageWipeColumn({required this.onWipe, required super.size})
       : super(
           titleBuilder: (context) {
             final lang = AppLocalizations.of(context);
-            return Text(lang.diskHeadersFormat);
+            return Text(
+              lang.diskHeadersFormat,
+              overflow: TextOverflow.ellipsis,
+            );
           },
           diskBuilder: (context, disk) {
             return const SizedBox.shrink();
