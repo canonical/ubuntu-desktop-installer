@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 class NetworkTile extends StatelessWidget {
   const NetworkTile(
@@ -12,10 +12,12 @@ class NetworkTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size =
+        kCheckradioActivableAreaPadding.inflateSize(kCheckradioTogglableSize);
     return Row(
       children: [
         SizedBox.fromSize(
-          size: kRadioSize,
+          size: size,
           child: Center(child: leading),
         ),
         const SizedBox(width: 8),
@@ -40,7 +42,7 @@ class NetworkTile extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         SizedBox.fromSize(
-          size: kRadioSize,
+          size: size,
           child: Center(child: trailing),
         ),
       ],

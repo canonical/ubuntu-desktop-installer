@@ -11,6 +11,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/app.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -226,7 +227,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           Expanded(
             child: YaruBorderContainer(height: height),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: kContentSpacing),
           Expanded(
             child: SvgPicture.asset(
               'assets/welcome/logo.svg',
