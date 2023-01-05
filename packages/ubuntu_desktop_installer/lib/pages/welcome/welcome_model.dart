@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
 
 import '../../l10n.dart';
 
@@ -54,6 +55,17 @@ class WelcomeModel extends SafeChangeNotifier {
 
   /// Returns the name of the language at the given [index].
   String language(int index) => _languageList[index].name;
+
+  /// Searches for a language matching the given [query].
+  ///
+  /// See also:
+  /// * [KeySearchX.keySearch]
+  int searchLanguage(String query) {
+    return _languageList
+        .map((l) => l.name)
+        .toList()
+        .keySearch(query, selectedLanguageIndex + 1);
+  }
 
   /// Selects the best match for the given [locale].
   ///

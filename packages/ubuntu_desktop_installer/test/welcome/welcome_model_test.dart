@@ -79,4 +79,36 @@ void main() {
     expect(model.selectedLanguageIndex, equals(1));
     expect(wasNotified, isTrue);
   });
+
+  test('search language', () async {
+    final model = WelcomeModel(MockSubiquityClient());
+    await model.loadLanguages();
+
+    final english = model.searchLanguage('eng');
+    expect(model.language(english), equals('English'));
+    model.selectedLanguageIndex = english;
+    expect(model.searchLanguage('eng'), english);
+
+    // next language with the same prefix
+    final spanish = model.searchLanguage('e');
+    expect(model.language(spanish), equals('Español'));
+
+    // case-insensitive
+    final french = model.searchLanguage('FRA');
+    expect(model.language(french), equals('Français'));
+    model.selectedLanguageIndex = french;
+
+    // wrap around
+    final danish = model.searchLanguage('d');
+    expect(model.language(danish), equals('Dansk'));
+    model.selectedLanguageIndex = danish;
+
+    // ignores diacritics
+    final icelandic = model.searchLanguage('is');
+    expect(model.language(icelandic), equals('Íslenska'));
+
+    // no match
+    expect(model.searchLanguage('foo'), isNegative);
+    expect(model.searchLanguage('none'), isNegative);
+  });
 }
