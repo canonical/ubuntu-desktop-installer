@@ -78,8 +78,17 @@ class _ThemeOptionCard extends StatelessWidget {
           width: width,
           child: YaruSelectableContainer(
             selected: selected,
+            padding: EdgeInsets.zero,
             onTap: onTap,
-            child: Image.asset(assetName),
+            child: IntrinsicHeight(
+              child: YaruBanner(
+                padding: EdgeInsets.zero,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(assetName),
+                ),
+              ),
+            ),
           ),
         ),
         Padding(
