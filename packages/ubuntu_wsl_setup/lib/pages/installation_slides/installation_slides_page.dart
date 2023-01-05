@@ -24,6 +24,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../services/journal.dart';
@@ -146,12 +147,9 @@ class _SlidesPage extends StatelessWidget {
                             : null),
                   ),
                   const Spacer(),
-                  IconButton(
+                  YaruIconButton(
                     icon: const Icon(Icons.terminal),
-                    color: model.isLogVisible
-                        ? Theme.of(context).primaryColor
-                        : null,
-                    splashRadius: 24,
+                    isSelected: model.isLogVisible,
                     onPressed: model.toggleLogVisibility,
                   ),
                 ],
