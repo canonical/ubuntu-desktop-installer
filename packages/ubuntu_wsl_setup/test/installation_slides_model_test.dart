@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_model.dart';
 
 import 'installation_slides_model_test.mocks.dart';
@@ -9,7 +10,8 @@ import 'installation_slides_model_test.mocks.dart';
 @GenerateMocks([SubiquityStatusMonitor])
 void main() {
   const stdinMsg = ['Hello', 'world', 'this is a test'];
-  test('non-null status on init prevents listening', () async {
+
+  test('all non-null prevents listening', () async {
     // This behavior enables preventing the slide show from being displayed
     // at all if the server is up and running during model init.
     var mustCall = false;
@@ -20,10 +22,30 @@ void main() {
     );
     final model = InstallationSlidesModel(journal: journal, monitor: monitor);
     addTearDown(model.dispose);
-    model.init(onServerUp: () => mustCall = true);
+    model.init(
+      current: const AppModel(variant: Variant.WSL_SETUP),
+      onServerUp: () => mustCall = true,
+    );
     verify(monitor.status);
     verifyNever(monitor.onStatusChanged);
     expect(mustCall, isTrue);
+  });
+  test('never calls back without variant', () async {
+    // that should be associated with some error somewhere else, like in the
+    // launcher, so we can detect it instead of displaying slides forever.
+    var neverCalls = false;
+    final journal = Stream.fromIterable(stdinMsg);
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.status).thenAnswer((_) => null);
+    when(monitor.onStatusChanged)
+        .thenAnswer((_) => Stream.fromIterable([null]));
+    final model = InstallationSlidesModel(journal: journal, monitor: monitor);
+    addTearDown(model.dispose);
+    model.appModel = const AppModel();
+    model.init(onServerUp: () => neverCalls = true);
+    verify(monitor.status);
+    verify(monitor.onStatusChanged);
+    expect(neverCalls, isFalse);
   });
   test('never calls back if server never ready', () async {
     // that should be associated with some error somewhere else, like in the
@@ -36,6 +58,7 @@ void main() {
         .thenAnswer((_) => Stream.fromIterable([null]));
     final model = InstallationSlidesModel(journal: journal, monitor: monitor);
     addTearDown(model.dispose);
+    model.appModel = const AppModel(variant: Variant.WSL_SETUP);
     model.init(onServerUp: () => neverCalls = true);
     verify(monitor.status);
     verify(monitor.onStatusChanged);
@@ -93,6 +116,7 @@ void main() {
     );
     final model = InstallationSlidesModel(journal: journal, monitor: monitor);
     addTearDown(model.dispose);
+    model.appModel = const AppModel(variant: Variant.WSL_SETUP);
     model.init(onServerUp: () => mustCallOnce++);
     await expectLater(monitor.onStatusChanged, emitsThrough(status));
     verify(monitor.status);
@@ -107,6 +131,7 @@ void main() {
         .thenAnswer((_) => Stream.fromIterable([null]));
     final model = InstallationSlidesModel(journal: journal, monitor: monitor);
     addTearDown(model.dispose);
+    model.appModel = const AppModel(variant: Variant.WSL_SETUP);
     model.init(onServerUp: () => neverCalls = true);
     await expectLater(journal, emitsThrough(stdinMsg.last));
     await expectLater(model.isRegistering, isTrue);

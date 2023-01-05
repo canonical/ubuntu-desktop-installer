@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -13,6 +14,7 @@ import 'app.dart';
 import 'app_model.dart';
 import 'args_common.dart';
 import 'installing_state.dart';
+import 'is_locale_set.dart';
 import 'routes.dart';
 import 'services/journal.dart';
 import 'services/named_event.dart';
@@ -88,11 +90,9 @@ Future<void> main(List<String> args) async {
   );
 
   await runWizardApp(
-    ValueListenableBuilder<AppModel>(
-      valueListenable: appModel,
-      builder: (context, model, child) {
-        return UbuntuWslSetupApp(model: model);
-      },
+    ValueListenableProvider<AppModel>.value(
+      value: appModel,
+      child: const UbuntuWslSetupApp(),
     ),
     options: options,
     subiquityClient: subiquityClient,
@@ -104,11 +104,16 @@ Future<void> main(List<String> args) async {
     },
   );
   await subiquityClient.variant().then((value) {
-    appModel.value = appModel.value.copyWith(variant: value);
     if (value == Variant.WSL_SETUP) {
+      isLocaleSet(subiquityClient).then(
+        (isSet) => appModel.value =
+            appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
+      );
       subiquityMonitor.onStatusChanged.listen((status) {
         setWindowClosable(status?.state.isInstalling != true);
       });
+    } else {
+      appModel.value = appModel.value.copyWith(variant: value);
     }
   });
 }

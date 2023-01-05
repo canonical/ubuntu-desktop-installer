@@ -16,7 +16,7 @@ void main() {
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    await app.main(<String>[]);
+    await app.main(<String>['--initial-route', Routes.selectLanguage]);
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');

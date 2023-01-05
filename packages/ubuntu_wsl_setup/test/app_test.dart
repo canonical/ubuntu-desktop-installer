@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -19,9 +20,9 @@ void main() {
     registerService(LanguageFallbackService.linux);
 
     await tester.pumpWidget(
-      const UbuntuWslSetupApp(
-        model: AppModel(variant: Variant.WSL_SETUP),
-      ),
+      Provider<AppModel>(
+          create: (_) => const AppModel(variant: Variant.WSL_SETUP),
+          child: const UbuntuWslSetupApp()),
     );
 
     expect(find.byType(Wizard), findsOneWidget);

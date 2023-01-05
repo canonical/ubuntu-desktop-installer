@@ -4,13 +4,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
-import 'dart:ui' as _i5;
+import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i2;
+import 'package:ubuntu_wsl_setup/app_model.dart' as _i5;
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_model.dart'
     as _i3;
-import 'package:ubuntu_wsl_setup/services/journal.dart' as _i6;
+import 'package:ubuntu_wsl_setup/services/journal.dart' as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -62,6 +63,19 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValue: _i4.Stream<String>.empty(),
       ) as _i4.Stream<String>);
   @override
+  set appModel(_i5.AppModel? details) => super.noSuchMethod(
+        Invocation.setter(
+          #appModel,
+          details,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  bool get skipLanguageSelection => (super.noSuchMethod(
+        Invocation.getter(#skipLanguageSelection),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get hasError => (super.noSuchMethod(
         Invocation.getter(#hasError),
         returnValue: false,
@@ -92,11 +106,18 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  void init({required void Function()? onServerUp}) => super.noSuchMethod(
+  void init({
+    _i5.AppModel? current,
+    required void Function()? onServerUp,
+  }) =>
+      super.noSuchMethod(
         Invocation.method(
           #init,
           [],
-          {#onServerUp: onServerUp},
+          {
+            #current: current,
+            #onServerUp: onServerUp,
+          },
         ),
         returnValueForMissingStub: null,
       );
@@ -117,7 +138,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -125,7 +146,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -145,7 +166,7 @@ class MockInstallationSlidesModel extends _i1.Mock
 /// A class which mocks [JournalService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockJournalService extends _i1.Mock implements _i6.JournalService {
+class MockJournalService extends _i1.Mock implements _i7.JournalService {
   MockJournalService() {
     _i1.throwOnMissingStub(this);
   }

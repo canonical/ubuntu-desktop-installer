@@ -15,9 +15,6 @@ void main() {
     await testInstallationSlidesPage(tester);
     await tester.pumpAndSettle();
 
-    await testSelectYourLanguagePage(tester, language: 'Français');
-    await tester.pumpAndSettle();
-
     await testProfileSetupPage(
       tester,
       password: 'password123',
