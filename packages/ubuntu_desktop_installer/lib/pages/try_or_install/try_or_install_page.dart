@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -46,7 +47,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           //     onSelected: () => model.selectOption(Option.repairUbuntu),
           //   ),
           // ),
-          // const SizedBox(width: 20),
+          // const SizedBox(width: kContentSpacing),
           const Spacer(),
           Expanded(
             flex: 2,
@@ -58,7 +59,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
               onSelected: () => model.selectOption(Option.tryUbuntu),
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: kContentSpacing * 2),
           Expanded(
             flex: 2,
             child: OptionCard(

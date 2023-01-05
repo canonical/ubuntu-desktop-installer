@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -88,7 +89,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-            const SizedBox(width: 20),
+            const SizedBox(width: kContentSpacing),
             Expanded(
               child: SvgPicture.asset(
                 'assets/welcome/logo.svg',

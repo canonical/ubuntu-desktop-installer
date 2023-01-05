@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -55,7 +56,8 @@ class InstallationCompletePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: kContentSpacing),
                   child: ElevatedButton(
                     onPressed: () async {
                       final model = context.read<InstallationCompleteModel>();
