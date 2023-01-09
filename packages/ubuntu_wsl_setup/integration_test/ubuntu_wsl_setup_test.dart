@@ -28,9 +28,7 @@ void main() {
       password: 'password123',
       confirmedPassword: 'password123',
     );
-    await tester.pumpAndSettle();
 
-    await testAdvancedSetupPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
     await verifyStateFile('basic-setup/WSLLocale');
@@ -38,15 +36,7 @@ void main() {
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    await app.main(<String>['--initial-route', Routes.profileSetup]);
-    await tester.pumpAndSettle();
-
-    await testProfileSetupPage(
-      tester,
-      profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
-      password: 'password123',
-      confirmedPassword: 'password123',
-    );
+    await app.main(<String>['--reconfigure']);
     await tester.pumpAndSettle();
 
     // NOTE: opposites of the default values to force writing the config
@@ -59,6 +49,9 @@ void main() {
         networkGenerateresolvconf: false,
       ),
     );
+
+    await tester.pumpAndSettle();
+    await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
     await verifyConfigFile('advanced-setup/wsl.conf');
