@@ -5,7 +5,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu 桌面版安装器';
+  String get appTitle => 'Ubuntu 桌面安装程序';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -22,7 +22,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get okButtonText => '好';
 
   @override
-  String get noButtonText => '不';
+  String get noButtonText => '否';
 
   @override
   String get restartButtonText => '重启';
@@ -43,22 +43,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcomeHeader => '选择您的语言：';
 
   @override
-  String get tryOrInstallPageTitle => '尝试或安装';
+  String get tryOrInstallPageTitle => '试用或安装';
 
   @override
   String get repairInstallation => '修复安装';
 
   @override
-  String get repairInstallationDescription => '修复程序将在不接触文档或设置的情况下重新安装所有已安装的软件。';
+  String get repairInstallationDescription => '修复选项将重新安装所有已安装的软件，但不对文件或设置进行改动。';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return '试试$RELEASE';
+    return '试用 $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return '您可以在不对电脑做任何改动的情况下试试$RELEASE。';
+    return '您可以在不对电脑做任何改动的情况下试用 $RELEASE。';
   }
 
   @override
@@ -77,7 +77,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => '关闭RST';
+  String get turnOffRST => '关闭 RST';
 
   @override
   String get turnOffRSTDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，你需要在Windows中关闭RST。';
@@ -94,7 +94,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chooseYourKeyboardLayout => '选择你的键盘布局：';
 
   @override
-  String get typeToTest => '这里输入测试键盘';
+  String get typeToTest => '请在此测试您的键盘';
 
   @override
   String get detectLayout => '检测键盘布局';
@@ -106,13 +106,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get isKeyPresent => '你的键盘上是否有以下键？';
 
   @override
-  String get configureSecureBootTitle => '配置安全引导';
+  String get configureSecureBootTitle => '配置安全启动';
 
   @override
   String get configureSecureBootDescription => '您已选择安装第三方驱动。这需要关闭安全引导。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。';
 
   @override
-  String get configureSecureBootOption => '配置安全引导';
+  String get configureSecureBootOption => '配置安全启动';
 
   @override
   String get chooseSecurityKey => '选择一个安全密钥';
@@ -157,25 +157,25 @@ class AppLocalizationsZh extends AppLocalizations {
   String get enableWired => '启用有线';
 
   @override
-  String get selectWifiNetwork => '链接WiFi';
+  String get selectWifiNetwork => '连接到 WiFi 网络';
 
   @override
-  String get hiddenWifiNetwork => '连接到隐藏的Wi-Fi网络';
+  String get hiddenWifiNetwork => '连接到隐藏的 Wi-Fi 网络';
 
   @override
   String get hiddenWifiNetworkNameLabel => '网络名称';
 
   @override
-  String get hiddenWifiNetworkNameRequired => '需要一个网络名城';
+  String get hiddenWifiNetworkNameRequired => '需要网络名称';
 
   @override
-  String get noInternet => '我不想现在联网';
+  String get noInternet => '我现在不想连接到互联网';
 
   @override
   String get wirelessNetworkingDisabled => '无线网络已禁用';
 
   @override
-  String get noWifiDevicesDetected => '找不到WiFi';
+  String get noWifiDevicesDetected => '找不到 WiFi 设备';
 
   @override
   String get wifiMustBeEnabled => '要在此电脑上使用Wi-Fi，必须启用无线网络';
@@ -187,7 +187,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get connectButtonText => '连接';
 
   @override
-  String get updatesOtherSoftwarePageTitle => '更新其他软件';
+  String get updatesOtherSoftwarePageTitle => '更新和其他软件';
 
   @override
   String get updatesOtherSoftwarePageDescription => '您想先安装哪些应用？';
@@ -208,13 +208,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get otherOptions => '其他选择';
 
   @override
-  String get installThirdPartyTitle => '为图形和Wi-Fi硬件以及其他媒体格式安装第三方软件';
+  String get installThirdPartyTitle => '为图形和 Wi-Fi 硬件以及其他媒体格式安装第三方软件';
 
   @override
   String get installThirdPartySubtitle => '本软件受其文档中包含的许可条款的约束中有些是专有的。';
 
   @override
-  String get installDriversTitle => '为图形和Wi-Fi硬件安装第三方软件';
+  String get installDriversTitle => '为图形和 Wi-Fi 硬件安装第三方软件';
 
   @override
   String get installDriversSubtitle => '这些驱动受它们文档中的许可条款约束。它们是专有的。';
@@ -272,7 +272,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationTypeMultiOSDetected => '这台计算机已经安装了多个操作系统。您准备怎么做？';
 
   @override
-  String get installationTypeNoOSDetected => '这台电脑目前没有检测到操作系统。你想做什么？';
+  String get installationTypeNoOSDetected => '这台电脑目前没有检测到操作系统。您准备怎么做？';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -294,11 +294,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationTypeNone => '空';
 
   @override
-  String get installationTypeNoneSelected => '未选择任何选项';
+  String get installationTypeNoneSelected => '未选择任';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return '在新的$RELEASE安装中使用LVM';
+    return '在新的 $RELEASE 安装中使用 LVM';
   }
 
   @override
@@ -323,12 +323,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationTypeReinstall(Object os) {
-    return '删除$os并重新安装';
+    return '擦除 $os 并重新安装';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">警告：</font>这将删除你的$os中的所有程序、文档、照片、音乐和任何其他文件。';
+    return '<font color=\"$color\">警告：</font>这将删除您的 $os 中的所有程序、文档、照片、音乐和任何其他文件。';
   }
 
   @override
@@ -364,14 +364,14 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return '擦除磁盘并安装$DISTRO';
+    return '擦除磁盘并安装 $DISTRO';
   }
 
   @override
   String get selectGuidedStorageDropdownLabel => '选择驱动器：';
 
   @override
-  String get selectGuidedStorageInfoLabel => '整个磁盘将被使用：';
+  String get selectGuidedStorageInfoLabel => '整块磁盘将被使用：';
 
   @override
   String get selectGuidedStorageInstallNow => '立即安装';
@@ -381,7 +381,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '有 $num 个小分区被隐藏 , 使用 <a href=\"$url\">高级分区工具</a> 获得更多控制';
+    return '有 $num 个小分区被隐藏 , 请使用 <a href=\"$url\">高级分区工具</a> 获得更多功能';
   }
 
   @override
@@ -400,7 +400,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installAlongsideSize => '大小：';
 
   @override
-  String get installAlongsideAvailable => '可用的：';
+  String get installAlongsideAvailable => '可用：';
 
   @override
   String get allocateDiskSpace => '分配磁盘空间';
@@ -409,7 +409,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get startInstallingButtonText => '开始安装';
 
   @override
-  String get diskHeadersDevice => '配备';
+  String get diskHeadersDevice => '设备';
 
   @override
   String get diskHeadersType => '类型';
@@ -433,7 +433,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get freeDiskSpace => '剩余空间';
 
   @override
-  String get newPartitionTable => '新分区表';
+  String get newPartitionTable => '新建分区表';
 
   @override
   String get newPartitionTableConfirmationTitle => '是否在此设备上创建新的空白分区表？';
@@ -472,7 +472,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionTypePrimary => '主要的';
 
   @override
-  String get partitionTypeLogical => '必然的';
+  String get partitionTypeLogical => '逻辑的';
 
   @override
   String get partitionLocationLabel => '新分区的位置：';
@@ -484,7 +484,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionLocationEnd => '这个空间的结束';
 
   @override
-  String get partitionFormatLabel => '用作：';
+  String get partitionFormatLabel => '用于：';
 
   @override
   String get partitionFormatExt4 => 'Ext4日志文件系统';
@@ -496,43 +496,43 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatExt2 => 'Ext2文件系统';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs日志文件系统';
+  String get partitionFormatBtrfs => 'btrfs 日志文件系统';
 
   @override
-  String get partitionFormatJfs => 'JFS日志文件系统';
+  String get partitionFormatJfs => 'JFS 日志文件系统';
 
   @override
-  String get partitionFormatXfs => 'XFS日志文件系统';
+  String get partitionFormatXfs => 'XFS 日志文件系统';
 
   @override
-  String get partitionFormatFat => 'FAT文件系统';
+  String get partitionFormatFat => 'FAT 文件系统';
 
   @override
-  String get partitionFormatFat12 => 'FAT12文件系统';
+  String get partitionFormatFat12 => 'FAT12 文件系统';
 
   @override
-  String get partitionFormatFat16 => 'FAT16文件系统';
+  String get partitionFormatFat16 => 'FAT16 文件系统';
 
   @override
-  String get partitionFormatFat32 => 'FAT32文件系统';
+  String get partitionFormatFat32 => 'FAT32 文件系统';
 
   @override
-  String get partitionFormatSwap => '交换分区';
+  String get partitionFormatSwap => '交换空间';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660文件系统';
+  String get partitionFormatIso9660 => 'ISO 9660 文件系统';
 
   @override
-  String get partitionFormatVfat => 'VFAT文件系统';
+  String get partitionFormatVfat => 'VFAT 文件系统';
 
   @override
-  String get partitionFormatNtfs => 'NTFS文件系统';
+  String get partitionFormatNtfs => 'NTFS 文件系统';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS文件系统';
+  String get partitionFormatReiserFS => 'ReiserFS 文件系统';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS根文件系统';
+  String get partitionFormatZfsroot => 'ZFS 根文件系统';
 
   @override
   String get partitionErase => '格式化分区';
@@ -541,7 +541,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionMountPointLabel => '挂载点：';
 
   @override
-  String get whoAreYouPageTitle => '你是谁？';
+  String get whoAreYouPageTitle => '您是谁？';
 
   @override
   String get whoAreYouPageAutoLogin => '自动登录';
@@ -553,7 +553,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageRealNameLabel => '您的姓名';
 
   @override
-  String get whoAreYouPageRealNameRequired => '需要一个名字';
+  String get whoAreYouPageRealNameRequired => '需要名字';
 
   @override
   String get whoAreYouPageComputerNameLabel => '您的电脑名称';
@@ -562,7 +562,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageComputerNameInfo => '这个名称用于与其他电脑进行通信时使用。';
 
   @override
-  String get whoAreYouPageComputerNameRequired => '需要一个电脑名称';
+  String get whoAreYouPageComputerNameRequired => '需要计算机名称';
 
   @override
   String get whoAreYouPageInvalidComputerName => '电脑名无效';
@@ -586,7 +586,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageUsernameTooLong => '名字过长.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => '这个名称包含非法字符。';
+  String get whoAreYouPageUsernameInvalidChars => '这个名称包含无效字符。';
 
   @override
   String get whoAreYouPagePasswordLabel => '选择一个密码';
@@ -649,13 +649,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '选择您的形象';
+  String get chooseYourLookPageTitle => '选择您的外观';
 
   @override
-  String get chooseYourLookPageHeader => '您可以稍后在“外观设置”中更改此设置。';
+  String get chooseYourLookPageHeader => '稍后您可以在“外观设置”中进行更改。';
 
   @override
-  String get chooseYourLookPageDarkSetting => '暗黑';
+  String get chooseYourLookPageDarkSetting => '深色';
 
   @override
   String get chooseYourLookPageLightSetting => '浅色';
@@ -665,22 +665,22 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system**已安装完成可以开始使用。';
+    return '**$system** 安装完毕并且可以使用。';
   }
 
   @override
   String restartInto(Object system) {
-    return '重新进入$system';
+    return '重启进入 $system';
   }
 
   @override
-  String get shutdown => '关闭';
+  String get shutdown => '关机';
 
   @override
-  String get turnOffBitlockerTitle => '关闭BitLocker';
+  String get turnOffBitlockerTitle => '关闭 BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => '这台电脑使用了Windows BitLocker加密。\n在安装Ubuntu之前，你需要关闭Windows中的BitLocker。';
+  String get turnOffBitlockerDescription => '这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，你需要关闭 Windows 的 BitLocker 功能。';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -688,7 +688,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => '重启进入Windows';
+  String get restartIntoWindows => '重启进入 Windows';
 
   @override
   String get whereAreYouPageTitle => '您在哪里？';
@@ -701,12 +701,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return '欢迎来到$RELEASE';
+    return '欢迎使用 $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return '最新版本的$RELEASE速度快，功能齐全，使计算变得比以往任何时候都简单。这里有一些很酷的新事物需要注意……';
+    return '最新版本的 $RELEASE 不仅快，功能也多，您从此使用电脑更加方便了！我们现在介绍一些比较酷炫的东西 .....';
   }
 
   @override
@@ -754,7 +754,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE 包括了 Firefox —在世界上有数百万人使用的网络浏览器，并且，为了更快地访问，一些您经常使用的网站（像是 Facebook 或者 Gmail）可以固定到您的桌面上，就像是您本机上的应用程序。';
+    return '$RELEASE 包括了 Firefox — 在世界上有数百万人使用的网络浏览器，并且，为了更快地访问，一些您经常使用的网站（像是 Facebook 或者 Gmail）可以固定到您的桌面上，就像是您本机上的应用程序。';
   }
 
   @override
@@ -764,7 +764,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get webSlideThunderbird => 'Thunderbird';
 
   @override
-  String get webSlideChromium => 'Chromium浏览器';
+  String get webSlideChromium => 'Chromium 浏览器';
 
   @override
   String get officeSlideTitle => '您在办公中所需的一切';
@@ -790,7 +790,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => '个性化选项';
+  String get accessSlideCustomizationOptions => '个性化';
 
   @override
   String get accessSlideAppearance => '外观';
@@ -810,7 +810,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>你可以问问题并搜索令人印象深刻的已回答问题。你的<a href=\"https://loco.ubuntu.com/teams\">社区团队</a>可能会为你的语言提供支持.';
+  String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>网站，您可以提问并已经答复的精选问题。您的<a href=\"https://loco.ubuntu.com/teams\">本地社区团队</a>可能会为您提供语言支持。';
 
   @override
   String get supportSlideResources => '要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.';
@@ -825,13 +825,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get supportedSoftware => '支持软件';
 
   @override
-  String get copyingFiles => '复制文件……';
+  String get copyingFiles => '正在复制文件……';
 
   @override
   String get installingSystem => '正在安装系统……';
 
   @override
-  String get configuringSystem => '正在配置系统……';
+  String get configuringSystem => '正在设置系统……';
 
   @override
   String get installationFailed => '安装失败';
