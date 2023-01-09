@@ -24,9 +24,6 @@ void main() {
       password: 'password123',
       confirmedPassword: 'password123',
     );
-    await tester.pumpAndSettle();
-
-    await testAdvancedSetupPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
     await tester.pumpAndSettle();
   });
