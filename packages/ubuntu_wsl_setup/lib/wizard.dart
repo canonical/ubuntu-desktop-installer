@@ -31,12 +31,8 @@ class UbuntuWslSetupWizard extends StatelessWidget {
         ),
         Routes.profileSetup: WizardRoute(
           builder: ProfileSetupPage.create,
-          onNext: (settings) {
-            if ((settings.arguments as bool?) == true) {
-              return Routes.advancedSetup;
-            }
-            return Routes.applyingChanges;
-          },
+          // Unconditionally skip the AdvancedSetupPage due MS feedback.
+          onNext: (settings) => Routes.applyingChanges,
         ),
         Routes.advancedSetup: const WizardRoute(
           builder: AdvancedSetupPage.create,
