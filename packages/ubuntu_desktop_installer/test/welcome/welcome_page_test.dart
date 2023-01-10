@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -11,6 +12,7 @@ import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'welcome_page_test.mocks.dart';
@@ -117,6 +119,42 @@ void main() {
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
     expect(settings.locale.languageCode, 'fr');
+  });
+
+  testWidgets('key search', (tester) async {
+    await setUpApp(tester);
+
+    final languageList = find.byType(ListView);
+    expect(languageList, findsOneWidget);
+
+    final keySearch = find.byType(KeySearch);
+    expect(keySearch, findsOneWidget);
+
+    final focusNode = tester.widget<KeySearch>(keySearch).focusNode;
+    expect(focusNode, isNotNull);
+    expect(focusNode!.hasFocus, isTrue);
+
+    final settings = Settings.of(tester.element(languageList), listen: false);
+
+    // french
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyF);
+    await tester.pumpAndSettle(kKeySearchInterval);
+    await tester.pumpAndSettle();
+    expect(settings.locale.languageCode, 'fr');
+
+    // danish
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyD);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyA);
+    await tester.pumpAndSettle(kKeySearchInterval);
+    await tester.pumpAndSettle();
+    expect(settings.locale.languageCode, 'da');
+
+    // swedish
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyS);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyV);
+    await tester.pumpAndSettle(kKeySearchInterval);
+    await tester.pumpAndSettle();
+    expect(settings.locale.languageCode, 'sv');
   });
 
   testWidgets('should continue to next page', (tester) async {
