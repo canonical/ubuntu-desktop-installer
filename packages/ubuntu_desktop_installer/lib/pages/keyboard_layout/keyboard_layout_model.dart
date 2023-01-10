@@ -139,4 +139,11 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     log.info('Saved $layout ($variant) keyboard layout');
     return _client.setKeyboard(keyboard);
   }
+
+  @override
+  void dispose() {
+    _onLayoutSelected.close();
+    _onVariantSelected.close();
+    super.dispose();
+  }
 }

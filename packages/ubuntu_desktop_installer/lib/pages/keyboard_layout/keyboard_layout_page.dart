@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -33,6 +35,9 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   final _layoutListScrollController = AutoScrollController();
   final _keyboardVariantListScrollController = AutoScrollController();
 
+  StreamSubscription<int>? _layoutChanged;
+  StreamSubscription<int>? _variantChanged;
+
   @override
   void initState() {
     super.initState();
@@ -44,8 +49,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
       model.updateInputSource();
     });
 
-    model.onLayoutSelected.listen(_scrollToLayout);
-    model.onVariantSelected.listen(_scrollToVariant);
+    _layoutChanged = model.onLayoutSelected.listen(_scrollToLayout);
+    _variantChanged = model.onVariantSelected.listen(_scrollToVariant);
   }
 
   void _scrollToLayout(int index) {
@@ -68,9 +73,11 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
   @override
   void dispose() {
-    super.dispose();
     _layoutListScrollController.dispose();
     _keyboardVariantListScrollController.dispose();
+    _layoutChanged?.cancel();
+    _variantChanged?.cancel();
+    super.dispose();
   }
 
   @override
