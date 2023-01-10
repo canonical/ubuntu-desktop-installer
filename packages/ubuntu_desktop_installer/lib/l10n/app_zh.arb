@@ -93,7 +93,7 @@
       "os": {}
     }
   },
-  "installationTypeAlongside": "在{os}中安装{product}",
+  "installationTypeAlongside": "在 {os} 中安装 {product}",
   "@installationTypeAlongside": {
     "type": "text",
     "placeholders": {
@@ -302,7 +302,7 @@
   "@installationTypeEncryptInfo": {},
   "installationTypeZFS": "实验性功能：擦除磁盘并使用ZFS",
   "@installationTypeZFS": {},
-  "installationTypeZFSSelected": "已选择配置 ZFS",
+  "installationTypeZFSSelected": "已选择 ZFS",
   "@installationTypeZFSSelected": {},
   "installationTypeManual": "其他选项",
   "@installationTypeManual": {},
@@ -355,7 +355,7 @@
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "登录时需要密码",
   "@whoAreYouPageRequirePassword": {},
-  "whoAreYouPageRealNameLabel": "您的全名",
+  "whoAreYouPageRealNameLabel": "您的姓名",
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "您的电脑主机名",
   "@whoAreYouPageComputerNameLabel": {},
@@ -612,7 +612,7 @@
   "@availableSoftware": {},
   "supportSlideResources": "要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.",
   "@supportSlideResources": {},
-  "accessSlideCustomizationOptions": "个性化",
+  "accessSlideCustomizationOptions": "个性化选项",
   "@accessSlideCustomizationOptions": {},
   "installationTypeAlongsideMulti": "安装 {product} 并与它们共存",
   "@installationTypeAlongsideMulti": {
