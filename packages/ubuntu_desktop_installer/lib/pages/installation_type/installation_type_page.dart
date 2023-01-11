@@ -83,8 +83,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.installationTypeTitle),
       ),
       header: Text(_formatHeader(context, model.existingOS ?? [])),

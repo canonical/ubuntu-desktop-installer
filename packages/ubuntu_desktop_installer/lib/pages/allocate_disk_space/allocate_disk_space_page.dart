@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -69,8 +70,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.allocateDiskSpace),
       ),
       content: Column(

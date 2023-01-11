@@ -21,8 +21,7 @@ class ChooseYourLookPage extends StatelessWidget {
         WizardAction.back(context),
         WizardAction.next(context),
       ],
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.chooseYourLookPageTitle),
       ),
       content: Center(

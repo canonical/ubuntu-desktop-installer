@@ -51,8 +51,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
 
     return WizardPage(
       contentPadding: EdgeInsets.zero,
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.whoAreYouPageTitle),
       ),
       content: LayoutBuilder(builder: (context, constraints) {

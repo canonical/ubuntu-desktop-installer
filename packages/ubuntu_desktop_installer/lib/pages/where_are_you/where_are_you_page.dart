@@ -5,6 +5,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -69,8 +70,7 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.whereAreYouPageTitle),
       ),
       headerPadding: EdgeInsets.zero,

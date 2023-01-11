@@ -52,8 +52,7 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.chooseSecurityKeyTitle),
       ),
       header: FractionallySizedBox(

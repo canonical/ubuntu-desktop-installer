@@ -75,8 +75,7 @@ class _WelcomePageState extends State<WelcomePage> {
     final lang = AppLocalizations.of(context);
     final height = MediaQuery.of(context).size.height;
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.welcome),
       ),
       header: Text(lang.welcomeHeader),
