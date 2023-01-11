@@ -24,6 +24,7 @@ dependencies:
   flutter_spinbox: ^0.12.0
   flutter_svg: ^1.1.0
   form_field_validator: ^1.1.0
+  freezed_annotation: ^2.2.0
   gsettings: ^0.2.5
   handy_window: ^0.3.0
   intl: ^0.17.0
@@ -65,6 +66,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  freezed: ^2.2.1
   integration_test:
     sdk: flutter
   mockito: 5.3.2
@@ -82,6 +84,7 @@ flutter:
     - assets/installation_slides/
     - assets/installation_slides/icons/
     - assets/installation_slides/screenshots/
+    - assets/refresh/
     - assets/select_guided_storage/
     - assets/try_or_install/
     - assets/turn_off_bitlocker/

@@ -284,6 +284,12 @@ abstract class AppLocalizations {
   /// **'Revert'**
   String get revertButtonText;
 
+  /// No description provided for @skipButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skipButtonText;
+
   /// No description provided for @yesButtonText.
   ///
   /// In en, this message translates to:
@@ -1807,6 +1813,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The biggest disk on this computer is only {SIZE}.'**
   String notEnoughDiskSpaceBiggestDisk(Object SIZE);
+
+  /// No description provided for @refreshTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update installer'**
+  String get refreshTitle;
+
+  /// No description provided for @refreshCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'The current {snap} version is {version}.'**
+  String refreshCurrent(Object snap, Object version);
+
+  /// No description provided for @refreshInstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Update to version {version}'**
+  String refreshInstall(Object version);
+
+  /// No description provided for @refreshUpToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'The current version {version} is up-to-date.'**
+  String refreshUpToDate(Object version);
+
+  /// No description provided for @refreshUpdating.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating {snap}...'**
+  String refreshUpdating(Object snap);
+
+  /// No description provided for @refreshRestart.
+  ///
+  /// In en, this message translates to:
+  /// **'Please restart the installer.'**
+  String get refreshRestart;
+
+  /// No description provided for @snapPrerequisites.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensuring {snap} prerequisites...'**
+  String snapPrerequisites(Object snap);
+
+  /// No description provided for @snapRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refreshing {snap}...'**
+  String snapRefresh(Object snap);
+
+  /// No description provided for @snapCheckRerefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking {snap} re-refresh...'**
+  String snapCheckRerefresh(Object snap);
+
+  /// No description provided for @snapPrepare.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing {snap}...'**
+  String snapPrepare(Object snap);
+
+  /// No description provided for @snapDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading {snap}...'**
+  String snapDownload(Object snap);
+
+  /// No description provided for @snapValidate.
+  ///
+  /// In en, this message translates to:
+  /// **'Validating {snap}...'**
+  String snapValidate(Object snap);
+
+  /// No description provided for @snapMount.
+  ///
+  /// In en, this message translates to:
+  /// **'Mounting {snap}...'**
+  String snapMount(Object snap);
+
+  /// No description provided for @snapStopServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopping {snap} services...'**
+  String snapStopServices(Object snap);
+
+  /// No description provided for @snapRemoveAliases.
+  ///
+  /// In en, this message translates to:
+  /// **'Removing {snap} aliases...'**
+  String snapRemoveAliases(Object snap);
+
+  /// No description provided for @snapUnlink.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlinking {snap}...'**
+  String snapUnlink(Object snap);
+
+  /// No description provided for @snapUpdateAssets.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating {snap} assets...'**
+  String snapUpdateAssets(Object snap);
+
+  /// No description provided for @snapUpdateKernelCommandLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating {snap} kernel command line...'**
+  String snapUpdateKernelCommandLine(Object snap);
+
+  /// No description provided for @snapCopyData.
+  ///
+  /// In en, this message translates to:
+  /// **'Copying {snap} data...'**
+  String snapCopyData(Object snap);
+
+  /// No description provided for @snapSetupProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting up {snap} security profiles...'**
+  String snapSetupProfiles(Object snap);
+
+  /// No description provided for @snapLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Linking {snap}...'**
+  String snapLink(Object snap);
+
+  /// No description provided for @snapAutoConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting {snap} plugs and slots...'**
+  String snapAutoConnect(Object snap);
+
+  /// No description provided for @snapSetAutoAliases.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting automatic {snap} aliases...'**
+  String snapSetAutoAliases(Object snap);
+
+  /// No description provided for @snapSetupAliases.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting up {snap} aliases...'**
+  String snapSetupAliases(Object snap);
+
+  /// No description provided for @snapStartServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting {snap} services...'**
+  String snapStartServices(Object snap);
+
+  /// No description provided for @snapCleanup.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleaning up {snap}...'**
+  String snapCleanup(Object snap);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

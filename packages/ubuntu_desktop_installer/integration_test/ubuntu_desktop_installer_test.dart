@@ -54,6 +54,9 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
+    await testRefreshPage(tester);
+    await tester.pumpAndSettle();
+
     await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.minimal);
     await tester.pumpAndSettle();
 
@@ -107,6 +110,9 @@ void main() {
     await tester.pumpAndSettle();
 
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await tester.pumpAndSettle();
+
+    await testRefreshPage(tester);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester);
@@ -175,6 +181,9 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
+    await testRefreshPage(tester);
+    await tester.pumpAndSettle();
+
     await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
     await tester.pumpAndSettle();
 
@@ -223,6 +232,9 @@ void main() {
     await tester.pumpAndSettle();
 
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await tester.pumpAndSettle();
+
+    await testRefreshPage(tester);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
@@ -385,6 +397,12 @@ Future<void> testConnectToInternetPage(
   await tester.pumpAndSettle();
 
   await tester.tapContinue();
+}
+
+Future<void> testRefreshPage(WidgetTester tester) async {
+  await expectPage(tester, RefreshPage, (lang) => lang.refreshTitle);
+
+  await tester.tapButton(label: tester.lang.skipButtonText);
 }
 
 Future<void> testUpdatesOtherSoftwarePage(

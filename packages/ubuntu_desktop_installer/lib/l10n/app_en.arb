@@ -21,6 +21,8 @@
   "@restartButtonText": {},
   "revertButtonText": "Revert",
   "@revertButtonText": {},
+  "skipButtonText": "Skip",
+  "@skipButtonText": {},
   "yesButtonText": "Yes",
   "@yesButtonText": {},
   "quitButtonText": "Quit Installation",
@@ -768,6 +770,177 @@
     "type": "text",
     "placeholders": {
       "SIZE": {}
+    }
+  },
+  "refreshTitle": "Update installer",
+  "refreshCurrent": "The current {snap} version is {version}.",
+  "@refreshCurrent": {
+    "type": "text",
+    "placeholders": {
+      "snap": {},
+      "version": {}
+    }
+  },
+  "refreshInstall": "Update to version {version}",
+  "@refreshInstall": {
+    "type": "text",
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "refreshUpToDate": "The current version {version} is up-to-date.",
+  "@refreshUpToDate": {
+    "type": "text",
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "refreshUpdating": "Updating {snap}...",
+  "@refreshUpdating": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "refreshRestart": "Please restart the installer.",
+  "snapPrerequisites": "Ensuring {snap} prerequisites...",
+  "@snapPrerequisites": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapRefresh": "Refreshing {snap}...",
+  "@snapRefresh": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapCheckRerefresh": "Checking {snap} re-refresh...",
+  "@snapCheckRerefresh": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapPrepare": "Preparing {snap}...",
+  "@snapPrepare": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapDownload": "Downloading {snap}...",
+  "@snapDownload": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapValidate": "Validating {snap}...",
+  "@snapValidate": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapMount": "Mounting {snap}...",
+  "@snapMount": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapStopServices": "Stopping {snap} services...",
+  "@snapStopServices": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapRemoveAliases": "Removing {snap} aliases...",
+  "@snapRemoveAliases": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapUnlink": "Unlinking {snap}...",
+  "@snapUnlink": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapUpdateAssets": "Updating {snap} assets...",
+  "@snapUpdateAssets": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapUpdateKernelCommandLine": "Updating {snap} kernel command line...",
+  "@snapUpdateKernelCommandLine": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapCopyData": "Copying {snap} data...",
+  "@snapCopyData": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapSetupProfiles": "Setting up {snap} security profiles...",
+  "@snapSetupProfiles": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapLink": "Linking {snap}...",
+  "@snapLink": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapAutoConnect": "Connecting {snap} plugs and slots...",
+  "@snapAutoConnect": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapSetAutoAliases": "Setting automatic {snap} aliases...",
+  "@snapSetAutoAliases": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapSetupAliases": "Setting up {snap} aliases...",
+  "@snapSetupAliases": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapStartServices": "Starting {snap} services...",
+  "@snapStartServices": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
+    }
+  },
+  "snapCleanup": "Cleaning up {snap}...",
+  "@snapCleanup": {
+    "type": "text",
+    "placeholders": {
+      "snap": {}
     }
   }
 }

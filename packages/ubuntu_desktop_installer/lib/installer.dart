@@ -88,6 +88,7 @@ Future<void> runInstallerApp(
   });
 
   final storage = DiskStorageService(subiquityClient);
+  final refresh = RefreshService(subiquityClient);
 
   registerService(() => ConfigService('/tmp/$baseName.conf'));
   registerServiceInstance(storage);
@@ -95,6 +96,7 @@ Future<void> runInstallerApp(
   registerService(JournalService.new);
   registerService(() => NetworkService(subiquityClient));
   registerService(PowerService.new);
+  registerServiceInstance(refresh);
   registerServiceInstance(telemetry);
   registerService(UdevService.new);
   registerService(UrlLauncher.new);
@@ -145,6 +147,7 @@ Future<void> runInstallerApp(
   ]);
 
   await storage.init();
+  await refresh.check();
 }
 
 class UbuntuDesktopInstallerApp extends StatefulWidget {
@@ -351,11 +354,20 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.connectToInternet: WizardRoute(
           builder: ConnectToInternetPage.create,
-          onNext: (_) =>
-              service.hasEnoughDiskSpace ? Routes.updatesOtherSoftware : null,
+          onNext: (_) {
+            final refresh = getService<RefreshService>();
+            return !service.hasEnoughDiskSpace
+                ? Routes.notEnoughDiskSpace
+                : refresh.state.available
+                    ? Routes.refresh
+                    : Routes.updatesOtherSoftware;
+          },
         ),
         Routes.notEnoughDiskSpace: const WizardRoute(
           builder: NotEnoughDiskSpacePage.create,
+        ),
+        Routes.refresh: const WizardRoute(
+          builder: RefreshPage.create,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,

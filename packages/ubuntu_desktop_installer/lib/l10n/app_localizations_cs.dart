@@ -31,6 +31,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get revertButtonText => 'Vrátit zpět';
 
   @override
+  String get skipButtonText => 'Skip';
+
+  @override
   String get yesButtonText => 'Ano';
 
   @override
@@ -878,5 +881,131 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
     return 'Největší disk v tomto počítači má velikost pouze $SIZE.';
+  }
+
+  @override
+  String get refreshTitle => 'Update installer';
+
+  @override
+  String refreshCurrent(Object snap, Object version) {
+    return 'The current $snap version is $version.';
+  }
+
+  @override
+  String refreshInstall(Object version) {
+    return 'Update to version $version';
+  }
+
+  @override
+  String refreshUpToDate(Object version) {
+    return 'The current version $version is up-to-date.';
+  }
+
+  @override
+  String refreshUpdating(Object snap) {
+    return 'Updating $snap...';
+  }
+
+  @override
+  String get refreshRestart => 'Please restart the installer.';
+
+  @override
+  String snapPrerequisites(Object snap) {
+    return 'Ensuring $snap prerequisites...';
+  }
+
+  @override
+  String snapRefresh(Object snap) {
+    return 'Refreshing $snap...';
+  }
+
+  @override
+  String snapCheckRerefresh(Object snap) {
+    return 'Checking $snap re-refresh...';
+  }
+
+  @override
+  String snapPrepare(Object snap) {
+    return 'Preparing $snap...';
+  }
+
+  @override
+  String snapDownload(Object snap) {
+    return 'Downloading $snap...';
+  }
+
+  @override
+  String snapValidate(Object snap) {
+    return 'Validating $snap...';
+  }
+
+  @override
+  String snapMount(Object snap) {
+    return 'Mounting $snap...';
+  }
+
+  @override
+  String snapStopServices(Object snap) {
+    return 'Stopping $snap services...';
+  }
+
+  @override
+  String snapRemoveAliases(Object snap) {
+    return 'Removing $snap aliases...';
+  }
+
+  @override
+  String snapUnlink(Object snap) {
+    return 'Unlinking $snap...';
+  }
+
+  @override
+  String snapUpdateAssets(Object snap) {
+    return 'Updating $snap assets...';
+  }
+
+  @override
+  String snapUpdateKernelCommandLine(Object snap) {
+    return 'Updating $snap kernel command line...';
+  }
+
+  @override
+  String snapCopyData(Object snap) {
+    return 'Copying $snap data...';
+  }
+
+  @override
+  String snapSetupProfiles(Object snap) {
+    return 'Setting up $snap security profiles...';
+  }
+
+  @override
+  String snapLink(Object snap) {
+    return 'Linking $snap...';
+  }
+
+  @override
+  String snapAutoConnect(Object snap) {
+    return 'Connecting $snap plugs and slots...';
+  }
+
+  @override
+  String snapSetAutoAliases(Object snap) {
+    return 'Setting automatic $snap aliases...';
+  }
+
+  @override
+  String snapSetupAliases(Object snap) {
+    return 'Setting up $snap aliases...';
+  }
+
+  @override
+  String snapStartServices(Object snap) {
+    return 'Starting $snap services...';
+  }
+
+  @override
+  String snapCleanup(Object snap) {
+    return 'Cleaning up $snap...';
   }
 }

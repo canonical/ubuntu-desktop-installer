@@ -21,4 +21,5 @@ abstract class Routes {
   static const installAlongside = '/install-alongside';
   static const whereAreYou = '/where-are-you';
   static const notEnoughDiskSpace = '/not-enough-disk-space';
+  static const refresh = '/refresh';
 }
