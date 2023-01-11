@@ -255,4 +255,33 @@ void main() {
     expect(model.layoutName(1), equals('ÄÄÄ'));
     expect(model.layoutName(2), equals('BBB'));
   });
+
+  test('search layout', () async {
+    final client = MockSubiquityClient();
+    when(client.keyboard()).thenAnswer((_) async {
+      return testSetup([
+        KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+        KeyboardLayout(code: 'foo', name: 'Foo', variants: [
+          KeyboardVariant(code: 'baz', name: 'Baz'),
+          KeyboardVariant(code: 'qux', name: 'Qux'),
+        ]),
+      ], layout: '', variant: '');
+    });
+
+    final model = KeyboardLayoutModel(client);
+    await model.init();
+
+    // case-insensitive
+    final foo = model.searchLayout('fOO');
+    expect(model.layoutName(foo), equals('Foo'));
+    model.selectLayout(foo);
+    expect(model.searchLayout('foo'), foo);
+
+    // wrap around
+    final bar = model.searchLayout('B');
+    expect(model.layoutName(bar), equals('Bar'));
+
+    // no match
+    expect(model.searchLayout('none'), isNegative);
+  });
 }

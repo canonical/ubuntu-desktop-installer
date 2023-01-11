@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -32,6 +33,7 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
+  final _layoutListFocusNode = FocusNode();
   final _layoutListScrollController = AutoScrollController();
   final _keyboardVariantListScrollController = AutoScrollController();
 
@@ -44,8 +46,8 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
     model.init().then((_) {
-      _scrollToLayout(model.selectedLayoutIndex);
-      _scrollToVariant(model.selectedVariantIndex);
+      _scrollToLayout(model.selectedLayoutIndex, AutoScrollPosition.middle);
+      _scrollToVariant(model.selectedVariantIndex, AutoScrollPosition.middle);
       model.updateInputSource();
     });
 
@@ -53,26 +55,27 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     _variantChanged = model.onVariantSelected.listen(_scrollToVariant);
   }
 
-  void _scrollToLayout(int index) {
+  void _scrollToLayout(int index, [AutoScrollPosition? position]) {
     if (index == -1) return;
     _layoutListScrollController.scrollToIndex(
       index,
-      preferPosition: AutoScrollPosition.middle,
+      preferPosition: position,
       duration: _kScrollDuration,
     );
   }
 
-  void _scrollToVariant(int index) {
+  void _scrollToVariant(int index, [AutoScrollPosition? position]) {
     if (index == -1) return;
     _keyboardVariantListScrollController.scrollToIndex(
       index,
-      preferPosition: AutoScrollPosition.middle,
+      preferPosition: position,
       duration: _kScrollDuration,
     );
   }
 
   @override
   void dispose() {
+    _layoutListFocusNode.dispose();
     _layoutListScrollController.dispose();
     _keyboardVariantListScrollController.dispose();
     _layoutChanged?.cancel();
@@ -93,25 +96,38 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: FocusTraversalGroup(
-                    policy: WidgetOrderTraversalPolicy(),
-                    child: YaruBorderContainer(
-                      clipBehavior: Clip.antiAlias,
-                      child: ListView.builder(
-                        controller: _layoutListScrollController,
-                        itemCount: model.layoutCount,
-                        itemBuilder: (context, index) {
-                          return AutoScrollTag(
-                            index: index,
-                            key: ValueKey(index),
-                            controller: _layoutListScrollController,
-                            child: ListTile(
-                              title: Text(model.layoutName(index)),
-                              selected: index == model.selectedLayoutIndex,
-                              onTap: () => model.selectLayout(index),
-                            ),
-                          );
-                        },
+                  child: KeySearch(
+                    autofocus: true,
+                    focusNode: _layoutListFocusNode,
+                    onSearch: (value) {
+                      final index = model.searchLayout(value);
+                      if (index != -1) {
+                        model.selectLayout(index);
+                      }
+                    },
+                    child: FocusTraversalGroup(
+                      policy: WidgetOrderTraversalPolicy(),
+                      child: YaruBorderContainer(
+                        clipBehavior: Clip.antiAlias,
+                        child: ListView.builder(
+                          controller: _layoutListScrollController,
+                          itemCount: model.layoutCount,
+                          itemBuilder: (context, index) {
+                            return AutoScrollTag(
+                              index: index,
+                              key: ValueKey(index),
+                              controller: _layoutListScrollController,
+                              child: ListTile(
+                                title: Text(model.layoutName(index)),
+                                selected: index == model.selectedLayoutIndex,
+                                onTap: () {
+                                  model.selectLayout(index);
+                                  _layoutListFocusNode.requestFocus();
+                                },
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),

@@ -116,6 +116,14 @@ class MockKeyboardLayoutModel extends _i1.Mock
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
   @override
+  int searchLayout(String? query) => (super.noSuchMethod(
+        Invocation.method(
+          #searchLayout,
+          [query],
+        ),
+        returnValue: 0,
+      ) as int);
+  @override
   String variantName(int? index) => (super.noSuchMethod(
         Invocation.method(
           #variantName,

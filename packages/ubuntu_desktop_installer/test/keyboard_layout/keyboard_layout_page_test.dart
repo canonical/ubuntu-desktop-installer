@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -11,6 +12,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_p
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
 import 'keyboard_layout_page_test.mocks.dart';
@@ -19,7 +21,7 @@ import 'keyboard_layout_page_test.mocks.dart';
 
 @GenerateMocks([KeyboardLayoutModel])
 void main() {
-  KeyboardLayoutModel buildModel({
+  MockKeyboardLayoutModel buildModel({
     bool? isValid,
     List<String>? layouts,
     int? selectedLayoutIndex,
@@ -143,6 +145,37 @@ void main() {
     );
     expect(continueButton, findsOneWidget);
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+  });
+
+  testWidgets('key search', (tester) async {
+    final model = buildModel();
+    when(model.searchLayout('foo')).thenReturn(-1);
+    when(model.searchLayout('bar')).thenReturn(2);
+
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final keySearch = find.byType(KeySearch);
+    expect(keySearch, findsOneWidget);
+
+    final focusNode = tester.widget<KeySearch>(keySearch).focusNode;
+    expect(focusNode, isNotNull);
+    expect(focusNode!.hasFocus, isTrue);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyF);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyO);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyO);
+    await tester.pumpAndSettle(kKeySearchInterval);
+    await tester.pumpAndSettle();
+    verify(model.searchLayout('foo')).called(1);
+    verifyNever(model.selectLayout(any));
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyB);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyA);
+    await tester.sendKeyEvent(LogicalKeyboardKey.keyR);
+    await tester.pumpAndSettle(kKeySearchInterval);
+    await tester.pumpAndSettle();
+    verify(model.searchLayout('bar')).called(1);
+    verify(model.selectLayout(2)).called(1);
   });
 
   testWidgets('continue on the next page', (tester) async {

@@ -5,6 +5,7 @@ import 'package:diacritic/diacritic.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 /// @internal
 final log = Logger('keyboard_layout');
@@ -49,6 +50,8 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
     _selectedVariantIndex = _selectedLayout!.variants.isNotEmpty ? variant : -1;
+    _onLayoutSelected.add(_selectedLayoutIndex);
+    _onVariantSelected.add(_selectedVariantIndex);
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     await updateInputSource();
@@ -62,9 +65,18 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
       final variantIndex =
           _layouts[layoutIndex].variants.indexWhere((v) => v.code == variant);
       await selectLayout(layoutIndex, variantIndex);
-      _onLayoutSelected.add(layoutIndex);
-      _onVariantSelected.add(variantIndex);
     }
+  }
+
+  /// Searches for a layout matching the given [query].
+  ///
+  /// See also:
+  /// * [KeySearchX.keySearch]
+  int searchLayout(String query) {
+    return _layouts
+        .map((l) => l.name)
+        .toList()
+        .keySearch(query, _selectedLayoutIndex + 1);
   }
 
   /// The number of available layout variants.
