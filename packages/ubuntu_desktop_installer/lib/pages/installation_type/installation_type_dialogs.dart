@@ -30,6 +30,7 @@ Future<void> showAdvancedFeaturesDialog(
           animation: Listenable.merge([advancedFeature, encryption]),
           builder: (context, child) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 YaruRadioButton<AdvancedFeature>(
                   title: Text(lang.installationTypeNone),
