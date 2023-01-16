@@ -44,6 +44,7 @@ void main() {
   );
 
   final pathColumn = StorageColumn(
+    size: ColumnSize.L,
     titleBuilder: (_) => const Text('path'),
     diskBuilder: (_, disk) => Text(disk.path!),
     gapBuilder: (_, disk, gap) => SizedBox.shrink(),
@@ -53,6 +54,7 @@ void main() {
   );
 
   final sizeColumn = StorageColumn(
+    size: ColumnSize.S,
     titleBuilder: (_) => const Text('size'),
     diskBuilder: (_, disk) => Text('${disk.size}b'),
     gapBuilder: (_, disk, gap) => Text('${gap.size}b'),
@@ -78,7 +80,9 @@ void main() {
   }
 
   testWidgets('columns', (tester) async {
-    await tester.pumpWidget(buildTable([pathColumn, sizeColumn]));
+    await tester.pumpWidget(buildTable(
+      [pathColumn, sizeColumn],
+    ));
 
     expect(find.text('path'), findsOneWidget);
     // sda
@@ -204,7 +208,9 @@ void main() {
   });
 
   testWidgets('existing os', (tester) async {
-    await tester.pumpWidget(buildTable([StorageSystemColumn()]));
+    await tester.pumpWidget(buildTable(
+      [StorageSystemColumn(size: ColumnSize.M)],
+    ));
 
     expect(find.text('Ubuntu 18.04'), findsOneWidget);
   });

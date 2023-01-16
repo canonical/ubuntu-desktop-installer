@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:filesize/filesize.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -133,18 +134,18 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.text(testDisks.first.path!));
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(kDoubleTapTimeout);
 
     verify(model.selectStorage(0)).called(1);
 
     await tester.tap(find.text(testDisks.last.path!));
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(kDoubleTapTimeout);
 
     verify(model.selectStorage(1)).called(1);
 
     await tester.tap(find
         .text(testDisks.first.partitions.whereType<Partition>().last.mount!));
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(kDoubleTapTimeout);
 
     verify(model.selectStorage(0, 1)).called(1);
   });
@@ -221,6 +222,7 @@ void main() {
     expect(checkbox, findsWidgets);
 
     await tester.tap(checkbox.first);
+    await tester.pumpAndSettle(kDoubleTapTimeout);
     verify(model.editPartition(disk, partition, wipe: true)).called(1);
   });
 
