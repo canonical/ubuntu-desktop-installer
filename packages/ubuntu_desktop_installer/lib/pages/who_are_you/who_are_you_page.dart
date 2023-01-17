@@ -51,7 +51,10 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
 
     return WizardPage(
       contentPadding: EdgeInsets.zero,
-      title: Text(lang.whoAreYouPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.whoAreYouPageTitle),
+      ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldPadding = EdgeInsets.symmetric(
             horizontal: kContentPadding.left, vertical: 10);

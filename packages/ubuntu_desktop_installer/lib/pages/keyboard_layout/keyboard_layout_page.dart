@@ -88,7 +88,10 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     final model = Provider.of<KeyboardLayoutModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.keyboardLayoutPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.keyboardLayoutPageTitle),
+      ),
       header: Text(lang.chooseYourKeyboardLayout),
       content: Column(
         children: <Widget>[

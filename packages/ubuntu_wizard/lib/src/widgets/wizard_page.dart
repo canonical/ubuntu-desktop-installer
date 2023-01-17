@@ -25,8 +25,8 @@ class WizardPage extends StatefulWidget {
     this.actions = const <WizardAction>[],
   });
 
-  /// The title widget in the app bar.
-  final Widget? title;
+  /// The title widget.
+  final PreferredSizeWidget? title;
 
   /// A header widget below the title.
   final Widget? header;
@@ -68,7 +68,7 @@ class _WizardPageState extends State<WizardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: widget.title, automaticallyImplyLeading: false),
+      appBar: widget.title,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

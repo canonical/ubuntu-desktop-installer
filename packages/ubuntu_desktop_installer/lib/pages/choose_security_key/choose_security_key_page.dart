@@ -52,7 +52,10 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: Text(lang.chooseSecurityKeyTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.chooseSecurityKeyTitle),
+      ),
       header: FractionallySizedBox(
         widthFactor: kContentWidthFraction,
         child: Text(lang.chooseSecurityKeyHeader(flavor.name)),

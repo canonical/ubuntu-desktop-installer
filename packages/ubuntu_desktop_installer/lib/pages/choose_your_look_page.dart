@@ -21,7 +21,10 @@ class ChooseYourLookPage extends StatelessWidget {
         WizardAction.back(context),
         WizardAction.next(context),
       ],
-      title: Text(lang.chooseYourLookPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.chooseYourLookPageTitle),
+      ),
       content: Center(
         child: Row(
             mainAxisSize: MainAxisSize.min,

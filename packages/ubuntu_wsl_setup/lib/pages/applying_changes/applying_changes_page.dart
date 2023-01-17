@@ -45,7 +45,10 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.setupCompleteTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.setupCompleteTitle),
+      ),
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

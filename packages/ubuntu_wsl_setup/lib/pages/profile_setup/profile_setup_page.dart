@@ -51,7 +51,10 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
     final textColor = Theme.of(context).textTheme.bodyText2!.color;
     return WizardPage(
       contentPadding: EdgeInsets.zero,
-      title: Text(lang.profileSetupTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.profileSetupTitle),
+      ),
       header: AbsorbPointer(
         child: Html(
           data: lang.profileSetupHeader,

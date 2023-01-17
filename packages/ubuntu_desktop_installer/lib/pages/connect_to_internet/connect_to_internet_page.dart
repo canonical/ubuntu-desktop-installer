@@ -56,7 +56,10 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
     final model = Provider.of<ConnectToInternetModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.connectToInternetPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.connectToInternetPageTitle),
+      ),
       header: Text(lang.connectToInternetDescription),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

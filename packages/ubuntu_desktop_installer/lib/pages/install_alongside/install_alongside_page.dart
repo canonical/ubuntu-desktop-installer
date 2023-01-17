@@ -70,7 +70,10 @@ class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
     final model = Provider.of<InstallAlongsideModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(_formatTitle(context)),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(_formatTitle(context)),
+      ),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

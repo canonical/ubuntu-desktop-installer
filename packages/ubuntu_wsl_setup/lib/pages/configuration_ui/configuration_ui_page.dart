@@ -44,7 +44,10 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<ConfigurationUIModel>(context);
     return WizardPage(
-      title: Text(lang.configurationUITitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.configurationUITitle),
+      ),
       headerPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       content: ListView(

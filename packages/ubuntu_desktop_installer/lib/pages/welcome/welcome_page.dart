@@ -75,7 +75,10 @@ class _WelcomePageState extends State<WelcomePage> {
     final lang = AppLocalizations.of(context);
     final height = MediaQuery.of(context).size.height;
     return WizardPage(
-      title: Text(lang.welcome),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.welcome),
+      ),
       header: Text(lang.welcomeHeader),
       content: FractionallySizedBox(
         child: Row(

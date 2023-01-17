@@ -27,7 +27,10 @@ class InstallationCompletePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.installationCompleteTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.installationCompleteTitle),
+      ),
       content: Column(
         children: [
           Padding(

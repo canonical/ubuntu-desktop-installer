@@ -50,7 +50,10 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       contentPadding: EdgeInsets.zero,
-      title: Text(lang.advancedSetupTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.advancedSetupTitle),
+      ),
       header: Text(lang.advancedSetupHeader),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldWidth = constraints.maxWidth * kContentWidthFraction;

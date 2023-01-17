@@ -29,7 +29,10 @@ class TurnOffRSTPage extends StatelessWidget {
     final lang = AppLocalizations.of(context);
     return Scaffold(
       body: WizardPage(
-        title: Text(lang.turnOffRST),
+        title: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(lang.turnOffRST),
+        ),
         header: Text(lang.turnOffRSTDescription),
         content: Column(
           children: <Widget>[

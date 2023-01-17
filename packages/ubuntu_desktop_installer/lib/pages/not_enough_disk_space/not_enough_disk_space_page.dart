@@ -26,7 +26,10 @@ class NotEnoughDiskSpacePage extends StatelessWidget {
     final flavor = Flavor.of(context);
     return Scaffold(
       body: WizardPage(
-        title: Text(lang.notEnoughDiskSpaceTitle),
+        title: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(lang.notEnoughDiskSpaceTitle),
+        ),
         header: Text(lang.notEnoughDiskSpaceHeader(
             filesize(model.installMinimumSize), flavor.name)),
         content: Text(model.hasMultipleDisks
