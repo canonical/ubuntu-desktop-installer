@@ -34,6 +34,8 @@ class InstallationSlidesPage extends StatefulWidget {
 }
 
 class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
+  final _titleController = PageController();
+
   @override
   void initState() {
     super.initState();
@@ -52,6 +54,12 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     });
   }
 
+  @override
+  void dispose() {
+    _titleController.dispose();
+    super.dispose();
+  }
+
   String _formatEvent(InstallationEvent? event) {
     final lang = AppLocalizations.of(context);
     switch (event?.action) {
@@ -68,7 +76,26 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
+    final slides = SlidesContext.of(context);
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        titleSpacing: 0,
+        title: SizedBox(
+          height: kYaruTitleBarHeight,
+          child: PageView.builder(
+            controller: _titleController,
+            itemCount: slides.length,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: slides[index].title(context),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -76,9 +103,14 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
               children: [
                 SlideShow(
                   interval: const Duration(seconds: 50),
-                  slides: SlidesContext.of(context)
-                      .map((slide) => _SlidePage(slide: slide))
-                      .toList(),
+                  slides: slides.map((slide) => slide.body(context)).toList(),
+                  onSlide: (index) {
+                    _titleController.animateToPage(
+                      index,
+                      curve: kSlideCurve,
+                      duration: kSlideDuration,
+                    );
+                  },
                 ),
                 Positioned.fill(
                   top: Theme.of(context).appBarTheme.toolbarHeight,
@@ -135,26 +167,6 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _SlidePage extends StatelessWidget {
-  const _SlidePage({required this.slide});
-
-  final Slide slide;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        AppBar(
-          title: slide.title(context),
-          automaticallyImplyLeading: false,
-        ),
-        slide.body(context),
-      ],
     );
   }
 }
