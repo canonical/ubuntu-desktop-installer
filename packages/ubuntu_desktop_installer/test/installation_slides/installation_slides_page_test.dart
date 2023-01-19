@@ -48,11 +48,11 @@ void main() {
       child: SlidesContext(slides: [
         Slide(
           title: (context) => Text('title1'),
-          body: (context) => Text('body1'),
+          body: (context) => SizedBox.expand(child: Text('body1')),
         ),
         Slide(
           title: (context) => Text('title2'),
-          body: (context) => Text('body2'),
+          body: (context) => SizedBox.expand(child: Text('body2')),
         ),
       ], child: InstallationSlidesPage()),
     );
