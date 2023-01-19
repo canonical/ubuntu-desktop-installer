@@ -28,7 +28,7 @@
   "@tryUbuntu": {},
   "tryUbuntuDescription": "Pode experimentar o {RELEASE} sem precisar de fazer qualquer alteração no seu computador.",
   "@tryUbuntuDescription": {},
-  "installUbuntu": "Instalar {RELEASE}",
+  "installUbuntu": "Instalar o {RELEASE}",
   "@installUbuntu": {},
   "installUbuntuDescription": "Instalar o {RELEASE} ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.",
   "@installUbuntuDescription": {},
