@@ -214,16 +214,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get installThirdPartySubtitle => 'Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Installer des logiciels tiers pour le support du matériel graphique et Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Ces pilotes sont soumis à des termes de licence inclus dans leurs documentations. Ils sont propriétaires.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Installer la prise en charge de formats de multimédias supplémentaires';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -457,7 +457,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionUnitB => 'o';
 
   @override
-  String get partitionUnitKB => 'ko';
+  String get partitionUnitKB => 'Ko';
 
   @override
   String get partitionUnitMB => 'Mo';
@@ -770,7 +770,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get officeSlideTitle => 'Tout ce dont vous avez besoin pour le bureau';
 
   @override
-  String get officeSlideDescription => 'LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin, sans avoir à en payer le prix.';
+  String get officeSlideDescription => 'LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -786,7 +786,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'Au cœur de la philosophie d’$RELEASE se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, du thème de couleurs, de la taille des polices, $RELEASE vous rend l’informatique facile – qui que vous soyez, où que vous soyez.';
+    return 'Au cœur de la philosophie d’$RELEASE se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, des couleurs, de la taille des polices, $RELEASE vous rend l’informatique facile — qui que vous soyez, où que vous soyez.';
   }
 
   @override
@@ -825,13 +825,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get supportedSoftware => 'Logiciels pris en charge';
 
   @override
-  String get copyingFiles => 'Copie des fichiers...';
+  String get copyingFiles => 'Copie des fichiers…';
 
   @override
-  String get installingSystem => 'Installation du système...';
+  String get installingSystem => 'Installation du système…';
 
   @override
-  String get configuringSystem => 'Configuration du système...';
+  String get configuringSystem => 'Configuration du système…';
 
   @override
   String get installationFailed => 'Échec de l\'installation';
