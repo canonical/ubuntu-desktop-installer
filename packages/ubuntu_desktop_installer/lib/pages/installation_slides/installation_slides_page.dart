@@ -4,6 +4,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
@@ -152,7 +153,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     const Spacer(),
                     YaruIconButton(
                       isSelected: model.isLogVisible,
-                      icon: const Icon(Icons.terminal),
+                      icon: const Icon(YaruIcons.terminal),
                       onPressed: model.toggleLogVisibility,
                     ),
                   ],
