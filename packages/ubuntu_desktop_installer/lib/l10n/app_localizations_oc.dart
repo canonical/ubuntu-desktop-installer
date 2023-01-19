@@ -806,7 +806,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'La documentacion oficiala cobrís los tèmas màgers a prepaus de $RELEASE. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.';
+    return 'La documentacion oficiala cobrís los aspèctes màgers a prepaus de $RELEASE. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.';
   }
 
   @override
