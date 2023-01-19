@@ -275,7 +275,7 @@
   "@newPartitionTable": {},
   "partitionUnitB": "o",
   "@partitionUnitB": {},
-  "partitionUnitKB": "ko",
+  "partitionUnitKB": "Ko",
   "@partitionUnitKB": {},
   "partitionUnitGB": "Go",
   "@partitionUnitGB": {},
@@ -523,7 +523,7 @@
   "@whereAreYouTimezoneLabel": {},
   "welcomeHeader": "Choisissez votre langue :",
   "@welcomeHeader": {},
-  "officeSlideDescription": "LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin, sans avoir à en payer le prix.",
+  "officeSlideDescription": "LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin.",
   "@officeSlideDescription": {},
   "webSlideThunderbird": "Thunderbird",
   "@webSlideThunderbird": {},
@@ -531,7 +531,7 @@
   "@photoSlideDescription": {},
   "webSlideFirefox": "Navigateur Web Firefox",
   "@webSlideFirefox": {},
-  "accessSlideDescription": "Au cœur de la philosophie d’{RELEASE} se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, du thème de couleurs, de la taille des polices, {RELEASE} vous rend l’informatique facile – qui que vous soyez, où que vous soyez.",
+  "accessSlideDescription": "Au cœur de la philosophie d’{RELEASE} se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, des couleurs, de la taille des polices, {RELEASE} vous rend l’informatique facile — qui que vous soyez, où que vous soyez.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -566,7 +566,7 @@
   "@whoAreYouPageUsernameInvalidChars": {},
   "installationFailed": "Échec de l'installation",
   "@installationFailed": {},
-  "copyingFiles": "Copie des fichiers...",
+  "copyingFiles": "Copie des fichiers…",
   "@copyingFiles": {},
   "installAlongsideAllocateSpace": "Allouer de l'espace",
   "@installAlongsideAllocateSpace": {},
@@ -685,12 +685,20 @@
       "mount": {}
     }
   },
-  "installingSystem": "Installation du système...",
+  "installingSystem": "Installation du système…",
   "@installingSystem": {},
-  "configuringSystem": "Configuration du système...",
+  "configuringSystem": "Configuration du système…",
   "@configuringSystem": {},
   "showSecurityKey": "Montrer la clé de sécurité",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM et chiffrement sélectionnés",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Installer des logiciels tiers pour le support du matériel graphique et Wi-Fi",
+  "@installDriversTitle": {},
+  "installCodecsSubtitle": "Ce logiciel est soumis à des termes de licence inclus dans sa documentation. Certains sont propriétaires.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "Ces pilotes sont soumis à des termes de licence inclus dans leurs documentations. Ils sont propriétaires.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Installer la prise en charge de formats de multimédias supplémentaires",
+  "@installCodecsTitle": {}
 }
