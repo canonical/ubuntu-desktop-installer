@@ -72,6 +72,7 @@ class StorageSizeDialog extends StatelessWidget {
     final canAccept = size >= minimumSize && size <= maximumSize;
     return AlertDialog(
       title: Text(title),
+      buttonPadding: EdgeInsets.zero,
       content: CallbackShortcuts(
         bindings: {
           if (canAccept)
