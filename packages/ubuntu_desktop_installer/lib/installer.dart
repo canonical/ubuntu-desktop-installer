@@ -220,7 +220,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(AppLocalizations.of(context).welcome),
+      title: AppBar(title: Text(AppLocalizations.of(context).welcome)),
       header: Text(lang.welcomeHeader),
       content: Row(
         children: [

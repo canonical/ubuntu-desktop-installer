@@ -34,7 +34,10 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: Text(lang.tryOrInstallPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.tryOrInstallPageTitle),
+      ),
       contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 100),
       content: Row(
         children: [

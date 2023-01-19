@@ -53,7 +53,10 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<WriteChangesToDiskModel>(context);
     return WizardPage(
-      title: Text(lang.writeChangesToDisk),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.writeChangesToDisk),
+      ),
       header: Text(lang.writeChangesDescription),
       content: ListView(children: <Widget>[
         Align(

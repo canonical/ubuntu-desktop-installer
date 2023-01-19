@@ -69,7 +69,10 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
-      title: Text(lang.whereAreYouPageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.whereAreYouPageTitle),
+      ),
       headerPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       content: Column(

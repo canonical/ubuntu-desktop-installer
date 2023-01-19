@@ -30,7 +30,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          title: const Text('title'),
+          title: AppBar(title: const Text('title')),
           header: const Text('header'),
           content: const Text('content'),
           footer: const Text('footer'),

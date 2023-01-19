@@ -59,7 +59,10 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<SelectLanguageModel>(context);
     return WizardPage(
-      title: Text(lang.selectLanguageTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.selectLanguageTitle),
+      ),
       content: Column(
         children: [
           Flexible(

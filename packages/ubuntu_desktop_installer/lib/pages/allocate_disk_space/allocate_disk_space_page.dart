@@ -69,7 +69,10 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
-      title: Text(lang.allocateDiskSpace),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.allocateDiskSpace),
+      ),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

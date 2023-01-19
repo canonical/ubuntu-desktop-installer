@@ -27,7 +27,10 @@ class TurnOffBitLockerPage extends StatelessWidget {
     final model = Provider.of<TurnOffBitLockerModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.turnOffBitlockerTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.turnOffBitlockerTitle),
+      ),
       header: Text(lang.turnOffBitlockerDescription),
       content: Column(
         children: [

@@ -31,7 +31,10 @@ class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
     final model = context.watch<ConfigureSecureBootModel>();
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: Text(lang.configureSecureBootTitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.configureSecureBootTitle),
+      ),
       header: Text(lang.configureSecureBootDescription),
       content: LayoutBuilder(
         builder: (context, constraints) {

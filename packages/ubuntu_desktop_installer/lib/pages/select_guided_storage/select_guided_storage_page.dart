@@ -60,7 +60,10 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: Text(lang.selectGuidedStoragePageTitle(flavor.name)),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.selectGuidedStoragePageTitle(flavor.name)),
+      ),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
