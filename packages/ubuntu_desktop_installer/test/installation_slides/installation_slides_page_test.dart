@@ -12,6 +12,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 
 import '../test_utils.dart';
 import 'installation_slides_page_test.mocks.dart';
@@ -130,7 +131,7 @@ void main() {
 
     expect(getLogOffset(tester), equals(1.0));
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.byIcon(YaruIcons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
@@ -141,7 +142,7 @@ void main() {
 
     expect(getLogOffset(tester), equals(0.0));
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.byIcon(YaruIcons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
