@@ -49,6 +49,7 @@ Future<void> runInstallerApp(
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
     parser.addOption('bootloader', hide: true);
+    parser.addFlag('try-or-install', hide: true);
   })!;
 
   final subiquityClient = SubiquityClient();
@@ -117,6 +118,7 @@ Future<void> runInstallerApp(
             flavor: flavor,
             slides: slides,
             initialRoute: options['initial-route'],
+            tryOrInstall: options['try-or-install'],
           ),
         );
       },
@@ -153,6 +155,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   UbuntuDesktopInstallerApp({
     super.key,
     this.initialRoute,
+    this.tryOrInstall,
     FlavorData? flavor,
     List<Slide>? slides,
     this.appStatus = AppStatus.ready,
@@ -160,6 +163,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
         slides = slides ?? defaultSlides;
 
   final String? initialRoute;
+  final bool? tryOrInstall;
   final FlavorData flavor;
   final List<Slide> slides;
   final AppStatus appStatus;
@@ -207,7 +211,10 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
       case AppStatus.loading:
         return const _UbuntuDesktopInstallerLoadingPage();
       case AppStatus.ready:
-        return _UbuntuDesktopInstallerWizard(initialRoute: initialRoute);
+        return _UbuntuDesktopInstallerWizard(
+          initialRoute: initialRoute,
+          tryOrInstall: tryOrInstall,
+        );
     }
   }
 }
@@ -245,9 +252,10 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerWizard extends StatelessWidget {
-  const _UbuntuDesktopInstallerWizard({this.initialRoute});
+  const _UbuntuDesktopInstallerWizard({this.initialRoute, this.tryOrInstall});
 
   final String? initialRoute;
+  final bool? tryOrInstall;
 
   @override
   Widget build(BuildContext context) {
@@ -256,8 +264,17 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
     return Wizard(
       initialRoute: initialRoute ?? Routes.initial,
       routes: <String, WizardRoute>{
-        Routes.welcome: const WizardRoute(
+        Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
+          onNext: (_) {
+            if (tryOrInstall == true) {
+              return Routes.tryOrInstall;
+            } else if (service.hasRst) {
+              return Routes.turnOffRST;
+            } else {
+              return Routes.keyboardLayout;
+            }
+          },
         ),
         Routes.tryOrInstall: WizardRoute(
           builder: TryOrInstallPage.create,
