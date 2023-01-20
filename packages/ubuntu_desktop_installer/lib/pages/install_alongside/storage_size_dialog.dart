@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../widgets.dart';
@@ -71,7 +72,10 @@ class StorageSizeDialog extends StatelessWidget {
     final lang = AppLocalizations.of(context);
     final canAccept = size >= minimumSize && size <= maximumSize;
     return AlertDialog(
-      title: Text(title),
+      title: YaruDialogTitleBar(
+        title: Text(title),
+      ),
+      titlePadding: EdgeInsets.zero,
       buttonPadding: EdgeInsets.zero,
       content: CallbackShortcuts(
         bindings: {

@@ -21,7 +21,8 @@ Future<bool> showConfirmationDialog(
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: Text(title),
+        title: YaruDialogTitleBar(title: Text(title)),
+        titlePadding: EdgeInsets.zero,
         content: Text(message),
         actions: <Widget>[
           OutlinedButton(
@@ -57,8 +58,10 @@ Future<void> showCreatePartitionDialog(
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
-        title: Text(lang.partitionCreateTitle),
-        titlePadding: kHeaderPadding,
+        title: YaruDialogTitleBar(
+          title: Text(lang.partitionCreateTitle),
+        ),
+        titlePadding: EdgeInsets.zero,
         contentPadding: kContentPadding.copyWith(
             top: kContentSpacing, bottom: kContentSpacing),
         actionsPadding: kFooterPadding,
@@ -184,8 +187,10 @@ Future<void> showEditPartitionDialog(
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
-        title: Text(lang.partitionEditTitle),
-        titlePadding: kHeaderPadding,
+        title: YaruDialogTitleBar(
+          title: Text(lang.partitionEditTitle),
+        ),
+        titlePadding: EdgeInsets.zero,
         contentPadding: kContentPadding.copyWith(
             top: kContentSpacing, bottom: kContentSpacing),
         actionsPadding: kFooterPadding,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -29,8 +30,10 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
         builder: (context, step, _) {
           final size = MediaQuery.of(context).size;
           return AlertDialog(
-            title: Text(lang.detectLayout),
-            titlePadding: kHeaderPadding,
+            title: YaruDialogTitleBar(
+              title: Text(lang.detectLayout),
+            ),
+            titlePadding: EdgeInsets.zero,
             contentPadding: kContentPadding.copyWith(
                 top: kContentSpacing, bottom: kContentSpacing),
             actionsPadding: kFooterPadding,

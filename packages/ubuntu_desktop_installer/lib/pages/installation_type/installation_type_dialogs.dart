@@ -19,8 +19,10 @@ Future<void> showAdvancedFeaturesDialog(
       final flavor = Flavor.of(context);
 
       return AlertDialog(
-        title: Text(lang.installationTypeAdvancedTitle),
-        titlePadding: kHeaderPadding,
+        title: YaruDialogTitleBar(
+          title: Text(lang.installationTypeAdvancedTitle),
+        ),
+        titlePadding: EdgeInsets.zero,
         contentPadding: kContentPadding.copyWith(
             top: kContentSpacing, bottom: kContentSpacing),
         actionsPadding: kFooterPadding,
