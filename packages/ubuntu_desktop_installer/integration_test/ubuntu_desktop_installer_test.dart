@@ -48,9 +48,6 @@ void main() {
     await testWelcomePage(tester, language: language);
     await tester.pumpAndSettle();
 
-    await testTryOrInstallPage(tester, option: Option.installUbuntu);
-    await tester.pumpAndSettle();
-
     await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
     await tester.pumpAndSettle();
 
@@ -104,9 +101,6 @@ void main() {
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester);
-    await tester.pumpAndSettle();
-
-    await testTryOrInstallPage(tester, option: Option.installUbuntu);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
@@ -175,9 +169,6 @@ void main() {
     await testWelcomePage(tester);
     await tester.pumpAndSettle();
 
-    await testTryOrInstallPage(tester, option: Option.installUbuntu);
-    await tester.pumpAndSettle();
-
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
@@ -226,9 +217,6 @@ void main() {
     await tester.pumpAndSettle();
 
     await testWelcomePage(tester);
-    await tester.pumpAndSettle();
-
-    await testTryOrInstallPage(tester, option: Option.installUbuntu);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
@@ -292,6 +280,20 @@ void main() {
     await tester.pumpAndSettle();
 
     await testTurnOffBitLockerPage(tester);
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('try-or-install', (tester) async {
+    await app.main(<String>['--try-or-install']);
+    await tester.pumpAndSettle();
+
+    await testWelcomePage(tester);
+    await tester.pumpAndSettle();
+
+    await testTryOrInstallPage(tester, option: Option.installUbuntu);
+    await tester.pumpAndSettle();
+
+    await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
   });
 }
