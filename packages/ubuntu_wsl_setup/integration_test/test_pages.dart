@@ -123,11 +123,13 @@ Future<void> testApplyingChangesPage(
   WidgetTester tester, {
   bool expectClose = false,
 }) async {
+  final windowClosed = expectClose ? waitForWindowClosed() : null;
+
   await tester.pumpUntil(find.byType(ApplyingChangesPage));
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 
-  if (expectClose) {
-    expect(await waitForWindowClosed(), isTrue);
+  if (windowClosed != null) {
+    expect(await windowClosed, isTrue);
   }
 }
 
