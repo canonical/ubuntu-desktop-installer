@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:dartx/dartx.dart';
@@ -72,9 +73,6 @@ Future<void> runInstallerApp(
   );
 
   final subiquityMonitor = SubiquityStatusMonitor();
-  subiquityMonitor.onStatusChanged.listen((status) {
-    setWindowClosable(status?.state.isInstalling != true);
-  });
 
   final geodata = Geodata.asset();
   final geoname = Geoname.ubuntu(geodata: geodata);
@@ -151,7 +149,7 @@ Future<void> runInstallerApp(
   ]);
 }
 
-class UbuntuDesktopInstallerApp extends StatelessWidget {
+class UbuntuDesktopInstallerApp extends StatefulWidget {
   UbuntuDesktopInstallerApp({
     super.key,
     this.initialRoute,
@@ -173,28 +171,52 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   }
 
   @override
+  State<UbuntuDesktopInstallerApp> createState() =>
+      _UbuntuDesktopInstallerAppState();
+}
+
+class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
+  StreamSubscription<ApplicationStatus?>? _subiquityStatus;
+
+  @override
+  void initState() {
+    super.initState();
+
+    final monitor = getService<SubiquityStatusMonitor>();
+    _subiquityStatus = monitor.onStatusChanged.listen((status) {
+      setWindowClosable(status?.state.isInstalling != true);
+    });
+  }
+
+  @override
+  void dispose() {
+    _subiquityStatus?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultAssetBundle(
       bundle: assetBundle,
       child: Flavor(
-        data: flavor,
+        data: widget.flavor,
         child: SlidesContext(
-          slides: slides,
+          slides: widget.slides,
           child: YaruTheme(
             builder: (context, yaru, child) {
               return MaterialApp(
                 locale: Settings.of(context).locale,
                 onGenerateTitle: (context) {
                   final lang = AppLocalizations.of(context);
-                  setWindowTitle(lang.windowTitle(flavor.name));
+                  setWindowTitle(lang.windowTitle(widget.flavor.name));
                   return lang.appTitle;
                 },
-                theme: flavor.theme ?? yaru.theme,
-                darkTheme: flavor.darkTheme ?? yaru.darkTheme,
+                theme: widget.flavor.theme ?? yaru.theme,
+                darkTheme: widget.flavor.darkTheme ?? yaru.darkTheme,
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: <LocalizationsDelegate>[
                   ...localizationsDelegates,
-                  ...?flavor.localizationsDelegates,
+                  ...?widget.flavor.localizationsDelegates,
                 ],
                 supportedLocales: supportedLocales,
                 home: buildApp(context),
@@ -207,13 +229,13 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
   }
 
   Widget buildApp(BuildContext context) {
-    switch (appStatus) {
+    switch (widget.appStatus) {
       case AppStatus.loading:
         return const _UbuntuDesktopInstallerLoadingPage();
       case AppStatus.ready:
         return _UbuntuDesktopInstallerWizard(
-          initialRoute: initialRoute,
-          tryOrInstall: tryOrInstall,
+          initialRoute: widget.initialRoute,
+          tryOrInstall: widget.tryOrInstall,
         );
     }
   }
