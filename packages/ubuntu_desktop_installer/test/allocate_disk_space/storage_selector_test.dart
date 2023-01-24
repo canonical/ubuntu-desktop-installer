@@ -25,9 +25,9 @@ void main() {
     ));
     await tester.pumpAndSettle();
 
-    final dropdown =
-        tester.widget<DropdownButton<int>>(find.byType(DropdownButton<int>));
-    expect(dropdown.value, equals(1));
+    final button =
+        tester.widget<PopupMenuButton<int>>(find.byType(PopupMenuButton<int>));
+    expect(button.initialValue, equals(1));
   });
 
   testWidgets('selection', (tester) async {
@@ -48,15 +48,15 @@ void main() {
       ),
     ));
 
-    await tester.tap(find.byType(DropdownButton<int>));
+    await tester.tap(find.byType(PopupMenuButton<int>));
     await tester.pumpAndSettle();
 
-    final dropdownItem = find.descendant(
-      of: find.byType(DropdownMenuItem<int>),
+    final menuItem = find.descendant(
+      of: find.byType(PopupMenuItem<int>),
       matching: find.byKey(ValueKey(1)),
     );
-    await tester.ensureVisible(dropdownItem.last);
-    await tester.tap(dropdownItem.last);
+    await tester.ensureVisible(menuItem.last);
+    await tester.tap(menuItem.last);
 
     expect(selected, equals(1));
   });

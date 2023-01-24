@@ -24,3 +24,6 @@ const kContentWidthFraction = 0.7;
 /// The indentation to align with radio indicators etc.
 const kContentIndentation =
     EdgeInsetsDirectional.only(start: kContentSpacing * 2);
+
+/// The height of a popup menu item.
+const kPopupMenuItemHeight = 36.0;

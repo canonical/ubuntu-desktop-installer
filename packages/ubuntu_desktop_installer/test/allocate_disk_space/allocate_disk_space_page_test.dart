@@ -322,16 +322,16 @@ void main() {
     final model = buildModel(disks: testDisks, bootDiskIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byType(DropdownButton<int>));
+    await tester.tap(find.byType(PopupMenuButton<int>));
     await tester.pumpAndSettle();
     await tester.pump();
 
-    final dropdownItem = find.descendant(
-      of: find.byType(DropdownMenuItem<int>),
+    final menuItem = find.descendant(
+      of: find.byType(PopupMenuItem<int>),
       matching: find.byKey(ValueKey(1)),
     );
-    await tester.ensureVisible(dropdownItem.last);
-    await tester.tap(dropdownItem.last);
+    await tester.ensureVisible(menuItem.last);
+    await tester.tap(menuItem.last);
     verify(model.selectBootDisk(1)).called(1);
   });
 

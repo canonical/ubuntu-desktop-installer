@@ -1,7 +1,8 @@
 import 'package:filesize/filesize.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 class StorageSelector extends StatelessWidget {
   const StorageSelector({
@@ -29,21 +30,37 @@ class StorageSelector extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         if (title != null) Text(title!),
         if (title != null) const SizedBox(height: 8),
-        DropdownBuilder<int>(
-          values: List.generate(storages.length, (index) => index),
-          selected: selected,
-          onSelected: onSelected,
-          itemBuilder: (context, index, _) {
-            return Text(
-              prettyFormatStorage(storages[index]),
-              key: ValueKey(index),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return YaruPopupMenuButton<int>(
+              initialValue: selected,
+              constraints: BoxConstraints(
+                minWidth: constraints.maxWidth,
+              ),
+              itemBuilder: (context) {
+                return [
+                  for (var i = 0; i < storages.length; ++i)
+                    PopupMenuItem<int>(
+                      value: i,
+                      height: kPopupMenuItemHeight,
+                      child: Text(
+                        prettyFormatStorage(storages[i]),
+                        key: ValueKey(i),
+                      ),
+                    ),
+                ];
+              },
+              onSelected: onSelected,
+              child: selected != null
+                  ? Text(prettyFormatStorage(storages[selected!]))
+                  : const SizedBox.shrink(),
             );
           },
-        )
+        ),
       ],
     );
   }
