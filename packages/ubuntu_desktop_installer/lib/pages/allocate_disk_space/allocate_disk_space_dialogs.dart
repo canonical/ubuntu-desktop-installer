@@ -93,6 +93,7 @@ Future<void> showCreatePartitionDialog(
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
               _PartitionFormatSelector(
                 partitionFormat: partitionFormat,
+                partitionFormats: PartitionFormat.supported,
               )
             ],
             <Widget>[
@@ -221,7 +222,10 @@ Future<void> showEditPartitionDialog(
             ],
             <Widget>[
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-              _PartitionFormatSelector(partitionFormat: partitionFormat),
+              _PartitionFormatSelector(
+                partitionFormat: partitionFormat,
+                partitionFormats: PartitionFormat.values,
+              ),
             ],
             <Widget>[
               const SizedBox.shrink(),
@@ -338,9 +342,11 @@ class _PartitionWipeCheckbox extends StatelessWidget {
 class _PartitionFormatSelector extends StatelessWidget {
   const _PartitionFormatSelector({
     required this.partitionFormat,
+    required this.partitionFormats,
   });
 
   final ValueNotifier<PartitionFormat?> partitionFormat;
+  final List<PartitionFormat> partitionFormats;
 
   @override
   Widget build(BuildContext context) {
@@ -350,7 +356,7 @@ class _PartitionFormatSelector extends StatelessWidget {
       builder: (context, type, child) {
         return DropdownBuilder<PartitionFormat>(
           selected: type,
-          values: PartitionFormat.values,
+          values: partitionFormats,
           itemBuilder: (context, format, _) {
             return Text(
               format.localize(lang),
