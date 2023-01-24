@@ -80,7 +80,7 @@ class Slide extends StatelessWidget {
                     children: [
                       Text(
                         subtitle,
-                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                             color: Colors.white70,
                             fontSize: 32,
                             fontWeight: FontWeight.normal),
@@ -177,7 +177,7 @@ List<Slide> theSlides(BuildContext context) {
 TextStyle _bodyTextStyle(BuildContext context) {
   return Theme.of(context)
       .textTheme
-      .headline6!
+      .titleLarge!
       .copyWith(color: Colors.white70, fontWeight: FontWeight.normal);
 }
 
