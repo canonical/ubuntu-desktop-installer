@@ -24,6 +24,6 @@ class ErrorIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(Icons.error, color: Theme.of(context).errorColor);
+    return Icon(Icons.error, color: Theme.of(context).colorScheme.error);
   }
 }

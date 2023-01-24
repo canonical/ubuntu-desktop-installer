@@ -45,7 +45,7 @@ void main() {
     expect(titleStyle, isNotNull);
 
     final theme = Theme.of(tester.element(title)).textTheme;
-    expect(titleStyle.color, equals(theme.bodyText2!.color));
-    expect(titleStyle.fontSize, greaterThan(theme.bodyText2!.fontSize!));
+    expect(titleStyle.color, equals(theme.bodyMedium!.color));
+    expect(titleStyle.fontSize, greaterThan(theme.bodyMedium!.fontSize!));
   });
 }

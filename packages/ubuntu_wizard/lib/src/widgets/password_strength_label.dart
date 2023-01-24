@@ -22,7 +22,7 @@ class PasswordStrengthLabel extends StatelessWidget {
       case PasswordStrength.weak:
         return Text(
           lang.weakPassword,
-          style: TextStyle(color: Theme.of(context).errorColor),
+          style: TextStyle(color: Theme.of(context).colorScheme.error),
         );
       case PasswordStrength.fair:
         return Text(lang.fairPassword);

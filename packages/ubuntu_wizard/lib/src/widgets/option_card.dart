@@ -69,7 +69,7 @@ class OptionCard extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: DefaultTextStyle(
-              style: theme.textTheme.bodyText2!.copyWith(
+              style: theme.textTheme.bodyMedium!.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 19,
               ),
