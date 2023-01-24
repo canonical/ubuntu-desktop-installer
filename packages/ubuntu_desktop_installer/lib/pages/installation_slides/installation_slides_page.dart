@@ -120,7 +120,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     duration: const Duration(milliseconds: 150),
                     offset: Offset(0, model.isLogVisible ? 0 : 1),
                     child: Container(
-                      color: Theme.of(context).backgroundColor,
+                      color: Theme.of(context).colorScheme.background,
                       padding: const EdgeInsets.only(
                         top: kContentSpacing,
                         left: kContentSpacing,
@@ -134,7 +134,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
             ),
           ),
           Container(
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
             padding: const EdgeInsets.all(kContentSpacing),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,9 +145,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                       model.hasError
                           ? lang.installationFailed
                           : _formatEvent(model.event),
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: model.hasError
-                              ? Theme.of(context).errorColor
+                              ? Theme.of(context).colorScheme.error
                               : null),
                     ),
                     const Spacer(),
@@ -184,7 +184,7 @@ class _JournalView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kContentSpacing),
       style: TextStyle(
         inherit: false,
-        fontSize: Theme.of(context).textTheme.bodyText1!.fontSize,
+        fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
         fontFamily: 'Ubuntu Mono',
         textBaseline: TextBaseline.alphabetic,
       ),

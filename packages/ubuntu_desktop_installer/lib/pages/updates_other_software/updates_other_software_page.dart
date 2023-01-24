@@ -99,7 +99,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
       ),
       footer: model.onBattery
           ? Html(
-              data: lang.onBatteryWarning(Theme.of(context).errorColor.toHex()),
+              data: lang.onBatteryWarning(Theme.of(context).colorScheme.error.toHex()),
             )
           : null,
       actions: <WizardAction>[

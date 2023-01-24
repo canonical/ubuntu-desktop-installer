@@ -97,7 +97,7 @@ class _ThemeOptionCard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(preferenceName,
-              style: Theme.of(context).textTheme.headline6),
+              style: Theme.of(context).textTheme.titleLarge),
         )
       ],
     );

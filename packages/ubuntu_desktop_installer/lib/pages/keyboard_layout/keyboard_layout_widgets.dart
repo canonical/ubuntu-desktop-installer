@@ -21,7 +21,7 @@ class PressKeyView extends StatelessWidget {
         Text(lang.pressOneKey),
         const SizedBox(height: kContentSpacing),
         DefaultTextStyle(
-          style: Theme.of(context).textTheme.headline5!,
+          style: Theme.of(context).textTheme.headlineSmall!,
           child: Wrap(
             spacing: 24,
             alignment: WrapAlignment.spaceEvenly,
@@ -50,7 +50,7 @@ class KeyPresentView extends StatelessWidget {
         Text(lang.isKeyPresent),
         const SizedBox(height: kContentSpacing),
         DefaultTextStyle(
-          style: Theme.of(context).textTheme.headline5!,
+          style: Theme.of(context).textTheme.headlineSmall!,
           child: Align(
             alignment: Alignment.center,
             child: Text(_keyPresent),

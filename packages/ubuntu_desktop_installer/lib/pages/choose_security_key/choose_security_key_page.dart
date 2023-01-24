@@ -76,7 +76,7 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
                 widthFactor: kContentWidthFraction,
                 child: Html(
                   data: lang.chooseSecurityKeyWarning(
-                      Theme.of(context).errorColor.toHex()),
+                      Theme.of(context).colorScheme.error.toHex()),
                   style: {'body': Style(margin: EdgeInsets.zero)},
                 ),
               ),

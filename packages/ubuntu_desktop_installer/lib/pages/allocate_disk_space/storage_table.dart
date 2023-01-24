@@ -151,8 +151,8 @@ class StorageTable extends StatelessWidget {
                 dataRowHeight: kMinInteractiveDimension +
                     theme.visualDensity.baseSizeAdjustment.dy,
                 showCheckboxColumn: false,
-                headingTextStyle: theme.textTheme.subtitle2,
-                dataTextStyle: theme.textTheme.bodyText2,
+                headingTextStyle: theme.textTheme.titleSmall,
+                dataTextStyle: theme.textTheme.bodyMedium,
                 columns: columns
                     .map((column) =>
                         DataColumn(label: column.titleBuilder(context)))

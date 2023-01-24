@@ -25,7 +25,7 @@ class EthernetRadioButton extends StatelessWidget {
     if (!model.isEnabled || model.devices.isEmpty) {
       return NetworkTile(
         leading:
-            Icon(YaruIcons.window_close, color: Theme.of(context).errorColor),
+            Icon(YaruIcons.window_close, color: Theme.of(context).colorScheme.error),
         title: model.devices.isEmpty
             ? Text(lang.noWiredConnection)
             : Text(lang.wiredDisabled),

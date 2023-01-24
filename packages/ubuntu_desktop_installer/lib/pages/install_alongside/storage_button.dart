@@ -34,7 +34,7 @@ class StorageButton extends StatelessWidget {
           const SizedBox(height: kContentSpacing / 2),
           Text(
             name,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
             overflow: TextOverflow.ellipsis,
             softWrap: false,
           ),
@@ -49,7 +49,7 @@ class StorageButton extends StatelessWidget {
           const SizedBox(height: kContentSpacing / 2),
           Text(
             filesize(size),
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headlineSmall,
             overflow: TextOverflow.clip,
             softWrap: false,
           ),

@@ -128,7 +128,7 @@ void main() {
     expect(warning, findsOneWidget);
     expect(
       tester.widget<Html>(warning).data,
-      equals(tester.lang.onBatteryWarning(theme.errorColor.toHex())),
+      equals(tester.lang.onBatteryWarning(theme.colorScheme.error.toHex())),
     );
   });
 
