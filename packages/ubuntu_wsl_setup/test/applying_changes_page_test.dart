@@ -16,7 +16,7 @@ import 'test_utils.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([ApplyingChangesModel, SubiquityStatusMonitor])
+@GenerateMocks([ApplyingChangesModel])
 void main() {
   const theEnd = 'The end';
   LangTester.type = ApplyingChangesModel;

@@ -8,9 +8,6 @@ import 'dart:convert' as _i2;
 import 'dart:io' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/src/endpoint.dart' as _i7;
-import 'package:subiquity_client/src/status_monitor.dart' as _i5;
-import 'package:subiquity_client/src/types.dart' as _i6;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -149,37 +146,4 @@ class MockIOSink extends _i1.Mock implements _i3.IOSink {
         ),
         returnValue: _i4.Future<dynamic>.value(),
       ) as _i4.Future<dynamic>);
-}
-
-/// A class which mocks [SubiquityStatusMonitor].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockSubiquityStatusMonitor extends _i1.Mock
-    implements _i5.SubiquityStatusMonitor {
-  MockSubiquityStatusMonitor() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Stream<_i6.ApplicationStatus?> get onStatusChanged => (super.noSuchMethod(
-        Invocation.getter(#onStatusChanged),
-        returnValue: _i4.Stream<_i6.ApplicationStatus?>.empty(),
-      ) as _i4.Stream<_i6.ApplicationStatus?>);
-  @override
-  _i4.Future<bool> start(_i7.Endpoint? endpoint) => (super.noSuchMethod(
-        Invocation.method(
-          #start,
-          [endpoint],
-        ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
-  @override
-  _i4.Future<void> stop() => (super.noSuchMethod(
-        Invocation.method(
-          #stop,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
 }
