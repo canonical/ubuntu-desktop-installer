@@ -8,6 +8,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
@@ -17,7 +18,6 @@ import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_p
 import 'package:ubuntu_wsl_setup/pages/installation_slides/slides.dart';
 import 'package:ubuntu_wsl_setup/services/journal.dart';
 
-import 'applying_changes_model_test.mocks.dart';
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
 

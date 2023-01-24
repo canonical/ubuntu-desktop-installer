@@ -12,6 +12,7 @@ import 'package:subiquity_client/src/client.dart' as _i7;
 import 'package:subiquity_client/src/endpoint.dart' as _i4;
 import 'package:subiquity_client/src/server.dart' as _i8;
 import 'package:subiquity_client/src/server/process.dart' as _i9;
+import 'package:subiquity_client/src/status_monitor.dart' as _i10;
 import 'package:subiquity_client/src/types.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -1092,6 +1093,39 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
           ),
         )),
       ) as _i6.Future<_i4.Endpoint>);
+  @override
+  _i6.Future<void> stop() => (super.noSuchMethod(
+        Invocation.method(
+          #stop,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+}
+
+/// A class which mocks [SubiquityStatusMonitor].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSubiquityStatusMonitor extends _i1.Mock
+    implements _i10.SubiquityStatusMonitor {
+  MockSubiquityStatusMonitor() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Stream<_i3.ApplicationStatus?> get onStatusChanged => (super.noSuchMethod(
+        Invocation.getter(#onStatusChanged),
+        returnValue: _i6.Stream<_i3.ApplicationStatus?>.empty(),
+      ) as _i6.Stream<_i3.ApplicationStatus?>);
+  @override
+  _i6.Future<bool> start(_i4.Endpoint? endpoint) => (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [endpoint],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
   @override
   _i6.Future<void> stop() => (super.noSuchMethod(
         Invocation.method(

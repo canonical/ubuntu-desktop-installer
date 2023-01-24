@@ -1,16 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart';
 
-import 'applying_changes_model_test.mocks.dart';
-
-@GenerateMocks([IOSink, SubiquityStatusMonitor])
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const methodChannel = MethodChannel('window_manager');

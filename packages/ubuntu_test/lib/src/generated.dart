@@ -5,5 +5,10 @@ import 'package:subiquity_client/subiquity_server.dart';
 
 export 'generated.mocks.dart';
 
-@GenerateMocks([GSettings, SubiquityClient, SubiquityServer])
+@GenerateMocks([
+  GSettings,
+  SubiquityClient,
+  SubiquityServer,
+  SubiquityStatusMonitor,
+])
 class _Generated {} // ignore: unused_element
