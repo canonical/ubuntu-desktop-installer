@@ -214,16 +214,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installThirdPartySubtitle => 'На это программное обеспечение распространяются условиями лицензии, содержащиеся в документации. Часть из них является проприетарной.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Установка программного обеспечения сторонних производителей для графики и Wi-Fi оборудования';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Установить поддержку дополнительных медиаформатов';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -825,13 +825,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get supportedSoftware => 'Поддерживаемое программное обеспечение';
 
   @override
-  String get copyingFiles => 'Копирование файлов...';
+  String get copyingFiles => 'Копирование файлов…';
 
   @override
-  String get installingSystem => 'Установка системы...';
+  String get installingSystem => 'Установка системы…';
 
   @override
-  String get configuringSystem => 'Настройка системы...';
+  String get configuringSystem => 'Настройка системы…';
 
   @override
   String get installationFailed => 'Ошибка установки';
