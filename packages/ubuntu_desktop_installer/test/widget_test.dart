@@ -34,6 +34,11 @@ void main() {
     when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
     when(client.isOpen).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
+
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+    registerMockService<SubiquityStatusMonitor>(monitor);
+
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<TelemetryService>(TelemetryService());
 
