@@ -349,7 +349,7 @@
   "@officeSlideTitle": {},
   "includedSoftware": "Включённое программное обеспечение",
   "@includedSoftware": {},
-  "copyingFiles": "Копирование файлов...",
+  "copyingFiles": "Копирование файлов…",
   "@copyingFiles": {},
   "officeSlideCalc": "LibreOffice Calc",
   "@officeSlideCalc": {},
@@ -651,9 +651,9 @@
       "product": {}
     }
   },
-  "installingSystem": "Установка системы...",
+  "installingSystem": "Установка системы…",
   "@installingSystem": {},
-  "configuringSystem": "Настройка системы...",
+  "configuringSystem": "Настройка системы…",
   "@configuringSystem": {},
   "notEnoughDiskSpaceHeader": "Вам потребуется как минимум {SIZE} дискового пространства для установки {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
@@ -709,5 +709,13 @@
   "installationTypeLVMEncryptionSelected": "LVM и шифрование выбраны",
   "@installationTypeLVMEncryptionSelected": {},
   "showSecurityKey": "Показать ключ безопасности",
-  "@showSecurityKey": {}
+  "@showSecurityKey": {},
+  "installCodecsTitle": "Установить поддержку дополнительных медиаформатов",
+  "@installCodecsTitle": {},
+  "installDriversTitle": "Установка программного обеспечения сторонних производителей для графики и Wi-Fi оборудования",
+  "@installDriversTitle": {},
+  "installCodecsSubtitle": "На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.",
+  "@installDriversSubtitle": {}
 }
