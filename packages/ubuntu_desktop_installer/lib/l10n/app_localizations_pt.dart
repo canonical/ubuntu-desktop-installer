@@ -19,7 +19,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get changeButtonText => 'Alterar';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Aceitar';
 
   @override
   String get noButtonText => 'Não';
@@ -28,13 +28,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get restartButtonText => 'Reiniciar';
 
   @override
-  String get revertButtonText => 'Desfazer';
+  String get revertButtonText => 'Reverter';
 
   @override
   String get yesButtonText => 'Sim';
 
   @override
-  String get quitButtonText => 'Sair da Instalação';
+  String get quitButtonText => 'Sair da instalação';
 
   @override
   String get welcome => 'Bem-vindo';
@@ -53,7 +53,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Experimentar $RELEASE';
+    return 'Experimentar o $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Instalar $RELEASE';
+    return 'Instalar o $RELEASE';
   }
 
   @override
@@ -100,19 +100,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get detectLayout => 'Detetar a disposição do teclado';
 
   @override
-  String get pressOneKey => 'Por favor pressione uma das seguintes teclas:';
+  String get pressOneKey => 'Prima uma das seguintes teclas:';
 
   @override
   String get isKeyPresent => 'A seguinte tecla está presente no seu teclado?';
 
   @override
-  String get configureSecureBootTitle => 'Configurar o Secure Boot';
+  String get configureSecureBootTitle => 'Configurar o Arranque Seguro';
 
   @override
-  String get configureSecureBootDescription => 'Optou por instalar drivers de terceiros. Isso requer desativar o Secure Boot.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
+  String get configureSecureBootDescription => 'Optou por instalar drivers de terceiros. Isso requer desativar o Arranque Seguro.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
 
   @override
-  String get configureSecureBootOption => 'Configurar o Secure Boot';
+  String get configureSecureBootOption => 'Configurar o Arranque Seguro';
 
   @override
   String get chooseSecurityKey => 'Escolha uma chave de segurança';
@@ -124,13 +124,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Não instalar os drivers agora';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Pode instalar depois pelo Programas & Atualizações.';
+  String get dontInstallDriverSoftwareNowDescription => 'Pode instalar depois pelo Software e Atualizações.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Chave de segurança é obrigatória';
+  String get configureSecureBootSecurityKeyRequired => 'A chave de segurança é obrigatória';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Chaves de segurança não correspondem';
+  String get secureBootSecurityKeysDontMatch => 'As chaves de segurança não coincidem';
 
   @override
   String get showSecurityKey => 'Mostrar chave de segurança';
@@ -139,7 +139,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get connectToInternetPageTitle => 'Ligar à Internet';
 
   @override
-  String get connectToInternetDescription => 'Ligar este computador à internet vai ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigue à por cabo ethernet, ou escolha uma rede Wi-Fi';
+  String get connectToInternetDescription => 'Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi';
 
   @override
   String get useWiredConnection => 'Usar uma ligação por cabo';
@@ -169,7 +169,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get hiddenWifiNetworkNameRequired => 'Um nome de rede é necessário';
 
   @override
-  String get noInternet => 'Não pretendo ligar à internet por agora';
+  String get noInternet => 'Não pretendo ligar à Internet por agora';
 
   @override
   String get wirelessNetworkingDisabled => 'Rede sem fios desativada';
@@ -190,40 +190,40 @@ class AppLocalizationsPt extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Quais apps gostaria de instalar para começar?';
+  String get updatesOtherSoftwarePageDescription => 'Que aplicações gostaria de instalar para começar?';
 
   @override
   String get normalInstallationTitle => 'Instalação normal';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilidades, pacote office, games and players de mídia.';
+  String get normalInstallationSubtitle => 'Navegador web, utilitários, software de escritório, jogos e reprodutores multimédia.';
 
   @override
   String get minimalInstallationTitle => 'Instalação mínima';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser utilidades básicas.';
+  String get minimalInstallationSubtitle => 'Navegador web e utilitários básicos.';
 
   @override
   String get otherOptions => 'Outras opções';
 
   @override
-  String get installThirdPartyTitle => 'Instalar software de terceiros para hardware gráfico e de Wi-Fi, bem como formatos de mídia adicionais';
+  String get installThirdPartyTitle => 'Instalar software de terceiros para hardware gráfico e de Wi-Fi, bem como formatos de multimédia adicionais';
 
   @override
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.';
 
   @override
-  String get installDriversTitle => 'instalar drivers de gráficos e Wi-Fi de terceiros';
+  String get installDriversTitle => 'Instalar controladores de gráficos e Wi-Fi de terceiros';
 
   @override
-  String get installDriversSubtitle => 'esse drives são subjetivos aos termos de licença incluídos com sua documentação. eles são proprietários.';
+  String get installDriversSubtitle => 'Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.';
 
   @override
-  String get installCodecsTitle => 'instalar suporte para formatos de media adicionais';
+  String get installCodecsTitle => 'Instalar suporte para formatos de multimédia adicionais';
 
   @override
-  String get installCodecsSubtitle => 'esse programa é subjetivo aos termos de licença incluídos com a sua documentação. alguns são proprietários.';
+  String get installCodecsSubtitle => 'Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -235,7 +235,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Encriptação de disco protege os seus ficheiros em caso de perda do seu computador. Isso requer que digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer ficheiros fora de $RELEASE não serão criptografados.';
+    return 'A encriptação de disco protege os seus ficheiros em caso de perda do seu computador. Isso requer que digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer ficheiros fora do $RELEASE não serão encriptados.';
   }
 
   @override
@@ -248,31 +248,31 @@ class AppLocalizationsPt extends AppLocalizations {
   String get chooseSecurityKeyRequired => 'Uma chave de segurança é necessária';
 
   @override
-  String get chooseSecurityKeyMismatch => 'As chaves de segurança não conferem';
+  String get chooseSecurityKeyMismatch => 'As chaves de segurança não coincidem';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Atenção</font>: Se perder esta chave de segurança, todos os dados estarão perdidos. Se precisar, escreva sua chave num papel e ponha num local seguro.';
+    return '<font color=\"$color\">Atenção</font>: Se perder esta chave de segurança, todos os dados serão perdidos. Se precisar, escreva a sua chave num papel e ponha num local seguro.';
   }
 
   @override
-  String get installationTypeTitle => 'Tipo de installation';
+  String get installationTypeTitle => 'Tipo de instalação';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'Este computador possui $os atualmente instalado. O que deseja fazer?';
+    return 'Este computador tem o $os atualmente instalado. O que gostaria de fazer?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'Este computador ter $os1 e $os2. O que pretende fazer?';
+    return 'Este computador tem o $os1 e o $os2. O que pretende fazer?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Este computador tem múltiplos sistemas operativos nele. O que pretende fazer?';
+  String get installationTypeMultiOSDetected => 'Este computador tem vários sistemas operativos instalados. O que pretende fazer?';
 
   @override
-  String get installationTypeNoOSDetected => 'Este computador não possui sistemas operacionais detectados atualmente. O que deseja fazer?';
+  String get installationTypeNoOSDetected => 'Este computador não tem atualmente nenhum sistema operativo detetado. O que gostaria de fazer?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -285,16 +285,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Recursos Avançados...';
+  String get installationTypeAdvancedLabel => 'Funcionalidades avançadas...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Recursos avançados';
+  String get installationTypeAdvancedTitle => 'Funcionalidades avançadas';
 
   @override
-  String get installationTypeNone => 'Nenhum';
+  String get installationTypeNone => 'Nenhuma';
 
   @override
-  String get installationTypeNoneSelected => 'Nenhum selecionado';
+  String get installationTypeNoneSelected => 'Nenhuma selecionada';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -313,7 +313,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Deverá escolher uma chave de segurança no próximo passo.';
+  String get installationTypeEncryptInfo => 'Deverá escolher uma chave de segurança no passo seguinte.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL: Apagar o disco e usar ZFS';
@@ -323,7 +323,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Apagar $os e reinstalar';
+    return 'Apagar o $os e reinstalar';
   }
 
   @override
@@ -333,26 +333,26 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Instalar $product junto com $os';
+    return 'Instalar o $product junto com $os';
   }
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Instalar $product ao lado de $os1 e $os2';
+    return 'Instalar o $product ao lado do $os1 e do $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Instalar $product ao lado deles';
+    return 'Instalar o $product ao lado deles';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Instalar $product ao lado de outras partições';
+    return 'Instalar o $product ao lado de outras partições';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documentos, músicas e outros ficheiros pessoais serão mantidos. Poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.';
+  String get installationTypeAlongsideInfo => 'Documentos, músicas e outros ficheiros pessoais serão mantidos. Poderá selecionar qual o sistema operativo a usar cada vez que o computador iniciar.';
 
   @override
   String get installationTypeManual => 'Opção avançada';
