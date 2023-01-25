@@ -127,7 +127,7 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-branch: stable
+    source-tag: 3.3.10
     source-depth: 1
     plugin: nil
     override-build: |
