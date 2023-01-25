@@ -21,6 +21,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.3.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
@@ -67,6 +68,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.3.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
@@ -91,6 +93,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        flutter-version: '3.3.x'
 
     - name: Install Melos
       run: flutter pub global activate melos
