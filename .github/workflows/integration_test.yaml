@@ -34,6 +34,9 @@ jobs:
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          flutter-version: '3.3.x'
 
       - name: Flutter Doctor
         run: flutter doctor -v
