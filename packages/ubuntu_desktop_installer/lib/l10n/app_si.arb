@@ -1,6 +1,6 @@
 {
   "@@locale": "si",
-  "windowTitle": "ස්ථාපනය {යෙදුම් අංකය}",
+  "windowTitle": "ස්ථාපනය {RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
