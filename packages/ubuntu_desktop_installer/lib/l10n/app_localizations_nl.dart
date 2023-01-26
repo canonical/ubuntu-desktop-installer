@@ -9,7 +9,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Ubuntu installeren';
+    return '$RELEASE installeren';
   }
 
   @override
@@ -53,22 +53,22 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Ubuntu uitproberen';
+    return '$RELEASE uitproberen';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'U kunt Ubuntu uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.';
+    return 'U kunt $RELEASE uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Ubuntu installeren';
+    return '$RELEASE installeren';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Installeer Ubuntu naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.';
+    return 'Installeer $RELEASE naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.';
   }
 
   @override

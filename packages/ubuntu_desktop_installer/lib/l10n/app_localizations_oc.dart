@@ -439,7 +439,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complet de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
+  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
@@ -457,7 +457,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionUnitB => 'o';
 
   @override
-  String get partitionUnitKB => 'Ko';
+  String get partitionUnitKB => 'kB';
 
   @override
   String get partitionUnitMB => 'Mo';

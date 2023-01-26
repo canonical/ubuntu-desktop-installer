@@ -9,7 +9,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'ස්ථාපනය {යෙදුම් අංකය}';
+    return 'ස්ථාපනය $RELEASE';
   }
 
   @override
