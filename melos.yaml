@@ -46,12 +46,10 @@ scripts:
     melos exec -c 1 --fail-fast --dir-exists=integration_test -- \
       flutter test integration_test
 
+  # runs "flutter pub <arg(s)>" in all packages
+  pub: melos exec -c 1 -- flutter pub "$@"
+
   # run tests in all packages
   test: >
     melos exec -c 1 --fail-fast --dir-exists=test -- \
       flutter test
-
-  # runs pub upgrade in all packages
-  upgrade: >
-    melos exec -c 1 -- \
-      flutter pub upgrade

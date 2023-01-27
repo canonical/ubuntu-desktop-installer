@@ -47,7 +47,7 @@ jobs:
     # test all packages
 
     - name: Bootstrap workspace
-      run: melos bootstrap
+      run: melos pub get
     
     - name: Run tests
       run: melos run coverage
@@ -74,7 +74,7 @@ jobs:
       run: flutter pub global activate melos
 
     - name: Bootstrap workspace
-      run: melos bootstrap
+      run: melos pub get
 
     - name: Check for any formatting issues
       run: melos run format
@@ -99,7 +99,7 @@ jobs:
       run: flutter pub global activate melos
 
     - name: Bootstrap workspace
-      run: melos bootstrap
+      run: melos pub get
 
     - name: Generate source code
       run: melos run generate
