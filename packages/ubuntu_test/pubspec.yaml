@@ -25,4 +25,4 @@ dependencies:
       path: packages/ubuntu_widgets
   ubuntu_wizard:
     path: ../ubuntu_wizard
-  yaru_widgets: ^2.0.0-0
+  yaru_widgets: ^2.0.0
