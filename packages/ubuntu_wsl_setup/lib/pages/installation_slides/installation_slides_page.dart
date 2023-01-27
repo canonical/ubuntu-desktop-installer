@@ -22,12 +22,11 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
-import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../l10n/app_localizations.dart';
+import '../../l10n.dart';
 import '../../services/journal.dart';
 import 'installation_slides_model.dart';
 import 'slides.dart';

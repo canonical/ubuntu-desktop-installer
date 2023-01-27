@@ -5,7 +5,7 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../l10n/app_localizations.dart';
+import '../../l10n.dart';
 import 'applying_changes_model.dart';
 
 /// WSL Advanced setup page.
