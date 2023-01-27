@@ -625,27 +625,27 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partíció #$disk${partition} átméretezve $oldsize -ről $newsize -ra.';
+    return 'partíció #$disk$partition átméretezve $oldsize -ről $newsize -ra.';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partíció #$disk${partition} formázott $format, amelyet a következő célokra használnak $mount';
+    return 'partíció #$disk$partition formázott $format, amelyet a következő célokra használnak $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partíció #$disk${partition} formázva mint $format';
+    return 'partíció #$disk$partition formázva mint $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partíció #$disk${partition} használt $mount';
+    return 'partíció #$disk$partition használt $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partíció #$disk${partition} létrehozott';
+    return 'partíció #$disk$partition létrehozott';
   }
 
   @override

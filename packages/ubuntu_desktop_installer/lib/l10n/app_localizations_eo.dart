@@ -625,27 +625,27 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'ŝanĝi la grandon de la subdisko #$disk${partition} de $oldsize al $newsize';
+    return 'ŝanĝi la grandon de la subdisko #$disk$partition de $oldsize al $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'la subdisko #$disk${partition} strukturota laŭ $format kaj uzota por $mount';
+    return 'la subdisko #$disk$partition strukturota laŭ $format kaj uzota por $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'la subdisko #$disk${partition} strukturota laŭ $format';
+    return 'la subdisko #$disk$partition strukturota laŭ $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'la subdisko #$disk${partition} uzota por $mount';
+    return 'la subdisko #$disk$partition uzota por $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'krei la subdiskon #$disk${partition}';
+    return 'krei la subdiskon #$disk$partition';
   }
 
   @override

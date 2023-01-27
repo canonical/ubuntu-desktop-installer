@@ -625,27 +625,27 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'endret størrelse fra $oldsize til $newsize for #$disk${partition}';
+    return 'endret størrelse fra $oldsize til $newsize for #$disk$partition';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partisjon #$disk${partition} formatert som $format og brukt til $mount';
+    return 'partisjon #$disk$partition formatert som $format og brukt til $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partisjon #$disk${partition} formatert som $format';
+    return 'partisjon #$disk$partition formatert som $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partisjon #$disk${partition} brukt til $mount';
+    return 'partisjon #$disk$partition brukt til $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partisjon #$disk${partition} opprettet';
+    return 'partisjon #$disk$partition opprettet';
   }
 
   @override

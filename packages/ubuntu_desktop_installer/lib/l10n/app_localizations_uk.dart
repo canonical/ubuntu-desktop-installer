@@ -625,27 +625,27 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'розмір розділу #$disk${partition} змінено з $oldsize на $newsize';
+    return 'розмір розділу #$disk$partition змінено з $oldsize на $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'розділ #$disk${partition}, відформатований як $format, використано для $mount';
+    return 'розділ #$disk$partition, відформатований як $format, використано для $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'розділ #$disk${partition} відформатовано як $format';
+    return 'розділ #$disk$partition відформатовано як $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'розділ #$disk${partition} використано для $mount';
+    return 'розділ #$disk$partition використано для $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'створено розділ #$disk${partition}';
+    return 'створено розділ #$disk$partition';
   }
 
   @override

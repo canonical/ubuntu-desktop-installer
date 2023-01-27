@@ -235,7 +235,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return '디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n${RELEASE} 밖의 파일은 암호화 되지 않습니다.';
+    return '디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n$RELEASE 밖의 파일은 암호화 되지 않습니다.';
   }
 
   @override
@@ -625,27 +625,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'partition #$disk$partition resized from $oldsize to $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partition #$disk$partition formatted as $format used for $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '파티션 #$disk${partition} 을(를) $format (으)로 포맷함';
+    return '파티션 #$disk$partition 을(를) $format (으)로 포맷함';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partition #$disk$partition used for $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '파티션 #$disk${partition} 생성됨';
+    return '파티션 #$disk$partition 생성됨';
   }
 
   @override
