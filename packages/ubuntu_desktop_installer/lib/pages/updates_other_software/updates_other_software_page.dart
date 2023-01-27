@@ -46,8 +46,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
     final model = context.watch<UpdateOtherSoftwareModel>();
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.updatesOtherSoftwarePageTitle),
       ),
       headerPadding: EdgeInsets.zero,

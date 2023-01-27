@@ -88,8 +88,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     final model = Provider.of<KeyboardLayoutModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.keyboardLayoutPageTitle),
       ),
       header: Text(lang.chooseYourKeyboardLayout),

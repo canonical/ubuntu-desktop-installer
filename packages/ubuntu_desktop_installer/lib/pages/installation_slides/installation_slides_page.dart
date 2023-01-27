@@ -78,19 +78,21 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     final slides = SlidesContext.of(context);
+    final titlePadding = kYaruWindowControlSize +
+        (YaruTitleBarTheme.of(context).buttonPadding ?? EdgeInsets.zero)
+            .horizontal;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
+      appBar: YaruWindowTitleBar(
         titleSpacing: 0,
+        centerTitle: false,
         title: SizedBox(
           height: kYaruTitleBarHeight,
           child: PageView.builder(
             controller: _titleController,
             itemCount: slides.length,
             itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Align(
-                alignment: Alignment.centerLeft,
+              padding: EdgeInsetsDirectional.only(start: titlePadding),
+              child: Center(
                 child: slides[index].title(context),
               ),
             ),
@@ -114,7 +116,6 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                   },
                 ),
                 Positioned.fill(
-                  top: Theme.of(context).appBarTheme.toolbarHeight,
                   child: AnimatedSlide(
                     curve: Curves.easeIn,
                     duration: const Duration(milliseconds: 150),

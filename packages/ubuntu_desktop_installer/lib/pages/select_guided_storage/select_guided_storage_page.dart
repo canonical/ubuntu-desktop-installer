@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -60,8 +61,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.selectGuidedStoragePageTitle(flavor.name)),
       ),
       content: Column(

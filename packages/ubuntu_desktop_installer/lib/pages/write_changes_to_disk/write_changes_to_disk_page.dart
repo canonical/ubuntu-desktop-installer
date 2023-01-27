@@ -5,6 +5,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
@@ -53,8 +54,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<WriteChangesToDiskModel>(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.writeChangesToDisk),
       ),
       header: Text(lang.writeChangesDescription),

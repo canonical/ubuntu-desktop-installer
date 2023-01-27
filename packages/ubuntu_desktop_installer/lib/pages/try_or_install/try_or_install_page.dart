@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../settings.dart';
@@ -34,8 +35,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(lang.tryOrInstallPageTitle),
       ),
       contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 100),

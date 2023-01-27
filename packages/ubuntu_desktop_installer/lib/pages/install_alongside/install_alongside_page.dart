@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../pages.dart';
@@ -70,8 +71,7 @@ class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
     final model = Provider.of<InstallAlongsideModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: AppBar(
-        automaticallyImplyLeading: false,
+      title: YaruWindowTitleBar(
         title: Text(_formatTitle(context)),
       ),
       content: Column(

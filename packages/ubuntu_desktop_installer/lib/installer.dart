@@ -184,7 +184,7 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
 
     final monitor = getService<SubiquityStatusMonitor>();
     _subiquityStatus = monitor.onStatusChanged.listen((status) {
-      setWindowClosable(status?.state.isInstalling != true);
+      YaruWindow.of(context).setClosable(status?.state.isInstalling != true);
     });
   }
 
@@ -220,6 +220,14 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
                 ],
                 supportedLocales: supportedLocales,
                 home: buildApp(context),
+                builder: (context, child) => Stack(
+                  children: [
+                    const Positioned.fill(
+                      child: _UbuntuDesktopInstallerBackground(),
+                    ),
+                    Positioned.fill(child: child!),
+                  ],
+                ),
               );
             },
           ),
@@ -241,6 +249,20 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
   }
 }
 
+class _UbuntuDesktopInstallerBackground extends StatelessWidget {
+  const _UbuntuDesktopInstallerBackground();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: YaruWindowTitleBar(
+        title: SizedBox.shrink(),
+        style: YaruTitleBarStyle.undecorated,
+      ),
+    );
+  }
+}
+
 class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   const _UbuntuDesktopInstallerLoadingPage();
 
@@ -249,7 +271,9 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final lang = AppLocalizations.of(context);
     return WizardPage(
-      title: AppBar(title: Text(AppLocalizations.of(context).welcome)),
+      title: YaruWindowTitleBar(
+        title: Text(AppLocalizations.of(context).welcome),
+      ),
       header: Text(lang.welcomeHeader),
       content: Row(
         children: [
