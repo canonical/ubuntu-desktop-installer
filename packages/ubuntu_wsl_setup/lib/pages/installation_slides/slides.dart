@@ -80,10 +80,13 @@ class Slide extends StatelessWidget {
                     children: [
                       Text(
                         subtitle,
-                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                            color: Colors.white70,
-                            fontSize: 32,
-                            fontWeight: FontWeight.normal),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                                color: Colors.white70,
+                                fontSize: 32,
+                                fontWeight: FontWeight.normal),
                       ),
                       if (span != null)
                         RichText(text: TextSpan(children: span)),
