@@ -625,27 +625,27 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partição #$disk${partition} redimensionada de $oldsize para $newsize';
+    return 'partição #$disk$partition redimensionada de $oldsize para $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partição #$disk${partition} formatada como $format usada para $mount';
+    return 'partição #$disk$partition formatada como $format usada para $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partição #$disk${partition} formatada como $format';
+    return 'partição #$disk$partition formatada como $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partição #$disk${partition} usada para $mount';
+    return 'partição #$disk$partition usada para $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partição #$disk${partition} criada';
+    return 'partição #$disk$partition criada';
   }
 
   @override
@@ -1480,27 +1480,27 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'Partição #$disk${partition} alterado de $oldsize para $newsize';
+    return 'Partição #$disk$partition alterado de $oldsize para $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partição #$disk${partition} formatada usando $format para $mount';
+    return 'partição #$disk$partition formatada usando $format para $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partição #$disk${partition} formatada usando: $format';
+    return 'partição #$disk$partition formatada usando: $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partição #$disk${partition} usado para $mount';
+    return 'partição #$disk$partition usado para $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partição #$disk${partition} criada';
+    return 'partição #$disk$partition criada';
   }
 
   @override

@@ -625,27 +625,27 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partycja #$disk${partition} zmieniła rozmiar z $oldsize na $newsize';
+    return 'partycja #$disk$partition zmieniła rozmiar z $oldsize na $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partycja #$disk${partition} sformatowana jako $format używana do $mount';
+    return 'partycja #$disk$partition sformatowana jako $format używana do $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partycja #$disk${partition} sformatowana jako $format';
+    return 'partycja #$disk$partition sformatowana jako $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partycja #$disk${partition} używana do $mount';
+    return 'partycja #$disk$partition używana do $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'utworzona partycja #$disk${partition}';
+    return 'utworzona partycja #$disk$partition';
   }
 
   @override

@@ -625,27 +625,27 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'הגודל של מחיצה מס׳ $disk${partition} ישתנה מ־$oldsize ל־$newsize';
+    return 'הגודל של מחיצה מס׳ $disk$partition ישתנה מ־$oldsize ל־$newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'מחיצה מס׳ $disk${partition} תפורמט כ־$format ותשמש עבור $mount';
+    return 'מחיצה מס׳ $disk$partition תפורמט כ־$format ותשמש עבור $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'מחיצה מס׳ $disk${partition} תפורמט בתור $format';
+    return 'מחיצה מס׳ $disk$partition תפורמט בתור $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'מחיצה מס׳ $disk${partition} תשמש עבור $mount';
+    return 'מחיצה מס׳ $disk$partition תשמש עבור $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'מחיצה מס׳ $disk${partition} נוצרה';
+    return 'מחיצה מס׳ $disk$partition נוצרה';
   }
 
   @override

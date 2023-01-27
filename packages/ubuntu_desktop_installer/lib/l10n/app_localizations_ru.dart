@@ -625,27 +625,27 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'размер раздела #$disk${partition} изменен с $oldsize на $newsize';
+    return 'размер раздела #$disk$partition изменен с $oldsize на $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'раздел #$disk${partition} отформатирован как $format и использован для $mount';
+    return 'раздел #$disk$partition отформатирован как $format и использован для $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'раздел #$disk${partition} отформатирован как $format';
+    return 'раздел #$disk$partition отформатирован как $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'раздел #$disk${partition} использован для $mount';
+    return 'раздел #$disk$partition использован для $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'раздел #$disk${partition} создан';
+    return 'раздел #$disk$partition создан';
   }
 
   @override

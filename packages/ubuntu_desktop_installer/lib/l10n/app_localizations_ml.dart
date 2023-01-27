@@ -235,7 +235,7 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'നിങ്ങളുടെ കമ്പ്യൂട്ടർ നഷ്‌ടപ്പെട്ടാൽ ഡിസ്‌ക് എൻക്രിപ്ഷൻ നിങ്ങളുടെ ഫയലുകളെ സംരക്ഷിക്കുന്നു. ഓരോ തവണ കമ്പ്യൂട്ടർ ഓണാകുമ്പോഴും നിങ്ങൾ ഒരു സുരക്ഷാ കീ നൽകേണ്ടതുണ്ട്.\n\n${RELEASE}-ന് പുറത്തുള്ള ഫയലുകളൊന്നും എൻക്രിപ്റ്റ് ചെയ്യപ്പെടില്ല.';
+    return 'നിങ്ങളുടെ കമ്പ്യൂട്ടർ നഷ്‌ടപ്പെട്ടാൽ ഡിസ്‌ക് എൻക്രിപ്ഷൻ നിങ്ങളുടെ ഫയലുകളെ സംരക്ഷിക്കുന്നു. ഓരോ തവണ കമ്പ്യൂട്ടർ ഓണാകുമ്പോഴും നിങ്ങൾ ഒരു സുരക്ഷാ കീ നൽകേണ്ടതുണ്ട്.\n\n$RELEASE-ന് പുറത്തുള്ള ഫയലുകളൊന്നും എൻക്രിപ്റ്റ് ചെയ്യപ്പെടില്ല.';
   }
 
   @override
@@ -625,27 +625,27 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} resized from $oldsize to $newsize';
+    return 'partition #$disk$partition resized from $oldsize to $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formatted as $format used for $mount';
+    return 'partition #$disk$partition formatted as $format used for $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formatted as $format';
+    return 'partition #$disk$partition formatted as $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} used for $mount';
+    return 'partition #$disk$partition used for $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} created';
+    return 'partition #$disk$partition created';
   }
 
   @override

@@ -235,7 +235,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return '磁盘加密会保护磁盘上的文件，以免因电脑丢失而蒙受损失。但是，每次在计算机启动时，它会要求您输入一个安全密钥。\n\n${RELEASE}之外的任何文件都不会加密。';
+    return '磁盘加密会保护磁盘上的文件，以免因电脑丢失而蒙受损失。但是，每次在计算机启动时，它会要求您输入一个安全密钥。\n\n$RELEASE之外的任何文件都不会加密。';
   }
 
   @override
@@ -625,27 +625,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '分区 #$disk${partition} 从 $oldsize 调整大小到 $newsize';
+    return '分区 #$disk$partition 从 $oldsize 调整大小到 $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '分区 #$disk${partition} 格式化为 $format 并挂载到 $mount';
+    return '分区 #$disk$partition 格式化为 $format 并挂载到 $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '分区 #$disk${partition} 格式化为 $format';
+    return '分区 #$disk$partition 格式化为 $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '分区 #$disk${partition} 挂载到 $mount';
+    return '分区 #$disk$partition 挂载到 $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '分区 #$disk${partition} 已创建';
+    return '分区 #$disk$partition 已创建';
   }
 
   @override

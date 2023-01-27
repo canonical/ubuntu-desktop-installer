@@ -625,27 +625,27 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk${partition} storleksändrad från $oldsize till $newsize';
+    return 'partition #$disk$partition storleksändrad från $oldsize till $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk${partition} formaterad som $format används för $mount';
+    return 'partition #$disk$partition formaterad som $format används för $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk${partition} formaterad som $format';
+    return 'partition #$disk$partition formaterad som $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk${partition} används för $mount';
+    return 'partition #$disk$partition används för $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk${partition} skapad';
+    return 'partition #$disk$partition skapad';
   }
 
   @override

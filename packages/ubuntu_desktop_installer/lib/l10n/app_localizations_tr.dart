@@ -235,7 +235,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk şifreleme bilgisayarınızı kaybetme ihtimaline karşı dosyalarınızı korumaktadır. Bilgisayar her başladığında bir güvenlik anahtarı girmenizi gerektirmektedir.\n\n${RELEASE} haricindeki dosyalar şifrelenmeyecektir.';
+    return 'Disk şifreleme bilgisayarınızı kaybetme ihtimaline karşı dosyalarınızı korumaktadır. Bilgisayar her başladığında bir güvenlik anahtarı girmenizi gerektirmektedir.\n\n$RELEASE haricindeki dosyalar şifrelenmeyecektir.';
   }
 
   @override
@@ -625,27 +625,27 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '#$disk${partition} bölümü $oldsize boyutundan $newsize boyutuna yeniden boyutlandırıldı';
+    return '#$disk$partition bölümü $oldsize boyutundan $newsize boyutuna yeniden boyutlandırıldı';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '#$disk${partition} bölümü ($format olarak biçimlendirilmiş) $mount için kullanıldı';
+    return '#$disk$partition bölümü ($format olarak biçimlendirilmiş) $mount için kullanıldı';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '#$disk${partition} bölümü $format olarak biçimlendirildi';
+    return '#$disk$partition bölümü $format olarak biçimlendirildi';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '#$disk${partition} bölümü $mount için kullanıldı';
+    return '#$disk$partition bölümü $mount için kullanıldı';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '#$disk${partition} bölümü oluşturuldu';
+    return '#$disk$partition bölümü oluşturuldu';
   }
 
   @override
