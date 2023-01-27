@@ -1,4 +1,4 @@
-import 'package:collection/collection.dart';
+import 'package:collection/collection.dart' hide ListExtensions;
 import 'package:dartx/dartx.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -83,7 +83,7 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   Partition? getPartition(int index) {
     final number = getStorage(index)?.partitionNumber;
     if (number == null) return null;
-    return getAllPartitions(index)?.firstOrNullWhere((p) => p.number == number);
+    return getAllPartitions(index)?.firstWhereOrNull((p) => p.number == number);
   }
 
   /// Returns all partitions of the disk of the guided storage at the

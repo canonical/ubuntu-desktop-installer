@@ -152,9 +152,9 @@ class _SlidesPage extends StatelessWidget {
                     model.hasError
                         ? lang.installationSlidesErrorMsg
                         : lang.installationSlidesUnpacking,
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: model.hasError
-                            ? Theme.of(context).errorColor
+                            ? Theme.of(context).colorScheme.error
                             : null),
                   ),
                   const Spacer(),
@@ -202,7 +202,7 @@ class _JournalView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kContentSpacing),
       style: TextStyle(
         inherit: false,
-        fontSize: Theme.of(context).textTheme.bodyText1!.fontSize,
+        fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
         fontFamily: 'Ubuntu Mono',
         textBaseline: TextBaseline.alphabetic,
       ),
@@ -231,7 +231,7 @@ class _ErrorScreen extends StatelessWidget {
         subtitle: 'Oh, no!',
         span: [
           TextSpan(
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
             text: lang.installationSlidesErrorText,
           ),
           const TextSpan(text: '\n'),
@@ -256,7 +256,7 @@ class _CodeLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context).textTheme.bodyText1!.copyWith(
+    final style = Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontFamily: 'Ubuntu Mono',
           backgroundColor: Theme.of(context).highlightColor,
         );

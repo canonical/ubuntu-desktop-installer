@@ -151,8 +151,8 @@ class _PartitionLabel extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: Theme.of(context).textTheme.subtitle2),
-            Text(filesize(size), style: Theme.of(context).textTheme.caption),
+            Text(title, style: Theme.of(context).textTheme.titleSmall),
+            Text(filesize(size), style: Theme.of(context).textTheme.bodySmall),
           ],
         ),
       ],

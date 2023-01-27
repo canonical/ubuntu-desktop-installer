@@ -23,7 +23,7 @@ void main() {
 
     final widget = tester.widget<Text>(find.text(text));
     expect(widget.style?.color, isNotNull);
-    expect(widget.style!.color, equals(Theme.of(context).errorColor));
+    expect(widget.style!.color, equals(Theme.of(context).colorScheme.error));
   });
 
   testWidgets('fair password', (tester) async {

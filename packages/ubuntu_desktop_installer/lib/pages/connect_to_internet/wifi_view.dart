@@ -34,7 +34,7 @@ class WifiRadioButton extends StatelessWidget {
       child: !model.isEnabled || model.devices.isEmpty
           ? NetworkTile(
               leading: Icon(YaruIcons.window_close,
-                  color: Theme.of(context).errorColor),
+                  color: Theme.of(context).colorScheme.error),
               title: !model.isEnabled
                   ? Text(lang.wirelessNetworkingDisabled)
                   : Text(lang.noWifiDevicesDetected),
@@ -157,7 +157,7 @@ class WifiListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final device = Provider.of<WifiDevice>(context);
-    final textColor = Theme.of(context).textTheme.subtitle1!.color;
+    final textColor = Theme.of(context).textTheme.titleMedium!.color;
     final iconSize = IconTheme.of(context).size;
     return ExpansionTile(
       initiallyExpanded: true,

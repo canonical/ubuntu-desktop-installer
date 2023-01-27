@@ -48,7 +48,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<ProfileSetupModel>(context);
-    final textColor = Theme.of(context).textTheme.bodyText2!.color;
+    final textColor = Theme.of(context).textTheme.bodyMedium!.color;
     return WizardPage(
       contentPadding: EdgeInsets.zero,
       title: AppBar(

@@ -104,14 +104,14 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
                     flavor.name,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(model.selectedDisk?.path ?? ''),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
                     filesize(model.selectedDisk?.size ?? 0),
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ],
               ),
