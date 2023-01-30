@@ -191,6 +191,9 @@ class _JournalView extends StatelessWidget {
       ),
       decoration: const InputDecoration(
         border: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        fillColor: Colors.transparent,
         contentPadding: EdgeInsets.symmetric(vertical: kContentSpacing / 2),
       ),
       background: BoxDecoration(color: Theme.of(context).shadowColor),
