@@ -1,0 +1,4 @@
+[submodule "subiquity_client"]
+	path = packages/subiquity_client
+	url = https://github.com/canonical/subiquity_client.dart.git
+	branch = main
