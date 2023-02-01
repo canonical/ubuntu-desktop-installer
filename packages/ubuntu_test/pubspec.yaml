@@ -17,12 +17,16 @@ dependencies:
   mockito: 5.3.2
   path: ^1.8.0
   subiquity_client:
-    path: ../subiquity_client
+    git:
+      url: https://github.com/canonical/ubuntu-desktop-installer.git
+      path: packages/subiquity_client
   ubuntu_localizations: ^0.0.3
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
   ubuntu_wizard:
-    path: ../ubuntu_wizard
+    git:
+      url: https://github.com/canonical/ubuntu-desktop-installer.git
+      path: packages/ubuntu_wizard
   yaru_widgets: ^2.0.0
