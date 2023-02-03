@@ -23,7 +23,7 @@ dependencies:
     sdk: flutter
   flutter_markdown: ^0.6.2
   flutter_spinbox: ^0.12.0
-  flutter_svg: ^1.1.0
+  flutter_svg: ^2.0.0
   form_field_validator: ^1.1.0
   gsettings: ^0.2.5
   handy_window: ^0.2.0
