@@ -59,7 +59,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
         child: Html(
           data: lang.profileSetupHeader,
           style: {
-            'body': Style(margin: EdgeInsets.zero),
+            'body': Style(margin: Margins.zero),
             'a': Style(textDecoration: TextDecoration.none, color: textColor),
           },
           onLinkTap: (url, _, __, ___) => launchUrl(url!),
