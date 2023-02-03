@@ -709,5 +709,7 @@
     "placeholders": {
       "product": {}
     }
-  }
+  },
+  "showSecurityKey": "セキュリティキーを表示します",
+  "@showSecurityKey": {}
 }
