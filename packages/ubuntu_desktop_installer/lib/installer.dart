@@ -278,7 +278,12 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
       content: Row(
         children: [
           Expanded(
-            child: YaruBorderContainer(height: height),
+            child: YaruBorderContainer(
+              height: height,
+              child: const Center(
+                child: YaruCircularProgressIndicator(),
+              ),
+            ),
           ),
           const SizedBox(width: kContentSpacing),
           Expanded(
