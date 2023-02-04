@@ -463,7 +463,7 @@
   "@configuringSystem": {},
   "installationFailed": "Kurulum başarısız oldu",
   "@installationFailed": {},
-  "newPartitionTableConfirmationMessage": "Bölümlemek için tüm cihazı seçtiniz. Cihazda yeni bölüm tablosu oluşturmaya devam ederseniz, mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.",
+  "newPartitionTableConfirmationMessage": "Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.",
   "@newPartitionTableConfirmationMessage": {},
   "webSlideDescription": "{RELEASE} dünya çapında milyonlarca kişi tarafından kullanılan web tarayıcısı Firefox ile geliyor. Ayrıca sık kullandığınız internet uygulamaları (örneğin Facebook veya Gmail gibi), tıpkı bilgisayarınızdaki uygulamalar gibi daha hızlı erişim için masaüstünüze sabitleyebilirsiniz.",
   "@webSlideDescription": {
@@ -476,7 +476,7 @@
   "@officeSlideDescription": {},
   "accessSlideTitle": "Herkes için erişim",
   "@accessSlideTitle": {},
-  "accessSlideDescription": "{RELEASE} felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk şeması ve metin boyutunu değiştirme seçenekleriyle {RELEASE}, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.",
+  "accessSlideDescription": "{RELEASE} felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk ve metin boyutunu değiştirme seçenekleriyle {RELEASE}, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -670,7 +670,7 @@
       "color": {}
     }
   },
-  "supportSlideDocumentation": "Resmi belgeler {RELEASE} ile ilgili en yaygın alanların çoğunu kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.",
+  "supportSlideDocumentation": "Resmi belgeler {RELEASE} ile ilgili en yaygın konuları kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -721,11 +721,11 @@
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",
   "@installationTypeLVMEncryptionSelected": {},
-  "installDriversTitle": "Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları yükle",
+  "installDriversTitle": "Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları kur",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Ek ortam biçimleri desteğini yükle",
+  "installCodecsTitle": "Ek ortam biçimleri desteğini kur",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
   "@installCodecsSubtitle": {}
