@@ -28,10 +28,13 @@ static gboolean my_application_fit_to_workarea(GtkWindow* window) {
   GdkRectangle workarea;
   my_application_get_workarea(window, &workarea);
 
-  gboolean fits_workarea =
-      allocation.width < workarea.width || allocation.height < workarea.height;
+  // the workarea is not reported correctly early on startup, so subtract some
+  // extra space to be sure the window fits. by default, the dock is ~90px wide
+  // and the top bar is ~30px high.
+  gboolean fits_workarea = allocation.width < workarea.width - 100 ||
+                           allocation.height < workarea.height - 40;
   if (!fits_workarea) {
-    gtk_window_maximize(window);
+    gtk_window_fullscreen(window);
   }
   return fits_workarea;
 }
