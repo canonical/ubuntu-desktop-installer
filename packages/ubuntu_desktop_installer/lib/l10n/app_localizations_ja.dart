@@ -133,7 +133,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'セキュリティキーが一致しません';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'セキュリティキーを表示します';
 
   @override
   String get connectToInternetPageTitle => 'インターネットに接続';

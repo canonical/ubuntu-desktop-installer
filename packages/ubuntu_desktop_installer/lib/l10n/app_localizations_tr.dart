@@ -214,13 +214,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installThirdPartySubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları tescillidir.';
 
   @override
-  String get installDriversTitle => 'Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları yükle';
+  String get installDriversTitle => 'Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları kur';
 
   @override
   String get installDriversSubtitle => 'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
 
   @override
-  String get installCodecsTitle => 'Ek ortam biçimleri desteğini yükle';
+  String get installCodecsTitle => 'Ek ortam biçimleri desteğini kur';
 
   @override
   String get installCodecsSubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
@@ -439,7 +439,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Bu cihazda yeni bir boş bölüm tablosu oluşturulsun mu?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Bölümlemek için tüm cihazı seçtiniz. Cihazda yeni bölüm tablosu oluşturmaya devam ederseniz, mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.';
+  String get newPartitionTableConfirmationMessage => 'Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.';
 
   @override
   String get bootLoaderDevice => 'Önyükleyici kurulumu yapılacak cihaz';
@@ -786,7 +786,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk şeması ve metin boyutunu değiştirme seçenekleriyle $RELEASE, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.';
+    return '$RELEASE felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk ve metin boyutunu değiştirme seçenekleriyle $RELEASE, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.';
   }
 
   @override
@@ -806,7 +806,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Resmi belgeler $RELEASE ile ilgili en yaygın alanların çoğunu kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.';
+    return 'Resmi belgeler $RELEASE ile ilgili en yaygın konuları kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.';
   }
 
   @override
