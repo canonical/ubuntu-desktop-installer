@@ -38,7 +38,7 @@ dependencies:
   stdlibc: ^0.1.0
   subiquity_client:
     git:
-      url: https://github.com/jpnurmi/subiquity_client.dart.git
+      url: https://github.com/canonical/subiquity_client.dart.git
   timezone_map:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
