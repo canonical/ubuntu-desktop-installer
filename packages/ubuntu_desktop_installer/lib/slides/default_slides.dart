@@ -278,7 +278,7 @@ final _accessSlide = Slide(
                 _SlideLabel(context.lang.accessSlideCustomizationOptions),
                 _SlideLabel.icon(
                   icon: 'themes',
-                  text: context.lang.officeSlideWriter,
+                  text: context.lang.accessSlideAppearance,
                 ),
                 _SlideLabel.icon(
                   icon: 'access',
