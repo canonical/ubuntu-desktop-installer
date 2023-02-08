@@ -208,22 +208,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get otherOptions => 'その他のオプション';
 
   @override
-  String get installThirdPartyTitle => 'グラフィックスや Wi-Fi ハードウェアのためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする';
+  String get installThirdPartyTitle => 'グラフィックスや Wi-Fi 機器のためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする';
 
   @override
   String get installThirdPartySubtitle => 'このソフトウェアの使用には、それぞれのドキュメントに記載されているライセンス規約が適用されます。一部のソフトウェアはプロプライエタリです。';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'グラフィックスとWi-Fi 機器用のサードパーティ製ソフトウェアをインストールする';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'これらのドライバーは自身のドキュメントに含まれるライセンス条項に従い、プロプライエタリです。';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => '追加のメディアフォーマット用のサポートをインストールする';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。';
 
   @override
   String onBatteryWarning(Object color) {
@@ -305,7 +305,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM を選択しました';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVMと暗号化を選択しました';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -627,7 +627,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => '以下のパーティションがフォーマットされます:';
+  String get writeChangesPartitionsHeader => '以下のパーティション変更が適用されます:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
@@ -831,13 +831,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get supportedSoftware => 'サポートされているソフトウェア';
 
   @override
-  String get copyingFiles => 'ファイルをコピーしています...';
+  String get copyingFiles => 'ファイルをコピーしています…';
 
   @override
-  String get installingSystem => 'システムをインストールしています...';
+  String get installingSystem => 'システムをインストールしています…';
 
   @override
-  String get configuringSystem => 'システムを設定しています...';
+  String get configuringSystem => 'システムを設定しています…';
 
   @override
   String get installationFailed => 'インストールに失敗しました';
