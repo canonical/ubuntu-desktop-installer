@@ -1,3 +1,66 @@
 {
-  "@@locale": "ar"
+  "@@locale": "ar",
+  "welcomeHeader": "اختر لغتك language:",
+  "@welcomeHeader": {},
+  "cancelButtonText": "الغاء",
+  "@cancelButtonText": {},
+  "changeButtonText": "تغيير",
+  "@changeButtonText": {},
+  "okButtonText": "موافق",
+  "@okButtonText": {},
+  "noButtonText": "لا",
+  "@noButtonText": {},
+  "restartButtonText": "إعادة تشغيل",
+  "@restartButtonText": {},
+  "revertButtonText": "يرجع",
+  "@revertButtonText": {},
+  "yesButtonText": "نعم",
+  "@yesButtonText": {},
+  "repairInstallation": "تصليح المثبت",
+  "@repairInstallation": {},
+  "windowTitle": "ثبت {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "quitButtonText": "الغي المثبت",
+  "@quitButtonText": {},
+  "welcome": "مرحبا",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "جرب او ثبت",
+  "@tryOrInstallPageTitle": {},
+  "repairInstallationDescription": "تصليح سوف يقوم بإعادة تثبيت جميع software المثبتة بدون تغيير الاعدادات او المستندات",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "جرب {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntuDescription": "يمكنك تجربة {RELEASE} بدون إجراء اي تغييرات لجهازك.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "ثبت {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "ثبت {RELEASE} بجانب او بدلا من نظامك الحالي. لا ينبغي لهذا الإجراء اخذ الكثير من الوقت.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "appTitle": "مثبت سطح مكتب اوبنتو",
+  "@appTitle": {}
 }
