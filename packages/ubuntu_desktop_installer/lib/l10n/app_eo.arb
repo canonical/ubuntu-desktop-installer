@@ -712,5 +712,9 @@
   "installCodecsTitle": "Instali programojn por kromaj videaj dosierformoj",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "tooManyPrimaryPartitions": "Tro da unuagradaj subdiskoj",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "Limo atingiĝis",
+  "@partitionLimitReached": {}
 }
