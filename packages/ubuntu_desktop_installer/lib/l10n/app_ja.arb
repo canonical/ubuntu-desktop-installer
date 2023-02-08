@@ -47,7 +47,7 @@
   "@minimalInstallationTitle": {},
   "wifiMustBeEnabled": "このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります",
   "@wifiMustBeEnabled": {},
-  "installThirdPartyTitle": "グラフィックスや Wi-Fi ハードウェアのためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする",
+  "installThirdPartyTitle": "グラフィックスや Wi-Fi 機器のためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする",
   "@installThirdPartyTitle": {},
   "chooseSecurityKeyHint": "セキュリティキーを決めて下さい",
   "@chooseSecurityKeyHint": {},
@@ -320,7 +320,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "以下のパーティションがフォーマットされます:",
+  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます:",
   "@writeChangesPartitionsHeader": {},
   "chooseYourLookPageTitle": "外観の選択",
   "@chooseYourLookPageTitle": {},
@@ -623,7 +623,7 @@
   "@officeSlideCalc": {},
   "officeSlideImpress": "LibreOffice Impress",
   "@officeSlideImpress": {},
-  "copyingFiles": "ファイルをコピーしています...",
+  "copyingFiles": "ファイルをコピーしています…",
   "@copyingFiles": {},
   "installationFailed": "インストールに失敗しました",
   "@installationFailed": {},
@@ -665,9 +665,9 @@
   },
   "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます:",
   "@installAlongsideSpaceDivider": {},
-  "installingSystem": "システムをインストールしています...",
+  "installingSystem": "システムをインストールしています…",
   "@installingSystem": {},
-  "configuringSystem": "システムを設定しています...",
+  "configuringSystem": "システムを設定しています…",
   "@configuringSystem": {},
   "notEnoughDiskSpaceHeader": "{RELEASE} をインストールするには、最低でも{SIZE}のディスク容量が必要です。",
   "@notEnoughDiskSpaceHeader": {
@@ -711,5 +711,15 @@
     }
   },
   "showSecurityKey": "セキュリティキーを表示します",
-  "@showSecurityKey": {}
+  "@showSecurityKey": {},
+  "installDriversSubtitle": "これらのドライバーは自身のドキュメントに含まれるライセンス条項に従い、プロプライエタリです。",
+  "@installDriversSubtitle": {},
+  "installDriversTitle": "グラフィックスとWi-Fi 機器用のサードパーティ製ソフトウェアをインストールする",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "追加のメディアフォーマット用のサポートをインストールする",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。",
+  "@installCodecsSubtitle": {},
+  "installationTypeLVMEncryptionSelected": "LVMと暗号化を選択しました",
+  "@installationTypeLVMEncryptionSelected": {}
 }
