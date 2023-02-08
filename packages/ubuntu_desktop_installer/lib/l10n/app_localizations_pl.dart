@@ -442,6 +442,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';
 
   @override

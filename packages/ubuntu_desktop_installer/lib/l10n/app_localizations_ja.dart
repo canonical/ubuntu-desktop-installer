@@ -442,6 +442,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'ブートローダーをインストールするデバイスを選択してください';
 
   @override

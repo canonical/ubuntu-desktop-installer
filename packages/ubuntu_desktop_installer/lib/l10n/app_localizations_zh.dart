@@ -442,6 +442,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => '用于安装引导程序的设备';
 
   @override

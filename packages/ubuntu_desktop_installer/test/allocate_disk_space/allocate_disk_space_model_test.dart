@@ -356,6 +356,27 @@ void main() {
     expect(model.isValid, isTrue);
   });
 
+  test('unusable gap', () async {
+    const usableGap = Gap(offset: 0, size: 1, usable: GapUsable.YES);
+    const unusableGap =
+        Gap(offset: 1, size: 2, usable: GapUsable.TOO_MANY_PRIMARY_PARTS);
+    final disk = testDisk(partitions: [usableGap, unusableGap]);
+
+    final service = MockDiskStorageService();
+    when(service.getStorage()).thenAnswer((_) async => [disk]);
+
+    final model = AllocateDiskSpaceModel(service);
+    await model.getStorage();
+
+    model.selectStorage(0, 0);
+    expect(model.selectedGap, usableGap);
+    expect(model.canAddPartition, isTrue);
+
+    model.selectStorage(0, 1);
+    expect(model.selectedGap, unusableGap);
+    expect(model.canAddPartition, isFalse);
+  });
+
   test('trailing gap', () async {
     final disk = testDisk(id: 'a', partitions: [
       Partition(number: 11, size: 1),

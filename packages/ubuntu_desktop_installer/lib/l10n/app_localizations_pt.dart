@@ -442,6 +442,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Você selecionou um dispositivo inteiro para particionar. se prosseguir com a criação de uma nova tabela de partições nele, todas as suas partições serão removidas\n\nNote que você poderá desfazer essa operação depois se desejar.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
 
   @override

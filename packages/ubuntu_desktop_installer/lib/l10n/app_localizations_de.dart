@@ -442,6 +442,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Laufwerk zur Installation des Bootloaders';
 
   @override

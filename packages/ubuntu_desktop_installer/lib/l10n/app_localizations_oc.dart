@@ -442,6 +442,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
 
   @override

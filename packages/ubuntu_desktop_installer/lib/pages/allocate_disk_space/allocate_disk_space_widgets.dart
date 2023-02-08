@@ -3,7 +3,6 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
@@ -11,6 +10,7 @@ import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';
 import 'storage_table.dart';
+import 'storage_types.dart';
 
 class PartitionBar extends StatelessWidget {
   const PartitionBar({super.key});
@@ -207,16 +207,21 @@ class PartitionButtonRow extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide.none,
-                    shape: const RoundedRectangleBorder(),
+                Tooltip(
+                  message: model.selectedGap?.tooManyPrimaryPartitions == true
+                      ? lang.tooManyPrimaryPartitions
+                      : '',
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide.none,
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    onPressed: model.canAddPartition
+                        ? () => showCreatePartitionDialog(
+                            context, model.selectedDisk!, model.selectedGap!)
+                        : null,
+                    child: const Icon(Icons.add),
                   ),
-                  onPressed: model.canAddPartition
-                      ? () => showCreatePartitionDialog(
-                          context, model.selectedDisk!, model.selectedGap!)
-                      : null,
-                  child: const Icon(Icons.add),
                 ),
                 const VerticalDivider(width: 1),
                 OutlinedButton(

@@ -442,6 +442,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Egy teljes eszközt választott ki a particionáláshoz. Ha új partíciós táblát hoz létre az eszközön, akkor az összes jelenlegi partíciót eltávolítja.\n\nVegye figyelembe, hogy ezt a műveletet később vissza tudja vonni, ha szeretné.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+
+  @override
+  String get partitionLimitReached => 'limit reached';
+
+  @override
   String get bootLoaderDevice => 'Eszköz a rendszertöltő telepítéséhez';
 
   @override
