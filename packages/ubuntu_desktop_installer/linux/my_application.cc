@@ -53,7 +53,7 @@ static void my_application_activate(GApplication* application) {
   GtkWindow* window =
       GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
   gtk_window_set_type_hint(window, GDK_WINDOW_TYPE_HINT_DIALOG);  // no min/max
-  gtk_window_set_default_size(window, 960, 680 + 48);             // header bar
+  gtk_window_set_default_size(window, 960, 680);
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
   fl_dart_project_set_dart_entrypoint_arguments(
