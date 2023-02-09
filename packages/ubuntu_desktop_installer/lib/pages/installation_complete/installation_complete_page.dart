@@ -31,58 +31,70 @@ class InstallationCompletePage extends StatelessWidget {
       title: YaruWindowTitleBar(
         title: Text(lang.installationCompleteTitle),
       ),
-      content: Column(
+      content: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 64, bottom: 32),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: _kAvatarBorder,
-                  width: 8,
-                ),
+          const SizedBox(width: 120),
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: _kAvatarBorder,
+                width: 8,
               ),
-              child: const CircleAvatar(
-                radius: 80,
-                backgroundImage: AssetImage(
-                  'assets/installation_complete/logo.png',
-                ),
+            ),
+            child: const CircleAvatar(
+              radius: 80,
+              backgroundImage: AssetImage(
+                'assets/installation_complete/logo.png',
               ),
             ),
           ),
-          MarkdownBody(
-            data: lang.readyToUse(ProductInfoExtractor().getProductInfo()),
-          ),
-          IntrinsicWidth(
+          const SizedBox(width: 60),
+          Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: kContentSpacing),
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      final model = context.read<InstallationCompleteModel>();
-                      await Wizard.of(context).done();
-                      model.reboot(immediate: false);
-                    },
-                    child: Text(
-                      lang.restartInto(ProductInfoExtractor().getProductInfo()),
-                    ),
+                MarkdownBody(
+                  data:
+                      lang.readyToUse(ProductInfoExtractor().getProductInfo()),
+                  styleSheet: MarkdownStyleSheet(
+                    p: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                OutlinedButton(
-                  onPressed: () async {
-                    final model = context.read<InstallationCompleteModel>();
-                    await Wizard.of(context).done();
-                    model.shutdown(immediate: false);
-                  },
-                  child: Text(lang.shutdown),
+                const SizedBox(height: kContentSpacing * 1.5),
+                Text(lang.restartWarning(Flavor.of(context).name)),
+                const SizedBox(height: kContentSpacing * 1.5),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          final model =
+                              context.read<InstallationCompleteModel>();
+                          await Wizard.of(context).done();
+                          model.reboot(immediate: false);
+                        },
+                        child: Text(lang.restartNow),
+                      ),
+                    ),
+                    const SizedBox(width: kContentSpacing),
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () async {
+                          final model =
+                              context.read<InstallationCompleteModel>();
+                          await Wizard.of(context).done();
+                          model.continueTesting();
+                        },
+                        child: Text(lang.continueTesting),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
+          const SizedBox(width: 120),
         ],
       ),
     );

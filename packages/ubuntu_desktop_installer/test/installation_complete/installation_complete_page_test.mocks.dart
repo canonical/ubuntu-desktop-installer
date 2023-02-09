@@ -50,6 +50,15 @@ class MockInstallationCompleteModel extends _i1.Mock
         ),
       ) as _i2.SubiquityClient);
   @override
+  _i4.Future<void> continueTesting() => (super.noSuchMethod(
+        Invocation.method(
+          #continueTesting,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
   _i4.Future<void> reboot({required bool? immediate}) => (super.noSuchMethod(
         Invocation.method(
           #reboot,

@@ -1454,11 +1454,29 @@ abstract class AppLocalizations {
   /// **'Restart into {system}'**
   String restartInto(Object system);
 
+  /// No description provided for @restartWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'You can continue testing {RELEASE} now, but until you restart the computer, any changes you make or documents you save will not be preserved.'**
+  String restartWarning(Object RELEASE);
+
   /// No description provided for @shutdown.
   ///
   /// In en, this message translates to:
   /// **'Shut Down'**
   String get shutdown;
+
+  /// No description provided for @restartNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Restart Now'**
+  String get restartNow;
+
+  /// No description provided for @continueTesting.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue Testing'**
+  String get continueTesting;
 
   /// No description provided for @turnOffBitlockerTitle.
   ///

@@ -25,7 +25,7 @@ void main() async {
     expect(windowClosed, isTrue);
   });
 
-  test('shutdown', () async {
+  test('continue testing', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     var windowClosed = false;
@@ -38,8 +38,7 @@ void main() async {
     final client = MockSubiquityClient();
     final model = InstallationCompleteModel(client);
 
-    await model.reboot(immediate: false);
-    verify(client.reboot(immediate: false)).called(1);
+    await model.continueTesting();
     expect(windowClosed, isTrue);
   });
 }
