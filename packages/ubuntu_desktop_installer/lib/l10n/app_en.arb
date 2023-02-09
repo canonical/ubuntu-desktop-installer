@@ -591,8 +591,19 @@
       "system": {}
     }
   },
+  "restartWarning": "You can continue testing {RELEASE} now, but until you restart the computer, any changes you make or documents you save will not be preserved.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
   "shutdown": "Shut Down",
   "@shutdown": {},
+  "restartNow": "Restart Now",
+  "@restartNow": {},
+  "continueTesting": "Continue Testing",
+  "@continueTesting": {},
   "turnOffBitlockerTitle": "Turn off BitLocker",
   "@turnOffBitlockerTitle": {},
   "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",

@@ -643,7 +643,7 @@ Future<void> testInstallationCompletePage(WidgetTester tester) async {
       (lang) => lang.installationCompleteTitle);
 
   final windowClosed = waitForWindowClosed();
-  await tester.tapButton(label: tester.lang.shutdown);
+  await tester.tapButton(label: tester.lang.continueTesting);
   await expectLater(windowClosed, completion(isTrue));
 }
 

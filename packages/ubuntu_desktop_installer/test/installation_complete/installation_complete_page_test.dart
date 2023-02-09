@@ -34,16 +34,16 @@ void main() {
     verify(model.reboot(immediate: false)).called(1);
   });
 
-  testWidgets('shutdown', (tester) async {
+  testWidgets('continue testing', (tester) async {
     final model = MockInstallationCompleteModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final shutdownButton =
-        find.widgetWithText(OutlinedButton, tester.lang.shutdown);
-    expect(shutdownButton, findsOneWidget);
+    final continueButton =
+        find.widgetWithText(OutlinedButton, tester.lang.continueTesting);
+    expect(continueButton, findsOneWidget);
 
-    await tester.tap(shutdownButton);
-    verify(model.shutdown(immediate: false)).called(1);
+    await tester.tap(continueButton);
+    verify(model.continueTesting()).called(1);
   });
 
   testWidgets('creates a model', (tester) async {

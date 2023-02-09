@@ -9,4 +9,7 @@ class InstallationCompleteModel with SystemShutdown {
 
   @override
   final SubiquityClient client;
+
+  /// Lets the user continue testing the live desktop by closing the installer.
+  Future<void> continueTesting() => closeWindow();
 }
