@@ -63,6 +63,7 @@ void main() {
 
   test('state', () async {
     const connectingStates = {
+      NetworkManagerDeviceState.needAuth,
       NetworkManagerDeviceState.prepare,
       NetworkManagerDeviceState.config,
       NetworkManagerDeviceState.ipCheck,

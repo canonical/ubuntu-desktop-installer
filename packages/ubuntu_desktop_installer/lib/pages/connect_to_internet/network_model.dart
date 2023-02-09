@@ -151,6 +151,7 @@ class NetworkDevice extends PropertyStreamNotifier {
   bool get isActive => state == NetworkManagerDeviceState.activated;
   bool get isConnecting {
     switch (state) {
+      case NetworkManagerDeviceState.needAuth:
       case NetworkManagerDeviceState.config:
       case NetworkManagerDeviceState.ipCheck:
       case NetworkManagerDeviceState.ipConfig:
