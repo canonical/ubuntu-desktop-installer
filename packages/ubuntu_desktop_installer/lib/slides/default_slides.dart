@@ -364,7 +364,7 @@ class _SlideLabel extends StatelessWidget {
     this.text, {
     double? width,
   })  : icon = null,
-        _fontSize = FontSize.xLarge,
+        _fontSize = FontSize.large,
         _width = width;
 
   // A plain text label prefixed with an icon.
