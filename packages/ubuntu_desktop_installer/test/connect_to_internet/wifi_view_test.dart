@@ -77,6 +77,28 @@ void main() {
       ),
     );
 
+    // inactive device
+    final tile1 = find.widgetWithText(ListTile, 'model1');
+    expect(tile1, findsOneWidget);
+    expect(
+      find.descendant(
+        of: tile1,
+        matching: find.byType(YaruCircularProgressIndicator),
+      ),
+      findsNothing,
+    );
+
+    // connecting device
+    final tile2 = find.widgetWithText(ListTile, 'model2');
+    expect(tile2, findsOneWidget);
+    expect(
+      find.descendant(
+        of: tile2,
+        matching: find.byType(YaruCircularProgressIndicator),
+      ),
+      findsOneWidget,
+    );
+
     // select ap
     final ap1 = find.widgetWithText(ListTile, 'ap1').first;
     expect(ap1, findsOneWidget);
