@@ -712,5 +712,9 @@
   "installDriversSubtitle": "מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.",
   "@installDriversSubtitle": {},
   "installCodecsSubtitle": "תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "tooManyPrimaryPartitions": "יותר מדי מחיצות ראשיות",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "הגעת לגבול",
+  "@partitionLimitReached": {}
 }
