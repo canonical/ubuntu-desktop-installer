@@ -380,4 +380,29 @@ void main() {
     expect(find.text('is ubuntu'), findsNothing);
     expect(find.text('not ubuntu'), findsOneWidget);
   });
+
+  testWidgets('select all', (tester) async {
+    final controller = TextEditingController(text: 'Ubuntu');
+    final focusNode = FocusNode();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Material(
+          child: ValidatedFormField(
+            controller: controller,
+            focusNode: focusNode,
+          ),
+        ),
+      ),
+    );
+
+    expect(controller.selection.isCollapsed, isTrue);
+
+    focusNode.requestFocus();
+    await tester.pump();
+
+    expect(controller.selection.isCollapsed, isFalse);
+    expect(controller.selection.baseOffset, 0);
+    expect(controller.selection.extentOffset, controller.text.length);
+  });
 }
