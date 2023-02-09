@@ -680,7 +680,18 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
+  String restartWarning(Object RELEASE) {
+    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+  }
+
+  @override
   String get shutdown => 'ഷട്ട് ഡൗൺ';
+
+  @override
+  String get restartNow => 'Restart Now';
+
+  @override
+  String get continueTesting => 'Continue Testing';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker ഓഫാക്കുക';
