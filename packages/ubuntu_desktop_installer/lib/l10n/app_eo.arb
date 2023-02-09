@@ -716,5 +716,16 @@
   "tooManyPrimaryPartitions": "Tro da unuagradaj subdiskoj",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Limo atingiĝis",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "restartNow": "Restartigi nun",
+  "@restartNow": {},
+  "continueTesting": "Daŭre elprovi",
+  "@continueTesting": {},
+  "restartWarning": "Vi povas daŭre elprovi {RELEASE}, sed kiam la komputilo restartos, forĵetiĝos ĉiuj ŝanĝoj farotaj de vi kaj dokumentoj konservotaj de vi.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
