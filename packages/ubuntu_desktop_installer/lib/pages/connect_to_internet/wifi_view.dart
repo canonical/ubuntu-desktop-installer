@@ -165,6 +165,13 @@ class WifiListTile extends StatelessWidget {
       title: Text(device.model ?? device.interface),
       textColor: textColor,
       iconColor: textColor,
+      trailing: device.isConnecting
+          ? SizedBox(
+              width: iconSize,
+              height: iconSize,
+              child: const YaruCircularProgressIndicator(strokeWidth: 3),
+            )
+          : null,
       children: <Widget>[
         for (final accessPoint in device.accessPoints)
           ChangeNotifierProvider.value(
