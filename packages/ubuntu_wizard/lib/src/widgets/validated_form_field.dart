@@ -103,10 +103,21 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
     if (widget.focusNode == null) {
       _focusNode ??= FocusNode();
     }
+    focusNode.addListener(_onFocusChange);
+  }
+
+  void _onFocusChange() {
+    if (focusNode.hasPrimaryFocus && primaryFocus?.context != null) {
+      Actions.maybeInvoke<SelectAllTextIntent>(
+        primaryFocus!.context!,
+        const SelectAllTextIntent(SelectionChangedCause.keyboard),
+      );
+    }
   }
 
   @override
   void dispose() {
+    focusNode.removeListener(_onFocusChange);
     _controller.dispose();
     _focusNode?.dispose();
     super.dispose();
