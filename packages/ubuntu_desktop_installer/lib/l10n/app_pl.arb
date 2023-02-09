@@ -716,5 +716,16 @@
   "tooManyPrimaryPartitions": "Zbyt wiele partycji podstawowych",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "osiągnięto limit",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "restartNow": "Uruchom ponownie komputer",
+  "@restartNow": {},
+  "restartWarning": "Możesz teraz kontynuować testowanie wersji {RELEASE}, ale dopóki nie uruchomisz ponownie komputera, wszelkie wprowadzone zmiany lub zapisane dokumenty nie zostaną zachowane.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "continueTesting": "Kontynuuj testowanie",
+  "@continueTesting": {}
 }
