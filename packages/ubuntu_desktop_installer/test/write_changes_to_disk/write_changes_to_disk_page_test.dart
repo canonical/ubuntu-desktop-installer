@@ -70,6 +70,7 @@ final testDisks = <Disk>[
       Partition(
         number: 7,
         preserve: false,
+        wipe: 'superblock',
       ),
     ],
   ),
