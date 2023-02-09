@@ -135,7 +135,7 @@ class _PartitionLabel extends StatelessWidget {
         partition.format ?? '',
         partition.mount ?? '',
       );
-    } else if (partition.wipe != null) {
+    } else if (partition.wipe != null && partition.format?.isNotEmpty == true) {
       return lang.writeChangesPartitionFormatted(
         sysname,
         partition.number ?? 0,
