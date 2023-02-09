@@ -1,3 +1,4 @@
+import 'package:async/async.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -25,19 +26,23 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   UpdateOtherSoftwareModel(
       {required SubiquityClient client,
       required PowerService power,
+      required NetworkService network,
       required InstallationMode installationMode,
       bool installDrivers = false,
       bool installCodecs = false})
       : _client = client,
         _power = power,
+        _network = network,
         _mode = installationMode,
         _installDrivers = installDrivers,
         _installCodecs = installCodecs {
     addPropertyListener('OnBattery', notifyListeners);
+    addPropertyListener('Connectivity', notifyListeners);
   }
 
   final SubiquityClient _client;
   final PowerService _power;
+  final NetworkService _network;
 
   InstallationMode _mode;
   InstallationMode get installationMode => _mode;
@@ -86,12 +91,15 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
     return Future.wait([
       _client.setSource(installationMode.source),
       _client.setDrivers(install: installDrivers),
-      _client.setCodecs(install: installCodecs),
+      _client.setCodecs(install: installCodecs && isOnline),
     ]);
   }
 
   /// Returns true if currently powered by battery.
   bool get onBattery => _power.onBattery;
+
+  /// Returns true if there is a network connection.
+  bool get isOnline => _network.isConnected;
 
   /// Initializes the model and connects to the power service.
   Future<void> init() {
@@ -102,9 +110,13 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       _client.getCodecs().then((data) {
         _installCodecs = data.install;
       }),
-      _power.connect().then((_) {
-        setProperties(_power.propertiesChanged);
-      })
-    ]).then((_) => notifyListeners());
+      _power.connect(),
+      _network.connect(),
+    ]).then((_) {
+      setProperties(StreamGroup.merge(
+        [_power.propertiesChanged, _network.propertiesChanged],
+      ));
+      notifyListeners();
+    });
   }
 }

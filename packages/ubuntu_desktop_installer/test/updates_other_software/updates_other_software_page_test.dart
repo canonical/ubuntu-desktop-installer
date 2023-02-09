@@ -25,6 +25,7 @@ void main() {
     bool? installDrivers,
     bool? installCodecs,
     bool? onBattery,
+    bool? isOnline,
   }) {
     final model = MockUpdateOtherSoftwareModel();
     when(model.installationMode)
@@ -32,6 +33,7 @@ void main() {
     when(model.installDrivers).thenReturn(installDrivers ?? false);
     when(model.installCodecs).thenReturn(installCodecs ?? false);
     when(model.onBattery).thenReturn(onBattery ?? false);
+    when(model.isOnline).thenReturn(isOnline ?? true);
     return model;
   }
 
@@ -139,6 +141,18 @@ void main() {
     expect(find.byType(Html), findsNothing);
   });
 
+  testWidgets('offline', (tester) async {
+    final model = buildModel(isOnline: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final installCodecsTile = find.widgetWithText(
+      YaruCheckButton,
+      tester.lang.installCodecsTitle,
+    );
+    expect(installCodecsTile, findsOneWidget);
+    expect(tester.widget<YaruCheckButton>(installCodecsTile).onChanged, isNull);
+  });
+
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(installationMode: InstallationMode.normal);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
@@ -167,6 +181,11 @@ void main() {
     when(power.onBattery).thenReturn(false);
     when(power.propertiesChanged).thenAnswer((_) => Stream.empty());
     registerMockService<PowerService>(power);
+
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(true);
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    registerMockService<NetworkService>(network);
 
     await tester.pumpWidget(tester.buildApp(UpdatesOtherSoftwarePage.create));
 
