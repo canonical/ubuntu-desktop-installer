@@ -12,9 +12,12 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        package:
-          - ubuntu_desktop_installer
-          - ubuntu_wsl_setup
+        include:
+          - package: ubuntu_desktop_installer
+            target: ubuntu_desktop_installer_test.dart
+          - package: ubuntu_desktop_installer
+            target: installation_slides_test.dart
+          - package: ubuntu_wsl_setup
       fail-fast: false
       max-parallel: 1
 
@@ -52,7 +55,7 @@ jobs:
       - name: Run tests
         run: |
           xvfb-run -a -s '-screen 0 1024x768x24 +extension GLX' \
-            flutter test integration_test
+            flutter test integration_test/${{matrix.target}}
         working-directory: packages/${{matrix.package}}
         env:
           SUBIQUITY_REPLAY_TIMESCALE: 100
