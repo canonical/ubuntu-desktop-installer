@@ -405,7 +405,7 @@
   "@photoSlideTitle": {},
   "supportSlideTitle": "ヘルプとサポート",
   "@supportSlideTitle": {},
-  "supportSlideDocumentation": "公式ドキュメントには {RELEASE} に多くの一般的な情報が記載されています。<a href=\"https://help.ubuntu.com\">インターネット</a>と Dock 上の「？(ヘルプアイコン)」の両方から閲覧できます。",
+  "supportSlideDocumentation": "公式ドキュメントには {RELEASE} に多くの一般的な情報がされています。<a href=\"https://help.ubuntu.com\">インターネット</a>と Dock 上の「？(ヘルプアイコン)」の両方から閲覧できます。",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -501,13 +501,13 @@
   "@webSlideChromium": {},
   "officeSlideTitle": "オフィスに必要なもの、すべてあなたに",
   "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice は、ドキュメント、表計算、プレゼンテーションの作成に必要なもの、すべてを備えたフリーのオフィススイートです。Microsoft Office のファイル形式と互換性を持ち、必要な機能をすべて無料で使用できます。",
+  "officeSlideDescription": "LibreOffice は、ドキュメント、表計算、プレゼンテーションの作成に必要なもの、すべてを備えた自由ソフトのオフィススイートです。Microsoft Office のファイル形式と互換性を持ち、必要な機能をすべて使用できます。",
   "@officeSlideDescription": {},
   "officeSlideWriter": "LibreOffice Writer",
   "@officeSlideWriter": {},
   "accessSlideTitle": "すべての人へ",
   "@accessSlideTitle": {},
-  "accessSlideDescription": "{RELEASE} の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラースキーム・テキストサイズの変更といったオプションにより、{RELEASE} はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。",
+  "accessSlideDescription": "{RELEASE} の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、{RELEASE} はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。",
   "@accessSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -721,5 +721,9 @@
   "installCodecsSubtitle": "このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。",
   "@installCodecsSubtitle": {},
   "installationTypeLVMEncryptionSelected": "LVMと暗号化を選択しました",
-  "@installationTypeLVMEncryptionSelected": {}
+  "@installationTypeLVMEncryptionSelected": {},
+  "continueTesting": "試用を続ける",
+  "@continueTesting": {},
+  "restartNow": "今すぐ再起動する",
+  "@restartNow": {}
 }

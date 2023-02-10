@@ -561,7 +561,7 @@
       "RELEASE": {}
     }
   },
-  "copyingFiles": "Còpia dels fichièrs...",
+  "copyingFiles": "Còpia dels fichièrs…",
   "@copyingFiles": {},
   "installationFailed": "Fracàs de l’installacion",
   "@installationFailed": {},
@@ -748,5 +748,20 @@
   "installDriversSubtitle": "Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.",
   "@installDriversSubtitle": {},
   "installCodecsSubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "restartNow": "Reaviar ara",
+  "@restartNow": {},
+  "continueTesting": "Contunhar d’ensajar",
+  "@continueTesting": {},
+  "restartWarning": "Podètz téner d’ensajar {RELEASE} ara, mas fins que reavietz l’ordenador, tota modificacion o document que creatz serà pas servat.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Tròp de particions primàrias",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "limit atenh",
+  "@partitionLimitReached": {}
 }

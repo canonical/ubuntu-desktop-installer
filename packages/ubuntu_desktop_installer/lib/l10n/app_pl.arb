@@ -712,5 +712,20 @@
   "installCodecsSubtitle": "Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre jest własnościowe.",
   "@installCodecsSubtitle": {},
   "installDriversSubtitle": "Sterowniki te podlegają warunkom licencyjnym dołączonym do ich dokumentacji. Są one własnościowe.",
-  "@installDriversSubtitle": {}
+  "@installDriversSubtitle": {},
+  "tooManyPrimaryPartitions": "Zbyt wiele partycji podstawowych",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "osiągnięto limit",
+  "@partitionLimitReached": {},
+  "restartNow": "Uruchom ponownie komputer",
+  "@restartNow": {},
+  "restartWarning": "Możesz teraz kontynuować testowanie wersji {RELEASE}, ale dopóki nie uruchomisz ponownie komputera, wszelkie wprowadzone zmiany lub zapisane dokumenty nie zostaną zachowane.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "continueTesting": "Kontynuuj testowanie",
+  "@continueTesting": {}
 }

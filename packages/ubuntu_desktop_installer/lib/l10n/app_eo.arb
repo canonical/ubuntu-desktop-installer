@@ -712,5 +712,20 @@
   "installCodecsTitle": "Instali programojn por kromaj videaj dosierformoj",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "tooManyPrimaryPartitions": "Tro da unuagradaj subdiskoj",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "Limo atingiĝis",
+  "@partitionLimitReached": {},
+  "restartNow": "Restartigi nun",
+  "@restartNow": {},
+  "continueTesting": "Daŭre elprovi",
+  "@continueTesting": {},
+  "restartWarning": "Vi povas daŭre elprovi {RELEASE}, sed kiam la komputilo restartos, forĵetiĝos ĉiuj ŝanĝoj farotaj de vi kaj dokumentoj konservotaj de vi.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }

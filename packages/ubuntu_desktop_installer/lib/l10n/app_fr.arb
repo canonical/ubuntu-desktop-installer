@@ -556,7 +556,7 @@
   },
   "installationTypeMultiOSDetected": "Cet ordinateur est installé avec plusieurs systèmes d’exploitation. Que voulez-vous faire ?",
   "@installationTypeMultiOSDetected": {},
-  "whoAreYouPageUsernameInUse": "Ce nom d'utilisateur existe déjà.",
+  "whoAreYouPageUsernameInUse": "Ce nom d’utilisateur existe déjà.",
   "@whoAreYouPageUsernameInUse": {},
   "whoAreYouPageUsernameSystemReserved": "Ce nom est réservé pour le système.",
   "@whoAreYouPageUsernameSystemReserved": {},
@@ -564,17 +564,17 @@
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "Ce nom contient des caractères invalides.",
   "@whoAreYouPageUsernameInvalidChars": {},
-  "installationFailed": "Échec de l'installation",
+  "installationFailed": "Échec de l’installation",
   "@installationFailed": {},
   "copyingFiles": "Copie des fichiers…",
   "@copyingFiles": {},
-  "installAlongsideAllocateSpace": "Allouer de l'espace",
+  "installAlongsideAllocateSpace": "Allouer de l’espace",
   "@installAlongsideAllocateSpace": {},
   "installAlongsideSize": "Taille :",
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponible :",
   "@installAlongsideAvailable": {},
-  "installationTypeAlongsideMulti": "Installer {product} à côté d'eux",
+  "installationTypeAlongsideMulti": "Installer {product} à côté d’eux",
   "@installationTypeAlongsideMulti": {
     "type": "text",
     "placeholders": {
@@ -605,7 +605,7 @@
       "os2": {}
     }
   },
-  "installAlongsideHiddenPartitions": "{num} partitions plus petites sont masquées, utilisez <a href=\"{url}\">l'outil de partitionnement avancé</a> pour plus de contrôle",
+  "installAlongsideHiddenPartitions": "{num} partitions plus petites sont masquées, utilisez <a href=\"{url}\">l’outil de partitionnement avancé</a> pour plus de contrôle",
   "@installAlongsideHiddenPartitions": {
     "type": "text",
     "placeholders": {
@@ -622,14 +622,14 @@
       "format": {}
     }
   },
-  "notEnoughDiskSpaceBiggestDisk": "Le plus grand disque sur cet ordinateur n'a que {SIZE}.",
+  "notEnoughDiskSpaceBiggestDisk": "Le plus grand disque sur cet ordinateur n’a que {SIZE}.",
   "@notEnoughDiskSpaceBiggestDisk": {
     "type": "text",
     "placeholders": {
       "SIZE": {}
     }
   },
-  "notEnoughDiskSpaceHeader": "Vous avec besoin d'au moins {SIZE} d'espace disque pour installer {RELEASE}.",
+  "notEnoughDiskSpaceHeader": "Vous avec besoin d’au moins {SIZE} d’espace disque pour installer {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
     "type": "text",
     "placeholders": {
@@ -645,14 +645,14 @@
       "partition": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "Cet ordinateur n'a que {SIZE}.",
+  "notEnoughDiskSpaceHasOnly": "Cet ordinateur n’a que {SIZE}.",
   "@notEnoughDiskSpaceHasOnly": {
     "type": "text",
     "placeholders": {
       "SIZE": {}
     }
   },
-  "quitButtonText": "Quitter l'installation",
+  "quitButtonText": "Quitter l’installation",
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Désolé",
   "@notEnoughDiskSpaceTitle": {},
@@ -700,5 +700,20 @@
   "installDriversSubtitle": "Ces pilotes sont soumis à des termes de licence inclus dans leurs documentations. Ils sont propriétaires.",
   "@installDriversSubtitle": {},
   "installCodecsTitle": "Installer la prise en charge de formats de multimédias supplémentaires",
-  "@installCodecsTitle": {}
+  "@installCodecsTitle": {},
+  "continueTesting": "Continuer à tester",
+  "@continueTesting": {},
+  "restartNow": "Redémarrer maintenant",
+  "@restartNow": {},
+  "restartWarning": "Vous pouvez maintenant continuer à tester ${RELEASE}, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Trop de partitions primaires",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "limite atteinte",
+  "@partitionLimitReached": {}
 }

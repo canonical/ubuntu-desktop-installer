@@ -712,5 +712,20 @@
   "installDriversSubtitle": "מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.",
   "@installDriversSubtitle": {},
   "installCodecsSubtitle": "תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "tooManyPrimaryPartitions": "יותר מדי מחיצות ראשיות",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "הגעת לגבול",
+  "@partitionLimitReached": {},
+  "restartNow": "להפעיל מחדש כעת",
+  "@restartNow": {},
+  "continueTesting": "להמשיך לבחון",
+  "@continueTesting": {},
+  "restartWarning": "אפשר להמשיך לבחון את {RELEASE} כעת אבל רק עד הפעלת המחשב מחדש, השינויים שייערכו למסמכים לא יישמרו.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
