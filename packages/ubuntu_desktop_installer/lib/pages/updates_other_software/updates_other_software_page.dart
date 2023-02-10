@@ -27,6 +27,7 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
       create: (_) => UpdateOtherSoftwareModel(
           client: getService<SubiquityClient>(),
           power: getService<PowerService>(),
+          network: getService<NetworkService>(),
           installationMode: InstallationMode.normal),
       child: const UpdatesOtherSoftwarePage(),
     );
@@ -91,8 +92,8 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             title: Text(lang.installCodecsTitle),
             subtitle: Text(lang.installCodecsSubtitle),
             contentPadding: kContentPadding,
-            value: model.installCodecs,
-            onChanged: model.setInstallCodecs,
+            value: model.installCodecs && model.isOnline,
+            onChanged: model.isOnline ? model.setInstallCodecs : null,
           ),
         ],
       ),

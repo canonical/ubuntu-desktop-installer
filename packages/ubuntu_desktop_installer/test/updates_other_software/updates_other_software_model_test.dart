@@ -10,7 +10,7 @@ import 'package:ubuntu_test/mocks.dart';
 
 import 'updates_other_software_model_test.mocks.dart';
 
-@GenerateMocks([PowerService])
+@GenerateMocks([NetworkService, PowerService])
 void main() {
   late UpdateOtherSoftwareModel model;
 
@@ -18,6 +18,7 @@ void main() {
     model = UpdateOtherSoftwareModel(
       client: MockSubiquityClient(),
       power: MockPowerService(),
+      network: MockNetworkService(),
       installationMode: InstallationMode.normal,
     );
   });
@@ -80,16 +81,21 @@ void main() {
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
 
-    final service = MockPowerService();
-    final propertiesChanged = StreamController<List<String>>(sync: true);
-    when(service.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
+    final power = MockPowerService();
+    final powerChanged = StreamController<List<String>>(sync: true);
+    when(power.propertiesChanged).thenAnswer((_) => powerChanged.stream);
+
+    final network = MockNetworkService();
+    final networkChanged = StreamController<List<String>>(sync: true);
+    when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
     final model = UpdateOtherSoftwareModel(
       client: client,
       installationMode: InstallationMode.normal,
       installDrivers: false,
       installCodecs: false,
-      power: service,
+      power: power,
+      network: network,
     );
 
     await model.init();
@@ -101,6 +107,8 @@ void main() {
 
   test('save the installation options', () async {
     final client = MockSubiquityClient();
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(true);
 
     final model = UpdateOtherSoftwareModel(
       client: client,
@@ -108,6 +116,7 @@ void main() {
       installDrivers: false,
       installCodecs: false,
       power: MockPowerService(),
+      network: network,
     );
 
     await model.save();
@@ -125,9 +134,13 @@ void main() {
   });
 
   test('on battery', () async {
-    final service = MockPowerService();
-    final propertiesChanged = StreamController<List<String>>(sync: true);
-    when(service.propertiesChanged).thenAnswer((_) => propertiesChanged.stream);
+    final power = MockPowerService();
+    final powerChanged = StreamController<List<String>>(sync: true);
+    when(power.propertiesChanged).thenAnswer((_) => powerChanged.stream);
+
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(true);
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final client = MockSubiquityClient();
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
@@ -138,27 +151,70 @@ void main() {
     final model = UpdateOtherSoftwareModel(
       client: client,
       installationMode: InstallationMode.normal,
-      power: service,
+      power: power,
+      network: network,
     );
-    verifyNever(service.propertiesChanged);
+    verifyNever(power.propertiesChanged);
 
     await model.init();
-    verify(service.propertiesChanged).called(1);
+    verify(power.propertiesChanged).called(1);
 
-    when(service.onBattery).thenReturn(false);
+    when(power.onBattery).thenReturn(false);
     expect(model.onBattery, isFalse);
-    verify(service.onBattery).called(1);
+    verify(power.onBattery).called(1);
 
-    when(service.onBattery).thenReturn(true);
+    when(power.onBattery).thenReturn(true);
     expect(model.onBattery, isTrue);
-    verify(service.onBattery).called(1);
+    verify(power.onBattery).called(1);
 
     bool? wasNotified;
     model.addListener(() => wasNotified = true);
-    propertiesChanged.add(['OnBattery']);
+    powerChanged.add(['OnBattery']);
     expect(wasNotified, isTrue);
-    when(service.onBattery).thenReturn(false);
+    when(power.onBattery).thenReturn(false);
     expect(model.onBattery, isFalse);
-    verify(service.onBattery).called(1);
+    verify(power.onBattery).called(1);
+  });
+
+  test('offline', () async {
+    final network = MockNetworkService();
+    final networkChanged = StreamController<List<String>>(sync: true);
+    when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
+
+    final power = MockPowerService();
+    when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
+
+    final client = MockSubiquityClient();
+    when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
+        install: true, drivers: [], localOnly: false, searchDrivers: false));
+    when(client.getCodecs())
+        .thenAnswer((_) async => const CodecsData(install: true));
+
+    final model = UpdateOtherSoftwareModel(
+      client: client,
+      installationMode: InstallationMode.normal,
+      power: power,
+      network: network,
+    );
+    verifyNever(network.propertiesChanged);
+
+    await model.init();
+    verify(network.propertiesChanged).called(1);
+
+    when(network.isConnected).thenReturn(false);
+    expect(model.isOnline, isFalse);
+    verify(network.isConnected).called(1);
+
+    when(network.isConnected).thenReturn(true);
+    expect(model.isOnline, isTrue);
+    verify(network.isConnected).called(1);
+
+    bool? wasNotified;
+    model.addListener(() => wasNotified = true);
+    networkChanged.add(['Connectivity']);
+    expect(wasNotified, isTrue);
+    when(network.isConnected).thenReturn(false);
+    expect(model.isOnline, isFalse);
+    verify(network.isConnected).called(1);
   });
 }
