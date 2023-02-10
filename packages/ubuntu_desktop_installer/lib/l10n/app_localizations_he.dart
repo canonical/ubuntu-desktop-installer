@@ -442,10 +442,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'בחרת לחלק התקן שלם למחיצות. בחירה להמשיך ביצירת טבלת מחיצות חדשה בהתקן תסיר את כל המחיצות הנוכחיות.\n\nנא לשים לב שזאת פעולה בלתי הפיכה.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'יותר מדי מחיצות ראשיות';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'הגעת לגבול';
 
   @override
   String get bootLoaderDevice => 'התקן להתקנת מנהל טעינה';
@@ -681,17 +681,17 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'אפשר להמשיך לבחון את $RELEASE כעת אבל רק עד הפעלת המחשב מחדש, השינויים שייערכו למסמכים לא יישמרו.';
   }
 
   @override
   String get shutdown => 'כיבוי';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'להפעיל מחדש כעת';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'להמשיך לבחון';
 
   @override
   String get turnOffBitlockerTitle => 'כיבוי BitLocker';

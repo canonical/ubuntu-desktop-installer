@@ -442,10 +442,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Tròp de particions primàrias';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'limit atenh';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
@@ -681,17 +681,17 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Podètz téner d’ensajar $RELEASE ara, mas fins que reavietz l’ordenador, tota modificacion o document que creatz serà pas servat.';
   }
 
   @override
   String get shutdown => 'Atudar';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Reaviar ara';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Contunhar d’ensajar';
 
   @override
   String get turnOffBitlockerTitle => 'Desactivar BitLocker';
@@ -842,7 +842,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get supportedSoftware => 'Logicials preses en carga';
 
   @override
-  String get copyingFiles => 'Còpia dels fichièrs...';
+  String get copyingFiles => 'Còpia dels fichièrs…';
 
   @override
   String get installingSystem => 'Installacion del sistèma…';
