@@ -442,10 +442,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Zbyt wiele partycji podstawowych';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'osiągnięto limit';
 
   @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';
@@ -681,17 +681,17 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Możesz teraz kontynuować testowanie wersji $RELEASE, ale dopóki nie uruchomisz ponownie komputera, wszelkie wprowadzone zmiany lub zapisane dokumenty nie zostaną zachowane.';
   }
 
   @override
   String get shutdown => 'Zamknij system';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Uruchom ponownie komputer';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Kontynuuj testowanie';
 
   @override
   String get turnOffBitlockerTitle => 'Wyłącz funkcję BitLocker';

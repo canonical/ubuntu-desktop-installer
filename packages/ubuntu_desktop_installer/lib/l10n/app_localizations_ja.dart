@@ -688,10 +688,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get shutdown => 'シャットダウン';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => '今すぐ再起動する';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => '試用を続ける';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker をオフにしてください';
@@ -787,7 +787,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get officeSlideTitle => 'オフィスに必要なもの、すべてあなたに';
 
   @override
-  String get officeSlideDescription => 'LibreOffice は、ドキュメント、表計算、プレゼンテーションの作成に必要なもの、すべてを備えたフリーのオフィススイートです。Microsoft Office のファイル形式と互換性を持ち、必要な機能をすべて無料で使用できます。';
+  String get officeSlideDescription => 'LibreOffice は、ドキュメント、表計算、プレゼンテーションの作成に必要なもの、すべてを備えた自由ソフトのオフィススイートです。Microsoft Office のファイル形式と互換性を持ち、必要な機能をすべて使用できます。';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -803,7 +803,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラースキーム・テキストサイズの変更といったオプションにより、$RELEASE はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。';
+    return '$RELEASE の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、$RELEASE はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。';
   }
 
   @override
@@ -823,7 +823,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return '公式ドキュメントには $RELEASE に多くの一般的な情報が記載されています。<a href=\"https://help.ubuntu.com\">インターネット</a>と Dock 上の「？(ヘルプアイコン)」の両方から閲覧できます。';
+    return '公式ドキュメントには $RELEASE に多くの一般的な情報がされています。<a href=\"https://help.ubuntu.com\">インターネット</a>と Dock 上の「？(ヘルプアイコン)」の両方から閲覧できます。';
   }
 
   @override

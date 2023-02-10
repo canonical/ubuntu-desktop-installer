@@ -442,10 +442,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur ĝin, ĉiuj ĝiaj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Tro da unuagradaj subdiskoj';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Limo atingiĝis';
 
   @override
   String get bootLoaderDevice => 'Aparato, sur kiun instaliĝos la praŝargilo';
@@ -681,17 +681,17 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Vi povas daŭre elprovi $RELEASE, sed kiam la komputilo restartos, forĵetiĝos ĉiuj ŝanĝoj farotaj de vi kaj dokumentoj konservotaj de vi.';
   }
 
   @override
   String get shutdown => 'Malŝalti';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restartigi nun';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Daŭre elprovi';
 
   @override
   String get turnOffBitlockerTitle => 'Malŝalti BitLocker';

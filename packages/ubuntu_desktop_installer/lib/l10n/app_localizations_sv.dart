@@ -442,10 +442,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell så kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'För många primära partitioner';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'gränsen nådd';
 
   @override
   String get bootLoaderDevice => 'Enhet för installation av starthanteraren';
@@ -681,17 +681,17 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Du kan fortsätta att testa $RELEASE nu, men tills du startar om datorn kommer alla ändringar du gör eller dokument du sparar inte att bevaras.';
   }
 
   @override
   String get shutdown => 'Stäng av';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Starta om nu';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Fortsätt att testa';
 
   @override
   String get turnOffBitlockerTitle => 'Slå av BitLocker';

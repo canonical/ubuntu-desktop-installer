@@ -5,70 +5,70 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'مثبت سطح مكتب اوبنتو';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'ثبت $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'الغاء';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'تغيير';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'موافق';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'لا';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'إعادة تشغيل';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'يرجع';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'نعم';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'الغي المثبت';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'مرحبا';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'اختر لغتك language:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'جرب او ثبت';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'تصليح المثبت';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'تصليح سوف يقوم بإعادة تثبيت جميع software المثبتة بدون تغيير الاعدادات او المستندات';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'جرب $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'يمكنك تجربة $RELEASE بدون إجراء اي تغييرات لجهازك.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'ثبت $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'ثبت $RELEASE بجانب او بدلا من نظامك الحالي. لا ينبغي لهذا الإجراء اخذ الكثير من الوقت.';
   }
 
   @override

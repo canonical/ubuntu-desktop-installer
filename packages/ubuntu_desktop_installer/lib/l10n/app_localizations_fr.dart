@@ -34,7 +34,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get yesButtonText => 'Oui';
 
   @override
-  String get quitButtonText => 'Quitter l\'installation';
+  String get quitButtonText => 'Quitter l’installation';
 
   @override
   String get welcome => 'Bienvenue';
@@ -343,7 +343,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Installer $product à côté d\'eux';
+    return 'Installer $product à côté d’eux';
   }
 
   @override
@@ -381,14 +381,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num partitions plus petites sont masquées, utilisez <a href=\"$url\">l\'outil de partitionnement avancé</a> pour plus de contrôle';
+    return '$num partitions plus petites sont masquées, utilisez <a href=\"$url\">l’outil de partitionnement avancé</a> pour plus de contrôle';
   }
 
   @override
   String get installAlongsideResizePartition => 'Redimensionner la partition';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allouer de l\'espace';
+  String get installAlongsideAllocateSpace => 'Allouer de l’espace';
 
   @override
   String get installAlongsideFiles => 'Fichiers';
@@ -442,10 +442,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Vous avez sélectionné un périphérique entier à partitionner. Si vous continuez en créant une nouvelle table de partitions, toutes les partitions actuellement sur ce périphérique seront supprimées.\n\nVous pourrez annuler cette opération plus tard si vous le souhaitez.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Trop de partitions primaires';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'limite atteinte';
 
   @override
   String get bootLoaderDevice => 'Périphérique pour installer le chargeur d’amorçage';
@@ -583,7 +583,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Ce nom d’utilisateur est invalide';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Ce nom d\'utilisateur existe déjà.';
+  String get whoAreYouPageUsernameInUse => 'Ce nom d’utilisateur existe déjà.';
 
   @override
   String get whoAreYouPageUsernameSystemReserved => 'Ce nom est réservé pour le système.';
@@ -681,17 +681,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Vous pouvez maintenant continuer à tester \$$RELEASE, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.';
   }
 
   @override
   String get shutdown => 'Éteindre';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Redémarrer maintenant';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continuer à tester';
 
   @override
   String get turnOffBitlockerTitle => 'Désactiver BitLocker';
@@ -851,23 +851,23 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configuringSystem => 'Configuration du système…';
 
   @override
-  String get installationFailed => 'Échec de l\'installation';
+  String get installationFailed => 'Échec de l’installation';
 
   @override
   String get notEnoughDiskSpaceTitle => 'Désolé';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Vous avec besoin d\'au moins $SIZE d\'espace disque pour installer $RELEASE.';
+    return 'Vous avec besoin d’au moins $SIZE d’espace disque pour installer $RELEASE.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Cet ordinateur n\'a que $SIZE.';
+    return 'Cet ordinateur n’a que $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Le plus grand disque sur cet ordinateur n\'a que $SIZE.';
+    return 'Le plus grand disque sur cet ordinateur n’a que $SIZE.';
   }
 }
