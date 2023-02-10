@@ -206,20 +206,4 @@ extension SlideTester on WidgetTester {
   }
 }
 
-final localeVariant = ValueVariant(supportedLocales.toSet()
-  ..removeWhere(unsupportedCupertinoLocalizations.contains));
-
-// TODO: https://github.com/canonical/ubuntu-flutter-plugins/issues/140
-final unsupportedCupertinoLocalizations = {
-  const Locale('bo'),
-  const Locale('cy'),
-  const Locale('dz'),
-  const Locale('eo'),
-  const Locale('ga'),
-  const Locale('ku'),
-  const Locale('nn'),
-  const Locale('oc'),
-  const Locale('se'),
-  const Locale('tg'),
-  const Locale('ug'),
-};
+final localeVariant = ValueVariant(supportedLocales.toSet());
