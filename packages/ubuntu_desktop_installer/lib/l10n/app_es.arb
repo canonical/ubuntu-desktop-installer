@@ -721,5 +721,20 @@
   "installDriversSubtitle": "Estos drivers están sujetos a los términos de la licencia incluidos en su documentación. Son propietarios.",
   "@installDriversSubtitle": {},
   "installCodecsTitle": "Instalar soporte para formatos de medios adicionales",
-  "@installCodecsTitle": {}
+  "@installCodecsTitle": {},
+  "restartNow": "Reiniciar ahora",
+  "@restartNow": {},
+  "continueTesting": "Seguir probando",
+  "@continueTesting": {},
+  "restartWarning": "Ahora puede seguir probando {RELEASE}, pero hasta que no reinicie el ordenador, los cambios que realice o los documentos que guarde no se conservarán.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Demasiadas particiones primarias",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "límite alcanzado",
+  "@partitionLimitReached": {}
 }
