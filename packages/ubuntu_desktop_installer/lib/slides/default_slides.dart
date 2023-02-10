@@ -6,12 +6,13 @@ import 'package:ubuntu_wizard/widgets.dart';
 import '../l10n.dart';
 import 'slide_widgets.dart';
 
-const _kHeaderWidth = 420.0;
+const _kHeaderWidth = 440.0;
 const _kIconSpacing = 8.0;
-const _kCardWidth = 348.0;
-const _kInsets = EdgeInsets.fromLTRB(72, 56, 48, 24);
+const _kCardWidth = 360.0;
+const _kInsets = EdgeInsetsDirectional.fromSTEB(64, 48, 48, 24);
 const _kSmallSpacing = 8.0;
 const _kLargeSpacing = 16.0;
+const _kTextColor = Color(0xfff7f6f6);
 
 String _slideAsset(String name) => 'assets/installation_slides/$name.png';
 String _slideIcon(String name) => 'assets/installation_slides/icons/$name.png';
@@ -386,8 +387,10 @@ class _SlideLabel extends StatelessWidget {
         data: text,
         style: {
           'body': Style(
-            color: Colors.white,
+            color: _kTextColor,
             fontSize: _fontSize,
+            fontWeight: FontWeight.w400,
+            lineHeight: LineHeight.normal,
             margin: Margins.zero,
           ),
           'a': Style(
@@ -409,7 +412,7 @@ class _SlideLabel extends StatelessWidget {
       const SizedBox(width: _kIconSpacing),
       Text(
         text,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: _kTextColor),
       ),
     ]);
   }
@@ -454,9 +457,9 @@ class SlideLayout extends StatelessWidget {
     super.key,
     this.background,
     this.content,
-    this.contentAlignment = Alignment.topLeft,
+    this.contentAlignment = AlignmentDirectional.topStart,
     this.image,
-    this.imageAlignment = Alignment.bottomRight,
+    this.imageAlignment = AlignmentDirectional.bottomEnd,
     this.padding = _kInsets,
   });
 

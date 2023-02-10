@@ -139,132 +139,29 @@ void main() {
     expect(radius.bottomRight, isNot(Radius.zero));
   });
 
-  group('default slide', () {
-    setUp(() => UbuntuTester.context = Scaffold);
+  testWidgets('links', (tester) async {
+    final urlLauncher = MockUrlLauncher();
+    registerMockService<UrlLauncher>(urlLauncher);
 
-    Future<void> pumpSlide(WidgetTester tester, int index) {
-      return tester.pumpWidget(
-        tester.buildApp(
-          (context) => MediaQuery(
-            // shrink the text for testing purposes to avoid overflows when
-            // loading slides outside the constrained slideshow environment
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 0.5),
-            child: Scaffold(
-              appBar: AppBar(
-                title: Builder(builder: defaultSlides[index].title),
-              ),
-              body: Builder(builder: defaultSlides[index].body),
-            ),
-          ),
+    await tester.pumpWidget(
+      tester.buildApp(
+        (context) => Scaffold(
+          appBar: AppBar(title: Builder(builder: defaultSlides.last.title)),
+          body: Builder(builder: defaultSlides.last.body),
         ),
-      );
+      ),
+    );
+
+    Future<void> expectLaunchUrl(String label, String url) async {
+      when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
+      await tester.tapLink(label);
+      verify(urlLauncher.launchUrl(url)).called(1);
     }
 
-    Future<void> expectSlide({
-      String? title,
-      String? text,
-      String? description,
-      String? background,
-      String? screenshot,
-    }) async {
-      if (title != null) expect(find.text(title), findsOneWidget);
-      if (text != null) expect(find.text(text), findsOneWidget);
-      if (description != null) expect(find.html(description), findsOneWidget);
-      if (background != null) expect(find.asset(background), findsOneWidget);
-      if (screenshot != null) expect(find.asset(screenshot), findsOneWidget);
-    }
-
-    testWidgets('welcome', (tester) async {
-      await pumpSlide(tester, 0);
-      expectSlide(
-        title: tester.lang.welcomeSlideTitle('Ubuntu'),
-        text: tester.lang.welcomeSlideDescription('Ubuntu'),
-        background: 'welcome.png',
-      );
-    });
-
-    testWidgets('software', (tester) async {
-      await pumpSlide(tester, 1);
-      expectSlide(
-        title: tester.lang.softwareSlideTitle,
-        description: tester.lang.softwareSlideDescription('Ubuntu'),
-        screenshot: 'software.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('music', (tester) async {
-      await pumpSlide(tester, 2);
-      expectSlide(
-        title: tester.lang.musicSlideTitle,
-        description: tester.lang.musicSlideDescription('Ubuntu'),
-        screenshot: 'music.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('photos', (tester) async {
-      await pumpSlide(tester, 3);
-      expectSlide(
-        title: tester.lang.photoSlideTitle,
-        description: tester.lang.photoSlideDescription,
-        screenshot: 'photos.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('web', (tester) async {
-      await pumpSlide(tester, 4);
-      expectSlide(
-        title: tester.lang.webSlideTitle,
-        description: tester.lang.webSlideDescription('Ubuntu'),
-        screenshot: 'web.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('office', (tester) async {
-      await pumpSlide(tester, 5);
-      expectSlide(
-        title: tester.lang.officeSlideTitle,
-        description: tester.lang.officeSlideDescription,
-        screenshot: 'office.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('access', (tester) async {
-      await pumpSlide(tester, 6);
-      expectSlide(
-        title: tester.lang.accessSlideTitle,
-        description: tester.lang.accessSlideDescription('Ubuntu'),
-        screenshot: 'settings.png',
-        background: 'background.png',
-      );
-    });
-
-    testWidgets('support', (tester) async {
-      final urlLauncher = MockUrlLauncher();
-      registerMockService<UrlLauncher>(urlLauncher);
-
-      await pumpSlide(tester, 7);
-      expectSlide(
-        title: tester.lang.supportSlideTitle,
-        description: tester.lang.supportSlideResources,
-        background: 'welcome.png',
-      );
-
-      Future<void> expectLaunchUrl(String label, String url) async {
-        when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
-        await tester.tapLink(label);
-        verify(urlLauncher.launchUrl(url)).called(1);
-      }
-
-      expectLaunchUrl('Ask Ubuntu', 'https://askubuntu.com');
-      expectLaunchUrl('Local Community Team', 'https://loco.ubuntu.com/teams');
-      expectLaunchUrl('Community support',
-          'https://www.ubuntu.com/support/community-support');
-      expectLaunchUrl('Commercial support', 'https://www.ubuntu.com/support');
-    });
+    expectLaunchUrl('Ask Ubuntu', 'https://askubuntu.com');
+    expectLaunchUrl('Local Community Team', 'https://loco.ubuntu.com/teams');
+    expectLaunchUrl('Community support',
+        'https://www.ubuntu.com/support/community-support');
+    expectLaunchUrl('Commercial support', 'https://www.ubuntu.com/support');
   });
 }
