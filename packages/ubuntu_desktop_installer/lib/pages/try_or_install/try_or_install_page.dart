@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../app.dart';
-import '../../routes.dart';
-import '../../widgets.dart';
-import '../wizard_page.dart';
+import '../../l10n.dart';
+import '../../settings.dart';
 import 'try_or_install_model.dart';
+
+export 'try_or_install_model.dart' show Option;
 
 class TryOrInstallPage extends StatefulWidget {
   const TryOrInstallPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TryOrInstallModel(),
-      child: TryOrInstallPage(),
+      child: const TryOrInstallPage(),
     );
   }
 
@@ -26,79 +29,73 @@ class TryOrInstallPage extends StatefulWidget {
 }
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
-  void continueWithSelectedOption() {
-    final model = Provider.of<TryOrInstallModel>(context, listen: false);
-    if (model.option == Option.repairUbuntu) {
-      Navigator.pushNamed(context, Routes.repairUbuntu);
-    } else if (model.option == Option.tryUbuntu) {
-      Navigator.pushNamed(context, Routes.tryUbuntu);
-    } else if (model.option == Option.installUbuntu) {
-      // TODO: detect if we need to show the "Turn off RST" page,
-      // or if we can proceed directly to installation
-      //Navigator.pushNamed(context, Routes.turnOffRST);
-      Navigator.pushNamed(context, Routes.keyboardLayout);
-    } else {
-      assert(false);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<TryOrInstallModel>(context);
-    return LocalizedView(
-      builder: (context, lang) => WizardPage(
+    final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
+    return WizardPage(
+      title: YaruWindowTitleBar(
         title: Text(lang.tryOrInstallPageTitle),
-        contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
-        content: Row(
-          children: [
-            Expanded(
-              child: OptionCard(
-                selected: model.option == Option.repairUbuntu,
-                imageAsset: 'assets/repair-wrench.png',
-                titleText: lang.repairInstallation,
-                bodyText: lang.repairInstallationDescription,
-                onSelected: () => model.selectOption(Option.repairUbuntu),
-              ),
+      ),
+      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 100),
+      content: Row(
+        children: [
+          // Expanded(
+          //   child: OptionCard(
+          //     selected: model.option == Option.repairUbuntu,
+          //     image: Image.asset('assets/try_or_install/repair-wrench.png'),
+          //     title: Text(lang.repairInstallation),
+          //     body: Text(lang.repairInstallationDescription),
+          //     onSelected: () => model.selectOption(Option.repairUbuntu),
+          //   ),
+          // ),
+          // const SizedBox(width: kContentSpacing),
+          const Spacer(),
+          Expanded(
+            flex: 2,
+            child: OptionCard(
+              selected: model.option == Option.tryUbuntu,
+              image: Image.asset('assets/try_or_install/steering-wheel.png'),
+              title: Text(lang.tryUbuntu(flavor.name)),
+              body: Text(lang.tryUbuntuDescription(flavor.name)),
+              onSelected: () => model.selectOption(Option.tryUbuntu),
             ),
-            const SizedBox(width: 20),
-            Expanded(
-              child: OptionCard(
-                selected: model.option == Option.tryUbuntu,
-                imageAsset: 'assets/steering-wheel.png',
-                titleText: lang.tryUbuntu,
-                bodyText: lang.tryUbuntuDescription,
-                onSelected: () => model.selectOption(Option.tryUbuntu),
-              ),
-            ),
-            const SizedBox(width: 20),
-            Expanded(
-              child: OptionCard(
-                selected: model.option == Option.installUbuntu,
-                imageAsset: 'assets/hard-drive.png',
-                titleText: lang.installUbuntu,
-                bodyText: lang.installUbuntuDescription,
-                onSelected: () => model.selectOption(Option.installUbuntu),
-              ),
-            ),
-          ],
-        ),
-        footer: Html(
-          data: lang.releaseNotesLabel(
-              model.releaseNotesURL(UbuntuDesktopInstallerApp.locale)),
-          onLinkTap: (url, _, __, ___) => launch(url!),
-        ),
-        actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
           ),
-          WizardAction(
-            label: lang.continueButtonText,
-            enabled: model.option != Option.none,
-            onActivated: continueWithSelectedOption,
+          const SizedBox(width: kContentSpacing * 2),
+          Expanded(
+            flex: 2,
+            child: OptionCard(
+              selected: model.option == Option.installUbuntu,
+              image: Image.asset('assets/try_or_install/hard-drive.png'),
+              title: Text(lang.installUbuntu(flavor.name)),
+              body: Text(lang.installUbuntuDescription(flavor.name)),
+              onSelected: () => model.selectOption(Option.installUbuntu),
+            ),
           ),
+          const Spacer(),
         ],
       ),
+      footer: Html(
+        data: lang.releaseNotesLabel(
+            model.releaseNotesURL(Settings.of(context).locale)),
+        onLinkTap: (url, _, __, ___) => launchUrl(url!),
+      ),
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.done(
+          context,
+          label: UbuntuLocalizations.of(context).continueAction,
+          visible: model.option == Option.tryUbuntu,
+          onDone: model.tryUbuntu,
+        ),
+        WizardAction.next(
+          context,
+          visible: model.option != Option.tryUbuntu,
+          enabled: model.option != Option.none,
+          arguments: model.option,
+        ),
+      ],
     );
   }
 }

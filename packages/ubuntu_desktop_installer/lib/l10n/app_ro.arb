@@ -1,0 +1,11 @@
+{
+  "@@locale": "ro",
+  "cancelButtonText": "Renunță",
+  "@cancelButtonText": {},
+  "changeButtonText": "Schimbă",
+  "@changeButtonText": {},
+  "noButtonText": "Nu",
+  "@noButtonText": {},
+  "restartButtonText": "Repornește",
+  "@restartButtonText": {}
+}

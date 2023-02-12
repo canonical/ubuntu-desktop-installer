@@ -15,11 +15,23 @@ export PYTHON=$SNAP/usr/bin/python3.8
 export PY3OR2_PYTHON=$PYTHON
 
 # set the PATH so subiquity finds curtin
-export PATH=$PATH:$SNAP/bin
+# sbin for bundled tools such as ntfsresize
+export PATH=$SNAP/bin:$SNAP/sbin:$PATH
+
+# allow subiquity to run setxkbmap
+export DISPLAY=:0
 
 # base directory for subiquity to locate resources
 export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 
 # run subiquity server
 cd $SCRIPT_DIR/subiquity
-$PYTHON -m subiquity.cmd.server
+
+args=(--use-os-prober --storage-version=2 --postinst-hooks-dir=$SNAP/etc/subiquity/postinst.d)
+if grep -qv "experimental-autoinstall" /proc/cmdline; then
+    # autoinstall is explicitly disabled until UI support is present.
+    # Remove this autoinstall argument when that is resolved.
+    args+=(--autoinstall="")
+fi
+
+$PYTHON -m subiquity.cmd.server "${args[@]}"

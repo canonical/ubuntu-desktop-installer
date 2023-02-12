@@ -1,51 +1,767 @@
 {
   "@@locale": "oc",
-
-  "languageName": "Occitan",
-
   "appTitle": "Programa d’installacion del burèu Ubuntu",
-
-  "backButtonText": "Tornar",
-  "continueButtonText": "Contunhar",
+  "@appTitle": {},
+  "windowTitle": "Installar {RELEASE}",
+  "@windowTitle": {},
+  "cancelButtonText": "Anullar",
+  "@cancelButtonText": {},
+  "changeButtonText": "Modificar",
+  "@changeButtonText": {},
+  "okButtonText": "D’acòrdi",
+  "@okButtonText": {},
+  "noButtonText": "Non",
+  "@noButtonText": {},
   "restartButtonText": "Reaviar",
-
+  "@restartButtonText": {},
+  "revertButtonText": "Restablir",
+  "@revertButtonText": {},
+  "yesButtonText": "Òc",
+  "@yesButtonText": {},
   "welcome": "La benvenguda",
-
+  "@welcome": {},
   "tryOrInstallPageTitle": "Ensajar o installar",
+  "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparar l’installacion",
+  "@repairInstallation": {},
   "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
-  "tryUbuntu": "Ensajar Ubuntu",
-  "tryUbuntuDescription": "Podètz ensajar Ubuntu sens aplicar cap de modificacion a vòstre ordenador.",
-  "installUbuntu": "Installar Ubuntu",
-  "installUbuntuDescription": "Installar Ubuntu a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "Ensajar {RELEASE}",
+  "@tryUbuntu": {},
+  "tryUbuntuDescription": "Podètz ensajar {RELEASE} sens aplicar cap de modificacion a vòstre ordenador.",
+  "@tryUbuntuDescription": {},
+  "installUbuntu": "Installar {RELEASE}",
+  "@installUbuntu": {},
+  "installUbuntuDescription": "Installar {RELEASE} a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
+  "@installUbuntuDescription": {},
   "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
-
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
   "turnOffRST": "Desactivar RST",
+  "@turnOffRST": {},
   "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
+  "@turnOffRSTDescription": {},
   "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
-  
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
   "keyboardLayoutPageTitle": "Agençament del clavièr",
+  "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Indicatz l’agençament del clavièr :",
+  "@chooseYourKeyboardLayout": {},
   "typeToTest": "Picatz de tèxt aquí per ensajar lo clavièr",
+  "@typeToTest": {},
   "detectLayout": "Detectar l’agençament del clavièr",
-
+  "@detectLayout": {},
+  "pressOneKey": "Mercés de quichar una de las tòcas seguentas :",
+  "@pressOneKey": {},
+  "isKeyPresent": "La tòca seguenta es presenta sul clavièr ?",
+  "@isKeyPresent": {},
   "updatesOtherSoftwarePageTitle": "Mesas a jorn e logicials suplementaris",
+  "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Quinas aplicacions volètz installar per començar ?",
+  "@updatesOtherSoftwarePageDescription": {},
   "normalInstallationTitle": "Installacion normala",
+  "@normalInstallationTitle": {},
   "normalInstallationSubtitle": "Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.",
+  "@normalInstallationSubtitle": {},
   "minimalInstallationTitle": "Installacion minimala",
+  "@minimalInstallationTitle": {},
   "minimalInstallationSubtitle": "Navegador internet e utilitari de basa.",
+  "@minimalInstallationSubtitle": {},
   "otherOptions": "Autras opcions",
+  "@otherOptions": {},
   "installThirdPartyTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi e dels formats de mèdia suplementaris",
+  "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
-
+  "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Atribuir l’espaci disc",
+  "@allocateDiskSpace": {},
   "startInstallingButtonText": "Començar l’installacion",
+  "@startInstallingButtonText": {},
   "diskHeadersDevice": "Disc",
+  "@diskHeadersDevice": {},
   "diskHeadersType": "Tipe",
+  "@diskHeadersType": {},
   "diskHeadersMountPoint": "Punt de montatge",
+  "@diskHeadersMountPoint": {},
   "diskHeadersSize": "Talha",
+  "@diskHeadersSize": {},
   "diskHeadersUsed": "Utilizat",
+  "@diskHeadersUsed": {},
   "diskHeadersSystem": "Sistèma",
-  "diskHeadersFormat": "Formatar"  
+  "@diskHeadersSystem": {},
+  "diskHeadersFormat": "Formatar",
+  "@diskHeadersFormat": {},
+  "freeDiskSpace": "espaci liure",
+  "@freeDiskSpace": {},
+  "newPartitionTable": "Taula de particion novèla",
+  "@newPartitionTable": {},
+  "bootLoaderDevice": "Periferic per l’installacion del gestionari d’aviada",
+  "@bootLoaderDevice": {},
+  "partitionCreateTitle": "Crear una particion",
+  "@partitionCreateTitle": {},
+  "partitionEditTitle": "Modificar una particion",
+  "@partitionEditTitle": {},
+  "partitionSizeLabel": "Talha :",
+  "@partitionSizeLabel": {},
+  "partitionUnitB": "o",
+  "@partitionUnitB": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "partitionUnitMB": "Mo",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "Go",
+  "@partitionUnitGB": {},
+  "partitionTypeLabel": "Tipe per la particion novèla :",
+  "@partitionTypeLabel": {},
+  "partitionTypePrimary": "Primària",
+  "@partitionTypePrimary": {},
+  "partitionTypeLogical": "Logicala",
+  "@partitionTypeLogical": {},
+  "partitionLocationLabel": "Emplaçament de la particion novèla :",
+  "@partitionLocationLabel": {},
+  "partitionLocationBeginning": "Debuta d’aqueste espaci",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "Fin d’aqueste espaci",
+  "@partitionLocationEnd": {},
+  "partitionFormatLabel": "Utilizada coma :",
+  "@partitionFormatLabel": {},
+  "partitionFormatExt4": "sistèma de fichièr de jornalizacion Ext4",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt3": "sistèma de fichièr de jornalizacion Ext3",
+  "@partitionFormatExt3": {},
+  "partitionFormatExt2": "sistèma de fichièr de jornalizacion Ext2",
+  "@partitionFormatExt2": {},
+  "partitionFormatBtrfs": "sistèma de fichièr de jornalizacion BTRFS",
+  "@partitionFormatBtrfs": {},
+  "partitionFormatJfs": "sistèma de fichièr de jornalizacion JFS",
+  "@partitionFormatJfs": {},
+  "partitionFormatXfs": "sistèma de fichièr de jornalizacion XFS",
+  "@partitionFormatXfs": {},
+  "partitionFormatFat16": "sistèma de fichièr FAT16",
+  "@partitionFormatFat16": {},
+  "partitionFormatFat32": "sistèma de fichièr FAT32",
+  "@partitionFormatFat32": {},
+  "partitionFormatSwap": "zòna d’escambi",
+  "@partitionFormatSwap": {},
+  "partitionFormatBios": "zòna reservada a l’aviada del BIOS",
+  "@partitionFormatBios": {},
+  "partitionFormatEfi": "particion sistèma EFI",
+  "@partitionFormatEfi": {},
+  "partitionFormatPhysical": "volum fisic pel chiframent",
+  "@partitionFormatPhysical": {},
+  "partitionFormatNone": "utilizar pas la particion",
+  "@partitionFormatNone": {},
+  "partitionErase": "Formatar la particion",
+  "@partitionErase": {},
+  "partitionMountPointLabel": "Punt de montatge :",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageTitle": "Qual sètz ?",
+  "@whoAreYouPageTitle": {},
+  "whoAreYouPageAutoLogin": "Se connectar automaticament",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "Demandar mon senhal per dobrir una session",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageRealNameLabel": "Vòstre prenom",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageRealNameRequired": "Cal un prenom",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageComputerNameLabel": "Lo nom de l’ordenador",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageComputerNameInfo": "Lo nom qu’utiliza per comunicar amb d’autres ordenadors.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageComputerNameRequired": "Un nom d’ordenador es requerit",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "Lo nom de l’ordenador es invalid",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageUsernameLabel": "Causissètz un nom d’utilizaire",
+  "@whoAreYouPageUsernameLabel": {},
+  "whoAreYouPageUsernameRequired": "Un nom d’utilizaire es requerit",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageInvalidUsername": "Lo nom d’utilizaire es requerit",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPagePasswordLabel": "Causissètz un senhal",
+  "@whoAreYouPagePasswordLabel": {},
+  "whoAreYouPagePasswordRequired": "Un senhal es requerit",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPageConfirmPasswordLabel": "Confirmar lo senhal",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "whoAreYouPagePasswordMismatch": "Los senhals correspondon pas",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesToDisk": "Aplicar las modificacions suls disques",
+  "@writeChangesToDisk": {},
+  "writeChangesFallbackSerial": "disc",
+  "@writeChangesFallbackSerial": {
+    "description": "Nom d’afichatge per defaut per un disc sens numèro de seria (pauc probable)"
+  },
+  "writeChangesDescription": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
+  "@writeChangesDescription": {},
+  "writeChangesPartitionTablesHeader": "Las taulas de particions dels periferics seguents seràn modificadas :",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "Una entrada per un disc que sa particion es a èsser modificada",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
+  "@writeChangesPartitionsHeader": {},
+  "writeChangesPartitionEntryPrimaryFull": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) de tipe {fstype} coma {mountPath}",
+  "@writeChangesPartitionEntryPrimaryFull": {
+    "description": "Una entrada per una particion primària sens particion segondària",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {},
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "writeChangesPartitionEntryPrimary": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) coma",
+  "@writeChangesPartitionEntryPrimary": {
+    "description": "Una entrada per una particion primària amb particions segondàrias",
+    "placeholders": {
+      "partitionNumber": {},
+      "diskSerial": {},
+      "diskPath": {}
+    }
+  },
+  "writeChangesPartitionEntrySecondary": "        particion n° de tipe {fstype} coma {mountPath}",
+  "@writeChangesPartitionEntrySecondary": {
+    "description": "Una entrada per una particion segondària",
+    "placeholders": {
+      "fstype": {},
+      "mountPath": {}
+    }
+  },
+  "chooseYourLookPageTitle": "Causissètz l’aparéncia",
+  "@chooseYourLookPageTitle": {},
+  "chooseYourLookPageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "Fosc",
+  "@chooseYourLookPageDarkSetting": {},
+  "chooseYourLookPageLightSetting": "Clar",
+  "@chooseYourLookPageLightSetting": {},
+  "installationCompleteTitle": "Installacion acabada",
+  "@installationCompleteTitle": {},
+  "readyToUse": "**{system}** es installat e prèst a utilizar.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "Reaviar jos {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "shutdown": "Atudar",
+  "@shutdown": {},
+  "turnOffBitlockerTitle": "Desactivar BitLocker",
+  "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerDescription": "Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.",
+  "@turnOffBitlockerDescription": {},
+  "turnOffBitlockerLinkInstructions": "Per las consignas, dobrissètz aquesta pagina sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Reaviar jos Windows",
+  "@restartIntoWindows": {},
+  "configureSecureBootTitle": "Configurar l’amorçatge segur",
+  "@configureSecureBootTitle": {},
+  "confirmSecurityKey": "Confirmat la clau de seguretat",
+  "@confirmSecurityKey": {},
+  "configureSecureBootSecurityKeyRequired": "La clau de seguretat es requerida",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "installationTypeTitle": "Tipe d’installacion",
+  "@installationTypeTitle": {},
+  "installationTypeOSDetected": "Aqueste ordenador possedís actualament {os}. De qué volètz far ?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeEraseWarning": "<font color=\"{color}\">Avertiment :</font> aquò suprimirà totes vòstres programas, documents, fòtos e autres fichièrs de totes lo sistèmas operatius.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Avertiment :</font> aquò suprimirà totes vòstres programas {os}, documents, fòtos e autres fichièrs.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "configureSecureBootDescription": "Avètz causit d’installar de pilòts tèrces. Aquò requerís la desactivacion de l’amorçatge segur.\nPer aquò far, devètz causir una clau de seguretat ara, e la picar quand lo sistèma avia.",
+  "@configureSecureBootDescription": {},
+  "installationTypeAlongsideInfo": "Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.",
+  "@installationTypeAlongsideInfo": {},
+  "configureSecureBootOption": "Configurar l’amorçatge segur",
+  "@configureSecureBootOption": {},
+  "chooseSecurityKey": "Causir una clau de seguretat",
+  "@chooseSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "Installar pas lo logicial pilòt pel moment",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Lo podètz installar mai tard de Logicials e Mesas a jorn estant.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "secureBootSecurityKeysDontMatch": "Las claus de seguretat correspondon pas",
+  "@secureBootSecurityKeysDontMatch": {},
+  "installationTypeNoOSDetected": "Aqueste ordenador possedís pas cap de sistèma operatiu detectat actualament. De qué volètz far ?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeErase": "Escafar lo disc e installar {DISTRO}",
+  "@installationTypeErase": {},
+  "installationTypeAdvancedLabel": "Foncionalitats avançadas...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "Foncionalitats avançadas",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeNone": "Cap",
+  "@installationTypeNone": {},
+  "installationTypeNoneSelected": "Cap pas seleccionat",
+  "@installationTypeNoneSelected": {},
+  "installationTypeLVM": "Utilizar LVM amb l’installation de {RELEASE} novèla",
+  "@installationTypeLVM": {},
+  "installationTypeLVMSelected": "LVM seleccionat",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncrypt": "Chifrar l’installacion de {RELEASE} novèla per la seguretat",
+  "@installationTypeEncrypt": {},
+  "installationTypeEncryptInfo": "Causiretz una clau de seguretat a l’etapa seguenta.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFS": "EXPERIMENTAL : escafar lo disc e utilizar ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeZFSSelected": "ZFS seleccionat",
+  "@installationTypeZFSSelected": {},
+  "installationTypeReinstall": "Escafar {os} e reinstallar",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "Installar {product} al costat de {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeManual": "Quicòm mai",
+  "@installationTypeManual": {},
+  "installationTypeManualInfo": "Podètz crear o retalhar las particions vos meteis, o causir mantuna particion per {DISTRO}",
+  "@installationTypeManualInfo": {},
+  "selectGuidedStoragePageTitle": "Escafar lo disc e installar {DISTRO}",
+  "@selectGuidedStoragePageTitle": {},
+  "selectGuidedStorageInfoLabel": "Lo disc entièr serà utilizat :",
+  "@selectGuidedStorageInfoLabel": {},
+  "selectGuidedStorageInstallNow": "Installar ara",
+  "@selectGuidedStorageInstallNow": {},
+  "chooseSecurityKeyHeader": "Lo chiframent del disc permet de protegir vòstres fichièrs se per cas perdètz vòstre ordenador. Requerís de picar una clau de seguretat cada còp que l’ordenador s’amòda.\n\nTotes los fichièrs en defòra de {RELEASE} seràn pas chifrats.",
+  "@chooseSecurityKeyHeader": {},
+  "chooseSecurityKeyMismatch": "Las doas claus correspondon pas",
+  "@chooseSecurityKeyMismatch": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyHint": "Causissètz una clau de seguretat",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Confirmatz la clau de seguretat",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyTitle": "Causida de clau de seguretat",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyRequired": "Una clau de seguretat es requerida",
+  "@chooseSecurityKeyRequired": {},
+  "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
+  "@selectGuidedStorageDropdownLabel": {},
+  "partitionFormatFat": "sistèma de fichièr FAT",
+  "@partitionFormatFat": {},
+  "partitionFormatFat12": "sistèma de fichièr FAT12",
+  "@partitionFormatFat12": {},
+  "partitionFormatIso9660": "sistèma de fichièr ISO 9660",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "sistèma de fichièr VFAT",
+  "@partitionFormatVfat": {},
+  "partitionFormatNtfs": "sistèma de fichièr NTFS",
+  "@partitionFormatNtfs": {},
+  "partitionFormatReiserFS": "sistèma de fichièr ReiserFS",
+  "@partitionFormatReiserFS": {},
+  "partitionFormatZfsroot": "sistèma de fichièr ZFS",
+  "@partitionFormatZfsroot": {},
+  "writeChangesPartitionEntryMounted": "la particion #{disk}{partition} en {format} utilizada per {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "particion #{disk}{partition} en {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "newPartitionTableConfirmationTitle": "Crear una taula novèla de particions sus aqueste periferic ?",
+  "@newPartitionTableConfirmationTitle": {},
+  "wiredDisabled": "La connexion filara es desactivada",
+  "@wiredDisabled": {},
+  "connectToInternetPageTitle": "Se connectar a internet",
+  "@connectToInternetPageTitle": {},
+  "connectToInternetDescription": "Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi",
+  "@connectToInternetDescription": {},
+  "enableWired": "Activar la connexion filara",
+  "@enableWired": {},
+  "noInternet": "Vòli pas me connectar a internet pel moment",
+  "@noInternet": {},
+  "selectWifiNetwork": "Se connectar a un ret Wifi",
+  "@selectWifiNetwork": {},
+  "enableWifi": "Activar lo Wifi",
+  "@enableWifi": {},
+  "connectButtonText": "Se connectar",
+  "@connectButtonText": {},
+  "newPartitionTableConfirmationMessage": "Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s'o volètz.",
+  "@newPartitionTableConfirmationMessage": {},
+  "useWiredConnection": "Utilizar una connexion filara",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Cap de connexion filara pas detectada",
+  "@noWiredConnection": {},
+  "wiredMustBeEnabled": "Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada",
+  "@wiredMustBeEnabled": {},
+  "wirelessNetworkingDisabled": "Lo ret sens fial es desactivat",
+  "@wirelessNetworkingDisabled": {},
+  "noWifiDevicesDetected": "Cap de periferic Wifi pas detectat",
+  "@noWifiDevicesDetected": {},
+  "wifiMustBeEnabled": "Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat",
+  "@wifiMustBeEnabled": {},
+  "onBatteryWarning": "<font color=\"{color}\">Avertiment </font>: l’ordenador es pas brancat a una font d’alimentacion.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "welcomeSlideTitle": "La benvenguda a {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "welcomeHeader": "Causissètz vòstra lenga :",
+  "@welcomeHeader": {},
+  "whereAreYouPageTitle": "Ont sètz ?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouTimezoneLabel": "Fus orari",
+  "@whereAreYouTimezoneLabel": {},
+  "musicSlideTitle": "Emportatz vòstra musica amb vos",
+  "@musicSlideTitle": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "photoSlideTitle": "Divertissètz vos amb vòstras fòtos",
+  "@photoSlideTitle": {},
+  "webSlideFirefox": "Navegador web Firefox",
+  "@webSlideFirefox": {},
+  "whereAreYouLocationLabel": "Localizacion",
+  "@whereAreYouLocationLabel": {},
+  "softwareSlideTitle": "Obtenètz mai de logicials",
+  "@softwareSlideTitle": {},
+  "musicSlideRhythmbox": "Lector de musica Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "photoSlideShotwell": "Gestionari de fòto Shotwell",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "Editor d’imatge GIMP",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Editor de vidèo Shotcut",
+  "@photoSlideShotcut": {},
+  "webSlideTitle": "Trapatz çò melhor del Web",
+  "@webSlideTitle": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {},
+  "officeSlideTitle": "Tot çò que vos fa mestièr pel burèu",
+  "@officeSlideTitle": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "accessSlideTitle": "Accès per totes",
+  "@accessSlideTitle": {},
+  "accessSlideCustomizationOptions": "Opcions de personalizacion",
+  "@accessSlideCustomizationOptions": {},
+  "accessSlideAppearance": "Aparéncia",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "Accessibilitat",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "Presa en carga de las lengas",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Ajuda e assisténcia",
+  "@supportSlideTitle": {},
+  "includedSoftware": "Logicials incluses",
+  "@includedSoftware": {},
+  "availableSoftware": "Logicials disponibles",
+  "@availableSoftware": {},
+  "supportedSoftware": "Logicials preses en carga",
+  "@supportedSoftware": {},
+  "hiddenWifiNetworkNameLabel": "Nom de la ret",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameRequired": "Un nom de ret es requerit",
+  "@hiddenWifiNetworkNameRequired": {},
+  "installationTypeMultiOSDetected": "Aqueste ordenador es installat amb mantun sistèma operatiu. De qué volètz far ?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeDualOSDetected": "Aqueste ordenador a {os1} e {os2} d’installats. De qué volètz far ?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "whoAreYouPageShowPassword": "Afichar lo senhal",
+  "@whoAreYouPageShowPassword": {},
+  "welcomeSlideDescription": "Rapida e plena de foncionalitats novèlas, la darrièra version d’{RELEASE} fa venir l’informatica mai faciala que jamai. Vaquí d’unas novetats de descobrir…",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "copyingFiles": "Còpia dels fichièrs…",
+  "@copyingFiles": {},
+  "installationFailed": "Fracàs de l’installacion",
+  "@installationFailed": {},
+  "whoAreYouPageUsernameSystemReserved": "Aqueste nom es reservat per l’usatge del sistèma.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Aqueste nom es tròp long.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInUse": "Aqueste nom d’utilizaire existís ja.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameInvalidChars": "Aqueste nom conten de caractèrs invalids.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installAlongsidePartition": "Particion :",
+  "@installAlongsidePartition": {},
+  "installationTypeAlongsideMulti": "Installar {product} a lor costat",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideFiles": "Fichièrs",
+  "@installAlongsideFiles": {},
+  "installationTypeAlongsideDual": "Installar {product} a costat de {os1} e {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "quitButtonText": "Quitar l’installacion",
+  "@quitButtonText": {},
+  "installationTypeAlongsideUnknown": "Installar {product} a costat de las autras particions",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Alogatz l’espaci disc en desplaçant lo separador çai-jos :",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideAllocateSpace": "Alogar l’espaci",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideResizePartition": "Redimensionar la particion",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideSize": "Talha :",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Disponible :",
+  "@installAlongsideAvailable": {},
+  "notEnoughDiskSpaceHeader": "Vos cal almens {SIZE} d’espaci disc per installar {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Desolat",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHasOnly": "Aqueste ordenador a sonque {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Lo disc mai grand d’aqueste ordenador a sonque {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "installingSystem": "Installacion del sistèma…",
+  "@installingSystem": {},
+  "configuringSystem": "Configuracion del sistèma…",
+  "@configuringSystem": {},
+  "writeChangesPartitionResized": "la particion #{disk}{partition} redimensionada de {oldsize} a {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "{num} particions mai pichonas son rescondudas, utilizatz <a href=\"{url}\">l’aisinas de particionament avançat</a> per mai de contròla",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "supportSlideResources": "Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.",
+  "@supportSlideResources": {},
+  "writeChangesPartitionCreated": "particion #{disk}{partition} creada",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "writeChangesPartitionMounted": "la particion #{disk}{partition} utilizada per {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "la particion #{disk}{partition} formatada en {format} utilizada per {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "la particion #{disk}{partition} formatada en {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "showSecurityKey": "Mostrar la clau de seguretat",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM e chiframent seleccionats",
+  "@installationTypeLVMEncryptionSelected": {},
+  "photoSlideDescription": "Shotwell es un gestionari de fòtos practic que pòt connectar vòstres periferics. Connectatz un aparelh de fòto o un telefòn per transferir vòstras fòtos, partejatz-las e salvagardatz-las facilament. E se vos sentissètz creatiu, trobaretz un molon d’autras aplicacions per retocar de fòto dins la logitècas Ubuntu.",
+  "@photoSlideDescription": {},
+  "softwareSlideDescription": "Acabada la recèrca de novèls logicials sul Web. Amb las logitècas Snap Store e los archius logicials d’ {RELEASE} , podètz trobar e installar aisidament d'aplicacions novèlas. Picatz juste çò que cercatz o exploratz las categorias coma grafismes e fotografia, jòcs o productivitat, acompanhadas de comentaris utils d’autres utilizaires.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideDocumentation": "La documentacion oficiala cobrís los aspèctes màgers a prepaus de {RELEASE}. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideQuestions": "Sus <a href=\"https://askubuntu.com\">Ask Ubuntu</a>, podètz pausar de questions e recercar dins una colleccion impressionanta de questions qu'an ja una responsa. L'assisténcia dins vòstra pròpria lenga pòt èsser provesida per vòstra <a href=\"https://loco.ubuntu.com/teams/\">Equipa comunautària locala</a>.",
+  "@supportSlideQuestions": {},
+  "musicSlideDescription": "{RELEASE} es liurat amb l’excellent lector de musica Rhythmbox. Gràcias a sas opcions de lectura avançadas, es un jòc d'enfant de preparar la playlist perfièita. Amai, gerís perfèitament CD e lectors numerics portables, doncas, podètz profeitar de vòstra musica pertot ont anatz.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideDescription": "{RELEASE} inclutz Firefox, lo navegador Web utilizat per de milions de personas dins lo monde entièr. E, per un accès mai rapid, podètz penjar sus vòstre burèu las aplicacions Web qu'utilizatz lo mai sovent (coma Facebook o Gmail per exemple), exactament coma d'aplicacions sus vòstre ordenador.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideDescription": "LibreOffice es una seguida burotica liura liurada amb tot çò que n'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n'avètz besonh.",
+  "@officeSlideDescription": {},
+  "accessSlideDescription": "Al còs de la filosofia d’ {RELEASE} se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, las colors e la talha de tèxt, {RELEASE} fa venir l’informatica simpla, qual e ont que siatz.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installDriversTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi",
+  "@installDriversTitle": {},
+  "installCodecsTitle": "Installar la presa en carga addicionala pels format multimèdia",
+  "@installCodecsTitle": {},
+  "installDriversSubtitle": "Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.",
+  "@installCodecsSubtitle": {},
+  "restartNow": "Reaviar ara",
+  "@restartNow": {},
+  "continueTesting": "Contunhar d’ensajar",
+  "@continueTesting": {},
+  "restartWarning": "Podètz téner d’ensajar {RELEASE} ara, mas fins que reavietz l’ordenador, tota modificacion o document que creatz serà pas servat.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Tròp de particions primàrias",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "limit atenh",
+  "@partitionLimitReached": {}
 }

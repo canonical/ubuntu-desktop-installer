@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../app.dart';
-import '../../keyboard_service.dart';
-import '../../routes.dart';
-import '../../widgets.dart';
-import '../wizard_page.dart';
+import '../../l10n.dart';
+import '../../services.dart';
+import '../../settings.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
+    final client = getService<SubiquityClient>();
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(
-        client: Provider.of<SubiquityClient>(context, listen: false),
-        keyboardService: Provider.of<KeyboardService>(context, listen: false),
-      ),
-      child: WelcomePage(),
+      create: (_) => WelcomeModel(client),
+      child: const WelcomePage(),
     );
   }
 
   @override
-  _WelcomePageState createState() => _WelcomePageState();
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final _languageListFocusNode = FocusNode();
   final _languageListScrollController = AutoScrollController();
 
   @override
@@ -38,63 +39,99 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     final model = Provider.of<WelcomeModel>(context, listen: false);
-    model.loadKeyboards();
-
     model.loadLanguages().then((_) {
-      model.selectLocale(Intl.defaultLocale!);
+      final settings = Settings.of(context, listen: false);
+      model.selectLocale(settings.locale);
 
-      _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
-          preferPosition: AutoScrollPosition.middle,
-          duration: const Duration(milliseconds: 1));
+      _selectAndScrollToLanguage(
+          model.selectedLanguageIndex, AutoScrollPosition.middle);
     });
   }
 
   @override
   void dispose() {
+    _languageListFocusNode.dispose();
     _languageListScrollController.dispose();
     super.dispose();
+  }
+
+  void _selectAndScrollToLanguage(int index, [AutoScrollPosition? position]) {
+    if (index == -1) return;
+
+    final model = context.read<WelcomeModel>();
+    model.selectedLanguageIndex = index;
+
+    final settings = Settings.of(context, listen: false);
+    settings.applyLocale(model.locale(index));
+
+    _languageListFocusNode.requestFocus();
+    _languageListScrollController.scrollToIndex(index,
+        preferPosition: position, duration: const Duration(milliseconds: 1));
   }
 
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<WelcomeModel>(context);
-    return LocalizedView(
-      builder: (context, lang) => WizardPage(
+    final lang = AppLocalizations.of(context);
+    final height = MediaQuery.of(context).size.height;
+    return WizardPage(
+      title: YaruWindowTitleBar(
         title: Text(lang.welcome),
-        content: FractionallySizedBox(
-          widthFactor: 0.5,
-          child: RoundedListView.builder(
-            controller: _languageListScrollController,
-            itemCount: model.languageCount,
-            itemBuilder: (context, index) {
-              return AutoScrollTag(
-                index: index,
-                key: ValueKey(index),
-                controller: _languageListScrollController,
-                child: ListTile(
-                  title: Text(model.language(index)),
-                  selected: index == model.selectedLanguageIndex,
-                  onTap: () {
-                    model.selectedLanguageIndex = index;
-                    UbuntuDesktopInstallerApp.locale = model.locale(index);
-                    model.loadKeyboards();
-                  },
-                ),
-              );
-            },
-          ),
-        ),
-        actions: <WizardAction>[
-          WizardAction(label: lang.backButtonText),
-          WizardAction(
-            label: lang.continueButtonText,
-            onActivated: () {
-              model.applyLocale(model.locale(model.selectedLanguageIndex));
-              Navigator.pushNamed(context, Routes.tryOrInstall);
-            },
-          ),
-        ],
       ),
+      header: Text(lang.welcomeHeader),
+      content: FractionallySizedBox(
+        child: Row(
+          children: [
+            Expanded(
+              child: KeySearch(
+                autofocus: true,
+                focusNode: _languageListFocusNode,
+                onSearch: (value) {
+                  _selectAndScrollToLanguage(model.searchLanguage(value));
+                },
+                child: YaruBorderContainer(
+                  clipBehavior: Clip.antiAlias,
+                  child: ListView.builder(
+                    controller: _languageListScrollController,
+                    itemCount: model.languageCount,
+                    itemBuilder: (context, index) {
+                      return AutoScrollTag(
+                        index: index,
+                        key: ValueKey(index),
+                        controller: _languageListScrollController,
+                        child: ListTile(
+                          title: Text(model.language(index)),
+                          selected: index == model.selectedLanguageIndex,
+                          onTap: () => _selectAndScrollToLanguage(index),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: kContentSpacing),
+            Expanded(
+              child: SvgPicture.asset(
+                'assets/welcome/logo.svg',
+                height: height / 2,
+              ),
+            )
+          ],
+        ),
+      ),
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.next(
+          context,
+          onNext: () {
+            final locale = model.locale(model.selectedLanguageIndex);
+            model.applyLocale(locale);
+            getService<TelemetryService>()
+                .addMetric('Language', locale.languageCode);
+          },
+        ),
+      ],
     );
   }
 }

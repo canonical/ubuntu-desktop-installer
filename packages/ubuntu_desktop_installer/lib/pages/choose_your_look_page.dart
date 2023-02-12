@@ -1,69 +1,104 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../app_theme.dart';
-import '../routes.dart';
-import '../widgets.dart';
-import 'wizard_page.dart';
+import '../../l10n.dart';
+import '../../settings.dart';
 
 class ChooseYourLookPage extends StatelessWidget {
-  const ChooseYourLookPage({Key? key}) : super(key: key);
+  const ChooseYourLookPage({super.key});
 
-  static Widget create(BuildContext context) => ChooseYourLookPage();
+  static Widget create(BuildContext context) => const ChooseYourLookPage();
 
   @override
   Widget build(BuildContext context) {
-    void nextPage() {
-      Navigator.pushNamed(context, Routes.installationSlides);
-    }
-
-    final theme = context.watch<AppTheme>();
-    return LocalizedView(
-      builder: (context, lang) => WizardPage(
-        header: Text(lang.chooseYourLookPageHeader),
-        actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
-          ),
-          WizardAction(
-            label: lang.continueButtonText,
-            enabled: true,
-            onActivated: nextPage,
-          ),
-        ],
+    final lang = AppLocalizations.of(context);
+    final width = MediaQuery.of(context).size.width;
+    final settings = Settings.of(context, listen: false);
+    return WizardPage(
+      header: Text(lang.chooseYourLookPageHeader),
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.next(context),
+      ],
+      title: YaruWindowTitleBar(
         title: Text(lang.chooseYourLookPageTitle),
-        contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 150),
-        content: Center(
-          child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OptionCard(
-                    imageAsset: 'assets/Theme_thumbnails-Light.png',
-                    titleText: lang.chooseYourLookPageLightSetting,
-                    bodyText: lang.chooseYourLookPageLightBodyText,
-                    selected: Theme.of(context).brightness == Brightness.light,
-                    onSelected: () {
-                      theme.apply(Brightness.light);
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OptionCard(
-                    imageAsset: 'assets/Theme_thumbnails-Dark.png',
-                    titleText: lang.chooseYourLookPageDarkSetting,
-                    bodyText: lang.chooseYourLookPageDarkBodyText,
-                    selected: Theme.of(context).brightness == Brightness.dark,
-                    onSelected: () => theme.apply(Brightness.dark),
-                  ),
-                )
-              ]),
-        ),
       ),
+      content: Center(
+        child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _ThemeOptionCard(
+                width: width / 3,
+                assetName: 'assets/choose_your_look/light-theme.png',
+                selected: Theme.of(context).brightness == Brightness.light,
+                onTap: () {
+                  settings.applyTheme(Brightness.light);
+                },
+                preferenceName: lang.chooseYourLookPageLightSetting,
+              ),
+              SizedBox(
+                width: width / 20,
+              ),
+              _ThemeOptionCard(
+                width: width / 3,
+                assetName: 'assets/choose_your_look/dark-theme.png',
+                selected: Theme.of(context).brightness == Brightness.dark,
+                onTap: () {
+                  settings.applyTheme(Brightness.dark);
+                },
+                preferenceName: lang.chooseYourLookPageDarkSetting,
+              ),
+            ]),
+      ),
+    );
+  }
+}
+
+class _ThemeOptionCard extends StatelessWidget {
+  const _ThemeOptionCard({
+    required this.width,
+    required this.assetName,
+    required this.selected,
+    required this.onTap,
+    required this.preferenceName,
+  });
+
+  final double width;
+  final String assetName;
+  final bool selected;
+  final Function() onTap;
+  final String preferenceName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: width,
+          child: YaruSelectableContainer(
+            selected: selected,
+            padding: EdgeInsets.zero,
+            onTap: onTap,
+            child: IntrinsicHeight(
+              child: YaruBanner(
+                padding: EdgeInsets.zero,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(assetName),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(preferenceName,
+              style: Theme.of(context).textTheme.titleLarge),
+        )
+      ],
     );
   }
 }

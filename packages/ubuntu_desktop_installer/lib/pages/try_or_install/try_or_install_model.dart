@@ -1,7 +1,12 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
-import 'package:meta/meta.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
+
+/// @internal
+final log = Logger('try_or_install');
 
 /// The available options on the Try Or Install page.
 enum Option {
@@ -19,7 +24,7 @@ enum Option {
 }
 
 /// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends ChangeNotifier {
+class TryOrInstallModel extends SafeChangeNotifier {
   /// The currently selected option.
   Option get option => _option;
   Option _option = Option.none;
@@ -28,6 +33,7 @@ class TryOrInstallModel extends ChangeNotifier {
   void selectOption(Option option) {
     if (_option == option) return;
     _option = option;
+    log.info('Selected ${option.name} option');
     notifyListeners();
   }
 
@@ -43,7 +49,7 @@ class TryOrInstallModel extends ChangeNotifier {
             .readAsLinesSync()
             .firstWhere((line) => line.trim().isNotEmpty);
         return url.replaceAll(r'${LANG}', locale.languageCode);
-        // ignore: avoid_catches_without_on_clauses
+        // ignore: empty_catches
       } catch (e) {}
     }
     try {
@@ -60,4 +66,7 @@ class TryOrInstallModel extends ChangeNotifier {
       return 'https://ubuntu.com/download/desktop';
     }
   }
+
+  /// Lets the user try the Ubuntu desktop by closing the installer window.
+  Future<void> tryUbuntu() => closeWindow();
 }

@@ -6,22 +6,19 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/app.dart';
-import 'package:ubuntu_desktop_installer/app_theme.dart';
-import 'package:ubuntu_desktop_installer/keyboard_service.dart';
-import 'package:ubuntu_desktop_installer/l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/settings.dart';
+import 'package:ubuntu_test/mocks.dart';
 
-import 'gsettings.mocks.dart';
+import 'test_utils.dart';
 
-class SubiquityClientMock extends SubiquityClient {
-  @override
-  Future<KeyboardSetup> keyboard() async {
-    return KeyboardSetup(layouts: []);
-  }
-}
+// ignore_for_file: type=lint
 
 void main() {
   testWidgets('Ubuntu Desktop installer smoke tests', (tester) async {
@@ -29,14 +26,26 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await setupAppLocalizations();
 
-    await tester.pumpWidget(MultiProvider(providers: [
-      Provider(
-        // ignore: unnecessary_cast
-        create: (_) => SubiquityClientMock() as SubiquityClient,
-      ),
-      Provider(create: (context) => KeyboardService()),
-      ChangeNotifierProvider(create: (_) => AppTheme(MockGSettings())),
-    ], child: UbuntuDesktopInstallerApp()));
+    final client = MockSubiquityClient();
+    when(client.hasRst()).thenAnswer((_) async => false);
+    when(client.hasBitLocker()).thenAnswer((_) async => false);
+    when(client.keyboard()).thenAnswer((_) async =>
+        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
+    when(client.isOpen).thenAnswer((_) async => true);
+    registerMockService<SubiquityClient>(client);
+
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+    registerMockService<SubiquityStatusMonitor>(monitor);
+
+    registerMockService<DiskStorageService>(DiskStorageService(client));
+    registerMockService<TelemetryService>(TelemetryService());
+
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (_) => Settings(MockGSettings()),
+      child: UbuntuDesktopInstallerApp(),
+    ));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
   });

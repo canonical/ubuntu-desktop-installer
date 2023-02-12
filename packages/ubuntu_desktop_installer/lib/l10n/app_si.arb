@@ -1,0 +1,12 @@
+{
+  "@@locale": "si",
+  "windowTitle": "ස්ථාපනය {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "appTitle": "උබුන්ටු ඩෙස්ක්ටොප් ධාවකය",
+  "@appTitle": {}
+}

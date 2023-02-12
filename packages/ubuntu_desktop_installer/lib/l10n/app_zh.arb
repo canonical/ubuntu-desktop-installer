@@ -1,0 +1,771 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Ubuntu 桌面安装程序",
+  "@appTitle": {},
+  "windowTitle": "安装 {RELEASE}",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "connectButtonText": "连接",
+  "@connectButtonText": {},
+  "selectWifiNetwork": "连接到 Wi-Fi 网络",
+  "@selectWifiNetwork": {},
+  "noInternet": "暂不连接到互联网",
+  "@noInternet": {},
+  "noWifiDevicesDetected": "找不到 Wi-Fi 设备",
+  "@noWifiDevicesDetected": {},
+  "enableWifi": "启用 Wi-Fi",
+  "@enableWifi": {},
+  "normalInstallationSubtitle": "Web 浏览器、实用程序、办公软件、游戏和媒体播放器。",
+  "@normalInstallationSubtitle": {},
+  "changeButtonText": "更改",
+  "@changeButtonText": {},
+  "okButtonText": "好",
+  "@okButtonText": {},
+  "noButtonText": "否",
+  "@noButtonText": {},
+  "restartButtonText": "重启",
+  "@restartButtonText": {},
+  "yesButtonText": "是",
+  "@yesButtonText": {},
+  "welcome": "欢迎",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "试用或安装",
+  "@tryOrInstallPageTitle": {},
+  "installUbuntu": "安装 {RELEASE}",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffRST": "关闭 RST",
+  "@turnOffRST": {},
+  "keyboardLayoutPageTitle": "键盘布局",
+  "@keyboardLayoutPageTitle": {},
+  "typeToTest": "在此键入以测试您的键盘",
+  "@typeToTest": {},
+  "chooseYourKeyboardLayout": "选择您的键盘布局：",
+  "@chooseYourKeyboardLayout": {},
+  "updatesOtherSoftwarePageTitle": "更新和其他软件",
+  "@updatesOtherSoftwarePageTitle": {},
+  "hiddenWifiNetwork": "连接到隐藏的 Wi-Fi 网络",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameLabel": "网络名称",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetworkNameRequired": "需要网络名称",
+  "@hiddenWifiNetworkNameRequired": {},
+  "updatesOtherSoftwarePageDescription": "您想先安装哪些应用？",
+  "@updatesOtherSoftwarePageDescription": {},
+  "onBatteryWarning": "<font color=\"{color}\">警告</font>：电脑未接入电源适配器。",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyConfirmHint": "确认安全密钥",
+  "@chooseSecurityKeyConfirmHint": {},
+  "installationTypeOSDetected": "这台电脑上当前安装了{os}。您准备怎么做？",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeNoOSDetected": "这台电脑目前没有检测到操作系统。您准备怎么做？",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeErase": "擦除磁盘并安装{DISTRO}",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">警告：</font>这将删除您的 {os} 中的所有程序、文档、照片、音乐和任何其他文件。",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "在 {os} 中安装 {product}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "selectGuidedStorageInstallNow": "立即安装",
+  "@selectGuidedStorageInstallNow": {},
+  "partitionUnitMB": "MB",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "GB",
+  "@partitionUnitGB": {},
+  "partitionTypePrimary": "主分区",
+  "@partitionTypePrimary": {},
+  "partitionTypeLogical": "逻辑分区",
+  "@partitionTypeLogical": {},
+  "partitionLocationLabel": "新分区的位置：",
+  "@partitionLocationLabel": {},
+  "partitionLocationBeginning": "空间起始位置",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "空间结束位置",
+  "@partitionLocationEnd": {},
+  "partitionFormatLabel": "用于：",
+  "@partitionFormatLabel": {},
+  "partitionFormatExt4": "Ext4 日志文件系统",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt2": "Ext2 文件系统",
+  "@partitionFormatExt2": {},
+  "partitionFormatBtrfs": "btrfs 日志文件系统",
+  "@partitionFormatBtrfs": {},
+  "partitionFormatJfs": "JFS 日志文件系统",
+  "@partitionFormatJfs": {},
+  "partitionFormatFat16": "FAT16 文件系统",
+  "@partitionFormatFat16": {},
+  "partitionFormatSwap": "交换空间",
+  "@partitionFormatSwap": {},
+  "partitionFormatIso9660": "ISO 9660 文件系统",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "VFAT 文件系统",
+  "@partitionFormatVfat": {},
+  "partitionFormatZfsroot": "ZFS 根文件系统",
+  "@partitionFormatZfsroot": {},
+  "partitionErase": "格式化分区",
+  "@partitionErase": {},
+  "whoAreYouPageRealNameRequired": "需要名字",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "电脑主机名无效",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageUsernameLabel": "键入一个用户名",
+  "@whoAreYouPageUsernameLabel": {},
+  "whoAreYouPageUsernameRequired": "需要用户名",
+  "@whoAreYouPageUsernameRequired": {},
+  "chooseYourLookPageHeader": "稍后您可以在“外观设置”中进行更改。",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "深色",
+  "@chooseYourLookPageDarkSetting": {},
+  "chooseYourLookPageLightSetting": "浅色",
+  "@chooseYourLookPageLightSetting": {},
+  "installationCompleteTitle": "安装完成",
+  "@installationCompleteTitle": {},
+  "readyToUse": "**{system}** 安装完毕并且可以使用。",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartInto": "重启进入 {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "shutdown": "关机",
+  "@shutdown": {},
+  "turnOffBitlockerTitle": "关闭 BitLocker",
+  "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerLinkInstructions": "有关说明，请在手机或其他设备上打开此页面：<a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "重启进入 Windows",
+  "@restartIntoWindows": {},
+  "whereAreYouPageTitle": "您在什么地方？",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "位置",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "时区",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeSlideTitle": "欢迎使用 {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "千万软件，一站搞定",
+  "@softwareSlideTitle": {},
+  "musicSlideTitle": "随时畅听，随地畅享",
+  "@musicSlideTitle": {},
+  "partitionFormatFat": "FAT 文件系统",
+  "@partitionFormatFat": {},
+  "partitionFormatXfs": "XFS 日志文件系统",
+  "@partitionFormatXfs": {},
+  "partitionFormatReiserFS": "ReiserFS 文件系统",
+  "@partitionFormatReiserFS": {},
+  "partitionFormatNtfs": "NTFS 文件系统",
+  "@partitionFormatNtfs": {},
+  "repairInstallation": "修复安装",
+  "@repairInstallation": {},
+  "tryUbuntuDescription": "您可以在不对电脑做任何改动的情况下试用 {RELEASE}。",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEraseWarning": "<font color=\"{color}\">警告：</font>这将删除所有操作系统中的所有程序、文档、照片、音乐和任何其他文件。",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "configureSecureBootDescription": "您已选择安装第三方驱动。这需要关闭安全启动。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。",
+  "@configureSecureBootDescription": {},
+  "turnOffRSTDescription": "这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。",
+  "@turnOffRSTDescription": {},
+  "minimalInstallationTitle": "最小安装",
+  "@minimalInstallationTitle": {},
+  "normalInstallationTitle": "正常安装",
+  "@normalInstallationTitle": {},
+  "installationTypeAlongsideInfo": "将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。",
+  "@installationTypeAlongsideInfo": {},
+  "writeChangesPartitionEntryMounted": "分区#{disk}{partition}作为{format}用于{mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
+  "@repairInstallationDescription": {},
+  "writeChangesPartitionEntryUnmounted": "分区#{disk}{partition}作为{format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "turnOffBitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
+  "@turnOffBitlockerDescription": {},
+  "welcomeSlideDescription": "最新版本的 {RELEASE} 不仅快，功能也多，您从此使用电脑更加方便了！我们将介绍一些非常酷炫的新东西......",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideDescription": "无需在网上搜索新软件。通过访问Snap Store和{RELEASE}软件存档，只需输入你想要的内容，或探索图形与摄影、游戏和生产力等类别，您就可以轻松找到并安装新的应用程序，以及其他用户提供的有用评论。",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "chooseSecurityKeyTitle": "选择一个安全密钥",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHint": "选择一个安全密钥",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyRequired": "需要一个安全密钥",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">警告</font>：如果丢失此安全密钥，所有数据都将丢失。以防万一，您可以记下您的安全密钥并保存到安全的地方。",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeAdvancedTitle": "高级功能",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeNone": "空",
+  "@installationTypeNone": {},
+  "installationTypeNoneSelected": "尚未选择任何安装选项",
+  "@installationTypeNoneSelected": {},
+  "installationTypeLVMSelected": "已选择配置 LVM",
+  "@installationTypeLVMSelected": {},
+  "installationTypeReinstall": "擦除 {os} 并重新安装",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeEncryptInfo": "您将在下一步中选择一个安全密钥。",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFS": "实验性功能：擦除磁盘并使用ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeZFSSelected": "已选择 ZFS",
+  "@installationTypeZFSSelected": {},
+  "installationTypeManual": "其他选项",
+  "@installationTypeManual": {},
+  "installationTypeManualInfo": "您可以创建分区或调整分区大小，或者为{DISTRO}选择多个分区",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "selectGuidedStorageInfoLabel": "将使用整块磁盘：",
+  "@selectGuidedStorageInfoLabel": {},
+  "diskHeadersUsed": "已使用",
+  "@diskHeadersUsed": {},
+  "diskHeadersSize": "大小",
+  "@diskHeadersSize": {},
+  "diskHeadersSystem": "系统",
+  "@diskHeadersSystem": {},
+  "startInstallingButtonText": "开始安装",
+  "@startInstallingButtonText": {},
+  "diskHeadersFormat": "格式化",
+  "@diskHeadersFormat": {},
+  "freeDiskSpace": "剩余空间",
+  "@freeDiskSpace": {},
+  "newPartitionTable": "新建分区表",
+  "@newPartitionTable": {},
+  "newPartitionTableConfirmationTitle": "是否在此设备上创建新的空白分区表？",
+  "@newPartitionTableConfirmationTitle": {},
+  "newPartitionTableConfirmationMessage": "您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。",
+  "@newPartitionTableConfirmationMessage": {},
+  "bootLoaderDevice": "用于安装引导程序的设备",
+  "@bootLoaderDevice": {},
+  "partitionCreateTitle": "创建分区",
+  "@partitionCreateTitle": {},
+  "partitionSizeLabel": "大小：",
+  "@partitionSizeLabel": {},
+  "partitionEditTitle": "编辑分区",
+  "@partitionEditTitle": {},
+  "partitionUnitB": "B",
+  "@partitionUnitB": {},
+  "partitionFormatFat12": "FAT12 文件系统",
+  "@partitionFormatFat12": {},
+  "partitionFormatFat32": "FAT32 文件系统",
+  "@partitionFormatFat32": {},
+  "partitionMountPointLabel": "挂载点：",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageTitle": "您是谁？",
+  "@whoAreYouPageTitle": {},
+  "whoAreYouPageAutoLogin": "自动登录",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "登录时需要密码",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageRealNameLabel": "您的姓名",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageComputerNameLabel": "您的电脑主机名",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageComputerNameInfo": "与其他计算机联络时使用的名称。",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageComputerNameRequired": "需要计算机名称",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPagePasswordRequired": "需要密码",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPageInvalidUsername": "用户名无效",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPagePasswordLabel": "选择一个密码",
+  "@whoAreYouPagePasswordLabel": {},
+  "whoAreYouPageConfirmPasswordLabel": "确认您的密码",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "whoAreYouPagePasswordMismatch": "密码不匹配",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesFallbackSerial": "磁盘",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "writeChangesToDisk": "将更改写入磁盘",
+  "@writeChangesToDisk": {},
+  "writeChangesDescription": "如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。",
+  "@writeChangesDescription": {},
+  "writeChangesPartitionTablesHeader": "已更改以下设备的分区表：",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionsHeader": "将应用以下分区更改：",
+  "@writeChangesPartitionsHeader": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "welcomeHeader": "选择您的语言：",
+  "@welcomeHeader": {},
+  "connectToInternetDescription": "将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络",
+  "@connectToInternetDescription": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "connectToInternetPageTitle": "连接到互联网",
+  "@connectToInternetPageTitle": {},
+  "useWiredConnection": "使用有线连接",
+  "@useWiredConnection": {},
+  "noWiredConnection": "未检测到有线连接",
+  "@noWiredConnection": {},
+  "enableWired": "启用有线连接",
+  "@enableWired": {},
+  "wirelessNetworkingDisabled": "无线网络已禁用",
+  "@wirelessNetworkingDisabled": {},
+  "wiredDisabled": "有线连接已关闭",
+  "@wiredDisabled": {},
+  "wiredMustBeEnabled": "要在此电脑上使用网络，必须启用有线连接",
+  "@wiredMustBeEnabled": {},
+  "wifiMustBeEnabled": "要在此电脑上使用Wi-Fi，必须启用无线网络",
+  "@wifiMustBeEnabled": {},
+  "minimalInstallationSubtitle": "浏览器和基础实用程序。",
+  "@minimalInstallationSubtitle": {},
+  "otherOptions": "其他选项",
+  "@otherOptions": {},
+  "installThirdPartyTitle": "为图形和 Wi-Fi 硬件以及其他媒体格式安装第三方软件",
+  "@installThirdPartyTitle": {},
+  "installThirdPartySubtitle": "这些软件受其文档中包含的许可条款约束。其中部分软件是专有软件。",
+  "@installThirdPartySubtitle": {},
+  "chooseSecurityKeyMismatch": "安全密钥不匹配",
+  "@chooseSecurityKeyMismatch": {},
+  "installationTypeTitle": "安装类型",
+  "@installationTypeTitle": {},
+  "selectGuidedStoragePageTitle": "擦除磁盘并安装 {DISTRO}",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "selectGuidedStorageDropdownLabel": "选择磁盘：",
+  "@selectGuidedStorageDropdownLabel": {},
+  "diskHeadersDevice": "设备",
+  "@diskHeadersDevice": {},
+  "allocateDiskSpace": "分配磁盘空间",
+  "@allocateDiskSpace": {},
+  "diskHeadersType": "类型",
+  "@diskHeadersType": {},
+  "diskHeadersMountPoint": "挂载点",
+  "@diskHeadersMountPoint": {},
+  "cancelButtonText": "取消",
+  "@cancelButtonText": {},
+  "revertButtonText": "回滚",
+  "@revertButtonText": {},
+  "tryUbuntu": "试用 {RELEASE}",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "让{RELEASE}与当前操作系统共存（或代替当前操作系统）。这花不了多长时间。",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "您可能想阅读<a href=\"{url}\"> 发行注记</a>。",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "instructionsForRST": "有关说明，请在手机或其他设备上打开此页面：<a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "configureSecureBootTitle": "配置安全启动",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootOption": "配置安全启动",
+  "@configureSecureBootOption": {},
+  "detectLayout": "检测键盘布局",
+  "@detectLayout": {},
+  "chooseSecurityKey": "选择一个安全密钥",
+  "@chooseSecurityKey": {},
+  "pressOneKey": "请按下以下按键中的任意一个：",
+  "@pressOneKey": {},
+  "confirmSecurityKey": "确认安全密钥",
+  "@confirmSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "暂时不安装驱动程序",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "您可以稍后从「软件和更新」中安装它。",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "isKeyPresent": "您的键盘上是否有以下键？",
+  "@isKeyPresent": {},
+  "configureSecureBootSecurityKeyRequired": "需要安全密钥",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "安全密钥不匹配",
+  "@secureBootSecurityKeysDontMatch": {},
+  "installationTypeAdvancedLabel": "高级功能...",
+  "@installationTypeAdvancedLabel": {},
+  "partitionTypeLabel": "指定新分区的类型：",
+  "@partitionTypeLabel": {},
+  "partitionFormatExt3": "Ext3 日志文件系统",
+  "@partitionFormatExt3": {},
+  "chooseYourLookPageTitle": "选择您的外观",
+  "@chooseYourLookPageTitle": {},
+  "installationTypeLVM": "在新的 {RELEASE} 安装中使用 LVM",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncrypt": "为安全起见，对新的{RELEASE}安装进行加密",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "磁盘加密会保护磁盘上的文件，以免因电脑丢失而蒙受损失。但是，每次在计算机启动时，它会要求您输入一个安全密钥。\n\n{RELEASE}之外的任何文件都不会加密。",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "installationTypeMultiOSDetected": "这台计算机已经安装了多个操作系统。您准备怎么做？",
+  "@installationTypeMultiOSDetected": {},
+  "whoAreYouPageShowPassword": "显示密码",
+  "@whoAreYouPageShowPassword": {},
+  "photoSlideTitle": "记录瞬间，珍藏回忆",
+  "@photoSlideTitle": {},
+  "musicSlideDescription": "{RELEASE} 带有令人惊叹的 Rhythmbox 音乐播放器。通过高级播放选项，您可以轻松的为这些完美的歌曲排序。它与 CD 和便携式音乐播放器配合得很好，因此您可以随时随地欣赏所有音乐。",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeDualOSDetected": "这台计算机已安装有{os1}与{os2}了。您准备怎么做？",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "musicSlideRhythmbox": "Rhythmbox 音乐播放器",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "webSlideFirefox": "Firefox 浏览器",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "webSlideChromium": "Chromium 浏览器",
+  "@webSlideChromium": {},
+  "photoSlideShotwell": "Shotwell 图片管理器",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "GIMP 图像处理程序",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Shotcut 视频编辑器",
+  "@photoSlideShotcut": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "supportSlideTitle": "获取支持，提供帮助",
+  "@supportSlideTitle": {},
+  "accessSlideLanguageSupport": "语言支持",
+  "@accessSlideLanguageSupport": {},
+  "whoAreYouPageUsernameTooLong": "名字过长.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "supportSlideQuestions": "在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>网站，您可以提问，或者查看已获答复的精选问题。您的<a href=\"https://loco.ubuntu.com/teams\">本地社区团队</a>可能会使用您使用的语言为您提供帮助。",
+  "@supportSlideQuestions": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "copyingFiles": "正在复制文件……",
+  "@copyingFiles": {},
+  "supportedSoftware": "支持的软件",
+  "@supportedSoftware": {},
+  "accessSlideAssistiveTechnologies": "协助技术",
+  "@accessSlideAssistiveTechnologies": {},
+  "photoSlideDescription": "Shotwell 是一个精妙的照片管理器。 可通过连接相机或手机来传输图片， 以便于分享和安全地存储。 如果您想发挥更多的创造力， 您可以在 Ubuntu Software 中找到更多照片应用。",
+  "@photoSlideDescription": {},
+  "webSlideDescription": "{RELEASE} 包括了在世界上有数百万人使用的网络浏览器 Firefox 。为了便利访问，您可以像添加您本机上的应用程序一样，添加一些您经常使用的网站（例如 Facebook 或 Gmail）到您的桌面上。",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideTitle": "网络之旅，一路顺畅",
+  "@webSlideTitle": {},
+  "officeSlideDescription": "LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及幻灯片所需的工具，并完全兼容 Microsoft Office 的文件格式。",
+  "@officeSlideDescription": {},
+  "accessSlideDescription": "{RELEASE} 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，{RELEASE} 都可凭先进的无障碍工具和更改语言、色彩、字体大小的选项，为您随时随地地轻松访问计算服务。",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "includedSoftware": "包含软件",
+  "@includedSoftware": {},
+  "availableSoftware": "可选软件",
+  "@availableSoftware": {},
+  "supportSlideResources": "要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.",
+  "@supportSlideResources": {},
+  "accessSlideCustomizationOptions": "个性化选项",
+  "@accessSlideCustomizationOptions": {},
+  "installationTypeAlongsideMulti": "安装 {product} 并与它们共存",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "安装 {product} 并与其它分区共存",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideHiddenPartitions": "有 {num} 个小分区被隐藏 , 请使用 <a href=\"{url}\">高级分区工具</a> 获得更多功能",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAllocateSpace": "分配空间",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "文件",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "分区：",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "大小：",
+  "@installAlongsideSize": {},
+  "whoAreYouPageUsernameSystemReserved": "这个名称保留给系统使用。",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInvalidChars": "这个名称包含无效字符。",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "officeSlideTitle": "便捷工作，效率翻倍",
+  "@officeSlideTitle": {},
+  "accessSlideTitle": "轻松使用，体验无界",
+  "@accessSlideTitle": {},
+  "accessSlideAppearance": "外观",
+  "@accessSlideAppearance": {},
+  "installationFailed": "安装失败",
+  "@installationFailed": {},
+  "installAlongsideAvailable": "可用：",
+  "@installAlongsideAvailable": {},
+  "installAlongsideSpaceDivider": "拖曳下面的分隔符分配磁盘空间：",
+  "@installAlongsideSpaceDivider": {},
+  "installationTypeAlongsideDual": "安装 {product} 并与 {os1} 和 {os2} 共存",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideResizePartition": "调整分区大小",
+  "@installAlongsideResizePartition": {},
+  "whoAreYouPageUsernameInUse": "这个用户名已经存在。",
+  "@whoAreYouPageUsernameInUse": {},
+  "supportSlideDocumentation": "官方文档覆盖了 {RELEASE} 的常用问题，可通过 <a href=\"https://help.ubuntu.com\">官方网站</a> 和应用坞（dock）上的帮助图标访问。",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "quitButtonText": "退出安装",
+  "@quitButtonText": {},
+  "writeChangesPartitionFormatted": "分区 #{disk}{partition} 格式化为 {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "分区 #{disk}{partition} 挂载到 {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "分区 #{disk}{partition} 已创建",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "抱歉",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "你至少需要 {SIZE} 的磁盘空间来安装 {RELEASE}。",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "分区 #{disk}{partition} 从 {oldsize} 调整大小到 {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "分区 #{disk}{partition} 格式化为 {format} 并挂载到 {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "本机只有 {SIZE} 空间。",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "本机上最大的硬盘只有 {SIZE} 空间。",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "configuringSystem": "正在设置系统……",
+  "@configuringSystem": {},
+  "installingSystem": "正在安装系统……",
+  "@installingSystem": {},
+  "installDriversTitle": "为图形和 Wi-Fi 硬件安装第三方软件",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "这些驱动受它们文档中的许可条款约束。它们是专有软件。",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "为其他媒体格式提供支持",
+  "@installCodecsTitle": {},
+  "showSecurityKey": "显示安全密钥",
+  "@showSecurityKey": {},
+  "installCodecsSubtitle": "这些软件受其文档中包含的许可条款约束。其中部分软件是专有软件。",
+  "@installCodecsSubtitle": {},
+  "installationTypeLVMEncryptionSelected": "已选择配置加密的 LVM",
+  "@installationTypeLVMEncryptionSelected": {}
+}

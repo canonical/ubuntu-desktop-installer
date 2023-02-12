@@ -7,9 +7,8 @@ description: |
 grade: stable
 confinement: classic
 base: core20
-
-architectures:
-  - build-on: amd64
+issues: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
+contact: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 
 apps:
   subiquity-server:
@@ -22,15 +21,21 @@ apps:
 
   ubuntu-desktop-installer:
     command: bin/ubuntu_desktop_installer
+    command-chain: [bin/launcher]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
       GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
       LIVE_RUN: 1
+      LOG_LEVEL: debug
+      SNAP_PYTHON: python3
 
   probert:
     command: bin/probert
+
+  os-prober:
+    command: usr/bin/os-prober
 
 parts:
   curtin:
@@ -41,7 +46,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: d49d35bc6643b063f085d870ea94a53677ae141c
+    source-commit: b08eecd68cf5f1bccf4255b3d00a77af51c159f7
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -58,29 +63,38 @@ parts:
       - requests
       - requests-unixsocket
     organize:
-      'lib/python*/site-packages/usr/lib/curtin': 'usr/lib/'
+      lib/python*/site-packages/usr/lib/curtin: usr/lib/
     stage:
-     - "*"
-     - "-lib/python*/site-packages/_yaml.*.so"
-     - "-lib/python*/site-packages/setuptools"
-     - "-lib/python*/site-packages/pip"
-     - "-lib/python*/site-packages/pkg_resources"
-     - "-lib/python*/site-packages/jsonschema"
-     - "-lib/python*/site-packages/wheel*"
-     - "-lib/python*/site-packages/probert"
-     - "-bin/activate*"
-     - "-lib/python3.8/site-packages/__pycache__/six.cpython*"
-     - "-lib/python3.8/site-packages/pip-*.dist-info/RECORD"
-     - "-lib/python3.8/site-packages/wheel-*.dist-info/RECORD"
-     - "-lib/python3.8/site-packages/_distutils_hack"
+      - '*'
+      - -lib/python*/site-packages/_yaml.*.so
+      - -lib/python*/site-packages/setuptools
+      - -lib/python*/site-packages/pip
+      - -lib/python*/site-packages/pkg_resources
+      - -lib/python*/site-packages/jsonschema
+      - -lib/python*/site-packages/wheel*
+      - -lib/python*/site-packages/probert
+      - -bin/activate*
+      - -bin/python3*
+      - -lib/python3.8/site-packages/__pycache__/six.cpython*
+      - -lib/python3.8/site-packages/pip-*.dist-info/RECORD
+      - -lib/python3.8/site-packages/wheel-*.dist-info/RECORD
+      - -lib/python3.8/site-packages/_distutils_hack
 
   probert:
     plugin: python
-    build-packages: [python-setuptools, build-essential, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev]
+    build-packages:
+      - python-setuptools
+      - build-essential
+      - libnl-3-dev
+      - libnl-genl-3-dev
+      - libnl-route-3-dev
     source: https://github.com/canonical/probert.git
     source-type: git
-    source-commit: 51e7f1915b44ab792f46706026119a1fde39e49d
+    source-commit: 31778895be3002422e9e8758d42940f290dc70af
     requirements: [requirements.txt]
+    stage:
+      - '*'
+      - -bin/python3*
 
   subiquitydeps:
     plugin: nil
@@ -88,8 +102,10 @@ parts:
       - cloud-init
       - libsystemd0
       - iso-codes
+      - jq
       - lsb-release
       - ssh-import-id
+      - ntfs-3g
       - python3-aiohttp
       - python3-bson
       - python3-minimal
@@ -102,33 +118,72 @@ parts:
       - python3-pyudev
       - python3-systemd
       - python3-urwid
+      - util-linux
+      # WSL specifics:
+      - language-selector-common
+      - locales
     prime:
       - -lib/systemd/system/*
 
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-tag: 3.7.0
+    source-depth: 1
+    plugin: nil
+    override-build: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+      $SNAPCRAFT_PART_INSTALL/usr/bin/flutter doctor
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - libgtk-3-dev
+      - ninja-build
+      - unzip
+      - xz-utils
+      - zip
+    override-prime: ''
+
   ubuntu-desktop-installer:
+    after: [flutter-git]
     source: .
     source-type: git
     plugin: nil
-    build-environment:
-      - C_INCLUDE_PATH: /snap/flutter/current/usr/include
-      - LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
-      - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:/snap/flutter/current/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pkgconfig
-      - XDG_DATA_DIRS: /snap/flutter/current/usr/share:$XDG_DATA_DIRS
     override-build: |
       set -eux
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
+      mkdir -p $SNAPCRAFT_PART_INSTALL/etc/subiquity
+      cp -r snap/local/postinst.d $SNAPCRAFT_PART_INSTALL/etc/subiquity
+      # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
+      (cd packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
-      flutter channel dev
-      flutter upgrade
-      flutter config --enable-linux-desktop
-      flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/x64/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
-    build-snaps:
-      - flutter/latest/stable
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+
+  ubuntu-wsl-setup:
+    after: [flutter-git]
+    source: .
+    source-type: git
+    plugin: nil
+    override-build: |
+      set -eux
+      # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cd packages/ubuntu_wsl_setup
+      flutter pub get
+      flutter build linux --release -v
+      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
+      cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
+      # Create the theme empty directories for bindmounting the common-themes snap
+      mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
 
   libraries:
     plugin: nil
@@ -153,10 +208,10 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libllvm10
+      - libllvm12
       - libpciaccess0
       - libvulkan1
-      - shared-mime-info 
+      - shared-mime-info
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
@@ -180,7 +235,7 @@ parts:
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
       - usr/lib/*/libxshmfence*.so.*
-      - usr/lib/*/libLLVM-10.so.*
+      - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*
@@ -201,3 +256,14 @@ parts:
     stage:
       - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
+
+  os-prober:
+    plugin: nil
+    stage-packages: [os-prober]
+    override-stage: |
+      snapcraftctl stage
+      for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
+        sed -i 's, \(/usr\), $SNAP\1,' $file
+      done
+      sed -i 's/mkdir "$tmpmnt"/mkdir -p "$tmpmnt"/' \
+          usr/lib/os-probes/50mounted-tests

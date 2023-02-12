@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+user=ubuntu
+target=/target
+source_schemas=/usr/share/glib-2.0/schemas
+target_schemas=$target/$source_schemas
+
+if [ ! -d $source_schemas ] || [ ! -d $target_schemas ] || ! id $user >/dev/null 2>&1; then
+    exit
+fi
+
+dconf_dump() {
+    target_schema=$target_schemas/20_ubuntu-desktop-installer-$1.gschema.override
+    sudo -u $user dconf dump /org/gnome/desktop/$1/ > $target_schema
+    # - [foo] -> [org.gnome.desktop.$1.foo:ubuntu]
+    sed -i -E "s/^\[([^/]*)\]/\[org.gnome.desktop.$1.\1:ubuntu\]/g" $target_schema
+    # - [/] -> [org.gnome.desktop.$1:ubuntu]
+    sed -i -E "s/^\[\/\]$/\[org.gnome.desktop.$1:ubuntu\]/g" $target_schema
+    [ -s $target_schema ] || rm $target_schema
+}
+
+dconf_dump a11y
+dconf_dump interface
+dconf_dump input-sources
+dconf_dump peripherals
+dconf_dump wm
+
+glib-compile-schemas $target_schemas

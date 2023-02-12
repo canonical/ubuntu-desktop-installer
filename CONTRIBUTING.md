@@ -24,13 +24,48 @@ Bugs are also tracked as [GitHub issues](https://github.com/canonical/ubuntu-des
 
 ## Translations
 
-Translations for the Ubuntu desktop installer are managed with [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
+Translations are managed using [Weblate](https://hosted.weblate.org/projects/ubuntu-desktop-installer/).
+This project has the following translation components:
 
-The template containing all the messages to be translated lives in `lib/l10n/app_en.arb`. When starting translations for a new language, that file needs to be copied to `lib/l10n/app_LANGCODE.arb` (e.g. `lib/l10n/app_fr.arb`), and messages should be translated in this new file.
+- [ubuntu-desktop-installer](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-desktop-installer/):
+  The main translation component of the Ubuntu Desktop Installer.
+- [ubuntu-localizations](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubuntu-localizations/):
+  Common translations and language names shared with other projects.
+- [ubiquity](https://hosted.weblate.org/projects/ubuntu-desktop-installer/ubiquity/):
+  A read-only glossary imported from Ubiquity.
 
-When new messages are added in the source code, they also need to be added to the translation template.
+When translating the **ubuntu-desktop-installer** and **ubuntu-localizations** components,
+matching **ubiquity** translations are suggested in the _Automatic suggestions_ tab below,
+and matching terms are offered in the _Glossary_ sidebar of the translation editor.
 
-The translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
+**NOTE**: The Weblate project is integrated with the GitHub project. Weblate pushes changes daily and
+opens a [pull request](https://github.com/canonical/ubuntu-desktop-installer/pulls) on GitHub.
+
+## Internationalization
+
+This project uses [Flutter's tools for internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
+
+The templates containing all the messages to be translated live in:
+- `packages/ubuntu_desktop_installer/lib/l10n/app_en.arb`
+- `packages/ubuntu_wizard/lib/src/l10n/ubuntu_en.arb`
+- `packages/ubuntu_wsl_setup/lib/l10n/app_en.arb`
+
+When new messages are added in the source code, they also need to be added to the appropriate translation template, and the translation files need to be re-generated.
+
+You can run either
+
+```
+melos run gen-l10n
+```
+to re-generate translations for all packages, or
+
+```
+flutter gen-l10n
+```
+in a package directory to generate translations for a specific package.
+
+The `ubuntu_en.arb` translation template has one special string (`languageName`) that is used to determine whether that language should be offered to the user on the welcome screen. If a translation isn't complete enough, or of insufficient quality, just make `languageName` an empty string (by default it inherits the value from the English template, so it's not empty), and it won't show up as available in the UI.
+
 
 ## Code Generation
 

@@ -1,20 +1,47 @@
-import 'dart:io' as io;
+import 'dart:io';
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:path/path.dart' as p;
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
+
+import '../../services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
-/// View model for [InstallationSlidesPage].
-class InstallationSlidesModel extends ChangeNotifier {
-  /// Creates an instance with the given client.
-  InstallationSlidesModel(this._client);
+class InstallationEvent {
+  const InstallationEvent(this.action, {this.description});
 
-  final SubiquityClient _client;
+  final String action;
+  final String? description;
+
+  InstallationEvent copyWith({String? action, String? description}) {
+    return InstallationEvent(
+      action ?? this.action,
+      description: description ?? this.description,
+    );
+  }
+}
+
+/// View model for [InstallationSlidesPage].
+class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
+  /// Creates an instance with the given client.
+  InstallationSlidesModel(this.client, this._journal);
+
+  @override
+  final SubiquityClient client;
+  final JournalService _journal;
+
+  Stream<String>? _log;
   ApplicationStatus? _status;
+  InstallationEvent? _event;
 
   /// The current installation state.
-  ApplicationState get state => _status?.state ?? ApplicationState.UNKNOWN;
+  ApplicationState? get state => _status?.state;
+
+  /// The current installation event.
+  InstallationEvent? get event => _event;
 
   /// Whether the installation state is DONE.
   bool get isDone => state == ApplicationState.DONE;
@@ -22,56 +49,95 @@ class InstallationSlidesModel extends ChangeNotifier {
   /// Whether the installation state is ERROR.
   bool get hasError => state == ApplicationState.ERROR;
 
-  /// Whether the installation process is being prepared [STARTING_UP,RUNNING).
-  bool get isPreparing =>
-      state.index >= ApplicationState.STARTING_UP.index &&
-      state.index < ApplicationState.RUNNING.index;
-
   /// Whether the installation process is active [RUNNING,DONE).
   bool get isInstalling =>
-      state.index >= ApplicationState.RUNNING.index &&
-      state.index < ApplicationState.DONE.index;
-
-  /// The current installation step between [RUNNING,DONE], or -1 if the
-  /// installation process is not active.
-  int get installationStep =>
-      isInstalling ? state.index - ApplicationState.RUNNING.index : -1;
-
-  /// The total number of installation steps between [RUNNING,DONE].
-  int get installationStepCount =>
-      ApplicationState.DONE.index - ApplicationState.RUNNING.index;
-
-  String _formatState(ApplicationState? state) =>
-      state?.toString().split('.').last ?? 'null';
+      state != null &&
+      state!.index >= ApplicationState.RUNNING.index &&
+      state!.index < ApplicationState.DONE.index;
 
   void _updateStatus(ApplicationStatus? status) {
     if (state == status?.state) return;
-    print(
-        'Subiquity state: ${_formatState(state)} => ${_formatState(status?.state)}');
     _status = status;
+    notifyListeners();
+  }
+
+  // Process syslog events of unindented "actions" and indented "descriptions".
+  // ```
+  // installing system
+  //   configuring apt
+  //   installing kernel
+  //   ...
+  // final system configuration
+  //   configuring cloud-init
+  //   ...
+  //   downloading and installing security updates
+  // ```
+  void _processEvent(String syslog) {
+    final trimmed = syslog.trimLeft();
+    if (trimmed == syslog) {
+      _event = InstallationEvent(syslog);
+    } else {
+      _event = _event!.copyWith(description: trimmed);
+    }
+    notifyListeners();
+  }
+
+  /// A stream of journal log lines.
+  Stream<String> get log => _log ?? const Stream.empty();
+
+  var _logVisible = false;
+
+  /// Whether the log is visible.
+  bool get isLogVisible => _logVisible;
+
+  /// Toggle the log visibility.
+  void toggleLogVisibility() {
+    _logVisible = !_logVisible;
     notifyListeners();
   }
 
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
-    return _client.status().then((status) {
+    return client.status().then((status) {
+      _log = _journal.start(status.logSyslogId);
       _updateStatus(status);
-      _monitorStatus();
+      _monitorStatus(status.eventSyslogId);
     });
   }
 
-  Future<void> _monitorStatus() async {
-    while (!isDone && !hasError) {
-      await _client.status(current: state).then(_updateStatus);
-    }
+  // Resolves the path to the assets in the app bundle so that it works in the
+  // snap and development environments.
+  String _resolveAssetsDirectory() {
+    final appdir = p.dirname(Platform.resolvedExecutable);
+    return p.join(appdir, 'data', 'flutter_assets');
   }
 
-  /// Requests system reboot.
-  Future<void> reboot({
-    @visibleForTesting void Function(int exitCode) exit = io.exit,
-  }) async {
-    // TODO: await for reboot result
-    _client.reboot();
-    exit(0);
+  /// Prefetches slide images into the image cache to avoid flicker while
+  /// loading slide images
+  Future<void> precacheSlideImages(BuildContext context) {
+    final assets = _resolveAssetsDirectory();
+    return Directory('$assets/assets/installation_slides')
+        .list(recursive: true)
+        .forEach((slide) {
+      if (slide is File) {
+        final path = p.relative(slide.path, from: assets);
+        precacheImage(AssetImage(path), context);
+      }
+    });
+  }
+
+  Future<void> _monitorStatus(String syslogId) async {
+    final events = _journal.start(syslogId, output: JournalOutput.cat);
+    final subscription = events.listen(_processEvent);
+    while (!isDone && !hasError) {
+      await client.status(current: state).then(_updateStatus);
+    }
+    subscription.cancel();
+  }
+
+  /// Requests an immediate system reboot.
+  @override
+  Future<void> reboot({bool immediate = true}) {
+    return super.reboot(immediate: immediate);
   }
 }

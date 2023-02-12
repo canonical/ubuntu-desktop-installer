@@ -1,86 +1,122 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../routes.dart';
-import '../../widgets.dart';
-import '../../widgets/localized_view.dart';
-import '../wizard_page.dart';
+import '../../l10n.dart';
+import '../../services.dart';
 import 'updates_other_software_model.dart';
 
+export 'updates_other_software_model.dart'
+    show InstallationMode, InstallationSource;
+
 class UpdatesOtherSoftwarePage extends StatefulWidget {
+  @visibleForTesting
+  const UpdatesOtherSoftwarePage({super.key});
+
   @override
-  _UpdatesOtherSoftwarePageState createState() =>
+  State<UpdatesOtherSoftwarePage> createState() =>
       _UpdatesOtherSoftwarePageState();
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) =>
-          UpdateOtherSoftwareModel(installationMode: InstallationMode.normal),
-      child: UpdatesOtherSoftwarePage(),
+      create: (_) => UpdateOtherSoftwareModel(
+          client: getService<SubiquityClient>(),
+          power: getService<PowerService>(),
+          network: getService<NetworkService>(),
+          installationMode: InstallationMode.normal),
+      child: const UpdatesOtherSoftwarePage(),
     );
   }
 }
 
 class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
   @override
+  void initState() {
+    super.initState();
+    final model = Provider.of<UpdateOtherSoftwareModel>(context, listen: false);
+    model.init();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final model = context.watch<UpdateOtherSoftwareModel>();
-    return LocalizedView(
-      builder: (context, lang) => WizardPage(
+    final lang = AppLocalizations.of(context);
+    return WizardPage(
+      title: YaruWindowTitleBar(
         title: Text(lang.updatesOtherSoftwarePageTitle),
-        content: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              lang.updatesOtherSoftwarePageDescription,
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            const SizedBox(height: 8.0),
-            RadioListTile<InstallationMode>(
-              title: Text(lang.normalInstallationTitle),
-              subtitle: Text(lang.normalInstallationSubtitle),
-              contentPadding: const EdgeInsets.only(left: 10),
-              value: InstallationMode.normal,
-              groupValue: model.installationMode,
-              onChanged: model.setInstallationMode,
-            ),
-            RadioListTile<InstallationMode>(
-              title: Text(lang.minimalInstallationTitle),
-              subtitle: Text(lang.minimalInstallationSubtitle),
-              value: InstallationMode.minimal,
-              contentPadding: const EdgeInsets.only(left: 10),
-              groupValue: model.installationMode,
-              onChanged: model.setInstallationMode,
-            ),
-            const SizedBox(height: 24),
-            Text(
-              lang.otherOptions,
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            const SizedBox(height: 8.0),
-            CheckboxListTile(
-              title: Text(lang.installThirdPartyTitle),
-              subtitle: Text(lang.installThirdPartySubtitle),
-              controlAffinity: ListTileControlAffinity.leading,
-              contentPadding: const EdgeInsets.only(left: 10),
-              value: model.installThirdParty,
-              onChanged: model.setInstallThirdParty,
-            )
-          ],
-        ),
-        actions: <WizardAction>[
-          WizardAction(
-            label: lang.backButtonText,
-            onActivated: Navigator.of(context).pop,
+      ),
+      headerPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.updatesOtherSoftwarePageDescription),
           ),
-          WizardAction(
-            label: lang.continueButtonText,
-            onActivated: () {
-              Navigator.pushNamed(context, Routes.allocateDiskSpace);
-            },
+          YaruRadioButton<InstallationMode>(
+            title: Text(lang.normalInstallationTitle),
+            subtitle: Text(lang.normalInstallationSubtitle),
+            contentPadding: kContentPadding,
+            value: InstallationMode.normal,
+            groupValue: model.installationMode,
+            onChanged: model.setInstallationMode,
+          ),
+          const SizedBox(height: kContentSpacing),
+          YaruRadioButton<InstallationMode>(
+            title: Text(lang.minimalInstallationTitle),
+            subtitle: Text(lang.minimalInstallationSubtitle),
+            value: InstallationMode.minimal,
+            contentPadding: kContentPadding,
+            groupValue: model.installationMode,
+            onChanged: model.setInstallationMode,
+          ),
+          Padding(
+            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            child: Text(lang.otherOptions),
+          ),
+          YaruCheckButton(
+            title: Text(lang.installDriversTitle),
+            subtitle: Text(lang.installDriversSubtitle),
+            contentPadding: kContentPadding,
+            value: model.installDrivers,
+            onChanged: model.setInstallDrivers,
+          ),
+          const SizedBox(height: kContentSpacing),
+          YaruCheckButton(
+            title: Text(lang.installCodecsTitle),
+            subtitle: Text(lang.installCodecsSubtitle),
+            contentPadding: kContentPadding,
+            value: model.installCodecs && model.isOnline,
+            onChanged: model.isOnline ? model.setInstallCodecs : null,
           ),
         ],
       ),
+      footer: model.onBattery
+          ? Html(
+              data: lang.onBatteryWarning(
+                  Theme.of(context).colorScheme.error.toHex()),
+            )
+          : null,
+      actions: <WizardAction>[
+        WizardAction.back(context),
+        WizardAction.next(
+          context,
+          onNext: () async {
+            final telemetry = getService<TelemetryService>();
+            await telemetry.addMetrics({
+              'Minimal': model.installationMode == InstallationMode.minimal,
+              'RestrictedAddons': model.installCodecs,
+            });
+            await model.save();
+          },
+        ),
+      ],
     );
   }
 }

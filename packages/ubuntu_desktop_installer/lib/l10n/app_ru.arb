@@ -1,32 +1,721 @@
 {
   "@@locale": "ru",
-
-  "languageName": "Русский",
-
-  "appTitle": "Установка Ubuntu",
-
-  "backButtonText": "Назад",
-  "continueButtonText": "Продолжить",
+  "appTitle": "Установщик Ubuntu Desktop",
+  "@appTitle": {},
+  "windowTitle": "Установить {RELEASE}",
+  "@windowTitle": {},
   "restartButtonText": "Перезагрузить",
-
+  "@restartButtonText": {},
   "welcome": "Добро пожаловать",
-
+  "@welcome": {},
   "tryOrInstallPageTitle": "Попробовать или установить",
+  "@tryOrInstallPageTitle": {},
   "repairInstallation": "Исправить установку",
+  "@repairInstallation": {},
   "repairInstallationDescription": "Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.",
-  "tryUbuntu": "Попробовать Ubuntu",
-  "tryUbuntuDescription": "Вы можете попробовать Ubuntu без каких-либо изменений на вашем компьютере.",
-  "installUbuntu": "Установить Ubuntu",
-  "installUbuntuDescription": "Установить Ubuntu рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "Попробовать {RELEASE}",
+  "@tryUbuntu": {},
+  "tryUbuntuDescription": "Вы можете попробовать {RELEASE} без каких-либо изменений на вашем компьютере.",
+  "@tryUbuntuDescription": {},
+  "installUbuntu": "Установить {RELEASE}",
+  "@installUbuntu": {},
+  "installUbuntuDescription": "Установить {RELEASE} рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.",
+  "@installUbuntuDescription": {},
   "releaseNotesLabel": "Вы также можете прочитать <a href=\"{url}\">заметки о выпуске</a>.",
-
+  "@releaseNotesLabel": {},
   "turnOffRST": "Выключить RST",
+  "@turnOffRST": {},
   "turnOffRSTDescription": "Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
+  "@turnOffRSTDescription": {},
   "instructionsForRST": "Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://{url}\">{url}</a>",
-  
+  "@instructionsForRST": {},
   "keyboardLayoutPageTitle": "Раскладка клавиатуры",
+  "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Выберите раскладку клавиатуры:",
+  "@chooseYourKeyboardLayout": {},
   "typeToTest": "Введите здесь, чтобы проверить свою клавиатуру",
-  "detectLayout": "Определить раскладку клавиатуры"
+  "@typeToTest": {},
+  "detectLayout": "Определить раскладку клавиатуры",
+  "@detectLayout": {},
+  "pressOneKey": "Нажмите одну из следующих клавиш:",
+  "@pressOneKey": {},
+  "cancelButtonText": "Отменить",
+  "@cancelButtonText": {},
+  "noButtonText": "Нет",
+  "@noButtonText": {},
+  "changeButtonText": "Изменить",
+  "@changeButtonText": {},
+  "okButtonText": "OK",
+  "@okButtonText": {},
+  "yesButtonText": "Да",
+  "@yesButtonText": {},
+  "isKeyPresent": "Есть ли следующая клавиша на вашей клавиатуре?",
+  "@isKeyPresent": {},
+  "configureSecureBootTitle": "Настроить Secure Boot",
+  "@configureSecureBootTitle": {},
+  "installationTypeOSDetected": "На этом компьютере установлена операционная система {os}. Что вы хотите сделать?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeNoOSDetected": "На этом компьютере не обнаружено установленных операционных систем. Что вы хотите сделать?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeErase": "Стереть диск и установить {DISTRO}",
+  "@installationTypeErase": {},
+  "normalInstallationTitle": "Обычная установка",
+  "@normalInstallationTitle": {},
+  "normalInstallationSubtitle": "Веб-браузер, утилиты, офисные программы, игры и медиапроигрыватели.",
+  "@normalInstallationSubtitle": {},
+  "minimalInstallationTitle": "Минимальная установка",
+  "@minimalInstallationTitle": {},
+  "installationTypeTitle": "Тип установки",
+  "@installationTypeTitle": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">Внимание:</font> При этом будут удалены все ваши программы, документы, фото, музыка и другие файлы во всех операционных системах.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeNoneSelected": "Ничего не выбрано",
+  "@installationTypeNoneSelected": {},
+  "installationTypeReinstall": "Удалить {os} и переустановить",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Внимание:</font> При этом будут удалены все имевшиеся в {os} программы, документы, фото, музыка и другие файлы.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeZFS": "ЭКСПЕРИМЕНТАЛЬНОЕ: Стереть диск и использовать ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeAlongside": "Установить {product} вместе с {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "Документы, музыка и другие личные файлы будут сохранены. Вы сможете выбрать нужную операционную систему для загрузки при каждом запуске компьютера.",
+  "@installationTypeAlongsideInfo": {},
+  "installationTypeManualInfo": "Вы можете создать или изменить разделы самостоятельно, или выбрать для {DISTRO} несколько разделов",
+  "@installationTypeManualInfo": {},
+  "diskHeadersSize": "Размер",
+  "@diskHeadersSize": {},
+  "diskHeadersUsed": "Использовано",
+  "@diskHeadersUsed": {},
+  "diskHeadersSystem": "Система",
+  "@diskHeadersSystem": {},
+  "freeDiskSpace": "свободное место",
+  "@freeDiskSpace": {},
+  "selectGuidedStorageInfoLabel": "Диск будет использован целиком:",
+  "@selectGuidedStorageInfoLabel": {},
+  "selectGuidedStorageDropdownLabel": "Выберите диск:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "selectGuidedStoragePageTitle": "Стереть диск и установить {DISTRO}",
+  "@selectGuidedStoragePageTitle": {},
+  "selectGuidedStorageInstallNow": "Установить сейчас",
+  "@selectGuidedStorageInstallNow": {},
+  "bootLoaderDevice": "Устройство для установки загрузчика",
+  "@bootLoaderDevice": {},
+  "partitionCreateTitle": "Создать раздел",
+  "@partitionCreateTitle": {},
+  "partitionEditTitle": "Изменить раздел",
+  "@partitionEditTitle": {},
+  "partitionSizeLabel": "Размер:",
+  "@partitionSizeLabel": {},
+  "startInstallingButtonText": "Начать установку",
+  "@startInstallingButtonText": {},
+  "diskHeadersDevice": "Устройство",
+  "@diskHeadersDevice": {},
+  "diskHeadersType": "Тип",
+  "@diskHeadersType": {},
+  "diskHeadersMountPoint": "Точка монтирования",
+  "@diskHeadersMountPoint": {},
+  "partitionTypePrimary": "Первичный",
+  "@partitionTypePrimary": {},
+  "partitionTypeLogical": "Логический",
+  "@partitionTypeLogical": {},
+  "partitionLocationLabel": "Расположение нового раздела:",
+  "@partitionLocationLabel": {},
+  "partitionFormatJfs": "Журналируемая файловая система JFS",
+  "@partitionFormatJfs": {},
+  "partitionFormatXfs": "Журналируемя файловая система XFS",
+  "@partitionFormatXfs": {},
+  "partitionFormatFat": "Файловая система FAT",
+  "@partitionFormatFat": {},
+  "partitionFormatExt4": "Журналируемая файловая система Ext4",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt3": "Журналируемая файловая система Ext3",
+  "@partitionFormatExt3": {},
+  "partitionFormatExt2": "Файловая система Ext2",
+  "@partitionFormatExt2": {},
+  "partitionFormatBtrfs": "Журналируемая файловая система btrfs",
+  "@partitionFormatBtrfs": {},
+  "partitionUnitB": "Б",
+  "@partitionUnitB": {},
+  "partitionUnitKB": "КБ",
+  "@partitionUnitKB": {},
+  "partitionUnitMB": "МБ",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "ГБ",
+  "@partitionUnitGB": {},
+  "partitionTypeLabel": "Тип нового раздела:",
+  "@partitionTypeLabel": {},
+  "partitionFormatFat16": "Файловая система FAT16",
+  "@partitionFormatFat16": {},
+  "whoAreYouPageUsernameLabel": "Выберите имя пользователя",
+  "@whoAreYouPageUsernameLabel": {},
+  "whoAreYouPageUsernameRequired": "Необходимо имя пользователя",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageRealNameLabel": "Ваше имя",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageComputerNameLabel": "Имя компьютера",
+  "@whoAreYouPageComputerNameLabel": {},
+  "partitionFormatFat32": "Файловая система FAT32",
+  "@partitionFormatFat32": {},
+  "partitionFormatSwap": "Область подкачки",
+  "@partitionFormatSwap": {},
+  "partitionFormatIso9660": "Файловая система ISO 9660",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "Файловая система VFAT",
+  "@partitionFormatVfat": {},
+  "partitionFormatNtfs": "Файловая система NTFS",
+  "@partitionFormatNtfs": {},
+  "partitionFormatReiserFS": "Файловая система ReiserFS",
+  "@partitionFormatReiserFS": {},
+  "partitionErase": "Форматировать раздел",
+  "@partitionErase": {},
+  "partitionMountPointLabel": "Точка монтирования:",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageTitle": "Кто вы?",
+  "@whoAreYouPageTitle": {},
+  "partitionFormatFat12": "Файловая система FAT12",
+  "@partitionFormatFat12": {},
+  "writeChangesPartitionTablesHeader": "Изменены таблицы разделов на следующих устройствах:",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "Будут применены следующие изменения разделов:",
+  "@writeChangesPartitionsHeader": {},
+  "writeChangesToDisk": "Записать изменения на диск",
+  "@writeChangesToDisk": {},
+  "whoAreYouPagePasswordMismatch": "Пароли не совпадают",
+  "@whoAreYouPagePasswordMismatch": {},
+  "whoAreYouPageConfirmPasswordLabel": "Подтвердите пароль",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "whoAreYouPagePasswordLabel": "Выберите пароль",
+  "@whoAreYouPagePasswordLabel": {},
+  "whoAreYouPagePasswordRequired": "Требуется пароль",
+  "@whoAreYouPagePasswordRequired": {},
+  "installationCompleteTitle": "Установка завершена",
+  "@installationCompleteTitle": {},
+  "readyToUse": "**{system}** установлена и готова к использованию.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "hiddenWifiNetworkNameRequired": "Укажите название сети",
+  "@hiddenWifiNetworkNameRequired": {},
+  "hiddenWifiNetworkNameLabel": "Название сети",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetwork": "Подключиться к скрытой сети Wi-Fi",
+  "@hiddenWifiNetwork": {},
+  "chooseSecurityKeyTitle": "Выберите ключ безопасности",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHint": "Выберите ключ безопасности",
+  "@chooseSecurityKeyHint": {},
+  "welcomeHeader": "Выберите язык:",
+  "@welcomeHeader": {},
+  "wifiMustBeEnabled": "Чтобы использовать на этом компьютере Wi-Fi, необходимо включить беспроводную сеть",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Включить Wi-Fi",
+  "@enableWifi": {},
+  "selectWifiNetwork": "Подключиться к сети Wi-Fi",
+  "@selectWifiNetwork": {},
+  "noInternet": "Прямо сейчас я не хочу подключаться к Интернету",
+  "@noInternet": {},
+  "wirelessNetworkingDisabled": "Беспроводная сеть отключена",
+  "@wirelessNetworkingDisabled": {},
+  "noWifiDevicesDetected": "Устройства Wi-Fi не обнаружены",
+  "@noWifiDevicesDetected": {},
+  "chooseSecurityKey": "Выберите ключ безопасности",
+  "@chooseSecurityKey": {},
+  "confirmSecurityKey": "Подтвердите ключ безопасности",
+  "@confirmSecurityKey": {},
+  "otherOptions": "Другие опции",
+  "@otherOptions": {},
+  "minimalInstallationSubtitle": "Веб-браузер и основные утилиты.",
+  "@minimalInstallationSubtitle": {},
+  "installationTypeAdvancedLabel": "Дополнительные возможности...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "Дополнительные возможности",
+  "@installationTypeAdvancedTitle": {},
+  "chooseYourLookPageLightSetting": "Светлый",
+  "@chooseYourLookPageLightSetting": {},
+  "chooseYourLookPageHeader": "Вы всегда можете изменить это позже в настройках внешнего вида.",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "Тёмный",
+  "@chooseYourLookPageDarkSetting": {},
+  "newPartitionTableConfirmationTitle": "Создать новую пустую таблицу разделов на этом устройстве?",
+  "@newPartitionTableConfirmationTitle": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Предупреждение</font>. Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "chooseSecurityKeyRequired": "Требуется ключ безопасности",
+  "@chooseSecurityKeyRequired": {},
+  "chooseSecurityKeyConfirmHint": "Подтвердить ключ безопасности",
+  "@chooseSecurityKeyConfirmHint": {},
+  "chooseSecurityKeyMismatch": "Ключи безопасности не совпадают",
+  "@chooseSecurityKeyMismatch": {},
+  "whoAreYouPageUsernameTooLong": "Это имя слишком длинное.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Это имя содержит недопустимые символы.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "writeChangesFallbackSerial": "диск",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "chooseYourLookPageTitle": "Выберите свой внешний вид",
+  "@chooseYourLookPageTitle": {},
+  "restartInto": "Перезагрузка в {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "turnOffBitlockerTitle": "Отключить BitLocker",
+  "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.",
+  "@turnOffBitlockerDescription": {},
+  "turnOffBitlockerLinkInstructions": "Чтобы получить инструкции, откройте страницу <a href=\"https://{url}\">{url}</a> на телефоне или другом устройстве",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "restartIntoWindows": "Перезагрузить в Windows",
+  "@restartIntoWindows": {},
+  "shutdown": "Отключить",
+  "@shutdown": {},
+  "softwareSlideTitle": "Найдите ещё больше программного обеспечения",
+  "@softwareSlideTitle": {},
+  "photoSlideGimp": "Редактор изображений GIMP",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Видеоредактор Shotcut",
+  "@photoSlideShotcut": {},
+  "webSlideTitle": "Получите максимум от интернета",
+  "@webSlideTitle": {},
+  "webSlideFirefox": "Веб-браузер Firefox",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "installationFailed": "Ошибка установки",
+  "@installationFailed": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "webSlideChromium": "Веб-браузер Chromium",
+  "@webSlideChromium": {},
+  "officeSlideTitle": "Всё что нужно для офиса",
+  "@officeSlideTitle": {},
+  "includedSoftware": "Включённое программное обеспечение",
+  "@includedSoftware": {},
+  "copyingFiles": "Копирование файлов…",
+  "@copyingFiles": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "photoSlideShotwell": "Менеджер фотографий Shotwell",
+  "@photoSlideShotwell": {},
+  "photoSlideDescription": "Shotwell — удобный менеджер фотографий, доступный для ваших гаджетов. Подключите камеру или телефон, чтобы загрузить фотографии, после этого вы можете как делиться ими, так и безопасно хранить. А если вы ощущаете себя творческим человеком, то можете найти множество других приложений для работы с фотографиями в Ubuntu Software.",
+  "@photoSlideDescription": {},
+  "photoSlideTitle": "Получайте удовольствие от своих фотографий",
+  "@photoSlideTitle": {},
+  "webSlideDescription": "{RELEASE} включает Firefox, веб-браузер, которым пользуются миллионы людей по всему миру. И, часто используемые вами веб-приложения (например, Facebook или Gmail), могут быть закреплены на рабочем столе для более быстрого доступа, как и приложения на вашем компьютере.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideDescription": "LibreOffice — это бесплатный офисный пакет, в котором есть всё необходимое для создания документов, электронных таблиц и презентаций. Совместимый с форматами файлов Microsoft Office, он предоставляет вам все необходимые функции совершенно бесплатно.",
+  "@officeSlideDescription": {},
+  "supportSlideQuestions": "На странице <a href=\"https://askubuntu.com\">Ask Ubuntu</a> вы можете задавать вопросы и выполнять поиск по внушительной коллекции уже отвеченных вопросов. Поддержка на вашем родном языке может быть предоставлена вашей <a href=\"https://loco.ubuntu.com/teams\">местной командой сообщества</a>.",
+  "@supportSlideQuestions": {},
+  "onBatteryWarning": "<font color=\"{color}\">Внимание</font>. Компьютер не подключен к источнику питания.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "Шифрование диска защищает ваши файлы в случае потери компьютера. Это требует введение ключа безопасности при каждом запуске компьютера.\n\nЛюбые файлы за пределами {RELEASE} не будут зашифрованы.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "whoAreYouPageUsernameInUse": "Это имя пользователя уже существует.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Это имя зарезервировано для использования системой.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "writeChangesDescription": "Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.",
+  "@writeChangesDescription": {},
+  "welcomeSlideDescription": "Быстрая и изобилующая новыми функциями последняя версия {RELEASE} делает работу компьютера проще, чем когда-либо. Вот несколько крутых новинок, на которые стоит обратить внимание...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "musicSlideDescription": "{RELEASE} поставляется с потрясающим музыкальным проигрывателем Rhythmbox. Благодаря расширенным параметрам воспроизведения легко ставить в очередь любимые песни. Кроме того, он отлично работает с компакт-дисками и портативными музыкальными проигрывателями, поэтому вы можете наслаждаться музыкой, куда бы ни отправились.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "На этом компьютере установлено несколько операционных систем. Что вы хотите сделать?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeDualOSDetected": "На этом компьютере установлены {os1} и {os2}. Что вы хотите сделать?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "newPartitionTableConfirmationMessage": "Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.",
+  "@newPartitionTableConfirmationMessage": {},
+  "whoAreYouPageShowPassword": "Показать пароль",
+  "@whoAreYouPageShowPassword": {},
+  "whereAreYouPageTitle": "Где вы находитесь?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Место нахождения",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Часовой пояс",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeSlideTitle": "Добро пожаловать в {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionEntryUnmounted": "раздел #{disk}{partition} как {format}",
+  "@writeChangesPartitionEntryUnmounted": {
+    "description": "An unmounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionEntryMounted": "раздел #{disk}{partition} как {format} используется для {mount}",
+  "@writeChangesPartitionEntryMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "musicSlideTitle": "Возьмите с собой свою музыку",
+  "@musicSlideTitle": {},
+  "softwareSlideDescription": "Попрощайтесь с поиском в интернете нового программного обеспечения. Имея доступ к Snap Store и архиву программного обеспечения {RELEASE}, вы можете легко находить и устанавливать новые приложения. Просто наберите на клавиатуре то, что вы ищете, или просмотрите такие категории, как «Графика и фотография», «Игры» и «Работа», а также отзывы других пользователей.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideAppearance": "Внешний вид",
+  "@accessSlideAppearance": {},
+  "accessSlideAssistiveTechnologies": "Специальные возможности",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideCustomizationOptions": "Параметры настройки",
+  "@accessSlideCustomizationOptions": {},
+  "accessSlideTitle": "Доступ для каждого",
+  "@accessSlideTitle": {},
+  "accessSlideDescription": "В основе философии {RELEASE} лежит убеждение, что компьютеры предназначены для каждого. Благодаря расширенным инструментам специальных возможностей и параметрам изменения языка, цветовой схемы и размера текста {RELEASE} упрощает работу с компьютером, где бы вы ни находились.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideLanguageSupport": "Языковая поддержка",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Помощь и поддержка",
+  "@supportSlideTitle": {},
+  "supportSlideDocumentation": "Официальная документация охватывает многие из наиболее распространенных областей {RELEASE}. Она доступна как <a href=\"https://help.ubuntu.com\">онлайн</a>, так и с помощью значка справки на панели задач.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideResources": "Чтобы получить ссылки на другие полезные ресурсы, посетите <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> или <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
+  "@supportSlideResources": {},
+  "supportedSoftware": "Поддерживаемое программное обеспечение",
+  "@supportedSoftware": {},
+  "availableSoftware": "Доступное программное обеспечение",
+  "@availableSoftware": {},
+  "connectToInternetPageTitle": "Интернет соединение",
+  "@connectToInternetPageTitle": {},
+  "noWiredConnection": "Проводное подключение не обнаружено",
+  "@noWiredConnection": {},
+  "wiredDisabled": "Проводное подключение отключено",
+  "@wiredDisabled": {},
+  "enableWired": "Включить проводное подключение",
+  "@enableWired": {},
+  "connectToInternetDescription": "Соединение данного компьютера с интернетом позволит Ubuntu установить дополнительное программное обеспечение и поможет выбрать ваш часовой пояс.\n\nПрисоедините кабель сети интернет или выберите сеть Wi-Fi",
+  "@connectToInternetDescription": {},
+  "useWiredConnection": "Использовать проводное подключение",
+  "@useWiredConnection": {},
+  "wiredMustBeEnabled": "Чтобы воспользоваться сетью интернет на этом компьютере, должно быть включено проводное соединение",
+  "@wiredMustBeEnabled": {},
+  "connectButtonText": "Соединение",
+  "@connectButtonText": {},
+  "musicSlideRhythmbox": "Аудио проигрыватель Rhythmbox",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "revertButtonText": "Вернуть",
+  "@revertButtonText": {},
+  "configureSecureBootOption": "Настроить Secure Boot",
+  "@configureSecureBootOption": {},
+  "configureSecureBootDescription": "Вы выбрали установку стороннего драйвера. Для этого необходимо отключить Secure Boot.\nДля этого вам нужно сейчас выбрать ключ безопасности и ввести его при перезагрузке системы.",
+  "@configureSecureBootDescription": {},
+  "dontInstallDriverSoftwareNow": "Пока не устанавливать драйверы",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Вы можете установить их позже в приложении «Программы и обновления».",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "installThirdPartyTitle": "Установка стороннего программного обеспечения для графики и Wi-Fi, а также дополнительные форматы мультимедиа",
+  "@installThirdPartyTitle": {},
+  "updatesOtherSoftwarePageDescription": "Какие приложения вы хотели бы установить для начала?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installThirdPartySubtitle": "На это программное обеспечение распространяются условиями лицензии, содержащиеся в документации. Часть из них является проприетарной.",
+  "@installThirdPartySubtitle": {},
+  "secureBootSecurityKeysDontMatch": "Ключи безопасности не совпадают",
+  "@secureBootSecurityKeysDontMatch": {},
+  "configureSecureBootSecurityKeyRequired": "Требуется ключ безопасности",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "updatesOtherSoftwarePageTitle": "Обновления и другое программное обеспечение",
+  "@updatesOtherSoftwarePageTitle": {},
+  "installationTypeLVMSelected": "Выбран LVM",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncrypt": "Зашифровать новую установку {RELEASE} для безопасности",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncryptInfo": "На следующем шаге выберите ключ безопасности.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFSSelected": "Выбрана ZFS",
+  "@installationTypeZFSSelected": {},
+  "installationTypeManual": "Другой вариант",
+  "@installationTypeManual": {},
+  "installationTypeNone": "Ничего",
+  "@installationTypeNone": {},
+  "installationTypeLVM": "Использовать LVM с новой установкой {RELEASE}",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "allocateDiskSpace": "Выделить место на диске",
+  "@allocateDiskSpace": {},
+  "diskHeadersFormat": "Формат",
+  "@diskHeadersFormat": {},
+  "newPartitionTable": "Новая таблица разделов",
+  "@newPartitionTable": {},
+  "partitionLocationBeginning": "Начало этого пространства",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "Конец этого пространства",
+  "@partitionLocationEnd": {},
+  "partitionFormatLabel": "Использовано:",
+  "@partitionFormatLabel": {},
+  "partitionFormatZfsroot": "Корневая файловая система ZFS",
+  "@partitionFormatZfsroot": {},
+  "whoAreYouPageComputerNameRequired": "Требуется имя компьютера",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "Недопустимое имя компьютера",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageRealNameRequired": "Укажите имя",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageAutoLogin": "Входить в систему автоматически",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "Требовать пароль для входа в систему",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageComputerNameInfo": "Имя, используемое при общении с другими компьютерами.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageInvalidUsername": "Недопустимое имя пользователя",
+  "@whoAreYouPageInvalidUsername": {},
+  "installAlongsideFiles": "Файлы",
+  "@installAlongsideFiles": {},
+  "installAlongsideResizePartition": "Изменить размер раздела",
+  "@installAlongsideResizePartition": {},
+  "installAlongsidePartition": "Раздел:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAllocateSpace": "Выделить место",
+  "@installAlongsideAllocateSpace": {},
+  "installationTypeAlongsideUnknown": "Установите {product} рядом с другими разделами",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Выделите место на диске, переместив разделитель:",
+  "@installAlongsideSpaceDivider": {},
+  "installationTypeAlongsideDual": "Установить {product} вместе с {os1} и {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideSize": "Размер:",
+  "@installAlongsideSize": {},
+  "installAlongsideHiddenPartitions": "{num} более мелких разделов скрыто, для большего контроля используйте <a href=\"{url}\">расширенный инструмент для разбиения на разделы</a>",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAvailable": "Доступно:",
+  "@installAlongsideAvailable": {},
+  "writeChangesPartitionMounted": "раздел #{disk}{partition} использован для {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "quitButtonText": "Отменить установку",
+  "@quitButtonText": {},
+  "writeChangesPartitionResized": "размер раздела #{disk}{partition} изменен с {oldsize} на {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Установить {product} вместе с ними",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installingSystem": "Установка системы…",
+  "@installingSystem": {},
+  "configuringSystem": "Настройка системы…",
+  "@configuringSystem": {},
+  "notEnoughDiskSpaceHeader": "Вам потребуется как минимум {SIZE} дискового пространства для установки {RELEASE}.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Извините",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHasOnly": "На этом компьютере имеется только {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Самый большой диск на этом компьютере имеет всего {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "раздел #{disk}{partition} отформатирован как {format} и использован для {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "раздел #{disk}{partition} отформатирован как {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionCreated": "раздел #{disk}{partition} создан",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "installationTypeLVMEncryptionSelected": "LVM и шифрование выбраны",
+  "@installationTypeLVMEncryptionSelected": {},
+  "showSecurityKey": "Показать ключ безопасности",
+  "@showSecurityKey": {},
+  "installCodecsTitle": "Установить поддержку дополнительных медиаформатов",
+  "@installCodecsTitle": {},
+  "installDriversTitle": "Установка программного обеспечения сторонних производителей для графики и Wi-Fi оборудования",
+  "@installDriversTitle": {},
+  "installCodecsSubtitle": "На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.",
+  "@installCodecsSubtitle": {},
+  "installDriversSubtitle": "На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.",
+  "@installDriversSubtitle": {}
 }
-

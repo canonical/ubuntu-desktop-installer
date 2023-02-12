@@ -1,0 +1,732 @@
+{
+  "@@locale": "tr",
+  "yesButtonText": "Evet",
+  "@yesButtonText": {},
+  "changeButtonText": "Değiştir",
+  "@changeButtonText": {},
+  "restartButtonText": "Yeniden başlat",
+  "@restartButtonText": {},
+  "tryOrInstallPageTitle": "Dene veya kur",
+  "@tryOrInstallPageTitle": {},
+  "welcome": "Hoş Geldiniz",
+  "@welcome": {},
+  "appTitle": "Ubuntu Masaüstü Kurucu",
+  "@appTitle": {},
+  "cancelButtonText": "İptal et",
+  "@cancelButtonText": {},
+  "okButtonText": "Tamam",
+  "@okButtonText": {},
+  "noButtonText": "Hayır",
+  "@noButtonText": {},
+  "tryUbuntu": "{RELEASE} Dene",
+  "@tryUbuntu": {},
+  "tryUbuntuDescription": "Bilgisayarınızda hiç bir değişiklik yapmadan {RELEASE} deneyebilirsiniz.",
+  "@tryUbuntuDescription": {},
+  "installUbuntu": "{RELEASE} Kur",
+  "@installUbuntu": {},
+  "windowTitle": "{RELEASE} Kur",
+  "@windowTitle": {},
+  "revertButtonText": "Geri al",
+  "@revertButtonText": {},
+  "repairInstallation": "Kurulumu tamir et",
+  "@repairInstallation": {},
+  "connectToInternetDescription": "Bu bilgisayarı internete bağlamak, Ubuntu'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç",
+  "@connectToInternetDescription": {},
+  "connectToInternetPageTitle": "İnternete bağlan",
+  "@connectToInternetPageTitle": {},
+  "useWiredConnection": "Kablolu bağlantı kullan",
+  "@useWiredConnection": {},
+  "noWiredConnection": "Kablolu bağlantı saptanamadı",
+  "@noWiredConnection": {},
+  "wiredDisabled": "Kablolu bağlantı kapalı",
+  "@wiredDisabled": {},
+  "wiredMustBeEnabled": "Bilgisayarda etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir",
+  "@wiredMustBeEnabled": {},
+  "repairInstallationDescription": "Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.",
+  "@repairInstallationDescription": {},
+  "installUbuntuDescription": "Mevcut işletim sisteminizin yanına (ya da yerine) {RELEASE} kur. Çok uzun sürmeyecektir.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "<a href=\"{url}\">Sürüm notlarını</a> okumak isteyebilirsiniz.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRST": "RST'yi kapat",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu'yu kurmadan önce Windows'tan RST'yi kapatmalısınız.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "Talimatlar için şu adresi bir telefondan veya başka bir cihazdan açın: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "keyboardLayoutPageTitle": "Klavye düzeni",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "Klavye düzeninizi seçin:",
+  "@chooseYourKeyboardLayout": {},
+  "typeToTest": "Klavyenizi test etmek için buraya yazın",
+  "@typeToTest": {},
+  "chooseSecurityKey": "Güvenlik anahtarı seçin",
+  "@chooseSecurityKey": {},
+  "detectLayout": "Klavye Düzenini Tespit Et",
+  "@detectLayout": {},
+  "pressOneKey": "Lütfen aşağıdaki tuşlardan birine basın:",
+  "@pressOneKey": {},
+  "isKeyPresent": "Aşağıdaki tuş klavyenizde bulunuyor mu?",
+  "@isKeyPresent": {},
+  "configureSecureBootTitle": "Güvenli Önyüklemeyi Yapılandır",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootDescription": "Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir. \nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.",
+  "@configureSecureBootDescription": {},
+  "configureSecureBootOption": "Güvenli Önyüklemeyi Yapılandır",
+  "@configureSecureBootOption": {},
+  "confirmSecurityKey": "Güvenlik anahtarını onaylayın",
+  "@confirmSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "Şimdilik sürücü yazılımını kurma",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Daha sonra Yazılımlar ve Güncellemeler uygulamasından kurabilirsiniz.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "configureSecureBootSecurityKeyRequired": "Güvenlik anahtarı gereklidir",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "secureBootSecurityKeysDontMatch": "Güvenlik anahtarları uyuşmamaktadır",
+  "@secureBootSecurityKeysDontMatch": {},
+  "hiddenWifiNetwork": "Gizli Wi-Fi ağına bağlan",
+  "@hiddenWifiNetwork": {},
+  "hiddenWifiNetworkNameLabel": "Ağ adı",
+  "@hiddenWifiNetworkNameLabel": {},
+  "hiddenWifiNetworkNameRequired": "Ağ adı gereklidir",
+  "@hiddenWifiNetworkNameRequired": {},
+  "wifiMustBeEnabled": "Bu bilgisayarda Wi-Fi kullanmak için, kablosuz ağın etkinleştirilmiş olması gerekir",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Wi-Fi'yi etkinleştir",
+  "@enableWifi": {},
+  "connectButtonText": "Bağlan",
+  "@connectButtonText": {},
+  "normalInstallationTitle": "Normal kurulum",
+  "@normalInstallationTitle": {},
+  "normalInstallationSubtitle": "Web tarayıcısı, yardımcı programlar, ofis yazılımı, oyunlar ve medya oynatıcılar.",
+  "@normalInstallationSubtitle": {},
+  "noWifiDevicesDetected": "Wi-Fi cihazı algılanmadı",
+  "@noWifiDevicesDetected": {},
+  "minimalInstallationTitle": "Asgari kurulum",
+  "@minimalInstallationTitle": {},
+  "minimalInstallationSubtitle": "Web tarayıcısı ve temel araçlar.",
+  "@minimalInstallationSubtitle": {},
+  "otherOptions": "Diğer seçenekler",
+  "@otherOptions": {},
+  "installThirdPartyTitle": "Grafikler ve Wi-Fi donanımı için üçüncü taraf yazılımların yanı sıra ek medya biçimlerini de kur",
+  "@installThirdPartyTitle": {},
+  "onBatteryWarning": "<font color=\"{color}\">Uyarı</font>: Bilgisayar güç kaynağına takılı değil.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyTitle": "Güvenlik anahtarı seç",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyMismatch": "Güvenlik anahtarları eşleşmiyor",
+  "@chooseSecurityKeyMismatch": {},
+  "selectGuidedStorageInstallNow": "Şimdi Kur",
+  "@selectGuidedStorageInstallNow": {},
+  "diskHeadersSize": "Boyut",
+  "@diskHeadersSize": {},
+  "partitionEditTitle": "Bölüm düzenle",
+  "@partitionEditTitle": {},
+  "partitionFormatFat12": "FAT12 dosya sistemi",
+  "@partitionFormatFat12": {},
+  "partitionFormatSwap": "Takas alanı",
+  "@partitionFormatSwap": {},
+  "whoAreYouPageComputerNameInfo": "Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "musicSlideRhythmbox": "Rhythmbox Müzik Oynatıcısı",
+  "@musicSlideRhythmbox": {},
+  "musicSlideSpotify": "Spotify",
+  "@musicSlideSpotify": {},
+  "musicSlideVLC": "VLC",
+  "@musicSlideVLC": {},
+  "photoSlideTitle": "Fotoğraflarınızla iyi eğlenceler",
+  "@photoSlideTitle": {},
+  "photoSlideShotwell": "Shotwell Fotoğraf Yöneticisi",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "GIMP Görüntü Düzenleyici",
+  "@photoSlideGimp": {},
+  "photoSlideShotcut": "Shotcut Video Düzenleyici",
+  "@photoSlideShotcut": {},
+  "accessSlideAssistiveTechnologies": "Yardımcı teknolojiler",
+  "@accessSlideAssistiveTechnologies": {},
+  "accessSlideLanguageSupport": "Dil desteği",
+  "@accessSlideLanguageSupport": {},
+  "supportSlideTitle": "Yardım ve destek",
+  "@supportSlideTitle": {},
+  "accessSlideAppearance": "Görünüm",
+  "@accessSlideAppearance": {},
+  "chooseSecurityKeyConfirmHint": "Güvenlik anahtarını onayla",
+  "@chooseSecurityKeyConfirmHint": {},
+  "installationTypeTitle": "Kurulum türü",
+  "@installationTypeTitle": {},
+  "chooseSecurityKeyHint": "Güvenlik anahtarı seç",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyRequired": "Güvenlik anahtarı gereklidir",
+  "@chooseSecurityKeyRequired": {},
+  "diskHeadersDevice": "Cihaz",
+  "@diskHeadersDevice": {},
+  "allocateDiskSpace": "Disk alanı ayır",
+  "@allocateDiskSpace": {},
+  "newPartitionTable": "Yeni bölüm tablosu",
+  "@newPartitionTable": {},
+  "installationTypeMultiOSDetected": "Bu bilgisayar şu an birden fazla işletim sistemi var. Ne yapmak istersiniz?",
+  "@installationTypeMultiOSDetected": {},
+  "diskHeadersType": "Tür",
+  "@diskHeadersType": {},
+  "diskHeadersMountPoint": "Bağlama noktası",
+  "@diskHeadersMountPoint": {},
+  "diskHeadersUsed": "Kullanılan",
+  "@diskHeadersUsed": {},
+  "diskHeadersFormat": "Biçim",
+  "@diskHeadersFormat": {},
+  "freeDiskSpace": "boş alan",
+  "@freeDiskSpace": {},
+  "newPartitionTableConfirmationTitle": "Bu cihazda yeni bir boş bölüm tablosu oluşturulsun mu?",
+  "@newPartitionTableConfirmationTitle": {},
+  "partitionCreateTitle": "Bölüm oluştur",
+  "@partitionCreateTitle": {},
+  "partitionFormatFat16": "FAT16 dosya sistemi",
+  "@partitionFormatFat16": {},
+  "partitionFormatFat32": "FAT32 dosya sistemi",
+  "@partitionFormatFat32": {},
+  "partitionFormatIso9660": "ISO 9660 dosya sistemi",
+  "@partitionFormatIso9660": {},
+  "partitionFormatVfat": "VFAT dosya sistemi",
+  "@partitionFormatVfat": {},
+  "partitionFormatZfsroot": "ZFS root dosya sistemi",
+  "@partitionFormatZfsroot": {},
+  "partitionErase": "Bölümü biçimlendir",
+  "@partitionErase": {},
+  "partitionMountPointLabel": "Bağlama noktası:",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageTitle": "Kimsiniz?",
+  "@whoAreYouPageTitle": {},
+  "whoAreYouPageRealNameLabel": "Adınız",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageRealNameRequired": "İsim gereklidir",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageComputerNameLabel": "Bilgisayar adı",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageComputerNameRequired": "Bilgisayar adı gereklidir",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "Bilgisayar adı geçersiz",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageUsernameLabel": "Kullanıcı adı seç",
+  "@whoAreYouPageUsernameLabel": {},
+  "whoAreYouPageUsernameRequired": "Kullanıcı adı gereklidir",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageInvalidUsername": "Kullanıcı adı geçersiz",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPagePasswordLabel": "Parola seç",
+  "@whoAreYouPagePasswordLabel": {},
+  "whoAreYouPageShowPassword": "Parolayı göster",
+  "@whoAreYouPageShowPassword": {},
+  "whereAreYouPageTitle": "Neredesiniz?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Konum",
+  "@whereAreYouLocationLabel": {},
+  "whoAreYouPagePasswordRequired": "Parola gereklidir",
+  "@whoAreYouPagePasswordRequired": {},
+  "whereAreYouTimezoneLabel": "Saat Dilimi",
+  "@whereAreYouTimezoneLabel": {},
+  "welcomeSlideTitle": "{RELEASE} hoşgeldiniz",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "Daha fazla yazılım bul",
+  "@softwareSlideTitle": {},
+  "musicSlideTitle": "Müziğini yanında bulundur",
+  "@musicSlideTitle": {},
+  "webSlideFirefox": "Firefox web tarayıcısı",
+  "@webSlideFirefox": {},
+  "webSlideThunderbird": "Thunderbird",
+  "@webSlideThunderbird": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "accessSlideCustomizationOptions": "Özelleştirme seçenekleri",
+  "@accessSlideCustomizationOptions": {},
+  "startInstallingButtonText": "Kurulumu Başlat",
+  "@startInstallingButtonText": {},
+  "welcomeHeader": "Dil seçin:",
+  "@welcomeHeader": {},
+  "partitionFormatReiserFS": "ReiserFS dosya sistemi",
+  "@partitionFormatReiserFS": {},
+  "diskHeadersSystem": "Sistem",
+  "@diskHeadersSystem": {},
+  "partitionFormatNtfs": "NTFS dosya sistemi",
+  "@partitionFormatNtfs": {},
+  "whoAreYouPageAutoLogin": "Otomatik giriş yap",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "Giriş yapmak için parola iste",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageConfirmPasswordLabel": "Parolanızı doğrulayın",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "whoAreYouPagePasswordMismatch": "Parolalar uyuşmuyor",
+  "@whoAreYouPagePasswordMismatch": {},
+  "installThirdPartySubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları tescillidir.",
+  "@installThirdPartySubtitle": {},
+  "installationTypeNoOSDetected": "Bu bilgisayarda herhangi bir işletim sistemi tespit edilmedi. Ne yapmak istersiniz?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeAlongside": "{product}'i {os} yanına kurun",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeManual": "Başka bir şey",
+  "@installationTypeManual": {},
+  "selectGuidedStorageDropdownLabel": "Sürücü seçin:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "selectGuidedStorageInfoLabel": "Bütün disk kullanılacaktır:",
+  "@selectGuidedStorageInfoLabel": {},
+  "selectWifiNetwork": "Wi-Fi ağına bağlan",
+  "@selectWifiNetwork": {},
+  "enableWired": "Kablolu bağlantıyı etkinleştir",
+  "@enableWired": {},
+  "noInternet": "Şu anda internete bağlanmak istemiyorum",
+  "@noInternet": {},
+  "wirelessNetworkingDisabled": "Kablosuz ağ kapatıldı",
+  "@wirelessNetworkingDisabled": {},
+  "webSlideChromium": "Chromium",
+  "@webSlideChromium": {},
+  "officeSlideTitle": "Ofis için ihtiyacınız olan her şey",
+  "@officeSlideTitle": {},
+  "updatesOtherSoftwarePageTitle": "Güncellemeler ve diğer yazılımlar",
+  "@updatesOtherSoftwarePageTitle": {},
+  "updatesOtherSoftwarePageDescription": "Başlangıç olarak hangi uygulamaları kurmak istersiniz?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installationTypeAdvancedLabel": "İleri Seviye Özellikler...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "İleri seviye özellikler",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeNone": "Hiçbiri",
+  "@installationTypeNone": {},
+  "installationTypeNoneSelected": "Hiçbiri seçilmedi",
+  "@installationTypeNoneSelected": {},
+  "installationTypeLVMSelected": "LVM seçildi",
+  "@installationTypeLVMSelected": {},
+  "installationTypeEncryptInfo": "Bir sonraki adımda güvenlik anahtarı seçeceksiniz.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFS": "DENEYSEL: Diski sil ve ZFS kullan",
+  "@installationTypeZFS": {},
+  "installationTypeZFSSelected": "ZFS seçildi",
+  "@installationTypeZFSSelected": {},
+  "installationTypeReinstall": "{os} sil ve yeniden kur",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "partitionSizeLabel": "Boyut:",
+  "@partitionSizeLabel": {},
+  "partitionUnitB": "B",
+  "@partitionUnitB": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "partitionUnitMB": "MB",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "GB",
+  "@partitionUnitGB": {},
+  "partitionTypeLabel": "Yeni bölümün türü:",
+  "@partitionTypeLabel": {},
+  "partitionTypePrimary": "Birincil",
+  "@partitionTypePrimary": {},
+  "partitionTypeLogical": "Mantıksal",
+  "@partitionTypeLogical": {},
+  "partitionLocationLabel": "Yeni bölümün konumu:",
+  "@partitionLocationLabel": {},
+  "partitionLocationBeginning": "Bu alanın başlangıcı",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "Bu alanın sonu",
+  "@partitionLocationEnd": {},
+  "partitionFormatExt2": "Ext2 dosya sistemi",
+  "@partitionFormatExt2": {},
+  "partitionFormatFat": "FAT dosya sistemi",
+  "@partitionFormatFat": {},
+  "writeChangesToDisk": "Değişiklikleri diske yaz",
+  "@writeChangesToDisk": {},
+  "writeChangesFallbackSerial": "disk",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "Aşağıdaki bölüm değişiklikleri uygulanacak:",
+  "@writeChangesPartitionsHeader": {},
+  "chooseYourLookPageTitle": "Görünüm seçin",
+  "@chooseYourLookPageTitle": {},
+  "chooseYourLookPageHeader": "Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "Koyu",
+  "@chooseYourLookPageDarkSetting": {},
+  "chooseYourLookPageLightSetting": "Açık",
+  "@chooseYourLookPageLightSetting": {},
+  "installationCompleteTitle": "Kurulum tamamlandı",
+  "@installationCompleteTitle": {},
+  "readyToUse": "**{system}** kuruldu ve kullanıma hazır.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "shutdown": "Kapat",
+  "@shutdown": {},
+  "turnOffBitlockerTitle": "BitLocker'ı kapat",
+  "@turnOffBitlockerTitle": {},
+  "restartIntoWindows": "Windows'a Yeniden Başlat",
+  "@restartIntoWindows": {},
+  "chooseSecurityKeyHeader": "Disk şifreleme bilgisayarınızı kaybetme ihtimaline karşı dosyalarınızı korumaktadır. Bilgisayar her başladığında bir güvenlik anahtarı girmenizi gerektirmektedir.\n\n{RELEASE} haricindeki dosyalar şifrelenmeyecektir.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeErase": "Diski sil ve {DISTRO} kur",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "selectGuidedStoragePageTitle": "Diski sil ve {DISTRO} kur",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeOSDetected": "Bu bilgisayarda şu anda {os} var. Ne yapmak istersiniz?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "bootLoaderDevice": "Önyükleyici kurulumu yapılacak cihaz",
+  "@bootLoaderDevice": {},
+  "availableSoftware": "Kullanılabilir yazılım",
+  "@availableSoftware": {},
+  "supportedSoftware": "Desteklenen yazılım",
+  "@supportedSoftware": {},
+  "turnOffBitlockerLinkInstructions": "Talimatlar için bu sayfayı telefonda veya başka bir cihazda açın: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "welcomeSlideDescription": "Hızlı ve yeni özelliklerle dolu {RELEASE} en son sürümü, bilgisayar kullanımını her zamankinden daha kolay hale getiriyor. İşte dikkatinici çekecek birkaç harika yenilik...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "webSlideTitle": "İnternetten en iyi şekilde yararlanın",
+  "@webSlideTitle": {},
+  "installingSystem": "Sistem kuruluyor…",
+  "@installingSystem": {},
+  "configuringSystem": "Sistem yapılandırılıyor…",
+  "@configuringSystem": {},
+  "installationFailed": "Kurulum başarısız oldu",
+  "@installationFailed": {},
+  "newPartitionTableConfirmationMessage": "Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.",
+  "@newPartitionTableConfirmationMessage": {},
+  "webSlideDescription": "{RELEASE} dünya çapında milyonlarca kişi tarafından kullanılan web tarayıcısı Firefox ile geliyor. Ayrıca sık kullandığınız internet uygulamaları (örneğin Facebook veya Gmail gibi), tıpkı bilgisayarınızdaki uygulamalar gibi daha hızlı erişim için masaüstünüze sabitleyebilirsiniz.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideDescription": "LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren özgür bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri size sunar.",
+  "@officeSlideDescription": {},
+  "accessSlideTitle": "Herkes için erişim",
+  "@accessSlideTitle": {},
+  "accessSlideDescription": "{RELEASE} felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk ve metin boyutunu değiştirme seçenekleriyle {RELEASE}, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "includedSoftware": "Birlikte gelen yazılımlar",
+  "@includedSoftware": {},
+  "installAlongsideSpaceDivider": "Aşağıdaki ayırıcıyı sürükleyerek sürücü alanı ayır:",
+  "@installAlongsideSpaceDivider": {},
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Uyarı:</font> Bu, tüm {os} programlarını, belgeleri, fotoğrafları, müzikleri ve diğer dosyaları siler.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeManualInfo": "Bölümleri kendiniz oluşturabilir veya yeniden boyutlandırabilir ya da {DISTRO} için birden çok bölüm seçebilirsiniz",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "{product} işletim sistemini onların yanına kur",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideResizePartition": "Bölümü yeniden boyutlandır",
+  "@installAlongsideResizePartition": {},
+  "installAlongsideAllocateSpace": "Alan ayır",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideHiddenPartitions": "{num} küçük bölüm gizli, daha fazla denetim için <a href=\"{url}\">gelişmiş bölümleme aracını</a> kullanın",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "partitionFormatXfs": "XFS günlüklü dosya sistemi",
+  "@partitionFormatXfs": {},
+  "partitionFormatExt4": "Ext4 günlüklü dosya sistemi",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt3": "Ext3 günlüklü dosya sistemi",
+  "@partitionFormatExt3": {},
+  "partitionFormatBtrfs": "btrfs günlüklü dosya sistemi",
+  "@partitionFormatBtrfs": {},
+  "partitionFormatJfs": "JFS günlüklü dosya sistemi",
+  "@partitionFormatJfs": {},
+  "installAlongsidePartition": "Bölüm:",
+  "@installAlongsidePartition": {},
+  "whoAreYouPageUsernameInUse": "Bu kullanıcı adı zaten var.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Bu ad sistem kullanımı için ayrılmış.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInvalidChars": "Bu ad geçersiz karakter içeriyor.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">Uyarı:</font> Bu, tüm işletim sistemlerindeki tüm programları, belgeleri, fotoğrafları, müzikleri ve diğer dosyaları siler.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "Belgeler, müzik ve diğer kişisel dosyalar korunacak. Bilgisayar her başlatıldığında hangi işletim sistemini istediğinizi seçebilirsiniz.",
+  "@installationTypeAlongsideInfo": {},
+  "installationTypeDualOSDetected": "Bu bilgisayarda şu anda {os1} ve {os2} var. Ne yapmak istersiniz?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "partitionFormatLabel": "Kullanılan:",
+  "@partitionFormatLabel": {},
+  "writeChangesPartitionMounted": "#{disk}{partition} bölümü {mount} için kullanıldı",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionTablesHeader": "Aşağıdaki cihazların bölüm tabloları değiştirildi:",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionResized": "#{disk}{partition} bölümü {oldsize} boyutundan {newsize} boyutuna yeniden boyutlandırıldı",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesDescription": "Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.",
+  "@writeChangesDescription": {},
+  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> adresinden sorularınızı sorabilir ve daha önce yanıtlanmış sorular arasında arama yapabilirsiniz. Kendi dilinizde destek <a href=\"https://loco.ubuntu.com/teams/ubuntu-tr/\">Yerel Topluluk Ekibi</a> adresinden sağlanabilir.",
+  "@supportSlideQuestions": {},
+  "supportSlideResources": "Diğer faydalı kaynaklara yönlendirmeler için lütfen <a href=\"https://www.ubuntu.com/support/community-support\">Topluluk desteği</a> ya da <a href=\"https://www.ubuntu.com/support\">Kurumsal destek</a> adreslerini ziyaret edin.",
+  "@supportSlideResources": {},
+  "copyingFiles": "Dosyalar kopyalanıyor…",
+  "@copyingFiles": {},
+  "installAlongsideFiles": "Dosyalar",
+  "@installAlongsideFiles": {},
+  "installAlongsideAvailable": "Kullanılabilir:",
+  "@installAlongsideAvailable": {},
+  "whoAreYouPageUsernameTooLong": "Bu ad çok uzun.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "writeChangesPartitionFormatted": "#{disk}{partition} bölümü {format} olarak biçimlendirildi",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "restartInto": "{system} ile yeniden başlat",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "installAlongsideSize": "Boyut:",
+  "@installAlongsideSize": {},
+  "quitButtonText": "Kurulumdan Çık",
+  "@quitButtonText": {},
+  "installationTypeAlongsideUnknown": "{product} işletim sistemini diğer bölümlerin yanına kur",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "writeChangesPartitionCreated": "#{disk}{partition} bölümü oluşturuldu",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "installationTypeLVM": "Yeni {RELEASE} kurulumuyla LVM kullan",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncrypt": "Güvenlik için yeni {RELEASE} kurulumunu şifrele",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeAlongsideDual": "{product} işletim sistemini {os1} ve {os2} yanına kur",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "#{disk}{partition} bölümü ({format} olarak biçimlendirilmiş) {mount} için kullanıldı",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "turnOffBitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanıyor.\nUbuntu'yu kurmadan önce Windows'ta BitLocker'ı kapatmanız gerekli.",
+  "@turnOffBitlockerDescription": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Uyarı</font>: Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "supportSlideDocumentation": "Resmi belgeler {RELEASE} ile ilgili en yaygın konuları kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideDescription": "Shotwell, cihazlarınız için kullanıma hazır olan kullanışlı bir fotoğraf yöneticisidir. Fotoğraflarınızı aktarmak için kamera veya telefon bağlayın, ardından onları paylaşmak ve saklamak çok kolay. Kendinizi üretken hissediyorsanız, Ubuntu Yazılımlar ile başka birçok fotoğraf uygulaması da bulabilirsiniz.",
+  "@photoSlideDescription": {},
+  "musicSlideDescription": "{RELEASE} muhteşem Rhythmbox müzik çalar ile birlikte geliyor. Gelişmiş çalma seçenekleri ile şarkıları sıraya koymak çok kolay. Ayrıca CD'ler ve taşınabilir müzik çalarlarla harika çalışır, böylece nereye giderseniz gidin tüm müziklerinizin keyfini çıkarabilirsiniz.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceTitle": "Üzgünüm",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "{RELEASE} kurmak için en az {SIZE} disk alanına ihtiyacınız var.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Bu bilgisayarda yalnızca {SIZE} alan var.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceBiggestDisk": "Bu bilgisayardaki en büyük disk yalnızca {SIZE} boyutunda.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "softwareSlideDescription": "İnternette yeni yazılım aramaya veda edin. Snap Store ve {RELEASE} yazılım arşivine erişim sayesinde yeni uygulamaları kolaylıkla bulup kurabilirsiniz. Sadece aradığınızı yazın ya da diğer kullanıcıların faydalı incelemelerini de içeren Grafik ve Fotoğraf, Oyunlar ve Üretkenlik gibi kategorileri keşfedin.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "showSecurityKey": "Güvenlik anahtarını göster",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installDriversTitle": "Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları kur",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Ek ortam biçimleri desteğini kur",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
+  "@installCodecsSubtitle": {}
+}
