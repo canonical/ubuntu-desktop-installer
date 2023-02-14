@@ -725,5 +725,62 @@
   "continueTesting": "試用を続ける",
   "@continueTesting": {},
   "restartNow": "今すぐ再起動する",
-  "@restartNow": {}
+  "@restartNow": {},
+  "writeChangesPartitionFormatted": "パーティション #{disk}{partition} は {format} としてフォーマットされます。",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "パーティション #{disk}{partition} は {mount} として使用されます。",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "パーティション #{disk}{partition} は {format} としてフォーマットされ、{mount} として使用されます。",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "restartWarning": "このまま {RELEASE} の試用を続けることもできますが、コンピューターを再起動するまでは、なにか変更を行ったり文書を保存してもデータは残りません。",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "パーティション #{disk}{partition} のサイズが{oldsize}から{newsize}に変更されます。",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionCreated": "パーティション #{disk}{partition} が作成されました。",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "基本パーティションが多すぎます",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "制限に達しました",
+  "@partitionLimitReached": {}
 }
