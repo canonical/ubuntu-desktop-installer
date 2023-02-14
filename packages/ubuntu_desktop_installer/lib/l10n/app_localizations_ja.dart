@@ -442,10 +442,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => '基本パーティションが多すぎます';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => '制限に達しました';
 
   @override
   String get bootLoaderDevice => 'ブートローダーをインストールするデバイスを選択してください';
@@ -631,27 +631,27 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return 'パーティション #$disk$partition のサイズが$oldsizeから$newsizeに変更されます。';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return 'パーティション #$disk$partition は $format としてフォーマットされ、$mount として使用されます。';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formatted as $format';
+    return 'パーティション #$disk$partition は $format としてフォーマットされます。';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return 'パーティション #$disk$partition は $mount として使用されます。';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition created';
+    return 'パーティション #$disk$partition が作成されました。';
   }
 
   @override
@@ -681,7 +681,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'このまま $RELEASE の試用を続けることもできますが、コンピューターを再起動するまでは、なにか変更を行ったり文書を保存してもデータは残りません。';
   }
 
   @override
