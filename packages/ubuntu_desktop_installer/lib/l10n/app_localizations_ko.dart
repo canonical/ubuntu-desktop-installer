@@ -231,6 +231,9 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get offlineWarning => 'You are currently offline';
+
+  @override
   String get chooseSecurityKeyTitle => '보안 키 선택';
 
   @override

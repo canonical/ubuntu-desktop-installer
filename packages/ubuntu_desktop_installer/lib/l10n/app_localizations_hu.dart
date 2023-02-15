@@ -220,7 +220,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Download and install support for additional media formats';
 
   @override
   String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
@@ -229,6 +229,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Figyelmeztetés</font>: A számítógép nincs csatlakoztatva áramforráshoz.';
   }
+
+  @override
+  String get offlineWarning => 'You are currently offline';
 
   @override
   String get chooseSecurityKeyTitle => 'Biztonsági kulcs kiválasztása';

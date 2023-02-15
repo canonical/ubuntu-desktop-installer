@@ -231,6 +231,9 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get offlineWarning => 'You are currently offline';
+
+  @override
   String get chooseSecurityKeyTitle => '选择一个安全密钥';
 
   @override

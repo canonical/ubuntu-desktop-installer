@@ -220,7 +220,7 @@ class AppLocalizationsMl extends AppLocalizations {
   String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
 
   @override
-  String get installCodecsTitle => 'Install support for additional media formats';
+  String get installCodecsTitle => 'Download and install support for additional media formats';
 
   @override
   String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
@@ -229,6 +229,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">മുന്നറിയിപ്പ്</font>: കമ്പ്യൂട്ടർ ഒരു വൈദ്യുത സ്രോതസ്സുമായി ബന്ധിപ്പിച്ചിട്ടില്ല.';
   }
+
+  @override
+  String get offlineWarning => 'You are currently offline';
 
   @override
   String get chooseSecurityKeyTitle => 'ഒരു സുരക്ഷാ കീ തിരഞ്ഞെടുക്കുക';

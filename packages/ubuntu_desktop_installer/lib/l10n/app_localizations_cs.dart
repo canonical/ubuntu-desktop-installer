@@ -231,6 +231,9 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String get offlineWarning => 'You are currently offline';
+
+  @override
   String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
 
   @override

@@ -231,6 +231,9 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get offlineWarning => 'You are currently offline';
+
+  @override
   String get chooseSecurityKeyTitle => 'Wybierz klucz bezpieczeństwa';
 
   @override
