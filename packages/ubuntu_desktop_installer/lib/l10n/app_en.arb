@@ -169,7 +169,7 @@
   "@installDriversTitle": {},
   "installDriversSubtitle": "These drivers are subject to license terms included with their documentation. They are proprietary.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Install support for additional media formats",
+  "installCodecsTitle": "Download and install support for additional media formats",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
   "@installCodecsSubtitle": {},
@@ -180,6 +180,8 @@
       "color": {}
     }
   },
+  "offlineWarning": "You are currently offline",
+  "@offlineWarning": {},
   "chooseSecurityKeyTitle": "Choose a security key",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of {RELEASE} will not be encrypted.",

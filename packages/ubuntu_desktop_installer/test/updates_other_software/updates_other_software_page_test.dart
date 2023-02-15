@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -145,12 +146,23 @@ void main() {
     final model = buildModel(isOnline: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    expect(find.text(tester.lang.offlineWarning), findsNothing);
+
     final installCodecsTile = find.widgetWithText(
       YaruCheckButton,
       tester.lang.installCodecsTitle,
     );
     expect(installCodecsTile, findsOneWidget);
     expect(tester.widget<YaruCheckButton>(installCodecsTile).onChanged, isNull);
+
+    final gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
+    await gesture.addPointer();
+    addTearDown(gesture.removePointer);
+    await gesture.moveTo(tester.getCenter(installCodecsTile));
+    await tester.pump();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 500));
+    expect(find.text(tester.lang.offlineWarning), findsOneWidget);
   });
 
   testWidgets('continue on the next page', (tester) async {
