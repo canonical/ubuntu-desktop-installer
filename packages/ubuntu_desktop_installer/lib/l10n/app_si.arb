@@ -1,6 +1,6 @@
 {
   "@@locale": "si",
-  "windowTitle": "ස්ථාපනය {RELEASE}",
+  "windowTitle": "{RELEASE} ස්ථාපනය කරන්න",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
@@ -8,5 +8,23 @@
     }
   },
   "appTitle": "උබුන්ටු ඩෙස්ක්ටොප් ධාවකය",
-  "@appTitle": {}
+  "@appTitle": {},
+  "cancelButtonText": "අවලංගු කරන්න",
+  "@cancelButtonText": {},
+  "welcome": "ආයුබෝවන්",
+  "@welcome": {},
+  "tryUbuntu": "{RELEASE} අත්හදා බලන්න",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "{RELEASE} ස්ථාපනය කරන්න",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
