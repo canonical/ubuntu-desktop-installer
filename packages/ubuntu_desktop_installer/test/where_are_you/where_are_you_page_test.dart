@@ -170,13 +170,39 @@ void main() {
 
   testWidgets('select coordinates', (tester) async {
     const locations = <GeoLocation>[
-      GeoLocation(name: 'a'),
-      GeoLocation(name: 'b'),
+      GeoLocation(
+        name: 'Location A',
+        admin: 'Admin A',
+        country: 'Country A',
+        timezone: 'Timezone/A',
+      ),
+      GeoLocation(
+        name: 'Location B',
+        admin: 'Admin B',
+        country: 'Country B',
+        timezone: 'Timezone/B',
+      ),
+    ];
+
+    const timezones = <GeoLocation>[
+      GeoLocation(
+        name: 'Timezone A',
+        admin: 'Admin A',
+        country: 'Country A',
+        timezone: 'Timezone/A',
+      ),
+      GeoLocation(
+        name: 'Timezone B',
+        admin: 'Admin B',
+        country: 'Country B',
+        timezone: 'Timezone/B',
+      ),
     ];
 
     final model = buildModel();
     final controller = buildController();
     when(controller.searchCoordinates(any)).thenAnswer((_) async => locations);
+    when(controller.searchTimezone(any)).thenAnswer((_) async => timezones);
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
@@ -184,8 +210,15 @@ void main() {
     expect(find.byType(TimezoneMap), findsOneWidget);
     await tester.tap(find.byType(TimezoneMap));
 
+    const expected = GeoLocation(
+      name: 'Timezone A',
+      admin: '',
+      country: '',
+      timezone: 'Timezone/A',
+    );
+
     verify(controller.searchCoordinates(any)).called(1);
-    verify(controller.selectLocation(locations.first)).called(1);
+    verify(controller.selectLocation(expected)).called(1);
   });
 
   testWidgets('format location', (tester) async {

@@ -82,9 +82,8 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
               offset: controller.selectedLocation?.offset,
               marker: controller.selectedLocation?.coordinates,
               onPressed: (coordinates) => controller
-                  .searchCoordinates(coordinates)
-                  .then((locations) =>
-                      controller.selectLocation(locations.firstOrNull)),
+                  .searchMap(coordinates)
+                  .then(controller.selectLocation),
             ),
           ),
           const SizedBox(height: kContentSpacing),
@@ -165,6 +164,29 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
           },
         ),
       ],
+    );
+  }
+}
+
+extension on TimezoneController {
+  // Searches for the nearest location on the map but returns a simplified
+  // location entry with the administration area and country details removed,
+  // and the location name set to the name of the largest city in the timezone
+  // to match the behavior of Ubiquity.
+  //
+  // This ensures that clicking around the timezone map keeps the pin as close
+  // as possible to the clicked location (the timezone's largest city could be
+  // far away), yet the presented textual result is not too granular i.e. not
+  // some small unknown village but the timezone's largest city.
+  Future<GeoLocation?> searchMap(LatLng coordinates) async {
+    final location = await searchCoordinates(coordinates)
+        .then((values) => values.firstOrNull);
+    final timezone = await searchTimezone(location?.timezone ?? '')
+        .then((values) => values.firstOrNull);
+    return location?.copyWith(
+      name: timezone?.name ?? location.name,
+      admin: '',
+      country: '',
     );
   }
 }
