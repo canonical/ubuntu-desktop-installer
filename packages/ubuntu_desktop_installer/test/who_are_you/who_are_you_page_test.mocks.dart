@@ -115,10 +115,23 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         returnValueForMissingStub: null,
       );
   @override
-  bool get isConnectedSite => (super.noSuchMethod(
-        Invocation.getter(#isConnectedSite),
+  bool get isConnected => (super.noSuchMethod(
+        Invocation.getter(#isConnected),
         returnValue: false,
       ) as bool);
+  @override
+  bool get useActiveDirectory => (super.noSuchMethod(
+        Invocation.getter(#useActiveDirectory),
+        returnValue: false,
+      ) as bool);
+  @override
+  set useActiveDirectory(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #useActiveDirectory,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
   @override
   bool get isValid => (super.noSuchMethod(
         Invocation.getter(#isValid),
@@ -167,18 +180,18 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
   @override
-  _i5.Future<void> loadIdentity() => (super.noSuchMethod(
+  _i5.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
-          #loadIdentity,
+          #init,
           [],
         ),
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
   @override
-  _i5.Future<void> saveIdentity({String? salt}) => (super.noSuchMethod(
+  _i5.Future<void> save({String? salt}) => (super.noSuchMethod(
         Invocation.method(
-          #saveIdentity,
+          #save,
           [],
           {#salt: salt},
         ),

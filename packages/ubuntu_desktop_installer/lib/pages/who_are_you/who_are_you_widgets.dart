@@ -243,6 +243,38 @@ class _ShowPasswordButton extends StatelessWidget {
   }
 }
 
+class _UseActiveDirectoryCheckButton extends StatelessWidget {
+  const _UseActiveDirectoryCheckButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
+    final hasActiveDirectorySupport =
+        context.select((WhoAreYouModel m) => m.hasActiveDirectorySupport);
+    final useActiveDirectory =
+        context.select((WhoAreYouModel m) => m.useActiveDirectory);
+    final isConnected = context.select((WhoAreYouModel m) => m.isConnected);
+
+    return Visibility(
+      visible: hasActiveDirectorySupport != false,
+      child: YaruCheckButton(
+        value: useActiveDirectory,
+        title: Text(lang.activeDirectoryOption),
+        onChanged: isConnected && hasActiveDirectorySupport == true
+            ? (v) => context.read<WhoAreYouModel>().useActiveDirectory = v!
+            : null,
+        subtitle: Text(
+          lang.activeDirectoryInfo,
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall!
+              .copyWith(color: Theme.of(context).hintColor),
+        ),
+      ),
+    );
+  }
+}
+
 class _AutoLoginSwitch extends StatelessWidget {
   const _AutoLoginSwitch();
 

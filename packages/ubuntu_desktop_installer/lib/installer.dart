@@ -125,7 +125,6 @@ Future<void> runInstallerApp(
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
   await subiquityClient.markConfigured([
-    'active_directory',
     'mirror',
     'proxy',
     'ssh',
@@ -429,8 +428,9 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         Routes.whoAreYou: WizardRoute(
           builder: WhoAreYouPage.create,
           userData: InstallationStep.user.index,
-          // TODO: use active directory
-          onNext: (_) => Routes.chooseYourLook,
+          onNext: (settings) => settings.arguments == true
+              ? Routes.activeDirectory
+              : Routes.chooseYourLook,
         ),
         Routes.activeDirectory: const WizardRoute(
           builder: ActiveDirectoryPage.create,

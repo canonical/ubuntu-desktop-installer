@@ -24,7 +24,7 @@ class MockProductNameFile extends Mock implements File {
 
 @GenerateMocks([ConfigService, NetworkService])
 void main() {
-  test('load identity', () async {
+  test('init', () async {
     const identity = IdentityData(
       realname: 'Ubuntu',
       username: 'ubuntu',
@@ -34,6 +34,7 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(WhoAreYouModel.kAutoLoginUser))
@@ -49,7 +50,7 @@ void main() {
     );
 
     await IOOverrides.runZoned(() async {
-      await model.loadIdentity();
+      await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
     verify(client.identity()).called(1);
 
@@ -59,11 +60,13 @@ void main() {
     expect(model.hostname, equals(identity.hostname));
     expect(model.showPassword, false);
     expect(model.autoLogin, false);
+    expect(model.hasActiveDirectorySupport, false);
   });
 
   test('load auto-login', () async {
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(WhoAreYouModel.kAutoLoginUser))
@@ -79,7 +82,7 @@ void main() {
     );
 
     await IOOverrides.runZoned(() async {
-      await model.loadIdentity();
+      await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
 
     expect(model.autoLogin, true);
@@ -90,6 +93,7 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(WhoAreYouModel.kAutoLoginUser))
@@ -104,7 +108,7 @@ void main() {
       network: network,
     );
     await IOOverrides.runZoned(() async {
-      await model.loadIdentity();
+      await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
     verify(client.identity()).called(1);
 
@@ -116,6 +120,7 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.identity()).thenAnswer((_) async => identity);
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(WhoAreYouModel.kAutoLoginUser))
@@ -130,13 +135,13 @@ void main() {
       network: network,
     );
     await IOOverrides.runZoned(() async {
-      await model.loadIdentity();
+      await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
 
     expect(model.hostname, equals('user-impish'));
   });
 
-  test('save identity', () async {
+  test('save', () async {
     final identity = IdentityData(
       realname: 'Ubuntu',
       username: 'ubuntu',
@@ -165,9 +170,10 @@ void main() {
 
     model.autoLogin = false;
 
-    await model.saveIdentity(salt: 'test');
+    await model.save(salt: 'test');
 
     verify(client.setIdentity(identity)).called(1);
+    verify(client.markConfigured(['active_directory'])).called(1);
   });
 
   test('save auto-login', () async {
@@ -189,11 +195,11 @@ void main() {
     model.password = 'not-empty';
 
     model.autoLogin = true;
-    await model.saveIdentity();
+    await model.save();
     verify(config.set(WhoAreYouModel.kAutoLoginUser, model.username)).called(1);
 
     model.autoLogin = false;
-    await model.saveIdentity();
+    await model.save();
     verify(config.set(WhoAreYouModel.kAutoLoginUser, null)).called(1);
   });
 
@@ -372,6 +378,7 @@ void main() {
     final config = MockConfigService();
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
@@ -386,7 +393,7 @@ void main() {
     model.hostname = 'ubuntu';
 
     await IOOverrides.runZoned(() async {
-      await model.loadIdentity();
+      await model.init();
     }, createFile: (path) => MockProductNameFile(''));
     verify(client.identity()).called(1);
 
@@ -401,6 +408,7 @@ void main() {
     final client = MockSubiquityClient();
     final config = MockConfigService();
     final network = MockNetworkService();
+    when(network.isConnected).thenReturn(false);
     when(network.isConnectedSite).thenReturn(false);
     when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
@@ -409,7 +417,7 @@ void main() {
       config: config,
       network: network,
     );
-    expect(model.isConnectedSite, isFalse);
+    expect(model.isConnected, isFalse);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -418,6 +426,34 @@ void main() {
     networkChanged.add(['State']);
 
     expect(wasNotified, isTrue);
-    expect(model.isConnectedSite, isTrue);
+    expect(model.isConnected, isTrue);
+  });
+
+  test('active directory support', () async {
+    final client = MockSubiquityClient();
+    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => true);
+
+    final config = MockConfigService();
+    when(config.get(WhoAreYouModel.kAutoLoginUser))
+        .thenAnswer((_) async => null);
+
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
+    expect(model.hasActiveDirectorySupport, isNull);
+
+    await model.init();
+    expect(model.hasActiveDirectorySupport, isTrue);
+
+    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+
+    await model.init();
+    expect(model.hasActiveDirectorySupport, isFalse);
   });
 }

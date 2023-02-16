@@ -27,6 +27,9 @@ void main() {
     PasswordStrength? passwordStrength,
     bool? autoLogin,
     bool? showPassword,
+    bool? isConnected,
+    bool? hasActiveDirectorySupport,
+    bool? useActiveDirectory,
   }) {
     final model = MockWhoAreYouModel();
     when(model.isValid).thenReturn(isValid ?? false);
@@ -41,6 +44,10 @@ void main() {
     when(model.showPassword).thenReturn(showPassword ?? false);
     when(model.usernameOk).thenReturn(true);
     when(model.usernameValidation).thenReturn(UsernameValidation.OK);
+    when(model.isConnected).thenReturn(isConnected ?? false);
+    when(model.hasActiveDirectorySupport)
+        .thenReturn(hasActiveDirectorySupport ?? false);
+    when(model.useActiveDirectory).thenReturn(useActiveDirectory ?? false);
     return model;
   }
 
@@ -274,6 +281,46 @@ void main() {
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
-    verify(model.saveIdentity()).called(1);
+    verify(model.save()).called(1);
+  });
+
+  testWidgets('has active directory support', (tester) async {
+    final model =
+        buildModel(isConnected: true, hasActiveDirectorySupport: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final checkbox =
+        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    expect(checkbox, findsOneWidget);
+    expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
+    expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNotNull);
+
+    await tester.tap(checkbox);
+    verify(model.useActiveDirectory = true).called(1);
+  });
+
+  testWidgets('no active directory support', (tester) async {
+    final model =
+        buildModel(isConnected: true, hasActiveDirectorySupport: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final checkbox =
+        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    expect(checkbox, findsNothing);
+  });
+
+  testWidgets('no site-level connectivity', (tester) async {
+    final model =
+        buildModel(isConnected: false, hasActiveDirectorySupport: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final checkbox =
+        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    expect(checkbox, findsOneWidget);
+    expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
+    expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNull);
+
+    await tester.tap(checkbox);
+    verifyNever(model.useActiveDirectory = true);
   });
 }

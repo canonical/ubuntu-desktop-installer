@@ -45,7 +45,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
     super.initState();
 
     final model = Provider.of<WhoAreYouModel>(context, listen: false);
-    model.loadIdentity();
+    model.init();
   }
 
   @override
@@ -87,6 +87,11 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
             ),
             const SizedBox(height: kContentSpacing / 2),
             const _AutoLoginSwitch(),
+            const SizedBox(height: kContentSpacing / 2),
+            const Padding(
+              padding: kContentPadding,
+              child: _UseActiveDirectoryCheckButton(),
+            ),
           ],
         );
       }),
@@ -96,7 +101,8 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           context,
           enabled:
               context.select<WhoAreYouModel, bool>((model) => model.isValid),
-          onNext: context.read<WhoAreYouModel>().saveIdentity,
+          arguments: context.select((WhoAreYouModel m) => m.useActiveDirectory),
+          onNext: context.read<WhoAreYouModel>().save,
         ),
       ],
     );
