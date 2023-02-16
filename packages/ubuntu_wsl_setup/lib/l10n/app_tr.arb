@@ -4,7 +4,7 @@
   "@setupCompleteTitle": {},
   "setupCompleteUpdate": "Ubuntu'yu en son sürüme güncellemek için aşağıdaki komutu çalıştırmanız önerilir:",
   "@setupCompleteUpdate": {},
-  "setupCompleteHeader": "Merhaba {user},\nKurulumu başarıyla tamamladınız.",
+  "setupCompleteHeader": "Merhaba {user},\nKurulumu tamamladınız.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -178,6 +178,6 @@
   "@profileSetupHeader": {},
   "advancedSetupMountOptionHelper": "Oto-yerleştirme için yerleştirme seçeneği atlandı",
   "@advancedSetupMountOptionHelper": {},
-  "advancedSetupGUIIntegrationSubtitle": "Bu seçenek otomatik GÖRÜNTÜ ortamı kurulumuna izin verir. Üçüncü parti X sunucusu gerektirir.",
+  "advancedSetupGUIIntegrationSubtitle": "Seçildiğinde otomatik GÖRÜNTÜ ortamı kurulumu etkinleştirilir. Üçüncü parti X sunucusu gerektirir.",
   "@advancedSetupGUIIntegrationSubtitle": {}
 }
