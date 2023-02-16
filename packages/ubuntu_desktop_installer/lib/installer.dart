@@ -268,12 +268,14 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final lang = AppLocalizations.of(context);
+    // final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(AppLocalizations.of(context).welcome),
       ),
-      header: Text(lang.welcomeHeader),
+      // TODO: "Choose your language" makes no sense in autoinstall mode so it's
+      //  temporarily hidden until we have a dedicated loading screen.
+      header: const Text(''), // Text(lang.welcomeHeader),
       content: Row(
         children: [
           Expanded(
