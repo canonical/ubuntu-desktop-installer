@@ -728,5 +728,20 @@
   "installCodecsTitle": "Ek ortam biçimleri desteğini kur",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
-  "@installCodecsSubtitle": {}
+  "@installCodecsSubtitle": {},
+  "restartNow": "Şimdi Yeniden Başlat",
+  "@restartNow": {},
+  "continueTesting": "Test Etmeye Devam Et",
+  "@continueTesting": {},
+  "restartWarning": "Şimdi {RELEASE} test etmeye devam edebilirsiniz, ancak bilgisayarı yeniden başlatana kadar yaptığınız değişiklikler ya da kaydettiğiniz belgeler korunmayacaktır.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Çok fazla birincil bölüm",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "sınıra ulaşıldı",
+  "@partitionLimitReached": {}
 }
