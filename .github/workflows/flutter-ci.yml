@@ -33,7 +33,7 @@ jobs:
 
     - name: Get subiquity dependencies
       working-directory: ./packages/subiquity_client/subiquity
-      run: sudo ./scripts/installdeps.sh
+      run: make install_deps
 
     - name: Check subiquity integration
       run: ./scripts/subiquity_integration
