@@ -22,22 +22,22 @@ class AppLocalizationsUg extends AppLocalizations {
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'ياق';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'ئەسلىگە قايتۇر';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'ھەئە';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'مەرھابا';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsUg extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '‏$RELEASE نى سىناپ كۆرىمەن';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsUg extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '‏$RELEASE نى ئورنىتىمەن';
   }
 
   @override

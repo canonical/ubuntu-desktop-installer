@@ -9,7 +9,7 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ને સ્થાપિત કરો';
   }
 
   @override
@@ -37,7 +37,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'સ્વગતમ';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -63,7 +63,7 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ને સ્થાપિત કરો';
   }
 
   @override
@@ -88,7 +88,7 @@ class AppLocalizationsGu extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'કીબોર્ડ લેઆઉટ';
 
   @override
   String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';

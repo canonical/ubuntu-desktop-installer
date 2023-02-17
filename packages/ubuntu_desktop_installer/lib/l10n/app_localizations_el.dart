@@ -9,7 +9,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Εγκατάσταση του $RELEASE';
   }
 
   @override
@@ -37,7 +37,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Καλωσορίσατε';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Δοκιμάστε το $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Εγκατάσταση του $RELEASE';
   }
 
   @override
@@ -73,11 +73,11 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Ίσως θέλετε να διαβάσετε τις <a href=\"$url\">σημειώσεις έκδοσης</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Απενεργοποίηση του RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -88,22 +88,22 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Διάταξη πληκτρολογίου';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Επιλογή διάταξης πληκτρολογίου:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Εντοπισμός διάταξης πληκτρολογίου';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

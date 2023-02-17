@@ -9,17 +9,17 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'ติดตั้ง $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'ยกเลิก';
 
   @override
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'ตกลง';
 
   @override
   String get noButtonText => 'No';
@@ -37,7 +37,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'ยินดีต้อนรับ';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'ทดลอง $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'ติดตั้ง $RELEASE';
   }
 
   @override
@@ -73,7 +73,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'คุณอาจต้องการอ่าน <a href=\"$url\">บันทึกการออกรุ่น</a>';
   }
 
   @override
@@ -88,22 +88,22 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'ผังแป้นพิมพ์';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'เลือกผังแป้นพิมพ์ของคุณ:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'พิมพ์ที่นี่ เพื่อทดสอบแป้นพิมพ์ของคุณ (กด Alt+Shift เพื่อสลับภาษา)';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'ตรวจหาผังแป้นพิมพ์';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'ปุ่มดังกล่าวมีอยู่บนแป้นพิมพ์หรือไม่?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

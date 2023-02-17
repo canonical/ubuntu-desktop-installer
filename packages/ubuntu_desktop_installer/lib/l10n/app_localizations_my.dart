@@ -9,7 +9,7 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ကို ထည့်သွင်းမည်';
   }
 
   @override
@@ -37,7 +37,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'ကြိုဆိုပါတယ်';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE ကို စမ်းသပ်သုံးစွဲမည်';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ကို ထည့်သွင်းမည်';
   }
 
   @override
