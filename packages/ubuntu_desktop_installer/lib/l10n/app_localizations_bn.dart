@@ -9,35 +9,35 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ইনস্টল করুন';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'বাতিল';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'পরিবর্তন';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'ঠিক আছে';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'না';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'পূর্বাবস্থায় প্রত্যাবর্তন';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'হ্যাঁ';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'স্বাগতম';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE ব্যবহার করে দেখুন';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ইনস্টল করুন';
   }
 
   @override

@@ -13,10 +13,10 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Diddymu';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Newid';
 
   @override
   String get okButtonText => 'Iawn';
@@ -259,7 +259,7 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Math o osodiad';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -394,16 +394,16 @@ class AppLocalizationsCy extends AppLocalizations {
   String get installAlongsideAllocateSpace => 'Allocate space';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Ffeiliau';
 
   @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Maint:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Ar gael:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
@@ -430,13 +430,13 @@ class AppLocalizationsCy extends AppLocalizations {
   String get diskHeadersSystem => 'System';
 
   @override
-  String get diskHeadersFormat => 'Fformat?';
+  String get diskHeadersFormat => 'Fformat';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'Lle rhydd';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Tabl rhaniad newydd';
 
   @override
   String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
@@ -454,13 +454,13 @@ class AppLocalizationsCy extends AppLocalizations {
   String get bootLoaderDevice => 'Device for boot loader installation';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Creu ymraniad';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Newid ymraniad';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Maint:';
 
   @override
   String get partitionUnitB => 'B';
@@ -478,19 +478,19 @@ class AppLocalizationsCy extends AppLocalizations {
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Cynradd';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Rhesymegol';
 
   @override
   String get partitionLocationLabel => 'Location for the new partition:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Dechrau\'r gwagle hwn';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Diwedd y gwagle hwn';
 
   @override
   String get partitionFormatLabel => 'Used as:';
@@ -502,7 +502,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get partitionFormatExt3 => 'Ext3 journaling file system';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'System ffeiliau Ext2';
 
   @override
   String get partitionFormatBtrfs => 'btrfs journaling file system';
@@ -514,31 +514,31 @@ class AppLocalizationsCy extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'System ffeiliau FAT';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'System ffeiliau FAT12';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'System ffeiliau FAT16';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'System ffeiliau FAT32';
 
   @override
   String get partitionFormatSwap => 'Swap area';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'System ffeiliau ISO 9660';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'System ffeiliau VFAT';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'System ffeiliau NTFS';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'System ffeiliau ReiserFS';
 
   @override
   String get partitionFormatZfsroot => 'ZFS root file system';
@@ -547,28 +547,28 @@ class AppLocalizationsCy extends AppLocalizations {
   String get partitionErase => 'Format the partition';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Pwynt clymu:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Pwy ydych chi?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Mewngofnodi\'n awtomatig';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Gofyn am fy nghyfrinair i fewngofnodi';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Eich enw';
 
   @override
   String get whoAreYouPageRealNameRequired => 'A name is required';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Enw eich cyfrifiadur';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'Yr enw a ddefnydir pan yn cyfathrebu a chyfrifiaduron eraill.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'A computer name is required';
@@ -577,7 +577,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Dewiswch enw defnyddiwr';
 
   @override
   String get whoAreYouPageUsernameRequired => 'A username is required';
@@ -598,16 +598,16 @@ class AppLocalizationsCy extends AppLocalizations {
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Dewiswch gyfrinair';
 
   @override
   String get whoAreYouPagePasswordRequired => 'A password is required';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Cadarnhewch eich cyfrinair';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Nid yw\'r cyfrineiriau yn cyd-fynd';
 
   @override
   String get whoAreYouPageShowPassword => 'Show password';
@@ -616,7 +616,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'disg';
 
   @override
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
@@ -664,13 +664,13 @@ class AppLocalizationsCy extends AppLocalizations {
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Tywyll';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Golau';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Gosodi wedi cwblhau';
 
   @override
   String readyToUse(Object system) {
@@ -697,7 +697,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get continueTesting => 'Continue Testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Diffoddwch BitLocker';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -714,10 +714,10 @@ class AppLocalizationsCy extends AppLocalizations {
   String get whereAreYouPageTitle => 'Where are you?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Lleoliad';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Cylchfa amser';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -813,7 +813,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get accessSlideCustomizationOptions => 'Customization options';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Ymddangosiad';
 
   @override
   String get accessSlideAssistiveTechnologies => 'Assistive technologies';
@@ -857,7 +857,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get installationFailed => 'Installation failed';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Ymddiheuriad';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {

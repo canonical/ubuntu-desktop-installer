@@ -37,7 +37,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Chào mừng';
 
   @override
   String get welcomeHeader => 'Choose your language:';

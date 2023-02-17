@@ -9,11 +9,11 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Suiteáil $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Cealaigh';
 
   @override
   String get changeButtonText => 'Change';
@@ -22,22 +22,22 @@ class AppLocalizationsGa extends AppLocalizations {
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Níl';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Fill';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Tá';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Fáilte';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Bain triail as $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Suiteáil $RELEASE';
   }
 
   @override
@@ -73,7 +73,7 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'B\'fhéidir gur mhaith leat na <a href=\"$url\">nótaí eisithe a léamh</a>.';
   }
 
   @override
@@ -88,22 +88,22 @@ class AppLocalizationsGa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Leagan amach méarchláir';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Roghnaigh leagan amach do mhéarchláir:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Scríobh anseo chun do mhéarchlár a tástáil';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Aimsigh leagan amach an méarchláir';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Brúigh cheann de na heochracha se:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'An bhfuil an eochair seo ann ar do mhéarchlár?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

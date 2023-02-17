@@ -5,55 +5,55 @@ class AppLocalizationsSi extends AppLocalizations {
   AppLocalizationsSi([String locale = 'si']) : super(locale);
 
   @override
-  String get appTitle => 'උබුන්ටු ඩෙස්ක්ටොප් ධාවකය';
+  String get appTitle => 'උබුන්ටු වැඩතල ස්ථාපකය';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'ස්ථාපනය $RELEASE';
+    return '$RELEASE ස්ථාපනය';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'අවලංගු';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'වෙනස් කරන්න';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'හරි';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'නැහැ';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'යළි අරඹන්න';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'ප්‍රතිවර්තනය';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'ඔව්';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'ස්ථාපනයෙන් ඉවතට';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'ආයුබෝවන්';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'ඔබගේ භාෂාව තෝරන්න:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'බලන්න හෝ ස්ථාපනය කරන්න';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'ස්ථාපනය අලුත්වැඩියාව';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE අත්හදා බලන්න';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE ස්ථාපනය කරන්න';
   }
 
   @override
@@ -77,7 +77,7 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST අක්‍රිය කරන්න';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -88,67 +88,67 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'යතුරුපුවරුවේ පිරිසැලසුම';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'ඔබගේ යතුරුපුවරු පිරිසැලසුම තෝරන්න:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'ඔබගේ යතුරුපුවරුව පරීක්‍ෂාවට මෙතැන ලියන්න';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'යතුරුපුවරුවේ පිරිසැලසුම අනාවරණය';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'පහත යතුරු වලින් එකක් ඔබන්න:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
 
   @override
   String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'ආරක්‍ෂණ යතුරක් තෝරන්න';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'ආරක්‍ෂණ යතුර තහවුරු කරන්න';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get dontInstallDriverSoftwareNow => 'දැනට ධාවක මෘදුකාංගය ස්ථාපනය නොකරන්න';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'එය පසුව මෘදුකාංග හා යාවත්කාල හරහා ස්ථාපනය කිරීමට හැකිය.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'ආරක්‍ෂණ යතුර වුවමනාය';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'ආරක්‍ෂණ යතුරු නොගැළපේ';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'ආරක්‍ෂණ යතුර පෙන්වන්න';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'අන්තර්ජාලයට සබඳින්න';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get useWiredConnection => 'රැහැන් සම්බන්ධතාවය යොදාගන්න';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get noWiredConnection => 'රැහැන් සම්බන්ධතාවයක් අනාවරණය නොවිණි';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get wiredDisabled => 'රැහැන් සම්බන්ධතාවය අක්‍රියයි';
 
   @override
   String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
@@ -157,55 +157,55 @@ class AppLocalizationsSi extends AppLocalizations {
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'වයි-ෆයි ජාලයකට සබඳින්න';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'සැඟවුණු වයි-ෆයි ජාලයකට සබඳින්න';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get hiddenWifiNetworkNameLabel => 'ජාලයේ නම';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetworkNameRequired => 'ජාල නාමයක් වුවමනාය';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get noInternet => 'දැන් අන්තර්ජාලයට සම්බන්ධ වීමට අවශ්‍ය නැත';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'රැහැන් රහිත ජාලකරණය අබලයි';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noWifiDevicesDetected => 'කිසිදු වයි-ෆයි උපාංගයක් අනාවරණය වී නැත';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wifiMustBeEnabled => 'මෙම පරිගණකයේ වයි-ෆයි භාවිතයට, රැහැන් රහිත ජාලකරණය සබල කළ යුතුය';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'වයි-ෆයි සබල කරන්න';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'සබඳින්න';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'යාවත්කාල හා වෙනත් මෘදුකාංග';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'සාමාන්‍ය ස්ථාපනය';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'වියමන අතිරික්සුව, උපයෝග, කාර්යාල මෘදුකාංග, ක්‍රීඩා සහ මාධ්‍ය වාදක.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'අවම ස්ථාපනය';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'වියමන අතිරික්සුව සහ මූලික උපයෝග.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'වෙනත් විකල්ප';
 
   @override
   String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
@@ -234,7 +234,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get offlineWarning => 'You are currently offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'ආරක්‍ෂණ යතුරක් තෝරන්න';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -242,16 +242,16 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'ආරක්‍ෂණ යතුරක් තෝරන්න';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'ආරක්‍ෂණ යතුර තහවුරු කරන්න';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'ආරක්‍ෂණ යතුරක් වුවමනාය';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'ආරක්‍ෂණ යතුරු නොගැළපේ';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -279,7 +279,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'තැටිය මකාදමා $DISTRO ස්ථාපනය කරන්න';
   }
 
   @override
@@ -288,16 +288,16 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'වැඩිදුර විශේෂාංග...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'වැඩිදුර විශේෂාංග';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'කිසිවක් නැත';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'තේරීමක් නැත';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -305,28 +305,28 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM තෝරා ඇත';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM හා සංකේතනය තෝරා ඇත';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return 'ආරක්‍ෂාව උදෙසා නව $RELEASE ස්ථාපනය සංකේතනය කරන්න';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'ඔබ ඊළඟ පියවරේදී ආරක්‍ෂණ යතුරක් තෝරා ගනු ඇත.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS තෝරා ඇත';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return '$os මකාදමා නැවත ස්ථාපනය කරන්න';
   }
 
   @override
@@ -367,17 +367,17 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'තැටිය මකාදමා $DISTRO ස්ථාපනය කරන්න';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'ධාවකය තෝරන්න:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'සමස්ත තැටිය භාවිතා වනු ඇත:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'ස්ථාපනය කරන්න';
 
   @override
   String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
@@ -394,46 +394,46 @@ class AppLocalizationsSi extends AppLocalizations {
   String get installAlongsideAllocateSpace => 'Allocate space';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'ගොනු';
 
   @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'ප්‍රමාණය:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'තිබේ:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'ස්ථාපනය අරඹන්න';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'උපාංගය';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'වර්ගය';
 
   @override
   String get diskHeadersMountPoint => 'Mount point';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'ප්‍රමාණය';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'භාවිතයි';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'පද්ධතිය';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'නිදහස් ඉඩ';
 
   @override
   String get newPartitionTable => 'New partition table';
@@ -448,7 +448,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'සීමාවට ළඟා විය';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
@@ -460,28 +460,28 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionEditTitle => 'Edit partition';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'ප්‍රමාණය:';
 
   @override
-  String get partitionUnitB => 'B';
+  String get partitionUnitB => 'බ.';
 
   @override
-  String get partitionUnitKB => 'kB';
+  String get partitionUnitKB => 'කි.බ.';
 
   @override
-  String get partitionUnitMB => 'MB';
+  String get partitionUnitMB => 'මෙ.බ.';
 
   @override
-  String get partitionUnitGB => 'GB';
+  String get partitionUnitGB => 'ගි.බ.';
 
   @override
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'ප්‍රාථමික';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'තාර්කික';
 
   @override
   String get partitionLocationLabel => 'Location for the new partition:';
@@ -502,7 +502,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatExt3 => 'Ext3 journaling file system';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2 ගොනු පද්ධතිය';
 
   @override
   String get partitionFormatBtrfs => 'btrfs journaling file system';
@@ -514,34 +514,34 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12 ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16 ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32 ගොනු පද්ධතිය';
 
   @override
   String get partitionFormatSwap => 'Swap area';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660 ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS මූල ගොනු පද්ධතිය';
 
   @override
   String get partitionErase => 'Format the partition';
@@ -550,73 +550,73 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'ඔබ කවුද?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'ස්වයංක්‍රීයව පිවිසෙන්න';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'ප්‍රවේශය සඳහා මාගේ මුරපදය වුවමනාය';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'ඔබගේ නම';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'නමක් වුවමනාය';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'ඔබගේ පරිගණකයේ නම';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'වෙනත් පරිගණක වෙත අමතන විට නම භාවිතා වේ.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'පරිගණකයට නමක් වුවමනාය';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'පරිගණකයේ නම වලංගු නොවේ';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'පරිශ්‍රීලක නාමයක් තෝරන්න';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'පරිශ්‍රීලක නාමයක් වුවමනාය';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'පරිශ්‍රීලක නාමය වලංගු නොවේ';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'එම පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'නම ඉතා දිගයි.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'එම නමෙහි වලංගු නොවන අකුරු අඩංගු වේ.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'මුරපදයක් තෝරන්න';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'මුරපදයක් වුවමනාය';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'මුරපදය තහවුරු කරන්න';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'මුරපද නොගැළපේ';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'මුරපදය පෙන්වන්න';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'වෙනස්කම් තැටියට ලියන්න';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'තැටිය';
 
   @override
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';

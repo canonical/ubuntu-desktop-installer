@@ -9,11 +9,11 @@ class AppLocalizationsNn extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Installer $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Avbryt';
 
   @override
   String get changeButtonText => 'Change';
@@ -22,22 +22,22 @@ class AppLocalizationsNn extends AppLocalizations {
   String get okButtonText => 'OK';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Nei';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Tilbakestill';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Ja';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Velkommen';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsNn extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Prøv $RELEASE';
   }
 
   @override
@@ -63,17 +63,17 @@ class AppLocalizationsNn extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Installer $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Installer \$$RELEASE ved sida av (eller i staden for) systemet du har no. Dette tek som regel ikkje lang tid.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Du kan ha nytte av å lesa <a href=\"$url\">utgjevingsmerknadane</a>.';
   }
 
   @override

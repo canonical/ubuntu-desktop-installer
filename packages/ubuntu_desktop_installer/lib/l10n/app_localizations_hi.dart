@@ -9,35 +9,35 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE को संस्थापित करें';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'रद्द करें';
 
   @override
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'ठीक है';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'नहीं';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'प्रत्यावर्त';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'हाँ';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'सुस्वागतम';
 
   @override
   String get welcomeHeader => 'Choose your language:';

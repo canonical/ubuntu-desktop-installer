@@ -9,7 +9,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE స్థాపించు';
   }
 
   @override
@@ -37,7 +37,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'స్వాగతం';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE ప్రయత్నించండి';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE స్థాపించు';
   }
 
   @override

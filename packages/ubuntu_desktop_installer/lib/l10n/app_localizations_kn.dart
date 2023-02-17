@@ -37,7 +37,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'ಸುಸ್ವಾಗತ';
 
   @override
   String get welcomeHeader => 'Choose your language:';

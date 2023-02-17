@@ -9,17 +9,17 @@ class AppLocalizationsBo extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE་སྒྲིག་འཇུག་བྱེད་པ';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'ཕྱིར་འཐེན།';
 
   @override
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'འགྲིག';
 
   @override
   String get noButtonText => 'No';
@@ -28,7 +28,7 @@ class AppLocalizationsBo extends AppLocalizations {
   String get restartButtonText => 'Restart';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'སླར་གསོ';
 
   @override
   String get yesButtonText => 'Yes';
@@ -37,7 +37,7 @@ class AppLocalizationsBo extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'དགའ་བསུ་ཞུ';
 
   @override
   String get welcomeHeader => 'Choose your language:';
