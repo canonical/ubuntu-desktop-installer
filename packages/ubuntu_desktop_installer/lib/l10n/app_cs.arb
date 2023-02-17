@@ -762,10 +762,27 @@
   },
   "installDriversTitle": "Nainstalovat ovladače od třetích stran pro grafické čipy a Wi-Fi síťová rozhraní",
   "@installDriversTitle": {},
-  "installCodecsTitle": "Nainstalovat podporu pro další formáty médií",
+  "installCodecsTitle": "Stáhnout a nainstalovat podporu pro další formáty médií",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.",
   "@installCodecsSubtitle": {},
   "installDriversSubtitle": "Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.",
-  "@installDriversSubtitle": {}
+  "@installDriversSubtitle": {},
+  "restartWarning": "Nyní můžete pokračovat ve zkoušení {RELEASE}, ale dokud počítač nerestartujete, veškeré provedené změny nebo vytvořené dokumenty nebudou zachovány.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "offlineWarning": "V tu chvíli nejste připojení k Internetu",
+  "@offlineWarning": {},
+  "restartNow": "Restartovat nyní",
+  "@restartNow": {},
+  "continueTesting": "Pokračovat ve zkoušení",
+  "@continueTesting": {},
+  "tooManyPrimaryPartitions": "Příliš mnoho primárních oddílů",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "dosaženo limitu",
+  "@partitionLimitReached": {}
 }
