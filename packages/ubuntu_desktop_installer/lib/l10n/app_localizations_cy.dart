@@ -9,7 +9,7 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Gosod $RELEASE';
   }
 
   @override
@@ -19,28 +19,28 @@ class AppLocalizationsCy extends AppLocalizations {
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Iawn';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Na';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Ailgychwyn';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Dychwelyd';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Ie';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Croeso';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Dewiswch eich iaith:';
 
   @override
   String get tryOrInstallPageTitle => 'Try or install';
@@ -53,7 +53,7 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Rhoi cynnig ar $RELEASE';
   }
 
   @override
@@ -63,21 +63,21 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Gosod $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Gosod $RELEASE ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Efallai hoffech ddarllen <a href=\"$url\">nodiadau\'r fersiwn</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'Diffoddwch RST';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -88,22 +88,22 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Cynllun bysellfwrdd';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Dewiswch gynllun eich bysellfwrdd:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Teipiwch yma i brofi\'ch bysellfwrdd';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Canfod Cynllun Bysellfwrdd';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'Pwyswch un o\'r bysellau canlynol:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'Ydy\'r fysell ganlynol yn bresennol ar eich bysellfwrdd?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';
@@ -115,10 +115,10 @@ class AppLocalizationsCy extends AppLocalizations {
   String get configureSecureBootOption => 'Configure Secure Boot';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get chooseSecurityKey => 'Dewiswch allwedd diogelwch';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get confirmSecurityKey => 'Cadarnhewch yr allwedd diogelwch';
 
   @override
   String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
@@ -184,34 +184,34 @@ class AppLocalizationsCy extends AppLocalizations {
   String get enableWifi => 'Enable Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Cysylltu';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Diweddariadau a meddalwedd eraill';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Pa apiau hoffech chi eu gosod yn gyntaf?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Gosodiad arferol';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Porwr gwe, gwasanaethau, meddalwedd swyddfa, gemau a chwaraewyr cyfrwng.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Gosodiad lleiaf';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Porwyr gwe a gwasanaethau sylfaenol.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Dewisiadau eraill';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Gosod meddalwedd trydydd parti ar gyfer caledwedd graffigau a diwifr a fformatau cyfryngau eraill';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'Mae\'r feddalwedd hwn yn destun amodau trwyddedu sydd ynghlwm yn y ddogfennaeth. Mae peth yn fasnachol.';
 
   @override
   String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
@@ -223,7 +223,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get installCodecsTitle => 'Install support for additional media formats';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Mae\'r feddalwedd hwn yn destun amodau trwyddedu sydd ynghlwm yn y ddogfennaeth. Mae peth yn fasnachol.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -276,50 +276,50 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Dileu\'r ddisg a gosod $DISTRO';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">Rhybudd:</font> Bydd hyn yn dileu eich holl raglenni, dogfennau, lluniau, cerddoriaeth, ac unrhyw ffeiliau eraill ar bob system weithredu.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Nodweddion Uwch...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Nodweddion uwch';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Dim';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Dim wedi ei ddewis';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return 'Defnyddio LVM gyda\'r gosodiad $RELEASE newydd';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM wedi\'i ddewis';
 
   @override
   String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return 'Amgryptio\'r gosodiad $RELEASE newydd ar gyfer diogelwch';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'Byddwch yn dewis allwedd diogelwch yn y cam nesaf.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS wedi\'i ddewis';
 
   @override
   String installationTypeReinstall(Object os) {
@@ -328,7 +328,7 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">Rhybudd:</font> Bydd hyn yn dileu eich holl raglenni $os, dogfennau, lluniau, cerddoriaeth, ac unrhyw ffeiliau eraill.';
   }
 
   @override
@@ -352,29 +352,29 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Caiff dogfennau, cerddoriaeth, a ffeiliau personol eriall eu cadw. Gallwch ddewis pa system weithredu i\'w defnyddio bob tro mae\'r cyfrifiadur yn cychwyn.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Rhywbeth arall';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'Gallwch greu neu newid maint rhaniadau eich hun, neu ddewis nifer o raniadau ar gyfer $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Dileu\'r ddisg a gosod $DISTRO';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Dewis gyriant:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Defnyddir yr holl ddisg:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Gosod Nawr';
 
   @override
   String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
@@ -406,28 +406,28 @@ class AppLocalizationsCy extends AppLocalizations {
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Dechrau Gosod';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Dyfais';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Teip';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Pwynt clymu';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Maint';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Defnyddir';
 
   @override
   String get diskHeadersSystem => 'System';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Fformat?';
 
   @override
   String get freeDiskSpace => 'free space';

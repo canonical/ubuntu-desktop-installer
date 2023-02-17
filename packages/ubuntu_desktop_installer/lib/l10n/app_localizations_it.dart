@@ -190,7 +190,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Aggiornamenti e altro software';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Quali applicazioni installare?';
 
   @override
   String get normalInstallationTitle => 'Installazione normale';
@@ -239,10 +239,10 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Scegli una chiave di sicurezza';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Conferma la chiave di sicurezza';
 
   @override
   String get chooseSecurityKeyRequired => 'A security key is required';
