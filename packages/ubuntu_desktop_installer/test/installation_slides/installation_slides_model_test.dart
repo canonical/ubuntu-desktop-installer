@@ -125,22 +125,6 @@ void main() async {
     expect(model.hasError, isTrue);
   });
 
-  test('reboot', () async {
-    var windowClosed = false;
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
-
-    final client = MockSubiquityClient();
-    final journal = MockJournalService();
-    final model = InstallationSlidesModel(client, journal);
-
-    await model.reboot(immediate: true);
-    verify(client.reboot(immediate: true)).called(1);
-    expect(windowClosed, isTrue);
-  });
-
   test('log visibility', () async {
     final model = InstallationSlidesModel(
       MockSubiquityClient(),

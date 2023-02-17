@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
@@ -25,12 +24,11 @@ class InstallationEvent {
 }
 
 /// View model for [InstallationSlidesPage].
-class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
+class InstallationSlidesModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
-  InstallationSlidesModel(this.client, this._journal);
+  InstallationSlidesModel(this._client, this._journal);
 
-  @override
-  final SubiquityClient client;
+  final SubiquityClient _client;
   final JournalService _journal;
 
   Stream<String>? _log;
@@ -98,7 +96,7 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
 
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
-    return client.status().then((status) {
+    return _client.status().then((status) {
       _log = _journal.start(status.logSyslogId);
       _updateStatus(status);
       _monitorStatus(status.eventSyslogId);
@@ -130,14 +128,8 @@ class InstallationSlidesModel extends SafeChangeNotifier with SystemShutdown {
     final events = _journal.start(syslogId, output: JournalOutput.cat);
     final subscription = events.listen(_processEvent);
     while (!isDone && !hasError) {
-      await client.status(current: state).then(_updateStatus);
+      await _client.status(current: state).then(_updateStatus);
     }
     subscription.cancel();
-  }
-
-  /// Requests an immediate system reboot.
-  @override
-  Future<void> reboot({bool immediate = true}) {
-    return super.reboot(immediate: immediate);
   }
 }
