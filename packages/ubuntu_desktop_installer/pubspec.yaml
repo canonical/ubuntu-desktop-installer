@@ -27,7 +27,6 @@ dependencies:
   gsettings: ^0.2.5
   handy_window: ^0.3.0
   intl: ^0.17.0
-  just_the_tooltip: ^0.0.12
   meta: ^1.7.0
   nm: ^0.5.0
   path: ^1.8.0

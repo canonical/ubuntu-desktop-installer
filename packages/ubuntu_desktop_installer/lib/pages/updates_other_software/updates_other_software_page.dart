@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:just_the_tooltip/just_the_tooltip.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru/yaru.dart';
-import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
@@ -91,21 +88,14 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             onChanged: model.setInstallDrivers,
           ),
           const SizedBox(height: kContentSpacing),
-          TooltipBuilder(
-            visible: !model.isOnline,
-            icon: Icon(YaruIcons.warning_filled,
-                color: Theme.of(context).warningColor),
-            label: Text(lang.offlineWarning,
-                style: TextStyle(color: Theme.of(context).warningColor)),
-            child: Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: YaruCheckButton(
-                title: Text(lang.installCodecsTitle),
-                subtitle: Text(lang.installCodecsSubtitle),
-                contentPadding: kContentPadding,
-                value: model.installCodecs && model.isOnline,
-                onChanged: model.isOnline ? model.setInstallCodecs : null,
-              ),
+          Tooltip(
+            message: !model.isOnline ? lang.offlineWarning : '',
+            child: YaruCheckButton(
+              title: Text(lang.installCodecsTitle),
+              subtitle: Text(lang.installCodecsSubtitle),
+              contentPadding: kContentPadding,
+              value: model.installCodecs && model.isOnline,
+              onChanged: model.isOnline ? model.setInstallCodecs : null,
             ),
           ),
         ],
@@ -130,54 +120,6 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           },
         ),
       ],
-    );
-  }
-}
-
-class TooltipBuilder extends StatelessWidget {
-  const TooltipBuilder({
-    super.key,
-    required this.visible,
-    required this.icon,
-    required this.label,
-    required this.child,
-  });
-
-  final bool visible;
-  final Widget icon;
-  final Widget label;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    if (!visible) {
-      return child;
-    }
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return JustTheTooltip(
-          offset: constraints.maxWidth * 0.5 * (1 - kContentWidthFraction),
-          preferredDirection: Directionality.of(context) == TextDirection.rtl
-              ? AxisDirection.left
-              : AxisDirection.right,
-          margin: const EdgeInsets.all(kContentSpacing),
-          content: Padding(
-            padding: const EdgeInsets.all(kContentSpacing / 2),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              textDirection: Directionality.of(context),
-              children: [
-                icon,
-                const SizedBox(width: kContentSpacing),
-                Expanded(
-                  child: label,
-                ),
-              ],
-            ),
-          ),
-          child: child,
-        );
-      },
     );
   }
 }
