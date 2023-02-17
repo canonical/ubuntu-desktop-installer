@@ -71,8 +71,9 @@ class InstallationCompletePage extends StatelessWidget {
                         onPressed: () async {
                           final model =
                               context.read<InstallationCompleteModel>();
+                          final window = YaruWindow.of(context);
                           await Wizard.of(context).done();
-                          model.reboot(immediate: false);
+                          model.reboot().then((_) => window.close());
                         },
                         child: Text(lang.restartNow),
                       ),
@@ -81,10 +82,9 @@ class InstallationCompletePage extends StatelessWidget {
                     Expanded(
                       child: OutlinedButton(
                         onPressed: () async {
-                          final model =
-                              context.read<InstallationCompleteModel>();
+                          final window = YaruWindow.of(context);
                           await Wizard.of(context).done();
-                          model.continueTesting();
+                          window.close();
                         },
                         child: Text(lang.continueTesting),
                       ),

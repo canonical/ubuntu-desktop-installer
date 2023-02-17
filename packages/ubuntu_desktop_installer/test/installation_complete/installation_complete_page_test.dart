@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -30,8 +31,18 @@ void main() {
     final restartButton = find.textContaining(tester.lang.restartButtonText);
     expect(restartButton, findsOneWidget);
 
+    var windowClosed = false;
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('close'));
+      windowClosed = true;
+    });
+
     await tester.tap(restartButton);
-    verify(model.reboot(immediate: false)).called(1);
+    await tester.pump();
+    verify(model.reboot()).called(1);
+
+    expect(windowClosed, isTrue);
   });
 
   testWidgets('continue testing', (tester) async {
@@ -42,8 +53,18 @@ void main() {
         find.widgetWithText(OutlinedButton, tester.lang.continueTesting);
     expect(continueButton, findsOneWidget);
 
+    var windowClosed = false;
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('close'));
+      windowClosed = true;
+    });
+
     await tester.tap(continueButton);
-    verify(model.continueTesting()).called(1);
+    await tester.pump();
+    verifyNever(model.reboot());
+
+    expect(windowClosed, isTrue);
   });
 
   testWidgets('creates a model', (tester) async {
