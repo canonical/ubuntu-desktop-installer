@@ -54,7 +54,10 @@ class TurnOffBitLockerPage extends StatelessWidget {
           context,
           label: lang.restartIntoWindows,
           highlighted: true,
-          onDone: () => model.reboot(immediate: true),
+          onDone: () {
+            final window = YaruWindow.of(context);
+            model.reboot().then((_) => window.close());
+          },
         ),
       ],
     );
