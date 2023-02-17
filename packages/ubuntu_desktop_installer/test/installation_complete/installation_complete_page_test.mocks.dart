@@ -3,12 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart'
-    as _i3;
+    as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -21,61 +20,22 @@ import 'package:ubuntu_desktop_installer/pages/installation_complete/installatio
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeSubiquityClient_0 extends _i1.SmartFake
-    implements _i2.SubiquityClient {
-  _FakeSubiquityClient_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [InstallationCompleteModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockInstallationCompleteModel extends _i1.Mock
-    implements _i3.InstallationCompleteModel {
+    implements _i2.InstallationCompleteModel {
   MockInstallationCompleteModel() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.SubiquityClient get client => (super.noSuchMethod(
-        Invocation.getter(#client),
-        returnValue: _FakeSubiquityClient_0(
-          this,
-          Invocation.getter(#client),
-        ),
-      ) as _i2.SubiquityClient);
-  @override
-  _i4.Future<void> continueTesting() => (super.noSuchMethod(
-        Invocation.method(
-          #continueTesting,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<void> reboot({required bool? immediate}) => (super.noSuchMethod(
+  _i3.Future<void> reboot() => (super.noSuchMethod(
         Invocation.method(
           #reboot,
           [],
-          {#immediate: immediate},
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<void> shutdown({required bool? immediate}) => (super.noSuchMethod(
-        Invocation.method(
-          #shutdown,
-          [],
-          {#immediate: immediate},
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
