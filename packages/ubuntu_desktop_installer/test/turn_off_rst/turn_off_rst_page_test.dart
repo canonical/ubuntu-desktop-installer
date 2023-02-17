@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -32,8 +33,18 @@ void main() {
     );
     expect(restartButton, findsOneWidget);
 
+    var windowClosed = false;
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('close'));
+      windowClosed = true;
+    });
+
     await tester.tap(restartButton);
-    verify(model.reboot(immediate: true)).called(1);
+    await tester.pump();
+    verify(model.reboot()).called(1);
+
+    expect(windowClosed, isTrue);
   });
 
   testWidgets('tap link', (tester) async {

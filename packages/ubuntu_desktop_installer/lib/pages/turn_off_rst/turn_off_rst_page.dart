@@ -58,7 +58,10 @@ class TurnOffRSTPage extends StatelessWidget {
             context,
             label: lang.restartButtonText,
             highlighted: true,
-            onDone: () => model.reboot(immediate: true),
+            onDone: () {
+              final window = YaruWindow.of(context);
+              model.reboot().then((_) => window.close());
+            },
           ),
         ],
       ),
