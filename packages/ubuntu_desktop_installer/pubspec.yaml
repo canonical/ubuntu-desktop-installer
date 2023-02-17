@@ -57,7 +57,7 @@ dependencies:
   upower: ^0.7.0
   yaru: ^0.5.0
   yaru_icons: ^1.0.0
-  yaru_widgets: ^2.0.0
+  yaru_widgets: ^2.1.0
 
 dev_dependencies:
   build_runner: ^2.2.0

@@ -445,10 +445,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Çok fazla birincil bölüm';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'sınıra ulaşıldı';
 
   @override
   String get bootLoaderDevice => 'Önyükleyici kurulumu yapılacak cihaz';
@@ -684,17 +684,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Şimdi $RELEASE test etmeye devam edebilirsiniz, ancak bilgisayarı yeniden başlatana kadar yaptığınız değişiklikler ya da kaydettiğiniz belgeler korunmayacaktır.';
   }
 
   @override
   String get shutdown => 'Kapat';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Şimdi Yeniden Başlat';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Test Etmeye Devam Et';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker\'ı kapat';

@@ -135,5 +135,11 @@
   "installThirdPartyTitle": "Installa software di terze parti per hardware grafico e Wi-Fi, e altri formati multimediali",
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Questo software è soggetto ai termini di licenza inclusi nella documentazione. Alcuni sono proprietari.",
-  "@installThirdPartySubtitle": {}
+  "@installThirdPartySubtitle": {},
+  "chooseSecurityKeyHint": "Scegli una chiave di sicurezza",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Conferma la chiave di sicurezza",
+  "@chooseSecurityKeyConfirmHint": {},
+  "updatesOtherSoftwarePageDescription": "Quali applicazioni installare?",
+  "@updatesOtherSoftwarePageDescription": {}
 }
