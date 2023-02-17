@@ -67,8 +67,8 @@ class _FakeKeyboardSetup_3 extends _i1.SmartFake implements _i3.KeyboardSetup {
         );
 }
 
-class _FakeIdentityData_4 extends _i1.SmartFake implements _i3.IdentityData {
-  _FakeIdentityData_4(
+class _FakeMirrorGet_4 extends _i1.SmartFake implements _i3.MirrorGet {
+  _FakeMirrorGet_4(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -77,8 +77,8 @@ class _FakeIdentityData_4 extends _i1.SmartFake implements _i3.IdentityData {
         );
 }
 
-class _FakeTimeZoneInfo_5 extends _i1.SmartFake implements _i3.TimeZoneInfo {
-  _FakeTimeZoneInfo_5(
+class _FakeIdentityData_5 extends _i1.SmartFake implements _i3.IdentityData {
+  _FakeIdentityData_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -87,9 +87,19 @@ class _FakeTimeZoneInfo_5 extends _i1.SmartFake implements _i3.TimeZoneInfo {
         );
 }
 
-class _FakeApplicationStatus_6 extends _i1.SmartFake
+class _FakeTimeZoneInfo_6 extends _i1.SmartFake implements _i3.TimeZoneInfo {
+  _FakeTimeZoneInfo_6(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeApplicationStatus_7 extends _i1.SmartFake
     implements _i3.ApplicationStatus {
-  _FakeApplicationStatus_6(
+  _FakeApplicationStatus_7(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -98,9 +108,9 @@ class _FakeApplicationStatus_6 extends _i1.SmartFake
         );
 }
 
-class _FakeGuidedStorageResponseV2_7 extends _i1.SmartFake
+class _FakeGuidedStorageResponseV2_8 extends _i1.SmartFake
     implements _i3.GuidedStorageResponseV2 {
-  _FakeGuidedStorageResponseV2_7(
+  _FakeGuidedStorageResponseV2_8(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -109,9 +119,9 @@ class _FakeGuidedStorageResponseV2_7 extends _i1.SmartFake
         );
 }
 
-class _FakeStorageResponseV2_8 extends _i1.SmartFake
+class _FakeStorageResponseV2_9 extends _i1.SmartFake
     implements _i3.StorageResponseV2 {
-  _FakeStorageResponseV2_8(
+  _FakeStorageResponseV2_9(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -120,9 +130,9 @@ class _FakeStorageResponseV2_8 extends _i1.SmartFake
         );
 }
 
-class _FakeWSLSetupOptions_9 extends _i1.SmartFake
+class _FakeWSLSetupOptions_10 extends _i1.SmartFake
     implements _i3.WSLSetupOptions {
-  _FakeWSLSetupOptions_9(
+  _FakeWSLSetupOptions_10(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -131,9 +141,9 @@ class _FakeWSLSetupOptions_9 extends _i1.SmartFake
         );
 }
 
-class _FakeWSLConfigurationBase_10 extends _i1.SmartFake
+class _FakeWSLConfigurationBase_11 extends _i1.SmartFake
     implements _i3.WSLConfigurationBase {
-  _FakeWSLConfigurationBase_10(
+  _FakeWSLConfigurationBase_11(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -142,9 +152,9 @@ class _FakeWSLConfigurationBase_10 extends _i1.SmartFake
         );
 }
 
-class _FakeWSLConfigurationAdvanced_11 extends _i1.SmartFake
+class _FakeWSLConfigurationAdvanced_12 extends _i1.SmartFake
     implements _i3.WSLConfigurationAdvanced {
-  _FakeWSLConfigurationAdvanced_11(
+  _FakeWSLConfigurationAdvanced_12(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -153,8 +163,8 @@ class _FakeWSLConfigurationAdvanced_11 extends _i1.SmartFake
         );
 }
 
-class _FakeAnyStep_12 extends _i1.SmartFake implements _i3.AnyStep {
-  _FakeAnyStep_12(
+class _FakeAnyStep_13 extends _i1.SmartFake implements _i3.AnyStep {
+  _FakeAnyStep_13(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -163,9 +173,9 @@ class _FakeAnyStep_12 extends _i1.SmartFake implements _i3.AnyStep {
         );
 }
 
-class _FakeDriversResponse_13 extends _i1.SmartFake
+class _FakeDriversResponse_14 extends _i1.SmartFake
     implements _i3.DriversResponse {
-  _FakeDriversResponse_13(
+  _FakeDriversResponse_14(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -174,8 +184,8 @@ class _FakeDriversResponse_13 extends _i1.SmartFake
         );
 }
 
-class _FakeCodecsData_14 extends _i1.SmartFake implements _i3.CodecsData {
-  _FakeCodecsData_14(
+class _FakeCodecsData_15 extends _i1.SmartFake implements _i3.CodecsData {
+  _FakeCodecsData_15(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -184,8 +194,8 @@ class _FakeCodecsData_14 extends _i1.SmartFake implements _i3.CodecsData {
         );
 }
 
-class _FakeRefreshStatus_15 extends _i1.SmartFake implements _i3.RefreshStatus {
-  _FakeRefreshStatus_15(
+class _FakeRefreshStatus_16 extends _i1.SmartFake implements _i3.RefreshStatus {
+  _FakeRefreshStatus_16(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -194,8 +204,8 @@ class _FakeRefreshStatus_15 extends _i1.SmartFake implements _i3.RefreshStatus {
         );
 }
 
-class _FakeChange_16 extends _i1.SmartFake implements _i3.Change {
-  _FakeChange_16(
+class _FakeChange_17 extends _i1.SmartFake implements _i3.Change {
+  _FakeChange_17(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -204,8 +214,8 @@ class _FakeChange_16 extends _i1.SmartFake implements _i3.Change {
         );
 }
 
-class _FakeEndpoint_17 extends _i1.SmartFake implements _i4.Endpoint {
-  _FakeEndpoint_17(
+class _FakeEndpoint_18 extends _i1.SmartFake implements _i4.Endpoint {
+  _FakeEndpoint_18(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -486,22 +496,29 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<String> mirror() => (super.noSuchMethod(
+  _i6.Future<_i3.MirrorGet> mirror() => (super.noSuchMethod(
         Invocation.method(
           #mirror,
           [],
         ),
-        returnValue: _i6.Future<String>.value(''),
-      ) as _i6.Future<String>);
+        returnValue: _i6.Future<_i3.MirrorGet>.value(_FakeMirrorGet_4(
+          this,
+          Invocation.method(
+            #mirror,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.MirrorGet>);
   @override
-  _i6.Future<void> setMirror(String? mirror) => (super.noSuchMethod(
+  _i6.Future<_i3.MirrorPostResponse> setMirror(_i3.MirrorPost? mirror) =>
+      (super.noSuchMethod(
         Invocation.method(
           #setMirror,
           [mirror],
         ),
-        returnValue: _i6.Future<void>.value(),
-        returnValueForMissingStub: _i6.Future<void>.value(),
-      ) as _i6.Future<void>);
+        returnValue:
+            _i6.Future<_i3.MirrorPostResponse>.value(_i3.MirrorPostResponse.OK),
+      ) as _i6.Future<_i3.MirrorPostResponse>);
   @override
   _i6.Future<bool> freeOnly() => (super.noSuchMethod(
         Invocation.method(
@@ -525,7 +542,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           #identity,
           [],
         ),
-        returnValue: _i6.Future<_i3.IdentityData>.value(_FakeIdentityData_4(
+        returnValue: _i6.Future<_i3.IdentityData>.value(_FakeIdentityData_5(
           this,
           Invocation.method(
             #identity,
@@ -559,7 +576,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           #timezone,
           [],
         ),
-        returnValue: _i6.Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_5(
+        returnValue: _i6.Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_6(
           this,
           Invocation.method(
             #timezone,
@@ -585,7 +602,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           {#current: current},
         ),
         returnValue:
-            _i6.Future<_i3.ApplicationStatus>.value(_FakeApplicationStatus_6(
+            _i6.Future<_i3.ApplicationStatus>.value(_FakeApplicationStatus_7(
           this,
           Invocation.method(
             #status,
@@ -639,7 +656,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           {#wait: wait},
         ),
         returnValue: _i6.Future<_i3.GuidedStorageResponseV2>.value(
-            _FakeGuidedStorageResponseV2_7(
+            _FakeGuidedStorageResponseV2_8(
           this,
           Invocation.method(
             #getGuidedStorageV2,
@@ -657,7 +674,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [choice],
         ),
         returnValue: _i6.Future<_i3.GuidedStorageResponseV2>.value(
-            _FakeGuidedStorageResponseV2_7(
+            _FakeGuidedStorageResponseV2_8(
           this,
           Invocation.method(
             #setGuidedStorageV2,
@@ -673,7 +690,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #getOriginalStorageV2,
@@ -690,7 +707,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           {#wait: wait},
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #getStorageV2,
@@ -706,7 +723,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #setStorageV2,
@@ -721,7 +738,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #resetStorageV2,
@@ -745,7 +762,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           ],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #addPartitionV2,
@@ -771,7 +788,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           ],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #editPartitionV2,
@@ -796,7 +813,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           ],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #deletePartitionV2,
@@ -815,7 +832,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [disk],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #addBootPartitionV2,
@@ -831,7 +848,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [disk],
         ),
         returnValue:
-            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_8(
+            _i6.Future<_i3.StorageResponseV2>.value(_FakeStorageResponseV2_9(
           this,
           Invocation.method(
             #reformatDiskV2,
@@ -866,7 +883,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue:
-            _i6.Future<_i3.WSLSetupOptions>.value(_FakeWSLSetupOptions_9(
+            _i6.Future<_i3.WSLSetupOptions>.value(_FakeWSLSetupOptions_10(
           this,
           Invocation.method(
             #wslSetupOptions,
@@ -892,7 +909,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue: _i6.Future<_i3.WSLConfigurationBase>.value(
-            _FakeWSLConfigurationBase_10(
+            _FakeWSLConfigurationBase_11(
           this,
           Invocation.method(
             #wslConfigurationBase,
@@ -918,7 +935,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue: _i6.Future<_i3.WSLConfigurationAdvanced>.value(
-            _FakeWSLConfigurationAdvanced_11(
+            _FakeWSLConfigurationAdvanced_12(
           this,
           Invocation.method(
             #wslConfigurationAdvanced,
@@ -944,7 +961,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           #getKeyboardStep,
           [step],
         ),
-        returnValue: _i6.Future<_i3.AnyStep>.value(_FakeAnyStep_12(
+        returnValue: _i6.Future<_i3.AnyStep>.value(_FakeAnyStep_13(
           this,
           Invocation.method(
             #getKeyboardStep,
@@ -959,7 +976,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
         ),
         returnValue:
-            _i6.Future<_i3.DriversResponse>.value(_FakeDriversResponse_13(
+            _i6.Future<_i3.DriversResponse>.value(_FakeDriversResponse_14(
           this,
           Invocation.method(
             #getDrivers,
@@ -983,7 +1000,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           #getCodecs,
           [],
         ),
-        returnValue: _i6.Future<_i3.CodecsData>.value(_FakeCodecsData_14(
+        returnValue: _i6.Future<_i3.CodecsData>.value(_FakeCodecsData_15(
           this,
           Invocation.method(
             #getCodecs,
@@ -1009,7 +1026,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           [],
           {#wait: wait},
         ),
-        returnValue: _i6.Future<_i3.RefreshStatus>.value(_FakeRefreshStatus_15(
+        returnValue: _i6.Future<_i3.RefreshStatus>.value(_FakeRefreshStatus_16(
           this,
           Invocation.method(
             #checkRefresh,
@@ -1033,7 +1050,7 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           #getRefreshProgress,
           [changeId],
         ),
-        returnValue: _i6.Future<_i3.Change>.value(_FakeChange_16(
+        returnValue: _i6.Future<_i3.Change>.value(_FakeChange_17(
           this,
           Invocation.method(
             #getRefreshProgress,
@@ -1062,7 +1079,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(
         Invocation.getter(#endpoint),
-        returnValue: _FakeEndpoint_17(
+        returnValue: _FakeEndpoint_18(
           this,
           Invocation.getter(#endpoint),
         ),
@@ -1081,7 +1098,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
             #environment: environment,
           },
         ),
-        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_17(
+        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_18(
           this,
           Invocation.method(
             #start,
