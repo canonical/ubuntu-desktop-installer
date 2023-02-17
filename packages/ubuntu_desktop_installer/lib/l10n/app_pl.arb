@@ -707,7 +707,7 @@
   "@installationTypeLVMEncryptionSelected": {},
   "installDriversTitle": "Zainstaluj oprogramowanie innego dostawcy do sprzętu graficznego i Wi-Fi",
   "@installDriversTitle": {},
-  "installCodecsTitle": "Zainstaluj obsługę dodatkowych formatów multimediów",
+  "installCodecsTitle": "Pobierz i zainstaluj obsługę dodatkowych formatów multimediów",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre jest własnościowe.",
   "@installCodecsSubtitle": {},
@@ -727,5 +727,7 @@
     }
   },
   "continueTesting": "Kontynuuj testowanie",
-  "@continueTesting": {}
+  "@continueTesting": {},
+  "offlineWarning": "Jesteś obecnie offline",
+  "@offlineWarning": {}
 }
