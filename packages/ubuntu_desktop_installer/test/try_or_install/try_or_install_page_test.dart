@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -141,5 +142,17 @@ void main() {
     await tester.pump();
 
     expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+
+    var windowClosed = false;
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('close'));
+      windowClosed = true;
+    });
+
+    await tester.tap(continueButton);
+    await tester.pump();
+
+    expect(windowClosed, isTrue);
   });
 }
