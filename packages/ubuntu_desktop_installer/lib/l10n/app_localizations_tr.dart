@@ -231,6 +231,9 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get offlineWarning => 'You are currently offline';
+
+  @override
   String get chooseSecurityKeyTitle => 'Güvenlik anahtarı seç';
 
   @override

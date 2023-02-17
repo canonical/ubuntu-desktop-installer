@@ -641,7 +641,7 @@ abstract class AppLocalizations {
   /// No description provided for @installCodecsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Install support for additional media formats'**
+  /// **'Download and install support for additional media formats'**
   String get installCodecsTitle;
 
   /// No description provided for @installCodecsSubtitle.
@@ -655,6 +655,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.'**
   String onBatteryWarning(Object color);
+
+  /// No description provided for @offlineWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently offline'**
+  String get offlineWarning;
 
   /// No description provided for @chooseSecurityKeyTitle.
   ///

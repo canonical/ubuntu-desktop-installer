@@ -88,12 +88,15 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
             onChanged: model.setInstallDrivers,
           ),
           const SizedBox(height: kContentSpacing),
-          YaruCheckButton(
-            title: Text(lang.installCodecsTitle),
-            subtitle: Text(lang.installCodecsSubtitle),
-            contentPadding: kContentPadding,
-            value: model.installCodecs && model.isOnline,
-            onChanged: model.isOnline ? model.setInstallCodecs : null,
+          Tooltip(
+            message: !model.isOnline ? lang.offlineWarning : '',
+            child: YaruCheckButton(
+              title: Text(lang.installCodecsTitle),
+              subtitle: Text(lang.installCodecsSubtitle),
+              contentPadding: kContentPadding,
+              value: model.installCodecs && model.isOnline,
+              onChanged: model.isOnline ? model.setInstallCodecs : null,
+            ),
           ),
         ],
       ),
