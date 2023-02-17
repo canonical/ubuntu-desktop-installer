@@ -717,5 +717,20 @@
   "installCodecsSubtitle": "На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.",
   "@installCodecsSubtitle": {},
   "installDriversSubtitle": "На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.",
-  "@installDriversSubtitle": {}
+  "@installDriversSubtitle": {},
+  "restartNow": "Перезагрузить",
+  "@restartNow": {},
+  "restartWarning": "Можете продолжить тестирование {RELEASE}, но при перезагрузке компьютера все внесённые вами изменения или сохранённые документы будут потеряны.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "continueTesting": "Продолжить тестирование",
+  "@continueTesting": {},
+  "tooManyPrimaryPartitions": "Слишком много первичных разделов",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "достигнут предел",
+  "@partitionLimitReached": {}
 }
