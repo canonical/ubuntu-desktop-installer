@@ -7,6 +7,7 @@ import '../../l10n.dart';
 import '../../services.dart';
 import 'connect_model.dart';
 import 'connect_to_internet_model.dart';
+import 'connect_view.dart';
 import 'ethernet_model.dart';
 import 'ethernet_view.dart';
 import 'hidden_wifi_model.dart';
@@ -87,11 +88,8 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
           HiddenWifiView(
             expanded: model.connectMode == ConnectMode.hiddenWifi,
           ),
-          YaruRadioButton<ConnectMode>(
-            title: Text(lang.noInternet),
-            value: ConnectMode.none,
-            contentPadding: const EdgeInsets.only(top: 8),
-            groupValue: model.connectMode,
+          NoConnectView(
+            value: model.connectMode,
             onChanged: (_) => model.selectConnectMode(ConnectMode.none),
           ),
         ],
