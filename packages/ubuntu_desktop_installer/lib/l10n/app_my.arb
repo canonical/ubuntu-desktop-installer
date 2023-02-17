@@ -1,3 +1,26 @@
 {
-  "@@locale": "my"
+  "@@locale": "my",
+  "welcome": "ကြိုဆိုပါတယ်",
+  "@welcome": {},
+  "windowTitle": "{RELEASE} ကို ထည့်သွင်းမည်",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntu": "{RELEASE} ကို စမ်းသပ်သုံးစွဲမည်",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntu": "{RELEASE} ကို ထည့်သွင်းမည်",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
