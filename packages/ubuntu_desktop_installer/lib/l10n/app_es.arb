@@ -720,7 +720,7 @@
   "@installCodecsSubtitle": {},
   "installDriversSubtitle": "Estos controladores están sujetos a los términos de licencia incluidos en su documentación. Son privativos.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Instalar soporte para formatos multimedia adicionales",
+  "installCodecsTitle": "Descarga e instala un soporte para formatos multimedia adicionales",
   "@installCodecsTitle": {},
   "restartNow": "Reiniciar ahora",
   "@restartNow": {},
@@ -736,5 +736,7 @@
   "tooManyPrimaryPartitions": "Demasiadas particiones primarias",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "límite alcanzado",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "Actualmente no está conectado",
+  "@offlineWarning": {}
 }
