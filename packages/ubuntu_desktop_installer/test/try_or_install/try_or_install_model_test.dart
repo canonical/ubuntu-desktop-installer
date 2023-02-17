@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:file/memory.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 
@@ -60,21 +59,5 @@ version,codename,series,created,release,eol,eol-server,eol-esm
     final fs = MemoryFileSystem.test();
     final url = model.releaseNotesURL(Locale('en'), fs: fs);
     expect(url, equals('https://ubuntu.com/download/desktop'));
-  });
-
-  test('try ubuntu', () async {
-    TestWidgetsFlutterBinding.ensureInitialized();
-
-    var windowClosed = false;
-    final methodChannel = MethodChannel('window_manager');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
-
-    final model = TryOrInstallModel();
-
-    await model.tryUbuntu();
-    expect(windowClosed, isTrue);
   });
 }
