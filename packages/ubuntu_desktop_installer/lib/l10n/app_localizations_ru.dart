@@ -442,10 +442,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Слишком много первичных разделов';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'достигнут предел';
 
   @override
   String get bootLoaderDevice => 'Устройство для установки загрузчика';
@@ -681,17 +681,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Можете продолжить тестирование $RELEASE, но при перезагрузке компьютера все внесённые вами изменения или сохранённые документы будут потеряны.';
   }
 
   @override
   String get shutdown => 'Отключить';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Перезагрузить';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Продолжить тестирование';
 
   @override
   String get turnOffBitlockerTitle => 'Отключить BitLocker';

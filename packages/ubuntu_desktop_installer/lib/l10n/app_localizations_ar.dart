@@ -88,22 +88,22 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'تخطيط لوحة المفاتيح';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'اختر تخطيط لوحة المفاتيح:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'اكتب هنا لتجربة لوحة المفاتيح';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'اكتشف تخطيط لوحة المفاتيح';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'رجاء اضغط على أحد المفاتيح التالية:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'هل هذا المفتاح موجود على لوحة مفاتيحك؟';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';
@@ -184,28 +184,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enableWifi => 'Enable Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'اتّصل';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'التحديثات والبرامج الأخرى';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'ما التطبيقات التي ترغب في تثبيتها ابتداءً؟';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'التثبيت العادي';
 
   @override
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'التثبيت بحد ادنى';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'متصفح الويب والأدوات الأساسية.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'خيارات أخرى';
 
   @override
   String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
@@ -256,7 +256,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'نوع التثبيت';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -269,10 +269,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'يحتوي هذا الحاسوب حاليًا على أنظمة تشغيل مُتعددة. ماذا تود أن تفعل؟';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'لم تُكتشف أي أنظمة تشغيل حالية على هذا الحاسوب. ماذا تود أن تفعل؟';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -285,16 +285,16 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'الخيارات المتقدمة...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'الخيارات المتقدمة';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'بلا';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'لا شيء محدَّد';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -302,10 +302,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'حُدد LVM';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'حُدد LVM مع التشفير';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -313,13 +313,13 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'ستختار مفتاح أمان في الخطوة التالية.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'تجريبي:أمحُ القرص واستخدم ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'حُدد ZFS';
 
   @override
   String installationTypeReinstall(Object os) {
@@ -355,7 +355,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'شيء آخر';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -368,16 +368,16 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'اختر القرص:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'سيُستخدم القرص بأكمله:';
 
   @override
   String get selectGuidedStorageInstallNow => 'Install Now';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'خصّص مساحة القرص بسحب الفاصل أدناه:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -397,7 +397,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get installAlongsidePartition => 'Partition:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'الحجم:';
 
   @override
   String get installAlongsideAvailable => 'Available:';
@@ -409,28 +409,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get startInstallingButtonText => 'Start Installing';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'الجهاز';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'النوع';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'نقطة الوصل';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'الحجم';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'مستخدم';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'النظام';
 
   @override
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'مساحة خالية';
 
   @override
   String get newPartitionTable => 'New partition table';
@@ -451,13 +451,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get bootLoaderDevice => 'Device for boot loader installation';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'أنشئ قسما';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'حرر القسم';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'الحجم:';
 
   @override
   String get partitionUnitB => 'B';
@@ -466,7 +466,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get partitionUnitKB => 'kB';
 
   @override
-  String get partitionUnitMB => 'MB';
+  String get partitionUnitMB => 'م.ب';
 
   @override
   String get partitionUnitGB => 'GB';
@@ -475,19 +475,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'أوّلي';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'منطقي';
 
   @override
   String get partitionLocationLabel => 'Location for the new partition:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'بداية هذه المساحة';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'نهاية هذه المساحة';
 
   @override
   String get partitionFormatLabel => 'Used as:';
@@ -547,13 +547,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'من أنت؟';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'ولوج تلقائي';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'طلب كلمة السر للولوج';
 
   @override
   String get whoAreYouPageRealNameLabel => 'Your name';
@@ -565,7 +565,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'يستخدم هذا الاسم للتواصل مع الحواسيب الأخرى.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'A computer name is required';
@@ -667,7 +667,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get chooseYourLookPageLightSetting => 'Light';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'اكتمل التثبيت';
 
   @override
   String readyToUse(Object system) {
@@ -688,13 +688,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shutdown => 'Shut Down';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'أعد التشغيل الآن';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'أكمل الفحص';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'اوقف تشغيل BitLocker';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -708,13 +708,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'أين أنت؟';
 
   @override
   String get whereAreYouLocationLabel => 'Location';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'المنطقة الزمنية';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -851,10 +851,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get configuringSystem => 'Setting up the system…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'فشل التثبيت';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'عذرًا';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
