@@ -705,7 +705,7 @@
   "@installationTypeLVMEncryptionSelected": {},
   "showSecurityKey": "הצגת מפתח אבטחה",
   "@showSecurityKey": {},
-  "installCodecsTitle": "התקנת תמיכה בתצורות מדיה נוספות",
+  "installCodecsTitle": "הורדה והתקנה של תמיכה בתצורות מדיה נוספות",
   "@installCodecsTitle": {},
   "installDriversTitle": "התקנת תוכנת צד־שלישי לחומרת גרפיקה ותקשורת אלחוטית",
   "@installDriversTitle": {},
@@ -727,5 +727,7 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "offlineWarning": "החיבור שלך מנותק",
+  "@offlineWarning": {}
 }
