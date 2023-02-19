@@ -47,11 +47,11 @@ void main() {
     await tester.enterText(find.byType(SpinBox), '123');
     await tester.pump();
 
-    await tester.tap(find.byType(DropdownButton<PartitionFormat>));
+    await tester.tap(find.byType(DropdownButton<PartitionFormat?>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byWidgetPredicate((widget) {
-      if (widget is! DropdownMenuItem<PartitionFormat>) return false;
+      if (widget is! DropdownMenuItem<PartitionFormat?>) return false;
       return widget.value == PartitionFormat.btrfs;
     }).last);
     await tester.pumpAndSettle();
@@ -115,11 +115,11 @@ void main() {
     await tester.enterText(find.byType(SpinBox), '123');
     await tester.pump();
 
-    await tester.tap(find.byType(DropdownButton<PartitionFormat>));
+    await tester.tap(find.byType(DropdownButton<PartitionFormat?>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byWidgetPredicate((widget) {
-      if (widget is! DropdownMenuItem<PartitionFormat>) return false;
+      if (widget is! DropdownMenuItem<PartitionFormat?>) return false;
       return widget.value == PartitionFormat.btrfs;
     }).last);
     await tester.pumpAndSettle();

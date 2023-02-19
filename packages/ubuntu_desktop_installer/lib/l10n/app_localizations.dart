@@ -1214,6 +1214,12 @@ abstract class AppLocalizations {
   /// **'ZFS root file system'**
   String get partitionFormatZfsroot;
 
+  /// No description provided for @partitionFormatNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave unformatted'**
+  String get partitionFormatNone;
+
   /// No description provided for @partitionErase.
   ///
   /// In en, this message translates to:
