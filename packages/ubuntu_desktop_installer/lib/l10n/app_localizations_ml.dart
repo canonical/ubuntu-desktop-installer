@@ -544,6 +544,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS root ഫയൽ സിസ്റ്റം';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'പാർട്ടീഷൻ ഫോർമാറ്റ് ചെയ്യുക';
 
   @override

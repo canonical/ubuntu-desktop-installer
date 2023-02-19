@@ -544,6 +544,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS gyökér fájlrendszer';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'A partíció formázása';
 
   @override

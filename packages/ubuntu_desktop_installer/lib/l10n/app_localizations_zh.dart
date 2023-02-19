@@ -544,6 +544,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS 根文件系统';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => '格式化分区';
 
   @override

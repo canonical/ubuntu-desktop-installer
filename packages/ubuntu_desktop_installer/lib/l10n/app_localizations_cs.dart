@@ -544,6 +544,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionFormatZfsroot => 'Kořenový souborový systém na ZFS';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'Naformátovat oddíl';
 
   @override

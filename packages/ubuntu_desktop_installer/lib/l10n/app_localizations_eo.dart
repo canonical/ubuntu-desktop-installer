@@ -544,6 +544,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionFormatZfsroot => 'Radika dosiersistemo ZFS';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'Reprepari la subdiskon';
 
   @override

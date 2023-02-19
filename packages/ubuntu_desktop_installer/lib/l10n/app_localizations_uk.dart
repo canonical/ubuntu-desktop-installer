@@ -544,6 +544,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get partitionFormatZfsroot => 'Коренева файлова система ZFS';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'Відформатувати розділ';
 
   @override
