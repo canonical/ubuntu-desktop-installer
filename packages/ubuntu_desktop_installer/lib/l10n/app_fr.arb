@@ -699,7 +699,7 @@
   "@installCodecsSubtitle": {},
   "installDriversSubtitle": "Ces pilotes sont soumis à des termes de licence inclus dans leurs documentations. Ils sont propriétaires.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Installer la prise en charge de formats de multimédias supplémentaires",
+  "installCodecsTitle": "Télécharger et installer la prise en charge de formats de multimédias supplémentaires",
   "@installCodecsTitle": {},
   "continueTesting": "Continuer à tester",
   "@continueTesting": {},
@@ -715,5 +715,7 @@
   "tooManyPrimaryPartitions": "Trop de partitions primaires",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "limite atteinte",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "Vous êtes actuellement hors ligne",
+  "@offlineWarning": {}
 }
