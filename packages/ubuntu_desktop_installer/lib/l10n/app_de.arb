@@ -724,5 +724,12 @@
   "tooManyPrimaryPartitions": "Zu viele primäre Partitionen",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Grenze erreicht",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "restartWarning": "Sie können {RELEASE} jetzt weiter ausprobieren, aber alle Änderungen, die Sie bis zu einem Neustart des Systems durchführen, werden nicht gespeichert.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
