@@ -4,6 +4,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'applying_changes_model.dart';
@@ -38,7 +39,10 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
   void initState() {
     super.initState();
     final model = Provider.of<ApplyingChangesModel>(context, listen: false);
-    model.init();
+    model.init().then((_) {
+      if (!mounted) return;
+      YaruWindow.of(context).close();
+    });
   }
 
   @override
