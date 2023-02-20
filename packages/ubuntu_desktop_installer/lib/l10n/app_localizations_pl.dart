@@ -220,7 +220,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installDriversSubtitle => 'Sterowniki te podlegają warunkom licencyjnym dołączonym do ich dokumentacji. Są one własnościowe.';
 
   @override
-  String get installCodecsTitle => 'Zainstaluj obsługę dodatkowych formatów multimediów';
+  String get installCodecsTitle => 'Pobierz i zainstaluj obsługę dodatkowych formatów multimediów';
 
   @override
   String get installCodecsSubtitle => 'Oprogramowanie to podlega warunkom licencyjnym dołączonym do jego dokumentacji. Niektóre jest własnościowe.';
@@ -231,7 +231,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Jesteś obecnie offline';
 
   @override
   String get chooseSecurityKeyTitle => 'Wybierz klucz bezpieczeństwa';
@@ -544,7 +544,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get partitionFormatZfsroot => 'System plików root ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Pozostaw niesformatowaną';
 
   @override
   String get partitionErase => 'Sformatuj partycję';

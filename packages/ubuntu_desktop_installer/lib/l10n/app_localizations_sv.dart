@@ -220,7 +220,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installDriversSubtitle => 'Dessa drivrutiner är föremål för licensvillkor som ingår i deras dokumentation. De är proprietära.';
 
   @override
-  String get installCodecsTitle => 'Installera stöd för ytterligare medieformat';
+  String get installCodecsTitle => 'Ladda ner och installera stöd för ytterligare medieformat';
 
   @override
   String get installCodecsSubtitle => 'Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.';
@@ -231,7 +231,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Du är för närvarande offline';
 
   @override
   String get chooseSecurityKeyTitle => 'Välj en säkerhetsnyckel';

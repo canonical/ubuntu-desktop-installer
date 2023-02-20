@@ -9,7 +9,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE प्रतिष्ठापीत करा';
   }
 
   @override
@@ -37,7 +37,7 @@ class AppLocalizationsMr extends AppLocalizations {
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'सुस्वागतम्';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return '$RELEASE वापरुन पहा';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return '$RELEASE प्रतिष्ठापीत करा';
   }
 
   @override
@@ -88,22 +88,22 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'कळफलक मांडणी';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'आपल्या कळफलक(keyboard) मांडणीची निवड करा:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'आपले कळफलक चे परीक्षण साठी इथे टंकलेखन करा';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'कळफलक मांडणीचा शोध';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'कृपया पुढे दिलेल्या कळापैकी कोणतीही एक कळ दाबून पहा.';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'पुढे दिलेली कळ तुमच्या कळफलकावर आहे का?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

@@ -220,7 +220,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installDriversSubtitle => 'Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.';
 
   @override
-  String get installCodecsTitle => 'Instalar suporte para formatos de multimédia adicionais';
+  String get installCodecsTitle => 'Baixar e instalar suporte para formatos de multimédia adicionais';
 
   @override
   String get installCodecsSubtitle => 'Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.';
@@ -677,7 +677,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** está instalado e pronto pra uso.';
+    return '**$system** está instalado e pronto para usar.';
   }
 
   @override

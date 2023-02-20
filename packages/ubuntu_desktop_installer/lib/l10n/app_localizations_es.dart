@@ -220,7 +220,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installDriversSubtitle => 'Estos controladores están sujetos a los términos de licencia incluidos en su documentación. Son privativos.';
 
   @override
-  String get installCodecsTitle => 'Instalar soporte para formatos multimedia adicionales';
+  String get installCodecsTitle => 'Descarga e instala un soporte para formatos multimedia adicionales';
 
   @override
   String get installCodecsSubtitle => 'Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.';
@@ -231,7 +231,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Actualmente no está conectado';
 
   @override
   String get chooseSecurityKeyTitle => 'Elegir una clave de seguridad';

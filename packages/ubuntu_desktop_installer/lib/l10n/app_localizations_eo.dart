@@ -220,7 +220,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installDriversSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Ili estas neliberaj.';
 
   @override
-  String get installCodecsTitle => 'Instali programojn por kromaj videaj dosierformoj';
+  String get installCodecsTitle => 'Elŝuti kaj instali programojn por kromaj videaj dosierformoj';
 
   @override
   String get installCodecsSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
@@ -231,7 +231,7 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Vi estas aktuale ne konektita al Interreto';
 
   @override
   String get chooseSecurityKeyTitle => 'Elektu sekurigan ŝlosilon';

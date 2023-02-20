@@ -220,7 +220,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installDriversSubtitle => 'Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.';
 
   @override
-  String get installCodecsTitle => 'Nainstalovat podporu pro další formáty médií';
+  String get installCodecsTitle => 'Stáhnout a nainstalovat podporu pro další formáty médií';
 
   @override
   String get installCodecsSubtitle => 'Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.';
@@ -231,7 +231,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'V tu chvíli nejste připojení k Internetu';
 
   @override
   String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
@@ -445,10 +445,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Příliš mnoho primárních oddílů';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'dosaženo limitu';
 
   @override
   String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
@@ -687,17 +687,17 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Nyní můžete pokračovat ve zkoušení $RELEASE, ale dokud počítač nerestartujete, veškeré provedené změny nebo vytvořené dokumenty nebudou zachovány.';
   }
 
   @override
   String get shutdown => 'Vypnout';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restartovat nyní';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Pokračovat ve zkoušení';
 
   @override
   String get turnOffBitlockerTitle => 'Vypněte BitLocker';

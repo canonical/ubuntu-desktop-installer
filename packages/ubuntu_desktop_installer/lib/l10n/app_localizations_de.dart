@@ -220,7 +220,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installDriversSubtitle => 'Diese Treiber unterliegen den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Sie sind proprietär.';
 
   @override
-  String get installCodecsTitle => 'Unterstützung für zusätzliche Medienformate installieren';
+  String get installCodecsTitle => 'Unterstützung für zusätzliche Medienformate herunterladen und installieren';
 
   @override
   String get installCodecsSubtitle => 'Diese Software unterliegt den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Einige sind proprietär.';
@@ -231,7 +231,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Sie sind derzeit offline';
 
   @override
   String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel auswählen';
@@ -445,10 +445,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Zu viele primäre Partitionen';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Grenze erreicht';
 
   @override
   String get bootLoaderDevice => 'Laufwerk zur Installation des Bootloaders';
@@ -687,17 +687,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Sie können $RELEASE jetzt weiter ausprobieren, aber alle Änderungen, die Sie bis zu einem Neustart des Systems durchführen, werden nicht gespeichert.';
   }
 
   @override
   String get shutdown => 'Herunterfahren';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Jetzt neu starten';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Testen fortsetzen';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker ausschalten';

@@ -220,7 +220,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installDriversSubtitle => 'Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.';
 
   @override
-  String get installCodecsTitle => 'Installar la presa en carga addicionala pels format multimèdia';
+  String get installCodecsTitle => 'Telecargar e installar la presa en carga addicionala pels formats multimèdia';
 
   @override
   String get installCodecsSubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
@@ -231,7 +231,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Sètz fòra linha';
 
   @override
   String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';

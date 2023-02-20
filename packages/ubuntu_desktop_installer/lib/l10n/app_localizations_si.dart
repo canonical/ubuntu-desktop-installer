@@ -661,28 +661,28 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'ඔබගේ පෙනුම තෝරන්න';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'අඳුරු';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'දීප්ත';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'ස්ථාපනය සම්පූර්ණයි';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** ස්ථාපිත බැවින් භාවිතයට සූදානම්.';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return '$system වෙත යළි අරඹන්න';
   }
 
   @override
@@ -691,40 +691,40 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'වසා දමන්න';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'යළි අරඹන්න';
 
   @override
   String get continueTesting => 'Continue Testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'බිට්ලොකර් අක්‍රිය කරන්න';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'වින්ඩෝස් වෙත යළි අරඹන්න';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'ඔබ කොහිද?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'ස්ථානය';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'වේලා කලාපය';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '$RELEASE වෙත පිළිගනිමු';
   }
 
   @override
@@ -733,7 +733,7 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'තවත් මෘදුකාංග සොයාගන්න';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
@@ -749,7 +749,7 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get musicSlideRhythmbox => 'රිදම්බොක්ස් සංගීත වාදකය';
 
   @override
   String get musicSlideSpotify => 'Spotify';
@@ -770,7 +770,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get photoSlideGimp => 'GIMP Image Editor';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'ෂොට්කට් දෘශ්‍යක සංස්කරකය';
 
   @override
   String get webSlideTitle => 'Make the most of the web';
@@ -781,13 +781,13 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get webSlideFirefox => 'ෆයර්ෆොක්ස් අතිරික්සුව';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
+  String get webSlideThunderbird => 'තන්ඩර්බර්ඩ්';
 
   @override
-  String get webSlideChromium => 'Chromium';
+  String get webSlideChromium => 'ක්‍රෝමියම්';
 
   @override
   String get officeSlideTitle => 'Everything you need for the office';
@@ -796,13 +796,13 @@ class AppLocalizationsSi extends AppLocalizations {
   String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
 
   @override
-  String get officeSlideWriter => 'LibreOffice Writer';
+  String get officeSlideWriter => 'ලිබ්රේඔෆිස් රයිටර්';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'ලිබ්රේඔෆිස් කැල්ක්';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'ලිබ්රේඔෆිස් ඉම්ප්‍රෙස්';
 
   @override
   String get accessSlideTitle => 'Access for everyone';
@@ -813,19 +813,19 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'අභිරුචිකරණ විකල්ප';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'පෙනුම';
 
   @override
   String get accessSlideAssistiveTechnologies => 'Assistive technologies';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'භාෂා සහාය';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'උදව් හා සහාය';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -839,28 +839,28 @@ class AppLocalizationsSi extends AppLocalizations {
   String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'අඩංගු මෘදුකාංග';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'තිබෙන මෘදුකාංග';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'සහාය දක්වන මෘදුකාංග';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'ගොනු පිටපත් වෙමින්…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'පද්ධතිය ස්ථාපනය වෙමින්…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'පද්ධතිය පිහිටුවමින්…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'ස්ථාපනයට අසමත් විය';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'කණගාටුයි';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
