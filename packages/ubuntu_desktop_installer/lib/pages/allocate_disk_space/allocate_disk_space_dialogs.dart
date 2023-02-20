@@ -53,7 +53,8 @@ Future<void> showCreatePartitionDialog(
     builder: (context) {
       final partitionUnit = ValueNotifier(DataUnit.megabytes);
       final partitionSize = ValueNotifier(gap.size);
-      final partitionFormat = ValueNotifier(PartitionFormat.defaultValue);
+      final partitionFormat =
+          ValueNotifier<PartitionFormat?>(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
 
       final lang = AppLocalizations.of(context);
@@ -93,6 +94,7 @@ Future<void> showCreatePartitionDialog(
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
               _PartitionFormatSelector(
                 partitionFormat: partitionFormat,
+                partitionFormats: [...PartitionFormat.supported, null],
               )
             ],
             <Widget>[
@@ -221,7 +223,10 @@ Future<void> showEditPartitionDialog(
             ],
             <Widget>[
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-              _PartitionFormatSelector(partitionFormat: partitionFormat),
+              _PartitionFormatSelector(
+                partitionFormat: partitionFormat,
+                partitionFormats: PartitionFormat.values,
+              ),
             ],
             <Widget>[
               const SizedBox.shrink(),
@@ -338,9 +343,11 @@ class _PartitionWipeCheckbox extends StatelessWidget {
 class _PartitionFormatSelector extends StatelessWidget {
   const _PartitionFormatSelector({
     required this.partitionFormat,
+    required this.partitionFormats,
   });
 
   final ValueNotifier<PartitionFormat?> partitionFormat;
+  final List<PartitionFormat?> partitionFormats;
 
   @override
   Widget build(BuildContext context) {
@@ -348,13 +355,13 @@ class _PartitionFormatSelector extends StatelessWidget {
     return ValueListenableBuilder<PartitionFormat?>(
       valueListenable: partitionFormat,
       builder: (context, type, child) {
-        return DropdownBuilder<PartitionFormat>(
+        return DropdownBuilder<PartitionFormat?>(
           selected: type,
-          values: PartitionFormat.values,
+          values: partitionFormats,
           itemBuilder: (context, format, _) {
             return Text(
-              format.localize(lang),
-              key: ValueKey(format.type),
+              format?.localize(lang) ?? lang.partitionFormatNone,
+              key: ValueKey(format?.type),
             );
           },
           onSelected: (value) => partitionFormat.value = value,

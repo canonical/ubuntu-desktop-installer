@@ -544,6 +544,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS root -tiedostojärjestelmä';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'Alusta osio';
 
   @override

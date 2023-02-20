@@ -544,6 +544,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get partitionFormatZfsroot => 'Sistem berkas root ZFS';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => 'Format partisi';
 
   @override

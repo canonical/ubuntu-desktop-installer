@@ -544,6 +544,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS 루트 파일 시스템';
 
   @override
+  String get partitionFormatNone => 'Leave unformatted';
+
+  @override
   String get partitionErase => '파티션 포맷';
 
   @override
