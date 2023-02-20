@@ -34,10 +34,11 @@ class WriteChangesToDiskModel extends SafeChangeNotifier {
     if (_service.guidedTarget != null) {
       await _service.setGuidedStorage();
     }
+    await _service.getStorage().then(_updateDisks);
     _originals = await _service.getOriginalStorage().then((disks) =>
         Map.fromEntries(disks.map((d) => MapEntry(
             d.sysname, d.partitions.whereType<Partition>().toList()))));
-    return _service.getStorage().then(_updateDisks);
+    notifyListeners();
   }
 
   /// Starts the installation process.
