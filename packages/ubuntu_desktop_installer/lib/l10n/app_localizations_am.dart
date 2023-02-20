@@ -9,7 +9,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'መግጠም $RELEASE';
   }
 
   @override
@@ -19,10 +19,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get changeButtonText => 'Change';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'እሺ';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'አይ';
 
   @override
   String get restartButtonText => 'Restart';
@@ -31,13 +31,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get revertButtonText => 'Revert';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'አዎ';
 
   @override
   String get quitButtonText => 'Quit Installation';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'እንኳን ደህና መጡ';
 
   @override
   String get welcomeHeader => 'Choose your language:';
@@ -53,7 +53,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'ይሞክሩ $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'መግጠም $RELEASE';
   }
 
   @override
@@ -88,22 +88,22 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'የፊደል ገበታ አቀማመጥ';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'የፊደል ገበታ ማዘጋጃ ይምረጡ :';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'የፊደል ገበታውን ለመሞከር እዚህ ይጻፉ';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get pressOneKey => 'እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get isKeyPresent => 'ይህ የሚቀጥለው ቁልፍ በእርስዎ የፊደል ገብታው ውስጥ አለ?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

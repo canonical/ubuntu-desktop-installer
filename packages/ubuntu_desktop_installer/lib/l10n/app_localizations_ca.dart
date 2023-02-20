@@ -109,10 +109,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get configureSecureBootTitle => 'Configura l\'arrencada segura';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'Has triat per instal·lar programari de control·ladors de tercers. Això requereix desactivar Arrencada Segura,\nPer fer això, has de escogir una clau de seguretat ara i introduir-la després de reiniciar el sistema.';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootOption => 'Configurar Arrencada Segura';
 
   @override
   String get chooseSecurityKey => 'Trieu una clau de seguretat';
@@ -127,16 +127,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get configureSecureBootSecurityKeyRequired => 'Es requereix la clau de seguretat';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get secureBootSecurityKeysDontMatch => 'Les claus de seguretat no coincideixen';
 
   @override
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Connecta a internet';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
@@ -151,16 +151,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get wiredDisabled => 'Wired connection is turned off';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'Per poder fer servir ethernet a aquest ordinador, la connexió cablejada ha d\'estar habilitada';
 
   @override
   String get enableWired => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get selectWifiNetwork => 'Connectar a una xarxa Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get hiddenWifiNetwork => 'Connecta a una xarxa Wi-Fi oculta';
 
   @override
   String get hiddenWifiNetworkNameLabel => 'Nom a la xarxa';
@@ -172,7 +172,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get noInternet => 'Ara mateix no vull connectar-me a Internet';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get wirelessNetworkingDisabled => 'Xarxa sense fils deshabilitada';
 
   @override
   String get noWifiDevicesDetected => 'No Wi-Fi devices detected';

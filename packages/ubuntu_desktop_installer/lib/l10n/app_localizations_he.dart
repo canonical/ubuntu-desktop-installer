@@ -220,7 +220,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installDriversSubtitle => 'מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.';
 
   @override
-  String get installCodecsTitle => 'התקנת תמיכה בתצורות מדיה נוספות';
+  String get installCodecsTitle => 'הורדה והתקנה של תמיכה בתצורות מדיה נוספות';
 
   @override
   String get installCodecsSubtitle => 'תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.';
@@ -231,7 +231,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'החיבור שלך מנותק';
 
   @override
   String get chooseSecurityKeyTitle => 'נא לבחור מפתח אבטחה';

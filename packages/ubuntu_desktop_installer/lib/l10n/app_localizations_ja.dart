@@ -220,7 +220,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installDriversSubtitle => 'これらのドライバーは自身のドキュメントに含まれるライセンス条項に従い、プロプライエタリです。';
 
   @override
-  String get installCodecsTitle => '追加のメディアフォーマット用のサポートをインストールする';
+  String get installCodecsTitle => '追加のメディアフォーマット用のサポートをダウンロードしてインストールする';
 
   @override
   String get installCodecsSubtitle => 'このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。';
@@ -231,7 +231,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => '現在オフラインです';
 
   @override
   String get chooseSecurityKeyTitle => 'セキュリティキーを決めて下さい';
