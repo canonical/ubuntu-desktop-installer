@@ -10,13 +10,13 @@ import 'package:ubuntu_test/mocks.dart';
 void main() {
   test('init', () async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep(null)).thenAnswer((_) async {
+    when(client.getKeyboardStep('0')).thenAnswer((_) async {
       return AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
     });
 
     final detector = KeyboardLayoutDetector(client);
     await detector.init();
-    verify(client.getKeyboardStep(null)).called(1);
+    verify(client.getKeyboardStep('0')).called(1);
 
     expect(detector.value, isA<StepPressKey>());
     expect(detector.pressKey, equals(['a', 'b', 'c']));
@@ -24,7 +24,7 @@ void main() {
 
   test('key press', () async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep(null)).thenAnswer((_) async {
+    when(client.getKeyboardStep('0')).thenAnswer((_) async {
       return AnyStep.stepPressKey(
         symbols: ['a', 'b', 'c'],
         keycodes: {12: '34'},
