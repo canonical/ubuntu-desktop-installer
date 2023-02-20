@@ -32,7 +32,6 @@ void main() {
     when(client.keyboard()).thenAnswer((_) async =>
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
-    when(client.isOpen).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
 
     final monitor = MockSubiquityStatusMonitor();

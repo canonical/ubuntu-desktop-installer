@@ -59,7 +59,7 @@ class KeyboardLayoutDetector extends ValueNotifier<AnyStep?> {
   /// next step if possible.
   void no() => _getKeyboardStep(_keyPresentStep!.no);
 
-  Future<void> _getKeyboardStep([String? step]) {
+  Future<void> _getKeyboardStep([String step = '0']) {
     return _client.getKeyboardStep(step).then(_updateCurrentStep);
   }
 }

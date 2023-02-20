@@ -341,11 +341,6 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
   }
 
   @override
-  _i6.Future<bool> get isOpen => (super.noSuchMethod(
-        Invocation.getter(#isOpen),
-        returnValue: _i6.Future<bool>.value(false),
-      ) as _i6.Future<bool>);
-  @override
   Uri url(
     String? unencodedPath, [
     Map<String, dynamic>? queryParameters,

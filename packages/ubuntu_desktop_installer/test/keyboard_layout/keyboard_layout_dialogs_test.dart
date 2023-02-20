@@ -17,7 +17,7 @@ void main() {
 
   testWidgets('detect layout', (tester) async {
     final client = MockSubiquityClient();
-    when(client.getKeyboardStep(null)).thenAnswer((_) async {
+    when(client.getKeyboardStep('0')).thenAnswer((_) async {
       return AnyStep.stepPressKey(symbols: ['a'], keycodes: {30: '40'});
     });
     when(client.getKeyboardStep('40')).thenAnswer((_) async {
@@ -46,7 +46,7 @@ void main() {
     // init
     final result = showDetectKeyboardLayoutDialog(context);
     await tester.pumpAndSettle();
-    verify(client.getKeyboardStep(null)).called(1);
+    verify(client.getKeyboardStep('0')).called(1);
 
     // press a
     expect(find.text('a'), findsOneWidget);
