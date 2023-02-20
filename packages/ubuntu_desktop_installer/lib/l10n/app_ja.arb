@@ -716,7 +716,7 @@
   "@installDriversSubtitle": {},
   "installDriversTitle": "グラフィックスとWi-Fi 機器用のサードパーティ製ソフトウェアをインストールする",
   "@installDriversTitle": {},
-  "installCodecsTitle": "追加のメディアフォーマット用のサポートをインストールする",
+  "installCodecsTitle": "追加のメディアフォーマット用のサポートをダウンロードしてインストールする",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。",
   "@installCodecsSubtitle": {},
@@ -782,5 +782,7 @@
   "tooManyPrimaryPartitions": "基本パーティションが多すぎます",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "制限に達しました",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "現在オフラインです",
+  "@offlineWarning": {}
 }

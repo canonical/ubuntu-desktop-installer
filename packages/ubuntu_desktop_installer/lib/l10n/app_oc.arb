@@ -743,7 +743,7 @@
   },
   "installDriversTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi",
   "@installDriversTitle": {},
-  "installCodecsTitle": "Installar la presa en carga addicionala pels format multimèdia",
+  "installCodecsTitle": "Telecargar e installar la presa en carga addicionala pels formats multimèdia",
   "@installCodecsTitle": {},
   "installDriversSubtitle": "Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.",
   "@installDriversSubtitle": {},
@@ -763,5 +763,7 @@
   "tooManyPrimaryPartitions": "Tròp de particions primàrias",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "limit atenh",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "Sètz fòra linha",
+  "@offlineWarning": {}
 }

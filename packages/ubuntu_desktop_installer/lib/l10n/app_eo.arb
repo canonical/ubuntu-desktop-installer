@@ -709,7 +709,7 @@
   "@installDriversSubtitle": {},
   "installDriversTitle": "Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj",
   "@installDriversTitle": {},
-  "installCodecsTitle": "Instali programojn por kromaj videaj dosierformoj",
+  "installCodecsTitle": "Elŝuti kaj instali programojn por kromaj videaj dosierformoj",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
   "@installCodecsSubtitle": {},
@@ -727,5 +727,7 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "offlineWarning": "Vi estas aktuale ne konektita al Interreto",
+  "@offlineWarning": {}
 }

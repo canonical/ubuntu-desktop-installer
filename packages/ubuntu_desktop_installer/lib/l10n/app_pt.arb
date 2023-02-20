@@ -338,7 +338,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Instalação concluída",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** está instalado e pronto pra uso.",
+  "readyToUse": "**{system}** está instalado e pronto para usar.",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -627,7 +627,7 @@
   "@installDriversTitle": {},
   "installDriversSubtitle": "Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Instalar suporte para formatos de multimédia adicionais",
+  "installCodecsTitle": "Baixar e instalar suporte para formatos de multimédia adicionais",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},

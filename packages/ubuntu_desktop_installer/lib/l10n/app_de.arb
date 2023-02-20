@@ -707,12 +707,29 @@
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM und Verschlüsselung ausgewählt",
   "@installationTypeLVMEncryptionSelected": {},
-  "installCodecsTitle": "Unterstützung für zusätzliche Medienformate installieren",
+  "installCodecsTitle": "Unterstützung für zusätzliche Medienformate herunterladen und installieren",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Diese Software unterliegt den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Einige sind proprietär.",
   "@installCodecsSubtitle": {},
   "installDriversTitle": "Software von Drittanbietern für Grafik- und WLAN-Hardware installieren",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Diese Treiber unterliegen den Lizenzbedingungen, die in ihrer Dokumentation enthalten sind. Sie sind proprietär.",
-  "@installDriversSubtitle": {}
+  "@installDriversSubtitle": {},
+  "continueTesting": "Testen fortsetzen",
+  "@continueTesting": {},
+  "restartNow": "Jetzt neu starten",
+  "@restartNow": {},
+  "offlineWarning": "Sie sind derzeit offline",
+  "@offlineWarning": {},
+  "tooManyPrimaryPartitions": "Zu viele primäre Partitionen",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "Grenze erreicht",
+  "@partitionLimitReached": {},
+  "restartWarning": "Sie können {RELEASE} jetzt weiter ausprobieren, aber alle Änderungen, die Sie bis zu einem Neustart des Systems durchführen, werden nicht gespeichert.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }

@@ -762,7 +762,7 @@
   "@installationTypeLVMEncryptionSelected": {},
   "installDriversTitle": "Installera programvara från tredje part för grafik och Wi-Fi-hårdvara",
   "@installDriversTitle": {},
-  "installCodecsTitle": "Installera stöd för ytterligare medieformat",
+  "installCodecsTitle": "Ladda ner och installera stöd för ytterligare medieformat",
   "@installCodecsTitle": {},
   "installDriversSubtitle": "Dessa drivrutiner är föremål för licensvillkor som ingår i deras dokumentation. De är proprietära.",
   "@installDriversSubtitle": {},
@@ -782,5 +782,7 @@
   "tooManyPrimaryPartitions": "För många primära partitioner",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "gränsen nådd",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "Du är för närvarande offline",
+  "@offlineWarning": {}
 }
