@@ -784,5 +784,7 @@
   "partitionLimitReached": "gränsen nådd",
   "@partitionLimitReached": {},
   "offlineWarning": "Du är för närvarande offline",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "Lämna oformaterad",
+  "@partitionFormatNone": {}
 }
