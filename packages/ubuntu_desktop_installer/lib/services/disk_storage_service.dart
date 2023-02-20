@@ -10,9 +10,7 @@ final log = Logger('disk_storage');
 /// Provides means to read and modify the storage configuration.
 class DiskStorageService {
   /// Creates the service with the given [client].
-  DiskStorageService(this._client) {
-    _client.isOpen.then((_) => init());
-  }
+  DiskStorageService(this._client);
 
   final SubiquityClient _client;
 

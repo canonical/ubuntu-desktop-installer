@@ -86,8 +86,10 @@ Future<void> runInstallerApp(
     'Media': ProductInfoExtractor().getProductInfo().toString(),
   });
 
+  final storage = DiskStorageService(subiquityClient);
+
   registerService(() => ConfigService('/tmp/$baseName.conf'));
-  registerService(() => DiskStorageService(subiquityClient));
+  registerServiceInstance(storage);
   registerService(() => GeoService(sources: [geodata, geoname]));
   registerService(JournalService.new);
   registerService(() => NetworkService(subiquityClient));
@@ -140,13 +142,15 @@ Future<void> runInstallerApp(
 
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
-  return subiquityClient.markConfigured([
+  await subiquityClient.markConfigured([
     'mirror',
     'proxy',
     'ssh',
     'snaplist',
     'ubuntu_pro',
   ]);
+
+  await storage.init();
 }
 
 class UbuntuDesktopInstallerApp extends StatefulWidget {

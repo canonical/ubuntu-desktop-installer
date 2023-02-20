@@ -18,7 +18,6 @@ void main() {
 
   setUp(() {
     client = MockSubiquityClient();
-    when(client.isOpen).thenAnswer((_) async => true);
     when(client.getGuidedStorageV2()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: testTargets));
     when(client.getStorageV2())
@@ -63,7 +62,7 @@ void main() {
   test('reset guided storage', () async {
     final service = DiskStorageService(client);
     expect(service.hasMultipleDisks, isFalse);
-    await untilCalled(client.getStorageV2());
+    await service.init();
 
     await service.getGuidedStorage();
     expect(service.hasMultipleDisks, isTrue);
@@ -82,7 +81,7 @@ void main() {
         (_) async => testStorageResponse(disks: testDisks.reversed.toList()));
 
     final service = DiskStorageService(client);
-    await untilCalled(client.getStorageV2());
+    await service.init();
     verify(client.getStorageV2()).called(1);
 
     expect(await service.getStorage(), equals(testDisks));
@@ -181,7 +180,7 @@ void main() {
     final service = DiskStorageService(client);
 
     when(client.hasRst()).thenAnswer((_) async => true);
-    await untilCalled(client.hasRst());
+    await service.init();
     verify(client.hasRst()).called(1);
     expect(service.hasRst, isTrue);
 
@@ -195,7 +194,7 @@ void main() {
     final service = DiskStorageService(client);
 
     when(client.hasBitLocker()).thenAnswer((_) async => true);
-    await untilCalled(client.hasBitLocker());
+    await service.init();
     expect(service.hasBitLocker, isTrue);
     verify(client.hasBitLocker()).called(1);
 
@@ -275,7 +274,7 @@ void main() {
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
     final service = DiskStorageService(client);
-    await untilCalled(client.getStorageV2());
+    await service.init();
 
     service.securityKey = 'foo123';
     expect(service.securityKey, equals('foo123'));
