@@ -58,8 +58,10 @@ void main() {
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();
-    verify(service.getStorage()).called(1);
-    verify(service.getOriginalStorage()).called(1);
+    verifyInOrder([
+      service.getStorage(),
+      service.getOriginalStorage(),
+    ]);
     verifyNever(service.setGuidedStorage());
 
     expect(model.disks, equals(nonPreservedDisks));
