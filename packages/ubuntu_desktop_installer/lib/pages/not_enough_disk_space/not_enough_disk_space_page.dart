@@ -40,7 +40,10 @@ class NotEnoughDiskSpacePage extends StatelessWidget {
           WizardAction.done(
             context,
             label: lang.quitButtonText,
-            onDone: () => model.quit(),
+            onDone: () {
+              // TODO: tell subiquity to quit?
+              YaruWindow.of(context).close();
+            },
           ),
         ],
       ),

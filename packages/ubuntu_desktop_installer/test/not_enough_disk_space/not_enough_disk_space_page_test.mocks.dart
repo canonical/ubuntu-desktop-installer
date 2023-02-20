@@ -55,14 +55,6 @@ class MockNotEnoughDiskSpaceModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  void quit() => super.noSuchMethod(
-        Invocation.method(
-          #quit,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
   void addListener(_i3.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
