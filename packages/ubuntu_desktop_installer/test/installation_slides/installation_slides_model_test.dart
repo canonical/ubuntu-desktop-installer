@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -15,13 +14,6 @@ import 'installation_slides_model_test.mocks.dart';
 
 @GenerateMocks([JournalService])
 void main() async {
-  TestWidgetsFlutterBinding.ensureInitialized();
-  final methodChannel = MethodChannel('window_manager');
-
-  setUp(() {
-    methodChannel.setMockMethodCallHandler((_) async {});
-  });
-
   test('client status query loop', () async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
