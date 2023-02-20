@@ -43,8 +43,7 @@ git submodule update --init --recursive
 
 Install Subiquity dependencies:
 ```sh
-cd packages/subiquity_client/subiquity
-sudo ./scripts/installdeps.sh
+make -C packages/subiquity_client/subiquity install_deps
 ```
 
 ### Run the installer
@@ -52,6 +51,7 @@ sudo ./scripts/installdeps.sh
 Run the installer either from within your IDE or by running the following command:
 
 ```sh
+cd packages/ubuntu_desktop_installer
 flutter run
 ```
 
