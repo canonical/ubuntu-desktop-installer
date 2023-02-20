@@ -1,5 +1,17 @@
 {
   "@@locale": "si",
   "appTitle": "උබුන්ටු WSL",
-  "@appTitle": {}
+  "@appTitle": {},
+  "windowTitle": "උබුන්ටු WSL",
+  "@windowTitle": {},
+  "exitButton": "පිටවන්න",
+  "@exitButton": {},
+  "finishButton": "අවසන්",
+  "@finishButton": {},
+  "saveButton": "සුරකින්න",
+  "@saveButton": {},
+  "setupButton": "පිහිටුවීම",
+  "@setupButton": {},
+  "selectLanguageTitle": "ඔබගේ භාෂාව තෝරන්න",
+  "@selectLanguageTitle": {}
 }
