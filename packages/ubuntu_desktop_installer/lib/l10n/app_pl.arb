@@ -729,5 +729,7 @@
   "continueTesting": "Kontynuuj testowanie",
   "@continueTesting": {},
   "offlineWarning": "Jesteś obecnie offline",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "Pozostaw niesformatowaną",
+  "@partitionFormatNone": {}
 }
