@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -54,18 +55,31 @@ void main() {
 
   testWidgets('closes the window', (tester) async {
     final model = MockApplyingChangesModel();
-    when(model.init()).thenAnswer((_) => model.reboot(immediate: false));
+    when(model.init())
+        .thenAnswer((_) async => Future.delayed(const Duration(seconds: 2)));
+
+    var windowClosed = false;
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {
+      expect(call.method, equals('close'));
+      windowClosed = true;
+    });
 
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
       hasNext: false,
     ));
-    verify(model.reboot(immediate: false)).called(1);
+
+    expect(windowClosed, isFalse);
+    await tester.pump(const Duration(seconds: 1));
+    expect(windowClosed, isFalse);
+    await tester.pump(const Duration(seconds: 1));
+    expect(windowClosed, isTrue);
   });
 
   testWidgets('won\'t go next while still installing', (tester) async {
     final model = MockApplyingChangesModel();
-    when(model.init()).thenAnswer((realInvocation) {});
+    when(model.init()).thenAnswer((realInvocation) async {});
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
       hasNext: true,
