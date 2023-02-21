@@ -738,5 +738,7 @@
   "partitionLimitReached": "límite alcanzado",
   "@partitionLimitReached": {},
   "offlineWarning": "Actualmente no está conectado",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "Dejar sin formatear",
+  "@partitionFormatNone": {}
 }
