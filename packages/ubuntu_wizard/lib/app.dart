@@ -10,8 +10,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-
-import 'utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 /// @internal
 final log = Logger(_appName);
@@ -55,14 +54,15 @@ Future<bool?> runWizardApp(
     registerServiceInstance(subiquityMonitor);
   }
 
-  ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
 
-  onWindowClosed().then((_) async {
+  final window = await YaruWindow.ensureInitialized();
+  await window.onClose(() async {
     await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
-    destroyWindow();
+    return true;
   });
 
   return runZonedGuarded<Future<bool?>>(() {

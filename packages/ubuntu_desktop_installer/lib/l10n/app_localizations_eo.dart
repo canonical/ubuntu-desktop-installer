@@ -430,7 +430,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get diskHeadersSystem => 'Sistemo';
 
   @override
-  String get diskHeadersFormat => 'Formo';
+  String get diskHeadersFormat => 'Strukturo';
 
   @override
   String get freeDiskSpace => 'disponebla spaco';
@@ -544,10 +544,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionFormatZfsroot => 'Radika dosiersistemo ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Lasi nestrukturita';
 
   @override
-  String get partitionErase => 'Reprepari la subdiskon';
+  String get partitionErase => 'Restrukturi la subdiskon';
 
   @override
   String get partitionMountPointLabel => 'Surmetingo:';

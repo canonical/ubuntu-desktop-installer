@@ -19,6 +19,11 @@ void main() {
   final endpoint = Endpoint.unix('socket path');
   tearDown(() => unregisterMockService<SubiquityClient>());
 
+  setUpAll(() {
+    final methodChannel = MethodChannel('yaru_window');
+    methodChannel.setMockMethodCallHandler((call) async {});
+  });
+
   testWidgets('initializes subiquity', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
@@ -151,11 +156,11 @@ void main() {
   });
 
   testWidgets('ensure initialized', (tester) async {
-    var wmInit = false;
-    final methodChannel = MethodChannel('window_manager');
+    var windowInit = false;
+    final methodChannel = MethodChannel('yaru_window');
     methodChannel.setMockMethodCallHandler((call) async {
-      if (call.method == 'ensureInitialized') {
-        wmInit = true;
+      if (call.method == 'init') {
+        windowInit = true;
       }
       if (call.method == 'close') {}
     });
@@ -173,6 +178,6 @@ void main() {
       subiquityServer: server,
     );
 
-    expect(wmInit, isTrue);
+    expect(windowInit, isTrue);
   });
 }

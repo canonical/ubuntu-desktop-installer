@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'l10n.dart';
 import 'locale.dart';
@@ -24,7 +24,8 @@ class UbuntuWslSetupApp extends StatelessWidget {
           locale: InheritedLocale.of(context),
           onGenerateTitle: (context) {
             final lang = AppLocalizations.of(context);
-            setWindowTitle(lang.windowTitle);
+            final window = YaruWindow.of(context);
+            window.setTitle(lang.windowTitle);
             return lang.appTitle;
           },
           theme: yaruLight,
