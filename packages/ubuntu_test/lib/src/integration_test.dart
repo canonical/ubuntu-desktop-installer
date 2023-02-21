@@ -112,15 +112,12 @@ Future<void> cleanUpSubiquity() async {
 /// to proceed to the next test case.
 Future<bool> waitForWindowClosed() {
   final completer = Completer<bool>();
-  final methodChannel = MethodChannel('window_manager');
+  final methodChannel = MethodChannel('yaru_window');
   methodChannel.setMockMethodCallHandler((call) async {
     switch (call.method) {
       case 'close':
         await _testCloseWindow();
-        break;
-      case 'destroy':
         completer.complete(true);
-        methodChannel.setMockMethodCallHandler(null);
         break;
     }
   });
@@ -130,9 +127,9 @@ Future<bool> waitForWindowClosed() {
 // Sends a platform message to simulate the window being closed, to trigger the
 // application exit routine.
 Future<void> _testCloseWindow() async {
-  final call = MethodCall('onEvent', const {'eventName': 'close'});
+  final call = MethodCall('onClose');
   await ServicesBinding.instance.defaultBinaryMessenger.handlePlatformMessage(
-    'window_manager',
+    'yaru_window',
     StandardMethodCodec().encodeMethodCall(call),
     (_) {},
   );
