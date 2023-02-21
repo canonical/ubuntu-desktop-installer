@@ -306,6 +306,18 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   }
 }
 
+enum InstallationStep {
+  welcome,
+  keyboard,
+  network,
+  software,
+  type,
+  storage,
+  location,
+  user,
+  look,
+}
+
 class _UbuntuDesktopInstallerWizard extends StatelessWidget {
   const _UbuntuDesktopInstallerWizard({this.initialRoute, this.tryOrInstall});
 
@@ -318,9 +330,11 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
 
     return Wizard(
       initialRoute: initialRoute ?? Routes.initial,
+      userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
         Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
+          userData: InstallationStep.welcome.index,
           onNext: (_) {
             if (tryOrInstall == true) {
               return Routes.tryOrInstall;
@@ -333,6 +347,7 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.tryOrInstall: WizardRoute(
           builder: TryOrInstallPage.create,
+          userData: InstallationStep.welcome.index,
           onNext: (settings) {
             switch (settings.arguments as Option?) {
               case Option.repairUbuntu:
@@ -343,14 +358,17 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
             }
           },
         ),
-        Routes.turnOffRST: const WizardRoute(
+        Routes.turnOffRST: WizardRoute(
           builder: TurnOffRSTPage.create,
+          userData: InstallationStep.welcome.index,
         ),
-        Routes.keyboardLayout: const WizardRoute(
+        Routes.keyboardLayout: WizardRoute(
           builder: KeyboardLayoutPage.create,
+          userData: InstallationStep.keyboard.index,
         ),
         Routes.connectToInternet: WizardRoute(
           builder: ConnectToInternetPage.create,
+          userData: InstallationStep.network.index,
           onNext: (_) =>
               service.hasEnoughDiskSpace ? Routes.updatesOtherSoftware : null,
         ),
@@ -359,51 +377,63 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
+          userData: InstallationStep.software.index,
           onNext: (_) =>
               !service.hasSecureBoot ? Routes.installationType : null,
         ),
-        Routes.configureSecureBoot: const WizardRoute(
+        Routes.configureSecureBoot: WizardRoute(
           builder: ConfigureSecureBootPage.create,
+          userData: InstallationStep.type.index,
         ),
         Routes.installationType: WizardRoute(
           builder: InstallationTypePage.create,
+          userData: InstallationStep.type.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
+          userData: InstallationStep.storage.index,
           onReplace: (_) => Routes.allocateDiskSpace,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: SelectGuidedStoragePage.create,
+          userData: InstallationStep.storage.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
         Routes.chooseSecurityKey: WizardRoute(
           builder: ChooseSecurityKeyPage.create,
+          userData: InstallationStep.storage.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
-        Routes.allocateDiskSpace: const WizardRoute(
+        Routes.allocateDiskSpace: WizardRoute(
           builder: AllocateDiskSpacePage.create,
+          userData: InstallationStep.storage.index,
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
+          userData: InstallationStep.storage.index,
           onNext: (_) => !service.hasBitLocker ? Routes.whereAreYou : null,
         ),
-        Routes.turnOffBitlocker: const WizardRoute(
+        Routes.turnOffBitlocker: WizardRoute(
           builder: TurnOffBitLockerPage.create,
+          userData: InstallationStep.storage.index,
         ),
-        Routes.whereAreYou: const WizardRoute(
+        Routes.whereAreYou: WizardRoute(
           builder: WhereAreYouPage.create,
+          userData: InstallationStep.location.index,
         ),
-        Routes.whoAreYou: const WizardRoute(
+        Routes.whoAreYou: WizardRoute(
           builder: WhoAreYouPage.create,
+          userData: InstallationStep.user.index,
         ),
         // https://github.com/canonical/ubuntu-desktop-installer/issues/41
         // Routes.configureActiveDirectory: const WizardRoute(
         //   builder: ConfigureActiveDirectoryPage.create,
         // ),
-        Routes.chooseYourLook: const WizardRoute(
+        Routes.chooseYourLook: WizardRoute(
           builder: ChooseYourLookPage.create,
+          userData: InstallationStep.look.index,
         ),
         Routes.installationSlides: const WizardRoute(
           builder: InstallationSlidesPage.create,
