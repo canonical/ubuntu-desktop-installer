@@ -544,7 +544,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionFormatZfsroot => 'Système de fichiers racine ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Laisser non formatée';
 
   @override
   String get partitionErase => 'Formatter la partition';
