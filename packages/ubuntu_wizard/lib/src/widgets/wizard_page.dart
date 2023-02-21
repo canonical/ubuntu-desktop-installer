@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wizard_router/wizard_router.dart';
+import 'package:yaru_widgets/widgets.dart';
 
 import '../../constants.dart';
 import 'wizard_action.dart';
@@ -84,6 +86,9 @@ class _WizardPageState extends State<WizardPage> {
 
   @override
   Widget build(BuildContext context) {
+    final wizardScope = Wizard.maybeOf(context);
+    final totalSteps = (wizardScope?.wizardData as int?);
+    final currentStep = (wizardScope?.routeData as int?);
     return ScaffoldMessenger(
       child: Scaffold(
         key: _scaffoldKey,
@@ -111,22 +116,30 @@ class _WizardPageState extends State<WizardPage> {
         bottomNavigationBar: Padding(
           padding: widget.footerPadding,
           child: Row(
-            mainAxisAlignment: widget.footer != null
-                ? MainAxisAlignment.spaceBetween
-                : MainAxisAlignment.end,
-            children: <Widget>[
-              if (widget.footer != null) Expanded(child: widget.footer!),
-              const SizedBox(width: kContentSpacing),
-              ButtonBar(
-                buttonPadding: EdgeInsets.zero,
-                children: <Widget>[
-                  for (final action in widget.actions)
-                    if (action.visible ?? true)
-                      Padding(
-                        padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                        child: _createButton(context, action),
-                      ),
-                ],
+            children: [
+              widget.footer != null
+                  ? Expanded(child: widget.footer!)
+                  : const Spacer(),
+              if (currentStep != null && totalSteps != null)
+                YaruPageIndicator(
+                  page: currentStep,
+                  length: totalSteps,
+                  dotSize: 12,
+                  dotSpacing: 8,
+                ),
+              Expanded(
+                child: ButtonBar(
+                  buttonPadding: EdgeInsets.zero,
+                  children: <Widget>[
+                    for (final action in widget.actions)
+                      if (action.visible ?? true)
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: kButtonBarSpacing),
+                          child: _createButton(context, action),
+                        ),
+                  ],
+                ),
               ),
             ],
           ),
