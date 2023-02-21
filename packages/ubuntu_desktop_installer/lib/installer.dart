@@ -101,8 +101,10 @@ Future<void> runInstallerApp(
   final interfaceSettings = GSettings('org.gnome.desktop.interface');
 
   WidgetsFlutterBinding.ensureInitialized();
-  onWindowClosed().then((_) async {
+  final window = await YaruWindow.ensureInitialized();
+  await window.onClose(() async {
     await interfaceSettings.close();
+    return true;
   });
 
   final appStatus = ValueNotifier(AppStatus.loading);
@@ -212,7 +214,8 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
                 locale: Settings.of(context).locale,
                 onGenerateTitle: (context) {
                   final lang = AppLocalizations.of(context);
-                  setWindowTitle(lang.windowTitle(widget.flavor.name));
+                  final window = YaruWindow.of(context);
+                  window.setTitle(lang.windowTitle(widget.flavor.name));
                   return lang.appTitle;
                 },
                 theme: widget.flavor.theme ?? yaru.theme,

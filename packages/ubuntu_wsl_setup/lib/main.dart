@@ -7,6 +7,7 @@ import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'app.dart';
 import 'app_model.dart';
@@ -19,6 +20,7 @@ Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
   })!;
+  final window = await YaruWindow.ensureInitialized();
   final appModel = ValueNotifier<AppModel>(
     AppModel(routeFromOptions: options['initial-route']),
   );
@@ -59,7 +61,7 @@ Future<void> main(List<String> args) async {
             appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
       );
       subiquityMonitor.onStatusChanged.listen((status) {
-        setWindowClosable(status?.state.isInstalling != true);
+        window.setClosable(status?.state.isInstalling != true);
       });
     } else {
       appModel.value = appModel.value.copyWith(variant: value);

@@ -9,6 +9,7 @@ import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'app.dart';
 import 'app_model.dart';
@@ -21,6 +22,7 @@ import 'services/named_event.dart';
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  final window = await YaruWindow.ensureInitialized();
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
     parser.addOption(
@@ -47,7 +49,7 @@ Future<void> main(List<String> args) async {
           ),
           closeOobe: NamedEvent(
             'Local\\${options["distro-name"]}-close-oobe',
-          ),
+          )..future.then((_) => window.close()),
         );
 
   // TODO: Handle the null case.
@@ -110,7 +112,7 @@ Future<void> main(List<String> args) async {
             appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
       );
       subiquityMonitor.onStatusChanged.listen((status) {
-        setWindowClosable(status?.state.isInstalling != true);
+        window.setClosable(status?.state.isInstalling != true);
       });
     } else {
       appModel.value = appModel.value.copyWith(variant: value);
@@ -122,7 +124,5 @@ class WslSetupEvents {
   final NamedEvent registration;
   final NamedEvent closeOobe;
 
-  WslSetupEvents({required this.registration, required this.closeOobe}) {
-    closeOobe.future.then((_) => closeWindow());
-  }
+  WslSetupEvents({required this.registration, required this.closeOobe});
 }
