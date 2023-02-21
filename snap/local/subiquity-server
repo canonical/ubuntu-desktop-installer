@@ -28,10 +28,4 @@ export SUBIQUITY_ROOT=$SNAP/bin/subiquity
 cd $SCRIPT_DIR/subiquity
 
 args=(--use-os-prober --storage-version=2 --postinst-hooks-dir=$SNAP/etc/subiquity/postinst.d)
-if grep -qv "experimental-autoinstall" /proc/cmdline; then
-    # autoinstall is explicitly disabled until UI support is present.
-    # Remove this autoinstall argument when that is resolved.
-    args+=(--autoinstall="")
-fi
-
 $PYTHON -m subiquity.cmd.server "${args[@]}"
