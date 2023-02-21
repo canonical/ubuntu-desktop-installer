@@ -6,7 +6,7 @@
   "@windowTitle": {},
   "welcome": "Tervetuloa",
   "@welcome": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Varoitus</font>: Jos tämä salausavain katoaa tai unohdat sen, kaikki tiedot menetetään. Kirjoita tarvittaessa salausavain muistiin ja säilytä sitä turvallisessa paikassa ja älä tietokoneen lähettyvillä.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Varoitus</font>: Jos tämä salausavain katoaa tai unohdat sen, kaikki tiedot menetetään. Kirjoita tarvittaessa salausavain muistiin ja säilytä sitä turvallisessa paikassa, ei tietokoneen lähettyvillä.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -196,7 +196,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Seuraaviin levyosioihin luodaan uusi tiedostojärjestelmä:",
+  "writeChangesPartitionsHeader": "Seuraavat osiomuutokset toteutetaan:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryMounted": "osio #{disk}{partition} tiedostojärjestelmänä {format} liitetty kohtaan {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -491,5 +491,245 @@
   "installationTypeMultiOSDetected": "Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?",
   "@installationTypeMultiOSDetected": {},
   "whoAreYouPageShowPassword": "Näytä salasana",
-  "@whoAreYouPageShowPassword": {}
+  "@whoAreYouPageShowPassword": {},
+  "accessSlideDescription": "{RELEASE}n filosofian ytimessä on usko siihen, että tietokoneiden käyttö sopii kaikille. Tämän takia {RELEASE} tarjoaa erilaisia mukauttamismahdollisuuksia ollakseen helppokäyttöinen mahdollisimman monelle ihmiselle kaikkialla maailmassa. Tarjolla ovat muun muassa edistyneet esteettömyystoiminnot sekä lukuisat valinnaiset kirjasimet, väriteemat ja kielet.",
+  "@accessSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "showSecurityKey": "Näytä salausavain",
+  "@showSecurityKey": {},
+  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> -palvelussa on mahdollista esittää kysymyksiä ja selata suurta määrää aiempia vastauksia kysymyksiin. Tukea omalla kielelläsi voi löytyä <a href=\"https://loco.ubuntu.com/teams\">Ubuntun paikallistiimin</a> kautta.",
+  "@supportSlideQuestions": {},
+  "restartNow": "Käynnistä uudelleen nyt",
+  "@restartNow": {},
+  "continueTesting": "Jatka testaamista",
+  "@continueTesting": {},
+  "softwareSlideTitle": "Löydä lisää sovelluksia",
+  "@softwareSlideTitle": {},
+  "welcomeSlideDescription": "{RELEASE}n uusimman version nopeus ja uudet ominaisuudet tekevät tietokoneen käyttämisestä helpompaa kuin koskaan ennen. Kiinnitä seuraaviin asioihin huomiota, kun tutustut uuteen käyttöjärjestelmääsi...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideShotcut": "Shotcut-videoeditori",
+  "@photoSlideShotcut": {},
+  "officeSlideWriter": "LibreOffice Writer",
+  "@officeSlideWriter": {},
+  "officeSlideDescription": "LibreOffice on vapaa toimisto-ohjelmisto, joka sisältää kaiken tarvittavan asiakirjojen, taulukoiden ja esitysten luomiseen. LibreOffice on yhteensopiva Microsoft Office -tiedostomuotojen kanssa, ja sisältää kaikki tarvitsemasi ominaisuudet ilman hintalappua.",
+  "@officeSlideDescription": {},
+  "notEnoughDiskSpaceBiggestDisk": "Kapasiteetiltaan suurin levy tässä tietokoneessa on vain {SIZE}.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "notEnoughDiskSpaceHasOnly": "Tässä tietokoneessa on levytilaa vain {SIZE}.",
+  "@notEnoughDiskSpaceHasOnly": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "copyingFiles": "Kopioidaan tiedostoja…",
+  "@copyingFiles": {},
+  "installationTypeAlongsideUnknown": "Asenna {product} muiden osioiden rinnalle",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "Varaa levytilaa raahaamalla alla olevaa erotinta:",
+  "@installAlongsideSpaceDivider": {},
+  "installAlongsideResizePartition": "Muuta osion kokoa",
+  "@installAlongsideResizePartition": {},
+  "officeSlideCalc": "LibreOffice Calc",
+  "@officeSlideCalc": {},
+  "installationTypeAlongsideDual": "Asenna {product} käyttöjärjestelmien {os1} ja {os2} rinnalle",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "webSlideTitle": "Ota kaikki irti internetistä",
+  "@webSlideTitle": {},
+  "musicSlideDescription": "{RELEASE}ssa on upea Rytmilaatikko-musiikkisoitin. Edistyksellisten soittomahdollisuuksien ansiosta parhaiden kappaleiden löytäminen on helppoa. Se toimii loistavasti myös CD-levyjen ja kannettavien musiikkisoittimien kanssa. Musiikin kuunteleminen ei ole koskaan ollut näin nautinnollista.",
+  "@musicSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "officeSlideImpress": "LibreOffice Impress",
+  "@officeSlideImpress": {},
+  "quitButtonText": "Lopeta asennus",
+  "@quitButtonText": {},
+  "installCodecsTitle": "Lataa ja asenna tuki eri mediamuotoja varten",
+  "@installCodecsTitle": {},
+  "offlineWarning": "Et ole yhteydessä verkkoon",
+  "@offlineWarning": {},
+  "installationTypeLVMEncryptionSelected": "LVM ja salaus valittu",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installAlongsideHiddenPartitions": "{num} pienempää osiota on piilotettu, käytä <a href=\"{url}\">edistynyttä osiointityökalua</a> saadaksesi lisää toiminnallisuuksia",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideAllocateSpace": "Varaa tilaa",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Tiedostot",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Osio:",
+  "@installAlongsidePartition": {},
+  "installAlongsideSize": "Koko:",
+  "@installAlongsideSize": {},
+  "installAlongsideAvailable": "Saatavilla:",
+  "@installAlongsideAvailable": {},
+  "photoSlideShotwell": "Shotwell - valokuvien hallinta",
+  "@photoSlideShotwell": {},
+  "partitionFormatNone": "Jätä alustamatta",
+  "@partitionFormatNone": {},
+  "whoAreYouPageUsernameInUse": "Kyseinen käyttäjänimi on jo olemassa.",
+  "@whoAreYouPageUsernameInUse": {},
+  "whoAreYouPageUsernameSystemReserved": "Kyseinen nimi on varattu järjestelmän käytettäväksi.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "Kyseinen nimi on liian pitkä.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Kyseinen nimi sisältää virheellisiä merkkejä.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "restartWarning": "Voit jatkaa julkaisun {RELEASE} testaamista nyt, mutta mitkään tekemäsi muutokset tai tallentamasi asiakirjat eivät säily, ennen kuin käynnistät tietokoneen uudelleen.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideDescription": "Ohjelmien etsiminen ja lataaminen epäilyttäviltä verkkosivuilta on historiaa. Pääsy Snap-kauppaan ja {RELEASE}n sovellusvalikoimaan mahdollistaa sovelluksien etsimisen sekä asentamisen vaivatta. Etsi suoraan sovelluksen nimellä tai avainsanalla tai selaa eri luokkia, kuten tiede, koulutus ja pelit. Muiden käyttäjien antamat arvostelut helpottavat valintaasi.",
+  "@softwareSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "photoSlideTitle": "Leikittele valokuvillasi",
+  "@photoSlideTitle": {},
+  "photoSlideDescription": "Shotwell on kätevä sovellus kuvien hallintaan. Yhdistä kamera tai puhelin siirtääksesi valokuvasi talteen ja muille jaettavaksi. Jos haluat ryhtyä luovaksi, löydät paljon muita sovelluksia kuvien käsittelyä varten Ubuntu-kaupasta.",
+  "@photoSlideDescription": {},
+  "webSlideDescription": "{RELEASE} sisältää Firefoxin, miljoonien käyttämän verkkoselaimen. Useimmin käyttämäsi verkkosovellukset (kuten Facebook tai Gmail) on mahdollista kiinnittää työpöydälle, jolloin niiden käyttö sujuu vaivatta tavallisten sovellusten tapaan.",
+  "@webSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "accessSlideTitle": "Esteetön kaikille",
+  "@accessSlideTitle": {},
+  "accessSlideCustomizationOptions": "Mukauttamisvalinnat",
+  "@accessSlideCustomizationOptions": {},
+  "supportSlideDocumentation": "Virallinen dokumentaatio kattaa useimmat yleisimmät {RELEASE}n osa-alueet. Dokumentaatio on saatavilla <a href=\"https://help.ubuntu.com\">verkossa</a> ja telakan Ohje-kuvaketta napsauttamalla.",
+  "@supportSlideDocumentation": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "supportSlideResources": "Vinkkejä ja muita hyödyllisiä resursseja tarjoaa <a href=\"https://www.ubuntu.com/support/community-support\">yhteisön tuki</a> sekä <a href=\"https://www.ubuntu.com/support\">kaupallinen tuki</a>.",
+  "@supportSlideResources": {},
+  "includedSoftware": "Sisältyvät ohjelmistot",
+  "@includedSoftware": {},
+  "availableSoftware": "Saatavilla olevat ohjelmistot",
+  "@availableSoftware": {},
+  "supportedSoftware": "Tuetut ohjelmistot",
+  "@supportedSoftware": {},
+  "installingSystem": "Asennetaan järjestelmää…",
+  "@installingSystem": {},
+  "configuringSystem": "Määritetään järjestelmää…",
+  "@configuringSystem": {},
+  "installationFailed": "Asennus epäonnistui",
+  "@installationFailed": {},
+  "notEnoughDiskSpaceTitle": "Pahoittelut",
+  "@notEnoughDiskSpaceTitle": {},
+  "notEnoughDiskSpaceHeader": "Tarvitse levytilaa vähintään {SIZE} asentaaksesi {RELEASE}n.",
+  "@notEnoughDiskSpaceHeader": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {},
+      "RELEASE": {}
+    }
+  },
+  "installDriversTitle": "Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "Tähän ohjelmistoon pätee sen dokumentaation mukana tulevat lisenssiehdot. Jotkin ohjelmistot ovat omisteellisia.",
+  "@installCodecsSubtitle": {},
+  "installationTypeAlongsideMulti": "Asenna {product} niiden rinnalle",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "Liian monta ensisijaista osiota",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "raja saavutettu",
+  "@partitionLimitReached": {},
+  "writeChangesPartitionResized": "osion #{disk}{partition} koko {oldsize} muutettu kokoon {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "osio #{disk}{partition} alustettu muotoon {format} käytettäväksi liitospisteenä {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "osio #{disk}{partition} alustettu muotoon {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "osio #{disk}{partition} käytettäväksi liitospisteenä {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "osio #{disk}{partition} luotu",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  }
 }
