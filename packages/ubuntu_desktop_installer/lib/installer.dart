@@ -31,12 +31,13 @@ export 'slides.dart';
 final assetBundle =
     ProxyAssetBundle(rootBundle, package: 'ubuntu_desktop_installer');
 
-enum AppStatus { loading, ready }
-
-extension BusyState on ApplicationState {
+extension on ApplicationStatus {
+  bool get isStartingUp => state.index <= ApplicationState.EARLY_COMMANDS.index;
+  bool get isWaitingAutoinstall =>
+      interactive == false && state == ApplicationState.WAITING;
   bool get isInstalling =>
-      index >= ApplicationState.RUNNING.index &&
-      index < ApplicationState.DONE.index;
+      state.index >= ApplicationState.RUNNING.index &&
+      state.index < ApplicationState.DONE.index;
 }
 
 Future<void> runInstallerApp(
@@ -107,23 +108,15 @@ Future<void> runInstallerApp(
     return true;
   });
 
-  final appStatus = ValueNotifier(AppStatus.loading);
-
   await runWizardApp(
-    ValueListenableBuilder<AppStatus>(
-      valueListenable: appStatus,
-      builder: (context, value, child) {
-        return ChangeNotifierProvider(
-          create: (_) => Settings(interfaceSettings),
-          child: UbuntuDesktopInstallerApp(
-            appStatus: value,
-            flavor: flavor,
-            slides: slides,
-            initialRoute: options['initial-route'],
-            tryOrInstall: options['try-or-install'],
-          ),
-        );
-      },
+    ChangeNotifierProvider(
+      create: (_) => Settings(interfaceSettings),
+      child: UbuntuDesktopInstallerApp(
+        flavor: flavor,
+        slides: slides,
+        initialRoute: options['initial-route'],
+        tryOrInstall: options['try-or-install'],
+      ),
     ),
     options: options,
     subiquityClient: subiquityClient,
@@ -138,7 +131,6 @@ Future<void> runInstallerApp(
     ],
   );
 
-  appStatus.value = AppStatus.ready;
   await subiquityClient.setVariant(Variant.DESKTOP);
   await subiquityClient.setSource(InstallationMode.normal.source);
 
@@ -162,7 +154,6 @@ class UbuntuDesktopInstallerApp extends StatefulWidget {
     this.tryOrInstall,
     FlavorData? flavor,
     List<Slide>? slides,
-    this.appStatus = AppStatus.ready,
   })  : flavor = flavor ?? defaultFlavor,
         slides = slides ?? defaultSlides;
 
@@ -170,7 +161,6 @@ class UbuntuDesktopInstallerApp extends StatefulWidget {
   final bool? tryOrInstall;
   final FlavorData flavor;
   final List<Slide> slides;
-  final AppStatus appStatus;
 
   static FlavorData get defaultFlavor {
     return const FlavorData(name: 'Ubuntu');
@@ -182,21 +172,24 @@ class UbuntuDesktopInstallerApp extends StatefulWidget {
 }
 
 class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
-  StreamSubscription<ApplicationStatus?>? _subiquityStatus;
+  ApplicationStatus? _subiquityStatus;
+  StreamSubscription<ApplicationStatus?>? _subiquityStatusChange;
 
   @override
   void initState() {
     super.initState();
 
     final monitor = getService<SubiquityStatusMonitor>();
-    _subiquityStatus = monitor.onStatusChanged.listen((status) {
-      YaruWindow.of(context).setClosable(status?.state.isInstalling != true);
+    _subiquityStatus = monitor.status;
+    _subiquityStatusChange = monitor.onStatusChanged.listen((status) {
+      YaruWindow.of(context).setClosable(status?.isInstalling != true);
+      setState(() => _subiquityStatus = status);
     });
   }
 
   @override
   void dispose() {
-    _subiquityStatus?.cancel();
+    _subiquityStatusChange?.cancel();
     super.dispose();
   }
 
@@ -244,15 +237,17 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
   }
 
   Widget buildApp(BuildContext context) {
-    switch (widget.appStatus) {
-      case AppStatus.loading:
-        return const _UbuntuDesktopInstallerLoadingPage();
-      case AppStatus.ready:
-        return _UbuntuDesktopInstallerWizard(
-          initialRoute: widget.initialRoute,
-          tryOrInstall: widget.tryOrInstall,
-        );
+    if (_subiquityStatus == null ||
+        _subiquityStatus!.isStartingUp ||
+        _subiquityStatus!.isWaitingAutoinstall) {
+      return const _UbuntuDesktopInstallerLoadingPage();
     }
+    return _subiquityStatus?.interactive == false
+        ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
+        : _UbuntuDesktopInstallerWizard(
+            initialRoute: widget.initialRoute,
+            tryOrInstall: widget.tryOrInstall,
+          );
   }
 }
 
@@ -276,12 +271,14 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final lang = AppLocalizations.of(context);
+    // final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(AppLocalizations.of(context).welcome),
       ),
-      header: Text(lang.welcomeHeader),
+      // TODO: "Choose your language" makes no sense in autoinstall mode so it's
+      //  temporarily hidden until we have a dedicated loading screen.
+      header: const Text(''), // Text(lang.welcomeHeader),
       content: Row(
         children: [
           Expanded(
@@ -454,5 +451,29 @@ class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
     if (route.settings.name != null) {
       _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
+  }
+}
+
+class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
+  const _UbuntuDesktopAutoinstallWizard({this.status});
+
+  final ApplicationStatus? status;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wizard(
+      routes: <String, WizardRoute>{
+        if (status?.isInstalling != true)
+          Routes.writeChangesToDisk: const WizardRoute(
+            builder: WriteChangesToDiskPage.create,
+          ),
+        Routes.installationSlides: const WizardRoute(
+          builder: InstallationSlidesPage.create,
+        ),
+        Routes.installationComplete: const WizardRoute(
+          builder: InstallationCompletePage.create,
+        ),
+      },
+    );
   }
 }
