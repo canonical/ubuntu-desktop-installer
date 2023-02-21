@@ -729,5 +729,7 @@
     }
   },
   "offlineWarning": "החיבור שלך מנותק",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "להשאיר בלי פרמוט",
+  "@partitionFormatNone": {}
 }

@@ -717,5 +717,7 @@
   "partitionLimitReached": "limite atteinte",
   "@partitionLimitReached": {},
   "offlineWarning": "Vous êtes actuellement hors ligne",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "Laisser non formatée",
+  "@partitionFormatNone": {}
 }

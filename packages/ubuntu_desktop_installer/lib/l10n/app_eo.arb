@@ -302,7 +302,7 @@
   "@newPartitionTable": {},
   "selectGuidedStorageInfoLabel": "La tuta disko estas uzota:",
   "@selectGuidedStorageInfoLabel": {},
-  "diskHeadersFormat": "Formo",
+  "diskHeadersFormat": "Strukturo",
   "@diskHeadersFormat": {},
   "bootLoaderDevice": "Aparato, sur kiun instaliĝos la praŝargilo",
   "@bootLoaderDevice": {},
@@ -364,7 +364,7 @@
   },
   "whoAreYouPageComputerNameInfo": "La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionErase": "Reprepari la subdiskon",
+  "partitionErase": "Restrukturi la subdiskon",
   "@partitionErase": {},
   "writeChangesPartitionTablesHeader": "La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:",
   "@writeChangesPartitionTablesHeader": {},
@@ -729,5 +729,7 @@
     }
   },
   "offlineWarning": "Vi estas aktuale ne konektita al Interreto",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "Lasi nestrukturita",
+  "@partitionFormatNone": {}
 }
