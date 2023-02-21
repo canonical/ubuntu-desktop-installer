@@ -1,6 +1,7 @@
 #include "my_application.h"
 
 #include <flutter_linux/flutter_linux.h>
+#include <handy.h>
 
 #include "flutter/generated_plugin_registrant.h"
 
@@ -50,20 +51,10 @@ static void my_application_activate(GApplication* application) {
   }
 #endif
 
-  GtkWindow* window =
-      GTK_WINDOW(gtk_application_window_new(GTK_APPLICATION(application)));
+  GtkWindow* window = GTK_WINDOW(hdy_application_window_new());
+  gtk_window_set_application(window, GTK_APPLICATION(application));
   gtk_window_set_type_hint(window, GDK_WINDOW_TYPE_HINT_DIALOG);  // no min/max
   gtk_window_set_default_size(window, 960, 680);
-
-  g_autoptr(FlDartProject) project = fl_dart_project_new();
-  fl_dart_project_set_dart_entrypoint_arguments(
-      project, self->dart_entrypoint_arguments);
-
-  FlView* view = fl_view_new(project);
-  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
-
-  fl_register_plugins(FL_PLUGIN_REGISTRY(view));
-
   gtk_widget_realize(GTK_WIDGET(window));
 
   if (my_application_fit_to_workarea(window)) {
@@ -76,7 +67,16 @@ static void my_application_activate(GApplication* application) {
   }
   gtk_widget_show(GTK_WIDGET(window));
 
+  g_autoptr(FlDartProject) project = fl_dart_project_new();
+  fl_dart_project_set_dart_entrypoint_arguments(
+      project, self->dart_entrypoint_arguments);
+
+  FlView* view = fl_view_new(project);
   gtk_widget_show(GTK_WIDGET(view));
+  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(view));
+
+  fl_register_plugins(FL_PLUGIN_REGISTRY(view));
+
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
 
