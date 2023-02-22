@@ -143,6 +143,11 @@ class _PasswordFormField extends StatelessWidget {
       obscureText: !showPassword,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
       initialValue: password,
+      suffixIcon: _ShowPasswordButton(
+        value: showPassword,
+        onChanged: (value) =>
+            context.read<WhoAreYouModel>().showPassword = value,
+      ),
       validator: RequiredValidator(
         errorText: lang.whoAreYouPagePasswordRequired,
       ),
@@ -188,22 +193,52 @@ class _ConfirmPasswordFormField extends StatelessWidget {
   }
 }
 
-class _ShowPasswordCheckButton extends StatelessWidget {
-  const _ShowPasswordCheckButton();
+class _ShowPasswordButton extends StatelessWidget {
+  const _ShowPasswordButton({required this.value, required this.onChanged});
+
+  final bool value;
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final showPassword =
-        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
+    final inputTheme = Theme.of(context).inputDecorationTheme;
+    final borderSide = inputTheme.border?.borderSide ?? BorderSide.none;
+    final rtl = Directionality.of(context) == TextDirection.rtl;
 
-    return YaruCheckButton(
-      value: showPassword,
-      title: Text(lang.whoAreYouPageShowPassword),
-      onChanged: (value) {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
-        model.showPassword = value!;
-      },
+    return Container(
+      margin: const EdgeInsets.all(1),
+      decoration: BoxDecoration(
+        border: Border(
+          left: rtl ? BorderSide.none : borderSide,
+          right: rtl ? borderSide : BorderSide.none,
+        ),
+      ),
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: BorderSide.none,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(
+              left:
+                  rtl ? const Radius.circular(kYaruButtonRadius) : Radius.zero,
+              right:
+                  rtl ? Radius.zero : const Radius.circular(kYaruButtonRadius),
+            ),
+          ),
+          // avoid increasing the size of the input fied
+          minimumSize: Size.zero,
+        ),
+        onPressed: () => onChanged(!value),
+        // build both labels to avoid size changes
+        child: IndexedStack(
+          index: value ? 1 : 0,
+          alignment: Alignment.center,
+          children: [
+            Text(lang.whoAreYouPagePasswordShow),
+            Text(lang.whoAreYouPagePasswordHide),
+          ],
+        ),
+      ),
     );
   }
 }

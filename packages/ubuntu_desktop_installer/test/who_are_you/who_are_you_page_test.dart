@@ -124,6 +124,11 @@ void main() {
 
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
 
+    expect(passwordFocus?.hasFocus, isFalse);
+    expect(confirmPasswordFocus?.hasFocus, isFalse);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+
     expect(confirmPasswordFocus?.hasFocus, isTrue);
   });
 
@@ -234,11 +239,11 @@ void main() {
     final model = buildModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordCheckButton = find.widgetWithText(
-        YaruCheckButton, tester.lang.whoAreYouPageShowPassword);
-    expect(showPasswordCheckButton, findsOneWidget);
+    final showPasswordButton = find.widgetWithText(
+        OutlinedButton, tester.lang.whoAreYouPagePasswordShow);
+    expect(showPasswordButton, findsOneWidget);
 
-    await tester.tap(showPasswordCheckButton);
+    await tester.tap(showPasswordButton);
     verify(model.showPassword = true).called(1);
   });
 
@@ -246,11 +251,11 @@ void main() {
     final model = buildModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordCheckButton = find.widgetWithText(
-        YaruCheckButton, tester.lang.whoAreYouPageShowPassword);
-    expect(showPasswordCheckButton, findsOneWidget);
+    final hidePasswordButton = find.widgetWithText(
+        OutlinedButton, tester.lang.whoAreYouPagePasswordHide);
+    expect(hidePasswordButton, findsOneWidget);
 
-    await tester.tap(showPasswordCheckButton);
+    await tester.tap(hidePasswordButton);
     verify(model.showPassword = false).called(1);
   });
 
