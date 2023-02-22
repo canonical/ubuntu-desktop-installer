@@ -239,8 +239,10 @@ void main() {
     final model = buildModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordButton = find.widgetWithText(
-        OutlinedButton, tester.lang.whoAreYouPagePasswordShow);
+    final showPasswordButton = find.ancestor(
+      of: find.text(tester.lang.whoAreYouPagePasswordShow),
+      matching: find.bySubtype<OutlinedButton>(),
+    );
     expect(showPasswordButton, findsOneWidget);
 
     await tester.tap(showPasswordButton);
@@ -251,8 +253,10 @@ void main() {
     final model = buildModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final hidePasswordButton = find.widgetWithText(
-        OutlinedButton, tester.lang.whoAreYouPagePasswordHide);
+    final hidePasswordButton = find.ancestor(
+      of: find.text(tester.lang.whoAreYouPagePasswordHide),
+      matching: find.bySubtype<OutlinedButton>(),
+    );
     expect(hidePasswordButton, findsOneWidget);
 
     await tester.tap(hidePasswordButton);
