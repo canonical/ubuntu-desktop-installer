@@ -214,7 +214,7 @@ class _ShowPasswordButton extends StatelessWidget {
           right: rtl ? borderSide : BorderSide.none,
         ),
       ),
-      child: OutlinedButton(
+      child: OutlinedButton.icon(
         style: OutlinedButton.styleFrom(
           side: BorderSide.none,
           shape: RoundedRectangleBorder(
@@ -229,10 +229,10 @@ class _ShowPasswordButton extends StatelessWidget {
           minimumSize: Size.zero,
         ),
         onPressed: () => onChanged(!value),
+        icon: Icon(value ? YaruIcons.hide : YaruIcons.eye),
         // build both labels to avoid size changes
-        child: IndexedStack(
+        label: IndexedStack(
           index: value ? 1 : 0,
-          alignment: Alignment.center,
           children: [
             Text(lang.whoAreYouPagePasswordShow),
             Text(lang.whoAreYouPagePasswordHide),
