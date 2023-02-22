@@ -613,7 +613,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'パスワードが一致しません';
 
   @override
-  String get whoAreYouPageShowPassword => 'パスワードを表示';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'ディスクに変更を書き込む';

@@ -613,7 +613,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Passordene samsvarer ikke';
 
   @override
-  String get whoAreYouPageShowPassword => 'Vis passord';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Skriv endringer til disk';

@@ -613,7 +613,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Parolalar uyuşmuyor';
 
   @override
-  String get whoAreYouPageShowPassword => 'Parolayı göster';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Değişiklikleri diske yaz';

@@ -613,7 +613,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'A jelszavak nem egyeznek';
 
   @override
-  String get whoAreYouPageShowPassword => 'Jelszó megjelenítése';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Változások írása a lemezre';

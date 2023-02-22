@@ -613,7 +613,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'මුරපද නොගැළපේ';
 
   @override
-  String get whoAreYouPageShowPassword => 'මුරපදය පෙන්වන්න';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'වෙනස්කම් තැටියට ලියන්න';

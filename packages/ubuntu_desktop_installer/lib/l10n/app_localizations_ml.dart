@@ -613,7 +613,10 @@ class AppLocalizationsMl extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'ഡിസ്കിൽ മാറ്റങ്ങൾ എഴുതുക';

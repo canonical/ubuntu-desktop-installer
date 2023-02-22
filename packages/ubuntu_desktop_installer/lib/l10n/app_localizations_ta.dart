@@ -613,7 +613,10 @@ class AppLocalizationsTa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';

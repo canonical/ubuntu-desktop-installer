@@ -613,7 +613,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Kata sandi tidak cocok';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Tulis perubahan ke disk';
