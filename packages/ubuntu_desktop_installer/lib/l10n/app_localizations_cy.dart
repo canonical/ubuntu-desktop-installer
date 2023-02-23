@@ -613,7 +613,10 @@ class AppLocalizationsCy extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Nid yw\'r cyfrineiriau yn cyd-fynd';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';

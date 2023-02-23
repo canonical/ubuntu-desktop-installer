@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
@@ -82,11 +83,7 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
               padding: fieldPadding,
               child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
-            const Padding(
-              padding: kContentPadding,
-              child: _ShowPasswordCheckButton(),
-            ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kContentSpacing / 2),
             const _AutoLoginSwitch(),
           ],
         );

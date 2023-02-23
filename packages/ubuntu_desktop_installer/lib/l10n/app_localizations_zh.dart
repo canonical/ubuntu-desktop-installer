@@ -613,7 +613,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '密码不匹配';
 
   @override
-  String get whoAreYouPageShowPassword => '显示密码';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => '将更改写入磁盘';

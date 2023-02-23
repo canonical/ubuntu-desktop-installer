@@ -613,7 +613,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
-  String get whoAreYouPageShowPassword => 'Näytä salasana';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Tallenna muutokset levylle';

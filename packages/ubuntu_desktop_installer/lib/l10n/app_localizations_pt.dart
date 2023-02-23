@@ -613,7 +613,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'As palavras-passe não correspondem';
 
   @override
-  String get whoAreYouPageShowPassword => 'Mostrar palavra-passe';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';
@@ -1477,9 +1480,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'As senhas não correspondem';
-
-  @override
-  String get whoAreYouPageShowPassword => 'Mostrar senha';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';

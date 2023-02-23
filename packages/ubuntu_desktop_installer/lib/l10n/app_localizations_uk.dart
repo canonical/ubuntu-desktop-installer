@@ -613,7 +613,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Паролі не збігаються';
 
   @override
-  String get whoAreYouPageShowPassword => 'Показати пароль';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Записати зміни на диск';

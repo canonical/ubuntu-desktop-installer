@@ -1352,11 +1352,17 @@ abstract class AppLocalizations {
   /// **'The passwords do not match'**
   String get whoAreYouPagePasswordMismatch;
 
-  /// No description provided for @whoAreYouPageShowPassword.
+  /// No description provided for @whoAreYouPagePasswordShow.
   ///
   /// In en, this message translates to:
-  /// **'Show password'**
-  String get whoAreYouPageShowPassword;
+  /// **'Show'**
+  String get whoAreYouPagePasswordShow;
+
+  /// No description provided for @whoAreYouPagePasswordHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide'**
+  String get whoAreYouPagePasswordHide;
 
   /// No description provided for @writeChangesToDisk.
   ///

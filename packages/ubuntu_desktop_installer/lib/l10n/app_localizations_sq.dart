@@ -613,7 +613,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
 
   @override
-  String get whoAreYouPageShowPassword => 'Shfaq fjalëkalimin';
+  String get whoAreYouPagePasswordShow => 'Show';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
