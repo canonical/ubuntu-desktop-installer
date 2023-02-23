@@ -125,9 +125,10 @@ void main() {
   testWidgets('on battery', (tester) async {
     final model = buildModel(onBattery: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
 
     final warning = find.byType(Html);
-    final theme = Theme.of(tester.element(warning));
+    final theme = Theme.of(tester.element(find.byType(Scaffold)));
     expect(warning, findsOneWidget);
     expect(
       tester.widget<Html>(warning).data,
