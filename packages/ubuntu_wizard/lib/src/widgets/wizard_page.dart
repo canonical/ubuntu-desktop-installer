@@ -23,6 +23,7 @@ class WizardPage extends StatefulWidget {
     this.footer,
     this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
+    this.snackBar,
   });
 
   /// The title widget.
@@ -52,6 +53,9 @@ class WizardPage extends StatefulWidget {
   /// A footer widget on the side of the buttons.
   final Widget? footer;
 
+  /// A snack bar to display above the buttons.
+  final SnackBar? snackBar;
+
   /// Padding around the footer widget.
   ///
   /// The default value is `kFooterPadding`.
@@ -65,51 +69,67 @@ class WizardPage extends StatefulWidget {
 }
 
 class _WizardPageState extends State<WizardPage> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  void initState() {
+    super.initState();
+    if (widget.snackBar != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final messenger = ScaffoldMessenger.of(_scaffoldKey.currentContext!);
+        messenger.removeCurrentSnackBar();
+        messenger.showSnackBar(widget.snackBar!);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: widget.title,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Padding(
-            padding: widget.headerPadding,
-            child: widget.header != null
-                ? Align(
-                    alignment: Alignment.centerLeft,
-                    child: widget.header,
-                  )
-                : null,
-          ),
-          if (widget.header != null) SizedBox(height: widget.contentSpacing),
-          Expanded(
-            child:
-                Padding(padding: widget.contentPadding, child: widget.content),
-          ),
-          SizedBox(height: widget.contentSpacing),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: widget.footerPadding,
-        child: Row(
-          mainAxisAlignment: widget.footer != null
-              ? MainAxisAlignment.spaceBetween
-              : MainAxisAlignment.end,
+    return ScaffoldMessenger(
+      child: Scaffold(
+        key: _scaffoldKey,
+        appBar: widget.title,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            if (widget.footer != null) Expanded(child: widget.footer!),
-            const SizedBox(width: kContentSpacing),
-            ButtonBar(
-              buttonPadding: EdgeInsets.zero,
-              children: <Widget>[
-                for (final action in widget.actions)
-                  if (action.visible ?? true)
-                    Padding(
-                      padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                      child: _createButton(context, action),
-                    ),
-              ],
+            Padding(
+              padding: widget.headerPadding,
+              child: widget.header != null
+                  ? Align(
+                      alignment: Alignment.centerLeft,
+                      child: widget.header,
+                    )
+                  : null,
             ),
+            if (widget.header != null) SizedBox(height: widget.contentSpacing),
+            Expanded(
+              child: Padding(
+                  padding: widget.contentPadding, child: widget.content),
+            ),
+            SizedBox(height: widget.contentSpacing),
           ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: widget.footerPadding,
+          child: Row(
+            mainAxisAlignment: widget.footer != null
+                ? MainAxisAlignment.spaceBetween
+                : MainAxisAlignment.end,
+            children: <Widget>[
+              if (widget.footer != null) Expanded(child: widget.footer!),
+              const SizedBox(width: kContentSpacing),
+              ButtonBar(
+                buttonPadding: EdgeInsets.zero,
+                children: <Widget>[
+                  for (final action in widget.actions)
+                    if (action.visible ?? true)
+                      Padding(
+                        padding: const EdgeInsets.only(left: kButtonBarSpacing),
+                        child: _createButton(context, action),
+                      ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
