@@ -13,10 +13,10 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'ተወው';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'ለውጥ';
 
   @override
   String get okButtonText => 'እሺ';
@@ -25,10 +25,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get noButtonText => 'አይ';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'እንደገና ጀምር';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'ወደ ነበረበት መመለስ';
 
   @override
   String get yesButtonText => 'አዎ';
