@@ -109,7 +109,8 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
                 style: {
                   'body': Style(
                     color: Theme.of(context).colorScheme.onInverseSurface,
-                  )
+                    margin: Margins.zero,
+                  ),
                 },
                 data: lang.onBatteryWarning(
                     Theme.of(context).colorScheme.error.toHex()),
