@@ -731,5 +731,9 @@
   "offlineWarning": "החיבור שלך מנותק",
   "@offlineWarning": {},
   "partitionFormatNone": "להשאיר בלי פרמוט",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "חשיפה",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "הסתרה",
+  "@whoAreYouPagePasswordHide": {}
 }
