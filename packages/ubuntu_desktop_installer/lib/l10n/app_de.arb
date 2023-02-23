@@ -731,5 +731,7 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "partitionFormatNone": "Unformatiert lassen",
+  "@partitionFormatNone": {}
 }
