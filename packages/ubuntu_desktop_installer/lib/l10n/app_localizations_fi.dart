@@ -34,7 +34,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get yesButtonText => 'Kyllä';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Lopeta asennus';
 
   @override
   String get welcome => 'Tervetuloa';
@@ -133,7 +133,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Salausavaimet eivät täsmää';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Näytä salausavain';
 
   @override
   String get connectToInternetPageTitle => 'Yhdistä internetiin';
@@ -214,16 +214,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installThirdPartySubtitle => 'Näihin ohjelmistoihin kohdistuvat dokumentaation mukana olevat lisenssiehdot. Jotkin voivat olla suljetun lähdekoodin ohjelmistoja.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.';
 
   @override
-  String get installCodecsTitle => 'Download and install support for additional media formats';
+  String get installCodecsTitle => 'Lataa ja asenna tuki eri mediamuotoja varten';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Tähän ohjelmistoon pätee sen dokumentaation mukana tulevat lisenssiehdot. Jotkin ohjelmistot ovat omisteellisia.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -231,7 +231,7 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Et ole yhteydessä verkkoon';
 
   @override
   String get chooseSecurityKeyTitle => 'Valitse salausavain';
@@ -255,7 +255,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Varoitus</font>: Jos tämä salausavain katoaa tai unohdat sen, kaikki tiedot menetetään. Kirjoita tarvittaessa salausavain muistiin ja säilytä sitä turvallisessa paikassa ja älä tietokoneen lähettyvillä.';
+    return '<font color=\"$color\">Varoitus</font>: Jos tämä salausavain katoaa tai unohdat sen, kaikki tiedot menetetään. Kirjoita tarvittaessa salausavain muistiin ja säilytä sitä turvallisessa paikassa, ei tietokoneen lähettyvillä.';
   }
 
   @override
@@ -308,7 +308,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM valittu';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM ja salaus valittu';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -341,17 +341,17 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Asenna $product käyttöjärjestelmien $os1 ja $os2 rinnalle';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Asenna $product niiden rinnalle';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Asenna $product muiden osioiden rinnalle';
   }
 
   @override
@@ -380,30 +380,30 @@ class AppLocalizationsFi extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Asenna nyt';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Varaa levytilaa raahaamalla alla olevaa erotinta:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num pienempää osiota on piilotettu, käytä <a href=\"$url\">edistynyttä osiointityökalua</a> saadaksesi lisää toiminnallisuuksia';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Muuta osion kokoa';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Varaa tilaa';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Tiedostot';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Osio:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Koko:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Saatavilla:';
 
   @override
   String get allocateDiskSpace => 'Varaa levytilaa';
@@ -445,10 +445,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Valitsit koko laitteen osioitavaksi. Mikäli jatkat uuden osiotaulun tekemistä, kaikki laitteen nykyiset levyosiot poistetaan.\n\nHuomaa, että voit myöhemmin perua tämän toimenpiteen, jos haluat.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Liian monta ensisijaista osiota';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'raja saavutettu';
 
   @override
   String get bootLoaderDevice => 'Laite, jolle alkulatausohjelma asennetaan';
@@ -544,7 +544,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS root -tiedostojärjestelmä';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Jätä alustamatta';
 
   @override
   String get partitionErase => 'Alusta osio';
@@ -589,16 +589,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPageInvalidUsername => 'Käyttäjätunnus on virheellinen';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Kyseinen käyttäjänimi on jo olemassa.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Kyseinen nimi on varattu järjestelmän käytettäväksi.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Kyseinen nimi on liian pitkä.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Kyseinen nimi sisältää virheellisiä merkkejä.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'Valitse salasana';
@@ -633,31 +633,31 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Seuraaviin levyosioihin luodaan uusi tiedostojärjestelmä:';
+  String get writeChangesPartitionsHeader => 'Seuraavat osiomuutokset toteutetaan:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return 'osion #$disk$partition koko $oldsize muutettu kokoon $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return 'osio #$disk$partition alustettu muotoon $format käytettäväksi liitospisteenä $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formatted as $format';
+    return 'osio #$disk$partition alustettu muotoon $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return 'osio #$disk$partition käytettäväksi liitospisteenä $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition created';
+    return 'osio #$disk$partition luotu';
   }
 
   @override
@@ -687,17 +687,17 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Voit jatkaa julkaisun $RELEASE testaamista nyt, mutta mitkään tekemäsi muutokset tai tallentamasi asiakirjat eivät säily, ennen kuin käynnistät tietokoneen uudelleen.';
   }
 
   @override
   String get shutdown => 'Sammuta';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Käynnistä uudelleen nyt';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Jatka testaamista';
 
   @override
   String get turnOffBitlockerTitle => 'Sammuta BitLocker';
@@ -729,15 +729,15 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return '${RELEASE}n uusimman version nopeus ja uudet ominaisuudet tekevät tietokoneen käyttämisestä helpompaa kuin koskaan ennen. Kiinnitä seuraaviin asioihin huomiota, kun tutustut uuteen käyttöjärjestelmääsi...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Löydä lisää sovelluksia';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'Ohjelmien etsiminen ja lataaminen epäilyttäviltä verkkosivuilta on historiaa. Pääsy Snap-kauppaan ja ${RELEASE}n sovellusvalikoimaan mahdollistaa sovelluksien etsimisen sekä asentamisen vaivatta. Etsi suoraan sovelluksen nimellä tai avainsanalla tai selaa eri luokkia, kuten tiede, koulutus ja pelit. Muiden käyttäjien antamat arvostelut helpottavat valintaasi.';
   }
 
   @override
@@ -745,7 +745,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return '${RELEASE}ssa on upea Rytmilaatikko-musiikkisoitin. Edistyksellisten soittomahdollisuuksien ansiosta parhaiden kappaleiden löytäminen on helppoa. Se toimii loistavasti myös CD-levyjen ja kannettavien musiikkisoittimien kanssa. Musiikin kuunteleminen ei ole koskaan ollut näin nautinnollista.';
   }
 
   @override
@@ -758,26 +758,26 @@ class AppLocalizationsFi extends AppLocalizations {
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'Leikittele valokuvillasi';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell on kätevä sovellus kuvien hallintaan. Yhdistä kamera tai puhelin siirtääksesi valokuvasi talteen ja muille jaettavaksi. Jos haluat ryhtyä luovaksi, löydät paljon muita sovelluksia kuvien käsittelyä varten Ubuntu-kaupasta.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'Shotwell - valokuvien hallinta';
 
   @override
   String get photoSlideGimp => 'GIMP-kuvankäsittely';
 
   @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
+  String get photoSlideShotcut => 'Shotcut-videoeditori';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'Ota kaikki irti internetistä';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return '$RELEASE sisältää Firefoxin, miljoonien käyttämän verkkoselaimen. Useimmin käyttämäsi verkkosovellukset (kuten Facebook tai Gmail) on mahdollista kiinnittää työpöydälle, jolloin niiden käyttö sujuu vaivatta tavallisten sovellusten tapaan.';
   }
 
   @override
@@ -793,7 +793,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get officeSlideTitle => 'Kaikki mitä tarvitset toimistossa';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
+  String get officeSlideDescription => 'LibreOffice on vapaa toimisto-ohjelmisto, joka sisältää kaiken tarvittavan asiakirjojen, taulukoiden ja esitysten luomiseen. LibreOffice on yhteensopiva Microsoft Office -tiedostomuotojen kanssa, ja sisältää kaikki tarvitsemasi ominaisuudet ilman hintalappua.';
 
   @override
   String get officeSlideWriter => 'LibreOffice Writer';
@@ -805,15 +805,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get officeSlideImpress => 'LibreOffice Impress';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'Esteetön kaikille';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, $RELEASE makes computing easy — whoever and wherever you are.';
+    return '${RELEASE}n filosofian ytimessä on usko siihen, että tietokoneiden käyttö sopii kaikille. Tämän takia $RELEASE tarjoaa erilaisia mukauttamismahdollisuuksia ollakseen helppokäyttöinen mahdollisimman monelle ihmiselle kaikkialla maailmassa. Tarjolla ovat muun muassa edistyneet esteettömyystoiminnot sekä lukuisat valinnaiset kirjasimet, väriteemat ja kielet.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get accessSlideCustomizationOptions => 'Mukauttamisvalinnat';
 
   @override
   String get accessSlideAppearance => 'Ulkoasu';
@@ -829,51 +829,51 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common aspects of $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return 'Virallinen dokumentaatio kattaa useimmat yleisimmät ${RELEASE}n osa-alueet. Dokumentaatio on saatavilla <a href=\"https://help.ubuntu.com\">verkossa</a> ja telakan Ohje-kuvaketta napsauttamalla.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a> -palvelussa on mahdollista esittää kysymyksiä ja selata suurta määrää aiempia vastauksia kysymyksiin. Tukea omalla kielelläsi voi löytyä <a href=\"https://loco.ubuntu.com/teams\">Ubuntun paikallistiimin</a> kautta.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'Vinkkejä ja muita hyödyllisiä resursseja tarjoaa <a href=\"https://www.ubuntu.com/support/community-support\">yhteisön tuki</a> sekä <a href=\"https://www.ubuntu.com/support\">kaupallinen tuki</a>.';
 
   @override
-  String get includedSoftware => 'Included software';
+  String get includedSoftware => 'Sisältyvät ohjelmistot';
 
   @override
-  String get availableSoftware => 'Available software';
+  String get availableSoftware => 'Saatavilla olevat ohjelmistot';
 
   @override
-  String get supportedSoftware => 'Supported software';
+  String get supportedSoftware => 'Tuetut ohjelmistot';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'Kopioidaan tiedostoja…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'Asennetaan järjestelmää…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'Määritetään järjestelmää…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Asennus epäonnistui';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Pahoittelut';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return 'Tarvitse levytilaa vähintään $SIZE asentaaksesi ${RELEASE}n.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'Tässä tietokoneessa on levytilaa vain $SIZE.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'Kapasiteetiltaan suurin levy tässä tietokoneessa on vain $SIZE.';
   }
 }
