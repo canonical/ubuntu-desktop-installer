@@ -5,55 +5,55 @@ class AppLocalizationsSq extends AppLocalizations {
   AppLocalizationsSq([String locale = 'sq']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Instaluesi i Ubuntu Desktop';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Instalo $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Anulo';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Ndrysho';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Në rregull';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Jo';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Rinis';
 
   @override
-  String get revertButtonText => 'Revert';
+  String get revertButtonText => 'Rikthe';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Po';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Dil nga instalimi';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Mirësevini';
 
   @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String get tryOrInstallPageTitle => 'Provo ose instalo';
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get repairInstallation => 'Riparo instalimin';
 
   @override
   String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Provo $RELEASE';
   }
 
   @override
@@ -63,7 +63,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Instalo $RELEASE';
   }
 
   @override
@@ -181,31 +181,31 @@ class AppLocalizationsSq extends AppLocalizations {
   String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get enableWifi => 'Aktivizo Wi-Fi';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get connectButtonText => 'Lidhu';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Përditësime dhe programe të tjera';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Cilat programe dëshiron të instalosh si fillim?';
 
   @override
-  String get normalInstallationTitle => 'Normal installation';
+  String get normalInstallationTitle => 'Instalim normal';
 
   @override
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'Minimal installation';
+  String get minimalInstallationTitle => 'Instalim minimal';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Shfletues interneti dhe mjete bazë.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Opsione të tjera';
 
   @override
   String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
@@ -259,7 +259,7 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Lloji i instalimit';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -288,16 +288,16 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Opsionet e perpapruara...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Opsionet e perparuara';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Asnjë';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Asnje e selektuare';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -305,10 +305,10 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM e selektuare';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LMV dhe kodimi i selektuare';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -322,7 +322,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZfS e selektuare';
 
   @override
   String installationTypeReinstall(Object os) {
@@ -358,7 +358,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Diçka tjetër';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -371,16 +371,16 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Zgjidh draivin:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Do të përdoret i gjithë disku:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Instalo tani';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Krijo hapësirë duke zvarritur ndarësin këtu poshtë:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -394,16 +394,16 @@ class AppLocalizationsSq extends AppLocalizations {
   String get installAlongsideAllocateSpace => 'Allocate space';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Skedarët';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Ndarje:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Përmasa:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Në dispozicion:';
 
   @override
   String get allocateDiskSpace => 'Allocate disk space';
@@ -412,28 +412,28 @@ class AppLocalizationsSq extends AppLocalizations {
   String get startInstallingButtonText => 'Start Installing';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Pajisja';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Tipi';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Pika e montimit';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Përmasa';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Në përdorim';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Sistemi';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Formato';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'Hapësira e lirë';
 
   @override
   String get newPartitionTable => 'New partition table';
@@ -448,19 +448,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'U arrit kufiri';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Krijo ndarjen';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Edito particionin';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Përmasa:';
 
   @override
   String get partitionUnitB => 'B';
@@ -478,19 +478,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get partitionTypeLabel => 'Type for the new partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Parësore';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Llogjike';
 
   @override
   String get partitionLocationLabel => 'Location for the new partition:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Fillimi i kësaj hapësire';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Fundi i kësaj hapësire';
 
   @override
   String get partitionFormatLabel => 'Used as:';
@@ -550,19 +550,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get partitionErase => 'Format the partition';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Pika e montimit:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Kush jeni ju?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Hyr automatikisht';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Kërko fjalëkalimin tim për të hyrë';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Emri juaj';
 
   @override
   String get whoAreYouPageRealNameRequired => 'A name is required';
@@ -571,7 +571,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'Emri që ai përdor kur flet me kompjuterat e tjerë.';
 
   @override
   String get whoAreYouPageComputerNameRequired => 'A computer name is required';
@@ -601,7 +601,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Zgjidh një fjalëkalim';
 
   @override
   String get whoAreYouPagePasswordRequired => 'A password is required';
@@ -613,13 +613,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
 
   @override
-  String get whoAreYouPageShowPassword => 'Show password';
+  String get whoAreYouPageShowPassword => 'Shfaq fjalëkalimin';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'disku';
 
   @override
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
@@ -661,19 +661,19 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Zgjidh pamjen tënde';
 
   @override
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'E errët';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'E çelur';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Instalimi u Kompletua';
 
   @override
   String readyToUse(Object system) {
@@ -691,16 +691,16 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Ndalo punën';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Rindize Tani';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Vazhdoni Testimin';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Fikeni Bitlocker';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -714,13 +714,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get restartIntoWindows => 'Restart Into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Ku ndodheni?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Vendndodhja';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Zona orare';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -816,16 +816,16 @@ class AppLocalizationsSq extends AppLocalizations {
   String get accessSlideCustomizationOptions => 'Customization options';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Dukja';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'Teknologjitë ndihmëse';
 
   @override
-  String get accessSlideLanguageSupport => 'Language support';
+  String get accessSlideLanguageSupport => 'Mbështetje për gjuhën';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Ndihma dhe mbështetja';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -848,19 +848,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get supportedSoftware => 'Supported software';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'Duke kopjuar skedarët…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'Instalimi i sistemit…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'Duke parametrizuar kompjuterin tënd…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Instalimi dështoi';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Më vjen keq';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
