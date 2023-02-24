@@ -92,5 +92,24 @@
   "setupCompleteUpdate": "Yra rekomenduojama paleisti šią komandą, kad Ubuntu būtų atnaujinta iki naujausios versijos:",
   "@setupCompleteUpdate": {},
   "setupCompleteManage": "Norėdami tvarkyti savo WSL nustatymus, galite naudoti įtaisytąją ubuntuwsl komandą:",
-  "@setupCompleteManage": {}
+  "@setupCompleteManage": {},
+  "installLangPacksTitle": "Įdiekite paketus geresniam {lang} kalbos palaikymui",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "Nerekomenduojama naudojant lėtą interneto ryšį.",
+  "@installLangPacksSubtitle": {},
+  "profileSetupUsernameTooLong": "Šis vardas yra per ilgas.",
+  "@profileSetupUsernameTooLong": {},
+  "profileSetupUsernameInvalidChars": "Šiame varde yra netinkamų simbolių.",
+  "@profileSetupUsernameInvalidChars": {},
+  "profileSetupUsernameSystemReserved": "Šis vardas yra rezervuotas sisteminiam naudojimui.",
+  "@profileSetupUsernameSystemReserved": {},
+  "profileSetupUsernameInUse": "Toks naudotojo vardas jau yra.",
+  "@profileSetupUsernameInUse": {}
 }
