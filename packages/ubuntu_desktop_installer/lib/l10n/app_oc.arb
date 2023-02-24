@@ -765,5 +765,9 @@
   "partitionLimitReached": "limit atenh",
   "@partitionLimitReached": {},
   "offlineWarning": "Sètz fòra linha",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "whoAreYouPagePasswordShow": "Mostrar",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Rescondre",
+  "@whoAreYouPagePasswordHide": {}
 }
