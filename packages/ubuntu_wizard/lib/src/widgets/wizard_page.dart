@@ -157,6 +157,6 @@ class _WizardPageState extends State<WizardPage> {
         : null;
     return action.highlighted == true
         ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
-        : OutlinedButton(onPressed: maybeActivate, child: Text(action.label!));
+        : FilledButton(onPressed: maybeActivate, child: Text(action.label!));
   }
 }
