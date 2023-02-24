@@ -53,7 +53,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainState: true,
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
-                child: OutlinedButton(
+                child: FilledButton(
                   onPressed: step is StepKeyPresent ? detector.no : null,
                   child: Text(lang.noButtonText),
                 ),
@@ -64,7 +64,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainState: true,
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
-                child: OutlinedButton(
+                child: FilledButton(
                   onPressed: step is StepKeyPresent ? detector.yes : null,
                   child: Text(lang.yesButtonText),
                 ),

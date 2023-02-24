@@ -25,11 +25,11 @@ Future<bool> showConfirmationDialog(
         titlePadding: EdgeInsets.zero,
         content: Text(message),
         actions: <Widget>[
-          OutlinedButton(
+          FilledButton(
             child: Text(lang.backAction),
             onPressed: () => Navigator.of(context).pop(false),
           ),
-          OutlinedButton(
+          FilledButton(
             child: Text(lang.continueAction),
             onPressed: () => Navigator.of(context).pop(true),
           ),
@@ -107,12 +107,12 @@ Future<void> showCreatePartitionDialog(
           ],
         ),
         actions: [
-          OutlinedButton(
+          FilledButton(
             onPressed: Navigator.of(context).pop,
             child: Text(lang.cancelButtonText),
           ),
           const SizedBox(width: kButtonBarSpacing),
-          OutlinedButton(
+          FilledButton(
             onPressed: () {
               model.addPartition(
                 disk,
@@ -251,12 +251,12 @@ Future<void> showEditPartitionDialog(
           ],
         ),
         actions: [
-          OutlinedButton(
+          FilledButton(
             onPressed: Navigator.of(context).pop,
             child: Text(lang.cancelButtonText),
           ),
           const SizedBox(width: kButtonBarSpacing),
-          OutlinedButton(
+          FilledButton(
             onPressed: () {
               model.editPartition(
                 disk,

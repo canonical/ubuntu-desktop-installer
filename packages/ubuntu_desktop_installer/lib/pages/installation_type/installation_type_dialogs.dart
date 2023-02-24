@@ -71,12 +71,12 @@ Future<void> showAdvancedFeaturesDialog(
           },
         ),
         actions: [
-          OutlinedButton(
+          FilledButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(lang.cancelButtonText),
           ),
           const SizedBox(width: kButtonBarSpacing),
-          OutlinedButton(
+          FilledButton(
             onPressed: () => Navigator.of(context).pop(true),
             child: Text(lang.okButtonText),
           ),
