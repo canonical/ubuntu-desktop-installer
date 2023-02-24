@@ -21,7 +21,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isTrue);
@@ -78,7 +78,7 @@ void main() {
         ),
       ),
     );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsOneWidget);
+    expect(find.widgetWithText(FilledButton, 'action'), findsOneWidget);
     expect(find.widgetWithText(ElevatedButton, 'action'), findsNothing);
 
     await tester.pumpWidget(
@@ -90,7 +90,7 @@ void main() {
         ),
       ),
     );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsNothing);
+    expect(find.widgetWithText(FilledButton, 'action'), findsNothing);
     expect(find.widgetWithText(ElevatedButton, 'action'), findsOneWidget);
   });
 
@@ -112,7 +112,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isFalse);
@@ -131,7 +131,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.byType(FilledButton),
         matching: find.text('action'),
       ),
       findsNothing,
@@ -162,7 +162,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.byType(FilledButton),
         matching: find.text(lang.backAction),
       ),
       findsOneWidget,
@@ -170,7 +170,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.byType(FilledButton),
         matching: find.text(lang.continueAction),
       ),
       findsOneWidget,
