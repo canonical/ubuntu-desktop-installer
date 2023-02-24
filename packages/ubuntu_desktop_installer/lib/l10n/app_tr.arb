@@ -725,7 +725,7 @@
   "@installDriversTitle": {},
   "installDriversSubtitle": "Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Ek ortam biçimleri desteğini kur",
+  "installCodecsTitle": "Ek ortam biçimleri desteğini indir ve kur",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
   "@installCodecsSubtitle": {},
@@ -743,5 +743,13 @@
   "tooManyPrimaryPartitions": "Çok fazla birincil bölüm",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "sınıra ulaşıldı",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "offlineWarning": "Şu anda çevrimdışısın",
+  "@offlineWarning": {},
+  "whoAreYouPagePasswordShow": "Göster",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Gizle",
+  "@whoAreYouPagePasswordHide": {},
+  "partitionFormatNone": "Biçimlendirilmemiş bırak",
+  "@partitionFormatNone": {}
 }
