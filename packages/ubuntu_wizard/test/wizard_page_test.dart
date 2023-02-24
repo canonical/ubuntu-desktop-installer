@@ -34,6 +34,7 @@ void main() {
           header: const Text('header'),
           content: const Text('content'),
           footer: const Text('footer'),
+          snackBar: const SnackBar(content: Text('snackbar')),
           actions: const <WizardAction>[
             WizardAction(label: 'back'),
             WizardAction(label: 'next'),
@@ -41,6 +42,7 @@ void main() {
         ),
       ),
     );
+    await tester.pumpAndSettle();
 
     final title = find.descendant(
       of: find.byType(AppBar),
@@ -56,6 +58,9 @@ void main() {
 
     final footer = find.text('footer');
     expect(footer, findsOneWidget);
+
+    final snackBar = find.text('snackbar');
+    expect(snackBar, findsOneWidget);
 
     expect(tester.getCenter(title).dy, lessThan(tester.getCenter(header).dy));
     expect(tester.getCenter(header).dy, lessThan(tester.getCenter(content).dy));

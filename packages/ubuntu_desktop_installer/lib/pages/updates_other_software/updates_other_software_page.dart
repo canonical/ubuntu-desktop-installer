@@ -100,10 +100,23 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
           ),
         ],
       ),
-      footer: model.onBattery
-          ? Html(
-              data: lang.onBatteryWarning(
-                  Theme.of(context).colorScheme.error.toHex()),
+      snackBar: model.onBattery
+          ? SnackBar(
+              width: 500,
+              dismissDirection: DismissDirection.none,
+              behavior: SnackBarBehavior.floating,
+              content: Html(
+                style: {
+                  'body': Style(
+                    color: Theme.of(context).colorScheme.onInverseSurface,
+                    margin: Margins.zero,
+                  ),
+                },
+                data: lang.onBatteryWarning(
+                    Theme.of(context).colorScheme.error.toHex()),
+              ),
+              duration: const Duration(days: 1),
+              showCloseIcon: true,
             )
           : null,
       actions: <WizardAction>[
