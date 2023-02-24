@@ -138,24 +138,20 @@ Future<void> _testCloseWindow() async {
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
   /// Taps a "Go Back" button.
-  Future<void> tapBack() => tapButton(label: ulang.backAction);
+  Future<void> tapBack() => tapButton(ulang.backAction);
 
   /// Taps a "Continue" button.
-  Future<void> tapContinue() => tapButton(label: ulang.continueAction);
+  Future<void> tapContinue() => tapButton(ulang.continueAction);
 
-  /// Taps a button specified by its [label].
-  Future<void> tapButton({
-    required String label,
-    bool highlighted = false,
-  }) async {
-    await tap(find.widgetWithText(
-        highlighted ? ElevatedButton : OutlinedButton, label));
+  /// Taps a button specified by its [label]. The button can be any
+  /// [ButtonStyleButton] subclass, such as [OutlinedButton], [ElevatedButton],
+  /// or [FilledButton].
+  Future<void> tapButton(String label) async {
+    await tap(find.ancestor(
+      of: find.text(label),
+      matching: find.bySubtype<ButtonStyleButton>(),
+    ));
     await pump();
-  }
-
-  /// Taps a highlighted button specified by its [label].
-  Future<void> tapHighlightedButton(String label) {
-    return tapButton(label: label, highlighted: true);
   }
 
   /// Enters a text [value] into a form field specified by its [label], or does
