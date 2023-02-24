@@ -116,7 +116,7 @@ Future<void> testAdvancedSetupPage(
   );
   await tester.pumpAndSettle();
 
-  await tester.tapButton(label: tester.lang.setupButton, highlighted: true);
+  await tester.tapButton(tester.lang.setupButton);
 }
 
 Future<void> testApplyingChangesPage(
@@ -157,7 +157,7 @@ Future<void> testConfigurationUIPage(
   );
   await tester.pumpAndSettle();
 
-  await tester.tapButton(label: tester.lang.saveButton, highlighted: true);
+  await tester.tapButton(tester.lang.saveButton);
 }
 
 void expectPage(

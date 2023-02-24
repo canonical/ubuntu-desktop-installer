@@ -415,7 +415,7 @@ Future<void> testInstallationTypePage(
     await tester.tapRadioButton<InstallationType>(type);
   }
   if (advancedFeature != null) {
-    await tester.tapButton(label: tester.lang.installationTypeAdvancedLabel);
+    await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
     await tester.pumpAndSettle();
 
     await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
@@ -428,7 +428,7 @@ Future<void> testInstallationTypePage(
       );
     }
 
-    await tester.tapButton(label: tester.lang.okButtonText);
+    await tester.tapButton(tester.lang.okButtonText);
   }
 
   await tester.pumpAndSettle();
@@ -464,7 +464,7 @@ Future<void> testAllocateDiskSpacePage(
   await expectPage(
       tester, AllocateDiskSpacePage, (lang) => lang.allocateDiskSpace);
 
-  await tester.tapButton(label: tester.lang.newPartitionTable);
+  await tester.tapButton(tester.lang.newPartitionTable);
   await tester.pumpAndSettle();
 
   for (final disk in storage ?? []) {
@@ -491,7 +491,7 @@ Future<void> testAllocateDiskSpacePage(
         await tester.pump();
       }
 
-      await tester.tapButton(label: tester.lang.okButtonText);
+      await tester.tapButton(tester.lang.okButtonText);
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
@@ -522,14 +522,14 @@ Future<void> testInstallAlongsidePage(
     await tester.pumpAndSettle();
   }
 
-  await tester.tapButton(label: tester.lang.selectGuidedStorageInstallNow);
+  await tester.tapButton(tester.lang.selectGuidedStorageInstallNow);
 }
 
 Future<void> testWriteChangesToDiskPage(WidgetTester tester) async {
   await expectPage(
       tester, WriteChangesToDiskPage, (lang) => lang.writeChangesToDisk);
 
-  await tester.tapHighlightedButton(tester.lang.startInstallingButtonText);
+  await tester.tapButton(tester.lang.startInstallingButtonText);
 }
 
 Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
@@ -537,7 +537,7 @@ Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
       tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
 
   final windowClosed = waitForWindowClosed();
-  await tester.tapHighlightedButton(tester.lang.restartIntoWindows);
+  await tester.tapButton(tester.lang.restartIntoWindows);
   await expectLater(windowClosed, completion(isTrue));
 }
 
@@ -643,7 +643,7 @@ Future<void> testInstallationCompletePage(WidgetTester tester) async {
       (lang) => lang.installationCompleteTitle);
 
   final windowClosed = waitForWindowClosed();
-  await tester.tapButton(label: tester.lang.continueTesting);
+  await tester.tapButton(tester.lang.continueTesting);
   await expectLater(windowClosed, completion(isTrue));
 }
 
