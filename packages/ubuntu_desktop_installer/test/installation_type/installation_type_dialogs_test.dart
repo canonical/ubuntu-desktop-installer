@@ -74,7 +74,7 @@ void main() {
     await tester.pump();
 
     await tester
-        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
@@ -110,7 +110,7 @@ void main() {
     await tester.pump();
 
     await tester
-        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
