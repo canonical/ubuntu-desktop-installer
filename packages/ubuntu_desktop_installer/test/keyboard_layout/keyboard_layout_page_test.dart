@@ -128,11 +128,11 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -140,11 +140,11 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isFalse);
   });
 
   testWidgets('key search', (tester) async {
@@ -183,7 +183,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);

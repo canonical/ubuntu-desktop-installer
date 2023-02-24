@@ -165,9 +165,9 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.continueAction);
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -175,9 +175,9 @@ void main() {
     await tester.pumpWidget(buildApp(tester, model));
 
     final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.continueAction);
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isFalse);
   });
 
   // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
@@ -207,7 +207,7 @@ void main() {
     verifyNever(model.saveProfileSetup());
 
     final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.continueAction);
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);

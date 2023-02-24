@@ -69,7 +69,7 @@ void main() {
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     await tester.tap(continueButton);
@@ -296,10 +296,10 @@ void main() {
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final backButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.backAction,
     );
     expect(backButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
+    expect(tester.widget<FilledButton>(backButton).enabled, isFalse);
   });
 }

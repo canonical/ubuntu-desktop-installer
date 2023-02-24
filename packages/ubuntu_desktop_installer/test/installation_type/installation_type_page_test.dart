@@ -346,11 +346,11 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, false);
+    expect(tester.widget<FilledButton>(continueButton).enabled, false);
 
     await tester.tap(continueButton);
     verifyNever(model.save());
@@ -361,7 +361,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);

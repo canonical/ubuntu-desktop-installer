@@ -92,9 +92,9 @@ void main() {
   testWidgets('selecting an option should enable continuing', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    final continueButton = find.widgetWithText(FilledButton, 'Continue');
     expect(continueButton, findsOneWidget);
-    expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
+    expect((continueButton.evaluate().single.widget as FilledButton).enabled,
         false);
 
     final options = find.byType(OptionCard);
@@ -103,7 +103,7 @@ void main() {
     await tester.tap(options.first);
     await tester.pump();
 
-    expect((continueButton.evaluate().single.widget as OutlinedButton).enabled,
+    expect((continueButton.evaluate().single.widget as FilledButton).enabled,
         true);
   });
 
@@ -117,7 +117,7 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    final continueButton = find.widgetWithText(FilledButton, 'Continue');
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
@@ -130,9 +130,9 @@ void main() {
   testWidgets('try ubuntu', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    final continueButton = find.widgetWithText(FilledButton, 'Continue');
     expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isFalse);
 
     final option =
         find.widgetWithText(OptionCard, tester.lang.tryUbuntu('Ubuntu'));
@@ -141,7 +141,7 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+    expect(tester.widget<FilledButton>(continueButton).enabled, isTrue);
 
     var windowClosed = false;
     final methodChannel = MethodChannel('yaru_window');

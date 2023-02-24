@@ -171,7 +171,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);
