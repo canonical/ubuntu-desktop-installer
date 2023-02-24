@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/widgets.dart';
 
 // ignore_for_file: type=lint
 
@@ -174,5 +175,32 @@ void main() {
       ),
       findsOneWidget,
     );
+  });
+
+  testWidgets('page indicator', (tester) async {
+    final routes = <String, WizardRoute>{
+      '/foo': WizardRoute(
+        builder: (context) => WizardPage(
+          content: const Text('Page 4 of 7'),
+        ),
+        userData: 3,
+      ),
+    };
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
+        home: Wizard(
+          userData: 7,
+          routes: routes,
+          initialRoute: '/foo',
+        ),
+      ),
+    );
+
+    final indicatorFinder = find.byType(YaruPageIndicator);
+    expect(indicatorFinder, findsOneWidget);
+    expect(find.text('Page 4 of 7'), findsOneWidget);
+    expect((indicatorFinder.evaluate().first.widget as YaruPageIndicator).page,
+        equals(3));
   });
 }
