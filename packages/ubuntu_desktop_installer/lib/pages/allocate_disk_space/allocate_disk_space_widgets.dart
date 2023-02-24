@@ -211,8 +211,8 @@ class PartitionButtonRow extends StatelessWidget {
                   message: model.selectedGap?.tooManyPrimaryPartitions == true
                       ? lang.tooManyPrimaryPartitions
                       : '',
-                  child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
                       side: BorderSide.none,
                       shape: const RoundedRectangleBorder(),
                     ),
@@ -224,8 +224,8 @@ class PartitionButtonRow extends StatelessWidget {
                   ),
                 ),
                 const VerticalDivider(width: 1),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     side: BorderSide.none,
                     shape: const RoundedRectangleBorder(),
                   ),
@@ -236,8 +236,8 @@ class PartitionButtonRow extends StatelessWidget {
                   child: const Icon(Icons.remove),
                 ),
                 const VerticalDivider(width: 1),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     side: BorderSide.none,
                     shape: const RoundedRectangleBorder(),
                   ),
@@ -257,7 +257,7 @@ class PartitionButtonRow extends StatelessWidget {
         const Spacer(),
         ButtonBar(
           children: [
-            OutlinedButton(
+            FilledButton(
               onPressed: model.canReformatDisk
                   ? () => _maybeReformatDisk(context)
                   : null,
@@ -265,7 +265,7 @@ class PartitionButtonRow extends StatelessWidget {
             ),
           ],
         ),
-        OutlinedButton(
+        FilledButton(
           onPressed: model.resetStorage,
           child: Text(lang.revertButtonText),
         ),
