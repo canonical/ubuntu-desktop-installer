@@ -160,9 +160,8 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                   ],
                 ),
                 const SizedBox(height: kContentSpacing),
-                LinearProgressIndicator(
+                YaruLinearProgressIndicator(
                   value: model.isInstalling ? null : 0,
-                  backgroundColor: Theme.of(context).primaryColor.withAlpha(62),
                 ),
               ],
             ),

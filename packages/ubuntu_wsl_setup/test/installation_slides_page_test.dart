@@ -17,6 +17,7 @@ import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_m
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_page.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/slides.dart';
 import 'package:ubuntu_wsl_setup/services/journal.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -99,7 +100,7 @@ void main() {
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsOneWidget);
     expect(find.text(tester.lang.installationSlidesUnpacking), findsOneWidget);
   });
 
@@ -109,7 +110,7 @@ void main() {
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
-    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
     expect(find.text(tester.lang.installationSlidesErrorTitle), findsOneWidget);
     expect(find.text(tester.lang.installationSlidesErrorMsg), findsOneWidget);
   });
