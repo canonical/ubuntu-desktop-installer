@@ -13,5 +13,26 @@
   "setupButton": "පිහිටුවීම",
   "@setupButton": {},
   "selectLanguageTitle": "ඔබගේ භාෂාව තෝරන්න",
-  "@selectLanguageTitle": {}
+  "@selectLanguageTitle": {},
+  "installLangPacksTitle": "ප්‍රශස්ත {lang} භාෂා සහායක් සඳහා ඇසුරුම් ස්ථාපනය කරන්න",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installLangPacksSubtitle": "මන්දගාමී සම්බන්ධතා සඳහා නිර්දේශ නොකෙරේ.",
+  "@installLangPacksSubtitle": {},
+  "profileSetupTitle": "පැතිකඩ පිහිටුවීම",
+  "@profileSetupTitle": {},
+  "profileSetupHeader": "කරුණාකර පෙරනිමි UNIX පරිශ්‍රීලක ගිණුමක් සාදන්න. වැඩි විස්තර සඳහා ගොඩවදින්න: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "@profileSetupHeader": {},
+  "profileSetupRealnameLabel": "ඔබගේ නම",
+  "@profileSetupRealnameLabel": {},
+  "profileSetupRealnameRequired": "නමක් වුවමනාය",
+  "@profileSetupRealnameRequired": {},
+  "profileSetupUsernameHint": "පරිශ්‍රීලක නාමයක් තෝරන්න",
+  "@profileSetupUsernameHint": {}
 }
