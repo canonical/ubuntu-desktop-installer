@@ -740,5 +740,9 @@
   "offlineWarning": "Actualmente no está conectado",
   "@offlineWarning": {},
   "partitionFormatNone": "Dejar sin formatear",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "Mostrar",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Ocultar",
+  "@whoAreYouPagePasswordHide": {}
 }
