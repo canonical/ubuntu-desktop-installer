@@ -179,5 +179,13 @@
   "installationSlidesUbuntuWslDataScienceText": "Nvidiaデータサイエンススタックは、WindowsのネイティブなNvidiaドライバの上で、データサイエンスと機械学習プロジェクトのパフォーマンスを最大化します。",
   "@installationSlidesUbuntuWslDataScienceText": {},
   "installationSlidesUbuntuWslWebDevText": "VS Code や IntelliJ などの Windows ネイティブ IDE を使用して WSL で開発し、NodeJS と Ruby の完全サポートを利用できます。",
-  "@installationSlidesUbuntuWslWebDevText": {}
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "installationSlidesExitTitle": "本当に去りますか？",
+  "@installationSlidesExitTitle": {},
+  "installationSlidesUbuntuWslGuiAppsText": "マルチプラットフォーム開発では、WSLgを使用してLinux上でウェブおよびグラフィカル・アプリケーションを開発できます。",
+  "@installationSlidesUbuntuWslGuiAppsText": {},
+  "installationSlidesUbuntuWslDevOpsText": "Ubuntuの本番環境に公開する前に、Ubuntu WSLでローカルに開発することで、CI/CDパイプラインの互換性を確保できます。",
+  "@installationSlidesUbuntuWslDevOpsText": {},
+  "installationSlidesLeave": "去る",
+  "@installationSlidesLeave": {}
 }
