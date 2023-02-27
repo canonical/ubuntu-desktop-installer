@@ -33,7 +33,7 @@ class InstallationCompletePage extends StatelessWidget {
       ),
       content: Row(
         children: [
-          const SizedBox(width: 120),
+          const Spacer(flex: 2),
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -49,8 +49,9 @@ class InstallationCompletePage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 60),
+          const Spacer(),
           Expanded(
+            flex: 8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -94,7 +95,7 @@ class InstallationCompletePage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 120),
+          const Spacer(flex: 2),
         ],
       ),
     );
