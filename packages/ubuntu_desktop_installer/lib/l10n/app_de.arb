@@ -733,5 +733,9 @@
     }
   },
   "partitionFormatNone": "Unformatiert lassen",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordHide": "Ausblenden",
+  "@whoAreYouPagePasswordHide": {},
+  "whoAreYouPagePasswordShow": "Anzeigen",
+  "@whoAreYouPagePasswordShow": {}
 }
