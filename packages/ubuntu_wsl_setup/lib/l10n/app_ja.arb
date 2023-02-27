@@ -6,7 +6,7 @@
   "@setupCompleteTitle": {},
   "applyingChangesDisclaimer": "インターネットの接続状態によっては、数分かかる場合があります。",
   "@applyingChangesDisclaimer": {},
-  "setupCompleteHeader": "こんにちは、{user}さん。\nセットアップは正常に完了しました。",
+  "setupCompleteHeader": "こんにちは、{user}さん。\nセットアップは完了しました。",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -148,5 +148,44 @@
   "installationSlidesUbuntuWslWebDev": "ウェブ開発に\nUbuntu WLS",
   "@installationSlidesUbuntuWslWebDev": {},
   "installationSlidesUbuntuWslDataScience": "データサイエンスにUbuntu WSL",
-  "@installationSlidesUbuntuWslDataScience": {}
+  "@installationSlidesUbuntuWslDataScience": {},
+  "installLangPacksSubtitle": "低速回線ではお勧めしません。",
+  "@installLangPacksSubtitle": {},
+  "installLangPacksTitle": "{lang}のサポートパッケージをインストール",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  },
+  "installationSlidesUbuntuWslGuiApps": "グラフィカルアプリに\nUbuntu WSL",
+  "@installationSlidesUbuntuWslGuiApps": {},
+  "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
+  "@installationSlidesFindOutMoreLink": {},
+  "installationSlidesUbuntuWslEnterprises": "エンタープライズにUbuntu WSL",
+  "@installationSlidesUbuntuWslEnterprises": {},
+  "installationSlidesFindOutMore": "詳しくはこちら",
+  "@installationSlidesFindOutMore": {},
+  "installationSlidesFindOutMoreVisit": "WSL上のUbuntuの詳細と、Canonicalが開発者や組織をどのようにサポートしているかについては、 ",
+  "@installationSlidesFindOutMoreVisit": {},
+  "installationSlidesFindOutMoreText": " をご覧ください。",
+  "@installationSlidesFindOutMoreText": {},
+  "installationSlidesUbuntuOnWslText": "Linuxアプリケーションの開発・実行のために、Windowsと深く統合された完全なUbuntu環境。クラウド、ウェブ、データサイエンス、IoT、そして楽しみのために最適化されています。",
+  "@installationSlidesUbuntuOnWslText": {},
+  "installationSlidesUbuntuWslDevOps": "DevOpsにUbuntu WSL",
+  "@installationSlidesUbuntuWslDevOps": {},
+  "installationSlidesUbuntuWslDataScienceText": "Nvidiaデータサイエンススタックは、WindowsのネイティブなNvidiaドライバの上で、データサイエンスと機械学習プロジェクトのパフォーマンスを最大化します。",
+  "@installationSlidesUbuntuWslDataScienceText": {},
+  "installationSlidesUbuntuWslWebDevText": "VS Code や IntelliJ などの Windows ネイティブ IDE を使用して WSL で開発し、NodeJS と Ruby の完全サポートを利用できます。",
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "installationSlidesExitTitle": "本当に去りますか？",
+  "@installationSlidesExitTitle": {},
+  "installationSlidesUbuntuWslGuiAppsText": "マルチプラットフォーム開発では、WSLgを使用してLinux上でウェブおよびグラフィカル・アプリケーションを開発できます。",
+  "@installationSlidesUbuntuWslGuiAppsText": {},
+  "installationSlidesUbuntuWslDevOpsText": "Ubuntuの本番環境に公開する前に、Ubuntu WSLでローカルに開発することで、CI/CDパイプラインの互換性を確保できます。",
+  "@installationSlidesUbuntuWslDevOpsText": {},
+  "installationSlidesLeave": "去る",
+  "@installationSlidesLeave": {}
 }
