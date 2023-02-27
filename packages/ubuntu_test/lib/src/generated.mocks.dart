@@ -214,8 +214,19 @@ class _FakeChange_17 extends _i1.SmartFake implements _i3.Change {
         );
 }
 
-class _FakeEndpoint_18 extends _i1.SmartFake implements _i4.Endpoint {
-  _FakeEndpoint_18(
+class _FakeADConnectionInfo_18 extends _i1.SmartFake
+    implements _i3.ADConnectionInfo {
+  _FakeADConnectionInfo_18(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeEndpoint_19 extends _i1.SmartFake implements _i4.Endpoint {
+  _FakeEndpoint_19(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -1053,6 +1064,72 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
           ),
         )),
       ) as _i6.Future<_i3.Change>);
+  @override
+  _i6.Future<bool> hasActiveDirectorySupport() => (super.noSuchMethod(
+        Invocation.method(
+          #hasActiveDirectorySupport,
+          [],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
+  @override
+  _i6.Future<_i3.ADConnectionInfo> getActiveDirectory() => (super.noSuchMethod(
+        Invocation.method(
+          #getActiveDirectory,
+          [],
+        ),
+        returnValue:
+            _i6.Future<_i3.ADConnectionInfo>.value(_FakeADConnectionInfo_18(
+          this,
+          Invocation.method(
+            #getActiveDirectory,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.ADConnectionInfo>);
+  @override
+  _i6.Future<void> setActiveDirectory(_i3.ADConnectionInfo? info) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setActiveDirectory,
+          [info],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<List<_i3.AdDomainNameValidation>> checkActiveDirectoryDomainName(
+          String? domain) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #checkActiveDirectoryDomainName,
+          [domain],
+        ),
+        returnValue: _i6.Future<List<_i3.AdDomainNameValidation>>.value(
+            <_i3.AdDomainNameValidation>[]),
+      ) as _i6.Future<List<_i3.AdDomainNameValidation>>);
+  @override
+  _i6.Future<_i3.AdAdminNameValidation> checkActiveDirectoryAdminName(
+          String? admin) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #checkActiveDirectoryAdminName,
+          [admin],
+        ),
+        returnValue: _i6.Future<_i3.AdAdminNameValidation>.value(
+            _i3.AdAdminNameValidation.OK),
+      ) as _i6.Future<_i3.AdAdminNameValidation>);
+  @override
+  _i6.Future<_i3.AdPasswordValidation> checkActiveDirectoryPassword(
+          String? password) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #checkActiveDirectoryPassword,
+          [password],
+        ),
+        returnValue: _i6.Future<_i3.AdPasswordValidation>.value(
+            _i3.AdPasswordValidation.OK),
+      ) as _i6.Future<_i3.AdPasswordValidation>);
 }
 
 /// A class which mocks [SubiquityServer].
@@ -1074,7 +1151,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
   @override
   _i4.Endpoint get endpoint => (super.noSuchMethod(
         Invocation.getter(#endpoint),
-        returnValue: _FakeEndpoint_18(
+        returnValue: _FakeEndpoint_19(
           this,
           Invocation.getter(#endpoint),
         ),
@@ -1093,7 +1170,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
             #environment: environment,
           },
         ),
-        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_18(
+        returnValue: _i6.Future<_i4.Endpoint>.value(_FakeEndpoint_19(
           this,
           Invocation.method(
             #start,
