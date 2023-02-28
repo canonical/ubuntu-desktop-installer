@@ -86,7 +86,10 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Html(
             data: lang.releaseNotesLabel(
                 model.releaseNotesURL(Settings.of(context).locale)),
-            style: {'body': Style(margin: Margins.zero)},
+            style: {
+              'body': Style(margin: Margins.zero),
+              'a': Style(color: context.linkColor),
+            },
             onLinkTap: (url, _, __, ___) => launchUrl(url!),
           ),
         ],

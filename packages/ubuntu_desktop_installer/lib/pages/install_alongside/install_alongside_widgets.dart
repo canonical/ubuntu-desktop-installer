@@ -75,7 +75,8 @@ class _HiddenPartitionLabel extends StatelessWidget {
           fontSize: FontSize(
             Theme.of(context).textTheme.bodySmall!.fontSize!,
           ),
-        )
+        ),
+        'a': Style(color: context.linkColor),
       },
       onLinkTap: (url, _, __, ___) => onTap(),
     );
