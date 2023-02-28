@@ -1,5 +1,5 @@
 import 'package:filesize/filesize.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
@@ -31,8 +31,6 @@ class StorageSelector extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        if (title != null) Text(title!),
-        if (title != null) const SizedBox(height: 8),
         DropdownBuilder<int>(
           values: List.generate(storages.length, (index) => index),
           selected: selected,
@@ -43,6 +41,7 @@ class StorageSelector extends StatelessWidget {
               key: ValueKey(index),
             );
           },
+          decoration: InputDecoration(labelText: title),
         )
       ],
     );

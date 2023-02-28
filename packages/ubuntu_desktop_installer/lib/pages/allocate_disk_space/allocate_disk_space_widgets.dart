@@ -22,7 +22,7 @@ class PartitionBar extends StatelessWidget {
       borderRadius: BorderRadius.circular(kYaruButtonRadius),
       clipBehavior: Clip.antiAlias,
       child: CustomPaint(
-        size: const Size(double.infinity, 24),
+        size: const Size(double.infinity, 16),
         painter: _PartitionPainter(model),
       ),
     );
@@ -88,7 +88,6 @@ class PartitionLegend extends StatelessWidget {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: objects
             .mapIndexed((index, object) => Padding(
