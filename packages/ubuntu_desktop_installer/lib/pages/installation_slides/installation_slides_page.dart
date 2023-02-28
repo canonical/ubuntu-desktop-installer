@@ -12,6 +12,21 @@ import '../../services.dart';
 import '../../slides.dart';
 import 'installation_slides_model.dart';
 
+extension InstallationActionL10n on InstallationAction {
+  String localize(AppLocalizations lang) {
+    switch (this) {
+      case InstallationAction.installingSystem:
+        return lang.installingSystem;
+      case InstallationAction.configuringSystem:
+        return lang.configuringSystem;
+      case InstallationAction.copyingFiles:
+        return lang.copyingFiles;
+      case InstallationAction.none:
+        return '';
+    }
+  }
+}
+
 /// Slideshow during installation.
 class InstallationSlidesPage extends StatefulWidget {
   /// Use [InstallationPage.create] instead.
@@ -133,9 +148,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     Text(
                       model.hasError
                           ? lang.installationFailed
-                          : (model.event ??
-                                  const InstallationEvent('copying files'))
-                              .localize(lang),
+                          : model.event.action.localize(lang),
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: model.hasError
                               ? Theme.of(context).colorScheme.error
