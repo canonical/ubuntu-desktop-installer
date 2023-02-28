@@ -380,5 +380,99 @@
     }
   },
   "turnOffBitlockerDescription": "මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.",
-  "@turnOffBitlockerDescription": {}
+  "@turnOffBitlockerDescription": {},
+  "photoSlideShotwell": "ෂොට්වෙල් ඡායාරූප කළමනාකරු",
+  "@photoSlideShotwell": {},
+  "photoSlideGimp": "ගිම්ප් සළරූ සංස්කරකය",
+  "@photoSlideGimp": {},
+  "accessSlideTitle": "සැමට ප්‍රවේශය",
+  "@accessSlideTitle": {},
+  "configureSecureBootDescription": "ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.",
+  "@configureSecureBootDescription": {},
+  "whoAreYouPagePasswordShow": "පෙන්වන්න",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "සඟවන්න",
+  "@whoAreYouPagePasswordHide": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "installDriversTitle": "චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග ස්ථාපනය කරන්න",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "මෙම ධාවක එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඒවා ස්වාම්‍යයි.",
+  "@installDriversSubtitle": {},
+  "installCodecsSubtitle": "මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.",
+  "@installCodecsSubtitle": {},
+  "updatesOtherSoftwarePageDescription": "ස්ථාපනයට කැමති යෙදුම් මොනවාද?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installThirdPartyTitle": "චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග මෙන්ම අතිරේක මාධ්‍ය ආකෘති ස්ථාපනය කරන්න",
+  "@installThirdPartyTitle": {},
+  "installThirdPartySubtitle": "මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.",
+  "@installThirdPartySubtitle": {},
+  "installationTypeTitle": "ස්ථාපන වර්ගය",
+  "@installationTypeTitle": {},
+  "installationTypeManual": "වෙන යමක්",
+  "@installationTypeManual": {},
+  "repairInstallationDescription": "ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.",
+  "@repairInstallationDescription": {},
+  "tryUbuntuDescription": "ඔබගේ පරිගණකයට කිසිදු වෙනසක් නොකර {RELEASE} බැලීමට හැකිය.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "ඔබගේ වත්මන් මෙහෙයුම් පද්ධතිය සමඟ (හෝ ඒ වෙනුවට) {RELEASE} ස්ථාපනය කරන්න. මෙයට එතරම් කාලයක් ගත නොවේ.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "මෙතැනින් <a href=\"{url}\">නිකුතු සටහන්</a> කියවීමට හැකිය.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRSTDescription": "මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "wiredMustBeEnabled": "මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය",
+  "@wiredMustBeEnabled": {},
+  "enableWired": "රැහැන්ගත සබල කරන්න",
+  "@enableWired": {},
+  "connectToInternetDescription": "මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න",
+  "@connectToInternetDescription": {},
+  "onBatteryWarning": "<font color=\"{color}\">අවවාදයයි</font>: පරිගණකය බල ප්‍රභවයකට පේනුගත කර නැත.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installCodecsTitle": "අතිරේක මාධ්‍ය ආකෘති සඳහා සහාය බාගෙන ස්ථාපනය කරන්න",
+  "@installCodecsTitle": {},
+  "offlineWarning": "ඔබ දැනට මාර්ගඅපගතයි",
+  "@offlineWarning": {},
+  "chooseSecurityKeyHeader": "ඔබගේ පරිගණකය නැති වුවහොත් තැටි සංකේතනය මඟින් ඔබගේ ගොනු රැකදෙයි. පරිගණකය අරඹන සැමවිට ආරක්‍ෂණ යතුරක් ඇතුල් කිරීමට සිදුවනු ඇත.\n\n{RELEASE} න් පිටත කිසිදු ගොනුවක් සංකේතනය නොකෙරේ.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "continueTesting": "අත්හදා බැලීම දිගටම",
+  "@continueTesting": {}
 }
