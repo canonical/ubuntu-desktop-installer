@@ -38,48 +38,58 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
       title: YaruWindowTitleBar(
         title: Text(lang.tryOrInstallPageTitle),
       ),
-      contentPadding: const EdgeInsets.fromLTRB(20, 50, 20, 100),
-      content: Row(
+      content: Column(
         children: [
-          // Expanded(
-          //   child: OptionCard(
-          //     selected: model.option == Option.repairUbuntu,
-          //     image: Image.asset('assets/try_or_install/repair-wrench.png'),
-          //     title: Text(lang.repairInstallation),
-          //     body: Text(lang.repairInstallationDescription),
-          //     onSelected: () => model.selectOption(Option.repairUbuntu),
-          //   ),
-          // ),
-          // const SizedBox(width: kContentSpacing),
           const Spacer(),
           Expanded(
-            flex: 2,
-            child: OptionCard(
-              selected: model.option == Option.tryUbuntu,
-              image: Image.asset('assets/try_or_install/steering-wheel.png'),
-              title: Text(lang.tryUbuntu(flavor.name)),
-              body: Text(lang.tryUbuntuDescription(flavor.name)),
-              onSelected: () => model.selectOption(Option.tryUbuntu),
-            ),
-          ),
-          const SizedBox(width: kContentSpacing * 2),
-          Expanded(
-            flex: 2,
-            child: OptionCard(
-              selected: model.option == Option.installUbuntu,
-              image: Image.asset('assets/try_or_install/hard-drive.png'),
-              title: Text(lang.installUbuntu(flavor.name)),
-              body: Text(lang.installUbuntuDescription(flavor.name)),
-              onSelected: () => model.selectOption(Option.installUbuntu),
+            flex: 6,
+            child: Row(
+              children: [
+                // Expanded(
+                //   child: OptionCard(
+                //     selected: model.option == Option.repairUbuntu,
+                //     image: Image.asset('assets/try_or_install/repair-wrench.png'),
+                //     title: Text(lang.repairInstallation),
+                //     body: Text(lang.repairInstallationDescription),
+                //     onSelected: () => model.selectOption(Option.repairUbuntu),
+                //   ),
+                // ),
+                // const SizedBox(width: kContentSpacing),
+                const Spacer(),
+                Expanded(
+                  flex: 2,
+                  child: OptionCard(
+                    selected: model.option == Option.tryUbuntu,
+                    image:
+                        Image.asset('assets/try_or_install/steering-wheel.png'),
+                    title: Text(lang.tryUbuntu(flavor.name)),
+                    body: Text(lang.tryUbuntuDescription(flavor.name)),
+                    onSelected: () => model.selectOption(Option.tryUbuntu),
+                  ),
+                ),
+                const SizedBox(width: kContentSpacing * 2),
+                Expanded(
+                  flex: 2,
+                  child: OptionCard(
+                    selected: model.option == Option.installUbuntu,
+                    image: Image.asset('assets/try_or_install/hard-drive.png'),
+                    title: Text(lang.installUbuntu(flavor.name)),
+                    body: Text(lang.installUbuntuDescription(flavor.name)),
+                    onSelected: () => model.selectOption(Option.installUbuntu),
+                  ),
+                ),
+                const Spacer(),
+              ],
             ),
           ),
           const Spacer(),
+          Html(
+            data: lang.releaseNotesLabel(
+                model.releaseNotesURL(Settings.of(context).locale)),
+            style: {'body': Style(margin: Margins.zero)},
+            onLinkTap: (url, _, __, ___) => launchUrl(url!),
+          ),
         ],
-      ),
-      footer: Html(
-        data: lang.releaseNotesLabel(
-            model.releaseNotesURL(Settings.of(context).locale)),
-        onLinkTap: (url, _, __, ___) => launchUrl(url!),
       ),
       actions: <WizardAction>[
         WizardAction.back(context),
