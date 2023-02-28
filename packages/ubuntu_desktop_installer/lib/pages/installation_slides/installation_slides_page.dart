@@ -61,18 +61,6 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
     super.dispose();
   }
 
-  String _formatEvent(InstallationEvent? event) {
-    final lang = AppLocalizations.of(context);
-    switch (event?.action) {
-      case 'installing system':
-        return lang.installingSystem;
-      case 'final system configuration':
-        return lang.configuringSystem;
-      default:
-        return lang.copyingFiles;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
@@ -145,7 +133,9 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     Text(
                       model.hasError
                           ? lang.installationFailed
-                          : _formatEvent(model.event),
+                          : (model.event ??
+                                  const InstallationEvent('copying files'))
+                              .localize(lang),
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: model.hasError
                               ? Theme.of(context).colorScheme.error

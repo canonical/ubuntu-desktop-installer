@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 
 import '../../services.dart';
 
@@ -20,6 +21,17 @@ class InstallationEvent {
       action ?? this.action,
       description: description ?? this.description,
     );
+  }
+
+  String localize(AppLocalizations lang) {
+    switch (action) {
+      case 'installing system':
+        return lang.installingSystem;
+      case 'final system configuration':
+        return lang.configuringSystem;
+      default:
+        return lang.copyingFiles;
+    }
   }
 }
 
