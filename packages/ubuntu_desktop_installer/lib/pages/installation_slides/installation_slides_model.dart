@@ -82,12 +82,31 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   //   ...
   //   downloading and installing security updates
   // ```
+  // In autoinstall mode syslog events start with "subiquity" and unindented
+  // entries contain no useful information.
+  // ```
+  // subiquity/Drivers/_list_drivers
+  //   subiquity/Install/install/unmount_target: umounting /target dir
+  //   subiquity/Install/install/curtin_install: installing system
+  //     subiquity/Install/install/curtin_install/run: executing curtin install initial step
+  //     subiquity/Install/install/curtin_install/run: executing curtin install partitioning step
+  // ```
   void _processEvent(String syslog) {
     final trimmed = syslog.trimLeft();
-    if (trimmed == syslog) {
-      _event = InstallationEvent(syslog);
+    if (trimmed.startsWith('subiquity')) {
+      if (trimmed == syslog) return;
+      final tokens = trimmed.split(':').map((e) => e.trim()).toList();
+      if ('  $trimmed' == syslog && tokens.length >= 2) {
+        _event = InstallationEvent(tokens[1]);
+      } else if (tokens.length >= 2) {
+        _event = _event!.copyWith(description: tokens[1]);
+      }
     } else {
-      _event = _event!.copyWith(description: trimmed);
+      if (trimmed == syslog) {
+        _event = InstallationEvent(syslog);
+      } else {
+        _event = _event!.copyWith(description: trimmed);
+      }
     }
     notifyListeners();
   }
