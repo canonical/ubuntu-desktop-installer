@@ -573,5 +573,15 @@
   "partitionLocationBeginning": "මෙම ඉඩෙහි ආරම්භය",
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "මෙම ඉඩෙහි අවසානය",
-  "@partitionLocationEnd": {}
+  "@partitionLocationEnd": {},
+  "partitionFormatJfs": "JFS සගනු ගොනු පද්ධතිය",
+  "@partitionFormatJfs": {},
+  "partitionFormatXfs": "XFS සගනු ගොනු පද්ධතිය",
+  "@partitionFormatXfs": {},
+  "partitionFormatExt4": "Ext4 සගනු ගොනු පද්ධතිය",
+  "@partitionFormatExt4": {},
+  "partitionFormatExt3": "Ext3 සගනු ගොනු පද්ධතිය",
+  "@partitionFormatExt3": {},
+  "partitionFormatBtrfs": "btrfs සගනු ගොනු පද්ධතිය",
+  "@partitionFormatBtrfs": {}
 }
