@@ -115,6 +115,7 @@ parts:
       - libpython3.8-minimal
       - python3-apport
       - python3-requests-unixsocket
+      - python3-pyroute2
       - python3-pyudev
       - python3-systemd
       - python3-urwid
