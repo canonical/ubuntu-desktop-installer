@@ -12,6 +12,21 @@ import '../../services.dart';
 import '../../slides.dart';
 import 'installation_slides_model.dart';
 
+extension InstallationActionL10n on InstallationAction {
+  String localize(AppLocalizations lang) {
+    switch (this) {
+      case InstallationAction.installingSystem:
+        return lang.installingSystem;
+      case InstallationAction.configuringSystem:
+        return lang.configuringSystem;
+      case InstallationAction.copyingFiles:
+        return lang.copyingFiles;
+      case InstallationAction.none:
+        return '';
+    }
+  }
+}
+
 /// Slideshow during installation.
 class InstallationSlidesPage extends StatefulWidget {
   /// Use [InstallationPage.create] instead.
@@ -59,18 +74,6 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
   void dispose() {
     _titleController.dispose();
     super.dispose();
-  }
-
-  String _formatEvent(InstallationEvent? event) {
-    final lang = AppLocalizations.of(context);
-    switch (event?.action) {
-      case 'installing system':
-        return lang.installingSystem;
-      case 'final system configuration':
-        return lang.configuringSystem;
-      default:
-        return lang.copyingFiles;
-    }
   }
 
   @override
@@ -145,7 +148,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                     Text(
                       model.hasError
                           ? lang.installationFailed
-                          : _formatEvent(model.event),
+                          : model.event.action.localize(lang),
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: model.hasError
                               ? Theme.of(context).colorScheme.error

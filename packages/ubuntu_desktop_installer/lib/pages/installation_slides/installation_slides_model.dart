@@ -9,17 +9,40 @@ import '../../services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 
+enum InstallationAction {
+  none,
+  installingSystem,
+  configuringSystem,
+  copyingFiles;
+}
+
 class InstallationEvent {
   const InstallationEvent(this.action, {this.description});
 
-  final String action;
+  final InstallationAction action;
   final String? description;
 
-  InstallationEvent copyWith({String? action, String? description}) {
+  InstallationEvent copyWith(
+      {InstallationAction? action, String? description}) {
     return InstallationEvent(
       action ?? this.action,
       description: description ?? this.description,
     );
+  }
+
+  factory InstallationEvent.fromString(String action, {String? description}) {
+    late final InstallationAction installationAction;
+    switch (action) {
+      case 'installing system':
+        installationAction = InstallationAction.installingSystem;
+        break;
+      case 'final system configuration':
+        installationAction = InstallationAction.configuringSystem;
+        break;
+      default:
+        installationAction = InstallationAction.copyingFiles;
+    }
+    return InstallationEvent(installationAction, description: description);
   }
 }
 
@@ -33,13 +56,13 @@ class InstallationSlidesModel extends SafeChangeNotifier {
 
   Stream<String>? _log;
   ApplicationStatus? _status;
-  InstallationEvent? _event;
+  InstallationEvent _event = const InstallationEvent(InstallationAction.none);
 
   /// The current installation state.
   ApplicationState? get state => _status?.state;
 
   /// The current installation event.
-  InstallationEvent? get event => _event;
+  InstallationEvent get event => _event;
 
   /// Whether the installation state is DONE.
   bool get isDone => state == ApplicationState.DONE;
@@ -70,12 +93,23 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   //   ...
   //   downloading and installing security updates
   // ```
+  // In autoinstall mode syslog events start with "subiquity" and unindented
+  // entries contain no useful information.
+  // ```
+  // subiquity/Drivers/_list_drivers
+  //   subiquity/Install/install/unmount_target: umounting /target dir
+  //   subiquity/Install/install/curtin_install: installing system
+  //     subiquity/Install/install/curtin_install/run: executing curtin install initial step
+  //     subiquity/Install/install/curtin_install/run: executing curtin install partitioning step
+  // ```
   void _processEvent(String syslog) {
+    syslog = syslog.replaceFirst(RegExp(r'  subiquity/[\w/]+: '), '');
     final trimmed = syslog.trimLeft();
+    if (trimmed.startsWith('subiquity')) return;
     if (trimmed == syslog) {
-      _event = InstallationEvent(syslog);
+      _event = InstallationEvent.fromString(syslog);
     } else {
-      _event = _event!.copyWith(description: trimmed);
+      _event = _event.copyWith(description: trimmed);
     }
     notifyListeners();
   }

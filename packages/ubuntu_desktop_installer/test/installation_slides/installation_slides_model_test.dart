@@ -155,29 +155,34 @@ void main() async {
 
     final model = InstallationSlidesModel(client, journal);
 
-    expect(model.event, isNull);
+    expect(model.event.action, InstallationAction.none);
 
     await model.init();
 
     events.add('installing system');
-    expect(model.event, isNotNull);
-    expect(model.event!.action, 'installing system');
-    expect(model.event!.description, isNull);
+    expect(model.event.action, InstallationAction.installingSystem);
+    expect(model.event.description, isNull);
 
     events.add('  installing some package');
-    expect(model.event, isNotNull);
-    expect(model.event!.action, 'installing system');
-    expect(model.event!.description, 'installing some package');
+    expect(model.event.action, InstallationAction.installingSystem);
+    expect(model.event.description, 'installing some package');
 
     events.add('  doing something else');
-    expect(model.event, isNotNull);
-    expect(model.event!.action, 'installing system');
-    expect(model.event!.description, 'doing something else');
+    expect(model.event.action, InstallationAction.installingSystem);
+    expect(model.event.description, 'doing something else');
 
-    events.add('configuring system');
-    expect(model.event, isNotNull);
-    expect(model.event!.action, 'configuring system');
-    expect(model.event!.description, isNull);
+    events.add('final system configuration');
+    expect(model.event.action, InstallationAction.configuringSystem);
+    expect(model.event.description, isNull);
+
+    events.add('  subiquity/Install/install/curtin_install: installing system');
+    expect(model.event.action, InstallationAction.installingSystem);
+    expect(model.event.description, isNull);
+
+    events.add(
+        '    subiquity/Install/install/curtin_install/run: executing curtin install initial step');
+    expect(model.event.action, InstallationAction.installingSystem);
+    expect(model.event.description, 'executing curtin install initial step');
   });
 }
 

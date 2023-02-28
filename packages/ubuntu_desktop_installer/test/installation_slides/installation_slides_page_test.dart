@@ -38,7 +38,7 @@ void main() {
     when(model.hasError).thenReturn(hasError ?? false);
     when(model.isInstalling).thenReturn(isInstalling ?? false);
     when(model.log).thenAnswer((_) => log ?? Stream<String>.empty());
-    when(model.event).thenReturn(event);
+    when(model.event).thenReturn(event ?? InstallationEvent.fromString(''));
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     return model;
   }
@@ -156,7 +156,8 @@ void main() {
     expect(find.text(tester.lang.configuringSystem), findsNothing);
     expect(find.text(tester.lang.installationFailed), findsNothing);
 
-    when(model.event).thenReturn(InstallationEvent('installing system'));
+    when(model.event)
+        .thenReturn(InstallationEvent.fromString('installing system'));
     await tester.pumpWidget(Container(
       key: ValueKey('force rebuild for installing system'),
       child: tester.buildApp((_) => buildPage(model)),
@@ -169,7 +170,7 @@ void main() {
     expect(find.text(tester.lang.installationFailed), findsNothing);
 
     when(model.event)
-        .thenReturn(InstallationEvent('final system configuration'));
+        .thenReturn(InstallationEvent.fromString('final system configuration'));
     await tester.pumpWidget(Container(
       key: ValueKey('force rebuild for configuring system'),
       child: tester.buildApp((_) => buildPage(model)),
