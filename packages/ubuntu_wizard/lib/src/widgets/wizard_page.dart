@@ -22,7 +22,6 @@ class WizardPage extends StatefulWidget {
     this.content,
     this.contentPadding = kContentPadding,
     this.contentSpacing = kContentSpacing,
-    this.footer,
     this.footerPadding = kFooterPadding,
     this.actions = const <WizardAction>[],
     this.snackBar,
@@ -51,9 +50,6 @@ class WizardPage extends StatefulWidget {
   ///
   /// The default value is `kContentSpacing`.
   final double contentSpacing;
-
-  /// A footer widget on the side of the buttons.
-  final Widget? footer;
 
   /// A snack bar to display above the buttons.
   final SnackBar? snackBar;
@@ -89,6 +85,12 @@ class _WizardPageState extends State<WizardPage> {
     final wizardScope = Wizard.maybeOf(context);
     final totalSteps = (wizardScope?.wizardData as int?);
     final currentStep = (wizardScope?.routeData as int?);
+
+    // a leading (back) action only on pages that have more than one action
+    final leading = widget.actions.length > 1 ? widget.actions.first : null;
+    // the rest are shown on the right side
+    final trailing = widget.actions.skip(widget.actions.length > 1 ? 1 : 0);
+
     return ScaffoldMessenger(
       child: Scaffold(
         key: _scaffoldKey,
@@ -117,9 +119,8 @@ class _WizardPageState extends State<WizardPage> {
           padding: widget.footerPadding,
           child: Row(
             children: [
-              widget.footer != null
-                  ? Expanded(child: widget.footer!)
-                  : const Spacer(),
+              _buildAction(context, leading) ?? const SizedBox.shrink(),
+              const Spacer(),
               if (currentStep != null && totalSteps != null)
                 YaruPageIndicator(
                   page: currentStep,
@@ -127,20 +128,12 @@ class _WizardPageState extends State<WizardPage> {
                   dotSize: 12,
                   dotSpacing: 8,
                 ),
-              Expanded(
-                child: ButtonBar(
-                  buttonPadding: EdgeInsets.zero,
-                  children: <Widget>[
-                    for (final action in widget.actions)
-                      if (action.visible ?? true)
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: kButtonBarSpacing),
-                          child: _createButton(context, action),
-                        ),
-                  ],
+              const Spacer(),
+              for (final action in trailing)
+                Padding(
+                  padding: const EdgeInsets.only(left: kButtonBarSpacing),
+                  child: _buildAction(context, action),
                 ),
-              ),
             ],
           ),
         ),
@@ -148,13 +141,18 @@ class _WizardPageState extends State<WizardPage> {
     );
   }
 
-  Widget _createButton(BuildContext context, WizardAction action) {
+  Widget? _buildAction(BuildContext context, WizardAction? action) {
+    if (action == null || action.visible == false) {
+      return null;
+    }
+
     final maybeActivate = action.enabled ?? true
         ? () async {
             await action.onActivated?.call();
             if (mounted) action.execute?.call();
           }
         : null;
+
     return action.highlighted == true
         ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
         : OutlinedButton(onPressed: maybeActivate, child: Text(action.label!));

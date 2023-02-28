@@ -34,7 +34,6 @@ void main() {
           title: AppBar(title: const Text('title')),
           header: const Text('header'),
           content: const Text('content'),
-          footer: const Text('footer'),
           snackBar: const SnackBar(content: Text('snackbar')),
           actions: const <WizardAction>[
             WizardAction(label: 'back'),
@@ -57,15 +56,20 @@ void main() {
     final content = find.text('content');
     expect(content, findsOneWidget);
 
-    final footer = find.text('footer');
-    expect(footer, findsOneWidget);
-
     final snackBar = find.text('snackbar');
     expect(snackBar, findsOneWidget);
 
+    final back = find.text('back');
+    expect(back, findsOneWidget);
+
+    final next = find.text('next');
+    expect(next, findsOneWidget);
+
     expect(tester.getCenter(title).dy, lessThan(tester.getCenter(header).dy));
     expect(tester.getCenter(header).dy, lessThan(tester.getCenter(content).dy));
-    expect(tester.getCenter(content).dy, lessThan(tester.getCenter(footer).dy));
+    expect(tester.getCenter(back).dx, lessThan(tester.getCenter(content).dx));
+    expect(
+        tester.getCenter(next).dx, greaterThan(tester.getCenter(content).dx));
   });
 
   testWidgets('highlighted action', (tester) async {
