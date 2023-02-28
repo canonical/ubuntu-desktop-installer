@@ -474,5 +474,104 @@
     }
   },
   "continueTesting": "අත්හදා බැලීම දිගටම",
-  "@continueTesting": {}
+  "@continueTesting": {},
+  "partitionFormatLabel": "භාවිතය:",
+  "@partitionFormatLabel": {},
+  "bootLoaderDevice": "ආරම්භක පූරකය ස්ථාපනයට උපාංගය",
+  "@bootLoaderDevice": {},
+  "installAlongsideAllocateSpace": "ඉඩ වෙන් කරන්න",
+  "@installAlongsideAllocateSpace": {},
+  "installationTypeAlongsideDual": "{os1} සහ {os2} සමඟ {product} ස්ථාපනය කරන්න",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installAlongsideSpaceDivider": "පහත වෙන්කුරුව ඇදීමෙන් ධාවකයේ ඉඩ වෙන් කරන්න:",
+  "@installAlongsideSpaceDivider": {},
+  "diskHeadersFormat": "පවිත්‍ර",
+  "@diskHeadersFormat": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">අවවාදයයි</font>: මෙම ආරක්‍ෂණ යතුර නැති වුවහොත්, සියළුම දත්ත නැති වනු ඇත. ඔබට අවශ්‍ය නම්, ඔබගේ යතුර වෙනත් තැනක ලියා ආරක්‍ෂිතව තබන්න.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeNoOSDetected": "මෙම පරිගණකයෙහි කිසිදු මෙහෙයුම් පද්ධතියක් අනාවරණය වී නැත. ඔබ කිරීමට කැමති කුමක්ද?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">අවවාදයයි:</font> මෙය ඔබගේ සියළුම වැඩසටහන්, ලේඛන, ඡායාරූප, ගීත සහ මෙහෙයුම් පද්ධතිවල තිබෙන වෙනත් ගොනු සියල්ල මකා දමයි.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeZFS": "පරීක්‍ෂාත්මක: තැටිය මකාදමා ZFS භාවිතා කරන්න",
+  "@installationTypeZFS": {},
+  "installationTypeAlongsideInfo": "ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.",
+  "@installationTypeAlongsideInfo": {},
+  "notEnoughDiskSpaceBiggestDisk": "මෙම පරිගණකයේ විශාලම තැටිය {SIZE} පමණි.",
+  "@notEnoughDiskSpaceBiggestDisk": {
+    "type": "text",
+    "placeholders": {
+      "SIZE": {}
+    }
+  },
+  "installationTypeOSDetected": "මෙම පරිගණකයෙහි දැනට {os} තිබේ. ඔබ කිරීමට කැමති කුමක්ද?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeDualOSDetected": "මෙම පරිගණකයෙහි දැනට {os1} හා {os2} තිබේ. ඔබ කිරීමට කැමති කුමක්ද?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "මෙම පරිගණකයෙහි දැනට මෙහෙයුම් පද්ධති කිහිපයක් තිබේ. ඔබ කිරීමට කැමති කුමක්ද?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeLVM": "නව {RELEASE} ස්ථාපනය සමඟ LVM භාවිතා කරන්න",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">අවවාදයයි:</font> මෙය ඔබගේ සියළුම {os} වැඩසටහන්, ලේඛන, ඡායාරූප, ගීත සහ අනෙකුත් ගොනු මකා දමයි.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongside": "{os} සමඟ {product} ස්ථාපනය කරන්න",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "ඒවා සමඟ {product} ස්ථාපනය කරන්න",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "allocateDiskSpace": "තැටියේ ඉඩ වෙන් කරන්න",
+  "@allocateDiskSpace": {},
+  "partitionLocationBeginning": "මෙම ඉඩෙහි ආරම්භය",
+  "@partitionLocationBeginning": {},
+  "partitionLocationEnd": "මෙම ඉඩෙහි අවසානය",
+  "@partitionLocationEnd": {}
 }
