@@ -23,6 +23,17 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i6;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeInstallationEvent_0 extends _i1.SmartFake
+    implements _i2.InstallationEvent {
+  _FakeInstallationEvent_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [InstallationSlidesModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -32,6 +43,14 @@ class MockInstallationSlidesModel extends _i1.Mock
     _i1.throwOnMissingStub(this);
   }
 
+  @override
+  _i2.InstallationEvent get event => (super.noSuchMethod(
+        Invocation.getter(#event),
+        returnValue: _FakeInstallationEvent_0(
+          this,
+          Invocation.getter(#event),
+        ),
+      ) as _i2.InstallationEvent);
   @override
   bool get isDone => (super.noSuchMethod(
         Invocation.getter(#isDone),
