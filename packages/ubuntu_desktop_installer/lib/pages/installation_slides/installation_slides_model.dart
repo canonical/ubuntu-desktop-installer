@@ -103,21 +103,13 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   //     subiquity/Install/install/curtin_install/run: executing curtin install partitioning step
   // ```
   void _processEvent(String syslog) {
+    syslog = syslog.replaceFirst(RegExp(r'  subiquity/[\w/]+: '), '');
     final trimmed = syslog.trimLeft();
-    if (trimmed.startsWith('subiquity')) {
-      if (trimmed == syslog) return;
-      final tokens = trimmed.split(':').map((e) => e.trim()).toList();
-      if ('  $trimmed' == syslog && tokens.length >= 2) {
-        _event = InstallationEvent.fromString(tokens[1]);
-      } else if (tokens.length >= 2) {
-        _event = _event.copyWith(description: tokens[1]);
-      }
+    if (trimmed.startsWith('subiquity')) return;
+    if (trimmed == syslog) {
+      _event = InstallationEvent.fromString(syslog);
     } else {
-      if (trimmed == syslog) {
-        _event = InstallationEvent.fromString(syslog);
-      } else {
-        _event = _event.copyWith(description: trimmed);
-      }
+      _event = _event.copyWith(description: trimmed);
     }
     notifyListeners();
   }
