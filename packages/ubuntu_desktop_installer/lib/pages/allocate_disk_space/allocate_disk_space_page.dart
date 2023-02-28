@@ -83,7 +83,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
           Expanded(child: PartitionTable(controller: _scrollController)),
           const SizedBox(height: kContentSpacing / 2),
           const PartitionButtonRow(),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kContentSpacing / 2),
           FractionallySizedBox(
             widthFactor: 0.5,
             alignment: Alignment.topLeft,

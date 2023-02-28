@@ -138,6 +138,7 @@ class StorageTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return YaruBorderContainer(
+      clipBehavior: Clip.antiAlias,
       child: LayoutBuilder(builder: (context, constraints) {
         final theme = Theme.of(context);
         return OverflowBox(
@@ -149,6 +150,8 @@ class StorageTable extends StatelessWidget {
               controller: controller,
               child: DataTable(
                 dataRowHeight: kMinInteractiveDimension +
+                    theme.visualDensity.baseSizeAdjustment.dy,
+                headingRowHeight: kMinInteractiveDimension +
                     theme.visualDensity.baseSizeAdjustment.dy,
                 showCheckboxColumn: false,
                 headingTextStyle: theme.textTheme.titleSmall,
