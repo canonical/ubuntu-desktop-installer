@@ -628,7 +628,7 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponível:",
   "@installAlongsideAvailable": {},
-  "installCodecsTitle": "Instalar suporte para formatos de mídia adicionais",
+  "installCodecsTitle": "Baixar e instalar suporte para formatos de mídia adicionais",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
@@ -717,5 +717,26 @@
       "num": {},
       "url": {}
     }
-  }
+  },
+  "restartNow": "Reiniciar agora",
+  "@restartNow": {},
+  "continueTesting": "Continuar testando",
+  "@continueTesting": {},
+  "restartWarning": "Você pode continuar testando o {RELEASE} agora, mas ao reiniciar o computador, todas as alterações feitas ou documentos armazenados não serão preservados.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "offlineWarning": "Você está off-line no momento",
+  "@offlineWarning": {},
+  "partitionLimitReached": "limite atingido",
+  "@partitionLimitReached": {},
+  "tooManyPrimaryPartitions": "Há partições primárias demais",
+  "@tooManyPrimaryPartitions": {},
+  "whoAreYouPagePasswordShow": "Mostrar",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Ocultar",
+  "@whoAreYouPagePasswordHide": {}
 }
