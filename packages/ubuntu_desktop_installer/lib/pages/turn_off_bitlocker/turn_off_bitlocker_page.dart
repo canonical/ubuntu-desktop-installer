@@ -38,9 +38,8 @@ class TurnOffBitLockerPage extends StatelessWidget {
             data: lang
                 .turnOffBitlockerLinkInstructions('help.ubuntu.com/bitlocker'),
             style: {
-              'body': Style(
-                margin: Margins.zero,
-              ),
+              'body': Style(margin: Margins.zero),
+              'a': Style(color: context.linkColor),
             },
             onLinkTap: (url, _, __, ___) => launchUrl(url!),
           ),

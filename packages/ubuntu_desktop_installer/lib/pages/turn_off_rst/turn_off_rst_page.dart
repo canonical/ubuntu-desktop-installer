@@ -39,9 +39,8 @@ class TurnOffRSTPage extends StatelessWidget {
             Html(
               data: lang.instructionsForRST('help.ubuntu.com/rst'),
               style: {
-                'body': Style(
-                  margin: Margins.zero,
-                ),
+                'body': Style(margin: Margins.zero),
+                'a': Style(color: context.linkColor),
               },
               onLinkTap: (url, _, __, ___) => launchUrl(url!),
             ),
