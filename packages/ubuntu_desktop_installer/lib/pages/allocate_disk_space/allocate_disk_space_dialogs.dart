@@ -136,49 +136,6 @@ Future<void> showCreatePartitionDialog(
   );
 }
 
-extension _PartitionFormatLang on PartitionFormat {
-  String localize(AppLocalizations lang) {
-    switch (this) {
-      case PartitionFormat.none:
-        return lang.partitionFormatNone;
-      case PartitionFormat.btrfs:
-        return lang.partitionFormatBtrfs;
-      case PartitionFormat.ext2:
-        return lang.partitionFormatExt2;
-      case PartitionFormat.ext3:
-        return lang.partitionFormatExt3;
-      case PartitionFormat.ext4:
-        return lang.partitionFormatExt4;
-      case PartitionFormat.fat:
-        return lang.partitionFormatFat;
-      case PartitionFormat.fat12:
-        return lang.partitionFormatFat12;
-      case PartitionFormat.fat16:
-        return lang.partitionFormatFat16;
-      case PartitionFormat.fat32:
-        return lang.partitionFormatFat32;
-      case PartitionFormat.iso9660:
-        return lang.partitionFormatIso9660;
-      case PartitionFormat.vfat:
-        return lang.partitionFormatVfat;
-      case PartitionFormat.jfs:
-        return lang.partitionFormatJfs;
-      case PartitionFormat.ntfs:
-        return lang.partitionFormatNtfs;
-      case PartitionFormat.reiserfs:
-        return lang.partitionFormatReiserFS;
-      case PartitionFormat.swap:
-        return lang.partitionFormatSwap;
-      case PartitionFormat.xfs:
-        return lang.partitionFormatXfs;
-      case PartitionFormat.zfsroot:
-        return lang.partitionFormatZfsroot;
-      default:
-        throw UnimplementedError(toString());
-    }
-  }
-}
-
 /// Shows a dialog for editing an existing partition on the given [disk].
 Future<void> showEditPartitionDialog(
     BuildContext context, Disk disk, Partition partition, Gap? gap) {
@@ -372,7 +329,7 @@ class _PartitionFormatSelector extends StatelessWidget {
             values: partitionFormats,
             itemBuilder: (context, format, _) {
               return Text(
-                format?.localize(lang) ?? lang.partitionFormatNone,
+                format?.name ?? lang.partitionFormatNone,
                 key: ValueKey(format?.type),
               );
             },

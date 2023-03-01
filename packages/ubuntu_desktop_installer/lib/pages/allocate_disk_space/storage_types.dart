@@ -21,10 +21,13 @@ extension PartitionExtension on Partition {
 
 /// Available partition formats.
 class PartitionFormat {
-  const PartitionFormat._(this.type);
+  const PartitionFormat._(this.type, this.name);
 
   /// The type of the partition format (e.g. 'ext4').
   final String type;
+
+  /// The display name of the partition format (e.g. 'Ext4').
+  final String? name;
 
   /// Whether a partition with this format can be wiped.
   bool get canWipe => type != 'swap';
@@ -32,23 +35,23 @@ class PartitionFormat {
   @override
   String toString() => type;
 
-  static const none = PartitionFormat._('');
-  static const btrfs = PartitionFormat._('btrfs');
-  static const ext2 = PartitionFormat._('ext2');
-  static const ext3 = PartitionFormat._('ext3');
-  static const ext4 = PartitionFormat._('ext4');
-  static const fat = PartitionFormat._('fat');
-  static const fat12 = PartitionFormat._('fat12');
-  static const fat16 = PartitionFormat._('fat16');
-  static const fat32 = PartitionFormat._('fat32');
-  static const iso9660 = PartitionFormat._('iso9660');
-  static const vfat = PartitionFormat._('vfat');
-  static const jfs = PartitionFormat._('jfs');
-  static const ntfs = PartitionFormat._('ntfs');
-  static const reiserfs = PartitionFormat._('reiserfs');
-  static const swap = PartitionFormat._('swap');
-  static const xfs = PartitionFormat._('xfs');
-  static const zfsroot = PartitionFormat._('zfsroot');
+  static const none = PartitionFormat._('', null);
+  static const btrfs = PartitionFormat._('btrfs', 'Btrfs');
+  static const ext2 = PartitionFormat._('ext2', 'Ext2');
+  static const ext3 = PartitionFormat._('ext3', 'Ext3');
+  static const ext4 = PartitionFormat._('ext4', 'Ext4');
+  static const fat = PartitionFormat._('fat', 'FAT');
+  static const fat12 = PartitionFormat._('fat12', 'FAT12');
+  static const fat16 = PartitionFormat._('fat16', 'FAT16');
+  static const fat32 = PartitionFormat._('fat32', 'FAT32');
+  static const iso9660 = PartitionFormat._('iso9660', 'ISO9660');
+  static const vfat = PartitionFormat._('vfat', 'VFAT');
+  static const jfs = PartitionFormat._('jfs', 'JFS');
+  static const ntfs = PartitionFormat._('ntfs', 'NTFS');
+  static const reiserfs = PartitionFormat._('reiserfs', 'ReiserFS');
+  static const swap = PartitionFormat._('swap', 'Swap');
+  static const xfs = PartitionFormat._('xfs', 'XFS');
+  static const zfsroot = PartitionFormat._('zfsroot', 'ZFS root');
 
   /// The default partition format.
   static PartitionFormat get defaultValue => _formats['ext4']!;
