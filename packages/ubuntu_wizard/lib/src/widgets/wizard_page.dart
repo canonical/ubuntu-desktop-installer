@@ -121,7 +121,7 @@ class _WizardPageState extends State<WizardPage> {
             padding: widget.footerPadding,
             child: Row(
               children: [
-                _buildAction(context, leading) ?? const SizedBox.shrink(),
+                _buildAction(context, leading),
                 const Spacer(),
                 if (currentStep != null && totalSteps != null)
                   YaruPageIndicator(
@@ -132,9 +132,10 @@ class _WizardPageState extends State<WizardPage> {
                   ),
                 const Spacer(),
                 for (final action in trailing)
-                  Padding(
+                  _buildAction(
+                    context,
+                    action,
                     padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                    child: _buildAction(context, action),
                   ),
               ],
             ),
@@ -144,9 +145,13 @@ class _WizardPageState extends State<WizardPage> {
     );
   }
 
-  Widget? _buildAction(BuildContext context, WizardAction? action) {
+  Widget _buildAction(
+    BuildContext context,
+    WizardAction? action, {
+    EdgeInsetsGeometry? padding,
+  }) {
     if (action == null || action.visible == false) {
-      return null;
+      return const SizedBox.shrink();
     }
 
     final maybeActivate = action.enabled ?? true
@@ -156,12 +161,16 @@ class _WizardPageState extends State<WizardPage> {
           }
         : null;
 
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: 136),
-      child: action.highlighted == true
-          ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
-          : OutlinedButton(
-              onPressed: maybeActivate, child: Text(action.label!)),
+    return Padding(
+      padding: padding ?? EdgeInsets.zero,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minWidth: 136),
+        child: action.highlighted == true
+            ? ElevatedButton(
+                onPressed: maybeActivate, child: Text(action.label!))
+            : OutlinedButton(
+                onPressed: maybeActivate, child: Text(action.label!)),
+      ),
     );
   }
 }
