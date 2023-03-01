@@ -154,7 +154,7 @@ class _WizardPageState extends State<WizardPage> {
         : null;
 
     return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: 134),
+      constraints: const BoxConstraints(minWidth: 136),
       child: action.highlighted == true
           ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
           : OutlinedButton(
