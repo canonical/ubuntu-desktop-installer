@@ -613,10 +613,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Las contraseñas no coinciden';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Mostrar';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Ocultar';
 
   @override
   String get writeChangesToDisk => 'Escribir cambios en el disco';

@@ -544,7 +544,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS ルートファイルシステム';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'フォーマットしない';
 
   @override
   String get partitionErase => 'パーティションをフォーマット';
@@ -613,10 +613,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'パスワードが一致しません';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => '表示';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => '非表示';
 
   @override
   String get writeChangesToDisk => 'ディスクに変更を書き込む';

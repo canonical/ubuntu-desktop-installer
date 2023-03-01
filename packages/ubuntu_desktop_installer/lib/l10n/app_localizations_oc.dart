@@ -613,10 +613,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Los senhals correspondon pas';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Mostrar';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Rescondre';
 
   @override
   String get writeChangesToDisk => 'Aplicar las modificacions suls disques';

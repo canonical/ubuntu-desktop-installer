@@ -613,10 +613,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'La pasvortoj ne kongruas';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Malkaŝi';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Kaŝi';
 
   @override
   String get writeChangesToDisk => 'Skribi ŝanĝojn sur diskon';

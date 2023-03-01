@@ -231,7 +231,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Você está off-line no momento';
 
   @override
   String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
@@ -544,7 +544,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatZfsroot => 'Sistema de ficheiros raiz ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Deixar sem formatação';
 
   @override
   String get partitionErase => 'Formatar a partição';
@@ -613,10 +613,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'As palavras-passe não correspondem';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Mostrar';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Ocultar';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';

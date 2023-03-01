@@ -220,7 +220,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installDriversSubtitle => 'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
 
   @override
-  String get installCodecsTitle => 'Ek ortam biçimleri desteğini kur';
+  String get installCodecsTitle => 'Ek ortam biçimleri desteğini indir ve kur';
 
   @override
   String get installCodecsSubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
@@ -231,7 +231,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Şu anda çevrimdışısın';
 
   @override
   String get chooseSecurityKeyTitle => 'Güvenlik anahtarı seç';
@@ -544,7 +544,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS root dosya sistemi';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Biçimlendirilmemiş bırak';
 
   @override
   String get partitionErase => 'Bölümü biçimlendir';
@@ -613,10 +613,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Parolalar uyuşmuyor';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Göster';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Gizle';
 
   @override
   String get writeChangesToDisk => 'Değişiklikleri diske yaz';

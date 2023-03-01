@@ -544,7 +544,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionFormatZfsroot => 'Kořenový souborový systém na ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Ponechat nenaformátované';
 
   @override
   String get partitionErase => 'Naformátovat oddíl';
@@ -613,10 +613,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Zobrazit';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Skrýt';
 
   @override
   String get writeChangesToDisk => 'Zapsat změny na disk';
