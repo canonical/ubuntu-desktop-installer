@@ -731,5 +731,9 @@
   "offlineWarning": "Vi estas aktuale ne konektita al Interreto",
   "@offlineWarning": {},
   "partitionFormatNone": "Lasi nestrukturita",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "Malkaŝi",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Kaŝi",
+  "@whoAreYouPagePasswordHide": {}
 }

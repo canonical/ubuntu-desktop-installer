@@ -719,5 +719,9 @@
   "offlineWarning": "Vous êtes actuellement hors ligne",
   "@offlineWarning": {},
   "partitionFormatNone": "Laisser non formatée",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "Montrer",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Cacher",
+  "@whoAreYouPagePasswordHide": {}
 }

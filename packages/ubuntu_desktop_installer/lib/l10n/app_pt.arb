@@ -737,5 +737,13 @@
   "tooManyPrimaryPartitions": "Demasiadas partições primárias",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "limite atingido",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "whoAreYouPagePasswordShow": "Mostrar",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Ocultar",
+  "@whoAreYouPagePasswordHide": {},
+  "offlineWarning": "Você está off-line no momento",
+  "@offlineWarning": {},
+  "partitionFormatNone": "Deixar sem formatação",
+  "@partitionFormatNone": {}
 }

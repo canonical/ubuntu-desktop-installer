@@ -786,5 +786,9 @@
   "offlineWarning": "Du är för närvarande offline",
   "@offlineWarning": {},
   "partitionFormatNone": "Lämna oformaterad",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordHide": "Dölj",
+  "@whoAreYouPagePasswordHide": {},
+  "whoAreYouPagePasswordShow": "Visa",
+  "@whoAreYouPagePasswordShow": {}
 }

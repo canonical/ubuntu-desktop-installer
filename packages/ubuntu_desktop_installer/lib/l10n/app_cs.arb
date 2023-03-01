@@ -784,5 +784,11 @@
   "tooManyPrimaryPartitions": "Příliš mnoho primárních oddílů",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "dosaženo limitu",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "whoAreYouPagePasswordShow": "Zobrazit",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Skrýt",
+  "@whoAreYouPagePasswordHide": {},
+  "partitionFormatNone": "Ponechat nenaformátované",
+  "@partitionFormatNone": {}
 }

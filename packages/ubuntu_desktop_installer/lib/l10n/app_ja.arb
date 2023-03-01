@@ -784,5 +784,11 @@
   "partitionLimitReached": "制限に達しました",
   "@partitionLimitReached": {},
   "offlineWarning": "現在オフラインです",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "フォーマットしない",
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "表示",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "非表示",
+  "@whoAreYouPagePasswordHide": {}
 }
