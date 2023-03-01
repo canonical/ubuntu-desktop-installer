@@ -54,6 +54,7 @@ class InstallationCompletePage extends StatelessWidget {
             flex: 8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 MarkdownBody(
                   data:
