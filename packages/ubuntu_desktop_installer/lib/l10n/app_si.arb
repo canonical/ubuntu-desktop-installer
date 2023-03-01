@@ -593,7 +593,7 @@
   },
   "musicSlideTitle": "ගීත ඔබ සමඟ ගෙන යන්න",
   "@musicSlideTitle": {},
-  "partitionMountPointLabel": "රැඳවුම් ස්ථානය:",
+  "partitionMountPointLabel": "සවිවන ස්ථානය:",
   "@partitionMountPointLabel": {},
   "accessSlideAssistiveTechnologies": "උපකාරක තාක්‍ෂණ",
   "@accessSlideAssistiveTechnologies": {},
@@ -679,7 +679,7 @@
       "product": {}
     }
   },
-  "diskHeadersMountPoint": "රැඳවුම් ස්ථානය",
+  "diskHeadersMountPoint": "සවිවන ස්ථානය",
   "@diskHeadersMountPoint": {},
   "newPartitionTable": "නව පංගු වගුවක්",
   "@newPartitionTable": {},
